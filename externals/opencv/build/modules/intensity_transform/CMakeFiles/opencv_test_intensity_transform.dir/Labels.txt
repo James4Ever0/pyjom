@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_intensity_transform
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/intensity_transform/test/test_intensity_transform.cpp
+ Extra
+ opencv_intensity_transform
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/intensity_transform/test/test_main.cpp
+ Extra
+ opencv_intensity_transform
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/intensity_transform/test/test_precomp.hpp
+ Extra
+ opencv_intensity_transform
+ AccuracyTest

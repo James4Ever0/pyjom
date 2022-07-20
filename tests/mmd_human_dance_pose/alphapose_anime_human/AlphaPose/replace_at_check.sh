@@ -1,0 +1,1 @@
+cat replace_list.log | xargs -iabc sed -i "s/AT_CHECK/TORCH_CHECK/g" abc

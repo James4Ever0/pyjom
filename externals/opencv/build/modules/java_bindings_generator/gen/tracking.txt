@@ -1,0 +1,113 @@
+PORTED FUNCs LIST (102 of 103):
+
+static Ptr_TrackerCSRT cv::TrackerCSRT::create(TrackerCSRT_Params parameters = TrackerCSRT::Params())
+ void cv::TrackerCSRT::setInitialMask(Mat mask)
+  cv::TrackerCSRT::Params::Params()
+bool TrackerCSRT_Params::use_hog
+void TrackerCSRT_Params::use_hog
+bool TrackerCSRT_Params::use_color_names
+void TrackerCSRT_Params::use_color_names
+bool TrackerCSRT_Params::use_gray
+void TrackerCSRT_Params::use_gray
+bool TrackerCSRT_Params::use_rgb
+void TrackerCSRT_Params::use_rgb
+bool TrackerCSRT_Params::use_channel_weights
+void TrackerCSRT_Params::use_channel_weights
+bool TrackerCSRT_Params::use_segmentation
+void TrackerCSRT_Params::use_segmentation
+string TrackerCSRT_Params::window_function
+void TrackerCSRT_Params::window_function
+float TrackerCSRT_Params::kaiser_alpha
+void TrackerCSRT_Params::kaiser_alpha
+float TrackerCSRT_Params::cheb_attenuation
+void TrackerCSRT_Params::cheb_attenuation
+float TrackerCSRT_Params::template_size
+void TrackerCSRT_Params::template_size
+float TrackerCSRT_Params::gsl_sigma
+void TrackerCSRT_Params::gsl_sigma
+float TrackerCSRT_Params::hog_orientations
+void TrackerCSRT_Params::hog_orientations
+float TrackerCSRT_Params::hog_clip
+void TrackerCSRT_Params::hog_clip
+float TrackerCSRT_Params::padding
+void TrackerCSRT_Params::padding
+float TrackerCSRT_Params::filter_lr
+void TrackerCSRT_Params::filter_lr
+float TrackerCSRT_Params::weights_lr
+void TrackerCSRT_Params::weights_lr
+int TrackerCSRT_Params::num_hog_channels_used
+void TrackerCSRT_Params::num_hog_channels_used
+int TrackerCSRT_Params::admm_iterations
+void TrackerCSRT_Params::admm_iterations
+int TrackerCSRT_Params::histogram_bins
+void TrackerCSRT_Params::histogram_bins
+float TrackerCSRT_Params::histogram_lr
+void TrackerCSRT_Params::histogram_lr
+int TrackerCSRT_Params::background_ratio
+void TrackerCSRT_Params::background_ratio
+int TrackerCSRT_Params::number_of_scales
+void TrackerCSRT_Params::number_of_scales
+float TrackerCSRT_Params::scale_sigma_factor
+void TrackerCSRT_Params::scale_sigma_factor
+float TrackerCSRT_Params::scale_model_max_area
+void TrackerCSRT_Params::scale_model_max_area
+float TrackerCSRT_Params::scale_lr
+void TrackerCSRT_Params::scale_lr
+float TrackerCSRT_Params::scale_step
+void TrackerCSRT_Params::scale_step
+float TrackerCSRT_Params::psr_threshold
+void TrackerCSRT_Params::psr_threshold
+static Ptr_TrackerKCF cv::TrackerKCF::create(TrackerKCF_Params parameters = TrackerKCF::Params())
+  cv::TrackerKCF::Params::Params()
+float TrackerKCF_Params::detect_thresh
+void TrackerKCF_Params::detect_thresh
+float TrackerKCF_Params::sigma
+void TrackerKCF_Params::sigma
+float TrackerKCF_Params::lambda
+void TrackerKCF_Params::lambda
+float TrackerKCF_Params::interp_factor
+void TrackerKCF_Params::interp_factor
+float TrackerKCF_Params::output_sigma_factor
+void TrackerKCF_Params::output_sigma_factor
+float TrackerKCF_Params::pca_learning_rate
+void TrackerKCF_Params::pca_learning_rate
+bool TrackerKCF_Params::resize
+void TrackerKCF_Params::resize
+bool TrackerKCF_Params::split_coeff
+void TrackerKCF_Params::split_coeff
+bool TrackerKCF_Params::wrap_kernel
+void TrackerKCF_Params::wrap_kernel
+bool TrackerKCF_Params::compress_feature
+void TrackerKCF_Params::compress_feature
+int TrackerKCF_Params::max_patch_size
+void TrackerKCF_Params::max_patch_size
+int TrackerKCF_Params::compressed_size
+void TrackerKCF_Params::compressed_size
+int TrackerKCF_Params::desc_pca
+void TrackerKCF_Params::desc_pca
+int TrackerKCF_Params::desc_npca
+void TrackerKCF_Params::desc_npca
+ Ptr_Tracker cv::legacy::upgradeTrackingAPI(Ptr_legacy_Tracker legacy_tracker)
+  cv::legacy::MultiTracker::MultiTracker()
+ bool cv::legacy::MultiTracker::add(Ptr_legacy_Tracker newTracker, Mat image, Rect2d boundingBox)
+ bool cv::legacy::MultiTracker::update(Mat image, vector_Rect2d& boundingBox)
+ vector_Rect2d cv::legacy::MultiTracker::getObjects()
+ bool cv::legacy::Tracker::init(Mat image, Rect2d boundingBox)
+ bool cv::legacy::Tracker::update(Mat image, Rect2d& boundingBox)
+static Ptr_legacy_TrackerBoosting cv::legacy::TrackerBoosting::create()
+static Ptr_legacy_TrackerCSRT cv::legacy::TrackerCSRT::create()
+ void cv::legacy::TrackerCSRT::setInitialMask(Mat mask)
+static Ptr_legacy_TrackerKCF cv::legacy::TrackerKCF::create()
+static Ptr_legacy_TrackerMIL cv::legacy::TrackerMIL::create()
+static Ptr_legacy_TrackerMOSSE cv::legacy::TrackerMOSSE::create()
+static Ptr_legacy_TrackerMedianFlow cv::legacy::TrackerMedianFlow::create()
+static Ptr_legacy_TrackerTLD cv::legacy::TrackerTLD::create()
+
+SKIPPED FUNCs LIST (1 of 103):
+
+static Ptr_MultiTracker cv::legacy::MultiTracker::create()
+// Return type 'Ptr_MultiTracker' is not supported, skipping the function
+
+
+0 def args - 19 funcs
+1 def args - 2 funcs

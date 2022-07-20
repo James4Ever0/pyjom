@@ -1,0 +1,2 @@
+cd bullet3
+bash build_cmake_pybullet_double.sh

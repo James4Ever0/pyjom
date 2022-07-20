@@ -1,0 +1,10 @@
+pnglibconf.h
+CHANGES
+configure
+libpng-manual.txt
+ltmain.sh
+png.c
+png.h
+pngread.c
+pngrtran.c
+pngrutil.c

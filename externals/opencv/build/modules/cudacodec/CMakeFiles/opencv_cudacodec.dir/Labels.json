@@ -1,0 +1,207 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/include/opencv2/cudacodec.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/cuvid_video_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/ffmpeg_video_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/frame_queue.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/thread.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_decoder.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_parser.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_reader.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_writer.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/cuvid_video_source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/ffmpeg_video_source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/frame_queue.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/thread.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_decoder.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_parser.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/cuda/nv12_to_rgb.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/cuda/rgb_to_yv12.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudacodec/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_nv12_to_rgb.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudacodec/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_rgb_to_yv12.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudacodec",
+			"Module"
+		],
+		"name" : "opencv_cudacodec"
+	}
+}

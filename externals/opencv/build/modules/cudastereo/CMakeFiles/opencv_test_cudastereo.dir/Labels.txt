@@ -1,0 +1,21 @@
+# Target labels
+ Extra
+ opencv_cudastereo
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/test/test_main.cpp
+ Extra
+ opencv_cudastereo
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/test/test_sgm_funcs.cpp
+ Extra
+ opencv_cudastereo
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/test/test_stereo.cpp
+ Extra
+ opencv_cudastereo
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/test/test_precomp.hpp
+ Extra
+ opencv_cudastereo
+ AccuracyTest

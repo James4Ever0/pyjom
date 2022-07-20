@@ -1,0 +1,57 @@
+# Target labels
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_bilateral_filter.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_blend.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_canny.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_color.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_connectedcomponents.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_corners.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_gftt.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_histogram.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_hough.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_main.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_match_template.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_mean_shift.cpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_precomp.hpp
+ Extra
+ opencv_cudaimgproc
+ AccuracyTest

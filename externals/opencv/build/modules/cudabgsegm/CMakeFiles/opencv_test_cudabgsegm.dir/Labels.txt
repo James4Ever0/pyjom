@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_cudabgsegm
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/test/test_bgsegm.cpp
+ Extra
+ opencv_cudabgsegm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/test/test_main.cpp
+ Extra
+ opencv_cudabgsegm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/test/test_precomp.hpp
+ Extra
+ opencv_cudabgsegm
+ AccuracyTest

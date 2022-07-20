@@ -1,0 +1,42 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/perf/perf_filters.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafilters",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafilters",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafilters",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudafilters",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_cudafilters"
+	}
+}

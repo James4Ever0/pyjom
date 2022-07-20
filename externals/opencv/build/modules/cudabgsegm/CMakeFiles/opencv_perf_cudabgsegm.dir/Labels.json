@@ -1,0 +1,42 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/perf/perf_bgsegm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudabgsegm",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_cudabgsegm"
+	}
+}

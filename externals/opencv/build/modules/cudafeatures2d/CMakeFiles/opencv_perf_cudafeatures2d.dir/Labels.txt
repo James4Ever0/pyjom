@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_cudafeatures2d
+ PerfTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/perf/perf_features2d.cpp
+ Extra
+ opencv_cudafeatures2d
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/perf/perf_main.cpp
+ Extra
+ opencv_cudafeatures2d
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/perf/perf_precomp.hpp
+ Extra
+ opencv_cudafeatures2d
+ PerfTest

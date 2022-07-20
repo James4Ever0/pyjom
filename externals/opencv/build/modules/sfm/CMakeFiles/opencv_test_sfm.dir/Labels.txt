@@ -1,0 +1,57 @@
+# Target labels
+ Extra
+ opencv_sfm
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/scene.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_common.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_conditioning.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_fundamental.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_main.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_numeric.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_projection.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_reconstruct.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_robust.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_simple_pipeline.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_triangulation.cpp
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/scene.h
+ Extra
+ opencv_sfm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_precomp.hpp
+ Extra
+ opencv_sfm
+ AccuracyTest

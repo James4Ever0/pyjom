@@ -1,0 +1,59 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Medialang_Jinja",
+    "scopeName": "source.mdl.j2",
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "entity.name.class",
+                "match": "\\b(\\w+)\\b"
+            }]
+        },
+        "templates": {
+            "patterns": [{
+                "name": "entity.name.function",
+                "match": "({{[^}]+}})"
+            }, {
+                "name": "storage.modifier",
+                "match": "({%[^%]+%})"
+            }]
+        },
+        "booleans": {
+            "patterns": [{
+                "name": "keyword.control.quan4",
+                "match": "\\b(True|False|true|false)\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.quan4",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [{
+                "name": "constant.character.escape.quan4",
+                "match": "\\\\."
+            }]
+        }
+    },
+    "patterns": [{
+            "include": "#strings"
+        }, {
+            "include": "#templates"
+        },
+
+        {
+            "match": "[0-9]+\\.?([0-9]+)?",
+            "name": "constant.numeric"
+        },
+        {
+            "include": "#booleans"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "match": "#.*",
+            "name": "comment.line.number-sign"
+        }
+
+    ]
+}

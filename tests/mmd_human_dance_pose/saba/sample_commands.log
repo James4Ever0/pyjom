@@ -1,0 +1,15 @@
+open /media/root/help/pyjom/tests/mmd_human_dance_pose/hyperion/public/pmx/wendy/model.pmx
+open /media/root/help/pyjom/tests/mmd_human_dance_pose/MMDLoader/test_files/walk.vmd
+
+rotate 360 0 0
+translate 10 0 0
+scale 1 1 1
+
+select model_002
+clear -all
+clearAnimation -all
+clearSceneAnimation
+play
+stop
+
+enableUI false

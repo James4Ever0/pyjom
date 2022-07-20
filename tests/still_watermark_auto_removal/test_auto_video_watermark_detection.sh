@@ -1,0 +1,3 @@
+cd automatic-watermark-detection
+
+python3 video_watermark_detection.py

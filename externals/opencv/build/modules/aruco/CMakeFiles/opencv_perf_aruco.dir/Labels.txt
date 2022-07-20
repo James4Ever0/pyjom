@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_aruco
+ PerfTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/perf/perf_aruco.cpp
+ Extra
+ opencv_aruco
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/perf/perf_main.cpp
+ Extra
+ opencv_aruco
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/perf/perf_precomp.hpp
+ Extra
+ opencv_aruco
+ PerfTest

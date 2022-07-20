@@ -1,0 +1,174 @@
+{
+    "\u641e\u7b11 \u5ba0\u7269": [
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LljW9q7v0.mp4",
+                    {
+                        "labels": [
+                            "cat"
+                        ],
+                        "comment": "very funny",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LljRJde7s.mp4",
+                    {
+                        "labels": [
+                            "have blue edges",
+                            "changing",
+                            "cute"
+                        ],
+                        "comment": "need crop (difficult)",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LlhIWtKob.mp4",
+                    {
+                        "labels": [
+                            "funny dog",
+                            "in motion"
+                        ],
+                        "comment": "varying need object detection",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LlgHKgotx.mp4",
+                    {
+                        "labels": [
+                            "static",
+                            "have video fx"
+                        ],
+                        "comment": "unwanted sound",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LlgghooTc.mp4",
+                    {
+                        "labels": [
+                            "watermarked",
+                            "panda",
+                            "cute"
+                        ],
+                        "comment": "need motion detection in segments",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LlfZQflE4.mp4",
+                    {
+                        "labels": [
+                            "doge"
+                        ],
+                        "comment": "some text",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LlfD719j8.mp4",
+                    {
+                        "labels": [
+                            "doge",
+                            "birthday cake",
+                            "voice detection"
+                        ],
+                        "comment": "need motion detection",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LlfeL29BP.mp4",
+                    {
+                        "labels": [
+                            "funny",
+                            "less human"
+                        ],
+                        "comment": "motion detection",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LleBVlRXj.mp4",
+                    {
+                        "labels": [
+                            "snake",
+                            "mouse"
+                        ],
+                        "comment": "need motion detection",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        },
+        {
+            "review": {
+                "type": "video",
+                "review": [
+                    "/root/Desktop/works/pyjom/src/samples/video/LleA3wV0w.mp4",
+                    {
+                        "labels": [
+                            "doge"
+                        ],
+                        "comment": "need split need crop",
+                        "discard": false
+                    }
+                ]
+            },
+            "source": "commons.weiboManualCensor"
+        }
+    ]
+}

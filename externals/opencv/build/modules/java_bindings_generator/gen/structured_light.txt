@@ -1,0 +1,42 @@
+PORTED FUNCs LIST (29 of 30):
+
+static Ptr_GrayCodePattern cv::structured_light::GrayCodePattern::create(int width, int height)
+ size_t cv::structured_light::GrayCodePattern::getNumberOfPatternImages()
+ void cv::structured_light::GrayCodePattern::setWhiteThreshold(size_t value)
+ void cv::structured_light::GrayCodePattern::setBlackThreshold(size_t value)
+ void cv::structured_light::GrayCodePattern::getImagesForShadowMasks(Mat& blackImage, Mat& whiteImage)
+ bool cv::structured_light::GrayCodePattern::getProjPixel(vector_Mat patternImages, int x, int y, Point& projPix)
+static Ptr_SinusoidalPattern cv::structured_light::SinusoidalPattern::create(Ptr_SinusoidalPattern_Params parameters = makePtr<SinusoidalPattern::Params>())
+ void cv::structured_light::SinusoidalPattern::computePhaseMap(vector_Mat patternImages, Mat& wrappedPhaseMap, Mat& shadowMask = Mat(), Mat fundamental = Mat())
+ void cv::structured_light::SinusoidalPattern::unwrapPhaseMap(Mat wrappedPhaseMap, Mat& unwrappedPhaseMap, Size camSize, Mat shadowMask = Mat())
+ void cv::structured_light::SinusoidalPattern::findProCamMatches(Mat projUnwrappedPhaseMap, Mat camUnwrappedPhaseMap, vector_Mat& matches)
+ void cv::structured_light::SinusoidalPattern::computeDataModulationTerm(vector_Mat patternImages, Mat& dataModulationTerm, Mat shadowMask)
+  cv::structured_light::SinusoidalPattern::Params::Params()
+int SinusoidalPattern_Params::width
+void SinusoidalPattern_Params::width
+int SinusoidalPattern_Params::height
+void SinusoidalPattern_Params::height
+int SinusoidalPattern_Params::nbrOfPeriods
+void SinusoidalPattern_Params::nbrOfPeriods
+float SinusoidalPattern_Params::shiftValue
+void SinusoidalPattern_Params::shiftValue
+int SinusoidalPattern_Params::methodId
+void SinusoidalPattern_Params::methodId
+int SinusoidalPattern_Params::nbrOfPixelsBetweenMarkers
+void SinusoidalPattern_Params::nbrOfPixelsBetweenMarkers
+bool SinusoidalPattern_Params::horizontal
+void SinusoidalPattern_Params::horizontal
+bool SinusoidalPattern_Params::setMarkers
+void SinusoidalPattern_Params::setMarkers
+ bool cv::structured_light::StructuredLightPattern::generate(vector_Mat& patternImages)
+
+SKIPPED FUNCs LIST (1 of 30):
+
+ bool cv::structured_light::StructuredLightPattern::decode(vector_vector_Mat patternImages, Mat& disparityMap, vector_Mat blackImages = vector_Mat(), vector_Mat whiteImages = vector_Mat(), int flags = DECODE_3D_UNDERWORLD)
+// Unknown type 'vector_vector_Mat' (I), skipping the function
+
+
+0 def args - 10 funcs
+1 def args - 2 funcs
+2 def args - 1 funcs
+3 def args - 1 funcs

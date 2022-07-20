@@ -1,0 +1,69 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_arithm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_core.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_element_operations.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_reductions.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaarithm",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_cudaarithm"
+	}
+}

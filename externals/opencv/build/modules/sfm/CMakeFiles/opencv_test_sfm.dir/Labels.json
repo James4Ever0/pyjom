@@ -1,0 +1,132 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/scene.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_common.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_conditioning.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_fundamental.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_numeric.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_projection.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_reconstruct.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_robust.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_simple_pipeline.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_triangulation.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/scene.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_sfm",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_sfm"
+	}
+}

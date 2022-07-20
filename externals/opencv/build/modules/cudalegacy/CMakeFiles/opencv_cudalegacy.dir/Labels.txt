@@ -1,0 +1,159 @@
+# Target labels
+ Extra
+ opencv_cudalegacy
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NCV.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NCVBroxOpticalFlow.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NCVHaarObjectDetection.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NCVPyramid.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NPP_staging.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/private.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/NCV.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/bm.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/bm_fast.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/calib3d.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/fgd.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/gmg.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/graphcuts.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/image_pyramid.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/interpolate_frames.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/needle_map.cpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVAlg.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVColorConversion.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVPixelOperations.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVRuntimeTemplates.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/fgd.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/precomp.hpp
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCV.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVBroxOpticalFlow.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVHaarObjectDetection.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVPyramid.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NPP_staging.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/bm.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/bm_fast.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/calib3d.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/ccomponetns.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/fgd.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/gmg.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/needle_map.cu
+ Extra
+ opencv_cudalegacy
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCV.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCVBroxOpticalFlow.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCVHaarObjectDetection.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCVPyramid.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NPP_staging.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bm.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bm_fast.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_calib3d.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_ccomponetns.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_fgd.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_gmg.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_needle_map.cu.o

@@ -1,0 +1,51 @@
+# Target labels
+ Extra
+ opencv_alphamat
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/include/opencv2/alphamat.hpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/cm.cpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/infoflow.cpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/intraU.cpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/local_info.cpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/3rdparty/KDTreeVectorOfVectorsAdaptor.h
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/3rdparty/nanoflann.hpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/cm.hpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/intraU.hpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/local_info.hpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/precomp.hpp
+ Extra
+ opencv_alphamat
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp

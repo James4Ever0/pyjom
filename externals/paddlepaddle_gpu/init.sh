@@ -1,0 +1,2 @@
+aria2c -j12 https://paddle-wheel.bj.bcebos.com/2.2.2/linux/linux-gpu-cuda11.2-cudnn8-mkl-gcc8.2-avx/paddlepaddle_gpu-2.2.2.post112-cp39-cp39-linux_x86_64.whl
+pip3 install paddlepaddle_gpu-2.2.2.post112-cp39-cp39-linux_x86_64.whl

@@ -1,0 +1,6 @@
+mlp_example_bf16_amx_fused_trans_fused_sgd.c
+mlp_example_bf16_amx_fused_trans_fused_sgd_numa.c
+mlp_example_bf16_amx_fused_trans_fused_sgd_numa_bypass_trans.c
+mlp_example_bf16_amx_fused_trans_numa.c
+mlp_example_bf16_amx_numa.c
+mlp_example_bf16_avx512_fused_trans_numa.c

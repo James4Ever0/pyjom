@@ -1,0 +1,1 @@
+python3 -m uvicorn filter_py3_fastapi:app --reload --port 8932 

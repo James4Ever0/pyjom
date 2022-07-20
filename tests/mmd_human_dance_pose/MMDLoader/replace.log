@@ -1,0 +1,17 @@
+ /usr/local/lib/libLinearMath.so /usr/local/lib/libBulletDynamics.so /usr/local/lib/libBulletCollision.so
+ -lLinearMath -lBulletDynamics -lBulletCollision
+ -L../../../externals/pybullet/bullet3/src/BulletDynamics -L../../../externals/pybullet/bullet3/src/BulletCollision -L../../../externals/pybullet/bullet3/src/LinearMath
+
+  -L/usr/local/lib/libLinearMath.so /usr/local/lib/libBulletDynamics.so /usr/local/lib/libBulletCollision.so
+
+somehow this shit works after we installed the lib.
+
+/usr/bin/ld: warning: libLinearMath.so.3.05, needed by /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libBulletCollision.so, may conflict with libLinearMath.so.3.22
+
+you found this in another place instead.
+whatever, let's just roll.
+
+/usr/lib/x86_64-linux-gnu/libLinearMath.so
+/usr/lib/x86_64-linux-gnu/libLinearMath.so.3.05
+/usr/local/lib/libLinearMath.so
+/usr/local/lib/libLinearMath.so.3.22

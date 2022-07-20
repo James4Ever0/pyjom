@@ -1,0 +1,1 @@
+find . -type d | grep -v "__pycache__" | grep -v ".egg-info" | xargs -iabc touch abc/__init__.py

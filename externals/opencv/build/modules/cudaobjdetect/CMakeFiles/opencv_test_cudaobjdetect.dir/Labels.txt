@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_cudaobjdetect
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/test/test_main.cpp
+ Extra
+ opencv_cudaobjdetect
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/test/test_objdetect.cpp
+ Extra
+ opencv_cudaobjdetect
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/test/test_precomp.hpp
+ Extra
+ opencv_cudaobjdetect
+ AccuracyTest

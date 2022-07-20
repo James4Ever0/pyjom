@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_cudastereo
+ PerfTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/perf/perf_main.cpp
+ Extra
+ opencv_cudastereo
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/perf/perf_stereo.cpp
+ Extra
+ opencv_cudastereo
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/perf/perf_precomp.hpp
+ Extra
+ opencv_cudastereo
+ PerfTest

@@ -1,0 +1,42 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/perf/perf_features2d.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafeatures2d",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafeatures2d",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafeatures2d",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudafeatures2d",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_cudafeatures2d"
+	}
+}

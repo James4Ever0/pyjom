@@ -1,0 +1,13 @@
+{
+    "id": "jessysisca/first_run_cli_ytdl2",
+    "title": "test_of_yt_dlp2",
+    "code_file": "test2.py",
+    "language": "python",
+    "kernel_type": "script",
+    "is_private": "true",
+    "enable_gpu": "false",
+    "enable_internet": "true",
+    "dataset_sources": [],
+    "competition_sources": [],
+    "kernel_sources": []
+}

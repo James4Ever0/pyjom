@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_superres
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/test/test_main.cpp
+ Extra
+ opencv_superres
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/test/test_superres.cpp
+ Extra
+ opencv_superres
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/test/test_precomp.hpp
+ Extra
+ opencv_superres
+ AccuracyTest

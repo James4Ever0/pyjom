@@ -1,0 +1,192 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/include/opencv2/cudastereo.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/disparity_bilateral_filter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/stereobm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/stereobp.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/stereocsbp.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/stereosgm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/util.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/disparity_bilateral_filter.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereocsbp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereosgm.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/disparity_bilateral_filter.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereobm.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereobp.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereocsbp.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereosgm.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/util.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_disparity_bilateral_filter.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereobm.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereobp.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereocsbp.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereosgm.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_util.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudastereo",
+			"Module"
+		],
+		"name" : "opencv_cudastereo"
+	}
+}

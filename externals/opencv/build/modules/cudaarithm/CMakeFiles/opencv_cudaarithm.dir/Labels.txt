@@ -1,0 +1,204 @@
+# Target labels
+ Extra
+ opencv_cudaarithm
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/include/opencv2/cudaarithm.hpp
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/arithm.cpp
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/core.cpp
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/element_operations.cpp
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/lut.cpp
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/reductions.cpp
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/lut.hpp
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/precomp.hpp
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/absdiff_mat.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/absdiff_scalar.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/add_mat.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/add_scalar.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/add_weighted.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/bitwise_mat.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/bitwise_scalar.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/cmp_mat.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/cmp_scalar.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/copy_make_border.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/countnonzero.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/div_mat.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/div_scalar.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/in_range.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/integral.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/lut.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/math.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/minmax.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/minmax_mat.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/minmaxloc.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/mul_mat.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/mul_scalar.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/mul_spectrums.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/norm.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/normalize.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/polar_cart.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/reduce.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/split_merge.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/sub_mat.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/sub_scalar.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/sum.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/threshold.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/transpose.cu
+ Extra
+ opencv_cudaarithm
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_absdiff_mat.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_absdiff_scalar.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_add_mat.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_add_scalar.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_add_weighted.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bitwise_mat.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bitwise_scalar.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_cmp_mat.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_cmp_scalar.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_copy_make_border.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_countnonzero.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_div_mat.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_div_scalar.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_in_range.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_integral.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_lut.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_math.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_minmax.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_minmax_mat.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_minmaxloc.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mul_mat.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mul_scalar.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mul_spectrums.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_norm.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_normalize.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_polar_cart.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_reduce.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_split_merge.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_sub_mat.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_sub_scalar.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_sum.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_threshold.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_transpose.cu.o

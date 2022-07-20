@@ -1,0 +1,81 @@
+# Target labels
+ Extra
+ opencv_cudastereo
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/include/opencv2/cudastereo.hpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/disparity_bilateral_filter.cpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/stereobm.cpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/stereobp.cpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/stereocsbp.cpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/stereosgm.cpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/util.cpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/disparity_bilateral_filter.hpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereocsbp.hpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereosgm.hpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/precomp.hpp
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/disparity_bilateral_filter.cu
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereobm.cu
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereobp.cu
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereocsbp.cu
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/stereosgm.cu
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudastereo/src/cuda/util.cu
+ Extra
+ opencv_cudastereo
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp
+/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_disparity_bilateral_filter.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereobm.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereobp.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereocsbp.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereosgm.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudastereo/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_util.cu.o

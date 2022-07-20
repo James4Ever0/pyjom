@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ContactType = exports.ContactGender = void 0;
+var ContactGender;
+(function (ContactGender) {
+    ContactGender[ContactGender["Unknown"] = 0] = "Unknown";
+    ContactGender[ContactGender["Male"] = 1] = "Male";
+    ContactGender[ContactGender["Female"] = 2] = "Female";
+})(ContactGender = exports.ContactGender || (exports.ContactGender = {}));
+/**
+ * Huan(202004) TODO: Lock the ENUM number (like protobuf) ?
+ */
+var ContactType;
+(function (ContactType) {
+    ContactType[ContactType["Unknown"] = 0] = "Unknown";
+    ContactType[ContactType["Individual"] = 1] = "Individual";
+    ContactType[ContactType["Official"] = 2] = "Official";
+    ContactType[ContactType["Corporation"] = 3] = "Corporation";
+})(ContactType = exports.ContactType || (exports.ContactType = {}));
+//# sourceMappingURL=contact.js.map

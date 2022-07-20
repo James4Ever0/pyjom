@@ -1,0 +1,8 @@
+cellselection.cpp
+iocommand.cpp
+mainwindow.cpp
+penciltestpopup.cpp
+penciltestpopup_qt.cpp
+sceneviewer.cpp
+xshcellviewer.cpp
+xshcolumnviewer.cpp

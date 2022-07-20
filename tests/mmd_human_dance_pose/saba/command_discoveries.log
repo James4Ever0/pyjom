@@ -1,0 +1,14 @@
+		m_commands.emplace_back(Command{ "open", [this](const Args& args) { return CmdOpen(args); } });
+		m_commands.emplace_back(Command{ "clear", [this](const Args& args) { return CmdClear(args); } });
+		m_commands.emplace_back(Command{ "play", [this](const Args& args) { return CmdPlay(args); } });
+		m_commands.emplace_back(Command{ "stop", [this](const Args& args) { return CmdStop(args); } });
+		m_commands.emplace_back(Command{ "select", [this](const Args& args) { return CmdSelect(args); } });
+		m_commands.emplace_back(Command{ "translate", [this](const Args& args) { return CmdTranslate(args); } });
+		m_commands.emplace_back(Command{ "rotate", [this](const Args& args) { return CmdRotate(args); } });
+		m_commands.emplace_back(Command{ "scale", [this](const Args& args) { return CmdScale(args); } });
+		m_commands.emplace_back(Command{ "refreshCustomCommand", [this](const Args& args) { return CmdRefreshCustomCommand(args); } });
+		m_commands.emplace_back(Command{ "enableUI", [this](const Args& args) { return CmdEnableUI(args); } });
+		m_commands.emplace_back(Command{ "clearAnimation", [this](const Args& args) { return CmdClearAnimation(args); } });
+		m_commands.emplace_back(Command{ "clearSceneAnimation", [this](const Args& args) { return CmdClearSceneAnimation(args); } });
+		m_commands.emplace_back(Command{ "setMMDConfig", [this](const Args& args) { return CmdSetMMDConfig(args); } });
+		m_commands.emplace_back(Command{ "setMSAA", [this](const Args& args) {return CmdSetMSAA(args); } });

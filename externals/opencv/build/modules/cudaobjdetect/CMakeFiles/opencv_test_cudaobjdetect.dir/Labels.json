@@ -1,0 +1,42 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/test/test_objdetect.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaobjdetect",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_cudaobjdetect"
+	}
+}

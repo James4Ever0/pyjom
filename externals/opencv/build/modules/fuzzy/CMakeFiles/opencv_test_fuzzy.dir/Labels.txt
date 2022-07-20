@@ -1,0 +1,25 @@
+# Target labels
+ Extra
+ opencv_fuzzy
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/fuzzy/test/test_f0.cpp
+ Extra
+ opencv_fuzzy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/fuzzy/test/test_f1.cpp
+ Extra
+ opencv_fuzzy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/fuzzy/test/test_image.cpp
+ Extra
+ opencv_fuzzy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/fuzzy/test/test_main.cpp
+ Extra
+ opencv_fuzzy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/fuzzy/test/test_precomp.hpp
+ Extra
+ opencv_fuzzy
+ AccuracyTest

@@ -1,0 +1,205 @@
+[
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/dog_with_text.mp4",
+                {
+                    "labels": [
+                        "dog",
+                        "with subtitle",
+                        "motion detection"
+                    ],
+                    "comment": "with sound",
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiH5YpvKI.mp4",
+                {
+                    "labels": [
+                        "multiple segments"
+                    ],
+                    "comment": "need crop",
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LklzN7XcH.mp4",
+                {
+                    "labels": [
+                        "\u7f8a\u9a7c",
+                        "multiple segments"
+                    ],
+                    "comment": "have zoom effects",
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiGJz4Mf0.mp4",
+                {
+                    "labels": [
+                        "pig"
+                    ],
+                    "comment": null,
+                    "discard": true
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiGfl6lvf.mp4",
+                {
+                    "labels": [
+                        "have static areas"
+                    ],
+                    "comment": null,
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiG5ZiInM.mp4",
+                {
+                    "labels": [
+                        "interview"
+                    ],
+                    "comment": null,
+                    "discard": true
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiEIfnsvn.mp4",
+                {
+                    "labels": [
+                        "small video detection"
+                    ],
+                    "comment": "variable active area",
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiGE8vLuX.mp4",
+                {
+                    "labels": [],
+                    "comment": null,
+                    "discard": true
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiGGLhv4E.mp4",
+                {
+                    "labels": [],
+                    "comment": "cat disappear sometimes",
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/IxEQhCslT.mp4",
+                {
+                    "labels": [],
+                    "comment": null,
+                    "discard": true
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiGHT3ZCi.mp4",
+                {
+                    "labels": [],
+                    "comment": "variable size",
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LiGlReJ4i.mp4",
+                {
+                    "labels": [
+                        "multiple segments"
+                    ],
+                    "comment": "not active sometimes",
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    },
+    {
+        "review": {
+            "type": "video",
+            "review": [
+                "/root/Desktop/works/pyjom/src/samples/video/LkS8UkiLL.mp4",
+                {
+                    "labels": [
+                        "youtube"
+                    ],
+                    "comment": "special channel",
+                    "discard": false
+                }
+            ]
+        },
+        "source": "commons.localManualCensor"
+    }
+]

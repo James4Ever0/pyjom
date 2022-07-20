@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../../../lib/libnumeric.a CMakeFiles/numeric.dir/numeric.cc.o CMakeFiles/numeric.dir/poly.cc.o
+/usr/bin/ranlib ../../../../../../lib/libnumeric.a

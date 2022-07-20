@@ -1,0 +1,90 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/include/opencv2/cudaobjdetect.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/src/cascadeclassifier.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/src/hog.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/src/cuda/lbp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/src/cuda/hog.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaobjdetect/src/cuda/lbp.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaobjdetect",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaobjdetect/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_hog.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaobjdetect/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_lbp.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaobjdetect",
+			"Module"
+		],
+		"name" : "opencv_cudaobjdetect"
+	}
+}

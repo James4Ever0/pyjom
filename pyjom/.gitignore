@@ -1,0 +1,5 @@
+samples
+logs
+
+# ignore big torch checkpoint files
+*.pt

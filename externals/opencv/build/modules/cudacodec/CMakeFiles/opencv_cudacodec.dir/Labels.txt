@@ -1,0 +1,89 @@
+# Target labels
+ Extra
+ opencv_cudacodec
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/include/opencv2/cudacodec.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/cuvid_video_source.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/ffmpeg_video_source.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/frame_queue.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/thread.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_decoder.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_parser.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_reader.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_source.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_writer.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/cuvid_video_source.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/ffmpeg_video_source.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/frame_queue.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/precomp.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/thread.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_decoder.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_parser.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/video_source.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/cuda/nv12_to_rgb.cu
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudacodec/src/cuda/rgb_to_yv12.cu
+ Extra
+ opencv_cudacodec
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp
+/media/root/help1/pyjom/externals/opencv/build/modules/cudacodec/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_nv12_to_rgb.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudacodec/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_rgb_to_yv12.cu.o

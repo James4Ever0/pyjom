@@ -1,0 +1,489 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/include/opencv2/cudaarithm.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/arithm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/core.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/element_operations.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/lut.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/reductions.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/lut.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/absdiff_mat.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/absdiff_scalar.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/add_mat.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/add_scalar.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/add_weighted.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/bitwise_mat.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/bitwise_scalar.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/cmp_mat.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/cmp_scalar.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/copy_make_border.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/countnonzero.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/div_mat.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/div_scalar.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/in_range.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/integral.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/lut.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/math.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/minmax.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/minmax_mat.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/minmaxloc.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/mul_mat.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/mul_scalar.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/mul_spectrums.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/norm.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/normalize.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/polar_cart.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/reduce.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/split_merge.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/sub_mat.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/sub_scalar.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/sum.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/threshold.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/src/cuda/transpose.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_absdiff_mat.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_absdiff_scalar.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_add_mat.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_add_scalar.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_add_weighted.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bitwise_mat.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bitwise_scalar.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_cmp_mat.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_cmp_scalar.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_copy_make_border.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_countnonzero.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_div_mat.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_div_scalar.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_in_range.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_integral.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_lut.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_math.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_minmax.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_minmax_mat.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_minmaxloc.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mul_mat.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mul_scalar.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mul_spectrums.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_norm.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_normalize.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_polar_cart.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_reduce.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_split_merge.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_sub_mat.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_sub_scalar.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_sum.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_threshold.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaarithm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_transpose.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaarithm",
+			"Module"
+		],
+		"name" : "opencv_cudaarithm"
+	}
+}

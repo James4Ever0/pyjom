@@ -1,0 +1,5 @@
+premake4_arm64
+premake4_linux
+premake4_linux64
+premake4_osx
+premake4_osx32

@@ -1,0 +1,2 @@
+2022/07/03 21:49:37.379 [E]  Init HTTP Server Err listen tcp 0.0.0.0:8781: bind: address already in use
+2022/07/03 23:21:01.523 [E]  Init HTTP Server Err listen tcp 0.0.0.0:8781: bind: address already in use

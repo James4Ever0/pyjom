@@ -1,0 +1,4 @@
+(".json", processor="frameborder_detector" {% if model %}, model="{{model}}"{% endif %} {% if config %}, config={{config}}{% endif %}
+) # model default to be framedifference_talib, or config it to be huffline_horizontal_vertical, only output main frame time and location. might be moving. i don't know. maybe we need to eliminate all moving things.
+
+("{{ mediafile }}")

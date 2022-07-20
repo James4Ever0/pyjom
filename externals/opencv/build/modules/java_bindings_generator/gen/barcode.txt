@@ -1,0 +1,13 @@
+PORTED FUNCs LIST (4 of 4):
+
+  cv::barcode::BarcodeDetector::BarcodeDetector(string prototxt_path = "", string model_path = "")
+ bool cv::barcode::BarcodeDetector::detect(Mat img, Mat& points)
+ bool cv::barcode::BarcodeDetector::decode(Mat img, Mat points, vector_string& decoded_info, vector_BarcodeType& decoded_type)
+ bool cv::barcode::BarcodeDetector::detectAndDecode(Mat img, vector_string& decoded_info, vector_BarcodeType& decoded_type, Mat& points = Mat())
+
+SKIPPED FUNCs LIST (0 of 4):
+
+
+0 def args - 2 funcs
+1 def args - 1 funcs
+2 def args - 1 funcs

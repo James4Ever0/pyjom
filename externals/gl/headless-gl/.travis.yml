@@ -1,0 +1,68 @@
+language: c
+git:
+  submodules: true
+env:
+  global:
+    - secure: "MHkBPTRLhQ04GgdBNOJvvvHf7gJyrc9aWCznWipB2RUQG+vobxPuOCV+rFFUB4Z/q3Dh54d/61dHs9nwHW/uP1jStwPqW1x19Uhcny+c0WEY6A87wjnUVR4g7pQ7+vzkwg8o2jdBC+8BQ/4M4IQ2nRic5qcB8Z6FCOdL4ENhvA8="
+matrix:
+  include:
+  # - os: linux
+  #   sudo: required
+  #   dist: bionic
+  #   compiler: g++
+  #   env:
+  #     - NODE_VERSION=12
+  # - os: linux
+  #   sudo: required
+  #   dist: bionic
+  #   compiler: g++
+  #   env:
+  #     - NODE_VERSION=14
+  - os: linux
+    sudo: required
+    dist: bionic
+    compiler: g++
+    env:
+      - NODE_VERSION=16
+  # - os: osx
+  #   osx_image: xcode12.5
+  #   compiler: clang
+  #   env:
+  #     - NODE_VERSION=12
+  # - os: osx
+  #   osx_image: xcode12.5
+  #   compiler: clang
+  #   env:
+  #     - NODE_VERSION=14
+  # - os: osx
+  #   osx_image: xcode12.5
+  #   compiler: clang
+  #   env:
+  #     - NODE_VERSION=16
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - xutils-dev
+    - libxi-dev
+    - libxxf86vm-dev
+    - x11proto-xf86vidmode-dev
+    - mesa-utils
+    - xvfb
+    - libgl1-mesa-dri
+    - libglapi-mesa
+    - libosmesa6
+    - musl-dev
+    - libgl1-mesa-dev
+before_install:
+- ./scripts/before_install.sh
+install:
+- ./scripts/install.sh
+before_script:
+- ulimit -c unlimited -S
+- ulimit -a
+script:
+- ./scripts/test.sh
+after_success:
+- ./scripts/after_success.sh

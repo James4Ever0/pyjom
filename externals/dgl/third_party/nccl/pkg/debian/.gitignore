@@ -1,0 +1,8 @@
+/*.debhelper.log
+/*.debhelper
+/*.substvars
+/tmp/
+/files
+/libnccl1/
+/libnccl-dev/
+copyright

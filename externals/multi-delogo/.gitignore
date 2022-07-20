@@ -1,0 +1,111 @@
+# Copyright (C) 2018 Werner Turing <werner.turing@protonmail.com>
+#
+# This file is part of multi-delogo.
+#
+# multi-delogo is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# multi-delogo is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with multi-delogo.  If not, see <http://www.gnu.org/licenses/>.
+
+# Editor backup files
+*~
+\#*
+.#*
+
+# automake/autoconf stuff
+aclocal.m4
+autom4te.cache
+compile
+config.guess
+config.log
+config.rpath
+config.status
+config.sub
+configure
+depcomp
+.deps
+.dirstamp
+install-sh
+Makefile
+Makefile.in
+missing
+
+# autopoint
+ABOUT-NLS
+config.rpath
+m4/codeset.m4
+m4/extern-inline.m4
+m4/fcntl-o.m4
+m4/gettext.m4
+m4/glibc2.m4
+m4/glibc21.m4
+m4/iconv.m4
+m4/intdiv0.m4
+m4/intl.m4
+m4/intldir.m4
+m4/intlmacosx.m4
+m4/intmax.m4
+m4/inttypes-pri.m4
+m4/inttypes_h.m4
+m4/lcmessage.m4
+m4/lib-ld.m4
+m4/lib-link.m4
+m4/lib-prefix.m4
+m4/lock.m4
+m4/longlong.m4
+m4/nls.m4
+m4/po.m4
+m4/printf-posix.m4
+m4/progtest.m4
+m4/size_max.m4
+m4/stdint_h.m4
+m4/threadlib.m4
+m4/uintmax_t.m4
+m4/visibility.m4
+m4/wchar_t.m4
+m4/wint_t.m4
+m4/xsize.m4
+po/Makefile.in.in
+po/Makevars.template
+po/Rules-quot
+po/boldquot.sed
+po/en@boldquot.header
+po/en@quot.header
+po/insert-header.sin
+po/quot.sed
+po/remove-potcdate.sin
+
+# gettext generated files
+po/multi-delogo.pot
+po/POTFILES
+po/remove-potcdate.sed
+po/stamp-po
+po/*.gmo
+
+# Compiler output
+*.o
+src/filter-generator/libfilter-generator.a
+src/opencv-frame-provider/libopencv-frame-provider.a
+src/opencv-logo-finder/libopencv-logo-finder.a
+src/opencv-logo-finder/libfilter-list-logo-adapter.a
+src/opencv-logo-finder/logo-finder
+src/opencv-logo-finder/logo-finder.exe
+src/gui/multi-delogo
+src/gui/multi-delogo.exe
+
+# Test related output
+test-driver
+test/**/test-suite.log
+test/**/*.log
+test/**/*.trs
+
+# Tag file for editor jumping
+TAGS

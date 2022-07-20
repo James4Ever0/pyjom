@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_cudaoptflow
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/test/test_main.cpp
+ Extra
+ opencv_cudaoptflow
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/test/test_optflow.cpp
+ Extra
+ opencv_cudaoptflow
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/test/test_precomp.hpp
+ Extra
+ opencv_cudaoptflow
+ AccuracyTest

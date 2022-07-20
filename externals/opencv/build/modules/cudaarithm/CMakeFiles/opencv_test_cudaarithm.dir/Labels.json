@@ -1,0 +1,114 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_arithm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_buffer_pool.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_core.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_element_operations.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_event.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_gpumat.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_opengl.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_reductions.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_stream.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaarithm",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaarithm",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_cudaarithm"
+	}
+}

@@ -1,0 +1,49 @@
+# Target labels
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_arithm.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_buffer_pool.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_core.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_element_operations.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_event.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_gpumat.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_main.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_opengl.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_reductions.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_stream.cpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/test/test_precomp.hpp
+ Extra
+ opencv_cudaarithm
+ AccuracyTest

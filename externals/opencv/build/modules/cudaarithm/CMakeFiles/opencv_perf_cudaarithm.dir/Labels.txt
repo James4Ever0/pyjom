@@ -1,0 +1,29 @@
+# Target labels
+ Extra
+ opencv_cudaarithm
+ PerfTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_arithm.cpp
+ Extra
+ opencv_cudaarithm
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_core.cpp
+ Extra
+ opencv_cudaarithm
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_element_operations.cpp
+ Extra
+ opencv_cudaarithm
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_main.cpp
+ Extra
+ opencv_cudaarithm
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_reductions.cpp
+ Extra
+ opencv_cudaarithm
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaarithm/perf/perf_precomp.hpp
+ Extra
+ opencv_cudaarithm
+ PerfTest

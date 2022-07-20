@@ -1,0 +1,16 @@
+{
+    "name": "whatever",
+    "version": "1.0.0",
+    "description": "hello wechaty",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo 'no test so i am very happy'"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "qrcode-terminal": "^0.12.0",
+        "wechaty": "^1.20.2",
+        "wechaty-puppet-wechat": "^1.18.1"
+    }
+}

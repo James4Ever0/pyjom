@@ -1,0 +1,11 @@
+numpy
+scipy
+#opencv_python
+#opencv_contrib_python
+# you may not use these
+matplotlib
+tqdm
+Image
+Pillow
+munkres
+# you may download no version here.

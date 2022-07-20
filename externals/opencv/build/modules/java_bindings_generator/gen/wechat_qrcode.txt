@@ -1,0 +1,10 @@
+PORTED FUNCs LIST (2 of 2):
+
+  cv::wechat_qrcode::WeChatQRCode::WeChatQRCode(string detector_prototxt_path = "", string detector_caffe_model_path = "", string super_resolution_prototxt_path = "", string super_resolution_caffe_model_path = "")
+ vector_string cv::wechat_qrcode::WeChatQRCode::detectAndDecode(Mat img, vector_Mat& points = vector_Mat())
+
+SKIPPED FUNCs LIST (0 of 2):
+
+
+1 def args - 1 funcs
+4 def args - 1 funcs
