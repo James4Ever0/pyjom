@@ -83,7 +83,8 @@ def sampleChatStack(originGroup: int,
                     min_corpus_size=100,
                     sample_size=2000,
                     originGroupCut=50):  # must exclude sent messages.
-    assert min_corpus_size >= sample_size
+    # assert min_corpus_size >= sample_size
+    # do not do this
     population = [(group_id, max(0,
                                  len(chat_stack[group_id]) - 1))
                   for group_id in chat_stack.keys() if group_id != originGroup]
@@ -126,13 +127,13 @@ def sentimentFilter(sentiment, threshold=0.85):
 def getChatLocalResponse(
     originGroup: int,
     msg: str,
-    min_corpus_size=1000,
-    sample_size=700,
+    min_corpus_size=100,
+    sample_size=2000,
     k_top=30,
     originGroupCut=50,
 ):
     global chat_stack_lock
-    assert min_corpus_size >= sample_size
+    # assert min_corpus_size >= sample_size
     if chat_stack_lock:
         return  # do nothing. maybe another thread is holding the lock.
     # must set a global lock.

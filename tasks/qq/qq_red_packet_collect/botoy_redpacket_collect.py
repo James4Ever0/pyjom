@@ -27,7 +27,7 @@ groupNoReplyStack = {}  # 防止连续对一个群持续输出
 # this is to get the current server running status. i suspect.
 
 
-def groupMsgRepeater(msg: str, sentiment_threshold=0.8):
+def groupMsgRepeater(msg: str, sentiment_threshold=0.7):
     sentiment = getAbsSentiment(msg)
     if sentiment > sentiment_threshold:
         return msg
@@ -52,7 +52,7 @@ def sendBotGroupTextMsg(
         replyGetterYielder,
         groupBannedErrorBuffer=100,  #被禁言之后的buffer
         retry=3,
-        min_reply_length=5, # some impirical value.
+        min_reply_length=5,  # some impirical value.
         delay_time_range=(5, 15),
         context_size_range=(1, 3),  # maybe we do not need no context. or not?
         maxRepeatRange=(2, 5),
@@ -166,7 +166,7 @@ def sendRandomGroupMessage():
         sendAtriGroupChatMessage, sendGPT2GroupChatMessage,
         sendChatLocalResponse, sendRepeaterResponse
     ]
-    weightList = [1,3, 4, 2]
+    weightList = [1, 3, 4, 2]
     replyGetterYielder = weightedRandomYielder(replyGetterList, weightList)
     sendBotGroupTextMsg(replyGetterYielder)
 
