@@ -1,4 +1,5 @@
-bash ~/mount_disks.sh
+#bash ~/mount_disks.sh
+# not going to mount shit.
 # mkdir /media/root/help/AGI/pyjom
 # mkdir /media/root/Toshiba30003/pyjom # select the last one.
 # mkdir /media/root/Jumpcut/pyjom
