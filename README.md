@@ -6,7 +6,6 @@ jerk off machine in python, or in other words, "we media machine", "fully automa
 #### 软件架构
 软件架构说明
 
-some changes
 
 #### 安装教程
 
