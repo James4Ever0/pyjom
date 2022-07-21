@@ -13,8 +13,8 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--qq", type=int, default= 1281727431, required= False) # must not required since we have default value here.
 parser.add_argument("--port", type=int, default=8780, required= False)
-parser.add_argument("--log", type=int, default=1, required= False)
-parser.add_argument("--log_file", type=int, default=1, required= False)
+parser.add_argument("--log", action="store_true")
+parser.add_argument("--log_file", action="store_true")
 
 # 忽略信息的blacklist 还有user_blacklist
 group_blacklist = [927825838] # 微信的hook发布群
@@ -24,8 +24,8 @@ parsed_args = parser.parse_args()
 
 my_qq = parsed_args.qq
 server_port = parsed_args.port
-log = bool(parsed_args.log)
-log_file = bool(parsed_args.log_file)
+log = parsed_args.log
+log_file = parsed_args.log_file
 
 # you can pass the qq via enviorment variable.
 # it is already inside. so the call fails.
