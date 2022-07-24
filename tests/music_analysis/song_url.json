@@ -1,0 +1,38 @@
+{
+    "data": [{
+        "id": 18981962,
+        "url": "http://m802.music.126.net/20220724132831/7a79bd22106161d38dba88d9df597449/jd-musicrep-ts/7253/9ff8/049c/ac2a4ca3c27cde012553e9d2fc5d1c7e.mp3",
+        "br": 128012,
+        "size": 481115,
+        "md5": "ac2a4ca3c27cde012553e9d2fc5d1c7e",
+        "code": 200,
+        "expi": 1200,
+        "type": "mp3",
+        "gain": -0.0008,
+        "fee": 1,
+        "uf": null,
+        "payed": 0,
+        "flag": 1284,
+        "canExtend": false,
+        "freeTrialInfo": {
+            "start": 0,
+            "end": 30
+        },
+        "level": "standard",
+        "encodeType": "mp3",
+        "freeTrialPrivilege": {
+            "resConsumable": true,
+            "userConsumable": false,
+            "listenType": null
+        },
+        "freeTimeTrialPrivilege": {
+            "resConsumable": false,
+            "userConsumable": false,
+            "type": 0,
+            "remainTime": 0
+        },
+        "urlSource": 0,
+        "rightSource": 0
+    }],
+    "code": 200
+}
