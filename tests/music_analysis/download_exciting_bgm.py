@@ -17,4 +17,7 @@ if code == 200: # no error here.
     mySong = songs[0]
     mySongName = mySong["name"]
     mySongId = mySong["id"]
-    mySongArtists = mySong["ar"] # reserved for further use.
+    mySongArtists = mySong["ar"] # reserved for further use. like find other songs by the artist.
+
+    # download that thing.
+    download_result = requests.get(baseUrl + "", params = {})
