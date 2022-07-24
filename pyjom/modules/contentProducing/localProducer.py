@@ -28,7 +28,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 required_type = filter_content.get("type")
                 media_type = metadata["type"]
                 abandon_flag = not required_type == media_type
-                breakpoint()
+                # breakpoint()
                 if abandon_flag:
                     break
             elif filter_name == "labels":
@@ -135,8 +135,10 @@ def FilesystemInfoFilter(processed_info, filters={}):
         print("CUTS:")
         filtered_info.update({file_path: cuts})
         breakpoint()
-        if abandon_flag:
-            continue  # abandon those without qualificaton info.
+        # # what the fuck? # #
+        # if abandon_flag:
+        #     continue  # abandon those without qualification info.
+        # # what the fuck? # #
         # breakpoint()
     return filtered_info
 
