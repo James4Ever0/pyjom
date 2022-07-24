@@ -5,9 +5,9 @@ from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 def FilesystemInfoFilter(processed_info, filters={}):
     # this is just standard filter logic...
     filtered_info = {}
-    print(processed_info)
-    print("PROCESSED_INFO")
-    breakpoint()
+    # print(processed_info)
+    # print("PROCESSED_INFO")
+    # breakpoint()
     for file_path, file_info in processed_info.items():
         # abandon_flag = False
         # ensure all filter names must be inside
@@ -133,8 +133,8 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 break
         if abandon_flag:
             continue  # abandon those without qualificaton info.
-        print("CUTS:", cuts)
-        breakpoint()
+        # print("CUTS:", cuts)
+        # breakpoint()
         filtered_info.update({file_path: cuts})
     return filtered_info
 
