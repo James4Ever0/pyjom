@@ -41,7 +41,11 @@ if code == 200: # no error here.
     mySong = songs[1]
     mySongName = mySong["name"]
     mySongId = mySong["id"]
-    mySongArtists = mySong["ar"] # reserved for further use. like find other songs by the artist.
+    if "ar" in mySong.keys():
+        mySongArtists = mySong["ar"] # reserved for further use. like find other songs by the artist.
+    elif "artists" in mySong.keys():
+        mySongArtists = mySong["artists"]
+    else: mySongArtists = []
     # mySong["artists"]
 
     print("SELECTED SONG:")
