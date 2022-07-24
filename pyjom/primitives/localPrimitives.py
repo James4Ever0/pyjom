@@ -63,7 +63,7 @@ class FilesystemAutoContentReviewer(FilesystemContentReviewer):
         )
 
 class FilesystemAutoContentProducer(ContentProducer):
-    def __init__(self, filepath=None, dirpath=None, recursive=False, enable_log=True,reviewerLogs = [],filters={}, path_replacers = [], template="funny_animal_with_bgm", template_config = {}):
+    def __init__(self, filepath=None, dirpath=None, recursive=False, enable_log=True,reviewerLogs = [],filters={}, path_replacers = [], template="pets_with_music", template_config = {}):
         super().__init__()
         if filepath is None:
             assert dirpath is not None

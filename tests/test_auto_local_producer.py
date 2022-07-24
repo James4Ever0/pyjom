@@ -29,12 +29,13 @@ wbRev = FilesystemAutoContentProducer(
             ],
             "/root/Desktop/works/pyjom/samples/"
         ]
-    ]
+    ],
+    template = "pets_with_music",
+    template_config = {"music":""}
     # filters={"yolov5":["dog","cat"],"labels":["dog","cat"],"framedifference_talib_detector":30}
     # you can also translate funny videos from youtube.
     # dummy_auto=False,
     # args=autoArgs,
-    # template_names=template_names,
     # semiauto=False # i do not want to comment shit.
 )
 
