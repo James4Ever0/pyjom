@@ -1,4 +1,4 @@
-download_path = "exciting_bgm.mp3" # is the extension right?
+get_download_path = lambda extension:"exciting_bgm.{}".format(extension) # is the extension right?
 
 import requests
 baseUrl = "http://localhost:4000"
@@ -30,4 +30,10 @@ if code == 200: # no error here.
     # breakpoint()
     code = download_result_json["code"]
     if code == 200: # allow to download now?
-        myDownloadUrls = download_result_json["data"]
+        myDownloads = download_result_json["data"]
+        myDownload = myDownloads[0]
+        myDownloadUrl = myDownload["url"]
+        myDownloadType = myDownload["type"]
+
+        # now download the thing.
+        
