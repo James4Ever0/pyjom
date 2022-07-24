@@ -291,6 +291,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # now generate the freaking video.
     # if "one_clip_per_file" in policy_names:
     #     used_files = [] # may raise exception.
+    # total_cuts {} and demanded_cut_spans [] are both empty
     render_list = getRenderList(total_cuts, demanded_cut_spans)
     print(render_list) # empty render list! wtf?
     breakpoint()
