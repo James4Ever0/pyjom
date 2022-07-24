@@ -227,7 +227,8 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                     )
 
     # finally remove those without filter keys.
-    filterKeys = [y for y in filters.keys() if y != "meta"]
+    
+    filterKeys = filters.get("ensure",[y for y in filters.keys() if y != "meta"])
     for k in list(fileinfo.keys()):
         # do metainfo extraction.
         # print("CORE PATH")
