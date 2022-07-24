@@ -9,3 +9,8 @@ search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keyword
 
 search_result_json = search_result.json() # check search_result.json
 # breakpoint()
+code = search_result_json["code"]
+result = search_result_json["result"]
+
+if code == 200: # no error here.
+    songs = result["songs"]
