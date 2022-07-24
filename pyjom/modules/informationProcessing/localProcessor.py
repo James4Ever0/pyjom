@@ -137,7 +137,6 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                         )
                         main_time_array.append(_time)
                         for detected in yolov5_detector:
-                            print("YOLOV5 DETECTED", detected)
                             # ignore the location. we do not need this shit till we somehow want to focus on the shit.
                             confidence = detected[
                                 "confidence"
@@ -201,9 +200,7 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                         "timestep": timestep,
                     }
                     fileinfo = update_subdict(fileinfo, filename, {"yolov5": result})
-                    print("YOLO UPDATED")
-                    breakpoint()
-
+                    # breakpoint()
                     # TODO: complete the convolutional span extractor.
                     # pass
                 elif (
@@ -236,8 +233,6 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
         # print("CORE PATH")
         fileinfo[k]["meta"] = metainfo[k]
         fileElemKeys = fileinfo[k].keys()
-        print(filterKeys,fileElemKeys)
-        breakpoint()
         mbool_condition = all([x in fileElemKeys for x in filterKeys])
         # print("CHECKING:",k)
         # print("CONDITION:",mbool_condition)
