@@ -10,6 +10,7 @@ keywords = "last friday night" # american pop music?
 # phone, password = "19825089619","dbH361210110"
 # login_response = requests.get(baseUrl+"/login/cellphone",params={"phone": phone,"password": password})
 login_response = requests.get(baseUrl+"/logout")
+login_response_json = login_response.json()
 print(login_response_json)
 
 login_response = requests.get(baseUrl+"/register/anonimous")
