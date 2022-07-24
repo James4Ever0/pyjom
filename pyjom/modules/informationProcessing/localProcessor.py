@@ -227,23 +227,19 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                     )
 
     # finally remove those without filter keys.
+    filterKeys = [y for y in filters.keys() if y != "meta"]
     for k in list(fileinfo.keys()):
         # do metainfo extraction.
         # print("CORE PATH")
-        # print(k)
-        # breakpoint()
         fileinfo[k]["meta"] = metainfo[k]
-        mbool_condition = all(
-            [
-                x in fileinfo[k].keys()
-                for x in [y for y in filters.keys() if y != "meta"]
-            ]
-        )
+        fileElemKeys = fileinfo[k].keys()
+        breakpoi
+        mbool_condition = all([x in fileElemKeys for x in filterKeys])
         # print("CHECKING:",k)
         # print("CONDITION:",mbool_condition)
         # breakpoint()
         if not mbool_condition:
-            fileinfo.pop(k)
+            fileinfo.pop(k)  # why the fuck you pop all of them!
     print(fileinfo)
     print("____________FILEINFO DUMP____________")
     breakpoint()
