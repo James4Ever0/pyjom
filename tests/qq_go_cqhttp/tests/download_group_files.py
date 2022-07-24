@@ -7,7 +7,21 @@ baseurl = "http://localhost:5700/"
 # go-cqhttp client does not support adding friends, searching groups or something! test if we can login opqbot and this shit at the same time!
 
 # it is working but unable to know if it is going to kill me.
-
+import time
+def check_connection():
+    while True:
+        try:
+            response = requests.get(baseurl+"/get_status", timeout=5)
+            response_json = response.json()
+            print("GO_CQHTTP STATUS:", response_json)
+            assert response_json["online"] == True
+            print("connection ok")
+            break
+        except:
+            import traceback
+            traceback.print_exc()
+            print("Connection error.")
+            time.sleep(3)
 
 def get_url(api):
     assert not api.startswith("/")
@@ -127,13 +141,15 @@ def group_file_wholesale_downloader(group_id, download_path="qq_group_file_downl
 
 download_path = "/media/root/help/pyjom/tests/wechat_bots/msimg32.dll_wechat_hook_webapi/official_qq_group_files"
 group_ids = [927825838, 537384511] # i know i am in these groups.
-import time
+#  import time
+check_connection() # failsafe or not?
 
 for group_id in group_ids:
-    while True:
-        try:
-            group_file_wholesale_downloader(group_id, download_path=download_path, skip_exist=True)
-            break
-        except: time.sleep(10) # auto retry.
+    #  while True:
+        #  try:
+    group_file_wholesale_downloader(group_id, download_path=download_path, skip_exist=True)
+    #  break
+        #  except: time.sleep(10) # auto retry.
+        # there is no need for any failsafes. maybe we are outside the groups.
 
 # already downloaded. waiting for updates?
