@@ -85,6 +85,7 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
     # breakpoint()# get meta information from here.
     fileinfo = {}
     for rlog in reviewerLogs:
+        print("READING LOG: %s" % rlog)
         content_json = read_json(rlog)
         for elem in content_json:
             review_tuple = elem["review"]["review"]
