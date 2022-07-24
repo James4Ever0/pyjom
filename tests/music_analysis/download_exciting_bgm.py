@@ -26,7 +26,8 @@ keywords = "last friday night" # american pop music?
 
 # breakpoint()
 
-search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
+search_result = requests.get(baseUrl+"/search", params={"keywords": keywords})
+# search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
 
 search_result_json = search_result.json() # check search_result.json
 # breakpoint()
@@ -34,6 +35,8 @@ code = search_result_json["code"]
 result = search_result_json["result"]
 
 if code == 200: # no error here.
+    print(result)
+    breakpoint()
     songs = result["songs"]
     mySong = songs[1]
     mySongName = mySong["name"]
