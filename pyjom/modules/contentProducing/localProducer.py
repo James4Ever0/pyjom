@@ -131,10 +131,10 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 cuts.update({filter_name: avaliable_cuts})
             if abandon_flag: # is this duplicated?
                 break
-        print(cuts)
-        print("CUTS:")
+        # print(cuts)
+        # print("CUTS:")
         filtered_info.update({file_path: cuts})
-        breakpoint()
+        # breakpoint()
         # # what the fuck? # #
         # if abandon_flag:
         #     continue  # abandon those without qualification info.
