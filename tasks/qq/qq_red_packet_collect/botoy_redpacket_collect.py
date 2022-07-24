@@ -47,7 +47,7 @@ def checkGroupMsgSendStatus(group_id, decrease=True):
 
 
 # now async.
-@asyncDaemonThread
+@asyncThread
 def sendBotGroupTextMsg(
         replyGetterYielder,
         groupBannedErrorBuffer=100,  #被禁言之后的buffer
@@ -79,8 +79,12 @@ def sendBotGroupTextMsg(
         groupChatCursorWithContext["msg"] = messageContext
 
         for replyGetter, argumentList, flag, needContext, enableRetryFlag in replyGetterYielder:  # use all methods.
+            if exit_event.is_set():
+                break
             retried = False
             for _ in range(retry):  # retry for three times.
+                if exit_event.is_set():
+                    break
                 extraFlags = {}
                 if enableRetryFlag:
                     extraFlags.update({"retryFlag": retried})
@@ -177,7 +181,7 @@ schedule.every(1).minute.do(sendRandomGroupMessage)  # will this shit work?
 
 
 @bot.on_group_msg
-def group(ctx: GroupMsg):
+def group(ctx: GroupMsg, groupInitReplyDelayRange=(2, 20)):
     # global groupChatCursor
     # print('收到群消息，群号为', ctx.FromGroupId)
     data_dict = ctx.data  # recommend to use this json object. or not?
@@ -186,6 +190,11 @@ def group(ctx: GroupMsg):
     RedBaginfoDict = data_dict["RedBaginfo"]
     RedBaginfo = ctx.RedBaginfo
     MsgType = ctx.MsgType
+
+    # first initialize random delay for every group in groupNoReplyStack
+    if group_id not in groupNoReplyStack.keys():
+        groupNoReplyStack.update(
+            {group_id: -random.randint(*groupInitReplyDelayRange)})
 
     def writeGroupChatCursor(Content):
         global groupChatCursor, chat_stack_lock
@@ -247,7 +256,7 @@ def group(ctx: GroupMsg):
         print(prefix,
               "_____________RedPacket Message Dump_____________",
               file=sys.stderr)
-        startDaemonThread(openRedBag, (RedBaginfoDict, group_id, RedBaginfo))
+        startThread(openRedBag, (RedBaginfoDict, group_id, RedBaginfo))
     schedule.run_pending()  # this is async.
     # breakpoint()
 
