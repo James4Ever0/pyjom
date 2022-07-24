@@ -7,5 +7,5 @@ keywords = "last friday night" # american pop music?
 
 search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
 
-print(search_result.json())
-breakpoint()
+search_result_json = search_result.json() # check search_result.json
+# breakpoint()
