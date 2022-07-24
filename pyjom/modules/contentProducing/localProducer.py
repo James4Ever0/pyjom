@@ -8,7 +8,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
         # abandon_flag = False
         # ensure all filter names must be inside
         abandon_flag = [filter_name in file_info.keys() for filter_name in filters.keys()]
-        abandon_flag = not all(abandon_flag)
+        abandon_flag = not all(abandon_flag) #what is this?
         metadata = file_info["meta"] # is that necessary? do we want to make any filter with it?
         if abandon_flag: continue # abandon those without qualificaton info.
         cuts = {}
@@ -100,7 +100,7 @@ def FilesystemProducer(processed_info, filters={}, template=None, template_confi
     template_function = getProducerTemplate(template)
 
     meta_info = {k:processed_info[k]["meta"] for k in processed_info.keys()} # so there is no additional "meta" key.
-    print(filtered_info)
+    print(filtered_info) # empty! shit.
     print(meta_info)
     breakpoint()
     
