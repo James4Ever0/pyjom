@@ -223,7 +223,7 @@ def getFileCuts(
                         modifiers.update(framework_candidate)
                         # add that modifier.
             compiled_file_cuts.append(new_cut)
-        total_cuts_dict.update({file_path: compiled_file_cuts})
+        total_cuts_dict.update({file_path: compiled_file_cuts.copy()})
     return total_cuts_dict
 
 
@@ -284,7 +284,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     demanded_cut_spans, standard_bpm_spans = getMusicCutSpans(
         music, music_duration, lyric_path, maxtime, mintime
     )
-
+    # demanded_cut_spans is empty!
     # total_cuts
     total_cuts = getFileCuts(filtered_info, meta_info, standard_bpm_spans, policy_names)
 
