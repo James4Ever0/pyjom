@@ -233,7 +233,9 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
         # print("CORE PATH")
         fileinfo[k]["meta"] = metainfo[k]
         fileElemKeys = fileinfo[k].keys()
-        if fileinfo[k].get("discard", False):fileinfo.pop(k)
+        if fileinfo[k].get("discard", False):
+            fileinfo.pop(k)
+            continue
         mbool_condition = all([x in fileElemKeys for x in filterKeys])
         # print("CHECKING:",k)
         # print("CONDITION:",mbool_condition)
