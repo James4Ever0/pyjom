@@ -50,7 +50,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 # breakpoint()
                 if not abandon_flag: break
                 avaliable_cuts = {}
-                for detected_object, timespans in DOT:
+                for detected_object, timespans in DOT.items():
                     if detected_object not in objects: continue
                     for timespan in timespans:
                         stop, start = timespan[1],timespan[0]
@@ -59,7 +59,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
                             timespan = (start, stop) # do this anyway.
                         timespan_length = stop-start
                         if timespan_length < min_time: continue
-                        avaliable_cuts.update({avaliable_cuts.get(detected_object,[])+[timespan]})
+                        avaliable_cuts.update({detected_object:avaliable_cuts.get(detected_object,[])+[timespan]})
                 # collect avaliable cuts.
                 cuts.update({filter_name:avaliable_cuts})
                 # filter out required durations.
