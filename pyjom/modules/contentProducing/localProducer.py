@@ -129,13 +129,15 @@ def FilesystemInfoFilter(processed_info, filters={}):
                     }
                     avaliable_cuts.append(framework2)
                 cuts.update({filter_name: avaliable_cuts})
-            if abandon_flag:
+            if abandon_flag: # is this duplicated?
                 break
+        print(cuts)
+        print("CUTS:")
+        filtered_info.update({file_path: cuts})
+        breakpoint()
         if abandon_flag:
             continue  # abandon those without qualificaton info.
-        # print("CUTS:", cuts)
         # breakpoint()
-        filtered_info.update({file_path: cuts})
     return filtered_info
 
 
