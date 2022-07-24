@@ -94,16 +94,19 @@ def getMusicCutSpans(
     counter = 0
     oldCandidateLength = None
     while True:
-        if counter > 10000: # some dangerous deadloop.
+        if counter > 10000:  # some dangerous deadloop.
             breakpoint()
-            print("LOOPCOUNT",counter)
-            print(len(demanded_cut_points), remaining_time,standard_bpm_spans[0])
+            print("LOOPCOUNT", counter)
+            print(len(demanded_cut_points), remaining_time, standard_bpm_spans[0])
         counter += 1
         startingPoint = demanded_cut_points[-1]
         try:
-            selected_candidates = [x for x in candidates if x > startingPoint]# unsupported comparation between 'float' and 'list'?
+            selected_candidates = [
+                x for x in candidates if x > startingPoint
+            ]  # unsupported comparation between 'float' and 'list'?
         except:
             import traceback
+
             traceback.print_exc()
             breakpoint()
         newCandidateLength = len(selected_candidates)
@@ -113,7 +116,9 @@ def getMusicCutSpans(
         if oldCandidateLength is None:
             oldCandidateLength = newCandidateLength
         else:
-            if oldCandidateLength == newCandidateLength: # force append those points without progress
+            if (
+                oldCandidateLength == newCandidateLength
+            ):  # force append those points without progress
                 # demanded_cut_points.append(selected_candidates) # this is wrong.
                 demanded_cut_points.append(selected_candidates[0])
                 # no need to update the oldCandidateLength since it is the same as the new
@@ -140,9 +145,10 @@ def getMusicCutSpans(
         if music_duration - elem < standard_bpm_spans[0]:
             demanded_cut_points.remove(elem)
     demanded_cut_points.append(music_duration)
-    demanded_cut_spans = list(zip(demanded_cut_points[0:-1], demanded_cut_points[1:0]))
-    print("DEMANDED MUSIC CUT SPANS GENERATED")
-    breakpoint()
+    demanded_cut_spans = list(zip(demanded_cut_points[0:-1], demanded_cut_points[1:]))
+    # somehow it was wrong.
+    # print("DEMANDED MUSIC CUT SPANS GENERATED")
+    # breakpoint()
     return demanded_cut_spans, standard_bpm_spans
 
 
@@ -287,14 +293,16 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     )
     # demanded_cut_spans is empty!
     # total_cuts
-    total_cuts = getFileCuts(filtered_info, meta_info, standard_bpm_spans, policy_names)
+    total_cuts = getFileCuts(filtered_info, meta_info, standard_bpm_spans, policy_names) # is this shit empty?
+    print(total_cuts)
+    breakpoint()
 
     # now generate the freaking video.
     # if "one_clip_per_file" in policy_names:
     #     used_files = [] # may raise exception.
     # total_cuts {} and demanded_cut_spans [] are both empty
     render_list = getRenderList(total_cuts, demanded_cut_spans)
-    print(render_list) # empty render list! wtf?
+    print(render_list)  # empty render list! wtf?
     breakpoint()
 
     # now render the file. how to make it happen?
