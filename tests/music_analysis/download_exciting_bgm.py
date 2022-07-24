@@ -14,3 +14,7 @@ result = search_result_json["result"]
 
 if code == 200: # no error here.
     songs = result["songs"]
+    mySong = songs[0]
+    mySongName = mySong["name"]
+    mySongId = mySong["id"]
+    mySongArtists = mySong["ar"]
