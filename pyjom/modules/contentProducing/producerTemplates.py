@@ -101,8 +101,11 @@ def getMusicCutSpans(
         counter += 1
         startingPoint = demanded_cut_points[-1]
         try:
-            selected_candidates = [x for x in candidates if x > startingPoint]
-            # unsupported comparation between 'float' and 'list'?
+            selected_candidates = [x for x in candidates if x > startingPoint]# unsupported comparation between 'float' and 'list'?
+        except:
+            import traceback
+            traceback.print_exc()
+            breakpoint()
         newCandidateLength = len(selected_candidates)
         if newCandidateLength == 0:
             # nothing left.
@@ -111,7 +114,8 @@ def getMusicCutSpans(
             oldCandidateLength = newCandidateLength
         else:
             if oldCandidateLength == newCandidateLength: # force append those points without progress
-                demanded_cut_points.append(selected_candidates)
+                # demanded_cut_points.append(selected_candidates) # this is wrong.
+                demanded_cut_points.append(selected_candidates[0])
                 # no need to update the oldCandidateLength since it is the same as the new
                 continue
             else:
