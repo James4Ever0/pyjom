@@ -8,7 +8,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
         # abandon_flag = False
         # ensure all filter names must be inside
         abandon_flag = [filter_name in file_info.keys() for filter_name in filters.keys()]
-        print(file_info.keys(), filters.keys(), ab)
+        print(file_info.keys(), filters.keys(), abandon_flag)
         breakpoint()
         abandon_flag = not all(abandon_flag) #what is this?
         metadata = file_info["meta"] # is that necessary? do we want to make any filter with it?
