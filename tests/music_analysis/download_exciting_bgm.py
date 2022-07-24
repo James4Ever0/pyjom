@@ -7,6 +7,8 @@ keywords = "last friday night" # american pop music?
 
 login_status = requests.get(baseUrl+"/login/status")
 login_status_json = login_status.json()
+print(login_status_json)
+# breakpoint()
 
 search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
 
@@ -26,10 +28,10 @@ if code == 200: # no error here.
     print(mySongName, mySongId, mySongArtists)
 
     # download that thing.
-    download_result = requests.get(baseUrl + "/song/url", params = {"id":mySongId}) # 试听歌曲
+    download_result = requests.get(baseUrl + "/song/download/url", params = {"id":mySongId}) # 试听歌曲
     download_result_json = download_result.json()
 
-    # print(download_result_json) # no download url!
+    print(download_result_json) # no download url!
     # breakpoint()
     code = download_result_json["code"]
     if code == 200: # allow to download now?
