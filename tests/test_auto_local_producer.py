@@ -26,6 +26,7 @@ wbRev = FilesystemAutoContentProducer(
     filters={
         "yolov5": {"objects": ["dog", "cat"], "min_time": 2},
         "meta": {
+            "type":"video",
             "timelimit": {
                 "min": 1,
             }

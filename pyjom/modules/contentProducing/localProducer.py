@@ -17,6 +17,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 required_type = filter_content.get("type")
                 media_type = metadata["type"]
                 abandon_flag = not required_type == media_type
+                breakpoint()
                 if abandon_flag: break
             elif filter_name == "labels":
                 required, at_leasts = filter_content.get("required",[]), filter_content.get("at_leasts",[])
@@ -90,7 +91,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
 @decorator
 def FilesystemProducer(processed_info, filters={}, template=None, template_config={},):
     # print(processed_info) # why we only have one single goddamn path?
-    # breakpoint()
+    breakpoint()
     filtered_info = FilesystemInfoFilter(processed_info, filters=filters)
 
     template_function = getProducerTemplate(template)
