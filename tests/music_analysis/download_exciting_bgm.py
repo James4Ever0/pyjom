@@ -41,3 +41,6 @@ if code == 200: # no error here.
             data = result.content
             with open(get_download_path(myDownloadType),"wb") as f:
                 f.write(data)
+            print("DOWNLOAD SONG DONE.")
+            # THIS IS FREAKING WRONG... SHALL I LOGIN?
+            # Duration                                 : 30 s 41 ms
