@@ -36,4 +36,6 @@ if code == 200: # no error here.
         myDownloadType = myDownload["type"]
 
         # now download the thing.
-        
+        result = requests.get(myDownloadUrl)
+        if result.status_code == 200:
+            result.
