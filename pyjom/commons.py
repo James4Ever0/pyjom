@@ -199,6 +199,7 @@ def append_sublist(main_dict,sublist_key,item):
 def update_subdict(mdict,key,subdict):
     if key not in mdict: mdict[key]=subdict
     else: mdict[key].update(subdict)
+    return mdict
 
 def read_json(filepath):
     return json.loads(open(filepath, 'r').read())
