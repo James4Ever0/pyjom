@@ -26,5 +26,8 @@ if code == 200: # no error here.
     download_result = requests.get(baseUrl + "/song/url", params = {"id":mySongId}) # 试听歌曲
     download_result_json = download_result.json()
 
-    print(download_result_json) # no download url!
-    breakpoint()
+    # print(download_result_json) # no download url!
+    # breakpoint()
+    code = download_result_json["code"]
+    if code == 200: # allow to download now?
+        myDownloadUrls = download_result_json["data"]
