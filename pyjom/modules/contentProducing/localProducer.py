@@ -47,7 +47,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 detected_objects = list(DOT.keys())
                 abandon_flag = any([x in objects for x in detected_objects])
                 # what is this?
-                breakpoint()
+                # breakpoint()
                 if not abandon_flag: break
                 avaliable_cuts = {}
                 for detected_object, timespans in DOT:
