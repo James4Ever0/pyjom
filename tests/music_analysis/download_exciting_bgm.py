@@ -35,7 +35,7 @@ result = search_result_json["result"]
 
 if code == 200: # no error here.
     songs = result["songs"]
-    mySong = songs[0]
+    mySong = songs[1]
     mySongName = mySong["name"]
     mySongId = mySong["id"]
     mySongArtists = mySong["ar"] # reserved for further use. like find other songs by the artist.
@@ -44,7 +44,7 @@ if code == 200: # no error here.
     print(mySongName, mySongId, mySongArtists)
 
     # download that thing.
-    download_result = requests.get(baseUrl + "/song/download/url", params = {"id":mySongId}) # 试听歌曲
+    download_result = requests.get(baseUrl + "/song/url", params = {"id":mySongId}) # 试听歌曲
     download_result_json = download_result.json()
 
     print(download_result_json) # no download url!
