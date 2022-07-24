@@ -63,7 +63,7 @@ class FilesystemAutoContentReviewer(FilesystemContentReviewer):
         )
 
 class FilesystemAutoContentProducer(ContentProducer):
-    def __init__(self, filepath=None, dirpath=None, recursive=False, enable_log=True,reviewerLogs = [],filters={}, path_replacers = []):
+    def __init__(self, filepath=None, dirpath=None, recursive=False, enable_log=True,reviewerLogs = [],filters={}, path_replacers = [], template="funny_animal_with_bgm", template_config = {}):
         super().__init__()
         if filepath is None:
             assert dirpath is not None
@@ -82,7 +82,7 @@ class FilesystemAutoContentProducer(ContentProducer):
                 "info": filesystemFetcher, # can you do that?
                 "processor": keywordDecorator(FilesystemProcessor,reviewerLogs=self.reviewerLogs,filters=filters, path_replacers = path_replacers), # this is the second thing. how do you process this?
                 # "reviewer": filesystemReviewer,
-                "producer": keywordDecorator(FilesystemProducer, filters=filters, template="funny_animal_with_bgm",template_config = {}),
+                "producer": keywordDecorator(FilesystemProducer, filters=filters, template=template,template_config = template_config),
             }
         )
 
