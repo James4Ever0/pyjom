@@ -43,11 +43,15 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 objects, min_time = filter_content.get("objects",None), filter_content.get("min_time",2)
                 assert objects != None
                 assert min_time > 0
-                detected_objects = list(file_info[filter_name]["detected_objects_timespan"].keys())
+                DOT = file_info[filter_name]["detected_objects_timespan"]
+file_info[filter_name]["detected_objects_timespan"]
+                detected_objects = list(DOT.keys())
                 abandon_flag = all([x in objects for x in detected_objects])
+                # what is this?
+                breakpoint()
                 if abandon_flag: break
                 avaliable_cuts = {}
-                for detected_object, timespans in file_info[filter_name]["detected_objects_timespan"]:
+                for detected_object, timespans in DOT:
                     if detected_object not in objects: continue
                     for timespan in timespans:
                         stop, start = timespan[1],timespan[0]
@@ -91,7 +95,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
 @decorator
 def FilesystemProducer(processed_info, filters={}, template=None, template_config={},):
     # print(processed_info) # why we only have one single goddamn path?
-    breakpoint()
+    # breakpoint()
     filtered_info = FilesystemInfoFilter(processed_info, filters=filters)
 
     template_function = getProducerTemplate(template)
