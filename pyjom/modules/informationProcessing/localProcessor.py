@@ -7,6 +7,7 @@ from pyjom.commons import *
 def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
     # print("FILESYSTEM_PROCESSOR INTERCEPTED INFO",info)
     # print("REVIEWER LOGS:", reviewerLogs)
+    # breakpoint()
 
     # do not handle meta filters here.
     protocol, files = info  # source paths.
@@ -98,7 +99,7 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
             if primarykey == "labels":
                 discard = sample_review["discard"]
                 if discard:
-                    update_subdict(fileinfo, filename, {"discard": True})
+                    fileinfo = update_subdict(fileinfo, filename, {"discard": True})
                 else:
                     if primarykey in filters.keys():
                         if not any(
@@ -106,7 +107,7 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                         ):
                             # remove those without the label.
                             continue
-                    update_subdict(
+                    fileinfo = update_subdict(
                         fileinfo, filename, {"labels": primary_sample_content}
                     )
 
@@ -197,7 +198,7 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                         "detected_objects_timespan": new_identity_array,
                         "timestep": timestep,
                     }
-                    update_subdict(fileinfo, filename, {"yolov5": result})
+                    fileinfo = update_subdict(fileinfo, filename, {"yolov5": result})
                     # breakpoint()
                     # TODO: complete the convolutional span extractor.
                     # pass
@@ -218,7 +219,7 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                         if frame_length < min_frame_threshold:
                             continue
                         frameborders.append(frameborder)
-                    update_subdict(
+                    fileinfo = update_subdict(
                         fileinfo,
                         filename,
                         {"framedifference_talib_detector": frameborders},
