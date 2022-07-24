@@ -44,12 +44,11 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 assert objects != None
                 assert min_time > 0
                 DOT = file_info[filter_name]["detected_objects_timespan"]
-file_info[filter_name]["detected_objects_timespan"]
                 detected_objects = list(DOT.keys())
-                abandon_flag = all([x in objects for x in detected_objects])
+                abandon_flag = any([x in objects for x in detected_objects])
                 # what is this?
                 breakpoint()
-                if abandon_flag: break
+                if not abandon_flag: break
                 avaliable_cuts = {}
                 for detected_object, timespans in DOT:
                     if detected_object not in objects: continue
