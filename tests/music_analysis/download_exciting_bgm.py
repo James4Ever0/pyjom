@@ -5,6 +5,9 @@ baseUrl = "http://localhost:4000"
 
 keywords = "last friday night" # american pop music?
 
+login_status = requests.get(baseUrl+"/login/status")
+login_status_json = login_status.json()
+
 search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
 
 search_result_json = search_result.json() # check search_result.json
