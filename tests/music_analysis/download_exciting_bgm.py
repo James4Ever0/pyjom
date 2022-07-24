@@ -26,5 +26,5 @@ if code == 200: # no error here.
     download_result = requests.get(baseUrl + "/song/download/url", params = {"id":mySongId})
     download_result_json = download_result.json()
 
-    print(download_result_json)
+    print(download_result_json) # no download url!
     breakpoint()
