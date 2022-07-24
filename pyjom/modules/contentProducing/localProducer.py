@@ -8,6 +8,8 @@ def FilesystemInfoFilter(processed_info, filters={}):
         # abandon_flag = False
         # ensure all filter names must be inside
         abandon_flag = [filter_name in file_info.keys() for filter_name in filters.keys()]
+        print(file_info.keys(), filters.keys(), ab)
+        breakpoint()
         abandon_flag = not all(abandon_flag) #what is this?
         metadata = file_info["meta"] # is that necessary? do we want to make any filter with it?
         if abandon_flag: continue # abandon those without qualificaton info.
