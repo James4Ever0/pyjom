@@ -63,7 +63,7 @@ class FilesystemAutoContentReviewer(FilesystemContentReviewer):
         )
 
 class FilesystemAutoContentProducer(ContentProducer):
-    def __init__(self, filepath=None, dirpath=None, recursive=False, enable_log=True,reviewerLogs = [],filters={}, path_replacers = [], template="pets_with_music", template_config = {}):
+    def __init__(self, filepath=None, dirpath=None, recursive=False, enable_log=True,reviewerLogs = [],processor_filters={},producer_filters={}, path_replacers = [], template="pets_with_music", template_config = {}):
         super().__init__()
         if filepath is None:
             assert dirpath is not None
@@ -80,9 +80,9 @@ class FilesystemAutoContentProducer(ContentProducer):
             {
                 "topic": filesystemTopicGenerator,  # how to generate this?
                 "info": filesystemFetcher, # can you do that?
-                "processor": keywordDecorator(FilesystemProcessor,reviewerLogs=self.reviewerLogs,filters=filters, path_replacers = path_replacers), # this is the second thing. how do you process this?
+                "processor": keywordDecorator(FilesystemProcessor,reviewerLogs=self.reviewerLogs,filters=processor_filters, path_replacers = path_replacers), # this is the second thing. how do you process this?
                 # "reviewer": filesystemReviewer,
-                "producer": keywordDecorator(FilesystemProducer, filters=filters, template=template,template_config = template_config),
+                "producer": keywordDecorator(FilesystemProducer, filters=producer_filters, template=template,template_config = template_config),
             }
         )
 

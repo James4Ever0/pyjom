@@ -239,9 +239,9 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
         # breakpoint()
         if not mbool_condition:
             fileinfo.pop(k)  # why the fuck you pop all of them!
-    print(fileinfo)
-    print("____________FILEINFO DUMP____________")
-    breakpoint()
+    # print(fileinfo)
+    # print("____________FILEINFO DUMP____________")
+    # breakpoint()
     return fileinfo
     # fileSystemUrl, fileList = info # I need the processed logs!
     # return {"husky": "cute husky check my youtube"} # this is dummy return!

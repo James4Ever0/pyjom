@@ -23,13 +23,13 @@ wbRev = FilesystemAutoContentProducer(
         "/root/Desktop/works/pyjom/logs/local/1652502047_091761.json",  # yolov5
         "/root/Desktop/works/pyjom/logs/local/1652856912_480332.json",  # framedifference_talib
     ],
-    filters={
+    producer_filters={
         "yolov5": {"objects": ["dog", "cat"], "min_time": 2},
         "meta": {
-            "type":"video",
+            "type": "video",
             "timelimit": {
                 "min": 1,
-            }
+            },
         },
     },
     path_replacers=[
@@ -44,14 +44,21 @@ wbRev = FilesystemAutoContentProducer(
     ],
     template="pets_with_music",
     template_config={
-        "music": {"filepath":"/media/root/help/pyjom/tests/music_analysis/exciting_bgm.mp3", "lyric_path":"/media/root/help/pyjom/tests/music_analysis/exciting_bgm.lrc"},
-        "font":"/root/.local/share/fonts/simhei.ttf",
+        "music": {
+            "filepath": "/media/root/help/pyjom/tests/music_analysis/exciting_bgm.mp3",
+            "lyric_path": "/media/root/help/pyjom/tests/music_analysis/exciting_bgm.lrc",
+        },
+        "font": "/root/.local/share/fonts/simhei.ttf",
         # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
-        "policy":{},
-        "maxtime":3,
-        "mintime":1,
+        "policy": {},
+        "maxtime": 3,
+        "mintime": 1,
+    },
+    processor_filters={
+        "yolov5": ["dog", "cat"],
+        "labels": ["dog", "cat"],
+        "framedifference_talib_detector": 30,
     }
-    # filters={"yolov5":["dog","cat"],"labels":["dog","cat"],"framedifference_talib_detector":30}
     # you can also translate funny videos from youtube.
     # dummy_auto=False,
     # args=autoArgs,
