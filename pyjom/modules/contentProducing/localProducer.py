@@ -37,8 +37,8 @@ def FilesystemInfoFilter(processed_info, filters={}):
                     abandon_flag = True
                     break
             elif filter_name == "yolov5":
-                if type(filter_content) == list:
-                    breakpoint()
+                # if type(filter_content) == list:
+                #     breakpoint()
                 objects, min_time = filter_content.get("objects",None), filter_content.get("min_time",2)
                 assert objects != None
                 assert min_time > 0

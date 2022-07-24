@@ -20,7 +20,7 @@ wbRev = FilesystemAutoContentProducer(
     "/media/root/help/pyjom/logs/local/1652502047_091761.json",# yolov5
     "/media/root/help/pyjom/logs/local/1652856912_480332.json", # framedifference_talib
     ],
-    filters={"yolov5":{"objects":["dog","cat"]:"min_time":2},"meta":{"timelimit":{"min":1,}}},
+    filters={"yolov5":{"objects":["dog","cat"],"min_time":2},"meta":{"timelimit":{"min":1,}}},
     path_replacers=[
         [
             ["/media/root/help/pyjom/samples/",
