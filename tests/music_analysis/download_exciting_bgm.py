@@ -9,22 +9,22 @@ keywords = "last friday night" # american pop music?
 # breakpoint()
 # phone, password = "19825089619","dbH361210110"
 # login_response = requests.get(baseUrl+"/login/cellphone",params={"phone": phone,"password": password})
-login_response = requests.get(baseUrl+"/logout")
-login_response_json = login_response.json()
-print(login_response_json)
+# login_response = requests.get(baseUrl+"/logout")
+# login_response_json = login_response.json()
+# print(login_response_json)
 
-login_response = requests.get(baseUrl+"/register/anonimous")
-login_response_json = login_response.json()
-# {'code': -460, 'message': '网络太拥挤，请稍候再试！'}
-# what the fuck is this shit?
-print(login_response_json)
+# login_response = requests.get(baseUrl+"/register/anonimous")
+# login_response_json = login_response.json()
+# # {'code': -460, 'message': '网络太拥挤，请稍候再试！'}
+# # what the fuck is this shit?
+# print(login_response_json)
 
 
-login_status = requests.get(baseUrl+"/login/status")
-login_status_json = login_status.json()
-print(login_status_json)
+# login_status = requests.get(baseUrl+"/login/status")
+# login_status_json = login_status.json()
+# print(login_status_json)
 
-breakpoint()
+# breakpoint()
 
 search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
 
