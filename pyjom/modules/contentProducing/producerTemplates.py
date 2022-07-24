@@ -292,7 +292,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # if "one_clip_per_file" in policy_names:
     #     used_files = [] # may raise exception.
     render_list = getRenderList(total_cuts, demanded_cut_spans)
-    print(render_list)
+    print(render_list) # empty render list! wtf?
     breakpoint()
 
     # now render the file. how to make it happen?
