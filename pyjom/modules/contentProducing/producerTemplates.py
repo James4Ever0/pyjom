@@ -142,6 +142,7 @@ def getMusicCutSpans(
     demanded_cut_points.append(music_duration)
     demanded_cut_spans = list(zip(demanded_cut_points[0:-1], demanded_cut_points[1:0]))
     print("DEMANDED MUSIC CUT SPANS GENERATED")
+    breakpoint()
     return demanded_cut_spans, standard_bpm_spans
 
 
