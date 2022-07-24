@@ -38,4 +38,6 @@ if code == 200: # no error here.
         # now download the thing.
         result = requests.get(myDownloadUrl)
         if result.status_code == 200:
-            result.
+            data = result.content
+            with open(get_download_path(myDownloadType),"wb") as f:
+                f.write(data)
