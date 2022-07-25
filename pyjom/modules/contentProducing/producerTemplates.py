@@ -296,8 +296,8 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     total_cuts = getFileCuts(
         filtered_info, meta_info, standard_bpm_spans, policy_names
     )  # is this shit empty?
-    print(total_cuts)
-    breakpoint()
+    # print(total_cuts)
+    # breakpoint()
 
     # now generate the freaking video.
     # if "one_clip_per_file" in policy_names:
