@@ -254,7 +254,7 @@ def getRenderList(total_cuts, demanded_cut_spans):
             # random.shuffle(file_cuts)
             selected_cut = None
             for cut in file_cuts:
-                if cut is None: # break if the infinite generator is taking break.
+                if cut is None: # break if the infinite generator is taking a break.
                     break
                     # continue # really continue?
                 cut_span = cut["span"]
