@@ -239,7 +239,7 @@ def getRenderList(total_cuts, demanded_cut_spans):
     FAL_generator = infiniteShuffle(
         file_access_list
     )  # infinite generator! may cause serious problems.
-    TC_generators = {key: infiniteShuffle(total_cuts[key]) for key in total_cuts.keys()}
+    TC_generators = {key: infiniteShuffle(total_cuts[key]) for key in total_cuts.keys()} # again infinite generator!
     render_list = []
     for span in demanded_cut_spans:
         start, end = span
@@ -254,7 +254,7 @@ def getRenderList(total_cuts, demanded_cut_spans):
             # random.shuffle(file_cuts)
             selected_cut = None
             for cut in file_cuts:
-                if cut is None:
+                if cut is None: # break if the infinite generator is taking break.
                     break
                     # continue # really continue?
                 cut_span = cut["span"]
