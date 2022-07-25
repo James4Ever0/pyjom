@@ -244,13 +244,19 @@ def getRenderList(total_cuts, demanded_cut_spans):
     for span in demanded_cut_spans:
         start, end = span
         span_length = end - start
+        tolerance = 0.8
+        tolerance_decrease = lambda x: max(0.1,x-0.1)
         for filename in FAL_generator:
-            if filename is None: continue
+            if filename is None:
+                tolerance = tolerance_decrease(tolerance)
+                continue
             file_cuts = TC_generators[filename]
             # random.shuffle(file_cuts)
             selected_cut = None
             for cut in file_cuts:
-                if cut is None: continue
+                if cut is None:
+                    break
+                    # continue # really continue?
                 cut_span = cut["span"]
                 cut_duration = cut_span[1] - cut_span[0]
                 if inRange(
