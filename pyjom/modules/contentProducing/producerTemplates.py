@@ -254,7 +254,7 @@ def getRenderList(total_cuts, demanded_cut_spans):
                 cut_span = cut["span"]
                 cut_duration = cut_span[1] - cut_span[0]
                 if inRange(
-                    cut_duration, [span_length, span_length * 1.5], tolerance=0.8
+                    cut_duration, [span_length, span_length * 1.5], tolerance=tolerance
                 ): # increase this tolerance gradually.
                     selected_cut = cut
                     break
