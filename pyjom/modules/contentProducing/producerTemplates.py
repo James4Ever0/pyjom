@@ -160,7 +160,7 @@ def getFileCuts(
         file_path,
         cuts,
     ) in (
-        filtered_info
+        filtered_info.items()
     ):  # sample these cuts, shuffle these samples. order these samples.
         file_cuts = []  # only for this single file.
         modifiers = {}
@@ -293,7 +293,9 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     )
     # demanded_cut_spans is empty!
     # total_cuts
-    total_cuts = getFileCuts(filtered_info, meta_info, standard_bpm_spans, policy_names) # is this shit empty?
+    total_cuts = getFileCuts(
+        filtered_info, meta_info, standard_bpm_spans, policy_names
+    )  # is this shit empty?
     print(total_cuts)
     breakpoint()
 
