@@ -296,6 +296,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     total_cuts = getFileCuts(
         filtered_info, meta_info, standard_bpm_spans, policy_names
     )  # is this shit empty?
+    # this can be infinity loop.
     # print(total_cuts)
     # breakpoint()
 
@@ -303,7 +304,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # if "one_clip_per_file" in policy_names:
     #     used_files = [] # may raise exception.
     # total_cuts {} and demanded_cut_spans [] are both empty
-    render_list = getRenderList(total_cuts, demanded_cut_spans)
+    render_list = getRenderList(total_cuts, demanded_cut_spans) # this might be an infinity loop.
     print(render_list)  # empty render list! wtf?
     breakpoint()
 
