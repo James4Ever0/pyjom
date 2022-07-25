@@ -159,9 +159,9 @@ def FilesystemProducer(
     meta_info = {
         k: processed_info[k]["meta"] for k in processed_info.keys()
     }  # so there is no additional "meta" key.
-    print(filtered_info)  # empty! shit.
-    print(meta_info)
-    breakpoint()
+    # print(filtered_info)  # empty! shit.
+    # print(meta_info)
+    # breakpoint()
 
     output = template_function(filtered_info, meta_info, config=template_config)
     # you need to handle the title and something all over this freaking place.
