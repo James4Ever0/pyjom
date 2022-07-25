@@ -32,12 +32,14 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 
 mimetypes.init()
 
-def infiniteShuffle(access_list, shuffle=True, infinite=True):
+def infiniteShuffle(access_list, shuffle=True, infinite=True, endMark = True):
     flag=True
     while flag:
         if shuffle: random.shuffle(access_list)
         for data in access_list:
             yield data
+        if endMark and infinite:
+            yield None
         if not infinite: flag=False
 
 def inRange(target, mRange, tolerance=1):

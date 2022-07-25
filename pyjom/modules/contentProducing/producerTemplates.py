@@ -245,15 +245,17 @@ def getRenderList(total_cuts, demanded_cut_spans):
         start, end = span
         span_length = end - start
         for filename in FAL_generator:
+            if filename is None: continue
             file_cuts = TC_generators[filename]
             # random.shuffle(file_cuts)
             selected_cut = None
             for cut in file_cuts:
+                if cut is None: continue
                 cut_span = cut["span"]
                 cut_duration = cut_span[1] - cut_span[0]
                 if inRange(
                     cut_duration, [span_length, span_length * 1.5], tolerance=0.8
-                ):
+                ): # increase this tolerance gradually.
                     selected_cut = cut
                     break
             if not selected_cut is None:
