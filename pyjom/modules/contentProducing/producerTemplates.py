@@ -305,6 +305,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         filtered_info, meta_info, standard_bpm_spans, policy_names
     )  # is this shit empty?
     # this can be infinity loop.
+    # sample: [{'span': (0, 3.9300226757369616), 'cut': {'span': (13.4, 18.0), 'modifiers': {}}, 'source': '/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4'}]
     # print(total_cuts)
     # breakpoint()
 
