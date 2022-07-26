@@ -184,7 +184,9 @@ schedule.every(1).minute.do(sendRandomGroupMessage)  # will this shit work?
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # too broad for groupInitReplyDelayRange to be (2, 20)
     # global groupChatCursor
-    # print('收到群消息，群号为', ctx.FromGroupId)
+#    stderrPrint('收到群消息，群号为', ctx.FromGroupId)
+    # recommed you to check the curret group only.
+#    stderrPrint("checkGroupNoReply:",groupNoReplyStack.get(ctx.FromGroupId,None))
     data_dict = ctx.data  # recommend to use this json object. or not?
     group_id = data_dict["FromGroupId"]
     sender_id = data_dict["FromUserId"]
