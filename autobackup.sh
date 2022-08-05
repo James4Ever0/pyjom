@@ -6,6 +6,7 @@
 
 # rclone sync -P . /media/root/help/AGI/pyjom
 
+# fuck
 # this one is different!
 
 # rclone sync -P . /media/root/Toshiba30003/pyjom
