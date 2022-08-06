@@ -2,5 +2,6 @@
     "python.pythonPath": "/usr/bin/python3",
     "githubRepositories.autoFetch.interval": 15,
     "remoteHub.commitDirectlyWarning": "off",
-    "python.defaultInterpreterPath": "/usr/bin/python3.9"
+    "python.defaultInterpreterPath": "/usr/bin/python3.9",
+    "files.autoSave": "afterDelay"
 }
