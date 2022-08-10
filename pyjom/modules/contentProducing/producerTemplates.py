@@ -318,7 +318,8 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     breakpoint()
 
     # now render the file. how to make it happen?
-
+# first, we state the format of the input.
+# [{'span': (296.4719954648526, 302.915), 'cut': {'span': (50.8, 57.2), 'modifiers': {}}, 'source': '/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4'}, {..},...]
     # avaliable_cuts = content
 
 
