@@ -278,7 +278,7 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
                 break
     return render_list
 
-def renderList2MediaLang(renderList, slient=True, bgm=None): # this is just a primitive. need to improve in many ways.
+def renderList2MediaLang(renderList, slient=True, bgm=None,producer="ffmpeg"): # this is just a primitive. need to improve in many ways.
     # producer = ""
     scriptBase = ['(".mp4",producer = "%s", bgm = "%s")'  %(producer, bgm)]
     for item in renderList:
@@ -330,7 +330,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     render_list = getRenderList(total_cuts, demanded_cut_spans) # this might be an infinity loop.
     # print(render_list)  # empty render list! wtf?
     # breakpoint()
-    render_medialang = renderList2MediaLang(render_list, slient=True, bgm=music["filepath"]) # what is the backend?
+    render_medialang = renderList2MediaLang(render_list, slient=True, bgm=music["filepath"],producer="") # what is the backend?
     # slient all things? despite its config.
     # now render the file. how to make it happen?
 # first, we state the format of the input.
