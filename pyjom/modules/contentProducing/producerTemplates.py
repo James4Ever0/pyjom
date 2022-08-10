@@ -271,7 +271,7 @@ def getRenderList(total_cuts, demanded_cut_spans):
                 break
     return render_list
 
-def renderList2MediaLang(renderList, slient=True, bgm=None):
+def renderList2MediaLang(renderList, slient=True, bgm=None): # this is just a primitive. need to improve in many ways.
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
@@ -318,8 +318,8 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     render_list = getRenderList(total_cuts, demanded_cut_spans) # this might be an infinity loop.
     # print(render_list)  # empty render list! wtf?
     # breakpoint()
-    render_medialang = renderList2MediaLang(render_list, slience=True, bgm=music["filepath"]) # what is the backend?
-
+    render_medialang = renderList2MediaLang(render_list, slient=True, bgm=music["filepath"]) # what is the backend?
+    # slient all things? despite its config.
     # now render the file. how to make it happen?
 # first, we state the format of the input.
 # [{'span': (296.4719954648526, 302.915), 'cut': {'span': (50.8, 57.2), 'modifiers': {}}, 'source': '/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4'}, {..},...]
