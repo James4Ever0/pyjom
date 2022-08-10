@@ -242,6 +242,8 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
     )  # infinite generator! may cause serious problems.
     TC_generators = {key: infiniteShuffle(total_cuts[key]) for key in total_cuts.keys()} # again infinite generator!
     render_list = []
+    if noRepeat:
+        usedCuts = []
     for span in demanded_cut_spans:
         start, end = span
         span_length = end - start
@@ -263,7 +265,13 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
                 if inRange(
                     cut_duration, [span_length, span_length * 1.5], tolerance=tolerance
                 ): # increase this tolerance gradually.
+                    if noRepeat:
+                        cut_str = str(cut)+filename
+                        isRepeat = cut_str in usedCuts
+                        if isRepeat: continue # repeated cuts!
                     selected_cut = cut
+                    if noRepeat:
+                        
                     break
             if not selected_cut is None:
                 # append the data right here.
