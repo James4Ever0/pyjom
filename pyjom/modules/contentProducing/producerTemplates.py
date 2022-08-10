@@ -272,6 +272,7 @@ def getRenderList(total_cuts, demanded_cut_spans):
     return render_list
 
 def renderList2MediaLang(renderList, slient=True, bgm=None): # this is just a primitive. need to improve in many ways.
+    scriptBase = Medialang()
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
