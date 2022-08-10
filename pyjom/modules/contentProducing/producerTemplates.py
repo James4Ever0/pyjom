@@ -10,6 +10,7 @@ import math
 
 import audioowl
 from MediaInfo import MediaInfo
+from pyjom.medialang.core import *
 
 
 def audioOwlAnalysis(myMusic):
@@ -270,6 +271,7 @@ def getRenderList(total_cuts, demanded_cut_spans):
                 break
     return render_list
 
+def renderList2MediaLang(renderList, slient=True, bgm=None):
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
@@ -314,13 +316,15 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     #     used_files = [] # may raise exception.
     # total_cuts {} and demanded_cut_spans [] are both empty
     render_list = getRenderList(total_cuts, demanded_cut_spans) # this might be an infinity loop.
-    print(render_list)  # empty render list! wtf?
-    breakpoint()
+    # print(render_list)  # empty render list! wtf?
+    # breakpoint()
+    render_medialang = renderList2MediaLang(render_list, slience=True, bgm=music["filepath"]) # what is the backend?
 
     # now render the file. how to make it happen?
 # first, we state the format of the input.
 # [{'span': (296.4719954648526, 302.915), 'cut': {'span': (50.8, 57.2), 'modifiers': {}}, 'source': '/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4'}, {..},...]
     # avaliable_cuts = content
+    # shall we generate medialang for it?
 
 
 def getProducerTemplate(template):
