@@ -269,9 +269,8 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
                         cut_str = str(cut)+filename
                         isRepeat = cut_str in usedCuts
                         if isRepeat: continue # repeated cuts!
+                        usedCuts.append(cut_str)
                     selected_cut = cut
-                    if noRepeat:
-                        
                     break
             if not selected_cut is None:
                 # append the data right here.
@@ -281,10 +280,10 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
 
 def renderList2MediaLang(renderList, slient=True, bgm=None): # this is just a primitive. need to improve in many ways.
     # producer = ""
-    # scriptBase = ['(".mp4",producer = "%s", bgm = "%s")'  %(producer, bgm)]
-    # for item in renderList:
-    #     line = '("%s", video=true, slient=%s, speed=%d)'
-    #     scriptBase.append(line)
+    scriptBase = ['(".mp4",producer = "%s", bgm = "%s")'  %(producer, bgm)]
+    for item in renderList:
+        line = '("%s", video=true, slient=%s, speed=%d)'
+        scriptBase.append(line)
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
