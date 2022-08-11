@@ -3,7 +3,7 @@
 
 from hyperopt import hp
 
-# usually this hyper parameter optimization is done regularlly, and the optimized parameters will be used 
+# usually this hyper parameter optimization is done regularlly, and the optimized parameters will be used for a while till next update.
 # but can we optimize these parameters offline?
 # if not offline then we can only use traditional machine learning instead...
 
