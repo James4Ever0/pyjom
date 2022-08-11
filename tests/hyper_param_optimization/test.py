@@ -20,7 +20,7 @@ print("_______________________________") # splited.
 
 from hyperopt.pyll import scope
 
-@scope.define
+@scope.define # this is how we sample the "LAMBDA"
 def my_func(a,b=1):
     print("running function my_func", a,b)
     return a*b
