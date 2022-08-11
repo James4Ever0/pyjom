@@ -3,6 +3,10 @@
 
 from hyperopt import hp
 
+# usually this hyper parameter optimization is done regularlly.
+# but can we optimize these parameters offline?
+# if not offline then we can only use traditional machine learning instead...
+
 # space = hp.choice(
 #     "a",
 #     [("case 1", 1 + hp.lognormal("c1", 0, 1)), ("case 2", hp.uniform("c2", -10, 10))],
@@ -20,7 +24,7 @@ print("_______________________________") # splited.
 
 from hyperopt.pyll import scope
 
-@scope.define # this is how we sample the "LAMBDA"
+@scope.define # this is how we sample the "LAMBDA".
 def my_func(a,b=1):
     print("running function my_func", a,b)
     return a*b
