@@ -1,1 +1,2 @@
-from hyperopt import 
+from hyperopt import tpe, fmin, hp
+
