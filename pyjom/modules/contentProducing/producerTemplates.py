@@ -267,7 +267,7 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
                 ): # increase this tolerance gradually.
                     if noRepeat:
                         cut_str = str(cut)+filename
-                        isRepeat = cut_str in usedCuts
+                        isRepeat = (cut_str in usedCuts) or 
                         if isRepeat: continue # repeated cuts!
                         usedCuts.append(cut_str)
                     selected_cut = cut
