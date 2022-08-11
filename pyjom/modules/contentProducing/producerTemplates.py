@@ -3,8 +3,6 @@ from pyjom.commons import *
 # from pyjom.modules.contentProducing.videoProcessing import *
 # it is like a game designed by you, played by everyone.
 
-# test sync 2
-
 # maybe you need to render this into ffmpeg arguments or mltframework arguments.
 import random
 import pylrc
