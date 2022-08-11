@@ -12,3 +12,5 @@ import hyperopt.pyll.stochastic as stochastic
 
 for _ in range(10):
     sample = stochastic.sample(space)
+    print("SAMPLE: ", sample) # this will return the tuple. can we put some custom functions here?
+    # there must be some integrations with custom functions. 
