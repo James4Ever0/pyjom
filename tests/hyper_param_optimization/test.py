@@ -11,4 +11,4 @@ space = hp.choice(
 import hyperopt.pyll.stochastic as stochastic
 
 for _ in range(10):
-    stochastic.sample(space)
+    sample = stochastic.sample(space)
