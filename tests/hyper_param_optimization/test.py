@@ -7,3 +7,9 @@ space = hp.choice(
     "a",
     [("case 1", 1 + hp.lognormal("c1", 0, 1)), ("case 2", hp.uniform("c2", -10, 10))],
 )
+
+import hyperopt.pyll.stochastic as stochastic
+
+for _ in range(10):
+    stochastic.sample(space)
+    stoc
