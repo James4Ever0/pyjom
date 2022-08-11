@@ -22,3 +22,11 @@ from hyperopt.pyll import scope
 
 @scope.define
 def my_func(a,b=1):
+    print("running function my_func", a,b)
+    return a*b
+
+space_0 = scope.my_func(hp.choice("myChoice",[1,2]))
+space_1 = scope.my_func(hp.choice("myChoice",[1,2]), hp.choice("myChoice2",[2,3,4]))
+
+for _ in range(10):
+    print()
