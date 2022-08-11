@@ -3,10 +3,11 @@
 
 from hyperopt import hp
 
-space = hp.choice(
-    "a",
-    [("case 1", 1 + hp.lognormal("c1", 0, 1)), ("case 2", hp.uniform("c2", -10, 10))],
-)
+# space = hp.choice(
+#     "a",
+#     [("case 1", 1 + hp.lognormal("c1", 0, 1)), ("case 2", hp.uniform("c2", -10, 10))],
+# )
+space = hp.choice("lambda",[lambda :1, lambda:2]) # if it is lambda, function will not resolve. however, after passing this thing into the main criterion function, it will utilize the lambda function.
 
 import hyperopt.pyll.stochastic as stochastic
 
