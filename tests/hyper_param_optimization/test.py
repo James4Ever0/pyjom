@@ -10,6 +10,7 @@ from hyperopt import hp
 space = hp.choice("lambda",[lambda :1, lambda:2]) # if it is lambda, function will not resolve. however, after passing this thing into the main criterion function, it will utilize the lambda function.
 
 import hyperopt.pyll.stochastic as stochastic
+from hyperopt.pyll import scope
 
 for _ in range(10):
     sample = stochastic.sample(space)
