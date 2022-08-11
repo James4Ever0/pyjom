@@ -3,11 +3,13 @@
 
 from hyperopt import hp
 
-# usually this hyper parameter optimization is done regularlly.
+# usually this hyper parameter optimization is done regularlly, and the optimized parameters will be used 
 # but can we optimize these parameters offline?
 # if not offline then we can only use traditional machine learning instead...
 
 # or this trial and error process is actually a kind of offline machine learning, like random search and graph inference...
+
+# better use hyperopt with a discriminator ML algorithm.
 
 # space = hp.choice(
 #     "a",
