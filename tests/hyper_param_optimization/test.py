@@ -20,3 +20,5 @@ print("_______________________________") # splited.
 
 from hyperopt.pyll import scope
 
+@scope.define
+def my_func(a,b=1):
