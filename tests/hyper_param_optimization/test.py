@@ -7,6 +7,8 @@ from hyperopt import hp
 # but can we optimize these parameters offline?
 # if not offline then we can only use traditional machine learning instead...
 
+# or this trial and error process is actually a kind of offline machine learning, like random search and graph inference...
+
 # space = hp.choice(
 #     "a",
 #     [("case 1", 1 + hp.lognormal("c1", 0, 1)), ("case 2", hp.uniform("c2", -10, 10))],
