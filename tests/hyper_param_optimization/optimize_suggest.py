@@ -16,4 +16,4 @@ result = fmin(fn=function, space=space, algo=tpe.suggest, max_evals=100)
 
 print(result)
 # {'param': 0.10165862536290635}
-# really working?
+# really working? 100ms could be so damn short...
