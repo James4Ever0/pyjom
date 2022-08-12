@@ -4,6 +4,6 @@ for yukio:
 
 http://localhost:8780/v1/Login/GetQRcode
 
-for miaomiao
+for miaomiao:
 
-http://localhost:8780/v1/Login/GetQRcode
+http://localhost:8781/v1/Login/GetQRcode
