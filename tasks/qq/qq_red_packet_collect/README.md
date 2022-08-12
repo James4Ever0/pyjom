@@ -6,4 +6,4 @@ http://localhost:8780/v1/Login/GetQRcode
 
 for miaomiao:
 
-http://localhost:8781/v1/Login/GetQRcode
+http://localhost:8784/v1/Login/GetQRcode
