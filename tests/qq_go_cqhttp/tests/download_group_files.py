@@ -115,6 +115,7 @@ def recursive_get_qq_group_files(api, group_id, basepath=None, folder_id=None, d
         file_name = bfile["file_name"]
         busid = bfile["busid"]
         download_url = get_group_file(group_id, file_id, busid)
+        if download_url == None: continue
         filepath = os.path.join(basepath, file_name)
         print("FILEPATH:", filepath)
         yield download_url, filepath
