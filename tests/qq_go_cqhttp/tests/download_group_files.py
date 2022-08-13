@@ -141,7 +141,7 @@ def group_file_wholesale_downloader(group_id, download_path="qq_group_file_downl
 # group_id = 537384511 # less files but have base_files
 
 # make it dynamic!
-download_path = "//pyjom/tests/wechat_bots/msimg32.dll_wechat_hook_webapi/official_qq_group_files"
+download_path = "/root/Desktop/works/pyjom/tests/wechat_bots/msimg32.dll_wechat_hook_webapi/official_qq_group_files"
 group_ids = [927825838, 537384511] # i know i am in these groups.
 #  import time
 check_connection() # failsafe or not?
