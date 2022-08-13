@@ -11,7 +11,7 @@ import time
 def check_connection():
     while True:
         try:
-            response = requests.get(baseurl+"/get_status", timeout=5)
+            response = requests.get(baseurl+"get_status", timeout=5)
             response_json = response.json()
             print("GO_CQHTTP STATUS:", response_json)
             assert response_json["online"] == True
