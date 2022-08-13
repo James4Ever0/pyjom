@@ -44,9 +44,10 @@ def get_group_file(group_id, file_id, busid):
     # print(r.content)
     content = r.json()
     data = content["data"]
-    download_url = data["url"]
-    print("DOWNLOAD URL:", download_url)
-    return download_url
+    if data!=None:
+        download_url = data["url"]
+        print("DOWNLOAD URL:", download_url)
+        return download_url
 
 
 def try_pass(function):
