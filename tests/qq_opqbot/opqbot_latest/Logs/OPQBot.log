@@ -1,0 +1,4 @@
+2022/08/13 09:05:32.030 [E]  parse CoreConf.conf err open /root/Desktop/works/pyjom/tests/qq_opqbot/opqbot_latest/CoreConf.conf: no such file or directory
+2022/08/13 09:05:32.064 [E]  main panics: runtime error: invalid memory address or nil pointer dereference call:main.main()
+	/Users/kar98k/GoPath/src/NewNewQQToy/QQToy.go:2389 +0x280 
+ 
