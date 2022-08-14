@@ -235,7 +235,7 @@ def getFileCuts(
     return total_cuts_dict
 
 
-def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, total_trials = 10000):
+def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, total_trials = 100000):
     file_access_list = [x for x in total_cuts.keys()]
     FAL_generator = infiniteShuffle(
         file_access_list
