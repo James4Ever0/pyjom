@@ -289,6 +289,7 @@ def renderList2MediaLang(renderList, slient=True, bgm=None,producer="ffmpeg"): #
     for item in renderList:
         line = '("%s", video=true, slient=%s, speed=%d)'
         scriptBase.append(line)
+    print(scriptBase)
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
