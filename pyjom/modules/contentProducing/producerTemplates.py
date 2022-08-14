@@ -235,7 +235,7 @@ def getFileCuts(
     return total_cuts_dict
 
 
-def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, total_trials = 100000):
+def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, noRepeatFileName=False, total_trials = 100000):
     file_access_list = [x for x in total_cuts.keys()]
     FAL_generator = infiniteShuffle(
         file_access_list
@@ -270,6 +270,7 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, total_trials = 
                     if noRepeat:
                         cut_str = str(cut)+filename
                         sameSourceOfLastClip = False
+                        
                         # if len(usedCuts) > 1:
                         #     lastClip = usedCuts[-1] # this was wrong. usedCuts could have length == 1
                         #     if filename in lastClip:
