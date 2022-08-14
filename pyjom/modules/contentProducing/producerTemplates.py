@@ -313,7 +313,7 @@ def getRenderList(
 
 
 def renderList2MediaLang(
-    renderList, slient=True, bgm=None, producer="ffmpeg"
+    renderList, slient=True, bgm=None, producer="ffmpeg" # wtf is this ffmpeg?
 ):  # this is just a primitive. need to improve in many ways.
     # producer = ""
     scriptBase = ['(".mp4",producer = "%s", bgm = "%s")' % (producer, bgm)]
