@@ -267,6 +267,7 @@ def getRenderList(
             for cut in file_cuts:
                 trial_count += 1
                 if trial_count % 1000 == 0 and trial_count>0:
+                    print("%d trial quota used remaining: %d" % (trial_count, trial_count)
                 if trial_count > total_trials:
                     raise Exception(
                         "Trial Limit Reached.\nCurrent RenderList: %s\nCurrent Limit: %d trials\nCurrent Config: noRepeat=%s noRepeatFileName=%s"
