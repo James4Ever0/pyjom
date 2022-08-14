@@ -258,7 +258,7 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, noRepeatFileNam
             selected_cut = None
             for cut in file_cuts:
                 trial_count+=1
-                if trial_count > total_trials: raise Exception("Trial Limit Reached.\nCurrent Limit: %d trials\n" % total_trials)
+                if trial_count > total_trials: raise Exception("Trial Limit Reached.\nCurrent Limit: %d trials\nCurrent Config: %s %s" % total_trials)
                 if cut is None: # break if the infinite generator is taking a break.
                     break
                     # continue # really continue?
