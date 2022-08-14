@@ -273,8 +273,8 @@ def getRenderList(
                     raise Exception(
                         "Trial Limit Reached.\nCurrent RenderList: %s\nCurrent Limit: %d trials\nCurrent Config: noRepeat=%s noRepeatFileName=%s"
                         % (
-                            total_trials,
                             str(render_list),
+                            total_trials,
                             str(noRepeat),
                             str(noRepeatFileName),
                         )
