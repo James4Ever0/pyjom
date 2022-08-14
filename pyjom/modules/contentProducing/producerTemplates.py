@@ -242,6 +242,7 @@ def getRenderList(
     noRepeatFileName=False,
     total_trials=100000,
 ):
+    trial_count = 0
     file_access_list = [x for x in total_cuts.keys()]
     FAL_generator = infiniteShuffle(
         file_access_list
