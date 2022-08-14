@@ -326,7 +326,8 @@ def renderList2MediaLang(
         span_duration = getSpanDuration(span)
         cut_span_duration = getSpanDuration(cut_span)
         speed = cut_span_duration / span_duration
-        breakpoint()
+        # breakpoint()
+        name=source
         # line = '("%s", video=true, slient=%s, speed=%f)' % (name, "true",speed)
         # scriptBase.append(line)
     print(scriptBase)
