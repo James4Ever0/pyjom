@@ -5,7 +5,7 @@ autoArgs = {
     "subtitle_detector": {"timestep": 0.2}
 }  # what is this? should't you detect all before production?
 # autoArgs = {"subtitle_detector": {"timestep": 0.2},"yolov5_detector":{"model":"yolov5x"}}
-template_names = ["subtitle_detector.mdl.j2"]  # test ocr entities first.
+template_names = ["subtitle_detector.mdl.j2"] # test ocr entities first.
 # template_names = ["yolov5_detector.mdl.j2"]
 
 # template_names = ["framediff_detector.mdl.j2"]
