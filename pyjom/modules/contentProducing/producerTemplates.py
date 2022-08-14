@@ -331,7 +331,7 @@ def renderList2MediaLang(
         line = '("%s", video=true, slient=%s, speed=%f)' % (name, str(slient).lower() ,speed)
         scriptBase.append(line)
     # print(scriptBase)
-    # now 
+    # now return the medialang object.
     return scriptBase
 
 
@@ -383,7 +383,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # print(render_list)  # empty render list! wtf?
     # breakpoint()
     render_medialang = renderList2MediaLang(
-        render_list, slient=True, bgm=music["filepath"], producer=""
+        render_list, slient=True, bgm=music["filepath"], producer="videoConcatWithBgm"
     )  # what is the backend?
     # slient all things? despite its config.
     # now render the file. how to make it happen?
