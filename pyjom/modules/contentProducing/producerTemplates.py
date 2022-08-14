@@ -331,6 +331,7 @@ def renderList2MediaLang(
         line = '("%s", video=true, slient=%s, speed=%f)' % (name, str(slient).lower() ,speed)
         scriptBase.append(line)
     print(scriptBase)
+    return scriptBase
 
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
