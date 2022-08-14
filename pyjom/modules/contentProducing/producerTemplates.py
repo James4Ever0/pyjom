@@ -330,7 +330,8 @@ def renderList2MediaLang(
         name=source
         line = '("%s", video=true, slient=%s, speed=%f)' % (name, str(slient).lower() ,speed)
         scriptBase.append(line)
-    print(scriptBase)
+    # print(scriptBase)
+    # now 
     return scriptBase
 
 
