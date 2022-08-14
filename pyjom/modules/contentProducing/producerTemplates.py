@@ -235,7 +235,7 @@ def getFileCuts(
     return total_cuts_dict
 
 
-def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
+def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, total_trials = 10000):
     file_access_list = [x for x in total_cuts.keys()]
     FAL_generator = infiniteShuffle(
         file_access_list
@@ -272,8 +272,8 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
                         #     lastClip = usedCuts[-1] # this was wrong. usedCuts could have length == 1
                         #     if filename in lastClip:
                         #         sameSourceOfLastClip = True # this will detect if the next clip is of the same source of last clip
-                        # isRepeat = (cut_str in usedCuts)
-                        isRepeat = (cut_str in usedCuts) or sameSourceOfLastClip     
+                        isRepeat = (cut_str in usedCuts)
+                        # isRepeat = (cut_str in usedCuts) or sameSourceOfLastClip     
                         if isRepeat: continue # repeated cuts!
                         usedCuts.append(cut_str)
                     selected_cut = cut
