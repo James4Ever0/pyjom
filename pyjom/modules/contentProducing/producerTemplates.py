@@ -235,12 +235,20 @@ def getFileCuts(
     return total_cuts_dict
 
 
-def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, noRepeatFileName=False, total_trials = 100000):
+def getRenderList(
+    total_cuts,
+    demanded_cut_spans,
+    noRepeat=True,
+    noRepeatFileName=False,
+    total_trials=100000,
+):
     file_access_list = [x for x in total_cuts.keys()]
     FAL_generator = infiniteShuffle(
         file_access_list
     )  # infinite generator! may cause serious problems.
-    TC_generators = {key: infiniteShuffle(total_cuts[key]) for key in total_cuts.keys()} # again infinite generator!
+    TC_generators = {
+        key: infiniteShuffle(total_cuts[key]) for key in total_cuts.keys()
+    }  # again infinite generator!
     render_list = []
     if noRepeat:
         usedCuts = []
@@ -248,7 +256,7 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, noRepeatFileNam
         start, end = span
         span_length = end - start
         tolerance = 0.8
-        tolerance_decrease = lambda x: max(0.1,x-0.1)
+        tolerance_decrease = lambda x: max(0.1, x - 0.1)
         for filename in FAL_generator:
             if filename is None:
                 tolerance = tolerance_decrease(tolerance)
@@ -257,29 +265,40 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, noRepeatFileNam
             # random.shuffle(file_cuts)
             selected_cut = None
             for cut in file_cuts:
-                trial_count+=1
+                trial_count += 1
                 if trial_count > total_trials:
-                    raise Exception("Trial Limit Reached.\nCurrent RenderList: %s\nCurrent Limit: %d trials\nCurrent Config: noRepeat=%s noRepeatFileName=%s" % (total_trials, str(render_list), str(noRepeat), str(noRepeatFileName)))
-                if cut is None: # break if the infinite generator is taking a break.
+                    raise Exception(
+                        "Trial Limit Reached.\nCurrent RenderList: %s\nCurrent Limit: %d trials\nCurrent Config: noRepeat=%s noRepeatFileName=%s"
+                        % (
+                            total_trials,
+                            str(render_list),
+                            str(noRepeat),
+                            str(noRepeatFileName),
+                        )
+                    )
+                if cut is None:  # break if the infinite generator is taking a break.
                     break
                     # continue # really continue?
                 cut_span = cut["span"]
                 cut_duration = cut_span[1] - cut_span[0]
                 if inRange(
                     cut_duration, [span_length, span_length * 1.5], tolerance=tolerance
-                ): # increase this tolerance gradually.
+                ):  # increase this tolerance gradually.
                     if noRepeat:
-                        cut_str = str(cut)+filename
+                        cut_str = str(cut) + filename
                         if noRepeatFileName:
                             sameSourceOfLastClip = False
                             if len(usedCuts) > 1:
-                                lastClip = usedCuts[-1] # this was wrong. usedCuts could have length == 1
+                                lastClip = usedCuts[
+                                    -1
+                                ]  # this was wrong. usedCuts could have length == 1
                                 if filename in lastClip:
-                                    sameSourceOfLastClip = True # this will detect if the next clip is of the same source of last clip
+                                    sameSourceOfLastClip = True  # this will detect if the next clip is of the same source of last clip
                             isRepeat = (cut_str in usedCuts) or sameSourceOfLastClip
                         else:
-                            isRepeat = (cut_str in usedCuts)
-                        if isRepeat: continue # repeated cuts!
+                            isRepeat = cut_str in usedCuts
+                        if isRepeat:
+                            continue  # repeated cuts!
                         usedCuts.append(cut_str)
                     selected_cut = cut
                     break
@@ -289,13 +308,17 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, noRepeatFileNam
                 break
     return render_list
 
-def renderList2MediaLang(renderList, slient=True, bgm=None,producer="ffmpeg"): # this is just a primitive. need to improve in many ways.
+
+def renderList2MediaLang(
+    renderList, slient=True, bgm=None, producer="ffmpeg"
+):  # this is just a primitive. need to improve in many ways.
     # producer = ""
-    scriptBase = ['(".mp4",producer = "%s", bgm = "%s")'  %(producer, bgm)]
+    scriptBase = ['(".mp4",producer = "%s", bgm = "%s")' % (producer, bgm)]
     for item in renderList:
         line = '("%s", video=true, slient=%s, speed=%d)'
         scriptBase.append(line)
     print(scriptBase)
+
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
@@ -339,16 +362,22 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # if "one_clip_per_file" in policy_names:
     #     used_files = [] # may raise exception.
     # total_cuts {} and demanded_cut_spans [] are both empty
-    render_list = getRenderList(total_cuts, demanded_cut_spans) # this might be an infinity loop.
+    render_list = getRenderList(
+        total_cuts, demanded_cut_spans
+    )  # this might be an infinity loop.
     # print(render_list)  # empty render list! wtf?
     # breakpoint()
-    render_medialang = renderList2MediaLang(render_list, slient=True, bgm=music["filepath"],producer="") # what is the backend?
+    render_medialang = renderList2MediaLang(
+        render_list, slient=True, bgm=music["filepath"], producer=""
+    )  # what is the backend?
     # slient all things? despite its config.
     # now render the file. how to make it happen?
+
+
 # first, we state the format of the input.
 # [{'span': (296.4719954648526, 302.915), 'cut': {'span': (50.8, 57.2), 'modifiers': {}}, 'source': '/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4'}, {..},...]
-    # avaliable_cuts = content
-    # shall we generate medialang for it?
+# avaliable_cuts = content
+# shall we generate medialang for it?
 
 
 def getProducerTemplate(template):
