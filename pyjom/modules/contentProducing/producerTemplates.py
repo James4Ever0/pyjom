@@ -334,7 +334,7 @@ def renderList2MediaLang(
     # now return the medialang object.
     medialangScript = "\n".join(scriptBase)
     medialangObject = Medialang(script=medialangScript)
-    return scriptBase
+    return medialangObject
 
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
