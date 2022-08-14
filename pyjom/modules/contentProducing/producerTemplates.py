@@ -321,7 +321,8 @@ def renderList2MediaLang(
         print("ITEM:", item)
         span = item["span"]
         cut_span = item["cut"]["span"]
-        
+        source = item["source"]
+        speed = 
         breakpoint()
         # line = '("%s", video=true, slient=%s, speed=%f)' % (name, "true",speed)
         # scriptBase.append(line)
