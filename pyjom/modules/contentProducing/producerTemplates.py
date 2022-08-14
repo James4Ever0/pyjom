@@ -276,8 +276,9 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, noRepeatFileNam
                                 if filename in lastClip:
                                     sameSourceOfLastClip = True # this will detect if the next clip is of the same source of last clip
                         if noRepeatFileName:
-                            isRepeat = (cut_str in usedCuts) or sameSourceOfLastClip     
-                        isRepeat = (cut_str in usedCuts)
+                            isRepeat = (cut_str in usedCuts) or sameSourceOfLastClip
+                        else:   
+                            isRepeat = (cut_str in usedCuts)
                         if isRepeat: continue # repeated cuts!
                         usedCuts.append(cut_str)
                     selected_cut = cut
