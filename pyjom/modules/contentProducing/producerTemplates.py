@@ -332,6 +332,7 @@ def renderList2MediaLang(
         scriptBase.append(line)
     # print(scriptBase)
     # now return the medialang object.
+    medialangScript = "\n".join(scriptBase)
     return scriptBase
 
 
