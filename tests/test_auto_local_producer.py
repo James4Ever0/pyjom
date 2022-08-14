@@ -47,7 +47,7 @@ wbRev = FilesystemAutoContentProducer(
     template="pets_with_music",
     template_config={
         "music": {
-            "filepath": "/media/root/help/pyjom/tests/music_analysis/exciting_bgm.mp3",
+            "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3", # these things were not right.
             "lyric_path": "/media/root/help/pyjom/tests/music_analysis/exciting_bgm.lrc",
         },
         "font": "/root/.local/share/fonts/simhei.ttf",
