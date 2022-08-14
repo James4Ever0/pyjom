@@ -270,7 +270,7 @@ def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True, noRepeatFileNam
                     if noRepeat:
                         cut_str = str(cut)+filename
                         sameSourceOfLastClip = False
-                        
+                        if noRepeatFileName:
                         # if len(usedCuts) > 1:
                         #     lastClip = usedCuts[-1] # this was wrong. usedCuts could have length == 1
                         #     if filename in lastClip:
