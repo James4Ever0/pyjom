@@ -319,6 +319,8 @@ def renderList2MediaLang(
     scriptBase = ['(".mp4",producer = "%s", bgm = "%s")' % (producer, bgm)]
     for item in renderList:
         print("ITEM:", item)
+        span = item["span"]
+        
         breakpoint()
         # line = '("%s", video=true, slient=%s, speed=%f)' % (name, "true",speed)
         # scriptBase.append(line)
