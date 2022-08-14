@@ -388,7 +388,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         render_list, slient=True, bgm=music["filepath"], producer="videoConcatWithBgm"
     )  # what is the backend?
 
-    m
+    medialangObject.eval()
     # slient all things? despite its config.
     # now render the file. how to make it happen?
 
