@@ -238,7 +238,7 @@ def getFileCuts(
 def getRenderList(
     total_cuts,
     demanded_cut_spans,
-    noRepeat=True,
+    noRepeat=False,
     noRepeatFileName=False,
     total_trials=100000,
 ):
