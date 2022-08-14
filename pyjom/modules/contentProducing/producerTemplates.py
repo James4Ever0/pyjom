@@ -384,9 +384,11 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     )  # this might be an infinity loop.
     # print(render_list)  # empty render list! wtf?
     # breakpoint()
-    render_medialang = renderList2MediaLang(
+    medlalangObject = renderList2MediaLang(
         render_list, slient=True, bgm=music["filepath"], producer="videoConcatWithBgm"
     )  # what is the backend?
+
+    m
     # slient all things? despite its config.
     # now render the file. how to make it happen?
 
