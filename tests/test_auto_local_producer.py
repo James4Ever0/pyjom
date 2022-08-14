@@ -36,6 +36,7 @@ wbRev = FilesystemAutoContentProducer(
         [
             [
                 "/media/root/help/pyjom/samples/",
+                "/media/root/parrot/pyjom/samples/",
                 "/root/Desktop/works/pyjom/src/samples/",
                 "/media/root/help1/pyjom/samples/",
             ],
