@@ -317,6 +317,7 @@ def renderList2MediaLang(
 ):  # this is just a primitive. need to improve in many ways.
     # producer = ""
     scriptBase = ['(".mp4",producer = "%s", bgm = "%s")' % (producer, bgm)]
+    def getSpanDuration(span): return span[1]-span[0]
     for item in renderList:
         print("ITEM:", item)
         span = item["span"]
