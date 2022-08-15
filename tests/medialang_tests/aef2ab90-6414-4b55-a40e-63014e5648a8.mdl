@@ -1,4 +1,4 @@
-(".mp4", backend="editly",
+(".mp4", backend="editly", fast=true,
     bgm="/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
 )
 
