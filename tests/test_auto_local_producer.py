@@ -74,3 +74,5 @@ def completeTest():
 def partialMedialangRenderTest(medialangScript):
     medialangObject = Medialang(script=medialangScript)
     medialangObject.execute()
+
+def partialMedialang
