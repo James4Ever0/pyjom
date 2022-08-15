@@ -66,7 +66,7 @@ def jsonWalk(jsonObj,location=[]):
     if type(jsonObj) == dict:
         for key in jsonObj:
             content = jsonObj[key]
-            if type(content) not in [dict,list,tuple]: 
+            if type(content) not in [dict,list,tuple]:
                 yield location+[key], content
             else:
                 # you really ok with this?
