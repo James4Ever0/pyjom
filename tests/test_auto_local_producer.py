@@ -84,5 +84,5 @@ def PMRT_0(scriptFilePath = ""):
 if __name__ == "__main__":
     # completeTest()
     # so we don't have to run it all the time. really?
-    scriptFilePath = ""
-    # PMRT_0(scriptFilePath)
+    scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
+    PMRT_0(scriptFilePath)
