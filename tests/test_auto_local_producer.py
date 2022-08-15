@@ -72,4 +72,5 @@ def completeTest():
     wbRev.main()
 
 def partialMedialangRenderTest(medialangScript):
-    medialangObject = Medialang()
+    medialangObject = Medialang(script=medialangScript)
+    medialangObject.execute()
