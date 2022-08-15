@@ -45,6 +45,7 @@ class lexicalGroup:
             item.index = i
             print(item)
         # should we return nothing?
+        return ""
 
 
 class lexicalScript:
