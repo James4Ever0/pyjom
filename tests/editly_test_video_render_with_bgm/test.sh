@@ -1,5 +1,5 @@
 # run in headless linux machine! test both xvfp specs?
-xvfb-run -s "-ac -screen 0 1280x1024x24" editly test.json5  # this will suffice. json5 will specify all specs?
+xvfb-run -s "-ac -screen 0 1280x1024x24" editly test.json5  # this will suffice. json5 will specify all specs? or use our GUI run specifications?
 
 # sometimes we have weird issues with the ffplay. use 'open' instead? does quicktime automatically repair the file by itself?
 
