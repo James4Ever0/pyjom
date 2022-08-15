@@ -392,8 +392,8 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # breakpoint()
     medialangCode = medialangObject.prettify()
     print("_________________MEDIALANG CODE_________________")
-    print(medialangCode)
-    print("_________________MEDIALANG CODE COPIED_________________")
+    print(medialangCode) # should you write to somewhere?
+    print("_________________MEDIALANG CODE_________________")
     medialangObject.execute() ## shit will happen.
     # next time you could test medialang directly.
 
