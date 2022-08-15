@@ -77,3 +77,5 @@ def partialMedialangRenderTest(medialangScript):
 
 def PMRT_0():
     medialangScript = ""
+    partialMedialangRenderTest(medialangScript)
+
