@@ -22,7 +22,7 @@ class lexicalItem:
 class lexicalGroup:
     def __init__(self, items=[]):
         self.items = []
-        self.index=0
+        self.index = 0
         self.indent = 0
         for item in items:
             assert type(item) == lexicalItem
