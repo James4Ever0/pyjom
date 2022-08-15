@@ -390,7 +390,10 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 
     # print(medialangObject)
     # breakpoint()
-    medialangObject.prettify()
+    medialangCode = medialangObject.prettify()
+    print("_________________MEDIALANG CODE_________________")
+    print(medialangCode)
+    print("_________________MEDIALANG CODE_________________")
     medialangObject.execute() ## shit will happen.
 
     # medialangObject.eval() # is something like that?
