@@ -34,7 +34,7 @@ class lexicalGroup:
 
     def dump(self):
         for item in self.items:
-            yield item
+            yield item # you yield NONE? WTF?
 
     def __repr__(self):
         indent = "    " * self.indent
