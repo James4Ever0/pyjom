@@ -1,4 +1,4 @@
-(".mp4", backend="editly", fast=true,
+(".mp4", backend="editly", fast=true, # quality may be reduced to get preview instead of the final product
     bgm="/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
 )
 
