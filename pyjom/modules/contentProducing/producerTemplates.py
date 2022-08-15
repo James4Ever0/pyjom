@@ -385,7 +385,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # print(render_list)  # empty render list! wtf?
     # breakpoint()
     medialangObject = renderList2MediaLang(
-        render_list, slient=True, bgm=music["filepath"], producer="videoConcatWithBgm"
+        render_list, slient=True, bgm=music["filepath"], producer=""
     )  # what is the backend?
 
     # print(medialangObject)
