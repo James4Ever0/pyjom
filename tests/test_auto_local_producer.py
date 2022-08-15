@@ -82,7 +82,7 @@ def PMRT_0(scriptFilePath = ""):
     partialMedialangRenderTest(medialangScript)
 
 if __name__ == "__main__":
-    # completeTest()
-    # so we don't have to run it all the time.
+    completeTest()
+    # so we don't have to run it all the time. really?
     scriptFilePath = ""
-    PMRT_0(scriptFilePath)
+    # PMRT_0(scriptFilePath)
