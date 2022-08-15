@@ -415,7 +415,7 @@ class Medialang:
                 data_array.append(mdata)
         else:
             for index0, resource in enumerate(resources):
-                print("RESOURCE ENUMERATE",index0, resource)
+                # print("RESOURCE ENUMERATE",index0, resource)
                 mdata = None
                 for index1, item in enumerate(resource.items):
                     mdata = self.objectExecutor(item, previous=mdata)
