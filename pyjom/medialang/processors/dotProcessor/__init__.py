@@ -1,3 +1,3 @@
 from pyjom.medialang.processors.dotProcessor.jsonProcessor import *
 
-dotProcessors = {".json":dotJsonProcessor}
+dotProcessors = {".json":dotJsonProcessor, ".mp4"}
