@@ -393,6 +393,8 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     medialangCode = medialangObject.prettify()
     print("_________________MEDIALANG CODE_________________")
     print(medialangCode) # should you write to somewhere?
+    import uuid
+    randomName = str(uuid.uuid4())
     medialangCodeSavePath = os.path.join("/root/Desktop/works/pyjom/tests/medialang_tests","{}.mdl".format(randomName))
     with open(medialangCodeSavePath,"w+") as f: f.write(medialangCode)
     print("_________________MEDIALANG CODE_________________")
