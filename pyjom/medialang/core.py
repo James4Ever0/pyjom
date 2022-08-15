@@ -17,6 +17,7 @@ class lexicalItem:
         print("{}___medialang_item_[{}]".format(indent, self.index))
         print("{}item path:".format(indent), self.path)
         print("{}item args:".format(indent), self.args)
+        return ""
 
 
 class lexicalGroup:
@@ -72,7 +73,7 @@ class lexicalScript:
             item.indent = self.indent + 1
             item.index = i
             print(item)
-
+        return ""
 
 class Medialang:
     def __init__(
