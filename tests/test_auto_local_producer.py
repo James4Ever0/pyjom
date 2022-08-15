@@ -76,7 +76,7 @@ def partialMedialangRenderTest(medialangScript):
     medialangObject = Medialang(script=medialangScript)
     medialangObject.execute()
 
-def PMRT_0():
+def PMRT_0(fileName = ""):
     medialangScript = ""
     partialMedialangRenderTest(medialangScript)
 
