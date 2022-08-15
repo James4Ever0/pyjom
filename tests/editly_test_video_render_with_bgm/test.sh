@@ -1,1 +1,1 @@
-editly --json
+editly --json -f
