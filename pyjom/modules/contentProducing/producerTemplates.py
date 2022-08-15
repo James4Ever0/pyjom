@@ -388,8 +388,9 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         render_list, slient=True, bgm=music["filepath"], producer="videoConcatWithBgm"
     )  # what is the backend?
 
-    print(medialangObject)
-    breakpoint()
+    # print(medialangObject)
+    # breakpoint()
+    medialangObject.execute()
 
     # medialangObject.eval() # is something like that?
 
