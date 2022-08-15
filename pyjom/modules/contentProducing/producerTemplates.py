@@ -332,7 +332,7 @@ def renderList2MediaLang(
         scriptBase.append(line)
     # print(scriptBase)
     # now return the medialang object.
-    medialangScript = "\n\n".join(scriptBase) # forced to double return.
+    medialangScript = "\n\n".join(scriptBase) # forced to double return. is it?
     medialangObject = Medialang(script=medialangScript)
     return medialangObject
 
@@ -390,6 +390,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 
     # print(medialangObject)
     # breakpoint()
+    medialang.prett
     medialangObject.execute() ## shit will happen.
 
     # medialangObject.eval() # is something like that?
