@@ -17,7 +17,7 @@ class lexicalItem:
         print("{}___medialang_item_[{}]".format(indent, self.index))
         print("{}item path:".format(indent), self.path)
         print("{}item args:".format(indent), self.args)
-        return ""
+        return "" # this is magic?
 
 
 class lexicalGroup:
