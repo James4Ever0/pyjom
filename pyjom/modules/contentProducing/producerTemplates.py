@@ -415,6 +415,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     )
     with open(medialangCodeSavePath, "w+") as f:
         f.write(medialangCode)
+    print("MEDIALANG CODE SAVED TO:", medialangCodeSavePath)
     # print("_________________MEDIALANG CODE_________________")
     medialangObject.execute()  ## shit will happen.
     # next time you could test medialang directly.
