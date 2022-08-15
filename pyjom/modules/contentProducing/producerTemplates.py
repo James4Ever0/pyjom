@@ -267,8 +267,11 @@ def getRenderList(
             selected_cut = None
             for cut in file_cuts:
                 trial_count += 1
-                if trial_count % 1000 == 0 and trial_count>0:
-                    print("%d trial quota used remaining: %d" % (trial_count, total_trials-trial_count))
+                if trial_count % 1000 == 0 and trial_count > 0:
+                    print(
+                        "%d trial quota used remaining: %d"
+                        % (trial_count, total_trials - trial_count)
+                    )
                 if trial_count > total_trials:
                     raise Exception(
                         "Trial Limit Reached.\nCurrent RenderList: %s\nCurrent Limit: %d trials\nCurrent Config: noRepeat=%s noRepeatFileName=%s"
@@ -313,11 +316,16 @@ def getRenderList(
 
 
 def renderList2MediaLang(
-    renderList, slient=True, bgm=None, producer="ffmpeg" # wtf is this ffmpeg?
+    renderList, slient=True, bgm=None, producer="ffmpeg"  # wtf is this ffmpeg?
 ):  # this is just a primitive. need to improve in many ways.
     # producer = ""
-    scriptBase = ['(".mp4",producer = "%s", bgm = "%s")' % (producer, bgm)] # set default resolution to 1920x1080
-    def getSpanDuration(span): return span[1]-span[0]
+    scriptBase = [
+        '(".mp4",producer = "%s", bgm = "%s")' % (producer, bgm)
+    ]  # set default resolution to 1920x1080
+
+    def getSpanDuration(span):
+        return span[1] - span[0]
+
     for item in renderList:
         # print("ITEM:", item)
         span = item["span"]
@@ -327,12 +335,18 @@ def renderList2MediaLang(
         cut_span_duration = getSpanDuration(cut_span)
         speed = cut_span_duration / span_duration
         # breakpoint()
-        name=source
-        line = '("%s", video=true, slient=%s, speed=%f, start=%f, end=%f)' % (name, str(slient).lower() ,speed,cut_span[0],cut_span[1])
+        name = source
+        line = '("%s", video=true, slient=%s, speed=%f, start=%f, end=%f)' % (
+            name,
+            str(slient).lower(),
+            speed,
+            cut_span[0],
+            cut_span[1],
+        )
         scriptBase.append(line)
     # print(scriptBase)
     # now return the medialang object.
-    medialangScript = "\n\n".join(scriptBase) # forced to double return. is it?
+    medialangScript = "\n\n".join(scriptBase)  # forced to double return. is it?
     medialangObject = Medialang(script=medialangScript)
     return medialangObject
 
@@ -394,11 +408,15 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # print("_________________MEDIALANG CODE_________________")
     # print(medialangCode) # should you write it to somewhere?
     import uuid
+
     randomName = str(uuid.uuid4())
-    medialangCodeSavePath = os.path.join("/root/Desktop/works/pyjom/tests/medialang_tests","{}.mdl".format(randomName))
-    with open(medialangCodeSavePath,"w+") as f: f.write(medialangCode)
+    medialangCodeSavePath = os.path.join(
+        "/root/Desktop/works/pyjom/tests/medialang_tests", "{}.mdl".format(randomName)
+    )
+    with open(medialangCodeSavePath, "w+") as f:
+        f.write(medialangCode)
     # print("_________________MEDIALANG CODE_________________")
-    medialangObject.execute() ## shit will happen.
+    medialangObject.execute()  ## shit will happen.
     # next time you could test medialang directly.
 
     # medialangObject.eval() # is something like that?

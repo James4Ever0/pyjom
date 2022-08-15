@@ -84,4 +84,5 @@ def PMRT_0(scriptFilePath = ""):
 if __name__ == "__main__":
     # completeTest()
     # so we don't have to run it all the time.
-    PMRT_0()
+    scriptFilePath = ""
+    PMRT_0(scriptFilePath)
