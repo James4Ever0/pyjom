@@ -395,7 +395,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     print(medialangCode)
     print("_________________MEDIALANG CODE_________________")
     medialangObject.execute() ## shit will happen.
-    # 
+    # next time you could test medialang directly.
 
     # medialangObject.eval() # is something like that?
 
