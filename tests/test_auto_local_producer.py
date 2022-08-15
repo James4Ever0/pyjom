@@ -77,8 +77,9 @@ def partialMedialangRenderTest(medialangScript):
 
 def PMRT_0():
     medialangScript = ""
-    partialMedialangRenderTest(medialangScript)P
+    partialMedialangRenderTest(medialangScript)
 
 if __name__ == "__main__":
     # completeTest()
     # so we don't have to run it all the time.
+    PMRT_0()
