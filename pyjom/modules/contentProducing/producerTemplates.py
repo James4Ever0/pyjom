@@ -393,6 +393,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     medialangCode = medialangObject.prettify()
     print("_________________MEDIALANG CODE_________________")
     print(medialangCode) # should you write to somewhere?
+    with open(medialangCodeSavePath,"w+") as f: f.write(medialangCode)
     print("_________________MEDIALANG CODE_________________")
     medialangObject.execute() ## shit will happen.
     # next time you could test medialang directly.
