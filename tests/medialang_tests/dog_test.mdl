@@ -1,0 +1,729 @@
+# _________________MEDIALANG CODE_________________
+(".mp4", producer="videoConcatWithBgm",
+    bgm="/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.170477
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    video=true, slient=true, speed=0.835376
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.253005
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=0.913457
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=1.542152
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=0.96385
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=0.969706
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.339706
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=0.726384
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.249993
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.057687
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.29807
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.751796
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.73913
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=1.670061
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.417582
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.293091
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.73913
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.729709
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.413043
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.034473
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.417582
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    video=true, slient=true, speed=1.621602
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=1.621622
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.739102
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.043478
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=1.670061
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.405405
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.405388
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=1.304335
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.726619
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    video=true, slient=true, speed=1.471847
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.304348
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.594177
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=1.405405
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.463406
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=1.670061
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=1.621622
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.726591
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    video=true, slient=true, speed=1.847826
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.038951
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.739109
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.726619
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.304348
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.115869
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=1.639324
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.594203
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=1.195637
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    video=true, slient=true, speed=1.293103
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.297281
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.413043
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=1.004935
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.413026
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.991342
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=0.972038
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496154
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=0.956512
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.249993
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.413043
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=1.621602
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.12553
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.405405
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.304332
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.837815
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=1.261643
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.621602
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.72973
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=1.630415
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.297297
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=1.413026
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.870504
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.093218
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.726591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.726619
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.397832
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.195652
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.731585
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=1.670088
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    video=true, slient=true, speed=1.630415
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.73913
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.982739
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.346147
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=1.189175
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.417522
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4",
+    video=true, slient=true, speed=1.105757
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.189189
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.397832
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.751825
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.621602
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=1.848908
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.870473
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    video=true, slient=true, speed=1.471861
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.304332
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=0.810806
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=1.73913
+)
+
+("/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
+    video=true, slient=true, speed=1.645005
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
+    video=true, slient=true, speed=1.630415
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=1.248077
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlgghooTc.mp4",
+    video=true, slient=true, speed=1.420747
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    video=true, slient=true, speed=1.621622
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.417522
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496154
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.365534
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.417582
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496154
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.417582
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.365534
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496093
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.365534
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.417582
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496154
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365534
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.417582
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.365534
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496154
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlfD719j8.mp4",
+    video=true, slient=true, speed=1.73913
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391245
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496154
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.391304
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496093
+)
+
+("/root/Desktop/works/pyjom/samples/video/LljRJde7s.mp4",
+    video=true, slient=true, speed=2.417582
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=2.365591
+)
+
+("/root/Desktop/works/pyjom/samples/video/LlhIWtKob.mp4",
+    video=true, slient=true, speed=2.496154
+)
+
+("/root/Desktop/works/pyjom/samples/video/LklzN7XcH.mp4",
+    video=true, slient=true, speed=4.680625
+)
+
+("/root/Desktop/works/pyjom/samples/video/LiGfl6lvf.mp4",
+    video=true, slient=true, speed=0.993325
+)
+# _________________MEDIALANG CODE_________________
