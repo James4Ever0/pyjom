@@ -416,7 +416,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     with open(medialangCodeSavePath, "w+") as f:
         f.write(medialangCode)
     print("MEDIALANG CODE SAVED TO:", medialangCodeSavePath)
-    # why use medialang? probably because these render language are not fully automated"
+    # why use medialang? probably because these render language are not "fully automated" or "automated enough" to express some abstract ideas?
     # print("_________________MEDIALANG CODE_________________")
     medialangObject.execute()  ## shit will happen.
     # next time you could test medialang directly.
