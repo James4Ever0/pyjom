@@ -44,6 +44,7 @@ class lexicalGroup:
             item.indent = self.indent + 1
             item.index = i
             print(item)
+        # should we return nothing?
 
 
 class lexicalScript:
