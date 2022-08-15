@@ -39,7 +39,7 @@ class lexicalGroup:
     def __repr__(self):
         indent = "    " * self.indent
         print("{}____________medialang_line_[{}]".format(indent, self.index))
-        print("ITEMS:", self.items)
+        # print("ITEMS:", self.items)
         for i, item in enumerate(self.dump()):
             item.indent = self.indent + 1
             item.index = i
