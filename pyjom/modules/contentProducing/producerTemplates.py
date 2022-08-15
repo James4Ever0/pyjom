@@ -393,7 +393,9 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     medialangCode = medialangObject.prettify()
     print("_________________MEDIALANG CODE_________________")
     print(medialangCode)
-    print("_________________MEDIALANG CODE_________________")
+    import pyperclip
+    pyperclip.copy()
+    print("_________________MEDIALANG CODE COPIED_________________")
     medialangObject.execute() ## shit will happen.
     # next time you could test medialang directly.
 
