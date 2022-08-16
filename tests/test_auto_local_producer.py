@@ -71,15 +71,15 @@ wbRev = FilesystemAutoContentProducer(
 def completeTest():
     wbRev.main()
 
-def partialMedialangRenderTest(medialangScript):
+def partialMedialangRenderTest(medialangScript, verbose=True):
     # copy that script to my dear clipboard please?
-    medialangObject = Medialang(script=medialangScript)
+    medialangObject = Medialang(script=medialangScript, verbose=verbose)
     medialangObject.execute()
 
 def PMRT_0(scriptFilePath = "", verbose=True):
     with open(scriptFilePath,"r") as f:
         medialangScript = f.read()
-    partialMedialangRenderTest(medialangScript)
+    partialMedialangRenderTest(medialangScript, verbose=verbose)
 
 if __name__ == "__main__":
     # completeTest()
