@@ -431,6 +431,7 @@ class Medialang:
                 print("RESOURCE ENUMERATE",index0, resource)
                 breakpoint()
                 mdata = None
+                mdata_array
                 for index1, item in enumerate(resource.items):
                     mdata = self.objectExecutor(item, previous=mdata)
                     print("input {}-{}:".format(index0, index1), mdata) # this is the wrong data array!
