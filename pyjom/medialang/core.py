@@ -334,7 +334,7 @@ class Medialang:
         for line in lines:
             line_obj = lexicalGroup()
             # first let's remove all comments.
-            re.replace(r"#[^\n]+", line)
+            re.split(r"#[^\n]+", line)
             line = line.replace("\n", "").replace("\t", "")
             line = line.strip()  # have extra spacings.
             for item in self.getItems(line):
