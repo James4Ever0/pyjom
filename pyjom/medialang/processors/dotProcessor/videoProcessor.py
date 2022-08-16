@@ -6,7 +6,8 @@ def dotVideoProcessor(item, previous,format="mp4"):
     # this item is the video output config, medialang item.
     itemArgs = item.args
     backend = itemArgs["backend"]
-    
+    fast = itemArgs["fast"]
+    bgm = itemArgs["bgm"]
 
     # the "previous" is the clips, now fucked.
     # this is initially decided to output mp4, however you might want to decorate it.
