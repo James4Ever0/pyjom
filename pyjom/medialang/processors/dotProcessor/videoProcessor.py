@@ -8,6 +8,7 @@ def dotVideoProcessor(item, previous,format="mp4"):
     backend = itemArgs["backend"]
     fast = itemArgs["fast"]
     bgm = itemArgs["bgm"]
+    print(backend, fast,bgm)
 
     # the "previous" is the clips, now fucked.
     # this is initially decided to output mp4, however you might want to decorate it.
