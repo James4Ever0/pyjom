@@ -13,6 +13,7 @@
 # rclone sync -P . /media/root/Jumpcut/pyjom # really freaking slow.
 # cd /media/root/help/pyjom # base dir
 cd $(mount | grep -E "/media/root/help" | awk '{print $3}') 
+# change this shit.
 mount | grep -E "/media/root/Toshiba3000|/media/root/Jumpcut|/media/root/Seagate1000" | awk '{print $3}' | xargs -iabc mkdir abc/pyjom
 cd pyjom # important. my shit fucked...
 # pwd
