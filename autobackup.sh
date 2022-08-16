@@ -24,3 +24,5 @@ mount | grep -E "/media/root/Toshiba3000|/media/root/Jumpcut|/media/root/Seagate
 
 # remote sync
 bash remote_backup.sh
+
+# you need to regularly check the token avaliability in aliyun and baidu netdisk. better store it in redis though, access every time when login via ssh, set it as fishrc.
