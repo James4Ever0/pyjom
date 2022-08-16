@@ -12,7 +12,7 @@ def dotVideoProcessor(item, previous,format=None):
     bgm = itemArgs["bgm"]
     print(format, backend, fast, bgm)
 
-    # the "previous" is the clips, now fucked, filled with non-existant intermediate mpegts files
+    # the "previous" is the clips, now fucked, filled with non-existant intermediate mpegts files, but no source is out there.
     # this is initially decided to output mp4, however you might want to decorate it.
     print("_________INSIDE DOT VIDEO PROCESSOR_________")
     print("ITEM:", item)
