@@ -17,7 +17,7 @@ class lexicalItem:
         mRepr = []
         mRepr.append("{}___medialang_item_[{}]".format(indent, self.index))
         mRepr.append("{}item path:".format(indent)+"  "+ self.path)
-        mRepr.append("{}item args:".format(indent)+"  "+ self.args)
+        mRepr.append("{}item args:".format(indent)+"  "+ str(self.args))
         return "\n".join(mRepr) # is this magic?
 
 
