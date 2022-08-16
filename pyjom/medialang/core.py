@@ -429,6 +429,7 @@ class Medialang:
         else:
             for index0, resource in enumerate(resources):
                 print("RESOURCE ENUMERATE",index0, resource)
+                breakpoint()
                 mdata = None
                 for index1, item in enumerate(resource.items):
                     mdata = self.objectExecutor(item, previous=mdata)
