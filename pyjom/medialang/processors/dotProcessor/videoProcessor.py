@@ -7,7 +7,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     itemArgs = item.args
     if format is None:
         format = item.path.split(".")[-1]
-    backend = itemArgs.get("backend","editly")
+    backend = itemArgs.get("backend","editly") # so all 
     fast = itemArgs.get("fast",True)
     bgm = itemArgs.get("bgm",None)
     print(format, backend, fast, bgm)
