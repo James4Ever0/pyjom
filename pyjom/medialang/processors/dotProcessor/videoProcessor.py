@@ -8,8 +8,8 @@ def dotVideoProcessor(item, previous,format=None):
     if format is None:
         format = item.path.split(".")[-1]
     backend = itemArgs.get("backend","editly")
-    fast = itemArgs.get("fast","editly")
-    bgm = itemArgs.get("bgm","editly")
+    fast = itemArgs.get("fast",True)
+    bgm = itemArgs.get("bgm",None)
     print(format, backend, fast, bgm)
 
     # the "previous" is the clips, now fucked, filled with non-existant intermediate mpegts files, but no source is out there.
