@@ -41,14 +41,14 @@ class lexicalGroup:
     def __repr__(self):
         indent = "    " * self.indent
         mRepr = []
-        print("{}____________medialang_line_[{}]".format(indent, self.index))
+        mRepr.append("{}____________medialang_line_[{}]".format(indent, self.index))
         # print("ITEMS:", self.items)
         for i, item in enumerate(self.dump()):
             item.indent = self.indent + 1
             item.index = i
-            print(item)
+            mRepr.append(item)
         # should we return nothing?
-        return ""
+        return "\n".join(mRepr)
 
 
 class lexicalScript:
