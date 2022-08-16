@@ -14,9 +14,10 @@ class lexicalItem:
 
     def __repr__(self):
         indent = "    " * self.indent
-        ("{}___medialang_item_[{}]".format(indent, self.index))
-        ("{}item path:".format(indent), self.path)
-        ("{}item args:".format(indent), self.args)
+        mRepr = []
+        mRepr.append("{}___medialang_item_[{}]".format(indent, self.index))
+        mRepr.append("{}item path:".format(indent), self.path)
+        mRepr.append("{}item args:".format(indent), self.args)
         return "" # is this magic?
 
 
