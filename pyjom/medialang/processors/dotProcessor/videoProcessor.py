@@ -1,10 +1,9 @@
 from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 
-def dotVideoProcessor(item, previous,format="mp4"):
+def dotVideoProcessor(item, previous,format=None):
     # print("DOTVIDEO ARGS:", item, previous, format)
     # this item is the video output config, medialang item.
-    if format 
     itemArgs = item.args
     backend = itemArgs["backend"]
     fast = itemArgs["fast"]
