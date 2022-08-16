@@ -338,7 +338,8 @@ class Medialang:
             newLine = ""
             for elem in comment_expression.split(line):
                 if not comment_expression.match(elem):
-                newLine+=elem
+                    newLine+=elem
+            line = newLine
             line = line.replace("\n", "").replace("\t", "")
             line = line.strip()  # have extra spacings.
             for item in self.getItems(line):
