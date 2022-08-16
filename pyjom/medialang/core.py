@@ -333,6 +333,8 @@ class Medialang:
         lines = [x for x in lines if self.detectGrammar(x)]
         for line in lines:
             line_obj = lexicalGroup()
+            # first let's remove all comments.
+            
             line = line.replace("\n", "").replace("\t", "")
             line = line.strip()  # have extra spacings.
             for item in self.getItems(line):
