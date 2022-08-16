@@ -431,11 +431,12 @@ class Medialang:
                 print("RESOURCE ENUMERATE",index0, resource)
                 breakpoint()
                 mdata = None
-                mdata_array
+                mdata_array = []
                 for index1, item in enumerate(resource.items):
                     mdata = self.objectExecutor(item, previous=mdata)
                     print("input {}-{}:".format(index0, index1), mdata) # this is the wrong data array!
-                data_array.append({"objects":resource.item,"cache_array":mdata})
+                    mdata_array.append(mdata)
+                data_array.append({"objects":resource.item,"cache_array":mdata_array})
             data = copy.deepcopy(data_array) # so this is your freaking data! let's decide your approach all inside that dotProcessor instead of generating trash here!
             for item in targets.items:
                 data = self.objectExecutor(item, previous=data)
