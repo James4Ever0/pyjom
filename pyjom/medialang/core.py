@@ -70,12 +70,13 @@ class lexicalScript:
 
     def __repr__(self):
         indent = "    " * self.indent
-        print("{}____________medialang_script_[{}]".format(indent, self.index))
+        mRepr = []
+        mRepr.append("{}____________medialang_script_[{}]".format(indent, self.index))
         for i, item in enumerate(self.dump()):
             item.indent = self.indent + 1
             item.index = i
-            print(item)
-        return ""
+            mRepr.append(item)
+        return "\n".join(mRepr)
 
 class Medialang:
     def __init__(
