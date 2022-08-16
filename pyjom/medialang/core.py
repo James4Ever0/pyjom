@@ -337,8 +337,8 @@ class Medialang:
             line = line.strip()  # have extra spacings.
             for item in self.getItems(line):
                 if self.detectGrammar(item):
-                    # print("item:",item)
-                    # print("item length:",len(item))
+                    print("item:",item)
+                    print("item length:",len(item))
                     try:
                         item_obj = self.parseItem(item)
                         line_obj.append(item_obj)
