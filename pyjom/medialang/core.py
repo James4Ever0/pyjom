@@ -90,7 +90,7 @@ class Medialang:
         template_args={},
         verbose=True,
     ):
-    self.verbose = verbose
+        self.verbose = verbose
         self.indent = " " * indent
         self.script_path = script_path
         self.script_obj = script_obj
