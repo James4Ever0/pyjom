@@ -435,7 +435,7 @@ class Medialang:
                     mdata = self.objectExecutor(item, previous=mdata)
                     print("input {}-{}:".format(index0, index1), mdata)
                 data_array.append(mdata)
-            data = copy.deepcopy(data_array) # so this is your freaking data!
+            data = copy.deepcopy(data_array) # so this is your freaking data! let's decide your approach all inside that dot
             for item in targets.items:
                 data = self.objectExecutor(item, previous=data)
         return data, data_array
