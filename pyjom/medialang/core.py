@@ -346,6 +346,7 @@ class Medialang:
                 if self.detectGrammar(item):
                     print("item:",item)
                     print("item length:",len(item))
+                    breakpoint()
                     try:
                         item_obj = self.parseItem(item)
                         line_obj.append(item_obj)
