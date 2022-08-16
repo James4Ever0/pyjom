@@ -1,7 +1,7 @@
 from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 
-def dotVideoProcessor(item, previous, format=None):
+def dotVideoProcessor(item, previous, format=None, verbose=True):
     # print("DOTVIDEO ARGS:", item, previous, format)
     # this item is the video output config, medialang item.
     itemArgs = item.args
