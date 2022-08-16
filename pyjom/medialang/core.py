@@ -18,7 +18,7 @@ class lexicalItem:
         mRepr.append("{}___medialang_item_[{}]".format(indent, self.index))
         mRepr.append("{}item path:".format(indent), self.path)
         mRepr.append("{}item args:".format(indent), self.args)
-        return "" # is this magic?
+        return "\n".join(mRepr) # is this magic?
 
 
 class lexicalGroup:
@@ -40,6 +40,7 @@ class lexicalGroup:
 
     def __repr__(self):
         indent = "    " * self.indent
+        mRepr = []
         print("{}____________medialang_line_[{}]".format(indent, self.index))
         # print("ITEMS:", self.items)
         for i, item in enumerate(self.dump()):
