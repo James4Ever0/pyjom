@@ -6,7 +6,7 @@ def dotVideoProcessor(item, previous,format=None):
     # this item is the video output config, medialang item.
     itemArgs = item.args
     if format is None:
-        format = itemArgs[]
+        format = item.path.split(".")[-1]
     backend = itemArgs["backend"]
     fast = itemArgs["fast"]
     bgm = itemArgs["bgm"]
