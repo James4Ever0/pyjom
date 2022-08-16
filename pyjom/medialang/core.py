@@ -409,7 +409,7 @@ class Medialang:
                 result = function(item, previous, verbose=self.verbose)
         else:
             if os.path.exists(path):
-                data = fsProcessor(item, previous=previous)
+                data = fsProcessor(item, previous=previous, verbose=self.verbose)
                 result = data
             else:
                 pass

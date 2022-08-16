@@ -24,6 +24,7 @@ def fsProcessor(item,previous=None, verbose=True):
     fbase = os.path.basename(path)
     args = item.args
     mediatype = getFileType(fbase) # mediatype not sure yet.
+    if verbose:
         print("media path:",path)
         print("media type:",mediatype)
     # handle to ffmpeg.
