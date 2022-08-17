@@ -46,6 +46,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     ],
                 }
                 for layerElem in elem:
+                    layer = None
                     if 
                         layer= {
                                 "type": "video",
@@ -54,5 +55,6 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                                 "cutFrom": cutFrom,
                                 "cutTo": cutTo,
                             }
+                    if layer is not None:
                     clip.append(layer)
                 template.clips.append(clip)
