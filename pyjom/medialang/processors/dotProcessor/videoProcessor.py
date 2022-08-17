@@ -37,6 +37,8 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 "defaults": {"transition": None},
                 "clips": [],
             }
+            if bgm is not None:
+                
             for elem in previous:
                 duration = 3 # default duration
                 clip = {
