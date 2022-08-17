@@ -59,6 +59,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                             cutFrom = layerElem.args.get("cutFrom",None)
                             cutTo = layerElem.args.get("cutTo",None)
                             speed = layerElem.args.get("speed",1)
+                            layerDuration = speed*(cutTo-cutFrom)
                             layer= {
                                     "type": "video",
                                     "path": videoFilePath,
