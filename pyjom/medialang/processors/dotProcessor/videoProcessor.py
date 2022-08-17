@@ -57,7 +57,8 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                         if filetype == "video":
                             videoFilePath = filepath
                             # get video information!
-                            endOfVideo = get_media_info(filepath)
+                            videoInfo = get_media_info(filepath)
+                            endOfVideo = videoInfo["duration"]
                             cutFrom = layerElem.args.get("cutFrom",0)
                             cutTo = layerElem.args.get("cutTo",endOfVideo)
                             speed = layerElem.args.get("speed",1)
