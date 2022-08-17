@@ -52,25 +52,25 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     # breakpoint()
                     filepath = layerElem.path
                     # what type is this damn media?
-                    filetype = getFileType(filepath)
-                    if filetype == "video":
-                        videoFilePath = filepath
-                        cutFrom = layerElem.args.get("cutFrom",None)
-                        cutTo = layerElem.args.get("cutTo",None)
-                        layer= {
-                                "type": "video",
-                                "path": videoFilePath,
-                                "resizeMode": "contain",
-                                "cutFrom": cutFrom,
-                                "cutTo": cutTo,
-                            }
-                        removeKeys = []
-                        for key, elem in layer.items():
-                            if elem is None:
-                                removeKeys.append(key)
-                        for key in removeKeys: del layer[key]
-                    if layer is not None:
-                        clip.append(layer)
-                    else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
+                        filetype = getFileType(filepath)
+                        if filetype == "video":
+                            videoFilePath = filepath
+                            cutFrom = layerElem.args.get("cutFrom",None)
+                            cutTo = layerElem.args.get("cutTo",None)
+                            layer= {
+                                    "type": "video",
+                                    "path": videoFilePath,
+                                    "resizeMode": "contain",
+                                    "cutFrom": cutFrom,
+                                    "cutTo": cutTo,
+                                }
+                            removeKeys = []
+                            for key, elem in layer.items():
+                                if elem is None:
+                                    removeKeys.append(key)
+                            for key in removeKeys: del layer[key]
+                        if layer is not None:
+                            clip.append(layer)
+                        else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
                 template.clips.append(clip)
                 # then just execute this template, or let's just view it.
