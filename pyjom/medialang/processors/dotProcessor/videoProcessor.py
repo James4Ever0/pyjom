@@ -64,7 +64,10 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                                 "cutFrom": cutFrom,
                                 "cutTo": cutTo,
                             }
-                        for key, elem in layer.enumerate()
+                        remvteKeys = []
+                        for key, elem in layer.items():
+                            if elem is None:
+                                removeKeys.append(key)
                     if layer is not None:
                         clip.append(layer)
                     else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
