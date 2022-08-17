@@ -85,4 +85,4 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 template.clips.append(clip)
                 # then just execute this template, or let's just view it.
             print("editly template:")
-            print(json.)
+            print(json.dumps(template, allow_))
