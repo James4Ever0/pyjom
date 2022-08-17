@@ -1,15 +1,18 @@
 from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 
+
 def dotVideoProcessor(item, previous, format=None, verbose=True):
     # print("DOTVIDEO ARGS:", item, previous, format)
     # this item is the video output config, medialang item.
     itemArgs = item.args
     if format is None:
         format = item.path.split(".")[-1]
-    backend = itemArgs.get("backend","editly") # so all things will be assumed to put directly into editly render json, unless explicitly specified under other medialang or other backend and need to be resolved into media file format before rendering. sure?
-    fast = itemArgs.get("fast",True)
-    bgm = itemArgs.get("bgm",None)
+    backend = itemArgs.get(
+        "backend", "editly"
+    )  # so all things will be assumed to put directly into editly render json, unless explicitly specified under other medialang or other backend and need to be resolved into media file format before rendering. sure?
+    fast = itemArgs.get("fast", True)
+    bgm = itemArgs.get("bgm", None)
     print(format, backend, fast, bgm)
 
     # the "previous" is the clips, was fucked, filled with non-existant intermediate mpegts files, but no source was out there.
@@ -22,28 +25,25 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     if backend == "editly":
         # iterate through all items.
         template = {
-	"width": 1920,
-	"height": 1080,
-	"fps": 60,
-	"outPath": output_path,
-	"audioFilePath": bgm,
-	"defaults": {
-		"transition": None
-	},
-	"clips": [
-	]
-}
+            "width": 1920,
+            "height": 1080,
+            "fps": 60,
+            "outPath": output_path,
+            "audioFilePath": bgm,
+            "defaults": {"transition": None},
+            "clips": [],
+        }
     for elem in previous:
         duration = 3
         clip = {
-                "duration": duration,
-                "layers": [
-                    {
-                        "type": "video",
-                        "path": videoFilePath,
-                        "resizeMode": "contain",
-                        "cutFrom": cutFrom,
-                        "cutTo": cutTo
-                    }
-                ]
-            }
+            "duration": duration,
+            "layers": [
+                {
+                    "type": "video",
+                    "path": videoFilePath,
+                    "resizeMode": "contain",
+                    "cutFrom": cutFrom,
+                    "cutTo": cutTo,
+                }
+            ],
+        }
