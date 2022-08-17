@@ -38,12 +38,6 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
             clip = {
                 "duration": duration,
                 "layers": [
-                    {
-                        "type": "video",
-                        "path": videoFilePath,
-                        "resizeMode": "contain",
-                        "cutFrom": cutFrom,
-                        "cutTo": cutTo,
-                    }
+
                 ],
             }
