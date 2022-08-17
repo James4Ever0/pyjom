@@ -23,6 +23,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         print("PREVIOUS:", previous)
         print("_________INSIDE DOT VIDEO PROCESSOR_________")
     with tempfile.TemporaryDirectory() as tmpdirname:
+        tmpdirname = os.path.abspath(tmpdirname)
         print('created temporary directory', tmpdirname)
         randomUUID = str(uuid.uuid4())
         output_path = os.path.join(tmpdirname,randomUUID+"."+format)
