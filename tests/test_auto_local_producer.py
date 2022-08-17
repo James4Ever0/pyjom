@@ -89,4 +89,5 @@ if __name__ == "__main__":
     scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
     result = PMRT_0(scriptFilePath, verbose=False)
     data, data_array = result
-    # data -> 
+    # data -> editly json
+    # data_array -> input of dot processor
