@@ -52,7 +52,8 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     # breakpoint()
                     filepath = layerElem.path
                     # what type is this damn media?
-                        filetype = getFileType(filepath)
+                    filetype = getFileType(filepath)
+                    if layerElem.args.get("")
                         if filetype == "video":
                             videoFilePath = filepath
                             cutFrom = layerElem.args.get("cutFrom",None)
