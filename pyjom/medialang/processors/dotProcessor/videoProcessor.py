@@ -56,7 +56,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     if filetype == "video":
                         videoFilePath = filepath
                         cutFrom = layerElem.args.get("cutFrom",None)
-                        cutFrom = layerElem.args.get("cutFrom",None)
+                        cutTo = layerElem.args.get("cutTo",None)
                         layer= {
                                 "type": "video",
                                 "path": videoFilePath,
