@@ -49,9 +49,9 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 layer_durations = []
                 for layerElem in elem:
                     layer = None
-                    print(layerElem)
+                    print(layerElem) # {"item":<item>, ""}
                     breakpoint()
-                    filepath = layerElem.path
+                    filepath = layerElemItem.path
                     # what type is this damn media?
                     filetype = getFileType(filepath)
                     if layerElem.args.get("backend","editly") == "editly":
