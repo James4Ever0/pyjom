@@ -33,3 +33,16 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
 	"clips": [
 	]
 }
+for elem in previous:
+    		clip = {
+			"duration": 3,
+			"layers": [
+				{
+					"type": "video",
+					"path": "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+					"resizeMode": "contain",
+					"cutFrom": 2,
+					"cutTo": 10
+				}
+			]
+		}
