@@ -22,7 +22,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         print("ITEM:", item)
         print("PREVIOUS:", previous)
         print("_________INSIDE DOT VIDEO PROCESSOR_________")
-    with tempfile.TemporaryDirectory(prefix="/dev/shm/") as tmpdirname: # maybe you should take care of the directory prefix?
+    with tempfile.TemporaryDirectory(prefix="/dev/shm/medialang") as tmpdirname: # maybe you should take care of the directory prefix?
         tmpdirname = os.path.abspath(tmpdirname)
         print('created temporary directory', tmpdirname)
         randomUUID = str(uuid.uuid4())
