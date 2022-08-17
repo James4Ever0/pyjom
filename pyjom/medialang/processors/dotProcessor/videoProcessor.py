@@ -84,4 +84,5 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 clip["duration"] = maxDuration
                 template.clips.append(clip)
                 # then just execute this template, or let's just view it.
-            print("template")
+            print("editly template:")
+            print(json.)
