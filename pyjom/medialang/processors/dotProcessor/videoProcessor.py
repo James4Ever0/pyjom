@@ -64,6 +64,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                                     "resizeMode": "contain",
                                     "cutFrom": cutFrom,
                                     "cutTo": cutTo,
+                                    "duration":
                                 }
                             removeKeys = []
                             for key, elem in layer.items():
@@ -75,4 +76,4 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
                 template.clips.append(clip)
                 # then just execute this template, or let's just view it.
-                
+            print("template")
