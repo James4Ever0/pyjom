@@ -19,4 +19,4 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         print("ITEM:", item)
         print("PREVIOUS:", previous)
         print("_________INSIDE DOT VIDEO PROCESSOR_________")
-        
+    if backend == ""
