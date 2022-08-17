@@ -50,7 +50,9 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     layer = None
                     print(layerElem)
                     breakpoint()
+                    filepath = layerElem.path
                     # what type is this damn media?
+                    filetype = 
                     if True:
                         layer= {
                                 "type": "video",
