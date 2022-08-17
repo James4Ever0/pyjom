@@ -48,8 +48,8 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 }
                 for layerElem in elem:
                     layer = None
-                    print(layerElem)
-                    breakpoint()
+                    # print(layerElem)
+                    # breakpoint()
                     filepath = layerElem.path
                     # what type is this damn media?
                     filetype = getFileType(filepath)
