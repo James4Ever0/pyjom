@@ -46,6 +46,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     "layers": [
                     ],
                 }
+                layer_durations = []
                 for layerElem in elem:
                     layer = None
                     # print(layerElem)
