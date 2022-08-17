@@ -26,7 +26,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
 	"height": 1080,
 	"fps": 60,
 	"outPath": output_path,
-	"audioFilePath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",
+	"audioFilePath": bgm,
 	"defaults": {
 		"transition": None
 	},
