@@ -33,12 +33,11 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 "height": 1080,
                 "fps": 60,
                 "outPath": output_path,
-                "audioFilePath": bgm,
                 "defaults": {"transition": None},
                 "clips": [],
             }
             if bgm is not None:
-                
+                template.update({"audioFilePath": bgm})
             for elem in previous:
                 duration = 3 # default duration
                 clip = {
