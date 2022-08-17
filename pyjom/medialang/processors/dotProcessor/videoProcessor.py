@@ -24,7 +24,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         print("_________INSIDE DOT VIDEO PROCESSOR_________")
     with tempfile.TemporaryDirectory() as tmpdirname:
         print('created temporary directory', tmpdirname)
-        output_path = os.path.join(tmpdirname,
+        output_path = os.path.join(tmpdirname,randomUUID+
         if backend == "editly":
             # iterate through all items.
             template = {
