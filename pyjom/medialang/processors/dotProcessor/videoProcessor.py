@@ -75,3 +75,4 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
                 template.clips.append(clip)
                 # then just execute this template, or let's just view it.
+                
