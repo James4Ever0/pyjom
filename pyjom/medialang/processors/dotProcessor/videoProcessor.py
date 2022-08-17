@@ -64,7 +64,6 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                                     "resizeMode": "contain",
                                     "cutFrom": cutFrom,
                                     "cutTo": cutTo,
-                                    "duration":
                                 }
                             removeKeys = []
                             for key, elem in layer.items():
