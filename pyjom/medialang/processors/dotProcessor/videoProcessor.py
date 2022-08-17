@@ -49,8 +49,8 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 layer_durations = []
                 for layerElem in elem:
                     layer = None
-                    # print(layerElem)
-                    # breakpoint()
+                    print(layerElem)
+                    breakpoint()
                     filepath = layerElem.path
                     # what type is this damn media?
                     filetype = getFileType(filepath)
@@ -86,3 +86,4 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 # then just execute this template, or let's just view it.
             print("________________editly template________________")
             print(json.dumps(template, ensure_ascii=False, indent=4))
+            print("________________editly template________________")
