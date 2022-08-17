@@ -24,29 +24,30 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         print("_________INSIDE DOT VIDEO PROCESSOR_________")
     with tempfile.TemporaryDirectory() as tmpdirname:
         print('created temporary directory', tmpdirname)
-    if backend == "editly":
-        # iterate through all items.
-        template = {
-            "width": 1920,
-            "height": 1080,
-            "fps": 60,
-            "outPath": output_path,
-            "audioFilePath": bgm,
-            "defaults": {"transition": None},
-            "clips": [],
-        }
-        for elem in previous:
-            duration = 3 # default duration
-            clip = {
-                "duration": duration,
-                "layers": [
-                ],
+        output_path = os.path.join(tmpdirname,
+        if backend == "editly":
+            # iterate through all items.
+            template = {
+                "width": 1920,
+                "height": 1080,
+                "fps": 60,
+                "outPath": output_path,
+                "audioFilePath": bgm,
+                "defaults": {"transition": None},
+                "clips": [],
             }
-            for layerElem in elem:
-                layer= {
-                        "type": "video",
-                        "path": videoFilePath,
-                        "resizeMode": "contain",
-                        "cutFrom": cutFrom,
-                        "cutTo": cutTo,
-                    }
+            for elem in previous:
+                duration = 3 # default duration
+                clip = {
+                    "duration": duration,
+                    "layers": [
+                    ],
+                }
+                for layerElem in elem:
+                    layer= {
+                            "type": "video",
+                            "path": videoFilePath,
+                            "resizeMode": "contain",
+                            "cutFrom": cutFrom,
+                            "cutTo": cutTo,
+                        }
