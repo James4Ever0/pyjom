@@ -41,3 +41,11 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
 
                 ],
             }
+            for layerElem in elem:
+                layer= {
+                        "type": "video",
+                        "path": videoFilePath,
+                        "resizeMode": "contain",
+                        "cutFrom": cutFrom,
+                        "cutTo": cutTo,
+                    }
