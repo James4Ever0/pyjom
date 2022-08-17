@@ -22,5 +22,26 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     if backend == "editly":
         # iterate through all items.
         template = {
-            
-        }
+	"width": 1920,
+	"height": 1080,
+	"fps": 60,
+	"outPath": "./sample.mp4",
+	"audioFilePath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",
+	"defaults": {
+		"transition": null
+	},
+	"clips": [
+		{
+			"duration": 3,
+			"layers": [
+				{
+					"type": "video",
+					"path": "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+					"resizeMode": "contain",
+					"cutFrom": 2,
+					"cutTo": 10
+				}
+			]
+		}
+	]
+}
