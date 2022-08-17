@@ -55,7 +55,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     filepath = layerElemItem.path
                     # what type is this damn media?
                     filetype = getFileType(filepath)
-                    if layerElem.args.get("backend","editly") == "editly":
+                    if layerElemItem.args.get("backend","editly") == "editly":
                         if filetype == "video":
                             videoFilePath = filepath
                             # get video information!
