@@ -48,7 +48,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 }
                 for layerElem in elem:
                     layer = None
-                    if 
+                    if True:
                         layer= {
                                 "type": "video",
                                 "path": videoFilePath,
