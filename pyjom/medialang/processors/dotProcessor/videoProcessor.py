@@ -83,7 +83,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
                 maxDuration = max(layer_durations)
                 clip["duration"] = maxDuration
-                template.clips.append(clip)
+                template["clips'}.append(clip)
                 # then just execute this template, or let's just view it.
             print("________________editly template________________")
             print(json.dumps(template, ensure_ascii=False, indent=4))
