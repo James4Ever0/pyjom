@@ -46,6 +46,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     "layers": [
                     ],
                 }
+                if 
                 for layerElem in elem:
                     layer = None
                     # print(layerElem)
@@ -53,7 +54,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     filepath = layerElem.path
                     # what type is this damn media?
                     filetype = getFileType(filepath)
-                    if layerElem.args.get("backend","editly")
+                    if layerElem.args.get("backend","editly") == "editly":
                         if filetype == "video":
                             videoFilePath = filepath
                             cutFrom = layerElem.args.get("cutFrom",None)
