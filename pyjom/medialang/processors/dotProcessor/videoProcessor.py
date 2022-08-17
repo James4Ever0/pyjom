@@ -33,17 +33,17 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
             "defaults": {"transition": None},
             "clips": [],
         }
-    for elem in previous:
-        duration = 3
-        clip = {
-            "duration": duration,
-            "layers": [
-                {
-                    "type": "video",
-                    "path": videoFilePath,
-                    "resizeMode": "contain",
-                    "cutFrom": cutFrom,
-                    "cutTo": cutTo,
-                }
-            ],
-        }
+        for elem in previous:
+            duration = 3
+            clip = {
+                "duration": duration,
+                "layers": [
+                    {
+                        "type": "video",
+                        "path": videoFilePath,
+                        "resizeMode": "contain",
+                        "cutFrom": cutFrom,
+                        "cutTo": cutTo,
+                    }
+                ],
+            }
