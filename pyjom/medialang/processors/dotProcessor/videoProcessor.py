@@ -56,5 +56,6 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                                 "cutTo": cutTo,
                             }
                     if layer is not None:
-                    clip.append(layer)
+                        clip.append(layer)
+                    else: raise Exception("NOT IMPLEMENTED!")
                 template.clips.append(clip)
