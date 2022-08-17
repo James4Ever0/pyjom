@@ -48,6 +48,8 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 }
                 for layerElem in elem:
                     layer = None
+                    print(layerElem)
+                    breakpoint()
                     if True:
                         layer= {
                                 "type": "video",
