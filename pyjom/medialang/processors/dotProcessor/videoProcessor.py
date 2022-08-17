@@ -79,7 +79,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                                     removeKeys.append(key)
                             for key in removeKeys: del layer[key]
                     if layer is not None:
-                        clip.append(layer)
+                        clip["layers"].append(layer)
                     else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
                 maxDuration = max(layer_durations)
                 clip["duration"] = maxDuration
