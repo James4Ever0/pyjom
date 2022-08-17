@@ -34,7 +34,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
             "clips": [],
         }
         for elem in previous:
-            duration = 3
+            duration = 3 # default duration
             clip = {
                 "duration": duration,
                 "layers": [
