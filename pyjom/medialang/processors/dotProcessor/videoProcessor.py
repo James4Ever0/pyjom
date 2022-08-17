@@ -47,12 +47,12 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 }
                 for layerElem in elem:
                     if 
-                    layer= {
-                            "type": "video",
-                            "path": videoFilePath,
-                            "resizeMode": "contain",
-                            "cutFrom": cutFrom,
-                            "cutTo": cutTo,
-                        }
+                        layer= {
+                                "type": "video",
+                                "path": videoFilePath,
+                                "resizeMode": "contain",
+                                "cutFrom": cutFrom,
+                                "cutTo": cutTo,
+                            }
                     clip.append(layer)
                 template.clips.append(clip)
