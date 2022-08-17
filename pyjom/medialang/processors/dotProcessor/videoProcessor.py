@@ -78,6 +78,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     if layer is not None:
                         clip.append(layer)
                     else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
+                clip["duration"]
                 template.clips.append(clip)
                 # then just execute this template, or let's just view it.
             print("template")
