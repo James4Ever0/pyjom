@@ -61,9 +61,9 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                             # get video information!
                             videoInfo = get_media_info(filepath)
                             endOfVideo = videoInfo["duration"]
-                            cutFrom = layerElem.args.get("cutFrom",0)
-                            cutTo = layerElem.args.get("cutTo",endOfVideo)
-                            speed = layerElem.args.get("speed",1)
+                            cutFrom = layerElemItem.args.get("cutFrom",0)
+                            cutTo = layerElemItem.args.get("cutTo",endOfVideo)
+                            speed = layerElemItem.args.get("speed",1)
                             layerDuration = speed*(cutTo-cutFrom)
                             layer_durations.append(layerDuration)
                             layer= {
