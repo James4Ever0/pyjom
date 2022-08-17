@@ -49,8 +49,9 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                 layer_durations = []
                 for layerElem in elem:
                     layer = None
-                    print(layerElem) # {"item":<item>, "cache": <cache_path>}
-                    breakpoint()
+                    # print(layerElem) # {"item":<item>, "cache": <cache_path>}
+                    # breakpoint()
+                    layerElemItem = layerElem["item"]
                     filepath = layerElemItem.path
                     # what type is this damn media?
                     filetype = getFileType(filepath)
