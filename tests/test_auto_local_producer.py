@@ -90,4 +90,5 @@ if __name__ == "__main__":
     result = PMRT_0(scriptFilePath, verbose=False)
     data, data_array = result
     # data -> editly json
-    # data_array -> input of dot processor
+    # data_array -> input of dot processor? check it out.
+    breakpoint()
