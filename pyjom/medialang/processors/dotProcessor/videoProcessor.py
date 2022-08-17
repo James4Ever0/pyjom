@@ -70,8 +70,8 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                                 if elem is None:
                                     removeKeys.append(key)
                             for key in removeKeys: del layer[key]
-                        if layer is not None:
-                            clip.append(layer)
-                        else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
+                    if layer is not None:
+                        clip.append(layer)
+                    else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
                 template.clips.append(clip)
                 # then just execute this template, or let's just view it.
