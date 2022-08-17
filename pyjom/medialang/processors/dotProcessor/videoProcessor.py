@@ -54,3 +54,4 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                             "cutFrom": cutFrom,
                             "cutTo": cutTo,
                         }
+                    clip.append(layer)
