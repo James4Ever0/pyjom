@@ -46,7 +46,6 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
                     "layers": [
                     ],
                 }
-                if 
                 for layerElem in elem:
                     layer = None
                     # print(layerElem)
