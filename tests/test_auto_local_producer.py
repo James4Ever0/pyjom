@@ -131,7 +131,8 @@ if __name__ == "__main__":
                 f.write(json.dumps(editly_json, ensure_ascii=False))
             print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
             subprocess.run(["editly","--json",editlyJsonSavePath])
-        executeEditlyScript(medialang,editly
+            
+        executeEditlyScript(medialangTmpDir,editly_json)
         print("MEDIA SAVE PATH:",outPath)
         # breakpoint()
         # import json
