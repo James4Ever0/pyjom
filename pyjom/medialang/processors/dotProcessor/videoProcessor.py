@@ -86,7 +86,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                             speed = layerElemItem.args.get("speed",1)
                             layerDuration = speed*(cutTo-cutFrom)
                             layer_durations.append(layerDuration)
-                            layer= {
+                            layer= { # add mute
                                     "type": "video",
                                     "path": videoFilePath,
                                     "resizeMode": "contain",
