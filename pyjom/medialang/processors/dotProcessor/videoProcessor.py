@@ -22,6 +22,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     bgm = itemArgs.get("bgm", None)
     # outputPath = itemArgs.get("",None)
     randomUUID = str(uuid.uuid4())
+    outputPath = os.path.join(tmpdirname,randomUUID+"."+format) # this is temporary!
     # usually we choose to use something under medialang tempdir as the storage place.
     print(format, backend, fast, bgm)
 
