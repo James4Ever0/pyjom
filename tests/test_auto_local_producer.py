@@ -131,8 +131,8 @@ if __name__ == "__main__":
         outPath = editly_outputPath # WE SHALL MUTE IT!
         # print(editly_json.keys())
 
-        print("MEDIA SAVE PATH:",outPath)
-        # breakpoint()
+        print("MEDIA SAVE PATH (MAYBE YOU CAN PLAY IT?):",outPath)
+        breakpoint()
         # import json
         # data_array -> input of dot processor? check it out.
         # breakpoint() # what is this?
