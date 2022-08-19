@@ -9,7 +9,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
     os.system(" ".join(["editly","--json",editlyJsonSavePath]))
 
-def dotVideoProcessor(item, previous, format=None, verbose=True):
+def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
     # print("DOTVIDEO ARGS:", item, previous, format)
     # this item is the video output config, medialang item.
     itemArgs = item.args
