@@ -86,14 +86,14 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                             speed = layerElemItem.args.get("speed",1)
                             layerDuration = speed*(cutTo-cutFrom)
                             layer_durations.append(layerDuration)
-                            mute = layerElemItem.args.get("audio", )
+                            mute = layerElemItem.args.get("audio", True)
                             layer= { # TODO: add mute attribute, without audio
                                     "type": "video",
                                     "path": videoFilePath,
                                     "resizeMode": "contain",
                                     "cutFrom": cutFrom,
                                     "cutTo": cutTo,
-                                    "mixVolume": 1-int(mute)
+                                    "mixVolume": int(mute)
                                 }
                             removeKeys = []
                             for key, elem in layer.items():
