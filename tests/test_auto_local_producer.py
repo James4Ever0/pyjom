@@ -129,7 +129,7 @@ if __name__ == "__main__":
             editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
             with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
                 f.write(json.dumps(editly_json, ensure_ascii=False))
-            print("EXECUTING EDITLY JSON")
+            print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
             subprocess.run(["editly","--json",editlyJsonSavePath])
         print("MEDIA SAVE PATH:",outPath)
         # breakpoint()
