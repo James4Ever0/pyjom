@@ -96,7 +96,7 @@ class suppress2(AbstractContextManager):
     """
 
     def __init__(self, path=None):
-        self._exceptions = exceptions
+        self._tmpdir = path
 
     def __enter__(self):
         print(dir(self))
