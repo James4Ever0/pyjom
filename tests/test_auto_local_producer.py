@@ -106,6 +106,7 @@ class tmpdir(AbstractContextManager):
 
     def __exit__(self, exctype, excinst, exctb):
         # try not to handle exceptions?
+        tempdir = self._tmpdir
         print("cleaning tempdir: %s" % tempdir)
         shutil.rmtree(tempdir)
         
