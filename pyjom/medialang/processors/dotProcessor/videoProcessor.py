@@ -7,7 +7,9 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
         f.write(json.dumps(editly_json, ensure_ascii=False))
     print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
-    os.system(" ".join(["editly","--json",editlyJsonSavePath]))
+    commandline = " ".join(["editly","--json",editlyJsonSavePath])
+    print(commandline)
+    os.system(commandline)
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
     # print("DOTVIDEO ARGS:", item, previous, format)
