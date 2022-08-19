@@ -9,8 +9,8 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
     commandline = ["editly","--json",editlyJsonSavePath]
     print(commandline)
-    returnsubprocess.run(commandline) # is it even successful?
-    print("EXECUTION DONE")
+    status = subprocess.run(commandline) # is it even successful?
+    returncode = status.returncode
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
     # print("DOTVIDEO ARGS:", item, previous, format)
