@@ -124,8 +124,9 @@ if __name__ == "__main__":
         editly_json, medialang_item_list = result # this just return none!
         # data -> editly json
         outPath = editly_json["outPath"]
-        print()
-        import json
+        print(editly_json.keys())
+        breakpoint()
+        # import json
 
         # data_array -> input of dot processor? check it out.
         # breakpoint() # what is this?
