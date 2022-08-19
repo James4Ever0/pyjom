@@ -2,6 +2,15 @@ from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 import tempfile
 
+def executeEditlyScript(medialangTmpDir, editly_json):
+    editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
+    with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
+        f.write(json.dumps(editly_json, ensure_ascii=False))
+    print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
+    os.system(" ".join(["editly","--json",editlyJsonSavePath]))
+
+        executeEditlyScript(medialangTmpDir,editly_json)
+
 def dotVideoProcessor(item, previous, format=None, verbose=True):
     # print("DOTVIDEO ARGS:", item, previous, format)
     # this item is the video output config, medialang item.

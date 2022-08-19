@@ -130,14 +130,7 @@ if __name__ == "__main__":
         # this output path is modified. we shall change this.
         outPath = editly_outputPath # WE SHALL MUTE IT!
         # print(editly_json.keys())
-        def executeEditlyScript(medialangTmpDir, editly_json):
-            editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
-            with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
-                f.write(json.dumps(editly_json, ensure_ascii=False))
-            print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
-            os.system(" ".join(["editly","--json",editlyJsonSavePath]))
 
-        executeEditlyScript(medialangTmpDir,editly_json)
         print("MEDIA SAVE PATH:",outPath)
         # breakpoint()
         # import json
