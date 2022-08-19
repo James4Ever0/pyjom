@@ -21,6 +21,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     fast = itemArgs.get("fast", True)
     bgm = itemArgs.get("bgm", None)
     # outputPath = itemArgs.get("",None)
+    randomUUID = str(uuid.uuid4())
     # usually we choose to use something under medialang tempdir as the storage place.
     print(format, backend, fast, bgm)
 
@@ -37,7 +38,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         # maybe the final product is one move away.
         tmpdirname = os.path.abspath(tmpdirname)
         print('created temporary directory', tmpdirname)
-        randomUUID = str(uuid.uuid4())
+        
         output_path = os.path.join(tmpdirname,randomUUID+"."+format) # this is temporary!
         outputPath = 
         # that is the tweak. we have successfully changed the directory!
