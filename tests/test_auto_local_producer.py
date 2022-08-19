@@ -80,7 +80,7 @@ def partialMedialangRenderTest(medialangScript, verbose=True):
 def PMRT_0(scriptFilePath = "", verbose=True):
     with open(scriptFilePath,"r") as f:
         medialangScript = f.read()
-    partialMedialangRenderTest(medialangScript, verbose=verbose)
+    return partialMedialangRenderTest(medialangScript, verbose=verbose)
 
 from contextlib import AbstractContextManager
 
