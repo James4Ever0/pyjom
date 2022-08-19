@@ -25,7 +25,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     with tempfile.TemporaryDirectory(prefix="/dev/shm/medialang/") as tmpdirname: # maybe you should take care of the directory prefix?
         # wtf are you doing over here?
         # find out where our cache leads to!
-        
+        # maybe the final product is one move away.
         tmpdirname = os.path.abspath(tmpdirname)
         print('created temporary directory', tmpdirname)
         randomUUID = str(uuid.uuid4())
