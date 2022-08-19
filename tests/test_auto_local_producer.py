@@ -100,7 +100,8 @@ class tmpdir(AbstractContextManager):
 
     def __enter__(self):
         print("temporary directory: %s" % self._tmpdir)
-        if os.path.exists(self._tmpdir): 
+        if os.path.exists(self._tmpdir): shutil.rmtree(self._tmpdir)
+        os.
         pass
 
     def __exit__(self, exctype, excinst, exctb):
