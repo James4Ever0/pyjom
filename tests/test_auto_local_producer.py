@@ -113,12 +113,7 @@ class suppress2(AbstractContextManager):
         # exactly reproduce the limitations of the CPython interpreter.
         #
         # See http://bugs.python.org/issue12029 for more details
-        print("EXCTYPE", exctype)
-        print("EXCINST", excinst)
-        print("EXCTB",exctb) # exception
-        print(dir(exctb))
-        breakpoint()
-        return exctype is not None and issubclass(exctype, self._exceptions)
+        # try not to handle exceptions?
 
 if __name__ == "__main__":
     # completeTest()
