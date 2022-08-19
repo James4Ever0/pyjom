@@ -38,7 +38,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
         print("ITEM:", item)
         print("PREVIOUS:", previous)
         print("_________INSIDE DOT VIDEO PROCESSOR_________")
-    with tempfile.TemporaryDirectory(prefix=medialangTmpDir) as tmpdirname: # maybe you should take care of the directory prefix?
+    with tempfile.TemporaryDirectory(dir=medialangTmpDir) as tmpdirname: # maybe you should take care of the directory prefix?
         # wtf are you doing over here?
         # find out where our cache leads to!
         # maybe the final product is one move away.
