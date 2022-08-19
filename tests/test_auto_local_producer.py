@@ -125,6 +125,8 @@ if __name__ == "__main__":
         # data -> editly json
         outPath = editly_json["outPath"]
         # print(editly_json.keys())
+        print(outputPath)
+        def 
         editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
         with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
             f.write(json.dumps(editly_json, ensure_ascii=False))
