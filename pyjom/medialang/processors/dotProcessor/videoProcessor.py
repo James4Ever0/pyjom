@@ -30,7 +30,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         print('created temporary directory', tmpdirname)
         randomUUID = str(uuid.uuid4())
         output_path = os.path.join(tmpdirname,randomUUID+"."+format)
-        # that is the tweak.
+        # that is the tweak. we have successfully changed the directory!
         if backend == "editly":
             # iterate through all items.
             template = {
