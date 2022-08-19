@@ -93,7 +93,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                                     "resizeMode": "contain",
                                     "cutFrom": cutFrom,
                                     "cutTo": cutTo,
-                                    "mixVolume": int(mute)
+                                    "mixVolume": 1-int(mute)
                                 }
                             removeKeys = []
                             for key, elem in layer.items():
