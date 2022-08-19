@@ -115,8 +115,9 @@ class tmpdir(AbstractContextManager):
         #
         # See http://bugs.python.org/issue12029 for more details
         # try not to handle exceptions?
+        print("cleaning tempdir: %s" % tempdir)
+        shutil.rmtree(tempdir)
         
-
 if __name__ == "__main__":
     # completeTest()
     # so we don't have to run it all the time. really?
