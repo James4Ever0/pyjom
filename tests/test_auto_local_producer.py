@@ -96,6 +96,7 @@ class suppress2(AbstractContextManager):
     """
 
     def __init__(self, path=None):
+        assert os.path.isabs(path)
         self._tmpdir = path
 
     def __enter__(self):
