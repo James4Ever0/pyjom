@@ -89,7 +89,7 @@ if __name__ == "__main__":
     scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
     # a special hack
     import tempfile
-    with tempfile.TemporaryDirectory()
+    with tempfile.TemporaryDirectory(dir="/dev/shm/medialang") as 
     result = PMRT_0(scriptFilePath, verbose=False)
     data, data_array = result
     # data -> editly json
