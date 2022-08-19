@@ -22,7 +22,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     bgm = itemArgs.get("bgm", None)
     # outputPath = itemArgs.get("",None)
     randomUUID = str(uuid.uuid4())
-    outputPath = os.path.join(tmpdirname,randomUUID+"."+format) # this is temporary!
+    outputPath = os.path.join(,randomUUID+"."+format) # this is temporary!
     # usually we choose to use something under medialang tempdir as the storage place.
     print(format, backend, fast, bgm)
 
@@ -33,7 +33,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         print("ITEM:", item)
         print("PREVIOUS:", previous)
         print("_________INSIDE DOT VIDEO PROCESSOR_________")
-    with tempfile.TemporaryDirectory(prefix="/dev/shm/medialang/") as tmpdirname: # maybe you should take care of the directory prefix?
+    with tempfile.TemporaryDirectory(prefix=medialangTmpDir) as tmpdirname: # maybe you should take care of the directory prefix?
         # wtf are you doing over here?
         # find out where our cache leads to!
         # maybe the final product is one move away.
