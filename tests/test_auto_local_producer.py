@@ -130,7 +130,7 @@ if __name__ == "__main__":
             with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
                 f.write(json.dumps(editly_json, ensure_ascii=False))
             print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
-            os.system(["editly","--json",editlyJsonSavePath])
+            os.system(" ".join(["editly","--json",editlyJsonSavePath]))
 
         executeEditlyScript(medialangTmpDir,editly_json)
         print("MEDIA SAVE PATH:",outPath)
