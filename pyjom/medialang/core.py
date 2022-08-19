@@ -406,7 +406,7 @@ class Medialang:
         if objectType == "output":
             if path.startswith("."):
                 function = dotProcessors[path]
-                result = function(item, previous, verbose=self.verbose, medialangTmpDir=medialangTmpDir)
+                result = function(item, previous, verbose=self.verbose, medialangTmpDir=self.medialangTmpDir)
         else:
             if os.path.exists(path):
                 data = fsProcessor(item, previous=previous, verbose=self.verbose)
