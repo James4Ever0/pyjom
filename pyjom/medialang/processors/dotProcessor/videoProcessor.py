@@ -7,7 +7,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
         f.write(json.dumps(editly_json, ensure_ascii=False))
     print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
-    commandline = ["editly","--json",editlyJsonSavePath]
+    commandline = ["xvfb-run","editly","--json",editlyJsonSavePath]
     print(commandline)
     status = subprocess.run(commandline) # is it even successful?
     returncode = status.returncode

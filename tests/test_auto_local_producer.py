@@ -4,7 +4,7 @@ from pyjom.primitives import *  # this is capitalized.
 # let's hack the gl!
 # os.environ["DISPLAY"] = ":1"
 # os.environ["XAUTHORITY"] = "/root/.Xauthority"
-# undefined symbol? wtf? how about use 
+# undefined symbol? wtf? how about use xvfb-run directly?
 
 autoArgs = {
     "subtitle_detector": {"timestep": 0.2}
