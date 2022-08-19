@@ -92,6 +92,7 @@ class Medialang:
         medialangTmpdir=medialangTmpDir
     ):
         self.verbose = verbose
+        self.medialangTmpDir = medialangTmpDir
         self.indent = " " * indent
         self.script_path = script_path
         self.script_obj = script_obj
