@@ -2,7 +2,7 @@ from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 
 
-def dotJsonProcessor(item, previous, verbose=True):
+def dotJsonProcessor(item, previous, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
     # must contain something.
     args = item.args
     processorName = args["processor"]
