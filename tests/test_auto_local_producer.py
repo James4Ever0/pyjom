@@ -1,6 +1,9 @@
 from test_commons import *
 from pyjom.primitives import *  # this is capitalized.
 
+# let's hack the gl!
+os.environ["X"]
+
 autoArgs = {
     "subtitle_detector": {"timestep": 0.2}
 }  # what is this? should't you detect all before production?
