@@ -20,7 +20,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     )  # so all things will be assumed to put directly into editly render json, unless explicitly specified under other medialang or other backend and need to be resolved into media file format before rendering. sure?
     fast = itemArgs.get("fast", True)
     bgm = itemArgs.get("bgm", None)
-    outputPath = itemArgs.get("",None)
+    # outputPath = itemArgs.get("",None)
     # usually we choose to use something under medialang tempdir as the storage place.
     print(format, backend, fast, bgm)
 
@@ -39,6 +39,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
         print('created temporary directory', tmpdirname)
         randomUUID = str(uuid.uuid4())
         output_path = os.path.join(tmpdirname,randomUUID+"."+format) # this is temporary!
+        outputPath = 
         # that is the tweak. we have successfully changed the directory!
         if backend == "editly":
             # iterate through all items.
