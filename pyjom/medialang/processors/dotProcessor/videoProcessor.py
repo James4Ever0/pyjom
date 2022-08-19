@@ -21,7 +21,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
     if format is None:
         format = item.path.split(".")[-1]
     backend = itemArgs.get(
-        "backend", "editly"
+        "backend", "editly" # this is mere assumption!
     )  # so all things will be assumed to put directly into editly render json, unless explicitly specified under other medialang or other backend and need to be resolved into media file format before rendering. sure?
     fast = itemArgs.get("fast", True)
     bgm = itemArgs.get("bgm", None)
