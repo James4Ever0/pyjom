@@ -448,6 +448,7 @@ class Medialang:
                 data = self.objectExecutor(item, previous=data)
         return data, data_array # why you return this!
         # currently, data is now the editly json, and data_array is the medialang items array
+        # what about the slient flag? deal with it later!
 
     def execute(self):
         script_obj_lines = self.script_obj.lines
