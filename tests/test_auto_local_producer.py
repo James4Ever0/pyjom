@@ -125,10 +125,10 @@ if __name__ == "__main__":
     with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
         print("MEDIALANG SUPER TMPDIR:", medialangTmpDir)
         result = PMRT_0(scriptFilePath, verbose=False)
-        editly_json, medialang_item_list = result # this just return none!
+        editly_outputPath, medialang_item_list = result # this just return none!
         # data -> editly json
         # this output path is modified. we shall change this.
-        outPath = editly_json["outPath"] # WE SHALL MUTE IT!
+        outPath = editly_outputPath # WE SHALL MUTE IT!
         # print(editly_json.keys())
         def executeEditlyScript(medialangTmpDir, editly_json):
             editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
