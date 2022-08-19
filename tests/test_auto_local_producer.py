@@ -121,7 +121,7 @@ if __name__ == "__main__":
     with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
         print("MEDIALANG SUPER TMPDIR:", medialangTmpDir)
         result = PMRT_0(scriptFilePath, verbose=False)
-         = result # this just return none!
+        editly_json, data_array = result # this just return none!
         # data -> editly json
         # data_array -> input of dot processor? check it out.
         breakpoint() # what is this?
