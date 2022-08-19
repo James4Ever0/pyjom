@@ -89,6 +89,7 @@ class Medialang:
         template=False,
         template_args={},
         verbose=True,
+        medialangTmpdir=medialangTmpDir
     ):
         self.verbose = verbose
         self.indent = " " * indent
