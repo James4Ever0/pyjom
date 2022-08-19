@@ -125,7 +125,7 @@ if __name__ == "__main__":
         # data -> editly json
         outPath = editly_json["outPath"]
         # print(editly_json.keys())
-        editlyJsonSavePath = os.path.join(outPath)
+        editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
         # breakpoint()
         # import json
         # data_array -> input of dot processor? check it out.
