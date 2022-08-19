@@ -447,6 +447,7 @@ class Medialang:
             for item in targets.items:
                 data = self.objectExecutor(item, previous=data)
         return data, data_array # why you return this!
+        # currently, data is now the 
 
     def execute(self):
         script_obj_lines = self.script_obj.lines
