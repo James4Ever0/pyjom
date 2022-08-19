@@ -110,6 +110,7 @@ class tmpdir(AbstractContextManager):
         tempdir = self._tmpdir
         print("cleaning tempdir: %s" % tempdir)
         shutil.rmtree(tempdir)
+        return True
         
 if __name__ == "__main__":
     # completeTest()
