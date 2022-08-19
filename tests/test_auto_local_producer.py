@@ -3,7 +3,7 @@ from pyjom.primitives import *  # this is capitalized.
 
 # let's hack the gl!
 os.environ["DISPLAY"] = ":1"
-os.environ["XAuthority"] = ""
+os.environ["XAuthority"] = "/root/.X"
 
 autoArgs = {
     "subtitle_detector": {"timestep": 0.2}
