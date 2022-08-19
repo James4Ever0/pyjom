@@ -100,7 +100,7 @@ class suppress2(AbstractContextManager):
         self._tmpdir = path
 
     def __enter__(self):
-        print(dir(self))
+        print("temporary directory: %s")
         pass
 
     def __exit__(self, exctype, excinst, exctb):
