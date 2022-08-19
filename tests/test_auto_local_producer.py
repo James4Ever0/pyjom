@@ -100,6 +100,7 @@ class tmpdir(AbstractContextManager):
 
     def __enter__(self):
         print("temporary directory: %s" % self._tmpdir)
+        if os.pat
         pass
 
     def __exit__(self, exctype, excinst, exctb):
