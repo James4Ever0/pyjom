@@ -83,8 +83,7 @@ def PMRT_0(scriptFilePath = "", verbose=True):
 
 from contextlib import AbstractContextManager
 
-
-class suppress2(AbstractContextManager):
+class tmpdir(AbstractContextManager):
     """Context manager to suppress specified exceptions
 
     After the exception is suppressed, execution proceeds with the next
