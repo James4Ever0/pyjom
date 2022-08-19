@@ -1,19 +1,16 @@
-2022/08/04 18:15:45.448 [E]  dial tcp 111.30.130.106:80: i/o timeout
-2022/08/04 18:15:45.448 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
-2022/08/04 18:15:45.449 [E]  dial tcp 111.30.130.106:80: i/o timeout
-2022/08/04 22:05:54.908 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+2022/08/18 13:59:01.292 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
 stack traceback:
 	[G]: in function 'Api_OpenRedBag'
 	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
 	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
 	[G]: ?
-2022/08/04 22:06:03.003 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+2022/08/18 13:59:07.385 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
 stack traceback:
 	[G]: in function 'Api_OpenRedBag'
 	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
 	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
 	[G]: ?
-2022/08/04 22:06:11.089 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+2022/08/18 13:59:12.462 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
 stack traceback:
 	[G]: in function 'Api_OpenRedBag'
 	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
