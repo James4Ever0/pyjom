@@ -95,7 +95,7 @@ class suppress2(AbstractContextManager):
          # Execution still resumes here if the file was already removed
     """
 
-    def __init__(self, *exceptions):
+    def __init__(self, path=None):
         self._exceptions = exceptions
 
     def __enter__(self):
