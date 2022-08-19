@@ -82,14 +82,12 @@ def PMRT_0(scriptFilePath = "", verbose=True):
     partialMedialangRenderTest(medialangScript, verbose=verbose)
 
 if __name__ == "__main__":
-    if os.path.exists("/dev/shm/medialang"):
-        shutil.rmtree("/dev/shm/medialang")
     # completeTest()
     # so we don't have to run it all the time. really?
     scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
     # a special hack
     import tempfile
-    with tmpdir(path="/dev/shm/medialang",suffix=None, prefix=None) as medialangTmpDir:
+    with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
         print("MEDIALANG SUPER TMPDIR:", medialangTmpDir)
         result = PMRT_0(scriptFilePath, verbose=False)
         data, data_array = result
