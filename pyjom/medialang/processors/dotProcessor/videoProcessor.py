@@ -52,7 +52,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
             template = {
                 "width": 1920,
                 "height": 1080,
-                "fast": fast
+                "fast": fast,
                 "fps": 60,
                 "outPath": output_path,
                 "defaults": {"transition": None},
