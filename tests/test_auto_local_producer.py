@@ -83,7 +83,7 @@ def PMRT_0(scriptFilePath = "", verbose=True):
 
 import contextlib
 
-class 
+class x
 
 if __name__ == "__main__":
     # completeTest()
