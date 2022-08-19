@@ -90,6 +90,7 @@ if __name__ == "__main__":
     # a special hack
     import tempfile
     with tempfile.TemporaryDirectory(dir="/dev/shm/medialang") as medialangTmpDir:
+        print("MEDIALANG SUPER TMPDIR")
         result = PMRT_0(scriptFilePath, verbose=False)
         data, data_array = result
         # data -> editly json
