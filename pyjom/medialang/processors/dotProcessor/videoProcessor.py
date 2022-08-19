@@ -20,6 +20,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True):
     )  # so all things will be assumed to put directly into editly render json, unless explicitly specified under other medialang or other backend and need to be resolved into media file format before rendering. sure?
     fast = itemArgs.get("fast", True)
     bgm = itemArgs.get("bgm", None)
+    
     print(format, backend, fast, bgm)
 
     # the "previous" is the clips, was fucked, filled with non-existant intermediate mpegts files, but no source was out there.
