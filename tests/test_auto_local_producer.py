@@ -113,8 +113,7 @@ class suppress2(AbstractContextManager):
         # exactly reproduce the limitations of the CPython interpreter.
         #
         # See http://bugs.python.org/issue12029 for more details
-        # not handling any error.
-        
+        # not handling any error. or else?
 
 if __name__ == "__main__":
     # completeTest()
