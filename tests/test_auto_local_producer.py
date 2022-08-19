@@ -102,7 +102,7 @@ class tmpdir(AbstractContextManager):
         print("temporary directory: %s" % self._tmpdir)
         if os.path.exists(self._tmpdir): shutil.rmtree(self._tmpdir)
         os.makedirs(self._tmpdir)
-        pass
+        return self._tmpdir
 
     def __exit__(self, exctype, excinst, exctb):
         # try not to handle exceptions?
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
         print("MEDIALANG SUPER TMPDIR:", medialangTmpDir)
         result = PMRT_0(scriptFilePath, verbose=False)
-        data, data_array = result
+        data, data_array = result # this just return none!
         # data -> editly json
         # data_array -> input of dot processor? check it out.
         breakpoint()
