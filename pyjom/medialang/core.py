@@ -446,7 +446,7 @@ class Medialang:
             data = copy.deepcopy(data_array) # so this is your freaking data! let's decide your approach all inside that dotProcessor instead of generating trash here!
             for item in targets.items:
                 data = self.objectExecutor(item, previous=data)
-        return data, data_array
+        return data, data_array # why you return this!
 
     def execute(self):
         script_obj_lines = self.script_obj.lines
