@@ -110,5 +110,5 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
             # print("________________editly template________________")
             # return template
             executeEditlyScript(medialangTmpDir,template)
-            os.
+            os.rename()
             return outputPath
