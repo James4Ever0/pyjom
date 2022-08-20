@@ -243,7 +243,7 @@ for i in range(0, len(line_indexs)):
         if not i + 1 == len(line_indexs):
             try:
                 tag = line_indexs[i + 1][0][0][1]
-                _, line_end = tag_process(tag)
+                _, line_end = tag_process(tag, line)
             except Exception as e:
                 print(e)
         else:
