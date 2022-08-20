@@ -109,7 +109,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                 template["clips"].append(clip)
                 # then just execute this template, or let's just view it.
             # print("________________editly template________________")
-            # print(json.dumps(template, ensure_ascii=False, indent=4)) # let's view it elsewhere? or in `less`?
+            print(json.dumps(template, ensure_ascii=False, indent=4)) # let's view it elsewhere? or in `less`?
             # print("________________editly template________________")
             # return template
             executeEditlyScript(medialangTmpDir,template)
