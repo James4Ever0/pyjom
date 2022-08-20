@@ -100,7 +100,7 @@ def getMusicCutSpans(
             print("LOOPCOUNT", counter)
             print(len(demanded_cut_points), remaining_time, standard_bpm_spans[0])
         counter += 1
-        startingPoint = demanded_cut_points[-1]
+        startingPoint = demanded_cut_points[-1] # shall we randomize this?
         try:
             selected_candidates = [
                 x for x in candidates if x > startingPoint
