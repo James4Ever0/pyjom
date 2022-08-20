@@ -189,8 +189,8 @@ line_indexs[index[], splitStr[]]:
     splitStr[]:
         == re.split()
 '''
-print(line_indexs)
-breakpoint()
+# print(line_indexs)
+# breakpoint()
 for i in range(0, len(line_indexs)):
     # 获取行数并定义基本参数
     line = line_indexs[i][0][0][3]
@@ -289,7 +289,7 @@ for i in range(0, len(line_indexs)):
             if line_end == next_line_start:
                 print("警告: 行\"{0}\"没有结束时间标签，已经把下一行的开始时间当作结束时间".format(line,))
         print('警告: 行\"{0}\"没有结束时间标签，自动选择\"{1}\"作为结束时间\n'.format(line, line_end))
-        print("START:", "END:",line_end)
+        print("START:",start_line ,"END:",line_end)
 
         line_end_time = int(line_end.split(':')[0]) * 60 + int(line_end.split(':')[1]) * 60 * 100 + \
                         int(line_end.split(':')[2].split('.')[0]) * 100 + int(line_end.split('.')[1])
