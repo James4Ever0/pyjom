@@ -211,6 +211,7 @@ for i in range(0, len(line_indexs)):
         str_lines = line_indexs[i][1][iii]
         try:
             strNextLine = line_indexs[i+1][1][iii]
+        except: strNextLine = None
         last_index -= 11
 
         if index == 0:
@@ -253,7 +254,7 @@ for i in range(0, len(line_indexs)):
                 line_end = backup_line_end
             else:
                 line_end = start_line
-        next_line_start = 
+        next_line_start = strNextLine
         if next_line_start:
             def getNumber(mString):
                 import parse
