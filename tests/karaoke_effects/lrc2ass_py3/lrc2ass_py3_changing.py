@@ -255,6 +255,7 @@ for i in range(0, len(line_indexs)):
             else:
                 line_end = start_line
         next_line_start = strNextLine
+        print("STRNEXTLINE", next_line_start)
         if next_line_start:
             def getNumber(mString):
                 import parse
