@@ -10,7 +10,7 @@ https://pyonfx.readthedocs.io/en/latest/reference/ass%20core.html#pyonfx.ass_cor
 """
 from pyonfx import *
 
-io = Ass("in.ass")
+io = Ass("in.ass", path_output="output2.ass")
 meta, styles, lines = io.get_data()
 
 for line in lines:
