@@ -399,8 +399,8 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         total_cuts, demanded_cut_spans
     )  # this might be an infinity loop.
     # but why the fuck we got 10 minutes long of the freaking video?
-    # print(render_list)  # empty render list! wtf?
-    # breakpoint()
+    print(render_list)  # empty render list! wtf?
+    breakpoint() # WTF is 
     medialangObject = renderList2MediaLang(
         render_list, slient=True, bgm=music["filepath"], producer="editly"
     )  # what is the backend?
