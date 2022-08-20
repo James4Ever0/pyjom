@@ -65,7 +65,7 @@ def read_lrc(lrc_path):
 
 
 def getMusicCutSpans(
-    music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
+    music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.9
 ):
     beats, bpm = audioOwlAnalysis(music["filepath"])
     lyric = read_lrc(lyric_path)
