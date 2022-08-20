@@ -10,13 +10,13 @@ def videoFsProcessor(videoPath,args={},previous = None, medialangTmpDir = medial
 def audioFsProcessor(audioPath,args={},previous = None, medialangTmpDir = medialangTmpDir):
     if args == {}:
         return audioPath
-    newAudioPath = getTmpMediaName(, medialangTmpDir = medialangTmpDir)
+    newAudioPath = getTmpMediaName(medialangTmpDir = medialangTmpDir)
     return newAudioPath
 
 def imageFsProcessor(imagePath,args={},previous = None, medialangTmpDir = medialangTmpDir):
     if args == {}:
         return imagePath
-    newImagePath = getTmpMediaName(, medialangTmpDir = medialangTmpDir)
+    newImagePath = getTmpMediaName(medialangTmpDir = medialangTmpDir)
     return newImagePath
 
 def fsProcessor(item,previous=None, verbose=True, medialangTmpDir = medialangTmpDir):
