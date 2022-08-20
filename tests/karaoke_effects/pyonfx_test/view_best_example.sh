@@ -1,1 +1,1 @@
-mpv --fs --sub-file="/root/Desktop/works/pyjom/tests/karaoke_effects/pyonfx_test/examples/2 - Beginner/Output.ass" "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
+mpv --fs --no-audio --sub-file="/root/Desktop/works/pyjom/tests/karaoke_effects/pyonfx_test/examples/2 - Beginner/Output.ass" "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
