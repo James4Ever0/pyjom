@@ -1,6 +1,6 @@
 from pyonfx import *
 import os
-os.system("touch output_scratch.ass")
+os.system("touch output_scratch.ass") # seems we cannot create this shit from scratch?
 io = Ass("output_scratch.ass",path_output="output_scratch.ass")
 
 newLine = Line()
