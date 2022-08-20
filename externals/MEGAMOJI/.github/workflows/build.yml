@@ -1,0 +1,112 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+
+  lint-css:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.4.0
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package-lock.json') }}
+      - run: npm ci --legacy-peer-deps
+        if: steps.cache.outputs.cache-hit != 'true'
+      - run: npm run lint:css
+
+  lint-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.4.0
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package-lock.json') }}
+      - run: npm ci --legacy-peer-deps
+        if: steps.cache.outputs.cache-hit != 'true'
+      - run: npm run lint:js
+
+  e2e-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.4.0
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package-lock.json') }}
+      - run: npm ci --legacy-peer-deps
+        if: steps.cache.outputs.cache-hit != 'true'
+      - run: npm run test:e2e
+
+  build-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.4.0
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package-lock.json') }}
+      - run: npm ci --legacy-peer-deps
+        if: steps.cache.outputs.cache-hit != 'true'
+      - run: npm run build-storybook
+      - uses: actions/upload-artifact@v2
+        with:
+          name: storybook
+          path: dist/storybook
+
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.4.0
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package-lock.json') }}
+      - run: npm ci --legacy-peer-deps
+        if: steps.cache.outputs.cache-hit != 'true'
+      - run: npm run build
+        env:
+          ROLLBAR_TOKEN: ${{ secrets.ROLLBAR_TOKEN }}
+          GA4_TOKEN: ${{ secrets.GA4_TOKEN }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: app
+          path: dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - lint-css
+      - lint-js
+      - e2e-test
+      - build-app
+      - build-storybook
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: app
+          path: dist
+      - uses: actions/download-artifact@v2
+        with:
+          name: storybook
+          path: dist/storybook
+      - uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
