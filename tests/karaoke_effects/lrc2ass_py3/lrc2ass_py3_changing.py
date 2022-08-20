@@ -276,7 +276,7 @@ if os.path.exists(ass_fullpath):
     print('已经有与\"{0}\"同名的文件了， 尝试换个文件名输出'.format('{0}.ass'.format(lrc_name)))
     # print('\"是\"请输入任意字符，\"换个文件名输出\"请输入空值，\"否\"请关闭窗口:')
     # check = input().replace(' ', '')
-    check = "yes"
+    check = "" # change name and export
     if len(check) == 0:
         file_found_count = 0
         while os.path.exists(ass_fullpath):
