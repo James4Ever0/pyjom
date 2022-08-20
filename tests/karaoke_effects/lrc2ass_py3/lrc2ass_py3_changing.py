@@ -251,7 +251,7 @@ for i in range(0, len(line_indexs)):
                 line_end = backup_line_end
             else:
                 line_end = start_line
-        line_end 
+        next_line_start = 
         print('警告: 行\"{0}\"没有结束时间标签，自动选择\"{1}\"作为结束时间\n'.format(line, line_end))
 
         line_end_time = int(line_end.split(':')[0]) * 60 + int(line_end.split(':')[1]) * 60 * 100 + \
