@@ -253,6 +253,8 @@ for i in range(0, len(line_indexs)):
                 line_end = start_line
         next_line_start = 
         if next_line_start:
+            def getNumber(mString):
+                mString.split("")
             def compMin()
             line_end = compMin(next_line_start, line_end)
             if line_end == next_line_start:
