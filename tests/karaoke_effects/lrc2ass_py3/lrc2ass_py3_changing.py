@@ -289,8 +289,6 @@ for i in range(0, len(line_indexs)):
                 line_end = compMin(next_line_start, line_end)
                 if line_end == next_line_start:
                     print("警告: 行\"{0}\"没有结束时间标签，已经把下一行的开始时间当作结束时间".format(line,))
-            else:
-                s
         print('警告: 行\"{0}\"没有结束时间标签，自动选择\"{1}\"作为结束时间\n'.format(line, line_end))
         print("START:",start_line ,"END:",line_end)
 
