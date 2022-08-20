@@ -28,12 +28,6 @@ For more info:
 from pyonfx import *
 
 io = Ass("in.ass")
-meta, styles, lines = io.get_data()
-
-lines[0].text = "I am a new line!" # and there is only one line.
-io.write_line(lines[0]) # it comment out all lines
-
-io.save()
 # io.open_aegisub()
 sample_video = "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
 io.open_mpv(video_path=sample_video)
