@@ -219,6 +219,7 @@ for i in range(0, len(line_indexs)):
             index2 = int(line_indexs[i2][0][iii][0])
             last_index2 = int(line_indexs[i2][0][iii][2])
             str_lines2 = line_indexs[i2][1][iii]
+            
             strNextLine = str_lines2
         except: strNextLine = None
         last_index -= 11
