@@ -118,24 +118,25 @@ class tmpdir(AbstractContextManager):
         return False
         
 if __name__ == "__main__":
+    COMPLETE_TEST = True
     if COMPLETE_TEST:
         completeTest()
     # so we don't have to run it all the time. really?
     else:
-    scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
-    # a special hack
-    import tempfile
-    with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
-        print("MEDIALANG SUPER TMPDIR:", medialangTmpDir)
-        result = PMRT_0(scriptFilePath, verbose=False)
-        editly_outputPath, medialang_item_list = result # this just return none!
-        # data -> editly json
-        # this output path is modified. we shall change this.
-        outPath = editly_outputPath # WE SHALL MUTE IT!
-        # print(editly_json.keys())
+        scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
+        # a special hack
+        import tempfile
+        with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
+            print("MEDIALANG SUPER TMPDIR:", medialangTmpDir)
+            result = PMRT_0(scriptFilePath, verbose=False)
+            editly_outputPath, medialang_item_list = result # this just return none!
+            # data -> editly json
+            # this output path is modified. we shall change this.
+            outPath = editly_outputPath # WE SHALL MUTE IT!
+            # print(editly_json.keys())
 
-        print("MEDIA SAVE PATH (MAYBE YOU CAN PLAY IT?):",outPath)
-        breakpoint()
-        # import json
-        # data_array -> input of dot processor? check it out.
-        # breakpoint() # what is this?
+            print("MEDIA SAVE PATH (MAYBE YOU CAN PLAY IT?):",outPath)
+            breakpoint()
+            # import json
+            # data_array -> input of dot processor? check it out.
+            # breakpoint() # what is this?
