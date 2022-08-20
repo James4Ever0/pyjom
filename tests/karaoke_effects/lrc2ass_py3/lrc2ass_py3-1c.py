@@ -288,7 +288,7 @@ if os.path.exists(ass_fullpath):
         file_found_count = 0
         while os.path.exists(ass_fullpath):
             file_found_count += 1
-            ass_fullpath = os.path.join(lrc_path, '{0}.s{1}.ass'.format(lrc_name, file_found_count))
+            ass_fullpath = os.path.join(os.path., '{0}.s{1}.ass'.format(lrc_name, file_found_count)) # wrong shit!
 
 try:
     ass_file = open(ass_fullpath, mode='w+', encoding=write_encoding)
