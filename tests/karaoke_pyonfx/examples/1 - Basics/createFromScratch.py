@@ -8,6 +8,7 @@ newLine.text = "hello world"
 newLine.start_time = 0
 newLine.end_time = 10
 newLine.comment=False
+newLine.layer=1
 
 io.write_line(newLine)
 io.save()
