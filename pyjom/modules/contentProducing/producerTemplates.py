@@ -379,8 +379,8 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     demanded_cut_spans, standard_bpm_spans = getMusicCutSpans(
         music, music_duration, lyric_path, maxtime, mintime
     )
-    print("DEMANDED CUT SPANS: " , demanded_cut_spans)
-    breakpoint()
+    # print("DEMANDED CUT SPANS: " , demanded_cut_spans) # test passed.
+    # breakpoint()
     # demanded_cut_spans is empty!
     # total_cuts
     total_cuts = getFileCuts(
