@@ -104,7 +104,7 @@ for i in range(0, len(lrc_line)):
     for r in results:
         if s.find(r) != -1:
             index.append([s.find(r), r, len(s), i])
-        print('\rLINE:{0} TAG:\"{3}\" INDEX:{1}'.format(i, str(s.find(r)), str(len(s) - 1 - 10), r), end='')
+        print('\rLINE:{0} TAG:\"{3}\" INDEX:{1}'.format(i, str(s.find(r)), str(len(s) - 1 - 10), r), end='\n')
     # 写入line_indexs列表
     line_indexs.append([index, splitStr])
 
