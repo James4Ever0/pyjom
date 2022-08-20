@@ -209,6 +209,8 @@ for i in range(0, len(line_indexs)):
         index = int(line_indexs[i][0][iii][0])
         last_index = int(line_indexs[i][0][iii][2])
         str_lines = line_indexs[i][1][iii]
+        try:
+            strNextLine = line_indexs[i+1][1][iii]
         last_index -= 11
 
         if index == 0:
