@@ -22,4 +22,4 @@ for line in lines:
     io.write_line(l)
 
 io.save()
-io.open_aegisub()
+# io.open_aegisub()
