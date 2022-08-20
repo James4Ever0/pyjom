@@ -402,7 +402,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     print(render_list)  # empty render list! wtf?
     breakpoint() # WTF IS GOING ON? LEADING TO 10 MINS OF CRAP?
     medialangObject = renderList2MediaLang(
-        render_list, slient=True, bgm=music["filepath"], producer="editly" # 
+        render_list, slient=True, bgm=music["filepath"], producer="editly" # 在这里你可以分离人shen
     )  # what is the backend?
 
     # print(medialangObject)
