@@ -211,11 +211,11 @@ for i in range(0, len(line_indexs)):
         str_lines = line_indexs[i][1][iii]
         try:
             i2 = i+1
-            tag = line_indexs[i2][0][iii][1]
-            str_time, tag = tag_process(tag, line)
+            tag2 = line_indexs[i2][0][iii][1]
+            str_time2, tag2 = tag_process(tag2 line)
 
             # 获取时间标签在字符串中的位置，字符串长度，该时间标签对应的字符
-            index = int(line_indexs[i2][0][iii][0])
+            index2 = int(line_indexs[i2][0][iii][0])
             last_index = int(line_indexs[i2][0][iii][2])
             str_lines = line_indexs[i2][1][iii]
             strNextLine = line_indexs[i2][1][iii]
