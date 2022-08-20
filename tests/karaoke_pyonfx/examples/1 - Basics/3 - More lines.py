@@ -23,4 +23,4 @@ for line in lines:
 
 io.save()
 # io.open_aegisub()
-io.open_mpv()
+# io.open_mpv()
