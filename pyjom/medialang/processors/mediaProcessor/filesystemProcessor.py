@@ -4,7 +4,7 @@ import ffmpeg
 def videoFsProcessor(videoPath,args={},previous = None, medialangTmpDir = medialangTmpDir):
     if args == {}:
         return videoPath
-    newVideoPath = getTmpMediaName(, medialangTmpDir = medialangTmpDir)
+    newVideoPath = getTmpMediaName(medialangTmpDir = medialangTmpDir)
     return newVideoPath
 
 def audioFsProcessor(audioPath,args={},previous = None, medialangTmpDir = medialangTmpDir):
