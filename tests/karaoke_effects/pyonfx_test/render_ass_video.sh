@@ -1,0 +1,1 @@
+ffmpeg -y -i "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4" -ss 0 -to 60 -vf "ass='/root/Desktop/works/pyjom/tests/karaoke_effects/pyonfx_test/examples/2 - Beginner/Output.ass'" out.mp4
