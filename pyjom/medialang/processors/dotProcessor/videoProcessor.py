@@ -61,7 +61,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
             if bgm is not None:
                 template.update({"audioFilePath": bgm})
             for elem in previous:
-                duration = 3 # default duration
+                defaultDuration = 3 # default duration
                 clip = {
                     "duration": duration,
                     "layers": [
