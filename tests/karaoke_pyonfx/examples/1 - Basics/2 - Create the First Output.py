@@ -35,4 +35,4 @@ io.write_line(lines[0])
 
 io.save()
 # io.open_aegisub()
-io.open_mpv()
+io.open_mpv(video_path=sample_video)
