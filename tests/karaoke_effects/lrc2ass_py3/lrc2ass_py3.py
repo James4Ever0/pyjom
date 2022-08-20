@@ -32,7 +32,11 @@ offset = 0
 # 主程序
 
 # 获取输入
-inputPath = input('FilePath:')
+# let's just fix this thing. shall we?
+inputPath = "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc" # presumeably it will output to the same dame directory.
+realAssPath = "./output.ass"
+print('FilePath:', inputPath)
+
 # 规范化输入路径，去除前后双引号
 lrc = os.path.normpath(inputPath).rstrip('\"').lstrip('\"')
 exist = False
@@ -47,7 +51,7 @@ if not os.path.exists(lrc):
 
 # 分别获取文件名（无扩展名）和路径
 lrc_name = os.path.splitext(os.path.basename(lrc))[0]
-lrc_path = os.path.dirname(lrc)
+lrc_path = os.path.dirname(lrc) # oh shit...
 
 # 打开LRC文件，读取所有行 为list，关闭文件
 lrc_file = open(lrc, encoding=read_encoding)
@@ -259,6 +263,11 @@ for i in range(0, len(line_indexs)):
                     .format(start_line, line_end, ass_string))
 
 ass_fullpath = os.path.join(lrc_path, '{0}.ass'.format(lrc_name))
+
+
+## overriding:
+ass_fullpath = realAssPath
+
 if os.path.exists(ass_fullpath):
     print('已经有与\"{0}\"同名的文件了，是否要覆盖它？'.format('{0}.ass'.format(lrc_name)))
     print('\"是\"请输入任意字符，\"换个文件名输出\"请输入空值，\"否\"请关闭窗口:')
