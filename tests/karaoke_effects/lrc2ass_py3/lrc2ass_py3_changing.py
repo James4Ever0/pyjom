@@ -210,7 +210,7 @@ for i in range(0, len(line_indexs)):
         last_index = int(line_indexs[i][0][iii][2])
         str_lines = line_indexs[i][1][iii]
         try:
-            print(str_time)
+            # print(str_time)
             i2 = i+1
             tag2 = line_indexs[i2][0][iii][1]
             str_time2, tag2 = tag_process(tag2, line)
