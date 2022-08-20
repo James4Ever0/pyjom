@@ -1,4 +1,4 @@
-rootpath=
+rootpath=/root/Desktop/works/pyjom
 mpv --fs --no-audio --sub-file="$rootpath/tests/karaoke_effects/lrc2ass_py3/output.s2.ass" "$rootpath/samples/video/karaoke_effects_source.mp4"
 
 ## NOT OK! THIS DUMB SHIT LIBRARY FUCKED MY MIND ##
