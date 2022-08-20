@@ -1,0 +1,2 @@
+rootpath=/Users/jamesbrown/desktop/works/pyjom_remote/
+mpv --fs --no-audio --sub-file="$rootpath/tests/karaoke_effects/pyonfx_test/examples/2 - Beginner/Output.ass" "$rootpath/samples/video/karaoke_effects_source.mp4"
