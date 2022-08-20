@@ -274,7 +274,7 @@ ass_fullpath = os.path.abspath(ass_fullpath)
 print("WRITING TO:", ass_fullpath)
 
 if os.path.exists(ass_fullpath):
-    print('已经有与\"{0}\"同名的文件了， 尝试换个文件名输出'.format('{0}.ass'.format(lrc_name)))
+    print('已经有与\"{0}\"同名的文件了， 尝试换个文件名输出'.format('{0}.ass'.format(ass_name)))
     # print('\"是\"请输入任意字符，\"换个文件名输出\"请输入空值，\"否\"请关闭窗口:')
     # check = input().replace(' ', '')
     check = "" # change name and export
@@ -282,7 +282,7 @@ if os.path.exists(ass_fullpath):
         file_found_count = 0
         while os.path.exists(ass_fullpath):
             file_found_count += 1
-            ass_fullpath = os.path.join(os.path.dirname(ass_fullpath), '{0}.s{1}.ass'.format(lrc_name, file_found_count))
+            ass_fullpath = os.path.join(os.path.dirname(ass_fullpath), '{0}.s{1}.ass'.format(ass_name, file_found_count))
 
 try:
     ass_file = open(ass_fullpath, mode='w+', encoding=write_encoding)
