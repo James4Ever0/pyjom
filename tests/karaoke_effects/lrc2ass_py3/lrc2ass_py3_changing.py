@@ -254,7 +254,8 @@ for i in range(0, len(line_indexs)):
         next_line_start = 
         if next_line_start:
             def getNumber(mString):
-                mString.split("")
+                import parse
+                parse.parse()
             def compMin()
             line_end = compMin(next_line_start, line_end)
             if line_end == next_line_start:
