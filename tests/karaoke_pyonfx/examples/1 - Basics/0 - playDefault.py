@@ -27,7 +27,9 @@ For more info:
 """
 from pyonfx import *
 
-io = Ass("in.ass")
+io = Ass("in.ass",path_output="original.ass") # it's like it will render all shit into comments
 # io.open_aegisub()
+# must save before calling this
+io.save()
 sample_video = "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
-io.open_mpv(video_path=sample_video)
+io.open_mpv(video_path=sample_video) # ain't see shit...
