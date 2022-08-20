@@ -104,7 +104,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                     if layer is not None:
                         clip["layers"].append(layer)
                     else: raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
-                maxDuration = max(layer_durations)
+                maxDuration = min(layer_durations)
                 clip["duration"] = maxDuration
                 template["clips"].append(clip)
                 # then just execute this template, or let's just view it.
