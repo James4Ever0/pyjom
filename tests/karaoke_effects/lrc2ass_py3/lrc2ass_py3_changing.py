@@ -261,7 +261,9 @@ for i in range(0, len(line_indexs)):
                 digit = digit*60+d3
                 digit = digit*60+d4
                 return digit
-            def compMin()
+            def compMin(a,b):
+                if getNumber(a) < getNumber(b): return a
+                return b
             line_end = compMin(next_line_start, line_end)
             if line_end == next_line_start:
                 print("警告: 行\"{0}\"没有结束时间标签，已经把下一行的开始时间当作结束时间".format(line,))
