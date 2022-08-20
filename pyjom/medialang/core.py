@@ -411,7 +411,7 @@ class Medialang:
                 result = function(item, previous, verbose=self.verbose, medialangTmpDir=self.medialangTmpDir)
         else:
             if os.path.exists(path):
-                data = fsProcessor(item, previous=previous, verbose=self.verbose)
+                data = fsProcessor(item, previous=previous, verbose=self.verbose, medialangTmpDir = self.medialangTmpDir)
                 result = data
             else:
                 pass
