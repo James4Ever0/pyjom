@@ -269,6 +269,7 @@ ass_fullpath = os.path.join(lrc_path, '{0}.ass'.format(lrc_name))
 
 ## overriding:
 ass_fullpath = realAssPath
+ass_name = 
 ass_fullpath = os.path.abspath(ass_fullpath)
 print("WRITING TO:", ass_fullpath)
 
