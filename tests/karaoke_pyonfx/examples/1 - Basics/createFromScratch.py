@@ -1,3 +1,3 @@
 from pyonfx import *
 
-io = Ass())
+io = Ass()
