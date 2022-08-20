@@ -255,7 +255,7 @@ for i in range(0, len(line_indexs)):
         if next_line_start:
             line_end = min(next_line_start, line_end)
             if line_end == next_line_start:
-                print("警告: 行\"{0}\"没有结束时间标签，已经把下一行的".format(line,)
+                print("警告: 行\"{0}\"没有结束时间标签，已经把下一行的开始时间当作结束时间".format(line,)
         print('警告: 行\"{0}\"没有结束时间标签，自动选择\"{1}\"作为结束时间\n'.format(line, line_end))
 
         line_end_time = int(line_end.split(':')[0]) * 60 + int(line_end.split(':')[1]) * 60 * 100 + \
