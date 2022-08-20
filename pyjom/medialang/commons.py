@@ -19,7 +19,7 @@ def medialangFatalError(error_msg, script_file):
 medialangTmpDir = "/dev/shm/medialang"
 
 
-def getTmpMediaName():
+def getTmpMediaName(medialangTmpDir = medialangTmpDir):
     while True:
         uniq_id = str(uuid.uuid4())
         uniq_id = uniq_id.replace("-", "")
