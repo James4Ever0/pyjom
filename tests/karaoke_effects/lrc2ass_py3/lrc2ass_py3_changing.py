@@ -189,6 +189,8 @@ line_indexs[index[], splitStr[]]:
     splitStr[]:
         == re.split()
 '''
+print(line_indexs)
+breakpoint()
 for i in range(0, len(line_indexs)):
     # 获取行数并定义基本参数
     line = line_indexs[i][0][0][3]
