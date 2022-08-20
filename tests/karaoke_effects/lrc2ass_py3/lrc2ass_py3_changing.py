@@ -42,13 +42,12 @@ lrc = os.path.normpath(inputPath).rstrip('\"').lstrip('\"')
 exist = False
 # 判断路径是否存在，若不存在，则请求用户再次输入直到其存在为止
 if not os.path.exists(lrc):
-    while exist is False:
-        print('错误: 路径不可用')
+    # while exist is False:
+    raise Exception('错误: 路径不可用')
         # inputPath = input('FilePath:')
-        
-        lrc = os.path.normpath(inputPath).rstrip('\"').lstrip('\"')
-        if os.path.exists(lrc):
-            exist = True
+        # lrc = os.path.normpath(inputPath).rstrip('\"').lstrip('\"')
+        # if os.path.exists(lrc):
+        #     exist = True
 
 # 分别获取文件名（无扩展名）和路径
 lrc_name = os.path.splitext(os.path.basename(lrc))[0]
