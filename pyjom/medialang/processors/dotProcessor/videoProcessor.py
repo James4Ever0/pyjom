@@ -85,7 +85,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                             cutFrom = layerElemItem.args.get("cutFrom",0)
                             cutTo = layerElemItem.args.get("cutTo",endOfVideo)
                             speed = layerElemItem.args.get("speed",1)
-                            layerDuration = speed*(cutTo-cutFrom)
+                            layerDuration = (cutTo-cutFrom)#was wrong.
                             layer_durations.append(layerDuration)
                             mute = layerElemItem.args.get("slient",False)
                             layer= { 
