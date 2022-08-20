@@ -44,7 +44,8 @@ exist = False
 if not os.path.exists(lrc):
     while exist is False:
         print('错误: 路径不可用')
-        inputPath = input('FilePath:')
+        # inputPath = input('FilePath:')
+        
         lrc = os.path.normpath(inputPath).rstrip('\"').lstrip('\"')
         if os.path.exists(lrc):
             exist = True
