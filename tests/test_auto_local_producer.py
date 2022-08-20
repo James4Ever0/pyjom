@@ -118,7 +118,7 @@ class tmpdir(AbstractContextManager):
         return False
         
 if __name__ == "__main__":
-    COMPLETE_TEST = True
+    COMPLETE_TEST = False
     if COMPLETE_TEST:
         completeTest()
     # so we don't have to run it all the time. really?
