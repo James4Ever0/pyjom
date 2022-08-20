@@ -66,7 +66,7 @@ start_line = None
 line_end = None
 splitStr = None
 # 编译正则表达式
-pattern = re.compile('\\[[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9]\\]')
+pattern = re.compile('\\[[0-9]+:[0-9]+\\.[0-9]+\\]')
 pattern2 = re.compile('\\[offset:-?[0-9]+\\]')
 
 print('\n正在处理LRC计时标签...')
