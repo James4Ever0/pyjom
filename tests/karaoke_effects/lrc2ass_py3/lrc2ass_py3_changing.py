@@ -84,7 +84,7 @@ for i in range(0, len(lrc_line)):
     # 获取所有匹配正则表达式的字符串（即时间标签）
     results = pattern.findall(s)
     print("RESULTS:", results)
-    breakpoint()
+    # breakpoint()
     # 如果没有时间偏移信息，就尝试匹配时间偏移信息
     if offset == 0:
         offset_str = pattern2.findall(s)
