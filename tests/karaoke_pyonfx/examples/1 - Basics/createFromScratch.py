@@ -2,4 +2,4 @@ from pyonfx import *
 
 io = Ass()
 
-newLine = Line()
+newLine = Line(text)
