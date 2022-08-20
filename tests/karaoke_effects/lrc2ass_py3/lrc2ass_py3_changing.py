@@ -255,7 +255,7 @@ for i in range(0, len(line_indexs)):
         if next_line_start:
             def getNumber(mString):
                 import parse
-                parse.parse()
+                parse.parse("{:d}:{:d}:{")
             def compMin()
             line_end = compMin(next_line_start, line_end)
             if line_end == next_line_start:
