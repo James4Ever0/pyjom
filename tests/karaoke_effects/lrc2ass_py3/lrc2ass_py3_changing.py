@@ -221,6 +221,7 @@ for i in range(0, len(line_indexs)):
             str_lines2 = line_indexs[i2][1][iii]
 
             strNextLine = tag2
+            print("NEXT LINE TIME TAG:", strNextLine)
         except:
             print("WARNING: NO NEXT LINE")
             strNextLine = None
