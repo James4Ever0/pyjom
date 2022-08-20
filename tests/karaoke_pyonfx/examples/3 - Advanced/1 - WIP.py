@@ -98,4 +98,6 @@ for line in lines:
         romaji(line, line.copy())
 
 io.save()
-io.open_aegisub()
+# io.open_aegisub()
+sample_video = "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
+io.open_mpv(video_path=sample_video) # ain't see shit...

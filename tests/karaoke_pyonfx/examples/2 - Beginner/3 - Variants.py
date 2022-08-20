@@ -16,6 +16,8 @@ You can also make some simpler usage, like just applying color changes to the wh
 It could look like much code for such a simple effect, but it's needed and an easy method with much potential for extensions.
 """
 
+### THIS VARIANT IS GREAT. ###
+
 from pyonfx import *
 import random
 import math
