@@ -119,7 +119,7 @@ class tmpdir(AbstractContextManager):
         
 if __name__ == "__main__":
     # completeTest()
-    if 
+    if COMPLETE_TEST:
     # so we don't have to run it all the time. really?
     scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
     # a special hack
