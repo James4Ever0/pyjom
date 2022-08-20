@@ -223,7 +223,7 @@ for i in range(0, len(line_indexs)):
             strNextLine = tag2
             print("NEXT LINE TIME TAG:", strNextLine)
         except:
-            print("WARNING: NO NEXT LINE")
+            print("WARNING: NO NEXT LINE TAG")
             strNextLine = None
         last_index -= 11
 
