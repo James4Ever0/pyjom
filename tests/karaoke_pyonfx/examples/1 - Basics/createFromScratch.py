@@ -1,6 +1,6 @@
 from pyonfx import *
 
-io = Ass(save_path="")
+io = Ass(path_output="output_scratch.ass")
 
 newLine = Line()
 newLine.text = "hello world"
