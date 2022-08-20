@@ -24,6 +24,6 @@ def getTmpMediaName():
         uniq_id = str(uuid.uuid4())
         uniq_id = uniq_id.replace("-", "")
         fname = "{}.ts".format(uniq_id)
-        fpath = os.path.join(medialangTmpDir, fname)
+        fpath = os.path.join(medialangTmpDir, fname) # why no respect to the medialang config!
         if not os.path.exists(fpath):
             return fpath
