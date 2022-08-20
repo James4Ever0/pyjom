@@ -23,6 +23,8 @@ For the kanji function, you can just notice that it is a lazy CTRL+C and CTRL+V 
 but using chars instead of syls. Try yourself what happens if you use syllables for kanji!
 """
 
+# this does not mask the unprecedented chars.
+
 from pyonfx import *
 
 io = Ass("in.ass")
