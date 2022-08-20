@@ -267,6 +267,7 @@ ass_fullpath = os.path.join(lrc_path, '{0}.ass'.format(lrc_name))
 
 ## overriding:
 ass_fullpath = realAssPath
+print("WRITING TO:", os.path.abspath(ass_fullpath))
 
 if os.path.exists(ass_fullpath):
     print('已经有与\"{0}\"同名的文件了，是否要覆盖它？'.format('{0}.ass'.format(lrc_name)))
