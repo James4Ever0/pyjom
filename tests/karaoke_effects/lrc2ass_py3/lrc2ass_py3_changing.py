@@ -256,7 +256,7 @@ for i in range(0, len(line_indexs)):
             def getNumber(mString):
                 import parse
                 result = parse.parse("{d1:d}:{d2:d}:{d3:d}.{d4:d}",mString)
-                
+                d1, d2, d3, d4 = result["d1"], result["d2"]
             def compMin()
             line_end = compMin(next_line_start, line_end)
             if line_end == next_line_start:
