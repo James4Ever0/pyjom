@@ -59,7 +59,7 @@ wbRev = FilesystemAutoContentProducer(
         # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
         "policy": {},
         "maxtime": 3,
-        "mintime": 1,
+        "mintime": 1.2,
     },
     processor_filters={
         "yolov5": ["dog", "cat"],
