@@ -79,7 +79,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                     filetype = getFileType(filepath)
                     if layerElemItem.args.get("backend","editly") == "editly":
                         if filetype == "video":
-                            videoInfo = get_media_info(fileath)
+                            videoInfo = get_media_info(filepath)
                             endOfVideo = videoInfo["duration"]
 
                             cutFrom = layerElemItem.args.get("cutFrom",0)
