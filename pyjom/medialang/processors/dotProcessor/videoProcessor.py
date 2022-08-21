@@ -98,8 +98,9 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                             videoFilePath = processedFilePath # what is this filepath? man how do i handle this?
                             # get video information!
                             # if processed:
-                                cutFrom = 0
-                                cutTo = layerOriginalDuration
+                            # this must be true now.
+                            cutFrom = 0
+                            cutTo = layerOriginalDuration
 
                             speed = layerElemItem.args.get("speed",1)
                             layerDuration = (cutTo-cutFrom)/speed #was wrong.
