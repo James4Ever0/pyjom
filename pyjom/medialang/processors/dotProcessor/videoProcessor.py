@@ -78,13 +78,13 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                     filetype = getFileType(filepath)
                     if layerElemItem.args.get("backend","editly") == "editly":
                         if filetype == "video":
+                            videoInfo = get_media_info(processedFilePath)
                             cutFrom = layerElemItem.args.get("cutFrom",0)
                             cutTo = layerElemItem.args.get("cutTo",endOfVideo)
                             processedFilePath, processed= ffmpegPreProductionFIlter(filepath, start=, end=)
                             videoFilePath = processedFilePath # what is this filepath? man how do i handle this?
                             # get video information!
-                            videoInfo = get_media_info(processedFilePath)
-                            endOfVideo = videoInfo["duration"]
+                            
                             if processed:
                                 cutFrom = 0
                                 cutTo = endOfVideo
