@@ -16,11 +16,11 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     print("RENDER SUCCESSFUL")
 
 def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=None, filters=["pipCrop","textRemoval","logoRemoval"]): # what is the type of this shit?
-    # anyway it will get processed?
+    # anyway it will get processed? or not?
     if "pipCrop" in filters:
     if "textRemoval" in filters:
     if "logoRemoval" in filters:
-    return processedFilePath, processed
+    return processedFilePath
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
     # print("DOTVIDEO ARGS:", item, previous, format)
