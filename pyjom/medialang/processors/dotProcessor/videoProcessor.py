@@ -15,7 +15,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     assert returncode == 0
     print("RENDER SUCCESSFUL")
 
-def ffmpegPreProductionFilter(filepath, start=None, end=None, cachePath=None)
+def ffmpegPreProductionFilter(filepath, start=None, end=None, cachePath=None):
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
     # print("DOTVIDEO ARGS:", item, previous, format)
