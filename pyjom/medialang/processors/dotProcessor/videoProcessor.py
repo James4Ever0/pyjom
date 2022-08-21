@@ -71,7 +71,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                 for layerElem in elem:
                     layer = None
                     # print(layerElem) # {"item":<item>, "cache": <cache_path>}
-                    cachePath = 
+                    cachePath = layer
                     # breakpoint()
                     layerElemItem = layerElem["item"]
                     filepath = layerElemItem.path
