@@ -83,6 +83,8 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                             # get video information!
                             videoInfo = get_media_info(processedFilePath)
                             endOfVideo = videoInfo["duration"]
+                            cutFrom = layerElemItem.args.get("cutFrom",0)
+                            cutTo = layerElemItem.args.get("cutTo",endOfVideo)
                             if processed:
                                 cutFrom = 0
                                 cutTo = endOfVideo
