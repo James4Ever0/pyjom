@@ -1,7 +1,7 @@
 from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 import tempfile
-
+import ffmpeg
 
 def executeEditlyScript(medialangTmpDir, editly_json):
     editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
@@ -18,10 +18,11 @@ def executeEditlyScript(medialangTmpDir, editly_json):
 def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=None, filters=["pipCrop","textRemoval","logoRemoval"]): # what is the type of this shit?
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
+    ffmpeg.
     if "pipCrop" in filters:
     if "textRemoval" in filters:
     if "logoRemoval" in filters:
-    return processedFilePath
+    return cachePath
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
     # print("DOTVIDEO ARGS:", item, previous, format)
