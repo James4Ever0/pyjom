@@ -17,6 +17,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
 
 def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=None, filters=["pipCrop","textRemoval","logoRemoval"]): # what is the type of this shit?
     # anyway it will get processed? or not?
+    # uncertain. very uncertain.
     if "pipCrop" in filters:
     if "textRemoval" in filters:
     if "logoRemoval" in filters:
