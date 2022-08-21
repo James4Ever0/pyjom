@@ -16,6 +16,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     print("RENDER SUCCESSFUL")
 
 def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=None, filters=["pipCrop","textRemoval","logoRemoval"]): # what is the type of this shit?
+    supported
     return processedFilePath, processed
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
