@@ -2,8 +2,6 @@ from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 import tempfile
 
-def ffmpegPreProductionFilter
-
 def executeEditlyScript(medialangTmpDir, editly_json):
     editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
     with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
@@ -81,7 +79,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                     filetype = getFileType(filepath)
                     if layerElemItem.args.get("backend","editly") == "editly":
                         if filetype == "video":
-                            videoInfo = get_media_info(filepath)
+                            videoInfo = get_media_info(fileath)
                             endOfVideo = videoInfo["duration"]
 
                             cutFrom = layerElemItem.args.get("cutFrom",0)
