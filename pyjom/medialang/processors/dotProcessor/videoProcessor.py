@@ -71,7 +71,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                 for layerElem in elem:
                     layer = None
                     # print(layerElem) # {"item":<item>, "cache": <cache_path>}
-                    cachePath = layer
+                    cachePath = layerElem["cache"]
                     # breakpoint()
                     layerElemItem = layerElem["item"]
                     filepath = layerElemItem.path
@@ -79,7 +79,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                     filetype = getFileType(filepath)
                     if layerElemItem.args.get("backend","editly") == "editly":
                         if filetype == "video":
-                            videoInfo = get_media_info(processedFilePath)
+                            videoInfo = get_media_info(filepath)
                             endOfVideo = videoInfo["duration"]
 
                             cutFrom = layerElemItem.args.get("cutFrom",0)
