@@ -81,7 +81,9 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
                             videoInfo = get_media_info(processedFilePath)
                             cutFrom = layerElemItem.args.get("cutFrom",0)
                             cutTo = layerElemItem.args.get("cutTo",endOfVideo)
-                            processedFilePath, processed= ffmpegPreProductionFIlter(filepath, start=, end=)
+                            endOfVideo = videoInfo["duration"]
+
+                            processedFilePath, processed= ffmpegPreProductionFIlter(filepath, start=cutFrom, end=cutTO)
                             videoFilePath = processedFilePath # what is this filepath? man how do i handle this?
                             # get video information!
                             
