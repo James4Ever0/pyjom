@@ -60,6 +60,7 @@ wbRev = FilesystemAutoContentProducer(
         "policy": {},
         "maxtime": 3,
         "mintime": 1,
+        "fast":True, # pass this flag to medialang export engine
     },
     processor_filters={
         "yolov5": ["dog", "cat"],

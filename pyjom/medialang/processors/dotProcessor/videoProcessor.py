@@ -111,7 +111,7 @@ def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir
             print("________________editly template________________")
             print(json.dumps(template, ensure_ascii=False, indent=4)) # let's view it elsewhere? or in `less`?
             print("________________editly template________________")
-            breakpoint()
+            # breakpoint()
             # return template
             executeEditlyScript(medialangTmpDir,template)
             os.rename(output_path, outputPath)
