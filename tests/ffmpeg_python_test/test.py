@@ -42,7 +42,7 @@ def cropVideoRegion():
     newHeight = math.floor(minRatio*height)
     stream_0 = ffmpeg.input("output.mp4",ss=0, to=2)
     stream_0_audio = stream_0.audio
-    stream_0_video = stream_0.video.crop(x,y,width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
+    stream_0 = stream_0.crop(x,y,width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
 
 
 
