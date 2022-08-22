@@ -101,9 +101,8 @@ def delogoTest():
     import math
 
     stream_0 = ffmpeg.input("output.mp4", ss=0, to=3)
-    
     x,y,width, height = getRandomCrop(defaultWidth,defaultHeight) # get our delogo area.
-    stream_0_video = stream_0.video.filter("delogo", x=, y=, width=, height=, show=1)
+    stream_0_video = stream_0.video.filter("delogo", x=x, y=y, width=width, height=height, show=1)
     stream_0_audio = stream_0.audio
 
     stream_1 = ffmpeg.input("output.mp4", ss=3, to=6)
