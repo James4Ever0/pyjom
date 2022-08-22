@@ -99,10 +99,12 @@ def delogoTest():
     defaultHeight = infoData["videoHeight"]
 
     x,y,width, height = getRandomCrop(defaultWidth,defaultHeight) # get our delogo area.
-    
+
     import math
 
     stream = ffmpeg.input("output.mp4")
+    # we must specify the time first.
+    # it is like a 
 if __name__ == "__main__":
     cropVideoRegion()
     # concatVideoWithAudio() # damn quiet out there.
