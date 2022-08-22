@@ -20,7 +20,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
-    stream = ffmpeg.input(input_source,ss=4, to=10) # from 4 to 10 seconds?
+    stream = ffmpeg.input(filepath,ss=4, to=10) # from 4 to 10 seconds?
     # stream = ffmpeg.hflip(stream)
     # we just need to crop this.
     stream = ffmpeg.output(stream, 'output.mp4')
