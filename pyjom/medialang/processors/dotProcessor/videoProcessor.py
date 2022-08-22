@@ -25,12 +25,18 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     assert end is not None
     stream = ffmpeg.input(filepath,ss=start, to=end) # from 4 to 10 seconds?
     # stream = ffmpeg.hflip(stream)
+    # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
     # we just need to crop this.
     stream = ffmpeg.output(stream, cachePath)
     ffmpeg.run(stream, overwrite_output=True)
+    
+    # procedureList = []
+    stream = ffmpeg.input
+    no_processing = True # change this flag if anything need to change in original video according to filter results.
     if "pipCrop" in filters:
     if "textRemoval" in filters:
     if "logoRemoval" in filters:
+
     return cachePath
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
