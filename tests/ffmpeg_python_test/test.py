@@ -11,8 +11,8 @@ def basicTrimVideoProcess():
 
 def getRandomCrop(width, height):
     import random
-    randomGenerator = random.uniform(0.3, 0.8)
-    width = 
+    randomGenerator = lambda: random.uniform(0.3, 0.8)
+    return int()
 # pipCrop in some span?
 
 def cropVideoRegion():
