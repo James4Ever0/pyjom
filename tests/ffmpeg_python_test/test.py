@@ -50,7 +50,7 @@ def cropVideoRegion():
 
     audio_stream = ffmpeg.input("output.mp4")
 
-    ffmpeg.concat(v)
+    ffmpeg.concat(a=0,v=1)
     # there is no audio down here! fuck.
 
     stream = ffmpeg.output(stream, "pipCrop.mp4")
