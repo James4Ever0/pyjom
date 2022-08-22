@@ -52,7 +52,7 @@ def cropVideoRegion():
     newHeight = math.floor(minRatio*height)
     stream_1 = ffmpeg.input("output.mp4",ss=2, to=4)
     stream_1_audio = stream_1.audio
-    stream_1 = stream_1.crop(x, y, width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
+    stream_1_video = stream_1.video.crop(x, y, width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
 
     
     x, y, width, height = getRandomCrop(defaultWidth, defaultHeight)
@@ -61,7 +61,7 @@ def cropVideoRegion():
     newHeight = math.floor(minRatio*height)
     stream_2 = ffmpeg.input("output.mp4",ss=4, to=6)
     stream_2_audio = stream_2.audio
-    stream_2 = stream_2.crop(x,y,width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
+    stream_2_video = stream_2.video.crop(x,y,width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
 
     # stream_0 = stream_0.output("pipCrop.mp4")
     video_stream = ffmpeg.concat(stream_0, stream_1, stream_2)
