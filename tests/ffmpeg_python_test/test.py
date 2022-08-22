@@ -1,5 +1,6 @@
 import ffmpeg
 
+input_source = ""
 
 stream = ffmpeg.input(input_source)
 stream = ffmpeg.hflip(stream)
