@@ -34,7 +34,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     stream = ffmpeg.input
     no_processing = True # change this flag if anything need to change in original video according to filter results.
 
-    # logo removal/text removal first
+    # logo removal/text removal first, pipCrop last.
     if "pipCrop" in filters:
     if "textRemoval" in filters:
     if "logoRemoval" in filters:
