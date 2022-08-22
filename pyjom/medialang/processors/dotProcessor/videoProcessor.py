@@ -19,7 +19,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
-    ffmpeg.
+    
     if "pipCrop" in filters:
     if "textRemoval" in filters:
     if "logoRemoval" in filters:
