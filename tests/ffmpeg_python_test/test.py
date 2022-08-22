@@ -33,8 +33,8 @@ def cropVideoRegion():
     defaultHeight = infoData["videoHeight"]
     # not only crop, but ZOOM!
     import math
-    x,y, width, height = getRandomCrop(defaultWidth, defaultHeight)
-    stream_0 = ffmpeg.input("output.mp4",ss=0, to=2).crop(x,y,width, height).filter("pad",x=math.floor(), y=, width=defaultWidth, height=defaultHeight,color="black")
+    x, y, width, height = getRandomCrop(defaultWidth, defaultHeight)
+    stream_0 = ffmpeg.input("output.mp4",ss=0, to=2).crop(x,y,width, height).filter("pad",x=math.floor(), y=math.floor(), width=defaultWidth, height=defaultHeight,color="black")
     stream_1 = ffmpeg.input("output.mp4",ss=2, to=4).crop(*getRandomCrop(defaultWidth, defaultHeight))
     stream_2 = ffmpeg.input("output.mp4",ss=4, to=6).crop(*getRandomCrop(defaultWidth, defaultHeight))
 
