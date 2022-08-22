@@ -13,6 +13,8 @@ def basicTrimVideoProcess():
 # pipCrop in some span?
 
 def cropVideoRegion():
+    # this lasts for 6 seconds.
     stream = ffmpeg.input("output.mp4")
+
     stream = ffmpeg.output(stream, "pipCrop.mp4")
     ffmpeg.run(stream, overwrite_output=True)
