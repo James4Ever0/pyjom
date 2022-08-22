@@ -1,6 +1,3 @@
-from asyncio import StreamReader
-from statistics import harmonic_mean
-from tkinter import TRUE
 import ffmpeg
 
 def basicTrimVideoProcess():
