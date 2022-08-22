@@ -90,7 +90,7 @@ def concatVideoWithAudio():
 
 
 def delogoTest():
-    
+    stream = ffmpeg.input("output.mp4")
 if __name__ == "__main__":
     cropVideoRegion()
     # concatVideoWithAudio() # damn quiet out there.
