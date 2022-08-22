@@ -103,9 +103,9 @@ def delogoTest():
     import math
 
     stream_0 = ffmpeg.input("output.mp4", ss=0, to=3)
-    stream_0_video = stream_0.video
+    stream_0_video = stream_0.video.filter("delogo", x=, y=, width=, height=, show=1)
     stream_0_audio = stream_0.audio
-    
+
     stream_1 = ffmpeg.input("output.mp4", ss=3, to=6)
     stream_1_video = stream_1.video
     stream_1_audio = stream_1.audio
