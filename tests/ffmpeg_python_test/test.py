@@ -11,7 +11,7 @@ def basicTrimVideoProcess():
 
 def getRandomCrop(width, height):
     import random
-    rnd = random.uniform(0.3, 0.8)
+    randomGenerator = random.uniform(0.3, 0.8)
     width = 
 # pipCrop in some span?
 
