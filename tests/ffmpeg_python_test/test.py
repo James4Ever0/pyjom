@@ -18,9 +18,9 @@ def cropVideoRegion():
     # just use simple concat. right?
     # 334x188
     # not only crop, but ZOOM!
-    stream_0 = ffmpeg.input("output.mp4",ss=0, to=2).filter("crop",x,y,width,height)
-    stream_1 = ffmpeg.input("output.mp4",ss=2, to=4).filter("crop",x,y,width,height)
-    stream_2 = ffmpeg.input("output.mp4",ss=4, to=6).filter("crop",x,y,width,height)
+    stream_0 = ffmpeg.input("output.mp4",ss=0, to=2).filter("crop",x,y,width,height).filter("scale",defaultWidth, defaultHeight)
+    stream_1 = ffmpeg.input("output.mp4",ss=2, to=4).filter("crop",x,y,width,height).filter("scale",defaultWidth, defaultHeight)
+    stream_2 = ffmpeg.input("output.mp4",ss=4, to=6).filter("crop",x,y,width,height).filter("scale",defaultWidth, defaultHeight)
 
     stream = ffmpeg.output(stream, "pipCrop.mp4")
     ffmpeg.run(stream, overwrite_output=True)
