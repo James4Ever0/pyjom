@@ -12,5 +12,5 @@ def basicTrimVideoProcess():
 
 # pipCrop in some span?
 
-
-ffmpeg.run(stream, overwrite_output=True)
+def cropVideoRegion():
+    ffmpeg.run(stream, overwrite_output=True)
