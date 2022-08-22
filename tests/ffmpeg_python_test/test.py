@@ -104,7 +104,7 @@ def delogoTest():
 
     stream = ffmpeg.input("output.mp4")
     # we must specify the time first.
-    # it is like a compiler! ffmpeg really sucks. thanks, ffmpeg-python wrapper.
+    # it is like a compiler! ffmpeg commandline (also its lireally sucks. thanks, ffmpeg-python wrapper.
 
 if __name__ == "__main__":
     cropVideoRegion()
