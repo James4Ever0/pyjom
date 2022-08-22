@@ -109,6 +109,7 @@ def delogoTest():
     stream_1 = ffmpeg.input("output.mp4", ss=3, to=6)
     x,y,width, height = getRandomCrop(defaultWidth,defaultHeight) # get our delogo area.
     stream_1_video = stream_1.video.filter("delogo", x=x, y=y, w=width, h=height, show=1)
+    stream_1_video = stream_1_video.filter("delogo", x=x, y=y, w=width)
     stream_1_audio = stream_1.audio
     # we must specify the time first.
     # it is like a compiler! ffmpeg commandline (also its library, mind-blowingly crazy and complex) really sucks. thanks, ffmpeg-python wrapper.
