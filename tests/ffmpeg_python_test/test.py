@@ -59,7 +59,7 @@ def cropVideoRegion():
 def concatVideoWithAudio():
     stream_0 = ffmpeg.input("output.mp4",ss=0, t=3)
     stream_1 = ffmpeg.input("output.mp4",ss=3, t=6)
-    stream = ffmpeg.concat(stream_0.video, stream_0.audio, a=1)
+    stream = ffmpeg.concat(stream_0.video, stream_0.audio, str, a=1)
     stream = ffmpeg.output(stream, "concatVideo.mp4")
     print(stream.get_args())
     # ffmpeg.run(stream, overwrite_output=True)
