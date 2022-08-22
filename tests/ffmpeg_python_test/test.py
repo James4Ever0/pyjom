@@ -60,10 +60,10 @@ def concatVideoWithAudio():
     stream_0 = ffmpeg.input("output.mp4",ss=0, t=3)
     stream_1 = ffmpeg.input("output.mp4",ss=3, t=6)
 
-    stream = ffmpeg.concat(stream_0.video, stream_0.audio, stream_1.video, stream_1.audio, v=1 ,a=1)
+    stream = ffmpeg.concat(stream_0.video, stream_0.audio, stream_1.video, stream_1.audio, v=1, a=1).node
     # print(stream)
     # breakpoint()
-    stream = ffmpeg.output(stream, "concatVideo.mp4").node
+    stream = ffmpeg.output(stream, "concatVideo.mp4")
     # print(stream.get_args())
     ffmpeg.run(stream[0], stream[1], overwrite_output=True)
 
