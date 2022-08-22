@@ -13,4 +13,5 @@ def basicTrimVideoProcess():
 # pipCrop in some span?
 
 def cropVideoRegion():
+    stream = ffmpeg.input("output.mp4")
     ffmpeg.run(stream, overwrite_output=True)
