@@ -1,4 +1,5 @@
 from asyncio import StreamReader
+from statistics import harmonic_mean
 from tkinter import TRUE
 import ffmpeg
 
@@ -90,7 +91,7 @@ def concatVideoWithAudio():
 
 
 def delogoTest():
-    import MediaInfo
+    from MediaInfo import MediaInfo
     info = MediaInfo(filename = 'output.mp4')
     infoData = info.getInfo()
     # print(infoData)
@@ -102,15 +103,19 @@ def delogoTest():
 
     stream_0 = ffmpeg.input("output.mp4", ss=0, to=3)
     x,y,width, height = getRandomCrop(defaultWidth,defaultHeight) # get our delogo area.
-    stream_0_video = stream_0.video.filter("delogo", x=x, y=y, width=width, height=height, show=1)
+    stream_0_video = stream_0.video.filter("delogo", x=x, y=y, w=width, h=height, show=1)
     stream_0_audio = stream_0.audio
 
     stream_1 = ffmpeg.input("output.mp4", ss=3, to=6)
-    stream_1_video = stream_1.video.filter("delogo", x=x, y=y, width=width, height=height, show=1)
+    x,y,width, height = getRandomCrop(defaultWidth,defaultHeight) # get our delogo area.
+    stream_1_video = stream_1.video.filter("delogo", x=x, y=y, w=width, h=height, show=1)
     stream_1_audio = stream_1.audio
     # we must specify the time first.
     # it is like a compiler! ffmpeg commandline (also its library, mind-blowingly crazy and complex) really sucks. thanks, ffmpeg-python wrapper.
-    ffmpeg.concat(stream_0_video, stream_1_video)
+    video_stream = ffmpeg.concat(stream_0_video, stream_1_video)
+    audio_stream = ffmpeg.concat(stream_0_audio, stream_1_audio, v=0,a=1)
+    stream = ffmpeg.output(video_stream, audio_stream,"delogoTest.mp4")
+    stream.run()
 
 if __name__ == "__main__":
     # cropVideoRegion()
