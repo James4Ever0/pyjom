@@ -26,7 +26,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     stream = ffmpeg.input(filepath,ss=start, to=end) # from 4 to 10 seconds?
     # stream = ffmpeg.hflip(stream)
     # we just need to crop this.
-    stream = ffmpeg.output(stream, 'output.mp4')
+    stream = ffmpeg.output(stream, cachePath)
     ffmpeg.run(stream, overwrite_output=True)
     if "pipCrop" in filters:
     if "textRemoval" in filters:
