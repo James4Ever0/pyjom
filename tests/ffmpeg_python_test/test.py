@@ -64,7 +64,7 @@ def cropVideoRegion():
     stream_2 = stream_2.crop(x,y,width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
 
     # stream_0 = stream_0.output("pipCrop.mp4")
-    video_stream = ffmpeg.concat(stream_0, stream_1, stream_2)
+    # video_stream = ffmpeg.concat(stream_0, stream_1, stream_2)
     # audio_stream = ffmpeg.concat(stream_0_audio,stream_1_audio, stream_2_audio,v=0, a=1)
 
     stream = ffmpeg.output(stream_0, "pipCrop.mp4")
