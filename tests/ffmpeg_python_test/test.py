@@ -88,6 +88,9 @@ def concatVideoWithAudio():
     # print(stream.get_args())
     stream.run(overwrite_output=True)
 
+
+def delogoTest():
+    
 if __name__ == "__main__":
     cropVideoRegion()
     # concatVideoWithAudio() # damn quiet out there.
