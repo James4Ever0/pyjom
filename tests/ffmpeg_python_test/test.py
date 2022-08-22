@@ -15,6 +15,7 @@ def basicTrimVideoProcess():
 def cropVideoRegion():
     # this lasts for 6 seconds.
     # what is the shape of your thing?
+    # just use simple concat. right?
     stream = ffmpeg.input("output.mp4")
 
     stream = ffmpeg.output(stream, "pipCrop.mp4")
