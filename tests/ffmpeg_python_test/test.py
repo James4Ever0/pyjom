@@ -90,6 +90,15 @@ def concatVideoWithAudio():
 
 
 def delogoTest():
+    import MediaInfo
+    info = MediaInfo(filename = 'output.mp4')
+    infoData = info.getInfo()
+    # print(infoData)
+    # breakpoint()
+    defaultWidth = infoData["videoWidth"]
+    defaultHeight = infoData["videoHeight"]
+    import math
+    
     stream = ffmpeg.input("output.mp4")
 if __name__ == "__main__":
     cropVideoRegion()
