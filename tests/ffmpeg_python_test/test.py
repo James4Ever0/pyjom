@@ -110,7 +110,7 @@ def delogoTest():
     stream_1_audio = stream_1.audio
     # we must specify the time first.
     # it is like a compiler! ffmpeg commandline (also its library, mind-blowingly crazy and complex) really sucks. thanks, ffmpeg-python wrapper.
-    
+    ffmpeg.concat(stream_0_video, stream_1_video)
 
 if __name__ == "__main__":
     # cropVideoRegion()
