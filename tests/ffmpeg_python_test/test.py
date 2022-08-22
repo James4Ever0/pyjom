@@ -112,5 +112,6 @@ def delogoTest():
     # it is like a compiler! ffmpeg commandline (also its library, mind-blowingly crazy and complex) really sucks. thanks, ffmpeg-python wrapper.
 
 if __name__ == "__main__":
-    cropVideoRegion()
+    # cropVideoRegion()
     # concatVideoWithAudio() # damn quiet out there.
+    delogoTest()
