@@ -40,7 +40,8 @@ def cropVideoRegion():
     minRatio = min(defaultWidth/width, defaultHeight/height)
     newWidth = math.floor(minRatio*width)
     newHeight = math.floor(minRatio*height)
-    stream_0 = ffmpeg.input("output.mp4",ss=0, to=2).crop(x,y,width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
+    stream_0 = ffmpeg.input("output.mp4",ss=0, to=2)
+    stream_0_video = stream_0.video.crop(x,y,width, height).filter("scale", newWidth, newHeight).filter("pad",x=math.floor((defaultWidth-newWidth)/2), y=math.floor((defaultHeight-newHeight)/2), width=defaultWidth, height=defaultHeight,color="black")
 
 
 
@@ -62,7 +63,7 @@ def cropVideoRegion():
     audio_stream = ffmpeg.input("output.mp4").audio
 
     stream = ffmpeg.output(video_stream, audio_stream, "pipCrop.mp4")
-    
+
     stream.run(overwrite_output=True)
     # stream = ffmpeg.concat(stream_0.video, stream_0.audio, stream_1.video, stream_1.audio, stream_2.video, stream_2.audio, v=1, a=1)
     # # there is no audio down here! fuck.
