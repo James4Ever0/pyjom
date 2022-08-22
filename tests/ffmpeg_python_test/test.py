@@ -105,6 +105,7 @@ def delogoTest():
     stream_0 = ffmpeg.input("output.mp4", ss=0, to=3)
     stream_0_video = stream_0.video
     stream_0_audio = stream_0.audio
+    stream_1 = ffmpeg.input("output.mp4", ss=3, to=6)
     # we must specify the time first.
     # it is like a compiler! ffmpeg commandline (also its library, mind-blowingly crazy and complex) really sucks. thanks, ffmpeg-python wrapper.
 
