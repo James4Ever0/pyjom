@@ -16,6 +16,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     print("RENDER SUCCESSFUL")
 
 def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=None, filters=["pipCrop","textRemoval","logoRemoval"]): # what is the type of this shit?
+    # enable that 'fast' flag?
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
     ffmpeg.
