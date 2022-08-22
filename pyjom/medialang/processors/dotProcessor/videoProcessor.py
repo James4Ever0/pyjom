@@ -22,7 +22,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # uncertain. very uncertain.
     assert cachePath is not None
     assert start is not None
-    assert cachePath is not None
+    assert end is not None
     stream = ffmpeg.input(filepath,ss=start, to=end) # from 4 to 10 seconds?
     # stream = ffmpeg.hflip(stream)
     # we just need to crop this.
