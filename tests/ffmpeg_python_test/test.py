@@ -102,7 +102,7 @@ def delogoTest():
 
     import math
 
-    stream = ffmpeg.input("output.mp4")
+    stream = ffmpeg.input("output.mp4").delogo
     # we must specify the time first.
     # it is like a compiler! ffmpeg commandline (also its library, mind-blowingly crazy and complex) really sucks. thanks, ffmpeg-python wrapper.
 
