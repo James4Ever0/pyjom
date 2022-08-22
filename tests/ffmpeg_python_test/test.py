@@ -16,7 +16,7 @@ def cropVideoRegion():
     # this lasts for 6 seconds.
     # what is the shape of your thing?
     # just use simple concat. right?
-    stream = ffmpeg.input("output.mp4").filter("crop",x,y,width,height)
+    stream = ffmpeg.input("output.mp4",ss=0, to=).filter("crop",x,y,width,height)
 
     stream = ffmpeg.output(stream, "pipCrop.mp4")
     ffmpeg.run(stream, overwrite_output=True)
