@@ -15,7 +15,7 @@ def getRandomCrop(width, height):
 
     newWidth, newHeight = int(randomGenerator()*width), int(randomGenerator()*height)
 
-    newX, newY = random.randint(), random.randint()
+    newX, newY = random.randint(0, ), random.randint(0, height-newHeight)
 # pipCrop in some span?
 
 def cropVideoRegion():
