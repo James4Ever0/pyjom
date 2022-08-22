@@ -66,7 +66,7 @@ def concatVideoWithAudio():
     # breakpoint()
     stream = ffmpeg.output(stream[0], stream[1], "concatVideo.mp4")
     # print(stream.get_args())
-    ffmpeg.run(StreamReader, overwrite_output=True)
+    stream.run(overwrite_output=True)
 
 if __name__ == "__main__":
     # cropVideoRegion()
