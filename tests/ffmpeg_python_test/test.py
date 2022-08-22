@@ -98,7 +98,7 @@ def delogoTest():
     defaultWidth = infoData["videoWidth"]
     defaultHeight = infoData["videoHeight"]
 
-    
+    x,y,width, height = getRandomCrop()
     import math
 
     stream = ffmpeg.input("output.mp4")
