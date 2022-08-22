@@ -46,7 +46,9 @@ def cropVideoRegion():
     x, y, width, height = getRandomCrop(defaultWidth, defaultHeight)
     stream_2 = ffmpeg.input("output.mp4",ss=4, to=6).crop(x,y,width, height).filter("pad",x=math.floor((defaultWidth-width)/2), y=math.floor((defaultHeight-height)/2), width=defaultWidth, height=defaultHeight,color="black")
 
-    stream = ffmpeg.concat(stream_0, stream_1, stream_2)
+    video_stream = ffmpeg.concat(stream_0, stream_1, stream_2)
+
+    audio_stream = ffmpeg.input()
     # there is no audio down here! fuck.
 
     stream = ffmpeg.output(stream, "pipCrop.mp4")
