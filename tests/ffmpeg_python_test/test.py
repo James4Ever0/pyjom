@@ -20,8 +20,8 @@ def cropVideoRegion():
     from MediaInfo import MediaInfo
     info = MediaInfo(filename = 'output.mp4')
     infoData = info.getInfo()
-    print(infoData)
-    breakpoint()
+    # print(infoData)
+    # breakpoint()
     # not only crop, but ZOOM!
     stream_0 = ffmpeg.input("output.mp4",ss=0, to=2).crop(x,y,width,height).filter("scale",defaultWidth, defaultHeight)
     stream_1 = ffmpeg.input("output.mp4",ss=2, to=4).crop(x,y,width,height).filter("scale",defaultWidth, defaultHeight)
