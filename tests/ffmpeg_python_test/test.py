@@ -9,7 +9,8 @@ def basicTrimVideoProcess():
     stream = ffmpeg.output(stream, 'output.mp4')
     ffmpeg.run(stream, overwrite_output=True)
 
-def getRandomCrop(width, height)
+def getRandomCrop(width, height):
+    
 # pipCrop in some span?
 
 def cropVideoRegion():
