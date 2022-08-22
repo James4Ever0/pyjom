@@ -74,5 +74,5 @@ def concatVideoWithAudio():
     stream.run(overwrite_output=True)
 
 if __name__ == "__main__":
-    # cropVideoRegion()
-    concatVideoWithAudio() # damn quiet out there.
+    cropVideoRegion()
+    # concatVideoWithAudio() # damn quiet out there.
