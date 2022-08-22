@@ -97,8 +97,10 @@ def delogoTest():
     # breakpoint()
     defaultWidth = infoData["videoWidth"]
     defaultHeight = infoData["videoHeight"]
-    import math
+
     
+    import math
+
     stream = ffmpeg.input("output.mp4")
 if __name__ == "__main__":
     cropVideoRegion()
