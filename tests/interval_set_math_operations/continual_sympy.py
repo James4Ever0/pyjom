@@ -10,7 +10,7 @@ def unionToTupleList(myUnion):
   return list(zip(leftBoundaries, rightBoundaries))
 
 def tupleSetToUncertain(mSet):
-m
+
   for start, end in mSet:
     if mUncertain is None:
       mUncertain = sympy.Interval(start,end)
