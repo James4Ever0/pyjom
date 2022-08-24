@@ -36,7 +36,7 @@ mUncertain2, typeUncertain2 = tupleSetToUncertain(mSet2)
 unrolledMSet2 = list(mUncertain2.boundary)
 
 print("MSET", mSet)
-print("MSET")
+print("MSET2", mSet2)
 
 ############################################################
 
