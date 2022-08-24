@@ -73,8 +73,11 @@ for k,v in reversedCats.items():
 # how to get interval elements out of union structure for hell sake?
 
 finalCats = {}
+subIntervals = list()
 for k,v in normalCats.items():
   # now k is the original set index list, representing belonging of the below union.
+  print(subIntervals)
+  print(index)
   breakpoint()
   mFinalUnionCandidate = [tuple(subIntervals[index]) for index in v]
 
