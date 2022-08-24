@@ -56,8 +56,8 @@ unifiedBoundaryList.sort()
 
 unifiedBoundaryMarks = {}
 finalMappings = {}
-print("MARKERS", markers)
-breakpoint()
+# print("MARKERS", markers)
+# breakpoint()
 for index, boundary in enumerate(unifiedBoundaryList):
   previousMark = unifiedBoundaryMarks.get(index-1, [])
   enterList = markers["enter"].get(boundary,[])
