@@ -6,7 +6,7 @@ import sympy
 def unionToTupleList(myUnion):
   #  seriously wrong. this will fuck up.
   unionBoundaries = list(myUnion.boundary)
-  unionBoundarie
+  unionBoundaries.sort()
   leftBoundaries = unionBoundaries[::2]
   rightBoundaries = unionBoundaries[1::2]
   return list(zip(leftBoundaries, rightBoundaries))
@@ -25,6 +25,7 @@ def tupleSetToUncertain(mSet):
 def mergeOverlappedInIntervalTupleList(intervalTupleList):
   mUncertain, _ = tupleSetToUncertain(intervalTupleList)
   mUncertainBoundaryList = list(mUncertain.boundary)
+  mUncertainBoundar
   print(mUncertain)
   print(mUncertainBoundaryList)
   mergedIntervalTupleList = list(zip(mUncertainBoundaryList[::2], mUncertainBoundaryList[1::2]))
