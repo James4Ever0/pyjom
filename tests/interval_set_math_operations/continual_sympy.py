@@ -4,6 +4,7 @@
 import sympy
 
 def unionToTupleList(myUnion):
+  #  seriously wrong. this will fuck up.
   unionBoundaries = list(myUnion.boundary)
   leftBoundaries = unionBoundaries[::2]
   rightBoundaries = unionBoundaries[1::2]
