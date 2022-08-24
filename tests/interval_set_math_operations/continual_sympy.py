@@ -6,6 +6,7 @@ import sympy
 def unionToTupleList(myUnion):
   #  seriously wrong. this will fuck up.
   unionBoundaries = list(myUnion.boundary)
+  unionBoundarie
   leftBoundaries = unionBoundaries[::2]
   rightBoundaries = unionBoundaries[1::2]
   return list(zip(leftBoundaries, rightBoundaries))
