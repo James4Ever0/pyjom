@@ -86,3 +86,5 @@ for key, value in finalMappings:
   # value is an array containing subInterval tuples.
   value = mergeOverlappedInIntervalTupleList(value)
   finalCats.update({key: value})
+
+print("")
