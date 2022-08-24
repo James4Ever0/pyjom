@@ -100,7 +100,7 @@ for k,v in normalCats.items():
   breakpoint()
 
   mFinalIntervalListCandidate = mergeOverlappedInIntervalTupleList(mFinalUnionCandidate)
-  print("M")
+  print("M_FINAL_INTERVAL_LIST_CANDIDATE")
 
   finalCats.update({k:mFinalIntervalListCandidate.copy()})
 # this whole calculation could just be exponential. goddamn it?
