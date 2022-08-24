@@ -87,4 +87,5 @@ for key, value in finalMappings:
   value = mergeOverlappedInIntervalTupleList(value)
   finalCats.update({key: value})
 
-print("______________FINAL CATS")
+print("______________FINAL CATS______________")
+print(finalCats)
