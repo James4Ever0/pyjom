@@ -108,7 +108,7 @@ for k,v in normalCats.items():
 #
 #  relativeCompleteInterval = sympy.Interval(subIntervalsStart, subIntervalsEnd)
 #
-subIntervalUnion
+# subIntervalUnion
 #  emptyIntervalUnion = relativeCompleteInterval - subIntervalUnion # really uncertain if it is just a union or not.
 #  emptyIntervalTupleList = unionToTupleList(emptyIntervalUnion)
 #
