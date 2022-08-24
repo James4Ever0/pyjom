@@ -55,6 +55,8 @@ subIntervals = list(subIntervals)
 # for subIntervals, it's still not real interval but tuple at above line.
 
 reversedCats = {}
+
+import fu
 subIntervalUnion = 
 
 for subIntervalIndex, (start, end) in enumerate(subIntervals):
