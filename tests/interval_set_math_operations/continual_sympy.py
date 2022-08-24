@@ -121,6 +121,7 @@ for k,v in normalCats.items():
 #
 #  finalCats.update({"empty":emptyIntervalTupleList})
 finalCats.update({"empty":finalCats[()]})
+finalCats[()]
 
 print("_____FINAL CATS_____")
 print(finalCats)
