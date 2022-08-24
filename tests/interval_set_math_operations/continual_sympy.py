@@ -23,7 +23,7 @@ def tupleSetToUncertain(mSet):
 def mergeOverlappedInIntervalTupleList(intervalTupleList):
   mUncertain, _ = tupleSetToUncertain(intervalTupleList)
   mUncertainBoundaryList = list(mUncertain.boundary)
-  print(mUnc)
+  print(mUncertain)
   print(mUncertainBoundaryList)
   mergedIntervalTupleList = list(zip(mUncertainBoundaryList[::2], mUncertainBoundaryList[1::2]))
   print(mergedIntervalTupleList)
