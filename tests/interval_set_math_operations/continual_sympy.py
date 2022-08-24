@@ -37,4 +37,69 @@ unrolledMSet2 = list(mUncertain2.boundary)
 
 ############################################################
 
+# hypothetical mSet2 and mUncertain2! please complete the hypothetical shit and make it runnable!
 
+def checkCommon(subInterval, masterInterval):
+  return subInterval == sympy.Intersection(subInterval, masterInterval)
+
+mUncertains = [mUncertain, mUncertain2]
+subIntervals = list(set(unrolledMSet2 + unrolledMSet))
+subIntervals.sort()
+
+subIntervals = zip(subIntervals[:-1], subIntervals[1:])
+# for subIntervals, it's still not real interval but tuple at above line.
+
+reversedCats = {}
+subIntervalUnion = None
+for subIntervalIndex, (start, end) in enumerate(subIntervals):
+  subIntervalCandidate = sympy.Interval(start, end)
+  if subIntervalUnion is None:
+    subIntervalUnion = subIntervalCandidate
+  else:
+    subIntervalUnion += subIntervalCandidate
+  reverseIndex = [] # there must be at least one such index.
+  for index, uncertainCandidate in enumerate(mUncertains):
+    if checkCommon(subIntervalCandidate, uncertainCandidate):
+      reverseIndex.append(index) # this is the index of the in-common set of the original set list
+  reversedCats.update({subIntervalIndex:reverseIndexTuple}) # need to sort and index? or not to sort because this is already done?
+
+normalCats = {}
+for k,v in reversedCats.items():
+  normalCats.update({v:normalCats.get(v, [])+[k]})
+# we only get interval, not the actural union period!
+# how to get interval elements out of union structure for hell sake?
+
+finalCats = {}
+for k,v in normalCats.keys():
+  # now k is the original set index list, representing belonging of the below union.
+  mFinalUnionCandidate = [tuple(subIntervals[index]) for index in v]
+
+  ## REPLACED ##
+  # mFinalUnionCandidate, _ = tupleSetToUncertain(mFinalUnionCandidate)
+
+  ##### union to tuple list, could be replaced #####
+  #mFinalUnionCandidateBoundaryList = list(mFinalUnionCandidate.boundary)
+  #left_bounds, right_bounds = mFinalUnionCandidateBoundaryList[0::2],mFinalUnionCandidateBoundaryList[1::2] # check it dammit! not sure how to step the list properly?
+  #mFinalIntervalListCandidate = list(zip(left_bounds, right_bounds))
+
+  # mFinalIntervalListCandidate = unionToTupleList(mFinalUnionCandidate)
+  ##### union to tuple list, could be replaced #####
+  ## REPLACED ##
+
+  mFinalIntervalListCandidate = mergeOverlappedInIntervalTupleList(mFinalUnionCandidate)
+
+  finalCats.update({k:mFinalIntervalListCandidate})
+# this whole calculation could just be exponential. goddamn it?
+# before that, we need to get the "empty" out. but is that really necessary? i think it is, as an important feature.
+subIntervalsStart, subIntervalsEnd = subIntervals[0][0], subIntervals[-1][-1]
+
+relativeCompleteInterval = sympy.Interval(subIntervalsStart, subIntervalsEnd)
+
+# subIntervalUnion
+emptyIntervalUnion = relativeCompleteInterval - subIntervalUnion # really uncertain if it is just a union or not.
+emptyIntervalTupleList = unionToTupleList(emptyIntervalUnion)
+
+finalCats.update({"empty":emptyIntervalTupleList})
+
+print("_____FINAL CATS_____")
+print(finalCats)
