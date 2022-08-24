@@ -120,6 +120,7 @@ for k,v in normalCats.items():
 #  emptyIntervalTupleList = unionToTupleList(emptyIntervalUnion)
 #
 #  finalCats.update({"empty":emptyIntervalTupleList})
+fi
 
 print("_____FINAL CATS_____")
 print(finalCats)
