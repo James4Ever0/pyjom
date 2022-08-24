@@ -48,6 +48,7 @@ subIntervals = list(set(unrolledMSet2 + unrolledMSet))
 subIntervals.sort()
 
 subIntervals = zip(subIntervals[:-1], subIntervals[1:])
+breakpoint()
 # for subIntervals, it's still not real interval but tuple at above line.
 
 reversedCats = {}
