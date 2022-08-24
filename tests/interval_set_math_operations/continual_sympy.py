@@ -105,9 +105,9 @@ for k,v in normalCats.items():
   # print("M_FINAL_UNION_CANDIDATE",mFinalUnionCandidate)
 
   mFinalIntervalListCandidate = mergeOverlappedInIntervalTupleList(mFinalUnionCandidate)
-  print("M_FINAL_INTERVAL_LIST_CANDIDATE", mFinalIntervalListCandidate)
+  # print("M_FINAL_INTERVAL_LIST_CANDIDATE", mFinalIntervalListCandidate)
 
-  breakpoint()
+  # breakpoint()
   finalCats.update({k:mFinalIntervalListCandidate.copy()})
 # this whole calculation could just be exponential. goddamn it?
 # before that, we need to get the "empty" out. but is that really necessary? i think it is, as an important feature.
