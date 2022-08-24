@@ -1,1 +1,7 @@
 2022/08/23 16:13:05.816 [E]  Will ReConnect After:5 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/24 19:14:27.014 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
