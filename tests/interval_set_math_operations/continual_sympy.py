@@ -101,7 +101,7 @@ for k,v in normalCats.items():
 
   mFinalIntervalListCandidate = mergeOverlappedInIntervalTupleList(mFinalUnionCandidate)
 
-  finalCats.update({k:mFinalIntervalListCandidate})
+  finalCats.update({k:mFinalIntervalListCandidate.copy()})
 # this whole calculation could just be exponential. goddamn it?
 # before that, we need to get the "empty" out. but is that really necessary? i think it is, as an important feature.
 #  subIntervalsStart, subIntervalsEnd = subIntervals[0][0], subIntervals[-1][-1]
