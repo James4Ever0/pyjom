@@ -60,8 +60,8 @@ print("MARKERS", markers)
 breakpoint()
 for index, boundary in enumerate(unifiedBoundaryList):
   previousMark = unifiedBoundaryMarks.get(index-1, [])
-  enterList = markers["enter"][boundary]
-  exitList = markers["exit"].get(boundary,[]
+  enterList = markers["enter"].get(boundary,[])
+  exitList = markers["exit"].get(boundary,[])
   currentMark = set(previousMark + enterList).difference(set(exitList))
   currentMark = list(currentMark)
   unifiedBoundaryMarks.update({index:currentMark})
