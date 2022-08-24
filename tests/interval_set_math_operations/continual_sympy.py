@@ -75,6 +75,7 @@ for k,v in reversedCats.items():
 finalCats = {}
 for k,v in normalCats.items():
   # now k is the original set index list, representing belonging of the below union.
+  breakpoint()
   mFinalUnionCandidate = [tuple(subIntervals[index]) for index in v]
 
   ## REPLACED ##
