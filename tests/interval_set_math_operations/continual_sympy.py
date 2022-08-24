@@ -102,7 +102,7 @@ for k,v in normalCats.items():
   # mFinalIntervalListCandidate = unionToTupleList(mFinalUnionCandidate)
   ##### union to tuple list, could be replaced #####
   ## REPLACED ##
-  print("M_FINAL_UNION_CANDIDATE",mFinalUnionCandidate)
+  # print("M_FINAL_UNION_CANDIDATE",mFinalUnionCandidate)
 
   mFinalIntervalListCandidate = mergeOverlappedInIntervalTupleList(mFinalUnionCandidate)
   print("M_FINAL_INTERVAL_LIST_CANDIDATE", mFinalIntervalListCandidate)
