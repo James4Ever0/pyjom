@@ -85,7 +85,7 @@ for index, boundary in enumerate(unifiedBoundaryList):
 
 ### NOW THE FINAL OUTPUT ###
 finalCats = {}
-for key, value in finalMappings:
+for key, value in finalMappings.items():
   # value is an array containing subInterval tuples.
   value = mergeOverlappedInIntervalTupleList(value)
   finalCats.update({key: value})
