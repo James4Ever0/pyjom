@@ -62,7 +62,7 @@ for subIntervalIndex, (start, end) in enumerate(subIntervals):
   for index, uncertainCandidate in enumerate(mUncertains):
     if checkCommon(subIntervalCandidate, uncertainCandidate):
       reverseIndex.append(index) # this is the index of the in-common set of the original set list
-  reversedCats.update({subIntervalIndex:reverseIndexTuple}) # need to sort and index? or not to sort because this is already done?
+  reversedCats.update({subIntervalIndex:reverseIndex}) # need to sort and index? or not to sort because this is already done?
 
 normalCats = {}
 for k,v in reversedCats.items():
