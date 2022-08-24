@@ -83,7 +83,7 @@ for k,v in normalCats.items():
   #  print(index)
   #  print(v)
   #  breakpoint()
-  mFinalUnionCandidate = [tuple(subIntervals[index]) for index in v]
+  mFinalUnionCandidate = [subIntervals[index] for index in v]
 
   ## REPLACED ##
   # mFinalUnionCandidate, _ = tupleSetToUncertain(mFinalUnionCandidate)
