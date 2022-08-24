@@ -104,15 +104,15 @@ for k,v in normalCats.items():
   finalCats.update({k:mFinalIntervalListCandidate})
 # this whole calculation could just be exponential. goddamn it?
 # before that, we need to get the "empty" out. but is that really necessary? i think it is, as an important feature.
-subIntervalsStart, subIntervalsEnd = subIntervals[0][0], subIntervals[-1][-1]
-
-relativeCompleteInterval = sympy.Interval(subIntervalsStart, subIntervalsEnd)
-
-# subIntervalUnion
-emptyIntervalUnion = relativeCompleteInterval - subIntervalUnion # really uncertain if it is just a union or not.
-emptyIntervalTupleList = unionToTupleList(emptyIntervalUnion)
-
-finalCats.update({"empty":emptyIntervalTupleList})
+#  subIntervalsStart, subIntervalsEnd = subIntervals[0][0], subIntervals[-1][-1]
+#
+#  relativeCompleteInterval = sympy.Interval(subIntervalsStart, subIntervalsEnd)
+#
+subIntervalUnion
+#  emptyIntervalUnion = relativeCompleteInterval - subIntervalUnion # really uncertain if it is just a union or not.
+#  emptyIntervalTupleList = unionToTupleList(emptyIntervalUnion)
+#
+#  finalCats.update({"empty":emptyIntervalTupleList})
 
 print("_____FINAL CATS_____")
 print(finalCats)
