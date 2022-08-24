@@ -66,7 +66,8 @@ for subIntervalIndex, (start, end) in enumerate(subIntervals):
 
 normalCats = {}
 for k,v in reversedCats.items():
-    v.
+    v.sort()
+    v = tuple()
   normalCats.update({v:normalCats.get(v, [])+[k]})
 # we only get interval, not the actural union period!
 # how to get interval elements out of union structure for hell sake?
