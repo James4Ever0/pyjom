@@ -55,7 +55,7 @@ subIntervals = list(subIntervals)
 # for subIntervals, it's still not real interval but tuple at above line.
 
 reversedCats = {}
-subIntervalUnion = 
+subIntervalUnion = reduce()
 
 for subIntervalIndex, (start, end) in enumerate(subIntervals):
   subIntervalCandidate = sympy.Interval(start, end)
