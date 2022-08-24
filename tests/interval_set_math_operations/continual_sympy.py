@@ -56,8 +56,8 @@ subIntervals = list(subIntervals)
 
 reversedCats = {}
 
-import fu
-subIntervalUnion = 
+import functools
+subIntervalUnion = functools.
 
 for subIntervalIndex, (start, end) in enumerate(subIntervals):
   subIntervalCandidate = sympy.Interval(start, end)
