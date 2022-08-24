@@ -57,14 +57,11 @@ subIntervals = list(subIntervals)
 reversedCats = {}
 
 import functools
-subIntervalUnion = functools.reduce(lambda a,b: a+b, mUn)
+subIntervalUnion = functools.reduce(lambda a,b: a+b, mUncertains)
 
 for subIntervalIndex, (start, end) in enumerate(subIntervals):
   subIntervalCandidate = sympy.Interval(start, end)
-  if subIntervalUnion is None:
-    subIntervalUnion = subIntervalCandidate
-  else:
-    subIntervalUnion += subIntervalCandidate
+
   reverseIndex = [] # there must be at least one such index.
   for index, uncertainCandidate in enumerate(mUncertains):
     if checkCommon(subIntervalCandidate, uncertainCandidate):
