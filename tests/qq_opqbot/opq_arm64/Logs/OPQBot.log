@@ -191,3 +191,4 @@ stack traceback:
 2022/08/31 15:57:43.818 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:48847->223.5.5.5:53: i/o timeout
 2022/08/31 15:57:43.818 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:48847->223.5.5.5:53: i/o timeout
 2022/08/31 15:57:43.818 [E]  Will ReConnect After:8 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
+2022/08/31 17:10:49.580 [E]  Will ReConnect After:8 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
