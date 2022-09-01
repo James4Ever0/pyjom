@@ -200,3 +200,7 @@ stack traceback:
 2022/09/01 16:04:07.480 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
 2022/09/01 16:04:07.480 [E]  dial tcp 111.30.130.106:80: i/o timeout
 2022/09/01 16:10:55.277 [E]  Will ReConnect After:7 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
+2022/09/01 16:11:17.285 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/09/01 16:11:17.285 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/09/01 16:11:17.285 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/09/01 16:11:17.286 [E]  Will ReConnect After:8 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
