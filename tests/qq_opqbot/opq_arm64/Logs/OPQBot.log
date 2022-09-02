@@ -1254,3 +1254,4 @@ end
 2022/09/03 04:39:36.905 [E]  dial tcp 111.30.130.106:80: i/o timeout
 2022/09/03 04:39:36.907 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
 2022/09/03 04:39:36.907 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/09/02 21:00:16.608 [E]  Will ReConnect After:8 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
