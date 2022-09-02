@@ -131,3 +131,4 @@
 2022/09/02 19:03:00.078 [E]  dial tcp 111.30.130.106:80: i/o timeout
 2022/09/02 19:03:00.080 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
 2022/09/02 19:03:00.080 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/09/02 21:22:13.059 [E]  Will ReConnect After:8 s TXSERVER 111.30.130.106:80 User 917521610 Offline Nick 喵喵姬 
