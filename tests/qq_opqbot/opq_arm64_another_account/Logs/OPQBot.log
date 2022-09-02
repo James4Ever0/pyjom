@@ -132,3 +132,7 @@
 2022/09/02 19:03:00.080 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
 2022/09/02 19:03:00.080 [E]  dial tcp 111.30.130.106:80: i/o timeout
 2022/09/02 21:22:13.059 [E]  Will ReConnect After:8 s TXSERVER 111.30.130.106:80 User 917521610 Offline Nick 喵喵姬 
+2022/09/02 21:22:36.071 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/09/02 21:22:36.072 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/09/02 21:22:36.072 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/09/02 21:22:36.073 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
