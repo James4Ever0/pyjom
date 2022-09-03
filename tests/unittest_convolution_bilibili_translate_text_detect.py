@@ -1,5 +1,5 @@
 import json
-import cv2
+# import cv2
 def getVideoPixels(videoPath):
     from MediaInfo import MediaInfo
     info = MediaInfo(filename = videoPath)
