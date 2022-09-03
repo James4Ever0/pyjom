@@ -22,4 +22,4 @@ start, end = -1,4
 result_3 = getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict, start, end, concatSymbol="|")
 print(result_3)
 
-result_3)
+mergedRangesToSequential(result_3)
