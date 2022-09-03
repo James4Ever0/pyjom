@@ -14,6 +14,7 @@ def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     if defaultWidth < defaultHeight:
         reverseFlag = True
     maxDim = max(mList)
+    shrinkRatio = 
 
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
