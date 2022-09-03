@@ -5,6 +5,8 @@ import ffmpeg
 
 # import cv2
 
+def getMergedRects()
+
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -54,7 +56,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     for index, frame in enumerate(iterator):
         if noWHInfo:
             noWHInfo = False
-            width,height = frame.shape[:2]
+            height, width = frame.shape[:2]
         detection, recognition = reader.detect(frame)
         if detection == [[]]:
             detectionList.append([])
