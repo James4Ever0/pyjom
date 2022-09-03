@@ -142,7 +142,9 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
     print(mRangesDict)
     breakpoint()
     mKeyMaps = list(mRangesDict.keys())
-    mSetCandidates = [key] for key in mKeyMaps]
+    mSetCandidates = [mRangesDict[key] for key in mKeyMaps]
+    # the next step will automatically merge all overlapped candidates.
+    
     return newFinalRectList
 
 
