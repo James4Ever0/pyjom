@@ -169,4 +169,13 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(
             finalNewRangesDict.update({key:newRangesDict[key]})
     return finalNewRangesDict
 
-def 
+def mergedRangesToSequential(renderDict):
+    renderList = []
+    for renderCommandString in renderDict.keys():
+        commandTimeSpans = renderDict[renderCommandString].copy()
+        # commandTimeSpan.sort(key=lambda x: x[0])
+        for commandTimeSpan in commandTimeSpans:
+            renderList.append([renderCommandString, commandTimeSpan].copy())
+    renderList.sort(key=lambda x: x[1][0])
+    for renderCommandString, commandTimeSpan in renderList:
+        print(renderCommandString, commandTimeSpan)
