@@ -31,8 +31,9 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     # convolution?
     import easyocr
     reader = easyocr.Reader(["en","ch_sim"],gpu=False) # no metal? no dbnet18?
-    
+
     for index, frame in enumerate(iterator):
+        detection=reader.detect(frame)
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
