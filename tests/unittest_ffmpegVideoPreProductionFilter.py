@@ -45,8 +45,8 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     end = getVideoDuration(videoPath)
 
     if test_text_detector:
-        from pyjom.medialang.processors.dotProcessor import detectTextRegionOverTime
-        detectTextRegionOverTime()
+        from pyjom.medialang.processors.dotProcessor import regions = detectTextRegionOverTime
+        detectTextRegionOverTime(videoPath, start, end)
 
     if test_ffmpeg:
         output = ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
