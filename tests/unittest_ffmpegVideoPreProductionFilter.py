@@ -10,6 +10,7 @@ tempDir = '/dev/shm/medialang' # anyway we just want something else...
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
     videoPath = videoPaths['text']
+    videoFileName = os.path.basename(videoPath)
     # we use the full video here? to check if this shit really works?
     videoFile = os.path.join(allocatedTmpDir,videoFileName)
     import uuid
