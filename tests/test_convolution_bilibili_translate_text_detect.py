@@ -1,4 +1,5 @@
 import json
+
 def getVideoPixels(videoPath):
     from MediaInfo import MediaInfo
     info = MediaInfo(filename = videoPath)
@@ -7,6 +8,7 @@ def getVideoPixels(videoPath):
     # breakpoint()
     defaultWidth = infoData["videoWidth"]
     defaultHeight = infoData["videoHeight"]
+    return defaultWidth, defaultHeight
 # easy gig, you said.
 basePath = "/root/Desktop/works/pyjom"
 targetFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/japan_day.json"
