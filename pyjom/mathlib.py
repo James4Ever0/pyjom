@@ -130,4 +130,5 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict,start, end,
     import uuid
     emptySetName = str(uuid.uuid4())
     newRangesDict = mRangesDict.copy()
-    newRangesDict.update({})
+    newRangesDict.update({emptySetName:[(start, end)]})
+    
