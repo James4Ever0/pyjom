@@ -1,7 +1,7 @@
 import json
 from test_commons import *
 from pyjom.commons import *
-# import cv2
+import cv2
 def getVideoPixels(videoPath):
     from MediaInfo import MediaInfo
     info = MediaInfo(filename = videoPath)
