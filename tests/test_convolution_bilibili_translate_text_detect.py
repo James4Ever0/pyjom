@@ -4,7 +4,7 @@ import json
 targetFile = "/root/Desktop/works/pyjom/tests/bilibili_practices/bilibili_video_translate/japan_day.json"
 
 mJson = json.loads(open(targetFile, 'r',encoding='utf-8').read())
-    import numpy as np
+import numpy as np
 
 
 mKeys = list(mJson.keys())
@@ -28,8 +28,8 @@ for intKey in range(minKey, maxKey+1):
         # print("location",location) # four points. do not know if there is any rotation here.
         if confidence > 0.7:
             npLocation = np.array(location)
-            xlocs = location[:,0]
-            ylocs = location[:,1]
+            xlocs = npLocation[:,0]
+            ylocs = npLocation[:,1]
             print(xlocs)
             print(ylocs)
             breakpoint()
