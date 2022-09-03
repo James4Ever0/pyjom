@@ -96,6 +96,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     # now we do some convolution.
     maxListIndex = len(detectionList)
     convSpan = 3
+    finalRectList = []
 
     for index in range(maxListIndex):
         rangeStart, rangeEnd = index-convSpan, index+convSpan
