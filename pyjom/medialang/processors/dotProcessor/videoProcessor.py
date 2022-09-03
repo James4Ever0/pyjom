@@ -71,7 +71,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     # are you classifying the thing putting boxes into different category?
     # no it does not. first is detector, next is recognizer.
     # do not use recognizer here. for multiple reasons.
-    noWHinfo = True
+    noWHInfo = True
+    width, height = None, None
     for index, frame in enumerate(iterator):
         if noWHInfo:
             noWHInfo = False
