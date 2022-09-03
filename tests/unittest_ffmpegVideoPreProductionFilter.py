@@ -28,7 +28,6 @@ def getVideoDuration(filePath):
     end = float(infoData['videoDuration'])
     return end
 
-
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
     videoPath = videoPaths['text']
