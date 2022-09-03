@@ -58,7 +58,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
         # print("frame number:",index)
         # for boundingBox in detection[0]:
         #     print(boundingBox)
-        detection[0].copy()
+        detectionList.append(detection[0].copy())
         # print(detection)
         # breakpoint()
     del reader # can it really free memory?
