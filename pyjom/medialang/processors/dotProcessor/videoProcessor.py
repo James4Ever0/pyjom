@@ -24,6 +24,7 @@ def mergeAlikeRegions(sample, threshold=10):
         # print(newItem) # showcase.
         newSample.append(newItem.copy())
         prevList = newItem.copy()
+    return newSample
 
 # import cv2
 def getBlackPicture(width, height):
