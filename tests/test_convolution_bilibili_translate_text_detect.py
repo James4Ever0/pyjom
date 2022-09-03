@@ -74,7 +74,7 @@ for intKey in range(minKey, maxKey+1):
     for x0, y0, x1, y1 in flatSpan:
         loc0 = (x0,y0)
         loc1 = (x1,y1)
-        cv2.rectangle(blackPicture,loc0, loc1, 255,2) # we do not fill so we can see if shit happens.
+        cv2.rectangle(blackPicture, loc0, loc1, 255,2) # we do not fill so we can see if shit happens.
     cv2.imshow("IMAGE %s" % str(), blackPicture)
     cv2.waitKey(1000)
     # print("NON OVERLAPPING BOXES:")
