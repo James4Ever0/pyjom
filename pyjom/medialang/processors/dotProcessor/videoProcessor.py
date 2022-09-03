@@ -5,7 +5,7 @@ import ffmpeg
 
 # import cv2
 
-def getFrameIterator(videoPath):
+def getFrameIterator(videoPath, start, end):
     cv2.
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
