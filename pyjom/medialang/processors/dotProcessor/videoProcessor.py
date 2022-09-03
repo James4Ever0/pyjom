@@ -9,6 +9,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate):
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
+    startFrame = 
     success, img = cap.read() # ignore first frame.
     fno = 0
     while success:
