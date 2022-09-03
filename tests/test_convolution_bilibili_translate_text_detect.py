@@ -4,6 +4,8 @@ import json
 targetFile = "/root/Desktop/works/pyjom/tests/bilibili_practices/bilibili_video_translate/japan_day.json"
 
 mJson = json.loads(open(targetFile, 'r',encoding='utf-8').read())
+    import numpy as np
+
 
 mKeys = list(mJson.keys())
 mIntKeys = [int(x) for x in mKeys]
@@ -25,6 +27,7 @@ for intKey in range(minKey, maxKey+1):
         text, confidence = item[1]
         # print("location",location) # four points. do not know if there is any rotation here.
         if confidence > 0.7:
+            npLocation = np.array(location)
             xlocs = location[:,0]
             ylocs = location[:,1]
             print(xlocs)
@@ -41,7 +44,6 @@ for intKey in range(minKey, maxKey+1):
         convolutionBoundingBoxSpan.pop(0)
     # do your calculation!
     flatSpan = [y for x in convolutionBoundingBoxSpan for y in x]
-    import numpy as np
     flatSpan = np.array(flatSpan)
     currentNonOverlappingBoxes = non_max_suppression(flatSpan)
     # print(intKey,target)
