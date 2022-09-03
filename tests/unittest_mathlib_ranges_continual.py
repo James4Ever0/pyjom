@@ -21,5 +21,7 @@ print("_"*20)
 start, end = -1,4
 result_3 = getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict, start, end, concatSymbol="|")
 print(result_3)
+print("_"*20)
 
-mergedRangesToSequential(result_3)
+renderList = mergedRangesToSequential(result_3)
+for 
