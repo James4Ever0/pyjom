@@ -17,4 +17,4 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     cacheId = str(uuid.uuid4())
     fileExtension = videoFileName.split(".")[-1]
     cacheFileName = ".".join([cacheId,fileExtension])
-    
+    cachePath = os.path.join(allocatedTmpDir,cacheFileName)
