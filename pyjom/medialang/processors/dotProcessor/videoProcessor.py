@@ -34,6 +34,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
 
     for index, frame in enumerate(iterator):
         detection=reader.detect(frame)
+        print("frame number:",index)
+        print()
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
