@@ -58,7 +58,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
         print("frame number:",index)
         print(detection)
         breakpoint()
-    del reader
+    del reader # can it really free memory?
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
