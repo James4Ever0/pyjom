@@ -222,6 +222,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # if not, no sorting is needed.
     if "textRemoval" in filters:
         # process the video, during that duration. fast seek avaliable?
+        
         pass
     if "logoRemoval" in filters:
         pass
