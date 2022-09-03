@@ -15,7 +15,7 @@ def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     #     reverseFlag = True
     maxDim = max(mList)
     shrinkRatio = maxPixel/maxDim
-    
+    getRounded = lambda num, rounder: num
     newFrameWork = []
 
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
