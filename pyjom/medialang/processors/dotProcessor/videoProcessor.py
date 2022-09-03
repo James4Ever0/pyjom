@@ -19,11 +19,12 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
         if fno % sample_rate == 0:
             # do_something(img)
             if fno > startFrame and fno < stopFrame:
+                img, _ = cap.
                 yield img
             if fno >= stopFrame:
                 break
         # read next frame
-        success, img = cap.read()
+        success, img = cap.grab()
     cap.release()
 
 def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
