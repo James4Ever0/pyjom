@@ -144,8 +144,6 @@ def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     return newFrameWork[0], newFrameWork[1]
 
 def getVideoWidthHeight(videoPath):
-    
-def getVideoPreviewPixels(videoPath, maxPixel=200):
     from MediaInfo import MediaInfo
     info = MediaInfo(filename = videoPath)
     infoData = info.getInfo()
@@ -153,6 +151,9 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     # breakpoint()
     defaultWidth = infoData["videoWidth"]
     defaultHeight = infoData["videoHeight"]
+    return defaultWidth, defaultHeight
+def getVideoPreviewPixels(videoPath, maxPixel=200):
+    defaultWidth, defaultHeight = getVideoPreview
     # print(infoData)
     # print(infoData.keys())
     # breakpoint()
