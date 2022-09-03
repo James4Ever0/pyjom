@@ -9,5 +9,6 @@ result_0 = getContinualNonSympyMergeResult(inputList)
 print(result_0)
 print("_"*20)
 
+# want to build a language?
 result_1 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|")
 print(result_1)
