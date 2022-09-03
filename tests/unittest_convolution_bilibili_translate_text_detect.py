@@ -124,7 +124,7 @@ for intKey in range(minKey, maxKey+1):
     
     for i in contours:
         x,y,w,h = cv2.boundingRect(i)
-        cv2.rectangle(currentBoundingBoxesVisualize, (x, y), (x + w, y + h), 255, 4):
+        cv2.rectangle(currentBoundingBoxesVisualize, (x, y), (x + w, y + h), 255, 4)
         
 
     cv2.imshow("IMAGE", currentBoundingBoxesVisualize)
