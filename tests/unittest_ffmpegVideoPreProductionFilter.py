@@ -23,10 +23,7 @@ def getVideoDuration(filePath):
     # breakpoint()
     start = 0
     end = float(infoData['videoDuration'])
-
-    maxPixel = 200
-
-    previewWidth, previewHeight = getPreviewPixels(defaultWidth, defaultHeight, maxPixel)
+    return end
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
@@ -50,6 +47,8 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     fileExtension = videoFileName.split(".")[-1]
     cacheFileName = ".".join([cacheId,fileExtension])
     cachePath = os.path.join(allocatedTmpDir,cacheFileName)
+    start = 0
+    end = getVideoDuration(videoPath)
 
 
     ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
