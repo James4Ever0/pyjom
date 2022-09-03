@@ -78,7 +78,7 @@ for intKey in range(minKey, maxKey+1):
         x0,y0, x1, y1 = [int(num) for num in rectangle]
         loc0 = (x0,y0)
         loc1 = (x1,y1)
-        cv2.rectangle(blackPicture, loc0, loc1, (255,255,255),2) # we do not fill so we can see if shit happens.
+        cv2.rectangle(blackPicture, loc0, loc1, 255,2) # we fill so we can see if shit happens.
     cv2.imshow("IMAGE", blackPicture)
     cv2.waitKey(10)
     print("showing image:", intKey)
