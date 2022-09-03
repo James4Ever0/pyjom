@@ -81,3 +81,6 @@ sample = [
     [],
     [],
 ]
+
+prevList = []
+for item in 
