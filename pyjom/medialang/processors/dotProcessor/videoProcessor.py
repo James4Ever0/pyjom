@@ -3,7 +3,17 @@ from pyjom.medialang.commons import *
 import tempfile
 import ffmpeg
 
-def ():
+def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
+    mList = [defaultWidth, defaultHeight]
+    # if defaultWidth < defaultHeight:
+    #     reverseFlag = True
+    maxDim = max(mList)
+    shrinkRatio = maxPixel/maxDim
+    getRounded = lambda num, rounder: (num//rounder)*rounder
+    newFrameWork = [getRounded(x*shrinkRatio,4) for x in mList]
+    return newFrameWork[0], newFrameWork[1]
+
+def getVideoPreview():
 
     from MediaInfo import MediaInfo
     info = MediaInfo(filename = videoPath)
