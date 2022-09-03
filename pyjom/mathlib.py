@@ -128,4 +128,5 @@ def getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol = "|",noEmpt
 
 def getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict,start, end, concatSymbol="|"):
     import uuid
+    emptySetName = str(uuid.uuid4())
     
