@@ -4,7 +4,7 @@ import tempfile
 videoPaths = {
     "text":
     "logo":
-    "":
+    "pip":
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
