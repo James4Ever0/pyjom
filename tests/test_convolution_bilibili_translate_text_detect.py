@@ -40,8 +40,10 @@ for intKey in range(minKey, maxKey+1):
     if len(convolutionBoundingBoxSpan)> convolutionSpan:
         convolutionBoundingBoxSpan.pop(0)
     # do your calculation!
-    flat
-    currentNonOverlappingBoxes = non_max_supporession()
+    flatSpan = [y for x in convolutionBoundingBoxSpan for y in x]
+    import numpy as np
+    flatSpan = np.array(flatSpan)
+    currentNonOverlappingBoxes = non_max_suppression(flatSpan)
     # print(intKey,target)
     # this time we do not care about the text inside.
     # breakpoint()
