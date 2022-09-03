@@ -9,3 +9,6 @@ def getBlackPicture(width, height):
     return blackPicture
 
 blackPicture = getBlackPicture(500,500)
+cv2.rectangle(blackPicture, (200,200),(300,300),(255,255,255),3)
+cv2.imshow("image", blackPicture)
+cv2.waitKey(0)
