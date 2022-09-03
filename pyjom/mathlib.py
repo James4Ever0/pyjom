@@ -162,5 +162,5 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(
         mergedEmptySetName = "{}{}".format(concatSymbol, emptySetName)
         if mergedEmptySetName in key:
             newKey = key.replace(mergedEmptySetName,"")
-            finalNewRangesDict[mergedEmptySetName] =
+            finalNewRangesDict.update({newKey:
     return newRangesDict
