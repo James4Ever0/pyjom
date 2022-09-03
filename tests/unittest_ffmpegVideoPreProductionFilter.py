@@ -5,4 +5,4 @@ import tempfile
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
-    videoFile = os.path.join(allocatedTmpDir,)
+    videoFile = os.path.join(allocatedTmpDir,videoFileName)
