@@ -33,7 +33,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     reader = easyocr.Reader(["en","ch_sim"],gpu=False) # no metal? no dbnet18?
 
     for index, frame in enumerate(iterator):
-        detection=reader.detect(frame)
+        detection = reader.detect(frame)
         print("frame number:",index)
         print(detection)
 
