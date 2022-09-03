@@ -3,6 +3,26 @@ from pyjom.medialang.commons import *
 import tempfile
 import ffmpeg
 
+def ():
+
+    from MediaInfo import MediaInfo
+    info = MediaInfo(filename = videoPath)
+    infoData = info.getInfo()
+    # print(infoData)
+    # breakpoint()
+    defaultWidth = infoData["videoWidth"]
+    defaultHeight = infoData["videoHeight"]
+    # print(infoData)
+    # print(infoData.keys())
+    # breakpoint()
+    start = 0
+    end = float(infoData['videoDuration'])
+
+    maxPixel = 200
+
+    previewWidth, previewHeight = getPreviewPixels(defaultWidth, defaultHeight, maxPixel)
+
+
 def executeEditlyScript(medialangTmpDir, editly_json):
     editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
     with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
