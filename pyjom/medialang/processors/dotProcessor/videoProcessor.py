@@ -128,8 +128,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
         mergedRects = getMergedRects(mConvList, width, height)
         finalRectList.append(mergedRects.copy())
 
-    newFinalRectList = mergeAlikeRegions()
-    return finalRectList
+    newFinalRectList = mergeAlikeRegions(finalRectList, 10)
+    return newFinalRectList
 
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
