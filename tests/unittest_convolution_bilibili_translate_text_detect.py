@@ -27,7 +27,7 @@ import numpy as np
 width, height = getVideoPixels(originalFile)
 
 def getBlackPicture(width, height):
-    blackPicture =  np.zeros((height, width,1), dtype = "uint8") # this is grayscale.
+    blackPicture =  np.zeros((height, width,3), dtype = "uint8") # this is grayscale.
     return blackPicture
 
 mKeys = list(mJson.keys())
@@ -76,9 +76,13 @@ for intKey in range(minKey, maxKey+1):
     for x0, y0, x1, y1 in flatSpan:
         loc0 = (x0,y0)
         loc1 = (x1,y1)
-        cv2.rectangle(blackPicture, loc0, loc1, 255,2) # we do not fill so we can see if shit happens.
+        cv2.rectangle(blackPicture, loc0, loc1, (255,255,255),2) # we do not fill so we can see if shit happens.
     cv2.imshow("IMAGE", blackPicture)
-    cv2.waitKey(1000)
+    cv2.waitKey(10)
+    print("showing image:", intKey)
+    print("boundingBoxes:", len(flatSpan))
+    # print
+    # cv2.waitKey(1000)
     # print("NON OVERLAPPING BOXES:")
     # print(currentNonOverlappingBoxes)
     # we need to visualize this shit.
