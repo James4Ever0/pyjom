@@ -231,8 +231,9 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
         pass
 
-    mDict, start, end = getContinualMappedNonSympyMergeResultWithRangedEmpty()
+    renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
 
+    
     return cachePath
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
