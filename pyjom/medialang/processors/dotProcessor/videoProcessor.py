@@ -142,6 +142,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
             mRangesDict.update(mRangesDict.get(tupleY,[])+[ranges[index]])
     # print(mRangesDict)
     # breakpoint()
+    delogo_
     finalCatsMapped = getContinualMappedNonSympyMergeResult(mRangesDict, noEmpty=True) # need to use string input!
     return finalCatsMapped
 
