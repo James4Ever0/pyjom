@@ -19,7 +19,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
         if fno % sample_rate == 0:
             # do_something(img)
             if fno > startFrame and fno < stopFrame:
-                img, _ = cap.
+                _, img = cap.retrieve()
                 yield img
             if fno >= stopFrame:
                 break
