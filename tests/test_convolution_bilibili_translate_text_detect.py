@@ -24,7 +24,8 @@ for intKey in range(minKey, maxKey+1):
         xlocs = location[:,0]
         ylocs = location[:,1]
         minX, maxX = min(xlocs), max(xlocs)
-        minX, maxX = min(xlocs), max(xlocs)
+        minY, maxY = min(ylocs), max(ylocs)
+        
         # print("text", text)
         # print("confidence", confidence)
     # print(intKey,target)
