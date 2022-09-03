@@ -1,13 +1,9 @@
 # not overriding math.
 # do some ranged stuff here...
 def getContinualNonSympyMergeResult(inputMSetCandidates):
-#     #!/usr/bin/env python
-# # -*- coding: utf-8 -*-
-
     # basically the same example.
     # assume no overlapping here.
     import sympy
-
 
     def unionToTupleList(myUnion):
         unionBoundaries = list(myUnion.boundary)
