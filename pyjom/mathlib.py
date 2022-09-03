@@ -115,7 +115,7 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
     # print(finalCats)
     return finalCats
 
-def getContinualMappedNonSympyMergeResult(mRangesDict, noEmpty=True):
+def getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol = "|",noEmpty=True):
     mKeyMaps = list(mRangesDict.keys())
     mSetCandidates = [mRangesDict[key] for key in mKeyMaps]
     # the next step will automatically merge all overlapped candidates.
