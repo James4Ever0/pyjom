@@ -9,7 +9,7 @@ videoPaths = {
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
-    videoPath
+    videoPath = videoPaths['text']
     videoFile = os.path.join(allocatedTmpDir,videoFileName)
     import uuid
     cachePath = str(uuid.uuid4())
