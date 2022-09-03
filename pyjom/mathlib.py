@@ -12,7 +12,6 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
         rightBoundaries = unionBoundaries[1::2]
         return list(zip(leftBoundaries, rightBoundaries))
 
-
     def tupleSetToUncertain(mSet):
         mUncertain = None
         for start, end in mSet:
@@ -23,7 +22,6 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
         typeUncertain = type(mUncertain)
         return mUncertain, typeUncertain
 
-
     def mergeOverlappedInIntervalTupleList(intervalTupleList):
         mUncertain, _ = tupleSetToUncertain(intervalTupleList)
         mUncertainBoundaryList = list(mUncertain.boundary)
@@ -33,14 +31,15 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
         )
         return mergedIntervalTupleList
 
-
     # mSet = mergeOverlappedInIntervalTupleList([(0, 1), (2, 3)])
     # mSet2 = mergeOverlappedInIntervalTupleList([(0.5, 1.5), (1.6, 2.5)])
 
     # print("MSET", mSet)
     # print("MSET2", mSet2)
 
-    mSetCandidates = [mergeOverlappedInIntervalTupleList(x) for x in inputMSetCandidates]
+    mSetCandidates = [
+        mergeOverlappedInIntervalTupleList(x) for x in inputMSetCandidates
+    ]
     mSetUnified = [x for y in mSetCandidates for x in y]
     leftBoundaryList = set([x[0] for x in mSetUnified])
     rightBoundaryList = set([x[1] for x in mSetUnified])
@@ -115,23 +114,47 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
     # print(finalCats)
     return finalCats
 
-def getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol = "|",noEmpty=True):
+
+def getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|", noEmpty=True):
     mKeyMaps = list(mRangesDict.keys())
     mSetCandidates = [mRangesDict[key] for key in mKeyMaps]
     # the next step will automatically merge all overlapped candidates.
     finalCats = getContinualNonSympyMergeResult(mSetCandidates)
-    finalCatsMapped = {concatSymbol.join([mKeyMaps[k] for k in mTuple]):finalCats[mTuple] for mTuple in finalCats.keys() if type(mTuple) == tuple}
+    finalCatsMapped = {
+        concatSymbol.join([mKeyMaps[k] for k in mTuple]): finalCats[mTuple]
+        for mTuple in finalCats.keys()
+        if type(mTuple) == tuple
+    }
     if not noEmpty:
-        finalCatsMapped.update({k:finalCats[k] for k in finalCats.keys() if type(k) != tuple})
+        finalCatsMapped.update(
+            {k: finalCats[k] for k in finalCats.keys() if type(k) != tuple}
+        )
     return finalCatsMapped
     # default not to output empty set?
 
-def getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict,start, end, concatSymbol="|"):
+
+def getContinualMappedNonSympyMergeResultWithRangedEmpty(
+    mRangesDict, start, end, concatSymbol="|"
+):
     import uuid
+
     emptySetName = str(uuid.uuid4())
     newRangesDict = mRangesDict.copy()
-    newRangesDict.update({emptySetName:[(start, end)]})
-    newRangesDict = getContinualMappedNonSympyMergeResult(newRangesDict, concatSymbol="|", noEmpty=True)
-    newRangesDict = {key:[(mStart, mEnd) for mStart, mEnd in newRangesDict[key] if mStart >=start and mEnd <= end] for key in newRangesDict.keys()}
-    newRangesDict = {key:newRangesDict[key] for key in newRangesDict.keys() if newRangesDict[key] != []}
+    newRangesDict.update({emptySetName: [(start, end)]})
+    newRangesDict = getContinualMappedNonSympyMergeResult(
+        newRangesDict, concatSymbol="|", noEmpty=True
+    )
+    newRangesDict = {
+        key: [
+            (mStart, mEnd)
+            for mStart, mEnd in newRangesDict[key]
+            if mStart >= start and mEnd <= end
+        ]
+        for key in newRangesDict.keys()
+    }
+    newRangesDict = {
+        key: newRangesDict[key]
+        for key in newRangesDict.keys()
+        if newRangesDict[key] != []
+    }
     return newRangesDict
