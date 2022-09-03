@@ -49,6 +49,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         
         regions = detectTextRegionOverTime(videoPath, start, end)
         for region in regions:
+            # could be empty here.
             print(region)
         # pretty much None currently.
         breakpoint()
