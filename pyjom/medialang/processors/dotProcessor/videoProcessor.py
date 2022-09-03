@@ -52,7 +52,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     # do not use recognizer here. for multiple reasons.
 
     for index, frame in enumerate(iterator):
-        frame.shape[:2]
+        if no
+        width,height = frame.shape[:2]
         detection, recognition = reader.detect(frame)
         if detection == [[]]:
             detectionList.append([])
