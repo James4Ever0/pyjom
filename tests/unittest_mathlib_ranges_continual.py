@@ -14,5 +14,5 @@ result_1 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|")
 print(result_1)
 print("_"*20)
 
-result_1 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|")
-print(result_1)
+result_2 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|",noEmpty=False)
+print(result_2)
