@@ -111,7 +111,7 @@ for intKey in range(minKey, maxKey+1):
     if len(convolutionBlurredSpan) > convolutionSpan:
         convolutionBlurredSpan.pop(0)
 
-    currentBlackPictureBlurred = getConvBlurredCurrentShot(convolutionBlurredSpan)
+    currentBlackPictureBlurred = getConvBlurredCurrentShot(convolutionBlurredSpan, span=conv)
     # print(currentBlackPictureBlurred.shape)
 
     print("boundingBoxes:", len(flatSpan))
