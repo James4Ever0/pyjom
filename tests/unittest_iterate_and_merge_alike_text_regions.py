@@ -90,6 +90,7 @@ def alike(array0,array1, threshold):
     return max(abs(npArray0-npArray1)) <= threshold
 
 for item in sample:
+    newItem = []
     for elem in item:
         for prevElem in prevList:
             if alike(prevElem, elem,10):
