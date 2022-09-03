@@ -95,7 +95,7 @@ for item in sample:
         for prevElem in prevList:
             if alike(prevElem, elem,10):
                 # mAlike = True
-                elem = prevElem
+                elem = prevElem.copy()
                 break
-        newItem.append(elem)
+        newItem.append(elem.copy())
     prevList = newItem.copy()
