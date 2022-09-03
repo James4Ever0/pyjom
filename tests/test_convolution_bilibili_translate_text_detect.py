@@ -1,7 +1,5 @@
 import json
-from test_commons import *
-from pyjom.
-
+def getVideo
 # easy gig, you said.
 basePath = "/root/Desktop/works/pyjom"
 targetFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/japan_day.json"
