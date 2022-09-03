@@ -118,3 +118,11 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
     # print("______________FINAL CATS______________")
     # print(finalCats)
     return finalCats
+
+def getContinualMappedNonSympyMergeResult(mRangesDict, noEmpty=True):
+    mKeyMaps = list(mRangesDict.keys())
+    mSetCandidates = [mRangesDict[key] for key in mKeyMaps]
+    # the next step will automatically merge all overlapped candidates.
+    finalCats = getContinualNonSympyMergeResult(mSetCandidates)
+    finalCatsMapped = {mKeyMaps[k]:finalCats[k] for k in finalCats.keys() if type(k) == int}
+    # default not to output empty set?
