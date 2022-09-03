@@ -134,7 +134,9 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
     markers = np.linspace(start, end, len(newFinalRectList)+1)
     ranges = list(zip(markers[:-1], markers[1:]))
     mRangesDict = {}
-    for index,x in enumerate(newFinalRectList) for y in x}
+    for index, x in enumerate(newFinalRectList):
+        for y in x:
+
     return newFinalRectList
 
 
