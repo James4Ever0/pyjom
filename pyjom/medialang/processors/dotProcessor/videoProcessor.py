@@ -37,7 +37,8 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     # to speed up the process we need to decompose the cap.read() method
     # and even better:
     # the official provides multithreading support. no thanks?
-    for fno in range(startFrame,stopFrame+1, sample_rate):
+    import progressbar
+    for fno in progressbar(range(startFrame,stopFrame+1, sample_rate)):
         if fno >= total_frames: break
         cap.set(cv2.CAP_PROP_POS_FRAMES, fno)
         success, image = cap.read()
