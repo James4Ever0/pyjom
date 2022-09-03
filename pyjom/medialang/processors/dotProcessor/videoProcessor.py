@@ -27,6 +27,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
 def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     iterator = getVideoFrameIterator(videoPath, start, end, sample_rate = sample_rate)
     detectionList = []
+    # use some merging technique over time.
     for frame in iterator:
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
