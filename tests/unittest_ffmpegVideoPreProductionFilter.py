@@ -21,7 +21,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     cacheFileName = ".".join([cacheId,fileExtension])
     cachePath = os.path.join(allocatedTmpDir,cacheFileName)
     from MediaInfo import MediaInfo
-    info = MediaInfo(filename = videoFile)
+    info = MediaInfo(filename = videoPath)
     infoData = info.getInfo()
     # print(infoData)
     # breakpoint()
