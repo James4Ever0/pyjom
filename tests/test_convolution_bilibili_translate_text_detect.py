@@ -1,7 +1,15 @@
 import json
+from test_commons import *
+from pyjom.
 
 # easy gig, you said.
-targetFile = "/root/Desktop/works/pyjom/tests/bilibili_practices/bilibili_video_translate/japan_day.json"
+basePath = "/root/Desktop/works/pyjom"
+targetFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/japan_day.json"
+
+originalFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/japan_day.webm"
+
+# visualization can only be done here?
+# where is the original file?
 
 mJson = json.loads(open(targetFile, 'r',encoding='utf-8').read())
 import numpy as np
@@ -53,4 +61,3 @@ for intKey in range(minKey, maxKey+1):
     # print(currentNonOverlappingBoxes)
     # we need to visualize this shit.
     # breakpoint()
-    
