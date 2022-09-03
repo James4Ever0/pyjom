@@ -37,7 +37,12 @@ minKey, maxKey = min(mIntKeys), max(mIntKeys)
 # imutils is created by pyimagesearch.
 from imutils.object_detection import non_max_suppression
 
+
+def getConvBlurredCurrentShot
+
 convolutionSpan = 5
+
+
 
 convolutionBoundingBoxSpan = []
 convolutionBlurredSpan = []
