@@ -5,4 +5,4 @@ targetFile = "/root/Desktop/works/pyjom/tests/bilibili_practices/bilibili_video_
 
 mJson = json.loads(open(targetFile, 'r',encoding='utf-8').read())
 
-print(mJson.keys())
+[mJson.keys()]
