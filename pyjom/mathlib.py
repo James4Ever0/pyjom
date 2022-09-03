@@ -166,5 +166,5 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(
         elif key == emptySetName:
             finalNewRangesDict.update({'empty':newRangesDict[key]})
         else:
-            finalNewRangesDict.update({key:newRangesDict[key]}
+            finalNewRangesDict.update({key:newRangesDict[key]})
     return finalNewRangesDict
