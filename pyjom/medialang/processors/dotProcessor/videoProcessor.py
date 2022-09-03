@@ -16,8 +16,12 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     # to speed up the process we need to decompose the cap.read() method
     for fno in range(0, total_frames, sample_rate):
         cap.set(cv2.CAP_PROP_POS_FRAMES, fno)
-        _, image = cap.read()
-        do_something(image)
+        success, image = cap.read()
+        if success:
+            yield image
+        else:
+            break
+        # do_something(image)
     # fno = 0
     # while success:
     #     if fno % sample_rate == 0:
