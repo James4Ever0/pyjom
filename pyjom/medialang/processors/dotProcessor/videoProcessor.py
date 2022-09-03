@@ -29,7 +29,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     detectionList = []
     # use some merging technique over time.
     # convolution?
-    for frame in iterator:
+    for index, frame in enumerate(iterator):
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
