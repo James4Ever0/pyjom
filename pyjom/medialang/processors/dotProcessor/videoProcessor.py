@@ -240,7 +240,8 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
         commandTimeSpan.sort(key=lambda x: x[0])
         renderList.append([renderCommandString, commandTimeSpan].copy())
     renderList.sort(key=lambda x: x[1][0])
-    for renderCommandString, commandTimeSpan in 
+    for renderCommandString, commandTimeSpan in renderList:
+        # this is 
     return cachePath
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
