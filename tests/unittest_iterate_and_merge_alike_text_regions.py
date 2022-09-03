@@ -86,7 +86,7 @@ prevList = []
 newList = []
 import numpy
 def alike(array0,array1, threshold):
-    npArray
+    npArray0, npArray1 = 
     return max(abs(npArray0-npArray1)) <= threhold
 
 for item in sample:
