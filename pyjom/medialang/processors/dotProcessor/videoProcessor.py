@@ -131,7 +131,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
     newFinalRectList = mergeAlikeRegions(finalRectList, mergeThreshold)
     # incomplete. we need to get corresponding regions, and also nullsets.
     # using start and end to get these shit out.
-    markers = np.linspace(start, end, len(newFinalRectList))
+    markers = np.linspace(start, end, len(newFinalRectList)+1)
+    ranges = markers[]
     return newFinalRectList
 
 
