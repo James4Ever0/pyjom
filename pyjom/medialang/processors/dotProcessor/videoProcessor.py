@@ -220,9 +220,10 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # logo removal/text removal first, pipCrop last.
     # if overlap, we sort things.
     # if not, no sorting is needed.
+    majorDict = {}
     if "textRemoval" in filters:
         # process the video, during that duration. fast seek avaliable?
-        detectTextRegionOverTime(filepath, start, end)
+        mDict = detectTextRegionOverTime(filepath, start, end)
         pass
     if "logoRemoval" in filters:
         pass
