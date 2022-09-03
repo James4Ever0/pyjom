@@ -1,2 +1,2 @@
-from pyjom.medialang.processors.dotProcessor
+from pyjom.medialang.processors.dotProcessor import ffmpegVideoPreProductionFilter
 
