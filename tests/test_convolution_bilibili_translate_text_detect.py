@@ -30,12 +30,12 @@ for intKey in range(minKey, maxKey+1):
             minX, maxX = min(xlocs), max(xlocs)
             minY, maxY = min(ylocs), max(ylocs)
             boundingBox = [minX, minY, maxX, maxY]
-            boundingBoxes.append(boundingBox)
+            boundingBoxes.append(boundingBox.copy())
         # print("text", text)
         # print("confidence", confidence)
     convolutionBoundingBoxSpan.append(boundingBoxes)
     if len(convolutionBoundingBoxSpan)> convolutionSpan:
-        convolution
+        convolutionBoundingBoxSpan.pop(0)
     # print(intKey,target)
     # this time we do not care about the text inside.
     # breakpoint()
