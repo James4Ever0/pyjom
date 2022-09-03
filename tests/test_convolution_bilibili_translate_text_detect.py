@@ -9,7 +9,8 @@ mKeys = list(mJson.keys())
 mIntKeys = [int(x) for x in mKeys]
 minKey, maxKey = min(mIntKeys), max(mIntKeys)
 
-t imutils.
+# imutils is created by pyimagesearch.
+from imutils.object_detection import non_max_suppression
 
 for intKey in range(minKey, maxKey+1):
     strKey = str(intKey)
