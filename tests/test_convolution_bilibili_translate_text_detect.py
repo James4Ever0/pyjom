@@ -5,7 +5,7 @@ targetFile = "/root/Desktop/works/pyjom/tests/bilibili_practices/bilibili_video_
 
 mJson = json.loads(open(targetFile, 'r',encoding='utf-8').read())
 
-mKeys = [mJson.keys()]
+mKeys = list(mJson.keys())
 mIntKeys = [int(x) for x in mKeys]
 minKey, maxKey = min(mIntKeys), max(mIntKeys)
 
