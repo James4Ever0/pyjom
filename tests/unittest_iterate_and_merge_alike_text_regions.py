@@ -98,4 +98,5 @@ for item in sample:
                 elem = prevElem.copy()
                 break
         newItem.append(elem.copy())
+    
     prevList = newItem.copy()
