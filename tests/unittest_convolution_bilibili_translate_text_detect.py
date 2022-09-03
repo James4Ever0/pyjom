@@ -40,7 +40,15 @@ from imutils.object_detection import non_max_suppression
 
 def getConvBlurredCurrentShot(blurredSpan, span=5):
     # honor the most the latest one. 
-    
+    mImage = None
+    for index, blurredImage in enumerate(blurredSpan):
+        ratio = (span-index)/span
+        if mImage == None:
+            mImage = blurredImage*ratio
+        else:
+            mImage += mImage
+    return 256*(mImage>128).astype(np.uint8)
+
 
 convolutionSpan = 5
 
@@ -91,7 +99,12 @@ for intKey in range(minKey, maxKey+1):
         cv2.rectangle(blackPicture, loc0, loc1, 255,cv2.FILLED) # we fill so we can merge shits.
     blackPictureBlurred =cv2.GaussianBlur(blackPicture, (33,33), 0)
 
-    cv2.imshow("IMAGE", blackPictureBlurred)
+    convolutionBlurredSpan.append(blackPictureBlurred.copy())
+    if len(convolutionBlurredSpan) > span
+    currentBlackPictureBlurred = getConvBlurredCurrentShot(blackPictureBlurred)
+
+
+    cv2.imshow("IMAGE", currentBlackPictureBlurred)
     cv2.waitKey(10)
     print("showing image:", intKey)
     print("boundingBoxes:", len(flatSpan))
