@@ -21,9 +21,11 @@ originalFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/ja
 mJson = json.loads(open(targetFile, 'r',encoding='utf-8').read())
 import numpy as np
 
+width, height = 
 
-def getBlankPicture(width, height):
+def getBlackPicture(width, height):
 
+    return blackPicture
 
 mKeys = list(mJson.keys())
 mIntKeys = [int(x) for x in mKeys]
