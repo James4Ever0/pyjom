@@ -65,7 +65,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     del reader # can it really free memory?
     # now we do some convolution.
     maxListIndex = len(detectionList)
-    convRange = 5
+    convSpan = 3
 
     for index in range(maxListIndex):
         
