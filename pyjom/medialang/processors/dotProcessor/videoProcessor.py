@@ -15,8 +15,9 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     # https://vuamitom.github.io/2019/12/13/fast-iterate-through-video-frames.html
     # to speed up the process we need to decompose the cap.read() method
     # and even better:
-    # the official provides 
+    # the official provides multithreading support. no thanks?
     for fno in range(startFrame,stopFrame+1, sample_rate):
+        if fno >total_frames:
         cap.set(cv2.CAP_PROP_POS_FRAMES, fno)
         success, image = cap.read()
         if success:
