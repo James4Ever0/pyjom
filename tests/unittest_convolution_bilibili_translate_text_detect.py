@@ -109,11 +109,12 @@ for intKey in range(minKey, maxKey+1):
     currentBlackPictureBlurred = getConvBlurredCurrentShot(convolutionBlurredSpan)
     # print(currentBlackPictureBlurred.shape)
 
+    print("boundingBoxes:", len(flatSpan))
+    if len(flatSpan) == 0: continue
 
     cv2.imshow("IMAGE", currentBlackPictureBlurred)
     cv2.waitKey(10)
     print("showing image:", intKey)
-    print("boundingBoxes:", len(flatSpan))
     # print
     # cv2.waitKey(1000)
     # print("NON OVERLAPPING BOXES:")
