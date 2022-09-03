@@ -3,10 +3,10 @@ from pyjom.medialang.commons import *
 import tempfile
 import ffmpeg
 
-import cv2
+# import cv2
 
 def getFrameIterator(videoPath):
-
+    cv2.
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
