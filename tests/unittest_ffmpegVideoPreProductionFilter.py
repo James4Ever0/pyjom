@@ -48,7 +48,8 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         from pyjom.medialang.processors.dotProcessor import detectTextRegionOverTime
         
         regions = detectTextRegionOverTime(videoPath, start, end)
-        print(regions)
+        # print(regions)
+        # pretty much None currently.
         breakpoint()
 
     if test_ffmpeg:
