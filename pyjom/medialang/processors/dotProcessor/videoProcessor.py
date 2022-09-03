@@ -109,7 +109,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     if "logoRemoval" in filters:
         pass
     if "pipCrop" in filters:
-        # remember: if pip crop makes our 
+        # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we need not execute them.
         pass
 
     return cachePath
