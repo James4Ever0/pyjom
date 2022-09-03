@@ -58,7 +58,7 @@ def getConvBlurredCurrentShot(blurredSpan, span=5):
     # return 256*((mImage>128).astype(np.uint8))
 
 
-convolutionSpan = 5
+convolutionSpan = 20
 
 
 
@@ -111,7 +111,7 @@ for intKey in range(minKey, maxKey+1):
     if len(convolutionBlurredSpan) > convolutionSpan:
         convolutionBlurredSpan.pop(0)
 
-    currentBlackPictureBlurred = getConvBlurredCurrentShot(convolutionBlurredSpan, span=conv)
+    currentBlackPictureBlurred = getConvBlurredCurrentShot(convolutionBlurredSpan, span=convolutionSpan)
     # print(currentBlackPictureBlurred.shape)
 
     print("boundingBoxes:", len(flatSpan))
