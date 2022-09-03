@@ -1,7 +1,5 @@
 # not overriding math.
 # do some ranged stuff here...
-def getContinualMappedNonSympyMergeResult(inputMSetCandidatesDict, noEmpty=True):
-    # default not to output empty set?
 def getContinualNonSympyMergeResult(inputMSetCandidates):
 #     #!/usr/bin/env python
 # # -*- coding: utf-8 -*-
