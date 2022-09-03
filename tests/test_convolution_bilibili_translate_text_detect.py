@@ -12,5 +12,5 @@ minKey, maxKey = min(mIntKeys), max(mIntKeys)
 for intKey in range(minKey, maxKey+1):
     strKey = str(intKey)
     target = mJson[strKey]
-    print(intKey,target)
+    # print(intKey,target)
     # this time we do not care about the text inside.
