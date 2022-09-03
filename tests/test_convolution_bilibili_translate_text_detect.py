@@ -49,5 +49,6 @@ for intKey in range(minKey, maxKey+1):
     currentNonOverlappingBoxes = non_max_suppression(flatSpan)
     # print(intKey,target)
     # this time we do not care about the text inside.
+    print("NON OVERLAPPING BOXES:")
     print(currentNonOverlappingBoxes)
     breakpoint()
