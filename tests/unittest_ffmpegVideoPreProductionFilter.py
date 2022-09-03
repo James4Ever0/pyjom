@@ -12,4 +12,5 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     videoPath
     videoFile = os.path.join(allocatedTmpDir,videoFileName)
     import uuid
+    cachePath = str(uuid.uuid4())
     
