@@ -1,6 +1,6 @@
 # not overriding math.
 # do some ranged stuff here...
-def getContinualNonSympyMergeResult(mSetCandidates):
+def getContinualNonSympyMergeResult(inputMSetCandidates):
 #     #!/usr/bin/env python
 # # -*- coding: utf-8 -*-
 
@@ -44,7 +44,7 @@ def getContinualNonSympyMergeResult(mSetCandidates):
     # print("MSET", mSet)
     # print("MSET2", mSet2)
 
-    mSetCandidates = [mSet, mSet2]
+    mSetCandidates = []
     mSetUnified = [x for y in mSetCandidates for x in y]
     leftBoundaryList = set([x[0] for x in mSetUnified])
     rightBoundaryList = set([x[1] for x in mSetUnified])
