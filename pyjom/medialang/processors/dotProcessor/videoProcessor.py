@@ -7,7 +7,7 @@ import ffmpeg
 
 def getVideoFrameIterator(videoPath, start, end):
     cap = cv2.VideoCapture(video_path)
-    success, img = cap.read()
+    success, img = cap.read() # ignore first frame.
     fno = 0
     while success:
         if fno % sample_rate == 0:
