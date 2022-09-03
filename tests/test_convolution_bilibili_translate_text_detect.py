@@ -24,7 +24,7 @@ import numpy as np
 width, height = getVideoPixels(originalFile)
 
 def getBlackPicture(width, height):
-
+    blackPicture =  np.zeros((512, 512, 3), dtype = "uint8")
     return blackPicture
 
 mKeys = list(mJson.keys())

@@ -9,8 +9,8 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
-    startFrame = start*fps
-    stopFrame = end*fps
+    startFrame = int(start*fps)
+    stopFrame = int(end*fps)
     # success, img = cap.read() # ignore first frame.
     # https://vuamitom.github.io/2019/12/13/fast-iterate-through-video-frames.html
     # to speed up the process we need to decompose the cap.read() method
@@ -44,7 +44,12 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     # use some merging technique over time.
     # convolution?
     import easyocr
-    reader = easyocr.Reader(["en","ch_sim"],gpu=False) # no metal? no dbnet18?
+    reader = easyocr.Reader(["en"],gpu=True, recognizer=False) # no metal? no dbnet18?
+    # how many percent sure?
+    # reader = easyocr.Reader(["en","ch_sim"],gpu=False, recognizer=False) # no metal? no dbnet18?
+    # are you classifying the thing putting boxes into different category?
+    # no it does not. first is detector, next is recognizer.
+    # do not use recognizer here. for multiple reasons.
 
     for index, frame in enumerate(iterator):
         detection = reader.detect(frame)
