@@ -1,7 +1,7 @@
 from tkinter import YES
 from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
-from pyjom.math import *
+from pyjom.mathlib import *
 import tempfile
 import ffmpeg
 
