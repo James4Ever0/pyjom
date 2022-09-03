@@ -39,7 +39,9 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # if not, no sorting is needed.
     if "textRemoval" in filters:
     if "logoRemoval" in filters:
+        pass
     if "pipCrop" in filters:
+        pass
 
     return cachePath
 
