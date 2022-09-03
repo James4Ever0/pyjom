@@ -15,7 +15,7 @@ for intKey in range(minKey, maxKey+1):
     for item in target:
         location = item[0]
         text, confidence = item[1]
-        print("location",location)
+        print("location",location) # four points. do not know if there is any rotation here.
         # print("text", text)
         print("confidence", confidence)
     # print(intKey,target)
