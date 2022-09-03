@@ -99,5 +99,6 @@ for item in sample:
                 elem = prevElem.copy()
                 break
         newItem.append(elem.copy())
+    print(newItem) # showcase.
     newSample.append(newItem.copy())
     prevList = newItem.copy()
