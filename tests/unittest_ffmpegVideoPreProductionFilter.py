@@ -19,4 +19,4 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     fileExtension = videoFileName.split(".")[-1]
     cacheFileName = ".".join([cacheId,fileExtension])
     cachePath = os.path.join(allocatedTmpDir,cacheFileName)
-    ffmpegVideoPreProductionFilter(videoFile, )
+    ffmpegVideoPreProductionFilter(videoFile, cachePath = cachePath, start=start, end=end)
