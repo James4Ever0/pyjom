@@ -16,7 +16,7 @@ for intKey in range(minKey, maxKey+1):
         location = item[0]
         text, confidence = item[1]
         print("location",location)
-        print("text", text)
+        # print("text", text)
         print("confidence", confidence)
     # print(intKey,target)
     # this time we do not care about the text inside.
