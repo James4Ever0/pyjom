@@ -32,21 +32,5 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     cacheFileName = ".".join([cacheId,fileExtension])
     cachePath = os.path.join(allocatedTmpDir,cacheFileName)
 
-    from MediaInfo import MediaInfo
-    info = MediaInfo(filename = videoPath)
-    infoData = info.getInfo()
-    # print(infoData)
-    # breakpoint()
-    defaultWidth = infoData["videoWidth"]
-    defaultHeight = infoData["videoHeight"]
-    # print(infoData)
-    # print(infoData.keys())
-    # breakpoint()
-    start = 0
-    end = float(infoData['videoDuration'])
-
-    maxPixel = 200
-
-    previewWidth, previewHeight = getPreviewPixels(defaultWidth, defaultHeight, maxPixel)
 
     ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
