@@ -12,6 +12,8 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     startFrame = start*fps
     endFrame = end*fps
     success, img = cap.read() # ignore first frame.
+    # https://vuamitom.github.io/2019/12/13/fast-iterate-through-video-frames.html
+    # 
     fno = 0
     while success:
         if fno % sample_rate == 0:
