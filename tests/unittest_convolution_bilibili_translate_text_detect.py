@@ -10,8 +10,8 @@ def getVideoPixels(videoPath):
     defaultHeight = infoData["videoHeight"]
     return defaultWidth, defaultHeight
 # easy gig, you said.
-basePath = "/Users/jamesbrown/desktop/works/pyjom_remote"
-# basePath = "/root/Desktop/works/pyjom"
+# basePath = "/Users/jamesbrown/desktop/works/pyjom_remote"
+basePath = "/root/Desktop/works/pyjom"
 targetFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/japan_day.json"
 
 originalFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/japan_day.webm"
