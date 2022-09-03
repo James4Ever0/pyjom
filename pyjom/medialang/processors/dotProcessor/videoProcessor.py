@@ -10,13 +10,14 @@ def getBlackPicture(width, height):
 
 def getMergedRects(mConvList, width, height):
     blackPicture = getBlackPicture(width, height)
-    for boundingBox in mConvList:
-        print("boundingBox:",boundingBox)
-        breakpoint()
-        x0,y0, x1, y1 = [int(num) for num in boundingBox]
-        p0 = (x0,y0)
-        p1 = (x1,y1)
-        cv2.rectangle(blackPicture, p0,p1, 255, -1)
+    for boundingBoxes in mConvList:
+        for boundingBox in boundingBoxes:
+            print("boundingBox:",boundingBox)
+            breakpoint()
+            x0,y0, x1, y1 = [int(num) for num in boundingBox]
+            p0 = (x0,y0)
+            p1 = (x1,y1)
+            cv2.rectangle(blackPicture, p0,p1, 255, -1)
     # newPicture = getBlackPicture(width, height)
 
     contours = cv2.findContours(blackPicture, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
