@@ -11,6 +11,8 @@ def getBlackPicture(width, height):
 def getMergedRects(mConvList, width, height):
     blackPicture = getBlackPicture(width, height)
     for boundingBox in mConvList:
+        print("boundingBox:",boundingBox)
+        breakpoint()
         x0,y0, x1, y1 = [int(num) for num in boundingBox]
         p0 = (x0,y0)
         p1 = (x1,y1)
