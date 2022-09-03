@@ -1,6 +1,6 @@
 # not overriding math.
 # do some ranged stuff here...
-def getContinualNonSympyMergeResult():
+def getContinualNonSympyMergeResult(mSetCandidates):
 #     #!/usr/bin/env python
 # # -*- coding: utf-8 -*-
 
@@ -38,8 +38,8 @@ def getContinualNonSympyMergeResult():
         return mergedIntervalTupleList
 
 
-    mSet = mergeOverlappedInIntervalTupleList([(0, 1), (2, 3)])
-    mSet2 = mergeOverlappedInIntervalTupleList([(0.5, 1.5), (1.6, 2.5)])
+    # mSet = mergeOverlappedInIntervalTupleList([(0, 1), (2, 3)])
+    # mSet2 = mergeOverlappedInIntervalTupleList([(0.5, 1.5), (1.6, 2.5)])
 
     # print("MSET", mSet)
     # print("MSET2", mSet2)
