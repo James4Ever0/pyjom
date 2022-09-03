@@ -51,7 +51,8 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         
         for key, item in regions.items()
             # could be empty here.
-            # print(region)
+            print("KEY:",key)
+            print("ITEM:",item)
             # how to merge continual shits?
 
         # pretty much None currently.
