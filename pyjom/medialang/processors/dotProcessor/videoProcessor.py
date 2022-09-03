@@ -1,3 +1,4 @@
+from tkinter import YES
 from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 import tempfile
@@ -136,7 +137,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
     mRangesDict = {}
     for index, x in enumerate(newFinalRectList):
         for y in x:
-            mRangesDict.update(mRangesDict.get())
+            tupleY = tuple(y)
+            mRangesDict.update(mRangesDict.get(tupleY,[])+[])
     return newFinalRectList
 
 
