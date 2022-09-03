@@ -4,9 +4,13 @@ import tempfile
 import ffmpeg
 
 # import cv2
+def getBlackPicture(width, height):
+    blackPicture =  np.zeros((height, width,1), dtype = "uint8") # this is grayscale.
+    return blackPicture
 
 def getMergedRects(mConvList, width, height):
-    
+    blackPicture = getBlackPicture(width, height)
+
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
