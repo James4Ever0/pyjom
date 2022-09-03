@@ -132,4 +132,4 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict,start, end,
     newRangesDict = mRangesDict.copy()
     newRangesDict.update({emptySetName:[(start, end)]})
     newRangesDict = getContinualMappedNonSympyMergeResult(newRangesDict, concatSymbol="|", noEmpty=True)
-    newRangesDict = {key:[ for mStart, mEnd in newRangesDict[key] if mStart <=start and mEnd ]}
+    newRangesDict = {key:[(mStart, mEnd) for mStart, mEnd in newRangesDict[key] if mStart >=start and mEnd <= end]}
