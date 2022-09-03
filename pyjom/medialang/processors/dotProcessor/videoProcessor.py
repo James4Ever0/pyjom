@@ -242,6 +242,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
             renderList.append([renderCommandString, commandTimeSpan].copy())
     renderList.sort(key=lambda x: x[1][0])
     for renderCommandString, commandTimeSpan in renderList:
+        print(renderCommandString)
         # shall we line it up?
     return cachePath
 
