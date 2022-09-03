@@ -37,7 +37,7 @@ for intKey in range(minKey, maxKey+1):
             minY, maxY = min(ylocs), max(ylocs)
             boundingBox = [minX, minY, maxX, maxY]
             boundingBoxes.append(boundingBox.copy())
-            breakpoint()
+            # breakpoint()
         # print("text", text)
         # print("confidence", confidence)
     convolutionBoundingBoxSpan.append(boundingBoxes.copy())
