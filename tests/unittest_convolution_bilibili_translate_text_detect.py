@@ -73,8 +73,9 @@ for intKey in range(minKey, maxKey+1):
     # print(intKey,target)
     # this time we do not care about the text inside.
     blackPicture = getBlackPicture(width, height)
-    for x0, y0, x1, y1 in flatSpan:
+    for rectangle in flatSpan:
         # make it all int.
+        x0,y0, x1, y1 = []
         loc0 = (x0,y0)
         loc1 = (x1,y1)
         cv2.rectangle(blackPicture, loc0, loc1, (255,255,255),2) # we do not fill so we can see if shit happens.
