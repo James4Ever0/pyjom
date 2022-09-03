@@ -22,6 +22,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate):
                 break
         # read next frame
         success, img = cap.read()
+    cap.close()
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
