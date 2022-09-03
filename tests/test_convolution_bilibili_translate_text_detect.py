@@ -1,5 +1,5 @@
 import json
-
+import cv2
 def getVideoPixels(videoPath):
     from MediaInfo import MediaInfo
     info = MediaInfo(filename = videoPath)
@@ -10,7 +10,8 @@ def getVideoPixels(videoPath):
     defaultHeight = infoData["videoHeight"]
     return defaultWidth, defaultHeight
 # easy gig, you said.
-basePath = "/root/Desktop/works/pyjom"
+basePath = "/Users/jamesbrown/desktop/works/pyjom_remote"
+# basePath = "/root/Desktop/works/pyjom"
 targetFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/japan_day.json"
 
 originalFile = basePath + "/tests/bilibili_practices/bilibili_video_translate/japan_day.webm"
@@ -70,10 +71,15 @@ for intKey in range(minKey, maxKey+1):
     # print(intKey,target)
     # this time we do not care about the text inside.
     blackPicture = getBlackPicture(width, height)
-    for 
-    cv2.rectangle(blackPicture,loc0, loc1, 255,2) # we do not fill so we can see if shit happens.
-    cv2.imshow("IMAGE", blackPicture)
+    for x0, y0, x1, y1 in flatSpan:
+        loc0 = (x0,y0)
+        loc1 = (x1,y1)
+        cv2.rectangle(blackPicture,loc0, loc1, 255,2) # we do not fill so we can see if shit happens.
+    cv2.imshow("IMAGE %s" % str(), blackPicture)
+    cv2.waitKey(1000)
     # print("NON OVERLAPPING BOXES:")
     # print(currentNonOverlappingBoxes)
     # we need to visualize this shit.
     # breakpoint()
+cv2.destroyAllWindows()
+print("THE END")
