@@ -11,6 +11,23 @@ tempDir = '/dev/shm/medialang' # anyway we just want something else...
 
 def getVideoDuration(filePath):
 
+    from MediaInfo import MediaInfo
+    info = MediaInfo(filename = videoPath)
+    infoData = info.getInfo()
+    # print(infoData)
+    # breakpoint()
+    defaultWidth = infoData["videoWidth"]
+    defaultHeight = infoData["videoHeight"]
+    # print(infoData)
+    # print(infoData.keys())
+    # breakpoint()
+    start = 0
+    end = float(infoData['videoDuration'])
+
+    maxPixel = 200
+
+    previewWidth, previewHeight = getPreviewPixels(defaultWidth, defaultHeight, maxPixel)
+
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
     # if defaultWidth < defaultHeight:
