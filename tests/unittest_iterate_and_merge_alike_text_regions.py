@@ -1,7 +1,6 @@
 # finite state machine.
 sample = [
-
-    []
+[]
 []
 []
 []
@@ -81,4 +80,4 @@ sample = [
 []
 []
 []
-]]
+]
