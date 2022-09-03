@@ -70,6 +70,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # if overlap, we sort things.
     # if not, no sorting is needed.
     if "textRemoval" in filters:
+        # process the video.
         pass
     if "logoRemoval" in filters:
         pass
