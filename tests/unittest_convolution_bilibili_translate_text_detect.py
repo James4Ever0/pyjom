@@ -50,7 +50,9 @@ def getConvBlurredCurrentShot(blurredSpan, span=5):
     # print(mImage.shape)
     # breakpoint()
     # change this mImage.
+    mImage = mImage>128
     
+
     # return 256*((mImage>128).astype(np.uint8))
 
 
