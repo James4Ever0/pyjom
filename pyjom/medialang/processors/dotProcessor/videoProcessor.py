@@ -234,7 +234,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
 
     # now we consider the rendering process. how?
-        # shall we line it up?
+    # shall we line it up?
     return cachePath
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
