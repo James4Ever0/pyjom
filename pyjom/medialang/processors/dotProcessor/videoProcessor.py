@@ -129,7 +129,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
         finalRectList.append(mergedRects.copy())
 
     newFinalRectList = mergeAlikeRegions(finalRectList, mergeThreshold)
-    # incomplete. we need to get corresponding 
+    # incomplete. we need to get corresponding regions, and also 
     return newFinalRectList
 
 
