@@ -41,8 +41,8 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     start = 0
     end = getVideoDuration(videoPath)
 
-
-    output = ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
-    print("ffmpeg pre production filter processing done.")
-    print("output location:", output)
-    breakpoint()
+    if test_ffmpeg:
+        output = ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
+        print("ffmpeg pre production filter processing done.")
+        print("output location:", output)
+        breakpoint()
