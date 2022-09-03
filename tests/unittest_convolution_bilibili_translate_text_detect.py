@@ -38,8 +38,9 @@ minKey, maxKey = min(mIntKeys), max(mIntKeys)
 from imutils.object_detection import non_max_suppression
 
 
-def getConvBlurredCurrentShot(blurredSpan, ):
+def getConvBlurredCurrentShot(blurredSpan, span=5):
     # honor the most the latest one. 
+    
 
 convolutionSpan = 5
 
