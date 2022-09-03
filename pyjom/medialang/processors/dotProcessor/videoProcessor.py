@@ -16,12 +16,12 @@ def mergeAlikeRegions(sample, threshold=10):
         newItem = []
         for elem in item:
             for prevElem in prevList:
-                if alike(prevElem, elem,10):
+                if alike(prevElem, elem,threshold):
                     # mAlike = True
                     elem = prevElem.copy()
                     break
             newItem.append(elem.copy())
-        print(newItem) # showcase.
+        # print(newItem) # showcase.
         newSample.append(newItem.copy())
         prevList = newItem.copy()
 
