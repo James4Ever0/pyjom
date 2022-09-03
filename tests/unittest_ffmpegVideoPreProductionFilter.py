@@ -11,3 +11,5 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
     videoPath
     videoFile = os.path.join(allocatedTmpDir,videoFileName)
+    import uuid
+    
