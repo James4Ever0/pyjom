@@ -33,7 +33,7 @@ for intKey in range(minKey, maxKey+1):
             boundingBoxes.append(boundingBox.copy())
         # print("text", text)
         # print("confidence", confidence)
-    convolutionBoundingBoxSpan.append(boundingBoxes)
+    convolutionBoundingBoxSpan.append(boundingBoxes.copy())
     if len(convolutionBoundingBoxSpan)> convolutionSpan:
         convolutionBoundingBoxSpan.pop(0)
     # print(intKey,target)
