@@ -115,5 +115,6 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
         value = mergeOverlappedInIntervalTupleList(value)
         finalCats.update({key: value})
 
-    print("______________FINAL CATS______________")
-    print(finalCats)
+    # print("______________FINAL CATS______________")
+    # print(finalCats)
+    return finalCats
