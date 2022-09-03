@@ -43,3 +43,4 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
 
 
     ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
+    breakpoint()
