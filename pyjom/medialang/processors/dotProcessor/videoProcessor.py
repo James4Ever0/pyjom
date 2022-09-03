@@ -11,7 +11,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     fps = cap.get(cv2.CAP_PROP_FPS)
     startFrame = start*fps
     stopFrame = end*fps
-    success, img = cap.read() # ignore first frame.
+    # success, img = cap.read() # ignore first frame.
     # https://vuamitom.github.io/2019/12/13/fast-iterate-through-video-frames.html
     # to speed up the process we need to decompose the cap.read() method
     fno = 0
