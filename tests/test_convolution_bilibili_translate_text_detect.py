@@ -30,13 +30,14 @@ for intKey in range(minKey, maxKey+1):
             npLocation = np.array(location)
             xlocs = npLocation[:,0]
             ylocs = npLocation[:,1]
-            print(xlocs)
-            print(ylocs)
-            breakpoint()
+            # print(xlocs)
+            # print(ylocs)
+            # breakpoint()
             minX, maxX = min(xlocs), max(xlocs)
             minY, maxY = min(ylocs), max(ylocs)
             boundingBox = [minX, minY, maxX, maxY]
             boundingBoxes.append(boundingBox.copy())
+            breakpoint()
         # print("text", text)
         # print("confidence", confidence)
     convolutionBoundingBoxSpan.append(boundingBoxes.copy())
