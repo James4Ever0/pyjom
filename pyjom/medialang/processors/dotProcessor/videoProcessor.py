@@ -55,7 +55,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
         detection, recognition = reader.detect(frame)
         if detection == [[]]:
             continue
-        
+        for boundingbox in detection[0]:
+            print(boundingBox)
         # print("frame number:",index)
         # print(detection)
         # breakpoint()
