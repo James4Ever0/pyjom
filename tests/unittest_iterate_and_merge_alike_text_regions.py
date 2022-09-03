@@ -97,5 +97,5 @@ for item in sample:
                 # mAlike = True
                 elem = prevElem
                 break
-        
+        newItem.append(elem)
     prevList = newItem.copy()
