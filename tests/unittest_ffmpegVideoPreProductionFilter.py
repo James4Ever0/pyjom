@@ -3,4 +3,5 @@ from pyjom.medialang.processors.dotProcessor import ffmpegVideoPreProductionFilt
 import tempfile
 
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
-with tempfile.TemporaryDirectory(pre)
+with tempfile.TemporaryDirectory(prefix = tempDir):
+    
