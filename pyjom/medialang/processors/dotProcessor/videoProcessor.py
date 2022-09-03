@@ -138,7 +138,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
     for index, x in enumerate(newFinalRectList):
         for y in x:
             tupleY = tuple(y)
-            mRangesDict.update(mRangesDict.get(tupleY,[])+[])
+            mRangesDict.update(mRangesDict.get(tupleY,[])+[ranges[index]])
     return newFinalRectList
 
 
