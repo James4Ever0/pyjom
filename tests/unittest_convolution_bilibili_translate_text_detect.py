@@ -122,6 +122,8 @@ for intKey in range(minKey, maxKey+1):
     cv2.imshow("IMAGE", currentBlackPictureBlurred)
     cv2.waitKey(10)
     print("showing image:", intKey)
+    contours = cv2.findContours(thresh_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contours = contours[0] if len(contours) == 2 else contours[1]
     # print
     # cv2.waitKey(1000)
     # print("NON OVERLAPPING BOXES:")
