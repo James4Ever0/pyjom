@@ -10,6 +10,7 @@ tempDir = '/dev/shm/medialang' # anyway we just want something else...
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
     videoPath = videoPaths['text']
+    filters = ['textRemoval']
     videoFileName = os.path.basename(videoPath)
     # we use the full video here? to check if this shit really works?
     videoFile = os.path.join(allocatedTmpDir,videoFileName)
@@ -18,4 +19,4 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     fileExtension = videoFileName.split(".")[-1]
     cacheFileName = ".".join([cacheId,fileExtension])
     cachePath = os.path.join(allocatedTmpDir,cacheFileName)
-    filters = ['textRemoval']
+    ffmpegVideoPreProductionFilter()
