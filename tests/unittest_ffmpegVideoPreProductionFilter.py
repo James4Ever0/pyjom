@@ -4,7 +4,7 @@ import tempfile
 videoPaths = {
     "text":"/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
     "logo":"",
-    "pip":"",
+    "pip":"/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
