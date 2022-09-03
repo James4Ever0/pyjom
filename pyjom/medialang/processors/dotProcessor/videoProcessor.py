@@ -38,7 +38,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     # and even better:
     # the official provides multithreading support. no thanks?
     import progressbar
-    for fno in progressbar(range(startFrame,stopFrame+1, sample_rate)):
+    for fno in progressbar.progressbar(range(startFrame,stopFrame+1, sample_rate)):
         if fno >= total_frames: break
         cap.set(cv2.CAP_PROP_POS_FRAMES, fno)
         success, image = cap.read()
