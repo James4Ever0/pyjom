@@ -101,7 +101,8 @@ for intKey in range(minKey, maxKey+1):
 
     convolutionBlurredSpan.append(blackPictureBlurred.copy())
     if len(convolutionBlurredSpan) > convolutionSpan:
-        currentBlackPictureBlurred = getConvBlurredCurrentShot(blackPictureBlurred)
+        convolutionBlurredSpan.pop(0)
+    currentBlackPictureBlurred = getConvBlurredCurrentShot(blackPictureBlurred)
 
 
     cv2.imshow("IMAGE", currentBlackPictureBlurred)
