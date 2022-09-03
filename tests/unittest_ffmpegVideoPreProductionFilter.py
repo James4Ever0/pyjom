@@ -34,5 +34,6 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     end = float(infoData['videoDuration'])
 
     maxPixel = 200
+    getPreview
 
     ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
