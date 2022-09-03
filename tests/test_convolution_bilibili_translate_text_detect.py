@@ -21,6 +21,7 @@ for intKey in range(minKey, maxKey+1):
         location = item[0]
         text, confidence = item[1]
         # print("location",location) # four points. do not know if there is any rotation here.
+        if confidence > 0.7:
         xlocs = location[:,0]
         ylocs = location[:,1]
         minX, maxX = min(xlocs), max(xlocs)
