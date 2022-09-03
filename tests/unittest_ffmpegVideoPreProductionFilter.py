@@ -10,7 +10,7 @@ videoPaths = {
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
-    
+    if 
 
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
