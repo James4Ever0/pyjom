@@ -27,7 +27,7 @@ import numpy as np
 width, height = getVideoPixels(originalFile)
 
 def getBlackPicture(width, height):
-    blackPicture =  np.zeros((height, width,3), dtype = "uint8") # this is grayscale.
+    blackPicture =  np.zeros((height, width,1), dtype = "uint8") # this is grayscale.
     return blackPicture
 
 mKeys = list(mJson.keys())
