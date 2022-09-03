@@ -16,3 +16,6 @@ print("_"*20)
 
 result_2 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|",noEmpty=False)
 print(result_2)
+
+result_3 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|",noEmpty=False)
+print(result_3)
