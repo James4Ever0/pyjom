@@ -9,6 +9,8 @@ videoPaths = {
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 
+def getVideoDuration(filePath):
+
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
     # if defaultWidth < defaultHeight:
