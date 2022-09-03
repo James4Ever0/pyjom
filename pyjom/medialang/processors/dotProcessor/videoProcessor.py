@@ -24,6 +24,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     assert start is not None
     assert end is not None
     stream = ffmpeg.input(filepath,ss=start, to=end) # from 4 to 10 seconds?
+    stream = stream.scale()
     # stream = ffmpeg.hflip(stream)
     # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
     # we just need to crop this.
