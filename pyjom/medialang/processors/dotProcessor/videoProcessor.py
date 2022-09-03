@@ -5,8 +5,15 @@ import ffmpeg
 
 # import cv2
 
-def getFrameIterator(videoPath, start, end):
-    cv2.
+def getVideoFrameIterator(videoPath, start, end):
+    cap = cv2.VideoCapture(video_path)
+    success, img = cap.read()
+    fno = 0
+    while success:
+        if fno % sample_rate == 0:
+            do_something(img)
+        # read next frame
+        success, img = cap.read()
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
