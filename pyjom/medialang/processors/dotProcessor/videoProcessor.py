@@ -186,9 +186,9 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     assert start is not None
     assert end is not None
     stream = ffmpeg.input(filepath,ss=start, to=end) # from 4 to 10 seconds?
-    defaultWidth, defaultHeight = 
+    defaultWidth, defaultHeight = getVideoWidthHeight(filepath)
     if preview:
-        previewRatio = previewWidth / 
+        previewRatio = previewWidth / defaultWidth
         previewWidth, previewHeight = getVideoPreviewPixels(filepath)
         stream = stream.filter('scale',previewWidth, previewHeight)
     # stream = ffmpeg.hflip(stream)
