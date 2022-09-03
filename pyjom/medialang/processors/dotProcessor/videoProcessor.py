@@ -13,8 +13,8 @@ def getMergedRects(mConvList, width, height):
     for boundingBoxes in mConvList:
         # you might want to give them different weights?
         for boundingBox in boundingBoxes:
-            print("boundingBox:",boundingBox)
-            breakpoint()
+            # print("boundingBox:",boundingBox)
+            # breakpoint()
             x0,y0, x1, y1 = [int(num) for num in boundingBox]
             p0 = (x0,y0)
             p1 = (x1,y1)
