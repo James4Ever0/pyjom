@@ -9,5 +9,5 @@ result_0 = getContinualNonSympyMergeResult(inputList)
 print(result_0)
 print("_"*20)
 
-result_1 = getContinualNonSympyMergeResult(mRangesDict)
+result_1 = getContinualMappedNonSympyMergeResult(mRangesDict)
 print(result_1)
