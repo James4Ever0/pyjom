@@ -142,11 +142,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
             mRangesDict.update(mRangesDict.get(tupleY,[])+[ranges[index]])
     # print(mRangesDict)
     # breakpoint()
-    mKeyMaps = list(mRangesDict.keys())
-    mSetCandidates = [mRangesDict[key] for key in mKeyMaps]
-    # the next step will automatically merge all overlapped candidates.
-    finalCats = getContinualNonSympyMergeResult(mSetCandidates)
-    finalCatsMapped = {mKeyMaps[k]:finalCats[k] for k in finalCats.keys() if type(k) == int}
+
     return finalCatsMapped
 
 
