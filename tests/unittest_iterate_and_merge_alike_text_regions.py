@@ -89,6 +89,7 @@ def alike(array0,array1, threshold):
     npArray0, npArray1 = np.array(array0, array1)
     return max(abs(npArray0-npArray1)) <= threshold
 
+newSample = []
 for item in sample:
     newItem = []
     for elem in item:
@@ -98,5 +99,5 @@ for item in sample:
                 elem = prevElem.copy()
                 break
         newItem.append(elem.copy())
-    
+    newSample.append(newItem.copy())
     prevList = newItem.copy()
