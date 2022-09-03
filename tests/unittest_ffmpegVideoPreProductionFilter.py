@@ -52,6 +52,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
             # could be empty here.
             print(region)
             # how to merge continual shits?
+            
         # pretty much None currently.
         breakpoint()
 
