@@ -70,7 +70,8 @@ for intKey in range(minKey, maxKey+1):
     # print(intKey,target)
     # this time we do not care about the text inside.
     blackPicture = getBlackPicture(width, height)
-    cv2.rectangle(blackPicture,loc0, loc1, ) # we do not fill so we can see if shit happens.
+    for 
+    cv2.rectangle(blackPicture,loc0, loc1, 255,2) # we do not fill so we can see if shit happens.
     cv2.imshow("IMAGE", blackPicture)
     # print("NON OVERLAPPING BOXES:")
     # print(currentNonOverlappingBoxes)
