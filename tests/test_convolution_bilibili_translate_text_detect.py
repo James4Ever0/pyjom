@@ -33,7 +33,7 @@ for intKey in range(minKey, maxKey+1):
             boundingBoxes.append(boundingBox)
         # print("text", text)
         # print("confidence", confidence)
-    
+    convolutionBoundingBoxSpan.append(boundingBoxes)
     # print(intKey,target)
     # this time we do not care about the text inside.
     # breakpoint()
