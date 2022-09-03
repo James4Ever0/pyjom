@@ -141,6 +141,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
             mRangesDict.update(mRangesDict.get(tupleY,[])+[ranges[index]])
     print(mRangesDict)
     breakpoint()
+    mKeyMaps = list(mRangesDict.keys())
     mSetCandidates = []
     return newFinalRectList
 
