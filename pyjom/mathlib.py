@@ -44,7 +44,7 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
     # print("MSET", mSet)
     # print("MSET2", mSet2)
 
-    mSetCandidates = []
+    mSetCandidates = [mergeOverlappedInIntervalTupleList(x) for x in inputMSetCandidates]
     mSetUnified = [x for y in mSetCandidates for x in y]
     leftBoundaryList = set([x[0] for x in mSetUnified])
     rightBoundaryList = set([x[1] for x in mSetUnified])
