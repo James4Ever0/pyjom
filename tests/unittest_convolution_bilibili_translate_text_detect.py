@@ -47,8 +47,8 @@ def getConvBlurredCurrentShot(blurredSpan, span=5):
             mImage = blurredImage*ratio
         else:
             mImage += mImage
-    print(mImage.shape)
-    breakpoint()
+    # print(mImage.shape)
+    # breakpoint()
     return 256*((mImage>128).astype(np.uint8))
 
 
@@ -106,7 +106,7 @@ for intKey in range(minKey, maxKey+1):
         convolutionBlurredSpan.pop(0)
 
     currentBlackPictureBlurred = getConvBlurredCurrentShot(convolutionBlurredSpan)
-    print(currentBlackPictureBlurred.shape)
+    # print(currentBlackPictureBlurred.shape)
 
 
     cv2.imshow("IMAGE", currentBlackPictureBlurred)
