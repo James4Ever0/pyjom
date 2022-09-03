@@ -11,6 +11,9 @@ def getBlackPicture(width, height):
 def getMergedRects(mConvList, width, height):
     blackPicture = getBlackPicture(width, height)
     for boundingBox in mConvList:
+        x0,y0, x1, y1 = [int(num) for num in rectangle]
+        loc0 = (x0,y0)
+        loc1 = (x1,y1)
         cv2.rectangle(blackPicture, p0,p1, 255, -1)
     newPicture = getBlackPicture(width, height)
 
