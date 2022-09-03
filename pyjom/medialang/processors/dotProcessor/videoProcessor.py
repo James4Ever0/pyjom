@@ -16,7 +16,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     print("RENDER SUCCESSFUL")
 
 
-def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=None, filters=["pipCrop","textRemoval","logoRemoval"]): # what is the type of this shit?
+def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=None, filters=["pipCrop","textRemoval","logoRemoval"], preview=True): # what is the type of this shit?
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
