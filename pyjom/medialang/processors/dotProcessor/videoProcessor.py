@@ -3,6 +3,8 @@ from pyjom.medialang.commons import *
 import tempfile
 import ffmpeg
 
+def mergeAlikeRegions()
+
 # import cv2
 def getBlackPicture(width, height):
     blackPicture =  np.zeros((height, width,1), dtype = "uint8") # this is grayscale.
