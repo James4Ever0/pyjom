@@ -36,6 +36,8 @@ for intKey in range(minKey, maxKey+1):
     convolutionBoundingBoxSpan.append(boundingBoxes.copy())
     if len(convolutionBoundingBoxSpan)> convolutionSpan:
         convolutionBoundingBoxSpan.pop(0)
+    # do your calculation!
+    
     # print(intKey,target)
     # this time we do not care about the text inside.
     # breakpoint()
