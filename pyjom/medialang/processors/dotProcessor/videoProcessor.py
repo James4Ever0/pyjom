@@ -71,7 +71,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
         rangeStart, rangeEnd = index-convSpan, index+convSpan
         rangeStart, rangeEnd = max(0, rangeStart), min(maxListIndex, rangeEnd)
         mConvList = detectionList[rangeStart:rangeEnd]
-        
+        getMergedRects(mConvList)
 
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
