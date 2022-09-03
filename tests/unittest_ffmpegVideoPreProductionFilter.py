@@ -48,11 +48,11 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         from pyjom.medialang.processors.dotProcessor import detectTextRegionOverTime
         
         regions = detectTextRegionOverTime(videoPath, start, end)
-        for region in regions:
+        for index, region in enumerate(regions):
             # could be empty here.
             print(region)
             # how to merge continual shits?
-            
+
         # pretty much None currently.
         breakpoint()
 
