@@ -234,15 +234,6 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
 
     # now we consider the rendering process. how?
-    renderList = []
-    for renderCommandString in renderDict.keys():
-        commandTimeSpans = renderDict[renderCommandString].copy()
-        # commandTimeSpan.sort(key=lambda x: x[0])
-        for commandTimeSpan in commandTimeSpans:
-            renderList.append([renderCommandString, commandTimeSpan].copy())
-    renderList.sort(key=lambda x: x[1][0])
-    for renderCommandString, commandTimeSpan in renderList:
-        print(renderCommandString, commandTimeSpan)
         # shall we line it up?
     return cachePath
 
