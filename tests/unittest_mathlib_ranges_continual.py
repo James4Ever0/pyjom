@@ -7,4 +7,6 @@ mRangesDict = {"sample_%s" % num: inputList[num] for num in range(len(inputList)
 
 result_0 = getContinualNonSympyMergeResult(inputList)
 print(result_0)
-print("_"
+print("_"*20)
+
+result_1 = getContinualNonSympyMergeResult(inputList
