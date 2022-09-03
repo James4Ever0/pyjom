@@ -237,7 +237,8 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # shall we line it up?
     renderList = mergedRangesToSequential(renderDict)
     for renderCommandString, commandTimeSpan in renderList:
-        
+        if renderCommandString == "empty":
+            # do nothing here!
     return cachePath
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
