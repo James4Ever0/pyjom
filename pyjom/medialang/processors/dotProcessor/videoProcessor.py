@@ -236,7 +236,8 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # now we consider the rendering process. how?
     renderList = []
     for renderCommandString in renderDict.keys():
-        commandrenderDict[renderCommandString]
+        commandTimeSpan = renderDict[renderCommandString].copy()
+        commandTimeSpan = list(sorted())
     return cachePath
 
 def dotVideoProcessor(item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
