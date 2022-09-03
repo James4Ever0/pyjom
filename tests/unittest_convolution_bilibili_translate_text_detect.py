@@ -47,7 +47,7 @@ def getConvBlurredCurrentShot(blurredSpan, span=5):
             mImage = blurredImage*ratio
         else:
             mImage += mImage
-    return 256*(mImage>128).astype(np.uint8)
+    return 256*((mImage>128).astype(np.uint8)
 
 
 convolutionSpan = 5
