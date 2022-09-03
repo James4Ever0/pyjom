@@ -102,8 +102,10 @@ for intKey in range(minKey, maxKey+1):
     blackPictureBlurred =cv2.GaussianBlur(blackPicture, (33,33), 0)
 
     convolutionBlurredSpan.append(blackPictureBlurred.copy())
+
     if len(convolutionBlurredSpan) > convolutionSpan:
         convolutionBlurredSpan.pop(0)
+        
     currentBlackPictureBlurred = getConvBlurredCurrentShot(blackPictureBlurred)
     print(currentBlackPictureBlurred.shape)
 
