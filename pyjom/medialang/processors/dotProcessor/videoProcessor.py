@@ -236,8 +236,8 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # now we consider the rendering process. how?
     renderList = []
     for renderCommandString in renderDict.keys():
-        commandTimeSpan = renderDict[renderCommandString].copy()
-        commandTimeSpan.sort(key=lambda x: x[0])
+        commandTimeSpans = renderDict[renderCommandString].copy()
+        # commandTimeSpan.sort(key=lambda x: x[0])
         renderList.append([renderCommandString, commandTimeSpan].copy())
     renderList.sort(key=lambda x: x[1][0])
     for renderCommandString, commandTimeSpan in renderList:
