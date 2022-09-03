@@ -14,7 +14,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     filters = ['textRemoval']
     videoFileName = os.path.basename(videoPath)
     # we use the full video here? to check if this shit really works?
-    videoFile = os.path.join(allocatedTmpDir,videoFileName)
+    # videoFile = os.path.join(allocatedTmpDir,videoFileName)
     import uuid
     cacheId = str(uuid.uuid4())
     fileExtension = videoFileName.split(".")[-1]
