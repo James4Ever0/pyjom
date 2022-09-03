@@ -235,7 +235,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
 
     # now we consider the rendering process. how?
     renderList = []
-    for key in renderDict.keys():
+    for renderCommandString in renderDict.keys():
         
         [[renderCommandString,] for ]
     return cachePath
