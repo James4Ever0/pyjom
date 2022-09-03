@@ -24,4 +24,5 @@ print(result_3)
 print("_"*20)
 
 renderList = mergedRangesToSequential(result_3)
-for 
+for renderCommandString, commandTimeSpan in renderList:
+    print(renderCommandString, commandTimeSpan)
