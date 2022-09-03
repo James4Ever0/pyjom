@@ -69,7 +69,8 @@ for intKey in range(minKey, maxKey+1):
     currentNonOverlappingBoxes = non_max_suppression(flatSpan)
     # print(intKey,target)
     # this time we do not care about the text inside.
-    blackPicture = getBlackPicture()
+    blackPicture = getBlackPicture(width, height)
+    blackPicture.
     # print("NON OVERLAPPING BOXES:")
     # print(currentNonOverlappingBoxes)
     # we need to visualize this shit.
