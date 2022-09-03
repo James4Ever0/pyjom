@@ -24,7 +24,7 @@ import numpy as np
 width, height = getVideoPixels(originalFile)
 
 def getBlackPicture(width, height):
-    blackPicture =  np.zeros((512, 512, 3), dtype = "uint8")
+    blackPicture =  np.zeros((height, width,1), dtype = "uint8") # this is grayscale.
     return blackPicture
 
 mKeys = list(mJson.keys())
@@ -69,6 +69,7 @@ for intKey in range(minKey, maxKey+1):
     currentNonOverlappingBoxes = non_max_suppression(flatSpan)
     # print(intKey,target)
     # this time we do not care about the text inside.
+    blackPicture = getBlackPicture()
     # print("NON OVERLAPPING BOXES:")
     # print(currentNonOverlappingBoxes)
     # we need to visualize this shit.
