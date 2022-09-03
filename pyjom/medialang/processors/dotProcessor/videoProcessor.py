@@ -21,7 +21,7 @@ def getMergedRects(mConvList, width, height):
     contours = contours[0] if len(contours) == 2 else contours[1]
     for i in contours:
         x,y,w,h = cv2.boundingRect(i)
-        yield [x,y,w,h]
+        mlist.append() [x,y,w,h]
 
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
