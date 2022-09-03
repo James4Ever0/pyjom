@@ -187,9 +187,10 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     assert end is not None
     stream = ffmpeg.input(filepath,ss=start, to=end) # from 4 to 10 seconds?
     defaultWidth, defaultHeight = getVideoWidthHeight(filepath)
+    previewRatio = 1
     if preview:
-        previewRatio = previewWidth / defaultWidth
         previewWidth, previewHeight = getVideoPreviewPixels(filepath)
+        previewRatio = previewWidth / defaultWidth
         stream = stream.filter('scale',previewWidth, previewHeight)
     # stream = ffmpeg.hflip(stream)
     # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
