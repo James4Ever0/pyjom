@@ -51,4 +51,5 @@ for intKey in range(minKey, maxKey+1):
     # this time we do not care about the text inside.
     print("NON OVERLAPPING BOXES:")
     print(currentNonOverlappingBoxes)
+    # we need to visualize this shit.
     # breakpoint()
