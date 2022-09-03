@@ -17,16 +17,18 @@ convolutionSpan = 5
 for intKey in range(minKey, maxKey+1):
     strKey = str(intKey)
     target = mJson[strKey]
+    boundingBoxes = []
     for item in target:
         location = item[0]
         text, confidence = item[1]
         # print("location",location) # four points. do not know if there is any rotation here.
         if confidence > 0.7:
-        xlocs = location[:,0]
-        ylocs = location[:,1]
-        minX, maxX = min(xlocs), max(xlocs)
-        minY, maxY = min(ylocs), max(ylocs)
-        boundingBox = [minX, minY, maxX, maxY]
+            xlocs = location[:,0]
+            ylocs = location[:,1]
+            minX, maxX = min(xlocs), max(xlocs)
+            minY, maxY = min(ylocs), max(ylocs)
+            boundingBox = [minX, minY, maxX, maxY]
+            
         # print("text", text)
         # print("confidence", confidence)
     # print(intKey,target)
