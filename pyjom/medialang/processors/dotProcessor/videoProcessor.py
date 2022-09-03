@@ -5,7 +5,7 @@ import ffmpeg
 
 # import cv2
 
-def getVideoFrameIterator(videoPath, start, end, sample_rate):
+def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
