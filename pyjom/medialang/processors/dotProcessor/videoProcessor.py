@@ -67,6 +67,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     maxListIndex = len(detectionList)
 
     for index in range(maxListIndex):
+        
 
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
