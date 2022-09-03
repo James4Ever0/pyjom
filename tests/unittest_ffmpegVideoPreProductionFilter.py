@@ -49,7 +49,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         
         regions = detectTextRegionOverTime(videoPath, start, end)
         
-        for index, region in regions
+        for key, item in regions.items()
             # could be empty here.
             # print(region)
             # how to merge continual shits?
