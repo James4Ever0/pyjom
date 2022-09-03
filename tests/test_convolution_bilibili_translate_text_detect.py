@@ -14,6 +14,8 @@ from imutils.object_detection import non_max_suppression
 
 convolutionSpan = 5
 
+
+
 for intKey in range(minKey, maxKey+1):
     strKey = str(intKey)
     target = mJson[strKey]
@@ -31,6 +33,7 @@ for intKey in range(minKey, maxKey+1):
             boundingBoxes.append(boundingBox)
         # print("text", text)
         # print("confidence", confidence)
+    
     # print(intKey,target)
     # this time we do not care about the text inside.
     # breakpoint()
