@@ -87,5 +87,6 @@ newList = []
 for item in sample:
     for elem in item:
         for prevElem in prevList:
-            if prevElem, elem)
+            if alike(prevElem, elem,10):
+                
     prevList = newItem.copy()
