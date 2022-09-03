@@ -40,6 +40,9 @@ from imutils.object_detection import non_max_suppression
 convolutionSpan = 5
 
 convolutionBoundingBoxSpan = []
+convolutionBlurredSpan = []
+
+
 
 for intKey in range(minKey, maxKey+1):
     strKey = str(intKey)
@@ -80,7 +83,7 @@ for intKey in range(minKey, maxKey+1):
         loc1 = (x1,y1)
         cv2.rectangle(blackPicture, loc0, loc1, 255,cv2.FILLED) # we fill so we can merge shits.
     blackPictureBlurred =cv2.GaussianBlur(blackPicture, (33,33), 0)
-    
+
     cv2.imshow("IMAGE", blackPictureBlurred)
     cv2.waitKey(10)
     print("showing image:", intKey)
