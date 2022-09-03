@@ -77,7 +77,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
         if noWHInfo:
             noWHInfo = False
             height, width = frame.shape[:2]
-        detection, recognition = reader.detect(frame)
+        detection, recognition = reader.detect(frame) # not very sure.
         if detection == [[]]:
             detectionList.append([])
             continue
