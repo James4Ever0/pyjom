@@ -30,7 +30,7 @@ def getVideoPreview(videoPath):
     maxPixel = 200
 
     previewWidth, previewHeight = getPreviewPixels(defaultWidth, defaultHeight, maxPixel)
-
+    return previewWidth, previewHeight
 
 def executeEditlyScript(medialangTmpDir, editly_json):
     editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
