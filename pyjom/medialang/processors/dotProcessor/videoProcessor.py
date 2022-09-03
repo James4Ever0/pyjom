@@ -30,8 +30,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10):
     # use some merging technique over time.
     # convolution?
     import easyocr
+    reader = easyocr.Reader(["en","ch_sim"],gpu=False) # no metal? no dbnet18?
 
-    coreOcr = easyocr.
     for index, frame in enumerate(iterator):
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
