@@ -10,6 +10,8 @@ def getBlackPicture(width, height):
 
 def getMergedRects(mConvList, width, height):
     blackPicture = getBlackPicture(width, height)
+    for boundingBox in mConvList:
+        
 
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
