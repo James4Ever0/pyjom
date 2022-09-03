@@ -49,7 +49,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         
         regions = detectTextRegionOverTime(videoPath, start, end)
         
-        for key, item in regions.items()
+        for key, item in regions.items():
             # could be empty here.
             print("KEY:",key)
             print("ITEM:",item)
