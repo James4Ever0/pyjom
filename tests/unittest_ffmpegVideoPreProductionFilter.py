@@ -1,7 +1,7 @@
 from test_commons import *
 from pyjom.medialang.processors.dotProcessor import ffmpegVideoPreProductionFilter
 import tempfile
-import MediaInfo
+# import MediaInfo
 videoPaths = {
     "text":"/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
     "logo":"/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
@@ -20,6 +20,12 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     fileExtension = videoFileName.split(".")[-1]
     cacheFileName = ".".join([cacheId,fileExtension])
     cachePath = os.path.join(allocatedTmpDir,cacheFileName)
-    start, end = MediaInfo
+    from MediaInfo import MediaInfo
+    info = MediaInfo(filename = 'output.mp4')
+    infoData = info.getInfo()
+    # print(infoData)
+    # breakpoint()
+    defaultWidth = infoData["videoWidth"]
+    defaultHeight = infoData["videoHeight"]
 
     ffmpegVideoPreProductionFilter(videoFile, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
