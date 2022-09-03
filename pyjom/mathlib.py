@@ -122,6 +122,6 @@ def getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol = "|",noEmpt
     finalCats = getContinualNonSympyMergeResult(mSetCandidates)
     finalCatsMapped = {mKeyMaps[k]:finalCats[k] for mTuple in finalCats.keys() for k in mTuple if type(k) == tuple}
     if not noEmpty:
-        finalCatsMapped.update({k:finalCats[k] for k in finalCats.keys() if type(k) != int})
+        finalCatsMapped.update({k:finalCats[k] for k in finalCats.keys() if type(k) != tuple})
     return finalCatsMapped
     # default not to output empty set?
