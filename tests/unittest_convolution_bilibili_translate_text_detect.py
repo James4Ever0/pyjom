@@ -117,6 +117,8 @@ for intKey in range(minKey, maxKey+1):
     print("boundingBoxes:", len(flatSpan))
     if len(flatSpan) == 0: continue
 
+    currentTextBoundingBoxes = 
+
     cv2.imshow("IMAGE", currentBlackPictureBlurred)
     cv2.waitKey(10)
     print("showing image:", intKey)
