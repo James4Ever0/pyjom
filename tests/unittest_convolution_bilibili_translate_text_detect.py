@@ -117,9 +117,9 @@ for intKey in range(minKey, maxKey+1):
     print("boundingBoxes:", len(flatSpan))
     if len(flatSpan) == 0: continue
 
-    currentTextBoundingBoxes = cv2.findContours(currentBlackPictureBlurred, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours = cv2.findContours(currentBlackPictureBlurred, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contours = contours[0] if len(contours) == 2 else contours[1]
-
+    
 
     cv2.imshow("IMAGE", currentBlackPictureBlurred)
     cv2.waitKey(10)
