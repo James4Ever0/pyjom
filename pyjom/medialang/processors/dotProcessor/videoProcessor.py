@@ -13,7 +13,7 @@ def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     newFrameWork = [getRounded(x*shrinkRatio,4) for x in mList]
     return newFrameWork[0], newFrameWork[1]
 
-def getVideoPreviewSize(videoPath, maxPixel=200):
+def getVideoPreviewPixels(videoPath, maxPixel=200):
     from MediaInfo import MediaInfo
     info = MediaInfo(filename = videoPath)
     infoData = info.getInfo()
