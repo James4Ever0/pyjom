@@ -131,4 +131,4 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict,start, end,
     emptySetName = str(uuid.uuid4())
     newRangesDict = mRangesDict.copy()
     newRangesDict.update({emptySetName:[(start, end)]})
-    newRangesDict = getContinualMappedNonSympyMergeResult()
+    newRangesDict = getContinualMappedNonSympyMergeResult(newRangesDict, concatSymbol="|", )
