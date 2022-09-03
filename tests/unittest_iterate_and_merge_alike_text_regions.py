@@ -86,5 +86,6 @@ prevList = []
 newList = []
 for item in sample:
     for elem in item:
-        if 
-    prevList = item.copy()
+        for prevElem in prevList:
+
+    prevList = newItem.copy()
