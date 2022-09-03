@@ -100,13 +100,12 @@ for intKey in range(minKey, maxKey+1):
         loc1 = (x1,y1)
         cv2.rectangle(blackPicture, loc0, loc1, 255,cv2.FILLED) # we fill so we can merge shits.
     blackPictureBlurred =cv2.GaussianBlur(blackPicture, (33,33), 0)
-
     convolutionBlurredSpan.append(blackPictureBlurred.copy())
 
     if len(convolutionBlurredSpan) > convolutionSpan:
         convolutionBlurredSpan.pop(0)
-        
-    currentBlackPictureBlurred = getConvBlurredCurrentShot(blackPictureBlurred)
+
+    currentBlackPictureBlurred = getConvBlurredCurrentShot(convolutionBlurredSpan)
     print(currentBlackPictureBlurred.shape)
 
 
