@@ -93,5 +93,6 @@ for item in sample:
     for elem in item:
         for prevElem in prevList:
             if alike(prevElem, elem,10):
-
+                mAlike = True
+                
     prevList = newItem.copy()
