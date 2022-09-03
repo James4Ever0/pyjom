@@ -3,7 +3,8 @@ from pyjom.medialang.processors.dotProcessor import ffmpegVideoPreProductionFilt
 import tempfile
 videoPaths = {
     "text":
-    "wit"
+    "logo":
+    "":
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
