@@ -12,3 +12,7 @@ print("_"*20)
 # want to build a language?
 result_1 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|")
 print(result_1)
+print("_"*20)
+
+result_1 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|")
+print(result_1)
