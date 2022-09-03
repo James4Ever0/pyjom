@@ -139,7 +139,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate = 10, mergeThres
     for index, x in enumerate(newFinalRectList):
         for y in x:
             tupleY = tuple(y)
-            mRangesDict.update({tupleY:mRangesDict.get(tupleY,[])+[ranges[index]])
+            mRangesDict.update({tupleY:mRangesDict.get(tupleY,[])+[ranges[index]]})
     print(mRangesDict)
     breakpoint()
     # why the fuck we have np.float64 as elem in mRangesDict's key(tuple)?
