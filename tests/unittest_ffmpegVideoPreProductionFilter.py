@@ -11,10 +11,11 @@ tempDir = '/dev/shm/medialang' # anyway we just want something else...
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
-    if defaultWidth < defaultHeight:
-        reverseFlag = True
+    # if defaultWidth < defaultHeight:
+    #     reverseFlag = True
     maxDim = max(mList)
-    shrinkRatio = maxDim/maxPixel
+    shrinkRatio = maxPixel/maxDim
+    newFrameWork = []
 
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
