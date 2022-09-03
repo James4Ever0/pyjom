@@ -27,6 +27,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     # breakpoint()
     defaultWidth = infoData["videoWidth"]
     defaultHeight = infoData["videoHeight"]
-    
+    print(infoData)
+    print(infoData.keys())
 
     ffmpegVideoPreProductionFilter(videoFile, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
