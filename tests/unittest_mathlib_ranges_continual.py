@@ -18,5 +18,6 @@ result_2 = getContinualMappedNonSympyMergeResult(mRangesDict, concatSymbol="|",n
 print(result_2)
 print("_"*20)
 
-result_3 = getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict, concatSymbol="|")
+start, end = -1,4
+result_3 = getContinualMappedNonSympyMergeResultWithRangedEmpty(mRangesDict, start, end, concatSymbol="|")
 print(result_3)
