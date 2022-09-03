@@ -25,7 +25,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap.release()
 
 def detectTextRegionOverTime(videoPath, start, end, sampleRate = 10):
-    
+    iterator = getVideoFrameIterator(videoPath)
 
 def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     mList = [defaultWidth, defaultHeight]
