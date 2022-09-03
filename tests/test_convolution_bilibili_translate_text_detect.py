@@ -27,6 +27,9 @@ for intKey in range(minKey, maxKey+1):
         if confidence > 0.7:
             xlocs = location[:,0]
             ylocs = location[:,1]
+            print(xlocs)
+            print(ylocs)
+            breakpoint()
             minX, maxX = min(xlocs), max(xlocs)
             minY, maxY = min(ylocs), max(ylocs)
             boundingBox = [minX, minY, maxX, maxY]
@@ -37,6 +40,7 @@ for intKey in range(minKey, maxKey+1):
     if len(convolutionBoundingBoxSpan)> convolutionSpan:
         convolutionBoundingBoxSpan.pop(0)
     # do your calculation!
+    flat
     currentNonOverlappingBoxes = non_max_supporession()
     # print(intKey,target)
     # this time we do not care about the text inside.
