@@ -14,3 +14,4 @@ for intKey in range(minKey, maxKey+1):
     target = mJson[strKey]
     # print(intKey,target)
     # this time we do not care about the text inside.
+    breakpoint()
