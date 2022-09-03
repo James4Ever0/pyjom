@@ -42,7 +42,7 @@ def getConvBlurredCurrentShot(blurredSpan, span=5):
     # honor the most the latest one. 
     mImage = None
     for index, blurredImage in enumerate(blurredSpan):
-        ratio = (span-index)/span
+        ratio = index/span
         if mImage is None:
             mImage = blurredImage*ratio
         else:
