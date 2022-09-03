@@ -5,7 +5,8 @@ import ffmpeg
 
 # import cv2
 
-def getMergedRects():
+def getMergedRects(mConvList, width, height):
+    
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
