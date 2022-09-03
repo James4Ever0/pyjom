@@ -1,4 +1,4 @@
 from test_commons import *
 from pyjom.mathlib import *
 
-mRangesDict = {"sample%s"}
+mRangesDict = {"sample_%s" % num: [num]}
