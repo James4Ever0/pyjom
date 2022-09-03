@@ -8,6 +8,10 @@ videoPaths = {
     "pip":"/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4",
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
+
+def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
+    
+
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
     videoPath = videoPaths['text']
