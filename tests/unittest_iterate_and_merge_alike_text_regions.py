@@ -85,8 +85,9 @@ sample = [
 prevList = []
 newList = []
 import numpy
-def alike:
+def alike(array0,array1, threshold):
     
+
 for item in sample:
     for elem in item:
         for prevElem in prevList:
