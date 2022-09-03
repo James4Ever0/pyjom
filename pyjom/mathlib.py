@@ -157,4 +157,7 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(
         for key in newRangesDict.keys()
         if newRangesDict[key] != []
     }
+    finalNewRangesDict = {}
+    for key in newRangesDict.keys():
+        if "|"
     return newRangesDict
