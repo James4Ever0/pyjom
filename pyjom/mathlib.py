@@ -159,5 +159,5 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(
     }
     finalNewRangesDict = {}
     for key in newRangesDict.keys():
-        if "|"
+        if "{}{}".format(concatSymbol, emptySetName)
     return newRangesDict
