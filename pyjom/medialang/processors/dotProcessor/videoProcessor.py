@@ -11,7 +11,8 @@ def getVideoFrameIterator(videoPath, start, end):
     fno = 0
     while success:
         if fno % sample_rate == 0:
-            do_something(img)
+            # do_something(img)
+            yield img
         # read next frame
         success, img = cap.read()
 
