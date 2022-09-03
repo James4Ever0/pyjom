@@ -153,7 +153,7 @@ def getVideoWidthHeight(videoPath):
     defaultHeight = infoData["videoHeight"]
     return defaultWidth, defaultHeight
 def getVideoPreviewPixels(videoPath, maxPixel=200):
-    defaultWidth, defaultHeight = getVideoPreview
+    defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
     # print(infoData)
     # print(infoData.keys())
     # breakpoint()
