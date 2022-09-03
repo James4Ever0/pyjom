@@ -9,8 +9,8 @@ videoPaths = {
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 
-test_ffmpeg = False
-test_text_detector = True
+test_ffmpeg = True
+test_text_detector = False
 
 def getVideoDuration(filePath):
 
