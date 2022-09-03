@@ -12,6 +12,7 @@ def getMergedRects(mConvList, width, height):
     blackPicture = getBlackPicture(width, height)
     for boundingBox in mConvList:
         cv2.rectangle(blackPicture, p0,p1, 255, -1)
+    
 
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
