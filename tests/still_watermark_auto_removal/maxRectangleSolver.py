@@ -74,16 +74,18 @@ for ix0 in range(0, len(xValid)):
                 p0,p1,p2,p3 = (x,y), (x+mWidth,y),(x+mWidth, y+mHeight), (x, y+mHeight)
                 rectCandidate = [p0,p1,p2,p3]
                 area = getRectArea(rectCandidate)
-                if area < bestArea:
+                if area <= bestArea:
                     continue
                 if checkOverlapAgainstRectList(rectCandidate, mRects):
                     continue
                 bestCandidate = rectCandidate.copy()
                 bestArea = area
-                print("APPENDING:",rectCandidate)
+                print("UPDATING:",bestCandidate)
+                print('AREA:', bestArea)
                 # totalCandidates.append(rectCandidate.copy())
 
 print('final candidate:', bestCandidate)
+# plot this?
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
 # for rect in totalCandidates[:5]:
 #     print(rect)
