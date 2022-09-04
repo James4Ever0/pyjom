@@ -5,10 +5,10 @@ data = json.loads(open("test_special.json", "r").read())
 canvas = data["canvas"]
 rectangles = data["rectangles"]
 
-width, height = canvas
+canvaswidth, canvasheight = canvas
 
-xValid = [0, width]
-yValid = [0, height]
+xValid = [0, canvaswidth]
+yValid = [0, canvasheight]
 
 mRects = []
 
