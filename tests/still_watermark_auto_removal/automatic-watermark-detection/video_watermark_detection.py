@@ -1,8 +1,6 @@
 # sample few images from a video.
 import random
-
-
-
+## we import our version of cv2 here? or uninstall and reinstall opencv-python with custom things?
 
 import cv2
 import progressbar as pb
