@@ -190,9 +190,9 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
     # print(infoData)
     # print(infoData.keys())
-    # breakpoint()
-    start = 0
-    end = float(infoData["videoDuration"])
+    # # breakpoint()
+    # start = 0
+    # end = float(infoData["videoDuration"])
 
     # maxPixel = 200
 
