@@ -206,7 +206,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     if preview:
         previewWidth, previewHeight = getVideoPreviewPixels(filepath)
         previewRatio = previewWidth / defaultWidth
-        previewFilter = lambda stream : stream.filter('scale',"((in_w*{})//4)*4".format(previewRatio), "((in_h*{})//4)*4".format(previewRatio))
+        previewFilter = lambda stream : stream.filter('scale',"ceil((in_w*{})/4)*4".format(previewRatio), "ceil((in_h*{})/4)*4".format(previewRatio))
     # stream = ffmpeg.hflip(stream)
     # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
     # we just need to crop this.
@@ -244,6 +244,13 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
         mStart, mEnd = commandTimeSpan
         stream = ffmpeg.input(filepath,ss=start, to=end)
         if renderCommandString == "empty":
+            pass
+        # do nothing.
+        else:
+            renderCommands = renderCommandString.split("|")
+            # sort all commands?
+            for renderCommand in renderCommands:
+                if renderCommand
         if preview: # final filter? need us to crop this?
             stream = previewFilter(stream)
             # do nothing here! (no fx.)
