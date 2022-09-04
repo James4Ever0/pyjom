@@ -128,6 +128,8 @@ def rectToXYWH(rect):
     return x, y, width, height
 
 plotRect(ax,0,0,canvasWidth, canvasHeight,'black')
+for rect in mRects
+plotRect()
 # display plot
 plt.show()
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
