@@ -53,6 +53,9 @@ def checkOverlapAgainstRectList(rect, rectList):
 
 xValid = purify(xValid)
 yValid = purify(yValid)
+totalCandidates = []
+
+def getRectArea
 
 for ix0 in range(0, len(xValid)):
     for ix1 in range(ix0, len(xValid)):
@@ -65,4 +68,4 @@ for ix0 in range(0, len(xValid)):
                 rectCandidate = [p0,p1,p2,p3]
                 if checkOverlapAgainstRectList(rectCandidate, mRects):
                     break
-                
+                totalCandidates.append(rectCandidate.copy())
