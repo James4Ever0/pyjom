@@ -287,7 +287,7 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
         fxx = cv2.Sobel(gradx, cv2.CV_64F, 1, 0, ksize=kernel_size)
         fyy = cv2.Sobel(grady, cv2.CV_64F, 0, 1, ksize=kernel_size)
         laplacian = fxx + fyy
-        m,n,p = laplacian.shape
+        m,n,p = laplacian.shape # three channels?
 
         if boundary_zero == True:
             est = np.zeros(laplacian.shape)
