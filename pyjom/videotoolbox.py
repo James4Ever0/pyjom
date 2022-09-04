@@ -90,6 +90,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
             if iterate:
                 yield image
             else:
+                print("APPENDING!")
                 imageList.append(image.copy())
     if not iterate:
         return imageList
