@@ -89,7 +89,13 @@ print('final candidate:', bestCandidate)
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
+fig, ax = plt.subplots()
 
+#add rectangle to plot
+ax.add_patch(Rectangle((1, 1), 2, 6))
+
+#display plot
+plt.show()
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
 # for rect in totalCandidates[:5]:
 #     print(rect)
