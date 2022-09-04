@@ -286,7 +286,8 @@ def ffmpegVideoPreProductionFilter(
         # nothing happens. just return the original shit.
         return filepath
     renderList = mergedRangesToSequential(renderDict)
-    renderVideoList = []
+    renderVideoStreamList = []
+    renderAudioStream = ffmpeg.input(filepath, ss=start, to=end).audio
 
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
