@@ -258,8 +258,8 @@ def ffmpegVideoPreProductionFilter(
     def delogoFilter(stream, commandParams):
         return stream.filter(
         "delogo",
-        x=mi(commandParams["x0"],commandParams['x1']),
-        y=mi(commandParams["y0"],commandParams['y1']),
+        x=min(commandParams["x0"],commandParams['x1']),
+        y=min(commandParams["y0"],commandParams['y1']),
         w=abs(commandParams["x1"] - commandParams["x0"]),
         h=abs(commandParams["y1"] - commandParams["y0"]),
     )
