@@ -79,6 +79,7 @@ for ix0 in range(0, len(xValid)):
                 # print("APPENDING:",rectCandidate)
                 # totalCandidates.append(rectCandidate.copy())
 
+print('final candidate:', best)
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
 # for rect in totalCandidates[:5]:
 #     print(rect)
