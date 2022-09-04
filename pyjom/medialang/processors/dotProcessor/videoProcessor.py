@@ -230,7 +230,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
         pass
-    commandValueMap = {"empty":-1, "crop":0, 'delogo':1} # no scale filter shall present. we do not provide such creep. editly will handle it.
+    commandValueMap = {"empty":-1, 'delogo':0,"crop":1} # no scale filter shall present. we do not provide such creep. editly will handle it.
 
     renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
 
@@ -259,7 +259,9 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
                     continue
                 if renderCommand.startswith("delogo"):
                     import parse
-                    commandParams = parse.parse('delogo_{x0}_{y0}_{x1}_{y1}', )
+                    commandParams = parse.parse('delogo_{x0}_{y0}_{x1}_{y1}', renderCommand)
+                    # we also need to consider if this is necessary.
+                    stream = delogoFilter(stream, commandParams)
 
         if preview: # final filter? need us to crop this?
             stream = previewFilter(stream)
