@@ -1,5 +1,9 @@
 # sample few images from a video.
 import random
+
+
+
+
 import cv2
 import progressbar as pb
 
