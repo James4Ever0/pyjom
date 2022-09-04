@@ -6,7 +6,7 @@ import progressbar as pb
 videoPaths = [
     "/media/root/help/pyjom/tests/still_watermark_auto_removal/kunfu_cat.mp4", # bilibili animal video compilation
     "/media/root/help/pyjom/tests/bilibili_practices/bilibili_video_translate/japan_day.webm", # youtube animation with watermark
-    "/media/root/help/pyjom/samples/video/LiGHT3ZCi.mp4", # animal video compilation with 
+    "/media/root/help/pyjom/samples/video/LiGHT3ZCi.mp4", # animal video compilation with pip and large 
 ]  # his watermark. scorpa.
 video_path = videoPaths[2]
 # will change this shit.
