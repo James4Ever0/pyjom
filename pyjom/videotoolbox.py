@@ -237,5 +237,8 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     return previewWidth, previewHeight
 
 def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
-    sampler = getVideoFrameSampler(filepath, start, end, sample_size=sample_size, iterate=False)
-    
+    imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size, iterate=False)
+    from src import *
+    gx, gy, gxlist, gylist = estimate_watermark_imgSet(imageSet)
+    # print(len(imageSet))
+    cropped_gx, cropped_gy, watermark_location = crop_watermark(gx, gy,location=True)
