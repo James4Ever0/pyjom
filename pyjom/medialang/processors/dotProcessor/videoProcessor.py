@@ -317,8 +317,8 @@ def ffmpegVideoPreProductionFilter(
                     # we also need to consider if this is necessary.
                     stream = delogoFilter(stream, commandParams)
 
-        # if preview:  # final filter? need us to crop this?
-        #     stream = previewFilter(stream)
+        if preview:  # final filter? need us to crop this?
+            stream = previewFilter(stream)
             # do nothing here! (no fx.)
         # and?
         # we need to concat these shit!
@@ -326,11 +326,11 @@ def ffmpegVideoPreProductionFilter(
         # print(dir(stream))
         # breakpoint()
         # import copy
-        print(stream)
+        # print(stream)
         renderVideoStreamList.append(stream)
     # for x in renderVideoStreamList:
     #     print(x)
-    breakpoint()
+    # breakpoint()
     renderVideoStream = ffmpeg.concat(*renderVideoStreamList)
     renderStream = ffmpeg.output(renderVideoStream, renderAudioStream, cachePath)
     renderStream.run(overwrite_output=True)
