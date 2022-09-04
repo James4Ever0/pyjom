@@ -5,10 +5,10 @@ data = json.loads(open("test_special.json", "r").read())
 canvas = data["canvas"]
 rectangles = data["rectangles"]
 
-canvaswidth, canvasheight = canvas
+canvasWidth, canvasHeight = canvas
 
-xValid = [0, canvaswidth]
-yValid = [0, canvasheight]
+xValid = [0, canvasWidth]
+yValid = [0, canvasHeight]
 
 mRects = []
 
@@ -127,7 +127,7 @@ def rectToXYWH(rect):
     width, height = (maxX - minX), (maxY - minY)
     return x, y, width, height
 
-
+plotRect(ax,0,0,canvasWidth, canvasHeight,'black')
 # display plot
 plt.show()
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
