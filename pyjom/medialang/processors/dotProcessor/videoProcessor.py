@@ -319,9 +319,9 @@ def ffmpegVideoPreProductionFilter(
             # do nothing here! (no fx.)
         # and?
         # we need to concat these shit!
-        print(stream)
-        print(dir(stream))
-        breakpoint()
+        # print(stream)
+        # print(dir(stream))
+        # breakpoint()
         import copy
         renderVideoStreamList.append(copy.copy(stream))
     renderVideoStream = ffmpeg.concat(*renderVideoStreamList)
