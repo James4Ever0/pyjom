@@ -154,7 +154,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate=10, mergeThresho
     # breakpoint()
     # why the fuck we have np.float64 as elem in mRangesDict's key(tuple)?
     newMRangesDict = {
-        "delogo_{}_{}_{}_{}".format(*key): mRangesDict[key]
+        "delogo_{}_{}_{}_{}".format(*key): mRangesDict[key] # x,y,w,h
         for key in mRangesDict.keys()
     }
     finalCatsMapped = getContinualMappedNonSympyMergeResult(
