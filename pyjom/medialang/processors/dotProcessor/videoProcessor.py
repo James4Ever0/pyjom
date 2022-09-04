@@ -307,7 +307,6 @@ def ffmpegVideoPreProductionFilter(
                     continue
                 if renderCommand.startswith("delogo"):
                     import parse
-
                     commandParams = parse.parse(
                         "delogo_{x0:d}_{y0:d}_{x1:d}_{y1:d}", renderCommand
                     )
