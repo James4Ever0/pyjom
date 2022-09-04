@@ -276,6 +276,7 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "logoRemoval" in filters:
         detectStationaryLogoOverTime(filepath, start, end) # output logo mask. or not.
+        # estimate the shape with multiple rectangles? packing algorithm?
         # pass
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
