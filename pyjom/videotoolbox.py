@@ -310,7 +310,7 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     # you can do this later, will you?
     gx, gy, gxlist, gylist = estimate_watermark_imgSet(imageSet)
     print(gx.shape, gy.shape)
-    breakpoint()
+    breakpoint() # nothing here! fuck.
     # print(len(imageSet))
     # cropped_gx, cropped_gy, watermark_location = crop_watermark(gx, gy,location=True)
 
