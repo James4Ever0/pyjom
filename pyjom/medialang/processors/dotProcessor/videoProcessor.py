@@ -67,7 +67,17 @@ def getMergedRects(mConvList, width, height):
     return mlist
 
 def getVideoFrameSampler(videoPath, start, end, sample_size=60):
-    
+    cap = cv2.VideoCapture(videoPath)
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    startFrame = int(start * fps)
+    stopFrame = int(end * fps)
+    import progressbar
+    totalPopulation = list(range(startFrame, min(stopFrame, total_frames)-1))
+    samplePopulation = random.sample(totalPopulation, k=min(sample_size, len(totalPopulation)))
+    for sampleIndex in progressbar.progressbar(samplePopulation):
+            cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
+
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
