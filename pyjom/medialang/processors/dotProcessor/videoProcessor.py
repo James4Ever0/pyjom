@@ -125,7 +125,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate=10, mergeThresho
             continue
         # print("frame number:",index)
         for boundingBox in detection[0]:
-            print(boundingBox)
+            print(boundingBox) # left, right, top, bottom
         
         detectionList.append(detection[0].copy())
         # print(detection)
