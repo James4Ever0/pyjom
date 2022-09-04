@@ -92,7 +92,7 @@ from matplotlib.patches import Rectangle
 fig, ax = plt.subplots()
 
 #add rectangle to plot
-ax.add_patch(Rectangle((1, 1), 2, 6))
+ax.add_patch(Rectangle(x, y), 2, 6))
 
 #display plot
 plt.show()
