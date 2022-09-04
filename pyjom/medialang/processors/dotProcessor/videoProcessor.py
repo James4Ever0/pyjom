@@ -84,6 +84,9 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60):
     samplePopulation.sort()
     for sampleIndex in progressbar.progressbar(samplePopulation):
         cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
+        success, image = cap.read()
+        if success:
+            yield image
 
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
