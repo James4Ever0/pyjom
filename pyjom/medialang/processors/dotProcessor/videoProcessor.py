@@ -314,6 +314,7 @@ def ffmpegVideoPreProductionFilter(
                     commandParams = parse.parse(
                         "delogo_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                     )
+                    mX, mY, mW
                     # we also need to consider if this is necessary.
                     stream = delogoFilter(stream, commandParams)
 
