@@ -82,13 +82,14 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     )
     samplePopulation.sort()
     if not iterate:
+        print("NOT IETERATING")
         imageList = []
         for sampleIndex in progressbar.progressbar(samplePopulation):
             cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
             success, image = cap.read()
             if success:
-                    print("APPENDING!")
-                    imageList.append(image.copy())
+                print("APPENDING!")
+                imageList.append(image.copy())
         return imageList
     else:        
         for sampleIndex in progressbar.progressbar(samplePopulation):
