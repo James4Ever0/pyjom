@@ -40,3 +40,5 @@ for x,y, mWidth, mHeight in rectangles:
     # mRectangle = sympy.Polygon(p0,p1,p2,p3)
     mRectangle = [p0,p1,p2,p3]
     mRects.append(mRectangle)
+
+xValid = xValid
