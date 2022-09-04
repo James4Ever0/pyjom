@@ -249,7 +249,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
         else:
             renderCommands = renderCommandString.split("|")
             # sort all commands?
-            renderCommands.sort(key=lambda )
+            renderCommands.sort(key=lambda command: command.split("_")[0])
             for renderCommand in renderCommands:
                 if renderCommand.startswith("delogo"):
 
