@@ -100,6 +100,9 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
                 # print("APPENDING!")
                 # imageList.append(image.copy())
                 yield image
+    if iterate:
+        return iterator(cap, samplePopulation)
+        return nonIterator(cap, samplePopulation)
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
