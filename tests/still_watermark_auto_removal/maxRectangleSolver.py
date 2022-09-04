@@ -12,12 +12,10 @@ yValid = [0, height]
 
 mRects = []
 
-def checkOverlapAss
+def checkOverlapAsymmetric(rect0, rect1):
 
 def checkOverlap(rect0, rect1):
-    for point in rect0:
-        if checkContains(rect1, point):
-            return True
+x
 
 for x,y, mWidth, mHeight in rectangles:
     xValid.append(x)
