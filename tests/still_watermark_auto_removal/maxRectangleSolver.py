@@ -18,7 +18,9 @@ def checkOverlapAsymmetric(rect0, rect1):
             return True
     return False
 def checkOverlap(rect0, rect1):
-    if 
+    if checkOverlapAsymmetric(rect0, rect1): return True
+    if checkOverlapAsymmetric(rect1, rect1): return True
+
 
 
 for x,y, mWidth, mHeight in rectangles:
