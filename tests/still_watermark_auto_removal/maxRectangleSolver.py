@@ -64,4 +64,5 @@ for ix0 in range(0, len(xValid)):
                 p0,p1,p2,p3 = (x,y), (x+mWidth,y),(x+mWidth, y+mHeight), (x, y+mHeight)
                 rectCandidate = [p0,p1,p2,p3]
                 if checkOverlapAgainstRectList(rectCandidate, mRects):
-                    
+                    break
+                
