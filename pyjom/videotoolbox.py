@@ -372,7 +372,7 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     mFinalDelogoFilters = []
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
-        "delogo_{}_{}_{}_{}".format(*key)
+        mFinalDelogoFilters.append("delogo_{}_{}_{}_{}".format(x,y,w,h))
         # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
         cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
     print("TOTAL {} CONTOURS.".format(len(cnts2)))  # paint t
