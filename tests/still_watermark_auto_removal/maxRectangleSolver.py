@@ -13,8 +13,12 @@ yValid = [0, height]
 mRects = []
 
 def checkOverlapAsymmetric(rect0, rect1):
-
+    for point in rect0:
+        if checkContains(rect1, point):
+            return True
+    return False
 def checkOverlap(rect0, rect1):
+    if 
 
 
 for x,y, mWidth, mHeight in rectangles:
