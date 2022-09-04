@@ -102,6 +102,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
                 yield image
     if iterate:
         return iterator(cap, samplePopulation)
+    else:
         return nonIterator(cap, samplePopulation)
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
