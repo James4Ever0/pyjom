@@ -2,4 +2,8 @@ import sympy
 import json
 
 data = json.loads(open("test_special.json",'r').read())
-framework = 
+canvas = data['canvas']
+rectangles = data['rectangles']
+
+width, height = canvas
+
