@@ -95,8 +95,6 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
             cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
             success, image = cap.read()
             if success:
-                    print("APPENDING!")
-                    imageList.append(image.copy())
                 yield image
 
 
