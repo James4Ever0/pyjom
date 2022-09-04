@@ -112,7 +112,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 fig, ax = plt.subplots()
-
+ax.plot([canvasWidth, canvasHeight])
 # add rectangle to plot
 def plotRect(ax, x, y, width, height, facecolor):
     ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
