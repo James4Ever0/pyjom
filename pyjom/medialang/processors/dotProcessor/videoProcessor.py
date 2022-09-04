@@ -244,6 +244,8 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
         mStart, mEnd = commandTimeSpan
         stream = ffmpeg.input(filepath,ss=start, to=end)
         if renderCommandString == "empty":
+        if preview: # final filter?
+            stream = previewFilter(stream)
             # do nothing here! (no fx.)
     return cachePath
 
