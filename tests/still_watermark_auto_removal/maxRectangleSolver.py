@@ -18,6 +18,7 @@ def checkContains(rect, point):
     maxX, minX = max(xPoints), min(xPoints)
     maxY, minY = max(yPoints), min(yPoints)
     x,y = point
+    if x>max
 
 def checkOverlapAsymmetric(rect0, rect1):
     for point in rect0:
