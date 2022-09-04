@@ -81,6 +81,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
         totalPopulation, k=min(sample_size, len(totalPopulation))
     )
     samplePopulation.sort()
+    print("ITERATE", iterate)
     if not iterate:
         print("NOT ITERATING")
         imageList = []
