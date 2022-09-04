@@ -34,8 +34,8 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     if testSubject == 'logo':
         videoPath = videoPaths['logo']
         filters = ['logoRemoval'] # how the fuck?
-    elif testSubject == '':
-        videoPath = videoPaths['']
+    elif testSubject == 'text':
+        videoPath = videoPaths['text']
         filters = ['textRemoval']
     videoFileName = os.path.basename(videoPath)
     # we use the full video here? to check if this shit really works?
