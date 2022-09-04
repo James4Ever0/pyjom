@@ -7,3 +7,6 @@ rectangles = data['rectangles']
 
 width, height = canvas
 
+
+
+for x,y, mWidth, mHeight in rectangles:
