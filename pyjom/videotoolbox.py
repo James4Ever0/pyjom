@@ -275,7 +275,6 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
         # slow as hell?
 
         return (Wm_x, Wm_y, gradx, grady)
-    ###########
 
     def poisson_reconstruct(gradx, grady, kernel_size=KERNEL_SIZE, num_iters=100, h=0.1, 
             boundary_image=None, boundary_zero=True):
@@ -307,7 +306,7 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
             loss.append(error)
 
         return (est)
-
+    ###########
     # you can do this later, will you?
     gx, gy, gxlist, gylist = estimate_watermark_imgSet(imageSet)
     # print(len(imageSet))
@@ -316,3 +315,64 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     # W_m = poisson_reconstruct(cropped_gx, cropped_gy)
 
     W_full = poisson_reconstruct(gx, gy)
+
+    maxval, minval = np.max(W_full), np.min(W_full)
+    W_full = (W_full - minval) * (255 / (maxval - minval))  # is that necessary?
+    # # print(,W_full.shape,W_full.dtype)
+    W_full = W_full.astype(np.uint8)
+
+    src = W_full
+    scale_percent = 100
+
+    # calculate the 50 percent of original dimensions
+    width = int(src.shape[1] * scale_percent / 100)
+    height = int(src.shape[0] * scale_percent / 100)
+
+    # dsize
+    dsize = (width, height)
+
+    # resize image
+    output = cv2.resize(src, dsize)
+
+    gray_output = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
+
+    gray_output = cv2.GaussianBlur(gray_output, (11, 3), 0)
+
+    thresh_output = cv2.adaptiveThreshold(
+        gray_output, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2
+    )
+
+    thresh_output = 255 - thresh_output
+
+    # cnts, hierachy = cv2.findContours(thresh_output,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE) # really freaking bad. we should invert this.
+    cnts, hierachy = cv2.findContours(
+        thresh_output, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+    )  # really freaking bad. we should invert this.
+    # cv2.RETR_EXTERNAL
+
+    [a, b] = output.shape[:2]
+    myMask = np.zeros(shape=[a, b], dtype=np.uint8)
+
+    # this is for video watermarks. how about pictures? do we need to cut corners? how to find the freaking watermark again?
+    for cnt in cnts:
+        x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
+        # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
+        cv2.rectangle(myMask, (x, y), (x + w, y + h), 255, -1)
+
+    dilated_mask = cv2.GaussianBlur(myMask, (11, 11), 0)
+    cv2.threshold(dilated_mask, 256 / 2, 255, cv2.THRESH_BINARY, dilated_mask)
+    cnts2, hierachy2 = cv2.findContours(
+        dilated_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+    )
+
+    myMask2 = np.zeros(shape=[a, b], dtype=np.uint8)
+
+    # this is for video watermarks. how about pictures? do we need to cut corners? how to find the freaking watermark again?
+    # delogoFilter = 
+    mFinalDelogoFilters = []
+    for cnt in cnts2:
+        x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
+        "delogo_{}_{}_{}_{}".format(*key)
+        # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
+        cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
+    print("TOTAL {} CONTOURS.".format(len(cnts2)))  # paint t
