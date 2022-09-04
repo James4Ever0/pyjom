@@ -206,7 +206,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     if preview:
         previewWidth, previewHeight = getVideoPreviewPixels(filepath)
         previewRatio = previewWidth / defaultWidth
-        previewFilter = lambda stream : stream.filter('scale',"in_w", previewHeight)
+        previewFilter = lambda stream : stream.filter('scale',"(in_w*{})//4)*4", previewHeight)
     # stream = ffmpeg.hflip(stream)
     # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
     # we just need to crop this.
