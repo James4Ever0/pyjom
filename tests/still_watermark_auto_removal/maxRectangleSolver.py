@@ -15,6 +15,7 @@ mRects = []
 def checkContains(rect, point):
     xPoints = [p[0] for p in rect]
     yPoints = [p[1] for p in rect]
+    maxX, minX = 
 
 def checkOverlapAsymmetric(rect0, rect1):
     for point in rect0:
