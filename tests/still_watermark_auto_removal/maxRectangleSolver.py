@@ -131,7 +131,7 @@ plotRect(ax,0,0,canvasWidth, canvasHeight,'black')
 for rect in mRects:
     x,y, width, height = rectToXYWH(rect)
     plotRect(ax,x,y,width,height,'white')
-plotRect(ax,rectToXYWH())
+plotRect(ax,rectToXYWH(bestCandidate))
 # display plot
 plt.show()
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
