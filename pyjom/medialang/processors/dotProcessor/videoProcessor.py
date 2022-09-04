@@ -291,6 +291,7 @@ def ffmpegVideoPreProductionFilter(
 
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
+        print()
         stream = ffmpeg.input(filepath, ss=mStart, to=mEnd).video # no audio? seriously?
         if renderCommandString == "empty":
             pass  # do not continue since maybe we have preview filter below?
@@ -303,7 +304,7 @@ def ffmpegVideoPreProductionFilter(
                 key=lambda command: commandValueMap[command.split("_")[0]]
             )
             for renderCommand in renderCommands:
-                print(renderCommand)
+                print('RENDER COMMAND:',renderCommand)
                 if renderCommand == "empty":
                     continue
                 if renderCommand.startswith("delogo"):
