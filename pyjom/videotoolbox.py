@@ -68,7 +68,7 @@ def getMergedRects(mConvList, width, height):
     return mlist
 
 
-def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
+def getVideoFrameSampler(videoPath, start, end, sample_size=60):
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -81,7 +81,6 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
         totalPopulation, k=min(sample_size, len(totalPopulation))
     )
     samplePopulation.sort()
-    print("ITERATE", iterate)
     if not iterate:
         print("NOT ITERATING")
         imageList = []
