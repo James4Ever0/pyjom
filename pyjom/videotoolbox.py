@@ -84,6 +84,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60):
     # if not iterate:
     # print("NOT ITERATING")
     def nonIterator():
+        imageList = []
         for sampleIndex in progressbar.progressbar(samplePopulation):
             cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
             success, image = cap.read()
@@ -91,6 +92,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60):
                 print("APPENDING!")
                 imageList.append(image.copy())
         return imageList
+    def iterator():
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
