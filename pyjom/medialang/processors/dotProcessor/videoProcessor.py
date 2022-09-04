@@ -286,6 +286,7 @@ def ffmpegVideoPreProductionFilter(
         # nothing happens. just return the original shit.
         return filepath
     renderList = mergedRangesToSequential(renderDict)
+    renderVideoList = []
 
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
@@ -317,7 +318,7 @@ def ffmpegVideoPreProductionFilter(
             # do nothing here! (no fx.)
         # and?
         # we need to concat these shit!
-        
+
     return cachePath
 
 
