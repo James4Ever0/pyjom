@@ -71,7 +71,7 @@ for ix0 in range(0, len(xValid)):
                 mWidth, mHeight = x1-x, y1-y
                 p0,p1,p2,p3 = (x,y), (x+mWidth,y),(x+mWidth, y+mHeight), (x, y+mHeight)
                 rectCandidate = [p0,p1,p2,p3]
-                area = getRectArea()
+                area = getRectArea(rectCandidate)
                 if area < bestArea:
                     continue
                 if checkOverlapAgainstRectList(rectCandidate, mRects):
@@ -79,6 +79,6 @@ for ix0 in range(0, len(xValid)):
                 # print("APPENDING:",rectCandidate)
                 # totalCandidates.append(rectCandidate.copy())
 
-totalCandidates.sort(key = lambda rect: -getRectArea(rect))
-for rect in totalCandidates[:5]:
-    print(rect)
+# totalCandidates.sort(key = lambda rect: -getRectArea(rect))
+# for rect in totalCandidates[:5]:
+#     print(rect)
