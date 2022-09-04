@@ -41,7 +41,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         filters = ['textRemoval']
     elif testSubject == 'pip':
         videoPath = videoPaths['pip']
-        filters = ['pipRemoval']
+        filters = ['pipCrop']
     else:
         raise Exception("Unknown testSubject: %s" % testSubject)
     videoFileName = os.path.basename(videoPath)
