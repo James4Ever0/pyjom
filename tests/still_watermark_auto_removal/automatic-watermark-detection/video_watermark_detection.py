@@ -4,9 +4,9 @@ import cv2
 import progressbar as pb
 
 videoPaths = [
-    "/media/root/help/pyjom/tests/still_watermark_auto_removal/kunfu_cat.mp4", # bilibili animal video compilation
-    "/media/root/help/pyjom/tests/bilibili_practices/bilibili_video_translate/japan_day.webm", # youtube animation with watermark
-    "/media/root/help/pyjom/samples/video/LiGHT3ZCi.mp4", # animal video compilation with pip and large area of watermark
+    "/root/Desktop/works/pyjom/tests/still_watermark_auto_removal/kunfu_cat.mp4", # bilibili animal video compilation
+    "/root/Desktop/works/pyjom/tests/bilibili_practices/bilibili_video_translate/japan_day.webm", # youtube animation with watermark
+    "/root/Desktop/works/pyjom/samples/video/LiGHT3ZCi.mp4", # animal video compilation with pip and large area of watermark
 ]  # his watermark. scorpa.
 video_path = videoPaths[2]
 # will change this shit.
@@ -21,6 +21,7 @@ video_cap = cv2.VideoCapture(video_path)
 
 fps = video_cap.get(cv2.CAP_PROP_FPS)  # 60.
 frame_count = int(video_cap.get(cv2.CAP_PROP_FRAME_COUNT))
+print(frame_count)
 
 sample_indexs = [x for x in range(frame_count)]
 sample_indexs = random.sample(sample_indexs, sample_count)
