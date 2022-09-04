@@ -31,7 +31,7 @@ def getVideoDuration(filePath):
 
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
-    videoPath = videoPaths['text']
+    videoPath = videoPaths['logo']
     filters = ['logoRemoval'] # how the fuck?
     # filters = ['textRemoval']
     videoFileName = os.path.basename(videoPath)
