@@ -76,4 +76,5 @@ for ix0 in range(0, len(xValid)):
                 totalCandidates.append(rectCandidate.copy())
 
 totalCandidates.sort(key = lambda rect: -getRectArea(rect))
-for 
+for rect in totalCandidates[:5]:
+    print(rect)
