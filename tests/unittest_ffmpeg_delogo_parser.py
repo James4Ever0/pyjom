@@ -47,5 +47,5 @@ for command in commandString.split("|"):
         print("WIDTH:", width, "HEIGHT:", height)
         maxX, maxY = commandArguments['x']+commandArguments['w'],commandArguments['y']+commandArguments['h']
         print("MAX X:", maxX, "MAX Y:", maxY)
-        print("ERROR!", command)
+        print("ERROR!", commandArguments)
         breakpoint()
