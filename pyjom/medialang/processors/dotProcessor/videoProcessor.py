@@ -5,6 +5,8 @@ from pyjom.mathlib import *
 import tempfile
 import ffmpeg
 
+def LRTBToDiagonal(lrtb):
+    
 
 def mergeAlikeRegions(sample, threshold=10):
     prevList = []
