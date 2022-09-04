@@ -5,3 +5,4 @@ import parser
 delogoParser = lambda command: parser.parse("", command)
 delogoFilter = lambda stream, commadArguments: stream.filter('delogo', x=)
 for command in commandString.split("|"):
+    stream = ffmpeg.input(videoPath, ss=0, to=5)
