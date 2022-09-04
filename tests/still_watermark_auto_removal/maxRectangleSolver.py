@@ -40,5 +40,20 @@ for x,y, mWidth, mHeight in rectangles:
     # mRectangle = sympy.Polygon(p0,p1,p2,p3)
     mRectangle = [p0,p1,p2,p3]
     mRects.append(mRectangle)
+def purify(xValid):
+    xValid = list(set(xValid))
+    xValid.sort()
+    return xValid
 
-xValid = xValid
+xValid = purify(xValid)
+yValid = purify(yValid)
+
+for ix0 in range(0, len(xValid)):
+    for ix1 in range(ix0, len(xValid)):
+        for iy0 in range(0, len(yValid)):
+            for iy1 in range(iy0, len(yValid)):
+                x0,x1, y0,y1 = xValid[ix0], xValid[ix1], yValid[iy0], yValid[iy1]
+                x,y = x0,y0
+                mWidth, mHeight = x1-x, y1-y
+                p0,p1,p2,p3 = (x,y), (x+mWidth,y),(x+mWidth, y+mHeight), (x, y+mHeight)
+                rectCandidate = [p0,p1,p2,p3]
