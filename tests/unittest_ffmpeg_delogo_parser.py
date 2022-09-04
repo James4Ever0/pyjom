@@ -3,6 +3,7 @@ commandString = "delogo_0_671_360_6|delogo_144_662_6_4|delogo_355_661_5_7|delogo
 import ffmpeg
 import parser
 delogoParser = lambda command: parser.parse("", command)
-delogoFilter = lambda stream, commadArguments: stream.filter('delogo', x=)
+delogoFilter = lambda stream, commandArguments: stream.filter('delogo', x=)
 for command in commandString.split("|"):
-    stream = ffmpeg.input(videoPath, ss=0, to=5)
+    stream = ffmpeg.input(videoPath, ss=0, to=5).video
+    stream = delogoFilter(stream, commandArguments)
