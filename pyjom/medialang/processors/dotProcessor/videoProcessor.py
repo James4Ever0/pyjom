@@ -57,7 +57,7 @@ def getMergedRects(mConvList, width, height):
     mlist = []
     for i in contours:
         x, y, w, h = cv2.boundingRect(i)
-        mlist.append([x, y, w, h].copy())
+        mlist.append([x, y, w, h].copy()) # x,y,w,h! 
     return mlist
 
 
