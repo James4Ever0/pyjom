@@ -7,7 +7,7 @@ import ffmpeg
 
 def LRTBToDiagonal(lrtb):
     left, right, top, bottom = lrtb
-    
+    x0, y0, x1, y1 = left, top, 
 
 def mergeAlikeRegions(sample, threshold=10):
     prevList = []
