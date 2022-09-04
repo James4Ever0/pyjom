@@ -325,7 +325,8 @@ def ffmpegVideoPreProductionFilter(
         # breakpoint()
         # import copy
         renderVideoStreamList.append(stream)
-    print(renderVideoStreamList)
+    for x i 
+    print(x)
     breakpoint()
     renderVideoStream = ffmpeg.concat(*renderVideoStreamList)
     renderStream = ffmpeg.output(renderVideoStream, renderAudioStream, cachePath)
