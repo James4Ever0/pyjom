@@ -200,22 +200,22 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     assert cachePath is not None
     assert start is not None
     assert end is not None
-    stream = ffmpeg.input(filepath,ss=start, to=end) # from 4 to 10 seconds?
+    # from 4 to 10 seconds?
     defaultWidth, defaultHeight = getVideoWidthHeight(filepath)
     previewRatio = 1
     if preview:
         previewWidth, previewHeight = getVideoPreviewPixels(filepath)
         previewRatio = previewWidth / defaultWidth
-        lambda stream : stream.filter('scale',previewWidth, previewHeight)
+        previewFilter = lambda stream : stream.filter('scale',previewWidth, previewHeight)
     # stream = ffmpeg.hflip(stream)
     # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
     # we just need to crop this.
-    stream = ffmpeg.output(stream, cachePath)
-    ffmpeg.run(stream, overwrite_output=True)
+    # stream = ffmpeg.output(stream, cachePath)
+    # ffmpeg.run(stream, overwrite_output=True)
     
     # procedureList = []
-    stream = ffmpeg.input
-    no_processing = True # change this flag if anything need to change in original video according to filter results.
+    # stream = ffmpeg.input
+    # no_processing = True # change this flag if anything need to change in original video according to filter results.
 
     # logo removal/text removal first, pipCrop last.
     # if overlap, we sort things.
@@ -235,7 +235,11 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
 
     # now we consider the rendering process. how?
     # shall we line it up?
+    if list(renderDict.keys()) == ['empty'] and not preview: # not preview! so we need not to downscale this thing.
+        # nothing happens. just return the original shit.
+        return filepath
     renderList = mergedRangesToSequential(renderDict)
+
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
         if renderCommandString == "empty":
