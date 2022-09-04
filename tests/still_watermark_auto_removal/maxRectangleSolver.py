@@ -73,7 +73,7 @@ for ix0 in range(0, len(xValid)):
                 rectCandidate = [p0,p1,p2,p3]
                 if checkOverlapAgainstRectList(rectCandidate, mRects):
                     break
-        print("APPENDING:")
+                print("APPENDING:",rectCandidate)
                 totalCandidates.append(rectCandidate.copy())
 
 totalCandidates.sort(key = lambda rect: -getRectArea(rect))
