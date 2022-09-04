@@ -77,11 +77,11 @@ for ix0 in range(0, len(xValid)):
                 if area <= bestArea:
                     continue
                 if checkOverlapAgainstRectList(rectCandidate, mRects):
-                    continue
+                    break
                 bestCandidate = rectCandidate.copy()
                 bestArea = area
-                print("UPDATING:",bestCandidate)
-                print('AREA:', bestArea)
+                # print("UPDATING:",bestCandidate)
+                # print('AREA:', bestArea)
                 # totalCandidates.append(rectCandidate.copy())
 
 print('final candidate:', bestCandidate)
