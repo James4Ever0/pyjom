@@ -12,10 +12,13 @@ width, height = canvas
 xValid = [0, width]
 yValid = [0, height]
 
+mRects = []
+
 for x,y, mWidth, mHeight in rectangles:
     xValid.append(x)
     xValid.append(x+mWidth)
     yValid.append(y)
     yValid.append(y+mHeight)
     p0, p1, p2, p3 = (x,y), (x+mWidth,y),(x+mWidth, y+mHeight), (x, y+mHeight)
-    mRectagle = sympy.Polygo
+    mRectagle = sympy.Polygon(p0,p1,p2,p3)
+    mRectag
