@@ -63,7 +63,7 @@ def getRectArea(rect):
     return (maxX-minX)*(maxY-minY)
 
 bestCandidate = None
-
+bestArea = 0
 for ix0 in range(0, len(xValid)):
     for ix1 in range(ix0, len(xValid)):
         for iy0 in range(0, len(yValid)):
@@ -80,7 +80,7 @@ for ix0 in range(0, len(xValid)):
                     continue
                 bestCandidate = rectCandidate.copy()
                 bestArea = area
-                # print("APPENDING:",rectCandidate)
+                print("APPENDING:",rectCandidate)
                 # totalCandidates.append(rectCandidate.copy())
 
 print('final candidate:', bestCandidate)
