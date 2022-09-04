@@ -210,9 +210,11 @@ cnts2, hierachy2 = cv2.findContours(
 myMask2 = np.zeros(shape=[a, b], dtype=np.uint8)
 
 # this is for video watermarks. how about pictures? do we need to cut corners? how to find the freaking watermark again?
+
 for cnt in cnts2:
     x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
     # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
+    rectangles.append((x,y,w,h))
     cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
 print("TOTAL {} CONTOURS.".format(len(cnts2)))  # paint those contours.
 
