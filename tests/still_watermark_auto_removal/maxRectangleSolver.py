@@ -78,6 +78,8 @@ for ix0 in range(0, len(xValid)):
                     continue
                 if checkOverlapAgainstRectList(rectCandidate, mRects):
                     continue
+                bestCandidate = rectCandidate.copy()
+                bestArea = area
                 # print("APPENDING:",rectCandidate)
                 # totalCandidates.append(rectCandidate.copy())
 
