@@ -130,7 +130,7 @@ def rectToXYWH(rect):
 plotRect(ax,0,0,canvasWidth, canvasHeight,'black')
 for rect in mRects:
     x,y, width, height = rectToXYWH(rect)
-plotRect()
+    plotRect(ax,x,y,width,height,'white')
 # display plot
 plt.show()
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
