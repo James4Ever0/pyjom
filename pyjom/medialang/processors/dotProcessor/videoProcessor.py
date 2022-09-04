@@ -237,6 +237,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # shall we line it up?
     renderList = mergedRangesToSequential(renderDict)
     for renderCommandString, commandTimeSpan in renderList:
+        mStart, mEnd = commandTimeSpan
         if renderCommandString == "empty":
             # do nothing here! (no fx.)
     return cachePath
