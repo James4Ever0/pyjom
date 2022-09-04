@@ -258,8 +258,8 @@ def ffmpegVideoPreProductionFilter(
     def delogoFilter(stream, commandParams):
         return stream.filter(
         "delogo",
-        x=commandParams["x"],commandParams['x1']),
-        y=commandParams["y"],commandParams['y1']),
+        x=commandParams["x"],
+        y=commandParams["y"],
         w=commandParams["w"],
         h=commandParams["h"],
     )
@@ -312,7 +312,7 @@ def ffmpegVideoPreProductionFilter(
                 if renderCommand.startswith("delogo"):
                     import parse
                     commandParams = parse.parse(
-                        "delogo_{x0:d}_{y0:d}_{x1:d}_{y1:d}", renderCommand
+                        "delogo_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                     )
                     # we also need to consider if this is necessary.
                     stream = delogoFilter(stream, commandParams)
