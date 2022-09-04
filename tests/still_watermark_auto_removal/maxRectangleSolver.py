@@ -12,7 +12,7 @@ yValid = [0, height]
 
 mRects = []
 
-
+def checkOverlapAss
 
 def checkOverlap(rect0, rect1):
     for point in rect0:
