@@ -66,7 +66,8 @@ def getMergedRects(mConvList, width, height):
         mlist.append([x, y, w, h].copy()) # x,y,w,h! 
     return mlist
 
-def getVideoFrameSampler()
+def getVideoFrameSampler(videoPath, start, end, sample_size=60):
+    
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
