@@ -28,4 +28,5 @@ for renderCommandString, commandTimeSpan in renderList:
     print(renderCommandString, commandTimeSpan)
 print("_"*20)
 
-getContinualMappedNonSympyMergeResult({})
+finalCatsMapped = getContinualMappedNonSympyMergeResult({})
+print(finalCatsMapped)
