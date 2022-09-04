@@ -12,12 +12,15 @@ yValid = [0, height]
 
 mRects = []
 
+def checkContains(rect, point):
+    
+
 def checkOverlapAsymmetric(rect0, rect1):
     for point in rect0:
         if checkContains(rect1, point):
             return True
     return False
-    
+
 def checkOverlap(rect0, rect1):
     if checkOverlapAsymmetric(rect0, rect1): return True
     if checkOverlapAsymmetric(rect1, rect0): return True
