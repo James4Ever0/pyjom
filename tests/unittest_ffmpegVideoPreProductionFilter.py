@@ -9,6 +9,7 @@ videoPaths = {
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 
+
 test_ffmpeg = True
 test_text_detector = False
 
