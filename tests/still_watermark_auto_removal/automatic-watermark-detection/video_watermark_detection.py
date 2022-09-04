@@ -10,6 +10,7 @@ videoPaths = [
 ]  # his watermark. scorpa.
 video_path = videoPaths[2]
 # will change this shit.
+# shall we downscale this thing?
 
 # video = cv2.
 # video_path = ""
