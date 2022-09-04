@@ -275,7 +275,8 @@ def ffmpegVideoPreProductionFilter(
         mDict.update(detectTextRegionOverTime(filepath, start, end))
         # pass
     if "logoRemoval" in filters:
-        pass
+        detectStationaryLogoOverTime(filepath, start, end) # output logo mask.
+        # pass
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
         pass
