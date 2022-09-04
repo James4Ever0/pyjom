@@ -235,7 +235,8 @@ def ffmpegVideoPreProductionFilter(
     if preview:
         previewWidth, previewHeight = getVideoPreviewPixels(filepath)
         previewRatio = previewWidth / defaultWidth
-        previewFilter = lambda stream: stream.filter(
+        def previewFilter(stream):
+            return stream.filter(
             "scale",
             "ceil((in_w*{})/4)*4".format(previewRatio),
             "ceil((in_h*{})/4)*4".format(previewRatio),
@@ -254,7 +255,8 @@ def ffmpegVideoPreProductionFilter(
     # if overlap, we sort things.
     # if not, no sorting is needed.
     mDict = {}
-    delogoFilter = lambda stream, commandParams: stream.filter(
+    def delogoFilter(stream, commandParams):
+        return stream.filter(
         "delogo",
         x=commandParams["x0"],
         y=commandParams["y0"],
