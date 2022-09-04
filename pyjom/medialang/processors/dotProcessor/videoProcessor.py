@@ -303,6 +303,7 @@ def ffmpegVideoPreProductionFilter(
                 key=lambda command: commandValueMap[command.split("_")[0]]
             )
             for renderCommand in renderCommands:
+                print(renderCommand)
                 if renderCommand == "empty":
                     continue
                 if renderCommand.startswith("delogo"):
