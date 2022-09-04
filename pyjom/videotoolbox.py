@@ -234,7 +234,7 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     return previewWidth, previewHeight
 
 def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
-    imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size, iterate=False)
+    imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size)
     # what is this src?
     # from src import *
 
