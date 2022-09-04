@@ -2,6 +2,16 @@
 import random
 ## we import our version of cv2 here? or uninstall and reinstall opencv-python with custom things?
 
+import pathlib
+import sys
+site_path = pathlib.Path("/usr/local/lib/python3.9/site-packages")
+cv2_libs_dir = site_path / 'cv2' / f'python-{sys.version_info.major}.{sys.version_info.minor}'
+print(cv2_libs_dir)
+cv2_libs = sorted(cv2_libs_dir.glob("*.so"))
+if len(cv2_libs) == 1:
+    print("INSERTING:",cv2_libs[0].parent)
+    sys.path.insert(1, str(cv2_libs[0].parent))
+
 import cv2
 import progressbar as pb
 
