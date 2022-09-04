@@ -258,10 +258,10 @@ def ffmpegVideoPreProductionFilter(
     def delogoFilter(stream, commandParams):
         return stream.filter(
         "delogo",
-        x=commandParams["x0"],
-        y=commandParams["y0"],commandParams['y1'],
-        w=commandParams["x1"] - commandParams["x0"],
-        h=commandParams["y1"] - commandParams["y0"],
+        x=commandParams["x0"],commandParams['x1']),
+        y=commandParams["y0"],commandParams['y1']),
+        w=commandParams["x1"] - commandParams["x0"]),
+        h=commandParams["y1"] - commandParams["y0"]),
     )
     if "textRemoval" in filters:
         # process the video, during that duration. fast seek avaliable?
