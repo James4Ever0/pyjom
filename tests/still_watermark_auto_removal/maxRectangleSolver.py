@@ -45,6 +45,12 @@ def purify(xValid):
     xValid.sort()
     return xValid
 
+def checkOverlapAgainstRectList(rect, rectList):
+    for testRect in rectList:
+        if checkOverlap(rect, testRect):
+            return True
+    return False
+
 xValid = purify(xValid)
 yValid = purify(yValid)
 
@@ -57,3 +63,5 @@ for ix0 in range(0, len(xValid)):
                 mWidth, mHeight = x1-x, y1-y
                 p0,p1,p2,p3 = (x,y), (x+mWidth,y),(x+mWidth, y+mHeight), (x, y+mHeight)
                 rectCandidate = [p0,p1,p2,p3]
+                if checkOverlapAgainstRectList(rectCandidate, mRects):
+                    
