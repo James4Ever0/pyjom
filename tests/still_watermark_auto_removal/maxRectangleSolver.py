@@ -17,3 +17,4 @@ for x,y, mWidth, mHeight in rectangles:
     xValid.append(x+mWidth)
     yValid.append(y)
     yValid.append(y+mHeight)
+    p0, p1, p2, p3 = 
