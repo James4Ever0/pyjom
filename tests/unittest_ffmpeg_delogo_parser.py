@@ -31,6 +31,8 @@ for command in commandString.split("|"):
         w=commandArguments["w"]
         h=commandArguments["h"]
         if x>=width or y>=height: continue
+        if x== 0: x=1
+        if 
         if x+w >=width:
             w = width-x-2
             if w <=0: continue
