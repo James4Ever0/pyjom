@@ -5,10 +5,12 @@ from pyjom.mathlib import *
 import tempfile
 import ffmpeg
 
+
 def LRTBToDiagonal(lrtb):
     left, right, top, bottom = lrtb
     x0, y0, x1, y1 = left, top, right, bottom
-    return (x0,y0,x1,y1)
+    return (x0, y0, x1, y1)
+
 
 def mergeAlikeRegions(sample, threshold=10):
     prevList = []
@@ -63,8 +65,9 @@ def getMergedRects(mConvList, width, height):
     mlist = []
     for i in contours:
         x, y, w, h = cv2.boundingRect(i)
-        mlist.append([x, y, w, h].copy()) # x,y,w,h! 
+        mlist.append([x, y, w, h].copy())  # x,y,w,h!
     return mlist
+
 
 def getVideoFrameSampler(videoPath, start, end, sample_size=60):
     cap = cv2.VideoCapture(videoPath)
@@ -73,10 +76,14 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60):
     startFrame = int(start * fps)
     stopFrame = int(end * fps)
     import progressbar
-    totalPopulation = list(range(startFrame, min(stopFrame, total_frames)-1))
-    samplePopulation = random.sample(totalPopulation, k=min(sample_size, len(totalPopulation)))
+
+    totalPopulation = list(range(startFrame, min(stopFrame, total_frames) - 1))
+    samplePopulation = random.sample(
+        totalPopulation, k=min(sample_size, len(totalPopulation))
+    )
+    samplePopulation.sort()
     for sampleIndex in progressbar.progressbar(samplePopulation):
-            cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
+        cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
 
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
@@ -142,8 +149,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate=10, mergeThresho
         # print("frame number:",index)
         # for boundingBox in detection[0]:
         #     print(boundingBox) # left, right, top, bottom
-        
-        detectionList.append([ LRTBToDiagonal(x) for x in detection[0]].copy())
+
+        detectionList.append([LRTBToDiagonal(x) for x in detection[0]].copy())
         # print(detection)
         # breakpoint()
     del reader  # can it really free memory?
@@ -173,7 +180,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate=10, mergeThresho
     # breakpoint()
     # why the fuck we have np.float64 as elem in mRangesDict's key(tuple)?
     newMRangesDict = {
-        "delogo_{}_{}_{}_{}".format(*key): mRangesDict[key] # x,y,w,h
+        "delogo_{}_{}_{}_{}".format(*key): mRangesDict[key]  # x,y,w,h
         for key in mRangesDict.keys()
     }
     finalCatsMapped = getContinualMappedNonSympyMergeResult(
@@ -254,12 +261,14 @@ def ffmpegVideoPreProductionFilter(
     if preview:
         previewWidth, previewHeight = getVideoPreviewPixels(filepath)
         previewRatio = previewWidth / defaultWidth
+
         def previewFilter(stream):
             return stream.filter(
-            "scale",
-            "ceil((in_w*{})/4)*4".format(previewRatio),
-            "ceil((in_h*{})/4)*4".format(previewRatio),
-        )
+                "scale",
+                "ceil((in_w*{})/4)*4".format(previewRatio),
+                "ceil((in_h*{})/4)*4".format(previewRatio),
+            )
+
     # stream = ffmpeg.hflip(stream)
     # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
     # we just need to crop this.
@@ -274,20 +283,22 @@ def ffmpegVideoPreProductionFilter(
     # if overlap, we sort things.
     # if not, no sorting is needed.
     mDict = {}
+
     def delogoFilter(stream, commandParams):
         return stream.filter(
-        "delogo",
-        x=commandParams["x"],
-        y=commandParams["y"],
-        w=commandParams["w"],
-        h=commandParams["h"],
-    )
+            "delogo",
+            x=commandParams["x"],
+            y=commandParams["y"],
+            w=commandParams["w"],
+            h=commandParams["h"],
+        )
+
     if "textRemoval" in filters:
         # process the video, during that duration. fast seek avaliable?
         mDict.update(detectTextRegionOverTime(filepath, start, end))
         # pass
     if "logoRemoval" in filters:
-        detectStationaryLogoOverTime(filepath, start, end) # output logo mask. or not.
+        detectStationaryLogoOverTime(filepath, start, end)  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
@@ -316,7 +327,9 @@ def ffmpegVideoPreProductionFilter(
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
         # print("CLIP TIMESPAN:", mStart, mEnd)
-        stream = ffmpeg.input(filepath, ss=mStart, to=mEnd).video # no audio? seriously?
+        stream = ffmpeg.input(
+            filepath, ss=mStart, to=mEnd
+        ).video  # no audio? seriously?
         if renderCommandString == "empty":
             pass  # do not continue since maybe we have preview filter below?
             # still need to append shit below. we cannot skip this loop.
@@ -333,6 +346,7 @@ def ffmpegVideoPreProductionFilter(
                     continue
                 if renderCommand.startswith("delogo"):
                     import parse
+
                     commandParams = parse.parse(
                         "delogo_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                     )
