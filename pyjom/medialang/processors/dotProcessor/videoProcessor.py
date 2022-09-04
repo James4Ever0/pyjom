@@ -221,7 +221,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
     # if overlap, we sort things.
     # if not, no sorting is needed.
     mDict = {}
-    delogoFilter = 
+    delogoFilter = lambda stream, commandParams: stream.filter("delogo", x=, y=, w=, h=)
     if "textRemoval" in filters:
         # process the video, during that duration. fast seek avaliable?
         mDict.update(detectTextRegionOverTime(filepath, start, end))
