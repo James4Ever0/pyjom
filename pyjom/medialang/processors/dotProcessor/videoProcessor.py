@@ -49,6 +49,7 @@ def getMergedRects(mConvList, width, height):
             p1 = (x1, y1)
             cv2.rectangle(blackPicture, p0, p1, 255, -1)
     # newPicture = getBlackPicture(width, height)
+    
 
     contours = cv2.findContours(
         blackPicture, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
