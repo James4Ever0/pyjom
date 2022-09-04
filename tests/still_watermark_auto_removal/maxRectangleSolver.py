@@ -14,6 +14,11 @@ mRects = []
 
 
 
+def checkOverlap(rect0, rect1):
+    for point in rect0:
+        if checkContains(rect1, point):
+            return True
+
 for x,y, mWidth, mHeight in rectangles:
     xValid.append(x)
     xValid.append(x+mWidth)
