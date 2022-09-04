@@ -318,7 +318,8 @@ def ffmpegVideoPreProductionFilter(
                     mX1, mY1 = mX+mW, mY+mH
                     if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
                         print("ERROR:")
-                        mX1,defaultWidth,mY1,defaultHeight
+                        print(mX1,defaultWidth,mY1,defaultHeight)
+                        breakpo
                     # we also need to consider if this is necessary.
                     stream = delogoFilter(stream, commandParams)
 
