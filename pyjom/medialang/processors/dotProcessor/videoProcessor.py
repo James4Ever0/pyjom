@@ -77,7 +77,8 @@ def ffmpegVideoPreProductionFilter(
         mDict.update(detectTextRegionOverTime(filepath, start, end))
         # pass
     if "logoRemoval" in filters:
-        detectStationaryLogoOverTime(filepath, start, end)  # output logo mask. or not.
+        # dual safe? no?
+        mDict.update(detectStationaryLogoOverTime(filepath, start, end))  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
