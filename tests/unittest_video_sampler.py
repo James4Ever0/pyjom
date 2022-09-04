@@ -1,5 +1,5 @@
 from test_commons import *
 from pyjom.videotoolbox import getVideoFrameSampler
 
-videoPath = ""
+videoPath = "/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4"
 
