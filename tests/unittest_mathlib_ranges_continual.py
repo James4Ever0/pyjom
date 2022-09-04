@@ -26,3 +26,6 @@ print("_"*20)
 renderList = mergedRangesToSequential(result_3)
 for renderCommandString, commandTimeSpan in renderList:
     print(renderCommandString, commandTimeSpan)
+print("_"*20)
+
+getContinualMappedNonSympyMergeResult({})
