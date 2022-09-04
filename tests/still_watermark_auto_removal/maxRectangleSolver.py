@@ -86,6 +86,10 @@ for ix0 in range(0, len(xValid)):
 
 print('final candidate:', bestCandidate)
 # plot this?
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+
+
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
 # for rect in totalCandidates[:5]:
 #     print(rect)
