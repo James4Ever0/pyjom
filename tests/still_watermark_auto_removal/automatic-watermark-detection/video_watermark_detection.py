@@ -211,7 +211,7 @@ myMask2 = np.zeros(shape=[a, b], dtype=np.uint8)
 
 # this is for video watermarks. how about pictures? do we need to cut corners? how to find the freaking watermark again?
 
-
+height, width = myMask2.shape[:2]
 rectangles = []
 
 for cnt in cnts2:
@@ -219,6 +219,12 @@ for cnt in cnts2:
     # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
     rectangles.append((x,y,w,h))
     cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
+
+import json
+data = {"canvas":(width, height), 'rectangles':rectangles}
+dataString = json.dumps(data)
+with open("test.json", 'w+') as f: f.write(dataString)
+
 print("TOTAL {} CONTOURS.".format(len(cnts2)))  # paint those contours.
 
 # cv2.imshow("IMAGE",thresh_output)
