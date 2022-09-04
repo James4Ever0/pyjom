@@ -384,13 +384,22 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     mFinalDelogoFilters = []
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
-        mFinalDelogoFilters.append("delogo_{}_{}_{}_{}".format(x,y,w,h))
+        delogoCommand = "delogo_{}_{}_{}_{}".format(x,y,w,h)
+        # print(delogoCommand)
+        # print('width:{} height:{}'.format(b,a))
+        # if b< x+w or a<y+h:
+        #     print("ERROR!")
+        #     breakpoint()
+        mFinalDelogoFilters.append(delogoCommand)
         # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
         # cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
     print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
+    # breakpoint()
     # get the final dictionary
     if len(mFinalDelogoFilters) == 0:
         return {}
     else:
         delogoCommandSet= "|".join(mFinalDelogoFilters)
+        # print(delogoCommandSet)
+        # breakpoint()
         return {delogoCommandSet: [(start, end)]}
