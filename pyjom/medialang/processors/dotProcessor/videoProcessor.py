@@ -321,7 +321,7 @@ def ffmpegVideoPreProductionFilter(
         # we need to concat these shit!
         import copy
         renderVideoStreamList.append(copy.copy(stream))
-
+    renderVideoStream = 
     return cachePath
 
 
