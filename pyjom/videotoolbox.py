@@ -83,8 +83,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60):
     samplePopulation.sort()
     # if not iterate:
     # print("NOT ITERATING")
-    imageList = []
-    def iterat
+    def nonIterator():
         for sampleIndex in progressbar.progressbar(samplePopulation):
             cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
             success, image = cap.read()
