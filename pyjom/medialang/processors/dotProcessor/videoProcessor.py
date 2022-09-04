@@ -242,6 +242,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
 
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
+        stream = ffmpeg.input(filepath,ss=start, to=end)
         if renderCommandString == "empty":
             # do nothing here! (no fx.)
     return cachePath
