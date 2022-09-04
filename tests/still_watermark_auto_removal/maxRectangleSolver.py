@@ -74,3 +74,5 @@ for ix0 in range(0, len(xValid)):
                 if checkOverlapAgainstRectList(rectCandidate, mRects):
                     break
                 totalCandidates.append(rectCandidate.copy())
+
+totalCandidates.sort(key = lambda rect: )
