@@ -18,7 +18,7 @@ def checkContains(rect, point):
     maxX, minX = max(xPoints), min(xPoints)
     maxY, minY = max(yPoints), min(yPoints)
     x,y = point
-    if x>minX and x<maxX and y>minY and y<maxY 
+    return x>minX and x<maxX and y>minY and y<maxY
 
 def checkOverlapAsymmetric(rect0, rect1):
     for point in rect0:
@@ -30,7 +30,6 @@ def checkOverlap(rect0, rect1):
     if checkOverlapAsymmetric(rect0, rect1): return True
     if checkOverlapAsymmetric(rect1, rect0): return True
     return False
-
 
 for x,y, mWidth, mHeight in rectangles:
     xValid.append(x)
