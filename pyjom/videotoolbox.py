@@ -276,6 +276,38 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
 
         return (Wm_x, Wm_y, gradx, grady)
     ###########
+
+def poisson_reconstruct(gradx, grady, kernel_size=KERNEL_SIZE, num_iters=100, h=0.1, 
+		boundary_image=None, boundary_zero=True):
+	"""
+	Iterative algorithm for Poisson reconstruction. 
+	Given the gradx and grady values, find laplacian, and solve for image
+	Also return the squared difference of every step.
+	h = convergence rate
+	"""
+	fxx = cv2.Sobel(gradx, cv2.CV_64F, 1, 0, ksize=kernel_size)
+	fyy = cv2.Sobel(grady, cv2.CV_64F, 0, 1, ksize=kernel_size)
+	laplacian = fxx + fyy
+	m,n,p = laplacian.shape
+
+	if boundary_zero == True:
+		est = np.zeros(laplacian.shape)
+	else:
+		assert(boundary_image is not None)
+		assert(boundary_image.shape == laplacian.shape)
+		est = boundary_image.copy()
+
+	est[1:-1, 1:-1, :] = np.random.random((m-2, n-2, p))
+	loss = []
+
+	for i in range(num_iters):
+		old_est = est.copy()
+		est[1:-1, 1:-1, :] = 0.25*(est[0:-2, 1:-1, :] + est[1:-1, 0:-2, :] + est[2:, 1:-1, :] + est[1:-1, 2:, :] - h*h*laplacian[1:-1, 1:-1, :])
+		error = np.sum(np.square(est-old_est))
+		loss.append(error)
+
+	return (est)
+
     # you can do this later, will you?
     gx, gy, gxlist, gylist = estimate_watermark_imgSet(imageSet)
     # print(len(imageSet))
