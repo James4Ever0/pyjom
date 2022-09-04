@@ -259,7 +259,7 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
                     continue
                 if renderCommand.startswith("delogo"):
                     import parse
-                    commandParams = parse.parse('delogo_{x0}_{}_{}_{}')
+                    commandParams = parse.parse('delogo_{x0}_{y0}_{x1}_{y1}', )
 
         if preview: # final filter? need us to crop this?
             stream = previewFilter(stream)
