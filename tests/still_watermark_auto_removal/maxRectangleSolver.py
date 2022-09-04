@@ -75,4 +75,5 @@ for ix0 in range(0, len(xValid)):
                     break
                 totalCandidates.append(rectCandidate.copy())
 
-totalCandidates.sort(key = lambda rect: )
+totalCandidates.sort(key = lambda rect: -getRectArea(rect))
+for 
