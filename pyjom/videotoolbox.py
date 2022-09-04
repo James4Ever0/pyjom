@@ -238,7 +238,46 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
 
 def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size, iterate=False)
-    from src import *
+    # what is this src?
+    # from src import *
+
+    ###########
+    import sys, os
+    import cv2
+    import numpy as np
+    import warnings
+    from matplotlib import pyplot as plt
+    import math
+    import numpy
+    import scipy, scipy.fftpack
+
+    # Variables
+    KERNEL_SIZE = 3
+
+    def estimate_watermark_imgSet(imgset):
+        """
+        Given a folder, estimate the watermark (grad(W) = median(grad(J)))
+        Also, give the list of gradients, so that further processing can be done on it
+        """
+        images = imgset
+
+        # Compute gradients
+        print("Computing gradients.")
+        gradx = list(map(lambda x: cv2.Sobel(x, cv2.CV_64F, 1, 0, ksize=KERNEL_SIZE), images)) # this is py3 my friend?
+        grady = list(map(lambda x: cv2.Sobel(x, cv2.CV_64F, 0, 1, ksize=KERNEL_SIZE), images)) # this is py3 my friend?
+
+        # Compute median of grads
+        print("Computing median gradients.")
+        # print(gradx,grady)
+        # breakpoint()
+        Wm_x = np.median(np.array(gradx), axis=0)
+        Wm_y = np.median(np.array(grady), axis=0)
+        # slow as hell?
+
+        return (Wm_x, Wm_y, gradx, grady)
+    ###########
+    # you can do this later, will you?
     gx, gy, gxlist, gylist = estimate_watermark_imgSet(imageSet)
     # print(len(imageSet))
     cropped_gx, cropped_gy, watermark_location = crop_watermark(gx, gy,location=True)
+    watermark_location = 
