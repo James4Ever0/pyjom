@@ -62,6 +62,8 @@ def getRectArea(rect):
     maxY, minY = max(yPoints), min(yPoints)
     return (maxX-minX)*(maxY-minY)
 
+bestCandidate = None
+
 for ix0 in range(0, len(xValid)):
     for ix1 in range(ix0, len(xValid)):
         for iy0 in range(0, len(yValid)):
@@ -79,7 +81,7 @@ for ix0 in range(0, len(xValid)):
                 # print("APPENDING:",rectCandidate)
                 # totalCandidates.append(rectCandidate.copy())
 
-print('final candidate:', best)
+print('final candidate:', bestCandidate)
 # totalCandidates.sort(key = lambda rect: -getRectArea(rect))
 # for rect in totalCandidates[:5]:
 #     print(rect)
