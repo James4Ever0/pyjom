@@ -280,4 +280,7 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     gx, gy, gxlist, gylist = estimate_watermark_imgSet(imageSet)
     # print(len(imageSet))
     cropped_gx, cropped_gy, watermark_location = crop_watermark(gx, gy,location=True)
-    watermark_location = 
+
+    W_m = poisson_reconstruct(cropped_gx, cropped_gy)
+
+    W_full = poisson_reconstruct(gx, gy)
