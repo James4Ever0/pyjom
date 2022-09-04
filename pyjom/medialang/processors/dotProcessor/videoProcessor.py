@@ -323,7 +323,7 @@ def ffmpegVideoPreProductionFilter(
         renderVideoStreamList.append(copy.copy(stream))
     renderVideoStream = ffmpeg.concat(*renderVideoStreamList)
     renderStream = ffmpeg.output(renderVideoStream, renderAudioStream, cachePath)
-    renderStream.
+    renderStream.run(overwrite_output=True)
     return cachePath
 
 
