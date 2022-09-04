@@ -60,7 +60,7 @@ def getRectArea(rect):
     yPoints = [p[1] for p in rect]
     maxX, minX = max(xPoints), min(xPoints)
     maxY, minY = max(yPoints), min(yPoints)
-    return (max)
+    return (maxX-minX)*(maxY-minY)
 
 for ix0 in range(0, len(xValid)):
     for ix1 in range(ix0, len(xValid)):
