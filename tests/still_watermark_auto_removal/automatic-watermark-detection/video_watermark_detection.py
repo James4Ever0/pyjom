@@ -211,6 +211,9 @@ myMask2 = np.zeros(shape=[a, b], dtype=np.uint8)
 
 # this is for video watermarks. how about pictures? do we need to cut corners? how to find the freaking watermark again?
 
+
+rectangles = []
+
 for cnt in cnts2:
     x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
     # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
