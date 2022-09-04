@@ -18,4 +18,4 @@ for x,y, mWidth, mHeight in rectangles:
     yValid.append(y)
     yValid.append(y+mHeight)
     p0, p1, p2, p3 = (x,y), (x+mWidth,y),(x+mWidth, y+mHeight), (x, y+mHeight)
-    
+    mRectagle = sympy.Polygo
