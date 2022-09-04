@@ -314,7 +314,9 @@ def ffmpegVideoPreProductionFilter(
                     commandParams = parse.parse(
                         "delogo_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                     )
-                    mX, mY, mW
+                    mX, mY, mW, mH = commandParams['x'], commandParams['y'], commandParams['w'], commandParams['h']
+                    mX1, mY1 = mX+mW, mY+mH
+                    if mX1>defaultWidth or mY1>defaultHeight:
                     # we also need to consider if this is necessary.
                     stream = delogoFilter(stream, commandParams)
 
