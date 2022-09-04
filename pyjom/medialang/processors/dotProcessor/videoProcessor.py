@@ -249,9 +249,10 @@ def ffmpegVideoPreProductionFilter(filepath, start=None, end=None, cachePath=Non
         else:
             renderCommands = renderCommandString.split("|")
             # sort all commands?
+            renderCommands = 
             for renderCommand in renderCommands:
                 if renderCommand.startswith("delogo"):
-                    
+
         if preview: # final filter? need us to crop this?
             stream = previewFilter(stream)
             # do nothing here! (no fx.)
