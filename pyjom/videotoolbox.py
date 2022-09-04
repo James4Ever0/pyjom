@@ -236,3 +236,4 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     )
     return previewWidth, previewHeight
 
+def detectStationaryLogoOverTime():
