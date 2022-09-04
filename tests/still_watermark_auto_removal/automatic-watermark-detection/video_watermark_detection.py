@@ -3,7 +3,7 @@ import random
 import cv2
 import progressbar as pb
 
-videoPaths = ["/media/root/help/pyjom/tests/still_watermark_auto_removal/kunfu_cat.mp4","/media/root/help/pyjom/tests/bilibili_practices/bilibili_video_translate/japan_day.webm",""] # his watermark. scorpa.
+videoPaths = ["/media/root/help/pyjom/tests/still_watermark_auto_removal/kunfu_cat.mp4","/media/root/help/pyjom/tests/bilibili_practices/bilibili_video_translate/japan_day.webm","/media/root/help/pyjom/samples/video/LiGHT3ZCi.mp4"] # his watermark. scorpa.
 video_path = videoPaths[2]
 # will change this shit.
 
