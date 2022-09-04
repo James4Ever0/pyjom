@@ -81,10 +81,10 @@ def getRectArea(rect):
 
 bestCandidate = None
 bestArea = 0
-for ix0 in range(0, len(xValid)):
-    for ix1 in range(ix0, len(xValid)):
-        for iy0 in range(0, len(yValid)):
-            for iy1 in range(iy0, len(yValid)):
+for ix0 in range(0, len(xValid)-1):
+    for ix1 in range(ix0+1, len(xValid)):
+        for iy0 in range(0, len(yValid)-1):
+            for iy1 in range(iy0+1, len(yValid)):
                 x0, x1, y0, y1 = xValid[ix0], xValid[ix1], yValid[iy0], yValid[iy1]
                 x, y = x0, y0
                 mWidth, mHeight = x1 - x, y1 - y
