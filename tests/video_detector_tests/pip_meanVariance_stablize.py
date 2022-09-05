@@ -183,7 +183,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
                     newSignal[start : end + 1] = 1
             return newSignal, newSignalRanges
 
-        xLeftPointsSignalFiltered, newSignalRanges = signalFilter(xLeftPointsSignal)
+        xLeftPointsSignalFiltered, newSignalRanges = signalFilter(xLeftPointsSignal, threshold = signalFilterThreshold)
         xLeftPointsSignalFiltered *= 255
 
         mShrink = 2
