@@ -14,7 +14,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
     data = np.array(data)
 
-    def getMerged(mArray, threshold = 35):
+    def getAlikeMerged(mArray, threshold = 35):
         for index, elem in enumerate(mArray[:-1]):
             nextElem = mArray[index+1]
             if abs(nextElem - elem) < threshold:
@@ -26,10 +26,10 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             mKey = "{}:{}".format(label, int(elem))
             resultDict.update({mKey:resultDict.get(mKey,[])+[(index, index+1)]})
         return resultDict
-    xLeftPoints = getMerged(data[:,0,0])
-    yLeftPoints = getMerged(data[:,0,1])
-    xRightPoints = getMerged(data[:,1,0])
-    yRightPoints = getMerged(data[:,1,1])
+    xLeftPoints = getAlikeMerged(data[:,0,0])
+    yLeftPoints = getAlikeMerged(data[:,0,1])
+    xRightPoints = getAlikeMerged(data[:,1,0])
+    yRightPoints = getAlikeMerged(data[:,1,1])
 
 
     def Kalman1D(observations,damping=0.2):
