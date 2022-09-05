@@ -68,8 +68,9 @@ while True:
                     max_x = max(max_x, x+w)
                     max_y = max(max_y, y+h)
                     # only create one single bounding box.
-            cv2.rectangle(frame, (min_x, min_y),
-                          (max_x, max_y), (255, 0, 0), 2)
+            # cv2.rectangle(frame, (min_x, min_y),
+            #               (max_x, max_y), (255, 0, 0), 2)
+            
             # how to stablize this shit?
         # cv2.imshow('video', frame)
         # cv2.imshow('img_output', img_output)
