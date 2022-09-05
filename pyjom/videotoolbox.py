@@ -246,7 +246,7 @@ def getVideoFrameRate(videoPath):
     from MediaInfo import MediaInfo
     info = MediaInfo(filename=videoPath)
     infoData = info.getInfo()
-    return infoData['videoFrameRate']
+    return float(infoData['videoFrameRate'])
 
 def getVideoWidthHeight(videoPath):
     from MediaInfo import MediaInfo
