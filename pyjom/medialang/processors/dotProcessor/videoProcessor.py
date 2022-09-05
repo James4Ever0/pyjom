@@ -190,7 +190,8 @@ def ffmpegVideoPreProductionFilter(
                         # we also need to consider if this is necessary.
                         if keyword == 'delogo':
                             stream = delogoFilter(stream, commandParams)
-                        elif keyword == 'crop'
+                        elif keyword == 'crop':
+                            stream = cropFilter(stream, commandParams)
 
         if preview:  # final filter? need us to crop this?
             stream = previewFilter(stream)
