@@ -31,7 +31,7 @@ algorithm = bgs.WeightedMovingVariance()
 # average shit.
 # video_file = "../../samples/video/LiEIfnsvn.mp4"
 # select our 娜姐驾到
-video_file = "../../"
+video_file = "../../samples/video/LiGlReJ4i.mp4"
 # video_file = "../../samples/video/LiEIfnsvn.mp4"
 
 # denoising, moving average, sampler and  similar merge.
