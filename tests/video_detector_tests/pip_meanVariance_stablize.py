@@ -58,15 +58,16 @@ from sklearn.linear_model import LinearRegression
 
 for start, end in xLeftSpans:
     spanLength = end-start
-    kalmanSegment = xLeftPointsFiltered[start:end+1].reshape(-1,1)
-    model = LinearRegression()
-    X,y = kalmanSegment,np.linspace(0, end-start,end-start+1)
-    model.fit(X,y)
-    coef = model.coef_[0]
+
     # print(start, end, coef)
     if spanLength > spanLengthMinThreshold:
+        kalmanSegment = xLeftPointsFiltered[start:end+1].reshape(-1,1)
+        model = LinearRegression()
+        X,y = kalmanSegment,np.linspace(0, end-start,end-start+1)
+        model.fit(X,y)
+        coef = model.coef_[0]
         if abs(coef) < kalmanMaxSlope:
-            
+
 
 exit()
 # print(xLeftPoints)
