@@ -452,6 +452,8 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
     else:
         videoFrameRate = getVideoFrameRate(videoPath)
         totalFramesInSegment = (end-start)*videoFrameRate
+        minSampleSize = 80
+        min_sample_rate = 
         estimated_sample_rate = 20
         sample_rate = max(1,estimated_sample_rate)
     iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
