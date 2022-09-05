@@ -33,7 +33,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         mArray = get1DArrayEMA(mArray)
         mArray = getAlikeValueMerged(mArray, threshold=threshold)
         return listToRangedDictWithLabel(mArray, label)
-    threshold = 
+    threshold = max(defaultWidth, defaultHeight)
     xLeftPoints = pointsToRangedDictWithLabel(data[:, 0, 0], "xleft", threshold = threshold)
     yLeftPoints = pointsToRangedDictWithLabel(data[:, 0, 1], "yleft", threshold = threshold)
     xRightPoints = pointsToRangedDictWithLabel(data[:, 1, 0], "xright", threshold = threshold)
