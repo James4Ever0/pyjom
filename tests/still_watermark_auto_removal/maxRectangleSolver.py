@@ -48,17 +48,9 @@ def do_overlap(l1, r1, l2, r2):
     if l1.x == r1.x or l1.y == r1.y or r2.x == l2.x or l2.y == r2.y:
         return False
     # If one rectangle is on left side of other
-    interval_x0 = sympy.Interval(l1.x, r1.x,left_open=True, right_open=True)
-    interval_x1 = sympy.Interval(l2.x, r2.x,left_open=True, right_open=True)
-    intersection_x = interval_x0.intersect(interval_x1)
 
-    interval_y0 = sympy.Interval(l1.y, r1.y,left_open=True, right_open=True)
-    interval_y1 = sympy.Interval(l2.y, r2.y,left_open=True, right_open=True)
-    intersection_y = interval_y0.intersect(interval_y1)
-    
-    if type(intersection_x) != sympy.sets.sets.EmptySet and type(intersection_y) != sympy.sets.sets.EmptySet:
-        return True
-    return False
+        return False
+    return True
 
 def checkOverlap(rect0, rect1):
     return do_overlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
