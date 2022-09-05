@@ -140,6 +140,8 @@ yRightPoints = data[:,1,1]
 
 mPoints = [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]
 
+for mPoint in mPoints:
+
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
