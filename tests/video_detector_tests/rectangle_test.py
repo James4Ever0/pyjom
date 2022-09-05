@@ -88,7 +88,7 @@ for _ in progressbar.progressbar(range(total_frames)):
         # cv2.waitKey(1000)
         break
 
-# cv2.destroyAllWindows()
+cv2.destroyAllWindows()
 
 
 # we process this shit elsewhere.
