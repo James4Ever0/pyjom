@@ -101,7 +101,7 @@ newTargetSequential = mergedRangesToSequential(newTarget)
 newTargetSequentialUpdated = []
 
 if (newTargetSequentialUpdated) == 1:
-    if newTargetSequentialUpdated
+    if newTargetSequentialUpdated[0][0] == 'empty'
 
 for index, elem in newTargetSequential:
     commandString, commandTimeSpan = elem
