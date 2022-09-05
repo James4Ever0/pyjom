@@ -64,12 +64,15 @@ xLeftPointsSignalFiltered, newSignalRanges= signalFilter(xLeftPointsSignal)
 xLeftPointsSignalFiltered *=255
 
 mShrink = 2
-from sklearn.
+from sklearn.linear_models import LinearRegression
+
 for start, end in newSignalRanges:
     # could we shrink the boundaries?
+    model = LinearRegression()
     mStart, mEnd = start+mShrink,end-mShrink
     if mEnd <= mStart: continue
-    std = np.std(xLeftPointsFiltered[mStart: mEnd])
+    sample = xLeftPointsFiltered[mStart: mEnd]
+    std = np.std(sample)
     print((start, end), std)
 
 import matplotlib.pyplot as plt
