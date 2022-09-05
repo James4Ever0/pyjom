@@ -75,6 +75,7 @@ for start, end in xLeftSpans:
 
 # exit()
 # print(xLeftPoints)
+
 import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
