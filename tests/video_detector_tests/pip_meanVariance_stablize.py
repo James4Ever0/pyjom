@@ -168,7 +168,7 @@ else:
         label = labels[index]
         newElem = {"{}:{}".format(label,key):elem[key] for key in elem.keys()}
         commandDict.update(newElem)
-        common_types
+    commandDict = get
 
 # import matplotlib.pyplot as plt
 
