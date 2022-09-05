@@ -428,5 +428,4 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
         # breakpoint()
         return {delogoCommandSet: [(start, end)]}
     
-def detectPipRegionOverTime(videoPath, start, end): # shall be some parameters here.
-    
+def detectPipRegionOverTime(videoPath, start, end, method = "skim"): # shall be some parameters here.
