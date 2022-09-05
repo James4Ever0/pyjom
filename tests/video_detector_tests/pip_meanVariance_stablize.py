@@ -187,7 +187,10 @@ else:
                 if nextItemCommand != currentItemCommand:
                     commandDictSequential[i][0] = nextItemCommand
                     noAlter=False
-            
+                        if currentItemDuration < itemDurationThreshold:
+            if nextItemCommand != currentItemCommand:
+                commandDictSequential[i][0] = nextItemCommand
+                noAlter=False
 
 
 # import matplotlib.pyplot as plt
