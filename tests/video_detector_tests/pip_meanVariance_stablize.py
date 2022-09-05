@@ -1,3 +1,4 @@
+from distutils.cmd import Command
 import json
 from mathlib import *
 
@@ -100,7 +101,7 @@ newTargetSequential = mergedRangesToSequential(newTarget)
 newTargetSequentialUpdated = []
 
 for index, elem in newTargetSequential:
-    mType = elem[]
+    commadStri Command
 
 
 import matplotlib.pyplot as plt
