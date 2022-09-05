@@ -22,13 +22,27 @@ def checkContains(rect, point):
     return x > minX and x < maxX and y > minY and y < maxY
 
 
-def checkOverlapAsymmetric(rect0, rect1):
-    for point in rect0:
-        if checkContains(rect1, point):
-            return True
-        # also check for intersections?
-    return False
-
+# def checkOverlapAsymmetric(rect0, rect1):
+#     for point in rect0:
+#         if checkContains(rect1, point):
+#             return True
+#         # also check for intersections?
+#     return False
+def do_overlap(l1, r1, l2, r2):
+     
+    # if rectangle has area 0, no overlap
+    if l1.x == r1.x or l1.y == r1.y or r2.x == l2.x or l2.y == r2.y:
+        return False
+     
+    # If one rectangle is on left side of other
+    if l1.x > r2.x or l2.x > r1.x:
+        return False
+ 
+    # If one rectangle is above other
+    if r1.y > l2.y or r2.y > l1.y:
+        return False
+ 
+    return True
 
 def checkOverlap(rect0, rect1):
     if checkOverlapAsymmetric(rect0, rect1):
