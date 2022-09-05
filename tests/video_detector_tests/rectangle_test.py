@@ -41,6 +41,8 @@ while not capture.isOpened():
     cv2.waitKey(1000)
     print("Wait for the header")
 
+defaultWidth = cap.
+
 pipFrames = []
 
 pos_frame = capture.get(1)
