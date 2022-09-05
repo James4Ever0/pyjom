@@ -30,9 +30,9 @@ import cv2
 algorithm = bgs.WeightedMovingVariance()
 # this one with cropped boundaries.
 # average shit.
-# video_file = "../../samples/video/LiEIfnsvn.mp4"
+video_file = "../../samples/video/LiEIfnsvn.mp4"
 # select our 娜姐驾到
-video_file = "../../samples/video/LiGlReJ4i.mp4"
+# video_file = "../../samples/video/LiGlReJ4i.mp4"
 # video_file = "../../samples/video/LiEIfnsvn.mp4"
 
 # denoising, moving average, sampler and  similar merge.
@@ -55,7 +55,7 @@ pipFrames = []
 
 pos_frame = capture.get(1)
 for index in progressbar.progressbar(range(total_frames)):
-    if index % 20 != 0: continue
+    # if index % 20 != 0: continue
     flag, frame = capture.read()
     if flag:
         pos_frame = capture.get(1)
