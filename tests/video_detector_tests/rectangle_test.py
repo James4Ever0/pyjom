@@ -69,8 +69,10 @@ for _ in progressbar.progressbar(range(total_frames)):
         if contours is not None:
             # continue
             counted = False
+            maxArea = 0
             for contour in contours:
                 [x, y, w, h] = cv2.boundingRect(img_output)
+                area = w*h
                 if not counted:
                     min_x, min_y = x, y
                     max_x, max_y = x+w, y+h
