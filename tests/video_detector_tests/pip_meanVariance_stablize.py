@@ -56,7 +56,7 @@ xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 from sklearn.linear_model import LinearRegression
 
 
-pip
+stablePipRangeTuples = []
 
 for start, end in xLeftSpans:
     spanLength = end-start
