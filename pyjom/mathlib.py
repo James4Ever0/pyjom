@@ -182,4 +182,5 @@ def mergedRangesToSequential(renderDict):
     #     print(renderCommandString, commandTimeSpan)
 
 def sequentialToMergedRanges(sequence):
-    
+    mergedRanges = {}
+    for commandString, commandTimeSpan in 
