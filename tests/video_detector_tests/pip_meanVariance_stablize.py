@@ -100,7 +100,7 @@ newTargetSequential = mergedRangesToSequential(newTarget)
 newTargetSequentialUpdated = []
 
 for index, elem in newTargetSequential:
-    
+    mType = elem[]
 
 
 import matplotlib.pyplot as plt
