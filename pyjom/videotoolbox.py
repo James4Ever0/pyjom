@@ -438,6 +438,7 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
     else:
         algorithm = bgs.WeightedMovingAverage()
         # slower. don't know if it works or not.
+        # not sure it really works or not.
     # otherwise we do it frame by frame.
     assert method in ['skim','framewise']
     pipFrames = []
