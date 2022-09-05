@@ -182,7 +182,7 @@ else:
         # print("LOOP COUNT:", loopCount)
         # loopCount+=1
         # noAlter = True
-        beforeChange = commandDictSequential[]
+        beforeChange = [item[0] for item in commandDictSequential].copy()
         for i in range(len(commandDictSequential)-1):
             currentItem = commandDictSequential[i]
             nextItem = commandDictSequential[i+1]
@@ -200,6 +200,8 @@ else:
                     # print("HERE1",i, currentItemCommand, nextItemCommand)
                     commandDictSequential[i+1][0] = currentItemCommand
                     # noAlter=False
+        beforeChange = [item[0] for item in commandDictSequential].copy()
+        
         if noAlter:
             break
     finalCommandDict = sequentialToMergedRanges(commandDictSequential)
