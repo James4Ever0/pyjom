@@ -146,49 +146,49 @@ def ffmpegVideoPreProductionFilter(
                 if renderCommand == "empty":
                     continue
                 for prefix, keyword in [("{}_".format(k),k) for k in ['delogo','crop']]:
-                if renderCommand.startswith(prefix):
-                    import parse
+                    if renderCommand.startswith(prefix):
+                        import parse
 
-                    commandParams = parse.parse(
-                        keyword+"_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
-                    )
-                    # print(defaultWidth, defaultHeight)
-                    mX, mY, mW, mH = (
-                        commandParams["x"],
-                        commandParams["y"],
-                        commandParams["w"],
-                        commandParams["h"],
-                    )
-                    status, XYWH = checkXYWH(
-                        (mX, mY, mW, mH), (defaultWidth, defaultHeight)
-                    )
-                    if not status:
-                        # cannot process this delogo filter since its parameters are outraged.
-                        # shall we warn you?
-                        # print("SOMEHOW DELOGO IS NOT WORKING PROPERLY")
-                        # breakpoint()
-                        # maybe it's not because of out of bounds error
-                        print("_" * 30)
-                        print("ABNORMAL DELOGO FILTER PARAMS:", commandParams)
-                        print(
-                            "maxX: {} maxY: {}".format(
-                                commandParams["x"] + commandParams["w"],
-                                commandParams["y"] + commandParams["h"],
-                            )
+                        commandParams = parse.parse(
+                            keyword+"_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                         )
-                        print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
-                        print("_" * 30)
-                        continue
-                    else:
-                        (mX, mY, mW, mH) = XYWH
-                        commandParams = {"x": mX, "y": mY, "w": mW, "h": mH}
-                    # mX1, mY1 = mX+mW, mY+mH
-                    # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
-                    #     print("DELOGO ERROR:")
-                    #     print(mX1,defaultWidth,mY1,defaultHeight)
-                    #     breakpoint()
-                    # we also need to consider if this is necessary.
-                    stream = delogoFilter(stream, commandParams)
+                        # print(defaultWidth, defaultHeight)
+                        mX, mY, mW, mH = (
+                            commandParams["x"],
+                            commandParams["y"],
+                            commandParams["w"],
+                            commandParams["h"],
+                        )
+                        status, XYWH = checkXYWH(
+                            (mX, mY, mW, mH), (defaultWidth, defaultHeight)
+                        )
+                        if not status:
+                            # cannot process this delogo filter since its parameters are outraged.
+                            # shall we warn you?
+                            # print("SOMEHOW DELOGO IS NOT WORKING PROPERLY")
+                            # breakpoint()
+                            # maybe it's not because of out of bounds error
+                            print("_" * 30)
+                            print("ABNORMAL DELOGO FILTER PARAMS:", commandParams)
+                            print(
+                                "maxX: {} maxY: {}".format(
+                                    commandParams["x"] + commandParams["w"],
+                                    commandParams["y"] + commandParams["h"],
+                                )
+                            )
+                            print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
+                            print("_" * 30)
+                            continue
+                        else:
+                            (mX, mY, mW, mH) = XYWH
+                            commandParams = {"x": mX, "y": mY, "w": mW, "h": mH}
+                        # mX1, mY1 = mX+mW, mY+mH
+                        # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
+                        #     print("DELOGO ERROR:")
+                        #     print(mX1,defaultWidth,mY1,defaultHeight)
+                        #     breakpoint()
+                        # we also need to consider if this is necessary.
+                        stream = delogoFilter(stream, commandParams)
 
         if preview:  # final filter? need us to crop this?
             stream = previewFilter(stream)
