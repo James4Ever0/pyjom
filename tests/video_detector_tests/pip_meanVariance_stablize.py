@@ -48,7 +48,7 @@ xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
 derivative3Threshold = 3
 xLeftPointsSignal = (abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astype(np.uint8).tolist()
 
-def signalFilter(signal, threshold = 20):
+def signalFilter(signal, threshold = 10):
     newSignal = np.zeros(len(signal))
     signalFiltered = extract_span(xLeftPointsSignal, target=1)
     for start, end in signalFiltered:
@@ -65,6 +65,6 @@ plt.plot(xLeftPoints)
 plt.plot(xLeftPointsFiltered)
 # plt.plot(xLeftPointsFilteredDiff)
 plt.plot(xLeftPointsFilteredDiff3)
-plt.plot(xLeftPointsSignal)
+plt.plot(xLeftPointsSignalFiltered)
 plt.show()
 
