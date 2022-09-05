@@ -170,10 +170,11 @@ else:
         commandDict.update(newElem)
     commandDict = getContinualMappedNonSympyMergeResult(commandDict)
     commandDictSequential = mergedRangesToSequential(commandDict)
+    def get
     for i in range(len(commandDictSequential)-1):
         currentItem = commandDictSequential[i]
         nextItem = commandDictSequential[i+1]
-        currentItemDuration = currentItem
+        currentItemDuration = currentItem[1]
 
 # import matplotlib.pyplot as plt
 
