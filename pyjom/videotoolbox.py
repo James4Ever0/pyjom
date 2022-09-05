@@ -433,9 +433,10 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim"): # shall be 
     algorithm = bgs.FrameDifference()
     # otherwise we do it frame by frame.
     assert method in ['skim','framewise']
+    pipFrames = []
     if method == 'framewise':
         iterator = getVideoFrameIterator(videoPath,start,end)
         for frame in iterator:
             img_output = algorithm.apply(frame)
-_, contours = cv2.findContours(
+            _, contours = cv2.findContours(
             imgThresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
