@@ -20,11 +20,12 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             if abs(nextElem - elem) < threshold:
                 mArray[index+1] = elem
         return mArray
+    def listTo
     xLeftPoints = getMerged(data[:,0,0])
     yLeftPoints = getMerged(data[:,0,1])
     xRightPoints = getMerged(data[:,1,0])
     yRightPoints = getMerged(data[:,1,1])
-    
+
 
     def Kalman1D(observations,damping=0.2):
         # To return the smoothed time series data
