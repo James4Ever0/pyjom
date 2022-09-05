@@ -73,11 +73,12 @@ for start, end in newSignalRanges:
     if mEnd <= mStart: continue
     sample = xLeftPointsFiltered[mStart: mEnd]
     std = np.std(sample)
-    print((start, end), std)
     model = LinearRegression()
     X,y = sample.reshape(-1,1), list(range(sample.shape[0]))
     model.fit(X,y)
-    
+    coef = model.coef_[0]
+    print((start, end), std)
+
 
 import matplotlib.pyplot as plt
 
