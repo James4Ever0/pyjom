@@ -94,9 +94,9 @@ for elem in target:
 
 mStart = 0
 mEnd = len(xLeftPoints)
-newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget,mStart, mEnd)
+newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget, mStart, mEnd)
 
-for elem in newTarget:
+for index, elem in newTarget:
 
 import matplotlib.pyplot as plt
 
