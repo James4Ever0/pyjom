@@ -1,6 +1,5 @@
 # motion detectors are used to track objects. though you may want to separate objects with it.
 import pybgs as bgs
-import cv2
 import numpy as np
 
 import pathlib
@@ -15,6 +14,7 @@ if len(cv2_libs) == 1:
     print("INSERTING:", cv2_libs[0].parent)
     sys.path.insert(1, str(cv2_libs[0].parent))
 
+import cv2
 
 # suspect by static image analysis, and then create bounding box over the thing.
 # check image quality.
