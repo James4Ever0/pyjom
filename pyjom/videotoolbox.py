@@ -5,6 +5,30 @@ from pyjom.commons import *
 from pyjom.mathlib import *
 import cv2
 # import cv2
+
+
+def checkXYWH(XYWH,canvas,minArea = 20):
+    x,y,w,h = XYWH
+    width, height = canvas
+    if x >= width-1 or y >= height-1:
+        return False, None
+    if x == 0:
+        x = 1
+    if y == 0:
+        y = 1
+    if x+w >= width:
+        w = width-x-1
+        if w <= 2:
+            return False, None
+    if y+h >= height:
+        h = height-y-1
+        if h <= 2:
+            return False, None
+    if w*h <= minArea:
+        return False, None
+    return True, (x,y,w,h)
+
+
 def LRTBToDiagonal(lrtb):
     left, right, top, bottom = lrtb
     x0, y0, x1, y1 = left, top, right, bottom
