@@ -126,7 +126,7 @@ else:
     # bring this sequential into dict again.
     answer = sequentialToMergedRanges(newTargetSequential)
     print("_"*30, "ANSWER","_"*30)
-    for elem in answer:
+    for elem in answer.items():
         print(elem)
                     
 
