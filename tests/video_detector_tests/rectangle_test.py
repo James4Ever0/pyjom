@@ -63,16 +63,16 @@ for index in progressbar.progressbar(range(total_frames)):
         imgThresh = img_output
         # imgMorph = cv2.GaussianBlur(img_output, (3,3), 0)
         # _,imgThresh = cv2.threshold(imgMorph, 1, 255, cv2.THRESH_BINARY)
-        img_bgmodel = algorithm.getBackgroundModel()
-        _, contours = cv2.findContours(
-            imgThresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        # img_bgmodel = algorithm.getBackgroundModel()
+        # _, contours = cv2.findContours(
+        #     imgThresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         # maybe you should merge all active areas.
-        if contours is not None:
+        # if contours is not None:
             # continue
             # counted = False
             # maxArea = 0
             # for contour in contours:
-            [x, y, w, h] = cv2.boundingRect(img_output) # wtf is this?
+        [x, y, w, h] = cv2.boundingRect(img_output) # wtf is this?
                 # # area = w*h
                 # # if area > maxArea:
                 # #     maxArea = area
