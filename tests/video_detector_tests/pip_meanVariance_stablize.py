@@ -46,7 +46,7 @@ xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
 
 # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
 derivative3Threshold = 3
-xLeftSignal = (abs(xLeftPointFilteredDiff3) < derivative3Threshold).astype()
+xLeftPointsSignal = 255*(abs(xLeftPointFilteredDiff3) < derivative3Threshold).astype(np.uint8)
 
 import matplotlib.pyplot as plt
 
