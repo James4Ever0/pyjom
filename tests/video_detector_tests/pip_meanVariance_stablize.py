@@ -95,7 +95,7 @@ for elem in target:
 mStart = 0
 mEnd = len(xLeftPoints)
 newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget, mStart, mEnd)
-newTargetSequential = 
+newTargetSequential = mergedRangesToSequential(newTArget)
 
 for index, elem in newTargetSequential:
 
