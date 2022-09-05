@@ -61,7 +61,7 @@ for index in progressbar.progressbar(range(total_frames)):
         pos_frame = capture.get(1)
         img_output = algorithm.apply(frame)
         imgThresh = img_output
-        # imgMorph = cv2.GaussianBlur(img_output, (3,3), 0)
+        imgMorph = cv2.GaussianBlur(img_output, (3,3), 0)
         # _,imgThresh = cv2.threshold(imgMorph, 1, 255, cv2.THRESH_BINARY)
         img_bgmodel = algorithm.getBackgroundModel()
         _, contours = cv2.findContours(
