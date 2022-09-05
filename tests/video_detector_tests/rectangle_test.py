@@ -90,4 +90,5 @@ cv2.destroyAllWindows()
 # we process this shit elsewhere.
 import json
 
-with open("pip_meanVariance.json")
+with open("pip_meanVariance.json",'w') as f:
+  f.write(json.dumps())
