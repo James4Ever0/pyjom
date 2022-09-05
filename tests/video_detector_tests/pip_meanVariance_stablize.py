@@ -404,7 +404,7 @@ if __name__ == "__main__":
         import parse
 
         commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}", key)
-        color = colors[index]
+        color = colors[index%len(colors)]
         rect = [int(commandArguments[name]) for name in ["x", "y", "w", "h"]]
         print("RECT", rect, color)
         plotRect(ax, *rect, color)
