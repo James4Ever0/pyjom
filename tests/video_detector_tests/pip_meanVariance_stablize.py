@@ -125,8 +125,8 @@ else:
                     newTargetSequential[index+1][0] = commandString
     # bring this sequential into dict again.
     answer = sequentialToMergedRanges(newTargetSequential)
-    print("_"*30, "ANSWER")
-
+    print("_"*30, "ANSWER","_"*30)
+    for elem in ans
                     
 
 import matplotlib.pyplot as plt
