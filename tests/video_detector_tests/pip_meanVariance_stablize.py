@@ -133,8 +133,8 @@ def getSinglePointStableState(xLeftPoints):
     print("[FAILSAFE] SOMEHOW THE CODE SUCKS")
     return {}
 
-
-xLeftPoints = data[:,0,1]
+xRightPoints = data[:,0,0]
+xRightPoints = data[:,0,1]
 
 # import matplotlib.pyplot as plt
 
