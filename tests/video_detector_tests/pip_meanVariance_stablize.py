@@ -52,7 +52,9 @@ def signalFilter(signal, threshold = 20):
     newSignal = np.zeros(len(signal))
     signalFiltered = extract_span(xLeftPointsSignal, target=1)
     for start, end in signalFiltered:
-        if 
+        length = end-start
+        if length >= threshold:
+            newSignal[start:end]
 
 xLeftPointsSignalFiltered = 
 
