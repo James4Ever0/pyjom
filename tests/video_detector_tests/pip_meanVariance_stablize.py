@@ -3,13 +3,6 @@ import json
 from mathlib import *
 # from ...pyjom.mathlib import sequentialToMergedRanges
 
-dataDict = json.loads(open("pip_meanVariance.json",'r').read())
-
-# print(len(data)) # 589
-
-data  = dataDict['data']
-
-defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
 
 def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     import numpy as np
@@ -221,12 +214,21 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             # we might want to parse the command string and reengineer this shit.
 
 if __name__ == "__main__":
-# import matplotlib.pyplot as plt
+    # better plot this shit.
 
-# plt.plot(xLeftPoints)
-# plt.plot(xLeftPointsFiltered)
-# plt.plot(xLeftPointsFilteredDiff)
-# # plt.plot(xLeftPointsFilteredDiff3)
-# plt.plot(xLeftPointsSignalFiltered)
-# plt.show()
+dataDict = json.loads(open("pip_meanVariance.json",'r').read())
+
+# print(len(data)) # 589
+
+data  = dataDict['data']
+
+defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
+    # import matplotlib.pyplot as plt
+
+    # plt.plot(xLeftPoints)
+    # plt.plot(xLeftPointsFiltered)
+    # plt.plot(xLeftPointsFilteredDiff)
+    # # plt.plot(xLeftPointsFilteredDiff3)
+    # plt.plot(xLeftPointsSignalFiltered)
+    # plt.show()
 
