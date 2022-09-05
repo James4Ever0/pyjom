@@ -155,7 +155,8 @@ else:
     defaults = [{str(defaultCoord[index]): [(0,len(data))]} for index in range(4)]
     for index in range(4):
         if answers[index] == {}:
-            answers[index] = 
+            answers[index] = defaults[index]
+    
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
