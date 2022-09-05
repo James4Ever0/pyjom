@@ -75,7 +75,9 @@ for start, end in newSignalRanges:
     std = np.std(sample)
     print((start, end), std)
     model = LinearRegression()
-    X,y = sample.reshape(-1,1), list(range(len(sample)))
+    X,y = sample.reshape(-1,1), list(range(sample.shape[0]))
+    model.fit(X,y)
+    
 
 import matplotlib.pyplot as plt
 
