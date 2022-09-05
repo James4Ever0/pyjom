@@ -204,8 +204,9 @@ else:
         noAlter = beforeChange == afterChange
         if noAlter:
             break
-    finalCommandDict = sequentialToMergedRanges(commandDictSequential)
-    for key, elem in finalCommandDict.items():
+    preFinalCommandDict = sequentialToMergedRanges(commandDictSequential)
+    finalCommandDict = {}
+    for key, elem in preFinalCommandDict.items():
         # print(key)
         import parse
         formatString = 'xleft:{xleft:d}|yleft:{yleft:d}|xright:{xright:d}|yright:{yright:d}'
