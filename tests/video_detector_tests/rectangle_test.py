@@ -59,10 +59,10 @@ for _ in progressbar.progressbar(range(total_frames)):
     if flag:
         pos_frame = capture.get(1)
         img_output = algorithm.apply(frame)
-        imgMorph = 
+        imgMorph = img_output.
         img_bgmodel = algorithm.getBackgroundModel()
         _, contours = cv2.findContours(
-            img_output, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+            imgMorph, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         # maybe you should merge all active areas.
         if contours is not None:
             # continue
