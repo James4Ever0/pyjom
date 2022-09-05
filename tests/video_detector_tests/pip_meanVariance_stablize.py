@@ -211,8 +211,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             defaultValues = [0,0,defaultWidth,defaultHeight]
             for varName, defaultValue in zip(varNames, defaultValues):
                 key = key.replace('{}:empty'.format(varName), '{}:{}'.format(varName, defaultValue))
-            print(key,elem)
-            breakpoint()
+            # print(key,elem)
+            # breakpoint()
             import parse
             formatString = 'xleft:{xleft:d}|yleft:{yleft:d}|xright:{xright:d}|yright:{yright:d}'
             commandArguments = parse.parse(formatString, key)
