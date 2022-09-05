@@ -138,7 +138,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         pred_state, state_cov = kf.smooth(observations)
         return pred_state
 
-    def getSinglePointStableState(xLeftPoints):
+    def getSinglePointStableState(xLeftPoints, threshold=):
         xLeftPointsFiltered = Kalman1D(xLeftPoints)
         xLeftPointsFiltered = xLeftPointsFiltered.reshape(-1)
         from itertools import groupby
