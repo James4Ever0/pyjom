@@ -57,7 +57,7 @@ from sklearn.linear_model import LinearRegression
 
 for start, end in xLeftSpans:
     spanLength = end-start
-    kalmanSegment = 
+    kalmanSegment = xLeftPointFiltered()
     # if spanLength > spanLengthMinThreshold:
 
 exit()
