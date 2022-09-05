@@ -193,6 +193,7 @@ else:
                     noAlter=False
         if noAlter:
             break
+        finalCommandDict = 
 
 # import matplotlib.pyplot as plt
 
