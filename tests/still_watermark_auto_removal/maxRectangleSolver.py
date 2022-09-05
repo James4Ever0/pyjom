@@ -54,8 +54,8 @@ def do_overlap(l1, r1, l2, r2):
 
     interval_y0 = sympy.Interval(l1.y, r1.y,left_open=True, right_open=True)
     interval_y1 = sympy.Interval(l2.y, r2.y,left_open=True, right_open=True)
-    intersection_x = interval_x0.intersect(interval_x1)
-
+    intersection_y = interval_y0.intersect(interval_y1)
+    if type(intersection_x)
 
     return True
 
