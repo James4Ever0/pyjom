@@ -399,7 +399,7 @@ if __name__ == "__main__":
 
     ax.plot([[0, 0], [defaultWidth, defaultHeight]])
     plotRect(ax, 0, 0, defaultWidth, defaultHeight, "black")
-    colors = ["red", "yellow", "blue",'orange','white',]
+    colors = ["red", "yellow", "blue",'orange','white','purple']
     for index, key in enumerate(finalCommandDict.keys()):
         import parse
 
