@@ -50,10 +50,10 @@ def do_overlap(l1, r1, l2, r2):
     return True
 
 def checkOverlap(rect0, rect1):
-    if checkOverlapAsymmetric(rect0, rect1):
-        return True
-    if checkOverlapAsymmetric(rect1, rect0):
-        return True
+    # if checkOverlapAsymmetric(rect0, rect1):
+    #     return True
+    # if checkOverlapAsymmetric(rect1, rect0):
+    #     return True
     return False
 
 
