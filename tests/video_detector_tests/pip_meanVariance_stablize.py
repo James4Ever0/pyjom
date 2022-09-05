@@ -85,7 +85,7 @@ for start, end in newSignalRanges:
     target.append({"range":(start, end), 'mean': meanValue})
     # print((start, end), std, coef)
 
-newTarget = 
+newTarget = {}
 
 for elem in newTarget:
 
