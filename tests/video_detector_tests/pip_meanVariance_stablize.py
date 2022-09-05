@@ -88,7 +88,7 @@ for start, end in newSignalRanges:
 newTarget = {}
 
 for elem in target:
-    
+    newTarget.update({})
 
 for elem in newTarget:
 
