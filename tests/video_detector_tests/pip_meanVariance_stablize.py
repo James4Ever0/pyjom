@@ -27,7 +27,7 @@ def Kalman1D(observations,damping=0.2):
 
 xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
-signal = 
+xLeftPointSignal = abs(xLeftPointsFiltered)
 print(xLeftPoints)
 import matplotlib.pyplot as plt
 
