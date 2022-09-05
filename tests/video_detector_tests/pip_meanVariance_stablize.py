@@ -29,10 +29,11 @@ xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
 xLeftPointsFiltered=xLeftPointsFiltered.reshape(-1)
 threshold = 30
+# print(xLeftPointsFiltered.shape)
+# breakpoint()
+xLeftPointsSignal = (abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8) # convert this shit to intervals! # (589, 589), how the fuck?
 print(xLeftPointsFiltered.shape)
 breakpoint()
-# xLeftPointsSignal = (abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8) # convert this shit to intervals! # (589, 589), how the fuck?
-
 from itertools import groupby
 def extract_span(mlist, target=0):
     counter = 0
