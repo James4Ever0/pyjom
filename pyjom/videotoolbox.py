@@ -430,6 +430,7 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     
 def detectPipRegionOverTime(videoPath, start, end, method = "skim"): # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
+    algorithm = bgs.FrameDifference()
     # otherwise we do it frame by frame.
     assert method in ['skim','framewise']
     if method == 'framewise':
