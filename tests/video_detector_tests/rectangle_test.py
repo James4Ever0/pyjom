@@ -51,6 +51,7 @@ total_frames = capture.get(cv2.CAP_PROP_FRAME_COUNT)
 total_frames = int(total_frames)
 pipFrames = []
 
+
 pos_frame = capture.get(1)
 import progressbar
 for _ in progressbar.progressbar(range(total_frames)):
@@ -82,7 +83,6 @@ for _ in progressbar.progressbar(range(total_frames)):
                     # only create one single bounding box.
             # cv2.rectangle(frame, (min_x, min_y),
             #               (max_x, max_y), (255, 0, 0), 2)
-            
             pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
             # how to stablize this shit?
         # cv2.imshow('video', frame)
