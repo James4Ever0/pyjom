@@ -362,7 +362,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
 # def
 
-objective = "discrete"
+# objective = "discrete"
+objective = "continual"
 
 if __name__ == "__main__":
     # better plot this shit.
