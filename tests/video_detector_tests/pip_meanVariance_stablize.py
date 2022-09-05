@@ -207,6 +207,8 @@ else:
     finalCommandDict = sequentialToMergedRanges(commandDictSequential)
     for key, elem in finalCommandDict.items():
         print(key)
+        import parse
+        formatString = ''
         print(elem)
         # the parser shall be in x,y,w,h with keywords.
         # we might want to parse the command string and reengineer this shit.
