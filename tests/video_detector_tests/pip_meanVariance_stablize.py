@@ -130,10 +130,11 @@ def getSinglePointStableState(xLeftPoints):
         # for elem in answer.items():
         #     print(elem)
         return {}
-    print("SOMEHOW THE CODE SUCKS")
+    print("[FAILSAFE] SOMEHOW THE CODE SUCKS")
     return {}
 
-    xLeftPoints = data[:,0,1]
+
+xLeftPoints = data[:,0,1]
 
 # import matplotlib.pyplot as plt
 
