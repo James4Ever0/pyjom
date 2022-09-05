@@ -434,5 +434,5 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim"): # shall be 
     # otherwise we do it frame by frame.
     assert method in ['skim','framewise']
     if method == 'framewise':
-        iterator = 
+        iterator = getVideoFrameIterator(start,end)
         img_output = algorithm.apply(frame)
