@@ -459,5 +459,7 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
         sample_rate = max(1,estimated_sample_rate)
     iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
     for frame in iterator:
+        [x, y, w, h] = cv2.boundingRect(img_output) # wtf is this?
+        area = w*h
         img_output = algorithm.apply(frame)
         pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
