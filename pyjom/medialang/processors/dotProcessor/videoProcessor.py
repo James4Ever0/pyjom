@@ -145,7 +145,7 @@ def ffmpegVideoPreProductionFilter(
                         print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
                         continue
                     else:
-                        commandParams = {}
+                        commandParams = {'x',mX, 'y':mY, 'w', mW, mH}
                     # mX1, mY1 = mX+mW, mY+mH
                     # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
                     #     print("DELOGO ERROR:")
