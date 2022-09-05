@@ -231,9 +231,11 @@ if __name__ == "__main__":
     fig, ax = plt.subplots()
     def plotRect(ax, x, y, width, height, facecolor):
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
-    for key in finalCommandDict.keys():
+    color = 
+    for index, key in finalCommandDict.keys():
         import parse
         commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}",key)
+        color = 
         rect = [commandArguments[name] for name in ['x','y','w','h']]
         plotRect(ax, *rect, color)
     plt.show()
