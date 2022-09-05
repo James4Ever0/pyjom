@@ -124,7 +124,7 @@ else:
                 if abs(commandFloat-nextCommandFloat) < commandFloatMergeThreshold:
                     newTargetSequential[index+1][0] = commandString
     # bring this sequential into dict again.
-    answer = sequentialToMergedRanges()
+    answer = sequentialToMergedRanges(newTargetSequential)
                     
 
 import matplotlib.pyplot as plt
