@@ -92,6 +92,8 @@ for elem in target:
     mRange = elem['range']
     newTarget.update({meanStr: newTarget.get(meanStr, [])+[mRange]})
 
+newTarget = get
+
 for elem in newTarget:
 
 import matplotlib.pyplot as plt
