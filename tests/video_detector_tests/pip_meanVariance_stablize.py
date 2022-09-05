@@ -66,6 +66,7 @@ xLeftPointsSignalFiltered *=255
 mShrink = 2
 from sklearn.linear_models import LinearRegression
 
+stdThreshold = 1
 for start, end in newSignalRanges:
     # could we shrink the boundaries?
     model = LinearRegression()
