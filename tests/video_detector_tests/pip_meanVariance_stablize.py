@@ -129,7 +129,7 @@ def getSinglePointStableState(xLeftPoints):
         # print("_"*30, "ANSWER","_"*30)
         # for elem in answer.items():
         #     print(elem)
-        return {}
+        return answer
     print("[FAILSAFE] SOMEHOW THE CODE SUCKS")
     return {}
 
