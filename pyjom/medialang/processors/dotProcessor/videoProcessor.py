@@ -137,6 +137,13 @@ def ffmpegVideoPreProductionFilter(
                     mX, mY, mW, mH = commandParams['x'], commandParams['y'], commandParams['w'], commandParams['h']
                     status, XYWH = checkXYWH((mX, mY, mW, mH), (defaultWidth, defaultHeight))
                     if not status:
+                        # cannot process this delogo filter since its parameters are outraged.
+                        # shall we warn you?
+                        # print("SOMEHOW DELOGO IS NOT WORKING PROPERLY")
+                        # breakpoint()
+                        print("OUTRAGED DELOGO FILTER PARAMS:",commandParams)
+                        print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
+                        continue
                     # mX1, mY1 = mX+mW, mY+mH
                     # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
                     #     print("DELOGO ERROR:")
