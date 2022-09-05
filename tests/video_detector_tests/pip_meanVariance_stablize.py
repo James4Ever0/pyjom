@@ -33,7 +33,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         mArray = get1DArrayEMA(mArray)
         mArray = getAlikeValueMerged(mArray, threshold=threshold)
         return listToRangedDictWithLabel(mArray, label)
-    threshold = int(max(defaultWidth, defaultHeight)*)
+    threshold = int(max(defaultWidth, defaultHeight)*0.02734375)
     xLeftPoints = pointsToRangedDictWithLabel(data[:, 0, 0], "xleft", threshold = threshold)
     yLeftPoints = pointsToRangedDictWithLabel(data[:, 0, 1], "yleft", threshold = threshold)
     xRightPoints = pointsToRangedDictWithLabel(data[:, 1, 0], "xright", threshold = threshold)
@@ -50,6 +50,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         return end - start
 
     itemDurationThreshold = 10
+    # framerate?
 
     while True:
         # print("LOOP COUNT:", loopCount)
