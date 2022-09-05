@@ -33,6 +33,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     yLeftPoints = pointsToRangedDictWithLabel(data[:,0,1],'yleft')
     xRightPoints = pointsToRangedDictWithLabel(data[:,1,0], 'xright')
     yRightPoints = pointsToRangedDictWithLabel(data[:,1,1], 'yright')
+
+    for mDict in [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]:
     commandDict.update(mDict)
 
 
