@@ -40,38 +40,8 @@ def extract_span(mlist, target=0):
         counter = nextCounter
     return spanList
 
-# xLeftPointsSignalList = xLeftPointsSignal.tolist()
-# print(xLeftPointsSignal.shape)
-# print(xLeftPointsSignalList)
-spanLengthMinThreshold = 10
-kalmanMaxSlope = 0.5
-xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
-
-from sklearn.linear_model import LinearRegression
 
 
-stablePipRangeTuples = [] # remember this is only xLeftSpans, not for all!
-
-for start, end in xLeftSpans:
-    spanLength = end-start
-
-    # if spanLength > spanLengthMinThreshold:
-    kalmanSegment = xLeftPointsFiltered[start:end+1].reshape(-1,1)
-    model = LinearRegression()
-    X,y = kalmanSegment,np.linspace(0, end-start,end-start+1)
-    model.fit(X,y)
-    coef = model.coef_[0]
-    print(start, end, coef)
-    if abs(coef) < kalmanMaxSlope:
-        kalmanMean = np.mean(kalmanSegment)
-        stablePipRangeTuples.append({"frameSpan": (start, end), 'mean': kalmanMean})
-        xLeftPointsSignal[start:end] = kalmanMean
-
-# exit()
-# print(xLeftPoints)
-# for stablePipRangeTuple in stablePipRangeTuples:
-#     print(stablePipRangeTuple)
-# exit()
 import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
