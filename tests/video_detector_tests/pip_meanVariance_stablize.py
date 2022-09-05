@@ -169,7 +169,8 @@ else:
         newElem = {"{}:{}".format(label,key):elem[key] for key in elem.keys()}
         commandDict.update(newElem)
     commandDict = getContinualMappedNonSympyMergeResult(commandDict)
-    commandDictSequential = 
+    commandDictSequential = mergedRangesToSequential(commandDict)
+    
 
 # import matplotlib.pyplot as plt
 
