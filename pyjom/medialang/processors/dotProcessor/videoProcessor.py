@@ -110,6 +110,7 @@ def ffmpegVideoPreProductionFilter(
 
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
+        mStart = max(0, mStart)
         mEnd = 
         if mStart <0 or mEnd 
         # print("CLIP TIMESPAN:", mStart, mEnd)
