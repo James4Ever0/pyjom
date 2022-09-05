@@ -80,7 +80,8 @@ for start, end in newSignalRanges:
     model.fit(X,y)
     coef = model.coef_[0]
     if coef > slopeThreshold: continue
-    target.append()
+    meanValue = np.mean(sample)
+    target.append({"range":})
     # print((start, end), std, coef)
 
 
