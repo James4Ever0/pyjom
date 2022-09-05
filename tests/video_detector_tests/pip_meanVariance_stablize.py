@@ -28,7 +28,7 @@ def Kalman1D(observations,damping=0.2):
 xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
 threshold = 30
-print(xLeftPoints.shape())
+print(xLeftPoints.shape)
 breakpoint()
 # xLeftPointsSignal = (abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8) # convert this shit to intervals! # (589, 589), how the fuck?
 
