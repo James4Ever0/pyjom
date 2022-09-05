@@ -191,7 +191,8 @@ else:
                 if nextItemCommand != currentItemCommand:
                     commandDictSequential[i+1][0] = currentItemCommand
                     noAlter=False
-
+        if noAlter:
+            break
 
 # import matplotlib.pyplot as plt
 
