@@ -107,12 +107,12 @@ def ffmpegVideoPreProductionFilter(
     # for elem in renderList:
     #     print(elem)
     # breakpoint()
-    videoDuration = getVideoDuration(videoPath)
+    # videoDuration = getVideoDuration(videoPath)
 
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
-        mStart = max(0, mStart)
-        mEnd = min(videoDuration)
+        mStart = max(start, mStart)
+        mEnd = min(videoDuration, end)
         clipDuration
         if mStart <0 or mEnd 
         # print("CLIP TIMESPAN:", mStart, mEnd)
