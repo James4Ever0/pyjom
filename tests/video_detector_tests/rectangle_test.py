@@ -38,6 +38,8 @@ while not capture.isOpened():
     cv2.waitKey(1000)
     print("Wait for the header")
 
+video
+
 pos_frame = capture.get(1)
 while True:
     flag, frame = capture.read()
