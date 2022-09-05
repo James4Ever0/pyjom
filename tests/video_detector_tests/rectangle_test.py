@@ -87,5 +87,5 @@ while True:
 # we process this shit elsewhere.
 
 with open("pip_meanVariance.json", 'w') as f:
-    f.write(json.dumps(pipFrames))
+    f.write(json.dumps({"data":pipFrames))
 print("DATA DUMPED")
