@@ -228,6 +228,6 @@ if __name__ == "__main__":
 
     def plotRect(ax, x, y, width, height, facecolor):
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
-    
+    plotRect(ax)
     plt.show()
 
