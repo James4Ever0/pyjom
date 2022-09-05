@@ -161,8 +161,9 @@ else:
     for index in range(4):
         if answers[index] == {}:
             answers[index] = defaults[index]
+    
     for elem in answers:
-        
+
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
