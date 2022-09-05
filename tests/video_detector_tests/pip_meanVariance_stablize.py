@@ -104,10 +104,11 @@ if (newTargetSequentialUpdated) == 1:
     if newTargetSequentialUpdated[0][0] == 'empty':
         # the whole thing is empty now. no need to investigate.
         print("NO STATIC PIP FOUND HERE.")
-
-for index, elem in newTargetSequential:
-    commandString, commandTimeSpan = elem
-    if commandStrig == 'empty':
+else:
+    for index, elem in newTargetSequential:
+        commandString, commandTimeSpan = elem
+        if commandString == 'empty':
+            
         
 
 import matplotlib.pyplot as plt
