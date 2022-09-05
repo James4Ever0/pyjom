@@ -29,7 +29,7 @@ def checkContains(rect, point):
 #         # also check for intersections?
 #     return False
 # Python program to check if rectangles overlap
-class MPoint:
+class D2Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
