@@ -200,7 +200,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         preFinalCommandDict = sequentialToMergedRanges(commandDictSequential)
         finalCommandDict = {}
         for key, elem in preFinalCommandDict.items():
-            print(key,elem)
+            # print(key,elem)
+            key = key.replace
             breakpoint()
             import parse
             formatString = 'xleft:{xleft:d}|yleft:{yleft:d}|xright:{xright:d}|yright:{yright:d}'
