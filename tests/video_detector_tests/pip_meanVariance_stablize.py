@@ -64,15 +64,16 @@ xLeftPointsSignalFiltered, newSignalRanges= signalFilter(xLeftPointsSignal)
 xLeftPointsSignalFiltered *=255
 
 for start, end in newSignalRanges:
+    # could we shrink the boundaries?
     std = np.std(xLeftPointsFiltered[start:end+1])
     print((start, end), std)
 
 import matplotlib.pyplot as plt
 
-plt.plot(xLeftPoints)
-plt.plot(xLeftPointsFiltered)
-plt.plot(xLeftPointsFilteredDiff)
-# plt.plot(xLeftPointsFilteredDiff3)
-plt.plot(xLeftPointsSignalFiltered)
-plt.show()
+# plt.plot(xLeftPoints)
+# plt.plot(xLeftPointsFiltered)
+# plt.plot(xLeftPointsFilteredDiff)
+# # plt.plot(xLeftPointsFilteredDiff3)
+# plt.plot(xLeftPointsSignalFiltered)
+# plt.show()
 
