@@ -74,7 +74,7 @@ for start, end in newSignalRanges:
     if mEnd <= mStart: continue
     sample = xLeftPointsFiltered[mStart: mEnd]
     std = np.std(sample)
-    if std 
+    if std > stdThreshold: continue
 
     model = LinearRegression()
     X,y = np.array(range(sample.shape[0])).reshape(-1,1), sample
