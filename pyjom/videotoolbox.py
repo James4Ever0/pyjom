@@ -432,7 +432,9 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
         # print(delogoCommandSet)
         # breakpoint()
         return {delogoCommandSet: [(start, end)]}
-    
+
+
+
 def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_difference'): # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
