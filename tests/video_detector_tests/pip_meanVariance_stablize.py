@@ -79,7 +79,7 @@ for start, end in newSignalRanges:
     X,y = np.array(range(sample.shape[0])).reshape(-1,1), sample
     model.fit(X,y)
     coef = model.coef_[0]
-    if coef > slopeThreshold: cotinue
+    if coef > slopeThreshold: continue
     # print((start, end), std, coef)
 
 
