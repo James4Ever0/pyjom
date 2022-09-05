@@ -166,7 +166,7 @@ else:
     for index, elem in enumerate(answers):
         label = labels[index]
         newElem = {"{}:{}".format(label,key):elem[key] for key in elem.keys()}
-        
+        comma
 
 # import matplotlib.pyplot as plt
 
