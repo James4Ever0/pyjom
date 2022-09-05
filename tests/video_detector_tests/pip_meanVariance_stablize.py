@@ -105,7 +105,7 @@ def getSinglePointStableState(xLeftPoints):
         if newTargetSequential[0][0] == 'empty':
             # the whole thing is empty now. no need to investigate.
             print("NO STATIC PIP FOUND HERE.")
-            retur
+            return {}
     else:
         # newTargetSequential
         newTargetSequentialUpdated = []
