@@ -232,7 +232,7 @@ if __name__ == "__main__":
     fig, ax = plt.subplots()
     def plotRect(ax, x, y, width, height, facecolor):
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True, alpha=0.5)) # in 0-1
-    ax.plot([[0,0],])
+    ax.plot([[0,0],[defaultWidth, defaultHeight]])
     plotRect(ax,0,0,defaultWidth,defaultHeight,'black')
     colors = ['red','yellow','blue']
     for index, key in enumerate(finalCommandDict.keys()):
