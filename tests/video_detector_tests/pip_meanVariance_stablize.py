@@ -25,7 +25,7 @@ def Kalman1D(observations,damping=1):
     pred_state, state_cov = kf.smooth(observations)
     return pred_state
 
-xLeftPoints = data[:,0,0]
+xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
 print(xLeftPoints)
 import matplotlib.pyplot as plt
