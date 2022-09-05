@@ -57,7 +57,7 @@ from sklearn.linear_model import LinearRegression
 
 for start, end in xLeftSpans:
     spanLength = end-start
-    kalmanSegment = np.array([xLeftPointsFiltered[start:end+1]
+    kalmanSegment = np.array([xLeftPointsFiltered[start:end+1]])
     model = LinearRegression()
     X,y = np.linspace(0, end-start,end-start+1), kalmanSegment
     model.fit(X,y)
