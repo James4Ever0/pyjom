@@ -118,6 +118,7 @@ else:
                 newTargetSequential[index+1][0] = commandString
             else:# compare the two!
                 commandFloat = float(commandString)
+                nextCommandFloat = float(nextCommandString)
 
 import matplotlib.pyplot as plt
 
