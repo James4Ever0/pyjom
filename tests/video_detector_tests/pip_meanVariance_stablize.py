@@ -40,6 +40,7 @@ def extract_span(mlist, target=0):
         counter = nextCounter
     return spanList
 
+# solve diff.
 
 
 import matplotlib.pyplot as plt
