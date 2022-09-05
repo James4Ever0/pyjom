@@ -223,7 +223,7 @@ if __name__ == "__main__":
     data  = dataDict['data']
 
     defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
-    kalmanStablePipRegionExporter()
+    kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight)
     import matplotlib.pyplot as plt
     from matplotlib.patches import Rectangle
     fig, ax = plt.subplots()
