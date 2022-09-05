@@ -151,8 +151,9 @@ for mPoint in mPoints:
 if answers == [{},{},{},{}]:
     print("NO PIP FOUND")
 else:
-    defaultCoord = [0,0,defaultWidth, defaultHeight]
+    defaultCoord = [0,0,defaultWidth, defaultHeight] # deal with it later?
     defaults = [{str(defaultCoord[index]): [(0,len(data))]} for index in range(4)]
+    
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
