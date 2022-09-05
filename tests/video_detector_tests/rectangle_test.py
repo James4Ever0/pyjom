@@ -55,6 +55,10 @@ pipFrames = []
 defaultRect = [(0,0),(defaultWidth,defaultHeight)]
 
 pos_frame = capture.get(1)
+
+
+areaThreshold = 0.2*0.2
+
 for index in progressbar.progressbar(range(total_frames)):
     # if index % 20 != 0: continue
     flag, frame = capture.read()
@@ -89,6 +93,7 @@ for index in progressbar.progressbar(range(total_frames)):
             pipFrames.append(currentRect.copy())
             defaultRect = currentRect.copy()
         else:
+            pipFrames.append(defaultRect.copy())
             # how to stablize this shit?
         # cv2.imshow('video', frame)
         # cv2.imshow('img_output', img_output)
