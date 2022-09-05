@@ -69,10 +69,10 @@ for index in progressbar.progressbar(range(total_frames)):
         # maybe you should merge all active areas.
         if contours is not None:
             # continue
-            counted = False
-            maxArea = 0
+            # counted = False
+            # maxArea = 0
             # for contour in contours:
-                [x, y, w, h] = cv2.boundingRect(img_output) # wtf is this?
+            [x, y, w, h] = cv2.boundingRect(img_output) # wtf is this?
                 # # area = w*h
                 # # if area > maxArea:
                 # #     maxArea = area
