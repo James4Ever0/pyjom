@@ -184,4 +184,4 @@ def mergedRangesToSequential(renderDict):
 def sequentialToMergedRanges(sequence):
     mergedRanges = {}
     for commandString, commandTimeSpan in sequence:
-        mergedRanges.update({commandString: mergedRanges.get(commandString,[])+[]}))})
+        mergedRanges.update({commandString: mergedRanges.get(commandString,[])+[commandTimeSpan]})}
