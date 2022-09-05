@@ -49,7 +49,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         plt.plot(xLeftPointsFilteredDiff)
         plt.plot(xLeftPointsFiltered)
         plt.plot(xLeftPoints)
-        breakpoint()
+        plt.show()
 
         # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
         derivativeThreshold = 3
