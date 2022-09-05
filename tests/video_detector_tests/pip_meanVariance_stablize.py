@@ -36,7 +36,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
     commandDict = {}
     for mDict in [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]:
-    commandDict.update(mDict)
+        commandDict.update(mDict)
     commandDict = getContinualMappedNonSympyMergeResult(commandDict)
     commandDictSequential = mergedRangesToSequential(commandDict)
     def getSpanDuration(span):
