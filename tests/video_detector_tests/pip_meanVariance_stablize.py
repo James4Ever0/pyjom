@@ -29,6 +29,23 @@ xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
 threshold = 30
 xLeftPointsSignal = (abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8) # convert this shit to intervals!
+
+from itertools import groupby
+def extract_span(mlist, target=0):
+    counter = 0
+    spanList = []
+    target_list = [(a,len(list(b))) for a,b in groupby(mlist)]
+    for a,b in target_list:
+        nextCounter = counter+b
+        if a == target:
+            spanList.append((counter, nextCounter))
+        counter = nextCounter
+    return spanList
+
+xLeftSpans = extract_span(xLeftPointsSignal, target=1)
+for span in xLeftSpans:
+    print(span)
+exit()
 print(xLeftPoints)
 import matplotlib.pyplot as plt
 
