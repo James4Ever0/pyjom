@@ -59,7 +59,7 @@ for _ in progressbar.progressbar(range(total_frames)):
     if flag:
         pos_frame = capture.get(1)
         img_output = algorithm.apply(frame)
-        imgMorph = cv2.
+        imgMorph = cv2.GaussianBlur(img,(55,55),0)
         img_bgmodel = algorithm.getBackgroundModel()
         _, contours = cv2.findContours(
             imgMorph, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
