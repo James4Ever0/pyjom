@@ -20,7 +20,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
 
 
 def ffmpegVideoPreProductionFilter(
-    filepath,
+    filepath, # this is actually a video path. must be video here.
     start=None,
     end=None,
     cachePath=None,
