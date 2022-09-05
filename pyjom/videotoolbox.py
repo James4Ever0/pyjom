@@ -848,4 +848,4 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
     finalResultDict = {}
     for key, value in resultDict.items():
         updatedValueAlignedToSeconds = [(mStart*sampleIndexToSecondsRatio, mEnd*sampleIndexToSecondsRatio) for mStart, mEnd in value]
-        finalResultDict.update({key:})
+        finalResultDict.update({key:updatedValueAlignedToSeconds.copy()})
