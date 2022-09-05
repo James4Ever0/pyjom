@@ -237,8 +237,8 @@ objective = "discrete"
 if __name__ == "__main__":
     # better plot this shit.
     import json
-
-    dataDict = json.loads(open("pip_meanVariance.json",'r').read())
+    if objective == 'continual':
+        dataDict = json.loads(open("pip_meanVariance.json",'r').read())
 
     # print(len(data)) # 589
 
