@@ -46,9 +46,9 @@ xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
 
 # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
 derivative3Threshold = 3
-xLeftPointsSignal = (abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astype(np.uint8)
+xLeftPointsSignal = (abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astype(np.uint8).tolist()
 
-xLeftPointsSignalFiltered = 
+xLeftPointsSignalFiltered = extract_span()
 
 import matplotlib.pyplot as plt
 
