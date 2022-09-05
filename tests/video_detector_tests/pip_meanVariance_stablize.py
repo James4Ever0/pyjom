@@ -182,6 +182,7 @@ else:
         # print("LOOP COUNT:", loopCount)
         # loopCount+=1
         # noAlter = True
+        beforeChange = commandDictSequential[]
         for i in range(len(commandDictSequential)-1):
             currentItem = commandDictSequential[i]
             nextItem = commandDictSequential[i+1]
