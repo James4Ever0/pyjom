@@ -435,6 +435,7 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     
 def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_difference'): # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
+    defaultHeight
     import pybgs as bgs
     assert algo in ['frame_difference', 'weighted_moving_average']
     if algo == 'frame_difference':
