@@ -53,7 +53,7 @@ spanLengthMinThreshold = 20
 # kalmanMaxSlope = 
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 
-import 
+from sklearn.linear_model import LinearRegression
 
 for start, end in xLeftSpans:
     spanLength = end-start
