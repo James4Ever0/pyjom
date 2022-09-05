@@ -63,7 +63,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
                     commandDictSequential[i][0] = nextItemCommand
                     # noAlter=False
             if nextItemDuration < itemDurationThreshold:
-                if nextItemCommand != currentItemCommand:
+                if nextItemCommand != currentItemCommand and currentItemDuration >= itemDurationThreshold:
                     # print("HERE1",i, currentItemCommand, nextItemCommand)
                     commandDictSequential[i + 1][0] = currentItemCommand
                     # noAlter=False
