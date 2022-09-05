@@ -841,4 +841,5 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
     sampleLength = len(pipFrames)
     clipDuration = end-start
     sampleIndexToSecondsRatio = clipDuration / sampleLength
-    if mode == 
+    if method == 'framewise':
+        
