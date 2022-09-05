@@ -18,6 +18,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     xRightPoints = data[:,1,0]
     yRightPoints = data[:,1,1]
 
+    
+
 
     def Kalman1D(observations,damping=0.2):
         # To return the smoothed time series data
