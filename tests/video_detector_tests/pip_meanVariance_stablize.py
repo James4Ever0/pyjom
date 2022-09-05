@@ -216,13 +216,13 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 if __name__ == "__main__":
     # better plot this shit.
 
-dataDict = json.loads(open("pip_meanVariance.json",'r').read())
+    dataDict = json.loads(open("pip_meanVariance.json",'r').read())
 
-# print(len(data)) # 589
+    # print(len(data)) # 589
 
-data  = dataDict['data']
+    data  = dataDict['data']
 
-defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
+    defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
     # import matplotlib.pyplot as plt
 
     # plt.plot(xLeftPoints)
