@@ -32,7 +32,7 @@ algorithm = bgs.FrameDifference() # this is not stable since we have more bounda
 # average shit.
 # video_file = "../../samples/video/LiEIfnsvn.mp4"
 # select our 娜姐驾到
-# video_file = "../../samples/video/LiGlReJ4i.mp4"
+video_file = "../../samples/video/LiGlReJ4i.mp4"
 # video_file = "../../samples/video/LiEIfnsvn.mp4"
 
 # denoising, moving average, sampler and  similar merge.
@@ -103,7 +103,7 @@ cv2.destroyAllWindows()
 
 # we process this shit elsewhere.
 
-with open("pip_meanVariance.json", 'w') as f:
+with open("pip_meanVarianceNajie.json", 'w') as f:
     f.write(json.dumps(
         {"data": pipFrames, "width": defaultWidth, "height": defaultHeight}))
 print("DATA DUMPED")
