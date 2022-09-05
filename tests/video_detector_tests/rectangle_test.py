@@ -103,7 +103,7 @@ cv2.destroyAllWindows()
 
 # we process this shit elsewhere.
 
-with open("pip_meanVarianceNajie.json", 'w') as f:
+with open("pip_meanVarianceSisterNa.json", 'w') as f:
     f.write(json.dumps(
         {"data": pipFrames, "width": defaultWidth, "height": defaultHeight}))
 print("DATA DUMPED")
