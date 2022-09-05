@@ -107,8 +107,8 @@ if (newTargetSequentialUpdated) == 1:
 else:
     for index, elem in newTargetSequential:
         commandString, commandTimeSpan = elem
+            nextElem = newTargetSequential[]
         if commandString == 'empty':
-            
         
 
 import matplotlib.pyplot as plt
