@@ -56,12 +56,7 @@ def do_overlap(l1, r1, l2, r2):
     return True
 
 def checkOverlap(rect0, rect1):
-    *getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1)
-    # if checkOverlapAsymmetric(rect0, rect1):
-    #     return True
-    # if checkOverlapAsymmetric(rect1, rect0):
-    #     return True
-    return False
+    return do_overlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
 
 
 for x, y, mWidth, mHeight in rectangles:
