@@ -142,7 +142,7 @@ def ffmpegVideoPreProductionFilter(
                         # print("SOMEHOW DELOGO IS NOT WORKING PROPERLY")
                         # breakpoint()
                         print("ABNORMAL DELOGO FILTER PARAMS:",commandParams)
-                        print("maxX: {} maxY: {}")
+                        print("maxX: {} maxY: {}".format(commandParams['x']+commandParams['']]))
                         print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
                         continue
                     else:
