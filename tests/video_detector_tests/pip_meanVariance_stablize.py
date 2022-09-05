@@ -363,8 +363,6 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     return finalCommandDict
 
 
-# def
-
 # objective = "discrete"
 # objective = "continual"
 objective = "continual_najie"
