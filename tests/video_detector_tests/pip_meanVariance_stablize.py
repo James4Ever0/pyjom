@@ -109,6 +109,8 @@ else:
         elem = newTargetSequential[index]
         commandString, commandTimeSpan = elem
         nextElem = newTargetSequential[index+1]
+        nextCommandString, nextcommandTimeSpan = elem
+
         if commandString == 'empty':
         
 
