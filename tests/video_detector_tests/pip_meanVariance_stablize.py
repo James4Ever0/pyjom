@@ -8,7 +8,7 @@ import numpy as np
 data = np.array(data)
 from pykalman import KalmanFilter
 
-def Kalman1D(observations,damping=1):
+def Kalman1D(observations,damping=0.2):
     # To return the smoothed time series data
     observation_covariance = damping
     initial_value_guess = observations[0]
