@@ -28,6 +28,9 @@ def delogoFilter(stream, commandParams):
 
 minArea = 20
 
+def checkXYWH(x,y,w,h):
+
+
 for command in commandString.split("|"):
     try:
         stream = ffmpeg.input(videoPath, ss=0, to=5).video
@@ -36,7 +39,7 @@ for command in commandString.split("|"):
         y = commandArguments["y"]
         w = commandArguments["w"]
         h = commandArguments["h"]
-        if x >= width or y >= height:
+        if x >= width-1 or y >= height-1:
             continue
         if x == 0:
             x = 1
@@ -44,11 +47,11 @@ for command in commandString.split("|"):
             y = 1
         if x+w >= width:
             w = width-x-1
-            if w <= 0:
+            if w <= 2:
                 continue
         if y+h >= height:
             h = height-y-1
-            if h <= 0:
+            if h <= 2:
                 continue
         if w*h <= minArea:
             continue
