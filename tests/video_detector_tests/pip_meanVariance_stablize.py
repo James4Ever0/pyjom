@@ -119,7 +119,8 @@ else:
             else:# compare the two!
                 commandFloat = float(commandString)
                 nextCommandFloat = float(nextCommandString)
-                if abs(commandFloat-nextCommandFloat)
+                if abs(commandFloat-nextCommandFloat) < commandFloatMergeThreshold:
+                    
 
 import matplotlib.pyplot as plt
 
