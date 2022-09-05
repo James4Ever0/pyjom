@@ -135,9 +135,10 @@ def getSinglePointStableState(xLeftPoints):
 
 xLeftPoints = data[:,0,0]
 yLeftPoints = data[:,0,1]
-
 xRightPoints = data[:,1,0]
 yRightPoints = data[:,1,1]
+
+mPoi
 
 # import matplotlib.pyplot as plt
 
