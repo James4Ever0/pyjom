@@ -44,7 +44,7 @@ def extract_span(mlist, target=0):
 xLeftPointsFilteredDiff = np.diff(xLeftPointsFiltered)
 xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
 
-x
+xLeftSignal = xLeftPointFilteredDiff3
 
 import matplotlib.pyplot as plt
 
