@@ -68,6 +68,7 @@ from sklearn.linear_model import LinearRegression
 
 stdThreshold = 1
 slopeThreshold = 0.2
+target = []
 for start, end in newSignalRanges:
     # could we shrink the boundaries?
     mStart, mEnd = start+mShrink,end-mShrink
@@ -81,7 +82,7 @@ for start, end in newSignalRanges:
     coef = model.coef_[0]
     if coef > slopeThreshold: continue
     meanValue = np.mean(sample)
-    target.append({"range":})
+    target.append({"range":(start, end), 'mean': meanValue})
     # print((start, end), std, coef)
 
 
