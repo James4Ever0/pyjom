@@ -369,6 +369,8 @@ if __name__ == "__main__":
 
     if objective == "continual":
         dataDict = json.loads(open("pip_meanVariance.json", "r").read())
+    elif objective == 'continual_najie':
+        dataDict = json.loads(open("pip_meanVariance.json", "r").read())
     elif objective == "discrete":
         dataDict = json.loads(open("pip_discrete_meanVariance.json", "r").read())
     else:
