@@ -205,9 +205,9 @@ else:
         if noAlter:
             break
     finalCommandDict = sequentialToMergedRanges(commandDictSequential)
-    for key, elem in finalCommandDict.items():
-        print(key)
-        print(elem)
+    # for key, elem in finalCommandDict.items():
+    #     print(key)
+    #     print(elem)
         # we might want to parse the command string and reengineer this shit.
 
 # import matplotlib.pyplot as plt
