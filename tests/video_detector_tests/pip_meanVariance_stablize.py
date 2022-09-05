@@ -26,7 +26,9 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
     
     def get1DArrayEMA(mArray,N=5):
         weights=np.exp(np.linspace(0,1,N))
-        weights =weights/
+        weights =weights/np.sum(weights)
+        ema = np.convolve(weights, mArray, mode='valid']
+
 
 
     def pointsToRangedDictWithLabel(mArray, label, threshold=35):
