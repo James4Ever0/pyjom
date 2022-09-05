@@ -51,9 +51,11 @@ xLeftPointsSignal = (abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astyp
 def signalFilter(signal, threshold = 10):
     newSignal = np.zeros(len(signal))
     signalFiltered = extract_span(xLeftPointsSignal, target=1)
+    newSignalRanges = []
     for start, end in signalFiltered:
         length = end-start
         if length >= threshold:
+            newSignalRanges.append((start, end))
             newSignal[start:end+1] = 1
     return newSignal, newSignalRanges
 
