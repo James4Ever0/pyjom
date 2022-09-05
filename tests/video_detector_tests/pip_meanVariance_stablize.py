@@ -105,6 +105,7 @@ if (newTargetSequentialUpdated) == 1:
         # the whole thing is empty now. no need to investigate.
         print("NO STATIC PIP FOUND HERE.")
 else:
+    newTargetSequential
     for index in range(len(newTargetSequential)-1):
         elem = newTargetSequential[index]
         commandString, commandTimeSpan = elem
