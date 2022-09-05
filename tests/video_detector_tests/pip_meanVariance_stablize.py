@@ -112,6 +112,13 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         # we might want to parse the command string and reengineer this shit.
     return finalCommandDict
 
+
+def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
+    defaultWidth, defaultHeight = int(defaultWidth), int(defaultHeight)
+    import numpy as np
+
+    data = np.array(data)
+    
     def Kalman1D(observations, damping=0.2):
         # To return the smoothed time series data
         observation_covariance = damping
