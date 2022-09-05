@@ -46,7 +46,7 @@ xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
 
 # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
 derivative3Threshold = 3
-xLeftPointsSignal = (abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astype(np.uint8).tolist()
+xLeftPointsSignal = (abs(xLeftPointsFilteredDiff) < derivative3Threshold).astype(np.uint8).tolist()
 
 def signalFilter(signal, threshold = 10):
     newSignal = np.zeros(len(signal))
