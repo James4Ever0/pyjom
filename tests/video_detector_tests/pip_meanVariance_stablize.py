@@ -41,7 +41,7 @@ def extract_span(mlist, target=0):
     return spanList
 
 # solve diff.
-
+np.diff()
 
 import matplotlib.pyplot as plt
 
