@@ -57,7 +57,8 @@ def signalFilter(signal, threshold = 10):
             newSignal[start:end+1] = 1
     return newSignal, newSignalRanges
 
-xLeftPointsSignalFiltered = signalFilter(xLeftPointsSignal)*255
+xLeftPointsSignalFiltered, newSignalRanges= signalFilter(xLeftPointsSignal)
+xLeftPointsFiltered
 
 import matplotlib.pyplot as plt
 
