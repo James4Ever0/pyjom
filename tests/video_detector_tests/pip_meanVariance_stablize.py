@@ -75,13 +75,13 @@ for start, end in xLeftSpans:
 
 # exit()
 # print(xLeftPoints)
-for stablePipRangeTuple in stablePipRangeTuples:
-    print(stablePipRangeTuple)
-exit()
+# for stablePipRangeTuple in stablePipRangeTuples:
+#     print(stablePipRangeTuple)
+# exit()
 import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
 plt.plot(xLeftPointsFiltered)
-plt.plot(xLeftPointsSignal)
+# plt.plot(xLeftPointsSignal)
 plt.show()
 
