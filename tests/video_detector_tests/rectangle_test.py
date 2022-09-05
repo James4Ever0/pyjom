@@ -67,10 +67,9 @@ while True:
             cv2.rectangle(frame, (min_x, min_y),
                           (max_x, max_y), (255, 0, 0), 2)
             # how to stablize this shit?
-        cv2.imshow('video', frame)
-
-        cv2.imshow('img_output', img_output)
-        cv2.imshow('img_bgmodel', img_bgmodel)
+        # cv2.imshow('video', frame)
+        # cv2.imshow('img_output', img_output)
+        # cv2.imshow('img_bgmodel', img_bgmodel)
 
     else:
         cv2.waitKey(1000)
