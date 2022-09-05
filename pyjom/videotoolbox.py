@@ -906,6 +906,6 @@ def detectPipRegionOverTime(
             mEnd = min(end, mEnd)
             mDuration = mEnd-mStart
             if mDuration<=0: continue
-            updated
+            updatedValueAlignedToSeconds.append((mStart, mEnd))
         finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
     return finalResultDict
