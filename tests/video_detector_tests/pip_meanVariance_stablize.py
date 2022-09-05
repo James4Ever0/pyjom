@@ -221,6 +221,9 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             # we might want to parse the command string and reengineer this shit.
     return finalCommandDict
 
+
+def 
+
 if __name__ == "__main__":
     # better plot this shit.
     import json
