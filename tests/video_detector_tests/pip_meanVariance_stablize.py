@@ -149,7 +149,9 @@ for mPoint in mPoints:
     # for elem in answer.items():
     #     print(elem)
 if answers == [{},{},{},{}]:
-    pri
+    print("NO PIP FOUND")
+else:
+    
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
