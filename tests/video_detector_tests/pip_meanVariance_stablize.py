@@ -33,3 +33,4 @@ import matplotlib.pyplot as plt
 plt.plot(xLeftPoints)
 plt.plot(xLeftPointsFiltered)
 plt.show()
+
