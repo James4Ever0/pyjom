@@ -61,8 +61,8 @@ xLeftPointsSignalFiltered, newSignalRanges= signalFilter(xLeftPointsSignal)
 xLeftPointsSignalFiltered *=255
 
 for start, end in newSignalRanges:
-    std = np.std(xLeftPointsFiltered)
-    print()
+    std = np.std(xLeftPointsFiltered[start:end+1])
+    print((start, end), std)
 
 import matplotlib.pyplot as plt
 
