@@ -233,7 +233,7 @@ if __name__ == "__main__":
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
     for key in finalCommandDict.keys():
         import parse
-        commandArguments = parse.parse("crop_{x}_{}_{}_{}",key)
+        commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}",key)
         rect = 
         plotRect(ax, *rect)
     plt.show()
