@@ -62,9 +62,9 @@ for start, end in xLeftSpans:
     model = LinearRegression()
     X,y = kalmanSegment,np.linspace(0, end-start,end-start+1)
     model.fit(X,y)
-    coef = model.coef_
-    print(start, end, coef)
-    # if spanLength > spanLengthMinThreshold:
+    coef = model.coef_[0]
+    # print(start, end, coef)
+    if spanLength > spanLengthMinThreshold:
 
 exit()
 # print(xLeftPoints)
