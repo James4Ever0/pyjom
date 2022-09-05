@@ -1,5 +1,6 @@
 from distutils.cmd import Command
 import json
+from mimetypes import common_types
 from mathlib import *
 # from ...pyjom.mathlib import sequentialToMergedRanges
 
@@ -166,7 +167,8 @@ else:
     for index, elem in enumerate(answers):
         label = labels[index]
         newElem = {"{}:{}".format(label,key):elem[key] for key in elem.keys()}
-        comma
+        commandDict.update(newElem)
+        common_types
 
 # import matplotlib.pyplot as plt
 
