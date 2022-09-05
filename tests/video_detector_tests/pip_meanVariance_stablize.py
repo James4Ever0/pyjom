@@ -190,6 +190,7 @@ else:
             nextItemDuration = getSpanDuration(nextItem[1])
             if currentItemDuration < itemDurationThreshold:
                 if nextItemCommand != currentItemCommand:
+                    print(index, )
                     commandDictSequential[i][0] = nextItemCommand
                     noAlter=False
             elif nextItemDuration < itemDurationThreshold:
@@ -199,7 +200,8 @@ else:
         if noAlter:
             break
         else:
-            for elem in print(commandDictSequential)
+            for elem in commandDictSequential:
+                print(elem)
             breakpoint()
     finalCommandDict = sequentialToMergedRanges(commandDictSequential)
     for key, elem in finalCommandDict.items():
