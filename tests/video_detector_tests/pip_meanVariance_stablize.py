@@ -3,10 +3,12 @@ import json
 from mathlib import *
 # from ...pyjom.mathlib import sequentialToMergedRanges
 
-data = json.loads(open("pip_meanVariance.json",'r').read())
+dataDict = json.loads(open("pip_meanVariance.json",'r').read())
 
 # print(len(data)) # 589
 import numpy as np
+
+data  = dataDict['idata']
 data = np.array(data)
 from pykalman import KalmanFilter
 
