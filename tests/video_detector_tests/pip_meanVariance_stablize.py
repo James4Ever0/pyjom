@@ -224,6 +224,8 @@ if __name__ == "__main__":
 
     defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
     import matplotlib.pyplot as plt
+    from matplotlib.patches import Rectangle
+
     def plotRect(ax, x, y, width, height, facecolor):
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
     
