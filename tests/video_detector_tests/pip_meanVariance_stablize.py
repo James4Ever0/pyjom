@@ -247,7 +247,9 @@ if __name__ == "__main__":
     data  = dataDict['data']
 
     defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
-    finalCommandDict = kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight)
+
+    if objective = 'continual':
+        finalCommandDict = kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight)
 
     import matplotlib.pyplot as plt
     from matplotlib.patches import Rectangle
