@@ -52,7 +52,7 @@ print(xLeftPointsSignal.shape)
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 for start, end in xLeftSpans:
     spanLength = end-start
-    
+    if spanLength = 
 exit()
 # print(xLeftPoints)
 import matplotlib.pyplot as plt
