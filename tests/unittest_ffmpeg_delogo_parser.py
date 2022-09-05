@@ -58,6 +58,7 @@ for command in commandString.split("|"):
         y = commandArguments["y"]
         w = commandArguments["w"]
         h = commandArguments["h"]
+        
         status, XYWH = checkXYWH((x, y, w, h), (width, height))
         if not status: continue
         x,y,w,h = XYWH
