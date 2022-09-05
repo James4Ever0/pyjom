@@ -162,8 +162,8 @@ else:
         if answers[index] == {}:
             answers[index] = defaults[index]
     labels = ['xleft', 'yleft', 'xright', 'yright']
-    for elem in answers:
-        newElem = {"{}:{}"}
+    for index, elem in enumerate(answers):
+        newElem = {"{}:{}".format(label,key)}
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
