@@ -233,10 +233,10 @@ if __name__ == "__main__":
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
     plotRect(ax,0,0,defaultWidth,defaultHeight,'black')
     colors = ['red','yellow','blue']
-    for index, key in finalCommandDict.keys():
+    for index, key in enumerate(finalCommandDict.keys():
         import parse
         commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}",key)
-        color = 
+        color = colors[index]
         rect = [commandArguments[name] for name in ['x','y','w','h']]
         plotRect(ax, *rect, color)
     plt.show()
