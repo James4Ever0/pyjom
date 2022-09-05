@@ -406,7 +406,7 @@ if __name__ == "__main__":
         commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}", key)
         color = colors[index%len(colors)]
         rect = [int(commandArguments[name]) for name in ["x", "y", "w", "h"]]
-        print("RECT", rect, color)
+        print("RECT", rect, color, "SPAN")
         plotRect(ax, *rect, color)
     # breakpoint()
     plt.show()
