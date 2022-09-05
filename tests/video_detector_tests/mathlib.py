@@ -180,3 +180,11 @@ def mergedRangesToSequential(renderDict):
     return renderList
     # for renderCommandString, commandTimeSpan in renderList:
     #     print(renderCommandString, commandTimeSpan)
+
+
+def sequentialToMergedRanges(sequence):
+    mergedRanges = {}
+    for commandString, commandTimeSpan in sequence:
+        mergedRanges.update({commandString: mergedRanges.get(commandString,[])+[commandTimeSpan]})
+    mergedRanges = getContinualMappedNonSympyMergeResult(mergedRanges)
+    return mergedRanges
