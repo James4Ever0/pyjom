@@ -175,14 +175,14 @@ else:
         return end-start
     while True:
         noAlter = True
-    for i in range(len(commandDictSequential)-1):
-        currentItem = commandDictSequential[i]
-        nextItem = commandDictSequential[i+1]
-        currentItemCommand = currentItem[0]
-        currentItemDuration = getSpanDuration(currentItem[1])
-        nextItemCommand = nextItem[0]
-        nextItemDuration = getSpanDuration(nextItem[1])
-        if currentItem.duration
+        for i in range(len(commandDictSequential)-1):
+            currentItem = commandDictSequential[i]
+            nextItem = commandDictSequential[i+1]
+            currentItemCommand = currentItem[0]
+            currentItemDuration = getSpanDuration(currentItem[1])
+            nextItemCommand = nextItem[0]
+            nextItemDuration = getSpanDuration(nextItem[1])
+            if currentItem.duration
 
 
 # import matplotlib.pyplot as plt
