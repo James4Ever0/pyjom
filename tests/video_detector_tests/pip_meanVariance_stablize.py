@@ -62,7 +62,7 @@ for start, end in xLeftSpans:
     X,y = np.linspace(0, end-start,end-start+1), kalmanSegment
     model.fit(X,y)
     coef = model.coef_
-    print()
+    print(start, end, coef)
     # if spanLength > spanLengthMinThreshold:
 
 exit()
