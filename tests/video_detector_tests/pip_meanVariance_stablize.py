@@ -2,9 +2,10 @@ import json
 
 data = json.loads(open("pip_meanVariance.json",'r').read())
 
+
 # print(len(data)) # 589
 import numpy as np
-
+data = np.array(data)
 from pykalman import KalmanFilter
 
 def Kalman1D(observations,damping=1):
@@ -24,4 +25,4 @@ def Kalman1D(observations,damping=1):
     pred_state, state_cov = kf.smooth(observations)
     return pred_state
 
-x
+xLeftPoints = np.array
