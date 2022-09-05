@@ -187,7 +187,7 @@ else:
                 if nextItemCommand != currentItemCommand:
                     commandDictSequential[i][0] = nextItemCommand
                     noAlter=False
-                        if currentItemDuration < itemDurationThreshold:
+            if nextItemDuration < itemDurationThreshold:
             if nextItemCommand != currentItemCommand:
                 commandDictSequential[i][0] = nextItemCommand
                 noAlter=False
