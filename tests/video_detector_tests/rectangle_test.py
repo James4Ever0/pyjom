@@ -14,6 +14,7 @@ cv2_libs = sorted(cv2_libs_dir.glob("*.so"))
 if len(cv2_libs) == 1:
     print("INSERTING:", cv2_libs[0].parent)
     sys.path.insert(1, str(cv2_libs[0].parent))
+import cv2
 
 
 # suspect by static image analysis, and then create bounding box over the thing.
@@ -77,14 +78,10 @@ while True:
         # cv2.imshow('img_bgmodel', img_bgmodel)
 
     else:
-        cv2.waitKey(1000)
+        # cv2.waitKey(1000)
         break
 
-    if 0xFF & cv2.waitKey(10) == 27:
-        break
-
-
-cv2.destroyAllWindows()
+# cv2.destroyAllWindows()
 
 
 # we process this shit elsewhere.
