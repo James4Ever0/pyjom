@@ -73,10 +73,13 @@ for _ in progressbar.progressbar(range(total_frames)):
             for contour in contours:
                 [x, y, w, h] = cv2.boundingRect(img_output)
                 area = w*h
-                if area > maxArea:
-                    maxArea = area
+                # if area > maxArea:
+                #     maxArea = area
+                if counted=False
                     min_x, min_y = x, y
                     max_x, max_y = x+w, y+h
+                  else:
+                    
             pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
             # how to stablize this shit?
         # cv2.imshow('video', frame)
