@@ -27,6 +27,7 @@ def Kalman1D(observations,damping=0.2):
 
 xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
+xLeftPointsFiltered.reshape(-1)
 threshold = 30
 print(xLeftPoints.shape)
 breakpoint()
