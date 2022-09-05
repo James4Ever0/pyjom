@@ -50,12 +50,12 @@ xLeftPointsSignalList = xLeftPointsSignal.tolist()
 print(xLeftPointsSignal.shape)
 # print(xLeftPointsSignalList)
 spanLengthMinThreshold = 20
-kalmanMaxSlope = 
+# kalmanMaxSlope = 
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 for start, end in xLeftSpans:
     spanLength = end-start
-    kalmanStart, kalmanEnd = 
-    if spanLength > spanLengthMinThreshold:
+    # kalmanStart, kalmanEnd = 
+    # if spanLength > spanLengthMinThreshold:
 
 exit()
 # print(xLeftPoints)
