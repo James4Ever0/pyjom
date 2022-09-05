@@ -169,7 +169,7 @@ def ffmpegVideoPreProductionFilter(
                             # breakpoint()
                             # maybe it's not because of out of bounds error
                             print("_" * 30)
-                            print("ABNORMAL DELOGO FILTER PARAMS:", commandParams)
+                            print("ABNORMAL {} FILTER PARAMS:".format(keyword.upper()), commandParams)
                             print(
                                 "maxX: {} maxY: {}".format(
                                     commandParams["x"] + commandParams["w"],
