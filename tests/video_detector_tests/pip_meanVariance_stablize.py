@@ -1,4 +1,5 @@
 import json
+from mathlib import *
 
 data = json.loads(open("pip_meanVariance.json",'r').read())
 
@@ -83,7 +84,6 @@ for start, end in newSignalRanges:
     meanValue = np.mean(sample)
     target.append({"range":(start, end), 'mean': meanValue})
     # print((start, end), std, coef)
-
 
 for elem in newTarget:
 
