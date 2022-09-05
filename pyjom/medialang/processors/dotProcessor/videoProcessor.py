@@ -70,9 +70,9 @@ def ffmpegVideoPreProductionFilter(
             w=commandParams["w"],
             h=commandParams["h"],
         )
-    def delogoFilter(stream, commandParams):
+    def cropFilter(stream, commandParams):
         return stream.filter(
-            "delogo",
+            "crop",
             x=commandParams["x"],
             y=commandParams["y"],
             w=commandParams["w"],
