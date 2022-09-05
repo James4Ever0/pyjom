@@ -176,7 +176,9 @@ else:
     for i in range(len(commandDictSequential)-1):
         currentItem = commandDictSequential[i]
         nextItem = commandDictSequential[i+1]
+        currentItemCommand = currentItem[0]
         currentItemDuration = getSpanDuration(currentItem[1])
+        nextItemCommand = 
         nextItemDuration = getSpanDuration(nextItem[1])
 
 
