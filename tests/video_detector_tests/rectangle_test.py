@@ -52,7 +52,7 @@ total_frames = capture.get(cv2.CAP_PROP_FRAME_COUNT)
 pipFrames = []
 
 pos_frame = capture.get(1)
-while True:
+for _ in range(total_frames):
     flag, frame = capture.read()
 
     if flag:
