@@ -43,7 +43,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         start, end = span
         return end - start
 
-    itemDurationThreshold = 2
+    itemDurationThreshold = 5
 
     while True:
         # print("LOOP COUNT:", loopCount)
@@ -314,7 +314,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
                         commandDictSequential[i][0] = nextItemCommand
                         # noAlter=False
                 if nextItemDuration < itemDurationThreshold:
-                    if nextItemCommand != currentItemCommand and nextItemDuration >= itemDurationThreshold:
+                    if nextItemCommand != currentItemCommand and currentItemDuration >= itemDurationThreshold:
                         # print("HERE1",i, currentItemCommand, nextItemCommand)
                         commandDictSequential[i + 1][0] = currentItemCommand
                         # noAlter=False
