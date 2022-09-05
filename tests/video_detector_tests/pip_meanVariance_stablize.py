@@ -130,7 +130,8 @@ def getSinglePointStableState(xLeftPoints):
         # for elem in answer.items():
         #     print(elem)
         return {}
-    pri
+    print("SOMEHOW THE CODE SUCKS")
+    return {}
 
     xLeftPoints = data[:,0,1]
 
