@@ -173,6 +173,7 @@ else:
     def getSpanDuration(span):
         start, end = span
         return end-start
+    itemDurationThreshold = 15
     while True:
         noAlter = True
         for i in range(len(commandDictSequential)-1):
