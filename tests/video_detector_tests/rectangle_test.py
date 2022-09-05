@@ -1,6 +1,5 @@
 # motion detectors are used to track objects. though you may want to separate objects with it.
 import progressbar
-import cv2
 import json
 import pybgs as bgs
 import numpy as np
@@ -17,6 +16,7 @@ if len(cv2_libs) == 1:
     print("INSERTING:", cv2_libs[0].parent)
     sys.path.insert(1, str(cv2_libs[0].parent))
 
+import cv2
 
 # suspect by static image analysis, and then create bounding box over the thing.
 # check image quality.
@@ -77,13 +77,6 @@ for _ in progressbar.progressbar(range(total_frames)):
                     maxArea = area
                     min_x, min_y = x, y
                     max_x, max_y = x+w, y+h
-                # if not counted:
-                #     min_x, min_y = x, y
-                #     max_x, max_y = x+w, y+h
-                #     counted = True
-                # else:
-                #     min_x = min(min_x, x)
-                #     min_y 
             pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
             # how to stablize this shit?
         # cv2.imshow('video', frame)
