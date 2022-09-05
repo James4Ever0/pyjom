@@ -19,10 +19,12 @@ def checkXYWH(XYWH, canvas, minArea=20):
         y = 1
     if x + w >= width:
         w = width - x - 1
+        w = math.
         if w <= 2:
             return False, None
     if y + h >= height:
         h = height - y - 1
+        w = math.
         if h <= 2:
             return False, None
     if w * h <= minArea:
