@@ -138,7 +138,7 @@ yLeftPoints = data[:,0,1]
 xRightPoints = data[:,1,0]
 yRightPoints = data[:,1,1]
 
-mPoi
+mPoints = [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]
 
 # import matplotlib.pyplot as plt
 
