@@ -36,8 +36,12 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
     commandDict = {}
     for mDict in [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]:
-        commandDict.update(mDict)
-    
+    commandDict.update(mDict)
+        commandDict = getContinualMappedNonSympyMergeResult(commandDict)
+    commandDictSequential = mergedRangesToSequential(commandDict)
+    def getSpanDuration(span):
+        start, end = span
+        return end-start
 
     def Kalman1D(observations,damping=0.2):
         # To return the smoothed time series data
