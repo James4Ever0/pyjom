@@ -15,10 +15,11 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     data = np.array(data)
 
     def getMerged(mArray, threshold = 35):
-        for index, elem in enumerate(mArray):
+        for index, elem in enumerate(mArray[:-1]):
             nextElem = mArray[index+1]
             if abs(nextElem - elem) < threshold:
-                mArray[index+1]
+                mArray[index+1] = elem
+        return mArray
     xLeftPoints = data[:,0,0]
     yLeftPoints = data[:,0,1]
     xRightPoints = data[:,1,0]
