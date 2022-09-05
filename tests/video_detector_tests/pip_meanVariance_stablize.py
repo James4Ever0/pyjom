@@ -20,7 +20,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             if abs(nextElem - elem) < threshold:
                 mArray[index+1] = elem
         return mArray
-    def listTo
+    def listToSequentialRanges(mList):
+        
     xLeftPoints = getMerged(data[:,0,0])
     yLeftPoints = getMerged(data[:,0,1])
     xRightPoints = getMerged(data[:,1,0])
