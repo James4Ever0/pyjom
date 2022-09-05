@@ -225,7 +225,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         )
         newTargetSequential = mergedRangesToSequential(newTarget)
 
-        commandFloatMergeThreshold = 10
+        commandFloatMergeThreshold = 15
 
         if (newTargetSequential) == 1:
             if newTargetSequential[0][0] == "empty":
