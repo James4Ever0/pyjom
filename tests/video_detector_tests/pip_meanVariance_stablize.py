@@ -153,7 +153,8 @@ if answers == [{},{},{},{}]:
 else:
     defaultCoord = [0,0,defaultWidth, defaultHeight] # deal with it later?
     defaults = [{str(defaultCoord[index]): [(0,len(data))]} for index in range(4)]
-    
+    for index in range(4):
+        if 
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
