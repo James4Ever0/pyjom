@@ -98,7 +98,7 @@ newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget, mSta
 newTargetSequential = mergedRangesToSequential(newTarget)
 
 for index, elem in newTargetSequential:
-
+    
 
 
 import matplotlib.pyplot as plt
