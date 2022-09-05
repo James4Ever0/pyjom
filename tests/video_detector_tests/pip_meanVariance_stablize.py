@@ -67,7 +67,7 @@ for start, end in xLeftSpans:
         model.fit(X,y)
         coef = model.coef_[0]
         if abs(coef) < kalmanMaxSlope:
-
+            
 
 exit()
 # print(xLeftPoints)
