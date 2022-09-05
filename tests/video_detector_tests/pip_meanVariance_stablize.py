@@ -5,6 +5,7 @@ from mathlib import *
 # you can use yolo to train network to detect these sharp corners, total four sharp corners.
 
 # but what about other stuff?
+# whatever let's just use this.
 
 
 def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
