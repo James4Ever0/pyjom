@@ -49,9 +49,10 @@ derivative3Threshold = 3
 xLeftPointsSignal = (abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astype(np.uint8).tolist()
 
 def signalFilter(signal, threshold = 20):
-    newSignal = np.zeros()
+    newSignal = np.zeros(len(signal))
     signalFiltered = extract_span(xLeftPointsSignal, target=1)
     for start, end in signalFiltered:
+        if 
 
 xLeftPointsSignalFiltered = 
 
