@@ -71,7 +71,7 @@ for start, end in xLeftSpans:
         if abs(coef) < kalmanMaxSlope:
             kalmanMean = np.mean(kalmanSegment)
             stablePipRangeTuples.append({"frameSpan": (start, end), 'mean': kalmanMean})
-            xLeftPointsSignalList[start:end]
+            xLeftPointsSignal[start:end] = kalmanMean
 
 # exit()
 # print(xLeftPoints)
