@@ -8,7 +8,8 @@ dataDict = json.loads(open("pip_meanVariance.json",'r').read())
 # print(len(data)) # 589
 import numpy as np
 
-data  = dataDict['idata']
+data  = dataDict['data']
+defaultWidth, defaultHeight = dataDict['defaultWidth'], dataDict['defaultHeight
 data = np.array(data)
 from pykalman import KalmanFilter
 
