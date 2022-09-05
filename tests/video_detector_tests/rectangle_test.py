@@ -55,7 +55,7 @@ pipFrames = []
 
 pos_frame = capture.get(1)
 for index in progressbar.progressbar(range(total_frames)):
-
+    if index % 20 != 0: continue
     flag, frame = capture.read()
     if flag:
         pos_frame = capture.get(1)
