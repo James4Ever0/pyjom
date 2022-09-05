@@ -190,7 +190,7 @@ else:
             nextItemDuration = getSpanDuration(nextItem[1])
             if currentItemDuration < itemDurationThreshold:
                 if nextItemCommand != currentItemCommand:
-                    print(index, )
+                    print("HERE0",index, currentItemCommand, nextItemCommand)
                     commandDictSequential[i][0] = nextItemCommand
                     noAlter=False
             elif nextItemDuration < itemDurationThreshold:
