@@ -50,8 +50,12 @@ def do_overlap(l1, r1, l2, r2):
     # If one rectangle is on left side of other
     interval_x0 = sympy.Interval(l1.x, r1.x,left_open=True, right_open=True)
     interval_x1 = sympy.Interval(l2.x, r2.x,left_open=True, right_open=True)
+    intersection_x = interval_x0.intersect(interval_x1)
+
     interval_y0 = sympy.Interval(l1.y, r1.y,left_open=True, right_open=True)
     interval_y1 = sympy.Interval(l2.y, r2.y,left_open=True, right_open=True)
+    intersection_x = interval_x0.intersect(interval_x1)
+
 
     return True
 
