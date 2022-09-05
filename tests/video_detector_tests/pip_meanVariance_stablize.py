@@ -98,11 +98,11 @@ mEnd = len(xLeftPoints)
 newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget, mStart, mEnd)
 newTargetSequential = mergedRangesToSequential(newTarget)
 
-newTargetSequentialUpdated = []
+# newTargetSequentialUpdated = []
 commandFloatMergeThreshold = 10
 
-if (newTargetSequentialUpdated) == 1:
-    if newTargetSequentialUpdated[0][0] == 'empty':
+if (newTargetSequential) == 1:
+    if newTargetSequential[0][0] == 'empty':
         # the whole thing is empty now. no need to investigate.
         print("NO STATIC PIP FOUND HERE.")
 else:
