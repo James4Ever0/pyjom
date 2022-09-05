@@ -4,29 +4,30 @@
 from pyjom.commons import *
 from pyjom.mathlib import *
 import cv2
+
 # import cv2
 
 
-def checkXYWH(XYWH,canvas,minArea = 20):
-    x,y,w,h = XYWH
+def checkXYWH(XYWH, canvas, minArea=20):
+    x, y, w, h = XYWH
     width, height = canvas
-    if x >= width-1 or y >= height-1:
+    if x >= width - 1 or y >= height - 1:
         return False, None
     if x == 0:
         x = 1
     if y == 0:
         y = 1
-    if x+w >= width:
-        w = width-x-1
+    if x + w >= width:
+        w = width - x - 1
         if w <= 2:
             return False, None
-    if y+h >= height:
-        h = height-y-1
+    if y + h >= height:
+        h = height - y - 1
         if h <= 2:
             return False, None
-    if w*h <= minArea:
+    if w * h <= minArea:
         return False, None
-    return True, (x,y,w,h)
+    return True, (x, y, w, h)
 
 
 def LRTBToDiagonal(lrtb):
@@ -107,7 +108,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     samplePopulation.sort()
     # if not iterate:
     # print("NOT ITERATING")
-    def nonIterator(cap,samplePopulation):
+    def nonIterator(cap, samplePopulation):
         imageList = []
         for sampleIndex in progressbar.progressbar(samplePopulation):
             cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
@@ -116,7 +117,8 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
                 # print("APPENDING!")
                 imageList.append(image.copy())
         return imageList
-    def iterator(cap,samplePopulation):
+
+    def iterator(cap, samplePopulation):
         for sampleIndex in progressbar.progressbar(samplePopulation):
             cap.set(cv2.CAP_PROP_POS_FRAMES, sampleIndex)
             success, image = cap.read()
@@ -124,10 +126,12 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
                 # print("APPENDING!")
                 # imageList.append(image.copy())
                 yield image
+
     if iterate:
         return iterator(cap, samplePopulation)
     else:
         return nonIterator(cap, samplePopulation)
+
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     cap = cv2.VideoCapture(videoPath)
@@ -242,11 +246,14 @@ def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     newFrameWork = [getRounded(x * shrinkRatio, 4) for x in mList]
     return newFrameWork[0], newFrameWork[1]
 
+
 def getVideoFrameRate(videoPath):
     from MediaInfo import MediaInfo
+
     info = MediaInfo(filename=videoPath)
     infoData = info.getInfo()
-    return float(infoData['videoFrameRate'])
+    return float(infoData["videoFrameRate"])
+
 
 def getVideoWidthHeight(videoPath):
     from MediaInfo import MediaInfo
@@ -275,7 +282,8 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     )
     return previewWidth, previewHeight
 
-def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
+
+def detectStationaryLogoOverTime(filepath, start, end, sample_size=60):
     imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size)
     # what is this src?
     # from src import *
@@ -302,8 +310,12 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
 
         # Compute gradients
         print("Computing gradients.")
-        gradx = list(map(lambda x: cv2.Sobel(x, cv2.CV_64F, 1, 0, ksize=KERNEL_SIZE), images)) # this is py3 my friend?
-        grady = list(map(lambda x: cv2.Sobel(x, cv2.CV_64F, 0, 1, ksize=KERNEL_SIZE), images)) # this is py3 my friend?
+        gradx = list(
+            map(lambda x: cv2.Sobel(x, cv2.CV_64F, 1, 0, ksize=KERNEL_SIZE), images)
+        )  # this is py3 my friend?
+        grady = list(
+            map(lambda x: cv2.Sobel(x, cv2.CV_64F, 0, 1, ksize=KERNEL_SIZE), images)
+        )  # this is py3 my friend?
 
         # Compute median of grads
         print("Computing median gradients.")
@@ -315,10 +327,17 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
 
         return (Wm_x, Wm_y, gradx, grady)
 
-    def poisson_reconstruct(gradx, grady, kernel_size=KERNEL_SIZE, num_iters=100, h=0.1, 
-            boundary_image=None, boundary_zero=True):
+    def poisson_reconstruct(
+        gradx,
+        grady,
+        kernel_size=KERNEL_SIZE,
+        num_iters=100,
+        h=0.1,
+        boundary_image=None,
+        boundary_zero=True,
+    ):
         """
-        Iterative algorithm for Poisson reconstruction. 
+        Iterative algorithm for Poisson reconstruction.
         Given the gradx and grady values, find laplacian, and solve for image
         Also return the squared difference of every step.
         h = convergence rate
@@ -326,25 +345,32 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
         fxx = cv2.Sobel(gradx, cv2.CV_64F, 1, 0, ksize=kernel_size)
         fyy = cv2.Sobel(grady, cv2.CV_64F, 0, 1, ksize=kernel_size)
         laplacian = fxx + fyy
-        m,n,p = laplacian.shape # three channels?
+        m, n, p = laplacian.shape  # three channels?
 
         if boundary_zero == True:
             est = np.zeros(laplacian.shape)
         else:
-            assert(boundary_image is not None)
-            assert(boundary_image.shape == laplacian.shape)
+            assert boundary_image is not None
+            assert boundary_image.shape == laplacian.shape
             est = boundary_image.copy()
 
-        est[1:-1, 1:-1, :] = np.random.random((m-2, n-2, p))
+        est[1:-1, 1:-1, :] = np.random.random((m - 2, n - 2, p))
         loss = []
 
         for i in range(num_iters):
             old_est = est.copy()
-            est[1:-1, 1:-1, :] = 0.25*(est[0:-2, 1:-1, :] + est[1:-1, 0:-2, :] + est[2:, 1:-1, :] + est[1:-1, 2:, :] - h*h*laplacian[1:-1, 1:-1, :])
-            error = np.sum(np.square(est-old_est))
+            est[1:-1, 1:-1, :] = 0.25 * (
+                est[0:-2, 1:-1, :]
+                + est[1:-1, 0:-2, :]
+                + est[2:, 1:-1, :]
+                + est[1:-1, 2:, :]
+                - h * h * laplacian[1:-1, 1:-1, :]
+            )
+            error = np.sum(np.square(est - old_est))
             loss.append(error)
 
-        return (est)
+        return est
+
     ###########
     # you can do this later, will you?
     gx, gy, gxlist, gylist = estimate_watermark_imgSet(imageSet)
@@ -409,11 +435,11 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     myMask2 = np.zeros(shape=[a, b], dtype=np.uint8)
 
     # this is for video watermarks. how about pictures? do we need to cut corners? how to find the freaking watermark again?
-    # delogoFilter = 
+    # delogoFilter =
     mFinalDelogoFilters = []
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
-        delogoCommand = "delogo_{}_{}_{}_{}".format(x,y,w,h)
+        delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
         # print(delogoCommand)
         # print('width:{} height:{}'.format(b,a))
         # if b< x+w or a<y+h:
@@ -428,7 +454,7 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
     if len(mFinalDelogoFilters) == 0:
         return {}
     else:
-        delogoCommandSet= "|".join(mFinalDelogoFilters)
+        delogoCommandSet = "|".join(mFinalDelogoFilters)
         # print(delogoCommandSet)
         # breakpoint()
         return {delogoCommandSet: [(start, end)]}
@@ -453,22 +479,31 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
             mKey = "{}:{}".format(label, int(elem))
             resultDict.update({mKey: resultDict.get(mKey, []) + [(index, index + 1)]})
         return resultDict
-    
-    def get1DArrayEMA(mArray,N=5):
-        weights=np.exp(np.linspace(0,1,N))
-        weights =weights/np.sum(weights)
-        ema = np.convolve(weights, mArray, mode='valid')
+
+    def get1DArrayEMA(mArray, N=5):
+        weights = np.exp(np.linspace(0, 1, N))
+        weights = weights / np.sum(weights)
+        ema = np.convolve(weights, mArray, mode="valid")
         return ema
 
     def pointsToRangedDictWithLabel(mArray, label, threshold=35):
         mArray = get1DArrayEMA(mArray)
         mArray = getAlikeValueMerged(mArray, threshold=threshold)
         return listToRangedDictWithLabel(mArray, label)
-    threshold = int(max(defaultWidth, defaultHeight)*0.02734375)
-    xLeftPoints = pointsToRangedDictWithLabel(data[:, 0, 0], "xleft", threshold = threshold)
-    yLeftPoints = pointsToRangedDictWithLabel(data[:, 0, 1], "yleft", threshold = threshold)
-    xRightPoints = pointsToRangedDictWithLabel(data[:, 1, 0], "xright", threshold = threshold)
-    yRightPoints = pointsToRangedDictWithLabel(data[:, 1, 1], "yright", threshold = threshold)
+
+    threshold = int(max(defaultWidth, defaultHeight) * 0.02734375)
+    xLeftPoints = pointsToRangedDictWithLabel(
+        data[:, 0, 0], "xleft", threshold=threshold
+    )
+    yLeftPoints = pointsToRangedDictWithLabel(
+        data[:, 0, 1], "yleft", threshold=threshold
+    )
+    xRightPoints = pointsToRangedDictWithLabel(
+        data[:, 1, 0], "xright", threshold=threshold
+    )
+    yRightPoints = pointsToRangedDictWithLabel(
+        data[:, 1, 1], "yright", threshold=threshold
+    )
 
     commandDict = {}
     for mDict in [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]:
@@ -496,12 +531,15 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
             nextItemCommand = nextItem[0]
             nextItemDuration = getSpanDuration(nextItem[1])
             if currentItemDuration < itemDurationThreshold:
-                if nextItemCommand != currentItemCommand and nextItemDuration >= itemDurationThreshold:
+                if (
+                    nextItemCommand != currentItemCommand
+                    and nextItemDuration >= itemDurationThreshold
+                ):
                     # print("HERE0",i, currentItemCommand, nextItemCommand)
                     commandDictSequential[i][0] = nextItemCommand
                     # noAlter=False
             if nextItemDuration < itemDurationThreshold:
-                if nextItemCommand != currentItemCommand :
+                if nextItemCommand != currentItemCommand:
                     # print("HERE1",i, currentItemCommand, nextItemCommand)
                     commandDictSequential[i + 1][0] = currentItemCommand
                     # noAlter=False
@@ -569,9 +607,13 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         pred_state, state_cov = kf.smooth(observations)
         return pred_state
 
-    def getSinglePointStableState(xLeftPoints, signalFilterThreshold=10, commandFloatMergeThreshold = 15, 
-        stdThreshold = 1,
-        slopeThreshold = 0.2):
+    def getSinglePointStableState(
+        xLeftPoints,
+        signalFilterThreshold=10,
+        commandFloatMergeThreshold=15,
+        stdThreshold=1,
+        slopeThreshold=0.2,
+    ):
         xLeftPointsFiltered = Kalman1D(xLeftPoints)
         xLeftPointsFiltered = xLeftPointsFiltered.reshape(-1)
         from itertools import groupby
@@ -616,7 +658,9 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
                     newSignal[start : end + 1] = 1
             return newSignal, newSignalRanges
 
-        xLeftPointsSignalFiltered, newSignalRanges = signalFilter(xLeftPointsSignal, threshold = signalFilterThreshold)
+        xLeftPointsSignalFiltered, newSignalRanges = signalFilter(
+            xLeftPointsSignal, threshold=signalFilterThreshold
+        )
         xLeftPointsSignalFiltered *= 255
 
         mShrink = 2
@@ -700,8 +744,6 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
     answers = []
 
-
-
     for mPoint in mPoints:
         answer = getSinglePointStableState(mPoint)
         answers.append(answer)
@@ -752,7 +794,10 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
                         commandDictSequential[i][0] = nextItemCommand
                         # noAlter=False
                 if nextItemDuration < itemDurationThreshold:
-                    if nextItemCommand != currentItemCommand and currentItemDuration >= itemDurationThreshold:
+                    if (
+                        nextItemCommand != currentItemCommand
+                        and currentItemDuration >= itemDurationThreshold
+                    ):
                         # print("HERE1",i, currentItemCommand, nextItemCommand)
                         commandDictSequential[i + 1][0] = currentItemCommand
                         # noAlter=False
@@ -795,13 +840,15 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     return finalCommandDict
 
 
-
-def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_difference'): # shall be some parameters here.
+def detectPipRegionOverTime(
+    videoPath, start, end, method="skim", algo="frame_difference"
+):  # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
     import pybgs as bgs
-    assert algo in ['frame_difference', 'weighted_moving_average']
-    if algo == 'frame_difference':
+
+    assert algo in ["frame_difference", "weighted_moving_average"]
+    if algo == "frame_difference":
         algorithm = bgs.FrameDifference()
         # much faster.
     else:
@@ -809,29 +856,29 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
         # slower. don't know if it works or not.
         # it does produce different results.
     # otherwise we do it frame by frame.
-    assert method in ['skim','framewise']
+    assert method in ["skim", "framewise"]
     pipFrames = []
-    if method == 'framewise':
+    if method == "framewise":
         sample_rate = 1
     else:
         videoFrameRate = getVideoFrameRate(videoPath)
-        totalFramesInSegment = (end-start)*videoFrameRate
+        totalFramesInSegment = (end - start) * videoFrameRate
         minSampleSize = 80
-        min_sample_rate = int(totalFramesInSegment/minSampleSize)
-        estimated_sample_rate = min(20,min_sample_rate)
-        sample_rate = max(1,estimated_sample_rate)
+        min_sample_rate = int(totalFramesInSegment / minSampleSize)
+        estimated_sample_rate = min(20, min_sample_rate)
+        sample_rate = max(1, estimated_sample_rate)
     iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
-    areaThreshold = int(0.2*0.2*defaultWidth*defaultHeight)
+    areaThreshold = int(0.2 * 0.2 * defaultWidth * defaultHeight)
     pipFrames = []
-    defaultRect = [(0,0),(defaultWidth,defaultHeight)]
+    defaultRect = [(0, 0), (defaultWidth, defaultHeight)]
 
     for frame in iterator:
         img_output = algorithm.apply(frame)
-        [x, y, w, h] = cv2.boundingRect(img_output) # wtf is this?
-        area = w*h
+        [x, y, w, h] = cv2.boundingRect(img_output)  # wtf is this?
+        area = w * h
         if area > areaThreshold:
             min_x, min_y = x, y
-            max_x, max_y = x+w, y+h
+            max_x, max_y = x + w, y + h
             currentRect = [(min_x, min_y), (max_x, max_y)]
             pipFrames.append(currentRect.copy())
             defaultRect = currentRect.copy()
@@ -839,13 +886,20 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
             pipFrames.append(defaultRect.copy())
     # now finished collecting shit... need to convert it to something readable.
     sampleLength = len(pipFrames)
-    clipDuration = end-start
+    clipDuration = end - start
     sampleIndexToSecondsRatio = clipDuration / sampleLength
-    if method == 'framewise':
-        resultDict = kalmanStablePipRegionExporter(pipFrames,defaultWidth, defaultHeight)
+    if method == "framewise":
+        resultDict = kalmanStablePipRegionExporter(
+            pipFrames, defaultWidth, defaultHeight
+        )
     else:
-        resultDict = sampledStablePipRegionExporter(pipFrames, defaultWidth, defaultHeight)
+        resultDict = sampledStablePipRegionExporter(
+            pipFrames, defaultWidth, defaultHeight
+        )
     finalResultDict = {}
     for key, value in resultDict.items():
-        updatedValueAlignedToSeconds = [(mStart*sampleIndexToSecondsRatio, mEnd*sampleIndexToSecondsRatio) for mStart, mEnd in value]
-        finalResultDict.update({key:updatedValueAlignedToSeconds.copy()})
+        updatedValueAlignedToSeconds = [
+            (mStart * sampleIndexToSecondsRatio, mEnd * sampleIndexToSecondsRatio)
+            for mStart, mEnd in value
+        ]
+        finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
