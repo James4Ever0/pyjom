@@ -87,6 +87,8 @@ for start, end in newSignalRanges:
 
 
 
+for elem in newTarget:
+
 import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
