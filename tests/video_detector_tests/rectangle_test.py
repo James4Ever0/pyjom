@@ -12,6 +12,7 @@ import pybgs as bgs
 
 algorithm = bgs.FrameDifference() # this is not stable since we have more boundaries. shall we group things?
 # can we use something else? 
+algorithm = bgs.WeightedMovingMean
 video_file = "../../samples/video/LiEIfnsvn.mp4" # this one with cropped boundaries. 
 
 capture = cv2.VideoCapture(video_file)
