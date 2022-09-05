@@ -49,7 +49,7 @@ def extract_span(mlist, target=0):
 xLeftPointsSignalList = xLeftPointsSignal.tolist()
 print(xLeftPointsSignal.shape)
 # print(xLeftPointsSignalList)
-spanLengthMinThreshold = 10
+spanLengthMinThreshold = 30
 kalmanMaxSlope = 0.10
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 
