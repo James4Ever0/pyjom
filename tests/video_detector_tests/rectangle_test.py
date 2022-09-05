@@ -25,9 +25,9 @@ import cv2
 
 # also donga have strange things you may dislike, e.g.: when only part of the image changes.
 
-algorithm = bgs.FrameDifference() # this is not stable since we have more boundaries. shall we group things?
+# algorithm = bgs.FrameDifference() # this is not stable since we have more boundaries. shall we group things?
 # can we use something else?
-# algorithm = bgs.WeightedMovingVariance()
+algorithm = bgs.WeightedMovingVariance()
 # this one with cropped boundaries.
 # average shit.
 video_file = "../../samples/video/LiEIfnsvn.mp4"
