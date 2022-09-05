@@ -143,10 +143,9 @@ mPoints = [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]
 for mPoint in mPoints:
     answer = getSinglePointStableState(mPoint)
     if answer == {}:
-        
-    print("_"*30, "ANSWER","_"*30)
-    for elem in answer.items():
-        print(elem)
+    # print("_"*30, "ANSWER","_"*30)
+    # for elem in answer.items():
+    #     print(elem)
 
 # import matplotlib.pyplot as plt
 
