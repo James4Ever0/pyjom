@@ -47,7 +47,9 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         # xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
         import matplotlib.pyplot as plt
         plt.plot(xLeftPointsFilteredDiff)
-        xLeftPointsFilteredDiff
+        plt.plot(xLeftPointsFiltered)
+        plt.plot(xLeftPoints)
+        breakpoint()
 
         # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
         derivativeThreshold = 3
@@ -224,7 +226,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             # we might want to parse the command string and reengineer this shit.
     return finalCommandDict
 
-def 
+# def 
 
 if __name__ == "__main__":
     # better plot this shit.
