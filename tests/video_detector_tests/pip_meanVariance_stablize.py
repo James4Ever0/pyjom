@@ -1,17 +1,18 @@
-from distutils.cmd import Command
+
 import json
-from mimetypes import common_types
 from mathlib import *
 # from ...pyjom.mathlib import sequentialToMergedRanges
 
 dataDict = json.loads(open("pip_meanVariance.json",'r').read())
 
 # print(len(data)) # 589
-import numpy as np
 
 data  = dataDict['data']
 
 defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
+
+def kalman
+import numpy as np
 
 data = np.array(data)
 from pykalman import KalmanFilter
