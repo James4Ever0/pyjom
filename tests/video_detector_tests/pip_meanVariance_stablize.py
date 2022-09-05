@@ -64,7 +64,7 @@ xLeftPointsSignalFiltered, newSignalRanges= signalFilter(xLeftPointsSignal)
 xLeftPointsSignalFiltered *=255
 
 mShrink = 2
-from sklearn.linear_models import LinearRegression
+from sklearn.linear_model import LinearRegression
 
 stdThreshold = 1
 for start, end in newSignalRanges:
@@ -77,7 +77,7 @@ for start, end in newSignalRanges:
     X,y = sample.reshape(-1,1), list(range(sample.shape[0]))
     model.fit(X,y)
     coef = model.coef_[0]
-    print((start, end), std)
+    print((start, end), std, coef)
 
 
 import matplotlib.pyplot as plt
