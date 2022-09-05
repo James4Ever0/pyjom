@@ -44,8 +44,8 @@ def ffmpegVideoPreProductionFilter(
             return stream.filter(
                 "scale",
                 "ceil((in_w*{})/4)*4".format(previewRatio),
-                "ceil((in_h*{})/4)*4".format(previewRatio))
-            
+                "ceil((in_h*{})/4)*4".format(previewRatio),
+            )
 
     # stream = ffmpeg.hflip(stream)
     # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
@@ -85,7 +85,9 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
-        mDict.update(detectPipRegionOverTime(videoPath, start, end)) # using default settings?
+        mDict.update(
+            detectPipRegionOverTime(filepath, start, end)
+        )  # using default settings?
         # pass
     commandValueMap = {
         "empty": -1,
@@ -114,8 +116,9 @@ def ffmpegVideoPreProductionFilter(
         mStart, mEnd = commandTimeSpan
         mStart = max(start, mStart)
         mEnd = min(videoDuration, end)
-        clipDuration = mEnd-mStart
-        if clipDuration <= 0: continue # if so, this clip is shit.
+        clipDuration = mEnd - mStart
+        if clipDuration <= 0:
+            continue  # if so, this clip is shit.
         # print("CLIP TIMESPAN:", mStart, mEnd)
         stream = ffmpeg.input(
             filepath, ss=mStart, to=mEnd
