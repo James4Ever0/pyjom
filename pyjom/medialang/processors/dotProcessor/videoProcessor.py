@@ -105,9 +105,9 @@ def ffmpegVideoPreProductionFilter(
     renderList = mergedRangesToSequential(renderDict)
     renderVideoStreamList = []
     renderAudioStream = ffmpeg.input(filepath, ss=start, to=end).audio
-    for elem in renderList:
-        print(elem)
-    breakpoint()
+    # for elem in renderList:
+    #     print(elem)
+    # breakpoint()
 
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
