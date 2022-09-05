@@ -150,7 +150,7 @@ def ffmpegVideoPreProductionFilter(
                     import parse
 
                     commandParams = parse.parse(
-                        "delogo_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
+                        keyword+"_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                     )
                     # print(defaultWidth, defaultHeight)
                     mX, mY, mW, mH = (
