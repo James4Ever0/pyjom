@@ -168,7 +168,8 @@ else:
         label = labels[index]
         newElem = {"{}:{}".format(label,key):elem[key] for key in elem.keys()}
         commandDict.update(newElem)
-    commandDict = getContinualMappedNonSympyMergeResult(comma)
+    commandDict = getContinualMappedNonSympyMergeResult(commandDict)
+    # get those small thi
 
 # import matplotlib.pyplot as plt
 
