@@ -360,8 +360,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 # def
 
 # objective = "discrete"
-objective = "continual"
-objective = "continual_najie
+# objective = "continual"
+objective = "continual_najie"
 
 if __name__ == "__main__":
     # better plot this shit.
@@ -379,7 +379,7 @@ if __name__ == "__main__":
 
     defaultWidth, defaultHeight = dataDict["width"], dataDict["height"]
 
-    if objective == "continual":
+    if objective.start"continual":
         finalCommandDict = kalmanStablePipRegionExporter(
             data, defaultWidth, defaultHeight
         )
