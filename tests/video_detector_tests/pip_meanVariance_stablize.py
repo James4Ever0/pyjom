@@ -169,7 +169,7 @@ else:
         newElem = {"{}:{}".format(label,key):elem[key] for key in elem.keys()}
         commandDict.update(newElem)
     commandDict = getContinualMappedNonSympyMergeResult(commandDict)
-    # get those small thi
+    
 
 # import matplotlib.pyplot as plt
 
