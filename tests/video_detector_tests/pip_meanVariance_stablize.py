@@ -1,4 +1,3 @@
-from genericpath import sameopenfile
 from mathlib import *
 
 # from ...pyjom.mathlib import sequentialToMergedRanges
