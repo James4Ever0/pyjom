@@ -1,7 +1,7 @@
 from distutils.cmd import Command
 import json
 from mathlib import *
-from ...pyjom.mathlib import sequentialToMergedRanges
+# from ...pyjom.mathlib import sequentialToMergedRanges
 
 data = json.loads(open("pip_meanVariance.json",'r').read())
 
