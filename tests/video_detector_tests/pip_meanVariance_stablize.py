@@ -27,8 +27,7 @@ def Kalman1D(observations,damping=0.2):
     pred_state, state_cov = kf.smooth(observations)
     return pred_state
 
-def getSinglePointStableState(xLeftPoi)
-    xLeftPoints = data[:,0,1]
+def getSinglePointStableState(xLeftPoints):
     xLeftPointsFiltered = Kalman1D(xLeftPoints)
     xLeftPointsFiltered=xLeftPointsFiltered.reshape(-1)
     from itertools import groupby
