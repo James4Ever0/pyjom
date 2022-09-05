@@ -192,12 +192,12 @@ else:
                 if nextItemCommand != currentItemCommand:
                     print("HERE0",i, currentItemCommand, nextItemCommand)
                     commandDictSequential[i][0] = nextItemCommand
-                    noAlter=False
-            elif nextItemDuration < itemDurationThreshold:
+                    # noAlter=False
+            if nextItemDuration < itemDurationThreshold:
                 if nextItemCommand != currentItemCommand:
                     print("HERE1",i, currentItemCommand, nextItemCommand)
                     commandDictSequential[i+1][0] = currentItemCommand
-                    noAlter=False
+                    # noAlter=False
         if noAlter:
             break
         else:
