@@ -112,6 +112,11 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
     data = np.array(data)
 
+    xLeftPoints = pointsToRangedDictWithLabel(data[:, 0, 0
+    yLeftPoints = pointsToRangedDictWithLabel(data[:, 0, 1
+    xRightPoints = pointsToRangedDictWithLabel(data[:, 1, 0]
+    yRightPoints = pointsToRangedDictWithLabel(data[:, 1, 1]
+
     def Kalman1D(observations, damping=0.2):
         # To return the smoothed time series data
         observation_covariance = damping
