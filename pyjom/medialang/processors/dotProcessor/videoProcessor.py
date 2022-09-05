@@ -188,7 +188,9 @@ def ffmpegVideoPreProductionFilter(
                         #     print(mX1,defaultWidth,mY1,defaultHeight)
                         #     breakpoint()
                         # we also need to consider if this is necessary.
-                        stream = delogoFilter(stream, commandParams)
+                        if keyword == 'delogo':
+                            stream = delogoFilter(stream, commandParams)
+                        elif keyword == 'crop'
 
         if preview:  # final filter? need us to crop this?
             stream = previewFilter(stream)
