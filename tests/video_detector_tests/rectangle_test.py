@@ -1,5 +1,8 @@
 # motion detectors are used to track objects. though you may want to separate objects with it.
 import numpy as np
+
+
+
 import cv2
 import pybgs as bgs
 
