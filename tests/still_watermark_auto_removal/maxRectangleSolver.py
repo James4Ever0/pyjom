@@ -35,11 +35,12 @@ class D2Point:
         self.y = y
 
 
-def getRectTop(rect, point):
+def getRectDiagonalPoints(rect):
     xPoints = [p[0] for p in rect]
     yPoints = [p[1] for p in rect]
     maxX, minX = max(xPoints), min(xPoints)
     maxY, minY = max(yPoints), min(yPoints)
+    
 def do_overlap(l1, r1, l2, r2):
      
     # if rectangle has area 0, no overlap
