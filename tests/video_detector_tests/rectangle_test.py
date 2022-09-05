@@ -74,7 +74,9 @@ for _ in progressbar.progressbar(range(total_frames)):
                 [x, y, w, h] = cv2.boundingRect(img_output)
                 area = w*h
                 if area > maxArea:
-                  maxArea = area
+                    maxArea = area
+                    min_x, min_y = x, y
+                    max_x, max_y = x+w, y+h
                 # if not counted:
                 #     min_x, min_y = x, y
                 #     max_x, max_y = x+w, y+h
