@@ -198,6 +198,9 @@ else:
                     noAlter=False
         if noAlter:
             break
+        else:
+            for elem in print(commandDictSequential)
+            breakpoint()
     finalCommandDict = sequentialToMergedRanges(commandDictSequential)
     for key, elem in finalCommandDict.items():
         print(key)
