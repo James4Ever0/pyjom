@@ -67,6 +67,7 @@ mShrink = 2
 from sklearn.linear_model import LinearRegression
 
 stdThreshold = 1
+slopeThreshold = 0.2
 for start, end in newSignalRanges:
     # could we shrink the boundaries?
     mStart, mEnd = start+mShrink,end-mShrink
