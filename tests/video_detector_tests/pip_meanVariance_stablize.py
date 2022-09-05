@@ -138,7 +138,9 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         pred_state, state_cov = kf.smooth(observations)
         return pred_state
 
-    def getSinglePointStableState(xLeftPoints, signalFilterThreshold=10):
+    def getSinglePointStableState(xLeftPoints, signalFilterThreshold=10, commandFloatMergeThreshold = 15, 
+        stdThreshold = 1
+        slopeThreshold = 0.2):
         xLeftPointsFiltered = Kalman1D(xLeftPoints)
         xLeftPointsFiltered = xLeftPointsFiltered.reshape(-1)
         from itertools import groupby
@@ -189,8 +191,6 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         mShrink = 2
         from sklearn.linear_model import LinearRegression
 
-        stdThreshold = 1
-        slopeThreshold = 0.2
         target = []
         for start, end in newSignalRanges:
             # could we shrink the boundaries?
