@@ -139,7 +139,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         return pred_state
 
     def getSinglePointStableState(xLeftPoints, signalFilterThreshold=10, commandFloatMergeThreshold = 15, 
-        stdThreshold = 1
+        stdThreshold = 1,
         slopeThreshold = 0.2):
         xLeftPointsFiltered = Kalman1D(xLeftPoints)
         xLeftPointsFiltered = xLeftPointsFiltered.reshape(-1)
@@ -270,7 +270,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     answers = []
 
     for mPoint in mPoints:
-        answer = getSinglePointStableState(mPoint)
+        answer = getSinglePointStableState(mPoint,)
         answers.append(answer)
         # print("_"*30, "ANSWER","_"*30)
         # for elem in answer.items():
