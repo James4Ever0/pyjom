@@ -28,10 +28,10 @@ def Kalman1D(observations,damping=0.2):
 xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
 xLeftPointsFiltered=xLeftPointsFiltered.reshape(-1)
-threshold = 5
+# threshold = 5
 # print(xLeftPointsFiltered.shape)
 # breakpoint()
-xLeftPointsSignal = (abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8) # convert this shit to intervals! # (589, 589), how the fuck?
+# xLeftPointsSignal = (abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8) # convert this shit to intervals! # (589, 589), how the fuck?
 # print(xLeftPointsSignal.shape)
 # breakpoint()
 from itertools import groupby
