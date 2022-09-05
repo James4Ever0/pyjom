@@ -240,7 +240,8 @@ if __name__ == "__main__":
     if objective == 'continual':
         dataDict = json.loads(open("pip_meanVariance.json",'r').read())
     elif objective == 'discrete':
-        dataDict = json.loads(open("pip
+        dataDict = json.loads(open("pip_discrete_meanVariance.json",'r').read())
+    else: raise Exception("unknown objective: %s" % objective)
     # print(len(data)) # 589
 
     data  = dataDict['data']
