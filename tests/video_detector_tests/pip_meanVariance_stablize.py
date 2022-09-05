@@ -28,7 +28,7 @@ def Kalman1D(observations,damping=0.2):
 xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
 xLeftPointsFiltered=xLeftPointsFiltered.reshape(-1)
-threshold = 10
+threshold = 30
 # print(xLeftPointsFiltered.shape)
 # breakpoint()
 xLeftPointsSignal = (abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8) # convert this shit to intervals! # (589, 589), how the fuck?
@@ -62,7 +62,7 @@ for start, end in xLeftSpans:
     spanLength = end-start
 
     print(start, end)
-    if spanLength > spanLengthMinThreshold:
+    # if spanLength > spanLengthMinThreshold:
         kalmanSegment = xLeftPointsFiltered[start:end+1].reshape(-1,1)
         model = LinearRegression()
         X,y = kalmanSegment,np.linspace(0, end-start,end-start+1)
