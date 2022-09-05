@@ -29,3 +29,5 @@ xLeftPoints = data[:,0,0]
 print(xLeftPoints)
 import matplotlib.pyplot as plt
 
+plt.plot(xLeftPoints)
+plt.show()
