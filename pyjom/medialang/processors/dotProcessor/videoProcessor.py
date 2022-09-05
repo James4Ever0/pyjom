@@ -20,7 +20,7 @@ def executeEditlyScript(medialangTmpDir, editly_json):
 
 
 def ffmpegVideoPreProductionFilter(
-    filepath, # this is actually a video path. must be video here.
+    filepath,  # this is actually a video path. must be video here.
     start=None,
     end=None,
     cachePath=None,
@@ -70,6 +70,7 @@ def ffmpegVideoPreProductionFilter(
             w=commandParams["w"],
             h=commandParams["h"],
         )
+
     def cropFilter(stream, commandParams):
         return stream.filter(
             "crop",
@@ -145,12 +146,14 @@ def ffmpegVideoPreProductionFilter(
                 # print('RENDER COMMAND:',renderCommand)
                 if renderCommand == "empty":
                     continue
-                for prefix, keyword in [("{}_".format(k),k) for k in ['delogo','crop']]:
+                for prefix, keyword in [
+                    ("{}_".format(k), k) for k in ["delogo", "crop"]
+                ]:
                     if renderCommand.startswith(prefix):
                         import parse
 
                         commandParams = parse.parse(
-                            keyword+"_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
+                            keyword + "_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                         )
                         # print(defaultWidth, defaultHeight)
                         mX, mY, mW, mH = (
@@ -169,7 +172,10 @@ def ffmpegVideoPreProductionFilter(
                             # breakpoint()
                             # maybe it's not because of out of bounds error
                             print("_" * 30)
-                            print("ABNORMAL {} FILTER PARAMS:".format(keyword.upper()), commandParams)
+                            print(
+                                "ABNORMAL {} FILTER PARAMS:".format(keyword.upper()),
+                                commandParams,
+                            )
                             print(
                                 "maxX: {} maxY: {}".format(
                                     commandParams["x"] + commandParams["w"],
@@ -188,9 +194,9 @@ def ffmpegVideoPreProductionFilter(
                         #     print(mX1,defaultWidth,mY1,defaultHeight)
                         #     breakpoint()
                         # we also need to consider if this is necessary.
-                        if keyword == 'delogo':
+                        if keyword == "delogo":
                             stream = delogoFilter(stream, commandParams)
-                        elif keyword == 'crop':
+                        elif keyword == "crop":
                             stream = cropFilter(stream, commandParams)
 
         if preview:  # final filter? need us to crop this?
