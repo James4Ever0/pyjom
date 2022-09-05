@@ -109,10 +109,9 @@ else:
         elem = newTargetSequential[index]
         commandString, commandTimeSpan = elem
         nextElem = newTargetSequential[index+1]
-        nextCommandString, nextcommandTimeSpan = elem
-
+        nextCommandString, nextCommandTimeSpan = nextElem
         if commandString == 'empty':
-        
+            
 
 import matplotlib.pyplot as plt
 
