@@ -241,7 +241,11 @@ def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     getRounded = lambda num, rounder: (num // rounder) * rounder
     newFrameWork = [getRounded(x * shrinkRatio, 4) for x in mList]
     return newFrameWork[0], newFrameWork[1]
+def getVideoFrameRate(videoPath):
+    from MediaInfo import MediaInfo
 
+    info = MediaInfo(filename=videoPath)
+    infoData = info.getInfo()
 
 def getVideoWidthHeight(videoPath):
     from MediaInfo import MediaInfo
