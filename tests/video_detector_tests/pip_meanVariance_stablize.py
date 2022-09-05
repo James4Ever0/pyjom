@@ -193,7 +193,7 @@ else:
                     noAlter=False
         if noAlter:
             break
-        finalCommandDict = 
+        finalCommandDict = sequentialToMergedRanges(commandDictSequential)
 
 # import matplotlib.pyplot as plt
 
