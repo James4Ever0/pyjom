@@ -842,6 +842,6 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
     clipDuration = end-start
     sampleIndexToSecondsRatio = clipDuration / sampleLength
     if method == 'framewise':
-        resultDict = kalmanStablePipRegionExporter()
+        resultDict = kalmanStablePipRegionExporter(pipFrames,defaultWidth, defaultHeight)
     else:
         resultDict = sampledStablePipRegionExporter()
