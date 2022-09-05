@@ -122,6 +122,7 @@ else:
                 nextCommandFloat = float(nextCommandString)
                 if abs(commandFloat-nextCommandFloat) < commandFloatMergeThreshold:
                     newTargetSequential[index+1][0] = commandString
+        
                     
 
 import matplotlib.pyplot as plt
