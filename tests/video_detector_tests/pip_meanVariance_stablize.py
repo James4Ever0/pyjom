@@ -99,6 +99,7 @@ newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget, mSta
 newTargetSequential = mergedRangesToSequential(newTarget)
 
 newTargetSequentialUpdated = []
+commandFloatMergeThreshold = 25
 
 if (newTargetSequentialUpdated) == 1:
     if newTargetSequentialUpdated[0][0] == 'empty':
