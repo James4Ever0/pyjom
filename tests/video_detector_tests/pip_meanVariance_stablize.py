@@ -90,7 +90,7 @@ newTarget = {}
 for elem in target:
     meanStr = str(elem['mean'])
     mRange = elem['range']
-    newTarget.update({meanStr: newTarget.get(meanStr, [])})
+    newTarget.update({meanStr: newTarget.get(meanStr, [])+[mRange]})
 
 for elem in newTarget:
 
