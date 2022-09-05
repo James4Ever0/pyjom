@@ -26,6 +26,7 @@ def checkOverlapAsymmetric(rect0, rect1):
     for point in rect0:
         if checkContains(rect1, point):
             return True
+        # also check for intersections?
     return False
 
 
