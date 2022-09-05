@@ -231,7 +231,8 @@ if __name__ == "__main__":
     fig, ax = plt.subplots()
     def plotRect(ax, x, y, width, height, facecolor):
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
-    colors = ['red','yellow']
+    plotRect(ax,0,0,defaultWidth,defaultHeight,'black')
+    colors = ['red','yellow','blue']
     for index, key in finalCommandDict.keys():
         import parse
         commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}",key)
