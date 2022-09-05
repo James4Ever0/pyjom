@@ -164,7 +164,8 @@ else:
     labels = ['xleft', 'yleft', 'xright', 'yright']
     for index, elem in enumerate(answers):
         label = labels[index]
-        newElem = {"{}:{}".format(label,key):, for key in elem.keys()}
+        newElem = {"{}:{}".format(label,key):elem[key] for key in elem.keys()}
+        
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
