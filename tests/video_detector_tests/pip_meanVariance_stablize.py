@@ -49,7 +49,7 @@ def extract_span(mlist, target=0):
 xLeftPointsSignalList = xLeftPointsSignal.tolist()
 print(xLeftPointsSignal.shape)
 # print(xLeftPointsSignalList)
-spanLengthMinThreshold = 30
+spanLengthMinThreshold = 20
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 for start, end in xLeftSpans:
     spanLength = end-start
