@@ -2,6 +2,8 @@ from mathlib import *
 
 # from ...pyjom.mathlib import sequentialToMergedRanges
 
+# you can use yolo to train network to detect these sharp corners, total four sharp corners.
+
 
 def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
     defaultWidth, defaultHeight = int(defaultWidth), int(defaultHeight)
