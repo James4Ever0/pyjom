@@ -45,11 +45,11 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         # solve diff.
         xLeftPointsFilteredDiff = np.diff(xLeftPointsFiltered)
         # xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
-        import matplotlib.pyplot as plt
-        plt.plot(xLeftPointsFilteredDiff)
-        plt.plot(xLeftPointsFiltered)
-        plt.plot(xLeftPoints)
-        plt.show()
+        # import matplotlib.pyplot as plt
+        # plt.plot(xLeftPointsFilteredDiff)
+        # plt.plot(xLeftPointsFiltered)
+        # plt.plot(xLeftPoints)
+        # plt.show()
 
         # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
         derivativeThreshold = 3
