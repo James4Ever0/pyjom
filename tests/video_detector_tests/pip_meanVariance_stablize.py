@@ -41,13 +41,13 @@ def extract_span(mlist, target=0):
             spanList.append((counter, nextCounter))
         counter = nextCounter
     return spanList
-xLeftPointsSignalList = xLeftPointsSignal.tolist()
+xLeftPointsSignalList = xLeftPointsSignal.tolist
 # print(xLeftPointsSignalList)
-xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
-for span in xLeftSpans:
-    print(span)
-exit()
-print(xLeftPoints)
+# xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
+# for span in xLeftSpans:
+#     print(span)
+# exit()
+# print(xLeftPoints)
 import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
