@@ -208,7 +208,10 @@ else:
     for key, elem in finalCommandDict.items():
         print(key)
         import parse
-        formatString = ''
+        formatString = 'xleft:{xleft:d}|yleft:{yleft:d}|xright:{xright:d}|yright:{yright:d}'
+        commandArguments = parse.parse(formatString, key)
+        x,y,w,h = commandArguments['xleft'], commandArguments['yleft'], commandArguments['xright']-commandArguments['xleft'], commandArguments['yright']-commandArguments['yleft']
+        cropCommand = "crop_{}_{}_{}_{}".format(x,y,w,h)
         print(elem)
         # the parser shall be in x,y,w,h with keywords.
         # we might want to parse the command string and reengineer this shit.
