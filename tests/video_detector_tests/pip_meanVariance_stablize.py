@@ -13,7 +13,11 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     import numpy as np
 
     data = np.array(data)
-    from pykalman import KalmanFilter
+    xLeftPoints = data[:,0,0]
+    yLeftPoints = data[:,0,1]
+    xRightPoints = data[:,1,0]
+    yRightPoints = data[:,1,1]
+
 
     def Kalman1D(observations,damping=0.2):
         # To return the smoothed time series data
