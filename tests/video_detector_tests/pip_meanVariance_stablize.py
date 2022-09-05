@@ -23,7 +23,8 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
             mKey = "{}:{}".format(label, int(elem))
             resultDict.update({mKey: resultDict.get(mKey, []) + [(index, index + 1)]})
         return resultDict
-
+    
+    def 
     def pointsToRangedDictWithLabel(mArray, label, threshold=35):
         mArray = getSmoothed(mArray)
         mArray = getAlikeValueMerged(mArray, threshold=threshold)
