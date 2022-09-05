@@ -57,7 +57,7 @@ def do_overlap(l1, r1, l2, r2):
     intersection_y = interval_y0.intersect(interval_y1)
     if type(intersection_x) != sympy.sets.sets.EmptySet and type(intersection_y) != sympy.sets.sets.EmptySet:
         return True
-    return True
+    return False
 
 def checkOverlap(rect0, rect1):
     return do_overlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
