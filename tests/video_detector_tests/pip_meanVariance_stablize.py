@@ -59,7 +59,7 @@ for start, end in xLeftSpans:
     spanLength = end-start
     kalmanSegment = xLeftPointsFiltered[start:end]
     model = LinearRegression()
-    X,y = np.linspace()
+    X,y = np.linspace(0, end-start,end-start)
     # if spanLength > spanLengthMinThreshold:
 
 exit()
