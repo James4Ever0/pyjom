@@ -903,3 +903,4 @@ def detectPipRegionOverTime(
             for mStart, mEnd in value
         ]
         finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
+    return finalResultDict
