@@ -63,7 +63,8 @@ def signalFilter(signal, threshold = 10):
 xLeftPointsSignalFiltered, newSignalRanges= signalFilter(xLeftPointsSignal)
 xLeftPointsSignalFiltered *=255
 
-mShrink = 4
+mShrink = 2
+from sklearn.
 for start, end in newSignalRanges:
     # could we shrink the boundaries?
     mStart, mEnd = start+mShrink,end-mShrink
