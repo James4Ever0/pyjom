@@ -85,6 +85,7 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
+        mDict.update()
         # pass
     commandValueMap = {
         "empty": -1,
