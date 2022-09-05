@@ -50,13 +50,12 @@ xLeftPointsSignalList = xLeftPointsSignal.tolist()
 print(xLeftPointsSignal.shape)
 # print(xLeftPointsSignalList)
 spanLengthMinThreshold = 20
-# kalmanMaxSlope = 
+kalmanMaxSlope = 0.10
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 
 from sklearn.linear_model import LinearRegression
 
 
-0.10
 for start, end in xLeftSpans:
     spanLength = end-start
     kalmanSegment = xLeftPointsFiltered[start:end+1].reshape(-1,1)
