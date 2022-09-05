@@ -161,9 +161,9 @@ else:
     for index in range(4):
         if answers[index] == {}:
             answers[index] = defaults[index]
-    labels = ['xtop', 'ytop', 'x]
+    labels = ['xleft', 'yleft', 'xright', 'yright']
     for elem in answers:
-
+        
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
