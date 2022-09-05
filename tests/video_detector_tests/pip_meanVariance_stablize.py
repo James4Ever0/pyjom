@@ -70,8 +70,8 @@ import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
 plt.plot(xLeftPointsFiltered)
-# plt.plot(xLeftPointsFilteredDiff)
-plt.plot(xLeftPointsFilteredDiff3)
+plt.plot(xLeftPointsFilteredDiff)
+# plt.plot(xLeftPointsFilteredDiff3)
 plt.plot(xLeftPointsSignalFiltered)
 plt.show()
 
