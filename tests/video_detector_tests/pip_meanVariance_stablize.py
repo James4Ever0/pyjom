@@ -26,7 +26,9 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             mKey = "{}:{}".format(label, int(elem))
             resultDict.update({mKey:resultDict.get(mKey,[])+[(index, index+1)]})
         return resultDict
-    def pointsToRangedDictWithLabel(mArray, label, threshold)
+    def pointsToRangedDictWithLabel(mArray, label, threshold=35):
+        mArray
+        return listTo
     xLeftPoints = getAlikeValueMerged(data[:,0,0])
     yLeftPoints = getAlikeValueMerged(data[:,0,1])
     xRightPoints = getAlikeValueMerged(data[:,1,0])
