@@ -223,7 +223,7 @@ if __name__ == "__main__":
     data  = dataDict['data']
 
     defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
-    # import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt
 
     # plt.plot(xLeftPoints)
     # plt.plot(xLeftPointsFiltered)
