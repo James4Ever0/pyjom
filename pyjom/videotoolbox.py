@@ -445,7 +445,8 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
     if method == 'framewise':
         iterator = getVideoFrameIterator(videoPath,start,end)
     else:
-        sample_rate = max(1, )
+        sample_rate = max(1,estimated_sample_rate )
+        iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
         for frame in iterator:
             img_output = algorithm.apply(frame)
             pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
