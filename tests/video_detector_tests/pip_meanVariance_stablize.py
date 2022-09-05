@@ -9,11 +9,6 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
     import numpy as np
 
     data = np.array(data)
-    
-    defaultWidth, defaultHeight = int(defaultWidth), int(defaultHeight)
-    import numpy as np
-
-    data = np.array(data)
 
     def getAlikeValueMerged(mArray, threshold=35):
         for index, elem in enumerate(mArray[:-1]):
