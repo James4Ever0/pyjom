@@ -53,7 +53,7 @@ spanLengthMinThreshold = 20
 # kalmanMaxSlope = 
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 
-
+import 
 
 for start, end in xLeftSpans:
     spanLength = end-start
