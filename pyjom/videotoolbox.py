@@ -440,3 +440,22 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim"): # shall be 
             img_output = algorithm.apply(frame)
             _, contours = cv2.findContours(
             imgThresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+            if contours is not None:
+            # continue
+            counted = False
+            maxArea = 0
+            for contour in contours:
+                [x, y, w, h] = cv2.boundingRect(img_output)
+                area = w*h
+                # if area > maxArea:
+                #     maxArea = area
+                if counted==False:
+                    min_x, min_y = x, y
+                    max_x, max_y = x+w, y+h
+                else:
+                    if x<min_x: min_x = x
+                    if x+w>max_x: max_x = x+w
+                    if y<min_y: min_y = y
+                    if y+w>max_y: max_y = y+w
+
+            pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
