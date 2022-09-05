@@ -183,7 +183,9 @@ else:
             currentItemDuration = getSpanDuration(currentItem[1])
             nextItemCommand = nextItem[0]
             nextItemDuration = getSpanDuration(nextItem[1])
-            if currentItemDuration < itemDurationLimit
+            if currentItemDuration < itemDurationThreshold:
+                if nextItemCommand != currentItemCommand:
+                    commandDictSequential
 
 
 # import matplotlib.pyplot as plt
