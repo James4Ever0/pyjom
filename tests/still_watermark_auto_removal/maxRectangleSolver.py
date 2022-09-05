@@ -48,7 +48,7 @@ def do_overlap(l1, r1, l2, r2):
     if l1.x == r1.x or l1.y == r1.y or r2.x == l2.x or l2.y == r2.y:
         return False
     # If one rectangle is on left side of other
-
+    if l1.x >= r2.x or 
         return False
     return True
 
