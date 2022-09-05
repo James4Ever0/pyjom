@@ -208,6 +208,7 @@ else:
     for key, elem in finalCommandDict.items():
         print(key)
         print(elem)
+        # the parser shall be in x,y,w,h with keywords.
         # we might want to parse the command string and reengineer this shit.
 
 # import matplotlib.pyplot as plt
