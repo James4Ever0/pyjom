@@ -11,7 +11,7 @@ import numpy as np
 
 data  = dataDict['data']
 
-defaultWidth, defaultHeight = dataDict['defaultWidth'], dataDict['defaultHeight']
+defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
 
 data = np.array(data)
 from pykalman import KalmanFilter
@@ -156,6 +156,7 @@ for mPoint in mPoints:
     #     print(elem)
 if answers == [{},{},{},{}]:
     print("NO PIP FOUND")
+    finalCommandDict = {}
 else:
     defaultCoord = [0,0,defaultWidth, defaultHeight] # deal with it later?
     defaults = [{str(defaultCoord[index]): [(0,len(data))]} for index in range(4)]
@@ -174,7 +175,11 @@ else:
         start, end = span
         return end-start
     itemDurationThreshold = 15
+    print("HERE")
+    loopCount = 0
     while True:
+        print("LOOP COUNT:", loopCount)
+        loopCount+=1
         noAlter = True
         for i in range(len(commandDictSequential)-1):
             currentItem = commandDictSequential[i]
@@ -193,7 +198,11 @@ else:
                     noAlter=False
         if noAlter:
             break
-        finalCommandDict = sequentialToMergedRanges(commandDictSequential)
+    finalCommandDict = sequentialToMergedRanges(commandDictSequential)
+    for key, elem in finalCommandDict.items():
+        print(key)
+        print(elem)
+        # we might want to parse the command string and reengineer this shit.
 
 # import matplotlib.pyplot as plt
 
