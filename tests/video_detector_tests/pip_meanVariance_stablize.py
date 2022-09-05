@@ -140,9 +140,10 @@ yRightPoints = data[:,1,1]
 
 mPoints = [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]
 
+
 for mPoint in mPoints:
     answer = getSinglePointStableState(mPoint)
-    if answer == {}:
+    answers = []
     # print("_"*30, "ANSWER","_"*30)
     # for elem in answer.items():
     #     print(elem)
