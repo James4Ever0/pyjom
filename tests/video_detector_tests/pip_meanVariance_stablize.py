@@ -200,8 +200,8 @@ else:
                     # print("HERE1",i, currentItemCommand, nextItemCommand)
                     commandDictSequential[i+1][0] = currentItemCommand
                     # noAlter=False
-        beforeChange = [item[0] for item in commandDictSequential].copy()
-        
+        afterChange = [item[0] for item in commandDictSequential].copy()
+        noAlter = 
         if noAlter:
             break
     finalCommandDict = sequentialToMergedRanges(commandDictSequential)
