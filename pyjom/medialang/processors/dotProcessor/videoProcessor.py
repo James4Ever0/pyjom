@@ -150,7 +150,7 @@ def ffmpegVideoPreProductionFilter(
                         # shall we warn you?
                         # print("SOMEHOW DELOGO IS NOT WORKING PROPERLY")
                         # breakpoint()
-                        # maybe it's not out of bounds
+                        # maybe it's not because of out of bounds error
                         print("_" * 30)
                         print("ABNORMAL DELOGO FILTER PARAMS:", commandParams)
                         print(
