@@ -53,7 +53,9 @@ spanLengthMinThreshold = 20
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 for start, end in xLeftSpans:
     spanLength = end-start
-    if spanLength > spanLengthMinThreshold
+    
+    if spanLength > spanLengthMinThreshold:
+
 exit()
 # print(xLeftPoints)
 import matplotlib.pyplot as plt
