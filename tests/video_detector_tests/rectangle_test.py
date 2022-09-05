@@ -10,9 +10,9 @@ import pybgs as bgs
 
 # also donga have strange things you may dislike, e.g.: when only part of the image changes.
 
-algorithm = bgs.FrameDifference() # this is not stable since we have more boundaries. shall we group things?
+# algorithm = bgs.FrameDifference() # this is not stable since we have more boundaries. shall we group things?
 # can we use something else? 
-algorithm = bgs.WeightedMovingMean
+algorithm = bgs.WeightedMovingVariance()
 video_file = "../../samples/video/LiEIfnsvn.mp4" # this one with cropped boundaries. 
 
 capture = cv2.VideoCapture(video_file)
