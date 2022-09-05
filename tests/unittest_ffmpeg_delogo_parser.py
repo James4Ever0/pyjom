@@ -28,7 +28,7 @@ def delogoFilter(stream, commandParams):
 
 minArea = 20
 
-def checkXYWH(x,y,w,h):
+def checkXYWH(x,y,w,h,width, height,minArea = 20):
 
 
 for command in commandString.split("|"):
