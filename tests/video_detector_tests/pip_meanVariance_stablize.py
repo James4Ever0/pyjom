@@ -85,6 +85,8 @@ for start, end in newSignalRanges:
     target.append({"range":(start, end), 'mean': meanValue})
     # print((start, end), std, coef)
 
+newTarget = 
+
 for elem in newTarget:
 
 import matplotlib.pyplot as plt
