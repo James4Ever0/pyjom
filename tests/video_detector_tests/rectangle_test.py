@@ -29,7 +29,8 @@ algorithm = bgs.WeightedMovingVariance()
 # this one with cropped boundaries.
 video_file = "../../samples/video/LiEIfnsvn.mp4"
 
-# moving average versus similar merge.
+# moving average, dot sampler versus similar merge.
+# moving average span: 
 
 capture = cv2.VideoCapture(video_file)
 while not capture.isOpened():
