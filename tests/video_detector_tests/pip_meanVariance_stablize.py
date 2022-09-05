@@ -25,4 +25,5 @@ def Kalman1D(observations,damping=1):
     pred_state, state_cov = kf.smooth(observations)
     return pred_state
 
-xLeftPoints = np.array
+xLeftPoints = data[:,0,0]
+print(xLeftPoints)
