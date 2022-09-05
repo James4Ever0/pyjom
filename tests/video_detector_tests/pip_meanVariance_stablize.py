@@ -29,10 +29,10 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     def pointsToRangedDictWithLabel(mArray, label, threshold=35):
         mArray = getAlikeValueMerged(mArray, threshold=threshold)
         return listToRangedDictWithLabel(mArray,label)
-    xLeftPoints = getAlikeValueMerged(data[:,0,0])
-    yLeftPoints = getAlikeValueMerged(data[:,0,1])
-    xRightPoints = getAlikeValueMerged(data[:,1,0])
-    yRightPoints = getAlikeValueMerged(data[:,1,1])
+    xLeftPoints = pointsToRangedDictWithLabel(data[:,0,0], 'xleft')
+    yLeftPoints = pointsToRangedDictWithLabel(data[:,0,1],'yleft')
+    xRightPoints = pointsToRangedDictWithLabel(data[:,1,0])
+    yRightPoints = pointsToRangedDictWithLabel(data[:,1,1])
 
 
     def Kalman1D(observations,damping=0.2):
