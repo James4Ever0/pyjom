@@ -115,7 +115,9 @@ else:
             newTargetSequential[index][0] = nextCommandString
         else:
             if nextCommandString == 'empty':
-                newTargetSequential[index+1][0] = 
+                newTargetSequential[index+1][0] = commandString
+            else:# compare the two!
+                
 
 import matplotlib.pyplot as plt
 
