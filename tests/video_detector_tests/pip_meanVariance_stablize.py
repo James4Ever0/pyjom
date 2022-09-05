@@ -56,6 +56,8 @@ xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 from sklearn.linear_model import LinearRegression
 
 
+pip
+
 for start, end in xLeftSpans:
     spanLength = end-start
 
@@ -67,7 +69,7 @@ for start, end in xLeftSpans:
         model.fit(X,y)
         coef = model.coef_[0]
         if abs(coef) < kalmanMaxSlope:
-            
+            kalmanMean = np.mean(kalmanSegment)
 
 exit()
 # print(xLeftPoints)
