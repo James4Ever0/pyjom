@@ -1,5 +1,4 @@
 
-import json
 from mathlib import *
 # from ...pyjom.mathlib import sequentialToMergedRanges
 
@@ -215,6 +214,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
 if __name__ == "__main__":
     # better plot this shit.
+    import json
 
     dataDict = json.loads(open("pip_meanVariance.json",'r').read())
 
