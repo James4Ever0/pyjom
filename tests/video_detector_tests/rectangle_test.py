@@ -32,7 +32,7 @@ video_file = "../../samples/video/LiEIfnsvn.mp4"
 # denoising, moving average, sampler and  similar merge.
 # moving average span: -20 frame to +20 frame
 
-# 选区间之内相似的最多的那种
+# denoising: 选区间之内相似的最多的那种
 
 capture = cv2.VideoCapture(video_file)
 while not capture.isOpened():
