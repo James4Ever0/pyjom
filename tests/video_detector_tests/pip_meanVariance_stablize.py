@@ -151,7 +151,7 @@ for mPoint in mPoints:
 if answers == [{},{},{},{}]:
     print("NO PIP FOUND")
 else:
-    defaultCoord = [0,0,]
+    defaultCoord = [0,0,defaultWidth, defaultHeight]
     defaults = [{str(defaultCoord[index]): [(0,len(data))]} for index in range(4)]
 # import matplotlib.pyplot as plt
 
