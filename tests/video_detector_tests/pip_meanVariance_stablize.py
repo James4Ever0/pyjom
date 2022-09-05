@@ -161,7 +161,7 @@ else:
     for index in range(4):
         if answers[index] == {}:
             answers[index] = defaults[index]
-    
+    labels = ['xleft', 'yleft']
     for elem in answers:
 
 # import matplotlib.pyplot as plt
