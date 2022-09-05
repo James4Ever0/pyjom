@@ -50,7 +50,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         start, end = span
         return end - start
 
-    itemDurationThreshold = 5
+    itemDurationThreshold = 10
 
     while True:
         # print("LOOP COUNT:", loopCount)
