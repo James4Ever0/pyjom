@@ -119,6 +119,7 @@ else:
             else:# compare the two!
                 commandFloat = float(commandString)
                 nextCommandFloat = float(nextCommandString)
+                if abs(commandFloat-nextCommandFloat)
 
 import matplotlib.pyplot as plt
 
