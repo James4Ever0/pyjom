@@ -82,8 +82,8 @@ for _ in progressbar.progressbar(range(total_frames)):
         # cv2.imshow('video', frame)
         # cv2.imshow('img_output', img_output)
         # cv2.imshow('img_bgmodel', img_bgmodel)
-        cv2.imshow('imgThresh', imgThresh)
-        cv2.waitKey(100)
+        # cv2.imshow('imgThresh', imgThresh)
+        # cv2.waitKey(100)
 
 
     else:
