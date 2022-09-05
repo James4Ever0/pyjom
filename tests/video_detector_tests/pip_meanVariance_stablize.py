@@ -48,8 +48,8 @@ import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
 plt.plot(xLeftPointsFiltered)
-plt.plot(xLeftPointsFilteredDiff)
-plt.plot(xLeftPointsFilteredDiff)
+# plt.plot(xLeftPointsFilteredDiff)
+plt.plot(xLeftPointsFilteredDiff3)
 # plt.plot(xLeftPointsSignal)
 plt.show()
 
