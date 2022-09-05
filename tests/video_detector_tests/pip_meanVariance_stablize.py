@@ -201,7 +201,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         finalCommandDict = {}
         for key, elem in preFinalCommandDict.items():
             # print(key,elem)
-            varNames = ['xleft,'yleft','xright','yright]
+            varNames = ['xleft','yleft','xright','yright']
+            defaultValues = [0,0,]
             key = key.replace('{}:empty'.format(varName), '{}:{}'.format(varName, defaultValue))
             breakpoint()
             import parse
