@@ -128,7 +128,6 @@ else:
     print("_"*30, "ANSWER","_"*30)
     for elem in answer.items():
         print(elem)
-                    
 
 # import matplotlib.pyplot as plt
 
