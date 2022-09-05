@@ -172,7 +172,8 @@ else:
     commandDictSequential = mergedRangesToSequential(commandDict)
     for i in range(len(commandDictSequential)-1):
         currentItem = commandDictSequential[i]
-        nextItem = commandDictSequential[]
+        nextItem = commandDictSequential[i+1]
+        
 
 # import matplotlib.pyplot as plt
 
