@@ -145,7 +145,7 @@ def ffmpegVideoPreProductionFilter(
                 # print('RENDER COMMAND:',renderCommand)
                 if renderCommand == "empty":
                     continue
-                for prefix, keyword in ['delogo','crop']]
+                for prefix, keyword in [("{}_".format(k),k)['delogo','crop']]
                 if renderCommand.startswith("delogo"):
                     import parse
 
