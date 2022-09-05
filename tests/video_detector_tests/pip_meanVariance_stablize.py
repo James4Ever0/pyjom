@@ -170,7 +170,9 @@ else:
         commandDict.update(newElem)
     commandDict = getContinualMappedNonSympyMergeResult(commandDict)
     commandDictSequential = mergedRangesToSequential(commandDict)
-    def get
+    def getSpanDuration(span):
+        start, end = span
+        return end-start
     for i in range(len(commandDictSequential)-1):
         currentItem = commandDictSequential[i]
         nextItem = commandDictSequential[i+1]
