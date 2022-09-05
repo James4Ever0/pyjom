@@ -443,7 +443,7 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim"): # shall be 
             if contours is not None:
             # continue
                 counted = False
-                maxArea = 0
+                # maxArea = 0
                 for contour in contours:
                     [x, y, w, h] = cv2.boundingRect(img_output)
                     area = w*h
