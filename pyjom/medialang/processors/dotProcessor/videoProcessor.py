@@ -144,6 +144,8 @@ def ffmpegVideoPreProductionFilter(
                         print("OUTRAGED DELOGO FILTER PARAMS:",commandParams)
                         print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
                         continue
+                    else:
+                        commandParams = {}
                     # mX1, mY1 = mX+mW, mY+mH
                     # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
                     #     print("DELOGO ERROR:")
