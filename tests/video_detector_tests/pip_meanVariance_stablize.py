@@ -20,7 +20,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             if abs(nextElem - elem) < threshold:
                 mArray[index+1] = elem
         return mArray
-    def listToSequentialRanges(mList):
+    def listToSequentialRanges(mList,label):
         resultDict = {}
         for index, elem in enumerate(mList):
             result.append({(index, index+1)])
