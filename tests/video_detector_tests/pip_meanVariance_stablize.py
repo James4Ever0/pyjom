@@ -61,7 +61,7 @@ stablePipRangeTuples = [] # remember this is only xLeftSpans, not for all!
 for start, end in xLeftSpans:
     spanLength = end-start
 
-    print(start, end, coef)
+    print(start, end)
     if spanLength > spanLengthMinThreshold:
         kalmanSegment = xLeftPointsFiltered[start:end+1].reshape(-1,1)
         model = LinearRegression()
