@@ -44,7 +44,7 @@ def extract_span(mlist, target=0):
 xLeftPointsFilteredDiff = np.diff(xLeftPointsFiltered)
 xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
 
-
+xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3, )
 # derivative3Threshold = 3
 # xLeftSignal = abs(xLeftPointFilteredDiff3) < derivative3Threshold
 
