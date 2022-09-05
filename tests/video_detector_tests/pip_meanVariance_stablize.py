@@ -24,10 +24,10 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
             resultDict.update({mKey: resultDict.get(mKey, []) + [(index, index + 1)]})
         return resultDict
     
-    def getSmoothed(mArray):
-        
+    def get1DArrayEMA(mArray):
+
     def pointsToRangedDictWithLabel(mArray, label, threshold=35):
-        mArray = getSmoothed(mArray)
+        mArray = get1DArrayEMA(mArray)
         mArray = getAlikeValueMerged(mArray, threshold=threshold)
         return listToRangedDictWithLabel(mArray, label)
 
