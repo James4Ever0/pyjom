@@ -49,9 +49,9 @@ def extract_span(mlist, target=0):
 xLeftPointsSignalList = xLeftPointsSignal.tolist()
 print(xLeftPointsSignal.shape)
 # print(xLeftPointsSignalList)
-# xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
-# for span in xLeftSpans:
-#     print(span)
+xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
+for span in xLeftSpans:
+    print(span)
 # exit()
 # print(xLeftPoints)
 import matplotlib.pyplot as plt
