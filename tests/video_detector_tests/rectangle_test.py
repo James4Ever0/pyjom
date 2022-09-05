@@ -70,7 +70,7 @@ while True:
                     # only create one single bounding box.
             # cv2.rectangle(frame, (min_x, min_y),
             #               (max_x, max_y), (255, 0, 0), 2)
-            pipFrames.append([(min_x, min_y),           (max_x, max_y)])
+            pipFrames.append([(min_x, min_y),(max_x, max_y)].copy())
             # how to stablize this shit?
         # cv2.imshow('video', frame)
         # cv2.imshow('img_output', img_output)
