@@ -78,7 +78,9 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "logoRemoval" in filters:
         # dual safe? no?
-        mDict.update(detectStationaryLogoOverTime(filepath, start, end))  # output logo mask. or not.
+        mDict.update(
+            detectStationaryLogoOverTime(filepath, start, end)
+        )  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
@@ -134,19 +136,34 @@ def ffmpegVideoPreProductionFilter(
                         "delogo_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                     )
                     # print(defaultWidth, defaultHeight)
-                    mX, mY, mW, mH = commandParams['x'], commandParams['y'], commandParams['w'], commandParams['h']
-                    status, XYWH = checkXYWH((mX, mY, mW, mH), (defaultWidth, defaultHeight))
+                    mX, mY, mW, mH = (
+                        commandParams["x"],
+                        commandParams["y"],
+                        commandParams["w"],
+                        commandParams["h"],
+                    )
+                    status, XYWH = checkXYWH(
+                        (mX, mY, mW, mH), (defaultWidth, defaultHeight)
+                    )
                     if not status:
                         # cannot process this delogo filter since its parameters are outraged.
                         # shall we warn you?
                         # print("SOMEHOW DELOGO IS NOT WORKING PROPERLY")
                         # breakpoint()
-                        print("ABNORMAL DELOGO FILTER PARAMS:",commandParams)
-                        print("maxX: {} maxY: {}".format(commandParams['x']+commandParams['']]))
+                        print("_" * 30)
+                        print("ABNORMAL DELOGO FILTER PARAMS:", commandParams)
+                        print(
+                            "maxX: {} maxY: {}".format(
+                                commandParams["x"] + commandParams["w"],
+                                commandParams["y"] + commandParams["h"],
+                            )
+                        )
                         print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
+                        print("_" * 30)
                         continue
                     else:
-                        commandParams = {'x':mX, 'y':mY, 'w': mW, 'h':mH}
+                        (mX, mY, mW, mH) = XYWH
+                        commandParams = {"x": mX, "y": mY, "w": mW, "h": mH}
                     # mX1, mY1 = mX+mW, mY+mH
                     # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
                     #     print("DELOGO ERROR:")
