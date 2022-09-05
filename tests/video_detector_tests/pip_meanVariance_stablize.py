@@ -148,7 +148,8 @@ for mPoint in mPoints:
     # print("_"*30, "ANSWER","_"*30)
     # for elem in answer.items():
     #     print(elem)
-if a
+if answers == [{},{},{},{}]:
+    pri
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
