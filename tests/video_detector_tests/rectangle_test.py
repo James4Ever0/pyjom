@@ -83,12 +83,7 @@ for _ in progressbar.progressbar(range(total_frames)):
                 #     counted = True
                 # else:
                 #     min_x = min(min_x, x)
-                #     min_y = min(min_y, y)
-                #     max_x = max(max_x, x+w)
-                #     max_y = max(max_y, y+h)
-                    # only create one single bounding box.
-            # cv2.rectangle(frame, (min_x, min_y),
-            #               (max_x, max_y), (255, 0, 0), 2)
+                #     min_y 
             pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
             # how to stablize this shit?
         # cv2.imshow('video', frame)
