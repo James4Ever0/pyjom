@@ -427,3 +427,5 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
         # print(delogoCommandSet)
         # breakpoint()
         return {delogoCommandSet: [(start, end)]}
+    
+def detectPipRegionOverTime()
