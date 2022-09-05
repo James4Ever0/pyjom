@@ -66,7 +66,8 @@ xLeftPointsSignalFiltered *=255
 mShrink = 4
 for start, end in newSignalRanges:
     # could we shrink the boundaries?
-    std = np.std(xLeftPointsFiltered[start+mShrink:end+1])
+    mStart, mEnd = start+mShrink:end-mShrink
+    std = np.std(xLeftPointsFiltered[])
     print((start, end), std)
 
 import matplotlib.pyplot as plt
