@@ -111,7 +111,7 @@ else:
         nextElem = newTargetSequential[index+1]
         nextCommandString, nextCommandTimeSpan = nextElem
         if commandString == 'empty':
-            
+            commandString = nextCommandString
 
 import matplotlib.pyplot as plt
 
