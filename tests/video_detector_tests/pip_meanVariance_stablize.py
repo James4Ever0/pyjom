@@ -53,7 +53,7 @@ spanLengthMinThreshold = 20
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 for start, end in xLeftSpans:
     spanLength = end-start
-    
+    kalmanStart, kalmanEnd = 
     if spanLength > spanLengthMinThreshold:
 
 exit()
