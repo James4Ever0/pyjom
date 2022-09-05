@@ -100,9 +100,13 @@ newTargetSequential = mergedRangesToSequential(newTarget)
 
 newTargetSequentialUpdated = []
 
-for index, elem in newTargetSequential:
-    commadStri Command
+if (newTargetSequentialUpdated) == 1:
+    if newTargetSequentialUpdated
 
+for index, elem in newTargetSequential:
+    commandString, commandTimeSpan = elem
+    if commandStrig == 'empty':
+        
 
 import matplotlib.pyplot as plt
 
