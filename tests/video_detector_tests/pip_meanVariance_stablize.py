@@ -182,7 +182,7 @@ else:
             currentItemDuration = getSpanDuration(currentItem[1])
             nextItemCommand = nextItem[0]
             nextItemDuration = getSpanDuration(nextItem[1])
-            if currentItem.duration
+            if currentItemDuration < 
 
 
 # import matplotlib.pyplot as plt
