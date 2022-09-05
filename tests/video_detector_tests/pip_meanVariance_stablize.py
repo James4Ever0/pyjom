@@ -55,11 +55,13 @@ xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 
 from sklearn.linear_model import LinearRegression
 
+
+0.10
 for start, end in xLeftSpans:
     spanLength = end-start
     kalmanSegment = xLeftPointsFiltered[start:end+1].reshape(-1,1)
     model = LinearRegression()
-    X,y = , kalmanSegment,np.linspace(0, end-start,end-start+1)
+    X,y = kalmanSegment,np.linspace(0, end-start,end-start+1)
     model.fit(X,y)
     coef = model.coef_
     print(start, end, coef)
