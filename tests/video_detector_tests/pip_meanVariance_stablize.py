@@ -178,7 +178,7 @@ else:
     print("HERE")
     loopCount = 0
     while True:
-        print("LOOP COUNT:", loopCount)
+        # print("LOOP COUNT:", loopCount)
         loopCount+=1
         noAlter = True
         for i in range(len(commandDictSequential)-1):
