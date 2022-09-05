@@ -98,7 +98,6 @@ mEnd = len(xLeftPoints)
 newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget, mStart, mEnd)
 newTargetSequential = mergedRangesToSequential(newTarget)
 
-# newTargetSequentialUpdated = []
 commandFloatMergeThreshold = 10
 
 if (newTargetSequential) == 1:
@@ -107,6 +106,7 @@ if (newTargetSequential) == 1:
         print("NO STATIC PIP FOUND HERE.")
 else:
     # newTargetSequential
+    newTargetSequentialUpdated = []
     for index in range(len(newTargetSequential)-1):
         elem = newTargetSequential[index]
         commandString, commandTimeSpan = elem
@@ -123,6 +123,7 @@ else:
                 if abs(commandFloat-nextCommandFloat) < commandFloatMergeThreshold:
                     newTargetSequential[index+1][0] = commandString
     # bring this sequential into dict again.
+    
                     
 
 import matplotlib.pyplot as plt
