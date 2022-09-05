@@ -55,7 +55,7 @@ def signalFilter(signal, threshold = 10):
         length = end-start
         if length >= threshold:
             newSignal[start:end+1] = 1
-    return newSignal
+    return newSignal, newSignalRanges
 
 xLeftPointsSignalFiltered = signalFilter(xLeftPointsSignal)*255
 
