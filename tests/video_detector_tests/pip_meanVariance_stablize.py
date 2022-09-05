@@ -1,6 +1,7 @@
 from distutils.cmd import Command
 import json
 from mathlib import *
+from ...pyjom.mathlib import sequentialToMergedRanges
 
 data = json.loads(open("pip_meanVariance.json",'r').read())
 
@@ -123,7 +124,7 @@ else:
                 if abs(commandFloat-nextCommandFloat) < commandFloatMergeThreshold:
                     newTargetSequential[index+1][0] = commandString
     # bring this sequential into dict again.
-    
+    answer = sequentialToMergedRanges()
                     
 
 import matplotlib.pyplot as plt

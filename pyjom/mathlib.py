@@ -186,3 +186,4 @@ def sequentialToMergedRanges(sequence):
     for commandString, commandTimeSpan in sequence:
         mergedRanges.update({commandString: mergedRanges.get(commandString,[])+[commandTimeSpan]})
     mergedRanges = getContinualMappedNonSympyMergeResult(mergedRanges)
+    return mergedRanges
