@@ -428,9 +428,9 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
         # breakpoint()
         return {delogoCommandSet: [(start, end)]}
     
-def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='framedifference'): # shall be some parameters here.
+def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_difference'): # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
-    assert algo in ['framedifference', 'weighted']
+    assert algo in ['frame_difference', 'weighted_moving_average']
     algorithm = bgs.FrameDifference()
     # otherwise we do it frame by frame.
     assert method in ['skim','framewise']
