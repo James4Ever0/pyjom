@@ -52,9 +52,12 @@ print(xLeftPointsSignal.shape)
 spanLengthMinThreshold = 20
 # kalmanMaxSlope = 
 xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
+
+
+
 for start, end in xLeftSpans:
     spanLength = end-start
-    # kalmanStart, kalmanEnd = 
+    kalmanSegment = 
     # if spanLength > spanLengthMinThreshold:
 
 exit()
