@@ -361,6 +361,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
 # objective = "discrete"
 objective = "continual"
+objective = "continual_najie
 
 if __name__ == "__main__":
     # better plot this shit.
