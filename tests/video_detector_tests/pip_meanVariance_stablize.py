@@ -48,7 +48,7 @@ xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
 derivative3Threshold = 3
 xLeftPointsSignal = (abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astype(np.uint8).tolist()
 
-def filter
+def signalFilter(signal, threshold = )
 
 xLeftPointsSignalFiltered = 
 
