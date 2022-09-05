@@ -48,6 +48,8 @@ xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
 derivative3Threshold = 3
 xLeftPointsSignal = 255*(abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astype(np.uint8)
 
+
+
 import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
