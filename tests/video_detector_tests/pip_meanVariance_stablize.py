@@ -205,6 +205,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             formatString = 'xleft:{xleft:d}|yleft:{yleft:d}|xright:{xright:d}|yright:{yright:d}'
             commandArguments = parse.parse(formatString, key)
             x,y,w,h = commandArguments['xleft'], commandArguments['yleft'], commandArguments['xright']-commandArguments['xleft'], commandArguments['yright']-commandArguments['yleft']
+            if w<
             cropCommand = "crop_{}_{}_{}_{}".format(x,y,w,h)
             # print(cropCommand)
             finalCommandDict.update({cropCommand:elem})
@@ -238,7 +239,7 @@ if __name__ == "__main__":
         commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}",key)
         color = colors[index]
         rect = [commandArguments[name] for name in ['x','y','w','h']]
-        print("RECT", rect)
+        print("RECT", rect, color)
         plotRect(ax, *rect, color)
     breakpoint()
     plt.show()
