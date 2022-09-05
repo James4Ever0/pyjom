@@ -105,6 +105,7 @@ def getSinglePointStableState(xLeftPoints):
         if newTargetSequential[0][0] == 'empty':
             # the whole thing is empty now. no need to investigate.
             print("NO STATIC PIP FOUND HERE.")
+            retur
     else:
         # newTargetSequential
         newTargetSequentialUpdated = []
@@ -128,6 +129,8 @@ def getSinglePointStableState(xLeftPoints):
         print("_"*30, "ANSWER","_"*30)
         for elem in answer.items():
             print(elem)
+
+    xLeftPoints = data[:,0,1]
 
 # import matplotlib.pyplot as plt
 
