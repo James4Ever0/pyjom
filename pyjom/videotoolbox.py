@@ -899,7 +899,8 @@ def detectPipRegionOverTime(
     finalResultDict = {}
     for key, value in resultDict.items():
         updatedValueAlignedToSeconds = []
-            (mStart * sampleIndexToSecondsRatio, mEnd * sampleIndexToSecondsRatio)
+        for mStart, mEnd in value:
+            (mStart *=sampleIndexToSecondsRatio, mEnd * sampleIndexToSecondsRatio)
             
         ]
         finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
