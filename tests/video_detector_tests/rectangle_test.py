@@ -52,7 +52,7 @@ total_frames = capture.get(cv2.CAP_PROP_FRAME_COUNT)
 total_frames = int(total_frames)
 pipFrames = []
 
-defaultRect = 
+defaultRect = [(0,0),(defaultWidth,defaultHeight)]
 
 pos_frame = capture.get(1)
 for index in progressbar.progressbar(range(total_frames)):
