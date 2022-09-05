@@ -269,6 +269,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
     answers = []
 
+    
+
     for mPoint in mPoints:
         answer = getSinglePointStableState(mPoint,)
         answers.append(answer)
