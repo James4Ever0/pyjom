@@ -80,8 +80,10 @@ for _ in progressbar.progressbar(range(total_frames)):
                     max_x, max_y = x+w, y+h
                   else:
                     if x<min_x: min_x = x
-                    if x>max_x: max_x = x
+                    if x+w>max_x: max_x = x+w
                     if y<min_y: min_y = y
+                    if x+w>max_x: max_x = x+w
+
             pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
             # how to stablize this shit?
         # cv2.imshow('video', frame)
