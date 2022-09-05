@@ -24,7 +24,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
         resultDict = {}
         for index, elem in enumerate(mList):
             mKey = "{}:{}".format(label, int(elem))
-            resultDict.update({":resultDict.get(mKey,[])+[(index, index+1)])
+            resultDict.update({mKey:resultDict.get(mKey,[])+[(index, index+1)]})
     xLeftPoints = getMerged(data[:,0,0])
     yLeftPoints = getMerged(data[:,0,1])
     xRightPoints = getMerged(data[:,1,0])
