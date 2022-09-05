@@ -70,7 +70,7 @@ for start, end in xLeftSpans:
         coef = model.coef_[0]
         if abs(coef) < kalmanMaxSlope:
             kalmanMean = np.mean(kalmanSegment)
-            stablePipRangeTuples.
+            stablePipRangeTuples.append({"span"})
 
 exit()
 # print(xLeftPoints)
