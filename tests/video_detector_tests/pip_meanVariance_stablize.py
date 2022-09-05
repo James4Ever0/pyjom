@@ -63,9 +63,10 @@ def signalFilter(signal, threshold = 10):
 xLeftPointsSignalFiltered, newSignalRanges= signalFilter(xLeftPointsSignal)
 xLeftPointsSignalFiltered *=255
 
+mShrink = 4
 for start, end in newSignalRanges:
     # could we shrink the boundaries?
-    std = np.std(xLeftPointsFiltered[start:end+1])
+    std = np.std(xLeftPointsFiltered[start+mShrink:end+1])
     print((start, end), std)
 
 import matplotlib.pyplot as plt
