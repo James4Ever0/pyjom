@@ -25,6 +25,8 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         return resultDict
     
     def get1DArrayEMA(mArray):
+        dataDict = json.loads(open("pip_meanVariance.json", "r").read())
+        
 
     def pointsToRangedDictWithLabel(mArray, label, threshold=35):
         mArray = get1DArrayEMA(mArray)
