@@ -198,7 +198,7 @@ def ffmpegVideoPreProductionFilter(
                             stream = delogoFilter(stream, commandParams)
                         elif keyword == "crop":
                             stream = cropFilter(stream, commandParams)
-                            # the main shit happens here is that if pip region is detected, it will not maintain the  
+                            # the main shit happens here is that if pip region is detected, it will not maintain the width to height ratio. the crop will not maintain that ratio.
 
         if preview:  # final filter? need us to crop this?
             stream = previewFilter(stream)
