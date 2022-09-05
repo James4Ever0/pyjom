@@ -230,7 +230,7 @@ if __name__ == "__main__":
     from matplotlib.patches import Rectangle
     fig, ax = plt.subplots()
     def plotRect(ax, x, y, width, height, facecolor):
-        ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True, alpha=0.5))
+        ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True, alpha=0.5)) # in 0-1
     plotRect(ax,0,0,defaultWidth,defaultHeight,'black')
     colors = ['red','yellow','blue']
     for index, key in enumerate(finalCommandDict.keys()):
@@ -238,6 +238,8 @@ if __name__ == "__main__":
         commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}",key)
         color = colors[index]
         rect = [commandArguments[name] for name in ['x','y','w','h']]
+        pri
         plotRect(ax, *rect, color)
+    breakpoi
     plt.show()
 
