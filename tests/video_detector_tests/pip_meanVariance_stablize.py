@@ -97,8 +97,9 @@ mEnd = len(xLeftPoints)
 newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget, mStart, mEnd)
 newTargetSequential = mergedRangesToSequential(newTarget)
 
+
 for index, elem in newTargetSequential:
-    
+
 
 
 import matplotlib.pyplot as plt
