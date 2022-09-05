@@ -173,7 +173,7 @@ else:
     for i in range(len(commandDictSequential)-1):
         currentItem = commandDictSequential[i]
         nextItem = commandDictSequential[i+1]
-        
+        currentItemDuration = currentItem
 
 # import matplotlib.pyplot as plt
 
