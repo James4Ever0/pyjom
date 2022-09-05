@@ -79,7 +79,7 @@ for start, end in newSignalRanges:
     model = LinearRegression()
     X,y = np.array(range(sample.shape[0])).reshape(-1,1), sample
     model.fit(X,y)
-    coef = model.coef_[0]
+    coef = model.coef_[0] # careful!
     if abs(coef) > slopeThreshold: continue
     meanValue = np.mean(sample)
     target.append({"range":(start, end), 'mean': meanValue})
