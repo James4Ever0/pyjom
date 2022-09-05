@@ -205,7 +205,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             formatString = 'xleft:{xleft:d}|yleft:{yleft:d}|xright:{xright:d}|yright:{yright:d}'
             commandArguments = parse.parse(formatString, key)
             x,y,w,h = commandArguments['xleft'], commandArguments['yleft'], commandArguments['xright']-commandArguments['xleft'], commandArguments['yright']-commandArguments['yleft']
-            if w<
+            if w<=0 or h<=0: continue
             cropCommand = "crop_{}_{}_{}_{}".format(x,y,w,h)
             # print(cropCommand)
             finalCommandDict.update({cropCommand:elem})
