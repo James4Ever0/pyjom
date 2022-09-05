@@ -235,6 +235,6 @@ if __name__ == "__main__":
         import parse
         commandArguments = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}",key)
         rect = [commandArguments[name] for name in ['x','y','w','h']]
-        plotRect(ax, *rect)
+        plotRect(ax, *rect, color)
     plt.show()
 
