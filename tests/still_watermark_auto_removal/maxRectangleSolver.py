@@ -48,9 +48,11 @@ def do_overlap(l1, r1, l2, r2):
     if l1.x == r1.x or l1.y == r1.y or r2.x == l2.x or l2.y == r2.y:
         return False
     # If one rectangle is on left side of other
-    interval_0 = sympy.Interval(l1.x, r1.x,left_open=True, right_open=True)
-    interval_1 = sympy.Interval(l2.x, r2.x,left_open=True, right_open=True)
-    
+    interval_x0 = sympy.Interval(l1.x, r1.x,left_open=True, right_open=True)
+    interval_x1 = sympy.Interval(l2.x, r2.x,left_open=True, right_open=True)
+    interval_y0 = sympy.Interval(l1.y, r1.y,left_open=True, right_open=True)
+    interval_y1 = sympy.Interval(l2.y, r2.y,left_open=True, right_open=True)
+
     return True
 
 def checkOverlap(rect0, rect1):
