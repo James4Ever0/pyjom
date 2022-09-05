@@ -4,6 +4,7 @@ from mathlib import *
 
 
 def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
+    defaultWidth, defaultHeight = int(defaultWidth), int(defaultHeight)
     import numpy as np
 
     data = np.array(data)
