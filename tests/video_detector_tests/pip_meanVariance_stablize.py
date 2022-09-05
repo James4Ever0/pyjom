@@ -226,11 +226,6 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
     def plotRect(ax, x, y, width, height, facecolor):
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
-
-    # plt.plot(xLeftPoints)
-    # plt.plot(xLeftPointsFiltered)
-    # plt.plot(xLeftPointsFilteredDiff)
-    # # plt.plot(xLeftPointsFilteredDiff3)
-    # plt.plot(xLeftPointsSignalFiltered)
+    
     plt.show()
 
