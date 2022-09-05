@@ -40,9 +40,10 @@ def getRectDiagonalPoints(rect):
     yPoints = [p[1] for p in rect]
     maxX, minX = max(xPoints), min(xPoints)
     maxY, minY = max(yPoints), min(yPoints)
-    p0, p1 = D2Point(minX, minY), D2Point)
+    p0, p1 = D2Point(minX, minY), D2Point(maxX, maxY)
+    return p0, p1
+
 def do_overlap(l1, r1, l2, r2):
-     
     # if rectangle has area 0, no overlap
     if l1.x == r1.x or l1.y == r1.y or r2.x == l2.x or l2.y == r2.y:
         return False
