@@ -308,7 +308,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
                 currentItemDuration = getSpanDuration(currentItem[1])
                 nextItemCommand = nextItem[0]
                 nextItemDuration = getSpanDuration(nextItem[1])
-                if currentItemDuration < itemDurationThreshold:
+                if currentItemDuration < itemDurationThreshold and :
                     if nextItemCommand != currentItemCommand:
                         # print("HERE0",i, currentItemCommand, nextItemCommand)
                         commandDictSequential[i][0] = nextItemCommand
