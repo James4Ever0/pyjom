@@ -87,6 +87,9 @@ for start, end in newSignalRanges:
 
 newTarget = {}
 
+for elem in target:
+    
+
 for elem in newTarget:
 
 import matplotlib.pyplot as plt
