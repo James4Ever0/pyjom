@@ -77,7 +77,7 @@ for start, end in xLeftSpans:
 # print(xLeftPoints)
 for stablePipRangeTuple in stablePipRangeTuples:
     print(stablePipRangeTuple)
-
+exit()
 import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
