@@ -41,8 +41,9 @@ def extract_span(mlist, target=0):
             spanList.append((counter, nextCounter))
         counter = nextCounter
     return spanList
-xLeftPointsSignal.tolist()
-xLeftSpans = extract_span(, target=1)
+xLeftPointsSignalList = xLeftPointsSignal.tolist()
+print(xLeftPointsSignalList)
+xLeftSpans = extract_span(xLeftPointsSignalList, target=1)
 for span in xLeftSpans:
     print(span)
 exit()
