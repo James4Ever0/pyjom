@@ -50,7 +50,7 @@ xLeftPointsSignal = (abs(xLeftPointsFilteredDiff3) < derivative3Threshold).astyp
 
 xLeftPointsSignalFiltered = extract_span(xLeftPointsSignal, target=1)
 
-
+xLeftPointsSignalFiltered
 
 import matplotlib.pyplot as plt
 
