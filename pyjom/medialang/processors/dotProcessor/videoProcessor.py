@@ -136,6 +136,7 @@ def ffmpegVideoPreProductionFilter(
                     # print(defaultWidth, defaultHeight)
                     mX, mY, mW, mH = commandParams['x'], commandParams['y'], commandParams['w'], commandParams['h']
                     status, XYWH = checkXYWH((mX, mY, mW, mH), (defaultWidth, defaultHeight))
+                    if not status:
                     # mX1, mY1 = mX+mW, mY+mH
                     # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
                     #     print("DELOGO ERROR:")
