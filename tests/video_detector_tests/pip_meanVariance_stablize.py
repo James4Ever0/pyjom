@@ -163,7 +163,7 @@ else:
             answers[index] = defaults[index]
     labels = ['xleft', 'yleft', 'xright', 'yright']
     for elem in answers:
-        newElem = {""}
+        newElem = {"{}:{}"}
 # import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
