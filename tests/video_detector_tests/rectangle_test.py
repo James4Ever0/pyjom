@@ -48,7 +48,7 @@ while not capture.isOpened():
 defaultWidth = capture.get(cv2.CAP_PROP_FRAME_WIDTH)
 defaultHeight = capture.get(cv2.CAP_PROP_FRAME_HEIGHT)
 total_frames = capture.get(cv2.CAP_PROP_FRAME_COUNT)
-
+total_frames = i
 pipFrames = []
 
 pos_frame = capture.get(1)
