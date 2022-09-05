@@ -88,7 +88,7 @@ def getSinglePointStableState(xLeftPoints):
         model.fit(X,y)
         coef = model.coef_[0] # careful!
         if abs(coef) > slopeThreshold: continue
-        meanValue = np.mean(sample)
+        meanValue = int(np.mean(sample)) 
         target.append({"range":(start, end), 'mean': meanValue})
         # print((start, end), std, coef)
 
