@@ -75,14 +75,14 @@ for _ in progressbar.progressbar(range(total_frames)):
                 area = w*h
                 # if area > maxArea:
                 #     maxArea = area
-                if counted=False
+                if counted==False:
                     min_x, min_y = x, y
                     max_x, max_y = x+w, y+h
-                  else:
+                else:
                     if x<min_x: min_x = x
                     if x+w>max_x: max_x = x+w
                     if y<min_y: min_y = y
-                    if x+w>max_x: max_x = x+w
+                    if y+w>max_y: max_y = y+w
 
             pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
             # how to stablize this shit?
