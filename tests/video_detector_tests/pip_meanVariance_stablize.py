@@ -34,9 +34,10 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
     xRightPoints = pointsToRangedDictWithLabel(data[:,1,0], 'xright')
     yRightPoints = pointsToRangedDictWithLabel(data[:,1,1], 'yright')
 
+    commandDict = {}
     for mDict in [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]:
-    commandDict.update(mDict)
-
+        commandDict.update(mDict)
+        
 
     def Kalman1D(observations,damping=0.2):
         # To return the smoothed time series data
