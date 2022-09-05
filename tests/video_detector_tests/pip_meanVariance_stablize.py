@@ -379,7 +379,7 @@ if __name__ == "__main__":
 
     defaultWidth, defaultHeight = dataDict["width"], dataDict["height"]
 
-    if objective.start"continual":
+    if objective in ["continual", 'continual_najie']:
         finalCommandDict = kalmanStablePipRegionExporter(
             data, defaultWidth, defaultHeight
         )
