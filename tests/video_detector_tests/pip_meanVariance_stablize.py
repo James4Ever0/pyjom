@@ -92,6 +92,8 @@ for elem in target:
     mRange = elem['range']
     newTarget.update({meanStr: newTarget.get(meanStr, [])+[mRange]})
 
+mStart = 0
+mEnd = len()
 newTarget = getContinualMappedNonSympyMergeResultWithRangedEmpty(newTarget,mStart, mEnd)
 
 for elem in newTarget:
