@@ -27,13 +27,13 @@ def Kalman1D(observations,damping=0.2):
 
 xLeftPoints = data[:,0,1]
 xLeftPointsFiltered = Kalman1D(xLeftPoints)
-threshold = 20
-xLeftPointSignal = 100*(abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8)
+threshold = 30
+xLeftPointsSignal = 100*(abs(xLeftPointsFiltered - xLeftPoints) < threshold).astype(np.uint8)
 print(xLeftPoints)
 import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
 plt.plot(xLeftPointsFiltered)
-plt.plot(xLeftPoint)
+plt.plot(xLeftPointsSignal)
 plt.show()
 
