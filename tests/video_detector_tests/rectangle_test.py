@@ -57,7 +57,7 @@ defaultRect = [(0,0),(defaultWidth,defaultHeight)]
 pos_frame = capture.get(1)
 
 
-areaThreshold = 0.2*0.2
+areaThreshold = (0.2*0.2*defaultWidth*defaultHeight)
 
 for index in progressbar.progressbar(range(total_frames)):
     # if index % 20 != 0: continue
