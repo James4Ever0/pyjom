@@ -429,3 +429,4 @@ def detectStationaryLogoOverTime(filepath,start,end,sample_size=60):
         return {delogoCommandSet: [(start, end)]}
     
 def detectPipRegionOverTime(videoPath, start, end, method = "skim"): # shall be some parameters here.
+    # if it is 'skim' we will sample it at 20fps.
