@@ -211,6 +211,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
             # print(elem)
             # the parser shall be in x,y,w,h with keywords.
             # we might want to parse the command string and reengineer this shit.
+    return finalCommandDict
 
 if __name__ == "__main__":
     # better plot this shit.
@@ -223,12 +224,17 @@ if __name__ == "__main__":
     data  = dataDict['data']
 
     defaultWidth, defaultHeight = dataDict['width'], dataDict['height']
-    kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight)
+    finalCommandDict = kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight)
+
     import matplotlib.pyplot as plt
     from matplotlib.patches import Rectangle
     fig, ax = plt.subplots()
     def plotRect(ax, x, y, width, height, facecolor):
         ax.add_patch(Rectangle((x, y), width, height, facecolor=facecolor, fill=True))
-    plotRect(ax, *rect)
+    for key in finalCommandDict.keys():
+        import parse
+        commandArguments = parse.parse("crop_{x}_{}_{}_{}",key)
+        rect = 
+        plotRect(ax, *rect)
     plt.show()
 
