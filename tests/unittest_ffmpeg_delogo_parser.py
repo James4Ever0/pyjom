@@ -28,23 +28,26 @@ def delogoFilter(stream, commandParams):
 
 # minArea = 20
 
-def checkXYWH(x,y,w,h,width, height,minArea = 20):
+def checkXYWH(XYWH,canvas,minArea = 20):
+    x,y,w,h = XYWH
+    width, height = canvas
     if x >= width-1 or y >= height-1:
-            continue
-        if x == 0:
-            x = 1
-        if y == 0:
-            y = 1
-        if x+w >= width:
-            w = width-x-1
-            if w <= 2:
-                continue
-        if y+h >= height:
-            h = height-y-1
-            if h <= 2:
-                continue
-        if w*h <= minArea:
-            continue
+        return False, None
+    if x == 0:
+        x = 1
+    if y == 0:
+        y = 1
+    if x+w >= width:
+        w = width-x-1
+        if w <= 2:
+            return False, None
+    if y+h >= height:
+        h = height-y-1
+        if h <= 2:
+            return False, None
+    if w*h <= minArea:
+        return False, None
+    return True, (x,y,w,h)
 
 
 for command in commandString.split("|"):
@@ -55,6 +58,9 @@ for command in commandString.split("|"):
         y = commandArguments["y"]
         w = commandArguments["w"]
         h = commandArguments["h"]
+        status, XYWH = checkXYWH((x, y, w, h), (width, height))
+        if not status: continue
+        x,y,w,h = XYWH
 
         commandArguments = {"x": x, "y": y, "w": w, "h": h}
         stream = delogoFilter(stream, commandArguments)
