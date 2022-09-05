@@ -9,6 +9,7 @@ import cv2
 
 
 def checkXYWH(XYWH, canvas, minArea=20):
+    import math
     x, y, w, h = XYWH
     width, height = canvas
     if x >= width - 1 or y >= height - 1:
@@ -19,12 +20,12 @@ def checkXYWH(XYWH, canvas, minArea=20):
         y = 1
     if x + w >= width:
         w = width - x - 1
-        w = math.
+        w = math.floor(w/2)*2
         if w <= 2:
             return False, None
     if y + h >= height:
         h = height - y - 1
-        w = math.
+        h = math.floor(h/2)*2
         if h <= 2:
             return False, None
     if w * h <= minArea:
