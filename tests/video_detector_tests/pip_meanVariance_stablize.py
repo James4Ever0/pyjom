@@ -65,7 +65,8 @@ for start, end in xLeftSpans:
     coef = model.coef_[0]
     # print(start, end, coef)
     if spanLength > spanLengthMinThreshold:
-        if abs(coef) < 
+        if abs(coef) < kalmanMaxSlope:
+            
 
 exit()
 # print(xLeftPoints)
