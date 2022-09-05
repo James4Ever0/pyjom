@@ -126,10 +126,11 @@ else:
     # bring this sequential into dict again.
     answer = sequentialToMergedRanges(newTargetSequential)
     print("_"*30, "ANSWER","_"*30)
-    for elem in ans
+    for elem in answer:
+        print(elem)
                     
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # plt.plot(xLeftPoints)
 # plt.plot(xLeftPointsFiltered)
