@@ -123,7 +123,7 @@ def ffmpegVideoPreProductionFilter(
     for renderCommandString, commandTimeSpan in renderList:
         mStart, mEnd = commandTimeSpan
         mStart = max(start, mStart)
-        mEnd = min(videoDuration, end)
+        mEnd = min(mEnd, end)
         clipDuration = mEnd - mStart
         if clipDuration <= 0:
             continue  # if so, this clip is shit.
