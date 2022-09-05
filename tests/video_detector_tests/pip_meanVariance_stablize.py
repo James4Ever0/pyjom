@@ -41,12 +41,13 @@ def extract_span(mlist, target=0):
     return spanList
 
 # solve diff.
-np.diff(xLeftPointsFiltered)
+xLeftPointsFilteredDiff = np.diff(xLeftPointsFiltered)
 
 import matplotlib.pyplot as plt
 
 plt.plot(xLeftPoints)
 plt.plot(xLeftPointsFiltered)
+plt.plot(xLeftPointsFilteredDiff)
 # plt.plot(xLeftPointsSignal)
 plt.show()
 
