@@ -67,7 +67,7 @@ mShrink = 4
 for start, end in newSignalRanges:
     # could we shrink the boundaries?
     mStart, mEnd = start+mShrink,end-mShrink
-    if mEnd <= mStart
+    if mEnd <= mStart: continue
     std = np.std(xLeftPointsFiltered[mStart: mEnd])
     print((start, end), std)
 
