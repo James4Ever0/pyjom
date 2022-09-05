@@ -469,4 +469,13 @@ def detectPipRegionOverTime(videoPath, start, end, method = "skim", algo='frame_
         if area > areaThreshold:
             min_x, min_y = x, y
             max_x, max_y = x+w, y+h
-            pipFrames.append([(min_x, min_y), (max_x, max_y)].copy())
+            currentRect = [(min_x, min_y), (max_x, max_y)]
+            pipFrames.append(currentRect.copy())
+            defaultRect = currentRect.copy()
+        else:
+            pipFrames.append(defaultRect.copy())
+    # now finished collecting shit... need to convert it to something readable.
+    sampleLength = len(pipFrames)
+    clipDuration = end-start
+    sampleIndexToSecondsRatio = clipDuration / sampleLength
+    
