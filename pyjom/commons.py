@@ -22,20 +22,24 @@ import random
 os.environ["USE_NVIDIA_OPENCV"] = "yes"
 if os.environ["USE_NVIDIA_OPENCV"] == "yes":
     site_path = pathlib.Path("/usr/local/lib/python3.9/site-packages")
-    cv2_libs_dir = site_path / 'cv2' / f'python-{sys.version_info.major}.{sys.version_info.minor}'
+    cv2_libs_dir = (
+        site_path / "cv2" / f"python-{sys.version_info.major}.{sys.version_info.minor}"
+    )
     print(cv2_libs_dir)
     cv2_libs = sorted(cv2_libs_dir.glob("*.so"))
     if len(cv2_libs) == 1:
-        print("INSERTING:",cv2_libs[0].parent)
+        print("INSERTING:", cv2_libs[0].parent)
         sys.path.insert(1, str(cv2_libs[0].parent))
 
 
 mimetypes.init()
 
+
 class D2Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+
 
 def doRectOverlap(l1, r1, l2, r2):
     # if rectangle has area 0, no overlap
@@ -48,11 +52,15 @@ def doRectOverlap(l1, r1, l2, r2):
         return False
     return True
 
-def checkRectOverlap(rect0, rect1):
-    return doRectOverlap(D2Point(*rect0[0]), D2Point(*rect0[1]),D2Point(*rect1[0]), D2Point(*rect1[1]))
 
-def getOverlapRect(rect0,rect1):
-    if checkRectOverlap(rect0,rect1):
+def checkRectOverlap(rect0, rect1):
+    return doRectOverlap(
+        D2Point(*rect0[0]), D2Point(*rect0[1]), D2Point(*rect1[0]), D2Point(*rect1[1])
+    )
+
+
+def getOverlapRect(rect0, rect1):
+    if checkRectOverlap(rect0, rect1):
         leftXList = (rect0[0][0], rect1[0][0])
         leftYList = (rect0[0][1], rect1[0][1])
         rightXList = (rect0[1][0], rect1[1][0])
@@ -65,87 +73,111 @@ def getOverlapRect(rect0,rect1):
     else:
         return None
 
+
 def makeValueInRange(value, maxVal, minVal):
     assert minVal < maxVal
-    return min(max(minVal, value),maxVal)
+    return min(max(minVal, value), maxVal)
+
 
 # this sucks...
-def infiniteShuffle(access_list, shuffle=True, infinite=True, endMark = True):
-    flag=True
+def infiniteShuffle(access_list, shuffle=True, infinite=True, endMark=True):
+    flag = True
     while flag:
-        if shuffle: random.shuffle(access_list)
+        if shuffle:
+            random.shuffle(access_list)
         for data in access_list:
             yield data
         if endMark and infinite:
             yield None
-        if not infinite: flag=False
+        if not infinite:
+            flag = False
+
 
 def inRange(target, mRange, tolerance=1):
-    assert tolerance <=1
-    assert tolerance >0
+    assert tolerance <= 1
+    assert tolerance > 0
     start, end = mRange
-    start, end = start*tolerance, end/tolerance
+    start, end = start * tolerance, end / tolerance
     return target >= start and target <= end
+
 
 def overlapRange(range_a, range_b):
     begin_a, end_a = range_a
     begin_b, end_b = range_b
     possible_overlap = (max(begin_a, begin_b), min(end_a, end_b))
-    if possible_overlap[0] < possible_overlap[1]: # overlapping
+    if possible_overlap[0] < possible_overlap[1]:  # overlapping
         return possible_overlap
     # return common range.
+
 
 def jsonify(jsonObj):
     return json.loads(json.dumps(jsonObj))
 
-def jsonWalk(jsonObj,location=[]):
+
+def jsonWalk(jsonObj, location=[]):
     # this is not tuple. better convert it first?
     # mlocation = copy.deepcopy(location)
     if type(jsonObj) == dict:
         for key in jsonObj:
             content = jsonObj[key]
-            if type(content) not in [dict,list,tuple]:
-                yield location+[key], content
+            if type(content) not in [dict, list, tuple]:
+                yield location + [key], content
             else:
                 # you really ok with this?
-                for mkey, mcontent in jsonWalk(content,location+[key]):
+                for mkey, mcontent in jsonWalk(content, location + [key]):
                     yield mkey, mcontent
-    elif type(jsonObj) in [list,tuple]: # this is not pure JSON. we only have list and dicts.
-        for key,content in enumerate(jsonObj):
-        # content = jsonObj[key]
-            if type(content) not in [dict,list,tuple]:
-                yield location+[key], content
+    elif type(jsonObj) in [
+        list,
+        tuple,
+    ]:  # this is not pure JSON. we only have list and dicts.
+        for key, content in enumerate(jsonObj):
+            # content = jsonObj[key]
+            if type(content) not in [dict, list, tuple]:
+                yield location + [key], content
             else:
-                for mkey, mcontent in jsonWalk(content,location+[key]):
+                for mkey, mcontent in jsonWalk(content, location + [key]):
                     yield mkey, mcontent
     else:
         raise Exception("Not a JSON compatible object: {}".format(type(jsonObj)))
+
 
 def jsonWalk2(jsonObj):
     jsonObj = jsonify(jsonObj)
     return jsonWalk(jsonObj)
 
-def jsonLocate(jsonObj,location=[]):
+
+def jsonLocate(jsonObj, location=[]):
     # print("object:",jsonObj)
     # print("location:",location)
-    if location!=[]:
+    if location != []:
         # try:
-        return jsonLocate(jsonObj[location[0]],location[1:])
+        return jsonLocate(jsonObj[location[0]], location[1:])
         # except:
         #     breakpoint()
     return jsonObj
 
+
 def jsonUpdate(jsonObj, location=[], update_content=None):
-    if location !=[]:
+    if location != []:
         if type(jsonObj) == dict:
-            target = {location[0]:jsonUpdate(jsonObj[location[0]],location=location[1:],update_content =update_content)}
+            target = {
+                location[0]: jsonUpdate(
+                    jsonObj[location[0]],
+                    location=location[1:],
+                    update_content=update_content,
+                )
+            }
             # print("keys:", location)
             # print("JSONOBJ:", jsonObj)
             # print("update target:", target)
             jsonObj.update(target)
             return jsonObj
         elif type(jsonObj) == list:
-            target = jsonUpdate(jsonObj[location[0]],location=location[1:],update_content =update_content)
+            target = jsonUpdate(
+                jsonObj[location[0]],
+                location=location[1:],
+                update_content=update_content,
+            )
             # print("keys:", location)
             # print("JSONOBJ:", jsonObj)
             # print("override target:", target)
@@ -155,41 +187,52 @@ def jsonUpdate(jsonObj, location=[], update_content=None):
             raise Exception("Unsupported JSON update target type:", type(jsonObj))
     return update_content
 
-json.__dict__.update({"walk":jsonWalk,"locate":jsonLocate,"update":jsonUpdate})
+
+json.__dict__.update({"walk": jsonWalk, "locate": jsonLocate, "update": jsonUpdate})
+
 
 def replacer(content, sources=[], target=""):
-    for source in sources: content = content.replace(source, target)
+    for source in sources:
+        content = content.replace(source, target)
     return content
 
-def multi_replacer(content, replacer_list=[[[],""]]):
-    for sources, target in replacer_list: content = replacer(content, sources=sources, target=target)
+
+def multi_replacer(content, replacer_list=[[[], ""]]):
+    for sources, target in replacer_list:
+        content = replacer(content, sources=sources, target=target)
     return content
+
 
 from itertools import groupby
+
+
 def extract_span(mlist, target=0):
     counter = 0
     spanList = []
-    target_list = [(a,len(list(b))) for a,b in groupby(mlist)]
-    for a,b in target_list:
-        nextCounter = counter+b
+    target_list = [(a, len(list(b))) for a, b in groupby(mlist)]
+    for a, b in target_list:
+        nextCounter = counter + b
         if a == target:
             spanList.append((counter, nextCounter))
         counter = nextCounter
     return spanList
 
-def convoluted(array,k=2,pad=0): # simple convolution. no tail.
-    pad_size = k-1
-    new_array = [pad]*pad_size + array
+
+def convoluted(array, k=2, pad=0):  # simple convolution. no tail.
+    pad_size = k - 1
+    new_array = [pad] * pad_size + array
     result = []
     for i in range(len(array)):
-        sliced = new_array[i:i+k]
-        value = sum(sliced)/k
+        sliced = new_array[i : i + k]
+        value = sum(sliced) / k
         result.append(value)
     return result
+
 
 import MediaInfo
 
 import subprocess
+
 
 def json_auto_float_int(jsonObj):
     jsonObj = jsonify(jsonObj)
@@ -198,21 +241,25 @@ def json_auto_float_int(jsonObj):
         if type(content) == str:
             if "/" in content:
                 try:
-                    content = eval(content) # could be dangerous!
+                    content = eval(content)  # could be dangerous!
                     if type(content) in [float, int]:
-                        jsonUpdate(jsonObj,location=location,update_content=content)
-                except:pass
+                        jsonUpdate(jsonObj, location=location, update_content=content)
+                except:
+                    pass
             elif "." in content:
                 try:
                     content = float(content)
-                    jsonUpdate(jsonObj, location=location, update_content = content)
-                except: pass
+                    jsonUpdate(jsonObj, location=location, update_content=content)
+                except:
+                    pass
             else:
                 try:
                     content = int(content)
                     jsonUpdate(jsonObj, location=location, update_content=content)
-                except: pass
+                except:
+                    pass
     return jsonObj
+
 
 def ffprobe_media_info(filename):
     cmd = "ffprobe -v quiet -print_format json -show_format -show_streams".split(" ")
@@ -220,32 +267,41 @@ def ffprobe_media_info(filename):
     output = subprocess.check_output(cmd)
     return json_auto_float_int(json.loads(output))
 
+
 def json_media_info(filename):
-    cmd = ["mediainfo","--Output=JSON",filename]
+    cmd = ["mediainfo", "--Output=JSON", filename]
     output = subprocess.check_output(cmd)
     return json_auto_float_int(json.loads(output))
+
 
 def get_media_info(filename):
     mdf = MediaInfo.MediaInfo(filename=filename)
     return json_auto_float_int(mdf.getInfo())
 
+
 def getTextFileLength(path):
-    with open(path,"r",encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8") as f:
         return len(f.read())
 
-def append_sublist(main_dict,sublist_key,item):
-    main_dict[sublist_key] = main_dict.get(sublist_key,[])+[item]
 
-def update_subdict(mdict,key,subdict):
+def append_sublist(main_dict, sublist_key, item):
+    main_dict[sublist_key] = main_dict.get(sublist_key, []) + [item]
+
+
+def update_subdict(mdict, key, subdict):
     # print("UPDATING SUBDICT", mdict,key, subdict)
-    if key not in mdict: mdict[key]=subdict
-    else: mdict[key].update(subdict)
+    if key not in mdict:
+        mdict[key] = subdict
+    else:
+        mdict[key].update(subdict)
     return mdict
 
-def read_json(filepath):
-    return json.loads(open(filepath, 'r').read())
 
-def list_to_range(mlist,rangeLimit):
+def read_json(filepath):
+    return json.loads(open(filepath, "r").read())
+
+
+def list_to_range(mlist, rangeLimit):
     mlist = set(mlist)
     mlist = list(sorted(mlist))
     currentRange = []
@@ -256,52 +312,62 @@ def list_to_range(mlist,rangeLimit):
             lastElem = elem
             currentRange = [elem]
             continue
-        myRange = elem-lastElem
+        myRange = elem - lastElem
         if rangeLimit >= myRange:
             lastElem = elem
             if len(currentRange) == 2:
                 currentRange[1] = elem
-            else: currentRange.append(elem)
+            else:
+                currentRange.append(elem)
         else:
             myRanges.append(currentRange)
             lastElem = elem
             currentRange = [elem]
-    if len(myRanges)>0:
-        if myRanges[-1] !=currentRange:
+    if len(myRanges) > 0:
+        if myRanges[-1] != currentRange:
             myRanges.append(currentRange)
     else:
         myRanges.append(currentRange)
     return myRanges
 
+
 # from youtube science.
-def list_startswith(a,b):
+def list_startswith(a, b):
     value = 0
-    if len(a) < len(b): return False
-    for i,v in enumerate(b):
+    if len(a) < len(b):
+        return False
+    for i, v in enumerate(b):
         v0 = a[i]
         if v == v0:
-            value +=1
+            value += 1
     return value == len(b)
 
-def list_endswith(a,b):
+
+def list_endswith(a, b):
     value = 0
-    if len(a) < len(b): return False
-    c = a[-len(b):]
-    for i,v in enumerate(b):
+    if len(a) < len(b):
+        return False
+    c = a[-len(b) :]
+    for i, v in enumerate(b):
         v0 = c[i]
         if v == v0:
-            value +=1
+            value += 1
     return value == len(b)
+
 
 def cv2_HWC2CHW(frame):
     if len(frame.shape) == 3:
-        img = frame[:,:,::-1].transpose((2,0,1))
+        img = frame[:, :, ::-1].transpose((2, 0, 1))
     else:
-        img = frame[np.newaxis,:,:]
+        img = frame[np.newaxis, :, :]
     return img
 
+
 ocrCore = None
-ocrConfig = {"use_angle_cls": True, "lang": "ch"} # it can detect english too. but no space included.
+ocrConfig = {
+    "use_angle_cls": True,
+    "lang": "ch",
+}  # it can detect english too. but no space included.
 
 
 def configOCR(**kwargs):
@@ -312,6 +378,7 @@ def configOCR(**kwargs):
     else:
         ocrConfig = kwargs
         from paddleocr import PaddleOCR
+
         # breakpoint()
         ocrCore = PaddleOCR(**kwargs)
         # breakpoint() # this is not the problem. maybe.
@@ -324,7 +391,7 @@ def getScriptFileBaseDir(script_file):
     return basepath
 
 
-def getTemplateFileBaseDir(tmpDir = "templates"):
+def getTemplateFileBaseDir(tmpDir="templates"):
     basedir = getScriptFileBaseDir(__file__)
     basedir = os.path.join(basedir, tmpDir)
     assert os.path.exists(basedir)
@@ -333,17 +400,21 @@ def getTemplateFileBaseDir(tmpDir = "templates"):
 
 yolov5_model = None
 
+
 def configYolov5(model="yolov5s"):
-    global yolov5_model # not the same
+    global yolov5_model  # not the same
     if yolov5_model == None:
-        basedir = getTemplateFileBaseDir(tmpDir='models/yolov5')
+        basedir = getTemplateFileBaseDir(tmpDir="models/yolov5")
         os.environ["YOLOV5_MODEL_DIR"] = basedir
-        localModelPath = os.path.join(basedir,'ultralytics_yolov5_master/')# required to load it. we have modified this shit somehow.
+        localModelPath = os.path.join(
+            basedir, "ultralytics_yolov5_master/"
+        )  # required to load it. we have modified this shit somehow.
         modelPath = model
         # we set enviorment variable instead.
         # breakpoint()
-        yolov5_model = torch.hub.load(localModelPath, modelPath,source="local")
+        yolov5_model = torch.hub.load(localModelPath, modelPath, source="local")
     return yolov5_model
+
 
 def getTemplatePath(template_dirs, template_path):
     basedir = getTemplateFileBaseDir()
@@ -361,15 +432,15 @@ def joinScriptFileBaseDir(script_file, local_file_path):
     return file_path
 
 
-def renderTemplate(template, template_args,enable_json=True):
+def renderTemplate(template, template_args, enable_json=True):
     template = jinja2.Template(template)
     if enable_json:
         for key in template_args.keys():
             data = template_args[key]
-            if type(data) in [dict,list,tuple]:
+            if type(data) in [dict, list, tuple]:
                 try:
                     data = json.dumps(data)
-                    template_args[key] =data
+                    template_args[key] = data
                 except:
                     pass
     script = template.render(**template_args)
