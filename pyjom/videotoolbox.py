@@ -736,7 +736,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1)
     mPoints = [xLeftPoints, yLeftPoints, xRightPoints, yRightPoints]
 
     answers = []
-    suggestedSignalFilterThreshold = 
+    import math
+    suggestedSignalFilterThreshold = math.sqrt()
     for mPoint in mPoints:
         answer = getSinglePointStableState(mPoint,signalFilterThreshold=max(10, suggestedSigalFilterThreshold))
         answers.append(answer)
