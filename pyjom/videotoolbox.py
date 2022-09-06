@@ -555,10 +555,10 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         _, timespan = commandDictSequential[0]
         nextCommand, nextTimeSpan = commandDictSequential[1]
         currentStart, currentEnd = timespan
-        if currentEnd-currentStart)<
-        nextStart, nextEnd = nextTimeSpan
-        commandDictSequential[1] = [nextCommand,(currentStart, nextEnd)]
-        commandDictSequential.pop(0)
+        if (currentEnd-currentStart)<5:
+            nextStart, nextEnd = nextTimeSpan
+            commandDictSequential[1] = [nextCommand,(currentStart, nextEnd)]
+            commandDictSequential.pop(0)
     preFinalCommandDict = sequentialToMergedRanges(commandDictSequential)
     finalCommandDict = {}
     for key, elem in preFinalCommandDict.items():
