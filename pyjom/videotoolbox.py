@@ -611,7 +611,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         commandFloatMergeThreshold=15,
         stdThreshold=1,
         slopeThreshold=0.2,
-        shrink=0.8
+        # shrink=0.8
     ):
         
         xLeftPointsFiltered = Kalman1D(xLeftPoints)
