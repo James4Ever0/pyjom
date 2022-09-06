@@ -1,5 +1,25 @@
 # not overriding math.
 # do some ranged stuff here...
+
+
+from pykalman import KalmanFilter
+
+def Kalman1D(observations, damping=0.2):
+    # To return the smoothed time series data
+    observation_covariance = damping
+    initial_value_guess = observations[0]
+    transition_matrix = 1
+    transition_covariance = 0.1
+    initial_value_guess
+    kf = KalmanFilter(
+        initial_state_mean=initial_value_guess,
+        initial_state_covariance=observation_covariance,
+        observation_covariance=observation_covariance,
+        transition_covariance=transition_covariance,
+        transition_matrices=transition_matrix,
+    )
+    pred_state, state_cov = kf.smooth(observations)
+    return pred_state
 def getContinualNonSympyMergeResult(inputMSetCandidates):
     # basically the same example.
     # assume no overlapping here.
