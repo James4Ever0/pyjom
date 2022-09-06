@@ -57,10 +57,10 @@ def getOverlapRect(rect0,rect1):
         leftYList = rect0[0][1], rect1[0][1]
         rightXList = rect0[1][0], rect1[1][0]
         rightYList = rect0[1][1], rect1[1][1]
-        leftX = min(leftXList)
-        leftY = min(leftYList)
-        leftX = min(leftXList)
-        leftY = min(leftYList)
+        leftX = max(leftXList)
+        leftY = max(leftYList)
+        rightX = min(rightXList)
+        rightY = min(rightYList)
         return 
 
 def makeValueInRange(value, maxVal, minVal):
