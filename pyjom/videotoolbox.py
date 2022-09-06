@@ -478,9 +478,10 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
                 delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
                 # print(delogoCommand)
                 # print('width:{} height:{}'.format(b,a))
-                # if b< x+w or a<y+h:
-                #     print("ERROR!")
-                #     breakpoint()
+                mFinalDelogoFilters.append(delogoCommand)
+        else:
+            x,y,w,h = overlapRect
+            delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
                 mFinalDelogoFilters.append(delogoCommand)
         # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
         # cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
