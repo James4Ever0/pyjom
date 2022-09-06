@@ -4,4 +4,4 @@ command3 = ['ffmpeg','-y', '-ss', '59.3942553191489', '-to', '62.0340000000000',
 
 import subprocess
 
-subprocess.run(command3)
+subprocess.run(command_original)
