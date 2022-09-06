@@ -41,6 +41,7 @@ def ffmpegVideoPreProductionFilter(
         previewRatio = previewWidth / defaultWidth
 
         def previewFilter(stream):
+            # maintain original ratio?
             return stream.filter(
                 "scale",
                 "ceil((in_w*{})/4)*4".format(previewRatio),
