@@ -898,8 +898,8 @@ def detectPipRegionOverTime(
     pipFrames = []
     # batch= 1
     if method == "framewise":
-        sample_rate = 5
-        batch = 3
+        sample_rate = 1
+        batch = 1
     else:
         # batch = 4
         batch = 2
