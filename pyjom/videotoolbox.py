@@ -470,19 +470,19 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
         if cornersOnly:
-        for corner in fourCorners:
-            overlap = 
-            if overlap:
-                overlapRect = 
-                x,y,w,h = overlapRect
-                delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
-                # print(delogoCommand)
-                # print('width:{} height:{}'.format(b,a))
-                mFinalDelogoFilters.append(delogoCommand)
+            for corner in fourCorners:
+                overlap = 
+                if overlap:
+                    overlapRect = 
+                    x,y,w,h = overlapRect
+                    delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
+                    # print(delogoCommand)
+                    # print('width:{} height:{}'.format(b,a))
+                    mFinalDelogoFilters.append(delogoCommand)
         else:
             x,y,w,h = overlapRect
             delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
-                mFinalDelogoFilters.append(delogoCommand)
+            mFinalDelogoFilters.append(delogoCommand)
         # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
         # cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
     print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
