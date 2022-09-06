@@ -76,7 +76,7 @@ def getOverlapRect(rect0, rect1):
         return None
 
 
-def makeValueInRange(value, mi):
+def makeValueInRange(value, minVal, manVa:
     assert minVal < maxVal
     return min(max(minVal, value), maxVal)
 
