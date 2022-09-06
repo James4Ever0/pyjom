@@ -1,7 +1,6 @@
 # not overriding math.
 # do some ranged stuff here...
 
-
 from pykalman import KalmanFilter
 
 def Kalman1D(observations, damping=0.2):
