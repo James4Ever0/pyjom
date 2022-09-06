@@ -631,11 +631,11 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         # solve diff.
         xLeftPointsFilteredDiff = np.diff(xLeftPointsFiltered)
         # xLeftPointsFilteredDiff3 = np.diff(xLeftPointsFilteredDiff)
-        import matplotlib.pyplot as plt
-        plt.plot(xLeftPointsFilteredDiff)
-        plt.plot(xLeftPointsFiltered)
-        plt.plot(xLeftPoints)
-        plt.show()
+        # import matplotlib.pyplot as plt
+        # plt.plot(xLeftPointsFilteredDiff)
+        # plt.plot(xLeftPointsFiltered)
+        # plt.plot(xLeftPoints)
+        # plt.show()
 
         # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
         import math
@@ -848,7 +848,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
 
 
 def detectPipRegionOverTime(
-    videoPath, start, end, method="framewise", algo="frame_difference", downScale=4, shrink=0.8
+    videoPath, start, end, method="framewise", algo="frame_difference", downScale=2, shrink=0.9
 ):  # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
