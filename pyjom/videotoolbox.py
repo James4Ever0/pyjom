@@ -848,7 +848,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
 
 
 def detectPipRegionOverTime(
-    videoPath, start, end, method="skim", algo="frame_difference", downScale=4
+    videoPath, start, end, method="skim", algo="frame_difference", downScale=4, shrink=0.8
 ):  # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
@@ -900,11 +900,11 @@ def detectPipRegionOverTime(
     sampleIndexToSecondsRatio = clipDuration / sampleLength
     if method == "framewise":
         resultDict = kalmanStablePipRegionExporter(
-            pipFrames, defaultWidth, defaultHeight, downScale=downScale
+            pipFrames, defaultWidth, defaultHeight, downScale=downScale, shrink=shrink
         )
     else:
         resultDict = sampledStablePipRegionExporter(
-            pipFrames, defaultWidth, defaultHeight
+            pipFrames, defaultWidth, defaultHeight, shrink=shrink
         )
     finalResultDict = {}
     for key, value in resultDict.items():
