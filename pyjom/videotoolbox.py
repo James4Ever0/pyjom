@@ -554,6 +554,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
     if len(commandDictSequential)>=2:
         _, timespan = commandDictSequential[0]
         nextCommand, nextTimeSpan = commandDictSequential[1]
+        currentStart, currentEnd = nextTimeSpan
         nextStart, nextEnd = nextTimeSpan
         commandDictSequential[1] = [nextCommand,(timespan[0], nextEnd)]
         commandDictSequential.pop(0)
