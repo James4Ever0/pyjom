@@ -153,7 +153,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1,batch=1):
         fnoMax = fno+batch-1
         if fnoMax >= total_frames:
             break
-        for fnoX i
+        for fnoX in range(batch):
         cap.set(cv2.CAP_PROP_POS_FRAMES, fnoX)
         success, image = cap.read()
         if success:
