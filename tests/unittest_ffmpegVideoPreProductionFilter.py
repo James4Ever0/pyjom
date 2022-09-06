@@ -69,15 +69,16 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
                 if key!= testSubject:
                     continue
             print("TESTING: %s" % key)
-        start = 0
-        end = getVideoDuration(videoPath)
-        # regions = detectTextRegionOverTime(videoPath, start, end)
-        regions = detectTextRegionOverTime(videoPath, 10, 20) # now we change the start and end.
-        
-        for key, item in regions.items():
-            # could be empty here.
-            print("KEY:",key)
-            print("ITEM:",item)
+            
+            start = 0
+            end = getVideoDuration(videoPath)
+            # regions = detectTextRegionOverTime(videoPath, start, end)
+            regions = detectTextRegionOverTime(videoPath, 10, 20) # now we change the start and end.
+            
+            for key, item in regions.items():
+                # could be empty here.
+                print("KEY:",key)
+                print("ITEM:",item)
             # how to merge continual shits?
 
         # pretty much None currently.
