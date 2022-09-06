@@ -30,7 +30,8 @@ def ffmpegVideoPreProductionFilter(
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
-    def 1080WideScreen
+    def wideScreen1080(stream):
+        return stream.
     .filter("pad",width=width, height=height, x=x, y=y,color='black')
 
     assert cachePath is not None
