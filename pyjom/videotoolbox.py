@@ -844,7 +844,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
 
 def detectPipRegionOverTime(
-    videoPath, start, end, method="skim", algo="frame_difference", downScale=4
+    videoPath, start, end, method="frame_difference", algo="frame_difference", downScale=4
 ):  # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
