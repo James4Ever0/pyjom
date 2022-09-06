@@ -47,8 +47,9 @@ def doRectOverlap(l1, r1, l2, r2):
     if l1.y >= r2.y or l2.y >= r1.y:
         return False
     return True
+
 def checkRectOverlap(rect0, rect1):
-    return doRectOverlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
+    return doRectOverlap((rect0),*getRectDiagonalPoints(rect1))
 
 def makeValueInRange(value, maxVal, minVal):
     assert minVal < maxVal
