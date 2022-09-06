@@ -752,7 +752,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
     suggestedCommandFloatMergeThreshold = 15/(math.sqrt(math.sqrt(downScale)))
     for mPoint in mPoints:
         answer = getSinglePointStableState(mPoint,signalFilterThreshold=max(10, suggestedSignalFilterThreshold),
-        stdThreshold = max(1, suggestedStdThreshold), slopeThreshold=max(0.2,suggestedSlopeThreshold), commandFloatMergeThreshold=max(10,suggestedCommandFloatMergeThreshold))
+        stdThreshold = max(1, suggestedStdThreshold), slopeThreshold=max(0.2,suggestedSlopeThreshold), commandFloatMergeThreshold=max(12,suggestedCommandFloatMergeThreshold))
         answers.append(answer)
         print("_"*30, "ANSWER","_"*30)
         for elem in answer.items():
