@@ -896,13 +896,13 @@ def detectPipRegionOverTime(
     # otherwise we do it frame by frame.
     assert method in ["skim", "framewise"]
     pipFrames = []
-    batch= 1
+    # batch= 1
     if method == "framewise":
         sample_rate = 1
         batch = 1
     else:
         # batch = 4
-        # batch = 1
+        batch = 2
         videoFrameRate = getVideoFrameRate(videoPath)
         totalFramesInSegment = (end - start) * videoFrameRate
         minSampleSize = int((80*4)*(totalFramesInSegment/1800))
