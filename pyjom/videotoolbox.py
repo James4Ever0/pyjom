@@ -295,7 +295,7 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     return previewWidth, previewHeight
 
 
-def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOnly=True):
+def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOnly=True, cornerAreaThreshold = 30):
     imageSet = getVideoFrameSampler(
         filepath, start, end, sample_size=sample_size)
     # what is this src?
