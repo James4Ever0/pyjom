@@ -32,6 +32,10 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 
 mimetypes.init()
 
+
+def checkRectOverlap(rect0, rect1):
+    return do_overlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
+
 def makeValueInRange(value, maxVal, minVal):
     assert minVal < maxVal
     return min(max(minVal, value),maxVal)
