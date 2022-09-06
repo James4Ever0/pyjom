@@ -876,9 +876,10 @@ def detectPipRegionOverTime(
     defaultRect = [(0, 0), (defaultWidth, defaultHeight)]
 
     for frame in iterator:
-        downScaleFrame = cv2.
+        downScaledFrame = cv2.
         img_output = algorithm.apply(frame)
         [x, y, w, h] = cv2.boundingRect(img_output)  # wtf is this?
+        x,y,w,h = 
         area = w * h
         if area > areaThreshold:
             min_x, min_y = x, y
