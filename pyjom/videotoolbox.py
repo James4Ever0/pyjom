@@ -295,12 +295,13 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     return previewWidth, previewHeight
 
 
-def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, ):
+def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOnly=True):
     imageSet = getVideoFrameSampler(
         filepath, start, end, sample_size=sample_size)
     # what is this src?
     # from src import *
     defaultWidth, defaultHeight = getVideoWidthHeight(filepath)
+    
     deltaWidthRatio = 4+(4-3)*(defaultWidth/defaultHeight-16/9)/(16/9-9/16)
     deltaWidthRatio = makeValueInRange(deltaWidthRatio,3,4)
     deltaHeightRatio = 8+(8-6)*(defaultHeight/defaultWidth-16/9)/(16/9-9/16)
