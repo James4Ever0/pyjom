@@ -583,8 +583,8 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
             commandArguments["xright"] - commandArguments["xleft"],
             commandArguments["yright"] - commandArguments["yleft"],
         )
-        x = w*(1-shrink)
-        y = h*(1-shrink)
+        x += w*(1-shrink)
+        y += h*(1-shrink)
         w *=shrink
         h *=shrink
         x,y,w,h = [int(digit) for digit in (x,y,w,h)]
