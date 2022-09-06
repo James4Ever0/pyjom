@@ -6,7 +6,7 @@ videoPaths = {
     "text":"/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
     "logo":"/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
     # "pip":"/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4", # najie
-    'pip':'/root/Desktop/works/pyjom/samples/video/LiEIfnsvn.mp4' # double pip
+    'pip':'/root/Desktop/works/pyjom/samples/video/LiEIfnsvn.mp4', # double pip
     'complete':"/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
@@ -31,7 +31,7 @@ def getVideoDuration(filePath):
     end = float(infoData['videoDuration'])
     return end
 
-testSubject = 'pip'
+testSubject = 'complete'
 
 with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     print("Allocated tmpDir:", allocatedTmpDir)
