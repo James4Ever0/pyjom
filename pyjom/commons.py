@@ -37,6 +37,7 @@ class D2Point:
         self.x = x
         self.y = y
 
+
 def checkRectOverlap(rect0, rect1):
     return do_overlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
 
