@@ -46,7 +46,8 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         filters = ['pipCrop']
     elif testSubject == 'complete':
         # videoPath = videoPaths['complete']
-        filters = ['pipCrop','textRemoval','logoRemoval']
+        filters = ['pipCrop','textRemoval']
+        # filters = ['pipCrop','textRemoval','logoRemoval']
     else:
         raise Exception("Unknown testSubject: %s" % testSubject)
     # videoFileName = os.path.basename(videoPath)
@@ -93,7 +94,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
 
             start = 0
             end = getVideoDuration(videoPath)
-            
+
             output = ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
             print("ffmpeg pre production filter processing done.")
             print("output location:", output)
