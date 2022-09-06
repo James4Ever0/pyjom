@@ -549,6 +549,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         noAlter = beforeChange == afterChange
         if noAlter:
             break
+    if commandDictSequential
     preFinalCommandDict = sequentialToMergedRanges(commandDictSequential)
     finalCommandDict = {}
     for key, elem in preFinalCommandDict.items():
