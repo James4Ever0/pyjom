@@ -819,7 +819,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
     for key, elem in preFinalCommandDict.items():
         # print(key,elem)
         varNames = ["xleft", "yleft", "xright", "yright"]
-        defaultValues = [0, 0, defaultWidth, defaultHeight]
+        # defaultValues = [0, 0, defaultWidth, defaultHeight]
+        defaultValues = defaultCoords
         for varName, defaultValue in zip(varNames, defaultValues):
             key = key.replace(
                 "{}:empty".format(varName), "{}:{}".format(varName, defaultValue)
