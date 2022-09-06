@@ -7,6 +7,7 @@ videoPaths = {
     "logo":"/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
     # "pip":"/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4", # najie
     'pip':'/root/Desktop/works/pyjom/samples/video/LiEIfnsvn.mp4' # double pip
+    'complete'
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 
