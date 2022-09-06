@@ -463,7 +463,7 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60):
         return {delogoCommandSet: [(start, end)]}
 
 
-def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
+def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8):
     defaultWidth, defaultHeight = int(defaultWidth), int(defaultHeight)
     import numpy as np
 
