@@ -304,8 +304,8 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60):
     # (x1, y1), (x2, y2)
     fourCorners = [[(0,0),(deltaWidth, deltaHeight)],
     [(defaultWidth-deltaWidth,0),(defaultWidth, deltaHeight)],
-    [(defaultWidth, defaultHeight-deltaHeight),(defaultWidth, defaultHeight)],
-    [(),()]
+    [(defaultWidth-deltaWidth, defaultHeight-deltaHeight),(defaultWidth, defaultHeight)],
+    [(0,defaultHeight-deltaHeight),()]
     ]
 
     ###########
