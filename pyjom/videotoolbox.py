@@ -474,9 +474,8 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
             for corner in fourCorners:
                 overlap = getOverlapRect(currentRect, corner)
                 if overlap:
-                    overlapRect = overlap
-                    (x0,y0),(x1,y1) = overlapRect
-                    x,y,w,h = 
+                    (x0,y0),(x1,y1) = overlap
+                    x,y,w,h = x0,y0, x1-x0, y1-y0
                     delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
                     # print(delogoCommand)
                     # print('width:{} height:{}'.format(b,a))
