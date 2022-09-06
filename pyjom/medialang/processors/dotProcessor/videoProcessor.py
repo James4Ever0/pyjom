@@ -31,6 +31,7 @@ def ffmpegVideoPreProductionFilter(
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
     
+    .filter("pad",width=width, height=height, x=x, y=y,color='black')
 
     assert cachePath is not None
     assert start is not None
