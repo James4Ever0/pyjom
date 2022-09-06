@@ -866,7 +866,7 @@ def detectPipRegionOverTime(
     else:
         videoFrameRate = getVideoFrameRate(videoPath)
         totalFramesInSegment = (end - start) * videoFrameRate
-        minSampleSize = 80
+        minSampleSize = 80*4
         min_sample_rate = int(totalFramesInSegment / minSampleSize)
         estimated_sample_rate = min(5, min_sample_rate)
         sample_rate = max(1, estimated_sample_rate)
