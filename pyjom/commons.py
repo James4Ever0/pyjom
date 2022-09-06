@@ -32,6 +32,10 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 
 mimetypes.init()
 
+class D2Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
 def checkRectOverlap(rect0, rect1):
     return do_overlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
