@@ -30,7 +30,7 @@ def ffmpegVideoPreProductionFilter(
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
-    def padding(stream, mWidth=1920, mHeight = 1080):
+    def paddingFilter(stream, mWidth=1920, mHeight = 1080):
         width='max(iw, ceil(ih*max({}/{}, iw/ih)))'.format(mWidth, mHeight)
         height='max(ih, ceil(iw*max({}/{}, ih/iw)))'.format(mHeight, mWidth)
         x = 'floor(({}-iw)/2)'.format(width)
@@ -209,7 +209,7 @@ def ffmpegVideoPreProductionFilter(
                             stream = cropFilter(stream, commandParams)
                             # TODO: the main shit happens here is that if pip region is detected, it (the crop region) will not maintain the width to height ratio. you might need padding, and that's what we about to do here. you may also extract that clip as standalone material.
                             # more inspection is needed for comprehensive reasoning.
-
+        stream = paddingFilter(stream)
         if preview:  # final filter? need us to crop this?
             stream = previewFilter(stream)
             # do nothing here! (no fx.)
