@@ -143,8 +143,8 @@ def ffmpegVideoPreProductionFilter(
                 key=lambda command: commandValueMap[command.split("_")[0]]
             )
             for renderCommand in renderCommands:
-                print('RENDER COMMAND:',renderCommand, "SPAN", mStart, mEnd)
-                breakpoint()
+                # print('RENDER COMMAND:',renderCommand, "SPAN", mStart, mEnd)
+                # breakpoint()
                 if renderCommand == "empty":
                     continue
                 for prefix, keyword in [
