@@ -33,8 +33,8 @@ def ffmpegVideoPreProductionFilter(
     def paddingFilter(stream, mWidth=1920, mHeight = 1080):
         width='max(iw, ceil(ih*max({}/{}, iw/ih)))'.format(mWidth, mHeight)
         height='max(ih, ceil(iw*max({}/{}, ih/iw)))'.format(mHeight, mWidth)
-        x = 'floor(({}-iw)/2)'.format(width)
-        y = 'floor(({}-ih)/2)'.format(height)
+        x = 'max(0,floor(({}-iw)/2))'.format(width)
+        y = 'max(0,floor(({}-ih)/2)'.format(height)
         return stream.filter("pad",width=width, height=height, x=x, y=y,color='black').filter('scale',w=mWidth, h=mHeight).filter("setsar",1)
 
     assert cachePath is not None
