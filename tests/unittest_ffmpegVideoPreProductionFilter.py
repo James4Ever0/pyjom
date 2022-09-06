@@ -69,7 +69,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
                 if key!= testSubject:
                     continue
             print("TESTING: %s" % key)
-            
+
             start = 0
             end = getVideoDuration(videoPath)
             # regions = detectTextRegionOverTime(videoPath, start, end)
@@ -90,6 +90,10 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
                 if key!= testSubject:
                     continue
             print("TESTING: %s" % key)
+
+            start = 0
+            end = getVideoDuration(videoPath)
+            
             output = ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
             print("ffmpeg pre production filter processing done.")
             print("output location:", output)
