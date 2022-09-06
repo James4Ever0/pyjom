@@ -566,7 +566,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         # print(key,elem)
         varNames = ["xleft", "yleft", "xright", "yright"]
         # defaultValues = [0, 0, defaultWidth, defaultHeight]
-        defaultValues = 
+        defaultValues = defaultCoords
         for varName, defaultValue in zip(varNames, defaultValues):
             key = key.replace(
                 "{}:empty".format(varName), "{}:{}".format(varName, defaultValue)
