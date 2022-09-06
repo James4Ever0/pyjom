@@ -32,6 +32,8 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 
 mimetypes.init()
 
+def getValueI
+
 # this sucks...
 def infiniteShuffle(access_list, shuffle=True, infinite=True, endMark = True):
     flag=True
