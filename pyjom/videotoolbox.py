@@ -748,6 +748,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
     import math
     suggestedSignalFilterThreshold = int(10*math.sqrt(downScale))
     suggestedStdThreshold = 1*math.sqrt(math.sqrt(downScale))
+    suggestedSlopeThreshold = 0.2*math.sqrt(math.sqrt(downScale))
     for mPoint in mPoints:
         answer = getSinglePointStableState(mPoint,signalFilterThreshold=max(10, suggestedSignalFilterThreshold),
         stdThreshold = max(1, suggestedStdThreshold), slopeThreshold=max(0.2,suggestedSlopeThreshold), commandFloatMergeThreshold=max(10,suggestedCommandFloatMergeThreshold))
