@@ -876,7 +876,8 @@ def detectPipRegionOverTime(
     defaultRect = [(0, 0), (defaultWidth, defaultHeight)]
 
     for frame in iterator:
-        downScaledFrame = cv2.pyrDown(frame)
+        for _ in range(downScale):
+            downScaledFrame = cv2.pyrDown(frame)
         img_output = algorithm.apply(frame)
         [x, y, w, h] = cv2.boundingRect(img_output)  # wtf is this?
         x,y,w,h = x*(2**downScale), y*(2**downScale), w*(2**downScale), h*(2**downScale)
