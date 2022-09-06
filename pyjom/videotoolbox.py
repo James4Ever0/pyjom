@@ -903,7 +903,8 @@ def detectPipRegionOverTime(
         img_output = algorithm.apply(downScaledFrame)
         if batch !=1 and index % batch == 0:
             continue
-        if batch batch == 1 and == 0:
+        if batch == 1 and index == 0:
+            continue
         [x, y, w, h] = cv2.boundingRect(img_output)  # wtf is this?
         x,y,w,h = x*downScale, y*downScale, w*downScale, h*downScale
         area = w * h
