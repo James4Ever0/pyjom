@@ -34,7 +34,7 @@ mimetypes.init()
 
 def getValueInRange(value, maxVal, minVal):
     assert minVal < maxVal
-    return min()
+    return minmax(minVal, value),maxVal)
 
 # this sucks...
 def infiniteShuffle(access_list, shuffle=True, infinite=True, endMark = True):
