@@ -31,7 +31,7 @@ def ffmpegVideoPreProductionFilter(
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
     def wideScreen1080(stream):
-        width='max(in_w, in_h)'
+        width='max(in_w*1920, in_h*1080)'
         return stream.filter("pad",width=width, height=height, x=x, y=y,color='black').filter('scale','1920','1080')
 
     assert cachePath is not None
