@@ -469,6 +469,7 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
     mFinalDelogoFilters = []
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
+        
         if cornersOnly:
             for corner in fourCorners:
                 overlap = 
