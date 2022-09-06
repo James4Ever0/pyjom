@@ -2,7 +2,15 @@
 # do some ranged stuff here...
 
 from pykalman import KalmanFilter
+import numpy as np
 
+
+def get1DArrayEMA(mArray, N=5):
+    weights = np.exp(np.linspace(0, 1, N))
+    weights = weights / np.sum(weights)
+    ema = np.convolve(weights, mArray, mode="valid")
+    return ema
+    
 def Kalman1D(observations, damping=0.2):
     # To return the smoothed time series data
     observation_covariance = damping
