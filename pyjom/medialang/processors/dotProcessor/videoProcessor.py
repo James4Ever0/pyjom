@@ -33,7 +33,7 @@ def ffmpegVideoPreProductionFilter(
     def wideScreen1080(stream, mWidth=1920, mHeight = 1080):
         width='max(iw, ceil(ih*max({}/{}, iw/ih)))'.format(mWidth, mHeight)
         height='max(ih, ceil(iw*max({}/{}, ih/iw)))'.format(mHeight, mWidth)
-        
+        x = floor({})
         return stream.filter("pad",width=width, height=height, x=x, y=y,color='black').filter('scale','1920','1080')
 
     assert cachePath is not None
