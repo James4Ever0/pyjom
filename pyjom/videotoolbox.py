@@ -137,6 +137,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
 
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1,batch=1):
+    assert bat
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -154,12 +155,12 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1,batch=1):
         if fnoMax >= total_frames:
             break
         for fnoX in range(batch):
-        cap.set(cv2.CAP_PROP_POS_FRAMES, fnoX)
-        success, image = cap.read()
-        if success:
-            yield image
-        else:
-            break
+            cap.set(cv2.CAP_PROP_POS_FRAMES, fnoX)
+            success, image = cap.read()
+            if success:
+                yield image
+            else:
+                break
         # do_something(image)
     # fno = 0
     # while success:
