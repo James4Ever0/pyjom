@@ -754,10 +754,10 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         answer = getSinglePointStableState(mPoint,signalFilterThreshold=max(10, suggestedSignalFilterThreshold),
         stdThreshold = max(1, suggestedStdThreshold), slopeThreshold=max(0.2,suggestedSlopeThreshold), commandFloatMergeThreshold=max(12,suggestedCommandFloatMergeThreshold))
         answers.append(answer)
-        print("_"*30, "ANSWER","_"*30)
-        for elem in answer.items():
-            print(elem)
-    breakpoint()
+        # print("_"*30, "ANSWER","_"*30)
+        # for elem in answer.items():
+        #     print(elem)
+    # breakpoint()
     if answers == [{}, {}, {}, {}]:
         print("NO PIP FOUND")
     #     finalCommandDict = {}
