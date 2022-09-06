@@ -456,7 +456,8 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60):
     mFinalDelogoFilters = []
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
-        for four
+        for corner in fourCorners:
+            
         delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
         # print(delogoCommand)
         # print('width:{} height:{}'.format(b,a))
