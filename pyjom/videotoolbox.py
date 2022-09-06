@@ -896,6 +896,7 @@ def detectPipRegionOverTime(
     # otherwise we do it frame by frame.
     assert method in ["skim", "framewise"]
     pipFrames = []
+    batch= 1
     if method == "framewise":
         sample_rate = 1
         # batch = 1
@@ -919,10 +920,10 @@ def detectPipRegionOverTime(
         downScaledFrame = cv2.resize(
             frame, (int(defaultWidth/downScale), int(defaultHeight/downScale)))
         img_output = algorithm.apply(downScaledFrame)
-        if batch != 1 and index % batch == 0:
-            continue
-        if batch == 1 and index == 0:
-            continue
+        # if batch != 1 and index % batch == 0:
+        #     continue
+        # if batch == 1 and index == 0:
+        #     continue
         [x, y, w, h] = cv2.boundingRect(img_output)  # wtf is this?
         x, y, w, h = x*downScale, y*downScale, w*downScale, h*downScale
         area = w * h
