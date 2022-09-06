@@ -904,7 +904,7 @@ def detectPipRegionOverTime(
         updatedValueAlignedToSeconds = []
         for mStart, mEnd in value:
             mStart = start+mStart*sampleIndexToSecondsRatio
-            mEnd = sampleIndexToSecondsRatio
+            mEnd = start+mEnd*sampleIndexToSecondsRatio
             mStart = max(start, mStart)
             mEnd = min(end, mEnd)
             mDuration = mEnd-mStart
