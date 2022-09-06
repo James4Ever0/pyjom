@@ -306,7 +306,7 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60):
         [(0,0),(deltaWidth, deltaHeight)],
         [(defaultWidth-deltaWidth,0),(defaultWidth, deltaHeight)],
         [(defaultWidth-deltaWidth, defaultHeight-deltaHeight),(defaultWidth, defaultHeight)],
-    [(0,defaultHeight-deltaHeight),(deltaWidth, defaultHeight)]
+        [(0,defaultHeight-deltaHeight),(deltaWidth, defaultHeight)]
     ]
 
     ###########
