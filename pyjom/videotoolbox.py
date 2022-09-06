@@ -897,10 +897,11 @@ def detectPipRegionOverTime(
     pipFrames = []
     defaultRect = [(0, 0), (defaultWidth, defaultHeight)]
 
-    for index, frame in iterator:
+    for index, frame in enumerate(iterator):
         # for _ in range(downScale):
         downScaledFrame = cv2.resize(frame, (int(defaultWidth/downScale), int(defaultHeight/downScale)))
         img_output = algorithm.apply(downScaledFrame)
+        if 
         [x, y, w, h] = cv2.boundingRect(img_output)  # wtf is this?
         x,y,w,h = x*downScale, y*downScale, w*downScale, h*downScale
         area = w * h
