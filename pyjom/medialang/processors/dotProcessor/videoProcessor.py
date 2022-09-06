@@ -30,12 +30,12 @@ def ffmpegVideoPreProductionFilter(
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
-    def wideScreen1080(stream, mWidth=1920, mHeight = 1080):
+    def proper(stream, mWidth=1920, mHeight = 1080):
         width='max(iw, ceil(ih*max({}/{}, iw/ih)))'.format(mWidth, mHeight)
         height='max(ih, ceil(iw*max({}/{}, ih/iw)))'.format(mHeight, mWidth)
         x = 'floor(({}-iw)/2)'.format(width)
         y = 'floor(({}-ih)/2)'.format(height)
-        return stream.filter("pad",width=width, height=height, x=x, y=y,color='black').filter('scale','1920','1080')
+        return stream.filter("pad",width=width, height=height, x=x, y=y,color='black').filter('scale',mWidth, mHeight)
 
     assert cachePath is not None
     assert start is not None
