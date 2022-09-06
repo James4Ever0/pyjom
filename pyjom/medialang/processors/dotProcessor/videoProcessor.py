@@ -35,7 +35,7 @@ def ffmpegVideoPreProductionFilter(
         height='max(ih, ceil(iw*max({}/{}, ih/iw)))'.format(mHeight, mWidth)
         x = 'floor(({}-iw)/2)'.format(width)
         y = 'floor(({}-ih)/2)'.format(height)
-        return stream.filter("pad",width=width, height=height, x=x, y=y,color='black').filter('scale',mWidth, mHeight)
+        return stream.filter("pad",width=width, height=height, x=x, y=y,color='black').filter('scale',w=mWidth, h=mHeight, setsar=1)
 
     assert cachePath is not None
     assert start is not None
