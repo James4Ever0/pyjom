@@ -763,7 +763,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         finalCommandDict = {}
     else:
         # defaultCoord = [0, 0, defaultWidth, defaultHeight]  # deal with it later?
-        defaultCoord = [int()]
+        defaultCoord = [int(np.mean(array)) for array in ]
         defaults = [{str(defaultCoord[index]): [(0, len(data))]} for index in range(4)]
         for index in range(4):
             if answers[index] == {}:
