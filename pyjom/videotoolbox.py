@@ -150,8 +150,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1,batch=1):
     import progressbar
 
     for fno in progressbar.progressbar(range(startFrame, stopFrame + 1, sample_rate)):
-
-
+        fnoMax = fno+
         if fnoMax >= total_frames:
             break
         for f
