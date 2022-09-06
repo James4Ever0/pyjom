@@ -37,9 +37,18 @@ class D2Point:
         self.x = x
         self.y = y
 
-
+def doRectOverlap(l1, r1, l2, r2):
+    # if rectangle has area 0, no overlap
+    if l1.x == r1.x or l1.y == r1.y or r2.x == l2.x or l2.y == r2.y:
+        return False
+    # If one rectangle is on left side of other
+    if l1.x >= r2.x or l2.x >= r1.x:
+        return False
+    if l1.y >= r2.y or l2.y >= r1.y:
+        return False
+    return True
 def checkRectOverlap(rect0, rect1):
-    return do_overlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
+    return doRectOverlap(*getRectDiagonalPoints(rect0),*getRectDiagonalPoints(rect1))
 
 def makeValueInRange(value, maxVal, minVal):
     assert minVal < maxVal
