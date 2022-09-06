@@ -51,8 +51,8 @@ def ffmpegVideoPreProductionFilter(
             # maintain original ratio?
             return stream.filter(
                 "scale",
-                "ceil((in_w*{})/4)*4".format(previewRatio),
-                "ceil((in_h*{})/4)*4".format(previewRatio),
+                "ceil((iw*{})/4)*4".format(previewRatio),
+                "ceil((ih*{})/4)*4".format(previewRatio),
             )
 
     # stream = ffmpeg.hflip(stream)
