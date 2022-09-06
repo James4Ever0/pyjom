@@ -64,7 +64,11 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
 
     if test_text_detector:
         from pyjom.medialang.processors.dotProcessor import detectTextRegionOverTime
-        
+        for key, videoPath in videoPaths.items():
+            if testSubject != 'complete':
+                if key!= testSubject:
+                    continue
+            print("TESTING: %s" % key)
         start = 0
         end = getVideoDuration(videoPath)
         # regions = detectTextRegionOverTime(videoPath, start, end)
