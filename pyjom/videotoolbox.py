@@ -136,7 +136,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
         return nonIterator(cap, samplePopulation)
 
 
-def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
+def getVideoFrameIterator(videoPath, start, end, sample_rate=1,batch=1):
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -150,6 +150,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1):
     import progressbar
 
     for fno in progressbar.progressbar(range(startFrame, stopFrame + 1, sample_rate)):
+        
         if fno >= total_frames:
             break
         cap.set(cv2.CAP_PROP_POS_FRAMES, fno)
