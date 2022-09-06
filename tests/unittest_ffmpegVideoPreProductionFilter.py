@@ -81,7 +81,9 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
     if test_ffmpeg:
         for key, videoPath in videoPaths.items():
             if testSubject != 'complete':
-                if key!= 
+                if key!= testSubject:
+                    continue
+            print("TESTING")
             output = ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
             print("ffmpeg pre production filter processing done.")
             print("output location:", output)
