@@ -599,7 +599,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
     return finalCommandDict
 
 
-def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1):
+def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1, shrink=0.8):
     defaultWidth, defaultHeight = int(defaultWidth), int(defaultHeight)
     import numpy as np
 
