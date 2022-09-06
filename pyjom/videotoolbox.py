@@ -472,9 +472,9 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
         currentRect = [(x,y),(x+w,y+h)]
         if cornersOnly:
             for corner in fourCorners:
-                overlap = getOverlapRect(currentRect, corner)
-                if overlap:
-                    (x0,y0),(x1,y1) = overlap
+                overlapRect = getOverlapRect(currentRect, corner)
+                if overlapRect:
+                    (x0,y0),(x1,y1) = overlapRect
                     x,y,w,h = x0,y0, x1-x0, y1-y0
                     area = w*h
                     if area < areaThreshold:
