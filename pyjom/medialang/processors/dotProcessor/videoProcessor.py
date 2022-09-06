@@ -30,12 +30,12 @@ def ffmpegVideoPreProductionFilter(
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
-    def paddingFilter(stream, mWidth=1920, mHeight = 1080):
-        width='max(iw, ceil(ih*max({}/{}, iw/ih)))'.format(mWidth, mHeight)
-        height='max(ih, ceil(iw*max({}/{}, ih/iw)))'.format(mHeight, mWidth)
+    def paddingFilter(stream, mWidth=1920, mHeight=1080):
+        width = 'max(iw, ceil(ih*max({}/{}, iw/ih)))'.format(mWidth, mHeight)
+        height = 'max(ih, ceil(iw*max({}/{}, ih/iw)))'.format(mHeight, mWidth)
         x = 'max(0,floor(({}-iw)/2))'.format(width)
         y = 'max(0,floor(({}-ih)/2))'.format(height)
-        return stream.filter("pad",width=width, height=height, x=x, y=y,color='black').filter('scale',w=mWidth, h=mHeight).filter("setsar",1)
+        return stream.filter("pad", width=width, height=height, x=x, y=y, color='black').filter('scale', w=mWidth, h=mHeight).filter("setsar", 1)
 
     assert cachePath is not None
     assert start is not None
@@ -112,7 +112,8 @@ def ffmpegVideoPreProductionFilter(
         "crop": 1,
     }  # no scale filter shall present. we do not provide such creep. editly will handle it.
 
-    renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
+    renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(
+        mDict, start, end)
 
     # now we consider the rendering process. how?
     # shall we line it up?
@@ -130,7 +131,7 @@ def ffmpegVideoPreProductionFilter(
     # videoDuration = getVideoDuration(videoPath)
 
     for renderCommandString, commandTimeSpan in renderList:
-        print("#1",renderCommandString, commandTimeSpan)
+        print("#1", renderCommandString, commandTimeSpan)
         mStart, mEnd = commandTimeSpan
         mStart = max(start, mStart)
         mEnd = min(mEnd, end)
@@ -183,7 +184,8 @@ def ffmpegVideoPreProductionFilter(
                             # maybe it's not because of out of bounds error
                             print("_" * 30)
                             print(
-                                "ABNORMAL {} FILTER PARAMS:".format(keyword.upper()),
+                                "ABNORMAL {} FILTER PARAMS:".format(
+                                    keyword.upper()),
                                 commandParams,
                             )
                             print(
@@ -192,12 +194,14 @@ def ffmpegVideoPreProductionFilter(
                                     commandParams["y"] + commandParams["h"],
                                 )
                             )
-                            print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
+                            print("VALID BOUNDARIES:",
+                                  defaultWidth, defaultHeight)
                             print("_" * 30)
                             continue
                         else:
                             (mX, mY, mW, mH) = XYWH
-                            commandParams = {"x": mX, "y": mY, "w": mW, "h": mH}
+                            commandParams = {
+                                "x": mX, "y": mY, "w": mW, "h": mH}
                         # mX1, mY1 = mX+mW, mY+mH
                         # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
                         #     print("DELOGO ERROR:")
@@ -228,7 +232,8 @@ def ffmpegVideoPreProductionFilter(
     breakpoint()
     # breakpoint()
     renderVideoStream = ffmpeg.concat(*renderVideoStreamList)
-    renderStream = ffmpeg.output(renderVideoStream, renderAudioStream, cachePath)
+    renderStream = ffmpeg.output(
+        renderVideoStream, renderAudioStream, cachePath)
     args = renderStream.get_args()
     print(args)
     breakpoint()
@@ -318,7 +323,8 @@ def dotVideoProcessor(
                             processedFilePath = ffmpegVideoPreProductionFilter(
                                 filepath, start=cutFrom, end=cutTo, cachePath=cachePath
                             )
-                            videoFilePath = processedFilePath  # what is this filepath? man how do i handle this?
+                            # what is this filepath? man how do i handle this?
+                            videoFilePath = processedFilePath
                             # get video information!
                             # if processed:
                             # this must be true now.
@@ -326,7 +332,8 @@ def dotVideoProcessor(
                             cutTo = layerOriginalDuration
 
                             speed = layerElemItem.args.get("speed", 1)
-                            layerDuration = (cutTo - cutFrom) / speed  # was wrong.
+                            # was wrong.
+                            layerDuration = (cutTo - cutFrom) / speed
                             layer_durations.append(layerDuration)
                             mute = layerElemItem.args.get("slient", False)
                             layer = {
@@ -335,7 +342,8 @@ def dotVideoProcessor(
                                 "resizeMode": "contain",
                                 "cutFrom": cutFrom,
                                 "cutTo": cutTo,
-                                "mixVolume": 1 - int(mute),  # that's how we mute it.
+                                # that's how we mute it.
+                                "mixVolume": 1 - int(mute),
                             }
                             removeKeys = []
                             for key, elem in layer.items():
@@ -346,7 +354,8 @@ def dotVideoProcessor(
                     if layer is not None:
                         clip["layers"].append(layer)
                     else:
-                        raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
+                        raise Exception(
+                            "NOT IMPLEMENTED LAYER FORMAT:", layerElem)
                 maxDuration = max(layer_durations)
                 clip["duration"] = maxDuration
                 template["clips"].append(clip)
