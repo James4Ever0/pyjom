@@ -613,6 +613,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         slopeThreshold=0.2,
         shrink=0.8
     ):
+        
         xLeftPointsFiltered = Kalman1D(xLeftPoints)
         xLeftPointsFiltered = xLeftPointsFiltered.reshape(-1)
         from itertools import groupby
@@ -747,7 +748,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
     import math
     suggestedSignalFilterThreshold = int(10*math.sqrt(downScale))
     for mPoint in mPoints:
-        answer = getSinglePointStableState(mPoint,signalFilterThreshold=max(10, suggestedSignalFilterThreshold))
+        answer = getSinglePointStableState(mPoint,signalFilterThreshold=max(10, suggestedSignalFilterThreshold),
+        )
         answers.append(answer)
         print("_"*30, "ANSWER","_"*30)
         for elem in answer.items():
