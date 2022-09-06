@@ -86,6 +86,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         breakpoint()
 
     if test_ffmpeg:
+        # the logoRemoval filter may make the video u
         for key, videoPath in videoPaths.items():
             if testSubject != 'complete':
                 if key!= testSubject:
