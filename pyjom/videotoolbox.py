@@ -484,6 +484,8 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
                     # print('width:{} height:{}'.format(b,a))
                     mFinalDelogoFilters.append(delogoCommand)
         else:
+            if area < areaThreshold:
+                continue
             delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
             mFinalDelogoFilters.append(delogoCommand)
         # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
