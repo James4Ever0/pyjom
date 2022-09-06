@@ -7,7 +7,7 @@ videoPaths = {
     "logo":"/root/Desktop/works/pyjom/samples/video/LkS8UkiLL.mp4",
     # "pip":"/root/Desktop/works/pyjom/samples/video/LiGlReJ4i.mp4", # najie
     'pip':'/root/Desktop/works/pyjom/samples/video/LiEIfnsvn.mp4', # double pip
-    'complete':"/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
+    # 'complete':"/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 }
 tempDir = '/dev/shm/medialang' # anyway we just want something else...
 
@@ -45,7 +45,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         videoPath = videoPaths['pip']
         filters = ['pipCrop']
     elif testSubject == 'complete':
-        videoPath = videoPaths['complete']
+        # videoPath = videoPaths['complete']
         filters = ['pipCrop','textRemoval','logoRemoval']
     else:
         raise Exception("Unknown testSubject: %s" % testSubject)
@@ -79,7 +79,7 @@ with tempfile.TemporaryDirectory(prefix = tempDir) as allocatedTmpDir:
         breakpoint()
 
     if test_ffmpeg:
-        videoPath i
+        videoPath i videoPaths:
         output = ffmpegVideoPreProductionFilter(videoPath, cachePath = cachePath, start=start, end=end, filters=filters, preview=True) # resolution? make it sufficiently low!
         print("ffmpeg pre production filter processing done.")
         print("output location:", output)
