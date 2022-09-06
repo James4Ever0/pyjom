@@ -149,6 +149,7 @@ def rectToXYWH(rect):
     return x, y, width, height
 
 plotRect(ax,0,0,canvasWidth, canvasHeight,'black')
+
 for rect in mRects:
     x,y, width, height = rectToXYWH(rect)
     plotRect(ax,x,y,width,height,'white')
