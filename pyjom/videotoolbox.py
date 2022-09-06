@@ -305,7 +305,7 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60):
     deltaWidthRatio = makeValueInRange(deltaWidthRatio,3,4)
     deltaHeightRatio = 8+(8-6)*(defaultHeight/defaultWidth-16/9)/(16/9-9/16)
     deltaHeightRatio = makeValueInRange(deltaHeightRatio,8,6)
-    deltaWidth, deltaHeight = int(defaultWidth/deltaWIdthRatio)
+    deltaWidth, deltaHeight = int(defaultWidth/deltaWIdthRatio), int(defaultHeight/deltaHeightRatio)
     # (x1, y1), (x2, y2)
     fourCorners = [
         [(0,0),(deltaWidth, deltaHeight)],
