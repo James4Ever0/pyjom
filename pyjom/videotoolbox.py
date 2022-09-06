@@ -150,10 +150,10 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1,batch=1):
     import progressbar
 
     for fno in progressbar.progressbar(range(startFrame, stopFrame + 1, sample_rate)):
-        fnoMax = fno+
+        fnoMax = fno+batch-1
         if fnoMax >= total_frames:
             break
-        for f
+        for fnoX i
         cap.set(cv2.CAP_PROP_POS_FRAMES, fnoX)
         success, image = cap.read()
         if success:
