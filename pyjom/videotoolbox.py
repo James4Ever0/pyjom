@@ -483,7 +483,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
             resultDict.update({mKey: resultDict.get(mKey, []) + [(index, index + 1)]})
         return resultDict
 
-    def pointsToRangedDictWithLabel(mArray, label, threshold=35, method='ema'):
+    def pointsToRangedDictWithLabel(mArray, label, threshold=35, method='kalman'):
         assert method in ['ema','kalman']
         if method == 'ema':
             mArray = get1DArrayEMA(mArray)# to kalman?
