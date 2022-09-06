@@ -493,7 +493,8 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         return listToRangedDictWithLabel(mArray, label)
 
     threshold = max(35,int(max(defaultWidth, defaultHeight) * 0.02734375))
-    # threshold = 
+    # threshold =
+    mPoits = data[:, 0, 0],data[:, 0, 1],data[:, 0, 0]
     xLeftPoints = pointsToRangedDictWithLabel(
         data[:, 0, 0], "xleft", threshold=threshold
     )
