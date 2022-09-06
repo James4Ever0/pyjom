@@ -61,7 +61,7 @@ def getOverlapRect(rect0,rect1):
         leftY = max(leftYList)
         rightX = min(rightXList)
         rightY = min(rightYList)
-        return 
+        return [(leftX, leftY), (rightX, rightY)]
 
 def makeValueInRange(value, maxVal, minVal):
     assert minVal < maxVal
