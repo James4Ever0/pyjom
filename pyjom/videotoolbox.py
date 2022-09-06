@@ -295,7 +295,7 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     return previewWidth, previewHeight
 
 
-def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOnly=True, cornerAreaThreshold = 30):
+def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOnly=True, areaThreshold = 30):
     imageSet = getVideoFrameSampler(
         filepath, start, end, sample_size=sample_size)
     # what is this src?
@@ -477,7 +477,7 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
                     (x0,y0),(x1,y1) = overlap
                     x,y,w,h = x0,y0, x1-x0, y1-y0
                     area = w*h
-                    if area < cornerAreaThreshold:
+                    if area < areaThreshold:
                         continue
                     delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
                     # print(delogoCommand)
