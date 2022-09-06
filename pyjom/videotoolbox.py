@@ -883,6 +883,7 @@ def detectPipRegionOverTime(
     pipFrames = []
     if method == "framewise":
         sample_rate = 1
+        batch=1
     else:
         batch=2
         videoFrameRate = getVideoFrameRate(videoPath)
@@ -891,7 +892,7 @@ def detectPipRegionOverTime(
         min_sample_rate = int(totalFramesInSegment / minSampleSize)
         estimated_sample_rate = min(5, min_sample_rate)
         sample_rate = max(1, estimated_sample_rate)
-    iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
+    iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate, batch=batch)
     areaThreshold = int(0.2 * 0.2 * defaultWidth * defaultHeight)
     pipFrames = []
     defaultRect = [(0, 0), (defaultWidth, defaultHeight)]
