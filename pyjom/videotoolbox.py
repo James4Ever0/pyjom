@@ -863,6 +863,7 @@ def detectPipRegionOverTime(
 ):  # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
+    downScale = mi
     import pybgs as bgs
 
     assert algo in ["frame_difference", "weighted_moving_average"]
