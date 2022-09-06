@@ -45,7 +45,7 @@ def ffmpegVideoPreProductionFilter(
                 "scale",
                 "ceil((in_w*{})/4)*4".format(previewRatio),
                 "ceil((in_h*{})/4)*4".format(previewRatio),
-            ).filter("pad",'width'=)
+            ).filter("pad",width=width, height=height, x=x, y=y)
 
     # stream = ffmpeg.hflip(stream)
     # this fliping may be useful for copyright evasion, but not very useful for filtering. it just adds more computational burden.
