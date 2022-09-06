@@ -51,6 +51,8 @@ def doRectOverlap(l1, r1, l2, r2):
 def checkRectOverlap(rect0, rect1):
     return doRectOverlap(D2Point(*rect0[0]), D2Point(*rect0[1]),D2Point(*rect1[0]), D2Point(*rect1[1]))
 
+def getRectOverlap
+
 def makeValueInRange(value, maxVal, minVal):
     assert minVal < maxVal
     return min(max(minVal, value),maxVal)
