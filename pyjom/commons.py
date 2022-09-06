@@ -32,7 +32,8 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 
 mimetypes.init()
 
-def getValueInRange(value, )
+def getValueInRange(value, maxVal, minVal):
+    assert minVal >
 
 # this sucks...
 def infiniteShuffle(access_list, shuffle=True, infinite=True, endMark = True):
