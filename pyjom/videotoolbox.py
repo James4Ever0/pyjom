@@ -587,7 +587,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         y = h*(1-shrink)
         w *=shrink
         h *=shrink
-        x,y,w,h = int()
+        x,y,w,h = [int(digit) for digit in (x,y,w,h)]
         if w <= 0 or h <= 0:
             continue
         cropCommand = "crop_{}_{}_{}_{}".format(x, y, w, h)
