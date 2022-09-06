@@ -53,7 +53,10 @@ def checkRectOverlap(rect0, rect1):
 
 def getOverlapRect(rect0,rect1):
     if checkRectOverlap(rect0,rect1):
-        leftXList = rect0[0][0], 
+        leftXList = rect0[0][0], rect1[0][0]
+        leftYList = rect0[0][1], rect1[0][1]
+        leftXList = rect0[0][0], rect1[0][0]
+        leftYList = rect0[0][1], rect1[0][1]
         return 
 
 def makeValueInRange(value, maxVal, minVal):
