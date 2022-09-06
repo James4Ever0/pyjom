@@ -54,6 +54,8 @@ def doRectOverlap(l1, r1, l2, r2):
 
 
 def checkRectOverlap(rect0, rect1):
+    assert len(rect0) == 2
+    assert len(rect1) == 2
     return doRectOverlap(
         D2Point(*rect0[0]), D2Point(*rect0[1]), D2Point(*rect1[0]), D2Point(*rect1[1])
     )
