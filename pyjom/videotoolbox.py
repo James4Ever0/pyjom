@@ -66,7 +66,8 @@ def mergeAlikeRegions(sample, threshold=10):
 
 # import cv2
 def getBlackPicture(width, height):
-    blackPicture = np.zeros((height, width, 1), dtype="uint8")  # this is grayscale.
+    # this is grayscale.
+    blackPicture = np.zeros((height, width, 1), dtype="uint8")
     return blackPicture
 
 
@@ -111,6 +112,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     samplePopulation.sort()
     # if not iterate:
     # print("NOT ITERATING")
+
     def nonIterator(cap, samplePopulation):
         imageList = []
         for sampleIndex in progressbar.progressbar(samplePopulation):
@@ -136,9 +138,9 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
         return nonIterator(cap, samplePopulation)
 
 
-def getVideoFrameIterator(videoPath, start, end, sample_rate=1,batch=1):
-    assert batch >=1
-    assert sample_rate>=1
+def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
+    assert batch >= 1
+    assert sample_rate >= 1
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -178,13 +180,15 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1,batch=1):
 
 
 def detectTextRegionOverTime(videoPath, start, end, sample_rate=10, mergeThreshold=10):
-    iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
+    iterator = getVideoFrameIterator(
+        videoPath, start, end, sample_rate=sample_rate)
     detectionList = []
     # use some merging technique over time.
     # convolution?
     import easyocr
 
-    reader = easyocr.Reader(["en"], gpu=True, recognizer=False)  # no metal? no dbnet18?
+    # no metal? no dbnet18?
+    reader = easyocr.Reader(["en"], gpu=True, recognizer=False)
     # how many percent sure?
     # reader = easyocr.Reader(["en","ch_sim"],gpu=False, recognizer=False) # no metal? no dbnet18?
     # are you classifying the thing putting boxes into different category?
@@ -229,7 +233,8 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate=10, mergeThresho
     for index, x in enumerate(newFinalRectList):
         for y in x:
             tupleY = tuple(y)
-            mRangesDict.update({tupleY: mRangesDict.get(tupleY, []) + [ranges[index]]})
+            mRangesDict.update(
+                {tupleY: mRangesDict.get(tupleY, []) + [ranges[index]]})
     # print(mRangesDict)
     # breakpoint()
     # why the fuck we have np.float64 as elem in mRangesDict's key(tuple)?
@@ -249,7 +254,7 @@ def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     #     reverseFlag = True
     maxDim = max(mList)
     shrinkRatio = maxPixel / maxDim
-    getRounded = lambda num, rounder: (num // rounder) * rounder
+    def getRounded(num, rounder): return (num // rounder) * rounder
     newFrameWork = [getRounded(x * shrinkRatio, 4) for x in mList]
     return newFrameWork[0], newFrameWork[1]
 
@@ -291,19 +296,22 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
 
 
 def detectStationaryLogoOverTime(filepath, start, end, sample_size=60):
-    imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size)
+    imageSet = getVideoFrameSampler(
+        filepath, start, end, sample_size=sample_size)
     # what is this src?
     # from src import *
 
     ###########
-    import sys, os
+    import sys
+    import os
     import cv2
     import numpy as np
     import warnings
     from matplotlib import pyplot as plt
     import math
     import numpy
-    import scipy, scipy.fftpack
+    import scipy
+    import scipy.fftpack
 
     # Variables
     KERNEL_SIZE = 3
@@ -391,7 +399,8 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60):
     W_full = poisson_reconstruct(gx, gy)
 
     maxval, minval = np.max(W_full), np.min(W_full)
-    W_full = (W_full - minval) * (255 / (maxval - minval))  # is that necessary?
+    W_full = (W_full - minval) * \
+        (255 / (maxval - minval))  # is that necessary?
     # # print(,W_full.shape,W_full.dtype)
     W_full = W_full.astype(np.uint8)
 
@@ -484,21 +493,22 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         resultDict = {}
         for index, elem in enumerate(mList):
             mKey = "{}:{}".format(label, int(elem))
-            resultDict.update({mKey: resultDict.get(mKey, []) + [(index, index + 1)]})
+            resultDict.update(
+                {mKey: resultDict.get(mKey, []) + [(index, index + 1)]})
         return resultDict
 
     def pointsToRangedDictWithLabel(mArray, label, threshold=35, method='kalman'):
-        assert method in ['ema','kalman']
+        assert method in ['ema', 'kalman']
         if method == 'ema':
-            mArray = get1DArrayEMA(mArray)# to kalman?
+            mArray = get1DArrayEMA(mArray)  # to kalman?
         else:
-            mArray = Kalman1D(mArray,damping=0.1)
+            mArray = Kalman1D(mArray, damping=0.1)
         mArray = getAlikeValueMerged(mArray, threshold=threshold)
         return listToRangedDictWithLabel(mArray, label)
 
-    threshold = max(35,int(max(defaultWidth, defaultHeight) * 0.02734375))
+    threshold = max(35, int(max(defaultWidth, defaultHeight) * 0.02734375))
     # threshold =
-    mPoints = [data[:, 0, 0],data[:, 0, 1],data[:, 1, 0],data[:, 1,1]]
+    mPoints = [data[:, 0, 0], data[:, 0, 1], data[:, 1, 0], data[:, 1, 1]]
     xLeftPoints = pointsToRangedDictWithLabel(
         data[:, 0, 0], "xleft", threshold=threshold
     )
@@ -556,13 +566,13 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
             break
     preFinalCommandDict = sequentialToMergedRanges(commandDictSequential)
     commandDictSequential = mergedRangesToSequential(preFinalCommandDict)
-    if len(commandDictSequential)>=2:
+    if len(commandDictSequential) >= 2:
         _, timespan = commandDictSequential[0]
         nextCommand, nextTimeSpan = commandDictSequential[1]
         currentStart, currentEnd = timespan
-        if (currentEnd-currentStart)<5:
+        if (currentEnd-currentStart) < 5:
             nextStart, nextEnd = nextTimeSpan
-            commandDictSequential[1] = [nextCommand,(currentStart, nextEnd)]
+            commandDictSequential[1] = [nextCommand, (currentStart, nextEnd)]
             commandDictSequential.pop(0)
     preFinalCommandDict = sequentialToMergedRanges(commandDictSequential)
     finalCommandDict = {}
@@ -574,7 +584,8 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         defaultValues = defaultCoords
         for varName, defaultValue in zip(varNames, defaultValues):
             key = key.replace(
-                "{}:empty".format(varName), "{}:{}".format(varName, defaultValue)
+                "{}:empty".format(varName), "{}:{}".format(
+                    varName, defaultValue)
             )
         # print(key,elem)
         # breakpoint()
@@ -592,9 +603,9 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         )
         x += w*(1-shrink)/2
         y += h*(1-shrink)/2
-        w *=shrink
-        h *=shrink
-        x,y,w,h = [int(digit) for digit in (x,y,w,h)]
+        w *= shrink
+        h *= shrink
+        x, y, w, h = [int(digit) for digit in (x, y, w, h)]
         if w <= 0 or h <= 0:
             continue
         cropCommand = "crop_{}_{}_{}_{}".format(x, y, w, h)
@@ -606,7 +617,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
     return finalCommandDict
 
 
-def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1, shrink=0.8):
+def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1, shrink=0.8):
     defaultWidth, defaultHeight = int(defaultWidth), int(defaultHeight)
     import numpy as np
 
@@ -620,7 +631,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         slopeThreshold=0.2,
         # shrink=0.8
     ):
-        
+
         xLeftPointsFiltered = Kalman1D(xLeftPoints)
         xLeftPointsFiltered = xLeftPointsFiltered.reshape(-1)
         from itertools import groupby
@@ -664,7 +675,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
                 length = end - start
                 if length >= threshold:
                     newSignalRanges.append((start, end))
-                    newSignal[start : end + 1] = 1
+                    newSignal[start: end + 1] = 1
             return newSignal, newSignalRanges
 
         xLeftPointsSignalFiltered, newSignalRanges = signalFilter(
@@ -758,8 +769,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
     suggestedSlopeThreshold = 0.2*math.sqrt(math.sqrt(downScale))
     suggestedCommandFloatMergeThreshold = 15/(math.sqrt(math.sqrt(downScale)))
     for mPoint in mPoints:
-        answer = getSinglePointStableState(mPoint,signalFilterThreshold=max(10, suggestedSignalFilterThreshold),
-        stdThreshold = max(1, suggestedStdThreshold), slopeThreshold=max(0.2,suggestedSlopeThreshold), commandFloatMergeThreshold=max(12,suggestedCommandFloatMergeThreshold))
+        answer = getSinglePointStableState(mPoint, signalFilterThreshold=max(10, suggestedSignalFilterThreshold),
+                                           stdThreshold=max(1, suggestedStdThreshold), slopeThreshold=max(0.2, suggestedSlopeThreshold), commandFloatMergeThreshold=max(12, suggestedCommandFloatMergeThreshold))
         answers.append(answer)
         # print("_"*30, "ANSWER","_"*30)
         # for elem in answer.items():
@@ -771,7 +782,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
     # else:
     # defaultCoord = [0, 0, defaultWidth, defaultHeight]  # deal with it later?
     defaultCoords = [int(np.mean(array)) for array in mPoints]
-    defaults = [{str(defaultCoords[index]): [(0, len(data))]} for index in range(4)]
+    defaults = [{str(defaultCoords[index]): [(0, len(data))]}
+                for index in range(4)]
     for index in range(4):
         if answers[index] == {}:
             answers[index] = defaults[index]
@@ -779,7 +791,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
     commandDict = {}
     for index, elem in enumerate(answers):
         label = labels[index]
-        newElem = {"{}:{}".format(label, key): elem[key] for key in elem.keys()}
+        newElem = {"{}:{}".format(
+            label, key): elem[key] for key in elem.keys()}
         commandDict.update(newElem)
     commandDict = getContinualMappedNonSympyMergeResult(commandDict)
     commandDictSequential = mergedRangesToSequential(commandDict)
@@ -830,7 +843,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         defaultValues = defaultCoords
         for varName, defaultValue in zip(varNames, defaultValues):
             key = key.replace(
-                "{}:empty".format(varName), "{}:{}".format(varName, defaultValue)
+                "{}:empty".format(varName), "{}:{}".format(
+                    varName, defaultValue)
             )
         # print(key,elem)
         # breakpoint()
@@ -848,9 +862,9 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         )
         x += w*(1-shrink)/2
         y += h*(1-shrink)/2
-        w *=shrink
-        h *=shrink
-        x,y,w,h = [int(digit) for digit in (x,y,w,h)]
+        w *= shrink
+        h *= shrink
+        x, y, w, h = [int(digit) for digit in (x, y, w, h)]
         if w <= 0 or h <= 0:
             continue
         cropCommand = "crop_{}_{}_{}_{}".format(x, y, w, h)
@@ -863,11 +877,12 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
 
 
 def detectPipRegionOverTime(
-    videoPath, start, end, method="framewise", algo="frame_difference", downScale=2, shrink=0.9, minPixelSpan = 540
+    videoPath, start, end, method="framewise", algo="frame_difference", downScale=2, shrink=0.9, minPixelSpan=540
 ):  # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
-    downScale = min((minPixelSpan/ min(defaultWidth, defaultHeight)) , downScale)
+    downScale = min(
+        (minPixelSpan / min(defaultWidth, defaultHeight)), downScale)
     import pybgs as bgs
 
     assert algo in ["frame_difference", "weighted_moving_average"]
@@ -883,30 +898,32 @@ def detectPipRegionOverTime(
     pipFrames = []
     if method == "framewise":
         sample_rate = 1
-        batch=1
+        batch = 1
     else:
-        batch=2
+        batch = 2
         videoFrameRate = getVideoFrameRate(videoPath)
         totalFramesInSegment = (end - start) * videoFrameRate
         minSampleSize = int((80*4)*(totalFramesInSegment/1800))
         min_sample_rate = int(totalFramesInSegment / minSampleSize)
         estimated_sample_rate = min(5, min_sample_rate)
         sample_rate = max(1, estimated_sample_rate)
-    iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate, batch=batch)
+    iterator = getVideoFrameIterator(
+        videoPath, start, end, sample_rate=sample_rate, batch=batch)
     areaThreshold = int(0.2 * 0.2 * defaultWidth * defaultHeight)
     pipFrames = []
     defaultRect = [(0, 0), (defaultWidth, defaultHeight)]
 
     for index, frame in enumerate(iterator):
         # for _ in range(downScale):
-        downScaledFrame = cv2.resize(frame, (int(defaultWidth/downScale), int(defaultHeight/downScale)))
+        downScaledFrame = cv2.resize(
+            frame, (int(defaultWidth/downScale), int(defaultHeight/downScale)))
         img_output = algorithm.apply(downScaledFrame)
-        if batch !=1 and index % batch == 0:
+        if batch != 1 and index % batch == 0:
             continue
         if batch == 1 and index == 0:
             continue
         [x, y, w, h] = cv2.boundingRect(img_output)  # wtf is this?
-        x,y,w,h = x*downScale, y*downScale, w*downScale, h*downScale
+        x, y, w, h = x*downScale, y*downScale, w*downScale, h*downScale
         area = w * h
         if area > areaThreshold:
             min_x, min_y = x, y
@@ -937,7 +954,8 @@ def detectPipRegionOverTime(
             mStart = max(start, mStart)
             mEnd = min(end, mEnd)
             mDuration = mEnd-mStart
-            if mDuration<=0: continue
+            if mDuration <= 0:
+                continue
             updatedValueAlignedToSeconds.append((mStart, mEnd))
         finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
     return finalResultDict
