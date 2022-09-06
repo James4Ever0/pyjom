@@ -638,7 +638,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1)
         # plt.show()
 
         # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
-        derivativeThreshold = 3
+        derivativeThreshold = max(3, )
         # derivative3Threshold = 3
         xLeftPointsSignal = (
             (abs(xLeftPointsFilteredDiff) < derivativeThreshold)
