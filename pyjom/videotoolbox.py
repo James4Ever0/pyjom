@@ -828,6 +828,11 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1)
                 commandArguments["xright"] - commandArguments["xleft"],
                 commandArguments["yright"] - commandArguments["yleft"],
             )
+            x = w*(1-shrink)
+            y = h*(1-shrink)
+            w *=shrink
+            h *=shrink
+            x,y,w,h = [int(digit) for digit in (x,y,w,h)]
             if w <= 0 or h <= 0:
                 continue
             cropCommand = "crop_{}_{}_{}_{}".format(x, y, w, h)
