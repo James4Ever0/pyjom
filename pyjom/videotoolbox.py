@@ -762,95 +762,95 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight,downScale=1,
         print("NO PIP FOUND")
     #     finalCommandDict = {}
     # else:
-        # defaultCoord = [0, 0, defaultWidth, defaultHeight]  # deal with it later?
-        defaultCoord = [int(np.mean(array)) for array in mPoints]
-        defaults = [{str(defaultCoord[index]): [(0, len(data))]} for index in range(4)]
-        for index in range(4):
-            if answers[index] == {}:
-                answers[index] = defaults[index]
-        labels = ["xleft", "yleft", "xright", "yright"]
-        commandDict = {}
-        for index, elem in enumerate(answers):
-            label = labels[index]
-            newElem = {"{}:{}".format(label, key): elem[key] for key in elem.keys()}
-            commandDict.update(newElem)
-        commandDict = getContinualMappedNonSympyMergeResult(commandDict)
-        commandDictSequential = mergedRangesToSequential(commandDict)
+    # defaultCoord = [0, 0, defaultWidth, defaultHeight]  # deal with it later?
+    defaultCoord = [int(np.mean(array)) for array in mPoints]
+    defaults = [{str(defaultCoord[index]): [(0, len(data))]} for index in range(4)]
+    for index in range(4):
+        if answers[index] == {}:
+            answers[index] = defaults[index]
+    labels = ["xleft", "yleft", "xright", "yright"]
+    commandDict = {}
+    for index, elem in enumerate(answers):
+        label = labels[index]
+        newElem = {"{}:{}".format(label, key): elem[key] for key in elem.keys()}
+        commandDict.update(newElem)
+    commandDict = getContinualMappedNonSympyMergeResult(commandDict)
+    commandDictSequential = mergedRangesToSequential(commandDict)
 
-        def getSpanDuration(span):
-            start, end = span
-            return end - start
+    def getSpanDuration(span):
+        start, end = span
+        return end - start
 
-        itemDurationThreshold = 15
-        # print("HERE")
-        # loopCount = 0
+    itemDurationThreshold = 15
+    # print("HERE")
+    # loopCount = 0
 
-        while True:
-            # print("LOOP COUNT:", loopCount)
-            # loopCount+=1
-            # noAlter = True
-            beforeChange = [item[0] for item in commandDictSequential].copy()
-            for i in range(len(commandDictSequential) - 1):
-                currentItem = commandDictSequential[i]
-                nextItem = commandDictSequential[i + 1]
-                currentItemCommand = currentItem[0]
-                currentItemDuration = getSpanDuration(currentItem[1])
-                nextItemCommand = nextItem[0]
-                nextItemDuration = getSpanDuration(nextItem[1])
-                if currentItemDuration < itemDurationThreshold:
-                    if nextItemCommand != currentItemCommand:
-                        # print("HERE0",i, currentItemCommand, nextItemCommand)
-                        commandDictSequential[i][0] = nextItemCommand
-                        # noAlter=False
-                if nextItemDuration < itemDurationThreshold:
-                    if (
-                        nextItemCommand != currentItemCommand
-                        and currentItemDuration >= itemDurationThreshold
-                    ):
-                        # print("HERE1",i, currentItemCommand, nextItemCommand)
-                        commandDictSequential[i + 1][0] = currentItemCommand
-                        # noAlter=False
-            afterChange = [item[0] for item in commandDictSequential].copy()
-            noAlter = beforeChange == afterChange
-            if noAlter:
-                break
-        preFinalCommandDict = sequentialToMergedRanges(commandDictSequential)
-        finalCommandDict = {}
-        for key, elem in preFinalCommandDict.items():
-            # print(key,elem)
-            varNames = ["xleft", "yleft", "xright", "yright"]
-            defaultValues = [0, 0, defaultWidth, defaultHeight]
-            for varName, defaultValue in zip(varNames, defaultValues):
-                key = key.replace(
-                    "{}:empty".format(varName), "{}:{}".format(varName, defaultValue)
-                )
-            # print(key,elem)
-            # breakpoint()
-            import parse
-
-            formatString = (
-                "xleft:{xleft:d}|yleft:{yleft:d}|xright:{xright:d}|yright:{yright:d}"
+    while True:
+        # print("LOOP COUNT:", loopCount)
+        # loopCount+=1
+        # noAlter = True
+        beforeChange = [item[0] for item in commandDictSequential].copy()
+        for i in range(len(commandDictSequential) - 1):
+            currentItem = commandDictSequential[i]
+            nextItem = commandDictSequential[i + 1]
+            currentItemCommand = currentItem[0]
+            currentItemDuration = getSpanDuration(currentItem[1])
+            nextItemCommand = nextItem[0]
+            nextItemDuration = getSpanDuration(nextItem[1])
+            if currentItemDuration < itemDurationThreshold:
+                if nextItemCommand != currentItemCommand:
+                    # print("HERE0",i, currentItemCommand, nextItemCommand)
+                    commandDictSequential[i][0] = nextItemCommand
+                    # noAlter=False
+            if nextItemDuration < itemDurationThreshold:
+                if (
+                    nextItemCommand != currentItemCommand
+                    and currentItemDuration >= itemDurationThreshold
+                ):
+                    # print("HERE1",i, currentItemCommand, nextItemCommand)
+                    commandDictSequential[i + 1][0] = currentItemCommand
+                    # noAlter=False
+        afterChange = [item[0] for item in commandDictSequential].copy()
+        noAlter = beforeChange == afterChange
+        if noAlter:
+            break
+    preFinalCommandDict = sequentialToMergedRanges(commandDictSequential)
+    finalCommandDict = {}
+    for key, elem in preFinalCommandDict.items():
+        # print(key,elem)
+        varNames = ["xleft", "yleft", "xright", "yright"]
+        defaultValues = [0, 0, defaultWidth, defaultHeight]
+        for varName, defaultValue in zip(varNames, defaultValues):
+            key = key.replace(
+                "{}:empty".format(varName), "{}:{}".format(varName, defaultValue)
             )
-            commandArguments = parse.parse(formatString, key)
-            x, y, w, h = (
-                commandArguments["xleft"],
-                commandArguments["yleft"],
-                commandArguments["xright"] - commandArguments["xleft"],
-                commandArguments["yright"] - commandArguments["yleft"],
-            )
-            x += w*(1-shrink)
-            y += h*(1-shrink)
-            w *=shrink
-            h *=shrink
-            x,y,w,h = [int(digit) for digit in (x,y,w,h)]
-            if w <= 0 or h <= 0:
-                continue
-            cropCommand = "crop_{}_{}_{}_{}".format(x, y, w, h)
-            # print(cropCommand)
-            finalCommandDict.update({cropCommand: elem})
-            # print(elem)
-            # the parser shall be in x,y,w,h with keywords.
-            # we might want to parse the command string and reengineer this shit.
+        # print(key,elem)
+        # breakpoint()
+        import parse
+
+        formatString = (
+            "xleft:{xleft:d}|yleft:{yleft:d}|xright:{xright:d}|yright:{yright:d}"
+        )
+        commandArguments = parse.parse(formatString, key)
+        x, y, w, h = (
+            commandArguments["xleft"],
+            commandArguments["yleft"],
+            commandArguments["xright"] - commandArguments["xleft"],
+            commandArguments["yright"] - commandArguments["yleft"],
+        )
+        x += w*(1-shrink)
+        y += h*(1-shrink)
+        w *=shrink
+        h *=shrink
+        x,y,w,h = [int(digit) for digit in (x,y,w,h)]
+        if w <= 0 or h <= 0:
+            continue
+        cropCommand = "crop_{}_{}_{}_{}".format(x, y, w, h)
+        # print(cropCommand)
+        finalCommandDict.update({cropCommand: elem})
+        # print(elem)
+        # the parser shall be in x,y,w,h with keywords.
+        # we might want to parse the command string and reengineer this shit.
     return finalCommandDict
 
 
