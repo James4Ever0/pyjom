@@ -492,7 +492,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight):
         mArray = getAlikeValueMerged(mArray, threshold=threshold)
         return listToRangedDictWithLabel(mArray, label)
 
-    threshold = int(max(defaultWidth, defaultHeight) * 0.02734375)
+    threshold = max(20,int(max(defaultWidth, defaultHeight) * 0.02734375))
     # threshold = 
     xLeftPoints = pointsToRangedDictWithLabel(
         data[:, 0, 0], "xleft", threshold=threshold
@@ -824,7 +824,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight):
 
 
 def detectPipRegionOverTime(
-    videoPath, start, end, method="framewise", algo="frame_difference", downScale=4
+    videoPath, start, end, method="skim", algo="frame_difference", downScale=4
 ):  # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
