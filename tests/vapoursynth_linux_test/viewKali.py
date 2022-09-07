@@ -534,7 +534,8 @@ class Preview:
             cv2.imshow(self.title, img)
         else:
             if self.play: self.delay_it()
-            print
+            print(self.img.shape)
+            breakpoint()
             cv2.imshow(self.title, self.img)
             
     def error_frame(self):
