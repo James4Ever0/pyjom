@@ -5,6 +5,8 @@ from vapoursynth import core
 video = core.ffms2.Source(source=videoPath)
 video = core.std.Transpose(video)
 # video.set_output()
-
+from view import Preview
+# clip = vs.core.lsmas.LibavSMASHSource('source.mp4')
+Preview(clip)
 # vspipe is a wrapper around existing apis. vapoursynth can only generate raw frame data so we cannot encode video here alone. maybe we need opencv for this?
 # opencv preview https://github.com/UniversalAl/view
