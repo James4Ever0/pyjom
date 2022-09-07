@@ -525,8 +525,8 @@ class Preview:
             f = self.rgbs[self.i].get_frame(self.frame)
         except:       
             f = self.error_frame()              
-        print(dir(f))
-        breakpoint()
+        # print(dir(f))
+        # breakpoint()
         self.img = np.dstack([np.array(f.get_stride(p), copy=False) for p in [2,1,0]])
         if self.isCropping and self.x1 is not None:
             img = self.img_and_selection(self.img, (self.x1,self.y1,self.x2,self.y2),self.color)
@@ -1209,7 +1209,7 @@ class Preview:
         '''
         try:
             fr = clip.get_frame(frame)
-            planes =[fr.get_read_ptr(i) for i in range(clip.format.num_planes)]
+            planes =[fr.get_stride(i) for i in range(clip.format.num_planes)]
         except:
             pass
         
