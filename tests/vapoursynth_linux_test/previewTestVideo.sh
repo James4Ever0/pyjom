@@ -1,1 +1,1 @@
-vspipe 
+vspipe -c y4m script.vpy - | ffplay -i pipe: 
