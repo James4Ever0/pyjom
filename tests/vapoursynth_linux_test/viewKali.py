@@ -8,7 +8,7 @@ import os
 import sys
 import platform
 import timeit
-
+import pathlib
 site_path = pathlib.Path("/usr/local/lib/python3.9/site-packages")
 cv2_libs_dir = (
     site_path / "cv2" / f"python-{sys.version_info.major}.{sys.version_info.minor}"
@@ -24,9 +24,10 @@ from vapoursynth import core
 import numpy as np
 import cv2
 try:
-    from distutils.version import StrictVersion
-    if StrictVersion(cv2.__version__) < StrictVersion('3.4.1'):
-        raise Exception('\n'+  f'openCV version is {cv2.__version__}, it needs to be at least 3.4.1')
+    pass
+    # from distutils.version import StrictVersion
+    # if StrictVersion(cv2.__version__) < StrictVersion('3.4.1'):
+    #     raise Exception('\n'+  f'openCV version is {cv2.__version__}, it needs to be at least 3.4.1')
 except ImportError:
     pass
         
