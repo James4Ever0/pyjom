@@ -1,7 +1,7 @@
 videoPath = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 # videoPath = "/Users/jamesbrown/desktop/works/pyjom_remote/samples/video/dog_with_text.mp4"
 
-
+# reference: http://www.vapoursynth.com/doc/pythonreference.html
 
 # The VideoFrame and AudioFrame classes contains one picture/audio chunk and all the metadata associated with it. It is possible to access the raw data using either get_read_ptr(plane) or get_write_ptr(plane) and get_stride(plane) with ctypes.
 
