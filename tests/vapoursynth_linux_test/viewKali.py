@@ -24,6 +24,7 @@ from vapoursynth import core
 import numpy as np
 import cv2
 try:
+    pass
     # from distutils.version import StrictVersion
     # if StrictVersion(cv2.__version__) < StrictVersion('3.4.1'):
     #     raise Exception('\n'+  f'openCV version is {cv2.__version__}, it needs to be at least 3.4.1')
