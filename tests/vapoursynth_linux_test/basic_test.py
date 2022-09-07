@@ -6,4 +6,4 @@ video = core.ffms2.Source(source=videoPath)
 video = core.std.Transpose(video)
 video.set_output()
 
-# vspipe is a wrapper around existing apis. vapoursynth can only generate raw frame data
+# vspipe is a wrapper around existing apis. vapoursynth can only generate raw frame data so we cannot encode video here 
