@@ -525,7 +525,7 @@ class Preview:
             f = self.rgbs[self.i].get_frame(self.frame)
         except:       
             f = self.error_frame()              
-        pri
+        print(dir(f))
         breakpoint()
         self.img = np.dstack([np.array(f.get_read_array(p), copy=False) for p in [2,1,0]])
         if self.isCropping and self.x1 is not None:
