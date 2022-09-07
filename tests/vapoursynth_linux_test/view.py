@@ -19,7 +19,6 @@ if len(cv2_libs) == 1:
     print("INSERTING:", cv2_libs[0].parent)
     sys.path.insert(1, str(cv2_libs[0].parent))
 
-
 import vapoursynth as vs
 from vapoursynth import core
 import numpy as np
