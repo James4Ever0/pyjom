@@ -5,3 +5,5 @@ mkdir -p /Library/vapoursynth/plugins
 mkdir -p /Users/jamesbrown/vapoursynth/plugins
 echo "UserPluginDir=/Users/jamesbrown/vapoursynth/plugins" > "$HOME/Library/Application Support/VapourSynth/vapoursynth.conf"
 echo "SystemPluginDir=/Library/vapoursynth/plugins" >> "$HOME/Library/Application Support/VapourSynth/vapoursynth.conf"
+echo "CONTENT BELOW:"
+cat "$HOME/Library/Application Support/VapourSynth/vapoursynth.conf"
