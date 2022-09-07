@@ -4,4 +4,4 @@ touch "$HOME/Library/Application Support/VapourSynth/vapoursynth.conf"
 mkdir -p /Library/vapoursynth/plugins
 mkdir -p /Users/jamesbrown/vapoursynth/plugins
 echo "UserPluginDir=/Users/jamesbrown/vapoursynth/plugins" > "$HOME/Library/Application Support/VapourSynth/vapoursynth.conf"
-SystemPluginDir=/Library/vapoursynth/plugins"
+echo "SystemPluginDir=/Library/vapoursynth/plugins" >> "$HOME/Library/Application Support/VapourSynth/vapoursynth.conf"
