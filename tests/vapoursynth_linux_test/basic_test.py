@@ -8,17 +8,5 @@ video.set_output()
 
 
 
-The VideoFrame and AudioFrame classes contains one picture/audio chunk and all the metadata associated with it. It is possible to access the raw data using either get_read_ptr(plane) or get_write_ptr(plane) and get_stride(plane) with ctypes.
-
-# A more Python friendly wrapping is also available where each plane/channel can be accessed as a Python array using frame[plane/channel].
-
-# To get a frame simply call get_frame(n) on a clip. Should you desire to get all frames in a clip, use this code:
-
-# for frame in clip.frames():
-#     # Do stuff with your frame
-#     pass
-
-
-
 # vspipe is a wrapper around existing apis. vapoursynth can only generate raw frame data so we cannot encode video here alone. maybe we need opencv for this?
 # opencv preview https://github.com/UniversalAl/view
