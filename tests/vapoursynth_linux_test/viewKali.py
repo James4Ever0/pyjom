@@ -1207,7 +1207,7 @@ class Preview:
         '''
         try:
             fr = clip.get_frame(frame)
-            planes =[fr.get_read_array(i) for i in range(clip.format.num_planes)]
+            planes =[fr.get_frame(i) for i in range(clip.format.num_planes)]
         except:
             pass
         
