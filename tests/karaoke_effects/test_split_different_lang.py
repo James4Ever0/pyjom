@@ -52,4 +52,5 @@ for test in tests:
                 foreignLangList.append(foreignLang)
                 nativeLangList.append(nativeLang)
         nativeLangFlag = "Cmn"
-        
+        import whatlang
+        foreignLangFlag = whatlang.de
