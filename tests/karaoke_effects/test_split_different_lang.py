@@ -39,4 +39,6 @@ for test in tests:
     if sum(flags) < len(flags)*0.8:
         print("NOT A BILIGUAL LYRICS FILE")
     else:
+        # having the potential of being a bilingual shit.
         # process this shit separately.
+        
