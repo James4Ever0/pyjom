@@ -41,4 +41,5 @@ for test in tests:
     else:
         # having the potential of being a bilingual shit.
         # process this shit separately.
-        
+        for elem in test:
+            text, flag = 
