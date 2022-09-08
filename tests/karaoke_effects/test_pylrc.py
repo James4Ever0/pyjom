@@ -21,4 +21,7 @@ lastStartTime = textArray[0][0]
 newTextArray = [textArray[0].copy()]
 
 for startTime, text in textArray[1:]:
-    if startTime-lastStartTime < lyric
+    if startTime-lastStartTime < lyricDurationThresholds[0]:
+        continue
+    else:
+        
