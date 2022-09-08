@@ -368,7 +368,7 @@ for elem in newTextArray:
     charShift = 30
     absWordCenterShiftList = []
     prevWordShift = 0
-    CENTER = 1920/2
+    CENTER = 1600/2
     wordWidthList = []
     for word in lineMod.words:
         wordWidth = len(word)* charShift
