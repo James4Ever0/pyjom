@@ -21,6 +21,6 @@ def lastSpaceSpliter(text):
             return mTuple, True
     return text, False # not a list.
 
-# if there is a single shit failed to pass this 'lastSpaceSpliter' test, this is not a dual-lang lrc file by netease.
+# if there is a single shit failed to pass this 'lastSpaceSpliter' test, this is not a bilingual lrc file from netease.
 for test in tests:
     result, flag = lastSpaceSpliter(test)
