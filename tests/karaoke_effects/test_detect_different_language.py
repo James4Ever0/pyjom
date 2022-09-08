@@ -22,3 +22,6 @@ print(cld3.get_language('last friday night do it all again this friday night'))
 
 # not very freaking reliable.
 
+import whatlang
+
+whatlang.detect_language('last friday night do it all again this friday night')
