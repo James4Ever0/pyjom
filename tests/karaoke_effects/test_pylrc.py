@@ -6,7 +6,9 @@ def getMusicLength(musicPath):
     info = info.getInfo()
     print(info)
     breakpoint()
-    return length
+    # length = info['']
+    # return length
+    return
 
 musicPath= ""
 songLength = getMusicLength(musicPath)
