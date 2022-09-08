@@ -1,8 +1,8 @@
 import pylrc
+import MediaInfo
 
-
-
-songLength = 
+musicPath= ""
+songLength = ""
 
 lrc_file = open('/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc')
 lrc_string = ''.join(lrc_file.readlines())
