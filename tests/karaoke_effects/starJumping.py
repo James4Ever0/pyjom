@@ -360,6 +360,7 @@ for elem in newTextArray:
     # lineMod.syls = 
     print(dir(lineMod))
     breakpoint()
+    # pyonfx.ass_core.Syllable
     source = lineMod.copy()
     target = lineMod.copy()
     romaji(source, target)
