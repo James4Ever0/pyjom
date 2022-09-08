@@ -40,6 +40,7 @@ for test in tests:
         print(elem)
     print("_______________TEST SUBJECT_______________")
     flags = [int(flag) for _, flag in [lastSpaceSpliter(elem) for elem in test]]
+    print(flags)
     if sum(flags) < len(flags)*0.8:
         print("NOT A BILIGUAL LYRICS FILE")
     else:
