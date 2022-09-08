@@ -33,6 +33,6 @@ print(whatlang.detect_language('你好'))
 # from loadLingua_jpype import getLinguaDetectedLanguageLabel
 
 # print(getLinguaDetectedLanguageLabel('你好'))
-from loadLingua_pyjnius import getLinguaDetectedLanguageLabel
+from loadLingua_pyjnius import  pyjniusLinguaDetectLanguageLabel
 
-print(getLinguaDetectedLanguageLabel('你好'))
+print( pyjniusLinguaDetectLanguageLabel('你好'))
