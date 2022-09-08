@@ -18,6 +18,7 @@ textArray.sort(lambda x: x[0])
 
 lastStartTime = textArray[0][0]
 
-newTextArray = [textArray[0]]
+newTextArray = [textArray[0].copy()]
 
 for startTime, text in textArray[1:]:
+    
