@@ -14,7 +14,7 @@ for sub in subs:
     text = sub.text
     textArray.append((startTime, text))
 
-textArray.sort(lambda x: x[0])
+textArray.sort(key = lambda x: x[0])
 
 lastStartTime = textArray[0][0]
 
