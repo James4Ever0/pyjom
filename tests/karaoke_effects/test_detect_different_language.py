@@ -29,3 +29,5 @@ result = whatlang.detect_language('last friday night')
 
 print(result)
 print(whatlang.detect_language('你好'))
+
+from import getLinguaDetectedLanguageLabel
