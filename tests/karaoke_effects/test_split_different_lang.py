@@ -35,6 +35,7 @@ def lastSpaceSpliter(text):
 
 
 for test in tests:
-    flags = [_, flag for lastSpaceSpliter(test)]
+    for elem in test:
+        flags = [_, flag for lastSpaceSpliter(elem)]
 
     result, flag = 
