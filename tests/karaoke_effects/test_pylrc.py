@@ -56,6 +56,7 @@ for index,elem in enumerate(newTextArray):
     nextIndex = index+1
     if nextIndex < len(newTextArray):
         nextElem = newTextArray[nextIndex]
-    if nextElem is None:
+        end = 
+    else:
         end = np.mean(lyricDurations)+start
         end = min(musicDuration, end)
