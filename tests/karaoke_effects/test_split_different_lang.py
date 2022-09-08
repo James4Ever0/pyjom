@@ -76,12 +76,12 @@ for test in tests:
         # foreignLangFlag = cld3.get_language(foreignLangString)
         # nativeLangFlag = cld3.get_language(nativeLangString)
 
-        from textblob import TextBlob
+        # from textblob import TextBlob
 
-        foreignLangFlag = TextBlob(foreignLangString).detect_language()
-        nativeLangFlag = TextBlob(nativeLangString).detect_language()
-        print(foreignLangFlag)
-        print(nativeLangFlag)
+        # foreignLangFlag = TextBlob(foreignLangString).detect_language()
+        # nativeLangFlag = TextBlob(nativeLangString).detect_language()
+        # print(foreignLangFlag)
+        # print(nativeLangFlag)
         # breakpoint()
         if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
             # this is for sure the bilingual shit.
