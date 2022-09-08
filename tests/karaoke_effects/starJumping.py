@@ -342,7 +342,10 @@ def sub(line, l):
 for line in lines:
     # Generating lines
     if line.styleref.alignment >= 7:
+        pass
+    if line.styleref.alignment >= 7:
         lineModSource = line.copy()
+        break
     
 from test_pylrc import *
 # just a test.
