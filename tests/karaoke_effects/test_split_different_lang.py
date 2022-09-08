@@ -82,6 +82,7 @@ for test in tests:
         # nativeLangFlag = TextBlob(nativeLangString).detect_language()
 
         import langid
+        nativeLangFlagStandard = "zh"
         foreignLangFlag = langid.classify(foreignLangString)
         nativeLangFlag = langid.classify(nativeLangString)
 
