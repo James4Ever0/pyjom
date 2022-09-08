@@ -10,7 +10,7 @@ from com.github.pemistahl.lingua.api import *
 
 
 # detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().build()
-detector = LanguageDetectorBuilder.fromAllLanguages().build()
+detector = LanguageDetectorBuilder.fromAllLanguages().build() # 3.5GB just for detecting language! it is somehow crazy.
 
 sample = 'hello world'
 
