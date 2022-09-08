@@ -22,7 +22,7 @@ from pyonfx import *
 import random
 import math
 
-io = Ass("in2.ass")
+io = Ass("in2.ass", path_output="my")
 meta, styles, lines = io.get_data()
 
 # Creating the star and extracting all the color changes from the input file
