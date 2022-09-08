@@ -383,6 +383,7 @@ for elem in newTextArray:
     # CENTER + centerShift*charShift
     getCenter = lambda index: absWordCenterShiftList[index]
     getWidth = lambda index: wordWidthList[index]
+    mSylYShift = 700
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
