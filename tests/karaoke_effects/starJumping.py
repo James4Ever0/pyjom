@@ -361,7 +361,8 @@ for elem in newTextArray:
     # print(dir(lineMod))
     # breakpoint()
     sylList = []
-    for index,word in lineMod.words:
+
+    for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
         syl.start_time = elem['start']*1000
