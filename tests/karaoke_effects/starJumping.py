@@ -38,34 +38,34 @@ def romaji(line, l):
     off_x = 35
     off_y = 15
 
-    # # Leadin Effect
-    # for syl in Utils.all_non_empty(line.syls):
-    #     l.layer = 0
-        # l.start_time = syl.e_time
-        # l.start_time = line.start_time
+    # Leadin Effect
+    for syl in Utils.all_non_empty(line.syls):
+        l.layer = 0
+        l.start_time = syl.end_time
+        l.start_time = line.start_time
 
-    #     # l.start_time = (
-    #     #     line.start_time + 25 * syl.i - delay - 80
-    #     # )  # Remove 80 to start_time to let leadin finish a little bit earlier than the main effect of the first syllable
-    #     l.end_time = line.end_time# wtf?
-    #     # l.end_time = line.start_time + syl.start_time # wtf?
-    #     l.dur = l.end_time - l.start_time
+        # l.start_time = (
+        #     line.start_time + 25 * syl.i - delay - 80
+        # )  # Remove 80 to start_time to let leadin finish a little bit earlier than the main effect of the first syllable
+        l.end_time = line.end_time# wtf?
+        # l.end_time = line.start_time + syl.start_time # wtf?
+        l.dur = l.end_time - l.start_time
 
-    #     l.text = (
-    #         "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,0,%d)\\blur2\\t(0,%d,\\blur0)\\fad(%d,0)}%s"
-    #         % (
-    #             syl.center + math.cos(syl.i / 2) * off_x,
-    #             syl.middle + math.sin(syl.i / 4) * off_y,
-    #             syl.center,
-    #             syl.middle,
-    #             delay,
-    #             delay,
-    #             delay,
-    #             syl.text,
-    #         )
-    #     )
+        l.text = (
+            "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,0,%d)\\blur2\\t(0,%d,\\blur0)\\fad(%d,0)}%s"
+            % (
+                syl.center + math.cos(syl.i / 2) * off_x,
+                syl.middle + math.sin(syl.i / 4) * off_y,
+                syl.center,
+                syl.middle,
+                delay,
+                delay,
+                delay,
+                syl.text,
+            )
+        )
 
-    #     io.write_line(l)
+        io.write_line(l)
 
     # Main Effect
     for syl in Utils.all_non_empty(line.syls):
