@@ -368,7 +368,7 @@ for elem in newTextArray:
     charShift = 30
     absWordCenterShiftList = []
     prevWordShift = 0
-    CENTER = 1920/2
+    CENTER = 1600/2
     wordWidthList = []
     for word in lineMod.words:
         wordWidth = len(word)* charShift
@@ -389,7 +389,7 @@ for elem in newTextArray:
         syl.center = getCenter(index)
         syl.width = getWidth(index)
         syl.top= 25
-        syl.inline_fx = 'm2'
+        syl.inline_fx = 'm1'
         syl.middle = 49.0
         syl.bottom = 73.0
         syl.start_time = lineMod.start_time+ index*sylDuration
