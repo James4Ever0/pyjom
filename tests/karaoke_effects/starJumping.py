@@ -361,7 +361,7 @@ for elem in newTextArray:
     breakpoint()
     source = lineMod.copy()
     target = lineMod.copy()
-    kanji(source, target)
+    romaji(source, target)
     # elif line.styleref.alignment >= 4:
     #     kanji(line, line.copy())
     # else:
