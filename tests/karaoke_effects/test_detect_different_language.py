@@ -1,4 +1,4 @@
-sample = 'Last friday night. 影響包含'
+sample = 'Last Friday night. 影響包含'
 
 import pycld2 as cld2
 text_content = sample
