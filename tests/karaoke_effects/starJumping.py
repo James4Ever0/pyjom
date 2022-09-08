@@ -18,6 +18,7 @@ It could look like much code for such a simple effect, but it's needed and an ea
 
 ### THIS VARIANT IS GREAT. ###
 
+from tkinter import CENTER
 from pyonfx import *
 import random
 import math
@@ -371,10 +372,10 @@ for elem in newTextArray:
         wordLength = len(word)+1
         wordCenterShift = (charShift*wordLength)/2
         wordShift = (charShift*wordLength)
-        absWordCenterShift = 1920/2 - textLength*charShift + prevWordShift + wordCenterShift
-        absWordCenterShiftList.append()
+        absWordCenterShift = CENTER - textLength*charShift + prevWordShift + wordCenterShift
+        absWordCenterShiftList.append(absWordCenterShift)
         prevWordShift += wordShift
-    1920 /2 + centerShift*charShift
+    CENTER + centerShift*charShift
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
