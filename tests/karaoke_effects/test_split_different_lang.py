@@ -98,6 +98,7 @@ for test in tests:
         if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
             # this is for sure the bilingual shit.
             print("BILINGUAL LYRIC FILE IDENTIFIED.")
-            # then? how shall we 
+            # then? how shall we judge this?
+            # let the jieba.lcut to handle the cutting. please?
         else:
             print("NOT A BILIGUAL LYRICS FILE")
