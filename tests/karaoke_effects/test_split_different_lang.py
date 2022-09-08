@@ -21,7 +21,7 @@ tests = [
 def lastSpaceSpliter(text):
     text = text.strip()
     # index = 0
-    for index in range(0, len(text), -1):
+    for index in range(len(text)-1,-1, -1):
         print(index)
         elem = text[index]
         if elem == " ":
