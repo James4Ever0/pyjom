@@ -9,7 +9,9 @@ java.lang.System.out.println("Calling Java Print from Python using Jpype!")
 from com.github.pemistahl.lingua.api import *
 
 
+# detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().build()
 detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().build()
+
 
 sample = 'hello world'
 
