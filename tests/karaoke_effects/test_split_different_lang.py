@@ -42,9 +42,11 @@ for test in tests:
         # having the potential of being a bilingual shit.
         # process this shit separately.
         # double check if this is really bilingual.
+        foreignLangList = []
+        nativeLangList = []
         for elem in test:
             text, flag = lastSpaceSpliter(elem)
             if flag:
                 # this line might be bilingual.
                 foreignLang, nativeLang = text
-                
+                foreignLang = 
