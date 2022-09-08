@@ -10,7 +10,7 @@ from com.github.pemistahl.lingua.api import *
 
 
 # detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().build()
-detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().build()
+detector = LanguageDetectorBuilder.fromAllLanguages().build()
 
 
 sample = 'hello world'
