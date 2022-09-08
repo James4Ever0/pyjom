@@ -368,7 +368,7 @@ for elem in newTextArray:
         syl = Syllable()
         syl.text = word
         syl.i = index
-        syl.center = center
+        syl.center = getCe
         syl.top= 25
         syl.middle = 49.0
         syl.bottom = 73.0
