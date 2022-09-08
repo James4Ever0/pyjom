@@ -13,6 +13,6 @@ detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().buil
 
 sample = 'hello world'
 
-print()
+detector.detectLanguageOf(sample)
 
 shutdownJVM()
