@@ -362,11 +362,11 @@ for elem in newTextArray:
     # breakpoint()
     sylList = []
     wordCount = len(lineMod.words)
-    sylDuration = lineMod.end_time - lineMod.start
+    sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
-        syl.start_time = elem['start']*1000
+        syl.start_time =li+ 
         syl.end_time = syl.start_time
         sylList.append(syl.copy())
     lineMod.syls = sylList
