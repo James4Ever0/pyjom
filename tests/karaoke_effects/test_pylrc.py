@@ -8,10 +8,12 @@ subs = pylrc.parse(lrc_string)
 
 lyricDurationThreshold = 4
 
+textArray = []
 
 for sub in subs:
     startTime = sub.time
     text = sub.text
+    textArray.append((startTime, text))
     # print(sub.time) # single shit.
     # print(dir(sub))
     # print(text)
