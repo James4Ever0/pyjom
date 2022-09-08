@@ -348,9 +348,9 @@ from test_pylrc import *
 # just a test.
 for elem in newTextArray:
     lineMod = lineModSource.copy()
-    lineMod.start_time = 2000
-    l.end_time = 2000
-    lineMod.text = 
+    lineMod.start_time = start
+    lineMod.end_time = end
+    lineMod.text = text
     source = lineMod.copy()
     target = lineMod.copy()
     romaji(source, target)
