@@ -344,8 +344,9 @@ for line in lines:
     if line.styleref.alignment >= 7:
         lineModSource = line.copy()
     
-
-for elem in 
+from test_pylrc import *
+# just a test.
+for elem in newTextArray:
     lineModSource.copy()
     source = lineMod.copy()
     target = lineMod.copy()
