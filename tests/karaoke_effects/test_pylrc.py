@@ -13,6 +13,6 @@ for sub in subs:
     startTime = sub.time
     text = sub.text
     textArray.append((startTime, text))
-    # print(sub.time) # single shit.
-    # print(dir(sub))
-    # print(text)
+
+textArray.sort(lambda x: x[0])
+
