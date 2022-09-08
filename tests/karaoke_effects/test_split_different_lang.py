@@ -27,7 +27,7 @@ tests = [
 def lastSpaceSpliter(text):
     text = text.strip()
     # index = 0
-    for index in range(len(text)-1,-1, -1):
+    for index in range(len(text) - 1, -1, -1):
         # print(index)
         elem = text[index]
         if elem == " ":
@@ -40,11 +40,15 @@ def lastSpaceSpliter(text):
 
 # if there is a single shit failed to pass this 'lastSpaceSpliter' test, this is not a bilingual lrc file from netease.
 
+
 def getJiebaCuttedText(text):
     import jieba
+
     textList = jieba.lcut(text)
     textList = [elem.strip() for elem in textList]
+    textList = [elem for elem in textList if len(elem) > 0]
     return textList
+
 
 for test in tests:
     print("_______________TEST SUBJECT_______________")
@@ -53,7 +57,7 @@ for test in tests:
     print("_______________TEST SUBJECT_______________")
     flags = [int(flag) for _, flag in [lastSpaceSpliter(elem) for elem in test]]
     print(flags)
-    if sum(flags) < len(flags)*0.8:
+    if sum(flags) < len(flags) * 0.8:
         print("NOT A BILIGUAL LYRICS FILE")
     else:
         # having the potential of being a bilingual shit.
@@ -75,7 +79,7 @@ for test in tests:
         # import whatlang
         # foreignLangFlag = whatlang.detect_language(foreignLangString)
         # nativeLangFlag = whatlang.detect_language(nativeLangString)
-        
+
         # import cld3
         # nativeLangFlagStandard = "zh"
         # foreignLangFlag = cld3.get_language(foreignLangString)
@@ -90,17 +94,20 @@ for test in tests:
         # nativeLangFlagStandard = "zh"
         # foreignLangFlag = langid.classify(foreignLangString)
         # nativeLangFlag = langid.classify(nativeLangString)
-        from loadLingua_pyjnius import  pyjniusLinguaDetectLanguageLabel
+        from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
 
         nativeLangFlagStandard = "CHINESE"
-        foreignLangFlag = (pyjniusLinguaDetectLanguageLabel(foreignLangString),1)
-        nativeLangFlag = (pyjniusLinguaDetectLanguageLabel(nativeLangString),1)
+        foreignLangFlag = (pyjniusLinguaDetectLanguageLabel(foreignLangString), 1)
+        nativeLangFlag = (pyjniusLinguaDetectLanguageLabel(nativeLangString), 1)
         # there's no probability out there! WTF?
 
         print(foreignLangFlag)
         print(nativeLangFlag)
         # breakpoint()
-        if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
+        if (
+            foreignLangFlag[0] != nativeLangFlagStandard
+            and nativeLangFlag[0] == nativeLangFlagStandard
+        ):
             # this is for sure the bilingual shit.
             print("BILINGUAL LYRIC FILE IDENTIFIED.")
             # then? how shall we judge this?
