@@ -25,4 +25,5 @@ for startTime, text in textArray[1:]:
         continue
     else:
         lastStartTime = startTime
-        
+        newTextArray.append((startTime, text))
+
