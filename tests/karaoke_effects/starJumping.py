@@ -173,33 +173,33 @@ def romaji(line, l):
             )
             io.write_line(l)
 
-    # # Leadout Effect
-    # for syl in Utils.all_non_empty(line.syls):
-    #     l.layer = 0
+    # Leadout Effect
+    for syl in Utils.all_non_empty(line.syls):
+        l.layer = 0
 
-    #     l.start_time = syl.e + 100
-    #     # l.start_time = line.start_time + syl.end_time + 100
-    #     l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
-    #     # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
-    #     l.dur = l.end_time - l.start_time
+        l.start_time = syl.end_time + 100
+        # l.start_time = line.start_time + syl.end_time + 100
+        l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
+        # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
+        l.dur = l.end_time - l.start_time
 
-    #     l.text = (
-    #         "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,%d,%d)\\t(%d,%d,\\blur2)\\fad(0,%d)}%s"
-    #         % (
-    #             syl.center,
-    #             syl.middle,
-    #             syl.center + math.cos(syl.i / 2) * off_x,
-    #             syl.middle + math.sin(syl.i / 4) * off_y,
-    #             l.dur - delay,
-    #             l.dur,
-    #             l.dur - delay,
-    #             l.dur,
-    #             delay,
-    #             syl.text,
-    #         )
-    #     )
+        l.text = (
+            "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,%d,%d)\\t(%d,%d,\\blur2)\\fad(0,%d)}%s"
+            % (
+                syl.center,
+                syl.middle,
+                syl.center + math.cos(syl.i / 2) * off_x,
+                syl.middle + math.sin(syl.i / 4) * off_y,
+                l.dur - delay,
+                l.dur,
+                l.dur - delay,
+                l.dur,
+                delay,
+                syl.text,
+            )
+        )
 
-    #     io.write_line(l)
+        io.write_line(l)
 
 
 def kanji(line, l):
