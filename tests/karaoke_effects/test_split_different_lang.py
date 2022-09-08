@@ -84,8 +84,8 @@ for test in tests:
         foreignLangFlag = langid.classify(foreignLangString)
         nativeLangFlag = langid.classify(nativeLangString)
 
-        # print(foreignLangFlag)
-        # print(nativeLangFlag)
+        print(foreignLangFlag)
+        print(nativeLangFlag)
         # breakpoint()
         if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
             # this is for sure the bilingual shit.
