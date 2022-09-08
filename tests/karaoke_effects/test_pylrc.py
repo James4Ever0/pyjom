@@ -32,3 +32,4 @@ for startTime, text in textArray[1:]:
 # when it does not contains anything in chinese.
 
 # using deepl?
+# put that aside please?
