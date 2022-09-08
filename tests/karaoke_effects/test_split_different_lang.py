@@ -22,7 +22,7 @@ def lastSpaceSpliter(text):
     text = text.strip()
     # index = 0
     for index in range(len(text)-1,-1, -1):
-        print(index)
+        # print(index)
         elem = text[index]
         if elem == " ":
             print("LAST SPACE FOUND AT %d", index)
