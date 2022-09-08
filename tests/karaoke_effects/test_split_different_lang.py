@@ -33,7 +33,8 @@ def lastSpaceSpliter(text):
 
 # if there is a single shit failed to pass this 'lastSpaceSpliter' test, this is not a bilingual lrc file from netease.
 
-# flags = [_, flag for ]
 
 for test in tests:
-    result, flag = lastSpaceSpliter(test)
+    flags = [_, flag for lastSpaceSpliter(test)]
+
+    result, flag = 
