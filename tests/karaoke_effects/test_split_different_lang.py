@@ -47,3 +47,4 @@ for test in tests:
             if flag:
                 # this line might be bilingual.
                 foreignLang, nativeLang = text
+                
