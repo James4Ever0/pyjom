@@ -1,4 +1,6 @@
 # example of TDD.
+
+
 tests = [
     ["リンの麺は終わった", "リンの麺は終わった"],
     # only japanese
