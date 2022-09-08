@@ -5,6 +5,8 @@ import jnius
 jnius.autoclass('java.lang.System').out.println('Running Java Program Using Pyjnius!')
 pyjniusLinguaDetector = jnius.autoclass('com.github.pemistahl.lingua.api.LanguageDetectorBuilder').fromAllLanguages().build()
 
+def pyjniusLinguaDetector():
+
 if __name__ == "__main__":
     sample = 'hello world'
 
