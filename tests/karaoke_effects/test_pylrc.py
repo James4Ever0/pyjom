@@ -28,3 +28,5 @@ for startTime, text in textArray[1:]:
         newTextArray.append({'text': text, 'start': startTime})
 
 # now calculate the end time, please?
+# you may want to translate this if you have to.
+# when it does not contains anything in chinese.
