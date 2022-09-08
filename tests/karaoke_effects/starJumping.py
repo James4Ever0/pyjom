@@ -44,7 +44,7 @@ def romaji(line, l):
     for syl in Utils.all_non_empty(line.syls):
         l.layer = 0
         # l.start_time = syl.end_time
-        l.start_time = line.start_time+
+        l.start_time = line.start_time+100
 
         l.start_time = (
             line.start_time + 25 * syl.i - delay - 80
