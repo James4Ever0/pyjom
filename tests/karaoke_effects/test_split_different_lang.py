@@ -55,4 +55,5 @@ for test in tests:
         import whatlang
         foreignLangFlag = whatlang.detect_language(" ".join(foreignLangList))
         nativeLangFlag = whatlang.detect_language(" ".join(nativeLangList))
-        if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard
+        if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
+            # this is for sure the bilingual shit.
