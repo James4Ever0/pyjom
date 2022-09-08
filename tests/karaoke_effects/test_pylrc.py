@@ -49,12 +49,12 @@ import numpy as np
 
 lyricDurations = []
 
-for index,elem in enumerate(newTextArray):
-    text = elem['text']
-    start = elem['start']
-    nextIndex = index+1
-    if nextIndex < len(newTextArray):
-        nextElem = newTextArray[nextIndex]
-    if nextElem is None:
-        end = np.mean(lyricDurations)+start
-        end = min(musicDuration, end)
+# for index,elem in enumerate(newTextArray):
+#     text = elem['text']
+#     start = elem['start']
+#     nextIndex = index+1
+#     if nextIndex < len(newTextArray):
+#         nextElem = newTextArray[nextIndex]
+#     if nextElem is None:
+#         end = np.mean(lyricDurations)+start
+#         end = min(musicDuration, end)
