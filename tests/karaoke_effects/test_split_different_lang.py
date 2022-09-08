@@ -49,4 +49,5 @@ for test in tests:
             if flag:
                 # this line might be bilingual.
                 foreignLang, nativeLang = text
-                foreignLang = 
+                foreignLangList.append(foreignLang)
+                foreignLangList.append(foreignLang)
