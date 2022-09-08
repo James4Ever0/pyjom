@@ -26,6 +26,7 @@ while not capture.isOpened():
 pos_frame = capture.get(1)
 
 
+
 def getAppendArray(mx1, min_x, past_frames=19):
     return np.append(mx1[-past_frames:], min_x)
 
