@@ -64,8 +64,8 @@ for test in tests:
         # foreignLangFlag = whatlang.detect_language(foreignLangString)
         # nativeLangFlag = whatlang.detect_language(nativeLangString)
         import cld3
-        cld3.get_language(foreignLangString)
-        cld3.get_language(nativeLangString)
+        foreignLangFlag = cld3.get_language(foreignLangString)
+        nativeLangFlag = cld3.get_language(nativeLangString)
         print(foreignLangFlag)
         print(nativeLangFlag)
         breakpoint()
