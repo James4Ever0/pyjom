@@ -51,4 +51,5 @@ for test in tests:
                 foreignLang, nativeLang = text
                 foreignLangList.append(foreignLang)
                 nativeLangList.append(nativeLang)
-        nativeLangFlag = ""
+        nativeLangFlag = "Cmn"
+        
