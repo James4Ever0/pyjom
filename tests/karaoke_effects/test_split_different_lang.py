@@ -14,5 +14,6 @@ def lastSpaceSpliter(text):
         elem = text[index]
         if elem == " ":
             print("LAST SPACE FOUND AT %d", index)
+            break
 
 for test in tests:
