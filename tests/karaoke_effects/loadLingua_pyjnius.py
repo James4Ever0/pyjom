@@ -8,6 +8,7 @@ detector = jnius.autoclass('com.github.pemistahl.lingua.api.LanguageDetectorBuil
 sample = 'hello world'
 
 result = detector.detectLanguageOf(sample)
-print(result, type(result), dir(result))
+print(result, type(result))
 # breakpoint()
 strResult = result.toString()
+print(strResult, type(strResult))
