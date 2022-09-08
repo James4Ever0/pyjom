@@ -45,6 +45,7 @@ for startTime, text in textArray[1:]:
 
 # using deepl?
 # put that aside please? focus on this shit...
+import numpy as np
 
 for index,elem in enumerate(newTextArray):
     text = elem['text']
@@ -52,5 +53,5 @@ for index,elem in enumerate(newTextArray):
     nextIndex = index+1
     if nextIndex < len(newTextArray):
         nextElem = newTextArray[nextIndex]
-    if nextElem is None
-        end = meanLyricDuration
+    if nextElem is None:
+        end = np.mean(lyricDurations)
