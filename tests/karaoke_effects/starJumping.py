@@ -430,10 +430,10 @@ for elem in newTextArray:
     target = lineMod.copy()
     romaji(source, target)
     lineMod2 = lineMod.copy()
-    for i i
-    lineMod2.syls[].top += translateShift
-    lineMod2.syls[].middle += translateShift
-    lineMod2.syls[].bottom += translateShift
+    for i in range(le(lineMod2.syls)):
+        lineMod2.syls[].top += translateShift
+        lineMod2.syls[].middle += translateShift
+        lineMod2.syls[].bottom += translateShift
 
     source = lineMod2.copy()
     target = lineMod2.copy()
