@@ -48,7 +48,6 @@ def getJiebaCuttedText(text):
     textList = [elem for elem in textList if len(elem) > 0]
     return textList
 
-
 for test in tests:
     print("_______________TEST SUBJECT_______________")
     for elem in test:
