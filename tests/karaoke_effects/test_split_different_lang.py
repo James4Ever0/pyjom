@@ -17,7 +17,7 @@ def lastSpaceSpliter(text):
         if elem == " ":
             print("LAST SPACE FOUND AT %d", index)
             # do it right now, and return the value here.
-            mTuple = text[0:index], text[]
+            mTuple = (text[0:index], text[index:])
             return mTuple, True
     return text, False # not a list.
 
