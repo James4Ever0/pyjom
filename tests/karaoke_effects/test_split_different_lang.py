@@ -60,9 +60,10 @@ for test in tests:
         nativeLangFlagStandard = "Cmn"
         foreignLangString = " ".join(foreignLangList)
         nativeLangString = " ".join(nativeLangList)
-        import whatlang
-        foreignLangFlag = whatlang.detect_language(foreignLangString)
-        nativeLangFlag = whatlang.detect_language(nativeLangString)
+        
+        # import whatlang
+        # foreignLangFlag = whatlang.detect_language(foreignLangString)
+        # nativeLangFlag = whatlang.detect_language(nativeLangString)
         # import cld3
         # nativeLangFlagStandard = "zh"
         # foreignLangFlag = cld3.get_language(foreignLangString)
