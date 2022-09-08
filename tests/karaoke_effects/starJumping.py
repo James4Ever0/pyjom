@@ -363,12 +363,13 @@ for elem in newTextArray:
     sylList = []
     wordCount = len(lineMod.words)
     sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
+    
     1920 /2 + centerShift*charShift
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
         syl.i = index
-        syl.center = getCe
+        syl.center = getCenter()
         syl.top= 25
         syl.middle = 49.0
         syl.bottom = 73.0
