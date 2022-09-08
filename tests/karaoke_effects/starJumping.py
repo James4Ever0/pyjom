@@ -352,10 +352,11 @@ for elem in newTextArray:
     lineMod.end_time = elem['end']*1000
     lineMod.text = elem['text']
     print(lineMod)
+    print(dir(lineMod))
     breakpoint()
     source = lineMod.copy()
     target = lineMod.copy()
-    romaji(source, target)
+    kanji(source, target)
     # elif line.styleref.alignment >= 4:
     #     kanji(line, line.copy())
     # else:
