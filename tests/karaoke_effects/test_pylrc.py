@@ -39,4 +39,5 @@ for index,elem in enumerate(newTextArray):
     start = elem['start']
     nextIndex = index+1
     if nextIndex < len(newTextArray):
-        nextElem = newTextArray
+        nextElem = newTextArray[nextIndex]
+        
