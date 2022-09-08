@@ -365,7 +365,7 @@ for elem in newTextArray:
     wordCount = len(lineMod.words)
     sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
     textLength = len(lineMod.text)
-    charShift = 20
+    charShift = 30
     absWordCenterShiftList = []
     prevWordShift = 0
     CENTER = 1920/2
