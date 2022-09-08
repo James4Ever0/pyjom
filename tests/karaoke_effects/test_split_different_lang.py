@@ -69,9 +69,11 @@ for test in tests:
         # nativeLangFlagStandard = "zh"
         # foreignLangFlag = cld3.get_language(foreignLangString)
         # nativeLangFlag = cld3.get_language(nativeLangString)
-        # nativeLangFlagStandard = "zh"
 
+        import textblob
 
+        # foreignLangFlag = cld3.get_language(foreignLangString)
+        # nativeLangFlag = cld3.get_language(nativeLangString)
         print(foreignLangFlag)
         print(nativeLangFlag)
         # breakpoint()
