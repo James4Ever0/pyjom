@@ -41,7 +41,8 @@ def romaji(line, l):
     # # Leadin Effect
     # for syl in Utils.all_non_empty(line.syls):
     #     l.layer = 0
-    #     l.start_time = line.start_time
+        l.start_time = line.start_time
+        # l.start_time = line.start_time
 
     #     # l.start_time = (
     #     #     line.start_time + 25 * syl.i - delay - 80
