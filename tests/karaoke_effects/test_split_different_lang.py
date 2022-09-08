@@ -10,6 +10,9 @@ tests = ["リンの麺は終わった", # only japanese
 # whatlang?
 
 def lastSpaceSpliter(text):
-    for index in range()
+    for index in range(0, len(text), -1):
+        elem = text[index]
+        if elem == " ":
+            
 
 for test in tests:
