@@ -384,6 +384,7 @@ for elem in newTextArray:
         syl.i = index
         syl.center = getCenter(index)
         syl.top= 25
+        syl.in
         syl.middle = 49.0
         syl.bottom = 73.0
         syl.start_time = lineMod.start_time+ index*sylDuration
