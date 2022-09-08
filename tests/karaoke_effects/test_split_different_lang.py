@@ -9,7 +9,7 @@ tests = ["リンの麺は終わった", # only japanese
 
 # whatlang?
 
-def lastSpaceSpliter():
-    
+def lastSpaceSpliter(text):
+    for index in range()
 
 for test in tests:
