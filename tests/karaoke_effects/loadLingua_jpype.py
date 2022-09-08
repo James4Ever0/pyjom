@@ -15,9 +15,10 @@ linguaDetector = LanguageDetectorBuilder.fromAllLanguages().build() # 3.5GB just
 
 def getLinguaDetectedLanguageLabel(sample):
     result = linguaDetector.detectLanguageOf(sample)
-    print(result, type(result)) # <java class 'com.github.pemistahl.lingua.api.Language'>
+    # print(result, type(result)) # <java class 'com.github.pemistahl.lingua.api.Language'>
     # but we can convert it into string.
     strResult = str(result)
+    return strResult
 if __name__ == "__main__":
     sample = 'hello world'
     # sample = 'lina你吃早饭了没有'
