@@ -88,7 +88,7 @@ for test in tests:
         from loadLingua_pyjnius import  pyjniusLinguaDetectLanguageLabel
 
         nativeLangFlagStandard = "CHINESE"
-        print( pyjniusLinguaDetectLanguageLabel('你好'))
+        foreignLangFlag = pyjniusLinguaDetectLanguageLabel(
 
         print(foreignLangFlag)
         print(nativeLangFlag)
