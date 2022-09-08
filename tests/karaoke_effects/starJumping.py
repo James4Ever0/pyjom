@@ -50,6 +50,7 @@ def romaji(line, l):
         l.end_time = syl.end_time - 1000# wtf?
         # l.end_time = line.start_time + syl.start_time # wtf?
         l.dur = l.end_time - l.start_time
+        if l.dur <=0: continue
 
         l.text = (
             "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,0,%d)\\blur2\\t(0,%d,\\blur0)\\fad(%d,0)}%s"
