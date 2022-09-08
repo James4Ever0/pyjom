@@ -284,7 +284,8 @@ def kanji(line, l):
     for syl in Utils.all_non_empty(line.syls):
         l.layer = 0
 
-        l.start_time = line.start_time + syl.end_time + 100
+        l.start_time =  syl.end_time + 100
+        # l.start_time = line.start_time + syl.end_time + 100
         l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
         l.dur = l.end_time - l.start_time
 
@@ -422,6 +423,7 @@ for elem in newTextArray:
     source = lineMod.copy()
     target = lineMod.copy()
     romaji(source, target)
+
     source = lineMod.copy()
     target = lineMod.copy()
     # elif line.styleref.alignment >= 4:
