@@ -39,18 +39,19 @@ def romaji(line, l):
     off_y = 15
 
     # Leadin Effect
+    mDelay = 500
     for syl in Utils.all_non_empty(line.syls):
         l.layer = 0
         # l.start_time = syl.end_time
-        l.start_time = line.start_time
+        l.start_time = line.start_time-mDelay
 
         # l.start_time = (
         #     line.start_time + 25 * syl.i - delay - 80
         # )  # Remove 80 to start_time to let leadin finish a little bit earlier than the main effect of the first syllable
-        l.end_time = syl.start_time # wtf?
+        l.end_time = syl.start_time-mDelay # wtf?
         # l.end_time = line.start_time + syl.start_time # wtf?
         l.dur = l.end_time - l.start_time
-        # if l.dur <=0: continue
+        if l.dur <=0: continue
 
         l.text = (
             "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,0,%d)\\blur2\\t(0,%d,\\blur0)\\fad(%d,0)}%s"
