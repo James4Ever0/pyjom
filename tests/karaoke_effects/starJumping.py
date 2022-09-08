@@ -365,7 +365,7 @@ for elem in newTextArray:
     sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
     textLength = len(lineMod.text)
     charShift = 40
-    charCe
+    charCenterShiftList = []
     1920 /2 + centerShift*charShift
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
