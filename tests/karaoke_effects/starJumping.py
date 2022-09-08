@@ -343,10 +343,10 @@ for line in lines:
     # Generating lines
     if line.styleref.alignment >= 7:
         romaji(line, line.copy())
-    elif line.styleref.alignment >= 4:
-        kanji(line, line.copy())
-    else:
-        sub(line, line.copy())
+    # elif line.styleref.alignment >= 4:
+    #     kanji(line, line.copy())
+    # else:
+    #     sub(line, line.copy())
 
 io.save()
 # io.open_aegisub()
