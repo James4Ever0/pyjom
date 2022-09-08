@@ -33,7 +33,7 @@ CU = ColorUtility(lines)
 
 def romaji(line, l):
     # Setting up a delay, we will use it as duration time of the leadin and leadout effects
-    delay = 300
+    delay = 100
     # Setting up offset variables, we will use them for the \move in leadin and leadout effects
     off_x = 35
     off_y = 15
