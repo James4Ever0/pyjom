@@ -77,6 +77,7 @@ for test in tests:
         # nativeLangFlag = cld3.get_language(nativeLangString)
 
         # from textblob import TextBlob
+        # nativeLangFlagStandard = "zh"
         # foreignLangFlag = TextBlob(foreignLangString).detect_language()
         # nativeLangFlag = TextBlob(nativeLangString).detect_language()
 
