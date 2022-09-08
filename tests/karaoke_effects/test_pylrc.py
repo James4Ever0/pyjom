@@ -37,5 +37,5 @@ for startTime, text in textArray[1:]:
 for index,elem in enumerate(newTextArray):
     text = elem['text']
     start = elem['start']
-    if index < len(newTextArray):
-        nextElem = 
+    if index+1 < len(newTextArray):
+        nextElem = newTextArray
