@@ -1,6 +1,11 @@
 import pylrc
 from MediaInfo import MediaInfo
 
+def getMusicLength(musicPath):
+    info = MediaInfo(filepath = musicPath)
+    info = info.get_info()
+    return length
+
 musicPath= ""
 songLength = getMusicLength(musicPath)
 
