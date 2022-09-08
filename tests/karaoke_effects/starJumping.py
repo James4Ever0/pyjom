@@ -429,7 +429,8 @@ for elem in newTextArray:
     source = lineMod.copy()
     target = lineMod.copy()
     romaji(source, target)
-    line
+    lineMod2 = lineMod.copy()
+    lineMod2.syls[]
 
     source = lineMod2.copy()
     target = lineMod2.copy()
