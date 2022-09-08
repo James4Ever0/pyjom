@@ -22,5 +22,8 @@ def lastSpaceSpliter(text):
     return text, False # not a list.
 
 # if there is a single shit failed to pass this 'lastSpaceSpliter' test, this is not a bilingual lrc file from netease.
+
+flags = []
+
 for test in tests:
     result, flag = lastSpaceSpliter(test)
