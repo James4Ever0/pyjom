@@ -342,7 +342,7 @@ def sub(line, l):
 for line in lines:
     # Generating lines
     if line.styleref.alignment >= 7:
-        romaji(line, line.copy())
+        romaji(source, target)
     # elif line.styleref.alignment >= 4:
     #     kanji(line, line.copy())
     # else:
