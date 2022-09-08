@@ -16,3 +16,4 @@ for sub in subs:
 
 textArray.sort(lambda x: x[0])
 
+lastStartTime = textArray
