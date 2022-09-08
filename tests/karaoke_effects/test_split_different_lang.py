@@ -70,10 +70,10 @@ for test in tests:
         # foreignLangFlag = cld3.get_language(foreignLangString)
         # nativeLangFlag = cld3.get_language(nativeLangString)
 
-        import textblob
+        from textblob import TextBlob
 
-        # foreignLangFlag = cld3.get_language(foreignLangString)
-        # nativeLangFlag = cld3.get_language(nativeLangString)
+        foreignLangFlag = cld3.get_language(foreignLangString)
+        nativeLangFlag = cld3.get_language(nativeLangString)
         print(foreignLangFlag)
         print(nativeLangFlag)
         # breakpoint()
