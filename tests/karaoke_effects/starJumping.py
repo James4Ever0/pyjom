@@ -343,7 +343,7 @@ for line in lines:
     # Generating lines
     if line.styleref.alignment >= 7:
         pass
-    if line.styleref.alignment >= 7:
+    elif line.styleref.alignment >= 4:
         lineModSource = line.copy()
         break
     
@@ -354,9 +354,9 @@ for elem in newTextArray:
     lineMod.start_time = elem['start']*1000
     lineMod.end_time = elem['end']*1000
     lineMod.text = elem['text']
-    print(lineMod)
-    print(dir(lineMod))
-    breakpoint()
+    # print(lineMod)
+    # print(dir(lineMod))
+    # breakpoint()
     source = lineMod.copy()
     target = lineMod.copy()
     kanji(source, target)
