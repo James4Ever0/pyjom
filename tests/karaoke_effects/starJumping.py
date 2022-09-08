@@ -351,6 +351,8 @@ for elem in newTextArray:
     lineMod.start_time = elem['start']*1000
     lineMod.end_time = elem['end']*1000
     lineMod.text = elem['text']
+    print(lineMod)
+    breakpoint()
     source = lineMod.copy()
     target = lineMod.copy()
     romaji(source, target)
