@@ -12,6 +12,8 @@ from com.github.pemistahl.lingua.api import *
 
 # detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().build()
 linguaDetector = LanguageDetectorBuilder.fromAllLanguages().build() # 3.5GB just for detecting language! it is somehow crazy.
+
+def getLinguaDetectedLanguageLabel(sample):
     result = linguaDetector.detectLanguageOf(sample)
     print(result, type(result)) # <java class 'com.github.pemistahl.lingua.api.Language'>
     # but we can convert it into string.
