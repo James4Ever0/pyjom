@@ -35,9 +35,9 @@ def lastSpaceSpliter(text):
 
 
 for test in tests:
-    for elem in test:
-        flags = [int(flag) for _, flag in [lastSpaceSpliter(elem)]]
-        if sum(flags) < len(flags)*0.8:
-            print("NOT A BILIGUAL LYRICS FILE")
-
+    flags = [int(flag) for _, flag in [lastSpaceSpliter(elem) for elem in test]]
+    if sum(flags) < len(flags)*0.8:
+        print("NOT A BILIGUAL LYRICS FILE")
+    else:
+        
     result, flag = 
