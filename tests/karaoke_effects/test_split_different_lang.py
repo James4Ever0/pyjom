@@ -1,5 +1,5 @@
 # example of TDD.
-tests = ["", # 
-"", # 
+tests = ["", # japanese with chinese containing english
+"", # english with chinese containing english
 "", # only chinese
 ]
