@@ -1,4 +1,5 @@
 from jpype import *
+import jpype.imports
 
 addClassPath("/root/Desktop/works/pyjom/tests/karaoke_effects/classpath/lingua.jar")
 
