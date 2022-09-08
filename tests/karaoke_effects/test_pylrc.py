@@ -18,13 +18,13 @@ textArray.sort(key = lambda x: x[0])
 
 lastStartTime = textArray[0][0]
 
-newTextArray = [textArray[0].copy()]
+newTextArray = [textArray[0]]
 
 for startTime, text in textArray[1:]:
     if startTime-lastStartTime < lyricDurationThresholds[0]:
         continue
     else:
         lastStartTime = startTime
-        newTextArray.append({startTime, text})
+        newTextArray.append({'text': text, 'start': startTime})
 
 # now calculate the end time, please?
