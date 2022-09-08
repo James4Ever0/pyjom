@@ -33,7 +33,7 @@ def lastSpaceSpliter(text):
         if elem == " ":
             print("LAST SPACE FOUND AT %d", index)
             # do it right now, and return the value here.
-            mTuple = (text[0:index], text[index:])
+            mTuple = (text[0:index].strip(), text[index:].strip())
             return mTuple, True
     return text, False  # not a list.
 
@@ -93,7 +93,7 @@ for test in tests:
 
         print(foreignLangFlag)
         print(nativeLangFlag)
-        # breakpoint()
+        breakpoint()
         if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
             # this is for sure the bilingual shit.
             print("BILINGUAL LYRIC FILE IDENTIFIED.")
