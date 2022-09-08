@@ -32,4 +32,4 @@ print(whatlang.detect_language('你好'))
 
 from loadLingua_jpype import getLinguaDetectedLanguageLabel
 
-print(getLinguaDetectedLanguageLabel(''))
+print(getLinguaDetectedLanguageLabel('你好'))
