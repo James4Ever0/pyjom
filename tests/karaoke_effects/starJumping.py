@@ -366,11 +366,12 @@ for elem in newTextArray:
     textLength = len(lineMod.text)
     charShift = 40
     absWordCenterShiftList = []
+    prevWordShift = 0
     for word in lineMod.words:
         wordLength = len(word)+1
         wordCenterShift = (charShift*wordLength)/2
         wordShift = (charShift*wordLength)
-        absWordCenterShif1920/2 - textLength*charShift+ prevWordShift+wordCenterShift
+        absWordCenterShift = 1920/2 - textLength*charShift+ prevWordShift+wordCenterShift
     1920 /2 + centerShift*charShift
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
