@@ -360,12 +360,13 @@ for elem in newTextArray:
     # lineMod.syls = 
     print(dir(lineMod))
     breakpoint()
+    sylList = []
     for word in lineMod.words:
         syl = Syllable()
         syl.text = word
         syl.start_time = elem['start']*1000
         syl.ed_time = syl.start_time
-    start_time
+        sylList.append(syl.copy())
     lineMod.syls = sylList
     # pyonfx.ass_core.Syllable
     source = lineMod.copy()
