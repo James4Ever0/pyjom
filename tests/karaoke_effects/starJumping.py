@@ -389,10 +389,10 @@ for elem in newTextArray:
         syl.i = index
         syl.center = getCenter(index)
         syl.width = getWidth(index)
-        syl.top= 25
+        syl.top= 25+mSylYShift
         syl.inline_fx = 'm2'
-        syl.middle = 49.0
-        syl.bottom = 73.0
+        syl.middle = 49.0+mSylYShift
+        syl.bottom = 73.0+mSylYShift
         syl.start_time = lineMod.start_time+ index*sylDuration
         syl.end_time = syl.start_time+sylDuration
         syl.duration = sylDuration
