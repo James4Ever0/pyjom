@@ -10,5 +10,6 @@ tests = ["リンの麺は終わった", # only japanese
 # whatlang?
 
 def lastSpaceSpliter():
+    
 
 for test in tests:
