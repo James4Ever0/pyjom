@@ -10,11 +10,12 @@ tests = ["リンの麺は終わった", # only japanese
 # whatlang?
 
 def lastSpaceSpliter(text):
-    index = 0
+    # index = 0
     for index in range(0, len(text), -1):
         elem = text[index]
         if elem == " ":
             print("LAST SPACE FOUND AT %d", index)
-            break
+            # do it right now, and return the value here.
+    
 
 for test in tests:
