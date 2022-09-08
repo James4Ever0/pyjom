@@ -7,3 +7,4 @@ lrc_file.close()
 subs = pylrc.parse(lrc_string)
 for sub in subs:
     print(sub.time) # single shit.
+    print(dir(sub))
