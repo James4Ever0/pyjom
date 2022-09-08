@@ -61,10 +61,11 @@ for test in tests:
         foreignLangString = " ".join(foreignLangList)
         nativeLangString = " ".join(nativeLangList)
         # import whatlang
-        # foreignLangFlag = whatlang.detect_language()
+        # foreignLangFlag = whatlang.detect_language(foreignLangString)
         # nativeLangFlag = whatlang.detect_language(nativeLangString)
         import cld3
-        cld3.get_language(
+        cld3.get_language(foreignLangString)
+        cld3.get_language(nativeLangString)
         print(foreignLangFlag)
         print(nativeLangFlag)
         breakpoint()
