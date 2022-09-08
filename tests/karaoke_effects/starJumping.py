@@ -356,7 +356,7 @@ for elem in newTextArray:
     lineMod.end_time = elem['end']*1000
     lineMod.text = elem['text']
     # print(lineMod)
-    lineMod.words = elem['text'].split(" ")
+    lineMod.words = elem['text'].strip().replace("  .split(" ")
     # lineMod.syls = 
     # print(dir(lineMod))
     # breakpoint()
