@@ -5,3 +5,4 @@ tests = ["リンの麺は終わった Lina的面吃完了没有", # japanese wit
 "go go go", # chinese containing english (overall)
 ]
 # build a classifier for this? wtf?
+
