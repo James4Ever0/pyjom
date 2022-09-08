@@ -34,3 +34,4 @@ for startTime, text in textArray[1:]:
 # using deepl?
 # put that aside please? focus on this shit...
 
+for index,elem in newTextArray:
