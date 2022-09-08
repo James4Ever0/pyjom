@@ -4,7 +4,7 @@ tests = ["リンの麺は終わった", # only japanese
 "Lina I miss you Lina我想你了", # english with chinese containing english
 "向前冲 冲 冲", # only chinese
 "go go go", # chinese containing english (overall)
-]
+
 # build a classifier for this? wtf?
 
 # whatlang?
