@@ -347,7 +347,8 @@ for line in lines:
 from test_pylrc import *
 # just a test.
 for elem in newTextArray:
-    lineModSource.copy()
+    lineMod = lineModSource.copy()
+    lineMod.
     source = lineMod.copy()
     target = lineMod.copy()
     romaji(source, target)
