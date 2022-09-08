@@ -50,4 +50,5 @@ for test in tests:
                 # this line might be bilingual.
                 foreignLang, nativeLang = text
                 foreignLangList.append(foreignLang)
-                foreignLangList.append(foreignLang)
+                nativeLangList.append(nativeLang)
+        nativeLangFlag = ""
