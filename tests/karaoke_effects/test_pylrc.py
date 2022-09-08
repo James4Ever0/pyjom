@@ -5,6 +5,7 @@ lrc_string = ''.join(lrc_file.readlines())
 lrc_file.close()
 
 subs = pylrc.parse(lrc_string)
+maxLyricDuration = 
 for sub in subs:
     print(sub.time) # single shit.
     # print(dir(sub))
