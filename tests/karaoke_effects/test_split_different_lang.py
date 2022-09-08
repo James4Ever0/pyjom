@@ -90,6 +90,7 @@ for test in tests:
         nativeLangFlagStandard = "CHINESE"
         foreignLangFlag = pyjniusLinguaDetectLanguageLabel(foreignLangString)
         nativeLangFlag = pyjniusLinguaDetectLanguageLabel(nativeLangString)
+        # there's no probability out there! WTF?
 
         print(foreignLangFlag)
         print(nativeLangFlag)
