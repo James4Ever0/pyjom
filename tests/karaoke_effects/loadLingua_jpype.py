@@ -21,5 +21,5 @@ strResult = str(result)
 print(strResult, type(strResult))
 import math
 
-math.sqrt(4)
+print("CALLING MATH: %d" % math.sqrt(4))
 shutdownJVM()
