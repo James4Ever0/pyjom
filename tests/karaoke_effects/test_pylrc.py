@@ -10,7 +10,7 @@ lyricDurationThreshold = 4
 
 for sub in subs:
     startTimeArray = sub.time
-    print(sub.time) # single shit.
-    # print(dir(sub))
     text = sub.text
-    print(text)
+    # print(sub.time) # single shit.
+    # print(dir(sub))
+    # print(text)
