@@ -1,9 +1,9 @@
 # example of TDD.
 import os
 
-os.environ['http_proxy'] = ""
-os.environ['https_proxy'] = ""
-os.environ['all_proxy'] = ""
+# os.environ['http_proxy'] = ""
+# os.environ['https_proxy'] = ""
+# os.environ['all_proxy'] = ""
 
 tests = [
     ["リンの麺は終わった", "リンの麺は終わった"],
