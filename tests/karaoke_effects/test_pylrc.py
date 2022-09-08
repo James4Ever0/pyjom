@@ -18,7 +18,7 @@ textArray.sort(key = lambda x: x[0])
 
 lastStartTime = textArray[0][0]
 
-newTextArray = [textArray[0]]
+newTextArray = [{''text':textArray[0][1]]
 
 for startTime, text in textArray[1:]:
     if startTime-lastStartTime < lyricDurationThresholds[0]:
