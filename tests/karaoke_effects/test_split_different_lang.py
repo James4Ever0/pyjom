@@ -85,7 +85,9 @@ for test in tests:
         # nativeLangFlagStandard = "zh"
         # foreignLangFlag = langid.classify(foreignLangString)
         # nativeLangFlag = langid.classify(nativeLangString)
-        
+        from loadLingua_pyjnius import  pyjniusLinguaDetectLanguageLabel
+
+        print( pyjniusLinguaDetectLanguageLabel('你好'))
 
         print(foreignLangFlag)
         print(nativeLangFlag)
