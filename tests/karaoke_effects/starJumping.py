@@ -341,8 +341,8 @@ def sub(line, l):
 
 for line in lines:
     # Generating lines
-
     if line.styleref.alignment >= 7:
+        lineModSource = line.copy()
         source = lineMod.copy()
         target = lineMod.copy()
         romaji(source, target)
