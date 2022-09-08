@@ -370,6 +370,7 @@ for elem in newTextArray:
     prevWordShift = 0
     CENTER = 1920/2
     for word in lineMod.words:
+        wordWidth = len(word)* charShift
         wordLength = len(word)+1
         wordCenterShift = (charShift*wordLength)/2
         wordShift = (charShift*wordLength)
