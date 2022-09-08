@@ -357,8 +357,9 @@ for elem in newTextArray:
     lineMod.text = elem['text']
     # print(lineMod)
     lineMod.words = elem['text'].split(" ")
-    # print(dir(lineMod))
-    # breakpoint()
+    # lineMod.syls = 
+    print(dir(lineMod))
+    breakpoint()
     source = lineMod.copy()
     target = lineMod.copy()
     romaji(source, target)
