@@ -180,10 +180,11 @@ def romaji(line, l):
 
         l.start_time = syl.end_time + 100
         # l.start_time = line.start_time + syl.end_time + 100
-        l
+        l.end_time = line.end_time - 100
         # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
         # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
         l.dur = l.end_time - l.start_time
+        if l.
 
         l.text = (
             "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,%d,%d)\\t(%d,%d,\\blur2)\\fad(0,%d)}%s"
