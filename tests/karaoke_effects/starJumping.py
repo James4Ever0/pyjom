@@ -356,7 +356,7 @@ for elem in newTextArray:
     lineMod.end_time = elem['end']*1000
     lineMod.text = elem['text'].strip().replace("  ","")
     # print(lineMod)
-    lineMod.words = lineMod.textsplit(" ")
+    lineMod.words = lineMod.text.split(" ")
     # lineMod.syls = 
     # print(dir(lineMod))
     # breakpoint()
@@ -370,7 +370,7 @@ for elem in newTextArray:
         wordLength = len(word)+1
         wordCenterShift = (charShift*wordLength)/2
         wordShift = (charShift*wordLength)
-        1920/2 - textLength prevWordShift+
+        1920/2 - textLength*charShift+ prevWordShift+
     1920 /2 + centerShift*charShift
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
