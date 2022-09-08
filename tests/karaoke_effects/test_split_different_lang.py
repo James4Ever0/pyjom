@@ -21,6 +21,6 @@ def lastSpaceSpliter(text):
             return mTuple, True
     return text, False # not a list.
 
-# if there is a single shit failed to do so, this is not a 
+# if there is a single shit failed to pass this ', this is not a dual-lang lrc file by netease.
 for test in tests:
     result, flag = lastSpaceSpliter(test)
