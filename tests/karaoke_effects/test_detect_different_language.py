@@ -8,6 +8,6 @@ print(detected_language) # unknown! fucking shit
 
 import cld3
 
-result = cld3.get_frequent_languages(sample)
+result = cld3.get_frequent_languages(sample,num_langs=3)
 
 print(result)
