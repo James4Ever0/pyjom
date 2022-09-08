@@ -7,3 +7,5 @@ tests = ["リンの麺は終わった Lina的面吃完了没有", # japanese wit
 # build a classifier for this? wtf?
 
 # whatlang?
+for test in tests:
+    
