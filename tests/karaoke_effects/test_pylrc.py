@@ -10,7 +10,7 @@ def getMusicLength(musicPath):
     # return length
 
 musicPath= "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
-songLength = getMusicLength(musicPath)
+musicDuration = getMusicLength(musicPath)
 
 lrc_file = open('/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc')
 lrc_string = ''.join(lrc_file.readlines())
@@ -55,4 +55,4 @@ for index,elem in enumerate(newTextArray):
         nextElem = newTextArray[nextIndex]
     if nextElem is None:
         end = np.mean(lyricDurations)+start
-        end = min(musicDuration)
+        end = min(musicDuration, end)
