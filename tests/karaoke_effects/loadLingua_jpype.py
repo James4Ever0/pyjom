@@ -19,4 +19,7 @@ print(result, type(result)) # <java class 'com.github.pemistahl.lingua.api.Langu
 # but we can convert it into string.
 strResult = str(result)
 print(strResult, type(strResult))
+import math
+
+math.sqrt(4)
 shutdownJVM()
