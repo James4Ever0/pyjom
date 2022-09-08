@@ -1,7 +1,7 @@
 import pylrc
 from MediaInfo import MediaInfo
 
-def getMusicLength(musicPath):
+def getMusicDuration(musicPath):
     info = MediaInfo(filepath = musicPath)
     info = info.getInfo()
     print(info)
@@ -10,7 +10,7 @@ def getMusicLength(musicPath):
     # return length
 
 musicPath= "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
-musicDuration = getMusicLength(musicPath)
+musicDuration = getMusicDuration(musicPath)
 
 lrc_file = open('/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc')
 lrc_string = ''.join(lrc_file.readlines())
@@ -46,6 +46,8 @@ for startTime, text in textArray[1:]:
 # using deepl?
 # put that aside please? focus on this shit...
 import numpy as np
+
+lyricDurations = []
 
 for index,elem in enumerate(newTextArray):
     text = elem['text']
