@@ -247,7 +247,7 @@ def kanji(line, l):
 
         l.start_time = syl.start_time
         # l.start_time = line.start_time + syl.start_time
-        l.end_time = syl.end_time
+        l.end_time = syl.end_time + 100
         l.dur = l.end_time - l.start_time
 
         c1 = "&H81F4FF&"
