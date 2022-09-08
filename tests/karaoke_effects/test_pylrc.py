@@ -4,10 +4,11 @@ from MediaInfo import MediaInfo
 def getMusicDuration(musicPath):
     info = MediaInfo(filename = musicPath)
     info = info.getInfo()
-    print(info)
-    breakpoint()
-    # length = info['']
-    # return length
+    # print(info)
+    # breakpoint()
+    length = info['duration']
+    length = float(length)
+    return length
 
 musicPath= "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
 musicDuration = getMusicDuration(musicPath)
