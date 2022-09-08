@@ -1,4 +1,4 @@
-sample = 'last friday night 影響包含'
+sample = 'Last friday night. 影響包含'
 
 import pycld2 as cld2
 text_content = sample
@@ -27,4 +27,4 @@ import whatlang
 result = whatlang.detect_language('last friday night')
 
 print(result)
-print(whatlang.detect_language(''))
+print(whatlang.detect_language('你好'))
