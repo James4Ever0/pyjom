@@ -72,8 +72,8 @@ for test in tests:
 
         from textblob import TextBlob
 
-        foreignLangFlag = cld3.get_language(foreignLangString)
-        nativeLangFlag = cld3.get_language(nativeLangString)
+        foreignLangFlag = TextBlob(foreignLangString).detect_language()
+        nativeLangFlag = TextBlob(nativeLangString).detect_language()
         print(foreignLangFlag)
         print(nativeLangFlag)
         # breakpoint()
