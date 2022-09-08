@@ -17,4 +17,7 @@ for sub in subs:
 textArray.sort(lambda x: x[0])
 
 lastStartTime = textArray[0][0]
+
+newTextArray = [textArray[0]]
+
 for startTime, text in textArray[1:]:
