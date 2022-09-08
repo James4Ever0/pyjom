@@ -54,4 +54,5 @@ for test in tests:
         nativeLangFlag = "Cmn"
         import whatlang
         foreignLangFlag = whatlang.detect_language(" ".join(foreignLangList))
-        foreignLangFlag = whatlang.detect_language(" ".join(foreignLangList))
+        nativeLangFlag = whatlang.detect_language(" ".join(nativeLangList))
+        if foreignLangFlag !=
