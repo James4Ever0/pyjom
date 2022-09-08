@@ -8,7 +8,6 @@ def getMusicLength(musicPath):
     breakpoint()
     # length = info['']
     # return length
-    return
 
 musicPath= ""
 songLength = getMusicLength(musicPath)
