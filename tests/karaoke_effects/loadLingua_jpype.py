@@ -10,4 +10,9 @@ from com.github.pemistahl.lingua.api import *
 
 
 detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().build()
+
+sample = 'hello world'
+
+print()
+
 shutdownJVM()
