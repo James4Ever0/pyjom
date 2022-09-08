@@ -363,8 +363,8 @@ for elem in newTextArray:
     sylList = []
     wordCount = len(lineMod.words)
     sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
-    textLeg
-    charShift = 
+    textLe
+    charShift = 40
     charCe
     1920 /2 + centerShift*charShift
     for index, word in enumerate(lineMod.words):
