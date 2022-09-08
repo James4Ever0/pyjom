@@ -44,11 +44,11 @@ def romaji(line, l):
     for syl in Utils.all_non_empty(line.syls):
         l.layer = 0
         # l.start_time = syl.end_time
-        l.start_time = line.start_time-mDelay
+        # l.start_time = line.start_time-mDelay
 
-        # l.start_time = (
-        #     line.start_time + 25 * syl.i - delay - 80
-        # )  # Remove 80 to start_time to let leadin finish a little bit earlier than the main effect of the first syllable
+        l.start_time = (
+            line.start_time + 25 * syl.i - delay - 80
+        )  # Remove 80 to start_time to let leadin finish a little bit earlier than the main effect of the first syllable
         # l.end_time = lastStartTime # wtf?
         # lastStartTime = syl.start_time
         l.end_time = syl.start_time
