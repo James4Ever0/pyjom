@@ -3,11 +3,11 @@ import jnius_config
 jnius_config.set_classpath('.', "/root/Desktop/works/pyjom/tests/karaoke_effects/classpath/lingua.jar")
 import jnius
 jnius.autoclass('java.lang.System').out.println('Running Java Program Using Pyjnius!')
-etector = jnius.autoclass('com.github.pemistahl.lingua.api.LanguageDetectorBuilder').fromAllLanguages().build()
+pyjniusLinguaDetector = jnius.autoclass('com.github.pemistahl.lingua.api.LanguageDetectorBuilder').fromAllLanguages().build()
 
 sample = 'hello world'
 
-result = etector.detectLanguageOf(sample)
+result = pyjniusLinguaDetector.detectLanguageOf(sample)
 print(result, type(result))
 # breakpoint()
 strResult = result.toString()
