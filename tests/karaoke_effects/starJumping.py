@@ -377,7 +377,7 @@ for elem in newTextArray:
         absWordCenterShiftList.append(absWordCenterShift)
         prevWordShift += wordShift
     # CENTER + centerShift*charShift
-    absWordCenterShiftList[i]
+    getCenter absWordCenterShiftList[index]
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
