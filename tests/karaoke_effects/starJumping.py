@@ -366,8 +366,8 @@ for elem in newTextArray:
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
-        syl.start_time =lineMod.start_time+ index*sylDuratio
-        syl.end_time = syl.start_time
+        syl.start_time =lineMod.start_time+ index*sylDuration
+        syl.end_time = syl.start_time+sylDuration
         sylList.append(syl.copy())
     lineMod.syls = sylList
     # pyonfx.ass_core.Syllable
