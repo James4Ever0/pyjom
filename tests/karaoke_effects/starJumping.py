@@ -142,7 +142,7 @@ def romaji(line, l):
         #     line.start_time + syl.start_time, line.start_time + syl.end_time
         # )
         FU = FrameUtility(
-            line.start_time + syl.start_time, line.start_time + syl.end_time
+            syl.start_time, syl.end_time
         )
         for s, e, i, n in FU:
             l.start_time = s
@@ -172,8 +172,10 @@ def romaji(line, l):
     for syl in Utils.all_non_empty(line.syls):
         l.layer = 0
 
-        l.start_time = line.start_time + syl.end_time + 100
+        l.start_time = syl.end_time + 100
+        # l.start_time = line.start_time + syl.end_time + 100
         l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
+        # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
         l.dur = l.end_time - l.start_time
 
         l.text = (
