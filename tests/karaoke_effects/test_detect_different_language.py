@@ -14,3 +14,6 @@ result = cld3.get_frequent_languages(sample,num_langs=3)
 
 print(result)
 
+# what the fuck?
+
+# [LanguagePrediction(language='uz', probability=0.44310665130615234, is_reliable=False, proportion=0.5757575631141663), LanguagePrediction(language='zh', probability=0.9812981486320496, is_reliable=True, proportion=0.42424243688583374)]
