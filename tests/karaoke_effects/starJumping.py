@@ -368,7 +368,7 @@ for elem in newTextArray:
         syl.text = word
         syl.start_time =lineMod.start_time+ index*sylDuration
         syl.end_time = syl.start_time+sylDuration
-        sylList.append(syl.copy())
+        sylList.append(syl)
     lineMod.syls = sylList
     # pyonfx.ass_core.Syllable
     source = lineMod.copy()
