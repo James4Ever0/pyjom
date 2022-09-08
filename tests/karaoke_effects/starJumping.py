@@ -367,6 +367,8 @@ for elem in newTextArray:
     charShift = 40
     charCenterShiftList = []
     for word in lineMod.words:
+        wordLength = word
+        wordCenter = 
     1920 /2 + centerShift*charShift
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
