@@ -360,6 +360,7 @@ for elem in newTextArray:
     # lineMod.syls = 
     print(dir(lineMod))
     breakpoint()
+    lineMod.syls = 
     # pyonfx.ass_core.Syllable
     source = lineMod.copy()
     target = lineMod.copy()
