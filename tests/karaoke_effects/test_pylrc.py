@@ -6,7 +6,7 @@ lrc_file.close()
 
 subs = pylrc.parse(lrc_string)
 
-lyricDurationThresholds = (1,4)
+lyricDurationThresholds = (0.5,4)
 
 textArray = []
 
