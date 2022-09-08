@@ -24,4 +24,6 @@ print(cld3.get_language('last friday night do it all again this friday night'))
 
 import whatlang
 
-whatlang.detect_language('last friday night do it all again this friday night')
+result = whatlang.detect_language('last friday night do it all again this friday night')
+
+print(result)
