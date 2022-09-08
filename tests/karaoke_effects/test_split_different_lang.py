@@ -40,6 +40,7 @@ def lastSpaceSpliter(text):
 
 # if there is a single shit failed to pass this 'lastSpaceSpliter' test, this is not a bilingual lrc file from netease.
 
+def getJiebaCuttedText
 
 for test in tests:
     print("_______________TEST SUBJECT_______________")
@@ -100,6 +101,6 @@ for test in tests:
             print("BILINGUAL LYRIC FILE IDENTIFIED.")
             # then? how shall we judge this?
             # let the jieba.lcut to handle the cutting. please?
-            # remove all blanks.
+            # remove all blanks in the list.
         else:
             print("NOT A BILIGUAL LYRICS FILE")
