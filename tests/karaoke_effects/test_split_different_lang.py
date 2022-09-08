@@ -2,5 +2,5 @@
 tests = ["", # japanese with chinese containing english
 "", # english with chinese containing english
 "向前冲 冲 冲", # only chinese
-# chinese containing english
+"go go go", # chinese containing english (overall)
 ]
