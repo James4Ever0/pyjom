@@ -57,6 +57,7 @@ for index,elem in enumerate(newTextArray):
     if nextIndex < len(newTextArray):
         nextElem = newTextArray[nextIndex]
         nextStart = nextElem['start']
+        end = nextStart-start
         end = 
     else:
         end = np.mean(lyricDurations)+start
