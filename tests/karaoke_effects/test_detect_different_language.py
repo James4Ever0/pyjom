@@ -18,6 +18,6 @@ print(result)
 
 # [LanguagePrediction(language='uz', probability=0.44310665130615234, is_reliable=False, proportion=0.5757575631141663), LanguagePrediction(language='zh', probability=0.9812981486320496, is_reliable=True, proportion=0.42424243688583374)]
 
-print(cld3.get_language('last friday night do it all again this friday night'))
+print(cld3.get_language('Last friday night do it all again this friday night'))
 
 # not very freaking reliable.
