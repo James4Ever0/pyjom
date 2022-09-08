@@ -363,7 +363,8 @@ for elem in newTextArray:
     for word in lineMod.words:
         syl = Syllable()
         syl.text = word
-        syl.start = 
+        syl.start = elem['start']*1000
+        syl.ed = syl.start
     start_time
     lineMod.syls = sylList
     # pyonfx.ass_core.Syllable
