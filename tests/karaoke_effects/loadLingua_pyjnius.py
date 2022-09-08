@@ -5,10 +5,11 @@ import jnius
 jnius.autoclass('java.lang.System').out.println('Running Java Program Using Pyjnius!')
 pyjniusLinguaDetector = jnius.autoclass('com.github.pemistahl.lingua.api.LanguageDetectorBuilder').fromAllLanguages().build()
 
-sample = 'hello world'
+if __name__ == "__main__":
+    sample = 'hello world'
 
-result = pyjniusLinguaDetector.detectLanguageOf(sample)
-print(result, type(result))
-# breakpoint()
-strResult = result.toString()
-print(strResult, type(strResult))
+    result = pyjniusLinguaDetector.detectLanguageOf(sample)
+    print(result, type(result))
+    # breakpoint()
+    strResult = result.toString()
+    print(strResult, type(strResult))
