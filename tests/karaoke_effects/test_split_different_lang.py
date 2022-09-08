@@ -22,3 +22,4 @@ def lastSpaceSpliter(text):
     return text, False # not a list.
 
 for test in tests:
+    result, flag = lastSpaceSpliter(test)
