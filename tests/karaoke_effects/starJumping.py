@@ -138,6 +138,9 @@ def romaji(line, l):
             if syl.i != len(line.syls) - 1
             else syl.width
         )
+        # FU = FrameUtility(
+        #     line.start_time + syl.start_time, line.start_time + syl.end_time
+        # )
         FU = FrameUtility(
             line.start_time + syl.start_time, line.start_time + syl.end_time
         )
