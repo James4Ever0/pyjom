@@ -10,3 +10,4 @@ sample = 'hello world'
 result = detector.detectLanguageOf(sample)
 print(result, type(result), dir(result))
 # breakpoint()
+strResult = result.toString()
