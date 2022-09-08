@@ -422,10 +422,10 @@ for elem in newTextArray:
     source = lineMod.copy()
     target = lineMod.copy()
     romaji(source, target)
-        source = lineMod.copy()
+    source = lineMod.copy()
     target = lineMod.copy()
     # elif line.styleref.alignment >= 4:
-    kanji(line, line.copy())
+    kanji(source, target)
     # else:
     #     sub(line, line.copy())
 
