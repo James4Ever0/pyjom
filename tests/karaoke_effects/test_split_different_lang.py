@@ -46,3 +46,4 @@ for test in tests:
             text, flag = lastSpaceSpliter(elem)
             if flag:
                 # this line might be bilingual.
+                foreignLang, nativeLang = text
