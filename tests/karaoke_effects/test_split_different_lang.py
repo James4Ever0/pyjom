@@ -42,7 +42,8 @@ def lastSpaceSpliter(text):
 
 def getJiebaCuttedText(text):
     import jieba
-    jieba.lcut()
+    textList = jieba.lcut(text)
+    [text]
     return textList
 
 for test in tests:
