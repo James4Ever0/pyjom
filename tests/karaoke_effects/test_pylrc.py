@@ -40,4 +40,4 @@ for index,elem in enumerate(newTextArray):
     nextIndex = index+1
     if nextIndex < len(newTextArray):
         nextElem = newTextArray[nextIndex]
-        
+    if nextElem is None
