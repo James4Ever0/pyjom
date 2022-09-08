@@ -9,3 +9,4 @@ for sub in subs:
     print(sub.time) # single shit.
     # print(dir(sub))
     text = sub.text
+    print(text)
