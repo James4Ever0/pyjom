@@ -67,8 +67,8 @@ for test in tests:
         nativeLangFlagStandard = "zh"
         foreignLangFlag = cld3.get_language(foreignLangString)
         nativeLangFlag = cld3.get_language(nativeLangString)
-        # print(foreignLangFlag)
-        # print(nativeLangFlag)
+        print(foreignLangFlag)
+        print(nativeLangFlag)
         # breakpoint()
         if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
             # this is for sure the bilingual shit.
