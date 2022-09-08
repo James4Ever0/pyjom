@@ -68,3 +68,4 @@ for index,elem in enumerate(newTextArray):
 
 # for elem in newTextArray:
 #     print(elem)
+# great. now let's do the freaking work?
