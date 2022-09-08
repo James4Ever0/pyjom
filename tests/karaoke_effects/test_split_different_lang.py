@@ -94,9 +94,10 @@ for test in tests:
 
         print(foreignLangFlag)
         print(nativeLangFlag)
-        breakpoint()
+        # breakpoint()
         if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
             # this is for sure the bilingual shit.
             print("BILINGUAL LYRIC FILE IDENTIFIED.")
+            # then? how shall we 
         else:
             print("NOT A BILIGUAL LYRICS FILE")
