@@ -342,7 +342,8 @@ def sub(line, l):
 for line in lines:
     # Generating lines
     if line.styleref.alignment >= 7:
-        pass
+        lineModSource = line.copy()
+        break
     elif line.styleref.alignment >= 4:
         lineModSource = line.copy()
         break
