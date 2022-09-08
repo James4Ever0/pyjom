@@ -1,4 +1,4 @@
-sample = 'hello world'
+sample = 'hello world everyone'
 
 import pycld2 as cld2
 text_content = sample
