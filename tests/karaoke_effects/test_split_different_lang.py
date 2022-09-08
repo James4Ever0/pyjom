@@ -80,6 +80,10 @@ for test in tests:
         # foreignLangFlag = TextBlob(foreignLangString).detect_language()
         # nativeLangFlag = TextBlob(nativeLangString).detect_language()
 
+        import langid
+        foreignLangFlag = langid.classify(foreignLangString)
+        nativeLangFlag = langid.classify(nativeLangString)
+
         # print(foreignLangFlag)
         # print(nativeLangFlag)
         # breakpoint()
