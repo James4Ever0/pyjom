@@ -372,6 +372,7 @@ for elem in newTextArray:
         wordCenterShift = (charShift*wordLength)/2
         wordShift = (charShift*wordLength)
         absWordCenterShift = 1920/2 - textLength*charShift + prevWordShift + wordCenterShift
+        absWordCenterShiftList.append()
         prevWordShift += wordShift
     1920 /2 + centerShift*charShift
     for index, word in enumerate(lineMod.words):
