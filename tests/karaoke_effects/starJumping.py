@@ -397,8 +397,8 @@ for elem in newTextArray:
         syl.duration = sylDuration
         sylList.append(syl)
     lineMod.syls = sylList
-    print(lineMod.syls)
-    breakpoint()
+    # print(lineMod.syls)
+    # breakpoint()
     # pyonfx.ass_core.Syllable
     source = lineMod.copy()
     target = lineMod.copy()
