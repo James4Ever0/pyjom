@@ -362,7 +362,7 @@ for elem in newTextArray:
     # breakpoint()
     sylList = []
     wordCount = len(lineMod.words)
-    
+    sylDuration = lie
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
