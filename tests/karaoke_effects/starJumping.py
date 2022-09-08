@@ -355,6 +355,7 @@ for elem in newTextArray:
     lineMod = lineModSource.copy()
     lineMod.start_time = elem['start']*1000
     lineMod.end_time = elem['end']*1000
+    lineMod.duration = lie
     lineMod.text = elem['text'].strip().replace("  ","")
     # print(lineMod)
     lineMod.words = lineMod.text.split(" ")
