@@ -366,7 +366,7 @@ for elem in newTextArray:
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
-        syl.start_time =li+ 
+        syl.start_time =lineMod.start_time+ index*sylDuratio
         syl.end_time = syl.start_time
         sylList.append(syl.copy())
     lineMod.syls = sylList
