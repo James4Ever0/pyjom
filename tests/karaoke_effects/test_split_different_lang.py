@@ -40,7 +40,10 @@ def lastSpaceSpliter(text):
 
 # if there is a single shit failed to pass this 'lastSpaceSpliter' test, this is not a bilingual lrc file from netease.
 
-def getJiebaCuttedText
+def getJiebaCuttedText(text):
+    import jieba
+    jieba.lcut()
+    return textList
 
 for test in tests:
     print("_______________TEST SUBJECT_______________")
