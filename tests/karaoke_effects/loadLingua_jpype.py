@@ -24,4 +24,5 @@ print(strResult, type(strResult))
 import math
 
 print("CALLING MATH: %d" % math.sqrt(4))
-shutdownJVM()
+# shutdownJVM()
+# what if we do not shut this down?
