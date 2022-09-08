@@ -370,7 +370,7 @@ for elem in newTextArray:
         wordLength = len(word)+1
         wordCenterShift = (charShift*wordLength)/2
         wordShift = (charShift*wordLength)
-        1920/2 - textLength*charShift+ prevWordShift+
+        absWordCenterShif1920/2 - textLength*charShift+ prevWordShift+wordCenterShift
     1920 /2 + centerShift*charShift
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
