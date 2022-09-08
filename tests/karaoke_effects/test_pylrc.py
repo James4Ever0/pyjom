@@ -9,7 +9,7 @@ def getMusicLength(musicPath):
     # length = info['']
     # return length
 
-musicPath= ""
+musicPath= "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
 songLength = getMusicLength(musicPath)
 
 lrc_file = open('/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc')
