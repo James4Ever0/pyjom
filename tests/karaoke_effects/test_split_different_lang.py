@@ -100,5 +100,6 @@ for test in tests:
             print("BILINGUAL LYRIC FILE IDENTIFIED.")
             # then? how shall we judge this?
             # let the jieba.lcut to handle the cutting. please?
+            # remove all blanks.
         else:
             print("NOT A BILIGUAL LYRICS FILE")
