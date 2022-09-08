@@ -64,4 +64,7 @@ for index,elem in enumerate(newTextArray):
     else:
         end = np.mean(lyricDurations)+start
         end = min(musicDuration, end)
-    elem.update({'end':end})
+    newTextArray[index].update({'end':end})
+
+for elem in newTextArray:
+    print(elem)
