@@ -53,3 +53,4 @@ for index,elem in enumerate(newTextArray):
     if nextIndex < len(newTextArray):
         nextElem = newTextArray[nextIndex]
     if nextElem is None
+        end = meanLyricDuration
