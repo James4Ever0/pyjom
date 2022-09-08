@@ -376,7 +376,7 @@ for elem in newTextArray:
         wordLength = len(word)+1
         wordCenterShift = (charShift*wordLength)/2
         wordShift = (charShift*wordLength)
-        absWordCenterShift = CENTER - textLength*charShift + prevWordShift + wordCenterShift
+        absWordCenterShift = CENTER - (textLength*charShift)/2 + prevWordShift + wordCenterShift
         absWordCenterShiftList.append(absWordCenterShift)
         prevWordShift += wordShift
     # CENTER + centerShift*charShift
