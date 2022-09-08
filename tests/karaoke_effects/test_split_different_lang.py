@@ -36,9 +36,9 @@ def lastSpaceSpliter(text):
 
 for test in tests:
     print("_______________TEST SUBJECT_______________")
-    print(elem)
+    for elem in test:
+        print(elem)
     print("_______________TEST SUBJECT_______________")
-
     flags = [int(flag) for _, flag in [lastSpaceSpliter(elem) for elem in test]]
     if sum(flags) < len(flags)*0.8:
         print("NOT A BILIGUAL LYRICS FILE")
@@ -59,6 +59,8 @@ for test in tests:
         import whatlang
         foreignLangFlag = whatlang.detect_language(" ".join(foreignLangList))
         nativeLangFlag = whatlang.detect_language(" ".join(nativeLangList))
+        print(foreignLangFlag)
+        print(nativeLangFlag)
         if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
             # this is for sure the bilingual shit.
             print("BILINGUAL LYRIC FILE IDENTIFIED.")
