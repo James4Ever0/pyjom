@@ -17,5 +17,6 @@ sample = 'hello world'
 result = detector.detectLanguageOf(sample)
 print(result, type(result)) # <java class 'com.github.pemistahl.lingua.api.Language'>
 # but we can convert it into string.
+strResult = str(result)
 print(strResult, type(strResult))
 shutdownJVM()
