@@ -366,6 +366,7 @@ for elem in newTextArray:
     for index, word in enumerate(lineMod.words):
         syl = Syllable()
         syl.text = word
+        syl.i = in
         syl.start_time =lineMod.start_time+ index*sylDuration
         syl.end_time = syl.start_time+sylDuration
         syl.duration = sylDuration
