@@ -51,8 +51,8 @@ for test in tests:
                 foreignLang, nativeLang = text
                 foreignLangList.append(foreignLang)
                 nativeLangList.append(nativeLang)
-        nativeLangFlag = "Cmn"
+        nativeLangFlagStandard = "Cmn"
         import whatlang
         foreignLangFlag = whatlang.detect_language(" ".join(foreignLangList))
         nativeLangFlag = whatlang.detect_language(" ".join(nativeLangList))
-        if foreignLangFlag !=
+        if foreignLangFlag[0] != nativeLangFlag
