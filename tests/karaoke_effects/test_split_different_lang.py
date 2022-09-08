@@ -57,3 +57,4 @@ for test in tests:
         nativeLangFlag = whatlang.detect_language(" ".join(nativeLangList))
         if foreignLangFlag[0] != nativeLangFlagStandard and nativeLangFlag[0] == nativeLangFlagStandard:
             # this is for sure the bilingual shit.
+            print("BILINGUAL.")
