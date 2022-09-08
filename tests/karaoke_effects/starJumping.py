@@ -362,6 +362,8 @@ for elem in newTextArray:
     breakpoint()
     for word in lineMod.words:
         syl = Syllable()
+        syl.text = word
+        syl.start = 
     start_time
     lineMod.syls = sylList
     # pyonfx.ass_core.Syllable
