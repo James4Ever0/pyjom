@@ -427,6 +427,9 @@ for elem in newTextArray:
     # else:
     #     sub(line, line.copy())
 
+
+# how to deal with the tra
+
 io.save()
 # io.open_aegisub()
 sample_video = "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
