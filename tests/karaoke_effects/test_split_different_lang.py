@@ -58,9 +58,12 @@ for test in tests:
                 foreignLangList.append(foreignLang)
                 nativeLangList.append(nativeLang)
         nativeLangFlagStandard = "Cmn"
-        import whatlang
-        foreignLangFlag = whatlang.detect_language(" ".join(foreignLangList))
-        nativeLangFlag = whatlang.detect_language(" ".join(nativeLangList))
+        foreignLangString = " ".join(foreignLangList)
+        # import whatlang
+        # foreignLangFlag = whatlang.detect_language()
+        # nativeLangFlag = whatlang.detect_language(" ".join(nativeLangList))
+        import cld3
+        cld3.get_language(
         print(foreignLangFlag)
         print(nativeLangFlag)
         breakpoint()
