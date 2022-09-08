@@ -66,5 +66,5 @@ for index,elem in enumerate(newTextArray):
         end = min(musicDuration, end)
     newTextArray[index].update({'end':end})
 
-for elem in newTextArray:
-    print(elem)
+# for elem in newTextArray:
+#     print(elem)
