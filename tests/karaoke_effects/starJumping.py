@@ -368,9 +368,9 @@ for elem in newTextArray:
         syl.text = word
         syl.i = index
         syl.center = center
-            top: 25
-    middle: 49.0
-    bottom: 73.0
+        top= 25
+        middle = 49.0
+        bottom = 73.0
         syl.start_time = lineMod.start_time+ index*sylDuration
         syl.end_time = syl.start_time+sylDuration
         syl.duration = sylDuration
