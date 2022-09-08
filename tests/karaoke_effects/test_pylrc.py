@@ -48,7 +48,7 @@ for startTime, text in textArray[1:]:
 # put that aside please? focus on this shit...
 import numpy as np
 
-lyricDurations = [np.mean()]
+lyricDurations = [np.mean(lyricDurationThresholds)]
 
 for index,elem in enumerate(newTextArray):
     text = elem['text']
@@ -64,3 +64,4 @@ for index,elem in enumerate(newTextArray):
     else:
         end = np.mean(lyricDurations)+start
         end = min(musicDuration, end)
+    elem.update({'end':end})
