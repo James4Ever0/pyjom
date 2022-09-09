@@ -286,7 +286,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
     from pyonfx import *
     import random
     import math
-
     io = Ass("/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass", path_output="starJumping.ass")
     meta, styles, lines = io.get_data()
 
