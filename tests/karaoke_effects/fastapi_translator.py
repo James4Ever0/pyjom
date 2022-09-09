@@ -91,7 +91,8 @@ def checkWorkingProxies():
     import requests
 
     for proxy in list(workingProxies):
-        print(proxy)
+        print([proxy])
+        breakpoint()
         r = requests.get(url, params={"proxy": proxy})
         response = r.json()
         if not response["exists"]:
