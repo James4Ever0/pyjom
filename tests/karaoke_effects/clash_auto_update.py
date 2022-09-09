@@ -45,9 +45,6 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
     import json
     data = json.loads(r.text)
     proxy_names = jsonLocate(data,location=location)
-
-    # "http://localhost:9090/proxies/DIRECT/delay?timeout=3000&url=https://m.tujia.com"
-
     def get_delay(name):
         url = "{}{}/delay?timeout={}&url={}".format(test_url, name, timeout, urltest)
         r = requests.get(url)
@@ -56,10 +53,8 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
         if "delay" in response_json.keys(): delay = response_json["delay"]
         else: delay = None
         return delay
-
     direct_delay = get_delay("DIRECT")
     if direct_delay is None: direct_delay = 300 # approximate delay 300ms
-
     candidates = []
     import progressbar # 3 minutes.
     for name in progressbar.progressbar([x for x in proxy_names if x not in forbidden_names]):
