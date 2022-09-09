@@ -647,7 +647,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         elif len(translatedTuple) == 2:
             sourceText, translatedText = translatedTuple
         else:
-            raise Exception("Invalid translatedTuple")
+            raise Exception("Invalid translatedTuple: %s" % str(translatedTuple))
         lineMod = lineModSource.copy()
         lineMod.start_time = max(0,elem['start']*1000 - shiftAdjust)
         lineMod.end_time = elem['end']*1000 - shiftAdjust
