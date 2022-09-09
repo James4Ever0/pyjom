@@ -1,5 +1,6 @@
 # this is the complete process.
 from lyrictoolbox import *
+from .lyrictoolbox import previewAssWithVideo
 from .lyrictoolbox import getTextListTranslated
 
 def lrcToAnimatedAss(musicPath, lrcPath, assPath): # will be moved to lyrictoolbox, and more styles incoming
@@ -17,4 +18,4 @@ if __name__ == "__main__":
     import os
     assPath = os.path.abspath('test.ass')
     lrcToAnimatedAss(musicPath, lrcPath,assPath)
-    
+    previewAssWithVideo(sample_video, assPath)
