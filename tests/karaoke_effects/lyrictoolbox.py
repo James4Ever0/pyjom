@@ -66,8 +66,4 @@ def lrcToTextArray(musicPath, lrcPath):
             end = np.mean(lyricDurations)+start
             end = min(musicDuration, end)
         newTextArray[index].update({'end':end})
-
-# for elem in newTextArray:
-#     print(elem)
     return newTextArray
-# great. now let's do the freaking work?
