@@ -7,11 +7,11 @@ windows:
     # for main translator gateway
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/karaoke_effects
-        - python3 -m uvicorn --port 8974 fastapi_translator:app --reload
+        - python3 -m uvicorn --port 8974 fastapi_translator:app
     # for lingua api
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/karaoke_effects
-        - python3 -m uvicorn --port 8978 loadLingua_jpype_fastapi:app --reload
+        - python3 -m uvicorn --port 8978 loadLingua_jpype_fastapi:app
     # the deepl hacked api
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/deepl_free_translator/deepl-api-rs
