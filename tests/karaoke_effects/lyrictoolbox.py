@@ -708,9 +708,6 @@ for elem in newTextArray:
     # else:
     #     sub(line, line.copy())
 
-
-# how to deal with the tra
-
 io.save()
 # do the preview later?
 # # io.open_aegisub()
