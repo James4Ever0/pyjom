@@ -711,7 +711,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
     io.save()
 # do the preview later?
 # # io.open_aegisub()
-def previewAss(sample_video,assPath):
+def previewAssWithVideo(sample_video,assPath):
     io = Ass(assPath)
 
     io.open_mpv(video_path=sample_video) # ain't see shit...
