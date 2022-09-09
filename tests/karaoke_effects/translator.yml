@@ -7,7 +7,7 @@ windows:
     # for main translator gateway
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/karaoke_effects
-        - python3 -m uvicorn --port 8977 fastapi_translator:app --reload
+        - python3 -m uvicorn --port 8974 fastapi_translator:app --reload
     # for lingua api
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/karaoke_effects
