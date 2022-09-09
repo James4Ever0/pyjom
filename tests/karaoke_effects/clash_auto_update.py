@@ -165,6 +165,8 @@ port = 8677
 app = Flask(__name__)
 
 @app.route('/refreshProxy', methods=['GET'])
+
+@app.route('/refreshProxy', methods=['GET'])
 def hello_world():
     schedule.run_pending()
     proxy_names = find_proxy_names()
