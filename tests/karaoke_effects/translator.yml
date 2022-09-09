@@ -4,7 +4,7 @@ windows:
   - window_name: dev window
     layout: tiled
     panes:
-    # for houseId_server
+    # for clash server
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/karaoke_effects
         - python3 houseId_server.py -c nanjing
