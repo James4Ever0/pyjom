@@ -176,7 +176,7 @@ def waitForServerUp(port, message):
         try:
             url = "http://localhost:{}".format(port)
             r = requests.get(url)
-            print("SERVER AT PORT %d RESPONDS:" % port, r.text)
+            print("SERVER AT PORT %d RESPONDS:" % port, [r.text])
             assert r.text == message
             print("SERVER AT PORT %d IS UP" % port)
             break
@@ -184,7 +184,7 @@ def waitForServerUp(port, message):
             import traceback
             traceback.print_exc()
             print("SERVER AT PORT %d MIGHT NOT BE UP")
-            print("EXPECTED MESSAGE:", message)
+            print("EXPECTED MESSAGE:", [message])
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
 waitForServerUp(8978, "say hello to jpype fastapi server")
