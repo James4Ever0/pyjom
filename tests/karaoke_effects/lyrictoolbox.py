@@ -11,4 +11,5 @@ def getMusicDuration(musicPath):
     return length
 
 def lrcToTextArray(musicPath, lrcPath):
+    assert lrcPath.endswith('.lrc')
     
