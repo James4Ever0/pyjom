@@ -739,5 +739,5 @@ def previewAssWithVideo(sample_video,assPath):
     # io = Ass(assPath)
     print("PREVIEWING ASS SCRIPT: %s" % assPath)
     # io.open_mpv(video_path=sample_video) # ain't see shit...
-    cmd = "mpv --sub-file='{}' '{}'".format(assPath, )
+    cmd = "mpv --sub-file='{}' '{}'".format(assPath, sample_video)
     os.system(cmd)
