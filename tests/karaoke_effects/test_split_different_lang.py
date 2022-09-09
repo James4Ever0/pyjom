@@ -154,9 +154,6 @@ if len(cv2_libs) == 1:
     sys.path.insert(1, str(cv2_libs[0].parent))
 
 
-import paddlehub as hub
-language_translation_model = hub.Module(name='baidu_translate')
-language_recognition_model = hub.Module(name='baidu_language_recognition')
 
 def translate(text, backend="baidu"): # deepl is shit. fucking shit.
     # import time
