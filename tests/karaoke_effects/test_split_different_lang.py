@@ -49,6 +49,7 @@ def getJiebaCuttedText(text):
     return textList
 
 for test in tests:
+    isBilingual=False
     print("_______________TEST SUBJECT_______________")
     for elem in test:
         print(elem)
