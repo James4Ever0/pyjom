@@ -141,7 +141,6 @@ def translate(text, backend="deepl"):
     assert backend in ["deepl", "baidu"]
     if backend == "deepl":
         import requests
-
         url = "http://localhost:{}/translate".format(port)
         data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
         r = requests.post(url, json=data)
@@ -150,7 +149,8 @@ def translate(text, backend="deepl"):
 
 
 if __name__ == "__main__":
-    translate('hello world')
+    result = translate('hello world')
+    print("RESULT:", result)
     exit()
     for test in tests:
         # we need to demostrate this workflow.
