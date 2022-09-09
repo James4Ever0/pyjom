@@ -64,6 +64,10 @@ def metaTranslator(text, backend='baidu'):
         elif backend == 'deepl':
             translator = deeplTranslator
         result = translator(text)
+        if result:
+            return result
+        else:
+            
 @app.get("/")
 def read_root():
     return "unified translator hooked on some clash server"
