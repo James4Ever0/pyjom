@@ -151,4 +151,6 @@ if __name__ == "__main__":
         else:
             if needToTranslate:
                 for elem in text:
-                    
+                    foreignText = elem
+                    nativeText = translate(foreignText)
+                newLyricArray.append((foreignText, nativeText))
