@@ -137,6 +137,8 @@ def getLyricsLanguageType(test):
 def translate(text, backend='deepl'):
     assert backend in ['deepl','baidu']
     if backend == 'deepl':
+        import requests
+        
 
 if __name__ == "__main__":
     for test in tests:
