@@ -7,10 +7,15 @@ import os
 os.environ['http_proxy'] = ''
 os.environ['https_proxy'] = ''
 
+import string
+
+englishPuncturals = string.puncturals
+
 def removeChinesePunctuals(text):
     return processedText
 
 def removeLeadingAndTrailingPunctuals(text):
+    return processedText
 
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
