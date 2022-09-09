@@ -141,3 +141,6 @@ def updateClashYaml(clashYamlPath = 'Clash3.yaml', control_port = 9911):
 
 # this can act as a server as well?
 # simplicity in mind.
+import schedule
+
+schedule.every(5).
