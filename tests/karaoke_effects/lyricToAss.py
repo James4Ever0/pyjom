@@ -7,4 +7,5 @@ def lrcToAnimatedAss(musicPath, lrcPath): # will be moved to lyrictoolbox, and m
 if __name__ == "__main__":
     musicPath= "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
     lrcPath = '/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc'
-    lrcToAnimatedAss(musicPath, lrcPath)
+    assPath = ''
+    lrcToAnimatedAss(musicPath, lrcPath,assPath)
