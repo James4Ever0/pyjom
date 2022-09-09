@@ -213,7 +213,7 @@ def waitForServerUp(port, message, timeout=1):
 
 @app.get("/")
 def read_root():
-    
+    waitForServerUp(,) # probe the clash updator
     return "unified translator hooked on some clash server"
 
 
