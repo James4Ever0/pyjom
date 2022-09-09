@@ -26,3 +26,9 @@ app = FastAPI()
 
 @app.get("/translate")
 def read_item(backend: str, text: str):
+    try:
+        result = 
+    except:
+        import traceback
+        traceback.print_exc()
+        print("ERROR ANALYSING TEXT LANGID %s" % text)
