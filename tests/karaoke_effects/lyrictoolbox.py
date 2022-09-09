@@ -10,6 +10,7 @@ os.environ['https_proxy'] = ''
 import string
 
 englishPuncturals = string.punctuation
+chinesePuncturals = 
 
 def removeChinesePunctuals(text):
     return processedText
