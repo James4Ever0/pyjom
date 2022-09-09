@@ -151,7 +151,8 @@ def translate(text, backend="deepl"):
         if code == 200:
             return response['data']
         else:
-            print("DEEPL RESPONSE ERROR.")
+            print("DEEPL RESPONSE ERROR. PLEASE CHECK")
+            print(response)
         # print(response)
 
 
