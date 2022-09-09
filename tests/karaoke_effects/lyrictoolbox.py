@@ -27,7 +27,7 @@ def lrcToTextArray(musicPath, lrcPath):
 
     subs = pylrc.parse(lrc_string)
 
-    lyricDurationThresholds = (0.5, 4)
+    lyricDurationThresholds = (0.3, 4)
 
     textArray = []
     for sub in subs:
