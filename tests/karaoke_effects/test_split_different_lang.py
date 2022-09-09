@@ -134,6 +134,9 @@ def getLyricsLanguageType(test):
             print('need to translate')
     return isBilingual, needToTranslate
 
+def translate(text, backend='deepl'):
+
+
 if __name__ == "__main__":
     for test in tests:
         # we need to demostrate this workflow.
