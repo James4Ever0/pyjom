@@ -42,7 +42,7 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
     data = json.loads(r.text)
     proxy_names = jsonLocate(data,location=location)
     if proxy_names == None:
-        
+        print("SOMEHOW WE FAILED TO FETCH THE PROXY LIST")
         return []
     def get_delay(name):
         url = "{}{}/delay?timeout={}&url={}".format(test_url, name, timeout, urltest)
