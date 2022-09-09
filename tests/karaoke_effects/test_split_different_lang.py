@@ -149,4 +149,5 @@ if __name__ == "__main__":
                     nativeText = translate(foreignText)
                 newLyricArray.append((foreignText, nativeText))
         else:
-            #
+            if needToTranslate:
+                
