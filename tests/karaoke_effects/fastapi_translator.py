@@ -241,7 +241,8 @@ def read_item(backend: str, text: str):
     else:
         if len(text)<30:
             if text in translatedDict.keys():
-                return translatedDict[text]
-        result = metaTranslator(text, backend=backend)
-        if len(result)<30 and len(text)<30:
+                result =  translatedDict[text]
+        else:
+            result = metaTranslator(text, backend=backend)
+            if len(result)<30 and len(text)<30:
     return {"code": code, "result": result}
