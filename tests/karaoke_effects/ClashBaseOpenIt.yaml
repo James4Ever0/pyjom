@@ -52,7 +52,7 @@ dns:
 external-controller: 127.0.0.1:9911
 log-level: debug
 mode: rule
-port: 7890
+port: 8381
 proxies:
 - name: CZ 13
   password: 5y8y3CwxRVYhyfSY
