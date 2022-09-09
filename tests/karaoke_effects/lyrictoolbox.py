@@ -254,6 +254,7 @@ waitForServerUp(8978, "say hello to jpype fastapi server")
 
 def getTextListTranslated(test):
     newLyricArray = []
+    import progressbar
     isBilingual, needToTranslate = getLyricsLanguageType(test)
     if isBilingual:
         for elem in test:
