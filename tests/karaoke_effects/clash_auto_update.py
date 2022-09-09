@@ -166,8 +166,9 @@ app = Flask(__name__)
 
 @app.route('/refreshProxy', methods=['GET'])
 
+
 @app.route('/refreshProxy', methods=['GET'])
-def hello_world():
+def refreshProxyAPI():
     schedule.run_pending()
     proxy_names = find_proxy_names()
     if proxy_names == []:
