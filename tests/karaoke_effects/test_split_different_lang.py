@@ -219,7 +219,7 @@ if __name__ == "__main__":
                     newLyricArray.append((foreignText, nativeText))
                 else:
                     newLyricArray = test.copy()
-    print("_________RESULT_________")
-    for elem in newLyricArray:
-        print(elem)
-    print("_________RESULT_________")
+        print("_________RESULT_________")
+        for elem in newLyricArray:
+            print(elem)
+        print("_________RESULT_________")
