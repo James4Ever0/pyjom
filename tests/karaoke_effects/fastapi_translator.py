@@ -82,8 +82,7 @@ workingProxies = set()
 
 def checkWorkingProxies():
     useProxy(False)
-
-    url = "http://8677"
+    url = "http://127.0.0.1:8677/checkProxy"
 
 def changeProxy(useDirect=False):
     useProxy(False)
