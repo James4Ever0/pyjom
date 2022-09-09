@@ -23,4 +23,5 @@ windows:
     # clash auto updates
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/karaoke_effects
+        - sleep 3 
         - python3 clash_auto_update.py
