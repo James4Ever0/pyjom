@@ -57,13 +57,13 @@ def changeProxy():
 
 def metaTranslator(text, backend='baidu'):
     assert backend in ['baidu','deepl']
-    translator = None
+    # translator = None
+    if backend == 'baidu':
+        translator = baiduTranslator
+    elif backend == 'deepl':
+        translator = deeplTranslator
     while True:
         changeProxy()
-        if backend == 'baidu':
-            translator = baiduTranslator
-        elif backend == 'deepl':
-            translator = deeplTranslator
         result = translator(text)
         if result:
             return result
