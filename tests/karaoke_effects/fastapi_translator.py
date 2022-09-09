@@ -80,7 +80,7 @@ def metaTranslator(text, backend='baidu'):
     elif backend == 'deepl':
         translator = deeplTranslator
     while True:
-        changeProxy(useDirect = useDirect)
+        changeProxy(useDirect = getUseDirect)
         result = translator(text)
         if result:
             return result
