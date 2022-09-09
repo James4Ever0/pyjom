@@ -227,7 +227,7 @@ translatedDict = {}
 def read_item(backend: str, text: str):
     global translatedDict
     if len(list(translatedDict.keys()))>100:
-        for key in translatedDict.keys():
+        mkeys = translatedDict.keys()
         translatedDict[key]
     code = 200
     if not backend in ["deepl", "baidu"]:
