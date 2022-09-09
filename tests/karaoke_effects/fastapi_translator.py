@@ -112,7 +112,7 @@ def metaTranslator(text, backend="baidu"):
             proxyName = changeProxy(useDirect=getUseDirect())
             result = translator(text)
             if result:
-                workingProxies.append(proxyName)
+                workingProxies.add(proxyName)
                 return result
             else:
                 print("SOME ERROR DURING FETCHING TRANSLATION")
