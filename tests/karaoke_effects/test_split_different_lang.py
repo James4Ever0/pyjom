@@ -62,6 +62,7 @@ def pyjniusLinguaDetectLanguageLabel(text):
     else:
         print("ERROR WHEN FETCHING LANGUAGE ID")
         print(response)
+        breakpoint()
 nativeLangFlagStandard = "CHINESE"
 
 # need to make this thing totally bilingual if we have to.
