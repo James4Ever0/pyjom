@@ -165,8 +165,9 @@ port = 8677
 
 app = Flask(__name__)
 
-@app.route('/useDirect', methods=['GET'])
-def checkProxyAPI():
+@app.route('/checkProxy', methods=['GET'])
+def checkProxyAPI(proxy: str):
+    return {""}
 
 @app.route('/useDirect', methods=['GET'])
 def useDirectAPI():
