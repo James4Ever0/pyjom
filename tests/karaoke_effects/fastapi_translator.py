@@ -90,7 +90,8 @@ def changeProxy(useDirect=False):
     print("PATH", path)
     if path == "refreshProxy":
         import random
-        prob = random.random() < len()
+        prob = random.random() < len(workingProxies)*0.1
+        if prob:
             params = {'suggest':suggestedProxy}
         else:
             params = {}
