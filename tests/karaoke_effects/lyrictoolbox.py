@@ -250,6 +250,7 @@ def waitForServerUp(port, message, timeout=1):
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
 waitForServerUp(8978, "say hello to jpype fastapi server")
+waitForServerUp(8677, "clash update controller")  # probe the clash updator
 
 
 def getTextListTranslated(test):
