@@ -283,7 +283,6 @@ def getTextListTranslated(test):
     return newLyricArray
 
 def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
-    from pyonfx import *
     import random
     import math
     io = Ass("/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass", path_output="starJumping.ass")
@@ -709,6 +708,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
 # do the preview later?
 # # io.open_aegisub()
 def previewAssWithVideo(sample_video,assPath):
-    from pyonfx import Ass
+    # from pyonfx import Ass
     io = Ass(assPath)
     io.open_mpv(video_path=sample_video) # ain't see shit...
