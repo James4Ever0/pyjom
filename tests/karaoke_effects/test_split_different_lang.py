@@ -142,3 +142,8 @@ if __name__ == "__main__":
         if isBiligual:
             for elem in test:
                 text, flag = lastSpaceSpliter(elem)
+                if flag:# splited!
+                    foreignText, nativeText = text
+                else:
+                    foreignText = text
+                    nativeText = 
