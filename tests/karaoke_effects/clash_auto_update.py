@@ -170,7 +170,7 @@ def checkProxyExists(proxy):
 from typing import Union
 
 @app.route('/checkProxy', methods=['GET'])
-def checkProxyAPI(proxy: str):
+def checkProxyAPI(proxy: Union[str, None]):
     exists = checkProxyExists(proxy)
     return {"exists": exists}
 
