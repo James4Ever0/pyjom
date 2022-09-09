@@ -649,14 +649,14 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         else:
             print("Invalid translatedTuple: %s" % str(translatedTuple))
             breakpoint()
-        elem['text'] = 
+        elem['text'] = sourceText
         lineMod = lineModSource.copy()
         lineMod.start_time = max(0,elem['start']*1000 - shiftAdjust)
         lineMod.end_time = elem['end']*1000 - shiftAdjust
         lineMod.duration = lineMod.end_time  - lineMod.start_time
         lineMod.text = elem['text'].strip().replace("  ","")
         # print(lineMod)
-        lineMod.words = lineMod.text.split(" ")
+        lineMod.words = getJiebaCuttedText (lineMod.text)
         # lineMod.syls = 
         # print(dir(lineMod))
         # breakpoint()
