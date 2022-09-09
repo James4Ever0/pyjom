@@ -48,6 +48,9 @@ def getJiebaCuttedText(text):
     textList = [elem for elem in textList if len(elem) > 0]
     return textList
 
+        from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
+        nativeLangFlagStandard = "CHINESE"
+
 for test in tests:
     isBilingual=False
     print("_______________TEST SUBJECT_______________")
@@ -94,8 +97,7 @@ for test in tests:
         # foreignLangFlag = langid.classify(foreignLangString)
         # nativeLangFlag = langid.classify(nativeLangString)
 
-        from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
-        nativeLangFlagStandard = "CHINESE"
+
         foreignLangFlag = (pyjniusLinguaDetectLanguageLabel(foreignLangString), 1)
         nativeLangFlag = (pyjniusLinguaDetectLanguageLabel(nativeLangString), 1)
         # there's no probability out there! WTF?
