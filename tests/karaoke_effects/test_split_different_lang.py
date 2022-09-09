@@ -139,7 +139,7 @@ if __name__ == "__main__":
         # we need to demostrate this workflow.
         newLyricArray = []
         isBilingual, needToTranslate = getLyricsLanguageType(test)
-        if isBiligual:
+        if isBilingual:
             for elem in test:
                 text, flag = lastSpaceSpliter(elem)
                 if flag:# splited!
@@ -150,7 +150,7 @@ if __name__ == "__main__":
                 newLyricArray.append((foreignText, nativeText))
         else:
             if needToTranslate:
-                for elem in text:
+                for elem in test:
                     foreignText = elem
                     nativeText = translate(foreignText)
                     newLyricArray.append((foreignText, nativeText))
