@@ -101,4 +101,5 @@ def getClashYaml():
     import requests
     url = ""
     r = requests.get(url)
-    r.text
+    with open(clashYamlPath, 'w+') as f:
+        r.text
