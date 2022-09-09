@@ -42,9 +42,13 @@ language_recognition_model = hub.Module(name="baidu_language_recognition")
 def baiduTranslator(text, sleep=1):  # target language must be chinese.
     useProxy(False)
     import filelock
-    lock = filelock.FileLock("/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock")
+
+    lock = filelock.FileLock(
+        "/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock"
+    )
     with lock:
         import time
+
         time.sleep(sleep)
         try:
             language_code = language_recognition_model.recognize(text)
@@ -64,13 +68,15 @@ def baiduTranslator(text, sleep=1):  # target language must be chinese.
             return None
 
 
-def deeplTranslator(text, sleep=2, timeout = 3):
+def deeplTranslator(text, sleep=2, timeout=3):
     useProxy(False)
     import requests
     import time
     import filelock
 
-    lock = filelock.FileLock("/root/Desktop/works/pyjom/tests/karaoke_effects/deepl_translator.lock")
+    lock = filelock.FileLock(
+        "/root/Desktop/works/pyjom/tests/karaoke_effects/deepl_translator.lock"
+    )
     with lock:
         time.sleep(sleep)
         port = 8281
@@ -144,7 +150,7 @@ def changeProxy(useDirect=False, suggestSingleElemProbability=0.1):
         # using suggested proxy here.
         print("USING SUGGESTED PROXY")
     else:
-        proxyName = proxyName['text']
+        proxyName = proxyName["text"]
     print("PROXY REFRESHED")
     return proxyName
 
@@ -187,7 +193,6 @@ def metaTranslator(text, backend="baidu"):
             print("ERROR FETCHING TRANSLATION")
 
 
-
 def waitForServerUp(port, message, timeout=1):
     import requests
 
@@ -213,7 +218,7 @@ def waitForServerUp(port, message, timeout=1):
 
 @app.get("/")
 def read_root():
-    waitForServerUp(,'clash update controller') # probe the clash updator
+    waitForServerUp(8677, "clash update controller")  # probe the clash updator
     return "unified translator hooked on some clash server"
 
 
