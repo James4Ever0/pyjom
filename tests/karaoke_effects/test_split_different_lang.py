@@ -1,5 +1,4 @@
 # example of TDD.
-from gettext import gettext
 import os
 
 # os.environ['http_proxy'] = ""
