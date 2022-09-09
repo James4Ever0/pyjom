@@ -17,8 +17,9 @@ windows:
         - cd /root/Desktop/works/pyjom/tests/deepl_free_translator/deepl-api-rs
         - env ROCKET_PORT=8281 http_proxy=http://localhost:8381 https_proxy=http://localhost:8381 ./executable_deepl
     # for clash
-      - cd /root/Desktop/works/pyjom/tests/deepl_free_translator/deepl-api-rs
-      - bash launch_clash.sh # clash command
+      - shell_command:
+        - cd /root/Desktop/works/pyjom/tests/deepl_free_translator/deepl-api-rs
+        - bash launch_clash.sh # clash command
       - shell_command:
         - bash launch_single_server.sh dual_config_nanjing.json nanjing # launch main scraper after proxy ready
         - tmux kill-session -t vps_session_unified_nanjing # important!
