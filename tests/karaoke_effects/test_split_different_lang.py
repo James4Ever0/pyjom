@@ -153,6 +153,10 @@ def translate(text, backend="random"): # deepl is shit. fucking shit.
     assert backend in backendList
     translatedText = text
     result = mTranslate(text, backend)
+    print("TRANSLATOR RESULT:", result)
+    if code == 200:
+        translatedText = result['result']
+    
     return translatedText
 
 
