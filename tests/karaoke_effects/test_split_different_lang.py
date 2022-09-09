@@ -118,4 +118,5 @@ for test in tests:
     # what you are going to do with this shit?
     if not isBilingual:
         print('checking main language')
-        for elem in test]
+        lyricString = " ".join(test)
+        mainLanguage = 
