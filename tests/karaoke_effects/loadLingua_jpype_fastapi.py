@@ -24,3 +24,5 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+@app.get("/translate")
+def read_item(backend: str, text: str):
