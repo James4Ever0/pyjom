@@ -21,10 +21,10 @@ def removeChinesePunctuals(text):
 def removeLeadingAndTrailingPunctuals(text):
     for elem in englishPuncturals:
         if text.startswith(elem):
-        if elem == ".": pass
-
             text = text[1:]
-        if text.endswith(elem): text = text[:-1]
+        if text.endswith(elem):
+            if elem == ".": continue
+            text = text[:-1]
     return text
 
 def getMusicDuration(musicPath):
