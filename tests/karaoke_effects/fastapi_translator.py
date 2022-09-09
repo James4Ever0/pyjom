@@ -49,9 +49,13 @@ def deeplTranslator(text):
         # breakpoint()
         return None
 
+def changeProxy():
+    import requests
+    requests.get("http://")
+
 def metaTranslator(test, backend='baidu'):
     assert backend in ['baidu','deepl']
-    u
+    changeProxy()
     if backend == 'baidu':
         translator = baiduTranslator
     elif backend == 'deepl':
