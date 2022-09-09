@@ -78,6 +78,7 @@ def deeplTranslator(text):
         return None
 
 
+
 def changeProxy(useDirect=False):
     useProxy(False)
     import requests
