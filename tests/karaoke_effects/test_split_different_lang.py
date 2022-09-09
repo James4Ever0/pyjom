@@ -146,7 +146,7 @@ def translate(text, backend="random"): # deepl is shit. fucking shit.
     import requests
     url = 'http://localhost:8974/translate'
     mTranslate = lambda text, backend:
-    requests.get()
+    requests.get(url, params = {'backend': backend, 'text': text}).
     backendList =  ["deepl", "baidu"]
     if backend  == 'random':
         import random
