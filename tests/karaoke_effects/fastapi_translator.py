@@ -50,7 +50,8 @@ def deeplTranslator(text):
         return None
 
 def metaTranslator(test, backend='baidu'):
-    
+    if backend == 'baidu':
+        translator = 
 @app.get("/")
 def read_root():
     return "unified translator hooked on some clash server"
