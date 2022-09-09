@@ -675,7 +675,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         lineMod.duration = lineMod.end_time  - lineMod.start_time
         lineMod.text = elem['text'].strip().replace("  ","")
         # print(lineMod)
-        def addSylToLine(lineMod, translateShift=0,charShift = 30,CENTER = 1600/2, mSylYShift = 600, mTop=25,mMiddle = 49.0, mBottom =73.0):
+        def addSylToLine(lineMod, translateShift=0,charShift = 25,CENTER = 1600/2, mSylYShift = 600, mTop=25,mMiddle = 49.0, mBottom =73.0):
             if lineMod.text.count(" ") >=1:
                 lineMod.words = lineMod.text.split(' ')
             else:
@@ -718,7 +718,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             # double check here! fucker
             startSyl = sylList[0]
             startLine = startSyl.center - startSyl.width/2
-            endSyl = sylList[1]
+            endSyl = sylList[-1]
             endLine = endSyl.center + endSyl.width/2
             currentCenter = endLine-startLine
             centerShift = (CENTER-currentCenter)
