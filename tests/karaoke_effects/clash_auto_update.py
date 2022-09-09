@@ -85,7 +85,7 @@ def refineClashYaml():
     data_dump =  pyYamlToGoYaml(data_dump)
 
 
-    with open("Clash3.yaml", "w") as f: f.write(data_dump)
+    with open(clashYamlPath, "w") as f: f.write(data_dump)
 
     """
     import requests
