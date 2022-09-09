@@ -6,6 +6,7 @@ def lrcToAnimatedAss(musicPath, lrcPath, assPath): # will be moved to lyrictoolb
     textArray = lrcToTextArray(musicPath, lrcPath)
     textList = [elem['text'] for elem in textArray]
     translatedList = getTextListTranslated(textList)
+    # so we pass both arguments to the ass generator.
 
 
 if __name__ == "__main__":
