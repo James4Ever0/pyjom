@@ -39,7 +39,7 @@ language_translation_model = hub.Module(name="baidu_translate")
 language_recognition_model = hub.Module(name="baidu_language_recognition")
 
 
-def baiduTranslator(text):  # target language must be chinese.
+def baiduTranslator(text, sleep):  # target language must be chinese.
     useProxy(True)
     try:
         language_code = language_recognition_model.recognize(text)
@@ -62,6 +62,8 @@ def baiduTranslator(text):  # target language must be chinese.
 def deeplTranslator(text, sleep=2):
     useProxy(False)
     import requests
+    import time
+    time.sleep(sleep)
 
     port = 8281
     # env ROCKET_PORT=8281 ./executable_deepl
