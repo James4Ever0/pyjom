@@ -67,7 +67,8 @@ def deeplTranslator(text, sleep=2, timeout = 3):
     import time
     import filelock
 
-    with lock:    
+    lock = filelock.F
+    with lock:
         time.sleep(sleep)
         port = 8281
         # env ROCKET_PORT=8281 ./executable_deepl
