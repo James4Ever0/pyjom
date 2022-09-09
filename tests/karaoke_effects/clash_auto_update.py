@@ -97,10 +97,11 @@ def refineClashYaml(clashYamlPath = "Clash3.yaml"):
     assert r.status_code == 204
     """
 
-def getClashYaml():
+def getClashYaml(clashYamlPath = 'Clash3.yaml'):
     import requests
     url = ""
     r = requests.get(url)
     with open(clashYamlPath, 'w+') as f:
         f.write(r.text)
-    print("FETCHING CLASH DONE")
+    print("FETCHING CLASH YAML DONE.")
+    print("SAVED AT %s" % clashYamlPath)
