@@ -715,8 +715,8 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             lineMod.syls = sylList
         # print(lineMod.syls)
         # breakpoint()
-        if 
-        addSylToLine(lineMod)
+        if translatedText == None:
+            addSylToLine(lineMod, charShift = 10)
         # pyonfx.ass_core.Syllable
         source = lineMod.copy()
         target = lineMod.copy()
