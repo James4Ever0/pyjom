@@ -166,7 +166,7 @@ def translate(text, backend="random"): # deepl is shit. fucking shit.
     translatedText = text
     if backend == "deepl":
     elif backend == 'baidu':
-        return translatedText
+    return translatedText
 
 
 if __name__ == "__main__":
