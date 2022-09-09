@@ -158,4 +158,7 @@ updateClashYaml()
 
 from flask import Flask, request
 
-port = 
+port = 8677
+
+if __name__ == "__main__":
+    
