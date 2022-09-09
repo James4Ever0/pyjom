@@ -282,3 +282,6 @@ def getTextListTranslated(test):
             else:
                 newLyricArray = [(elem,) for elem in test.copy()]
     return newLyricArray
+
+def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
+    
