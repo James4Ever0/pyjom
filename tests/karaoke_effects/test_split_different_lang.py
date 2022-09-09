@@ -157,9 +157,7 @@ def translate(text, backend="deepl"):
         # print(response)
     elif backend == 'baidu':
         # use paddlehub.
-        language_translation_model = hub.Module(name='baidu_translate')
-        language_recognition_model = hub.Module(name='baidu_language_recognition')
-        
+
         # where is the damn code?
 
 
