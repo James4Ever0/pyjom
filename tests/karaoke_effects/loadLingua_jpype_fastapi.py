@@ -32,6 +32,7 @@ app = FastAPI()
 @app.get("/")
 def server_hello():
     return "say hello to jpype fastapi server"
+
 @app.get("/langid")
 def read_item(text: str):
     code = 200
