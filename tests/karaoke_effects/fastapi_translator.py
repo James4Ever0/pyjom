@@ -1,4 +1,6 @@
-from typing import Union
+import os
+
+os.environ['http_proxy'] = ""
 
 from fastapi import FastAPI
 
@@ -24,22 +26,22 @@ def baiduTranslator(text): # target language must be chinese.
         return None
 
 def deeplTranslator(text):
-        import requests
-        port = 8281
-        # env ROCKET_PORT=8281 ./executable_deepl
-        url = "http://localhost:{}/translate".format(port)
-        data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
-        r = requests.post(url, json=data)
-        response = r.json()
-        code = response['code']
-        if code == 200:
-            translatedText =  response['data']
-            return translatedText
-        else:
-            print("DEEPL RESPONSE ERROR. PLEASE CHECK")
-            print(response)
-            # breakpoint()
-            return None
+    import requests
+    port = 8281
+    # env ROCKET_PORT=8281 ./executable_deepl
+    url = "http://localhost:{}/translate".format(port)
+    data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
+    r = requests.post(url, json=data)
+    response = r.json()
+    code = response['code']
+    if code == 200:
+        translatedText =  response['data']
+        return translatedText
+    else:
+        print("DEEPL RESPONSE ERROR. PLEASE CHECK")
+        print(response)
+        # breakpoint()
+        return None
 
 @app.get("/")
 def read_root():
