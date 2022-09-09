@@ -59,7 +59,7 @@ def baiduTranslator(text):  # target language must be chinese.
         return None
 
 
-def deeplTranslator(text):
+def deeplTranslator(text, sleep=2):
     useProxy(False)
     import requests
 
