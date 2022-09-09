@@ -79,8 +79,8 @@ def deeplTranslator(text):
 
 
 def changeProxy(useDirect=False):
+    useProxy(False)
     import requests
-
     if useDirect:
         path = "useDirect"
     else:
