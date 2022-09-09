@@ -19,16 +19,4 @@ def getLinguaDetectedLanguageLabel(sample):
     # but we can convert it into string.
     strResult = str(result)
     return strResult
-if __name__ == "__main__":
-    sample = 'hello world'
-    # sample = 'lina你吃早饭了没有'
-
-    result = linguaDetector.detectLanguageOf(sample)
-    print(result, type(result)) # <java class 'com.github.pemistahl.lingua.api.Language'>
-    # but we can convert it into string.
-    strResult = str(result)
-    print(strResult, type(strResult))
-    import math
-
-    print("CALLING MATH: %d" % math.sqrt(4))
 shutdownJVM()
