@@ -736,7 +736,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             startLine = startSyl.center - startSyl.width/2
             endSyl = sylList[-1]
             endLine = endSyl.center + endSyl.width/2
-            currentCenter = endLine-startLine
+            currentCenter = (endLine+startLine)/2
             print(startLine, endLine)
             print('adjusted center:', currentCenter)
 
