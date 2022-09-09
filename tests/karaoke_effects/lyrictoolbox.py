@@ -723,7 +723,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         if translatedText:
             lineMod2 = lineMod.copy()
             lineMod2.text = translatedText
-            translateShift = -200
+            translateShift = 100
             addSylToLine(lineMod2,translateShift=translateShift)
             source = lineMod2.copy()
             target = lineMod2.copy()
