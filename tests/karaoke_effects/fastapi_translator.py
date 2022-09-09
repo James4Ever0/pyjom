@@ -174,6 +174,7 @@ def metaTranslator(text, backend="baidu"):
     while True:
         try:
             if not firstTime:
+                getUseDirect = 
                 proxyName = changeProxy(useDirect=getUseDirect())
             else:
                 firstTime = False
