@@ -143,6 +143,7 @@ def getLyricsLanguageType(test):
 def translate(text, backend="random"): # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
+    
     backendList =  ["deepl", "baidu"]
     if backend  == 'random':
         import random
