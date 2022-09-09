@@ -188,6 +188,7 @@ def refreshProxyAPI():
     suggest = None
     if 'suggest' in request.args.keys():
         suggest = request.args['suggest']
+        print("SUGGESTED PROXY:", suggest)
 
     schedule.run_pending()
     if suggest:
