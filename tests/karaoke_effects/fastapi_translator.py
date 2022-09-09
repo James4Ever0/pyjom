@@ -78,6 +78,7 @@ def changeProxy(useDirect=False):
         path = "useDirect"
     else:
         path = "refreshProxy"
+    print("PATH", path)
     r = requests.get("http://localhost:8677/{}".format(path))
     print("RESPONSE:", r.text)
     print("PROXY REFRESHED")
