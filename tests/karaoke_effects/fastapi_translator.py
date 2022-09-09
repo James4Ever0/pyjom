@@ -65,8 +65,8 @@ def deeplTranslator(text, sleep=2, timeout = 3):
     useProxy(False)
     import requests
     import time
+    
     time.sleep(sleep)
-
     port = 8281
     # env ROCKET_PORT=8281 ./executable_deepl
     url = "http://127.0.0.1:{}/translate".format(port)
