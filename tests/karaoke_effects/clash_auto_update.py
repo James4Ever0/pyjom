@@ -154,3 +154,5 @@ def updateClashYaml(clashYamlPath = 'Clash3.yaml', control_port = 9911):
 import schedule
 
 schedule.every(30).minutes.do(updateClashYaml)
+updateClashYaml()
+
