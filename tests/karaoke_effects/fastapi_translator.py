@@ -157,6 +157,7 @@ def metaTranslator(text, backend="baidu"):
         # getUseDirect = lambda: random.random() > 0.7
     elif backend == "deepl":
         translator = deeplTranslator
+    proxyName = None
     while True:
         try:
             proxyName = changeProxy(useDirect=getUseDirect())
