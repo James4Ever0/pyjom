@@ -656,7 +656,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         lineMod.duration = lineMod.end_time  - lineMod.start_time
         lineMod.text = elem['text'].strip().replace("  ","")
         # print(lineMod)
-        lineMod.words = getJiebaCuttedText (lineMod.text)
+        lineMod.words = getJiebaCuttedText(lineMod.text)
         # lineMod.syls = 
         # print(dir(lineMod))
         # breakpoint()
