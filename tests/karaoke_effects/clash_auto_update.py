@@ -164,12 +164,13 @@ app = Flask(__name__)
 
 @app.route('/refreshProxy', methods=['GET'])
 def hello_world():
+    schedule.run_pending()
     proxy_names = find_proxy_names()
     if proxy_names == []:
         return 'failed to find a proxy'
     import random
     proxy_name = random.choice(proxy_names)
-    setClashProxy()
+    setClashProxy(proxy_name)
     return 'refresh proxy to %s' % proxy_name
 
 if __name__ == "__main__":
