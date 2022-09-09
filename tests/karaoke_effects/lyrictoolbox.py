@@ -707,7 +707,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         kanji(source, target)
         # else:
         #     sub(line, line.copy())
-
     io.save()
 # do the preview later?
 # # io.open_aegisub()
