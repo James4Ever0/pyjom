@@ -32,7 +32,7 @@ def jsonLocate(jsonObj,location=[]):
         print("KEY %s DOES NOT EXIST!", ".".join(location))
         return None
 
-def find_proxy_names(te):
+def find_proxy_names(test_url,location):
     import requests
     r = requests.get(test_url)
     import json
@@ -46,6 +46,7 @@ def find_proxy_names(te):
 
 ## FIND DELAY ##
 def find_tested_proxy_names(timeout=3000, urltest="https://m.tujia.com", test_url = "http://localhost:9911/proxies/", location = ["proxies","✋ 手动选择","all"], forbidden_names = ["DIRECT","REJECT","GLOBAL"]):
+    
 
     def get_delay(name):
         url = "{}{}/delay?timeout={}&url={}".format(test_url, name, timeout, urltest)
