@@ -35,7 +35,7 @@ def jsonLocate(jsonObj,location=[]):
         return None
 
 ## FIND DELAY ##
-def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "http://localhost:9090/proxies/", location = ["proxies","✋ 手动选择","all"], forbidden_names = ["DIRECT","REJECT","GLOBAL"]):
+def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "http://localhost:9911/proxies/", location = ["proxies","✋ 手动选择","all"], forbidden_names = ["DIRECT","REJECT","GLOBAL"]):
     import requests
     r = requests.get(test_url)
     import json
