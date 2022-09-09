@@ -162,7 +162,7 @@ def translate(text, backend="baidu", delay = 2): # deepl is shit. fucking shit.
     import time
     time.sleep(delay)
     assert backend in ["deepl", "baidu"]
-    translatedText = ""
+    translatedText = text
     if backend == "deepl":
         import requests
         port = 8281
@@ -173,7 +173,7 @@ def translate(text, backend="baidu", delay = 2): # deepl is shit. fucking shit.
         response = r.json()
         code = response['code']
         if code == 200:
-            return response['data']
+            translatedText =  response['data']
         else:
             print("DEEPL RESPONSE ERROR. PLEASE CHECK")
             print(response)
@@ -186,9 +186,9 @@ def translate(text, backend="baidu", delay = 2): # deepl is shit. fucking shit.
             language_code = language_recognition_model.recognize(text)
             if language_code != 'zh':
                 text_prompts = language_translation_model.translate(text, language_code, 'zh')
-                return text_prompts
+                translatedText =  text_prompts
             else:
-                return text
+                translatedText =  text
         except:
             import traceback
             traceback.print_exc()
