@@ -242,7 +242,7 @@ def waitForServerUp(port, message, timeout=1):
             import traceback
 
             traceback.print_exc()
-            print("SERVER AT PORT %d MIGHT NOT BE UP")
+            print("SERVER AT PORT %d MIGHT NOT BE UP" % port)
             print("EXPECTED MESSAGE:", [message])
             import time
 
