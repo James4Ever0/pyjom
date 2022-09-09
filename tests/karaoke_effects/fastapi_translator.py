@@ -67,7 +67,7 @@ def deeplTranslator(text, sleep=2, timeout = 3):
     import time
     import filelock
 
-    lock = filelock.F
+    lock = filelock.FileLock("high_ground.txt.lock")
     with lock:
         time.sleep(sleep)
         port = 8281
