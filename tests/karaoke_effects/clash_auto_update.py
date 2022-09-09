@@ -172,6 +172,7 @@ def checkProxyExists(proxy):
 @app.route('/checkProxy', methods=['GET'])
 def checkProxyAPI():
     proxy = request.args['proxy']
+    print("CHECKING PROXY:", proxy)
     exists = checkProxyExists(proxy)
     return {"exists": exists}
 
