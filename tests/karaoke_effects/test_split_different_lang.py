@@ -194,7 +194,8 @@ def translate(text, backend="baidu", delay = 2): # deepl is shit. fucking shit.
             traceback.print_exc()
             print("ERROR WHEN CALLING BAIDU TRANSLATE")
             breakpoint()
-        print("text: %s translated: %s" % (translatedText, translatedText)
+        print("text: %s translated: %s" % (text, translatedText))
+        return translatedText
 
 
 if __name__ == "__main__":
