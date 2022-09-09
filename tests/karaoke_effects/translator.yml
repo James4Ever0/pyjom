@@ -1,1 +1,24 @@
 # all online translators, with retry automatically.
+session_name: vps_session_unified_nanjing
+windows:
+  - window_name: dev window
+    layout: tiled
+    panes:
+    # for houseId_server
+      - shell_command:
+        - cd multi_city_craw
+        - python3 houseId_server.py -c nanjing
+
+    # for vps
+      - bash clash_vps_init.sh # clash command
+      - python3 vps_init.py # run vps_init.py to start proxy
+      - shell_command:
+        - bash launch_vps_single_server.sh dual_config_nanjing.json nanjing # launch main scraper after proxy ready
+         # cause the pppoe vps can expire at any time.
+      
+    
+    # for clash
+      - bash launch_clash.sh # clash command
+      - shell_command:
+        - bash launch_single_server.sh dual_config_nanjing.json nanjing # launch main scraper after proxy ready
+        - tmux kill-session -t vps_session_unified_nanjing # important!
