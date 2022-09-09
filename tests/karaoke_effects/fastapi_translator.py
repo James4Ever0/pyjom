@@ -98,7 +98,7 @@ def checkWorkingProxies():
             workingProxies.remove(proxy)
 
 
-def changeProxy(useDirect=False):
+def changeProxy(useDirect=False, suggestSingleElemProbability=0.1):
     useProxy(False)
     global workingProxies
     checkWorkingProxies()
