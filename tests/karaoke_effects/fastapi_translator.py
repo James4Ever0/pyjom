@@ -158,6 +158,7 @@ def metaTranslator(text, backend="baidu"):
     elif backend == "deepl":
         translator = deeplTranslator
     proxyName = None
+    firstTime = True
     while True:
         try:
             proxyName = changeProxy(useDirect=getUseDirect())
