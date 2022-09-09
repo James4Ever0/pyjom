@@ -30,6 +30,7 @@ def removeLeadingAndTrailingPunctuation(text):
 def removeUnnecessaryPunctuation(text):
     text = removeChinesePunctuation(text)
     text = removeLeadingAndTrailingPunctuation(text)
+    return text
 
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
@@ -318,7 +319,7 @@ def getTextListTranslated(test):
             newLyricArray = [(elem,) for elem in test.copy()]
     return newLyricArray
 
-def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdjust = 600, censor=True):
+def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdjust = 600, censor=True, puncturalRemoval=True):
     # newTextArray = [] # dummy shit. must be removed immediately.
     import random
     import math
