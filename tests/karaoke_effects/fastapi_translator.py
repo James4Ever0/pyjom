@@ -95,12 +95,13 @@ def metaTranslator(text, backend="baidu"):
     elif backend == "deepl":
         translator = deeplTranslator
     while True:
-        changeProxy(useDirect=getUseDirect())
-        result = translator(text)
-        if result:
-            return result
-        else:
-            print("SOME ERROR DURING FETCHING TRANSLATION")
+            try:
+            changeProxy(useDirect=getUseDirect())
+            result = translator(text)
+            if result:
+                return result
+            else:
+                print("SOME ERROR DURING FETCHING TRANSLATION")
 
 
 @app.get("/")
