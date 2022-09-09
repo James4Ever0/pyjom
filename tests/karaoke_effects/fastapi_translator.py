@@ -19,6 +19,9 @@ def baiduTranslator(text): # target language must be chinese.
             translatedText =  text
         return translatedText
     except:
+        import traceback
+        traceback.print_exc()
+        
         return None
 
 @app.get("/")
