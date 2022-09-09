@@ -18,7 +18,7 @@ It could look like much code for such a simple effect, but it's needed and an ea
 
 ### THIS VARIANT IS GREAT. ###
 
-from tkinter import CENTER
+# from tkinter import CENTER
 from pyonfx import *
 import random
 import math
