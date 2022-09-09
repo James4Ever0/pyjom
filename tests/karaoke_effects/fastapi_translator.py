@@ -221,6 +221,7 @@ def read_root():
     waitForServerUp(8677, "clash update controller")  # probe the clash updator
     return "unified translator hooked on some clash server"
 
+translatedDict = {}
 
 @app.get("/translate")
 def read_item(backend: str, text: str):
@@ -230,7 +231,7 @@ def read_item(backend: str, text: str):
         code = 400
         result = "INVALID BACKEND"
     else:
-        
+        if 
         if len(text)<30:
 
         result = metaTranslator(text, backend=backend)
