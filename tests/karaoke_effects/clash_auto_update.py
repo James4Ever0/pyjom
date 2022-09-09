@@ -164,7 +164,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    
+    queryArgs = request.args
+    text = 
 
 if __name__ == "__main__":
     app.run(port=port, threaded=True, use_reloader=False)
