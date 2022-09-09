@@ -24,6 +24,7 @@ import yaml
 from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
 
 def jsonLocate(jsonObj,location=[]):
+    try:
     if location!=[]:
         return jsonLocate(jsonObj[location[0]],location[1:])
     return jsonObj
