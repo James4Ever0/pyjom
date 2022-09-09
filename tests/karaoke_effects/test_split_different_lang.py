@@ -115,5 +115,5 @@ for test in tests:
             # remove all blanks in the list.
         else:
             print("NOT A BILIGUAL LYRICS FILE")
-            if nativeLangFlag[0] == nativeLangFlagStandard
     # what you are going to do with this shit?
+    if not isBilingual:
