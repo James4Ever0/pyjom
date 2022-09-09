@@ -185,7 +185,7 @@ def waitForServerUp(port, message):
             print("SERVER AT PORT %d MIGHT NOT BE UP")
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
-waitForServerUp(8978, )
+waitForServerUp(8978, "say hello to jpype fastapi server")
 
 if __name__ == "__main__":
     # result = translate('hello world')
