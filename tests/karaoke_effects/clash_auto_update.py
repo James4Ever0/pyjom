@@ -167,7 +167,8 @@ app = Flask(__name__)
 
 @app.route('/checkProxy', methods=['GET'])
 def checkProxyAPI(proxy: str):
-    return {""}
+    proxy in find_proxy_names()
+    return {"exists": exists}
 
 @app.route('/useDirect', methods=['GET'])
 def useDirectAPI():
