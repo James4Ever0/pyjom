@@ -9,7 +9,8 @@ language_translation_model = hub.Module(name='baidu_translate')
 language_recognition_model = hub.Module(name='baidu_language_recognition')
 
 
-def baiduTranslator()
+def baiduTranslator(text, target_language):
+    
 
 @app.get("/")
 def read_root():
