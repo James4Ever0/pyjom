@@ -182,7 +182,7 @@ def useDirectAPI():
 
 
 @app.route('/refreshProxy', methods=['GET'])
-def refreshProxyAPI(suggest):
+def refreshProxyAPI(suggest:[str, None]):
     schedule.run_pending()
     if suggest:
         if checkProxyExists(suggest):
