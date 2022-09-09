@@ -71,7 +71,7 @@ def refineClashYaml(clashYamlPath = "Clash3.yaml"):
     data = goYamlToPyYaml(data)
     data = yaml.safe_load(data)
 
-    data["port"] = 8281
+    data["port"] = 8381
     base_url = "127.0.0.1:9022"
     data["external-controller"]= base_url
     if 'socks-port' in data.keys(): del data["socks-port"]
