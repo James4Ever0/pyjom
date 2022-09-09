@@ -249,7 +249,8 @@ def getTextListTranslated(test):
             else:
                 foreignText = text
                 nativeText = translate(foreignText)
-            newLyricArray.append((foreignText, nativeText))
+            if foreignText != nativeText:
+                newLyricArray.append((foreignText, nativeText))
     else:
         if needToTranslate:
             for elem in test:
