@@ -7,16 +7,13 @@ windows:
     # for main translator gateway
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/karaoke_effects
-        - uvicorn main:appfastapi_translator:app --reload
-
+        - uvicorn fastapi_translator:app --reload
     # for vps
       - bash clash_vps_init.sh # clash command
       - python3 vps_init.py # run vps_init.py to start proxy
       - shell_command:
         - bash launch_vps_single_server.sh dual_config_nanjing.json nanjing # launch main scraper after proxy ready
          # cause the pppoe vps can expire at any time.
-      
-    
     # for clash
       - bash launch_clash.sh # clash command
       - shell_command:
