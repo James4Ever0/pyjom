@@ -167,6 +167,7 @@ app = Flask(__name__)
 
 def checkProxyExists(proxy):
     return proxy in find_proxy_names()
+from typing import Union
 
 @app.route('/checkProxy', methods=['GET'])
 def checkProxyAPI(proxy: str):
@@ -182,7 +183,7 @@ def useDirectAPI():
 
 
 @app.route('/refreshProxy', methods=['GET'])
-def refreshProxyAPI(suggest:[str, None]):
+def refreshProxyAPI(suggest:Union[str, None]):
     schedule.run_pending()
     if suggest:
         if checkProxyExists(suggest):
