@@ -161,9 +161,10 @@ def translate(text, backend="deepl"):
     elif backend == 'baidu':
         # use paddlehub.
         # where is the damn code?
+        try:
             language_code = language_recognition_model.recognize(text_prompts)
             if language_code != 'zh':
-                text_prompts = language_translation_model.translate(text_prompts, language_code, 'zh')
+                text_prompts = language_translation_model.translate(text, language_code, 'zh')
 
 
 if __name__ == "__main__":
