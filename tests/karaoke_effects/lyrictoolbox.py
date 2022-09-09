@@ -721,7 +721,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             startLine = startSyl.center - startSyl.width/2
             endSyl = sylList[-1]
             endLine = endSyl.center + endSyl.width/2
-            currentCenter =( endLine+startLine)/2
+            currentCenter =(endLine+startLine)/2
             # print(startLine, endLine)
             # print('current center:', currentCenter)
             centerShift = int(CENTER-currentCenter)
@@ -748,7 +748,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         #     addSylToLine(lineMod, charShift = 10)
         # else:
         addSylToLine(lineMod)
-        breakpoint()
+        # breakpoint()
         # pyonfx.ass_core.Syllable
         source = lineMod.copy()
         target = lineMod.copy()
