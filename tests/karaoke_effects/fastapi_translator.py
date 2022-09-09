@@ -1,6 +1,7 @@
 import os
 
-os.environ['http_proxy'] = ""
+os.environ['http_proxy'] = "http://127.0.0.1:{}"
+os.environ['https_proxy'] = "http://127.0.0.1:{}"
 
 from fastapi import FastAPI
 
