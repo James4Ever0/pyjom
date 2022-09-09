@@ -162,8 +162,9 @@ def metaTranslator(text, backend="baidu"):
     import random
 
     getUseDirect = lambda: False
+    backends = {"baidu":(baiduTranslator,)}
     if backend == "baidu":
-        translator = baiduTranslator
+        translator = 
         getUseDirect = lambda: True
         # let's just bet on this shit.
         # getUseDirect = lambda: random.random() > 0.7
