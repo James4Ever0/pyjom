@@ -19,5 +19,7 @@ def read_item(item_id: int, backend: str, text: str):
         code = 400
         result = 'INVALID BACKEND'
     elif backend == 'deepl':
+        result = 
     elif backend == 'baidu':
-    return {"item_id": item_id, "q": q}
+        result = 
+    return {"code": item_id, "result": result}
