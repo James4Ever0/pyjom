@@ -70,11 +70,11 @@ for test in tests:
                 foreignLang, nativeLang = text
                 foreignLangList.append(foreignLang)
                 nativeLangList.append(nativeLang)
-        nativeLangFlagStandard = "Cmn"
         foreignLangString = " ".join(foreignLangList)
         nativeLangString = " ".join(nativeLangList)
 
         # import whatlang
+        # nativeLangFlagStandard = "Cmn"
         # foreignLangFlag = whatlang.detect_language(foreignLangString)
         # nativeLangFlag = whatlang.detect_language(nativeLangString)
 
