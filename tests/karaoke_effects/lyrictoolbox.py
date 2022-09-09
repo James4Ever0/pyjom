@@ -13,12 +13,12 @@ import zhon.hanzi
 englishPuncturals = string.punctuation
 chinesePuncturals = zhon.hanzi.punctuation
 
-def removeChinesePunctuals(text):
+def removeChinesePunctuation(text):
     for elem in chinesePuncturals:
         text = text.replace(elem, "")
     return text
 
-def removeLeadingAndTrailingPunctuals(text):
+def removeLeadingAndTrailingPunctuation(text):
     for elem in englishPuncturals+chinesePuncturals:
         if text.startswith(elem):
             text = text[1:]
@@ -28,6 +28,7 @@ def removeLeadingAndTrailingPunctuals(text):
     return text
 
 def removeUnnecessaryPunctuation(text):
+    text = removeChinesePunctuation(text)
 
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
