@@ -686,10 +686,10 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
                 syl.i = index
                 syl.center = getCenter(index)
                 syl.width = getWidth(index)
-                syl.top= 25+mSylYShift
+                syl.top= 25+mSylYShift+translateShift
                 syl.inline_fx = 'm2'
-                syl.middle = 49.0+mSylYShift
-                syl.bottom = 73.0+mSylYShift
+                syl.middle = 49.0+mSylYShift+translateShift
+                syl.bottom = 73.0+mSylYShift+translateShift
                 syl.start_time = lineMod.start_time+ index*sylDuration
                 syl.end_time = syl.start_time+sylDuration
                 syl.duration = sylDuration
