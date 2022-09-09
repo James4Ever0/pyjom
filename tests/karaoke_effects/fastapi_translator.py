@@ -56,7 +56,7 @@ def deeplTranslator(text):
 
     port = 8281
     # env ROCKET_PORT=8281 ./executable_deepl
-    url = "http://localhost:{}/translate".format(port)
+    url = "http://127.0.0.1:{}/translate".format(port)
     data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
     r = requests.post(url, json=data)
     response = r.json()
@@ -79,7 +79,7 @@ def changeProxy(useDirect=False):
     else:
         path = "refreshProxy"
     print("PATH", path)
-    r = requests.get("http://localhost:8677/{}".format(path))
+    r = requests.get("http://127.0.0.1:8677/{}".format(path))
     print("RESPONSE:", r.text)
     print("PROXY REFRESHED")
 
