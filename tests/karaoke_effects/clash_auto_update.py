@@ -66,10 +66,11 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
         print(elem)
     return candidates
 
-def setClashProxy(proxyName,port = 9911):
-            selector = "GLOBAL"
+def setClashProxy(proxyName,control_port = 9911):
+    import requests
+        selector = "GLOBAL"
         try:
-            r = requests.put("http://localhost:{}/proxies/{}".format(port,selector),data=json.dumps({"name":proxy_name},ensure_ascii=False).encode())
+            r = requests.put("http://localhost:{}/proxies/{}".format(control_port,selector),data=json.dumps({"name":proxy_name},ensure_ascii=False).encode())
             assert r.status_code == 204
             # assert r.status_code = 
         except:
