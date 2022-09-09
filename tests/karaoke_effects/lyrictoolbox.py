@@ -8,7 +8,7 @@ os.environ['http_proxy'] = ''
 os.environ['https_proxy'] = ''
 
 import string
-import zhon
+import zhon.hanzi
 
 englishPuncturals = string.punctuation
 chinesePuncturals = zhon.hanzi.punctuation
