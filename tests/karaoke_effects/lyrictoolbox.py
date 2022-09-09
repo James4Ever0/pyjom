@@ -722,6 +722,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             endSyl = sylList[-1]
             endLine = endSyl.center + endSyl.width/2
             currentCenter = endLine-startLine
+            print('current center:', currentCenter)
             # centerShift = (CENTER-currentCenter)
             # for index in range(len(sylList)):
             #     sylList[index].center -= centerShift
@@ -745,6 +746,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
         romaji(source, target)
+        breakpoint()
         # else:
         #     romaji(source, target)
     io.save()
