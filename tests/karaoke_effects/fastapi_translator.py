@@ -81,10 +81,11 @@ def deeplTranslator(text):
 workingProxies = set()
 
 def checkWorkingProxies():
+    global workingProxies
     useProxy(False)
     url = "http://127.0.0.1:8677/checkProxy"
     import requests
-    for proxy in workingProxies:
+    for proxy in list(workingProxies):
         r = requests.get(url, params = {"proxy": proxy})
         response = r.json()
         if not response['exists']:
