@@ -63,8 +63,8 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
         print(elem)
     return candidates
 
-def refineClashYaml():
-    with open("Clash3.yaml","r") as f: data = f.read()
+def refineClashYaml(clashYamlPath = "Clash3.yaml"):
+    with open(clashYamlPath,"r") as f: data = f.read()
     from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
 
     import yaml
