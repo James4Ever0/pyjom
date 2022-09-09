@@ -148,7 +148,7 @@ def getLyricsLanguageType(test):
     return isBilingual, needToTranslate
 
 
-def translate(text, backend='baidu'): # deepl is shit. fucking shit.
+def translate(text, backend='random'): # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
     import requests
