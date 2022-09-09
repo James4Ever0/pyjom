@@ -91,7 +91,7 @@ def changeProxy(useDirect=False):
     if path == "refreshProxy":
         r = requests.get("http://127.0.0.1:8677/{}".format(path))
     else:
-         
+        r = requests.get("http://127.0.0.1:8677/{}".format(path))
     print("RESPONSE:", r.text)
     import parse
     proxyName = parse.parse('', r.text)
