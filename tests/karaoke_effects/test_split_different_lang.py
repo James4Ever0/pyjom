@@ -55,7 +55,8 @@ def getJiebaCuttedText(text):
 def pyjniusLinguaDetectLanguageLabel(text):
     import requests
     url = "http://localhost:{}/langid".format(8978)
-    r = requests.get(url, )
+    r = requests.get(url, params = {'text':text})
+    response = r.json()
 nativeLangFlagStandard = "CHINESE"
 
 # need to make this thing totally bilingual if we have to.
