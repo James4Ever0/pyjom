@@ -78,7 +78,7 @@ def deeplTranslator(text):
         return None
 
 
-
+workingProxies = set()
 def changeProxy(useDirect=False):
     useProxy(False)
     global workingProxies
