@@ -35,4 +35,4 @@ def read_item(backend: str, text: str):
         traceback.print_exc()
         print("ERROR ANALYSING TEXT LANGID %s" % text)
         result = "ERROR"
-        
+    return {'code':code, 'result':result}
