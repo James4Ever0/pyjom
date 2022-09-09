@@ -718,7 +718,8 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             startLine = startSyl.center - startSyl.width/2
             endSyl = sylList[1]
             endLine = endSyl.center + endSyl.width/2
-            centerShift = startLine - endLine
+            currentCenter = endLine-startLine
+            
         # print(lineMod.syls)
         # breakpoint()
         if translatedText == None:
