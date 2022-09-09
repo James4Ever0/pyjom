@@ -32,3 +32,4 @@ def read_item(backend: str, text: str):
         import traceback
         traceback.print_exc()
         print("ERROR ANALYSING TEXT LANGID %s" % text)
+        result = "ERROR"
