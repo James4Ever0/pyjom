@@ -656,7 +656,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         lineMod.duration = lineMod.end_time  - lineMod.start_time
         lineMod.text = elem['text'].strip().replace("  ","")
         # print(lineMod)
-        def addSylToLine(lineMod,shiftAdjust = 600, translateShift=0,charShift = 30,CENTER = 1600/2,  mSylYShift = 700):
+        def addSylToLine(lineMod,shiftAdjust = 600, translateShift=0,charShift = 30,CENTER = 1600/2, mSylYShift = 700):
             lineMod.words = getJiebaCuttedText(lineMod.text)
             sylList = []
             wordCount = len(lineMod.words)
@@ -685,7 +685,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
                 syl.i = index
                 syl.center = getCenter(index)
                 syl.width = getWidth(index)
-                syl.top= 25+mSylYShift+translateShift
+                syl.top= mTop+mSylYShift+translateShift
                 syl.inline_fx = 'm2'
                 syl.middle = 49.0+mSylYShift+translateShift
                 syl.bottom = 73.0+mSylYShift+translateShift
