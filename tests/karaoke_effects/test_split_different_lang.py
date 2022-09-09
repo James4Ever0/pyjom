@@ -176,9 +176,9 @@ def waitForServerUp(port, message):
         try:
             url = "http://localhost:{}".format(port)
             r = requests.get(url)
-            print("SERVER AT PORT %d RESPONDS:" % port,r.text)
+            print("SERVER AT PORT %d RESPONDS:" % port, r.text)
             assert r.text == message
-            print("SERVER AT PORT %d IS UP")
+            print("SERVER AT PORT %d IS UP" % port)
             break
         except:
             import traceback
