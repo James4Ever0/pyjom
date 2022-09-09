@@ -160,6 +160,8 @@ def translate(text, backend="deepl"):
 if __name__ == "__main__":
     result = translate('hello world')
     print("RESULT:", result)
+    result = translate('hello world', backend='baidu')
+    print("RESULT:", result)
     exit()
     for test in tests:
         # we need to demostrate this workflow.
