@@ -115,4 +115,4 @@ for test in tests:
             # remove all blanks in the list.
         else:
             print("NOT A BILIGUAL LYRICS FILE")
-        
+    # what you are going to do with this shit?
