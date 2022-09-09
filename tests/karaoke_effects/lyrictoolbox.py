@@ -657,44 +657,45 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         lineMod.duration = lineMod.end_time  - lineMod.start_time
         lineMod.text = elem['text'].strip().replace("  ","")
         # print(lineMod)
-        lineMod.words = getJiebaCuttedText(lineMod.text)
-        sylList = []
-        wordCount = len(lineMod.words)
-        sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
-        textLength = len(lineMod.text)
-        charShift = 30
-        absWordCenterShiftList = []
-        prevWordShift = 0
-        CENTER = 1600/2
-        wordWidthList = []
-        for word in lineMod.words:
-            wordWidth = len(word)* charShift
-            wordWidthList.append(wordWidth)
-            wordLength = len(word)+1
-            wordCenterShift = (charShift*wordLength)/2
-            wordShift = (charShift*wordLength)
-            absWordCenterShift = CENTER - (textLength*charShift)/2 + prevWordShift + wordCenterShift
-            absWordCenterShiftList.append(absWordCenterShift)
-            prevWordShift += wordShift
-        # CENTER + centerShift*charShift
-        getCenter = lambda index: absWordCenterShiftList[index]
-        getWidth = lambda index: wordWidthList[index]
-        mSylYShift = 700
-        for index, word in enumerate(lineMod.words):
-            syl = Syllable()
-            syl.text = word
-            syl.i = index
-            syl.center = getCenter(index)
-            syl.width = getWidth(index)
-            syl.top= 25+mSylYShift
-            syl.inline_fx = 'm2'
-            syl.middle = 49.0+mSylYShift
-            syl.bottom = 73.0+mSylYShift
-            syl.start_time = lineMod.start_time+ index*sylDuration
-            syl.end_time = syl.start_time+sylDuration
-            syl.duration = sylDuration
-            sylList.append(syl)
-        lineMod.syls = sylList
+        
+            lineMod.words = getJiebaCuttedText(lineMod.text)
+            sylList = []
+            wordCount = len(lineMod.words)
+            sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
+            textLength = len(lineMod.text)
+            charShift = 30
+            absWordCenterShiftList = []
+            prevWordShift = 0
+            CENTER = 1600/2
+            wordWidthList = []
+            for word in lineMod.words:
+                wordWidth = len(word)* charShift
+                wordWidthList.append(wordWidth)
+                wordLength = len(word)+1
+                wordCenterShift = (charShift*wordLength)/2
+                wordShift = (charShift*wordLength)
+                absWordCenterShift = CENTER - (textLength*charShift)/2 + prevWordShift + wordCenterShift
+                absWordCenterShiftList.append(absWordCenterShift)
+                prevWordShift += wordShift
+            # CENTER + centerShift*charShift
+            getCenter = lambda index: absWordCenterShiftList[index]
+            getWidth = lambda index: wordWidthList[index]
+            mSylYShift = 700
+            for index, word in enumerate(lineMod.words):
+                syl = Syllable()
+                syl.text = word
+                syl.i = index
+                syl.center = getCenter(index)
+                syl.width = getWidth(index)
+                syl.top= 25+mSylYShift
+                syl.inline_fx = 'm2'
+                syl.middle = 49.0+mSylYShift
+                syl.bottom = 73.0+mSylYShift
+                syl.start_time = lineMod.start_time+ index*sylDuration
+                syl.end_time = syl.start_time+sylDuration
+                syl.duration = sylDuration
+                sylList.append(syl)
+            lineMod.syls = sylList
         # print(lineMod.syls)
         # breakpoint()
         # pyonfx.ass_core.Syllable
