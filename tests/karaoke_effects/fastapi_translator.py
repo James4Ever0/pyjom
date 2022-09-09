@@ -80,8 +80,6 @@ def read_item(backend: str, text: str):
     if not backend in ['deepl','baidu']:
         code = 400
         result = 'INVALID BACKEND'
-    elif backend == 'deepl':
-        result = 
-    elif backend == 'baidu':
-        result = 
+    else:
+        result = metaTranslator(text, backend=backend)
     return {"code":code, "result": result}
