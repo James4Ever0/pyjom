@@ -58,7 +58,10 @@ def pyjniusLinguaDetectLanguageLabel(text):
     r = requests.get(url, params = {'text':text})
     response = r.json()
     if response['code'] == 200:
-        return response['
+        return response['result']
+    else:
+        print("ERROR WHEN FETCHING LANGUAGE ID")
+        print(response)
 nativeLangFlagStandard = "CHINESE"
 
 # need to make this thing totally bilingual if we have to.
