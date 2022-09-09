@@ -49,6 +49,8 @@ def deeplTranslator(text):
         # breakpoint()
         return None
 
+def metaTranslator(test, backend='baidu'):
+    
 @app.get("/")
 def read_root():
     return "unified translator hooked on some clash server"
