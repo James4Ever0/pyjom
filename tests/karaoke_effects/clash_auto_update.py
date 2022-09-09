@@ -67,7 +67,7 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
     return candidates
 
 def setClashProxy(proxyName, urlBase = "http://localhost:9911/proxies/"):
-
+    
 
 def refineClashYaml(clashYamlPath = "Clash3.yaml"):
     with open(clashYamlPath,"r") as f: data = f.read()
