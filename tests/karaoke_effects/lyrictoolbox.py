@@ -715,6 +715,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             lineMod.syls = sylList
             # double check here! fucker
             startSyl = sylList[0]
+            startLine = startSyl.
             endSyl = sylList[1]
         # print(lineMod.syls)
         # breakpoint()
