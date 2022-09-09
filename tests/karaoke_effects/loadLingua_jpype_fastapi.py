@@ -1,5 +1,5 @@
 from jpype import *
-import jpype.imports # this is needed! shit.
+import jpype.imports  # this is needed! shit.
 
 addClassPath("/root/Desktop/works/pyjom/tests/karaoke_effects/classpath/lingua.jar")
 
@@ -11,7 +11,10 @@ from com.github.pemistahl.lingua.api import *
 
 
 # detector = LanguageDetectorBuilder.fromAllLanguages().withLowAccuracyMode().build()
-linguaDetector = LanguageDetectorBuilder.fromAllLanguages().build() # 3.5GB just for detecting language! it is somehow crazy.
+linguaDetector = (
+    LanguageDetectorBuilder.fromAllLanguages().build()
+)  # 3.5GB just for detecting language! it is somehow crazy.
+
 
 def getLinguaDetectedLanguageLabel(sample):
     result = linguaDetector.detectLanguageOf(sample)
@@ -19,20 +22,24 @@ def getLinguaDetectedLanguageLabel(sample):
     # but we can convert it into string.
     strResult = str(result)
     return strResult
+
+
 # shutdownJVM()
 from fastapi import FastAPI
 
 app = FastAPI()
 
+
 @app.get("/translate")
-def read_item(backend: str, text: str):
+def read_item(text: str):
     code = 200
     try:
         result = getLinguaDetectedLanguageLabel(text)
     except:
-        code=400
+        code = 400
         import traceback
+
         traceback.print_exc()
         print("ERROR ANALYSING TEXT LANGID %s" % text)
         result = "ERROR"
-    return {'code':code, 'result':result}
+    return {"code": code, "result": result}
