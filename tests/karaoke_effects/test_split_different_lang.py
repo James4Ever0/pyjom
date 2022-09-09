@@ -51,7 +51,7 @@ def getJiebaCuttedText(text):
 
 
 # from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
-from loadLingua_jpype import getLinguaDetectedLanguageLabel as pyjniusLinguaDetectLanguageLabel
+# from loadLingua_jpype import getLinguaDetectedLanguageLabel as pyjniusLinguaDetectLanguageLabel
 nativeLangFlagStandard = "CHINESE"
 
 # need to make this thing totally bilingual if we have to.
@@ -157,7 +157,7 @@ language_recognition_model = hub.Module(name='baidu_language_recognition')
 
 def translate(text, backend="baidu", delay = 2): # deepl is shit. fucking shit.
     import time
-    t
+    time.sleep(delay)
     assert backend in ["deepl", "baidu"]
     if backend == "deepl":
         import requests
