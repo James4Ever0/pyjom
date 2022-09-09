@@ -227,7 +227,9 @@ translatedDict = {}
 def read_item(backend: str, text: str):
     global translatedDict
     if len(list(translatedDict.keys()))>100:
-        mkeys = translatedDict.keys()
+        mkeys = list(translatedDict.keys())
+        import random
+        random.shuffle(mkeys)
         translatedDict[key]
     code = 200
     if not backend in ["deepl", "baidu"]:
