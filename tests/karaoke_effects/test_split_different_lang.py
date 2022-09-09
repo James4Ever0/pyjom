@@ -143,7 +143,8 @@ def translate(text, backend='deepl'):
     "source_lang": "auto",
     "target_lang": "ZH"
 }
-        r = requests.post(url, )
+        r = requests.post(url, json=data)
+        
 
 if __name__ == "__main__":
     for test in tests:
