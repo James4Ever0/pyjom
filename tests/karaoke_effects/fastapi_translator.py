@@ -108,6 +108,7 @@ def changeProxy(useDirect=False):
         if prob:
             suggestedProxy = random.choice(list(workingProxies))
             params = {'suggest':suggestedProxy}
+            print("SUGGESGING PROXY:", )
         else:
             params = {'suggest':None}
         r = requests.get("http://127.0.0.1:8677/{}".format(path),params=params)
