@@ -165,6 +165,9 @@ app = Flask(__name__)
 @app.route('/refreshProxy', methods=['GET'])
 def hello_world():
     proxy_names = find_proxy_names()
+    if proxy_names == []:
+        return 'failed to find a proxy'
+    proxy_name = random.choice(proxy_names)
     return 'refresh proxy to %s' % proxy_name
 
 if __name__ == "__main__":
