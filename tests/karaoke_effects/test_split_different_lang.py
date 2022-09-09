@@ -153,6 +153,7 @@ def translate(text, backend="deepl"):
         else:
             print("DEEPL RESPONSE ERROR. PLEASE CHECK")
             print(response)
+            breakpoint()
         # print(response)
 
 
