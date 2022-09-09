@@ -57,6 +57,7 @@ def changeProxy():
 
 def metaTranslator(text, backend='baidu'):
     assert backend in ['baidu','deepl']
+    translator = None
     while True:
         changeProxy()
         if backend == 'baidu':
@@ -67,7 +68,7 @@ def metaTranslator(text, backend='baidu'):
         if result:
             return result
         else:
-            
+            print("SOME ERROR DURING FETCHING TRANSLATION")
 @app.get("/")
 def read_root():
     return "unified translator hooked on some clash server"
