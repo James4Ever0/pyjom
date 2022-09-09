@@ -727,7 +727,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             print("CENTERSHIFT", centerShift)
             for index in range(len(sylList)):
                 import copy
-                elem = copy.copy(sylList[index]
+                elem = copy.deepcopy(sylList[index])
                 elem.center = sylList[index].center+centerShift
                 print("CHANGED CENTER", elem.center, sylList[index].center)
                 sylList[index] = elem
