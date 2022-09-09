@@ -85,6 +85,9 @@ def checkWorkingProxies():
     url = "http://127.0.0.1:8677/checkProxy"
     for proxy in workingProxies:
         r = requests.get(url, params = {"proxy": proxy})
+        response = r.json()
+        if response['exists']:
+            
 
 def changeProxy(useDirect=False):
     useProxy(False)
