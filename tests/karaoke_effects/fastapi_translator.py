@@ -64,7 +64,11 @@ def deeplTranslator(text):
 
 def changeProxy(useDirect=False):
     import requests
-    r = requests.get("http://localhost:8677/refreshProxy")
+    if useDirect:
+        path = 'useDirect'
+    else:
+        path = 'refreshProxy'
+    r = requests.get("http://localhost:8677/{}".format(path))
     print("RESPONSE:", r.text)
     print("PROXY REFRESHED")
 
