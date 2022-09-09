@@ -139,10 +139,11 @@ def translate(text, backend='deepl'):
     if backend == 'deepl':
         import requests
         data = {
-    "text": "text to be translated",
+    "text": text,
     "source_lang": "auto",
     "target_lang": "ZH"
 }
+        r = requests.post(url, )
 
 if __name__ == "__main__":
     for test in tests:
