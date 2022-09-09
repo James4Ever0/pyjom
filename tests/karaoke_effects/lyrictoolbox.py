@@ -10,4 +10,5 @@ def getMusicDuration(musicPath):
     length = float(length)
     return length
 
-def lrcToTextArray()
+def lrcToTextArray(musicPath, lrcPath):
+    
