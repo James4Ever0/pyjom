@@ -23,7 +23,6 @@ os.environ['https_proxy'] = ''
 
 from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
 
-
 def jsonLocate(jsonObj,location=[]):
     try:
         if location!=[]:
@@ -141,3 +140,4 @@ def updateClashYaml(clashYamlPath = 'Clash3.yaml', control_port = 9911):
         return False
 
 # this can act as a server as well?
+# simplicity in mind.
