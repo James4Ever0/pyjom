@@ -59,8 +59,8 @@ def baiduTranslator(text):  # target language must be chinese.
 
 
 def deeplTranslator(text):
+    useProxy(False)
     import requests
-
     port = 8281
     # env ROCKET_PORT=8281 ./executable_deepl
     url = "http://127.0.0.1:{}/translate".format(port)
