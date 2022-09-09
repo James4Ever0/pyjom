@@ -158,9 +158,11 @@ if len(cv2_libs) == 1:
 def translate(text, backend="random"): # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
+    backendList =  ["deepl", "baidu"]
     if backend  == 'random':
-        backend = random.choice()
-    assert backend in ["deepl", "baidu"]
+        import random
+        backend = random.choice(backendList)
+    assert backend in backendList
     translatedText = text
     if backend == "deepl":
     elif backend == 'baidu':
