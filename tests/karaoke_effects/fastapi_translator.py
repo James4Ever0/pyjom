@@ -216,7 +216,7 @@ def waitForServerUp(port, message, timeout=1):
 
 @app.get("/")
 def read_root():
-    waitForServerUp(8677, "clash update controller")  # probe the clash updator
+    # waitForServerUp(8677, "clash update controller")  # probe the clash updator
     return "unified translator hooked on some clash server"
 
 translatedDict = {}
