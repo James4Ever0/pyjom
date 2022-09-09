@@ -169,6 +169,9 @@ def translate(text, backend="deepl"):
             else:
                 return text
         except:
+            import traceback
+            traceback.print_exc()
+            print("ERROR WHEN CALLING BAIDU TRANSLATE")
             
 
 
