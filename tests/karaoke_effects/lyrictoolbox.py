@@ -3,6 +3,9 @@ from MediaInfo import MediaInfo
 from pyonfx import *
 # wildcard not allowed in function
 
+def censorText(text):
+    
+
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
     info = info.getInfo()
