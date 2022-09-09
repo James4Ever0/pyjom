@@ -170,6 +170,8 @@ def translate(text, backend='random'): # deepl is shit. fucking shit.
     # we know the translator cannot respond the same shit to us right?
 
 
+def waitForTranslatorServerUp():
+
 if __name__ == "__main__":
     # result = translate('hello world')
     # print("RESULT:", result)
