@@ -282,7 +282,7 @@ def getTextListTranslated(test):
             newLyricArray = [(elem,) for elem in test.copy()]
     return newLyricArray
 
-def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
+def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdjust = 600):
     # newTextArray = [] # dummy shit. must be removed immediately.
     import random
     import math
@@ -637,7 +637,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         
     # from test_pylrc import *
     # just a test.
-    shiftAdjust = 600
     # censor these lyrics! fucker!
     newTextArray = textArray
     for mIndex,elem in enumerate(newTextArray):
