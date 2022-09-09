@@ -183,6 +183,7 @@ def waitForServerUp(port, message):
             import traceback
             traceback.print_exc()
             print("SERVER AT PORT %d MIGHT NOT BE UP")
+            print("EXPECTED MESSAGE", message)
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
 waitForServerUp(8978, "say hello to jpype fastapi server")
