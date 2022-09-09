@@ -155,27 +155,12 @@ if len(cv2_libs) == 1:
 
 
 
-def translate(text, backend="baidu"): # deepl is shit. fucking shit.
+def translate(text, backend="random"): # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
     assert backend in ["deepl", "baidu"]
     translatedText = text
     if backend == "deepl":
-        import requests
-        port = 8281
-        # env ROCKET_PORT=8281 ./executable_deepl
-        url = "http://localhost:{}/translate".format(port)
-        data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
-        r = requests.post(url, json=data)
-        response = r.json()
-        code = response['code']
-        if code == 200:
-            translatedText =  response['data']
-        else:
-            print("DEEPL RESPONSE ERROR. PLEASE CHECK")
-            print(response)
-            breakpoint()
-        # print(response)
     elif backend == 'baidu':
         return translatedText
 
