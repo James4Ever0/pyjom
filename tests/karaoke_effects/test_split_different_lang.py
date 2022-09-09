@@ -138,7 +138,11 @@ def translate(text, backend='deepl'):
     assert backend in ['deepl','baidu']
     if backend == 'deepl':
         import requests
-        
+        data = {
+    "text": "text to be translated",
+    "source_lang": "auto",
+    "target_lang": "ZH"
+}
 
 if __name__ == "__main__":
     for test in tests:
