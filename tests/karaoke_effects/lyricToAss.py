@@ -1,6 +1,7 @@
 # this is the complete process.
 from lyrictoolbox import *
-def lrcToAss(musicPath, lrcPath):
+
+def lrcToAnimatedAss(musicPath, lrcPath): # will be moved
 
 
 if __name__ == "__main__":
