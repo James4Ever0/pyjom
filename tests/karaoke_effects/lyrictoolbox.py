@@ -14,7 +14,8 @@ englishPuncturals = string.punctuation
 chinesePuncturals = zhon.hanzi.punctuation
 
 def removeChinesePunctuals(text):
-    
+    for elem in chinesePuncturals:
+        text = text.replace(elem, "")
     return processedText
 
 def removeLeadingAndTrailingPunctuals(text):
