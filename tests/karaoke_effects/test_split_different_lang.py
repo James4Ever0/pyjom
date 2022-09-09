@@ -50,8 +50,8 @@ def getJiebaCuttedText(text):
     return textList
 
 
+# from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
 from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
-
 nativeLangFlagStandard = "CHINESE"
 
 # need to make this thing totally bilingual if we have to.
