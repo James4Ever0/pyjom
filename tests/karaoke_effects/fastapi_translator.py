@@ -41,6 +41,9 @@ language_recognition_model = hub.Module(name="baidu_language_recognition")
 
 def baiduTranslator(text, sleep=1):  # target language must be chinese.
     useProxy(False)
+
+    lock = filelock.FileLock("/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock")
+    with lock:
     import time
     time.sleep(sleep)
     try:
