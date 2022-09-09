@@ -224,7 +224,7 @@ def read_root():
 
 @app.get("/translate")
 def read_item(backend: str, text: str):
-    
+    global translatedDict
     code = 200
     if not backend in ["deepl", "baidu"]:
         code = 400
