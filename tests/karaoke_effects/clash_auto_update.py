@@ -66,7 +66,7 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
         print(elem)
     return candidates
 
-def setClashProxy(proxyName,control_port = 9911):
+def setClashProxy(proxy_name,control_port = 9911):
     import requests
     import json
     selector = "GLOBAL"
