@@ -109,9 +109,10 @@ def metaTranslator(text, backend="baidu"):
         translator = deeplTranslator
     while True:
         try:
-            changeProxy(useDirect=getUseDirect())
+            proxyName = changeProxy(useDirect=getUseDirect())
             result = translator(text)
             if result:
+                workingProxies.append(proxyName)
                 return result
             else:
                 print("SOME ERROR DURING FETCHING TRANSLATION")
