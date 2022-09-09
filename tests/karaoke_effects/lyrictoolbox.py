@@ -29,6 +29,7 @@ def removeLeadingAndTrailingPunctuation(text):
 
 def removeUnnecessaryPunctuation(text):
     text = removeChinesePunctuation(text)
+    text = removeEnglishPunctuation(text)
 
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
