@@ -704,17 +704,16 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         target = lineMod.copy()
         romaji(source, target)
         if translatedText:
-        lineMod2 = lineMod.copy()
-        translateShift = -200
-        for i in range(len(lineMod2.syls)):
-            lineMod2.syls[i].top += translateShift
-            lineMod2.syls[i].middle += translateShift
-            lineMod2.syls[i].bottom += translateShift
-
-        source = lineMod2.copy()
-        target = lineMod2.copy()
-        # elif line.styleref.alignment >= 4:
-        kanji(source, target)
+            lineMod2 = lineMod.copy()
+            translateShift = -200
+            for i in range(len(lineMod2.syls)):
+                lineMod2.syls[i].top += translateShift
+                lineMod2.syls[i].middle += translateShift
+                lineMod2.syls[i].bottom += translateShift
+            source = lineMod2.copy()
+            target = lineMod2.copy()
+            # elif line.styleref.alignment >= 4:
+            kanji(source, target)
         # else:
         #     sub(line, line.copy())
     io.save()
