@@ -136,6 +136,9 @@ def getLyricsLanguageType(test):
             print("need to translate")
     return isBilingual, needToTranslate
 
+import paddlehub as hub
+language_translation_model = hub.Module(name='baidu_translate')
+language_recognition_model = hub.Module(name='baidu_language_recognition')
 
 def translate(text, backend="deepl"):
     assert backend in ["deepl", "baidu"]
