@@ -125,8 +125,9 @@ def getClashYaml(clashYamlPath = 'Clash3.yaml'):
 def updateClashYaml(clashYamlPath = 'Clash3.yaml', control_port = 9911):
     getClashYaml(clashYamlPath = clashYamlPath)
     import requests
+    import json
                 try:
-                r = requests.put("http://localhost:{}/configs".format(current_config["clash"]["control_port"]),data=json.dumps({"path":full_config_path},ensure_ascii=False).encode())
+                r = requests.put("http://localhost:{}/configs".format(control_port),data=json.dumps({"path":full_config_path},ensure_ascii=False).encode())
                 assert r.status_code == 204
                 # might be the problem. TODO: check why the fuck clash server cannot decode the config in utf-8 'unexpected end of data'
                 get_proxy_list()
