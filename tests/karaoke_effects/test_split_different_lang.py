@@ -147,6 +147,7 @@ def translate(text, backend="deepl"):
         data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
         r = requests.post(url, json=data)
         response = r.json()
+        
         print(response)
 
 
