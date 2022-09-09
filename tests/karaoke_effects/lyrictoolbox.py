@@ -1,26 +1,28 @@
 import pylrc
 from MediaInfo import MediaInfo
 
+
 def getMusicDuration(musicPath):
-    info = MediaInfo(filename = musicPath)
+    info = MediaInfo(filename=musicPath)
     info = info.getInfo()
     # print(info)
     # breakpoint()
-    length = info['duration']
+    length = info["duration"]
     length = float(length)
     return length
 
+
 def lrcToTextArray(musicPath, lrcPath):
-    assert lrcPath.endswith('.lrc')
+    assert lrcPath.endswith(".lrc")
     musicDuration = getMusicDuration(musicPath)
 
     lrc_file = open(lrcPath)
-    lrc_string = ''.join(lrc_file.readlines())
+    lrc_string = "".join(lrc_file.readlines())
     lrc_file.close()
 
     subs = pylrc.parse(lrc_string)
 
-    lyricDurationThresholds = (0.5,4)
+    lyricDurationThresholds = (0.5, 4)
 
     textArray = []
     for sub in subs:
@@ -28,18 +30,18 @@ def lrcToTextArray(musicPath, lrcPath):
         text = sub.text
         textArray.append((startTime, text))
 
-    textArray.sort(key = lambda x: x[0])
+    textArray.sort(key=lambda x: x[0])
 
     lastStartTime = textArray[0][0]
 
-    newTextArray = [{'start':textArray[0][0],'text':textArray[0][1]}]
+    newTextArray = [{"start": textArray[0][0], "text": textArray[0][1]}]
 
     for startTime, text in textArray[1:]:
-        if startTime-lastStartTime < lyricDurationThresholds[0]:
+        if startTime - lastStartTime < lyricDurationThresholds[0]:
             continue
         else:
             lastStartTime = startTime
-            newTextArray.append({'text': text, 'start': startTime})
+            newTextArray.append({"text": text, "start": startTime})
 
     # now calculate the end time, please?
     # you may want to translate this if you have to.
@@ -51,21 +53,21 @@ def lrcToTextArray(musicPath, lrcPath):
 
     lyricDurations = [np.mean(lyricDurationThresholds)]
 
-    for index,elem in enumerate(newTextArray):
-        text = elem['text']
-        start = elem['start']
-        nextIndex = index+1
+    for index, elem in enumerate(newTextArray):
+        text = elem["text"]
+        start = elem["start"]
+        nextIndex = index + 1
         if nextIndex < len(newTextArray):
             nextElem = newTextArray[nextIndex]
-            nextStart = nextElem['start']
-            end = nextStart-start
+            nextStart = nextElem["start"]
+            end = nextStart - start
             if end > lyricDurationThresholds[0] and end < lyricDurationThresholds[1]:
                 lyricDurations.append(end)
-            end = min(end, lyricDurationThresholds[1], musicDuration-start)+ start
+            end = min(end, lyricDurationThresholds[1], musicDuration - start) + start
         else:
-            end = np.mean(lyricDurations)+start
+            end = np.mean(lyricDurations) + start
             end = min(musicDuration, end)
-        newTextArray[index].update({'end':end})
+        newTextArray[index].update({"end": end})
     return newTextArray
     # [{'text':text,'start':start,'end':end}, ...]
 
@@ -100,15 +102,18 @@ def getJiebaCuttedText(text):
 # from loadLingua_jpype import getLinguaDetectedLanguageLabel as pyjniusLinguaDetectLanguageLabel
 def pyjniusLinguaDetectLanguageLabel(text):
     import requests
+
     url = "http://localhost:{}/langid".format(8978)
-    r = requests.get(url, params = {'text':text})
+    r = requests.get(url, params={"text": text})
     response = r.json()
-    if response['code'] == 200:
-        return response['result']
+    if response["code"] == 200:
+        return response["result"]
     else:
         print("ERROR WHEN FETCHING LANGUAGE ID")
         print(response)
         breakpoint()
+
+
 nativeLangFlagStandard = "CHINESE"
 
 # need to make this thing totally bilingual if we have to.
@@ -194,22 +199,26 @@ def getLyricsLanguageType(test):
     return isBilingual, needToTranslate
 
 
-def translate(text, backend='random'): # deepl is shit. fucking shit.
+def translate(text, backend="random"):  # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
     import requests
-    url = 'http://localhost:8974/translate'
-    mTranslate = lambda text, backend: requests.get(url, params = {'backend': backend, 'text': text}).json()
-    backendList =  ["deepl", "baidu"]
-    if backend  == 'random':
+
+    url = "http://localhost:8974/translate"
+    mTranslate = lambda text, backend: requests.get(
+        url, params={"backend": backend, "text": text}
+    ).json()
+    backendList = ["deepl", "baidu"]
+    if backend == "random":
         import random
+
         backend = random.choice(backendList)
     assert backend in backendList
     translatedText = text
     result = mTranslate(text, backend)
     print("TRANSLATOR RESULT:", result)
-    if result['code'] == 200:
-        translatedText = result['result']
+    if result["code"] == 200:
+        translatedText = result["result"]
     else:
         print("SOME ERROR DURING TRANSLATION, PLEASE CHECK SERVER")
     return translatedText
@@ -218,6 +227,7 @@ def translate(text, backend='random'): # deepl is shit. fucking shit.
 
 def waitForServerUp(port, message, timeout=1):
     import requests
+
     while True:
         try:
             url = "http://localhost:{}".format(port)
@@ -229,14 +239,18 @@ def waitForServerUp(port, message, timeout=1):
             break
         except:
             import traceback
+
             traceback.print_exc()
             print("SERVER AT PORT %d MIGHT NOT BE UP")
             print("EXPECTED MESSAGE:", [message])
             import time
+
             time.sleep(1)
+
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
 waitForServerUp(8978, "say hello to jpype fastapi server")
+
 
 def getTextListTranslated(test):
     newLyricArray = []
@@ -251,6 +265,8 @@ def getTextListTranslated(test):
                 nativeText = translate(foreignText)
             if foreignText != nativeText:
                 newLyricArray.append((foreignText, nativeText))
+            else:
+                newLyricArray.append((foreignText,))
     else:
         if needToTranslate:
             for elem in test:
