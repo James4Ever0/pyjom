@@ -177,21 +177,6 @@ def translate(text, backend="baidu"): # deepl is shit. fucking shit.
             breakpoint()
         # print(response)
     elif backend == 'baidu':
-        # use paddlehub.
-        # where is the damn code?
-        try:
-            language_code = language_recognition_model.recognize(text)
-            if language_code != 'zh':
-                text_prompts = language_translation_model.translate(text, language_code, 'zh')
-                translatedText =  text_prompts
-            else:
-                translatedText =  text
-        except:
-            import traceback
-            traceback.print_exc()
-            print("ERROR WHEN CALLING BAIDU TRANSLATE")
-            breakpoint()
-        print("text: %s translated: %s" % (text, translatedText))
         return translatedText
 
 
