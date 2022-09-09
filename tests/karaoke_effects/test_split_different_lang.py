@@ -43,20 +43,23 @@ def lastSpaceSpliter(text):
 
 def getJiebaCuttedText(text):
     import jieba
+
     textList = jieba.lcut(text)
     textList = [elem.strip() for elem in textList]
     textList = [elem for elem in textList if len(elem) > 0]
     return textList
 
+
 from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
+
 nativeLangFlagStandard = "CHINESE"
 
 # need to make this thing totally bilingual if we have to.
 
 # for test in tests:
 def getLyricsLanguageType(test):
-    isBilingual=False
-    needToTranslate=True # not useful for our bilingual shit.
+    isBilingual = False
+    needToTranslate = True  # not useful for our bilingual shit.
     print("_______________TEST SUBJECT_______________")
     for elem in test:
         print(elem)
@@ -101,7 +104,6 @@ def getLyricsLanguageType(test):
         # foreignLangFlag = langid.classify(foreignLangString)
         # nativeLangFlag = langid.classify(nativeLangString)
 
-
         foreignLangFlag = (pyjniusLinguaDetectLanguageLabel(foreignLangString), 1)
         nativeLangFlag = (pyjniusLinguaDetectLanguageLabel(nativeLangString), 1)
         # there's no probability out there! WTF?
@@ -114,7 +116,7 @@ def getLyricsLanguageType(test):
             and nativeLangFlag[0] == nativeLangFlagStandard
         ):
             # this is for sure the bilingual shit.
-            isBilingual=True
+            isBilingual = True
             print("BILINGUAL LYRIC FILE IDENTIFIED.")
             # then? how shall we judge this?
             # let the jieba.lcut to handle the cutting. please?
@@ -123,7 +125,7 @@ def getLyricsLanguageType(test):
             print("NOT A BILIGUAL LYRICS FILE")
     # what you are going to do with this shit?
     if not isBilingual:
-        print('checking main language')
+        print("checking main language")
         lyricString = " ".join(test)
         mainLanguage = pyjniusLinguaDetectLanguageLabel(lyricString)
         print("main language id:", mainLanguage)
@@ -131,20 +133,19 @@ def getLyricsLanguageType(test):
             print("no need to translate")
             needToTranslate = False
         else:
-            print('need to translate')
+            print("need to translate")
     return isBilingual, needToTranslate
 
-def translate(text, backend='deepl'):
-    assert backend in ['deepl','baidu']
-    if backend == 'deepl':
+
+def translate(text, backend="deepl"):
+    assert backend in ["deepl", "baidu"]
+    if backend == "deepl":
         import requests
-        url = "http://localhost:{}".format(port)
-        data = {
-    "text": text,
-    "source_lang": "auto",
-    "target_lang": "ZH"
-}
+
+        url = "http://localhost:{}/translate".format(port)
+        data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
         r = requests.post(url, json=data)
+        r.json()
 
 
 if __name__ == "__main__":
@@ -155,7 +156,7 @@ if __name__ == "__main__":
         if isBilingual:
             for elem in test:
                 text, flag = lastSpaceSpliter(elem)
-                if flag:# splited!
+                if flag:  # splited!
                     foreignText, nativeText = text
                 else:
                     foreignText = text
