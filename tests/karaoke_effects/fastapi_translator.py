@@ -106,7 +106,7 @@ def changeProxy(useDirect=False):
         import random
         prob = random.random() < len(workingProxies)*0.1
         if prob:
-            suggestedProxy = random.choice(workingProxies)
+            suggestedProxy = random.choice(list(workingProxies))
             params = {'suggest':suggestedProxy}
         else:
             params = {}
