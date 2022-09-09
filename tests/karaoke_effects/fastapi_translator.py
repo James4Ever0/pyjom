@@ -89,6 +89,7 @@ def checkWorkingProxies():
         response = r.json()
         if not response['exists']:
             print("REMOVING PROXY %s NOW" % useProxy)
+            workingProxies.remove(proxy)
 
 def changeProxy(useDirect=False):
     useProxy(False)
