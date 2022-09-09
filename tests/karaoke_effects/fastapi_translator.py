@@ -239,9 +239,8 @@ def read_item(backend: str, text: str):
         code = 400
         result = "INVALID BACKEND"
     else:
-        if len(text)<30:
-            if text in translatedDict.keys():
-                result =  translatedDict[text]
+        if len(text)<30 and text in translatedDict.keys():
+            result =  translatedDict[text]
         else:
             result = metaTranslator(text, backend=backend)
             if len(result)<30 and len(text)<30:
