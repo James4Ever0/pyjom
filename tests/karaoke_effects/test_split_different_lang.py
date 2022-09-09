@@ -1,4 +1,5 @@
 # example of TDD.
+from gettext import gettext
 import os
 
 # os.environ['http_proxy'] = ""
@@ -222,7 +223,7 @@ if __name__ == "__main__":
     # exit()
     for test in tests:
         # we need to demostrate this workflow.
-
+        newLyricArray = getTextListTranslated()
         print("_________RESULT_________")
         for elem in newLyricArray:
             print(elem)
