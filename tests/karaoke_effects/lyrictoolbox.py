@@ -638,6 +638,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
     # from test_pylrc import *
     # just a test.
     shiftAdjust = 600
+    # censor these lyrics! fucker!
     newTextArray = textArray
     for mIndex,elem in enumerate(newTextArray):
         translatedTuple = translatedList[mIndex]
