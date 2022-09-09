@@ -711,6 +711,8 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
             # elif line.styleref.alignment >= 4:
             kanji(source, target)
     io.save()
+    print("ASS ")
+    return assPath
 # do the preview later?
 # # io.open_aegisub()
 def previewAssWithVideo(sample_video,assPath):
