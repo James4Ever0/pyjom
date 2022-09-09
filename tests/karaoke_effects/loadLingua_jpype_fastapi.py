@@ -28,6 +28,9 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+
+@app.get("/")
+def read_item():
 @app.get("/langid")
 def read_item(text: str):
     code = 200
