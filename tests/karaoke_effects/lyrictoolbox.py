@@ -686,6 +686,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         else:
             print("Invalid translatedTuple: %s" % str(translatedTuple))
             breakpoint()
+        
         if censor:
             sourceText = censorTextWithTextFilter(sourceText)
             if translatedText:
