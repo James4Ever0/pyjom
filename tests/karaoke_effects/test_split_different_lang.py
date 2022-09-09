@@ -155,6 +155,7 @@ def translate(text, backend="deepl"):
             print(response)
             breakpoint()
         # print(response)
+    elif 
 
 
 if __name__ == "__main__":
