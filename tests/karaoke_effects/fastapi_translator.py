@@ -81,7 +81,9 @@ def deeplTranslator(text):
 workingProxies = set()
 
 def checkWorkingProxies():
-    
+    useProxy(False)
+
+    url = "http://8677"
 
 def changeProxy(useDirect=False):
     useProxy(False)
