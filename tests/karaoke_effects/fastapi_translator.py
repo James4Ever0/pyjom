@@ -10,7 +10,7 @@ language_recognition_model = hub.Module(name='baidu_language_recognition')
 
 @app.get("/")
 def read_root():
-    return {"message": "unified translator hooked on some clash server"}
+    return "unified translator hooked on some clash server"
 
 @app.get("/translate")
 def read_item(backend: str, text: str):
