@@ -46,7 +46,7 @@ def find_proxy_names(test_url,location):
 
 ## FIND DELAY ##
 def find_tested_proxy_names(timeout=3000, urltest="https://m.tujia.com", test_url = "http://localhost:9911/proxies/", location = ["proxies","✋ 手动选择","all"], forbidden_names = ["DIRECT","REJECT","GLOBAL"]):
-    
+    proxy_names = find_proxy_names(test_url, location)
 
     def get_delay(name):
         url = "{}{}/delay?timeout={}&url={}".format(test_url, name, timeout, urltest)
