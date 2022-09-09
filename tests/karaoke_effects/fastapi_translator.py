@@ -13,5 +13,5 @@ def read_root():
     return {"message": "unified translator hooked on some clash server"}
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int, backend: Union[str, None] = None,):
+def read_item(item_id: int, backend: str, ):
     return {"item_id": item_id, "q": q}
