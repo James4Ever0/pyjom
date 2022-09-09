@@ -1,10 +1,11 @@
 # this is the complete process.
 from lyrictoolbox import *
+from .lyrictoolbox import getTextListTranslated
 
 def lrcToAnimatedAss(musicPath, lrcPath, assPath): # will be moved to lyrictoolbox, and more styles incoming
     textArray = lrcToTextArray(musicPath, lrcPath)
     textList = [elem['text'] for elem in textArray]
-    translatedList = 
+    translatedList = getTextListTranslated(textList)
 
 
 if __name__ == "__main__":
