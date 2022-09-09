@@ -165,6 +165,9 @@ def translate(text, backend="deepl"):
             language_code = language_recognition_model.recognize(text_prompts)
             if language_code != 'zh':
                 text_prompts = language_translation_model.translate(text, language_code, 'zh')
+                return text_prompts
+            else:
+                return text
 
 
 if __name__ == "__main__":
