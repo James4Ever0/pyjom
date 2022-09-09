@@ -155,7 +155,9 @@ def translate(text, backend="deepl"):
             print(response)
             breakpoint()
         # print(response)
-    elif 
+    elif backend == 'baidu':
+        # use paddlehub.
+        
 
 
 if __name__ == "__main__":
