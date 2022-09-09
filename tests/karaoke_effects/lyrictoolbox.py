@@ -260,7 +260,7 @@ def waitForServerUp(port, message, timeout=1):
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
 waitForServerUp(8978, "say hello to jpype fastapi server")
-waitForServerUp(8677, "clash update controller")  # probe the clash updator
+waitForServerUp(8677, "clash update controller", timeout=10)  # probe the clash updator
 waitForServerUp(8932,{"response": "DFAFilter based Chinese text filter(censor)"}) # this is text filter.
 
 def censorTextWithTextFilter(text):
