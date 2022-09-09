@@ -166,11 +166,11 @@ port = 8677
 app = Flask(__name__)
 
 def checkProxyExists(proxy):
-    return 
+    return proxy in find_proxy_names()
 
 @app.route('/checkProxy', methods=['GET'])
 def checkProxyAPI(proxy: str):
-    exists = proxy in find_proxy_names()
+    exists = checkProxyExists(proxy)
     return {"exists": exists}
 
 @app.route('/useDirect', methods=['GET'])
