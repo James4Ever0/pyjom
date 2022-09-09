@@ -7,7 +7,6 @@ import os
 os.environ['http_proxy'] = ''
 os.environ['https_proxy'] = ''
 
-
 def removeChinesePunctuals(text):
     return processedText
 
