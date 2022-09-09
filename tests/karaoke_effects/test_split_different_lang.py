@@ -136,6 +136,9 @@ def getLyricsLanguageType(test):
             print("need to translate")
     return isBilingual, needToTranslate
 
+
+# before that, we need to fix cv2
+
 import paddlehub as hub
 language_translation_model = hub.Module(name='baidu_translate')
 language_recognition_model = hub.Module(name='baidu_language_recognition')
@@ -172,7 +175,7 @@ def translate(text, backend="deepl"):
             import traceback
             traceback.print_exc()
             print("ERROR WHEN CALLING BAIDU TRANSLATE")
-            
+            breakpoint()
 
 
 if __name__ == "__main__":
