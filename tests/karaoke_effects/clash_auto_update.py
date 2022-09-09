@@ -121,3 +121,6 @@ def getClashYaml(clashYamlPath = 'Clash3.yaml'):
         f.write(r.text)
     print("FETCHING CLASH YAML DONE.")
     print("SAVED AT %s" % clashYamlPath)
+
+def updateClashYaml():
+    getClashYaml()
