@@ -193,25 +193,26 @@ waitForServerUp(8974, "unified translator hooked on some clash server")
 waitForServerUp(8978, "say hello to jpype fastapi server")
 
 def getTextListTranslated(test):
-        newLyricArray = []
-        isBilingual, needToTranslate = getLyricsLanguageType(test)
-        if isBilingual:
+    newLyricArray = []
+    isBilingual, needToTranslate = getLyricsLanguageType(test)
+    if isBilingual:
+        for elem in test:
+            text, flag = lastSpaceSpliter(elem)
+            if flag:  # splited!
+                foreignText, nativeText = text
+            else:
+                foreignText = text
+                nativeText = translate(foreignText)
+            newLyricArray.append((foreignText, nativeText))
+    else:
+        if needToTranslate:
             for elem in test:
-                text, flag = lastSpaceSpliter(elem)
-                if flag:  # splited!
-                    foreignText, nativeText = text
-                else:
-                    foreignText = text
-                    nativeText = translate(foreignText)
+                foreignText = elem
+                nativeText = translate(foreignText)
                 newLyricArray.append((foreignText, nativeText))
-        else:
-            if needToTranslate:
-                for elem in test:
-                    foreignText = elem
-                    nativeText = translate(foreignText)
-                    newLyricArray.append((foreignText, nativeText))
-                else:
-                    newLyricArray = test.copy()
+            else:
+                newLyricArray = test.copy()
+    return newLyricArray
 
 if __name__ == "__main__":
     # result = translate('hello world')
