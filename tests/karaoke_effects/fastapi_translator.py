@@ -15,7 +15,7 @@ def read_root():
 @app.get("/items/{item_id}")
 def read_item(item_id: int, backend: str, text: str):
     code = 200
-    if backend is not in ['deepl','baidu']:
+    if not backend in ['deepl','baidu']:
         code = 400
-        result = 'INVALID '
-        return {"item_id": item_id, "q": q}
+        result = 'INVALID BACKEND'
+    return {"item_id": item_id, "q": q}
