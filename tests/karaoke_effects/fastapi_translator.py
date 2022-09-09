@@ -20,6 +20,9 @@ def useProxy(flag):
     if flag:
         os.environ["http_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
         os.environ["https_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
+    else:
+        os.environ['http_proxy']=''
+        os.environ['https_proxy']=''
 
 from fastapi import FastAPI
 
