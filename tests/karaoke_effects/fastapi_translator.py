@@ -83,11 +83,12 @@ workingProxies = set()
 def checkWorkingProxies():
     useProxy(False)
     url = "http://127.0.0.1:8677/checkProxy"
+    import requests
     for proxy in workingProxies:
         r = requests.get(url, params = {"proxy": proxy})
         response = r.json()
         if not response['exists']:
-            print("REMOVING PROXY %s NOW")
+            print("REMOVING PROXY %s NOW" % useProxy)
 
 def changeProxy(useDirect=False):
     useProxy(False)
