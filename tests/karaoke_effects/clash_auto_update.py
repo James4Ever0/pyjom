@@ -164,7 +164,7 @@ app = Flask(__name__)
 
 @app.route('/refreshProxy', methods=['GET'])
 def hello_world():
-    return 'refresh proxy'
+    return 'refresh proxy to %s' % proxy_name
 
 if __name__ == "__main__":
     app.run(port=port, threaded=True, use_reloader=False)
