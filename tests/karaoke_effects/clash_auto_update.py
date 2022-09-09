@@ -102,4 +102,5 @@ def getClashYaml():
     url = ""
     r = requests.get(url)
     with open(clashYamlPath, 'w+') as f:
-        r.text
+        f.write(r.text)
+    print("FETCHING CLASH DONE")
