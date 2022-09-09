@@ -162,7 +162,7 @@ def metaTranslator(text, backend="baidu"):
     import random
 
     getUseDirect = lambda: False
-    backends = {"baidu":(baiduTranslator,lambda: True), 'deepl':(deeplTranslator,lambda: True}
+    backends = {"baidu":(baiduTranslator,lambda: True), 'deepl':(deeplTranslator,lambda: True)}
     if backend == "baidu":
         translator = 
         getUseDirect = 
