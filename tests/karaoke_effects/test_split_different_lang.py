@@ -117,3 +117,5 @@ for test in tests:
             print("NOT A BILIGUAL LYRICS FILE")
     # what you are going to do with this shit?
     if not isBilingual:
+        print('checking main language')
+        
