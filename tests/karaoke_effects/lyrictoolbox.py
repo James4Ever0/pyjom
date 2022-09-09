@@ -285,6 +285,7 @@ def getTextListTranslated(test):
     return newLyricArray
 
 def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
+    newTextArray = []
     import random
     import math
     io = Ass("/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass", path_output="starJumping.ass")
@@ -637,7 +638,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
             break
         
     # from test_pylrc import *
-    newTextArray = []
     # just a test.
     shiftAdjust = 600
     for elem in newTextArray:
