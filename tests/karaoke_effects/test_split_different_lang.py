@@ -53,7 +53,7 @@ nativeLangFlagStandard = "CHINESE"
 
 # need to make this thing totally bilingual if we have to.
 
-for test in tests:
+# for test in tests:
     isBilingual=False
     needToTranslate=True # not useful for our bilingual shit.
     print("_______________TEST SUBJECT_______________")
@@ -128,6 +128,6 @@ for test in tests:
         print("main language id:", mainLanguage)
         if mainLanguage == nativeLangFlagStandard:
             print("no need to translate")
-            needToTranslate =
+            needToTranslate = False
         else:
             print('need to translate')
