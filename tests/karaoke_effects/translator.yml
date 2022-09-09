@@ -22,5 +22,5 @@ windows:
         - bash launch_clash.sh # clash command
     # clash auto updates
       - shell_command:
-        - bash launch_single_server.sh dual_config_nanjing.json nanjing # launch main scraper after proxy ready
-        - tmux kill-session -t vps_session_unified_nanjing # important!
+        - cd /root/Desktop/works/pyjom/tests/karaoke_effects
+        - python3 clash_auto_update.py
