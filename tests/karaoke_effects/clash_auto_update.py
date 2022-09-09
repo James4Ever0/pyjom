@@ -68,15 +68,16 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
 
 def setClashProxy(proxyName,control_port = 9911):
     import requests
-        selector = "GLOBAL"
-        try:
-            r = requests.put("http://localhost:{}/proxies/{}".format(control_port,selector),data=json.dumps({"name":proxy_name},ensure_ascii=False).encode())
-            assert r.status_code == 204
-            # assert r.status_code = 
-        except:
-            import traceback
-            traceback.print_exc()
-            breakpoint()
+    import json
+    selector = "GLOBAL"
+    try:
+        r = requests.put("http://localhost:{}/proxies/{}".format(control_port,selector),data=json.dumps({"name":proxy_name},ensure_ascii=False).encode())
+        assert r.status_code == 204
+        # assert r.status_code = 
+    except:
+        import traceback
+        traceback.print_exc()
+        breakpoint()
 
 def refineClashYaml(clashYamlPath = "Clash3.yaml"):
     with open(clashYamlPath,"r") as f: data = f.read()
