@@ -128,5 +128,6 @@ for test in tests:
         print("main language id:", mainLanguage)
         if mainLanguage == nativeLangFlagStandard:
             print("no need to translate")
+            needToTranslate =
         else:
             print('need to translate')
