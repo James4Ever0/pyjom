@@ -688,6 +688,8 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             breakpoint()
         if puncturalRemoval:
             sourceText = removeUnnecessaryPunctuation(sourceText)
+            if translatedText:
+                translatedText = removeUnnecessaryPunctuation(translatedText)
         if censor:
             sourceText = censorTextWithTextFilter(sourceText)
             if translatedText:
