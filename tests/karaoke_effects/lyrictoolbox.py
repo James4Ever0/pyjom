@@ -639,8 +639,8 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
     # just a test.
     shiftAdjust = 600
     newTextArray = textArray
-    for elem in newTextArray:
-        
+    for mIndex,elem in enumerate(newTextArray:
+
 
         lineMod = lineModSource.copy()
         lineMod.start_time = max(0,elem['start']*1000 - shiftAdjust)
