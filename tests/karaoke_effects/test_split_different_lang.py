@@ -160,8 +160,8 @@ def translate(text, backend="deepl"):
         # print(response)
     elif backend == 'baidu':
         # use paddlehub.
-
         # where is the damn code?
+        
 
 
 if __name__ == "__main__":
