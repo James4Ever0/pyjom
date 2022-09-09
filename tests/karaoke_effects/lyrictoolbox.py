@@ -762,7 +762,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
         romaji(source, target)
-        breakpoint()
+        # breakpoint()
         # else:
         #     romaji(source, target)
     io.save()
