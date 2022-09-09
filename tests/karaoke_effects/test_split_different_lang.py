@@ -142,7 +142,7 @@ def translate(text, backend="deepl"):
     if backend == "deepl":
         import requests
         port = 8281
-        
+        # env ROCKET_PORT=8281 ./executable_deepl
         url = "http://localhost:{}/translate".format(port)
         data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
         r = requests.post(url, json=data)
