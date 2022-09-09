@@ -32,10 +32,20 @@ def jsonLocate(jsonObj,location=[]):
         print("KEY %s DOES NOT EXIST!", ".".join(location))
         return None
 
-
+def find_candidates():
+    import requests
+    r = requests.get(test_url)
+    import json
+    data = json.loads(r.text)
+    proxy_names = jsonLocate(data,location=location)
+    if proxy_names == None:
+        print("SOMEHOW WE FAILED TO FETCH THE PROXY LIST")
+        return []
+    else:
+        return proxy_names
 
 ## FIND DELAY ##
-def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "http://localhost:9911/proxies/", location = ["proxies","✋ 手动选择","all"], forbidden_names = ["DIRECT","REJECT","GLOBAL"]):
+def find_tested_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "http://localhost:9911/proxies/", location = ["proxies","✋ 手动选择","all"], forbidden_names = ["DIRECT","REJECT","GLOBAL"]):
 
     def get_delay(name):
         url = "{}{}/delay?timeout={}&url={}".format(test_url, name, timeout, urltest)
