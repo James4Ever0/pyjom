@@ -23,6 +23,8 @@ def baiduTranslator(text): # target language must be chinese.
         print("ERROR ON BAIDU TRANSLATOR")
         return None
 
+def deeplTranslator(text):
+
 @app.get("/")
 def read_root():
     return "unified translator hooked on some clash server"
