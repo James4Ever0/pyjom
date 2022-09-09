@@ -132,6 +132,8 @@ def changeProxy(useDirect=False, suggestSingleElemProbability=0.1):
     if proxyName == None:
         # using suggested proxy here.
         print("USING SUGGESTED PROXY")
+    else:
+        proxyName = proxyName['text']
     print("PROXY REFRESHED")
     return proxyName
 
