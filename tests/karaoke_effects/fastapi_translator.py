@@ -112,7 +112,7 @@ def changeProxy(useDirect=False):
     if path == "refreshProxy":
         import random
 
-        prob = random.random() < len(workingProxies) * 0.1
+        prob = random.random() < len(workingProxies) * suggestSingleElemProbability
         if prob:
             suggestedProxy = random.choice(list(workingProxies))
             params = {"suggest": suggestedProxy}
