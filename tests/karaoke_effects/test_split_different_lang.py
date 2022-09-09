@@ -150,7 +150,9 @@ def translate(text, backend="deepl"):
         code = response['code']
         if code == 200:
             return response['data']
-        print(response)
+        else:
+            
+        # print(response)
 
 
 if __name__ == "__main__":
