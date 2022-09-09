@@ -737,6 +737,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
 def previewAssWithVideo(sample_video,assPath):
     # from pyonfx import Ass
     # io = Ass(assPath)
+    # do not load this shit again unless you want to block the whole shit...
     print("PREVIEWING ASS SCRIPT: %s" % assPath)
     # io.open_mpv(video_path=sample_video) # ain't see shit...
     cmd = "mpv --sub-file='{}' '{}'".format(assPath, sample_video)
