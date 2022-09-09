@@ -235,9 +235,9 @@ def waitForServerUp(port, message, timeout=1):
             url = "http://localhost:{}".format(port)
             r = requests.get(url, timeout=timeout)
             if type(message) == str:
-            text = r.text.strip('"').strip("'")
-            print("SERVER AT PORT %d RESPONDS:" % port, [text])
-            assert text == message
+                text = r.text.strip('"').strip("'")
+                print("SERVER AT PORT %d RESPONDS:" % port, [text])
+                assert text == message
             print("SERVER AT PORT %d IS UP" % port)
             break
         except:
