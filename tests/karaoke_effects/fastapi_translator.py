@@ -21,8 +21,9 @@ def useProxy(flag):
         os.environ["http_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
         os.environ["https_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
     else:
-        os.environ['http_proxy']=''
-        os.environ['https_proxy']=''
+        os.environ["http_proxy"] = ""
+        os.environ["https_proxy"] = ""
+
 
 from fastapi import FastAPI
 
@@ -61,6 +62,7 @@ def baiduTranslator(text):  # target language must be chinese.
 def deeplTranslator(text):
     useProxy(False)
     import requests
+
     port = 8281
     # env ROCKET_PORT=8281 ./executable_deepl
     url = "http://127.0.0.1:{}/translate".format(port)
@@ -77,26 +79,31 @@ def deeplTranslator(text):
         # breakpoint()
         return None
 
+
 # use suggest mechanism
 workingProxies = set()
+
 
 def checkWorkingProxies():
     global workingProxies
     useProxy(False)
     url = "http://127.0.0.1:8677/checkProxy"
     import requests
+
     for proxy in list(workingProxies):
-        r = requests.get(url, params = {"proxy": proxy})
+        r = requests.get(url, params={"proxy": proxy})
         response = r.json()
-        if not response['exists']:
+        if not response["exists"]:
             print("REMOVING PROXY %s NOW" % useProxy)
             workingProxies.remove(proxy)
+
 
 def changeProxy(useDirect=False):
     useProxy(False)
     global workingProxies
     checkWorkingProxies()
     import requests
+
     if useDirect:
         path = "useDirect"
     else:
@@ -104,19 +111,21 @@ def changeProxy(useDirect=False):
     print("PATH", path)
     if path == "refreshProxy":
         import random
-        prob = random.random() < len(workingProxies)*0.1
+
+        prob = random.random() < len(workingProxies) * 0.1
         if prob:
             suggestedProxy = random.choice(list(workingProxies))
-            params = {'suggest':suggestedProxy}
-            print("SUGGESGING PROXY:", )
+            params = {"suggest": suggestedProxy}
+            print("SUGGESGING PROXY:", suggestedProxy)
         else:
-            params = {'suggest':None}
-        r = requests.get("http://127.0.0.1:8677/{}".format(path),params=params)
+            params = {"suggest": None}
+        r = requests.get("http://127.0.0.1:8677/{}".format(path), params=params)
     else:
         r = requests.get("http://127.0.0.1:8677/{}".format(path))
     print("RESPONSE:", r.text)
     import parse
-    proxyName = parse.parse('', r.text)
+
+    proxyName = parse.parse("", r.text)
     print("PROXY REFRESHED")
     return proxyName
 
@@ -146,8 +155,9 @@ def metaTranslator(text, backend="baidu"):
                 print("SOME ERROR DURING FETCHING TRANSLATION")
         except:
             import traceback
+
             traceback.print_exc()
-            print('ERROR FETCHING TRANSLATION')
+            print("ERROR FETCHING TRANSLATION")
 
 
 @app.get("/")
