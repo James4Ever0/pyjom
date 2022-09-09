@@ -178,6 +178,8 @@ def waitForServerUp(port, message):
         r = requests.get(url)
         assert r.text == message
         break
+        except:
+            print("SERVER AT PORT %d MIGHT NOT BE UP")
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
 waitForServerUp(8978, )
