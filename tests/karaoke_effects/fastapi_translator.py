@@ -71,7 +71,7 @@ def deeplTranslator(text, sleep=2):
     # env ROCKET_PORT=8281 ./executable_deepl
     url = "http://127.0.0.1:{}/translate".format(port)
     data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
-    r = requests.post(url, json=data)
+    r = requests.post(url, json=data, timeout=3)
     response = r.json()
     code = response["code"]
     if code == 200:
