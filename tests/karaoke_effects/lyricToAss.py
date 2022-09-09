@@ -1,7 +1,7 @@
 # this is the complete process.
 from lyrictoolbox import *
-from .lyrictoolbox import previewAssWithVideo
-from .lyrictoolbox import getTextListTranslated
+# from .lyrictoolbox import previewAssWithVideo
+# from .lyrictoolbox import getTextListTranslated
 
 def lrcToAnimatedAss(musicPath, lrcPath, assPath): # will be moved to lyrictoolbox, and more styles incoming
     textArray = lrcToTextArray(musicPath, lrcPath)
