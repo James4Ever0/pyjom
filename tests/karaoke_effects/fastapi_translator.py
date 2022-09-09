@@ -128,7 +128,7 @@ def changeProxy(useDirect=False, suggestSingleElemProbability=0.1):
     print("RESPONSE:", r.text)
     import parse
 
-    proxyName = parse.parse("", r.text)
+    proxyName = parse.parse("refresh proxy to {}", r.text)
     print("PROXY REFRESHED")
     return proxyName
 
