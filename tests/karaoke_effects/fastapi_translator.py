@@ -157,7 +157,8 @@ def changeProxy(useDirect=False, suggestSingleElemProbability=0.1):
 
 def metaTranslator(text, backend="baidu"):
     global workingProxies
-    assert backend in ["baidu", "deepl"]
+    backendList = ["baidu", "deepl"]
+    assert backend in backendList
     # translator = None
     import random
 
