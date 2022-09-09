@@ -732,13 +732,13 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
                 elem.center = sylList[index].center+centerShift
                 print("CHANGED CENTER", elem.center, sylList[index].center)
                 sylList[index] = copy.deepcopy(elem)
-            startSyl = sylList[0]
-            startLine = startSyl.center - startSyl.width/2
-            endSyl = sylList[-1]
-            endLine = endSyl.center + endSyl.width/2
-            currentCenter = (endLine+startLine)/2
-            print(startLine, endLine)
-            print('adjusted center:', currentCenter)
+            # startSyl = sylList[0]
+            # startLine = startSyl.center - startSyl.width/2
+            # endSyl = sylList[-1]
+            # endLine = endSyl.center + endSyl.width/2
+            # currentCenter = (endLine+startLine)/2
+            # print(startLine, endLine)
+            # print('adjusted center:', currentCenter)
 
             lineMod.syls = sylList
         # print(lineMod.syls)
