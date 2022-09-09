@@ -169,7 +169,7 @@ def hello_world():
         return 'failed to find a proxy'
     import random
     proxy_name = random.choice(proxy_names)
-    
+    setClashProxy()
     return 'refresh proxy to %s' % proxy_name
 
 if __name__ == "__main__":
