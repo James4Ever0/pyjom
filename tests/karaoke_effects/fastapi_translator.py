@@ -163,7 +163,7 @@ def metaTranslator(text, backend="baidu"):
 
     getUseDirect = lambda: False
     backends = {"baidu":(baiduTranslator,lambda: True), 'deepl':(deeplTranslator,lambda: True)}
-    translator, getUseDirect = 
+    translator, getUseDirect = backends[backend]
     proxyName = None
     firstTime = True
     while True:
