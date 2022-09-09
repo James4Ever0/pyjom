@@ -16,10 +16,10 @@ chinesePuncturals = zhon.hanzi.punctuation
 def removeChinesePunctuals(text):
     for elem in chinesePuncturals:
         text = text.replace(elem, "")
-    return processedText
+    return text
 
 def removeLeadingAndTrailingPunctuals(text):
-    return processedText
+    return text
 
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
