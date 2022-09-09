@@ -191,27 +191,27 @@ def metaTranslator(text, backend="baidu"):
             print("ERROR FETCHING TRANSLATION")
 
 
-def waitForServerUp(port, message, timeout=1):
-    import requests
+# def waitForServerUp(port, message, timeout=1):
+#     import requests
 
-    while True:
-        try:
-            url = "http://localhost:{}".format(port)
-            r = requests.get(url, timeout=timeout)
-            text = r.text.strip('"').strip("'")
-            print("SERVER AT PORT %d RESPONDS:" % port, [text])
-            assert text == message
-            print("SERVER AT PORT %d IS UP" % port)
-            break
-        except:
-            import traceback
+#     while True:
+#         try:
+#             url = "http://localhost:{}".format(port)
+#             r = requests.get(url, timeout=timeout)
+#             text = r.text.strip('"').strip("'")
+#             print("SERVER AT PORT %d RESPONDS:" % port, [text])
+#             assert text == message
+#             print("SERVER AT PORT %d IS UP" % port)
+#             break
+#         except:
+#             import traceback
 
-            traceback.print_exc()
-            print("SERVER AT PORT %d MIGHT NOT BE UP")
-            print("EXPECTED MESSAGE:", [message])
-            import time
+#             traceback.print_exc()
+#             print("SERVER AT PORT %d MIGHT NOT BE UP")
+#             print("EXPECTED MESSAGE:", [message])
+#             import time
 
-            time.sleep(1)
+#             time.sleep(1)
 
 
 @app.get("/")
