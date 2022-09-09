@@ -8,9 +8,10 @@ os.environ['http_proxy'] = ''
 os.environ['https_proxy'] = ''
 
 import string
+import zhon
 
 englishPuncturals = string.punctuation
-chinesePuncturals = 
+chinesePuncturals = zhon.hanzi.punctuation
 
 def removeChinesePunctuals(text):
     return processedText
