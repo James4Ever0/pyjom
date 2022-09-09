@@ -93,6 +93,7 @@ def changeProxy(useDirect=False):
     import parse
     proxyName = parse.parse('', r.text)
     print("PROXY REFRESHED")
+    return proxyName
 
 
 def metaTranslator(text, backend="baidu"):
