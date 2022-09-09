@@ -54,7 +54,7 @@ nativeLangFlagStandard = "CHINESE"
 # need to make this thing totally bilingual if we have to.
 
 # for test in tests:
-def getLyrics
+def getLyricsLanguageType(test)
     isBilingual=False
     needToTranslate=True # not useful for our bilingual shit.
     print("_______________TEST SUBJECT_______________")
