@@ -140,3 +140,4 @@ if __name__ == "__main__":
         newLyricArray = []
         isBilingual, needToTranslate = getLyricsLanguageType(test)
         if isBiligual:
+            
