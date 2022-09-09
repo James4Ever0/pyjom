@@ -226,12 +226,12 @@ translatedDict = {}
 @app.get("/translate")
 def read_item(backend: str, text: str):
     global translatedDict
+    if len(list(translatedDict.keys())
     code = 200
     if not backend in ["deepl", "baidu"]:
         code = 400
         result = "INVALID BACKEND"
     else:
-        if 
         if len(text)<30:
 
         result = metaTranslator(text, backend=backend)
