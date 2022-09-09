@@ -231,6 +231,7 @@ def read_item(backend: str, text: str):
         result = "INVALID BACKEND"
     else:
         if len(text)<30:
-            
+
         result = metaTranslator(text, backend=backend)
+        if len(result)<30 and len(text)<30:
     return {"code": code, "result": result}
