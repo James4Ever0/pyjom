@@ -23,13 +23,15 @@ import yaml
 
 from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
 
+import schedule
+
 def jsonLocate(jsonObj,location=[]):
     try:
         if location!=[]:
             return jsonLocate(jsonObj[location[0]],location[1:])
         return jsonObj
     except:
-        print("KEY %s DOES NOT EXISTS!", ".".join(location))
+        print("KEY %s DOES NOT EXIST!", ".".join(location))
         return None
 
 ## FIND DELAY ##
