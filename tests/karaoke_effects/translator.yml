@@ -14,9 +14,8 @@ windows:
         - python3 -m uvicorn -port 8978 loadLingua_jpype_fastapi:app --reload
       # the deepl hacked api
       - shell_command:
-        - cd 
-        - bash launch_vps_single_server.sh dual_config_nanjing.json nanjing # launch main scraper after proxy ready
-         # cause the pppoe vps can expire at any time.
+        - cd /root/Desktop/works/pyjom/tests/deepl_free_translator/deepl-api-rs
+        - env 
     # for clash
       - bash launch_clash.sh # clash command
       - shell_command:
