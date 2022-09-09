@@ -148,8 +148,8 @@ def translate(text, backend="deepl"):
         r = requests.post(url, json=data)
         response = r.json()
         code = response['code']
-        if code == '200':
-            
+        if code == 200:
+            return response['data']
         print(response)
 
 
