@@ -8,6 +8,8 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+import time
+
 import paddlehub as hub
 language_translation_model = hub.Module(name='baidu_translate')
 language_recognition_model = hub.Module(name='baidu_language_recognition')
