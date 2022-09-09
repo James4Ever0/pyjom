@@ -57,11 +57,13 @@ def changeProxy():
 
 def metaTranslator(test, backend='baidu'):
     assert backend in ['baidu','deepl']
-    changeProxy()
-    if backend == 'baidu':
-        translator = baiduTranslator
-    elif backend == 'deepl':
-        translator = deeplTranslator
+    while True:
+        changeProxy()
+        if backend == 'baidu':
+            translator = baiduTranslator
+        elif backend == 'deepl':
+            translator = deeplTranslator
+        return translator
 @app.get("/")
 def read_root():
     return "unified translator hooked on some clash server"
