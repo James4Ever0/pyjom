@@ -19,4 +19,8 @@ def getLinguaDetectedLanguageLabel(sample):
     # but we can convert it into string.
     strResult = str(result)
     return strResult
-shutdownJVM()
+# shutdownJVM()
+from fastapi import FastAPI
+
+app = FastAPI()
+
