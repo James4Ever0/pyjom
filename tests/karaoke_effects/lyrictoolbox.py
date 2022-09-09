@@ -1,5 +1,7 @@
 import pylrc
 from MediaInfo import MediaInfo
+from pyonfx import *
+# wildcard not allowed in function
 
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
