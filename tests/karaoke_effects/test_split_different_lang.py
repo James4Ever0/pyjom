@@ -146,4 +146,4 @@ if __name__ == "__main__":
                     foreignText, nativeText = text
                 else:
                     foreignText = text
-                    nativeText = 
+                    nativeText = translate(foreignText)
