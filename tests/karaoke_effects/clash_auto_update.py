@@ -171,7 +171,7 @@ def checkProxyExists(proxy):
 
 @app.route('/', methods=['GET'])
 def serverHello():
-    return ''
+    return 'clash update controller'
 
 @app.route('/checkProxy', methods=['GET'])
 def checkProxyAPI():
