@@ -11,7 +11,8 @@ windows:
     # for lingua api
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/karaoke_effects
-        - python3 -m uvicorn -port 8977loadLingua_jpype_fastapi:app --reload
+        - python3 -m uvicorn -port 8978 loadLingua_jpype_fastapi:app --reload
+      # the 
       - shell_command:
         - bash launch_vps_single_server.sh dual_config_nanjing.json nanjing # launch main scraper after proxy ready
          # cause the pppoe vps can expire at any time.
