@@ -240,7 +240,7 @@ def read_item(backend: str, text: str):
         result = "INVALID BACKEND"
     else:
         if len(text)<30 and text in translatedDict.keys():
-            result =  translatedDict[text]
+            result = translatedDict[text]
         else:
             result = metaTranslator(text, backend=backend)
             if len(result)<30 and len(text)<30:
