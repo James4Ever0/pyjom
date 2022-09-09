@@ -661,6 +661,8 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         else:
             print("Invalid translatedTuple: %s" % str(translatedTuple))
             breakpoint()
+        if censor:
+            sourceText = 
         elem['text'] = sourceText
 
         lineMod = lineModSource.copy()
