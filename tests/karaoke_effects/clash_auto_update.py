@@ -169,8 +169,9 @@ def checkProxyExists(proxy):
     return proxy in find_proxy_names()
 # from typing import Union
 
-@app.route('/checkProxy', methods=['GET'])
-def checkProxyAPI():
+@app.route('/', methods=['GET'])
+def serverHello():
+    return ''
 
 @app.route('/checkProxy', methods=['GET'])
 def checkProxyAPI():
