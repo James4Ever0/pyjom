@@ -805,3 +805,10 @@ def previewAssWithVideo(sample_video,assPath):
     # io.open_mpv(video_path=sample_video) # ain't see shit...
     cmd = "mpv --sub-file='{}' '{}'".format(assPath, sample_video)
     os.system(cmd)
+
+def lrcToAnimatedAss(musicPath, lrcPath, assPath): # will be moved to lyrictoolbox, and more styles incoming
+    textArray = lrcToTextArray(musicPath, lrcPath)
+    textList = [elem['text'] for elem in textArray]
+    translatedList = getTextListTranslated(textList)
+    # so we pass both arguments to the ass generator.
+    return textArrayWithTranslatedListToAss(textArray, translatedList, assPath)
