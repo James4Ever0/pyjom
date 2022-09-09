@@ -52,6 +52,8 @@ def deeplTranslator(text):
 def changeProxy():
     import requests
     r = requests.get("http://localhost:8677/refreshProxy")
+    print("RESPONSE:", r.text)
+    print("PROXY REFRESHED")
 
 def metaTranslator(test, backend='baidu'):
     assert backend in ['baidu','deepl']
