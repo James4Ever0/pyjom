@@ -1,7 +1,8 @@
 # this is the complete process.
 from lyrictoolbox import *
 
-def lrcToAnimatedAss(musicPath, lrcPath): # will be moved to lyrictoolbox
+def lrcToAnimatedAss(musicPath, lrcPath): # will be moved to lyrictoolbox, and more styles incoming
+    textArray = lrcToTextArray(musicPath, lrcPath)
     
 
 if __name__ == "__main__":
