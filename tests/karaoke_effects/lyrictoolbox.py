@@ -713,5 +713,5 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
 # # io.open_aegisub()
 def previewAss(sample_video,assPath):
     io = Ass(assPath)
-# sample_video = "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
-# io.open_mpv(video_path=sample_video) # ain't see shit...
+
+    io.open_mpv(video_path=sample_video) # ain't see shit...
