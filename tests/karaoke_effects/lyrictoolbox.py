@@ -782,6 +782,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         if translatedText:
             kanji(source, target)
             lineMod2 = lineMod.copy()
+            translatedText = translatedText.replace(" ","")
             lineMod2.text = translatedText
             translateShift = 100
             addSylToLine(lineMod2,translateShift=translateShift)
