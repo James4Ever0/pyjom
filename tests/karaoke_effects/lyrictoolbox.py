@@ -636,7 +636,8 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
             lineModSource = line.copy()
             break
         
-    from test_pylrc import *
+    # from test_pylrc import *
+    newTextArray = []
     # just a test.
     shiftAdjust = 600
     for elem in newTextArray:
