@@ -744,9 +744,9 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             source = lineMod2.copy()
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
-            romaji(source, target)
-        else:
-            romaji(source, target)
+        romaji(source, target)
+        # else:
+        #     romaji(source, target)
     io.save()
     print("ASS RENDERED AT %s" % assPath)
     return assPath
