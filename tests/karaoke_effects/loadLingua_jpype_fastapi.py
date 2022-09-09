@@ -31,5 +31,4 @@ if __name__ == "__main__":
     import math
 
     print("CALLING MATH: %d" % math.sqrt(4))
-    # shutdownJVM()
-    # what if we do not shut this down?
+shutdownJVM()
