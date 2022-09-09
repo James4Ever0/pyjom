@@ -200,25 +200,7 @@ if __name__ == "__main__":
     # exit()
     for test in tests:
         # we need to demostrate this workflow.
-        newLyricArray = []
-        isBilingual, needToTranslate = getLyricsLanguageType(test)
-        if isBilingual:
-            for elem in test:
-                text, flag = lastSpaceSpliter(elem)
-                if flag:  # splited!
-                    foreignText, nativeText = text
-                else:
-                    foreignText = text
-                    nativeText = translate(foreignText)
-                newLyricArray.append((foreignText, nativeText))
-        else:
-            if needToTranslate:
-                for elem in test:
-                    foreignText = elem
-                    nativeText = translate(foreignText)
-                    newLyricArray.append((foreignText, nativeText))
-                else:
-                    newLyricArray = test.copy()
+
         print("_________RESULT_________")
         for elem in newLyricArray:
             print(elem)
