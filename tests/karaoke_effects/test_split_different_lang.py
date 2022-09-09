@@ -156,6 +156,8 @@ def translate(text, backend="random"): # deepl is shit. fucking shit.
     print("TRANSLATOR RESULT:", result)
     if result['code'] == 200:
         translatedText = result['result']
+    else:
+        print("SOME ERROR DURING TRANSLATION!")
     return translatedText
 
 
