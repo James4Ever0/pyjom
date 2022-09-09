@@ -17,4 +17,5 @@ if __name__ == "__main__":
     import os
     assPath = os.path.abspath('test.ass')
     lrcToAnimatedAss(musicPath, lrcPath,assPath)
-    previewAssWithVideo(sample_video, assPath)
+    # previewAssWithVideo(sample_video, assPath)
+    
