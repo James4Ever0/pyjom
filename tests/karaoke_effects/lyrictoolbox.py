@@ -3,7 +3,9 @@ from MediaInfo import MediaInfo
 from pyonfx import *
 # wildcard not allowed in function
 
-
+import os
+os.environ['http_proxy'] = ''
+os.environ['https_proxy'] = ''
 
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
