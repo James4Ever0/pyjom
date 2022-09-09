@@ -216,6 +216,7 @@ def checkProxyExists(proxy):
 
 @app.route("/", methods=["GET"])
 def serverHello():
+    schedule.run_pending()
     return "clash update controller"
 
 
