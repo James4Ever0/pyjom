@@ -158,9 +158,9 @@ import paddlehub as hub
 language_translation_model = hub.Module(name='baidu_translate')
 language_recognition_model = hub.Module(name='baidu_language_recognition')
 
-def translate(text, backend="baidu", delay = 2): # deepl is shit. fucking shit.
-    import time
-    time.sleep(delay)
+def translate(text, backend="baidu"): # deepl is shit. fucking shit.
+    # import time
+    # time.sleep(delay)
     assert backend in ["deepl", "baidu"]
     translatedText = text
     if backend == "deepl":
