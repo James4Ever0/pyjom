@@ -712,6 +712,8 @@ for elem in newTextArray:
 # how to deal with the tra
 
 io.save()
+# do the preview later?
 # # io.open_aegisub()
+def previewAss(sample_video,assPath)
 # sample_video = "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
 # io.open_mpv(video_path=sample_video) # ain't see shit...
