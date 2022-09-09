@@ -4,9 +4,9 @@ import yaml
 
 # import yaml
 # import requests
-# import os
-# os.environ['http_proxy'] = ''
-# os.environ['https_proxy'] = ''
+import os
+os.environ['http_proxy'] = ''
+os.environ['https_proxy'] = ''
 
 # r = requests.get(target)
 # text = r.text
@@ -62,6 +62,9 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
     for elem in candidates:
         print(elem)
     return candidates
+
+def setClashProxy(proxyName):
+    
 
 def refineClashYaml(clashYamlPath = "Clash3.yaml"):
     with open(clashYamlPath,"r") as f: data = f.read()
