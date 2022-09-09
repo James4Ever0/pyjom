@@ -32,7 +32,7 @@ def jsonLocate(jsonObj,location=[]):
         print("KEY %s DOES NOT EXIST!", ".".join(location))
         return None
 
-def find_proxy_names(test_url,location):
+def find_proxy_names( test_url = "http://localhost:9911/proxies/", location = ["proxies","✋ 手动选择","all"]):
     import requests
     r = requests.get(test_url)
     import json
@@ -169,6 +169,7 @@ def hello_world():
         return 'failed to find a proxy'
     import random
     proxy_name = random.choice(proxy_names)
+    
     return 'refresh proxy to %s' % proxy_name
 
 if __name__ == "__main__":
