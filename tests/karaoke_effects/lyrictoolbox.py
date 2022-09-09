@@ -67,4 +67,4 @@ def lrcToTextArray(musicPath, lrcPath):
             end = min(musicDuration, end)
         newTextArray[index].update({'end':end})
     return newTextArray
-    # [{}
+    # [{'text':text,'start':start,'end':end}, ...]
