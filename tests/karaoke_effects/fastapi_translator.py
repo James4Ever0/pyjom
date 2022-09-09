@@ -149,7 +149,7 @@ def metaTranslator(text, backend="baidu"):
     if backend == "baidu":
         translator = baiduTranslator
         getUseDirect = lambda: True
-        # let's just bet this shit.
+        # let's just bet on this shit.
         # getUseDirect = lambda: random.random() > 0.7
     elif backend == "deepl":
         translator = deeplTranslator
