@@ -244,7 +244,6 @@ def waitForServerUp(port, message, timeout=1):
             break
         except:
             import traceback
-
             traceback.print_exc()
             print("SERVER AT PORT %d MIGHT NOT BE UP" % port)
             print("EXPECTED MESSAGE:", [message])
@@ -261,6 +260,7 @@ waitForServerUp(8932,{"response": "DFAFilter based Chinese text filter(censor)"}
 def censorTextWithTextFilter(text):
     port = 8932
     import requests
+    url = "http://localhost:{}//filter"
 
 def getTextListTranslated(test):
     newLyricArray = []
