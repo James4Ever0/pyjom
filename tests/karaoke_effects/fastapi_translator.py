@@ -115,7 +115,8 @@ def metaTranslator(text, backend="baidu"):
                 workingProxies.add(proxyName)
                 return result
             else:
-                if proxyName in workingProxies):
+                if proxyName in workingProxies:
+                    workingProxies.remove(proxyName)
                 print("SOME ERROR DURING FETCHING TRANSLATION")
         except:
             import traceback
