@@ -41,27 +41,27 @@ language_recognition_model = hub.Module(name="baidu_language_recognition")
 
 def baiduTranslator(text, sleep=1):  # target language must be chinese.
     useProxy(False)
-
+    import filelock
     lock = filelock.FileLock("/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock")
     with lock:
-    import time
-    time.sleep(sleep)
-    try:
-        language_code = language_recognition_model.recognize(text)
-        if language_code != "zh":
-            text_prompts = language_translation_model.translate(
-                text, language_code, "zh"
-            )
-            translatedText = text_prompts
-        else:
-            translatedText = text
-        return translatedText
-    except:
-        import traceback
+        import time
+        time.sleep(sleep)
+        try:
+            language_code = language_recognition_model.recognize(text)
+            if language_code != "zh":
+                text_prompts = language_translation_model.translate(
+                    text, language_code, "zh"
+                )
+                translatedText = text_prompts
+            else:
+                translatedText = text
+            return translatedText
+        except:
+            import traceback
 
-        traceback.print_exc()
-        print("ERROR ON BAIDU TRANSLATOR")
-        return None
+            traceback.print_exc()
+            print("ERROR ON BAIDU TRANSLATOR")
+            return None
 
 
 def deeplTranslator(text, sleep=2, timeout = 3):
