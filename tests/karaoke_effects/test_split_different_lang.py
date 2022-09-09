@@ -141,6 +141,8 @@ def translate(text, backend="deepl"):
     assert backend in ["deepl", "baidu"]
     if backend == "deepl":
         import requests
+        port = 8281
+        
         url = "http://localhost:{}/translate".format(port)
         data = {"text": text, "source_lang": "auto", "target_lang": "ZH"}
         r = requests.post(url, json=data)
