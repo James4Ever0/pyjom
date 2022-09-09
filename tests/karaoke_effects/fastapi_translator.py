@@ -76,9 +76,10 @@ def metaTranslator(text, backend='baidu'):
     assert backend in ['baidu','deepl']
     # translator = None
     import random
+    getUseDirect = lambda: False
     if backend == 'baidu':
         translator = baiduTranslator
-        getUseDirect = lambda
+        getUseDirect = lambda: random.random()>0.7
     elif backend == 'deepl':
         translator = deeplTranslator
     while True:
