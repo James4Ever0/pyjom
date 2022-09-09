@@ -171,7 +171,7 @@ def checkProxyExists(proxy):
 
 @app.route('/checkProxy', methods=['GET'])
 def checkProxyAPI():
-    request.
+    proxy = request.args['proxy']
     exists = checkProxyExists(proxy)
     return {"exists": exists}
 
@@ -185,6 +185,8 @@ def useDirectAPI():
 
 @app.route('/refreshProxy', methods=['GET'])
 def refreshProxyAPI():
+    proxy = request.args['proxy']
+
     schedule.run_pending()
     if suggest:
         if checkProxyExists(suggest):
