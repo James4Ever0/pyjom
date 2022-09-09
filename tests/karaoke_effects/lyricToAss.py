@@ -7,7 +7,7 @@ def lrcToAnimatedAss(musicPath, lrcPath, assPath): # will be moved to lyrictoolb
     textList = [elem['text'] for elem in textArray]
     translatedList = getTextListTranslated(textList)
     # so we pass both arguments to the ass generator.
-
+    
 
 if __name__ == "__main__":
     musicPath= "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
