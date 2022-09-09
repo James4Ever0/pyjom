@@ -218,5 +218,6 @@ if __name__ == "__main__":
                 else:
                     newLyricArray = test.copy()
     print("_________RESULT_________")
-    for 
+    for elem in newLyricArray:
+        print(elem)
     print("_________RESULT_________")
