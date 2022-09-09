@@ -132,7 +132,8 @@ def getLyricsLanguageType(test)
             needToTranslate = False
         else:
             print('need to translate')
+    return 
 
 if __name__ == "__main__":
     for test in tests:
-        g
+        getLyricsLanguageType(test)
