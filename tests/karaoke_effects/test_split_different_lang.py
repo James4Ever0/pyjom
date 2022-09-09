@@ -150,7 +150,7 @@ def translate(text, backend="deepl"):
 
 
 if __name__ == "__main__":
-    
+    translate('hello world')
     exit()
     for test in tests:
         # we need to demostrate this workflow.
