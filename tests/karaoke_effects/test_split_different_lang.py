@@ -48,8 +48,8 @@ def getJiebaCuttedText(text):
     textList = [elem for elem in textList if len(elem) > 0]
     return textList
 
-        from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
-        nativeLangFlagStandard = "CHINESE"
+from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
+nativeLangFlagStandard = "CHINESE"
 
 for test in tests:
     isBilingual=False
@@ -121,4 +121,5 @@ for test in tests:
     if not isBilingual:
         print('checking main language')
         lyricString = " ".join(test)
-        mainLanguage = 
+        mainLanguage = pyjniusLinguaDetectLanguageLabel(lyricString)
+        
