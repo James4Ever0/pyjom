@@ -637,6 +637,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         
     # from test_pylrc import *
     # just a test.
+    shiftAdjust = 600
     newTextArray = textArray
     for mIndex,elem in enumerate(newTextArray):
         translatedTuple = translatedList[mIndex]
@@ -656,7 +657,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         lineMod.duration = lineMod.end_time  - lineMod.start_time
         lineMod.text = elem['text'].strip().replace("  ","")
         # print(lineMod)
-        def addSylToLine(lineMod, shiftAdjust = 600, translateShift=0,charShift = 30,CENTER = 1600/2, mSylYShift = 700, mTop=25,mMiddle = 49.0, mBottom =73.0):
+        def addSylToLine(lineMod, translateShift=0,charShift = 30,CENTER = 1600/2, mSylYShift = 700, mTop=25,mMiddle = 49.0, mBottom =73.0):
             lineMod.words = getJiebaCuttedText(lineMod.text)
             sylList = []
             wordCount = len(lineMod.words)
