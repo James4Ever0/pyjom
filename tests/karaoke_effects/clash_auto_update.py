@@ -25,9 +25,12 @@ from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
 
 def jsonLocate(jsonObj,location=[]):
     try:
-    if location!=[]:
-        return jsonLocate(jsonObj[location[0]],location[1:])
-    return jsonObj
+        if location!=[]:
+            return jsonLocate(jsonObj[location[0]],location[1:])
+        return jsonObj
+    except:
+        print("KEY %s DOES NOT EXISTS)
+        return None
 
 ## FIND DELAY ##
 def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "http://localhost:9090/proxies/", location = ["proxies","✋ 手动选择","all"], forbidden_names = ["DIRECT","REJECT","GLOBAL"]):
