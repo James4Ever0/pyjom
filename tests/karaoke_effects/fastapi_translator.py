@@ -50,7 +50,7 @@ def deeplTranslator(text):
         return None
 
 def metaTranslator(test, backend='baidu'):
-    
+    assert backend in ['baidu','deepl']
     if backend == 'baidu':
         translator = baiduTranslator
     elif backend == 'deepl':
