@@ -643,7 +643,9 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         translatedTuple = translatedList[mIndex]
         if len(translatedTuple) == 1:
             sourceText = translatedTuple[0]
-            trans
+            translatedText = None
+        elif len(translated):
+            sourceText, translatedText = translatedTuple
         lineMod = lineModSource.copy()
         lineMod.start_time = max(0,elem['start']*1000 - shiftAdjust)
         lineMod.end_time = elem['end']*1000 - shiftAdjust
