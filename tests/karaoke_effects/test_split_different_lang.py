@@ -173,9 +173,11 @@ def translate(text, backend='random'): # deepl is shit. fucking shit.
 def waitForServerUp(port, message):
     import requests
     while True:
-        url = "http://localhost:8974"
+        url = "http://localhost:{}".format(port)
         r = requests.get(url)
-        assert r.text == "unified translator hooked on some clash server"
+        assert r.text == message
+
+waitForServerUp(8974, "unified translator hooked on some clash server")
 
 if __name__ == "__main__":
     # result = translate('hello world')
