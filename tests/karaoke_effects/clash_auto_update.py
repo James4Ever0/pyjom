@@ -96,3 +96,9 @@ def refineClashYaml(clashYamlPath = "Clash3.yaml"):
     r = requests.put(base_url+url+"GLOBAL",data=json.dumps({"name":name},ensure_ascii=False).encode())
     assert r.status_code == 204
     """
+
+def getClashYaml():
+    import requests
+    url = ""
+    r = requests.get(url)
+    r.text
