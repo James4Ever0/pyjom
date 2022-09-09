@@ -164,7 +164,10 @@ port = 8677
 
 app = Flask(__name__)
 
-@app.route('/refreshProxy', methods=['GET'])
+@app.route('/useDirect', methods=['GET'])
+def useDirectAPI():
+    schedule.run_pending()
+    setClashProxy(proxy_name)
 
 
 @app.route('/refreshProxy', methods=['GET'])
