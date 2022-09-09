@@ -40,7 +40,7 @@ language_recognition_model = hub.Module(name="baidu_language_recognition")
 
 
 def baiduTranslator(text, sleep=1):  # target language must be chinese.
-    useProxy(True)
+    useProxy(False)
     import time
     time.sleep(sleep)
     try:
