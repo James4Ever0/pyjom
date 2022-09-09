@@ -12,8 +12,8 @@ language_recognition_model = hub.Module(name='baidu_language_recognition')
 def read_root():
     return {"message": "unified translator hooked on some clash server"}
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, backend: str, text: str):
+@app.get("/translate")
+def read_item(backend: str, text: str):
     code = 200
     if not backend in ['deepl','baidu']:
         code = 400
@@ -22,4 +22,4 @@ def read_item(item_id: int, backend: str, text: str):
         result = 
     elif backend == 'baidu':
         result = 
-    return {"code": item_id, "result": result}
+    return {"code":code, "result": result}
