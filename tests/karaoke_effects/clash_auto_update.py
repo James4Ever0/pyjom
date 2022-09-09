@@ -99,7 +99,7 @@ def refineClashYaml(clashYamlPath = "Clash3.yaml"):
 
 def getClashYaml(clashYamlPath = 'Clash3.yaml'):
     import requests
-    url = ""
+    url = "https://raw.githubusercontents.com/yu-steven/openit/main/Clash.yaml" # some subtle difference!
     r = requests.get(url)
     with open(clashYamlPath, 'w+') as f:
         f.write(r.text)
