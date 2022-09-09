@@ -51,6 +51,8 @@ def getJiebaCuttedText(text):
 from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
 nativeLangFlagStandard = "CHINESE"
 
+need to make this thing to
+
 for test in tests:
     isBilingual=False
     print("_______________TEST SUBJECT_______________")
