@@ -223,6 +223,8 @@ def read_root():
 
 translatedDict = {}
 
+translatedDictCacheLimit = 100
+
 @app.get("/translate")
 def read_item(backend: str, text: str):
     global translatedDict
