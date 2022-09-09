@@ -174,10 +174,11 @@ def waitForServerUp(port, message):
     import requests
     while True:
         try:
-        url = "http://localhost:{}".format(port)
-        r = requests.get(url)
-        assert r.text == message
-        break
+            url = "http://localhost:{}".format(port)
+            r = requests.get(url)
+            print("SERVER AT PORT %d RESPONDS:" % port,r.text)
+            assert r.text == message
+            break
         except:
             print("SERVER AT PORT %d MIGHT NOT BE UP")
 
