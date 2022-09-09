@@ -79,9 +79,14 @@ def deeplTranslator(text):
 
 # use suggest mechanism
 workingProxies = set()
+
+def checkWorkingProxies():
+    
+
 def changeProxy(useDirect=False):
     useProxy(False)
     global workingProxies
+    checkWorkingProxies()
     import requests
     if useDirect:
         path = "useDirect"
