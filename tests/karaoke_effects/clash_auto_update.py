@@ -123,4 +123,4 @@ def getClashYaml(clashYamlPath = 'Clash3.yaml'):
     print("SAVED AT %s" % clashYamlPath)
 
 def updateClashYaml():
-    getClashYaml()
+    getClashYaml(clashYamlPath = 'Clash3.yaml')
