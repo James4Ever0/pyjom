@@ -185,7 +185,9 @@ def useDirectAPI():
 def refreshProxyAPI(suggest):
     schedule.run_pending()
     if suggest:
-        
+        if checkProxyExists(suggest):
+    setClashProxy(suggests)
+
     proxy_names = find_proxy_names()
     if proxy_names == []:
         return 'failed to find a proxy'
