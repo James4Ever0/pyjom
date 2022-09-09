@@ -55,6 +55,7 @@ nativeLangFlagStandard = "CHINESE"
 
 for test in tests:
     isBilingual=False
+    needToTranslate=True
     print("_______________TEST SUBJECT_______________")
     for elem in test:
         print(elem)
