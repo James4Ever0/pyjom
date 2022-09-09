@@ -122,5 +122,8 @@ for test in tests:
         print('checking main language')
         lyricString = " ".join(test)
         mainLanguage = pyjniusLinguaDetectLanguageLabel(lyricString)
+        print("main language id:", mainLanguage)
         if mainLanguage == nativeLangFlagStandard:
             print("no need to translate")
+        else:
+            print('need to translate')
