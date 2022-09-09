@@ -141,4 +141,4 @@ if __name__ == "__main__":
         isBilingual, needToTranslate = getLyricsLanguageType(test)
         if isBiligual:
             for elem in test:
-                
+                text, flag = lastSpaceSpliter(elem)
