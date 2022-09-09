@@ -806,7 +806,9 @@ def previewAssWithVideo(sample_video,assPath):
     cmd = "mpv --sub-file='{}' '{}'".format(assPath, sample_video)
     os.system(cmd)
 
-def lrcToAnimatedAss(musicPath, lrcPath, assPath): # already moved to lyrictoolbox, and more styles incoming
+def lrcToAnimatedAss(musicPath, lrcPath, assPath):
+    # already moved to lyrictoolbox
+    # TODO: more styles incoming
     textArray = lrcToTextArray(musicPath, lrcPath)
     textList = [elem['text'] for elem in textArray]
     translatedList = getTextListTranslated(textList)
