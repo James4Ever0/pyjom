@@ -238,7 +238,7 @@ def waitForServerUp(port, message, timeout=1):
                 text = r.text.strip('"').strip("'")
                 print("SERVER AT PORT %d RESPONDS:" % port, [text])
             else:
-                
+                text = r.json()
                 assert text == message
             print("SERVER AT PORT %d IS UP" % port)
             break
