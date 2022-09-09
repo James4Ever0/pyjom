@@ -285,7 +285,7 @@ def getTextListTranslated(test):
     return newLyricArray
 
 def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
-    newTextArray = []
+    newTextArray = [] # dummy shit. must be removed immediately.
     import random
     import math
     io = Ass("/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass", path_output="starJumping.ass")
