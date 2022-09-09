@@ -15,7 +15,7 @@ windows:
       # the deepl hacked api
       - shell_command:
         - cd /root/Desktop/works/pyjom/tests/deepl_free_translator/deepl-api-rs
-        - env ROCKET_PORT=8281 http_proxy=http://localhost:8281 https_proxy=http://localhost:8281 ./executable_deepl
+        - env ROCKET_PORT=8281 http_proxy=http://localhost:8381 https_proxy=http://localhost:8381 ./executable_deepl
     # for clash
       - bash launch_clash.sh # clash command
       - shell_command:
