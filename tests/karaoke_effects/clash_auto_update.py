@@ -133,6 +133,7 @@ def getClashYaml(clashYamlPath = 'Clash3.yaml'):
 
 def updateClashYaml(clashYamlPath = 'Clash3.yaml', control_port = 9911):
     getClashYaml(clashYamlPath = clashYamlPath)
+    refineClashYaml(clashYamlPath = clashYamlPath)
     import requests
     import json
     full_config_path = os.path.abspath(clashYamlPath)
