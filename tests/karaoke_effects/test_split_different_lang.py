@@ -137,6 +137,6 @@ def getLyricsLanguageType(test):
 if __name__ == "__main__":
     for test in tests:
         # we need to demostrate this workflow.
-        
+        newLyricArray = []
         isBilingual, needToTranslate = getLyricsLanguageType(test)
         if isBiligual:
