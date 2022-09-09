@@ -170,12 +170,12 @@ def translate(text, backend='random'): # deepl is shit. fucking shit.
     # we know the translator cannot respond the same shit to us right?
 
 
-def waitForServerUp(port, message):
+def waitForServerUp(port, message, timeout=1):
     import requests
     while True:
         try:
             url = "http://localhost:{}".format(port)
-            r = requests.get(url, timeout=1)
+            r = requests.get(url, timeout=timeout)
             text = r.text.strip('"').strip("'")
             print("SERVER AT PORT %d RESPONDS:" % port, [text])
             assert text == message
