@@ -204,7 +204,6 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
     import requests
-
     url = "http://localhost:8974/translate"
     mTranslate = lambda text, backend: requests.get(
         url, params={"backend": backend, "text": text}
