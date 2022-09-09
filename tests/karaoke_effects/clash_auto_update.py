@@ -24,18 +24,8 @@ import yaml
 from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
 
 def jsonLocate(jsonObj,location=[]):
-    # print("object:",jsonObj)
-    # print("location:",location)
     if location!=[]:
-        # try:
         return jsonLocate(jsonObj[location[0]],location[1:])
-        # this code is not wrong. it's some shit fucking around.
-        # except:
-        #     # some shit in jsonObj.
-        #     print("SHIT IN jsonObj and location")
-        #     print(jsonObj.keys())
-        #     print("location:",location)
-        #     breakpoint()
     return jsonObj
 
 ## FIND DELAY ##
