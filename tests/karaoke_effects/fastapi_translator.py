@@ -75,8 +75,10 @@ def changeProxy(useDirect=False):
 def metaTranslator(text, backend='baidu'):
     assert backend in ['baidu','deepl']
     # translator = None
+    import random
     if backend == 'baidu':
         translator = baiduTranslator
+        getUseDirect = lambda
     elif backend == 'deepl':
         translator = deeplTranslator
     while True:
