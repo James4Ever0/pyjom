@@ -705,7 +705,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
             lineMod2 = lineMod.copy()
             lineMod2.text = translatedText
             translateShift = -200
-            addSylToLine(lineMod2,)
+            addSylToLine(lineMod2,translateShift=translateShift)
             source = lineMod2.copy()
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
