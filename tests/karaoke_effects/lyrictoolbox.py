@@ -260,7 +260,8 @@ waitForServerUp(8932,{"response": "DFAFilter based Chinese text filter(censor)"}
 def censorTextWithTextFilter(text):
     port = 8932
     import requests
-    url = "http://localhost:{}//filter"
+    url = "http://localhost:{}/filter".format(port)
+    r = requests.get(url,)
 
 def getTextListTranslated(test):
     newLyricArray = []
