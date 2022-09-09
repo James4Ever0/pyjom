@@ -162,12 +162,14 @@ def translate(text, backend="deepl"):
         # use paddlehub.
         # where is the damn code?
         try:
-            language_code = language_recognition_model.recognize(text_prompts)
+            language_code = language_recognition_model.recognize(text)
             if language_code != 'zh':
                 text_prompts = language_translation_model.translate(text, language_code, 'zh')
                 return text_prompts
             else:
                 return text
+        except:
+            
 
 
 if __name__ == "__main__":
