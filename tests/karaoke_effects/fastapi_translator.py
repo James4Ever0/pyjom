@@ -14,8 +14,9 @@ if len(cv2_libs) == 1:
     print("INSERTING:", cv2_libs[0].parent)
     sys.path.insert(1, str(cv2_libs[0].parent))
 
-# clash_http_port = 8381
+clash_http_port = 8381
 # wtf is wrong with this shit?
+def useProxy()
 os.environ["http_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
 os.environ["https_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
 
