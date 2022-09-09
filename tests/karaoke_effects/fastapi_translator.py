@@ -226,11 +226,12 @@ translatedDict = {}
 @app.get("/translate")
 def read_item(backend: str, text: str):
     global translatedDict
-    if len(list(translatedDict.keys()))>100:
+    if len(list(translatedDict.keys()))>:
         mkeys = list(translatedDict.keys())
         import random
         random.shuffle(mkeys)
-        translatedDict[key]
+        for key in mkeys[:]:
+            del translatedDict[key]
     code = 200
     if not backend in ["deepl", "baidu"]:
         code = 400
