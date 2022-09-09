@@ -127,15 +127,16 @@ def updateClashYaml(clashYamlPath = 'Clash3.yaml', control_port = 9911):
     import requests
     import json
     full_config_path = os.path.abspath(clashYamlPath)
-            try:
-                r = requests.put("http://localhost:{}/configs".format(control_port),data=json.dumps({"path":full_config_path},ensure_ascii=False).encode())
-                assert r.status_code == 204
-                # might be the problem. TODO: check why the fuck clash server cannot decode the config in utf-8 'unexpected end of data'
-                print("SUCCESSFULLY UPDATED THIS PROXY LIST")
-                return True
-            except:
-                import traceback
-                traceback.print_exc()
-                # breakpoint()
-                print("SOME ERROR WHILE FETCHING CLASH OPENIT SCRIPT")
-                return False
+    try:
+        r = requests.put("http://localhost:{}/configs".format(control_port),data=json.dumps({"path":full_config_path},ensure_ascii=False).encode())
+        assert r.status_code == 204
+        # might be the problem. 
+        # TODO: check why the fuck clash server cannot decode the config in utf-8 'unexpected end of data'
+        print("SUCCESSFULLY UPDATED THIS PROXY LIST")
+        return True
+    except:
+        import traceback
+        traceback.print_exc()
+        # breakpoint()
+        print("SOME ERROR WHILE FETCHING CLASH OPENIT SCRIPT")
+        return False
