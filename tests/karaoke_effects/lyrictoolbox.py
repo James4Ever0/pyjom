@@ -1,7 +1,6 @@
 import pylrc
 from MediaInfo import MediaInfo
 
-
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
     info = info.getInfo()

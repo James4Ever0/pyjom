@@ -23,7 +23,7 @@ tests = [
 
 # whatlang?
 
-
+from lyrictoolbox import *
 
 if __name__ == "__main__":
     # result = translate('hello world')
