@@ -161,8 +161,10 @@ def metaTranslator(text, backend="baidu"):
     firstTime = True
     while True:
         try:
-            proxyName = changeProxy(useDirect=getUseDirect())
+            if not firstTime:
+                proxyName = changeProxy(useDirect=getUseDirect())
             result = translator(text)
+            firstTime=False
             if result:
                 if proxyName:
                     workingProxies.add(proxyName)
