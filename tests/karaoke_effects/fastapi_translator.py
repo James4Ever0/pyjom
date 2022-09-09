@@ -69,6 +69,7 @@ def metaTranslator(text, backend='baidu'):
             return result
         else:
             print("SOME ERROR DURING FETCHING TRANSLATION")
+
 @app.get("/")
 def read_root():
     return "unified translator hooked on some clash server"
