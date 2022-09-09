@@ -237,6 +237,8 @@ def waitForServerUp(port, message, timeout=1):
             if type(message) == str:
                 text = r.text.strip('"').strip("'")
                 print("SERVER AT PORT %d RESPONDS:" % port, [text])
+            else:
+                
                 assert text == message
             print("SERVER AT PORT %d IS UP" % port)
             break
