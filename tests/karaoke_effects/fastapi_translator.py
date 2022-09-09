@@ -10,15 +10,14 @@ language_recognition_model = hub.Module(name='baidu_language_recognition')
 
 
 def baiduTranslator(text): # target language must be chinese.
-
-        try:
-            language_code = language_recognition_model.recognize(text)
-            if language_code != 'zh':
-                text_prompts = language_translation_model.translate(text, language_code, 'zh')
-                translatedText =  text_prompts
-            else:
-                translatedText =  text
-        except:
+    try:
+        language_code = language_recognition_model.recognize(text)
+        if language_code != 'zh':
+            text_prompts = language_translation_model.translate(text, language_code, 'zh')
+            translatedText =  text_prompts
+        else:
+            translatedText =  text
+    except:
 
 
 @app.get("/")
