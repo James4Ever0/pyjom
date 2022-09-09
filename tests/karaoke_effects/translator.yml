@@ -1,12 +1,12 @@
 # all online translators, with retry automatically.
-session_name: vps_session_unified_nanjing
+session_name: translator
 windows:
   - window_name: dev window
     layout: tiled
     panes:
     # for houseId_server
       - shell_command:
-        - cd multi_city_craw
+        - cd /root/Desktop/works/pyjom/tests/karaoke_effects
         - python3 houseId_server.py -c nanjing
 
     # for vps
