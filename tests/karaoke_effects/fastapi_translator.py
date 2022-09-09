@@ -16,9 +16,10 @@ if len(cv2_libs) == 1:
 
 clash_http_port = 8381
 # wtf is wrong with this shit?
-def useProxy()
-os.environ["http_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
-os.environ["https_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
+def useProxy(flag):
+    if flag:
+        os.environ["http_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
+        os.environ["https_proxy"] = "http://127.0.0.1:{}".format(clash_http_port)
 
 from fastapi import FastAPI
 
