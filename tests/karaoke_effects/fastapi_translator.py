@@ -77,7 +77,7 @@ def deeplTranslator(text):
         # breakpoint()
         return None
 
-
+# use suggest mechanism.
 workingProxies = set()
 def changeProxy(useDirect=False):
     useProxy(False)
