@@ -1,7 +1,8 @@
 import os
 
-os.environ['http_proxy'] = "http://127.0.0.1:{}"
-os.environ['https_proxy'] = "http://127.0.0.1:{}"
+clash_http_port = 8381
+os.environ['http_proxy'] = "http://127.0.0.1:{}".format(clash_http_port)
+os.environ['https_proxy'] = "http://127.0.0.1:{}".format(clash_http_port)
 
 from fastapi import FastAPI
 
