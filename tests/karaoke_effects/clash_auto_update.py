@@ -29,7 +29,7 @@ def jsonLocate(jsonObj,location=[]):
             return jsonLocate(jsonObj[location[0]],location[1:])
         return jsonObj
     except:
-        print("KEY %s DOES NOT EXISTS!", str(location))
+        print("KEY %s DOES NOT EXISTS!", ".".join(location))
         return None
 
 ## FIND DELAY ##
