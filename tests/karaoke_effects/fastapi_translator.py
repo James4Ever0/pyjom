@@ -62,7 +62,7 @@ def deeplTranslator(text):
         # breakpoint()
         return None
 
-def changeProxy():
+def changeProxy(useDirect=False):
     import requests
     r = requests.get("http://localhost:8677/refreshProxy")
     print("RESPONSE:", r.text)

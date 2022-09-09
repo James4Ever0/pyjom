@@ -166,8 +166,9 @@ app = Flask(__name__)
 
 @app.route('/useDirect', methods=['GET'])
 def useDirectAPI():
+    proxy_name = 'DIRECT'
     schedule.run_pending()
-    setClashProxy('DIRECT')
+    setClashProxy(proxy_name)
     return 'refresh proxy to %s' % proxy_name
 
 
