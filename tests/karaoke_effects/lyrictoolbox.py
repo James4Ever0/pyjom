@@ -261,5 +261,5 @@ def getTextListTranslated(test):
                     newLyricArray.append((foreignText,))
 
             else:
-                newLyricArray = [test.copy()]
+                newLyricArray = [(elem,) for elem in test.copy()]
     return newLyricArray
