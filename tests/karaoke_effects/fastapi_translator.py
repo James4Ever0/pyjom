@@ -34,10 +34,12 @@ def deeplTranslator(text):
         code = response['code']
         if code == 200:
             translatedText =  response['data']
+            return translatedText
         else:
             print("DEEPL RESPONSE ERROR. PLEASE CHECK")
             print(response)
-            breakpoint()
+            # breakpoint()
+            return None
 
 @app.get("/")
 def read_root():
