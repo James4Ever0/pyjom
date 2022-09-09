@@ -175,7 +175,7 @@ def waitForServerUp(port, message):
     while True:
         try:
             url = "http://localhost:{}".format(port)
-            r = requests.get(url)
+            r = requests.get(url, timeout=1)
             text = r.text.strip('"').strip("'")
             print("SERVER AT PORT %d RESPONDS:" % port, [text])
             assert text == message
