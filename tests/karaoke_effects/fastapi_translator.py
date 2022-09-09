@@ -103,7 +103,7 @@ def metaTranslator(text, backend="baidu"):
             else:
                 print("SOME ERROR DURING FETCHING TRANSLATION")
     except:
-        print()
+        print('ERROR FETCHING TRANSLATION')
 
 
 @app.get("/")
