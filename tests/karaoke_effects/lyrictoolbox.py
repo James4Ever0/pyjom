@@ -262,7 +262,8 @@ def censorTextWithTextFilter(text):
     import requests
     url = "http://localhost:{}/filter".format(port)
     r = requests.get(url,params = {'text':text})
-   d r.json()
+    data = r.json()
+    return data['response']
 
 def getTextListTranslated(test):
     newLyricArray = []
