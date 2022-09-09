@@ -712,7 +712,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
                 syl.end_time = syl.start_time+sylDuration
                 syl.duration = sylDuration
                 sylList.append(syl)
-            lineMod.syls = sylList
             # double check here! fucker
             startSyl = sylList[0]
             startLine = startSyl.center - startSyl.width/2
@@ -720,7 +719,9 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             endLine = endSyl.center + endSyl.width/2
             currentCenter = endLine-startLine
             centerShift = (CENTER-currentCenter)
-            for index in range(len(sylList))
+            for index in range(len(sylList)):
+                sylList[index].center += centerShift
+            lineMod.syls = sylList
         # print(lineMod.syls)
         # breakpoint()
         if translatedText == None:
