@@ -30,7 +30,8 @@ app = FastAPI()
 
 
 @app.get("/")
-def read_item():
+def server_hello():
+    return ""
 @app.get("/langid")
 def read_item(text: str):
     code = 200
