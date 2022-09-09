@@ -735,7 +735,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         # pyonfx.ass_core.Syllable
         source = lineMod.copy()
         target = lineMod.copy()
-        romaji(source, target)
+        kanji(source, target)
         if translatedText:
             lineMod2 = lineMod.copy()
             lineMod2.text = translatedText
@@ -744,7 +744,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             source = lineMod2.copy()
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
-            kanji(source, target)
+            romaji(source, target)
     io.save()
     print("ASS RENDERED AT %s" % assPath)
     return assPath
