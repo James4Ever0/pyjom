@@ -64,8 +64,7 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
     return candidates
 
 def refineClashYaml():
-    with open("Clash3.yaml","r") as f:
-        data = f.read()
+    with open("Clash3.yaml","r") as f: data = f.read()
     from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
 
     import yaml
@@ -96,4 +95,4 @@ def refineClashYaml():
     url = "/proxies/"
     r = requests.put(base_url+url+"GLOBAL",data=json.dumps({"name":name},ensure_ascii=False).encode())
     assert r.status_code == 204
-    """⏎                          
+    """
