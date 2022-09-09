@@ -19,7 +19,7 @@ def removeChinesePunctuals(text):
     return text
 
 def removeLeadingAndTrailingPunctuals(text):
-    for elem in englishPuncturals:
+    for elem in englishPuncturals+chinesePuncturals:
         if text.startswith(elem):
             text = text[1:]
         if text.endswith(elem):
