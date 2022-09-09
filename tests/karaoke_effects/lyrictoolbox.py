@@ -294,7 +294,7 @@ def getTextListTranslated(test):
             newLyricArray = [(elem,) for elem in test.copy()]
     return newLyricArray
 
-def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdjust = 600):
+def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdjust = 600, censor=True):
     # newTextArray = [] # dummy shit. must be removed immediately.
     import random
     import math
