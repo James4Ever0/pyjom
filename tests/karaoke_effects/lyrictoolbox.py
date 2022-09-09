@@ -640,7 +640,9 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
     shiftAdjust = 600
     newTextArray = textArray
     for mIndex,elem in enumerate(newTextArray):
-        translatedTuple = 
+        translatedTuple = translatedList[mIndex]
+        if len(translatedTuple) == 1:
+            
         lineMod = lineModSource.copy()
         lineMod.start_time = max(0,elem['start']*1000 - shiftAdjust)
         lineMod.end_time = elem['end']*1000 - shiftAdjust
