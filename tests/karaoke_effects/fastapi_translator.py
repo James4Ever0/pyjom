@@ -90,6 +90,7 @@ def changeProxy(useDirect=False):
     print("PATH", path)
     r = requests.get("http://127.0.0.1:8677/{}".format(path))
     print("RESPONSE:", r.text)
+    proxyName = parse.parse('')
     print("PROXY REFRESHED")
 
 
