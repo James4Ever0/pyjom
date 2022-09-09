@@ -703,6 +703,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
         source = lineMod.copy()
         target = lineMod.copy()
         romaji(source, target)
+        if translatedText:
         lineMod2 = lineMod.copy()
         translateShift = -200
         for i in range(len(lineMod2.syls)):
