@@ -257,7 +257,7 @@ def getTextListTranslated(test):
     import progressbar
     isBilingual, needToTranslate = getLyricsLanguageType(test)
     if isBilingual:
-        for elem in test:
+        for elem in progressbar.progressbar(test):
             text, flag = lastSpaceSpliter(elem)
             if flag:  # splited!
                 foreignText, nativeText = text
@@ -270,7 +270,7 @@ def getTextListTranslated(test):
                 newLyricArray.append((foreignText,))
     else:
         if needToTranslate:
-            for elem in test:
+            for elem in progressbar.progressbar(test):
                 foreignText = elem
                 nativeText = translate(foreignText)
                 if not nativeText == foreignText:
