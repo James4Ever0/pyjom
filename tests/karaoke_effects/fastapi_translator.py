@@ -8,7 +8,6 @@ import paddlehub as hub
 language_translation_model = hub.Module(name='baidu_translate')
 language_recognition_model = hub.Module(name='baidu_language_recognition')
 
-
 def baiduTranslator(text): # target language must be chinese.
     try:
         language_code = language_recognition_model.recognize(text)
@@ -21,7 +20,7 @@ def baiduTranslator(text): # target language must be chinese.
     except:
         import traceback
         traceback.print_exc()
-        
+        print("ERROR ON BAIDU TRANSLATOR")
         return None
 
 @app.get("/")
