@@ -160,5 +160,6 @@ from flask import Flask, request
 
 port = 8677
 
+
 if __name__ == "__main__":
-    
+    app.run(port=port, threaded=True, use_reloader=False)
