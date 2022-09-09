@@ -186,7 +186,8 @@ def refreshProxyAPI(suggest):
     schedule.run_pending()
     if suggest:
         if checkProxyExists(suggest):
-    setClashProxy(suggests)
+            setClashProxy(suggests)
+            return 'refresh proxy to %s' % proxy_name
 
     proxy_names = find_proxy_names()
     if proxy_names == []:
