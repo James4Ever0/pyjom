@@ -180,6 +180,8 @@ def waitForServerUp(port, message):
             assert r.text == message
             break
         except:
+            import traceback
+            traceback.print_exc()
             print("SERVER AT PORT %d MIGHT NOT BE UP")
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
