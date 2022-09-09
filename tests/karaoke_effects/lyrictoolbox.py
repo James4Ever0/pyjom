@@ -22,7 +22,8 @@ def removeLeadingAndTrailingPunctuals(text):
     for elem in englishPuncturals:
         if elem == ".": pass
         else:
-            if text.startswith(elem):
+            if text.startswith(elem): text = text[1:]
+            if text.endswith(elem): text = text[:-1]
     return text
 
 def getMusicDuration(musicPath):
