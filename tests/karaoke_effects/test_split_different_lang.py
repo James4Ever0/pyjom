@@ -162,6 +162,7 @@ def translate(text, backend="baidu", delay = 2): # deepl is shit. fucking shit.
     import time
     time.sleep(delay)
     assert backend in ["deepl", "baidu"]
+    
     if backend == "deepl":
         import requests
         port = 8281
