@@ -725,7 +725,9 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             print('current center:', currentCenter)
             centerShift = (CENTER-currentCenter)
             for index in range(len(sylList)):
-                elem = sylList[index].center = sylList[index].center+centerShift
+                elem = sylList[index].copy()
+                elem.center = sylList[index].center+centerShift
+                elem = 
             startSyl = sylList[0]
             startLine = startSyl.center - startSyl.width/2
             endSyl = sylList[-1]
