@@ -184,6 +184,8 @@ def useDirectAPI():
 @app.route('/refreshProxy', methods=['GET'])
 def refreshProxyAPI(suggest):
     schedule.run_pending()
+    if suggest:
+        
     proxy_names = find_proxy_names()
     if proxy_names == []:
         return 'failed to find a proxy'
