@@ -26,10 +26,13 @@ app = FastAPI()
 
 @app.get("/translate")
 def read_item(backend: str, text: str):
+    code = 200
     try:
-        result = 
+        result = getLinguaDetectedLanguageLabel(text)
     except:
+        code=400
         import traceback
         traceback.print_exc()
         print("ERROR ANALYSING TEXT LANGID %s" % text)
         result = "ERROR"
+        
