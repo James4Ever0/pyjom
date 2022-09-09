@@ -62,3 +62,37 @@ def find_candidates(timeout=3000, urltest="https://m.tujia.com", test_url = "htt
     for elem in candidates:
         print(elem)
     return candidates
+
+def refineClashYaml():
+    with open("Clash3.yaml","r") as f: data = f.read()
+from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
+
+import yaml
+data = goYamlToPyYaml(data)
+data = yaml.safe_load(data)
+
+data["port"] = 7808
+base_url = "127.0.0.1:9022"
+data["external-controller"]= base_url
+del data["socks-port"]
+
+del data["rules"]
+data["mode"] = "global"
+data["dns"]["listen"] = "0.0.0.0:{}".format(60)
+
+# data = pyYamlToGoYaml(data)
+data_dump = yaml.safe_dump(data, allow_unicode=True)
+data_dump =  pyYamlToGoYaml(data_dump)
+
+
+with open("Clash3.yaml", "w") as f: f.write(data_dump)
+
+"""
+import requests
+import json
+base_url =  "http://127.0.0.1:9022"
+
+url = "/proxies/"
+r = requests.put(base_url+url+"GLOBAL",data=json.dumps({"name":name},ensure_ascii=False).encode())
+assert r.status_code == 204
+"""⏎                          
