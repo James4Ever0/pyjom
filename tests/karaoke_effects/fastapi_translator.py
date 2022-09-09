@@ -19,7 +19,7 @@ def baiduTranslator(text): # target language must be chinese.
             translatedText =  text
         return translatedText
     except:
-        
+        return None
 
 @app.get("/")
 def read_root():
