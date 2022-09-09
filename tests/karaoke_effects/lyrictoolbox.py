@@ -712,6 +712,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath):
 # do the preview later?
 # # io.open_aegisub()
 def previewAssWithVideo(sample_video,assPath):
+    from pyonfx import Ass
     io = Ass(assPath)
-
     io.open_mpv(video_path=sample_video) # ain't see shit...
