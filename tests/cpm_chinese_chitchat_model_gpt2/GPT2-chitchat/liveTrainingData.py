@@ -20,5 +20,5 @@ def getQQGroupChatData():
                         dataArray.append(mJson)
                     except:
                         pass
-    df = pd.DataFrame(dataArray)
-    breakpoint()
+        df = pd.DataFrame(dataArray)
+        breakpoint()
