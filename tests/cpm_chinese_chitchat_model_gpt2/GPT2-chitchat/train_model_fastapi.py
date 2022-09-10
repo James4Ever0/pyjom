@@ -160,6 +160,10 @@ for modelPath in modelPaths:
         workingModelPath = modelPath
     except:
         pass
+if workingModelPath:
+    
+else:
+
 model = model.to(device)
 # model.eval()
 
