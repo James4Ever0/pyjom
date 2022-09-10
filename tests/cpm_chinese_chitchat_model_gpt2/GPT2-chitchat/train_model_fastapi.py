@@ -173,9 +173,9 @@ def calculate_acc(logit, labels, ignore_index=-100):
 
 
 def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
-                epoch, args):
+                epoch, args, device):
     model.train()
-    device = args.device
+    # device = args.device
     # pad_id = args.pad_id
     # sep_id = args.sep_id
     ignore_index = args.ignore_index
