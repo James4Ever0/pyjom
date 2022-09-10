@@ -146,7 +146,7 @@ tokenizer = BertTokenizerFast(
 
 def getPathAccessTime(path):
     if os.path.exists(path):
-        return
+        return os.stat(path).st_mtime
     else:
         return -1
 modelPaths = []
