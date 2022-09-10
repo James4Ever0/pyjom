@@ -1,6 +1,9 @@
 import requests
 import schedule
 
+def getGPT2Status():
+    
+
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
