@@ -34,7 +34,7 @@ def getQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_p
 def clearQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_0.log","/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_1.log"]):
     import os
     for dataPath in dataPaths:
-        cmd = ''
+        cmd = 'cat /dev/null > {}'.format(dataPath)
         os.system(cmd)
 
 import string
