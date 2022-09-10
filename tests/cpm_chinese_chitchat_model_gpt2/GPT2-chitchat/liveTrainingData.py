@@ -23,6 +23,11 @@ def getQQGroupChatData():
         df = pd.DataFrame(dataArray)
         for group_id in df['group_id'].unique():
             mData = df[group_id == df['group_id']]
+            content = mData['content'].tolist()
+            if len(content) >=2:
+                for elem in 
+            else:
+
         breakpoint()
 
 if __name__ == '__main__':
