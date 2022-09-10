@@ -225,7 +225,6 @@ def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
     logger.info(
         "epoch {}: loss {}, predict_acc {}".format(epoch + 1, epoch_mean_loss, epoch_mean_acc))
 
-
 def save_model_now(model,save_model_path,logger,epoch):
     # save model
     logger.info('saving model for epoch {}'.format(epoch + 1))
