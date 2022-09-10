@@ -27,6 +27,7 @@ def getGPT2TrainedStatus():
 
 import os
 def startGPT2Training():
+    os.chdir("/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/)
     os.system()
 def checkGPT2Status():
     gpt2status = getGPT2Status()
