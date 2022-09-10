@@ -277,6 +277,7 @@ if __name__ == '__main__':
     optimizer = transformers.AdamW(model.parameters(), lr=args.lr, eps=args.eps)
     # scheduler = transformers.WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
     epochs = 30
+    warmup_steps = 4000
     t_total = len(train_dataloader_source) // args.gradient_accumulation_steps * 30
     scheduler = transformers.get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=warmup_steps, num_training_steps=t_total
