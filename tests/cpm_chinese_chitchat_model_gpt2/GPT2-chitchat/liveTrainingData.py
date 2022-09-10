@@ -32,7 +32,34 @@ def getQQGroupChatData():
                 print("GROUP %d DOES NOT HAVE SUFFICIENT CHATS" % group_id)
         # breakpoint()
 
+
+import string
+import zhon.hanzi
+
+englishPuncturals = string.punctuation
+chinesePuncturals = zhon.hanzi.punctuation
+
+def removeChinesePunctuation(text):
+    for elem in chinesePuncturals:
+        text = text.replace(elem, "")
+    return text
+
+def removeLeadingAndTrailingPunctuation(text):
+    for elem in englishPuncturals+chinesePuncturals:
+        if text.startswith(elem):
+            text = text[1:]
+        if text.endswith(elem):
+            if elem == ".": continue
+            text = text[:-1]
+    return text
+
+def removeUnnecessaryPunctuation(text):
+    text = removeChinesePunctuation(text)
+    text = removeLeadingAndTrailingPunctuation(text)
+    return text
+
 if __name__ == '__main__':
     for source, target in getQQGroupChatData():
         print("SOURCE: %s" % source)
         print("TARGET: %s" % target)
+        print("_________________")
