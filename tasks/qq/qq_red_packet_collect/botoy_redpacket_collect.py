@@ -211,7 +211,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
         content_min_length = 4
         # maybe we should split sentence into shorter ones, or via summarization/title generation apis.
         content_max_length = 15
-        recv_content_min_length, recv_content_max_length = 4, 20
+        recv_content_min_length, recv_content_max_length = 4,20
         if not (Content.startswith("[") or Content.endswith("]")):
             if content_length <= content_max_length and content_length >= content_min_length:  # 新版qq之类的信息
                 # we log group chat text for gpt training here. shall we?
