@@ -154,6 +154,8 @@ modelPaths = ["/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/mo
 # sort them with time.
 workingModelPath = None
 
+modelPaths.sort(key = lambda )
+
 for modelPath in modelPaths:
     try:
         model = GPT2LMHeadModel.from_pretrained(modelPath)
