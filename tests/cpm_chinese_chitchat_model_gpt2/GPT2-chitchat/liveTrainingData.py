@@ -20,7 +20,7 @@ def getQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_p
                     except:
                         pass
         df = pd.DataFrame(dataArray)
-        for group_id in df['group_id'].unique():
+        for group_id in df['group_id'].unique()]:
             mData = df[group_id == df['group_id']]
             content = mData['content'].unique() # filter out shits.
             content = content.tolist()
