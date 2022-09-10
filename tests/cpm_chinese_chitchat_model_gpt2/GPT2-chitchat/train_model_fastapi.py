@@ -302,7 +302,7 @@ if __name__ == '__main__':
     logger = create_logger()
     from liveTrainingData import getQQGroupChatData
     train_dataloader_source = [(source, target) for source, target in getQQGroupChatData()]
-    optimizer = transformers.AdamW(model.parameters(), lr=args.lr, eps=args.eps)
+    optimizer = transformers.AdamW(model.parameters(), lr=lr, eps=args.eps)
     # scheduler = transformers.WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
     epochs = 30
     warmup_steps = 4000
