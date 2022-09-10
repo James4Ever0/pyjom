@@ -49,7 +49,7 @@ def getGPT2Running():
 
 def startGPT2Server():
     global process
-    process = subprocess.Popen(['/usr/bin/python3','interact_fastapi.py'])
+    process = subprocess.Popen(['/usr/bin/python3','interact_fastapi.py',--model_path ../model ])
 
 def terminateGPT2():
     global process
