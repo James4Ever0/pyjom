@@ -286,7 +286,7 @@ if __name__ == '__main__':
                     try:
                         mJson = parse.parse(tag+"{JSON}", line)
                         mJson = json.loads(mJson['JSON'])
-                        da
+                        dataArray.append(mJson)
                     except:
                         pass
 #     # magic config from hackernoon.
