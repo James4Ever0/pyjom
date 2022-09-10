@@ -263,7 +263,7 @@ if args.save_samples_path:
     samples_file.write("聊天记录{}:\n".format(datetime.now()))
 # 存储聊天记录，每个utterance以token的id的形式进行存储
 
-def getTextEncoded(text, suffix=tokenizer.):
+def getTextEncoded(text, suffix=tokenizer.sep_token_id):
     text_ids = tokenizer.encode(text, add_special_tokens=False)
     input_ids = [tokenizer.cls_token_id]
     input_ids.extend(text_ids)
@@ -277,7 +277,7 @@ def getTextEncoded(text, suffix=tokenizer.):
 
 def getTrainDataLoader(train_text_list):
     for source, target in  train_text_list:
-        sourceLogit = getTextEncoded(source)
+        sourceLogit = getTextEncoded(source, suffix = sep_token_id)
         targetLogit = getTextEncoded(target)
         yield sourceLogit, targetLogit
 # port = 8729
