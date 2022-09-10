@@ -8,7 +8,7 @@ for miaomiao:
 
 http://localhost:8784/v1/Login/GetQRcode
 
-to clear chat log:
+to clear group chat log:
 ```bash
 echo > redPacketLog_0.log
 ```
