@@ -144,8 +144,9 @@ tokenizer = BertTokenizerFast(
     vocab_file=args.vocab_path, sep_token="[SEP]", pad_token="[PAD]", cls_token="[CLS]")
 # tokenizer = BertTokenizer(vocab_file=args.voca_path)
 
-from  import getModelAndPaths
+from getWorkingAndSavingModelPaths import getModelAndPaths
 
+getModelAndPaths(GPT2LMHeadModel)
 model = model.to(device)
 # model.eval()
 
