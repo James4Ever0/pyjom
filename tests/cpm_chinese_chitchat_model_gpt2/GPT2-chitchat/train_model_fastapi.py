@@ -299,6 +299,7 @@ def create_logger():
 
 
 if __name__ == '__main__':
+    logger = create_logger()
     from liveTrainingData import getQQGroupChatData
     train_dataloader_source = [(source, target) for source, target in getQQGroupChatData()]
     optimizer = transformers.AdamW(model.parameters(), lr=args.lr, eps=args.eps)
@@ -315,7 +316,7 @@ if __name__ == '__main__':
         print("RUNNING EPOCH: %d" % epoch)
         train_epoch(model, getTrainDataLoader(train_dataloader_source),optimizer, scheduler, logger, epoch, args)
         if epoch >0 and epoch % saveEpochInterval == 0:
-            save_model_now(model, saveModelPath, logger)
+            save_model_now(model, saveModelPath, logger, epoch)
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
