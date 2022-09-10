@@ -2,7 +2,8 @@ import requests
 import schedule
 
 def getGPT2Status():
-    hour = datetime.datetime.now()
+    hour = datetime.datetime.now().hour
+    if hour > and hour < 8
 
 def checkGPT2Status():
     gpt2status = getGPT2Status()
