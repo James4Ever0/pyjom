@@ -277,7 +277,8 @@ if __name__ == '__main__':
         import json
         import parse
         with open(dataPath, 'r') as f:
-            f.read
+            data = f.read()
+            for li
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
