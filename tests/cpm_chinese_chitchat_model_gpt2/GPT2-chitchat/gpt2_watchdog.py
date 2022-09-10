@@ -13,7 +13,8 @@ def getGPT2TrainedStatus():
         with open('trained.log', 'r+') as f:
             content = f.read()
         content = datetime.datetime.fromisoformat(content)
-        
+        day = content.day
+        now = datetime.datetime.now()
 
 def checkGPT2Status():
     gpt2status = getGPT2Status()
