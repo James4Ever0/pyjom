@@ -286,7 +286,8 @@ if __name__ == '__main__':
     for epoch in range(epochs):
         print("RUNNING EPOCH: %d" % epoch)
         train_epoch(model, getTrainDataLoader(train_dataloader_source),optimizer, scheduler, logger, epoch, args)
-        if epoch >0 and epoch % saveEpoch
+        if epoch >0 and epoch % saveEpochInterval == 0:
+            save_model_now(model, saveModelPath)
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
