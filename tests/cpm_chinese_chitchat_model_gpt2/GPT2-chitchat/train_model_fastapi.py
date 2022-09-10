@@ -150,6 +150,91 @@ model = model.to(device)
 # disable this.
 args.save_samples_path = False
 
+
+def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
+                epoch, args):
+    model.train()
+    device = args.device
+    # pad_id = args.pad_id
+    # sep_id = args.sep_id
+    ignore_index = args.ignore_index
+    epoch_start_time = datetime.now()
+    total_loss = 0  # 记录下整个epoch的loss的总和
+
+    # epoch_correct_num:每个epoch中,output预测正确的word的数量
+    # epoch_total_num: 每个epoch中,output预测的word的总数量
+    epoch_correct_num, epoch_total_num = 0, 0
+
+    for batch_idx, (input_ids, labels) in enumerate(train_dataloader):
+        # 捕获cuda out of memory exception
+        try:
+            input_ids = input_ids.to(device)
+            labels = labels.to(device)
+            outputs = model.forward(input_ids, labels=labels)
+            logits = outputs.logits
+            loss = outputs.loss
+            loss = loss.mean()
+
+            # 统计该batch的预测token的正确数与总数
+            batch_correct_num, batch_total_num = calculate_acc(logits, labels, ignore_index=ignore_index)
+            # 统计该epoch的预测token的正确数与总数
+            epoch_correct_num += batch_correct_num
+            epoch_total_num += batch_total_num
+            # 计算该batch的accuracy
+            batch_acc = batch_correct_num / batch_total_num
+
+            total_loss += loss.item()
+            if args.gradient_accumulation_steps > 1:
+                loss = loss / args.gradient_accumulation_steps
+
+            loss.backward()
+            # 梯度裁剪
+            torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
+
+            # 进行一定step的梯度累计之后，更新参数
+            if (batch_idx + 1) % args.gradient_accumulation_steps == 0:
+                # 更新参数
+                optimizer.step()
+                # 更新学习率
+                scheduler.step()
+                # 清空梯度信息
+                optimizer.zero_grad()
+
+            if (batch_idx + 1) % args.log_step == 0:
+                logger.info(
+                    "batch {} of epoch {}, loss {}, batch_acc {}, lr {}".format(
+                        batch_idx + 1, epoch + 1, loss.item() * args.gradient_accumulation_steps, batch_acc, scheduler.get_lr()))
+
+            del input_ids, outputs
+
+        except RuntimeError as exception:
+            if "out of memory" in str(exception):
+                logger.info("WARNING: ran out of memory")
+                if hasattr(torch.cuda, 'empty_cache'):
+                    torch.cuda.empty_cache()
+            else:
+                logger.info(str(exception))
+                raise exception
+
+    # 记录当前epoch的平均loss与accuracy
+    epoch_mean_loss = total_loss / len(train_dataloader)
+    epoch_mean_acc = epoch_correct_num / epoch_total_num
+    logger.info(
+        "epoch {}: loss {}, predict_acc {}".format(epoch + 1, epoch_mean_loss, epoch_mean_acc))
+
+    # save model
+    logger.info('saving model for epoch {}'.format(epoch + 1))
+    model_path = join(args.save_model_path, 'epoch{}'.format(epoch + 1))
+    if not os.path.exists(model_path):
+        os.mkdir(model_path)
+    model_to_save = model.module if hasattr(model, 'module') else model
+    model_to_save.save_pretrained(model_path)
+    logger.info('epoch {} finished'.format(epoch + 1))
+    epoch_finish_time = datetime.now()
+    logger.info('time for one epoch: {}'.format(epoch_finish_time - epoch_start_time))
+
+    return epoch_mean_loss
+
 if args.save_samples_path:
     if not os.path.exists(args.save_samples_path):
         os.makedirs(args.save_samples_path)
