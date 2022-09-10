@@ -21,6 +21,9 @@ def getGPT2TrainedStatus():
     except:
         import traceback
         traceback.print_exc()
+        print("SOME ERROR WHEN CHECKING GPT2 TRAINED STATUS")
+        breakpoint()
+    return False
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
