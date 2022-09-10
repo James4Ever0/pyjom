@@ -15,7 +15,7 @@ def getModelAndPaths(modelClass,modelPaths = ["/media/root/parrot/pyjom/tests/cp
         try:
             model = modelClass.from_pretrained(modelPath)
             workingModelPath = modelPath
-            print("USIG MODEL: %s" % workingModelPath)
+            print("using model: %s" % workingModelPath)
         except:
             pass
     if workingModelPath:
