@@ -174,6 +174,9 @@ print('开始和chatbot聊天')
 
 app = Flask(__name__)
 
+@app.route('/exit', methods=['GET'])
+def program_exit():
+    exit()
 
 @app.route('/', methods=['GET'])
 def hello_world():
