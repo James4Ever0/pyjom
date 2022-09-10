@@ -1,11 +1,10 @@
 import requests
 import schedule
 def getNow():
-        now = datetime.datetime.now()
-    return 
-
+    return datetime.datetime.now()
+    
 def getGPT2Status():
-    hour = datetime.datetime.now().hour
+    hour = getNow().hour
     if hour > 2 and hour < 8:
         return 'train'
     else:
