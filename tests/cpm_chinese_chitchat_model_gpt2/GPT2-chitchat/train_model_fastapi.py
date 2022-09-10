@@ -326,6 +326,7 @@ if __name__ == '__main__':
     # scheduler = transformers.WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
     saveEpochInterval = 1
     epochs = 1
+    assert saveEpochInterval
     warmup_steps = 4000
     gradient_accumulation_steps = 4
     t_total = len(train_dataloader_source) // gradient_accumulation_steps * 30
