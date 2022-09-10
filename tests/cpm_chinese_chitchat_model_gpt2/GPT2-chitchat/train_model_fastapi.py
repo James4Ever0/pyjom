@@ -264,15 +264,15 @@ def getTextEncoded(text):
     input_ids = torch.tensor(input_ids).long().to(device)
     input_ids = input_ids.unsqueeze(0)
     return input_ids
-
-# port = 8729
-if __name__ == '__main__':
-    from liveTrainingData import getQQGroupChatData
     def getTrainDataLoader(myIteratorFunction):
         for source, target in  myIteratorFunction():
             sourceLogit = getTextEncoded(source)
             targetLogit = getTextEncoded(target)
-            
+            yield sourceLogit, targetLogit
+# port = 8729
+if __name__ == '__main__':
+    from liveTrainingData import getQQGroupChatData
+
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
