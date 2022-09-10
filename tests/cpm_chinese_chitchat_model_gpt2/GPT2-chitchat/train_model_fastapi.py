@@ -265,7 +265,7 @@ def getTextEncoded(text):
     input_ids = input_ids.unsqueeze(0)
     return input_ids
 
-def getTrainDataLoader(myIteratorFunction):
+def getTrainDataLoader(train_text_list):
     for source, target in  myIteratorFunction():
         sourceLogit = getTextEncoded(source)
         targetLogit = getTextEncoded(target)
