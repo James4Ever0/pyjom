@@ -195,6 +195,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     MsgType = ctx.MsgType
 
     if MsgType == 'TextMsg':
+        messageContent = 
         # prepare to print it so we can collect shit.
 
     # first initialize random delay for every group in groupNoReplyStack
