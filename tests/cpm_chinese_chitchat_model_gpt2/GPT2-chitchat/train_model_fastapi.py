@@ -238,7 +238,7 @@ def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
                 raise exception
 
     # 记录当前epoch的平均loss与accuracy
-    epoch_mean_loss = total_loss / len(train_dataloader)
+    epoch_mean_loss = total_loss / len_train_dataloader
     epoch_mean_acc = epoch_correct_num / epoch_total_num
     logger.info(
         "epoch {}: loss {}, predict_acc {}".format(epoch + 1, epoch_mean_loss, epoch_mean_acc))
