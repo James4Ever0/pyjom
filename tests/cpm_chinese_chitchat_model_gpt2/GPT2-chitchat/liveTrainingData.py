@@ -31,8 +31,11 @@ def getQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_p
                 print("GROUP %d DOES NOT HAVE SUFFICIENT CHATS" % group_id)
         # breakpoint()
 
-def clearQQGroupChatData():
-    
+def clearQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_0.log","/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_1.log"]):
+    import os
+    for dataPath in dataPaths:
+        cmd = ''
+        os.system(cmd)
 
 import string
 import zhon.hanzi
