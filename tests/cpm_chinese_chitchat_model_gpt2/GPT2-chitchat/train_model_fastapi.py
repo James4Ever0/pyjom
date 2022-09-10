@@ -158,8 +158,10 @@ if args.save_samples_path:
     samples_file.write("聊天记录{}:\n".format(datetime.now()))
 # 存储聊天记录，每个utterance以token的id的形式进行存储
 
-
     text_ids = tokenizer.encode(text, add_special_tokens=False)
+    group_history[group_id] = group_history.get(group_id,[])[-args.max_history_len:] # make sure per group chat record length is bounded. do not OOM.
+    if not retry:
+        group_history[group_id].append(text_ids)
     input_ids = [tokenizer.cls_token_id]  # 每个input以[CLS]为开头
 
     history = group_history.get(group_id,[])
