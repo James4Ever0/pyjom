@@ -58,6 +58,9 @@ def removeUnnecessaryPunctuation(text):
     text = removeLeadingAndTrailingPunctuation(text)
     return text
 
+def removeUnwantedSpace(text):
+    return 
+
 if __name__ == '__main__':
     for source, target in getQQGroupChatData():
         # source = removeUnnecessaryPunctuation(source)
