@@ -253,6 +253,8 @@ def getTextEncoded(text):
 
 # port = 8729
 if __name__ == '__main__':
+    import pandas as pd
+    
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
