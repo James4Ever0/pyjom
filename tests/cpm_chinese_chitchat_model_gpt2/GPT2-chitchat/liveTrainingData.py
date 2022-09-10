@@ -72,7 +72,7 @@ def removeUnwantedSpace(text):
     return text
 
 if __name__ == '__main__':
-    for source, target in getQQGroupChatData():
+    for source, target in getQQGroupChatData(): # to make it more humane?
         # source = removeUnnecessaryPunctuation(source)
         # source = removeUnwantedSpace(source)
         # target = removeUnnecessaryPunctuation(target)
