@@ -269,6 +269,7 @@ def getTextEncoded(text):
 # port = 8729
 if __name__ == '__main__':
     from liveTrainingData import getQQGroupChatData
+    
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
