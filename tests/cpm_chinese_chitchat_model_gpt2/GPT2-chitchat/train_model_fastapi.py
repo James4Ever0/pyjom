@@ -340,5 +340,6 @@ if __name__ == '__main__':
             print("SAVING MODEL AT EPOCH:", epoch)
             save_model_now(model, saveModelPath, logger, epoch)
 #     # magic config from hackernoon.
+        clearQQGroupChatData()
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
