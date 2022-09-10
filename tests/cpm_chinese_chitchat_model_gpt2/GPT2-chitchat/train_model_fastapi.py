@@ -309,7 +309,7 @@ if __name__ == '__main__':
     epochs = 30
     warmup_steps = 4000
     gradient_accumulation_steps = 4
-    t_total = len(train_dataloader_source) // args.gradient_accumulation_steps * 30
+    t_total = len(train_dataloader_source) // gradient_accumulation_steps * 30
     print("T_TOTAL:",t_total)
     scheduler = transformers.get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=warmup_steps, num_training_steps=t_total
