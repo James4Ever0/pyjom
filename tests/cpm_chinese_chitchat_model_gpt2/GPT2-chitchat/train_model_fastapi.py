@@ -273,7 +273,7 @@ def getTrainDataLoader(myIteratorFunction):
 # port = 8729
 if __name__ == '__main__':
     from liveTrainingData import getQQGroupChatData
-    
+    train_epoch(model, )
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
