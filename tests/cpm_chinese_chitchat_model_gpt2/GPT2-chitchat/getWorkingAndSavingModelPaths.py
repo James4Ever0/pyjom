@@ -21,6 +21,6 @@ def getModelAndPaths(modelClass,modelPaths = ["/media/root/parrot/pyjom/tests/cp
         saveModelPath = [modelPath for modelPath in modelPaths if modelPath !=workingModelPath][0]
         return model, (workingModelPath, saveModelPath)
     else:
-        print("no working model found. program will exit.")
+        print("no working model found. please check.")
         breakpoint()
         # exit()
