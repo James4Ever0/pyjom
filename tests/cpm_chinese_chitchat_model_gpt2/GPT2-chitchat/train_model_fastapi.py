@@ -275,6 +275,7 @@ if __name__ == '__main__':
     # import requests
     tag = '[GROUP_TEXT_MESSAGE] '
     for dataPath in dataPaths:
+        dataArray = []
         import json
         import parse
         with open(dataPath, 'r') as f:
@@ -285,6 +286,9 @@ if __name__ == '__main__':
                     try:
                         mJson = parse.parse(tag+"{JSON}", line)
                         mJson = json.loads(mJson['JSON'])
+                        da
+                    except:
+                        pass
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
