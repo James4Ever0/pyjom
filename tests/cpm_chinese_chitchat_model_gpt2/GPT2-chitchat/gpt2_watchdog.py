@@ -66,6 +66,7 @@ def startGPT2Server():
     process = subprocess.Popen(
         ["/usr/bin/python3", "interact_fastapi.py", "--model_path", "../model"]
     )
+    process.poll()
 
 
 def terminateGPT2():
