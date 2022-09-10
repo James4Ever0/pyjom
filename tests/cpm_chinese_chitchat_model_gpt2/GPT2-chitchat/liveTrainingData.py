@@ -26,7 +26,7 @@ def getQQGroupChatData():
             content = mData['content'].unique() # filter out shits.
             content = content.tolist()
             if len(content) >=2:
-                for elem in 
+                for elem in zip(content[:-1], content[1:])
             else:
                 print("GROUP %s")
         breakpoint()
