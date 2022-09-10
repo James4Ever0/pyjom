@@ -2,7 +2,7 @@ import requests
 import schedule
 
 def getGPT2Status():
-    
+    hour = datetime.datetime.now()
 
 def checkGPT2Status():
     gpt2status = getGPT2Status()
