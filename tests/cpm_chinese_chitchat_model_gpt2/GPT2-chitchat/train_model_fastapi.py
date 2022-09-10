@@ -279,8 +279,10 @@ def getTextEncoded(textList, suffix=tokenizer.sep_token_id):
     # input_ids = input_ids.unsqueeze(0)
     return input_ids
 
-def getTrainDataLoader(train_text_list):
+def getTrainDataLoader(train_text_list, shuffle=True):
     import progressbar
+    if shuffle:
+        
     for source, target in progressbar.progressbar(train_text_list):
         sourceLogit = getTextEncoded([source, target], suffix = tokenizer.cls_token_id)
         targetLogit = getTextEncoded([source, target], suffix = tokenizer.sep_token_id)
