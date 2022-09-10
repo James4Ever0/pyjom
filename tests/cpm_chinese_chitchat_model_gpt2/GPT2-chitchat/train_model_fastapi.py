@@ -272,7 +272,7 @@ def getTrainDataLoader(train_text_list):
         yield sourceLogit, targetLogit
 # port = 8729
 
-def create_logger(args):
+def create_logger():
     """
     将日志输出到日志文件和控制台
     """
@@ -282,12 +282,12 @@ def create_logger(args):
     formatter = logging.Formatter(
         '%(asctime)s - %(levelname)s - %(message)s')
 
-    # 创建一个handler，用于写入日志文件
-    file_handler = logging.FileHandler(
-        filename=args.log_path)
-    file_handler.setFormatter(formatter)
-    file_handler.setLevel(logging.INFO)
-    logger.addHandler(file_handler)
+    # # 创建一个handler，用于写入日志文件
+    # file_handler = logging.FileHandler(
+    #     filename=args.log_path)
+    # file_handler.setFormatter(formatter)
+    # file_handler.setLevel(logging.INFO)
+    # logger.addHandler(file_handler)
 
     # 创建一个handler，用于将日志输出到控制台
     console = logging.StreamHandler()
