@@ -318,7 +318,7 @@ def create_logger():
 
 if __name__ == '__main__':
     logger = create_logger()
-    from liveTrainingData import getQQGroupChatData
+    from liveTrainingData import getQQGroupChatData, clearQQGroupChatData
     eps = 1.0e-09
     lr = 2.6e-5
     train_dataloader_source = [(source, target) for source, target in getQQGroupChatData()]
@@ -340,6 +340,6 @@ if __name__ == '__main__':
             print("SAVING MODEL AT EPOCH:", epoch)
             save_model_now(model, saveModelPath, logger, epoch)
 #     # magic config from hackernoon.
-        clearQQGroupChatData()
+    clearQQGroupChatData()
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
