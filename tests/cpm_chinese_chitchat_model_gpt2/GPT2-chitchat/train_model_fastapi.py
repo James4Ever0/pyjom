@@ -186,7 +186,7 @@ def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
     # epoch_total_num: 每个epoch中,output预测的word的总数量
     epoch_correct_num, epoch_total_num = 0, 0
     import progressbar
-    for batch_idx, (input_ids, labels) in enumerate(train_dataloader):
+    for batch_idx, (input_ids, labels) in progressbar.progressbar(enumerate(train_dataloader)):
         # 捕获cuda out of memory exception
         try:
             input_ids = input_ids.to(device)
