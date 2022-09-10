@@ -45,6 +45,14 @@ def getGPT2Running():
     global process
     process = subprocess.Popen(['/usr/bin/python3','interact_fastapi.py'])
 
+def terminateGPT2():
+    global process
+    if process:
+        try:
+            process.terminate()
+        except:
+            
+
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
