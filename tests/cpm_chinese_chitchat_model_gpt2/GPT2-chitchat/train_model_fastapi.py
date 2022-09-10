@@ -159,38 +159,7 @@ if args.save_samples_path:
 # 存储聊天记录，每个utterance以token的id的形式进行存储
 
 
-group_history = {}
-print('开始和chatbot聊天')
-# main loop. rewrite it with fastapi.
-
-
-# @app.get("/")
-# def read_root():
-#     return {"Hello": "World"}
-
-app = Flask(__name__)
-
-
-@app.route('/', methods=['GET'])
-def hello_world():
-    queryArgs = request.args
-    # print(type(args), args)
-    text = queryArgs["text"]
-
-    retry = queryArgs["retry"] # must have these two.
-    if type(retry) == str:
-        retry = retry.lower()
-        retry = (retry == "true")
-    group_id = queryArgs["group_id"] 
-    # print([text, retry, group_id])
-    # print("CURRENT CHAT HISTORY:", group_history)
-
-    if args.save_samples_path:
-        samples_file.write("user:{}\n".format(text))
     text_ids = tokenizer.encode(text, add_special_tokens=False)
-    group_history[group_id] = group_history.get(group_id,[])[-args.max_history_len:] # make sure per group chat record length is bounded. do not OOM.
-    if not retry:
-        group_history[group_id].append(text_ids)
     input_ids = [tokenizer.cls_token_id]  # 每个input以[CLS]为开头
 
     history = group_history.get(group_id,[])
