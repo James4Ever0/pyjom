@@ -145,6 +145,7 @@ tokenizer = BertTokenizerFast(
 # tokenizer = BertTokenizer(vocab_file=args.voca_path)
 
 modelPaths = []
+# sort them with time.
 workingModelPath = None
 
 for modelPath in modelPaths:
