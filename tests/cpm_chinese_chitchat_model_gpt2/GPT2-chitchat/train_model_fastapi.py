@@ -145,9 +145,11 @@ tokenizer = BertTokenizerFast(
 # tokenizer = BertTokenizer(vocab_file=args.voca_path)
 
 modelPaths = []
+workingModelPath = None
 
 for modelPath in modelPaths:
-model = GPT2LMHeadModel.from_pretrained(args.model_path)
+    try:
+        model = GPT2LMHeadModel.from_pretrained(args.model_path)
 model = model.to(device)
 # model.eval()
 
