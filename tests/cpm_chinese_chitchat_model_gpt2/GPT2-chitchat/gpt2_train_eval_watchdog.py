@@ -1,1 +1,4 @@
-def keepAlive()
+def keepAlive():
+    pass
+def keepDead():
+    pass
