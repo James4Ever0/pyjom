@@ -271,7 +271,8 @@ if __name__ == '__main__':
     def getTrainDataLoader(myIteratorFunction):
         for source, target in  myIteratorFunction():
             sourceLogit = getTextEncoded(source)
-            sourceLogit = getTextEncoded(source)
+            targetLogit = getTextEncoded(target)
+            
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
