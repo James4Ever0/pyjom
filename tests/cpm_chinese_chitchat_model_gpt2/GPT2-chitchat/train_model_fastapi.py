@@ -272,7 +272,7 @@ if __name__ == '__main__':
     # load sample data
     dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_0.log","/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_1.log"]
     # choose not to clean everything after the training, yet.
-    import requests
+    # import requests
     for dataPath in dataPaths:
 
 #     # magic config from hackernoon.
