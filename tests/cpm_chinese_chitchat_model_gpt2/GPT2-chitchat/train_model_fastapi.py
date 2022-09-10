@@ -275,6 +275,7 @@ if __name__ == '__main__':
     from liveTrainingData import getQQGroupChatData
     optimizer = transformers.AdamW(model.parameters(), lr=args.lr, eps=args.eps)
     # scheduler = transformers.WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
+    t_total = len(train_dataloader) // args.gradient_accumulation_steps * args.epochs
     scheduler = transformers.get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=args.warmup_steps, num_training_steps=t_total
     )
