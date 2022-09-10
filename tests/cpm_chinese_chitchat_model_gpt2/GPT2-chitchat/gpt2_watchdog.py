@@ -43,7 +43,8 @@ import subprocess
 process = None
 
 def getGPT2Status():
-    return process.
+    global process
+    return process != None
 def startGPT2Server():
     global process
     process = subprocess.Popen(['/usr/bin/python3','interact_fastapi.py'])
