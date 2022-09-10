@@ -21,6 +21,7 @@ def getQQGroupChatData():
                     except:
                         pass
         df = pd.DataFrame(dataArray)
+        df[]
         breakpoint()
 
 if __name__ == '__main__':
