@@ -150,7 +150,7 @@ def getPathAccessTime(path):
     else:
         return -1
 
-modelPaths = []
+modelPaths = ["/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/model"]
 # sort them with time.
 workingModelPath = None
 
