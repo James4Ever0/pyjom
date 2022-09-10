@@ -165,6 +165,7 @@ for modelPath in modelPaths:
 if workingModelPath:
     saveModelPath = [modelPath for modelPath in modelPaths if modelPath !=workingModelPath][0]
 else:
+    print("no working model found")
 
 model = model.to(device)
 # model.eval()
