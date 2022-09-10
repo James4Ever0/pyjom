@@ -58,9 +58,8 @@ process = None
 def getGPT2Running():
     global process
     if process != None:
-        return process.poll()
-    return process != None
-
+        return process.poll() != None
+    return False
 
 def startGPT2Server():
     global process
