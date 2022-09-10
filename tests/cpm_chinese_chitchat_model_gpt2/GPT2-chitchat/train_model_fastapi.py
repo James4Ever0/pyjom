@@ -149,6 +149,7 @@ def getPathAccessTime(path):
         return os.stat(path).st_mtime
     else:
         return -1
+
 modelPaths = []
 # sort them with time.
 workingModelPath = None
