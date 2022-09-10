@@ -221,10 +221,10 @@ def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
                 # 清空梯度信息
                 optimizer.zero_grad()
 
-            if (batch_idx + 1) % args.log_step == 0:
-                logger.info(
-                    "batch {} of epoch {}, loss {}, batch_acc {}, lr {}".format(
-                        batch_idx + 1, epoch + 1, loss.item() * args.gradient_accumulation_steps, batch_acc, scheduler.get_lr()))
+            # if (batch_idx + 1) % args.log_step == 0:
+            #     logger.info(
+            #         "batch {} of epoch {}, loss {}, batch_acc {}, lr {}".format(
+            #             batch_idx + 1, epoch + 1, loss.item() * args.gradient_accumulation_steps, batch_acc, scheduler.get_lr()))
 
             del input_ids, outputs
 
