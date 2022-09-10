@@ -34,10 +34,9 @@ def startGPT2Training():
     os.system('/usr/bin/python3 train_model_fastapi.py')
 
 def markGPT2Trained():
-with open('trained.log', 'r+') as f:
-    content = getNow().isoformat()
-            content = f.write()
-        content =
+    with open('trained.log', 'r+') as f:
+        content = getNow().isoformat()
+        f.write(content)
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
