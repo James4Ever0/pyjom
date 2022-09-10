@@ -263,7 +263,7 @@ if args.save_samples_path:
     samples_file.write("聊天记录{}:\n".format(datetime.now()))
 # 存储聊天记录，每个utterance以token的id的形式进行存储
 
-def getTextEncoded(text):
+def getTextEncoded(text, suffix=tokenizer.):
     text_ids = tokenizer.encode(text, add_special_tokens=False)
     input_ids = [tokenizer.cls_token_id]
     input_ids.extend(text_ids)
