@@ -30,7 +30,7 @@ def getQQGroupChatData():
                     yield source, target
             else:
                 print("GROUP %d DOES NOT HAVE SUFFICIENT CHATS" % group_id)
-        breakpoint()
+        # breakpoint()
 
 if __name__ == '__main__':
     getQQGroupChatData()
