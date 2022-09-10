@@ -176,7 +176,7 @@ app = Flask(__name__)
 
 @app.route('/exit', methods=['GET'])
 def program_exit():
-    print("SERVER WILL EXIT")
+    print("______GPT2 SERVER WILL EXIT______")
     exit() # shit man
 
 @app.route('/', methods=['GET'])
