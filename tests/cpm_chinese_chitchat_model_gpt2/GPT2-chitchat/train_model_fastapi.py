@@ -274,7 +274,9 @@ if __name__ == '__main__':
     # choose not to clean everything after the training, yet.
     # import requests
     for dataPath in dataPaths:
-
+        import json
+        import parse
+        for l
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
