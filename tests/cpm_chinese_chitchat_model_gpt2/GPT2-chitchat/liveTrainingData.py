@@ -1,7 +1,6 @@
-def getQQGroupChatData():
+def getQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_0.log","/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_1.log"]):
     import pandas as pd
     # load sample data
-    dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_0.log","/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_1.log"]
     # choose not to clean everything after the training, yet.
     # import requests
     tag = '[GROUP_TEXT_MESSAGE] '
@@ -31,7 +30,6 @@ def getQQGroupChatData():
             else:
                 print("GROUP %d DOES NOT HAVE SUFFICIENT CHATS" % group_id)
         # breakpoint()
-    
 
 
 import string
