@@ -16,10 +16,9 @@ def getModelAndPaths(modelClass,modelPaths = ["/media/root/parrot/pyjom/tests/cp
             model = modelClass.from_pretrained(modelPath)
             workingModelPath = modelPath
             print("using model: %s" % workingModelPath)
+            break
         except:
-            import traceback
-            traceback.print_exc()
-            print("ERROR WHEN USING MODEL")
+            pass
     if workingModelPath:
         saveModelPath = [modelPath for modelPath in modelPaths if modelPath !=workingModelPath][0]
         print("will save model to: %s" % saveModelPath)
