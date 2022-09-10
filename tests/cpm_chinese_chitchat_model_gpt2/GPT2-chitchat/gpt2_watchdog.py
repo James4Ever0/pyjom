@@ -56,6 +56,8 @@ def terminateGPT2():
             traceback.print_exc()
             print("ERROR WHEN TERMINATING GPT2 SERVER")
             breakpoint()
+    else:
+        print("GPT2 IS NOT RUNNING. NO NEED TO TERMINATE")
 
 def checkGPT2Status():
     gpt2status = getGPT2Status()
