@@ -59,11 +59,17 @@ def removeUnnecessaryPunctuation(text):
     return text
 
 def removeUnwantedSpace(text):
-    return 
+    while True:
+        if "  " in text:
+            text = text.replace("  ", " ")
+        else:
+            break
+    return text
 
 if __name__ == '__main__':
     for source, target in getQQGroupChatData():
         # source = removeUnnecessaryPunctuation(source)
+        source = removeUnwantedSpace(source)
         # target = removeUnnecessaryPunctuation(target)
         # if len(source) > 3 and len(target)>3:
         #     print("SOURCE: %s" % source)
