@@ -1,6 +1,7 @@
 import requests
 import schedule
 import os
+import datetime
 os.chdir("/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/")
 
 def getNow():
