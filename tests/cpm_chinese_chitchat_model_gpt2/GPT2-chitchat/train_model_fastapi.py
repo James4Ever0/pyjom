@@ -279,7 +279,8 @@ if __name__ == '__main__':
         with open(dataPath, 'r') as f:
             data = f.read()
             for line in data.split('\n'):
-                line = li
+                line = line.strip()
+                if line.startswith('[]'):
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
