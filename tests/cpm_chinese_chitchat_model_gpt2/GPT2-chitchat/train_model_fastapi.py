@@ -243,7 +243,7 @@ if args.save_samples_path:
     samples_file.write("聊天记录{}:\n".format(datetime.now()))
 # 存储聊天记录，每个utterance以token的id的形式进行存储
 
-def getEncoded(text)
+def getTextEncoded(text):
     text_ids = tokenizer.encode(text, add_special_tokens=False)
     input_ids = [tokenizer.cls_token_id]
     # selected_history = history[-args.max_history_len:]
@@ -253,6 +253,7 @@ def getEncoded(text)
         # input_ids.append(tokenizer.sep_token_id)
     input_ids = torch.tensor(input_ids).long().to(device)
     input_ids = input_ids.unsqueeze(0)
+    return input_ids
 
 
 port = 8729
