@@ -7,7 +7,8 @@ def checkGPT2Status():
         trained = getGPT2Trained()
         if not trained:
             startGPT2Training()
-        
+            markGPT2Trained()
+        else:
 
 schedule.every(1).minute.do(checkGPT2Status) # shall place a flag if the training is complete.
 # schedule.every(1).minute.do(checkGPT2TrainServer)
