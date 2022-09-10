@@ -269,6 +269,7 @@ def getTextEncoded(text):
     input_ids.extend(text_ids)
     input_ids = torch.tensor(input_ids).long().to(device)
     print(input_ids.shape)
+    breakpoint()
     # input_ids = input_ids.unsqueeze(0)
     return input_ids
 
