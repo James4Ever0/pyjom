@@ -283,7 +283,7 @@ if __name__ == '__main__':
                 line = line.strip()
                 if line.startswith(tag):
                     mJson = parse.parse(tag+"{JSON}", line)
-                    
+                    mJson = json.loads(mJson[])
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
