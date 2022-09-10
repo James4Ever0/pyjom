@@ -179,6 +179,11 @@ def program_exit():
     print("______GPT2 SERVER WILL EXIT______")
     exit() # shit man
 
+@app.route('/serverHello', methods=['GET'])
+def program_exit():
+    print("______GPT2 SERVER WILL EXIT______")
+    exit() # shit man
+
 @app.route('/', methods=['GET'])
 def hello_world():
     queryArgs = request.args
