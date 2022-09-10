@@ -57,7 +57,8 @@ process = None
 
 def getGPT2Running():
     global process
-    returnCode = process.poll()
+    if process != None:
+        return process.poll()
     return process != None
 
 
