@@ -1,4 +1,4 @@
-    
+def getQQGroupChatData():
     import pandas as pd
     # load sample data
     dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_0.log","/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_1.log"]
