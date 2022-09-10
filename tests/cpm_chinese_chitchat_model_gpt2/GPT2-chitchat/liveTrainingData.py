@@ -35,6 +35,7 @@ def clearQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red
     import os
     for dataPath in dataPaths:
         cmd = 'cat /dev/null > {}'.format(dataPath)
+        print("CLEARING: {}".format(dataPath))
         os.system(cmd)
 
 import string
