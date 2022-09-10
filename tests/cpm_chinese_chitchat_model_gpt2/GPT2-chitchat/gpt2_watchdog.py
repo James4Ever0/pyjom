@@ -17,7 +17,10 @@ def getGPT2TrainedStatus():
         content = datetime.datetime.fromisoformat(content)
         day = content.day
         now = getNow()
-        if day == now.day:
+        return day == now.day
+    except:
+        import traceback
+        traceback.print_exc()
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
