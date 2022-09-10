@@ -59,7 +59,7 @@ def getGPT2Running():
     global process
     if process != None:
         return process.poll() == None # when no return code the program is running
-    return False
+    return False # if process is None then program is not running
 
 def startGPT2Server():
     global process
