@@ -145,7 +145,10 @@ tokenizer = BertTokenizerFast(
 # tokenizer = BertTokenizer(vocab_file=args.voca_path)
 
 def getPathAccessTime(path):
-
+    if os.path.exists(path):
+        retur
+    else:
+        retur 1
 modelPaths = []
 # sort them with time.
 workingModelPath = None
