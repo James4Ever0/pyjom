@@ -15,6 +15,7 @@ windows:
           - sleep 10
           - cd tasks/qq/qq_red_packet_collect # run multiple commands in this pane
           - python3 botoy_redpacket_collect.py 1>/dev/null
+          # - python3 botoy_redpacket_collect.py 1>/dev/null
         #   - python3 botoy_redpacket_collect.py --log 1 --log_file 0 1>/dev/null 2> >(tee -a redPacketLog_0.log >&2)
       # it seems we need another github account to have another gitter developer token.
       - shell_command:
