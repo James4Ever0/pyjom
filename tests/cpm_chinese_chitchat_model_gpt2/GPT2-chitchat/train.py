@@ -209,8 +209,10 @@ def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
     epoch_mean_acc = epoch_correct_num / epoch_total_num
     logger.info(
         "epoch {}: loss {}, predict_acc {}".format(epoch + 1, epoch_mean_loss, epoch_mean_acc))
+    return epoch_mean_loss
+    
 
-def save_model_now(sepoch):
+def save_model_now(save_model_path,logger,epoch):
     # save model
     logger.info('saving model for epoch {}'.format(epoch + 1))
     model_path = join(save_model_path, 'epoch{}'.format(epoch + 1))
@@ -222,7 +224,6 @@ def save_model_now(sepoch):
     epoch_finish_time = datetime.now()
     logger.info('time for one epoch: {}'.format(epoch_finish_time - epoch_start_time))
 
-    return epoch_mean_loss
 
 
 def validate_epoch(model, validate_dataloader, logger, epoch, args):
