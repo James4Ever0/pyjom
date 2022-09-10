@@ -159,6 +159,8 @@ if args.save_samples_path:
 # 存储聊天记录，每个utterance以token的id的形式进行存储
 
     text_ids = tokenizer.encode(text, add_special_tokens=False)
+    input_ids = [tokenizer.cls_token_id]
+    # selected_history = history[-args.max_history_len:]
     selected_history = [text_ids]
     for history_id, history_utr in enumerate(selected_history):
         input_ids.extend(history_utr)
