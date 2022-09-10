@@ -161,7 +161,7 @@ for modelPath in modelPaths:
     except:
         pass
 if workingModelPath:
-    saveModelPath = [modelPath in modelPaths]
+    saveModelPath = [modelPath for modelPath in modelPaths if modelPath !=]
 else:
 
 model = model.to(device)
