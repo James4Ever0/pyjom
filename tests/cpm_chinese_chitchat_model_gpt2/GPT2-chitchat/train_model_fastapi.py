@@ -167,7 +167,7 @@ if args.save_samples_path:
     history = group_history.get(group_id,[])
     
     # selected_history = history[-args.max_history_len:]
-    selected_history = history
+    selected_history = [text_ids]
     if retry:
         selected_history = selected_history[:-1] #ignore last one. previous failure?
     for history_id, history_utr in enumerate(selected_history):
