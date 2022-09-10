@@ -267,7 +267,8 @@ def getTextEncoded(text):
     text_ids = tokenizer.encode(text, add_special_tokens=False)
     input_ids = [tokenizer.cls_token_id]
     input_ids.extend(text_ids)
-    input_ids = torch.tensor(input_ids).long().to(device)
+    input_ids = torch.tensor(input_ids).long().reshape()
+    input_ids = input_ids.to(device)
     print(input_ids.shape)
     breakpoint()
     # input_ids = input_ids.unsqueeze(0)
