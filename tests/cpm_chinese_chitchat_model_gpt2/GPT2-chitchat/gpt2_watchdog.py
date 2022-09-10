@@ -1,5 +1,8 @@
 import requests
 import schedule
+def getNow():
+        now = datetime.datetime.now()
+    return 
 
 def getGPT2Status():
     hour = datetime.datetime.now().hour
@@ -14,8 +17,7 @@ def getGPT2TrainedStatus():
             content = f.read()
         content = datetime.datetime.fromisoformat(content)
         day = content.day
-        now = datetime.datetime.now()
-
+        now = getNow()
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
