@@ -24,6 +24,10 @@ def getGPT2TrainedStatus():
         print("SOME ERROR WHEN CHECKING GPT2 TRAINED STATUS")
         breakpoint()
     return False
+
+import os
+def startGPT2Training():
+    os.system()
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
