@@ -28,13 +28,16 @@ def getGPT2TrainedStatus():
         breakpoint()
     return False
 
-import os
+# import os
 def startGPT2Training():
     print("START TRAINING")
     os.system('/usr/bin/python3 train_model_fastapi.py')
 
 def markGPT2Trained():
-
+with open('trained.log', 'r+') as f:
+    content = 
+            content = f.write()
+        content = datetime.datetime.fromisoformat(content)
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
