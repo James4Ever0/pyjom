@@ -144,29 +144,6 @@ tokenizer = BertTokenizerFast(
     vocab_file=args.vocab_path, sep_token="[SEP]", pad_token="[PAD]", cls_token="[CLS]")
 # tokenizer = BertTokenizer(vocab_file=args.voca_path)
 
-def getPathAccessTime(path):
-    if os.path.exists(path):
-        return os.stat(path).st_mtime
-    else:
-        return -1
-
-modelPaths = ["/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/model","/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/model2"]
-# sort them with time.
-workingModelPath = None
-
-modelPaths.sort(key = lambda modelPath: -getPathAccessTime(os.path.join(modelPath, 'pytorch_model.bin'))) # get latest model first, if loaded successifully
-
-for modelPath in modelPaths:
-    try:
-        model = GPT2LMHeadModel.from_pretrained(modelPath)
-        workingModelPath = modelPath
-    except:
-        pass
-if workingModelPath:
-    saveModelPath = [modelPath for modelPath in modelPaths if modelPath !=workingModelPath][0]
-else:
-    print("no working model found. program will exit.")
-    exit()
 
 model = model.to(device)
 # model.eval()
