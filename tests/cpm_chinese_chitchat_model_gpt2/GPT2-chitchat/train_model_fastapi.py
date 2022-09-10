@@ -272,7 +272,7 @@ def getTextEncoded(text):
     return input_ids
 
 def getTrainDataLoader(train_text_list):
-    for source, target in  myIteratorFunction():
+    for source, target in  train_text_list:
         sourceLogit = getTextEncoded(source)
         targetLogit = getTextEncoded(target)
         yield sourceLogit, targetLogit
