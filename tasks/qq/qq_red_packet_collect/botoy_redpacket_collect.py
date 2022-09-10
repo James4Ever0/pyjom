@@ -210,7 +210,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
         if not (Content.startswith("[") or Content.endswith("]")):
             if content_length <= content_max_length and content_length >= content_min_length:  # 新版qq之类的信息
                 # we log group chat text for gpt training here. shall we?
-                
+                logGroup
                 result = checkGroupMsgSendStatus(group_id)
 
                 if result:  # will not write banned group to cursor since we will not reply it.
