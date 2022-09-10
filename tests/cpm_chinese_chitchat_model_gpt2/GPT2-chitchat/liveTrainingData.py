@@ -28,8 +28,8 @@ def getQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_p
             import random
             randomLengthGetter = 
             if len(content) >=2:
-                for source, target in zip(content[:-1], content[1:]):
-                    yield source, target
+                # for source, target in zip(content[:-1], content[1:]):
+                #     yield source, target
             else:
                 print("GROUP %d DOES NOT HAVE SUFFICIENT CHATS" % group_id)
         # breakpoint()
