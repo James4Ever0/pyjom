@@ -281,7 +281,7 @@ if __name__ == '__main__':
             for line in data.split('\n'):
                 line = line.strip()
                 if line.startswith('[GROUP_TEXT_MESSAGE] '):
-                    co
+                    mJson = parse.parse("")
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
