@@ -35,9 +35,9 @@ def startGPT2Training():
 
 def markGPT2Trained():
 with open('trained.log', 'r+') as f:
-    content = 
+    content = getNow().isoformat()
             content = f.write()
-        content = datetime.datetime.fromisoformat(content)
+        content =
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
