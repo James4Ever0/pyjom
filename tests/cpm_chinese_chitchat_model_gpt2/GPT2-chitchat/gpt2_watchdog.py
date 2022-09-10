@@ -10,7 +10,7 @@ def checkGPT2Status():
             markGPT2Trained()
         else:
             print("GPT2 is Trained Today.")
-    else:
+    elif gpt2status == 'eval':
         
 
 schedule.every(1).minute.do(checkGPT2Status) # shall place a flag if the training is complete.
