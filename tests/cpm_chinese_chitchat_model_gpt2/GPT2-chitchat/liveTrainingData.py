@@ -62,7 +62,7 @@ if __name__ == '__main__':
     for source, target in getQQGroupChatData():
         source = removeUnnecessaryPunctuation(source)
         target = removeUnnecessaryPunctuation(target)
-        if source 
-        print("SOURCE: %s" % source)
-        print("TARGET: %s" % target)
-        print("_________________")
+        if len(source) > 3 and len(target)>3:
+            print("SOURCE: %s" % source)
+            print("TARGET: %s" % target)
+            print("_________________")
