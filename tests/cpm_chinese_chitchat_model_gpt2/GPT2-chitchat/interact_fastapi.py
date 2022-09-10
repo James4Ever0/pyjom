@@ -143,7 +143,11 @@ os.environ["CUDA_VISIBLE_DEVICES"] = args.device
 tokenizer = BertTokenizerFast(
     vocab_file=args.vocab_path, sep_token="[SEP]", pad_token="[PAD]", cls_token="[CLS]")
 # tokenizer = BertTokenizer(vocab_file=args.voca_path)
-model = GPT2LMHeadModel.from_pretrained(args.model_path)
+# model = GPT2LMHeadModel.from_pretrained(args.model_path)
+
+from getWorkingAndSavingModelPaths import getModelAndPaths
+
+model, (workingModelPath, saveModelPath) = getModelAndPaths(GPT2LMHeadModel)
 model = model.to(device)
 model.eval()
 
