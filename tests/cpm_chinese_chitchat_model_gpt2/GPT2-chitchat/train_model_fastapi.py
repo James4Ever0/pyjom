@@ -268,7 +268,8 @@ def getTextEncoded(textList, suffix=tokenizer.sep_token_id):
     for text in textList:
         text_ids = tokenizer.encode(text, add_special_tokens=False)
         input_ids.extend(text_ids)
-        input_ids.append(suffix)
+        input_ids.append(tokenizer.sep_token_id)
+    input_ids[-1] = suffix
     input_ids = torch.tensor(input_ids).long().reshape(1,-1)
     input_ids = input_ids.to(device)
     # print(input_ids.shape)
