@@ -28,7 +28,7 @@ def getQQGroupChatData():
             if len(content) >=2:
                 for mTuple in zip(content[:-1], content[1:]):
             else:
-                print("GROUP %d" % group_id )
+                print("GROUP %d DOES NOT HAVE SUFFICIENT CHATS" % group_id)
         breakpoint()
 
 if __name__ == '__main__':
