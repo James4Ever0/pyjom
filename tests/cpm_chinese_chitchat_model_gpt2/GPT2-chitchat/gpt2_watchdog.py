@@ -9,7 +9,8 @@ def getGPT2Status():
         return 'eval'
 
 def getGPT2TrainedStatus():
-    with open('trained.log', 'r+')
+    with open('trained.log', 'r+') as f:
+        content = f.read()
 
 def checkGPT2Status():
     gpt2status = getGPT2Status()
