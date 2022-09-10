@@ -273,6 +273,7 @@ if __name__ == '__main__':
     dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_0.log","/root/Desktop/works/pyjom/tasks/qq/qq_red_packet_collect/logs/redPacketLog_1.log"]
     # choose not to clean everything after the training, yet.
     # import requests
+    rag = [GROUP_TEXT_MESSAGE] ''
     for dataPath in dataPaths:
         import json
         import parse
@@ -281,7 +282,7 @@ if __name__ == '__main__':
             for line in data.split('\n'):
                 line = line.strip()
                 if line.startswith(tag):
-                    mJson = parse.parse(+"{}")
+                    mJson = parse.parse(tag+"{}")
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
