@@ -154,7 +154,6 @@ model = model.to(device)
 args.save_samples_path = False
 
 
-
 def calculate_acc(logit, labels, ignore_index=-100):
     logit = logit[..., :-1, :].contiguous().view(-1, logit.size(-1))
     labels = labels[..., 1:].contiguous().view(-1)
@@ -269,7 +268,7 @@ def getTextEncoded(text):
 # port = 8729
 if __name__ == '__main__':
     from liveTrainingData import getQQGroupChatData
-    
+
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
