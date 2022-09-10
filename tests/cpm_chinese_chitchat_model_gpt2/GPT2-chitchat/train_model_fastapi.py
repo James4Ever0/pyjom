@@ -246,11 +246,7 @@ if args.save_samples_path:
 def getTextEncoded(text):
     text_ids = tokenizer.encode(text, add_special_tokens=False)
     input_ids = [tokenizer.cls_token_id]
-    # selected_history = history[-args.max_history_len:]
-    # selected_history = [text_ids]
-    # for history_id, history_utr in enumerate(selected_history):
-        # input_ids.extend(history_utr)
-        # input_ids.append(tokenizer.sep_token_id)
+    input_ids.extend(text_ids)
     input_ids = torch.tensor(input_ids).long().to(device)
     input_ids = input_ids.unsqueeze(0)
     return input_ids
