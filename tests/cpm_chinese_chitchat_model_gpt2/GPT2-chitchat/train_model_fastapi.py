@@ -273,6 +273,11 @@ def getTrainDataLoader(myIteratorFunction):
 # port = 8729
 if __name__ == '__main__':
     from liveTrainingData import getQQGroupChatData
+    optimizer = transformers.AdamW(model.parameters(), lr=args.lr, eps=args.eps)
+    # scheduler = transformers.WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
+    scheduler = transformers.get_linear_schedule_with_warmup(
+        optimizer, num_warmup_steps=args.warmup_steps, num_training_steps=t_total
+    )
     for epoch in range(30):
         print("RUNNING EPOCH: %d" % epoch)
         train_epoch(model, getTrainDataLoader(getQQGroupChatData),optimizer, scheduler, logger, epoch, args)
