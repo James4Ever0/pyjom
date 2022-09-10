@@ -36,8 +36,7 @@ def groupMsgRepeater(msg: str, sentiment_threshold=0.7):
 def checkGroupMsgSendStatus(group_id, decrease=True):
     if group_id in groupMsgSendStatus.keys():
         if decrease:
-            groupMsgSendStatus[
-                group_id] -= 1  # the feedback shall be elsewhere.
+            groupMsgSendStatus[group_id] -= 1  # the feedback shall be elsewhere.
         if groupMsgSendStatus[group_id] <= 0:
             del groupMsgSendStatus[group_id]
             return True
@@ -49,15 +48,16 @@ def checkGroupMsgSendStatus(group_id, decrease=True):
 # now async.
 @asyncThread
 def sendBotGroupTextMsg(
-        replyGetterYielder,
-        groupBannedErrorBuffer=100,  #被禁言之后的buffer
-        retry=3,
-        min_reply_length=5,  # some impirical value.
-        delay_time_range=(5, 15),
-        context_size_range=(1, 3),  # maybe we do not need no context. or not?
-        maxRepeatRange=(2, 5),
-        noReplyThreshold=3,
-        noReplyBuffer=75):  # the context parameter may lead to OOM.
+    replyGetterYielder,
+    groupBannedErrorBuffer=100,  # 被禁言之后的buffer
+    retry=3,
+    min_reply_length=5,  # some impirical value.
+    delay_time_range=(5, 15),
+    context_size_range=(1, 3),  # maybe we do not need no context. or not?
+    maxRepeatRange=(2, 5),
+    noReplyThreshold=3,
+    noReplyBuffer=75,
+):  # the context parameter may lead to OOM.
     global groupChatCursor
     # will clear cursor after sending
     if groupChatCursor is not None:
@@ -66,7 +66,8 @@ def sendBotGroupTextMsg(
         # groupChatCursor = None
         # return
         result = checkGroupMsgSendStatus(group_id, decrease=False)  # failsafe.
-        if not result: return
+        if not result:
+            return
 
         # modify this textMessage somehow? with context.
         context = random.randint(*context_size_range)
@@ -78,7 +79,13 @@ def sendBotGroupTextMsg(
         messageContext = " ".join(messageContext)  # just use space.
         groupChatCursorWithContext["msg"] = messageContext
 
-        for replyGetter, argumentList, flag, needContext, enableRetryFlag in replyGetterYielder:  # use all methods.
+        for (
+            replyGetter,
+            argumentList,
+            flag,
+            needContext,
+            enableRetryFlag,
+        ) in replyGetterYielder:  # use all methods.
             if exit_event.is_set():
                 break
             retried = False
@@ -93,30 +100,28 @@ def sendBotGroupTextMsg(
 
                 if needContext:
                     reply = replyGetter(
-                        *[
-                            groupChatCursorWithContext[key]
-                            for key in argumentList
-                        ], **extraFlags)
+                        *[groupChatCursorWithContext[key] for key in argumentList],
+                        **extraFlags
+                    )
                 else:
                     reply = replyGetter(
-                        *[groupChatCursor[key] for key in argumentList],
-                        **extraFlags)
+                        *[groupChatCursor[key] for key in argumentList], **extraFlags
+                    )
                 if reply is not None:
                     retried = True  # only plus one on retryIndex when there is no error during generation.
                     maxRepeat = random.randint(*maxRepeatRange)
                     reply = generatedSentenceFixer(
-                        reply, maxRepeat=maxRepeat)  # fix this reply first.
-                    if reply in groupChatReplyHistory or len(
-                            reply) < min_reply_length:
+                        reply, maxRepeat=maxRepeat
+                    )  # fix this reply first.
+                    if reply in groupChatReplyHistory or len(reply) < min_reply_length:
                         continue  # do not send repeated messages or unusually short messages.
                     else:
                         update_stack(groupChatReplyHistory, reply)
                     # 句子里面不能有违禁词语 不然就不能输出
                     reply = censorReplyAbsSentiment(reply)
-                    if reply is None: continue  # skip too vulgar sentences.
-                    if reply.count(
-                            "*"
-                    ) > 3:  # too much censor will make it unreadable.
+                    if reply is None:
+                        continue  # skip too vulgar sentences.
+                    if reply.count("*") > 3:  # too much censor will make it unreadable.
                         continue  # retry to get a better thing.
                     # do reply.
                     # stderrPrint("PROCESSING GROUP MESSAGE CURSOR:", groupChatCursor)
@@ -128,24 +133,28 @@ def sendBotGroupTextMsg(
                     delay = random.randint(*delay_time_range)
                     time.sleep(delay)  # to make it more humane.
 
-                    sendMessageStatus = action.sendGroupText(group=group_id,
-                                                             content=reply)
+                    sendMessageStatus = action.sendGroupText(
+                        group=group_id, content=reply
+                    )
                     # stderrPrint("SENT MESSAGE STATUS:",sendMessageStatus)
-                    if not (sendMessageStatus['ErrMsg'] == ''
-                            and sendMessageStatus['Ret'] == 0):
+                    if not (
+                        sendMessageStatus["ErrMsg"] == ""
+                        and sendMessageStatus["Ret"] == 0
+                    ):
                         # some shit had happened. cannot send message without error.
-                        groupMsgSendStatus.update(
-                            {group_id: groupBannedErrorBuffer})
+                        groupMsgSendStatus.update({group_id: groupBannedErrorBuffer})
                     else:
                         # no shit happened.
                         groupNoReplyStack.update(
-                            {group_id: 1 + groupNoReplyStack.get(group_id, 0)})
+                            {group_id: 1 + groupNoReplyStack.get(group_id, 0)}
+                        )
                         # stderrPrint("UPDATE NOREPLYSTACK", groupNoReplyStack)
 
                         noReply = groupNoReplyStack.get(group_id, 0)
-                        if noReply >= noReplyThreshold:  # only this noReply greater than 0 we can write it to cursor. LOGIC ELSEWHERE
-                            groupNoReplyStack.update(
-                                {group_id: -noReplyBuffer})
+                        if (
+                            noReply >= noReplyThreshold
+                        ):  # only this noReply greater than 0 we can write it to cursor. LOGIC ELSEWHERE
+                            groupNoReplyStack.update({group_id: -noReplyBuffer})
 
                     # stderrPrint("sendMessageStatus:", sendMessageStatus)
 
@@ -153,22 +162,40 @@ def sendBotGroupTextMsg(
 
 
 def sendRandomGroupMessage():
-    sendAtriGroupChatMessage = (keywordDecorator(getChatApiReply,
-                                                 chatApiIndex=0),
-                                ["msg", "group_id"], "SENDING ATRI API REPLY:",
-                                True, True)  # last is enableRetryFlag
-    sendGPT2GroupChatMessage = (keywordDecorator(getChatApiReply,
-                                                 chatApiIndex=1),
-                                ["msg", "group_id"], "SENDING GPT2 API REPLY:",
-                                True, True)  # last is enableRetryFlag
-    sendChatLocalResponse = (getChatLocalResponse, ["group_id", "msg"],
-                             "SENDING CHATLOCAL REPLY:", False, False)
-    sendRepeaterResponse = (groupMsgRepeater, ["msg"],
-                            "SENDING REPEATER REPLY:", False, False)
+    sendAtriGroupChatMessage = (
+        keywordDecorator(getChatApiReply, chatApiIndex=0),
+        ["msg", "group_id"],
+        "SENDING ATRI API REPLY:",
+        True,
+        True,
+    )  # last is enableRetryFlag
+    sendGPT2GroupChatMessage = (
+        keywordDecorator(getChatApiReply, chatApiIndex=1),
+        ["msg", "group_id"],
+        "SENDING GPT2 API REPLY:",
+        True,
+        True,
+    )  # last is enableRetryFlag
+    sendChatLocalResponse = (
+        getChatLocalResponse,
+        ["group_id", "msg"],
+        "SENDING CHATLOCAL REPLY:",
+        False,
+        False,
+    )
+    sendRepeaterResponse = (
+        groupMsgRepeater,
+        ["msg"],
+        "SENDING REPEATER REPLY:",
+        False,
+        False,
+    )
 
     replyGetterList = [
-        sendAtriGroupChatMessage, sendGPT2GroupChatMessage,
-        sendChatLocalResponse, sendRepeaterResponse
+        sendAtriGroupChatMessage,
+        sendGPT2GroupChatMessage,
+        sendChatLocalResponse,
+        sendRepeaterResponse,
     ]
     weightList = [1, 3, 4, 2]
     replyGetterYielder = weightedRandomYielder(replyGetterList, weightList)
@@ -179,18 +206,20 @@ def sendRandomGroupMessage():
 # schedule.every(30).seconds.do(sendChatLocalResponse) # will this shit work?
 schedule.every(1).minute.do(sendRandomGroupMessage)  # will this shit work?
 
+
 def printGroupTextChatJson(group_id, sender_id, content):
-    message = {"group_id": group_id, "sender_id": sender_id, 'content': content}
+    message = {"group_id": group_id, "sender_id": sender_id, "content": content}
     message = json.dumps(message, ensure_ascii=False)
     # stderrPrint("[GROUP_TEXT_MESSAGE]",message)
+
 
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # too broad for groupInitReplyDelayRange to be (2, 20)
     # global groupChatCursor
-#    stderrPrint('收到群消息，群号为', ctx.FromGroupId)
+    #    stderrPrint('收到群消息，群号为', ctx.FromGroupId)
     # recommed you to check the curret group only.
-#    stderrPrint("checkGroupNoReply:",groupNoReplyStack.get(ctx.FromGroupId,None))
+    #    stderrPrint("checkGroupNoReply:",groupNoReplyStack.get(ctx.FromGroupId,None))
     data_dict = ctx.data  # recommend to use this json object. or not?
     group_id = data_dict["FromGroupId"]
     sender_id = data_dict["FromUserId"]
@@ -198,11 +227,9 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     RedBaginfo = ctx.RedBaginfo
     MsgType = ctx.MsgType
 
-
     # first initialize random delay for every group in groupNoReplyStack
     if group_id not in groupNoReplyStack.keys():
-        groupNoReplyStack.update(
-            {group_id: -random.randint(*groupInitReplyDelayRange)})
+        groupNoReplyStack.update({group_id: -random.randint(*groupInitReplyDelayRange)})
 
     def writeGroupChatCursor(Content):
         global groupChatCursor, chat_stack_lock
@@ -211,22 +238,27 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
         content_min_length = 4
         # maybe we should split sentence into shorter ones, or via summarization/title generation apis.
         content_max_length = 15
-        recv_content_min_length, recv_content_max_length = 4,20
+        recv_content_min_length, recv_content_max_length = 4, 20
         if not (Content.startswith("[") or Content.endswith("]")):
-            if content_length <= recv_content_max_length and content_length >= recv_content_min_length:
+            if (
+                content_length <= recv_content_max_length
+                and content_length >= recv_content_min_length
+            ):
                 printGroupTextChatJson(group_id, sender_id, Content)
-            if content_length <= content_max_length and content_length >= content_min_length:  # 新版qq之类的信息
+            if (
+                content_length <= content_max_length
+                and content_length >= content_min_length
+            ):  # 新版qq之类的信息
                 # we log group chat text for gpt training here. shall we?
                 result = checkGroupMsgSendStatus(group_id)
 
-                if result:  # will not write banned group to cursor since we will not reply it.
+                if (
+                    result
+                ):  # will not write banned group to cursor since we will not reply it.
                     noReply = groupNoReplyStack.get(group_id, 0)
                     # stderrPrint("NOREPLYSTACK:",groupNoReplyStack)
                     if noReply >= 0:
-                        groupChatCursor = {
-                            "group_id": group_id,
-                            "msg": Content
-                        }
+                        groupChatCursor = {"group_id": group_id, "msg": Content}
                     else:
                         groupNoReplyStack.update({group_id: noReply + 1})
 
@@ -248,8 +280,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             for elem in UserExt:
                 QQNick = elem["QQNick"]
                 at_QQNick = "@{}".format(QQNick)
-                content_text = content_text.replace(
-                    at_QQNick + " " + at_QQNick, "")
+                content_text = content_text.replace(at_QQNick + " " + at_QQNick, "")
                 content_text = content_text.replace(at_QQNick, "")
             # now the content is ready.
             writeGroupChatCursor(content_text)
@@ -261,19 +292,19 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     if RedBaginfoDict is not None:
         prefix = "[MREDBAG_LOG]"
         print(prefix, "RECEIVED RED PACKET", file=sys.stderr)
-        print(prefix,
-              "_____________RedPacket Message Dump_____________",
-              file=sys.stderr)
+        print(
+            prefix, "_____________RedPacket Message Dump_____________", file=sys.stderr
+        )
         print(prefix, ctx, file=sys.stderr)
-        print(prefix,
-              "_____________RedPacket Message Dump_____________",
-              file=sys.stderr)
+        print(
+            prefix, "_____________RedPacket Message Dump_____________", file=sys.stderr
+        )
         startThread(openRedBag, (RedBaginfoDict, group_id, RedBaginfo))
     schedule.run_pending()  # this is async.
     # breakpoint()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     bot.run()
 
 # do not send porn shits or you need to relogin.
