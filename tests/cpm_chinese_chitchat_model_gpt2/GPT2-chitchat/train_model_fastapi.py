@@ -154,6 +154,19 @@ model = model.to(device)
 args.save_samples_path = False
 
 
+
+def calculate_acc(logit, labels, ignore_index=-100):
+    logit = logit[..., :-1, :].contiguous().view(-1, logit.size(-1))
+    labels = labels[..., 1:].contiguous().view(-1)
+
+    _, logit = logit.max(dim=-1)  # 对于每条数据，返回最大的index
+    # 进行非运算，返回一个tensor，若labels的第i个位置为pad_id，则置为0，否则为1
+    non_pad_mask = labels.ne(ignore_index)
+    n_correct = logit.eq(labels).masked_select(non_pad_mask).sum().item()
+    n_word = non_pad_mask.sum().item()
+    return n_correct, n_word
+
+
 def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
                 epoch, args):
     model.train()
