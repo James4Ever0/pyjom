@@ -1,5 +1,8 @@
 import requests
 import schedule
+import os
+os.chdir("/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/")
+
 def getNow():
     return datetime.datetime.now()
     
@@ -27,11 +30,11 @@ def getGPT2TrainedStatus():
 
 import os
 def startGPT2Training():
-    os.chdir("/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/")
     print("START TRAINING")
     os.system('/usr/bin/python3 train_model_fastapi.py')
 
-def markGPT2Trained()
+def markGPT2Trained():
+
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
