@@ -324,7 +324,8 @@ if __name__ == '__main__':
     train_dataloader_source = [(source, target) for source, target in getQQGroupChatData()]
     optimizer = transformers.AdamW(model.parameters(), lr=lr, eps=eps)
     # scheduler = transformers.WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
-    epochs = 30
+    saveEpochInterval = 1
+    epochs = 1
     warmup_steps = 4000
     gradient_accumulation_steps = 4
     t_total = len(train_dataloader_source) // gradient_accumulation_steps * 30
@@ -332,7 +333,6 @@ if __name__ == '__main__':
     scheduler = transformers.get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=warmup_steps, num_training_steps=t_total
     )
-    saveEpochInterval = 10
     for epoch in range(epochs):
         print("RUNNING EPOCH: %d" % epoch)
         train_epoch(model, getTrainDataLoader(train_dataloader_source),optimizer, scheduler, logger, epoch, args, device)
