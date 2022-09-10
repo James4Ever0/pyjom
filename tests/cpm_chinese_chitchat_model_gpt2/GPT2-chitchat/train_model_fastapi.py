@@ -149,7 +149,8 @@ workingModelPath = None
 
 for modelPath in modelPaths:
     try:
-        model = GPT2LMHeadModel.from_pretrained(args.model_path)
+        model = GPT2LMHeadModel.from_pretrained(modelPath)
+        workingModelPath = modelPath
 model = model.to(device)
 # model.eval()
 
