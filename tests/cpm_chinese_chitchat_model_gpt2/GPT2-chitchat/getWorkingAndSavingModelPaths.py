@@ -17,7 +17,7 @@ def getModelAndPaths(modelClass,modelPaths = ["/media/root/parrot/pyjom/tests/cp
             workingModelPath = modelPath
             print("using model: %s" % workingModelPath)
         except:
-            pass
+            import 
     if workingModelPath:
         saveModelPath = [modelPath for modelPath in modelPaths if modelPath !=workingModelPath][0]
         print("will save model to: %s" % saveModelPath)
