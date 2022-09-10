@@ -146,7 +146,7 @@ tokenizer = BertTokenizerFast(
 
 from getWorkingAndSavingModelPaths import getModelAndPaths
 
-model, () = getModelAndPaths(GPT2LMHeadModel)
+model, (workingModelPath, saveModelPath) = getModelAndPaths(GPT2LMHeadModel)
 model = model.to(device)
 # model.eval()
 
