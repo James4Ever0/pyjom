@@ -336,7 +336,7 @@ if __name__ == '__main__':
     for epoch in range(epochs):
         print("RUNNING EPOCH: %d" % epoch)
         train_epoch(model, getTrainDataLoader(train_dataloader_source),optimizer, scheduler, logger, epoch, args, device)
-        if epoch >0 and epoch % saveEpochInterval == 0:
+        if epoch >=1 and epoch % saveEpochInterval == 1:
             print("SAVING MODEL AT EPOCH:", epoch)
             save_model_now(model, saveModelPath, logger, epoch)
 #     # magic config from hackernoon.
