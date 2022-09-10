@@ -268,7 +268,8 @@ def getTextEncoded(text):
     input_ids = [tokenizer.cls_token_id]
     input_ids.extend(text_ids)
     input_ids = torch.tensor(input_ids).long().to(device)
-    input_ids = input_ids.unsqueeze(0)
+    print(input_ids.shape)
+    # input_ids = input_ids.unsqueeze(0)
     return input_ids
 
 def getTrainDataLoader(train_text_list):
