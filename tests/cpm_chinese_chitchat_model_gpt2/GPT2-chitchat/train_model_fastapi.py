@@ -274,7 +274,8 @@ def getTrainDataLoader(myIteratorFunction):
 if __name__ == '__main__':
     from liveTrainingData import getQQGroupChatData
     for epoch in range(30):
-    train_epoch(model, getTrainDataLoader(),optimizer, scheduler, logger, epoch, args)
+        print("RUNNING EPOCH: %d" % epoch)
+        train_epoch(model, getTrainDataLoader(),optimizer, scheduler, logger, epoch, args)
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
