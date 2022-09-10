@@ -38,6 +38,7 @@ def set_args():
                         required=False, help='生成的temperature')
     parser.add_argument('--topk', default=8, type=int,
                         required=False, help='最高k选1')
+    parser.add_argument('--ignore_index', default=-100, type=int, required=False, help='对于ignore_index的label token不计算梯度')
     parser.add_argument('--topp', default=0, type=float,
                         required=False, help='最高积累概率')
     # parser.add_argument('--model_config', default='config/model_config_dialogue_small.json', type=str, required=False,
