@@ -41,7 +41,7 @@ def markGPT2Trained():
 
 import subprocess
 def getGPT2Running():
-    subprocess.Popen
+    subprocess.Popen(['/usr/bin/python3',''])
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
