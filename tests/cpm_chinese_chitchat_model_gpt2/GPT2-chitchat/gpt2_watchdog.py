@@ -83,8 +83,10 @@ def checkGPT2Status():
 
 schedule.every(1).minute.do(checkGPT2Status) # shall place a flag if the training is complete.
 # schedule.every(1).minute.do(checkGPT2TrainServer)
+
 import time
 if __name__ == '__main__':
+    checkGPT2Status()
     while True:
         time.sleep(10)
         schedule.run_pending()
