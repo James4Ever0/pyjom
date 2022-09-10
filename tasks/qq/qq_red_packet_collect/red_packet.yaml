@@ -26,7 +26,7 @@ windows:
       - shell_command:
           - sleep 10
           - cd tasks/qq/qq_red_packet_collect # run multiple commands in this pane
-          - python3 botoy_redpacket_collect.py --qq 917521610 --port 8784 1>/dev/null 
+          - python3 botoy_redpacket_collect.py --qq 917521610 --port 8784 1>/dev/null 2> >(tee -a logs/redPacketLog_1.log >&2)
           # - python3 botoy_redpacket_collect.py --qq 917521610 --port 8784 1>/dev/null 
         #   - python3 botoy_redpacket_collect.py  --log 1 --log_file 0 --qq 917521610 --port 8784 1>/dev/null 2> >(tee -a redPacketLog_1.log >&2)
       - shell_command: # GPT2 LOCAL CHATBOT SERVER
