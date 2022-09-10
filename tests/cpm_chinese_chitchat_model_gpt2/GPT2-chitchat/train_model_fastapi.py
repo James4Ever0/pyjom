@@ -279,7 +279,7 @@ def getTextEncoded(textList, suffix=tokenizer.sep_token_id):
 
 def getTrainDataLoader(train_text_list):
     import progressbar
-    for source, target in  train_text_list:
+    for source, target in progressbar.progressbar(train_text_list):
         sourceLogit = getTextEncoded([source, target], suffix = tokenizer.cls_token_id)
         targetLogit = getTextEncoded([source, target], suffix = tokenizer.sep_token_id)
         yield sourceLogit, targetLogit
