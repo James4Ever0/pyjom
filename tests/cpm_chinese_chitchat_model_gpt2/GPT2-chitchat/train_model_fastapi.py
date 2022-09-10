@@ -278,7 +278,8 @@ if __name__ == '__main__':
         import parse
         with open(dataPath, 'r') as f:
             data = f.read()
-            for li
+            for line in data.split('\n'):
+                line = li
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
