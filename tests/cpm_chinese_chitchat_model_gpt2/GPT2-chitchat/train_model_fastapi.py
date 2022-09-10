@@ -154,7 +154,7 @@ modelPaths = ["/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/mo
 # sort them with time.
 workingModelPath = None
 
-modelPaths.sort(key = lambda modelPath: -getPathAccessTime(os.path.join(modelPath, 'pytorch_model.bin'))) # get latest model first, if load 
+modelPaths.sort(key = lambda modelPath: -getPathAccessTime(os.path.join(modelPath, 'pytorch_model.bin'))) # get latest model first, if loaded successifully
 
 for modelPath in modelPaths:
     try:
