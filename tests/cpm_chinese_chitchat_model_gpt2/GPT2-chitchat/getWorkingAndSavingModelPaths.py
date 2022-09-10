@@ -1,5 +1,5 @@
 
-
+def 
     def getPathAccessTime(path):
         if os.path.exists(path):
             return os.stat(path).st_mtime
@@ -20,7 +20,7 @@
             pass
     if workingModelPath:
         saveModelPath = [modelPath for modelPath in modelPaths if modelPath !=workingModelPath][0]
-        return model, (worki)
+        return model, (workingModelPath, saveModelPath)
     else:
         print("no working model found. program will exit.")
         exit()
