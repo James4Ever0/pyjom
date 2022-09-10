@@ -159,17 +159,7 @@ if args.save_samples_path:
 # 存储聊天记录，每个utterance以token的id的形式进行存储
 
     text_ids = tokenizer.encode(text, add_special_tokens=False)
-    group_history[group_id] = group_history.get(group_id,[])[-args.max_history_len:] # make sure per group chat record length is bounded. do not OOM.
-    if not retry:
-        group_history[group_id].append(text_ids)
-    input_ids = [tokenizer.cls_token_id]  # 每个input以[CLS]为开头
-
-    history = group_history.get(group_id,[])
-    
-    # selected_history = history[-args.max_history_len:]
     selected_history = [text_ids]
-    if retry:
-        selected_history = selected_history[:-1] #ignore last one. previous failure?
     for history_id, history_utr in enumerate(selected_history):
         input_ids.extend(history_utr)
         input_ids.append(tokenizer.sep_token_id)
