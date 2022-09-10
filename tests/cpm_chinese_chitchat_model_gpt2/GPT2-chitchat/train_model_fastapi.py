@@ -277,8 +277,8 @@ def getTextEncoded(text, suffix=tokenizer.sep_token_id):
 
 def getTrainDataLoader(train_text_list):
     for source, target in  train_text_list:
-        sourceLogit = getTextEncoded(source, suffix = sep_token_id)
-        targetLogit = getTextEncoded(target)
+        sourceLogit = getTextEncoded(source, suffix = tokenzier.cls_token_id)
+        targetLogit = getTextEncoded(target, suffix = tokenzier.sep_token_id)
         yield sourceLogit, targetLogit
 # port = 8729
 
