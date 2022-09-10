@@ -323,7 +323,7 @@ if __name__ == '__main__':
     saveEpochInterval = 10
     for epoch in range(epochs):
         print("RUNNING EPOCH: %d" % epoch)
-        train_epoch(model, getTrainDataLoader(train_dataloader_source),optimizer, scheduler, logger, epoch, args)
+        train_epoch(model, getTrainDataLoader(train_dataloader_source),optimizer, scheduler, logger, epoch, args, device)
         if epoch >0 and epoch % saveEpochInterval == 0:
             print("SAVING MODEL AT EPOCH:", epoch)
             save_model_now(model, saveModelPath, logger, epoch)
