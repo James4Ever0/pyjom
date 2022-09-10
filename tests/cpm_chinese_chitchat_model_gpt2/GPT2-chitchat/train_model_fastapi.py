@@ -251,9 +251,8 @@ def getTextEncoded(text):
     input_ids = input_ids.unsqueeze(0)
     return input_ids
 
-
-port = 8729
+# port = 8729
 if __name__ == '__main__':
-    # magic config from hackernoon.
-    app.run(port=port, threaded=True, use_reloader=False)
-    # https://hackernoon.com/deploying-deep-learning-models-with-model-server
+#     # magic config from hackernoon.
+#     app.run(port=port, threaded=True, use_reloader=False)
+#     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
