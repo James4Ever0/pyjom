@@ -1,12 +1,11 @@
+import os
 
-def getModelAndPaths(modelPaths = ["/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/model","/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/model2"]):
+def getModelAndPaths(modelClass,modelPaths = ["/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/model","/media/root/parrot/pyjom/tests/cpm_chinese_chitchat_model_gpt2/model2"]):
     def getPathAccessTime(path):
         if os.path.exists(path):
             return os.stat(path).st_mtime
         else:
             return -1
-
-    
     # sort them with time.
     workingModelPath = None
 
