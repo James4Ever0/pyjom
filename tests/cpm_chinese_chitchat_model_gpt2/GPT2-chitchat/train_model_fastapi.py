@@ -144,6 +144,8 @@ tokenizer = BertTokenizerFast(
     vocab_file=args.vocab_path, sep_token="[SEP]", pad_token="[PAD]", cls_token="[CLS]")
 # tokenizer = BertTokenizer(vocab_file=args.voca_path)
 
+def get
+
 modelPaths = []
 # sort them with time.
 workingModelPath = None
@@ -152,6 +154,8 @@ for modelPath in modelPaths:
     try:
         model = GPT2LMHeadModel.from_pretrained(modelPath)
         workingModelPath = modelPath
+    except:
+        pass
 model = model.to(device)
 # model.eval()
 
