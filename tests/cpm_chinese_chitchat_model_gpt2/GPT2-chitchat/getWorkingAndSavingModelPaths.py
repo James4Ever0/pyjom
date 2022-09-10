@@ -20,7 +20,7 @@
             pass
     if workingModelPath:
         saveModelPath = [modelPath for modelPath in modelPaths if modelPath !=workingModelPath][0]
-        retur
+        return model, (worki)
     else:
         print("no working model found. program will exit.")
         exit()
