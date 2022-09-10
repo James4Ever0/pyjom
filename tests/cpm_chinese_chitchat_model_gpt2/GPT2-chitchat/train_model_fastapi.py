@@ -283,11 +283,12 @@ if __name__ == '__main__':
     scheduler = transformers.get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=warmup_steps, num_training_steps=t_total
     )
+    saveEpochInterval = 10
     for epoch in range(epochs):
         print("RUNNING EPOCH: %d" % epoch)
         train_epoch(model, getTrainDataLoader(train_dataloader_source),optimizer, scheduler, logger, epoch, args)
         if epoch >0 and epoch % saveEpochInterval == 0:
-            save_model_now(model, saveModelPath)
+            save_model_now(model, saveModelPath, logger)
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
