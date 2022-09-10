@@ -225,18 +225,18 @@ def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
     logger.info(
         "epoch {}: loss {}, predict_acc {}".format(epoch + 1, epoch_mean_loss, epoch_mean_acc))
 
+
+def save_model_now(model,save_model_path,logger,epoch):
     # save model
     logger.info('saving model for epoch {}'.format(epoch + 1))
-    model_path = join(args.save_model_path, 'epoch{}'.format(epoch + 1))
+    model_path = join(save_model_path, 'epoch{}'.format(epoch + 1))
     if not os.path.exists(model_path):
         os.mkdir(model_path)
     model_to_save = model.module if hasattr(model, 'module') else model
     model_to_save.save_pretrained(model_path)
     logger.info('epoch {} finished'.format(epoch + 1))
-    epoch_finish_time = datetime.now()
-    logger.info('time for one epoch: {}'.format(epoch_finish_time - epoch_start_time))
-
-    return epoch_mean_loss
+    # epoch_finish_time = datetime.now()
+    # logger.info('time for one epoch: {}'.format(epoch_finish_time - epoch_start_time))
 
 if args.save_samples_path:
     if not os.path.exists(args.save_samples_path):
