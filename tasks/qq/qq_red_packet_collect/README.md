@@ -11,7 +11,7 @@ http://localhost:8784/v1/Login/GetQRcode
 to clear group chat log:
 
 ```bash
-
+cat /dev/null > redPacketLog_0.log 
 ```
 
 (deprecated)
