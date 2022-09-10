@@ -26,7 +26,7 @@ def getQQGroupChatData(dataPaths = ["/root/Desktop/works/pyjom/tasks/qq/qq_red_p
             content = content.tolist()
             # not right. we need to cut it in multiple sequences.
             import random
-            randomLengthGetter = 
+            randomLengthGetter = randomLength
             if len(content) >=2:
                 # for source, target in zip(content[:-1], content[1:]):
                 #     yield source, target
