@@ -14,6 +14,8 @@ def checkGPT2Status():
         running = getGPT2Running()
         if not running:
             startGPT2Server()
+        else:
+            print("GPT2 is running...")
 
 schedule.every(1).minute.do(checkGPT2Status) # shall place a flag if the training is complete.
 # schedule.every(1).minute.do(checkGPT2TrainServer)
