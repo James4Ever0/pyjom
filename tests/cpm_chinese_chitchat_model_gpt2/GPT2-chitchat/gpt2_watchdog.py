@@ -48,7 +48,7 @@ def getGPT2Running():
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
-        if 
+        terminateGPT2()
         trained = getGPT2TrainedStatus()
         if not trained:
             startGPT2Training()
