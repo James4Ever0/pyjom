@@ -53,6 +53,11 @@ def set_args():
     parser.add_argument('--repetition_penalty', default=1.0, type=float, required=False,
                         help="重复惩罚参数，若生成的对话重复性较高，可适当提高该参数")
     # parser.add_argument('--seed', type=int, default=None, help='设置种子用于生成随机数，以使得训练的结果是确定的')
+    parser.add_argument('--lr', default=2.6e-5, type=float, required=False, help='学习率')
+    parser.add_argument('--eps', default=1.0e-09, type=float, required=False, help='衰减率')
+    parser.add_argument('--log_step', default=1, type=int, required=False, help='多少步汇报一次loss')
+    parser.add_argument('--gradient_accumulation_steps', default=4, type=int, required=False, help='梯度积累')
+    parser.add_argument('--max_grad_norm', default=2.0, type=float, required=False)
     parser.add_argument('--max_len', type=int, default=25,
                         help='每个utterance的最大长度,超过指定长度则进行截断')
     parser.add_argument('--max_history_len', type=int,
