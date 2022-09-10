@@ -4,7 +4,12 @@ import schedule
 def getGPT2Status():
     hour = datetime.datetime.now().hour
     if hour > 2 and hour < 8:
-        
+        return 'train'
+    else:
+        return 'eval'
+
+def getGPT2TrainedStatus():
+    
 
 def checkGPT2Status():
     gpt2status = getGPT2Status()
