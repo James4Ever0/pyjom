@@ -51,7 +51,11 @@ def terminateGPT2():
         try:
             process.terminate()
         except:
-            
+            import traceback
+            traceback.print_exc()
+            print("ERROR WHEN TERMINATING GPT2 SERVER")
+            breakpoint()
+        
 
 def checkGPT2Status():
     gpt2status = getGPT2Status()
