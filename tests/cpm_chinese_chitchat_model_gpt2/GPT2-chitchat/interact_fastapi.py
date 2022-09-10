@@ -180,7 +180,7 @@ def program_exit():
     exit() # shit man
 
 @app.route('/serverHello', methods=['GET'])
-def program_exit():
+def serverHello():
     return 'GPT2 SERVER SAYS HELLO'
 
 @app.route('/', methods=['GET'])
