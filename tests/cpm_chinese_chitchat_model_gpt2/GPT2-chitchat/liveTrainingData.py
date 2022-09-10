@@ -27,7 +27,7 @@ def getQQGroupChatData():
             if len(content) >=2:
                 for elem in 
             else:
-
+                
         breakpoint()
 
 if __name__ == '__main__':
