@@ -38,6 +38,10 @@ def markGPT2Trained():
         content = getNow().isoformat()
         f.write(content)
     print("GPT2 TRAINED STATUS MARKED")
+
+import subprocess
+def getGPT2Running():
+
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
