@@ -37,6 +37,7 @@ def markGPT2Trained():
     with open('trained.log', 'r+') as f:
         content = getNow().isoformat()
         f.write(content)
+    print("GPT2 TRAINED STATUS MARKED")
 def checkGPT2Status():
     gpt2status = getGPT2Status()
     if gpt2status == 'train':
