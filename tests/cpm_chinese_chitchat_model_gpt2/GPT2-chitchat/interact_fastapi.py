@@ -176,7 +176,8 @@ app = Flask(__name__)
 
 @app.route('/exit', methods=['GET'])
 def program_exit():
-    exit()
+    print("SERVER WILL EXIT")
+    exit() # shit man
 
 @app.route('/', methods=['GET'])
 def hello_world():
