@@ -181,7 +181,7 @@ schedule.every(1).minute.do(sendRandomGroupMessage)  # will this shit work?
 
 def printGroupTextChatJson(group_id, sender_id, content):
     message = {"group_id": group_id, "sender_id": sender_id, 'content': content}
-    
+    message = json.dump(message, ensure_ascii=False)
 
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
