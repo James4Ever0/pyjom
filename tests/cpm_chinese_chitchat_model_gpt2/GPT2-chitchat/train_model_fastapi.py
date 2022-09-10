@@ -328,6 +328,8 @@ if __name__ == '__main__':
     epochs = 1
     assert type(saveEpochInterval) == int
     assert type(epochs) == int
+    assert saveEpochInterval > 0 and saveEpochInterval <= epochs
+    assert epochs >=1
     warmup_steps = 4000
     gradient_accumulation_steps = 4
     t_total = len(train_dataloader_source) // gradient_accumulation_steps * 30
