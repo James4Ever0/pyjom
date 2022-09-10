@@ -282,7 +282,8 @@ if __name__ == '__main__':
             for line in data.split('\n'):
                 line = line.strip()
                 if line.startswith(tag):
-                    mJson = parse.parse(tag+"{JSON}", li)
+                    mJson = parse.parse(tag+"{JSON}", line)
+                    
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
