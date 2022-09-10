@@ -210,9 +210,10 @@ def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
     logger.info(
         "epoch {}: loss {}, predict_acc {}".format(epoch + 1, epoch_mean_loss, epoch_mean_acc))
 
+def save_model_now(sepoch):
     # save model
     logger.info('saving model for epoch {}'.format(epoch + 1))
-    model_path = join(args.save_model_path, 'epoch{}'.format(epoch + 1))
+    model_path = join(save_model_path, 'epoch{}'.format(epoch + 1))
     if not os.path.exists(model_path):
         os.mkdir(model_path)
     model_to_save = model.module if hasattr(model, 'module') else model
