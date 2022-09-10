@@ -273,6 +273,7 @@ def getTrainDataLoader(train_text_list):
 # port = 8729
 if __name__ == '__main__':
     from liveTrainingData import getQQGroupChatData
+    train_dataloader_source = [(source, target) for source, target in getQQGroupChatData()]
     optimizer = transformers.AdamW(model.parameters(), lr=args.lr, eps=args.eps)
     # scheduler = transformers.WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=t_total)
     t_total = len(train_dataloader_source) // args.gradient_accumulation_steps * args.epochs
@@ -281,7 +282,7 @@ if __name__ == '__main__':
     )
     for epoch in range(30):
         print("RUNNING EPOCH: %d" % epoch)
-        train_epoch(model, getTrainDataLoader(getQQGroupChatData),optimizer, scheduler, logger, epoch, args)
+        train_epoch(model, getTrainDataLoader(train_dataloader_source),optimizer, scheduler, logger, epoch, args)
 #     # magic config from hackernoon.
 #     app.run(port=port, threaded=True, use_reloader=False)
 #     # https://hackernoon.com/deploying-deep-learning-models-with-model-server
