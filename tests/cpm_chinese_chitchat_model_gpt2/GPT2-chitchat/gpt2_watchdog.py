@@ -12,6 +12,8 @@ def checkGPT2Status():
             print("GPT2 is Trained Today.")
     elif gpt2status == 'eval':
         running = getGPT2Running()
+        if not running:
+            startGPT2Server()
 
 schedule.every(1).minute.do(checkGPT2Status) # shall place a flag if the training is complete.
 # schedule.every(1).minute.do(checkGPT2TrainServer)
