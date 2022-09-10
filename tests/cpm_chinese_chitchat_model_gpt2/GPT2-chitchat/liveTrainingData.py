@@ -69,9 +69,9 @@ def removeUnwantedSpace(text):
 if __name__ == '__main__':
     for source, target in getQQGroupChatData():
         # source = removeUnnecessaryPunctuation(source)
-        source = removeUnwantedSpace(source)
+        # source = removeUnwantedSpace(source)
         # target = removeUnnecessaryPunctuation(target)
-        target = removeUnwantedSpace(target)
+        # target = removeUnwantedSpace(target)
         if len(source) > 3 and len(target)>3:
             print("SOURCE: %s" % source)
             print("TARGET: %s" % target)
