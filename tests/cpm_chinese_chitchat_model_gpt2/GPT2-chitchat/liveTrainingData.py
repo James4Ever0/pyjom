@@ -33,4 +33,6 @@ def getQQGroupChatData():
         # breakpoint()
 
 if __name__ == '__main__':
-    getQQGroupChatData()
+    for source, target in getQQGroupChatData():
+        print("SOURCE: %s" % source)
+        print("SOURCE: %s" % source)
