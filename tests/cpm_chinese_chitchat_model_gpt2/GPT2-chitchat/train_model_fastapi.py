@@ -248,7 +248,7 @@ def train_epoch(model, train_dataloader, optimizer, scheduler, logger,
 def save_model_now(model,save_model_path,logger,epoch):
     # save model
     logger.info('saving model for epoch {}'.format(epoch + 1))
-    model_path= save_model_path
+    model_path= save_model_path # do not create another dir for it!
     # model_path = join(save_model_path, 'epoch{}'.format(epoch + 1))
     if not os.path.exists(model_path):
         os.mkdir(model_path)
