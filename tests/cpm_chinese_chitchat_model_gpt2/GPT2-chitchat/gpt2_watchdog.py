@@ -57,7 +57,7 @@ process = None
 
 def getGPT2Running():
     global process
-    process.poll()
+    returnCode = process.poll()
     return process != None
 
 
@@ -66,7 +66,7 @@ def startGPT2Server():
     process = subprocess.Popen(
         ["/usr/bin/python3", "interact_fastapi.py", "--model_path", "../model"]
     )
-    process.poll()
+    # process.poll()
 
 
 def terminateGPT2():
