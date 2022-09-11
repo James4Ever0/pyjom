@@ -48,12 +48,18 @@ function writeJsonToFile(json, filename) {
 // Duration: 00:00:00.84, start: 0.000000, bitrate: 635 kb/s
 // Stream £0:0: Video: gif, bgra, 300x200, 19.42 fps, 25 tbr, 100 tbn
 
-giphy.random({
-    tag: 'dog funny',
-    rating: 'g',
-    fmt: 'json',
-}, function (err, res) {
-    console.log('ERROR?', err); //null if normal.
-    // save it to json?
-    writeJsonToFile(res, 'funny_dog_test.json');
+// giphy.random({
+//     tag: 'dog funny',
+//     rating: 'g',
+//     fmt: 'json',
+// }, function (err, res) {
+//     console.log('ERROR?', err); //null if normal.
+//     // save it to json?
+//     writeJsonToFile(res, 'funny_dog_test.json');
+// });
+
+giphy.id('feqkVgjJpYtjy', function (err, res) {
+l.
+//     // save it to json?
+//     writeJsonToFile(res, 'funny_dog_test.json');
 });
