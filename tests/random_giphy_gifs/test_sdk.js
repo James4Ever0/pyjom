@@ -53,7 +53,7 @@ async function test(){
 
 // var data = await gf.gifs('animals','bulldog') // not freaking found!
 var data = await gf.gifs('animals','samoyed') // freaking works! guess it is just keyword based search
-await writeJsonToFile(data, 'samoyed_subcategory.json')
+await writeJsonToFile(data, 'samoyed_subcategory2.json')
 
 }
 test()
