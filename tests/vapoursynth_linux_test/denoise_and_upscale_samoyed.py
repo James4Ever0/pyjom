@@ -34,5 +34,5 @@ gpu_thread =
 noise = 3
 scale = 2
 
-video = core.srmdnv.SRMD(video, [int scale, int noise, int tilesize_x, int tilesize_y,
-                  gpu_id, int gpu_thread, bool tta])
+video = core.srmdnv.SRMD(video, [int scale, int noise, 
+                  gpu_id)
