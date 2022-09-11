@@ -20,11 +20,11 @@ video = core.ffms2.Source(source=videoPath)
 
 import mvsfunc as mvf # denoising
 
-clip = mvf.BM3D(src, sigma=3.0, radius1=1, profile1="fast")
+video = mvf.BM3D(video, sigma=3.0, radius1=1, profile1="fast")
 
 from vsrife import RIFE # frame interpolate
 
-ret = RIFE(clip)
+video = RIFE(video)
 
 # super resolution
 # copy compiled .so file to here:
