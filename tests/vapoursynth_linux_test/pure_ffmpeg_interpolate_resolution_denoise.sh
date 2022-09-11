@@ -9,7 +9,7 @@
 ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/srcnn.pb,yaepblur"  ffmpeg_samoyed_srcnn.mp4
 
 # yaepblur
-# yet a
+# yet another edge preserving blur fi
 
 # ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -filter "minterpolate=mi_mode=2" -r 60 ffmpeg_samoyed.mp4
 # use deep learning models:
