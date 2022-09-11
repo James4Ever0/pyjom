@@ -40,6 +40,6 @@ async function test(){
 // await writeJsonToFile(data,'cute_dog.json')
 
 var relatedId = "QvBoMEcQ7DQXK"
-await gf.related('3oEjHGr1Fhz0kyv8Ig', { limit: 10 })
+var data = await gf.related(relatedId, { limit: 50 })
 }
 test()
