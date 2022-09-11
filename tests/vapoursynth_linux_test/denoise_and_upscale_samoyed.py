@@ -52,7 +52,7 @@ scale = 2
 #                         primaries_in_s="2020",  primaries_s="709",
 #                         transfer_in_s="linear", transfer_s="709")
 
-
+# slow as hell man.
 # video = core.rcnv.RealCUGAN(video , scale=scale, 
 #                   gpu_id=gpu_id, model=1)
 
