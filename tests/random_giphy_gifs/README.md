@@ -16,3 +16,10 @@ IoJVsWoxDPKBr6gOcCgOPWAB25773hqP
 lTRWAEGHjB1AkfO0sk2XTdujaPB5aH7X
 
 sdk keys:
+6esYBEm9OG3wAifbBFZ2mA0Ml6Ic0rvy
+
+to use api:
+
+
+to use sdk:
+https://github.com/Giphy/giphy-js/blob/master/packages/fetch-api/README.md
