@@ -29,7 +29,6 @@ giphy.search({
 //     writeJsonToFile(res, 'pokemon_test.json');
 // });
 
-
 // giphy.search({
 //     q: 'pokemon',
 //     rating: 'y'
