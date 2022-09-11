@@ -3,5 +3,6 @@
     "githubRepositories.autoFetch.interval": 15,
     "remoteHub.commitDirectlyWarning": "off",
     "python.defaultInterpreterPath": "/usr/bin/python3.9",
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "prettier.enable": false
 }
