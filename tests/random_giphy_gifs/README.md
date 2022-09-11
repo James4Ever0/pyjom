@@ -27,7 +27,7 @@ to use sdk:
 https://github.com/Giphy/giphy-js/blob/master/packages/fetch-api/README.md
 
 find public keys inside html:
-```
+```javascript
           window.GIPHY_FE_MOBILE_API_KEY = "L8eXbxrbPETZxlvgXN9kIEzQ55Df04v0"
           window.GIPHY_FE_WEB_API_KEY = "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g"
           window.GIPHY_FE_FOUR_O_FOUR_API_KEY = "MRwXFtxAnaHo3EUMrSefHWmI0eYz5aGe"
@@ -36,3 +36,4 @@ find public keys inside html:
           window.GIPHY_FE_GET_POST_HEADERS_KEY = "e0771ed7b244ec9c942bea646ad08e6bf514f51a"
           window.GIPHY_FE_MEDIUM_BLOG_API_KEY = "i3dev0tcpgvcuaocfmdslony2q9er7tvfndxcszm"
           window.GIPHY_FE_EMBED_KEY = "eDs1NYmCVgdHvI1x0nitWd5ClhDWMpRE"
+```
