@@ -63,7 +63,7 @@ scale = 2
 #                         primaries_in_s="2020",  primaries_s="709",
 #                         transfer_in_s="linear", transfer_s="709")
 
-vi
+video = core.resize.Bicubic(clip =video, format = vs.YUV420P10, matrix_s='709')
 video.set_output()
 
 # maybe this shit is very freaking slow.
