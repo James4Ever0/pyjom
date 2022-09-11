@@ -1,4 +1,5 @@
 
 seed = 'dog cute'
 
-getKeywordFromHeuristicSpace(seed)
+def getKeywordFromHeuristicSpace(seed):
+    return searchQuery
