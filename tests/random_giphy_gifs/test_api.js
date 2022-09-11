@@ -1,6 +1,7 @@
 // Require with custom API key
 const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
 var giphy = require('giphy-api')(myBetaApiKey);
+const fs = require("fs");
 
 function writeJsonToFile(json, filename) {
 
