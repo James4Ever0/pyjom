@@ -16,4 +16,6 @@ some of them might already fail to work.
 
 https://github.com/alexmercerind/youtube-search-python/blob/fc12c05747f1f7bd89d71699403762b86b523da5/youtubesearchpython/core/constants.py#L45
 
-bilibili 
+bilibili search api is currently simple:
+
+https://search.bilibili.com/video?keyword=%E6%B1%AA%E6%B1%AA&from_source=webtop_search&spm_id_from=333.1007&search_source=3&tids=219&order=dm&duration=2
