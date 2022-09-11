@@ -43,8 +43,8 @@ async function test(){
 // var data = await gf.related(relatedId, { limit: 50 })
 // await writeJsonToFile(data,'related.json')
 
-const { categories } = await gf.categories()
-categories.forEach((category) => {
+const { data } = await gf.categories()
+data.forEach((category) => {
     console.log(category) // ICategory
 })
 }
