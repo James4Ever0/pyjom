@@ -31,6 +31,7 @@ video = RIFE(video)
 # super resolution
 # copy compiled .so file to here:
 # /root/vapoursynth/plugins/lib/
+# ln -s /root/Desktop/works/pyjom/tests/vapoursynth_linux_test /root/vapoursynth/plugins/lib/models
 gpu_id = 0
 # noise = 2
 scale = 2
