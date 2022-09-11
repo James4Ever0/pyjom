@@ -6,7 +6,8 @@
 # ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/espcn.pb"  ffmpeg_samoyed_espcn.mp4
 
 # 9fps or something
-ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/srcnn.pb"  ffmpeg_samoyed_srcnn.mp4
+ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "yaepblur"  ffmpeg_samoyed_srcnn.mp4
+# ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/srcnn.pb"  ffmpeg_samoyed_srcnn.mp4
 
 # check out all filters by `ffmpeg -filters`
 # yaepblur
