@@ -8,3 +8,6 @@ videoPath = "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif"
 
 import vapoursynth
 
+from vsrife import RIFE
+
+ret = RIFE(clip)
