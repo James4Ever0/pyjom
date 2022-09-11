@@ -1,7 +1,6 @@
 // Require with custom API key
 // const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
-          window.GIPHY_FE_WEB_API_KEY = "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g"
-          const myBetaApiKey = ''
+const myBetaApiKey = "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g"; // some common web browser based things.
 
 // sXpGFDGZs0Dv1mmNFvYaGUvYwKX0PWIh
 // is this key limited? or is it production ready?
