@@ -35,3 +35,5 @@ scale = 2
 
 video = core.srmdnv.SRMD(video,scale=scale, noise=noise, 
                   gpu_id=gpu_id)
+
+video.set_output()
