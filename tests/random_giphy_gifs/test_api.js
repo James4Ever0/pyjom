@@ -2,7 +2,7 @@
 const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
 // var giphy = require('giphy-api')(myBetaApiKey);
 // // Require with the public beta key
-var giphy = require('giphy-api')();
+var giphy = require('giphy-api')(); // banned. cannot use this public api.
 // it may timeout!
 giphy.search({
     q: 'pokemon',
