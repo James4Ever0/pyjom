@@ -49,7 +49,6 @@ giphy.random({
     tag: 'dog funny',
     rating: 'g',
     fmt: 'json',
-    
 }, function (err, res) {
     console.log('ERROR?', err); //null if normal.
     // save it to json?
