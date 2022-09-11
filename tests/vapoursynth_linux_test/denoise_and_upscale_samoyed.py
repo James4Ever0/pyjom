@@ -11,7 +11,10 @@ import vapoursynth
 # install this:
 # https://github.com/HomeOfVapourSynthEvolution/mvsfunc
 
-src = vapoursynth.
+from vapoursynth import core
+
+video
+video = core.ffms2.Source(source=videoPath)
 
 # visit here for more usage details:
 # https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D
