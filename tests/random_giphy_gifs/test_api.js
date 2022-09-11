@@ -21,7 +21,7 @@ giphy.search({
     rating: 'g'
 }, function(err, res) {
     // Res contains gif data!
-    console.log('ERROR?', err);
+    console.log('ERROR?', err); //null if normal.
     // save it to json?
     writeJsonToFile(res, 'pokemon_test.json');
 });
