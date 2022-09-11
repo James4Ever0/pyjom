@@ -4,10 +4,9 @@ const fs = require("fs");
 
 const { GiphyFetch } = require('@giphy/js-fetch-api')
 
-const gf = new GiphyFetch('your api key')
+const gf = new GiphyFetch(myBetaApiKey)
 
 // fetch 10 gifs
-let data = await gf.trending({ limit: 10 })
 
 function writeJsonToFile(json, filename) {
     let data = JSON.stringify(json);
@@ -19,3 +18,6 @@ function writeJsonToFile(json, filename) {
         }
     });
 }
+
+let data = await gf.trending({ limit: 10 })
+console.l
