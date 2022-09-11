@@ -58,7 +58,7 @@ function writeJsonToFile(json, filename) {
 //     writeJsonToFile(res, 'funny_dog_test.json');
 // });
 
-giphy.id('feqkVgjJpYtjy', function (err, res) {
+giphy.id('feqkVgjJpYtjy', function (err, res) { // only one reply. there's no other fancy shits.
     console.log('ERROR?', err); //null if normal.
     // save it to json?
     writeJsonToFile(res, 'id_search.json');
