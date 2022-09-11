@@ -41,3 +41,5 @@ video = core.rcnv.RealCUGAN(video , scale=scale, noise=noise,
                   gpu_id=gpu_id, model=1)
 
 video.set_output()
+
+# maybe this shit is very freaking slow.
