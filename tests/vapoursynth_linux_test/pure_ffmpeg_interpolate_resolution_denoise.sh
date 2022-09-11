@@ -7,7 +7,7 @@
 
 # 9fps or something
 # ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "yaepblur"  ffmpeg_samoyed_srcnn.mp4
-ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/srcnn.pb"  ffmpeg_samoyed_srcnn.mp4
+env LD_LIBRARY_PATH=/root/anaconda3/pkgs/cudnn-7.6.5-cuda10.0_0/lib/ ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/srcnn.pb"  ffmpeg_samoyed_srcnn.mp4
 
 # check out all filters by `ffmpeg -filters`
 # yaepblur
