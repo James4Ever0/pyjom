@@ -3,7 +3,7 @@
 # SRCNN=espcn.pb
 
 # 5fps or something
-# ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/espcn.pb"  ffmpeg_samoyed_espcn.mp4
+# env LD_LIBRARY_PATH=/root/anaconda3/pkgs/cudatoolkit-10.0.130-0/lib/:/root/anaconda3/pkgs/cudnn-7.6.5-cuda10.0_0/lib/:$LD_LIBRARY_PATH ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/espcn.pb"  ffmpeg_samoyed_espcn.mp4
 
 # 9fps or something
 # ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "yaepblur"  ffmpeg_samoyed_srcnn.mp4
