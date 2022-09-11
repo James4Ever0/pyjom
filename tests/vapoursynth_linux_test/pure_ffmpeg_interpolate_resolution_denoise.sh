@@ -2,7 +2,7 @@
 
 # SRCNN=espcn.pb
 
-ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/espcn.pb"  ffmpeg_samoyed_srcnn.mp4
+ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=native:model=./sr_models/dnn_models/espcn.model"  ffmpeg_samoyed_srcnn.mp4
 # ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr_models/dnn_models/espcn.pb"  ffmpeg_samoyed_srcnn.mp4
 
 
