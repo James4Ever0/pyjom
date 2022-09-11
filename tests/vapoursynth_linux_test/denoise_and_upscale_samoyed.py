@@ -37,6 +37,8 @@ scale = 2
 # video = core.srmdnv.SRMD(video,scale=scale, noise=noise, 
 #                   gpu_id=gpu_id)
 
-
+video = core.rcnv.RealCUGAN(video [int scale, int noise, int model, 
+                    int tilesize_x, int tilesize_y, int prepadding, 
+                    bool tta, int syncgap, int gpu_id, int gpu_thread])
 
 video.set_output()
