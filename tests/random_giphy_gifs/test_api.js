@@ -9,7 +9,7 @@ function writeJsonToFile(json, filename) {
         if (err) {
             console.error(err);
         } else {
-            console.log("output.json has been saved with the user data");
+            console.log(filename + " has been saved with the user data");
         }
     });
 }
