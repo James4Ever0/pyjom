@@ -30,4 +30,4 @@ let data = await gf.trending({ limit: 10 }) // a promise
 // data.then((result) =>{console.log('TRENDING OUTPUT');
 // writeJsonToFile(result, 'trending.json')
 // })
-writeJsonToFIle(data,'trending.json')
+writeJsonToFile(data,'trending.json')
