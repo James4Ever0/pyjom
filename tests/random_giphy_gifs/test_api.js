@@ -2,7 +2,7 @@
 const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
 var giphy = require('giphy-api')(myBetaApiKey);
 const fs = require("fs");
-const j
+const jsonFormat = require("json-format");
 
 function writeJsonToFile(json, filename) {
     // let data = JSON.stringify(json);
