@@ -9,10 +9,11 @@
 # ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "yaepblur"  ffmpeg_samoyed_srcnn.mp4
 
 # strange shit.
-env LD_LIBRARY_PATH=/root/anaconda3/pkgs/cudatoolkit-10.0.130-0/lib/:/root/anaconda3/pkgs/cudnn-7.6.5-cuda10.0_0/lib/:$LD_LIBRARY_PATH ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr/espcn.pb,yaepblur,hqdn3d,dctdnoiz"  ffmpeg_samoyed_srcnn.mp4
+env LD_LIBRARY_PATH=/root/anaconda3/pkgs/cudatoolkit-10.0.130-0/lib/:/root/anaconda3/pkgs/cudnn-7.6.5-cuda10.0_0/lib/:$LD_LIBRARY_PATH ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr/espcn.pb,yaepblur,hqdn3d"  ffmpeg_samoyed_srcnn.mp4
 # env LD_LIBRARY_PATH=/root/anaconda3/pkgs/cudatoolkit-10.0.130-0/lib/:/root/anaconda3/pkgs/cudnn-7.6.5-cuda10.0_0/lib/:$LD_LIBRARY_PATH ffmpeg -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -y -vf "sr=dnn_backend=tensorflow:model=./sr/espcn.pb,yaepblur,hqdn3d,dctdnoiz"  ffmpeg_samoyed_srcnn.mp4
 
 # dctdnoiz is not for real time processing. it is slow.
+# but somehow it makes the picture great. is it?
 
 #  TSC hqdn3d            V->V       Apply a High Quality 3D Denoiser.
 # check out all filters by `ffmpeg -filters`
