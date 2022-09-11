@@ -2,7 +2,7 @@
 
 # SRCNN=espcn.pb
 
-ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -vf "sr=model=espcn.model" -r 60 ffmpeg_samoyed_srcnn.mp4
+ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -vf "sr=model=/root/Desktop/works/pyjom/tests/vapoursynth_linux_test/sr/espcn.model" -r 60 ffmpeg_samoyed_srcnn.mp4
 
 
 # ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -filter "minterpolate=mi_mode=2" -r 60 ffmpeg_samoyed.mp4
