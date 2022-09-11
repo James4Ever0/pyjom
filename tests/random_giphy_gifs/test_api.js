@@ -10,4 +10,6 @@ giphy.search({
 }, function(err, res) {
     // Res contains gif data!
     console.log(res);
+    // save it to json?
+    JSON.
 });
