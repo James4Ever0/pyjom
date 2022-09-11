@@ -37,3 +37,5 @@ find public api keys inside html:
           window.GIPHY_FE_MEDIUM_BLOG_API_KEY = "i3dev0tcpgvcuaocfmdslony2q9er7tvfndxcszm"
           window.GIPHY_FE_EMBED_KEY = "eDs1NYmCVgdHvI1x0nitWd5ClhDWMpRE"
 ```
+
+search for 'ear flops' to locate the tags in 'samoyed.html'
