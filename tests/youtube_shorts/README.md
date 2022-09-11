@@ -12,4 +12,6 @@ POST https://www.youtube.com/youtubei/v1/search?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCil
 
 you can bypass them. here are some basic parameters without lots of combinations. if you want to combine them, better figure it out yourself.
 
+some of them might already fail to work.
+
 https://github.com/alexmercerind/youtube-search-python/blob/fc12c05747f1f7bd89d71699403762b86b523da5/youtubesearchpython/core/constants.py#L45
