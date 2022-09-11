@@ -19,5 +19,5 @@ function writeJsonToFile(json, filename) {
     });
 }
 
-let data = await gf.trending({ limit: 10 })
+let data = gf.trending({ limit: 10 })
 console.log(data)
