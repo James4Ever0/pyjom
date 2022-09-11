@@ -32,7 +32,7 @@ video = RIFE(video)
 # copy compiled .so file to here:
 # /root/vapoursynth/plugins/lib/
 gpu_id = 0
-noise = 2
+# noise = 2
 scale = 2
 
 # slow.
