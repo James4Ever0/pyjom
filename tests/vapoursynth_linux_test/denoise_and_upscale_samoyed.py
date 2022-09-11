@@ -11,6 +11,10 @@ import vapoursynth
 # install this:
 # https://github.com/HomeOfVapourSynthEvolution/mvsfunc
 
+import mvsfunc as mvf
+
+clip = mvf.BM3D(src, sigma=3.0, radius1=1, profile1="fast")
+
 from vsrife import RIFE
 
 ret = RIFE(clip)
