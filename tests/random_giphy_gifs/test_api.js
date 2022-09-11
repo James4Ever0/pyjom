@@ -1,6 +1,6 @@
 // Require with custom API key
 const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
-import { GiphyFetch } from '@giphy/js-fetch-api'
+const { GiphyFetch } = require ('@giphy/js-fetch-api')
 
 const gf = new GiphyFetch('your api key')
 
