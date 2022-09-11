@@ -1,6 +1,12 @@
 // Require with custom API key
 const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
-var giphy = require('giphy-api')(myBetaApiKey);
+import { GiphyFetch } from '@giphy/js-fetch-api'
+
+const gf = new GiphyFetch('your api key')
+
+// fetch 10 gifs
+const { data: gifs } = await gf.trending({ limit: 10 })
+
 const fs = require("fs");
 
 function writeJsonToFile(json, filename) {
