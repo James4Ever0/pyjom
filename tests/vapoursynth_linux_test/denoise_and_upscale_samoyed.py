@@ -40,7 +40,7 @@ scale = 2
 # video = core.srmdnv.SRMD(video,scale=scale, noise=noise, 
 #                   gpu_id=gpu_id)
 
-
+# video = core.resize.Bicubic(video, format=vs.YUV420P8, matrix_s="709")
 
 # video = core.resize.Lanczos(clip=video, format=vs.RGBS, 
 #                         matrix_in_s="2020ncl",
