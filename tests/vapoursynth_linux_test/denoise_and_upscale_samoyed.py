@@ -29,6 +29,7 @@ video = RIFE(video)
 # super resolution
 # copy compiled .so file to here:
 # /root/vapoursynth/plugins/lib/
-
-video = core.srmdnv.SRMD(clip clip, [int scale, int noise, int tilesize_x, int tilesize_y,
-                 int gpu_id, int gpu_thread, bool tta])
+gpu_id = 0
+g
+video = core.srmdnv.SRMD(video, [int scale, int noise, int tilesize_x, int tilesize_y,
+                  gpu_id, int gpu_thread, bool tta])
