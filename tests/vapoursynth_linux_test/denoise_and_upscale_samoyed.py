@@ -33,7 +33,10 @@ gpu_id = 0
 noise = 3
 scale = 2
 
-video = core.srmdnv.SRMD(video,scale=scale, noise=noise, 
-                  gpu_id=gpu_id)
+# slow.
+# video = core.srmdnv.SRMD(video,scale=scale, noise=noise, 
+#                   gpu_id=gpu_id)
+
+https://ghproxy.com/https://github.com/Kiyamou/VapourSynth-RealCUGAN-ncnn-Vulkan/releases/download/r2/models.zip
 
 video.set_output()
