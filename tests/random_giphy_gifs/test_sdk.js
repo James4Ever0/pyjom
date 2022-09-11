@@ -2,6 +2,7 @@
 const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
 
 // sXpGFDGZs0Dv1mmNFvYaGUvYwKX0PWIh
+// is this key limited? or is it production ready?
 
 const fetch = require('node-fetch');
 const fs = require("fs");
