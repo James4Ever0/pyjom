@@ -30,8 +30,7 @@ function writeJsonToFile(json, filename) {
 // writeJsonToFile(result, 'trending.json')
 // })
 async function test(){
-let data = await gf.trending({ limit: 10 }) // a promise
-    
-    writeJsonToFile(data,'trending.json')
+const data = await gf.trending({ limit: 10 }) // a promise
+writeJsonToFile(data,'trending.json')
 }
 test()
