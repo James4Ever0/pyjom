@@ -40,7 +40,7 @@ scale = 2
 #                   gpu_id=gpu_id)
 
 video = core.rcnv.RealCUGAN(video , scale=scale, 
-                  gpu_id=gpu_id, model=1)
+                  gpu_id=gpu_id)
 
 video.set_output()
 
