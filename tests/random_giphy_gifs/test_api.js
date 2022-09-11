@@ -41,4 +41,4 @@ giphy.search({
 // });
 
 // question: is that still image?
-// check the duration bro. filter o
+// check the duration bro. filter out those ridiculusly short ones.
