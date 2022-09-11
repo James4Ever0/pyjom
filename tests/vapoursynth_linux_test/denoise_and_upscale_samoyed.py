@@ -33,5 +33,5 @@ gpu_id = 0
 noise = 3
 scale = 2
 
-video = core.srmdnv.SRMD(video,scale, noise, 
+video = core.srmdnv.SRMD(video,scale=scale, noise=noise, 
                   gpu_id=gpu_id)
