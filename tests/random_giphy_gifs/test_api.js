@@ -41,3 +41,4 @@ giphy.search({
 // });
 
 // question: is that still image?
+// check the duration bro. filter o
