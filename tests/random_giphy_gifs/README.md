@@ -13,3 +13,6 @@ var PUBLIC_BETA_API_KEY = 'dc6zaTOxFJmzC';
 
 api keys:
 IoJVsWoxDPKBr6gOcCgOPWAB25773hqP
+lTRWAEGHjB1AkfO0sk2XTdujaPB5aH7X
+
+sdk keys:
