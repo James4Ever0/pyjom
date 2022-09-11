@@ -53,8 +53,8 @@ scale = 2
 #                         transfer_in_s="linear", transfer_s="709")
 
 # slow as hell man.
-# video = core.rcnv.RealCUGAN(video , scale=scale, 
-#                   gpu_id=gpu_id, model=1)
+video = core.rcnv.RealCUGAN(video , scale=scale, 
+                  gpu_id=gpu_id, model=1)
 
 # solution from tonemap?
 # https://github.com/ifb/vapoursynth-tonemap/issues/2
