@@ -18,12 +18,13 @@ function writeJsonToFile(json, filename) {
 // // Require with the public beta key
 // var giphy = require('giphy-api')(); // banned. cannot use this public api.
 // it may timeout!
-giphy.search({
-    q: 'pokemon',
-    rating: 'g'
-}, function(err, res) {
-    // Res contains gif data!
-    console.log('ERROR?', err); //null if normal.
-    // save it to json?
-    writeJsonToFile(res, 'pokemon_test.json');
-});
+// giphy.search({
+//     q: 'pokemon',
+//     rating: 'g'
+// }, function(err, res) {
+//     // Res contains gif data!
+//     console.log('ERROR?', err); //null if normal.
+//     // save it to json?
+//     writeJsonToFile(res, 'pokemon_test.json');
+// });
+
