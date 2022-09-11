@@ -1,8 +1,8 @@
 # ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -vf "minterpolate,scale=w=iw*2:h=ih*2:flags=lanczos,hqdn3d" -r 60 ffmpeg_samoyed.mp4
 
-SRCNN=espcn.pb
+# SRCNN=espcn.pb
 
-ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -vf "sr=model=$SRCNN" -r 60 ffmpeg_samoyed_srcnn.mp4
+ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -vf "sr=model=espcn.pb" -r 60 ffmpeg_samoyed_srcnn.mp4
 
 
 # ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -filter "minterpolate=mi_mode=2" -r 60 ffmpeg_samoyed.mp4
