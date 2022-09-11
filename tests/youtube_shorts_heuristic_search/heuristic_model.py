@@ -1,4 +1,4 @@
 
 seed = 'dog cute'
 
-get
+getKeywordFromHeuristicSpace(seed)
