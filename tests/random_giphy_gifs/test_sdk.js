@@ -20,4 +20,4 @@ function writeJsonToFile(json, filename) {
 }
 
 let data = await gf.trending({ limit: 10 })
-console.l
+console.log(data)
