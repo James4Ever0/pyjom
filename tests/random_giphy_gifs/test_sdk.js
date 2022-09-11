@@ -39,12 +39,13 @@ async function test(){
 // var data = await gf.search('dog cute', { sort: 'relevant', rating: 'g'});
 // await writeJsonToFile(data,'cute_dog.json')
 
-var relatedId = "QvBoMEcQ7DQXK"
-var data = await gf.related(relatedId, { limit: 50 })
-await writeJsonToFile(data,'related.json')
-}
-// test()
+// var relatedId = "QvBoMEcQ7DQXK"
+// var data = await gf.related(relatedId, { limit: 50 })
+// await writeJsonToFile(data,'related.json')
+
 const { data } = await gf.categories()
 categories.forEach((category) => {
     console.log(category) // ICategory
 })
+}
+// test()
