@@ -22,4 +22,5 @@ from vsrife import RIFE # frame interpolate
 
 ret = RIFE(clip)
 
-# 
+# super resolution
+
