@@ -1,11 +1,5 @@
 // Require with custom API key
 const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
-const { GiphyFetch } = require('@giphy/js-fetch-api')
-
-const gf = new GiphyFetch('your api key')
-
-// fetch 10 gifs
-let data = await gf.trending({ limit: 10 })
 
 const fs = require("fs");
 
