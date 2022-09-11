@@ -24,7 +24,7 @@ video = mvf.BM3D(video, sigma=3.0, radius1=1, profile1="fast")
 
 from vsrife import RIFE # frame interpolate
 
-video = core.resize.Bicubic(video, format=vs.RGBS)
+video = core.resize.Bicubic(video, format=v.RGBS)
 
 video = RIFE(video)
 
