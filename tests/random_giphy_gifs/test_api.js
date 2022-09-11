@@ -29,3 +29,13 @@ function writeJsonToFile(json, filename) {
 //     writeJsonToFile(res, 'pokemon_test.json');
 // });
 
+
+giphy.search({
+    q: 'pokemon',
+    rating: 'y'
+}, function(err, res) {
+    // Res contains gif data!
+    console.log('ERROR?', err); //null if normal.
+    // save it to json?
+    writeJsonToFile(res, 'pokemon_test_youth.json');
+});
