@@ -19,7 +19,7 @@ sdk keys:
 6esYBEm9OG3wAifbBFZ2mA0Ml6Ic0rvy
 
 to use api:
-
+https://github.com/austinkelleher/giphy-api
 
 to use sdk:
 https://github.com/Giphy/giphy-js/blob/master/packages/fetch-api/README.md
