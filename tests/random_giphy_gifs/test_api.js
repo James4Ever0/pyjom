@@ -42,6 +42,6 @@ giphy.search({
 
 // question: is that still image?
 // check the duration bro. filter out those ridiculusly short ones.
-//Input £0, gif, from 'still_gif_image.gif':
+// Input £0, gif, from 'still_gif_image.gif':
 // Duration: 00:00:00.84, start: 0.000000, bitrate: 635 kb/s
 // Stream £0:0: Video: gif, bgra, 300x200, 19.42 fps, 25 tbr, 100 tbn
