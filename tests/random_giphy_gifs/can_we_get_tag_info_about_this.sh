@@ -1,0 +1,1 @@
+curl -o "https://giphy.com/gifs/roverdotcom-rover-samoyed-gifofdogs-AgO9VR2a9KW1MSP73I"
