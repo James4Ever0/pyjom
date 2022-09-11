@@ -27,4 +27,4 @@ let data = gf.trending({ limit: 10 }) // a promise
 // console.log(data)
 // https://bobbyhadz.com/blog/javascript-error-err-require-esm-of-es-module-node-fetch
 // fucking hell?
-data.then((result) =>{console.log('TRENDOUTPUT');})
+data.then((result) =>{console.log('TRENDING OUTPUT');})
