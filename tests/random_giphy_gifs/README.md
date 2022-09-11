@@ -26,7 +26,7 @@ https://github.com/austinkelleher/giphy-api
 to use sdk:
 https://github.com/Giphy/giphy-js/blob/master/packages/fetch-api/README.md
 
-find public keys inside html:
+find public api keys inside html:
 ```javascript
           window.GIPHY_FE_MOBILE_API_KEY = "L8eXbxrbPETZxlvgXN9kIEzQ55Df04v0"
           window.GIPHY_FE_WEB_API_KEY = "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g"
