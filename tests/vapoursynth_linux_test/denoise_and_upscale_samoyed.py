@@ -39,7 +39,7 @@ scale = 2
 # slow.
 # video = core.srmdnv.SRMD(video,scale=scale, noise=noise, 
 #                   gpu_id=gpu_id)
-# video = core.resize.Bicubic(video, format=vs.YUV)
+video = core.resize.Bicubic(video, format=vs.YUV420P8, matrix_s="709")
 
 video = core.rcnv.RealCUGAN(video , scale=scale, 
                   gpu_id=gpu_id, model=1)
