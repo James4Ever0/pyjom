@@ -5,6 +5,7 @@ const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
 
 const fetch = require('node-fetch');
 const fs = require("fs");
+const JsonFormat = require("json-formatter")
 
 const { GiphyFetch } = require('@giphy/js-fetch-api')
 
