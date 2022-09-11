@@ -36,7 +36,10 @@ async function test(){
 // search for related things dog related things.
 // await writeJsonToFile(data,'trending.json')
 
-var data = await gf.search('dog cute', { sort: 'relevant', rating: 'g'});
-await writeJsonToFile(data,'cute_dog.json')
+// var data = await gf.search('dog cute', { sort: 'relevant', rating: 'g'});
+// await writeJsonToFile(data,'cute_dog.json')
+
+var relatedId = "QvBoMEcQ7DQXK"
+
 }
 test()
