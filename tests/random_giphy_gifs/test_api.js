@@ -2,7 +2,9 @@
 const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
 var giphy = require('giphy-api')(myBetaApiKey);
 
-function writeJsonToFile()
+function writeJsonToFile(json, filename) {
+
+}
 // // Require with the public beta key
 // var giphy = require('giphy-api')(); // banned. cannot use this public api.
 // it may timeout!
