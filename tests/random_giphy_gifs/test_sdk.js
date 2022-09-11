@@ -50,7 +50,7 @@ async function test(){
 // // })
 // await writeJsonToFile(data,'categories.json')
 
-var data = await gf.gif('animals','chiwawa') // not freaking found!
+var data = await gf.gif('animals','bulldog') // not freaking found!
 // var data = await gf.gif('animals','samoyed') // not freaking found!
 await writeJsonToFile(data, 'samoyed_subcategory.json')
 
