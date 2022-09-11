@@ -23,13 +23,15 @@ function writeJsonToFile(json, filename) {
     });
 }
 
-let data = await gf.trending({ limit: 10 }) // a promise
 // console.log(data)
 // https://bobbyhadz.com/blog/javascript-error-err-require-esm-of-es-module-node-fetch
 // fucking hell?
 // data.then((result) =>{console.log('TRENDING OUTPUT');
 // writeJsonToFile(result, 'trending.json')
 // })
-async function test(){writeJsonToFile(data,'trending.json')
+async function test(){
+let data = await gf.trending({ limit: 10 }) // a promise
+    
+    writeJsonToFile(data,'trending.json')
 }
 test()
