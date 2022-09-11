@@ -9,3 +9,6 @@ to get the next page on youtube:
 the key seems to be the unified unlimited api key for youtube.
 
 POST https://www.youtube.com/youtubei/v1/search?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8&prettyPrint=false with a lot of headaching parameters.
+
+you can bypass them.
+https://github.com/alexmercerind/youtube-search-python/blob/fc12c05747f1f7bd89d71699403762b86b523da5/youtubesearchpython/core/constants.py#L45
