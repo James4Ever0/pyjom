@@ -41,5 +41,6 @@ async function test(){
 
 var relatedId = "QvBoMEcQ7DQXK"
 var data = await gf.related(relatedId, { limit: 50 })
+await writeJsonToFile(data,'related.json')
 }
 test()
