@@ -14,11 +14,12 @@ import vapoursynth
 # visit here for more usage details:
 # https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D
 
-import mvsfunc as mvf
+import mvsfunc as mvf # denoising
 
 clip = mvf.BM3D(src, sigma=3.0, radius1=1, profile1="fast")
 
-from vsrife import RIFE
+from vsrife import RIFE # frame interpolate
 
 ret = RIFE(clip)
 
+# 
