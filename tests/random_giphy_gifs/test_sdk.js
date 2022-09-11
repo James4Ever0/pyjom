@@ -2,7 +2,7 @@
 // const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
 const myBetaApiKey = "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g"; // some common web browser based things.
 
-// maybe they just don't distinguish api and sd
+// maybe they just don't distinguish api and sdk keys. fuck.
 
 // sXpGFDGZs0Dv1mmNFvYaGUvYwKX0PWIh
 // is this key limited? or is it production ready?
