@@ -1,0 +1,54 @@
+2022/09/11 00:55:59.039 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/09/11 00:56:04.142 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/09/11 00:56:12.228 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/09/11 11:29:40.145 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/09/11 11:29:48.323 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/09/11 11:29:56.451 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/09/11 11:33:39.360 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/09/11 11:33:48.458 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/09/11 11:33:58.554 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
