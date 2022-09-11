@@ -15,6 +15,7 @@ const gf = new GiphyFetch(myBetaApiKey)
 
 function writeJsonToFile(json, filename) {
     // let data = JSON.stringify(json);
+    let data = JsonFormat(json)
     fs.writeFile(filename, data, function(err) {
         if (err) {
             console.error(err);
