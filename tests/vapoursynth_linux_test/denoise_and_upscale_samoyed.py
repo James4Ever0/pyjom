@@ -11,6 +11,8 @@ import vapoursynth
 # install this:
 # https://github.com/HomeOfVapourSynthEvolution/mvsfunc
 
+# visit here for more 
+
 import mvsfunc as mvf
 
 clip = mvf.BM3D(src, sigma=3.0, radius1=1, profile1="fast")
