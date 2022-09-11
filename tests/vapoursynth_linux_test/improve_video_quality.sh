@@ -1,1 +1,1 @@
-vspipe -c y4m basic_test.py - | ffmpeg -i pipe: improved.mp4
+vspipe -c y4m denoise_and - | ffmpeg -i pipe: improved.mp4
