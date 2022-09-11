@@ -50,7 +50,8 @@ async function test(){
 // // })
 // await writeJsonToFile(data,'categories.json')
 
-var data = await gf.gif('animals','')
+var data = await gf.gif('animals','samoyed')
+
 
 }
 test()
