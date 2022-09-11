@@ -7,3 +7,6 @@ beta key limitations:
 1000 requests per day, 42 requests per hour
 
 or just use the public beta key? does that subject to the rate limit?
+```javascript
+var PUBLIC_BETA_API_KEY = 'dc6zaTOxFJmzC';
+```
