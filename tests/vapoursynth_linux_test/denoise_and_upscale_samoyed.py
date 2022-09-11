@@ -53,9 +53,14 @@ scale = 2
 #                         transfer_in_s="linear", transfer_s="709")
 video = core.rcnv.RealCUGAN(video , scale=scale, 
                   gpu_id=gpu_id, model=1)
+
+# solution from tonemap?
+# https://github.com/ifb/vapoursynth-tonemap/issues/2
+
 video = core.resize.Lanczos(clip=video, format=vs.YUV420P10, matrix_s="709",
                         primaries_in_s="2020",  primaries_s="709",
                         transfer_in_s="linear", transfer_s="709")
+
 video.set_output()
 
 # maybe this shit is very freaking slow.
