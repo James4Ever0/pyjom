@@ -23,4 +23,7 @@ from vsrife import RIFE # frame interpolate
 ret = RIFE(clip)
 
 # super resolution
+# copy compiled .so file to here:
+# /root/vapoursynth/plugins/lib/
+
 
