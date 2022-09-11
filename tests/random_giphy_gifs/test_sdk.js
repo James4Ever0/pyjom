@@ -43,4 +43,8 @@ var relatedId = "QvBoMEcQ7DQXK"
 var data = await gf.related(relatedId, { limit: 50 })
 await writeJsonToFile(data,'related.json')
 }
-test()
+// test()
+const { data: categories } = await gf.categories()
+categories.forEach((category) => {
+    console.log(category) // ICategory
+})
