@@ -58,7 +58,7 @@ scale = 2
                 #   gpu_id=gpu_id, model=1)
 from vsbasicvsrpp import BasicVSRPP
 
-ret = BasicVSRPP(clip)
+video = BasicVSRPP(video)
 # solution from tonemap?
 # https://github.com/ifb/vapoursynth-tonemap/issues/2
 
