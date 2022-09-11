@@ -1,5 +1,7 @@
 // Require with custom API key
-const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
+// const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
+const myBetaApiKey = "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g"; // some common web browser based things.
+
 var giphy = require('giphy-api')(myBetaApiKey);
 const JsonFormat = require("json-format")
 
@@ -61,5 +63,5 @@ function writeJsonToFile(json, filename) {
 giphy.id('feqkVgjJpYtjy', function (err, res) { // only one reply. there are no other fancy shits.
     console.log('ERROR?', err); //null if normal.
     // save it to json?
-    writeJsonToFile(res, 'id_search.json');
+    writeJsonToFile(res, 'id_search2.json');
 });
