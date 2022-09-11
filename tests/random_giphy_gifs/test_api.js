@@ -59,7 +59,7 @@ function writeJsonToFile(json, filename) {
 // });
 
 giphy.id('feqkVgjJpYtjy', function (err, res) {
-l.
-//     // save it to json?
-//     writeJsonToFile(res, 'funny_dog_test.json');
+    console.log('ERROR?', err); //null if normal.
+    // save it to json?
+    writeJsonToFile(res, 'funny_dog_test.json');
 });
