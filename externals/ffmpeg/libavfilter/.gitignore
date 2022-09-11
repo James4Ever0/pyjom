@@ -1,6 +1,0 @@
-/filter_list.c
-af_hdcd.c
-vf_waveform.c
-vf_scale_cuda.ptx.c
-vf_v360.c
-vf_xfade.c
