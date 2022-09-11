@@ -53,6 +53,7 @@ scale = 2
 #                         transfer_in_s="linear", transfer_s="709")
 
 # slow as hell man.
+# a very bad filter for dogs
 # video = core.rcnv.RealCUGAN(video , scale=scale, 
                 #   gpu_id=gpu_id, model=1)
 
