@@ -61,5 +61,5 @@ function writeJsonToFile(json, filename) {
 giphy.id('feqkVgjJpYtjy', function (err, res) {
     console.log('ERROR?', err); //null if normal.
     // save it to json?
-    writeJsonToFile(res, 'funny_dog_test.json');
+    writeJsonToFile(res, 'id_search.json');
 });
