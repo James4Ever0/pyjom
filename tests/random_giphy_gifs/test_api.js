@@ -24,7 +24,7 @@ giphy.search({
     console.log('ERROR?', err); //null if normal.
     // save it to json?
     writeJsonToFile(res, 'pokemon_test.json');
-});    console.log('ERROR?', err); //null if normal.
+});   
 //     // save it to json?
 //     writeJsonToFile(res, 'pokemon_test.json');
 // });
@@ -46,7 +46,7 @@ giphy.search({
 // Stream £0:0: Video: gif, bgra, 300x200, 19.42 fps, 25 tbr, 100 tbn
 
 giphy.random({
-    tag: 'superman',
+    tag: 'dog funny',
     rating: 'g',
     fmt: 'json'
 }, function (err, res) {
