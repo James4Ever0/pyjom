@@ -26,3 +26,4 @@ function writeJsonToFile(json, filename) {
 let data = gf.trending({ limit: 10 })
 // console.log(data)
 // https://bobbyhadz.com/blog/javascript-error-err-require-esm-of-es-module-node-fetch
+// fucking hell?
