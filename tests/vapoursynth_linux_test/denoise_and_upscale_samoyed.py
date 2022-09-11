@@ -43,3 +43,4 @@ video = core.rcnv.RealCUGAN(video , scale=scale, noise=noise,
 video.set_output()
 
 # maybe this shit is very freaking slow.
+# why not use gaussian blur?
