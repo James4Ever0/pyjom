@@ -40,11 +40,11 @@ scale = 2
 # video = core.srmdnv.SRMD(video,scale=scale, noise=noise, 
 #                   gpu_id=gpu_id)
 # video = core.resize.Bicubic(video, format=vs.YUV420P8, matrix_s="709")
-video = core.resize.Lanczos(clip=video, format=vs.YUV420P10, matrix_s="709",
-                        primaries_in_s="2020",  primaries_s="709",
-                        transfer_in_s="linear", transfer_s="709")
-video = core.rcnv.RealCUGAN(video , scale=scale, 
-                  gpu_id=gpu_id, model=1)
+# video = core.resize.Lanczos(clip=video, format=vs.YUV420P10, matrix_s="709",
+#                         primaries_in_s="2020",  primaries_s="709",
+#                         transfer_in_s="linear", transfer_s="709")
+# video = core.rcnv.RealCUGAN(video , scale=scale, 
+#                   gpu_id=gpu_id, model=1)
 
 video.set_output()
 
