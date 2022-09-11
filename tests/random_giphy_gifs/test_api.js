@@ -1,4 +1,5 @@
 // Require with custom API key
-// var giphy = require('giphy-api')(m);
+c
+// var giphy = require('giphy-api')(myApiKey);
 // // Require with the public beta key
 var giphy = require('giphy-api')();
