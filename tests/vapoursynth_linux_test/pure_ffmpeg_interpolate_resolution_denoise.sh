@@ -2,7 +2,7 @@
 
 SRCNN="/root/Desktop/works/pyjom/tests/vapoursynth_linux_test/sr/espcn.pb"
 
-ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -vf "minterpolate,sr=model=$SRCNN,hqdn3d" -r 60 ffmpeg_samoyed_srcnn.mp4
+ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -vf "minterpolate,sr=dnn_backend=native:model=$SRCNN,hqdn3d" -r 60 ffmpeg_samoyed_srcnn.mp4
 
 
 # ffmpeg -y -i "/root/Desktop/works/pyjom/tests/random_giphy_gifs/samoyed.gif" -filter "minterpolate=mi_mode=2" -r 60 ffmpeg_samoyed.mp4
