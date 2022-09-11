@@ -34,6 +34,7 @@ function writeJsonToFile(json, filename) {
 async function test(){
 // var data = await gf.trending({ limit: 10 }) // a promise
 // search for related things dog related things.
+const { data: gifs } = await gf.search('dogs', { sort: 'relevant'}
 await writeJsonToFile(data,'trending.json')
 }
 test()
