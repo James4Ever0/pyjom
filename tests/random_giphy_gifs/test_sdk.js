@@ -47,7 +47,7 @@ const data = await gf.categories()
 // data.forEach((category) => {
 //     console.log(category) // ICategory
 // })
-await writeJsonToFile(data,'catego.json')
+await writeJsonToFile(data,'categories.json')
 
 }
 test()
