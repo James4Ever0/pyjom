@@ -30,4 +30,5 @@ video = RIFE(video)
 # copy compiled .so file to here:
 # /root/vapoursynth/plugins/lib/
 
-video = core.
+video = core.srmdnv.SRMD(clip clip, [int scale, int noise, int tilesize_x, int tilesize_y,
+                 int gpu_id, int gpu_thread, bool tta])
