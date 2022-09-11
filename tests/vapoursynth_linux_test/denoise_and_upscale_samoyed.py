@@ -64,6 +64,7 @@ scale = 2
 #                         transfer_in_s="linear", transfer_s="709")
 
 video = core.resize.Bicubic(clip =video, format = vs.YUV420P10, matrix_s='709')
+# much better, no over exposure.
 video.set_output()
 
 # maybe this shit is very freaking slow.
