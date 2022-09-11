@@ -31,5 +31,6 @@ video = RIFE(video)
 # /root/vapoursynth/plugins/lib/
 gpu_id = 0
 gpu_thread = 
+noise = 3
 video = core.srmdnv.SRMD(video, [int scale, int noise, int tilesize_x, int tilesize_y,
                   gpu_id, int gpu_thread, bool tta])
