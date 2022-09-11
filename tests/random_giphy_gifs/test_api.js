@@ -1,6 +1,7 @@
 // Require with custom API key
 // const myBetaApiKey = 'IoJVsWoxDPKBr6gOcCgOPWAB25773hqP';
 const myBetaApiKey = "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g"; // some common web browser based things.
+// can we prepare some k
 
 var giphy = require('giphy-api')(myBetaApiKey);
 const JsonFormat = require("json-format")
