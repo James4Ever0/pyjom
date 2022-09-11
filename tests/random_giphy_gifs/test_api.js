@@ -4,7 +4,7 @@ var giphy = require('giphy-api')(myBetaApiKey);
 const fs = require("fs");
 
 function writeJsonToFile(json, filename) {
-
+    JSON.stringify(user);
 }
 // // Require with the public beta key
 // var giphy = require('giphy-api')(); // banned. cannot use this public api.
