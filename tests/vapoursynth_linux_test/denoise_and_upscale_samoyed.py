@@ -10,7 +10,7 @@ import vapoursynth
 
 # install this:
 # https://github.com/HomeOfVapourSynthEvolution/mvsfunc
-
+import vapoursynth as vs
 from vapoursynth import core
 
 video = core.ffms2.Source(source=videoPath)
@@ -24,7 +24,7 @@ video = mvf.BM3D(video, sigma=3.0, radius1=1, profile1="fast")
 
 from vsrife import RIFE # frame interpolate
 
-video = core.resize.Bicubic(video, format=v.RGBS)
+video = core.resize.Bicubic(video, format=vs.RGBS)
 
 video = RIFE(video)
 
