@@ -30,4 +30,4 @@ video = RIFE(video)
 # copy compiled .so file to here:
 # /root/vapoursynth/plugins/lib/
 
-
+video = core.
