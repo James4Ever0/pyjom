@@ -83,6 +83,7 @@ const typeArray = ['gifs', 'text', 'videos', 'stickers']
 const ratingArray = ['y', 'g', 'pg', 'pg-13', 'r']
 const sortArray = ['recent', 'relevant']
 const limitArray = [...Array(101).keys()].slice(20)
+const offsetArray = [...Array(500).keys()].slice(20)
 
 function fallbackDefault(params, tag, valid, defaultParam) {
     param = params.get(tag)
