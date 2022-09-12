@@ -29,20 +29,23 @@ const requestListener = function(req, res) {
         params = getQueryParams(req.url)
         q = params.get('q')
         type = pamars.get('type')
-        console.log(q, q == null)
-        if (typeArray.indexOf(type) != -1) {}
-        // def = params.get('def')
-        // console.log(def, def == null)
-        // console.log(req.params)
-        res.end('random gifs:')
-    } else {
-        res.end('not being right')
+        if (q == null) {}
     }
+    if (typeArray.indexOf(type) != -1) {}
+    // def = params.get('def')
+    // console.log(def, def == null)
+    // console.log(req.params)
+    res.end('random gifs:')
+} else {
+    res.end('not being right')
+}
 }
 
 const server = http.createServer(requestListener);
 port = 8902
 server.listen(port);
+console.log('server running on http://localhost:' + port);
+console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
