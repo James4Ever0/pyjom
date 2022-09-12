@@ -36,12 +36,12 @@ function getResultParsed(result, typeFilter){
     return filteredResult
 }
 
-def getGF(){
-    return 
+function getGF(){
+    return new GiphyFetch(randomAPIKey())
 }
 
 async function getRandomGifs(keywords,type,callback) {
-    gf=new GiphyFetch(randomAPIKey())
+
     result=await gf.random({tag: keywords,type: type})
     callback(result)
 }
