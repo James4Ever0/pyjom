@@ -39,7 +39,6 @@ function getResultParsed(result, typeFilter){
 async function getRandomGifs(keywords,type,callback) {
     gf=new GiphyFetch(randomAPIKey())
     result=await gf.random({tag: keywords,type: type})
-    result = getResultParsed()
     callback(result)
 }
 
