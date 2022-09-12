@@ -33,7 +33,9 @@ for index, row in scenes.iterrows():
     lengths.append(length)
     # print(length, type(length)) # float.
 
-flag = "generate_ffplay"
+flag = "render"
+filename = "sample.mp4"
+
 if flag == "calculate_statistics":
     import numpy
 
