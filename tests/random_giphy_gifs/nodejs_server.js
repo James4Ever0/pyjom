@@ -10,7 +10,7 @@ function randomAPIKey() {
     sdkKeys = ['6esYBEm9OG3wAifbBFZ2mA0Ml6Ic0rvy', 'sXpGFDGZs0Dv1mmNFvYaGUvYwKX0PWIh']
 
     items = sdkKeys
-    // deleted some unqualified api keys because they look different in length
+        // deleted some unqualified api keys because they look different in length
     var item = items[Math.floor(Math.random() * items.length)];
     return item
 }
@@ -58,19 +58,19 @@ function getGF() {
     return new GiphyFetch(randomAPIKey())
 }
 
-function getApi(){
+function getApi() {
     return GiphyApi(randomAPIKey())
 }
 
 async function getRandomGif(keywords, type, callback) {
     result = await getGF().random({ tag: keywords, type: type })
-    // console.log("RESULT", result)
+        // console.log("RESULT", result)
     callback(result)
 }
 async function getRandomGifs(keywords, rating, callback) {
-    getApi().random({ tag: keywords, rating:rating , fmt:'json'}), function (err, result) {
-            console.log('ERROR?', err); //null if normal.
-    callback(result)
+    getApi().random({ tag: keywords, rating: rating, fmt: 'json' }, function(err, result) {
+        console.log('ERROR?', err); //null if normal.
+        callback(result)
     })
 }
 async function getSearchGifs(keywords, sort, limit, offset, type, rating, callback) {
