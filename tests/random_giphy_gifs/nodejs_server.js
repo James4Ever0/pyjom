@@ -155,6 +155,7 @@ const validEntries = ['/random', '/related', '/trending', '/search']
 
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
+    console.log("________________________________________________")
     console.log("REQUEST AT:", req.url, req.method)
     if (req.url == "/") {
         res.writeHead(200);
