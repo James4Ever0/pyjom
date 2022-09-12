@@ -55,7 +55,7 @@ elif flag == "generate_ffplay":
 elif flag == "render":
     import os
     import datetime
-    mTimeDelta = datetime.timedelta(milliseconds=1)
+    mTimeDelta = datetime.timedelta(milliseconds=100) # 0.1 seconds
     getTimeObject = lambda timeString: datetime.datetime.strptime(timeString,"%H:%M:%S.%f")
     getTimeString = lambda timeObject: timeObject.strftime("%H:%M:%S.%f")
     if not os.path.exists("output"):
