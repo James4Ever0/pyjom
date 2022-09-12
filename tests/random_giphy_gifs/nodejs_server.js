@@ -1,5 +1,8 @@
 const http = require('http');
 const url = require('url');
+
+function random
+
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
     console.log("REQUEST AT:", req.url, req.method)
