@@ -29,9 +29,8 @@ const requestListener = function(req, res) {
             // def = params.get('def')
             // console.log(q, q == null)
             // console.log(def, def == null)
-
-        // console.log(req.params)
-        res.end('random gifs:')
+            // console.log(req.params)
+            // res.end('random gifs:')
     } else {
         res.end('not being right')
     }
