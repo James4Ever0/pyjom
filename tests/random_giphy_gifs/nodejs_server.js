@@ -13,7 +13,7 @@ function randomAPIKey() {
 function getQueryParams(reqUrl) {
     current_url = new URL('http://localhost' + req.url)
     params = current_url.searchParams
-    return params
+    console.log(params) return params
 }
 
 const requestListener = function(req, res) {
@@ -23,9 +23,8 @@ const requestListener = function(req, res) {
         res.writeHead(200);
         res.end('nodejs giphy server');
     } else if (req.url.startsWith('/random')) {
-
-        console.log(params, typeof(params))
-        q = params.get('q')
+        params =
+            q = params.get('q')
             // def = params.get('def')
             // console.log(q, q == null)
             // console.log(def, def == null)
@@ -40,5 +39,7 @@ const requestListener = function(req, res) {
 const server = http.createServer(requestListener);
 port = 8902
 server.listen(port);
+console.log('server running on http://localhost:' + port);
+console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
