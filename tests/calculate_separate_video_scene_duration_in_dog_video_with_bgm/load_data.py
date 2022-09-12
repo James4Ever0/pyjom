@@ -76,4 +76,5 @@ elif flag == "render":
 elif flag == "filter": # to make sure the selected set will be evenly spaced. no two elements will get closer to each other than 5 seconds.
     import random
     fakeQualificationFunction = lambda: random.randrange(0.6674874515595588,7.833)
+    # select the closest one!
     candidates = []
