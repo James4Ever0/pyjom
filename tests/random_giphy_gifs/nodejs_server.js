@@ -72,7 +72,7 @@ function getResultParsed(result, typeFilter) {
             }
         }
     }
-    return filteredResult
+    return JSON.stringify(filteredResult)
 }
 
 function getGF() {
