@@ -68,13 +68,10 @@ async function getRandomGif(keywords, type, callback) {
     callback(result)
 }
 async function getRandomGifs(keywords, rating, callback) {
-    getApi().random({ tag: keywords, rating:rating , fmt:'json'}), function (err, res) {
+    getApi().random({ tag: keywords, rating:rating , fmt:'json'}), function (err, result) {
             console.log('ERROR?', err); //null if normal.
-        //     // save it to json?
-        //     writeJsonToFile(res, 'funny_dog_test.json');
-        // });
-    console.log("RESULT", result)
     callback(result)
+    })
 }
 async function getSearchGifs(keywords, sort, limit, offset, type, rating, callback) {
     // sort in 'recent', 'relevant'
