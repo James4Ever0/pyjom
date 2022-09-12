@@ -31,6 +31,7 @@ for index, row in scenes.iterrows():
     lengths.append(length)
     # print(length, type(length)) # float.
 
+if calculate_
 import numpy
 
 std = numpy.std(lengths)
