@@ -10,8 +10,8 @@ const requestListener = function(req, res) {
         current_url = new URL('http://localhost' + req.url)
         params = current_url.searchParams
         console.log(params, typeof(params))
-        console.log(params['q'])
-        
+        console.log(params.q)
+        console.log(params.abc)
             // console.log(req.params)
         res.end('random gifs:')
     } else {
