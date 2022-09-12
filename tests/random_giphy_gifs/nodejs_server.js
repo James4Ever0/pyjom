@@ -15,7 +15,7 @@ function randomAPIKey() {
 
 function getRandomGifs(keywords, type, rating, callback){
     gf = new GiphyFetch(randomAPIKey())
-    gf.random
+    gf.random()
 }
 
 function getQueryParams(reqUrl) {
