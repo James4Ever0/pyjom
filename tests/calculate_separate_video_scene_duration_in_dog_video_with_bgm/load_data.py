@@ -33,3 +33,4 @@ for index, row in scenes.iterrows():
 
 import numpy
 
+std = numpy.std(lengths)
