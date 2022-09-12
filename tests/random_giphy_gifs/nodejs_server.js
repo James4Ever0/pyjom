@@ -56,7 +56,7 @@ const requestListener=function(req,res) {
         console.log('search keywords:',q)
         if(q!=null) {
             if(req.url.startsWith('/random')){
-                gifs = 
+                gifs = getRandomGifs()
             }
             res.end(gifs)
         }
