@@ -1,5 +1,5 @@
 const http = require('http');
-
+const url = require('url');
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
     console.log("REQUEST AT:", req.url, req.method)
@@ -7,7 +7,9 @@ const requestListener = function(req, res) {
         res.writeHead(200);
         res.end('nodejs giphy server');
     } else if (req.url.startsWith('/random')) {
-        console.log(req.params)
+        params =
+            // console.log(req.params)
+            res.end('random gifs:')
     } else {
         res.end('not being right')
     }
