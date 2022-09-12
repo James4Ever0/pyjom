@@ -68,7 +68,7 @@ async function getRandomGif(keywords, type, callback) {
     callback(result)
 }
 async function getRandomGifs(keywords, rating, callback) {
-    getApi().random({ tag: keywords, rating:rating })
+    getApi().random({ tag: keywords, rating:rating , fmt:'json'})
     giphy.random({
         //     tag: keywords,
         //     rating: 'g',
