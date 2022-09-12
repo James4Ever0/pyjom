@@ -49,21 +49,25 @@ if flag == "calculate_statistics":
     # strange though.
     # shall we adjust this accordingly? how to generate this shit?
 elif flag == "generate_ffplay":
-    for( start, end, duration) in sceneCuts:
+    for (start, end, duration) in sceneCuts:
         print("ffplay -ss %s -t %s -i %s -autoexit " % (start, duration, filename))
         print("sleep 3")
 elif flag == "render":
     import os
     import datetime
+
     durationThreshold = 0.6674874515595588
-    mTimeDelta = datetime.timedelta(milliseconds=100) # 0.1 seconds
-    getTimeObject = lambda timeString: datetime.datetime.strptime(timeString,"%H:%M:%S.%f")
+    mTimeDelta = datetime.timedelta(milliseconds=100)  # 0.1 seconds
+    getTimeObject = lambda timeString: datetime.datetime.strptime(
+        timeString, "%H:%M:%S.%f"
+    )
     getTimeString = lambda timeObject: timeObject.strftime("%H:%M:%S.%f")
     if not os.path.exists("output"):
         os.mkdir("output")
-    for index,( start, end, duration) in enumerate(sceneCuts):
+    for index, (start, end, duration) in enumerate(sceneCuts):
         estimatedDuration = duration - 0.2
-        if estimatedDuration < durationThreshold: continue
+        if estimatedDuration < durationThreshold:
+            continue
         start2 = getTimeObject(start) + mTimeDelta
         end2 = getTimeObject(end) - mTimeDelta
         start2, end2 = getTimeString(start2), getTimeString(end2)
