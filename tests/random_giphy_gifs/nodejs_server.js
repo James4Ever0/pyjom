@@ -47,6 +47,8 @@ function processElem(elem) {
             }
             return newElem
         }
+    }else{
+        console.log("")
     }
     return null
 }
