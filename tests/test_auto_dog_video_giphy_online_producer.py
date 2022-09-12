@@ -2,15 +2,9 @@ import os
 os.environ['LD_LIBRARY_PATH']="/usr/local/lib"
 from test_commons import *
 from pyjom.primitives import *  # this is capitalized.
-# let's hack the gl!
-# os.environ["DISPLAY"] = ":1"
-# os.environ["XAUTHORITY"] = "/root/.Xauthority"
-# undefined symbol? wtf? how about use xvfb-run directly?
-
 autoArgs = {
     "subtitle_detector": {"timestep": 0.2}
-}  # what is this? should't you detect all before production?
-# autoArgs = {"subtitle_detector": {"timestep": 0.2},"yolov5_detector":{"model":"yolov5x"}}
+} 
 template_names = ["subtitle_detector.mdl.j2"] 
 
 wbRev = FilesystemAutoContentProducer(
