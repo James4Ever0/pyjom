@@ -17,7 +17,9 @@ function getQueryParams(reqUrl) {
     return params
 }
 
-const typeArray = ['gif', textvideos	, 'stickers']
+const typeArray = ['gif', text ','
+    videos, 'stickers'
+]
 
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
