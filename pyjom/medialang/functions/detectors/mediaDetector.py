@@ -1,4 +1,5 @@
 from pyjom.medialang.commons import *
+
 import cv2
 # import numpy.core.multiarray # caused by numpy version errors. upgrade to resolve.
 from videocr import get_subtitles  # are you sure?
