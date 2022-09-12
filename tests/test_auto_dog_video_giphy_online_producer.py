@@ -1,7 +1,6 @@
-import os
-os.environ['LD_LIBRARY_PATH']="/usr/local/lib"
+# ld_library_path 
 from test_commons import *
-from pyjom.primitives import *  # this is capitalized.
+from pyjom.primitives import *
 autoArgs = {
     "subtitle_detector": {"timestep": 0.2}
 } 
