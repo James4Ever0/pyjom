@@ -11,6 +11,10 @@ function randomAPIKey() {
     return item
 }
 
+function randInt(start, end){
+    
+}
+
 function getResultParsed(result, typeFilter){
     filteredResult = []
     if ('data' in result){
@@ -88,7 +92,7 @@ const requestListener=function(req,res) {
         type = fallbackDefault(params,'type',typeArray,typeArray[0])
         rating = fallbackDefault(params, 'rating',ratingArray, ratingArray[1])
         limit = fallbackDefault(params, 'limit',limitArray, 100)
-        offset = fallbackDefault(params, 'offset', offsetArray, randInt())
+        offset = fallbackDefault(params, 'offset', offsetArray, randInt(100,500))
         console.log('search keywords:', q)
         callback = (result) => res.end(getResultParsed(result, ['text', 'sticker'])
         if(q!=null) {
