@@ -6,5 +6,5 @@ nMin, nMax = 0.6, 7.833
 # while you need to make sure the value is in bound.
 
 import random
-
-function = lambda: (random.gauss(mean, std))
+inBound = lambda number: max()
+function = lambda: random.gauss(mean, std)
