@@ -6,13 +6,13 @@ const requestListener = function(req, res) {
     if (req.url == "/") {
         res.writeHead(200);
         res.end('nodejs giphy server');
-    } else if (req.url.startsWith()
-        '/random')) {
-        console.lof
+    } else if (req.url.startsWith('/random')) {
+        console.log()
     }
 }
 
 const server = http.createServer(requestListener);
 port = 8902
 server.listen(port);
+console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
