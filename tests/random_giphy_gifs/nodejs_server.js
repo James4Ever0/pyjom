@@ -12,7 +12,7 @@ function randomAPIKey() {
 }
 
 function randInt(start, end){
-    
+    Math.random()*
 }
 
 function getResultParsed(result, typeFilter){
