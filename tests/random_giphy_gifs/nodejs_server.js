@@ -1,7 +1,11 @@
 const http = require('http');
 const url = require('url');
 
-function random
+function randomAPIKey() {
+    var items = ['Yes', 'No', 'Maybe'];
+    var item = items[Math.floor(Math.random() * items.length)];
+    return item
+}
 
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
@@ -28,4 +32,5 @@ const requestListener = function(req, res) {
 const server = http.createServer(requestListener);
 port = 8902
 server.listen(port);
+console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
