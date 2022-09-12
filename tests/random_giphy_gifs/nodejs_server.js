@@ -35,6 +35,7 @@ const requestListener = function(req, res) {
                 type = 'gifs'
                 console.log("type undefined. falling back to default: gifs")
             }
+            
         }
 
         // def = params.get('def')
