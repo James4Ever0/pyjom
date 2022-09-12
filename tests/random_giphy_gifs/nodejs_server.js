@@ -27,7 +27,7 @@ const requestListener = function(req, res) {
         params = getQueryParams(req.url)
         q = params.get('q')
             // def = params.get('def')
-            // console.log(q, q == null)
+        console.log(q, q == null)
             // console.log(def, def == null)
             // console.log(req.params)
         res.end('random gifs:')
