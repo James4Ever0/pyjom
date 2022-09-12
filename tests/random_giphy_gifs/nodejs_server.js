@@ -10,7 +10,7 @@ function randomAPIKey() {
     apiKeys = ['IoJVsWoxDPKBr6gOcCgOPWAB25773hqP', 'lTRWAEGHjB1AkfO0sk2XTdujaPB5aH7X']
     sdkKeys = ['6esYBEm9OG3wAifbBFZ2mA0Ml6Ic0rvy', 'sXpGFDGZs0Dv1mmNFvYaGUvYwKX0PWIh']
 
-    items = webApiKeys.concat(publicSdkKeys).concat(apiKeys).concat
+    items = webApiKeys.concat(publicSdkKeys).concat(apiKeys).concat(sdkKeys)
         // deleted some unqualified api keys because they look different in length
     var item = items[Math.floor(Math.random() * items.length)];
     return item
