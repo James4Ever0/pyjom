@@ -25,10 +25,11 @@ for index, row in scenes.iterrows():
     # print(row)
     # breakpoint()
     start, end = row["Start Timecode"], row["End Timecode"]
-    sceneCuts.append((start, end, ))
+    length = row["Length (seconds)"]
+
+    sceneCuts.append((start, end, length))
     # print(start, end)
     # please calculate the length!
-    length = row["Length (seconds)"]
     lengths.append(length)
     # print(length, type(length)) # float.
 
