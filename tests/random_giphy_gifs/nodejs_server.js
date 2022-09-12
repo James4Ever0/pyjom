@@ -27,28 +27,27 @@ function randInt(start, end) {
     return Math.floor(Math.random() * (end - start) + end)
 }
 
-function processElem(elem){
-    if ('type' in elem){
-    dataType = elem['type']
-    if (typeFilter.indexOf(dataType) == -1) {
-        dataId = elem['id']
-        dataUrl = elem['url']
-        title = elem['title']
-        original = result['images']['original']
-        height = original['height']
-        width = original['width']
-        url = original['url']
-        newElem = {
-            id: dataId,
-            url: dataUrl,
-            title: title,
-            media: { height: height, width: width, url: url }
+function processElem(elem) {
+    if ('type' in elem) {
+        dataType = elem['type']
+        if (typeFilter.indexOf(dataType) == -1) {
+            dataId = elem['id']
+            dataUrl = elem['url']
+            title = elem['title']
+            original = result['images']['original']
+            height = original['height']
+            width = original['width']
+            url = original['url']
+            newElem = {
+                id: dataId,
+                url: dataUrl,
+                title: title,
+                media: { height: height, width: width, url: url }
 
+            }
+            return newElem
         }
-    return newElem
-}
-}
-
+    }
     return null
 }
 
@@ -56,20 +55,19 @@ function getResultParsed(result, typeFilter) {
     filteredResult = []
     if ('data' in result) {
         data = result['data']
-        if (Array.isArray(data)){
+        if (Array.isArray(data)) {
 
-        }
-        else{
+        } else {
 
         }
         // console.log('data:', data)
         for (elem of data) {
 
-                filteredResult.push(newElem)
-            }
+            filteredResult.push(newElem)
         }
     }
-    return filteredResult
+}
+return filteredResult
 }
 
 function getGF() {
