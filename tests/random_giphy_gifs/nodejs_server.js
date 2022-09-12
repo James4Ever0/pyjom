@@ -26,7 +26,10 @@ function getResultParsed(result, typeFilter){
             height = original['height']
             width = original['width']
             url = original['url']
-            filter
+            newElem = {
+                
+            }
+            filteredResult.push(newElem)
         }
         }
     }
