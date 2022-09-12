@@ -111,9 +111,9 @@ const requestListener=function(req,res) {
             else if (req.url.startsWith('/search')){
                 getSearchGifs(q, sort, limit, type, callback)
             }
-            else if (req.url.startsWith('/trending'))
+            else if (req.url.startsWith('/related))
             {}
-            else if (req.url.startsWith('/trending'))
+            else if (req.url.startsWith('/'))
             {}
             else{
                 res.end("don't know how you get here")
