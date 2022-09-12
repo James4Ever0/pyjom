@@ -112,7 +112,9 @@ const requestListener=function(req,res) {
                 getSearchGifs(q, sort, limit, type, callback)
             }
             else if (req.url.startsWith('/related'))
-            {}
+            {
+                getRelatedGifs(q, )
+            }
             else if (req.url.startsWith('/trending'))
             {}
             else{
