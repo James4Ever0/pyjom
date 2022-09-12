@@ -55,7 +55,10 @@ function processElemUncatched(elem, typeFilter) {
 }
 
 function processElem(elem, typeFilter){
-    
+    try{
+        result = processElemUncatched(elem, typeFilter)
+        return result
+    } catch (e)
 }
 
 function getResultParsed(result, typeFilter) {
