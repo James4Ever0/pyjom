@@ -9,6 +9,7 @@ nMin, nMax = 0.6, 7.833
 # import random
 from scipy.stats import truncnorm
 
+a, b = (myclip_a - loc) / scale, (myclip_b - loc) / scale
 # inBound = lambda number: min(nMax, max(nMin, number))
 # randomFunction = lambda: inBound(random.gauss(mean, std))
 
