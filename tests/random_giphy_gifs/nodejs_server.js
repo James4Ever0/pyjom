@@ -88,12 +88,13 @@ const requestListener=function(req,res) {
         // rating = fallbackDefault(params, 'rating',ratingArray, ratingArray[1])
         // no rating? wtf?
         console.log('search keywords:',q)
+        callback = (result) => res.end(getResultParsed(result, ['text', 'sticker'])
         if(q!=null) {
             if(req.url.startsWith('/random')){
-                getRandomGifs(q, type, (result) => res.end(getResultParsed(result, ['text', 'sticker']))
+                getRandomGifs(q, type, callback)
             }
             elif (req.url.startsWith('/search')){
-                getSearchGifs(q, sort, limit, type, )
+                getSearchGifs(q, sort, limit, type, callback)
             }
         }
         else {
