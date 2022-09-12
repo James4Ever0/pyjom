@@ -20,3 +20,4 @@ scenes = pandas.read_csv(scenes)
 
 for row in scenes.iterrows():
     start, end = row['Start Timecode'],row['End Timecode']
+    print(start, end)
