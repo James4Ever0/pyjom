@@ -10,6 +10,10 @@ function randomAPIKey() {
     return item
 }
 
+function getQueryParams(reqUrl) {
+
+}
+
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
     console.log("REQUEST AT:", req.url, req.method)
