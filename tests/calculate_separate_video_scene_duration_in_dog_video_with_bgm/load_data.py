@@ -44,5 +44,4 @@ if flag == "calculate_statistics":
     # 0.6 7.833
     # strange though.
     # shall we adjust this accordingly? how to generate this shit?
-elif flag == "":
-    
+elif flag == "generate_ffplay":
