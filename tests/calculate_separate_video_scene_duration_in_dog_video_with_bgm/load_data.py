@@ -47,13 +47,13 @@ if flag == "calculate_statistics":
     # strange though.
     # shall we adjust this accordingly? how to generate this shit?
 elif flag == "generate_ffplay":
-    filename = "sample.mp4"
     for( start, end, duration) in sceneCuts:
         print("ffplay -ss %s -t %s -i %s -autoexit " % (start, duration, filename))
         print("sleep 3")
 elif flag == "render":
     import os
-    if os.path.exists("output")
+    if not os.path.exists("output"):
+        os.mkdir("output")
     for index,( start, end, duration) in enumerate(sceneCuts):
-        output = "output/%d.flv"
+        output = "output/%d.flv" % index
         print("ffplay -ss %s -to %s -i %s -autoexit %s" % (start, end, filename, output))
