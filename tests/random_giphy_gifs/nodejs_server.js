@@ -47,7 +47,7 @@ const requestListener = function(req, res) {
     if (req.url == "/") {
         res.writeHead(200);
         res.end('nodejs giphy server');
-    } else if () {
+    } else if (valid(req.url.split("?")[0])) {
         params = getQueryParams(req.url)
         q = params.get('q')
         type = fallbackDefault(params, 'type',typeArray,typeArray[0])
