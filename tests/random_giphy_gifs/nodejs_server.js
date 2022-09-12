@@ -18,6 +18,7 @@ function getResultParsed(result, typeFilter){
         for (elem of result['data']){
             dataType = elem['type']
             dataId = elem['id']
+            dataUrl = elem['url']
         }
     }
 }
