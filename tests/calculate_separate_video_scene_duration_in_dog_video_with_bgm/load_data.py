@@ -28,7 +28,7 @@ for index, row in scenes.iterrows():
     sceneCuts.append((start, end))
     # print(start, end)
     # please calculate the length!
-    length = row['Length (seconds)']
+    length = row["Length (seconds)"]
     lengths.append(length)
     # print(length, type(length)) # float.
 
@@ -48,5 +48,5 @@ if flag == "calculate_statistics":
 elif flag == "generate_ffplay":
     filename = "sample.mp4"
     for start, end in sceneCuts:
-        print("ffplay -ss %s -to %s -i %s " %(  start, end,filename))
-        print('sleep 3')
+        print("ffplay -ss %s -to %s -i %s " % (start, end, filename))
+        print("sleep 3")
