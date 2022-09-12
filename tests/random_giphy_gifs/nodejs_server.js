@@ -64,11 +64,20 @@ function getApi(){
 
 async function getRandomGif(keywords, type, callback) {
     result = await getGF().random({ tag: keywords, type: type })
-    console.log("RESULT", result)
+    // console.log("RESULT", result)
     callback(result)
 }
 async function getRandomGifs(keywords, type, callback) {
     getApi().random({ tag: keywords, type: type })
+    giphy.random({
+        //     tag: 'dog funny',
+        //     rating: 'g',
+        //     fmt: 'json',
+        // }, function (err, res) {
+        //     console.log('ERROR?', err); //null if normal.
+        //     // save it to json?
+        //     writeJsonToFile(res, 'funny_dog_test.json');
+        // });
     console.log("RESULT", result)
     callback(result)
 }
