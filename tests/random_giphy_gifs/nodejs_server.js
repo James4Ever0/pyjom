@@ -108,7 +108,7 @@ const requestListener=function(req,res) {
             if(req.url.startsWith('/random')){
                 getRandomGifs(q, type, callback)
             }
-            elif (req.url.startsWith('/search')){
+            else if (req.url.startsWith('/search')){
                 getSearchGifs(q, sort, limit, type, callback)
             }
         }
