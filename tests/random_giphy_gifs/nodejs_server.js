@@ -1,7 +1,7 @@
 const http = require('http');
 
 const requestListener = function(req, res) {
-    console.log(req)
+    console.log(req.url, req.method)
     res.writeHead(200);
     res.end('Hello, World!');
 }
