@@ -53,8 +53,7 @@ const requestListener = function(req, res) {
         // no rating? wtf?
         console.log('search keywords:', q)
         if (q != null) {
-        res.end('random gifs:')
-
+        res.end(gifs)
         }
         else{
             res.end('no search keywords.')
