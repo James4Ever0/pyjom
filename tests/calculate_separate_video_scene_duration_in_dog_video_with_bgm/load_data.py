@@ -33,7 +33,7 @@ for index, row in scenes.iterrows():
     lengths.append(length)
     # print(length, type(length)) # float.
 
-flag = "render"
+flag = "filter"
 filename = "sample.mp4"
 
 if flag == "calculate_statistics":
