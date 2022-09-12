@@ -18,13 +18,14 @@ function getResultParsed(result, typeFilter){
     if ('data' in result){
         for (elem of result['data']){
             dataType = elem['type']
-            dataId = elem['id']
+            if (typeFilter.indexOf(dataType) == -1)
+{            dataId = elem['id']
             dataUrl = elem['url']
             title = elem['title']
             original = result['images']['original']
             height = original['height']
             width = original['width']
-            url = original['url']
+            url = original['url']}
         }
     }
 }
