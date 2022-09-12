@@ -1,63 +1,55 @@
-ffmpeg -ss 00:00:00.000 -to 00:00:07.833 -i sample.mp4  output/0.flv
-ffmpeg -ss 00:00:07.833 -to 00:00:14.400 -i sample.mp4  output/1.flv
-ffmpeg -ss 00:00:14.400 -to 00:00:15.867 -i sample.mp4  output/2.flv
-ffmpeg -ss 00:00:15.867 -to 00:00:17.900 -i sample.mp4  output/3.flv
-ffmpeg -ss 00:00:17.900 -to 00:00:21.067 -i sample.mp4  output/4.flv
-ffmpeg -ss 00:00:21.067 -to 00:00:24.267 -i sample.mp4  output/5.flv
-ffmpeg -ss 00:00:24.267 -to 00:00:27.567 -i sample.mp4  output/6.flv
-ffmpeg -ss 00:00:27.567 -to 00:00:31.333 -i sample.mp4  output/7.flv
-ffmpeg -ss 00:00:31.333 -to 00:00:33.400 -i sample.mp4  output/8.flv
-ffmpeg -ss 00:00:33.400 -to 00:00:34.000 -i sample.mp4  output/9.flv
-ffmpeg -ss 00:00:34.000 -to 00:00:37.567 -i sample.mp4  output/10.flv
-ffmpeg -ss 00:00:37.567 -to 00:00:40.733 -i sample.mp4  output/11.flv
-ffmpeg -ss 00:00:40.733 -to 00:00:44.300 -i sample.mp4  output/12.flv
-ffmpeg -ss 00:00:44.300 -to 00:00:50.700 -i sample.mp4  output/13.flv
-ffmpeg -ss 00:00:50.700 -to 00:00:56.366 -i sample.mp4  output/14.flv
-ffmpeg -ss 00:00:56.366 -to 00:00:59.800 -i sample.mp4  output/15.flv
-ffmpeg -ss 00:00:59.800 -to 00:01:02.000 -i sample.mp4  output/16.flv
-ffmpeg -ss 00:01:02.000 -to 00:01:04.900 -i sample.mp4  output/17.flv
-ffmpeg -ss 00:01:04.900 -to 00:01:05.700 -i sample.mp4  output/18.flv
-ffmpeg -ss 00:01:05.700 -to 00:01:07.200 -i sample.mp4  output/19.flv
-ffmpeg -ss 00:01:07.200 -to 00:01:09.266 -i sample.mp4  output/20.flv
-ffmpeg -ss 00:01:09.266 -to 00:01:10.566 -i sample.mp4  output/21.flv
-ffmpeg -ss 00:01:10.566 -to 00:01:13.500 -i sample.mp4  output/22.flv
-ffmpeg -ss 00:01:13.500 -to 00:01:15.200 -i sample.mp4  output/23.flv
-ffmpeg -ss 00:01:15.200 -to 00:01:16.800 -i sample.mp4  output/24.flv
-ffmpeg -ss 00:01:16.800 -to 00:01:20.266 -i sample.mp4  output/25.flv
-ffmpeg -ss 00:01:20.266 -to 00:01:21.900 -i sample.mp4  output/26.flv
-ffmpeg -ss 00:01:21.900 -to 00:01:23.366 -i sample.mp4  output/27.flv
-ffmpeg -ss 00:01:23.366 -to 00:01:26.733 -i sample.mp4  output/28.flv
-ffmpeg -ss 00:01:26.733 -to 00:01:28.400 -i sample.mp4  output/29.flv
-ffmpeg -ss 00:01:28.400 -to 00:01:29.800 -i sample.mp4  output/30.flv
-ffmpeg -ss 00:01:29.800 -to 00:01:33.366 -i sample.mp4  output/31.flv
-ffmpeg -ss 00:01:33.366 -to 00:01:34.100 -i sample.mp4  output/32.flv
-ffmpeg -ss 00:01:34.100 -to 00:01:34.700 -i sample.mp4  output/33.flv
-ffmpeg -ss 00:01:34.700 -to 00:01:35.400 -i sample.mp4  output/34.flv
-ffmpeg -ss 00:01:35.400 -to 00:01:36.366 -i sample.mp4  output/35.flv
-ffmpeg -ss 00:01:36.366 -to 00:01:37.100 -i sample.mp4  output/36.flv
-ffmpeg -ss 00:01:37.100 -to 00:01:37.900 -i sample.mp4  output/37.flv
-ffmpeg -ss 00:01:37.900 -to 00:01:41.900 -i sample.mp4  output/38.flv
-ffmpeg -ss 00:01:41.900 -to 00:01:42.900 -i sample.mp4  output/39.flv
-ffmpeg -ss 00:01:42.900 -to 00:01:45.033 -i sample.mp4  output/40.flv
-ffmpeg -ss 00:01:45.033 -to 00:01:48.033 -i sample.mp4  output/41.flv
-ffmpeg -ss 00:01:48.033 -to 00:01:49.633 -i sample.mp4  output/42.flv
-ffmpeg -ss 00:01:49.633 -to 00:01:52.633 -i sample.mp4  output/43.flv
-ffmpeg -ss 00:01:52.633 -to 00:01:55.733 -i sample.mp4  output/44.flv
-ffmpeg -ss 00:01:55.733 -to 00:01:59.766 -i sample.mp4  output/45.flv
-ffmpeg -ss 00:01:59.766 -to 00:02:06.400 -i sample.mp4  output/46.flv
-ffmpeg -ss 00:02:06.400 -to 00:02:12.699 -i sample.mp4  output/47.flv
-ffmpeg -ss 00:02:12.699 -to 00:02:14.333 -i sample.mp4  output/48.flv
-ffmpeg -ss 00:02:14.333 -to 00:02:18.166 -i sample.mp4  output/49.flv
-ffmpeg -ss 00:02:18.166 -to 00:02:20.599 -i sample.mp4  output/50.flv
-ffmpeg -ss 00:02:20.599 -to 00:02:21.199 -i sample.mp4  output/51.flv
-ffmpeg -ss 00:02:21.199 -to 00:02:22.766 -i sample.mp4  output/52.flv
-ffmpeg -ss 00:02:22.766 -to 00:02:26.066 -i sample.mp4  output/53.flv
-ffmpeg -ss 00:02:26.066 -to 00:02:31.166 -i sample.mp4  output/54.flv
-ffmpeg -ss 00:02:31.166 -to 00:02:34.633 -i sample.mp4  output/55.flv
-ffmpeg -ss 00:02:34.633 -to 00:02:39.466 -i sample.mp4  output/56.flv
-ffmpeg -ss 00:02:39.466 -to 00:02:42.499 -i sample.mp4  output/57.flv
-ffmpeg -ss 00:02:42.499 -to 00:02:45.533 -i sample.mp4  output/58.flv
-ffmpeg -ss 00:02:45.533 -to 00:02:47.899 -i sample.mp4  output/59.flv
-ffmpeg -ss 00:02:47.899 -to 00:02:51.066 -i sample.mp4  output/60.flv
-ffmpeg -ss 00:02:51.066 -to 00:02:53.966 -i sample.mp4  output/61.flv
-ffmpeg -ss 00:02:53.966 -to 00:02:58.899 -i sample.mp4  output/62.flv
+ffmpeg -y -ss 00:00:00.100000 -to 00:00:07.733000 -i sample.mp4  output/0.flv
+ffmpeg -y -ss 00:00:07.933000 -to 00:00:14.300000 -i sample.mp4  output/1.flv
+ffmpeg -y -ss 00:00:14.500000 -to 00:00:15.767000 -i sample.mp4  output/2.flv
+ffmpeg -y -ss 00:00:15.967000 -to 00:00:17.800000 -i sample.mp4  output/3.flv
+ffmpeg -y -ss 00:00:18.000000 -to 00:00:20.967000 -i sample.mp4  output/4.flv
+ffmpeg -y -ss 00:00:21.167000 -to 00:00:24.167000 -i sample.mp4  output/5.flv
+ffmpeg -y -ss 00:00:24.367000 -to 00:00:27.467000 -i sample.mp4  output/6.flv
+ffmpeg -y -ss 00:00:27.667000 -to 00:00:31.233000 -i sample.mp4  output/7.flv
+ffmpeg -y -ss 00:00:31.433000 -to 00:00:33.300000 -i sample.mp4  output/8.flv
+ffmpeg -y -ss 00:00:34.100000 -to 00:00:37.467000 -i sample.mp4  output/10.flv
+ffmpeg -y -ss 00:00:37.667000 -to 00:00:40.633000 -i sample.mp4  output/11.flv
+ffmpeg -y -ss 00:00:40.833000 -to 00:00:44.200000 -i sample.mp4  output/12.flv
+ffmpeg -y -ss 00:00:44.400000 -to 00:00:50.600000 -i sample.mp4  output/13.flv
+ffmpeg -y -ss 00:00:50.800000 -to 00:00:56.266000 -i sample.mp4  output/14.flv
+ffmpeg -y -ss 00:00:56.466000 -to 00:00:59.700000 -i sample.mp4  output/15.flv
+ffmpeg -y -ss 00:00:59.900000 -to 00:01:01.900000 -i sample.mp4  output/16.flv
+ffmpeg -y -ss 00:01:02.100000 -to 00:01:04.800000 -i sample.mp4  output/17.flv
+ffmpeg -y -ss 00:01:05.800000 -to 00:01:07.100000 -i sample.mp4  output/19.flv
+ffmpeg -y -ss 00:01:07.300000 -to 00:01:09.166000 -i sample.mp4  output/20.flv
+ffmpeg -y -ss 00:01:09.366000 -to 00:01:10.466000 -i sample.mp4  output/21.flv
+ffmpeg -y -ss 00:01:10.666000 -to 00:01:13.400000 -i sample.mp4  output/22.flv
+ffmpeg -y -ss 00:01:13.600000 -to 00:01:15.100000 -i sample.mp4  output/23.flv
+ffmpeg -y -ss 00:01:15.300000 -to 00:01:16.700000 -i sample.mp4  output/24.flv
+ffmpeg -y -ss 00:01:16.900000 -to 00:01:20.166000 -i sample.mp4  output/25.flv
+ffmpeg -y -ss 00:01:20.366000 -to 00:01:21.800000 -i sample.mp4  output/26.flv
+ffmpeg -y -ss 00:01:22.000000 -to 00:01:23.266000 -i sample.mp4  output/27.flv
+ffmpeg -y -ss 00:01:23.466000 -to 00:01:26.633000 -i sample.mp4  output/28.flv
+ffmpeg -y -ss 00:01:26.833000 -to 00:01:28.300000 -i sample.mp4  output/29.flv
+ffmpeg -y -ss 00:01:28.500000 -to 00:01:29.700000 -i sample.mp4  output/30.flv
+ffmpeg -y -ss 00:01:29.900000 -to 00:01:33.266000 -i sample.mp4  output/31.flv
+ffmpeg -y -ss 00:01:35.500000 -to 00:01:36.266000 -i sample.mp4  output/35.flv
+ffmpeg -y -ss 00:01:38.000000 -to 00:01:41.800000 -i sample.mp4  output/38.flv
+ffmpeg -y -ss 00:01:42.000000 -to 00:01:42.800000 -i sample.mp4  output/39.flv
+ffmpeg -y -ss 00:01:43.000000 -to 00:01:44.933000 -i sample.mp4  output/40.flv
+ffmpeg -y -ss 00:01:45.133000 -to 00:01:47.933000 -i sample.mp4  output/41.flv
+ffmpeg -y -ss 00:01:48.133000 -to 00:01:49.533000 -i sample.mp4  output/42.flv
+ffmpeg -y -ss 00:01:49.733000 -to 00:01:52.533000 -i sample.mp4  output/43.flv
+ffmpeg -y -ss 00:01:52.733000 -to 00:01:55.633000 -i sample.mp4  output/44.flv
+ffmpeg -y -ss 00:01:55.833000 -to 00:01:59.666000 -i sample.mp4  output/45.flv
+ffmpeg -y -ss 00:01:59.866000 -to 00:02:06.300000 -i sample.mp4  output/46.flv
+ffmpeg -y -ss 00:02:06.500000 -to 00:02:12.599000 -i sample.mp4  output/47.flv
+ffmpeg -y -ss 00:02:12.799000 -to 00:02:14.233000 -i sample.mp4  output/48.flv
+ffmpeg -y -ss 00:02:14.433000 -to 00:02:18.066000 -i sample.mp4  output/49.flv
+ffmpeg -y -ss 00:02:18.266000 -to 00:02:20.499000 -i sample.mp4  output/50.flv
+ffmpeg -y -ss 00:02:21.299000 -to 00:02:22.666000 -i sample.mp4  output/52.flv
+ffmpeg -y -ss 00:02:22.866000 -to 00:02:25.966000 -i sample.mp4  output/53.flv
+ffmpeg -y -ss 00:02:26.166000 -to 00:02:31.066000 -i sample.mp4  output/54.flv
+ffmpeg -y -ss 00:02:31.266000 -to 00:02:34.533000 -i sample.mp4  output/55.flv
+ffmpeg -y -ss 00:02:34.733000 -to 00:02:39.366000 -i sample.mp4  output/56.flv
+ffmpeg -y -ss 00:02:39.566000 -to 00:02:42.399000 -i sample.mp4  output/57.flv
+ffmpeg -y -ss 00:02:42.599000 -to 00:02:45.433000 -i sample.mp4  output/58.flv
+ffmpeg -y -ss 00:02:45.633000 -to 00:02:47.799000 -i sample.mp4  output/59.flv
+ffmpeg -y -ss 00:02:47.999000 -to 00:02:50.966000 -i sample.mp4  output/60.flv
+ffmpeg -y -ss 00:02:51.166000 -to 00:02:53.866000 -i sample.mp4  output/61.flv
+ffmpeg -y -ss 00:02:54.066000 -to 00:02:58.799000 -i sample.mp4  output/62.flv
