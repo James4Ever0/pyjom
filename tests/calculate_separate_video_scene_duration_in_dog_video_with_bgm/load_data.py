@@ -58,4 +58,4 @@ elif flag == "render":
         os.mkdir("output")
     for index,( start, end, duration) in enumerate(sceneCuts):
         output = "output/%d.flv" % index
-        print("ffmpeg -ss %s -to %s -i %s  %s" % (start, end, filename, output))
+        print("ffmpeg -y -ss %s -to %s -i %s  %s" % (start, end, filename, output))
