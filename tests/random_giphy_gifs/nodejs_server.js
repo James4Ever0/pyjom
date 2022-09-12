@@ -11,7 +11,9 @@ function randomAPIKey() {
 }
 
 function getQueryParams(reqUrl) {
-
+    current_url = new URL('http://localhost' + req.url)
+    params = current_url.searchParams
+    return params
 }
 
 const requestListener = function(req, res) {
@@ -21,8 +23,7 @@ const requestListener = function(req, res) {
         res.writeHead(200);
         res.end('nodejs giphy server');
     } else if (req.url.startsWith('/random')) {
-        current_url = new URL('http://localhost' + req.url)
-        params = current_url.searchParams
+
         console.log(params, typeof(params))
         q = params.get('q')
             // def = params.get('def')
