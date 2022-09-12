@@ -42,7 +42,7 @@ function fallbackDefault(params,tag,valid,defaultParam) {
 const validEntries=['/random','/related','/trending','/search']
 
 function callbackGenerator(result,resultAcceptor){
-    resultAcceptor(JSON.stringify(result))
+    return {result) => {resultAcceptor(result)}
 }
 
 const requestListener=function(req,res) {
