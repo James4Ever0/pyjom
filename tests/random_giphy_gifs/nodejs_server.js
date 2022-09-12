@@ -10,6 +10,8 @@ const requestListener = function(req, res) {
         current_url = new URL('http://localhost' + req.url)
         params = current_url.searchParams
         console.log(params, typeof(params))
+        console.log(params['q'])
+        
             // console.log(req.params)
         res.end('random gifs:')
     } else {
@@ -20,5 +22,4 @@ const requestListener = function(req, res) {
 const server = http.createServer(requestListener);
 port = 8902
 server.listen(port);
-console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
