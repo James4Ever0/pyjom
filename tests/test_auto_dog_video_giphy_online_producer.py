@@ -7,12 +7,6 @@ autoArgs = {
 template_names = ["subtitle_detector.mdl.j2"] 
 
 wbRev = OnlineAutoContentProducer(
-    dirpath="./samples/video/",
-    reviewerLogs=[
-        "/root/Desktop/works/pyjom/logs/local/1648576077_705094.log",  # this is the paddleocr result.
-        "/root/Desktop/works/pyjom/logs/local/1652502047_091761.json",  # yolov5
-        "/root/Desktop/works/pyjom/logs/local/1652856912_480332.json",  # framedifference_talib
-    ],
     producer_filters={
         "yolov5": {"objects": ["dog", "cat"], "min_time": 2},
         "meta": {
