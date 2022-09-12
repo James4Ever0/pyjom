@@ -12,7 +12,7 @@ function randomAPIKey() {
 
     items = webApiKeys.concat(publicSdkKeys).concat(apiKeys).concat(sdkKeys)
         // deleted some unqualified api keys because they look different in length
-    var item = items[Math.floor(Math.random() * items.length)];
+    item = items[Math.floor(Math.random() * items.length)];
     return item
 }
 
