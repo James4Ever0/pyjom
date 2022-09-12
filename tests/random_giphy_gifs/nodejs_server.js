@@ -36,7 +36,9 @@ function getResultParsed(result, typeFilter){
     return filteredResult
 }
 
-def get
+def getGF(){
+    return 
+}
 
 async function getRandomGifs(keywords,type,callback) {
     gf=new GiphyFetch(randomAPIKey())
