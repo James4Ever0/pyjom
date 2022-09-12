@@ -14,7 +14,11 @@ function randomAPIKey() {
 function randInt(start, end){
     if (start>end){
         medium = end
-        st
+        end= start
+        start = medium
+    }
+    elif (start == end){
+        return start
     }
     return Math.floor(Math.random()*(end-start)+end)
 }
