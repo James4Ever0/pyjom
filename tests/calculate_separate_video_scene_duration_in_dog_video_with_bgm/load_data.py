@@ -25,7 +25,7 @@ for index, row in scenes.iterrows():
     # print(row)
     # breakpoint()
     start, end = row["Start Timecode"], row["End Timecode"]
-    sceneCuts.append((start, end))
+    sceneCuts.append((start, end, ))
     # print(start, end)
     # please calculate the length!
     length = row["Length (seconds)"]
@@ -47,6 +47,6 @@ if flag == "calculate_statistics":
     # shall we adjust this accordingly? how to generate this shit?
 elif flag == "generate_ffplay":
     filename = "sample.mp4"
-    for start, end in sceneCuts:
+    for( start, end, duration) in sceneCuts:
         print("ffplay -ss %s -t %s -i %s " % (start, duration, filename))
         print("sleep 3")
