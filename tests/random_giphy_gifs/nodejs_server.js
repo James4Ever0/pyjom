@@ -1,6 +1,6 @@
 const http = require('http');
 // const url = require('url');
-const { GiphyFetch } = require('@giphy/js-fetch-api')
+const { GiphyFetch } = require('@giphy/js-fetch-api');
 
 function randomAPIKey() {
     var items = [
