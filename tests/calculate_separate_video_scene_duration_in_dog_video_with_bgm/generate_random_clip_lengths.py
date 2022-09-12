@@ -13,6 +13,7 @@ from scipy.stats import truncnorm
 a, b = (myclip_a - loc) / scale, (myclip_b - loc) / scale
 
 randVar = truncnorm(a,b)
+randomFunction = lambda: randVar.rvs(1)
 # inBound = lambda number: min(nMax, max(nMin, number))
 # randomFunction = lambda: inBound(random.gauss(mean, std))
 
