@@ -20,11 +20,12 @@ timecodeList[0] = "00:00:00.000"
 scenes = pandas.read_csv(scenes)
 
 lengths = []
-
+sceneCuts = []
 for index, row in scenes.iterrows():
     # print(row)
     # breakpoint()
     start, end = row["Start Timecode"], row["End Timecode"]
+    sceneCuts.append((start, end))
     # print(start, end)
     # please calculate the length!
     length = row['Length (seconds)']
