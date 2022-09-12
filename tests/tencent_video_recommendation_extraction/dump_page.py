@@ -6,7 +6,7 @@ def run(playwright):
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://v.qq.com/x/page/m0847y71q98.html")
-    page.screenshot(path="screenshot.png")
+    content = 
     browser.close()
 
 with sync_playwright() as playwright:
