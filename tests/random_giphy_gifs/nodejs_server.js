@@ -31,7 +31,7 @@ const typeArray = ['gifs', 'text', 'videos', 'stickers']
 function fallbackDefault(param, tag, valid, default) {
     if (valid.indexOf(param) == -1) {
         // type = 'gifs'
-        console.log("type undefined. falling back to default: ",)
+        console.log(tag+" undefined. falling back to default: "+default)
     }
 }
 
