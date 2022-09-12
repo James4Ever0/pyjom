@@ -113,6 +113,9 @@ const requestListener=function(req,res) {
             }
             else if (req.url.startsWith('/trending'))
             else if (req.url.startsWith('/trending'))
+            else{
+                res.end()
+            }
         }
         else {
             res.end('no search keywords.')
