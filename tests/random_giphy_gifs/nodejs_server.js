@@ -7,9 +7,10 @@ const requestListener = function(req, res) {
         res.writeHead(200);
         res.end('nodejs giphy server');
     } else if (req.url.startsWith('/random')) {
-        params = current_url = new URL('http://localhost' + req.url)
-
-        // console.log(req.params)
+        current_url = new URL('http://localhost' + req.url)
+        params = current_url.searchParams
+        console.log(params)
+            // console.log(req.params)
         res.end('random gifs:')
     } else {
         res.end('not being right')
