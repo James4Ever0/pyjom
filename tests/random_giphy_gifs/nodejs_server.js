@@ -59,7 +59,7 @@ function getGF() {
 }
 
 function getApi(){
-    return 
+    return GiphyApi(randomAPIKey())
 }
 
 async function getRandomGif(keywords, type, callback) {
