@@ -27,6 +27,26 @@ function randInt(start, end) {
     return Math.floor(Math.random() * (end - start) + end)
 }
 
+function processElem(elem){
+    dataType = elem['type']
+    if (typeFilter.indexOf(dataType) == -1) {
+        dataId = elem['id']
+        dataUrl = elem['url']
+        title = elem['title']
+        original = result['images']['original']
+        height = original['height']
+        width = original['width']
+        url = original['url']
+        newElem = {
+            id: dataId,
+            url: dataUrl,
+            title: title,
+            media: { height: height, width: width, url: url }
+    return newElem
+
+        }
+}
+
 function getResultParsed(result, typeFilter) {
     filteredResult = []
     if ('data' in result) {
