@@ -19,6 +19,8 @@ timecodeList[0] = "00:00:00.000"
 
 scenes = pandas.read_csv(scenes)
 
+lengths = []
+
 for index, row in scenes.iterrows():
     # print(row)
     # breakpoint()
@@ -28,3 +30,6 @@ for index, row in scenes.iterrows():
     length = row['Length (seconds)']
     lengths.append(length)
     # print(length, type(length)) # float.
+
+import numpy
+
