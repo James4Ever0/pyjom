@@ -41,7 +41,7 @@ function fallbackDefault(params,tag,valid,defaultParam) {
 
 const validEntries=['/random','/related','/trending','/search']
 
-function callbackGenerator(result, typeFilter,resultAcceptor){
+function callbackGenerator(result,resultAcceptor){
     data = result['data']
     for (elem of data){
         if (elem['type'] == 'gif')
