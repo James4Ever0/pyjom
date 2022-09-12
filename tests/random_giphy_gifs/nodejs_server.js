@@ -7,5 +7,5 @@ const requestListener = function(req, res) {
 }
 
 const server = http.createServer(requestListener);
-server.listen(8902);
-print('server running on http://localhost:8902');
+server.listen(89 port);
+console.log('server running on http://localhost:' + port);
