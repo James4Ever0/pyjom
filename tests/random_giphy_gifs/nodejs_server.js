@@ -46,8 +46,8 @@ const requestListener = function(req, res) {
     } else if (req.url.startsWith('/random')) {
         params = getQueryParams(req.url)
         q = params.get('q')
-        type = params.get('type')
-        rating = params.get('rating')
+        type = fallbackDefault(params.get('type'), 'ty'
+        rating = fallbackDefault(params.get('rating'), 'rating'
         if (q == null) {
             console.log('search keywords:', q)
             
