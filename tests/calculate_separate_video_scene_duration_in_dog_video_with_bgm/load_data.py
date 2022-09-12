@@ -17,3 +17,5 @@ timecodeList =timecodeList.split(",")
 timecodeList[0] = "00:00:00.000"
 
 scenes = pandas.read_csv(scenes)
+
+for 
