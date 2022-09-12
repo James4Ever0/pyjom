@@ -53,4 +53,5 @@ elif flag == "generate_ffplay":
         print("sleep 3")
 elif flag == "render":
     for index,( start, end, duration) in enumerate(sceneCuts):
+        output = "output/%d.flv"
         print("ffplay -ss %s -to %s -i %s -autoexit %s" % (start, end, filename, output))
