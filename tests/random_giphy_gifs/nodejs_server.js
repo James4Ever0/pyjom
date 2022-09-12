@@ -125,7 +125,7 @@ const requestListener = function(req, res) {
         console.log('search keywords:', q)
         if (q != null) {
             if (req.url.startsWith('/random')) {
-                getRandomGifs(q, type, callback)
+                // getRandomGifs(q, type, callback) // this only returns a single random gif. deprecated.
             } else if (req.url.startsWith('/search')) {
                 getSearchGifs(q, sort, limit, offset, type, rating, callback)
             } else if (req.url.startsWith('/related')) {
