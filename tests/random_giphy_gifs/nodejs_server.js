@@ -105,11 +105,11 @@ async function getRandomGif(keywords, type, callback) {
 async function getRandomGifs(keywords, rating, callback) {
     getApi().random({ tag: keywords, rating: rating, fmt: 'json' }, function(err, result) {
         console.log('ERROR?', err); //null if normal.
-        if (err !=null){
+        if (err != null) {
             callback([]);
-        }else{}
-        
-        callback(result)
+        } else {
+            callback(result)
+        }
     })
 }
 async function getSearchGifs(keywords, sort, limit, offset, type, rating, lang, callback) {
