@@ -117,7 +117,7 @@ const requestListener=function(req,res) {
             }
             else if (req.url.startsWith('/trending'))
             {
-                
+                getTrendingGifs(q,)
             }
             else{
                 res.end("don't know how you get here")
