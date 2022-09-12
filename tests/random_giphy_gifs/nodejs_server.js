@@ -7,7 +7,7 @@ const requestListener = function(req, res) {
         res.writeHead(200);
         res.end('nodejs giphy server');
     } else if (req.url.startsWith('/random')) {
-        params =
+        current_url = new URL
             // console.log(req.params)
             res.end('random gifs:')
     } else {
