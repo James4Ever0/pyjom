@@ -33,8 +33,7 @@ const requestListener = function(req, res) {
             console.log('search keywords:', q)
             if (typeArray.indexOf(type) == -1) {
                 type = 'gifs'
-                console.log("type undefined. falling back to default gifs")
-                
+                console.log("type undefined. falling back to default: gifs")
             }
         }
 
