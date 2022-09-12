@@ -115,15 +115,15 @@ const requestListener=function(req,res) {
             {
                 getRelatedGifs(q, limit,offset, type,callback)
             }
-            else if (req.url.startsWith('/trending'))
-            {
-                getTrendingGifs()
-            }
             else{
                 res.end("don't know how you get here")
             }
         }
         else {
+            if (req.url.startsWith('/trending'))
+            {
+                getTrendingGifs()
+            }else{}
             res.end('no search keywords.')
         }
         // def = params.get('def')
