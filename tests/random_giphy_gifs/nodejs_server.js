@@ -87,7 +87,7 @@ function getResultParsed(result, typeFilter) {
         }
     }
     finalResult = {data:filteredResult}
-    if 
+    if ('pagina' in result)
     return JSON.stringify(finalResult)
 }
 
