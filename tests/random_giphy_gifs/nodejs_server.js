@@ -9,7 +9,7 @@ const requestListener = function(req, res) {
     } else if (req.url.startsWith('/random')) {
         current_url = new URL('http://localhost' + req.url)
         params = current_url.searchParams
-        console.log(params)
+        console.log(params, typeof(params))
             // console.log(req.params)
         res.end('random gifs:')
     } else {
