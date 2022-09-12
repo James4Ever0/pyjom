@@ -51,14 +51,15 @@ const requestListener = function(req, res) {
         type = fallbackDefault(params, 'type',typeArray,typeArray[0])
         // rating = fallbackDefault(params, 'rating',ratingArray, ratingArray[1])
         // no rating? wtf?
-        if (q == null) {
+        if (q != null) {
             console.log('search keywords:', q)
+        res.end('random gifs:')
+
         }
 
         // def = params.get('def')
         // console.log(def, def == null)
         // console.log(req.params)
-        res.end('random gifs:')
     } else {
         res.end('not being right')
     }
