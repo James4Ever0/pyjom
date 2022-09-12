@@ -13,9 +13,9 @@ function randomAPIKey() {
     return item
 }
 
-async function getRandomGifs(keywords,type,rating,callback) {
+async function getRandomGifs(keywords,type,callback) {
     gf=new GiphyFetch(randomAPIKey())
-    result=await gf.random({tag: keywords,type: type,rating: rating})
+    result=await gf.random({tag: keywords,type: type})
     callback(result)
 }
 
@@ -56,7 +56,7 @@ const requestListener=function(req,res) {
         console.log('search keywords:',q)
         if(q!=null) {
             if(req.url.startsWith('/random')){
-                gifs = getRandomGifs()
+                gifs = getRandomGifs(q, type)
             }
             res.end(gifs)
         }
