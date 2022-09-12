@@ -133,14 +133,14 @@ async function getSearchGifs(keywords, sort, limit, offset, type, rating, lang, 
 async function getRelatedGifs(keywords, limit, offset, type, callback) {
     // sort in 'recent', 'relevant'
     try{
+        result = await getGF().related(keywords, { limit: limit, offset: offset, type: type })
+        callback(result)
 
     }catch(e) {
         console.log(e)
-        console.log("error when calling getSear")
+        console.log("error when calling getRelatedGifs")
         callback([])
     }
-    result = await getGF().related(keywords, { limit: limit, offset: offset, type: type })
-    callback(result)
 }
 async function getTrendingGifs(limit, offset, type, rating, callback) {
     // sort in 'recent', 'relevant'
