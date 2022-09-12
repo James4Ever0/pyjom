@@ -24,8 +24,8 @@ const requestListener = function(req, res) {
         res.writeHead(200);
         res.end('nodejs giphy server');
     } else if (req.url.startsWith('/random')) {
-        params =
-            q = params.get('q')
+        params = getQueryParams(req.url)
+        q = params.get('q')
             // def = params.get('def')
             // console.log(q, q == null)
             // console.log(def, def == null)
