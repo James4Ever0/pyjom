@@ -1,0 +1,1 @@
+ls -1 output | awk '{print "ffplay -i "$1" -autoexit" }'
