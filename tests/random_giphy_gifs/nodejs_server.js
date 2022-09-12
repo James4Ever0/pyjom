@@ -54,6 +54,8 @@ function processElem(elem, typeFilter) {
     return null
 }
 
+function
+
 function getResultParsed(result, typeFilter) {
     filteredResult = []
     if ('data' in result) {
