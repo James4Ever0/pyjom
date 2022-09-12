@@ -7,4 +7,4 @@ nMin, nMax = 0.6, 7.833
 
 import random
 
-function = random.gauss()
+function = random.gauss(mean, std)
