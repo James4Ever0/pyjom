@@ -75,7 +75,7 @@ elif flag == "render":
         print("ffmpeg -y -ss %s -to %s -i %s  %s" % (start2, end2, filename, output))
 elif flag == "filter": # to make sure the selected set will be evenly spaced. no two elements will get closer to each other than 5 seconds.
     import random
-    fakeQualificationFunction = lambda: random.randrange(0.6,7.833)
+    fakeQualificationFunction = lambda: random.uniform(0.6,7.833)
     fakeAcceptFunction = lambda: random.random() > 0.5
     # select the closest one! must be closer than 0.9 to 1.1
     candidates = []
