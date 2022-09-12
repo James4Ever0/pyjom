@@ -86,7 +86,6 @@ const requestListener=function(req,res) {
         else {
             res.end('no search keywords.')
         }
-
         // def = params.get('def')
         // console.log(def, def == null)
         // console.log(req.params)
