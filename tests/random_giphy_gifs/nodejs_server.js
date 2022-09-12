@@ -168,7 +168,7 @@ const requestListener = function(req, res) {
         limit = fallbackDefault(params, 'limit', limitArray, 100)
         offset = fallbackDefault(params, 'offset', offsetArray, randInt(0, 100))
         sort = fallbackDefault(params, 'sort', sortArray, sortArray[1])
-        sort = fallbackDefault(params, 'sort', sortArray, 'en')
+        lang = fallbackDefault(params, 'lang', langArray, 'en')
         console.log('search keywords:', q)
         if (q != null) {
             if (req.url.startsWith('/random')) {
