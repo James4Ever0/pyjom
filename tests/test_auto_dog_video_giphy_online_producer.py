@@ -1,4 +1,4 @@
-# ld_library_path 
+# ld_library_path is handled externally using env
 from test_commons import *
 from pyjom.primitives import *
 autoArgs = {
@@ -6,7 +6,7 @@ autoArgs = {
 } 
 template_names = ["subtitle_detector.mdl.j2"] 
 
-wbRev = FilesystemAutoContentProducer(
+wbRev = OnlineAutoContentProducer(
     dirpath="./samples/video/",
     reviewerLogs=[
         "/root/Desktop/works/pyjom/logs/local/1648576077_705094.log",  # this is the paddleocr result.
