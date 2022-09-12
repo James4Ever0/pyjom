@@ -48,7 +48,7 @@ const requestListener = function(req, res) {
         params = getQueryParams(req.url)
         q = params.get('q')
         type = fallbackDefault(params, 'type',typeArray,typeArray[0])
-        rating = fallbackDefault(params, 'rating',ratingArray, ratingArray[1])
+        // rating = fallbackDefault(params, 'rating',ratingArray, ratingArray[1])
         if (q == null) {
             console.log('search keywords:', q)
             
