@@ -48,5 +48,5 @@ if flag == "calculate_statistics":
 elif flag == "generate_ffplay":
     filename = "sample.mp4"
     for start, end in sceneCuts:
-        print("ffplay-ss %s -to %s -i %s " %( filename, start, end))
+        print("ffplay -ss %s -to %s -i %s " %(  start, end,filename))
         print('sleep 3')
