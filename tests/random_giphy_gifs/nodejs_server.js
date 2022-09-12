@@ -47,7 +47,7 @@ const requestListener = function(req, res) {
     if (req.url == "/") {
         res.writeHead(200);
         res.end('nodejs giphy server');
-    } else if (req.url.startsWith('/random')) {
+    } else if () {
         params = getQueryParams(req.url)
         q = params.get('q')
         type = fallbackDefault(params, 'type',typeArray,typeArray[0])
@@ -55,6 +55,7 @@ const requestListener = function(req, res) {
         // no rating? wtf?
         console.log('search keywords:', q)
         if (q != null) {
+            req.url.startsWith('/random')
         res.end(gifs)
         }
         else{
