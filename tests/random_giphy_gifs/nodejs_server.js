@@ -34,6 +34,9 @@ function getResultParsed(result, typeFilter) {
         if (Array.isArray(data)){
 
         }
+        else{
+            
+        }
         // console.log('data:', data)
         for (elem of data) {
             dataType = elem['type']
