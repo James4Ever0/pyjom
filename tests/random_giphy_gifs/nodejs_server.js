@@ -47,9 +47,9 @@ function processElem(elem) {
             }
             return newElem
         }
-    }else{
+    } else {
         console.log("some weird data/element encountered. please check.")
-        cosole.l
+        console.log(elem)
     }
     return null
 }
