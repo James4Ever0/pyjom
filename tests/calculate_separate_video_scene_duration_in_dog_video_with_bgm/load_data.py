@@ -47,5 +47,6 @@ if flag == "calculate_statistics":
     # shall we adjust this accordingly? how to generate this shit?
 elif flag == "generate_ffplay":
     filename = "sample.mp4"
-    for start, end in start_ends:
+    for start, end in sceneCuts:
         print("ffplay -i %s -ss %s -to %s" %( filename, start, end))
+        print('sleep 3')
