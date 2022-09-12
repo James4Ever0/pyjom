@@ -55,8 +55,8 @@ elif flag == "generate_ffplay":
 elif flag == "render":
     import os
     import datetime
-    lambda timeString: datetime.datetime.strptime(timeString,"%H:%M:%S.%f")
-    lambda timeObject: timeObject.strftime("%H:%M:%S.%f")
+    getTimeObject = lambda timeString: datetime.datetime.strptime(timeString,"%H:%M:%S.%f")
+    getTimeString = lambda timeObject: timeObject.strftime("%H:%M:%S.%f")
     if not os.path.exists("output"):
         os.mkdir("output")
     for index,( start, end, duration) in enumerate(sceneCuts):
