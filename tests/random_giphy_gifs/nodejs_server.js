@@ -35,25 +35,11 @@ function getResultParsed(result, typeFilter) {
 
         }
         else{
-            
+
         }
         // console.log('data:', data)
         for (elem of data) {
-            dataType = elem['type']
-            if (typeFilter.indexOf(dataType) == -1) {
-                dataId = elem['id']
-                dataUrl = elem['url']
-                title = elem['title']
-                original = result['images']['original']
-                height = original['height']
-                width = original['width']
-                url = original['url']
-                newElem = {
-                    id: dataId,
-                    url: dataUrl,
-                    title: title,
-                    media: { height: height, width: width, url: url }
-                }
+
                 filteredResult.push(newElem)
             }
         }
