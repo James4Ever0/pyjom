@@ -86,7 +86,8 @@ function getResultParsed(result, typeFilter) {
             }
         }
     }
-    return JSON.stringify(filteredResult)
+    finalResult = {data:filteredD}
+    return JSON.stringify(finalResult)
 }
 
 function getGF() {
