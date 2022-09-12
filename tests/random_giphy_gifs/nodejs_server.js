@@ -41,6 +41,8 @@ function fallbackDefault(params,tag,valid,defaultParam) {
 
 const validEntries=['/random','/related','/trending','/search']
 
+
+
 const requestListener=function(req,res) {
     // use 'less' to scan this beast?
     console.log("REQUEST AT:",req.url,req.method)
@@ -56,7 +58,7 @@ const requestListener=function(req,res) {
         console.log('search keywords:',q)
         if(q!=null) {
             if(req.url.startsWith('/random')){
-                gifs = getRandomGifs(q, type)
+                gifs = getRandomGifs(q, type, callback)
             }
             res.end(gifs)
         }
