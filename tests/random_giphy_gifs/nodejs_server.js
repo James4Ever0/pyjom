@@ -13,6 +13,8 @@ function randomAPIKey() {
     return item
 }
 
+
+
 async function getRandomGifs(keywords,type,callback) {
     gf=new GiphyFetch(randomAPIKey())
     result=await gf.random({tag: keywords,type: type})
