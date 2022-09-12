@@ -39,7 +39,7 @@ function fallbackDefault(params, tag, valid, defaultParam) {
     return param
 }
 
-const validEntries = ['/random','/related']
+const validEntries = ['/random','/related','/trending','']
 
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
