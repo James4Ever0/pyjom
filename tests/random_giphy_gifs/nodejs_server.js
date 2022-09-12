@@ -14,7 +14,9 @@ function randomAPIKey() {
 }
 
 function getResultParsed(result){
-    
+    if ('data' in result){
+        for (elem of result['data'])
+    }
 }
 
 async function getRandomGifs(keywords,type,callback) {
