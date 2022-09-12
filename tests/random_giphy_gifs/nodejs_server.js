@@ -59,7 +59,6 @@ const requestListener=function(req,res) {
             if(req.url.startsWith('/random')){
                 gifs = getRandomGifs(q, type, (result) => res.end(result))
             }
-            res.end(gifs)
         }
         else {
             res.end('no search keywords.')
