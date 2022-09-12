@@ -28,6 +28,8 @@ function getQueryParams(reqUrl) {
 
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 
+function fallbackDefault()
+
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
     console.log("REQUEST AT:", req.url, req.method)
@@ -38,7 +40,7 @@ const requestListener = function(req, res) {
         params = getQueryParams(req.url)
         q = params.get('q')
         type = params.get('type')
-        rating = params.get('ra')
+        rating = params.get('rating')
         if (q == null) {
             console.log('search keywords:', q)
             if (typeArray.indexOf(type) == -1) {
