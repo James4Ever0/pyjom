@@ -122,7 +122,7 @@ const requestListener=function(req,res) {
         else {
             if (req.url.startsWith('/trending'))
             {
-                getTrendingGifs(limit, offset, rating,)
+                getTrendingGifs(limit, offset, type,rating,callback)
             }else{ res.end('no search keywords.')}
            
         }
