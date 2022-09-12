@@ -25,6 +25,7 @@ function randInt(start, end) {
 function getResultParsed(result, typeFilter) {
     filteredResult = []
     if ('data' in result) {
+        console.log('data:', data)
         for (elem of result['data']) {
             dataType = elem['type']
             if (typeFilter.indexOf(dataType) == -1) {
