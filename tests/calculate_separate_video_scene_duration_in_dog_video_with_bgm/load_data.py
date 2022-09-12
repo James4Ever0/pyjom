@@ -10,6 +10,9 @@ with open(scenes, 'r') as f:
     lines = content.split("\n")
     timecodeList = lines[0]
     scenes = "\n".join(lines[1:])
-    scenes = from io import StringIO
+    from io import StringIO
+    scenes = StringIO(scenes)
+
+timecodeList =timecodeList.split(",")
 
 scenes = pandas.read_csv(scenes)
