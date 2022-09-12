@@ -17,6 +17,8 @@ function getQueryParams(reqUrl) {
     return params
 }
 
+const typeArray = ['']
+
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
     console.log("REQUEST AT:", req.url, req.method)
@@ -27,9 +29,9 @@ const requestListener = function(req, res) {
         params = getQueryParams(req.url)
         q = params.get('q')
         type = pamars.get('type')
-        if
+        if (type is)
         // def = params.get('def')
-        console.log(q, q == null)
+            console.log(q, q == null)
             // console.log(def, def == null)
             // console.log(req.params)
         res.end('random gifs:')
