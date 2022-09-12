@@ -34,6 +34,7 @@ const requestListener = function(req, res) {
             if (typeArray.indexOf(type) == -1) {
                 type = 'gifs'
                 console.log("type undefined. falling back to default gifs")
+                
             }
         }
 
