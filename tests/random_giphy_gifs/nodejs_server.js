@@ -39,6 +39,8 @@ function fallbackDefault(params, tag, valid, defaultParam) {
     return param
 }
 
+const validEntries = ['/random','/related']
+
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
     console.log("REQUEST AT:", req.url, req.method)
