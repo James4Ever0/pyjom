@@ -41,3 +41,4 @@ print(min(lengths), max(lengths))
 min(lengths), max(lengths)
 # 0.6 7.833
 # strange though.
+# shall we adjust this accordingly? how to generate this shit?
