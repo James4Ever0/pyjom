@@ -86,7 +86,7 @@ const requestListener=function(req,res) {
         q=params.get('q')
         type=fallbackDefault(params,'type',typeArray,typeArray[0])
         rating = fallbackDefault(params, 'rating',ratingArray, ratingArray[1])
-        // no rating? wtf?
+        limit = fallbackDefault(params, '',ratingArray, 100)
         console.log('search keywords:',q)
         callback = (result) => res.end(getResultParsed(result, ['text', 'sticker'])
         if(q!=null) {
