@@ -8,7 +8,7 @@ nMin, nMax = 0.6, 7.833
 import random
 
 inBound = lambda number: min(nMax, max(nMin, number))
-randomFunction = lambda: random.gauss(mean, std)
+randomFunction = lambda: inBound(random.gauss(mean, std))
 
 for _ in range(30):
     print(randomFunction())
