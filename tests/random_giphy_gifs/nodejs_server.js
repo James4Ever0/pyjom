@@ -62,6 +62,7 @@ function getResultParsed(result, typeFilter) {
         }
         // console.log('data:', data)
         for (elem of data) {
+            newElem = processElem(elem)
 
             filteredResult.push(newElem)
         }
