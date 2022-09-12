@@ -101,40 +101,43 @@ const validEntries = ['/random', '/related', '/trending', '/search']
 
 
 const requestListener = function(req, res) {
-        // use 'less' to scan this beast?
-        console.log("REQUEST AT:", req.url, req.method)
-        if (req.url == "/") {
-            res.writeHead(200);
-            res.end('nodejs giphy server');
-        } else if (validEntries.indexOf(req.url.split("?")[0]) != -1) {
-            callback = (result) => res.end(getResultParsed(result, ['text', 'sticker']))
+    // use 'less' to scan this beast?
+    console.log("REQUEST AT:", req.url, req.method)
+    if (req.url == "/") {
+        res.writeHead(200);
+        res.end('nodejs giphy server');
+    } else if (validEntries.indexOf(req.url.split("?")[0]) != -1) {
+        callback = (result) => res.end(getResultParsed(result, ['text', 'sticker']))
 
-                params = getQueryParams(req.url) q = params.get('q') type = fallbackDefault(params, 'type', typeArray, typeArray[0]) rating = fallbackDefault(params, 'rating', ratingArray, ratingArray[1]) limit = fallbackDefault(params, 'limit', limitArray, 100) offset = fallbackDefault(params, 'offset', offsetArray, randInt(100, 500)) sort = fallbackDefault(params, 'sort', sortArray, sortArray[1]) console.log('search keywords:', q) if (q != null) {
-                    if (req.url.startsWith('/random')) {
-                        getRandomGifs(q, type, callback)
-                    } else if (req.url.startsWith('/search')) {
-                        getSearchGifs(q, sort, limit, offset, type, rating, callback)
-                    } else if (req.url.startsWith('/related')) {
-                        getRelatedGifs(q, limit, offset, type, callback)
-                    } else {
-                        res.end("don't know how you get here")
-                    }
+        params = getQueryParams(req.url) 
+        q = params.get('q') 
+        type = fallbackDefault(params, 'type', typeArray, typeArray[0]) 
+        rating = fallbackDefault(params, 'rating', ratingArray, ratingArray[1]) 
+        limit = fallbackDefault(params, 'limit', limitArray, 100) offset = fallbackDefault(params, 'offset', offsetArray, randInt(100, 500)) sort = fallbackDefault(params, 'sort', sortArray, sortArray[1]) console.log('search keywords:', q) if (q != null) {
+                if (req.url.startsWith('/random')) {
+                    getRandomGifs(q, type, callback)
+                } else if (req.url.startsWith('/search')) {
+                    getSearchGifs(q, sort, limit, offset, type, rating, callback)
+                } else if (req.url.startsWith('/related')) {
+                    getRelatedGifs(q, limit, offset, type, callback)
                 } else {
-                    if (req.url.startsWith('/trending')) {
-                        getTrendingGifs(limit, offset, type, rating, callback)
-                    } else { res.end('no search keywords.') }
-
+                    res.end("don't know how you get here")
                 }
-                // def = params.get('def')
-                // console.log(def, def == null)
-                // console.log(req.params)
-            }
-            else {
-                res.end('not being right')
-            }
-        }
+            } else {
+                if (req.url.startsWith('/trending')) {
+                    getTrendingGifs(limit, offset, type, rating, callback)
+                } else { res.end('no search keywords.') }
 
-        const server = http.createServer(requestListener);
-        port = 8902
-        server.listen(port);
-        console.log('server running on http://localhost:' + port);
+            }
+            // def = params.get('def')
+            // console.log(def, def == null)
+            // console.log(req.params)
+    } else {
+        res.end('not being right')
+    }
+}
+
+const server = http.createServer(requestListener);
+port = 8902
+server.listen(port);
+console.log('server running on http://localhost:' + port);
