@@ -11,8 +11,9 @@ const requestListener = function(req, res) {
         params = current_url.searchParams
         console.log(params, typeof(params))
         q = params.get('q')
+        def = params.get('def')
         console.log(q, q == null)
-        console.log(params.get('def'))
+        console.log(def, def == null)
 
         // console.log(req.params)
         res.end('random gifs:')
