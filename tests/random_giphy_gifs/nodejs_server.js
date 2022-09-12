@@ -41,9 +41,6 @@ function fallbackDefault(params,tag,valid,defaultParam) {
 
 const validEntries=['/random','/related','/trending','/search']
 
-function callbackGenerator(result,resultAcceptor){
-    return () => {resultAcceptor(result)}
-}
 
 const requestListener=function(req,res) {
     // use 'less' to scan this beast?
@@ -60,7 +57,7 @@ const requestListener=function(req,res) {
         console.log('search keywords:',q)
         if(q!=null) {
             if(req.url.startsWith('/random')){
-                gifs = getRandomGifs(q, type, callback)
+                gifs = getRandomGifs(q, type, (result) => )
             }
             res.end(gifs)
         }
