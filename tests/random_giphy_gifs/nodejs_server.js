@@ -27,7 +27,7 @@ function getResultParsed(result, typeFilter){
             width = original['width']
             url = original['url']
             newElem = {
-                
+                id:dataId, url: dataUrl, title:title, height:height, width:width, url:url
             }
             filteredResult.push(newElem)
         }
