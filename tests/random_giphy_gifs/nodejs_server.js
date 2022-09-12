@@ -28,6 +28,9 @@ function randInt(start, end) {
 }
 
 function processElem(elem){
+    if ('type' in elem){
+        
+    }
     dataType = elem['type']
     if (typeFilter.indexOf(dataType) == -1) {
         dataId = elem['id']
@@ -45,7 +48,9 @@ function processElem(elem){
 
         }
     return newElem
-
+}
+else{
+    return null
 }
 
 function getResultParsed(result, typeFilter) {
