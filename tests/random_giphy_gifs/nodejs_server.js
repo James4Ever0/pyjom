@@ -13,10 +13,10 @@ function randomAPIKey() {
     return item
 }
 
-function getResultParsed(result){
+function getResultParsed(result, typeFilter){
     if ('data' in result){
         for (elem of result['data']){
-            
+            dataType = elem['type']
         }
     }
 }
