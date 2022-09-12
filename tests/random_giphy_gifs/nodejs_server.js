@@ -42,9 +42,10 @@ function processElem(elem){
             url: dataUrl,
             title: title,
             media: { height: height, width: width, url: url }
-    return newElem
 
         }
+    return newElem
+
 }
 
 function getResultParsed(result, typeFilter) {
