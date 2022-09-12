@@ -27,7 +27,7 @@ function getQueryParams(reqUrl) {
 }
 
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
-
+const ratingArray = ['y', 'g','pg','pg-13','p'
 function fallbackDefault(params, tag, valid, defaultParam) {
     param = params.get(tag)
     if (valid.indexOf(param) == -1) {
