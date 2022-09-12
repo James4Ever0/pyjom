@@ -101,7 +101,7 @@ const requestListener=function(req,res) {
         rating = fallbackDefault(params, 'rating',ratingArray, ratingArray[1])
         limit = fallbackDefault(params, 'limit',limitArray, 100)
         offset = fallbackDefault(params, 'offset', offsetArray, randInt(100,500))
-        sort = fallbackDefault(params, 'sort', sorttArray, sortArray[])
+        sort = fallbackDefault(params, 'sort', sortArray, sortArray[1])
         console.log('search keywords:', q)
         callback = (result) => res.end(getResultParsed(result, ['text', 'sticker'])
         if(q!=null) {
