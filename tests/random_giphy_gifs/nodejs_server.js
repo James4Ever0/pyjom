@@ -22,7 +22,8 @@ function getResultParsed(result, typeFilter){
             title = elem['title']
             original = result['images']['original']
             height = original['height']
-            wid = original['wid']
+            width = original['width']
+            url = original['url']
         }
     }
 }
