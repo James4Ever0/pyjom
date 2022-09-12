@@ -99,7 +99,10 @@ function getApi() {
 
 async function getRandomGif(keywords, type, callback) {
     try{
-        
+
+    }catch(e) {
+        console.log(e)
+        console.log("error when calling getSear")
     }
     result = await getGF().random({ tag: keywords, type: type })
     callback(result)
@@ -117,7 +120,10 @@ function getRandomGifs(keywords, rating, callback) {
 async function getSearchGifs(keywords, sort, limit, offset, type, rating, lang, callback) {
     // sort in 'recent', 'relevant'
     try{
-        
+
+    }catch(e) {
+        console.log(e)
+        console.log("error when calling getSearchGifs")
     }
     result = await getGF().search(keywords, { sort: sort, limit: limit, offset: offset, type: type, rating: rating, lang: lang })
     callback(result)
@@ -125,7 +131,10 @@ async function getSearchGifs(keywords, sort, limit, offset, type, rating, lang, 
 async function getRelatedGifs(keywords, limit, offset, type, callback) {
     // sort in 'recent', 'relevant'
     try{
-        
+
+    }catch(e) {
+        console.log(e)
+        console.log("error when calling getSear")
     }
     result = await getGF().related(keywords, { limit: limit, offset: offset, type: type })
     callback(result)
@@ -133,7 +142,10 @@ async function getRelatedGifs(keywords, limit, offset, type, callback) {
 async function getTrendingGifs(limit, offset, type, rating, callback) {
     // sort in 'recent', 'relevant'
     try{
-        
+
+    }catch(e) {
+        console.log(e)
+        console.log("error when calling getSear")
     }
     result = await getGF().trending({ limit: limit, offset: offset, type: type, rating: rating })
     callback(result)
