@@ -1,1 +1,1 @@
-yt-dlp https://www.bilibili.com/video/BV1HS4y1w7PK
+yt-dlp -o https://www.bilibili.com/video/BV1HS4y1w7PK
