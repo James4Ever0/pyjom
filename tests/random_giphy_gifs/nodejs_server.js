@@ -13,7 +13,8 @@ function randomAPIKey() {
 function getQueryParams(reqUrl) {
     current_url = new URL('http://localhost' + req.url)
     params = current_url.searchParams
-    console.log(params) return params
+    console.log('query parameters:', params)
+    return params
 }
 
 const requestListener = function(req, res) {
@@ -39,7 +40,6 @@ const requestListener = function(req, res) {
 const server = http.createServer(requestListener);
 port = 8902
 server.listen(port);
-console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
 console.log('server running on http://localhost:' + port);
