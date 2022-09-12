@@ -13,7 +13,9 @@ function randomAPIKey() {
     return item
 }
 
-function get
+function getResultParsed(result){
+    
+}
 
 async function getRandomGifs(keywords,type,callback) {
     gf=new GiphyFetch(randomAPIKey())
