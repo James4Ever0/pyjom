@@ -26,7 +26,9 @@ const requestListener = function(req, res) {
     } else if (req.url.startsWith('/random')) {
         params = getQueryParams(req.url)
         q = params.get('q')
-            // def = params.get('def')
+        type = pamars.get('type')
+        if
+        // def = params.get('def')
         console.log(q, q == null)
             // console.log(def, def == null)
             // console.log(req.params)
