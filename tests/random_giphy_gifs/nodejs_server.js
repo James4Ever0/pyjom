@@ -56,7 +56,7 @@ async function getRandomGifs(keywords,type,callback) {
 }
 async function getSearchGifs(keywords, sort, limit,offset, type,rating,callback){
     // sort in 'recent', 'relevant'
-    result = await getGF().search(keywords, {sort:sort, limit:limit,offset:offset,type:type , rat})
+    result = await getGF().search(keywords, {sort:sort, limit:limit,offset:offset,type:type , rating:rating})
     callback(result)
 }
 
@@ -137,9 +137,4 @@ const requestListener=function(req,res) {
 const server=http.createServer(requestListener);
 port=8902
 server.listen(port);
-console.log('server running on http://localhost:'+port);
-console.log('server running on http://localhost:'+port);
-console.log('server running on http://localhost:'+port);
-console.log('server running on http://localhost:'+port);
-console.log('server running on http://localhost:'+port);
 console.log('server running on http://localhost:'+port);
