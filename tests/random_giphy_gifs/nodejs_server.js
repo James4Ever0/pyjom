@@ -31,7 +31,10 @@ function getResultParsed(result, typeFilter) {
     filteredResult = []
     if ('data' in result) {
         data = result['data']
-        console.log('data:', data)
+        if (Array.isArray(data)){
+
+        }
+        // console.log('data:', data)
         for (elem of data) {
             dataType = elem['type']
             if (typeFilter.indexOf(dataType) == -1) {
