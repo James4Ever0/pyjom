@@ -109,7 +109,7 @@ const requestListener=function(req,res) {
                 getRandomGifs(q, type, callback)
             }
             else if (req.url.startsWith('/search')){
-                getSearchGifs(q, sort, limit,offset,type, callback)
+                getSearchGifs(q, sort, limit,offset,type, rating,callback)
             }
             else if (req.url.startsWith('/related'))
             {
