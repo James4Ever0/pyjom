@@ -6,7 +6,7 @@ const requestListener = function(req, res) {
     if (req.url == "/") {
         res.writeHead(200);
         res.end('nodejs giphy server');
-    } else if (req.url.starts '/random') {
+    } else if (req.url.startsWith('/random') ) {
 
     }
 }
