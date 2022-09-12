@@ -110,7 +110,7 @@ async function getRandomGifs(keywords, rating, callback) {
 }
 async function getSearchGifs(keywords, sort, limit, offset, type, rating, lang, callback) {
     // sort in 'recent', 'relevant'
-    result = await getGF().search(keywords, { sort: sort, limit: limit, offset: offset, type: type, rating: rating, lang:lang})
+    result = await getGF().search(keywords, { sort: sort, limit: limit, offset: offset, type: type, rating: rating, lang: lang })
     callback(result)
 }
 async function getRelatedGifs(keywords, limit, offset, type, callback) {
@@ -134,7 +134,7 @@ function getQueryParams(reqUrl) {
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 const ratingArray = ['y', 'g', 'pg', 'pg-13', 'r']
 const sortArray = ['recent', 'relevant']
-const langArray = ["en","es","pt","id","fr","ar","tr","th","vi","de","it","ja","zh-CN","zh-TW","ru","ko","pl","nl","ro","hu","sv","cs","hi","bn","da","fa","tl","fi","he","ms","no","uk"]
+const langArray = ["en", "es", "pt", "id", "fr", "ar", "tr", "th", "vi", "de", "it", "ja", "zh-CN", "zh-TW", "ru", "ko", "pl", "nl", "ro", "hu", "sv", "cs", "hi", "bn", "da", "fa", "tl", "fi", "he", "ms", "no", "uk"]
 const limitArray = [...Array(101).keys()].slice(20)
 const offsetArray = [...Array(20000).keys()]
 
@@ -163,8 +163,9 @@ const requestListener = function(req, res) {
         res.end('nodejs giphy server');
     } else if (validEntries.indexOf(req.url.split("?")[0]) != -1) {
         callback = (result) => {
-            
+            res.writeHead(200);
             res.end(getResultParsed(result, ['text', 'sticker']))
+        }
         params = getQueryParams(req.url)
         q = params.get('q')
         type = fallbackDefault(params, 'type', typeArray, typeArray[0])
