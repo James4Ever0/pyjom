@@ -24,7 +24,7 @@ function randInt(start, end) {
     } else if (start == end) {
         return Math.floor(start)
     }
-    return Math.floor(Math.random() * (end - start) + end)
+    return Math.floor(Math.random() * (end - start) + start)
 }
 
 function processElemUncatched(elem, typeFilter) {
