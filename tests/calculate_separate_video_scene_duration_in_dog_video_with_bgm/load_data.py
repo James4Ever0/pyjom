@@ -25,4 +25,5 @@ for index, row in scenes.iterrows():
     start, end = row["Start Timecode"], row["End Timecode"]
     print(start, end)
     # please calculate the length!
-    length = row['Length']
+    length = row['Length (seconds)']
+    print(length, type(length))
