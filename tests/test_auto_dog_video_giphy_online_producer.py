@@ -11,16 +11,7 @@ autoArgs = {
     "subtitle_detector": {"timestep": 0.2}
 }  # what is this? should't you detect all before production?
 # autoArgs = {"subtitle_detector": {"timestep": 0.2},"yolov5_detector":{"model":"yolov5x"}}
-template_names = ["subtitle_detector.mdl.j2"] # test ocr entities first.
-# template_names = ["yolov5_detector.mdl.j2"]
-
-# template_names = ["framediff_detector.mdl.j2"]
-
-# seems cudnn is causing trouble?
-# CuDNN Version 降到7.6试试，这个问题是环境问题引起的
-# https://pypi.tuna.tsinghua.edu.cn/packages/a4/1f/56dddeb4794137e3f824476ead29806d60a5d5fc20adba9f4d7ca5899900/paddlepaddle_gpu-2.2.2-cp39-cp39-manylinux1_x86_64.whl
-# from pip._internal.cli.main
-# we have modified the pip downloader.
+template_names = ["subtitle_detector.mdl.j2"] 
 
 wbRev = FilesystemAutoContentProducer(
     dirpath="./samples/video/",
