@@ -10,4 +10,5 @@ import random
 inBound = lambda number: min(nMax, max(nMin, number))
 randomFunction = lambda: random.gauss(mean, std)
 
-for 
+for _ in range(30):
+    print(randomFunction())
