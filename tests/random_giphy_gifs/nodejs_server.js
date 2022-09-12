@@ -113,7 +113,7 @@ const requestListener=function(req,res) {
             }
             else if (req.url.startsWith('/related'))
             {
-                getRelatedGifs(q, )
+                getRelatedGifs(q, limit,offset)
             }
             else if (req.url.startsWith('/trending'))
             {}
