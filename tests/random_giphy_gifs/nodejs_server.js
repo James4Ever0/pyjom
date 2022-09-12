@@ -87,7 +87,9 @@ function getResultParsed(result, typeFilter) {
         }
     }
     finalResult = {data:filteredResult}
-    if ('pagina' in result)
+    if ('pagination' in result){
+        finalResult.pagination = result.pagination
+    }
     return JSON.stringify(finalResult)
 }
 
