@@ -58,15 +58,16 @@ function getResultParsed(result, typeFilter) {
         if (Array.isArray(data)) {
             for (elem of data) {
                 newElem = processElem(elem)
-                if (newElem != null){
+                if (newElem != null) {
                     filteredResult.push(newElem)
                 }
             }
         } else {
-
+            newElem = processElem(data)
+            if (newElem != null) {
+                filteredResult.push(newElem)
+            }
         }
-        // console.log('data:', data)
-
     }
 }
 return filteredResult
