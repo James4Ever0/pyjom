@@ -11,7 +11,7 @@ function randomAPIKey() {
 }
 
 function getQueryParams(reqUrl) {
-    current_url = new URL('http://localhost' + req.url)
+    current_url = new URL('http://localhost' + reqUrl)
     params = current_url.searchParams
     console.log('query parameters:', params)
     return params
