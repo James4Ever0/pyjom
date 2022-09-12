@@ -29,7 +29,10 @@ function getQueryParams(reqUrl) {
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 
 function fallbackDefault(param, tag, valid, default) {
-    
+    if (typeArray.indexOf(type) == -1) {
+        type = 'gifs'
+        console.log("type undefined. falling back to default: gifs")
+    }
 }
 
 const requestListener = function(req, res) {
@@ -45,10 +48,7 @@ const requestListener = function(req, res) {
         rating = params.get('rating')
         if (q == null) {
             console.log('search keywords:', q)
-            if (typeArray.indexOf(type) == -1) {
-                type = 'gifs'
-                console.log("type undefined. falling back to default: gifs")
-            }
+            
             
         }
 
