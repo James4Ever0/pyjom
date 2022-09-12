@@ -1,1 +1,1 @@
-scenedetect sample.mp4
+scenedetect -i sample.mp4 -s video.stats.csv
