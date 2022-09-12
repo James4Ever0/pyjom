@@ -41,7 +41,7 @@ function fallbackDefault(params,tag,valid,defaultParam) {
 
 const validEntries=['/random','/related','/trending','/search']
 
-function callbackGenerator()
+function callbackGenerator(result,resultAcceptor)
 
 const requestListener=function(req,res) {
     // use 'less' to scan this beast?
