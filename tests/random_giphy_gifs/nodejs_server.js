@@ -10,7 +10,8 @@ const requestListener = function(req, res) {
         current_url = new URL('http://localhost' + req.url)
         params = current_url.searchParams
         console.log(params, typeof(params))
-        console.log()
+        q = params.get('q')
+        console.log(q, q == null)
         console.log(params.get('def'))
 
         // console.log(req.params)
