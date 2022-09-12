@@ -21,5 +21,5 @@ scenes = pandas.read_csv(scenes)
 for index,row in scenes.iterrows():
     # print(row)
     # breakpoint()
-    # start, end = row['Start Timecode'],row['End Timecode']
-    # print(start, end)
+    start, end = row['Start Timecode'],row['End Timecode']
+    print(start, end)
