@@ -54,9 +54,9 @@ async function getRandomGifs(keywords,type,callback) {
     result=await getGF().random({tag: keywords,type: type})
     callback(result)
 }
-async function getSearchGifs(keywords, sort, limit,type, callback){
+async function getSearchGifs(keywords, sort, limit,offset, type, callback){
     // sort in 'recent', 'relevant'
-    result = await getGF().search(keywords, {sort:sort, limit:limit,type:type })
+    result = await getGF().search(keywords, {sort:sort, limit:limit,offset:offset,type:type })
     callback(result)
 }
 
@@ -109,7 +109,7 @@ const requestListener=function(req,res) {
                 getRandomGifs(q, type, callback)
             }
             else if (req.url.startsWith('/search')){
-                getSearchGifs(q, sort, limit, type, callback)
+                getSearchGifs(q, sort, limit,offset,type, callback)
             }
             else if (req.url.startsWith('/related'))
             {
