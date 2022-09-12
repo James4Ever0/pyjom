@@ -74,4 +74,4 @@ elif flag == "render":
         output = "output/%d.flv" % index
         print("ffmpeg -y -ss %s -to %s -i %s  %s" % (start2, end2, filename, output))
 elif flag == "filter":
-    
+    for i
