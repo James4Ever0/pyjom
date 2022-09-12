@@ -9,7 +9,7 @@ function randomAPIKey() {
     apiKeys = ['IoJVsWoxDPKBr6gOcCgOPWAB25773hqP', 'lTRWAEGHjB1AkfO0sk2XTdujaPB5aH7X']
     sdkKeys = ['6esYBEm9OG3wAifbBFZ2mA0Ml6Ic0rvy', 'sXpGFDGZs0Dv1mmNFvYaGUvYwKX0PWIh']
 
-    items = sdkKeys
+    items = apiKeys
         // deleted some unqualified api keys because they look different in length
     var item = items[Math.floor(Math.random() * items.length)];
     return item
@@ -137,7 +137,7 @@ const requestListener = function(req, res) {
         if (q != null) {
             if (req.url.startsWith('/random')) {
                 // getRandomGif(q, type, callback) // this only returns a single random gif. deprecated.
-                getRandomGifs(q, rati, callback)
+                getRandomGifs(q, rating, callback)
             } else if (req.url.startsWith('/search')) {
                 getSearchGifs(q, sort, limit, offset, type, rating, callback)
             } else if (req.url.startsWith('/related')) {
