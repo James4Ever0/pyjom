@@ -105,6 +105,10 @@ async function getRandomGif(keywords, type, callback) {
 async function getRandomGifs(keywords, rating, callback) {
     getApi().random({ tag: keywords, rating: rating, fmt: 'json' }, function(err, result) {
         console.log('ERROR?', err); //null if normal.
+        if (err !=null){
+            callback([]);
+        }else{}
+        
         callback(result)
     })
 }
