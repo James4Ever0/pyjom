@@ -30,7 +30,7 @@ const requestListener = function(req, res) {
         q = params.get('q')
         type = pamars.get('type')
         if (q == null) {
-            console.log('')
+            console.log('search keywords:', q)
         }
         if (typeArray.indexOf(type) != -1) {}
         // def = params.get('def')
