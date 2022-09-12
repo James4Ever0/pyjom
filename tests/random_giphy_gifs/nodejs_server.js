@@ -4,13 +4,13 @@ const { GiphyFetch } = require('@giphy/js-fetch-api');
 const GiphyApi = require('giphy-api');
 
 function randomAPIKey() {
-    items = []
+
     webApiKeys = ["L8eXbxrbPETZxlvgXN9kIEzQ55Df04v0", "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g", "MRwXFtxAnaHo3EUMrSefHWmI0eYz5aGe", "3eFQvabDx69SMoOemSPiYfh9FY0nzO9x", "5nt3fDeGakBKzV6lHtRM1zmEBAs6dsIc", "eDs1NYmCVgdHvI1x0nitWd5ClhDWMpRE"]
     publicSdkKeys = ["Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g"]
     apiKeys = ['IoJVsWoxDPKBr6gOcCgOPWAB25773hqP', 'lTRWAEGHjB1AkfO0sk2XTdujaPB5aH7X']
     sdkKeys = ['6esYBEm9OG3wAifbBFZ2mA0Ml6Ic0rvy', 'sXpGFDGZs0Dv1mmNFvYaGUvYwKX0PWIh']
 
-    items.con
+    items = webApiKeys.concat(publicSdkKeys).concat(apiKeys).concat
         // deleted some unqualified api keys because they look different in length
     var item = items[Math.floor(Math.random() * items.length)];
     return item
