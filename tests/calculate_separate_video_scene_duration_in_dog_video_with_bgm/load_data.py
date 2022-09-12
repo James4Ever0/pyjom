@@ -66,6 +66,6 @@ elif flag == "render":
         if estimatedDuration < durationThreshold: continue
         start2 = getTimeObject(start) + mTimeDelta
         end2 = getTimeObject(end) - mTimeDelta
-        
+        start2, end2 = getTimeString(start2), getTimeString(end2)
         output = "output/%d.flv" % index
         print("ffmpeg -y -ss %s -to %s -i %s  %s" % (start2, end2, filename, output))
