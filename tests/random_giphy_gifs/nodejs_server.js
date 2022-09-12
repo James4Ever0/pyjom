@@ -54,9 +54,9 @@ async function getRandomGifs(keywords,type,callback) {
     result=await getGF().random({tag: keywords,type: type})
     callback(result)
 }
-async function getSearchGifs(keywords, sort, limit,offset, type, callback){
+async function getSearchGifs(keywords, sort, limit,offset, type,rating,callback){
     // sort in 'recent', 'relevant'
-    result = await getGF().search(keywords, {sort:sort, limit:limit,offset:offset,type:type })
+    result = await getGF().search(keywords, {sort:sort, limit:limit,offset:offset,type:type , rat})
     callback(result)
 }
 
