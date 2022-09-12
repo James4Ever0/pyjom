@@ -44,9 +44,10 @@ async function getRandomGifs(keywords,type,callback) {
     result=await getGF().random({tag: keywords,type: type})
     callback(result)
 }
-async function getSearchGifs(keywords, sort, limit,type){
+async function getSearchGifs(keywords, sort, limit,type, callback){
     // sort in 'recent', 'relevant'
     result = await getGF().search(keywords, {sort:sort, limit:limit,type:type })
+    callback(result)
 }
 
 function getQueryParams(reqUrl) {
