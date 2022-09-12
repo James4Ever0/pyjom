@@ -13,9 +13,10 @@ function randomAPIKey() {
     return item
 }
 
-function getRandomGifs(keywords, type, rating, callback){
+async function getRandomGifs(keywords, type, rating, callback){
     gf = new GiphyFetch(randomAPIKey())
-    gf.random({tag: keywords, type: type, rating: rating, })
+    result = await gf.random({tag: keywords, type: type, rating: rating})
+    callback(result)
 }
 
 function getQueryParams(reqUrl) {
