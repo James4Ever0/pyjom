@@ -34,3 +34,6 @@ for index, row in scenes.iterrows():
 import numpy
 
 std = numpy.std(lengths)
+mean = numpy.mean(lengths)
+print(std, mean, min, max)
+# 1.6674874515595588 2.839698412698412
