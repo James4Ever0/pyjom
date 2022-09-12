@@ -179,7 +179,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     # cap.release()
 
 
-def detectTextRegionOverTime(videoPath, start, end, sample_rate=10, mergeThreshold=10): # this sample rate is too 
+def detectTextRegionOverTime(videoPath, start, end, sample_rate=10, mergeThreshold=10): # this sample rate is too unreasonable.
     iterator = getVideoFrameIterator(
         videoPath, start, end, sample_rate=sample_rate)
     detectionList = []
