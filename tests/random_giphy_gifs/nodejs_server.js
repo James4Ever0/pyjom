@@ -3,7 +3,7 @@ const http = require('http');
 const { GiphyFetch } = require('@giphy/js-fetch-api')
 
 function getRandomGifs(keywords, type, rating, callback){
-    GiphyFetch.
+    gf = new GiphyFetch(myBetaApiKey)
 }
 
 function randomAPIKey() {
