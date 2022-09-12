@@ -28,7 +28,7 @@ const requestListener = function(req, res) {
     } else if (req.url.startsWith('/random')) {
         params = getQueryParams(req.url)
         q = params.get('q')
-        type = pamars.get('type')
+        type = params.get('type')
         if (q == null) {
             console.log('search keywords:', q)
             if (typeArray.indexOf(type) == -1) {
