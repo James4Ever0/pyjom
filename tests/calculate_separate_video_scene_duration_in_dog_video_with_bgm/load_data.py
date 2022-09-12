@@ -31,7 +31,7 @@ for index, row in scenes.iterrows():
     lengths.append(length)
     # print(length, type(length)) # float.
 
-flag = ""
+flag = "generate_ffplay"
 if flag == "calculate_statistics":
     import numpy
 
