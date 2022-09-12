@@ -17,11 +17,12 @@ function getResultParsed(result, typeFilter){
     if ('data' in result){
         for (elem of result['data']){
             dataType = elem['type']
+            if dataType == 'gif'
             dataId = elem['id']
             dataUrl = elem['url']
             title = elem['title']
             for (image of result['images']){
-                
+
             }
         }
     }
