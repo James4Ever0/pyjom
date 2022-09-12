@@ -30,7 +30,7 @@ const requestListener = function(req, res) {
             // console.log(q, q == null)
             // console.log(def, def == null)
             // console.log(req.params)
-            // res.end('random gifs:')
+        res.end('random gifs:')
     } else {
         res.end('not being right')
     }
