@@ -54,6 +54,8 @@ elif flag == "generate_ffplay":
         print("sleep 3")
 elif flag == "render":
     import os
+    import datetime
+    
     if not os.path.exists("output"):
         os.mkdir("output")
     for index,( start, end, duration) in enumerate(sceneCuts):
