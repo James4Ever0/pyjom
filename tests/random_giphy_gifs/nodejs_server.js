@@ -98,16 +98,17 @@ function getApi() {
 }
 
 async function getRandomGif(keywords, type, callback) {
-    try{
+    try {
 
-    }catch(e) {
+        result = await getGF().random({ tag: keywords, type: type })
+        callback(result)
+    } catch (e) {
         console.log(e)
-        console.log("error when calling getSear")
+        console.log("error when calling getRandomGif")
         callback([])
     }
-    result = await getGF().random({ tag: keywords, type: type })
-    callback(result)
 }
+
 function getRandomGifs(keywords, rating, callback) {
     getApi().random({ tag: keywords, rating: rating, fmt: 'json' }, function(err, result) {
         console.log('ERROR?', err); //null if normal.
@@ -120,10 +121,11 @@ function getRandomGifs(keywords, rating, callback) {
 }
 async function getSearchGifs(keywords, sort, limit, offset, type, rating, lang, callback) {
     // sort in 'recent', 'relevant'
-    try{    result = await getGF().search(keywords, { sort: sort, limit: limit, offset: offset, type: type, rating: rating, lang: lang })
-    callback(result)
+    try {
+        result = await getGF().search(keywords, { sort: sort, limit: limit, offset: offset, type: type, rating: rating, lang: lang })
+        callback(result)
 
-    }catch(e) {
+    } catch (e) {
         console.log(e)
         console.log("error when calling getSearchGifs")
         callback([])
@@ -132,11 +134,11 @@ async function getSearchGifs(keywords, sort, limit, offset, type, rating, lang, 
 }
 async function getRelatedGifs(keywords, limit, offset, type, callback) {
     // sort in 'recent', 'relevant'
-    try{
+    try {
         result = await getGF().related(keywords, { limit: limit, offset: offset, type: type })
         callback(result)
 
-    }catch(e) {
+    } catch (e) {
         console.log(e)
         console.log("error when calling getRelatedGifs")
         callback([])
@@ -144,11 +146,11 @@ async function getRelatedGifs(keywords, limit, offset, type, callback) {
 }
 async function getTrendingGifs(limit, offset, type, rating, callback) {
     // sort in 'recent', 'relevant'
-    try{
+    try {
         result = await getGF().trending({ limit: limit, offset: offset, type: type, rating: rating })
         callback(result)
 
-    }catch(e) {
+    } catch (e) {
         console.log(e)
         console.log("error when calling getTrendingGifs")
         callback([])
