@@ -24,4 +24,5 @@ for index, row in scenes.iterrows():
     # breakpoint()
     start, end = row["Start Timecode"], row["End Timecode"]
     print(start, end)
-    # please calculate 
+    # please calculate the length!
+    length = row['Length']
