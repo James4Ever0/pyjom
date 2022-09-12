@@ -38,6 +38,7 @@ const requestListener = function(req, res) {
         params = getQueryParams(req.url)
         q = params.get('q')
         type = params.get('type')
+        
         if (q == null) {
             console.log('search keywords:', q)
             if (typeArray.indexOf(type) == -1) {
