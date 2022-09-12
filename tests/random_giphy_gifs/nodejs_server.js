@@ -29,7 +29,7 @@ function getQueryParams(reqUrl) {
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 
 function fallbackDefault(param, tag, valid, default) {
-    if (typeArray.indexOf(type) == -1) {
+    if (valid.indexOf(param) == -1) {
         type = 'gifs'
         console.log("type undefined. falling back to default: gifs")
     }
