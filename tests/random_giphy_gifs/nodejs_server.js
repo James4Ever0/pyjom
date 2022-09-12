@@ -52,7 +52,6 @@ const requestListener = function(req, res) {
         if (q == null) {
             console.log('search keywords:', q)
             
-            
         }
 
         // def = params.get('def')
