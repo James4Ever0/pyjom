@@ -34,7 +34,7 @@ function processElem(elem, typeFilter) {
             dataId = elem['id']
             dataUrl = elem['url']
             title = elem['title']
-            original = result['images']['original']
+            original = elem['images']['original']
             height = original['height']
             width = original['width']
             url = original['url']
