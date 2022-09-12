@@ -8,8 +8,9 @@ const requestListener = function(req, res) {
         res.end('nodejs giphy server');
     } else if (req.url.startsWith('/random')) {
         console.log(req.params)
+    } else {
+        res.end('not being right')
     }
-    // res.end('not being right')
 }
 
 const server = http.createServer(requestListener);
