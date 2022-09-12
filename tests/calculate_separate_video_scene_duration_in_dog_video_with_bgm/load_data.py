@@ -26,4 +26,5 @@ for index, row in scenes.iterrows():
     # print(start, end)
     # please calculate the length!
     length = row['Length (seconds)']
+    lengths.append(length)
     # print(length, type(length)) # float.
