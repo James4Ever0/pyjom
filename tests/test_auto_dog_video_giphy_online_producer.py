@@ -16,18 +16,6 @@ wbRev = OnlineAutoContentProducer(
             },
         },
     },
-    path_replacers=[
-        [
-            [
-                "/media/root/help/pyjom/samples/",
-                "/media/root/parrot/pyjom/samples/",
-                "/media/root/parrot1/pyjom/samples/", # new location of sample media files.
-                "/root/Desktop/works/pyjom/src/samples/",
-                "/media/root/help1/pyjom/samples/",
-            ],
-            "/root/Desktop/works/pyjom/samples/",
-        ]
-    ],
     template="pets_with_music",
     template_config={
         "music": {
