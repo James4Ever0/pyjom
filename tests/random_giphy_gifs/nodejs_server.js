@@ -133,6 +133,7 @@ function getQueryParams(reqUrl) {
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 const ratingArray = ['y', 'g', 'pg', 'pg-13', 'r']
 const sortArray = ['recent', 'relevant']
+const langArray = []
 const limitArray = [...Array(101).keys()].slice(20)
 const offsetArray = [...Array(20000).keys()]
 
