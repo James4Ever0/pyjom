@@ -61,8 +61,9 @@ const sortArray = ['recent', 'relevant']
 const limitArray = [...Array(101).keys()].slice(20)
 
 function fallbackDefault(params,tag,valid,defaultParam) {
-    if typeof(defaultParam) == 'int'
-    param=params.get(tag)
+    if (typeof(defaultParam) == 'int'){
+        param = parseInt(param)
+    }
     if(valid.indexOf(param)==-1) {
         // type = 'gifs'
         console.log(tag+" undefined. falling back to default: "+defaultParam)
