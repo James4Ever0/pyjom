@@ -58,6 +58,7 @@ function getQueryParams(reqUrl) {
 
 const typeArray=['gifs','text','videos','stickers']
 const ratingArray=['y','g','pg','pg-13','r']
+const sortArray = ['recent', 'relevant']
 
 function fallbackDefault(params,tag,valid,defaultParam) {
     param=params.get(tag)
