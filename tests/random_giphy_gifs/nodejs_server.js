@@ -53,7 +53,6 @@ const requestListener = function(req, res) {
         // no rating? wtf?
         if (q == null) {
             console.log('search keywords:', q)
-            
         }
 
         // def = params.get('def')
