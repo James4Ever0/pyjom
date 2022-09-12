@@ -1,1 +1,1 @@
-yt-dlp -o https://www.bilibili.com/video/BV1HS4y1w7PK
+yt-dlp -o sample.mp4 https://www.bilibili.com/video/BV1HS4y1w7PK
