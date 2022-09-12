@@ -113,7 +113,11 @@ const requestListener = function(req, res) {
         q = params.get('q') 
         type = fallbackDefault(params, 'type', typeArray, typeArray[0]) 
         rating = fallbackDefault(params, 'rating', ratingArray, ratingArray[1]) 
-        limit = fallbackDefault(params, 'limit', limitArray, 100) offset = fallbackDefault(params, 'offset', offsetArray, randInt(100, 500)) sort = fallbackDefault(params, 'sort', sortArray, sortArray[1]) console.log('search keywords:', q) if (q != null) {
+        limit = fallbackDefault(params, 'limit', limitArray, 100) 
+        offset = fallbackDefault(params, 'offset', offsetArray, randInt(100, 500)) 
+        sort = fallbackDefault(params, 'sort', sortArray, sortArray[1]) 
+        console.log('search keywords:', q) 
+        if (q != null) {
                 if (req.url.startsWith('/random')) {
                     getRandomGifs(q, type, callback)
                 } else if (req.url.startsWith('/search')) {
