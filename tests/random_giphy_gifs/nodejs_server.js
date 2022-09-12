@@ -27,7 +27,7 @@ function randInt(start, end) {
     return Math.floor(Math.random() * (end - start) + end)
 }
 
-function processElem(elem) {
+function processElem(elem, typeFilter) {
     if ('type' in elem) {
         dataType = elem['type']
         if (typeFilter.indexOf(dataType) == -1) {
@@ -60,13 +60,13 @@ function getResultParsed(result, typeFilter) {
         data = result['data']
         if (Array.isArray(data)) {
             for (elem of data) {
-                newElem = processElem(elem)
+                newElem = processElem(elem, typeFilter)
                 if (newElem != null) {
                     filteredResult.push(newElem)
                 }
             }
         } else {
-            newElem = processElem(data)
+            newElem = processElem(data, typeFilter)
             if (newElem != null) {
                 filteredResult.push(newElem)
             }
