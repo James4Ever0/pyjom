@@ -29,7 +29,9 @@ const requestListener = function(req, res) {
         params = getQueryParams(req.url)
         q = params.get('q')
         type = pamars.get('type')
-        if (q == null) {}
+        if (q == null) {
+            console.log('')
+        }
         if (typeArray.indexOf(type) != -1) {}
         // def = params.get('def')
         // console.log(def, def == null)
