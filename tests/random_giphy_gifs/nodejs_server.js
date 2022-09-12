@@ -30,15 +30,14 @@ const requestListener = function(req, res) {
         q = params.get('q')
         type = pamars.get('type')
         if (q == null) {}
+        if (typeArray.indexOf(type) != -1) {}
+        // def = params.get('def')
+        // console.log(def, def == null)
+        // console.log(req.params)
+        res.end('random gifs:')
+    } else {
+        res.end('not being right')
     }
-    if (typeArray.indexOf(type) != -1) {}
-    // def = params.get('def')
-    // console.log(def, def == null)
-    // console.log(req.params)
-    res.end('random gifs:')
-} else {
-    res.end('not being right')
-}
 }
 
 const server = http.createServer(requestListener);
