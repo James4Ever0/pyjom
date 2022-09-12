@@ -72,8 +72,7 @@ function getResultParsed(result, typeFilter) {
             }
         }
     }
-}
-return filteredResult
+    return filteredResult
 }
 
 function getGF() {
