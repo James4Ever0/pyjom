@@ -89,7 +89,7 @@ const requestListener=function(req,res) {
         rating = fallbackDefault(params, 'rating',ratingArray, ratingArray[1])
         limit = fallbackDefault(params, 'limit',limitArray, 100)
         offset = fallbackDefault(params, 'offset', offsetArray, )
-        console.log('search keywords:',q)
+        console.log('search keywords:', q)
         callback = (result) => res.end(getResultParsed(result, ['text', 'sticker'])
         if(q!=null) {
             if(req.url.startsWith('/random')){
