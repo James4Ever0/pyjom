@@ -93,7 +93,7 @@ const requestListener=function(req,res) {
                 getRandomGifs(q, type, (result) => res.end(getResultParsed(result, ['text', 'sticker']))
             }
             elif (req.url.startsWith('/search')){
-                getSearchGifs(q, )
+                getSearchGifs(q, sort, limit, type, )
             }
         }
         else {
