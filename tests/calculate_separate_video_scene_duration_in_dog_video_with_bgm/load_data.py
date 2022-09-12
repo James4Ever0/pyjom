@@ -46,6 +46,6 @@ if flag == "calculate_statistics":
     # strange though.
     # shall we adjust this accordingly? how to generate this shit?
 elif flag == "generate_ffplay":
-    filename = ""
+    filename = "sample.mp4"
     for start, end in start_ends:
         print("ffplay -i %s -ss %s -to %s" %( filename, start, end))
