@@ -21,6 +21,8 @@ function getResultParsed(result, typeFilter){
             dataUrl = elem['url']
             title = elem['title']
             original = result['images']['original']
+            height = original['height']
+            wid = original['wid']
         }
     }
 }
