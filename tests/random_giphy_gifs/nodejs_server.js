@@ -20,7 +20,7 @@ function getResultParsed(result, typeFilter){
             dataId = elem['id']
             dataUrl = elem['url']
             title = elem['title']
-            result['images']['original']
+            original = result['images']['original']
         }
     }
 }
