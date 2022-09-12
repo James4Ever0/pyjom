@@ -1,0 +1,1 @@
+env LD_LIBRARY_PATH=/usr/local/lib python3 test_auto_local_producer.py 
