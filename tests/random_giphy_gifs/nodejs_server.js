@@ -17,8 +17,8 @@ function randInt(start, end){
         end= start
         start = medium
     }
-    elif (start == end){
-        return start
+    else if (start == end){
+        return Math.floor(start)
     }
     return Math.floor(Math.random()*(end-start)+end)
 }
