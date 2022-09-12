@@ -41,7 +41,7 @@ async function getRandomGifs(keywords,type,callback) {
     result=await gf.random({tag: keywords,type: type})
     callback(result)
 }
-async function getSearchGifs(keywords, sort,){
+async function getSearchGifs(keywords, sort, limit,){
     // sort in 'recent', 'relevant'
 }
 
