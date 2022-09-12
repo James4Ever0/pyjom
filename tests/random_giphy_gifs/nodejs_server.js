@@ -58,7 +58,9 @@ function getGF() {
     return new GiphyFetch(randomAPIKey())
 }
 
-function getApi
+function getApi(){
+    return 
+}
 
 async function getRandomGif(keywords, type, callback) {
     result = await getGF().random({ tag: keywords, type: type })
