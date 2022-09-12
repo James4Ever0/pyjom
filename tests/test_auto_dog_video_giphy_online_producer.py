@@ -25,8 +25,8 @@ wbRev = OnlineAutoContentProducer(
         "font": "/root/.local/share/fonts/simhei.ttf",
         # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
         "policy": {},
-        "maxtime": 3,
-        "mintime": 1,
+        "maxtime": 4,
+        "mintime": 2,
         "fast":True, # pass this flag to medialang export engine
     },
     processor_filters={
