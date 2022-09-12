@@ -43,7 +43,9 @@ const validEntries=['/random','/related','/trending','/search']
 
 function callbackGenerator(result,resultAcceptor){
     data = result['data']
-    for ()
+    for (elem of data){
+        
+    }
 }
 
 const requestListener=function(req,res) {
