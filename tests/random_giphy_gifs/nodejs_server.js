@@ -32,6 +32,7 @@ function fallbackDefault(param, tag, valid, default) {
     if (valid.indexOf(param) == -1) {
         // type = 'gifs'
         console.log(tag+" undefined. falling back to default: "+default)
+        return default
     }
 }
 
