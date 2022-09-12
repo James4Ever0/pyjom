@@ -31,8 +31,8 @@ for index, row in scenes.iterrows():
     lengths.append(length)
     # print(length, type(length)) # float.
 
-calculate_statistics
-if calculate_statistics:
+flag = ""
+if flag == "calculate_statistics":
     import numpy
 
     std = numpy.std(lengths)
@@ -44,3 +44,5 @@ if calculate_statistics:
     # 0.6 7.833
     # strange though.
     # shall we adjust this accordingly? how to generate this shit?
+elif flag == "":
+    
