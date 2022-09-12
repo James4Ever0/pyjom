@@ -9,6 +9,7 @@ def run(playwright):
     page.wait_for_load_state("domcontetloaded")
     content = page.content()
     with open("dump.html", 'w+') as f: f.write(content)
+    print("content write to dump.html")
     browser.close()
 
 with sync_playwright() as playwright:
