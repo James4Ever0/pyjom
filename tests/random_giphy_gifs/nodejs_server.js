@@ -27,7 +27,7 @@ function randInt(start, end) {
     return Math.floor(Math.random() * (end - start) + end)
 }
 
-function processElem(elem, typeFilter) {
+function processElemUncatched(elem, typeFilter) {
     if ('type' in elem) {
         dataType = elem['type']
         if (typeFilter.indexOf(dataType) == -1) {
@@ -54,7 +54,9 @@ function processElem(elem, typeFilter) {
     return null
 }
 
-function
+function processElem(elem, typeFilter){
+    
+}
 
 function getResultParsed(result, typeFilter) {
     filteredResult = []
