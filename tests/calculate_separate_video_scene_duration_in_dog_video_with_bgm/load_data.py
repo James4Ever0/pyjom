@@ -18,5 +18,5 @@ timecodeList[0] = "00:00:00.000"
 
 scenes = pandas.read_csv(scenes)
 
-for row in scenes:
-    start, end = row
+for row in scenes.iterrows():
+    start, end = row['Start Timecode'],row['End Timecode']
