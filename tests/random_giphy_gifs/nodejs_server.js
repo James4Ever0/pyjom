@@ -28,7 +28,9 @@ function getQueryParams(reqUrl) {
 
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 
-function fallbackDefault(param, tag, )
+function fallbackDefault(param, tag, valid, default) {
+    
+}
 
 const requestListener = function(req, res) {
     // use 'less' to scan this beast?
