@@ -99,7 +99,6 @@ function getApi() {
 
 async function getRandomGif(keywords, type, callback) {
     result = await getGF().random({ tag: keywords, type: type })
-        // console.log("RESULT", result)
     callback(result)
 }
 function getRandomGifs(keywords, rating, callback) {
