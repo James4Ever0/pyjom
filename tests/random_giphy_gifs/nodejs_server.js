@@ -14,7 +14,7 @@ function randomAPIKey() {
 }
 
 function getResultParsed(result, typeFilter){
-
+    filteredResult = []
     if ('data' in result){
         for (elem of result['data']){
             dataType = elem['type']
@@ -26,6 +26,7 @@ function getResultParsed(result, typeFilter){
             height = original['height']
             width = original['width']
             url = original['url']
+            filter
         }
         }
     }
