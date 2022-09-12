@@ -12,6 +12,7 @@ function randomAPIKey() {
     items = webApiKeys.concat(publicSdkKeys).concat(apiKeys).concat(sdkKeys)
         // deleted some unqualified api keys because they look different in length
     item = items[Math.floor(Math.random() * items.length)];
+    console.log("using api key: " + item)
     return item
 }
 
@@ -107,9 +108,9 @@ async function getRandomGifs(keywords, rating, callback) {
         callback(result)
     })
 }
-async function getSearchGifs(keywords, sort, limit, offset, type, rating, callback) {
+async function getSearchGifs(keywords, sort, limit, offset, type, rating, lang, callback) {
     // sort in 'recent', 'relevant'
-    result = await getGF().search(keywords, { sort: sort, limit: limit, offset: offset, type: type, rating: rating })
+    result = await getGF().search(keywords, { sort: sort, limit: limit, offset: offset, type: type, rating: rating, lang:lang})
     callback(result)
 }
 async function getRelatedGifs(keywords, limit, offset, type, callback) {
@@ -133,7 +134,7 @@ function getQueryParams(reqUrl) {
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 const ratingArray = ['y', 'g', 'pg', 'pg-13', 'r']
 const sortArray = ['recent', 'relevant']
-const langArray = []
+const langArray = ["en","es","pt","id","fr","ar","tr","th","vi","de","it","ja","zh-CN","zh-TW","ru","ko","pl","nl","ro","hu","sv","cs","hi","bn","da","fa","tl","fi","he","ms","no","uk"]
 const limitArray = [...Array(101).keys()].slice(20)
 const offsetArray = [...Array(20000).keys()]
 
