@@ -61,12 +61,12 @@ async function getSearchGifs(keywords, sort, limit,offset, type,rating,callback)
 }
 async function getRelatedGifs(keywords,limit,offset, type,callback){
     // sort in 'recent', 'relevant'
-    result = await getGF().search(keywords, {limit:limit,offset:offset,type:type })
+    result = await getGF().related(keywords, {limit:limit,offset:offset,type:type })
     callback(result)
 }
 async function getTrendingGifs(limit, offset, type,rating,callback){
     // sort in 'recent', 'relevant'
-    result = await getGF().search(keywords, {limit:limit,offset:offset,type:type })
+    result = await getGF().search({limit:limit,offset:offset,type:type })
     callback(result)
 }
 function getQueryParams(reqUrl) {
