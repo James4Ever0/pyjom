@@ -41,7 +41,7 @@ async function getRandomGifs(keywords,type,callback) {
     result=await gf.random({tag: keywords,type: type})
     callback(result)
 }
-async function getSe
+async function getSearchGifs(keywords, sort,)
 
 function getQueryParams(reqUrl) {
     current_url=new URL('http://localhost'+reqUrl)
