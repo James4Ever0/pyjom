@@ -28,12 +28,13 @@ function getQueryParams(reqUrl) {
 
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 
-function fallbackDefault(param, tag, valid, default) {
+function fallbackDefault(param, tag, valid, defaultParam) {
     if (valid.indexOf(param) == -1) {
         // type = 'gifs'
-        console.log(tag+" undefined. falling back to default: "+default)
-        return default
+        console.log(tag+" undefined. falling back to default: "+defaultParam)
+        return defaultParam
     }
+    return param
 }
 
 const requestListener = function(req, res) {
