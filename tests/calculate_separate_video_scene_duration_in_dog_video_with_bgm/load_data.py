@@ -23,7 +23,7 @@ for index, row in scenes.iterrows():
     # print(row)
     # breakpoint()
     start, end = row["Start Timecode"], row["End Timecode"]
-    print(start, end)
+    # print(start, end)
     # please calculate the length!
     length = row['Length (seconds)']
-    print(length, type(length))
+    # print(length, type(length)) # float.
