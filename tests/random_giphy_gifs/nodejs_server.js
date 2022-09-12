@@ -60,8 +60,9 @@ function processElem(elem, typeFilter){
         return result
     } catch (e){
         console.log(e)
-        console.log("________________ELEMENT")
+        console.log("______________________ELEMENT______________________")
         console.log(elem)
+        console.log("______________________ELEMENT______________________")
         console.log("error while processing element")
         return null;
     }
