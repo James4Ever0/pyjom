@@ -27,12 +27,13 @@ function getResultParsed(result, typeFilter){
             width = original['width']
             url = original['url']
             newElem = {
-                id:dataId, url: dataUrl, title:title, media{height:height, width:width, url:url}
+                id:dataId, url: dataUrl, title:title, media:{height:height, width:width, url:url}
             }
             filteredResult.push(newElem)
         }
         }
     }
+    return filteredResult
 }
 
 async function getRandomGifs(keywords,type,callback) {
