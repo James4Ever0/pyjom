@@ -29,6 +29,7 @@ function getQueryParams(reqUrl) {
 const typeArray = ['gifs', 'text', 'videos', 'stickers']
 
 function fallbackDefault(params, tag, valid, defaultParam) {
+    param = params.get(tag)
     if (valid.indexOf(param) == -1) {
         // type = 'gifs'
         console.log(tag+" undefined. falling back to default: "+defaultParam)
@@ -46,8 +47,8 @@ const requestListener = function(req, res) {
     } else if (req.url.startsWith('/random')) {
         params = getQueryParams(req.url)
         q = params.get('q')
-        type = fallbackDefault(params.get('type'), 'type',
-        rating = fallbackDefault(params.get('rating'), 'rating',
+        type = fallbackDefault(params, 'type',
+        rating = fallbackDefault(params, 'rating',
         if (q == null) {
             console.log('search keywords:', q)
             
