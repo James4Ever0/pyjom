@@ -12,7 +12,10 @@ function randomAPIKey() {
 }
 
 function randInt(start, end){
-    Math.Math.random()*(end-start)+end)
+    if (start>end){
+        
+    }
+    return Math.floor(Math.random()*(end-start)+end)
 }
 
 function getResultParsed(result, typeFilter){
