@@ -63,7 +63,7 @@ const limitArray = [...Array(101).keys()].slice(20)
 function fallbackDefault(params,tag,valid,defaultParam) {
     param=params.get(tag)
     if (typeof(defaultParam) == 'number'){
-        param = parseInt(param)
+        param = parseFloat(param)
     }
     if(valid.indexOf(param)==-1) {
         // type = 'gifs'
