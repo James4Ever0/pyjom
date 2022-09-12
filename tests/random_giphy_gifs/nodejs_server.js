@@ -2,7 +2,7 @@ const http = require('http');
 // const url = require('url');
 const { GiphyFetch } = require('@giphy/js-fetch-api')
 
-function getRandomGifs(keywords, type, rating){
+function getRandomGifs(keywords, type, rating, callback){
     
 }
 
