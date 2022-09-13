@@ -96,5 +96,5 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
             continue
         startDatetime = getTimeObject(start) + mTimeDelta
         endDatetime = getTimeObject(end) - mTimeDelta
-        print(startDatetime.timestamp(), endDatetime.timestamp())
-        print(startDatetime, endDatetime)
+        print(getTimeStamp(startDatetime), getTimeStamp(endDatetime))
+        # print(startDatetime, endDatetime)
