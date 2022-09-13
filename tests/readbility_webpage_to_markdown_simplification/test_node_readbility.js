@@ -3,7 +3,7 @@ url="https://zhuanlan.zhihu.com/p/384614837"
 // 'http://howtonode.org/really-simple-file-uploads'
 read(url, function(err, article, meta) {
     // Main Article
-    console.log(article.content);
+    console.log(article.content);// still html
     // Title
     console.log(article.title);
 
