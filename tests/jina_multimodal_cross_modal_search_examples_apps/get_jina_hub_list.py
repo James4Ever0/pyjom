@@ -21,6 +21,8 @@ pages = math.ceil(total/pageSize)
 import progressbar
 for index in progressbar.progressbar(range(2,pages+1)):
     time.sleep(2)
-    print('page index:',index)
+    # print('page index:',index)
     jsonData = getJson(pageIndex=index, pageSize=pageSize)
     data.append(jsonData.copy())
+
+print("writing data to")
