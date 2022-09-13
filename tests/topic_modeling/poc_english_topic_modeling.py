@@ -52,6 +52,7 @@ Stem_words = Stem_words.reshape(5,-1)
 # exit()
 # for reasons that shit can understand.
 # np.nditer is for iteration over every elem
+dataList = []
 for row in Stem_words:
     print(row)
     print(" ".join(row))
