@@ -79,7 +79,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     fakeAcceptFunction = lambda: random.random() > 0.5
     # select the closest one! must be closer than 0.9 to 1.1
     candidates = []
-    durationThreshold = 0.6
+    durationMinThreshold = 0.6
+    durationMaxThreshold = 7.833
     import datetime
     getTimeObject = lambda timeString: datetime.datetime.strptime(
         timeString, "%H:%M:%S.%f"
