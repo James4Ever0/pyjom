@@ -10,7 +10,7 @@ def getJson(pageIndex=1, pageSize=16):
     return jsonData
 
 data = []
-jsonData = getJson()
+pageSize = 16
+jsonData = getJson(pageSize=pageSize)
 total = jsonData["meta"]["total"]
 print('total:', total)
-
