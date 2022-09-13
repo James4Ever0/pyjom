@@ -47,10 +47,12 @@ import numpy as np
 
 Stem_words = np.array(Stem_words)
 Stem_words = Stem_words.reshape(5,-1)
-sprint(Stem_words)
-row, col = Stem_words.shape
-exit()
+# sprint(Stem_words)
+# row, col = Stem_words.shape
+# exit()
 # for reasons that shit can understand.
+for row in Stem_words.nditer(1):
+    print(row)
 
 from sklearn.feature_extraction.text import CountVectorizer
 
