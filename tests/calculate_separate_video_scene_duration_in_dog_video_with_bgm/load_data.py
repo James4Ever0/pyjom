@@ -114,6 +114,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
             if isSimilar(estimatedDurationAfterCut, target, similarThreshold):
                 accept = fakeAcceptFunction()
                 if accept:
-                    print("Accept candidate",(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut) )
+                    print("Accepting candidate",(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
+                    print("target:", target)
                     bannedIndexs.append(index)
         random.shuffle(shuffledCandidates)
