@@ -111,9 +111,11 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         assert index < len(candidates) and index >= 0
         leftNeighbors = candidates[:index:-1][::-1]
         rightNeighbors = candidates[index+1:]
+        neighborIndexs = []
         for mIndex, neighbor in enumerate(leftNeighbors):
             currentIndex = index - mIndex - 1
-            if checkNeighbor(neighbor, candidates[index])
+            if checkNeighbor(neighbor, candidates[index]):
+
 
     while True:
         target = fakeQualificationFunction()
