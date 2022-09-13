@@ -9,6 +9,6 @@ document=`
 `
 
 const { Readability } = require('@mozilla/readability');
-let reader = new Readability(doc.window.document);
+let reader = new Readability(document);
 let article = reader.parse();
 console.log(article.title);
