@@ -138,7 +138,7 @@ if __name__ == "__main__":
             # print(editly_json.keys())
 
             print("MEDIA SAVE PATH (MAYBE YOU CAN PLAY IT?):",outPath)
-            breakpoint()
+            breakpoint() # HERE IS THE DAMN BREAKPOINT
             # import json
             # data_array -> input of dot processor? check it out.
             # breakpoint() # what is this?
