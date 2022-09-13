@@ -121,7 +121,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
                     print("Accepting candidate",(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
                     print("target:", target)
                     bannedIndexs.append(index)
-                    getNeighborIndexs(index, candidates, neighborThreshold)
+                    neighborIndexs = getNeighborIndexs(index, candidates, neighborThreshold)
                     for neighborIndex in neighborIndexes:
-
+                        bannedIndexs.append(neighBo)
         random.shuffle(shuffledCandidates)
