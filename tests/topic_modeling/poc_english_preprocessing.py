@@ -45,7 +45,4 @@ for w in filtered_sentence:
     rootWord = ps.stem(w)
     Stem_words.append(rootWord)
 print(filtered_sentence) # 2nd step
-
 print(Stem_words) # 3rd step
-
-# from textblob lib import Word method
