@@ -17,11 +17,3 @@ class OnlineAutoContentProducer(ContentProducer):
                 "producer": keywordDecorator(OnlineProducer, filters=producer_filters, template=template,template_config = template_config),
             }
         )
-
-    def get_one_topic(self):
-        topic, source = self.methodsList["topic"](
-            filepath=self.filepath, dirpath=self.dirpath, recursive=self.recursive
-        )  # a sequence of things.
-        self.identifier.topicFix(source)
-        return topic
-# ctrl + shift + t: reopen closed tab in vscode
