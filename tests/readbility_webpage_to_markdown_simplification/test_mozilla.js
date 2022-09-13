@@ -4,7 +4,9 @@
 //     url: "https://www.baidu.com"
 // });
 
-document=
+document=`
+
+`
 
 const { Readability } = require('@mozilla/readability');
 let reader = new Readability(doc.window.document);
