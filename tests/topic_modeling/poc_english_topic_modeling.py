@@ -90,5 +90,6 @@ def print_topics(model, feature_names, n_top_words):
         print(message)
     print()
 
+n_top_words = 10
 
-print_topics(lda, tf.get_feature_names(), n_top_words)
+print_topics(lda, tfidf.get_feature_names(), n_top_words)
