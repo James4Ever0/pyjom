@@ -89,8 +89,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     getTimeString = lambda timeObject: timeObject.strftime("%H:%M:%S.%f")
     mTimeDelta = datetime.timedelta(milliseconds=100)  # 0.1 seconds
     standardStartDatetime = datetime.datetime(year=1900, month=1, day=1)
-    standardStartTimeStamp = standardStartDatetime.timestamp()
-    getTimeStamp = lambda timeObject: timeObject.timestamp() - standardStartTimeStamp
+    standardStartTimestamp = standardStartDatetime.timestamp()
+    getTimestamp = lambda timeObject: timeObject.timestamp() - standardStartTimestamp
 
     for index, (start, end, duration) in enumerate(sceneCuts):
         estimatedDurationAfterCut = duration - 0.2
@@ -100,8 +100,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         endCutDatetime = getTimeObject(end) - mTimeDelta
         # print(getTimeStamp(startDatetime), getTimeStamp(endDatetime))
         # print(startDatetime, endDatetime)
-        startCutTimestamp, endCutDTimestamp = getTimestamp(startCutDatetime), getTimestamp(endCutDatetime) 
-        candidates.append((startCutTimestamp, endCutDTimestamp, estimatedDurationAfterCut))
+        startCutTimestamp, endCutTimestamp = getTimestamp(startCutDatetime), getTimestamp(endCutDatetime) 
+        candidates.append((startCutTimestamp, endCutTimestamp, estimatedDurationAfterCut))
     
     shuffledCandidates = [(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut ) for index,(startCutDatetime, endCutDatetime, estimatedDurationAfterCut) in enumerate(candidates) ]
     random.shuffle(shuffledCandidates)
