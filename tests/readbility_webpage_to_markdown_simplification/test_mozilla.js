@@ -6,4 +6,4 @@ var doc = new JSDOM(``, {
 });
 let reader = new Readability(doc.window.document);
 let article = reader.parse();
-print(article.title);
+console.log(article.title);
