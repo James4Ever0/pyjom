@@ -119,7 +119,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
             else:
                 break
         for mIndex, neighbor in enumerate(rightNeighbors):
-            currentIndex = index + mIndex - 1
+            currentIndex = index + mIndex
 
     while True:
         target = fakeQualificationFunction()
