@@ -110,6 +110,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         assert neighborThreshold  > 0
         leftNeighbors = candidates[:index]
         rightNeighbors = candidates[index+1:]
+        for neighbor in leftNeighbors:
 
     while True:
         target = fakeQualificationFunction()
