@@ -1,6 +1,10 @@
 from pyjom.commons import *
 import requests
 
+
+def topicModeling():
+    
+
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
     if source == 'giphy':
