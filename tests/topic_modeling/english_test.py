@@ -30,7 +30,7 @@ for w in filtered_sentence:
     Stem_words.append(rootWord)
 print(filtered_sentence) # 1st step
 
-print(Stem_words)
+print(Stem_words) # 3rd step
 
 # from textblob lib import Word method
 # if textblobTest:
