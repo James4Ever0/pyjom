@@ -106,7 +106,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     random.shuffle(shuffledCandidates)
     bannedIndexs = []
     neighborThreshold = 5
-    def getNeighborIndexs(index, candidates, neighborThreshold):
+    def getNeighborIndexs(index, candidates, neighborThreshold, neighbor):
         assert neighborThreshold  > 0
         assert index < len(candidates) and index >= 0
         leftNeighbors = candidates[:index:-1][::-1]
