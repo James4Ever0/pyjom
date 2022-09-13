@@ -1,4 +1,4 @@
-{ Readability } = require('@mozilla/readability');
+const { Readability } = require('@mozilla/readability');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 doc = new JSDOM(``, {
