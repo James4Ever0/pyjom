@@ -39,5 +39,4 @@ ps = PorterStemmer()
 for w in lemma_word1:
     rootWord = ps.stem(w)
     Stem_words.append(rootWord)
-print(filtered_sentence) # 2nd step
-print(Stem_words) # 3rd step
+sprint(Stem_words) # 3rd step
