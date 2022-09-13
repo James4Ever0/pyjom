@@ -24,10 +24,10 @@ def ffmpegVideoPreProductionFilter(
     start=None,
     end=None,
     cachePath=None,
-    filters=["pipCrop", "textRemoval", "logoRemoval","randomFlip" in filters:
-    if "superResolution" in filters:
-    if "minterpolate" in filters:
-    if "denoising" in filters:],
+    filters=["pipCrop", "textRemoval", "logoRemoval","randomFlip",
+    "superResolution",
+    "minterpolate",
+    "denoising",],
     preview=True
 ):  # what is the type of this shit?
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
