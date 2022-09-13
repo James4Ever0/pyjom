@@ -58,6 +58,8 @@ for row in Stem_words:
     elem = " ".join(row)
     dataList.append(elem)
 
+data = "\n".join(dataList)
+
 from sklearn.feature_extraction.text import CountVectorizer
 
 # In[8]:
