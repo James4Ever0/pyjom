@@ -9,13 +9,16 @@ def getJson(pageIndex=1, pageSize=16):
     jsonData = r.json()
     return jsonData
 
-data = []
 pageSize = 16
 jsonData = getJson(pageSize=pageSize)
 total = jsonData["meta"]["total"]
 print('total:', total)
+data = []
+
 
 import math
 pages = math.ceil(total/pageSize)
 for index in range(2,pages+1):
+    time.sleep(2)
     print('page index:',index)
+    jsonData = 
