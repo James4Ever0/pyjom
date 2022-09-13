@@ -68,11 +68,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # In[8]:
 
 # 创建一个CountVectoerizer实例
-vect = TfidfVectorizer(ngram_range=(2, 2))
+tfidf = TfidfVectorizer(ngram_range=(2, 2))
 # 打开刚刚保存的txt文档
 f = data
 # 使用CountVectorizer拟合数据
-x_train = vect.fit_transform(f)
+x_train = tfidf.fit_transform(f)
 
 from sklearn.decomposition import LatentDirichletAllocation
 
