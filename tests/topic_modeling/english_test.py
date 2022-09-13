@@ -46,7 +46,7 @@ for i in text.split():
     word2 = Word(word1).lemmatize("v")
     word3 = Word(word2).lemmatize("a")
     lem.append(Word(word3).lemmatize())
-print(lem) # incorrect and shitty.
+print(lem) # incorrect and shitty. don't know what is its use
 
 import en_core_web_sm
 
@@ -71,3 +71,4 @@ for token in doc:
     # breakpoint()
     lemma_word1.append(elem)
 print(lemma_word1)  # there is no such -PRON- thing.
+# 2nd step.
