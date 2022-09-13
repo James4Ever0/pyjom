@@ -26,3 +26,18 @@ for w in filtered_sentence:
     Stem_words.append(rootWord)
 print(filtered_sentence)
 print(Stem_words)
+
+# from textblob lib import Word method 
+from textblob import Word 
+
+text = """He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and 
+fishery rihgts at once. He was the more ready to do this becuase the rights had become much less valuable, and he had 
+indeed the vaguest idea where the wood and river in question were."""
+
+lem = []
+for i in text.split():
+    word1 = Word(i).lemmatize("n")
+    word2 = Word(word1).lemmatize("v")
+    word3 = Word(word2).lemmatize("a")
+    lem.append(Word(word3).lemmatize())
+print(lem)
