@@ -2,7 +2,7 @@ from pyjom.commons import *
 import requests
 # import jieba
 
-def topicModeling(, lang='en'): # specify language please?
+def topicModeling(sentences, lang='en'): # specify language please?
     if lang == 'en':
 
 @decorator
