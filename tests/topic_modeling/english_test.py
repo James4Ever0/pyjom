@@ -51,7 +51,7 @@ doc = nlp(u"""He determined to drop his litigation with the monastry, and reling
 fishery rihgts at once. He was the more ready to do this becuase the rights had become much less valuable, and he had 
 indeed the vaguest idea where the wood and river in question were.""")
 
-lemma_word1 = [] 
+lemma_word1 = []
 for token in doc:
     lemma_word1.append(token.lemma_)
 print(lemma_word1)
