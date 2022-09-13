@@ -12,7 +12,7 @@ read('http://howtonode.org/really-simple-file-uploads', function(err, article, m
     console.log(article.document);
 
     // Response Object from Request Lib
-    console.log(meta);
+    // console.log(meta);
 
     // Close article to clean up jsdom and prevent leaks
     article.close();
