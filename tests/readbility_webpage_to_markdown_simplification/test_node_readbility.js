@@ -6,6 +6,7 @@ read(url, function(err, article, meta) {
     console.log(article.content);// still html
     // Title
     console.log(article.title);
+    console.log(article.textContent);
 
     // HTML Source Code
     // console.log(article.html);
