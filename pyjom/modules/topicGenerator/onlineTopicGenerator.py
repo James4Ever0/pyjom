@@ -1,8 +1,8 @@
 from pyjom.commons import *
 import requests
-import jieba
+# import jieba
 
-def topicModeling():
+def topicModeling(, lang='en'):
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
