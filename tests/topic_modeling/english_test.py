@@ -30,7 +30,7 @@ print(filtered_sentence)
 print(Stem_words)
 
 # from textblob lib import Word method 
-if testblobTest:
+# if textblobTest:
 from textblob import Word 
 
 text = """He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and 
