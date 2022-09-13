@@ -129,7 +129,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     def checkNeighborForClipCandiates(clip_a,clip_b):
         s_a, e_a, l_a = clip_a
         s_b, e_b, l_b = clip_b
-        
+        e_min = min(e_a, e_b)
+        s_max = max(s_a, s_b)
 
     while True:
         target = fakeQualificationFunction()
