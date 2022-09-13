@@ -54,6 +54,7 @@ Stem_words = Stem_words.reshape(5,-1)
 # np.nditer is for iteration over every elem
 for row in Stem_words:
     print(row)
+    print(" ".join(row))
 
 from sklearn.feature_extraction.text import CountVectorizer
 
