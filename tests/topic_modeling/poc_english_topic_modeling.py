@@ -41,7 +41,7 @@ for w in lemma_word1:
     Stem_words.append(rootWord)
 sprint(Stem_words) # 3rd step
 
-Stem_words += (len(Stem_words)%5)* [""] # padding
+Stem_words += ((len(Stem_words)-1)%5)* [""] # padding
 
 import numpy as np
 
