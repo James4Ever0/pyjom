@@ -66,7 +66,7 @@ for token in doc:
     # print(dir(token))
     # breakpoint()
     # inspectObject(token)
-    (token.pos_, token.text)
+    elem = (token.pos_, token.text)
     breakpoint()
     lemma_word1.append(token.lemma_)
 print(lemma_word1)  # there is no such -PRON- thing.
