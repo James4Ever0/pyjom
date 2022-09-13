@@ -102,4 +102,5 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     
     while True:
         target = fakeQualificationFunction()
+        accept = fakeAcceptFunction()
         
