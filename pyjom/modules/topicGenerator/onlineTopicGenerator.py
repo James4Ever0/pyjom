@@ -3,7 +3,6 @@ import requests
 
 
 def topicModeling():
-    
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
