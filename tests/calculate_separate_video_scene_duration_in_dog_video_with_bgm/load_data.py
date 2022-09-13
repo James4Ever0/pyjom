@@ -127,6 +127,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         return neighborIndexs
     
     def checkNeighborForClipCandiates(clip_a,clip_b, threshold):
+        assert threshold > 0
         s_a, e_a, l_a = clip_a
         s_b, e_b, l_b = clip_b
         e_min = min(e_a, e_b)
