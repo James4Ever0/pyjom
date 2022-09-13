@@ -93,4 +93,4 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
             continue
         startTimeCode = getTimeObject(start) + mTimeDelta
         endTimeCode = getTimeObject(end) - mTimeDelta
-        print(startTimeCode.iso)
+        print(startTimeCode.toor)
