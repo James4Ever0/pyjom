@@ -20,7 +20,7 @@ doc = nlp(
 
 set(stopwords.words("english"))
 
-stop_words = set(stopwords.words("english"))
+stop_words = set([elem.lower() for elem in stopwords.words("english")])
 
 lemma_word1 = []
 # this shit has the lang tag. it might be useful for language detection. really?
