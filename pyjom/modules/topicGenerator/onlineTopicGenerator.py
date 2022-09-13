@@ -12,5 +12,5 @@ def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
         init=True
         while True:
             requests.get("http://localhost:8902/random", params = {'q':keywords, 'rating':'g'})
-            requests.get("http://localhost:8902/related", params = {})
+            requests.get("http://localhost:8902/related", params = {'q':keywords,})
             if init: init=False
