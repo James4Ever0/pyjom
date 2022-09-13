@@ -74,4 +74,5 @@ vect.fit(f)
 
 from sklearn.decomposition import LatentDirichletAllocation
 
-lda = LatentDirichletAllocation()
+lda = LatentDirichletAllocation(n_components = 10)
+lda.fit()
