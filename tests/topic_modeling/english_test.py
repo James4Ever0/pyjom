@@ -46,7 +46,7 @@ for i in text.split():
     word2 = Word(word1).lemmatize("v")
     word3 = Word(word2).lemmatize("a")
     lem.append(Word(word3).lemmatize())
-print(lem)
+print(lem) # incorrect and shitty.
 
 import en_core_web_sm
 
