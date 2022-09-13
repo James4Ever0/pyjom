@@ -56,6 +56,7 @@ indeed the vaguest idea where the wood and river in question were."""
 )
 
 lemma_word1 = []
+# this shit has the lang tag. it might be useful for language detection. really?
 for token in doc:
     # print("LEMMA", token.lemma_)
     # not reliable.
