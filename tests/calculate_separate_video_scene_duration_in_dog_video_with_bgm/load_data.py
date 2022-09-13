@@ -91,11 +91,11 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     getTimeStamp = lambda timeObject: timeObject.timestamp() - standardStartTimeStamp
 
     for index, (start, end, duration) in enumerate(sceneCuts):
-        estimatedDuration = duration - 0.2
-        if estimatedDuration < durationThreshold:
+        estimatedDurationAfterCut = duration - 0.2
+        if estimatedDurationAfterCut < durationThreshold:
             continue
         startCutDatetime = getTimeObject(start) + mTimeDelta
         endCutDatetime = getTimeObject(end) - mTimeDelta
         # print(getTimeStamp(startDatetime), getTimeStamp(endDatetime))
         # print(startDatetime, endDatetime)
-        candidates.append((startCutDatetime, endCutDatetime, estimatedDuration))
+        candidates.append((startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
