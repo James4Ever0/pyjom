@@ -1,6 +1,6 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-doc = new jsdom.JSDOM(``, {
+doc = new jsdom.JSDOM("<body>Look at this cat: <img src='./cat.jpg'></body>", {
     url: "https://www.baidu.com"
 });
 const { Readability } = require('@mozilla/readability');
