@@ -57,8 +57,9 @@ indeed the vaguest idea where the wood and river in question were."""
 
 lemma_word1 = []
 for token in doc:
-    print("LEMMA", token.lemma_)
-    print(dir(token))
-    breakpoint()
+    # print("LEMMA", token.lemma_)
+    # not reliable.
+    # print(dir(token))
+    # breakpoint()
     lemma_word1.append(token.lemma_)
 print(lemma_word1)  # there is no such -PRON- thing.
