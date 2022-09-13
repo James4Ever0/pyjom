@@ -3,4 +3,5 @@ import requests
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
-    requests.get("")
+    if source == 'giphy':
+        requests.get("")
