@@ -15,5 +15,6 @@ jsonData = getJson(pageSize=pageSize)
 total = jsonData["meta"]["total"]
 print('total:', total)
 
-pages = 
+import math
+pages = math.ceil(total/pageSize)
 for index in range(2,)
