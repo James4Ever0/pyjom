@@ -41,6 +41,8 @@ for w in lemma_word1:
     Stem_words.append(rootWord)
 sprint(Stem_words) # 3rd step
 
+Stem_words = 
+
 import numpy as np
 
 Stem_words = np.array(Stem_words)
