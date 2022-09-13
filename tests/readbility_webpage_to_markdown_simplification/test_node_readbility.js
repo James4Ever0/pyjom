@@ -1,7 +1,7 @@
 var read = require('node-readability');
 url="https://zhuanlan.zhihu.com/p/384614837"
 // 'http://howtonode.org/really-simple-file-uploads'
-read(, function(err, article, meta) {
+read(url, function(err, article, meta) {
     // Main Article
     console.log(article.content);
     // Title
