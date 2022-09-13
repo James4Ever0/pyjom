@@ -43,3 +43,4 @@ for i in text.split():
     word3 = Word(word2).lemmatize("a")
     lem.append(Word(word3).lemmatize())
 print(lem)
+
