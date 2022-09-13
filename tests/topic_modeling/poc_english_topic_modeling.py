@@ -51,7 +51,7 @@ Stem_words = Stem_words.reshape(5,-1)
 # row, col = Stem_words.shape
 # exit()
 # for reasons that shit can understand.
-for row in np.nditer(Stem_words,1):
+for row in np.nditer(1,Stem_words):
     print(row)
 
 from sklearn.feature_extraction.text import CountVectorizer
