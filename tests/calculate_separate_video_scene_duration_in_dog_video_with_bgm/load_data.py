@@ -160,7 +160,7 @@ elif (
         return distance < threshold  # check if is neighbor
 
     while True:
-        print("BANNED:", len(bannedIndexs), "TOTAL:", len())
+        print("BANNED:", len(bannedIndexs), "TOTAL:", len(candidates))
         target = fakeQualificationFunction()
         isSimilar = lambda a, b, threshold: min(a, b) / max(a, b) >= threshold
         similarThreshold = 0.9
