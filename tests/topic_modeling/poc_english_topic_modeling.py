@@ -40,3 +40,26 @@ for w in lemma_word1:
     rootWord = ps.stem(w)
     Stem_words.append(rootWord)
 sprint(Stem_words) # 3rd step
+
+# for reasons that shit can understand.
+
+from sklearn.feature_extraction.text import CountVectorizer
+
+
+# In[7]:
+
+
+#把上一步分好词的文本保存为一个txt文档
+with open('message.txt','w') as f:
+    f.write(words)
+
+
+# In[8]:
+
+
+#创建一个CountVectoerizer实例
+vect = CountVectorizer()
+#打开刚刚保存的txt文档
+f = open('message.txt','r')
+#使用CountVectorizer拟合数据
+vect.fit(f)
