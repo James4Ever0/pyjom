@@ -100,4 +100,5 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         # print(startDatetime, endDatetime)
         candidates.append((startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
     
-    
+    while True:
+        target = 
