@@ -1,5 +1,6 @@
+from pyjom.main import *
 
-class FilesystemAutoContentProducer(ContentProducer):
+class OnlineAutoContentProducer(ContentProducer):
     def __init__(self, filepath=None, dirpath=None, recursive=False, enable_log=True,reviewerLogs = [],processor_filters={},producer_filters={}, path_replacers = [], template="pets_with_music", template_config = {}):
         super().__init__()
         if filepath is None:
