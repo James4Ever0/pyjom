@@ -28,7 +28,8 @@ ps = PorterStemmer()
 for w in filtered_sentence:
     rootWord = ps.stem(w)
     Stem_words.append(rootWord)
-print(filtered_sentence)
+print(filtered_sentence) # 1st step
+
 print(Stem_words)
 
 # from textblob lib import Word method
