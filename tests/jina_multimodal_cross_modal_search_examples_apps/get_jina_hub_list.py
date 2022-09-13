@@ -18,8 +18,9 @@ data = [jsonData.copy()]
 
 import math
 pages = math.ceil(total/pageSize)
-for index in range(2,pages+1):
+import progressbar
+for index in progressbar.progressbar(range(2,pages+1)):
     time.sleep(2)
     print('page index:',index)
     jsonData = getJson(pageIndex=index, pageSize=pageSize)
-    
+    data.append(jsonData.copy())
