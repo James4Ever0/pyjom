@@ -131,6 +131,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         s_b, e_b, l_b = clip_b
         e_min = min(e_a, e_b)
         s_max = max(s_a, s_b)
+        distance = s_max - e_min
+        return distance > threshold
 
     while True:
         target = fakeQualificationFunction()
