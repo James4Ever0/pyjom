@@ -89,7 +89,7 @@ def print_topics(model, feature_names, n_top_words):
         message += " ".join(
             mList
         )
-        mSet  = set(mList) # the set contains 
+        mSet  = set(mList) # the set contains word groups like 'river question'
         cDict = {k:mList.count(k) for k in mSet}
         print("MESSAGE",message)
         print("SET", mSet)
