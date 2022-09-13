@@ -26,4 +26,5 @@ for index in progressbar.progressbar(range(2,pages+1)):
     data.append(jsonData.copy())
 
 print("writing data")
-with open("jina_hub.json", "w") as f: f.write(json.dumps())
+with open("jina_hub.json", "w") as f:
+    f.write(json.dumps(data, indent=4, ensure_ascii=False))
