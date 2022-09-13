@@ -137,6 +137,7 @@ elif (
         for mIndex, neighbor in enumerate(leftNeighbors):
             currentIndex = index - mIndex - 1
             assert candidates[currentIndex] == neighbor
+            assert 
             if checkNeighbor(neighbor, candidates[index]):
                 neighborIndexs.append(currentIndex)
                 print("left index:", currentIndex)
@@ -145,6 +146,7 @@ elif (
         for mIndex, neighbor in enumerate(rightNeighbors):
             currentIndex = index + mIndex + 1
             assert candidates[currentIndex] == neighbor
+            assert 
             if checkNeighbor(neighbor, candidates[index]):
                 neighborIndexs.append(currentIndex)
                 print("right index:", currentIndex)
