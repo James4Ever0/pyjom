@@ -92,7 +92,8 @@ def print_topics(model, feature_names, n_top_words):
         message += mListStr
         mSet  = set(mList) # the set contains word groups like 'river question'
         cDict = {k:mList.count(k) for k in mSet}
-        mRealList = " ".split()
+        mRealList = " ".split(mListStr)
+        mRealList = " "
         print("MESSAGE",message)
         print("SET", mSet)
         print("COUNT DICT", cDict) # pointless to count here?
