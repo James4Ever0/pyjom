@@ -86,12 +86,12 @@ class tmpdir(AbstractContextManager):
         return False
         
 if __name__ == "__main__":
-    COMPLETE_TEST = False
+    COMPLETE_TEST = True
     if COMPLETE_TEST:
         completeTest()
     # so we don't have to run it all the time. really?
     else:
-        scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
+        # scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
         # a special hack
         # import tempfile
         with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
