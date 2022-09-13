@@ -15,7 +15,6 @@ total = jsonData["meta"]["total"]
 print('total:', total)
 data = [jsonData.copy()]
 
-
 import math
 pages = math.ceil(total/pageSize)
 import progressbar
