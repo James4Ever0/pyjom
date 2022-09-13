@@ -18,6 +18,10 @@ doc = nlp(
 
 # the sentence spliter includes unwanted "\n" char
 
+set(stopwords.words("english"))
+
+stop_words = set(stopwords.words("english"))
+
 lemma_word1 = []
 # this shit has the lang tag. it might be useful for language detection. really?
 for token in doc:
@@ -26,10 +30,6 @@ for token in doc:
     lemma_word1.append(elem)
 print(lemma_word1)  # there is no such -PRON- thing.
 # 1st step.
-
-set(stopwords.words("english"))
-
-stop_words = set(stopwords.words("english"))
 
 word_tokens = word_tokenize(text)
 
