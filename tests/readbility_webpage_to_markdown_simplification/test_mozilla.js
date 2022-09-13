@@ -1,7 +1,7 @@
-var { Readability } = require('@mozilla/readability');
+{ Readability } = require('@mozilla/readability');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-var doc = new JSDOM(``, {
+doc = new JSDOM(``, {
   url: "https://www.baidu.com"
 });
 let reader = new Readability(doc.window.document);
