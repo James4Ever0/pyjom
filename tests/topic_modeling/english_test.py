@@ -2,36 +2,36 @@
 # https://medium.com/analytics-vidhya/nlp-essentials-removing-stopwords-and-performing-text-normalization-using-nltk-and-spacy-in-python-2c4024d2e343
 
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize 
+from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
-set(stopwords.words('english'))
+set(stopwords.words("english"))
 
 text = """He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and 
 fishery rihgts at once. He was the more ready to do this becuase the rights had become much less valuable, and he had 
 indeed the vaguest idea where the wood and river in question were."""
 
-stop_words = set(stopwords.words('english')) 
-  
-word_tokens = word_tokenize(text) 
-    
-filtered_sentence = [] 
-  
-for w in word_tokens: 
-    if w not in stop_words: 
-        filtered_sentence.append(w) 
+stop_words = set(stopwords.words("english"))
+
+word_tokens = word_tokenize(text)
+
+filtered_sentence = []
+
+for w in word_tokens:
+    if w not in stop_words:
+        filtered_sentence.append(w)
 
 Stem_words = []
-ps =PorterStemmer()
+ps = PorterStemmer()
 for w in filtered_sentence:
-    rootWord=ps.stem(w)
+    rootWord = ps.stem(w)
     Stem_words.append(rootWord)
 print(filtered_sentence)
 print(Stem_words)
 
-# from textblob lib import Word method 
+# from textblob lib import Word method
 # if textblobTest:
-from textblob import Word 
+from textblob import Word
 
 text = """He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and 
 fishery rihgts at once. He was the more ready to do this becuase the rights had become much less valuable, and he had 
@@ -46,14 +46,17 @@ for i in text.split():
 print(lem)
 
 import en_core_web_sm
+
 nlp = en_core_web_sm.load()
 
-doc = nlp(u"""He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and 
+doc = nlp(
+    """He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and 
 fishery rihgts at once. He was the more ready to do this becuase the rights had become much less valuable, and he had 
-indeed the vaguest idea where the wood and river in question were.""")
+indeed the vaguest idea where the wood and river in question were."""
+)
 
 lemma_word1 = []
 for token in doc:
-    print('LEMMA',token.lemma_)
+    print("LEMMA", token.lemma_)
     lemma_word1.append(token.lemma_)
-print(lemma_word1) # there is no such -PRON- thing.
+print(lemma_word1)  # there is no such -PRON- thing.
