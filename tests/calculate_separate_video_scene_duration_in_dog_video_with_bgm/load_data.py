@@ -125,7 +125,7 @@ elif (
         ) in enumerate(candidates)
     ]
     random.shuffle(shuffledCandidates)
-    bannedIndexs = []
+    bannedIndexs = set()
     neighborThreshold = 5
 
     def getNeighborIndexs(index, candidates, neighborThreshold, checkNeighbor):
