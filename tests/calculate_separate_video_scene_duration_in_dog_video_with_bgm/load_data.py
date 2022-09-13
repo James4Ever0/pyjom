@@ -101,4 +101,5 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         candidates.append((startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
     
     while True:
-        target = 
+        target = fakeQualificationFunction()
+        
