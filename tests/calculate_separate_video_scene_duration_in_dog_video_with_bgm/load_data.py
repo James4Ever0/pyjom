@@ -121,5 +121,5 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
                     print("Accepting candidate",(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
                     print("target:", target)
                     bannedIndexs.append(index)
-                    
+                    for 
         random.shuffle(shuffledCandidates)
