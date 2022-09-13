@@ -91,9 +91,10 @@ def print_topics(model, feature_names, n_top_words):
         )
         mSet  = set(mList) # the set contains word groups like 'river question'
         cDict = {k:mList.count(k) for k in mSet}
+        mRealSet = 
         print("MESSAGE",message)
         print("SET", mSet)
-        print("COUNT DICT", cDict)
+        print("COUNT DICT", cDict) # pointless to count here?
     print()
 
 n_top_words = 10
