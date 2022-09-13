@@ -7,9 +7,9 @@ read('http://howtonode.org/really-simple-file-uploads', function(err, article, m
     console.log(article.title);
 
     // HTML Source Code
-    console.log(article.html);
-    // DOM
-    console.log(article.document);
+    // console.log(article.html);
+    // // DOM
+    // console.log(article.document);
 
     // Response Object from Request Lib
     // console.log(meta);
