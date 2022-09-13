@@ -99,3 +99,5 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         # print(getTimeStamp(startDatetime), getTimeStamp(endDatetime))
         # print(startDatetime, endDatetime)
         candidates.append((startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
+    
+    
