@@ -1,13 +1,10 @@
 from pyjom.main import *
 
 class OnlineAutoContentProducer(ContentProducer):
-    def __init__(self, source=None, enable_log=True,reviewerLogs = [],processor_filters={},producer_filters={}, path_replacers = [], template="pets_with_music_online", template_config = {}):
+    def __init__(self, source=None, enable_log=True,processor_filters={},producer_filters={}, path_replacers = [], template="pets_with_music_online", template_config = {}):
         super().__init__()
         assert source is not None
         self.source = source
-        self.dirpath = dirpath
-        self.recursive = recursive
-        self.reviewerLogs = reviewerLogs
         if enable_log:
             self.log_location = "logs/local/"
         self.identifier.typeFix(type(self).__name__)
