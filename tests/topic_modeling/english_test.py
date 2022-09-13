@@ -54,4 +54,4 @@ indeed the vaguest idea where the wood and river in question were.""")
 lemma_word1 = [] 
 for token in doc:
     lemma_word1.append(token.lemma_)
-lemma_word1
+print(lemma_word1)
