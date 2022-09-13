@@ -5,8 +5,10 @@ from ctypes.wintypes import LARGE_INTEGER
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
+
 # from lazero.utils import inspectObject
-from lazero.utils import sprint # print with spliter
+from lazero.utils import sprint  # print with spliter
+
 # metalazero belongs to lazero package.
 
 
@@ -27,7 +29,7 @@ stop_words = set([elem.lower() for elem in stopwords.words("english")])
 lemma_word1 = []
 # this shit has the lang tag. it might be useful for language detection. really?
 for token in doc:
-    if token.pos_ in ['PRON','CCONJ','ADP','PART','PUNCT','AUX']:
+    if token.pos_ in ["PRON", "CCONJ", "ADP", "PART", "PUNCT", "AUX"]:
         continue
     if token.text.lower() in stop_words:
         continue
@@ -40,14 +42,14 @@ ps = PorterStemmer()
 for w in lemma_word1:
     rootWord = ps.stem(w)
     Stem_words.append(rootWord)
-sprint(Stem_words) # 3rd step
+sprint(Stem_words)  # 3rd step
 
-Stem_words += ((len(Stem_words)-1)%5)* [""] # padding
+Stem_words += ((len(Stem_words) - 1) % 5) * [""]  # padding
 
 import numpy as np
 
 Stem_words = np.array(Stem_words)
-Stem_words = Stem_words.reshape(5,-1)
+Stem_words = Stem_words.reshape(5, -1)
 # sprint(Stem_words)
 # row, col = Stem_words.shape
 # exit()
@@ -61,29 +63,30 @@ for row in Stem_words:
 
 data = "\n".join(dataList)
 
-from sklearn.feature_extraction.text import  TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 # In[8]:
 
-#创建一个CountVectoerizer实例
-vect = TfidfVectorizer(ngram_range=(2,2))
-#打开刚刚保存的txt文档
+# 创建一个CountVectoerizer实例
+vect = TfidfVectorizer(ngram_range=(2, 2))
+# 打开刚刚保存的txt文档
 f = data
-#使用CountVectorizer拟合数据
+# 使用CountVectorizer拟合数据
 x_train = vect.fit_transform(f)
 
 from sklearn.decomposition import LatentDirichletAllocation
 
-lda = LatentDirichletAllocation(n_components = 10)
+lda = LatentDirichletAllocation(n_components=10)
 lda.fit(x_train)
 
-def print_topics(model, feature_names, n_top_words):
-    #首先是遍历模型中存储的话题序号和话题内容
-    for topic_idx, topic in enumerate(model.components_):
-        #然后打印话题的序号以及指定数量的最高频的关键词
-        message = 'topic #%d:' % topic_idx
-        message += ' '.join([feature_names[i]
-                           for i in topic.argsort()[:-n_top_words - 1:-1]])
-        print (message)
-    print()
 
+def print_topics(model, feature_names, n_top_words):
+    # 首先是遍历模型中存储的话题序号和话题内容
+    for topic_idx, topic in enumerate(model.components_):
+        # 然后打印话题的序号以及指定数量的最高频的关键词
+        message = "topic #%d:" % topic_idx
+        message += " ".join(
+            [feature_names[i] for i in topic.argsort()[: -n_top_words - 1 : -1]]
+        )
+        print(message)
+    print()
