@@ -108,7 +108,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     neighborThreshold = 5
     def getNeighborIndexs(index, candidates, neighborThreshold):
         assert neighborThreshold  > 0
-        assert index in 
+        candidateIndexs = 
+        assert index in candidateIndexs
         leftNeighbors = candidates[:index:-1][::-1]
         rightNeighbors = candidates[index+1:]
         for mIndex, neighbor in enumerate(leftNeighbors):
