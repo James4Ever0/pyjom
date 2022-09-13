@@ -86,9 +86,10 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     )
     getTimeString = lambda timeObject: timeObject.strftime("%H:%M:%S.%f")
     mTimeDelta = datetime.timedelta(milliseconds=100)  # 0.1 seconds
+
     for index, (start, end, duration) in enumerate(sceneCuts):
         estimatedDuration = duration - 0.2
         if estimatedDuration < durationThreshold:
             continue
-        start2 = getTimeObject(start) + mTimeDelta
-        end2 = getTimeObject(end) - mTimeDelta
+        startTimeCode = getTimeObject(start) + mTimeDelta
+        endTimeCode = getTimeObject(end) - mTimeDelta
