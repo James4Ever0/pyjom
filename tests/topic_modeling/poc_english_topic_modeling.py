@@ -45,15 +45,6 @@ sprint(Stem_words) # 3rd step
 
 from sklearn.feature_extraction.text import CountVectorizer
 
-
-# In[7]:
-
-
-#把上一步分好词的文本保存为一个txt文档
-with open('message.txt','w') as f:
-    f.write(words)
-
-
 # In[8]:
 
 
