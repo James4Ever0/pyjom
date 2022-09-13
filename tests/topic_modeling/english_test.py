@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from lazero import inspectObject
+# metalazero belongs to lazero package.
 
 set(stopwords.words("english"))
 
