@@ -2,7 +2,7 @@ from pyjom.commons import *
 import requests
 # import jieba
 
-def topicModeling(, lang='en'):
+def topicModeling(, lang='en'): # specify language please?
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
