@@ -1,3 +1,4 @@
+# https://huggingface.co/spacy/en_core_web_sm
 
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize 
