@@ -125,6 +125,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
             else:
                 break
         return neighborIndexs
+    
+    def checkNeighbor(a,b):
 
     while True:
         target = fakeQualificationFunction()
