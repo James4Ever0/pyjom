@@ -110,7 +110,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         target = fakeQualificationFunction()
         isSimilar = lambda a,b, threshold: min(a,b)/max(a,b) >= threshold
         similarThreshold = 0.9
-        if len()
+        if len(bannedIndexs) == len(shuffledCandidates):)
         for index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut in shuffledCandidates:
             if index in bannedIndexs: continue
             if isSimilar(estimatedDurationAfterCut, target, similarThreshold):
