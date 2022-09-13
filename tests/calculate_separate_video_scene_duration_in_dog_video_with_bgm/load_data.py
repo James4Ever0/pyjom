@@ -100,8 +100,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         endCutDatetime = getTimeObject(end) - mTimeDelta
         # print(getTimeStamp(startDatetime), getTimeStamp(endDatetime))
         # print(startDatetime, endDatetime)
-        startCutDatetime, endCutDatetime 
-        candidates.append((startCutTimestamp, endCutDTimestamp estimatedDurationAfterCut))
+        startCutTimestamp, endCutDTimestamp = getTimestamp(startCutDatetime), getTimestamp(endCutDatetime) 
+        candidates.append((startCutTimestamp, endCutDTimestamp, estimatedDurationAfterCut))
     
     shuffledCandidates = [(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut ) for index,(startCutDatetime, endCutDatetime, estimatedDurationAfterCut) in enumerate(candidates) ]
     random.shuffle(shuffledCandidates)
