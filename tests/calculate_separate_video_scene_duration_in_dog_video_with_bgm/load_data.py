@@ -73,16 +73,22 @@ elif flag == "render":
         start2, end2 = getTimeString(start2), getTimeString(end2)
         output = "output/%d.flv" % index
         print("ffmpeg -y -ss %s -to %s -i %s %s" % (start2, end2, filename, output))
-elif flag == "filter": # to make sure the selected set will be evenly spaced. no two elements will get closer to each other than 5 seconds.
+elif (
+    flag == "filter"
+):  # to make sure the selected set will be evenly spaced. no two elements will get closer to each other than 5 seconds.
     import random
+
     durationMinThreshold = 0.6
     durationMaxThreshold = 7.833
-    fakeQualificationFunction = lambda: random.uniform(durationMinThreshold,durationMaxThreshold)
+    fakeQualificationFunction = lambda: random.uniform(
+        durationMinThreshold, durationMaxThreshold
+    )
     fakeAcceptFunction = lambda: random.random() > 0.5
     # select the closest one! must be closer than 0.9 to 1.1
     candidates = []
 
     import datetime
+
     getTimeObject = lambda timeString: datetime.datetime.strptime(
         timeString, "%H:%M:%S.%f"
     )
@@ -94,24 +100,39 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
 
     for index, (start, end, duration) in enumerate(sceneCuts):
         estimatedDurationAfterCut = duration - 0.2
-        if estimatedDurationAfterCut < durationMinThreshold or estimatedDurationAfterCut > durationMaxThreshold:
+        if (
+            estimatedDurationAfterCut < durationMinThreshold
+            or estimatedDurationAfterCut > durationMaxThreshold
+        ):
             continue
         startCutDatetime = getTimeObject(start) + mTimeDelta
         endCutDatetime = getTimeObject(end) - mTimeDelta
         # print(getTimeStamp(startDatetime), getTimeStamp(endDatetime))
         # print(startDatetime, endDatetime)
-        startCutTimestamp, endCutTimestamp = getTimestamp(startCutDatetime), getTimestamp(endCutDatetime) 
-        candidates.append((startCutTimestamp, endCutTimestamp, estimatedDurationAfterCut))
-    
-    shuffledCandidates = [(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut ) for index,(startCutDatetime, endCutDatetime, estimatedDurationAfterCut) in enumerate(candidates) ]
+        startCutTimestamp, endCutTimestamp = getTimestamp(
+            startCutDatetime
+        ), getTimestamp(endCutDatetime)
+        candidates.append(
+            (startCutTimestamp, endCutTimestamp, estimatedDurationAfterCut)
+        )
+
+    shuffledCandidates = [
+        (index, startCutDatetime, endCutDatetime, estimatedDurationAfterCut)
+        for index, (
+            startCutDatetime,
+            endCutDatetime,
+            estimatedDurationAfterCut,
+        ) in enumerate(candidates)
+    ]
     random.shuffle(shuffledCandidates)
     bannedIndexs = []
     neighborThreshold = 5
+
     def getNeighborIndexs(index, candidates, neighborThreshold, checkNeighbor):
-        assert neighborThreshold  > 0
+        assert neighborThreshold > 0
         assert index < len(candidates) and index >= 0
         leftNeighbors = candidates[:index:-1][::-1]
-        rightNeighbors = candidates[index+1:]
+        rightNeighbors = candidates[index + 1 :]
         neighborIndexs = []
         for mIndex, neighbor in enumerate(leftNeighbors):
             currentIndex = index - mIndex - 1
@@ -128,32 +149,53 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
             else:
                 break
         return neighborIndexs
-    
-    def checkNeighborForClipCandiates(clip_a,clip_b, threshold):
+
+    def checkNeighborForClipCandiates(clip_a, clip_b, threshold):
         assert threshold > 0
         s_a, e_a, l_a = clip_a
         s_b, e_b, l_b = clip_b
         e_min = min(e_a, e_b)
         s_max = max(s_a, s_b)
         distance = s_max - e_min
-        return distance < threshold # check if is neighbor
+        return distance < threshold  # check if is neighbor
 
     while True:
         target = fakeQualificationFunction()
-        isSimilar = lambda a,b, threshold: min(a,b)/max(a,b) >= threshold
+        isSimilar = lambda a, b, threshold: min(a, b) / max(a, b) >= threshold
         similarThreshold = 0.9
         if len(bannedIndexs) == len(shuffledCandidates):
             print("No avaliable candidates")
             break
-        for index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut in shuffledCandidates:
-            if index in bannedIndexs: continue
+        for (
+            index,
+            startCutDatetime,
+            endCutDatetime,
+            estimatedDurationAfterCut,
+        ) in shuffledCandidates:
+            if index in bannedIndexs:
+                continue
             if isSimilar(estimatedDurationAfterCut, target, similarThreshold):
                 accept = fakeAcceptFunction()
                 if accept:
-                    print("Accepting candidate",(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
+                    print(
+                        "Accepting candidate",
+                        (
+                            index,
+                            startCutDatetime,
+                            endCutDatetime,
+                            estimatedDurationAfterCut,
+                        ),
+                    )
                     print("target:", target)
                     bannedIndexs.append(index)
-                    neighborIndexs = getNeighborIndexs(index, candidates, neighborThreshold, lambda a,b:checkNeighborForClipCandiates(a,b, neighborThreshold))
+                    neighborIndexs = getNeighborIndexs(
+                        index,
+                        candidates,
+                        neighborThreshold,
+                        lambda a, b: checkNeighborForClipCandiates(
+                            a, b, neighborThreshold
+                        ),
+                    )
                     print("NEIGHBOR INDEXS:", neighborIndexs)
                     for neighborIndex in neighborIndexs:
                         bannedIndexs.append(neighborIndex)
