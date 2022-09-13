@@ -1,4 +1,4 @@
 from pyjom.commons import *
 
 @decorator
-def OnlineTopicGenerator(source='pi')
+def OnlineTopicGenerator(source='giphy',topic = '')
