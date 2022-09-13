@@ -25,4 +25,5 @@ for index in progressbar.progressbar(range(2,pages+1)):
     jsonData = getJson(pageIndex=index, pageSize=pageSize)
     data.append(jsonData.copy())
 
-print("writing data to")
+print("writing data")
+with open("")
