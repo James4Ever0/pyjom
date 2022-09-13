@@ -108,7 +108,8 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     neighborThreshold = 5
     def getNeighborIndexs(index, candidates, neighborThreshold):
         assert neighborThreshold  > 0
-        
+        leftNeighbors = candidates[:index]
+        rightNeighbors = candidates[index+1:]
 
     while True:
         target = fakeQualificationFunction()
