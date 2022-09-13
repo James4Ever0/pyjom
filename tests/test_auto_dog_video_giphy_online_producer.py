@@ -16,7 +16,7 @@ wbRev = OnlineAutoContentProducer(
             },
         },
     },
-    template="pets_with_music",
+    template="pets_with_music_online",
     template_config={
         "music": {
             "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3", # these things were not right.
@@ -32,7 +32,7 @@ wbRev = OnlineAutoContentProducer(
     processor_filters={
         "yolov5": ["dog", "cat"],
         "labels": ["dog", "cat"],
-        "framedifference_talib_detector": 30, # wtf?
+        # "framedifference_talib_detector": 30, # wtf?
         "ensure": ["yolov5"],
     }
     # you can also translate funny videos from youtube.
