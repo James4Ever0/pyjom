@@ -106,6 +106,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     random.shuffle(shuffledCandidates)
     bannedIndexs = []
     neighborThreshold = 5
+    def getNeighborIndexs()
     while True:
         target = fakeQualificationFunction()
         isSimilar = lambda a,b, threshold: min(a,b)/max(a,b) >= threshold
@@ -124,5 +125,5 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
                     neighborIndexs = getNeighborIndexs(index, candidates, neighborThreshold)
                     for neighborIndex in neighborIndexes:
                         bannedIndexs.append(neighborIndex)
-                        print("also banned:", neighborIndex, )
+                        print("also banned:", neighborIndex, candidates[neighborIndex])
         random.shuffle(shuffledCandidates)
