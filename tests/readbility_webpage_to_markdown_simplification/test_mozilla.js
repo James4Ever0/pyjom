@@ -1,6 +1,6 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-doc =  jsdom(``, {
+doc = new jsdom.JSDOM(``, {
     url: "https://www.baidu.com"
 });
 const { Readability } = require('@mozilla/readability');
