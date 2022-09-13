@@ -41,6 +41,11 @@ for w in lemma_word1:
     Stem_words.append(rootWord)
 sprint(Stem_words) # 3rd step
 
+import numpy as np
+
+Stem_words = np.array(Stem_words)
+Stem_words.reshape(5,-1)
+
 # for reasons that shit can understand.
 
 from sklearn.feature_extraction.text import CountVectorizer
