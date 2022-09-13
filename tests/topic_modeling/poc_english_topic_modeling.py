@@ -85,8 +85,9 @@ def print_topics(model, feature_names, n_top_words):
     for topic_idx, topic in enumerate(model.components_):
         # 然后打印话题的序号以及指定数量的最高频的关键词
         message = "topic #%d:" % topic_idx
+        mList = [feature_names[i] for i in topic.argsort()[: -n_top_words - 1 : -1]]
         message += " ".join(
-            [feature_names[i] for i in topic.argsort()[: -n_top_words - 1 : -1]]
+            mList
         )
         print("MESSAGE",message)
     print()
