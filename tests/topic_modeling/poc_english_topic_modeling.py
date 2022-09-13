@@ -93,7 +93,7 @@ def print_topics(model, feature_names, n_top_words):
         mSet  = set(mList) # the set contains word groups like 'river question'
         cDict = {k:mList.count(k) for k in mSet}
         mRealList = " ".split(mListStr)
-        mRealList = [x.strip() for x in mRealList if len(x.strip()) > 1]
+        mRealList = [x.strip() for x in mRealList if len(x.strip()) > 1] # usually things shorter than 1 letter is no good.
         print("MESSAGE",message)
         print("SET", mSet)
         print("COUNT DICT", cDict) # pointless to count here?
