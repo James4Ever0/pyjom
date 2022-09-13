@@ -89,7 +89,9 @@ def print_topics(model, feature_names, n_top_words):
         message += " ".join(
             mList
         )
+        mSet  = set(mList)
         print("MESSAGE",message)
+        print("SET", mSet)
     print()
 
 n_top_words = 10
