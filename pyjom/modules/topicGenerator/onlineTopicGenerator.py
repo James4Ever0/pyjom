@@ -5,4 +5,4 @@ import requests
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
     if source == 'giphy':
         waitForServerUp(8902, "nodejs giphy server")
-        requests.get("")
+        requests.get("http://localhost:8902/")
