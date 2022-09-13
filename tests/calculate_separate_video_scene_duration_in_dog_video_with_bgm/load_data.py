@@ -112,7 +112,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         leftNeighbors = candidates[:index:-1][::-1]
         rightNeighbors = candidates[index+1:]
         for mIndex, neighbor in enumerate(leftNeighbors):
-            currentIndex = 
+            currentIndex = index - mIndex - 1
 
     while True:
         target = fakeQualificationFunction()
