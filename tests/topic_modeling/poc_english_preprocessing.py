@@ -30,10 +30,9 @@ for token in doc:
         continue
     if token.text.lower() in stop_words:
         continue
-    lemma_word1.append(elem)
-print(lemma_word1)  # there is no such -PRON- thing.
+    lemma_word1.append(token.text)
+sprint(lemma_word1)  # there is no such -PRON- thing.
 # 1st step.
-print()
 
 Stem_words = []
 ps = PorterStemmer()
