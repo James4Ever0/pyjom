@@ -10,7 +10,7 @@ class OnlineAutoContentProducer(ContentProducer):
         self.identifier.typeFix(type(self).__name__)
         self.methodsList.update(
             {
-                "topic":keywordDecorator(OnlineTopicGenerator, source=source),  # how to generate this?
+                "topic":keywordDecorator(OnlineTopicGenerator, source=source, template=template),  # how to generate this?
                 "info": keywordDecorator(OnlineFetcher, source=source), # can you do that?
                 "processor": keywordDecorator(OnlineProcessor,filters=processor_filters), # this is the second thing. how do you process this?
                 # "reviewer": filesystemReviewer,
