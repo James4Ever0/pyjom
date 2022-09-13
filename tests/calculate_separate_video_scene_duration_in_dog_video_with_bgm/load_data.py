@@ -92,7 +92,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
 
     for index, (start, end, duration) in enumerate(sceneCuts):
         estimatedDurationAfterCut = duration - 0.2
-        if estimatedDurationAfterCut < durationThreshold or:
+        if estimatedDurationAfterCut < durationMinThreshold or estimatedDurationAfterCut > durationMaxThreshold:
             continue
         startCutDatetime = getTimeObject(start) + mTimeDelta
         endCutDatetime = getTimeObject(end) - mTimeDelta
