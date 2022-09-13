@@ -7,11 +7,27 @@ from nltk.stem import PorterStemmer
 # from lazero.utils import inspectObject
 # metalazero belongs to lazero package.
 
-set(stopwords.words("english"))
 
-text = """He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and 
-fishery rihgts at once. He was the more ready to do this becuase the rights had become much less valuable, and he had 
-indeed the vaguest idea where the wood and river in question were."""
+import en_core_web_sm
+
+nlp = en_core_web_sm.load()
+
+doc = nlp(
+    """He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and fishery rihgts at once. He was the more ready to do this becuase the rights had become much less valuable, and he had indeed the vaguest idea where the wood and river in question were."""
+)
+
+# the sentence spliter includes unwanted "\n" char
+
+lemma_word1 = []
+# this shit has the lang tag. it might be useful for language detection. really?
+for token in doc:
+    elem = (token.pos_, token.text)
+    # breakpoint()
+    lemma_word1.append(elem)
+print(lemma_word1)  # there is no such -PRON- thing.
+# 1st step.
+
+set(stopwords.words("english"))
 
 stop_words = set(stopwords.words("english"))
 
