@@ -8,7 +8,7 @@ template_names = ["subtitle_detector.mdl.j2"]
 
 wbRev = OnlineAutoContentProducer(
     producer_filters={
-        "yolov5": {"objects": ["dog", "cat"], "min_time": 2},
+        "yolov5": {"objects": ["dog", "cat"], "min_time": 2}, # what is this min_time?
         "meta": {
             "type": "video",
             "timelimit": {
