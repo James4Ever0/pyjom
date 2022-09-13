@@ -14,3 +14,4 @@ pageSize = 16
 jsonData = getJson(pageSize=pageSize)
 total = jsonData["meta"]["total"]
 print('total:', total)
+for index in range(2,)
