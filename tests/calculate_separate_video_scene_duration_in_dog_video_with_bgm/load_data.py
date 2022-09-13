@@ -105,5 +105,6 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     while True:
         target = fakeQualificationFunction()
         accept = fakeAcceptFunction()
+        isSimilar = 
         for startCutDatetime, endCutDatetime, estimatedDurationAfterCut in candidates:
-            if similar(estimatedDurationAfterCut, target)
+            if isSimilar(estimatedDurationAfterCut, target)
