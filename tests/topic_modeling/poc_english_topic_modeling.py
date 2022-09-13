@@ -65,7 +65,7 @@ from sklearn.feature_extraction.text import  TfidfVectorizer
 # In[8]:
 
 #创建一个CountVectoerizer实例
-vect = TfidfVectorizer()
+vect = TfidfVectorizer(ngram_range=(2,2))
 #打开刚刚保存的txt文档
 f = data
 #使用CountVectorizer拟合数据
