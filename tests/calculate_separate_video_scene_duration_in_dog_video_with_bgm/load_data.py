@@ -188,7 +188,7 @@ elif (
                         ),
                     )
                     print("target:", target)
-                    bannedIndexs.append(index)
+                    bannedIndexs.add(index)
                     neighborIndexs = getNeighborIndexs(
                         index,
                         candidates,
@@ -199,6 +199,6 @@ elif (
                     )
                     print("NEIGHBOR INDEXS:", neighborIndexs)
                     for neighborIndex in neighborIndexs:
-                        bannedIndexs.append(neighborIndex)
+                        bannedIndexs.add(neighborIndex)
                         print("also banned:", neighborIndex, candidates[neighborIndex])
         random.shuffle(shuffledCandidates)
