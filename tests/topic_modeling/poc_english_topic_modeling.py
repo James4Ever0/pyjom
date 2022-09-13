@@ -71,4 +71,5 @@ f = data
 #使用CountVectorizer拟合数据
 vect.fit(f)
 
-from sklearn.decomposition import 
+from sklearn.decomposition import LatentDirichletAllocation
+
