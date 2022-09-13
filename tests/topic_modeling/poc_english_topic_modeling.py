@@ -70,7 +70,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # 创建一个CountVectoerizer实例
 tfidf = TfidfVectorizer(ngram_range=(2, 2))
 # 打开刚刚保存的txt文档
-f = data
+import 
+f = StringIO(data)
 # 使用CountVectorizer拟合数据
 x_train = tfidf.fit_transform(f)
 
