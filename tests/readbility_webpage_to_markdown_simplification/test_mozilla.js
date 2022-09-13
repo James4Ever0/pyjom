@@ -1,6 +1,6 @@
 var { Readability } = require('@mozilla/readability');
 const { JSDOM } = require('jsdom');
-var doc = JSDOM("<body>Look at this cat: <img src='./cat.jpg'></body>", {
+var doc = new JSDOM("<body>Look at this cat: <img src='./cat.jpg'></body>", {
   url: "https://www.baidu.com"
 });
 let reader = new Readability(doc.window.document);
