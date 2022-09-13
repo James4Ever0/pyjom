@@ -32,10 +32,11 @@ for token in doc:
     lemma_word1.append(elem)
 print(lemma_word1)  # there is no such -PRON- thing.
 # 1st step.
+print()
 
 Stem_words = []
 ps = PorterStemmer()
-for w in filtered_sentence:
+for w in lemma_word1:
     rootWord = ps.stem(w)
     Stem_words.append(rootWord)
 print(filtered_sentence) # 2nd step
