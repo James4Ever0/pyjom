@@ -105,6 +105,6 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     while True:
         target = fakeQualificationFunction()
         accept = fakeAcceptFunction()
-        isSimilar = lambda a,b, threshold: 
+        isSimilar = lambda a,b, threshold: min(a,b)/max(a,b) >= threshold
         for startCutDatetime, endCutDatetime, estimatedDurationAfterCut in candidates:
             if isSimilar(estimatedDurationAfterCut, target, threshold)
