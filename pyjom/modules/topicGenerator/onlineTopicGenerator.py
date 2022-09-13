@@ -3,6 +3,7 @@ import requests
 # import jieba
 
 def topicModeling(, lang='en'): # specify language please?
+    if lang == 'en':
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
