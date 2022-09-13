@@ -107,6 +107,6 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         accept = fakeAcceptFunction()
         isSimilar = lambda a,b, threshold: min(a,b)/max(a,b) >= threshold
         similarThreshold = 0.9
+        bannedIndexs = []
         for startCutDatetime, endCutDatetime, estimatedDurationAfterCut in candidates:
             if isSimilar(estimatedDurationAfterCut, target, similarThreshold):
-                
