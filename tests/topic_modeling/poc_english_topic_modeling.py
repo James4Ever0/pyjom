@@ -47,10 +47,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 # In[8]:
 
-
 #创建一个CountVectoerizer实例
 vect = CountVectorizer()
 #打开刚刚保存的txt文档
-f = open('message.txt','r')
+f = data
 #使用CountVectorizer拟合数据
 vect.fit(f)
