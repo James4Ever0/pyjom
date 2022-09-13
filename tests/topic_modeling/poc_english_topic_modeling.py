@@ -1,7 +1,6 @@
 # https://huggingface.co/spacy/en_core_web_sm
 # https://medium.com/analytics-vidhya/nlp-essentials-removing-stopwords-and-performing-text-normalization-using-nltk-and-spacy-in-python-2c4024d2e343
 
-from ctypes.wintypes import LARGE_INTEGER
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
