@@ -2,6 +2,7 @@ from requests_html import HTMLSession # use pyppeteer.
 session = HTMLSession()
 
 # url='https://www.baidu.com/'
-
+url = ''
 r = session.get(url)
-print(r.html.absolute_links)
+for link in r.html.absolute_links:
+    print(link)
