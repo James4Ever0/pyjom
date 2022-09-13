@@ -77,7 +77,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     import random
     durationMinThreshold = 0.6
     durationMaxThreshold = 7.833
-    fakeQualificationFunction = lambda: random.uniform(0.6,7.833)
+    fakeQualificationFunction = lambda: random.uniform(durationMinThreshold,durationMaxThreshold)
     fakeAcceptFunction = lambda: random.random() > 0.5
     # select the closest one! must be closer than 0.9 to 1.1
     candidates = []
@@ -105,4 +105,4 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     while True:
         target = fakeQualificationFunction()
         accept = fakeAcceptFunction()
-        for startCutDatetime, endCutDatetime, estimatedDurationAfterCut in candidates:
+        for (startCutDatetime, endCutDatetime, estimatedDurationAfterCut) in candidates:
