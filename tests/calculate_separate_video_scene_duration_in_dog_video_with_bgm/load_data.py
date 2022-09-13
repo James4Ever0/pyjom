@@ -127,7 +127,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         return neighborIndexs
     
     def checkNeighborForClipCandiates(clip_a,clip_b):
-        
+        s_a, e_a, 
 
     while True:
         target = fakeQualificationFunction()
