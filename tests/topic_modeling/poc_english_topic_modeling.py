@@ -94,6 +94,9 @@ def print_topics(model, feature_names, n_top_words):
         cDict = {k:mList.count(k) for k in mSet}
         mRealList = " ".split(mListStr)
         mRealList = [x.strip() for x in mRealList if len(x.strip()) > 1] # usually things shorter than 2 letters are no good.
+        mRealSet = set(mRealList)
+        cDict = {k:mList.count(k) for k in mSet}
+
         print("MESSAGE",message)
         print("SET", mSet)
         print("COUNT DICT", cDict) # pointless to count here?
