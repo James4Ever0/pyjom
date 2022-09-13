@@ -5,3 +5,4 @@ query = {"sort":"-activities.metaMatched","pageIndex":3,"pageSize":16,"search":"
 r = requests.post(url,json=query)
 jsonData = r.json()
 total = jsonData["meta"]["total"]
+print('total:', total)
