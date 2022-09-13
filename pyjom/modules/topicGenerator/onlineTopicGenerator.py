@@ -1,9 +1,8 @@
 from pyjom.commons import *
 import requests
-from types import List
 # import jieba
 
-def topicModeling(sentences: List[str], lang='en'): # specify language please?
+def topicModeling(sentences: list[str], lang='en'): # specify language please?
     if lang == 'en':
 
 @decorator
