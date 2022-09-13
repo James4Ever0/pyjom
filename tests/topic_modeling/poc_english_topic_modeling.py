@@ -76,3 +76,4 @@ from sklearn.decomposition import LatentDirichletAllocation
 
 lda = LatentDirichletAllocation(n_components = 10)
 lda.fit(x_train)
+
