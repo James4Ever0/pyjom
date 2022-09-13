@@ -131,7 +131,7 @@ elif (
     def getNeighborIndexs(index, candidates, neighborThreshold, checkNeighbor):
         assert neighborThreshold > 0
         assert index < len(candidates) and index >= 0
-        leftNeighbors = candidates[:index-1][::-1]
+        leftNeighbors = candidates[:index][::-1]
         rightNeighbors = candidates[index + 1 :]
         neighborIndexs = []
         for mIndex, neighbor in enumerate(leftNeighbors):
