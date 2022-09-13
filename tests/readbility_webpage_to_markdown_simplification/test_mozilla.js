@@ -5,5 +5,5 @@ doc = new jsdom.JSDOM(``, {
 });
 const { Readability } = require('@mozilla/readability');
 let reader = new Readability(doc.window.document);
-let article = reader.parse();
+article = reader.parse();
 console.log(article.title);
