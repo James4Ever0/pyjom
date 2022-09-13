@@ -107,11 +107,13 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
 
     while True:
         target = fakeQualificationFunction()
-        accept = fakeAcceptFunction()
         isSimilar = lambda a,b, threshold: min(a,b)/max(a,b) >= threshold
         similarThreshold = 0.9
         bannedIndexs = []
         for index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut in shuffledCandidates:
             if isSimilar(estimatedDurationAfterCut, target, similarThreshold):
+        accept = fakeAcceptFunction()
+
+                if accept:
                 bannedIndexs.append(index)
         random.shuffle(shuffledCandidates)
