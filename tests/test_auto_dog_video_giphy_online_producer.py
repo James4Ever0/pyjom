@@ -92,6 +92,8 @@ if __name__ == "__main__":
     # so we don't have to run it all the time. really?
     else:
         # scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
+        # set this scriptFilePath to something else.
+        scriptFilePath = ""
         # a special hack
         # import tempfile
         with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
