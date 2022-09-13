@@ -48,7 +48,7 @@ import numpy as np
 Stem_words = np.array(Stem_words)
 Stem_words = Stem_words.reshape(5,-1)
 sprint(Stem_words)
-Stem_words.shape
+row, col = Stem_words.shape
 exit()
 # for reasons that shit can understand.
 
