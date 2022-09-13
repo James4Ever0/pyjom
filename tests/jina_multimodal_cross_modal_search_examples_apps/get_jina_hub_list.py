@@ -17,4 +17,4 @@ print('total:', total)
 
 import math
 pages = math.ceil(total/pageSize)
-for index in range(2,)
+for index in range(2,pages)
