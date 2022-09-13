@@ -68,7 +68,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # In[8]:
 
 # 创建一个CountVectoerizer实例
-tfidf = TfidfVectorizer(ngram_range=(2, 2))
+tfidf = TfidfVectorizer(ngram_range=(1, 2))
 # 打开刚刚保存的txt文档
 from io import StringIO
 f = StringIO(data)
@@ -77,7 +77,7 @@ x_train = tfidf.fit_transform(f)
 
 from sklearn.decomposition import LatentDirichletAllocation
 
-lda = LatentDirichletAllocation(n_components=10)
+lda = LatentDirichletAllocation(n_components=5)
 lda.fit(x_train)
 
 def print_topics(model, feature_names, n_top_words):
