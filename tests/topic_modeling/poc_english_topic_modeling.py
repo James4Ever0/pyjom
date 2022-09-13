@@ -88,7 +88,7 @@ def print_topics(model, feature_names, n_top_words):
         message += " ".join(
             [feature_names[i] for i in topic.argsort()[: -n_top_words - 1 : -1]]
         )
-        print(message)
+        print("MESSAGE",message)
     print()
 
 n_top_words = 10
