@@ -90,6 +90,7 @@ def print_topics(model, feature_names, n_top_words):
             mList
         )
         mSet  = set(mList)
+        cDict = {k:}
         print("MESSAGE",message)
         print("SET", mSet)
         print("COUNT DICT", cDict)
