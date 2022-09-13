@@ -106,13 +106,14 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     random.shuffle(shuffledCandidates)
     bannedIndexs = []
     neighborThreshold = 5
-    def getNeighborIndexs(index, candidates, neighborThreshold, neighbor):
+    def getNeighborIndexs(index, candidates, neighborThreshold, checkNeighbor):
         assert neighborThreshold  > 0
         assert index < len(candidates) and index >= 0
         leftNeighbors = candidates[:index:-1][::-1]
         rightNeighbors = candidates[index+1:]
         for mIndex, neighbor in enumerate(leftNeighbors):
             currentIndex = index - mIndex - 1
+            if checkNeighbor(neighbor, candidates[index])
 
     while True:
         target = fakeQualificationFunction()
