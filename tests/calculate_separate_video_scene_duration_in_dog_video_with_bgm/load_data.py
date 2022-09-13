@@ -134,7 +134,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         e_min = min(e_a, e_b)
         s_max = max(s_a, s_b)
         distance = s_max - e_min
-        return distance > threshold
+        return distance < threshold # check if is neighbor
 
     while True:
         target = fakeQualificationFunction()
@@ -152,6 +152,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
                     print("target:", target)
                     bannedIndexs.append(index)
                     neighborIndexs = getNeighborIndexs(index, candidates, neighborThreshold, lambda a,b:checkNeighborForClipCandiates(a,b, neighborThreshold))
+                    print("NEIGHBOR INDEXS:", neighborIndexs)
                     for neighborIndex in neighborIndexs:
                         bannedIndexs.append(neighborIndex)
                         print("also banned:", neighborIndex, candidates[neighborIndex])
