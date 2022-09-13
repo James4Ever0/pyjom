@@ -33,14 +33,6 @@ for token in doc:
 print(lemma_word1)  # there is no such -PRON- thing.
 # 1st step.
 
-word_tokens = word_tokenize(text)
-
-filtered_sentence = []
-
-for w in word_tokens:
-    if w not in stop_words:
-        filtered_sentence.append(w)
-
 Stem_words = []
 ps = PorterStemmer()
 for w in filtered_sentence:
