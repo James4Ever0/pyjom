@@ -28,7 +28,7 @@ ps = PorterStemmer()
 for w in filtered_sentence:
     rootWord = ps.stem(w)
     Stem_words.append(rootWord)
-print(filtered_sentence) # 1st step
+print(filtered_sentence) # 2nd step
 
 print(Stem_words) # 3rd step
 
