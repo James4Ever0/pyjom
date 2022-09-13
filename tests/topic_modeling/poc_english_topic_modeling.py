@@ -70,9 +70,9 @@ vect = TfidfVectorizer(ngram_range=(2,2))
 #打开刚刚保存的txt文档
 f = data
 #使用CountVectorizer拟合数据
-vect.fit(f)
+x_train = vect.fit_transform(f)
 
 from sklearn.decomposition import LatentDirichletAllocation
 
 lda = LatentDirichletAllocation(n_components = 10)
-lda.fit()
+lda.fit(x_train)
