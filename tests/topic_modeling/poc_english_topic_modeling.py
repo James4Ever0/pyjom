@@ -44,8 +44,10 @@ sprint(Stem_words) # 3rd step
 import numpy as np
 
 Stem_words = np.array(Stem_words)
-Stem_words.reshape(5,-1)
+Stem_words = Stem_words.reshape(5,-1)
+sprint(Stem_words)
 
+exit()
 # for reasons that shit can understand.
 
 from sklearn.feature_extraction.text import CountVectorizer
