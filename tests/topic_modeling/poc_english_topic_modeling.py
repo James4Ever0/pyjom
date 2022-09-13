@@ -51,7 +51,7 @@ Stem_words = Stem_words.reshape(5,-1)
 # row, col = Stem_words.shape
 # exit()
 # for reasons that shit can understand.
-# np.nditer is for 
+# np.nditer is for iteration over every elem
 for row in Stem_words:
     print(row)
 
