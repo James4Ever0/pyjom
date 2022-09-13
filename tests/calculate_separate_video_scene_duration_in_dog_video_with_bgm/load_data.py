@@ -151,7 +151,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
                     print("target:", target)
                     bannedIndexs.append(index)
                     neighborIndexs = getNeighborIndexs(index, candidates, neighborThreshold, lambda a,b:checkNeighborForClipCandiates(a,b, neighborThreshold))
-                    for neighborIndex in neighborIndexes:
+                    for neighborIndex in neighborIndexs:
                         bannedIndexs.append(neighborIndex)
                         print("also banned:", neighborIndex, candidates[neighborIndex])
         random.shuffle(shuffledCandidates)
