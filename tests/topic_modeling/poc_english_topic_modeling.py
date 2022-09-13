@@ -91,3 +91,4 @@ def print_topics(model, feature_names, n_top_words):
     print()
 
 
+print_topics(lda, tf.get_feature_names(), n_top_words)
