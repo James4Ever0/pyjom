@@ -8,6 +8,6 @@ def topicModeling():
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
     if source == 'giphy':
         waitForServerUp(8902, "nodejs giphy server")
-        while True:
+
             requests.get("http://localhost:8902/random", params = {})
             requests.get("http://localhost:8902/related", params = {})
