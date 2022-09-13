@@ -88,7 +88,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
     mTimeDelta = datetime.timedelta(milliseconds=100)  # 0.1 seconds
     standardStartDatetime = datetime.datetime(year=1900, month=1, day=1)
     standardStartTimeStamp = standardStartDatetime.timestamp()
-    get
+    getTimeStamp = lambda timeObject: timeObject
 
     for index, (start, end, duration) in enumerate(sceneCuts):
         estimatedDuration = duration - 0.2
