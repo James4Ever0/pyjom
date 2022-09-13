@@ -117,14 +117,14 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
             currentIndex = index - mIndex - 1
             if checkNeighbor(neighbor, candidates[index]):
                 neighborIndexs.append(currentIndex)
-                print("")
+                print("left index:", currentIndex)
             else:
                 break
         for mIndex, neighbor in enumerate(rightNeighbors):
             currentIndex = index + mIndex
             if checkNeighbor(neighbor, candidates[index]):
                 neighborIndexs.append(currentIndex)
-                print("")
+                print("right index:", currentIndex)
             else:
                 break
         return neighborIndexs
