@@ -103,8 +103,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         candidates.append((startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
     
     shuffledCandidates = [(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut ) for index,(startCutDatetime, endCutDatetime, estimatedDurationAfterCut) in enumerate(candidates) ]
-    import random
-    random.shuffle(shuffle)
+    random.shuffle(shuffledCandidates)
 
     while True:
         target = fakeQualificationFunction()
