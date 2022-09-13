@@ -1,7 +1,7 @@
 from pyjom.main import *
 
 class OnlineAutoContentProducer(ContentProducer):
-    def __init__(self, filepath=None, dirpath=None, recursive=False, enable_log=True,reviewerLogs = [],processor_filters={},producer_filters={}, path_replacers = [], template="pets_with_music_online", template_config = {}):
+    def __init__(self, , enable_log=True,reviewerLogs = [],processor_filters={},producer_filters={}, path_replacers = [], template="pets_with_music_online", template_config = {}):
         super().__init__()
         if filepath is None:
             assert dirpath is not None
