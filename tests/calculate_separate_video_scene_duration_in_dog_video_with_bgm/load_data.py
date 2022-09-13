@@ -150,7 +150,7 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
                     print("Accepting candidate",(index,startCutDatetime, endCutDatetime, estimatedDurationAfterCut))
                     print("target:", target)
                     bannedIndexs.append(index)
-                    neighborIndexs = getNeighborIndexs(index, candidates, neighborThreshold, lambda checkNeighborForClipCandiates(, neighborThreshold))
+                    neighborIndexs = getNeighborIndexs(index, candidates, neighborThreshold, lambda a,b:checkNeighborForClipCandiates(a,b, neighborThreshold))
                     for neighborIndex in neighborIndexes:
                         bannedIndexs.append(neighborIndex)
                         print("also banned:", neighborIndex, candidates[neighborIndex])
