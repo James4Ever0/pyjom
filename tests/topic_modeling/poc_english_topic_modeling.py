@@ -60,7 +60,7 @@ for row in Stem_words:
 
 data = "\n".join(dataList)
 
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import  TfidfVectorizer
 
 # In[8]:
 
