@@ -86,12 +86,13 @@ def print_topics(model, feature_names, n_top_words):
         # 然后打印话题的序号以及指定数量的最高频的关键词
         message = "topic #%d:" % topic_idx
         mList = [feature_names[i] for i in topic.argsort()[: -n_top_words - 1 : -1]]
-        message += " ".join(
+        mListStr = " ".join(
             mList
         )
+        message += mListStr
         mSet  = set(mList) # the set contains word groups like 'river question'
         cDict = {k:mList.count(k) for k in mSet}
-        mRealList = message" "
+        mRealList = " ".split()
         print("MESSAGE",message)
         print("SET", mSet)
         print("COUNT DICT", cDict) # pointless to count here?
