@@ -77,3 +77,13 @@ from sklearn.decomposition import LatentDirichletAllocation
 lda = LatentDirichletAllocation(n_components = 10)
 lda.fit(x_train)
 
+def print_topics(model, feature_names, n_top_words):
+    #首先是遍历模型中存储的话题序号和话题内容
+    for topic_idx, topic in enumerate(model.components_):
+        #然后打印话题的序号以及指定数量的最高频的关键词
+        message = 'topic #%d:' % topic_idx
+        message += ' '.join([feature_names[i]
+                           for i in topic.argsort()[:-n_top_words - 1:-1]])
+        print (message)
+    print()
+
