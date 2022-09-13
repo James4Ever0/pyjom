@@ -91,6 +91,6 @@ elif flag == "filter": # to make sure the selected set will be evenly spaced. no
         estimatedDuration = duration - 0.2
         if estimatedDuration < durationThreshold:
             continue
-        startTimeCode = getTimeObject(start) + mTimeDelta
-        endTimeCode = getTimeObject(end) - mTimeDelta
-        print(startTimeCode.time)
+        startDatetime = getTimeObject(start) + mTimeDelta
+        endDatetime = getTimeObject(end) - mTimeDelta
+        print(startTimeCode.timestamp(), endTimeCode.timestamp())
