@@ -1,4 +1,4 @@
-from requests_html import HTMLSession
+from requests_html import HTMLSession # use pyppeteer.
 session = HTMLSession()
 
 url=''
