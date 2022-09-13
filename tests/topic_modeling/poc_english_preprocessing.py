@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 # from lazero.utils import inspectObject
+from lazero.utils import sprint # print with spliter
 # metalazero belongs to lazero package.
 
 
