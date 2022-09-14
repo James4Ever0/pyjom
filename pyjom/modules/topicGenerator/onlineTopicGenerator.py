@@ -25,7 +25,9 @@ def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate
     return None
 
 def get_topic_string(topic):
-    return " ".join([random.choice(x) for x in topic])
+    candidates = [random.choice(x) for x in topic]
+    
+    return " ".join()
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = [['samoyed','dog','cat'],['funny','cute']]):
