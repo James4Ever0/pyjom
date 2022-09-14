@@ -17,7 +17,8 @@ def topicSelection(topics, selected_topic_list, mode:Literal['combined','separat
     for topic in mTopics:
         words = topic[mode]
         words = [x for x in words if x not in selected_topic_list]
-        random.choice(words)
+        if len(words) > 0:
+            return random.choice(words)
 
 
 @decorator
