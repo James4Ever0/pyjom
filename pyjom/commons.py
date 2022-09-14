@@ -290,7 +290,6 @@ import MediaInfo
 
 import subprocess
 
-
 def json_auto_float_int(jsonObj):
     jsonObj = jsonify(jsonObj)
     for location, content in jsonWalk(jsonObj):
