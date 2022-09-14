@@ -2,6 +2,7 @@ from pyjom.commons import *
 from pyjom.languagetoolbox import englishTopicModeling
 import requests
 # import jieba
+from typing import Literal
 
 def topicModeling(sentences: list[str], lang='en'): # specify language please?
     # python does not enforce type checking. use third party tool such as linter instead.
@@ -9,7 +10,7 @@ def topicModeling(sentences: list[str], lang='en'): # specify language please?
         topics = englishTopicModeling(sentences)
         return topics
 
-def topicSelection(topics, selected_topic_list, mode='combined':):
+def topicSelection(topics, selected_topic_list, mode='combined':[Literal]):
     import random
     mTopics = topics.copy()
     random.shuffle(mTopics)
