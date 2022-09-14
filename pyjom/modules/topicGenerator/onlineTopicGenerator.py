@@ -10,7 +10,7 @@ def topicModeling(sentences: list[str], lang='en'): # specify language please?
         topics = englishTopicModeling(sentences)
         return topics
 
-def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate']='combined'):
+def topicWordSelection(topics, selected_topic_set, mode:Literal['combined','separate']='combined'):
     import random
     mTopics = topics.copy()
     random.shuffle(mTopics)
@@ -21,7 +21,7 @@ def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate
             word = random.choice(words)
             selected_topic_set.add(word) # no need to go elsewhere.
             return word
-    print("no topic this time")
+    print("no topic word this time")
     return None
 
 def get_topic_string(topic):
