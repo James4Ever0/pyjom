@@ -87,6 +87,9 @@ def ffmpegVideoPreProductionFilter(
             w=commandParams["w"],
             h=commandParams["h"],
         )
+
+    ## TODO: FIX THIS SHIT!
+    raise Exception("")
     if "randomFlip" in filters:
         pass
     if "superResolution" in filters:
