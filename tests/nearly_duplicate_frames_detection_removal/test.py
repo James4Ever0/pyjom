@@ -1,5 +1,5 @@
 # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif"  # this is evil. it defeats my shit.
-source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.yuv"  # this is evil. it defeats my shit.
+source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps_"  # this is evil. it defeats my shit.
 # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.gif"  # this is evil. it defeats my shit.
 
 # is it still image?
