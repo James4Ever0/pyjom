@@ -1,4 +1,5 @@
-def englishTopicModeling():
+
+def englishTopicModeling(n_top_words = 10):
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize
     from nltk.stem import PorterStemmer
@@ -99,6 +100,5 @@ def englishTopicModeling():
             print("RealCOUNT DICT", cRealDict)
         print()
 
-    n_top_words = 10
 
     print_topics(lda, tfidf.get_feature_names(), n_top_words)
