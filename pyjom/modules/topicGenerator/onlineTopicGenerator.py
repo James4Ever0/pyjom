@@ -5,8 +5,6 @@ import requests
 def topicModeling(sentences: list[str], lang='en'): # specify language please?
     # python does not enforce type checking. use third party tool such as linter instead.
     if lang == 'en':
-        from gensim.parsing.preprocessing import remove_stopwords
-        result = remove_stopwords(text)
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):

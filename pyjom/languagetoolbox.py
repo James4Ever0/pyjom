@@ -110,4 +110,5 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
     lda = LatentDirichletAllocation(n_components=n_components)
     lda.fit(x_train)
 
-    print_topics(lda, tfidf.get_feature_names(), n_top_words)
+    topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
+    return topics
