@@ -1,13 +1,14 @@
 def englishSentencePreprocessing():
-
-def englishTopicModeling(n_top_words = 10):
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize
-    from nltk.stem import PorterStemmer
-
     import en_core_web_sm
-
+    from nltk.stem import PorterStemmer
     nlp = en_core_web_sm.load()
+
+def englishTopicModeling(n_top_words = 10):
+
+
+
 
     doc = nlp(
         """He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and fishery rihgts at once. He was the more ready to do this becuase the rights had become much less valuable, and he had indeed the vaguest idea where the wood and river in question were."""
