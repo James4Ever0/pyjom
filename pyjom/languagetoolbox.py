@@ -1,6 +1,6 @@
 englishNLP = None
 englishStopWords = None
-
+porterStemmer = None
 def englishSentencePreprocessing(text):
     global englishNLP, englishStopWords, porterStemmer
     from nltk.corpus import stopwords
@@ -13,6 +13,10 @@ def englishSentencePreprocessing(text):
     if englishStopWords is None:
         set(stopwords.words("english"))
         englishStopWords = set([elem.lower() for elem in stopwords.words("english")])
+    if porterStemmer is None:
+    ps = PorterStemmer()
+
+
 
 def englishTopicModeling(n_top_words = 10):
 
@@ -31,7 +35,6 @@ def englishTopicModeling(n_top_words = 10):
     # 1st step.
 
     Stem_words = []
-    ps = PorterStemmer()
     for w in lemma_word1:
         rootWord = ps.stem(w)
         Stem_words.append(rootWord)
