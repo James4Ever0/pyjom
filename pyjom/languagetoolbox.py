@@ -107,7 +107,7 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2)):
 
     from sklearn.decomposition import LatentDirichletAllocation
 
-    lda = LatentDirichletAllocation(n_components=5)
+    lda = LatentDirichletAllocation(n_components=n_components)
     lda.fit(x_train)
 
     print_topics(lda, tfidf.get_feature_names(), n_top_words)
