@@ -11,7 +11,10 @@ def topicModeling(sentences: list[str], lang='en'): # specify language please?
 
 def topicSelection(topics, selected_topic_list, mode='combined'):
     import random
-    
+    mTopics = topics.copy()
+    random.shuffle(mTopics)
+    for topic in mTopics:
+        
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
