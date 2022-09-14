@@ -89,8 +89,6 @@ def englishTopicModeling(sentences, n_top_words = 10, ngram_range=(1, 2)):
     data = "\n".join(dataList)
 
     from sklearn.feature_extraction.text import TfidfVectorizer
-    # In[8]:
-
     # 创建一个CountVectoerizer实例
     tfidf = TfidfVectorizer(ngram_range=ngram_range)
     # 打开刚刚保存的txt文档
