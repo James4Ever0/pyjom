@@ -4,3 +4,4 @@ source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detect
 container = av.open(source)
 
 for frame in container.decode(video=0):
+    print(frame.)
