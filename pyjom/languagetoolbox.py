@@ -1,4 +1,5 @@
 englishNLP = None
+englishStopWords = None
 
 def englishSentencePreprocessing(text):
     global englishNLP, englishStopWords
@@ -16,8 +17,6 @@ def englishSentencePreprocessing(text):
 def englishTopicModeling(n_top_words = 10):
 
     # the sentence spliter includes unwanted "\n" char
-
-
 
     lemma_word1 = []
     # this shit has the lang tag. it might be useful for language detection. really?
