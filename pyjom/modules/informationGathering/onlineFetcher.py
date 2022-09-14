@@ -1,8 +1,8 @@
 from pyjom.commons import *
-from type
+from typing import Literal
 
 @decorator
-def OnlineFetcher(infoList, source='giphy'):
+def OnlineFetcher(infoList, source:[]='giphy'):
     # how do you chain this shit up?
     for info in infoList: # generator most likely
         if source=='giphy'
