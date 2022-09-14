@@ -29,6 +29,7 @@ def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PAR
     for w in lemma_word1:
         rootWord = porterStemmer.stem(w)
         Stem_words.append(rootWord)
+    return Stem_words
 
 
 def englishTopicModeling(sentences, n_top_words = 10):
