@@ -39,9 +39,10 @@ def OnlineTopicGenerator(
     source="giphy", metaTopic=[["samoyed", "dog", "cat"], ["funny", "cute"]]
 ):
     getKeywords = lambda: getMetaTopicString(metaTopic)
-    selected_topic_set = {
+    core_topic_set = {
         *np.array(metaTopic).reshape(-1).tolist()
     }  # common way to initialize a set.
+    selected_topic_list = []
     if source == "giphy":
         waitForServerUp(8902, "nodejs giphy server")
         init = True
