@@ -47,3 +47,7 @@ def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
             topics = topicModeling(sentences)
             selectedTopic = topicSelection(topics, selected_topic_set)
             keywords = " ".join([topic,selectedTopic])
+
+            mSearchPicture = requests.get("http://localhost:8902/search", params={})
+            mSearchPictureJson = mSearchPicture.json()
+            randomPictureId = random.choice(mSearchPictureJson['data'])['id']
