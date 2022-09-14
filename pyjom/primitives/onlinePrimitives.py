@@ -10,6 +10,7 @@ class OnlineAutoContentProducer(ContentProducer):
         producer_filters={},
         template="pets_with_music_online",
         template_config={},
+        tempdir
         metaTopic={
             "static": [["dog", "cat", 'puppy'], ["funny", "cute"]],
             "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
@@ -18,6 +19,7 @@ class OnlineAutoContentProducer(ContentProducer):
         super().__init__()
         assert source is not None
         self.source = source
+        self.tempdir = tempdir
         self.metaTopic = metaTopic  # 所谓的超话 超级话题
         if enable_log:
             self.log_location = "logs/local/"
