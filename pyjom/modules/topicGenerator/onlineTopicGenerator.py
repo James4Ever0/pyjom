@@ -25,7 +25,7 @@ def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate
     return None
 
 @decorator
-def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
+def OnlineTopicGenerator(source='giphy',topic = ['samoyed']):
     selected_topic_set = {topic} # common way to initialize a set.
     if source == 'giphy':
         waitForServerUp(8902, "nodejs giphy server")
@@ -46,4 +46,4 @@ def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
             sentences = [x['title'] for x in mRelatedPicturesJson['data']]
             topics = topicModeling(sentences)
             selectedTopic = topicSelection(topics, selected_topic_set)
-            keywords = " ".join([topic,selectedTopic]) # for next 
+            keywords = " ".join([topic,selectedTopic]) # for next iteration.
