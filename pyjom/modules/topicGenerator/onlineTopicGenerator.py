@@ -28,7 +28,6 @@ def topicWordSelection(
     print("no topic word this time")
     return None
 
-
 def getMetaTopicString(metaTopic):
     candidates = [random.choice(x) for x in metaTopic]
     samples = random.sample(candidates, random.randint(1, len(candidates)))
