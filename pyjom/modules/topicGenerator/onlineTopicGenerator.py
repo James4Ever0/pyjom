@@ -59,11 +59,11 @@ def OnlineTopicGenerator(
                     yield elem['id'], elem['media']
                 randomPictureId = mRandomPictureJson["data"][0]["id"]
             else:
-                mSearchPicture = requests.get("http://localhost:8902/search", params={})
-                mSearchPictureJson = mSearchPicture.json()
-                for elem in mSearchPictureJson['data']:
+                mSearchPictures = requests.get("http://localhost:8902/search", params={})
+                mSearchPicturesJson = mSearchPictures.json()
+                for elem in mSearchPicturesJson['data']:
                     yield elem['id'], elem['media']
-                randomPictureId = random.choice(mSearchPictureJson["data"])["id"]
+                randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
 
             mRelatedPictures = requests.get(
                 "http://localhost:8902/related", params={"q": randomPictureId}
@@ -74,4 +74,5 @@ def OnlineTopicGenerator(
             sentences = [x["title"] for x in mRelatedPicturesJson["data"]]
             topics = topicModeling(sentences)
             selectedWord = topicWordSelection(topics, selected_topic_set)
-            keywords = " ".join([getKeywords(), selectedWord])  # for next iteration.
+            if seiectedWord is not None:
+                keywords = " ".join([getKeywords(), selectedWord])  # for next iteration.
