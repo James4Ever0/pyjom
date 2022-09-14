@@ -12,3 +12,5 @@ cuts = scenedetect.detect(
 import pandas
 
 df = pandas.read_csv(stats_file_path)
+print(df.head())
+breakpoint()
