@@ -1,7 +1,7 @@
 englishNLP = None
 
 def englishSentencePreprocessing(text):
-    global englishNLP
+    global englishNLP, englishStopWords
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize
     import en_core_web_sm
@@ -10,7 +10,6 @@ def englishSentencePreprocessing(text):
         englishNLP = en_core_web_sm.load()
     doc = englishNLP(text)
     set(stopwords.words("english"))
-
     stop_words = set([elem.lower() for elem in stopwords.words("english")])
 
 def englishTopicModeling(n_top_words = 10):
