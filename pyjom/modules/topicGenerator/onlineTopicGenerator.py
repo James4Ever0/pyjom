@@ -9,7 +9,7 @@ def topicModeling(sentences: list[str], lang='en'): # specify language please?
         topics = englishTopicModeling(sentences)
         return topics
 
-def topicSelection(topics, )
+def topicSelection(topics, mode='combined')
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
