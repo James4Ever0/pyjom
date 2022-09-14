@@ -4,6 +4,14 @@ source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detect
 # we can also detect more shits. right?
 import scenedetect
 
+import sys
+import os
+
+os.chdir("../../")
+sys.path.append(".")
+from pyjom.commons import extract_span
+
+
 stats_file_path = "output.csv"
 cuts = scenedetect.detect(
     video_path=source, stats_file_path=stats_file_path, show_progress=True
