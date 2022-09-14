@@ -1,4 +1,6 @@
+englishNLP = None
 def englishSentencePreprocessing():
+    global englishNLP
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize
     import en_core_web_sm
