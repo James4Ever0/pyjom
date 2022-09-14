@@ -18,22 +18,34 @@ import random
 
 # this is root. this is not site-packages.
 def frameSizeFilter(frameMeta, frame_size_filter):
-    width, height = frameMeta['width'], frameMeta['height']
-    flagWidth, (minWidth, maxWidth) = checkMinMaxDict(width, frame_size_filter.get('width',{}))
-    flagHeight, (minHeight, maxHeight) = checkMinMaxDict(height, frame_size_filter.get('height',{}))
-    if not ( flagWidth and flagHeight ):
-        print("Filter out invalid video with shape of {}x{}".format(width,height))
-        print('Valid Width and Height are {}-{}x{}-{}'.format(minWidth, maxWidth,minHeight, maxHeight))
+    width, height = frameMeta["width"], frameMeta["height"]
+    flagWidth, (minWidth, maxWidth) = checkMinMaxDict(
+        width, frame_size_filter.get("width", {})
+    )
+    flagHeight, (minHeight, maxHeight) = checkMinMaxDict(
+        height, frame_size_filter.get("height", {})
+    )
+    if not (flagWidth and flagHeight):
+        print("Filter out invalid video with shape of {}x{}".format(width, height))
+        print(
+            "Valid Width and Height are {}-{}x{}-{}".format(
+                minWidth, maxWidth, minHeight, maxHeight
+            )
+        )
+        return False
+    return True
 
-def checkMinMaxDict(value, minMaxDict, getMinMaxVal = False):
-    minVal = minMaxDict.get('min', value)
-    maxVal = minMaxDict.get('max', value)
+
+def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
+    minVal = minMaxDict.get("min", value)
+    maxVal = minMaxDict.get("max", value)
     assert minVal < maxVal
     flag = value <= maxVal and value >= minVal
     if getMinMaxVal:
         return flag, (minVal, maxVal)
     else:
         return flag
+
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
 os.environ["USE_NVIDIA_OPENCV"] = "yes"
@@ -50,7 +62,6 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 
 
 mimetypes.init()
-
 
 
 def waitForServerUp(port, message, timeout=1):
@@ -70,11 +81,14 @@ def waitForServerUp(port, message, timeout=1):
             break
         except:
             import traceback
+
             traceback.print_exc()
             print("SERVER AT PORT %d MIGHT NOT BE UP" % port)
             print("EXPECTED MESSAGE:", [message])
             import time
+
             time.sleep(1)
+
 
 class D2Point:
     def __init__(self, x, y):
