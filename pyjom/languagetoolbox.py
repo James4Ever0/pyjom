@@ -45,7 +45,6 @@ def englishTopicModeling(sentences, n_top_words = 10):
     data = "\n".join(dataList)
 
     from sklearn.feature_extraction.text import TfidfVectorizer
-
     # In[8]:
 
     # 创建一个CountVectoerizer实例
