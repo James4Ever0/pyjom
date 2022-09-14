@@ -2,7 +2,7 @@ from pyjom.commons import *
 from pyjom.languagetoolbox import englishTopicModeling
 import requests
 # import jieba
-from typing import Literal
+from typing import Literal,TypedDict,
 
 def topicModeling(sentences: list[str], lang='en'): # specify language please?
     # python does not enforce type checking. use third party tool such as linter instead.
