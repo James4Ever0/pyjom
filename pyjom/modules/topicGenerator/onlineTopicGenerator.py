@@ -9,13 +9,13 @@ def topicModeling(sentences: list[str], lang='en'): # specify language please?
         topics = englishTopicModeling(sentences)
         return topics
 
-def topicSelection(topics, selected_topic_list, mode='combined'):
+def topicSelection(topics, selected_topic_list, mode='combined':list['combined','separate']):
     import random
     mTopics = topics.copy()
     random.shuffle(mTopics)
     for topic in mTopics:
         words = topic[mode]
-        
+
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
