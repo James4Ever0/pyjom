@@ -12,6 +12,8 @@ from pyjom.commons import extract_span
 
 import scenedetect
 
+import caer.
+
 stats_file_path = "/media/root/parrot/pyjom/tests/nearly_duplicate_frames_detection_removal/output.csv"
 cuts = scenedetect.detect(
     video_path=source, stats_file_path=stats_file_path, show_progress=True, detector=scenedetect.ContentDetector()
