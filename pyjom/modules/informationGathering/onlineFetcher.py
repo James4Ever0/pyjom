@@ -6,4 +6,5 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
     # how do you chain this shit up?
     for info in infoList: # generator most likely
         if source=='giphy':
-            (source_id, mDict) = 
+            (source_id, mDict) = info
+            if
