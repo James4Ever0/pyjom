@@ -7,9 +7,7 @@ from nltk.stem import PorterStemmer
 
 # from lazero.utils import inspectObject
 from lazero.utils import sprint  # print with spliter
-
 # metalazero belongs to lazero package.
-
 
 import en_core_web_sm
 
