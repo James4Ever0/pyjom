@@ -22,7 +22,7 @@ def get_topics(model, feature_names, n_top_words):
 
         # print("MESSAGE",message)
         # print("SET", mSet)
-        print("COUNT DICT", cDict) # pointless to count here?
+        print("COUNT DICT", cDict)
         # print("RealSET", mRealSet)
         print("RealCOUNT DICT", cRealDict)
     print()
