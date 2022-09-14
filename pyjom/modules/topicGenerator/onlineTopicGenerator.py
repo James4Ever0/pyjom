@@ -26,7 +26,7 @@ def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate
 
 def get_topic_string(topic):
     candidates = [random.choice(x) for x in topic]
-    random.sample(candidates, )
+    random.sample(candidates, random.randint)
     return " ".join()
 
 @decorator
