@@ -1,6 +1,7 @@
 englishNLP = None
 englishStopWords = None
 porterStemmer = None
+
 def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PART", "PUNCT", "AUX"]):
     global englishNLP, englishStopWords, porterStemmer
     from nltk.corpus import stopwords
@@ -23,8 +24,6 @@ def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PAR
         if token.text.lower() in englishStopWords:
             continue
         lemma_word1.append(token.text)
-    sprint(lemma_word1)  # there is no such -PRON- thing.
-    # 1st ste
 
 
 def englishTopicModeling(n_top_words = 10):
@@ -32,7 +31,6 @@ def englishTopicModeling(n_top_words = 10):
     # the sentence spliter includes unwanted "\n" char
 
 
-p.
 
     Stem_words = []
     for w in lemma_word1:
