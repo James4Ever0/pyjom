@@ -42,13 +42,13 @@ def topicWordSelection(
 def getMetaTopicString(metaTopic):
     staticCandidates = [random.choice(x) for x in metaTopic['static']]
     dynamicCandidates = [random.choice(x) for x in metaTopic['dynamic']]
-    samples = random.sample(dynamicCandidates, random.randint(1, len(dynamicCandidates)))
+    samples = random.sample(dynamicCandidates, random.randint(0, len(dynamicCandidates)))
     return " ".join(staticCandidates+samples)
 
 
 @decorator
 def OnlineTopicGenerator(
-    source="giphy", metaTopic={"static":[["samoyed", "dog", "cat"], ["funny", "cute"]],"dynamic":[]} # this is not a matrix.
+    source="giphy", metaTopic={"static":[["dog", "cat"], ["funny", "cute"]],"dynamic":["samoyed"]} # this is not a matrix.
 ):
     getKeywords = lambda: getMetaTopicString(metaTopic)
     core_topic_set = {
