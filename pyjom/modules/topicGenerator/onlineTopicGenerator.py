@@ -47,7 +47,7 @@ def getMetaTopicString(metaTopic):
 
 @decorator
 def OnlineTopicGenerator(
-    source="giphy", metaTopic=[["samoyed", "dog", "cat"], ["funny", "cute"]]
+    source="giphy", metaTopic=[["samoyed", "dog", "cat"], ["funny", "cute"]] # this is not a matrix.
 ):
     getKeywords = lambda: getMetaTopicString(metaTopic)
     core_topic_set = {
