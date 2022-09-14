@@ -3,7 +3,7 @@ from pyjom.modules.topicGenerator import OnlineTopicGenerator
 from lazero.utils import sprint
 
 elem, label = OnlineTopicGenerator()
-sprint(label)
+sprint("LABEL:",label)
 # # 'pyjom.commons.OnlineTopicGenerator'
 # breakpoint()
 
