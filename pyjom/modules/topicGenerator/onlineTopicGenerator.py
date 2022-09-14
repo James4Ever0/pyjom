@@ -24,7 +24,7 @@ def topicWordSelection(topics, selected_topic_set, mode:Literal['combined','sepa
     print("no topic word this time")
     return None
 
-def get_metaTopic_string(topic):
+def getMetaTopicString(topic):
     candidates = [random.choice(x) for x in topic]
     samples = random.sample(candidates, random.randint(1, len(candidates)))
     return " ".join(samples)
