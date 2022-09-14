@@ -34,8 +34,7 @@ def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PAR
 
 def englishTopicModeling(sentences, n_top_words = 10):
 
-    # the sentence spliter includes unwanted "\n" char
-        # print(row)
+        row = englishSentencePreprocessing(sentence)
         elem = " ".join(row)
         dataList.append(elem)
 
