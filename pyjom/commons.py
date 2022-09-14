@@ -20,7 +20,9 @@ import random
 
 def checkMinMaxDict(value, minMaxDict):
     minVal = minMaxDict['min']
-    minVal = minMaxDict['min']
+    maxVal = minMaxDict['max']
+    assert minVal < maxVal
+    return value <= maxVal and value >= minVal
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
 os.environ["USE_NVIDIA_OPENCV"] = "yes"
