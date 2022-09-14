@@ -95,3 +95,5 @@ def OnlineTopicGenerator(
                 )  # for next iteration.
             else:
                 keywords = getKeywords()
+            for elem in harvestedData:
+                yield elem["id"], elem["media"]
