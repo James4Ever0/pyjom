@@ -9,3 +9,4 @@ randomize=False
 if flags.r:
     randomize=True
 if flags.f:
+    
