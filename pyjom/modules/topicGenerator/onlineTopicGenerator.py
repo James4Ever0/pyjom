@@ -61,7 +61,7 @@ def OnlineTopicGenerator(
             else:
                 mSearchPicture = requests.get("http://localhost:8902/search", params={})
                 mSearchPictureJson = mSearchPicture.json()
-                for elem in mRandomPictureJson['data']:
+                for elem in mSearchPictureJson['data']:
                     yield elem['id'], elem['media']
                 randomPictureId = random.choice(mSearchPictureJson["data"])["id"]
 
@@ -69,6 +69,8 @@ def OnlineTopicGenerator(
                 "http://localhost:8902/related", params={"q": randomPictureId}
             )
             mRelatedPicturesJson = mRelatedPictures.json()
+            for elem in mRelatedPictureJson['data']:
+                yield elem['id'], elem['media']
             sentences = [x["title"] for x in mRelatedPicturesJson["data"]]
             topics = topicModeling(sentences)
             selectedWord = topicWordSelection(topics, selected_topic_set)
