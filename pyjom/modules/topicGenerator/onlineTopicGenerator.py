@@ -1,4 +1,5 @@
 from pyjom.commons import *
+from pyjom.languagetoolbox import englishTopicModeling
 import requests
 # import jieba
 
