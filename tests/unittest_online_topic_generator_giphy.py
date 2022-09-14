@@ -11,6 +11,7 @@ sprint("LABEL:",label)
 
 with tmpdir("/dev/shm/medialang/online_test") as testDir:
     print("TESTDIR:", testDir)
+    mDir = str(testDir)
     for x in elem:
         print("X",x)
         # X ('sr8jYZVVsCmxddga8w', {'height': 480, 'width': 474, 'url': 'https://media0.giphy.com/media/sr8jYZVVsCmxddga8w/giphy.gif'})
