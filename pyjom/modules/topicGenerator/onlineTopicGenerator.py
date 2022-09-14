@@ -1,6 +1,7 @@
 from pyjom.commons import *
 from pyjom.languagetoolbox import englishTopicModeling
 import requests
+
 # import jieba
 
 def topicModeling(sentences: list[str], lang='en'): # specify language please?
@@ -9,7 +10,7 @@ def topicModeling(sentences: list[str], lang='en'): # specify language please?
         topics = englishTopicModeling(sentences)
         return topics
 
-def topicSelection(topics, selected_topic_list, mode='combined':list['combined','separate']):
+def topicSelection(topics, selected_topic_list, mode='combined':List['combined','separate']):
     import random
     mTopics = topics.copy()
     random.shuffle(mTopics)
