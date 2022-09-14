@@ -16,6 +16,7 @@ def topicWordSelection(
     topics, core_topic_set:set, selected_topic_list:list, mode: Literal["combined", "separate"] = "combined", threshold=10
 ):
     if len(selected_topic_list) > threshold:
+        selected_topic_list.pop(0)
     selected_topic_set = set(list(core_topic_set)+selected_topic_list)
     import random
     mTopics = topics.copy()
