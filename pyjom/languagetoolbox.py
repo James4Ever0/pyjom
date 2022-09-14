@@ -76,7 +76,7 @@ def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PAR
     return Stem_words
 
 
-def englishTopicModeling(sentences, n_top_words = 10):
+def englishTopicModeling(sentences, n_top_words = 10, ngram_range=(1, 2)):
     dataList = []
     for sentence in sentences:
         for x in "\n\r\t":
