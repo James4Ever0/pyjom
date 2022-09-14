@@ -29,9 +29,10 @@ def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
         init=True
         keywords = topic
         while True:
-            mRandomPicture = requests.get("http://localhost:8902/random", params = {'q':keywords, 'rating':'g'}) # may you get stickers?
-            mRandomPictureJson = mRandomPicture.json()
-            randomPictureId = mRandomPictureJson['data'][0]['id']
+            if random.random()> 0.5:
+                mRandomPicture = requests.get("http://localhost:8902/random", params = {'q':keywords, 'rating':'g'}) # may you get stickers?
+                mRandomPictureJson = mRandomPicture.json()
+                randomPictureId = mRandomPictureJson['data'][0]['id']
 
             mRelatedPictures = requests.get("http://localhost:8902/related", params = {'q':randomPictureId})
             mRelatedPicturesJson = mRelatedPictures.json()
