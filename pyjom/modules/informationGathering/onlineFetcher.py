@@ -8,4 +8,4 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
         if source=='giphy':
             (source_id, mDict) = info
             width, height = mDict['width'], mDict['height']
-            if checkMinMaxDict(width, frame_size_filter)
+            if checkMinMaxDict(width, frame_size_filter['width'])
