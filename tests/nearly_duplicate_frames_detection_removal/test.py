@@ -15,7 +15,8 @@ import scenedetect
 from caer.video.frames_and_fps import get_duration
 
 stats_file_path = "/media/root/parrot/pyjom/tests/nearly_duplicate_frames_detection_removal/output.csv"
-duration = 
+duration = get_duration(source)
+print("DURATION:", duration)
 cuts = scenedetect.detect(
     video_path=source, stats_file_path=stats_file_path, show_progress=True, detector=scenedetect.ContentDetector()
 )
