@@ -36,19 +36,6 @@ def englishTopicModeling(n_top_words = 10):
     # the sentence spliter includes unwanted "\n" char
 
 
-    Stem_words += ((len(Stem_words) - 1) % 5) * [""]  # padding
-
-    import numpy as np
-
-    Stem_words = np.array(Stem_words)
-    Stem_words = Stem_words.reshape(5, -1)
-    # sprint(Stem_words)
-    # row, col = Stem_words.shape
-    # exit()
-    # for reasons that shit can understand.
-    # np.nditer is for iteration over every elem
-    dataList = []
-    for row in Stem_words:
         # print(row)
         elem = " ".join(row)
         dataList.append(elem)
