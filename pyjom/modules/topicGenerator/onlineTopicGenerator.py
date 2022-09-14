@@ -52,7 +52,7 @@ def OnlineTopicGenerator(
 ):
     getKeywords = lambda: getMetaTopicString(metaTopic)
     core_topic_set = {
-        flattenUnhashableList(metaTopic)
+        *flattenUnhashableList(metaTopic)
     }  # common way to initialize a set.
     selected_topic_list = []
     if source == "giphy":
