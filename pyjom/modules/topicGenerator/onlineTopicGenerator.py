@@ -24,7 +24,7 @@ def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate
     print("no topic this time")
     return None
 
-def 
+def get_topic_string()
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = [['samoyed','dog','cat'],['funny','cute']]):
@@ -32,7 +32,7 @@ def OnlineTopicGenerator(source='giphy',topic = [['samoyed','dog','cat'],['funny
     if source == 'giphy':
         waitForServerUp(8902, "nodejs giphy server")
         init=True
-        keywords = topic
+        keywords = mTopic
         while True:
             if random.random()> 0.5:
                 mRandomPicture = requests.get("http://localhost:8902/random", params = {'q':keywords, 'rating':'g'}) # may you get stickers?
