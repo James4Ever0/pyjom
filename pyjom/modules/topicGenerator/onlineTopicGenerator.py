@@ -1,5 +1,6 @@
 from pyjom.commons import *
 from pyjom.languagetoolbox import englishTopicModeling
+from lazero.utils import 
 import requests
 
 # import jieba
@@ -51,7 +52,7 @@ def OnlineTopicGenerator(
 ):
     getKeywords = lambda: getMetaTopicString(metaTopic)
     core_topic_set = {
-        *np.array(metaTopic
+        flattenUnhashableList(metaTopic)
     }  # common way to initialize a set.
     selected_topic_list = []
     if source == "giphy":
