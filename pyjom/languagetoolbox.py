@@ -2,6 +2,7 @@ englishNLP = None
 englishStopWords = None
 porterStemmer = None
 
+
 def get_topics(model, feature_names, n_top_words):
     # 首先是遍历模型中存储的话题序号和话题内容
     topics = []
@@ -9,18 +10,19 @@ def get_topics(model, feature_names, n_top_words):
         # 然后打印话题的序号以及指定数量的最高频的关键词
         message = "topic #%d:" % topic_idx
         mList = [feature_names[i] for i in topic.argsort()[: -n_top_words - 1 : -1]]
-        mListStr = " ".join(
-            mList
-        )
+        mListStr = " ".join(mList)
         message += mListStr
-        mSet  = set(mList) # the set contains word groups like 'river question'
-        cDict = {k:mList.count(k) for k in mSet}
+        mSet = set(mList)  # the set contains word groups like 'river question'
+        cDict = {k: mList.count(k) for k in mSet}
         mRealList = mListStr.split(" ")
-        mRealList = [x.strip() for x in mRealList if len(x.strip()) > 1] # usually things shorter than 2 letters are no good.
+        mRealList = [
+            x.strip() for x in mRealList if len(x.strip()) > 1
+        ]  # usually things shorter than 2 letters are no good.
         mRealSet = set(mRealList)
-        cRealDict = {k:mRealList.count(k) for k in mRealSet}
-        topics.append({'combined':mList, 'separate':mRealList})
+        cRealDict = {k: mRealList.count(k) for k in mRealSet}
+        topics.append({"combined": mList, "separate": mRealList})
     return topics
+
 
 def print_topics(model, feature_names, n_top_words):
     # 首先是遍历模型中存储的话题序号和话题内容
@@ -28,30 +30,34 @@ def print_topics(model, feature_names, n_top_words):
         # 然后打印话题的序号以及指定数量的最高频的关键词
         message = "topic #%d:" % topic_idx
         mList = [feature_names[i] for i in topic.argsort()[: -n_top_words - 1 : -1]]
-        mListStr = " ".join(
-            mList
-        )
+        mListStr = " ".join(mList)
         message += mListStr
-        mSet  = set(mList) # the set contains word groups like 'river question'
-        cDict = {k:mList.count(k) for k in mSet}
+        mSet = set(mList)  # the set contains word groups like 'river question'
+        cDict = {k: mList.count(k) for k in mSet}
         mRealList = mListStr.split(" ")
-        mRealList = [x.strip() for x in mRealList if len(x.strip()) > 1] # usually things shorter than 2 letters are no good.
+        mRealList = [
+            x.strip() for x in mRealList if len(x.strip()) > 1
+        ]  # usually things shorter than 2 letters are no good.
         mRealSet = set(mRealList)
-        cRealDict = {k:mRealList.count(k) for k in mRealSet}
+        cRealDict = {k: mRealList.count(k) for k in mRealSet}
 
-        print("MESSAGE",message)
+        print("MESSAGE", message)
         print("SET", mSet)
-        print("COUNT DICT", cDict) # pointless to count here?
+        print("COUNT DICT", cDict)  # pointless to count here?
         print("RealSET", mRealSet)
         print("RealCOUNT DICT", cRealDict)
     print()
 
-def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PART", "PUNCT", "AUX"]):
+
+def englishSentencePreprocessing(
+    text, unwantedPOS=["PRON", "CCONJ", "ADP", "PART", "PUNCT", "AUX"]
+):
     global englishNLP, englishStopWords, porterStemmer
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize
     import en_core_web_sm
     from nltk.stem import PorterStemmer
+
     if englishNLP is None:
         englishNLP = en_core_web_sm.load()
     doc = englishNLP(text)
@@ -76,11 +82,11 @@ def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PAR
     return Stem_words
 
 
-def englishTopicModeling(sentences, n_top_words = 10, ngram_range=(1, 2)):
+def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2)):
     dataList = []
     for sentence in sentences:
         for x in "\n\r\t":
-            sentence = sentence.replace(x,"")
+            sentence = sentence.replace(x, "")
         sentence = sentence.strip()
         row = englishSentencePreprocessing(sentence)
         elem = " ".join(row)
@@ -89,10 +95,12 @@ def englishTopicModeling(sentences, n_top_words = 10, ngram_range=(1, 2)):
     data = "\n".join(dataList)
 
     from sklearn.feature_extraction.text import TfidfVectorizer
+
     # 创建一个CountVectoerizer实例
     tfidf = TfidfVectorizer(ngram_range=ngram_range)
     # 打开刚刚保存的txt文档
     from io import StringIO
+
     f = StringIO(data)
     # 使用CountVectorizer拟合数据
     x_train = tfidf.fit_transform(f)
@@ -101,7 +109,5 @@ def englishTopicModeling(sentences, n_top_words = 10, ngram_range=(1, 2)):
 
     lda = LatentDirichletAllocation(n_components=5)
     lda.fit(x_train)
-
-
 
     print_topics(lda, tfidf.get_feature_names(), n_top_words)
