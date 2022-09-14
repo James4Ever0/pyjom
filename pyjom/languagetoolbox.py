@@ -1,13 +1,9 @@
-def englishSentencePreprocessing()
+def englishSentencePreprocessing():
 
 def englishTopicModeling(n_top_words = 10):
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize
     from nltk.stem import PorterStemmer
-
-    # from lazero.utils import inspectObject
-    from lazero.utils import sprint  # print with spliter
-    # metalazero belongs to lazero package.
 
     import en_core_web_sm
 
