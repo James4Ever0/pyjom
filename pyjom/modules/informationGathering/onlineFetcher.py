@@ -14,4 +14,4 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
             if flag:
                 # this time it is selected.
                 downloadPath = os.path.join(tempdir,filename)
-                yield downloadPath
+                yield source_id, downloadPath
