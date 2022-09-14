@@ -18,7 +18,7 @@ import random
 
 # this is root. this is not site-packages.
 
-def checkMinMaxDict(value, minMaxDict):
+def checkMinMaxDict(value, minMaxDict, ):
     minVal = minMaxDict.get('min', value)
     maxVal = minMaxDict.get('max', value)
     assert minVal < maxVal
