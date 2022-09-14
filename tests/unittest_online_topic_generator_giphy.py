@@ -21,4 +21,5 @@ with tmpdir(path=path) as testDir:
         download_path = os.path.join(path, basename)
         download(url, download_path, threads=-0.3, size_filter={"min":0.4, "max":50})
         # X ('sr8jYZVVsCmxddga8w', {'height': 480, 'width': 474, 'url': 'https://media0.giphy.com/media/sr8jYZVVsCmxddga8w/giphy.gif'})
-        breakpoint()
+        # breakpoint()
+        # seems good. now we check the cat/dog.
