@@ -24,7 +24,7 @@ def topicWordSelection(
         words = [x for x in words if x not in selected_topic_set]
         if len(words) > 0:
             word = random.choice(words)
-            selected_topic_set.add(word)  # no need to go elsewhere.
+            selected_topic_list.append(word)  # no need to go elsewhere.
             return word
     print("no topic word this time")
     return None
