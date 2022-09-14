@@ -31,11 +31,9 @@ def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PAR
         Stem_words.append(rootWord)
 
 
-def englishTopicModeling(n_top_words = 10):
+def englishTopicModeling(sentences, n_top_words = 10):
 
     # the sentence spliter includes unwanted "\n" char
-
-
         # print(row)
         elem = " ".join(row)
         dataList.append(elem)
