@@ -40,7 +40,7 @@ def topicWordSelection(
 
 
 def getMetaTopicString(metaTopic):
-    candidates = [random.choice(x) for x in metaTopic]
+    staticCandidates = [random.choice(x) for x in metaTopic['static']]
     samples = random.sample(candidates, random.randint(1, len(candidates)))
     return " ".join(samples)
 
