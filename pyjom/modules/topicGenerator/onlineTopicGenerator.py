@@ -36,6 +36,7 @@ def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
             mRelatedPictures = requests.get("http://localhost:8902/related", params = {'q':randomPictureId})
             mRelatedPicturesJson = mRelatedPictures.json()
             sentences = [x['title'] for x in mRelatedPicturesJson['data']]
-            topics = 
+            topics = topicModeling(sentences)
+            topic = topicSelection(topics)
 
             if init: init=False
