@@ -20,7 +20,7 @@ def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PAR
     for token in doc:
         if token.pos_ in unwantedPOS:
             continue
-        if token.text.lower() in stop_words:
+        if token.text.lower() in englishStopWords:
             continue
         lemma_word1.append(token.text)
     sprint(lemma_word1)  # there is no such -PRON- thing.
