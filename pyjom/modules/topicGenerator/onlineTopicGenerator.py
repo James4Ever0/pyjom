@@ -56,7 +56,6 @@ def OnlineTopicGenerator(
     selected_topic_list = []
     if source == "giphy":
         waitForServerUp(8902, "nodejs giphy server")
-        init = True
         keywords = getKeywords()
         while True:
             harvestedData = []
@@ -96,6 +95,6 @@ def OnlineTopicGenerator(
             except:
                 import traceback
                 traceback.print_exc()
-                print("ERROR WHEN FETCING GIPHY TOPIC")
+                print("ERROR WHEN FETCHING GIPHY TOPIC")
             for elem in harvestedData:
                 yield elem["id"], elem["media"]
