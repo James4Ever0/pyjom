@@ -52,4 +52,4 @@ def OnlineTopicGenerator(source='giphy',metaTopic = [['samoyed','dog','cat'],['f
             sentences = [x['title'] for x in mRelatedPicturesJson['data']]
             topics = topicModeling(sentences)
             selectedWord = topicWordSelection(topics, selected_topic_set)
-            keywords = " ".join([getMetaTopicString(metaTopic),selectedWord]) # for next iteration.
+            keywords = " ".join([getKeyword(),selectedWord]) # for next iteration.
