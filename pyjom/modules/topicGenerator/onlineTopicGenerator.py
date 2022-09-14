@@ -24,14 +24,14 @@ def topicWordSelection(topics, selected_topic_set, mode:Literal['combined','sepa
     print("no topic word this time")
     return None
 
-def getMetaTopicString(topic):
-    candidates = [random.choice(x) for x in topic]
+def getMetaTopicString(metaTopic):
+    candidates = [random.choice(x) for x in metaTopic]
     samples = random.sample(candidates, random.randint(1, len(candidates)))
     return " ".join(samples)
 
 @decorator
 def OnlineTopicGenerator(source='giphy',metaTopic = [['samoyed','dog','cat'],['funny','cute']]):
-    selected_topic_set = {topic} # common way to initialize a set.
+    selected_topic_set = {np.array()} # common way to initialize a set.
     if source == 'giphy':
         waitForServerUp(8902, "nodejs giphy server")
         init=True
