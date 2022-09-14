@@ -10,3 +10,5 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
             flag = frameSizeFilter(frameMeta, frame_size_filter)
             if flag:
                 # this time it is selected.
+                downloadPath = 
+                yield downloadPath
