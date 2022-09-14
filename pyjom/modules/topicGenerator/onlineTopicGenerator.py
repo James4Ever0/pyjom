@@ -73,7 +73,7 @@ def OnlineTopicGenerator(
                 yield elem['id'], elem['media']
             sentences = [x["title"] for x in mRelatedPicturesJson["data"]]
             topics = topicModeling(sentences)
-            selectedWord = topicWordSelection(topics, selected_topic_set)
+            selectedWord = topicWordSelection(topics, core_topic_set, selected_topic_list)
             if not selectedWord is None:
                 keywords = " ".join([getKeywords(), selectedWord])  # for next iteration.
             else:
