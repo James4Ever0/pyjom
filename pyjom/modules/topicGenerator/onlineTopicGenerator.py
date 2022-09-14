@@ -17,7 +17,7 @@ def topicWordSelection(
 ):
     if len(selected_topic_list) > threshold:
         for _ in range(len(selected_topic_list)-threshold):
-            selected_topic_list.pop(0)
+            selected_topic_list.pop(0) # right way to remove elem from original list.
     selected_topic_set = set(list(core_topic_set)+selected_topic_list)
     import random
     mTopics = topics.copy()
