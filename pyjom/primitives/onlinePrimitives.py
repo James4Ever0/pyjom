@@ -1,7 +1,7 @@
 from pyjom.main import *
 
 class OnlineAutoContentProducer(ContentProducer):
-    def __init__(self, source=None, enable_log=True,processor_filters={},producer_filters={}, template="pets_with_music_online", template_config = {}, metaTopic="samoyed"):
+    def __init__(self, source=None, enable_log=True,processor_filters={},producer_filters={}, template="pets_with_music_online", template_config = {}, metaTopic=[["samoyed", "dog", "cat"], ["funny", "cute"]]):
         super().__init__()
         assert source is not None
         self.source = source
