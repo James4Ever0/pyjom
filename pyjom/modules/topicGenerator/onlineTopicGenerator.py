@@ -39,5 +39,3 @@ def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
             topics = topicModeling(sentences)
             selectedTopic = topicSelection(topics)
             keywords = " ".join([topic,selectedTopic])
-
-            if init: init=False
