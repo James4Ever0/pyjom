@@ -16,7 +16,7 @@ def topicSelection(topics, selected_topic_list, mode:Literal['combined','separat
     random.shuffle(mTopics)
     for topic in mTopics:
         words = topic[mode]
-        filter(words)
+        words = [x for x in words if x not in selected_topic_list]
         random.choice(words)
 
 
