@@ -11,5 +11,5 @@ if flags.r:
     randomize=True
 
 if flags.f:
-    command = 
+    command = """ffmpeg -filters 2>/dev/null | grep "\->" | awk '{print $2}' | shuf | xargs -I abc bash -c "ffmpeg -h filter=abc  2>/dev/null ; echo '________________________________________';echo " |  less"""
     os.system(command)
