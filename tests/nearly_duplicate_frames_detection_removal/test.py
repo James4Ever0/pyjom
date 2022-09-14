@@ -11,4 +11,4 @@ cuts = scenedetect.detect(
 
 import pandas
 
-pandas.read_csv(stats_file_path)
+df = pandas.read_csv(stats_file_path)
