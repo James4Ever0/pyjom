@@ -88,9 +88,13 @@ def ffmpegVideoPreProductionFilter(
             h=commandParams["h"],
         )
     if "randomFlip" in filters:
+        pass
     if "superResolution" in filters:
+        pass
     if "minterpolate" in filters:
+        pass
     if "denoising" in filters:
+        pass
 
     if "textRemoval" in filters:
         # process the video, during that duration. fast seek avaliable?
