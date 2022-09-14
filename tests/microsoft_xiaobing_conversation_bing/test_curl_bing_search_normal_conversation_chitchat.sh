@@ -1,0 +1,23 @@
+curl 'https://cn.bing.com/english/zochatv2?cc=cn&ensearch=0' \
+  -H 'authority: cn.bing.com' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'content-type: text/plain;charset=UTF-8' \
+  -H 'cookie: MUID=1B560BA4BCDC678502F21A48BDF2660B; MUIDB=1B560BA4BCDC678502F21A48BDF2660B; _EDGE_V=1; SRCHD=AF=NOFORM; SRCHUID=V=2&GUID=5F8EE8D909ED4343AF0A332575F18DCC&dmnchg=1; _UR=QS=0&TQS=0; _FP=hta=off; MMCASM=ID=EB1F15CA82AF4F2EACA836E498185727; _clck=pkzyck|1|f48|0; MicrosoftApplicationsTelemetryDeviceId=0fa0bc06-15c9-4c72-bba4-c2eb1d1d4998; MSFPC=GUID=02bec15aac9e4b00b0f093e37277467c&HASH=02be&LV=202207&V=4&LU=1658791106497; ZHCHATSTRONGATTRACT=TRUE; _ITAB=STAB=TR; imgv=flts=20220824&lodlg=2&gts=20220908; _tarLang=default=ja; _TTSS_OUT=hist=WyJlbiIsImphIl0=; _TTSS_IN=hist=WyJlcyIsInpoLUhhbnMiLCJlbiIsImF1dG8tZGV0ZWN0Il0=; ZHLASTACTIVECHAT=0; _EDGE_S=SID=1ECE53E4DFC262F3137041F9DEEC63B0; _SS=SID=1ECE53E4DFC262F3137041F9DEEC63B0&PC=U316; SRCHS=PC=U316; dsc=order=ShopOrderImagesOverShop; ENSEARCH=BENVER=0; SUID=M; SRCHUSR=DOB=20220725&T=1663127833000&TPC=1663086470000; ZHCHATWEAKATTRACT=TRUE; ipv6=hit=1663131446469&t=4; ABDEF=V=13&ABDV=11&MRNB=1663128202067&MRB=0; _HPVN=CS=eyJQbiI6eyJDbiI6NTIsIlN0IjoyLCJRcyI6MCwiUHJvZCI6IlAifSwiU2MiOnsiQ24iOjUyLCJTdCI6MCwiUXMiOjAsIlByb2QiOiJIIn0sIlF6Ijp7IkNuIjo1MiwiU3QiOjEsIlFzIjowLCJQcm9kIjoiVCJ9LCJBcCI6dHJ1ZSwiTXV0ZSI6dHJ1ZSwiTGFkIjoiMjAyMi0wOS0xNFQwMDowMDowMFoiLCJJb3RkIjowLCJHd2IiOjAsIkRmdCI6bnVsbCwiTXZzIjowLCJGbHQiOjAsIkltcCI6MjM0Mn0=; RECSEARCH=SQs=[{"q":"teddy%20funny"%2C"c":1%2C"ad":false}%2C{"q":"python%20download%20with%20progress%20bar"%2C"c":1%2C"ad":false}%2C{"q":"python%20download%20tqdm"%2C"c":1%2C"ad":false}%2C{"q":"python%20multithread%20download"%2C"c":1%2C"ad":true}%2C{"q":"python%20tqdm"%2C"c":1%2C"ad":true}%2C{"q":"python%20megabyte%20human%20readable"%2C"c":1%2C"ad":false}%2C{"q":"python%20request%20get%20header%20without%20download"%2C"c":1%2C"ad":false}%2C{"q":"python%20request%20get%20response%20header%20without%20download"%2C"c":1%2C"ad":false}%2C{"q":"aiohttp%20args%20allow%20redirect"%2C"c":1%2C"ad":false}]; SNRHOP=I=&TS=; ZHSEARCHCHATSTATUS=STATUS=1; SRCHHPGUSR=SRCHLANG=en&BRW=NOTP&BRH=S&CW=602&CH=603&SW=1280&SH=800&DPR=2.200000047683716&UTC=480&DM=1&PV=12.5.0&BZA=0&HV=1663129340&WTS=63798724633&SCW=1164&SCH=2909&PRVCW=1163&PRVCH=603' \
+  -H 'origin: https://cn.bing.com' \
+  -H 'referer: https://cn.bing.com/search?q=aiohttp+args+allow+redirect&form=QBLH&sp=-1&pq=aiohttp+args+allow+redirec&sc=8-26&qs=n&sk=&cvid=44FA71281A5246FF9D0859E4146194FF&ghsh=0&ghacc=0&ghpl=' \
+  -H 'sec-ch-ua: "Google Chrome";v="105", "Not)A;Brand";v="8", "Chromium";v="105"' \
+  -H 'sec-ch-ua-arch: "arm"' \
+  -H 'sec-ch-ua-bitness: "64"' \
+  -H 'sec-ch-ua-full-version: "105.0.5195.102"' \
+  -H 'sec-ch-ua-full-version-list: "Google Chrome";v="105.0.5195.102", "Not)A;Brand";v="8.0.0.0", "Chromium";v="105.0.5195.102"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-model: ' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-ch-ua-platform-version: "12.5.0"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36' \
+  --data-raw '{"zoTextResponse":"我在，是有什么事吗？","zoIsGCSResponse":"true","zoSearchQuery":"aiohttp args allow redirect","zoTimestampUtc":"Wed, 14 Sep 2022 05:28:25 GMT","zoIsStartOfSession":"false","zoRequestId":"c18862bd321ea770ac1609f9b552d4bb","conversationId":"712e7968-9607-4abc-9c51-847f15bc6620","query":{"NormalizedQuery":"0xd701543d84662163ce6999"},"from":"chatbox","traceId":"632156f9d8a842048d33001cbeb8df23"}' \
+  --compressed
