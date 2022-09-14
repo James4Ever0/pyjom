@@ -4,7 +4,8 @@ from lazero.utils import sprint
 
 elem, label = OnlineTopicGenerator()
 sprint(label)
-breakpoint()
+# # 'pyjom.commons.OnlineTopicGenerator'
+# breakpoint()
 
 for x in elem:
     print("X",x)
