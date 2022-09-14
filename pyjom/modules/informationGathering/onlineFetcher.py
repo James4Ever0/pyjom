@@ -2,6 +2,6 @@ from pyjom.commons import *
 
 
 @decorator
-def OnlineFetcher(topics):
+def OnlineFetcher(infoList):
     # how do you chain this shit up?
-    for 
+    for info in infoList:
