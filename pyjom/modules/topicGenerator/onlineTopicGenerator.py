@@ -10,13 +10,13 @@ def topicModeling(sentences: list[str], lang='en'): # specify language please?
         topics = englishTopicModeling(sentences)
         return topics
 
-def topicSelection(topics, selected_topic_list, mode:Literal['combined','separate']='combined'):
+def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate']='combined'):
     import random
     mTopics = topics.copy()
     random.shuffle(mTopics)
     for topic in mTopics:
         words = topic[mode]
-        words = [x for x in words if x not in selected_topic_list]
+        words = [x for x in words if x not in selected_topic_set]
         if len(words) > 0:
             return random.choice(words)
     print("no topic this time")
@@ -43,5 +43,5 @@ def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
             mRelatedPicturesJson = mRelatedPictures.json()
             sentences = [x['title'] for x in mRelatedPicturesJson['data']]
             topics = topicModeling(sentences)
-            selectedTopic = topicSelection(topics, selected_topic_list)
+            selectedTopic = topicSelection(topics, selected_topic_set)
             keywords = " ".join([topic,selectedTopic])
