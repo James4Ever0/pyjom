@@ -28,7 +28,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     OnlineTopicGenerator, source=source, metaTopic=metaTopic
                 ),  # how to generate this?
                 "info": keywordDecorator(
-                    OnlineFetcher, source=source
+                    OnlineFetcher, source=source, tempdir = tempdir
                 ),  # can you do that?
                 "processor": keywordDecorator(
                     OnlineProcessor, filters=processor_filters
