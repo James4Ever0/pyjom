@@ -33,7 +33,7 @@ def OnlineTopicGenerator(source='giphy',topic = [['samoyed','dog','cat'],['funny
     if source == 'giphy':
         waitForServerUp(8902, "nodejs giphy server")
         init=True
-        keywords = mTopic
+        keywords = get_topic_string(topic)
         while True:
             if random.random()> 0.5:
                 mRandomPicture = requests.get("http://localhost:8902/random", params = {'q':keywords, 'rating':'g'}) # may you get stickers?
@@ -49,4 +49,4 @@ def OnlineTopicGenerator(source='giphy',topic = [['samoyed','dog','cat'],['funny
             sentences = [x['title'] for x in mRelatedPicturesJson['data']]
             topics = topicModeling(sentences)
             selectedTopic = topicSelection(topics, selected_topic_set)
-            keywords = " ".join([mTopic,selectedTopic]) # for next iteration.
+            keywords = " ".join([get_topic_string(topic),selectedTopic]) # for next iteration.
