@@ -76,3 +76,5 @@ def OnlineTopicGenerator(
             selectedWord = topicWordSelection(topics, selected_topic_set)
             if seiectedWord is not None:
                 keywords = " ".join([getKeywords(), selectedWord])  # for next iteration.
+            else:
+                keywords = 
