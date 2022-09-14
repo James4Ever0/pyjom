@@ -9,7 +9,7 @@ sprint("LABEL:",label)
 # # 'pyjom.commons.OnlineTopicGenerator'
 # breakpoint()
 
-with tmpdir("/dev/shm/medialang/online_test") as testDir:
+with tmpdir(path="/dev/shm/medialang/online_test") as testDir:
     print("TESTDIR:", testDir)
     mDir = str(testDir)
     for x in elem:
