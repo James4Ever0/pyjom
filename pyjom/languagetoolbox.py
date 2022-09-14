@@ -9,8 +9,9 @@ def englishSentencePreprocessing(text):
     if englishNLP is None:
         englishNLP = en_core_web_sm.load()
     doc = englishNLP(text)
-    set(stopwords.words("english"))
-    stop_words = set([elem.lower() for elem in stopwords.words("english")])
+    if englishStopWords is None:
+        set(stopwords.words("english"))
+        englishStopWords = set([elem.lower() for elem in stopwords.words("english")])
 
 def englishTopicModeling(n_top_words = 10):
 
