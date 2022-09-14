@@ -14,15 +14,7 @@ def englishSentencePreprocessing(text):
         set(stopwords.words("english"))
         englishStopWords = set([elem.lower() for elem in stopwords.words("english")])
     if porterStemmer is None:
-    ps = PorterStemmer()
-
-
-
-def englishTopicModeling(n_top_words = 10):
-
-    # the sentence spliter includes unwanted "\n" char
-
-
+        porterStemmer = PorterStemmer()
     lemma_word1 = []
     # this shit has the lang tag. it might be useful for language detection. really?
     for token in doc:
@@ -32,7 +24,15 @@ def englishTopicModeling(n_top_words = 10):
             continue
         lemma_word1.append(token.text)
     sprint(lemma_word1)  # there is no such -PRON- thing.
-    # 1st step.
+    # 1st ste
+
+
+def englishTopicModeling(n_top_words = 10):
+
+    # the sentence spliter includes unwanted "\n" char
+
+
+p.
 
     Stem_words = []
     for w in lemma_word1:
