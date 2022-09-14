@@ -2,5 +2,6 @@ from pyjom.commons import *
 
 
 @decorator
-def filesystemFetcher(topic):
+def OnlineFetcher(topics):
     # how do you chain this shit up?
+    for 
