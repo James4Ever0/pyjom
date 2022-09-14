@@ -17,7 +17,7 @@ import sys
 import random
 
 # this is root. this is not site-packages.
-def frameSizeFilter():
+def frameSizeFilter(frameSize, frame_size_filter):
 
 def checkMinMaxDict(value, minMaxDict, getMinMaxVal = False):
     minVal = minMaxDict.get('min', value)
