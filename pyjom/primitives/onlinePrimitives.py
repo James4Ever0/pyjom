@@ -11,7 +11,7 @@ class OnlineAutoContentProducer(ContentProducer):
         template="pets_with_music_online",
         template_config={},
         metaTopic={
-            "static": [["dog", "cat"], ["funny", "cute"]],
+            "static": [["dog", "cat", 'puppy'], ["funny", "cute"]],
             "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
         },
     ):  # something in this metaTopic is not droppable.
