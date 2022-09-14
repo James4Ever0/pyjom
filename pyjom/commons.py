@@ -316,7 +316,7 @@ def json_auto_float_int(jsonObj):
                     pass
     return jsonObj
 
-
+from typing import Union
 def ffprobe_media_info(filename, video_size:Union[None, str]=None):
     cmd = "ffprobe {} -v quiet -print_format json -show_format -show_streams".format("-video_size {}".format(video_size) if video_size else "")
     cmd = cmd.split(" ")
