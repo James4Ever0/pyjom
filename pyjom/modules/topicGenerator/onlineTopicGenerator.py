@@ -68,7 +68,8 @@ def OnlineTopicGenerator(
         while True:
             harvestedData = []
             try:
-                source_type = 
+                # source_type = random.choice(['videos','gifs'])
+                source_type = 'videos' # for debugging
                 if random.random() > 0.5:
                     mRandomPicture = requests.get(
                         "http://localhost:8902/random",
