@@ -35,7 +35,8 @@ def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PAR
 def englishTopicModeling(sentences, n_top_words = 10):
 
     for sentence in sentences:
-        sentence = ""
+        for x in [\n\r\t]
+        sentence = sentence.replace(x,"")
         row = englishSentencePreprocessing(sentence)
         elem = " ".join(row)
         dataList.append(elem)
