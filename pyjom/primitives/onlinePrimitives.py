@@ -5,7 +5,7 @@ class OnlineAutoContentProducer(ContentProducer):
         super().__init__()
         assert source is not None
         self.source = source
-        self.metaTopic = metaTopic # 所谓的"超话
+        self.metaTopic = metaTopic # 所谓的超话 超级话题
         if enable_log:
             self.log_location = "logs/local/"
         self.identifier.typeFix(type(self).__name__)
