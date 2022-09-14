@@ -13,7 +13,7 @@ def topicModeling(sentences: list[str], lang="en"):  # specify language please?
 
 
 def topicWordSelection(
-    topics, core_topic_set, selected_topic_list, mode: Literal["combined", "separate"] = "combined"
+    topics, core_topic_set:set, selected_topic_list:list, mode: Literal["combined", "separate"] = "combined"
 ):
     selected_topic_set = list(core_topic_set)+selected_topic_list
     import random
