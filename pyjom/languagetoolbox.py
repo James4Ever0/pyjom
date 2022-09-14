@@ -19,10 +19,7 @@ def get_topics(model, feature_names, n_top_words):
         mRealList = [x.strip() for x in mRealList if len(x.strip()) > 1] # usually things shorter than 2 letters are no good.
         mRealSet = set(mRealList)
         cRealDict = {k:mRealList.count(k) for k in mRealSet}
-
-        # print("MESSAGE",message)
-        # print("SET", mSet)
-        {'combined':mList, 'separate':}
+        {'combined':mList, 'separate':mRealList}
     print()
 
 
