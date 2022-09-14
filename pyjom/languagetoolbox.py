@@ -82,7 +82,7 @@ def englishSentencePreprocessing(
     return Stem_words
 
 
-def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2)):
+def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
     for sentence in sentences:
         for x in "\n\r\t":
