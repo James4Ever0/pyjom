@@ -10,4 +10,4 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
             width, height = mDict['width'], mDict['height']
             if not (checkMinMaxDict(width, frame_size_filter['width']) and checkMinMaxDict(height, frame_size_filter['height'])):
                 print("Filter out invalid video with shape of {}x{}".format(width,height))
-                print()
+                print('Valid Width and Height are {}-{}x{}-{}'.format(width,height)
