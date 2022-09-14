@@ -14,7 +14,7 @@ import scenedetect
 
 stats_file_path = "output.csv"
 cuts = scenedetect.detect(
-    video_path=source, stats_file_path=stats_file_path, show_progress=True, detector=ContentDetector()
+    video_path=source, stats_file_path=stats_file_path, show_progress=True, detector=scenedetect.ContentDetector()
 )
 
 import pandas
