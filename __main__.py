@@ -7,4 +7,5 @@ parser.add_argument('-r','--random', help='randomize output')
 flags = parser.parse_args()
 
 if flags.f:
-    if 
+    if flags.r:
+        randomize=True
