@@ -5,5 +5,5 @@ for elem in OnlineTopicGenerator():
     # print(elem) # a generator in generator?
     # breakpoint()
     for x in elem:
-        print(x)
+        print("X",x)
         breakpoint()
