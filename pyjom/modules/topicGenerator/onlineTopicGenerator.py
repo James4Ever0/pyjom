@@ -6,6 +6,7 @@ import requests
 # import jieba
 from typing import Literal
 
+
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
     # python does not enforce type checking. use third party tool such as linter instead.
     if lang == "en":
@@ -40,15 +41,21 @@ def topicWordSelection(
 
 
 def getMetaTopicString(metaTopic):
-    staticCandidates = [random.choice(x) for x in metaTopic['static']]
-    dynamicCandidates = [random.choice(x) for x in metaTopic['dynamic']]
-    samples = random.sample(dynamicCandidates, random.randint(0, len(dynamicCandidates)))
-    return " ".join(staticCandidates+samples)
+    staticCandidates = [random.choice(x) for x in metaTopic["static"]]
+    dynamicCandidates = [random.choice(x) for x in metaTopic["dynamic"]]
+    samples = random.sample(
+        dynamicCandidates, random.randint(0, len(dynamicCandidates))
+    )
+    return " ".join(staticCandidates + samples)
 
 
 @decorator
 def OnlineTopicGenerator(
-    source="giphy", metaTopic={"static":[["dog", "cat"], ["funny", "cute"]],"dynamic":[["samoyed",'husky','teddy','chiwawa']]} # this is not a matrix.
+    source="giphy",
+    metaTopic={
+        "static": [["dog", "cat"], ["funny", "cute"]],
+        "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
+    },  # this is not a matrix.
 ):
     getKeywords = lambda: getMetaTopicString(metaTopic)
     core_topic_set = {
@@ -71,7 +78,8 @@ def OnlineTopicGenerator(
                     randomPictureId = mRandomPictureJson["data"][0]["id"]
                 else:
                     mSearchPictures = requests.get(
-                        "http://localhost:8902/search", params={'q':keywords,'rating':'g'}
+                        "http://localhost:8902/search",
+                        params={"q": keywords, "rating": "g"},
                     )
                     mSearchPicturesJson = mSearchPictures.json()
                     harvestedData += mSearchPicturesJson["data"]
@@ -96,6 +104,7 @@ def OnlineTopicGenerator(
                     keywords = getKeywords()
             except:
                 import traceback
+
                 traceback.print_exc()
                 print("ERROR WHEN FETCHING GIPHY TOPIC")
             for elem in harvestedData:
