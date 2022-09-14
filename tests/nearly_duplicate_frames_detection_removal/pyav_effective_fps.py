@@ -15,4 +15,4 @@ mList = []
 for frame in container.decode(video=0):
     mList.append(frame.key_frame)
 
-print("KEYFRAME PERCENT: {:.2f} %".format(100*sum(mList)/len(mList)), len(mList))
+print("KEYFRAME PERCENT: {:.2f} %".format(100*sum(mList)/len(mList)))
