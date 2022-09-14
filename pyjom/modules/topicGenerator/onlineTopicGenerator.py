@@ -59,6 +59,7 @@ def OnlineTopicGenerator(
         init = True
         keywords = getKeywords()
         while True:
+            try:
             if random.random() > 0.5:
                 mRandomPicture = requests.get(
                     "http://localhost:8902/random",
