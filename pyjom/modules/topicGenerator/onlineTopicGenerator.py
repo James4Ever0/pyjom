@@ -24,6 +24,8 @@ def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate
     print("no topic this time")
     return None
 
+def 
+
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = [['samoyed','dog','cat'],['funny','cute']]):
     selected_topic_set = {topic} # common way to initialize a set.
