@@ -10,7 +10,7 @@ class OnlineAutoContentProducer(ContentProducer):
         producer_filters={},
         template="pets_with_music_online",
         template_config={},
-        tempdir
+        tempdir = '/dev/shm/'
         metaTopic={
             "static": [["dog", "cat", 'puppy'], ["funny", "cute"]],
             "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
