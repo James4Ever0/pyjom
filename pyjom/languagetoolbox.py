@@ -1,7 +1,7 @@
 englishNLP = None
 englishStopWords = None
 porterStemmer = None
-def englishSentencePreprocessing(text):
+def englishSentencePreprocessing(text, unwantedPOS=["PRON", "CCONJ", "ADP", "PART", "PUNCT", "AUX"]):
     global englishNLP, englishStopWords, porterStemmer
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize
@@ -18,7 +18,7 @@ def englishSentencePreprocessing(text):
     lemma_word1 = []
     # this shit has the lang tag. it might be useful for language detection. really?
     for token in doc:
-        if token.pos_ in ["PRON", "CCONJ", "ADP", "PART", "PUNCT", "AUX"]:
+        if token.pos_ in unwantedPOS:
             continue
         if token.text.lower() in stop_words:
             continue
