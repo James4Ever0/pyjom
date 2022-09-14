@@ -3,6 +3,6 @@ source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detect
 
 container = av.open(source)
 
-counts = 0
+mList = []
 for frame in container.decode(video=0):
     print("KEY FRAME?",frame.key_frame)
