@@ -5,4 +5,6 @@ container = av.open(source)
 
 mList = []
 for frame in container.decode(video=0):
-    print("KEY FRAME?",frame.key_frame)
+    mList.append(frame.key_frame)
+
+print(sum(mList)/len(mList))
