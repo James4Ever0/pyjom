@@ -55,10 +55,12 @@ def OnlineTopicGenerator(
                     params={"q": keywords, "rating": "g"},
                 )  # may you get stickers?
                 mRandomPictureJson = mRandomPicture.json()
+                for elem in mRa
                 randomPictureId = mRandomPictureJson["data"][0]["id"]
             else:
                 mSearchPicture = requests.get("http://localhost:8902/search", params={})
                 mSearchPictureJson = mSearchPicture.json()
+                for elem in mRandomPictureJson
                 randomPictureId = random.choice(mSearchPictureJson["data"])["id"]
 
             mRelatedPictures = requests.get(
