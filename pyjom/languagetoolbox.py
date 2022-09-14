@@ -5,7 +5,8 @@ def englishSentencePreprocessing():
     from nltk.tokenize import word_tokenize
     import en_core_web_sm
     from nltk.stem import PorterStemmer
-    englishNLP = en_core_web_sm.load()
+    if englishNLP is None:
+        englishNLP = en_core_web_sm.load()
 
 def englishTopicModeling(n_top_words = 10):
 
