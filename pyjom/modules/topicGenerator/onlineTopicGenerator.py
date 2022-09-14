@@ -18,7 +18,8 @@ def topicSelection(topics, selected_topic_set, mode:Literal['combined','separate
         words = topic[mode]
         words = [x for x in words if x not in selected_topic_set]
         if len(words) > 0:
-            return random.choice(words)
+
+            return word
     print("no topic this time")
     return None
 
