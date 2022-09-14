@@ -6,4 +6,4 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy'):
     # how do you chain this shit up?
     for info in infoList: # generator most likely
         if source=='giphy':
-            
+            # (id, )
