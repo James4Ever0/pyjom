@@ -59,7 +59,7 @@ def OnlineTopicGenerator(
         init = True
         keywords = getKeywords()
         while True:
-            harvested
+            harvestedData = []
             try:
             if random.random() > 0.5:
                 mRandomPicture = requests.get(
@@ -67,8 +67,7 @@ def OnlineTopicGenerator(
                     params={"q": keywords, "rating": "g"},
                 )  # may you get stickers?
                 mRandomPictureJson = mRandomPicture.json()
-                for elem in mRandomPictureJson["data"]:
-                    yield elem["id"], elem["media"]
+                harvestedData += mRandomPictureJson["data"]:
                 randomPictureId = mRandomPictureJson["data"][0]["id"]
             else:
                 mSearchPictures = requests.get(
