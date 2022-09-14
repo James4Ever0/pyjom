@@ -70,7 +70,7 @@ def OnlineTopicGenerator(
                     randomPictureId = mRandomPictureJson["data"][0]["id"]
                 else:
                     mSearchPictures = requests.get(
-                        "http://localhost:8902/search", params={'q':keywords,}
+                        "http://localhost:8902/search", params={'q':keywords,'rating':'g'}
                     )
                     mSearchPicturesJson = mSearchPictures.json()
                     harvestedData += mSearchPicturesJson["data"]
