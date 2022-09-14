@@ -317,8 +317,9 @@ def json_auto_float_int(jsonObj):
     return jsonObj
 
 
-def ffprobe_media_info(filename, extra):
-    cmd = "ffprobe -v quiet -print_format json -show_format -show_streams".split(" ")
+def ffprobe_media_info(filename, video_size:):
+    cmd = "ffprobe -v quiet -print_format json -show_format -show_streams"
+    cmd = cmd.split(" ")
     cmd = cmd + [filename]
     output = subprocess.check_output(cmd)
     return json_auto_float_int(json.loads(output))
