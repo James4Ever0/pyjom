@@ -9,14 +9,15 @@ def englishSentencePreprocessing(text):
     if englishNLP is None:
         englishNLP = en_core_web_sm.load()
     doc = englishNLP(text)
+    set(stopwords.words("english"))
+
+    stop_words = set([elem.lower() for elem in stopwords.words("english")])
 
 def englishTopicModeling(n_top_words = 10):
 
     # the sentence spliter includes unwanted "\n" char
 
-    set(stopwords.words("english"))
 
-    stop_words = set([elem.lower() for elem in stopwords.words("english")])
 
     lemma_word1 = []
     # this shit has the lang tag. it might be useful for language detection. really?
