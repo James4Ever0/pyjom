@@ -20,9 +20,5 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
                 extension = url.split("?")[0].split(".")[-1]
                 basename = ".".join([asset_id, extension])
                 download_path = os.path.join(tempdir, basename)
-                if not (os.path.exists(download_path) and os.path.isfile(download_path)):
-                    # no need to download
-                    download(url, download_path, threads=-0.3, size_filter={"min":0.4, "max":50})
-                else:
-                    print("FILE ALREADY DOWNLOADED")
-                yield source_id, download_ath
+                download(url, download_path, threads=-0.3, size_filter={"min":0.4, "max":50})
+                yield source_id, download_path
