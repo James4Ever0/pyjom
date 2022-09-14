@@ -19,7 +19,8 @@ stats_file_path = "/media/root/parrot/pyjom/tests/nearly_duplicate_frames_detect
 duration = get_duration(source)
 print("DURATION:", duration)
 cuts = scenedetect.detect(
-    video_path=source, stats_file_path=stats_file_path, show_progress=True, detector=scenedetect.ContentDetector()
+    video_path=source, stats_file_path=stats_file_path, show_progress=True, detector=scenedetect.ContentDetector()AdaptiveDetector
+    AdaptiveDetector
 ) # no fucking cuts???
 
 import pandas
