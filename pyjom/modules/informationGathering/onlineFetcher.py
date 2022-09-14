@@ -2,7 +2,7 @@ from pyjom.commons import *
 from typing import Literal
 
 @decorator
-def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:dict={'width':200,1000}, 'height':200,1000}}):
+def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:dict={'width':200, 'height':{'min':200,1000}}):
     # how do you chain this shit up?
     for info in infoList: # generator most likely
         if source=='giphy':
