@@ -18,9 +18,11 @@ import random
 
 # this is root. this is not site-packages.
 def frameSizeFilter(frameSize, frame_size_filter):
+            width, height = mDict['width'], mDict['height']
+
     if not (checkMinMaxDict(width, frame_size_filter['width']) and checkMinMaxDict(height, frame_size_filter['height'])):
-                print("Filter out invalid video with shape of {}x{}".format(width,height))
-                print('Valid Width and Height are {}-{}x{}-{}'.format(minWidth, maxWidth,minHeight, maxHeight))
+        print("Filter out invalid video with shape of {}x{}".format(width,height))
+        print('Valid Width and Height are {}-{}x{}-{}'.format(minWidth, maxWidth,minHeight, maxHeight))
 
 def checkMinMaxDict(value, minMaxDict, getMinMaxVal = False):
     minVal = minMaxDict.get('min', value)
