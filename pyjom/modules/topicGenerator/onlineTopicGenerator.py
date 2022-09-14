@@ -69,7 +69,7 @@ def OnlineTopicGenerator(
                 "http://localhost:8902/related", params={"q": randomPictureId}
             )
             mRelatedPicturesJson = mRelatedPictures.json()
-            for elem in mRelatedPictureJson['data']:
+            for elem in mRelatedPicturesJson['data']:
                 yield elem['id'], elem['media']
             sentences = [x["title"] for x in mRelatedPicturesJson["data"]]
             topics = topicModeling(sentences)
