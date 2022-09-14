@@ -90,6 +90,7 @@ def OnlineTopicGenerator(
                     keywords = " ".join(
                         [getKeywords(), selectedWord]
                     )  # for next iteration.
+                    print("REFRESHING TOPIC:")
                 else:
                     keywords = getKeywords()
             except:
