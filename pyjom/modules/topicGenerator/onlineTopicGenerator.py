@@ -10,6 +10,7 @@ def topicModeling(sentences: list[str], lang='en'): # specify language please?
         return topics
 
 def topicSelection(topics, selected_topic_list, mode='combined'):
+    import random
     
 
 @decorator
