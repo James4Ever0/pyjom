@@ -17,6 +17,6 @@ with tmpdir(path=path) as testDir:
         url = meta['url']
         extension = url.split("?")[0].split(".")[-1]
         download_path = os.path.join(path, asset_id+extension)
-        download(url, )
+        download(url, download_path)
         # X ('sr8jYZVVsCmxddga8w', {'height': 480, 'width': 474, 'url': 'https://media0.giphy.com/media/sr8jYZVVsCmxddga8w/giphy.gif'})
         breakpoint()
