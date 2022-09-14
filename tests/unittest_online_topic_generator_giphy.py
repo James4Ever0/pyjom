@@ -2,7 +2,7 @@ from test_commons import *
 from pyjom.modules.topicGenerator import OnlineTopicGenerator
 from lazero.utils import sprint
 from lazero.network import download
-from lazero.fileystem import tmpdir
+from lazero.filesystem import tmpdir
 
 elem, label = OnlineTopicGenerator()
 sprint("LABEL:",label)
