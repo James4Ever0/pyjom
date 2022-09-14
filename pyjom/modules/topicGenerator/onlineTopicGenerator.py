@@ -16,7 +16,8 @@ def topicSelection(topics, selected_topic_list, mode:Literal['combined','separat
     random.shuffle(mTopics)
     for topic in mTopics:
         words = topic[mode]
-        
+        words = 
+        random.choice(words)
 
 
 @decorator
