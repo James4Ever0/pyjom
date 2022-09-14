@@ -3,7 +3,9 @@ import av
 # 1.36%
 
 source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"  # this is evil. it defeats my shit.
-
+# KEYFRAME PERCENT: 0.76 %
+# wtf?
+# even smaller.
 
 container = av.open(source)
 
