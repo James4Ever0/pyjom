@@ -3,7 +3,7 @@ from typing import Literal
 from lazero.network import download
 
 @decorator
-def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:dict={'width':{'min':200,'max':1000}, 'height':{'min':200,'max':1000}}, tempdir='/dev/shm/medialang/online'):
+def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:dict={'width':{'min':150,'max':1000}, 'height':{'min':200,'max':1000}}, tempdir='/dev/shm/medialang/online'):
     # how do you chain this shit up?
     assert os.path.isabs(tempdir)
     assert os.path.isdir(tempdir)
