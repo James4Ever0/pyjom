@@ -8,7 +8,7 @@ import os
 
 os.chdir("../../")
 sys.path.append(".")
-from pyjom.commons import extract_span,ContentDetector
+from pyjom.commons import extract_span
 
 import scenedetect
 
