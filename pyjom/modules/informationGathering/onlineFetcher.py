@@ -2,7 +2,7 @@ from pyjom.commons import *
 
 
 @decorator
-def OnlineFetcher(infoList):
+def OnlineFetcher(infoList, source='giphy'):
     # how do you chain this shit up?
     for info in infoList: # generator most likely
         if 
