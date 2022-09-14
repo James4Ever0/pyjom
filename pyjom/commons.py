@@ -18,6 +18,9 @@ import random
 
 # this is root. this is not site-packages.
 
+def checkMinMaxDict(value, minMaxDict):
+    
+
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
 os.environ["USE_NVIDIA_OPENCV"] = "yes"
 if os.environ["USE_NVIDIA_OPENCV"] == "yes":
