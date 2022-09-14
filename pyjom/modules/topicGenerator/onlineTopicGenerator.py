@@ -56,6 +56,7 @@ def OnlineTopicGenerator(
         "static": [["dog", "cat"], ["funny", "cute"]],
         "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
     },  # this is not a matrix.
+    sample_size = 10 # per search.
 ):
     getKeywords = lambda: getMetaTopicString(metaTopic)
     core_topic_set = {
