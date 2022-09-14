@@ -32,5 +32,7 @@ def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
             mRandomPictureJson = mRandomPicture.json()
             randomPictureId = mRandomPictureJson['data'][0]['id']
             mRelatedPictures = requests.get("http://localhost:8902/related", params = {'q':randomPictureId})
+            mRelatedPicturesJson = mRelatedPictures.json()
+            
 
             if init: init=False
