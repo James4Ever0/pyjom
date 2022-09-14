@@ -5,6 +5,7 @@ porterStemmer = None
 
 def get_topics(model, feature_names, n_top_words):
     # 首先是遍历模型中存储的话题序号和话题内容
+    topics = []
     for topic_idx, topic in enumerate(model.components_):
         # 然后打印话题的序号以及指定数量的最高频的关键词
         message = "topic #%d:" % topic_idx
@@ -19,7 +20,7 @@ def get_topics(model, feature_names, n_top_words):
         mRealList = [x.strip() for x in mRealList if len(x.strip()) > 1] # usually things shorter than 2 letters are no good.
         mRealSet = set(mRealList)
         cRealDict = {k:mRealList.count(k) for k in mRealSet}
-        {'combined':mList, 'separate':mRealList}
+        topics.append({'combined':mList, 'separate':mRealList})
     print()
 
 
