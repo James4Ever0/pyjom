@@ -1,6 +1,6 @@
 from pyjom.commons import *
 from pyjom.languagetoolbox import englishTopicModeling
-from lazero.utils import 
+from lazero.utils.tools import flattenUnhashableList
 import requests
 
 # import jieba
