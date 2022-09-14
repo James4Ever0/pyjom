@@ -10,6 +10,7 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
     for info in infoList: # generator most likely
         if source=='giphy':
             (source_id, frameMeta) = info
+            width, height = frameMeta['width'], frameMeta['height']
             asset_id = "video_[{}_{}]_[{}x{}]".format(source, source_id, width, height)
             flag = frameSizeFilter(frameMeta, frame_size_filter)
             if flag:
