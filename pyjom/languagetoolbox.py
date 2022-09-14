@@ -3,7 +3,7 @@ englishStopWords = None
 porterStemmer = None
 
 
-def print_topics(model, feature_names, n_top_words):
+def get_topics(model, feature_names, n_top_words):
     # 首先是遍历模型中存储的话题序号和话题内容
     for topic_idx, topic in enumerate(model.components_):
         # 然后打印话题的序号以及指定数量的最高频的关键词
@@ -20,10 +20,10 @@ def print_topics(model, feature_names, n_top_words):
         mRealSet = set(mRealList)
         cRealDict = {k:mRealList.count(k) for k in mRealSet}
 
-        print("MESSAGE",message)
-        print("SET", mSet)
+        # print("MESSAGE",message)
+        # print("SET", mSet)
         print("COUNT DICT", cDict) # pointless to count here?
-        print("RealSET", mRealSet)
+        # print("RealSET", mRealSet)
         print("RealCOUNT DICT", cRealDict)
     print()
 
