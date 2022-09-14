@@ -24,7 +24,7 @@ def topicSelection(topics, selected_topic_list, mode:Literal['combined','separat
 
 @decorator
 def OnlineTopicGenerator(source='giphy',topic = 'samoyed'):
-    selected_topic_list = [topic]
+    selected_topic_set = [topic]
     if source == 'giphy':
         waitForServerUp(8902, "nodejs giphy server")
         init=True
