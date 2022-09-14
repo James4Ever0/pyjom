@@ -20,7 +20,8 @@ duration = get_duration(source)
 print("DURATION:", duration)
 cuts = scenedetect.detect(
     video_path=source, stats_file_path=stats_file_path, show_progress=True, 
-    detector=scenedetect.ContentDetector()detector=scenedetect.AdaptiveDetector
+    # detector=scenedetect.ContentDetector()
+    detector=scenedetect.AdaptiveDetector(),
 ) # no fucking cuts???
 
 import pandas
