@@ -61,37 +61,41 @@ def OnlineTopicGenerator(
         while True:
             harvestedData = []
             try:
-            if random.random() > 0.5:
-                mRandomPicture = requests.get(
-                    "http://localhost:8902/random",
-                    params={"q": keywords, "rating": "g"},
-                )  # may you get stickers?
-                mRandomPictureJson = mRandomPicture.json()
-                harvestedData += mRandomPictureJson["data"]
-                randomPictureId = mRandomPictureJson["data"][0]["id"]
-            else:
-                mSearchPictures = requests.get(
-                    "http://localhost:8902/search", params={}
-                )
-                mSearchPicturesJson = mSearchPictures.json()
-                harvestedData += mSearchPicturesJson["data"]
-                randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
+                if random.random() > 0.5:
+                    mRandomPicture = requests.get(
+                        "http://localhost:8902/random",
+                        params={"q": keywords, "rating": "g"},
+                    )  # may you get stickers?
+                    mRandomPictureJson = mRandomPicture.json()
+                    harvestedData += mRandomPictureJson["data"]
+                    randomPictureId = mRandomPictureJson["data"][0]["id"]
+                else:
+                    mSearchPictures = requests.get(
+                        "http://localhost:8902/search", params={}
+                    )
+                    mSearchPicturesJson = mSearchPictures.json()
+                    harvestedData += mSearchPicturesJson["data"]
+                    randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
 
-            mRelatedPictures = requests.get(
-                "http://localhost:8902/related", params={"q": randomPictureId}
-            )
-            mRelatedPicturesJson = mRelatedPictures.json()
-            harvestedData += mRelatedPicturesJson["data"]
-            sentences = [x["title"] for x in mRelatedPicturesJson["data"]]
-            topics = topicModeling(sentences)
-            selectedWord = topicWordSelection(
-                topics, core_topic_set, selected_topic_list
-            )
-            if not selectedWord is None:
-                keywords = " ".join(
-                    [getKeywords(), selectedWord]
-                )  # for next iteration.
-            else:
-                keywords = getKeywords()
+                mRelatedPictures = requests.get(
+                    "http://localhost:8902/related", params={"q": randomPictureId}
+                )
+                mRelatedPicturesJson = mRelatedPictures.json()
+                harvestedData += mRelatedPicturesJson["data"]
+                sentences = [x["title"] for x in mRelatedPicturesJson["data"]]
+                topics = topicModeling(sentences)
+                selectedWord = topicWordSelection(
+                    topics, core_topic_set, selected_topic_list
+                )
+                if not selectedWord is None:
+                    keywords = " ".join(
+                        [getKeywords(), selectedWord]
+                    )  # for next iteration.
+                else:
+                    keywords = getKeywords()
+            except:
+                import traceback
+                traceback.print_exc()
+                print("ERROR WHEN FETCING GIPHY TOPIC")
             for elem in harvestedData:
                 yield elem["id"], elem["media"]
