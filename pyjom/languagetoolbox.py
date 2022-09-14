@@ -2,7 +2,6 @@ englishNLP = None
 englishStopWords = None
 porterStemmer = None
 
-
 def get_topics(model, feature_names, n_top_words):
     # 首先是遍历模型中存储的话题序号和话题内容
     topics = []
@@ -21,8 +20,7 @@ def get_topics(model, feature_names, n_top_words):
         mRealSet = set(mRealList)
         cRealDict = {k:mRealList.count(k) for k in mRealSet}
         topics.append({'combined':mList, 'separate':mRealList})
-    print()
-
+    return topics
 
 def print_topics(model, feature_names, n_top_words):
     # 首先是遍历模型中存储的话题序号和话题内容
@@ -94,7 +92,7 @@ def englishTopicModeling(sentences, n_top_words = 10):
     # In[8]:
 
     # 创建一个CountVectoerizer实例
-    tfidf = TfidfVectorizer(ngram_range=(1, 2))
+    tfidf = TfidfVectorizer(ngram_range=ngram_range)
     # 打开刚刚保存的txt文档
     from io import StringIO
     f = StringIO(data)
