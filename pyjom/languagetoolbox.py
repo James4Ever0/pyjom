@@ -8,14 +8,9 @@ def englishSentencePreprocessing(text):
     from nltk.stem import PorterStemmer
     if englishNLP is None:
         englishNLP = en_core_web_sm.load()
-    doc = nlp(text)
+    doc = englishNLP(text)
 
 def englishTopicModeling(n_top_words = 10):
-
-
-
-
-
 
     # the sentence spliter includes unwanted "\n" char
 
