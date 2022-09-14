@@ -3,4 +3,7 @@ source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detect
 # is it still image?
 # we can also detect more shits. right?
 import scenedetect
-cuts = scenedetect.detect(video_path=source, stats_file_path="output.csv", show_progress=True
+cuts = scenedetect.detect(video_path=source, stats_file_path="output.csv", show_progress=True)
+
+import pandas
+pandas.read_csv(stats_file_path)
