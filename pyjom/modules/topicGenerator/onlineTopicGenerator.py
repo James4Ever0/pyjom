@@ -70,7 +70,7 @@ def OnlineTopicGenerator(
                     randomPictureId = mRandomPictureJson["data"][0]["id"]
                 else:
                     mSearchPictures = requests.get(
-                        "http://localhost:8902/search", params={}
+                        "http://localhost:8902/search", params={'q':keywords,}
                     )
                     mSearchPicturesJson = mSearchPictures.json()
                     harvestedData += mSearchPicturesJson["data"]
@@ -90,7 +90,7 @@ def OnlineTopicGenerator(
                     keywords = " ".join(
                         [getKeywords(), selectedWord]
                     )  # for next iteration.
-                    print("REFRESHING TOPIC:")
+                    print("REFRESHING KEYWORDS:", keywords)
                 else:
                     keywords = getKeywords()
             except:
