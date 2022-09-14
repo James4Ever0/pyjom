@@ -12,7 +12,7 @@ path = "/dev/shm/medialang/online_test"
 with tmpdir(path=path) as testDir:
     print("TESTDIR:", testDir)
     for asset_id, meta in elem:
-        print("X",x)
-        url = meta
+        print("X",asset_id, meta)
+        url = meta['url']
         # X ('sr8jYZVVsCmxddga8w', {'height': 480, 'width': 474, 'url': 'https://media0.giphy.com/media/sr8jYZVVsCmxddga8w/giphy.gif'})
         breakpoint()
