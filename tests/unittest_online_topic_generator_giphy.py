@@ -86,6 +86,8 @@ with tmpdir(path=tmpPath) as testDir:
                     print("skipping due to invalid %s: %s" % (flag, mValue))
                     print("%s filter:" % flag, mFilter)
                     break
+            if not valid:
+                print()
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
