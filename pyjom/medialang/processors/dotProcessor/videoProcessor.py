@@ -130,7 +130,7 @@ def ffmpegVideoPreProductionFilter(
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
-    simpleFiltersValueMap = {x: -2 for x in simpleFilters}
+    simpleFiltersValueMap = {x: -2 for x in simpleFilters+['randomFlip']}
     commandValueMap = {
         "empty": -1,
         "delogo": 0,
