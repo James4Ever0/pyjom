@@ -6,7 +6,7 @@
 
 # fuck!
 
-# src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
+src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
 # CENTRALITY: 0.00 %
 
 # single not go beyond 4 percent.
