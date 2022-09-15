@@ -155,9 +155,9 @@ flagged_image[:,:,:] = 1 # every element is 1 now.
 epsilon = 0.01 # shit man.
 percents = []
 shift=2
-for center5 in cluster_centers:
+for center in cluster_centers:
     # fetch area nearby given center
-    center = center5[:3]
+    # center = center5[:3]
     # center_int = center.astype(np.uint8)
     # i just don't know what the fuck is going on here.
     upper = center + shift
