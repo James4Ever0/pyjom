@@ -40,15 +40,15 @@ def getColorCentrality(image,sample_size_limit = 5000):
     reshapedImageIndexs = np.arange(0, length)
     # so now it is good.
     sampleIndexs = np.random.choice(reshapedImageIndexs, size=min(sample_size_limit, length))
-    print(sampleIndexs)
-    print(sampleIndexs.shape)
+    # print(sampleIndexs)
+    # print(sampleIndexs.shape)
 
     sample_size = len(sampleIndexs)
 
     sample = reshapedImageIndexs[sampleIndexs]
     sample = reshapedImage[sample, :]
-    print(sample)
-    print(sample.shape)
+    # print(sample)
+    # print(sample.shape)
 
     # breakpoint()
     # sampleCoords = coords[sampleIndexs]
@@ -70,7 +70,6 @@ def getColorCentrality(image,sample_size_limit = 5000):
 
     # from sklearn.cluster import KMeans
     X = sample
-    batch_size = 45
     # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
     n_clusters = 5
     kmeans = MiniBatchKMeans(
