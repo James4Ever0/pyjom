@@ -23,7 +23,7 @@
 # likely to be the blue.
 
 src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
-# 
+# multiple centers.
 # CENTER: [246.76865924 226.40763256 216.41472476]
 # POSITIVE COUNT: 95497
 # SUM: 286491.0 MIN: 0 MAX: 3
@@ -125,4 +125,7 @@ for center in cluster_centers:
     print("CENTER:",center)
     print('POSITIVE COUNT:', positive_count)
     print("SUM:", mSum, "MIN:", min(mOutput), 'MAX:', max(mOutput))
+    print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(percent*100))
+    percents.append(percent)
+
     print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(percent*100))
