@@ -17,7 +17,10 @@
 
 # now the 八点半配音
 src = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
-
+# CENTER: [252.66293811 177.62005966 126.37844892]
+# POSITIVE COUNT: 222893
+# SUM: 668679.0 MIN: 0 MAX: 3
+# NEARBY CENTER PERCENTAGE: 37.79 %
 # src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
 
 import numpy as np
