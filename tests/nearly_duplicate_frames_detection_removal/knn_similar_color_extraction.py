@@ -32,6 +32,8 @@ src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # 
 # SUM: 286491.0 MIN: 0 MAX: 3
 # NEARBY CENTER PERCENTAGE: 10.36 %
 # CENTRALITY: 24.79 %
+
+
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
 
