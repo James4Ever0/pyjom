@@ -80,17 +80,18 @@ if shape[2] != 3:
 # for i in range(3):
 #     image[:,:,i] = i
 
-col_0, col_1 = shape[:2]
+if use_spatial:
+    col_0, col_1 = shape[:2]
 
-coords = []
+    coords = []
 
-bias = 2
+    bias = 2
 
-for c0 in range(col_0):
-    for c1 in range(col_1):
-        coords.append((bias*c0/col_0,bias*c1/col_1))
+    for c0 in range(col_0):
+        for c1 in range(col_1):
+            coords.append((bias*c0/col_0,bias*c1/col_1))
 
-coords = np.array(coords)
+    coords = np.array(coords)
 
 # print(image.reshape(-1,3))
 reshapedImage = image.reshape(-1, 3)  # are you sure about this?
