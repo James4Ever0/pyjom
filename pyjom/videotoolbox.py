@@ -528,7 +528,7 @@ def detectStationaryLogoOverTime(
             start_end_list.append([crop_flag, start_end_ranges])
 
     for index, (crop_flag,start_end_ranges) in enumerate(start_end_list):
-        for mStart, mEnd in start_end_ranges:
+        # for mStart, mEnd in start_end_ranges:
         mFinalDelogoFilters = []
         for currentRect in boundingRects:
             if cornersOnly:
@@ -560,7 +560,7 @@ def detectStationaryLogoOverTime(
             value = {}
         else:
             delogoCommandSet = "|".join(mFinalDelogoFilters)
-            value = {delogoCommandSet: [(mStart, mEnd)]} # can it be turned into something useful?
+            value = {delogoCommandSet: start_end_ranges.copy()} # can it be turned into something useful?
         delogoCommandList.append(value)
 
 
