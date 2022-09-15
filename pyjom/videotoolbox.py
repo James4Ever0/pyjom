@@ -1201,7 +1201,7 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
         convertedVideoPath = str(uuid.uuid4())+".mp4"
         convertedVideoPath = os.path.join(tempdir, convertedVideoPath)
 
-        commandline = "ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=15:mi_mode=dup /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.gif"
+        commandline = "ffmpeg -y -i '{}' -vf minterpolate=fps=15:mi_mode=dup '{}'"
 
         source = convertedVideoPath# very unlikely to go higher.
         # 15fps is just fine for shit like this.
