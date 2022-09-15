@@ -1,6 +1,6 @@
 from test_commons import *
 from pyjom.modules.topicGenerator import OnlineTopicGenerator
-from pyjom.modules. import OnlineFetcher
+from pyjom.modules.informationGathering import OnlineFetcher
 from lazero.utils import sprint
 from lazero.network import download
 from lazero.filesystem import tmpdir
@@ -31,4 +31,4 @@ with tmpdir(path=path) as testDir:
             # breakpoint()
             # seems good. now we check the cat/dog.
     elif flag == 'topic_with_fetcher':
-        newElems, label = 
+        newElems, label = OnlineFetcher()
