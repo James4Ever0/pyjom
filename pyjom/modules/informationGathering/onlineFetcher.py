@@ -24,6 +24,8 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
                     result = download(url, download_path, threads=-0.3, size_filter={"min":0.4, "max":50})
                     if result:
                         yield source_id, download_path
+                    else:
+                        
                 except:
                     import traceback
                     traceback.print_exc()
