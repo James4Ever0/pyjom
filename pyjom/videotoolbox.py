@@ -532,6 +532,7 @@ def detectStationaryLogoOverTime(
         mFinalDelogoFilters = []
         for currentRect in boundingRects:
             if cornersOnly:
+                if fourCorners
                     for cornerRect in fourCorners:
                         overlapRect = getOverlapRect(currentRect, cornerRect)
                         if overlapRect:
