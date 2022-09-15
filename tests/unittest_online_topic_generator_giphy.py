@@ -44,6 +44,7 @@ with tmpdir(path=tmpPath) as testDir:
             duration_filter =  {'min':0.6, 'max':7}
             fps_filter =  {'min':7, 'max':60}
             duration_valid = checkMinMaxDict(duration,duration_filter)
+            fps_valid = checkMinMaxDict(fps,fps_filter)
             if duration_valid:
                 min_fps = 
             else:
