@@ -528,6 +528,7 @@ def detectStationaryLogoOverTime(
             start_end_list.append([crop_flag, start_end_ranges])
 
     for index, (crop_flag,start_end_ranges) in enumerate(start_end_list):
+        for mStart, mEnd in start_end_ranges:
         mFinalDelogoFilters = []
         for currentRect in boundingRects:
             if cornersOnly:
