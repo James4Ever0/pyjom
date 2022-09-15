@@ -101,6 +101,8 @@ def ffmpegVideoPreProductionFilter(
         mDict.update({"minterpolate":[(start, end)]})
     if "denoising" in filters:
         mDict.update({"removegrain":[(start, end)]})
+    if 'bilateral' in filters:
+        mDict.update({"bilateral":[(start, end)]})
 
     pipCropDicts = None
     if "pipCrop" in filters:
