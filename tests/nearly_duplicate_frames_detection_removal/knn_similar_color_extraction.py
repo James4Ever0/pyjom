@@ -8,5 +8,5 @@ import cv2
 from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
-
-# cv2.CreateImage((255,255),8,3)
+for i in range(3):
+    image[:,:,i] = i
