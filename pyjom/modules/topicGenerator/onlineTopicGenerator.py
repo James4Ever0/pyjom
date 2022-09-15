@@ -8,7 +8,7 @@ from typing import Literal
 
 def removeKeywordDuplicates(keywords):
     entry = {str:lambda x: x.split(" "), list:lambda x: x, tuple: lambda x: list(x)}
-    if type(keywords) == str:
+    if type(keywords) == in entry.keys():
         keywordsList = keywords.split(" ")
     elif type(keywords) in [list, tuple]:
         keywordsList = list(keywords)
