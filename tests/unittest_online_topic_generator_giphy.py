@@ -46,7 +46,6 @@ with tmpdir(path=tmpPath) as testDir:
             duration_valid = checkMinMaxDict(duration,duration_filter)
             fps_valid = checkMinMaxDict(fps,fps_filter)
             if duration_valid:
-                min_fps = 
             else:
                 print("skipping due to invalid duration: %s" % duration)
                 print('duration filter:', duration_filter)
