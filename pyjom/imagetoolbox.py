@@ -15,8 +15,10 @@ def getColorCentrality(image,):
     shape = image.shape
     if len(shape) != 3:
         print("weird shit.")
+        
     if shape[2] != 3:
         print("depth not right.")
+        
     # for i in range(3):
     #     image[:,:,i] = i
 
