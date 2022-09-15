@@ -544,7 +544,7 @@ def detectStationaryLogoOverTime(
         value = {}
     else:
         delogoCommandSet = "|".join(mFinalDelogoFilters)
-        value = {delogoCommandSet: [(start, end)]} # 
+        value = {delogoCommandSet: [(start, end)]} # can it be turned into something useful?
     delogoCommandList.append(value)
 
 
