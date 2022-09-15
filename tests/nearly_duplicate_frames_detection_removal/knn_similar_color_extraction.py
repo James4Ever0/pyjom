@@ -58,3 +58,4 @@ labels = kmeans.labels_
 cluster_centers = kmeans.cluster_centers_
 print(labels)
 print(cluster_centers)
+
