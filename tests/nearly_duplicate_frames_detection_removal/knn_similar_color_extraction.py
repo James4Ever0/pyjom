@@ -1,5 +1,6 @@
 # i'd say i want centrality below 10 percent. what's the catch?
 
+# with text. a meme.
 src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
 
 
