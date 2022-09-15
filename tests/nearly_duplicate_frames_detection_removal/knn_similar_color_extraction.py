@@ -1,4 +1,4 @@
-# i'd say we want centrality below 10 percent. what's the catch?
+# i'd say i want centrality below 10 percent. what's the catch?
 
 src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
 
