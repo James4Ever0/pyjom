@@ -46,7 +46,8 @@ with tmpdir(path=tmpPath) as testDir:
             fps_float = get_fps_float(local_video_location)
             duration_valid = checkMinMaxDict(duration,duration_filter)
             fps_valid = checkMinMaxDict(fps_float,fps_filter)
-            checkValid = 
+            checkInRange
+            def checkValid 
             if duration_valid:
                 if fps_valid:
 
