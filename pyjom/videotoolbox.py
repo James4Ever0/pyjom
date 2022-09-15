@@ -533,7 +533,7 @@ def detectStationaryLogoOverTime(
         for currentRect in boundingRects:
             if cornersOnly:
                 if crop_flag is None:
-                    
+                    currentFourCorners = defaultFourCorners
 
                     for cornerRect in currentFourCorners:
                         overlapRect = getOverlapRect(currentRect, cornerRect)
