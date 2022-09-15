@@ -24,18 +24,30 @@ def ffmpegVideoPreProductionFilter(
     start=None,
     end=None,
     cachePath=None,
-    filters=["pipCrop", "textRemoval", "logoRemoval","randomFlip","superResolution","minterpolate","denoising"],
-    preview=True
+    filters=[
+        "pipCrop",
+        "textRemoval",
+        "logoRemoval",
+        "randomFlip",
+        "superResolution",
+        "minterpolate",
+        "denoising",
+    ],
+    preview=True,
 ):  # what is the type of this shit?
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
     def paddingFilter(stream, mWidth=1920, mHeight=1080):
-        width = 'max(iw, ceil(ih*max({}/{}, iw/ih)))'.format(mWidth, mHeight)
-        height = 'max(ih, ceil(iw*max({}/{}, ih/iw)))'.format(mHeight, mWidth)
-        x = 'max(0,floor(({}-iw)/2))'.format(width)
-        y = 'max(0,floor(({}-ih)/2))'.format(height)
-        return stream.filter("pad", width=width, height=height, x=x, y=y, color='black').filter('scale', w=mWidth, h=mHeight).filter("setsar", 1)
+        width = "max(iw, ceil(ih*max({}/{}, iw/ih)))".format(mWidth, mHeight)
+        height = "max(ih, ceil(iw*max({}/{}, ih/iw)))".format(mHeight, mWidth)
+        x = "max(0,floor(({}-iw)/2))".format(width)
+        y = "max(0,floor(({}-ih)/2))".format(height)
+        return (
+            stream.filter("pad", width=width, height=height, x=x, y=y, color="black")
+            .filter("scale", w=mWidth, h=mHeight)
+            .filter("setsar", 1)
+        )
 
     assert cachePath is not None
     assert start is not None
@@ -93,23 +105,21 @@ def ffmpegVideoPreProductionFilter(
 
     # these things are ordered to be the last ones. just flags.
     if "randomFlip" in filters:
-        if random.random()>0.5:
-            mDict.update({"hflip":[(start, end)]})
+        if random.random() > 0.5:
+            mDict.update({"hflip": [(start, end)]})
     if "superResolution" in filters:
-        mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos":[(start, end)]})
-    simpleFilters = ["removegrain","removegrain",'bilateral']
+        mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos": [(start, end)]})
+    simpleFilters = ["removegrain", "removegrain", "bilateral"]
     for filterName in simpleFilters:
         if filterName in filters:
-            mDict.update({filterName:[(start, end)]})
+            mDict.update({filterName: [(start, end)]})
 
     pipCropDicts = None
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
         # also it will affect parameters of logoRemoval.
         pipCropDicts = detectPipRegionOverTime(filepath, start, end)
-        mDict.update(
-            pipCropDicts
-        )  # using default settings?
+        mDict.update(pipCropDicts)  # using default settings?
         # pass
     if "textRemoval" in filters:
         # process the video, during that duration. fast seek avaliable?
@@ -117,11 +127,11 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "logoRemoval" in filters:
         # dual safe? no?
-        flag = (pipCropDicts == None)
-        stationaryLogoDicts = detectStationaryLogoOverTime(filepath, start, end, cornersOnly = flag)
-        mDict.update(
-            stationaryLogoDicts
-        )  # output logo mask. or not.
+        flag = pipCropDicts == None
+        stationaryLogoDicts = detectStationaryLogoOverTime(
+            filepath, start, end, cornersOnly=flag
+        )
+        mDict.update(stationaryLogoDicts)  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
@@ -131,8 +141,7 @@ def ffmpegVideoPreProductionFilter(
         "crop": 1,
     }  # no scale filter shall present. we do not provide such creep. editly will handle it.
 
-    renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(
-        mDict, start, end)
+    renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
 
     # now we consider the rendering process. how?
     # shall we line it up?
@@ -149,7 +158,9 @@ def ffmpegVideoPreProductionFilter(
     # breakpoint()
     # videoDuration = getVideoDuration(videoPath)
 
-    for renderCommandIndex,(renderCommandString, commandTimeSpan) in enumerate(renderList):
+    for renderCommandIndex, (renderCommandString, commandTimeSpan) in enumerate(
+        renderList
+    ):
         print("#{}".format(renderCommandIndex), renderCommandString, commandTimeSpan)
         mStart, mEnd = commandTimeSpan
         mStart = max(start, mStart)
@@ -203,8 +214,7 @@ def ffmpegVideoPreProductionFilter(
                             # maybe it's not because of out of bounds error
                             print("_" * 30)
                             print(
-                                "ABNORMAL {} FILTER PARAMS:".format(
-                                    keyword.upper()),
+                                "ABNORMAL {} FILTER PARAMS:".format(keyword.upper()),
                                 commandParams,
                             )
                             print(
@@ -213,14 +223,12 @@ def ffmpegVideoPreProductionFilter(
                                     commandParams["y"] + commandParams["h"],
                                 )
                             )
-                            print("VALID BOUNDARIES:",
-                                  defaultWidth, defaultHeight)
+                            print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
                             print("_" * 30)
                             continue
                         else:
                             (mX, mY, mW, mH) = XYWH
-                            commandParams = {
-                                "x": mX, "y": mY, "w": mW, "h": mH}
+                            commandParams = {"x": mX, "y": mY, "w": mW, "h": mH}
                         # mX1, mY1 = mX+mW, mY+mH
                         # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
                         #     print("DELOGO ERROR:")
@@ -251,8 +259,7 @@ def ffmpegVideoPreProductionFilter(
     # breakpoint()
     # breakpoint()
     renderVideoStream = ffmpeg.concat(*renderVideoStreamList)
-    renderStream = ffmpeg.output(
-        renderVideoStream, renderAudioStream, cachePath)
+    renderStream = ffmpeg.output(renderVideoStream, renderAudioStream, cachePath)
     args = renderStream.get_args()
     # print(args)
     # breakpoint()
@@ -373,8 +380,7 @@ def dotVideoProcessor(
                     if layer is not None:
                         clip["layers"].append(layer)
                     else:
-                        raise Exception(
-                            "NOT IMPLEMENTED LAYER FORMAT:", layerElem)
+                        raise Exception("NOT IMPLEMENTED LAYER FORMAT:", layerElem)
                 maxDuration = max(layer_durations)
                 clip["duration"] = maxDuration
                 template["clips"].append(clip)
