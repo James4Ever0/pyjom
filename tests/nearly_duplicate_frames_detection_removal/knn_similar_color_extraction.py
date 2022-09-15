@@ -12,3 +12,4 @@ image = cv2.imread(src)
 #     image[:,:,i] = i
 
 # print(image.reshape(-1,3))
+# so now it is good.
