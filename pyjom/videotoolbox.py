@@ -345,7 +345,7 @@ def detectStationaryLogoOverTime(
             [(a + x, b + y), (c + x, d + y)] for [(a, b), (c, d)] in fourCorners
         ]
         return fourCorners
-
+    fourCorners = None
     if cornersOnly:
         defaultFourCorners = getFourCorners(0, 0, defaultWidth, defaultHeight)
         if pipCropDicts in [None, {}]:
