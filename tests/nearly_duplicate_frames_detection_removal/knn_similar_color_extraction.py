@@ -8,6 +8,8 @@ import cv2
 from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
+shape = image.shape
+if len(shape) 
 # for i in range(3):
 #     image[:,:,i] = i
 
