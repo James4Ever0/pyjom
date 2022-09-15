@@ -1049,6 +1049,7 @@ def getEffectiveFPS(
 ):
     # use ffmpeg to covert the target first!
     import uuid
+    import os
 
     with tmpdir(path=os.path.join(tempdir,str(uuid.uuid4()))) as tempDirObj:
         ####################
