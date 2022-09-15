@@ -1033,6 +1033,7 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
             # print(info.keys())
             # breakpoint()
             videoDuration = None
+            else:
             if type(info) == dict:
                 videoDuration = info.get("videoDuration", info.get("duration", None))
             if videoDuration is not None:
