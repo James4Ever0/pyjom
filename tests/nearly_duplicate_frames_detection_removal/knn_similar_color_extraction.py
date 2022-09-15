@@ -1,6 +1,6 @@
 # i'd say i want centrality below 10 percent. what's the catch?
 
-# single not go beyond 8 percent.
+# single not go beyond 6 percent.
 # total not go beyond 
 
 # src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
