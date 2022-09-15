@@ -79,9 +79,9 @@ with tmpdir(path=tmpPath) as testDir:
                     "EffectiveFPS",
                 ],
             ]
-            for function, mFilter, filterFunc, flag in mList:
+            for function, mFilter, filterFunction, flag in mList:
                 mValue = function(local_video_location)
-                valid = filterFunc(mValue, mFilter)
+                valid = filterFunction(mValue, mFilter)
                 if not valid:
                     print("skipping due to invalid %s: %s" % (flag, mValue))
                     print("%s filter:" % flag, mFilter)
