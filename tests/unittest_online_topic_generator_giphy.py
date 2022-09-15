@@ -52,8 +52,8 @@ with tmpdir(path=tmpPath) as testDir:
                 if fps_valid:
 
                 else:
-                    print("skipping due to invalid %s: %s" % fps_float)
-                    print('%s filter:', fps_filter)
+                    print("skipping due to invalid %s: %s" % (flsg,fps_float))
+                    print('%s filter:' % flag, fps_filter)
             else:
                 print("skipping due to invalid duration: %s" % duration)
                 print('duration filter:', duration_filter)
