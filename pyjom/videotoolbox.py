@@ -306,19 +306,19 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
     # what is this src?
     # from src import *
     defaultWidth, defaultHeight = getVideoWidthHeight(filepath)
-
-    deltaWidthRatio = 4+(4-3)*(defaultWidth/defaultHeight-16/9)/(16/9-9/16)
-    deltaWidthRatio = makeValueInRange(deltaWidthRatio,3,4)
-    deltaHeightRatio = 8+(8-6)*(defaultHeight/defaultWidth-16/9)/(16/9-9/16)
-    deltaHeightRatio = makeValueInRange(deltaHeightRatio,6,8)
-    deltaWidth, deltaHeight = int(defaultWidth/deltaWidthRatio), int(defaultHeight/deltaHeightRatio)
-    # (x1, y1), (x2, y2)
-    fourCorners = [
-        [(0,0),(deltaWidth, deltaHeight)],
-        [(defaultWidth-deltaWidth,0),(defaultWidth, deltaHeight)],
-        [(defaultWidth-deltaWidth, defaultHeight-deltaHeight),(defaultWidth, defaultHeight)],
-        [(0,defaultHeight-deltaHeight),(deltaWidth, defaultHeight)]
-    ]
+    def getFourCorners():
+        deltaWidthRatio = 4+(4-3)*(defaultWidth/defaultHeight-16/9)/(16/9-9/16)
+        deltaWidthRatio = makeValueInRange(deltaWidthRatio,3,4)
+        deltaHeightRatio = 8+(8-6)*(defaultHeight/defaultWidth-16/9)/(16/9-9/16)
+        deltaHeightRatio = makeValueInRange(deltaHeightRatio,6,8)
+        deltaWidth, deltaHeight = int(defaultWidth/deltaWidthRatio), int(defaultHeight/deltaHeightRatio)
+        # (x1, y1), (x2, y2)
+        fourCorners = [
+            [(0,0),(deltaWidth, deltaHeight)],
+            [(defaultWidth-deltaWidth,0),(defaultWidth, deltaHeight)],
+            [(defaultWidth-deltaWidth, defaultHeight-deltaHeight),(defaultWidth, defaultHeight)],
+            [(0,defaultHeight-deltaHeight),(deltaWidth, defaultHeight)]
+        ]
 
     ###########
     import sys
