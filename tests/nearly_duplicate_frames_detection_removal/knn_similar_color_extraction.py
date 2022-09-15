@@ -68,8 +68,8 @@ label_percentage = {x: labels.count(x)/sample_size for x in range(n_clusters)}
 
 for center in cluster_centers:
     # fetch area nearby given center
-    center_int = center.
-    upper = center_int +2
-    lower= center_int-3
+    center_int = center.astype(np.uint8)
+    upper = center_int +5
+    lower= center_int-5
     mask = cv2.inRange(image, lower, upper)
 	output = cv2.bitwise_and(image, image, mask = mask)
