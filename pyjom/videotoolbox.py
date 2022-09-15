@@ -518,7 +518,9 @@ def detectStationaryLogoOverTime(
     print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
     delogoCommandList = [] # test if it can merge anything!
     if fourCorners is not None:
-        start_end_list = [("",(start, end))]
+        start_end_list = [(None,(start, end))]
+    else:
+        
 
     for index, (crop_flag,(mStart, mEnd)) in enumerate(start_end_list):
         mFinalDelogoFilters = []
