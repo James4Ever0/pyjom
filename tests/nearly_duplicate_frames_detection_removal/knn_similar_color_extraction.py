@@ -78,7 +78,7 @@ if shape[2] != 3:
 # for i in range(3):
 #     image[:,:,i] = i
 
-width, height = 
+col_0, col_1 = 
 
 # print(image.reshape(-1,3))
 reshapedImage = image.reshape(-1, 3)  # are you sure about this?
