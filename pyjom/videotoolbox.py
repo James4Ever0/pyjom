@@ -1437,6 +1437,7 @@ def checkVideoColorCentrality(
             max_nearby_center_percentage,
             video_color_filter.get("max_nearby_center_percentage", {}),
         )
+        print("FLAG A",a)
         flag = a and b
         if not flag:
             return False
