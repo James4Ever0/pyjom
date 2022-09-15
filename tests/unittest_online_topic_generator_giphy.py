@@ -60,7 +60,7 @@ with tmpdir(path=tmpPath) as testDir:
                 getEffectiveFPS,
             )
 
-            video_color_filter = {'centrality':{'max':0.20},"max_nearby_center_percentage":{'max':0.08}}
+            video_color_filter = {'centrality':{'max':0.30},"max_nearby_center_percentage":{'max':0.20}}
             video_effective_fps_filter = {"min": 7}
             valid = True
             mList = [
