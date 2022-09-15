@@ -132,7 +132,7 @@ def ffmpegVideoPreProductionFilter(
             filepath, start, end, cornersOnly=flag
         )
         if not flag:
-            # 
+            # reprocess these things. really?
         mDict.update(stationaryLogoDicts)  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
