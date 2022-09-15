@@ -8,7 +8,7 @@ import cv2
 from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
-for i in range(3):
-    image[:,:,i] = i
+# for i in range(3):
+#     image[:,:,i] = i
 
-print(image.reshape(-1,3))
+# print(image.reshape(-1,3))
