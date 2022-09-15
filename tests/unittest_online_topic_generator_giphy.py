@@ -68,8 +68,8 @@ with tmpdir(path=tmpPath) as testDir:
                 mValue = function(local_video_location)
                 valid = filterFunc(mValue, mFilter)
                 if not valid:
-                    print("skipping due to invalid %s: %s" % (flag, fps_float))
-                    print("%s filter:" % flag, fps_filter)
+                    print("skipping due to invalid %s: %s" % (flag, mValue))
+                    print("%s filter:" % flag, mFilter)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
