@@ -117,8 +117,8 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "logoRemoval" in filters:
         # dual safe? no?
-        if pipCropDicts == None
-        stationaryLogoDicts = detectStationaryLogoOverTime(filepath, start, end, )
+        flag = (pipCropDicts == None)
+        stationaryLogoDicts = detectStationaryLogoOverTime(filepath, start, end, cornersOnly = flag)
         mDict.update(
             stationaryLogoDicts
         )  # output logo mask. or not.
