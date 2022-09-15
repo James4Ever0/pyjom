@@ -1005,11 +1005,8 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
         from functools import partial
         from subprocess import run
         from typing import Union
-
         # this shit is ridiculus.
         from pyjom.commons import ffprobe_media_info, extract_span
-
-
         def wrapperFunc(function, *args, **kwargs):
             stdout = sys.stdout
             sys.stdout = sys.stderr  # wtf is this shit?
