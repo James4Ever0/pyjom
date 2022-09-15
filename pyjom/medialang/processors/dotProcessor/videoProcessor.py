@@ -99,7 +99,7 @@ def ffmpegVideoPreProductionFilter(
         mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos":[(start, end)]})
     if "minterpolate" in filters:
         mDict.update({"minterpolate":[(start, end)]})
-    if "denoising" in filters:
+    if "removegrain" in filters:
         mDict.update({"removegrain":[(start, end)]})
     if 'bilateral' in filters:
         mDict.update({"bilateral":[(start, end)]})
