@@ -1,11 +1,10 @@
 from pyjom.commons import *
 from pyjom.languagetoolbox import englishTopicModeling
-from lazero.utils.tools import flattenUnhashableList
+from lazero.utils.tools import flattenUnhashableList # one of my classic methods
 import requests
 
 # import jieba
 from typing import Literal
-
 
 def removeKeywordDuplicates(keywords):
     keywordsType = type(keywords)
