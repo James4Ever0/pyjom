@@ -34,7 +34,7 @@ def getColorCentrality(image,sample_size_limit = 5000):
 
     # print(image.reshape(-1,3))
     reshapedImage = image.reshape(-1, 3)  # are you sure about this?
-    length, depth = reshapedImage.shape
+    length, color_channels= reshapedImage.shape
 
 
     reshapedImageIndexs = np.arange(0, length)
