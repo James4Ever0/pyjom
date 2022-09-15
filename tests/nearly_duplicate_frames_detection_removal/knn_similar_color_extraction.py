@@ -68,8 +68,8 @@
 # CENTER: [252.66293811 177.62005966 126.37844892]
 # POSITIVE COUNT: 222893
 # SUM: 668679.0 MIN: 0 MAX: 3
-# NEARBY CENTER PERCENTAGE: 37.79 %
-# CENTRALITY: 39.10 %
+# NEARBY CENTER PERCENTAGE: 36.49 %
+# CENTRALITY: 36.55 %
 # likely to be the blue.
 
 # src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
