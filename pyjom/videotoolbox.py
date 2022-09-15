@@ -8,6 +8,7 @@ import cv2
 # import cv2
 
 def getEffectiveFPS(videoPath, convert_fps_target=15):
+    return effectiveFPS
 
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
