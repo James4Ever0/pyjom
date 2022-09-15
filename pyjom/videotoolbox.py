@@ -351,7 +351,9 @@ def detectStationaryLogoOverTime(
         if pipCropDicts in [None, {}]:
             fourCorners = defaultFourCorners
         else:
+            from pyjom.mathlib import getContinualMappedNonSympyMergeResultWithRangedEmpty,
             
+            pipCropDicts
     ###########
     import sys
     import os
