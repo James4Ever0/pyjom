@@ -22,6 +22,6 @@ length, depth = reshapedImage.shape
 
 np.arange(0, length)
 # so now it is good.
-sample = np.random.choice(reshapedImage,size=min(5000, length))
+sample = np.random.choice(reshapedImageIndexs,size=min(5000, length))
 print(sample)
 print(sample.shape)
