@@ -38,14 +38,19 @@ def frameSizeFilter(frameMeta, frame_size_filter):
 
 def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
     try:
-    minVal = minMaxDict.get("min", value)
-    maxVal = minMaxDict.get("max", value)
-    assert minVal < maxVal
-    flag = value <= maxVal and value >= minVal
-    if getMinMaxVal:
-        return flag, (minVal, maxVal)
-    else:
-        return flag
+        minVal = minMaxDict.get("min", value)
+        maxVal = minMaxDict.get("max", value)
+        assert minVal < maxVal
+        flag = value <= maxVal and value >= minVal
+        if getMinMaxVal:
+            return flag, (minVal, maxVal)
+        else:
+            return flag
+    except:
+        import traceback
+        traceback.print_exc()
+        print("WTF IS GOING ON WITH CHECKMINMAX")
+        breakpoint()
 
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
