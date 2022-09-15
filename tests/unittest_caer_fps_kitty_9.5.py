@@ -16,4 +16,4 @@ from caer.video.frames_and_fps import get_fps_float
 
 fps = get_fps_float(src)
 print("FPS:", fps) # 10? was very inaccurate for me
-# now it is good.
+# now it is good. 9.5
