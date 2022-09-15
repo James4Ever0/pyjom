@@ -56,8 +56,8 @@ with tmpdir(path=tmpPath) as testDir:
             # fps_valid = checkMinMaxDict(fps_float,fps_filter)
             valid = True
             mList = [
-                [duration, duration_filter, "duration"],
-                [fps_float, fps_filter, "fps"],
+                [duration, duration_filter, "duration", ],
+                [fps_float, fps_filter, "fps", ],
                 []
             ]
             for mValue, mFilter, flag in mList:
