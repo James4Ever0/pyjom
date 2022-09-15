@@ -37,4 +37,5 @@ X = sample
 neigh.fit(X)
 A = neigh.kneighbors_graph(X)
 A.toarray()
-print(a.shape)
+print(A)
+print(A.shape)
