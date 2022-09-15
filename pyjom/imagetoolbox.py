@@ -33,9 +33,7 @@ def getImageColorCentrality(
         print("weird shit.")
         breakpoint()
     if len(shape) == 2:
-    if shape[2] != 3:
-        print("depth not right.")
-        breakpoint()
+        
     # for i in range(3):
     #     image[:,:,i] = i
 
