@@ -17,7 +17,9 @@ def removeKeywordDuplicates(keywords):
     keywordsSetList = list(keywordsSet)
     if type(keywords) == str:
         return " ".join(keywordsSetList)
-    elif 
+    elif type(keywords) == list:
+        return keywordsSetList
+    
 
 
 
