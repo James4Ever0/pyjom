@@ -1253,8 +1253,9 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
             print("dframes2 is None")
             effectiveFPS = conversionFPS
             dframes2 = []
+            debugInfo = None
 ####################
-        return effectiveFPS, dframes2 # time ranges of duplicated frames
+        return effectiveFPS, dframes2, debugInfo# time ranges of duplicated frames
 
 # this is a generator, not a list!
 def getVideoColorCentrality(videoPath,
