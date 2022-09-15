@@ -84,3 +84,4 @@ for center in cluster_centers:
     # print(mOutput)
     # print(mOutput.shape)
     # breakpoint()
+    print("CENTER:",center_int)
