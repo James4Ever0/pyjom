@@ -4,6 +4,7 @@ src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # 
 # POSITIVE COUNT: 188772
 # SUM: 566316.0 MIN: 0 MAX: 3
 # NEARBY CENTER PERCENTAGE: 81.93 %
+# CENTRALITY: 82.33 %
 
 # let's try some cats.
 
