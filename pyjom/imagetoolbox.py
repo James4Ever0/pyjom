@@ -1,6 +1,7 @@
+import numpy as np
 
 def getColorCentrality(image,):
-    # image is of 
+    # image is of numpy.array
     # multiple centers.
     # CENTER: [246.76865924 226.40763256 216.41472476]
     # POSITIVE COUNT: 95497
@@ -8,7 +9,6 @@ def getColorCentrality(image,):
     # NEARBY CENTER PERCENTAGE: 6.74 %
     # CENTRALITY: 7.32 %
 
-    import numpy as np
     from lazero.utils.importers import cv2_custom_build_init
 
     cv2_custom_build_init()
