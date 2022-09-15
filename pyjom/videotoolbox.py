@@ -10,7 +10,7 @@ import cv2
 def getEffectiveFPS(videoPath, convert_fps_target=15):
     return effectiveFPS
 
-def getColorCentrality(videoPath,):
+def getColorCentrality(imagePath,):
     src = 
     # multiple centers.
     # CENTER: [246.76865924 226.40763256 216.41472476]
