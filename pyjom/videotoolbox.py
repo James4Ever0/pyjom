@@ -6,8 +6,10 @@ from pyjom.mathlib import *
 import cv2
 from pyjom.imagetoolbox import *
 
+
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
+
     x, y, w, h = XYWH
     width, height = canvas
     if x >= width - 1 or y >= height - 1:
@@ -18,12 +20,12 @@ def checkXYWH(XYWH, canvas, minArea=20):
         y = 1
     if x + w >= width:
         w = width - x - 1
-        w = math.floor(w/2)*2
+        w = math.floor(w / 2) * 2
         if w <= 2:
             return False, None
     if y + h >= height:
         h = height - y - 1
-        h = math.floor(h/2)*2
+        h = math.floor(h / 2) * 2
         if h <= 2:
             return False, None
     if w * h <= minArea:
@@ -100,10 +102,10 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
     startFrame = int(start * fps)
-    if startFrame <=0:
+    if startFrame <= 0:
         startFrame = 0
     stopFrame = int(end * fps)
-    if stopFrame <=0:
+    if stopFrame <= 0:
         stopFrame = total_frames
     if stopFrame <= startFrame:
         print("some fuck is going on with the video frame sampler")
@@ -159,11 +161,11 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     import progressbar
 
     for fno in progressbar.progressbar(range(startFrame, stopFrame + 1, sample_rate)):
-        fnoMax = fno+batch-1
+        fnoMax = fno + batch - 1
         if fnoMax >= total_frames:
             break
         for fnoX in range(batch):
-            cap.set(cv2.CAP_PROP_POS_FRAMES, fnoX+fno)
+            cap.set(cv2.CAP_PROP_POS_FRAMES, fnoX + fno)
             success, image = cap.read()
             if success:
                 yield image
@@ -184,9 +186,10 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     # cap.release()
 
 
-def detectTextRegionOverTime(videoPath, start, end, sample_rate=3, mergeThreshold=10): # this sample rate is too unreasonable. set it to 3 or something.
-    iterator = getVideoFrameIterator(
-        videoPath, start, end, sample_rate=sample_rate)
+def detectTextRegionOverTime(
+    videoPath, start, end, sample_rate=3, mergeThreshold=10
+):  # this sample rate is too unreasonable. set it to 3 or something.
+    iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
     detectionList = []
     # use some merging technique over time.
     # convolution?
@@ -238,8 +241,7 @@ def detectTextRegionOverTime(videoPath, start, end, sample_rate=3, mergeThreshol
     for index, x in enumerate(newFinalRectList):
         for y in x:
             tupleY = tuple(y)
-            mRangesDict.update(
-                {tupleY: mRangesDict.get(tupleY, []) + [ranges[index]]})
+            mRangesDict.update({tupleY: mRangesDict.get(tupleY, []) + [ranges[index]]})
     # print(mRangesDict)
     # breakpoint()
     # why the fuck we have np.float64 as elem in mRangesDict's key(tuple)?
@@ -259,7 +261,10 @@ def getPreviewPixels(defaultWidth, defaultHeight, maxPixel):
     #     reverseFlag = True
     maxDim = max(mList)
     shrinkRatio = maxPixel / maxDim
-    def getRounded(num, rounder): return (num // rounder) * rounder
+
+    def getRounded(num, rounder):
+        return (num // rounder) * rounder
+
     newFrameWork = [getRounded(x * shrinkRatio, 4) for x in mList]
     return newFrameWork[0], newFrameWork[1]
 
@@ -300,29 +305,49 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     return previewWidth, previewHeight
 
 
-def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOnly=True, pipCropDicts = None, areaThreshold = 30):
-    imageSet = getVideoFrameSampler(
-        filepath, start, end, sample_size=sample_size)
+def detectStationaryLogoOverTime(
+    filepath,
+    start,
+    end,
+    sample_size=60,
+    cornersOnly=True,
+    pipCropDicts=None,
+    areaThreshold=30,
+):
+    imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size)
     # what is this src?
     # from src import *
     defaultWidth, defaultHeight = getVideoWidthHeight(filepath)
-    def getFourCorners(x,y,defaultWidth, defaultHeight):
-        deltaWidthRatio = 4+(4-3)*(defaultWidth/defaultHeight-16/9)/(16/9-9/16)
-        deltaWidthRatio = makeValueInRange(deltaWidthRatio,3,4)
-        deltaHeightRatio = 8+(8-6)*(defaultHeight/defaultWidth-16/9)/(16/9-9/16)
-        deltaHeightRatio = makeValueInRange(deltaHeightRatio,6,8)
-        deltaWidth, deltaHeight = int(defaultWidth/deltaWidthRatio), int(defaultHeight/deltaHeightRatio)
+
+    def getFourCorners(x, y, defaultWidth, defaultHeight):
+        deltaWidthRatio = 4 + (4 - 3) * (defaultWidth / defaultHeight - 16 / 9) / (
+            16 / 9 - 9 / 16
+        )
+        deltaWidthRatio = makeValueInRange(deltaWidthRatio, 3, 4)
+        deltaHeightRatio = 8 + (8 - 6) * (defaultHeight / defaultWidth - 16 / 9) / (
+            16 / 9 - 9 / 16
+        )
+        deltaHeightRatio = makeValueInRange(deltaHeightRatio, 6, 8)
+        deltaWidth, deltaHeight = int(defaultWidth / deltaWidthRatio), int(
+            defaultHeight / deltaHeightRatio
+        )
         # (x1, y1), (x2, y2)
         fourCorners = [
-            [(0,0),(deltaWidth, deltaHeight)],
-            [(defaultWidth-deltaWidth,0),(defaultWidth, deltaHeight)],
-            [(defaultWidth-deltaWidth, defaultHeight-deltaHeight),(defaultWidth, defaultHeight)],
-            [(0,defaultHeight-deltaHeight),(deltaWidth, defaultHeight)]
+            [(0, 0), (deltaWidth, deltaHeight)],
+            [(defaultWidth - deltaWidth, 0), (defaultWidth, deltaHeight)],
+            [
+                (defaultWidth - deltaWidth, defaultHeight - deltaHeight),
+                (defaultWidth, defaultHeight),
+            ],
+            [(0, defaultHeight - deltaHeight), (deltaWidth, defaultHeight)],
         ]
-        fourCorners = [[(a+x,b+y),(c+x,d+y)] for [(a,b),(c,d)] in fourCorners]
+        fourCorners = [
+            [(a + x, b + y), (c + x, d + y)] for [(a, b), (c, d)] in fourCorners
+        ]
         return fourCorners
+
     if cornersOnly:
-        defaultFourCorners = getFourCorners(0,0,defaultWidth,defaultHeight)
+        defaultFourCorners = getFourCorners(0, 0, defaultWidth, defaultHeight)
         if pipCropDicts in [None, {}]:
             fourCorners = defaultFourCorners
     ###########
@@ -423,8 +448,7 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
     W_full = poisson_reconstruct(gx, gy)
 
     maxval, minval = np.max(W_full), np.min(W_full)
-    W_full = (W_full - minval) * \
-        (255 / (maxval - minval))  # is that necessary?
+    W_full = (W_full - minval) * (255 / (maxval - minval))  # is that necessary?
     # # print(,W_full.shape,W_full.dtype)
     W_full = W_full.astype(np.uint8)
 
@@ -479,14 +503,14 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
     mFinalDelogoFilters = []
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
-        currentRect = [(x,y),(x+w,y+h)]
+        currentRect = [(x, y), (x + w, y + h)]
         if cornersOnly:
             for cornerRect in fourCorners:
                 overlapRect = getOverlapRect(currentRect, cornerRect)
                 if overlapRect:
-                    (x0,y0),(x1,y1) = overlapRect
-                    x,y,w,h = x0,y0, x1-x0, y1-y0
-                    area = w*h
+                    (x0, y0), (x1, y1) = overlapRect
+                    x, y, w, h = x0, y0, x1 - x0, y1 - y0
+                    area = w * h
                     if area < areaThreshold:
                         continue
                     delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
@@ -529,13 +553,12 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         resultDict = {}
         for index, elem in enumerate(mList):
             mKey = "{}:{}".format(label, int(elem))
-            resultDict.update(
-                {mKey: resultDict.get(mKey, []) + [(index, index + 1)]})
+            resultDict.update({mKey: resultDict.get(mKey, []) + [(index, index + 1)]})
         return resultDict
 
-    def pointsToRangedDictWithLabel(mArray, label, threshold=35, method='kalman'):
-        assert method in ['ema', 'kalman']
-        if method == 'ema':
+    def pointsToRangedDictWithLabel(mArray, label, threshold=35, method="kalman"):
+        assert method in ["ema", "kalman"]
+        if method == "ema":
             mArray = get1DArrayEMA(mArray)  # to kalman?
         else:
             mArray = Kalman1D(mArray, damping=0.1)
@@ -606,7 +629,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         _, timespan = commandDictSequential[0]
         nextCommand, nextTimeSpan = commandDictSequential[1]
         currentStart, currentEnd = timespan
-        if (currentEnd-currentStart) < 5:
+        if (currentEnd - currentStart) < 5:
             nextStart, nextEnd = nextTimeSpan
             commandDictSequential[1] = [nextCommand, (currentStart, nextEnd)]
             commandDictSequential.pop(0)
@@ -620,8 +643,7 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
         defaultValues = defaultCoords
         for varName, defaultValue in zip(varNames, defaultValues):
             key = key.replace(
-                "{}:empty".format(varName), "{}:{}".format(
-                    varName, defaultValue)
+                "{}:empty".format(varName), "{}:{}".format(varName, defaultValue)
             )
         # print(key,elem)
         # breakpoint()
@@ -637,8 +659,8 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
             commandArguments["xright"] - commandArguments["xleft"],
             commandArguments["yright"] - commandArguments["yleft"],
         )
-        x += w*(1-shrink)/2
-        y += h*(1-shrink)/2
+        x += w * (1 - shrink) / 2
+        y += h * (1 - shrink) / 2
         w *= shrink
         h *= shrink
         x, y, w, h = [int(digit) for digit in (x, y, w, h)]
@@ -653,7 +675,9 @@ def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8
     return finalCommandDict
 
 
-def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1, shrink=0.8):
+def kalmanStablePipRegionExporter(
+    data, defaultWidth, defaultHeight, downScale=1, shrink=0.8
+):
     defaultWidth, defaultHeight = int(defaultWidth), int(defaultHeight)
     import numpy as np
 
@@ -694,7 +718,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1
 
         # xLeftPointsFilteredDiff3Filtered = Kalman1D(xLeftPointsFilteredDiff3)
         import math
-        suggestedDerivativeThreshold = 3*math.sqrt(downScale)
+
+        suggestedDerivativeThreshold = 3 * math.sqrt(downScale)
         derivativeThreshold = max(3, suggestedDerivativeThreshold)
         # derivative3Threshold = 3
         xLeftPointsSignal = (
@@ -711,7 +736,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1
                 length = end - start
                 if length >= threshold:
                     newSignalRanges.append((start, end))
-                    newSignal[start: end + 1] = 1
+                    newSignal[start : end + 1] = 1
             return newSignal, newSignalRanges
 
         xLeftPointsSignalFiltered, newSignalRanges = signalFilter(
@@ -800,13 +825,19 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1
 
     answers = []
     import math
-    suggestedSignalFilterThreshold = int(10*math.sqrt(downScale))
-    suggestedStdThreshold = 1*math.sqrt(math.sqrt(downScale))
-    suggestedSlopeThreshold = 0.2*math.sqrt(math.sqrt(downScale))
-    suggestedCommandFloatMergeThreshold = 15/(math.sqrt(math.sqrt(downScale)))
+
+    suggestedSignalFilterThreshold = int(10 * math.sqrt(downScale))
+    suggestedStdThreshold = 1 * math.sqrt(math.sqrt(downScale))
+    suggestedSlopeThreshold = 0.2 * math.sqrt(math.sqrt(downScale))
+    suggestedCommandFloatMergeThreshold = 15 / (math.sqrt(math.sqrt(downScale)))
     for mPoint in mPoints:
-        answer = getSinglePointStableState(mPoint, signalFilterThreshold=max(10, suggestedSignalFilterThreshold),
-                                           stdThreshold=max(1, suggestedStdThreshold), slopeThreshold=max(0.2, suggestedSlopeThreshold), commandFloatMergeThreshold=max(12, suggestedCommandFloatMergeThreshold))
+        answer = getSinglePointStableState(
+            mPoint,
+            signalFilterThreshold=max(10, suggestedSignalFilterThreshold),
+            stdThreshold=max(1, suggestedStdThreshold),
+            slopeThreshold=max(0.2, suggestedSlopeThreshold),
+            commandFloatMergeThreshold=max(12, suggestedCommandFloatMergeThreshold),
+        )
         answers.append(answer)
         # print("_"*30, "ANSWER","_"*30)
         # for elem in answer.items():
@@ -818,8 +849,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1
     # else:
     # defaultCoord = [0, 0, defaultWidth, defaultHeight]  # deal with it later?
     defaultCoords = [int(np.mean(array)) for array in mPoints]
-    defaults = [{str(defaultCoords[index]): [(0, len(data))]}
-                for index in range(4)]
+    defaults = [{str(defaultCoords[index]): [(0, len(data))]} for index in range(4)]
     for index in range(4):
         if answers[index] == {}:
             answers[index] = defaults[index]
@@ -827,8 +857,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1
     commandDict = {}
     for index, elem in enumerate(answers):
         label = labels[index]
-        newElem = {"{}:{}".format(
-            label, key): elem[key] for key in elem.keys()}
+        newElem = {"{}:{}".format(label, key): elem[key] for key in elem.keys()}
         commandDict.update(newElem)
     commandDict = getContinualMappedNonSympyMergeResult(commandDict)
     commandDictSequential = mergedRangesToSequential(commandDict)
@@ -879,8 +908,7 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1
         defaultValues = defaultCoords
         for varName, defaultValue in zip(varNames, defaultValues):
             key = key.replace(
-                "{}:empty".format(varName), "{}:{}".format(
-                    varName, defaultValue)
+                "{}:empty".format(varName), "{}:{}".format(varName, defaultValue)
             )
         # print(key,elem)
         # breakpoint()
@@ -896,8 +924,8 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1
             commandArguments["xright"] - commandArguments["xleft"],
             commandArguments["yright"] - commandArguments["yleft"],
         )
-        x += w*(1-shrink)/2
-        y += h*(1-shrink)/2
+        x += w * (1 - shrink) / 2
+        y += h * (1 - shrink) / 2
         w *= shrink
         h *= shrink
         x, y, w, h = [int(digit) for digit in (x, y, w, h)]
@@ -913,12 +941,18 @@ def kalmanStablePipRegionExporter(data, defaultWidth, defaultHeight, downScale=1
 
 
 def detectPipRegionOverTime(
-    videoPath, start, end, method="framewise", algo="frame_difference", downScale=2, shrink=0.9, minPixelSpan=540
+    videoPath,
+    start,
+    end,
+    method="framewise",
+    algo="frame_difference",
+    downScale=2,
+    shrink=0.9,
+    minPixelSpan=540,
 ):  # shall be some parameters here.
     # if it is 'skim' we will sample it every 20 frames.
     defaultWidth, defaultHeight = getVideoWidthHeight(videoPath)
-    downScale = min(
-        (minPixelSpan / min(defaultWidth, defaultHeight)), downScale)
+    downScale = min((minPixelSpan / min(defaultWidth, defaultHeight)), downScale)
     import pybgs as bgs
 
     assert algo in ["frame_difference", "weighted_moving_average"]
@@ -941,12 +975,13 @@ def detectPipRegionOverTime(
         batch = 2
         videoFrameRate = getVideoFrameRate(videoPath)
         totalFramesInSegment = (end - start) * videoFrameRate
-        minSampleSize = int((80*4)*(totalFramesInSegment/1800))
+        minSampleSize = int((80 * 4) * (totalFramesInSegment / 1800))
         min_sample_rate = int(totalFramesInSegment / minSampleSize)
         estimated_sample_rate = min(5, min_sample_rate)
         sample_rate = max(1, estimated_sample_rate)
     iterator = getVideoFrameIterator(
-        videoPath, start, end, sample_rate=sample_rate, batch=batch)
+        videoPath, start, end, sample_rate=sample_rate, batch=batch
+    )
     areaThreshold = int(0.2 * 0.2 * defaultWidth * defaultHeight)
     pipFrames = []
     defaultRect = [(0, 0), (defaultWidth, defaultHeight)]
@@ -954,14 +989,15 @@ def detectPipRegionOverTime(
     for index, frame in enumerate(iterator):
         # for _ in range(downScale):
         downScaledFrame = cv2.resize(
-            frame, (int(defaultWidth/downScale), int(defaultHeight/downScale)))
+            frame, (int(defaultWidth / downScale), int(defaultHeight / downScale))
+        )
         img_output = algorithm.apply(downScaledFrame)
         if batch != 1 and index % batch == 0:
             continue
         if batch == 1 and index == 0:
             continue
         [x, y, w, h] = cv2.boundingRect(img_output)  # wtf is this?
-        x, y, w, h = x*downScale, y*downScale, w*downScale, h*downScale
+        x, y, w, h = x * downScale, y * downScale, w * downScale, h * downScale
         area = w * h
         if area > areaThreshold:
             min_x, min_y = x, y
@@ -987,23 +1023,33 @@ def detectPipRegionOverTime(
     for key, value in resultDict.items():
         updatedValueAlignedToSeconds = []
         for mStart, mEnd in value:
-            mStart = start+mStart*sampleIndexToSecondsRatio
-            mEnd = start+mEnd*sampleIndexToSecondsRatio
+            mStart = start + mStart * sampleIndexToSecondsRatio
+            mEnd = start + mEnd * sampleIndexToSecondsRatio
             mStart = max(start, mStart)
             mEnd = min(end, mEnd)
-            mDuration = mEnd-mStart
+            mDuration = mEnd - mStart
             if mDuration <= 0:
                 continue
             updatedValueAlignedToSeconds.append((mStart, mEnd))
         finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
     return finalResultDict
 
+
 from lazero.filesystem import tmpdir
 from typing import Literal
-def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps", conversionFPS=15, mpdecimate_args_choice: Literal[None, "hi=1:lo=1:frac=1:max=0", "hi=200:lo=200:frac=1:max=0"]=None):
+
+
+def getEffectiveFPS(
+    videoPath,
+    tempdir="/dev/shm/medialang/get_effective_fps",
+    conversionFPS=15,
+    mpdecimate_args_choice: Literal[
+        None, "hi=1:lo=1:frac=1:max=0", "hi=200:lo=200:frac=1:max=0"
+    ] = None,
+):
     # use ffmpeg to covert the target first!
     with tmpdir(path=tempdir) as tempDirObj:
-####################
+        ####################
         #!/usr/bin/env python3
 
         import sys
@@ -1011,8 +1057,10 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         from functools import partial
         from subprocess import run
         from typing import Union
+
         # this shit is ridiculus.
         from pyjom.commons import ffprobe_media_info, extract_span
+
         def wrapperFunc(function, *args, **kwargs):
             stdout = sys.stdout
             sys.stdout = sys.stderr  # wtf is this shit?
@@ -1025,37 +1073,46 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
                 print("Error when executing mpdecimate function")
             sys.stdout = stdout
 
-
         def mpdecimate_export_duplicate_clip_ranges_base(
-            filepath: str = None, mpdecimate_args: Union[None, str] = "hi=576", video_size:Union[None, str]=None
+            filepath: str = None,
+            mpdecimate_args: Union[None, str] = "hi=576",
+            video_size: Union[None, str] = None,
         ):
             flag_vaapi = False  # not using vaapi.
             flag_vaapi_decimate = False
             videoDuration = None
             try:
                 from caer.video.frames_and_fps import get_duration
+
                 duration = get_duration(videoPath)
             except:
                 import traceback
+
                 traceback.print_exc()
-                print('error when getting video duration by caer')
+                print("error when getting video duration by caer")
             if videoDuration is None:
                 from MediaInfo import MediaInfo
+
                 info = MediaInfo(filename=filepath).getInfo()
                 # cannot get shit from this.
                 # print(info.keys())
                 # breakpoint()
                 videoDuration = None
                 if type(info) == dict:
-                    videoDuration = info.get("videoDuration", info.get("duration", None))
+                    videoDuration = info.get(
+                        "videoDuration", info.get("duration", None)
+                    )
                 if videoDuration is not None:
                     videoDuration = float(videoDuration)
                 else:
                     info = ffprobe_media_info(filepath, video_size=video_size)
                     try:
-                        videoDuration = info["streams"][0]["duration"]  # sure it is gif.
+                        videoDuration = info["streams"][0][
+                            "duration"
+                        ]  # sure it is gif.
                     except:
                         import traceback
+
                         traceback.print_exc()
                         print("Video duration not acquired.")
                         print(info)
@@ -1064,7 +1121,7 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
 
             def prof(s):
                 e = time.time()
-                print("Taken time:",time.strftime("%H:%M:%S", time.gmtime(e - s)))
+                print("Taken time:", time.strftime("%H:%M:%S", time.gmtime(e - s)))
                 return e
 
             def profd(f):
@@ -1081,7 +1138,7 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
             def hwargs_decimate():
                 # actually input args.
                 if video_size:
-                    return ['-video_size',video_size]
+                    return ["-video_size", video_size]
                 return []
 
             def hwargs_transcode():
@@ -1189,17 +1246,17 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
             frameDupPercent = sum(binarizedRange) / len(binarizedRange)
             return dframes2, dupPercent, frameDupPercent, (binarizedRange, mList, spans)
 
-
         def mpdecimate_export_duplicate_clip_ranges(
-            filepath: str = None, mpdecimate_args: Union[None, str] = "hi=576", video_size:Union[None,str]=None
+            filepath: str = None,
+            mpdecimate_args: Union[None, str] = "hi=576",
+            video_size: Union[None, str] = None,
         ):
             return wrapperFunc(
                 mpdecimate_export_duplicate_clip_ranges_base,
                 filepath=filepath,
                 mpdecimate_args=mpdecimate_args,
-                video_size=video_size
+                video_size=video_size,
             )
-
 
         # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif"
 
@@ -1207,14 +1264,17 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps_blend.mp4"
 
         # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash.gif" # 9.50 fps freaking hell.
-        # how about 15fps or something 
+        # how about 15fps or something
         import uuid
         import os
-        convertedVideoPath = str(uuid.uuid4())+".mp4"
+
+        convertedVideoPath = str(uuid.uuid4()) + ".mp4"
         convertedVideoPath = os.path.join(tempdir, convertedVideoPath)
 
-        commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode=dup {}".format(videoPath, conversionFPS,convertedVideoPath)
-        commandArgs = commandline.split(' ')
+        commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode=dup {}".format(
+            videoPath, conversionFPS, convertedVideoPath
+        )
+        commandArgs = commandline.split(" ")
         print("converting video file to {}fps mp4".format(conversionFPS))
         # os.system(commandline)
         output = subprocess.check_output(commandArgs)
@@ -1222,7 +1282,7 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         print(output)
         print("convertion done")
 
-        source = convertedVideoPath# very unlikely to go higher.
+        source = convertedVideoPath  # very unlikely to go higher.
         # 15fps is just fine for shit like this.
         # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash.mp4" # very unlikely to go higher.
 
@@ -1235,7 +1295,8 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         # now it is good. no reply for dog_with_text.mp4 with strictest settings.
 
         result = mpdecimate_export_duplicate_clip_ranges(
-            source, mpdecimate_args=mpdecimate_args_choice
+            source,
+            mpdecimate_args=mpdecimate_args_choice
             # ,video_size="480x480"
         )
 
@@ -1246,35 +1307,50 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         # use 'blend' instead of 'dup'
 
         if result is not None:
-            dframes2, dupPercent, frameDupPercent, (binarizedRange, mList, spans) = result
+            (
+                dframes2,
+                dupPercent,
+                frameDupPercent,
+                (binarizedRange, mList, spans),
+            ) = result
             for i, (s, e) in enumerate(dframes2):
                 # start, end.
                 print("INDEX", i, "START", s, "END", e)
             print("DUPLICATE PERCENTAGE: {:.2f} %".format(dupPercent * 100))
             print("FRAME DUPLICATE PERCENTAGE: {:.2f} %".format(frameDupPercent * 100))
-            effectiveFPS = frameDupPercent*conversionFPS
-            debugInfo = {'binarized_frame_keep_drop_flags':binarizedRange, 'frame_list_with_pts_and_flag':mList, 'drop_frame_index_spans':spans}
-            print('EFFECTIVE FPS: {:.2f} %'.format(effectiveFPS))
+            effectiveFPS = frameDupPercent * conversionFPS
+            debugInfo = {
+                "binarized_frame_keep_drop_flags": binarizedRange,
+                "frame_list_with_pts_and_flag": mList,
+                "drop_frame_index_spans": spans,
+            }
+            print("EFFECTIVE FPS: {:.2f} %".format(effectiveFPS))
         else:
             print("dframes2 is None")
             effectiveFPS = conversionFPS
             dupPercent = frameDupPercent = 0
             dframes2 = []
             debugInfo = None
-####################
-        return {'duplicatePercent':dupPercent, 'frameDuplicatePercent':frameDupPercent,'effectiveFPS':effectiveFPS, 'duplicatedFrameRanges':dframes2, 'debugInfo':debugInfo} # time ranges of duplicated frames
+        ####################
+        return {
+            "duplicatePercent": dupPercent,
+            "frameDuplicatePercent": frameDupPercent,
+            "effectiveFPS": effectiveFPS,
+            "duplicatedFrameRanges": dframes2,
+            "debugInfo": debugInfo,
+        }  # time ranges of duplicated frames
+
 
 # this is a generator, not a list!
-def getVideoColorCentrality(videoPath,
-    denoise=True,
-    frame_sample_limit=3,
-    **kwargs):
-    videoFrameSampler = getVideoFrameSampler(videoPath, -1,-1, frame_sample_limit)
+def getVideoColorCentrality(videoPath, denoise=True, frame_sample_limit=3, **kwargs):
+    videoFrameSampler = getVideoFrameSampler(videoPath, -1, -1, frame_sample_limit)
     print("testing video color centrality")
     import progressbar
+
     for frame in progressbar.progressbar(videoFrameSampler):
         if denoise:
             frame = imageDenoise(frame)
-        centrality,max_nearby_center_percentage = getImageColorCentrality(frame, **kwargs)
-        yield centrality,max_nearby_center_percentage
-
+        centrality, max_nearby_center_percentage = getImageColorCentrality(
+            frame, **kwargs
+        )
+        yield centrality, max_nearby_center_percentage
