@@ -11,11 +11,12 @@ sprint("LABEL:", label)
 # breakpoint()
 tmpPath = "/dev/shm/medialang/online_test"
 import os
-flag = 'topic_with_fetcher'
+
+flag = "topic_with_fetcher"
 
 with tmpdir(path=tmpPath) as testDir:
     print("TESTDIR:", testDir)
-    if flag == 'only_topic_generator':
+    if flag == "only_topic_generator":
         # print("HERE??",1)
         for asset_id, meta in elems:
             print("X", asset_id, meta)
@@ -24,13 +25,18 @@ with tmpdir(path=tmpPath) as testDir:
             basename = ".".join([asset_id, extension])
             download_path = os.path.join(tmpPath, basename)
             try:
-                download(url, download_path, threads=-0.3, size_filter={"min":0.4, "max":50})
+                download(
+                    url,
+                    download_path,
+                    threads=-0.3,
+                    size_filter={"min": 0.4, "max": 50},
+                )
             except:
                 print("Error when download file")
             # X ('sr8jYZVVsCmxddga8w', {'height': 480, 'width': 474, 'url': 'https://media0.giphy.com/media/sr8jYZVVsCmxddga8w/giphy.gif'})
             # breakpoint()
             # seems good. now we check the cat/dog.
-    elif flag == 'topic_with_fetcher':
+    elif flag == "topic_with_fetcher":
         sprint("checking online fetcher")
         # print("HERE??",2)
         newElems, label = OnlineFetcher(elems, tempdir=tmpPath)
@@ -39,22 +45,26 @@ with tmpdir(path=tmpPath) as testDir:
             (item_id, local_video_location) = elem
             # what is the freaking response?
             from caer.video.frames_and_fps import get_duration, get_fps_float
+
             duration = get_duration(local_video_location)
             from pyjom.commons import checkMinMaxDict
-            duration_filter =  {'min':0.6, 'max':7}
-            fps_filter =  {'min':7, 'max':60}
+
+            duration_filter = {"min": 0.6, "max": 7}
+            fps_filter = {"min": 7, "max": 60}
             fps_float = get_fps_float(local_video_location)
             # duration_valid = checkMinMaxDict(duration,duration_filter)
             # fps_valid = checkMinMaxDict(fps_float,fps_filter)
             valid = True
-            mList = [[fps_float, fps_filter, 'fps'],[duration, duration_filter,'duration']]
+            mList = [
+                [duration, duration_filter, "duration"],
+                [fps_float, fps_filter, "fps"],
+            ]
             for mValue, mFilter, flag in mList:
-                valid = checkMinMaxDict(mValue,mFilter)
+                valid = checkMinMaxDict(mValue, mFilter)
                 if not valid:
-                    print("skipping due to invalid %s: %s" % (flsg,fps_float))
-                    print('%s filter:' % flag, fps_filter)
+                    print("skipping due to invalid %s: %s" % (flsg, fps_float))
+                    print("%s filter:" % flag, fps_filter)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
     # print('flag', flag)
-    
