@@ -212,7 +212,7 @@ def ffmpegVideoPreProductionFilter(
                 if "_" not in renderCommand:
                     stream = stream.filter(renderCommand)
                 elif "=" in renderCommand:
-                    stream = stream.filter()
+                    stream = ffmpegStringFilter(stream, renderCommand)
                 else:
                     # non standard filter formats below. be warned.
                     for prefix, keyword in [
