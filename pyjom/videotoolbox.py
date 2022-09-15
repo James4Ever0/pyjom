@@ -555,6 +555,7 @@ def detectStationaryLogoOverTime(
                     currentFourCorners = defaultFourCorners
                 else:
                     import parse
+
                     parseResult = parse.parse("crop_{x}_{y}_{w}_{h}", crop_flag)
                     currentFourCorners = getFourCorners(
                         parseResult["x"],
@@ -1422,10 +1423,20 @@ def getVideoColorCentrality(videoPath, denoise=True, frame_sample_limit=3, **kwa
         )
         yield centrality, max_nearby_center_percentage
 
-def checkVideoColorCentrality(videoColorCentralityGenerator, video_color_filter:dict={'centrality':{'max':6},"max_nearby_center_percentage":{'max':5}}):
+
+def checkVideoColorCentrality(
+    videoColorCentralityGenerator,
+    video_color_filter: dict = {
+        "centrality": {"max": 6},
+        "max_nearby_center_percentage": {"max": 5},
+    },
+):
     for centrality, max_nearby_center_percentage in videoColorCentralityGenerator:
-        a = checkMinMaxDict(centrality, video_color_filter.get('centrality',{}))
-        b = checkMinMaxDict(max_nearby_center_percentage, video_color_filter.get('max_nearby_center_percentage',{}))
+        a = checkMinMaxDict(centrality, video_color_filter.get("centrality", {}))
+        b = checkMinMaxDict(
+            max_nearby_center_percentage,
+            video_color_filter.get("max_nearby_center_percentage", {}),
+        )
         flag = a and b
         if not flag:
             return False
