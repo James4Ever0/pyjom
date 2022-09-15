@@ -40,6 +40,6 @@ print(sample.shape)
 # print(A.shape) # sparse matrix? wtf?
 from sklearn.cluster import KMeans
 X = sample
-kmeans = KMeans(n_clusters=5, random_state=0).fit(X)
+kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
 labels = kmeans.labels_
 cluster_centers = kmeans.cluster_centers_
