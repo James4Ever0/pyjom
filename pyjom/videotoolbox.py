@@ -1201,7 +1201,7 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
         convertedVideoPath = str(uuid.uuid4())+".mp4"
         convertedVideoPath = os.path.join(tempdir, convertedVideoPath)
 
-        commandline = "ffmpeg -y -i '{}' -vf minterpolate=fps=15:mi_mode=dup '{}'".format(, convertedVideoPath)
+        commandline = "ffmpeg -y -i '{}' -vf minterpolate=fps=15:mi_mode=dup '{}'".format(videoPath, convertedVideoPath)
 
         source = convertedVideoPath# very unlikely to go higher.
         # 15fps is just fine for shit like this.
