@@ -522,6 +522,8 @@ def detectStationaryLogoOverTime(
     else:
         start_end_list = []
         for crop_flag, start_end_ranges in pipCropDictsWithRangedEmpty.items():
+            if crop_flag == "empty":
+                crop_flag = None
             start_end_list.append([crop_flag, start_end_ranges])
 
     for index, (crop_flag,start_end_ranges) in enumerate(start_end_list):
