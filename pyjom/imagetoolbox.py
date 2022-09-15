@@ -1,8 +1,9 @@
 from pyjom.commons import *
 import numpy as np
+import cv2
 
-def imageDenoiseColored(image,)
-return cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
+def imageDenoiseColored(image,):
+    return cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
 
 def getImageColorCentrality(
     image,
@@ -20,7 +21,6 @@ def getImageColorCentrality(
     # SUM: 286491.0 MIN: 0 MAX: 3
     # NEARBY CENTER PERCENTAGE: 6.74 %
     # CENTRALITY: 7.32 %
-    import cv2
 
     # image = cv2.imread(src)
     shape = image.shape
