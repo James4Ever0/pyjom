@@ -7,9 +7,10 @@ import requests
 from typing import Literal
 
 def removeKeywordDuplicates(keywords):
+    keywordsType = type(keywords)
     entry = {str:lambda x: x.split(" "), list:lambda x: x, tuple: lambda x: list(x)}
-    if type(keywords) == in entry.keys():
-        keywordsList = entry[type(keywords)]
+    if keywordsType == in entry.keys():
+        keywordsList = entry[keywordsType]
     else:
         raise Exception("Unknown keywords type: %s" % type(keywords))
     keywordsSet = set(keywordsList)
