@@ -3,7 +3,7 @@
 src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
 
 # single not go beyond 6 percent.
-# total not go beyond 20 percent.
+# total not go beyond 16 percent.
 # is that right? fuck?
 
 # src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
