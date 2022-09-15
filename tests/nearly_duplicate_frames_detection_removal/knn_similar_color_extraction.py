@@ -9,7 +9,7 @@
 # total not go beyond 6 percent.
 # is that right? fuck?
 
-src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
+# src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
 # and yet this does not look right.
 # NEARBY CENTER PERCENTAGE: 0.84 %
 # CENTRALITY: 2.57 %
@@ -20,7 +20,7 @@ src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
 # it is off the charge!
 
 # with text. a meme.
-# src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
+src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
 # CENTRALITY: 1.26 %
 
 # src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
