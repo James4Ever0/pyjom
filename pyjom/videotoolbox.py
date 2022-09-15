@@ -1389,7 +1389,7 @@ def getEffectiveFPS(
                 "frame_list_with_pts_and_flag": mList,
                 "drop_frame_index_spans": spans,
             }
-            print("EFFECTIVE FPS: {:.2f} %".format(effectiveFPS))
+            print("EFFECTIVE FPS: {:.2f}".format(effectiveFPS))
         else:
             print("dframes2 is None")
             effectiveFPS = conversionFPS
