@@ -91,6 +91,7 @@ def ffmpegVideoPreProductionFilter(
             w=commandParams["w"],
             h=commandParams["h"],
         )
+
     def filterCommandStringParser(filterCommandString):
         args_with_kwargs = filterCommandString.split(":")
         args = []
@@ -106,11 +107,9 @@ def ffmpegVideoPreProductionFilter(
     def ffmpegStringFilter(stream, commandString):
         filterName = commandString.split("_")[0]
         filterPrefix = "{}_".format(filterName)
-        filterCommandString = commandString[len(filterPrefix):]
+        filterCommandString = commandString[len(filterPrefix) :]
         args, kwargs = filterCommandStringParser(filterCommandString)
-        return stream.filter(
-            "scale", *args, **kwargs
-        )
+        return stream.filter("scale", *args, **kwargs)
 
     # TODO: FIX THIS SHIT!
     # raise Exception("TODO: FIX THIS SHIT!")
@@ -212,7 +211,9 @@ def ffmpegVideoPreProductionFilter(
                 if "_" not in renderCommand:
                     stream = stream.filter(renderCommand)
                 elif "=" in renderCommand:
-                    stream = ffmpegStringFilter(stream, renderCommand) # do not check for validity!
+                    stream = ffmpegStringFilter(
+                        stream, renderCommand
+                    )  # do not check for validity!
                 else:
                     # non standard filter formats below. be warned.
                     for prefix, keyword in [
@@ -242,7 +243,9 @@ def ffmpegVideoPreProductionFilter(
                                 # maybe it's not because of out of bounds error
                                 print("_" * 30)
                                 print(
-                                    "ABNORMAL {} FILTER PARAMS:".format(keyword.upper()),
+                                    "ABNORMAL {} FILTER PARAMS:".format(
+                                        keyword.upper()
+                                    ),
                                     commandParams,
                                 )
                                 print(
