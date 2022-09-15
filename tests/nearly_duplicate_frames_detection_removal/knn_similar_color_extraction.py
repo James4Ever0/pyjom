@@ -85,3 +85,4 @@ for center in cluster_centers:
     # print(mOutput.shape)
     # breakpoint()
     print("CENTER:",center_int)
+    print("NEARBY CENTER PERCENTAGE:")
