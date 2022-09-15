@@ -12,8 +12,8 @@ def getEffectiveFPS(videoPath, convert_fps_target=15):
     return effectiveFPS
 
 def getVideoColorCentrality(videoPath,
-denoise=True,
-sample_size_limit=5000,
+    denoise=True,
+    sample_size_limit=5000,
     epsilon=0.01,  # shit man.
     shift=2,
     n_clusters=5,
