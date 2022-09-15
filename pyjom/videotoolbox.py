@@ -508,9 +508,9 @@ def detectStationaryLogoOverTime(
     mFinalDelogoFilters = []
     boundingRects = []
     for cnt in cnts2:
-        x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
+        x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image
         currentRect = [(x, y), (x + w, y + h)]
-        boundingRects.append(currentRect)
+        boundingRects.append(currentRect.copy())
     
     for currentRect in boundingRects:
         if cornersOnly:
