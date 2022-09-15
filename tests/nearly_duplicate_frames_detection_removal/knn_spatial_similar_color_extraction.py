@@ -113,10 +113,11 @@ print(sample)
 print(sample.shape)
 
 # breakpoint()
-sampleCoords = coords[sampleIndexs]
-sample = np.hstack([sample, sampleCoords])
-print(sample)
-print(sample.shape)
+if use_spatial:
+    sampleCoords = coords[sampleIndexs]
+    sample = np.hstack([sample, sampleCoords])
+    print(sample)
+    print(sample.shape)
 # breakpoint()
 # warning: OOM?
 # now cluster shit shall we?
