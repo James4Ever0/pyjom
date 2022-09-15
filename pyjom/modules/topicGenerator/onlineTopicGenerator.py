@@ -16,7 +16,7 @@ def removeKeywordDuplicates(keywords):
         raise Exception("Unknown keywords type: %s" % type(keywords))
     keywordsSet = set(keywordsList)
     keywordsSetList = list(keywordsSet)
-    return output[keywordsType](keywordsSetList)
+    return outputFuncs[keywordsType](keywordsSetList)
 
 
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
