@@ -1202,8 +1202,9 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
         convertedVideoPath = os.path.join(tempdir, convertedVideoPath)
 
         commandline = "ffmpeg -y -i {} -vf minterpolate=fps=15:mi_mode=dup {}".format(videoPath, convertedVideoPath)
+        commandArgs = commandline.split(' ')
         print("converting video file to 15fps mp4")
-        os.system(commandline)
+        # os.system(commandline)
         output = subprocess.check_output(commandArgs)
         # will raise error if conversion failed.
         print(output)
