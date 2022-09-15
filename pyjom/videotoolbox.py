@@ -7,6 +7,7 @@ import cv2
 
 # import cv2
 
+def getEffectiveFPS()
 
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
