@@ -510,7 +510,6 @@ def detectStationaryLogoOverTime(
 
     # this is for video watermarks. how about pictures? do we need to cut corners? how to find the freaking watermark again?
     # delogoFilter =
-    mFinalDelogoFilters = []
     boundingRects = []
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image
@@ -519,6 +518,7 @@ def detectStationaryLogoOverTime(
     print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
     delogoCommandList = [] # test if it can merge anything!
     for index, (crop_flag,(mStart, mEnd)) in enumerate(start_end_list):
+        mFinalDelogoFilters = []
         for currentRect in boundingRects:
             if cornersOnly:
                 if fourCorners is not None:
