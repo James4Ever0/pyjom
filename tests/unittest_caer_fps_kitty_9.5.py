@@ -12,7 +12,7 @@ if len(cv2_libs) == 1:
     print("INSERTING:", cv2_libs[0].parent)
     sys.path.insert(1, str(cv2_libs[0].parent))
 
-from caer.video.frames_and_fps import get_fps
+from caer.video.frames_and_fps import get_fps_float
 
-fps = get_fps(src)
+fps = get_fps_float(src)
 print("FPS:", fps) # 10? very inaccurate for me
