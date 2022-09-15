@@ -84,7 +84,7 @@ indexs = []
 
 for c0 in range(col_0):
     for c1 in range(col_1):
-        indexs.append(c1,c0)
+        indexs.append((c0,c1))
 
 # print(image.reshape(-1,3))
 reshapedImage = image.reshape(-1, 3)  # are you sure about this?
