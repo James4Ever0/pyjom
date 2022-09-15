@@ -8,4 +8,5 @@ import cv2
 from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
-print(image.shape)
+# print(image.shape)
+image.reshape(-1,3)
