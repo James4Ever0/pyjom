@@ -99,8 +99,8 @@ def ffmpegVideoPreProductionFilter(
         mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos":[(start, end)]})
     simpleFilters = ["removegrain","removegrain",'bilateral']
     for filterName in simpleFilters:
-    if filterName in filters:
-        mDict.update({"minterpolate":[(start, end)]})
+        if filterName in filters:
+            mDict.update({filterName:[(start, end)]})
 
     pipCropDicts = None
     if "pipCrop" in filters:
