@@ -15,4 +15,4 @@ image = cv2.imread(src)
 reshapedImage = image.reshape(-1,3) # are you sure about this?
 length, depth = reshapedImage.shape
 # so now it is good.
-sample = np.random.choice(reshapedImage,size=5000)
+sample = np.random.choice(reshapedImage,size=min(5000, length))
