@@ -60,8 +60,8 @@ with tmpdir(path=tmpPath) as testDir:
                 [fps_float, fps_filter, "fps", ],
                 []
             ]
-            for mFilter, flag in mList:
-                mValue = function()
+            for function, mFilter, flag in mList:
+                mValue = function(local_video_location)
                 valid = checkMinMaxDict(mValue, mFilter)
                 if not valid:
                     print("skipping due to invalid %s: %s" % (flsg, fps_float))
