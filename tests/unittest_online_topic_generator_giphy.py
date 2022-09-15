@@ -9,11 +9,11 @@ elems, label = OnlineTopicGenerator()
 sprint("LABEL:", label)
 # # 'pyjom.commons.OnlineTopicGenerator'
 # breakpoint()
-path = "/dev/shm/medialang/online_test"
+tmpPath = "/dev/shm/medialang/online_test"
 import os
 flag = 'topic_with_fetcher'
 
-with tmpdir(path=path) as testDir:
+with tmpdir(path=tmpPath) as testDir:
     print("TESTDIR:", testDir)
     if flag == 'only_topic_generator':
         # print("HERE??",1)

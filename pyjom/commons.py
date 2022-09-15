@@ -37,6 +37,7 @@ def frameSizeFilter(frameMeta, frame_size_filter):
 
 
 def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
+    try:
     minVal = minMaxDict.get("min", value)
     maxVal = minMaxDict.get("max", value)
     assert minVal < maxVal
