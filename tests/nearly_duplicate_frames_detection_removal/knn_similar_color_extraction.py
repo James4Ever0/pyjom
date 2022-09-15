@@ -157,7 +157,7 @@ percents = []
 shift=2
 for center5 in cluster_centers:
     # fetch area nearby given center
-    center = center[:3]
+    center = center5[:3]
     # center_int = center.astype(np.uint8)
     # i just don't know what the fuck is going on here.
     upper = center + shift
