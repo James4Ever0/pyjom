@@ -20,6 +20,7 @@ src = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
 # POSITIVE COUNT: 222893
 # SUM: 668679.0 MIN: 0 MAX: 3
 # NEARBY CENTER PERCENTAGE: 37.79 %
+# 
 # likely to be the blue.
 
 # src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
