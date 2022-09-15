@@ -537,7 +537,7 @@ def detectStationaryLogoOverTime(
                 else:
                     import parse
                     parseResult = parse.parse("crop_{x}_{y}_{w}_{h}", crop_flag)
-                    currentFourCorners = getFourCorners()
+                    currentFourCorners = getFourCorners(parseResult['x'], parseResult['y'], parseResult['w'], parseResult['h'])
                     for cornerRect in currentFourCorners:
                         overlapRect = getOverlapRect(currentRect, cornerRect)
                         if overlapRect:
