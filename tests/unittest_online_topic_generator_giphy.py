@@ -13,7 +13,6 @@ path = "/dev/shm/medialang/online_test"
 import os
 flag = 'topic_with_fetchers'
 
-
 with tmpdir(path=path) as testDir:
     print("TESTDIR:", testDir)
     if flag == 'only_topic_generator':
