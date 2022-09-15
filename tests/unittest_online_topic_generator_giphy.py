@@ -32,7 +32,10 @@ with tmpdir(path=path) as testDir:
             # seems good. now we check the cat/dog.
     elif flag == 'topic_with_fetcher':
         sprint("checking online fetcher")
+        print("HERE??",2)
         newElems, label = OnlineFetcher(elems)
         for elem in newElems:
             sprint(elem)
             breakpoint()
+    print("HERE??",3)
+    
