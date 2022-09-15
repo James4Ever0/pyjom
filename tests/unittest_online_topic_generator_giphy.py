@@ -36,6 +36,8 @@ with tmpdir(path=tmpPath) as testDir:
         newElems, label = OnlineFetcher(elems, tempdir=tmpPath)
         for elem in newElems:
             sprint(elem)
+            # what is the freaking response?
+            # do q
             breakpoint()
     # print("HERE??",3)
     # print('flag', flag)
