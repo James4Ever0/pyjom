@@ -40,7 +40,8 @@ def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
     try:
         minVal = minMaxDict.get("min", value)
         maxVal = minMaxDict.get("max", value)
-        assert minVal < maxVal
+        if minVal != value and maxVal != value:
+            assert minVal < maxVal
         flag = value <= maxVal and value >= minVal
         if getMinMaxVal:
             return flag, (minVal, maxVal)
