@@ -43,11 +43,14 @@ with tmpdir(path=tmpPath) as testDir:
             from pyjom.commons import checkMinMaxDict
             duration_filter =  {'min':0.6, 'max':7}
             fps_filter =  {'min':7, 'max':60}
-            fps_float = get_fps_float()
+            fps_float = get_fps_float(local_video_location)
             duration_valid = checkMinMaxDict(duration,duration_filter)
-            fps_valid = checkMinMaxDict(fps,fps_filter)
+            fps_valid = checkMinMaxDict(fps_float,fps_filter)
             if duration_valid:
                 if fps_valid:
+
+                print("skipping due to invalid fps: %s" % duration)
+                print('duration filter:', duration_filter)
             else:
                 print("skipping due to invalid duration: %s" % duration)
                 print('duration filter:', duration_filter)
