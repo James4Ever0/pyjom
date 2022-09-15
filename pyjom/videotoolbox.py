@@ -1027,14 +1027,14 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
             flag_vaapi_decimate = False
             videoDuration = None
             try:
-                from caer.video.
-            
-            if videoDuration:
-    
-
-            else:
+                from caer.video.frames_and_fps import get_duration
+                duration = get_duration(videoPath)
+            except:
+                import traceback
+                traceback.print_exc()
+                print('error when getting video duration by caer')
+            if videoDuration is None:
                 from MediaInfo import MediaInfo
-
                 info = MediaInfo(filename=filepath).getInfo()
                 # cannot get shit from this.
                 # print(info.keys())
