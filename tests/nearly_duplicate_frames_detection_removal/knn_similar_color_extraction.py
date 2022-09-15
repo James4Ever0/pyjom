@@ -1,5 +1,7 @@
 # i'd say i want centrality below 10 percent. what's the catch?
 
+src = ""
+
 # single not go beyond 6 percent.
 # total not go beyond 20 percent.
 # is that right? fuck?
