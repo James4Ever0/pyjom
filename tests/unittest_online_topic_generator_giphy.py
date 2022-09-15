@@ -10,12 +10,13 @@ sprint("LABEL:", label)
 # breakpoint()
 path = "/dev/shm/medialang/online_test"
 import os
+flag = 'topic_with_fetchers
 
-if flag == 'only_topic_generator'
-elif flag == 'topic_with_fetcher':
 
 with tmpdir(path=path) as testDir:
     print("TESTDIR:", testDir)
+if flag == 'only_topic_generator':
+
     for asset_id, meta in elems:
         print("X", asset_id, meta)
         url = meta["url"]
@@ -29,3 +30,4 @@ with tmpdir(path=path) as testDir:
         # X ('sr8jYZVVsCmxddga8w', {'height': 480, 'width': 474, 'url': 'https://media0.giphy.com/media/sr8jYZVVsCmxddga8w/giphy.gif'})
         # breakpoint()
         # seems good. now we check the cat/dog.
+    elif flag == 'topic_with_fetcher':
