@@ -1242,24 +1242,6 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
                 print("INDEX", i, "START", s, "END", e)
             print("DUPLICATE PERCENTAGE: {:.2f} %".format(dupPercent * 100))
             print("FRAME DUPLICATE PERCENTAGE: {:.2f} %".format(frameDupPercent * 100))
-            # DUPICATE PERCENTAGE: 73.95 %
-            # FRAME DUPICATE PERCENTAGE: 86.67 %
-            ############## that is for the sticker. we are gonna check for something else.
-            # first of all, we need to convert the fps first.
-            # to do so:
-            # this shit was slow. fuck.
-            # ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=30 /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.gif
-            # change mode to dup may seriously affect our output. you know it can produce false positives.
-            # so how about we make it into 15 fps or something? can't be slow as that.
-            # ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=15:mi_mode=dup /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.gif
-            # denoise first!
-            # turn off dithering
-            # maybe use mp4 instead? fuck.
-            # ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=30:mi_mode=dup /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.mp4
-            # now try blend.
-            # ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=30:mi_mode=blend /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps_blend.mp4
-            # now try denoise.
-            # yaepblur? (slow) vaguedenoiser? hqdn3d?
         else:
             print("dframes2 is None")
 
