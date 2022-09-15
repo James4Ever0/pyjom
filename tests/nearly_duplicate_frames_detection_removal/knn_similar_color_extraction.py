@@ -1,4 +1,4 @@
-# i'd say i want centrality below 10 percent. what's the catch?
+# i'd say i want centrality below 5 percent. what's the catch?
 
 # we'd like to adjust the shift.
 
