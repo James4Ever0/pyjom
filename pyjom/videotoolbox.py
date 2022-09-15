@@ -1266,7 +1266,8 @@ def getVideoColorCentrality(videoPath,
     **kwargs):
     videoFrameSampler = getVideoFrameSampler(videoPath, -1,-1, frame_sample_limit)
     print("testing video color centrality")
-    for frame in videoFrameSampler:
+    import progressbar
+    for frame in progressbar.progressbar(videoFrameSampler):
         if denoise:
             frame = imageDenoise(frame)
         centrality,max_nearby_center_percentage = getImageColorCentrality(frame, **kwargs)
