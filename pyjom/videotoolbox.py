@@ -995,6 +995,7 @@ def detectPipRegionOverTime(
 
 
 def getEffectiveFPS(videoPath, convert_fps_target=15):
+    # use ffmpeg to covert the target first!
     return effectiveFPS
 
 # this is a generator, not a list!
