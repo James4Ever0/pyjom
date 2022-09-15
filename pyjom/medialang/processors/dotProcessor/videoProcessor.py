@@ -135,7 +135,7 @@ def ffmpegVideoPreProductionFilter(
         "delogo": 0,
         "crop": 1,
         "minterpolate":4, "removegrain":2, "bilateral":3,
-        'randomFlip':,'superResolution':3
+        'randomFlip':MAX_INT,'superResolution':3
     }  # no scale filter shall present. we do not provide such creep. editly will handle it.
     # commandValueMap.update(simpleFiltersValueMap)
     renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
