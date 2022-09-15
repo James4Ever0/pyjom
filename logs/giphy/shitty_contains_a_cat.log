@@ -1,0 +1,666 @@
+root@alpharetta ~/D/w/p/tests (main)# python3 unittest_online_topic_generator_giphy.py
+/usr/local/lib/python3.9/site-packages/cv2/python-3.9
+INSERTING: /usr/local/lib/python3.9/site-packages/cv2/python-3.9
+/usr/local/lib/python3.9/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.3
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/usr/lib/python3/dist-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been deprecated
+  "class": algorithms.Blowfish,
+Traceback (most recent call last):
+  File "/media/root/parrot/pyjom/tests/unittest_online_topic_generator_giphy.py", line 2, in <module>
+    from pyjom.modules.topicGenerator import OnlineTopicGenerator
+  File "/media/root/parrot/pyjom/./pyjom/modules/__init__.py", line 5, in <module>
+    from pyjom.modules.contentProducing import *
+  File "/media/root/parrot/pyjom/./pyjom/modules/contentProducing/__init__.py", line 2, in <module>
+    from pyjom.modules.contentProducing.localProducer import *
+  File "/media/root/parrot/pyjom/./pyjom/modules/contentProducing/localProducer.py", line 2, in <module>
+    from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
+  File "/media/root/parrot/pyjom/./pyjom/modules/contentProducing/producerTemplates.py", line 13, in <module>
+    from pyjom.medialang.core import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/__init__.py", line 1, in <module>
+    from pyjom.medialang.core import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/core.py", line 3, in <module>
+    from pyjom.medialang.processors import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/processors/__init__.py", line 1, in <module>
+    from pyjom.medialang.processors.dotProcessor import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/processors/dotProcessor/__init__.py", line 2, in <module>
+    from pyjom.medialang.processors.dotProcessor.videoProcessor import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/processors/dotProcessor/videoProcessor.py", line 4, in <module>
+    from pyjom.videotoolbox import *
+  File "/media/root/parrot/pyjom/./pyjom/videotoolbox.py", line 1425
+    def checkVideoColorCentrality(videoColorCentralityGenerator, video_color_filter:dict={'centrality':{'max':6},"max_nearby_center_percentage":{'max':5}):
+                                                                                                                                                         ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '{'
+root@alpharetta ~/D/w/p/tests (main) [1]# python3 unittest_online_topic_generator_giphy.py
+/usr/local/lib/python3.9/site-packages/cv2/python-3.9
+INSERTING: /usr/local/lib/python3.9/site-packages/cv2/python-3.9
+/usr/local/lib/python3.9/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.3
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/usr/lib/python3/dist-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been deprecated
+  "class": algorithms.Blowfish,
+Traceback (most recent call last):
+  File "/media/root/parrot/pyjom/tests/unittest_online_topic_generator_giphy.py", line 2, in <module>
+    from pyjom.modules.topicGenerator import OnlineTopicGenerator
+  File "/media/root/parrot/pyjom/./pyjom/modules/__init__.py", line 5, in <module>
+    from pyjom.modules.contentProducing import *
+  File "/media/root/parrot/pyjom/./pyjom/modules/contentProducing/__init__.py", line 2, in <module>
+    from pyjom.modules.contentProducing.localProducer import *
+  File "/media/root/parrot/pyjom/./pyjom/modules/contentProducing/localProducer.py", line 2, in <module>
+    from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
+  File "/media/root/parrot/pyjom/./pyjom/modules/contentProducing/producerTemplates.py", line 13, in <module>
+    from pyjom.medialang.core import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/__init__.py", line 1, in <module>
+    from pyjom.medialang.core import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/core.py", line 3, in <module>
+    from pyjom.medialang.processors import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/processors/__init__.py", line 1, in <module>
+    from pyjom.medialang.processors.dotProcessor import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/processors/dotProcessor/__init__.py", line 2, in <module>
+    from pyjom.medialang.processors.dotProcessor.videoProcessor import *
+  File "/media/root/parrot/pyjom/./pyjom/medialang/processors/dotProcessor/videoProcessor.py", line 4, in <module>
+    from pyjom.videotoolbox import *
+  File "/media/root/parrot/pyjom/./pyjom/videotoolbox.py", line 7, in <module>
+    from pyjom.imagetoolbox import *
+  File "/media/root/parrot/pyjom/./pyjom/imagetoolbox.py", line 9
+    return cv2.fastNlMeansDenoisingColored(image,None,10,10,7,21)
+    ^
+IndentationError: expected an indented block
+root@alpharetta ~/D/w/p/tests (main) [1]# python3 unittest_online_topic_generator_giphy.py
+/usr/local/lib/python3.9/site-packages/cv2/python-3.9
+INSERTING: /usr/local/lib/python3.9/site-packages/cv2/python-3.9
+/usr/local/lib/python3.9/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.3
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/usr/lib/python3/dist-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been deprecated
+  "class": algorithms.Blowfish,
+LABEL: pyjom.commons.OnlineTopicGenerator
+______________________________
+temporary directory: /dev/shm/medialang/online_test
+TESTDIR: /dev/shm/medialang/online_test
+checking online fetcher
+______________________________
+SERVER AT PORT 8902 RESPONDS: ['nodejs giphy server']
+SERVER AT PORT 8902 IS UP
+2022-09-16 02:23:24.956993: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-09-16 02:23:24.961324: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-09-16 02:23:24.963150: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+/usr/local/lib/python3.9/dist-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function get_feature_names is deprecated; get_feature_names is deprecated in 1.0 and will be removed in 1.2. Please use get_feature_names_out instead.
+  warnings.warn(msg, category=FutureWarning)
+REFRESHING KEYWORDS: dog cute anim gif
+Min size filter is 0.40000 MB
+File Size is 0.07307 MB
+Not downloading since filtered by min size filter
+not downloading source: 5aCiXMnPl1cli
+skipping: {'height': 283, 'width': 400, 'url': 'https://media4.giphy.com/media/5aCiXMnPl1cli/giphy.gif?cid=dda24d50a7b6b5d8139d3376392b10b5f3d81297bd229c2f&rid=giphy.gif&ct=g'}
+Filter out invalid video with shape of 300x188
+Valid Width and Height are 150-1000x200-1000
+Downloading video_[giphy_tBxyh2hbwMiqc]_[243x339].gif of size 0.48749 MB
+Saving at /dev/shm/medialang/online_test/video_[giphy_tBxyh2hbwMiqc]_[243x339].gif
+using 4 threads
+100%|█████████████████████████████████████████████████████| 511k/511k [00:01<00:00, 279kB/s]
+Finished downloading video_[giphy_tBxyh2hbwMiqc]_[243x339].gif of size 0.49 MB
+Saved at /dev/shm/medialang/online_test/video_[giphy_tBxyh2hbwMiqc]_[243x339].gif
+('tBxyh2hbwMiqc', '/dev/shm/medialang/online_test/video_[giphy_tBxyh2hbwMiqc]_[243x339].gif')
+______________________________
+100% (3 of 3) |######################################| Elapsed Time: 0:00:00 Time:  0:00:00
+testing video color centrality
+  0% (0 of 3) |                                      | Elapsed Time: 0:00:00 ETA:  --:--:--cleaning tempdir: /dev/shm/medialang/online_test
+Traceback (most recent call last):
+  File "/media/root/parrot/pyjom/tests/unittest_online_topic_generator_giphy.py", line 84, in <module>
+    valid = filterFunction(mValue, mFilter)
+  File "/media/root/parrot/pyjom/./pyjom/videotoolbox.py", line 1434, in checkVideoColorCentrality
+    for centrality, max_nearby_center_percentage in videoColorCentralityGenerator:
+  File "/media/root/parrot/pyjom/./pyjom/videotoolbox.py", line 1420, in getVideoColorCentrality
+    frame = imageDenoise(frame)
+  File "/media/root/parrot/pyjom/./pyjom/imagetoolbox.py", line 8, in imageDenoise
+    if len(shape) == 3:
+TypeError: object of type 'int' has no len()
+100% (3 of 3) |######################################| Elapsed Time: 0:00:00 Time:  0:00:00
+Exception ignored in: <generator object OnlineFetcher at 0x7fa7337da190>
+Traceback (most recent call last):
+  File "/media/root/parrot/pyjom/./pyjom/modules/informationGathering/onlineFetcher.py", line 33, in OnlineFetcher
+ImportError: sys.meta_path is None, Python is likely shutting down
+root@alpharetta ~/D/w/p/tests (main) [1]# python3 unittest_online_topic_generator_giphy.py
+/usr/local/lib/python3.9/site-packages/cv2/python-3.9
+INSERTING: /usr/local/lib/python3.9/site-packages/cv2/python-3.9
+/usr/local/lib/python3.9/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.3
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/usr/lib/python3/dist-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been deprecated
+  "class": algorithms.Blowfish,
+LABEL: pyjom.commons.OnlineTopicGenerator
+______________________________
+temporary directory: /dev/shm/medialang/online_test
+TESTDIR: /dev/shm/medialang/online_test
+checking online fetcher
+______________________________
+SERVER AT PORT 8902 RESPONDS: ['nodejs giphy server']
+SERVER AT PORT 8902 IS UP
+2022-09-16 02:25:08.303595: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-09-16 02:25:08.307484: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-09-16 02:25:08.309131: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+/usr/local/lib/python3.9/dist-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function get_feature_names is deprecated; get_feature_names is deprecated in 1.0 and will be removed in 1.2. Please use get_feature_names_out instead.
+  warnings.warn(msg, category=FutureWarning)
+REFRESHING KEYWORDS: cat funny husky gif like
+Downloading video_[giphy_MDb3kNYYKOAQgqmQ3D]_[480x270].gif of size 1.16992 MB
+Saving at /dev/shm/medialang/online_test/video_[giphy_MDb3kNYYKOAQgqmQ3D]_[480x270].gif
+using 4 threads
+100%|███████████████████████████████████████████████████| 1.23M/1.23M [00:01<00:00, 774kB/s]
+Finished downloading video_[giphy_MDb3kNYYKOAQgqmQ3D]_[480x270].gif of size 1.17 MB
+Saved at /dev/shm/medialang/online_test/video_[giphy_MDb3kNYYKOAQgqmQ3D]_[480x270].gif
+('MDb3kNYYKOAQgqmQ3D', '/dev/shm/medialang/online_test/video_[giphy_MDb3kNYYKOAQgqmQ3D]_[480x270].gif')
+______________________________
+skipping due to invalid duration: 20.955882352941174
+duration filter: {'min': 0.6, 'max': 7}
+100% (3 of 3) |######################################| Elapsed Time: 0:00:01 Time:  0:00:01
+testing video color centrality
+  0% (0 of 3) |                                      | Elapsed Time: 0:00:00 ETA:  --:--:--Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+NEARBY CENTER PERCENTAGE: 96.80 %
+CENTRALITY: 290.90 %
+ 33% (1 of 3) |############                          | Elapsed Time: 0:00:02 ETA:   0:00:05Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+NEARBY CENTER PERCENTAGE: 96.78 %
+CENTRALITY: 387.16 %
+ 66% (2 of 3) |#########################             | Elapsed Time: 0:00:04 ETA:   0:00:02Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7fbf932e0550>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 400, in match_module_callback
+    self._make_module_from_path(filepath)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 515, in _make_module_from_path
+    module = module_class(filepath, prefix, user_api, internal_api)
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 608, in __init__
+    self._get_extra_info()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 664, in _get_extra_info
+    self.threading_layer = self.get_threading_layer()
+  File "/usr/local/lib/python3.9/dist-packages/threadpoolctl.py", line 668, in get_threading_layer
+    threading_layer = self._dynlib.openblas_get_parallel()
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/local/lib/python3.9/dist-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-742d56dc.3.20.so: undefined symbol: openblas_get_parallel
+NEARBY CENTER PERCENTAGE: 96.76 %
+CENTRALITY: 194.84 %
+100% (3 of 3) |######################################| Elapsed Time: 0:00:05 Time:  0:00:05
+temporary directory: /dev/shm/medialang/get_effective_fps/95a1de8a-137b-4591-b1f8-cfe27b0eb5ac
+converting video file to 15fps mp4
+ffmpeg version git-2022-09-11-60d8c20 Copyright (c) 2000-2022 the FFmpeg developers
+  built with gcc 9 (Debian 9.3.0-22)
+  configuration: --toolchain=hardened --arch=amd64 --enable-gpl --enable-nonfree --enable-pthreads --extra-libs=-lstdc++ --enable-cuda-nvcc --enable-cuvid --enable-nvenc --enable-shared --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --enable-libnpp --extra-ldflags=-L/usr/local/cuda/lib64 --disable-static --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libsrt --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared --enable-libopenh264 --enable-libtensorflow
+  libavutil      57. 36.101 / 57. 36.101
+  libavcodec     59. 42.104 / 59. 42.104
+  libavformat    59. 30.101 / 59. 30.101
+  libavdevice    59.  8.101 / 59.  8.101
+  libavfilter     8. 48.100 /  8. 48.100
+  libswscale      6.  8.112 /  6.  8.112
+  libswresample   4.  9.100 /  4.  9.100
+  libpostproc    56.  7.100 / 56.  7.100
+Input #0, gif, from '/dev/shm/medialang/online_test/video_[giphy_MDb3kNYYKOAQgqmQ3D]_[480x270].gif':
+  Duration: 00:00:21.64, start: 0.000000, bitrate: 453 kb/s
+  Stream #0:0: Video: gif, bgra, 480x270, 22.67 fps, 25 tbr, 100 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (gif (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x55cb1c1989c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55cb1c1989c0] profile High 4:4:4 Predictive, level 2.1, 4:4:4, 8-bit
+[libx264 @ 0x55cb1c1989c0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=4 threads=8 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=15 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/dev/shm/medialang/get_effective_fps/cc244356-36d1-413d-9fda-573a17412f7d.mp4':
+  Metadata:
+    encoder         : Lavf59.30.101
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv444p(tv, progressive), 480x270, q=2-31, 15 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc59.42.104 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=frame=   21 fps=0.0 q=27.0 size=       0kB time=00:00:01.20 bitrate=   0.3kbits/s speed=2.25frame=  112 fps=108 q=27.0 size=       0kB time=00:00:07.33 bitrate=   0.1kbits/s speed=7.08frame=  207 fps=134 q=27.0 size=       0kB time=00:00:13.60 bitrate=   0.0kbits/s speed=8.78frame=  316 fps=152 q=-1.0 Lsize=      83kB time=00:00:20.86 bitrate=  32.5kbits/s speed=10.1x    
+video:79kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 5.183992%
+[libx264 @ 0x55cb1c1989c0] frame I:2     Avg QP:17.66  size:  3992
+[libx264 @ 0x55cb1c1989c0] frame P:153   Avg QP:19.40  size:   316
+[libx264 @ 0x55cb1c1989c0] frame B:161   Avg QP:15.18  size:   147
+[libx264 @ 0x55cb1c1989c0] consecutive B-frames: 20.6% 26.6% 23.7% 29.1%
+[libx264 @ 0x55cb1c1989c0] mb I  I16..4:  0.4% 86.7% 12.9%
+[libx264 @ 0x55cb1c1989c0] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4:  3.6%  0.5%  0.5%  0.0%  0.0%    skip:95.3%
+[libx264 @ 0x55cb1c1989c0] mb B  I16..4: 25.7%  3.0%  0.0%  B16..8:  1.2%  0.2%  0.1%  direct: 0.4%  skip:69.3%  L0:49.6% L1:36.2% BI:14.2%
+[libx264 @ 0x55cb1c1989c0] 8x8 transform intra:13.8% inter:26.7%
+[libx264 @ 0x55cb1c1989c0] coded y,u,v intra: 0.6% 0.0% 0.0% inter: 1.4% 0.0% 0.0%
+[libx264 @ 0x55cb1c1989c0] i16 v,h,dc,p: 91%  1%  7%  0%
+[libx264 @ 0x55cb1c1989c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 59%  2% 38%  0%  0%  0%  0%  0%  0%
+[libx264 @ 0x55cb1c1989c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 34% 27% 15%  2%  4%  5%  5%  5%  3%
+[libx264 @ 0x55cb1c1989c0] Weighted P-Frames: Y:96.7% UV:0.0%
+[libx264 @ 0x55cb1c1989c0] ref P L0: 82.8%  4.6%  1.6%  3.9%  7.1%
+[libx264 @ 0x55cb1c1989c0] ref B L0: 77.1% 21.8%  1.1%
+[libx264 @ 0x55cb1c1989c0] ref B L1: 99.2%  0.8%
+[libx264 @ 0x55cb1c1989c0] kb/s:30.39
+b''
+convertion done
+video duration: [21.067]
+Taken time: 00:00:01
+START 8 END 8
+________WTF IS GOING ON________
+START 10 END 10
+________WTF IS GOING ON________
+START 27 END 27
+________WTF IS GOING ON________
+START 29 END 29
+________WTF IS GOING ON________
+START 40 END 40
+________WTF IS GOING ON________
+START 42 END 42
+________WTF IS GOING ON________
+START 53 END 53
+________WTF IS GOING ON________
+START 55 END 55
+________WTF IS GOING ON________
+START 57 END 57
+________WTF IS GOING ON________
+START 59 END 59
+________WTF IS GOING ON________
+START 72 END 72
+________WTF IS GOING ON________
+START 86 END 86
+________WTF IS GOING ON________
+START 88 END 88
+________WTF IS GOING ON________
+START 90 END 90
+________WTF IS GOING ON________
+START 101 END 101
+________WTF IS GOING ON________
+START 103 END 103
+________WTF IS GOING ON________
+START 105 END 105
+________WTF IS GOING ON________
+START 119 END 119
+________WTF IS GOING ON________
+START 121 END 121
+________WTF IS GOING ON________
+START 123 END 123
+________WTF IS GOING ON________
+START 133 END 133
+________WTF IS GOING ON________
+START 135 END 135
+________WTF IS GOING ON________
+START 137 END 137
+________WTF IS GOING ON________
+START 151 END 151
+________WTF IS GOING ON________
+START 155 END 155
+________WTF IS GOING ON________
+START 167 END 167
+________WTF IS GOING ON________
+START 169 END 169
+________WTF IS GOING ON________
+START 180 END 180
+________WTF IS GOING ON________
+START 182 END 182
+________WTF IS GOING ON________
+START 199 END 199
+________WTF IS GOING ON________
+START 201 END 201
+________WTF IS GOING ON________
+START 213 END 213
+________WTF IS GOING ON________
+START 215 END 215
+________WTF IS GOING ON________
+START 228 END 228
+________WTF IS GOING ON________
+START 230 END 230
+________WTF IS GOING ON________
+START 245 END 245
+________WTF IS GOING ON________
+START 247 END 247
+________WTF IS GOING ON________
+START 250 END 250
+________WTF IS GOING ON________
+START 260 END 260
+________WTF IS GOING ON________
+START 262 END 262
+________WTF IS GOING ON________
+START 264 END 264
+________WTF IS GOING ON________
+START 275 END 275
+________WTF IS GOING ON________
+START 277 END 277
+________WTF IS GOING ON________
+START 279 END 279
+________WTF IS GOING ON________
+START 293 END 293
+________WTF IS GOING ON________
+START 295 END 295
+________WTF IS GOING ON________
+START 297 END 297
+________WTF IS GOING ON________
+START 308 END 308
+________WTF IS GOING ON________
+START 310 END 310
+________WTF IS GOING ON________
+START 312 END 312
+________WTF IS GOING ON________
+INDEX 0 START 0.0666667 END 0.2
+INDEX 1 START 0.333333 END 0.4
+INDEX 2 START 0.8 END 0.866667
+INDEX 3 START 1.0 END 1.33333
+INDEX 4 START 1.46667 END 1.53333
+INDEX 5 START 2.06667 END 2.33333
+INDEX 6 START 2.46667 END 2.53333
+INDEX 7 START 2.93333 END 3.0
+INDEX 8 START 3.13333 END 3.4
+INDEX 9 START 4.06667 END 4.53333
+INDEX 10 START 4.93333 END 5.0
+INDEX 11 START 5.13333 END 5.6
+INDEX 12 START 6.26667 END 6.4
+INDEX 13 START 6.53333 END 6.6
+INDEX 14 START 7.13333 END 7.2
+INDEX 15 START 7.33333 END 7.6
+INDEX 16 START 7.73333 END 7.8
+INDEX 17 START 8.33333 END 8.73333
+INDEX 18 START 9.26667 END 9.33333
+INDEX 19 START 9.46667 END 9.73333
+INDEX 20 START 9.86667 END 9.93333
+INDEX 21 START 10.4667 END 10.8
+INDEX 22 START 10.9333 END 11.0
+INDEX 23 START 11.4 END 11.4667
+INDEX 24 START 11.6 END 11.8667
+INDEX 25 START 12.3333 END 12.4
+INDEX 26 START 12.5333 END 13.0
+INDEX 27 START 13.5333 END 14.0667
+INDEX 28 START 14.4667 END 14.5333
+INDEX 29 START 14.6667 END 15.0667
+INDEX 30 START 15.4667 END 15.5333
+INDEX 31 START 15.6667 END 16.2
+INDEX 32 START 16.8 END 17.2
+INDEX 33 START 17.7333 END 17.8
+INDEX 34 START 17.9333 END 18.2
+INDEX 35 START 18.7333 END 18.8
+INDEX 36 START 18.9333 END 19.2
+INDEX 37 START 19.3333 END 19.4
+INDEX 38 START 19.9333 END 20.4
+INDEX 39 START 20.9333 END 21.0
+DUPLICATE PERCENTAGE: 39.24 %
+FRAME DUPLICATE PERCENTAGE: 67.72 %
+EFFECTIVE FPS: 10.16 %
+cleaning tempdir: /dev/shm/medialang/get_effective_fps/95a1de8a-137b-4591-b1f8-cfe27b0eb5ac
+> /media/root/parrot/pyjom/tests/unittest_online_topic_generator_giphy.py(43)<module>()
+-> for elem in newElems:
+(Pdb) exit()
