@@ -130,6 +130,7 @@ def ffmpegVideoPreProductionFilter(
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
+    MAX_INT=999999
     commandValueMap = {
         "empty": -1,
         "delogo": 0,
