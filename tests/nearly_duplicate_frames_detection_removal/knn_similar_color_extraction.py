@@ -102,12 +102,12 @@ print(sampleIndexs.shape)
 
 sample_size = len(sampleIndexs)
 
-sample = indexs[sampleIndexs]
+sample = coords[sampleIndexs]
 sample = reshapedImage[sample, :]
 print(sample)
 print(sample.shape)
 
-breakpoint()
+# breakpoint()
 sampleCoords = coords[sampleIndexs]
 sample = np.hstack([sample, sampleCoords])
 print(sample)
