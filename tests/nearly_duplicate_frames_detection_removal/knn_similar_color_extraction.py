@@ -17,7 +17,9 @@
 
 # now the 八点半配音
 src = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
-src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
+
+
+# src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
 
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
