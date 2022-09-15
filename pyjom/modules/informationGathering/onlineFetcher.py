@@ -25,7 +25,8 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
                     if result:
                         yield source_id, download_path
                     else:
-                        
+                        print("WTF IS GOING ON WITH THE DOWNLOADER?")
+                        breakpoint()
                 except:
                     import traceback
                     traceback.print_exc()
