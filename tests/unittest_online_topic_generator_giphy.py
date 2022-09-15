@@ -87,7 +87,7 @@ with tmpdir(path=tmpPath) as testDir:
                     print("%s filter:" % flag, mFilter)
                     break
             if not valid:
-                print("abandon due to invalid")
+                print("abandon video:",)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
