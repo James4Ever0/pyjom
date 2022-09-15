@@ -84,7 +84,7 @@ coords = []
 
 for c0 in range(col_0):
     for c1 in range(col_1):
-        coords.append((c0,c1))
+        coords.append((c0/col_0,c1/col_1))
 
 coords = np.array(coords)
 
