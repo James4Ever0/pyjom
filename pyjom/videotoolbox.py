@@ -1242,9 +1242,10 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
                 print("INDEX", i, "START", s, "END", e)
             print("DUPLICATE PERCENTAGE: {:.2f} %".format(dupPercent * 100))
             print("FRAME DUPLICATE PERCENTAGE: {:.2f} %".format(frameDupPercent * 100))
+            print('EFFECTIVE FPS: {:.2f} %'.format(effectiveFPS)
         else:
             print("dframes2 is None")
-
+            effectiveFPS = 15
 ####################
         return effectiveFPS
 
