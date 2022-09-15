@@ -1422,6 +1422,6 @@ def getVideoColorCentrality(videoPath, denoise=True, frame_sample_limit=3, **kwa
         )
         yield centrality, max_nearby_center_percentage
 
-def checkVideoColorCentrality(videoColorCentralityGenerator, video_color_filter:dict={'centrality':{'max':6},"max_nearby_center_percentage":{'}'}):
+def checkVideoColorCentrality(videoColorCentralityGenerator, video_color_filter:dict={'centrality':{'max':6},"max_nearby_center_percentage":{'max':5}):
     for centrality, max_nearby_center_percentage in videoColorCentralityGenerator:
-        a = 
+        a = checkMinMaxDict(centrality, )
