@@ -8,11 +8,12 @@
 # let's try some cats.
 
 # the filter: removegrain
-# src = "/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp"  # use some filter first, or rather not to?
+src = "/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp"  # use some filter first, or rather not to?
 # CENTER: [1.37254902 2.34313725 9.46078431]
 # POSITIVE COUNT: 2600
 # SUM: 7800.0 MIN: 0 MAX: 3
 # NEARBY CENTER PERCENTAGE: 3.91 %
+# 
 
 # now the 八点半配音
 src = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
@@ -20,7 +21,7 @@ src = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
 # POSITIVE COUNT: 222893
 # SUM: 668679.0 MIN: 0 MAX: 3
 # NEARBY CENTER PERCENTAGE: 37.79 %
-# 
+# CENTRALITY: 39.10 %
 # likely to be the blue.
 
 # src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
