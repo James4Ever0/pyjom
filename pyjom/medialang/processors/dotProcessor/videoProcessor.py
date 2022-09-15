@@ -105,6 +105,7 @@ def ffmpegVideoPreProductionFilter(
 
     def scaleFilterWithStringParams(stream, commandString):
         filterName = commandString.split("_")[0]
+        
         filterCommandString = commandString.replace("{}_".format(filterName),"")
         args, kwargs = filterCommandStringParser(filterCommandString)
         return stream.filter(
