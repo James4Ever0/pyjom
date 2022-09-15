@@ -98,9 +98,9 @@ def ffmpegVideoPreProductionFilter(
     if "superResolution" in filters:
         mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos":[(start, end)]})
     if "minterpolate" in filters:
-        "minterpolate", mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos":[(start, end)]})
+        mDict.update({"minterpolate":[(start, end)]})
     if "denoising" in filters:
-        pass
+        mDict.update({"minterpolate":[(start, end)]})
 
     pipCropDicts = None
     if "pipCrop" in filters:
