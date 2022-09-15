@@ -1383,7 +1383,7 @@ def getEffectiveFPS(
                 print("INDEX", i, "START", s, "END", e)
             print("DUPLICATE PERCENTAGE: {:.2f} %".format(dupPercent * 100))
             print("FRAME DUPLICATE PERCENTAGE: {:.2f} %".format(frameDupPercent * 100))
-            effectiveFPS = (1-frameDupPercent) * conversionFPS
+            effectiveFPS = (1 - frameDupPercent) * conversionFPS
             debugInfo = {
                 "binarized_frame_keep_drop_flags": binarizedRange,
                 "frame_list_with_pts_and_flag": mList,
@@ -1432,16 +1432,17 @@ def checkVideoColorCentrality(
     },
 ):
     for centrality, max_nearby_center_percentage in videoColorCentralityGenerator:
-        d_a= video_color_filter.get("centrality", {})
-        d_b=video_color_filter.get("max_nearby_center_percentage", {})
-        a = checkMinMaxDict(centrality,d_a)
+        d_a = video_color_filter.get("centrality", {})
+        d_b = video_color_filter.get("max_nearby_center_percentage", {})
+        a = checkMinMaxDict(centrality, d_a)
         b = checkMinMaxDict(
             max_nearby_center_percentage,
             d_b,
         )
         print("DICT A", d_a)
         print("DICT B", d_b)
-        print("FLAG A",a,"FLAG B",b )
+        print("FLAG A", a, "FLAG B", b)
+        breakpoint()
         flag = a and b
         if not flag:
             return False
