@@ -234,8 +234,8 @@ def detectTextRegionOverTime(
         mConvList = detectionList[rangeStart:rangeEnd]
         mergedRects = getMergedRects(mConvList, width, height)
         if top_k >0:
-            mergedRects.sort(key = lambda diagonalRect: -getDiagonalRectArea(diagonalRect)) # this is diagonal.
-
+            mergedRects.sort(key = lambda diagonalRect: -getDiagonalRectArea)(diagonalRect)) # this is diagonal.
+            mergedRects = mergedRects[:top_k]
         finalRectList.append(mergedRects.copy())
 
     newFinalRectList = mergeAlikeRegions(finalRectList, mergeThreshold)
