@@ -9,14 +9,14 @@ from typing import Literal
 def removeKeywordDuplicates(keywords):
     if type(keywords) == str:
         keywordsList = keywords.split(" ")
-        keywordsSet = set(keywordsList)
-
     elif type(keywords) in [list, tuple]:
         keywordsList = list(keywords)
-        return list(keywordsSet)
     else:
         raise Exception("Unknown keywords type: %s" % type(keywords))
     keywordsSet = set(keywordsList)
+    keywordsSetList = list(keywordsSet)
+    
+
 
 
 
