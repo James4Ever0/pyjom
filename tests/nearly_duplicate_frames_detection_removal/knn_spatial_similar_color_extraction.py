@@ -85,11 +85,12 @@ if use_spatial:
 
     coords = []
 
-    bias = 2
+    bias_0 = 2
+    bias_1 = 2
 
     for c0 in range(col_0):
         for c1 in range(col_1):
-            coords.append((bias*c0/col_0,bias*c1/col_1))
+            coords.append((bias_0*c0/col_0,bias_1*c1/col_1))
 
     coords = np.array(coords)
 
