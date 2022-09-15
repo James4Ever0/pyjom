@@ -1421,3 +1421,5 @@ def getVideoColorCentrality(videoPath, denoise=True, frame_sample_limit=3, **kwa
             frame, **kwargs
         )
         yield centrality, max_nearby_center_percentage
+
+def checkVideoColorCentrality()
