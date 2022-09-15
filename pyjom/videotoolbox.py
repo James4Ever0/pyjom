@@ -1254,7 +1254,7 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
             effectiveFPS = conversionFPS
             dframes = []
 ####################
-        return effectiveFPS
+        return effectiveFPS, dframes
 
 # this is a generator, not a list!
 def getVideoColorCentrality(videoPath,
