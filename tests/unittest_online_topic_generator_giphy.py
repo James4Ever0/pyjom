@@ -44,7 +44,7 @@ with tmpdir(path=tmpPath) as testDir:
             duration_valid = checkMinMaxDict(duration, {'min':0.6, 'max':7}
             if duration_valid:
             else:
-                print("skipping ")
+                print("skipping due to invalid duration: %s" % duration)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
