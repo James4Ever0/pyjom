@@ -103,13 +103,13 @@ def ffmpegVideoPreProductionFilter(
         # process the video, during that duration. fast seek avaliable?
         mDict.update(detectTextRegionOverTime(filepath, start, end))
         # pass
-
+    pipCrop = None
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
         # also it will affect parameters of logoRemoval.
-        pipCropDicts
+        pipCropDicts = detectPipRegionOverTime(filepath, start, end)
         mDict.update(
-            detectPipRegionOverTime(filepath, start, end)
+            pipCropDicts
         )  # using default settings?
         # pass
     if "logoRemoval" in filters:
