@@ -81,7 +81,7 @@ for center in cluster_centers:
     # print(output.shape)
     mOutput = output.reshape(-1, 3)
     mOutput = np.sum(mOutput, axis=1)
-    mSum = 
+    mSum = sum(mOutput)
     positive_count = np.count_nonzero(mOutput == 3)
     percent = positive_count/len(mOutput)
     # print(mOutput)
@@ -89,4 +89,5 @@ for center in cluster_centers:
     # breakpoint()
     print("CENTER:",center_int)
     print('POSITIVE COUNT:', positive_count)
+    print("SUM:", mSum)
     print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(percent*100))
