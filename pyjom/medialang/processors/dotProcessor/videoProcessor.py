@@ -111,7 +111,7 @@ def ffmpegVideoPreProductionFilter(
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
-    if "pipCrop" in filters:
+    if "pipCrop" in filters: # pipcrop shall go after the logoRemoval shit.
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
         mDict.update(
             detectPipRegionOverTime(filepath, start, end)
