@@ -16,7 +16,7 @@ flag = 'topic_with_fetcher'
 with tmpdir(path=path) as testDir:
     print("TESTDIR:", testDir)
     if flag == 'only_topic_generator':
-        print("HERE??",1)
+        # print("HERE??",1)
         for asset_id, meta in elems:
             print("X", asset_id, meta)
             url = meta["url"]
@@ -32,8 +32,8 @@ with tmpdir(path=path) as testDir:
             # seems good. now we check the cat/dog.
     elif flag == 'topic_with_fetcher':
         sprint("checking online fetcher")
-        print("HERE??",2)
-        newElems, label = OnlineFetcher(elems)
+        # print("HERE??",2)
+        newElems, label = OnlineFetcher(elems, tempdir=tmpdir)
         for elem in newElems:
             sprint(elem)
             breakpoint()
