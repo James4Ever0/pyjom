@@ -61,7 +61,7 @@ with tmpdir(path=tmpPath) as testDir:
                 [get_duration, duration_filter, checkMinMaxDict,"duration", ],
                 [get_fps_float, fps_filter, checkMinMaxDict,"fps", ],
                 [getVideoColorCentrality, video_color_filter, "video_color_centrality"],
-                [get, video_color_filter, "vi"],
+                [getEffectiveFPS, video_effective_fps_filter, "EffectiveFPS"],
             ]
             for function, mFilter,filterFunc, flag in mList:
                 mValue = function(local_video_location)
