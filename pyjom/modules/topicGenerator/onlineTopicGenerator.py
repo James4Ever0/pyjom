@@ -11,7 +11,7 @@ def removeKeywordDuplicates(keywords):
         keywordsList = keywords.split(" ")
     elif type(keywords) in [list, tuple]:
     else:
-        raise Exception("Keywords must be i)
+        raise Exception("Unknown keywords type: %s" % type(keywords))
 
 
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
