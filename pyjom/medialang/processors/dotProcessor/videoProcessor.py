@@ -129,7 +129,7 @@ def ffmpegVideoPreProductionFilter(
         # dual safe? no?
         flag = pipCropDicts == None
         stationaryLogoDicts = detectStationaryLogoOverTime(
-            filepath, start, end, cornersOnly=flag
+            filepath, start, end, pipCropDicts
         )
         if not flag:
             # reprocess these things. really?
