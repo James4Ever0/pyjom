@@ -72,13 +72,13 @@
 # CENTRALITY: 36.55 %
 # likely to be the blue.
 
-# src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
+src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
 # multiple centers.
 # CENTER: [246.76865924 226.40763256 216.41472476]
 # POSITIVE COUNT: 95497
 # SUM: 286491.0 MIN: 0 MAX: 3
-# NEARBY CENTER PERCENTAGE: 10.36 %
-# CENTRALITY: 24.79 %
+# NEARBY CENTER PERCENTAGE: 6.74 %
+# CENTRALITY: 7.32 %
 
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
