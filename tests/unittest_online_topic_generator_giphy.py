@@ -11,7 +11,7 @@ sprint("LABEL:", label)
 # breakpoint()
 path = "/dev/shm/medialang/online_test"
 import os
-flag = 'topic_with_fetchers'
+flag = 'topic_with_fetcher'
 
 with tmpdir(path=path) as testDir:
     print("TESTDIR:", testDir)
@@ -37,6 +37,6 @@ with tmpdir(path=path) as testDir:
         for elem in newElems:
             sprint(elem)
             breakpoint()
-    print("HERE??",3)
-    print('topic', flag)
+    # print("HERE??",3)
+    # print('flag', flag)
     
