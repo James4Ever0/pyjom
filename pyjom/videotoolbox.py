@@ -321,11 +321,9 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
         ]
         return fourCorners
     if cornersOnly:
-            defaultFourCorners = getFourCorners(0,0,defaultWidth,defaultHeight)
-
+        defaultFourCorners = getFourCorners(0,0,defaultWidth,defaultHeight)
         if pipCropDicts in [None, {}]:
-            fourCorners = getFourCorners(0,0,defaultWidth,defaultHeight)
-        else:
+            fourCorners = defaultFourCorners
     ###########
     import sys
     import os
