@@ -106,7 +106,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     if stopFrame <=0:
         stopFrame = total_frames
     if stopFrame <= startFrame:
-        print("some fuck going on with the video frame sampler")
+        print("some fuck is going on with the video frame sampler")
         breakpoint()
     import progressbar
 
@@ -1002,7 +1002,7 @@ def getVideoColorCentrality(videoPath,
     denoise=True,
     frame_sample_limit=3,
     **kwargs):
-    videoFrameSampler = getVideoFrameSampler(videoPath, start, end, )
+    videoFrameSampler = getVideoFrameSampler(videoPath, -1,-1, )
     for frame in videoFrameSampler:
         centrality,max_nearby_center_percentage = getImageColorCentrality(frame, **kwargs)
         yield centrality,max_nearby_center_percentage
