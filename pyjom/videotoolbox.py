@@ -1007,11 +1007,6 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
         from typing import Union
 
         # this shit is ridiculus.
-        import sys
-        import os
-
-        os.chdir("../../../")
-        sys.path.append(".")
         from pyjom.commons import ffprobe_media_info, extract_span
 
 
