@@ -319,7 +319,7 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
             [(defaultWidth-deltaWidth, defaultHeight-deltaHeight),(defaultWidth, defaultHeight)],
             [(0,defaultHeight-deltaHeight),(deltaWidth, defaultHeight)]
         ]
-        fourCorners = [[(a,b),(c,d)] for [(a,b),(c,d)] in fourCorners]
+        fourCorners = [[(a+x,b+y),(c+x,d+y)] for [(a,b),(c,d)] in fourCorners]
         return fourCorners
     if cornersOnly:
         defaultFourCorners = getFourCorners(0,0,defaultWidth,defaultHeight)
