@@ -212,7 +212,7 @@ def ffmpegVideoPreProductionFilter(
                 elif "=" in renderCommand:
                     stream = stream.filter()
                 else:
-                        
+                    # non standard filter formats below. be warned.
                     for prefix, keyword in [
                         ("{}_".format(k), k) for k in ["delogo", "crop"]
                     ]:
