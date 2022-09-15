@@ -41,6 +41,5 @@ print(sample.shape)
 from sklearn.cluster import KMeans
 kmeans = KMeans(n_clusters=2, random_state=0).fit(X)
 labels = kmeans.labels_
->>> kmeans.cluster_centers_
-array([[10.,  2.],
-       [ 1.,  2.]])
+kmeans.cluster_centers_
+cluster_centers =
