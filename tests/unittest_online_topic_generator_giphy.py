@@ -38,12 +38,12 @@ with tmpdir(path=tmpPath) as testDir:
             sprint(elem)
             (item_id, local_video_location) = elem
             # what is the freaking response?
-            from caer.video.frames_and_fps import get_duration
+            from caer.video.frames_and_fps import get_duration, get_fps_float
             duration = get_duration(local_video_location)
             from pyjom.commons import checkMinMaxDict
             duration_filter =  {'min':0.6, 'max':7}
             fps_filter =  {'min':7, 'max':60}
-            fps = 
+            fps_float = get_fps_float()
             duration_valid = checkMinMaxDict(duration,duration_filter)
             fps_valid = checkMinMaxDict(fps,fps_filter)
             if duration_valid:
