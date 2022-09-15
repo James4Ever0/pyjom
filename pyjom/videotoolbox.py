@@ -513,39 +513,39 @@ def detectStationaryLogoOverTime(
         boundingRects.append(currentRect.copy())
     print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
     for index, (mStart, mEnd) in enumerate(start_end_list):
-    for currentRect in boundingRects:
-        if cornersOnly:
-            if fourCorners is not None:
-                for cornerRect in fourCorners:
-                    overlapRect = getOverlapRect(currentRect, cornerRect)
-                    if overlapRect:
-                        (x0, y0), (x1, y1) = overlapRect
-                        x, y, w, h = x0, y0, x1 - x0, y1 - y0
-                        area = w * h
-                        if area < areaThreshold:
-                            continue
-                        delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
-                        # print(delogoCommand)
-                        # print('width:{} height:{}'.format(b,a))
-                        mFinalDelogoFilters.append(delogoCommand)
+        for currentRect in boundingRects:
+            if cornersOnly:
+                if fourCorners is not None:
+                    for cornerRect in fourCorners:
+                        overlapRect = getOverlapRect(currentRect, cornerRect)
+                        if overlapRect:
+                            (x0, y0), (x1, y1) = overlapRect
+                            x, y, w, h = x0, y0, x1 - x0, y1 - y0
+                            area = w * h
+                            if area < areaThreshold:
+                                continue
+                            delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
+                            # print(delogoCommand)
+                            # print('width:{} height:{}'.format(b,a))
+                            mFinalDelogoFilters.append(delogoCommand)
+            else:
+                [(x, y), (x_w, y_h)] = currentRect
+                w = x_w-x
+                h = y_h-y
+                area = w * h
+                if area < areaThreshold:
+                    continue
+                delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
+                mFinalDelogoFilters.append(delogoCommand)
+            # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
+            # cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
+        # get the final dictionary
+        if len(mFinalDelogoFilters) == 0:
+            value = {}
         else:
-            [(x, y), (x_w, y_h)] = currentRect
-            w = x_w-x
-            h = y_h-y
-            area = w * h
-            if area < areaThreshold:
-                continue
-            delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
-            mFinalDelogoFilters.append(delogoCommand)
-        # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
-        # cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
-    # get the final dictionary
-    if len(mFinalDelogoFilters) == 0:
-        value = {}
-    else:
-        delogoCommandSet = "|".join(mFinalDelogoFilters)
-        value = {delogoCommandSet: [(start, end)]} # can it be turned into something useful?
-    delogoCommandList.append(value)
+            delogoCommandSet = "|".join(mFinalDelogoFilters)
+            value = {delogoCommandSet: [(mStart, mEnd)]} # can it be turned into something useful?
+        delogoCommandList.append(value)
 
 
 def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8):
