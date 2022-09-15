@@ -60,7 +60,8 @@ with tmpdir(path=tmpPath) as testDir:
                 [fps_float, fps_filter, "fps", ],
                 []
             ]
-            for mValue, mFilter, flag in mList:
+            for mFilter, flag in mList:
+                mValue = function()
                 valid = checkMinMaxDict(mValue, mFilter)
                 if not valid:
                     print("skipping due to invalid %s: %s" % (flsg, fps_float))
