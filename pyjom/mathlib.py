@@ -12,6 +12,9 @@ def uniq(mList, ordered=True, random=False):
                 result.append(elem)
     else:
         result = list(set(mList))
+    if random:
+        import random
+        random.shuffle(result)
 
 def get1DArrayEMA(mArray, N=5):
     weights = np.exp(np.linspace(0, 1, N))
