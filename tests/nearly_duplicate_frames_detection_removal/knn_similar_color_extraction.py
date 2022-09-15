@@ -107,6 +107,8 @@ sampleIndexs = indexs[sample]
 print(sample)
 print(sample.shape)
 
+sample = 
+
 # now cluster shit shall we?
 # from sklearn.neighbors import NearestNeighbors
 # neigh = NearestNeighbors(n_neighbors=5)
