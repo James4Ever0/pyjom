@@ -1,7 +1,8 @@
 from pyjom.commons import *
 import numpy as np
 
-def getColorCentrality(image,):
+    
+def getColorCentrality(image,sample_size_limit = 5000):
     # image is of numpy.array
     # multiple centers.
     # CENTER: [246.76865924 226.40763256 216.41472476]
@@ -35,7 +36,6 @@ def getColorCentrality(image,):
     reshapedImage = image.reshape(-1, 3)  # are you sure about this?
     length, depth = reshapedImage.shape
 
-    sample_size_limit = 5000
 
     reshapedImageIndexs = np.arange(0, length)
     # so now it is good.
