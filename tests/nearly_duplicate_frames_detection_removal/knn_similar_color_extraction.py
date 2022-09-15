@@ -109,7 +109,7 @@ print(sample.shape)
 
 # breakpoint()
 sampleCoords = coords[sampleIndexs]
-sample = np.hstack([sample, sampleCoords])
+sample = np.vstack([sample, sampleCoords])
 print(sample)
 print(sample.shape)
 breakpoint()
