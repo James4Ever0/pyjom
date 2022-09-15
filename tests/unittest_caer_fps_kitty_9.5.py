@@ -11,3 +11,5 @@ cv2_libs = sorted(cv2_libs_dir.glob("*.so"))
 if len(cv2_libs) == 1:
     print("INSERTING:", cv2_libs[0].parent)
     sys.path.insert(1, str(cv2_libs[0].parent))
+
+from caer.video.frames_and_fps import get_fps
