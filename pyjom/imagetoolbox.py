@@ -2,7 +2,9 @@ from pyjom.commons import *
 import numpy as np
 
     
-def getColorCentrality(image,sample_size_limit = 5000):
+    n_clusters = 5
+    batch_size = 45
+def getColorCentrality(image,sample_size_limit = 5000,):
     # image is of numpy.array
     # multiple centers.
     # CENTER: [246.76865924 226.40763256 216.41472476]
@@ -71,7 +73,6 @@ def getColorCentrality(image,sample_size_limit = 5000):
     # from sklearn.cluster import KMeans
     X = sample
     # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
-    n_clusters = 5
     kmeans = MiniBatchKMeans(
         init="k-means++",
         n_clusters=n_clusters,
