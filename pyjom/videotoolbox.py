@@ -1432,10 +1432,12 @@ def checkVideoColorCentrality(
     },
 ):
     for centrality, max_nearby_center_percentage in videoColorCentralityGenerator:
-        a = checkMinMaxDict(centrality, video_color_filter.get("centrality", {}))
+        d_a= video_color_filter.get("centrality", {})
+        d_b=video_color_filter.get("max_nearby_center_percentage", {})
+        a = checkMinMaxDict(centrality,d_a)
         b = checkMinMaxDict(
             max_nearby_center_percentage,
-            video_color_filter.get("max_nearby_center_percentage", {}),
+            d_b,
         )
         print("DICT A", d_a)
         print("DICT B", d_b)
