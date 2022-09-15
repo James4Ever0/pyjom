@@ -8,6 +8,5 @@ import cv2
 from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
-# print(image.shape)
-# colors = image[:,:,:]
-# print(colors)
+
+cv2.im
