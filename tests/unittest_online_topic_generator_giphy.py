@@ -38,8 +38,8 @@ with tmpdir(path=tmpPath) as testDir:
             sprint(elem)
             # (item_id, local_location)
             # what is the freaking response?
-            from caer.video.
-            duration = 
+            from caer.video.frames_and_fps import get_duration
+            duration = get_duration(video)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
