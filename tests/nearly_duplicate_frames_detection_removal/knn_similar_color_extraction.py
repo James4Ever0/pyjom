@@ -19,9 +19,11 @@ if shape[2] !=3:
 reshapedImage = image.reshape(-1,3) # are you sure about this?
 length, depth = reshapedImage.shape
 
+sample_size_limit = 5000
+
 reshapedImageIndexs = np.arange(0, length)
 # so now it is good.
-sample = np.random.choice(reshapedImageIndexs,size=min(5000, length))
+sample = np.random.choice(reshapedImageIndexs,size=min(sample_size_limit, length))
 print(sample)
 print(sample.shape)
 
