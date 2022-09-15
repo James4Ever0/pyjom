@@ -108,10 +108,10 @@ print(sample)
 print(sample.shape)
 
 # breakpoint()
-sampleCoords = coords[sampleIndexs]
-sample = np.hstack([sample, sampleCoords])
-print(sample)
-print(sample.shape)
+# sampleCoords = coords[sampleIndexs]
+# sample = np.hstack([sample, sampleCoords])
+# print(sample)
+# print(sample.shape)
 # breakpoint()
 # warning: OOM?
 # now cluster shit shall we?
