@@ -11,6 +11,7 @@ from pyjom.imagetoolbox import *
 def getEffectiveFPS(videoPath, convert_fps_target=15):
     return effectiveFPS
 
+def getVideoColorCentrality(videoPath,)
 
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
