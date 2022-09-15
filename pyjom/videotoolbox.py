@@ -1228,10 +1228,8 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         # shit. wtf is going on?
         # now it is good. no reply for dog_with_text.mp4 with strictest settings.
 
-        mpdecimate_args_choices = [None, "hi=1:lo=1:frac=1:max=0", "hi=200:lo=200:frac=1:max=0"]
-
         result = mpdecimate_export_duplicate_clip_ranges(
-            source, mpdecimate_args=mpdecimate_args
+            source, mpdecimate_args=mpdecimate_args_choice
             # ,video_size="480x480"
         )
 
