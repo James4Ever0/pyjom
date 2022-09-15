@@ -89,7 +89,7 @@ def ffmpegVideoPreProductionFilter(
         )
 
     # TODO: FIX THIS SHIT!
-    raise Exception("TODO: FIX THIS SHIT!")
+    # raise Exception("TODO: FIX THIS SHIT!")
 
     # these things are ordered to be the last ones. just flags.
     if "randomFlip" in filters:
