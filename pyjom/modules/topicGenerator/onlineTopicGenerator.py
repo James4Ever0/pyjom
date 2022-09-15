@@ -105,6 +105,8 @@ def OnlineTopicGenerator(
                     print("REFRESHING KEYWORDS:", keywords)
                 else:
                     keywords = getKeywords()
+                # recheck keywords!
+                
             except:
                 import traceback
 
