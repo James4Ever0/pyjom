@@ -544,7 +544,7 @@ def detectStationaryLogoOverTime(
         return {}
     else:
         delogoCommandSet = "|".join(mFinalDelogoFilters)
-        return {delogoCommandSet: [(start, end)]}
+        delogoCommandDict.update({delogoCommandSet: [(start, end)]}
 
 
 def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8):
