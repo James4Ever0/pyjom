@@ -1025,30 +1025,32 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         ):
             flag_vaapi = False  # not using vaapi.
             flag_vaapi_decimate = False
+            
+        
 
-            from MediaInfo import MediaInfo
-
-            info = MediaInfo(filename=filepath).getInfo()
-            # cannot get shit from this.
-            # print(info.keys())
-            # breakpoint()
-            videoDuration = None
             else:
-            if type(info) == dict:
-                videoDuration = info.get("videoDuration", info.get("duration", None))
-            if videoDuration is not None:
-                videoDuration = float(videoDuration)
-            else:
-                info = ffprobe_media_info(filepath, video_size=video_size)
-                try:
-                    videoDuration = info["streams"][0]["duration"]  # sure it is gif.
-                except:
-                    import traceback
+                from MediaInfo import MediaInfo
 
-                    traceback.print_exc()
-                    print("Video duration not acquired.")
-                    print(info)
-                    breakpoint()
+                info = MediaInfo(filename=filepath).getInfo()
+                # cannot get shit from this.
+                # print(info.keys())
+                # breakpoint()
+                videoDuration = None
+                if type(info) == dict:
+                    videoDuration = info.get("videoDuration", info.get("duration", None))
+                if videoDuration is not None:
+                    videoDuration = float(videoDuration)
+                else:
+                    info = ffprobe_media_info(filepath, video_size=video_size)
+                    try:
+                        videoDuration = info["streams"][0]["duration"]  # sure it is gif.
+                    except:
+                        import traceback
+
+                        traceback.print_exc()
+                        print("Video duration not acquired.")
+                        print(info)
+                        breakpoint()
             print("video duration:", [videoDuration])
 
             def prof(s):
