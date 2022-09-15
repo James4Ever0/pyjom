@@ -71,7 +71,7 @@ label_percentage = {
 }
 
 flagged_image = image.copy()
-flagged_image = 1 # every element is 1 now.
+flagged_image[:,:,:] = 1 # every element is 1 now.
 for center in cluster_centers:
     # fetch area nearby given center
     center_int = center.astype(np.uint8)
@@ -85,7 +85,7 @@ for center in cluster_centers:
     mOutput = output.reshape(-1, 3)
     mOutput = np.sum(mOutput, axis=1)
     mSum = sum(mOutput)
-    breakpoint()
+    # breakpoint()
     positive_count = np.count_nonzero(mOutput == 3)
     percent = positive_count/len(mOutput)
     # print(mOutput)
