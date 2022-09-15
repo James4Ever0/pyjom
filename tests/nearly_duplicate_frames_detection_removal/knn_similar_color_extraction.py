@@ -70,7 +70,8 @@ label_percentage = {
     x: np.count_nonzero(labels == x) / sample_size for x in range(n_clusters)
 }
 
-
+flagged_image = image.copy()
+flagged_image = 1
 for center in cluster_centers:
     # fetch area nearby given center
     center_int = center.astype(np.uint8)
