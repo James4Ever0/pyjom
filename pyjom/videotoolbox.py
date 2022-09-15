@@ -11,7 +11,7 @@ def getEffectiveFPS(videoPath, convert_fps_target=15):
     return effectiveFPS
 
 def getColorCentrality(videoPath,):
-    src = videoPath
+    src = 
     # multiple centers.
     # CENTER: [246.76865924 226.40763256 216.41472476]
     # POSITIVE COUNT: 95497
