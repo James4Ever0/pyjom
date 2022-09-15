@@ -56,6 +56,7 @@ with tmpdir(path=tmpPath) as testDir:
             # fps_valid = checkMinMaxDict(fps_float,fps_filter)
             from videotoolbox import getVideoColorCentrality, getEffectiveFPS
             video_color_filter = {}
+            video_effective_fps_filter = {'min':7}
             valid = True
             mList = [
                 [get_duration, duration_filter, checkMinMaxDict,"duration", ],
