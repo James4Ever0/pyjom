@@ -102,7 +102,7 @@ print(sampleIndexs.shape)
 
 sample_size = len(sampleIndexs)
 
-sampleIndexs = indexs[sampleIndexs]
+sample = indexs[sampleIndexs]
 sample = reshapedImage[sample, :]
 print(sample)
 print(sample.shape)
