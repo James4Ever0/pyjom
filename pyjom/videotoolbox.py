@@ -21,7 +21,8 @@ def getVideoColorCentrality(videoPath,
     n_clusters=5,
     batch_size=45,
     max_no_improvement=10):
-    yield centrality,max_nearby_center_percentage}}
+    for frame in videoFrame
+    yield centrality,max_nearby_center_percentage
 
 
 def checkXYWH(XYWH, canvas, minArea=20):
