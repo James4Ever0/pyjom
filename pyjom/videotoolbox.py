@@ -233,8 +233,8 @@ def detectTextRegionOverTime(
         rangeStart, rangeEnd = max(0, rangeStart), min(maxListIndex, rangeEnd)
         mConvList = detectionList[rangeStart:rangeEnd]
         mergedRects = getMergedRects(mConvList, width, height)
-        if top_k >
-        mergedRects.sort(key = lambda diagonalRect: -getDiagonalRectArea(diagonalRect)) # this is diagonal.
+        if top_k >0:
+            mergedRects.sort(key = lambda diagonalRect: -getDiagonalRectArea(diagonalRect)) # this is diagonal.
 
         finalRectList.append(mergedRects.copy())
 
