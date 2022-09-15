@@ -15,4 +15,4 @@ if len(cv2_libs) == 1:
 from caer.video.frames_and_fps import get_fps
 
 fps = get_fps(src)
-print("FPS:", fps)
+print("FPS:", fps) # 10? very inaccurate for me
