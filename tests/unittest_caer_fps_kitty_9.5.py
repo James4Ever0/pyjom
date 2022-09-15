@@ -13,3 +13,6 @@ if len(cv2_libs) == 1:
     sys.path.insert(1, str(cv2_libs[0].parent))
 
 from caer.video.frames_and_fps import get_fps
+
+fps = get_fps(src)
+print("FPS:", fps)
