@@ -4,7 +4,10 @@
 from pykalman import KalmanFilter
 import numpy as np
 
-def uniq(mList, ordered=True, random=)
+def uniq(mList, ordered=True, random=False):
+    result = []
+    if ordered:
+
 
 def get1DArrayEMA(mArray, N=5):
     weights = np.exp(np.linspace(0, 1, N))
