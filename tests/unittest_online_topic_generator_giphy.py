@@ -33,4 +33,5 @@ with tmpdir(path=path) as testDir:
     elif flag == 'topic_with_fetcher':
         newElems, label = OnlineFetcher(elems)
         for elem in newElems:
-            print(elem)
+            sprint(elem)
+            breakpoint()
