@@ -32,8 +32,9 @@ print(sample.shape)
 
 # now cluster shit shall we?
 from sklearn.neighbors import NearestNeighbors
->>> neigh = NearestNeighbors(n_neighbors=2)
->>> neigh.fit(X)
+neigh = NearestNeighbors(n_neighbors=5)
+X = sample
+neigh.fit(X)
 NearestNeighbors(n_neighbors=2)
 >>> A = neigh.kneighbors_graph(X)
 >>> A.toarray()
