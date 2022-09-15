@@ -14,4 +14,4 @@ image = cv2.imread(src)
 # print(image.reshape(-1,3))
 reshapedImage = image.reshape(-1,3)
 # so now it is good.
-sample = mnp.random.choice(reshapedImage)
+sample = np.random.choice(reshapedImage)
