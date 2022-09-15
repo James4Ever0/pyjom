@@ -11,7 +11,7 @@ from pyjom.imagetoolbox import *
 def getEffectiveFPS(videoPath, convert_fps_target=15):
     return effectiveFPS
 
-# this is a generator, not a 
+# this is a generator, not a list!
 def getVideoColorCentrality(videoPath,
     denoise=True,
     frame_sample_limit=3,
