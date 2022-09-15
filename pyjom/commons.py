@@ -49,7 +49,7 @@ def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
     except:
         import traceback
         traceback.print_exc()
-        print("WTF IS GOING ON WITH CHECKMINMAX")
+        print("WTF IS GOING ON WITH CHECK_MIN_MAX_DICT")
         breakpoint()
 
 
