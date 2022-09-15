@@ -31,7 +31,8 @@ def ffmpegVideoPreProductionFilter(
         "randomFlip",
         "superResolution",
         "minterpolate",
-        "denoising",
+        "removegrain",
+        ""
     ],
     preview=True,
 ):  # what is the type of this shit?
