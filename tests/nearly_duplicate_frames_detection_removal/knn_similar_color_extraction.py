@@ -2,6 +2,8 @@
 
 src = "/root/Desktop/works/pyjom/samples/image/miku_on_green.png"
 # for this one we have double centers. fuck.
+# CENTRALITY: 181.80 %
+# it is off the charge!
 
 # with text. a meme.
 # src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
