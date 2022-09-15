@@ -57,11 +57,11 @@ with tmpdir(path=tmpPath) as testDir:
             from videotoolbox import getVideoColorCentrality
             valid = True
             mList = [
-                [get_duration, duration_filter, "duration", ],
-                [get_fps_float, fps_filter, "fps", ],
+                [get_duration, duration_filter, checkMinMaxDict,"duration", ],
+                [get_fps_float, fps_filter, checkMinMaxDict,"fps", ],
                 [getVideoColorCentrality, video_color_filter, "video_color_centrality"],
             ]
-            for function, mFilter, flag in mList:
+            for function, mFilter,filterFunc, flag in mList:
                 mValue = function(local_video_location)
                 valid = (mValue, mFilter)
                 if not valid:
