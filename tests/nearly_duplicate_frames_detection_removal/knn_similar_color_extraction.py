@@ -8,14 +8,15 @@
 # let's try some cats.
 
 # the filter: removegrain
-src = "/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp"  # use some filter first, or rather not to?
+# src = "/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp"  # use some filter first, or rather not to?
 
 # CENTER: [1.37254902 2.34313725 9.46078431]
 # POSITIVE COUNT: 2600
 # SUM: 7800.0 MIN: 0 MAX: 3
 # NEARBY CENTER PERCENTAGE: 3.91 %
 
-# now the 
+# now the 八点半配音
+src = ""
 
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
