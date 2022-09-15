@@ -76,8 +76,8 @@ epsilon = 0.01 # shit man.
 for center in cluster_centers:
     # fetch area nearby given center
     # center_int = center.astype(np.uint8)
-    upper = center_int + 5
-    lower = center_int - 5
+    upper = center + 5
+    lower = center - 5
     mask = cv2.inRange(image, lower, upper)
     # not image.
     output = cv2.bitwise_and(flagged_image, flagged_image, mask=mask)
