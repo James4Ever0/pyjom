@@ -2,12 +2,13 @@ from pyjom.commons import *
 import numpy as np
 import cv2
 
+
 def imageDenoise(image):
     shape = len(image.shape)
     if len(shape) == 3:
         if shape[2] == 3:
-        return cv2.fastNlMeansDenoisingColored(image,None,10,10,7,21)
-    return cv2.fastNlMeansDenoising(image, None,4,7,35)
+            return cv2.fastNlMeansDenoisingColored(image, None, 10, 10, 7, 21)
+    return cv2.fastNlMeansDenoising(image, None, 4, 7, 35)
 
 
 def getImageColorCentrality(
@@ -29,11 +30,11 @@ def getImageColorCentrality(
 
     # image = cv2.imread(src)
     shape = image.shape
-    if len(shape) > 3 or len(shape)<2:
+    if len(shape) > 3 or len(shape) < 2:
         print("weird image shape for getImageColorCentrality:", shape)
         breakpoint()
     if len(shape) == 2:
-        image = image.reshape(-1,-1,1)
+        image = image.reshape(-1, -1, 1)
     # for i in range(3):
     #     image[:,:,i] = i
 
@@ -58,7 +59,6 @@ def getImageColorCentrality(
     )
     # print(sampleIndexs)
     # print(sampleIndexs.shape)
-
 
     sample = reshapedImageIndexs[sampleIndexs]
     sample = reshapedImage[sample, :]
