@@ -47,8 +47,7 @@ with tmpdir(path=tmpPath) as testDir:
             duration_valid = checkMinMaxDict(duration,duration_filter)
             fps_valid = checkMinMaxDict(fps_float,fps_filter)
             checkInRange
-            def checkValid 
-            if duration_valid:
+            def checkValid
                 valid = checkMinMaxDict(mValue,mFilter)
                     print("skipping due to invalid %s: %s" % (flsg,fps_float))
                     print('%s filter:' % flag, fps_filter)
