@@ -38,3 +38,4 @@ print(sample.shape)
 # A.toarray()
 # print(A)
 # print(A.shape) # sparse matrix? wtf?
+from sklearn.cluster import KMeans
