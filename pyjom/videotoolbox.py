@@ -1048,8 +1048,8 @@ def getEffectiveFPS(
     ] = None,
 ):
     # use ffmpeg to covert the target first!
-    
-    with tmpdir(path=tempdir) as tempDirObj:
+
+    with tmpdir(path=tempdir,uuid.uuid4())) as tempDirObj:
         ####################
         #!/usr/bin/env python3
 
