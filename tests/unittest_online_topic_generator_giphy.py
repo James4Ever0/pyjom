@@ -54,7 +54,7 @@ with tmpdir(path=tmpPath) as testDir:
             # fps_float = get_fps_float(local_video_location)
             # duration_valid = checkMinMaxDict(duration,duration_filter)
             # fps_valid = checkMinMaxDict(fps_float,fps_filter)
-            from videotoolbox import getVideoColorCentrality
+            from videotoolbox import getVideoColorCentrality, getEffectiveFPS
             video_color_filter = {}
             valid = True
             mList = [
