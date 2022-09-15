@@ -6,8 +6,6 @@ from pyjom.mathlib import *
 import cv2
 from pyjom.imagetoolbox import *
 
-# import cv2
-
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
     x, y, w, h = XYWH
@@ -987,7 +985,6 @@ def detectPipRegionOverTime(
             updatedValueAlignedToSeconds.append((mStart, mEnd))
         finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
     return finalResultDict
-
 
 
 def getEffectiveFPS(videoPath, convert_fps_target=15):
