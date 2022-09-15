@@ -82,9 +82,11 @@ col_0, col_1 = shape[:2]
 
 coords = []
 
+bias = 2
+
 for c0 in range(col_0):
     for c1 in range(col_1):
-        coords.append((c0/col_0,c1/col_1))
+        coords.append((bias*c0/col_0,bias*c1/col_1))
 
 coords = np.array(coords)
 
