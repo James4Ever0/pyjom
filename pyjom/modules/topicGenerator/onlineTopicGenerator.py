@@ -9,7 +9,7 @@ from typing import Literal
 def removeKeywordDuplicates(keywords):
     keywordsType = type(keywords)
     entry = {str:lambda x: x.split(" "), list:lambda x: x, tuple: lambda x: list(x)}
-    output = {str: }
+    output = {str: lambda x: " ".join(x), list: lambda x: x}
     if keywordsType in entry.keys():
         keywordsList = entry[keywordsType]
     else:
