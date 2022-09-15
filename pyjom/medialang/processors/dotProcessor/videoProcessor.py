@@ -207,6 +207,8 @@ def ffmpegVideoPreProductionFilter(
                 if renderCommand == "empty":
                     # yeah we have failsafe.
                     continue
+                if "_" not in renderCommand:
+                    
                 for prefix, keyword in [
                     ("{}_".format(k), k) for k in ["delogo", "crop"]
                 ]:
