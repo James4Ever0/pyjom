@@ -36,7 +36,7 @@ with tmpdir(path=tmpPath) as testDir:
         newElems, label = OnlineFetcher(elems, tempdir=tmpPath)
         for elem in newElems:
             sprint(elem)
-            # (item_id, local_location)
+            (item_id, local_location) = elem
             # what is the freaking response?
             from caer.video.frames_and_fps import get_duration
             duration = get_duration(video)
