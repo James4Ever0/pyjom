@@ -3,7 +3,8 @@ import numpy as np
 import cv2
 
 def imageDenoiseColored(image):
-    return cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
+    if 
+    return cv2.fastNlMeansDenoisingColored(image,None,10,10,7,21)
 
 def getImageColorCentrality(
     image,
@@ -27,6 +28,7 @@ def getImageColorCentrality(
     if len(shape) > 3:
         print("weird shit.")
         breakpoint()
+    if len(shape) == 2:
     if shape[2] != 3:
         print("depth not right.")
         breakpoint()
