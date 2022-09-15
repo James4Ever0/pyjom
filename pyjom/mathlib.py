@@ -6,7 +6,10 @@ import numpy as np
 
 def uniq(mList, ordered=True, random=False):
     if ordered:
-
+        result = []
+        for elem in mList:
+            if elem not in result:
+                result.append(elem)
     else:
         result = list(set(mList))
 
