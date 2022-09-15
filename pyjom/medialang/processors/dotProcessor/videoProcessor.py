@@ -90,6 +90,8 @@ def ffmpegVideoPreProductionFilter(
 
     # TODO: FIX THIS SHIT!
     raise Exception("TODO: FIX THIS SHIT!")
+
+    
     if "randomFlip" in filters:
         pass
     if "superResolution" in filters:
