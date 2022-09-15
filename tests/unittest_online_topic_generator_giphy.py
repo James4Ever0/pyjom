@@ -36,7 +36,7 @@ with tmpdir(path=tmpPath) as testDir:
         newElems, label = OnlineFetcher(elems, tempdir=tmpPath)
         for elem in newElems:
             sprint(elem)
-            # (item_id, )
+            # (item_id, local_location)
             # what is the freaking response?
             # do effective fps check, color centrality check, then the dog/cat check
             breakpoint()
