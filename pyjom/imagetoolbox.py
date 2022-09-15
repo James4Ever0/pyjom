@@ -10,7 +10,6 @@ def getColorCentrality(image,):
     # NEARBY CENTER PERCENTAGE: 6.74 %
     # CENTRALITY: 7.32 %
     import cv2
-
     # image = cv2.imread(src)
     shape = image.shape
     if len(shape) != 3:
