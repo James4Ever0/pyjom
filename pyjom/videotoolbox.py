@@ -105,6 +105,9 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     stopFrame = int(end * fps)
     if stopFrame <=0:
         stopFrame = total_frames
+    if stopFrame <= startFrame:
+        print("some fuck going on with the video frame sampler")
+        breakpoint()
     import progressbar
 
     totalPopulation = list(range(startFrame, min(stopFrame, total_frames) - 1))
