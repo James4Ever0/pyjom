@@ -25,3 +25,4 @@ reshapedImageIndexs = np.arange(0, length)
 sample = np.random.choice(reshapedImageIndexs,size=min(5000, length))
 print(sample)
 print(sample.shape)
+sample = reshapedImage[reshapedImageIndexs,:]
