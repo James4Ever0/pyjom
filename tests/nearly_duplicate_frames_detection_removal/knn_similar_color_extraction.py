@@ -1,35 +1,36 @@
-src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp" # use some filter first, or rather not to?
+src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
 
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
+
 cv2_custom_build_init()
 
 import cv2
 
 image = cv2.imread(src)
 shape = image.shape
-if len(shape) !=3:
-    print('weird shit.')
-if shape[2] !=3:
+if len(shape) != 3:
+    print("weird shit.")
+if shape[2] != 3:
     print("depth not right.")
 # for i in range(3):
 #     image[:,:,i] = i
 
 # print(image.reshape(-1,3))
-reshapedImage = image.reshape(-1,3) # are you sure about this?
+reshapedImage = image.reshape(-1, 3)  # are you sure about this?
 length, depth = reshapedImage.shape
 
 sample_size_limit = 5000
 
 reshapedImageIndexs = np.arange(0, length)
 # so now it is good.
-sample = np.random.choice(reshapedImageIndexs,size=min(sample_size_limit, length))
+sample = np.random.choice(reshapedImageIndexs, size=min(sample_size_limit, length))
 print(sample)
 print(sample.shape)
 
 sample_size = len(sample)
 
-sample = reshapedImage[sample,:]
+sample = reshapedImage[sample, :]
 print(sample)
 print(sample.shape)
 
@@ -42,10 +43,11 @@ print(sample.shape)
 # A.toarray()
 # print(A)
 # print(A.shape) # sparse matrix? wtf?
-from sklearn.cluster import MiniBatchKMeans # better?
+from sklearn.cluster import MiniBatchKMeans  # better?
+
 # from sklearn.cluster import KMeans
 X = sample
-batch_size=45
+batch_size = 45
 # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
 n_clusters = 5
 kmeans = MiniBatchKMeans(
@@ -64,18 +66,21 @@ cluster_centers = kmeans.cluster_centers_
 print(labels)
 print(cluster_centers)
 
-label_percentage = {x: np.count_nonzero(labels == x)/sample_size for x in range(n_clusters)}
+label_percentage = {
+    x: np.count_nonzero(labels == x) / sample_size for x in range(n_clusters)
+}
 
 for center in cluster_centers:
     # fetch area nearby given center
     center_int = center.astype(np.uint8)
-    upper = center_int +5
-    lower= center_int-5
+    upper = center_int + 5
+    lower = center_int - 5
     mask = cv2.inRange(image, lower, upper)
-    output = cv2.bitwise_and(image, image, mask = mask)
+    output = cv2.bitwise_and(image, image, mask=mask)
     # print(output)
     # print(output.shape)
-    mOutput = output.reshape(-1,3)
+    mOutput = output.reshape(-1, 3)
     mOutput = np.sum(mOutput, axis=1)
     print(mOutput)
     print(mOutput.shape)
+    breakpoint()
