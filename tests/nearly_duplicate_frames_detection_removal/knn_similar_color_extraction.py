@@ -108,6 +108,7 @@ print(sample)
 print(sample.shape)
 
 breakpoint()
+sampleCoords = coords[sampleCoords]
 sample = np.hstack([sample, sampleIndexs])
 print(sample)
 print(sample.shape)
