@@ -112,7 +112,7 @@ sampleCoords = coords[sampleIndexs]
 sample = np.hstack([sample, sampleCoords])
 print(sample)
 print(sample.shape)
-breakpoint()
+# breakpoint()
 # now cluster shit shall we?
 # from sklearn.neighbors import NearestNeighbors
 # neigh = NearestNeighbors(n_neighbors=5)
