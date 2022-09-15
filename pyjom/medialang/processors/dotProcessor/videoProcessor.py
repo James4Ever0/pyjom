@@ -113,6 +113,7 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
+        # also it will affect parameters of logoRemoval.
         mDict.update(
             detectPipRegionOverTime(filepath, start, end)
         )  # using default settings?
