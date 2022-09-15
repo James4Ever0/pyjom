@@ -184,7 +184,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     #     # read next frame
     #     success, img = cap.grab()
     # cap.release()
-def getRectAreaDiagonal(diagonalRect):
+def getDiagonalRectArea(diagonalRect):
     (x0,y0), (x1,y1) = diagonalRect
     area = (x1-x0)*(y1-y0)
     return area
@@ -234,7 +234,7 @@ def detectTextRegionOverTime(
         mConvList = detectionList[rangeStart:rangeEnd]
         mergedRects = getMergedRects(mConvList, width, height)
         if top_k >0:
-            mergedRects.sort(key = lambda diagonalRect: -getDiagonalRectArea)(diagonalRect)) # this is diagonal.
+            mergedRects.sort(key = lambda diagonalRect: -getDiagonalRectArea(diagonalRect)) # this is diagonal.
             mergedRects = mergedRects[:top_k]
         finalRectList.append(mergedRects.copy())
 
