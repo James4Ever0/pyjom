@@ -994,7 +994,7 @@ def detectPipRegionOverTime(
     return finalResultDict
 
 
-def getEffectiveFPS(videoPath, convert_fps_target=15):
+def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm"):
     # use ffmpeg to covert the target first!
     return effectiveFPS
 
