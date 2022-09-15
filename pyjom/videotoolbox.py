@@ -512,6 +512,7 @@ def detectStationaryLogoOverTime(
         currentRect = [(x, y), (x + w, y + h)]
         boundingRects.append(currentRect.copy())
     print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
+    for (mStart, mEnd) in start_end_list:
     
     for currentRect in boundingRects:
         if cornersOnly:
