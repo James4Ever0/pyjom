@@ -1439,10 +1439,10 @@ def checkVideoColorCentrality(
             max_nearby_center_percentage,
             d_b,
         )
-        print("DICT A", d_a)
-        print("DICT B", d_b)
-        print("FLAG A", a, "FLAG B", b)
-        breakpoint()
+        # print("DICT A", d_a)
+        # print("DICT B", d_b)
+        # print("FLAG A", a, "FLAG B", b)
+        # breakpoint()
         flag = a and b
         if not flag:
             return False
