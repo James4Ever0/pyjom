@@ -1,6 +1,6 @@
 # i'd say i want centrality below 10 percent. what's the catch?
 
-src = ""
+src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
 
 # src = "/root/Desktop/works/pyjom/samples/image/miku_on_green.png"
 # for this one we have double centers. fuck.
