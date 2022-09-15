@@ -20,7 +20,7 @@
 # it is off the charge!
 
 # with text. a meme.
-src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
+# src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
 # CENTRALITY: 1.26 %
 
 # src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
@@ -50,7 +50,7 @@ src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
 # CENTRALITY: 36.55 %
 # likely to be the blue.
 
-# src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
+src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
 # multiple centers.
 # CENTER: [246.76865924 226.40763256 216.41472476]
 # POSITIVE COUNT: 95497
