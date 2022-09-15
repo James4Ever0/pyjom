@@ -55,6 +55,7 @@ with tmpdir(path=tmpPath) as testDir:
             # duration_valid = checkMinMaxDict(duration,duration_filter)
             # fps_valid = checkMinMaxDict(fps_float,fps_filter)
             from videotoolbox import getVideoColorCentrality
+            video_color_filter = {}
             valid = True
             mList = [
                 [get_duration, duration_filter, checkMinMaxDict,"duration", ],
@@ -63,7 +64,7 @@ with tmpdir(path=tmpPath) as testDir:
             ]
             for function, mFilter,filterFunc, flag in mList:
                 mValue = function(local_video_location)
-                valid = (mValue, mFilter)
+                valid = filterFunc(mValue, mFilter)
                 if not valid:
                     print("skipping due to invalid %s: %s" % (flsg, fps_float))
                     print("%s filter:" % flag, fps_filter)
