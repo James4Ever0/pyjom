@@ -9,4 +9,4 @@ from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
 
-cv2.CreateImage((255,255),)
+# cv2.CreateImage((255,255),8,3)
