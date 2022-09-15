@@ -97,14 +97,10 @@ def ffmpegVideoPreProductionFilter(
             mDict.update({"hflip":[(start, end)]})
     if "superResolution" in filters:
         mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos":[(start, end)]})
-    simpleFilters = ["removegrain","removegrain"]
+    simpleFilters = ["removegrain","removegrain",'bilateral']
     for filterName in simpleFilters:
-    if ""removegrain" in filters:
+    if filterName in filters:
         mDict.update({"minterpolate":[(start, end)]})
-    if "removegrain" in filters:
-        mDict.update({"removegrain":[(start, end)]})
-    if 'bilateral' in filters:
-        mDict.update({"bilateral":[(start, end)]})
 
     pipCropDicts = None
     if "pipCrop" in filters:
