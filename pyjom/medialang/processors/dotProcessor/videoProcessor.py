@@ -99,11 +99,8 @@ def ffmpegVideoPreProductionFilter(
     if "denoising" in filters:
         pass
 
-    if "textRemoval" in filters:
-        # process the video, during that duration. fast seek avaliable?
-        mDict.update(detectTextRegionOverTime(filepath, start, end))
-        # pass
-    pipCrop = None
+
+    pipCropDicts = None
     if "pipCrop" in filters:
         # remember: if pip crop makes any of our logoRemoval or textRemoval filters invalid, we do not execute them.
         # also it will affect parameters of logoRemoval.
@@ -111,6 +108,10 @@ def ffmpegVideoPreProductionFilter(
         mDict.update(
             pipCropDicts
         )  # using default settings?
+        # pass
+    if "textRemoval" in filters:
+        # process the video, during that duration. fast seek avaliable?
+        mDict.update(detectTextRegionOverTime(filepath, start, end))
         # pass
     if "logoRemoval" in filters:
         # dual safe? no?
