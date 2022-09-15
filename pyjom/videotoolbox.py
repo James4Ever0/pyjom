@@ -529,7 +529,8 @@ def detectStationaryLogoOverTime(
                         mFinalDelogoFilters.append(delogoCommand)
         else:
             [(x, y), (x_w, y_h)] = currentRect
-            
+            w = x_w-x
+            h = y_h-y
             area = w * h
             if area < areaThreshold:
                 continue
