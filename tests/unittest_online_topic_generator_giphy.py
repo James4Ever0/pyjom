@@ -46,7 +46,7 @@ with tmpdir(path=tmpPath) as testDir:
             # what is the freaking response?
             from caer.video.frames_and_fps import get_duration, get_fps_float
 
-            duration = get_duration(local_video_location)
+            # duration = get_duration(local_video_location)
             from pyjom.commons import checkMinMaxDict
 
             duration_filter = {"min": 0.6, "max": 7}
@@ -54,6 +54,7 @@ with tmpdir(path=tmpPath) as testDir:
             # fps_float = get_fps_float(local_video_location)
             # duration_valid = checkMinMaxDict(duration,duration_filter)
             # fps_valid = checkMinMaxDict(fps_float,fps_filter)
+            from videotoolbox import get
             valid = True
             mList = [
                 [get_duration, duration_filter, "duration", ],
