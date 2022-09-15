@@ -300,7 +300,7 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     return previewWidth, previewHeight
 
 
-def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOnly=True, areaThreshold = 30):
+def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOnly=True, pipareaThreshold = 30):
     imageSet = getVideoFrameSampler(
         filepath, start, end, sample_size=sample_size)
     # what is this src?
@@ -319,7 +319,9 @@ def detectStationaryLogoOverTime(filepath, start, end, sample_size=60, cornersOn
             [(defaultWidth-deltaWidth, defaultHeight-deltaHeight),(defaultWidth, defaultHeight)],
             [(0,defaultHeight-deltaHeight),(deltaWidth, defaultHeight)]
         ]
-
+        return fourCorners
+    if cornersOnly:
+        if 
     ###########
     import sys
     import os
