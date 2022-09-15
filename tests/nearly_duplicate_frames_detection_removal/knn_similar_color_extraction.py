@@ -20,7 +20,7 @@ if shape[2] !=3:
 reshapedImage = image.reshape(-1,3) # are you sure about this?
 length, depth = reshapedImage.shape
 
-np.arange(0, length)
+reshapedImageIndexs = np.arange(0, length)
 # so now it is good.
 sample = np.random.choice(reshapedImageIndexs,size=min(5000, length))
 print(sample)
