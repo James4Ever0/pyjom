@@ -13,7 +13,7 @@ src = "/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp"  # use some filt
 # POSITIVE COUNT: 2600
 # SUM: 7800.0 MIN: 0 MAX: 3
 # NEARBY CENTER PERCENTAGE: 3.91 %
-# 
+# CENTRALITY: 3.91 %
 
 # now the 八点半配音
 # src = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
