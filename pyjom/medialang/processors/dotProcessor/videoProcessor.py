@@ -130,11 +130,12 @@ def ffmpegVideoPreProductionFilter(
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
-    simpleFiltersValueMap = {x: -2 for x in simpleFilters+['randomFlip']}
+    simpleFiltersValueMap = {x: -2 for x in simpleFilters+['randomFlip','superResolution']}
     commandValueMap = {
         "empty": -1,
         "delogo": 0,
         "crop": 1,
+        "minterpolate":, "removegrain":, "bilateral":
     }  # no scale filter shall present. we do not provide such creep. editly will handle it.
     commandValueMap.update(simpleFiltersValueMap)
     renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
