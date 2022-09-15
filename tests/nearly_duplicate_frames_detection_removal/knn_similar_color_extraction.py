@@ -23,6 +23,11 @@
 # likely to be the blue.
 
 src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
+# 
+# CENTER: [246.76865924 226.40763256 216.41472476]
+# POSITIVE COUNT: 95497
+# SUM: 286491.0 MIN: 0 MAX: 3
+# NEARBY CENTER PERCENTAGE: 10.36 %
 
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
