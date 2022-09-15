@@ -2,7 +2,7 @@ from pyjom.commons import *
 import numpy as np
 
 
-def getColorCentrality(
+def getImageColorCentrality(
     image,
     sample_size_limit=5000,
     epsilon=0.01,  # shit man.
@@ -91,10 +91,12 @@ def getColorCentrality(
     # from lazero.utils import inspectObject
     # inspectObject(kmeans)
     # breakpoint()
-    labels = kmeans.labels_
+    # labels = kmeans.labels_
     cluster_centers = kmeans.cluster_centers_
     # print(labels)
     # print(cluster_centers)
+
+    # sample_size = len(sampleIndexs) # this is the real sample size.
 
     # label_percentage = {
     #     x: np.count_nonzero(labels == x) / sample_size for x in range(n_clusters)
