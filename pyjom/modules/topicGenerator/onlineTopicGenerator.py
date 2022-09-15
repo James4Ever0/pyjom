@@ -7,7 +7,8 @@ import requests
 from typing import Literal
 
 def removeKeywordDuplicates(keywords):
-
+    if type(keywords) == "str":
+        
 
 
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
