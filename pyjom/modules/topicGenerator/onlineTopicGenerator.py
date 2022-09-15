@@ -7,9 +7,9 @@ import requests
 from typing import Literal
 
 def removeKeywordDuplicates(keywords):
-    if type(keywords) == "str":
+    if type(keywords) == str:
         keywordsList = keywords.split(" ")
-        
+    elif type(keywords) in [list, tuple]
 
 
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
