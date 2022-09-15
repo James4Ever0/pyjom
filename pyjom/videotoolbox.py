@@ -21,7 +21,8 @@ def getVideoColorCentrality(videoPath,
     n_clusters=5,
     batch_size=45,
     max_no_improvement=10):
-    for frame in videoFrame
+    for frame in videoFrameSampler:
+        centrality,max_nearby_center_percentage = 
     yield centrality,max_nearby_center_percentage
 
 
