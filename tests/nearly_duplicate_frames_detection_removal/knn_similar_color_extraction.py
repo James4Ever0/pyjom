@@ -1,6 +1,6 @@
 # i'd say i want centrality below 10 percent. what's the catch?
 
-src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
+# src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
 # and yet this does not look right.
 # shall we train shit for that? a knn?
 # indeed you could. maybe we should.
@@ -63,7 +63,7 @@ src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
 # CENTRALITY: 39.10 %
 # likely to be the blue.
 
-# src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
+src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
 # multiple centers.
 # CENTER: [246.76865924 226.40763256 216.41472476]
 # POSITIVE COUNT: 95497
