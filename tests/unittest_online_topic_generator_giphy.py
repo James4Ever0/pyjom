@@ -38,7 +38,7 @@ with tmpdir(path=tmpPath) as testDir:
             sprint(elem)
             # (item_id, local_location)
             # what is the freaking response?
-            # do effective fps check, color centrality check, then the dog/cat check
+            # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
     # print('flag', flag)
