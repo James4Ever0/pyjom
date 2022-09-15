@@ -33,7 +33,7 @@ with tmpdir(path=path) as testDir:
     elif flag == 'topic_with_fetcher':
         sprint("checking online fetcher")
         # print("HERE??",2)
-        newElems, label = OnlineFetcher(elems, tempdir=tmpdir)
+        newElems, label = OnlineFetcher(elems, tempdir=tmpPath)
         for elem in newElems:
             sprint(elem)
             breakpoint()
