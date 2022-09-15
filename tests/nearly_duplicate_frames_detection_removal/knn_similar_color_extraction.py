@@ -7,7 +7,8 @@
 
 # let's try some cats.
 
-src = ""
+# src = "/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp"  # use some filter first, or rather not to?
+# src = ""
 
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
