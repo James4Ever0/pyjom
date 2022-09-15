@@ -2,7 +2,8 @@
 
 # we'd like to adjust the shift.
 
-src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
+# src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
+# CENTRALITY: 0.00 %
 
 # single not go beyond 6 percent.
 # total not go beyond 16 percent.
