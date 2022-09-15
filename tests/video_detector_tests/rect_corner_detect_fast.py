@@ -1,1 +1,1 @@
-# there are some corner detecto methods in cv2. not sure what to follow... is it intended to use with canny edge detector or not?
+# there are some corner detection methods in cv2. not sure what to follow... is it intended to use with canny edge detector or not?
