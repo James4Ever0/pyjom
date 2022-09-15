@@ -2,6 +2,8 @@
 
 # we'd like to adjust the shift.
 
+# another tip: you have forgot the spatial
+
 # src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
 # CENTRALITY: 0.00 %
 
