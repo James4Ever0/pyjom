@@ -97,6 +97,7 @@ def ffmpegVideoPreProductionFilter(
             mDict.update({"hflip":[(start, end)]})
     if "superResolution" in filters:
         mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos":[(start, end)]})
+    for filterName in simpleFilters
     if "minterpolate" in filters:
         mDict.update({"minterpolate":[(start, end)]})
     if "removegrain" in filters:
