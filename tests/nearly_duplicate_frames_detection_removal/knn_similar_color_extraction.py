@@ -5,7 +5,7 @@ from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
 
 import cv2
-from sklearn.cluster import KMeans
+# from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
 shape = image.shape
@@ -31,3 +31,12 @@ print(sample)
 print(sample.shape)
 
 # now cluster shit shall we?
+from sklearn.neighbors import NearestNeighbors
+>>> neigh = NearestNeighbors(n_neighbors=2)
+>>> neigh.fit(X)
+NearestNeighbors(n_neighbors=2)
+>>> A = neigh.kneighbors_graph(X)
+>>> A.toarray()
+array([[1., 0., 1.],
+       [0., 1., 1.],
+       [1., 0., 1.]])
