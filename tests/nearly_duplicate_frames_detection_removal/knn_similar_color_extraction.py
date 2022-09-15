@@ -1,6 +1,7 @@
 # i'd say i want centrality below 10 percent. what's the catch?
 
 src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
+# and yet this does not look right.
 # CENTER: [28.38705502 38.22265372 40.29190939]
 # POSITIVE COUNT: 18857
 # SUM: 56571.0 MIN: 0 MAX: 3
