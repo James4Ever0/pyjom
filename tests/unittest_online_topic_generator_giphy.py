@@ -41,7 +41,7 @@ with tmpdir(path=tmpPath) as testDir:
             from caer.video.frames_and_fps import get_duration
             duration = get_duration(local_video_location)
             from pyjom.commons import checkMinMaxDict
-            duration_valid = checkMinMaxDict(
+            duration_valid = checkMinMaxDict(duration, {'min':0.6, 'max':}
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
