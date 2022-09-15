@@ -75,7 +75,7 @@ flagged_image[:,:,:] = 1 # every element is 1 now.
 epsilon = 0.01 # shit man.
 for center in cluster_centers:
     # fetch area nearby given center
-    center_int = center.astype(np.uint8)
+    # center_int = center.astype(np.uint8)
     upper = center_int + 5
     lower = center_int - 5
     mask = cv2.inRange(image, lower, upper)
