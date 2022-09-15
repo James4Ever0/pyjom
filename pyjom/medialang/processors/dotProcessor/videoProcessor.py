@@ -100,7 +100,7 @@ def ffmpegVideoPreProductionFilter(
         if random.random() > 0.5:
             mDict.update({"hflip": [(start, end)]})
     if "superResolution" in filters:
-        mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos": [(start, end)]})
+        mDict.update({"scale_w=iw*2:h=ih*2:flags=lanczos": [(start, end)]})
         # how to parse this shit?
     simpleFilters = ["minterpolate", "removegrain", "bilateral"]
     for filterName in simpleFilters:
