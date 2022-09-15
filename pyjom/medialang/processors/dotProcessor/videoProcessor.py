@@ -117,6 +117,7 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "logoRemoval" in filters:
         # dual safe? no?
+        if 
         stationaryLogoDicts = detectStationaryLogoOverTime(filepath, start, end)
         mDict.update(
             stationaryLogoDicts
