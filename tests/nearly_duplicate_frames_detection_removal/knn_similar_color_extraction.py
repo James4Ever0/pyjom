@@ -80,6 +80,8 @@ if shape[2] != 3:
 
 col_0, col_1 = shape[:2]
 
+indexs = [[]]
+
 # print(image.reshape(-1,3))
 reshapedImage = image.reshape(-1, 3)  # are you sure about this?
 length, depth = reshapedImage.shape
