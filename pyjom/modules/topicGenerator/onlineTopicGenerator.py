@@ -9,7 +9,9 @@ from typing import Literal
 def removeKeywordDuplicates(keywords):
     if type(keywords) == str:
         keywordsList = keywords.split(" ")
-    elif type(keywords) in [list, tuple]
+    elif type(keywords) in [list, tuple]:
+    else:
+        raise Exception("Keywords must be i)
 
 
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
