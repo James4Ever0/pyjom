@@ -40,7 +40,17 @@ print(sample.shape)
 # print(A.shape) # sparse matrix? wtf?
 from sklearn.cluster import KMeans
 X = sample
-kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
+batch_size=45
+# kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
+MiniBatchKMeans(
+    init="k-means++",
+    n_clusters=3,
+    batch_size=batch_size,
+    n_init=10,
+    max_no_improvement=10,
+    verbose=0,
+)
 labels = kmeans.labels_
 cluster_centers = kmeans.cluster_centers_
 print(labels)
+print(cluster_centers)
