@@ -49,12 +49,9 @@ with tmpdir(path=tmpPath) as testDir:
             checkInRange
             def checkValid 
             if duration_valid:
-                valid = checkMinMaxDict(mData,mFilter)
+                valid = checkMinMaxDict(mValue,mFilter)
                     print("skipping due to invalid %s: %s" % (flsg,fps_float))
                     print('%s filter:' % flag, fps_filter)
-            else:
-                print("skipping due to invalid duration: %s" % duration)
-                print('duration filter:', duration_filter)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
