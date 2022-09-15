@@ -1207,7 +1207,7 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
         output = subprocess.check_output(commandArgs)
         # will raise error if conversion failed.
         print(output)
-        print("converting video file to 15fps mp4")
+        print("convertion done")
 
         source = convertedVideoPath# very unlikely to go higher.
         # 15fps is just fine for shit like this.
