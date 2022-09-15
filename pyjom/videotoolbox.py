@@ -230,7 +230,7 @@ def detectTextRegionOverTime(
         rangeStart, rangeEnd = max(0, rangeStart), min(maxListIndex, rangeEnd)
         mConvList = detectionList[rangeStart:rangeEnd]
         mergedRects = getMergedRects(mConvList, width, height)
-        mergedRects.sort(key = )
+        mergedRects.sort(key = ) # this is diagonal.
         finalRectList.append(mergedRects.copy())
 
     newFinalRectList = mergeAlikeRegions(finalRectList, mergeThreshold)
