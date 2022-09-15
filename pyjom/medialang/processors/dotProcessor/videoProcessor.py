@@ -133,7 +133,7 @@ def ffmpegVideoPreProductionFilter(
         "delogo": 0,
         "crop": 1,
         "removegrain": 2,
-        "bilateral": 3,
+        "bilateral": 2,
         "superResolution": 3,
         "minterpolate": 4,
         "randomFlip": MAX_INT,
