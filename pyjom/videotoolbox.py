@@ -1248,7 +1248,7 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
             print("DUPLICATE PERCENTAGE: {:.2f} %".format(dupPercent * 100))
             print("FRAME DUPLICATE PERCENTAGE: {:.2f} %".format(frameDupPercent * 100))
             effectiveFPS = frameDupPercent*conversionFPS
-            debugInfo = (binarizedRange, mList, spans)
+            debugInfo = {binarizedRange, mList, spans}
             print('EFFECTIVE FPS: {:.2f} %'.format(effectiveFPS))
         else:
             print("dframes2 is None")
