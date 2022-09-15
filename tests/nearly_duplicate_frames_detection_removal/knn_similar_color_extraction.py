@@ -38,7 +38,8 @@ print(sample.shape)
 # A.toarray()
 # print(A)
 # print(A.shape) # sparse matrix? wtf?
-from sklearn.cluster import KMeans
+from sklearn.cluster import MiniBatchKMeans
+# from sklearn.cluster import KMeans
 X = sample
 batch_size=45
 # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
