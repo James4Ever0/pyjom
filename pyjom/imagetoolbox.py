@@ -6,9 +6,11 @@ def imageDenoise(image):
     shape = len(image.shape)
     if len(shape) == 3:
     elif len(shape) == 2:
+        return cv2.fastNlMeansDenoisingColored(image,None,10,10,7,21)
     else:
-        print()
-    return cv2.fastNlMeansDenoisingColored(image,None,10,10,7,21)
+        print("unknown image shape encountered")
+        print("image shape:",shape)
+        breakpoint()
 
 def getImageColorCentrality(
     image,
