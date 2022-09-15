@@ -210,7 +210,7 @@ def censorInterface(
     parent.bind("<Return>", lambda event=None: bluebutton.invoke())
     parent.bind("<Control-Return>", lambda event=None: mdestroy())
     # this is for updating the order of tags.
-    parent.bind("<KeyRelease>", lambda event=None:  print("KEY RELEASED!"))
+    parent.bind("<KeyRelease>", lambda event=None:  print("KEY RELEASED! PLEASE CONSIDER TO BIND THIS EVENT TO UPDATING TAGS ORDER BY "))
     # this is for updating the order of tags.
     parent.mainloop()
     mdata["labels"] = [x for x in is_on.keys() if is_on[x]]
