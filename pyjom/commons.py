@@ -21,10 +21,10 @@ def frameSizeFilter(frameMeta, frame_size_filter):
     width, height = frameMeta["width"], frameMeta["height"]
     flagWidth, (minWidth, maxWidth) = checkMinMaxDict(
         width, frame_size_filter.get("width", {}), getMinMaxVal=True
-    )
+    )  # type: ignore
     flagHeight, (minHeight, maxHeight) = checkMinMaxDict(
         height, frame_size_filter.get("height", {}), getMinMaxVal=True
-    )
+    )  # type: ignore
     if not (flagWidth and flagHeight):
         print("Filter out invalid video with shape of {}x{}".format(width, height))
         print(
