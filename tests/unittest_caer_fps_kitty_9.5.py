@@ -1,1 +1,2 @@
-/root/Desktop/works/pyjom/samples/video/kitty_flash.gif
+src = "/root/Desktop/works/pyjom/samples/video/kitty_flash.gif"
+
