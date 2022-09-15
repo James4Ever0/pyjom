@@ -29,3 +29,5 @@ print(sample.shape)
 sample = reshapedImage[sample,:]
 print(sample)
 print(sample.shape)
+
+# now cluster shit shall we?
