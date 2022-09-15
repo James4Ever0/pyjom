@@ -6,6 +6,9 @@ import requests
 # import jieba
 from typing import Literal
 
+def removeKeywordDuplicates(keywords):
+
+
 
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
     # python does not enforce type checking. use third party tool such as linter instead.
@@ -106,7 +109,7 @@ def OnlineTopicGenerator(
                 else:
                     keywords = getKeywords()
                 # recheck keywords!
-                
+                keywords = removeKeywordDuplicates(keywords)
             except:
                 import traceback
 
