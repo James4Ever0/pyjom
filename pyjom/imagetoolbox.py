@@ -1,5 +1,7 @@
 from pyjom.commons import *
 import numpy as np
+    epsilon = 0.01 # shit man.
+    shift=2
 
     
     n_clusters = 5
@@ -96,9 +98,7 @@ def getColorCentrality(image,sample_size_limit = 5000,):
 
     flagged_image = image.copy()
     flagged_image[:,:,:] = 1 # every element is 1 now.
-    epsilon = 0.01 # shit man.
     percents = []
-    shift=2
     for center in cluster_centers:
         # fetch area nearby given center
         # center = center5[:3]
