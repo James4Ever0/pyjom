@@ -50,9 +50,9 @@ kmeans = MiniBatchKMeans(
     n_init=10,
     max_no_improvement=10,
     verbose=0,
-)
-from lazero.utils import inspectObject
-inspectObject(kmeans)
+).fit(X)
+# from lazero.utils import inspectObject
+# inspectObject(kmeans)
 breakpoint()
 labels = kmeans.labels_
 cluster_centers = kmeans.cluster_centers_
