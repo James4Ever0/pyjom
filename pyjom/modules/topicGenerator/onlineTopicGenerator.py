@@ -126,7 +126,6 @@ def OnlineTopicGenerator(
                 keywords = removeKeywordDuplicates(keywords)
             except:
                 import traceback
-
                 traceback.print_exc()
                 print("ERROR WHEN FETCHING GIPHY TOPIC")
             for elem in harvestedData:
