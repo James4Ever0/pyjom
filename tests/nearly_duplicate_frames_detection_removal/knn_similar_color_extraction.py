@@ -1,4 +1,13 @@
-src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
+# src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
+
+# CENTER: [254.62436869 254.63794192 254.79734848]
+# POSITIVE COUNT: 188772
+# SUM: 566316.0 MIN: 0 MAX: 3
+# NEARBY CENTER PERCENTAGE: 81.93 %
+
+# let's try some cats.
+
+src = ""
 
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
