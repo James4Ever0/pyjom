@@ -39,7 +39,7 @@ print(sample.shape)
 # print(A)
 # print(A.shape) # sparse matrix? wtf?
 from sklearn.cluster import KMeans
-kmeans = KMeans(n_clusters=2, random_state=0).fit(X)
+X = sample
+kmeans = KMeans(n_clusters=5, random_state=0).fit(X)
 labels = kmeans.labels_
-kmeans.cluster_centers_
-cluster_centers =
+cluster_centers = kmeans.cluster_centers_
