@@ -91,7 +91,7 @@ def ffmpegVideoPreProductionFilter(
             w=commandParams["w"],
             h=commandParams["h"],
         )
-    
+    def scaleFilter(stream, commandString):
 
     # TODO: FIX THIS SHIT!
     # raise Exception("TODO: FIX THIS SHIT!")
