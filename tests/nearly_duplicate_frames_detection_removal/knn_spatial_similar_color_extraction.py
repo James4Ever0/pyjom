@@ -6,14 +6,14 @@
 
 # fuck!
 
-src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
+# src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
 # CENTRALITY: 0.00 %
 
 # single not go beyond 4 percent.
 # total not go beyond 6 percent.
 # is that right? fuck?
 
-# src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
+src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
 # and yet this does not look right.
 # NEARBY CENTER PERCENTAGE: 0.84 %
 # CENTRALITY: 2.57 %
