@@ -27,7 +27,7 @@
 # src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
 # CENTRALITY: 1.26 %
 
-src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
+# src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
 
 # CENTER: [254.62436869 254.63794192 254.79734848]
 # POSITIVE COUNT: 188772
@@ -54,7 +54,7 @@ src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # 
 # CENTRALITY: 36.55 %
 # likely to be the blue.
 
-# src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
+src = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp"
 # multiple centers.
 # CENTER: [246.76865924 226.40763256 216.41472476]
 # POSITIVE COUNT: 95497
