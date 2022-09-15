@@ -209,6 +209,7 @@ def censorInterface(
     blackbutton2.grid(row=0 + conrow, column=2, sticky="ew")
     parent.bind("<Return>", lambda event=None: bluebutton.invoke())
     parent.bind("<Control-Return>", lambda event=None: mdestroy())
+    parent.bind("")
     parent.mainloop()
     mdata["labels"] = [x for x in is_on.keys() if is_on[x]]
     mdata["total_labels"] = [x for x in is_on.keys()]
