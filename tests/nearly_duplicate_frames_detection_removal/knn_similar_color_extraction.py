@@ -9,7 +9,7 @@
 # total not go beyond 16 percent.
 # is that right? fuck?
 
-# src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
+src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
 # and yet this does not look right.
 # shall we train shit for that? a knn?
 # indeed you could. maybe we should.
