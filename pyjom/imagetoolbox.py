@@ -33,7 +33,8 @@ def getImageColorCentrality(
         print("weird shit.")
         breakpoint()
     if len(shape) == 2:
-        
+        image = image.reshape(-1,-1,1)
+    
     # for i in range(3):
     #     image[:,:,i] = i
 
