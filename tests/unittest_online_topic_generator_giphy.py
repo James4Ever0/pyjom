@@ -37,7 +37,7 @@ with tmpdir(path=tmpPath) as testDir:
         for elem in newElems:
             sprint(elem)
             # what is the freaking response?
-            # do q
+            # do effective fps check, color centrality check, then the dog/cat check.
             breakpoint()
     # print("HERE??",3)
     # print('flag', flag)
