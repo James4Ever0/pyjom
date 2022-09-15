@@ -1,12 +1,12 @@
-# i'd say i want centrality below 5 percent. what's the catch?
+# i'd say i want centrality below 6 percent. what's the catch?
 
 # we'd like to adjust the shift.
 
 # src = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
 # CENTRALITY: 0.00 %
 
-# single not go beyond 6 percent.
-# total not go beyond 16 percent.
+# single not go beyond 4 percent.
+# total not go beyond 6 percent.
 # is that right? fuck?
 
 src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
