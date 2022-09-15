@@ -1,6 +1,8 @@
 from pyjom.commons import *
 import numpy as np
 
+def imageDenoiseColored(image,)
+return cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
 
 def getImageColorCentrality(
     image,
