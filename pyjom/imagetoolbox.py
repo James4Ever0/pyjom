@@ -1,4 +1,4 @@
-from 
+from pyjom.commons import *
 import numpy as np
 
 def getColorCentrality(image,):
@@ -9,11 +9,6 @@ def getColorCentrality(image,):
     # SUM: 286491.0 MIN: 0 MAX: 3
     # NEARBY CENTER PERCENTAGE: 6.74 %
     # CENTRALITY: 7.32 %
-
-    # from lazero.utils.importers import cv2_custom_build_init
-
-    cv2_custom_build_init()
-
     import cv2
 
     # image = cv2.imread(src)
