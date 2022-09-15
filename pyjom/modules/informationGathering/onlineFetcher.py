@@ -26,6 +26,7 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
                         yield source_id, download_path
                     else:
                         print('not downloading source:',)
+                        print("skipping:", frameMeta)
                         # print("____WTF IS GOING ON WITH THE DOWNLOADER?____")
                         breakpoint()
                 except:
