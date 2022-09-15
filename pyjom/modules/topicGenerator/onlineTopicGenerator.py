@@ -7,6 +7,7 @@ import requests
 from typing import Literal
 
 def removeKeywordDuplicates(keywords):
+    entry = {str:}
     if type(keywords) == str:
         keywordsList = keywords.split(" ")
     elif type(keywords) in [list, tuple]:
