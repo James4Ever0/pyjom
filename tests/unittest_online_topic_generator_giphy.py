@@ -36,10 +36,10 @@ with tmpdir(path=tmpPath) as testDir:
         newElems, label = OnlineFetcher(elems, tempdir=tmpPath)
         for elem in newElems:
             sprint(elem)
-            (item_id, local_location) = elem
+            (item_id, local_video_location) = elem
             # what is the freaking response?
             from caer.video.frames_and_fps import get_duration
-            duration = get_duration(video)
+            duration = get_duration(local_video_location)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
