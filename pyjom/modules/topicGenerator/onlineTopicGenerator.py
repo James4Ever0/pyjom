@@ -16,12 +16,7 @@ def removeKeywordDuplicates(keywords):
         raise Exception("Unknown keywords type: %s" % type(keywords))
     keywordsSet = set(keywordsList)
     keywordsSetList = list(keywordsSet)
-    if type(keywords) == str:
-        return 
-    elif type(keywords) == list:
-        return keywordsSetList
-    elif type(keywords) == tuple:
-        return tuple(keywordsSetList)
+    return 
 
 
 
