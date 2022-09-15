@@ -42,7 +42,7 @@ with tmpdir(path=tmpPath) as testDir:
             duration = get_duration(local_video_location)
             from pyjom.commons import checkMinMaxDict
             duration_filter =  {'min':0.6, 'max':7}
-            duration_filter =  {'min':0.6, 'max':7}
+            fps_filter =  {'min':7, 'max':60}
             duration_valid = checkMinMaxDict(duration,duration_filter)
             if duration_valid:
                 min_fps = 
