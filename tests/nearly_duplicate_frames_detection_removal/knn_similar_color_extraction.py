@@ -107,7 +107,8 @@ sampleIndexs = indexs[sample]
 print(sample)
 print(sample.shape)
 
-sample = np.stack([sample, sampleIndexs])
+breakpoint()
+sample = np.hstack([sample, sampleIndexs])
 print(sample)
 print(sample.shape)
 breakpoint()
