@@ -92,9 +92,9 @@ def getColorCentrality(image,sample_size_limit = 5000,
     # print(labels)
     # print(cluster_centers)
 
-    label_percentage = {
-        x: np.count_nonzero(labels == x) / sample_size for x in range(n_clusters)
-    }
+    # label_percentage = {
+    #     x: np.count_nonzero(labels == x) / sample_size for x in range(n_clusters)
+    # }
 
     flagged_image = image.copy()
     flagged_image[:,:,:] = 1 # every element is 1 now.
