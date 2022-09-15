@@ -27,7 +27,7 @@ def ffmpegVideoPreProductionFilter(
     filters=[
         "pipCrop",
         "textRemoval",
-        "logoRemoval",
+        "logoRemoval"],
         "randomFlip",
         "superResolution",
         "minterpolate",
