@@ -211,6 +211,8 @@ def ffmpegVideoPreProductionFilter(
                     stream = stream.filter(renderCommand)
                 elif "=" in renderCommand:
                     stream = stream.filter()
+                else:
+                    
                 for prefix, keyword in [
                     ("{}_".format(k), k) for k in ["delogo", "crop"]
                 ]:
