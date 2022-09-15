@@ -22,7 +22,7 @@ with tmpdir(path=path) as testDir:
             url = meta["url"]
             extension = url.split("?")[0].split(".")[-1]
             basename = ".".join([asset_id, extension])
-            download_path = os.path.join(path, basename)
+            download_path = os.path.join(tmpPath, basename)
             try:
                 download(url, download_path, threads=-0.3, size_filter={"min":0.4, "max":50})
             except:
