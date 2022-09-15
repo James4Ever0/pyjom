@@ -15,6 +15,8 @@ src = "/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp"  # use some filt
 # SUM: 7800.0 MIN: 0 MAX: 3
 # NEARBY CENTER PERCENTAGE: 3.91 %
 
+# now the 
+
 import numpy as np
 from lazero.utils.importers import cv2_custom_build_init
 
