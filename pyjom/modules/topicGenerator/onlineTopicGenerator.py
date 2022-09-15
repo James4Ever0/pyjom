@@ -8,6 +8,7 @@ from typing import Literal
 
 def removeKeywordDuplicates(keywords):
     if type(keywords) == "str":
+        keywordsList = keywords.split(" ")
         
 
 
