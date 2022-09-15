@@ -24,10 +24,7 @@ def ffmpegVideoPreProductionFilter(
     start=None,
     end=None,
     cachePath=None,
-    filters=[
-        "pipCrop",
-        "textRemoval",
-        "logoRemoval"],
+    filters=["pipCrop", "textRemoval", "logoRemoval"],
     preview=True,
 ):  # what is the type of this shit?
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
@@ -125,18 +122,21 @@ def ffmpegVideoPreProductionFilter(
         stationaryLogoDicts = detectStationaryLogoOverTime(
             filepath, start, end, pipCropDicts=pipCropDicts
         )
-            # reprocess these things. really?
+        # reprocess these things. really?
         mDict.update(stationaryLogoDicts)  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
         # pass
-    MAX_INT=999999
+    MAX_INT = 999999
     commandValueMap = {
         "empty": -1,
         "delogo": 0,
         "crop": 1,
-        "minterpolate":4, "removegrain":2, "bilateral":3,
-        'randomFlip':MAX_INT,'superResolution':3
+        "removegrain": 2,
+        "bilateral": 3,
+        "superResolution": 3,
+        "minterpolate": 4,
+        "randomFlip": MAX_INT,
     }  # no scale filter shall present. we do not provide such creep. editly will handle it.
     # commandValueMap.update(simpleFiltersValueMap)
     renderDict = getContinualMappedNonSympyMergeResultWithRangedEmpty(mDict, start, end)
@@ -181,6 +181,7 @@ def ffmpegVideoPreProductionFilter(
                 key=lambda command: commandValueMap[command.split("_")[0]]
             )
             from pyjom.mathlib import uniq
+
             for renderCommand in uniq(renderCommands):
                 # print('RENDER COMMAND:',renderCommand, "SPAN", mStart, mEnd)
                 # breakpoint()
