@@ -1,6 +1,1 @@
-import chain
-
-@chain
-def func(context, a,b):
-    print(a,b)
-
+# how to chain functions?
