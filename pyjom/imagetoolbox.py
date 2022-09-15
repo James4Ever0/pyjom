@@ -1,11 +1,14 @@
 from pyjom.commons import *
 import numpy as np
 
-def getColorCentrality(image,sample_size_limit = 5000,
-    epsilon = 0.01, # shit man.
+
+def getColorCentrality(
+    image,
+    sample_size_limit=5000,
+    epsilon=0.01,  # shit man.
     shift=2,
-    n_clusters = 5,
-    batch_size = 45,
+    n_clusters=5,
+    batch_size=45,
     max_no_improvement=10,
 ):
     # image is of numpy.array
@@ -16,6 +19,7 @@ def getColorCentrality(image,sample_size_limit = 5000,
     # NEARBY CENTER PERCENTAGE: 6.74 %
     # CENTRALITY: 7.32 %
     import cv2
+
     # image = cv2.imread(src)
     shape = image.shape
     if len(shape) != 3:
@@ -39,12 +43,13 @@ def getColorCentrality(image,sample_size_limit = 5000,
 
     # print(image.reshape(-1,3))
     reshapedImage = image.reshape(-1, 3)  # are you sure about this?
-    length, color_channels= reshapedImage.shape
-
+    length, color_channels = reshapedImage.shape
 
     reshapedImageIndexs = np.arange(0, length)
     # so now it is good.
-    sampleIndexs = np.random.choice(reshapedImageIndexs, size=min(sample_size_limit, length))
+    sampleIndexs = np.random.choice(
+        reshapedImageIndexs, size=min(sample_size_limit, length)
+    )
     # print(sampleIndexs)
     # print(sampleIndexs.shape)
 
@@ -97,7 +102,7 @@ def getColorCentrality(image,sample_size_limit = 5000,
     # }
 
     flagged_image = image.copy()
-    flagged_image[:,:,:] = 1 # every element is 1 now.
+    flagged_image[:, :, :] = 1  # every element is 1 now.
     percents = []
     for center in cluster_centers:
         # fetch area nearby given center
@@ -115,7 +120,7 @@ def getColorCentrality(image,sample_size_limit = 5000,
         mOutput = np.sum(mOutput, axis=1)
         # breakpoint()
         positive_count = np.count_nonzero(abs(mOutput - 3) < epsilon)
-        percent = positive_count/len(mOutput)
+        percent = positive_count / len(mOutput)
         # print(mOutput)
         # print(mOutput.shape)
         # breakpoint()
@@ -126,7 +131,9 @@ def getColorCentrality(image,sample_size_limit = 5000,
         # print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(percent*100))
         percents.append(percent)
     max_nearby_center_percentage = max(percents)
-    print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(max_nearby_center_percentage*100))
-    centrality=sum(percents)
-    print("CENTRALITY: {:.2f} %".format(centrality*100))
+    print(
+        "NEARBY CENTER PERCENTAGE: {:.2f} %".format(max_nearby_center_percentage * 100)
+    )
+    centrality = sum(percents)
+    print("CENTRALITY: {:.2f} %".format(centrality * 100))
     return centrality, max_nearby_center_percentage
