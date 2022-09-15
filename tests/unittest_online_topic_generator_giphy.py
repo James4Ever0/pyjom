@@ -59,7 +59,7 @@ with tmpdir(path=tmpPath) as testDir:
             mList = [
                 [get_duration, duration_filter, "duration", ],
                 [get_fps_float, fps_filter, "fps", ],
-                [getVideoColorCentrality, video_color_filter,]
+                [getVideoColorCentrality, video_color_filter, "video_color_centrality"],
             ]
             for function, mFilter, flag in mList:
                 mValue = function(local_video_location)
