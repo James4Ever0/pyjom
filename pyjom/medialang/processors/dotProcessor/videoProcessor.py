@@ -91,7 +91,7 @@ def ffmpegVideoPreProductionFilter(
     # TODO: FIX THIS SHIT!
     raise Exception("TODO: FIX THIS SHIT!")
 
-    # these things are ordered to be the last ones.
+    # these things are ordered to be the last ones. just flags.
     if "randomFlip" in filters:
         pass
     if "superResolution" in filters:
@@ -100,7 +100,6 @@ def ffmpegVideoPreProductionFilter(
         pass
     if "denoising" in filters:
         pass
-
 
     pipCropDicts = None
     if "pipCrop" in filters:
