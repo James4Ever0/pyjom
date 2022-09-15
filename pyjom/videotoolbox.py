@@ -1199,7 +1199,8 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
         import uuid
         import os
         convertedVideoPath = str(uuid.uuid4())+".mp4"
-        convertedVideoPath = os.path.join()
+        convertedVideoPath = os.path.join(tempdir, convertedVideoPath)
+        
         source = convertedVideoPath# very unlikely to go higher.
         # 15fps is just fine for shit like this.
         # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash.mp4" # very unlikely to go higher.
