@@ -45,6 +45,7 @@ with tmpdir(path=tmpPath) as testDir:
             if duration_valid:
             else:
                 print("skipping due to invalid duration: %s" % duration)
+                print('duration filter:', duration_filter)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
