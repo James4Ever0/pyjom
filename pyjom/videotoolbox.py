@@ -511,6 +511,7 @@ def detectStationaryLogoOverTime(
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image
         currentRect = [(x, y), (x + w, y + h)]
         boundingRects.append(currentRect.copy())
+    print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
     
     for currentRect in boundingRects:
         if cornersOnly:
@@ -538,8 +539,6 @@ def detectStationaryLogoOverTime(
             mFinalDelogoFilters.append(delogoCommand)
         # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
         # cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
-    print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
-    # breakpoint()
     # get the final dictionary
     if len(mFinalDelogoFilters) == 0:
         return {}
