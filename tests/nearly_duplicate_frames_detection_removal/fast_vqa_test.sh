@@ -1,2 +1,2 @@
 cd FAST-VQA
-python3 vqa.py 
+python3 vqa.py -h
