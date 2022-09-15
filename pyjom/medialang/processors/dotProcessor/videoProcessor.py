@@ -131,6 +131,8 @@ def ffmpegVideoPreProductionFilter(
         stationaryLogoDicts = detectStationaryLogoOverTime(
             filepath, start, end, cornersOnly=flag
         )
+        if not flag:
+            # 
         mDict.update(stationaryLogoDicts)  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
         # polygon to rectangle? decomposition?
