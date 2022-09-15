@@ -71,7 +71,7 @@ label_percentage = {
 }
 
 flagged_image = image.copy()
-flagged_image = 1
+flagged_image = 1 # every element is 1 now.
 for center in cluster_centers:
     # fetch area nearby given center
     center_int = center.astype(np.uint8)
@@ -79,7 +79,7 @@ for center in cluster_centers:
     lower = center_int - 5
     mask = cv2.inRange(image, lower, upper)
     # not image.
-    output = cv2.bitwise_and(image, image, mask=mask)
+    output = cv2.bitwise_and(flagged_image, flagged_image, mask=mask)
     # print(output)
     # print(output.shape)
     mOutput = output.reshape(-1, 3)
