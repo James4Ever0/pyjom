@@ -1231,7 +1231,7 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         mpdecimate_args_choices = [None, "hi=1:lo=1:frac=1:max=0", "hi=200:lo=200:frac=1:max=0"]
 
         result = mpdecimate_export_duplicate_clip_ranges(
-            source, mpdecimate_args=mpdecimate_args_choices[0]
+            source, mpdecimate_args=mpdecimate_args
             # ,video_size="480x480"
         )
 
