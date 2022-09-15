@@ -24,7 +24,7 @@ def getImageColorCentrality(
 
     # image = cv2.imread(src)
     shape = image.shape
-    if len(shape) != 3:
+    if len(shape) > 3:
         print("weird shit.")
         breakpoint()
     if shape[2] != 3:
