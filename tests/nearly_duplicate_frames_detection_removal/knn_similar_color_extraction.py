@@ -43,9 +43,10 @@ from sklearn.cluster import MiniBatchKMeans # better?
 X = sample
 batch_size=45
 # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
+n_clusters = 5
 kmeans = MiniBatchKMeans(
     init="k-means++",
-    n_clusters=5,
+    n_clusters=n_clusters,
     batch_size=batch_size,
     # n_init=10,
     max_no_improvement=10,
