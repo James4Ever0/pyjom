@@ -35,9 +35,6 @@ from sklearn.neighbors import NearestNeighbors
 neigh = NearestNeighbors(n_neighbors=5)
 X = sample
 neigh.fit(X)
-NearestNeighbors(n_neighbors=2)
->>> A = neigh.kneighbors_graph(X)
->>> A.toarray()
-array([[1., 0., 1.],
-       [0., 1., 1.],
-       [1., 0., 1.]])
+A = neigh.kneighbors_graph(X)
+A.toarray()
+print(a.shape)
