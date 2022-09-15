@@ -11,30 +11,8 @@
 
 src = "/root/Desktop/works/pyjom/samples/image/dog_with_text.png"
 # and yet this does not look right.
-# shall we train shit for that? a knn?
-# indeed you could. maybe we should.
-# CENTER: [28.38705502 38.22265372 40.29190939]
-# POSITIVE COUNT: 18857
-# SUM: 56571.0 MIN: 0 MAX: 3
-# NEARBY CENTER PERCENTAGE: 4.61 %
-# CENTER: [150.21280603 162.82015066 159.71610169]
-# POSITIVE COUNT: 12200
-# SUM: 36600.0 MIN: 0 MAX: 3
-# NEARBY CENTER PERCENTAGE: 2.98 %
-# CENTER: [ 93.08902334 103.23595506 103.44598099]
-# POSITIVE COUNT: 17210
-# SUM: 51630.0 MIN: 0 MAX: 3
-# NEARBY CENTER PERCENTAGE: 4.21 %
-# CENTER: [5.34235808 9.58165939 9.46200873]
-# POSITIVE COUNT: 11829
-# SUM: 35487.0 MIN: 0 MAX: 3
-# NEARBY CENTER PERCENTAGE: 2.89 %
-# CENTER: [60.31947484 70.7702407  71.60393873]
-# POSITIVE COUNT: 6185
-# SUM: 18555.0 MIN: 0 MAX: 3
-# NEARBY CENTER PERCENTAGE: 1.51 %
-# CENTRALITY: 16.21 %
-
+# NEARBY CENTER PERCENTAGE: 0.84 %
+# CENTRALITY: 2.57 %
 
 # src = "/root/Desktop/works/pyjom/samples/image/miku_on_green.png"
 # for this one we have double centers. fuck.
