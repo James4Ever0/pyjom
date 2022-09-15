@@ -1395,6 +1395,7 @@ def getEffectiveFPS(
             dframes2 = []
             debugInfo = None
         ####################
+        if debug:
         return {
             "duplicatePercent": dupPercent,
             "frameDuplicatePercent": frameDupPercent,
