@@ -186,6 +186,7 @@ def ffmpegVideoPreProductionFilter(
                 # print('RENDER COMMAND:',renderCommand, "SPAN", mStart, mEnd)
                 # breakpoint()
                 if renderCommand == "empty":
+                    # yeah we have failsafe.
                     continue
                 for prefix, keyword in [
                     ("{}_".format(k), k) for k in ["delogo", "crop"]
