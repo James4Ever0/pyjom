@@ -11,7 +11,7 @@ def removeKeywordDuplicates(keywords):
     entry = {str: lambda x: x.split(" "), list: lambda x: x, tuple: lambda x: list(x)}
     output = {str: lambda x: " ".join(x), list: lambda x: x, tuple: lambda x: tuple(x)}
     if keywordsType in entry.keys():
-        keywordsList = entry[keywordsType]
+        keywordsList = entry[keywordsType](keywords)
     else:
         raise Exception("Unknown keywords type: %s" % type(keywords))
     keywordsSet = set(keywordsList)
