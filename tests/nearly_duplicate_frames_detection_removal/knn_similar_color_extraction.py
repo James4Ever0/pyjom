@@ -64,7 +64,7 @@ cluster_centers = kmeans.cluster_centers_
 print(labels)
 print(cluster_centers)
 
-label_percentage = {x: labels == x)/sample_size for x in range(n_clusters)}
+label_percentage = {x: np.count_nonzero(labels == x)/sample_size for x in range(n_clusters)}
 
 for center in cluster_centers:
     # fetch area nearby given center
