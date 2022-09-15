@@ -208,7 +208,7 @@ def ffmpegVideoPreProductionFilter(
                     # yeah we have failsafe.
                     continue
                 if "_" not in renderCommand:
-                    
+                    stream = ffmpeg.filter
                 for prefix, keyword in [
                     ("{}_".format(k), k) for k in ["delogo", "crop"]
                 ]:
