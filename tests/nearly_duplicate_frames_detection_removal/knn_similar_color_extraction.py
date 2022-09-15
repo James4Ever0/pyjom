@@ -5,5 +5,5 @@ from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
 
 import cv2
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.cluster import KMeans
 
