@@ -19,7 +19,7 @@ sample_size_limit=5000,
     n_clusters=5,
     batch_size=45,
     max_no_improvement=10):
-    return centrality, max_nearby_center_percentage
+    return centrality, max_nearby_center_percentage,centrality, max_nearby_center_percentage
 
 
 def checkXYWH(XYWH, canvas, minArea=20):
