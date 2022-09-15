@@ -1,12 +1,12 @@
 from pyjom.commons import *
 import numpy as np
-    epsilon = 0.01 # shit man.
-    shift=2
-    n_clusters = 5
-    batch_size = 45
-    max_no_improvement=10
-def getColorCentrality(image,sample_size_limit = 5000,
 
+def getColorCentrality(image,sample_size_limit = 5000,
+    epsilon = 0.01, # shit man.
+    shift=2,
+    n_clusters = 5,
+    batch_size = 45,
+    max_no_improvement=10,
 ):
     # image is of numpy.array
     # multiple centers.
