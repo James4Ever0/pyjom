@@ -1,7 +1,9 @@
 # i'd say i want centrality below 10 percent. what's the catch?
 
+src = "/root/Desktop/works/pyjom/samples/image/miku_on_green.png"
+
 # with text. a meme.
-src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
+# src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
 # CENTRALITY: 4.01 %
 
 # src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
