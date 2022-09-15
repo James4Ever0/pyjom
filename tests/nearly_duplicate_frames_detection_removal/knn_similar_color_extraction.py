@@ -64,4 +64,4 @@ cluster_centers = kmeans.cluster_centers_
 print(labels)
 print(cluster_centers)
 
-label_counts = {x: labels.count(x)/sample_size for x in range(n_clusters)}
+label_percentage = {x: labels.count(x)/sample_size for x in range(n_clusters)}
