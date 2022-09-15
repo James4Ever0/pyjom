@@ -1396,13 +1396,15 @@ def getEffectiveFPS(
             debugInfo = None
         ####################
         if debug:
-        return {
-            "duplicatePercent": dupPercent,
-            "frameDuplicatePercent": frameDupPercent,
-            "effectiveFPS": effectiveFPS,
-            "duplicatedFrameRanges": dframes2,
-            "debugInfo": debugInfo,
-        }  # time ranges of duplicated frames
+            return {
+                "duplicatePercent": dupPercent,
+                "frameDuplicatePercent": frameDupPercent,
+                "effectiveFPS": effectiveFPS,
+                "duplicatedFrameRanges": dframes2,
+                "debugInfo": debugInfo,
+            }  # time ranges of duplicated frames
+        else:
+            return effectiveFPS
 
 
 # this is a generator, not a list!
