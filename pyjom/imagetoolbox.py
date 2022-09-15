@@ -129,3 +129,4 @@ def getColorCentrality(image,sample_size_limit = 5000,
     print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(max_nearby_center_percentage*100))
     centrality=sum(percents)
     print("CENTRALITY: {:.2f} %".format(centrality*100))
+    return centrality, max_nearby_center_percentage
