@@ -10,3 +10,4 @@ python3 vqa.py -o ./options/fast/f3dvqa-b.yml -v $VIDEO -d cpu
 # another feature is that this video produces a large area in white, which is not what we really want.
 
 # use knn?
+# k=5
