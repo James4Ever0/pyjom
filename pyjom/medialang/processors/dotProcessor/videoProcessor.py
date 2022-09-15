@@ -100,7 +100,8 @@ def ffmpegVideoPreProductionFilter(
                 key, value = elem.split("=")
                 kwargs.update({key: value})
             else:
-                
+                args.append(elem)
+        return args, kwargs
 
     def scaleFilterWithStringParams(stream, commandString):
         filterCommandString = commandString.replace("scale_","")
