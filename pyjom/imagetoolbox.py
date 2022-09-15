@@ -4,7 +4,10 @@ import cv2
 
 def imageDenoise(image):
     shape = len(image.shape)
-    if len(shape) == 3
+    if len(shape) == 3:
+    elif len(shape) == 2:
+    else:
+        print()
     return cv2.fastNlMeansDenoisingColored(image,None,10,10,7,21)
 
 def getImageColorCentrality(
