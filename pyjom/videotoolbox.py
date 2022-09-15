@@ -994,7 +994,8 @@ def detectPipRegionOverTime(
     return finalResultDict
 
 from lazero.filesystem import tmpdir
-def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps", conversionFPS=15, mpdecimate_args_choice: [None, "hi=1:lo=1:frac=1:max=0", "hi=200:lo=200:frac=1:max=0"]):
+from typing import Literal
+def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps", conversionFPS=15, mpdecimate_args_choice: Literal[None, "hi=1:lo=1:frac=1:max=0", "hi=200:lo=200:frac=1:max=0"]=None):
     # use ffmpeg to covert the target first!
     with tmpdir(path=tempdir) as tempDirObj:
 ####################
