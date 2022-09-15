@@ -514,18 +514,19 @@ def detectStationaryLogoOverTime(
     
     for currentRect in boundingRects:
         if cornersOnly:
-            for cornerRect in fourCorners:
-                overlapRect = getOverlapRect(currentRect, cornerRect)
-                if overlapRect:
-                    (x0, y0), (x1, y1) = overlapRect
-                    x, y, w, h = x0, y0, x1 - x0, y1 - y0
-                    area = w * h
-                    if area < areaThreshold:
-                        continue
-                    delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
-                    # print(delogoCommand)
-                    # print('width:{} height:{}'.format(b,a))
-                    mFinalDelogoFilters.append(delogoCommand)
+            if fourCorners is not None:
+                for cornerRect in fourCorners:
+                    overlapRect = getOverlapRect(currentRect, cornerRect)
+                    if overlapRect:
+                        (x0, y0), (x1, y1) = overlapRect
+                        x, y, w, h = x0, y0, x1 - x0, y1 - y0
+                        area = w * h
+                        if area < areaThreshold:
+                            continue
+                        delogoCommand = "delogo_{}_{}_{}_{}".format(x, y, w, h)
+                        # print(delogoCommand)
+                        # print('width:{} height:{}'.format(b,a))
+                        mFinalDelogoFilters.append(delogoCommand)
         else:
             if area < areaThreshold:
                 continue
