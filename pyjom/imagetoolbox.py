@@ -1,6 +1,5 @@
 
-def getColorCentrality(imagePath,):
-    src = imagePath
+def getColorCentrality(image,):
     # multiple centers.
     # CENTER: [246.76865924 226.40763256 216.41472476]
     # POSITIVE COUNT: 95497
@@ -15,7 +14,7 @@ def getColorCentrality(imagePath,):
 
     import cv2
 
-    image = cv2.imread(src)
+    # image = cv2.imread(src)
     shape = image.shape
     if len(shape) != 3:
         print("weird shit.")
