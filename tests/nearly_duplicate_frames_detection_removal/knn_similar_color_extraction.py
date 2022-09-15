@@ -1,3 +1,5 @@
+# i'd say we want centrality below 10 percent. what's the catch?
+
 src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
 
 # CENTER: [254.62436869 254.63794192 254.79734848]
