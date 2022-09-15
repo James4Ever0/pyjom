@@ -994,7 +994,7 @@ def detectPipRegionOverTime(
     return finalResultDict
 
 from lazero.filesystem import tmpdir
-def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medialang/get_effective_fps"):
+def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps", conversionFPS=15):
     # use ffmpeg to covert the target first!
     with tmpdir(path=tempdir) as tempDirObj:
 ####################
@@ -1201,9 +1201,9 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
         convertedVideoPath = str(uuid.uuid4())+".mp4"
         convertedVideoPath = os.path.join(tempdir, convertedVideoPath)
 
-        commandline = "ffmpeg -y -i {} -vf minterpolate=fps=15:mi_mode=dup {}".format(videoPath, convertedVideoPath)
+        commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode=dup {}".format(videoPath, conversionFPS,convertedVideoPath)
         commandArgs = commandline.split(' ')
-        print("converting video file to 15fps mp4")
+        print("converting video file to {}fps mp4".format(conversionFPS))
         # os.system(commandline)
         output = subprocess.check_output(commandArgs)
         # will raise error if conversion failed.
@@ -1242,10 +1242,12 @@ def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medial
                 print("INDEX", i, "START", s, "END", e)
             print("DUPLICATE PERCENTAGE: {:.2f} %".format(dupPercent * 100))
             print("FRAME DUPLICATE PERCENTAGE: {:.2f} %".format(frameDupPercent * 100))
-            print('EFFECTIVE FPS: {:.2f} %'.format(effectiveFPS)
+            effectiveFPS = frameDupPercent*conversionFPS
+            print('EFFECTIVE FPS: {:.2f} %'.format(effectiveFPS))
         else:
             print("dframes2 is None")
-            effectiveFPS = 15
+            effectiveFPS = conversionFPS
+            dframes = []
 ####################
         return effectiveFPS
 
