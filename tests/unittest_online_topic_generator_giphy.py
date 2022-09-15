@@ -11,7 +11,7 @@ sprint("LABEL:", label)
 path = "/dev/shm/medialang/online_test"
 import os
 
-flag = 'only_'
+if flag == 'only_topic_generator'
 
 with tmpdir(path=path) as testDir:
     print("TESTDIR:", testDir)
