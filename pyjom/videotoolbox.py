@@ -521,8 +521,8 @@ def detectStationaryLogoOverTime(
         start_end_list = [[None,start_end_ranges]]
     else:
         start_end_list = []
-        for crop_flag, start_end_ranges in .items():
-            start_end_list = 
+        for crop_flag, start_end_ranges in pipCropDictsWithRangedEmpty.items():
+            start_end_list.append([crop_flag, start_end_ranges])
 
     for index, (crop_flag,start_end_ranges) in enumerate(start_end_list):
         mFinalDelogoFilters = []
