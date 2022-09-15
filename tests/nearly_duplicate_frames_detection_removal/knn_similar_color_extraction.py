@@ -76,4 +76,6 @@ for center in cluster_centers:
     # print(output)
     # print(output.shape)
     mOutput = output.reshape(-1,3)
-    mOutput
+    mOutput = np.sum(mOutput, axis=1)
+    print(mOutput)
+    print(mOutput.shape)
