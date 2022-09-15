@@ -81,8 +81,8 @@ for center in cluster_centers:
     # print(output.shape)
     mOutput = output.reshape(-1, 3)
     mOutput = np.sum(mOutput, axis=1)
-    flags =
-    positives = np.count_nonzero(mOutput == 3
+    positive_count = np.count_nonzero(mOutput == 3)
+    percent = /len(mOutput)
     # print(mOutput)
     # print(mOutput.shape)
     # breakpoint()
