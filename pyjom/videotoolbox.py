@@ -184,13 +184,22 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     #     # read next frame
     #     success, img = cap.grab()
     # cap.release()
+
+
 def getDiagonalRectArea(diagonalRect):
-    (x0,y0), (x1,y1) = diagonalRect
-    area = (x1-x0)*(y1-y0)
+    (x0, y0), (x1, y1) = diagonalRect
+    area = (x1 - x0) * (y1 - y0)
     return area
 
+
 def detectTextRegionOverTime(
-    videoPath, start, end, sample_rate=3, mergeThreshold=10, langs:list = ['en'],top_k = 10
+    videoPath,
+    start,
+    end,
+    sample_rate=3,
+    mergeThreshold=10,
+    langs: list = ["en"],
+    top_k=10,
 ):  # this sample rate is too unreasonable. set it to 3 or something.
     iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
     detectionList = []
@@ -233,8 +242,10 @@ def detectTextRegionOverTime(
         rangeStart, rangeEnd = max(0, rangeStart), min(maxListIndex, rangeEnd)
         mConvList = detectionList[rangeStart:rangeEnd]
         mergedRects = getMergedRects(mConvList, width, height)
-        if top_k >0:
-            mergedRects.sort(key = lambda diagonalRect: -getDiagonalRectArea(diagonalRect)) # this is diagonal.
+        if top_k > 0:
+            mergedRects.sort(
+                key=lambda diagonalRect: -getDiagonalRectArea(diagonalRect)
+            )  # this is diagonal.
             mergedRects = mergedRects[:top_k]
         finalRectList.append(mergedRects.copy())
 
@@ -351,14 +362,22 @@ def detectStationaryLogoOverTime(
             [(a + x, b + y), (c + x, d + y)] for [(a, b), (c, d)] in fourCorners
         ]
         return fourCorners
+
     fourCorners = None
     if cornersOnly:
         defaultFourCorners = getFourCorners(0, 0, defaultWidth, defaultHeight)
         if pipCropDicts in [None, {}]:
             fourCorners = defaultFourCorners
         else:
-            from pyjom.mathlib import getContinualMappedNonSympyMergeResultWithRangedEmpty
-            pipCropDictsWithRangedEmpty = getContinualMappedNonSympyMergeResultWithRangedEmpty(pipCropDicts,start,end)
+            from pyjom.mathlib import (
+                getContinualMappedNonSympyMergeResultWithRangedEmpty,
+            )
+
+            pipCropDictsWithRangedEmpty = (
+                getContinualMappedNonSympyMergeResultWithRangedEmpty(
+                    pipCropDicts, start, end
+                )
+            )
             # pipCropDictsWithRangedEmptySequential = mergedRangesToSequential(pipCropDictsWithRangedEmpty) # this is not needed. maybe?
     ###########
     import sys
@@ -516,10 +535,10 @@ def detectStationaryLogoOverTime(
         currentRect = [(x, y), (x + w, y + h)]
         boundingRects.append(currentRect.copy())
     print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
-    delogoCommandList = [] # test if it can merge anything!
-    if (fourCorners is not None ) or ( not cornersOnly):
+    delogoCommandList = []  # test if it can merge anything!
+    if (fourCorners is not None) or (not cornersOnly):
         start_end_ranges = [(start, end)]
-        start_end_list = [[None,start_end_ranges]]
+        start_end_list = [[None, start_end_ranges]]
     else:
         start_end_list = []
         for crop_flag, start_end_ranges in pipCropDictsWithRangedEmpty.items():
@@ -527,7 +546,7 @@ def detectStationaryLogoOverTime(
                 crop_flag = None
             start_end_list.append([crop_flag, start_end_ranges])
 
-    for index, (crop_flag,start_end_ranges) in enumerate(start_end_list):
+    for index, (crop_flag, start_end_ranges) in enumerate(start_end_list):
         # for mStart, mEnd in start_end_ranges:
         mFinalDelogoFilters = []
         for currentRect in boundingRects:
@@ -536,8 +555,14 @@ def detectStationaryLogoOverTime(
                     currentFourCorners = defaultFourCorners
                 else:
                     import parse
+
                     parseResult = parse.parse("crop_{x}_{y}_{w}_{h}", crop_flag)
-                    currentFourCorners = getFourCorners(parseResult['x'], parseResult['y'], parseResult['w'], parseResult['h'])
+                    currentFourCorners = getFourCorners(
+                        parseResult["x"],
+                        parseResult["y"],
+                        parseResult["w"],
+                        parseResult["h"],
+                    )
                     for cornerRect in currentFourCorners:
                         overlapRect = getOverlapRect(currentRect, cornerRect)
                         if overlapRect:
@@ -552,8 +577,8 @@ def detectStationaryLogoOverTime(
                             mFinalDelogoFilters.append(delogoCommand)
             else:
                 [(x, y), (x_w, y_h)] = currentRect
-                w = x_w-x
-                h = y_h-y
+                w = x_w - x
+                h = y_h - y
                 area = w * h
                 if area < areaThreshold:
                     continue
@@ -566,7 +591,9 @@ def detectStationaryLogoOverTime(
             value = {}
         else:
             delogoCommandSet = "|".join(mFinalDelogoFilters)
-            value = {delogoCommandSet: start_end_ranges.copy()} # can it be turned into something useful?
+            value = {
+                delogoCommandSet: start_end_ranges.copy()
+            }  # can it be turned into something useful?
         delogoCommandList.append(value)
 
 
@@ -1085,7 +1112,7 @@ def getEffectiveFPS(
     import uuid
     import os
 
-    with tmpdir(path=os.path.join(tempdir,str(uuid.uuid4()))) as tempDirObj:
+    with tmpdir(path=os.path.join(tempdir, str(uuid.uuid4()))) as tempDirObj:
         ####################
         #!/usr/bin/env python3
 
