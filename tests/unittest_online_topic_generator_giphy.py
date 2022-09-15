@@ -38,4 +38,5 @@ with tmpdir(path=path) as testDir:
             sprint(elem)
             breakpoint()
     print("HERE??",3)
+    print('topic', flag)
     
