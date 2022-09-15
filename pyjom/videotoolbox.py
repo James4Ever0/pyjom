@@ -100,7 +100,10 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
     startFrame = int(start * fps)
+    if startFrame <=0:
+        startFrame = 0
     stopFrame = int(end * fps)
+    
     import progressbar
 
     totalPopulation = list(range(startFrame, min(stopFrame, total_frames) - 1))
