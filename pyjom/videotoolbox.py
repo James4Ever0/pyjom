@@ -8,20 +8,6 @@ from pyjom.imagetoolbox import *
 
 # import cv2
 
-def getEffectiveFPS(videoPath, convert_fps_target=15):
-    return effectiveFPS
-
-# this is a generator, not a list!
-def getVideoColorCentrality(videoPath,
-    denoise=True,
-    frame_sample_limit=3,
-    **kwargs):
-    videoFrameSampler = getVideoFrameSampler()
-    for frame in videoFrameSampler:
-        centrality,max_nearby_center_percentage = getImageColorCentrality(frame, **kwargs)
-        yield centrality,max_nearby_center_percentage
-
-
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
     x, y, w, h = XYWH
@@ -1001,3 +987,19 @@ def detectPipRegionOverTime(
             updatedValueAlignedToSeconds.append((mStart, mEnd))
         finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
     return finalResultDict
+
+
+
+def getEffectiveFPS(videoPath, convert_fps_target=15):
+    return effectiveFPS
+
+# this is a generator, not a list!
+def getVideoColorCentrality(videoPath,
+    denoise=True,
+    frame_sample_limit=3,
+    **kwargs):
+    videoFrameSampler = getVideoFrameSampler()
+    for frame in videoFrameSampler:
+        centrality,max_nearby_center_percentage = getImageColorCentrality(frame, **kwargs)
+        yield centrality,max_nearby_center_percentage
+
