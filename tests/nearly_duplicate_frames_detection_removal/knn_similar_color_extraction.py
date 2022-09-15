@@ -45,15 +45,15 @@ batch_size=45
 # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
 kmeans = MiniBatchKMeans(
     init="k-means++",
-    n_clusters=3,
+    n_clusters=5,
     batch_size=batch_size,
-    n_init=10,
+    # n_init=10,
     max_no_improvement=10,
     verbose=0,
 ).fit(X)
 # from lazero.utils import inspectObject
 # inspectObject(kmeans)
-breakpoint()
+# breakpoint()
 labels = kmeans.labels_
 cluster_centers = kmeans.cluster_centers_
 print(labels)
