@@ -82,7 +82,9 @@ col_0, col_1 = shape[:2]
 
 indexs = []
 
-for 
+for c0 in range(col_0):
+    for c1 in range(col_1):
+        indexs.append(c1,c0)
 
 # print(image.reshape(-1,3))
 reshapedImage = image.reshape(-1, 3)  # are you sure about this?
