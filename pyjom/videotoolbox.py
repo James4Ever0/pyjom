@@ -187,7 +187,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
 
 
 def detectTextRegionOverTime(
-    videoPath, start, end, sample_rate=3, mergeThreshold=10, langs:list = ['en','chi_sim']
+    videoPath, start, end, sample_rate=3, mergeThreshold=10, langs:list = ['en']
 ):  # this sample rate is too unreasonable. set it to 3 or something.
     iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
     detectionList = []
@@ -196,7 +196,7 @@ def detectTextRegionOverTime(
     import easyocr
 
     # no metal? no dbnet18?
-    reader = easyocr.Reader(["en"], gpu=True, recognizer=False)
+    reader = easyocr.Reader(langs, gpu=True, recognizer=False)
     # how many percent sure?
     # reader = easyocr.Reader(["en","ch_sim"],gpu=False, recognizer=False) # no metal? no dbnet18?
     # are you classifying the thing putting boxes into different category?
