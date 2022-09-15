@@ -1025,8 +1025,12 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
         ):
             flag_vaapi = False  # not using vaapi.
             flag_vaapi_decimate = False
+            videoDuration = None
+            try:
+                from caer.video.
             
-        
+            if videoDuration:
+    
 
             else:
                 from MediaInfo import MediaInfo
