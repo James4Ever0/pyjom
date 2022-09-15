@@ -43,3 +43,4 @@ X = sample
 kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
 labels = kmeans.labels_
 cluster_centers = kmeans.cluster_centers_
+print(labels)
