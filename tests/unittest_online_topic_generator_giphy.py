@@ -31,4 +31,6 @@ with tmpdir(path=path) as testDir:
             # breakpoint()
             # seems good. now we check the cat/dog.
     elif flag == 'topic_with_fetcher':
-        newElems, label = OnlineFetcher()
+        newElems, label = OnlineFetcher(elems)
+        for elem in newElems:
+            print(elem)
