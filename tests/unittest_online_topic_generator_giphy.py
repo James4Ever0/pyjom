@@ -49,6 +49,7 @@ with tmpdir(path=tmpPath) as testDir:
             checkInRange
             def checkValid
                 valid = checkMinMaxDict(mValue,mFilter)
+                if not valid:
                     print("skipping due to invalid %s: %s" % (flsg,fps_float))
                     print('%s filter:' % flag, fps_filter)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
