@@ -111,4 +111,4 @@ def OnlineTopicGenerator(
                 traceback.print_exc()
                 print("ERROR WHEN FETCHING GIPHY TOPIC")
             for elem in harvestedData:
-                yield elem["id"], json elem["media"]
+                yield elem["id"], json_auto_float_int(elem["media"])
