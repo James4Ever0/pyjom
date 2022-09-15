@@ -5,6 +5,7 @@ import cv2
 def imageDenoise(image):
     shape = len(image.shape)
     if len(shape) == 3:
+        if 
         return cv2.fastNlMeansDenoisingColored(image,None,10,10,7,21)
     elif len(shape) == 2:
         return cv2.fastNlMeansDenoising(image, None,4,7,35)
