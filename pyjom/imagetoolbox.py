@@ -2,8 +2,9 @@ from pyjom.commons import *
 import numpy as np
 import cv2
 
-def imageDenoiseColored(image):
-    if 
+def imageDenoise(image):
+    shape = len(image.shape)
+    if len(shape) == 3
     return cv2.fastNlMeansDenoisingColored(image,None,10,10,7,21)
 
 def getImageColorCentrality(
