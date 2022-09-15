@@ -212,61 +212,61 @@ def ffmpegVideoPreProductionFilter(
                 elif "=" in renderCommand:
                     stream = stream.filter()
                 else:
-                    
-                for prefix, keyword in [
-                    ("{}_".format(k), k) for k in ["delogo", "crop"]
-                ]:
-                    if renderCommand.startswith(prefix):
-                        import parse
+                        
+                    for prefix, keyword in [
+                        ("{}_".format(k), k) for k in ["delogo", "crop"]
+                    ]:
+                        if renderCommand.startswith(prefix):
+                            import parse
 
-                        commandParams = parse.parse(
-                            keyword + "_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
-                        )
-                        # print(defaultWidth, defaultHeight)
-                        mX, mY, mW, mH = (
-                            commandParams["x"],
-                            commandParams["y"],
-                            commandParams["w"],
-                            commandParams["h"],
-                        )
-                        status, XYWH = checkXYWH(
-                            (mX, mY, mW, mH), (defaultWidth, defaultHeight)
-                        )
-                        if not status:
-                            # cannot process this delogo filter since its parameters are outraged.
-                            # shall we warn you?
-                            # print("SOMEHOW DELOGO IS NOT WORKING PROPERLY")
-                            # breakpoint()
-                            # maybe it's not because of out of bounds error
-                            print("_" * 30)
-                            print(
-                                "ABNORMAL {} FILTER PARAMS:".format(keyword.upper()),
-                                commandParams,
+                            commandParams = parse.parse(
+                                keyword + "_{x:d}_{y:d}_{w:d}_{h:d}", renderCommand
                             )
-                            print(
-                                "maxX: {} maxY: {}".format(
-                                    commandParams["x"] + commandParams["w"],
-                                    commandParams["y"] + commandParams["h"],
+                            # print(defaultWidth, defaultHeight)
+                            mX, mY, mW, mH = (
+                                commandParams["x"],
+                                commandParams["y"],
+                                commandParams["w"],
+                                commandParams["h"],
+                            )
+                            status, XYWH = checkXYWH(
+                                (mX, mY, mW, mH), (defaultWidth, defaultHeight)
+                            )
+                            if not status:
+                                # cannot process this delogo filter since its parameters are outraged.
+                                # shall we warn you?
+                                # print("SOMEHOW DELOGO IS NOT WORKING PROPERLY")
+                                # breakpoint()
+                                # maybe it's not because of out of bounds error
+                                print("_" * 30)
+                                print(
+                                    "ABNORMAL {} FILTER PARAMS:".format(keyword.upper()),
+                                    commandParams,
                                 )
-                            )
-                            print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
-                            print("_" * 30)
-                            continue
-                        else:
-                            (mX, mY, mW, mH) = XYWH
-                            commandParams = {"x": mX, "y": mY, "w": mW, "h": mH}
-                        # mX1, mY1 = mX+mW, mY+mH
-                        # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
-                        #     print("DELOGO ERROR:")
-                        #     print(mX1,defaultWidth,mY1,defaultHeight)
-                        #     breakpoint()
-                        # we also need to consider if this is necessary.
-                        if keyword == "delogo":
-                            stream = delogoFilter(stream, commandParams)
-                        elif keyword == "crop":
-                            stream = cropFilter(stream, commandParams)
-                            # TODO: the main shit happens here is that if pip region is detected, it (the crop region) will not maintain the width to height ratio. you might need padding, and that's what we about to do here. you may also extract that clip as standalone material.
-                            # more inspection is needed for comprehensive reasoning.
+                                print(
+                                    "maxX: {} maxY: {}".format(
+                                        commandParams["x"] + commandParams["w"],
+                                        commandParams["y"] + commandParams["h"],
+                                    )
+                                )
+                                print("VALID BOUNDARIES:", defaultWidth, defaultHeight)
+                                print("_" * 30)
+                                continue
+                            else:
+                                (mX, mY, mW, mH) = XYWH
+                                commandParams = {"x": mX, "y": mY, "w": mW, "h": mH}
+                            # mX1, mY1 = mX+mW, mY+mH
+                            # if mX1>defaultWidth or mY1>defaultHeight: # opecv to be blamed?
+                            #     print("DELOGO ERROR:")
+                            #     print(mX1,defaultWidth,mY1,defaultHeight)
+                            #     breakpoint()
+                            # we also need to consider if this is necessary.
+                            if keyword == "delogo":
+                                stream = delogoFilter(stream, commandParams)
+                            elif keyword == "crop":
+                                stream = cropFilter(stream, commandParams)
+                                # TODO: the main shit happens here is that if pip region is detected, it (the crop region) will not maintain the width to height ratio. you might need padding, and that's what we about to do here. you may also extract that clip as standalone material.
+                                # more inspection is needed for comprehensive reasoning.
         stream = paddingFilter(stream)
         if preview:  # final filter? need us to crop this?
             stream = previewFilter(stream)
