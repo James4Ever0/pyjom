@@ -997,9 +997,267 @@ from lazero.filesystem import tmpdir
 def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medialang/get_effective_fps"):
     # use ffmpeg to covert the target first!
     with tmpdir(path=tempdir) as tempDirObj:
+####################
+        #!/usr/bin/env python3
+
+        import sys
+        import time
+        from functools import partial
+        from subprocess import run
+        from typing import Union
+
+        # this shit is ridiculus.
+        import sys
+        import os
+
+        os.chdir("../../../")
+        sys.path.append(".")
+        from pyjom.commons import ffprobe_media_info, extract_span
 
 
-        
+        def wrapperFunc(function, *args, **kwargs):
+            stdout = sys.stdout
+            sys.stdout = sys.stderr  # wtf is this shit?
+            try:
+                return function(*args, **kwargs)
+            except:
+                import traceback
+
+                traceback.print_exc()
+                print("Error when executing mpdecimate function")
+            sys.stdout = stdout
+
+
+        def mpdecimate_export_duplicate_clip_ranges_base(
+            filepath: str = None, mpdecimate_args: Union[None, str] = "hi=576", video_size:Union[None, str]=None
+        ):
+            flag_vaapi = False  # not using vaapi.
+            flag_vaapi_decimate = False
+
+            from MediaInfo import MediaInfo
+
+            info = MediaInfo(filename=filepath).getInfo()
+            # cannot get shit from this.
+            # print(info.keys())
+            # breakpoint()
+            videoDuration = None
+            if type(info) == dict:
+                videoDuration = info.get("videoDuration", info.get("duration", None))
+            if videoDuration is not None:
+                videoDuration = float(videoDuration)
+            else:
+                info = ffprobe_media_info(filepath, video_size=video_size)
+                try:
+                    videoDuration = info["streams"][0]["duration"]  # sure it is gif.
+                except:
+                    import traceback
+
+                    traceback.print_exc()
+                    print("Video duration not acquired.")
+                    print(info)
+                    breakpoint()
+            print("video duration:", [videoDuration])
+
+            def prof(s):
+                e = time.time()
+                print("Taken time:",time.strftime("%H:%M:%S", time.gmtime(e - s)))
+                return e
+
+            def profd(f):
+                def a(*args, **kwargs):
+                    s = time.time()
+                    r = f(*args, **kwargs)
+                    prof(s)
+                    return r
+
+                return a
+
+            _hwargs = ["-hwaccel", "vaapi", "-hwaccel_device"]
+
+            def hwargs_decimate():
+                # actually input args.
+                if video_size:
+                    return ['-video_size',video_size]
+                return []
+
+            def hwargs_transcode():
+                return (
+                    [*_hwargs, flag_vaapi, "-hwaccel_output_format", "vaapi"]
+                    if flag_vaapi
+                    else []
+                )
+
+            def _ffmpeg(fi, co, *args, hwargs=[]):
+                args = ["ffmpeg", *hwargs, "-i", fi, *args]
+                result = run(args, check=not co, capture_output=co)
+                if result.returncode == 0:
+                    return result
+
+                print(f"Command {args} failed with code {result.returncode}")
+                print("--------    STDOUT S    --------")
+                print(result.stdout.decode())
+                print("--------    STDOUT E    --------")
+                print("--------    STDERR S    --------")
+                print(result.stderr.decode())
+                print("--------    STDERR E    --------")
+                sys.exit(3)
+
+            ffmpeg = profd(partial(_ffmpeg, filepath))
+
+            def trim(s, e, i, b1=b"v", b2=b""):
+                # if e is None, it indicates end matchs the clip's end
+                trim = b"%f:%f" % (s, e) if e is not None else b"%f" % s
+                return b"[0:%b]%btrim=%b,%bsetpts=PTS-STARTPTS[%b%d];" % (
+                    b1,
+                    b2,
+                    trim,
+                    b2,
+                    b1,
+                    i,
+                )  # presetation timestamp trick
+
+            atrim = partial(trim, b1=b"a", b2=b"a")
+
+            def get_dframes(mpdecimate):
+                dframes = []
+                mList = []
+                for line in mpdecimate.split(b"\n"):
+                    lineDecoded = line.decode("utf-8").replace("\n", "")
+                    if lineDecoded.startswith("[Parsed_mpdecimate"):
+                        coreInfo = "SHIT" + lineDecoded.split("]")[-1]
+                        import parse
+
+                        mFormat = "{} {flag:l} pts:{pts:g} pts_time:{pts_time:g} drop_count:{drop_count:g}"
+                        result = parse.parse(mFormat, coreInfo)
+                        # print(coreInfo)
+                        # print(result)
+                        # breakpoint()
+                        if result is not None:
+                            pts_time = result["pts_time"]
+                            flag = result["flag"]
+                            if pts_time > videoDuration:
+                                if mList[-1][1] != videoDuration:
+                                    flag = mList[-1][0]
+                                    pts_time = videoDuration
+                                else:
+                                    break
+                            mResult = flag, pts_time
+                            mList.append(mResult)
+                # mList = [(flag, pts_time), ...]
+                mList.sort(key=lambda x: x[1])
+                binarizedRange = [0 if x[0] == "keep" else 1 for x in mList]
+                # so we select all the ones.
+                spans = extract_span(binarizedRange, target=1)
+                for start, end in spans:
+                    end -= 1  # crucial. allow jerk moves
+                    if start >= end:
+                        print("START", start, "END", end)
+                        print("________WTF IS GOING ON________")
+                        continue  # we don't need this shit.
+                    start_timestamp, end_timestamp = mList[start][1], mList[end][1]
+                    dframes.append((start_timestamp, end_timestamp))
+                # print(binarizedRange)
+                # print(dframes)
+                # print(spans)
+                # breakpoint()
+                return dframes, (binarizedRange, mList, spans)
+
+            ### this is the dframes detection part.
+
+            mpdecimate = ffmpeg(
+                True,
+                "-vf",
+                "mpdecimate={}".format(mpdecimate_args)
+                if mpdecimate_args
+                else "mpdecimate",  # here to set the threshold.
+                "-loglevel",
+                "debug",
+                "-f",
+                "null",
+                "-",
+                hwargs=hwargs_decimate(),
+            ).stderr
+            dframes2, (binarizedRange, mList, spans) = get_dframes(mpdecimate)
+
+            ### this is the dframes detection part.
+            dupDuration = sum([end - start for start, end in dframes2])
+            dupPercent = dupDuration / videoDuration  # type: ignore
+            frameDupPercent = sum(binarizedRange) / len(binarizedRange)
+            return dframes2, dupPercent, frameDupPercent, (binarizedRange, mList, spans)
+
+
+        def mpdecimate_export_duplicate_clip_ranges(
+            filepath: str = None, mpdecimate_args: Union[None, str] = "hi=576", video_size:Union[None,str]=None
+        ):
+            return wrapperFunc(
+                mpdecimate_export_duplicate_clip_ranges_base,
+                filepath=filepath,
+                mpdecimate_args=mpdecimate_args,
+                video_size=video_size
+            )
+
+
+        # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif"
+
+        # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.rgb"
+        # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps_blend.mp4"
+
+        # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash.gif" # 9.50 fps freaking hell.
+        # how about 15fps or something 
+        source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.mp4" # very unlikely to go higher.
+        # 15fps is just fine for shit like this.
+        # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash.mp4" # very unlikely to go higher.
+
+        # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.mp4"
+        # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.gif"
+        # source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.mp4"
+        # videoDuration, duration
+        # source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4" # what about this?
+        # shit. wtf is going on?
+        # now it is good. no reply for dog_with_text.mp4 with strictest settings.
+
+        mpdecimate_args_choices = [None, "hi=1:lo=1:frac=1:max=0", "hi=200:lo=200:frac=1:max=0"]
+
+        result = mpdecimate_export_duplicate_clip_ranges(
+            source, mpdecimate_args=mpdecimate_args_choices[0]
+            # ,video_size="480x480"
+        )
+
+        # turned out mp4 encoded video actually outperforms original gif.
+
+        # ffmpeg's libx264 is good. gif shit is bad. don't know what happens out there. :)
+
+        # use 'blend' instead of 'dup'
+
+        if result is not None:
+            dframes2, dupPercent, frameDupPercent, (binarizedRange, mList, spans) = result
+            for i, (s, e) in enumerate(dframes2):
+                # start, end.
+                print("INDEX", i, "START", s, "END", e)
+            print("DUPLICATE PERCENTAGE: {:.2f} %".format(dupPercent * 100))
+            print("FRAME DUPLICATE PERCENTAGE: {:.2f} %".format(frameDupPercent * 100))
+            # DUPICATE PERCENTAGE: 73.95 %
+            # FRAME DUPICATE PERCENTAGE: 86.67 %
+            ############## that is for the sticker. we are gonna check for something else.
+            # first of all, we need to convert the fps first.
+            # to do so:
+            # this shit was slow. fuck.
+            # ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=30 /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.gif
+            # change mode to dup may seriously affect our output. you know it can produce false positives.
+            # so how about we make it into 15 fps or something? can't be slow as that.
+            # ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=15:mi_mode=dup /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.gif
+            # denoise first!
+            # turn off dithering
+            # maybe use mp4 instead? fuck.
+            # ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=30:mi_mode=dup /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.mp4
+            # now try blend.
+            # ffmpeg -y -i /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection.gif -vf minterpolate=fps=30:mi_mode=blend /root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps_blend.mp4
+            # now try denoise.
+            # yaepblur? (slow) vaguedenoiser? hqdn3d?
+        else:
+            print("dframes2 is None")
+
+####################
         return effectiveFPS
 
 # this is a generator, not a list!
