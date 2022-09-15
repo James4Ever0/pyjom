@@ -510,6 +510,7 @@ def detectStationaryLogoOverTime(
     for cnt in cnts2:
         x, y, w, h = cv2.boundingRect(cnt)  # Draw the bounding box image=
         currentRect = [(x, y), (x + w, y + h)]
+        boundingRects.append(currentRect)
         if cornersOnly:
             for cornerRect in fourCorners:
                 overlapRect = getOverlapRect(currentRect, cornerRect)
