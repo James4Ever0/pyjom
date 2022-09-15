@@ -15,19 +15,18 @@ flag = 'topic_with_fetchers
 
 with tmpdir(path=path) as testDir:
     print("TESTDIR:", testDir)
-if flag == 'only_topic_generator':
-
-    for asset_id, meta in elems:
-        print("X", asset_id, meta)
-        url = meta["url"]
-        extension = url.split("?")[0].split(".")[-1]
-        basename = ".".join([asset_id, extension])
-        download_path = os.path.join(path, basename)
-        try:
-            download(url, download_path, threads=-0.3, size_filter={"min":0.4, "max":50})
-        except:
-            print("Error when download file")
-        # X ('sr8jYZVVsCmxddga8w', {'height': 480, 'width': 474, 'url': 'https://media0.giphy.com/media/sr8jYZVVsCmxddga8w/giphy.gif'})
-        # breakpoint()
-        # seems good. now we check the cat/dog.
+    if flag == 'only_topic_generator':
+        for asset_id, meta in elems:
+            print("X", asset_id, meta)
+            url = meta["url"]
+            extension = url.split("?")[0].split(".")[-1]
+            basename = ".".join([asset_id, extension])
+            download_path = os.path.join(path, basename)
+            try:
+                download(url, download_path, threads=-0.3, size_filter={"min":0.4, "max":50})
+            except:
+                print("Error when download file")
+            # X ('sr8jYZVVsCmxddga8w', {'height': 480, 'width': 474, 'url': 'https://media0.giphy.com/media/sr8jYZVVsCmxddga8w/giphy.gif'})
+            # breakpoint()
+            # seems good. now we check the cat/dog.
     elif flag == 'topic_with_fetcher':
