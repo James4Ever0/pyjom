@@ -1,6 +1,6 @@
 # how to chain functions?
 
-class add(bool):
+class myBool(bool):
     def __call__(self, n):
         if self == False: return False
-        return 
+        return myBool(n)
