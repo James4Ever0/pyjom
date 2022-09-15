@@ -75,4 +75,5 @@ for center in cluster_centers:
     output = cv2.bitwise_and(image, image, mask = mask)
     # print(output)
     # print(output.shape)
-    output.reshape()
+    mOutput = output.reshape(-1,3)
+    mOutput
