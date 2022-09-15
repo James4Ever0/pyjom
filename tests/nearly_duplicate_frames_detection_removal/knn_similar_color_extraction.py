@@ -96,13 +96,13 @@ sample_size_limit = 5000
 
 reshapedImageIndexs = np.arange(0, length)
 # so now it is good.
-sample = np.random.choice(reshapedImageIndexs, size=min(sample_size_limit, length))
-print(sample)
-print(sample.shape)
+sampleIndexs = np.random.choice(reshapedImageIndexs, size=min(sample_size_limit, length))
+print(sampleIndexs)
+print(sampleIndexs.shape)
 
-sample_size = len(sample)
+sample_size = len(sampleIndexs)
 
-sampleIndexs = indexs[sample]
+sampleIndexs = indexs[sampleIndexs]
 sample = reshapedImage[sample, :]
 print(sample)
 print(sample.shape)
