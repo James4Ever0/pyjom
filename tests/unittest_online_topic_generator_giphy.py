@@ -43,9 +43,11 @@ with tmpdir(path=tmpPath) as testDir:
             from pyjom.commons import checkMinMaxDict
             duration_filter =  {'min':0.6, 'max':7}
             fps_filter =  {'min':7, 'max':60}
+            fps = 
             duration_valid = checkMinMaxDict(duration,duration_filter)
             fps_valid = checkMinMaxDict(fps,fps_filter)
             if duration_valid:
+                if fps_valid:
             else:
                 print("skipping due to invalid duration: %s" % duration)
                 print('duration filter:', duration_filter)
