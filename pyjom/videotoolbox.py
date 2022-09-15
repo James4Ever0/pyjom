@@ -354,7 +354,7 @@ def detectStationaryLogoOverTime(
             from pyjom.mathlib import getContinualMappedNonSympyMergeResultWithRangedEmpty,
             mergedRangesToSequential
             pipCropDictsWithRangedEmpty = getContinualMappedNonSympyMergeResultWithRangedEmpty(pipCropDicts,start,end)
-            
+            pipCropDictsWithRangedEmptySequential = mergedRangesToSequential(pipCropDictsWithRangedEmpty)
     ###########
     import sys
     import os
