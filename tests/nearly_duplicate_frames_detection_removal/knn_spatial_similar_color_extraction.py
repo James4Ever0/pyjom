@@ -67,6 +67,8 @@ from lazero.utils.importers import cv2_custom_build_init
 
 cv2_custom_build_init()
 
+use_spatial=True
+
 import cv2
 
 image = cv2.imread(src)
