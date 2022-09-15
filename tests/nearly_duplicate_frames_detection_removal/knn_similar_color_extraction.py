@@ -65,3 +65,4 @@ print(labels)
 print(cluster_centers)
 
 label_percentage = {x: labels.count(x)/sample_size for x in range(n_clusters)}
+
