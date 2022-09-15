@@ -61,14 +61,14 @@ with tmpdir(path=tmpPath) as testDir:
             mList = [
                 [get_duration, duration_filter, checkMinMaxDict,"duration", ],
                 [get_fps_float, fps_filter, checkMinMaxDict,"fps", ],
-                [getVideoColorCentrality, video_color_filter, "video_color_centrality"],
+                [getVideoColorCentrality, video_color_filter, checkVideoColorCentrality"video_color_centrality"],
                 [getEffectiveFPS, video_effective_fps_filter, checkMinMaxDict,"EffectiveFPS"],
             ]
             for function, mFilter,filterFunc, flag in mList:
                 mValue = function(local_video_location)
                 valid = filterFunc(mValue, mFilter)
                 if not valid:
-                    print("skipping due to invalid %s: %s" % (flsg, fps_float))
+                    print("skipping due to invalid %s: %s" % (flag, fps_float))
                     print("%s filter:" % flag, fps_filter)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
