@@ -11,6 +11,7 @@ from pyjom.imagetoolbox import *
 def getEffectiveFPS(videoPath, convert_fps_target=15):
     return effectiveFPS
 
+# this is a generator, not a 
 def getVideoColorCentrality(videoPath,
     denoise=True,
     frame_sample_limit=3,
@@ -20,7 +21,7 @@ def getVideoColorCentrality(videoPath,
     n_clusters=5,
     batch_size=45,
     max_no_improvement=10):
-    return {"centrality":{"max":max_centrality,"mean":mean_centrality}, "max_nearby_center_percentage":{'max':max_max_nearby_center_percentage, 'mean':mean_max_nearby_center_percentage}}
+    return centrality,"mean":mean_centrality}, "max_nearby_center_percentage":{'max':max_max_nearby_center_percentage, 'mean':mean_max_nearby_center_percentage}}
 
 
 def checkXYWH(XYWH, canvas, minArea=20):
