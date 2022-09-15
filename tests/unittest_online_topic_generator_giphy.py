@@ -16,6 +16,7 @@ flag = 'topic_with_fetchers'
 with tmpdir(path=path) as testDir:
     print("TESTDIR:", testDir)
     if flag == 'only_topic_generator':
+        print("HERE??",1)
         for asset_id, meta in elems:
             print("X", asset_id, meta)
             url = meta["url"]
