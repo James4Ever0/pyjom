@@ -1,6 +1,6 @@
 src = "/root/Desktop/works/pyjom/samples/video/kitty_flash.gif"
 
-import pathlib, sys
+import pathlib, sys # great.
 
 site_path = pathlib.Path("/usr/local/lib/python3.9/site-packages")
 cv2_libs_dir = (
