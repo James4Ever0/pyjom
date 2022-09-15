@@ -9,7 +9,10 @@ from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
 shape = image.shape
-if len(shape) 
+if len(shape) !=3:
+    print('weird shit.')
+if shape[2] !=3:
+    print("depth not right.")
 # for i in range(3):
 #     image[:,:,i] = i
 
