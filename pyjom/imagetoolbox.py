@@ -89,8 +89,8 @@ def getColorCentrality(image,sample_size_limit = 5000,):
     # breakpoint()
     labels = kmeans.labels_
     cluster_centers = kmeans.cluster_centers_
-    print(labels)
-    print(cluster_centers)
+    # print(labels)
+    # print(cluster_centers)
 
     label_percentage = {
         x: np.count_nonzero(labels == x) / sample_size for x in range(n_clusters)
@@ -120,10 +120,10 @@ def getColorCentrality(image,sample_size_limit = 5000,):
         # print(mOutput)
         # print(mOutput.shape)
         # breakpoint()
-        print("CENTER:",center)
-        print('POSITIVE COUNT:', positive_count)
-        print("SUM:", mSum, "MIN:", min(mOutput), 'MAX:', max(mOutput))
-        print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(percent*100))
+        # print("CENTER:",center)
+        # print('POSITIVE COUNT:', positive_count)
+        # print("SUM:", mSum, "MIN:", min(mOutput), 'MAX:', max(mOutput))
+        # print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(percent*100))
         percents.append(percent)
 
-    print("CENTRALITY: {:.2f} %".format(sum(percents)*100))
+    # print("CENTRALITY: {:.2f} %".format(sum(percents)*100))
