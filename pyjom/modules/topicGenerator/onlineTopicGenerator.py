@@ -6,19 +6,18 @@ import requests
 # import jieba
 from typing import Literal
 
+
 def removeKeywordDuplicates(keywords):
     keywordsType = type(keywords)
-    entry = {str:lambda x: x.split(" "), list:lambda x: x, tuple: lambda x: list(x)}
-    output = {str: lambda x: " ".join(x), list:lambda x: x, tuple: lambda x: tuple(x)}
+    entry = {str: lambda x: x.split(" "), list: lambda x: x, tuple: lambda x: list(x)}
+    output = {str: lambda x: " ".join(x), list: lambda x: x, tuple: lambda x: tuple(x)}
     if keywordsType in entry.keys():
         keywordsList = entry[keywordsType]
     else:
         raise Exception("Unknown keywords type: %s" % type(keywords))
     keywordsSet = set(keywordsList)
     keywordsSetList = list(keywordsSet)
-    return 
-
-
+    return output[keywordsType](keywordsSetList)
 
 
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
@@ -83,12 +82,12 @@ def OnlineTopicGenerator(
         while True:
             harvestedData = []
             try:
-                source_type = random.choice(['videos','gifs'])
+                source_type = random.choice(["videos", "gifs"])
                 # source_type = 'videos' # for debugging
                 if random.random() > 0.5:
                     mRandomPicture = requests.get(
                         "http://localhost:8902/random",
-                        params={"q": keywords, "rating": "g", 'type':source_type},
+                        params={"q": keywords, "rating": "g", "type": source_type},
                     )  # may you get stickers?
                     mRandomPictureJson = mRandomPicture.json()
                     harvestedData += mRandomPictureJson["data"]
@@ -96,14 +95,18 @@ def OnlineTopicGenerator(
                 else:
                     mSearchPictures = requests.get(
                         "http://localhost:8902/search",
-                        params={"q": keywords, "rating": "g",'type':source_type},
+                        params={"q": keywords, "rating": "g", "type": source_type},
                     )
                     mSearchPicturesJson = mSearchPictures.json()
                     harvestedData += mSearchPicturesJson["data"]
                     randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
 
                 mRelatedPictures = requests.get(
-                    "http://localhost:8902/related", params={"q": randomPictureId,'type':source_type} # seems not working? wtf?
+                    "http://localhost:8902/related",
+                    params={
+                        "q": randomPictureId,
+                        "type": source_type,
+                    },  # seems not working? wtf?
                 )
                 mRelatedPicturesJson = mRelatedPictures.json()
                 harvestedData += mRelatedPicturesJson["data"]
