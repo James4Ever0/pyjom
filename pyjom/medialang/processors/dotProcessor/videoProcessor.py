@@ -93,6 +93,7 @@ def ffmpegVideoPreProductionFilter(
 
     # these things are ordered to be the last ones. just flags.
     if "randomFlip" in filters:
+        mDict.update({"",})
         pass
     if "superResolution" in filters:
         pass
