@@ -1383,7 +1383,7 @@ def getEffectiveFPS(
                 print("INDEX", i, "START", s, "END", e)
             print("DUPLICATE PERCENTAGE: {:.2f} %".format(dupPercent * 100))
             print("FRAME DUPLICATE PERCENTAGE: {:.2f} %".format(frameDupPercent * 100))
-            effectiveFPS = frameDupPercent * conversionFPS
+            effectiveFPS = (1-frameDupPercent) * conversionFPS
             debugInfo = {
                 "binarized_frame_keep_drop_flags": binarizedRange,
                 "frame_list_with_pts_and_flag": mList,
