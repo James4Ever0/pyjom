@@ -128,4 +128,4 @@ for center in cluster_centers:
     print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(percent*100))
     percents.append(percent)
 
-    print("NEARBY CENTER PERCENTAGE: {:.2f} %".format(percent*100))
+print("CENTRALITY: {:.2f} %".format(sum(percents)*100))
