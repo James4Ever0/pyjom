@@ -209,8 +209,9 @@ def censorInterface(
     blackbutton2.grid(row=0 + conrow, column=2, sticky="ew")
     parent.bind("<Return>", lambda event=None: bluebutton.invoke())
     parent.bind("<Control-Return>", lambda event=None: mdestroy())
+    # this is for updating the order of tags.
     parent.bind("<KeyRelease>", lambda event=None:  print("KEY RELEASED!"))
-    # this is for updating the order of 
+    # this is for updating the order of tags.
     parent.mainloop()
     mdata["labels"] = [x for x in is_on.keys() if is_on[x]]
     mdata["total_labels"] = [x for x in is_on.keys()]
