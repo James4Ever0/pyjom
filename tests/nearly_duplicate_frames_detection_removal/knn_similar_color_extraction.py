@@ -86,6 +86,8 @@ for c0 in range(col_0):
     for c1 in range(col_1):
         indexs.append((c0,c1))
 
+indexs = np.array(indexs)
+
 # print(image.reshape(-1,3))
 reshapedImage = image.reshape(-1, 3)  # are you sure about this?
 length, depth = reshapedImage.shape
@@ -101,7 +103,7 @@ print(sample.shape)
 sample_size = len(sample)
 
 sample = reshapedImage[sample, :]
-sampleIndexs = index[sample]
+sampleIndexs = indexs[sample]
 print(sample)
 print(sample.shape)
 
