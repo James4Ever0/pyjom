@@ -103,7 +103,8 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     if startFrame <=0:
         startFrame = 0
     stopFrame = int(end * fps)
-    
+    if stopFrame <=0:
+        stopFrame = total_frames
     import progressbar
 
     totalPopulation = list(range(startFrame, min(stopFrame, total_frames) - 1))
