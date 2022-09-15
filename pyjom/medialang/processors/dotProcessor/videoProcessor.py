@@ -96,7 +96,7 @@ def ffmpegVideoPreProductionFilter(
         if random.random()>0.5:
             mDict.update({"hflip":[(start, end)]})
     if "superResolution" in filters:
-        mDict.update({"hflip":[(start, end)]})
+        mDict.update({"scale=w=iw*2:h=ih*2:flags=lanczos":[(start, end)]})
     if "minterpolate" in filters:
         pass
     if "denoising" in filters:
