@@ -186,7 +186,8 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     # cap.release()
 def getRectAreaDiagonal(diagonalRect):
     (x0,y0), (x1,y1) = diagonalRect
-    
+    area = (x1-x0)*(y1-y0)
+    return area
 
 def detectTextRegionOverTime(
     videoPath, start, end, sample_rate=3, mergeThreshold=10, langs:list = ['en'],top_k = 10
