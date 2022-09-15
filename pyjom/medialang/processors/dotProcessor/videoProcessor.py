@@ -182,7 +182,8 @@ def ffmpegVideoPreProductionFilter(
             renderCommands.sort(
                 key=lambda command: commandValueMap[command.split("_")[0]]
             )
-            for renderCommand in renderCommands:
+            renderCommands = 
+            for renderCommand in renderCommands.uniq():
                 # print('RENDER COMMAND:',renderCommand, "SPAN", mStart, mEnd)
                 # breakpoint()
                 if renderCommand == "empty":
