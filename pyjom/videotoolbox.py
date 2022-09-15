@@ -517,7 +517,7 @@ def detectStationaryLogoOverTime(
         boundingRects.append(currentRect.copy())
     print("TOTAL {} STATIONARY LOGOS.".format(len(cnts2)))
     delogoCommandList = [] # test if it can merge anything!
-    if fourCorners is not None or not cornersOnly:
+    if (fourCorners is not None ) or not cornersOnly:
         start_end_list = [[None,start_end_ranges]]
     else:
         start_end_list = []
