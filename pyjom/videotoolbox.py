@@ -1050,7 +1050,6 @@ def getEffectiveFPS(videoPath, tempdir = "/dev/shm/medialang/get_effective_fps",
                         videoDuration = info["streams"][0]["duration"]  # sure it is gif.
                     except:
                         import traceback
-
                         traceback.print_exc()
                         print("Video duration not acquired.")
                         print(info)
