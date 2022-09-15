@@ -1002,7 +1002,7 @@ def getVideoColorCentrality(videoPath,
     denoise=True,
     frame_sample_limit=3,
     **kwargs):
-    videoFrameSampler = getVideoFrameSampler(videoPath, -1,-1, )
+    videoFrameSampler = getVideoFrameSampler(videoPath, -1,-1, frame_sample_limit)
     for frame in videoFrameSampler:
         centrality,max_nearby_center_percentage = getImageColorCentrality(frame, **kwargs)
         yield centrality,max_nearby_center_percentage
