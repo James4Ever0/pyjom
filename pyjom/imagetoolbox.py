@@ -53,7 +53,6 @@ def getColorCentrality(
     # print(sampleIndexs)
     # print(sampleIndexs.shape)
 
-    sample_size = len(sampleIndexs)
 
     sample = reshapedImageIndexs[sampleIndexs]
     sample = reshapedImage[sample, :]
