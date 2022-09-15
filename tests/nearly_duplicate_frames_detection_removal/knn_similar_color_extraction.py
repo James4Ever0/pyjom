@@ -26,6 +26,6 @@ sample = np.random.choice(reshapedImageIndexs,size=min(5000, length))
 print(sample)
 print(sample.shape)
 
-sample = reshapedImage[reshapedImageIndexs,:]
+sample = reshapedImage[sample,:]
 print(sample)
 print(sample.shape)
