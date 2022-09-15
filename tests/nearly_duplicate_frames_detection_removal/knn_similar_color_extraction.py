@@ -9,4 +9,5 @@ from sklearn.cluster import KMeans
 
 image = cv2.imread(src)
 # print(image.shape)
-image.reshape(-1,3)
+colors = image.reshape(-1,3)
+print(colors)
