@@ -544,8 +544,6 @@ def detectStationaryLogoOverTime(
         return {}
     else:
         delogoCommandSet = "|".join(mFinalDelogoFilters)
-        # print(delogoCommandSet)
-        # breakpoint()
         return {delogoCommandSet: [(start, end)]}
 
 
