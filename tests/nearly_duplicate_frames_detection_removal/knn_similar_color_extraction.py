@@ -2,7 +2,7 @@
 
 # with text. a meme.
 src = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
-
+# CENTRALITY: 4.01 %
 
 # src = "/root/Desktop/works/pyjom/samples/image/similar_color_extraction.bmp"  # use some filter first, or rather not to?
 
