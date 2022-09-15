@@ -179,6 +179,7 @@ def ffmpegVideoPreProductionFilter(
         else:
             renderCommands = renderCommandString.split("|")
             # sort all commands?
+            
             renderCommands.sort(
                 key=lambda command: commandValueMap[command.split("_")[0]]
             )
