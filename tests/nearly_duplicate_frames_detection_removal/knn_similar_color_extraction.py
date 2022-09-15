@@ -60,3 +60,4 @@ cluster_centers = kmeans.cluster_centers_
 print(labels)
 print(cluster_centers)
 
+label_counts = {x}
