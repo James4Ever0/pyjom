@@ -993,8 +993,8 @@ def detectPipRegionOverTime(
         finalResultDict.update({key: updatedValueAlignedToSeconds.copy()})
     return finalResultDict
 
-
-def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medialang"):
+from lazero.
+def getEffectiveFPS(videoPath, convert_fps_target=15, tempdir = "/dev/shm/medialang/get_effective_fps"):
     # use ffmpeg to covert the target first!
     return effectiveFPS
 
