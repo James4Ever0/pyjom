@@ -1426,5 +1426,7 @@ def checkVideoColorCentrality(videoColorCentralityGenerator, video_color_filter:
     for centrality, max_nearby_center_percentage in videoColorCentralityGenerator:
         a = checkMinMaxDict(centrality, video_color_filter.get('centrality',{}))
         b = checkMinMaxDict(max_nearby_center_percentage, video_color_filter.get('max_nearby_center_percentage',{}))
-        if 
+        flag = a and b
+        if not flag:
+            return False
     return True
