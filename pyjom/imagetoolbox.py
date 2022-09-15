@@ -4,6 +4,7 @@ import numpy as np
     
     n_clusters = 5
     batch_size = 45
+    max_no_improvement=10
 def getColorCentrality(image,sample_size_limit = 5000,):
     # image is of numpy.array
     # multiple centers.
@@ -78,7 +79,7 @@ def getColorCentrality(image,sample_size_limit = 5000,):
         n_clusters=n_clusters,
         batch_size=batch_size,
         # n_init=10,
-        max_no_improvement=10,
+        max_no_improvement=max_no_improvement,
         verbose=0,
     ).fit(X)
     # from lazero.utils import inspectObject
