@@ -21,9 +21,10 @@ def filesystemReviewerCoreAnalyzer(
         args=args,
         template_names=template_names,
     )  # unnoticed source.
-    print("review:")
-    # breakpoint()
-    print(json.dumps(review, indent=4))
+    if debug:
+        print("review:")
+        # breakpoint()
+        print(json.dumps(review, indent=4))
     reviewResult = {"review": review, "source": source}
     return reviewResult
 
