@@ -67,7 +67,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # breakpoint()
         motion_vectors_simplified = motion_vectors[condition, :][:, [0, 5, 6, 7, 8, 9]]
         motion_vectors_scale = motion_vectors_simplified[:, [5]]
-        motion_vectors_with_scale = motion_vectors_simplified
+        motion_vectors_with_scale = motion_vectors_simplified[:,[]]
         print(motion_vectors_simplified.shape)
         print(motion_vectors_scale.shape)
         breakpoint()
