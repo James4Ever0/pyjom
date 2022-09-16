@@ -23,9 +23,9 @@ def processInputWrapperFunction(function,wrapperFunction):
     return mFunction
 
 medialangDetectors = {
-    "subtitle_detector": processInputWrapperFunction(mediaSubtitleDetector,,
-    "framediff_detector": processInputWrapperFunction(videoDiffDetector,,
-    "blackout_detector": processInputWrapperFunction(blackoutDetector,,
-    "yolov5_detector": processInputWrapperFunction(yolov5_Detector,,
-    "frameborder_detector": processInputWrapperFunction(frameborder_Detector,,
+    "subtitle_detector": mediaSubtitleDetector,,
+    "framediff_detector": videoDiffDetector,,
+    "blackout_detector": blackoutDetector,,
+    "yolov5_detector": yolov5_Detector,,
+    "frameborder_detector": frameborder_Detector,,
 }
