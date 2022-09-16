@@ -28,6 +28,7 @@ resultGenerator, function_id = reviewer(
 )  # or at least a generator?
 
 def extractYolov5DetectionData(detectionData):
+    # plan to get some calculations!
     filepath, review_data = detectionData['review']['review']
     timeseries_data = review_data['yolov5_detector']['yolov5_detector']
     for frameData in timeseries_data:
@@ -42,4 +43,5 @@ def extractYolov5DetectionData(detectionData):
 for result in resultGenerator:
     from lazero.utils.logger import sprint
     # sprint(result)
+    extractYolov5DetectionData(result)
     breakpoint()
