@@ -3,4 +3,5 @@
 source = ""
 from mvextractor.videocap import VideoCap
 
-for success, frame, motion_vectors, frame_type,timestamp in video
+while True:
+    success, frame, motion_vectors, frame_type,timestamp = 
