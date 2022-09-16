@@ -21,7 +21,7 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 
-while True:
+for _ in range(framesCount):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     height, width, channels =  frame.shape
     # breakpoint()
