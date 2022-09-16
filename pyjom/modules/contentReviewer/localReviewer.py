@@ -2,8 +2,7 @@ from pyjom.commons import *
 from pyjom.modules.contentCensoring.core import localCensor
 import json
 
-
-def filesystemReviewerCoreIterator(elem,auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[]):
+def filesystemReviewerCoreAnalyzer(elem,auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[]):
     print("element inside:")
     print("_" * 20)
     _, pretty_printed = jsonPrettyPrint(elem)
@@ -23,6 +22,8 @@ def filesystemReviewerCoreIterator(elem,auto=False, semiauto=True, dummy_auto=Tr
     print(json.dumps(review, indent=4))
     reviewResult = {"review": review, "source": source}
     return reviewResult
+
+def filesystemReviewerNoGenerator(content)
 
 @decorator
 def filesystemReviewer(
