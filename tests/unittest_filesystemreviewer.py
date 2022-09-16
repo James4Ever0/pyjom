@@ -29,6 +29,7 @@ resultGenerator, function_id = reviewer(
 
 def extractYolov5DetectionData(detectionData):
     filepath, review_data = detectionData['review']['review']
+    
 
 
 for result in resultGenerator:
