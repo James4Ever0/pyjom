@@ -42,6 +42,6 @@ def extractYolov5DetectionData(detectionData):
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
-    # sprint(result)
-    extractYolov5DetectionData(result)
+    sprint(result)
+    # extractYolov5DetectionData(result)
     breakpoint()
