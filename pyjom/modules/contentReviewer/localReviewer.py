@@ -22,6 +22,7 @@ def filesystemReviewerNoGenerator(elem,auto=False, semiauto=True, dummy_auto=Tru
     # breakpoint()
     print(json.dumps(review, indent=4))
     reviewResult = {"review": review, "source": source}
+    return reviewResult
 
 @decorator
 def filesystemReviewer(
