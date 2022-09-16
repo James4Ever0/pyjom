@@ -387,6 +387,8 @@ titles = [
 # breakpoint()
 assert len(titles) == len(data)
 assert a*b >= len(titles)
+
+if a == 1:
 for _a in range(a):
     for _b in range(b):
         index = _a * b + _b
