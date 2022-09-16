@@ -7,45 +7,25 @@ from .frameborder_Detector import *
 
 # maybe these shits are gonna ruin my life...
 
-
 def getMedialangInputFixed(medialangPathsInput):
     for fbase0 in medialangPathsInput:
         if type(fbase0) == str:
             yield fbase0
-        elif (
-            type(fbase0) == list
-            and len(fbase0) == 1
-            and type(fbase0[0] == dict)
-            and "cache" in fbase0[0].keys()
-        ):
-            yield fbase0[0]["cache"]
+        elif type(fbase0) == list and len(fbase0) == 1 and type(fbase0[0] == dict) and 'cache' in fbase0[0].keys():
+            yield fbase0[0]['cache']
         else:
-            print("weird medialang detector input")
+            print('weird medialang detector input')
             print(fbase0)
         # then it must be the medialang shit.
 
-
-def processInputWrapperFunction(function, wrapperFunction):
-    def mFunction(data, *args, **kwargs):
-        return function(wrapperFunction(data), *args, **kwargs)
-
+def processInputWrapperFunction(function,wrapperFunction):
+    def mFunction(data, *args,**kwargs): return function(wrapperFunction(data),*args,**kwargs)
     return mFunction
 
-
 medialangDetectors = {
-    "subtitle_detector": processInputWrapperFunction(
-        mediaSubtitleDetector, getMedialangInputFixed
-    ),
-    "framediff_detector": processInputWrapperFunction(
-        videoDiffDetector, getMedialangInputFixed
-    ),
-    "blackout_detector": processInputWrapperFunction(
-        blackoutDetector, getMedialangInputFixed
-    ),
-    "yolov5_detector": processInputWrapperFunction(
-        yolov5_Detector, getMedialangInputFixed
-    ),
-    "frameborder_detector": processInputWrapperFunction(
-        frameborder_Detector, getMedialangInputFixed
-    ),
+    "subtitle_detector": processInputWrapperFunction(mediaSubtitleDetector,,
+    "framediff_detector": processInputWrapperFunction(videoDiffDetector,,
+    "blackout_detector": processInputWrapperFunction(blackoutDetector,,
+    "yolov5_detector": processInputWrapperFunction(yolov5_Detector,,
+    "frameborder_detector": processInputWrapperFunction(frameborder_Detector,,
 }
