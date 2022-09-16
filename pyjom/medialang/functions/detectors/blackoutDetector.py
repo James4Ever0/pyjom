@@ -53,5 +53,5 @@ def blackoutDetector(mediapaths, cut=3, threshold=30, method="average", timestep
             metadata.update({"config": config})
             result[data_key][keyword] = mdata
             result[data_key].update(metadata)
-            results.append(result)
+        results.append(result)
     return results
