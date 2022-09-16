@@ -15,6 +15,7 @@ while True:
     if success:
         # what is the content of this motion vector?
         # print(motion_vectors)
+        for mv in motion_vectors:
         (
             source_index,
             _,
@@ -26,7 +27,7 @@ while True:
             motion_x,
             motion_y,
             motion_scale,
-        ) = motion_vectors
+        ) = motion_vectors.tolist()
         # print(motion_vectors.shape)
     else:
         break
