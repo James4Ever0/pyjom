@@ -12,6 +12,8 @@ cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
 while True:
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
+    print(frame.shape)
+    breakpoint()
     if success:
         # what is the content of this motion vector?
         # print(motion_vectors)
@@ -29,10 +31,10 @@ while True:
                 motion_scale,
             ) = mv.tolist()
             try:
-                assert src_x % 16 == 0
-                assert src_y % 16 == 0
-                assert dst_x % 16 == 0
-                assert dst_y % 16 == 0
+                assert src_x % 16 == 8
+                assert src_y % 16 == 8
+                assert dst_x % 16 == 8
+                assert dst_y % 16 == 8
             except:
                 print('source',src_x, src_y)
                 print('destionation',dst_x, dst_y)
