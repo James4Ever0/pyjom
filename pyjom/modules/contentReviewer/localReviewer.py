@@ -4,7 +4,7 @@ import json
 
 
 def filesystemReviewerCoreAnalyzer(
-    elem, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[]
+    elem, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[], debug=True
 ):
     print("element inside:")
     print("_" * 20)
