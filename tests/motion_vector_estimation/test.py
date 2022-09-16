@@ -276,7 +276,7 @@ for _ in progressbar.progressbar(range(framesCount)):
 
         cartesianWeights = weights + [0]
         cartesianWeights = np.array(cartesianWeights)
-        cartesianWeights
+        cartesianWeightsSum = np.sum(cartesianWeights)
 
         weighted_motion_vectors_filtered_cartesian_distance = (
             motion_vectors_filtered_cartesian_distance * cartesianWeights
