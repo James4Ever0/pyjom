@@ -19,7 +19,7 @@ reviewer = keywordDecorator(
     template_names=template_names,
     args={"autoArgs": autoArgs},
 )
-
-fileList = []
+videoPath = ""
+fileList = [{'type':'video','path':videoPath}]
 
 result = reviewer(fileList) # or at least a generator?
