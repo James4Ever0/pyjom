@@ -7,7 +7,7 @@ from mvextractor.videocap import VideoCap
 
 
 cap = VideoCap()
-cap.open(source)
+cap.open(source) # wtf is going on here?
 while True:
     success, frame, motion_vectors, frame_type,timestamp = cap.read()
     if success:
