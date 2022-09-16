@@ -32,10 +32,12 @@ def extractYolov5DetectionData(detectionData):
     timeseries_data = review_data['yolov5_detector']['yolov5_detector']
     for frameData in timeseries_data:
         timestamp, frameNumber, frameDetectionData = [frameData[key] for key in ['time','frame','yolov5_detector']]
-        print('timestamp:', timestamp)
+        sprint('timestamp:', timestamp)
         for elem in frameDetectionData:
             location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
-
+            print('location:', location)
+            print('confidence:', confidence)
+            print('identity:', identity)
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
