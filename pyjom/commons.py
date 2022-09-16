@@ -537,8 +537,6 @@ def jsonPrettyPrint(feedback, indent=4):
 
 def getFileType(fbase0):
     # quick dirty fix.
-    if type(fbase0) == list and len(fbase0) == 1:
-        # then it must be the medialang shit.
     mimestart = mimetypes.guess_type(fbase)[0]
     if mimestart != None:
         mimestart = mimestart.split("/")[0]
