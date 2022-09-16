@@ -538,11 +538,13 @@ def jsonPrettyPrint(feedback, indent=4):
 def getFileType(fbase0):
     # quick dirty fix.
     # for gif we have a hard fix.
-    translateTable = {'gif':'video'}
-    print("FBASE:", fbase0)
+    translateTable = {'gif':'video'} # force conversion.
+    # print("FBASE:", fbase0)
     suffix = fbase0.split(".")[-1]
     guessedType = translateTable.get(suffix,None)
     # breakpoint()
+    if guessedType:
+        return guessedType
     mimestart = mimetypes.guess_type(fbase0)[0]
     if mimestart != None:
         mimestart = mimestart.split("/")[0]
