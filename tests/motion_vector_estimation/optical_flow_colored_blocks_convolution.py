@@ -1,5 +1,5 @@
 ########################
-#
+# aim to create optical flow here, with directions
 ########################
 
 # it contains subpixel motion vectors. fucking hell
