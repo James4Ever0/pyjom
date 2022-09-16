@@ -18,7 +18,7 @@ def getMedialangInputFixed(medialangPathsInput):
             print(fbase0)
         # then it must be the medialang shit.
 
-def processInputWrapperFunction(function,wrapperFunction)
+def processInputWrapperFunction(function,wrapperFunction, *args, **kwargs):
 
 medialangDetectors = {
     "subtitle_detector": mediaSubtitleDetector,
