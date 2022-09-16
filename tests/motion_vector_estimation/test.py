@@ -388,12 +388,12 @@ titles = [
 assert len(titles) == len(data)
 assert a*b >= len(titles)
 
-if a == 1:
 for _a in range(a):
     for _b in range(b):
         index = _a * b + _b
         if index > len(data) - 1:
             break
+        if a == 1:
         axis[_a, _b].plot(data[index])
         axis[_a, _b].set_title(titles[index])
 plt.show()
