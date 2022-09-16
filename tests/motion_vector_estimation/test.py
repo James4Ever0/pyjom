@@ -65,6 +65,8 @@ for _ in progressbar.progressbar(range(framesCount)):
             destCoord = (dst_x, dst_y)
             if destCoord in destCoords:
                 print("SKIPPING DUPLICATE DESTCOORD:", destCoord)
+                print("PREVIOUS MV",prevMV)
+                print("CURRENT MV", mv)
                 continue
             else:
                 destCoords.add(destCoord)
