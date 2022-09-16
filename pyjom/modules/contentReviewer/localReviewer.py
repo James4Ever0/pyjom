@@ -6,8 +6,9 @@ import json
 def filesystemReviewerCoreAnalyzer(
     elem, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[], debug=True
 ):
-    print("element inside:")
-    print("_" * 20)
+    if debug:
+        print("element inside:")
+        print("_" * 20)
     _, pretty_printed = jsonPrettyPrint(elem)
     print(pretty_printed)
     # print("ELEMENT", elem)
