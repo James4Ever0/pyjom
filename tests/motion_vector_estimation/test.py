@@ -59,6 +59,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             #     max_dst_y = dst_y
             destCoord = (dst_x, dst_y)
             motion_vectors_dict.update({destCoord:motion_vectors_dict.get(destCoord,[])+[(motion_x, motion_y)]})
+            # you know, these two frames may 
             # if destCoord in destCoords:
             #     print("SKIPPING DUPLICATE DESTCOORD:", destCoord)
             #     print("PREVIOUS MV",prevMV)
