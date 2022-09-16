@@ -211,7 +211,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 weights.append(blockWeight)
                 weighted_motion_vectors.append((m_x*blockWeight, m_y*blockWeight))
         weighted_motion_vectors = np.array(weighted_motion_vectors)
-        average_weighted_motion_vectors = np.sum()
+        average_global_weighted_motion_vectors = np.sum(weighted_motion_vectors)/ total_block_weights
 
         # print(motion_vectors.shape)
         if motion_vectors_dict_averaged != {}:
