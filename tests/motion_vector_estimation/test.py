@@ -204,7 +204,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 dst_x, dst_y = key
                 m_x, m_y = average_motion_vector
                 rectangle_XYWH = getRectangleXYWHFromBlockCenterCoordinates((dst_x, dst_y))
-                
+                getBlockWeightFromBlockCenterCoordinates((key))
+
         # print(motion_vectors.shape)
         if motion_vectors_dict_averaged != {}:
             breakpoint()
