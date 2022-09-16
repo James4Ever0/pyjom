@@ -56,7 +56,7 @@ def getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates):
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
     mod_x_half, mod_y_half = mod_x/2, mod_y/2
     x,y,w,h = block_x-mod_x_half, block_y-mod_y_half, mod_x, mod_y
-    return x,y,w,h
+    return (x,y,w,h)
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
@@ -205,6 +205,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             else:
                 m_x, m_y = average_motion_vector
                 rectangle_XYWH = getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates)
+                rectangles.append(rectangle_XYWH)
                 blockWeight = getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates)
 
         # print(motion_vectors.shape)
