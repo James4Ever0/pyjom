@@ -54,7 +54,7 @@ def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
 def getRectangleFromBlockCenterCoordinates(blockCenterCoordinates):
     block_x, block_y = blockCenterCoordinates
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
-    x,y,w,h = block_x-mod_x
+    x,y,w,h = block_x-(mod_x)
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
