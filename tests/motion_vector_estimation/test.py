@@ -11,6 +11,7 @@ cap = VideoCap()
 cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
 
+# so there can only be 
 def checkMacroBlock(value):
 
 
