@@ -27,7 +27,7 @@ resultGenerator, function_id = reviewer(
     fileList, generator=True, debug=True
 )  # or at least a generator?
 
-def extractYolov5DetectionData(detectionData):
+def extractYolov5DetectionData(detectionData, mimetype='video'):
     # plan to get some calculations!
     filepath, review_data = detectionData['review']['review']
     timeseries_data = review_data['yolov5_detector']['yolov5']['yolov5_detector']
