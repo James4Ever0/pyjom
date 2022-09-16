@@ -50,7 +50,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # assert src_y % 16 == 8
                 assert checkMacroBlock(dst_x) is not None
                 assert checkMacroBlock(dst_y) is not None
-                assert dst_x<
+                assert dst_x<=res_x
+                assert dst_y<=res_y
                 # so all rules applied.
             except:
                 # print('source',src_x, src_y)
