@@ -16,8 +16,8 @@ res_x, res_y = res
 
 rem_x = res_x % 16
 val = res_x // 16
-if rem_x == 0:
-    val -=1
+if rem_x != 0:
+    val +=1
 
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
