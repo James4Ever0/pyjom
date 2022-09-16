@@ -34,8 +34,8 @@ def averageMotionVectors(motion_vector_list):
         average_tuple = (0,0)
     if len(motion_vector_list) > 1:
         marray = np.array(motion_vector_list)
-        # print("MAKING AVERAGE:")
-        # print(marray)
+        print("MAKING AVERAGE:")
+        print(marray)
         average = np.average(marray, axis=0)
         # breakpoint()
         average_tuple = tuple(average)
@@ -80,8 +80,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # print("zero motion vector detected. skipping")
                 # breakpoint()
                 continue
-            print('destination coords:',destCoord)
-            print('motion vector:',motion_vector)
+            # print('destination coords:',destCoord)
+            # print('motion vector:',motion_vector)
             motion_vectors_dict.update({destCoord:motion_vectors_dict.get(destCoord,[])+[motion_vector]})
             # you know, different frame sources may lead to different results.
             # these vectors could overlap. which one you want to keep? the smaller ones or the bigger ones?
