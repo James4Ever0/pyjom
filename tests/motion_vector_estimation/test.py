@@ -12,8 +12,8 @@ cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
 while True:
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
-    print(frame.shape)
-    breakpoint()
+    # print(frame.shape)
+    # breakpoint()
     if success:
         # what is the content of this motion vector?
         # print(motion_vectors)
