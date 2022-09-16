@@ -82,7 +82,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             #     print('destionation',dst_x, dst_y)
             #     print('motion',motion_x, motion_y)
             #     print("scale",motion_scale)
-        
+        motion_vectors_dict
         # print(motion_vectors.shape)
     else:
         break
