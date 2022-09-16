@@ -99,16 +99,16 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # motion_scale,  # don't know what the fuck is wrong with the motion scale
             ) = mv.tolist()
             # say we just want source_index <0, aka mv compared to previous frame
-            try:
-                assert motion_x / motion_scale == src_x - dst_x
-                assert motion_y / motion_scale == src_y - dst_y
-            except:
-                print(src_x, dst_x, motion_x, motion_scale)
-                print(src_y, dst_y, motion_y, motion_scale)
-                print("*" * 20)
+            # try:
+            #     assert motion_x / motion_scale == src_x - dst_x
+            #     assert motion_y / motion_scale == src_y - dst_y
+            # except:
+            #     print(src_x, dst_x, motion_x, motion_scale)
+            #     print(src_y, dst_y, motion_y, motion_scale)
+            #     print("*" * 20)
                 # it will be inaccurate if we abandon this subpixel precision.
-            if source_index >= 0:
-                continue
+            # if source_index >= 0:
+            #     continue
             # if dst_x>max_dst_x:
             #     max_dst_x = dst_x
             # if dst_y>max_dst_y:
