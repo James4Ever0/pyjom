@@ -7,8 +7,10 @@
 # source = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
 # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"
 
+# without mestimate
 
 
+# with mestimate
 
 from lazero.utils.importers import cv2_custom_build_init
 from sniffio import current_async_library
