@@ -12,7 +12,7 @@ res = get_res(source) # (width, height)
 print("RES: %s" % str(res))
 res_x, res_y = res
 
-# 如果zheng chu
+# 如果整除16那么就在这个范围里面 如果bu zheng chu
 
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
