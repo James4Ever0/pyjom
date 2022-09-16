@@ -12,7 +12,7 @@ cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
 
 def checkMacroBlock(value):
-    
+
 
 while True:
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
@@ -29,7 +29,7 @@ while True:
                 src_x,
                 src_y,
                 dst_x, # corresponding macro block.
-                dst_y,
+                dst_y, # for destination only
                 motion_x,
                 motion_y,
                 motion_scale,
