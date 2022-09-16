@@ -115,8 +115,8 @@ def averageMotionVectors(motion_vector_list):
 motion_area_ratio_array = []
 # average_weighted_motion_vector_array = []
 # average_global_weighted_motion_vector_array = []
-average_weighted_motion_vector_cartesiaon_array = []
-average_global_weighted_motion_vector_cartesiaon_array = []
+average_weighted_motion_vector_cartesian_array = []
+average_global_weighted_motion_vector_cartesian_array = []
 average_weighted_motion_vectors_filtered_cartesian_distance_array = []
 average_global_weighted_motion_vectors_filtered_cartesian_distance_array = []
 
