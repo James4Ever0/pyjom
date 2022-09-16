@@ -242,11 +242,11 @@ for _ in progressbar.progressbar(range(framesCount)):
 
         weighted_motion_vectors_filtered_cartesian_distance = motion_vectors_filtered_cartesian_distance * cartesianWeights
 
-        np.sum(weighted_motion_vectors_filtered_cartesian_distance) = np.sum(weighted_motion_vectors_filtered_cartesian_distance)
+        sum_weighted_motion_vectors_filtered_cartesian_distance = np.sum(weighted_motion_vectors_filtered_cartesian_distance)
 
-        average_weighted_motion_vectors_filtered_cartesian_distance = /cartesianWeights
+        average_weighted_motion_vectors_filtered_cartesian_distance = sum_weighted_motion_vectors_filtered_cartesian_distance/cartesianWeights
 
-        average_global_weighted_motion_vectors_filtered_cartesian_distance = 
+        average_global_weighted_motion_vectors_filtered_cartesian_distance = sum_weighted_motion_vectors_filtered_cartesian_distance/
 
 
         min_cartesian = min(motion_vectors_filtered_cartesian_distance)
