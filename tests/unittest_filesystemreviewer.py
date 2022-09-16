@@ -26,7 +26,8 @@ resultGenerator, function_id = reviewer(
     fileList, generator=True
 )  # or at least a generator?
 
-def extract
+def extractYolov5DetectionData(detectionData):
+    
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
