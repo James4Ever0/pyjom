@@ -536,6 +536,7 @@ def jsonPrettyPrint(feedback, indent=4):
 
 
 def getFileType(fbase):
+    # quick dirty fix.
     mimestart = mimetypes.guess_type(fbase)[0]
     if mimestart != None:
         mimestart = mimestart.split("/")[0]
