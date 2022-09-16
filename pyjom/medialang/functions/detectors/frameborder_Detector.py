@@ -718,7 +718,7 @@ def frameborder_Detector(mediapaths, model="framedifference_talib",config={}):
     data_key = keyword # different than yolo.
     for mediapath in mediapaths:
         print("mediapath:", mediapath)
-        breakpoint()
+        # breakpoint()
         mediatype = getFileType(mediapath)
         print("subtitle of mediatype:", mediatype)
         assert mediatype in ["video", "image"]  # gif? anything like that?
