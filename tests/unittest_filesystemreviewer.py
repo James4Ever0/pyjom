@@ -24,7 +24,7 @@ videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 fileList = [{"type": "video", "path": videoPath}]
 
 resultGenerator, function_id = reviewer(
-    fileList, generator=True
+    fileList, generator=True, debug=False
 )  # or at least a generator?
 
 def extractYolov5DetectionData(detectionData):
@@ -41,5 +41,5 @@ def extractYolov5DetectionData(detectionData):
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
-    sprint(result)
+    # sprint(result)
     breakpoint()
