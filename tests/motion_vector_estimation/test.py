@@ -396,4 +396,7 @@ for _a in range(a):
         if a == 1:
         axis[_a, _b].plot(data[index])
         axis[_a, _b].set_title(titles[index])
+        elif b == 1:
+        else:
+            
 plt.show()
