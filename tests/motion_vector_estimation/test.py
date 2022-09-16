@@ -14,6 +14,8 @@ res_x, res_y = res
 
 # 如果整除16那么就在这个范围里面 如果不整除范围就要扩大 扩大到相应的16的倍数
 
+res_x % 16
+
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
