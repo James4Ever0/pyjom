@@ -1,6 +1,6 @@
-########################
-# aim to create optical flow here, with directions
-########################
+###################################################
+# aim to create optical flow here, with directions and convolution
+###################################################
 
 # it contains subpixel motion vectors. fucking hell
 
