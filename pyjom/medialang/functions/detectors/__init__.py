@@ -10,6 +10,7 @@ from .frameborder_Detector import *
 def getMedialangInputFixed(medialangPathsInput):
     for fbase0 in medialangPathsInput:
         if type(fbase0) == list and len(fbase0) == 1:
+            yield 
         # then it must be the medialang shit.
 
 medialangDetectors = {
