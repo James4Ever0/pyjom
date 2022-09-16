@@ -60,6 +60,8 @@ for _ in progressbar.progressbar(range(framesCount)):
             destCoord = (dst_x, dst_y)
             motion_vectors_dict.update({destCoord:motion_vectors_dict.get(destCoord,[])+[(motion_x, motion_y)]})
             # you know, different frame sources may lead to different results.
+            # these vectors could overlap.
+            
             # if destCoord in destCoords:
             #     print("SKIPPING DUPLICATE DESTCOORD:", destCoord)
             #     print("PREVIOUS MV",prevMV)
