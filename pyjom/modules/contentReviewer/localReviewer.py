@@ -8,6 +8,7 @@ def filesystemReviewer(
     content, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[], generator:bool=False
 ):
     # print(content)
+    print('generator flag', generator)
     # link = content["link"]
     if not generator:
         mreview = []
