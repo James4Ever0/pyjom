@@ -54,7 +54,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # df = pd.DataFrame(motion_vectors)
         # df = pd.DataFrame(motion_vectors,index=['source_index','unk0','unk1','src_x','src_y','dst_x','dst_y','motion_x','motion_y','motion_scale'])
         # breakpoint()
-        motion_vectors_simplified = motion_vectors[:,[0,5,6,7,8]]
+        # motion_vectors_simplified = motion_vectors[:,[0,5,6,7,8]]
         motion_vectors_simplified_unique = np.unique(motion_vectors_simplified, axis=0)
         # print(motion_vectors_simplified_unique.shape, motion_vectors.shape)
         # breakpoint()
@@ -63,6 +63,9 @@ for _ in progressbar.progressbar(range(framesCount)):
             # drop duplicates first!
             (
                 source_index,
+                _,
+                _,
+                src_x, src_y,
                 dst_x, # corresponding macro block.
                 dst_y, # for destination only
                 motion_x,
