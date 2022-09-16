@@ -22,8 +22,8 @@ import math
 
 def cartesianDistance(d2vector):
     try:
-    x, y = d2vector
-    return math.sqrt(x**2 + y**2)
+        x, y = d2vector
+        return math.sqrt(x**2 + y**2)
     except:
         print('item unpackable.', d2vector)
         return 0
@@ -309,16 +309,16 @@ for _ in progressbar.progressbar(range(framesCount)):
         max_cartesian = max(motion_vectors_filtered_cartesian_distance)
 
         motion_area_ratio_array.append(motion_area_ratio)
-        print()
-        print(average_weighted_motion_vector)
-        print(average_global_weighted_motion_vector)
-        breakpoint()
-        # average_weighted_motion_vector_cartesian=cartesianDistance(average_weighted_motion_vector)
-        # average_weighted_motion_vector_cartesian_array.append(average_weighted_motion_vector_cartesian)
-        # average_global_weighted_motion_vector_cartesian = cartesianDistance(average_global_weighted_motion_vector)
-        # average_global_weighted_motion_vector_cartesian_array.append(
-        # average_global_weighted_motion_vector_cartesian
-        # )
+        # print()
+        # print(average_weighted_motion_vector)
+        # print(average_global_weighted_motion_vector)
+        # breakpoint()
+        average_weighted_motion_vector_cartesian=cartesianDistance(average_weighted_motion_vector)
+        average_weighted_motion_vector_cartesian_array.append(average_weighted_motion_vector_cartesian)
+        average_global_weighted_motion_vector_cartesian = cartesianDistance(average_global_weighted_motion_vector)
+        average_global_weighted_motion_vector_cartesian_array.append(
+        average_global_weighted_motion_vector_cartesian
+        )
         average_weighted_motion_vectors_filtered_cartesian_distance_array.append(
             average_weighted_motion_vectors_filtered_cartesian_distance
         )
