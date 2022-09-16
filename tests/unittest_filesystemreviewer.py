@@ -20,8 +20,9 @@ reviewer = keywordDecorator(
     args={"autoArgs": autoArgs},
 )
 videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
+fileList = [{"type": "image", "path": videoPath}]
 # videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
-fileList = [{"type": "video", "path": videoPath}]
+# fileList = [{"type": "video", "path": videoPath}]
 
 resultGenerator, function_id = reviewer(
     fileList, generator=True, debug=True
@@ -41,7 +42,7 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
                 print('confidence:', confidence)
                 print('identity:', identity)
     else:
-        frameDetectionData =
+        frameDetectionData = timeseries_data
         for elem in frameDetectionData:
             location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
             print('location:', location)
