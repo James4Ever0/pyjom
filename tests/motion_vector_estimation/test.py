@@ -68,3 +68,6 @@ for _ in progressbar.progressbar(range(framesCount)):
         # print(motion_vectors.shape)
     else:
         break
+
+print('max_dst_y', max_dst_y)
+print('max_dst_y', max_dst_y)
