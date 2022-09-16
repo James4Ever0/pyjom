@@ -2,7 +2,7 @@
 
 # source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 # change source?
-source = ""
+# source = ""
 from lazero.utils.importers import cv2_custom_build_init
 from sniffio import current_async_library
 
