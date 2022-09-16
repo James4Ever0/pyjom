@@ -46,7 +46,7 @@ while True:
                 assert dst_x % 16 == 8
                 assert dst_y % 16 == 8
             except:
-                print('source',src_x, src_y)
+                # print('source',src_x, src_y)
                 print('destionation',dst_x, dst_y)
                 print('motion',motion_x, motion_y)
                 print("scale",motion_scale)
