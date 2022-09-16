@@ -55,6 +55,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # df = pd.DataFrame(motion_vectors,index=['source_index','unk0','unk1','src_x','src_y','dst_x','dst_y','motion_x','motion_y','motion_scale'])
         # breakpoint()
         motion_vectors_simplified = motion_vectors[motion_vectors[:,0] <0,[0,5,6,7,8,9]]
+        print(motion_vectors_simplified.shape())
         motion_vectors_scale = motion_vectors_simplified[:,[5]]
         motion_vectors_
         print(motion_vectors_scale.shape)
