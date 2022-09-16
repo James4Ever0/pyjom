@@ -3,6 +3,8 @@ from pyjom.modules.contentCensoring.core import localCensor
 import json
 
 
+def filesystemReviewerNoGenerator
+
 @decorator
 def filesystemReviewer(
     content, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[], generator:bool=False
