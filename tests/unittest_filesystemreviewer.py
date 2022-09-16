@@ -27,7 +27,8 @@ resultGenerator, function_id = reviewer(
     fileList, generator=True
 )  # or at least a generator?
 
-# def extractYolov5DetectionData(detectionData):
+def extractYolov5DetectionData(detectionData):
+    
 
 
 for result in resultGenerator:
