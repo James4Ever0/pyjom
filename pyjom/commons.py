@@ -540,6 +540,8 @@ def getFileType(fbase0):
     # for gif we have a hard fix.
     translateTable = {'gif':'video'}
     print("FBASE:", fbase0)
+    suffix = fbase0.split(".")[-1]
+    if suffix in translateTable.keys
     breakpoint()
     mimestart = mimetypes.guess_type(fbase0)[0]
     if mimestart != None:
