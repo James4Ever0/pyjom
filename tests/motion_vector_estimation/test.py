@@ -24,7 +24,7 @@ while True:
                 _,
                 src_x,
                 src_y,
-                dst_x,
+                dst_x, # corresponding macro block.
                 dst_y,
                 motion_x,
                 motion_y,
