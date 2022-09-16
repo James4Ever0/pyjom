@@ -41,17 +41,16 @@ for _ in progressbar.progressbar(range(framesCount)):
         # breakpoint()
         motion_vectors_simplified = motion_vectors[:,[0,5,6,7,8]]
         motion_vectors_simplified_unique = np.unique(motion_vectors_simplified, axis=0)
-        print(motion_vectors_unique.shape, motion_vectors.shape)
+        print(motion_vectors_simplified_unique.shape, motion_vectors.shape)
         breakpoint()
         for mv in motion_vectors_simplified:
             # drop duplicates first!
             (
-                source_index
+                source_index,
                 dst_x, # corresponding macro block.
                 dst_y, # for destination only
                 motion_x,
                 motion_y,
-                motion_scale,
             ) = mv.tolist()
             if dst_x>max_dst_x:
                 max_dst_x = dst_x
