@@ -5,7 +5,9 @@ from lazero.utils.importers import cv2_custom_build_init
 
 cv2_custom_build_init()
 from mvextractor.videocap import VideoCap
-from caer.video.frames_and_fps import count_frames_and_
+from caer.video.frames_and_fps import count_frames
+
+framesCount = count_frames(source)
 
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
