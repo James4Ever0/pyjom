@@ -21,11 +21,11 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 import progressbar
-for _ in range(framesCount):
+for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     height, width, channels =  frame.shape
     # breakpoint()
-    print(height, width, timestamp)
+    # print(height, width, timestamp)
     if success:
         # what is the content of this motion vector?
         # print(motion_vectors)
