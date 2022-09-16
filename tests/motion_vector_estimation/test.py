@@ -39,7 +39,7 @@ def checkMacroBlock(value):
 
 from functools import lru_cache
 
-@lru_cache()
+@lru_cache(maxsize=4)
 def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
     block_x, block_y = blockCenterCoordinates
     mod_x, mod_y = checkMacroBlock(block_x), checkMacroBlock(block_y)
