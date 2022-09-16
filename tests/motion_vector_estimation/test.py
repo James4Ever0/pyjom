@@ -100,10 +100,11 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_vectors_dict_averaged = {key: averageMotionVectors(motion_vectors_dict[key]) for key in motion_vectors_dict.keys()}
         for key, average_motion_vector in motion_vectors_dict_averaged.items():
             if average_motion_vector == (0,0):
-                print()
-            print("destination coords", key)
-            print('average motion vector', average_motion_vector)
+                print('skipping zero avergage motion vector')
+                print("destination coords", key)
+                # print('average motion vector', average_motion_vector)
         # print(motion_vectors.shape)
+        breakpoint()
     else:
         break
 
