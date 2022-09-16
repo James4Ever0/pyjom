@@ -223,7 +223,8 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_area_ratio = sum_weights/total_block_weights
         # print(motion_vectors.shape)
         motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
-        cv2.rectangle(motion_mask, pt1, pt2, color=255,)
+        pt1, pt2 = 
+        cv2.rectangle(motion_mask, pt1, pt2, color=(255,), thickness=-1)
 
         if motion_vectors_dict_averaged != {}:
             breakpoint()
