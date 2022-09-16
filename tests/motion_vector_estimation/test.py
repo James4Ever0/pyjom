@@ -374,7 +374,7 @@ for _ in progressbar.progressbar(range(framesCount)):
 import matplotlib.pyplot as plt
 # plt.style.use('dark_background')
 
-a, b = 3,1
+a, b = 5,1
 figure, axis = plt.subplots(a, b)
 
 
