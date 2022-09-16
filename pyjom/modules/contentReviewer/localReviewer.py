@@ -5,7 +5,7 @@ import json
 
 @decorator
 def filesystemReviewer(
-    content, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[], generator=False
+    content, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[], generator:bool=False
 ):
     # print(content)
     # link = content["link"]
