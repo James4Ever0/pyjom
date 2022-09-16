@@ -17,13 +17,14 @@ def get16Value(res_x):
     rem_x = res_x % 16
     val = res_x // 16
     if rem_x != 0:
-        val +=1
+        val += 1
     return val
+
 
 x_16val = get16Value(res_x)
 y_16val = get16Value(res_y)
 
-total_block_weights = x_16val*y_16val*2*2
+total_block_weights = x_16val * y_16val * 2 * 2
 
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
@@ -37,17 +38,19 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 
+
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     block_x, block_y = blockCenterCoordinates
     mod_x, mod_y = checkMacroBlock(block_x), checkMacroBlock(block_y)
     if mod_x is not None and mod_y is not None:
-        weights = mod_x * mod_y /8/8
+        weights = mod_x * mod_y / 8 / 8
         return weights
     else:
         print("block center coordinates", blockCenterCoordinates)
         print("WTF IS GOING ON WITH THE BLOCK CENTER")
         breakpoint()
         return 0
+
 
 import progressbar
 import numpy as np
@@ -128,7 +131,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             #     print(src_x, dst_x, motion_x, motion_scale)
             #     print(src_y, dst_y, motion_y, motion_scale)
             #     print("*" * 20)
-                # it will be inaccurate if we abandon this subpixel precision.
+            # it will be inaccurate if we abandon this subpixel precision.
             # if source_index >= 0:
             #     continue
             # if dst_x>max_dst_x:
@@ -178,6 +181,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             key: averageMotionVectors(motion_vectors_dict[key])
             for key in motion_vectors_dict.keys()
         }
+        
         for key, average_motion_vector in motion_vectors_dict_averaged.items():
             if average_motion_vector == (0, 0):
                 continue
