@@ -27,7 +27,7 @@ def checkMacroBlock(value):
     # if not satisfied, we are shit.
 import progressbar
 import numpy as np
-max_dst_x, max_dst_y = 0,0
+# max_dst_x, max_dst_y = 0,0
 for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     height, width, channels =  frame.shape
@@ -52,10 +52,10 @@ for _ in progressbar.progressbar(range(framesCount)):
                 motion_x,
                 motion_y,
             ) = mv.tolist()
-            if dst_x>max_dst_x:
-                max_dst_x = dst_x
-            if dst_y>max_dst_y:
-                max_dst_y = dst_y
+            # if dst_x>max_dst_x:
+            #     max_dst_x = dst_x
+            # if dst_y>max_dst_y:
+            #     max_dst_y = dst_y
             destCoord = (dst_x, dst_y)
             if destCoord in destCoords:
                 print("SKIPPING DUPLICATE DESTCOORD:", destCoord)
