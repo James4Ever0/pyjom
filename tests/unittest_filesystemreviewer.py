@@ -23,3 +23,4 @@ videoPath = ""
 fileList = [{'type':'video','path':videoPath}]
 
 result = reviewer(fileList) # or at least a generator?
+print(result)
