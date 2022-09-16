@@ -46,18 +46,15 @@ def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
         print("block center coordinates", blockCenterCoordinates)
         print("WTF IS GOING ON WITH THE BLOCK CENTER")
         breakpoint()
+        return 0,0
 
-def getRectangleFromBlockCenterCoordinates(blockCenterCoordinates)
+def getRectangleFromBlockCenterCoordinates(blockCenterCoordinates):
+    
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
     weights = mod_x * mod_y / 8 / 8
-
-        return weights
-    else:
-
-        return 0
-
+    return weights
 
 import progressbar
 import numpy as np
