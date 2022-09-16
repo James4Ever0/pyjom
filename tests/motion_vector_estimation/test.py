@@ -37,6 +37,7 @@ def checkMacroBlock(value):
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     block_x, block_y = blockCenterCoordinates
+    mod_x, mod_y = checkMacroBlock()
 
 import progressbar
 import numpy as np
