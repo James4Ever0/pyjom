@@ -114,6 +114,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 print("destination coords", key)
                 # print('average motion vector', average_motion_vector)
         # print(motion_vectors.shape)
+        if motion_vectors_dict_averaged !={}:
+            breakpoint()
         # breakpoint()
     else:
         break
