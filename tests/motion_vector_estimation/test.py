@@ -78,7 +78,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 assert motion_y/motion_scale == src_y-dst_y
             except:
                 print(src_x, dst_x, motion_x, motion_scale)
-                print(src_x, dst_x, motion_x, motion_scale)
+                print(src_y, dst_y, motion_y, motion_scale)
             if source_index >=0: 
                 continue
             # if dst_x>max_dst_x:
