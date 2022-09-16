@@ -24,6 +24,7 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 import progressbar
+max_dst_x, max_dst_y = 0,0
 for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     height, width, channels =  frame.shape
