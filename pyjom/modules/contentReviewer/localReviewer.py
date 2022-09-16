@@ -30,7 +30,7 @@ def filesystemReviewerCoreAnalyzer(
 
 
 def filesystemReviewerNoGenerator(
-    content, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[]
+    content,**kwargs
 ):
     mreview = []
     for elem in content:
