@@ -42,7 +42,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_vectors_unique = np.unique(motion_vectors, axis=0)
         print(motion_vectors_unique.shape, motion_vectors.shape)
         breakpoint()
-        mDestCoordSet = set()
+        destCoords = set()
         for mv in motion_vectors_unique:
             # drop duplicates first!
             (
@@ -63,10 +63,10 @@ for _ in progressbar.progressbar(range(framesCount)):
                 max_dst_y = dst_y
             destCoord = (dst_x, dst_y)
             if destCoord in destCoords:
-                print("DUPLICATE DESTCOORD:", destCoord)
+                print("SKIPPING DUPLICATE DESTCOORD:", destCoord)
                 continue
             else:
-
+                destCoords.add(destCoord)
             try:
                 # src_x, src_y may not apply the same rule.
                 # assert src_x % 16 == 8
