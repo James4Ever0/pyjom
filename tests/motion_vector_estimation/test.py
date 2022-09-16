@@ -13,7 +13,7 @@ print("RES: %s" % str(res))
 res_x, res_y = res
 
 # 如果整除16那么就在这个范围里面 如果不整除范围就要扩大 扩大到相应的16的倍数
-def get
+def get16Value(res_x)
 rem_x = res_x % 16
 val = res_x // 16
 if rem_x != 0:
