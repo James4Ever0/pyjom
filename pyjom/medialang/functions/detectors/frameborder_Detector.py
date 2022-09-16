@@ -751,5 +751,5 @@ def frameborder_Detector(mediapaths, model="framedifference_talib",config={}):
             metadata = {"config": config}
             result[data_key][keyword] = mdata
             result[data_key].update(metadata)
-            results.append(result)
+        results.append(result)
     return results
