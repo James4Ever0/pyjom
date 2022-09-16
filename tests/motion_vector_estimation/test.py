@@ -381,6 +381,7 @@ titles = [
     "average_weighted_motion_vectors_filtered_cartesian_distance",
     "average_global_weighted_motion_vectors_filtered_cartesian_distance",
 ]
+breakpoint()
 assert len(titles) == len(data)
 for _a in range(a):
     for _b in range(b):
