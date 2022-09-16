@@ -6,6 +6,7 @@ from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
 from mvextractor.videocap import VideoCap
 from caer.video.frames_and_fps import count_frames, get_res
+import cv2
 
 framesCount = count_frames(source)
 res = get_res(source)  # (width, height)
@@ -222,7 +223,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_area_ratio = sum_weights/total_block_weights
         # print(motion_vectors.shape)
         motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
-        
+        cv2.rectangle
 
         if motion_vectors_dict_averaged != {}:
             breakpoint()
