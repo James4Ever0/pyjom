@@ -34,7 +34,7 @@ def averageMotionVectors(motion_vector_list):
         average_tuple = (0,0)
     if len(motion_vector_list) > 1:
         marray = np.array(motion_vector_list)
-        print("MAKING AVERAGE:")
+        print("MAKING AVERAGE:", marray)
         average = np.average(marray, axis=1)
         average_tuple = tuple(average[0])
     else:
@@ -108,7 +108,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_vectors_dict_averaged = {key: averageMotionVectors(motion_vectors_dict[key]) for key in motion_vectors_dict.keys()}
         for key, average_motion_vector in motion_vectors_dict_averaged.items():
             if average_motion_vector == (0,0):
-                print('skipping zero avergage motion vector')
+                print('skipping zero average motion vector')
                 print("destination coords", key)
                 # print('average motion vector', average_motion_vector)
         # print(motion_vectors.shape)
