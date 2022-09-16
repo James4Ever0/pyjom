@@ -4,7 +4,7 @@ from pyjom.commons import keywordDecorator
 
 autoArgs = {
     "subtitle_detector": {"timestep": 0.2},
-    "yolov5_detector": {"model": "yolov5x"}, # will this run? no OOM?
+    "yolov5_detector": {"model": "yolov5x"},  # will this run? no OOM?
 }
 
 template_names = ["yolov5_detector.mdl.j2"]
@@ -20,11 +20,14 @@ reviewer = keywordDecorator(
     args={"autoArgs": autoArgs},
 )
 videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
-fileList = [{'type':'video','path':videoPath}]
+fileList = [{"type": "video", "path": videoPath}]
 
-resultGenerator, function_id = reviewer(fileList,generator=True) # or at least a generator?
+resultGenerator, function_id = reviewer(
+    fileList, generator=True
+)  # or at least a generator?
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
+
     sprint(result)
     breakpoint()
