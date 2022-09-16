@@ -69,5 +69,5 @@ for _ in progressbar.progressbar(range(framesCount)):
     else:
         break
 
-print('max_dst_y', max_dst_y)
+print('max_dst_x', max_dst_x)
 print('max_dst_y', max_dst_y)
