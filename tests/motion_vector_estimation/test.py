@@ -47,7 +47,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         for mv in motion_vectors_unique:
             # drop duplicates first!
             (
-                source_index,
+                source_index, # drop the source index? seems that i cannot average this shit out.
                 _,
                 _,
                 src_x,
