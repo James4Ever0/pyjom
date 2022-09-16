@@ -17,7 +17,7 @@ frame_common_divisor = min(res_x, res_y)
 
 
 def XYWHToDiagonal(x,y,w,h):
-    return 
+    return (x,y), (x+w,y+h)
 # 如果整除16那么就在这个范围里面 如果不整除范围就要扩大 扩大到相应的16的倍数
 def get16Value(res_x):
     rem_x = res_x % 16
@@ -226,7 +226,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_area_ratio = sum_weights/total_block_weights
         # print(motion_vectors.shape)
         motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
-        pt1, pt2 = 
+        pt1, pt2 = XYWHToDiagonal(x,y,w,h)
         cv2.rectangle(motion_mask, pt1, pt2, color=(255,), thickness=-1)
 
         if motion_vectors_dict_averaged != {}:
