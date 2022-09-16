@@ -35,7 +35,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # what is the content of this motion vector?
         # print(motion_vectors)
         import pandas as pd
-        df = pd.DataFrame(motion_vectors)
+        df = pd.DataFrame(motion_vectors,index)
         df2 = df.drop_duplicates(subset=[],)
         print(df)
         breakpoint()
