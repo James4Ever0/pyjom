@@ -391,8 +391,8 @@ titles = [
     "motion_area_ratio",
     # "average_weighted_motion_vector",
     # "average_global_weighted_motion_vector",
-    # "average_weighted_motion_vector",
-    # "average_global_weighted_motion_vector",
+    "average_weighted_motion_vector_cartesian",
+    "average_global_weighted_motion_vector_cartesian",
     "average_weighted_motion_vectors_filtered_cartesian_distance",
     "average_global_weighted_motion_vectors_filtered_cartesian_distance",
 ]
