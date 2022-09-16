@@ -258,6 +258,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 print("motion area ratio",motion_area_ratio)
                 print('average_weighted_motion_vector', average_weighted_motion_vector)
                 print('average_global_weighted_motion_vector', average_global_weighted_motion_vector)
+                print('average')
                 motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
                 for index, (x,y,w,h) in enumerate(rectangles):
                     pt1, pt2 = XYWHToDiagonal(x,y,w,h)
