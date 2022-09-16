@@ -28,7 +28,7 @@ resultGenerator, function_id = reviewer(
 )  # or at least a generator?
 
 def extractYolov5DetectionData(detectionData):
-    
+    detectionData['review']['review']
 
 
 for result in resultGenerator:
