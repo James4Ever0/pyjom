@@ -28,10 +28,11 @@ while True:
                 motion_y,
                 motion_scale,
             ) = mv.tolist()
-            print('source',src_x, src_y)
-            print('destionation',dst_x, dst_y)
-            print('motion',motion_x, motion_y)
-            print("scale",motion_scale)
+            a
+            # print('source',src_x, src_y)
+            # print('destionation',dst_x, dst_y)
+            # print('motion',motion_x, motion_y)
+            # print("scale",motion_scale)
 
         # print(motion_vectors.shape)
     else:
