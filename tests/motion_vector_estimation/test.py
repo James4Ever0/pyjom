@@ -210,7 +210,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 blockWeight = getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates)
                 weights.append(blockWeight)
                 weighted_motion_vectors.append((m_x*blockWeight, m_y*blockWeight))
-        average_motion_vector
+        weighted_motion_vectors = np.array(weighted_motion_vectors)
+        
 
         # print(motion_vectors.shape)
         if motion_vectors_dict_averaged != {}:
