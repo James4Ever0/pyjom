@@ -253,7 +253,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # relative_motion_cartesian = min(255,max(0, relative_motion_cartesian))
                 # breakpoint()
                 cv2.rectangle(motion_mask, pt1, pt2, color=(relative_motion_cartesian,), thickness=-1)
-            # should we gaussian blur, threshold this and then apply bounding box on it?
+            # should we gaussian blur, threshold this, do convolution and then apply bounding box on it?
             # # visualize this.
             cv2.imshow('motion_mask',motion_mask)
             cv2.waitKey(100)
