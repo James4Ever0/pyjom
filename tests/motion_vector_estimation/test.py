@@ -208,7 +208,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 rectangles.append(rectangle_XYWH)
                 blockWeight = getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates)
                 weights.append(blockWeight)
-                weighted_motion_vectors()
+                weighted_motion_vectors.append(())
 
         # print(motion_vectors.shape)
         if motion_vectors_dict_averaged != {}:
