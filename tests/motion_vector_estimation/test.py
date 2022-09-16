@@ -289,7 +289,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         breakpoint()
 
         average_weighted_motion_vectors_filtered_cartesian_distance = (
-            sum_weighted_motion_vectors_filtered_cartesian_distance / cartesianWeights
+            sum_weighted_motion_vectors_filtered_cartesian_distance / cartesianWeightsSum
         )
 
         average_global_weighted_motion_vectors_filtered_cartesian_distance = (
