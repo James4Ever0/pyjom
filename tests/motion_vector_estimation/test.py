@@ -217,8 +217,9 @@ for _ in progressbar.progressbar(range(framesCount)):
         weighted_motion_vectors = np.array(weighted_motion_vectors)
         sum_weighted_motion_vector=np.sum(weighted_motion_vectors, axis=0)
         average_global_weighted_motion_vector = sum_weighted_motion_vector/ total_block_weights
-        average_weighted_motion_vector = sum_weighted_motion_vector / sum(weights)
-        motion_area_ratio = weights/total_block_weights
+        sum_weights = sum(weights)
+        average_weighted_motion_vector = sum_weighted_motion_vector / sum_weights
+        motion_area_ratio = sum_weights/total_block_weights
         # print(motion_vectors.shape)
         if motion_vectors_dict_averaged != {}:
             breakpoint()
