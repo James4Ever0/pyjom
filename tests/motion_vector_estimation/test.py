@@ -284,6 +284,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         sum_weighted_motion_vectors_filtered_cartesian_distance = np.sum(
             weighted_motion_vectors_filtered_cartesian_distance
         )
+        print("SUM", sum_weighted_motion_vectors_filtered_cartesian_distance)
         breakpoint()
 
         average_weighted_motion_vectors_filtered_cartesian_distance = (
@@ -377,8 +378,8 @@ data = [
 ]
 titles = [
     "motion_area_ratio",
-    "average_weighted_motion_vector",
-    "average_global_weighted_motion_vector",
+    # "average_weighted_motion_vector",
+    # "average_global_weighted_motion_vector",
     "average_weighted_motion_vectors_filtered_cartesian_distance",
     "average_global_weighted_motion_vectors_filtered_cartesian_distance",
 ]
