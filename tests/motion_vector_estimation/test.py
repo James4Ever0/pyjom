@@ -8,7 +8,7 @@ from mvextractor.videocap import VideoCap
 from caer.video.frames_and_fps import count_frames, get_res
 
 framesCount = count_frames(source)
-res = get_res(source)
+res = get_res(source) # width x height.
 print("RES: %s" % str(res))
 
 cap = VideoCap()
