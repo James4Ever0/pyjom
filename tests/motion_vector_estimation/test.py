@@ -304,6 +304,7 @@ figure, axis = plt.subplots(a, b)
 
 data = [motion_area_ratio_array,average_weighted_motion_vector_array,average_global_weighted_motion_vector_array,average_weighted_motion_vectors_filtered_cartesian_distance_array,average_global_weighted_motion_vectors_filtered_cartesian_distance_array]
 titles = ['motion_area_ratio', 'average_weighted_motion_vector','average_global_weighted_motion_vector','average_weighted_motion_vectors_filtered_cartesian_distance','average_global_weighted_motion_vectors_filtered_cartesian_distance']
+assert len(titles) == len(data)
 for _a in range(a):
     for _b in range(b):
         index = _a*b+_b
