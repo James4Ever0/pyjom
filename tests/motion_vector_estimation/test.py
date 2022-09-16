@@ -99,6 +99,13 @@ def averageMotionVectors(motion_vector_list):
     return average_tuple
 
 
+
+        motion_area_ratio_array.append(motion_area_ratio)
+        average_weighted_motion_vector_array.append(average_weighted_motion_vector)
+        average_global_weighted_motion_vector_array.append(average_global_weighted_motion_vector)
+        average_weighted_motion_vectors_filtered_cartesian_distance_array.append(average_weighted_motion_vectors_filtered_cartesian_distance)
+        average_global_weighted_motion_vectors_filtered_cartesian_distance_array.append(average_global_weighted_motion_vectors_filtered_cartesian_distance)
+
 for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     height, width, channels = frame.shape
@@ -261,7 +268,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         if motion_vectors_dict_averaged != {}:
             # breakpoint()
             if visualize:
-                print("motion area ratio",motion_area_ratio)
+                print("motion_area_ratio",motion_area_ratio)
                 print('average_weighted_motion_vector', average_weighted_motion_vector)
                 print('average_global_weighted_motion_vector', average_global_weighted_motion_vector)
                 print('average_weighted_motion_vectors_filtered_cartesian_distance',average_weighted_motion_vectors_filtered_cartesian_distance)
