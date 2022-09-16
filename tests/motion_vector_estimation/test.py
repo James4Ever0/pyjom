@@ -55,11 +55,11 @@ for _ in progressbar.progressbar(range(framesCount)):
         # df = pd.DataFrame(motion_vectors,index=['source_index','unk0','unk1','src_x','src_y','dst_x','dst_y','motion_x','motion_y','motion_scale'])
         # breakpoint()
         # motion_vectors_simplified = motion_vectors[:,[0,5,6,7,8]]
-        motion_vectors_simplified_unique = np.unique(motion_vectors_simplified, axis=0)
+        # motion_vectors_simplified_unique = np.unique(motion_vectors_simplified, axis=0)
         # print(motion_vectors_simplified_unique.shape, motion_vectors.shape)
         # breakpoint()
         motion_vectors_dict = {}
-        for mv in motion_vectors_simplified:
+        for mv in motion_vectors:
             # drop duplicates first!
             (
                 source_index,
@@ -69,7 +69,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 dst_x, # corresponding macro block.
                 dst_y, # for destination only
                 motion_x,
-                motion_y, # don't know what the fuck is wrong with the motion scale
+                motion_y,
+                motion_scale # don't know what the fuck is wrong with the motion scale
             ) = mv.tolist()
             # say we just want source_index <0, aka mv compared to previous frame
             if source_index >=0: 
