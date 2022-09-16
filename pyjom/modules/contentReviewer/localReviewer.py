@@ -9,7 +9,8 @@ def filesystemReviewer(
 ):
     # print(content)
     # link = content["link"]
-    mreview = []
+    if not generator:
+        mreview = []
     for elem in content:
         print("element inside:")
         print("_" * 20)
@@ -26,5 +27,6 @@ def filesystemReviewer(
         print("review:")
         # breakpoint()
         print(json.dumps(review, indent=4))
-        mreview.append({"review": review, "source": source})
+        if not generator:
+            mreview.append({"review": review, "source": source})
     return mreview
