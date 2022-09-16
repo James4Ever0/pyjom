@@ -43,16 +43,10 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_vectors_simplified_unique = np.unique(motion_vectors_simplified, axis=0)
         print(motion_vectors_unique.shape, motion_vectors.shape)
         breakpoint()
-        destCoords = set()
-        prevMV = None
         for mv in motion_vectors_simplified:
             # drop duplicates first!
             (
-                source_index, # drop the source index? seems that i cannot average this shit out.
-                _,
-                _,
-                src_x,
-                src_y,
+                source_index
                 dst_x, # corresponding macro block.
                 dst_y, # for destination only
                 motion_x,
