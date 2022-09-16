@@ -52,6 +52,7 @@ def getRectangleFromBlockCenterCoordinates(blockCenterCoordinates)
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
     weights = mod_x * mod_y / 8 / 8
+
         return weights
     else:
 
