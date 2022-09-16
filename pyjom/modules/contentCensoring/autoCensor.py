@@ -46,12 +46,12 @@ def autoCensor(contentPath, meta, template_names=[], semiauto=False, args={}):
         data = medialang.execute()
         # print("DATA",data)
         # breakpoint()
-        try:
+        # try:
         data = data[0][0]  # language feature.
         # what the fuck is wrong?
         mdata.update({name: data})  # this is not so good, though.
         # except:
-            print('skipping marking data')
+            # print('skipping marking data')
     if semiauto:  # need some modification.
         for key in semiauto_key_blacklist:
             mdata.pop(key)
