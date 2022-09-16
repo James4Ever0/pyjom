@@ -100,11 +100,11 @@ def averageMotionVectors(motion_vector_list):
 
 
 
-        motion_area_ratio_array.append(motion_area_ratio)
-        average_weighted_motion_vector_array.append(average_weighted_motion_vector)
-        average_global_weighted_motion_vector_array.append(average_global_weighted_motion_vector)
-        average_weighted_motion_vectors_filtered_cartesian_distance_array.append(average_weighted_motion_vectors_filtered_cartesian_distance)
-        average_global_weighted_motion_vectors_filtered_cartesian_distance_array.append(average_global_weighted_motion_vectors_filtered_cartesian_distance)
+motion_area_ratio_array = []
+average_weighted_motion_vector_array = []
+average_global_weighted_motion_vector_array = []
+average_weighted_motion_vectors_filtered_cartesian_distance_array = []
+average_global_weighted_motion_vectors_filtered_cartesian_distance_array = []
 
 for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
