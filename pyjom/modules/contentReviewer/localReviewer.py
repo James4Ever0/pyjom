@@ -9,8 +9,8 @@ def filesystemReviewerCoreAnalyzer(
     if debug:
         print("element inside:")
         print("_" * 20)
-    _, pretty_printed = jsonPrettyPrint(elem)
-    print(pretty_printed)
+        _, pretty_printed = jsonPrettyPrint(elem)
+        print(pretty_printed)
     # print("ELEMENT", elem)
     # breakpoint()
     review, source = localCensor(
