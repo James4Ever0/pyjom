@@ -28,7 +28,10 @@ while True:
                 motion_y,
                 motion_scale,
             ) = mv.tolist()
-            
+            print(src_x, src_y, dst_x, dst_y)
+            print(motion_x, motion_y)
+            print(motion_scale)
+
         # print(motion_vectors.shape)
     else:
         break
