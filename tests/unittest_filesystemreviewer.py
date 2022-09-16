@@ -33,7 +33,7 @@ def extractYolov5DetectionData(detectionData):
     for frameData in timeseries_data:
         timestamp, frameNumber, frameDetectionData = [frameData[key] for key in ['time','frame','yolov5_detector']]
         for elem in frameDetectionData:
-            location,
+            location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
 
 
 for result in resultGenerator:
