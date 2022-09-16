@@ -158,7 +158,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         }
         for key, average_motion_vector in motion_vectors_dict_averaged.items():
             if average_motion_vector == (0, 0):
-                pass
+                continue
                 # wtf is this? why fucking zero?
                 # print('skipping zero average motion vector')
                 # print("destination coords", key)
