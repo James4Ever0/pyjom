@@ -299,9 +299,8 @@ for _ in progressbar.progressbar(range(framesCount)):
 # print('max_dst_y', max_dst_y)
 import matplotlib.pyplot as plt
 
-plt.plot(
-motion_area_ratio_array)
-average_weighted_motion_vector_array)
-average_global_weighted_motion_vector_array)
-average_weighted_motion_vectors_filtered_cartesian_distance_array)
-average_global_weighted_motion_vectors_filtered_cartesian_distance_array)
+plt.plot(motion_area_ratio_array)
+plt.plot(average_weighted_motion_vector_array)
+plt.plot(average_global_weighted_motion_vector_array)
+plt.plot(average_weighted_motion_vectors_filtered_cartesian_distance_array)
+plt.plot(average_global_weighted_motion_vectors_filtered_cartesian_distance_array)
