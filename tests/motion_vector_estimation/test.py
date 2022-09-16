@@ -71,12 +71,12 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_vectors_with_scale = motion_vectors_simplified[:,[3,4]]
         motion_vectors_scale_inversed_stacked = np.hstack([motion_vectors_scale_inversed]*2)
         motion_vectors_restored = motion_vectors_scale_inversed_stacked* motion_vectors_with_scale # just element wise?
-        print('STACKED:', motion_vectors_scale_inversed_stacked.shape)
-        print("WITH SCALE:", motion_vectors_with_scale.shape)
-        print("RESTORED:",motion_vectors_restored.shape)
-        print(motion_vectors_simplified.shape)
-        print(motion_vectors_scale.shape)
-        breakpoint()
+        # print('STACKED:', motion_vectors_scale_inversed_stacked.shape)
+        # print("WITH SCALE:", motion_vectors_with_scale.shape)
+        # print("RESTORED:",motion_vectors_restored.shape)
+        # print(motion_vectors_simplified.shape)
+        # print(motion_vectors_scale.shape)
+        # breakpoint()
         # motion_vectors_simplified = motion_vectors[:,[0,5,6,7,8]]
         # motion_vectors_simplified_unique = np.unique(motion_vectors_simplified, axis=0)
         # print(motion_vectors_simplified_unique.shape, motion_vectors.shape)
