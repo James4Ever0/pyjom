@@ -19,7 +19,8 @@ reviewer = keywordDecorator(
     template_names=template_names,
     args={"autoArgs": autoArgs},
 )
-videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
+videoPath = "/root/Desktop/works/pyjom/samples/image/"
+# videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 fileList = [{"type": "video", "path": videoPath}]
 
 resultGenerator, function_id = reviewer(
@@ -27,7 +28,7 @@ resultGenerator, function_id = reviewer(
 )  # or at least a generator?
 
 def extractYolov5DetectionData(detectionData):
-    
+
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
