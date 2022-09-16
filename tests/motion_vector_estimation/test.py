@@ -2,7 +2,6 @@
 
 source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 from lazero.utils.importers import cv2_custom_build_init
-from torch import max_pool1d
 
 cv2_custom_build_init()
 from mvextractor.videocap import VideoCap
@@ -46,7 +45,9 @@ for _ in progressbar.progressbar(range(framesCount)):
                 motion_scale,
             ) = mv.tolist()
             if dst_x>max_dst_x:
-                max_pool1d
+                max_dst_x = dst_x
+            if dst_y>max_dst_y:
+                max_dst_y = dst_y
             try:
                 # src_x, src_y may not apply the same rule.
                 # assert src_x % 16 == 8
