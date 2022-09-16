@@ -30,4 +30,4 @@ medialangDetectors = {
     "frameborder_detector": frameborder_Detector,
 }
 
-medialangDetectors = {}
+medialangDetectors = {key: processInputWrapperFunction(medialangDetectors[key])}
