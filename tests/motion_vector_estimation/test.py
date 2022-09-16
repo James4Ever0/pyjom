@@ -43,8 +43,8 @@ while True:
                 # src_x, src_y may not apply the same rule.
                 # assert src_x % 16 == 8
                 # assert src_y % 16 == 8
-                assert checkMacroBlock(dst_x) % 16 == 8
-                assert checkMacroBlock(dst_y) % 16 == 8
+                assert checkMacroBlock(dst_x) is not None
+                assert checkMacroBlock(dst_y) is not None
             except:
                 # print('source',src_x, src_y)
                 print('destionation',dst_x, dst_y)
