@@ -22,5 +22,8 @@ reviewer = keywordDecorator(
 videoPath = ""
 fileList = [{'type':'video','path':videoPath}]
 
-result = reviewer(fileList) # or at least a generator?
-print(result)
+resultGenerator = reviewer(fileList,generator=True) # or at least a generator?
+
+for result in resultGenerator:
+    print(result)
+    breakpoint()
