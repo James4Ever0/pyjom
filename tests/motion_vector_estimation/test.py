@@ -67,7 +67,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # breakpoint()
         motion_vectors_simplified = motion_vectors[condition, :][:, [0, 5, 6, 7, 8, 9]]
         motion_vectors_scale = motion_vectors_simplified[:, [5]]
-        motion_vectors_scale = 
+        motion_vectors_scale_inversed = 1/motion_vectors_scale
         motion_vectors_with_scale = motion_vectors_simplified[:,[3,4]]
         np.matmul(motion_vectors_scale_inversed.T, motion_vectors_with_scale)
         print(motion_vectors_simplified.shape)
