@@ -22,7 +22,7 @@ reviewer = keywordDecorator(
 videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 fileList = [{'type':'video','path':videoPath}]
 
-resultGenerator,  = reviewer(fileList,generator=True) # or at least a generator?
+resultGenerator, function_id = reviewer(fileList,generator=True) # or at least a generator?
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
