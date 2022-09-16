@@ -246,7 +246,7 @@ for _ in progressbar.progressbar(range(framesCount)):
 
         average_weighted_motion_vectors_filtered_cartesian_distance = sum_weighted_motion_vectors_filtered_cartesian_distance/cartesianWeights
 
-        average_global_weighted_motion_vectors_filtered_cartesian_distance = sum_weighted_motion_vectors_filtered_cartesian_distance/
+        average_global_weighted_motion_vectors_filtered_cartesian_distance = sum_weighted_motion_vectors_filtered_cartesian_distance/total_block_weights
 
 
         min_cartesian = min(motion_vectors_filtered_cartesian_distance)
