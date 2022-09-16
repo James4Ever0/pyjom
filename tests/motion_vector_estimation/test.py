@@ -299,7 +299,8 @@ for _ in progressbar.progressbar(range(framesCount)):
 # print('max_dst_y', max_dst_y)
 import matplotlib.pyplot as plt
 
-figure, axis = plt.subplots(2, 3)
+a,b = 2,3
+figure, axis = plt.subplots(a, b)
 
 
 axis[0,0].plot(motion_area_ratio_array)
