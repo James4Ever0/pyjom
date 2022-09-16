@@ -63,9 +63,10 @@ for _ in progressbar.progressbar(range(framesCount)):
                 max_dst_y = dst_y
             destCoord = (dst_x, dst_y)
             if destCoord in destCoords:
+                print("DUPLICATE DESTCOORD:", destCoord)
                 continue
             else:
-                
+
             try:
                 # src_x, src_y may not apply the same rule.
                 # assert src_x % 16 == 8
