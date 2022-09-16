@@ -35,6 +35,7 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 
+def getBlockWeight
 
 import progressbar
 import numpy as np
