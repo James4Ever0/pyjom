@@ -25,7 +25,6 @@ for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     height, width, channels =  frame.shape
     # breakpoint()
-    # print(height, width, timestamp)
     if success:
         # what is the content of this motion vector?
         # print(motion_vectors)
