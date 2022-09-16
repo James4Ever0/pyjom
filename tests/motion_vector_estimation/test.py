@@ -16,12 +16,17 @@ res_x, res_y = res
 
 frame_common_divisor = min(res_x, res_y)
 import math
+
+
 def cartesianDistance(d2vector):
-    x,y = d2vector
+    x, y = d2vector
     return math.sqrt(x**2 + y**2)
 
-def XYWHToDiagonal(x,y,w,h):
-    return (x,y), (x+w,y+h)
+
+def XYWHToDiagonal(x, y, w, h):
+    return (x, y), (x + w, y + h)
+
+
 # 如果整除16那么就在这个范围里面 如果不整除范围就要扩大 扩大到相应的16的倍数
 def get16Value(res_x):
     rem_x = res_x % 16
@@ -30,10 +35,11 @@ def get16Value(res_x):
         val += 1
     return val
 
+
 x_16val = get16Value(res_x)
 y_16val = get16Value(res_y)
 
-motion_render_frame = (x_16val*16, y_16val*16)
+motion_render_frame = (x_16val * 16, y_16val * 16)
 
 total_block_weights = x_16val * y_16val * 2 * 2
 
@@ -52,7 +58,9 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 
+
 from functools import lru_cache
+
 
 @lru_cache(maxsize=4)
 def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
@@ -64,19 +72,22 @@ def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
         print("block center coordinates", blockCenterCoordinates)
         print("WTF IS GOING ON WITH THE BLOCK CENTER")
         breakpoint()
-        return 0,0
+        return 0, 0
+
 
 def getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates):
     block_x, block_y = blockCenterCoordinates
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
-    mod_x_half, mod_y_half = mod_x/2, mod_y/2
-    x,y,w,h = block_x-mod_x_half, block_y-mod_y_half, mod_x, mod_y
-    return tuple([int(elem) for elem in [x,y,w,h]])
+    mod_x_half, mod_y_half = mod_x / 2, mod_y / 2
+    x, y, w, h = block_x - mod_x_half, block_y - mod_y_half, mod_x, mod_y
+    return tuple([int(elem) for elem in [x, y, w, h]])
+
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
     weights = mod_x * mod_y / 8 / 8
     return weights
+
 
 import progressbar
 import numpy as np
@@ -97,7 +108,6 @@ def averageMotionVectors(motion_vector_list):
     else:
         average_tuple = tuple(motion_vector_list[0])
     return average_tuple
-
 
 
 motion_area_ratio_array = []
@@ -218,8 +228,11 @@ for _ in progressbar.progressbar(range(framesCount)):
         weighted_motion_vectors = []
         weights = []
         rectangles = []
-        motion_vectors_filtered = [] # for getting data later?
-        for blockCenterCoordinates, average_motion_vector in motion_vectors_dict_averaged.items():
+        motion_vectors_filtered = []  # for getting data later?
+        for (
+            blockCenterCoordinates,
+            average_motion_vector,
+        ) in motion_vectors_dict_averaged.items():
             if average_motion_vector == (0, 0):
                 continue
                 # wtf is this? why fucking zero?
@@ -229,66 +242,118 @@ for _ in progressbar.progressbar(range(framesCount)):
             else:
                 m_x, m_y = average_motion_vector
                 motion_vectors_filtered.append(average_motion_vector)
-                rectangle_XYWH = getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates)
+                rectangle_XYWH = getRectangleXYWHFromBlockCenterCoordinates(
+                    blockCenterCoordinates
+                )
                 rectangles.append(rectangle_XYWH)
-                blockWeight = getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates)
+                blockWeight = getBlockWeightFromBlockCenterCoordinates(
+                    blockCenterCoordinates
+                )
                 weights.append(blockWeight)
-                weighted_motion_vectors.append((m_x*blockWeight/frame_common_divisor, m_y*blockWeight/frame_common_divisor))
+                weighted_motion_vectors.append(
+                    (
+                        m_x * blockWeight / frame_common_divisor,
+                        m_y * blockWeight / frame_common_divisor,
+                    )
+                )
         weighted_motion_vectors = np.array(weighted_motion_vectors)
-        sum_weighted_motion_vector=np.sum(weighted_motion_vectors, axis=0)
-        average_global_weighted_motion_vector = sum_weighted_motion_vector/ total_block_weights
+        sum_weighted_motion_vector = np.sum(weighted_motion_vectors, axis=0)
+        average_global_weighted_motion_vector = (
+            sum_weighted_motion_vector / total_block_weights
+        )
         sum_weights = sum(weights)
         average_weighted_motion_vector = sum_weighted_motion_vector / sum_weights
-        motion_area_ratio = sum_weights/total_block_weights
+        motion_area_ratio = sum_weights / total_block_weights
         # print(motion_vectors.shape)
-        motion_vectors_filtered_cartesian_distance = [cartesianDistance(vector) for vector in motion_vectors_filtered]+[0] # to avoid errors.
-        motion_vectors_filtered_cartesian_distance = np.array(motion_vectors_filtered_cartesian_distance)
+        motion_vectors_filtered_cartesian_distance = [
+            cartesianDistance(vector) for vector in motion_vectors_filtered
+        ] + [
+            0
+        ]  # to avoid errors.
+        motion_vectors_filtered_cartesian_distance = np.array(
+            motion_vectors_filtered_cartesian_distance
+        )
 
-        cartesianWeights = weights+[0]
+        cartesianWeights = weights + [0]
         cartesianWeights = np.array(cartesianWeights)
 
-        weighted_motion_vectors_filtered_cartesian_distance = motion_vectors_filtered_cartesian_distance * cartesianWeights
+        weighted_motion_vectors_filtered_cartesian_distance = (
+            motion_vectors_filtered_cartesian_distance * cartesianWeights
+        )
 
-        sum_weighted_motion_vectors_filtered_cartesian_distance = np.sum(weighted_motion_vectors_filtered_cartesian_distance)
+        sum_weighted_motion_vectors_filtered_cartesian_distance = np.sum(
+            weighted_motion_vectors_filtered_cartesian_distance
+        )
 
-        average_weighted_motion_vectors_filtered_cartesian_distance = sum_weighted_motion_vectors_filtered_cartesian_distance/cartesianWeights
+        average_weighted_motion_vectors_filtered_cartesian_distance = (
+            sum_weighted_motion_vectors_filtered_cartesian_distance / cartesianWeights
+        )
 
-        average_global_weighted_motion_vectors_filtered_cartesian_distance = sum_weighted_motion_vectors_filtered_cartesian_distance/total_block_weights
-
+        average_global_weighted_motion_vectors_filtered_cartesian_distance = (
+            sum_weighted_motion_vectors_filtered_cartesian_distance
+            / total_block_weights
+        )
 
         min_cartesian = min(motion_vectors_filtered_cartesian_distance)
         max_cartesian = max(motion_vectors_filtered_cartesian_distance)
 
         motion_area_ratio_array.append(motion_area_ratio)
         average_weighted_motion_vector_array.append(average_weighted_motion_vector)
-        average_global_weighted_motion_vector_array.append(average_global_weighted_motion_vector)
-        average_weighted_motion_vectors_filtered_cartesian_distance_array.append(average_weighted_motion_vectors_filtered_cartesian_distance)
-        average_global_weighted_motion_vectors_filtered_cartesian_distance_array.append(average_global_weighted_motion_vectors_filtered_cartesian_distance)
+        average_global_weighted_motion_vector_array.append(
+            average_global_weighted_motion_vector
+        )
+        average_weighted_motion_vectors_filtered_cartesian_distance_array.append(
+            average_weighted_motion_vectors_filtered_cartesian_distance
+        )
+        average_global_weighted_motion_vectors_filtered_cartesian_distance_array.append(
+            average_global_weighted_motion_vectors_filtered_cartesian_distance
+        )
 
         if motion_vectors_dict_averaged != {}:
             # breakpoint()
             if visualize:
-                print("motion_area_ratio",motion_area_ratio)
-                print('average_weighted_motion_vector', average_weighted_motion_vector)
-                print('average_global_weighted_motion_vector', average_global_weighted_motion_vector)
-                print('average_weighted_motion_vectors_filtered_cartesian_distance',average_weighted_motion_vectors_filtered_cartesian_distance)
-                print('average_global_weighted_motion_vectors_filtered_cartesian_distance',average_global_weighted_motion_vectors_filtered_cartesian_distance)
-                motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
-                for index, (x,y,w,h) in enumerate(rectangles):
-                    pt1, pt2 = XYWHToDiagonal(x,y,w,h)
+                print("motion_area_ratio", motion_area_ratio)
+                print("average_weighted_motion_vector", average_weighted_motion_vector)
+                print(
+                    "average_global_weighted_motion_vector",
+                    average_global_weighted_motion_vector,
+                )
+                print(
+                    "average_weighted_motion_vectors_filtered_cartesian_distance",
+                    average_weighted_motion_vectors_filtered_cartesian_distance,
+                )
+                print(
+                    "average_global_weighted_motion_vectors_filtered_cartesian_distance",
+                    average_global_weighted_motion_vectors_filtered_cartesian_distance,
+                )
+                motion_mask = np.zeros(
+                    (motion_render_frame[1], motion_render_frame[0], 1)
+                )
+                for index, (x, y, w, h) in enumerate(rectangles):
+                    pt1, pt2 = XYWHToDiagonal(x, y, w, h)
                     # print(pt1, pt2)
-                    current_cartesian = motion_vectors_filtered_cartesian_distance[index]
+                    current_cartesian = motion_vectors_filtered_cartesian_distance[
+                        index
+                    ]
                     # print(type(pt1), type(pt1[0]))
-                    relative_motion_cartesian = (current_cartesian-min_cartesian)/(max_cartesian-min_cartesian) # must from 0 to 1 so we can plot this,
+                    relative_motion_cartesian = (current_cartesian - min_cartesian) / (
+                        max_cartesian - min_cartesian
+                    )  # must from 0 to 1 so we can plot this,
                     # relative_motion_cartesian = 255*((current_cartesian-min_cartesian)/(max_cartesian-min_cartesian))
                     # relative_motion_cartesian = int(relative_motion_cartesian)
                     # relative_motion_cartesian = min(255,max(0, relative_motion_cartesian))
                     # breakpoint()
-                    cv2.rectangle(motion_mask, pt1, pt2, color=(relative_motion_cartesian,), thickness=-1)
+                    cv2.rectangle(
+                        motion_mask,
+                        pt1,
+                        pt2,
+                        color=(relative_motion_cartesian,),
+                        thickness=-1,
+                    )
                 # should we gaussian blur, threshold this, do convolution and then apply bounding box on it?
                 # # visualize this.
                 if show_picture:
-                    cv2.imshow('motion_mask',motion_mask)
+                    cv2.imshow("motion_mask", motion_mask)
                     cv2.waitKey(100)
             # may you create bounding box for this? for tracking motion? or not?
         # breakpoint()
@@ -299,15 +364,28 @@ for _ in progressbar.progressbar(range(framesCount)):
 # print('max_dst_y', max_dst_y)
 import matplotlib.pyplot as plt
 
-a,b = 2,3
+a, b = 2, 3
 figure, axis = plt.subplots(a, b)
 
-data = [motion_area_ratio_array,average_weighted_motion_vector_array,average_global_weighted_motion_vector_array,average_weighted_motion_vectors_filtered_cartesian_distance_array,average_global_weighted_motion_vectors_filtered_cartesian_distance_array]
-titles = ['motion_area_ratio', 'average_weighted_motion_vector','average_global_weighted_motion_vector','average_weighted_motion_vectors_filtered_cartesian_distance','average_global_weighted_motion_vectors_filtered_cartesian_distance']
+data = [
+    motion_area_ratio_array,
+    average_weighted_motion_vector_array,
+    average_global_weighted_motion_vector_array,
+    average_weighted_motion_vectors_filtered_cartesian_distance_array,
+    average_global_weighted_motion_vectors_filtered_cartesian_distance_array,
+]
+titles = [
+    "motion_area_ratio",
+    "average_weighted_motion_vector",
+    "average_global_weighted_motion_vector",
+    "average_weighted_motion_vectors_filtered_cartesian_distance",
+    "average_global_weighted_motion_vectors_filtered_cartesian_distance",
+]
 assert len(titles) == len(data)
 for _a in range(a):
     for _b in range(b):
-        index = _a*b+_b
-        if index>len(data)-1: break
-        axis[_a,_b].plot(data[index])
-        axis[_a,_b].set_title(titles[index])
+        index = _a * b + _b
+        if index > len(data) - 1:
+            break
+        axis[_a, _b].plot(data[index])
+        axis[_a, _b].set_title(titles[index])
