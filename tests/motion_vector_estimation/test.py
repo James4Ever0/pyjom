@@ -247,7 +247,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # print(pt1, pt2)
                 current_cartesian = motion_vectors_filtered_cartesian_distance[index]
                 # print(type(pt1), type(pt1[0]))
-                relative_motion_cartesian = 255*((current_cartesian-min_cartesian)/(max_cartesian-min_cartesian))
+                relative_motion_cartesian = (current_cartesian-min_cartesian)/(max_cartesian-min_cartesian)
+                # relative_motion_cartesian = 255*((current_cartesian-min_cartesian)/(max_cartesian-min_cartesian))
                 # relative_motion_cartesian = int(relative_motion_cartesian)
                 # relative_motion_cartesian = min(255,max(0, relative_motion_cartesian))
                 # breakpoint()
