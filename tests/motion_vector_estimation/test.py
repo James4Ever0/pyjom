@@ -240,6 +240,7 @@ for _ in progressbar.progressbar(range(framesCount)):
 
         if motion_vectors_dict_averaged != {}:
             # breakpoint()
+            if visualize:
             print("motion area ratio",motion_area_ratio)
             print('average_weighted_motion_vector', average_weighted_motion_vector)
             print('average_global_weighted_motion_vector', average_global_weighted_motion_vector)
