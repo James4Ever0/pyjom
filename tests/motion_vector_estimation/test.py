@@ -2,6 +2,8 @@
 
 # source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 # change source?
+
+# gif containers does not have motion vectors.
 # source = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
 # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"
 
