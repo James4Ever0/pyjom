@@ -541,8 +541,8 @@ def getFileType(fbase0):
     translateTable = {'gif':'video'}
     print("FBASE:", fbase0)
     suffix = fbase0.split(".")[-1]
-    guessedType = translateTable.get(suffix)
-    breakpoint()
+    guessedType = translateTable.get(suffix,None)
+    # breakpoint()
     mimestart = mimetypes.guess_type(fbase0)[0]
     if mimestart != None:
         mimestart = mimestart.split("/")[0]
