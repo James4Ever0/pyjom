@@ -20,4 +20,6 @@ reviewer = keywordDecorator(
     args={"autoArgs": autoArgs},
 )
 
+fileList = []
+
 result = reviewer(fileList) # or at least a generator?
