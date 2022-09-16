@@ -20,7 +20,7 @@ def checkMacroBlock(value):
         if modValue == mod/2:
             return mod
     # if not satisfied, we are shit.
-
+import progressbar
 for _ in range(framesCount):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     height, width, channels =  frame.shape
