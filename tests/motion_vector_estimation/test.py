@@ -37,12 +37,12 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 
+def getMod
+
 def getRectangleFromBLockCenterCoordinates(blockCenterCoordinates)
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
-    block_x, block_y = blockCenterCoordinates
-    mod_x, mod_y = checkMacroBlock(block_x), checkMacroBlock(block_y)
-    if mod_x is not None and mod_y is not None:
+
         weights = mod_x * mod_y / 8 / 8
         return weights
     else:
