@@ -37,6 +37,9 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 
+from functools import lru_cache
+
+@lru_cache()
 def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
     block_x, block_y = blockCenterCoordinates
     mod_x, mod_y = checkMacroBlock(block_x), checkMacroBlock(block_y)
