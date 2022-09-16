@@ -19,7 +19,7 @@ reviewer = keywordDecorator(
     template_names=template_names,
     args={"autoArgs": autoArgs},
 )
-videoPath = ""
+videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 fileList = [{'type':'video','path':videoPath}]
 
 resultGenerator = reviewer(fileList,generator=True) # or at least a generator?
