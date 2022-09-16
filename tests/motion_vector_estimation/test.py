@@ -77,12 +77,14 @@ for _ in progressbar.progressbar(range(framesCount)):
         # print(motion_vectors_simplified.shape)
         # print(motion_vectors_scale.shape)
         # breakpoint()
+        
+
         # motion_vectors_simplified = motion_vectors[:,[0,5,6,7,8]]
         # motion_vectors_simplified_unique = np.unique(motion_vectors_simplified, axis=0)
         # print(motion_vectors_simplified_unique.shape, motion_vectors.shape)
         # breakpoint()
         motion_vectors_dict = {}
-        for mv in motion_vectors:
+        for mv in motion_vectors_final:
             # drop duplicates first!
             (
                 source_index,
