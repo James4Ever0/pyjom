@@ -13,9 +13,10 @@ cap.open(source)  # wtf is going on here?
 
 # so there can only be one such macroblock
 def checkMacroBlock(value):
-    mod_16 = value%16
+    for 
+    modValue = value%16
     if mod_16 == 8:
-        return True
+        return 16
     mod_8 = value%8
 
 
