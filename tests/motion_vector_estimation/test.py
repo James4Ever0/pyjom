@@ -231,7 +231,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         average_weighted_motion_vector = sum_weighted_motion_vector / sum_weights
         motion_area_ratio = sum_weights/total_block_weights
         # print(motion_vectors.shape)
-        motion_vectors_filtered_cartesian_distance = [cartesianDistance(vector) for vector in motion_vectors_filtered]+[0]
+        motion_vectors_filtered_cartesian_distance = [cartesianDistance(vector) for vector in motion_vectors_filtered]+[0] # to avoid errors.
 
         min_cartesian = min(motion_vectors_filtered_cartesian_distance)
         max_cartesian = max(motion_vectors_filtered_cartesian_distance)
@@ -248,8 +248,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 current_cartesian = motion_vectors_filtered_cartesian_distance[index]
                 # print(type(pt1), type(pt1[0]))
                 relative_motion_cartesian = 255*((current_cartesian-min_cartesian)/(max_cartesian-min_cartesian))
-                relative_motion_cartesian = int(relative_motion_cartesian)
-                relative_motion_cartesian = min(255,max(0, relative_motion_cartesian))
+                # relative_motion_cartesian = int(relative_motion_cartesian)
+                # relative_motion_cartesian = min(255,max(0, relative_motion_cartesian))
                 # breakpoint()
                 cv2.rectangle(motion_mask, pt1, pt2, color=(relative_motion_cartesian,), thickness=-1)
             # visualize this.
