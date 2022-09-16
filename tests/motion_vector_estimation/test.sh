@@ -1,0 +1,1 @@
+sudo ./run.sh python3.10 extract_mvs.py vid_h264.mp4 --preview --verbose
