@@ -30,6 +30,7 @@ import numpy as np
 # max_dst_x, max_dst_y = 0,0
 
 def averageMotionVectors(motion_vector_list):
+    if len(motion_vector_list) )
     marray = np.array(motion_vector_list)
     return np.average(marray, axis=1)
 
