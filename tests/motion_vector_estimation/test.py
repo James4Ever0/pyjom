@@ -15,7 +15,9 @@
 # source = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling_with_mestimate.mp4"
 # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps_with_mestimate.mp4"
 
-source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.mp4"
+# source = "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.mp4"
+
+source = ""
 
 from lazero.utils.importers import cv2_custom_build_init
 from sniffio import current_async_library
