@@ -28,8 +28,8 @@ def filesystemReviewer(
         # breakpoint()
         print(json.dumps(review, indent=4))
         if not generator:
-            mreview.append()
+            mreview.append(reviewResult)
         else:
-            yield 
+            yield {"review": review, "source": source}
     if not generator:
         return mreview
