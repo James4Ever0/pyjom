@@ -307,6 +307,4 @@ for _a in range(a):
     for _b in range(b):
         index = _a*b+_b
         if index>len(data)-1: break
-
-
-        axis[_a,_b].plot()
+        axis[_a,_b].plot(data[index])
