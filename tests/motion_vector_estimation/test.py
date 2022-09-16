@@ -84,19 +84,14 @@ for _ in progressbar.progressbar(range(framesCount)):
         # print(motion_vectors_simplified_unique.shape, motion_vectors.shape)
         # breakpoint()
         motion_vectors_dict = {}
-        for mv in motion_vectors_dest_coords_:
+        for mv in motion_vectors_dest_coords_restored:
             # drop duplicates first!
             (
-                source_index,
-                _,
-                _,
-                src_x,
-                src_y,
                 dst_x,  # corresponding macro block.
                 dst_y,  # for destination only
                 motion_x,
                 motion_y,
-                motion_scale,  # don't know what the fuck is wrong with the motion scale
+                # motion_scale,  # don't know what the fuck is wrong with the motion scale
             ) = mv.tolist()
             # say we just want source_index <0, aka mv compared to previous frame
             try:
