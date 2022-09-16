@@ -241,25 +241,26 @@ for _ in progressbar.progressbar(range(framesCount)):
         if motion_vectors_dict_averaged != {}:
             # breakpoint()
             if visualize:
-            print("motion area ratio",motion_area_ratio)
-            print('average_weighted_motion_vector', average_weighted_motion_vector)
-            print('average_global_weighted_motion_vector', average_global_weighted_motion_vector)
-            motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
-            for index, (x,y,w,h) in enumerate(rectangles):
-                pt1, pt2 = XYWHToDiagonal(x,y,w,h)
-                # print(pt1, pt2)
-                current_cartesian = motion_vectors_filtered_cartesian_distance[index]
-                # print(type(pt1), type(pt1[0]))
-                relative_motion_cartesian = (current_cartesian-min_cartesian)/(max_cartesian-min_cartesian) # must from 0 to 1 so we can plot this,
-                # relative_motion_cartesian = 255*((current_cartesian-min_cartesian)/(max_cartesian-min_cartesian))
-                # relative_motion_cartesian = int(relative_motion_cartesian)
-                # relative_motion_cartesian = min(255,max(0, relative_motion_cartesian))
-                # breakpoint()
-                cv2.rectangle(motion_mask, pt1, pt2, color=(relative_motion_cartesian,), thickness=-1)
-            # should we gaussian blur, threshold this, do convolution and then apply bounding box on it?
-            # # visualize this.
-            cv2.imshow('motion_mask',motion_mask)
-            cv2.waitKey(100)
+                print("motion area ratio",motion_area_ratio)
+                print('average_weighted_motion_vector', average_weighted_motion_vector)
+                print('average_global_weighted_motion_vector', average_global_weighted_motion_vector)
+                motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
+                for index, (x,y,w,h) in enumerate(rectangles):
+                    pt1, pt2 = XYWHToDiagonal(x,y,w,h)
+                    # print(pt1, pt2)
+                    current_cartesian = motion_vectors_filtered_cartesian_distance[index]
+                    # print(type(pt1), type(pt1[0]))
+                    relative_motion_cartesian = (current_cartesian-min_cartesian)/(max_cartesian-min_cartesian) # must from 0 to 1 so we can plot this,
+                    # relative_motion_cartesian = 255*((current_cartesian-min_cartesian)/(max_cartesian-min_cartesian))
+                    # relative_motion_cartesian = int(relative_motion_cartesian)
+                    # relative_motion_cartesian = min(255,max(0, relative_motion_cartesian))
+                    # breakpoint()
+                    cv2.rectangle(motion_mask, pt1, pt2, color=(relative_motion_cartesian,), thickness=-1)
+                # should we gaussian blur, threshold this, do convolution and then apply bounding box on it?
+                # # visualize this.
+                if show_picture:
+                    cv2.imshow('motion_mask',motion_mask)
+                    cv2.waitKey(100)
             # may you create bounding box for this? for tracking motion? or not?
         # breakpoint()
     else:
