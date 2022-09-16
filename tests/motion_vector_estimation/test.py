@@ -53,9 +53,36 @@ for _ in progressbar.progressbar(range(framesCount)):
                 motion_x,
                 motion_y,
             ) = mv.tolist()
+            # if dst_x>max_dst_x:
+            #     max_dst_x = dst_x
+            # if dst_y>max_dst_y:
+            #     max_dst_y = dst_y
             destCoord = (dst_x, dst_y)
             motion_vectors_dict.update({destCoord:motion_vectors_dict.get(destCoord,[])+[(motion_x, motion_y)]})
-
+            # if destCoord in destCoords:
+            #     print("SKIPPING DUPLICATE DESTCOORD:", destCoord)
+            #     print("PREVIOUS MV",prevMV)
+            #     print("CURRENT MV", mv)
+            #     continue
+            # else:
+            #     destCoords.add(destCoord)
+            # prevMV = mv
+            # try:
+            #     # src_x, src_y may not apply the same rule.
+            #     # assert src_x % 16 == 8
+            #     # assert src_y % 16 == 8
+            #     assert checkMacroBlock(dst_x) is not None
+            #     assert checkMacroBlock(dst_y) is not None
+            #     # assert dst_x<=res_x # dst_x can go beyond the res_x
+            #     # assert dst_y<=res_y
+            #     # so all rules applied.
+            # except:
+            #     # print('source',src_x, src_y)
+            #     print("res", res_x, res_y)
+            #     print('destionation',dst_x, dst_y)
+            #     print('motion',motion_x, motion_y)
+            #     print("scale",motion_scale)
+        
         # print(motion_vectors.shape)
     else:
         break
