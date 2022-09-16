@@ -331,7 +331,8 @@ def localCensor(
         os.system("killall ffplay")
     # you may play the media as well.
     data = {"type": None, "review": None}
-    mediaTypes = ["picture", "video"]
+    mediaTypes = ["image", "video"]
+    # mediaTypes = ["picture", "video"]
     if content["type"] in mediaTypes:
         data["type"] = content["type"]
         mediaPath = content["path"]
