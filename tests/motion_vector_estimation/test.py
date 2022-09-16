@@ -203,7 +203,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             else:
                 m_x, m_y = average_motion_vector
                 rectangle_XYWH = getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates)
-                getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates)
+                blockWeight = getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates)
 
         # print(motion_vectors.shape)
         if motion_vectors_dict_averaged != {}:
