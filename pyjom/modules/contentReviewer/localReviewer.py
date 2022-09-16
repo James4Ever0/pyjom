@@ -35,4 +35,5 @@ def filesystemReviewer(
         else:
             yield reviewResult
     if not generator:
+        print('called no generator')
         return mreview
