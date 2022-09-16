@@ -91,6 +91,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             #     print('motion',motion_x, motion_y)
             #     print("scale",motion_scale)
         motion_vectors_dict_averaged = {key: averageMotionVectors(motion_vectors_dict[key]) for key in motion_vectors_dict.keys()}
+        for key, average_motion_vector in m
         # print(motion_vectors.shape)
     else:
         break
