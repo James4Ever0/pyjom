@@ -394,17 +394,16 @@ for _a in range(a):
         if index > len(data) - 1:
             break
         if a == 1:
-                axis[_b].plot(data[index])
-                axis[_b].set_title(titles[index])
             if b == 1:
                 axis[0].plot(data[index])
                 axis[0].set_title(titles[index])
             else:
-                
+                axis[_b].plot(data[index])
+                axis[_b].set_title(titles[index])
         elif b == 1:
-        axis[_a].plot(data[index])
-        axis[_a].set_title(titles[index])
+            axis[_a].plot(data[index])
+            axis[_a].set_title(titles[index])
         else:
-        axis[_a, _b].plot(data[index])
-        axis[_a, _b].set_title(titles[index])
+            axis[_a, _b].plot(data[index])
+            axis[_a, _b].set_title(titles[index])
 plt.show()
