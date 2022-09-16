@@ -40,8 +40,8 @@ while True:
                 motion_scale,
             ) = mv.tolist()
             try:
-                assert src_x % 16 == 8
-                assert src_y % 16 == 8
+                # assert src_x % 16 == 8
+                # assert src_y % 16 == 8
                 assert dst_x % 16 == 8
                 assert dst_y % 16 == 8
             except:
