@@ -285,8 +285,8 @@ for _ in progressbar.progressbar(range(framesCount)):
         sum_weighted_motion_vectors_filtered_cartesian_distance = np.sum(
             weighted_motion_vectors_filtered_cartesian_distance
         )
-        print("SUM", sum_weighted_motion_vectors_filtered_cartesian_distance)
-        breakpoint()
+        # print("SUM", sum_weighted_motion_vectors_filtered_cartesian_distance)
+        # breakpoint()
 
         average_weighted_motion_vectors_filtered_cartesian_distance = (
             sum_weighted_motion_vectors_filtered_cartesian_distance / cartesianWeightsSum
@@ -294,7 +294,7 @@ for _ in progressbar.progressbar(range(framesCount)):
 
         average_global_weighted_motion_vectors_filtered_cartesian_distance = (
             sum_weighted_motion_vectors_filtered_cartesian_distance
-            / total_block_weights
+            / total_block_weights # this is a number, not array!
         )
 
         min_cartesian = min(motion_vectors_filtered_cartesian_distance)
