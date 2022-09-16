@@ -28,6 +28,5 @@ resultGenerator, function_id = reviewer(
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
-
     sprint(result)
     breakpoint()
