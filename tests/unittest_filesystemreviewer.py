@@ -30,8 +30,8 @@ resultGenerator, function_id = reviewer(
 def extractYolov5DetectionData(detectionData):
     filepath, review_data = detectionData['review']['review']
     timeseries_data = review_data['yolov5_detector']['yolov5_detector']
-    for frame in timeseries_data:
-        timestamp, frameNumber, 
+    for frameData in timeseries_data:
+        timestamp, frameNumber, frameDetectionData = frame
 
 
 for result in resultGenerator:
