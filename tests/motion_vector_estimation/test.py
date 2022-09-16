@@ -43,6 +43,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         print(motion_vectors_unique.shape, motion_vectors.shape)
         breakpoint()
         destCoords = set()
+        prevMV = None
         for mv in motion_vectors_unique:
             # drop duplicates first!
             (
