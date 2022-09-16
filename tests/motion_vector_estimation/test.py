@@ -40,6 +40,7 @@ while True:
                 motion_scale,
             ) = mv.tolist()
             try:
+                # src_x, src_y may not apply the same rule.
                 # assert src_x % 16 == 8
                 # assert src_y % 16 == 8
                 assert dst_x % 16 == 8
