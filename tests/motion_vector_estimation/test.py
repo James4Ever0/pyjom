@@ -78,7 +78,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # print("zero motion vector detected. skipping")
                 # breakpoint()
                 continue
-            print('destination coords:',destCoord, motion_vector)
+            print('destination coords:',destCoord)
+            print('motion vector:',motion_vector)
             motion_vectors_dict.update({destCoord:motion_vectors_dict.get(destCoord,[])+[motion_vector]})
             # you know, different frame sources may lead to different results.
             # these vectors could overlap. which one you want to keep? the smaller ones or the bigger ones?
@@ -113,7 +114,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 print("destination coords", key)
                 # print('average motion vector', average_motion_vector)
         # print(motion_vectors.shape)
-        breakpoint()
+        # breakpoint()
     else:
         break
 
