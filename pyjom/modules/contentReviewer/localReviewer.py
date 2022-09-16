@@ -3,7 +3,7 @@ from pyjom.modules.contentCensoring.core import localCensor
 import json
 
 
-def filesystemReviewerNoGenerator(elem,):
+def filesystemReviewerNoGenerator(elem,auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[]):
     print("element inside:")
     print("_" * 20)
     _, pretty_printed = jsonPrettyPrint(elem)
