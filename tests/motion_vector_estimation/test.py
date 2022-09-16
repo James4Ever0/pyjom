@@ -320,10 +320,10 @@ for _ in progressbar.progressbar(range(framesCount)):
             # breakpoint()
             if visualize:
                 print("motion_area_ratio", motion_area_ratio)
-                print("average_weighted_motion_vector", average_weighted_motion_vector)
+                print("average_weighted_motion_vector_cartesian", average_weighted_motion_vector_cartesian)
                 print(
-                    "average_global_weighted_motion_vector",
-                    average_global_weighted_motion_vector,
+                    "average_global_weighted_motion_vecto_cartesianr",
+                    average_global_weighted_motion_vector_cartesian,
                 )
                 print(
                     "average_weighted_motion_vectors_filtered_cartesian_distance",
