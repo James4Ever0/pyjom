@@ -11,5 +11,5 @@ filesystemReviewer(
                     semiauto=semiauto,
                     dummy_auto=dummy_auto,
                     template_names=template_names,
-                    args={auto},
+                    args={'autoArgs':autoArgs},
                 )
