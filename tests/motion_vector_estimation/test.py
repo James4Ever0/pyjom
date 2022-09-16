@@ -68,7 +68,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             if destCoord == (0,0):
                 print("zero motion vector detected. skipping")
                 breakpoint()
-            motion_vectors_dict.update({destCoord:motion_vectors_dict.get(destCoord,[])+[(motion_x, motion_y)]})
+            motion_vectors_dict.update({destCoord:motion_vectors_dict.get(destCoord,[])+[motion_vector]})
             # you know, different frame sources may lead to different results.
             # these vectors could overlap. which one you want to keep? the smaller ones or the bigger ones?
 
