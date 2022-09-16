@@ -31,7 +31,8 @@ def extractYolov5DetectionData(detectionData):
     filepath, review_data = detectionData['review']['review']
     timeseries_data = review_data['yolov5_detector']['yolov5_detector']
     for frameData in timeseries_data:
-        timestamp, frameNumber, frameDetectionData = frameData[key] for key in ['time','frame','yolov5_detector']
+        timestamp, frameNumber, frameDetectionData = [frameData[key] for key in ['time','frame','yolov5_detector']]
+        for 
 
 
 for result in resultGenerator:
