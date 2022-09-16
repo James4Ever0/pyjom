@@ -55,6 +55,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # so all rules applied.
             except:
                 # print('source',src_x, src_y)
+                print("res", res_x, res_y)
                 print('destionation',dst_x, dst_y)
                 print('motion',motion_x, motion_y)
                 print("scale",motion_scale)
