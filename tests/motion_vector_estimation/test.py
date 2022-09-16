@@ -20,7 +20,8 @@ def get16Value(res_x):
         val +=1
     return val
 
-
+x_16val = get16Value(res_x)
+y_16val = get16Value(res_y)
 
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
