@@ -36,6 +36,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # print(motion_vectors)
         import pandas as pd
         df = pd.DataFrame(motion_vectors)
+        df2 = df.drop_duplicates(subset=[],)
         print(df)
         breakpoint()
         for mv in motion_vectors:
