@@ -29,7 +29,7 @@ import progressbar
 import numpy as np
 # max_dst_x, max_dst_y = 0,0
 
-def average(motion_vector_list):
+def averageMotionVectors(motion_vector_list):
     marray = np.array(motion_vector_list)
     return np.average(marray, axis=1)
 
@@ -90,7 +90,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             #     print('destionation',dst_x, dst_y)
             #     print('motion',motion_x, motion_y)
             #     print("scale",motion_scale)
-        motion_vectors_dict_averaged = {key: averageMotionVectors(motion_vectors_dict[key]) for key motion_vectors_dict.keys()}
+        motion_vectors_dict_averaged = {key: averageMotionVectors(motion_vectors_dict[key]) for key in motion_vectors_dict.keys()}
         # print(motion_vectors.shape)
     else:
         break
