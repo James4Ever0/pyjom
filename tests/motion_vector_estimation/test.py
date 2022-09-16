@@ -21,8 +21,12 @@ import math
 
 
 def cartesianDistance(d2vector):
+    try:
     x, y = d2vector
     return math.sqrt(x**2 + y**2)
+    except:
+        print('item unpackable.', d2vector)
+        return 0
 
 
 def XYWHToDiagonal(x, y, w, h):
