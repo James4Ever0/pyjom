@@ -77,8 +77,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # print(motion_vectors_simplified.shape)
         # print(motion_vectors_scale.shape)
         # breakpoint()
-
-
+        motion_vectores_dest_coords_restored = 
         # motion_vectors_simplified = motion_vectors[:,[0,5,6,7,8]]
         # motion_vectors_simplified_unique = np.unique(motion_vectors_simplified, axis=0)
         # print(motion_vectors_simplified_unique.shape, motion_vectors.shape)
