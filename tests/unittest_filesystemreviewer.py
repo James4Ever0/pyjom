@@ -1,2 +1,2 @@
 from test_commons import *
-from pyjom.
+from pyjom.modules.contentReviewer import 
