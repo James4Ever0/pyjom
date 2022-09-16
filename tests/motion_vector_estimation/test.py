@@ -34,13 +34,13 @@ for _ in progressbar.progressbar(range(framesCount)):
     if success:
         # what is the content of this motion vector?
         # print(motion_vectors)
-        import pandas as pd
-        df = pd.DataFrame(motion_vectors)
+        # import pandas as pd
+        # df = pd.DataFrame(motion_vectors)
         # df = pd.DataFrame(motion_vectors,index=['source_index','unk0','unk1','src_x','src_y','dst_x','dst_y','motion_x','motion_y','motion_scale'])
         df2 = df.drop_duplicates(subset=['dst_x','dst_y'])
         print(df)
         breakpoint()
-        for index, mv in df2.iterrows():
+        for mv in df2.iterrows():
             # drop duplicates first!
             (
                 source_index,
