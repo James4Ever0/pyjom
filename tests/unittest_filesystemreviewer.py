@@ -51,6 +51,6 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
-    sprint(result)
-    # extractYolov5DetectionData(result, mimetype=fiieList[0]['type])
+    # sprint(result)
+    extractYolov5DetectionData(result, mimetype=fiieList[0]['type'])
     breakpoint()
