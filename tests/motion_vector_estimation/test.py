@@ -41,6 +41,8 @@ cap = VideoCap()
 cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
 
+visualize, show_
+
 # so there can only be one such macroblock
 def checkMacroBlock(value):
     for mod in [16, 8]:
