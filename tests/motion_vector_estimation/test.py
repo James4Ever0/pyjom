@@ -33,10 +33,11 @@ while True:
                 assert src_y % 16 == 0
                 assert dst_x % 16 == 0
                 assert dst_y % 16 == 0
-            # print('source',src_x, src_y)
-            # print('destionation',dst_x, dst_y)
-            # print('motion',motion_x, motion_y)
-            # print("scale",motion_scale)
+            except:
+                print('source',src_x, src_y)
+                print('destionation',dst_x, dst_y)
+                print('motion',motion_x, motion_y)
+                print("scale",motion_scale)
 
         # print(motion_vectors.shape)
     else:
