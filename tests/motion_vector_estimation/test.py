@@ -38,9 +38,14 @@ def checkMacroBlock(value):
     # if not satisfied, we are shit.
 
 def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
-    
+    block_x, block_y = blockCenterCoordinates
+    mod_x, mod_y = checkMacroBlock(block_x), checkMacroBlock(block_y)
+    if mod_x is not None and mod_y is not None:
+        return mod_x, mod_y
+    else:
+        
 
-def getRectangleFromBLockCenterCoordinates(blockCenterCoordinates)
+def getRectangleFromBlockCenterCoordinates(blockCenterCoordinates)
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
 
