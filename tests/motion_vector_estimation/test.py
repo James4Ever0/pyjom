@@ -367,7 +367,7 @@ for _ in progressbar.progressbar(range(framesCount)):
 # print('max_dst_y', max_dst_y)
 import matplotlib.pyplot as plt
 
-a, b = 2, 3
+a, b = 3,1
 figure, axis = plt.subplots(a, b)
 
 data = [
