@@ -300,7 +300,7 @@ for _ in progressbar.progressbar(range(framesCount)):
 import matplotlib.pyplot as plt
 
 figure, axis = plt.subplots(2, 3)
-  
+
 plt.plot(motion_area_ratio_array)
 plt.plot(average_weighted_motion_vector_array)
 plt.plot(average_global_weighted_motion_vector_array)
