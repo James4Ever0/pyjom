@@ -6,6 +6,9 @@ from .yolov5_Detector import *
 from .frameborder_Detector import *
 
 # maybe these shits are gonna ruin my life...
+
+
+
 medialangDetectors = {
     "subtitle_detector": mediaSubtitleDetector,
     "framediff_detector": videoDiffDetector,
