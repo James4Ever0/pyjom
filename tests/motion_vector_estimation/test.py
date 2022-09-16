@@ -30,6 +30,8 @@ while True:
             ) = mv.tolist()
             assert src_x % 16 == 0
             assert src_y % 16 == 0
+            assert dst_x % 16 == 0
+            assert dst_y % 16 == 0
             # print('source',src_x, src_y)
             # print('destionation',dst_x, dst_y)
             # print('motion',motion_x, motion_y)
