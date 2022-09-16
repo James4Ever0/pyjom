@@ -39,7 +39,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         df2 = df.drop_duplicates(subset=['dst_x','dst_y'])
         print(df)
         breakpoint()
-        for index, in motion_vectors:
+        for index, mv in df2.iterrows():
             # drop duplicates first!
             (
                 source_index,
