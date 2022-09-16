@@ -42,6 +42,9 @@ def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
         weights = mod_x * mod_y /8/8
         return weights
     else:
+        
+        print("WTF IS GOING ON WITH THE BLOCK CENTER")
+        breakpoint()
         return 0
 
 import progressbar
