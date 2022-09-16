@@ -16,6 +16,8 @@ def filesystemReviewer(
         print("_" * 20)
         _, pretty_printed = jsonPrettyPrint(elem)
         print(pretty_printed)
+        print()
+        breakpoint()
         review, source = localCensor(
             elem,
             auto=auto,
