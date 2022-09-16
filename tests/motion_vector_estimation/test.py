@@ -243,7 +243,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # print(type(pt1), type(pt1[0]))
                 relative_motion_weight = 255*((current_weight-min_weight)/(max_weight-min_weight))
                 relative_motion_weight = int(relative_motion_weight)
-                relative_motion_weight = 
+                relative_motion_weight = min(255,max(0, relative_motion_weight))
                 # breakpoint()
                 cv2.rectangle(motion_mask, pt1, pt2, color=(relative_motion_weight,), thickness=-1)
             # visualize this.
