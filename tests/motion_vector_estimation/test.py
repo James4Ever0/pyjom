@@ -37,7 +37,8 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 
-def getMod
+def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
+    
 
 def getRectangleFromBLockCenterCoordinates(blockCenterCoordinates)
 
