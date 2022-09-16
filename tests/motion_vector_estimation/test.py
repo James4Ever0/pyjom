@@ -28,6 +28,10 @@ def checkMacroBlock(value):
 import progressbar
 import numpy as np
 # max_dst_x, max_dst_y = 0,0
+
+def average(motion_vector_list):
+    
+
 for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     height, width, channels =  frame.shape
@@ -85,7 +89,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             #     print('destionation',dst_x, dst_y)
             #     print('motion',motion_x, motion_y)
             #     print("scale",motion_scale)
-        motion_vectors_dict_averaged = {key:( motion_vectors_dict[key]) for key motion_vectors_dict.keys()}
+        motion_vectors_dict_averaged = {key: average(motion_vectors_dict[key]) for key motion_vectors_dict.keys()}
         # print(motion_vectors.shape)
     else:
         break
