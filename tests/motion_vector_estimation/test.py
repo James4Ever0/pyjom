@@ -1,6 +1,6 @@
 # it contains subpixel motion vectors. fucking hell
 
-source = ""
+source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
 from mvextractor.videocap import VideoCap
