@@ -41,8 +41,8 @@ cap = VideoCap()
 cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
 
-visualize, show_picture = True, True
-# visualize, show_picture = False, False
+# visualize, show_picture = True, True
+visualize, show_picture = False, False
 
 # so there can only be one such macroblock
 def checkMacroBlock(value):
