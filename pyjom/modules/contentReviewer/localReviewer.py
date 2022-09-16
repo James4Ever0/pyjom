@@ -15,23 +15,5 @@ def filesystemReviewer(
     # if not generator:
     mreview = []
     for elem in content:
-        print("element inside:")
-        print("_" * 20)
-        _, pretty_printed = jsonPrettyPrint(elem)
-        print(pretty_printed)
-        print("ELEMENT", elem)
-        breakpoint()
-        review, source = localCensor(
-            elem,
-            auto=auto,
-            semiauto=semiauto,
-            dummy_auto=dummy_auto,
-            args=args,
-            template_names=template_names,
-        )  # unnoticed source.
-        print("review:")
-        # breakpoint()
-        print(json.dumps(review, indent=4))
-        reviewResult = {"review": review, "source": source}
         mreview.append(reviewResult)
     return mreview
