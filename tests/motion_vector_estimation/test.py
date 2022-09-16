@@ -35,7 +35,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # what is the content of this motion vector?
         # print(motion_vectors)
         for mv in motion_vectors:
-            # drop 
+            # drop duplicates first!
             (
                 source_index,
                 _,
