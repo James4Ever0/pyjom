@@ -14,7 +14,7 @@ while True:
     if success:
         # what is the content of this motion vector?
         # print(motion_vectors)
-        source_index, _,_,src_x, dst_x,src
+        source_index, _,_,src_x,src_y, dst_x,dst_y,
         # print(motion_vectors.shape)
     else:
         break
