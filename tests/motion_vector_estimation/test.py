@@ -70,7 +70,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_vectors_scale_inversed = 1/motion_vectors_scale
         motion_vectors_with_scale = motion_vectors_simplified[:,[3,4]]
         motion_vectors_scale_inversed_stacked = np.hstack([motion_vectors_scale_inversed]*2)
-        motion_vectors_restored = np.matmul(motion_vectors_scale_inversed_stacked, motion_vectors_with_scale.T)
+        motion_vectors_restored = np.matmul(motion_vectors_scale_inversed_stacked, motion_vectors_with_scale.T
         print('STACKED:', motion_vectors_scale_inversed_stacked.shape)
         print("WITH SCALE:", motion_vectors_with_scale.shape)
         print("RESTORED:",motion_vectors_restored.shape)
