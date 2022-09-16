@@ -302,6 +302,9 @@ import matplotlib.pyplot as plt
 a,b = 2,3
 figure, axis = plt.subplots(a, b)
 
+for _a in range(a):
+    for _b in range(b):
+        index = _a*b+_b
 
 axis[0,0].plot(motion_area_ratio_array)
 axis[0,1].plot(average_weighted_motion_vector_array)
