@@ -240,6 +240,8 @@ for _ in progressbar.progressbar(range(framesCount)):
         cartesianWeights = weights+[0]
         cartesianWeights = np.array(cartesianWeights)
 
+        
+
 
         min_cartesian = min(motion_vectors_filtered_cartesian_distance)
         max_cartesian = max(motion_vectors_filtered_cartesian_distance)
