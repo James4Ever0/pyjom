@@ -15,7 +15,9 @@ res_x, res_y = res
 
 frame_common_divisor = min(res_x, res_y)
 
-def cartesianDistance(vector):
+def cartesianDistance(d2vector):
+    x,y = d2vector
+    return (x**2 + y**2)
 
 def XYWHToDiagonal(x,y,w,h):
     return (x,y), (x+w,y+h)
