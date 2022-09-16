@@ -24,7 +24,7 @@ videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 fileList = [{"type": "video", "path": videoPath}]
 
 resultGenerator, function_id = reviewer(
-    fileList, generator=True, debug=False
+    fileList, generator=True, debug=True
 )  # or at least a generator?
 
 def extractYolov5DetectionData(detectionData):
