@@ -67,7 +67,7 @@ def getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates):
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
     mod_x_half, mod_y_half = mod_x/2, mod_y/2
     x,y,w,h = block_x-mod_x_half, block_y-mod_y_half, mod_x, mod_y
-    return tuple([x,y,w,h]
+    return tuple([int(elem) for elem in [x,y,w,h]])
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
