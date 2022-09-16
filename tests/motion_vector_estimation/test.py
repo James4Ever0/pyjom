@@ -21,7 +21,7 @@ def checkMacroBlock(value):
 
 while True:
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
-    print(frame.shape)
+    frame, frame.shape
     # breakpoint()
     if success:
         # what is the content of this motion vector?
