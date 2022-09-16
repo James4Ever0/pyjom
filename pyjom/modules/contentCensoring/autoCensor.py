@@ -45,6 +45,7 @@ def autoCensor(contentPath, meta, template_names=[], semiauto=False, args={}):
         # breakpoint()
         data = medialang.execute()
         data = data[0][0]  # language feature.
+        # what the fuck is wrong?
 
         mdata.update({name: data})  # this is not so good, though.
     if semiauto:  # need some modification.
