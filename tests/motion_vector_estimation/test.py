@@ -233,6 +233,8 @@ for _ in progressbar.progressbar(range(framesCount)):
         # print(motion_vectors.shape)
         motion_vectors_filtered_cartesian_distance = [cartesianDistance(vector) for vector in motion_vectors_filtered]
 
+        min_cartesian = min(motion_vectors_filtered_cartesian)
+
         if motion_vectors_dict_averaged != {}:
             # breakpoint()
             print("motion area ratio",motion_area_ratio)
