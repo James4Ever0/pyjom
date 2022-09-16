@@ -40,6 +40,12 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
                 print('location:', location)
                 print('confidence:', confidence)
                 print('identity:', identity)
+    else:
+        for elem in frameDetectionData:
+            location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
+            print('location:', location)
+            print('confidence:', confidence)
+            print('identity:', identity)
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
