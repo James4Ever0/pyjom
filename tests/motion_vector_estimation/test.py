@@ -8,7 +8,7 @@ from mvextractor.videocap import VideoCap
 from caer.video.frames_and_fps import count_frames, get_res
 
 framesCount = count_frames(source)
-res = get_res(source) # (width, height)
+res = get_res(source)  # (width, height)
 print("RES: %s" % str(res))
 res_x, res_y = res
 
@@ -20,18 +20,22 @@ cap.open(source)  # wtf is going on here?
 
 # so there can only be one such macroblock
 def checkMacroBlock(value):
-    for mod in [16,8]:
+    for mod in [16, 8]:
         modValue = value % mod
-        if modValue == mod/2:
+        if modValue == mod / 2:
             return mod
     # if not satisfied, we are shit.
+
+
 import progressbar
 import numpy as np
+
 # max_dst_x, max_dst_y = 0,0
+
 
 def averageMotionVectors(motion_vector_list):
     if len(motion_vector_list) == 0:
-        average_tuple = (0,0)
+        average_tuple = (0, 0)
     if len(motion_vector_list) > 1:
         marray = np.array(motion_vector_list)
         # print("MAKING AVERAGE:")
@@ -43,9 +47,10 @@ def averageMotionVectors(motion_vector_list):
         average_tuple = tuple(motion_vector_list[0])
     return average_tuple
 
+
 for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
-    height, width, channels =  frame.shape
+    height, width, channels = frame.shape
     # breakpoint()
     if success:
         # what is the content of this motion vector?
@@ -56,8 +61,10 @@ for _ in progressbar.progressbar(range(framesCount)):
         # breakpoint()
         print()
         print("_____________________________")
-        motion_vectors_simplified = motion_vectors[motion_vectors[:,0] <0,[0,5,6,7,8,9]]
-        motion_vectors_scale = motion_vectors_simplified[:,[5]]
+        motion_vectors_simplified = motion_vectors[
+            motion_vectors[:, 0] < 0, [0, 5, 6, 7, 8, 9]
+        ]
+        motion_vectors_scale = motion_vectors_simplified[:, [5]]
         print(motion_vectors_simplified.shape())
         print(motion_vectors_scale.shape)
         breakpoint()
@@ -72,23 +79,24 @@ for _ in progressbar.progressbar(range(framesCount)):
                 source_index,
                 _,
                 _,
-                src_x, src_y,
-                dst_x, # corresponding macro block.
-                dst_y, # for destination only
+                src_x,
+                src_y,
+                dst_x,  # corresponding macro block.
+                dst_y,  # for destination only
                 motion_x,
                 motion_y,
-                motion_scale # don't know what the fuck is wrong with the motion scale
+                motion_scale,  # don't know what the fuck is wrong with the motion scale
             ) = mv.tolist()
             # say we just want source_index <0, aka mv compared to previous frame
             try:
-                assert motion_x/motion_scale == src_x-dst_x
-                assert motion_y/motion_scale == src_y-dst_y
+                assert motion_x / motion_scale == src_x - dst_x
+                assert motion_y / motion_scale == src_y - dst_y
             except:
                 print(src_x, dst_x, motion_x, motion_scale)
                 print(src_y, dst_y, motion_y, motion_scale)
-                print("*"*20)
+                print("*" * 20)
                 # it will be inaccurate if we abandon this subpixel precision.
-            if source_index >=0: 
+            if source_index >= 0:
                 continue
             # if dst_x>max_dst_x:
             #     max_dst_x = dst_x
@@ -98,13 +106,15 @@ for _ in progressbar.progressbar(range(framesCount)):
             motion_vector = (motion_x, motion_y)
             # print(destCoord)
             # breakpoint()
-            if motion_vector == (0,0):
+            if motion_vector == (0, 0):
                 # print("zero motion vector detected. skipping")
                 # breakpoint()
                 continue
             # print('destination coords:',destCoord)
             # print('motion vector:',motion_vector)
-            motion_vectors_dict.update({destCoord:motion_vectors_dict.get(destCoord,[])+[motion_vector]})
+            motion_vectors_dict.update(
+                {destCoord: motion_vectors_dict.get(destCoord, []) + [motion_vector]}
+            )
             # you know, different frame sources may lead to different results.
             # these vectors could overlap. which one you want to keep? the smaller ones or the bigger ones?
 
@@ -131,16 +141,19 @@ for _ in progressbar.progressbar(range(framesCount)):
             #     print('destionation',dst_x, dst_y)
             #     print('motion',motion_x, motion_y)
             #     print("scale",motion_scale)
-        motion_vectors_dict_averaged = {key: averageMotionVectors(motion_vectors_dict[key]) for key in motion_vectors_dict.keys()}
+        motion_vectors_dict_averaged = {
+            key: averageMotionVectors(motion_vectors_dict[key])
+            for key in motion_vectors_dict.keys()
+        }
         for key, average_motion_vector in motion_vectors_dict_averaged.items():
-            if average_motion_vector == (0,0):
+            if average_motion_vector == (0, 0):
                 pass
                 # wtf is this? why fucking zero?
                 # print('skipping zero average motion vector')
                 # print("destination coords", key)
                 # print('average motion vector', average_motion_vector)
         # print(motion_vectors.shape)
-        if motion_vectors_dict_averaged !={}:
+        if motion_vectors_dict_averaged != {}:
             breakpoint()
         # breakpoint()
     else:
