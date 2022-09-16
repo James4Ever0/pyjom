@@ -19,3 +19,5 @@ reviewer = keywordDecorator(
     template_names=template_names,
     args={"autoArgs": autoArgs},
 )
+
+result = reviewer()
