@@ -23,7 +23,7 @@ def get16Value(res_x):
 x_16val = get16Value(res_x)
 y_16val = get16Value(res_y)
 
-total_block_weights = 
+total_block_weights = x_16val*y_16val*2*2
 
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
