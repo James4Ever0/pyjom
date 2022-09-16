@@ -25,5 +25,6 @@ fileList = [{'type':'video','path':videoPath}]
 resultGenerator = reviewer(fileList,generator=True) # or at least a generator?
 
 for result in resultGenerator:
-    print(result)
+    from lazero.utils.logger import sprint
+    sprint(result)
     breakpoint()
