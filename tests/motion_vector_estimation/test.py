@@ -384,8 +384,9 @@ titles = [
     "average_weighted_motion_vectors_filtered_cartesian_distance",
     "average_global_weighted_motion_vectors_filtered_cartesian_distance",
 ]
-breakpoint()
+# breakpoint()
 assert len(titles) == len(data)
+assert a*b >= len(titles)
 for _a in range(a):
     for _b in range(b):
         index = _a * b + _b
