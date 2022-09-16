@@ -306,6 +306,7 @@ data = [motion_area_ratio_array,average_weighted_motion_vector_array,average_glo
 for _a in range(a):
     for _b in range(b):
         index = _a*b+_b
-        if index
+        if index>len(data)-1: break
 
-axis[_a,_b].plot()
+
+        axis[_a,_b].plot()
