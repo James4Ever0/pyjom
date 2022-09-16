@@ -1,4 +1,4 @@
-VIDEO=""
+VIDEO="/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 
 ./mpegflow $VIDEO > output.txt
 
