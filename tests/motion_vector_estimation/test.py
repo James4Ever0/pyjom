@@ -10,6 +10,10 @@ from mvextractor.videocap import VideoCap
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
+
+checkMacroBlock(value):
+
+
 while True:
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
     # print(frame.shape)
