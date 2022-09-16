@@ -303,11 +303,12 @@ for _ in progressbar.progressbar(range(framesCount)):
         max_cartesian = max(motion_vectors_filtered_cartesian_distance)
 
         motion_area_ratio_array.append(motion_area_ratio)
-        cartesianDistance(average_weighted_motion_vector)
-        average_weighted_motion_vector_cartesian_array.append()
+        average_weighted_motion_vector_cartesian=cartesianDistance(average_weighted_motion_vector)
+        average_weighted_motion_vector_cartesian_array.append(average_weighted_motion_vector_cartesian)
+        cartesianDistance(average_global_weighted_motion_vector)
         average_global_weighted_motion_vector_cartesian_array.append(
-            cartesianDistance(average_global_weighted_motion_vector
-        ))
+        
+        )
         average_weighted_motion_vectors_filtered_cartesian_distance_array.append(
             average_weighted_motion_vectors_filtered_cartesian_distance
         )
