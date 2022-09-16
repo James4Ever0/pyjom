@@ -20,7 +20,6 @@ def get16Value(res_x):
         val += 1
     return val
 
-
 x_16val = get16Value(res_x)
 y_16val = get16Value(res_y)
 
@@ -181,7 +180,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             key: averageMotionVectors(motion_vectors_dict[key])
             for key in motion_vectors_dict.keys()
         }
-        
+        # assuming no duplicates?
         for key, average_motion_vector in motion_vectors_dict_averaged.items():
             if average_motion_vector == (0, 0):
                 continue
