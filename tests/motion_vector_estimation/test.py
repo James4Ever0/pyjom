@@ -305,9 +305,9 @@ for _ in progressbar.progressbar(range(framesCount)):
         motion_area_ratio_array.append(motion_area_ratio)
         average_weighted_motion_vector_cartesian=cartesianDistance(average_weighted_motion_vector)
         average_weighted_motion_vector_cartesian_array.append(average_weighted_motion_vector_cartesian)
-        cartesianDistance(average_global_weighted_motion_vector)
+        average_global_weighted_motion_vector_cartesian = cartesianDistance(average_global_weighted_motion_vector)
         average_global_weighted_motion_vector_cartesian_array.append(
-        
+        average_global_weighted_motion_vector_cartesian
         )
         average_weighted_motion_vectors_filtered_cartesian_distance_array.append(
             average_weighted_motion_vectors_filtered_cartesian_distance
