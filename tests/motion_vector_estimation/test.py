@@ -43,7 +43,9 @@ def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
     if mod_x is not None and mod_y is not None:
         return mod_x, mod_y
     else:
-        
+        print("block center coordinates", blockCenterCoordinates)
+        print("WTF IS GOING ON WITH THE BLOCK CENTER")
+        breakpoint()
 
 def getRectangleFromBlockCenterCoordinates(blockCenterCoordinates)
 
@@ -52,9 +54,7 @@ def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
         weights = mod_x * mod_y / 8 / 8
         return weights
     else:
-        print("block center coordinates", blockCenterCoordinates)
-        print("WTF IS GOING ON WITH THE BLOCK CENTER")
-        breakpoint()
+
         return 0
 
 
