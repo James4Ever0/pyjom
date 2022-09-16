@@ -237,7 +237,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             print('average_weighted_motion_vector', average_weighted_motion_vector)
             print('average_global_weighted_motion_vector', average_global_weighted_motion_vector)
             motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
-            for x,y,w,h in rectangles:
+            for index, (x,y,w,h) in enumerate(rectangles):
                 pt1, pt2 = XYWHToDiagonal(x,y,w,h)
                 # print(pt1, pt2)
                 # print(type(pt1), type(pt1[0]))
