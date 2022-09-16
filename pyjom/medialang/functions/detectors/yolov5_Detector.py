@@ -43,7 +43,7 @@ def yolov5_Detector(mediapaths, model="yolov5s", threshold=0.4, timestep=0.2):
             data = keywordDecorator(yolov5_Identifier, **config)(data)
             result[data_key].update({keyword: data})
             result[data_key].update({"config": config})
-            results.append(result)
+            # results.append(result)
         else:
             mdata, metadata = videoFrameIterator(
                 mediapath,
@@ -55,5 +55,5 @@ def yolov5_Detector(mediapaths, model="yolov5s", threshold=0.4, timestep=0.2):
             metadata.update({"config": config})
             result[data_key][keyword] = mdata
             result[data_key].update(metadata)
-            results.append(result)
+        results.append(result)
     return results
