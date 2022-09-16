@@ -23,6 +23,8 @@ def get16Value(res_x):
 x_16val = get16Value(res_x)
 y_16val = get16Value(res_y)
 
+total_block_weights = 
+
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
@@ -42,7 +44,7 @@ def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
         weights = mod_x * mod_y /8/8
         return weights
     else:
-        
+        print("block center coordinates", blockCenterCoordinates)
         print("WTF IS GOING ON WITH THE BLOCK CENTER")
         breakpoint()
         return 0
