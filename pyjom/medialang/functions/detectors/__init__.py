@@ -7,7 +7,10 @@ from .frameborder_Detector import *
 
 # maybe these shits are gonna ruin my life...
 
-def getMedialang
+def getMedialangInputFixed(medialangPathsInput):
+    for f
+        if type(fbase0) == list and len(fbase0) == 1:
+        # then it must be the medialang shit.
 
 medialangDetectors = {
     "subtitle_detector": mediaSubtitleDetector,
