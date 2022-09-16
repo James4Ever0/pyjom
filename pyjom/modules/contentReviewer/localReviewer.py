@@ -42,17 +42,12 @@ def filesystemReviewerNoGenerator(
 
 
 def filesystemReviewerGenerator(
-    content, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[]
+    content, **kwargs
 ):
     # mreview = []
     for elem in content:
         reviewResult = filesystemReviewerCoreAnalyzer(
-            elem,
-            auto=auto,
-            semiauto=semiauto,
-            dummy_auto=dummy_auto,
-            args=args,
-            template_names=template_names,
+            elem,**kwargs
         )
         yield reviewResult
     #     mreview.append(reviewResult)
