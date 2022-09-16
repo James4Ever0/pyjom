@@ -13,9 +13,10 @@ def getMedialangInputFixed(medialangPathsInput):
             yield fbase0
         elif type(fbase0) == list and len(fbase0) == 1:
             if type(fbase0[0] == dict):
-                yield
+                
         else:
             print('weird medialang detector input')
+            print(fbase0)
         # then it must be the medialang shit.
 
 medialangDetectors = {
