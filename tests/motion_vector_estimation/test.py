@@ -33,10 +33,9 @@ def averageMotionVectors(motion_vector_list):
     if len(motion_vector_list) == 0:
         return 
     if len(motion_vector_list) > 1:
-
-    marray = np.array(motion_vector_list)
-    average = np.average(marray, axis=1)
-    
+        marray = np.array(motion_vector_list)
+        average = np.average(marray, axis=1)
+        average_tuple = tuple(average[0])
 
 for _ in progressbar.progressbar(range(framesCount)):
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
