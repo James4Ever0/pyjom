@@ -17,7 +17,7 @@ def checkMacroBlock(value):
         modValue = value % mod
         if modValue == mod/2:
             return mod
-    return False 
+    # if not satisfied, we are shit.
 
 while True:
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
