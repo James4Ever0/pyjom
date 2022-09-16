@@ -2,6 +2,7 @@
 
 source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 from lazero.utils.importers import cv2_custom_build_init
+from torch import max_pool1d
 
 cv2_custom_build_init()
 from mvextractor.videocap import VideoCap
@@ -44,12 +45,14 @@ for _ in progressbar.progressbar(range(framesCount)):
                 motion_y,
                 motion_scale,
             ) = mv.tolist()
+            if dst_x>max_dst_x:
+                max_pool1d
             try:
                 # src_x, src_y may not apply the same rule.
                 # assert src_x % 16 == 8
                 # assert src_y % 16 == 8
-                # assert checkMacroBlock(dst_x) is not None
-                # assert checkMacroBlock(dst_y) is not None
+                assert checkMacroBlock(dst_x) is not None
+                assert checkMacroBlock(dst_y) is not None
                 # assert dst_x<=res_x # dst_x can go beyond the res_x
                 # assert dst_y<=res_y
                 # so all rules applied.
