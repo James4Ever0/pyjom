@@ -19,7 +19,7 @@ reviewer = keywordDecorator(
     template_names=template_names,
     args={"autoArgs": autoArgs},
 )
-videoPath = "/root/Desktop/works/pyjom/samples/image/"
+videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 # videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 fileList = [{"type": "video", "path": videoPath}]
 
