@@ -28,7 +28,7 @@ while True:
                 motion_y,
                 motion_scale,
             ) = mv.tolist()
-            print('points',src_x, src_y, dst_x, dst_y)
+            print('source points',src_x, src_y, dst_x, dst_y)
             print('motion',motion_x, motion_y)
             print("scale",motion_scale)
 
