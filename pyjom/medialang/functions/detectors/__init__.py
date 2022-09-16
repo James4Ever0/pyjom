@@ -19,7 +19,7 @@ def getMedialangInputFixed(medialangPathsInput):
         # then it must be the medialang shit.
 
 def processInputWrapperFunction(function,wrapperFunction,**kwargs):
-    return lambda data: function(wrapperFunction(data),**kwargs)
+    def mFunction(data: function(wrapperFunction(data),**kwargs)
 
 medialangDetectors = {
     "subtitle_detector": processInputWrapperFunction(mediaSubtitleDetector,,
