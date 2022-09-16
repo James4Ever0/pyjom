@@ -12,6 +12,8 @@ res = get_res(source) # (width, height)
 print("RES: %s" % str(res))
 res_x, res_y = res
 
+# 
+
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
