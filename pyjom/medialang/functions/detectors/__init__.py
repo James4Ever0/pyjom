@@ -18,6 +18,8 @@ def getMedialangInputFixed(medialangPathsInput):
             print(fbase0)
         # then it must be the medialang shit.
 
+def 
+
 medialangDetectors = {
     "subtitle_detector": mediaSubtitleDetector,
     "framediff_detector": videoDiffDetector,
