@@ -12,7 +12,7 @@ cap.open(source) # wtf is going on here?
 while True:
     success, frame, motion_vectors, frame_type,timestamp = cap.read()
     if success:
-        
+        # what is the content of this motion vector?
         # print(motion_vectors)
         # print(motion_vectors.shape)
     else:
