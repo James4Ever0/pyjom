@@ -34,10 +34,10 @@ def averageMotionVectors(motion_vector_list):
         average_tuple = (0,0)
     if len(motion_vector_list) > 1:
         marray = np.array(motion_vector_list)
-        print("MAKING AVERAGE:")
-        print(marray)
+        # print("MAKING AVERAGE:")
+        # print(marray)
         average = np.average(marray, axis=0)
-        breakpoint()
+        # breakpoint()
         average_tuple = tuple(average)
     else:
         average_tuple = tuple(motion_vector_list[0])
