@@ -2,6 +2,7 @@
 
 source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 from lazero.utils.importers import cv2_custom_build_init
+from sniffio import current_async_library
 
 cv2_custom_build_init()
 from mvextractor.videocap import VideoCap
@@ -241,6 +242,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             for index, (x,y,w,h) in enumerate(rectangles):
                 pt1, pt2 = XYWHToDiagonal(x,y,w,h)
                 # print(pt1, pt2)
+                current_cartesian = motion_ve
                 # print(type(pt1), type(pt1[0]))
                 relative_motion_cartesian = 255*((current_cartesian-min_cartesian)/(max_cartesian-min_cartesian))
                 relative_motion_cartesian = int(relative_motion_cartesian)
