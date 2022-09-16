@@ -10,6 +10,7 @@ from caer.video.frames_and_fps import count_frames, get_res
 framesCount = count_frames(source)
 res = get_res(source) # (width, height)
 print("RES: %s" % str(res))
+res_x, res_y = res
 
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
