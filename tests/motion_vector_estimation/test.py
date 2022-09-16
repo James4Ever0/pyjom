@@ -254,8 +254,8 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # breakpoint()
                 cv2.rectangle(motion_mask, pt1, pt2, color=(relative_motion_cartesian,), thickness=-1)
             # # visualize this.
-            # cv2.imshow('motion_mask',motion_mask)
-            # cv2.waitKey(100)
+            cv2.imshow('motion_mask',motion_mask)
+            cv2.waitKey(100)
             # may you create bounding box for this? for tracking motion? or not?
         # breakpoint()
     else:
