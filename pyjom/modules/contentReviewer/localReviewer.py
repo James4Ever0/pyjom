@@ -26,7 +26,7 @@ def filesystemReviewerCoreAnalyzer(elem,auto=False, semiauto=True, dummy_auto=Tr
 def filesystemReviewerNoGenerator(content,auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[] ):
     mreview = []
     for elem in content:
-        reviewResult = filesystemReviewerCoreAnalyzer(content,    auto=auto,
+        reviewResult = filesystemReviewerCoreAnalyzer(elem,    auto=auto,
         semiauto=semiauto,
         dummy_auto=dummy_auto,
         args=args,
