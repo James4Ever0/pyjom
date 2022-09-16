@@ -14,3 +14,5 @@ while True:
     if success:
         print(motion_vectors)
         print(motion_vectors.shape)
+    else:
+        break
