@@ -37,6 +37,7 @@ def checkMacroBlock(value):
             return mod
     # if not satisfied, we are shit.
 
+def getRectangleFromBLockCenterCoordinates(blockCenterCoordinates)
 
 def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
     block_x, block_y = blockCenterCoordinates
