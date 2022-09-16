@@ -230,7 +230,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         average_weighted_motion_vector = sum_weighted_motion_vector / sum_weights
         motion_area_ratio = sum_weights/total_block_weights
         # print(motion_vectors.shape)
-        motion_vectors_filtered_
+        motion_vectors_filtered_cartesian_distance = [cartesianDistance(vector) for vector in ]
 
         if motion_vectors_dict_averaged != {}:
             # breakpoint()
