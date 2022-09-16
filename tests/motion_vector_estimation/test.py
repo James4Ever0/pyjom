@@ -193,6 +193,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             for key in motion_vectors_dict.keys()
         }
         # assuming no duplicates?
+        weighted_motion_vectors = []
         for blockCenterCoordinates, average_motion_vector in motion_vectors_dict_averaged.items():
             if average_motion_vector == (0, 0):
                 continue
