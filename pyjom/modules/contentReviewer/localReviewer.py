@@ -54,4 +54,10 @@ def filesystemReviewer(
     # print('generator flag', generator)
     # link = content["link"]
     if not generator:
-        return filesystemReviewerNoGenerator(content,)
+        return filesystemReviewerNoGenerator(content,auto=auto,
+        semiauto=semiauto,
+        dummy_auto=dummy_auto,
+        args=args,
+        template_names=template_names)
+    else:
+        return filesystemReviewerGenerator(content,
