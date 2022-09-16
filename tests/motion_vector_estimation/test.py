@@ -2,8 +2,8 @@
 
 # source = "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"
 # change source?
-source = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
-# source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"
+# source = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
+source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"
 from lazero.utils.importers import cv2_custom_build_init
 from sniffio import current_async_library
 
