@@ -201,10 +201,9 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # print("destination coords", key)
                 # print('average motion vector', average_motion_vector)
             else:
-                dst_x, dst_y = key
                 m_x, m_y = average_motion_vector
-                rectangle_XYWH = getRectangleXYWHFromBlockCenterCoordinates((dst_x, dst_y))
-                getBlockWeightFromBlockCenterCoordinates((key))
+                rectangle_XYWH = getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates)
+                getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates)
 
         # print(motion_vectors.shape)
         if motion_vectors_dict_averaged != {}:
