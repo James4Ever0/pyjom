@@ -66,7 +66,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 dst_x, # corresponding macro block.
                 dst_y, # for destination only
                 motion_x,
-                motion_y,
+                motion_y, # don't know what the fuck is wrong with the motion scale
             ) = mv.tolist()
             # say we just want source_index <0, aka mv compared to previous frame
             if source_index >=0: 
