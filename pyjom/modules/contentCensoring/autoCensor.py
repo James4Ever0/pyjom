@@ -50,7 +50,7 @@ def autoCensor(contentPath, meta, template_names=[], semiauto=False, args={}):
         data = data[0][0]  # language feature.
         # what the fuck is wrong?
         mdata.update({name: data})  # this is not so good, though.
-        except:
+        # except:
             print('skipping marking data')
     if semiauto:  # need some modification.
         for key in semiauto_key_blacklist:
