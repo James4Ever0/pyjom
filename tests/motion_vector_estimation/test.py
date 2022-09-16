@@ -239,13 +239,13 @@ for _ in progressbar.progressbar(range(framesCount)):
             motion_mask = np.zeros((motion_render_frame[1],motion_render_frame[0],1))
             for x,y,w,h in rectangles:
                 pt1, pt2 = XYWHToDiagonal(x,y,w,h)
-                print(pt1, pt2)
-                print(type(pt1), type(pt1[0]))
-                breakpoint()
+                # print(pt1, pt2)
+                # print(type(pt1), type(pt1[0]))
+                # breakpoint()
                 cv2.rectangle(motion_mask, pt1, pt2, color=(255,), thickness=-1)
             # visualize this.
             cv2.imshow('motion_mask',motion_mask)
-            cv2.waitKey(0)
+            cv2.waitKey(100)
             # may you create bounding box for this? for tracking motion? or not?
         # breakpoint()
     else:
