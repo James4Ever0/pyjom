@@ -24,7 +24,7 @@
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 
 from lazero.utils.importers import cv2_custom_build_init
-from sniffio import current_async_library
+# from sniffio import current_async_library
 
 cv2_custom_build_init()
 from mvextractor.videocap import VideoCap
