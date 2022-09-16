@@ -252,7 +252,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         min_cartesian = min(motion_vectors_filtered_cartesian_distance)
         max_cartesian = max(motion_vectors_filtered_cartesian_distance)
 
-        motion area ratio_array.append(motion_area_ratio)
+        motion_area_ratio_array.append(motion_area_ratio)
         average_weighted_motion_vector_array.append(average_weighted_motion_vector)
         average_global_weighted_motion_vector_array.append(average_global_weighted_motion_vector)
         average_weighted_motion_vectors_filtered_cartesian_distance_array.append(average_weighted_motion_vectors_filtered_cartesian_distance)
