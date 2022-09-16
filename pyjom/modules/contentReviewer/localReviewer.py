@@ -63,6 +63,7 @@ def filesystemReviewer(
     args={},
     template_names=[],
     generator: bool = False,
+    debug=True
 ):
     # print(content)
     # print('generator flag', generator)
@@ -75,6 +76,7 @@ def filesystemReviewer(
             dummy_auto=dummy_auto,
             args=args,
             template_names=template_names,
+            debug=debug
         )
     else:
         return filesystemReviewerGenerator(
@@ -84,4 +86,5 @@ def filesystemReviewer(
             dummy_auto=dummy_auto,
             args=args,
             template_names=template_names,
+            debug=debug
         )
