@@ -1,6 +1,8 @@
 # it contains subpixel motion vectors. fucking hell
 
 source = ""
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
 from mvextractor.videocap import VideoCap
 
 
