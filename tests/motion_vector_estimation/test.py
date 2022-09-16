@@ -45,7 +45,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         breakpoint()
         destCoords = set()
         prevMV = None
-        for mv in motion_vectors_unique:
+        for mv in motion_vectors_simplified:
             # drop duplicates first!
             (
                 source_index, # drop the source index? seems that i cannot average this shit out.
