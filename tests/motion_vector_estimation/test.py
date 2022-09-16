@@ -90,7 +90,7 @@ for _ in progressbar.progressbar(range(framesCount)):
             #     print('destionation',dst_x, dst_y)
             #     print('motion',motion_x, motion_y)
             #     print("scale",motion_scale)
-        motion_vectors_dict_averaged = {key: average(motion_vectors_dict[key]) for key motion_vectors_dict.keys()}
+        motion_vectors_dict_averaged = {key: averageMotionVectors(motion_vectors_dict[key]) for key motion_vectors_dict.keys()}
         # print(motion_vectors.shape)
     else:
         break
