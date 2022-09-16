@@ -40,7 +40,7 @@ def averageMotionVectors(motion_vector_list):
         breakpoint()
         average_tuple = tuple(average)
     else:
-        average_tuple = motion_vector_list[0]
+        average_tuple = tuple(motion_vector_list[0])
     return average_tuple
 
 for _ in progressbar.progressbar(range(framesCount)):
