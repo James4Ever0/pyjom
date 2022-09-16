@@ -12,7 +12,7 @@ res = get_res(source) # (width, height)
 print("RES: %s" % str(res))
 res_x, res_y = res
 
-# 
+# 如果zheng chu
 
 cap = VideoCap()
 cap.open(source)  # wtf is going on here?
