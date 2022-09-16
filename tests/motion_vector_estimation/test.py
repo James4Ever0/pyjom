@@ -202,6 +202,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 # print('average motion vector', average_motion_vector)
             else:
                 dst_x, dst_y = key
+                m_x, m_y = average_motion_vector
         # print(motion_vectors.shape)
         if motion_vectors_dict_averaged != {}:
             breakpoint()
