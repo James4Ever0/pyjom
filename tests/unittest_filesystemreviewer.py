@@ -30,7 +30,7 @@ resultGenerator, function_id = reviewer(
 def extractYolov5DetectionData(detectionData):
     # plan to get some calculations!
     filepath, review_data = detectionData['review']['review']
-    timeseries_data = review_data['yolov5_detector']['yolov5']
+    timeseries_data = review_data['yolov5_detector']['yolov5']['yolov5_detector']
     for frameData in timeseries_data:
         timestamp, frameNumber, frameDetectionData = [frameData[key] for key in ['time','frame','yolov5_detector']]
         sprint('timestamp:', timestamp)
