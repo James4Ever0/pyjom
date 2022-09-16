@@ -240,6 +240,8 @@ for _ in progressbar.progressbar(range(framesCount)):
             for x,y,w,h in rectangles:
                 pt1, pt2 = XYWHToDiagonal(x,y,w,h)
                 print(pt1, pt2)
+                print(type(pt1), type(pt1[0]))
+                breakpoint()
                 cv2.rectangle(motion_mask, pt1, pt2, color=(255,), thickness=-1)
             # visualize this.
             cv2.imshow('motion_mask',motion_mask)
