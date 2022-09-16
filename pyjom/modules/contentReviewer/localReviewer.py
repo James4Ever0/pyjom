@@ -34,6 +34,17 @@ def filesystemReviewerNoGenerator(content,auto=False, semiauto=True, dummy_auto=
         mreview.append(reviewResult)
     return mreview
 
+def filesystemReviewerGenerator(content,auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[] ):
+    mreview = []
+    for elem in content:
+        reviewResult = filesystemReviewerCoreAnalyzer(elem,    auto=auto,
+        semiauto=semiauto,
+        dummy_auto=dummy_auto,
+        args=args,
+        template_names=template_names)
+        mreview.append(reviewResult)
+    return mreview
+
 @decorator
 def filesystemReviewer(
     content, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[], generator:bool=False
@@ -42,4 +53,3 @@ def filesystemReviewer(
     # print('generator flag', generator)
     # link = content["link"]
     # if not generator:
-
