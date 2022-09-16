@@ -7,7 +7,7 @@ from .frameborder_Detector import *
 
 # maybe these shits are gonna ruin my life...
 
-
+def getMedialang
 
 medialangDetectors = {
     "subtitle_detector": mediaSubtitleDetector,
