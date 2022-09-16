@@ -303,6 +303,7 @@ a,b = 2,3
 figure, axis = plt.subplots(a, b)
 
 data = [motion_area_ratio_array,average_weighted_motion_vector_array,average_global_weighted_motion_vector_array,average_weighted_motion_vectors_filtered_cartesian_distance_array,average_global_weighted_motion_vectors_filtered_cartesian_distance_array]
+titles = ['motion']
 for _a in range(a):
     for _b in range(b):
         index = _a*b+_b
