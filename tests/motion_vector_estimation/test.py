@@ -74,8 +74,11 @@ for _ in progressbar.progressbar(range(framesCount)):
             ) = mv.tolist()
             # say we just want source_index <0, aka mv compared to previous frame
             try:
-            assert motion_x/motion_scale == src_x-dst_x
-            assert motion_y/motion_scale == src_y-dst_y
+                assert motion_x/motion_scale == src_x-dst_x
+                assert motion_y/motion_scale == src_y-dst_y
+            except:
+                print(src_x, dst_x, motion_x, motion_scale)
+                print(src_x, dst_x, motion_x, motion_scale)
             if source_index >=0: 
                 continue
             # if dst_x>max_dst_x:
