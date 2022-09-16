@@ -11,8 +11,8 @@ cap = VideoCap()
 cap.open(source)  # wtf is going on here?
 # if there is nothing we will breakup
 
-checkMacroBlock(value):
-
+def checkMacroBlock(value):
+    
 
 while True:
     success, frame, motion_vectors, frame_type, timestamp = cap.read()
