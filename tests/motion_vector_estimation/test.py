@@ -54,6 +54,7 @@ def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
 def getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates):
     block_x, block_y = blockCenterCoordinates
     mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
+    mod_x_half, mod_y_half = mod_x/2, mod_y/2
     x,y,w,h = block_x-mod_x_half, block_y-mod_y_half, mod_x, mod_y
     return x,y,w,h
 
