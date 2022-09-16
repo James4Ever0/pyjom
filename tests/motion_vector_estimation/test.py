@@ -53,7 +53,6 @@ for _ in progressbar.progressbar(range(framesCount)):
                 motion_x,
                 motion_y,
             ) = mv.tolist()
-            {():}
             # if dst_x>max_dst_x:
             #     max_dst_x = dst_x
             # if dst_y>max_dst_y:
