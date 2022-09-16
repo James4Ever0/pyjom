@@ -41,6 +41,7 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
                 print('confidence:', confidence)
                 print('identity:', identity)
     else:
+        frameDetectionData =
         for elem in frameDetectionData:
             location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
             print('location:', location)
