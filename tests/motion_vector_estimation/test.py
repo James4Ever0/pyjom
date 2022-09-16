@@ -63,6 +63,8 @@ for _ in progressbar.progressbar(range(framesCount)):
             # if dst_y>max_dst_y:
             #     max_dst_y = dst_y
             destCoord = (dst_x, dst_y)
+            print(destCoord)
+            breakpoint()
             if destCoord == (0,0):
                 print("zero motion vector detected. skipping")
                 breakpoint()
