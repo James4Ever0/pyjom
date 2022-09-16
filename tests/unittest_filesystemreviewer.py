@@ -32,14 +32,14 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
     filepath, review_data = detectionData['review']['review']
     timeseries_data = review_data['yolov5_detector']['yolov5']['yolov5_detector']
     if mimetype == 'video':
-    for frameData in timeseries_data:
-        timestamp, frameNumber, frameDetectionData = [frameData[key] for key in ['time','frame','yolov5_detector']]
-        sprint('timestamp:', timestamp)
-        for elem in frameDetectionData:
-            location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
-            print('location:', location)
-            print('confidence:', confidence)
-            print('identity:', identity)
+        for frameData in timeseries_data:
+            timestamp, frameNumber, frameDetectionData = [frameData[key] for key in ['time','frame','yolov5_detector']]
+            sprint('timestamp:', timestamp)
+            for elem in frameDetectionData:
+                location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
+                print('location:', location)
+                print('confidence:', confidence)
+                print('identity:', identity)
 
 for result in resultGenerator:
     from lazero.utils.logger import sprint
