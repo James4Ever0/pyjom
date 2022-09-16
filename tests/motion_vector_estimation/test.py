@@ -236,6 +236,7 @@ for _ in progressbar.progressbar(range(framesCount)):
         # print(motion_vectors.shape)
         motion_vectors_filtered_cartesian_distance = [cartesianDistance(vector) for vector in motion_vectors_filtered]+[0] # to avoid errors.
 
+        cartesianWeights = weights+[0]
         
 
         min_cartesian = min(motion_vectors_filtered_cartesian_distance)
