@@ -302,12 +302,13 @@ import matplotlib.pyplot as plt
 a,b = 2,3
 figure, axis = plt.subplots(a, b)
 
+data = [motion_area_ratio_array)
+axis[0,1].plot(average_weighted_motion_vector_array)
+axis[0,2].plot(average_global_weighted_motion_vector_array)
+axis[0,3].plot(average_weighted_motion_vectors_filtered_cartesian_distance_array)
+axis[0,4].plot(average_global_weighted_motion_vectors_filtered_cartesian_distance_array]
 for _a in range(a):
     for _b in range(b):
         index = _a*b+_b
 
-axis[0,0].plot(motion_area_ratio_array)
-axis[0,1].plot(average_weighted_motion_vector_array)
-axis[0,2].plot(average_global_weighted_motion_vector_array)
-axis[0,3].plot(average_weighted_motion_vectors_filtered_cartesian_distance_array)
-axis[0,4].plot(average_global_weighted_motion_vectors_filtered_cartesian_distance_array)
+axis[_a,_b].plot()
