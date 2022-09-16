@@ -68,6 +68,7 @@ for _ in progressbar.progressbar(range(framesCount)):
                 continue
             else:
                 destCoords.add(destCoord)
+            prevMV = 
             try:
                 # src_x, src_y may not apply the same rule.
                 # assert src_x % 16 == 8
