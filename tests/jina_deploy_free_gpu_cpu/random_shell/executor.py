@@ -3,7 +3,6 @@ from jina import Executor, DocumentArray, requests
 import subprocess
 import os
 
-
 class random_shell(Executor):
     @requests
     def foo(self, docs: DocumentArray, **kwargs):
