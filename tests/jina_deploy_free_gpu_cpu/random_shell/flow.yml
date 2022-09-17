@@ -2,3 +2,6 @@ jtype: Flow
 executors:
   - uses: jinahub+docker://random_shell/latest
     name: jina_shell_random
+    jcloud:
+      resources:
+        gpu: 2
