@@ -116,7 +116,7 @@ def ffmpegVideoPreProductionFilter(
 
     # these things are ordered to be the last ones. just flags.
     from caer.video.frames_and_fps import get_duration
-    video_start=0, video_end = get_duration(fi)
+    video_start=0, video_end = get_duration(filepath)
     if "randomFlip" in filters:
         if random.random() > 0.5:
             mDict.update({"hflip": [(start, end)]})
