@@ -1,6 +1,7 @@
 from jina import Client, DocumentArray
 # host = 'grpc://0.0.0.0:54321'
 # host = 'grpcs://3fcd103a37.wolf.jina.ai'
+host = ''
 if __name__ == '__main__':
     c = Client(host=host)
     while True:
