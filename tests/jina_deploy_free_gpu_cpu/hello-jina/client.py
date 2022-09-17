@@ -5,4 +5,6 @@ if __name__ == '__main__':
     docArray = DocumentArray.empty(1)
     docArray[0].text = input("jina>")
     da = c.post('/', docArray)
-    print(da.texts)
+    reponse = da[0].text
+    # print(da.texts)
+    print(response)
