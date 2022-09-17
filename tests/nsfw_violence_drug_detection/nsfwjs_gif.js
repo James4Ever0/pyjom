@@ -30,7 +30,10 @@ fileStream.once('end', () => {
     fileBuffer = Buffer.concat(chunks);
     // do shit here.
     console.log("filebuffer ready")
-load_model().then(()=>{})
+load_model().then(()=>{_model.classifyGif(fileBuffer,{ topk: 3, fps: 1 })
+.then(predictions => showResults(images[i], predictions))
+.catch(error => showError(images[i], error))
+})})
     
     // Of course, you can do anything else you need to here, like emit an event!
 });
