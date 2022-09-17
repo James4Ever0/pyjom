@@ -617,11 +617,11 @@ def detectStationaryLogoOverTime(
         else:
             delogoCommandSet = "|".join(mFinalDelogoFilters)
             value = {
-                delogoCommandSet: start_end_ranges.copy()
+                delogoCommandSet: start_end_ranges
             }  # can it be turned into something useful?
         delogoCommandList.append(value)
     
-    
+
 
     return delogoCommandDict # is this freaking sequential? no?
 
