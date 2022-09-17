@@ -6,3 +6,8 @@ executors:
       resources:
         gpu: 4
         memory: 16G
+      autoscale:
+        min: 1
+        max: 5
+        metric: rps
+        target: 50
