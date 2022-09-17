@@ -3,6 +3,7 @@ from hmmlearn import hmm
 # np.random.seed(42)
 
 # hmmlearn is simply unsupervised learning.
+# for supervised sequence learning use seqlearn instead
 
 model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.startprob_ = np.array([0.6, 0.3, 0.1])
