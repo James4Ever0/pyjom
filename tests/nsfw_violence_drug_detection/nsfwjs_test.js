@@ -18,13 +18,14 @@ let _model
 
 const convert = async(img, type) => {
     // Decoded image in UInt8 Byte array
+    let image
     if (type == 'image/jpeg') { 
-        const image = await jpeg.decode(img, true) } //wtf?
+        image = await jpeg.decode(img, true) } //wtf?
     // order: rgba
     else if (type == 'image/png') {
-        const image = await png.decode(img, true)
+        image = await png.decode(img, true)
     } else if (type == 'image/bmp') {
-        const image = await bmp.decode(img, true)
+        image = await bmp.decode(img, true)
     }
 
     const numChannels = 3
