@@ -1030,7 +1030,7 @@ def kalmanStablePipRegionExporter(
         # we might want to parse the command string and reengineer this shit.
     return finalCommandDict
 
-
+@lru_cache(maxsize=20)
 def detectPipRegionOverTime(
     videoPath,
     start,
