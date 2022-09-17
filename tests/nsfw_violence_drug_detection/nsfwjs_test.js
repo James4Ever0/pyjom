@@ -1,7 +1,26 @@
 // import { createRequire } from "module";
 // const require = createRequire(import.meta.url);
+function maskColor(maskRed, maskGreen, maskBlue, maskAlpha) {
+    const maskRedR = (~maskRed + 1) & maskRed;
+    const maskGreenR = (~maskGreen + 1) & maskGreen;
+    const maskBlueR = (~maskBlue + 1) & maskBlue;
+    const maskAlphaR = (~maskAlpha + 1) & maskAlpha;
+    const shiftedMaskRedL = maskRed / maskRedR + 1;
+    const shiftedMaskGreenL = maskGreen / maskGreenR + 1;
+    const shiftedMaskBlueL = maskBlue / maskBlueR + 1;
+    const shiftedMaskAlphaL = maskAlpha / maskAlphaR + 1;
+    return {
+        shiftRed: (x) => (((x & maskRed) / maskRedR) * 0x100) / shiftedMaskRedL,
+        shiftGreen: (x) => (((x & maskGreen) / maskGreenR) * 0x100) / shiftedMaskGreenL,
+        shiftBlue: (x) => (((x & maskBlue) / maskBlueR) * 0x100) / shiftedMaskBlueL,
+        shiftAlpha: maskAlpha !== 0 ?
+            (x) => (((x & maskAlpha) / maskAlphaR) * 0x100) / shiftedMaskAlphaL :
+            () => 255
+    };
+}
+
 var HeaderTypes;
-(function (HeaderTypes) {
+(function(HeaderTypes) {
     HeaderTypes[HeaderTypes["BITMAP_INFO_HEADER"] = 40] = "BITMAP_INFO_HEADER";
     HeaderTypes[HeaderTypes["BITMAP_V2_INFO_HEADER"] = 52] = "BITMAP_V2_INFO_HEADER";
     HeaderTypes[HeaderTypes["BITMAP_V3_INFO_HEADER"] = 56] = "BITMAP_V3_INFO_HEADER";
@@ -56,8 +75,7 @@ class BmpDecoder {
             this.maskRed = 0x00ff0000;
             this.maskGreen = 0x0000ff00;
             this.maskBlue = 0x000000ff;
-        }
-        else if (this.bitPP === 16) {
+        } else if (this.bitPP === 16) {
             this.maskAlpha = 0;
             this.maskRed = 0x7c00;
             this.maskGreen = 0x03e0;
@@ -66,14 +84,14 @@ class BmpDecoder {
         // End of BITMAP_INFO_HEADER
         if (this.headerSize > HeaderTypes.BITMAP_INFO_HEADER ||
             this.compression === 3 /* BI_BIT_FIELDS */ ||
-            this.compression === 6 /* BI_ALPHA_BIT_FIELDS */) {
+            this.compression === 6 /* BI_ALPHA_BIT_FIELDS */ ) {
             this.maskRed = this.readUInt32LE();
             this.maskGreen = this.readUInt32LE();
             this.maskBlue = this.readUInt32LE();
         }
         // End of BITMAP_V2_INFO_HEADER
         if (this.headerSize > HeaderTypes.BITMAP_V2_INFO_HEADER ||
-            this.compression === 6 /* BI_ALPHA_BIT_FIELDS */) {
+            this.compression === 6 /* BI_ALPHA_BIT_FIELDS */ ) {
             this.maskAlpha = this.readUInt32LE();
         }
         // End of BITMAP_V3_INFO_HEADER
@@ -154,15 +172,14 @@ class BmpDecoder {
                     this.data[location + i * 4 + this.locBlue] = rgb.blue;
                     this.data[location + i * 4 + this.locGreen] = rgb.green;
                     this.data[location + i * 4 + this.locRed] = rgb.red;
-                }
-                else {
+                } else {
                     break;
                 }
             }
         });
     }
     bit4() {
-        if (this.compression === 2 /* BI_RLE4 */) {
+        if (this.compression === 2 /* BI_RLE4 */ ) {
             this.data.fill(0);
             let lowNibble = false; //for all count of pixel
             let lines = this.bottomUp ? this.height - 1 : 0;
@@ -189,8 +206,7 @@ class BmpDecoder {
                         const y = this.buffer.readUInt8(this.pos++);
                         lines += this.bottomUp ? -y : y;
                         location += y * this.width * 4 + x * 4;
-                    }
-                    else {
+                    } else {
                         let c = this.buffer.readUInt8(this.pos++);
                         for (let i = 0; i < b; i++) {
                             location = this.setPixelData(location, lowNibble ? c & 0x0f : (c & 0xf0) >> 4);
@@ -203,8 +219,7 @@ class BmpDecoder {
                             this.pos++;
                         }
                     }
-                }
-                else {
+                } else {
                     //encoded mode
                     for (let i = 0; i < a; i++) {
                         location = this.setPixelData(location, lowNibble ? b & 0x0f : (b & 0xf0) >> 4);
@@ -212,8 +227,7 @@ class BmpDecoder {
                     }
                 }
             }
-        }
-        else {
+        } else {
             const xLen = Math.ceil(this.width / 2);
             const mode = xLen % 4;
             const padding = mode !== 0 ? 4 - mode : 0;
@@ -240,7 +254,7 @@ class BmpDecoder {
         }
     }
     bit8() {
-        if (this.compression === 1 /* BI_RLE8 */) {
+        if (this.compression === 1 /* BI_RLE8 */ ) {
             this.data.fill(0);
             let lines = this.bottomUp ? this.height - 1 : 0;
             let location = 0;
@@ -265,8 +279,7 @@ class BmpDecoder {
                         const y = this.buffer.readUInt8(this.pos++);
                         lines += this.bottomUp ? -y : y;
                         location += y * this.width * 4 + x * 4;
-                    }
-                    else {
+                    } else {
                         for (let i = 0; i < b; i++) {
                             const c = this.buffer.readUInt8(this.pos++);
                             location = this.setPixelData(location, c);
@@ -277,16 +290,14 @@ class BmpDecoder {
                             this.pos++;
                         }
                     }
-                }
-                else {
+                } else {
                     //encoded mode
                     for (let i = 0; i < a; i++) {
                         location = this.setPixelData(location, b);
                     }
                 }
             }
-        }
-        else {
+        } else {
             const mode = this.width % 4;
             const padding = mode !== 0 ? 4 - mode : 0;
             this.scanImage(padding, this.width, (x, line) => {
@@ -298,8 +309,7 @@ class BmpDecoder {
                     this.data[location + 1] = rgb.blue;
                     this.data[location + 2] = rgb.green;
                     this.data[location + 3] = rgb.red;
-                }
-                else {
+                } else {
                     this.data[location] = 0;
                     this.data[location + 1] = 0xff;
                     this.data[location + 2] = 0xff;
@@ -374,8 +384,8 @@ const express = require('express')
 const multer = require('multer')
 const jpeg = require('jpeg-js')
     // const bmp = require('bmp-js')
-// const bmp = require('bmp-ts').default;
-// const bmpBuffer = fs.readFileSync('bit24.bmp');
+    // const bmp = require('bmp-ts').default;
+    // const bmpBuffer = fs.readFileSync('bit24.bmp');
 const { PNG } = require('pngjs')
 
 const tf = require('@tensorflow/tfjs-node')
