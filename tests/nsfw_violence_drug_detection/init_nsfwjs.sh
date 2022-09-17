@@ -1,1 +1,1 @@
-npm i -g @tensorflow/tfjs-node
+npm i -g @tensorflow/tfjs-node nsfwjs jpegjs express 
