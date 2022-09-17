@@ -3,7 +3,7 @@ const tf = require('@tensorflow/tfjs-node')
 const nsfw = require('nsfwjs')
 
 
-filepath = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
+filepath = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps_with_mestimate.mp4"
 
 // no other classes?
 // filepath = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
