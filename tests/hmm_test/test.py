@@ -10,7 +10,7 @@ model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.covars_ = np.tile(np.identity(2), (3, 1, 1))
 # not fitteed since we do not manually specify all the parameters.
 
-X = np.random.random((100,4)) # it can be anything. the Z is 
+X = np.random.random((100,4)) # it can be anything. the Z contains three labels.
 # X, Z = model.sample(100)
 # print(X) # the observations.
 model.fit(X)
