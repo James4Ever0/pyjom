@@ -9,6 +9,7 @@ from jina import Executor, requests, DocumentArray
 
 # All Executors’ uses must follow the format jinahub+docker://MyExecutor (from Jina Hub) to avoid any local file dependencies.
 # what the heck?
+# Each Executor is allowed a maximum of 4 GPUs, 16G RAM, 16 CPU cores & 10GB of block storage.
 
 import subprocess
 import os
