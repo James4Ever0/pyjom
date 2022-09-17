@@ -9,7 +9,7 @@ import schedule
 from chat_local import getAbsSentiment
 
 from censorApis import censorReplyAbsSentiment
-from commons import weightedRandomYielder, generatedSentenceFixer, keywordDecorator
+from commons import weightedRandomYielder, generatedSentenceFixer, keywordDecorator, replaceDuplicateWords
 
 groupChatCursor = None
 
