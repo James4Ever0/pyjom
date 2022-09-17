@@ -86,6 +86,9 @@ def getImageColorCentrality(
     # from sklearn.cluster import KMeans
     X = sample
     # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
+    # here we've got issue.
+    np.seterr(all='ignore')
+    
     kmeans = MiniBatchKMeans(
         init="k-means++",
         n_clusters=n_clusters,
