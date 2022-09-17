@@ -16,7 +16,7 @@ let fileStream = fs.createReadStream(filepath);
 // An error occurred with the stream
 fileStream.once('error', (err) => {
     // Be sure to handle this properly!
-    console.error(err); 
+    console.error(err);
 });
 let _model
 const load_model = async() => {
@@ -26,16 +26,18 @@ const load_model = async() => {
 // Keep the model in memory, make sure it's loaded only once
 // File is done being read
 fileStream.once('end', () => {
-    // create the final data Buffer from data chunks;
-    fileBuffer = Buffer.concat(chunks);
-    // do shit here.
-    console.log("filebuffer ready")
-load_model().then(()=>{_model.classifyGif(fileBuffer,{ topk: 3, fps: 1 })
-.then(predictions => showResults(images[i], predictions))
-.catch(error => showError(images[i], error))
-})})
-    
-    // Of course, you can do anything else you need to here, like emit an event!
+// create the final data Buffer from data chunks;
+fileBuffer = Buffer.concat(chunks);
+// do shit here.
+console.log("filebuffer ready")
+load_model().then(() => {
+    _model.classifyGif(fileBuffer, { topk: 3, fps: 1 })
+        .then(predictions => console('predictions', predictions))
+        .catch(error => showError(images[i], error))
+})
+})
+
+// Of course, you can do anything else you need to here, like emit an event!
 });
 
 // Data is flushed from fileStream in chunks,
