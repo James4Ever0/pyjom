@@ -24,6 +24,7 @@ const convert = async(img, type) => {
     } //wtf?
     // order: rgba
     else if (type == 'image/png') {
+        let pngObject =new PNG(buffer)
         image = await png.decode(img, true)
     } else if (type == 'image/bmp') {
         image = await bmp.decode(img, true)
