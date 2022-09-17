@@ -13,7 +13,9 @@ model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 X = np.random(100,2)
 # X, Z = model.sample(100)
 # print(X) # the observations.
+model.fit(X)
 # # (100, 2)
+Z_predicted = model.predict(X)
 # print(Z) # the states.
 # # (100,)
 breakpoint()
