@@ -1,5 +1,5 @@
 from jina import Client, DocumentArray
-# 'grpc://0.0.0.0:54321'
+# host = 'grpc://0.0.0.0:54321'
 host = 'grpcs://3fcd103a37.wolf.jina.ai'
 if __name__ == '__main__':
     c = Client(host=host)
