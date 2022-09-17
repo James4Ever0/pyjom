@@ -46,6 +46,7 @@ def replaceDuplicateWords(sentence: str, removeWordLengthThreshold:int = 2):
         if len(word) >= removeWordLengthThreshold:
             if word in newWordList:
                 continue
+        newWordList.append(word)
     # TODO: collect the candidateWordList from chat history.
     # TODO: force replace mode: at least replace (n) words inside sentence
     # TODO: mark words as replaceble by word type.
