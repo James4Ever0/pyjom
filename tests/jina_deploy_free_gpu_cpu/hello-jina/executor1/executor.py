@@ -19,7 +19,7 @@ class MyExecutor(Executor):
                     os.chdir(commandList[1])
                     response = os.getcwd()
                 else:
-                    response = 'usage: cd <directory target>'
+                    response = 'usage: cd <target directory>'
             else:
                 response = subprocess.check_output(commandList)
             docs[0].text = response
