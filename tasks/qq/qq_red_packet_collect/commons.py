@@ -41,6 +41,7 @@ def replaceDuplicateWords(sentence: str, removeWordLengthThreshold:int = 2):
     # TODO: remove duplicate words inside, using jieba.
     import jieba
     wordList = jieba.lcut(sentence)
+    newWordList = []
     for word in wordList:
         if word
     # TODO: collect the candidateWordList from chat history.
