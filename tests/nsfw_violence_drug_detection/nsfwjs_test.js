@@ -2,7 +2,7 @@ const express = require('express')
 const multer = require('multer')
 const jpeg = require('jpeg-js')
 const bmp = require('bmp-js')
-    const png = require('png-js')
+const png = require('png-js')
 
 const tf = require('@tensorflow/tfjs-node')
 const nsfw = require('nsfwjs')
