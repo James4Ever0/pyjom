@@ -620,7 +620,7 @@ def detectStationaryLogoOverTime(
             for {
                 delogoCommandSet: start_end_ranges
             }  # can it be turned into something useful?
-        delogoCommandList.append(value)
+        delogoCommandList.extend(values)
     
     
 
