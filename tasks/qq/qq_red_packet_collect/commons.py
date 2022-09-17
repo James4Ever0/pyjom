@@ -40,7 +40,9 @@ def replaceDuplicateChars(sentence: str, maxRepeat: int = 3):
 def replaceDuplicateWords(sentence: str, removeWordLengthThreshold:int = 2):
     # TODO: remove duplicate words inside, using jieba.
     import jieba
-    
+    wordList = jieba.lcut(sentence)
+    for word in wordList:
+        if word
     # TODO: collect the candidateWordList from chat history.
     # TODO: force replace mode: at least replace (n) words inside sentence
     # TODO: mark words as replaceble by word type.
