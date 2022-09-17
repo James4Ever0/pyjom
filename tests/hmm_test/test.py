@@ -12,4 +12,5 @@ X, Z = model.sample(100)
 print(X) # the observations.
 # (100, 2)
 print(Z) # the states.
+# (100,)
 breakpoint()
