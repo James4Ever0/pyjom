@@ -5,7 +5,7 @@ const express = require('express')
 const multer = require('multer')
 const jpeg = require('jpeg-js')
     // const bmp = require('bmp-js')
-const bmp = require('bmp-ts').default;
+// const bmp = require('bmp-ts').default;
 // const bmpBuffer = fs.readFileSync('bit24.bmp');
 const { PNG } = require('pngjs')
 
