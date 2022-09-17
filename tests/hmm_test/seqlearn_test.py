@@ -7,5 +7,9 @@ y_train = np.random.randint(0,5,(5,)) # the freaking label.
 
 lengths_train = [1,1,2,1] # may i apologize. sum=5
 
-clf =  StructuredPerceptron()
-clf.fit(X_train, y_train, lengths_train)
+classifier =  StructuredPerceptron()
+classifier.fit(X_train, y_train, lengths_train)
+
+from seqlearn.evaluation import bio_f_score
+y_pred = clf.predict(X_train, lengths_test)
+print(bio_f_score(y_test, y_pred))
