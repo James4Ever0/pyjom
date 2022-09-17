@@ -1,5 +1,5 @@
 # flow.yml
 jtype: Flow
 executors:
-  - name: sentencizer
-    uses: jinahub+docker://Sentencizer
+  - name: jina_shell_random
+    uses: jinahub+docker://
