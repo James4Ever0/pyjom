@@ -56,6 +56,7 @@ app.post('/nsfw', upload.single('image'), async(req, res) => {
             console.log('file uploaded:',req.file)
             if (req.file.fieldname == 'image'){
                 type = req.file.mimetype // deal with it later.
+                extension = req.file.originalname.split(".")[-1]
                 const image = await convert(req.file.buffer, type) // here we have buffer.
             }
             // we need some file format hints.
