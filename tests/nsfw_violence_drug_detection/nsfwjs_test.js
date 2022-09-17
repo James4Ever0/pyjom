@@ -28,8 +28,9 @@ const convert = async (img) => {
 app.post('/nsfw', upload.single('image'), async (req, res) => {
   if (!req.file) res.status(400).send('Missing image multipart/form-data')
   else {
+    try{}
     const image = await convert(req.file.buffer)
-    const predictions = await _model.classify(image)
+    const predictions = await _model.clssify(image)
     image.dispose()
     res.json(predictions)
   }
