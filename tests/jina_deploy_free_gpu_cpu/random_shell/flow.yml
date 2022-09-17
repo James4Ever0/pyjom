@@ -5,3 +5,4 @@ executors:
     jcloud:
       resources:
         gpu: 2
+        memory: 16G
