@@ -36,7 +36,7 @@ const convert = async(img,type) => {
     for (let i = 0; i < numPixels; i++)
         for (let c = 0; c < numChannels; ++c)
         if (type == 'bmp'){
-            values[i * numChannels + c] = image.data[i * 4 + c]
+            values[i * numChannels + c] = image.data[i * 4 + 3-c]
         }else{
             values[i * numChannels + c] = image.data[i * 4 + c]
         }
