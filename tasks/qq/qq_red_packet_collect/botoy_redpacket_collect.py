@@ -114,7 +114,7 @@ def sendBotGroupTextMsg(
                         reply, maxRepeat=maxRepeat
                     )  # fix this reply first.
                     # add a new filter here.
-                    reply = removeDuplicateWords
+                    reply = removeDuplicateWords(reply)
                     if reply in groupChatReplyHistory or len(reply) < min_reply_length:
                         continue  # do not send repeated messages or unusually short messages.
                     else:
