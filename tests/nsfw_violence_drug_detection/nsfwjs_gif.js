@@ -21,6 +21,7 @@ fileStream.once('error', (err) => {
 let _model
 const load_model = async() => {
     _model = await nsfw.load()
+    console.log('model ready')
 }
 
 // Keep the model in memory, make sure it's loaded only once
@@ -33,7 +34,7 @@ console.log("filebuffer ready")
 load_model().then(() => {
     _model.classifyGif(fileBuffer, { topk: 3, fps: 1 })
         .then(predictions => console.log('predictions', predictions))
-        .catch(error => c('model error' error))
+        .catch(error => console.log('model error', error))
 })
 })
 
