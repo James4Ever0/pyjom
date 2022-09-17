@@ -59,6 +59,7 @@ app.post('/nsfw', upload.single('image'), async(req, res) => {
                     const image = req.file.buffer
                     const predictions = await _model.classifyGif(image, { topk: 3, fps: 1 })
                     image.dispose()
+                    predictions
                     res.json(predictions)
                 } else {
                     if (extension == 'bmp') {
