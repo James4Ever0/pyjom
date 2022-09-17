@@ -1,1 +1,1 @@
-curl -X POST -F 'image=@' http://localhost:/upload
+curl -X POST -F 'image=@$IMAGE' http://localhost:8511/nsfw
