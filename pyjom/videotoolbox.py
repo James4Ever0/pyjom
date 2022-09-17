@@ -330,6 +330,7 @@ def detectStationaryLogoOverTime(
     cornersOnly=True,
     pipCropDicts=None,
     areaThreshold=30,
+    , top_k = 0
 ):
     imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size)
     # what is this src?
@@ -364,6 +365,7 @@ def detectStationaryLogoOverTime(
         return fourCorners
 
     fourCorners = None
+    cornerArea = getFourCorners()
     if cornersOnly:
         defaultFourCorners = getFourCorners(0, 0, defaultWidth, defaultHeight)
         if pipCropDicts in [None, {}]:
