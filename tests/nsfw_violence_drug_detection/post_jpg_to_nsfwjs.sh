@@ -10,3 +10,5 @@ curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_with_text.pn
 echo
 curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg' http://localhost:8511/nsfw
 echo
+curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_with_text.bmp' http://localhost:8511/nsfw
+echo
