@@ -19,7 +19,7 @@ let _model
 const convert = async(img, type) => {
     // Decoded image in UInt8 Byte array
     let image
-    if (type == 'image/jpeg') { 
+    if (type == 'image/jpeg') {
         image = await jpeg.decode(img, true)
     } //wtf?
     // order: rgba
