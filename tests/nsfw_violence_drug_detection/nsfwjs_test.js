@@ -17,6 +17,7 @@ const convert = async(img) => {
     const numChannels = 3
     const numPixels = image.width * image.height
     const values = new Int32Array(numPixels * numChannels)
+    // are you sure about the width?
 
     for (let i = 0; i < numPixels; i++)
         for (let c = 0; c < numChannels; ++c)
