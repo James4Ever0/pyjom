@@ -12,3 +12,4 @@ curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_with_text.jp
 echo
 curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_with_text.bmp' http://localhost:8511/nsfw
 echo
+# but the bmp looks right. is that the format issue?
