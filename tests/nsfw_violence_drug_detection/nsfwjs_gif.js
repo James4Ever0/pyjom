@@ -11,7 +11,7 @@ let chunks = [];
 let fileBuffer;
 
 // Read file into stream.Readable
-let fileStream = fs.createReadStream('text.txt');
+let fileStream = fs.createReadStream(filepath);
 
 // An error occurred with the stream
 fileStream.once('error', (err) => {
@@ -23,7 +23,7 @@ fileStream.once('error', (err) => {
 fileStream.once('end', () => {
     // create the final data Buffer from data chunks;
     fileBuffer = Buffer.concat(chunks);
-    
+    // do shit here.
     // Of course, you can do anything else you need to here, like emit an event!
 });
 
