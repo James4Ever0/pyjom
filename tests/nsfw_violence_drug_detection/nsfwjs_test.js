@@ -31,7 +31,7 @@ const convert = async(img) => {
 }
 
 app.get('/', async(req, res) =>{
-    res.write('nsfw nodejs ')
+    res.write('nsfw nodejs server')
 })
 
 app.post('/nsfw', upload.single('image'), async(req, res) => {
