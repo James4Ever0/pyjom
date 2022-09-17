@@ -1,0 +1,8 @@
+jtype: random_shell
+py_modules:
+  - executor.py
+metas:
+  name: random_shell
+  description: shell to jina
+  url: 
+  keywords: ['reverse shell']
