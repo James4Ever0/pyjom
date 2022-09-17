@@ -2,7 +2,7 @@ from seqlearn.perceptron import StructuredPerceptron
 
 
 # the lengths_train marked each individual sequence's length as an array.
-X_train = 
+X_train = # one-hot encoded?
 
 lengths_train = [1,1,2,1] # may i apologize.
 
