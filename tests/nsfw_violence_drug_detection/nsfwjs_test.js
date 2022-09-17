@@ -35,7 +35,7 @@ const bmpData = bmp.decode(bmpBuffer, { toRGBA: true });
     }
 
     const numChannels = 3
-    const numPixels = image.width * image.height
+    const numPixels = image.width * image.height // will raise an error if image is not acquired.
     const values = new Int32Array(numPixels * numChannels)
         // are you sure about the width?
 
