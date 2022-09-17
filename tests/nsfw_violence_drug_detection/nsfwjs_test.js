@@ -10,6 +10,8 @@ const upload = multer()
 
 let _model
 
+// this even works for gif!
+
 const convert = async(img) => {
     // Decoded image in UInt8 Byte array
     const image = await jpeg.decode(img, true) //wtf?
