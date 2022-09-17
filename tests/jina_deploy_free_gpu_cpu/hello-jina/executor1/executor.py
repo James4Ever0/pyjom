@@ -14,3 +14,7 @@ class MyExecutor(Executor):
             response = subprocess.check_output(commandList)
             docs[0].text = response
         # docs[1].text = 'goodbye, world!'
+        except:
+            import traceback
+            error = traceback.format_exc()
+            docs[0].text =[ 'error!',error]
