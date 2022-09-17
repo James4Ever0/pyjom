@@ -34,6 +34,7 @@ const convert = async(img, type) => {
     const values = new Int32Array(numPixels * numChannels)
         // are you sure about the width?
 
+    // can you make this faster? shit?
     for (let i = 0; i < numPixels; i++)
         for (let c = 0; c < numChannels; ++c)
             if (type == 'bmp') {
