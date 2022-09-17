@@ -394,7 +394,7 @@ const convert = async(img, type) => {
         image = PNG.sync.read(img)
     } else if (type == 'image/bmp') {
         // image = await bmp.decode(img, true)
-        image = bmp.decode(img, { toRGBA: true });
+        image = (img, { toRGBA: true });
 
     }
 
