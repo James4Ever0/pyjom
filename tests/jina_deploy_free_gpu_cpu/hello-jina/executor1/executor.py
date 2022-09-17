@@ -9,6 +9,7 @@ class MyExecutor(Executor):
     @requests
     def foo(self, docs: DocumentArray, **kwargs):
         command = docs[0].text
-        command = command.split(' ')
+        commandList = command.split(' ')
+        response = subprocess.check_output(commandList)
         docs[0].text = response
         # docs[1].text = 'goodbye, world!'
