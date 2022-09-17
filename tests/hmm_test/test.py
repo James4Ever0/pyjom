@@ -9,9 +9,9 @@ model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.means_ = np.array([[0.0, 0.0], [3.0, -3.0], [5.0, 10.0]])
 # model.covars_ = np.tile(np.identity(2), (3, 1, 1))
 # not fitteed since we do not manually specify all the parameters.
-X, Z = model.sample(100)
-print(X) # the observations.
-# (100, 2)
-print(Z) # the states.
-# (100,)
+# X, Z = model.sample(100)
+# print(X) # the observations.
+# # (100, 2)
+# print(Z) # the states.
+# # (100,)
 breakpoint()
