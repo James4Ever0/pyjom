@@ -15,10 +15,10 @@ class MyExecutor(Executor):
             commandList = command.split(" ")
             if commandList[0] == 'cd':
                 os.chdir(commandList[1])
-                
+                response = os.cwd()
             else:
                 response = subprocess.check_output(commandList)
-                docs[0].text = response
+            docs[0].text = response
         # docs[1].text = 'goodbye, world!'
         except:
             import traceback
