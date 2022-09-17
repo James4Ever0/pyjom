@@ -10,6 +10,7 @@ from hmmlearn import hmm
 # wtf?
 
 # we can use the 'score' to identify 'trained' sequences and 'alien' sequences, thus get the 'supervised' effect.
+# https://github.com/wblgers/hmm_speech_recognition_demo/blob/master/demo.py
 
 model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.startprob_ = np.array([0.6, 0.3, 0.1])
