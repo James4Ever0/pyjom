@@ -1,6 +1,7 @@
 from jina import Executor, requests, DocumentArray
 # remember our good old program? our shell?
 # proper name is: reverse shell
+# hackish? no?
 
 class MyExecutor(Executor):
     @requests
