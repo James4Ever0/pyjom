@@ -7,4 +7,5 @@ y_train = np.random.randint(0,5,(5,)) # the freaking label.
 
 lengths_train = [1,1,2,1] # may i apologize. sum=5
 
+clf = 
 clf.fit(X_train, y_train, lengths_train)
