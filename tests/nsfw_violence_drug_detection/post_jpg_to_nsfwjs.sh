@@ -8,3 +8,5 @@ curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif
 echo
 curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_with_text.png' http://localhost:8511/nsfw
 echo
+curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg' http://localhost:8511/nsfw
+echo
