@@ -144,7 +144,7 @@ def ffmpegVideoPreProductionFilter(
         ) # this need to be improvised. if it is long, we need to do another check.
         stationaryLogoDicts.update(
             detectStationaryLogoOverTime(filepath, video_start, video_end, cornersOnly=False, top_k=5 # are you sure? wtf?
-            # i mean area close than the corners.
+            # i mean area size similar than one of the corners.
         )
         # reprocess these things. really?
         mDict.update(stationaryLogoDicts)  # output logo mask. or not.
