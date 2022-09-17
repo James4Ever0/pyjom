@@ -142,7 +142,6 @@ def ffmpegVideoPreProductionFilter(
         stationaryLogoDicts = detectStationaryLogoOverTime(
             filepath, start, end, pipCropDicts=pipCropDicts
         ) # this need to be improvised. if it is long, we need to do another check.
-
         stationaryLogoDicts.update(
             detectStationaryLogoOverTime(filepath, video_start, video_end, cornersOnly=False, top_k=5 # are you sure? wtf?
             # i mean area close than the corners.
