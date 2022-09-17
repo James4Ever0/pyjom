@@ -337,7 +337,7 @@ def detectStationaryLogoOverTime(
     # from src import *
     defaultWidth, defaultHeight = getVideoWidthHeight(filepath)
 
-    def getFourCorners(x, y, defaultWidth, defaultHeight):
+    def getDeltaWidthHeight():
         deltaWidthRatio = 4 + (4 - 3) * (defaultWidth / defaultHeight - 16 / 9) / (
             16 / 9 - 9 / 16
         )
@@ -349,6 +349,10 @@ def detectStationaryLogoOverTime(
         deltaWidth, deltaHeight = int(defaultWidth / deltaWidthRatio), int(
             defaultHeight / deltaHeightRatio
         )
+        
+
+    def getFourCorners(x, y, defaultWidth, defaultHeight):
+
         # (x1, y1), (x2, y2)
         fourCorners = [
             [(0, 0), (deltaWidth, deltaHeight)],
