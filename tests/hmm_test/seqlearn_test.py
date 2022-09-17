@@ -1,6 +1,5 @@
 from seqlearn.perceptron import StructuredPerceptron # it's like mini neural network.
 
-
 # the lengths_train marked each individual sequence's length as an array.
 X_train = # one-hot encoded?
 
