@@ -54,7 +54,8 @@ app.post('/nsfw', upload.single('image'), async(req, res) => {
     else {
         try {
             console.log('file uploaded:',req.file)
-            const image = await convert(req.file.buffer) // here we have buffer.
+            type = 'jpg'
+            const image = await convert(req.file.buffer, type) // here we have buffer.
             // we need some file format hints.
             const predictions = await _model.classify(image)
             image.dispose()
