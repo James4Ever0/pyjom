@@ -141,7 +141,7 @@ def ffmpegVideoPreProductionFilter(
         # dual safe? no?
         stationaryLogoDicts = detectStationaryLogoOverTime(
             filepath, start, end, pipCropDicts=pipCropDicts
-        )
+        ) # this need to be improvised.
         # reprocess these things. really?
         mDict.update(stationaryLogoDicts)  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
