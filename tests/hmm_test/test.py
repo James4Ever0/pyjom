@@ -1,7 +1,7 @@
 import numpy as np
 from hmmlearn import hmm
 # np.random.seed(42)
-hmm.
+hmm.GMMHMM(n_components=3)
 model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.startprob_ = np.array([0.6, 0.3, 0.1])
 # model.transmat_ = np.array([[0.7, 0.2, 0.1],
