@@ -7,6 +7,7 @@ import cv2
 from pyjom.imagetoolbox import *
 from functools import lru_cache
 
+
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
 
@@ -191,6 +192,7 @@ def getDiagonalRectArea(diagonalRect):
     area = (x1 - x0) * (y1 - y0)
     return area
 
+
 @lru_cache(maxsize=20)
 def detectTextRegionOverTime(
     videoPath,
@@ -320,6 +322,7 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
         defaultWidth, defaultHeight, maxPixel
     )
     return previewWidth, previewHeight
+
 
 @lru_cache(maxsize=30)
 def detectStationaryLogoOverTime(
@@ -618,14 +621,12 @@ def detectStationaryLogoOverTime(
             delogoCommandSet = "|".join(mFinalDelogoFilters)
             values = []
             for (mStart, mEnd) in start_end_ranges:
-                values.append({
-                delogoCommandSet: start_end_ranges
-            })  # can it be turned into something useful?
+                values.append(
+                    {delogoCommandSet: (mStart, mEnd)}
+                )  # can it be turned into something useful?
         delogoCommandList.extend(values)
-    
-    
 
-    return delogoCommandDict # is this freaking sequential? no?
+    return delogoCommandDict  # is this freaking sequential? no?
 
 
 def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8):
@@ -1030,6 +1031,7 @@ def kalmanStablePipRegionExporter(
         # the parser shall be in x,y,w,h with keywords.
         # we might want to parse the command string and reengineer this shit.
     return finalCommandDict
+
 
 @lru_cache(maxsize=20)
 def detectPipRegionOverTime(
