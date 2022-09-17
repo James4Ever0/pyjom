@@ -555,7 +555,10 @@ def detectStationaryLogoOverTime(
             start_end_list.append([crop_flag, start_end_ranges])
     
     def getTopKCandidates(sortedList, top_k):
-        return sortedList[:top_k]
+        if top_k <=0:
+            return sortedList
+        else:
+            return sortedList[:top_k]
 
     for index, (crop_flag, start_end_ranges) in enumerate(start_end_list):
         # for mStart, mEnd in start_end_ranges:
