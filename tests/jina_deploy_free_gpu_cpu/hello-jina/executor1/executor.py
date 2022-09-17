@@ -7,6 +7,8 @@ from jina import Executor, requests, DocumentArray
 # jina hub supports docker. no need for this shitty hackish shell...
 # but we do not have a proper docker image! can we write docker file and push the image remotely, without local storage?
 
+# All Executors’ uses must follow the format jinahub+docker://MyExecutor (from Jina Hub) to avoid any local file dependencies.
+
 import subprocess
 import os
 
