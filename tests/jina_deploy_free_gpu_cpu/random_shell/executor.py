@@ -31,6 +31,9 @@ import os
 # │   Endpoint(s)   grpcs://3fcd103a37.wolf.jina.ai   │
 # │                                                   │
 # ╰───────────────────────────────────────────────────╯
+
+# so jina hub will automatically build docker images for you, act as 'docker hub' and serve 
+
 class random_shell(Executor):
     @requests
     def foo(self, docs: DocumentArray, **kwargs):
