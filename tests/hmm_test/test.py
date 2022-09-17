@@ -17,6 +17,6 @@ model.fit(X)
 # # (100, 2)
 Z_predicted = model.predict(X)
 # print(Z) # the states.
-print(X.shape, Z.shape)
+print(X.shape, Z_predicted.shape)
 # # (100,)
 breakpoint()
