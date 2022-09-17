@@ -330,7 +330,7 @@ def detectStationaryLogoOverTime(
     cornersOnly=True,
     pipCropDicts=None,
     areaThreshold=30,
-    top_k:int = 0,
+    top_k: int = 0,
 ):
     top_k = int(top_k)
     imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size)
@@ -350,10 +350,10 @@ def detectStationaryLogoOverTime(
         deltaWidth, deltaHeight = int(defaultWidth / deltaWidthRatio), int(
             defaultHeight / deltaHeightRatio
         )
-        return deltaWidth,deltaHeight
+        return deltaWidth, deltaHeight
 
     def getFourCorners(x, y, defaultWidth, defaultHeight):
-        deltaWidth,deltaHeight = getDeltaWidthHeight(defaultWidth,defaultHeight)
+        deltaWidth, deltaHeight = getDeltaWidthHeight(defaultWidth, defaultHeight)
         # (x1, y1), (x2, y2)
         fourCorners = [
             [(0, 0), (deltaWidth, deltaHeight)],
@@ -371,7 +371,10 @@ def detectStationaryLogoOverTime(
 
     fourCorners = None
     from functools import reduce
-    cornerArea = reduce(lambda x, y: x*y,getDeltaWidthHeight(defaultWidth,defaultHeight)) 
+
+    cornerArea = reduce(
+        lambda x, y: x * y, getDeltaWidthHeight(defaultWidth, defaultHeight)
+    )
     if cornersOnly:
         defaultFourCorners = getFourCorners(0, 0, defaultWidth, defaultHeight)
         if pipCropDicts in [None, {}]:
@@ -553,9 +556,9 @@ def detectStationaryLogoOverTime(
             if crop_flag == "empty":
                 crop_flag = None
             start_end_list.append([crop_flag, start_end_ranges])
-    
+
     def getTopKCandidates(sortedList, top_k):
-        if top_k <=0:
+        if top_k <= 0:
             return sortedList
         else:
             return sortedList[:top_k]
@@ -563,8 +566,12 @@ def detectStationaryLogoOverTime(
     for index, (crop_flag, start_end_ranges) in enumerate(start_end_list):
         # for mStart, mEnd in start_end_ranges:
         mFinalDelogoFilters = []
-        if top_k >0:
-            boundingRects.sort(key=lambda rect:abs((rect[1][0]-rect[0][0])*(rect[1][1]-rect[0][1]) -cornerArea))
+        if top_k > 0:
+            boundingRects.sort(
+                key=lambda rect: abs(
+                    (rect[1][0] - rect[0][0]) * (rect[1][1] - rect[0][1]) - cornerArea
+                )
+            )
             boundingRects = getTopKCandidates(boundingRects, top_k)
 
         for currentRect in boundingRects:
@@ -1130,6 +1137,7 @@ def getEffectiveFPS(
     # use ffmpeg to covert the target first!
     import uuid
     import os
+
     tempdir = os.path.join(tempdir, str(uuid.uuid4()))
     # changed so we can wipe this thing out.
 
@@ -1447,8 +1455,8 @@ def getVideoColorCentrality(videoPath, denoise=True, frame_sample_limit=3, **kwa
 def checkVideoColorCentrality(
     videoColorCentralityGenerator,
     video_color_filter: dict = {
-        "centrality": {"max": .06},
-        "max_nearby_center_percentage": {"max": .05},
+        "centrality": {"max": 0.06},
+        "max_nearby_center_percentage": {"max": 0.05},
     },
 ):
     for centrality, max_nearby_center_percentage in videoColorCentralityGenerator:
