@@ -2,4 +2,4 @@
 jtype: Flow
 executors:
   - name: jina_shell_random
-    uses: jinahub+docker://
+    uses: jinahub+docker://random_shell
