@@ -143,7 +143,7 @@ def ffmpegVideoPreProductionFilter(
             filepath, start, end, pipCropDicts=pipCropDicts
         ) # this need to be improvised. if it is long, we need to do another check.
         stationaryLogoDicts.update(
-            detectStationaryLogoOverTime(filepath, video_start, video_end, cornersOnly=False, top_k=3
+            detectStationaryLogoOverTime(filepath, video_start, video_end, cornersOnly=False, top_k=3 # are you sure? wtf?
         )
         # reprocess these things. really?
         mDict.update(stationaryLogoDicts)  # output logo mask. or not.
