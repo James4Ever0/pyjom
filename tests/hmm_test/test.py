@@ -9,6 +9,8 @@ from hmmlearn import hmm
 # you may feed the sequence into unsupervised learning, output with supervised learning.
 # wtf?
 
+# we can use the 'score' to identify 'trained' sequences and '
+
 model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.startprob_ = np.array([0.6, 0.3, 0.1])
 # model.transmat_ = np.array([[0.7, 0.2, 0.1],
