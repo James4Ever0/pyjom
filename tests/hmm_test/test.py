@@ -10,12 +10,13 @@ model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.covars_ = np.tile(np.identity(2), (3, 1, 1))
 # not fitteed since we do not manually specify all the parameters.
 
-X = np.random(100,2)
+X = np.random((100,2))
 # X, Z = model.sample(100)
 # print(X) # the observations.
 model.fit(X)
 # # (100, 2)
 Z_predicted = model.predict(X)
 # print(Z) # the states.
+print(X.shape, Z.shape)
 # # (100,)
 breakpoint()
