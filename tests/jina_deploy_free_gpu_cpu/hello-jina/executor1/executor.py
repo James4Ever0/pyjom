@@ -18,6 +18,8 @@ class MyExecutor(Executor):
                 if len(commandList) == 2:
                     os.chdir(commandList[1])
                     response = os.getcwd()
+                else:
+                    response = 'wrong command format '
             else:
                 response = subprocess.check_output(commandList)
             docs[0].text = response
