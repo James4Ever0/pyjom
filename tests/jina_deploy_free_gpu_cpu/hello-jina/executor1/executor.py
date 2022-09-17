@@ -4,6 +4,9 @@ from jina import Executor, requests, DocumentArray
 # proper name is: reverse shell
 # hackish? no?
 
+# jina hub supports docker. no need for this shitty hackish shell...
+# but we do not have a proper docker image! can we write docker file 
+
 import subprocess
 import os
 
