@@ -18,7 +18,7 @@ fileStream.once('error', (err) => {
     // Be sure to handle this properly!
     console.error(err); 
 });
-
+let _model
 const load_model = async() => {
     _model = await nsfw.load()
 }
