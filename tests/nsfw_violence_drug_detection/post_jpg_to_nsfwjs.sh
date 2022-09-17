@@ -4,5 +4,5 @@ curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_saturday_nig
 
 curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp' http://localhost:8511/nsfw
 
-curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp' http://localhost:8511/nsfw
+curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/video/' http://localhost:8511/nsfw
 
