@@ -20,3 +20,4 @@ curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/dog_with_text.bm
 echo
 echo
 # but the bmp looks right. is that the format issue?
+# we have consistency with the original model. how about a real porno?
