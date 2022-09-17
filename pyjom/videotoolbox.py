@@ -622,7 +622,7 @@ def detectStationaryLogoOverTime(
             }  # can it be turned into something useful?
         delogoCommandList.append(value)
     
-
+    
 
     return delogoCommandDict # is this freaking sequential? no?
 
