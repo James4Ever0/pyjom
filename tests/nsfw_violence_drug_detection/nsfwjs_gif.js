@@ -24,6 +24,8 @@ fileStream.once('end', () => {
     // create the final data Buffer from data chunks;
     fileBuffer = Buffer.concat(chunks);
     // do shit here.
+    console.log("filebuffer ready")
+    
     // Of course, you can do anything else you need to here, like emit an event!
 });
 
