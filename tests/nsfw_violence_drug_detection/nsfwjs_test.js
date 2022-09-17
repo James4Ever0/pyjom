@@ -16,9 +16,10 @@ let _model
 // it will normalize and resize the image if needed.
 // shall we check for gif?
 
-const convert = async(img) => {
+const convert = async(img,type) => {
     // Decoded image in UInt8 Byte array
-    const image = await jpeg.decode(img, true) //wtf?
+    if type == 'jpg':
+        const image = await jpeg.decode(img, true) //wtf?
     // order: rgba
 
     const numChannels = 3
