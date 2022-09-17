@@ -74,7 +74,6 @@ mimetypes.init()
 
 def waitForServerUp(port, message, timeout=1):
     import requests
-
     while True:
         try:
             url = "http://localhost:{}".format(port)
