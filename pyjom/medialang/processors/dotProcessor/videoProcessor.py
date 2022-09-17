@@ -36,7 +36,7 @@ def ffmpegVideoPreProductionFilter(
         x = "max(0,floor(({}-iw)/2))".format(width)
         y = "max(0,floor(({}-ih)/2))".format(height)
         return (
-            stream.filter("pad", width=width, height=height, x=x, y=y, color="black")
+            stream.filter("pad", width=width, height=height, x=x, y=y, color="black") # here to control the padding logic, decide how to 'blur' the thing!
             .filter("scale", w=mWidth, h=mHeight)
             .filter("setsar", 1)
         )
