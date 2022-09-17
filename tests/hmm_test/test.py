@@ -27,4 +27,5 @@ score = model.score(X)
 print('score:', score)
 # score: -32.50027336204506
 # it must mean something? man?
+# simply use another model and fit it again, get the best score!
 breakpoint()
