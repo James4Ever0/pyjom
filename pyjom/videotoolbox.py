@@ -624,7 +624,9 @@ def detectStationaryLogoOverTime(
                 values.append(
                     {delogoCommandSet: (mStart, mEnd)}
                 )  # can it be turned into something useful?
-        delogoCommandList.extend(values)
+        delogoCommandList.extend(values) # this is a sequential list.
+    
+    delogoCommandDict = 
 
     return delogoCommandDict  # is this freaking sequential? no?
 
