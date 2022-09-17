@@ -1,1 +1,1 @@
-curl -X POST -F 'image=@/home/user/Pictures/wallpaper.jpg' http://example.com/upload
+curl -X POST -F 'image=@' http://localhost:/upload
