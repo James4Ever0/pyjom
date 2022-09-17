@@ -30,7 +30,9 @@ const convert = async(img) => {
     return tf.tensor3d(values, [image.height, image.width, numChannels], 'int32')
 }
 
-app.get('/', async(req, res))
+app.get('/', async(req, res) =>{
+    res.write('nsfw nodejs ')
+})
 
 app.post('/nsfw', upload.single('image'), async(req, res) => {
     if (!req.file) res.status(400).send('Missing image multipart/form-data')
