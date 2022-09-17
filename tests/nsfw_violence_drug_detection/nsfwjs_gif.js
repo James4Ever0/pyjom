@@ -30,7 +30,8 @@ fileStream.once('end', () => {
     fileBuffer = Buffer.concat(chunks);
     // do shit here.
     console.log("filebuffer ready")
-    nsfw.
+load_model().then(()=>{})
+    
     // Of course, you can do anything else you need to here, like emit an event!
 });
 
