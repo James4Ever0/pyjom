@@ -35,6 +35,7 @@ const convert = async(img, type) => {
         // are you sure about the width?
 
     // can you make this faster? shit?
+    // this shit is no numpy. fuck.
     for (let i = 0; i < numPixels; i++)
         for (let c = 0; c < numChannels; ++c)
             if (type == 'bmp') {
