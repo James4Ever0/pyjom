@@ -625,7 +625,7 @@ def detectStationaryLogoOverTime(
                     {delogoCommandSet: (mStart, mEnd)}
                 )  # can it be turned into something useful?
         delogoCommandList.extend(values) # this is a sequential list.
-    f
+    from pyjom.mathlib import sequentialToMergedRanges
     delogoCommandDict = sequentialToMergedRanges(delogoCommandList)
 
     return delogoCommandDict  # is this freaking sequential? no?
