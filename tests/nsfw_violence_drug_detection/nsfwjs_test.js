@@ -18,7 +18,7 @@ let _model
 
 const convert = async(img,type) => {
     // Decoded image in UInt8 Byte array
-    if( type == 'jpg')
+    if( type == 'jpeg')
        { const image = await jpeg.decode(img, true)} //wtf?
     // order: rgba
     else if (type == 'png'){
@@ -54,6 +54,7 @@ app.post('/nsfw', upload.single('image'), async(req, res) => {
     else {
         try {
             console.log('file uploaded:',req.file)
+            if req.file.fieldname == 'image'
             type = 'jpeg' // deal with it later.
             const image = await convert(req.file.buffer, type) // here we have buffer.
             // we need some file format hints.
