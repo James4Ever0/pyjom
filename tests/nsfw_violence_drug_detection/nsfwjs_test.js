@@ -59,16 +59,16 @@ app.post('/nsfw', upload.single('image'), async(req, res) => {
                 type = req.file.mimetype // deal with it later.
                 extension = req.file.originalname.split(".").slice(-1)[0].toLowerCase()
                 if (extension == 'gif' || type == 'image/gif') {
-                    const image = req.file.buffer
+                    let image = req.file.buffer
                     let predictions = await _model.classifyGif(image, { topk: 3, fps: 1 })
-                    image.dispose()
+                    // image.dispose()
                     predictions.message = 'success'
                     res.json(predictions)
                 } else {
                     if (extension == 'bmp') {
                         type = 'image/bmp'
                     }
-                    const image = await convert(req.file.buffer, type) // here we have buffer.
+                    let image = await convert(req.file.buffer, type) // here we have buffer.
                     let predictions = await _model.classify(image)
                     predictions.message = 'success'
                     image.dispose()
