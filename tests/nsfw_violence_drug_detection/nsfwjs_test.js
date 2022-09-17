@@ -1,10 +1,10 @@
 const express = require('express')
 const multer = require('multer')
 const jpeg = require('jpeg-js')
-// const bmp = require('bmp-js')
+    // const bmp = require('bmp-js')
 const bmp = require('bmp-ts').default;
 // const bmpBuffer = fs.readFileSync('bit24.bmp');
-const {PNG} = require('pngjs')
+const { PNG } = require('pngjs')
 
 const tf = require('@tensorflow/tfjs-node')
 const nsfw = require('nsfwjs')
@@ -23,14 +23,14 @@ const convert = async(img, type) => {
     let image
     if (type == 'image/jpeg') {
         image = await jpeg.decode(img, true)
-        // RGBA
+            // RGBA
     } //wtf?
     // order: rgba
     else if (type == 'image/png') {
         image = PNG.sync.read(img)
     } else if (type == 'image/bmp') {
         // image = await bmp.decode(img, true)
-const bmpData = bmp.decode(bmpBuffer, { toRGBA: true });
+        image = bmp.decode(img, { toRGBA: true });
 
     }
 
@@ -43,12 +43,12 @@ const bmpData = bmp.decode(bmpBuffer, { toRGBA: true });
     // this shit is no numpy. fuck.
     for (let i = 0; i < numPixels; i++)
         for (let c = 0; c < numChannels; ++c)
-            // if (type == 'bmp') {
-            //     // ABGR?
-            //     // values[i * numChannels + c] = image.data[i * 4+c]
-            //     values[i * numChannels + c] = image.data[i * 4 + 3 - c]
-            // } else {
-                values[i * numChannels + c] = image.data[i * 4 + c]
+        // if (type == 'bmp') {
+        //     // ABGR?
+        //     // values[i * numChannels + c] = image.data[i * 4+c]
+        //     values[i * numChannels + c] = image.data[i * 4 + 3 - c]
+        // } else {
+            values[i * numChannels + c] = image.data[i * 4 + c]
             // }
 
     return tf.tensor3d(values, [image.height, image.width, numChannels], 'int32')
@@ -69,7 +69,7 @@ app.post('/nsfw', upload.single('image'), async(req, res) => {
                 if (extension == 'gif' || type == 'image/gif') {
                     let image = req.file.buffer
                     let predictions = await _model.classifyGif(image, { topk: 3, fps: 1 })
-                    // image.dispose()
+                        // image.dispose()
                     predictions.message = 'success'
                     res.json(predictions)
                 } else {
@@ -79,7 +79,7 @@ app.post('/nsfw', upload.single('image'), async(req, res) => {
                     let image = await convert(req.file.buffer, type) // here we have buffer.
                     let predictions = await _model.classify(image)
                     predictions.message = 'success'
-                    // image.dispose()
+                        // image.dispose()
                     res.json(predictions)
                 }
             }
