@@ -5,7 +5,7 @@ from pyjom.commons import *
 from pyjom.mathlib import *
 import cv2
 from pyjom.imagetoolbox import *
-
+from functools import lru_cache
 
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
