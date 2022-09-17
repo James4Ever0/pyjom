@@ -21,7 +21,9 @@ const convert = async(img,type) => {
     if( type == 'jpg')
        { const image = await jpeg.decode(img, true)} //wtf?
     // order: rgba
-    
+    else if (type == 'png'){
+        const image = await png.decode(img, true)
+    }
 
     const numChannels = 3
     const numPixels = image.width * image.height
