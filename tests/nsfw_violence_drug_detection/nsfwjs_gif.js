@@ -19,13 +19,18 @@ fileStream.once('error', (err) => {
     console.error(err); 
 });
 
+const load_model = async() => {
+    _model = await nsfw.load()
+}
+
+// Keep the model in memory, make sure it's loaded only once
 // File is done being read
 fileStream.once('end', () => {
     // create the final data Buffer from data chunks;
     fileBuffer = Buffer.concat(chunks);
     // do shit here.
     console.log("filebuffer ready")
-    
+    nsfw.
     // Of course, you can do anything else you need to here, like emit an event!
 });
 
