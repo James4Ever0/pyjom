@@ -3,7 +3,8 @@ from jina import Executor, DocumentArray, requests
 import subprocess
 import os
 
-# strange feel like 
+# strange feel like shit.
+# how to deploy this shit?
 # ╭────────────────────────── Published ──────────────────────────╮
 # │                                                               │
 # │   📛 Name         random_shell                                │
