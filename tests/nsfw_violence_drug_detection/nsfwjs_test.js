@@ -18,9 +18,10 @@ let _model
 
 const convert = async(img,type) => {
     // Decoded image in UInt8 Byte array
-    if type == 'jpg':
-        const image = await jpeg.decode(img, true) //wtf?
+    if( type == 'jpg')
+       { const image = await jpeg.decode(img, true)} //wtf?
     // order: rgba
+    
 
     const numChannels = 3
     const numPixels = image.width * image.height
