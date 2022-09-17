@@ -24,6 +24,9 @@ const convert = async(img,type) => {
     else if (type == 'png'){
         const image = await png.decode(img, true)
     }
+    else if (type == 'bmp'){
+        const image = await bmp.decode(img, true
+    }
 
     const numChannels = 3
     const numPixels = image.width * image.height
