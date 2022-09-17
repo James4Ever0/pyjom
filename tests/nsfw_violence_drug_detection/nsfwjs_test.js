@@ -11,6 +11,8 @@ const upload = multer()
 let _model
 
 // this even works for gif!
+// it will normalize and resize the image if needed.
+// shall we check for gif?
 
 const convert = async(img) => {
     // Decoded image in UInt8 Byte array
