@@ -12,7 +12,7 @@ let _model
 
 const convert = async (img) => {
   // Decoded image in UInt8 Byte array
-  const image = await jpeg.decode(img, true)
+  const image = await jpeg.decode(img, true) //wtf?
 
   const numChannels = 3
   const numPixels = image.width * image.height
