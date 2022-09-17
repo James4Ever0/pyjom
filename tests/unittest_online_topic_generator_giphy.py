@@ -59,7 +59,7 @@ with tmpdir(path=tmpPath) as testDir:
                 checkVideoColorCentrality,
                 getEffectiveFPS,
                 getVideoNSFWScores,
-                getVideoDogCatPercentage
+                getVideoDogCatPercentage # just for dog and cat, no other animals.
             )
 
             video_color_filter = {'centrality':{'max':0.30},"max_nearby_center_percentage":{'max':0.20}}
