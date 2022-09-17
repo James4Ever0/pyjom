@@ -1,5 +1,5 @@
 from jina import Executor, requests, DocumentArray
-
+import os
 
 class MyExecutor(Executor):
     @requests
