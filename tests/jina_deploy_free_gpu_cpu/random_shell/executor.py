@@ -32,7 +32,7 @@ import os
 # │                                                   │
 # ╰───────────────────────────────────────────────────╯
 
-# so jina hub will automatically build docker images for you, act as 'docker hub' and serve 
+# so jina hub will automatically build docker images  for you, act as 'docker hub' and serve apps for free? wtf?
 
 class random_shell(Executor):
     @requests
