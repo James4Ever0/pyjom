@@ -25,7 +25,7 @@ const convert = async(img,type) => {
         const image = await png.decode(img, true)
     }
     else if (type == 'bmp'){
-        const image = await bmp.decode(img, true
+        const image = await bmp.decode(img, true)
     }
 
     const numChannels = 3
@@ -35,6 +35,9 @@ const convert = async(img,type) => {
 
     for (let i = 0; i < numPixels; i++)
         for (let c = 0; c < numChannels; ++c)
+        if (type == 'bmp'){
+            
+        }
             values[i * numChannels + c] = image.data[i * 4 + c]
 
     return tf.tensor3d(values, [image.height, image.width, numChannels], 'int32')
