@@ -37,6 +37,7 @@ def replaceDuplicateChars(sentence: str, maxRepeat: int = 3):
     return sentence
 
 # this is not replaceDuplicateWords. this is removeDuplicateWords
+# don't know how to implement replaceDuplicateWords yet... use markov chain? use 
 def removeDuplicateWords(sentence: str, removeWordLengthThreshold:int = 2):
     # TODO: remove duplicate words inside, using jieba.
     import jieba
