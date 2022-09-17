@@ -1,7 +1,10 @@
+const tf = require('@tensorflow/tfjs-node')
+
 const nsfw = require('nsfwjs')
 
 
 filepath = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
+// filepath = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
 
 const fs = require('fs');
 
