@@ -1,6 +1,6 @@
 jtype: Flow
 jcloud:
-retention
+  retention_days: -1
   gateway:
     resources:
       memory: 2G
