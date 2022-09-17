@@ -4,7 +4,7 @@ from hmmlearn import hmm
 
 # hmmlearn is simply unsupervised learning.
 # for supervised sequence learning use seqlearn instead
-#  pomegranate
+# pomegranate also supports labeled 
 
 model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.startprob_ = np.array([0.6, 0.3, 0.1])
