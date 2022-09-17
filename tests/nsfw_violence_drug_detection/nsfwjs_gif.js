@@ -5,7 +5,7 @@ const nsfw = require('nsfwjs')
 
 filepath = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"
 
-// mechanism: choose three most likely things, and 
+// mechanism: choose three most likely things, process at 1fps.
 
 // no other classes?
 // filepath = "/root/Desktop/works/pyjom/samples/video/cat_invalid_eye_rolling.gif"
