@@ -564,7 +564,7 @@ def detectStationaryLogoOverTime(
         # for mStart, mEnd in start_end_ranges:
         mFinalDelogoFilters = []
         if top_k >0:
-            boundingRects.sort(key=lambda rect:abs( (rect[1][0]-rect[0][0])*(rect[1][1]-rect[0][1]) )
+            boundingRects.sort(key=lambda rect:abs((rect[1][0]-rect[0][0])*(rect[1][1]-rect[0][1]) -cornerArea))
 
         for currentRect in boundingRects:
             if cornersOnly:
