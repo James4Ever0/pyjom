@@ -32,6 +32,7 @@ app.post('/nsfw', upload.single('image'), async (req, res) => {
     const predictions = await _model.clssify(image)
     image.dispose()
     res.json(predictions)}catch(e){
+        console.log(e)
         res.json({message:'error'})
     }
     
