@@ -332,6 +332,7 @@ def detectStationaryLogoOverTime(
     areaThreshold=30,
     , top_k = 0
 ):
+    top_k = 
     imageSet = getVideoFrameSampler(filepath, start, end, sample_size=sample_size)
     # what is this src?
     # from src import *
