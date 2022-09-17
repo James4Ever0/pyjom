@@ -36,7 +36,7 @@ def replaceDuplicateChars(sentence: str, maxRepeat: int = 3):
         sentence = replaceDuplicateChar(sentence, char, maxRepeat=maxRepeat)
     return sentence
 
-
+# this is not 
 def replaceDuplicateWords(sentence: str, removeWordLengthThreshold:int = 2):
     # TODO: remove duplicate words inside, using jieba.
     import jieba
