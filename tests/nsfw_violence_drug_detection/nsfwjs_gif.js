@@ -32,8 +32,8 @@ fileBuffer = Buffer.concat(chunks);
 console.log("filebuffer ready")
 load_model().then(() => {
     _model.classifyGif(fileBuffer, { topk: 3, fps: 1 })
-        .then(predictions => console('predictions', predictions))
-        .catch(error => showError(images[i], error))
+        .then(predictions => console.log('predictions', predictions))
+        .catch(error => c('model error' error))
 })
 })
 
