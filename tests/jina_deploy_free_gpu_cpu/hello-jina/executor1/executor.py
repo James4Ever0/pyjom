@@ -1,5 +1,5 @@
 from jina import Executor, requests, DocumentArray
-# remember our good old 
+# remember our good old program? our shell?
 
 class MyExecutor(Executor):
     @requests
