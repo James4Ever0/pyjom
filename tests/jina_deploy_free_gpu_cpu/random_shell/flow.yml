@@ -8,8 +8,3 @@ executors:
       resources:
         gpu: 1
         memory: 8G
-      autoscale:
-        min: 1
-        max: 5
-        metric: rps
-        target: 10
