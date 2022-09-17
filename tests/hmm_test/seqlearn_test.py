@@ -15,4 +15,4 @@ classifier.fit(X_train, y_train, lengths_train)
 from seqlearn.evaluation import whole_sequence_accuracy
 
 y_pred = classifier.predict(X_train, lengths_train)
-print("TRAINED ACCURACY: {:.2f} %" % whole_sequence_accuracy(y_train, y_pred, lengths_train))
+print("TRAINED ACCURACY: {:.2f} %" .format(100*whole_sequence_accuracy(y_train, y_pred, lengths_train))
