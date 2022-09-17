@@ -11,6 +11,6 @@ classifier =  StructuredPerceptron()
 classifier.fit(X_train, y_train, lengths_train)
 
 # from seqlearn.evaluation import bio_f_score
-from seqlearn.evaluation import 
+from seqlearn.evaluation import whole_sequence_accuracy
 y_pred = classifier.predict(X_train, lengths_train)
-print("TRAINED RESULT:",bio_f_score(y_train, y_pred))
+print("TRAINED RESULT:",whole_sequence_accuracy(y_train, y_pred))
