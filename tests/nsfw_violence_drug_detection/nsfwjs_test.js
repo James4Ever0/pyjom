@@ -41,6 +41,7 @@ const convert = async(img, type) => {
             if (type == 'bmp') {
                 // ABGR?
                 values[i * numChannels + c] = image.data[i * 4 + 3 - c]
+                // values[i * numChannels + c] = image.data[i * 4 + 3 - c]
             } else {
                 values[i * numChannels + c] = image.data[i * 4 + c]
             }
