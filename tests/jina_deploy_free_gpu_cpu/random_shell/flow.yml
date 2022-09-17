@@ -4,5 +4,5 @@ executors:
     name: jina_shell_random
     jcloud:
       resources:
-        gpu: 2
+        gpu: 4
         memory: 16G
