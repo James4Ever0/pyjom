@@ -352,7 +352,7 @@ def detectStationaryLogoOverTime(
         return deltaWidth,deltaHeight
 
     def getFourCorners(x, y, defaultWidth, defaultHeight):
-
+        deltaWidth,deltaHeight = getDeltaWidthHeight(defaultWidth,defaultHeight)
         # (x1, y1), (x2, y2)
         fourCorners = [
             [(0, 0), (deltaWidth, deltaHeight)],
