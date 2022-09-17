@@ -1,11 +1,11 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
+// import { createRequire } from "module";
+// const require = createRequire(import.meta.url);
 
 const express = require('express')
 const multer = require('multer')
 const jpeg = require('jpeg-js')
     // const bmp = require('bmp-js')
-const bmp = require('bmp-ts').default;
+const bmp = require('bmp-ts');
 // const bmpBuffer = fs.readFileSync('bit24.bmp');
 const { PNG } = require('pngjs')
 
