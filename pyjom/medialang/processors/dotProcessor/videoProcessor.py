@@ -144,10 +144,11 @@ def ffmpegVideoPreProductionFilter(
         stationaryLogoDicts = detectStationaryLogoOverTime(
             filepath, start, end, pipCropDicts=pipCropDicts
         ) # this need to be improvised. if it is long, we need to do another check.
-        stationaryLogoDicts.update(
-            detectStationaryLogoOverTime(filepath, video_start, video_end, cornersOnly=False, top_k=5 # are you sure? wtf?
-            # i mean area size similar than one of the corners.
-        )
+        if video_end > 30:
+            stationaryLogoDicts.update(
+                detectStationaryLogoOverTime(filepath, video_start, video_end, cornersOnly=False, top_k=5 # are you sure? wtf?
+                # i mean area size similar than one of the corners.
+            )
         # reprocess these things. really?
         mDict.update(stationaryLogoDicts)  # output logo mask. or not.
         # estimate the shape with multiple rectangles? packing algorithm?
