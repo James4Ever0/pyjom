@@ -1,7 +1,9 @@
 const express = require('express')
 const multer = require('multer')
 const jpeg = require('jpeg-js')
-const bmp = require('bmp-js')
+// const bmp = require('bmp-js')
+const bmp = require('bmp-ts').default;
+// const bmpBuffer = fs.readFileSync('bit24.bmp');
 const {PNG} = require('pngjs')
 
 const tf = require('@tensorflow/tfjs-node')
@@ -27,7 +29,9 @@ const convert = async(img, type) => {
     else if (type == 'image/png') {
         image = PNG.sync.read(img)
     } else if (type == 'image/bmp') {
-        image = await bmp.decode(img, true)
+        // image = await bmp.decode(img, true)
+const bmpData = bmp.decode(bmpBuffer, { toRGBA: true });
+
     }
 
     const numChannels = 3
