@@ -20,7 +20,8 @@ const convert = async(img, type) => {
     // Decoded image in UInt8 Byte array
     let image
     if (type == 'image/jpeg') { 
-        image = await jpeg.decode(img, true) } //wtf?
+        image = await jpeg.decode(img, true)
+    } //wtf?
     // order: rgba
     else if (type == 'image/png') {
         image = await png.decode(img, true)
