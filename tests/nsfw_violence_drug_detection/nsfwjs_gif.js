@@ -2,7 +2,23 @@ const tf = require('@tensorflow/tfjs-node')
 
 const nsfw = require('nsfwjs')
 
-
+predictions [
+    [
+      { className: 'Neutral', probability: 0.9845383167266846 },
+      { className: 'Porn', probability: 0.009829860180616379 },
+      { className: 'Drawing', probability: 0.003906613681465387 }
+    ],
+    [
+      { className: 'Neutral', probability: 0.9763429760932922 },
+      { className: 'Porn', probability: 0.014182578772306442 },
+      { className: 'Drawing', probability: 0.007088858168572187 }
+    ],
+    [
+      { className: 'Neutral', probability: 0.9598317742347717 },
+      { className: 'Drawing', probability: 0.03286046162247658 },
+      { className: 'Porn', probability: 0.003989457152783871 }
+    ]
+  ]
 filepath = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"
 
 // mechanism: choose three most likely things, process at 1fps.
