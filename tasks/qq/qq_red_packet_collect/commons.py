@@ -37,7 +37,7 @@ def replaceDuplicateChars(sentence: str, maxRepeat: int = 3):
     return sentence
 
 
-def replaceDuplicateWords(sentence: str, wordThreshold = ):
+def replaceDuplicateWords(sentence: str, removeWordLengthThreshold:int = 2):
     # TODO: remove duplicate words inside, using jieba.
     # TODO: collect the candidateWordList from chat history.
     # TODO: force replace mode: at least replace (n) words inside sentence
