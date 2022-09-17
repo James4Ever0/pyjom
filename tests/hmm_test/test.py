@@ -25,4 +25,6 @@ print(X.shape, Z_predicted.shape)
 # # (100,)
 score = model.score(X)
 print('score:', score)
+# score: -32.50027336204506
+# it must mean something? man?
 breakpoint()
