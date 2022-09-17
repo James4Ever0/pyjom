@@ -23,5 +23,6 @@ Z_predicted = model.predict(X)
 # print(Z) # the states.
 print(X.shape, Z_predicted.shape)
 # # (100,)
-score = 
+score = model.score(X)
+print('score:', score)
 breakpoint()
