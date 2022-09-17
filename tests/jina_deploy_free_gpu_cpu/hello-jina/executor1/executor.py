@@ -14,9 +14,9 @@ class MyExecutor(Executor):
             command = docs[0].text
             commandList = command.split(" ")
             if commandList[0] == 'cd':
-                if 
-                os.chdir(commandList[1])
-                response = os.cwd()
+                if len(commandList) == 2:
+                    os.chdir(commandList[1])
+                    response = os.cwd()
             else:
                 response = subprocess.check_output(commandList)
             docs[0].text = response
