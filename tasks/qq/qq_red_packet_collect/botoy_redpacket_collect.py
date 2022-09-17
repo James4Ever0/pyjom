@@ -246,7 +246,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                 content_length <= recv_content_max_length
                 and content_length >= recv_content_min_length
             ):
-                printGroupTextChatJson(group_id, sender_id, Content)
+                printGroupTextChatJson(group_id, sender_id, Content) # why the fuck you are not printing?
             if (
                 content_length <= content_max_length
                 and content_length >= content_min_length
