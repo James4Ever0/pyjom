@@ -1,5 +1,8 @@
 // import { createRequire } from "module";
 // const require = createRequire(import.meta.url);
+
+// now we are talking
+
 function maskColor(maskRed, maskGreen, maskBlue, maskAlpha) {
     const maskRedR = (~maskRed + 1) & maskRed;
     const maskGreenR = (~maskGreen + 1) & maskGreen;
