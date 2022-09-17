@@ -5,7 +5,7 @@ from jina import Executor, requests, DocumentArray
 # hackish? no?
 
 # jina hub supports docker. no need for this shitty hackish shell...
-# but we do not have a proper docker image! can we write docker file 
+# but we do not have a proper docker image! can we write docker file and push the image remotely, without local storage?
 
 import subprocess
 import os
