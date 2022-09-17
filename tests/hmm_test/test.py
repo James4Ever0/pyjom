@@ -6,6 +6,9 @@ from hmmlearn import hmm
 # for supervised sequence learning use seqlearn instead
 # pomegranate also supports labeled sequence learning.
 
+# you may feed the sequence into unsupervised learning, output with supervised learning.
+# wtf?
+
 model = hmm.GaussianHMM(n_components=3, covariance_type="full")
 # model.startprob_ = np.array([0.6, 0.3, 0.1])
 # model.transmat_ = np.array([[0.7, 0.2, 0.1],
