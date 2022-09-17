@@ -5,6 +5,7 @@ from jina import Executor, requests, DocumentArray
 # hackish? no?
 
 import subprocess
+import os
 
 
 class MyExecutor(Executor):
