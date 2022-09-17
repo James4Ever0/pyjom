@@ -3,3 +3,11 @@ jtype: Flow
 executors:
   - name: jina_shell_random
     uses: jinahub+docker://random_shell/latest
+
+jtype: Flow
+version: '1'
+with:
+  port: 54321
+executors:
+  - uses: executor1/config.yml
+    name: toyExecutor
