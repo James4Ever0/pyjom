@@ -58,6 +58,8 @@ app.post('/nsfw', upload.single('image'), async(req, res) => {
                 type = req.file.mimetype // deal with it later.
                 extension = req.file.originalname.split(".").slice(-1)[0].toLowerCase()
                 if (extension == 'gif' || type == 'image/png'){
+
+                }else if (extension == 'bmp'){
                     
                 }
                 const image = await convert(req.file.buffer, type) // here we have buffer.
