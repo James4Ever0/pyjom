@@ -1,7 +1,7 @@
 from jina import Client, DocumentArray
 # host = 'grpc://0.0.0.0:54321'
 # host = 'grpcs://3fcd103a37.wolf.jina.ai'
-container_id = ''
+container_id = '7f015443e8'
 host = 'grpcs://{}.wolf.jina.ai'.format(container_id)
 if __name__ == '__main__':
     c = Client(host=host)
