@@ -620,6 +620,7 @@ def detectStationaryLogoOverTime(
                 delogoCommandSet: start_end_ranges.copy()
             }  # can it be turned into something useful?
         delogoCommandList.append(value)
+    return delogoCommandList # is this freaking sequential? no?
 
 
 def sampledStablePipRegionExporter(data, defaultWidth, defaultHeight, shrink=0.8):
