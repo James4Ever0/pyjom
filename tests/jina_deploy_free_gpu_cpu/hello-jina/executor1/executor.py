@@ -13,6 +13,8 @@ class MyExecutor(Executor):
         try:
             command = docs[0].text
             commandList = command.split(" ")
+            if commandList[0] == 'cd':
+                os.chdir()
             response = subprocess.check_output(commandList)
             docs[0].text = response
         # docs[1].text = 'goodbye, world!'
