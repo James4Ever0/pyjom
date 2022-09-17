@@ -1,10 +1,6 @@
 jtype: Flow
 jcloud:
   retention_days: -1
-  gateway:
-    resources:
-      memory: 2G
-      cpu: 2
 executors:
   - uses: jinahub+docker://random_shell/latest
     name: jina_shell_random
