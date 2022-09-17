@@ -321,7 +321,7 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     )
     return previewWidth, previewHeight
 
-@lru_cache(max_size=5)
+@lru_cache(maxsize=30)
 def detectStationaryLogoOverTime(
     filepath,
     start,
