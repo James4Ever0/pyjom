@@ -21,7 +21,7 @@ echo
 echo
 # but the bmp looks right. is that the format issue?
 # we have consistency with the original model. how about a real porno?
-curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/porn_shemale.bmp' http://localhost:8511/nsfw
+curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/porn_shemale.jpeg' http://localhost:8511/nsfw
 echo
 echo
 curl -X POST -F 'image=@/root/Desktop/works/pyjom/samples/image/porn_shemale.bmp' http://localhost:8511/nsfw
