@@ -3,7 +3,7 @@
 from test_commons import *
 import requests
 from lazero.network.checker import waitForServerUp
-
+from pyjom.videotoolbox import 
 gateway = "http://localhost:8080/"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 from lazero.filesystem import tmpdir
