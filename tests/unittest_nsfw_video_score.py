@@ -123,7 +123,7 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
     for element in NSFWReportArray:
         NSFWReport[element] = 
     for average_class in average_classes:
-        NSFWReport.get(average_class,[0])< element[average_class]:
+        NSFWReport[average_class] = NSFWReport.get(average_class,[0])
 
 # you can reuse this, really.
 def NSFWFilter(NSFWReport, _filter={}):
