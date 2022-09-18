@@ -1,7 +1,7 @@
 import bezier
 import numpy as np
 
-skew = -0.5  # skew: (-inf, inf)
+skew = -1  # skew: (-inf, inf)
 x_start, y_start = 0, 0
 x_end, y_end = 1, 1
 
