@@ -12,10 +12,10 @@ cv2_custom_build_init()
 import cv2
 
 # suggest you not to use this shit.
-
+import math
 def resizeWithPadding(image, width, height):
     ih, iw = image.shape[0:2]
-    targetWidth = min(width, )
+    targetWidth = min(width, min(math.floor(iw*{}/ih)
     cv2.resize(image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC)
 
 from lazero.filesystem import tmpdir
