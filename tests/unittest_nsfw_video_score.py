@@ -211,6 +211,10 @@ elif test_flag == "nsfw_video":
                     responses.append(
                         response_json  # it contain 'messages'
                     )  # there must be at least one response, i suppose?
+                except:
+                    import traceback
+                    traceback.print_exc()
+                    print("error when processing ")
             NSFWReport = processNSFWReportArray(responses)
             result = NSFWFilter(NSFWReport)
             if result:
