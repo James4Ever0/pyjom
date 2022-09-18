@@ -29,8 +29,9 @@ elif test_case == "evaluate":
     print('type q to quit evaluation')
     while True:
         s = input("s> ")
-        if slice == 'q':
+        if s == 'q':
             print("quitting...")
+            break
         try:
             s = float(s)
             points = curve1.evaluate(s)
