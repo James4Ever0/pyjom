@@ -7,6 +7,8 @@ source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 ffmpeg.input()
 
+# the damn thing because they are from the same file! fuck!
+
 filter('scale',w=1080,h=1920)
 filter('boxblur',10,5)
 
