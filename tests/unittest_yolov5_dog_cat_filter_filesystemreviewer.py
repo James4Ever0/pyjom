@@ -89,8 +89,8 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
         # now update the report dict.
         if timespan_strategy in ['mean', 'max']:
             for identity in identities:
-                value = frame_detection_dict[identity
-            report[]
+                value = frame_detection_dict.get(identity,0)
+                report[]
 
 
 for result in resultGenerator: # this is for each file.
