@@ -17,7 +17,11 @@ import math
 
 
 def scanImageWithWindowSizeAutoResize(
-    image, width, height, return_direction=False, threshold = 0.1 # minimum 'fresh' area left for scanning
+    image,
+    width,
+    height,
+    return_direction=False,
+    threshold=0.1,  # minimum 'fresh' area left for scanning
 ):  # shall you use torch? no?
     shape = image.shape
     assert len(shape) == 3
@@ -40,7 +44,7 @@ def scanImageWithWindowSizeAutoResize(
             start, end = height * index, height * (index + 1)
             if start < targetHeight:
                 if end > targetHeight:
-                    if 1-(end-targetHeight)/targetHeight >= threshold:
+                    if 1 - (end - targetHeight) / targetHeight >= threshold:
                         end = targetHeight
                         start = targetHeight - height
                     else:
@@ -58,7 +62,7 @@ def scanImageWithWindowSizeAutoResize(
             start, end = width * index, width * (index + 1)
             if start < targetWidth:
                 if end > targetWidth:
-                    if 1-(end-targetWidth)/targetWidth >=threshold:
+                    if 1 - (end - targetWidth) / targetWidth >= threshold:
                         end = targetWidth
                         start = targetWidth - width
                     else:
@@ -119,44 +123,60 @@ test_flag = "nsfw_image"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 import numpy as np
 
-def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
-            get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
+
+def processNSFWReportArray(
+    NSFWReportArray,
+    average_classes=["Neutral"],
+    get_max_classes=["Drawing", "Porn", "Sexy", "Hentai"],
+):
     assert set(average_classes).intersection(set(get_max_classes)) == set()
     NSFWReport = {}
     for element in NSFWReportArray:
         for key in element.keys():
-            NSFWReport[key] = NSFWReport.get(key,[])+[element[key]]
+            NSFWReport[key] = NSFWReport.get(key, []) + [element[key]]
     for average_class in average_classes:
-        NSFWReport[average_class] = np.mean(NSFWReport.get(average_class,[0]))
+        NSFWReport[average_class] = np.mean(NSFWReport.get(average_class, [0]))
     for get_max_class in get_max_classes:
-        NSFWReport[get_max_class] = max(NSFWReport.get(get_max_class,[0]))
+        NSFWReport[get_max_class] = max(NSFWReport.get(get_max_class, [0]))
     return NSFWReport
+
 
 from pyjom.commons import checkMinMaxDict
 
 # you can reuse this, really.
-def NSFWFilter(NSFWReport, _filter={'Neutral':{'min':0.5}, 'Sexy':{'max':0.5}, 'Porn':{'max':0.5}, 'Hentai':{'max':0.5},'Drawing':{'max':0.5}}):
+def NSFWFilter(
+    NSFWReport,
+    _filter={
+        "Neutral": {"min": 0.5},
+        "Sexy": {"max": 0.5},
+        "Porn": {"max": 0.5},
+        "Hentai": {"max": 0.5},
+        "Drawing": {"max": 0.5},
+    },
+):
     for key in _filter:
-        value = NSFWReport.get(key,0)
+        value = NSFWReport.get(key, 0)
         key_filter = _filter[key]
         result = checkMinMaxDict(value, key_filter)
         if not result:
             print("not passing NSFW filter: %s" % key)
-            print('value: %s' % value)
-            print('filter: %s' % str(key_filter))
+            print("value: %s" % value)
+            print("filter: %s" % str(key_filter))
             return False
     return True
 
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-        image = resizeImageWithPadding(frame, 1280,720, border_type="replicate")
+        image = resizeImageWithPadding(frame, 1280, 720, border_type="replicate")
         # i'd like to view this.
         cv2.imshow("PADDED", image)
         cv2.waitKey(0)
 elif test_flag == "scanning":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-        scanned_array = scanImageWithWindowSizeAutoResize(frame, 1280, 720, threshold=0.3)
+        scanned_array = scanImageWithWindowSizeAutoResize(
+            frame, 1280, 720, threshold=0.3
+        )
         for index, image in enumerate(scanned_array):
             cv2.imshow("SCANNED %d" % index, image)
             cv2.waitKey(0)
@@ -172,15 +192,19 @@ elif test_flag == "nsfw":
             with tmpfile(path=jpg_path) as TF:
                 cv2.imwrite(jpg_path, padded_resized_frame)
                 files = {"image": (basename, open(jpg_path, "rb"), "image/jpeg")}
-                r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
+                r = requests.post(
+                    gateway + "nsfw", files=files
+                )  # post gif? or just jpg?
                 response_json = r.json()
                 print("RESPONSE:", response_json)
-                responses.append(response_json) # there must be at least one response, i suppose?
- # we don't want drawing dogs.
+                responses.append(
+                    response_json
+                )  # there must be at least one response, i suppose?
+# we don't want drawing dogs.
 
-            # [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
+# [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
 elif test_flag == "nsfw_image":
-    source = '/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp'
+    source = "/root/Desktop/works/pyjom/samples/image/kitty_flash.bmp"
     # RESPONSE: [{'className': 'Neutral', 'probability': 0.9997681975364685}, {'className': 'Drawing', 'probability': 0.0002115015813615173}, {'className': 'Porn', 'probability': 1.3146535820851568e-05}, {'className': 'Hentai', 'probability': 4.075543984072283e-06}, {'className': 'Sexy', 'probability': 3.15313491228153e-06}]
     # source = '/root/Desktop/works/pyjom/samples/image/pig_really.bmp'
     # RESPONSE: [{'className': 'Neutral', 'probability': 0.9634107351303101}, {'className': 'Porn', 'probability': 0.0244674663990736}, {'className': 'Drawing', 'probability': 0.006115634460002184}, {'className': 'Hentai', 'probability': 0.003590137232095003}, {'className': 'Sexy', 'probability': 0.002416097791865468}]
