@@ -39,7 +39,7 @@ def resizeWithPadding(image, width, height):
 
 from lazero.filesystem import tmpdir
 
-tmpdirPath = "/dev/shm/medialang"
+tmpdirPath = "/dev/shm/medialang/nsfw"
 
 
 r = requests.post(
