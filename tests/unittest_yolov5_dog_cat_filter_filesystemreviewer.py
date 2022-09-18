@@ -60,8 +60,12 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
     return data_dict
 
 def calculateVideoMaxDetectionConfidence(dataList, identities=['dog','cat']): # does it have a dog?
+    
     for elem in dataList:
         detections = elem['detections']
+        for detection in detections:
+            if detection['identity'] in identities:
+
 
 for result in resultGenerator: # this is for each file.
     from lazero.utils.logger import sprint
