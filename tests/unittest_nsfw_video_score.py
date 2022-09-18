@@ -123,7 +123,7 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
     NSFWReport = {}
     for element in NSFWReportArray:
         for key in element.keys():
-            NSFWReport[key] = NSFWReport.get(key,[])+[]
+            NSFWReport[key] = NSFWReport.get(key,[])+[element[key]]
     for average_class in average_classes:
         NSFWReport[average_class] = NSFWReport.get(average_class,[0])
 
