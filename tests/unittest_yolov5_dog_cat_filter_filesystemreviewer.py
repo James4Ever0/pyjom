@@ -141,7 +141,7 @@ def calculateVideoMeanDetectionConfidence(
 from pyjom.commons import checkMinMaxDict
 
 def detectionConfidenceFilter(detectionConfidence, filter_dict = {'dog
-':{'min':0.5}}): # what is the logic here? and? or? here we just use and. for more complex shit we use something else.
+':{'min':0.5}}): # what is the logic here? and? or?
     for 
 
 for result in resultGenerator:  # this is for each file.
