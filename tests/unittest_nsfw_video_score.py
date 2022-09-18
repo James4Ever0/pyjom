@@ -7,13 +7,14 @@ from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 gateway = "http://localhost:8080/"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
-from lazero.utils.importers import cv2_custom_build_initialize
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
 import cv2
 
 # suggest you not to use this shit.
 
 def resizeWithPadding(image, width, height):
-    cv2.resize(img, (targetwidth, targetHeight), interpolation=cv2.INTER_CUBIC)
+    cv2.resize(image, (targetwidth, targetHeight), interpolation=cv2.INTER_CUBIC)
 
 from lazero.filesystem import tmpdir
 
