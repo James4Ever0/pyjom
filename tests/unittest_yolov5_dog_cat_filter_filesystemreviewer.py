@@ -160,4 +160,5 @@ for result in resultGenerator:  # this is for each file.
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
     detectionConfidence = calculateVideoMeanDetectionConfidence(detectionData)
     filter_result = detectionConfidenceFilter(detectionConfidence)
+    print("FILTER PASSED?", filter_result)
     # breakpoint()
