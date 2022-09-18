@@ -149,7 +149,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1, snapshot=False):
     if snapshot:
-        end = end
+        end = start+
     assert batch >= 1
     assert sample_rate >= 1 # this might not work for those<1 ones. really?
     # assert end>start
