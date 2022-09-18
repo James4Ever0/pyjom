@@ -11,4 +11,4 @@ filter('scale',w=1080,h=1920)
 filter('boxblur',10,5)
 
 
-filter('scale',)
+filter('scale',w=1080, h='ih*1080')
