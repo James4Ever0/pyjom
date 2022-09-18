@@ -31,9 +31,9 @@ def scanImageWithWindowSize(image, width, height, return_direction=False):
         imageSeries = [resized] # as image series.
         direction = None
     elif targetWidth/targetHeight < width/height:
-        direction = ""
+        direction = "vertical"
     else:
-        direction = ""
+        direction = "horizontal"
     if return_direction:
         return imageSeries, direction
     else:
