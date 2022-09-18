@@ -111,7 +111,9 @@ import uuid
 waitForServerUp(8511, "nsfw nodejs server")
 import os
 
-test_flag = "nsfw_image"
+test_flag = "nsfw"
+# test_flag = "nsfw_image"
+# test_flag = "scanning"
 # test_flag = "scanning"
 
 if test_flag == "padding":
