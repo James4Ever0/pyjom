@@ -133,7 +133,7 @@ def calculateVideoMeanDetectionConfidence(
         for key in identities:
             valueList = frame_detection_dict_source.get(key, [0])
             if framewise_strategy == "mean":
-                frame_detection_dict.update({key: np.mean(valueList)})
+                frame_detection_dict.update({key: superMean(valueList)})
             elif framewise_strategy == "max":
                 frame_detection_dict.update({key: superMax(valueList)})
         # now update the report dict.
@@ -147,7 +147,7 @@ def calculateVideoMeanDetectionConfidence(
     for identity in identities:
         valueList = report.get(identity, [0])
         if timespan_strategy in ["mean_no_missing", "mean"]:
-            final_report[identity] = np.mean(valueList)
+            final_report[identity] = superMean(valueList)
         else:
             final_report[identity] = superMax(valueList)
     return final_report
