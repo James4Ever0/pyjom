@@ -126,7 +126,9 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             NSFWReport[key] = NSFWReport.get(key,[])+[element[key]]
     for average_class in average_classes:
         NSFWReport[average_class] = np.mean(NSFWReport.get(average_class,[0]))
-    for get_max_classes in get_max_classes:
+    for get_max_classe in get_max_classes:
+        NSFWReport[average_class] = max(NSFWReport.get(average_class,[0]))
+
 
 # you can reuse this, really.
 def NSFWFilter(NSFWReport, _filter={}):
