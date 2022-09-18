@@ -135,7 +135,9 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
 # you can reuse this, really.
 def NSFWFilter(NSFWReport, _filter={'Neutral':{'min':0.5}, 'Sexy':{'max':0.5}, 'Porn':{'max':0.5}, 'Hentai':{'max':0.5},'Drawing':{'max':0.5}}):
     for key in _filter:
-        NSFWReport.get(key,0)
+        value = NSFWReport.get(key,0)
+        key_filter = _filter[key]
+        result = 
 
 
 if test_flag == "padding":
