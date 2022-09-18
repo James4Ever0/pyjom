@@ -159,9 +159,9 @@ elif test_flag == "nsfw_image":
     jpg_path = os.path.join(tmpdirPath, basename)
     with tmpfile(path=jpg_path) as TF:
         # black padding will lower the probability of being porn.
-        # padded_resized_frame = resizeImageWithPadding(image, 224, 224)
+        padded_resized_frame = resizeImageWithPadding(image, 224, 224)
         # RESPONSE: [{'className': 'Neutral', 'probability': 0.6441782116889954}, {'className': 'Porn', 'probability': 0.3301379978656769}, {'className': 'Sexy', 'probability': 0.010329035110771656}, {'className': 'Hentai', 'probability': 0.010134727694094181}, {'className': 'Drawing', 'probability': 0.005219993181526661}]
-        padded_resized_frame = resizeImageWithPadding(image, 224, 224,border_type='replicate')
+        # padded_resized_frame = resizeImageWithPadding(image, 224, 224,border_type='replicate')
         # RESPONSE: [{'className': 'Neutral', 'probability': 0.6340386867523193}, {'className': 'Porn', 'probability': 0.3443007171154022}, {'className': 'Sexy', 'probability': 0.011606302112340927}, {'className': 'Hentai', 'probability': 0.006618513725697994}, {'className': 'Drawing', 'probability': 0.0034359097480773926}]
         # neutral again? try porn!
         cv2.imwrite(jpg_path, padded_resized_frame)
