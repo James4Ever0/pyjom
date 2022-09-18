@@ -82,12 +82,13 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
             identity = detection['identity']
             if identity in identities:
                 frame_detection_dict_source[identity] = frame_detection_dict_source.get(identity,[])+[detection['confidence']]
+        frame_detection_dict = {}
         for key in identities:
             valueList = frame_detection_dict_source.get(key,[0])
         if framewise_strategy == 'mean':
-            frame_detection_dict = {key: np.mean(valueList) for key in identities}
+            frame_detection_dict.update({key: np.mean(valueList) for key in identities}
         elif framewise_strategy == 'max':
-            frame_detection_dict = {key: max(valueList) for key in identities}
+            frame_detection_dict.update({key: max(valueList) for key in identities}
         # now update the report dict.
         for identity in identities:
             value = frame_detection_dict.get(identity,0)
