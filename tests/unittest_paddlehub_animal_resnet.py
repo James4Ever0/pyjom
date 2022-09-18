@@ -29,5 +29,6 @@ if test_flag == "video":
         breakpoint()
 elif test_flag == 'image':
     source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
+    frame = cv2.imread(source)
 else:
     raise Exception("unknown test flag: %s" % test_flag)
