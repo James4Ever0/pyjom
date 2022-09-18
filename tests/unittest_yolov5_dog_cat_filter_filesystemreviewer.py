@@ -49,7 +49,7 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
             print('confidence:', confidence)
             print('identity:', identity)
 
-for result in resultGenerator:
+for result in resultGenerator: # this is for each file.
     from lazero.utils.logger import sprint
     # sprint(result)
     extractYolov5DetectionData(result, mimetype=fileList[0]['type'])
