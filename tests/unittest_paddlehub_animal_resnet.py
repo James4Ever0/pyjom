@@ -28,6 +28,6 @@ if test_flag == "video":
         sprint("RESULT:", result)
         breakpoint()
 elif test_flag == 'image':
-    source = ""
+    source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
 else:
     raise Exception("unknown test flag: %s" % test_flag)
