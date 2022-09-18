@@ -25,7 +25,7 @@ reviewer = keywordDecorator(
 )
 # videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 # fileList = [{"type": "image", "path": videoPath}]
-videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
+videoPaths = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 fileList = [{"type": "video", "path": videoPath}]
 
 resultGenerator, function_id = reviewer(
