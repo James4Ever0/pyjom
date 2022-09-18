@@ -141,6 +141,7 @@ elif test_flag == "nsfw":
                 cv2.imwrite(jpg_path, padded_resized_frame)
                 files = {"image": (basename, open(jpg_path, "rb"), "image/jpeg")}
                 r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
+                response_json = r.json()
                 print("RESPONSE:", r.json())
             # [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
 elif test_flag == "nsfw_image":
