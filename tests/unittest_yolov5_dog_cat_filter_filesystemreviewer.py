@@ -33,7 +33,7 @@ resultGenerator, function_id = reviewer(
 )  # or at least a generator?
 
 
-def extractYolov5DetectionData(detectionData, mimetype="video"):
+def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
     # plan to get some calculations!
     filepath, review_data = detectionData["review"]["review"]
     timeseries_data = review_data["yolov5_detector"]["yolov5"]["yolov5_detector"]
@@ -52,7 +52,7 @@ def extractYolov5DetectionData(detectionData, mimetype="video"):
                 ]
                 print("location:", location)
                 print("confidence:", confidence)
-                print("identity:", identity)
+                sprint("identity:", identity)
                 current_shot_detections.append(
                     {
                         "location": location,
@@ -73,7 +73,7 @@ def extractYolov5DetectionData(detectionData, mimetype="video"):
             ]
             print('location:', location)
             print('confidence:', confidence)
-            print('identity:', identity)
+            sprint('identity:', identity)
         data_dict.update(
             {"data": current_shot_detections}
         )  # just detections, not a list in time series order
