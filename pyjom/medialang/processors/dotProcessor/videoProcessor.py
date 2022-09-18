@@ -47,6 +47,7 @@ layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih),{})".format(output
 ## in case you failed to generalize this shit...
 
 output_stream = layer_0.overlay(layer_1, x='floor((W-w)/2)', y="floor((H-h)/2)")
+return output_stream
     def paddingFilter(stream, mWidth=1920, mHeight=1080):
         width = "max(iw, ceil(ih*max({}/{}, iw/ih)))".format(mWidth, mHeight)
         height = "max(ih, ceil(iw*max({}/{}, ih/iw)))".format(mHeight, mWidth)
