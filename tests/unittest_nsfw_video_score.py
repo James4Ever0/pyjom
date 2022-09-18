@@ -208,9 +208,9 @@ elif test_flag == "nsfw_video":
                 try:
                     response_json = r.json()[0]
                     print("RESPONSE:", response_json)
-                responses.append(
-                    response_json  # it contain 'messages'
-                )  # there must be at least one response, i suppose?
+                    responses.append(
+                        response_json  # it contain 'messages'
+                    )  # there must be at least one response, i suppose?
             NSFWReport = processNSFWReportArray(responses)
             result = NSFWFilter(NSFWReport)
             if result:
