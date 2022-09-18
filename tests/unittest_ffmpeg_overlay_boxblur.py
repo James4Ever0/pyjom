@@ -12,15 +12,17 @@ video_stream = stream.video
 
 # the damn thing because they are from the same file! fuck!
 
-layer_0 = video_stream.filter('scale',w=1080,h=1920).filter('boxblur',10,5)
+layer_0 = video_stream.filter("scale", w=1080, h=1920).filter("boxblur", 10, 5)
 
 
-layer_1 = video_stream.filter('scale',w=1080, h='ih*1080/iw')
+layer_1 = video_stream.filter("scale", w=1080, h="ih*1080/iw")
 
-output_stream = layer_0.overlay(layer_1,x=0, y='floor((H-h)/2)')
+output_stream = layer_0.overlay(layer_1, x=0, y="floor((H-h)/2)")
 
 from lazero.filesystem import tmpdir
-path = '/dev/shm/medialang'
+
+path = "/dev/shm/medialang"
 import os
+
 with tmpdir(path=path) as T:
-    ffmpeg.output(output_stream, os.path.join(path,'output.mp4'))
+    ffmpeg.output(output_stream, os.path.join(path, "output.mp4"))
