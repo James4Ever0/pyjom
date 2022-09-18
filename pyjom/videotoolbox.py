@@ -147,7 +147,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
 
 
 
-def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1, screenshot=False,epsilon=0.00000001):
+def getVideoFrameIterator(videoPath, start, end, sample_rate:float=1, batch:int=1, screenshot=False,epsilon=0.00000001):
     if screenshot:
         end = start+epsilon
     assert batch >= 1
