@@ -110,7 +110,7 @@ test_flag = "padding"
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-        image = resizeImageWithPadding(frame, 224, 224)
+        image = resizeImageWithPadding(frame,1920,1080)
         # i'd like to view this.
         cv2.imshow("PADDED", image)
         cv2.waitKey(0)
