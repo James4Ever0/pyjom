@@ -9,7 +9,6 @@ stream = ffmpeg.input(source)
 
 video_stream = stream.video
 
-
 # the damn thing because they are from the same file! fuck!
 
 layer_0 = video_stream.filter("scale", w=1080, h=1920).filter("boxblur", 10, 5)
@@ -29,8 +28,8 @@ import os
 
 with tmpdir(path=path) as T:
     filepath = os.path.join(path, "output.mp4")
-    args = ffmpeg.get_args(output_stream)
-    print(args)
+    # args = ffmpeg.get_args(output_stream)
+    # print(args)
     ffmpeg.output(output_stream,filepath)
     print("output file location:", filepath)
     breakpoint()
