@@ -44,6 +44,8 @@ def scanImageWithWindowSizeAutoResize(
                     if 1-(end-targetHeight)/targetHeight >= threshold:
                         end = targetHeight
                         start = targetHeight - height
+                    else:
+                        break
                 # other conditions, just fine
             else:
                 break  # must exit since nothing to scan.
@@ -60,6 +62,8 @@ def scanImageWithWindowSizeAutoResize(
                     if 1-(end-targetWidth)/targetWidth >=threshold:
                         end = targetWidth
                         start = targetWidth - width
+                    else:
+                        break
                 # other conditions, just fine
             else:
                 break  # must exit since nothing to scan.
