@@ -18,7 +18,7 @@ def resizeWithPadding(image, width, height):
     targetWidth = min(width, min(math.floor(iw*height/ih)))
     targetHeight =  min(height, min(math.floor(ih*width/iw)))
     resized = cv2.resize(image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC)
-    top = 
+    cv2.copy
 
 from lazero.filesystem import tmpdir
 
