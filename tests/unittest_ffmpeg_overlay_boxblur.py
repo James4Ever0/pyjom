@@ -17,4 +17,5 @@ layer_0 = video_stream.filter('scale',w=1080,h=1920).filter('boxblur',10,5)
 
 layer_1 = video_stream.filter('scale',w=1080, h='ih*1080/iw')
 
-output =  layer_0.overlay(layer_1,x=0, y=)
+output =  layer_0.overlay(layer_1,x=0, y='(H-h)/2')
+
