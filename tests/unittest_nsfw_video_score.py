@@ -79,7 +79,7 @@ def scanImageWithWindowSizeAutoResize(
         return imageSeries
 
 from typing import Literal
-def resizeImageWithPadding(image, width, height, border_type="constant_black"):
+def resizeImageWithPadding(image, width, height, border_type:Literal["constant_black", 'rep']="constant_black"):
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
