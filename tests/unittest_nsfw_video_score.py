@@ -34,7 +34,7 @@ def scanImageWithWindowSize(image, width, height, return_direction=False):
         direction = "vertical"
         # the scanning is along the vertical axis, which is the height.
         while True:
-            cropped = resized[:,:,:] # height, width, channels
+            cropped = resized[height:,:,:] # height, width, channels
             imageSeries.append(cropped)
     else:
         direction = "horizontal"
