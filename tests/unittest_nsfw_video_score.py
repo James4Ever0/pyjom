@@ -109,7 +109,7 @@ with tmpdir(path=tmpdirPath) as T:
         jpg_path = os.path.join(tmpdirPath, "{}.jpg".format(uuid.uuid4()))
         with tmpfile(path=jpg_path) as TF:
             cv2.imwrite(jpg_path, padded_resized_frame)
-            files = {"upload_file": open ("file.txt", "rb")}
+            files = {"upload_file": open(jpg_path, "rb")}
             r = requests.post(
                 gateway+"nsfw",files=files
             )  # post gif? or just jpg?
