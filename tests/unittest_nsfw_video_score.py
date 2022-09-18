@@ -32,6 +32,7 @@ def scanImageWithWindowSize(image, width, height, return_direction=False):
         direction = None
     elif targetWidth/targetHeight < width/height:
         direction = "vertical"
+        # the scanning is along the vertical axis.
     else:
         direction = "horizontal"
     if return_direction:
