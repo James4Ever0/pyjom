@@ -3,15 +3,15 @@
 
 from pykalman import KalmanFilter
 import numpy as np
-def superMean(mList,default=0):
+def superMean(mList:list,default=0):
     if len(mList) == 0: return  default
     return np.mean(mList)
 
-def superMax(mList,default=0):
+def superMax(mList:list,default=0):
     if len(mList) == 0: return default
     return max(mList)
 
-def superMin(mList,default=0):
+def superMin(mList:list,default=0):
     if len(mList) == 0: return default
     return min(mList)
 
