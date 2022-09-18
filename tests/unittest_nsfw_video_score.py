@@ -144,16 +144,25 @@ elif test_flag == "nsfw":
                 print("RESPONSE:", r.json())
             # [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
 elif test_flag == "nsfw_image":
-    source = "/root/Desktop/works/pyjom/samples/image/dog_with_text.bmp"
+    # source = "/root/Desktop/works/pyjom/samples/image/dog_with_text.bmp"
+    # source = '/root/Desktop/works/pyjom/samples/image/dick2.jpeg'
+    # [{'className': 'Porn', 'probability': 0.7400921583175659}, {'className': 'Hentai', 'probability': 0.2109236866235733}, {'className': 'Sexy', 'probability': 0.04403943940997124}, {'className': 'Neutral', 'probability': 0.0034419416915625334}, {'className': 'Drawing', 'probability': 0.0015027812914922833}]
+    # source = '/root/Desktop/works/pyjom/samples/image/dick4.jpeg'
+    # RESPONSE: [{'className': 'Porn', 'probability': 0.8319052457809448}, {'className': 'Hentai', 'probability': 0.16578854620456696}, {'className': 'Sexy', 'probability': 0.002254955470561981}, {'className': 'Neutral', 'probability': 3.2827374525368214e-05}, {'className': 'Drawing', 'probability': 1.8473130694474094e-05}]
+    # source = '/root/Desktop/works/pyjom/samples/image/porn_shemale.jpeg'
+    # no good for this one. this is definitely some unacceptable shit, with just cloth wearing.
+    # RESPONSE: [{'className': 'Neutral', 'probability': 0.6256022453308105}, {'className': 'Hentai', 'probability': 0.1276213526725769}, {'className': 'Porn', 'probability': 0.09777139872312546}, {'className': 'Sexy', 'probability': 0.09318379312753677}, {'className': 'Drawing', 'probability': 0.05582122132182121}]
     # a known source causing unwanted shits.
     image = cv2.imread(source)
     basename = "{}.jpg".format(uuid.uuid4())
     jpg_path = os.path.join(tmpdirPath, basename)
     with tmpfile(path=jpg_path) as TF:
+        # black padding will lower the probability of being porn.
         # padded_resized_frame = resizeImageWithPadding(image, 224, 224)
-        padded_resized_frame = resizeImageWithPadding(image, 224, 224,border_type='replicate')
-        # neutral again? try porn!
         # RESPONSE: [{'className': 'Neutral', 'probability': 0.6441782116889954}, {'className': 'Porn', 'probability': 0.3301379978656769}, {'className': 'Sexy', 'probability': 0.010329035110771656}, {'className': 'Hentai', 'probability': 0.010134727694094181}, {'className': 'Drawing', 'probability': 0.005219993181526661}]
+        padded_resized_frame = resizeImageWithPadding(image, 224, 224,border_type='replicate')
+        # RESPONSE: [{'className': 'Neutral', 'probability': 0.6340386867523193}, {'className': 'Porn', 'probability': 0.3443007171154022}, {'className': 'Sexy', 'probability': 0.011606302112340927}, {'className': 'Hentai', 'probability': 0.006618513725697994}, {'className': 'Drawing', 'probability': 0.0034359097480773926}]
+        # neutral again? try porn!
         cv2.imwrite(jpg_path, padded_resized_frame)
         files = {"image": (basename, open(jpg_path, "rb"), "image/jpeg")}
         r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
