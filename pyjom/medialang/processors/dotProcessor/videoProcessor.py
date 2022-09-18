@@ -34,17 +34,26 @@ def ffmpegVideoPreProductionFilter(
         video_stream = stream.video
         output_width = mWidth
         output_height = mHeight
-        layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) 
-        layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih),{})".format(output_height, output_width), h="min(floor(ih*{}/iw),{})".format(output_width, output_height))
-        output_stream = layer_0.overlay(layer_1, x='floor((W-w)/2)', y="floor((H-h)/2)")
+        layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter(
+            "gblur", sigma=9
+        )
+        layer_1 = video_stream.filter(
+            "scale",
+            w="min(floor(iw*{}/ih),{})".format(output_height, output_width),
+            h="min(floor(ih*{}/iw),{})".format(output_width, output_height),
+        )
+        output_stream = layer_0.overlay(layer_1, x="floor((W-w)/2)", y="floor((H-h)/2)")
         return output_stream
+
     def paddingFilter(stream, mWidth=1920, mHeight=1080):
         width = "max(iw, ceil(ih*max({}/{}, iw/ih)))".format(mWidth, mHeight)
         height = "max(ih, ceil(iw*max({}/{}, ih/iw)))".format(mHeight, mWidth)
         x = "max(0,floor(({}-iw)/2))".format(width)
         y = "max(0,floor(({}-ih)/2))".format(height)
         return (
-            stream.filter("pad", width=width, height=height, x=x, y=y, color="black") # here to control the padding logic, decide how to 'blur' the thing!
+            stream.filter(
+                "pad", width=width, height=height, x=x, y=y, color="black"
+            )  # here to control the padding logic, decide how to 'blur' the thing!
             .filter("scale", w=mWidth, h=mHeight)
             .filter("setsar", 1)
         )
@@ -124,7 +133,8 @@ def ffmpegVideoPreProductionFilter(
 
     # these things are ordered to be the last ones. just flags.
     from caer.video.frames_and_fps import get_duration
-    video_start=0
+
+    video_start = 0
     video_end = get_duration(filepath)
     if "randomFlip" in filters:
         if random.random() > 0.5:
@@ -152,10 +162,12 @@ def ffmpegVideoPreProductionFilter(
         # dual safe? no?
         stationaryLogoDicts = detectStationaryLogoOverTime(
             filepath, start, end, pipCropDicts=pipCropDicts
-        ) # this need to be improvised. if it is long, we need to do another check.
+        )  # this need to be improvised. if it is long, we need to do another check.
         if video_end > 30:
             stationaryLogoDicts.update(
-                detectStationaryLogoOverTime(filepath, video_start, video_end, cornersOnly=False, top_k=5)# are you sure? wtf?
+                detectStationaryLogoOverTime(
+                    filepath, video_start, video_end, cornersOnly=False, top_k=5
+                )  # are you sure? wtf?
                 # i mean area size similar than one of the corners.
             )
         # reprocess these things. really?
