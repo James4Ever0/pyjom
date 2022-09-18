@@ -17,7 +17,7 @@ import cv2
 import math
 
 
-def scanImageWithWindowSizeAutoResize(image, width, height, return_direction=False): # shall you use torch?
+def scanImageWithWindowSizeAutoResize(image, width, height, return_direction=False): # shall you use torch? no?
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
