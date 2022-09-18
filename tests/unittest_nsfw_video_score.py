@@ -73,6 +73,6 @@ with tmpdir(path=tmpdirPath) as T:
         cv2.imwrite(jpg_path, padded_resized_frame)
         r = requests.post(
             gateway,
-        )  # post gif?
+        )  # post gif? or just jpg?
 # you can only post gif now, or you want to post some other formats?
 # if you post shit, you know it will strentch your picture and produce unwanted shits.
