@@ -153,6 +153,7 @@ elif test_flag == "nsfw_image":
     # no good for this one. this is definitely some unacceptable shit, with just cloth wearing.
     # RESPONSE: [{'className': 'Neutral', 'probability': 0.6256022453308105}, {'className': 'Hentai', 'probability': 0.1276213526725769}, {'className': 'Porn', 'probability': 0.09777139872312546}, {'className': 'Sexy', 'probability': 0.09318379312753677}, {'className': 'Drawing', 'probability': 0.05582122132182121}]
     source ='/root/Desktop/works/pyjom/samples/image/dick3.jpeg'
+    # [{'className': 'Porn', 'probability': 0.978420078754425}, {'className': 'Hentai', 'probability': 0.01346961222589016}, {'className': 'Sexy', 'probability': 0.006554164923727512}, {'className': 'Neutral', 'probability': 0.0015426197787746787}, {'className': 'Drawing', 'probability': 1.354961841570912e-05}]
     # a known source causing unwanted shits.
     image = cv2.imread(source)
     basename = "{}.jpg".format(uuid.uuid4())
