@@ -1,3 +1,9 @@
 2022/09/18 12:46:26.312 [E]  dial tcp 111.30.130.106:80: i/o timeout
 2022/09/18 12:46:26.314 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
 2022/09/18 12:46:26.314 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/09/18 23:07:56.260 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
