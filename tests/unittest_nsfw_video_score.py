@@ -60,7 +60,7 @@ def resizeImageWithPadding(image, width, height):
     return padded
 
 
-from lazero.filesystem import tmpdir
+from lazero.filesystem import tmpdir, tmpfile
 
 tmpdirPath = "/dev/shm/medialang/nsfw"
 
