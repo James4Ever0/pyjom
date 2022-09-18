@@ -16,7 +16,7 @@ import cv2
 # suggest you not to use this shit.
 import math
 
-def scanImageWithWindowSize(image, width, height):
+def scanImageWithWindowSize(image, width, height, return_direction=False):
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
