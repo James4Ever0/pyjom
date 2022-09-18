@@ -206,7 +206,8 @@ elif test_flag == "nsfw_video":
                     gateway + "nsfw", files=files
                 )  # post gif? or just jpg?
                 try:
-                    response_json = r.json()[0]
+                    response_json = r.json()
+                    breakpoint()
                     print("RESPONSE:", response_json)
                     responses.append(
                         response_json  # it contain 'messages'
