@@ -3,7 +3,17 @@
 
 from pykalman import KalmanFilter
 import numpy as np
+def superMean(mList):
+    if len(mList) == 0: return 0
+    return np.mean(mList)
 
+def superMax(mList):
+    if len(mList) == 0: return 0
+    return max(mList)
+
+def superMin(mList):
+    if len(mList) == 0: return 0
+    return min(mList)
 def uniq(mList, ordered=True, random=False):
     if ordered:
         result = []
