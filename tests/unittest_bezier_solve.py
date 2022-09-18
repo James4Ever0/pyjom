@@ -1,5 +1,6 @@
 import bezier
 import numpy as np
+from transformers import BertGenerationTokenizer
 
 skew = -0.5  # skew: (-0.5,0.5) otherwise this shit will look ugly.
 x_start, y_start = 0, 0
@@ -31,6 +32,7 @@ elif test_case == "evaluate":
         x = input("x> ")
         if x == 'q':
             print("quitting...")
+            BertGenerationTokenizer
         try:
             x = float(x)
             y = curve1.evaluate(x)
