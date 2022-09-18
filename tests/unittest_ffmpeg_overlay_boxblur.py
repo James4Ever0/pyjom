@@ -9,12 +9,10 @@ stream = ffmpeg.input(source)
 
 video_stream = stream.video
 
-video_stream
 
 # the damn thing because they are from the same file! fuck!
 
-video_streamfilter('scale',w=1080,h=1920)
-filter('boxblur',10,5)
+video_stream.filter('scale',w=1080,h=1920).filter('boxblur',10,5)
 
 
 filter('scale',w=1080, h='ih*1080/iw')
