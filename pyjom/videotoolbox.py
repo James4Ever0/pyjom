@@ -151,7 +151,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1, screens
     if screenshot:
         end = start+epsilon
     assert batch >= 1
-    assert sample_rate >= 1 # this might not work for those<1 ones. really?
+    assert sample_rate > 0 # this might not work for those<1 ones. really?
     # assert end>start
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
