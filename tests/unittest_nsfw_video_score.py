@@ -74,8 +74,8 @@ def resizeImageWithPadding(image, width, height, border_type="constant_black"):
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
-    targetWidth = min(width, min(math.floor(iw * height / ih)))
-    targetHeight = min(height, min(math.floor(ih * width / iw)))
+    targetWidth = min(width, min(,math.floor(iw * height / ih)))
+    targetHeight = min(height, min(,math.floor(ih * width / iw)))
     resized = cv2.resize(
         image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC
     )
