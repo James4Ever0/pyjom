@@ -165,6 +165,9 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     # the official provides multithreading support. no thanks?
     import progressbar
     # replace it with linspace.
+    import numpy as np
+
+    linspace = np.linspace(s)
 
     for fno in progressbar.progressbar(range(startFrame, stopFrame + 1, sample_rate)):
         fnoMax = fno + batch - 1
