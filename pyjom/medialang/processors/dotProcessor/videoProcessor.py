@@ -28,6 +28,8 @@ def ffmpegVideoPreProductionFilter(
     preview=True,
     # padding=True,
     paddingBlur=True,
+    output_width=1920,
+    output_height=1080
 ):  # what is the type of this shit?
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
