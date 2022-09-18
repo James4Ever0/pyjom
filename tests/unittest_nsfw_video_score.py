@@ -7,7 +7,7 @@ from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 gateway = "http://localhost:8080/"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
-from lazero.utils.importers import cv2_custom_build_initial
+from lazero.utils.importers import cv2_custom_build_initialize
 import cv2
 
 # suggest you not to use this shit.
