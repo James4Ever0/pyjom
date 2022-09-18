@@ -70,6 +70,9 @@ def calculateVideoMaxDetectionConfidence(dataList, identities=['dog','cat']): # 
                     report[identity] = detection['confidence']
     return report
 
+def calculateVideoMaxDetectionConfidence(dataList, identities=['dog','cat']):
+    report = {identity:0 for identity in identities}
+
 
 for result in resultGenerator: # this is for each file.
     from lazero.utils.logger import sprint
