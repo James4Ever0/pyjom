@@ -7,6 +7,8 @@ from pyjom.imagetoolbox import resizeImageWithPadding
 import paddlehub as hub
 import cv2
 
+from lazero.utils.logger import sprint
+
 classifier = hub.Module(name="resnet50_vd_animals")
 
 for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
