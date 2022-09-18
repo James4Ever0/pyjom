@@ -19,7 +19,7 @@ def bezierCurve(start=(0,0), end=(1,1), skew=0):
   curve_params = {'x_start':x_start, 'x_diff':x_diff,'x_end':x_end}
   return curve1, curve_params
 
-def evaluateBezierCurve(input_value:float,curve, curve_params:dict)
+def evaluateBezierCurve(input_value:float,curve, curve_params:dict):
   x_start = curve_params['x_start']
   x_end = curve_params['x_end']
   assert x_start <= input_value
