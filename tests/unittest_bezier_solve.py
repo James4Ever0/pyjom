@@ -6,4 +6,7 @@ nodes1 = np.asfortranarray([
 ])
 curve1 = bezier.Curve(nodes1, degree=2)
 
+import seaborn
+seaborn.set()
+
 axis = curve1.plot(num_pts=256)
