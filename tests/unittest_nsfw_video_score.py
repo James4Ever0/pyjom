@@ -143,8 +143,9 @@ def NSFWFilter(NSFWReport, _filter={'Neutral':{'min':0.5}, 'Sexy':{'max':0.5}, '
         if not result:
             print("not passing NSFW filter: %s" % key)
             print('value: %s' % value)
-            print('filter: %s' % key_filter)
+            print('filter: %s' % str(key_filter))
             return False
+    
 
 
 if test_flag == "padding":
