@@ -145,7 +145,11 @@ def detectionConfidenceFilter(detectionConfidence:dict, filter_dict = {'dog':{'m
         value = detectionConfidence.get(identity,0)
         key_filter = filter_dict[identity]
         result = checkMinMaxDict(value, key_filter)
-        
+        if result:
+            if logic == 'OR':
+                return True
+        else:
+            
 
 for result in resultGenerator:  # this is for each file.
     from lazero.utils.logger import sprin
