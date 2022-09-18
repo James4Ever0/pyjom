@@ -70,6 +70,7 @@ def calculateVideoMaxDetectionConfidence(dataList, identities=['dog','cat']): # 
                     report[identity] = detection['confidence']
     return report
 from typing import Literal
+import numpy as np
 def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], framewise_strategy:Literal['mean','max']='mean', timespan_strategy:Literal['max','mean','mean_no_missing']='mean_no_missing'):
     report = {identity:[] for identity in identities}
     for elem in dataList: # iterate through selected frames
@@ -80,7 +81,7 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
             if identity in identities:
                 frame_detection_dict[identity].append(detection['confidence'])
         if framewise_strategy == 'mean':
-            frame_detection_dict = {key: mean(frame_detection_dict[key]) for key in identities}
+            frame_detection_dict = {key: np.mean(frame_detection_dict[key]) for key in identities}
 
 for result in resultGenerator: # this is for each file.
     from lazero.utils.logger import sprint
