@@ -95,8 +95,9 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
             report[identity].append(value)
     final_report = {}
     for identity in identities:
+        valueList = report.get(identity,[0])
         if timespan_strategy in ['mean_no_missing','mean']:
-            final_report[identity] = mean(report.get(identity,[0]))
+            final_report[identity] = np.mean(valueList)
                 
 
 
