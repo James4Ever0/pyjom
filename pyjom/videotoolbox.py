@@ -192,7 +192,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
 
 def getVideoFrameIteratorWithFPS(videoPath, start, end, fps=1):
     # this will set batch to 1
-    sample_rate = r/fps
+    sample_rate = source_fps/fps
 
 def getDiagonalRectArea(diagonalRect):
     (x0, y0), (x1, y1) = diagonalRect
