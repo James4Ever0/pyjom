@@ -122,7 +122,7 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
     assert set(average_classes).intersection(set(get_max_classes)) == set()
     NSFWReport = {}
     for element in NSFWReportArray:
-        NSFWReport[element] = NSFWReport.get(element,[])
+        NSFWReport[element] = NSFWReport.get(element,[])+[]
     for average_class in average_classes:
         NSFWReport[average_class] = NSFWReport.get(average_class,[0])
 
