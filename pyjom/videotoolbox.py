@@ -167,7 +167,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     # replace it with linspace.
     import numpy as np
 
-    linspace = np.linspace(
+    linspace = np.linspace(startFrame, endFrame, (endFrame-startFrame)/sampleRate
 
     for fno in progressbar.progressbar(range(startFrame, stopFrame + 1, sample_rate)):
         fnoMax = fno + batch - 1
