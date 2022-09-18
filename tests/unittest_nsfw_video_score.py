@@ -145,6 +145,7 @@ elif test_flag == "nsfw":
             # [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
 elif test_flag == "nsfw_image":
     # source = '/root/Desktop/works/pyjom/samples/image/pig_really.bmp'
+    # RESPONSE: [{'className': 'Neutral', 'probability': 0.9634107351303101}, {'className': 'Porn', 'probability': 0.0244674663990736}, {'className': 'Drawing', 'probability': 0.006115634460002184}, {'className': 'Hentai', 'probability': 0.003590137232095003}, {'className': 'Sexy', 'probability': 0.002416097791865468}]
     # source = "/root/Desktop/works/pyjom/samples/image/dog_with_text.bmp"
     # source = '/root/Desktop/works/pyjom/samples/image/dick2.jpeg'
     # [{'className': 'Porn', 'probability': 0.7400921583175659}, {'className': 'Hentai', 'probability': 0.2109236866235733}, {'className': 'Sexy', 'probability': 0.04403943940997124}, {'className': 'Neutral', 'probability': 0.0034419416915625334}, {'className': 'Drawing', 'probability': 0.0015027812914922833}]
