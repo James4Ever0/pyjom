@@ -10,7 +10,7 @@ source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 # suggest you not to use this shit.
 
 def resizeWithPadding(image, width, height):
-    cv2.resize(img, (width, hight), interpolation=cv2.INTER_CUBIC)
+    cv2.resize(img, (targetwidth, targetHeight), interpolation=cv2.INTER_CUBIC)
 
 from lazero.filesystem import tmpdir
 
