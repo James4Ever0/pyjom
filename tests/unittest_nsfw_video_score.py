@@ -64,10 +64,12 @@ from lazero.filesystem import tmpdir
 
 tmpdirPath = "/dev/shm/medialang/nsfw"
 
+import uuid
+
 with tmpdir(path=tmpdirPath) as T:
     for frame in getVideoFrameIteratorWithFPS(source, -1,-1, fps=1):
         padded_resized_frame = resizeImageWithPadding(frame, 224,224)
-        jpg_path = os.path.join(tmpdirPath, frame)
+        jpg_path = os.path.join(tmpdirPath, "{}.jpg".format(uuid.uuid4()))
 r = requests.post(
     gateway,
 )  # post gif?
