@@ -20,4 +20,4 @@ layer_1 = video_stream.filter('scale',w=1080, h='ih*1080/iw')
 output_stream = layer_0.overlay(layer_1,x=0, y='floor((H-h)/2)')
 
 
-output_stream.output('')
+ffmpeg.output()
