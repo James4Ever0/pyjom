@@ -32,22 +32,22 @@ def ffmpegVideoPreProductionFilter(
     # uncertain. very uncertain.
     def paddingBlurFilter(stream, mWidth=1920, mHeight=1080):
 
-video_stream = stream.video
+        video_stream = stream.video
 
-output_width = mWidth
-output_height = mHeight
+        output_width = mWidth
+        output_height = mHeight
 
-layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) # this is default?
+        layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) # this is default?
 
-# print('layer_0 args', layer_0.get_args())
+        # print('layer_0 args', layer_0.get_args())
 
-layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih),{})".format(output_height, output_width), h="min(floor(ih*{}/iw),{})".format(output_width, output_height))
-# print('layer_1 args', layer_1.get_args())
+        layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih),{})".format(output_height, output_width), h="min(floor(ih*{}/iw),{})".format(output_width, output_height))
+        # print('layer_1 args', layer_1.get_args())
 
-## in case you failed to generalize this shit...
+        ## in case you failed to generalize this shit...
 
-output_stream = layer_0.overlay(layer_1, x='floor((W-w)/2)', y="floor((H-h)/2)")
-return output_stream
+        output_stream = layer_0.overlay(layer_1, x='floor((W-w)/2)', y="floor((H-h)/2)")
+        return output_stream
     def paddingFilter(stream, mWidth=1920, mHeight=1080):
         width = "max(iw, ceil(ih*max({}/{}, iw/ih)))".format(mWidth, mHeight)
         height = "max(ih, ceil(iw*max({}/{}, ih/iw)))".format(mHeight, mWidth)
