@@ -117,7 +117,7 @@ test_flag = "nsfw_image"
 # test_flag = "paddinging"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
-def processNSFWReportArray(NSFWReportArray,average_classes=,get_max_classes=            average_classes = ['Neutral']
+def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
     for element in NSFWReportArray
 
