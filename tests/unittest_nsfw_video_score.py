@@ -39,6 +39,9 @@ def resizeWithPadding(image, width, height):
 
 from lazero.filesystem import tmpdir
 
+tmpdirPath = "/dev/shm/medialang"
+
+
 r = requests.post(
     gateway,
 )  # post gif?
