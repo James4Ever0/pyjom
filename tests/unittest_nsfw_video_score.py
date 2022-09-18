@@ -67,7 +67,7 @@ tmpdirPath = "/dev/shm/medialang/nsfw"
 with tmpdir(path=tmpdirPath) as T:
     for frame in getVideoFrameIteratorWithFPS(source, -1,-1, fps=1):
         padded_resized_frame = resizeImageWithPadding(frame, 224,224)
-        jpg_path = 
+        jpg_path = os.path.join(tmpdirPath, frame)
 r = requests.post(
     gateway,
 )  # post gif?
