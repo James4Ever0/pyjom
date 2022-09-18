@@ -76,7 +76,7 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
     # report = {}
     for elem in dataList: # iterate through selected frames
         detections = elem['detections']
-        frame_detection_dict = {}
+        frame_detection_dict_source = {}
         # frame_detection_dict = {key:[] for key in identities}
         for detection in detections: # in the same frame, iterate through different detections
             identity = detection['identity']
