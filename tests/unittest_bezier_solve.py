@@ -9,7 +9,7 @@ x_diff = x_end-x_start
 y_diff = y_end-y_start
 
 nodes1 = np.asfortranarray([
-    [x_start, (x_end-x_start)+(skew, x_end],
+    [x_start, (0.5+skew, x_end],
     [y_start, (y_end-y_start)-skew, y_end],
 ])
 curve1 = bezier.Curve(nodes1, degree=2)
