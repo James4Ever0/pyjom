@@ -4,5 +4,6 @@ import requests
 
 gateway = ""
 source = ""
-from lazero.
+from lazero.filesystem import tmpdir
+
 r = requests.post(gateway,) # post gif?
