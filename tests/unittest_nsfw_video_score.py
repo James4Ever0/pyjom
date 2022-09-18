@@ -132,12 +132,14 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
         NSFWReport[get_max_class] = max(NSFWReport.get(get_max_class,[0]))
     return NSFWReport
 
+from pyjom.commons import checkMinMaxDict
+
 # you can reuse this, really.
 def NSFWFilter(NSFWReport, _filter={'Neutral':{'min':0.5}, 'Sexy':{'max':0.5}, 'Porn':{'max':0.5}, 'Hentai':{'max':0.5},'Drawing':{'max':0.5}}):
     for key in _filter:
         value = NSFWReport.get(key,0)
         key_filter = _filter[key]
-        result = 
+        result = checkMinMaxDict(value, key_filter)
 
 
 if test_flag == "padding":
