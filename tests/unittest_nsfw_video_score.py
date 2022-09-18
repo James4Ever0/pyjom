@@ -223,6 +223,8 @@ elif test_flag == "nsfw_video":
                     traceback.print_exc()
                     print("error when processing NSFW server response")
             NSFWReport = processNSFWReportArray(responses)
+            print(NSFWReport)
+            breakpoint()
             result = NSFWFilter(NSFWReport)
             if result:
                 print("NSFW test passed.")
