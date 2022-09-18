@@ -54,7 +54,7 @@ def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
                 if debug:
                     print("location:", location)
                     print("confidence:", confidence)
-                    sprint("identity:", identity)
+                    sprint("identity:", identity) # we should use the identity name, instead of the identity dict, which is the original identity object.
                 current_shot_detections.append(
                     {
                         "location": location,
