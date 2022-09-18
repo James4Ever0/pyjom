@@ -119,10 +119,10 @@ source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
-    for element in NSFWReportArray
+    for element in NSFWReportArray:
 
 # you can reuse this, really.
-def NSFWFilter(NSFWReport, _filter):
+def NSFWFilter(NSFWReport, _filter={}):
 
 
 if test_flag == "padding":
