@@ -38,12 +38,14 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
         for frameData in timeseries_data:
             timestamp, frameNumber, frameDetectionData = [frameData[key] for key in ['time','frame','yolov5_detector']]
             sprint('timestamp:', timestamp)
+            current_shot_detections = []
             for elem in frameDetectionData:
                 location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
                 print('location:', location)
                 print('confidence:', confidence)
                 print('identity:', identity)
-                current_shot.append({'location':location, 'confidence':confidence, 'identity':identity})
+                current_shot_detections.append({'location':location, 'confidence':confidence, 'identity':identity})
+            
     else:
         frameDetectionData = timeseries_data
         for elem in frameDetectionData:
