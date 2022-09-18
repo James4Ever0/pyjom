@@ -1,7 +1,7 @@
 import bezier
 import numpy as np
 
-skew = 0.2 # skew 
+skew = 0.2 # skew: (-0.5, 0.5)
 x_start, y_start = 0,0
 x_end, y_end = 1,1
 nodes1 = np.asfortranarray([
