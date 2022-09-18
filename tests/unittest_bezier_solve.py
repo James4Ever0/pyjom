@@ -27,6 +27,7 @@ if test_case == "plot"
     plt.show()
 elif test_case == "evaluate":
     x = input("x> ")
+    if x == 'q'
     try:
         x = float(x)
         y = curve1.evaluate(x)
