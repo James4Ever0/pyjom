@@ -167,7 +167,7 @@ def getVideoFrameIterator(
         startFrame = int(start * fps)
     else:
         startFrame = 0
-    if end > start and end >0:
+    if end > start and end > 0:
         endFrame = int(end * fps)
     else:
         endFrame = total_frames
