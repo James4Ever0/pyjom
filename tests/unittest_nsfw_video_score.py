@@ -27,7 +27,7 @@ def scanImageWithWindowSize(image, width, height):
     )
     # determine scan direction here.
     if targetWidth/targetHeight == width/height:
-        return resized
+        return [resized] # as image series.
     elif targetWidth/targetHeight < width/height:
         return 
 
