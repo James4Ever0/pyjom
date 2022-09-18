@@ -111,7 +111,8 @@ import uuid
 waitForServerUp(8511, "nsfw nodejs server")
 import os
 
-test_flag = "scanning"
+test_flag = "nsfw_image"
+# test_flag = "scanning"
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
@@ -140,7 +141,7 @@ elif test_flag == "nsfw":
                 r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
                 print("RESPONSE:", r.json())
             # [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
-elif test_flag = "nsfw_image":
+elif test_flag == "nsfw_image":
     source = ""
     image = cv2.imread(source)
     basename = "{}.jpg".format(uuid.uuid4())
