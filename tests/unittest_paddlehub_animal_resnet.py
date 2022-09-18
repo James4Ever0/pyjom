@@ -1,4 +1,4 @@
-source = ""
+source = "" # check that kitty video!
 
 from test_commons import *
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
