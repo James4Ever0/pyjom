@@ -30,7 +30,32 @@ def ffmpegVideoPreProductionFilter(
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
-    def paddingBlurFulter
+    def paddingBlurFilter(stream, mWidth=1920, mHeight=1080):
+
+video_stream = stream.video
+
+# the damn thing because they are from the same file! fuck!
+
+# layer_0 = video_stream.filter("scale", w=1080, h=1920).filter("boxblur", 10) # this is default?
+
+# however, you need to generalize it here.
+
+# output_width = 1080
+# output_height = 1920
+
+output_height = 1080
+output_width = 1920
+
+layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) # this is default?
+
+# print('layer_0 args', layer_0.get_args())
+
+layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih),{})".format(output_height, output_width), h="min(floor(ih*{}/iw),{})".format(output_width, output_height))
+# print('layer_1 args', layer_1.get_args())
+
+## in case you failed to generalize this shit...
+
+output_stream = layer_0.overlay(layer_1, x='floor((W-w)/2)', y="floor((H-h)/2)")
     def paddingFilter(stream, mWidth=1920, mHeight=1080):
         width = "max(iw, ceil(ih*max({}/{}, iw/ih)))".format(mWidth, mHeight)
         height = "max(ih, ceil(iw*max({}/{}, ih/iw)))".format(mHeight, mWidth)
