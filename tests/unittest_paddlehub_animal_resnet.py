@@ -9,6 +9,8 @@ import cv2
 dog_labels = 狗 犬
 猫
 熊猫
+猫狮
+
 from lazero.utils.logger import sprint
 
 classifier = hub.Module(name="resnet50_vd_animals")
