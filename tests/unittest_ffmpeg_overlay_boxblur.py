@@ -7,11 +7,13 @@ source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 stream = ffmpeg.input(source)
 
-stream.video
+video_stream = stream.video
+
+video_stream
 
 # the damn thing because they are from the same file! fuck!
 
-filter('scale',w=1080,h=1920)
+video_streamfilter('scale',w=1080,h=1920)
 filter('boxblur',10,5)
 
 
