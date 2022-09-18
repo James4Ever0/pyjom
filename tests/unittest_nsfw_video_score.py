@@ -101,7 +101,7 @@ tmpdirPath = "/dev/shm/medialang/nsfw"
 
 import uuid
 
-
+waitForServerUp(8511,"")
 
 with tmpdir(path=tmpdirPath) as T:
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
