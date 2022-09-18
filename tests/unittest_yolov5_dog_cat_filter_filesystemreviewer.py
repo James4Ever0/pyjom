@@ -96,6 +96,7 @@ from typing import Literal
 import numpy as np
 
 
+
 def calculateVideoMeanDetectionConfidence(
     dataList:list,
     identities=["dog", "cat"],
