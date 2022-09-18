@@ -14,8 +14,7 @@ import cv2
 # suggest you not to use this shit.
 import math
 def resizeWithPadding(image, width, height):
-    ih, iw = image.shape[:2]
-    channels
+    ih, iw,channels = [:3]
     targetWidth = min(width, min(math.floor(iw*height/ih)))
     targetHeight =  min(height, min(math.floor(ih*width/iw)))
     resized = cv2.resize(image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC)
