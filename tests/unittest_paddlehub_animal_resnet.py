@@ -30,5 +30,9 @@ if test_flag == "video":
 elif test_flag == 'image':
     source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
     frame = cv2.imread(source)
+            padded_resized_frame = resizeImageWithPadding(
+            frame, 224, 224, border_type="replicate"
+        )
+        result = classifier.classification(images=[padded_resized_frame],top_k=3,use_gpu=False) 
 else:
     raise Exception("unknown test flag: %s" % test_flag)
