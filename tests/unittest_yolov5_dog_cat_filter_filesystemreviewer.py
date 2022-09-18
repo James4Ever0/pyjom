@@ -1,6 +1,7 @@
 from test_commons import *
 from pyjom.modules.contentReviewer import filesystemReviewer
 from pyjom.commons import keywordDecorator
+from lazero.utils.logger import sprint
 
 autoArgs = {
     "subtitle_detector": {"timestep": 0.2},
@@ -154,7 +155,6 @@ def detectionConfidenceFilter(detectionConfidence:dict, filter_dict = {'dog':{'m
     return True # no matter what, if passed all the tests you can be sure to confirm this.
 
 for result in resultGenerator:  # this is for each file.
-    from lazero.utils.logger import sprint
 
     # sprint(result)
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
