@@ -34,7 +34,6 @@ def ffmpegVideoPreProductionFilter(
         video_stream = stream.video
         output_width = mWidth
         output_height = mHeight
-
         layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) 
         layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih),{})".format(output_height, output_width), h="min(floor(ih*{}/iw),{})".format(output_width, output_height))
         output_stream = layer_0.overlay(layer_1, x='floor((W-w)/2)', y="floor((H-h)/2)")
