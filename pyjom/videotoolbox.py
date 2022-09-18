@@ -161,7 +161,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     if end > start:
         endFrame = int(end * fps)
     else:
-        endFrame = 
+        endFrame = total_frames
 
     startFrame = min(max(0, startFrame), total_frames-1)
     endFrame = max(1,min(total_frames, endFrame), startFrame+1)
