@@ -54,3 +54,5 @@ def multiParameterExponentialNetwork(
 params = (0.2,0.1,0.1)
 input_bias = 0.05
 curve_function_kwargs={"start": (0, 0), "end": (1, 1), "skew": -0.5} # maximize the output.
+
+multiParameterExponentialNetwork(*params,)
