@@ -26,7 +26,7 @@ def ffmpegVideoPreProductionFilter(
     cachePath=None,
     filters=["pipCrop", "textRemoval", "logoRemoval"],
     preview=True,
-    padding=True,
+    # padding=True,
     paddingBlur=True,
 ):  # what is the type of this shit?
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
