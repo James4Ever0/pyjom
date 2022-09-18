@@ -30,7 +30,7 @@ with tmpdir(path=path) as T:
     filepath = os.path.join(path, "output.mp4")
     # args = ffmpeg.get_args(output_stream)
     # print(args)
-    output_args =  {"preset":"veryfast"}
+    output_args =  {"preset":"veryfast"} # seems like it won't speed up so much?
     ffmpeg.output(output_stream,filepath, **output_args).run(overwrite_output=True)
     print("output file location:", filepath)
     breakpoint()
