@@ -18,11 +18,11 @@ video_stream = stream.video
 output_width = 1080
 output_height = 1920
 
-layer_0 = video_stream.filter("scale", w=1080, h=1920).filter("gblur", sigma=9) # this is default?
+layer_0 = video_stream.filter("scale", w=, h=1920).filter("gblur", sigma=9) # this is default?
 
 # print('layer_0 args', layer_0.get_args())
 
-layer_1 = video_stream.filter("scale", w=1080, h="ih*1080/iw")
+layer_1 = video_stream.filter("scale", w=, h="ih*/iw")
 # print('layer_1 args', layer_1.get_args())
 
 output_stream = layer_0.overlay(layer_1, x=0, y="floor((H-h)/2)")
