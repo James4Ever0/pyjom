@@ -6,3 +6,5 @@ import ffmpeg
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 ffmpeg.input()
+
+filter('boxblur',10)
