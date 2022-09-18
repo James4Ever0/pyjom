@@ -214,7 +214,7 @@ elif test_flag == "nsfw_video":
                 except:
                     import traceback
                     traceback.print_exc()
-                    print("error when processing ")
+                    print("error when processing NSFW server response")
             NSFWReport = processNSFWReportArray(responses)
             result = NSFWFilter(NSFWReport)
             if result:
