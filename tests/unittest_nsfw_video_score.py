@@ -5,4 +5,4 @@ import requests
 gateway = ""
 source = ""
 
-requests.post('') # post gif?
+r = requests.post(gateway,) # post gif?
