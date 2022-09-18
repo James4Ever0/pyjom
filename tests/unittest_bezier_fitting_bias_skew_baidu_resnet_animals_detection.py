@@ -60,4 +60,6 @@ target_output = 0.7
 output = multiParameterExponentialNetwork(*params,input_bias=input_bias,curve_function_kwargs = curve_function_kwargs)
 print('output:',output)
 print('target_output:', target_output)
-absolute_difference = a(target_output - output)
+absolute_difference = abs(target_output - output)
+print('absolute difference:',absolute_difference)
+print('')
