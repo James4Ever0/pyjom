@@ -3,8 +3,8 @@ import numpy as np
 
 skew = 0.2
 nodes1 = np.asfortranarray([
-    [0.0, 0.5+skew, 1.0],
-    [0.0, 0.5-skew, 1.0],
+    [x_start, 0.5+skew, 1.0],
+    [y_start, 0.5-skew, 1.0],
 ])
 curve1 = bezier.Curve(nodes1, degree=2)
 
