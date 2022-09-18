@@ -115,8 +115,8 @@ import uuid
 waitForServerUp(8511, "nsfw nodejs server")
 import os
 
-# test_flag = "nsfw"
-test_flag = "nsfw_image"
+test_flag = "nsfw_video"
+# test_flag = "nsfw_image"
 # test_flag = "scanning"
 # test_flag = "paddinging"
 
