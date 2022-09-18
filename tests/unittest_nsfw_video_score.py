@@ -70,6 +70,7 @@ with tmpdir(path=tmpdirPath) as T:
     for frame in getVideoFrameIteratorWithFPS(source, -1,-1, fps=1):
         padded_resized_frame = resizeImageWithPadding(frame, 224,224)
         jpg_path = os.path.join(tmpdirPath, "{}.jpg".format(uuid.uuid4()))
+        with 
         cv2.imwrite(jpg_path, padded_resized_frame)
         r = requests.post(
             gateway,
