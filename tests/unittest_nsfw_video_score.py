@@ -3,7 +3,7 @@
 from test_commons import *
 import requests
 
-gateway = ""
+gateway = "localhost:8080/nsfw"
 source = ""
 from lazero.filesystem import tmpdir
 
