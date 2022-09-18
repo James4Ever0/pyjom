@@ -11,7 +11,7 @@ video_stream = stream.video
 
 # the damn thing because they are from the same file! fuck!
 
-layer_0 = video_stream.filter("scale", w=1080, h=1920).filter("boxblur", 10, 5)
+layer_0 = video_stream.filter("scale", w=1080, h=1920).filter("boxblur", 10)
 
 # print('layer_0 args', layer_0.get_args())
 
