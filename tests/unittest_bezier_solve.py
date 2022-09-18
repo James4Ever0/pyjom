@@ -18,8 +18,8 @@ curve1 = bezier.Curve(nodes1, degree=2)
 
 # import seaborn
 # seaborn.set()
-test_case = 'evaluate':
-if test_case == "plot"
+test_case = 'evaluate'
+if test_case == "plot":
     axis = curve1.plot(num_pts=256)
     import matplotlib.pyplot as plt
 
