@@ -305,9 +305,9 @@ def ffmpegVideoPreProductionFilter(
                                 # TODO: the main shit happens here is that if pip region is detected, it (the crop region) will not maintain the width to height ratio. you might need padding, and that's what we about to do here. you may also extract that clip as standalone material.
                                 # more inspection is needed for comprehensive reasoning.
         if paddingBlur:
-            stream = paddingBlurFilter(stream)
+            stream = paddingBlurFilter(stream,)
         else:
-            stream = paddingFilter(stream)
+            stream = paddingFilter(stream,)
         if preview:  # final filter? need us to crop this?
             stream = previewFilter(stream)
             # do nothing here! (no fx.)
