@@ -214,7 +214,7 @@ def scanImageWithWindowSizeAutoResize(
         return imageSeries
 
 
-fromtyping 
+from typing import Literal
 
 def resizeImageWithPadding(
     image,
