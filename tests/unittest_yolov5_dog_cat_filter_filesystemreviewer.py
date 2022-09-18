@@ -183,8 +183,8 @@ def detectionConfidenceFilter(
 for result in resultGenerator:  # this is for each file.
     # sprint(result)
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
-    sprint("DETECTION DATA:")
-    sprint(detectionData)
+    # sprint("DETECTION DATA:")
+    # sprint(detectionData)
     filepath = detectionData["path"]
     filetype = detectionData["type"]
     dataList = detectionData["data"]
