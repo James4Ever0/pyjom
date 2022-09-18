@@ -29,7 +29,7 @@ def ffmpegVideoPreProductionFilter(
     # padding=True,
     paddingBlur=True,
     output_width=1920,
-    output_height=1080
+    output_height=1080,
 ):  # what is the type of this shit?
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
@@ -305,11 +305,15 @@ def ffmpegVideoPreProductionFilter(
                                 # TODO: the main shit happens here is that if pip region is detected, it (the crop region) will not maintain the width to height ratio. you might need padding, and that's what we about to do here. you may also extract that clip as standalone material.
                                 # more inspection is needed for comprehensive reasoning.
         if paddingBlur:
-            stream = paddingBlurFilter(stream,)
+            stream = paddingBlurFilter(
+                stream, mWidth=output_width, mHeight=output_height
+            )
         else:
-            stream = paddingFilter(stream,)
+            stream = paddingFilter(stream, mWidth=output_width, mHeight=output_height)
         if preview:  # final filter? need us to crop this?
-            stream = previewFilter(stream) # just preview, no need to set output width/height!
+            stream = previewFilter(
+                stream
+            )  # just preview, no need to set output width/height!
             # do nothing here! (no fx.)
         # and?
         # we need to concat these shit!
