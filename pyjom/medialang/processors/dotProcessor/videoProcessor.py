@@ -309,7 +309,7 @@ def ffmpegVideoPreProductionFilter(
         else:
             stream = paddingFilter(stream,)
         if preview:  # final filter? need us to crop this?
-            stream = previewFilter(stream)
+            stream = previewFilter(stream) # just preview, no need to set output width/height!
             # do nothing here! (no fx.)
         # and?
         # we need to concat these shit!
