@@ -27,3 +27,4 @@ if test_flag == "video":
         # what about samoyed?
         sprint("RESULT:", result)
         breakpoint()
+elif test_flag == 'image':
