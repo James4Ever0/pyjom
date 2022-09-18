@@ -5,7 +5,7 @@ import ffmpeg
 
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
-ffmpeg.input()
+ffmpeg.input(source)
 
 # the damn thing because they are from the same file! fuck!
 
