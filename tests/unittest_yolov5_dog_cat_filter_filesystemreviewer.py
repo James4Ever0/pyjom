@@ -143,5 +143,5 @@ for result in resultGenerator:  # this is for each file.
     from lazero.utils.logger import sprint
 
     # sprint(result)
-    extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
+    detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
     # breakpoint()
