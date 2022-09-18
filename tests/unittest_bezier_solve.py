@@ -37,7 +37,8 @@ elif test_case == "evaluate":
             s = float(s)
             points = curve1.evaluate(s)
             # we only get the single point.
-            print('point:',)
+            point = points[0]
+            print('point:',point)
         except:
             print('ERROR: Invalid input value: %s' % x)
     # print(axis)
