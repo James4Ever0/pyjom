@@ -28,5 +28,7 @@ if test_case == "plot"
 elif test_case == "evaluate":
     x = input("x> ")
     try:
-    x = float(x)
+        x = float(x)
+    except:
+        print('ERROR: Invalid input value: %s' % x)
 # print(axis)
