@@ -2,6 +2,7 @@
 
 from test_commons import *
 import requests
+from lazero.network import 
 
 gateway = "http://localhost:8080/"
 source = ""
