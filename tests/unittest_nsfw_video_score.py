@@ -18,13 +18,13 @@ import math
 
 
 def scanImageWithWindowSizeAutoResize(
-    image, width, height, return_direction=False
+    image, width, height, return_direction=False, threshold = 0.1 # minimum 'fresh' area left for scanning
 ):  # shall you use torch? no?
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
-    targetWidth = max(width, min(math.floor(iw * height / ih)))
-    targetHeight = max(height, min(math.floor(ih * width / iw)))
+    targetWidth = max(width, math.floor(iw * height / ih))
+    targetHeight = max(height, math.floor(ih * width / iw))
     resized = cv2.resize(
         image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC
     )
@@ -41,8 +41,9 @@ def scanImageWithWindowSizeAutoResize(
             start, end = height * index, height * (index + 1)
             if start < targetHeight:
                 if end > targetHeight:
-                    end = targetHeight
-                    start = targetHeight - height
+                    if 1-(end-targetHeight)/targetHeight >= threshold:
+                        end = targetHeight
+                        start = targetHeight - height
                 # other conditions, just fine
             else:
                 break  # must exit since nothing to scan.
@@ -56,8 +57,9 @@ def scanImageWithWindowSizeAutoResize(
             start, end = width * index, width * (index + 1)
             if start < targetWidth:
                 if end > targetWidth:
-                    end = targetWidth
-                    start = targetWidth - width
+                    if 1-(end-targetWidth)/targetWidth >=threshold:
+                        end = targetWidth
+                        start = targetWidth - width
                 # other conditions, just fine
             else:
                 break  # must exit since nothing to scan.
@@ -116,7 +118,7 @@ if test_flag == "padding":
         cv2.waitKey(0)
 elif test_flag == "scanning":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-        scanned_array = scanImageWithWindowSizeAutoResize(frame, 224, 224)
+        scanned_array = scanImageWithWindowSizeAutoResize(frame, 224, 224, threshold=0.3)
         for index, image in enumerate(scanned_array):
             cv2.imshow("SCANNED %d" % index, image)
             cv2.waitKey(0)
