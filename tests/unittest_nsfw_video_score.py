@@ -5,7 +5,7 @@ import requests
 from lazero.network.checker import waitForServerUp
 
 gateway = "http://localhost:8080/"
-source = ""
+source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 from lazero.filesystem import tmpdir
 
 r = requests.post(gateway,) # post gif?
