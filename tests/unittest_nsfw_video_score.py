@@ -141,7 +141,9 @@ def NSFWFilter(NSFWReport, _filter={'Neutral':{'min':0.5}, 'Sexy':{'max':0.5}, '
         key_filter = _filter[key]
         result = checkMinMaxDict(value, key_filter)
         if not result:
-            print("not passing NSFW filter:")
+            print("not passing NSFW filter: %s" % key)
+            print('value: %s' % value)
+            print('filter: %s' % key_filter)
             return False
 
 
