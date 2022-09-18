@@ -113,5 +113,6 @@ with tmpdir(path=tmpdirPath) as T:
             r = requests.post(
                 gateway+"nsfw",files=files
             )  # post gif? or just jpg?
+            print('RESPONSE:',r.json())
 # you can only post gif now, or you want to post some other formats?
 # if you post shit, you know it will strentch your picture and produce unwanted shits.
