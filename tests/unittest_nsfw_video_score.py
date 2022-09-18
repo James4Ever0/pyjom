@@ -106,7 +106,7 @@ import uuid
 waitForServerUp(8511, "nsfw nodejs server")
 import os
 
-test_flag = "padding"
+test_flag = "scanning"
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
