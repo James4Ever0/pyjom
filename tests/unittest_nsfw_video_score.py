@@ -18,7 +18,7 @@ import math
 
 def scanImage(image, width, height):
 
-def resizeWithPadding(image, width, height):
+def resizeImageWithPadding(image, width, height):
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
