@@ -2,7 +2,7 @@
 
 from test_commons import *
 import requests
-from lazero.network import 
+from lazero.network.checker import waitForServerUp
 
 gateway = "http://localhost:8080/"
 source = ""
