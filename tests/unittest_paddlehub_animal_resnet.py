@@ -28,3 +28,6 @@ if test_flag == "video":
         sprint("RESULT:", result)
         breakpoint()
 elif test_flag == 'image':
+    source = ""
+else:
+    raise Exception("unknown test flag: %s" % test_flag)
