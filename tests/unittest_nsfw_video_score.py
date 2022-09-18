@@ -62,6 +62,8 @@ def resizeImageWithPadding(image, width, height, border_type='constant_black'):
         padded = cv2.copyMakeBorder(
             resized, top, bottom, left, right, cv2.BORDER_REPLICATE, value=BLACK
         )
+    else:
+        raise Exception('border_type must be)
     return padded
 
 
