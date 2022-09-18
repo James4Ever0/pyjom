@@ -26,6 +26,7 @@ import os
 
 with tmpdir(path=path) as T:
     filepath = os.path.join(path, "output.mp4")
-    ffmpeg.output(output_stream,filepath)
+    ffmpeg.get_args(output_stream)
+    # ffmpeg.output(output_stream,filepath)
     print("output file location:", filepath)
     breakpoint()
