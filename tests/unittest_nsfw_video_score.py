@@ -119,7 +119,7 @@ source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
-    assert set(average_classes).
+    assert set(average_classes).intersection(set(get_max_classes) == set()
     NSFWReport = {}
     for element in NSFWReportArray:
         NSFWReport[element] = 
