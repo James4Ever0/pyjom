@@ -28,6 +28,7 @@ reviewer = keywordDecorator(
 videoPaths = [
     "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4",
     "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    ""
 ]
 fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
 
