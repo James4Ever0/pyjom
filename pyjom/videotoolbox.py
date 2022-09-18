@@ -158,7 +158,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     startFrame = int(start * fps)
     stopFrame = int(end * fps)
 
-    startFrame = max(0, total_frames-1)
+    startFrame = max(0, startFrame)
     endFrame = min(total_frames, stopFrame)
     # success, img = cap.read() # ignore first frame.
     # https://vuamitom.github.io/2019/12/13/fast-iterate-through-video-frames.html
