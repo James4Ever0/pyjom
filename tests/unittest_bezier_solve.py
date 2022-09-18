@@ -26,8 +26,10 @@ if test_case == "plot"
     # plt.plot(axis)
     plt.show()
 elif test_case == "evaluate":
+    print('')
     x = input("x> ")
-    if x == 'q'
+    if x == 'q':
+        print("quitting...")
     try:
         x = float(x)
         y = curve1.evaluate(x)
