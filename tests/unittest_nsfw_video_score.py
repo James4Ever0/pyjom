@@ -115,8 +115,10 @@ import os
 test_flag = "nsfw_image"
 # test_flag = "scanning"
 # test_flag = "paddinging"
+
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 import numpy as np
+
 def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
     assert set(average_classes).intersection(set(get_max_classes)) == set()
