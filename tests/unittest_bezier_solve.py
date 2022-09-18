@@ -25,4 +25,6 @@ if test_case == "plot"
 
     # plt.plot(axis)
     plt.show()
+elif test_case == "evaluate":
+    
 # print(axis)
