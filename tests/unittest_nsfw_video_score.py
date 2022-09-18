@@ -134,7 +134,8 @@ import numpy as np
 def processNSFWServerImageReply(reply):
     mDict = {}
     for elem in reply:
-        mDict.update(elem)
+        className, probability = elem['className'], elem['probability']
+        mDict.update({className:probability})
     return mDict
 
 def processNSFWReportArray(
