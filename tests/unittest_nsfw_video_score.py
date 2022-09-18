@@ -64,7 +64,8 @@ from lazero.filesystem import tmpdir
 
 tmpdirPath = "/dev/shm/medialang/nsfw"
 
-
+with tmpdir(path=tmpdirPath) as T:
+    for frame in getVideoFrameIteratorWithFPS()
 r = requests.post(
     gateway,
 )  # post gif?
