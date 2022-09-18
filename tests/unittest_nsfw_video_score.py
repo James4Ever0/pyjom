@@ -212,7 +212,8 @@ elif test_flag == "nsfw_video":
                 )  # post gif? or just jpg?
                 try:
                     response_json = r.json()
-                    breakpoint()
+                    response_json = processNSFWServerImageReply(response_json)
+                    # breakpoint()
                     print("RESPONSE:", response_json)
                     responses.append(
                         response_json  # it contain 'messages'
