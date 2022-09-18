@@ -25,7 +25,7 @@ layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("
 
 # print('layer_0 args', layer_0.get_args())
 
-layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih)".format(output_height), h="min(floor(ih*{}/iw),{}".format(output_width))
+layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih),{})".format(output_height, output_width), h="min(floor(ih*{}/iw),{}".format(output_width, output_height))
 # print('layer_1 args', layer_1.get_args())
 
 ## in case you failed to generalize this shit...
