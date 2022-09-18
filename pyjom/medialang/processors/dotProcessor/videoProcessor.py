@@ -186,7 +186,7 @@ def ffmpegVideoPreProductionFilter(
         "crop": 1,
         "removegrain": 2,
         "bilateral": 2,
-        "superResolution": 3, ## wtf?
+        "scale": 3, ## wtf?
         "minterpolate": 4,
         "hflip": MAX_INT,
         "vflip": MAX_INT,
