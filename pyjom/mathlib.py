@@ -3,16 +3,16 @@
 
 from pykalman import KalmanFilter
 import numpy as np
-def superMean(mList):
-    if len(mList) == 0: return 0
+def superMean(mList,default=0):
+    if len(mList) == 0: return  default
     return np.mean(mList)
 
-def superMax(mList):
-    if len(mList) == 0: return 0
+def superMax(mList,default=0):
+    if len(mList) == 0: return default0
     return max(mList)
 
-def superMin(mList):
-    if len(mList) == 0: return 0
+def superMin(mList,default=0):
+    if len(mList) == 0: return default0
     return min(mList)
 def uniq(mList, ordered=True, random=False):
     if ordered:
