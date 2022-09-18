@@ -51,7 +51,7 @@ def multiParameterExponentialNetwork(
             value += (1 - value) * evaluate_function(apply_item, curve, curve_params)
     return value
 
-params = (0.2,0,0.1)
+params = (0.2,0,0)
 # params = (0.2,0.1,0.1)
 input_bias = 0.05
 skew = -0.5
