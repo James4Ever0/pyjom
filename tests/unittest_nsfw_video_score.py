@@ -74,8 +74,8 @@ def resizeImageWithPadding(image, width, height, border_type="constant_black"):
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
-    targetWidth = min(width,math.floor(iw * height / ih))
-    targetHeight = min(height,math.floor(ih * width / iw))
+    targetWidth = min(width, math.floor(iw * height / ih))
+    targetHeight = min(height, math.floor(ih * width / iw))
     resized = cv2.resize(
         image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC
     )
@@ -105,15 +105,24 @@ import uuid
 
 waitForServerUp(8511, "nsfw nodejs server")
 import os
-with tmpdir(path=tmpdirPath) as T:
-    for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-        padded_resized_frame = resizeImageWithPadding(frame, 224, 224)
-        basename = "{}.jpg".format(uuid.uuid4())
-        jpg_path = os.path.join(tmpdirPath, basename)
-        with tmpfile(path=jpg_path) as TF:
-            cv2.imwrite(jpg_path, padded_resized_frame)
-            files = {'image': open(jpg_path, "rb")}
-            r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
-            print("RESPONSE:", r.json())
+
+test_flag = ""
+
+if test_flag == "":
+elif test_flag == "nsfw":
+    with tmpdir(path=tmpdirPath) as T:
+        for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
+            padded_resized_frame = resizeImageWithPadding(frame, 224, 224)
+            # i'd like to view this.
+            basename = "{}.jpg".format(uuid.uuid4())
+            jpg_path = os.path.join(tmpdirPath, basename)
+            with tmpfile(path=jpg_path) as TF:
+                cv2.imwrite(jpg_path, padded_resized_frame)
+                files = {"image": (basename, open(jpg_path, "rb"), "image/jpeg")}
+                r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
+                print("RESPONSE:", r.json())
+            # [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
+else:
+    raise Exception("unknown test_flag: %s" % test_flag)
 # you can only post gif now, or you want to post some other formats?
 # if you post shit, you know it will strentch your picture and produce unwanted shits.
