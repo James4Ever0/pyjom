@@ -210,6 +210,7 @@ def getVideoFrameIteratorWithFPS(videoPath, start, end, fps=1):
     from caer.video.frames_and_fps import get_fps_float
     source_fps = get_fps_float(videoPath)
     sample_rate = source_fps/fps
+    return getVideoFrameIteratorWithFPS
 
 def getDiagonalRectArea(diagonalRect):
     (x0, y0), (x1, y1) = diagonalRect
