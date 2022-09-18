@@ -11,3 +11,4 @@ import seaborn
 seaborn.set()
 
 axis = curve1.plot(num_pts=256)
+seaborn.show()
