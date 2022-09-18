@@ -53,4 +53,4 @@ for result in resultGenerator:
     from lazero.utils.logger import sprint
     # sprint(result)
     extractYolov5DetectionData(result, mimetype=fileList[0]['type'])
-    breakpoint()
+    # breakpoint()
