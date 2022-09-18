@@ -26,7 +26,8 @@ if test_case == "plot"
     # plt.plot(axis)
     plt.show()
 elif test_case == "evaluate":
-    print('')
+    print('type q to quit evaluation')
+    while True:
     x = input("x> ")
     if x == 'q':
         print("quitting...")
