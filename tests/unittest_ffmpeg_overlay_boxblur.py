@@ -21,5 +21,6 @@ output_stream = layer_0.overlay(layer_1,x=0, y='floor((H-h)/2)')
 
 from lazero.filesystem import tmpdir
 path = '/dev/shm/medialang'
+import os
 with tmpdir(path=path) as T:
-    ffmpeg.output(output_stream, '/dev/shm/output.mp4')
+    ffmpeg.output(output_stream, os.path.join(path,'output.mp4'))
