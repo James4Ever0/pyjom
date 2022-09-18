@@ -25,7 +25,8 @@ def resizeWithPadding(image, width, height):
     bottom = max(0,height-targetHeight-top)
     left = max(0,math.floor((width-targetWidth)/2))
     right = max(0,width-targetWidth-left)
-    cv2.copyMakeBorder(resized,top, bottom, left, right,cv2.BORDER_CONSTANT , value=BLACK)
+    padded = cv2.copyMakeBorder(resized,top, bottom, left, right,cv2.BORDER_CONSTANT , value=BLACK)
+    return padded
 
 from lazero.filesystem import tmpdir
 
