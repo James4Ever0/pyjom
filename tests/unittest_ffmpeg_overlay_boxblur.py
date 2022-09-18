@@ -20,7 +20,7 @@ layer_1 = video_stream.filter("scale", w=1080, h="ih*1080/iw")
 print('layer_1 args', layer_1.get_args())
 
 output_stream = layer_0.overlay(layer_1, x=0, y="floor((H-h)/2)")
-print('layer_0 args', layer_0.get_args())
+print('output_stream args', output_stream.get_args())
 
 from lazero.filesystem import tmpdir
 
