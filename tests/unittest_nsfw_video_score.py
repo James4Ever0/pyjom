@@ -7,6 +7,8 @@ from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 
 gateway = "http://localhost:8511/"
 
+from pyjom.mathlib import superMean, superMax
+
 from lazero.utils.importers import cv2_custom_build_init
 
 cv2_custom_build_init()
