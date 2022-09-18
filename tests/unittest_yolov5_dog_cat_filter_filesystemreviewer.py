@@ -65,6 +65,7 @@ def calculateVideoMaxDetectionConfidence(dataList, identities=['dog','cat']): # 
         detections = elem['detections']
         for detection in detections:
             if detection['identity'] in identities:
+                if report[]
 
 
 for result in resultGenerator: # this is for each file.
