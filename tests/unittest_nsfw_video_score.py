@@ -131,7 +131,7 @@ test_flag = "nsfw_video"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 import numpy as np
 
-def processNSFWServerReply
+def processNSFWServerImageReply()
 
 def processNSFWReportArray(
     NSFWReportArray,
