@@ -149,7 +149,8 @@ def detectionConfidenceFilter(detectionConfidence:dict, filter_dict = {'dog':{'m
             if logic == 'OR':
                 return True
         else:
-            
+            if logic == 'AND':
+                return False
 
 for result in resultGenerator:  # this is for each file.
     from lazero.utils.logger import sprin
