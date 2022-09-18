@@ -150,7 +150,7 @@ def getImageColorCentrality(
     return centrality, max_nearby_center_percentage
 
 
-
+import math
 def scanImageWithWindowSizeAutoResize(
     image,
     width,
