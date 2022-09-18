@@ -34,8 +34,8 @@ elif test_case == "evaluate":
             print("quitting...")
             BertGenerationTokenizer
         try:
-            x = float(x)
-            y = curve1.evaluate(x)
+            s = float(s)
+            point = curve1.evaluate(s)
             print('point:',(x,y))
         except:
             print('ERROR: Invalid input value: %s' % x)
