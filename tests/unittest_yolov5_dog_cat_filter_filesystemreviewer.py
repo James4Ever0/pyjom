@@ -91,6 +91,8 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
             for identity in identities:
                 value = frame_detection_dict.get(identity,0)
                 report[identity].append(value)
+        elif timespan_strategy == 'mean_no_missing':
+            for identity in identities:
 
 
 for result in resultGenerator: # this is for each file.
