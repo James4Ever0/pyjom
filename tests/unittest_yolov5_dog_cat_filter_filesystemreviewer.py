@@ -29,7 +29,7 @@ videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 fileList = [{"type": "video", "path": videoPath}]
 
 resultGenerator, function_id = reviewer(
-    fileList, generator=True, debug=True
+    fileList, generator=True, debug=
 )  # or at least a generator?
 
 
