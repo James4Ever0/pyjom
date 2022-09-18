@@ -159,7 +159,7 @@ for result in resultGenerator:  # this is for each file.
     # sprint(result)
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
     sprint('DETECTION DATA:')
-    sprint(detectiondata)
+    sprint(detectionData)
     detectionConfidence = calculateVideoMeanDetectionConfidence(detectionData)
     sprint("DETECTION CONFIDENCE:", detectionConfidence)
     filter_result = detectionConfidenceFilter(detectionConfidence)
