@@ -8,6 +8,7 @@ import paddlehub as hub
 import cv2
 dog_labels = 狗 犬 梗
 猫 # ends with this, and not containing forbidden words.
+
 熊猫
 猫狮
 猫头鹰
@@ -29,7 +30,7 @@ if test_flag == "video":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
         padded_resized_frame = resizeImageWithPadding(
             frame, 224, 224, border_type="replicate"
-        )
+        ) # pass the test only if three of these containing 'cats'
         result = classifier.classification(
             images=[padded_resized_frame], top_k=3, use_gpu=False
         )  # check it?
