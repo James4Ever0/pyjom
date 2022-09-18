@@ -63,7 +63,7 @@ def resizeImageWithPadding(image, width, height, border_type='constant_black'):
             resized, top, bottom, left, right, cv2.BORDER_REPLICATE, value=BLACK
         )
     else:
-        raise Exception('unknown border_type: %s' % border_type)must be in)
+        raise Exception('unknown border_type: %s' % border_type)
     return padded
 
 
