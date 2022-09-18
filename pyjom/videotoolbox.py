@@ -146,7 +146,8 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
         return nonIterator(cap, samplePopulation)
 
 def getVideoFrameIteratorWithFPS(videoPath, start, end, fps=1):
-    # 
+    # this will set batch to 1
+    
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     assert batch >= 1
