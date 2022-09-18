@@ -21,5 +21,6 @@ for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
     # so what is the major categories?
     # thanks to chinese, we are never confused.
     # check the labels, shall we?
+    # what about samoyed?
     sprint("RESULT:", result)
     breakpoint()
