@@ -49,12 +49,13 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
         data_dict.update({'data':dataList})
     else:
         frameDetectionData = timeseries_data
+        current_shot_detections = []
         for elem in frameDetectionData:
             location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
             # print('location:', location)
             # print('confidence:', confidence)
             # print('identity:', identity)
-        data_dict.update({'data':})
+        data_dict.update({'data':current_shot_detections})
     data_dict.update({'path':filepath,'type':mimetype, })
 
 for result in resultGenerator: # this is for each file.
