@@ -7,4 +7,5 @@ source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 ffmpeg.input()
 
+filter('scale',w=1)
 filter('boxblur',10)
