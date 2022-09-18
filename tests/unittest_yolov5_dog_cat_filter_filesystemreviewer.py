@@ -97,7 +97,7 @@ import numpy as np
 
 
 def calculateVideoMeanDetectionConfidence(
-    dataList,
+    dataList:list,
     identities=["dog", "cat"],
     framewise_strategy: Literal["mean", "max"] = "mean",
     timespan_strategy: Literal["max", "mean", "mean_no_missing"] = "mean_no_missing",
