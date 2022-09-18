@@ -146,11 +146,11 @@ elif test_flag = "nsfw_image":
     basename = "{}.jpg".format(uuid.uuid4())
     jpg_path = os.path.join(tmpdirPath, basename)
     with tmpfile(path=jpg_path) as TF:
-    padded_resized_frame = resizeImageWithPadding(image, 224, 224)
-    cv2.imwrite(jpg_path, padded_resized_frame)
+        padded_resized_frame = resizeImageWithPadding(image, 224, 224)
+        cv2.imwrite(jpg_path, padded_resized_frame)
         files = {"image": (basename, open(jpg_path, "rb"), "image/jpeg")}
-                r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
-                print("RESPONSE:", r.json())
+        r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
+        print("RESPONSE:", r.json())
 else:
     raise Exception("unknown test_flag: %s" % test_flag)
 # you can only post gif now, or you want to post some other formats?
