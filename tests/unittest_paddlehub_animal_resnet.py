@@ -13,6 +13,7 @@ dog_labels = ["狗", "犬", "梗"]
 cat_labels = ["猫"]  # ends with this, and not containing forbidden words.
 
 forbidden_words = [
+    "灵猫",
     "熊猫",
     "猫狮",
     "猫头鹰",
