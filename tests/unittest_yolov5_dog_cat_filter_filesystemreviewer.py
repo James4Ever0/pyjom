@@ -103,6 +103,7 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
             final_report[identity] = np.mean(valueList)
         else:
             final_report[identity] = max(valueList)
+    return final_report
                 
 
 
