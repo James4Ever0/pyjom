@@ -114,7 +114,7 @@ if test_flag == "padding":
         # i'd like to view this.
 elif test_flag == "scanning":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-        padded_resized_frame = scanImageWithWindowSizeAutoResize(frame, 224, 224)
+        scanned_array = scanImageWithWindowSizeAutoResize(frame, 224, 224)
 elif test_flag == "nsfw":
     with tmpdir(path=tmpdirPath) as T:
         for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
