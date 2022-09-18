@@ -43,7 +43,7 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
                 print('location:', location)
                 print('confidence:', confidence)
                 print('identity:', identity)
-                .append({'location':location, 'confidence':confidence, 'identity':identity})
+                data_dict.append({'location':location, 'confidence':confidence, 'identity':identity})
     else:
         frameDetectionData = timeseries_data
         for elem in frameDetectionData:
@@ -51,6 +51,7 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
             print('location:', location)
             print('confidence:', confidence)
             print('identity:', identity)
+        data_dict.update({'data':})
     data_dict.update({'path':filepath,'type':mimetype, })
 
 for result in resultGenerator: # this is for each file.
