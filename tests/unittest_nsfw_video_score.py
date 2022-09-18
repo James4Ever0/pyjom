@@ -7,3 +7,4 @@ source = ""
 from lazero.filesystem import tmpdir
 
 r = requests.post(gateway,) # post gif?
+# you can only post gif now, or you want to post some other formats?
