@@ -18,8 +18,8 @@ video_stream = stream.video
 output_width = 1080
 output_height = 1920
 
-output_height = 1080
-output_width = 1920
+# output_height = 1080
+# output_width = 1920
 
 layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) # this is default?
 
