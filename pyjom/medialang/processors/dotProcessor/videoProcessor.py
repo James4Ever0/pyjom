@@ -30,6 +30,7 @@ def ffmpegVideoPreProductionFilter(
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
+    def paddingBlurFulter
     def paddingFilter(stream, mWidth=1920, mHeight=1080):
         width = "max(iw, ceil(ih*max({}/{}, iw/ih)))".format(mWidth, mHeight)
         height = "max(ih, ceil(iw*max({}/{}, ih/iw)))".format(mHeight, mWidth)
