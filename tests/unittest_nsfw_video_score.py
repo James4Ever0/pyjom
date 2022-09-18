@@ -131,12 +131,14 @@ test_flag = "nsfw_video"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 import numpy as np
 
+
 def processNSFWServerImageReply(reply):
     mDict = {}
     for elem in reply:
-        className, probability = elem['className'], elem['probability']
-        mDict.update({className:probability})
+        className, probability = elem["className"], elem["probability"]
+        mDict.update({className: probability})
     return mDict
+
 
 def processNSFWReportArray(
     NSFWReportArray,
@@ -221,6 +223,7 @@ elif test_flag == "nsfw_video":
                     )  # there must be at least one response, i suppose?
                 except:
                     import traceback
+
                     traceback.print_exc()
                     print("error when processing NSFW server response")
             NSFWReport = processNSFWReportArray(responses)
