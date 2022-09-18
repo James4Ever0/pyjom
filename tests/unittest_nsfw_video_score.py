@@ -1,5 +1,6 @@
 # we take max for the concerned ones, and take mean for the unconcerned ones.
 
+from
 import requests
 
 gateway = ""
