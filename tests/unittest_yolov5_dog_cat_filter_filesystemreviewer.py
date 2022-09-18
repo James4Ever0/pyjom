@@ -30,6 +30,7 @@ videoPaths = [
     "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
     "/root/Desktop/works/pyjom/samples/video/cat_invalid_without_mestimate.mp4",
     "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.mp4",
+    "/root/Desktop/works/pyjom/samples/video/kitty_flash_scaled.mp4",
     "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.mp4",
 ]
 fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
