@@ -17,7 +17,9 @@ import cv2
 import math
 
 
-def scanImageWithWindowSizeAutoResize(image, width, height, return_direction=False): # shall you use torch? no?
+def scanImageWithWindowSizeAutoResize(
+    image, width, height, return_direction=False
+):  # shall you use torch? no?
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
@@ -101,7 +103,7 @@ tmpdirPath = "/dev/shm/medialang/nsfw"
 
 import uuid
 
-waitForServerUp(8511,'nsfw nodejs server')
+waitForServerUp(8511, "nsfw nodejs server")
 
 with tmpdir(path=tmpdirPath) as T:
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
@@ -110,9 +112,7 @@ with tmpdir(path=tmpdirPath) as T:
         with tmpfile(path=jpg_path) as TF:
             cv2.imwrite(jpg_path, padded_resized_frame)
             files = {"upload_file": open(jpg_path, "rb")}
-            r = requests.post(
-                gateway+"nsfw",files=files
-            )  # post gif? or just jpg?
-            print('RESPONSE:',r.json())
+            r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
+            print("RESPONSE:", r.json())
 # you can only post gif now, or you want to post some other formats?
 # if you post shit, you know it will strentch your picture and produce unwanted shits.
