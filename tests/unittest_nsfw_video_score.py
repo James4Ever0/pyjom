@@ -26,7 +26,10 @@ def scanImageWithWindowSize(image, width, height):
         image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC
     )
     # determine scan direction here.
-    if targetWidth/targetHeight 
+    if targetWidth/targetHeight == width/height:
+        return resized
+    elif targetWidth/targetHeight < width/height:
+        return 
 
 def resizeImageWithPadding(image, width, height):
     shape = image.shape
