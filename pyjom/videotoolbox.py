@@ -156,6 +156,9 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     fps = cap.get(cv2.CAP_PROP_FPS)
     if start >=0:
         startFrame = int(start * fps)
+    else:
+        startFrame = 0
+    if st
     stopFrame = int(end * fps)
 
     startFrame = min(max(0, startFrame), total_frames-1)
