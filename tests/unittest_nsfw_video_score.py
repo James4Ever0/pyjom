@@ -140,6 +140,8 @@ def NSFWFilter(NSFWReport, _filter={'Neutral':{'min':0.5}, 'Sexy':{'max':0.5}, '
         value = NSFWReport.get(key,0)
         key_filter = _filter[key]
         result = checkMinMaxDict(value, key_filter)
+        if not result:
+            return False
 
 
 if test_flag == "padding":
