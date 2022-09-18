@@ -39,7 +39,9 @@ def scanImageWithWindowSize(image, width, height, return_direction=False):
             if start < targetHeight:
                 if end > targetHeight:
                     end = targetHeight
-                    start = targetHeight-
+                    start = targetHeight-height
+                else:
+                    
             cropped = resized[:,:,:] # height, width, channels
             imageSeries.append(cropped)
             index +=1
