@@ -29,7 +29,7 @@ videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 fileList = [{"type": "video", "path": videoPath}]
 
 resultGenerator, function_id = reviewer(
-    fileList, generator=True, debug=
+    fileList, generator=True, debug=False
 )  # or at least a generator?
 
 
@@ -71,9 +71,9 @@ def extractYolov5DetectionData(detectionData, mimetype="video"):
             location, confidence, identity = [
                 elem[key] for key in ["location", "confidence", "identity"]
             ]
-            # print('location:', location)
-            # print('confidence:', confidence)
-            # print('identity:', identity)
+            print('location:', location)
+            print('confidence:', confidence)
+            print('identity:', identity)
         data_dict.update(
             {"data": current_shot_detections}
         )  # just detections, not a list in time series order
