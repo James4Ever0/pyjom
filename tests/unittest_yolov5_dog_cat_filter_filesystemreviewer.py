@@ -44,7 +44,8 @@ def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
             timestamp, frameNumber, frameDetectionData = [
                 frameData[key] for key in ["time", "frame", "yolov5_detector"]
             ]
-            if debug sprint("timestamp:", timestamp)
+            if debug:
+                sprint("timestamp:", timestamp)
             current_shot_detections = []
             for elem in frameDetectionData:
                 location, confidence, identity = [
