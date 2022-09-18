@@ -146,7 +146,7 @@ from pyjom.commons import checkMinMaxDict
 # you can reuse this, really.
 def NSFWFilter(
     NSFWReport,
-    _filter={
+    filter={
         "Neutral": {"min": 0.5},
         "Sexy": {"max": 0.5},
         "Porn": {"max": 0.5},
@@ -154,7 +154,7 @@ def NSFWFilter(
         "Drawing": {"max": 0.5},
     },
 ):
-    for key in _filter:
+    for key in filter:
         value = NSFWReport.get(key, 0)
         key_filter = _filter[key]
         result = checkMinMaxDict(value, key_filter)
