@@ -72,9 +72,9 @@ def calculateVideoMaxDetectionConfidence(dataList, identities=['dog','cat']): # 
 from typing import Literal
 def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], framewise_strategy:Literal['mean','max']='mean', timespan_strategy:Literal['max','mean','mean_no_missing']='mean_no_missing'):
     report = {identity:[] for identity in identities}
-    for elem in dataList:
+    for elem in dataList: # iterate through selected frames
         detections = elem['detections']
-        for detection in detections:
+        for detection in detections: # 
             identity = detection['identity']
             if identity in identities:
 
