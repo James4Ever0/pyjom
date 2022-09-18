@@ -31,8 +31,10 @@ def scanImageWithWindowSize(image, width, height):
         imageSeries = [resized] # as image series.
         direction = None
     elif targetWidth/targetHeight < width/height:
+        direction = ""
     else:
-    return imageSeries
+        direction = 
+    return imageSeries, direction
 
 def resizeImageWithPadding(image, width, height):
     shape = image.shape
