@@ -145,7 +145,7 @@ def NSFWFilter(NSFWReport, _filter={'Neutral':{'min':0.5}, 'Sexy':{'max':0.5}, '
             print('value: %s' % value)
             print('filter: %s' % str(key_filter))
             return False
-    
+    return True
 
 
 if test_flag == "padding":
