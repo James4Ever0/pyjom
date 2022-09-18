@@ -121,6 +121,7 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
     NSFWReport = {}
     for element in NSFWReportArray:
+        for 
 
 # you can reuse this, really.
 def NSFWFilter(NSFWReport, _filter={}):
