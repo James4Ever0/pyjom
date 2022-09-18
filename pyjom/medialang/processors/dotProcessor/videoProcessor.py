@@ -34,17 +34,8 @@ def ffmpegVideoPreProductionFilter(
 
 video_stream = stream.video
 
-# the damn thing because they are from the same file! fuck!
-
-# layer_0 = video_stream.filter("scale", w=1080, h=1920).filter("boxblur", 10) # this is default?
-
-# however, you need to generalize it here.
-
-# output_width = 1080
-# output_height = 1920
-
-output_height = 1080
-output_width = 1920
+output_width = mWidth
+output_height = mHeight
 
 layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) # this is default?
 
