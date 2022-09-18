@@ -121,7 +121,8 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
     NSFWReport = {}
     for element in NSFWReportArray:
-        for average_class in average_classes:
+        NSFWReport[element] = 
+    for average_class in average_classes:
             if NSFWReport.get(average_class,0)< element[average_class]:
 
 # you can reuse this, really.
