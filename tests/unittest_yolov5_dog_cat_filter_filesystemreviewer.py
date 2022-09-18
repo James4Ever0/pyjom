@@ -93,7 +93,7 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
                 if value == 0:
                     continue
             report[identity].append(value)
-    
+    final_report = {}
                 
 
 
