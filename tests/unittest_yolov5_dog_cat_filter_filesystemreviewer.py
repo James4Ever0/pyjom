@@ -8,6 +8,8 @@ autoArgs = {
     "yolov5_detector": {"model": "yolov5x"},  # will this run? no OOM?
 }
 
+def superMean()
+
 template_names = ["yolov5_detector.mdl.j2"]
 semiauto = False
 dummy_auto = False
