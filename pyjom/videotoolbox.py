@@ -145,8 +145,6 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     else:
         return nonIterator(cap, samplePopulation)
 
-def getVideoFrameIteratorWithFPS(videoPath, start, end, fps=1):
-    # this will set batch to 1
 
 
 def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
@@ -192,6 +190,8 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate=1, batch=1):
     #     success, img = cap.grab()
     # cap.release()
 
+def getVideoFrameIteratorWithFPS(videoPath, start, end, fps=1):
+    # this will set batch to 1
 
 def getDiagonalRectArea(diagonalRect):
     (x0, y0), (x1, y1) = diagonalRect
