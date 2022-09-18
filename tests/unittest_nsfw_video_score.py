@@ -121,7 +121,9 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
     for element in NSFWReportArray
 
-def NSFWFilter(NSFWReport, )
+# you can reuse this, really.
+def NSFWFilter(NSFWReport, _filter):
+
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
