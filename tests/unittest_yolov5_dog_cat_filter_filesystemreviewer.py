@@ -46,6 +46,7 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
                 print('identity:', identity)
                 current_shot_detections.append({'location':location, 'confidence':confidence, 'identity':identity})
             dataList.append({'timestamp':timestamp,'detections':current_shot_detections})
+        data_dict.update({'data':dataList})
     else:
         frameDetectionData = timeseries_data
         for elem in frameDetectionData:
