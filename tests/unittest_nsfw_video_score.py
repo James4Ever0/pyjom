@@ -115,7 +115,7 @@ import os
 test_flag = "nsfw_image"
 # test_flag = "scanning"
 # test_flag = "paddinging"
-    source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
+source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
