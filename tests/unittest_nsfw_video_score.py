@@ -112,7 +112,7 @@ with tmpdir(path=tmpdirPath) as T:
         jpg_path = os.path.join(tmpdirPath, basename)
         with tmpfile(path=jpg_path) as TF:
             cv2.imwrite(jpg_path, padded_resized_frame)
-            files = {"upload_file": open(jpg_path, "rb")}
+            files = {basename: open(jpg_path, "rb")}
             r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
             print("RESPONSE:", r.json())
 # you can only post gif now, or you want to post some other formats?
