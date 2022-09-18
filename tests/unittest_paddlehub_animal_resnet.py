@@ -13,6 +13,7 @@ dog_labels = 狗 犬
 猫头鹰
 丁丁猫儿
 绿猫鸟
+猫鼬
 from lazero.utils.logger import sprint
 
 classifier = hub.Module(name="resnet50_vd_animals")
