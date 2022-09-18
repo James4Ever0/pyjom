@@ -9,16 +9,18 @@ import cv2
 dog_labels = ['狗', '犬', '梗']
 cat_labels = ['猫'] # ends with this, and not containing forbidden words.
 
-熊猫
-猫狮
-猫头鹰
-丁丁猫儿
-绿猫鸟
-猫鼬
-猫鱼
-玻璃猫
-猫眼
-猫蛱蝶
+forbidden_words = [
+'熊猫',
+'猫狮',
+'猫头鹰',
+'丁丁猫儿',
+'绿猫鸟',
+'猫鼬',
+'猫鱼',
+'玻璃猫',
+'猫眼',
+'猫蛱蝶',
+]
 from lazero.utils.logger import sprint
 
 classifier = hub.Module(name="resnet50_vd_animals")
