@@ -138,6 +138,7 @@ def calculateVideoMeanDetectionConfidence(
             final_report[identity] = max(valueList)
     return final_report
 
+from pyjom.commons import ca
 
 for result in resultGenerator:  # this is for each file.
     from lazero.utils.logger import sprint
