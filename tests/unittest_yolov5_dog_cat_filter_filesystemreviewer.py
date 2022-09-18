@@ -162,7 +162,8 @@ def detectionConfidenceFilter(detectionConfidence:dict, filter_dict = {'dog':{'m
         else:
             if logic == 'AND':
                 return False
-    return True # for 'AND' this will be 
+    if logic == 'AND':
+        return True # for 'AND' this will be True, but for 'OR' this will be False
 
 for result in resultGenerator:  # this is for each file.
     # sprint(result)
