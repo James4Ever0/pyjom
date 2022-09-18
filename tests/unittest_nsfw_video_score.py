@@ -40,7 +40,7 @@ def scanImageWithWindowSize(image, width, height, return_direction=False):
     else:
         return imageSeries
 
-def resizeImageWithPadding(image, width, height):
+def resizeImageWithPadding(image, width, height, border_type='replicate'):
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
