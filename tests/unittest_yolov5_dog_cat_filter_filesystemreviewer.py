@@ -140,10 +140,11 @@ def calculateVideoMeanDetectionConfidence(
 
 from pyjom.commons import checkMinMaxDict
 
-def detectionConfidenceFilter(detectionConfidence, filter_dict = {}):
+def detectionConfidenceFilter(detectionConfidence, filter_dict = {'dog
+':}):
 
 for result in resultGenerator:  # this is for each file.
-    from lazero.utils.logger import sprint
+    from lazero.utils.logger import sprin
 
     # sprint(result)
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
