@@ -78,8 +78,16 @@ def scanImageWithWindowSizeAutoResize(
     else:
         return imageSeries
 
+
 from typing import Literal
-def resizeImageWithPadding(image, width, height, border_type:Literal["constant_black", 'rep']="constant_black"):
+
+
+def resizeImageWithPadding(
+    image,
+    width,
+    height,
+    border_type: Literal["constant_black", "replicate"] = "constant_black",
+):
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
@@ -184,7 +192,9 @@ elif test_flag == "nsfw_video":
     # use another source?
     with tmpdir(path=tmpdirPath) as T:
         for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-            padded_resized_frame = resizeImageWithPadding(frame, 224, 224,border_type='replicate')
+            padded_resized_frame = resizeImageWithPadding(
+                frame, 224, 224, border_type="replicate"
+            )
             # i'd like to view this.
             basename = "{}.jpg".format(uuid.uuid4())
             jpg_path = os.path.join(tmpdirPath, basename)
@@ -197,10 +207,10 @@ elif test_flag == "nsfw_video":
                 )  # post gif? or just jpg?
                 response_json = r.json()
                 print("RESPONSE:", response_json)
-                if response_json['message']:
+                if response_json["message"]:
                     breakpoint()
                 responses.append(
-                    response_json # it contain 'messages'
+                    response_json  # it contain 'messages'
                 )  # there must be at least one response, i suppose?
             NSFWReport = processNSFWReportArray(responses)
             result = NSFWFilter(NSFWReport)
