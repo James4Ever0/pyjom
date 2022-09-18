@@ -1,3 +1,6 @@
+import numpy as np
+import bezier
+
 def bezierCurve(start=(0,0), end=(1,1), skew=0):
   # skew: (-0.5,0.5) otherwise this shit will look ugly.
   assert skew >=-0.5
