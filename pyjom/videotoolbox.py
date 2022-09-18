@@ -205,7 +205,7 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate:float=1, batch:int=
     #     success, img = cap.grab()
     # cap.release()
 
-def getVideoFrameIteratorWithFPS(videoPath, start, end, fps=1):
+def getVideoFrameIteratorWithFPS(videoPath, start:float, end:float, fps=1):
     # this will set batch to 1
     from caer.video.frames_and_fps import get_fps_float
     source_fps = get_fps_float(videoPath)
