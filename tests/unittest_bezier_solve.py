@@ -29,8 +29,8 @@ if test_case == "plot":
 elif test_case == "evaluate":
     print('type q to quit evaluation')
     while True:
-        x = input("x> ")
-        if x == 'q':
+        s = input("s> ")
+        if slice == 'q':
             print("quitting...")
             BertGenerationTokenizer
         try:
