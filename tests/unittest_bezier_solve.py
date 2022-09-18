@@ -28,13 +28,13 @@ if test_case == "plot"
 elif test_case == "evaluate":
     print('type q to quit evaluation')
     while True:
-    x = input("x> ")
-    if x == 'q':
-        print("quitting...")
-    try:
-        x = float(x)
-        y = curve1.evaluate(x)
-        print('point:',(x,y))
-    except:
-        print('ERROR: Invalid input value: %s' % x)
-# print(axis)
+        x = input("x> ")
+        if x == 'q':
+            print("quitting...")
+        try:
+            x = float(x)
+            y = curve1.evaluate(x)
+            print('point:',(x,y))
+        except:
+            print('ERROR: Invalid input value: %s' % x)
+    # print(axis)
