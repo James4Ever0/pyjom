@@ -51,11 +51,13 @@ def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
                 location, confidence, identity = [
                     elem[key] for key in ["location", "confidence", "identity"]
                 ]
-                identity = identity['name']
+                identity = identity["name"]
                 if debug:
                     print("location:", location)
                     print("confidence:", confidence)
-                    sprint("identity:", identity) # we should use the identity name, instead of the identity dict, which is the original identity object.
+                    sprint(
+                        "identity:", identity
+                    )  # we should use the identity name, instead of the identity dict, which is the original identity object.
                 current_shot_detections.append(
                     {
                         "location": location,
@@ -74,11 +76,11 @@ def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
             location, confidence, identity = [
                 elem[key] for key in ["location", "confidence", "identity"]
             ]
-            identity = identity['name']
+            identity = identity["name"]
             if debug:
-                print('location:', location)
-                print('confidence:', confidence)
-                sprint('identity:', identity)
+                print("location:", location)
+                print("confidence:", confidence)
+                sprint("identity:", identity)
         data_dict.update(
             {"data": current_shot_detections}
         )  # just detections, not a list in time series order
@@ -104,9 +106,8 @@ from typing import Literal
 import numpy as np
 
 
-
 def calculateVideoMeanDetectionConfidence(
-    dataList:list,
+    dataList: list,
     identities=["dog", "cat"],
     framewise_strategy: Literal["mean", "max"] = "max",
     timespan_strategy: Literal["max", "mean", "mean_no_missing"] = "mean_no_missing",
@@ -151,35 +152,42 @@ def calculateVideoMeanDetectionConfidence(
             final_report[identity] = superMax(valueList)
     return final_report
 
+
 from pyjom.commons import checkMinMaxDict
 
-def detectionConfidenceFilter(detectionConfidence:dict, filter_dict = {'dog':{'min':0.5},'cat':{'min':0.5}}, logic:Literal['AND','OR']='OR'): # what is the logic here? and? or?
-    assert logic in ['AND','OR']
+
+def detectionConfidenceFilter(
+    detectionConfidence: dict,
+    filter_dict={"dog": {"min": 0.5}, "cat": {"min": 0.5}},
+    logic: Literal["AND", "OR"] = "OR",
+):  # what is the logic here? and? or?
+    assert logic in ["AND", "OR"]
     for identity in filter_dict.keys():
-        value = detectionConfidence.get(identity,0)
+        value = detectionConfidence.get(identity, 0)
         key_filter = filter_dict[identity]
         result = checkMinMaxDict(value, key_filter)
         if result:
-            if logic == 'OR':
+            if logic == "OR":
                 return True
         else:
-            if logic == 'AND':
+            if logic == "AND":
                 return False
-    if logic == 'AND':
-        return True # for 'AND' this will be True, but for 'OR' this will be False
-    elif logic == 'OR':
+    if logic == "AND":
+        return True  # for 'AND' this will be True, but for 'OR' this will be False
+    elif logic == "OR":
         return False
     else:
-        raise Exception('Invalid logic: %s' % logic)
+        raise Exception("Invalid logic: %s" % logic)
+
 
 for result in resultGenerator:  # this is for each file.
     # sprint(result)
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
-    sprint('DETECTION DATA:')
+    sprint("DETECTION DATA:")
     sprint(detectionData)
-    filepath = detectionData['path']
-    filetype = detectionData['type']
-    dataList = detectionData['data']
+    filepath = detectionData["path"]
+    filetype = detectionData["type"]
+    dataList = detectionData["data"]
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
     sprint("DETECTION CONFIDENCE:", detectionConfidence)
     filter_result = detectionConfidenceFilter(detectionConfidence)
