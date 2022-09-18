@@ -17,6 +17,14 @@ import cv2
 import math
 
 def scanImageWithWindowSize(image, width, height):
+    shape = image.shape
+    assert len(shape) == 3
+    ih, iw, channels = shape
+    targetWidth = max(width, min(math.floor(iw * height / ih)))
+    targetHeight = max(height, min(math.floor(ih * width / iw)))
+    resized = cv2.resize(
+        image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC
+    )
 
 def resizeImageWithPadding(image, width, height):
     shape = image.shape
