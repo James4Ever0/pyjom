@@ -140,7 +140,7 @@ def calculateVideoMeanDetectionConfidence(
 
 from pyjom.commons import checkMinMaxDict
 
-def check
+def detectionIdentityFilter(, identites)
 
 for result in resultGenerator:  # this is for each file.
     from lazero.utils.logger import sprint
