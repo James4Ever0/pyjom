@@ -126,6 +126,8 @@ elif test_flag == "scanning":
             cv2.imshow("SCANNED %d" % index, image)
             cv2.waitKey(0)
 elif test_flag == "nsfw":
+    source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
+    # use another source.
     with tmpdir(path=tmpdirPath) as T:
         for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
             padded_resized_frame = resizeImageWithPadding(frame, 224, 224)
