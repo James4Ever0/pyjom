@@ -146,17 +146,24 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
         return nonIterator(cap, samplePopulation)
 
 
-
-def getVideoFrameIterator(videoPath, start, end, sample_rate:float=1, batch:int=1, screenshot=False,epsilon=0.00000001):
+def getVideoFrameIterator(
+    videoPath,
+    start,
+    end,
+    sample_rate: float = 1,
+    batch: int = 1,
+    screenshot=False,
+    epsilon=0.00000001,
+):
     if screenshot:
-        end = start+epsilon
+        end = start + epsilon
     assert batch >= 1
-    assert sample_rate > 0 # this might not work for those<1 ones. really?
+    assert sample_rate > 0  # this might not work for those<1 ones. really?
     # assert end>start
     cap = cv2.VideoCapture(videoPath)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
-    if start >=0:
+    if start >= 0:
         startFrame = int(start * fps)
     else:
         startFrame = 0
@@ -165,21 +172,24 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate:float=1, batch:int=
     else:
         endFrame = total_frames
 
-    startFrame = min(max(0, startFrame), total_frames-1)
-    endFrame = max(1,min(total_frames, endFrame), startFrame+1)
+    startFrame = min(max(0, startFrame), total_frames - 1)
+    endFrame = max(1, min(total_frames, endFrame), startFrame + 1)
     # success, img = cap.read() # ignore first frame.
     # https://vuamitom.github.io/2019/12/13/fast-iterate-through-video-frames.html
     # to speed up the process we need to decompose the cap.read() method
     # and even better:
     # the official provides multithreading support. no thanks?
     import progressbar
+
     # replace it with linspace.
     import numpy as np
 
-    linspace = np.linspace(startFrame, endFrame, int((endFrame-startFrame)/sample_rate)+1)
+    linspace = np.linspace(
+        startFrame, endFrame, int((endFrame - startFrame) / sample_rate) + 1
+    )
 
     for fno in progressbar.progressbar(linspace):
-    # for fno in progressbar.progressbar(range(startFrame, stopFrame + 1, sample_rate)):
+        # for fno in progressbar.progressbar(range(startFrame, stopFrame + 1, sample_rate)):
         fno = int(fno)
         fnoMax = fno + batch - 1
         if fnoMax >= total_frames:
@@ -205,12 +215,15 @@ def getVideoFrameIterator(videoPath, start, end, sample_rate:float=1, batch:int=
     #     success, img = cap.grab()
     # cap.release()
 
-def getVideoFrameIteratorWithFPS(videoPath, start:float, end:float, fps=1):
+
+def getVideoFrameIteratorWithFPS(videoPath, start: float, end: float, fps=1):
     # this will set batch to 1
     from caer.video.frames_and_fps import get_fps_float
+
     source_fps = get_fps_float(videoPath)
-    sample_rate = source_fps/fps
+    sample_rate = source_fps / fps
     return getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
+
 
 def getDiagonalRectArea(diagonalRect):
     (x0, y0), (x1, y1) = diagonalRect
@@ -649,8 +662,9 @@ def detectStationaryLogoOverTime(
                 values.append(
                     {delogoCommandSet: (mStart, mEnd)}
                 )  # can it be turned into something useful?
-        delogoCommandList.extend(values) # this is a sequential list.
+        delogoCommandList.extend(values)  # this is a sequential list.
     from pyjom.mathlib import sequentialToMergedRanges
+
     delogoCommandDict = sequentialToMergedRanges(delogoCommandList)
 
     return delogoCommandDict  # is this freaking sequential? no?
