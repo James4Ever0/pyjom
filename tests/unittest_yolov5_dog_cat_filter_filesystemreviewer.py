@@ -14,7 +14,7 @@ def superMean(mList):
 
 def superMax(mList):
     if len(mList) == 0: return 0
-    return np.mean(mList)
+    return max(mList)
 
 
 template_names = ["yolov5_detector.mdl.j2"]
@@ -135,7 +135,7 @@ def calculateVideoMeanDetectionConfidence(
             if framewise_strategy == "mean":
                 frame_detection_dict.update({key: np.mean(valueList)})
             elif framewise_strategy == "max":
-                frame_detection_dict.update({key: max(valueList)})
+                frame_detection_dict.update({key: superMax(valueList)})
         # now update the report dict.
         for identity in identities:
             value = frame_detection_dict.get(identity, 0)
@@ -149,7 +149,7 @@ def calculateVideoMeanDetectionConfidence(
         if timespan_strategy in ["mean_no_missing", "mean"]:
             final_report[identity] = np.mean(valueList)
         else:
-            final_report[identity] = max(valueList)
+            final_report[identity] = superMax(valueList)
     return final_report
 
 from pyjom.commons import checkMinMaxDict
