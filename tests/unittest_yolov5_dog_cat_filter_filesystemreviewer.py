@@ -79,6 +79,7 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
             identity = detection['identity']
             if identity in identities:
                 frame_detection_dict[identity].append(detection['confidence'])
+        if 
 
 for result in resultGenerator: # this is for each file.
     from lazero.utils.logger import sprint
