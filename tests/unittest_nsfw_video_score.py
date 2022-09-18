@@ -51,10 +51,10 @@ def scanImageWithWindowSize(image, width, height, return_direction=False):
         index = 0
         while True:
             start, end = width*index, width*(index+1)
-            if start < targetHeight:
-                if end > targetHeight:
-                    end = targetHeight
-                    start = targetHeight-width
+            if start < targetWidtht:
+                if end > targetWidth:
+                    end = targetWidth
+                    start = targetWidth-width
                 # other conditions, just fine
             else:
                 break # must exit since nothing to scan.
