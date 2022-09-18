@@ -29,7 +29,7 @@ elif test_case == "evaluate":
     x = input("x> ")
     try:
         x = float(x)
-        
+        curve1.evaluate(x)
     except:
         print('ERROR: Invalid input value: %s' % x)
 # print(axis)
