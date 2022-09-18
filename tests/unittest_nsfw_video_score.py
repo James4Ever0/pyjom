@@ -117,7 +117,8 @@ test_flag = "nsfw_image"
 # test_flag = "paddinging"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
-def processNSFWReportArray(NSFWReportArray,average_classes=,get_max_classes=None):
+def processNSFWReportArray(NSFWReportArray,average_classes=,get_max_classes=            average_classes = ['Neutral']
+            get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
     for element in NSFWReportArray
 
 if test_flag == "padding":
@@ -148,8 +149,7 @@ elif test_flag == "nsfw":
                 response_json = r.json()
                 print("RESPONSE:", response_json)
                 responses.append(response_json) # there must be at least one response, i suppose?
-            average_classes = ['Neutral']
-            get_max_classes = ['Drawing','Porn','Sexy','Hentai'] # we don't want drawing dogs.
+ # we don't want drawing dogs.
 
             # [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
 elif test_flag == "nsfw_image":
