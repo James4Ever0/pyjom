@@ -28,87 +28,120 @@ resultGenerator, function_id = reviewer(
     fileList, generator=True, debug=True
 )  # or at least a generator?
 
-def extractYolov5DetectionData(detectionData, mimetype='video'):
+
+def extractYolov5DetectionData(detectionData, mimetype="video"):
     # plan to get some calculations!
-    filepath, review_data = detectionData['review']['review']
-    timeseries_data = review_data['yolov5_detector']['yolov5']['yolov5_detector']
+    filepath, review_data = detectionData["review"]["review"]
+    timeseries_data = review_data["yolov5_detector"]["yolov5"]["yolov5_detector"]
     data_dict = {}
-    if mimetype == 'video':
+    if mimetype == "video":
         dataList = []
         for frameData in timeseries_data:
-            timestamp, frameNumber, frameDetectionData = [frameData[key] for key in ['time','frame','yolov5_detector']]
-            sprint('timestamp:', timestamp)
+            timestamp, frameNumber, frameDetectionData = [
+                frameData[key] for key in ["time", "frame", "yolov5_detector"]
+            ]
+            sprint("timestamp:", timestamp)
             current_shot_detections = []
             for elem in frameDetectionData:
-                location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
-                print('location:', location)
-                print('confidence:', confidence)
-                print('identity:', identity)
-                current_shot_detections.append({'location':location, 'confidence':confidence, 'identity':identity})
-            dataList.append({'timestamp':timestamp,'detections':current_shot_detections})
-        data_dict.update({'data':dataList})
+                location, confidence, identity = [
+                    elem[key] for key in ["location", "confidence", "identity"]
+                ]
+                print("location:", location)
+                print("confidence:", confidence)
+                print("identity:", identity)
+                current_shot_detections.append(
+                    {
+                        "location": location,
+                        "confidence": confidence,
+                        "identity": identity,
+                    }
+                )
+            dataList.append(
+                {"timestamp": timestamp, "detections": current_shot_detections}
+            )
+        data_dict.update({"data": dataList})
     else:
         frameDetectionData = timeseries_data
         current_shot_detections = []
         for elem in frameDetectionData:
-            location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
+            location, confidence, identity = [
+                elem[key] for key in ["location", "confidence", "identity"]
+            ]
             # print('location:', location)
             # print('confidence:', confidence)
             # print('identity:', identity)
-        data_dict.update({'data':current_shot_detections}) # just detections, not a list in time series order
-    data_dict.update({'path':filepath,'type':mimetype})
+        data_dict.update(
+            {"data": current_shot_detections}
+        )  # just detections, not a list in time series order
+    data_dict.update({"path": filepath, "type": mimetype})
     return data_dict
 
-def calculateVideoMaxDetectionConfidence(dataList, identities=['dog','cat']): # does it have a dog?
-    report = {identity:0 for identity in identities}
+
+def calculateVideoMaxDetectionConfidence(
+    dataList, identities=["dog", "cat"]
+):  # does it have a dog?
+    report = {identity: 0 for identity in identities}
     for elem in dataList:
-        detections = elem['detections']
+        detections = elem["detections"]
         for detection in detections:
-            identity = detection['identity']
+            identity = detection["identity"]
             if identity in identities:
-                if report[identity] < detection['confidence']:
-                    report[identity] = detection['confidence']
+                if report[identity] < detection["confidence"]:
+                    report[identity] = detection["confidence"]
     return report
+
+
 from typing import Literal
 import numpy as np
-def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], framewise_strategy:Literal['mean','max']='mean', timespan_strategy:Literal['max','mean','mean_no_missing']='mean_no_missing'):
-    report = {identity:[] for identity in identities}
+
+
+def calculateVideoMeanDetectionConfidence(
+    dataList,
+    identities=["dog", "cat"],
+    framewise_strategy: Literal["mean", "max"] = "mean",
+    timespan_strategy: Literal["max", "mean", "mean_no_missing"] = "mean_no_missing",
+):
+    report = {identity: [] for identity in identities}
     # report = {}
-    for elem in dataList: # iterate through selected frames
-        detections = elem['detections']
+    for elem in dataList:  # iterate through selected frames
+        detections = elem["detections"]
         frame_detection_dict_source = {}
         # frame_detection_dict = {key:[] for key in identities}
-        for detection in detections: # in the same frame, iterate through different detections
-            identity = detection['identity']
+        for (
+            detection
+        ) in detections:  # in the same frame, iterate through different detections
+            identity = detection["identity"]
             if identity in identities:
-                frame_detection_dict_source[identity] = frame_detection_dict_source.get(identity,[])+[detection['confidence']]
+                frame_detection_dict_source[identity] = frame_detection_dict_source.get(
+                    identity, []
+                ) + [detection["confidence"]]
         frame_detection_dict = {}
         for key in identities:
-            valueList = frame_detection_dict_source.get(key,[0])
-            if framewise_strategy == 'mean':
-                frame_detection_dict.update({key:np.mean(valueList)})
-            elif framewise_strategy == 'max':
-                frame_detection_dict.update({key:max(valueList)})
+            valueList = frame_detection_dict_source.get(key, [0])
+            if framewise_strategy == "mean":
+                frame_detection_dict.update({key: np.mean(valueList)})
+            elif framewise_strategy == "max":
+                frame_detection_dict.update({key: max(valueList)})
         # now update the report dict.
         for identity in identities:
-            value = frame_detection_dict.get(identity,0)
-            if timespan_strategy == 'mean_no_missing':
+            value = frame_detection_dict.get(identity, 0)
+            if timespan_strategy == "mean_no_missing":
                 if value == 0:
                     continue
             report[identity].append(value)
     final_report = {}
     for identity in identities:
-        valueList = report.get(identity,[0])
-        if timespan_strategy in ['mean_no_missing','mean']:
+        valueList = report.get(identity, [0])
+        if timespan_strategy in ["mean_no_missing", "mean"]:
             final_report[identity] = np.mean(valueList)
         else:
             final_report[identity] = max(valueList)
     return final_report
-                
 
 
-for result in resultGenerator: # this is for each file.
+for result in resultGenerator:  # this is for each file.
     from lazero.utils.logger import sprint
+
     # sprint(result)
-    extractYolov5DetectionData(result, mimetype=fileList[0]['type'])
+    extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
     # breakpoint()
