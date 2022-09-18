@@ -150,7 +150,8 @@ elif test_flag == "nsfw_image":
     basename = "{}.jpg".format(uuid.uuid4())
     jpg_path = os.path.join(tmpdirPath, basename)
     with tmpfile(path=jpg_path) as TF:
-        padded_resized_frame = resizeImageWithPadding(image, 224, 224,)
+        padded_resized_frame = resizeImageWithPadding(image, 224, 224,border_type='replicate')
+        # padded_resized_frame = resizeImageWithPadding(image, 224, 224,border_type='replicate')
         # neutral again? try porn!
         # RESPONSE: [{'className': 'Neutral', 'probability': 0.6441782116889954}, {'className': 'Porn', 'probability': 0.3301379978656769}, {'className': 'Sexy', 'probability': 0.010329035110771656}, {'className': 'Hentai', 'probability': 0.010134727694094181}, {'className': 'Drawing', 'probability': 0.005219993181526661}]
         cv2.imwrite(jpg_path, padded_resized_frame)
