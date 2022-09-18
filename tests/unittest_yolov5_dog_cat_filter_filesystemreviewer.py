@@ -86,6 +86,8 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
             frame_detection_dict = {key: np.mean(frame_detection_dict.get(key,[0])) for key in identities}
         elif framewise_strategy == 'max':
             frame_detection_dict = {key: max(frame_detection_dict.get(key,[0])) for key in identities}
+        # now update the report dict.
+        
 
 
 for result in resultGenerator: # this is for each file.
