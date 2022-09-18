@@ -30,6 +30,6 @@ with tmpdir(path=path) as T:
     filepath = os.path.join(path, "output.mp4")
     # args = ffmpeg.get_args(output_stream)
     # print(args)
-    ffmpeg.output(output_stream,filepath).
+    ffmpeg.output(output_stream,filepath).run(overwrite_output=True)
     print("output file location:", filepath)
     breakpoint()
