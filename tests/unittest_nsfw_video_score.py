@@ -54,10 +54,10 @@ def resizeImageWithPadding(image, width, height, border_type='constant_black'):
     bottom = max(0, height - targetHeight - top)
     left = max(0, math.floor((width - targetWidth) / 2))
     right = max(0, width - targetWidth - left)
-    if border_type == ''
-    padded = cv2.copyMakeBorder(
-        resized, top, bottom, left, right, cv2.BORDER_CONSTANT, value=BLACK
-    )
+    if border_type == 'constant_black':
+        padded = cv2.copyMakeBorder(
+            resized, top, bottom, left, right, cv2.BORDER_CONSTANT, value=BLACK
+        )
     return padded
 
 
