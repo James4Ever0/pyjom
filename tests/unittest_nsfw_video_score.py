@@ -217,7 +217,7 @@ elif test_flag == "nsfw_video":
                     response_json = r.json()
                     response_json = processNSFWServerImageReply(response_json)
                     # breakpoint()
-                    print("RESPONSE:", response_json)
+                    # print("RESPONSE:", response_json)
                     responses.append(
                         response_json  # it contain 'messages'
                     )  # there must be at least one response, i suppose?
