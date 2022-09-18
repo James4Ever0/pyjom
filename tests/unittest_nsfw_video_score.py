@@ -121,6 +121,8 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
             get_max_classes = ['Drawing','Porn','Sexy','Hentai']):
     for element in NSFWReportArray
 
+def NSFWFilter(NSFWReport, )
+
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
         image = resizeImageWithPadding(frame, 1280,720, border_type="replicate")
