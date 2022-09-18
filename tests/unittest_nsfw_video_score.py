@@ -109,8 +109,9 @@ with tmpdir(path=tmpdirPath) as T:
         jpg_path = os.path.join(tmpdirPath, "{}.jpg".format(uuid.uuid4()))
         with tmpfile(path=jpg_path) as TF:
             cv2.imwrite(jpg_path, padded_resized_frame)
+            files = {"upload_file": open ("file.txt", "rb")}
             r = requests.post(
-                gateway+"nsfw",
+                gateway+"nsfw",files=files
             )  # post gif? or just jpg?
 # you can only post gif now, or you want to post some other formats?
 # if you post shit, you know it will strentch your picture and produce unwanted shits.
