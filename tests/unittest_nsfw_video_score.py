@@ -133,7 +133,7 @@ def processNSFWReportArray(NSFWReportArray, average_classes = ['Neutral'],
     return NSFWReport
 
 # you can reuse this, really.
-def NSFWFilter(NSFWReport, _filter={}):
+def NSFWFilter(NSFWReport, _filter={'Neutral'}):
 
 
 if test_flag == "padding":
