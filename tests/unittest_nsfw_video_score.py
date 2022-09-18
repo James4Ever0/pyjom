@@ -3,5 +3,6 @@
 import requests
 
 gateway = ""
+source = ""
 
-requests.post('')
+requests.post('') # post gif?
