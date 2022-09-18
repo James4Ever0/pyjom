@@ -18,7 +18,7 @@ import cv2
 # suggest you not to use this shit.
 import math
 
-from pyjom.imagetoolbox import 
+from pyjom.imagetoolbox import resizeImageWithPadding, scale
 
 from lazero.filesystem import tmpdir, tmpfile
 
