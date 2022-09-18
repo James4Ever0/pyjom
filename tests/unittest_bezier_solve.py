@@ -38,7 +38,7 @@ elif test_case == "evaluate":
             # we only get the single point.
             point = points.T[0]
             x,y = point
-            print('point:',point)
+            print('x: %f, y: %f' % (x,y)),point)
         except:
             print('ERROR: Invalid input value: %s' % s)
     # print(axis)
