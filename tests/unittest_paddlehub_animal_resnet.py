@@ -7,7 +7,7 @@ from pyjom.imagetoolbox import resizeImageWithPadding
 import paddlehub as hub
 import cv2
 dog_labels = 狗 犬
-猫 # ends with this
+猫 # ends with this, and not containing forbidden words.
 熊猫
 猫狮
 猫头鹰
