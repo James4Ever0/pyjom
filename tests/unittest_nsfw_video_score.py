@@ -205,10 +205,9 @@ elif test_flag == "nsfw_video":
                 r = requests.post(
                     gateway + "nsfw", files=files
                 )  # post gif? or just jpg?
-                response_json = r.json()[0]
-                print("RESPONSE:", response_json)
-                # if response_json["message"]:
-                breakpoint()
+                try:
+                    response_json = r.json()[0]
+                    print("RESPONSE:", response_json)
                 responses.append(
                     response_json  # it contain 'messages'
                 )  # there must be at least one response, i suppose?
