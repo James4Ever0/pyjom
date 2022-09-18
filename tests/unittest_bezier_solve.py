@@ -3,7 +3,7 @@ import numpy as np
 
 skew = -.5 # skew: (-0.5,0.5) otherwise this shit will look ugly.
 x_start, y_start = 0, 0
-x_end, y_end = 1, 1
+x_end, y_end = 0.5, 0.5
 
 x_diff = x_end - x_start
 y_diff = y_end - y_start
