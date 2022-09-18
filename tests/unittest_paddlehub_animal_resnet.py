@@ -17,3 +17,4 @@ for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
     )
     result = classifier.classification(images=[padded_resized_frame])
     sprint("RESULT:", result)
+    breakpoint()
