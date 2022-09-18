@@ -4,5 +4,5 @@ import requests
 
 gateway = ""
 source = ""
-
+from lazero.
 r = requests.post(gateway,) # post gif?
