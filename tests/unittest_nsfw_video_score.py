@@ -153,9 +153,9 @@ def processNSFWReportArray(
         for key in element.keys():
             NSFWReport[key] = NSFWReport.get(key, []) + [element[key]]
     for average_class in average_classes:
-        NSFWReport[average_class] = np.mean(NSFWReport.get(average_class, [0]))
+        NSFWReport[average_class] = superMean(NSFWReport.get(average_class, [0]))
     for get_max_class in get_max_classes:
-        NSFWReport[get_max_class] = max(NSFWReport.get(get_max_class, [0]))
+        NSFWReport[get_max_class] = superMax(NSFWReport.get(get_max_class, [0]))
     return NSFWReport
 
 
