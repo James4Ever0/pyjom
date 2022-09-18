@@ -117,7 +117,8 @@ test_flag = "nsfw_image"
 # test_flag = "paddinging"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
-def processNSFWReportArray()
+def processNSFWReportArray(NSFWReportArray,):
+    for element in NSFWReportArray
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
