@@ -184,7 +184,7 @@ elif test_flag == "nsfw_video":
     # use another source?
     with tmpdir(path=tmpdirPath) as T:
         for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-            padded_resized_frame = resizeImageWithPadding(frame, 224, 224,border_type='')
+            padded_resized_frame = resizeImageWithPadding(frame, 224, 224,border_type='replicate')
             # i'd like to view this.
             basename = "{}.jpg".format(uuid.uuid4())
             jpg_path = os.path.join(tmpdirPath, basename)
