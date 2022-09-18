@@ -32,3 +32,12 @@ def evaluateBezierCurve(input_value:float,curve, curve_params:dict):
   x,y = point
   result = y
   return result
+
+def multiParameterExponentialNetwork(*args, input_bias=0.05, curve_function=bezierCurve, curve_function_kwargs = {'start':(0,0),'end':(1,1)'skew':0}, evaluate_function=evaluateBezierCurve):
+  curve, curve_params = curve_function(**curve_function_kwargs)
+  value = evaluate_function(input_bias, curve, curve_params)
+  for index, input_value in enumerate(args):
+    apply_list = [input_value]*(index+1)
+    for apply_item in apply_list:
+      value += (1-value)*function(apply_item, **function_kwargs)
+  return value
