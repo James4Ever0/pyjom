@@ -141,7 +141,8 @@ def calculateVideoMeanDetectionConfidence(
 from pyjom.commons import checkMinMaxDict
 
 def detectionConfidenceFilter(detectionConfidence, filter_dict = {'dog':{'min':0.5}}, logic:Literal['AND','OR']='OR'): # what is the logic here? and? or?
-    for 
+    for identity in filter_dict.keys():
+        
 
 for result in resultGenerator:  # this is for each file.
     from lazero.utils.logger import sprin
