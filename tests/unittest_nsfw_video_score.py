@@ -144,6 +144,8 @@ elif test_flag = "nsfw_image":
     source = ""
     image = cv2.imread(source)
     jpg_path = 
+            with tmpfile(path=jpg_path) as TF:
+
                     cv2.imwrite(jpg_path, padded_resized_frame)
                 files = {"image": (basename, open(jpg_path, "rb"), "image/jpeg")}
                 r = requests.post(gateway + "nsfw", files=files)  # post gif? or just jpg?
