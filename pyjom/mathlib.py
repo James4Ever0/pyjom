@@ -8,12 +8,13 @@ def superMean(mList,default=0):
     return np.mean(mList)
 
 def superMax(mList,default=0):
-    if len(mList) == 0: return default0
+    if len(mList) == 0: return default
     return max(mList)
 
 def superMin(mList,default=0):
-    if len(mList) == 0: return default0
+    if len(mList) == 0: return default
     return min(mList)
+
 def uniq(mList, ordered=True, random=False):
     if ordered:
         result = []
