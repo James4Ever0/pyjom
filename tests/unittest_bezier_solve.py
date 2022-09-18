@@ -4,7 +4,10 @@ import numpy as np
 skew = 0.2 # skew: (-0.5, 0.5)
 x_start, y_start = 0,0
 x_end, y_end = 1,1
+
 x_diff = x_end-x_start
+y_diff = y_end-y_start
+
 nodes1 = np.asfortranarray([
     [x_start, (x_end-x_start)+(skew, x_end],
     [y_start, (y_end-y_start)-skew, y_end],
