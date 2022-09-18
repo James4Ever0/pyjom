@@ -203,7 +203,7 @@ elif test_flag == "nsfw":
                     response_json # it contain 'messages'
                 )  # there must be at least one response, i suppose?
             NSFWReport = processNSFWReportArray(responses)
-            result = NSFWReport)
+            result = NSFWFilter(NSFWReport)
 # we don't want drawing dogs.
 
 # [{'className': 'Neutral', 'probability': 0.9995943903923035}, {'className': 'Drawing', 'probability': 0.00019544694805517793}, {'className': 'Porn', 'probability': 0.00013213469355832785}, {'className': 'Sexy', 'probability': 6.839347042841837e-05}, {'className': 'Hentai', 'probability': 9.632151886762585e-06}]
