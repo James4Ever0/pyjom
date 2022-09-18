@@ -26,7 +26,7 @@ reviewer = keywordDecorator(
 # videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 # fileList = [{"type": "image", "path": videoPath}]
 videoPaths = ["/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4",
-]
+"/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4"]
 fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
 
 resultGenerator, function_id = reviewer(
@@ -187,6 +187,7 @@ for result in resultGenerator:  # this is for each file.
     # sprint("DETECTION DATA:")
     # sprint(detectionData)
     filepath = detectionData["path"]
+    sprint("FILEPATH: %s" % filepath)
     filetype = detectionData["type"]
     dataList = detectionData["data"]
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
