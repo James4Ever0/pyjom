@@ -6,7 +6,6 @@ from lazero.network.checker import waitForServerUp
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 
 gateway = "http://localhost:8511/"
-source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 from lazero.utils.importers import cv2_custom_build_init
 
