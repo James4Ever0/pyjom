@@ -9,8 +9,13 @@ autoArgs = {
 }
 
 def superMean(mList):
+    if len(mList) == 0: return 0
+    return np.mean(mList)
 
 def superMax(mList):
+    if len(mList) == 0: return 0
+    return np.mean(mList)
+
 
 template_names = ["yolov5_detector.mdl.j2"]
 semiauto = False
