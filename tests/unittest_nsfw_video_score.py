@@ -20,7 +20,7 @@ def resizeWithPadding(image, width, height):
     targetWidth = min(width, min(math.floor(iw*height/ih)))
     targetHeight =  min(height, min(math.floor(ih*width/iw)))
     resized = cv2.resize(image, (targetWidth, targetHeight), interpolation=cv2.INTER_CUBIC)
-    BLACK = [0,0,0]
+    BLACK = [0]*channels
     top = max(0,math.floor((height-targetHeight)/2))
     bottom = max(0,targetHeight-top)
     left = max(0,math.floor((width-targetWidth)/2))
