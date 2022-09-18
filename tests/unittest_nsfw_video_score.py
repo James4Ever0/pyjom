@@ -197,6 +197,8 @@ elif test_flag == "nsfw":
                 )  # post gif? or just jpg?
                 response_json = r.json()
                 print("RESPONSE:", response_json)
+                if response_json['message']
+                
                 responses.append(
                     response_json # it contain 'messages'
                 )  # there must be at least one response, i suppose?
