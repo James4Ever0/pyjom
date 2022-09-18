@@ -9,7 +9,7 @@ source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 # suggest you not to use this shit.
 
-def resizeWithPadding()
+def resizeWithPadding(image, width, height):
 
 from lazero.filesystem import tmpdir
 
