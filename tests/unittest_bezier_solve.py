@@ -35,8 +35,9 @@ elif test_case == "evaluate":
             BertGenerationTokenizer
         try:
             s = float(s)
-            point = curve1.evaluate(s)
-            print('point:',(x,y))
+            points = curve1.evaluate(s)
+            # we only get the single point.
+            print('point:',)
         except:
             print('ERROR: Invalid input value: %s' % x)
     # print(axis)
