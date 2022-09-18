@@ -16,6 +16,7 @@ import cv2
 # suggest you not to use this shit.
 import math
 
+def scanWithPadding()
 
 def resizeWithPadding(image, width, height):
     shape = image.shape
