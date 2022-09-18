@@ -6,7 +6,7 @@ from pyjom.imagetoolbox import resizeImageWithPadding
 
 import paddlehub as hub
 import cv2
-
+dog_labels = {}
 from lazero.utils.logger import sprint
 
 classifier = hub.Module(name="resnet50_vd_animals")
