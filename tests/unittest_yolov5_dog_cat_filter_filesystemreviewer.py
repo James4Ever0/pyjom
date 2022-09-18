@@ -72,9 +72,10 @@ def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
             location, confidence, identity = [
                 elem[key] for key in ["location", "confidence", "identity"]
             ]
-            print('location:', location)
-            print('confidence:', confidence)
-            sprint('identity:', identity)
+            if debug:
+                print('location:', location)
+                print('confidence:', confidence)
+                sprint('identity:', identity)
         data_dict.update(
             {"data": current_shot_detections}
         )  # just detections, not a list in time series order
