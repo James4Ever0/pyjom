@@ -6,6 +6,8 @@ nodes1 = np.asfortranarray([
 ])
 curve1 = bezier.Curve(nodes1, degree=2)
 
+curve1.
+
 import matplotlib.pyplot as plt
 plt.plot(curve1)
 plt.show()
