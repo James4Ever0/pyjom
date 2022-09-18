@@ -6,20 +6,23 @@ from pyjom.imagetoolbox import resizeImageWithPadding
 
 import paddlehub as hub
 import cv2
-dog_labels = ['狗', '犬', '梗']
-cat_labels = ['猫'] # ends with this, and not containing forbidden words.
+
+
+
+dog_labels = ["狗", "犬", "梗"]
+cat_labels = ["猫"]  # ends with this, and not containing forbidden words.
 
 forbidden_words = [
-'熊猫',
-'猫狮',
-'猫头鹰',
-'丁丁猫儿',
-'绿猫鸟',
-'猫鼬',
-'猫鱼',
-'玻璃猫',
-'猫眼',
-'猫蛱蝶',
+    "熊猫",
+    "猫狮",
+    "猫头鹰",
+    "丁丁猫儿",
+    "绿猫鸟",
+    "猫鼬",
+    "猫鱼",
+    "玻璃猫",
+    "猫眼",
+    "猫蛱蝶",
 ]
 from lazero.utils.logger import sprint
 
@@ -32,7 +35,7 @@ if test_flag == "video":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
         padded_resized_frame = resizeImageWithPadding(
             frame, 224, 224, border_type="replicate"
-        ) # pass the test only if three of these containing 'cats'
+        )  # pass the test only if three of these containing 'cats'
         result = classifier.classification(
             images=[padded_resized_frame], top_k=3, use_gpu=False
         )  # check it?
