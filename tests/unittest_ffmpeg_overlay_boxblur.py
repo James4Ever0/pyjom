@@ -19,5 +19,7 @@ layer_1 = video_stream.filter('scale',w=1080, h='ih*1080/iw')
 
 output_stream = layer_0.overlay(layer_1,x=0, y='floor((H-h)/2)')
 
+from lazero.filesystem import tmpdir
 
+with tmpdir('/dev/shm/')
 ffmpeg.output(output_stream, '/dev/shm/output.mp4')
