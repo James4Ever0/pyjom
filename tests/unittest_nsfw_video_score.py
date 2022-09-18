@@ -143,6 +143,8 @@ elif test_flag == "nsfw":
 elif test_flag = "nsfw_image":
     source = ""
     image = cv2.imread(source)
+            basename = "{}.jpg".format(uuid.uuid4())
+
     jpg_path = 
             with tmpfile(path=jpg_path) as TF:
 
