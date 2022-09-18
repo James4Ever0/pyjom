@@ -110,10 +110,10 @@ test_flag = ""
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
-        padded_resized_frame = resizeImageWithPadding(frame, 224, 224)
+        image = resizeImageWithPadding(frame, 224, 224)
         # i'd like to view this.
 
-            cv2.imshow("SCANNED %d" % index, image)
+            cv2.imshow("PADDED", image)
             cv2.waitKey(0)
 elif test_flag == "scanning":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
