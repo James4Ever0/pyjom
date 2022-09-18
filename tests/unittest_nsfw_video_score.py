@@ -70,8 +70,9 @@ with tmpdir(path=tmpdirPath) as T:
     for frame in getVideoFrameIteratorWithFPS(source, -1,-1, fps=1):
         padded_resized_frame = resizeImageWithPadding(frame, 224,224)
         jpg_path = os.path.join(tmpdirPath, "{}.jpg".format(uuid.uuid4()))
-r = requests.post(
-    gateway,
-)  # post gif?
+        cv2.imwrite(jpg_path, padded_resized_frame)
+        r = requests.post(
+            gateway,
+        )  # post gif?
 # you can only post gif now, or you want to post some other formats?
 # if you post shit, you know it will strentch your picture and produce unwanted shits.
