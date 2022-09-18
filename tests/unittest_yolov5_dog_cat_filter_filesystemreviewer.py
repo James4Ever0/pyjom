@@ -94,6 +94,8 @@ def calculateVideoMeanDetectionConfidence(dataList, identities=['dog','cat'], fr
                     continue
             report[identity].append(value)
     final_report = {}
+    for identity in identities:
+        if 
                 
 
 
