@@ -51,9 +51,9 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
         frameDetectionData = timeseries_data
         for elem in frameDetectionData:
             location, confidence, identity = [elem[key] for key in ['location','confidence','identity']]
-            print('location:', location)
-            print('confidence:', confidence)
-            print('identity:', identity)
+            # print('location:', location)
+            # print('confidence:', confidence)
+            # print('identity:', identity)
         data_dict.update({'data':})
     data_dict.update({'path':filepath,'type':mimetype, })
 
