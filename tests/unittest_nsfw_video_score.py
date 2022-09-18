@@ -108,7 +108,8 @@ waitForServerUp(8511, "nsfw nodejs server")
 with tmpdir(path=tmpdirPath) as T:
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
         padded_resized_frame = resizeImageWithPadding(frame, 224, 224)
-        jpg_path = os.path.join(tmpdirPath, "{}.jpg".format(uuid.uuid4()))
+        basename = "{}.jpg".format(uuid.uuid4())
+        jpg_path = os.path.join(tmpdirPath, basename)
         with tmpfile(path=jpg_path) as TF:
             cv2.imwrite(jpg_path, padded_resized_frame)
             files = {"upload_file": open(jpg_path, "rb")}
