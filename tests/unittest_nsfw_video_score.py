@@ -115,6 +115,7 @@ import os
 test_flag = "nsfw_image"
 # test_flag = "scanning"
 # test_flag = "paddinging"
+    source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 
 if test_flag == "padding":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
@@ -129,7 +130,6 @@ elif test_flag == "scanning":
             cv2.imshow("SCANNED %d" % index, image)
             cv2.waitKey(0)
 elif test_flag == "nsfw":
-    source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
     # use another source?
     with tmpdir(path=tmpdirPath) as T:
         for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
