@@ -60,7 +60,7 @@ def extractYolov5DetectionData(detectionData, mimetype='video'):
     return data_dict
 
 def calculateVideoMaxDetectionConfidence(dataList, identities=['dog','cat']): # does it have a dog?
-    
+    report = {identity:0 for identity in identities}
     for elem in dataList:
         detections = elem['detections']
         for detection in detections:
