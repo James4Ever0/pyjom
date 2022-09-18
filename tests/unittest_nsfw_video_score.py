@@ -200,6 +200,7 @@ elif test_flag == "nsfw":
                 responses.append(
                     response_json
                 )  # there must be at least one response, i suppose?
+            NSFWReport = processNSFWReportArray(responses)
             result = 
 # we don't want drawing dogs.
 
