@@ -12,6 +12,7 @@ from lazero.utils.logger import sprint
 classifier = hub.Module(name="resnet50_vd_animals")
 # 'ResNet50vdAnimals' object has no attribute 'gpu_predictor'
 # no gpu? really?
+test_
 for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
     padded_resized_frame = resizeImageWithPadding(
         frame, 224, 224, border_type="replicate"
