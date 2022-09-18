@@ -18,7 +18,11 @@ video_stream = stream.video
 output_width = 1080
 output_height = 1920
 
-layer_0 = video_stream.filter("scale", w=output_width, h=1920).filter("gblur", sigma=9) # this is default?
+
+output_width = 1080
+output_height = 1920
+
+layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) # this is default?
 
 # print('layer_0 args', layer_0.get_args())
 
