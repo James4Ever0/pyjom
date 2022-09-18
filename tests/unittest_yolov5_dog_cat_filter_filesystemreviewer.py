@@ -158,8 +158,9 @@ def detectionConfidenceFilter(detectionConfidence:dict, filter_dict = {'dog':{'m
 for result in resultGenerator:  # this is for each file.
     # sprint(result)
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
+    print('DETECTION DATA:',detectiondata)
     detectionConfidence = calculateVideoMeanDetectionConfidence(detectionData)
-    sprint("DETECTION CONFIDENCE:")
+    sprint("DETECTION CONFIDENCE:", detectionConfidence)
     filter_result = detectionConfidenceFilter(detectionConfidence)
     sprint("FILTER PASSED?", filter_result)
     # breakpoint()
