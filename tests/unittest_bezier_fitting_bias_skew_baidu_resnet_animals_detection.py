@@ -48,5 +48,5 @@ def multiParameterExponentialNetwork(
     for index, input_value in enumerate(args):
         apply_list = [input_value] * (index + 1)
         for apply_item in apply_list:
-            value += (1 - value) * function(apply_item, **function_kwargs)
+            value += (1 - value) * evaluate_function(apply_item, curve,**function_kwargs)
     return value
