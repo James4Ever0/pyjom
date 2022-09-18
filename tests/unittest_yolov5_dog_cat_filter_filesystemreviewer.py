@@ -8,13 +8,7 @@ autoArgs = {
     "yolov5_detector": {"model": "yolov5x"},  # will this run? no OOM?
 }
 
-def superMean(mList):
-    if len(mList) == 0: return 0
-    return np.mean(mList)
-
-def superMax(mList):
-    if len(mList) == 0: return 0
-    return max(mList)
+from pyjom.mathlib import superMean, superMax
 
 
 template_names = ["yolov5_detector.mdl.j2"]
