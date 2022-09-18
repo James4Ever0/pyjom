@@ -28,8 +28,8 @@ def ffmpegVideoPreProductionFilter(
     preview=True,
     # padding=True,
     paddingBlur=True,
-    output_width=1920,
-    output_height=1080,
+    output_width: int = 1920,
+    output_height: int = 1080,
 ):  # what is the type of this shit?
     # enable that 'fast' flag? or we use low_resolution ones? not good since that will ruin our detection system!
     # anyway it will get processed? or not?
@@ -186,7 +186,7 @@ def ffmpegVideoPreProductionFilter(
         "crop": 1,
         "removegrain": 2,
         "bilateral": 2,
-        "scale": 3, ## wtf?
+        "scale": 3,  ## wtf?
         "minterpolate": 4,
         "hflip": MAX_INT,
         "vflip": MAX_INT,
