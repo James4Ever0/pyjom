@@ -108,7 +108,7 @@ import numpy as np
 def calculateVideoMeanDetectionConfidence(
     dataList:list,
     identities=["dog", "cat"],
-    framewise_strategy: Literal["mean", "max"] = "mean",
+    framewise_strategy: Literal["mean", "max"] = "max",
     timespan_strategy: Literal["max", "mean", "mean_no_missing"] = "mean_no_missing",
 ):
     report = {identity: [] for identity in identities}
