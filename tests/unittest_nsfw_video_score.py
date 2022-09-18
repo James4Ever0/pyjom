@@ -1,6 +1,6 @@
 # we take max for the concerned ones, and take mean for the unconcerned ones.
 
-from
+from test_commons import *
 import requests
 
 gateway = ""
