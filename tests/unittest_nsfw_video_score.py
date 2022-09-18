@@ -16,6 +16,7 @@ import cv2
 # suggest you not to use this shit.
 import math
 
+
 def scanImageWithWindowSize(image, width, height, return_direction=False):
     shape = image.shape
     assert len(shape) == 3
@@ -27,46 +28,47 @@ def scanImageWithWindowSize(image, width, height, return_direction=False):
     )
     # determine scan direction here.
     imageSeries = []
-    if targetWidth/targetHeight == width/height:
-        imageSeries = [resized] # as image series.
+    if targetWidth / targetHeight == width / height:
+        imageSeries = [resized]  # as image series.
         direction = None
-    elif targetWidth/targetHeight < width/height:
+    elif targetWidth / targetHeight < width / height:
         direction = "vertical"
         # the scanning is along the vertical axis, which is the height.
         index = 0
         while True:
-            start, end = height*index, height*(index+1)
+            start, end = height * index, height * (index + 1)
             if start < targetHeight:
                 if end > targetHeight:
                     end = targetHeight
-                    start = targetHeight-height
+                    start = targetHeight - height
                 # other conditions, just fine
             else:
-                break # must exit since nothing to scan.
-            cropped = resized[start:end,:,:] # height, width, channels
+                break  # must exit since nothing to scan.
+            cropped = resized[start:end, :, :]  # height, width, channels
             imageSeries.append(cropped)
-            index +=1
+            index += 1
     else:
         direction = "horizontal"
         index = 0
         while True:
-            start, end = width*index, width*(index+1)
+            start, end = width * index, width * (index + 1)
             if start < targetWidth:
                 if end > targetWidth:
                     end = targetWidth
-                    start = targetWidth-width
+                    start = targetWidth - width
                 # other conditions, just fine
             else:
-                break # must exit since nothing to scan.
-            cropped = resized[:,start:end,:] # height, width, channels
+                break  # must exit since nothing to scan.
+            cropped = resized[:, start:end, :]  # height, width, channels
             imageSeries.append(cropped)
-            index +=1
+            index += 1
     if return_direction:
         return imageSeries, direction
     else:
         return imageSeries
 
-def resizeImageWithPadding(image, width, height, border_type='constant_black'):
+
+def resizeImageWithPadding(image, width, height, border_type="constant_black"):
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
@@ -80,16 +82,16 @@ def resizeImageWithPadding(image, width, height, border_type='constant_black'):
     bottom = max(0, height - targetHeight - top)
     left = max(0, math.floor((width - targetWidth) / 2))
     right = max(0, width - targetWidth - left)
-    if border_type == 'constant_black':
+    if border_type == "constant_black":
         padded = cv2.copyMakeBorder(
             resized, top, bottom, left, right, cv2.BORDER_CONSTANT, value=BLACK
         )
-    elif border_type == 'replicate':
+    elif border_type == "replicate":
         padded = cv2.copyMakeBorder(
             resized, top, bottom, left, right, cv2.BORDER_REPLICATE, value=BLACK
         )
     else:
-        raise Exception('unknown border_type: %s' % border_type)
+        raise Exception("unknown border_type: %s" % border_type)
     return padded
 
 
@@ -100,10 +102,10 @@ tmpdirPath = "/dev/shm/medialang/nsfw"
 import uuid
 
 with tmpdir(path=tmpdirPath) as T:
-    for frame in getVideoFrameIteratorWithFPS(source, -1,-1, fps=1):
-        padded_resized_frame = resizeImageWithPadding(frame, 224,224)
+    for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
+        padded_resized_frame = resizeImageWithPadding(frame, 224, 224)
         jpg_path = os.path.join(tmpdirPath, "{}.jpg".format(uuid.uuid4()))
-        with tmpfile(path = jpg_path) as TF:
+        with tmpfile(path=jpg_path) as TF:
             cv2.imwrite(jpg_path, padded_resized_frame)
             r = requests.post(
                 gateway,
