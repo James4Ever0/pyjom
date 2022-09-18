@@ -6,6 +6,9 @@ from lazero.network.checker import waitForServerUp
 from pyjom.videotoolbox import 
 gateway = "http://localhost:8080/"
 source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
+
+# suggest you not to use this shit.
+
 from lazero.filesystem import tmpdir
 
 r = requests.post(gateway,) # post gif?
