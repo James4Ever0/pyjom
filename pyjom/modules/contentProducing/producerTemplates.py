@@ -166,7 +166,7 @@ def getMusicCutSpans(
             timespan_length = elem - startingPoint
             if inRange(
                 timespan_length,
-                (standard_bpm_span_min_selected, standard_bpm_spans[-1]),
+                (standard_bpm_span_min_selected, standard_bpm_spans_min_selected*2),
                 tolerance=mbeat_time_tolerance,
             ):
                 # select this element.
