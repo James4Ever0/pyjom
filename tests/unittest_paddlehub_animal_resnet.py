@@ -16,7 +16,8 @@ def labelFileReader(filename):
     return content
 
 dog_suffixs = ["狗", "犬", "梗"]
-cat_labels = ["猫"]  # ends with this, and not containing forbidden words.
+cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
+dog_labels = labelFileReader("")
 
 forbidden_words = [
     "灵猫",
