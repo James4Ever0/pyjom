@@ -40,35 +40,35 @@ def PMRT_0(scriptFilePath = "", verbose=True):
         medialangScript = f.read()
     return partialMedialangRenderTest(medialangScript, verbose=verbose)
 
-from contextlib import AbstractContextManager
+# from contextlib import AbstractContextManager
 
-class tmpdir(AbstractContextManager):
-    """Context manager to suppress specified exceptions
+# class tmpdir(AbstractContextManager):
+#     """Context manager to suppress specified exceptions
 
-    After the exception is suppressed, execution proceeds with the next
-    statement following the with statement.
+#     After the exception is suppressed, execution proceeds with the next
+#     statement following the with statement.
 
-         with suppress(FileNotFoundError):
-             os.remove(somefile)
-         # Execution still resumes here if the file was already removed
-    """
+#          with suppress(FileNotFoundError):
+#              os.remove(somefile)
+#          # Execution still resumes here if the file was already removed
+#     """
 
-    def __init__(self, path=None):
-        assert os.path.isabs(path)
-        self._tmpdir = path
+#     def __init__(self, path=None):
+#         assert os.path.isabs(path)
+#         self._tmpdir = path
 
-    def __enter__(self):
-        print("temporary directory: %s" % self._tmpdir)
-        if os.path.exists(self._tmpdir): shutil.rmtree(self._tmpdir)
-        os.makedirs(self._tmpdir)
-        return self._tmpdir
+#     def __enter__(self):
+#         print("temporary directory: %s" % self._tmpdir)
+#         if os.path.exists(self._tmpdir): shutil.rmtree(self._tmpdir)
+#         os.makedirs(self._tmpdir)
+#         return self._tmpdir
 
-    def __exit__(self, exctype, excinst, exctb):
-        # try not to handle exceptions?
-        tempdir = self._tmpdir
-        print("cleaning tempdir: %s" % tempdir)
-        shutil.rmtree(tempdir)
-        return False
+#     def __exit__(self, exctype, excinst, exctb):
+#         # try not to handle exceptions?
+#         tempdir = self._tmpdir
+#         print("cleaning tempdir: %s" % tempdir)
+#         shutil.rmtree(tempdir)
+#         return False
         
 if __name__ == "__main__":
     COMPLETE_TEST = True
