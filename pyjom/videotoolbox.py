@@ -1791,7 +1791,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     dog_suffixs = ["狗", "犬", "梗"]
     cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
     dog_labels = labelFileReader(
-        "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt"
+       dog_label_file_path
     )
     cat_labels = labelFileReader(
         "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt"
