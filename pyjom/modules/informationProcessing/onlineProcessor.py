@@ -3,14 +3,25 @@ import os
 from lazero.utils import sprint
 from lazero.network import download, waitForServerUp
 from lazero.filesystem import tmpdir
+
+
 @decorator()
-def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_url = "http://127.0.0.1:8381",tmpPath = "/dev/shm/medialang/online_test", debug=False):
+def OnlineProcessor(
+    newElems,
+    use_proxy=False,
+    clash_refresher_port=8677,
+    proxy_url="http://127.0.0.1:8381",
+    tmpPath="/dev/shm/medialang/online_test",
+    debug=False,
+):
     if use_proxy:
         clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
-        waitForServerUp(clash_refresher_port,"clash update controller")
+        waitForServerUp(clash_refresher_port, "clash update controller")
+
     def set_proxy():
         os.environ["http_proxy"] = proxy_url
         os.environ["https_proxy"] = proxy_url
+
     flag = "topic_with_fetcher"
 
     with tmpdir(path=tmpPath) as testDir:
@@ -21,7 +32,7 @@ def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_
             set_proxy()
         for elem in newElems:
             if use_proxy:
-                waitForServerUp(clash_refresher_port,"clash update controller")
+                waitForServerUp(clash_refresher_port, "clash update controller")
             if debug:
                 sprint(elem)
             (item_id, local_video_location) = elem
@@ -89,7 +100,7 @@ def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_
                     print("removing abandoned video:", local_video_location)
                     os.remove(local_video_location)
             else:
-                yield {'location': local_video_location, 'item_id': item_id}
+                yield {"location": local_video_location, "item_id": item_id}
                 # if you abandon that, better delete it!
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             # what's next? find some audio files? or just use one audio?
