@@ -522,6 +522,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
             producer="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
         )  # what is the backend?
         rendered_media_location = medialangObject.execute()
+        # maybe we need render the lyric file separately.
         yield rendered_media_location # another generator?
 
 def getProducerTemplate(template):
