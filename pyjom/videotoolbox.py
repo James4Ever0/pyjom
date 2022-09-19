@@ -1989,7 +1989,7 @@ def NSFWVideoFilter(
     gateway="http://localhost:8511/",
     debug=True,
     filter_dict={
-        "Neutral": {"min": 0.3},
+        "Neutral": {"min": 0.15},
         "Sexy": {"max": 0.65},
         "Porn": {"max": 0.65},
         "Hentai": {"max": 0.65},
