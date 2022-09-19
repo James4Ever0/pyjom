@@ -13,9 +13,8 @@ def redisLRUCache(ttl=redisExpire,redisAddress = "127.0.0.1",redisPort = 9291,ma
     cache = RedisLRU(client,max_size=max_size)
     return cache(ttl=redisExpire)
 
-
 # we've fixed this shit.
-@redisLRUCache
+@redisLRUCache()
 def test_function(parameter):
     print('hello world')
     print('parameter:',parameter)
