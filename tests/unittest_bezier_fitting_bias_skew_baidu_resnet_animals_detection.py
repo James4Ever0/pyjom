@@ -108,6 +108,8 @@ from lazero.utils.logger import sprint
 import hyperopt
 
 hyperopt.hp.uniform('skew',-0.5, 0)
+hyperopt.hp.uniform('skew',-0.5, 0)
+
 
 def evaluate_params(input_bias, skew):
     difference = 0
