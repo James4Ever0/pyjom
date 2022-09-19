@@ -40,7 +40,13 @@ def dog_cat_name_recognizer(name):
     elif name in cat_labels:
         return "cat"
     elif name not in forbidden_words:
-        for dog_suffix in dog
+        for dog_suffix in dog_suffixs:
+            if name.endswith(dog_suffix):
+                return "dog"
+        for cat_suffix in cat_suffixs:
+            if name.endswith(cat_suffix):
+                return "cat"
+    return None
 
 from lazero.utils.logger import sprint
 
