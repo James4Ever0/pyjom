@@ -192,6 +192,8 @@ def detectionConfidenceFilter(
 
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 
+def bezierResnet50
+
 for result in resultGenerator:  # this is for each file.
     # sprint(result)
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
