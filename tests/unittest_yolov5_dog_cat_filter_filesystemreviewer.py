@@ -302,7 +302,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             new_name = dog_cat_name_recognizer(name)
             final_result_list.append((new_name, confidence))
         return final_result_list
-    report = []
+    dataList = []
     for frame in getVideoFrameIteratorWithFPS(videoPath, -1, -1, fps=1):
         padded_resized_frame = resizeImageWithPadding(
             frame, 224, 224, border_type="replicate"
