@@ -497,11 +497,13 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         data_ids = []
         for data in dataGenerator:
             # what is the format of the data?
+            
             if data_id not in data_ids:
                 dataDuration = data['meta']['duration']
                 data_ids.append(data_id)
                 render_list.append(candidate)
             complete = 
+    
             if complete:
                 break
 
