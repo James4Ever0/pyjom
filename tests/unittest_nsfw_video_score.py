@@ -75,15 +75,17 @@ def NSFWFilter(
         "Hentai": {"max": 0.5},
         "Drawing": {"max": 0.5},
     },
+    debug=False
 ):
     for key in filter_dict:
         value = NSFWReport.get(key, 0)
         key_filter = filter_dict[key]
         result = checkMinMaxDict(value, key_filter)
         if not result:
-            print("not passing NSFW filter: %s" % key)
-            print("value: %s" % value)
-            print("filter: %s" % str(key_filter))
+            if debug:
+                print("not passing NSFW filter: %s" % key)
+                print("value: %s" % value)
+                print("filter: %s" % str(key_filter))
             return False
     return True
 
