@@ -135,7 +135,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
 
         del data["rules"]
         data["mode"] = "global"
-        data["dns"]["listen"] = "0.0.0.0:{}".format(61)
+    data["dns"]["listen"] = "0.0.0.0:{}".format(61)
 
         # data = pyYamlToGoYaml(data)
         data_dump = yaml.safe_dump(data, allow_unicode=True)
