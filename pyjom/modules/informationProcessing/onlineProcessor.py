@@ -8,7 +8,7 @@ from lazero.filesystem import tmpdir
 @decorator
 def OnlineProcessor(
     newElems,
-    source='giphy'
+    source='giphy',
     use_proxy=False,
     clash_refresher_port=8677,
     proxy_url="http://127.0.0.1:8381",
