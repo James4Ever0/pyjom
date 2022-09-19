@@ -62,6 +62,7 @@ def paddleAnimalDetectionResultToList(result):
     return resultList
 
 def translateResultListToDogCat(resultList):
+    
     for name, confidence in resultList:
         new_name = dog_cat_name_recognizer(name)
 
