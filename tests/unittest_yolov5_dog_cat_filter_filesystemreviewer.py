@@ -309,7 +309,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
         final_result_list = translateResultListToDogCatList(resultList)
         if debug:
             sprint("RESULT LIST:", final_result_list)
-        # now we apply the thing?
+        # now we apply the thing? the yolov5 thing?
     return result
 
 
