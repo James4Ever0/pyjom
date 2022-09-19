@@ -128,19 +128,19 @@ def evaluate_params(input_bias, skew):
             absolute_difference = abs(target_output - output)
             sprint("absolute difference:", absolute_difference)
             differences.append((label, absolute_difference))
-            mLabels = ["dog", "cat"]
-            best_params_dict = {}
-            for label, difference in differences:
-                if label in mLabels:
-                    previousDifference = best_params_dict.get(label, 1)
-                    if previousDifference > difference:
-                        best_params_dict[label] = difference
-            final_differences = []
-            for mLabel in mLabels:
-                d = best_params_dict.get(mLabel, 1)
-                final_differences.append(d)
-            difference = min(final_differences)
-            sprint("FINAL DIFFERENCE:", difference)
+        mLabels = ["dog", "cat"]
+        best_params_dict = {}
+        for label, difference in differences:
+            if label in mLabels:
+                previousDifference = best_params_dict.get(label, 1)
+                if previousDifference > difference:
+                    best_params_dict[label] = difference
+        final_differences = []
+        for mLabel in mLabels:
+            d = best_params_dict.get(mLabel, 1)
+            final_differences.append(d)
+        difference_item = min(final_differences)
+    sprint("FINAL DIFFERENCE:", difference)
     return difference
 
 
