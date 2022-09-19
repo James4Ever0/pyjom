@@ -592,7 +592,7 @@ def petsWithMusicOnlineProducer(
             yield final_output_location  # another generator?
 
 
-def getProducerTemplate(template):
+def getProducerTemplate(template:str):
     producer_mapping = {
         "pets_with_music": petsWithMusicProducer,
         "pets_with_music_online": petsWithMusicOnlineProducer,
