@@ -526,7 +526,8 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         # maybe we need render the lyric file separately.
         # using a ffmpeg filter.
         final_output_location = ""
-        
+        import ffmpeg
+        ffmpeg.input(rendered_media_location).filter()
         yield rendered_media_location # another generator?
 
 def getProducerTemplate(template):
