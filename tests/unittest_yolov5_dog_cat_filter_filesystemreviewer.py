@@ -204,4 +204,5 @@ for result in resultGenerator:  # this is for each file.
     sprint("DETECTION CONFIDENCE:", detectionConfidence)
     filter_result = detectionConfidenceFilter(detectionConfidence)
     sprint("FILTER PASSED?", filter_result)
+    # if not passed, hit it with the b
     # breakpoint()
