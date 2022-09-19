@@ -7,7 +7,7 @@ from lazero.filesystem import tmpdir
 
 @decorator
 def OnlineProcessor(
-    newElems,
+    newElems, # a generator.
     source="giphy",
     use_proxy=False,
     clash_refresher_port=8677,
