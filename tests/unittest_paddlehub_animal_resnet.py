@@ -97,7 +97,9 @@ elif test_flag == "image":
     result = classifier.classification(
         images=[padded_resized_frame], top_k=3, use_gpu=False
     )
-    sprint("RESULT:", final_result_list)
+    resultList = paddleAnimalDetectionResultToList(result)
+    final_result_list = translateResultListToDogCatList(resultList)
+    sprint("FINAL RESULT LIST:", final_result_list)
     breakpoint()
 else:
     raise Exception("unknown test flag: %s" % test_flag)
