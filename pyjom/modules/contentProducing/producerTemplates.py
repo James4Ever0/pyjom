@@ -404,7 +404,7 @@ def renderList2MediaLang(
     medialangObject = Medialang(script=medialangScript)
     return medialangObject
 
-
+@redisLRUCache()
 def getMusicInfoParsed(config):
     music = config["music"]
     font = config["font"]
