@@ -161,7 +161,7 @@ def detectionConfidenceFilter(
     else:
         raise Exception("Invalid logic: %s" % logic)
 
-def yolov5VideoDogCatDetector(videoPath):
+def yolov5VideoDogCatDetector(videoPath, debug=False):
 
     template_names = ["yolov5_detector.mdl.j2"]
     semiauto = False
