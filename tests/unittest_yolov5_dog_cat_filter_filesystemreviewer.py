@@ -180,11 +180,11 @@ def yolov5VideoDogCatDetector(videoPath):
 # videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 # fileList = [{"type": "image", "path": videoPath}]
 
-fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
+    fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
 
-resultGenerator, function_id = reviewer(
-    fileList, generator=True, debug=False
-)  # or at least a generator?
+    resultGenerator, function_id = reviewer(
+        fileList, generator=True, debug=False
+    )  # or at least a generator?
 
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
     # sprint("DETECTION DATA:")
