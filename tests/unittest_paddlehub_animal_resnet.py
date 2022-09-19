@@ -69,7 +69,8 @@ if test_flag == "video":
         result = classifier.classification(
             images=[padded_resized_frame], top_k=3, use_gpu=False
         )  # check it?
-        resultList = paddle
+        resultList = paddleAnimalDetectionResultToList(result)
+        print("RESULT LIST:")
         # RESULT: [{'美国银色短毛猫': 0.23492032289505005, '虎斑猫': 0.14728288352489471, '美国银虎斑猫': 0.13097935914993286}]
         # so what is the major categories?
         # thanks to chinese, we are never confused.
