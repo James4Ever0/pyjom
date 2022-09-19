@@ -498,10 +498,10 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         data_ids = []
         for data in dataGenerator:
             # what is the format of the data?
-            data_id = data['']
+            data_id = data['item_id']
             if data_id not in data_ids:
                 dataDuration = data['meta']['duration']
-                videoSource = data['']
+                videoSource = data['location']
                 data_ids.append(data_id)
                 demanded_cut_spans.sort(lambda span: abs((span[1]-span[0])-dataDuration))
                 closest_span = demanded_cut_spans[0]
