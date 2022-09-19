@@ -17,7 +17,20 @@ import sys
 import random
 
 ## bring about 'redis cache' for faster testing.
+import redis
+from redis_lru import RedisLRU
 
+redisAddress = "127.0.0.1"
+redisPort = 9291
+
+client = redis.StrictRedis(host=redisAddress, port=redisPort)
+cache = RedisLRU(client,max_size=20)
+
+# redisCache = RedisCache(redisAddress, redisPort)
+oneDay = 60*60*24 # one day?
+redisExpire =oneDay*7 # god damn it!
+
+@cache(ttl=redisExpire)
 
 
 # this is root. this is not site-packages.
