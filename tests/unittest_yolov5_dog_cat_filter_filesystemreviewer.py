@@ -256,6 +256,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.083004724
                 if name.endswith(cat_suffix):
                     return "cat"
         return None
+    classifier = getPaddleResnet50AnimalsClassifier()
 
     return result
 
