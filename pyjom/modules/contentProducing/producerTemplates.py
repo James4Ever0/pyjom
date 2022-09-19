@@ -174,7 +174,7 @@ def getMusicCutSpansGaussian(music, music_duration,lyric_path, mintime=0.6, maxt
     # somehow it was wrong.
     # print("DEMANDED MUSIC CUT SPANS GENERATED")
     # breakpoint()
-    return demanded_cut_spans, standard_bpm_spans
+    return demanded_cut_spans, standard_bpm_spans # this is reverse search.
 
 
 def getMusicCutSpans(
