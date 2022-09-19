@@ -11,7 +11,7 @@ sprint("FUNCTION LABEL:", function_label)
 # breakpoint()
 tmpPath = "/dev/shm/medialang/online_test"
 import os
-
+"http://127.0.0.1:8381"
 flag = "topic_with_fetcher"
 
 with tmpdir(path=tmpPath) as testDir:
