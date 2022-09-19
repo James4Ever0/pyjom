@@ -540,7 +540,7 @@ def petsWithMusicOnlineProducer(
                 lyric_path,
                 demanded_cut_spans,
                 standard_bpm_spans,
-            ) = getMusicInfoParsed(config)
+            ) = getMusicInfoParsed(config) # this is taking long time.
             # check for 'demanded_cut_spans' now!
             render_list = []  # what is this freaking render_list?
             # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
