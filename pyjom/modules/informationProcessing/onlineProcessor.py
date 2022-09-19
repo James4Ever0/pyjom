@@ -1,12 +1,14 @@
 from pyjom.commons import *
 
 @decorator()
-def onlineProcessor(info, use_proxy=False): 
+def onlineProcessor(info, use_proxy=False):
+    from lazero.utils import sprint
+    from lazero.network import download, waitForServerUp
+    from lazero.filesystem import tmpdir
     if use_proxy:
         clash_refresher_port = 8677
         clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
-
-    waitForServerUp(clash_refresher_port,"clash update controller")
+        waitForServerUp(clash_refresher_port,"clash update controller")
 
     elems, function_label = OnlineTopicGenerator()
     sprint("FUNCTION LABEL:", function_label)
