@@ -103,8 +103,9 @@ elif test_flag == "image":
     # source = "/root/Desktop/works/pyjom/samples/image/miku_on_green.png"
     # besides calculating "DOG" or "CAT" we are also concerned about "NONE"
     # [(None, 0.9998186230659485), (None, 1.7534730432089418e-06), (None, 7.280816021193459e-07)]
-    source = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg" # no dog
-    # source = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.jpg" # has dog
+    # source = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg" # no dog
+    #  [(None, 0.9998675584793091), ('dog', 2.565316492564307e-07), (None, 1.562129767762599e-07)]
+    source = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.jpg" # has dog
     frame = cv2.imread(source)
     padded_resized_frame = resizeImageWithPadding(
         frame, 224, 224, border_type="replicate"
