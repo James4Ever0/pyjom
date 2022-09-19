@@ -65,7 +65,7 @@ def read_lrc(lrc_path):
 
 
 def getMusicCutSpansCandidates(
-    music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
+    music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
 
     beats, bpm = audioOwlAnalysis(music["filepath"])
