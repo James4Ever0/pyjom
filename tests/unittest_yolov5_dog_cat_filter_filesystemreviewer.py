@@ -192,7 +192,7 @@ def detectionConfidenceFilter(
 
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 
-def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948):
+def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5):
     return result
 
 for result in resultGenerator:  # this is for each file.
