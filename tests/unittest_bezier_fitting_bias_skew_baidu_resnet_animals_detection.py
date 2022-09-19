@@ -128,9 +128,8 @@ def evaluate_params(input_bias, skew):
             absolute_difference = abs(target_output - output)
             sprint("absolute difference:", absolute_difference)
             differences.append((label,absolute_difference))
-    for mLabel in ['dog','cat']:
         for label, difference in differences:
-            
+            if label in mLabels
     return difference
 
 
