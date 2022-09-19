@@ -1874,6 +1874,6 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     # breakpoint()
     return filter_result
 
-def yolov5_bezier_
+def yolov5_bezier_paddlehub_resnet50_dog_
 
 ########################### DOG CAT DETECTION #########################
