@@ -1891,5 +1891,6 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False
     else:
         if debug:
             print("FILTER PASSED")
+    return filter_result
 
 ########################### DOG CAT DETECTION #########################
