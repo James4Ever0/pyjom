@@ -55,7 +55,11 @@ classifier = hub.Module(name="resnet50_vd_animals")
 # no gpu? really?
 test_flag = "image"
 
-def 
+def paddleAnimalDetectionResultToList(result):
+    resultDict = result[0]
+    resultList = [(key,value) for key,value in resultDict.items()]
+    resultList.sort(key=lambda item: -item[1])
+    return resultList
 
 if test_flag == "video":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
