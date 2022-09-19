@@ -42,5 +42,6 @@ class OnlineAutoContentProducer(ContentProducer):
                     template=template,
                     template_configs=template_configs,
                 ),
+                
             }
         )
