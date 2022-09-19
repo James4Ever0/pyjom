@@ -9,15 +9,16 @@ def onlineProcessor(info, use_proxy=False):
         clash_refresher_port = 8677
         clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
         waitForServerUp(clash_refresher_port,"clash update controller")
+        proxy_url = "http://127.0.0.1:8381"
 
-    elems, function_label = OnlineTopicGenerator()
-    sprint("FUNCTION LABEL:", function_label)
-    # # 'pyjom.commons.OnlineTopicGenerator'
-    # breakpoint()
+
+    # elems, function_label = OnlineTopicGenerator()
+    # sprint("FUNCTION LABEL:", function_label)
+    # # # 'pyjom.commons.OnlineTopicGenerator'
+    # # breakpoint()
     tmpPath = "/dev/shm/medialang/online_test"
     import os
 
-    proxy_url = "http://127.0.0.1:8381"
 
 
     def set_proxy():
