@@ -87,9 +87,8 @@ curve_function_kwargs={"start": (0, 0), "end": (1, 1), "skew": skew} # maximize 
 for test_param, target_output in test_params:
     for index, (label, confidence) in enumerate(test_param):
         scope = test_param[index:]
-        scope_confidences = [elem[1] for elem in scope if elem[0] == ]
-
-        output = multiParameterExponentialNetwork(*params,input_bias=input_bias,curve_function_kwargs = curve_function_kwargs)
+        scope_confidences = [elem[1] for elem in scope if elem[0] == label]
+        output = multiParameterExponentialNetwork(*scope_confidences,input_bias=input_bias,curve_function_kwargs = curve_function_kwargs)
         print('output:',output)
         print('target_output:', target_output)
         absolute_difference = abs(target_output - output)
