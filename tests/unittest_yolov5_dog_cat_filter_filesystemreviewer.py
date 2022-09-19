@@ -11,35 +11,6 @@ autoArgs = {
 from pyjom.mathlib import superMean, superMax
 
 
-template_names = ["yolov5_detector.mdl.j2"]
-semiauto = False
-dummy_auto = False
-
-reviewer = keywordDecorator(
-    filesystemReviewer,
-    auto=True,
-    semiauto=semiauto,
-    dummy_auto=dummy_auto,
-    template_names=template_names,
-    args={"autoArgs": autoArgs},
-)
-# videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
-# fileList = [{"type": "image", "path": videoPath}]
-videoPaths = [
-    # "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4",
-    # "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
-    # "/root/Desktop/works/pyjom/samples/video/cat_invalid_without_mestimate.mp4",
-    "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif",
-    # "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.mp4",
-    # "/root/Desktop/works/pyjom/samples/video/kitty_flash_scaled.mp4",
-    # "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.mp4",
-]
-fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
-
-resultGenerator, function_id = reviewer(
-    fileList, generator=True, debug=False
-)  # or at least a generator?
-
 
 def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
     # plan to get some calculations!
