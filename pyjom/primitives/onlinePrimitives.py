@@ -1,5 +1,4 @@
 from pyjom.main import *
-from ..modules.informationProcessing.onlineProcessor import OnlineProcessor
 
 
 class OnlineAutoContentProducer(ContentProducer):
