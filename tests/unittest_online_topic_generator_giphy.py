@@ -95,12 +95,7 @@ with tmpdir(path=tmpPath) as testDir:
                     "EffectiveFPS",
                 ],  # also, the dog/cat detector! fuck.
                 [NSFWVideoFilter, None, dummyFilterFunction, "NSFW"],
-                [
-                    yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
-                    None,
-                    dummyFilterFunction,
-                    "DogCat",
-                ],
+,
             ]
             for function, mFilter, filterFunction, flag in mList:
                 mValue = function(local_video_location)
