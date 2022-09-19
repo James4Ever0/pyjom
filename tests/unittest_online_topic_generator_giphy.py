@@ -49,6 +49,8 @@ with tmpdir(path=tmpPath) as testDir:
         # print("HERE??",2)
         newElems, label = OnlineFetcher(elems, tempdir=tmpPath) # infinite video generators.
         for elem in newElems:
+waitForServerUp(clash_refresher_port,"clash update controller")
+
             sprint(elem)
             (item_id, local_video_location) = elem
             # what is the freaking response?
