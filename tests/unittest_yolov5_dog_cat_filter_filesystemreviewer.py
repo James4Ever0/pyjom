@@ -3,10 +3,6 @@ from pyjom.modules.contentReviewer import filesystemReviewer
 from pyjom.commons import keywordDecorator
 from lazero.utils.logger import sprint
 
-autoArgs = {
-    "subtitle_detector": {"timestep": 0.2},
-    "yolov5_detector": {"model": "yolov5x"},  # will this run? no OOM?
-}  # threshold: 0.4
 
 from pyjom.mathlib import superMean, superMax
 
