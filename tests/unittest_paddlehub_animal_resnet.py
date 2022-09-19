@@ -97,6 +97,7 @@ elif test_flag == "image":
     # source = "/root/Desktop/works/pyjom/samples/image/porn_shemale.jpeg" # definitely not animal
     # [(None, 0.9894463419914246), ('dog', 1.564090962347109e-05), ('dog', 1.3550661606132053e-05)]
     source = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
+    source = ""
     frame = cv2.imread(source)
     padded_resized_frame = resizeImageWithPadding(
         frame, 224, 224, border_type="replicate"
