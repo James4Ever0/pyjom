@@ -83,6 +83,12 @@ with tmpdir(path=tmpPath) as testDir:
                 [get_duration, duration_filter, checkMinMaxDict, "duration"],
                 [get_fps_float, fps_filter, checkMinMaxDict, "fps"],
                 [
+                    yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
+                    None,
+                    dummyFilterFunction,
+                    "DogCat",
+                ],
+                [
                     getVideoColorCentrality,
                     video_color_filter,
                     checkVideoColorCentrality,
