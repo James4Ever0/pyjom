@@ -51,20 +51,35 @@ def multiParameterExponentialNetwork(
             value += (1 - value) * evaluate_function(apply_item, curve, curve_params)
     return value
 
+
 # params = (0.2,0.1,0.1)
 ##################################################
 # [('cat', 0.23492032289505005), ('cat', 0.14728288352489471), ('cat', 0.13097935914993286)]
 # [('cat', 0.29809582233428955), ('cat', 0.2462661862373352), ('cat', 0.13935738801956177)]
 test_params = [
-# [('cat', 0.3532187342643738), ('cat', 0.22708916664123535), (None, 0.11154596507549286)],0.7],
-##################################################
-[[('cat', 0.15381687879562378), ('cat', 0.14100512862205505), ('cat', 0.11225848644971848)],0.7],
-# params = (0.2,0.1,0.1)
-# source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
-# [('dog', 0.8835851550102234), ('dog', 0.08754527568817139), ('dog', 0.008648859336972237)]
-# source = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.jpg"
- [[(None, 0.33663231134414673), ('dog', 0.32254937291145325), ('dog', 0.0494903139770031)],0.7],
-] # select the typical things for evaluation.
+    # [('cat', 0.3532187342643738), ('cat', 0.22708916664123535), (None, 0.11154596507549286)],0.7],
+    ##################################################
+    [
+        [
+            ("cat", 0.15381687879562378),
+            ("cat", 0.14100512862205505),
+            ("cat", 0.11225848644971848),
+        ],
+        0.7,
+    ],
+    # params = (0.2,0.1,0.1)
+    # source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
+    # [('dog', 0.8835851550102234), ('dog', 0.08754527568817139), ('dog', 0.008648859336972237)]
+    # source = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.jpg"
+    [
+        [
+            (None, 0.33663231134414673),
+            ("dog", 0.32254937291145325),
+            ("dog", 0.0494903139770031),
+        ],
+        0.7,
+    ],
+]  # select the typical things for evaluation.
 # not animal? wtf?
 # source = "/root/Desktop/works/pyjom/samples/image/porn_shemale.jpeg" # definitely not animal
 # [(None, 0.9894463419914246), ('dog', 1.564090962347109e-05), ('dog', 1.3550661606132053e-05)]
@@ -82,16 +97,24 @@ test_params = [
 # a little, but not focused.
 input_bias = 0.05
 skew = -0.5
-curve_function_kwargs={"start": (0, 0), "end": (1, 1), "skew": skew} # maximize the output.
+curve_function_kwargs = {
+    "start": (0, 0),
+    "end": (1, 1),
+    "skew": skew,
+}  # maximize the output.
 
 for test_param, target_output in test_params:
     for index, (label, confidence) in enumerate(test_param):
         scope = test_param[index:]
         scope_confidences = [elem[1] for elem in scope if elem[0] == label]
-        output = multiParameterExponentialNetwork(*scope_confidences,input_bias=input_bias,curve_function_kwargs = curve_function_kwargs)
-        print('output:',output)
-        print('target_output:', target_output)
+        output = multiParameterExponentialNetwork(
+            *scope_confidences,
+            input_bias=input_bias,
+            curve_function_kwargs=curve_function_kwargs
+        )
+        print("output:", output)
+        print("target_output:", target_output)
         absolute_difference = abs(target_output - output)
-        print('absolute difference:',absolute_difference)
-        print('skew:', skew)
-        print('input_bias:', input_bias)
+        print("absolute difference:", absolute_difference)
+        print("skew:", skew)
+        print("input_bias:", input_bias)
