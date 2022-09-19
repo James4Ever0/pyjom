@@ -1919,6 +1919,8 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(
 ########################### DOG CAT DETECTION #########################
 
 ########################### NSFW FILTER FOR VIDEO #########################
+
+@lru_cache(maxsize=1)
 def isNSFWServerUp(port=8511, message="nsfw nodejs server"):
     waitForServerUp(port, message)
 
