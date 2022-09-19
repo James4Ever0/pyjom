@@ -404,6 +404,7 @@ def renderList2MediaLang(
     medialangObject = Medialang(script=medialangScript)
     return medialangObject
 
+# fix long loading time.
 @redisLRUCache()
 def getMusicInfoParsed(config):
     music = config["music"]
