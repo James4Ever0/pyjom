@@ -9,7 +9,9 @@ import cv2
 
 def labelFileReader(filename):
     with open(filename, 'r') as f:
-        
+        content = f.read()
+        content = content.split("\n")
+        content = content]
 
 dog_labels = ["狗", "犬", "梗"]
 cat_labels = ["猫"]  # ends with this, and not containing forbidden words.
