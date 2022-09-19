@@ -14,9 +14,10 @@ def OnlineFetcher(
     tempdir="/dev/shm/medialang/online",
     threads=6,
     use_multithread=True,
+    mkdir=True
 ):
     # how do you chain this shit up?
-    
+    if mkdir:
     assert os.path.isabs(tempdir)
     assert os.path.isdir(tempdir)
     assert os.path.exists(tempdir)
