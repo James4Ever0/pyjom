@@ -1975,11 +1975,11 @@ def NSFWFilter(
             return False
     return True
 
-def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw"):
+def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1):
     source = videoPath
     with tmpdir(path=tmpdirPath) as T:
         responses = []
-        for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
+        for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=fps):
             padded_resized_frame = resizeImageWithPadding(
                 frame, 224, 224, border_type="replicate"
             )
