@@ -100,7 +100,7 @@ def getMusicCutSpansCandidates(
     candidates = sorted_lyrics_nearby_bpm_candidates + sorted_remained_bpm_candidates
     return candidates, standard_bpm_spans
 
-def getMusicCutSpansGaussian(music, lyric_path, mintime=0.6, maxtime=7.833, mbeat_time_tolerance=0.8, std = 1.6674874515595588,mean =  2.839698412698412):
+def getMusicCutSpansGaussian(music, music_duration,lyric_path, mintime=0.6, maxtime=7.833, mbeat_time_tolerance=0.8, std = 1.6674874515595588,mean =  2.839698412698412):
     candidates, standard_bpm_spans = getMusicCutSpansCandidates(music, lyric_path, maxtime, mintime, mbeat_time_tolerance=mbeat_time_tolerance)
     demanded_cut_points = [0]
     scale, loc = std, mean
