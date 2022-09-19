@@ -109,7 +109,7 @@ def getMusicCutSpansGaussian(music, lyric_path, mintime=0.6, maxtime=7.833, mbea
     a, b = (myclip_a - loc) / scale, (myclip_b - loc) / scale
     randVar = truncnorm(a,b)
     randomFunction = lambda: randVar.rvs(1)[0]*scale+loc
-    
+
 
 def getMusicCutSpans(
     music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
@@ -165,7 +165,7 @@ def getMusicCutSpans(
             timespan_length = elem - startingPoint
             if inRange(
                 timespan_length,
-                (standard_bpm_spans[0], standard_bpm_spans[-1]),
+                (standard_bpm_spans[-2], standard_bpm_spans[-1]),
                 tolerance=mbeat_time_tolerance,
             ):
                 # select this element.
