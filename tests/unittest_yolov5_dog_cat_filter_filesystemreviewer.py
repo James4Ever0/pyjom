@@ -201,9 +201,10 @@ def yolov5VideoDogCatDetector(videoPath, debug=False):
         sprint("DETECTION CONFIDENCE:", detectionConfidence)
     filter_result = detectionConfidenceFilter(detectionConfidence)
     return filter_result
+import paddlehub as hub
 
 @lru_cache(maxsize=1)
-def ():
+def get():
     classifier = hub.Module(name="resnet50_vd_animals")
 
     return classifier
