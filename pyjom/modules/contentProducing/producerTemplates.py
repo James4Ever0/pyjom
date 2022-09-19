@@ -533,7 +533,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medial
         # using a ffmpeg filter.
 
         final_output_location = ".".join([getRandomFileName, 'mp4'])
-        final_output_location = os.path.join(tempdir,    final_output_location)
+        final_output_location = os.path.join(tempdir,final_output_location)
         import ffmpeg
         ffmpeg.input(rendered_media_location).filter('ass', ass_file_path).output(final_output_location).run(overwrite_output=True)
         yield final_output_location # another generator?
