@@ -527,7 +527,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         # using a ffmpeg filter.
         final_output_location = ""
         import ffmpeg
-        ffmpeg.input(rendered_media_location).filter()
+        ffmpeg.input(rendered_media_location).filter().output().run()
         yield rendered_media_location # another generator?
 
 def getProducerTemplate(template):
