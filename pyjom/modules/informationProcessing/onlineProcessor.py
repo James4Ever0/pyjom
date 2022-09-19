@@ -11,7 +11,7 @@ def OnlineProcessor(
     use_proxy=False,
     clash_refresher_port=8677,
     proxy_url="http://127.0.0.1:8381",
-    tmpPath="/dev/shm/medialang/online_test",
+    tmpPath="/dev/shm/medialang/onlineProcessor",
     debug=False,
 ):
     if use_proxy:
