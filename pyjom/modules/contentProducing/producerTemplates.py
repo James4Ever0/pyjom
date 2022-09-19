@@ -107,7 +107,6 @@ def getMusicCutSpans(
             ]  # unsupported comparation between 'float' and 'list'?
         except:
             import traceback
-
             traceback.print_exc()
             breakpoint()
         newCandidateLength = len(selected_candidates)
