@@ -7,6 +7,7 @@ from lazero.filesystem import tmpdir
 
 clash_refresher_url = "http://127.0.0.1:8677"
 
+"clash update controller"
 
 elems, function_label = OnlineTopicGenerator()
 sprint("FUNCTION LABEL:", function_label)
