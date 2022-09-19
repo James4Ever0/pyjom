@@ -95,13 +95,13 @@ def getMusicCutSpansCandidates(
     ) = getLyricNearbyBpmCandidates(lyric_times, beats)
 
     candidates = sorted_lyrics_nearby_bpm_candidates + sorted_remained_bpm_candidates
-    return candidates
+    return candidates, standard_bpm_spans
 
 
 def getMusicCutSpans(
     music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
-    candidates = getMusicCutSpansCandidates(
+    candidates, standard_bpm_spans = getMusicCutSpansCandidates(
         music,
         music_duration,
         lyric_path,
