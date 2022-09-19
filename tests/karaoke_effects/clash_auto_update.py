@@ -116,7 +116,7 @@ def setClashProxy(proxy_name, control_port=9911):
         breakpoint()
 
 
-def refineClashYaml(clashYamlPath="Clash3.yaml"):
+def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
     with open(clashYamlPath, "r") as f:
         data = f.read()
     from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
