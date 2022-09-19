@@ -6,10 +6,10 @@ from lazero.network import download, waitForServerUp
 from lazero.filesystem import tmpdir
 
 
-clash_refresher_port = 8677
-clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
+# clash_refresher_port = 8677
+# clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
 
-waitForServerUp(clash_refresher_port,"clash update controller")
+# waitForServerUp(clash_refresher_port,"clash update controller")
 
 elems, function_label = OnlineTopicGenerator()
 sprint("FUNCTION LABEL:", function_label)
@@ -48,7 +48,7 @@ with tmpdir(path=tmpPath) as testDir:
     elif flag == "topic_with_fetcher":
         sprint("checking online fetcher")
         # print("HERE??",2)
-        set_proxy()
+        # set_proxy()
         newElems, label = OnlineFetcher(elems, tempdir=tmpPath) # infinite video generators.
         for elem in newElems:
             waitForServerUp(clash_refresher_port,"clash update controller")
