@@ -5,5 +5,5 @@ from pyjom.commons import *
 def dummyPoster(content, iterate=True):
     if iterate:
         for elem in content:
-            print(elem)
+            print("READY TO POST CONTENT FROM:",elem)
     return "mydarnprotocol://mydarnlink"
