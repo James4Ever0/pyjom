@@ -182,8 +182,12 @@ def yolov5VideoDogCatDetector(videoPath):
 
     fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
 
+    # resultGenerator, function_id = reviewer(
+    #     fileList, generator=True, debug=False
+    # )  # or at least a generator?
+
     resultGenerator, function_id = reviewer(
-        fileList, generator=False, debug=False
+        fileList, generator=True, debug=False
     )  # or at least a generator?
 
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
