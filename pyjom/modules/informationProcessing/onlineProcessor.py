@@ -8,6 +8,7 @@ from lazero.filesystem import tmpdir
 @decorator
 def OnlineProcessor(
     newElems,
+    source='giphy'
     use_proxy=False,
     clash_refresher_port=8677,
     proxy_url="http://127.0.0.1:8381",
@@ -22,7 +23,7 @@ def OnlineProcessor(
         os.environ["http_proxy"] = proxy_url
         os.environ["https_proxy"] = proxy_url
 
-    flag = "topic_with_fetcher"
+    # flag = "topic_with_fetcher"
 
     with tmpdir(path=tmpPath) as testDir:
         # elif flag == "topic_with_fetcher":
