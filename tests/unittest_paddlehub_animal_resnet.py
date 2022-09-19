@@ -35,7 +35,8 @@ forbidden_words = [
 ]
 
 def dog_cat_name_recognizer(name):
-    if name in 
+    if name in dog_labels:
+        return "dog"
 
 from lazero.utils.logger import sprint
 
