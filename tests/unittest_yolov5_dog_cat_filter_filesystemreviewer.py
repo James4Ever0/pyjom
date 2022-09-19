@@ -167,6 +167,11 @@ def yolov5VideoDogCatDetector(
     logic: Literal["AND", "OR"] = "OR",
 ):
 
+    autoArgs = {
+        "subtitle_detector": {"timestep": 0.2},
+        "yolov5_detector": {"model": "yolov5x"},  # will this run? no OOM?
+    }  # threshold: 0.4
+
     template_names = ["yolov5_detector.mdl.j2"]
     semiauto = False
     dummy_auto = False
