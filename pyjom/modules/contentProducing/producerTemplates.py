@@ -412,7 +412,6 @@ def getMusicInfoParsed(config):
     # get music duration here.
     music_metadata = get_media_info(music["filepath"])
     music_duration = music_metadata["duration"]
-
     maxtime = config["maxtime"]
     mintime = config["mintime"]
 
@@ -427,7 +426,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # config = {"music":{"filepath":"","lyric_path":""},"font":{"filepath":"","fontsize":30}, "policy":{"some_policy_name":{}},"meta":{"maxtime":3, "mintime":1}}
     # how to auto-warp the AAS subtitle?
     # do you fill timegap with a loop?
-
+    total_cuts = {}
     # print("DEMANDED CUT SPANS: " , demanded_cut_spans) # test passed.
     # breakpoint()
     # demanded_cut_spans is empty!
