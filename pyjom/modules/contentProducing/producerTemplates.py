@@ -491,7 +491,7 @@ from pyjom.commons import checkMinMaxDict
 from pyjom.lyrictoolbox import lrcToAnimatedAss
 def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medialang/pets_with_music_online'):
     import uuid
-    uuid.uuid4())
+    getRandomFileName = lambda : str(uuid.uuid4())
     for config in configs:
     # we only have one song here. you fucking know that?
         music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
@@ -499,7 +499,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medial
         render_list = [] # what is this freaking render_list?
         # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
         # if lyric_path:
-        ass_file_path = ""
+        ass_file_path = 
         lrcToAnimatedAss(music, lyric_path, ass_file_path)
         data_ids = []
         for data in dataGenerator:
