@@ -17,3 +17,4 @@ def test_function(parameter):
     return 'abcdefg'
 
 print("RESULT:",test_function('toy_data'))
+print("RESULT:",test_function('toy_data'))
