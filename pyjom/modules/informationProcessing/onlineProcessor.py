@@ -4,7 +4,7 @@ from lazero.utils import sprint
 from lazero.network import download, waitForServerUp
 from lazero.filesystem import tmpdir
 @decorator()
-def OnlineProcessor(info, use_proxy=False,clash_refresher_port = 8677,proxy_url = "http://127.0.0.1:8381",tmpPath = "/dev/shm/medialang/online_test"):
+def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_url = "http://127.0.0.1:8381",tmpPath = "/dev/shm/medialang/online_test"):
     if use_proxy:
         clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
         waitForServerUp(clash_refresher_port,"clash update controller")
@@ -19,11 +19,9 @@ def OnlineProcessor(info, use_proxy=False,clash_refresher_port = 8677,proxy_url 
             # print("HERE??",2)
             if use_proxy:
                 set_proxy()
-            newElems, label = OnlineFetcher(
-                elems, tempdir=tmpPath
-            )  # infinite video generators.
             for elem in newElems:
-                waitForServerUp(clash_refresher_port,"clash update controller")
+                if use_proxy:
+                    waitForServerUp(clash_refresher_port,"clash update controller")
                 sprint(elem)
                 (item_id, local_video_location) = elem
                 # what is the freaking response?
