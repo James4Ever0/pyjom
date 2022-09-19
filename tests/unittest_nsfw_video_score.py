@@ -16,7 +16,7 @@ cv2_custom_build_init()
 import cv2
 
 # suggest you not to use this shit.
-import math
+# import math
 
 from pyjom.imagetoolbox import resizeImageWithPadding, scanImageWithWindowSizeAutoResize
 
