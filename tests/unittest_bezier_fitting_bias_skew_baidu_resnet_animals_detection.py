@@ -127,7 +127,7 @@ def evaluate_params(input_bias, skew):
             print("target_output:", target_output)
             absolute_difference = abs(target_output - output)
             sprint("absolute difference:", absolute_difference)
-            difference += absolute_difference
+            differences += absolute_difference
     return difference
 
 
