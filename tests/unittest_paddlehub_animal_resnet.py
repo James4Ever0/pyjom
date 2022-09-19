@@ -7,6 +7,8 @@ from pyjom.imagetoolbox import resizeImageWithPadding
 import paddlehub as hub
 import cv2
 
+def labelReader()
+
 dog_labels = ["狗", "犬", "梗"]
 cat_labels = ["猫"]  # ends with this, and not containing forbidden words.
 
