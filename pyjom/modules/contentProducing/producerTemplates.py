@@ -498,7 +498,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
         # if lyric_path:
         ass_file_path = ""
-        lrcToAnimatedAss(music)
+        lrcToAnimatedAss(music, lyric_path,)
         data_ids = []
         for data in dataGenerator:
             # what is the format of the data?
