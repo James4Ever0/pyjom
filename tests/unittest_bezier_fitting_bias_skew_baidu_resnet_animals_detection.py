@@ -64,6 +64,7 @@ test_params = [
 # [('dog', 0.8835851550102234), ('dog', 0.08754527568817139), ('dog', 0.008648859336972237)]
 # source = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.jpg"
  [[(None, 0.33663231134414673), ('dog', 0.32254937291145325), ('dog', 0.0494903139770031)],0.7],
+]
 # not animal? wtf?
 # source = "/root/Desktop/works/pyjom/samples/image/porn_shemale.jpeg" # definitely not animal
 # [(None, 0.9894463419914246), ('dog', 1.564090962347109e-05), ('dog', 1.3550661606132053e-05)]
