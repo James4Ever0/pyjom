@@ -141,7 +141,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
                 updateIndex = index
                 updatedProxy = proxy.copy()
                 break
-        
+        data['proxies'][updateIndex] = updatedProxy
         # for item in data['proxies']:
         #     print(item)
 
