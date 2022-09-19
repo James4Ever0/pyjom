@@ -150,4 +150,5 @@ space = (
 best = fmin(objective, space, algo=tpe.suggest, max_evals=100)
 sprint("BEST:", best)
 # sprint("EVAL:",space_eval(space, best))
-sprint("BEST LOSS:",)
+best_loss = 
+sprint("BEST LOSS:",best_loss)
