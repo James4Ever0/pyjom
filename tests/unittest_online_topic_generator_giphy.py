@@ -54,7 +54,6 @@ with tmpdir(path=tmpPath) as testDir:
             # fps_float = get_fps_float(local_video_location)
             # duration_valid = checkMinMaxDict(duration,duration_filter)
             # fps_valid = checkMinMaxDict(fps_float,fps_filter)
-            def dummyFilter()
             from pyjom.videotoolbox import (
                 getVideoColorCentrality,
                 checkVideoColorCentrality,
