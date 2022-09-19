@@ -1974,7 +1974,7 @@ def NSFWFilter(
                 print("not passing NSFW filter: %s" % key)
                 print("value: %s" % value)
                 print("filter: %s" % str(key_filter))
-                print("complete NSFW dump:",)
+                sprint("complete NSFW report dump:", NSFWReport)
             return False
     return True
 
