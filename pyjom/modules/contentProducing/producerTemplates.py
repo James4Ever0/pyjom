@@ -502,7 +502,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
                 dataDuration = data['meta']['duration']
                 videoSource = data['']
                 data_ids.append(data_id)
-                span = 
+                span = getClosestSpan(dataDuration)
                 candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
                 render_list.append(candidate)
             complete = checkCompleted()
