@@ -33,7 +33,7 @@ def removeUnnecessaryPunctuation(text):
     return text
 
 def getMusicDuration(musicPath):
-    info = MediaInfo(filename=musicPath)
+    info = MediaInfo(filename=musicPath) # the music path is not right.
     info = info.getInfo()
     # print(info)
     # breakpoint()
