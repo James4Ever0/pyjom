@@ -1924,4 +1924,56 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(
 def isNSFWServerUp(port=8511, message="nsfw nodejs server"):
     waitForServerUp(port, message)
 
+def processNSFWServerImageReply(reply):
+    mDict = {}
+    for elem in reply:
+        className, probability = elem["className"], elem["probability"]
+        mDict.update({className: probability})
+    return mDict
+
+
+def processNSFWReportArray(
+    NSFWReportArray,
+    average_classes=["Neutral"],
+    get_max_classes=["Drawing", "Porn", "Sexy", "Hentai"],
+):
+    assert set(average_classes).intersection(set(get_max_classes)) == set()
+    NSFWReport = {}
+    for element in NSFWReportArray:
+        for key in element.keys():
+            NSFWReport[key] = NSFWReport.get(key, []) + [element[key]]
+    for average_class in average_classes:
+        NSFWReport[average_class] = superMean(NSFWReport.get(average_class, [0]))
+    for get_max_class in get_max_classes:
+        NSFWReport[get_max_class] = superMax(NSFWReport.get(get_max_class, [0]))
+    return NSFWReport
+
+
+from pyjom.commons import checkMinMaxDict
+
+# you can reuse this, really.
+def NSFWFilter(
+    NSFWReport,
+    filter_dict={
+        "Neutral": {"min": 0.5},
+        "Sexy": {"max": 0.5},
+        "Porn": {"max": 0.5},
+        "Hentai": {"max": 0.5},
+        "Drawing": {"max": 0.5},
+    },
+    debug=False
+):
+    for key in filter_dict:
+        value = NSFWReport.get(key, 0)
+        key_filter = filter_dict[key]
+        result = checkMinMaxDict(value, key_filter)
+        if not result:
+            if debug:
+                print("not passing NSFW filter: %s" % key)
+                print("value: %s" % value)
+                print("filter: %s" % str(key_filter))
+            return False
+    return True
+
+
 ########################### NSFW FILTER FOR VIDEO #########################
