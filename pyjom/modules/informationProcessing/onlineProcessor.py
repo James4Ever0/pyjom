@@ -8,20 +8,13 @@ def onlineProcessor(info, use_proxy=False,clash_refresher_port = 8677,proxy_url 
     if use_proxy:
         clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
         waitForServerUp(clash_refresher_port,"clash update controller")
-        
-    
-
-
-
     def set_proxy():
         os.environ["http_proxy"] = proxy_url
         os.environ["https_proxy"] = proxy_url
-
-
     flag = "topic_with_fetcher"
 
     with tmpdir(path=tmpPath) as testDir:
-        print("TESTDIR:", testDir)
+        # print("TESTDIR:", testDir)
         if flag == "only_topic_generator":
             # print("HERE??",1)
             for asset_id, meta in elems:
