@@ -7,7 +7,7 @@ import cv2
 from pyjom.imagetoolbox import *
 from functools import lru_cache
 
-
+def dummyFilter(report:bool, *args, **kwargs): return report
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
 
