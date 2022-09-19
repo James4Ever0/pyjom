@@ -16,10 +16,15 @@ sprint("FUNCTION LABEL:", function_label)
 # breakpoint()
 tmpPath = "/dev/shm/medialang/online_test"
 import os
+
 proxy_url = "http://127.0.0.1:8381"
+
+
 def set_proxy():
-    os.environ['http_proxy']=proxy_url
-    os.environ['https_proxy']=proxy_url
+    os.environ["http_proxy"] = proxy_url
+    os.environ["https_proxy"] = proxy_url
+
+
 flag = "topic_with_fetcher"
 
 with tmpdir(path=tmpPath) as testDir:
@@ -48,7 +53,9 @@ with tmpdir(path=tmpPath) as testDir:
         sprint("checking online fetcher")
         # print("HERE??",2)
         # set_proxy()
-        newElems, label = OnlineFetcher(elems, tempdir=tmpPath) # infinite video generators.
+        newElems, label = OnlineFetcher(
+            elems, tempdir=tmpPath
+        )  # infinite video generators.
         for elem in newElems:
             # waitForServerUp(clash_refresher_port,"clash update controller")
             sprint(elem)
@@ -101,7 +108,6 @@ with tmpdir(path=tmpPath) as testDir:
                     "EffectiveFPS",
                 ],  # also, the dog/cat detector! fuck.
                 [NSFWVideoFilter, None, dummyFilterFunction, "NSFW"],
-,
             ]
             for function, mFilter, filterFunction, flag in mList:
                 mValue = function(local_video_location)
