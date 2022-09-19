@@ -115,7 +115,7 @@ def getMusicCutSpansGaussian(music, music_duration,lyric_path, mintime=0.6, maxt
     oldCandidateLength = None
     while True:
         standard_bpm_span_min_selected = randomFunction()
-        doubleRate = 
+        doubleRate = min(2, standard_bpm_span_min_selected)
         if counter > 10000:  # some dangerous deadloop.
             breakpoint()
             print("LOOPCOUNT", counter)
