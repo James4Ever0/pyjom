@@ -496,6 +496,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...] 
         for data in dataGenerator:
             # what is the format of the data?
+            render_list.append(candidate)
 
         medialangObject = renderList2MediaLang(
             render_list,
