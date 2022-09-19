@@ -22,7 +22,7 @@ from redis_lru import RedisLRU
 
 from functools import lru_cache
 
-def redisLRUCache():
+def redisLRUCache(ttl=):
 redisAddress = "127.0.0.1"
 redisPort = 9291
 
