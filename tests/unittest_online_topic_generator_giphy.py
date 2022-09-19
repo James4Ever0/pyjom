@@ -41,7 +41,7 @@ with tmpdir(path=tmpPath) as testDir:
                 download(
                     url,
                     download_path,
-                    threads=-0.3,
+                    threads=6,
                     size_filter={"min": 0.4, "max": 50},
                     use_multithread=False
                 )
