@@ -17,6 +17,8 @@ redisExpire =oneDay*7 # god damn it!
 # from functools import lru_cache
 
 # @lru_cache(maxsize=2)
+
+# we've fixed this shit.
 @cache(ttl=redisExpire)
 def test_function(parameter):
     print('hello world')
