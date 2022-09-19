@@ -1980,6 +1980,7 @@ import requests
 
 def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1,gateway = "http://localhost:8511/",debug=False):
     source = videoPath
+    result=False
     with tmpdir(path=tmpdirPath) as T:
         responses = []
         for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=fps):
