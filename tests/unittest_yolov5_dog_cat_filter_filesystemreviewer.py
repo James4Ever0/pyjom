@@ -333,7 +333,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
                 curve_function_kwargs=curve_function_kwargs
             )
             # treat each as a separate observation in this frame.
-            detections.append({"identity": label, "confidence": confidence})
+            detections.append({"identity": label, "confidence": output})
         dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
