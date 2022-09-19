@@ -81,7 +81,7 @@ with tmpdir(path=tmpPath) as testDir:
                     checkMinMaxDict,
                     "EffectiveFPS",
                 ], # also, the dog/cat detector! fuck.
-                [dummyFilter,None,]
+                [None,dummyFilter,,]
             ]
             for function, mFilter, filterFunction, flag in mList:
                 mValue = function(local_video_location)
