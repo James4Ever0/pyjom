@@ -112,6 +112,7 @@ for subject_id,(test_param, target_output) in enumerate(test_params):
             input_bias=input_bias,
             curve_function_kwargs=curve_function_kwargs
         )
+        print('test subject_id:', subject_id)
         print("label:",label)
         print("output:", output)
         print("target_output:", target_output)
