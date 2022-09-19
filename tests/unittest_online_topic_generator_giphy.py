@@ -53,12 +53,12 @@ with tmpdir(path=tmpPath) as testDir:
     elif flag == "topic_with_fetcher":
         sprint("checking online fetcher")
         # print("HERE??",2)
-        # set_proxy()
+        set_proxy()
         newElems, label = OnlineFetcher(
             elems, tempdir=tmpPath
         )  # infinite video generators.
         for elem in newElems:
-            # waitForServerUp(clash_refresher_port,"clash update controller")
+            waitForServerUp(clash_refresher_port,"clash update controller")
             sprint(elem)
             (item_id, local_video_location) = elem
             # what is the freaking response?
