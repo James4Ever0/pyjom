@@ -202,6 +202,12 @@ def yolov5VideoDogCatDetector(videoPath, debug=False):
     filter_result = detectionConfidenceFilter(detectionConfidence)
     return filter_result
 
+@lru_cache(maxsize=1)
+def ():
+    classifier = hub.Module(name="resnet50_vd_animals")
+
+    return classifier
+
 @lru_cache(maxsize=3)
 def labelFileReader(filename):
     with open(filename, 'r') as f:
@@ -217,7 +223,6 @@ from functools import lru_cache
 def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5):
     from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
     from pyjom.imagetoolbox import resizeImageWithPadding
-    import paddlehub as hub
 
     dog_suffixs = ["狗", "犬", "梗"]
     cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
