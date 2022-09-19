@@ -9,7 +9,7 @@ class OnlineAutoContentProducer(ContentProducer):
         processor_filters={},
         producer_filters={},
         template="pets_with_music_online",
-        template_configs=[], # list with '
+        template_configs=[], # list or 'template_config' generator
         tempdir = '/dev/shm/medialang/online',
         metaTopic={
             "static": [["dog", "cat", 'puppy'], ["funny", "cute"]],
