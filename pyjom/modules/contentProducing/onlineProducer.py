@@ -3,6 +3,7 @@ from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 
 @decorator
 def OnlineProducer(processed_info, source = 'giphy',template=None, template_configs=None):
+    # template_configs is a generator, it generate configs.
     if source == 'giphy':
         template_function = getProducerTemplate[template]
         exported_media_locations = template_function(processed_info,config=template_configs) # a generator!
