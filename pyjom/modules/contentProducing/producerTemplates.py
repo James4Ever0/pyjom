@@ -488,7 +488,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 # shall we generate medialang for it?
 
 from pyjom.commons import checkMinMaxDict
-from pyjom.lyrictoolbox import 
+from pyjom.lyrictoolbox import lrcToAnimatedAss
 def petsWithMusicOnlineProducer(dataGenerator, configs):
     for config in configs:
     # we only have one song here. you fucking know that?
@@ -497,6 +497,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         render_list = [] # what is this freaking render_list?
         # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
         ass_file_path = ""
+        lrcToAnimatedAss()
         data_ids = []
         for data in dataGenerator:
             # what is the format of the data?
