@@ -15,7 +15,7 @@ def labelFileReader(filename):
         content = [elem for elem in content if len(elem)>0]
     return content
 
-dog_labels = ["狗", "犬", "梗"]
+dog_suffixs = ["狗", "犬", "梗"]
 cat_labels = ["猫"]  # ends with this, and not containing forbidden words.
 
 forbidden_words = [
