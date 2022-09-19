@@ -110,7 +110,6 @@ def getMusicCutSpansGaussian(music, lyric_path, mintime=0.6, maxtime=7.833, mbea
     randVar = truncnorm(a,b)
     randomFunction = lambda: randVar.rvs(1)[0]*scale+loc
 
-
     remaining_time = music_duration
     counter = 0
     oldCandidateLength = None
