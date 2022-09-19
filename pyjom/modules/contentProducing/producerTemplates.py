@@ -63,7 +63,10 @@ def read_lrc(lrc_path):
             # another square bracket that could kill me.
         return sublist
 
-def getMusicCutSpansCandidates(music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8):
+
+def getMusicCutSpansCandidates(
+    music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
+):
 
     beats, bpm = audioOwlAnalysis(music["filepath"])
     lyric = read_lrc(lyric_path)
@@ -74,7 +77,7 @@ def getMusicCutSpansCandidates(music_duration, lyric_path, maxtime, mintime, mbe
     new_lyric_times = []
     last_time = 0
     for mtime in lyric_times:
-        if mtime-last_time >mintime:
+        if mtime - last_time > mintime:
             new_lyric_times.append(mtime)
             last_time = mtime
     lyric_times = new_lyric_times
@@ -94,10 +97,18 @@ def getMusicCutSpansCandidates(music_duration, lyric_path, maxtime, mintime, mbe
     candidates = sorted_lyrics_nearby_bpm_candidates + sorted_remained_bpm_candidates
     return candidates
 
+
 def getMusicCutSpans(
     music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
-    candidates = getMusicCutSpansCandidates(music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=mbeat_time_tolerance)
+    candidates = getMusicCutSpansCandidates(
+        music,
+        music_duration,
+        lyric_path,
+        maxtime,
+        mintime,
+        mbeat_time_tolerance=mbeat_time_tolerance,
+    )
 
     # now we engage with the cue points.
 
@@ -119,6 +130,7 @@ def getMusicCutSpans(
             ]  # unsupported comparation between 'float' and 'list'?
         except:
             import traceback
+
             traceback.print_exc()
             breakpoint()
         newCandidateLength = len(selected_candidates)
@@ -412,9 +424,12 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # but why the fuck we got 10 minutes long of the freaking video?
     print(render_list)  # empty render list! wtf?
 
-    breakpoint() # WTF IS GOING ON? LEADING TO 10 MINS OF CRAP?
+    breakpoint()  # WTF IS GOING ON? LEADING TO 10 MINS OF CRAP?
     medialangObject = renderList2MediaLang(
-        render_list, slient=True, bgm=music["filepath"], producer="editly" # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
+        render_list,
+        slient=True,
+        bgm=music["filepath"],
+        producer="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
     )  # what is the backend?
 
     # print(medialangObject)
