@@ -1,4 +1,5 @@
 from pyjom.commons import *
+from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 
 @decorator
 def OnlineProducer(processed_info, template=None, template_config={}):
