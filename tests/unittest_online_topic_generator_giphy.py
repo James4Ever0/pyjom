@@ -18,6 +18,7 @@ sprint("FUNCTION LABEL:", function_label)
 tmpPath = "/dev/shm/medialang/online_test"
 import os
 proxy_url = "http://127.0.0.1:8381"
+def set_proxy():
 os.environ['http_proxy']=proxy_url
 os.environ['https_proxy']=proxy_url
 flag = "topic_with_fetcher"
@@ -49,8 +50,7 @@ with tmpdir(path=tmpPath) as testDir:
         # print("HERE??",2)
         newElems, label = OnlineFetcher(elems, tempdir=tmpPath) # infinite video generators.
         for elem in newElems:
-waitForServerUp(clash_refresher_port,"clash update controller")
-
+            waitForServerUp(clash_refresher_port,"clash update controller")
             sprint(elem)
             (item_id, local_video_location) = elem
             # what is the freaking response?
