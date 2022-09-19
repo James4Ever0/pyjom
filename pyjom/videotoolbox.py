@@ -1976,6 +1976,7 @@ def NSFWFilter(
     return True
 
 def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw"):
+    source = videoPath
     with tmpdir(path=tmpdirPath) as T:
         responses = []
         for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
