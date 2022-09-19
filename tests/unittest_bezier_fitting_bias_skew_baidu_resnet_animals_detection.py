@@ -107,6 +107,7 @@ curve_function_kwargs = {
 from lazero.utils.logger import sprint
 import hyperopt
 
+hyperopt.hp.
 
 def evaluate_params(input_bias, skew):
     difference = 0
