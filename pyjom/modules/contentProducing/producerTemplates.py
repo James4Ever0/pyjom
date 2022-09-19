@@ -488,6 +488,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 # shall we generate medialang for it?
 
 from pyjom.commons import checkMinMaxDict
+from pyjom.lyrictoolbox import 
 def petsWithMusicOnlineProducer(dataGenerator, configs):
     for config in configs:
     # we only have one song here. you fucking know that?
