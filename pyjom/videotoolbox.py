@@ -1533,6 +1533,9 @@ from lazero.utils.logger import sprint
 
 from pyjom.mathlib import superMean, superMax
 
+import paddlehub as hub
+from functools import lru_cache
+
 def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
     # plan to get some calculations!
     filepath, review_data = detectionData["review"]["review"]
