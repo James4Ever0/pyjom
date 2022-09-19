@@ -309,6 +309,14 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
         final_result_list = translateResultListToDogCatList(resultList)
         if debug:
             sprint("RESULT LIST:", final_result_list)
+            (label, confidence) in enumerate(test_param):
+            scope = test_param[index:]
+            scope_confidences = [elem[1] for elem in scope if elem[0] == label]
+            output = multiParameterExponentialNetwork(
+                *scope_confidences,
+                input_bias=input_bias,
+                curve_function_kwargs=curve_function_kwargs
+            )
         multiParameterExponentialNetwork()
         # now we apply the thing? the yolov5 thing?
     return result
