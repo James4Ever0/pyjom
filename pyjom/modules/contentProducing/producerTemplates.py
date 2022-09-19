@@ -492,7 +492,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
     # we only have one song here. you fucking know that?
         music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
         # check for 'demanded_cut_spans' now!
-        render_list = {}
+        render_list = [] # what is this freaking render_list?
         for data in dataGenerator:
 
         yield rendered_media_location # another generator?
