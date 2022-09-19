@@ -234,7 +234,9 @@ def labelFileReader(filename):
         content = [elem for elem in content if len(elem) > 0]
     return content
 
+
 from pyjom.mathlib import multiParameterExponentialNetwork
+
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 def bezierPaddleHubResnet50VideoDogCatDetector(
     videoPath,
@@ -244,7 +246,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     debug=False,
     logic: Literal["AND", "OR"] = "OR",
 ):
-    filter_dict={
+    filter_dict = {
         "dog": {"min": threshold},
         "cat": {"min": threshold},
     }
@@ -307,6 +309,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             new_name = dog_cat_name_recognizer(name)
             final_result_list.append((new_name, confidence))
         return final_result_list
+
     dataList = []
     for frame in getVideoFrameIteratorWithFPS(videoPath, -1, -1, fps=1):
         padded_resized_frame = resizeImageWithPadding(
@@ -329,8 +332,8 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
                 curve_function_kwargs=curve_function_kwargs
             )
             # treat each as a separate observation in this frame.
-            detections.append({'identity':label, 'confidence':confidence})
-        dataList.append({'detections':detections})
+            detections.append({"identity": label, "confidence": confidence})
+        dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
     filter_result = detectionConfidenceFilter(
