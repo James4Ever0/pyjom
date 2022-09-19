@@ -500,8 +500,9 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
             
             if data_id not in data_ids:
                 dataDuration = data['meta']['duration']
+                videoSource = data['']
                 data_ids.append(data_id)
-                candidate ={'span':span, 'cut':{'span':(0, dataDuration)},}
+                candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
                 render_list.append(candidate)
             complete = checkCompleted()
             if complete:
