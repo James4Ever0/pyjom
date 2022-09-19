@@ -18,6 +18,7 @@ def OnlineFetcher(
 ):
     # how do you chain this shit up?
     if mkdir:
+        TD = 
     assert os.path.isabs(tempdir)
     assert os.path.isdir(tempdir)
     assert os.path.exists(tempdir)
