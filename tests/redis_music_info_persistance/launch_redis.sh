@@ -1,1 +1,1 @@
-redis
+redis-server --port 92901
