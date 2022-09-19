@@ -532,6 +532,9 @@ def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medial
         # maybe we need render the lyric file separately.
         # using a ffmpeg filter.
         final_output_location = ""
+
+        ass_file_path = ".".join([getRandomFileName, 'lrc'])
+        ass_file_path = os.path.join(tempdir, ass_file_path)
         import ffmpeg
         ffmpeg.input(rendered_media_location).filter('ass', ass_file_path).output(final_output_location).run(overwrite_output=True)
         yield final_output_location # another generator?
