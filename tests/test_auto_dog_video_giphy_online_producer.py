@@ -20,12 +20,6 @@ wbRev = OnlineAutoContentProducer(
         "mintime": 2,
         "fast":True, # pass this flag to medialang export engine
     },
-    processor_filters={
-        "yolov5": ["dog", "cat"],
-        "labels": ["dog", "cat"],
-        # "framedifference_talib_detector": 30, # wtf?
-        "ensure": ["yolov5"],
-    }
     # you can also translate funny videos from youtube.
     # dummy_auto=False,
     # args=autoArgs,
