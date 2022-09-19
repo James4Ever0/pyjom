@@ -101,7 +101,8 @@ with tmpdir(path=tmpPath) as testDir:
                     break
             if not valid:
                 print("abandon video:", item_id)
-                if os.path.exists()
+                if os.path.exists(local_video_location):
+                    
                 # if you abandon that, better delete it!
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
