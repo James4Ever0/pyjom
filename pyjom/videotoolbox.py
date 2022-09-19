@@ -2029,7 +2029,7 @@ def NSFWVideoFilter(
         NSFWReport = processNSFWReportArray(responses)
         # print(NSFWReport)
         # breakpoint()
-        result = NSFWFilter(NSFWReport, debug=debug)
+        result = NSFWFilter(NSFWReport, filter_dict=filter_dict, debug=debug)
         if result:
             if debug:
                 print("NSFW test passed.")
