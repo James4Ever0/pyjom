@@ -119,4 +119,4 @@ for subject_id,(test_param, target_output) in enumerate(test_params):
         absolute_difference = abs(target_output - output)
         print("absolute difference:", absolute_difference)
         print("skew:", skew)
-        print("input_bias:", input_bias)
+        sprint("input_bias:", input_bias)
