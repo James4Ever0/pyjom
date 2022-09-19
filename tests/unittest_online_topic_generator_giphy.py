@@ -101,6 +101,7 @@ with tmpdir(path=tmpPath) as testDir:
                     break
             if not valid:
                 print("abandon video:", item_id)
+            breakpoint()
             if not valid:
                 if os.path.exists(local_video_location):
                     print("removing abandoned video:", local_video_location)
