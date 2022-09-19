@@ -58,8 +58,8 @@ with tmpdir(path=tmpPath) as testDir:
                 getVideoColorCentrality,
                 checkVideoColorCentrality,
                 getEffectiveFPS,
-                ,
-                 # just for dog and cat, no other animals.
+                NSFWVideoFilter,
+                yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter # just for dog and cat, no other animals.
             )
 
             video_color_filter = {'centrality':{'max':0.30},"max_nearby_center_percentage":{'max':0.20}}
