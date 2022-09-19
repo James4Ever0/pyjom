@@ -111,7 +111,7 @@ def evaluate_params(input_bias, skew):
         "end": (1, 1),
         "skew": skew,
     }  # maximize the output.
-    difference = 0
+    differences = []
     for subject_id, (test_param, target_output) in enumerate(test_params):
         for index, (label, confidence) in enumerate(test_param):
             scope = test_param[index:]
@@ -132,7 +132,7 @@ def evaluate_params(input_bias, skew):
     best_params_dict = {}
     for label, difference in differences:
         if label in mLabels:
-            best_params_dict.get(label, 1)
+            previousDifference = best_params_dict.get(label, 1)
             best_params_dict[label] = difference
     return difference
 
