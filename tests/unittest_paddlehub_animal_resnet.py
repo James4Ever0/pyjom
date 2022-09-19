@@ -89,8 +89,9 @@ if test_flag == "video":
         # sprint("RESULT:", result)
         breakpoint()
 elif test_flag == "image":
-    source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
+    # source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
     # [('dog', 0.8835851550102234), ('dog', 0.08754527568817139), ('dog', 0.008648859336972237)]
+    source = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.jpg"
     frame = cv2.imread(source)
     padded_resized_frame = resizeImageWithPadding(
         frame, 224, 224, border_type="replicate"
