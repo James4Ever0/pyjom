@@ -131,15 +131,14 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
     data["external-controller"] = base_url
     if "socks-port" in data.keys():
         del data["socks-port"]
-    if not advanced:
-
+    if advanced:
         del data["rules"]
         data["mode"] = "global"
     data["dns"]["listen"] = "0.0.0.0:{}".format(61)
 
-        # data = pyYamlToGoYaml(data)
-        data_dump = yaml.safe_dump(data, allow_unicode=True)
-        data_dump = pyYamlToGoYaml(data_dump)
+    # data = pyYamlToGoYaml(data)
+    data_dump = yaml.safe_dump(data, allow_unicode=True)
+    data_dump = pyYamlToGoYaml(data_dump)
 
     with open(clashYamlPath, "w") as f:
         f.write(data_dump)
