@@ -14,10 +14,7 @@ oneDay = 60*60*24 # one day?
 redisExpire =oneDay*7 # god damn it!
 
 # @redisCache.cache(limit=3, expire=redisExpire)
-# from functools import lru_cache
-
-# @lru_cache(maxsize=2)
-
+# from functools import lru
 # we've fixed this shit.
 @cache(ttl=redisExpire)
 def test_function(parameter):
