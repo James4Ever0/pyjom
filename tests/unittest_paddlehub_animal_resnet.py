@@ -34,6 +34,9 @@ forbidden_words = [
     "猫蛱蝶",
 ]
 
+def dog_cat_name_recognizer(name):
+    
+
 from lazero.utils.logger import sprint
 
 classifier = hub.Module(name="resnet50_vd_animals")
