@@ -164,6 +164,28 @@ def detectionConfidenceFilter(
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 
 def yolov5VideoDogCatDetector(videoPath):
+
+template_names = ["yolov5_detector.mdl.j2"]
+semiauto = False
+dummy_auto = False
+
+reviewer = keywordDecorator(
+    filesystemReviewer,
+    auto=True,
+    semiauto=semiauto,
+    dummy_auto=dummy_auto,
+    template_names=template_names,
+    args={"autoArgs": autoArgs},
+)
+# videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
+# fileList = [{"type": "image", "path": videoPath}]
+
+fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
+
+resultGenerator, function_id = reviewer(
+    fileList, generator=True, debug=False
+)  # or at least a generator?
+
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
     # sprint("DETECTION DATA:")
     # sprint(detectionData)
