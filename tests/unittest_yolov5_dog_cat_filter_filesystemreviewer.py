@@ -192,7 +192,17 @@ def detectionConfidenceFilter(
 
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 
-def yolov5
+def yolov5VideoDogCatDetector(videoPath):
+    detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
+    # sprint("DETECTION DATA:")
+    # sprint(detectionData)
+    filepath = detectionData["path"]
+    sprint("FILEPATH: %s" % filepath)
+    filetype = detectionData["type"]
+    dataList = detectionData["data"]
+    detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
+    sprint("DETECTION CONFIDENCE:", detectionConfidence)
+    filter_result = detectionConfidenceFilter(detectionConfidence)
 
 def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5):
     return result
