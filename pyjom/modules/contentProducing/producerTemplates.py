@@ -499,7 +499,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medial
         render_list = [] # what is this freaking render_list?
         # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
         # if lyric_path:
-        ass_file_path = ".".join([getRandomFileName, 'lrc'])
+        ass_file_path = ".".join([getRandomFileName(), 'lrc'])
         ass_file_path = os.path.join(tempdir, ass_file_path)
         lrcToAnimatedAss(music, lyric_path, ass_file_path)
         data_ids = []
@@ -532,7 +532,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medial
         # maybe we need render the lyric file separately.
         # using a ffmpeg filter.
 
-        final_output_location = ".".join([getRandomFileName, 'mp4'])
+        final_output_location = ".".join([getRandomFileName(), 'mp4'])
         final_output_location = os.path.join(tempdir,final_output_location)
         import ffmpeg
         ffmpeg.input(rendered_media_location).filter('ass', ass_file_path).output(final_output_location).run(overwrite_output=True)
