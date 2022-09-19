@@ -5,8 +5,8 @@ from lazero.utils import sprint
 from lazero.network import download
 from lazero.filesystem import tmpdir
 
-elems, label = OnlineTopicGenerator()
-sprint("LABEL:", label)
+elems, function_label = OnlineTopicGenerator()
+sprint("FUNCTION LABEL:", function_label)
 # # 'pyjom.commons.OnlineTopicGenerator'
 # breakpoint()
 tmpPath = "/dev/shm/medialang/online_test"
