@@ -1,3 +1,5 @@
+from pyjom.commons import *
 
-@
-def OnlineProducer()
+@decorator
+def OnlineProducer():
+    
