@@ -8,7 +8,7 @@ template_names = ["subtitle_detector.mdl.j2"]
 
 wbRev = OnlineAutoContentProducer(
     template="pets_with_music_online",
-    template_config={
+    template_configs=[{
         "music": {
             "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3", # these things were not right.
             "lyric_path": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc",
@@ -19,7 +19,7 @@ wbRev = OnlineAutoContentProducer(
         "maxtime": 7.8,
         "mintime": 2,
         "fast":True, # pass this flag to medialang export engine
-    },
+    }],
     # you can also translate funny videos from youtube.
     # dummy_auto=False,
     # args=autoArgs,

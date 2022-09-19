@@ -39,7 +39,7 @@ class OnlineAutoContentProducer(ContentProducer):
                 "producer": keywordDecorator(
                     OnlineProducer,
                     template=template,
-                    template_config=template_config,
+                    template_configs=template_configs,
                 ),
             }
         )
