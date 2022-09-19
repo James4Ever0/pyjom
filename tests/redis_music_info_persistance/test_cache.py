@@ -1,5 +1,5 @@
 from redis_cache.redis_cache import RedisCache
-from redis_cache.redis_client import cache_
+from redis_cache.rediscache import cache_it
 
 def test_function(parameter):
     print('hello world')
