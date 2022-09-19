@@ -1874,7 +1874,11 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     # breakpoint()
     return filter_result
 
-def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False):
+def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False,    filter_dict={
+        "dog": {"min": 0.5},
+        "cat": {"min": 0.5},
+    },
+    logic: Literal["AND", "OR"] = "OR",):
     if debug:
         sprint("checking video: %s" % videoPath)
     filter_result = yolov5VideoDogCatDetector(
