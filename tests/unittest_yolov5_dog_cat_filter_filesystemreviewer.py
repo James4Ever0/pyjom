@@ -193,11 +193,13 @@ def yolov5VideoDogCatDetector(videoPath, debug=False):
     # sprint("DETECTION DATA:")
     # sprint(detectionData)
     filepath = detectionData["path"]
-    sprint("FILEPATH: %s" % filepath)
+    if debug:
+        sprint("FILEPATH: %s" % filepath)
     filetype = detectionData["type"]
     dataList = detectionData["data"]
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
-    sprint("DETECTION CONFIDENCE:", detectionConfidence)
+    if debug:
+        sprint("DETECTION CONFIDENCE:", detectionConfidence)
     filter_result = detectionConfidenceFilter(detectionConfidence)
     return filter_result
 
