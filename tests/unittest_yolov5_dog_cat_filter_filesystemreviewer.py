@@ -215,9 +215,8 @@ videoPaths = [
     # "/root/Desktop/works/pyjom/samples/video/kitty_flash_scaled.mp4",
     # "/root/Desktop/works/pyjom/samples/video/nearly_duplicate_frames_detection_30fps.mp4",
 ]
-for result in resultGenerator:  # this is for each file.
+for videoPath in videoPaths:  # this is for each file.
     # sprint(result)
-
     sprint("FILTER PASSED?", filter_result)
     if not filter_result:
         sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
