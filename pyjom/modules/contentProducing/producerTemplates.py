@@ -184,6 +184,14 @@ def getMusicCutSpans(
         mbeat_time_tolerance=mbeat_time_tolerance,
     )
     assert len(standard_bpm_spans)>=1
+    if gaussian:
+            scale, loc = std, mean
+            myclip_a, myclip_b = mintime,maxtime
+            from scipy.stats import truncnorm
+            a, b = (myclip_a - loc) / scale, (myclip_b - loc) / scale
+            randVar = truncnorm(a,b)
+            randomFunction = lambda: randVar.rvs(1)[0]*scale+loc
+
 
     # now we engage with the cue points.
 
