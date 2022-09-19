@@ -1,4 +1,4 @@
 from pyjom.commons import *
 
 @decorator()
-def onlineProcessor()
+def onlineProcessor(info): # usually a generator.
