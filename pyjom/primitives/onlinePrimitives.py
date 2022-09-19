@@ -42,6 +42,6 @@ class OnlineAutoContentProducer(ContentProducer):
                     template=template,
                     template_configs=template_configs,
                 ),
-                'poster':dummyPoster
+                'poster':keywordDecorator(dummyPoster, iterate=True)
             }
         )
