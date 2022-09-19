@@ -1975,6 +1975,41 @@ def NSFWFilter(
             return False
     return True
 
+def NSFWVideoFilter(videoPath):
 
+    with tmpdir(path=tmpdirPath) as T:
+        responses = []
+        for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
+            padded_resized_frame = resizeImageWithPadding(
+                frame, 224, 224, border_type="replicate"
+            )
+            # i'd like to view this.
+            basename = "{}.jpg".format(uuid.uuid4())
+            jpg_path = os.path.join(tmpdirPath, basename)
+            with tmpfile(path=jpg_path) as TF:
+                cv2.imwrite(jpg_path, padded_resized_frame)
+                files = {"image": (basename, open(jpg_path, "rb"), "image/jpeg")}
+                r = requests.post(
+                    gateway + "nsfw", files=files
+                )  # post gif? or just jpg?
+                try:
+                    response_json = r.json()
+                    response_json = processNSFWServerImageReply(response_json)
+                    # breakpoint()
+                    # print("RESPONSE:", response_json)
+                    responses.append(
+                        response_json  # it contain 'messages'
+                    )  # there must be at least one response, i suppose?
+                except:
+                    import traceback
+                    traceback.print_exc()
+                    print("error when processing NSFW server response")
+        NSFWReport = processNSFWReportArray(responses)
+        # print(NSFWReport)
+        # breakpoint()
+        result = NSFWFilter(NSFWReport)
+        if result:
+            print("NSFW test passed.")
+            print("source %s" % source)
 
 ########################### NSFW FILTER FOR VIDEO #########################
