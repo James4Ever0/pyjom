@@ -1,7 +1,7 @@
 from pyjom.commons import *
 from typing import Literal
 from lazero.network import download
-
+from lazero.filesystem import tmpdir
 
 @decorator
 def OnlineFetcher(
@@ -16,7 +16,7 @@ def OnlineFetcher(
     use_multithread=True,
 ):
     # how do you chain this shit up?
-
+    
     assert os.path.isabs(tempdir)
     assert os.path.isdir(tempdir)
     assert os.path.exists(tempdir)
