@@ -234,7 +234,7 @@ def labelFileReader(filename):
         content = [elem for elem in content if len(elem) > 0]
     return content
 
-
+from pyjom.mathlib import multiParameterExponentialNetwork
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 def bezierPaddleHubResnet50VideoDogCatDetector(
     videoPath,
