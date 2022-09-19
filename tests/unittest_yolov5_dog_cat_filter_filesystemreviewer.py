@@ -354,7 +354,7 @@ videoPaths = [
 for videoPath in videoPaths:  # this is for each file.
     # sprint(result)
     sprint("checking video: %s" % videoPath)
-    filter_result = yolov5VideoDogCatDetector(videoPath) # this is for short video. not for long video.
+    filter_result = yolov5VideoDogCatDetector(videoPath) # this is for short video. not for long video. long video needs to be sliced into smaller chunks
     # sprint("FILTER PASSED?", filter_result)
     if not filter_result:
         sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
