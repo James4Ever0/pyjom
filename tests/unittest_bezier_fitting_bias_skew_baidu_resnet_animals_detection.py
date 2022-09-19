@@ -127,8 +127,8 @@ def evaluate_params(input_bias, skew):
             print("target_output:", target_output)
             absolute_difference = abs(target_output - output)
             sprint("absolute difference:", absolute_difference)
-            differences.append((label,absolute_difference))
-    mLabels = ['dog','cat']
+            differences.append((label, absolute_difference))
+    mLabels = ["dog", "cat"]
     best_params_dict = {}
     for label, difference in differences:
         if label in mLabels:
@@ -137,10 +137,10 @@ def evaluate_params(input_bias, skew):
                 best_params_dict[label] = difference
     final_differences = []
     for mLabel in mLabels:
-        d = best_params_dict.get(mLabel,1)
+        d = best_params_dict.get(mLabel, 1)
         final_differences.append(d)
     difference = min(final_differences)
-    sprint("FINAL DIFFERENCE:")
+    sprint("FINAL DIFFERENCE:", difference)
     return difference
 
 
@@ -163,5 +163,5 @@ space = (
 best = fmin(objective, space, algo=tpe.suggest, max_evals=100)
 sprint("BEST:", best)
 # sprint("EVAL:",space_eval(space, best))
-best_loss = objective((best['skew'],best['input_bias']))
-sprint("BEST LOSS:",best_loss)
+best_loss = objective((best["skew"], best["input_bias"]))
+sprint("BEST LOSS:", best_loss)
