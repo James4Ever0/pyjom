@@ -3,11 +3,9 @@
 import redis
 from redis_lru import RedisLRU
 
-client = redis.StrictRedis()
-cache = RedisLRU(client,)
+client = redis.StrictRedis(host=redisAddress, port=redisPort)
+cache = RedisLRU(client,max_size=20)
 
-redisAddress = "127.0.0.1"
-redisPort = 9291
 # redisCache = RedisCache(redisAddress, redisPort)
 oneDay = 60*60*24 # one day?
 redisExpire =oneDay*7 # god damn it!
