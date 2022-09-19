@@ -242,12 +242,12 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     skew=-0.4986098769473948,
     threshold=0.5,
     debug=False,
-    filter_dict={
-        "dog": {"min": 0.5},
-        "cat": {"min": 0.5},
-    },
     logic: Literal["AND", "OR"] = "OR",
 ):
+    filter_dict={
+        "dog": {"min": threshold},
+        "cat": {"min": threshold},
+    }
     curve_function_kwargs = {
         "start": (0, 0),
         "end": (1, 1),
