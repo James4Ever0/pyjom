@@ -1990,10 +1990,10 @@ def NSFWVideoFilter(
     debug=False,
     filter_dict={
         "Neutral": {"min": 0.4},
-        "Sexy": {"max": 0.5},
-        "Porn": {"max": 0.5},
-        "Hentai": {"max": 0.5},
-        "Drawing": {"max": 0.5},
+        "Sexy": {"max": 0.65},
+        "Porn": {"max": 0.65},
+        "Hentai": {"max": 0.65},
+        "Drawing": {"max": 0.65},
     },
 ):
     source = videoPath
