@@ -192,7 +192,7 @@ def detectionConfidenceFilter(
 
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 
-def bezierResnet50
+def bezierPaddleHubResnet50VideoDogCatDetector():
 
 for result in resultGenerator:  # this is for each file.
     # sprint(result)
