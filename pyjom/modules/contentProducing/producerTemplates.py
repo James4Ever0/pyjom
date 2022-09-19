@@ -130,6 +130,7 @@ def getMusicCutSpans(
     counter = 0
     oldCandidateLength = None
     while True:
+        
         if counter > 10000:  # some dangerous deadloop.
             breakpoint()
             print("LOOPCOUNT", counter)
