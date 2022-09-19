@@ -186,8 +186,8 @@ def yolov5VideoDogCatDetector(videoPath):
     #     fileList, generator=True, debug=False
     # )  # or at least a generator?
 
-    resultGenerator, function_id = reviewer(
-        fileList, generator=True, debug=False
+    resultList, function_id = reviewer(
+        fileList, generator=False, debug=False
     )  # or at least a generator?
 
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
