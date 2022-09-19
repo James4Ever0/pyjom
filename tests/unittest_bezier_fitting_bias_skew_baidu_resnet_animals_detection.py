@@ -142,4 +142,5 @@ def objective(args):
     sprint("input_bias:", input_bias)
     # it is just a tuple.
     # breakpoint()
+    value = evaluate_params(input_bias, skew)
     return value
