@@ -133,6 +133,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
         del data["socks-port"]
     if advanced:
         # print(data['proxies'])
+        updatedProxy = []
         for index, proxy in enumerate(data['proxies']):
         # breakpoint()
         # for item in data['proxies']:
