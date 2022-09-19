@@ -1882,11 +1882,14 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False
     )  # this is for short video. not for long video. long video needs to be sliced into smaller chunks
     # sprint("FILTER PASSED?", filter_result)
     if not filter_result:
-        sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
+        if debug:
+            sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
         filter_result = bezierPaddleHubResnet50VideoDogCatDetector(videoPath)
     if not filter_result:
-        print("FILTER FAILED")
+        if debug:
+            print("FILTER FAILED")
     else:
-        print("FILTER PASSED")
+        if debug:
+            print("FILTER PASSED")
 
 ########################### DOG CAT DETECTION #########################
