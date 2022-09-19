@@ -508,11 +508,9 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
                 closest_span_duration = (closest_span[1]-closest_span[0])
                 speed_delta = closest_span_duration/dataDuration
                 if checkMinMaxDict(speed_delta, {'min':0.8, 'max':1.2}):
-                     
-                
-                span = getClosestSpan(dataDuration)
-                candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
-                render_list.append(candidate)
+                    span = closest_span
+                    candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
+                    render_list.append(candidate)
             complete = len(demanded_cut_spans) == 0
             if complete:
                 break
