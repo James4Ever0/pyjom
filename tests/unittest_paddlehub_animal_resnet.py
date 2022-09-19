@@ -54,8 +54,8 @@ from lazero.utils.logger import sprint
 classifier = hub.Module(name="resnet50_vd_animals")
 # 'ResNet50vdAnimals' object has no attribute 'gpu_predictor'
 # no gpu? really?
-test_flag = "video"
-# test_flag = "image"
+# test_flag = "video"
+test_flag = "image"
 
 def paddleAnimalDetectionResultToList(result):
     resultDict = result[0]
