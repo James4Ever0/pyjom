@@ -1988,6 +1988,13 @@ def NSFWVideoFilter(
     fps=1,
     gateway="http://localhost:8511/",
     debug=False,
+    filter_dict={
+        "Neutral": {"min": 0.5},
+        "Sexy": {"max": 0.5},
+        "Porn": {"max": 0.5},
+        "Hentai": {"max": 0.5},
+        "Drawing": {"max": 0.5},
+    },
 ):
     source = videoPath
     result = False
