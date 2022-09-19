@@ -1920,9 +1920,11 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(
 
 ########################### NSFW FILTER FOR VIDEO #########################
 
+
 @lru_cache(maxsize=1)
 def isNSFWServerUp(port=8511, message="nsfw nodejs server"):
     waitForServerUp(port, message)
+
 
 def processNSFWServerImageReply(reply):
     mDict = {}
@@ -1961,7 +1963,7 @@ def NSFWFilter(
         "Hentai": {"max": 0.5},
         "Drawing": {"max": 0.5},
     },
-    debug=False
+    debug=False,
 ):
     for key in filter_dict:
         value = NSFWReport.get(key, 0)
@@ -1975,12 +1977,20 @@ def NSFWFilter(
             return False
     return True
 
+
 from lazero.filesystem import tmpfile
 import requests
 
-def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1,gateway = "http://localhost:8511/",debug=False):
+
+def NSFWVideoFilter(
+    videoPath,
+    tmpdirPath="/dev/shm/medialang/nsfw",
+    fps=1,
+    gateway="http://localhost:8511/",
+    debug=False,
+):
     source = videoPath
-    result=False
+    result = False
     with tmpdir(path=tmpdirPath) as T:
         responses = []
         for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=fps):
@@ -2006,16 +2016,18 @@ def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1,ga
                     )  # there must be at least one response, i suppose?
                 except:
                     import traceback
+
                     traceback.print_exc()
                     print("error when processing NSFW server response")
         NSFWReport = processNSFWReportArray(responses)
         # print(NSFWReport)
         # breakpoint()
-        result = NSFWFilter(NSFWReport,debug=debug)
+        result = NSFWFilter(NSFWReport, debug=debug)
         if result:
             if debug:
                 print("NSFW test passed.")
                 print("source %s" % source)
     return result
+
 
 ########################### NSFW FILTER FOR VIDEO #########################
