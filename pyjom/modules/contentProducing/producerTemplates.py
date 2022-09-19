@@ -97,7 +97,7 @@ def getMusicCutSpansCandidates(music_duration, lyric_path, maxtime, mintime, mbe
 def getMusicCutSpans(
     music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
-    candidates = getMusicCutSpansCandidates(music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=mbeat_time_tolerance)
+    candidates = getMusicCutSpansCandidates(music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=mbeat_time_tolerance)
 
     # now we engage with the cue points.
 
