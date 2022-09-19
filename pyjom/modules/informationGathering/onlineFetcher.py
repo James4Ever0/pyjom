@@ -16,8 +16,9 @@ def OnlineFetcher(
     use_multithread=True,
 ):
     # how do you chain this shit up?
-    
+
     assert os.path.isabs(tempdir)
+    with tmpdir(path=tempdir) as TD:
     assert os.path.isdir(tempdir)
     assert os.path.exists(tempdir)
     for info in infoList:  # generator most likely
