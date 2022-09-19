@@ -1,10 +1,10 @@
 from pyjom.commons import *
 
 @decorator()
-def onlineProcessor(info): 
-
-    clash_refresher_port = 8677
-    clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
+def onlineProcessor(info, use_proxy=False): 
+    if use_proxy:
+        clash_refresher_port = 8677
+        clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
 
     waitForServerUp(clash_refresher_port,"clash update controller")
 
