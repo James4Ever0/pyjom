@@ -2013,7 +2013,7 @@ def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1,ga
         result = NSFWFilter(NSFWReport,debug=debug)
         if result:
             if debug:
-            print("NSFW test passed.")
-            print("source %s" % source)
+                print("NSFW test passed.")
+                print("source %s" % source)
 
 ########################### NSFW FILTER FOR VIDEO #########################
