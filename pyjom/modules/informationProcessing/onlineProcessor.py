@@ -83,7 +83,7 @@ def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_
                         break
                 if not valid:
                     print("abandon video:", item_id)
-                breakpoint()
+                # breakpoint()
                 if not valid:
                     if os.path.exists(local_video_location):
                         print("removing abandoned video:", local_video_location)
