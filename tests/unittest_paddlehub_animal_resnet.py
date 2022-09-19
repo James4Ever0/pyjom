@@ -1,4 +1,5 @@
-source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"  # check that kitty video!
+# source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"  # check that kitty video!
+source = ""
 
 from test_commons import *
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
