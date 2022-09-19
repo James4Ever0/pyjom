@@ -43,6 +43,7 @@ with tmpdir(path=tmpPath) as testDir:
                     download_path,
                     threads=-0.3,
                     size_filter={"min": 0.4, "max": 50},
+                    use_multithread=False
                 )
             except:
                 print("Error when download file")
