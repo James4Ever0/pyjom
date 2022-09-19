@@ -159,7 +159,11 @@ def detectionConfidenceFilter(
     else:
         raise Exception("Invalid logic: %s" % logic)
 
-def yolov5VideoDogCatDetector(videoPath, debug=False):
+def yolov5VideoDogCatDetector(videoPath, debug=False, filter_dict={
+        "dog": {"min": 0.5},
+        "cat": {"min": 0.5},
+    }, 
+    logic: Literal["AND", "OR"] = "OR"):
 
     template_names = ["yolov5_detector.mdl.j2"]
     semiauto = False
