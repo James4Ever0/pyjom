@@ -106,8 +106,9 @@ from hyperopt import fmin, tpe, space_eval
 
 space = (hyperopt.hp.uniform('skew',-0.5, 0),
 hyperopt.hp.uniform('input_bias',-0.5, 0))
-
-
+def objective(args):
+    print(args)
+    breakpoint()
 def evaluate_params(input_bias, skew):
     curve_function_kwargs = {
     "start": (0, 0),
