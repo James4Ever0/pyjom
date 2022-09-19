@@ -324,7 +324,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             )
             # treat each as a separate observation in this frame.
             detections.append({'identity':label, 'confidence':confidence})
-        multiParameterExponentialNetwork()
+
         # now we apply the thing? the yolov5 thing?
     return result
 
