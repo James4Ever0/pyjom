@@ -418,7 +418,7 @@ def dotVideoProcessor(
                             layerOriginalDuration = cutTo - cutFrom
 
                             processedFilePath = ffmpegVideoPreProductionFilter(
-                                filepath, start=cutFrom, end=cutTo, cachePath=cachePath
+                                filepath, start=cutFrom, end=cutTo, cachePath=cachePath, preview=
                             )
                             # what is this filepath? man how do i handle this?
                             videoFilePath = processedFilePath
