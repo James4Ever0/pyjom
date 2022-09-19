@@ -38,7 +38,6 @@ class OnlineAutoContentProducer(ContentProducer):
                 # "reviewer": filesystemReviewer,
                 "producer": keywordDecorator(
                     OnlineProducer,
-                    filters=producer_filters,
                     template=template,
                     template_config=template_config,
                 ),
