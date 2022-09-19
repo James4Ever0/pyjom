@@ -144,3 +144,4 @@ space = (hyperopt.hp.uniform('skew',-0.5, 0),
 hyperopt.hp.uniform('input_bias',-0.5, 0))
 
 best = fmin(objective, space, algo=tpe.suggest, max_evals=100)
+sprint("BEST:", best)
