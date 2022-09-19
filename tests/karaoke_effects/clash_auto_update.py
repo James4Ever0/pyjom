@@ -134,9 +134,10 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
     # breakpoint()
     if advanced:
         # print(data['proxies'])
+        key = "proxy-groups"
         updatedProxy = []
         updateIndex = 0
-        for index, proxy in enumerate(data["proxy-groups"]):
+        for index, proxy in enumerate(data[key]):
             # breakpoint()
             if proxy["name"] == "👉 例外网站":
                 print(proxy)
