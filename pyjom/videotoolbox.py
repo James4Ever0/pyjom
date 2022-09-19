@@ -1975,7 +1975,7 @@ def NSFWFilter(
             return False
     return True
 
-def NSFWVideoFilter(videoPath):
+def NSFWVideoFilter(videoPath, tmpdirPath = ):
 
     with tmpdir(path=tmpdirPath) as T:
         responses = []
