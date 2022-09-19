@@ -60,7 +60,7 @@ with tmpdir(path=tmpPath) as testDir:
                 getEffectiveFPS,
                 NSFWVideoFilter,
                 yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
-                dummyFilter # just for dog and cat, no other animals.
+                dummyFilterFunction # just for dog and cat, no other animals.
             )
 
             video_color_filter = {'centrality':{'max':0.30},"max_nearby_center_percentage":{'max':0.20}}
@@ -81,7 +81,7 @@ with tmpdir(path=tmpPath) as testDir:
                     checkMinMaxDict,
                     "EffectiveFPS",
                 ], # also, the dog/cat detector! fuck.
-                [None,dummyFilter,,]
+                [None,dummyFilterFunction,,]
             ]
             for function, mFilter, filterFunction, flag in mList:
                 mValue = function(local_video_location)
