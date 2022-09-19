@@ -21,9 +21,12 @@ import redis
 from redis_lru import RedisLRU
 
 from functools import lru_cache
+oneDay = 60*60*24 # one day?
+redisExpire =oneDay*7 # god damn it!
 
-def redisLRUCache(ttl=redisExpire):
-redisAddress = "127.0.0.1"
+@lru_cache(maxsize=1)
+def redisLRUCache(ttl=redisExpire,redisAddress = "127.0.0.1"):
+
 redisPort = 9291
 
 client = redis.StrictRedis(host=redisAddress, port=redisPort)
