@@ -121,7 +121,7 @@ def getMusicCutSpans(
         mintime,
         mbeat_time_tolerance=mbeat_time_tolerance,
     )
-    assert len(standard_bpm_spans)>=2
+    # assert len(standard_bpm_spans)>=2
 
     # now we engage with the cue points.
 
