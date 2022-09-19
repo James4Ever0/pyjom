@@ -161,8 +161,6 @@ def detectionConfidenceFilter(
     else:
         raise Exception("Invalid logic: %s" % logic)
 
-# {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
-
 def yolov5VideoDogCatDetector(videoPath):
 
     template_names = ["yolov5_detector.mdl.j2"]
@@ -177,8 +175,8 @@ def yolov5VideoDogCatDetector(videoPath):
         template_names=template_names,
         args={"autoArgs": autoArgs},
     )
-# videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
-# fileList = [{"type": "image", "path": videoPath}]
+    # videoPath = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
+    # fileList = [{"type": "image", "path": videoPath}]
 
     fileList = [{"type": "video", "path": videoPath} for videoPath in videoPaths]
 
@@ -202,6 +200,8 @@ def yolov5VideoDogCatDetector(videoPath):
     sprint("DETECTION CONFIDENCE:", detectionConfidence)
     filter_result = detectionConfidenceFilter(detectionConfidence)
     return filter_result
+
+# {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 
 def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5):
     return result
