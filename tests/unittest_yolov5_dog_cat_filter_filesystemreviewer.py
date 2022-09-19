@@ -271,6 +271,17 @@ def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.083004724
             final_result_list.append((new_name, confidence))
         return final_result_list
 
+
+    for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
+        padded_resized_frame = resizeImageWithPadding(
+            frame, 224, 224, border_type="replicate"
+        )  # pass the test only if three of these containing 'cats'
+        result = classifier.classification(
+            images=[padded_resized_frame], top_k=3, use_gpu=False
+        )  # check it?
+        resultList = paddleAnimalDetectionResultToList(result)
+        final_result_list = translateResultListToDogCatList(resultList)
+        sprint("RESULT LIST:", final_result_list)
     return result
 
 videoPaths = [
