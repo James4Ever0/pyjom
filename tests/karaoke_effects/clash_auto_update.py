@@ -170,7 +170,7 @@ def getClashYaml(clashYamlPath="Clash3.yaml"):
 def updateClashYaml(clashYamlPath="Clash3.yaml", control_port=9911, advanced=False):
     getClashYaml(clashYamlPath=clashYamlPath)
     # if refine:
-    refineClashYaml(clashYamlPath=clashYamlPath)
+    refineClashYaml(clashYamlPath=clashYamlPath,advanced=advanced)
     import requests
     import json
 
