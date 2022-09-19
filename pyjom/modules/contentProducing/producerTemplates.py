@@ -515,7 +515,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 
 from pyjom.commons import checkMinMaxDict
 from pyjom.lyrictoolbox import lrcToAnimatedAss
-from lazero.utils.filesystem import tmpdir
+from lazero.filesystem import tmpdir
 
 
 def petsWithMusicOnlineProducer(
