@@ -290,6 +290,7 @@ def censorTextWithTextFilter(text):
     data = r.json()
     return data['response']
 
+@redisLRUCache()
 def getTextListTranslated(test):
     newLyricArray = []
     import progressbar
