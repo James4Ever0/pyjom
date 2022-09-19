@@ -204,9 +204,8 @@ def yolov5VideoDogCatDetector(videoPath, debug=False):
 import paddlehub as hub
 
 @lru_cache(maxsize=1)
-def get():
+def getPaddleResnet50AnimalsClassifier():
     classifier = hub.Module(name="resnet50_vd_animals")
-
     return classifier
 
 @lru_cache(maxsize=3)
