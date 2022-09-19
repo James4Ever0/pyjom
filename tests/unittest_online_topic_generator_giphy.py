@@ -2,13 +2,14 @@ from test_commons import *
 from pyjom.modules.topicGenerator import OnlineTopicGenerator
 from pyjom.modules.informationGathering import OnlineFetcher
 from lazero.utils import sprint
-from lazero.network import download
+from lazero.network import download, waitForServerUp
 from lazero.filesystem import tmpdir
+
 
 clash_refresher_port = 8677
 clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
 
-clash_refresher_port,"clash update controller"
+waitForServerUp(clash_refresher_port,"clash update controller")
 
 elems, function_label = OnlineTopicGenerator()
 sprint("FUNCTION LABEL:", function_label)
