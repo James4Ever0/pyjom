@@ -141,8 +141,9 @@ def evaluate_params(input_bias, skew):
             final_differences.append(d)
         difference_item = min(final_differences)
         difference_items.append(difference_item)
-    sprint("FINAL DIFFERENCE:", difference)
-    return difference
+    final_difference = sum(difference_items)
+    sprint("FINAL DIFFERENCE:", final_difference)
+    return final_difference
 
 
 def objective(args):
