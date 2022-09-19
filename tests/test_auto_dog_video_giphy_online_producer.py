@@ -1,34 +1,37 @@
 # ld_library_path is handled externally using env
 from test_commons import *
 from pyjom.primitives import *
-autoArgs = {
-    "subtitle_detector": {"timestep": 0.2}
-} 
-template_names = ["subtitle_detector.mdl.j2"] 
+
+autoArgs = {"subtitle_detector": {"timestep": 0.2}}
+template_names = ["subtitle_detector.mdl.j2"]
 
 wbRev = OnlineAutoContentProducer(
-    source='giphy',
+    source="giphy",
     template="pets_with_music_online",
-    template_configs=[{
-        "music": {
-            "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3", # these things were not right.
-            "lyric_path": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc",
-        },
-        "font": "/root/.local/share/fonts/simhei.ttf",
-        # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
-        "policy": {},
-        "maxtime": 7.8,
-        "mintime": 2,
-        "fast":True, # pass this flag to medialang export engine
-    }],
+    template_configs=[
+        {
+            "music": {
+                "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
+                "lyric_path": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc",
+            },
+            "font": "/root/.local/share/fonts/simhei.ttf",
+            # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
+            "policy": {},
+            "maxtime": 7.8,
+            "mintime": 2,
+            "fast": True,  # pass this flag to medialang export engine
+        }
+    ],
     # you can also translate funny videos from youtube.
     # dummy_auto=False,
     # args=autoArgs,
     # semiauto=False # i do not want to comment shit.
 )
 
+
 def completeTest():
     wbRev.main()
+
 
 def partialMedialangRenderTest(medialangScript, verbose=True):
     # copy that script to my dear clipboard please?
@@ -36,12 +39,15 @@ def partialMedialangRenderTest(medialangScript, verbose=True):
     result = medialangObject.execute()
     return result
 
-def PMRT_0(scriptFilePath = "", verbose=True):
-    with open(scriptFilePath,"r") as f:
+
+def PMRT_0(scriptFilePath="", verbose=True):
+    with open(scriptFilePath, "r") as f:
         medialangScript = f.read()
     return partialMedialangRenderTest(medialangScript, verbose=verbose)
 
+
 from lazero.filesystem import tmpdir
+
 # from contextlib import AbstractContextManager
 
 # class tmpdir(AbstractContextManager):
@@ -85,13 +91,13 @@ if __name__ == "__main__":
         with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
             print("MEDIALANG SUPER TMPDIR:", medialangTmpDir)
             result = PMRT_0(scriptFilePath, verbose=False)
-            editly_outputPath, medialang_item_list = result # this just return none!
+            editly_outputPath, medialang_item_list = result  # this just return none!
             # data -> editly json
             # this output path is modified. we shall change this.
-            outPath = editly_outputPath # WE SHALL MUTE IT!
+            outPath = editly_outputPath  # WE SHALL MUTE IT!
             # print(editly_json.keys())
 
-            print("MEDIA SAVE PATH (MAYBE YOU CAN PLAY IT?):",outPath)
+            print("MEDIA SAVE PATH (MAYBE YOU CAN PLAY IT?):", outPath)
             breakpoint()
             # import json
             # data_array -> input of dot processor? check it out.
