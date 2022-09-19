@@ -327,7 +327,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             detections.append({'identity':label, 'confidence':confidence})
         dataList.append({'detections':detections})
         # now we apply the thing? the yolov5 thing?
-    detectionConfidence = VideoMeanDetectionConfidence
+    detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
     return result
 
 
