@@ -352,6 +352,7 @@ videoPaths = [
 ]
 for videoPath in videoPaths:  # this is for each file.
     # sprint(result)
+    sprint("checking video: %s" % videoPath)
     filter_result = yolov5VideoDogCatDetector(videoPath)
     # sprint("FILTER PASSED?", filter_result)
     if not filter_result:
