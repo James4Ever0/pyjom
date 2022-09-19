@@ -102,7 +102,8 @@ def OnlineProcessor(
                         print("removing abandoned video:", local_video_location)
                         os.remove(local_video_location)
                 else:
-                    yield {"location": local_video_location, "item_id": item_id,'meta':{"duration":get_duration(local_video_location), 'width':}}
+                    video_width, video_height = get_res(local_video_location)
+                    yield {"location": local_video_location, "item_id": item_id,'meta':{"duration":get_duration(local_video_location), 'width':video_width, 'height':video_height}}
                     # if you abandon that, better delete it!
                 # do time duration check, effective fps check, color centrality check, then the dog/cat check
                 # what's next? find some audio files? or just use one audio?
