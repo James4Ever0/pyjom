@@ -84,6 +84,7 @@ def getMusicCutSpansCandidates(
     beat_duration = 60 / bpm
 
     # this is static, not dynamic.
+    # we can make this 'standard bpm spans' into a generator instead.
     standard_bpm_spans = [
         x * beat_duration
         for x in range(0, math.ceil(maxtime / beat_duration) + 1)
