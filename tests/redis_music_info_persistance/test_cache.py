@@ -13,3 +13,4 @@ def test_function(parameter):
     print('parameter:',parameter)
     return 'abcdefg'
 
+test_function('toy_data')
