@@ -502,7 +502,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
                 dataDuration = data['meta']['duration']
                 videoSource = data['']
                 data_ids.append(data_id)
-                standard_bpm_spans.sort(lambda span: abs((span[1]-span[0])-dataDuration))
+                demanded_bpm_spans.sort(lambda span: abs((span[1]-span[0])-dataDuration))
                 span = getClosestSpan(dataDuration)
                 candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
                 render_list.append(candidate)
