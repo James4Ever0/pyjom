@@ -131,6 +131,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
     data["external-controller"] = base_url
     if "socks-port" in data.keys():
         del data["socks-port"]
+    breakpoint()
     if advanced:
         # print(data['proxies'])
         updatedProxy = []
