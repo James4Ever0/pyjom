@@ -345,7 +345,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
 videoPaths = [
     "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4",
     "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
-    # "/root/Desktop/works/pyjom/samples/video/cat_invalid_without_mestimate.mp4",
+    "/root/Desktop/works/pyjom/samples/video/cat_invalid_without_mestimate.mp4",
     "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif",
     # "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.mp4",
     # "/root/Desktop/works/pyjom/samples/video/kitty_flash_scaled.mp4",
