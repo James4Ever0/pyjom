@@ -1526,3 +1526,6 @@ def checkVideoColorCentrality(
     return True
 
 
+########################### DOG CAT DETECTION #########################
+
+########################### DOG CAT DETECTION #########################
