@@ -189,6 +189,7 @@ def yolov5VideoDogCatDetector(videoPath):
     resultList, function_id = reviewer(
         fileList, generator=False, debug=False
     )  # or at least a generator?
+    result = resultList[0]
 
     detectionData = extractYolov5DetectionData(result, mimetype=fileList[0]["type"])
     # sprint("DETECTION DATA:")
@@ -200,6 +201,7 @@ def yolov5VideoDogCatDetector(videoPath):
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
     sprint("DETECTION CONFIDENCE:", detectionConfidence)
     filter_result = detectionConfidenceFilter(detectionConfidence)
+    return filter_result
 
 def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5):
     return result
