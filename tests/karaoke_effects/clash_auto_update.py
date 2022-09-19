@@ -153,7 +153,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
                 updatedProxy["interval"] = 300
                 updatedProxy["tolerance"] = 50
                 break
-        data["proxies"][updateIndex] = updatedProxy
+        data[key][updateIndex] = updatedProxy
         # for item in data['proxies']:
         #     print(item)
 
