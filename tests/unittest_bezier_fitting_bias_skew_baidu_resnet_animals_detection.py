@@ -140,6 +140,7 @@ def evaluate_params(input_bias, skew):
             d = best_params_dict.get(mLabel, 1)
             final_differences.append(d)
         difference_item = min(final_differences)
+        difference_items.append(difference_item)
     sprint("FINAL DIFFERENCE:", difference)
     return difference
 
