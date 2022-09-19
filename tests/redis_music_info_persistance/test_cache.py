@@ -4,7 +4,7 @@ import redis
 from redis_lru import RedisLRU
 
 client = redis.StrictRedis()
-cache = RedisLRU(client)
+cache = RedisLRU(client,)
 
 redisAddress = "127.0.0.1"
 redisPort = 9291
