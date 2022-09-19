@@ -353,11 +353,13 @@ videoPaths = [
 for videoPath in videoPaths:  # this is for each file.
     # sprint(result)
     filter_result = yolov5VideoDogCatDetector(videoPath)
-    sprint("FILTER PASSED?", filter_result)
+    # sprint("FILTER PASSED?", filter_result)
     if not filter_result:
         sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
         filter_result = bezierPaddleHubResnet50VideoDogCatDetector(videoPath)
     if not filter_result:
         print("FILTER FAILED")
+    else:
+        print("FILTER PASSED")
     # if not passed, hit it with the bezier curve and resnet50
     # breakpoint()
