@@ -104,7 +104,7 @@ from lazero.utils.logger import sprint
 import hyperopt
 from hyperopt import fmin, tpe, space_eval
 
-space = (hyperopt.hp.uniform('skew',-0.5, 0)
+space = (hyperopt.hp.uniform('skew',-0.5, 0),
 hyperopt.hp.uniform('input_bias',-0.5, 0))
 
 
