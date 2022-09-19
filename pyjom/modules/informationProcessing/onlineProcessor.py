@@ -89,7 +89,7 @@ def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_
                     print("removing abandoned video:", local_video_location)
                     os.remove(local_video_location)
             else:
-                yield 
+                yield {'location': local_video_location, 'item_id': item_id}
                 # if you abandon that, better delete it!
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             # what's next? find some audio files? or just use one audio?
