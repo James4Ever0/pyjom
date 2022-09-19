@@ -340,7 +340,8 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     filter_result = detectionConfidenceFilter(
         detectionConfidence, filter_dict=filter_dict, logic=logic
     )
-    
+    print("DATALIST", dataList)
+    print("FILTER", filter_result
     breakpoint()
     return filter_result
 
