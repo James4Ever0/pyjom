@@ -104,10 +104,6 @@ from lazero.utils.logger import sprint
 import hyperopt
 from hyperopt import fmin, tpe, space_eval
 
-space = (hyperopt.hp.uniform('skew',-0.5, 0),
-hyperopt.hp.uniform('input_bias',-0.5, 0))
-
-best = fmin(objective, space, algo=tpe.suggest, max_evals=100)
 
 def evaluate_params(input_bias, skew):
     curve_function_kwargs = {
@@ -132,7 +128,6 @@ def evaluate_params(input_bias, skew):
             absolute_difference = abs(target_output - output)
             print("absolute difference:", absolute_difference)
             difference+=absolute_difference
-
     return difference
 
 def objective(args):
@@ -144,3 +139,8 @@ def objective(args):
     # breakpoint()
     value = evaluate_params(input_bias, skew)
     return value
+
+space = (hyperopt.hp.uniform('skew',-0.5, 0),
+hyperopt.hp.uniform('input_bias',-0.5, 0))
+
+best = fmin(objective, space, algo=tpe.suggest, max_evals=100)
