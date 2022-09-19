@@ -522,7 +522,6 @@ def petsWithMusicOnlineProducer(
     dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online"
 ):
     import uuid
-
     with tmpdir(path=tempdir) as TD:
         getRandomFileName = lambda extension: os.path.join(
             tempdir, ".".join([str(uuid.uuid4()), extension])
@@ -574,7 +573,6 @@ def petsWithMusicOnlineProducer(
                 complete = len(demanded_cut_spans) == 0
                 if complete:
                     break
-
             medialangObject = renderList2MediaLang(
                 render_list,
                 slient=True,
