@@ -203,12 +203,12 @@ def yolov5VideoDogCatDetector(videoPath, debug=False):
     return filter_result
 
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
-
+from functools import lru_cache
 def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5):
     from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
     from pyjom.imagetoolbox import resizeImageWithPadding
     import paddlehub as hub
-
+    @lru_cache(max_size=)
     def labelFileReader(filename):
         with open(filename, 'r') as f:
             content = f.read()
