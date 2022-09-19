@@ -1878,11 +1878,15 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False
         "dog": {"min": 0.5},
         "cat": {"min": 0.5},
     },
-    logic: Literal["AND", "OR"] = "OR",):
+    logic: Literal["AND", "OR"] = "OR",    input_bias=0.0830047243746045,
+    skew=-0.4986098769473948,
+    threshold=0.5,
+    dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
+    cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",):
     if debug:
         sprint("checking video: %s" % videoPath)
     filter_result = yolov5VideoDogCatDetector(
-        videoPath, filter_dict=filter_dict, logic=logic
+        videoPath, filter_dict=filter_dict, logic=logic, debug=debug
     )  # this is for short video. not for long video. long video needs to be sliced into smaller chunks
     # sprint("FILTER PASSED?", filter_result)
     if not filter_result:
