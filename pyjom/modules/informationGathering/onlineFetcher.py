@@ -48,6 +48,5 @@ def OnlineFetcher(
                         # breakpoint()
                 except:
                     import traceback
-
                     traceback.print_exc()
                     print("error fetching assets from giphy")
