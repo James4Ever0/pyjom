@@ -356,6 +356,7 @@ for videoPath in videoPaths:  # this is for each file.
     sprint("FILTER PASSED?", filter_result)
     if not filter_result:
         sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
-        filter_result = 
+        filter_result = bezierPaddleHubResnet50VideoDogCatDetector(videoPath)
+        
     # if not passed, hit it with the bezier curve and resnet50
     # breakpoint()
