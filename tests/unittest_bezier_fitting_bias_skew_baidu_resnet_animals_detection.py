@@ -103,7 +103,7 @@ curve_function_kwargs = {
     "skew": skew,
 }  # maximize the output.
 
-for test_param, target_output in test_params:
+for subject_id,(test_param, target_output) in enumerate(test_params):
     for index, (label, confidence) in enumerate(test_param):
         scope = test_param[index:]
         scope_confidences = [elem[1] for elem in scope if elem[0] == label]
