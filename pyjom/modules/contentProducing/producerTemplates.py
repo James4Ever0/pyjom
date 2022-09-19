@@ -488,6 +488,8 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 # shall we generate medialang for it?
 
 def petsWithMusicOnlineProducer(dataGenerator, config={}):
+    music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
+
     yield rendered_media_location # another generator?
 
 def getProducerTemplate(template):
