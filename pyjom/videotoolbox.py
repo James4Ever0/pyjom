@@ -1987,9 +1987,9 @@ def NSFWVideoFilter(
     tmpdirPath="/dev/shm/medialang/nsfw",
     fps=1,
     gateway="http://localhost:8511/",
-    debug=True,
+    debug=False,
     filter_dict={
-        "Neutral": {"min": 0.5},
+        "Neutral": {"min": 0.4},
         "Sexy": {"max": 0.5},
         "Porn": {"max": 0.5},
         "Hentai": {"max": 0.5},
