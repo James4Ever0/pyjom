@@ -116,7 +116,7 @@ def setClashProxy(proxy_name, control_port=9911):
         breakpoint()
 
 
-def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
+def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
     with open(clashYamlPath, "r") as f:
         data = f.read()
     from loadSomeCustomClashYaml import goYamlToPyYaml, pyYamlToGoYaml
@@ -135,17 +135,21 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
         # print(data['proxies'])
         updatedProxy = []
         updateIndex = 0
-        for index, proxy in enumerate(data['proxies']):
-        # breakpoint()
-            if proxy['name'] == "":
+        for index, proxy in enumerate(data["proxies"]):
+            # breakpoint()
+            if proxy["name"] == "":
                 updateIndex = index
                 updatedProxy = proxy.copy()
-                updatedProxy['proxies'] = [elem for elem in proxy['proxies'] if elem not in ['☁️ 全球直连','🌐 节点选择']]
+                updatedProxy["proxies"] = [
+                    elem
+                    for elem in proxy["proxies"]
+                    if elem not in ["☁️ 全球直连", "🌐 节点选择"]
+                ]
                 updatedProxy["url"] = "https://giphy.com"
-                updatedProxy["interval" ] = 300
-                updatedProxy["tolerance"] =  50
+                updatedProxy["interval"] = 300
+                updatedProxy["tolerance"] = 50
                 break
-        data['proxies'][updateIndex] = updatedProxy
+        data["proxies"][updateIndex] = updatedProxy
         # for item in data['proxies']:
         #     print(item)
 
@@ -187,7 +191,7 @@ def getClashYaml(clashYamlPath="Clash3.yaml"):
 def updateClashYaml(clashYamlPath="Clash3.yaml", control_port=9911, advanced=True):
     getClashYaml(clashYamlPath=clashYamlPath)
     # if refine:
-    refineClashYaml(clashYamlPath=clashYamlPath,advanced=advanced)
+    refineClashYaml(clashYamlPath=clashYamlPath, advanced=advanced)
     import requests
     import json
 
