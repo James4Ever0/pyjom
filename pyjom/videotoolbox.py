@@ -1882,7 +1882,7 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False
     if debug:
         sprint("checking video: %s" % videoPath)
     filter_result = yolov5VideoDogCatDetector(
-        videoPath
+        videoPath, filter_dict=filter_dict, logic=logic
     )  # this is for short video. not for long video. long video needs to be sliced into smaller chunks
     # sprint("FILTER PASSED?", filter_result)
     if not filter_result:
