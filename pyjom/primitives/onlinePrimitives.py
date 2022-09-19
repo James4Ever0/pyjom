@@ -33,11 +33,12 @@ class OnlineAutoContentProducer(ContentProducer):
                     OnlineFetcher, source=source, tempdir = tempdir
                 ),  # can you do that?
                 "processor": keywordDecorator(
-                    OnlineProcessor
+                    OnlineProcessor,source=source
                 ),  # this is the second thing. how do you process this?
                 # "reviewer": filesystemReviewer,
                 "producer": keywordDecorator(
                     OnlineProducer,
+                    source=source,
                     template=template,
                     template_configs=template_configs,
                 ),
