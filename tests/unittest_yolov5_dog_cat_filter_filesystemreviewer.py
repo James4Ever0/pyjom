@@ -203,7 +203,7 @@ def yolov5VideoDogCatDetector(videoPath, debug=False, filter_dict={
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
     if debug:
         sprint("DETECTION CONFIDENCE:", detectionConfidence)
-    filter_result = detectionConfidenceFilter(detectionConfidence)
+    filter_result = detectionConfidenceFilter(detectionConfidence, filter_dict=filter_dict, logic=logic)
     return filter_result
 import paddlehub as hub
 from functools import lru_cache
