@@ -133,8 +133,8 @@ def evaluate_params(input_bias, skew):
     for label, difference in differences:
         if label in mLabels:
             previousDifference = best_params_dict.get(label, 1)
-            best_params_dict[label] = difference
-            
+            if previousDifference > difference:
+                best_params_dict[label] = difference
     return difference
 
 
