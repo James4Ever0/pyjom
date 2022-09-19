@@ -310,7 +310,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
         if debug:
             sprint("RESULT LIST:", final_result_list)
         for index, (label, confidence) in enumerate(final_result_list):
-            scope = test_param[index:]
+            scope = final_result_list[index:]
             scope_confidences = [elem[1] for elem in scope if elem[0] == label]
             output = multiParameterExponentialNetwork(
                 *scope_confidences,
