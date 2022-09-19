@@ -404,6 +404,23 @@ def renderList2MediaLang(
     medialangObject = Medialang(script=medialangScript)
     return medialangObject
 
+def getMusicInfoParsed(config):
+    music = config["music"]
+    font = config["font"]
+    policy = config["policy"]
+    policy_names = [x for x in policy.keys()]
+    # get music duration here.
+    music_metadata = get_media_info(music["filepath"])
+    music_duration = music_metadata["duration"]
+
+    maxtime = config["maxtime"]
+    mintime = config["mintime"]
+
+    lyric_path = music["lyric_path"]
+
+    demanded_cut_spans, standard_bpm_spans = getMusicCutSpans(
+        music, music_duration, lyric_path, maxtime, mintime
+    )
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
