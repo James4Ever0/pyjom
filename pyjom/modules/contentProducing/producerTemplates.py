@@ -133,7 +133,7 @@ def getMusicCutSpans(
     while True:
         if len(standard_bpm_spans) == 1:
             standard_bpm_span_selected = standard_bpm_spans
-            doubleRate = 1.1
+            doubleRate = 1.2
         else:
         standard_bpm_span_selected = random.choice(standard_bpm_spans)
         if counter > 10000:  # some dangerous deadloop.
