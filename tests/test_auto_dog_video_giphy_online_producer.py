@@ -40,6 +40,7 @@ def PMRT_0(scriptFilePath = "", verbose=True):
         medialangScript = f.read()
     return partialMedialangRenderTest(medialangScript, verbose=verbose)
 
+from lazero.filesystem import tmpdir
 # from contextlib import AbstractContextManager
 
 # class tmpdir(AbstractContextManager):
@@ -69,7 +70,6 @@ def PMRT_0(scriptFilePath = "", verbose=True):
 #         print("cleaning tempdir: %s" % tempdir)
 #         shutil.rmtree(tempdir)
 #         return False
-        
 if __name__ == "__main__":
     COMPLETE_TEST = True
     if COMPLETE_TEST:
