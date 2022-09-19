@@ -67,7 +67,6 @@ def read_lrc(lrc_path):
 def getMusicCutSpansCandidates(
     music, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
-
     beats, bpm = audioOwlAnalysis(music["filepath"])
     lyric = read_lrc(lyric_path)
     # print(lyric)
@@ -124,6 +123,7 @@ def getMusicCutSpans(
         scale, loc = std, mean
         myclip_a, myclip_b = mintime, maxtime
         from scipy.stats import truncnorm
+
         a, b = (myclip_a - loc) / scale, (myclip_b - loc) / scale
         randVar = truncnorm(a, b)
         randomFunction = lambda: randVar.rvs(1)[0] * scale + loc
@@ -138,13 +138,13 @@ def getMusicCutSpans(
     while True:
         if gaussian:
             standard_bpm_span_min_selected = randomFunction()
-            doubleRate = max(min(2, maxtime / standard_bpm_span_min_selected),1)
+            doubleRate = max(min(2, maxtime / standard_bpm_span_min_selected), 1)
         elif len(standard_bpm_spans) == 1:
             standard_bpm_span_min_selected = standard_bpm_spans[0]
             doubleRate = 1.2
         else:
             standard_bpm_span_min_selected = random.choice(standard_bpm_spans[:-1])
-            doubleRate = max(1,min(2,maxtime/standard_bpm_span_min_selected))
+            doubleRate = max(1, min(2, maxtime / standard_bpm_span_min_selected))
         if counter > 10000:  # some dangerous deadloop.
             breakpoint()
             print("LOOPCOUNT", counter)
