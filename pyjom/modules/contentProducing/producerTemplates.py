@@ -101,7 +101,7 @@ def getMusicCutSpansCandidates(
     return candidates, standard_bpm_spans
 
 def getMusicCutSpansGaussian(music, lyric_path, mintime=0.6, maxtime=7, mbeat_time_tolerance=0.8, sigma=1):
-    candidates, standard_bpm_spans = getMusicCutSpansCandidates(music, music_duration
+    candidates, standard_bpm_spans = getMusicCutSpansCandidates(music, lyric_path, maxtime, mintime, mbeat_time_tolerance=mbeat_time_tolerance)
     demanded_cut_points = [0]
 
 def getMusicCutSpans(
