@@ -545,6 +545,8 @@ def petsWithMusicOnlineProducer(
             render_list = []  # what is this freaking render_list?
             # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
             # if lyric_path:
+            print("lrc path:", lyric_path)
+            breakpoint()
             ass_file_path = getRandomFileName("lrc")
             lrcToAnimatedAss(music, lyric_path, ass_file_path)
             data_ids = []
