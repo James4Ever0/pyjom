@@ -62,7 +62,8 @@ def paddleAnimalDetectionResultToList(result):
     return resultList
 
 def translateResultListToDogCat(resultList):
-    for elem in 
+    for name, confidence in resultList:
+        new_name = 
 
 if test_flag == "video":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
