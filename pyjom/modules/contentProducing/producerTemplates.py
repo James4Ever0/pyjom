@@ -110,8 +110,8 @@ def getMusicCutSpans(
     gaussian=False,
     gaussian_args={"std": 1.6674874515595588, "mean": 2.839698412698412},
 ):
-    assert mintime>0
-    assert maxtime>mintime
+    assert mintime > 0
+    assert maxtime > mintime
     candidates, standard_bpm_spans = getMusicCutSpansCandidates(
         music,
         lyric_path,
@@ -404,6 +404,7 @@ def renderList2MediaLang(
     medialangObject = Medialang(script=medialangScript)
     return medialangObject
 
+
 def getMusicInfoParsed(config):
     music = config["music"]
     font = config["font"]
@@ -418,13 +419,38 @@ def getMusicInfoParsed(config):
     demanded_cut_spans, standard_bpm_spans = getMusicCutSpans(
         music, music_duration, lyric_path, maxtime, mintime
     )
-    return music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans
+    return (
+        music,
+        font,
+        policy,
+        policy_names,
+        music_metadata,
+        music_duration,
+        maxtime,
+        mintime,
+        lyric_path,
+        demanded_cut_spans,
+        standard_bpm_spans,
+    )
+
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
     # config = {"music":{"filepath":"","lyric_path":""},"font":{"filepath":"","fontsize":30}, "policy":{"some_policy_name":{}},"meta":{"maxtime":3, "mintime":1}}
     # how to auto-warp the AAS subtitle?
-    music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
+    (
+        music,
+        font,
+        policy,
+        policy_names,
+        music_metadata,
+        music_duration,
+        maxtime,
+        mintime,
+        lyric_path,
+        demanded_cut_spans,
+        standard_bpm_spans,
+    ) = getMusicInfoParsed(config)
     # do you fill timegap with a loop?
     total_cuts = {}
     # print("DEMANDED CUT SPANS: " , demanded_cut_spans) # test passed.
@@ -490,15 +516,34 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 from pyjom.commons import checkMinMaxDict
 from pyjom.lyrictoolbox import lrcToAnimatedAss
 from lazero.utils.filesystem import tmpdir
-def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medialang/pets_with_music_online'):
+
+
+def petsWithMusicOnlineProducer(
+    dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online"
+):
     import uuid
+
     with tmpdir(path=tempdir) as TD:
-        getRandomFileName = lambda extension : os.path.join(tempdir,".".join([str(uuid.uuid4()), extension]))
+        getRandomFileName = lambda extension: os.path.join(
+            tempdir, ".".join([str(uuid.uuid4()), extension])
+        )
         for config in configs:
-        # we only have one song here. you fucking know that?
-            music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
+            # we only have one song here. you fucking know that?
+            (
+                music,
+                font,
+                policy,
+                policy_names,
+                music_metadata,
+                music_duration,
+                maxtime,
+                mintime,
+                lyric_path,
+                demanded_cut_spans,
+                standard_bpm_spans,
+            ) = getMusicInfoParsed(config)
             # check for 'demanded_cut_spans' now!
-            render_list = [] # what is this freaking render_list?
+            render_list = []  # what is this freaking render_list?
             # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
             # if lyric_path:
             ass_file_path = getRandomFileName("lrc")
@@ -506,18 +551,24 @@ def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medial
             data_ids = []
             for data in dataGenerator:
                 # what is the format of the data?
-                data_id = data['item_id']
+                data_id = data["item_id"]
                 if data_id not in data_ids:
-                    dataDuration = data['meta']['duration']
-                    videoSource = data['location']
+                    dataDuration = data["meta"]["duration"]
+                    videoSource = data["location"]
                     data_ids.append(data_id)
-                    demanded_cut_spans.sort(lambda span: abs((span[1]-span[0])-dataDuration))
+                    demanded_cut_spans.sort(
+                        lambda span: abs((span[1] - span[0]) - dataDuration)
+                    )
                     closest_span = demanded_cut_spans[0]
-                    closest_span_duration = (closest_span[1]-closest_span[0])
-                    speed_delta = closest_span_duration/dataDuration
-                    if checkMinMaxDict(speed_delta, {'min':0.8, 'max':1.2}):
+                    closest_span_duration = closest_span[1] - closest_span[0]
+                    speed_delta = closest_span_duration / dataDuration
+                    if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
                         span = closest_span
-                        candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
+                        candidate = {
+                            "span": span,
+                            "cut": {"span": (0, dataDuration)},
+                            "source": videoSource,
+                        }
                         render_list.append(candidate)
                 complete = len(demanded_cut_spans) == 0
                 if complete:
@@ -535,9 +586,16 @@ def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medial
 
             final_output_location = getRandomFileName("mp4")
             import ffmpeg
-            ffmpeg.input(rendered_media_location).filter('ass', ass_file_path).output(final_output_location).run(overwrite_output=True)
-            yield final_output_location # another generator?
+
+            ffmpeg.input(rendered_media_location).filter("ass", ass_file_path).output(
+                final_output_location
+            ).run(overwrite_output=True)
+            yield final_output_location  # another generator?
+
 
 def getProducerTemplate(template):
-    producer_mapping = {"pets_with_music": petsWithMusicProducer,"pets_with_music_online": petsWithMusicOnlineProducer}
+    producer_mapping = {
+        "pets_with_music": petsWithMusicProducer,
+        "pets_with_music_online": petsWithMusicOnlineProducer,
+    }
     return producer_mapping[template]
