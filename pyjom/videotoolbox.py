@@ -1536,6 +1536,7 @@ from pyjom.mathlib import superMean, superMax
 import paddlehub as hub
 from functools import lru_cache
 
+
 def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
     # plan to get some calculations!
     filepath, review_data = detectionData["review"]["review"]
@@ -1773,7 +1774,8 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     input_bias=0.0830047243746045,
     skew=-0.4986098769473948,
     threshold=0.5,
-    dog_label_file_path =  "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
+    dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
+    cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
     logic: Literal["AND", "OR"] = "OR",
 ):
@@ -1791,12 +1793,8 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
 
     dog_suffixs = ["狗", "犬", "梗"]
     cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
-    dog_labels = labelFileReader(
-       dog_label_file_path
-    )
-    cat_labels = labelFileReader(
-       cat_label_file_path
-    )
+    dog_labels = labelFileReader(dog_label_file_path)
+    cat_labels = labelFileReader(cat_label_file_path)
 
     forbidden_words = [
         "灵猫",
@@ -1860,7 +1858,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             output = multiParameterExponentialNetwork(
                 *scope_confidences,
                 input_bias=input_bias,
-                curve_function_kwargs=curve_function_kwargs
+                curve_function_kwargs=curve_function_kwargs,
             )
             # treat each as a separate observation in this frame.
             detections.append({"identity": label, "confidence": output})
@@ -1875,5 +1873,6 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     # print("FILTER RESULT", filter_result)
     # breakpoint()
     return filter_result
+
 
 ########################### DOG CAT DETECTION #########################
