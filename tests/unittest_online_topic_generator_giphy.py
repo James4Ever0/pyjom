@@ -125,5 +125,6 @@ with tmpdir(path=tmpPath) as testDir:
                     os.remove(local_video_location)
                 # if you abandon that, better delete it!
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
+            # what's next? find some 
     # print("HERE??",3)
     # print('flag', flag)
