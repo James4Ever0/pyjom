@@ -132,6 +132,7 @@ def getMusicCutSpans(
     oldCandidateLength = None
     while True:
         if len(standard_bpm_spans) == 1:
+            standard_bpm_span_selected = standard_bpm_spans
             doubleRate = 1.1
         else:
         standard_bpm_span_selected = random.choice(standard_bpm_spans)
