@@ -493,7 +493,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
         # check for 'demanded_cut_spans' now!
         render_list = [] # what is this freaking render_list?
-        # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...] 
+        # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
         data_ids = []
         for data in dataGenerator:
             # what is the format of the data?
