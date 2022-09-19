@@ -202,6 +202,7 @@ def yolov5VideoDogCatDetector(videoPath, debug=False):
     filter_result = detectionConfidenceFilter(detectionConfidence)
     return filter_result
 import paddlehub as hub
+from functools import lru_cache
 
 @lru_cache(maxsize=1)
 def getPaddleResnet50AnimalsClassifier():
@@ -219,7 +220,6 @@ def labelFileReader(filename):
 
 
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
-from functools import lru_cache
 def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5):
     from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
     from pyjom.imagetoolbox import resizeImageWithPadding
