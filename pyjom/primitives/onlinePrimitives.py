@@ -1,4 +1,5 @@
 from pyjom.main import *
+from ..modules.informationProcessing.onlineProcessor import OnlineProcessor
 
 
 class OnlineAutoContentProducer(ContentProducer):
@@ -33,7 +34,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     OnlineFetcher, source=source, tempdir = tempdir
                 ),  # can you do that?
                 "processor": keywordDecorator(
-                    OnlineProcessor, filters=processor_filters
+                    OnlineProcessor
                 ),  # this is the second thing. how do you process this?
                 # "reviewer": filesystemReviewer,
                 "producer": keywordDecorator(
