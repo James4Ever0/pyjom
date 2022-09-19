@@ -131,12 +131,12 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
     data["external-controller"] = base_url
     if "socks-port" in data.keys():
         del data["socks-port"]
-    breakpoint()
+    # breakpoint()
     if advanced:
         # print(data['proxies'])
         updatedProxy = []
         updateIndex = 0
-        for index, proxy in enumerate(data["proxies"]):
+        for index, proxy in enumerate(data["proxy-groups"]):
             # breakpoint()
             if proxy["name"] == "👉 例外网站":
                 print(proxy)
