@@ -1795,7 +1795,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
        dog_label_file_path
     )
     cat_labels = labelFileReader(
-        "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt"
+       cat_label_file_path
     )
 
     forbidden_words = [
