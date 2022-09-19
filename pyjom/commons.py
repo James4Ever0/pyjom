@@ -28,8 +28,7 @@ redisExpire =oneDay*7 # god damn it!
 def redisLRUCache(ttl=redisExpire,redisAddress = "127.0.0.1",redisPort = 9291,max_size=20):
     client = redis.StrictRedis(host=redisAddress, port=redisPort)
     cache = RedisLRU(client,max_size=max_size)
-
-    @cache(ttl=redisExpire)
+    return cache(ttl=redisExpire)
 
 
 # this is root. this is not site-packages.
