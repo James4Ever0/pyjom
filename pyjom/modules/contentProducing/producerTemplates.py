@@ -110,6 +110,8 @@ def getMusicCutSpans(
     gaussian=False,
     gaussian_args={"std": 1.6674874515595588, "mean": 2.839698412698412},
 ):
+    assert mintime>0
+    assert maxtime>mintime
     candidates, standard_bpm_spans = getMusicCutSpansCandidates(
         music,
         lyric_path,
