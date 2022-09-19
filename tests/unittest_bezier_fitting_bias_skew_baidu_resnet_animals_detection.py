@@ -108,20 +108,21 @@ from lazero.utils.logger import sprint
 import hyperopt
 
 
-for subject_id,(test_param, target_output) in enumerate(test_params):
-    for index, (label, confidence) in enumerate(test_param):
-        scope = test_param[index:]
-        scope_confidences = [elem[1] for elem in scope if elem[0] == label]
-        output = multiParameterExponentialNetwork(
-            *scope_confidences,
-            input_bias=input_bias,
-            curve_function_kwargs=curve_function_kwargs
-        )
-        print('test subject_id:', subject_id)
-        print("label:",label)
-        print("output:", output)
-        print("target_output:", target_output)
-        absolute_difference = abs(target_output - output)
-        print("absolute difference:", absolute_difference)
-        print("skew:", skew)
-        sprint("input_bias:", input_bias)
+
+    for subject_id,(test_param, target_output) in enumerate(test_params):
+        for index, (label, confidence) in enumerate(test_param):
+            scope = test_param[index:]
+            scope_confidences = [elem[1] for elem in scope if elem[0] == label]
+            output = multiParameterExponentialNetwork(
+                *scope_confidences,
+                input_bias=input_bias,
+                curve_function_kwargs=curve_function_kwargs
+            )
+            print('test subject_id:', subject_id)
+            print("label:",label)
+            print("output:", output)
+            print("target_output:", target_output)
+            absolute_difference = abs(target_output - output)
+            print("absolute difference:", absolute_difference)
+            print("skew:", skew)
+            sprint("input_bias:", input_bias)
