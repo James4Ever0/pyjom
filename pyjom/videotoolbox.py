@@ -1977,7 +1977,8 @@ def NSFWFilter(
 
 from lazero.filesystem import tmpfile
 import requests
-def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1):
+
+def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1,gateway = "http://localhost:8511/"):
     source = videoPath
     with tmpdir(path=tmpdirPath) as T:
         responses = []
