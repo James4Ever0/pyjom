@@ -63,7 +63,7 @@ def read_lrc(lrc_path):
             # another square bracket that could kill me.
         return sublist
 
-def getMusicCutSpansCandidates(music,):
+def getMusicCutSpansCandidates(music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8):
 
     beats, bpm = audioOwlAnalysis(music["filepath"])
     lyric = read_lrc(lyric_path)
@@ -97,7 +97,7 @@ def getMusicCutSpansCandidates(music,):
 def getMusicCutSpans(
     music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
-    candidates = getMusicCutSpansCandidates()
+    candidates = getMusicCutSpansCandidates(music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=mbeat_time_tolerance)
 
     # now we engage with the cue points.
 
