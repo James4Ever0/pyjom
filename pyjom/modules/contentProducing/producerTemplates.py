@@ -499,7 +499,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medial
         render_list = [] # what is this freaking render_list?
         # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
         # if lyric_path:
-        ass_file_path = 
+        ass_file_path = ".".join([getRandomFileName, 'lrc'])
         lrcToAnimatedAss(music, lyric_path, ass_file_path)
         data_ids = []
         for data in dataGenerator:
