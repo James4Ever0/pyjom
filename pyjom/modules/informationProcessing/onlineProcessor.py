@@ -14,8 +14,8 @@ def OnlineProcessor(info, use_proxy=False,clash_refresher_port = 8677,proxy_url 
     flag = "topic_with_fetcher"
 
     with tmpdir(path=tmpPath) as testDir:
-        elif flag == "topic_with_fetcher":
-            sprint("checking online fetcher")
+        # elif flag == "topic_with_fetcher":
+            # sprint("checking online fetcher")
             # print("HERE??",2)
             set_proxy()
             newElems, label = OnlineFetcher(
