@@ -10,8 +10,6 @@ autoArgs = {
 
 from pyjom.mathlib import superMean, superMax
 
-
-
 def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
     # plan to get some calculations!
     filepath, review_data = detectionData["review"]["review"]
