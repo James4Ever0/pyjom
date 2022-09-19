@@ -205,6 +205,9 @@ def yolov5VideoDogCatDetector(videoPath, debug=False):
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 
 def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5):
+    from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
+    from pyjom.imagetoolbox import resizeImageWithPadding
+    import paddlehub as hub
     return result
 
 videoPaths = [
