@@ -2,4 +2,6 @@
 
 def test_function(parameter):
     print('hello world')
-    print(parameter)
+    print('parameter:',parameter)
+    return 'abcdefg'
+
