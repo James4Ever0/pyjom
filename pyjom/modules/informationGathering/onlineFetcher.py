@@ -2,16 +2,27 @@ from pyjom.commons import *
 from typing import Literal
 from lazero.network import download
 
+
 @decorator
-def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:dict={'width':{'min':150,'max':1000}, 'height':{'min':150,'max':1000}}, tempdir='/dev/shm/medialang/online', threads=6):
+def OnlineFetcher(
+    infoList,
+    source: Literal["giphy"] = "giphy",
+    frame_size_filter: dict = {
+        "width": {"min": 150, "max": 1000},
+        "height": {"min": 150, "max": 1000},
+    },
+    tempdir="/dev/shm/medialang/online",
+    threads=6,
+    use_multithread=True,
+):
     # how do you chain this shit up?
     assert os.path.isabs(tempdir)
     assert os.path.isdir(tempdir)
     assert os.path.exists(tempdir)
-    for info in infoList: # generator most likely
-        if source=='giphy':
+    for info in infoList:  # generator most likely
+        if source == "giphy":
             (source_id, frameMeta) = info
-            width, height = frameMeta['width'], frameMeta['height']
+            width, height = frameMeta["width"], frameMeta["height"]
             asset_id = "video_[{}_{}]_[{}x{}]".format(source, source_id, width, height)
             flag = frameSizeFilter(frameMeta, frame_size_filter)
             if flag:
@@ -21,15 +32,22 @@ def OnlineFetcher(infoList, source:Literal['giphy']='giphy', frame_size_filter:d
                 basename = ".".join([asset_id, extension])
                 download_path = os.path.join(tempdir, basename)
                 try:
-                    result = download(url, download_path, threads=threads, size_filter={"min":0.4, "max":50}, use_multithread=use_multithread)
+                    result = download(
+                        url,
+                        download_path,
+                        threads=threads,
+                        size_filter={"min": 0.4, "max": 50},
+                        use_multithread=use_multithread,
+                    )
                     if result:
                         yield source_id, download_path
                     else:
-                        print('not downloading source:',source_id)
+                        print("not downloading source:", source_id)
                         print("skipping:", frameMeta)
                         # print("____WTF IS GOING ON WITH THE DOWNLOADER?____")
                         # breakpoint()
                 except:
                     import traceback
+
                     traceback.print_exc()
                     print("error fetching assets from giphy")
