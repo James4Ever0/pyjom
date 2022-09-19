@@ -488,8 +488,9 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 # shall we generate medialang for it?
 
 def petsWithMusicOnlineProducer(dataGenerator, configs):
+    for config in configs:
     # we only have one song here. you fucking know that?
-    music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
+        music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
 
     yield rendered_media_location # another generator?
 
