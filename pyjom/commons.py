@@ -16,6 +16,10 @@ import site
 import sys
 import random
 
+## bring about 'redis cache' for faster testing.
+
+
+
 # this is root. this is not site-packages.
 def frameSizeFilter(frameMeta, frame_size_filter):
     width, height = frameMeta["width"], frameMeta["height"]
