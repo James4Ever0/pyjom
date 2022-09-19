@@ -340,8 +340,6 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
         detectionConfidence, filter_dict=filter_dict, logic=logic
     )
     return filter_result
-    return result
-
 
 videoPaths = [
     # "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4",
@@ -354,6 +352,7 @@ videoPaths = [
 ]
 for videoPath in videoPaths:  # this is for each file.
     # sprint(result)
+    filter_result = yolov5VideoDogCatDetector
     sprint("FILTER PASSED?", filter_result)
     if not filter_result:
         sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
