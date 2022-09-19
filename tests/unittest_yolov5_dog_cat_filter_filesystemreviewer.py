@@ -205,6 +205,6 @@ for result in resultGenerator:  # this is for each file.
     filter_result = detectionConfidenceFilter(detectionConfidence)
     sprint("FILTER PASSED?", filter_result)
     if not filter_result:
-        
+        sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
     # if not passed, hit it with the bezier curve and resnet50
     # breakpoint()
