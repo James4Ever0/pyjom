@@ -112,7 +112,7 @@ for test_param, target_output in test_params:
             input_bias=input_bias,
             curve_function_kwargs=curve_function_kwargs
         )
-        print("label":)
+        print("label:",label)
         print("output:", output)
         print("target_output:", target_output)
         absolute_difference = abs(target_output - output)
