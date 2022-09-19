@@ -243,6 +243,11 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     threshold=0.5,
     debug=False,
 ):
+    curve_function_kwargs = {
+        "start": (0, 0),
+        "end": (1, 1),
+        "skew": skew,
+    }  # maximize the output.
     from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
     from pyjom.imagetoolbox import resizeImageWithPadding
 
