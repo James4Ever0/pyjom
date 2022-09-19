@@ -107,12 +107,12 @@ from hyperopt import fmin, tpe, space_eval
 
 def evaluate_params(input_bias, skew):
     curve_function_kwargs = {
-    "start": (0, 0),
-    "end": (1, 1),
-    "skew": skew,
-}  # maximize the output.
+        "start": (0, 0),
+        "end": (1, 1),
+        "skew": skew,
+    }  # maximize the output.
     difference = 0
-    for subject_id,(test_param, target_output) in enumerate(test_params):
+    for subject_id, (test_param, target_output) in enumerate(test_params):
         for index, (label, confidence) in enumerate(test_param):
             scope = test_param[index:]
             scope_confidences = [elem[1] for elem in scope if elem[0] == label]
@@ -121,14 +121,15 @@ def evaluate_params(input_bias, skew):
                 input_bias=input_bias,
                 curve_function_kwargs=curve_function_kwargs
             )
-            print('test subject_id:', subject_id)
-            print("label:",label)
+            print("test subject_id:", subject_id)
+            print("label:", label)
             print("output:", output)
             print("target_output:", target_output)
             absolute_difference = abs(target_output - output)
             print("absolute difference:", absolute_difference)
-            difference+=absolute_difference
+            difference += absolute_difference
     return difference
+
 
 def objective(args):
     skew, input_bias = args
@@ -140,8 +141,11 @@ def objective(args):
     value = evaluate_params(input_bias, skew)
     return value
 
-space = (hyperopt.hp.uniform('skew',-0.5, 0),
-hyperopt.hp.uniform('input_bias',-0.5, 0))
+
+space = (
+    hyperopt.hp.uniform("skew", -0.5, 0),
+    hyperopt.hp.uniform("input_bias", -0.5, 0),
+)
 
 best = fmin(objective, space, algo=tpe.suggest, max_evals=100)
 sprint("BEST:", best)
