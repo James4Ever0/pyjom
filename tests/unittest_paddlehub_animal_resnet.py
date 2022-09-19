@@ -61,6 +61,8 @@ def paddleAnimalDetectionResultToList(result):
     resultList.sort(key=lambda item: -item[1])
     return resultList
 
+def translateResultListToDogCat(resultList)
+
 if test_flag == "video":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
         padded_resized_frame = resizeImageWithPadding(
