@@ -25,12 +25,12 @@ oneDay = 60*60*24 # one day?
 redisExpire =oneDay*7 # god damn it!
 
 @lru_cache(maxsize=1)
-def redisLRUCache(ttl=redisExpire,redisAddress = "127.0.0.1"):
+def redisLRUCache(ttl=redisExpire,redisAddress = "127.0.0.1",redisPort = 9291,max_size=20):
 
-redisPort = 9291
+
 
 client = redis.StrictRedis(host=redisAddress, port=redisPort)
-cache = RedisLRU(client,max_size=20)
+cache = RedisLRU(client,)
 
 # redisCache = RedisCache(redisAddress, redisPort)
 
