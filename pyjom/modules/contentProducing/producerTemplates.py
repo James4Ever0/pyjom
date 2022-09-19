@@ -528,7 +528,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         final_output_location = ""
         import ffmpeg
         ffmpeg.input(rendered_media_location).filter().output().run()
-        yield rendered_media_location # another generator?
+        yield final_output_location # another generator?
 
 def getProducerTemplate(template):
     producer_mapping = {"pets_with_music": petsWithMusicProducer,"pets_with_music_online": petsWithMusicOnlineProducer}
