@@ -143,14 +143,14 @@ def getMusicCutSpans(
             print(len(demanded_cut_points), remaining_time, standard_bpm_spans[0])
         counter += 1
         startingPoint = demanded_cut_points[-1]
-        try:
+        # try:
             selected_candidates = [
                 x for x in candidates if x > startingPoint
             ]  # unsupported comparation between 'float' and 'list'?
-        except:
-            import traceback
-            traceback.print_exc()
-            breakpoint()
+        # except:
+        #     import traceback
+        #     traceback.print_exc()
+        #     breakpoint()
         newCandidateLength = len(selected_candidates)
         if newCandidateLength == 0:
             # nothing left.
