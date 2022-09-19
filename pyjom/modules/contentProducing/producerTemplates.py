@@ -494,8 +494,10 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         # check for 'demanded_cut_spans' now!
         render_list = [] # what is this freaking render_list?
         # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...] 
+
         for data in dataGenerator:
             # what is the format of the data?
+            dataLength = data['meta']['duration']
             render_list.append(candidate)
             if complete:
                 break
