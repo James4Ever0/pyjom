@@ -208,6 +208,48 @@ def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.083004724
     from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
     from pyjom.imagetoolbox import resizeImageWithPadding
     import paddlehub as hub
+
+    def labelFileReader(filename):
+        with open(filename, 'r') as f:
+            content = f.read()
+            content = content.split("\n")
+            content = [elem.replace("\n","").strip() for elem in content]
+            content = [elem for elem in content if len(elem)>0]
+        return content
+
+    dog_suffixs = ["狗", "犬", "梗"]
+    cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
+    dog_labels = labelFileReader("/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt")
+    cat_labels = labelFileReader("/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt")
+
+    forbidden_words = [
+        "灵猫",
+        "熊猫",
+        "猫狮",
+        "猫头鹰",
+        "丁丁猫儿",
+        "绿猫鸟",
+        "猫鼬",
+        "猫鱼",
+        "玻璃猫",
+        "猫眼",
+        "猫蛱蝶",
+    ]
+
+    def dog_cat_name_recognizer(name):
+        if name in dog_labels:
+            return "dog"
+        elif name in cat_labels:
+            return "cat"
+        elif name not in forbidden_words:
+            for dog_suffix in dog_suffixs:
+                if name.endswith(dog_suffix):
+                    return "dog"
+            for cat_suffix in cat_suffixs:
+                if name.endswith(cat_suffix):
+                    return "cat"
+        return None
+
     return result
 
 videoPaths = [
