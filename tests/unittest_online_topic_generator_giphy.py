@@ -11,7 +11,9 @@ sprint("FUNCTION LABEL:", function_label)
 # breakpoint()
 tmpPath = "/dev/shm/medialang/online_test"
 import os
-"http://127.0.0.1:8381"
+proxy_url = "http://127.0.0.1:8381"
+os.environ['http_proxy']=proxy_url
+os.environ['https_proxy']=proxy_url
 flag = "topic_with_fetcher"
 
 with tmpdir(path=tmpPath) as testDir:
