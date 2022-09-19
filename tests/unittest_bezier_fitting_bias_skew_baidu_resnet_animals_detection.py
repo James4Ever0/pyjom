@@ -137,7 +137,7 @@ def evaluate_params(input_bias, skew):
                 best_params_dict[label] = difference
     final_differences = []
     for mLabel in mLabels:
-        d = best_params_dic().getI[mLabel]
+        d = best_params_dict.get(mLabel,1)
     return difference
 
 
