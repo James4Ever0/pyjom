@@ -322,6 +322,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
                 input_bias=input_bias,
                 curve_function_kwargs=curve_function_kwargs
             )
+            # treat each as a separate observation in this 
         multiParameterExponentialNetwork()
         # now we apply the thing? the yolov5 thing?
     return result
