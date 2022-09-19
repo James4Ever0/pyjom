@@ -136,6 +136,9 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
         updatedProxy = []
         for index, proxy in enumerate(data['proxies']):
         # breakpoint()
+            if proxy['name'] == "":
+                
+                updatedProxy = proxy.copy()
         # for item in data['proxies']:
         #     print(item)
 
