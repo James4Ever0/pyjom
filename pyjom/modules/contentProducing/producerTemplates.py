@@ -489,8 +489,10 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 
 from pyjom.commons import checkMinMaxDict
 from pyjom.lyrictoolbox import lrcToAnimatedAss
+from lazero.utils.filesystem import tmpdir
 def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medialang/pets_with_music_online'):
     import uuid
+    with 
     getRandomFileName = lambda extension : os.path.join(tempdir,".".join([str(uuid.uuid4()), extension]))
     for config in configs:
     # we only have one song here. you fucking know that?
