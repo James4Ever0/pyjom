@@ -12,8 +12,8 @@ def OnlineFetcher(
         "height": {"min": 150, "max": 1000},
     },
     tempdir="/dev/shm/medialang/online",
-    threads=6,
-    use_multithread=True,
+    threads=1,
+    use_multithread=False,
 ):
     # how do you chain this shit up?
 
