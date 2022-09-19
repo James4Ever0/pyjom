@@ -167,10 +167,10 @@ def getClashYaml(clashYamlPath="Clash3.yaml"):
     print("SAVED AT %s" % clashYamlPath)
 
 
-def updateClashYaml(clashYamlPath="Clash3.yaml", control_port=9911, refine=False):
+def updateClashYaml(clashYamlPath="Clash3.yaml", control_port=9911, advanced=False):
     getClashYaml(clashYamlPath=clashYamlPath)
-    if refine:
-        refineClashYaml(clashYamlPath=clashYamlPath)
+    # if refine:
+    refineClashYaml(clashYamlPath=clashYamlPath)
     import requests
     import json
 
