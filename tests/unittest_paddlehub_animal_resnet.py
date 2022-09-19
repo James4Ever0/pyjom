@@ -12,7 +12,7 @@ def labelFileReader(filename):
         content = f.read()
         content = content.split("\n")
         content = [elem.replace("\n","").strip() for elem in content]
-        
+        content = [elem for elem in content if len(elem)>0]
 
 dog_labels = ["狗", "犬", "梗"]
 cat_labels = ["猫"]  # ends with this, and not containing forbidden words.
