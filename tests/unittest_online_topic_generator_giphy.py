@@ -5,7 +5,6 @@ from lazero.utils import sprint
 from lazero.network import download, waitForServerUp
 from lazero.filesystem import tmpdir
 
-
 # clash_refresher_port = 8677
 # clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
 
