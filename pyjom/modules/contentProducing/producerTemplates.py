@@ -130,7 +130,7 @@ def getMusicCutSpans(
     counter = 0
     oldCandidateLength = None
     while True:
-        standard_bpm_span_selected = standard_bpm_span_selected[:-1]
+        standard_bpm_span_selected = random.choice(standard_bpm_spans[:-1])
         if counter > 10000:  # some dangerous deadloop.
             breakpoint()
             print("LOOPCOUNT", counter)
