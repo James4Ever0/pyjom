@@ -1978,7 +1978,7 @@ def NSFWFilter(
 from lazero.filesystem import tmpfile
 import requests
 
-def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1,gateway = "http://localhost:8511/"):
+def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1,gateway = "http://localhost:8511/",debug=False):
     source = videoPath
     with tmpdir(path=tmpdirPath) as T:
         responses = []
@@ -2010,8 +2010,9 @@ def NSFWVideoFilter(videoPath, tmpdirPath =  "/dev/shm/medialang/nsfw", fps=1,ga
         NSFWReport = processNSFWReportArray(responses)
         # print(NSFWReport)
         # breakpoint()
-        result = NSFWFilter(NSFWReport)
+        result = NSFWFilter(NSFWReport,debug=debug)
         if result:
+            if debug:
             print("NSFW test passed.")
             print("source %s" % source)
 
