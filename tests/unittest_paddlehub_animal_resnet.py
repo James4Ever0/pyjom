@@ -98,7 +98,7 @@ elif test_flag == "image":
     # [(None, 0.9894463419914246), ('dog', 1.564090962347109e-05), ('dog', 1.3550661606132053e-05)]
     # source = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
     # [(None, 0.9864748120307922), ('dog', 1.2670795513258781e-05), (None, 9.569253961672075e-06)]
-    source = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp" # it's really a dog
+    # source = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp" # it's really a dog
     # [(None, 0.35919442772865295), ('dog', 0.16199783980846405), ('dog', 0.07987158000469208)]
     frame = cv2.imread(source)
     padded_resized_frame = resizeImageWithPadding(
