@@ -39,7 +39,7 @@ def OnlineProcessor(
                     sprint(elem)
                 (item_id, local_video_location) = elem
                 # what is the freaking response?
-                from caer.video.frames_and_fps import get_duration, get_fps_float
+                from caer.video.frames_and_fps import get_duration, get_fps_float, get_res
 
                 # duration = get_duration(local_video_location)
                 from pyjom.commons import checkMinMaxDict
