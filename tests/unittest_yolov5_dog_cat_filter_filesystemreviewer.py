@@ -190,6 +190,7 @@ def detectionConfidenceFilter(
     else:
         raise Exception("Invalid logic: %s" % logic)
 
+# {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 
 for result in resultGenerator:  # this is for each file.
     # sprint(result)
@@ -206,6 +207,6 @@ for result in resultGenerator:  # this is for each file.
     sprint("FILTER PASSED?", filter_result)
     if not filter_result:
         sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
-        
+
     # if not passed, hit it with the bezier curve and resnet50
     # breakpoint()
