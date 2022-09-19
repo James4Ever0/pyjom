@@ -6,3 +6,5 @@ def OnlineProducer(processed_info, template=None, template_config={}):
     template_function = getProducerTemplate[template]
     exported_media_locations = template_function(processed_info,config=template_config)
     # i guess the title/tags/cover are actually belongs to the poster, not producer.
+    for exported_media_location in exported_media_locations:
+        yield exported_media_location
