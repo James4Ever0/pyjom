@@ -1,11 +1,11 @@
 from pyjom.commons import *
 import os
 from lazero.utils import sprint
-from lazero.network import download, waitForServerUp
+from lazero.network import waitForServerUp
 from lazero.filesystem import tmpdir
 
 
-@decorator()
+@decorator
 def OnlineProcessor(
     newElems,
     use_proxy=False,
