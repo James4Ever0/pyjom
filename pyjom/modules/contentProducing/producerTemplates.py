@@ -495,6 +495,12 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         render_list = [] # what is this freaking render_list?
         for data in dataGenerator:
 
+    medialangObject = renderList2MediaLang(
+        render_list,
+        slient=True,
+        bgm=music["filepath"],
+        producer="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
+    )  # what is the backend?
         yield rendered_media_location # another generator?
 
 def getProducerTemplate(template):
