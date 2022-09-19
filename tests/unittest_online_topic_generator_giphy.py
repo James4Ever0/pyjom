@@ -39,7 +39,7 @@ with tmpdir(path=tmpPath) as testDir:
     elif flag == "topic_with_fetcher":
         sprint("checking online fetcher")
         # print("HERE??",2)
-        newElems, label = OnlineFetcher(elems, tempdir=tmpPath)
+        newElems, label = OnlineFetcher(elems, tempdir=tmpPath) # infinite video generators.
         for elem in newElems:
             sprint(elem)
             (item_id, local_video_location) = elem
