@@ -493,7 +493,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 # avaliable_cuts = content
 # shall we generate medialang for it?
 
-def petsWithMusicOnlineProducer():
+def petsWithMusicOnlineProducer(dataGenerator, config={}):
     yield rendered_media_location # another generator?
 
 def getProducerTemplate(template):
