@@ -74,6 +74,7 @@ def getMusicCutSpans(
     # print(lyric)
     # breakpoint()
     lyric_times = [x["time"] for x in lyric]
+    for 
     beat_duration = 60 / bpm
     standard_bpm_spans = [
         x * beat_duration
