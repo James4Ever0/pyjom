@@ -150,5 +150,5 @@ space = (
 best = fmin(objective, space, algo=tpe.suggest, max_evals=100)
 sprint("BEST:", best)
 # sprint("EVAL:",space_eval(space, best))
-best_loss = objective(['skew'],['input_bias'])
+best_loss = objective((best['skew'],best['input_bias']))
 sprint("BEST LOSS:",best_loss)
