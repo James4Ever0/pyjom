@@ -8,7 +8,7 @@ from lazero.filesystem import tmpdir
 @decorator
 def OnlineProcessor(
     newElems,
-    source='giphy',
+    source="giphy",
     use_proxy=False,
     clash_refresher_port=8677,
     proxy_url="http://127.0.0.1:8381",
@@ -31,7 +31,7 @@ def OnlineProcessor(
         # print("HERE??",2)
         if use_proxy:
             set_proxy()
-        if source == 'giphy':
+        if source == "giphy":
             for elem in newElems:
                 if use_proxy:
                     waitForServerUp(clash_refresher_port, "clash update controller")
@@ -39,7 +39,11 @@ def OnlineProcessor(
                     sprint(elem)
                 (item_id, local_video_location) = elem
                 # what is the freaking response?
-                from caer.video.frames_and_fps import get_duration, get_fps_float, get_res
+                from caer.video.frames_and_fps import (
+                    get_duration,
+                    get_fps_float,
+                    get_res,
+                )
 
                 # duration = get_duration(local_video_location)
                 from pyjom.commons import checkMinMaxDict
@@ -103,7 +107,15 @@ def OnlineProcessor(
                         os.remove(local_video_location)
                 else:
                     video_width, video_height = get_res(local_video_location)
-                    yield {"location": local_video_location, "item_id": item_id,'meta':{"duration":get_duration(local_video_location), 'width':video_width, 'height':video_height}}
+                    yield {
+                        "location": local_video_location,
+                        "item_id": item_id,
+                        "meta": {
+                            "duration": get_duration(local_video_location),
+                            "width": video_width,
+                            "height": video_height,
+                        },
+                    }
                     # if you abandon that, better delete it!
                 # do time duration check, effective fps check, color centrality check, then the dog/cat check
                 # what's next? find some audio files? or just use one audio?
