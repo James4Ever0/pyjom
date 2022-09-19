@@ -1893,8 +1893,8 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False
         if debug:
             sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
         filter_result = bezierPaddleHubResnet50VideoDogCatDetector(videoPath, debug=debug,
-            input_bias=0.0830047243746045,
-    skew=-0.4986098769473948,
+            input_bias=input_bias,
+    skew=skew,
     threshold=threshold,
     dog_label_file_path=dog_label_file_path,
     cat_label_file_path=cat_label_file_path,)
