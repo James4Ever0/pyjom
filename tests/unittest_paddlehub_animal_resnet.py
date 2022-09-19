@@ -61,7 +61,8 @@ def paddleAnimalDetectionResultToList(result):
     resultList.sort(key=lambda item: -item[1])
     return resultList
 
-def translateResultListToDogCat(resultList)
+def translateResultListToDogCat(resultList):
+    for elem in 
 
 if test_flag == "video":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
