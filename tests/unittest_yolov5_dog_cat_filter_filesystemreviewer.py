@@ -208,7 +208,8 @@ def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.083004724
     from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
     from pyjom.imagetoolbox import resizeImageWithPadding
     import paddlehub as hub
-    @lru_cache(max_size=)
+
+    @lru_cache(maxsize=3)
     def labelFileReader(filename):
         with open(filename, 'r') as f:
             content = f.read()
