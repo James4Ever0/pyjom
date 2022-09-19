@@ -17,7 +17,8 @@ def OnlineProcessor(info, use_proxy=False,clash_refresher_port = 8677,proxy_url 
         # elif flag == "topic_with_fetcher":
             # sprint("checking online fetcher")
             # print("HERE??",2)
-            set_proxy()
+            if use_proxy:
+                set_proxy()
             newElems, label = OnlineFetcher(
                 elems, tempdir=tmpPath
             )  # infinite video generators.
