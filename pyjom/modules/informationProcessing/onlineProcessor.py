@@ -22,7 +22,8 @@ def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_
             for elem in newElems:
                 if use_proxy:
                     waitForServerUp(clash_refresher_port,"clash update controller")
-                sprint(elem)
+                if debug:
+                    sprint(elem)
                 (item_id, local_video_location) = elem
                 # what is the freaking response?
                 from caer.video.frames_and_fps import get_duration, get_fps_float
