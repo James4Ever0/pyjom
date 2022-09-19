@@ -415,12 +415,6 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     font = config["font"]
     policy = config["policy"]
     policy_names = [x for x in policy.keys()]
-    # bpm = music["bpm"]
-
-    # what about watermarks? pass them within numpy arrays and
-    # sure we have some ocr filters. but how to apply them?
-    # what about those without any cuts? use them in even slices?
-    # usually we switch scene in sync with lyric change. so what is the popular per sentence duration in lyrics?
     # get music duration here.
     music_metadata = get_media_info(music["filepath"])
     music_duration = music_metadata["duration"]
