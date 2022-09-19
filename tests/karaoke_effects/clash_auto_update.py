@@ -142,8 +142,8 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
                 updatedProxy = proxy.copy()
                 updatedProxy['proxies'] = [elem for elem in proxy['proxies'] if elem not in ['☁️ 全球直连','🌐 节点选择']]
                     "url" https://www.google.com/generate_204
-    interval" 300
-    tolerance: 50
+    updatedProxy["interval" ] = 300
+    updatedProxy["tolerance"] =  50
                 break
         data['proxies'][updateIndex] = updatedProxy
         # for item in data['proxies']:
