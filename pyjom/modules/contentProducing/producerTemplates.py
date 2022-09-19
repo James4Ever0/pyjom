@@ -502,8 +502,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
                 dataDuration = data['meta']['duration']
                 data_ids.append(data_id)
                 render_list.append(candidate)
-            complete = 
-    
+            complete = checkCompleted()
             if complete:
                 break
 
