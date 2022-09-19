@@ -493,50 +493,50 @@ from lazero.utils.filesystem import tmpdir
 def petsWithMusicOnlineProducer(dataGenerator, configs, tempdir='/dev/shm/medialang/pets_with_music_online'):
     import uuid
     with tmpdir(path=tempdir) as TD:
-    getRandomFileName = lambda extension : os.path.join(tempdir,".".join([str(uuid.uuid4()), extension]))
-    for config in configs:
-    # we only have one song here. you fucking know that?
-        music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
-        # check for 'demanded_cut_spans' now!
-        render_list = [] # what is this freaking render_list?
-        # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
-        # if lyric_path:
-        ass_file_path = getRandomFileName("lrc")
-        lrcToAnimatedAss(music, lyric_path, ass_file_path)
-        data_ids = []
-        for data in dataGenerator:
-            # what is the format of the data?
-            data_id = data['item_id']
-            if data_id not in data_ids:
-                dataDuration = data['meta']['duration']
-                videoSource = data['location']
-                data_ids.append(data_id)
-                demanded_cut_spans.sort(lambda span: abs((span[1]-span[0])-dataDuration))
-                closest_span = demanded_cut_spans[0]
-                closest_span_duration = (closest_span[1]-closest_span[0])
-                speed_delta = closest_span_duration/dataDuration
-                if checkMinMaxDict(speed_delta, {'min':0.8, 'max':1.2}):
-                    span = closest_span
-                    candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
-                    render_list.append(candidate)
-            complete = len(demanded_cut_spans) == 0
-            if complete:
-                break
+        getRandomFileName = lambda extension : os.path.join(tempdir,".".join([str(uuid.uuid4()), extension]))
+        for config in configs:
+        # we only have one song here. you fucking know that?
+            music, font, policy, policy_names, music_metadata, music_duration, maxtime, mintime, lyric_path, demanded_cut_spans, standard_bpm_spans = getMusicInfoParsed(config)
+            # check for 'demanded_cut_spans' now!
+            render_list = [] # what is this freaking render_list?
+            # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
+            # if lyric_path:
+            ass_file_path = getRandomFileName("lrc")
+            lrcToAnimatedAss(music, lyric_path, ass_file_path)
+            data_ids = []
+            for data in dataGenerator:
+                # what is the format of the data?
+                data_id = data['item_id']
+                if data_id not in data_ids:
+                    dataDuration = data['meta']['duration']
+                    videoSource = data['location']
+                    data_ids.append(data_id)
+                    demanded_cut_spans.sort(lambda span: abs((span[1]-span[0])-dataDuration))
+                    closest_span = demanded_cut_spans[0]
+                    closest_span_duration = (closest_span[1]-closest_span[0])
+                    speed_delta = closest_span_duration/dataDuration
+                    if checkMinMaxDict(speed_delta, {'min':0.8, 'max':1.2}):
+                        span = closest_span
+                        candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
+                        render_list.append(candidate)
+                complete = len(demanded_cut_spans) == 0
+                if complete:
+                    break
 
-        medialangObject = renderList2MediaLang(
-            render_list,
-            slient=True,
-            bgm=music["filepath"],
-            producer="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
-        )  # what is the backend?
-        rendered_media_location = medialangObject.execute()
-        # maybe we need render the lyric file separately.
-        # using a ffmpeg filter.
+            medialangObject = renderList2MediaLang(
+                render_list,
+                slient=True,
+                bgm=music["filepath"],
+                producer="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
+            )  # what is the backend?
+            rendered_media_location = medialangObject.execute()
+            # maybe we need render the lyric file separately.
+            # using a ffmpeg filter.
 
-        final_output_location = getRandomFileName("mp4")
-        import ffmpeg
-        ffmpeg.input(rendered_media_location).filter('ass', ass_file_path).output(final_output_location).run(overwrite_output=True)
-        yield final_output_location # another generator?
+            final_output_location = getRandomFileName("mp4")
+            import ffmpeg
+            ffmpeg.input(rendered_media_location).filter('ass', ass_file_path).output(final_output_location).run(overwrite_output=True)
+            yield final_output_location # another generator?
 
 def getProducerTemplate(template):
     producer_mapping = {"pets_with_music": petsWithMusicProducer,"pets_with_music_online": petsWithMusicOnlineProducer}
