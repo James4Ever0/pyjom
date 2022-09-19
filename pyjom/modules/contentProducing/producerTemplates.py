@@ -494,6 +494,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
         # check for 'demanded_cut_spans' now!
         render_list = [] # what is this freaking render_list?
         # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
+        standard_bpm_spans.sort(lambda )
         data_ids = []
         for data in dataGenerator:
             # what is the format of the data?
