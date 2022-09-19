@@ -63,7 +63,7 @@ def read_lrc(lrc_path):
             # another square bracket that could kill me.
         return sublist
 
-def getMusicCutSpansCandidates():
+def getMusicCutSpansCandidates(music,):
 
     beats, bpm = audioOwlAnalysis(music["filepath"])
     lyric = read_lrc(lyric_path)
