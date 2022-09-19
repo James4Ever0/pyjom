@@ -102,6 +102,7 @@ def getMusicCutSpansCandidates(
 
 
 def getMusicCutSpansGaussian(music, music_duration, mintime=0.6, maxtime=7, sigma = 1, ):
+    demanded_cut_points = [0]
 
 def getMusicCutSpans(
     music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
