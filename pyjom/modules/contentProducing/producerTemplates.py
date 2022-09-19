@@ -83,7 +83,7 @@ def getMusicCutSpansCandidates(
     lyric_times = new_lyric_times
     beat_duration = 60 / bpm
 
-    # 
+    # this is static, not dynamic.
     standard_bpm_spans = [
         x * beat_duration
         for x in range(0, math.ceil(maxtime / beat_duration) + 1)
