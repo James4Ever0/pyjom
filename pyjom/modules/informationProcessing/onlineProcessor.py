@@ -4,7 +4,7 @@ from lazero.utils import sprint
 from lazero.network import download, waitForServerUp
 from lazero.filesystem import tmpdir
 @decorator()
-def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_url = "http://127.0.0.1:8381",tmpPath = "/dev/shm/medialang/online_test"):
+def OnlineProcessor(newElems, use_proxy=False,clash_refresher_port = 8677,proxy_url = "http://127.0.0.1:8381",tmpPath = "/dev/shm/medialang/online_test", debug=False):
     if use_proxy:
         clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
         waitForServerUp(clash_refresher_port,"clash update controller")
