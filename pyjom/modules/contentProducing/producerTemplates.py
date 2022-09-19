@@ -111,6 +111,73 @@ def getMusicCutSpansGaussian(music, lyric_path, mintime=0.6, maxtime=7.833, mbea
     randomFunction = lambda: randVar.rvs(1)[0]*scale+loc
 
 
+    remaining_time = music_duration
+    counter = 0
+    oldCandidateLength = None
+    while True:
+        if len(standard_bpm_spans) == 1:
+            standard_bpm_span_min_selected = standard_bpm_spans[0]
+            doubleRate = 1.2
+        else:
+            standard_bpm_span_min_selected = random.choice(standard_bpm_spans[:-1])
+            doubleRate = 2
+        if counter > 10000:  # some dangerous deadloop.
+            breakpoint()
+            print("LOOPCOUNT", counter)
+            print(len(demanded_cut_points), remaining_time, standard_bpm_spans[0])
+        counter += 1
+        startingPoint = demanded_cut_points[-1]
+        # try:
+        selected_candidates = [
+            x for x in candidates if x > startingPoint
+        ]  # unsupported comparation between 'float' and 'list'?
+        # except:
+        #     import traceback
+        #     traceback.print_exc()
+        #     breakpoint()
+        newCandidateLength = len(selected_candidates)
+        if newCandidateLength == 0:
+            # nothing left.
+            break
+        if oldCandidateLength is None:
+            oldCandidateLength = newCandidateLength
+        else:
+            if (
+                oldCandidateLength == newCandidateLength
+            ):  # force append those points without progress
+                # demanded_cut_points.append(selected_candidates) # this is wrong.
+                demanded_cut_points.append(selected_candidates[0])
+                # no need to update the oldCandidateLength since it is the same as the new
+                continue
+            else:
+                oldCandidateLength = newCandidateLength
+
+        for elem in selected_candidates:
+            timespan_length = elem - startingPoint
+            if inRange(
+                timespan_length,
+                (standard_bpm_span_min_selected, standard_bpm_span_min_selected*doubleRate),
+                tolerance=mbeat_time_tolerance,
+            ):
+                # select this element.
+                demanded_cut_points.append(elem)
+                break
+        remaining_time = music_duration - demanded_cut_points[-1]
+        if remaining_time < standard_bpm_span_min_selected:
+            break
+    demanded_cut_points = list(set(demanded_cut_points))
+    demanded_cut_points.sort()
+    for elem in demanded_cut_points.copy()[::-1]:
+        if music_duration - elem < standard_bpm_spans[0]:
+            demanded_cut_points.remove(elem)
+    demanded_cut_points.append(music_duration)
+    demanded_cut_spans = list(zip(demanded_cut_points[0:-1], demanded_cut_points[1:]))
+    # somehow it was wrong.
+    # print("DEMANDED MUSIC CUT SPANS GENERATED")
+    # breakpoint()
+    return demanded_cut_spans, standard_bpm_spans
+
+
 def getMusicCutSpans(
     music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
