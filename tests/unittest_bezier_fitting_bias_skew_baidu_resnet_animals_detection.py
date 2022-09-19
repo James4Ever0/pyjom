@@ -58,25 +58,25 @@ params = (0.2,0.1,0.1)
 ##################################################
 # [('cat', 0.15381687879562378), ('cat', 0.14100512862205505), ('cat', 0.11225848644971848)]
 # params = (0.2,0.1,0.1)
-    # source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
-    # [('dog', 0.8835851550102234), ('dog', 0.08754527568817139), ('dog', 0.008648859336972237)]
-    # source = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.jpg"
-    #  [(None, 0.33663231134414673), ('dog', 0.32254937291145325), ('dog', 0.0494903139770031)]
-    # not animal? wtf?
-    # source = "/root/Desktop/works/pyjom/samples/image/porn_shemale.jpeg" # definitely not animal
-    # [(None, 0.9894463419914246), ('dog', 1.564090962347109e-05), ('dog', 1.3550661606132053e-05)]
-    # source = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
-    # [(None, 0.9864748120307922), ('dog', 1.2670795513258781e-05), (None, 9.569253961672075e-06)]
-    # source = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp" # it's really a dog
-    # [(None, 0.35919442772865295), ('dog', 0.16199783980846405), ('dog', 0.07987158000469208)]
-    # source = "/root/Desktop/works/pyjom/samples/image/miku_on_green.png"
-    # besides calculating "DOG" or "CAT" we are also concerned about "NONE"
-    # [(None, 0.9998186230659485), (None, 1.7534730432089418e-06), (None, 7.280816021193459e-07)]
-    # source = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg" # no dog
-    #  [(None, 0.9998675584793091), ('dog', 2.565316492564307e-07), (None, 1.562129767762599e-07)]
-    # source = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png" # has dog
-    #  [(None, 0.8876796960830688), ('dog', 0.0498274527490139), ('dog', 0.02175540290772915)]
-    # a little, but not focused.
+# source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
+# [('dog', 0.8835851550102234), ('dog', 0.08754527568817139), ('dog', 0.008648859336972237)]
+# source = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.jpg"
+#  [(None, 0.33663231134414673), ('dog', 0.32254937291145325), ('dog', 0.0494903139770031)]
+# not animal? wtf?
+# source = "/root/Desktop/works/pyjom/samples/image/porn_shemale.jpeg" # definitely not animal
+# [(None, 0.9894463419914246), ('dog', 1.564090962347109e-05), ('dog', 1.3550661606132053e-05)]
+# source = "/root/Desktop/works/pyjom/samples/image/is_this_duck.bmp"
+# [(None, 0.9864748120307922), ('dog', 1.2670795513258781e-05), (None, 9.569253961672075e-06)]
+# source = "/root/Desktop/works/pyjom/samples/image/pig_really.bmp" # it's really a dog
+# [(None, 0.35919442772865295), ('dog', 0.16199783980846405), ('dog', 0.07987158000469208)]
+# source = "/root/Desktop/works/pyjom/samples/image/miku_on_green.png"
+# besides calculating "DOG" or "CAT" we are also concerned about "NONE"
+# [(None, 0.9998186230659485), (None, 1.7534730432089418e-06), (None, 7.280816021193459e-07)]
+# source = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg" # no dog
+#  [(None, 0.9998675584793091), ('dog', 2.565316492564307e-07), (None, 1.562129767762599e-07)]
+# source = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png" # has dog
+#  [(None, 0.8876796960830688), ('dog', 0.0498274527490139), ('dog', 0.02175540290772915)]
+# a little, but not focused.
 input_bias = 0.05
 skew = -0.5
 curve_function_kwargs={"start": (0, 0), "end": (1, 1), "skew": skew} # maximize the output.
