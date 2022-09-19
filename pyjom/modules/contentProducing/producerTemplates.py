@@ -65,7 +65,7 @@ def read_lrc(lrc_path):
 
 
 def getMusicCutSpansCandidates(
-    music,lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
+    music, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
 
     beats, bpm = audioOwlAnalysis(music["filepath"])
@@ -100,8 +100,16 @@ def getMusicCutSpansCandidates(
     candidates = sorted_lyrics_nearby_bpm_candidates + sorted_remained_bpm_candidates
     return candidates, standard_bpm_spans
 
+
 def getMusicCutSpans(
-    music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8, gaussian=False, gaussian_args = {'std': 1.6674874515595588,'mean':  2.839698412698412}
+    music,
+    music_duration,
+    lyric_path,
+    maxtime,
+    mintime,
+    mbeat_time_tolerance=0.8,
+    gaussian=False,
+    gaussian_args={"std": 1.6674874515595588, "mean": 2.839698412698412},
 ):
     candidates, standard_bpm_spans = getMusicCutSpansCandidates(
         music,
@@ -110,16 +118,16 @@ def getMusicCutSpans(
         mintime,
         mbeat_time_tolerance=mbeat_time_tolerance,
     )
-    assert len(standard_bpm_spans)>=1
+    assert len(standard_bpm_spans) >= 1
     if gaussian:
-        std, mean = gaussian_args['std'], gaussian_args['mean']
+        std, mean = gaussian_args["std"], gaussian_args["mean"]
         scale, loc = std, mean
-        myclip_a, myclip_b = mintime,maxtime
+        myclip_a, myclip_b = mintime, maxtime
         from scipy.stats import truncnorm
-        a, b = (myclip_a - loc) / scale, (myclip_b - loc) / scale
-        randVar = truncnorm(a,b)
-        randomFunction = lambda: randVar.rvs(1)[0]*scale+loc
 
+        a, b = (myclip_a - loc) / scale, (myclip_b - loc) / scale
+        randVar = truncnorm(a, b)
+        randomFunction = lambda: randVar.rvs(1)[0] * scale + loc
 
     # now we engage with the cue points.
 
@@ -131,7 +139,7 @@ def getMusicCutSpans(
     while True:
         if gaussian:
             standard_bpm_span_min_selected = randomFunction()
-            doubleRate = min(2, maxtime/standard_bpm_span_min_selected)
+            doubleRate = min(2, maxtime / standard_bpm_span_min_selected)
         elif len(standard_bpm_spans) == 1:
             standard_bpm_span_min_selected = standard_bpm_spans[0]
             doubleRate = 1.2
@@ -173,7 +181,10 @@ def getMusicCutSpans(
             timespan_length = elem - startingPoint
             if inRange(
                 timespan_length,
-                (standard_bpm_span_min_selected, standard_bpm_span_min_selected*doubleRate),
+                (
+                    standard_bpm_span_min_selected,
+                    standard_bpm_span_min_selected * doubleRate,
+                ),
                 tolerance=mbeat_time_tolerance,
             ):
                 # select this element.
