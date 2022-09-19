@@ -495,5 +495,5 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
 
 
 def getProducerTemplate(template):
-    producer_mapping = {"pets_with_music": petsWithMusicProducer,"pets_with_music_online"}
+    producer_mapping = {"pets_with_music": petsWithMusicProducer,"pets_with_music_online": petsWithMusicOnlineProducer}
     return producer_mapping[template]
