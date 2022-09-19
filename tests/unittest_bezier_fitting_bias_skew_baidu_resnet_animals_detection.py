@@ -95,8 +95,9 @@ test_params = [
 # source = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png" # has dog
 #  [(None, 0.8876796960830688), ('dog', 0.0498274527490139), ('dog', 0.02175540290772915)]
 # a little, but not focused.
-input_bias = 0.05
-skew = -0.5
+# input_bias = 0.05
+# skew = -0.5
+# change these two things.
 curve_function_kwargs = {
     "start": (0, 0),
     "end": (1, 1),
