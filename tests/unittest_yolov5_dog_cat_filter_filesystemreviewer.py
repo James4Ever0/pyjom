@@ -6,6 +6,7 @@ from lazero.utils.logger import sprint
 
 from pyjom.mathlib import superMean, superMax
 
+
 def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
     # plan to get some calculations!
     filepath, review_data = detectionData["review"]["review"]
@@ -345,6 +346,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     # breakpoint()
     return filter_result
 
+
 videoPaths = [
     "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4",
     "/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
@@ -357,7 +359,9 @@ videoPaths = [
 for videoPath in videoPaths:  # this is for each file.
     # sprint(result)
     sprint("checking video: %s" % videoPath)
-    filter_result = yolov5VideoDogCatDetector(videoPath) # this is for short video. not for long video. long video needs to be sliced into smaller chunks
+    filter_result = yolov5VideoDogCatDetector(
+        videoPath
+    )  # this is for short video. not for long video. long video needs to be sliced into smaller chunks
     # sprint("FILTER PASSED?", filter_result)
     if not filter_result:
         sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
