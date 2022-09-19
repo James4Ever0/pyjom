@@ -144,9 +144,9 @@ def getMusicCutSpans(
         counter += 1
         startingPoint = demanded_cut_points[-1]
         # try:
-            selected_candidates = [
-                x for x in candidates if x > startingPoint
-            ]  # unsupported comparation between 'float' and 'list'?
+        selected_candidates = [
+            x for x in candidates if x > startingPoint
+        ]  # unsupported comparation between 'float' and 'list'?
         # except:
         #     import traceback
         #     traceback.print_exc()
