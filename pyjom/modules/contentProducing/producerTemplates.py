@@ -121,7 +121,7 @@ def getMusicCutSpans(
         mintime,
         mbeat_time_tolerance=mbeat_time_tolerance,
     )
-    # assert len(standard_bpm_spans)>=2
+    assert len(standard_bpm_spans)>=1
 
     # now we engage with the cue points.
 
@@ -133,7 +133,7 @@ def getMusicCutSpans(
     while True:
         if len(standard_bpm_spans) == 1:
             doubleRate = 1.1
-        
+        else:
         standard_bpm_span_selected = random.choice(standard_bpm_spans)
         if counter > 10000:  # some dangerous deadloop.
             breakpoint()
