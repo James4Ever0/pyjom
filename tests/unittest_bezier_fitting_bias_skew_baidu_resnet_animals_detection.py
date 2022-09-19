@@ -109,6 +109,9 @@ hyperopt.hp.uniform('input_bias',-0.5, 0))
 def objective(args):
     print(args)
     breakpoint()
+    return 0
+best = fmin(objective, space, algo=tpe.suggest, max_evals=100)
+
 def evaluate_params(input_bias, skew):
     curve_function_kwargs = {
     "start": (0, 0),
