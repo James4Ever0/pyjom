@@ -242,6 +242,11 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     skew=-0.4986098769473948,
     threshold=0.5,
     debug=False,
+    filter_dict={
+        "dog": {"min": 0.5},
+        "cat": {"min": 0.5},
+    },  # both have certainty of 0.69 or something. consider to change this value higher?
+    logic: Literal["AND", "OR"] = "OR",
 ):
     curve_function_kwargs = {
         "start": (0, 0),
@@ -328,6 +333,10 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
         dataList.append({'detections':detections})
         # now we apply the thing? the yolov5 thing?
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
+    filter_result = detectionConfidenceFilter(
+        detectionConfidence, filter_dict=filter_dict, logic=logic
+    )
+    return filter_result
     return result
 
 
