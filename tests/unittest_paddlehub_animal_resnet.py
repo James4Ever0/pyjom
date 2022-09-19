@@ -53,7 +53,8 @@ from lazero.utils.logger import sprint
 classifier = hub.Module(name="resnet50_vd_animals")
 # 'ResNet50vdAnimals' object has no attribute 'gpu_predictor'
 # no gpu? really?
-test_flag = "image"
+test_flag = "video"
+# test_flag = "image"
 
 def paddleAnimalDetectionResultToList(result):
     resultDict = result[0]
@@ -78,13 +79,13 @@ if test_flag == "video":
         )  # check it?
         resultList = paddleAnimalDetectionResultToList(result)
         final_result_list = translateResultListToDogCatList(resultList)
-        print("RESULT LIST:", final_result_list)
+        sprint("RESULT LIST:", final_result_list)
         # RESULT: [{'美国银色短毛猫': 0.23492032289505005, '虎斑猫': 0.14728288352489471, '美国银虎斑猫': 0.13097935914993286}]
         # so what is the major categories?
         # thanks to chinese, we are never confused.
         # check the labels, shall we?
         # what about samoyed?
-        sprint("RESULT:", result)
+        # sprint("RESULT:", result)
         breakpoint()
 elif test_flag == "image":
     source = "/root/Desktop/works/pyjom/samples/image/samoyed.jpeg"
