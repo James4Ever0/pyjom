@@ -132,7 +132,9 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=False):
     if "socks-port" in data.keys():
         del data["socks-port"]
     if advanced:
-        for item in data['proxies']
+        for item in data['proxies']:
+            print(item)
+
         # del data["rules"]
         # data["mode"] = "global"
     data["dns"]["listen"] = "0.0.0.0:{}".format(61)
