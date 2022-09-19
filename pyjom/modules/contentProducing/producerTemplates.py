@@ -569,6 +569,7 @@ def petsWithMusicOnlineProducer(
                             "cut": {"span": (0, dataDuration)},
                             "source": videoSource,
                         }
+                        demanded_cut_spans.pop(0)
                         render_list.append(candidate)
                 complete = len(demanded_cut_spans) == 0
                 if complete:
