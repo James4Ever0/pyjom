@@ -1874,15 +1874,21 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     # breakpoint()
     return filter_result
 
-def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False,    filter_dict={
+
+def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(
+    videoPath,
+    debug=False,
+    filter_dict={
         "dog": {"min": 0.5},
         "cat": {"min": 0.5},
     },
-    logic: Literal["AND", "OR"] = "OR",    input_bias=0.0830047243746045,
+    logic: Literal["AND", "OR"] = "OR",
+    input_bias=0.0830047243746045,
     skew=-0.4986098769473948,
     threshold=0.5,
     dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
-    cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",):
+    cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
+):
     if debug:
         sprint("checking video: %s" % videoPath)
     filter_result = yolov5VideoDogCatDetector(
@@ -1892,12 +1898,15 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False
     if not filter_result:
         if debug:
             sprint("CHECKING WITH BEZIER CURVE AND RESNET50")
-        filter_result = bezierPaddleHubResnet50VideoDogCatDetector(videoPath, debug=debug,
+        filter_result = bezierPaddleHubResnet50VideoDogCatDetector(
+            videoPath,
+            debug=debug,
             input_bias=input_bias,
-    skew=skew,
-    threshold=threshold,
-    dog_label_file_path=dog_label_file_path,
-    cat_label_file_path=cat_label_file_path,)
+            skew=skew,
+            threshold=threshold,
+            dog_label_file_path=dog_label_file_path,
+            cat_label_file_path=cat_label_file_path,
+        )
     if not filter_result:
         if debug:
             print("FILTER FAILED")
@@ -1905,5 +1914,6 @@ def yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter(videoPath, debug=False
         if debug:
             print("FILTER PASSED")
     return filter_result
+
 
 ########################### DOG CAT DETECTION #########################
