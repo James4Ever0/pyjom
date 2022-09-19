@@ -63,6 +63,8 @@ def read_lrc(lrc_path):
             # another square bracket that could kill me.
         return sublist
 
+def getMusicCutSpansCandidates():
+    return candidates
 
 def getMusicCutSpans(
     music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
