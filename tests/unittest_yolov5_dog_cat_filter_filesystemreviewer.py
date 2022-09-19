@@ -258,18 +258,18 @@ def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.083004724
         return None
     classifier = getPaddleResnet50AnimalsClassifier()
 
-def paddleAnimalDetectionResultToList(result):
-    resultDict = result[0]
-    resultList = [(key,value) for key,value in resultDict.items()]
-    resultList.sort(key=lambda item: -item[1])
-    return resultList
+    def paddleAnimalDetectionResultToList(result):
+        resultDict = result[0]
+        resultList = [(key,value) for key,value in resultDict.items()]
+        resultList.sort(key=lambda item: -item[1])
+        return resultList
 
-def translateResultListToDogCatList(resultList):
-    final_result_list = []
-    for name, confidence in resultList:
-        new_name = dog_cat_name_recognizer(name)
-        final_result_list.append((new_name, confidence))
-    return final_result_list
+    def translateResultListToDogCatList(resultList):
+        final_result_list = []
+        for name, confidence in resultList:
+            new_name = dog_cat_name_recognizer(name)
+            final_result_list.append((new_name, confidence))
+        return final_result_list
 
     return result
 
