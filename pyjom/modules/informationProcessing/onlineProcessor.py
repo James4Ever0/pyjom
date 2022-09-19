@@ -1,7 +1,8 @@
 from pyjom.commons import *
 
 @decorator()
-def onlineProcessor(info, use_proxy=False):
+def onlineProcessor(info, use_proxy=False,):
+    import os
     from lazero.utils import sprint
     from lazero.network import download, waitForServerUp
     from lazero.filesystem import tmpdir
@@ -17,7 +18,6 @@ def onlineProcessor(info, use_proxy=False):
     # # # 'pyjom.commons.OnlineTopicGenerator'
     # # breakpoint()
     tmpPath = "/dev/shm/medialang/online_test"
-    import os
 
 
 
