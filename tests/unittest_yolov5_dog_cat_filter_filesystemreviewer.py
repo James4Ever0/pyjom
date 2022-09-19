@@ -314,6 +314,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
         final_result_list = translateResultListToDogCatList(resultList)
         if debug:
             sprint("RESULT LIST:", final_result_list)
+        detections = []
         for index, (label, confidence) in enumerate(final_result_list):
             scope = final_result_list[index:]
             scope_confidences = [elem[1] for elem in scope if elem[0] == label]
@@ -324,7 +325,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             )
             # treat each as a separate observation in this frame.
             detections.append({'identity':label, 'confidence':confidence})
-
+        dataList.append({'detections':detections})
         # now we apply the thing? the yolov5 thing?
     return result
 
