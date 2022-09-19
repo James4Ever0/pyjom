@@ -84,7 +84,9 @@ input_bias = 0.05
 skew = -0.5
 curve_function_kwargs={"start": (0, 0), "end": (1, 1), "skew": skew} # maximize the output.
 
-target_output = 0.7
+for test_param, target_output in test_params:
+
+# target_output = 0.7
 output = multiParameterExponentialNetwork(*params,input_bias=input_bias,curve_function_kwargs = curve_function_kwargs)
 print('output:',output)
 print('target_output:', target_output)
