@@ -49,6 +49,7 @@ class ContentProducer:
 
     def produce_some_content(self, processed_info):
         print(processed_info)
+        print(self.methodsList['producer'])
         breakpoint()
         content, source = self.methodsList["producer"](processed_info)
         self.identifier.producerFix(source)
