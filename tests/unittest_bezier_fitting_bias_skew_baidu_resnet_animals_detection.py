@@ -132,13 +132,14 @@ def evaluate_params(input_bias, skew):
             absolute_difference = abs(target_output - output)
             print("absolute difference:", absolute_difference)
             difference+=absolute_difference
-            print("skew:", skew)
-            sprint("input_bias:", input_bias)
+
     return difference
 
 def objective(args):
     skew, input_bias = args
-    print(args)
+    # print(args)
+                print("skew:", skew)
+            sprint("input_bias:", input_bias)
     # it is just a tuple.
     breakpoint()
     return 0
