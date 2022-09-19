@@ -60,10 +60,13 @@ with tmpdir(path=tmpPath) as testDir:
                 getEffectiveFPS,
                 NSFWVideoFilter,
                 yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
-                dummyFilterFunction # just for dog and cat, no other animals.
+                dummyFilterFunction,  # just for dog and cat, no other animals.
             )
 
-            video_color_filter = {'centrality':{'max':0.30},"max_nearby_center_percentage":{'max':0.20}}
+            video_color_filter = {
+                "centrality": {"max": 0.30},
+                "max_nearby_center_percentage": {"max": 0.20},
+            }
             video_effective_fps_filter = {"min": 7}
             valid = True
             mList = [
@@ -80,9 +83,14 @@ with tmpdir(path=tmpPath) as testDir:
                     video_effective_fps_filter,
                     checkMinMaxDict,
                     "EffectiveFPS",
-                ], # also, the dog/cat detector! fuck.
-                [NSFWVideoFilter,None,dummyFilterFunction,'NSFW'],
-                [yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,None, dummyFilterFunction, "DogCat"]
+                ],  # also, the dog/cat detector! fuck.
+                [NSFWVideoFilter, None, dummyFilterFunction, "NSFW"],
+                [
+                    yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
+                    None,
+                    dummyFilterFunction,
+                    "DogCat",
+                ],
             ]
             for function, mFilter, filterFunction, flag in mList:
                 mValue = function(local_video_location)
@@ -92,7 +100,7 @@ with tmpdir(path=tmpPath) as testDir:
                     print("%s filter:" % flag, mFilter)
                     break
             if not valid:
-                print("abandon video:",item_id)
+                print("abandon video:", item_id)
             # do time duration check, effective fps check, color centrality check, then the dog/cat check
             breakpoint()
     # print("HERE??",3)
