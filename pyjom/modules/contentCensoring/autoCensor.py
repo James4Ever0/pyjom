@@ -14,6 +14,7 @@ def dummyAutoCensor(contentPath, meta, semiauto=False):
 
 
 def autoCensor(contentPath, meta, template_names=[], semiauto=False, args={}):
+    from pyjom.medialang.core import Medialang
     mdata = {}
     template_dirs = ["medialang", "autoCensor"]
     medialang_template_paths = template_names  # not always need all templates.
