@@ -111,7 +111,7 @@ def evaluate_params(input_bias, skew):
         "end": (1, 1),
         "skew": skew,
     }  # maximize the output.
-    differences = []
+    difference_items = []
     for subject_id, (test_param, target_output) in enumerate(test_params):
         for index, (label, confidence) in enumerate(test_param):
             scope = test_param[index:]
