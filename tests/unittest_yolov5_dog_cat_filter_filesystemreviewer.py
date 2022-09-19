@@ -6,9 +6,10 @@ from lazero.utils.logger import sprint
 autoArgs = {
     "subtitle_detector": {"timestep": 0.2},
     "yolov5_detector": {"model": "yolov5x"},  # will this run? no OOM?
-} # threshold: 0.4
+}  # threshold: 0.4
 
 from pyjom.mathlib import superMean, superMax
+
 
 def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
     # plan to get some calculations!
@@ -159,11 +160,16 @@ def detectionConfidenceFilter(
     else:
         raise Exception("Invalid logic: %s" % logic)
 
-def yolov5VideoDogCatDetector(videoPath, debug=False, filter_dict={
+
+def yolov5VideoDogCatDetector(
+    videoPath,
+    debug=False,
+    filter_dict={
         "dog": {"min": 0.5},
         "cat": {"min": 0.5},
-    }, 
-    logic: Literal["AND", "OR"] = "OR"):
+    },
+    logic: Literal["AND", "OR"] = "OR",
+):
 
     template_names = ["yolov5_detector.mdl.j2"]
     semiauto = False
@@ -203,35 +209,51 @@ def yolov5VideoDogCatDetector(videoPath, debug=False, filter_dict={
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
     if debug:
         sprint("DETECTION CONFIDENCE:", detectionConfidence)
-    filter_result = detectionConfidenceFilter(detectionConfidence, filter_dict=filter_dict, logic=logic)
+    filter_result = detectionConfidenceFilter(
+        detectionConfidence, filter_dict=filter_dict, logic=logic
+    )
     return filter_result
+
+
 import paddlehub as hub
 from functools import lru_cache
+
 
 @lru_cache(maxsize=1)
 def getPaddleResnet50AnimalsClassifier():
     classifier = hub.Module(name="resnet50_vd_animals")
     return classifier
 
+
 @lru_cache(maxsize=3)
 def labelFileReader(filename):
-    with open(filename, 'r') as f:
+    with open(filename, "r") as f:
         content = f.read()
         content = content.split("\n")
-        content = [elem.replace("\n","").strip() for elem in content]
-        content = [elem for elem in content if len(elem)>0]
+        content = [elem.replace("\n", "").strip() for elem in content]
+        content = [elem for elem in content if len(elem) > 0]
     return content
 
 
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
-def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.0830047243746045, skew=-0.4986098769473948, threshold=0.5, debug=False):
+def bezierPaddleHubResnet50VideoDogCatDetector(
+    videoPath,
+    input_bias=0.0830047243746045,
+    skew=-0.4986098769473948,
+    threshold=0.5,
+    debug=False,
+):
     from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
     from pyjom.imagetoolbox import resizeImageWithPadding
 
     dog_suffixs = ["狗", "犬", "梗"]
     cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
-    dog_labels = labelFileReader("/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt")
-    cat_labels = labelFileReader("/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt")
+    dog_labels = labelFileReader(
+        "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt"
+    )
+    cat_labels = labelFileReader(
+        "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt"
+    )
 
     forbidden_words = [
         "灵猫",
@@ -260,11 +282,12 @@ def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.083004724
                 if name.endswith(cat_suffix):
                     return "cat"
         return None
+
     classifier = getPaddleResnet50AnimalsClassifier()
 
     def paddleAnimalDetectionResultToList(result):
         resultDict = result[0]
-        resultList = [(key,value) for key,value in resultDict.items()]
+        resultList = [(key, value) for key, value in resultDict.items()]
         resultList.sort(key=lambda item: -item[1])
         return resultList
 
@@ -274,7 +297,6 @@ def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.083004724
             new_name = dog_cat_name_recognizer(name)
             final_result_list.append((new_name, confidence))
         return final_result_list
-
 
     for frame in getVideoFrameIteratorWithFPS(videoPath, -1, -1, fps=1):
         padded_resized_frame = resizeImageWithPadding(
@@ -288,6 +310,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(videoPath, input_bias=0.083004724
         if debug:
             sprint("RESULT LIST:", final_result_list)
     return result
+
 
 videoPaths = [
     # "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4",
