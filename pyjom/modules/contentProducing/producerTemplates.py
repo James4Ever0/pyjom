@@ -503,6 +503,7 @@ def petsWithMusicOnlineProducer(dataGenerator, configs):
                 videoSource = data['']
                 data_ids.append(data_id)
                 demanded_cut_spans.sort(lambda span: abs((span[1]-span[0])-dataDuration))
+                closest_span = demanded_cut_spans[0]
                 
                 span = getClosestSpan(dataDuration)
                 candidate ={'span':span, 'cut':{'span':(0, dataDuration)}, 'source': videoSource}
