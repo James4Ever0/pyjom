@@ -1527,6 +1527,11 @@ def checkVideoColorCentrality(
 
 
 ########################### DOG CAT DETECTION #########################
+from pyjom.modules.contentReviewer import filesystemReviewer
+from pyjom.commons import keywordDecorator
+from lazero.utils.logger import sprint
+
+from pyjom.mathlib import superMean, superMax
 
 def extractYolov5DetectionData(detectionData, mimetype="video", debug=False):
     # plan to get some calculations!
