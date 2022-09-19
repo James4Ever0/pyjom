@@ -98,11 +98,7 @@ test_params = [
 # input_bias = 0.05
 # skew = -0.5
 # change these two things.
-curve_function_kwargs = {
-    "start": (0, 0),
-    "end": (1, 1),
-    "skew": skew,
-}  # maximize the output.
+
 
 from lazero.utils.logger import sprint
 import hyperopt
@@ -113,6 +109,11 @@ hyperopt.hp.uniform('input_bias',-0.5, 0)
 
 
 def evaluate_params(input_bias, skew):
+    curve_function_kwargs = {
+    "start": (0, 0),
+    "end": (1, 1),
+    "skew": skew,
+}  # maximize the output.
     difference = 0
     for subject_id,(test_param, target_output) in enumerate(test_params):
         for index, (label, confidence) in enumerate(test_param):
