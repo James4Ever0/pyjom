@@ -64,11 +64,7 @@ def read_lrc(lrc_path):
         return sublist
 
 def getMusicCutSpansCandidates():
-    return candidates
 
-def getMusicCutSpans(
-    music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
-):
     beats, bpm = audioOwlAnalysis(music["filepath"])
     lyric = read_lrc(lyric_path)
     # print(lyric)
@@ -96,6 +92,12 @@ def getMusicCutSpans(
     ) = getLyricNearbyBpmCandidates(lyric_times, beats)
 
     candidates = sorted_lyrics_nearby_bpm_candidates + sorted_remained_bpm_candidates
+    return candidates
+
+def getMusicCutSpans(
+    music, music_duration, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
+):
+    candidates = getMusicCutSpansCandidates()
 
     # now we engage with the cue points.
 
