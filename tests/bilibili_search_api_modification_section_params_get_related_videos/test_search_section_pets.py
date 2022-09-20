@@ -56,11 +56,11 @@ class liveSearchParams:
     直播间 = "live_room"
 
 class searchEntry:
-    all
-    video
-    bangumi
-    pgc
-    live
+    综合"all"
+    "video"
+    "bangumi"
+    "pgc"
+    "live"
 class bilibiliSearchParams:
     order = order
     duration = duration
