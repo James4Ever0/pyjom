@@ -5,8 +5,11 @@ data = json5.loads(data)
 
 channelList = data['channelList']
 for channel in channelList:
-    channelName = channel['name']
-    channelTid = channel['tid']
-    for subChannel in channel['sub']:
-        subChannelName = subChannel['name']
-        subChanneiTid = subChannel['tid']
+    try:
+        channelName = channel['name']
+        channelTid = channel['tid']
+        for subChannel in channel['sub']:
+            try:
+                subChannelName = subChannel['name']
+                subChanneiTid = subChannel['tid']
+                
