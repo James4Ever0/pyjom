@@ -2042,14 +2042,15 @@ def NSFWVideoFilter(
 
 ########################### MOTION VECTOR ESTIMATION #########################
 
-def motionVectorEstimation(source, plot:bool=False):
+def motionVectorEstimation(source, plot:bool=False, debug=False):
     from mvextractor.videocap import VideoCap
     from caer.video.frames_and_fps import count_frames, get_res
     import cv2
 
     framesCount = count_frames(source)
     res = get_res(source)  # (width, height)
-    print("RES: %s" % str(res))
+    if debug:
+        print("RES: %s" % str(res))
     res_x, res_y = res
 
     frame_common_divisor = min(res_x, res_y)
@@ -2061,7 +2062,8 @@ def motionVectorEstimation(source, plot:bool=False):
             x, y = d2vector
             return math.sqrt(x**2 + y**2)
         except:
-            print('item unpackable.', d2vector)
+            if debug:
+                print('item unpackable.', d2vector)
             return 0
 
 
