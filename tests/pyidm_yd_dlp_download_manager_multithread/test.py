@@ -27,4 +27,4 @@ elif option == 3:
     controller = FireDM.Controller(view_class=FireDM.CmdView, custom_settings=settings)
     controller.run()
     controller.cmdline_download(urls, **settings)
-    print('firedm download complete')
+    print('FireDM download complete')
