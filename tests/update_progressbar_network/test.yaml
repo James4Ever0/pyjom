@@ -11,4 +11,4 @@ windows:
     - python3 client.py
   - shell_command:
     - echo "moo"
-  window_name: my window name
+  window_name: progressbar window
