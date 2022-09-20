@@ -6,7 +6,7 @@ from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
 # import cv2
 # img = cv2.imread('image.jpg')
-from 
+from pyjom.videotoolbox import 
 
 d = pytesseract.image_to_data(img, output_type=Output.DICT)
 n_boxes = len(d['level'])
