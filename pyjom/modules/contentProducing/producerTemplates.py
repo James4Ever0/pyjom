@@ -522,7 +522,7 @@ from lazero.filesystem import tmpdir
 from lazero.network.progressbar.client import netProgressbar
 
 def petsWithMusicOnlineProducer(
-    dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online"
+    dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online", remove_unused=True
 ):
     import uuid
     NetProgressbar=netProgressbar()
@@ -611,7 +611,8 @@ def petsWithMusicOnlineProducer(
                         render_list.append(candidate)
                     else:
                         if remove_unused:
-                            if os.path.exists(videoPath)
+                            if os.path.exists(videoPath):
+                                os.remove(videoPath)
                 complete = len(demanded_cut_spans) == 0
                 if complete:
                     break
