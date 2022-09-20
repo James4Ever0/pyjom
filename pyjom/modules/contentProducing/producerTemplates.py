@@ -562,6 +562,7 @@ def petsWithMusicOnlineProducer(
 
             total_pops = len(demanded_cut_spans)
             # for _ in tqdm(range(total_pops)):
+            from lazero.network.progressbar.client import net
             for data in dataGenerator:
                 # what is the format of the data?
                 data_id = data["item_id"]
