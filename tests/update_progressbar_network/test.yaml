@@ -6,9 +6,7 @@ windows:
     main-pane-height: 30
   panes:
   - shell_command:
-    - bash test.sh
-  - shell_command:
     - python3 client.py
   - shell_command:
-    - echo "moo"
+    - bash test.sh
   window_name: progressbar window
