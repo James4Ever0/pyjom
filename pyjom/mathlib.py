@@ -294,7 +294,7 @@ def multiParameterExponentialNetwork(
 def getMaxWindowCursor(referenceData, windowSize, dataDuration):
     assert windowSize<dataDuration
     # we supersample this reference data?
-    xp = referenceData
-    fp = np.linspace()
-    interpolated_fp = np.linspace()
+    fp = referenceData
+    xp = np.linspace()
+    interpolated_xp = np.linspace()
      np.interp(x, xp, fp)
