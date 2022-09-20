@@ -583,12 +583,13 @@ def petsWithMusicOnlineProducer(
                             "source": videoSource,
                     }
                     append_render_list = False
-                    
+
                     if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
                         append_render_list = True
                         # break
                     elif checkMinMaxDict(speed_delta, {"min":1.2,'max':1.5}):
                         append_render_list = True
+                        cursor = random.uniform()
                         mStart, mEnd = 
                         candidate['cut']['span'] = (mStart, mEnd)
                     
