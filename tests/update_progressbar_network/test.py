@@ -30,6 +30,7 @@ def close_progressbar():
 def reset(total: int, name:str='random task'): # pass the iteration count
     global t
     close_progressbar()
+    print('processing:', name)
     t = tqdm(total=total)
     return {'msg':'success'}
 
