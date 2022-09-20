@@ -563,7 +563,7 @@ def petsWithMusicOnlineProducer(
                     dataDuration = data["meta"]["duration"]
                     videoSource = data["location"]
                     data_ids.append(data_id)
-                    demanded_cut_spans.sort(
+                    demanded_cut_spans.sort(key=
                         lambda span: abs((span[1] - span[0]) - dataDuration)
                     )
                     closest_span = demanded_cut_spans[0]
