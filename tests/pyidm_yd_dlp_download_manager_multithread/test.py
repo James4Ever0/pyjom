@@ -1,10 +1,11 @@
 url = "https://media3.giphy.com/media/wTrXRamYhQzsY/giphy.gif?cid=dda24d502m79hkss38jzsxteewhs4e3ocd3iqext2285a3cq&rid=giphy.gif&ct=g"
 
-if option == 1:
-import yt_dlp
-# import pyidm
+option = 1
 
-yt_dlp.YoutubeDL()
+if option == 1:
+    import yt_dlp
+    # import pyidm
+    yt_dlp.YoutubeDL()
 elif option == 2:
     from pySmartDL import SmartDL
 
