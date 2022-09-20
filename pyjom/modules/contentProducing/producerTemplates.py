@@ -606,8 +606,8 @@ def petsWithMusicOnlineProducer(
                         candidate['cut']['span'] = (mStart, mEnd)
                     
                     if append_render_list:
-                        NetProgressbar.update(info = {'re'case':case,'data':candidate})
                         demanded_cut_spans.pop(0)
+                        NetProgressbar.update(info = {'remainings':len(demanded_cut_spans),'case':case,'data':candidate})
                         render_list.append(candidate)
                     else:
                         if remove_unused:
