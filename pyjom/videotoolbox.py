@@ -7,7 +7,11 @@ import cv2
 from pyjom.imagetoolbox import *
 from functools import lru_cache
 
-def dummyFilterFunction(report:bool, *args, **kwargs): return report
+
+def dummyFilterFunction(report: bool, *args, **kwargs):
+    return report
+
+
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
 
@@ -2042,7 +2046,10 @@ def NSFWVideoFilter(
 
 ########################### MOTION VECTOR ESTIMATION #########################
 
-def motionVectorEstimation(source, plot:bool=False, debug=False,):
+
+def motionVectorEstimation(
+    source, plot: bool = False, debug=False, visualize=False, show_picture=False
+):
     from mvextractor.videocap import VideoCap
     from caer.video.frames_and_fps import count_frames, get_res
     import cv2
@@ -2056,20 +2063,17 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
     frame_common_divisor = min(res_x, res_y)
     import math
 
-
     def cartesianDistance(d2vector):
         try:
             x, y = d2vector
             return math.sqrt(x**2 + y**2)
         except:
             if debug:
-                print('item unpackable.', d2vector)
+                print("item unpackable.", d2vector)
             return 0
-
 
     def XYWHToDiagonal(x, y, w, h):
         return (x, y), (x + w, y + h)
-
 
     # 如果整除16那么就在这个范围里面 如果不整除范围就要扩大 扩大到相应的16的倍数
     def get16Value(res_x):
@@ -2078,7 +2082,6 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
         if rem_x != 0:
             val += 1
         return val
-
 
     x_16val = get16Value(res_x)
     y_16val = get16Value(res_y)
@@ -2101,9 +2104,7 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
                 return mod
         # if not satisfied, we are shit.
 
-
     from functools import lru_cache
-
 
     @lru_cache(maxsize=4)
     def getModXModYFromBlockCenterCoordinates(blockCenterCoordinates):
@@ -2117,7 +2118,6 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
             breakpoint()
             return 0, 0
 
-
     def getRectangleXYWHFromBlockCenterCoordinates(blockCenterCoordinates):
         block_x, block_y = blockCenterCoordinates
         mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
@@ -2125,18 +2125,15 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
         x, y, w, h = block_x - mod_x_half, block_y - mod_y_half, mod_x, mod_y
         return tuple([int(elem) for elem in [x, y, w, h]])
 
-
     def getBlockWeightFromBlockCenterCoordinates(blockCenterCoordinates):
         mod_x, mod_y = getModXModYFromBlockCenterCoordinates(blockCenterCoordinates)
         weights = mod_x * mod_y / 8 / 8
         return weights
 
-
     import progressbar
     import numpy as np
 
     # max_dst_x, max_dst_y = 0,0
-
 
     def averageMotionVectors(motion_vector_list):
         if len(motion_vector_list) == 0:
@@ -2151,7 +2148,6 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
         else:
             average_tuple = tuple(motion_vector_list[0])
         return average_tuple
-
 
     motion_area_ratio_array = []
     # average_weighted_motion_vector_array = []
@@ -2178,7 +2174,9 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
             # print(condition)
             # print(condition.shape)
             # breakpoint()
-            motion_vectors_simplified = motion_vectors[condition, :][:, [0, 5, 6, 7, 8, 9]]
+            motion_vectors_simplified = motion_vectors[condition, :][
+                :, [0, 5, 6, 7, 8, 9]
+            ]
             motion_vectors_scale = motion_vectors_simplified[:, [5]]
             motion_vectors_scale_inversed = 1 / motion_vectors_scale
             motion_vectors_with_scale = motion_vectors_simplified[:, [3, 4]]
@@ -2237,7 +2235,10 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
                 # print('destination coords:',destCoord)
                 # print('motion vector:',motion_vector)
                 motion_vectors_dict.update(
-                    {destCoord: motion_vectors_dict.get(destCoord, []) + [motion_vector]}
+                    {
+                        destCoord: motion_vectors_dict.get(destCoord, [])
+                        + [motion_vector]
+                    }
                 )
                 # you know, different frame sources may lead to different results.
                 # these vectors could overlap. which one you want to keep? the smaller ones or the bigger ones?
@@ -2334,12 +2335,13 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
             # breakpoint()
 
             average_weighted_motion_vectors_filtered_cartesian_distance = (
-                sum_weighted_motion_vectors_filtered_cartesian_distance / cartesianWeightsSum
+                sum_weighted_motion_vectors_filtered_cartesian_distance
+                / cartesianWeightsSum
             )
 
             average_global_weighted_motion_vectors_filtered_cartesian_distance = (
                 sum_weighted_motion_vectors_filtered_cartesian_distance
-                / total_block_weights # this is a number, not array!
+                / total_block_weights  # this is a number, not array!
             )
 
             min_cartesian = min(motion_vectors_filtered_cartesian_distance)
@@ -2350,11 +2352,17 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
             # print(average_weighted_motion_vector)
             # print(average_global_weighted_motion_vector)
             # breakpoint()
-            average_weighted_motion_vector_cartesian=cartesianDistance(average_weighted_motion_vector)
-            average_weighted_motion_vector_cartesian_array.append(average_weighted_motion_vector_cartesian)
-            average_global_weighted_motion_vector_cartesian = cartesianDistance(average_global_weighted_motion_vector)
+            average_weighted_motion_vector_cartesian = cartesianDistance(
+                average_weighted_motion_vector
+            )
+            average_weighted_motion_vector_cartesian_array.append(
+                average_weighted_motion_vector_cartesian
+            )
+            average_global_weighted_motion_vector_cartesian = cartesianDistance(
+                average_global_weighted_motion_vector
+            )
             average_global_weighted_motion_vector_cartesian_array.append(
-            average_global_weighted_motion_vector_cartesian
+                average_global_weighted_motion_vector_cartesian
             )
             average_weighted_motion_vectors_filtered_cartesian_distance_array.append(
                 average_weighted_motion_vectors_filtered_cartesian_distance
@@ -2367,7 +2375,10 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
                 # breakpoint()
                 if visualize:
                     print("motion_area_ratio", motion_area_ratio)
-                    print("average_weighted_motion_vector_cartesian", average_weighted_motion_vector_cartesian)
+                    print(
+                        "average_weighted_motion_vector_cartesian",
+                        average_weighted_motion_vector_cartesian,
+                    )
                     print(
                         "average_global_weighted_motion_vecto_cartesianr",
                         average_global_weighted_motion_vector_cartesian,
@@ -2390,7 +2401,9 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
                             index
                         ]
                         # print(type(pt1), type(pt1[0]))
-                        relative_motion_cartesian = (current_cartesian - min_cartesian) / (
+                        relative_motion_cartesian = (
+                            current_cartesian - min_cartesian
+                        ) / (
                             max_cartesian - min_cartesian
                         )  # must from 0 to 1 so we can plot this,
                         # relative_motion_cartesian = 255*((current_cartesian-min_cartesian)/(max_cartesian-min_cartesian))
@@ -2437,14 +2450,15 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
     ]
     # breakpoint()
     assert len(titles) == len(data)
-    dataDict = {titles[index]:data[index] for index in range(len(titles))}
+    dataDict = {titles[index]: data[index] for index in range(len(titles))}
     if plot:
         import matplotlib.pyplot as plt
+
         # plt.style.use('dark_background')
 
-        a, b = 5,1
+        a, b = 5, 1
         figure, axis = plt.subplots(a, b)
-        assert a*b >= len(titles)
+        assert a * b >= len(titles)
 
         for _a in range(a):
             for _b in range(b):
@@ -2466,5 +2480,6 @@ def motionVectorEstimation(source, plot:bool=False, debug=False,):
                     axis[_a, _b].set_title(titles[index])
         plt.show()
     return dataDict
+
 
 ########################### MOTION VECTOR ESTIMATION #########################
