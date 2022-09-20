@@ -24,6 +24,7 @@ def close_progressbar():
             traceback.print_exc()
             print('error closing progressbar')
 
+@app.get('/reset')
 def reset(): # pass the iteration count
     global t
     close_progressbar()
