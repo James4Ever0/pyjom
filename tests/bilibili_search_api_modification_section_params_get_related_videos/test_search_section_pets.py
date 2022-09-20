@@ -64,6 +64,7 @@ class searchEntry:
     专栏 = "article"
     话题 = "topic"
     用户 = "upuser"
+
 class bilibiliSearchParams:
     order = order
     duration = duration
