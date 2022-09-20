@@ -16,9 +16,6 @@ iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
 
 
-    for index, frame in enumerate(iterator):
-        if noWHInfo:
-            noWHInfo = False
             height, width = frame.shape[:2]
         detection, recognition = reader.detect(frame)  # not very sure.
         if detection == [[]]:
