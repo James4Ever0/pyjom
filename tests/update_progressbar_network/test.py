@@ -38,6 +38,7 @@ def update_progressbar(progress: int=1):
     global t
     if t is not None:
         try:
+            t.clear()
             t.update(progress)
             return {'msg':'success'}
         except:
