@@ -72,7 +72,7 @@ def OnlineProcessor(
                 mList = [
                     [get_duration, duration_filter, checkMinMaxDict, "duration"],
                     [get_fps_float, fps_filter, checkMinMaxDict, "fps"],
-                    [getVideoTextAreaRatio, videoTextFilter, checkMinMaxDict, "videoTextFilter"]
+                    [getVideoTextAreaRatio, videoTextAreaRatioFilter, checkMinMaxDict, "videoTextAreaRatioFilter"],
                     [
                         yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
                         None,
