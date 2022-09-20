@@ -1,7 +1,7 @@
 from test_commons import *
 
-import pytesseract
-from pytesseract import Output
+# import pytesseract
+# from pytesseract import Output
 from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
 import cv2
@@ -15,7 +15,7 @@ videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
 for img in iterator:
-    d = pytesseract.image_to_data(img, output_type=Output.DICT)
+    # d = pytesseract.image_to_data(img, output_type=Output.DICT)
     n_boxes = len(d['level'])
     for i in range(n_boxes):
         (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
