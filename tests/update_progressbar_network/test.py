@@ -32,5 +32,6 @@ def reset(): # pass the iteration count
 def update_progressbar():
     t.update(progress)
 
+@app.get('/close')
 def close():
     close_progressbar()
