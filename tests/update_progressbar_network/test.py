@@ -42,7 +42,6 @@ def update_progressbar(progress: int):
             traceback.print_exc()
             print("error when updating progessbar")
             return {'msg':'error when updating progessbar'}
-
     else:
         print('no progressbar available')
         return {'msg':'no progressbar available'}
