@@ -24,13 +24,14 @@ def close_progressbar():
             import traceback
             traceback.print_exc()
             print('error closing progressbar')
-            return {'msg':'success'}
+            return {'msg':'error closing progressbar'}
 
 @app.get('/reset')
 def reset(total: int): # pass the iteration count
     global t
     close_progressbar()
     t = tqdm(total=total)
+    return {'msg':'success'}
 
 @app.get('/update')
 def update_progressbar(progress: int):
