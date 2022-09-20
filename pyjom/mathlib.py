@@ -295,6 +295,6 @@ def getMaxWindowCursor(referenceData, windowSize, dataDuration):
     assert windowSize<dataDuration
     # we supersample this reference data?
     xp = referenceData
-    fp = np.
-
+    fp = np.linspace()
+    
      np.interp(x, xp, fp)
