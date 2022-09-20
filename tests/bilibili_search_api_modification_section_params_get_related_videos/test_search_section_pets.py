@@ -58,7 +58,14 @@ class searchEntry:
     用户 = "upuser"
 
 class bilibiliSearchParams:
-    order = order
+    class order:
+        综合排序 = None
+        最多点击 = "click"
+        最新发布 = "pubdate"
+        最多弹幕 = "dm"
+        最多收藏 = "stow"
+
+
     duration = duration
     tids = tids
     searchEntry = searchEntry
