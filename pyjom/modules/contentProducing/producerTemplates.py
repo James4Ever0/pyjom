@@ -583,7 +583,6 @@ def petsWithMusicOnlineProducer(
                             "source": videoSource,
                     }
                     if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
-                        
                         demanded_cut_spans.pop(0)
                         render_list.append(candidate)
                         # break
