@@ -6,5 +6,5 @@ waitForServerUp(port=port, message=message)
 
 import requests
 
-requests.get('http://localhost:8576/reset',proxies=None,)
+requests.get('http://localhost:8576/reset',proxies=None,params = {''})
 for _ in range(200):
