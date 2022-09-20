@@ -17,6 +17,10 @@ iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 detectionList = []
 from pyjom.imagetoolbox import getEasyOCRReader, LRTBToDiagonal
 reader = getEasyOCRReader(['en'])
+
+import numpy as np
+for frame in iterator:
+    img = np.zeros(height, width, 3)
     height, width = frame.shape[:2]
     detection, recognition = reader.detect(frame)  # not very sure.
     if detection == [[]]:
@@ -25,12 +29,6 @@ reader = getEasyOCRReader(['en'])
         diagonalRects = [LRTBToDiagonal(x) for x in detection[0]]
     for x1, y1, x2, y2 in diagonalRects:
         w,h = x2-x1, y2-y1
-import numpy as np
-for frame in iterator:
-    # d = pytesseract.image_to_data(img, output_type=Output.DICT)
-    n_boxes = len(d['level'])
-    img = np.zeros(height, width, 3)
-    for i in range(n_boxes):
         (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
