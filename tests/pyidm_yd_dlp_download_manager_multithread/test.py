@@ -24,4 +24,5 @@ elif option == 3:
     args = ["-o","./test.gif",url]
     settings = FireDM.pars_args(args)
     urls = settings.pop('url')
-    
+    controller = 
+    controller.cmdline_download(urls, **settings)
