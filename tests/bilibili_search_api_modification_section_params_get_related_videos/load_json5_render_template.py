@@ -20,6 +20,6 @@ for channel in channelList:
                 subChannels.append((subChannelName, subChannelTid))
             except:
                 continue
-        
+        template.render(channelName)
     except:
         continue
