@@ -586,6 +586,8 @@ def petsWithMusicOnlineProducer(
                             "source": videoSource,
                     }
                     append_render_list = False
+                    case = None
+                    import 
 
                     if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
                         append_render_list = True
