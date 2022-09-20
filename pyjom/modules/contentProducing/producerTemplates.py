@@ -563,7 +563,7 @@ def petsWithMusicOnlineProducer(
 
             total_pops = len(demanded_cut_spans)
             # for _ in tqdm(range(total_pops)):
-            NetProgressbar.
+            NetProgressbar.reset(total = total_pops)
             
             for data in dataGenerator:
                 # what is the format of the data?
