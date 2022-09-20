@@ -10,6 +10,7 @@
 # 最多收藏
 
 import enum
+
 class order(enum.Enum):
    综合排序 = None
    最多点击 = 'click'
@@ -17,4 +18,5 @@ class order(enum.Enum):
    最多弹幕 = 'dm'
    最多收藏 = 'stow'
 
-class bilibiliSearchParams(enum)
+class bilibiliSearchParams(enum.Enum):
+    order = order
