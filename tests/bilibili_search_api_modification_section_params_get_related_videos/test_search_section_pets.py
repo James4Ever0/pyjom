@@ -17,3 +17,4 @@ class order(enum.Enum):
    最多弹幕 = 'dm'
    最多收藏 = 'stow'
 
+class bilibiliSearchParams(enum)
