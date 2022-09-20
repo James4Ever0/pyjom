@@ -34,9 +34,9 @@ def reset(total: int): # pass the iteration count
 def update_progressbar(progress: int):
     global t
     if t is not None:
-    try:
-        t.update(progress)
-    except:
+        try:
+            t.update(progress)
+        except:
 
 @app.get('/close')
 def close():
