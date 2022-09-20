@@ -77,8 +77,8 @@ class bilibiliSearchParams:
 
             class 动画:
                 tid = 1
-                MAD·AMV = 24
-                MMD·3D = 25
+                MAD_AMV = 24
+                MMD_3D = 25
                 短片·手书·配音 = 47
                 手办·模玩 = 210
                 特摄 = 86
