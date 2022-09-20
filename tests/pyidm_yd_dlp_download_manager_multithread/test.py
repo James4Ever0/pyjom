@@ -5,7 +5,7 @@ url = "https://media3.giphy.com/media/wTrXRamYhQzsY/giphy.gif?cid=dda24d502m79hk
 from pySmartDL import SmartDL
 
 dest = "./test.gif"
-obj = SmartDL(url, dest)
+obj = SmartDL(url, dest, threads=20)
 obj.start()
 # [*] 0.23 Mb / 0.37 Mb @ 88.00Kb/s [##########--------] [60%, 2s left]
 print('DOWNLOAD FINISHED')
