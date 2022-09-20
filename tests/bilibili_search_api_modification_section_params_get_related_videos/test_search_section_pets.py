@@ -20,3 +20,5 @@ class order(enum.Enum):
 
 class bilibiliSearchParams(enum.Enum):
     order = order
+
+bilibiliSearchParams.order.
