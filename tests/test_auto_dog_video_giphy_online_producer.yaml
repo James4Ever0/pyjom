@@ -1,0 +1,12 @@
+session_name: online_dog_cat_generator_test
+start_directory: /root/Desktop/works/pyjom/tests/update_progressbar_network
+windows:
+- layout: main-horizontal
+  options:
+    main-pane-height: 30
+  panes:
+  - shell_command:
+    - python3 client.py
+  - shell_command:
+    - bash test.sh
+  window_name: progressbar window
