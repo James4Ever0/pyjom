@@ -50,7 +50,8 @@ class searchEntry:
     all
     video
     bangumi
-    
+    pgc
+    live
 class bilibiliSearchParams:
     order = order
     duration = duration
