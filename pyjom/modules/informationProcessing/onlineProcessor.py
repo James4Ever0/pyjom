@@ -63,7 +63,7 @@ def OnlineProcessor(
                 )
 
                 video_color_filter = {
-                    "centrality": {"max": 0.17}, # stricter limit?
+                    "centrality": {"max": 0.18}, # stricter limit?
                     "max_nearby_center_percentage": {"max": 0.13},
                 }
                 video_effective_fps_filter = {"min": 7}
