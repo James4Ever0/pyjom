@@ -34,7 +34,7 @@ def reset(total: int): # pass the iteration count
     return {'msg':'success'}
 
 @app.get('/update')
-def update_progressbar(progress: int):
+def update_progressbar(progress: int=1):
     global t
     if t is not None:
         try:
