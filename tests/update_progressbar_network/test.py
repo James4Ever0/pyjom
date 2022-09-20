@@ -33,7 +33,8 @@ def reset(total: int): # pass the iteration count
 @app.get('/update')
 def update_progressbar(progress: int):
     global t
-    t.update(progress)
+    try:
+        t.update(progress)
 
 @app.get('/close')
 def close():
