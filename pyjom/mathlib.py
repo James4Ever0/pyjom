@@ -296,7 +296,7 @@ def getMaxWindowCursor(referenceData, windowSize, dataDuration):
     # we supersample this reference data?
     fp = referenceData
     xp = np.linspace(0,dataDuration, len(fp))
-    interpolated_xp = np.linspace(0, dataDuration, len(fp)*)
+    interpolated_xp = np.linspace(0, dataDuration, len(fp)*superSampleRate)
     fp = np.array(fp)
     interpolated_fp = []
     for x in interpolated_xp:
