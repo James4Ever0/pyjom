@@ -6,6 +6,7 @@ class OnlineAutoContentProducer(ContentProducer):
         self,
         source=None,
         enable_log=True,
+        fast:bool=True,
         processor_filters={},
         producer_filters={},
         template:str="pets_with_music_online",
