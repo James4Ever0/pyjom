@@ -20,6 +20,7 @@ class OnlineAutoContentProducer(ContentProducer):
         assert source is not None
         self.source = source
         self.tempdir = tempdir
+        self.fast=fast
         self.metaTopic = metaTopic  # 所谓的超话 超级话题
         if enable_log:
             self.log_location = "logs/local/"
@@ -40,6 +41,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     OnlineProducer,
                     source=source,
                     template=template,
+                    fast=self.fast,
                     template_configs=template_configs,
                 ),
                 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
