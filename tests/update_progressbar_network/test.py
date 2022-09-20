@@ -35,6 +35,7 @@ def update_progressbar(progress: int):
     global t
     try:
         t.update(progress)
+    except:
 
 @app.get('/close')
 def close():
