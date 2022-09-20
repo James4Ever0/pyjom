@@ -588,11 +588,12 @@ def petsWithMusicOnlineProducer(
                         # break
                     elif checkMinMaxDict(speed_delta, {"min":1.2,'max':1.5}):
                         append_render_list = True
+                        mStart, mEnd = 
+                        candidate['cut']['span'] = (mStart, mEnd)
+                    
                     if append_render_list:
                         demanded_cut_spans.pop(0)
                         render_list.append(candidate)
-                        mStart, mEnd = 
-                        candidate['cut']['span'] = (mStart, mEnd)
                 complete = len(demanded_cut_spans) == 0
                 if complete:
                     break
