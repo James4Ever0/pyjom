@@ -292,4 +292,4 @@ def multiParameterExponentialNetwork(
     return value
 
 def getMaxWindowCursor(referenceData, windowSize, dataDuration):
-    
+    assert windowSize<dataDuration
