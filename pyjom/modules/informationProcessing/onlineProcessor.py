@@ -100,12 +100,17 @@ def OnlineProcessor(
                     [NSFWVideoFilter, None, dummyFilterFunction, "NSFW"],
                 ]
                 for function, mFilter, filterFunction, flag in mList:
-                    mValue = function(local_video_location)
-                    valid = filterFunction(mValue, mFilter)
-                    if not valid:
-                        print("skipping due to invalid %s: %s" % (flag, mValue))
-                        print("%s filter:" % flag, mFilter)
-                        break
+                    try:
+                        mValue = function(local_video_location)
+                        valid = filterFunction(mValue, mFilter)
+                        if not valid:
+                            print("skipping due to invalid %s: %s" % (flag, mValue))
+                            print("%s filter:" % flag, mFilter)
+                            break
+                    except:
+                        import traceback
+                        traceback.print_exc()
+                        print("skipping due to
                 if not valid:
                     print("abandon video:", item_id)
                 # breakpoint()
