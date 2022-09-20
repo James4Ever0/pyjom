@@ -40,20 +40,21 @@ class bilibiliSearchParams:
         话题 = "topic"
         用户 = "upuser"
     class all:
-    class order:
-        综合排序 = None
-        最多点击 = "click"
-        最新发布 = "pubdate"
-        最多弹幕 = "dm"
-        最多收藏 = "stow"
-    class duration:
-        全部时长 = None
-        _10分钟以下 = 1
-        _10_30分钟 = 2
-        _30_60分钟 = 3
-        _60分钟以上 = 4
-    class tids:
-        全部分区 = None
+        class order:
+            综合排序 = None
+            最多点击 = "click"
+            最新发布 = "pubdate"
+            最多弹幕 = "dm"
+            最多收藏 = "stow"
+        class duration:
+            全部时长 = None
+            _10分钟以下 = 1
+            _10_30分钟 = 2
+            _30_60分钟 = 3
+            _60分钟以上 = 4
+        class tids:
+            _sub
+            全部分区 = None
     class article:
         class order:
             综合排序 = None
