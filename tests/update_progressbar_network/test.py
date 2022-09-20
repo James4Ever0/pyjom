@@ -7,7 +7,8 @@ def hello():
 def reset(): # pass the iteration count
     global t
     if t is not None:
-        t.close()
+        try:
+            t.close()
     t = tqdm(total=total)
 
 def update_progressbar():
