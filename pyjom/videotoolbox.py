@@ -2486,5 +2486,12 @@ def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing'
     for frame in iterator:
         textAreaRatio = getImageTextAreaRatio(frame, langs:langs, gpu=gpu, recognizer=recognizer,debug=debug)
         mList.append(textAreaRatio)
+    if mode == 'list':
+        return mList
+    elif mode == 'max':
+        return max(mList)
+    elif mode == 'mean':
+        try:
+        return np.mean(mList)
 
 ########################### TEXT AREA CALCULATION #########################
