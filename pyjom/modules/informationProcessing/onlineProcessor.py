@@ -110,7 +110,8 @@ def OnlineProcessor(
                     except:
                         import traceback
                         traceback.print_exc()
-                        print("skipping due to
+                        print("skipping due to exception during filtering")
+                        
                 if not valid:
                     print("abandon video:", item_id)
                 # breakpoint()
