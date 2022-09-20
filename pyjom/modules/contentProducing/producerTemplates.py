@@ -587,9 +587,9 @@ def petsWithMusicOnlineProducer(
                     }
                     append_render_list = False
                     case = None
-                    import 
 
                     if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
+                        case='nearby'
                         append_render_list = True
                         # break
                     elif checkMinMaxDict(speed_delta, {"min":1.2,'max':3}):
