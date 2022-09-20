@@ -1,3 +1,9 @@
 # try to update progressbar via network.
 
-def reset()
+def hello():
+
+
+def reset():
+
+
+def update_progressbar():
