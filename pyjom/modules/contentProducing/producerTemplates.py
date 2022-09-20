@@ -522,7 +522,7 @@ from lazero.filesystem import tmpdir
 from lazero.network.progressbar.client import netProgressbar
 
 def petsWithMusicOnlineProducer(
-    dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online", remove_unused=True
+    dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online", remove_unused=True, fast:bool=True
 ):
     import uuid
     NetProgressbar=netProgressbar()
