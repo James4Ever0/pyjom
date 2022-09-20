@@ -59,8 +59,8 @@ class searchEntry:
     综合"all"
     视频"video"
     番剧"bangumi"
-    "pgc"
-    "live"
+    影视"pgc"
+    直播"live"
 class bilibiliSearchParams:
     order = order
     duration = duration
