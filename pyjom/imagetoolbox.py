@@ -12,6 +12,7 @@ def getEasyOCRReader(langs, gpu=True, recognizer=False):
     return reader
 
 def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False,debug=False):
+    reader = 
     if type(image) == str:
         image = cv2.imread(image)
     height, width = frame.shape[:2]
@@ -30,6 +31,7 @@ def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False
     textAreaRatio = (textArea/255)/(width*height)
     if debug:
         print("text area: {:.2f} %".format(textAreaRatio))
+    return textAreaRatio
 
 
 def LRTBToDiagonal(lrtb):
