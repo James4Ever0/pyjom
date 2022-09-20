@@ -2442,6 +2442,12 @@ def motionVectorEstimation(source):
     ]
     # breakpoint()
     assert len(titles) == len(data)
+    if plot:
+    import matplotlib.pyplot as plt
+    # plt.style.use('dark_background')
+
+    a, b = 5,1
+    figure, axis = plt.subplots(a, b)
     assert a*b >= len(titles)
 
     for _a in range(a):
