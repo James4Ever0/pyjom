@@ -557,8 +557,8 @@ def petsWithMusicOnlineProducer(
             lrcToAnimatedAss(music['filepath'], lyric_path, ass_file_path)
             data_ids = []
             from tqdm.gui import trange
-            total_pops = 
-            for _ in trange(len(demanded_cut_spans)):
+            total_pops = len(demanded_cut_spans)
+            for _ in trange(total_pops):
                 for data in dataGenerator:
                     # what is the format of the data?
                     data_id = data["item_id"]
