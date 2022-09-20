@@ -42,6 +42,8 @@ def update_progressbar(progress: int):
             print("error when updating progessbar")
     else:
         print('no progressbar available')
+        return {'msg':'success'}
+
 
 @app.get('/close')
 def close():
