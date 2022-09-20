@@ -594,9 +594,9 @@ def petsWithMusicOnlineProducer(
                         referenceData = dataDict['average_global_weighted_motion_vectors_filtered_cartesian_distance']
                         from pyjom.mathlib import getMaxWindowCursor
                         cursor = getMaxWindowCursor(referenceData, closest_span_duration, dataDuration)
-                        # cursor = random.uniform(0,dataDuration-closest_span_duration) # this is not exactly right. not even good.
+                        # cursor = random.uniform(0,dataDuration-closest_span_duration*1.2) # this is not exactly right. not even good.
                         # you should utilize the 'motion vector' stuff.
-                        mStart, mEnd = 0+cursor, closest_span_duration+cursor
+                        mStart, mEnd = 0+cursor, closest_span_duration*1.2+cursor
                         candidate['cut']['span'] = (mStart, mEnd)
                     
                     if append_render_list:
