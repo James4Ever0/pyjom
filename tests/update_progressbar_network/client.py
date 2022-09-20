@@ -6,7 +6,7 @@ class netProgressbar:
         self.port = port
         self.message = message
         waitForServerUp(port=port, message=message)
-    def reset(self, )
+    def reset(self, total:int):
 
 
 while True:
