@@ -1,1 +1,1 @@
-python3 -m uvicorn --port 8576 test:app --reload
+python3 -m uvicorn --port 8576  --log-level critical test:app --reload
