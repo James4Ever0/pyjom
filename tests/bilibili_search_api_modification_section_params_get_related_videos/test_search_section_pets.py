@@ -34,5 +34,6 @@ class tids:
 class bilibiliSearchParams:
     order = order
     duration=duration
+    tids=tids
 
-bilibiliSearchParams.order.最多弹幕
+# bilibiliSearchParams.order.最多弹幕
