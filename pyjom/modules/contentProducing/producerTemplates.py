@@ -609,6 +609,9 @@ def petsWithMusicOnlineProducer(
                         NetProgressbar.update(info = {'case':case,'data':candidate})
                         demanded_cut_spans.pop(0)
                         render_list.append(candidate)
+                    else:
+                        if remove_unused:
+                            if os.path.exists(videoPath)
                 complete = len(demanded_cut_spans) == 0
                 if complete:
                     break
