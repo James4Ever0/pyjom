@@ -15,6 +15,7 @@ def OnlineFetcher(
     threads=20,
     # threads=-0.5,
     use_multithread=True,
+    timeout=45
 ):
     # how do you chain this shit up?
 
@@ -41,6 +42,7 @@ def OnlineFetcher(
                             threads=threads,
                             size_filter={"min": 0.4, "max": 50},
                             use_multithread=use_multithread,
+                            timeout=timeout
                         )
                         if result:
                             yield source_id, download_path
