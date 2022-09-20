@@ -1,10 +1,10 @@
 from lazero.network import waitForServerUp
 
 class netProgressbar:
-    def __init__(self, port, message)
-port = 8576
-message = 'progressbar server'
-waitForServerUp(port=port, message=message)
+    def __init__(self, port = 8576, message = 'progressbar server'):
+        self.port = port
+        self.message = message
+        waitForServerUp(port=port, message=message)
 
 import requests
 
