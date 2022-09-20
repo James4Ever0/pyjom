@@ -50,6 +50,7 @@ class bilibiliSearchParams:
     order = order
     duration = duration
     tids = tids
+    search
 
 class bilibiliArticleSearchParams:
     order = articleOrder
