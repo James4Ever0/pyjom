@@ -260,7 +260,7 @@ def waitForServerUp(port, message, timeout=1):
     while True:
         try:
             url = "http://localhost:{}".format(port)
-            r = requests.get(url, timeout=timeout)
+            r = requests.get(url, timeout=timeout, proxies=None)
             if type(message) == str:
                 text = r.text.strip('"').strip("'")
             else:
