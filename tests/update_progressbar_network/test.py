@@ -11,7 +11,7 @@ t = None
 
 
 def hello():
-    return ''
+    return 'progressbar server'
 
 # not routing this to network.
 def close_progressbar():
