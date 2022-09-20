@@ -191,7 +191,7 @@ def getClashYaml(clashYamlPath="Clash3.yaml"):
     print("FETCHING CLASH YAML DONE.")
     print("SAVED AT %s" % clashYamlPath)
 
-@asyncDaemonThread
+@asyncThread
 def updateClashYaml(clashYamlPath="Clash3.yaml", control_port=9911, advanced=True):
     getClashYaml(clashYamlPath=clashYamlPath)
     # if refine:
