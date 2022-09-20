@@ -45,4 +45,4 @@ class bilibiliSearchParams:
 
 
 # bilibiliSearchParams.order.最多弹幕
-bilibiliSearchParams.tids
+print(bilibiliSearchParams.tids)
