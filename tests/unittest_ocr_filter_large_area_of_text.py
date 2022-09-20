@@ -20,8 +20,10 @@ reader = getEasyOCRReader(['en'])
     height, width = frame.shape[:2]
     detection, recognition = reader.detect(frame)  # not very sure.
     if detection == [[]]:
-        detectionList.append([])
-    diagonalRects = [LRTBToDiagonal(x) for x in detection[0]]
+        diagonalRects = []
+    else:
+        diagonalRects = [LRTBToDiagonal(x) for x in detection[0]]
+    for 
 import numpy as np
 for img in iterator:
     # d = pytesseract.image_to_data(img, output_type=Output.DICT)
