@@ -311,3 +311,4 @@ def getCursorOfMaxAverageInWindow(referenceData, windowSize, dataDuration, super
     moving_sum_span +=1
     moving_sum = np.convolve(interpolated_fp, np.ones(moving_sum_span),'valid')
     max_index = np.argmax(moving_sum)
+    
