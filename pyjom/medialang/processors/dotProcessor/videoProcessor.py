@@ -24,7 +24,7 @@ def ffmpegVideoPreProductionFilter(
     start=None,
     end=None,
     cachePath=None,
-    filters=["pipCrop", "textRemoval", "logoRemoval"],
+    filters:List[Literal[["minterpolate", "removegrain", "bilateral"]]]=["pipCrop", "textRemoval", "logoRemoval"],
     preview=True,
     # padding=True,
     paddingBlur=True,
