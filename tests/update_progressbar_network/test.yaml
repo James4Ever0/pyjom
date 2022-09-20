@@ -6,8 +6,7 @@ windows:
     main-pane-height: 30
   panes:
   - shell_command:
-    - top
-    start_directory: '~'
+    - python3 
   - shell_command:
     - echo "hey"
   - shell_command:
