@@ -20,8 +20,8 @@ reader = getEasyOCRReader(('en',))
 
 import numpy as np
 for frame in iterator:
-    img = np.zeros(height, width, 3)
     height, width = frame.shape[:2]
+    img = np.zeros(height, width, 3)
     detection, recognition = reader.detect(frame)  # not very sure.
     if detection == [[]]:
         diagonalRects = []
