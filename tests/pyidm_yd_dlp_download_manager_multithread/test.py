@@ -21,5 +21,5 @@ elif option == 2:
     print("DOWNLOADED AT:", path)
 elif option == 3:
     from firedm import FireDM
-    args = [""]
+    args = ["-o",""]
     settings = FireDM.pars_args(args)
