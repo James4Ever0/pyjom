@@ -2478,7 +2478,7 @@ def motionVectorEstimation(
 
 ########################### TEXT AREA CALCULATION #########################
 
-from pyjom.imagetoolbox import getImageTextAreaRatio,langs:tuple=('en',), gpu=True, recognizer=False,debug=False
-def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing'],):
+from pyjom.imagetoolbox import getImageTextAreaRatio
+def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing'],langs:tuple=('en',), gpu=True, recognizer=False):
 
 ########################### TEXT AREA CALCULATION #########################
