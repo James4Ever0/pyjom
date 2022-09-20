@@ -46,11 +46,13 @@ class articleOrder:
     最多喜欢 = "attention"
     最多评论 = "scores"
 
+class searchEntry:
+    
 class bilibiliSearchParams:
     order = order
     duration = duration
     tids = tids
-    searchKey = searchEntry
+    searchEntry = searchEntry
 
 class bilibiliArticleSearchParams:
     order = articleOrder
