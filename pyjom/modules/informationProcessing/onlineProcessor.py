@@ -60,7 +60,7 @@ def OnlineProcessor(
                     NSFWVideoFilter,
                     yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
                     dummyFilterFunction,  # just for dog and cat, no other animals.
-                    getVideoT
+                    getVideoTextAreaRatio
                 )
 
                 video_color_filter = {
