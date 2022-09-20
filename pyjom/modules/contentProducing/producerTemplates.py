@@ -561,7 +561,7 @@ def petsWithMusicOnlineProducer(
             from tqdm.gui import tqdm
 
             total_pops = len(demanded_cut_spans)
-            for _ in tqdm(trange(total_pops)):
+            for _ in tqdm(range(total_pops)):
                 for data in dataGenerator:
                     # what is the format of the data?
                     data_id = data["item_id"]
