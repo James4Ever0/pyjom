@@ -20,6 +20,7 @@ for channel in channelList:
                 subChannels.append((subChannelName, subChannelTid))
             except:
                 continue
-        template.render(channelName)
+        rendered_data = template.render(channelName=channelName, channelTid=channelTid, subChannels=subChannels)
+        print(rendered_data)
     except:
         continue
