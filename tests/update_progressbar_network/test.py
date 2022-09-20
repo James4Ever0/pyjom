@@ -1,1 +1,3 @@
-# try to update progressbar via two interfaces.
+# try to update progressbar via network.
+
+def reset()
