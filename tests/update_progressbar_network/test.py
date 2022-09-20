@@ -31,7 +31,8 @@ def reset(total: int): # pass the iteration count
     t = tqdm(total=total)
 
 @app.get('/update')
-def update_progressbar(item_id: int):
+def update_progressbar(progress: int):
+    global t
     t.update(progress)
 
 @app.get('/close')
