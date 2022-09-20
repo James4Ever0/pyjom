@@ -46,3 +46,4 @@ def update_progressbar(progress: int):
 @app.get('/close')
 def close():
     close_progressbar()
+    return {'msg':'success'}
