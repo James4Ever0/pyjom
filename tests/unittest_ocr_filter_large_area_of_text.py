@@ -30,6 +30,7 @@ elif test_subject == 'image':
 else:
     raise Exception("unknown test_subject:", test_subject)
 
+# threshold: {'max':0.3}
 for frame in iterator:
     height, width = frame.shape[:2]
     img = np.zeros((height, width, 3))
