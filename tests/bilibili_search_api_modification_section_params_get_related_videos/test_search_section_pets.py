@@ -22,5 +22,6 @@ class duration:
 
 class bilibiliSearchParams:
     order = order
+    duration=duration
 
 bilibiliSearchParams.order.最多弹幕
