@@ -2042,7 +2042,7 @@ def NSFWVideoFilter(
 
 ########################### MOTION VECTOR ESTIMATION #########################
 
-def motionVectorEstimation(source):
+def motionVectorEstimation(source, plot:bool=False):
 
 # source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 
@@ -2443,32 +2443,32 @@ def motionVectorEstimation(source):
     # breakpoint()
     assert len(titles) == len(data)
     if plot:
-    import matplotlib.pyplot as plt
-    # plt.style.use('dark_background')
+        import matplotlib.pyplot as plt
+        # plt.style.use('dark_background')
 
-    a, b = 5,1
-    figure, axis = plt.subplots(a, b)
-    assert a*b >= len(titles)
+        a, b = 5,1
+        figure, axis = plt.subplots(a, b)
+        assert a*b >= len(titles)
 
-    for _a in range(a):
-        for _b in range(b):
-            index = _a * b + _b
-            if index > len(data) - 1:
-                break
-            if a == 1:
-                if b == 1:
-                    axis[0].plot(data[index])
-                    axis[0].set_title(titles[index])
+        for _a in range(a):
+            for _b in range(b):
+                index = _a * b + _b
+                if index > len(data) - 1:
+                    break
+                if a == 1:
+                    if b == 1:
+                        axis[0].plot(data[index])
+                        axis[0].set_title(titles[index])
+                    else:
+                        axis[_b].plot(data[index])
+                        axis[_b].set_title(titles[index])
+                elif b == 1:
+                    axis[_a].plot(data[index])
+                    axis[_a].set_title(titles[index])
                 else:
-                    axis[_b].plot(data[index])
-                    axis[_b].set_title(titles[index])
-            elif b == 1:
-                axis[_a].plot(data[index])
-                axis[_a].set_title(titles[index])
-            else:
-                axis[_a, _b].plot(data[index])
-                axis[_a, _b].set_title(titles[index])
-    plt.show()
+                    axis[_a, _b].plot(data[index])
+                    axis[_a, _b].set_title(titles[index])
+        plt.show()
 
 
 ########################### MOTION VECTOR ESTIMATION #########################
