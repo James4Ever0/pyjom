@@ -6,10 +6,10 @@ from functools import lru_cache
 
 @lru_cache(maxsize=1)
 def getEasyOCRReader():
-
     import easyocr
     # no metal? no dbnet18?
     reader = easyocr.Reader(langs, gpu=True, recognizer=False)
+    return reader
 
 def imageDenoise(image):
     shape = image.shape
