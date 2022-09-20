@@ -25,6 +25,8 @@ if test_subject == 'video':
 elif test_subject == 'image':
     imagePath = "/root/Desktop/works/pyjom'
     iterator = [cv2.imread(imagePath)]
+else:
+    raise Exception("unknown test_subject:", test_subject)
 
 for frame in iterator:
     height, width = frame.shape[:2]
