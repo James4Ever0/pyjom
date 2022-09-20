@@ -2043,12 +2043,6 @@ def NSFWVideoFilter(
 ########################### MOTION VECTOR ESTIMATION #########################
 
 def motionVectorEstimation(source, plot:bool=False):
-
-# source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
-
-# from lazero.utils.importers import cv2_custom_build_init
-
-# cv2_custom_build_init()
     from mvextractor.videocap import VideoCap
     from caer.video.frames_and_fps import count_frames, get_res
     import cv2
