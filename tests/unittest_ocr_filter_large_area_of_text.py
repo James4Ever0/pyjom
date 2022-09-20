@@ -25,6 +25,7 @@ height, width = frame.shape[:2]
 for img in iterator:
     # d = pytesseract.image_to_data(img, output_type=Output.DICT)
     n_boxes = len(d['level'])
+    img = np.zeros(height, width, 3)
     for i in range(n_boxes):
         (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
