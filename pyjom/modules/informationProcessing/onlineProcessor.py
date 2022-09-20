@@ -7,9 +7,9 @@ from lazero.filesystem import tmpdir
 
 @decorator
 def OnlineProcessor(
-    newElems, # a generator.
+    newElems,  # a generator.
     source="giphy",
-    use_proxy=False, # use some proxy.
+    use_proxy=False,  # use some proxy.
     clash_refresher_port=8677,
     proxy_url="http://127.0.0.1:8381",
     tmpPath="/dev/shm/medialang/onlineProcessor",
@@ -60,20 +60,25 @@ def OnlineProcessor(
                     NSFWVideoFilter,
                     yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
                     dummyFilterFunction,  # just for dog and cat, no other animals.
-                    getVideoTextAreaRatio
+                    getVideoTextAreaRatio,
                 )
 
                 video_color_filter = {
-                    "centrality": {"max": 0.18}, # stricter limit?
+                    "centrality": {"max": 0.18},  # stricter limit?
                     "max_nearby_center_percentage": {"max": 0.13},
                 }
                 video_effective_fps_filter = {"min": 7}
-                videoTextAreaRatioFilter = {'max':0.3}
+                videoTextAreaRatioFilter = {"max": 0.3}
                 valid = True
                 mList = [
                     [get_duration, duration_filter, checkMinMaxDict, "duration"],
                     [get_fps_float, fps_filter, checkMinMaxDict, "fps"],
-                    [getVideoTextAreaRatio, videoTextAreaRatioFilter, checkMinMaxDict, "videoTextAreaRatioFilter"],
+                    [
+                        getVideoTextAreaRatio,
+                        videoTextAreaRatioFilter,
+                        checkMinMaxDict,
+                        "videoTextAreaRatioFilter",
+                    ],
                     [
                         yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
                         None,
