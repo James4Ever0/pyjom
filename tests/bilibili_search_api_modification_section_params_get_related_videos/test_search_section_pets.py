@@ -61,6 +61,12 @@ class bilibiliSearchParams:
         全部分区 = None
     searchEntry = searchEntry
     class 
+class articleOrder:
+    综合排序 = None
+    最多点击 = "click"
+    最新发布 = "pubdate"
+    最多喜欢 = "attention"
+    最多评论 = "scores"
 
 class bilibiliArticleSearchParams:
     order = articleOrder
