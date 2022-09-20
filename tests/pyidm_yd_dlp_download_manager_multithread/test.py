@@ -5,7 +5,9 @@ option = 1
 if option == 1:
     import yt_dlp
     # import pyidm
-    yt_dlp.YoutubeDL()
+    x = yt_dlp.YoutubeDL()
+    y = x.download([url])
+    breakpoint()
 elif option == 2:
     from pySmartDL import SmartDL
 
