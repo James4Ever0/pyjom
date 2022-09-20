@@ -13,7 +13,7 @@ def OnlineFetcher(
     },
     tempdir="/dev/shm/medialang/online",
     threads=-1,
-    use_multithread=False,
+    use_multithread=True,
 ):
     # how do you chain this shit up?
 
