@@ -11,7 +11,8 @@ def getEasyOCRReader(langs, gpu=True, recognizer=False):
     reader = easyocr.Reader(langs, gpu=gpu, recognizer=recognizer)
     return reader
 
-def getImageTextAreaRatio(image, langs, )
+def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False):
+    
 
 
 def LRTBToDiagonal(lrtb):
