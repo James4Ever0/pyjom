@@ -12,4 +12,4 @@ import enum
 class order(enum.Enum):
    综合排序 = None
    最多点击 = 'click'
-   Tue = 3
+   最新发布 = 'pubdate'
