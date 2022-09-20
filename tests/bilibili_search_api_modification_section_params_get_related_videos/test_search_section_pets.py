@@ -29,7 +29,7 @@ class duration:
 # https://search.bilibili.com/all?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&order=stow&duration=4&tids=1
 
 class tids:
-     = None
+    全部分区 = None
 
 class bilibiliSearchParams:
     order = order
