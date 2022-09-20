@@ -18,7 +18,7 @@ wbRev = OnlineAutoContentProducer(
             # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
             "policy": {},
             "maxtime": 7.8,
-            "mintime": 2,
+            "mintime": 2, # we've write this shit!
             "fast": True,  # pass this flag to medialang export engine
         }
     ],
