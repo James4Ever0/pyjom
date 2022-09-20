@@ -1,8 +1,8 @@
 import json5
 import jinja2
 
-template
-template = jinja2.Template()
+template = open('template.j2','r').read()
+template = jinja2.Template(template)
 
 data = open("channelConfig.json5",'r').read()
 data = json5.loads(data)
