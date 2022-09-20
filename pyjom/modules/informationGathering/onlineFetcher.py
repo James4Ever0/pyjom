@@ -15,7 +15,7 @@ def OnlineFetcher(
     threads=20,
     # threads=-0.5,
     use_multithread=True,
-    timeout=45
+    timeout=120
 ):
     # how do you chain this shit up?
 
