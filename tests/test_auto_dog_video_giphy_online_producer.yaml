@@ -6,7 +6,7 @@ windows:
     main-pane-height: 30
   panes:
   - shell_command:
-    - python3 client.py
+    - python3 test_auto_dog_video_giphy_online_producer.py
   - shell_command:
     - bash test.sh
   window_name: progressbar window
