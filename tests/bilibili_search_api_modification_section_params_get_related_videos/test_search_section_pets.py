@@ -10,6 +10,6 @@
 # 最多收藏
 
 class order(enum.Enum):
-   Sun = 1
+   综合排序 = None
    Mon = 2
    Tue = 3
