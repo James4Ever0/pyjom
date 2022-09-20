@@ -8,5 +8,5 @@ class netProgressbar:
         waitForServerUp(port=port, message=message)
     def reset(self, total:int):
         requests.get('http://localhost:{}/reset'.format(self.port),proxies=None,params = {'total':total})
-    def 
-        requests.get('http://localhost:8576/update',proxies=None)
+    def update(self, )
+        requests.get('http://localhost:8576/update',proxies=None, params={})
