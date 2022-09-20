@@ -2,7 +2,6 @@
 
 def hello():
 
-
 def reset(): # pass the iteration count
     t = tqdm(total=total)
 
