@@ -149,7 +149,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
                     for elem in proxy["proxies"]
                     if elem not in ["☁️ 全球直连", "🌐 节点选择"]
                 ]
-                updatedProxy["url"] = "https://giphy.com"
+                updatedProxy["url"] = "https://media4.giphy.com"
                 updatedProxy["interval"] = 300
                 updatedProxy["tolerance"] = 50
                 break
