@@ -47,6 +47,9 @@ class articleOrder:
     最多评论 = "scores"
 
 class searchEntry:
+    all
+    video
+    bangumi
     
 class bilibiliSearchParams:
     order = order
