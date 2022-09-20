@@ -14,8 +14,10 @@ videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 
 iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
+detectionList = []
 from pyjom.imagetoolbox import getEasyOCRReader, LRTBToDiagonal
 reader = getEasyOCRReader(['en'])
+frame.shape
         detection, recognition = reader.detect(frame)  # not very sure.
         if detection == [[]]:
             detectionList.append([])
