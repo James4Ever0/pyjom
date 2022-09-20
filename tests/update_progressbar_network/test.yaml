@@ -1,5 +1,5 @@
 session_name: main-pane-height
-start_directory: 
+start_directory: /root/Desktop/works/pyjom/tests/update_progressbar_network
 windows:
 - layout: main-horizontal
   options:
