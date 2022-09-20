@@ -11,6 +11,14 @@ def getEasyOCRReader(langs, gpu=True, recognizer=False):
     reader = easyocr.Reader(langs, gpu=gpu, recognizer=recognizer)
     return reader
 
+
+
+def LRTBToDiagonal(lrtb):
+    left, right, top, bottom = lrtb
+    x0, y0, x1, y1 = left, top, right, bottom
+    return (x0, y0, x1, y1)
+
+
 def imageDenoise(image):
     shape = image.shape
     if len(shape) == 3:
