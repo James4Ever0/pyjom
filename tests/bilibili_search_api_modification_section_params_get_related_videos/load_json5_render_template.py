@@ -7,3 +7,5 @@ channelList = data['channelList']
 for channel in channelList:
     channelName = channel['name']
     channel_tid = channel['tid']
+    for subchannel in channel['sub']:
+        
