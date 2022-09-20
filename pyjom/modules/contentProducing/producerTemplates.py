@@ -279,7 +279,7 @@ def getFileCuts(
                         mOverlapRange = overlapRange(cut, f_timespan)
                         if mOverlapRange:
                             framework_candidates.append((framework2, mOverlapRange))
-                    framework_candidates.sort(lambda x: -(x[1][1] - x[1][0]))
+                    framework_candidates.sort(key=lambda x: -(x[1][1] - x[1][0]))
                     if len(framework_candidates) > 0:
                         framework_candidate = framework_candidates[0]
                         modifiers.update(framework_candidate)
