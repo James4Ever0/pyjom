@@ -19,10 +19,12 @@ def close_progressbar():
     if t is not None:
         try:
             t.close()
+            return {'msg':'success'}
         except:
             import traceback
             traceback.print_exc()
             print('error closing progressbar')
+            return {'msg':'success'}
 
 @app.get('/reset')
 def reset(total: int): # pass the iteration count
