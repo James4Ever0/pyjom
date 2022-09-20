@@ -1,2 +1,2 @@
 tmux kill-session -t 
-tmuxp 
+tmuxp load test.yaml
