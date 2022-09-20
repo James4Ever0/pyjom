@@ -4,6 +4,8 @@ from tqdm import tqdm
 t = None
 def hello():
 
+def close_progressbar():
+
 def reset(): # pass the iteration count
     global t
     if t is not None:
@@ -19,4 +21,3 @@ def update_progressbar():
     t.update(progress)
 
 def close():
-    
