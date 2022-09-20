@@ -34,7 +34,7 @@ class liveSearchParams:
     主播 = "live_user"
     直播间 = "live_room"
 
-class searchEntry:
+class path:
     综合 = "all"
     视频 = "video"
     番剧 = "bangumi"
@@ -59,14 +59,13 @@ class bilibiliSearchParams:
         _60分钟以上 = 4
     class tids:
         全部分区 = None
-    searchEntry = searchEntry
-class article:
-    class order:
-    综合排序 = None
-    最多点击 = "click"
-    最新发布 = "pubdate"
-    最多喜欢 = "attention"
-    最多评论 = "scores"
+    class article:
+        class order:
+        综合排序 = None
+        最多点击 = "click"
+        最新发布 = "pubdate"
+        最多喜欢 = "attention"
+        最多评论 = "scores"
 
 class bilibiliArticleSearchParams:
     order = articleOrder
