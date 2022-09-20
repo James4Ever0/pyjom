@@ -302,3 +302,4 @@ def getMaxAverageInWindowCursor(referenceData, windowSize, dataDuration, superSa
     for x in interpolated_xp:
         interpolated_value = np.interp(x, xp, fp)
         interpolated_fp.append(interpolated_value)
+    
