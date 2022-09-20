@@ -60,8 +60,8 @@ class bilibiliSearchParams:
     class tids:
         全部分区 = None
     searchEntry = searchEntry
-    class 
-class articleOrder:
+class article:
+    class order:
     综合排序 = None
     最多点击 = "click"
     最新发布 = "pubdate"
