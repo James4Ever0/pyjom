@@ -2421,12 +2421,6 @@ def motionVectorEstimation(source):
 
     # print('max_dst_x', max_dst_x)
     # print('max_dst_y', max_dst_y)
-    import matplotlib.pyplot as plt
-    # plt.style.use('dark_background')
-
-    a, b = 5,1
-    figure, axis = plt.subplots(a, b)
-
 
     data = [
         motion_area_ratio_array,
