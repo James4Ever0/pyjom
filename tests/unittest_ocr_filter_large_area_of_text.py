@@ -10,11 +10,7 @@ import cv2
 # img = cv2.imread('image.jpg')
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 
-videoPath = "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif"
-# check another video?
-# videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 
-iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
 detectionList = []
 from pyjom.imagetoolbox import getEasyOCRReader, LRTBToDiagonal
@@ -23,6 +19,12 @@ reader = getEasyOCRReader(("en",))
 
 import numpy as np
 
+if test_subject == 'video':
+    videoPath = "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif"
+# check another video?
+# videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
+
+iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
 for frame in iterator:
     height, width = frame.shape[:2]
