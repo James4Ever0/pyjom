@@ -9,7 +9,7 @@ from lazero.filesystem import tmpdir
 def OnlineProcessor(
     newElems, # a generator.
     source="giphy",
-    use_proxy=True, # use some proxy.
+    use_proxy=False, # use some proxy.
     clash_refresher_port=8677,
     proxy_url="http://127.0.0.1:8381",
     tmpPath="/dev/shm/medialang/onlineProcessor",
