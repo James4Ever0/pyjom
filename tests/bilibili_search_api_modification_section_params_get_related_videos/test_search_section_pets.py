@@ -62,8 +62,8 @@ class searchEntry:
     影视"pgc"
     直播"live"
     专栏"article"
-    话题
-    用户
+    话题"topic"
+    用户"upuser"
 class bilibiliSearchParams:
     order = order
     duration = duration
