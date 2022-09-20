@@ -21,3 +21,5 @@ class order(enum.Enum):
 class bilibiliSearchParams:
     def __init__(self):
         self.order = order
+
+bilibiliSearchParams.__init__
