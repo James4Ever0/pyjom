@@ -40,6 +40,8 @@ def update_progressbar(progress: int):
             import traceback
             traceback.print_exc()
             print("error when updating progessbar")
+    else:
+        
 
 @app.get('/close')
 def close():
