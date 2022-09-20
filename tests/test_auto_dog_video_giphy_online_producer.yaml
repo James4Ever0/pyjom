@@ -8,5 +8,5 @@ windows:
   - shell_command:
     - python3 test_auto_dog_video_giphy_online_producer.py
   - shell_command:
-    - python3 -m uvicorn 
+    - python3 -m uvicorn --port 8576  --log-level critical test:app --reload
   window_name: progressbar window
