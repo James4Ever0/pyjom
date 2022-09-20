@@ -2479,7 +2479,7 @@ def motionVectorEstimation(
 ########################### TEXT AREA CALCULATION #########################
 # threshold: {'max':0.3} for our new filter?
 from pyjom.imagetoolbox import getImageTextAreaRatio
-def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing']='max',langs:tuple=('en',), gpu=True, recognizer=False,debug=False, fps=10):
+def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing','list']='max',langs:tuple=('en',), gpu=True, recognizer=False,debug=False, fps=10):
 iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=fps)
 
 for frame in iterator:
