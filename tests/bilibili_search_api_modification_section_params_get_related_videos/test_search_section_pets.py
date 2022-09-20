@@ -67,6 +67,8 @@ class bilibiliSearchParams:
             全部 = None
             主播 = "live_user"
             直播间 = "live_room"
+    class upuser:
+        class 
 
 
 # bilibiliSearchParams.order.最多弹幕
