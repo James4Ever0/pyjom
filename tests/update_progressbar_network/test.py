@@ -36,6 +36,7 @@ def update_progressbar(progress: int):
     if t is not None:
         try:
             t.update(progress)
+            return {'msg':'success'}
         except:
             import traceback
             traceback.print_exc()
