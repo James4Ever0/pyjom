@@ -19,11 +19,13 @@ reader = getEasyOCRReader(("en",))
 
 import numpy as np
 
+test_subject = 'image'
+
 if test_subject == 'video':
     videoPath = "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif"
     iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 elif test_subject == 'image':
-    imagePath = "/root/Desktop/works/pyjom'
+    imagePath = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp'
     iterator = [cv2.imread(imagePath)]
 else:
     raise Exception("unknown test_subject:", test_subject)
