@@ -556,6 +556,7 @@ def petsWithMusicOnlineProducer(
             # breakpoint()
             lrcToAnimatedAss(music['filepath'], lyric_path, ass_file_path)
             data_ids = []
+            
             for data in dataGenerator:
                 # what is the format of the data?
                 data_id = data["item_id"]
