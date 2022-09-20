@@ -2470,6 +2470,6 @@ def motionVectorEstimation(source, plot:bool=False):
                     axis[_a, _b].plot(data[index])
                     axis[_a, _b].set_title(titles[index])
         plt.show()
-
+    return dataDict
 
 ########################### MOTION VECTOR ESTIMATION #########################
