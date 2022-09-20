@@ -16,7 +16,7 @@ iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
 detectionList = []
 from pyjom.imagetoolbox import getEasyOCRReader, LRTBToDiagonal
-reader = getEasyOCRReader(['en'])
+reader = getEasyOCRReader(('en',))
 
 import numpy as np
 for frame in iterator:
