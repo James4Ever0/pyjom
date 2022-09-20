@@ -2442,7 +2442,7 @@ def motionVectorEstimation(source, plot:bool=False):
     ]
     # breakpoint()
     assert len(titles) == len(data)
-    dataDict = {}
+    dataDict = {titles[index]:data[index] for index in range(len(titles))}
     if plot:
         import matplotlib.pyplot as plt
         # plt.style.use('dark_background')
