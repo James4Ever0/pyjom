@@ -12,11 +12,11 @@ def close_progressbar():
         except:
             import traceback
             traceback.print_exc()
-            print('error resetting progressbar')
+            print('error closing progressbar')
 
 def reset(): # pass the iteration count
     global t
-
+    close_progressbar()
     t = tqdm(total=total)
 
 def update_progressbar():
