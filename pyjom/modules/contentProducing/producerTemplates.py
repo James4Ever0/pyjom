@@ -525,7 +525,7 @@ def petsWithMusicOnlineProducer(
     dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online"
 ):
     import uuid
-    
+    NP=netProgressbar()
     with tmpdir(path=tempdir) as TD:
         getRandomFileName = lambda extension: os.path.join(
             tempdir, ".".join([str(uuid.uuid4()), extension])
