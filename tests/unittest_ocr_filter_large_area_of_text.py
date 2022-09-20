@@ -23,6 +23,7 @@ reader = getEasyOCRReader(("en",))
 
 import numpy as np
 
+
 for frame in iterator:
     height, width = frame.shape[:2]
     img = np.zeros((height, width, 3))
