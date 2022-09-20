@@ -577,13 +577,13 @@ def petsWithMusicOnlineProducer(
                     speed_delta = closest_span_duration / dataDuration
                     # for time duration of 0.6 seconds, how the fuck you can fit in?
                     span = closest_span
-
-                    if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
-                        candidate = {
+                    candidate = {
                             "span": span,
                             "cut": {"span": (0, dataDuration)},
                             "source": videoSource,
-                        }
+                    }
+                    if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
+                        
                         demanded_cut_spans.pop(0)
                         render_list.append(candidate)
                         # break
