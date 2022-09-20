@@ -21,7 +21,7 @@ elif option == 2:
     print("DOWNLOADED AT:", path)
 elif option == 3:
     from firedm import FireDM
-    args = ["-o","./test.gif",url]
+    args = ["-o","./test.gif", url]
     settings = FireDM.pars_args(args)
     urls = settings.pop('url')
     controller = FireDM.Controller(view_class=FireDM.CmdView, custom_settings=settings)
