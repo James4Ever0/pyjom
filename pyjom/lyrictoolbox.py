@@ -257,7 +257,6 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
 
 def waitForServerUp(port, message, timeout=1):
     import requests
-
     while True:
         try:
             url = "http://localhost:{}".format(port)
