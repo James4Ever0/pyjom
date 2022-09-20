@@ -11,5 +11,5 @@
 
 class order(enum.Enum):
    综合排序 = None
-   Mon = 2
+   最多点击 = 'click'
    Tue = 3
