@@ -5,10 +5,10 @@ import cv2
 from functools import lru_cache
 
 @lru_cache(maxsize=1)
-def getEasyOCRReader():
+def getEasyOCRReader(langs, gpu=True, recognizer=False):
     import easyocr
     # no metal? no dbnet18?
-    reader = easyocr.Reader(langs, gpu=True, recognizer=False)
+    reader = easyocr.Reader(langs, gpu=gpu, recognizer=recognizer)
     return reader
 
 def imageDenoise(image):
