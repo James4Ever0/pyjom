@@ -3,7 +3,7 @@
 def hello():
 
 
-def reset():
+def reset(): # pass the iteration count
 
 
 def update_progressbar():
