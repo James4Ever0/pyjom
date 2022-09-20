@@ -3,7 +3,7 @@ url = "https://media3.giphy.com/media/wTrXRamYhQzsY/giphy.gif?cid=dda24d502m79hk
 import yt_dlp
 # import pyidm
 
-yt_dlp.
+yt_dlp.YoutubeDL()
 
 from pySmartDL import SmartDL
 
