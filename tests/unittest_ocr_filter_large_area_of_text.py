@@ -8,7 +8,7 @@ cv2_custom_build_init()
 # img = cv2.imread('image.jpg')
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 
-iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=)
+iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
 d = pytesseract.image_to_data(img, output_type=Output.DICT)
 n_boxes = len(d['level'])
