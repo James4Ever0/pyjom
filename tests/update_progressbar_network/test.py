@@ -6,7 +6,10 @@ from fastapi import FastAPI
 app = FastAPI()
 
 from tqdm import tqdm
+
 t = None
+
+
 def hello():
 
 # not routing this to network.
