@@ -36,7 +36,6 @@ class liveSearchParams:
 
 
 class bilibiliSearchParams:
-
     class path:
         综合 = "all"
         视频 = "video"
@@ -62,11 +61,11 @@ class bilibiliSearchParams:
         全部分区 = None
     class article:
         class order:
-        综合排序 = None
-        最多点击 = "click"
-        最新发布 = "pubdate"
-        最多喜欢 = "attention"
-        最多评论 = "scores"
+            综合排序 = None
+            最多点击 = "click"
+            最新发布 = "pubdate"
+            最多喜欢 = "attention"
+            最多评论 = "scores"
 
 class bilibiliArticleSearchParams:
     order = articleOrder
