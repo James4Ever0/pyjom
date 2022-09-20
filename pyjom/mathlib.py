@@ -305,6 +305,6 @@ def getCursorOfMaxAverageInWindow(referenceData, windowSize, dataDuration, super
     
     interpolated_fp = np.array(interpolated_fp)
     for index, value in enumerate(interpolated_xp):
-        if value
+        if value - windowSize >=0: break
         moving_sum_span = index
     moving_sum = np.convolve(interpolated_fp, np.ones(moving_sum_span),'valid')
