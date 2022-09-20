@@ -72,7 +72,8 @@ class bilibiliSearchParams:
             默认排序= None
             粉丝数由高到低 = "fans"
             Lv等级由高到低 = 
-        class order_
+        class order_sort:
+            正序
 # https://search.bilibili.com/upuser?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&order=fans
 # https://search.bilibili.com/upuser?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&order=fans&order_sort=1
 
