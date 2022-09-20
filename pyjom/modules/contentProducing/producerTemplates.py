@@ -589,7 +589,7 @@ def petsWithMusicOnlineProducer(
                         # break
                     elif checkMinMaxDict(speed_delta, {"min":1.2,'max':1.5}):
                         span = closest_span,
-                        candidate
+                        candidate['cut']['span'] = 
                 complete = len(demanded_cut_spans) == 0
                 if complete:
                     break
