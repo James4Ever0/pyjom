@@ -24,12 +24,6 @@
 # https://search.bilibili.com/article?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&order=attention
 # https://search.bilibili.com/article?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&order=scores
 
-class articleOrder:
-    综合排序 = None
-    最多点击 = "click"
-    最新发布 = "pubdate"
-    最多喜欢 = "attention"
-    最多评论 = "scores"
 
 # https://search.bilibili.com/live?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24
 # https://search.bilibili.com/live?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&search_type=live_user
@@ -66,6 +60,7 @@ class bilibiliSearchParams:
     class tids:
         全部分区 = None
     searchEntry = searchEntry
+    class 
 
 class bilibiliArticleSearchParams:
     order = articleOrder
