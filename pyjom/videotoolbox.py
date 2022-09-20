@@ -234,6 +234,7 @@ def getDiagonalRectArea(diagonalRect):
     area = (x1 - x0) * (y1 - y0)
     return area
 
+from pyjom.imagetoolbox import getEasyOCRReader
 
 @lru_cache(maxsize=20)
 def detectTextRegionOverTime(
