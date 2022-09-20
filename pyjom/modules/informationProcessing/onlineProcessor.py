@@ -68,6 +68,7 @@ def OnlineProcessor(
                     "max_nearby_center_percentage": {"max": 0.13},
                 }
                 video_effective_fps_filter = {"min": 7}
+                videoTextAreaRatioFilter = {'max':0.3}
                 valid = True
                 mList = [
                     [get_duration, duration_filter, checkMinMaxDict, "duration"],
