@@ -297,4 +297,6 @@ def getMaxWindowCursor(referenceData, windowSize, dataDuration):
     fp = referenceData
     xp = np.linspace()
     interpolated_xp = np.linspace()
-     np.interp(x, xp, fp)
+    for x in interpolated_xp:
+
+        np.interp(x, xp, fp)
