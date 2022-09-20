@@ -24,9 +24,9 @@ reader = getEasyOCRReader(['en'])
     else:
         diagonalRects = [LRTBToDiagonal(x) for x in detection[0]]
     for x1, y1, x2, y2 in diagonalRects:
-        
+        w,h = x2-x1, y2-y1
 import numpy as np
-for img in iterator:
+for frame in iterator:
     # d = pytesseract.image_to_data(img, output_type=Output.DICT)
     n_boxes = len(d['level'])
     img = np.zeros(height, width, 3)
