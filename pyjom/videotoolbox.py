@@ -2493,6 +2493,7 @@ def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing'
     elif mode == 'mean':
         return superMean(mList)
     elif mode == 'mean_no_missing':
-        re
+        newList = []
+        return 
 
 ########################### TEXT AREA CALCULATION #########################
