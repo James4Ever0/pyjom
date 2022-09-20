@@ -12,4 +12,7 @@ for channel in channelList:
             try:
                 subChannelName = subChannel['name']
                 subChanneiTid = subChannel['tid']
-                
+            except:
+                continue
+    except:
+        continue
