@@ -25,7 +25,7 @@ class duration:
     _10分钟以下 = 1
     _10_30分钟 = 2
     _30_60分钟 = 3
-    
+    _60分钟以上
 
 
 class bilibiliSearchParams:
