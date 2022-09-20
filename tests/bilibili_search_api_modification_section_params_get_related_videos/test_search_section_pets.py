@@ -29,6 +29,7 @@
 # https://search.bilibili.com/live?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&search_type=live_user
 # https://search.bilibili.com/live?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&search_type=live_room
 
+
 class bilibiliSearchParams:
     class _path:
         综合 = "all"
@@ -39,6 +40,7 @@ class bilibiliSearchParams:
         专栏 = "article"
         话题 = "topic"
         用户 = "upuser"
+
     class all:
         class order:
             综合排序 = None
@@ -46,12 +48,14 @@ class bilibiliSearchParams:
             最新发布 = "pubdate"
             最多弹幕 = "dm"
             最多收藏 = "stow"
+
         class duration:
             全部时长 = None
             _10分钟以下 = 1
             _10_30分钟 = 2
             _30_60分钟 = 3
             _60分钟以上 = 4
+
         class tids:
             全部分区 = None
             ########################
@@ -211,8 +215,11 @@ class bilibiliSearchParams:
                 野生动物 = 221
                 爬宠 = 222
                 动物综合 = 75
+
             ########################
-    video=all
+
+    video = all
+
     class article:
         class order:
             综合排序 = None
@@ -220,19 +227,24 @@ class bilibiliSearchParams:
             最新发布 = "pubdate"
             最多喜欢 = "attention"
             最多评论 = "scores"
+
     class live:
         class search_type:
             全部 = None
             主播 = "live_user"
             直播间 = "live_room"
+
     class upuser:
         class order:
-            默认排序= None
+            默认排序 = None
             粉丝数由高到低 = "fans"
             Lv等级由高到低 = "level"
+
         class order_sort:
             正序 = None
             倒序 = 1
+
+
 # https://search.bilibili.com/upuser?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&order=fans
 # https://search.bilibili.com/upuser?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&order=fans&order_sort=1
 # https://search.bilibili.com/upuser?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&order=level
