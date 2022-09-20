@@ -10,7 +10,7 @@ def OnlineProducer(processed_info_generator, source = 'giphy',template=None, tem
         template_function = getProducerTemplate(template)
         # print("TEMPLATE FUNCTION ACQUIRED %s" % template_function)
         # breakpoint()
-        exported_media_locations = template_function(processed_info_generator,configs=template_configs) # a generator!
+        exported_media_locations = template_function(processed_info_generator,configs=template_configs, fast=fast) # a generator!
         # i guess the title/tags/cover are actually belongs to the poster, not producer.
         for exported_media_location in exported_media_locations:
             print('exported media location:', exported_media_location)
