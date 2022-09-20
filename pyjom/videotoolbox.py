@@ -2491,6 +2491,9 @@ def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing'
     elif mode == 'max':
         return max(mList)
     elif mode == 'mean':
-        return np.mean(mList)
+        value = np.mean(mList)
+        if np.isnan(value): return 0
+        else: return value
+    elif mode == 'mean_no_missing'
 
 ########################### TEXT AREA CALCULATION #########################
