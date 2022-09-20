@@ -519,12 +519,13 @@ from pyjom.commons import checkMinMaxDict
 from pyjom.lyrictoolbox import lrcToAnimatedAss
 from lazero.filesystem import tmpdir
 
+from lazero.network.progressbar.client import netProgressbar
 
 def petsWithMusicOnlineProducer(
     dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online"
 ):
     import uuid
-
+    
     with tmpdir(path=tempdir) as TD:
         getRandomFileName = lambda extension: os.path.join(
             tempdir, ".".join([str(uuid.uuid4()), extension])
@@ -562,7 +563,6 @@ def petsWithMusicOnlineProducer(
 
             total_pops = len(demanded_cut_spans)
             # for _ in tqdm(range(total_pops)):
-            from lazero.network.progressbar.client import netProgressbar
             
             for data in dataGenerator:
                 # what is the format of the data?
