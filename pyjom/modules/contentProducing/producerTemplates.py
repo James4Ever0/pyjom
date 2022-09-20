@@ -587,7 +587,7 @@ def petsWithMusicOnlineProducer(
                     if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
                         append_render_list = True
                         # break
-                    elif checkMinMaxDict(speed_delta, {"min":1.2,'max':2}):
+                    elif checkMinMaxDict(speed_delta, {"min":1.2,'max':3}):
                         append_render_list = True
                         from pyjom.videotoolbox import motionVectorEstimation
                         dataDict = motionVectorEstimation(videoSource)
