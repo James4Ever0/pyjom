@@ -34,7 +34,9 @@ class duration:
 
 
 class tids:
-    self=1
+    # self=1
+    def __repr__(self):
+        return 1
     全部分区 = None
 
 
