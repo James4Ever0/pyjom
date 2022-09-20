@@ -8,7 +8,7 @@ import cv2
 # img = cv2.imread('image.jpg')
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 
-videoPath = ""
+videoPath = "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif"
 
 iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
