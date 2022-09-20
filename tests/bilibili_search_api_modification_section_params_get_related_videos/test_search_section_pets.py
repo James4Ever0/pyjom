@@ -39,6 +39,7 @@ class bilibiliSearchParams:
         专栏 = "article"
         话题 = "topic"
         用户 = "upuser"
+    video=all
     class all:
         class order:
             综合排序 = None
