@@ -22,6 +22,7 @@ height, width = frame.shape[:2]
         if detection == [[]]:
             detectionList.append([])
         detectionList.append([LRTBToDiagonal(x) for x in detection[0]].copy())
+import numpy as np
 for img in iterator:
     # d = pytesseract.image_to_data(img, output_type=Output.DICT)
     n_boxes = len(d['level'])
