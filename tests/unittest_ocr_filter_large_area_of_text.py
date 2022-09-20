@@ -15,7 +15,7 @@ videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
 from pyjom.imagetoolbox import getEasyOCRReader
-reader = 
+reader = getEasyOCRReader(['en'])
 
 
             height, width = frame.shape[:2]
