@@ -29,8 +29,8 @@ for frame in iterator:
         diagonalRects = [LRTBToDiagonal(x) for x in detection[0]]
     for x1, y1, x2, y2 in diagonalRects:
         w,h = x2-x1, y2-y1
-        (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
-        cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        x,y = x1,y1
+        cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), -1)
 
     cv2.imshow('img', img)
     cv2.waitKey(0)
