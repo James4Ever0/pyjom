@@ -37,12 +37,7 @@ def checkXYWH(XYWH, canvas, minArea=20):
         return False, None
     return True, (x, y, w, h)
 
-
-def LRTBToDiagonal(lrtb):
-    left, right, top, bottom = lrtb
-    x0, y0, x1, y1 = left, top, right, bottom
-    return (x0, y0, x1, y1)
-
+from pyjom.imagetoolbox import LRTBToDiagonal
 
 def mergeAlikeRegions(sample, threshold=10):
     prevList = []
