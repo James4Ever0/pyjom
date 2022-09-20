@@ -1,9 +1,12 @@
+from test_commons import *
+
 import pytesseract
 from pytesseract import Output
 from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
 # import cv2
 # img = cv2.imread('image.jpg')
+from 
 
 d = pytesseract.image_to_data(img, output_type=Output.DICT)
 n_boxes = len(d['level'])
