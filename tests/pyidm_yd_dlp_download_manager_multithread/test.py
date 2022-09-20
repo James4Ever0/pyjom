@@ -6,7 +6,7 @@ if option == 1:
     import yt_dlp
     # import pyidm
     path = "./randomName.mp4"
-    x = yt_dlp.YoutubeDL({"outtmpl":path})
+    x = yt_dlp.YoutubeDL({"outtmpl":path,''})
     y = x.download([url])
     breakpoint()
 elif option == 2:
