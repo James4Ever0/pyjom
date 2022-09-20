@@ -6,9 +6,9 @@ windows:
     main-pane-height: 30
   panes:
   - shell_command:
-    - python3 
+    - bash test.sh
   - shell_command:
-    - echo "hey"
+    - python3 client.py
   - shell_command:
     - echo "moo"
   window_name: my window name
