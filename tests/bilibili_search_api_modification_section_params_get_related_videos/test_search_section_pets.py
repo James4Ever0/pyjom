@@ -44,6 +44,8 @@ class bilibiliSearchParams:
     duration = duration
     tids = tids
 
+class bilibiliArticleSearchParams:
+    
 
 # bilibiliSearchParams.order.最多弹幕
 print(bilibiliSearchParams.tids())
