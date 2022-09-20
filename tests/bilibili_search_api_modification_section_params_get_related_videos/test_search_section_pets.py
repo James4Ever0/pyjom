@@ -34,17 +34,18 @@ class liveSearchParams:
     主播 = "live_user"
     直播间 = "live_room"
 
-class path:
-    综合 = "all"
-    视频 = "video"
-    番剧 = "bangumi"
-    影视 = "pgc"
-    直播 = "live"
-    专栏 = "article"
-    话题 = "topic"
-    用户 = "upuser"
 
 class bilibiliSearchParams:
+
+    class path:
+        综合 = "all"
+        视频 = "video"
+        番剧 = "bangumi"
+        影视 = "pgc"
+        直播 = "live"
+        专栏 = "article"
+        话题 = "topic"
+        用户 = "upuser"
     class order:
         综合排序 = None
         最多点击 = "click"
