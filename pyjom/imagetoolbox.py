@@ -12,7 +12,7 @@ def getEasyOCRReader(langs, gpu=True, recognizer=False):
     return reader
 
 def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False,debug=False):
-    reader = 
+    reader = getEasyOCRReader(langs, gpu=gpu, recognizer=recognizer)
     if type(image) == str:
         image = cv2.imread(image)
     height, width = frame.shape[:2]
