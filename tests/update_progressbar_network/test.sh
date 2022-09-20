@@ -1,1 +1,1 @@
-uvicorn test:app --reload
+python3 -m uvicorn test:app --reload
