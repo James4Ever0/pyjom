@@ -1,4 +1,5 @@
 import json5
+import jinja2
 
 data = open("channelConfig.json5",'r').read()
 data = json5.loads(data)
