@@ -2479,13 +2479,8 @@ def motionVectorEstimation(
 ########################### TEXT AREA CALCULATION #########################
 
 from pyjom.imagetoolbox import getImageTextAreaRatio
-def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing'],langs:tuple=('en',), gpu=True, recognizer=False,debug=False):
-iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
-elif test_subject == 'image':
-    imagePath = "/root/Desktop/works/pyjom/samples/image/dog_saturday_night.bmp"
-    iterator = [cv2.imread(imagePath)]
-else:
-    raise Exception("unknown test_subject:", test_subject)
+def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing'],langs:tuple=('en',), gpu=True, recognizer=False,debug=False, fps=10):
+iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=fps)
 
 # threshold: {'max':0.3}
 for frame in iterator:
