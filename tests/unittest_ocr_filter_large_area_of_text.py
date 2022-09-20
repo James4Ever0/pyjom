@@ -35,5 +35,7 @@ for frame in iterator:
         w, h = x2 - x1, y2 - y1
         x, y = x1, y1
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), -1)
+    # calculate the portion of the text area.
+    textArea = 
     cv2.imshow("img", img)
     cv2.waitKey(0)
