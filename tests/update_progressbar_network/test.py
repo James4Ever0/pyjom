@@ -4,6 +4,7 @@ from tqdm import tqdm
 t = None
 def hello():
 
+# not routing this to network.
 def close_progressbar():
     global t
     if t is not None:
@@ -23,3 +24,4 @@ def update_progressbar():
     t.update(progress)
 
 def close():
+    close_progressbar()
