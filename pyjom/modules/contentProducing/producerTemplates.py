@@ -370,11 +370,16 @@ def getRenderList(
 
 
 def renderList2MediaLang(
-    renderList, slient=True, fast:bool=True,bgm=None, backend="ffmpeg"  # wtf is this ffmpeg?
+    renderList,
+    slient=True,
+    fast: bool = True,
+    bgm=None,
+    backend="ffmpeg",  # wtf is this ffmpeg?
 ):  # this is just a primitive. need to improve in many ways.
     # producer = ""
     scriptBase = [
-        '(".mp4",backend = "%s", bgm = "%s", fast=%s)' % (backend, bgm, str(fast).lower())
+        '(".mp4",backend = "%s", bgm = "%s", fast=%s)'
+        % (backend, bgm, str(fast).lower())
     ]  # set default resolution to 1920x1080
 
     def getSpanDuration(span):
@@ -521,11 +526,17 @@ from lazero.filesystem import tmpdir
 
 from lazero.network.progressbar.client import netProgressbar
 
+
 def petsWithMusicOnlineProducer(
-    dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online", remove_unused=True, fast:bool=True
+    dataGenerator,
+    configs,
+    tempdir="/dev/shm/medialang/pets_with_music_online",
+    remove_unused=True,
+    fast: bool = True,
 ):
     import uuid
-    NetProgressbar=netProgressbar()
+
+    NetProgressbar = netProgressbar()
     with tmpdir(path=tempdir) as TD:
         getRandomFileName = lambda extension: os.path.join(
             tempdir, ".".join([str(uuid.uuid4()), extension])
@@ -563,8 +574,8 @@ def petsWithMusicOnlineProducer(
 
             total_pops = len(demanded_cut_spans)
             # for _ in tqdm(range(total_pops)):
-            NetProgressbar.reset(total = total_pops)
-            
+            NetProgressbar.reset(total=total_pops)
+
             for data in dataGenerator:
                 # what is the format of the data?
                 data_id = data["item_id"]
@@ -577,37 +588,51 @@ def petsWithMusicOnlineProducer(
                     )
                     closest_span = demanded_cut_spans[0]
                     closest_span_duration = closest_span[1] - closest_span[0]
-                    speed_delta = dataDuration/closest_span_duration
+                    speed_delta = dataDuration / closest_span_duration
                     # for time duration of 0.6 seconds, how the fuck you can fit in?
                     span = closest_span
                     candidate = {
-                            "span": span,
-                            "cut": {"span": (0, dataDuration)},
-                            "source": videoSource,
+                        "span": span,
+                        "cut": {"span": (0, dataDuration)},
+                        "source": videoSource,
                     }
                     append_render_list = False
                     case = None
 
                     if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
-                        case='nearby'
+                        case = "nearby"
                         append_render_list = True
                         # break
-                    elif checkMinMaxDict(speed_delta, {"min":1.2,'max':3}):
-                        case='trim'
+                    elif checkMinMaxDict(speed_delta, {"min": 1.2, "max": 3}):
+                        case = "trim"
                         append_render_list = True
                         from pyjom.videotoolbox import motionVectorEstimation
+
                         dataDict = motionVectorEstimation(videoSource)
-                        referenceData = dataDict['average_global_weighted_motion_vectors_filtered_cartesian_distance']
+                        referenceData = dataDict[
+                            "average_global_weighted_motion_vectors_filtered_cartesian_distance"
+                        ]
                         from pyjom.mathlib import getCursorOfMaxAverageInWindow
-                        cursor = getCursorOfMaxAverageInWindow(referenceData, closest_span_duration*1.2, dataDuration)
+
+                        cursor = getCursorOfMaxAverageInWindow(
+                            referenceData, closest_span_duration * 1.2, dataDuration
+                        )
                         # cursor = random.uniform(0,dataDuration-closest_span_duration*1.2) # this is not exactly right. not even good.
                         # you should utilize the 'motion vector' stuff.
-                        mStart, mEnd = 0+cursor, min(closest_span_duration*1.2+cursor,dataDuration)
-                        candidate['cut']['span'] = (mStart, mEnd)
-                    
+                        mStart, mEnd = 0 + cursor, min(
+                            closest_span_duration * 1.2 + cursor, dataDuration
+                        )
+                        candidate["cut"]["span"] = (mStart, mEnd)
+
                     if append_render_list:
                         demanded_cut_spans.pop(0)
-                        NetProgressbar.update(info = {'remainings':len(demanded_cut_spans),'case':case,'data':candidate})
+                        NetProgressbar.update(
+                            info={
+                                "remainings": len(demanded_cut_spans),
+                                "case": case,
+                                "data": candidate,
+                            }
+                        )
                         render_list.append(candidate)
                     else:
                         if remove_unused:
@@ -624,7 +649,9 @@ def petsWithMusicOnlineProducer(
                 bgm=music["filepath"],
                 producer="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
             )  # what is the backend?
-            rendered_media_location = medialangObject.execute() # how to control its 'fast' parameter?
+            rendered_media_location = (
+                medialangObject.execute()
+            )  # how to control its 'fast' parameter?
             # maybe we need render the lyric file separately.
             # using a ffmpeg filter.
 
