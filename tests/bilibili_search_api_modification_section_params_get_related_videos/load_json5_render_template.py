@@ -16,7 +16,7 @@ for channel in channelList:
         for subChannel in channel['sub']:
             try:
                 subChannelName = subChannel['name']
-                subChanneiTid = subChannel['tid']
+                subChannelTid = subChannel['tid']
                 subChannels.append((subChannelName, subChannelTid))
             except:
                 continue
