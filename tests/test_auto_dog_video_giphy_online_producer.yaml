@@ -1,5 +1,5 @@
 session_name: online_dog_cat_generator_test
-start_directory: /root/Desktop/works/pyjom/tests/update_progressbar_network
+start_directory: /root/Desktop/works/pyjom/tests
 windows:
 - layout: main-horizontal
   options:
