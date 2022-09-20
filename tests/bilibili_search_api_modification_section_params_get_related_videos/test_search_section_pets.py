@@ -61,6 +61,9 @@ class searchEntry:
     番剧"bangumi"
     影视"pgc"
     直播"live"
+    专栏
+    话题
+    用户
 class bilibiliSearchParams:
     order = order
     duration = duration
