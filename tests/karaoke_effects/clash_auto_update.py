@@ -191,6 +191,8 @@ def getClashYaml(clashYamlPath="Clash3.yaml"):
     print("FETCHING CLASH YAML DONE.")
     print("SAVED AT %s" % clashYamlPath)
 
+from lazero.threading import asyncThread
+
 @asyncThread
 def updateClashYaml(clashYamlPath="Clash3.yaml", control_port=9911, advanced=True):
     getClashYaml(clashYamlPath=clashYamlPath)
