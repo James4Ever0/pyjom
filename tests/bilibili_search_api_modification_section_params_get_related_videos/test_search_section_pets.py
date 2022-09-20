@@ -62,6 +62,11 @@ class bilibiliSearchParams:
             最新发布 = "pubdate"
             最多喜欢 = "attention"
             最多评论 = "scores"
+    class live:
+        class search_type:
+            全部 = None
+            主播 = "live_user"
+            直播间 = "live_room"
 
 class bilibiliArticleSearchParams:
     order = articleOrder
