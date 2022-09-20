@@ -291,7 +291,7 @@ def multiParameterExponentialNetwork(
             value += (1 - value) * evaluate_function(apply_item, curve, curve_params)
     return value
 
-def getCursorMaxAverageInWindow(referenceData, windowSize, dataDuration, superSampleRate=4):
+def getCursorOfMaxAverageInWindow(referenceData, windowSize, dataDuration, superSampleRate=4):
     assert windowSize<dataDuration
     # we supersample this reference data?
     fp = referenceData
