@@ -2044,7 +2044,7 @@ def NSFWVideoFilter(
 
 def motionVectorEstimation(source):
 
-source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
+# source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 
 from lazero.utils.importers import cv2_custom_build_init
 
