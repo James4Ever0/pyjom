@@ -2,7 +2,14 @@ from pyjom.commons import *
 import numpy as np
 import cv2
 
-from functools import
+from functools import lru_cache
+
+@lru_cache(maxsize=1)
+def getEasyOCRReader():
+
+    import easyocr
+    # no metal? no dbnet18?
+    reader = easyocr.Reader(langs, gpu=True, recognizer=False)
 
 def imageDenoise(image):
     shape = image.shape
