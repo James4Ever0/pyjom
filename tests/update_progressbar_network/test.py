@@ -25,7 +25,7 @@ def close_progressbar():
             print('error closing progressbar')
 
 @app.get('/reset')
-def reset(): # pass the iteration count
+def reset(item_id: int): # pass the iteration count
     global t
     close_progressbar()
     t = tqdm(total=total)
