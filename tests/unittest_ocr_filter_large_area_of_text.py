@@ -14,6 +14,21 @@ videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 
 iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 
+
+
+    for index, frame in enumerate(iterator):
+        if noWHInfo:
+            noWHInfo = False
+            height, width = frame.shape[:2]
+        detection, recognition = reader.detect(frame)  # not very sure.
+        if detection == [[]]:
+            detectionList.append([])
+            continue
+        # print("frame number:",index)
+        # for boundingBox in detection[0]:
+        #     print(boundingBox) # left, right, top, bottom
+
+        detectionList.append([LRTBToDiagonal(x) for x in detection[0]].copy())
 for img in iterator:
     # d = pytesseract.image_to_data(img, output_type=Output.DICT)
     n_boxes = len(d['level'])
