@@ -23,7 +23,8 @@ if test_subject == 'video':
     videoPath = "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif"
     iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
 elif test_subject == 'image':
-    imagePath = "/root/Desktop/works/pyjom
+    imagePath = "/root/Desktop/works/pyjom'
+    iterator = [cv2.imread(imagePath)]
 
 for frame in iterator:
     height, width = frame.shape[:2]
