@@ -291,7 +291,7 @@ def multiParameterExponentialNetwork(
             value += (1 - value) * evaluate_function(apply_item, curve, curve_params)
     return value
 
-def getCursorOfMaxAverageInWindow(referenceData, windowSize, dataDuration, superSampleRate=4):
+def getCursorOfMaxAverageInWindow(referenceData, windowSize, dataDuration, superSampleRate=8):
     assert windowSize<dataDuration
     # we supersample this reference data?
     fp = referenceData
@@ -307,4 +307,5 @@ def getCursorOfMaxAverageInWindow(referenceData, windowSize, dataDuration, super
     for index, value in enumerate(interpolated_xp):
         if value - windowSize >=0: break
         moving_sum_span = index
+    moving_sum_span +=1
     moving_sum = np.convolve(interpolated_fp, np.ones(moving_sum_span),'valid')
