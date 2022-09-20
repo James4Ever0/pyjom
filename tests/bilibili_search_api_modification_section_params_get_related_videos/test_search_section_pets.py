@@ -57,8 +57,8 @@ class liveSearchParams:
 
 class searchEntry:
     综合"all"
-    "video"
-    "bangumi"
+    视频"video"
+    番剧"bangumi"
     "pgc"
     "live"
 class bilibiliSearchParams:
