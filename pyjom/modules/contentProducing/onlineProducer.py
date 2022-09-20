@@ -2,7 +2,7 @@ from pyjom.commons import *
 from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 
 @decorator
-def OnlineProducer(processed_info_generator, source = 'giphy',template=None, template_configs=None):
+def OnlineProducer(processed_info_generator, source = 'giphy',template=None, template_configs=None, fast:bool=True):
     # template_configs is a generator, it generate configs.
     # print("PROCESSED_INFO_GENERATOR: ", processed_info_generator)
     # breakpoint()
