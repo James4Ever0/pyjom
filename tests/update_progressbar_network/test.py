@@ -9,7 +9,14 @@ def reset(): # pass the iteration count
     if t is not None:
         try:
             t.close()
+        except:
+            import traceback
+            traceback.print_exc()
+            print('error resetting progressbar')
     t = tqdm(total=total)
 
 def update_progressbar():
     t.update(progress)
+
+def close():
+    
