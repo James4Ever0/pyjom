@@ -404,6 +404,7 @@ def renderList2MediaLang(
     medialangObject = Medialang(script=medialangScript)
     return medialangObject
 
+
 # fix long loading time.
 @redisLRUCache()
 def getMusicInfoParsed(config):
@@ -523,6 +524,7 @@ def petsWithMusicOnlineProducer(
     dataGenerator, configs, tempdir="/dev/shm/medialang/pets_with_music_online"
 ):
     import uuid
+
     with tmpdir(path=tempdir) as TD:
         getRandomFileName = lambda extension: os.path.join(
             tempdir, ".".join([str(uuid.uuid4()), extension])
@@ -544,7 +546,7 @@ def petsWithMusicOnlineProducer(
                 lyric_path,
                 demanded_cut_spans,
                 standard_bpm_spans,
-            ) = parsed_result # this is taking long time.
+            ) = parsed_result  # this is taking long time.
             # check for 'demanded_cut_spans' now!
 
             render_list = []  # what is this freaking render_list?
@@ -554,9 +556,10 @@ def petsWithMusicOnlineProducer(
             # print("lrc path:", lyric_path)
             # print('ass file path:',ass_file_path)
             # breakpoint()
-            lrcToAnimatedAss(music['filepath'], lyric_path, ass_file_path)
+            lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path)
             data_ids = []
             from tqdm.gui import trange
+
             total_pops = len(demanded_cut_spans)
             for _ in trange(total_pops):
                 for data in dataGenerator:
@@ -566,8 +569,8 @@ def petsWithMusicOnlineProducer(
                         dataDuration = data["meta"]["duration"]
                         videoSource = data["location"]
                         data_ids.append(data_id)
-                        demanded_cut_spans.sort(key=
-                            lambda span: abs((span[1] - span[0]) - dataDuration)
+                        demanded_cut_spans.sort(
+                            key=lambda span: abs((span[1] - span[0]) - dataDuration)
                         )
                         closest_span = demanded_cut_spans[0]
                         closest_span_duration = closest_span[1] - closest_span[0]
@@ -604,7 +607,7 @@ def petsWithMusicOnlineProducer(
             yield final_output_location  # another generator?
 
 
-def getProducerTemplate(template:str):
+def getProducerTemplate(template: str):
     producer_mapping = {
         "pets_with_music": petsWithMusicProducer,
         "pets_with_music_online": petsWithMusicOnlineProducer,
