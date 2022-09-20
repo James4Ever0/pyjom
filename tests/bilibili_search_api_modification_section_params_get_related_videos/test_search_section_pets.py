@@ -9,12 +9,14 @@
 # https://search.bilibili.com/all?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&tids=36&order=stow
 # 最多收藏
 
+
 class order:
-   综合排序 = None
-   最多点击 = 'click'
-   最新发布 = 'pubdate'
-   最多弹幕 = 'dm'
-   最多收藏 = 'stow'
+    综合排序 = None
+    最多点击 = "click"
+    最新发布 = "pubdate"
+    最多弹幕 = "dm"
+    最多收藏 = "stow"
+
 
 # https://search.bilibili.com/all?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&tids=36&order=stow&duration=1
 # https://search.bilibili.com/all?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&tids=36&order=stow&duration=2
@@ -26,14 +28,19 @@ class duration:
     _10_30分钟 = 2
     _30_60分钟 = 3
     _60分钟以上 = 4
+
+
 # https://search.bilibili.com/all?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&order=stow&duration=4&tids=1
+
 
 class tids:
     全部分区 = None
 
+
 class bilibiliSearchParams:
     order = order
-    duration=duration
-    tids=tids
+    duration = duration
+    tids = tids
+
 
 # bilibiliSearchParams.order.最多弹幕
