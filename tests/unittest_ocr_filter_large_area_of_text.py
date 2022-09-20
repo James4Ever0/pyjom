@@ -21,10 +21,9 @@ import numpy as np
 
 if test_subject == 'video':
     videoPath = "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif"
-# check another video?
-# videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
-
-iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
+    iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=10)
+elif test_subject == 'image':
+    imagePath = "/root/Desktop/works/pyjom
 
 for frame in iterator:
     height, width = frame.shape[:2]
