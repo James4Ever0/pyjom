@@ -18,6 +18,7 @@ class order(enum.Enum):
    最多弹幕 = 'dm'
    最多收藏 = 'stow'
 
-class bilibiliSearchParams(enum.Enum)
-    def __init__(self):
-        self.order = order
+class bilibiliSearchParams(enum.Enum):
+    order = order
+
+bilibiliSearchParams.order.
