@@ -1,5 +1,5 @@
 from lazero.network import waitForServerUp
 
-port = 
+port = 8576
 message = 
 waitForServerUp(port=port, message=message)
