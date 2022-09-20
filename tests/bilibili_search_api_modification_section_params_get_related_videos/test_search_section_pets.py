@@ -52,8 +52,8 @@ class articleOrder:
 
 class liveSearchParams:
     全部 = None
-    live_user
-    live_room
+    主播live_user
+    直播间live_room
 
 class searchEntry:
     all
