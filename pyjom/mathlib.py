@@ -291,4 +291,4 @@ def multiParameterExponentialNetwork(
             value += (1 - value) * evaluate_function(apply_item, curve, curve_params)
     return value
 
-def getMaxWindowCursor()
+def getMaxWindowCursor(referenceData, windowSize, dataDuration)
