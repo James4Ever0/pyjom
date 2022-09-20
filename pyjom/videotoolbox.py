@@ -2476,4 +2476,6 @@ def motionVectorEstimation(
 ########################### MOTION VECTOR ESTIMATION #########################
 
 
-########################### MOTION VECTOR ESTIMATION #########################
+########################### TEXT AREA CALCULATION #########################
+
+def getVideoTextArea(videoPath, mode:Literal[''])
