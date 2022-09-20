@@ -250,7 +250,7 @@ def detectTextRegionOverTime(
     detectionList = []
     # use some merging technique over time.
     # convolution?
-    reader = getEasyOCRReader()
+    reader = getEasyOCRReader(langs)
     # how many percent sure?
     # reader = easyocr.Reader(["en","ch_sim"],gpu=False, recognizer=False) # no metal? no dbnet18?
     # are you classifying the thing putting boxes into different category?
