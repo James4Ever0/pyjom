@@ -374,7 +374,7 @@ def renderList2MediaLang(
 ):  # this is just a primitive. need to improve in many ways.
     # producer = ""
     scriptBase = [
-        '(".mp4",backend = "%s", bgm = "%s", fast=)' % (backend, bgm)
+        '(".mp4",backend = "%s", bgm = "%s", fast=%s)' % (backend, bgm)
     ]  # set default resolution to 1920x1080
 
     def getSpanDuration(span):
