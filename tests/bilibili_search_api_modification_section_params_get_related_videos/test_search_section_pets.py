@@ -34,8 +34,8 @@ class duration:
 
 
 class tids:
-    # self=1
     全部分区 = None
+    
 
 
 class bilibiliSearchParams:
