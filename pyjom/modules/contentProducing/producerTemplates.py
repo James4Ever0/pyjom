@@ -623,7 +623,7 @@ def petsWithMusicOnlineProducer(
                 bgm=music["filepath"],
                 producer="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
             )  # what is the backend?
-            rendered_media_location = medialangObject.execute()
+            rendered_media_location = medialangObject.execute() # how to control its 'fast' parameter?
             # maybe we need render the lyric file separately.
             # using a ffmpeg filter.
 
