@@ -558,7 +558,7 @@ def petsWithMusicOnlineProducer(
             # breakpoint()
             lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path)
             data_ids = []
-            from tqdm.gui import trange
+            from tqdm.gui import tqdm
 
             total_pops = len(demanded_cut_spans)
             for _ in trange(total_pops):
