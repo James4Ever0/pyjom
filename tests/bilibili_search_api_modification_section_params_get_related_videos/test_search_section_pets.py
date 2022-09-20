@@ -21,6 +21,7 @@ class order:
 class duration:
     全部时长 = None
     _10分钟以下 = 1
+    _10_30分钟 = 
 
 class bilibiliSearchParams:
     order = order
