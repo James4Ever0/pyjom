@@ -590,6 +590,7 @@ def petsWithMusicOnlineProducer(
                     elif checkMinMaxDict(speed_delta, {"min":1.2,'max':2}):
                         append_render_list = True
                         cursor = random.uniform(0,dataDuration-closest_span_duration) # this is not exactly right. not even good.
+                        # you should utilize the 'motion vector' stuff.
                         mStart, mEnd = 0+cursor, closest_span_duration+cursor
                         candidate['cut']['span'] = (mStart, mEnd)
                     
