@@ -592,8 +592,8 @@ def petsWithMusicOnlineProducer(
                         from pyjom.videotoolbox import motionVectorEstimation
                         dataDict = motionVectorEstimation(videoSource)
                         referenceData = dataDict['average_global_weighted_motion_vectors_filtered_cartesian_distance']
-                        from pyjom.mathlib import getMaxWindowCursor
-                        cursor = getMaxWindowCursor(referenceData, closest_span_duration*1.2, dataDuration)
+                        from pyjom.mathlib import getCursorOfMaxAverageInWindow
+                        cursor = getCursorOfMaxAverageInWindow(referenceData, closest_span_duration*1.2, dataDuration)
                         # cursor = random.uniform(0,dataDuration-closest_span_duration*1.2) # this is not exactly right. not even good.
                         # you should utilize the 'motion vector' stuff.
                         mStart, mEnd = 0+cursor, closest_span_duration*1.2+cursor
