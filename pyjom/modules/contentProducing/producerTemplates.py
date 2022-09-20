@@ -611,6 +611,7 @@ def petsWithMusicOnlineProducer(
                         render_list.append(candidate)
                     else:
                         if remove_unused:
+                            videoPath = videoSource
                             if os.path.exists(videoPath):
                                 os.remove(videoPath)
                 complete = len(demanded_cut_spans) == 0
