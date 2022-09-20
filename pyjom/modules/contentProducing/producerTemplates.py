@@ -589,6 +589,7 @@ def petsWithMusicOnlineProducer(
                         # break
                     elif checkMinMaxDict(speed_delta, {"min":1.2,'max':2}):
                         append_render_list = True
+                        from pyjom.videotoolbox import motionVectorEstimation
                         dataDict = 
                         referenceData = dataDict['average_global_weighted_motion_vectors_filtered_cartesian_distance']
                         # cursor = random.uniform(0,dataDuration-closest_span_duration) # this is not exactly right. not even good.
