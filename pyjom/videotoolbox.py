@@ -2042,7 +2042,7 @@ def NSFWVideoFilter(
 
 ########################### MOTION VECTOR ESTIMATION #########################
 
-def motionVectorEstimation(source, plot:bool=False, debug=False):
+def motionVectorEstimation(source, plot:bool=False, debug=False,):
     from mvextractor.videocap import VideoCap
     from caer.video.frames_and_fps import count_frames, get_res
     import cv2
