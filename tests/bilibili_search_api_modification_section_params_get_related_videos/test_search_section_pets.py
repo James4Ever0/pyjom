@@ -30,7 +30,7 @@
 # https://search.bilibili.com/live?keyword=%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BD%A9%E6%81%A93&from_source=webtop_search&spm_id_from=333.1007&duration=4&tids=24&search_type=live_room
 
 class bilibiliSearchParams:
-    class path:
+    class _path:
         综合 = "all"
         视频 = "video"
         番剧 = "bangumi"
