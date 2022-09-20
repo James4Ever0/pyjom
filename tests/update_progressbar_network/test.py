@@ -5,8 +5,6 @@ t = None
 def hello():
 
 def close_progressbar():
-
-def reset(): # pass the iteration count
     global t
     if t is not None:
         try:
@@ -15,6 +13,10 @@ def reset(): # pass the iteration count
             import traceback
             traceback.print_exc()
             print('error resetting progressbar')
+
+def reset(): # pass the iteration count
+    global t
+
     t = tqdm(total=total)
 
 def update_progressbar():
