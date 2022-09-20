@@ -37,7 +37,9 @@ def checkXYWH(XYWH, canvas, minArea=20):
         return False, None
     return True, (x, y, w, h)
 
+
 from pyjom.imagetoolbox import LRTBToDiagonal
+
 
 def mergeAlikeRegions(sample, threshold=10):
     prevList = []
@@ -229,7 +231,9 @@ def getDiagonalRectArea(diagonalRect):
     area = (x1 - x0) * (y1 - y0)
     return area
 
+
 from pyjom.imagetoolbox import getEasyOCRReader
+
 
 @lru_cache(maxsize=20)
 def detectTextRegionOverTime(
@@ -238,7 +242,7 @@ def detectTextRegionOverTime(
     end,
     sample_rate=3,
     mergeThreshold=10,
-    langs: tuple= ("en",),
+    langs: tuple = ("en",),
     top_k=10,
 ):  # this sample rate is too unreasonable. set it to 3 or something.
     iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
@@ -2473,28 +2477,43 @@ def motionVectorEstimation(
                     axis[_a, _b].set_title(titles[index])
         plt.show()
     return dataDict
+
+
 ########################### MOTION VECTOR ESTIMATION #########################
 
 
 ########################### TEXT AREA CALCULATION #########################
 # threshold: {'max':0.3} for our new filter?
 from pyjom.imagetoolbox import getImageTextAreaRatio
-def getVideoTextAreaRatio(videoPath, mode:Literal['max','mean','mean_no_missing','list']='max',langs:tuple=('en',), gpu=True, recognizer=False,debug=False, fps=10):
+
+
+def getVideoTextAreaRatio(
+    videoPath,
+    mode: Literal["max", "mean", "mean_no_missing", "list"] = "max",
+    langs: tuple = ("en",),
+    gpu=True,
+    recognizer=False,
+    debug=False,
+    fps=10,
+):
     iterator = getVideoFrameIteratorWithFPS(videoPath, start=-1, end=-1, fps=fps)
     mList = []
 
     for frame in iterator:
-        textAreaRatio = getImageTextAreaRatio(frame, langs=langs, gpu=gpu, recognizer=recognizer,debug=debug)
+        textAreaRatio = getImageTextAreaRatio(
+            frame, langs=langs, gpu=gpu, recognizer=recognizer, debug=debug
+        )
         mList.append(textAreaRatio)
-    if mode == 'list':
+    if mode == "list":
         return mList
-    elif mode == 'max':
+    elif mode == "max":
         return max(mList)
-    elif mode == 'mean':
+    elif mode == "mean":
         return superMean(mList)
-    elif mode == 'mean_no_missing':
-        return superMean([elem for elem in mList if elem >0])
+    elif mode == "mean_no_missing":
+        return superMean([elem for elem in mList if elem > 0])
     else:
         raise Exception("unknown mode:", mode)
+
 
 ########################### TEXT AREA CALCULATION #########################
