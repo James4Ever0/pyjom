@@ -587,7 +587,7 @@ def petsWithMusicOnlineProducer(
                     if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
                         append_render_list = True
                         # break
-                    elif checkMinMaxDict(speed_delta, {"min":1.2,'max':1.5}):
+                    elif checkMinMaxDict(speed_delta, {"min":1.2,'max':2}):
                         append_render_list = True
                         cursor = random.uniform(0,dataDuration-closest_span_duration)
                         mStart, mEnd = 0+cursor, closest_span_duration+cursor
