@@ -19,3 +19,5 @@ elif option == 2:
     print('DOWNLOAD FINISHED')
     path = obj.get_dest()
     print("DOWNLOADED AT:", path)
+elif option == 3:
+    import PyIDM
