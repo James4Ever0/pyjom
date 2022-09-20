@@ -5,4 +5,5 @@ data = json5.loads(data)
 
 channelList = data['channelList']
 for channel in channelList:
-    channelName = channel
+    channelName = channel['name']
+    channel_tid = channel['tid']
