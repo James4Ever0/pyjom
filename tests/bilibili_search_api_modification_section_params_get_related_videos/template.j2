@@ -1,5 +1,5 @@
 class {{ channelName }}:
     _tid = {{ channelTid }}
     {% for subChannelName, subChannelTid in subChannels %}
-    {{ planet }}
+    {{ subChannelName }} = {{ subChannelTid }}
     {% endfor %}
