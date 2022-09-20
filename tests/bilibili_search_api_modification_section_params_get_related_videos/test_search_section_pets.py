@@ -53,7 +53,6 @@ class bilibiliSearchParams:
             _30_60分钟 = 3
             _60分钟以上 = 4
         class tids:
-            _sub
             全部分区 = None
     class article:
         class order:
