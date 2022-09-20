@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 t = None
 
-
+@app.get()
 def hello():
     return 'progressbar server'
 
