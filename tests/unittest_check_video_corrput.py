@@ -10,6 +10,8 @@ try:
     for word in not_nice:
         if word in stderr_lower:
             print("video is corrupted")
+            corrupted=True
+            break
     print("video is fine")
 except:
     import traceback
