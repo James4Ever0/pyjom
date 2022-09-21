@@ -9,7 +9,7 @@ def videoDurationStringToSeconds(durationString):
         return None
     seconds = 0
     for index, elem in enumerate(mList):
-        60**index
+        seconds += (60**index)
 
 def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features='lxml')
