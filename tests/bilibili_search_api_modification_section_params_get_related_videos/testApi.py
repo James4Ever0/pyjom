@@ -15,7 +15,9 @@ BSP = search.bilibiliSearchParams()
 
 suggested_keyword = sync(search.get_suggest_keywords(keyword = "汪汪"))
 print(suggested_keyword)
+# you might want to split this.
 # ['汪汪队立大功 第二季 中文配音', '汪汪队立大功', '汪汪队立大功神威狗狗', '汪汪队', '特别任务 汪汪队立大功 冒险湾的一天', '雀魂汪汪录', '汪汪公主biu', '汪汪来透剧', '汪汪在亚美尼亚', '汪汪队立大功 第一季 中文配音']
+# ['汪汪队立大功', '汪汪队', '汪汪队立大功 第一季 中文配音', '汪汪队立大功 第二季 中文配音', '汪汪录', '汪汪队立大功大电影', '汪汪队立大功中文', '汪汪队立大功神威狗狗', '汪汪汪', '汪汪队中文']
 
 import json
 # result_str = json.dumps(result, ensure_ascii=False, indent=4)
