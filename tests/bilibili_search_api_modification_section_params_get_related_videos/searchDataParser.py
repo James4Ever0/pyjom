@@ -2,7 +2,7 @@ import json
 from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
 
-def logError(errorMsg:str="error!"):
+def traceError(errorMsg:str="error!"):
     import traceback
     traceback.print_exc()
     sprint(errorMsg)
@@ -55,4 +55,4 @@ if test_subject == "search_all":
                     except:
                         continue
         except:
-            logError()
+            traceError()
