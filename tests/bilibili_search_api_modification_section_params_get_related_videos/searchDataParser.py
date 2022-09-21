@@ -113,7 +113,7 @@ elif test_subject =='video_info':
         data = f.read()
         data = json.loads(data)
     # no tag out here.
-    
+    data_copy = data.copy()
     author = data['owner']
     play = data['stat']['view']
     title = 
