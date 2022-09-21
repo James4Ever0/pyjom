@@ -123,12 +123,13 @@ def getImageColorCentrality(
     # print(A.shape) # sparse matrix? wtf?
     from sklearn.cluster import MiniBatchKMeans  # better?
 
-    # from sklearn.cluster import KMeans
+    from sklearn.cluster import KMeans
     X = sample
     # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
     # here we've got issue.
     import numpy as np
     np.seterr(all='ignore')
+    KMeans() # fix this shit
     # keep popping up error logs.
     kmeans = MiniBatchKMeans(
         init="k-means++",
