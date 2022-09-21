@@ -56,4 +56,4 @@ if test_subject == "search_all":
                         traceError('error iterating video metadata')
                         continue
         except:
-            traceError('')
+            traceError('error iterating data results')
