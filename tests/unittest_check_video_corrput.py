@@ -1,7 +1,7 @@
 import ffmpeg
 
 not_nice = ["invalid", "failed", "error"]
-videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
+videoPath = "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif"
 # videoPath = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
 # videoPath = "/root/Desktop/works/pyjom/samples/video/corrupt_video.gif"
 corrupted = False
