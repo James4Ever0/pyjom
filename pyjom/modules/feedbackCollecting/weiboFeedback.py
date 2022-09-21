@@ -9,34 +9,34 @@ def weiboCheckFeedback(meta, with_user=False):
     uid = meta["uid"]
     url = sinaWeiboApi["weibo_build_comments"].format(100, id_, uid)
     with requests.get(url) as r:# somwhow working but we usually have nothing to see.
-    mdata = r.text
-    mdata = json.loads(mdata)
-    if mdata["ok"] == 1: # what is this ok?
-        for elem in mdata["data"]:
-            elem0 = {}
-            elem0["text"] = elem["text"]
-            if with_user:
-                userMeta = elem["user"]
-                userMeta = {k:userMeta[k] for k in ["id","name"]}
-                elem0["user"] = userMeta
-            elem0["like_counts"] = elem["like_counts"]
-            elem0["comments"] = []
-            for comm in elem[
-                "comments"
-            ]:  # also have reply_comment, though i don't know what it really means here.
-                comm0 = {}
-                comm0["text"] = comm["text"]
+        mdata = r.text
+        mdata = json.loads(mdata)
+        if mdata["ok"] == 1: # what is this ok?
+            for elem in mdata["data"]:
+                elem0 = {}
+                elem0["text"] = elem["text"]
                 if with_user:
-                    userMeta2 = comm["user"]
-                    userMeta2 = {k:userMeta2[k] for k in ["id","name"]} # we don't fancy things here
-                    comm0["user"] = userMeta2
-                comm0["like_count"] = comm["like_count"]
-                elem0["comments"].append(comm0)
-            feedback["comments"].append(elem0)
-    else:
-        print(json.dumps(mdata,indent=4))
-        print("NOT OK WITH WEIBO FEEDBACK!")
-    return feedback
+                    userMeta = elem["user"]
+                    userMeta = {k:userMeta[k] for k in ["id","name"]}
+                    elem0["user"] = userMeta
+                elem0["like_counts"] = elem["like_counts"]
+                elem0["comments"] = []
+                for comm in elem[
+                    "comments"
+                ]:  # also have reply_comment, though i don't know what it really means here.
+                    comm0 = {}
+                    comm0["text"] = comm["text"]
+                    if with_user:
+                        userMeta2 = comm["user"]
+                        userMeta2 = {k:userMeta2[k] for k in ["id","name"]} # we don't fancy things here
+                        comm0["user"] = userMeta2
+                    comm0["like_count"] = comm["like_count"]
+                    elem0["comments"].append(comm0)
+                feedback["comments"].append(elem0)
+        else:
+            print(json.dumps(mdata,indent=4))
+            print("NOT OK WITH WEIBO FEEDBACK!")
+        return feedback
 
 
 @decorator
