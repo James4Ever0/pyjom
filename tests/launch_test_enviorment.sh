@@ -6,3 +6,6 @@ gnome-terminal -- bash /root/Desktop/works/pyjom/tests/redis_music_info_persista
 
 cd /root/Desktop/works/pyjom/tests/random_giphy_gifs/
 gnome-terminal -- node /root/Desktop/works/pyjom/tests/random_giphy_gifs/nodejs_server.js
+
+cd /root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection
+gnome-terminal -- node /root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection
