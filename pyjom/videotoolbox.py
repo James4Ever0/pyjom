@@ -101,6 +101,7 @@ def getMergedRects(mConvList, width, height):
 
 def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
     cap = cv2.VideoCapture(videoPath)
+    cap.release()
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
     startFrame = int(start * fps)
