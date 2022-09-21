@@ -12,4 +12,5 @@ result = sync(
 
 # print(result)
 import json
-rjson.dumps(result, ensure_ascii=False, indent=4)
+result_str = json.dumps(result, ensure_ascii=False, indent=4)
+with open("se")
