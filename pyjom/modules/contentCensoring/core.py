@@ -12,7 +12,7 @@ from progressbar import *
 # add progressbar
 def mediaDownloader(url, mblogid, basedir=None, index=None):
     try:
-        r = requests.get(url)  # what is the media file suffix?
+        with requests.get(url) as r: # what is the media file suffix?
         suffix = url.split("?")[0].split(".")[-1]
         mid = mblogid if index is None else "{}[{}]".format(mblogid, index)
         fname = "{}.{}".format(mid, suffix)
