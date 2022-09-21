@@ -539,6 +539,8 @@ class AutoShape(nn.Module):
         for i, im in enumerate(imgs):
             f = f'image{i}'  # filename
             if isinstance(im, (str, Path)):  # filename or uri
+                f = im
+                if 
                 im, f = Image.open(requests.get(im, stream=True).raw if str(im).startswith('http') else im), im
                 im = np.asarray(exif_transpose(im))
             elif isinstance(im, Image.Image):  # PIL Image
