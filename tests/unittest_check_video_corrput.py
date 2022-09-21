@@ -1,6 +1,6 @@
 import ffmpeg
 
-videoPath = "/root/Desktop/works/pyjom/samples/video/"
+videoPath = "/root/Desktop/works/pyjom/samples/video/corrupt_video.gif"
 try:
     (
         ffmpeg
