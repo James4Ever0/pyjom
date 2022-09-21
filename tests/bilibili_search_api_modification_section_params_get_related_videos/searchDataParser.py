@@ -18,7 +18,7 @@ def videoDurationStringToSeconds(durationString):
     if type(durationString) == int:
         return durationString # not string at all.
     if type(durationString) !=str:
-        
+        print('unknown durationString type: %s' % type(durationString))
         return None
     durationString = durationString.strip()
     mList = durationString.split(":")[::-1]
