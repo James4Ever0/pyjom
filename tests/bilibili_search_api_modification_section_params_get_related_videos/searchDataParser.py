@@ -40,6 +40,6 @@ if test_subject == "search_all":
                             play = video['play'] # select some hot videos.
                             cover = video['pic']
                             description = video['description']
-                            duration_seconds = duration
+                            duration_seconds = videoDurationStringToSeconds(duration)
         except:
             pass
