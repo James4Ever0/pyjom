@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 def videoDurationStringToSeconds(durationString):
     durationString = durationString.strip()
     mList = durationString.split(":")[::-1]
+    if len(mList) > 3:
     for index, elem in enumerate(mList):
 
 def clearHtmlTags(htmlObject):
