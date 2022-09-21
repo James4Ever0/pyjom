@@ -64,6 +64,8 @@ def parseVideoSearchItem(video, disableList:list=[]):
     from lazero.utils.logger import sprint
     sprint()
 
+# you might want the creater's name, to filter out unwanted parts.
+
 def iterateResultList(resultList):
     for video in resultList:
         # be warned cause all these things might fail.
