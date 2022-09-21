@@ -114,7 +114,7 @@ elif test_subject =='video_info':
         data = json.loads(data)
     # no tag out here.
     data_copy = data.copy()
-    data_copy.update({"author":data['owner']})
+    data_copy.update({"author":data['owner']['name']})
     data_copy.update(data['stat'])
     parseVideoSearchItem(data_copy, disableList=['tag','typeid','typename'])
     season = data['ugc_season'] # we only care about this thing.
