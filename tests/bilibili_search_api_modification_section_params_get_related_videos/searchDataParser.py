@@ -1,7 +1,8 @@
 import json
 from bs4 import BeautifulSoup
 
-def 
+def videoDurationStringToSeconds(durationString):
+    
 
 def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features='lxml')
