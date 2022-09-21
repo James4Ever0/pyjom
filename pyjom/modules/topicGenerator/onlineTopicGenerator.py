@@ -85,7 +85,7 @@ def OnlineTopicGenerator(
                 # source_type = 'videos' # for debugging
                 if random.random() > 0.5:
                     mRandomPicture = requests.get(
-                        "http://localhost:8902/random",
+                        "http://127.0.0.1:8902/random",
                         params={"q": keywords, "rating": "g", "type": source_type},
                     )  # may you get stickers?
                     mRandomPictureJson = mRandomPicture.json()
@@ -93,7 +93,7 @@ def OnlineTopicGenerator(
                     randomPictureId = mRandomPictureJson["data"][0]["id"]
                 else:
                     mSearchPictures = requests.get(
-                        "http://localhost:8902/search",
+                        "http://127.0.0.1:8902/search",
                         params={"q": keywords, "rating": "g", "type": source_type},
                     )
                     mSearchPicturesJson = mSearchPictures.json()
@@ -101,7 +101,7 @@ def OnlineTopicGenerator(
                     randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
 
                 mRelatedPictures = requests.get(
-                    "http://localhost:8902/related",
+                    "http://127.0.0.1:8902/related",
                     params={
                         "q": randomPictureId,
                         "type": source_type,
