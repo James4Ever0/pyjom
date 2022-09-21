@@ -53,7 +53,7 @@ if test_subject == "search_all":
                             from lazero.utils.logger import sprint
                             sprint()
                     except:
-                        traceError('error in ')
+                        traceError('error iterating ')
                         continue
         except:
             traceError('')
