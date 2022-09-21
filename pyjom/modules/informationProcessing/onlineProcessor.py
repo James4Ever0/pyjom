@@ -54,6 +54,7 @@ def OnlineProcessor(
                 # duration_valid = checkMinMaxDict(duration,duration_filter)
                 # fps_valid = checkMinMaxDict(fps_float,fps_filter)
                 from pyjom.videotoolbox import (
+                    corruptVideoFilter,
                     getVideoColorCentrality,
                     checkVideoColorCentrality,
                     getEffectiveFPS,
