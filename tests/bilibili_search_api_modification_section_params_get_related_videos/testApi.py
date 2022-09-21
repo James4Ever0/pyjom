@@ -10,4 +10,6 @@ result = sync(
     )
 )
 
-print(result)
+# print(result)
+import json
+rjson.dumps(result, ensure_ascii=False, indent=4)
