@@ -13,4 +13,5 @@ result = sync(
 # print(result)
 import json
 result_str = json.dumps(result, ensure_ascii=False, indent=4)
-with open("se")
+with open("search_result_all.json",'w+') as f:
+    f.write(result_str)
