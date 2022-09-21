@@ -1,9 +1,10 @@
 import ffmpeg
 
+videoPath = ""
 try:
     (
         ffmpeg
-        .input("corrupt_video.mp4")
+        .input(videoPath)
         .output("null", f="null")
         .run()
     )
