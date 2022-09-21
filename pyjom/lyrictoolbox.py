@@ -245,13 +245,14 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
         backend = random.choice(backendList)
     assert backend in backendList
     translatedText = text
-    with mTranslate(text, backend) 
-    print("TRANSLATOR RESULT:", result)
-    if result["code"] == 200:
-        translatedText = result["result"]
-    else:
-        print("SOME ERROR DURING TRANSLATION, PLEASE CHECK SERVER")
-    return translatedText
+    with mTranslate(text, backend) as conn:
+        result = conn.json()
+        print("TRANSLATOR RESULT:", result)
+        if result["code"] == 200:
+            translatedText = result["result"]
+        else:
+            print("SOME ERROR DURING TRANSLATION, PLEASE CHECK SERVER")
+        return translatedText
     # we know the translator cannot respond the same shit to us right?
 
 
