@@ -146,6 +146,6 @@ elif test_subject == "video_related":
         data = f.read()
         data = json.loads(data)
     for video in data:
-        
+        parseVideoSearchItem(videoInfo,
 else:
     raise Exception("unknown test_subject:", test_subject)
