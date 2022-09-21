@@ -9,6 +9,7 @@ try:
 except ffmpeg._run.Error:
     print("corrupt video")
 else:
+    stderr_lower = stder.decode
     for word in not_nice:
         if word in
     print("video is fine")
