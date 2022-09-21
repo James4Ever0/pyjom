@@ -2,6 +2,10 @@ import json
 from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
 
+def linkFixer(link,prefix="https:"):
+    if link.startswith("//"):
+        return prefix+
+
 def traceError(errorMsg:str="error!", _breakpoint:bool=False):
     import traceback
     traceback.print_exc()
