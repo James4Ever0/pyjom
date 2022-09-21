@@ -17,6 +17,7 @@ def videoDurationStringToSeconds(durationString):
         return None
     seconds = 0
     for index, elem in enumerate(mList):
+        elem = int(elem)
         seconds += (60**index)*elem
     return seconds
 
