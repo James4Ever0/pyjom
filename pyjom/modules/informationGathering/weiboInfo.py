@@ -15,7 +15,7 @@ def weiboLinkSearch(keyword):
         1, 100
     )  # just a demo we do not know how to handle this one just yet.
     url = sinaWeiboApi["search_with_page"].format(keyword, page)
-    r = requests.get(url)
+    with requests.get(url) as r:
     print("STATUS_CODE:", r.status_code)
     if r.status_code == 200:
         content = r.content.decode("utf-8")

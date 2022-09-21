@@ -13,37 +13,37 @@ from progressbar import *
 def mediaDownloader(url, mblogid, basedir=None, index=None):
     try:
         with requests.get(url) as r: # what is the media file suffix?
-        suffix = url.split("?")[0].split(".")[-1]
-        mid = mblogid if index is None else "{}[{}]".format(mblogid, index)
-        fname = "{}.{}".format(mid, suffix)
-        if not os.path.exists(basedir):
-            os.mkdir(basedir)
-        fpath = os.path.join(basedir, fname)
-        size = int(r.headers["Content-Length"].strip())
-        mbytes = 0
-        widgets = [
-            fpath,
-            ": ",
-            Bar(marker="|", left="[", right=" "),
-            Percentage(),
-            " ",
-            FileTransferSpeed(),
-            "] ",
-            " of {0}MB".format(str(round(size / 1024 / 1024, 2))[:4]),
-        ]
-        pbar = ProgressBar(widgets=widgets, maxval=size).start()
-        mfile = []
-        for buf in r.iter_content(1024):
-            if buf:
-                mfile.append(buf)
-                mbytes += len(buf)
-                pbar.update(mbytes)
-        pbar.finish()
-        print("saved to {}".format(fpath))
-        with open(fpath, "wb") as f:
-            for byteContent in mfile:
-                f.write(byteContent)
-        return fpath
+            suffix = url.split("?")[0].split(".")[-1]
+            mid = mblogid if index is None else "{}[{}]".format(mblogid, index)
+            fname = "{}.{}".format(mid, suffix)
+            if not os.path.exists(basedir):
+                os.mkdir(basedir)
+            fpath = os.path.join(basedir, fname)
+            size = int(r.headers["Content-Length"].strip())
+            mbytes = 0
+            widgets = [
+                fpath,
+                ": ",
+                Bar(marker="|", left="[", right=" "),
+                Percentage(),
+                " ",
+                FileTransferSpeed(),
+                "] ",
+                " of {0}MB".format(str(round(size / 1024 / 1024, 2))[:4]),
+            ]
+            pbar = ProgressBar(widgets=widgets, maxval=size).start()
+            mfile = []
+            for buf in r.iter_content(1024):
+                if buf:
+                    mfile.append(buf)
+                    mbytes += len(buf)
+                    pbar.update(mbytes)
+            pbar.finish()
+            print("saved to {}".format(fpath))
+            with open(fpath, "wb") as f:
+                for byteContent in mfile:
+                    f.write(byteContent)
+            return fpath
     except:
         traceback.print_exc()
         print("error in mediaDownloader:\n", url)
