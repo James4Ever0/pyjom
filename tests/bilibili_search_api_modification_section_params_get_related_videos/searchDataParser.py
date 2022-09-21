@@ -84,6 +84,9 @@ elif test_subject == "search_video":
         data = f.read()
         data = json.loads(data)
     parseSearchVideoResult(data)
-    
+elif test_subject =='video_info':
+    with open("video_info.json", "r") as f:
+        data = f.read()
+        data = json.loads(data)
 else:
     raise Exception("unknown test_subject:", test_subject)
