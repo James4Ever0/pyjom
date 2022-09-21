@@ -47,6 +47,7 @@ v=video.Video(bvid=bvid)
 #     f.write(json.dumps(related, indent=4, ensure_ascii=False))
 
 # search video
+search.search_by_type()
 result = sync(
     search.search(
         keyword="汪汪",
