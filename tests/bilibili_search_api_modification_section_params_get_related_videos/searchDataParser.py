@@ -56,12 +56,13 @@ def iterateResultList(resultList):
             traceError('error iterating video metadata')
             continue
 
-def parseSearchResult(data):
+def parseSearchAllResult(data):
     results = data['result']
     for elem in results:
         try:
             if elem['result_type'] == 'video':
-
+                resultList = elem['data']
+                iterateResultList(resultList)
         except:
             traceError('error iterating data results')
 
