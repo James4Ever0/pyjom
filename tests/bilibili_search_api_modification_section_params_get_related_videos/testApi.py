@@ -1,1 +1,2 @@
-from bilibili_api import sync, 
+from bilibili_api import sync, search
+
