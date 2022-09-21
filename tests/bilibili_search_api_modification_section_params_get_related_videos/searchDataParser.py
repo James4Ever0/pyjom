@@ -42,7 +42,8 @@ if test_subject == "search_all":
                             cover = video['pic']
                             description = video['description']
                             duration_seconds = videoDurationStringToSeconds(duration)
-                            for elem in (bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description)
+                            for metadata in (bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
+                                print(metadata)
                     except:
                         continue
         except:
