@@ -13,7 +13,7 @@ BSP = search.bilibiliSearchParams()
 # print(result)
 # how to get suggested keyword?
 
-suggested_keyword = sync(search.)
+suggested_keyword = sync(search.get_suggest_keywords)
 
 import json
 # result_str = json.dumps(result, ensure_ascii=False, indent=4)
