@@ -7,8 +7,9 @@ def videoDurationStringToSeconds(durationString):
     if len(mList) > 3:
         print("DURATION STRING TOO LONG")
         return None
+    seconds = 0
     for index, elem in enumerate(mList):
-        
+        60**index
 
 def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features='lxml')
