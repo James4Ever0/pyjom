@@ -22,6 +22,7 @@ if test_subject == "search_all":
                             tag = video['tag']
                             tags = tag.split(",")
                             title = video['title'] # remove those markers, please?
+                            title = clearHtmlTags()
                             duration = video['duration']
                             play = video['play'] # select some hot videos.
         except:
