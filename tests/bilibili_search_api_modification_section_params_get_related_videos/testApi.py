@@ -29,13 +29,15 @@ import json
 from bilibili_api import video
 bvid="BV1iw411Z7xt"
 v=video.Video(bvid=bvid)
-# # video tags
+
 # info=sync(v.get_info())
 # # print(info)
 # with open('video_info.json', 'w+') as f:
 #     f.write(json.dumps(info, indent=4, ensure_ascii=False))
 # -> pages to access all parted videos.
 # -> ugc_season to get maker collected seasons.
+
+# # video tags
 # able to get from search
 
 # related videos
