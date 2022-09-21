@@ -39,7 +39,9 @@ def parseVideoSearchItem(video, disableList:list=[]):
     bvid = video['bvid']
     if 'tag' not in disableList:
         tag = video['tag']
-    tags = tag.split(",")
+        tags = tag.split(",")
+    else:
+        tags = []
     categoryId = int(video['typeid'])
     categoryName = video['typename']
     title = video['title'] # remove those markers, please?
