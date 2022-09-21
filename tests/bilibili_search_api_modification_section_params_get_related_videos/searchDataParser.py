@@ -141,6 +141,7 @@ elif test_subject =='video_info':
             # 217
             # 27911
             # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
-elif test_subject == "":
+elif test_subject == "video_related":
+    
 else:
     raise Exception("unknown test_subject:", test_subject)
