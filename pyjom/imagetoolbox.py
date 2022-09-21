@@ -188,7 +188,7 @@ def getImageColorCentrality(
     )
     centrality = sum(percents)
     print("CENTRALITY: {:.2f} %".format(centrality * 100))
-    del kmeans
+    del kmeans_model
     return centrality, max_nearby_center_percentage
 
 
