@@ -6,6 +6,6 @@ sync(
     search.search(
         keyword="汪汪",
         params={"tids": BSP.all.tids.动物圈.tid, "duration": BSP.all.duration._10分钟以下},
-        page_size = 
+        page=1
     )
 )
