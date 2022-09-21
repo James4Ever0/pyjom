@@ -116,7 +116,7 @@ elif test_subject =='video_info':
     data_copy = data.copy()
     data_copy.update({"author":data['owner']})
     data_copy.update(data['stat'])
-    parseVideoSearchItem(data_copy, disabled)
+    parseVideoSearchItem(data_copy, disableList=['tag'])
     season = data['ugc_season'] # we only care about this thing.
     season_cover = season['cover']
     sections = season['sections']
