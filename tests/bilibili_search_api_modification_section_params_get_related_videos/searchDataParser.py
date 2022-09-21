@@ -116,7 +116,6 @@ elif test_subject =='video_info':
     data_copy = data.copy()
     author = data['owner']
     play = data['stat']['view']
-    title = 
     season = data['ugc_season'] # we only care about this thing.
     season_cover = season['cover']
     sections = season['sections']
