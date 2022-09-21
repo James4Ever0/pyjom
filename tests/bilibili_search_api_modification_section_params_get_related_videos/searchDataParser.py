@@ -35,8 +35,9 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features='lxml')
     return a.text
 
-def parseVideoSearchItem(video, enable_tag):
+def parseVideoSearchItem(video, disableList:list=[]):
     bvid = video['bvid']
+    
     tag = video['tag']
     tags = tag.split(",")
     categoryId = int(video['typeid'])
