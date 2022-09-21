@@ -30,7 +30,7 @@ if test_subject == "search_all":
                     # be warned cause all these things might fail.
                     try:
                         if video['type'] == 'video':
-                            bvid = video['bvid'] 
+                            bvid = video['bvid']
                             tag = video['tag']
                             tags = tag.split(",")
                             categoryId = int(video['typeid'])
