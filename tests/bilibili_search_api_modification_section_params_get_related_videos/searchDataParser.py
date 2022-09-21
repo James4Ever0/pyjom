@@ -15,6 +15,7 @@ def traceError(errorMsg:str="error!", _breakpoint:bool=False):
         return breakpoint()
 
 def videoDurationStringToSeconds(durationString):
+    if type(durationString)
     durationString = durationString.strip()
     mList = durationString.split(":")[::-1]
     if len(mList) > 3:
