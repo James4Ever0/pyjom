@@ -2,10 +2,11 @@ import json
 from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
 
-def traceError(errorMsg:str="error!", bre):
+def traceError(errorMsg:str="error!", _breakpoint:bool=False):
     import traceback
     traceback.print_exc()
     sprint(errorMsg)
+    
 
 def videoDurationStringToSeconds(durationString):
     durationString = durationString.strip()
