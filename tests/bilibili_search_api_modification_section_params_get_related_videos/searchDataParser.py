@@ -112,6 +112,6 @@ elif test_subject =='video_info':
             videoInfo=episode.copy()
             videoInfo.update(stat)
             videoInfo.update(arc)
-            parseVideoSearchItem(videoInfo)
+            parseVideoSearchItem(videoInfo, disableList = ['tag'])
 else:
     raise Exception("unknown test_subject:", test_subject)
