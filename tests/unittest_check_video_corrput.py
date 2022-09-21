@@ -1,5 +1,5 @@
 import ffmpeg
-"invalid","failed",'error']
+not_nice ["invalid","failed",'error']
 videoPath = "/root/Desktop/works/pyjom/samples/video/corrupt_video.gif"
 try:
     stdout, stderr = ffmpeg
@@ -9,4 +9,6 @@ try:
 except ffmpeg._run.Error:
     print("corrupt video")
 else:
+    for word in not_nice:
+        if word in
     print("video is fine")
