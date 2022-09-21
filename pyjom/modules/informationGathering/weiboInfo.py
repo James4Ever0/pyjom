@@ -154,24 +154,24 @@ def weiboVideoSearch(keyword):
         )  # sina got better grammar?
         # videoLink = "https://www.weibo.com/ajax/status/show?id="+myId
         with requests.get(videoLink) as r:
-        print("fetching video link:", videoLink)
-        print("STATUS_CODE:", r.status_code)
-        if r.status_code == 200:
-            content = r.text
-            # print('response content:',content)
-            # this is not formatted. this is pure json i suppose.
-            # content = parse.parse("initFeed({content})",content)
-            if content == None:
-                print("skipping link:", videoLink)
-                continue
-            # content = content["content"]
-            # with open("{}.json".format(myId),"w+",encoding="utf-8") as f:
-            #     f.write(content)
-            content = json.loads(content)
-            mcontent = weiboStatusParser(content)  # this is a generator, not a list.
-            yield mcontent # this is a generator, not a list. how to get our feedback?
-    # return info
-    # make it into generator so links will not expire so damn fast.
+            print("fetching video link:", videoLink)
+            print("STATUS_CODE:", r.status_code)
+            if r.status_code == 200:
+                content = r.text
+                # print('response content:',content)
+                # this is not formatted. this is pure json i suppose.
+                # content = parse.parse("initFeed({content})",content)
+                if content == None:
+                    print("skipping link:", videoLink)
+                    continue
+                # content = content["content"]
+                # with open("{}.json".format(myId),"w+",encoding="utf-8") as f:
+                #     f.write(content)
+                content = json.loads(content)
+                mcontent = weiboStatusParser(content)  # this is a generator, not a list.
+                yield mcontent # this is a generator, not a list. how to get our feedback?
+        # return info
+        # make it into generator so links will not expire so damn fast.
 
 
 def weiboInfoLogic(topic):
