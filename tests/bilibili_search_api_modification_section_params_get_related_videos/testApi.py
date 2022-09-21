@@ -47,7 +47,7 @@ v=video.Video(bvid=bvid)
 #     f.write(json.dumps(related, indent=4, ensure_ascii=False))
 
 
-
+# search video
 
 with open("search_result_all.json",'r') as f:
     data = f.read()
