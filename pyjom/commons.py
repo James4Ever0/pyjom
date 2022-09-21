@@ -92,15 +92,15 @@ def waitForServerUp(port, message, timeout=1):
     while True:
         try:
             url = "http://localhost:{}".format(port)
-            r = requests.get(url, timeout=timeout)
-            if type(message) == str:
-                text = r.text.strip('"').strip("'")
-            else:
-                text = r.json()
-            print("SERVER AT PORT %d RESPONDS:" % port, [text])
-            assert text == message
-            print("SERVER AT PORT %d IS UP" % port)
-            break
+            with requests.get(url, timeout=timeout) as r:
+                if type(message) == str:
+                    text = r.text.strip('"').strip("'")
+                else:
+                    text = r.json()
+                print("SERVER AT PORT %d RESPONDS:" % port, [text])
+                assert text == message
+                print("SERVER AT PORT %d IS UP" % port)
+                break
         except:
             import traceback
 
