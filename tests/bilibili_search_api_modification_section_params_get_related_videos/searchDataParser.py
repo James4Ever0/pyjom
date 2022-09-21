@@ -28,5 +28,6 @@ if test_subject == "search_all":
                             duration = video['duration']
                             play = video['play'] # select some hot videos.
                             cover = video['pic']
+                            description = video['description']
         except:
             pass
