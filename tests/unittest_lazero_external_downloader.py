@@ -7,4 +7,8 @@ path = '/dev/shm/medialang/test.gif'
 import os
 
 if os.path.exists(path):
-    
+    os.remove(path)
+
+report = download(url,path)
+
+print("download success?", report)
