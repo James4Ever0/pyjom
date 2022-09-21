@@ -1,7 +1,8 @@
 import json
 from bs4 import BeautifulSoup
 
-def clear
+def clearHtmlTags(htmlObject):
+    return o
 
 test_subject = "search_all"
 
