@@ -125,7 +125,7 @@ elif test_subject =='video_info':
             videoInfo=episode.copy()
             videoInfo.update(stat)
             videoInfo.update(arc)
-            parseVideoSearchItem(videoInfo, disableList = ['tag', 'typeid','typename','description','author'])
+            parseVideoSearchItem(videoInfo, disableList = ['tag', 'typeid','typename','description','author']) # author is the same as the original video.
             # BV1Cb4y1s7em
             # []
             # 0
