@@ -10,7 +10,9 @@ try:
     for word in not_nice:
         if word in
     print("video is fine")
-except ffmpeg._run.Error:
+except:
+    import traceback
+    traceback.print_exc()
     print("corrupt video")
 
 
