@@ -84,10 +84,10 @@ def OnlineTopicGenerator(
                 source_type = random.choice(["videos", "gifs"])
                 # source_type = 'videos' # for debugging
                 if random.random() > 0.5:
-                    mRandomPicture = requests.get(
+                    with requests.get(
                         "http://127.0.0.1:8902/random",
                         params={"q": keywords, "rating": "g", "type": source_type},
-                    )  # may you get stickers?
+                    ) as mRandomPicture: # may you get stickers?
                     mRandomPictureJson = mRandomPicture.json()
                     harvestedData += mRandomPictureJson["data"]
                     randomPictureId = mRandomPictureJson["data"][0]["id"]
