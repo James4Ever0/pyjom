@@ -54,7 +54,8 @@ def parseVideoSearchItem(video, disableList:list=[]):
     play = video.get('play',video.get('view')) # select some hot videos.
     cover = video['pic']
     cover = linkFixer(cover)
-    description = video.get('description']
+    if 'description' not in
+    description = video.get('description', video.get('desc'))
     duration_seconds = videoDurationStringToSeconds(duration)
     for metadata in (bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
         print(metadata)
