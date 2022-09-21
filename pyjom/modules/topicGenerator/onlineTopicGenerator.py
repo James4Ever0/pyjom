@@ -107,7 +107,7 @@ def OnlineTopicGenerator(
                         "type": source_type,
                     },  # seems not working? wtf?
                 ) as mRelatedPictures:
-                mRelatedPicturesJson = mRelatedPictures.json()
+                    mRelatedPicturesJson = mRelatedPictures.json()
                 harvestedData += mRelatedPicturesJson["data"]
                 sentences = [x["title"] for x in mRelatedPicturesJson["data"]]
                 topics = topicModeling(sentences)
