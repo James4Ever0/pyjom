@@ -8,4 +8,7 @@ if test_subject == "search_all":
         data = json.loads(data)
     results = data['result']
     for elem in results:
-        if elem['result_type'] == 'video'
+        try:
+            if elem['result_type'] == 'video'
+        except:
+            pass
