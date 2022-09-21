@@ -46,8 +46,14 @@ v=video.Video(bvid=bvid)
 # with open('video_related.json', 'w+') as f:
 #     f.write(json.dumps(related, indent=4, ensure_ascii=False))
 
-
 # search video
+result = sync(
+    search.search(
+        keyword="汪汪",
+        params={"tids": BSP.all.tids.动物圈.tid, "duration": BSP.all.duration._10分钟以下},
+        page=1
+    )
+)
 
 with open("search_result_all.json",'r') as f:
     data = f.read()
