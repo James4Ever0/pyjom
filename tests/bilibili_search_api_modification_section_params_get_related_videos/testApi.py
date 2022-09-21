@@ -30,6 +30,7 @@ from bilibili_api import video
 bvid="BV1iw411Z7xt"
 v=video.Video(bvid=bvid)
 # video tags
+info=
 # able to get from search
 
 # related videos
