@@ -79,6 +79,8 @@ def OnlineTopicGenerator(
         waitForServerUp(8902, "nodejs giphy server")
         keywords = getKeywords()
         while True:
+            import time
+            time.sleep(0.5)
             harvestedData = []
             try:
                 source_type = random.choice(["videos", "gifs"])
