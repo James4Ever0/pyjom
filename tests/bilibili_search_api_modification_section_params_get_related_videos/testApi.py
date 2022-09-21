@@ -27,7 +27,7 @@ import json
 
 # get video info
 from bilibili_api import video
-
+bvid="BV1iw411Z7xt"
 # video tags
 
 # related videos
