@@ -66,6 +66,9 @@ def parseSearchAllResult(data):
         except:
             traceError('error iterating data results')
 
+def parseSearchVideoResult(data):
+    
+
 test_subject = "search_video"
 # test_subject = "search_all"
 
@@ -73,7 +76,7 @@ if test_subject == "search_all":
     with open("search_result_all.json", "r") as f:
         data = f.read()
         data = json.loads(data)
-    parseSearchResult(data)
+    parseSearchAllResult(data)
 elif test_subject == "search_video":
     with open("search_by_type_result_video.json", "r") as f:
         data = f.read()
