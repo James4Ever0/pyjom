@@ -41,6 +41,7 @@ v=video.Video(bvid=bvid)
 # able to get from search
 
 # related videos
+related = sync(v.get_related())
 
 
 with open("search_result_all.json",'r') as f:
