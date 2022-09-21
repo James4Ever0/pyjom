@@ -2,7 +2,8 @@ import json
 from bs4 import BeautifulSoup
 
 def videoDurationStringToSeconds(durationString):
-    mList = durationString.split(":")[:-1]
+    durationString = durationString.strip()
+    mList = durationString.split(":")[::-1]
     for index, elem in enumerate(mList):
 
 def clearHtmlTags(htmlObject):
