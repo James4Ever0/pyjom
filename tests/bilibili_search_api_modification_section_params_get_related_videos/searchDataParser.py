@@ -149,6 +149,6 @@ elif test_subject == "video_related":
         videoInfo2 =videoInfo.copy()
         videoInfo2.update({'author': videoInfo['owner']['name']})
         videoInfo2.update({'mid': videoInfo['owner']['mid']})
-        parseVideoSearchItem(videoInfo2,disableList = ['tag'])
+        parseVideoSearchItem(videoInfo2,disableList = ['tag',''])
 else:
     raise Exception("unknown test_subject:", test_subject)
