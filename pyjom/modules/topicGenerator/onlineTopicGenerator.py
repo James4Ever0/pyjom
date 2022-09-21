@@ -99,7 +99,7 @@ def OnlineTopicGenerator(
                         mSearchPicturesJson = mSearchPictures.json()
                         harvestedData += mSearchPicturesJson["data"]
                         randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
-                
+                selectedWord=None
                 with requests.get(
                     "http://127.0.0.1:8902/related",
                     params={
