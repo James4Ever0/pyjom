@@ -32,7 +32,8 @@ def corruptVideoFilter(videoPath):
 
     if not corrupted:
         print("video is fine")
-    return corrupted
+    # return True for fine video.
+    return not corrupted
 
 
 def dummyFilterFunction(report: bool, *args, **kwargs):
