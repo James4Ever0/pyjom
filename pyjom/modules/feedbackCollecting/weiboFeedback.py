@@ -8,7 +8,7 @@ def weiboCheckFeedback(meta, with_user=False):
     id_ = meta["id"]
     uid = meta["uid"]
     url = sinaWeiboApi["weibo_build_comments"].format(100, id_, uid)
-    r = requests.get(url) # somwhow working but we usually have nothing to see.
+    with requests.get(url) as r:# somwhow working but we usually have nothing to see.
     mdata = r.text
     mdata = json.loads(mdata)
     if mdata["ok"] == 1: # what is this ok?
