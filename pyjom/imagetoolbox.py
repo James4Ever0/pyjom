@@ -129,7 +129,8 @@ def getImageColorCentrality(
     # here we've got issue.
     # import numpy as np
     # np.seterr(all='ignore')
-    kmeans = KMeans(init='k-means++', n_clusters=n_clusters).fit(X) # fix this shit
+    kmeans_model = KMeans(init='k-means++', n_clusters=n_clusters)
+    kmeans = kmeans_model.fit(X) # fix this shit
     # keep popping up error logs.
     # kmeans = MiniBatchKMeans(
     #     init="k-means++",
@@ -188,6 +189,7 @@ def getImageColorCentrality(
     )
     centrality = sum(percents)
     print("CENTRALITY: {:.2f} %".format(centrality * 100))
+    del kmeans
     del kmeans_model
     return centrality, max_nearby_center_percentage
 
