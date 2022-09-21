@@ -2,7 +2,7 @@ import json
 from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
 
-def linkFixer(link,prefix="https:"):
+def linkFixer(link,prefix="http:"):
     if link.startswith("//"):
         return prefix+link
     return link
