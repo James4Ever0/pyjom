@@ -1,8 +1,10 @@
 import json
 from bs4 import BeautifulSoup
 
-def logError(errorMsg:str="error"):
-    import traceabac
+def logError(errorMsg:str="error!"):
+    import traceaback
+    traceback.print_exc()
+    print(errorMsg)
 
 def videoDurationStringToSeconds(durationString):
     durationString = durationString.strip()
