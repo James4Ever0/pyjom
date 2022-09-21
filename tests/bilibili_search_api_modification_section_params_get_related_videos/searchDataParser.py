@@ -37,8 +37,8 @@ def clearHtmlTags(htmlObject):
 
 def parseVideoSearchItem(video, disableList:list=[]):
     bvid = video['bvid']
-    
-    tag = video['tag']
+    if 'tag' not in disableList:
+        tag = video['tag']
     tags = tag.split(",")
     categoryId = int(video['typeid'])
     categoryName = video['typename']
