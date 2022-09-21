@@ -2016,7 +2016,6 @@ def NSFWVideoFilter(
                 cv2.imwrite(jpg_path, padded_resized_frame)
                 with open(jpg_path, "rb") as f:
                     files = {"image": (basename, f, "image/jpeg")}
-
                     with requests.post(
                         gateway + "nsfw", files=files
                     ) as r: # post gif? or just jpg?
