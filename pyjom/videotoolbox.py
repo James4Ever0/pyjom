@@ -204,6 +204,7 @@ def getVideoFrameIterator(
                 yield image
             else:
                 break
+    cap.release()
         # do_something(image)
     # fno = 0
     # while success:
