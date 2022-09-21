@@ -27,5 +27,6 @@ if test_subject == "search_all":
                             title = clearHtmlTags(title)
                             duration = video['duration']
                             play = video['play'] # select some hot videos.
+                            cover = video['pic']
         except:
             pass
