@@ -16,7 +16,7 @@ import site
 import sys
 import random
 
-os.system('ulimit -n ')
+os.system('ulimit -n 1048576')
 
 ## bring about 'redis cache' for faster testing.
 import redis
