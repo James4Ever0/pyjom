@@ -102,6 +102,8 @@ elif test_subject =='video_info':
     sections = season['sections']
     for section in sections:
         for episode in section['episodes']:
+            print(episode.keys())
+            breakpoint()
             stat = episode['stat']
             videoInfo=episode
             videoInfo.update(stat)
