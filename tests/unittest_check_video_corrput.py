@@ -8,7 +8,8 @@ try:
         .run(capture_stdout=True,capture_stderr=True
     stderr_lower = stder.decode('utf-8').lower()
     for word in not_nice:
-        if word instderr.lower
+        if word in stderr_lower:
+            print("video is corrupted")
     print("video is fine")
 except:
     import traceback
