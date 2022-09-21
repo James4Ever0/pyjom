@@ -237,7 +237,7 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     url = "http://localhost:8974/translate"
     mTranslate = lambda text, backend: requests.get(
         url, params={"backend": backend, "text": text}
-    ).json()
+    )
     backendList = ["deepl", "baidu"]
     if backend == "random":
         import random
@@ -245,7 +245,7 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
         backend = random.choice(backendList)
     assert backend in backendList
     translatedText = text
-    result = mTranslate(text, backend)
+    with mTranslate(text, backend) 
     print("TRANSLATOR RESULT:", result)
     if result["code"] == 200:
         translatedText = result["result"]
