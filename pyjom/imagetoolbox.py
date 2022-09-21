@@ -127,18 +127,18 @@ def getImageColorCentrality(
     X = sample
     # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
     # here we've got issue.
-    import numpy as np
-    np.seterr(all='ignore')
-    KMeans(init='k-means++', n_clusters=n_clusters) # fix this shit
+    # import numpy as np
+    # np.seterr(all='ignore')
+    kmeans = KMeans(init='k-means++', n_clusters=n_clusters).fit(X) # fix this shit
     # keep popping up error logs.
-    kmeans = MiniBatchKMeans(
-        init="k-means++",
-        n_clusters=n_clusters,
-        batch_size=batch_size,
-        # n_init=10,
-        max_no_improvement=max_no_improvement,
-        verbose=0,
-    ).fit(X)
+    # kmeans = MiniBatchKMeans(
+    #     init="k-means++",
+    #     n_clusters=n_clusters,
+    #     batch_size=batch_size,
+    #     # n_init=10,
+    #     max_no_improvement=max_no_improvement,
+    #     verbose=0,
+    # ).fit(X)
     # from lazero.utils import inspectObject
     # inspectObject(kmeans)
     # breakpoint()
