@@ -103,7 +103,8 @@ elif test_subject =='video_info':
     for section in sections:
         for episode in section['episodes']:
             stat = episode['stat']
-            info=episode
-            info.update(stat)
+            videoInfo=episode
+            videoInfo.update(stat)
+            parseVideoSearchItem(videoInfo)
 else:
     raise Exception("unknown test_subject:", test_subject)
