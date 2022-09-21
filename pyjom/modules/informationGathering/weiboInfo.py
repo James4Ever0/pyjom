@@ -16,27 +16,27 @@ def weiboLinkSearch(keyword):
     )  # just a demo we do not know how to handle this one just yet.
     url = sinaWeiboApi["search_with_page"].format(keyword, page)
     with requests.get(url) as r:
-    print("STATUS_CODE:", r.status_code)
-    if r.status_code == 200:
-        content = r.content.decode("utf-8")
-        content = parse.parse("initFeed({content})", content)
-        content = content["content"]
-        # import pyperclip
-        # pyperclip.copy(content)
-        # print(content)
-        content = json.loads(content)
-        data = content["data"]
-        feed1 = data["feed1"]
-        for elem in feed1:
-            url = elem["url"]
-            title = elem["title"]
-            fsum = 0
-            for f in myfilter:
-                if f in title:
-                    fsum += 1
-            if fsum == len(myfilter):
-                links.append(url)
-        return links
+        print("STATUS_CODE:", r.status_code)
+        if r.status_code == 200:
+            content = r.content.decode("utf-8")
+            content = parse.parse("initFeed({content})", content)
+            content = content["content"]
+            # import pyperclip
+            # pyperclip.copy(content)
+            # print(content)
+            content = json.loads(content)
+            data = content["data"]
+            feed1 = data["feed1"]
+            for elem in feed1:
+                url = elem["url"]
+                title = elem["title"]
+                fsum = 0
+                for f in myfilter:
+                    if f in title:
+                        fsum += 1
+                if fsum == len(myfilter):
+                    links.append(url)
+            return links
 
 
 def weiboStatusParser(content):
@@ -153,7 +153,7 @@ def weiboVideoSearch(keyword):
             myId
         )  # sina got better grammar?
         # videoLink = "https://www.weibo.com/ajax/status/show?id="+myId
-        r = requests.get(videoLink)
+        with requests.get(videoLink) as r:
         print("fetching video link:", videoLink)
         print("STATUS_CODE:", r.status_code)
         if r.status_code == 200:
