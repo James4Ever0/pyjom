@@ -48,13 +48,10 @@ v=video.Video(bvid=bvid)
 
 # search video
 
-search.search_by_type(search_type = search.SearchObjectType.VIDEO)
-result = sync(
-    search.search(
-        keyword="汪汪",
+search.search_by_type(keyword="汪汪",
         params={"tids": BSP.all.tids.动物圈.tid, "duration": BSP.all.duration._10分钟以下},
-        page=1
-    )
+        page=1,search_type = search.SearchObjectType.VIDEO)
+result = sync(
 )
 
 with open("search_result_all.json",'r') as f:
