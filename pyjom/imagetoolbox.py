@@ -121,7 +121,7 @@ def getImageColorCentrality(
     # A.toarray()
     # print(A)
     # print(A.shape) # sparse matrix? wtf?
-    from sklearn.cluster import MiniBatchKMeans  # better?
+    # from sklearn.cluster import MiniBatchKMeans  # better?
 
     from sklearn.cluster import KMeans
     X = sample
