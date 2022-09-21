@@ -42,6 +42,7 @@ def parseVideoSearchItem(video, disableList:list=[]):
         author_id = video['mid']
     else:
         author = ""
+        author_id = -1
     if 'tag' not in disableList:
         tag = video['tag']
         tags = tag.split(",")
