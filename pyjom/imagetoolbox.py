@@ -129,7 +129,7 @@ def getImageColorCentrality(
     # here we've got issue.
     import numpy as np
     np.seterr(all='ignore')
-    KMeans() # fix this shit
+    KMeans(init='k-means++', n) # fix this shit
     # keep popping up error logs.
     kmeans = MiniBatchKMeans(
         init="k-means++",
