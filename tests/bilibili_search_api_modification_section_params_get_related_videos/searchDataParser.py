@@ -6,7 +6,8 @@ def traceError(errorMsg:str="error!", _breakpoint:bool=False):
     import traceback
     traceback.print_exc()
     sprint(errorMsg)
-    
+    if _breakpoint:
+        return breakpoint()
 
 def videoDurationStringToSeconds(durationString):
     durationString = durationString.strip()
