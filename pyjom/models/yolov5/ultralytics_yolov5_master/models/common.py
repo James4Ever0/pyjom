@@ -541,9 +541,10 @@ class AutoShape(nn.Module):
             if isinstance(im, (str, Path)):  # filename or uri
                 f = im
                 if str(im).startswith('http'):
-                    with 
-                    im = 
-                im, f = Image.open(requests.get(im, stream=True).raw  else im), im
+                    with requests.get(im, stream=True) as conn:
+
+                    im = Image.open(conn.raw)
+                im, f =  else im), im
                 im = np.asarray(exif_transpose(im))
             elif isinstance(im, Image.Image):  # PIL Image
                 im, f = np.asarray(exif_transpose(im)), getattr(im, 'filename', f) or f
