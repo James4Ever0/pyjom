@@ -43,8 +43,8 @@ def parseVideoSearchItem(video, disableList:list=[]):
     else:
         tags = []
     if 'typeid' not in disableList and 'typename' not in disableList:
-        categoryId = int(video.get('typeid',video.get('type_id')
-        categoryName = video.get('typename']
+        categoryId = int(video.get('typeid',video.get('type_id')))
+        categoryName = video.get('typename', video.get('type_name'))
     else:
         categoryId = 0
         categoryName = ""
