@@ -20,4 +20,5 @@ import json
 # with open("search_result_all.json",'w+') as f:
 #     f.write(result_str)
 
-with open("search_result_all.json",'w+')
+with open("search_result_all.json",'r') as f:
+    f.read()
