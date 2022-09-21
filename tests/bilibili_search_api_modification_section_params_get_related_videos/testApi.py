@@ -32,7 +32,7 @@ v=video.Video(bvid=bvid)
 # video tags
 info=sync(v.get_info())
 # print(info)
-with open('video_info.json', 'r') as f:
+with open('video_info.json', 'w+') as f:
     f.write(json.dumps(info, indent=4, ensure_ascii=False))
 
 # able to get from search
