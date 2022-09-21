@@ -13,6 +13,6 @@ if test_subject == "search_all":
                 for video in elem['data']:
                     try:
                         if video['type'] == 'video':
-                            
+                            bvid = video['bvid'] 
         except:
             pass
