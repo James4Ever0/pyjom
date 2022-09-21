@@ -2012,10 +2012,10 @@ def NSFWVideoFilter(
             with tmpfile(path=jpg_path) as TF:
                 cv2.imwrite(jpg_path, padded_resized_frame)
                 with open(jpg_path, "rb") as f:
-                files = {"image": (basename, f, "image/jpeg")}
-                r = requests.post(
-                    gateway + "nsfw", files=files
-                )  # post gif? or just jpg?
+                    files = {"image": (basename, f, "image/jpeg")}
+                    r = requests.post(
+                        gateway + "nsfw", files=files
+                    )  # post gif? or just jpg?
                 try:
                     response_json = r.json()
                     response_json = processNSFWServerImageReply(response_json)
