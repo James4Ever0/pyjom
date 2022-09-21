@@ -2011,7 +2011,8 @@ def NSFWVideoFilter(
             jpg_path = os.path.join(tmpdirPath, basename)
             with tmpfile(path=jpg_path) as TF:
                 cv2.imwrite(jpg_path, padded_resized_frame)
-                files = {"image": (basename, file, "image/jpeg")}
+                with open(jpg_path, "rb") as f:
+                files = {"image": (basename, f, "image/jpeg")}
                 r = requests.post(
                     gateway + "nsfw", files=files
                 )  # post gif? or just jpg?
