@@ -2016,23 +2016,23 @@ def NSFWVideoFilter(
                 cv2.imwrite(jpg_path, padded_resized_frame)
                 with open(jpg_path, "rb") as f:
                     files = {"image": (basename, f, "image/jpeg")}
-                    
-                    r = requests.post(
-                        gateway + "nsfw", files=files
-                    )  # post gif? or just jpg?
-                try:
-                    response_json = r.json()
-                    response_json = processNSFWServerImageReply(response_json)
-                    # breakpoint()
-                    # print("RESPONSE:", response_json)
-                    responses.append(
-                        response_json  # it contain 'messages'
-                    )  # there must be at least one response, i suppose?
-                except:
-                    import traceback
 
-                    traceback.print_exc()
-                    print("error when processing NSFW server response")
+                    with requests.post(
+                        gateway + "nsfw", files=files
+                    ) as r: # post gif? or just jpg?
+                        try:
+                            response_json = r.json()
+                            response_json = processNSFWServerImageReply(response_json)
+                            # breakpoint()
+                            # print("RESPONSE:", response_json)
+                            responses.append(
+                                response_json  # it contain 'messages'
+                            )  # there must be at least one response, i suppose?
+                        except:
+                            import traceback
+
+                            traceback.print_exc()
+                            print("error when processing NSFW server response")
         NSFWReport = processNSFWReportArray(responses)
         # print(NSFWReport)
         # breakpoint()
