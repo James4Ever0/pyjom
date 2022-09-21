@@ -1,5 +1,5 @@
 import ffmpeg
-
+"invalid","failed",'error'
 videoPath = "/root/Desktop/works/pyjom/samples/video/corrupt_video.gif"
 try:
     (
