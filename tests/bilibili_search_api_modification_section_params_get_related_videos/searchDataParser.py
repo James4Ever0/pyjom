@@ -30,6 +30,32 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features='lxml')
     return a.text
 
+def iterateResultList(resultList):
+                    for video in elem['data']:
+                    # be warned cause all these things might fail.
+                    try:
+                        if video['type'] == 'video':
+                            bvid = video['bvid']
+                            tag = video['tag']
+                            tags = tag.split(",")
+                            categoryId = int(video['typeid'])
+                            categoryName = video['typename']
+                            title = video['title'] # remove those markers, please?
+                            title = clearHtmlTags(title)
+                            duration = video['duration'] # this is not recommended. we need seconds.
+                            play = video['play'] # select some hot videos.
+                            cover = video['pic']
+                            cover = linkFixer(cover)
+                            description = video['description']
+                            duration_seconds = videoDurationStringToSeconds(duration)
+                            for metadata in (bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
+                                print(metadata)
+                            from lazero.utils.logger import sprint
+                            sprint()
+                    except:
+                        traceError('error iterating video metadata')
+                        continue
+
 def parseSearchResult(data):
     results = data['result']
     for elem in results:
