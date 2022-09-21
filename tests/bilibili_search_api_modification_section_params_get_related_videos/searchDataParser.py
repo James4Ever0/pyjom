@@ -113,6 +113,7 @@ elif test_subject =='video_info':
         data = f.read()
         data = json.loads(data)
     # no tag out here.
+    author = data['owner']['name']
     season = data['ugc_season'] # we only care about this thing.
     season_cover = season['cover']
     sections = season['sections']
