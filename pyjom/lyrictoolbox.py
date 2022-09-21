@@ -47,7 +47,7 @@ def lrcToTextArray(musicPath, lrcPath):
     assert lrcPath.endswith(".lrc")
     musicDuration = getMusicDuration(musicPath)
 
-    lrc_file = open(lrcPath) as :
+    with open(lrcPath) as lrc_file:
         lrc_string = "".join(lrc_file.readlines())
     # lrc_file.close()
 
