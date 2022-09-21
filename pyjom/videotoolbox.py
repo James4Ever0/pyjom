@@ -130,6 +130,7 @@ def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
             if success:
                 # print("APPENDING!")
                 imageList.append(image.copy())
+        cap.release()
         return imageList
 
     def iterator(cap, samplePopulation):
