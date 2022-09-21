@@ -15,7 +15,9 @@ BSP = search.bilibiliSearchParams()
 
 suggested_keyword = sync(search.)
 
-# import json
+import json
 # result_str = json.dumps(result, ensure_ascii=False, indent=4)
 # with open("search_result_all.json",'w+') as f:
 #     f.write(result_str)
+
+with open("search_result_all.json",'w+')
