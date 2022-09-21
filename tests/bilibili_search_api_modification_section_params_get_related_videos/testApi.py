@@ -21,14 +21,16 @@ BSP = search.bilibiliSearchParams()
 # ['汪汪队立大功', '汪汪队', '汪汪队立大功 第一季 中文配音', '汪汪队立大功 第二季 中文配音', '汪汪录', '汪汪队立大功大电影', '汪汪队立大功中文', '汪汪队立大功神威狗狗', '汪汪汪', '汪汪队中文']
 
 import json
+
 # result_str = json.dumps(result, ensure_ascii=False, indent=4)
 # with open("search_result_all.json",'w+') as f:
 #     f.write(result_str)
 
 # get video info
 from bilibili_api import video
-bvid="BV1iw411Z7xt"
-v=video.Video(bvid=bvid)
+
+bvid = "BV1iw411Z7xt"
+v = video.Video(bvid=bvid)
 
 # info=sync(v.get_info())
 # # print(info)
@@ -48,12 +50,15 @@ v=video.Video(bvid=bvid)
 
 # search video
 
-search.search_by_type(keyword="汪汪",
-        params={"tids": BSP.all.tids.动物圈.tid, "duration": BSP.all.duration._10分钟以下},
-        page=1,search_type = search.SearchObjectType.VIDEO)
 result = sync(
+    search.search_by_type(
+        keyword="汪汪",
+        params={"tids": BSP.all.tids.动物圈.tid, "duration": BSP.all.duration._10分钟以下},
+        page=1,
+        search_type=search.SearchObjectType.VIDEO,
+    )
 )
 
-with open("search_result_all.json",'r') as f:
+with open("search_result_all.json", "r") as f:
     data = f.read()
     data = json.loads(data)
