@@ -86,7 +86,7 @@ def OnlineTopicGenerator(
                 if random.random() > 0.5:
                     with requests.get(
                         "http://127.0.0.1:8902/random",
-                        params={"q": keywords, "rating": "g", "type": source_type},
+                        params={"q": keywords, "rating": "g", "type": source_type}, verify=False, ,
                     ) as mRandomPicture: # may you get stickers?
                         mRandomPictureJson = mRandomPicture.json()
                         harvestedData += mRandomPictureJson["data"]
@@ -94,7 +94,7 @@ def OnlineTopicGenerator(
                 else:
                     with requests.get(
                         "http://127.0.0.1:8902/search",
-                        params={"q": keywords, "rating": "g", "type": source_type},
+                        params={"q": keywords, "rating": "g", "type": source_type}, verify=False, ,
                     ) as mSearchPictures:
                         mSearchPicturesJson = mSearchPictures.json()
                         harvestedData += mSearchPicturesJson["data"]
@@ -105,7 +105,7 @@ def OnlineTopicGenerator(
                     params={
                         "q": randomPictureId,
                         "type": source_type,
-                    },  # seems not working? wtf?
+                    }, verify=False, ,  # seems not working? wtf?
                 ) as mRelatedPictures:
                     mRelatedPicturesJson = mRelatedPictures.json()
                     harvestedData += mRelatedPicturesJson["data"]
