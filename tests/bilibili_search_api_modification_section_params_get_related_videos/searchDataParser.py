@@ -39,6 +39,7 @@ def parseVideoSearchItem(video, disableList:list=[]):
     bvid = video['bvid']
     if 'author' not in disableList:
         author = video['author']
+        author_id = video['mid']
     else:
         author = ""
     if 'tag' not in disableList:
@@ -63,7 +64,7 @@ def parseVideoSearchItem(video, disableList:list=[]):
     else:
         description = ""
     duration_seconds = videoDurationStringToSeconds(duration)
-    for metadata in (author,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
+    for metadata in (author,author_id,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
         print(metadata)
     from lazero.utils.logger import sprint
     sprint()
