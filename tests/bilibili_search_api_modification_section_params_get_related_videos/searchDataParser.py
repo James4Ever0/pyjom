@@ -94,8 +94,8 @@ def parseSearchVideoResult(data):
     resultList = data['result']
     iterateResultList(resultList)
 
-# test_subject = "search_video"
-test_subject = "search_all"
+test_subject = "search_video"
+# test_subject = "search_all"
 # test_subject = 'video_info'
 
 if test_subject == "search_all":
