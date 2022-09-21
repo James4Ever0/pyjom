@@ -21,7 +21,8 @@ if test_subject == "search_all":
                             bvid = video['bvid'] 
                             tag = video['tag']
                             tags = tag.split(",")
-                            categoryId = video['typeid']
+                            categoryId = int(video['typeid'])
+                            categoryName = int(video['typename'])
                             title = video['title'] # remove those markers, please?
                             title = clearHtmlTags(title)
                             duration = video['duration']
