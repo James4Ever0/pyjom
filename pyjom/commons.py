@@ -377,7 +377,8 @@ def update_subdict(mdict, key, subdict):
 
 
 def read_json(filepath):
-    return json.loads(open(filepath, "r").read())
+    with open(filepath, "r") as f:
+        return json.loads(f.read())
 
 
 def list_to_range(mlist, rangeLimit):
