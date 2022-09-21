@@ -72,7 +72,7 @@ def OnlineProcessor(
                 videoTextAreaRatioFilter = {"max": 0.3}
                 valid = True
                 mList = [
-                    [corruptVideoFilter,None, ]
+                    [corruptVideoFilter,None, dummyFilterFunction,'video corruption filter'],
                     [get_duration, duration_filter, checkMinMaxDict, "duration"],
                     [get_fps_float, fps_filter, checkMinMaxDict, "fps"],
                     [
