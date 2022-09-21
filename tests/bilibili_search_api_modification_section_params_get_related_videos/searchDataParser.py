@@ -147,7 +147,8 @@ elif test_subject == "video_related":
         data = json.loads(data)
     for videoInfo in data:
         videoInfo2 =videoInfo.copy()
-        videoInfo2.update({'author': videoInfo['']})
+        videoInfo2.update({'author': videoInfo['owner']['name']})
+        videoInfo2.update({'mid': videoInfo['owner']['name']})
         parseVideoSearchItem(videoInfo)
 else:
     raise Exception("unknown test_subject:", test_subject)
