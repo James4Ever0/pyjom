@@ -100,5 +100,7 @@ elif test_subject =='video_info':
     season = data['ugc_season'] # we only care about this thing.
     season_cover = season['cover']
     sections = season['sections']
+    for section in sections:
+        
 else:
     raise Exception("unknown test_subject:", test_subject)
