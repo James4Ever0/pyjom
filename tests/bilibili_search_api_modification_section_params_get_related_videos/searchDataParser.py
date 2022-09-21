@@ -68,7 +68,7 @@ def parseSearchAllResult(data):
 
 def parseSearchVideoResult(data):
     resultList = data['result']
-    iterateResultList
+    iterateResultList(resultList)
 
 test_subject = "search_video"
 # test_subject = "search_all"
@@ -82,6 +82,6 @@ elif test_subject == "search_video":
     with open("search_by_type_result_video.json", "r") as f:
         data = f.read()
         data = json.loads(data)
-    parseSearchResult(data)
+    parseSearchVideoResult(data)
 else:
     raise Exception("unknown test_subject:", test_subject)
