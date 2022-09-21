@@ -54,8 +54,10 @@ def parseVideoSearchItem(video, disableList:list=[]):
     play = video.get('play',video.get('view')) # select some hot videos.
     cover = video['pic']
     cover = linkFixer(cover)
-    if 'description' not in
-    description = video.get('description', video.get('desc'))
+    if 'description' not in disableList:
+        description = video.get('description', video.get('desc'))
+    else:
+        description = ""
     duration_seconds = videoDurationStringToSeconds(duration)
     for metadata in (bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
         print(metadata)
@@ -117,6 +119,6 @@ elif test_subject =='video_info':
             videoInfo=episode.copy()
             videoInfo.update(stat)
             videoInfo.update(arc)
-            parseVideoSearchItem(videoInfo, disableList = ['tag'])
+            parseVideoSearchItem(videoInfo, disableList = ['tag', ''])
 else:
     raise Exception("unknown test_subject:", test_subject)
