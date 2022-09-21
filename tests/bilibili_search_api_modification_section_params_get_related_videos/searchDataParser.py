@@ -101,6 +101,7 @@ elif test_subject =='video_info':
     season_cover = season['cover']
     sections = season['sections']
     for section in sections:
-        
+        for episode in section['episodes']:
+            
 else:
     raise Exception("unknown test_subject:", test_subject)
