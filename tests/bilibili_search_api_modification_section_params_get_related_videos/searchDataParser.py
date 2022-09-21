@@ -2,7 +2,8 @@ import json
 from bs4 import BeautifulSoup
 
 def clearHtmlTags(htmlObject):
-    return o
+    a = BeautifulSoup(htmlObject, features='lxml')
+    return a.text
 
 test_subject = "search_all"
 
