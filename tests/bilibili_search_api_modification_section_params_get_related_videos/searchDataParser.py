@@ -42,7 +42,7 @@ if test_subject == "search_all":
                             cover = video['pic']
                             description = video['description']
                             duration_seconds = videoDurationStringToSeconds(duration)
-                            print(bvid,tags,)
+                            print(bvid,tags,categoryId, categoryName,)
                     except:
                         continue
         except:
