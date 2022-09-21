@@ -42,8 +42,9 @@ def parseVideoSearchItem(video, disableList:list=[]):
         tags = tag.split(",")
     else:
         tags = []
-    categoryId = int(video['typeid'])
-    categoryName = video['typename']
+    if 'typeid' not in disableList or 'typename' not in disableList':
+        categoryId = int(video['typeid'])
+        categoryName = video['typename']
     title = video['title'] # remove those markers, please?
     title = clearHtmlTags(title)
     duration = video['duration'] # this is not recommended. we need seconds.
