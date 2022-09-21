@@ -59,9 +59,10 @@ def attempt_download(file, repo='ultralytics/yolov5'):  # from utils.downloads i
         # GitHub assets
         file.parent.mkdir(parents=True, exist_ok=True)  # make parent dir (if required)
         try:
-            with requests.get(f'https://api.github.com/repos/{repo}/releases/latest').json()  # github api
-            assets = [x['name'] for x in response['assets']]  # release assets, i.e. ['yolov5s.pt', 'yolov5m.pt', ...]
-            tag = response['tag_name']  # i.e. 'v1.0'
+            with requests.get(f'https://api.github.com/repos/{repo}/releases/latest').json() as response:
+                response= response.json() # github api
+                assets = [x['name'] for x in response['assets']]  # release assets, i.e. ['yolov5s.pt', 'yolov5m.pt', ...]
+                tag = response['tag_name']  # i.e. 'v1.0'
         except Exception:  # fallback plan
             assets = [
                 'yolov5n.pt', 'yolov5s.pt', 'yolov5m.pt', 'yolov5l.pt', 'yolov5x.pt', 'yolov5n6.pt', 'yolov5s6.pt',
