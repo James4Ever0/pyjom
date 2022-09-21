@@ -71,7 +71,7 @@ if test_subject == "search_all":
         data = json.loads(data)
     parseSearchResult(data)
 elif test_subject == "search_video":
-    with open("search_result_all.json", "r") as f:
+    with open("search_by_type_result_video.json", "r") as f:
         data = f.read()
         data = json.loads(data)
     parseSearchResult(data)
