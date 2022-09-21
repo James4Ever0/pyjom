@@ -105,9 +105,10 @@ elif test_subject =='video_info':
             print(episode.keys())
             breakpoint()
             arc = episode['arc']
-            stat = episode['stat']
-            videoInfo=episode
+            stat = arc['stat']
+            videoInfo=episode.copy()
             videoInfo.update(stat)
+            videoInfo.update(arc)
             parseVideoSearchItem(videoInfo)
 else:
     raise Exception("unknown test_subject:", test_subject)
