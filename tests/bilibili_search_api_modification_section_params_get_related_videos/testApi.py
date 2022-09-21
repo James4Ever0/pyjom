@@ -31,7 +31,8 @@ bvid="BV1iw411Z7xt"
 v=video.Video(bvid=bvid)
 # video tags
 info=sync(v.get_info())
-print(info)
+# print(info)
+with open
 
 # able to get from search
 
