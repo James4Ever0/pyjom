@@ -25,7 +25,7 @@ if test_subject == "search_all":
                             categoryName = int(video['typename'])
                             title = video['title'] # remove those markers, please?
                             title = clearHtmlTags(title)
-                            duration = video['duration']
+                            duration = video['duration'] # this is not recommended.
                             play = video['play'] # select some hot videos.
                             cover = video['pic']
                             description = video['description']
