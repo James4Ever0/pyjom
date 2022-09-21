@@ -6,10 +6,10 @@ try:
         .input(videoPath)
         .output("null", f="null")
         .run(capture_stdout=True,capture_stderr=True
-except ffmpeg._run.Error:
-    print("corrupt video")
-else:
+    else:
     stderr_lower = stder.decode
     for word in not_nice:
         if word in
     print("video is fine")
+except ffmpeg._run.Error:
+    print("corrupt video")
