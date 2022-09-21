@@ -9,3 +9,5 @@ result = sync(
         page=1
     )
 )
+
+print(result)
