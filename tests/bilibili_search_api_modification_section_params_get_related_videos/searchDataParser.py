@@ -31,7 +31,7 @@ def clearHtmlTags(htmlObject):
     return a.text
 
 def iterateResultList(resultList):
-    for video in elem['data']:
+    for video in resultList:
         # be warned cause all these things might fail.
         try:
             if video['type'] == 'video':
