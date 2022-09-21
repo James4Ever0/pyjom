@@ -205,7 +205,7 @@ def getVideoFrameIterator(
             else:
                 break
     cap.release()
-        # do_something(image)
+    # do_something(image)
     # fno = 0
     # while success:
     #     if fno % sample_rate == 0:
@@ -2018,7 +2018,7 @@ def NSFWVideoFilter(
                     files = {"image": (basename, f, "image/jpeg")}
                     with requests.post(
                         gateway + "nsfw", files=files
-                    ) as r: # post gif? or just jpg?
+                    ) as r:  # post gif? or just jpg?
                         try:
                             response_json = r.json()
                             response_json = processNSFWServerImageReply(response_json)
