@@ -129,7 +129,8 @@ class Medialang:
                 assert extension == "j2"
             else:
                 assert extension in ["mdl", "media"]
-            self.script = open(abspath, "r", encoding=encoding).read()
+            with open(abspath, "r", encoding=encoding) as f:
+                self.script = f.read()
         if self.script_obj is not None:
             self.script = self.generate(self.script_obj)
         else:
