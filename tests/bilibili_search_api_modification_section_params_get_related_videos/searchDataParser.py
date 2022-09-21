@@ -44,6 +44,8 @@ if test_subject == "search_all":
                             duration_seconds = videoDurationStringToSeconds(duration)
                             for metadata in (bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
                                 print(metadata)
+                            from lazero.utils.logger import sprint
+                            sprint()
                     except:
                         continue
         except:
