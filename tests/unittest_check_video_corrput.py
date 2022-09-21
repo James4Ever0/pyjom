@@ -1,6 +1,6 @@
 import ffmpeg
 
-videoPath = ""
+videoPath = "/root/Desktop/works/pyjom/samples/video/"
 try:
     (
         ffmpeg
