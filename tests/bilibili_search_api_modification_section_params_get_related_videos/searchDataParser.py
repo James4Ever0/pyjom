@@ -10,6 +10,7 @@ if test_subject == "search_all":
     for elem in results:
         try:
             if elem['result_type'] == 'video':
-                elem['data']
+                for video in elem['data']:
+                    if video['type']
         except:
             pass
