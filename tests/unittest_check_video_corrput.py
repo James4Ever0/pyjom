@@ -1,6 +1,7 @@
 import ffmpeg
 not_nice ["invalid","failed",'error']
 videoPath = "/root/Desktop/works/pyjom/samples/video/corrupt_video.gif"
+corrupted=False
 try:
     stdout, stderr = ffmpeg
         .input(videoPath)
@@ -12,10 +13,12 @@ try:
             print("video is corrupted")
             corrupted=True
             break
-    print("video is fine")
 except:
     import traceback
     traceback.print_exc()
+    corrupted=True
+
     print("corrupt video")
 
 
+    print("video is fine")
