@@ -27,6 +27,7 @@ if test_subject == "search_all":
         try:
             if elem['result_type'] == 'video':
                 for video in elem['data']:
+                    # be warned cause all these things might fail.
                     try:
                         if video['type'] == 'video':
                             bvid = video['bvid'] 
