@@ -25,6 +25,8 @@ import json
 # with open("search_result_all.json",'w+') as f:
 #     f.write(result_str)
 
+# also, get video info, video tags, related videos.
+
 with open("search_result_all.json",'r') as f:
     data = f.read()
     data = json.loads(data)
