@@ -1,6 +1,8 @@
 import json
 from bs4 import BeautifulSoup
 
+def 
+
 def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features='lxml')
     return a.text
