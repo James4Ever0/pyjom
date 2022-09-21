@@ -70,6 +70,10 @@ if test_subject == "search_all":
         data = f.read()
         data = json.loads(data)
     parseSearchResult(data)
-elif test_subject == "search_all":
+elif test_subject == "search_video":
+    with open("search_result_all.json", "r") as f:
+        data = f.read()
+        data = json.loads(data)
+    parseSearchResult(data)
 else:
     raise Exception("unknown test_subject:", test_subject)
