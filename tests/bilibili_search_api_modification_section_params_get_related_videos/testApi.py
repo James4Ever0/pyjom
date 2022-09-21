@@ -59,7 +59,8 @@ result = sync(
     )
 )
 
-with open('search_by_type_result_video_')
+with open('search_by_type_result_video.json','w+') as f:
+    f.write(json.dumps(result, indent=4, ensure_ascii=False))
 
 # with open("search_result_all.json", "r") as f:
 #     data = f.read()
