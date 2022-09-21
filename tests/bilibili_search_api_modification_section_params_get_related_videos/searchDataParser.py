@@ -30,15 +30,11 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features='lxml')
     return a.text
 
-
-
 def parseSearchResult(data):
     results = data['result']
     for elem in results:
         try:
             if elem['result_type'] == 'video':
-                for video in elem['data']:
-                    # be warned cause all these things might fail.
 
         except:
             traceError('error iterating data results')
