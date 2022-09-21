@@ -6,9 +6,9 @@ try:
         .input(videoPath)
         .output("null", f="null")
         .run(capture_stdout=True,capture_stderr=True
-    stderr_lower = stder.decode
+    stderr_lower = stder.decode('utf-8').lower()
     for word in not_nice:
-        if word in
+        if word instderr.lower
     print("video is fine")
 except:
     import traceback
