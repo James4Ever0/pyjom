@@ -15,7 +15,8 @@ if test_subject == "search_all":
                         if video['type'] == 'video':
                             bvid = video['bvid'] 
                             tag = video['tag']
-                            tags = tag.split("")
+                            tags = tag.split(",")
+                            duration = video['duration']
                             play = video['play'] # select some hot videos.
         except:
             pass
