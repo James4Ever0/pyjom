@@ -100,13 +100,13 @@ def OnlineTopicGenerator(
                         harvestedData += mSearchPicturesJson["data"]
                         randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
 
-                mRelatedPictures = requests.get(
+                with requests.get(
                     "http://127.0.0.1:8902/related",
                     params={
                         "q": randomPictureId,
                         "type": source_type,
                     },  # seems not working? wtf?
-                )
+                ) as mRelatedPictures:
                 mRelatedPicturesJson = mRelatedPictures.json()
                 harvestedData += mRelatedPicturesJson["data"]
                 sentences = [x["title"] for x in mRelatedPicturesJson["data"]]
