@@ -41,7 +41,7 @@ v=video.Video(bvid=bvid)
 # able to get from search
 
 # related videos
-related = sync(v.get_related())
+# related = sync(v.get_related())
 
 with open('video_related.json', 'w+') as f:
     f.write(json.dumps(related, indent=4, ensure_ascii=False))
