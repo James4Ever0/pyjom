@@ -26,6 +26,7 @@ import json
 #     f.write(result_str)
 
 # get video info
+from bilibili_api import video
 
 # video tags
 
