@@ -28,7 +28,7 @@ import json
 # get video info
 from bilibili_api import video
 bvid="BV1iw411Z7xt"
-
+ideo.Video(bvid="BVxxxxxxxx",
 # video tags
 # able to get from search
 
