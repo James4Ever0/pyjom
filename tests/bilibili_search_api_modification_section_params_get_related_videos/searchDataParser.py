@@ -2,7 +2,7 @@ import json
 from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
 
-def traceError(errorMsg:str="error!"):
+def traceError(errorMsg:str="error!", bre):
     import traceback
     traceback.print_exc()
     sprint(errorMsg)
