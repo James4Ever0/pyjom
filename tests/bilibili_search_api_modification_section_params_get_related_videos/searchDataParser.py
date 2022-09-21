@@ -96,6 +96,8 @@ elif test_subject =='video_info':
     with open("video_info.json", "r") as f:
         data = f.read()
         data = json.loads(data)
-    data['ugc_season'] # we only care about this thing.
+    # no tag out here.
+    season = data['ugc_season'] # we only care about this thing.
+    
 else:
     raise Exception("unknown test_subject:", test_subject)
