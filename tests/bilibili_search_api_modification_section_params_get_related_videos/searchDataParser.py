@@ -4,7 +4,8 @@ from lazero.utils.logger import sprint
 
 def linkFixer(link,prefix="https:"):
     if link.startswith("//"):
-        return prefix+
+        return prefix+link
+    return link
 
 def traceError(errorMsg:str="error!", _breakpoint:bool=False):
     import traceback
@@ -53,6 +54,7 @@ if test_subject == "search_all":
                             duration = video['duration'] # this is not recommended. we need seconds.
                             play = video['play'] # select some hot videos.
                             cover = video['pic']
+                            cover = linkFixer(cover)
                             description = video['description']
                             duration_seconds = videoDurationStringToSeconds(duration)
                             for metadata in (bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
