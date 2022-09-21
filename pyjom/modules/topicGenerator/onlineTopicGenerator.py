@@ -88,17 +88,17 @@ def OnlineTopicGenerator(
                         "http://127.0.0.1:8902/random",
                         params={"q": keywords, "rating": "g", "type": source_type},
                     ) as mRandomPicture: # may you get stickers?
-                    mRandomPictureJson = mRandomPicture.json()
-                    harvestedData += mRandomPictureJson["data"]
-                    randomPictureId = mRandomPictureJson["data"][0]["id"]
+                        mRandomPictureJson = mRandomPicture.json()
+                        harvestedData += mRandomPictureJson["data"]
+                        randomPictureId = mRandomPictureJson["data"][0]["id"]
                 else:
-                    mSearchPictures = requests.get(
+                    with requests.get(
                         "http://127.0.0.1:8902/search",
                         params={"q": keywords, "rating": "g", "type": source_type},
-                    )
-                    mSearchPicturesJson = mSearchPictures.json()
-                    harvestedData += mSearchPicturesJson["data"]
-                    randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
+                    ) as mSearchPictures:
+                        mSearchPicturesJson = mSearchPictures.json()
+                        harvestedData += mSearchPicturesJson["data"]
+                        randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
 
                 mRelatedPictures = requests.get(
                     "http://127.0.0.1:8902/related",
