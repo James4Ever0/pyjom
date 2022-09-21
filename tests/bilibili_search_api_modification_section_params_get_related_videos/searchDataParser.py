@@ -67,7 +67,8 @@ def parseSearchAllResult(data):
             traceError('error iterating data results')
 
 def parseSearchVideoResult(data):
-    
+    resultList = data['result']
+    iterateResultList
 
 test_subject = "search_video"
 # test_subject = "search_all"
