@@ -30,7 +30,7 @@ from bilibili_api import video
 bvid="BV1iw411Z7xt"
 
 # video tags
-
+# able to get from search
 
 # related videos
 
