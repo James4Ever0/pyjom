@@ -1,6 +1,9 @@
 import json
 from bs4 import BeautifulSoup
 
+def logError(errorMsg:str="error"):
+    import traceabac
+
 def videoDurationStringToSeconds(durationString):
     durationString = durationString.strip()
     mList = durationString.split(":")[::-1]
