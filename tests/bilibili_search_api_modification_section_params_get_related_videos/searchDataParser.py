@@ -1,5 +1,8 @@
 import json
-from im
+from bs4 import BeautifulSoup
+
+def clear
+
 test_subject = "search_all"
 
 if test_subject == "search_all":
