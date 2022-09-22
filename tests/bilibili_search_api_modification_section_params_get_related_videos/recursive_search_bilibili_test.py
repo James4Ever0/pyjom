@@ -215,6 +215,9 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 # then we get related videos.
                 result = sync(v.get_related())
                 from searchDataParser import parseVideoRelated
+                print()
+                print('parsing related video info')
+                breakpoint()
 
                 updateMyListsWithIterable(
                     parseVideoRelated(result),debugTag="videoRelated"
