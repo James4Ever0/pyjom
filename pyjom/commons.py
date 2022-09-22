@@ -47,6 +47,7 @@ def corruptMediaFilter(mediaPath, tag='media', bad_words= ["invalid", "failed", 
         print("video is fine")
     # return True for fine video.
     valid = not corrupted
+    print('{} file path:'.format(tag), mediaPath)
     return valid
 
 ## bring about 'redis cache' for faster testing.
