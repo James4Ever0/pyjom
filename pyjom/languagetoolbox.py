@@ -87,8 +87,8 @@ def sentenceFlatten(sentence, padding = " "):
     for x in "\n\r\t":
         sentence = sentence.replace(x, padding)
     while True:
-        if in sentence:
-            sentence = sentence.replace(" ")
+        if padding*2 in sentence:
+            sentence = sentence.replace(padding*2 )
 
 def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
