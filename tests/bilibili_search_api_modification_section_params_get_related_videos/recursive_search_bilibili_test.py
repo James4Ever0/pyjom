@@ -286,7 +286,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 keywords = getKeywords[dog_or_cat]()
             # print(selected_topic_list_dict)
             # breakpoint()
-            filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
+            filtered_title_list = filterTitleListWithCoreTopicSet(title_list, ) # could be enhabced with CLIP
             # filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
             if len(filtered_title_list) > 3:
                 if len(cover_list) > 3:
