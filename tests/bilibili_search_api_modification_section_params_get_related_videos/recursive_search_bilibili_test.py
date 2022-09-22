@@ -129,3 +129,4 @@ if len(bvid_list)>0:
 
 # now what do you want? suggested keywords?
 suggested_queries = sync(search.get_suggest_keywords(keyword = metatopicString))
+# now we need to collect the keywords.
