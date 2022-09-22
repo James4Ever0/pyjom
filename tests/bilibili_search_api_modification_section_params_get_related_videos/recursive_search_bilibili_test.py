@@ -156,3 +156,11 @@ topics = topicModeling(topic_modeling_source_sentences,lang='zh')
 selectedWord = topicWordSelection(
                         topics, core_topic_set, selected_topic_list
                     )
+
+if selectedWord is not None:
+    keywords = " ".join(
+        [getKeywords(), selectedWord]
+    )  # for next iteration.
+    print("REFRESHING KEYWORDS:", keywords)
+else:
+    keywords = getKeywords()
