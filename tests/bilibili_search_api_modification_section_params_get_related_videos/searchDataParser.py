@@ -46,7 +46,7 @@ def extractLinks(description, extract_bgm=True):
             has_bgm = False
             for candidate in bgmCandidates:
                 bgm_parse_result = re.findall(candidate,line.lower())
-                if bgm_parse_result is not None:
+                if len(bgm_parse_result) >0:
                     has_bgm = True
                     # bgm = line[len(bgmCandidates) :]
                     bgm = bgm_parse_result[0]
