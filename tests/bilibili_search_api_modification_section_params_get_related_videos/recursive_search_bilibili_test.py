@@ -73,6 +73,9 @@ result = sync(
     )
 )
 
+print(result)
+breakpoint()
+
 from searchDataParser import parseSearchVideoResult
 
 description_list = []
