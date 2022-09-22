@@ -49,13 +49,13 @@ from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 
 def randomChoiceTagList(tag_list):
+    import random
     selected_tags = random.sample(tag_list,3)
     selected_tags = [random.sample(tags, min(len(tags),2)) for tags in selected_tags]
     return list(set(selected_tags))
 
-def getBilibiliPostMetadataForDogCat():
+def getBilibiliPostMetadataForDogCat(sleepTime=2):
     import random
-
     selected_topic_list_dict = {"dog": [], "cat": []}
     core_topic_set = {*flattenUnhashableList(dog_metatopic)}
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
