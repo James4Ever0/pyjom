@@ -126,6 +126,7 @@ def splitTitleTags(title,author_keywords):
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
     bvid = video["bvid"]
+    author_keywords = getAuthorKeywords(author)
     if "author" not in disableList:
         author = video["author"]
         author_id = video["mid"]
@@ -135,6 +136,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     if "tag" not in disableList:
         tag = video["tag"]
         tags = tag.split(",")
+        for tag in tags:
     else:
         tags = []
     if "typeid" not in disableList and "typename" not in disableList:
@@ -146,7 +148,6 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     title = video["title"]  # remove those markers, please?
     title = clearHtmlTags(title)
     title = removeAuthorRelatedTags(title, author)
-    author_keywords = getAuthorKeywords(author)
     title, title_tags = splitTitleTags(title, author_keywords) # use author for filtering unwanted title tags.
     duration = video["duration"] # this is not recommended. we need seconds.
     play = video.get("play", video.get("view"))  # select some hot videos.
