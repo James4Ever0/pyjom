@@ -72,6 +72,7 @@ bgm_list = []
 title_list = []
 tag_list = []
 cover_list = []
+bvid_list = []
 
 duration_limit = {"min":70, 'max':5*60}
 play_limit = {"min": 10000}
@@ -101,3 +102,5 @@ for videoMetadata in parseSearchVideoResult(result):
             title_list += [title] # this for topic modeling?
             description_list += [description]
             tag_list += tags # this?
+
+# do the related video search?
