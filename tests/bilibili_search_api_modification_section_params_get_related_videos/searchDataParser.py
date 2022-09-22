@@ -90,7 +90,11 @@ def removeAuthorRelatedKeywords(title_tag,author_keywords):
                 abandon=True
                 break
     return abandon
-import jieba
+
+def getAuthorKeywords(author):
+    import jieba
+    author_keywords = jieba.lcut(author)
+    
 
 def removeAuthorRelatedTags(description_or_title, author, author_keywords):
     templates = ["【{}】", "@{}", "{}"]
