@@ -422,7 +422,7 @@ def getMusicInfoParsed(config):
     music_duration = music_metadata["duration"]
     maxtime = config["maxtime"]
     mintime = config["mintime"]
-    lyric_path = music["lyric_path"]
+    lyric_path = music.get("lyric_path", None)
     demanded_cut_spans, standard_bpm_spans = getMusicCutSpans(
         music, music_duration, lyric_path, maxtime, mintime
     )
