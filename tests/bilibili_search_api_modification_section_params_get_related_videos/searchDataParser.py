@@ -231,7 +231,7 @@ def parseVideoInfo(videoInfo, debug=False):
             # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
     return primaryVideoInfo, secondaryVideoInfoList
 
-def parseVideoRelated(videoRelatedData, debug=False):
+def parseVideoRelated(videoRelatedData, debug=False, generator=False):
     data = videoRelatedData
     try:
         for videoInfo in data:
