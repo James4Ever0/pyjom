@@ -67,6 +67,8 @@ def getBilibiliPostMetadataForDogCat():
         "dog": lambda: getMetaTopicString(dog_metatopic),
         "cat": lambda: getMetaTopicString(cat_metatopic),
     }
+    BSP = search.bilibiliSearchParams()
+
 
     getDogTid = lambda: random.choice(
         [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人]
@@ -81,7 +83,6 @@ def getBilibiliPostMetadataForDogCat():
         try:
 
             metatopicString = getKeywords[dog_or_cat]()
-            import random
 
             print("METATOPIC STRING:", metatopicString)
 
