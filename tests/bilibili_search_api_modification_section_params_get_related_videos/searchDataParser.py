@@ -113,6 +113,7 @@ def splitTitleTags(title,author_keywords):
     pattern = r"【.+】"
     title_tags = re.findall(pattern, title)
     title = re.sub(pattern, "",title)
+    
         title_tags = [x.lstrip("【").rstrip("】").strip() for x in title_tags]
         title_tags = [x for x in title_tags if len(x)>0]
         final_title_tags =[]
