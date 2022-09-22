@@ -96,7 +96,7 @@ def removeTitleTags(title, author):
     author_keywords = jieba.lcut(author)
     pattern = r"【.+】"
     title_tags = re.findall(pattern, title)
-    title = re.sub(pattern, title)
+    title = re.sub(pattern, "",title)
     if title_tags ==None:
         title_tags = []
     else:
