@@ -233,7 +233,7 @@ def parseVideoInfo(videoInfo, debug=False):
             # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
     return primaryVideoInfo, secondaryVideoInfoList
 
-def parseVideoRelated(videoRelatedData, debug=False, generator=True):
+def parseVideoRelated(videoRelatedData, debug=False):
     data = videoRelatedData
     # if not generator:
     #     return generatorToList(parseVideoRelated(data, debug=debug,generator=True))
