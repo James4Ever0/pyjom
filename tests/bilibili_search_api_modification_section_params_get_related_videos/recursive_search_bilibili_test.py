@@ -48,6 +48,7 @@ from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList # one of my classic methods
 
 import random
+def getBilibili
 selected_topic_list_dict = {"dog":[],"cat":[]}
 dog_or_cat = random.choice(list(selected_topic_list_dict.keys()))
 core_topic_set = {
