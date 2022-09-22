@@ -45,7 +45,8 @@ def extractLinks(description, extract_bgm=True):
             bgmCandidates = [x.format("bgm")+"(.+)" for x in bgmCandidateTemplates]
             has_bgm = False
             for candidate in bgmCandidates:
-                if line.lower().startswith(candidate):
+                
+                if .startswith(candidate):
                     has_bgm = True
                     bgm = line[len(bgmCandidates) :]
                     bgm = bgm.strip()
