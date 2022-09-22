@@ -167,5 +167,7 @@ elif test_subject == "video_related":
         videoInfo2.update({'author': videoInfo['owner']['name']})
         videoInfo2.update({'mid': videoInfo['owner']['mid']})
         parseVideoSearchItem(videoInfo2,disableList = ['tag','typeid','typename'])
+elif test_subject == 'extract_links':
+    descripton = 
 else:
     raise Exception("unknown test_subject:", test_subject)
