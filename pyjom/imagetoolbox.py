@@ -35,7 +35,8 @@ def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False
         cv2.imshow("TEXT AREA", img)
         cv2.waitKey(0)
     if inpaint:
-        return cv2.im
+        return dst = cv2.inpaint(image,blank_image,3,cv2.INPAINT_TELEA)
+
     return textAreaRatio
 
 
