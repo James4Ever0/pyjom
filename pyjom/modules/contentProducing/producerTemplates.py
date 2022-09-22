@@ -551,6 +551,9 @@ def petsWithMusicOnlineProducer(
                 report = corruptMediaFilter(musicPath)
                 if not report:
                     print("music file corrputed")
+                    continue
+            else:
+                report = 
             render_ass = config.get('render_ass', False)
             parsed_result = getMusicInfoParsed(config)
             # print(parsed_result)
