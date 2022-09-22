@@ -2,8 +2,10 @@ import json
 from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
 
+
 def generatorToList(generator):
     return [x for x in generator]
+
 
 def linkFixer(link, prefix="http:"):
     if link.startswith("//"):
@@ -13,6 +15,7 @@ def linkFixer(link, prefix="http:"):
 
 def traceError(errorMsg: str = "error!", _breakpoint: bool = False):
     import traceback
+
     traceback.print_exc()
     sprint(errorMsg)
     if _breakpoint:
@@ -42,11 +45,11 @@ def extractLinks(description, extract_bgm=True):
         for line in desc_without_link_per_line:
             bgmCandidateTemplates = ["{}：", "{}:", "{} "]
             fixers = [x.format("") for x in bgmCandidateTemplates]
-            bgmCandidates = [x.format("bgm")+"(.+)" for x in bgmCandidateTemplates]
+            bgmCandidates = [x.format("bgm") + "(.+)" for x in bgmCandidateTemplates]
             has_bgm = False
             for candidate in bgmCandidates:
-                bgm_parse_result = re.findall(candidate,line.lower())
-                if len(bgm_parse_result) >0:
+                bgm_parse_result = re.findall(candidate, line.lower())
+                if len(bgm_parse_result) > 0:
                     has_bgm = True
                     # bgm = line[len(bgmCandidates) :]
                     bgm = bgm_parse_result[0]
@@ -84,22 +87,26 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features="lxml")
     return a.text
 
-def detectAuthorRelatedKeywords(title_tag,author_keywords):
-    abandon=False
+
+def detectAuthorRelatedKeywords(title_tag, author_keywords):
+    abandon = False
     for keyword in author_keywords:
-        if len(keyword)>1:
+        if len(keyword) > 1:
             if keyword in title_tag:
-                abandon=True # detected this thing.
+                abandon = True  # detected this thing.
                 break
     return abandon
 
+
 def getAuthorKeywords(author):
-    author=author.strip()
+    author = author.strip()
     import jieba
+
     author_keywords = jieba.lcut(author)
     author_keywords = [x.strip() for x in author_keywords]
-    author_keywords = [x for x in author_keywords if len(x)>0]
+    author_keywords = [x for x in author_keywords if len(x) > 0]
     return author_keywords
+
 
 def removeAuthorRelatedTags(description_or_title, author):
     templates = ["【{}】", "@{}", "{}"]
@@ -108,15 +115,17 @@ def removeAuthorRelatedTags(description_or_title, author):
         description_or_title = description_or_title.replace(tag, "")
     return description_or_title
 
-def splitTitleTags(title,author_keywords):
+
+def splitTitleTags(title, author_keywords):
     import re
+
     pattern = r"【.+】"
     title_tags = re.findall(pattern, title)
-    title = re.sub(pattern, "",title)
+    title = re.sub(pattern, "", title)
 
     title_tags = [x.lstrip("【").rstrip("】").strip() for x in title_tags]
-    title_tags = [x for x in title_tags if len(x)>0]
-    final_title_tags =[]
+    title_tags = [x for x in title_tags if len(x) > 0]
+    final_title_tags = []
     for title_tag in title_tags:
         detected = detectAuthorRelatedKeywords(title_tag, author_keywords)
         if not detected:
@@ -136,7 +145,9 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     if "tag" not in disableList:
         tag = video["tag"]
         tags = tag.split(",")
-        tags = [tag for tag in tags if not detectAuthorRelatedKeywords(tag, author_keywords)]
+        tags = [
+            tag for tag in tags if not detectAuthorRelatedKeywords(tag, author_keywords)
+        ]
     else:
         tags = []
     if "typeid" not in disableList and "typename" not in disableList:
@@ -148,8 +159,10 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     title = video["title"]  # remove those markers, please?
     title = clearHtmlTags(title)
     title = removeAuthorRelatedTags(title, author)
-    title, title_tags = splitTitleTags(title, author_keywords) # use author for filtering unwanted title tags.
-    duration = video["duration"] # this is not recommended. we need seconds.
+    title, title_tags = splitTitleTags(
+        title, author_keywords
+    )  # use author for filtering unwanted title tags.
+    duration = video["duration"]  # this is not recommended. we need seconds.
     play = video.get("play", video.get("view"))  # select some hot videos.
     cover = video["pic"]
     cover = linkFixer(cover)
@@ -175,7 +188,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
         description,
         links_in_description,
         bgms,
-        title_tags
+        title_tags,
     )
     if debug:
         for metadata in resultTuple:
@@ -231,6 +244,7 @@ def parseSearchVideoResult(data, debug=False):
     except:
         traceError("error parsing search video result")
 
+
 def parseVideoInfo(videoInfo, debug=False):
     data = videoInfo
     # no tag out here.
@@ -242,9 +256,9 @@ def parseVideoInfo(videoInfo, debug=False):
         data_copy, disableList=["tag", "typeid", "typename"], debug=debug
     )
     # videoInfoList.append(primaryVideoInfo)
-    season = data.get("ugc_season",{})  # we only care about this thing.
-    season_cover = season.get("cover",None) # it could be noting.
-    sections = season.get("sections",[])
+    season = data.get("ugc_season", {})  # we only care about this thing.
+    season_cover = season.get("cover", None)  # it could be noting.
+    sections = season.get("sections", [])
     for section in sections:
         for episode in section["episodes"]:
             # print(episode.keys())
@@ -256,7 +270,8 @@ def parseVideoInfo(videoInfo, debug=False):
             videoInfo.update(arc)
             authorRelatedVideoInfo = parseVideoSearchItem(
                 videoInfo,
-                disableList=["tag", "typeid", "typename", "description", "author"], debug=debug
+                disableList=["tag", "typeid", "typename", "description", "author"],
+                debug=debug,
             )  # author is the same as the original video.
             secondaryVideoInfoList.append(authorRelatedVideoInfo)
             # BV1Cb4y1s7em
@@ -269,6 +284,7 @@ def parseVideoInfo(videoInfo, debug=False):
             # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
     return primaryVideoInfo, secondaryVideoInfoList
 
+
 def parseVideoRelated(videoRelatedData, debug=False):
     data = videoRelatedData
     # if not generator:
@@ -280,10 +296,12 @@ def parseVideoRelated(videoRelatedData, debug=False):
                 videoInfo2.update({"author": videoInfo["owner"]["name"]})
                 videoInfo2.update({"mid": videoInfo["owner"]["mid"]})
                 # also update the stat.
-                videoInfo2.update(videoInfo['stat'])
+                videoInfo2.update(videoInfo["stat"])
                 try:
                     yield parseVideoSearchItem(
-                        videoInfo2, disableList=["tag", "typeid", "typename"], debug=debug
+                        videoInfo2,
+                        disableList=["tag", "typeid", "typename"],
+                        debug=debug,
                     )
                     # print(videoMetadata)
                 except:
@@ -319,7 +337,7 @@ if __name__ == "__main__":
             data = f.read()
             data = json.loads(data)
         primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(data)
-        videoInfoList = [primaryVideoInfo]+secondaryVideoInfoList
+        videoInfoList = [primaryVideoInfo] + secondaryVideoInfoList
         for mVideoInfo in videoInfoList:
             print(mVideoInfo)
             sprint()
