@@ -102,6 +102,7 @@ def removeTitleTags(title, author):
     else:
         title_tags = [x.lstrip("【").rstrip("】").strip() for x in title_tags]
         title_tags = [x for x in title_tags if len(x)>0]
+        final_title_tags =[]
         for title_tag in title_tags:
             abandon=False
             for keyword in author_keywords:
@@ -110,7 +111,7 @@ def removeTitleTags(title, author):
                         abandon=True
                         break
             if not abandon:
-                
+                final_title_tags.append(title_tag)
 
     return title, title_tags
 
