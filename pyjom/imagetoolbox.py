@@ -45,7 +45,7 @@ def getEasyOCRReader(langs: tuple, gpu=True, recognizer=False):
     return reader
 
 
-@lru_cache(maxsize=30)
+# @lru_cache(maxsize=30)
 def getImageTextAreaRecognized(
     image, langs: tuple = ("en",), gpu=True, recognizer=False, return_res=False
 ):
