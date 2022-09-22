@@ -98,6 +98,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                     params={
                         "tids": getTid[dog_or_cat](),
                         "duration": BSP.all.duration._10分钟以下,
+                        BSP.all.
                     },
                     page=getRandomPage(),
                     search_type=search.SearchObjectType.VIDEO,
