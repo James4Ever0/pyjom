@@ -136,7 +136,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     if "tag" not in disableList:
         tag = video["tag"]
         tags = tag.split(",")
-        tags = [tag for tag in tags if tag]
+        tags = [tag for tag in tags if not detectAuthorRelatedKeywords(tag, author_keywords)]
     else:
         tags = []
     if "typeid" not in disableList and "typename" not in disableList:
