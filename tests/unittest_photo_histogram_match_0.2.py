@@ -4,9 +4,10 @@
 image_0 = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 image_1 = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
 
-from lazero.utils.importers import cv2_custom_build_init
+# from lazero.utils.importers import cv2_custom_build_init
+from test_commons import *
 
-cv2_custom_build_init()
+# cv2_custom_build_init()
 
 # import the necessary packages
 from color_transfer import color_transfer
@@ -29,7 +30,6 @@ def show_image(title, image, width=300):
 source = cv2.imread(image_0)
 target = cv2.imread(image_1)
 
-from test_commons import *
 
 # we inpaint this one from the beginning.
 from pyjom.imagetoolbox import (
