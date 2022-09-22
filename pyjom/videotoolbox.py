@@ -1758,14 +1758,14 @@ def yolov5VideoDogCatDetector(
     return filter_result
 
 
-import paddlehub as hub
-from functools import lru_cache
+# import paddlehub as hub
+# from functools import lru_cache
 
 
-@lru_cache(maxsize=1)
-def getPaddleResnet50AnimalsClassifier():
-    classifier = hub.Module(name="resnet50_vd_animals")
-    return classifier
+# @lru_cache(maxsize=1)
+# def getPaddleResnet50AnimalsClassifier():
+#     classifier = hub.Module(name="resnet50_vd_animals")
+#     return classifier
 
 
 

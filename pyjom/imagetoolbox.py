@@ -367,6 +367,17 @@ def resizeImageWithPadding(
         raise Exception("unknown border_type: %s" % border_type)
     return padded
 
+
+import paddlehub as hub
+from functools import lru_cache
+
+
+@lru_cache(maxsize=1)
+def getPaddleResnet50AnimalsClassifier():
+    classifier = hub.Module(name="resnet50_vd_animals")
+    return classifier
+
+
 def bezierPaddleHubResnet50ImageDogCatDetector(
     videoPath,
     input_bias=0.0830047243746045,
