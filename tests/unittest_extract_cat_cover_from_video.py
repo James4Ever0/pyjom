@@ -5,7 +5,7 @@ from lazero.filesystem.temp import tmpfile
 import yt_dlp
 # import pyidm
 
-path = "/dev/shm/testVideo.mp4"
+path = "/dev/shm/testVideo.flv"
 from test_commons import *
 import cv2
 from pyjom.videotoolbox import getVideoFrameSampler
@@ -17,7 +17,7 @@ confidence_threshold = {"min":0.7}
 text_area_threshold = {"max":0.2}
 
 with tmpfile(path=path) as TF:
-    x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
+    x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=flv]'})
     y = x.download([videoLink])
 # shall you use frame sampler instead of iterator? cause this is dumb.
     from caer.video.frames_and_fps import get_duration
