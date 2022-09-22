@@ -97,7 +97,7 @@ def sentenceFlatten(sentence, padding = " "):
 def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
     for sentence in sentences:
-
+        sentence = sentenceFlatten(sentence)
         row = englishSentencePreprocessing(sentence)
         if len(row)>0:
             elem = " ".join(row)
@@ -175,9 +175,7 @@ def chineseSentencePreprocessing(sentence):
 def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
     for sentence in sentences:
-        for x in "\n\r\t":
-            sentence = sentence.replace(x, " ")
-        sentence = sentence.strip()
+        sentence = sentenceFlatten(sentence)
         row = chineseSentencePreprocessing(sentence)
         if len(row)>0:
             elem = " ".join(row)
