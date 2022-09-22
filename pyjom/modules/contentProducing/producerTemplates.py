@@ -645,26 +645,26 @@ def petsWithMusicOnlineProducer(
             # the main shit will fuck up again, maybe.
             # so i wrapped it a little bit.
             try:
-            medialangObject = renderList2MediaLang(
-                render_list,
-                slient=True,
-                fast=fast,
-                bgm=music["filepath"],
-                backend="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
-            )  # what is the backend?
-            rendered_media_location = (
-                medialangObject.execute()
-            )  # how to control its 'fast' parameter?
-            # maybe we need render the lyric file separately.
-            # using a ffmpeg filter.
+                medialangObject = renderList2MediaLang(
+                    render_list,
+                    slient=True,
+                    fast=fast,
+                    bgm=music["filepath"],
+                    backend="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
+                )  # what is the backend?
+                rendered_media_location = (
+                    medialangObject.execute()
+                )  # how to control its 'fast' parameter?
+                # maybe we need render the lyric file separately.
+                # using a ffmpeg filter.
 
-            final_output_location = getRandomFileName("mp4")
-            import ffmpeg
+                final_output_location = getRandomFileName("mp4")
+                import ffmpeg
 
-            ffmpeg.input(rendered_media_location).filter("ass", ass_file_path).output(
-                final_output_location
-            ).run(overwrite_output=True)
-            yield final_output_location  # another generator?
+                ffmpeg.input(rendered_media_location).filter("ass", ass_file_path).output(
+                    final_output_location
+                ).run(overwrite_output=True)
+                yield final_output_location  # another generator?
             except:
                 from lazero.utils.logger import traceError
                 traceError()
