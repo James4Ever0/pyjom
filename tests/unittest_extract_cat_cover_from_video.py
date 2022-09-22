@@ -32,7 +32,7 @@ with tmpfile(path=path, replace=True) as TF:
     )
     y = x.download([videoLink])
     # shall you use frame sampler instead of iterator? cause this is dumb.
-    breakpoint()
+    # breakpoint()
     from caer.video.frames_and_fps import get_duration
 
     duration = get_duration(path)
