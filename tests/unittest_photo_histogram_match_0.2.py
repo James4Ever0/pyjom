@@ -37,4 +37,5 @@ transfer_02 = source*0.8+transfer*0.2
 show_image("Source", source)
 show_image("Target", target)
 show_image("Transfer", transfer)
+show_image("Transfer_02", transfer_02)
 cv2.waitKey(0)
