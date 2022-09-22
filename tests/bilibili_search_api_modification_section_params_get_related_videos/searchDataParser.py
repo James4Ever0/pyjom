@@ -146,7 +146,8 @@ def parseSearchAllResult(data, debug=False):
         try:
             if elem["result_type"] == "video":
                 resultList = elem["data"]
-                for viterateResultList(resultList, debug=debug)
+                for videoMetadata in iterateResultList(resultList, debug=debug):
+                    yield videoMetadata
         except:
             traceError("error iterating data results")
 
