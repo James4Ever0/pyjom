@@ -1851,8 +1851,8 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     #         final_result_list.append((new_name, confidence))
     #     return final_result_list
 
-    # dataList = []
-    # for frame in getVideoFrameIteratorWithFPS(videoPath, -1, -1, fps=1):
+    dataList = []
+    for frame in getVideoFrameIteratorWithFPS(videoPath, -1, -1, fps=1):
     #     padded_resized_frame = resizeImageWithPadding(
     #         frame, 224, 224, border_type="replicate"
     #     )  # pass the test only if three of these containing 'cats'
@@ -1874,6 +1874,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     #         )
     #         # treat each as a separate observation in this frame.
     #         detections.append({"identity": label, "confidence": output})
+        detections =
         dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
