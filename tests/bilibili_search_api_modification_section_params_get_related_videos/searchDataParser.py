@@ -256,7 +256,7 @@ def parseVideoInfo(videoInfo, debug=False):
             videoInfo.update(arc)
             authorRelatedVideoInfo = parseVideoSearchItem(
                 videoInfo,
-                disableList=["tag", "typeid", "typename", "description", "author"],debug=debug
+                disableList=["tag", "typeid", "typename", "description", "author"], debug=debug
             )  # author is the same as the original video.
             secondaryVideoInfoList.append(authorRelatedVideoInfo)
             # BV1Cb4y1s7em
