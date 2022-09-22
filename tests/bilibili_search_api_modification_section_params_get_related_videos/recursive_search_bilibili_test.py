@@ -146,4 +146,5 @@ for title in title_list:
 
 from pyjom.modules.topicGenerator.onlineTopicGenerator import topicModeling
 
-topics = topicModeling(,lang='zh')
+topics = topicModeling(topic_modeling_source_sentences,lang='zh')
+
