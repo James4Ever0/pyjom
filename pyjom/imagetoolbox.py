@@ -399,6 +399,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
+    use_gpu=False
 ):
     curve_function_kwargs = {
         "start": (0, 0),
@@ -464,7 +465,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
         frame, 224, 224, border_type="replicate"
     )  # pass the test only if three of these containing 'cats'
     result = classifier.classification(
-        images=[padded_resized_frame], top_k=3, use_gpu=False # cuda oom?
+        images=[padded_resized_frame], top_k=3, use_gpu=use_gpu # cuda oom?
     )  # check it?
     resultList = paddleAnimalDetectionResultToList(result)
     final_result_list = translateResultListToDogCatList(resultList)
