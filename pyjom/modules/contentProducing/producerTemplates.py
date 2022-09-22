@@ -414,7 +414,7 @@ def renderList2MediaLang(
 @redisLRUCache()
 def getMusicInfoParsed(config):
     music = config["music"]
-    font = config["font"]
+    font = config.get("font",None)
     policy = config["policy"]
     policy_names = [x for x in policy.keys()]
     # get music duration here.
