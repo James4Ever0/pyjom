@@ -213,8 +213,10 @@ def getBilibiliPostMetadataForDogCat():
                 keywords = getKeywords[dog_or_cat]()
             # print(selected_topic_list_dict)
             # breakpoint()
-            if title_list != []:
-                if 
+            if len(title_list)> 3:
+                if len(cover_list) > 3:
+                    if len(tag_list)>3:
+                        # time to clean all things.
 
         except:
             import time
