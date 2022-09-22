@@ -168,6 +168,7 @@ elif test_subject == "video_related":
         videoInfo2 =videoInfo.copy()
         videoInfo2.update({'author': videoInfo['owner']['name']})
         videoInfo2.update({'mid': videoInfo['owner']['mid']})
+        try:
         parseVideoSearchItem(videoInfo2,disableList = ['tag','typeid','typename'])
 elif test_subject == 'extract_links':
     descripton = 
