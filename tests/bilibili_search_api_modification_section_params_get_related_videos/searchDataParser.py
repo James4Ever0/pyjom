@@ -103,7 +103,10 @@ def removeTitleTags(title, author):
         title_tags = [x.lstrip("【").rstrip("】").strip() for x in title_tags]
         title_tags = [x for x in title_tags if len(x)>0]
         for title_tag in title_tags:
-            if 
+            for keyword in author_keywords:
+                if len(keyword)>1:
+                    if keyword in title_tag:
+                        
 
     return title, title_tags
 
