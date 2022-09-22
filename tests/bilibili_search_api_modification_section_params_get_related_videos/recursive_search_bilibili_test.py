@@ -74,11 +74,10 @@ tag_list = []
 cover_list = []
 bvid_list = []
 
-duration_limit = {"min":70, 'max':5*60}
-play_limit = {"min": 10000}
+
 from pyjom.commons import checkMinMaxDict
 
-def updateMyLists(videoMetadata):
+def updateMyLists(videoMetadata,duration_limit = {"min":70, 'max':5*60},play_limit = {"min": 10000}):
     nonlocal bvid_list, bgm_list, title_list, tag_list, cover_list, bvid_list, description_list
     (
         author,
