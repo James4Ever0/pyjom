@@ -1768,14 +1768,6 @@ def getPaddleResnet50AnimalsClassifier():
     return classifier
 
 
-@lru_cache(maxsize=3)
-def labelFileReader(filename):
-    with open(filename, "r") as f:
-        content = f.read()
-        content = content.split("\n")
-        content = [elem.replace("\n", "").strip() for elem in content]
-        content = [elem for elem in content if len(elem) > 0]
-    return content
 
 
 from pyjom.mathlib import multiParameterExponentialNetwork
