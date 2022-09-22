@@ -294,8 +294,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                         if len(bgm_list) > 3:
                             # time to yield something.
                             # detect this thing!
-                            filtered_cover_list = []
-                            mCover = random.choice(filtered_cover_list) # what is this cover list?
+                            # filtered_cover_list = []
+                            # mCover = random.choice(filtered_cover_list) # what is this cover list?
                             reference_histogram_cover = random.choice(cover_list)
                             mTagSeries = randomChoiceTagList(
                                 tag_list
