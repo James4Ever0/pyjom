@@ -296,6 +296,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                             # detect this thing!
                             filtered_cover_list = []
                             mCover = random.choice(filtered_cover_list) # what is this cover list?
+                            reference_
                             mTagSeries = randomChoiceTagList(
                                 tag_list
                             )  # a collection of tags.
