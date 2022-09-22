@@ -90,6 +90,8 @@ def removeAuthorRelatedTags(description_or_title, author):
         description_or_title = description_or_title.replace(tag, "")
     return description_or_title
 
+def removeTitleTags()
+
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
     bvid = video["bvid"]
