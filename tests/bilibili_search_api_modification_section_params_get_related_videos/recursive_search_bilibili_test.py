@@ -21,7 +21,7 @@ os.environ["https_proxy"] = ""
 #     ],
 #     "dynamic": [["可爱", "萌", "萌宠", "行为", "燃"]],
 # }
-
+dynamic
 cat_metatopic = {
     "static": [
         ["喵喵", "猫", "猫咪", "喵"],
@@ -40,7 +40,7 @@ dog_metatopic = {
             "狗子",
         ],
     ],
-    "dynamic": [["可爱", "萌", "萌宠"], ["行为", "燃"],["搞笑", "逗比", "魔性"]],
+    "dynamic": dynamics,
 }
 
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
