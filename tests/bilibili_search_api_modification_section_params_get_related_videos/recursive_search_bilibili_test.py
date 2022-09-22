@@ -98,4 +98,5 @@ for videoMetadata in parseSearchVideoResult(result):
             bgm_list += bgms
             cover_list += [cover]
             title_list += [title]
-            description_list +=
+            description_list += [description]
+            tag_list += tags
