@@ -27,4 +27,5 @@ with tmpfile(path=path) as TF:
         mDetections.sort(key=lambda x: -x['confidence']) # select the best one.
         if len(mDetections)>0:
             best_confidence = mDetections[0]['confidence']
-            if (best_confidence, confidence_threshold)
+            if checkMinMaxDict(best_confidence, confidence_threshold):
+                
