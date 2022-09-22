@@ -26,6 +26,8 @@ def show_image(title, image, width = 300):
 source = cv2.imread(image_0)
 target = cv2.imread(image_1)
 
+target = 
+
 # transfer the color distribution from the source image
 # to the target image
 transfer = color_transfer(source, target)
