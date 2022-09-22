@@ -122,24 +122,25 @@ def getChineseStopWords():
     import json
     stopwords = []
     for filename in stopwordFileList:
-        if os.path.exists(filename) and os.path.isfile(filename):
-            try:
-                with open(filename,'r') as f:
-                    content = f.read()
-                if filename.endswith('.json'):
-                    try:
-                        mList = json.loads(content)
-                        assert type(mList) == list
-                        stopwords+=mList
-                    except:
-                        traceError(_breakpoint=True)
-                else:
-                    mList = content.split("\n")
-                    mList = [x.replace("\n",'').strip() for x in mList]
-                    mList = [x for x in mList if len(x)>0]
+        # if os.path.exists(filename) and os.path.isfile(filename):
+        try:
+            with open(filename,'r') as f:
+                content = f.read()
+            if filename.endswith('.json'):
+                try:
+                    mList = json.loads(content)
+                    assert type(mList) == list
                     stopwords+=mList
-            except:
-                traceError(_breakpoint=True)
+                except:
+                    traceError(_breakpoint=True)
+            else:
+                mList = content.split("\n")
+                mList = [x.replace("\n",'').strip() for x in mList]
+                mList = [x for x in mList if len(x)>0]
+                stopwords+=mList
+        except:
+            traceError(_breakpoint=True)
+    return traceError
 
 
 def chineseSentencePreprocessing(sentence):
