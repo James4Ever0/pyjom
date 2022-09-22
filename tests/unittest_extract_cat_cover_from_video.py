@@ -23,7 +23,7 @@ with tmpfile(path=path) as TF:
     duration = get_duration(path)
     mSampleSize = int(duration/2) # fps = 0.5 or something?
     for frame in getVideoFrameSampler(path, -1,-1,sample_size=mSampleSize,iterate=True):
-
+        text_area_ratio = getImageTextAreaRatio(frame)
         detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
         mDetections = [x for x in detections if x['identity'] == dog_or_cat]
         mDetections.sort(key=lambda x: -x['confidence']) # select the best one.
