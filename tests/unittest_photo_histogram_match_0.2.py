@@ -1,6 +1,11 @@
 # USAGE
 # python example.py --source images/ocean_sunset.jpg --target images/ocean_day.jpg
 
+image_0 = ""
+image_1 = ""
+
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
 # import the necessary packages
 from color_transfer import color_transfer
 import numpy as np
