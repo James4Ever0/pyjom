@@ -49,7 +49,7 @@ from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 
 def randomChoiceTagList(tag_list):
-    random.sample()
+    random.sample(tag_list,)
 
 def getBilibiliPostMetadataForDogCat():
     import random
