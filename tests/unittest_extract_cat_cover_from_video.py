@@ -20,6 +20,7 @@ with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,})
     y = x.download([videoLink])
 # shall you use frame sampler instead of iterator? cause this is dumb.
+    breakpoint()
     from caer.video.frames_and_fps import get_duration
     duration = get_duration(path)
     mSampleSize = int(duration/2) # fps = 0.5 or something?
