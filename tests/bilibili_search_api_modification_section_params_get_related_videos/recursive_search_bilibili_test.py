@@ -219,7 +219,8 @@ def getBilibiliPostMetadataForDogCat():
                         if len(bgm_list)>3:
                             # time to yield something.
                             mCover = random.choice(cover_list)
-                            mTag
+                            mTag = random.choice(tag_list)
+                            
 
         except:
             import time
