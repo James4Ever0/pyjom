@@ -104,12 +104,7 @@ def removeTitleTags(title, author):
         title_tags = [x for x in title_tags if len(x)>0]
         final_title_tags =[]
         for title_tag in title_tags:
-            abandon=False
-            for keyword in author_keywords:
-                if len(keyword)>1:
-                    if keyword in title_tag:
-                        abandon=True
-                        break
+
             if not abandon:
                 final_title_tags.append(title_tag)
 
