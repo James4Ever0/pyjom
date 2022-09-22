@@ -20,4 +20,5 @@ with tmpfile(path=path) as TF:
         mDetections = [x for x in detections if x['identity'] == dog_or_cat]
         mDetections.sort(key=lambda x: -x['confidence']) # select the best one.
         if len(mDetections)>0:
-            
+            best_confidence = mDetections[0]['confidence']
+            if best_confidence >
