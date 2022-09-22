@@ -2,6 +2,8 @@ import json
 from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
 
+def generatorToList(generator):
+    return [x for x in generator]
 
 def linkFixer(link, prefix="http:"):
     if link.startswith("//"):
@@ -249,8 +251,6 @@ def parseVideoRelated(videoRelatedData, debug=False):
     except:
         traceError()
 
-def generatorToList(generator):
-    return [x for x in generator]
 
 if __name__ == "__main__":
     # test_subject = "search_video"
