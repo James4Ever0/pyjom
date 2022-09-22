@@ -217,7 +217,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 from searchDataParser import parseVideoRelated
 
                 updateMyListsWithIterable(
-                    parseVideoRelated(result), debugTag="videoRelated"
+                    parseVideoRelated(result),debugTag="videoRelated"
                 )
 
             # now what do you want? suggested keywords?
