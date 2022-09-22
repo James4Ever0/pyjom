@@ -120,4 +120,4 @@ if len(bvid_list)>0:
     # then we get related videos.
     result = sync(v.get_related())
     from searchDataParser import parseVideoRelated
-    
+    for videoMetadata in parseVideoRelated(result):
