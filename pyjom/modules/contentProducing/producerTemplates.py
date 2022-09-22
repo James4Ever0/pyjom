@@ -558,7 +558,7 @@ def petsWithMusicOnlineProducer(
                 sprint("music path:",musicPath)
                 return False
             return True
-            report = corrputMedia
+            report = corrputMediaFilter(musicPath)
             if not report:
                 continue
 
