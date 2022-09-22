@@ -95,6 +95,7 @@ for videoMetadata in parseSearchVideoResult(result):
     ) = videoMetadata
     if checkMinMaxDict(duration_seconds, duration_limit):
         if checkMinMaxDict(play, play_limit):
+            bvid_list += [bvid]
             bgm_list += bgms
             cover_list += [cover]
             title_list += [title] # this for topic modeling?
