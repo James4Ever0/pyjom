@@ -262,8 +262,11 @@ if __name__ == "__main__":
     test_subject = 'video_related'
     # test_subject = "video_info"
     # test_subject = 'extract_links'
+    if test_subject == 'generator_to_list':
+        parseSearchAllResult(data)
+        print(result)
 
-    if test_subject == "search_all":
+    elif test_subject == "search_all":
         with open("search_result_all.json", "r") as f:
             data = f.read()
             data = json.loads(data)
