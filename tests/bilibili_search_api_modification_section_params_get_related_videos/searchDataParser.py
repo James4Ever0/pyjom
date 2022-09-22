@@ -31,11 +31,12 @@ def extractLinks(description, extract_bgm=True):
     desc_without_link = re.sub(expression, "", description)
     desc_without_link_per_line = [x.replace("\n", "").strip() for x in desc_without_link.split("\n")]
     bgms = []
-    for line in desc_without_link_per_line:
-        bgmCandidates = ["{}：", "{} ","{}:"]
-        for candidate in bgmCandidates:
-            if line.lower().startswith(candidate):
-    
+    if extract_bgm:
+        for line in desc_without_link_per_line:
+            bgmCandidates = ["{}：", "{} ","{}:"]
+            for candidate in bgmCandidates:
+                if line.lower().startswith(candidate):
+        
     return links,bgms, desc_without_link
 
 
