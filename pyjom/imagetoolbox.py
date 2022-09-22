@@ -72,7 +72,7 @@ def imageFourCornersInpainting(image):
         w, h = x2 - x1, y2 - y1
         x, y = x1, y1
         cv2.rectangle(img, (x, y), (x + w, y + h), 255, -1)
-    
+    return cv2.inpaint(image, img, 3, cv2.INPAINT_TELEA)
 
 
 def getImageTextAreaRatio(
