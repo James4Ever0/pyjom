@@ -74,6 +74,7 @@ tags = []
 covers = []
 
 duration_limit = {"min":70, 'max':5*60}
+play_limit = {"min": 10000}
 from pyjom.commons import checkMinMaxDict
 
 for videoMetadata in parseSearchVideoResult(result):
@@ -93,4 +94,5 @@ for videoMetadata in parseSearchVideoResult(result):
         bgms,
     ) = videoMetadata
     if checkMinMaxDict(duration_seconds, duration_limit):
-        if checkMinMaxDict(play, play_limit)
+        if checkMinMaxDict(play, play_limit):
+            
