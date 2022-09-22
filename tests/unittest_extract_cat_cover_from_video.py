@@ -16,7 +16,7 @@ dog_or_cat = "dog"
 confidence_threshold = {"min":0.7}
 text_area_threshold = {"max":0.2}
 
-with tmpfile(path=path) as TF:
+with tmpfile(path=path, replace=True) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,})
     y = x.download([videoLink])
 # shall you use frame sampler instead of iterator? cause this is dumb.
