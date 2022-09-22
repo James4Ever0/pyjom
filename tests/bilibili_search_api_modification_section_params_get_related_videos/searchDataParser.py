@@ -86,7 +86,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     if "description" not in disableList:
         description = video.get("description", video.get("desc"))
         description = clearHtmlTags(description)
-        description = removeAuthorRelated
+        description = removeAuthorRelatedTags(description, author)
     else:
         description = ""
     links_in_description, description = extractLinks(description)
