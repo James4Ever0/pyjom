@@ -558,8 +558,9 @@ def petsWithMusicOnlineProducer(
                 sprint("music path:",musicPath)
                 return False
             return True
+            report = checkMusicValidity
             if not report:
-                    continue
+                continue
 
             render_ass = config.get('render_ass', False)
             parsed_result = getMusicInfoParsed(config)
