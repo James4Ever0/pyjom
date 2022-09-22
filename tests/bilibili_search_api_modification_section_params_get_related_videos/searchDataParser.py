@@ -219,7 +219,7 @@ def parseSearchVideoResult(data, debug=False):
     # if not generator:
     #     return generatorToList(parseSearchVideoResult(data, debug=debug,generator=True))
     try:
-        resultList = data["result"]
+        resultList = data.get("result",[])
         try:
             for videoMetadata in iterateResultList(resultList, debug=debug):
                 try:
