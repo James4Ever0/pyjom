@@ -55,6 +55,13 @@ def getBilibiliPostMetadataForDogCat():
         }
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
     dog_or_cat = randomTarget()
+
+    description_list = []
+    bgm_list = []
+    title_list = []
+    tag_list = []
+    cover_list = []
+    bvid_list = []
     while True:
         try:
             getKeywords = {"dog":lambda:getMetaTopicString(dog_metatopic),"cat":lambda:getMetaTopicString(cat_metatopic)}
