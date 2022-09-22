@@ -665,6 +665,8 @@ def petsWithMusicOnlineProducer(
                 final_output_location
             ).run(overwrite_output=True)
             yield final_output_location  # another generator?
+            except:
+                from lazero.utils.logger import 
 
 
 def getProducerTemplate(template: str):
