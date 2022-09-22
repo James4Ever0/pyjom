@@ -26,7 +26,7 @@ text_area_threshold = {"max": 0.2}
 with tmpfile(path=path, replace=True) as TF:
     x = yt_dlp.YoutubeDL(
         {
-            "outtmpl": path, # seems only video 
+            "outtmpl": path, # seems only video p1 is download.
         }
     )
     y = x.download([videoLink])
