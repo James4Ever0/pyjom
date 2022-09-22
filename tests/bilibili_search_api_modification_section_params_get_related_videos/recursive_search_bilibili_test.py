@@ -73,7 +73,7 @@ titles = []
 tags = []
 covers = []
 
-duration_limit = {"min":}
+duration_limit = {"min":70, 'max':5*60}
 
 for videoMetadata in parseSearchVideoResult(result):
     (
