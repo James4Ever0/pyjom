@@ -301,7 +301,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 os.environ['http'] = ""
                                 os.environ['https'] = ""
                                 import requests
-                                r = requests.get
+                                r = requests.get()
                                 image = cv2.imread()
                             # mCover = random.choice(filtered_cover_list) # what is this cover list?
                             reference_histogram_cover = random.choice(cover_list)
