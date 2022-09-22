@@ -57,7 +57,7 @@ import random
 getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid,BSP.all.tids.动物圈.汪星人])
 getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid,BSP.all.tids.动物圈.喵星人])
 
-getRandomPage = lambda: random.randint(1,50)
+getRandomPage = lambda: random.randint(1,50)# broad range!
 print(metatopicString)
 
 # we use video only search.
