@@ -19,6 +19,7 @@ def getDeltaWidthHeight(defaultWidth, defaultHeight):
     )
     return deltaWidth, deltaHeight
 
+
 def getFourCorners(x, y, defaultWidth, defaultHeight):
     deltaWidth, deltaHeight = getDeltaWidthHeight(defaultWidth, defaultHeight)
     # (x1, y1), (x2, y2)
@@ -31,13 +32,12 @@ def getFourCorners(x, y, defaultWidth, defaultHeight):
         ],
         [(0, defaultHeight - deltaHeight), (deltaWidth, defaultHeight)],
     ]
-    fourCorners = [
-        [(a + x, b + y), (c + x, d + y)] for [(a, b), (c, d)] in fourCorners
-    ]
+    fourCorners = [[(a + x, b + y), (c + x, d + y)] for [(a, b), (c, d)] in fourCorners]
     return fourCorners
 
+
 @lru_cache(maxsize=1)
-def getEasyOCRReader(langs:tuple, gpu=True, recognizer=False):
+def getEasyOCRReader(langs: tuple, gpu=True, recognizer=False):
     import easyocr
 
     # no metal? no dbnet18?
@@ -61,16 +61,19 @@ def getImageTextAreaRecognized(
     else:
         return detection, recognition
 
+
 def imageFourCornersInpainting(image):
     if type(image) == str:
         image = cv2.imread(image)
     defaultHeight, defaultWidth = image.shape[:2]
-    fourCorners = getFourCorners(0,0, defaultWidth, defaultHeight)
+    fourCorners = getFourCorners(0, 0, defaultWidth, defaultHeight)
     img = np.zeros((defaultHeight, defaultWidth), dtype=np.uint8)
-    for (x1, y1), (x2, y2 )in fourCorners:
+    for (x1, y1), (x2, y2) in fourCorners:
         w, h = x2 - x1, y2 - y1
         x, y = x1, y1
         cv2.rectangle(img, (x, y), (x + w, y + h), 255, -1)
+    
+
 
 def getImageTextAreaRatio(
     image,
