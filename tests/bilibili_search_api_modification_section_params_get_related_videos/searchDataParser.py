@@ -58,7 +58,7 @@ def clearHtmlTags(htmlObject):
     return a.text
 
 def removeAuthorRelatedTags(description, author):
-    "@{}", "【】",
+    "@{}", "【{}】",
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
