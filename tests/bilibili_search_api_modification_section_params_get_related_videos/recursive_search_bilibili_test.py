@@ -237,7 +237,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                             mTitle = random.choice(title_list)
                             mBgm = random.choice(bgm_list)
                             yield mCover, mTagSeries, mTitle, mBgm, dog_or_cat
-                            
+                            clearMyLists()
         except:
             import time
 
