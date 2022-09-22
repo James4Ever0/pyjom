@@ -67,4 +67,5 @@ result = sync(
 
 from searchDataParser import parseSearchVideoResult
 
-for videoMetadata in parseSearchVideoResult()
+for videoMetadata in parseSearchVideoResult(result):
+    
