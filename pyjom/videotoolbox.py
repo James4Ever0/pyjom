@@ -348,6 +348,7 @@ def getVideoWidthHeight(videoPath):
     # breakpoint()
     defaultWidth = infoData["videoWidth"]
     defaultHeight = infoData["videoHeight"]
+    # do not use this one.
     return defaultWidth, defaultHeight
 
 
