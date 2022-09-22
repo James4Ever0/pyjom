@@ -46,6 +46,9 @@ dog_metatopic = {
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 
+core_topic_set = {
+        *flattenUnhashableList(dog_metaTopic)
+    }
 metatopicString = getMetaTopicString(dog_metatopic)
 import random
 getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid,BSP.all.tids.动物圈.汪星人])
