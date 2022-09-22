@@ -50,7 +50,7 @@ from lazero.utils.tools import flattenUnhashableList  # one of my classic method
 
 def randomChoiceTagList(tag_list):
     selected_tags = random.sample(tag_list,3)
-    selected_tags = [random.sample(tags, len(tags,)) for tags in selected_tags]
+    selected_tags = [random.sample(tags, min(len(tags),2)) for tags in selected_tags]
     return list(set(selected_tags))
 
 def getBilibiliPostMetadataForDogCat():
