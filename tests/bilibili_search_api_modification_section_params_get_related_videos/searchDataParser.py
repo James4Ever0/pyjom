@@ -39,7 +39,8 @@ def extractLinks(description, extract_bgm=True):
             bgmCandidates = [x.format('bgm') for x in bgmCandidateTemplates]
             for candidate in bgmCandidates:
                 if line.lower().startswith(candidate):
-                    bgm = len(bgmCandidates)
+                    bgm = [len(bgmCandidates):line]
+                    
         
     return links,bgms, desc_without_link
 
