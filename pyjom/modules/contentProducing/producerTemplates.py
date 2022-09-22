@@ -667,7 +667,8 @@ def petsWithMusicOnlineProducer(
                         final_output_location
                     ).run(overwrite_output=True)
                 else:
-                    os.
+                    import shutil
+                    shutil.move()
                 yield final_output_location  # another generator?
             except:
                 from lazero.utils.logger import traceError
