@@ -545,7 +545,7 @@ def petsWithMusicOnlineProducer(
             tempdir, ".".join([str(uuid.uuid4()), extension])
         )
         for config in configs:
-            musicPath = 
+            musicPath = config['']
             from pyjom.commons import corruptMediaFilter(musicPath)
             render_ass = config.get('render_ass', False)
             parsed_result = getMusicInfoParsed(config)
