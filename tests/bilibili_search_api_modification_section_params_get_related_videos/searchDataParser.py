@@ -29,9 +29,9 @@ def extractLinks(description, extract_bgm=True):
     if links == None:
         links = []
     desc_without_link = re.sub(expression, "", description)
-    desc_without_link_per_line = "\n".join(
-        [x.replace("\n", "").strip() for x in desc_without_link.split("\n")]
-    )
+    desc_without_link_per_line = [x.replace("\n", "").strip() for x in desc_without_link.split("\n")]
+    
+    
     return links,bgms, desc_without_link
 
 
