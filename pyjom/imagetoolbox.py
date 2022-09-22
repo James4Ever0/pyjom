@@ -367,7 +367,7 @@ def resizeImageWithPadding(
         raise Exception("unknown border_type: %s" % border_type)
     return padded
 
-def bezierPaddleHubResnet50VideoDogCatDetector(
+def bezierPaddleHubResnet50ImageDogCatDetector(
     videoPath,
     input_bias=0.0830047243746045,
     skew=-0.4986098769473948,
@@ -375,7 +375,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False):
-    from pyjom.imagetoolbox import resizeImageWithPadding
+    # from pyjom.imagetoolbox import resizeImageWithPadding
 
     dog_suffixs = ["狗", "犬", "梗"]
     cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
