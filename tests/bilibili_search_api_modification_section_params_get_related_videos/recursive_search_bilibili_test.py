@@ -132,3 +132,4 @@ suggested_queries = sync(search.get_suggest_keywords(keyword = metatopicString))
 # now we need to collect the keywords.
 # notice: we can only update this for selected topic like cat or dog. these keywords might not be shared.
 
+topic_modeling_source_sentences = []
