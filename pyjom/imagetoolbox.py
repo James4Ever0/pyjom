@@ -464,7 +464,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
         frame, 224, 224, border_type="replicate"
     )  # pass the test only if three of these containing 'cats'
     result = classifier.classification(
-        images=[padded_resized_frame], top_k=3, use_gpu=False
+        images=[padded_resized_frame], top_k=3, use_gpu=False # cuda oom?
     )  # check it?
     resultList = paddleAnimalDetectionResultToList(result)
     final_result_list = translateResultListToDogCatList(resultList)
