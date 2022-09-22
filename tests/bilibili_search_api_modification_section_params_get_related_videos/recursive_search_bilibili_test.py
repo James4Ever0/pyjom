@@ -96,8 +96,8 @@ def updateMyLists(videoMetadata,duration_limit = {"min":70, 'max':5*60},play_lim
         links_in_description,
         bgms,
     ) = videoMetadata
-    
-    bgm_list += bgms
+    if len(bgms)>0:
+        bgm_list += bgms
     if checkMinMaxDict(duration_seconds, duration_limit):
         if checkMinMaxDict(play, play_limit):
             bvid_list += [bvid]
