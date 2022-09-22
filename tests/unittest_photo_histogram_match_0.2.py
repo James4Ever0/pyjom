@@ -26,6 +26,8 @@ def show_image(title, image, width = 300):
 source = cv2.imread(image_0)
 target = cv2.imread(image_1)
 
+# we inpaint this one from the beginning.
+from pyjom
 target = 
 
 # transfer the color distribution from the source image
