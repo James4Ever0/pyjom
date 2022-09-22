@@ -78,7 +78,7 @@ def getBilibiliPostMetadataForDogCat():
     )
     getTid = {"dog": getDogTid, "cat": getCatTid}
 
-    getRandomPage = lambda: random.randint(1, 50)  # broad range!
+    getRandomPage = lambda: random.randint(1, 5)  # broad range!
     while True:
         try:
 
