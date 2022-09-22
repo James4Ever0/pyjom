@@ -60,7 +60,9 @@ def clearHtmlTags(htmlObject):
 def removeAuthorRelatedTags(description, author):
     templates = ["@{}", "【{}】","{}"]
     tags = [template.format(author) for template in templates]
-    
+    for tag in tags:
+        description = description.replace(tag,"")
+    return 
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
