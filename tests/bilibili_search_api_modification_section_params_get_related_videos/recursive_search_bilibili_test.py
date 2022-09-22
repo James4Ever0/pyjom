@@ -67,11 +67,6 @@ def getBilibiliPostMetadataForDogCat():
         "dog": lambda: getMetaTopicString(dog_metatopic),
         "cat": lambda: getMetaTopicString(cat_metatopic),
     }
-    while True:
-        try:
-
-            metatopicString = getKeywords[dog_or_cat]()
-            import random
 
             getDogTid = lambda: random.choice(
                 [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人]
@@ -82,6 +77,12 @@ def getBilibiliPostMetadataForDogCat():
             getTid = {"dog": getDogTid, "cat": getCatTid}
 
             getRandomPage = lambda: random.randint(1, 50)  # broad range!
+    while True:
+        try:
+
+            metatopicString = getKeywords[dog_or_cat]()
+            import random
+
             print("METATOPIC STRING:", metatopicString)
 
             # we use video only search.
