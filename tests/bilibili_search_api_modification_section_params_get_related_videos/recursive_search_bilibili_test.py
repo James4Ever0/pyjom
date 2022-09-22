@@ -73,6 +73,8 @@ titles = []
 tags = []
 covers = []
 
+# no need to do advanced math here. fuck this shit.
+
 for videoMetadata in parseSearchVideoResult(result):
     (
         author,
