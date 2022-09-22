@@ -659,6 +659,8 @@ def petsWithMusicOnlineProducer(
                 )  # how to control its 'fast' parameter?
                 # maybe we need render the lyric file separately.
                 # using a ffmpeg filter.
+                print('RENDERED MEDIA LOCATION:',rendered_media_location)
+                breakpoint()
 
                 final_output_location = getRandomFileName("mp4")
                 if render_ass:
