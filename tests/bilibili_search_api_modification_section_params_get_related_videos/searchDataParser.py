@@ -158,8 +158,8 @@ def parseSearchVideoResult(data):
 
 
 if __name__ == "__main__":
-    # test_subject = "search_video"
-    test_subject = "search_all"
+    test_subject = "search_video"
+    # test_subject = "search_all"
     # test_subject = 'video_related'
     # test_subject = 'video_info'
     # test_subject = 'extract_links'
