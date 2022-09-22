@@ -163,13 +163,13 @@ elif test_subject == "video_related":
         data = f.read()
         data = json.loads(data)
     try:
-    for videoInfo in data:
+        for videoInfo in data:
         try:
-        videoInfo2 =videoInfo.copy()
-        videoInfo2.update({'author': videoInfo['owner']['name']})
-        videoInfo2.update({'mid': videoInfo['owner']['mid']})
-        try:
-        parseVideoSearchItem(videoInfo2,disableList = ['tag','typeid','typename'])
+            videoInfo2 =videoInfo.copy()
+            videoInfo2.update({'author': videoInfo['owner']['name']})
+            videoInfo2.update({'mid': videoInfo['owner']['mid']})
+            try:
+                parseVideoSearchItem(videoInfo2,disableList = ['tag','typeid','typename'])
 elif test_subject == 'extract_links':
     descripton = 
 else:
