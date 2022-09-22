@@ -490,7 +490,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         render_list,
         slient=True,
         bgm=music["filepath"],
-        producer="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
+        backend= "editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
     )  # what is the backend?
 
     # print(medialangObject)
@@ -546,18 +546,7 @@ def petsWithMusicOnlineProducer(
         )
         for config in configs:
             musicPath = config.get('music',"")
-            if os.path.exists(musicPath):
-                from pyjom.commons import corruptMediaFilter
-                report = corruptMediaFilter(musicPath)
-                if not report:
-                    print("music file corrputed")
-                    sprint("music path:",musicPath)
-                    return False
-            else:
-                print('music file does not exist')
-                sprint("music path:",musicPath)
-                return False
-            return True
+            from pyjom.commons import corruptMediaFilter
             report = corrputMediaFilter(musicPath)
             if not report:
                 continue
