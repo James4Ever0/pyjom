@@ -146,6 +146,7 @@ def chineseSentencePreprocessing(sentence):
     import jieba
     import string
     from zhon.hanzi import punctuation
+    chinese_stopwords = getChineseStopWords()
     words=jieba.lcut(sentence)
     rows = []
     for word in words:
