@@ -165,3 +165,4 @@ if selectedWord is not None:
 else:
     keywords = getKeywords()
 print(selected_topic_list_dict)
+breakpoint()
