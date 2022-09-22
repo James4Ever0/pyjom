@@ -1768,10 +1768,6 @@ def yolov5VideoDogCatDetector(
 #     return classifier
 
 
-
-
-from pyjom.mathlib import multiParameterExponentialNetwork
-
 # {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 def bezierPaddleHubResnet50VideoDogCatDetector(
     videoPath,
