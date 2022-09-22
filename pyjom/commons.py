@@ -85,8 +85,7 @@ def frameSizeFilter(frameMeta, frame_size_filter):
 
 
 def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
-    try:
-        assert [x for x in minMaxDict.keys() if x not in ['min', 'max']] == []
+    assert [x for x in minMaxDict.keys() if x not in ['min', 'max']] == []
     
     try:
         minVal = minMaxDict.get("min", value)
