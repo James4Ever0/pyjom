@@ -28,6 +28,7 @@ import os
 # with tmpfile(path=path, replace=True) as TF:
 if os.path.exists(path):
     os.remove(path)
+
 x = yt_dlp.YoutubeDL(
     {
         "outtmpl": path, # seems only video p1 is downloaded.
