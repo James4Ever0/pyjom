@@ -103,6 +103,7 @@ def updateMyLists(videoMetadata,duration_limit = {"min":70, 'max':5*60},play_lim
         description,
         links_in_description,
         bgms,
+        title_tags
     ) = videoMetadata
     if len(bgms)>0:
         bgm_list += bgms
