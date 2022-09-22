@@ -197,7 +197,7 @@ def parseVideoInfo(videoInfo):
     data_copy.update({"author": data["owner"]["name"], "mid": data["owner"]["mid"]})
     data_copy.update(data["stat"])
     primaryVideoInfo = parseVideoSearchItem(
-        data_copy, disableList=["tag", "typeid", "typename"]
+        data_copy, disableList=["tag", "typeid", "typename"], debug=debug
     )
     # videoInfoList.append(primaryVideoInfo)
     season = data["ugc_season"]  # we only care about this thing.
@@ -227,7 +227,7 @@ def parseVideoInfo(videoInfo):
             # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
     return primaryVideoInfo, secondaryVideoInfoList
 
-def parseVideoRelated(videoRelatedData):
+def parseVideoRelated(videoRelatedData, debug=False):
     data = videoRelatedData
     try:
         for videoInfo in data:
