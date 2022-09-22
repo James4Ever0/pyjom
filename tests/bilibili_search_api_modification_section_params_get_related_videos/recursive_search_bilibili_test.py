@@ -55,7 +55,7 @@ def randomChoiceTagList(tag_list):
     selected_tags = random.sample(tag_list, 3)
     selected_tags = [random.sample(tags, min(len(tags), 2)) for tags in selected_tags]
     # flatten this thing.
-    selected_tags = 
+    selected_tags = flattenUnhashableList(selected_tags)
     return list(set(selected_tags))
 
 
