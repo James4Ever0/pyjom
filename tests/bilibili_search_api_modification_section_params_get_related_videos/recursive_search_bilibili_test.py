@@ -96,13 +96,15 @@ def updateMyLists(videoMetadata,duration_limit = {"min":70, 'max':5*60},play_lim
         links_in_description,
         bgms,
     ) = videoMetadata
+    
+    bgm_list += bgms
     if checkMinMaxDict(duration_seconds, duration_limit):
         if checkMinMaxDict(play, play_limit):
             bvid_list += [bvid]
-            bgm_list += bgms
             cover_list += [cover]
             title_list += [title] # this for topic modeling?
-            description_list += [description]
+            if description not in ["", None]:
+                description_list += [description]
             if len(tags)>0:
                 tag_list += [tags] # are you sure? this will make the tag_list into different shape!
 
