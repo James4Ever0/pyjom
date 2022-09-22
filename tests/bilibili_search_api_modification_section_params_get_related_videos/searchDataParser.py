@@ -90,7 +90,9 @@ def removeAuthorRelatedTags(description_or_title, author):
         description_or_title = description_or_title.replace(tag, "")
     return description_or_title
 
-def removeTitleTags()
+def removeTitleTags(title, author):
+    import re
+    re.findall("")
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
