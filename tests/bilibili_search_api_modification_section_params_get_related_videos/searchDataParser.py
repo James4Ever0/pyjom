@@ -234,7 +234,9 @@ if __name__ == "__main__":
                 # 217
                 # 27911
                 # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
-        
+        for mVideoInfo in videoInfoList:
+            print(mVideoInfo)
+            sprint()
     elif test_subject == "video_related":
         with open("video_related.json", "r") as f:
             data = f.read()
