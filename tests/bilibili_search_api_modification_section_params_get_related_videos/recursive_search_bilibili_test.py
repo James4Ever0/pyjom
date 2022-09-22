@@ -228,8 +228,7 @@ def getBilibiliPostMetadataForDogCat():
             # breakpoint()
         except:
             import time
-
-            time.sleep(2)
+            time.sleep(sleepTime)
             from lazero.utils.logger import traceError
 
             traceError("error when fetching metatopic")
