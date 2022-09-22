@@ -252,6 +252,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
             selectedWord = topicWordSelection(
                 topics, core_topic_set, selected_topic_list_dict[dog_or_cat]
             )
+            dog_or_cat_original = dog_or_cat
             dog_or_cat = randomTarget()
             if selectedWord is not None:
                 keywords = " ".join(
@@ -273,7 +274,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                             )  # a collection of tags.
                             mTitle = random.choice(title_list)
                             mBgm = random.choice(bgm_list)
-                            yield mCover, mTagSeries, mTitle, mBgm, dog_or_cat
+                            yield mCover, mTagSeries, mTitle, mBgm, dog_or_cat_original
                             clearMyLists()
         except:
             import time
