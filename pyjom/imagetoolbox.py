@@ -32,6 +32,8 @@ def getImageTextAreaRecognized(
         return detection, recognition
 
 def imageCornersInpainting(image):
+    if type(image) == str:
+        image = cv2.imread(image)
     
 
 def getImageTextAreaRatio(
