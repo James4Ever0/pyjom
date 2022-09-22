@@ -62,7 +62,7 @@ def getBilibiliPostMetadataForDogCat():
     getTid = {"dog":getDogTid,'cat':getCatTid}
 
     getRandomPage = lambda: random.randint(1,50)# broad range!
-    print(metatopicString)
+    print("METATOPIC STRING:",metatopicString)
 
     # we use video only search.
 
