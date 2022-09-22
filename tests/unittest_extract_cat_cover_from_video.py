@@ -8,12 +8,12 @@ import yt_dlp
 path = "/dev/shm/testVideo.mp4"
 from test_commons import *
 from pyjom.videotoolbox import getVideoFrameSampler
-from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetector
+from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetector, getImageTextAreaRatio
 from pyjom.commons import checkMinMaxDict
 
 dog_or_cat = "dog"
 confidence_threshold = {"min":0.7}
-text_threshold = {"max":0.2}
+text_area_threshold = {"max":0.2}
 
 with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
