@@ -112,3 +112,35 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
 
     topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
     return topics
+
+
+def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
+    dataList = []
+    for sentence in sentences:
+        for x in "\n\r\t":
+            sentence = sentence.replace(x, "")
+        sentence = sentence.strip()
+        row = englishSentencePreprocessing(sentence)
+        elem = " ".join(row)
+        dataList.append(elem)
+
+    data = "\n".join(dataList)
+
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
+    # 创建一个CountVectoerizer实例
+    tfidf = TfidfVectorizer(ngram_range=ngram_range)
+    # 打开刚刚保存的txt文档
+    from io import StringIO
+
+    f = StringIO(data)
+    # 使用CountVectorizer拟合数据
+    x_train = tfidf.fit_transform(f)
+
+    from sklearn.decomposition import LatentDirichletAllocation
+
+    lda = LatentDirichletAllocation(n_components=n_components)
+    lda.fit(x_train)
+
+    topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
+    return topics
