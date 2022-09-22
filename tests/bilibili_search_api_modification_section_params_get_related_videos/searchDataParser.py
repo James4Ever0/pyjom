@@ -90,7 +90,7 @@ def parseVideoSearchItem(video, disableList:list=[], debug=False):
 
 # you might want the creater's name, to filter out unwanted parts.
 
-def iterateResultList(resultList):
+def iterateResultList(resultList, debug=False):
     for video in resultList:
         # be warned cause all these things might fail.
         try:
