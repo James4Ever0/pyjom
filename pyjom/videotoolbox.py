@@ -1865,10 +1865,10 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
         detections =bezierPaddleHubResnet50ImageDogCatDetector(
     image,
     input_bias=0.0830047243746045,
-    skew=-0.4986098769473948,
-    threshold=0.5,
-    dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
-    cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
+    skew=skew,
+    threshold=threshold,
+    dog_label_file_path=dog_label_file_path,
+    cat_label_file_path=cat_label_file_path,
     debug=False)
         dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
