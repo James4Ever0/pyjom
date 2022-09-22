@@ -160,7 +160,9 @@ def parseSearchVideoResult(data):
                 try:
                     yield videoMetadata
                 except:
-                    
+                    traceError("error iterating video metadata")
+        except:
+            traceError("error iterating
             
 
 
