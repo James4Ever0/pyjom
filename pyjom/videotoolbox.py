@@ -7,7 +7,7 @@ import cv2
 from pyjom.imagetoolbox import *
 from functools import lru_cache
 
-def corruptVideoFilter(videoPath):
+def corruptMediaFilter(mediaPath, tag='media'):
     import ffmpeg
     not_nice = ["invalid", "failed", "error"]
     corrupted = False
@@ -35,6 +35,8 @@ def corruptVideoFilter(videoPath):
     # return True for fine video.
     valid = not corrupted
     return valid
+def corruptVideoFilter(videoPath):
+
 
 
 def dummyFilterFunction(report: bool, *args, **kwargs):
