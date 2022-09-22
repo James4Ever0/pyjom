@@ -1,4 +1,6 @@
-videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em"
+videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em" # this is a dog.
+
+videoLink = "https://www.bilibili.com/video/BV1Lx411B7X6/?spm_id_from=333.999.0.0&vd_source=6618ea7997bbb48ddb25d4b81813ad90"
 
 from lazero.filesystem.temp import tmpfile
 
