@@ -191,31 +191,6 @@ def parseSearchVideoResult(data):
 
 def parseVideoInfo(videoInfo):
 
-if __name__ == "__main__":
-    # test_subject = "search_video"
-    test_subject = "search_all"
-    # test_subject = 'video_related'
-    # test_subject = "video_info"
-    # test_subject = 'extract_links'
-
-    if test_subject == "search_all":
-        with open("search_result_all.json", "r") as f:
-            data = f.read()
-            data = json.loads(data)
-        for mresult in parseSearchAllResult(data):
-            print("RESULT:")
-            sprint(mresult)
-    elif test_subject == "search_video":
-        with open("search_by_type_result_video.json", "r") as f:
-            data = f.read()
-            data = json.loads(data)
-        for mresult in parseSearchVideoResult(data):
-            print("VIDEO SEARCH RESULT:")
-            sprint(mresult)
-    elif test_subject == "video_info":
-        with open("video_info.json", "r") as f:
-            data = f.read()
-            data = json.loads(data)
         # no tag out here.
         secondaryVideoInfoList = []
         data_copy = data.copy()
@@ -250,9 +225,36 @@ if __name__ == "__main__":
                 # 217
                 # 27911
                 # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
-        for mVideoInfo in videoInfoList:
-            print(mVideoInfo)
-            sprint()
+
+if __name__ == "__main__":
+    # test_subject = "search_video"
+    test_subject = "search_all"
+    # test_subject = 'video_related'
+    # test_subject = "video_info"
+    # test_subject = 'extract_links'
+
+    if test_subject == "search_all":
+        with open("search_result_all.json", "r") as f:
+            data = f.read()
+            data = json.loads(data)
+        for mresult in parseSearchAllResult(data):
+            print("RESULT:")
+            sprint(mresult)
+    elif test_subject == "search_video":
+        with open("search_by_type_result_video.json", "r") as f:
+            data = f.read()
+            data = json.loads(data)
+        for mresult in parseSearchVideoResult(data):
+            print("VIDEO SEARCH RESULT:")
+            sprint(mresult)
+    elif test_subject == "video_info":
+        with open("video_info.json", "r") as f:
+            data = f.read()
+            data = json.loads(data)
+
+        # for mVideoInfo in videoInfoList:
+        #     print(mVideoInfo)
+        #     sprint()
     elif test_subject == "video_related":
         with open("video_related.json", "r") as f:
             data = f.read()
