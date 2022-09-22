@@ -148,3 +148,6 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import topicModeling
 
 topics = topicModeling(topic_modeling_source_sentences,lang='zh')
 
+selectedWord = topicWordSelection(
+                        topics, core_topic_set, selected_topic_list
+                    )
