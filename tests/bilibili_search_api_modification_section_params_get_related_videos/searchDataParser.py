@@ -166,8 +166,8 @@ def iterateResultList(resultList, debug=False):
 
 
 def parseSearchAllResult(data, debug=False, generator=True):
-    if not generator:
-        return generatorToList(parseSearchAllResult(data, debug=debug,generator=True))
+    # if not generator:
+    #     return generatorToList(parseSearchAllResult(data, debug=debug,generator=True))
     results = data["result"]
     for elem in results:
         try:
