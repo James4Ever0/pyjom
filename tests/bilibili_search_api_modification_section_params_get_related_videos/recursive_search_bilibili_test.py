@@ -79,6 +79,7 @@ play_limit = {"min": 10000}
 from pyjom.commons import checkMinMaxDict
 
 def updateMyLists(videoMetadata):
+    nonlocal bvid_list
     (
         author,
         author_id,
