@@ -135,4 +135,5 @@ if type(suggested_queries) !=list:
 # notice: we can only update this for selected topic like cat or dog. these keywords might not be shared.
 
 topic_modeling_source_sentences = suggested_queries.copy()
-topic_modeling_source_sentences
+for tags in tag_list:
+    sentence = " ".join(tags)
