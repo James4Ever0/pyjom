@@ -40,12 +40,14 @@ def extractLinks(description, extract_bgm=True):
             has_bgm=False
             for candidate in bgmCandidates:
                 if line.lower().startswith(candidate):
+                    has_bgm = True
                     bgm = [len(bgmCandidates):line]
                     bgm = bgm.strip()
                     for fixer in fixers:
                         bgm = bgm.strip(fixer)
                     if len(bgm)>0:
                         bgms.append(bgm)
+                    break
         
     return links,bgms, desc_without_link
 
