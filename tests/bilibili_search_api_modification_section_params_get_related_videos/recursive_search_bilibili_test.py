@@ -133,7 +133,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
             def updateMyLists(
                 videoMetadata,
                 duration_limit={"min": 70, "max": 5 * 60},
-                play_limit={"min": 5000},debugTag="debug"
+                play_limit={"min": 5000},
+                debugTag="debug",
             ):
                 nonlocal bvid_list, bgm_list, title_list, tag_list, cover_list, bvid_list, description_list  # use nonlocal instead in nested functions.
                 (
@@ -155,10 +156,10 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 # print("VIDEO_METADATA",videoMetadata)
                 # breakpoint()
                 if duration_seconds == None:
-                    print(debugTag,"VIDEO_METADATA",videoMetadata)
+                    print(debugTag, "VIDEO_METADATA", videoMetadata)
                     breakpoint()
                 elif play == None:
-                    print(debugTag,"VIDEO_METADATA",videoMetadata)
+                    print(debugTag, "VIDEO_METADATA", videoMetadata)
                     breakpoint()
                 if len(bgms) > 0:
                     bgm_list += bgms
@@ -178,17 +179,19 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 iterable,
                 duration_limit={"min": 70, "max": 5 * 60},
                 play_limit={"min": 5000},
-                debugTag = "debug"
+                debugTag="debug",
             ):
                 for videoMetadata in iterable:
                     updateMyLists(
                         videoMetadata,
                         duration_limit=duration_limit,
                         play_limit=play_limit,
-                        debugTag = debugTag
+                        debugTag=debugTag,
                     )
 
-            updateMyListsWithIterable(parseSearchVideoResult(result),'searchVideoResult')
+            updateMyListsWithIterable(
+                parseSearchVideoResult(result), "searchVideoResult"
+            )
 
             # do the related video search?
             if len(bvid_list) > 0:
@@ -202,12 +205,16 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
 
                 primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(videoInfo)
                 # for videoMetadata in secondaryVideoInfoList:
-                updateMyListsWithIterable(secondaryVideoInfoList,debugTag = "secondaryVideoInfoList")
+                updateMyListsWithIterable(
+                    secondaryVideoInfoList, debugTag="secondaryVideoInfoList"
+                )
                 # then we get related videos.
                 result = sync(v.get_related())
                 from searchDataParser import parseVideoRelated
 
-                updateMyListsWithIterable(parseVideoRelated(result), debugTag = "videoRelated")
+                updateMyListsWithIterable(
+                    parseVideoRelated(result), debugTag="videoRelated"
+                )
 
             # now what do you want? suggested keywords?
             suggested_queries = sync(
