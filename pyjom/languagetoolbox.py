@@ -119,6 +119,9 @@ def chineseSentencePreprocessing(sentence):
     words=jieba.lcut(sentence)
     for word in words:
         word = word.strip()
+        if word in punctuation:
+            continue
+        elif word in english
 
 
 def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
