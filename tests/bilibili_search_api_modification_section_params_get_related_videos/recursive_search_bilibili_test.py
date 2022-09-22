@@ -217,15 +217,6 @@ def getBilibiliPostMetadataForDogCat():
                 keywords = getKeywords[dog_or_cat]()
             # print(selected_topic_list_dict)
             # breakpoint()
-            if len(title_list)> 3:
-                if len(cover_list) > 3:
-                    if len(tag_list)>3:
-                        if len(bgm_list)>3:
-                            # time to yield something.
-                            mCover = random.choice(cover_list)
-                            mTagSeries = randomChoiceTagList(tag_list) # a collection of tags.
-                            mTitle = random.choice(title_list)
-                            mBgm = random.choice(bgm_list)
         except:
             import time
 
