@@ -83,6 +83,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
 
     getRandomPage = lambda: random.randint(1,5)  # not so broad.
     # getRandomPage = lambda: random.randint(1, 50)  # broad range!
+    BSP.all.
     while True:
         try:
 
@@ -98,7 +99,6 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                     params={
                         "tids": getTid[dog_or_cat](),
                         "duration": BSP.all.duration._10分钟以下,
-                        BSP.all.
                     },
                     page=getRandomPage(),
                     search_type=search.SearchObjectType.VIDEO,
