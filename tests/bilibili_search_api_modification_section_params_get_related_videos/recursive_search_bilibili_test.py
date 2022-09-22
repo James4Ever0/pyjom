@@ -224,7 +224,7 @@ def getBilibiliPostMetadataForDogCat():
                             # time to yield something.
                             mCover = random.choice(cover_list)
                             mTagSeries = randomChoiceTagList(tag_list) # a collection of tags.
-                            m
+                            mTitle = random.choice(title_list)
 
 
 
