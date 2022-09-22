@@ -7,7 +7,7 @@ import yt_dlp
 
 path = "/dev/shm/testVideo.mp4"
 from test_commons import *
-from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
+from pyjom.videotoolbox import getVideoFrameSampler
 from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetector
 
 dog_or_cat = "dog"
