@@ -1,6 +1,6 @@
-videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em" # this is a dog.
+# videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em" # this is a dog.
 
-videoLink = "https://www.bilibili.com/video/BV1Lx411B7X6" # multipart 
+videoLink = "https://www.bilibili.com/video/BV1Lx411B7X6" # multipart download
 
 from lazero.filesystem.temp import tmpfile
 
