@@ -219,7 +219,7 @@ if __name__ == "__main__":
                 videoInfo = episode.copy()
                 videoInfo.update(stat)
                 videoInfo.update(arc)
-                primaryVideoInfo = parseVideoSearchItem(
+                authorRelatedVideoInfo = parseVideoSearchItem(
                     videoInfo,
                     disableList=["tag", "typeid", "typename", "description", "author"],
                 )  # author is the same as the original video.
