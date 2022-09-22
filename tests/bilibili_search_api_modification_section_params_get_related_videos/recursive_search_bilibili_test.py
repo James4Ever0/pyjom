@@ -88,7 +88,6 @@ def getBilibiliPostMetadataForDogCat():
 
             # we use video only search.
 
-
             result = sync(
                 search.search_by_type(
                     keyword=metatopicString,
