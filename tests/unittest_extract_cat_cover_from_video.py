@@ -26,40 +26,41 @@ gpu=False
 
 import os
 # with tmpfile(path=path, replace=True) as TF:
-os.path.exists(path)
-    x = yt_dlp.YoutubeDL(
-        {
-            "outtmpl": path, # seems only video p1 is downloaded.
-        }
-    )
-    y = x.download([videoLink])
-    # shall you use frame sampler instead of iterator? cause this is dumb.
-    # breakpoint()
-    from caer.video.frames_and_fps import get_duration
+if os.path.exists(path):
+    os.remove(path)
+x = yt_dlp.YoutubeDL(
+    {
+        "outtmpl": path, # seems only video p1 is downloaded.
+    }
+)
+y = x.download([videoLink])
+# shall you use frame sampler instead of iterator? cause this is dumb.
+# breakpoint()
+from caer.video.frames_and_fps import get_duration
 
-    duration = get_duration(path)
-    mSampleSize = int(duration / 2)  # fps = 0.5 or something?
-    processed_frame = None
-    for frame in getVideoFrameSampler(
-        path, -1, -1, sample_size=mSampleSize, iterate=True
-    ):
-        text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
-        print("TEXT AREA RATIO", text_area_ratio)
-        if checkMinMaxDict(text_area_ratio, text_area_threshold):
-            detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
-            mDetections = [x for x in detections if x["identity"] == dog_or_cat]
-            mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
-            if len(mDetections) > 0:
-                best_confidence = mDetections[0]["confidence"]
-                print("BEST CONFIDENCE:", best_confidence)
-                if checkMinMaxDict(best_confidence, confidence_threshold):
-                    target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
-                    target = imageFourCornersInpainting(target)
-                    processed_frame = target
-                    break
-    if processed_frame is not None:
-        print("COVER IMAGE FOUND!")
-        cv2.imshow("image", processed_frame)
-        cv2.waitKey(0)
-    else:
-        print("COVER NOT FOUND FOR %s" % videoLink)
+duration = get_duration(path)
+mSampleSize = int(duration / 2)  # fps = 0.5 or something?
+processed_frame = None
+for frame in getVideoFrameSampler(
+    path, -1, -1, sample_size=mSampleSize, iterate=True
+):
+    text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
+    print("TEXT AREA RATIO", text_area_ratio)
+    if checkMinMaxDict(text_area_ratio, text_area_threshold):
+        detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
+        mDetections = [x for x in detections if x["identity"] == dog_or_cat]
+        mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
+        if len(mDetections) > 0:
+            best_confidence = mDetections[0]["confidence"]
+            print("BEST CONFIDENCE:", best_confidence)
+            if checkMinMaxDict(best_confidence, confidence_threshold):
+                target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
+                target = imageFourCornersInpainting(target)
+                processed_frame = target
+                break
+if processed_frame is not None:
+    print("COVER IMAGE FOUND!")
+    cv2.imshow("image", processed_frame)
+    cv2.waitKey(0)
+else:
+    print("COVER NOT FOUND FOR %s" % videoLink)
