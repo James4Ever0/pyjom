@@ -118,11 +118,17 @@ def chineseSentencePreprocessing(sentence):
     import string
     from zhon.hanzi import punctuation
     words=jieba.lcut(sentence)
+    rows = []
     for word in words:
         word = word.strip()
         if word in punctuation:
             continue
         elif word in string.punctuation:
+            continue
+        elif word in stopwords:
+            continue
+        rows.append(word)
+    return rows
 
 
 def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
