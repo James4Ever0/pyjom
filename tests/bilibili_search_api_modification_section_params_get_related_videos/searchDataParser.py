@@ -280,6 +280,7 @@ def parseVideoRelated(videoRelatedData, debug=False):
                 videoInfo2.update({"author": videoInfo["owner"]["name"]})
                 videoInfo2.update({"mid": videoInfo["owner"]["mid"]})
                 # also update the stat.
+                videoInfo2.update(videoInfo
                 try:
                     yield parseVideoSearchItem(
                         videoInfo2, disableList=["tag", "typeid", "typename"], debug=debug
