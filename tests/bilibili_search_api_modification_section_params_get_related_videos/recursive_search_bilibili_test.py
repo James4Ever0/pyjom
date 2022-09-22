@@ -147,7 +147,7 @@ def getBilibiliPostMetadataForDogCat():
             def updateMyListsWithIterable(
                 iterable,
                 duration_limit={"min": 70, "max": 5 * 60},
-                play_limit={"min": 10000},
+                play_limit={"min": 5000},
             ):
                 for videoMetadata in iterable:
                     updateMyLists(
