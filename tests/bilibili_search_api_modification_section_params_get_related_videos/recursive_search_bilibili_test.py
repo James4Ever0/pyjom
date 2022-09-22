@@ -49,7 +49,8 @@ from bilibili_api import sync, search
 dog_metatopicString = getMetaTopicString(dog_metatopic)
 
 print(dog_metatopicString)
-# fo
+
+# we use video only search.
 
 BSP = search.bilibiliSearchParams()
 
