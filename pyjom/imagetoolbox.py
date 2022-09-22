@@ -368,4 +368,77 @@ def resizeImageWithPadding(
     return padded
 
 
-def image
+def
+    from pyjom.imagetoolbox import resizeImageWithPadding
+
+    dog_suffixs = ["狗", "犬", "梗"]
+    cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
+    dog_labels = labelFileReader(dog_label_file_path)
+    cat_labels = labelFileReader(cat_label_file_path)
+
+    forbidden_words = [
+        "灵猫",
+        "熊猫",
+        "猫狮",
+        "猫头鹰",
+        "丁丁猫儿",
+        "绿猫鸟",
+        "猫鼬",
+        "猫鱼",
+        "玻璃猫",
+        "猫眼",
+        "猫蛱蝶",
+    ]
+
+    def dog_cat_name_recognizer(name):
+        if name in dog_labels:
+            return "dog"
+        elif name in cat_labels:
+            return "cat"
+        elif name not in forbidden_words:
+            for dog_suffix in dog_suffixs:
+                if name.endswith(dog_suffix):
+                    return "dog"
+            for cat_suffix in cat_suffixs:
+                if name.endswith(cat_suffix):
+                    return "cat"
+        return None
+
+    classifier = getPaddleResnet50AnimalsClassifier()
+
+    def paddleAnimalDetectionResultToList(result):
+        resultDict = result[0]
+        resultList = [(key, value) for key, value in resultDict.items()]
+        resultList.sort(key=lambda item: -item[1])
+        return resultList
+
+    def translateResultListToDogCatList(resultList):
+        final_result_list = []
+        for name, confidence in resultList:
+            new_name = dog_cat_name_recognizer(name)
+            final_result_list.append((new_name, confidence))
+        return final_result_list
+
+    dataList = []
+    for frame in getVideoFrameIteratorWithFPS(videoPath, -1, -1, fps=1):
+        padded_resized_frame = resizeImageWithPadding(
+            frame, 224, 224, border_type="replicate"
+        )  # pass the test only if three of these containing 'cats'
+        result = classifier.classification(
+            images=[padded_resized_frame], top_k=3, use_gpu=False
+        )  # check it?
+        resultList = paddleAnimalDetectionResultToList(result)
+        final_result_list = translateResultListToDogCatList(resultList)
+        if debug:
+            sprint("RESULT LIST:", final_result_list)
+        detections = []
+        for index, (label, confidence) in enumerate(final_result_list):
+            scope = final_result_list[index:]
+            scope_confidences = [elem[1] for elem in scope if elem[0] == label]
+            output = multiParameterExponentialNetwork(
+                *scope_confidences,
+                input_bias=input_bias,
+                curve_function_kwargs=curve_function_kwargs,
+            )
+            # treat each as a separate observation in this frame.
+            detections.append({"identity": label, "confidence": output})
