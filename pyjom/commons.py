@@ -101,7 +101,8 @@ def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
         import traceback
         traceback.print_exc()
         print("WTF IS GOING ON WITH CHECK_MIN_MAX_DICT")
-        breakpoint()
+        # breakpoint()
+        return False # usually we have issue 
 
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
