@@ -92,7 +92,7 @@ def removeAuthorRelatedKeywords(title_tag,author_keywords):
     return abandon
 import jieba
 
-def removeAuthorRelatedTags(description_or_title, author):
+def removeAuthorRelatedTags(description_or_title, author, author_keywords):
     templates = ["【{}】", "@{}", "{}"]
     tags = [template.format(author) for template in templates]
     for tag in tags:
