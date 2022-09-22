@@ -178,13 +178,14 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 iterable,
                 duration_limit={"min": 70, "max": 5 * 60},
                 play_limit={"min": 5000},
-                
+                debugTag = "debug"
             ):
                 for videoMetadata in iterable:
                     updateMyLists(
                         videoMetadata,
                         duration_limit=duration_limit,
                         play_limit=play_limit,
+                        debugTag = "debug"
                     )
 
             updateMyListsWithIterable(parseSearchVideoResult(result))
