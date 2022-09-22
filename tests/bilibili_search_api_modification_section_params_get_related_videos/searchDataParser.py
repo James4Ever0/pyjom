@@ -58,7 +58,7 @@ def clearHtmlTags(htmlObject):
     return a.text
 
 def removeAuthorRelatedTags(description_or_title, author):
-    templates = ["@{}", "【{}】","{}"]
+    templates = ["【{}】","@{}", "{}"]
     tags = [template.format(author) for template in templates]
     for tag in tags:
         description_or_title = description_or_title.replace(tag,"")
