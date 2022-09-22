@@ -52,7 +52,7 @@ core_topic_set = {
         *flattenUnhashableList(dog_metatopic)
     }
 getKeywords = lambda:getMetaTopicString(dog_metatopic)
-metatopicString = e
+metatopicString = getKeywords()
 import random
 getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid,BSP.all.tids.动物圈.汪星人])
 getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid,BSP.all.tids.动物圈.喵星人])
