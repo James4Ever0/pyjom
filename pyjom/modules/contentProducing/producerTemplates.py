@@ -454,7 +454,9 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
     # config = {"music":{"filepath":"","lyric_path":""},"font":{"filepath":"","fontsize":30}, "policy":{"some_policy_name":{}},"meta":{"maxtime":3, "mintime":1}}
     # how to auto-warp the AAS subtitle?
-    musicPath = config.get('music',"")
+    # musicPath = config.get('music',"")
+    musicPath = config.get('music',{}).get('filepath',"")
+
     report = corruptMediaFilter(musicPath)
     if not report:
         return False
@@ -556,7 +558,7 @@ def petsWithMusicOnlineProducer(
             tempdir, ".".join([str(uuid.uuid4()), extension])
         )
         for config in configs:
-            musicPath = config.get('music',{})
+            musicPath = config.get('music',{}).get('filepath',"")
             # from pyjom.commons import corruptMediaFilter
             report = corruptMediaFilter(musicPath)
             if not report:
