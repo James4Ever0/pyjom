@@ -125,3 +125,5 @@ if len(bvid_list)>0:
     result = sync(v.get_related())
     from searchDataParser import parseVideoRelated
     updateMyListsWithIterable(parseVideoRelated(result))
+
+# now what do you want? related tags?
