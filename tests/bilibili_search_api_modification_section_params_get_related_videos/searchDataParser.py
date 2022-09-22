@@ -135,6 +135,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
             cover,
             description,
             links_in_description,
+            bgms,
         ):
             print(metadata)
     from lazero.utils.logger import sprint
