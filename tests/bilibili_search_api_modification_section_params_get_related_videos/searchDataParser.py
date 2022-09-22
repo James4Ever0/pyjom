@@ -27,8 +27,8 @@ def extractLinks(description, extract_bgm=True):
     expression = r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
     # expr = re.compile(expression)
     links = re.findall(expression, description)
-    if links == None:
-        links = []
+    # if links == None:
+    #     links = []
     desc_without_link = re.sub(expression, "", description)
     desc_without_link_per_line = [
         x.replace("\n", "").strip() for x in desc_without_link.split("\n")
@@ -113,14 +113,14 @@ def splitTitleTags(title,author_keywords):
     pattern = r"【.+】"
     title_tags = re.findall(pattern, title)
     title = re.sub(pattern, "",title)
-    
-        title_tags = [x.lstrip("【").rstrip("】").strip() for x in title_tags]
-        title_tags = [x for x in title_tags if len(x)>0]
-        final_title_tags =[]
-        for title_tag in title_tags:
-            detected = detectAuthorRelatedKeywords(title_tag, author_keywords)
-            if not detected:
-                final_title_tags.append(title_tag)
+
+    title_tags = [x.lstrip("【").rstrip("】").strip() for x in title_tags]
+    title_tags = [x for x in title_tags if len(x)>0]
+    final_title_tags =[]
+    for title_tag in title_tags:
+        detected = detectAuthorRelatedKeywords(title_tag, author_keywords)
+        if not detected:
+            final_title_tags.append(title_tag)
     return title, title_tags
 
 
