@@ -86,6 +86,9 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
         "dog": lambda: getMetaTopicString(dog_metatopic),
         "cat": lambda: getMetaTopicString(cat_metatopic),
     }
+    getMetatopic ={
+
+    }
     BSP = search.bilibiliSearchParams()
 
     getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人])
@@ -104,6 +107,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
     randomOrder = lambda: random.choice(orders)
     while True:
         try:
+        core_topic_set = {*flattenUnhashableList(dog_metatopic)}
+
 
             metatopicString = getKeywords[dog_or_cat]()
 
