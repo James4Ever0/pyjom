@@ -1,5 +1,5 @@
 from pyjom.commons import *
-from pyjom.languagetoolbox import englishTopicModeling
+from pyjom.languagetoolbox import englishTopicModeling, chineseTopicModeling
 from lazero.utils.tools import flattenUnhashableList # one of my classic methods
 import requests
 
