@@ -243,7 +243,7 @@ def parseVideoInfo(videoInfo, debug=False):
     )
     # videoInfoList.append(primaryVideoInfo)
     season = data.get("ugc_season",{})  # we only care about this thing.
-    season_cover = season.get("cover","")
+    season_cover = season.get("cover",None) # it could be noting.
     sections = season.get("sections",[])
     for section in sections:
         for episode in section["episodes"]:
