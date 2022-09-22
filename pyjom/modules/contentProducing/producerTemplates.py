@@ -679,6 +679,8 @@ def petsWithMusicOnlineProducer(
                 # we first create a backup for this medialang script, please?
                 medialangScript = medialangObject.prettify()
 
+                with open()
+
                 rendered_media_location = (
                     medialangObject.execute()
                 )  # how to control its 'fast' parameter?
