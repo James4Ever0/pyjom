@@ -189,7 +189,7 @@ def parseSearchVideoResult(data):
     except:
         traceError("error parsing search video result")
 
-def parseVideoInfo(videoInfo):
+def parseVideoInfo(videoInfo, debug=False):
     data = videoInfo
     # no tag out here.
     secondaryVideoInfoList = []
@@ -214,7 +214,7 @@ def parseVideoInfo(videoInfo):
             videoInfo.update(arc)
             authorRelatedVideoInfo = parseVideoSearchItem(
                 videoInfo,
-                disableList=["tag", "typeid", "typename", "description", "author"],
+                disableList=["tag", "typeid", "typename", "description", "author"],debug=debug
             )  # author is the same as the original video.
             secondaryVideoInfoList.append(authorRelatedVideoInfo)
             # BV1Cb4y1s7em
