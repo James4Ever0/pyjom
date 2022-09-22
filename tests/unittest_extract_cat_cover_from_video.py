@@ -1,4 +1,4 @@
-videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em" # this is a dog.
+videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em"  # this is a dog.
 
 # videoLink = "https://www.bilibili.com/video/BV1Lx411B7X6"  # multipart download
 
@@ -22,16 +22,17 @@ from pyjom.commons import checkMinMaxDict
 dog_or_cat = "dog"
 confidence_threshold = {"min": 0.7}
 text_area_threshold = {"max": 0.2}
-gpu=False
+gpu = False
 
 import os
+
 # with tmpfile(path=path, replace=True) as TF:
 if os.path.exists(path):
     os.remove(path)
 
 x = yt_dlp.YoutubeDL(
     {
-        "outtmpl": path, # seems only video p1 is downloaded.
+        "outtmpl": path,  # seems only video p1 is downloaded.
     }
 )
 y = x.download([videoLink])
@@ -40,17 +41,17 @@ y = x.download([videoLink])
 from pyjom.videotoolbox import corruptVideoFilter
 
 video_fine = corruptVideoFilter(videoLink)
+
 if not video_fine:
-    
+    print("VIDEO FILE CORRUPTED")
     exit()
+
 from caer.video.frames_and_fps import get_duration
 
 duration = get_duration(path)
 mSampleSize = int(duration / 2)  # fps = 0.5 or something?
 processed_frame = None
-for frame in getVideoFrameSampler(
-    path, -1, -1, sample_size=mSampleSize, iterate=True
-):
+for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate=True):
     text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
     print("TEXT AREA RATIO", text_area_ratio)
     if checkMinMaxDict(text_area_ratio, text_area_threshold):
