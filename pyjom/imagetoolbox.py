@@ -67,6 +67,7 @@ def imageFourCornersInpainting(image):
     defaultHeight, defaultWidth = image.shape[:2]
     fourCorners = getFourCorners(0,0, defaultWidth, defaultHeight)
     img = np.zeros((defaultHeight, defaultWidth), dtype=np.uint8)
+    diagonalRects = fourCorners
     for x1, y1, x2, y2 in diagonalRects:
         w, h = x2 - x1, y2 - y1
         x, y = x1, y1
