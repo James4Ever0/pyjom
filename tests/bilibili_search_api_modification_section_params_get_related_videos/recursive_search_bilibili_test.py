@@ -104,7 +104,7 @@ def updateMyLists(videoMetadata,duration_limit = {"min":70, 'max':5*60},play_lim
             tag_list += tags # this?
 
 for videoMetadata in parseSearchVideoResult(result):
-
+    updateMyLists(videoMetadata)
 
 # do the related video search?
 if len(bvid_list)>0:
