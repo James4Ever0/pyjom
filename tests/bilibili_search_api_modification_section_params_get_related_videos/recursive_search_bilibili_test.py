@@ -68,6 +68,9 @@ result = sync(
 from searchDataParser import parseSearchVideoResult
 
 descriptions = []
+bgms = []
+titles = []
+tags = []
 
 for videoMetadata in parseSearchVideoResult(result):
     (
