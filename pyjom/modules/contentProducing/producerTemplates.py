@@ -667,7 +667,7 @@ def petsWithMusicOnlineProducer(
                 yield final_output_location  # another generator?
             except:
                 from lazero.utils.logger import traceError
-                traceError(_breakpoint=True)
+                traceError("",_breakpoint=True)
 
 
 def getProducerTemplate(template: str):
