@@ -35,7 +35,7 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features='lxml')
     return a.text
 
-def parseVideoSearchItem(video, disableList:list=[]):
+def parseVideoSearchItem(video, disableList:list=[], debug=False):
     bvid = video['bvid']
     if 'author' not in disableList:
         author = video['author']
