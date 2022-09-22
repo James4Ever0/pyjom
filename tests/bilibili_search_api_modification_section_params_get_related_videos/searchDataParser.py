@@ -87,7 +87,7 @@ def detectAuthorRelatedKeywords(title_tag,author_keywords):
     for keyword in author_keywords:
         if len(keyword)>1:
             if keyword in title_tag:
-                abandon=True
+                abandon=True # detected this thing.
                 break
     return abandon
 
@@ -118,8 +118,8 @@ def removeTitleTags(title, author, author_keywords):
         title_tags = [x for x in title_tags if len(x)>0]
         final_title_tags =[]
         for title_tag in title_tags:
-            detected = detectAuthorRelatedKeywords
-            if not abandon:
+            detected = detectAuthorRelatedKeywords()
+            if not detected:
                 final_title_tags.append(title_tag)
 
     return title, title_tags
