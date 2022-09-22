@@ -203,10 +203,12 @@ if __name__ == "__main__":
             data = f.read()
             data = json.loads(data)
         # no tag out here.
+        videoInfoList = []
         data_copy = data.copy()
         data_copy.update({"author": data["owner"]["name"], "mid": data["owner"]["mid"]})
         data_copy.update(data["stat"])
         primaryVideoInfo = parseVideoSearchItem(data_copy, disableList=["tag", "typeid", "typename"])
+        videoInfoList.append(primaryVideoInfo)
         season = data["ugc_season"]  # we only care about this thing.
         season_cover = season["cover"]
         sections = season["sections"]
