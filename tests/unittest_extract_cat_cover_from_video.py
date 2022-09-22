@@ -37,6 +37,8 @@ x = yt_dlp.YoutubeDL(
 y = x.download([videoLink])
 # shall you use frame sampler instead of iterator? cause this is dumb.
 # breakpoint()
+from pyjom.videotoolbox import corruptVideoFilter
+
 
 from caer.video.frames_and_fps import get_duration
 
