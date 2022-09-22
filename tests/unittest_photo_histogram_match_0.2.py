@@ -24,14 +24,6 @@ def show_image(title, image, width = 300):
 	# show the resized image
 	cv2.imshow(title, resized)
 
-def str2bool(v):
-    if v.lower() in ('yes', 'true', 't', 'y', '1'):
-        return True
-    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
-        return False
-    else:
-        raise argparse.ArgumentTypeError('Boolean value expected.')
-
 # load the images
 source = cv2.imread(image_0)
 target = cv2.imread(image_1)
