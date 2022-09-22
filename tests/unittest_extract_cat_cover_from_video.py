@@ -1,4 +1,4 @@
-videoLink = ""
+videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em"
 
 from lazero.filesystem.temp import tmpfile
 
