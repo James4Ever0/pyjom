@@ -88,7 +88,8 @@ def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
     try:
         assert [x for x in minMaxDict.keys() if x not in ['min', 'max']] == []
     except:
-        print("PARAMETERS DUMP:", value, )
+        print("PARAMETERS DUMP:", value, minMaxDict, getMinMaxVal)
+        breakpoint()
     
     try:
         minVal = minMaxDict.get("min", value)
