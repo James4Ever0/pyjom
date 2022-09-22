@@ -12,7 +12,7 @@ from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetector
 from pyjom.commons import checkMinMaxDict
 
 dog_or_cat = "dog"
-confidence_threshold = {"min":}
+confidence_threshold = {"min":0.5}
 
 with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
