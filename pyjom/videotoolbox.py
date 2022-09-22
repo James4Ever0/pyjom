@@ -340,14 +340,15 @@ def getVideoFrameRate(videoPath):
 
 
 def getVideoWidthHeight(videoPath):
-    from MediaInfo import MediaInfo
+    try:
+        from MediaInfo import MediaInfo
 
-    info = MediaInfo(filename=videoPath)
-    infoData = info.getInfo()
-    # print(infoData)
-    # breakpoint()
-    defaultWidth = infoData["videoWidth"]
-    defaultHeight = infoData["videoHeight"]
+        info = MediaInfo(filename=videoPath)
+        infoData = info.getInfo()
+        # print(infoData)
+        # breakpoint()
+        defaultWidth = infoData["videoWidth"]
+        defaultHeight = infoData["videoHeight"]
     # do not use this one.
     # it's the damn gif!
     return defaultWidth, defaultHeight
