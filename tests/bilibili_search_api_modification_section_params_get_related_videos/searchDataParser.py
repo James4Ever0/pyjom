@@ -164,7 +164,7 @@ def parseSearchVideoResult(data):
         except:
             traceError("error iterating result list")
     except:
-        traceError('error parsing ')
+        traceError('error parsing search video result')
             
 
 
