@@ -78,6 +78,31 @@ duration_limit = {"min":70, 'max':5*60}
 play_limit = {"min": 10000}
 from pyjom.commons import checkMinMaxDict
 
+def updateMyLists(videoMetadata):
+    (
+        author,
+        author_id,
+        bvid,
+        tags,
+        categoryId,
+        categoryName,
+        title,
+        duration_seconds,
+        play,
+        cover,
+        description,
+        links_in_description,
+        bgms,
+    ) = videoMetadata
+    if checkMinMaxDict(duration_seconds, duration_limit):
+        if checkMinMaxDict(play, play_limit):
+            bvid_list += [bvid]
+            bgm_list += bgms
+            cover_list += [cover]
+            title_list += [title] # this for topic modeling?
+            description_list += [description]
+            tag_list += tags # this?
+
 for videoMetadata in parseSearchVideoResult(result):
 
 
