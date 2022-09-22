@@ -106,7 +106,7 @@ def removeAuthorRelatedTags(description_or_title, author):
         description_or_title = description_or_title.replace(tag, "")
     return description_or_title
 
-def removeTitleTags(title, author, author_keywords):
+def splitTitleTags(title,author_keywords):
     import re
     pattern = r"【.+】"
     title_tags = re.findall(pattern, title)
