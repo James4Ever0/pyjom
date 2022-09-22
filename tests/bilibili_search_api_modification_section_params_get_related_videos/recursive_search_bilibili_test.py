@@ -144,4 +144,4 @@ for tags in tag_list:
 for title in title_list:
     topic_modeling_soruce_sentences.append(title)
 
-from pyjom.
+from pyjom.modules.topicGenerator.onlineTopicGenerator import topicModeling
