@@ -66,7 +66,7 @@ def imageFourCornersInpainting(image):
         image = cv2.imread(image)
     defaultHeight, defaultWidth = image.shape[:2]
     fourCorners = getFourCorners(0,0, defaultWidth, defaultHeight)
-    
+    for corner in fourCorners:
     
 
 def getImageTextAreaRatio(
