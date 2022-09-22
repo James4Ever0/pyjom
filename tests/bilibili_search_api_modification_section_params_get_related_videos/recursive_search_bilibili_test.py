@@ -49,7 +49,7 @@ from lazero.utils.tools import flattenUnhashableList # one of my classic methods
 
 
 selected_topic_list_dict = {"dog":[],"cat":[]}
-
+dog_or_cat = random.choice()
 core_topic_set = {
         *flattenUnhashableList(dog_metatopic)
     }
