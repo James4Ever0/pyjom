@@ -166,7 +166,7 @@ def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
     dataList = []
     for sentence in sentences:
         for x in "\n\r\t":
-            sentence = sentence.replace(x, "")
+            sentence = sentence.replace(x, " ")
         sentence = sentence.strip()
         row = chineseSentencePreprocessing(sentence)
         if len(row)>0:
