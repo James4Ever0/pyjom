@@ -117,7 +117,7 @@ from functools import lru_cache
 from lazero.utils.logger import traceError
 # import os
 @lru_cache(maxsize=1)
-def getChineseStopWords(stopwordFileList = ["",""]):
+def getChineseStopWords(stopwordFileList = ["/root/Desktop/works/pyjom/tests/stopwords/chinese_stopwords.txt","/root/Desktop/works/pyjom/tests/stopwords/stopwords-zh/stopwords-zh.json"]):
     import json
     stopwords = []
     for filename in stopwordFileList:
