@@ -71,6 +71,7 @@ descriptions = []
 bgms = []
 titles = []
 tags = []
+covers = []
 
 for videoMetadata in parseSearchVideoResult(result):
     (
