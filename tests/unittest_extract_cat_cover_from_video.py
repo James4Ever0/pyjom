@@ -10,7 +10,7 @@ from test_commons import *
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetector
 
-tag = ""
+dog_or_cat = "dog"
 
 with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
