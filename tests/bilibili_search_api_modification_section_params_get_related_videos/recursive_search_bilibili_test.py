@@ -104,3 +104,5 @@ for videoMetadata in parseSearchVideoResult(result):
             tag_list += tags # this?
 
 # do the related video search?
+if len(bvid_list)>0:
+    
