@@ -225,6 +225,7 @@ if __name__ == "__main__":
                     videoInfo,
                     disableList=["tag", "typeid", "typename", "description", "author"],
                 )  # author is the same as the original video.
+                videoInfoList.append(authorRelatedVideoInfo)
                 # BV1Cb4y1s7em
                 # []
                 # 0
