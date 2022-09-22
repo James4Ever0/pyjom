@@ -29,7 +29,7 @@ def extractLinks(description):
     if links == None:
         links = []
     desc_without_link = re.sub(expression, "", description)
-    desc_without_link = "\n".join(
+    desc_without_link_per_line = "\n".join(
         [x.replace("\n", "").strip() for x in desc_without_link.split("\n")]
     )
     return links, desc_without_link
