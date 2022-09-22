@@ -236,4 +236,4 @@ def getBilibiliPostMetadataForDogCat():
 
 
 if __name__ == "__main__":
-    getBilibiliPostMetadataForDogCat()
+    for getBilibiliPostMetadataForDogCat()
