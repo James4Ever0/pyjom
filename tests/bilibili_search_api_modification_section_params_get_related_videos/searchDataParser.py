@@ -99,7 +99,7 @@ def getAuthorKeywords(author):
     author_keywords = [x for x in author_keywords if len(x)>0]
     return author_keywords
 
-def removeAuthorRelatedTags(description_or_title, author, author_keywords):
+def removeAuthorRelatedTags(description_or_title, author):
     templates = ["【{}】", "@{}", "{}"]
     tags = [template.format(author) for template in templates]
     for tag in tags:
