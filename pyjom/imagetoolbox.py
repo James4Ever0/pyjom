@@ -392,7 +392,7 @@ from pyjom.mathlib import multiParameterExponentialNetwork
 
 
 def bezierPaddleHubResnet50ImageDogCatDetector(
-    videoPath,
+    image,
     input_bias=0.0830047243746045,
     skew=-0.4986098769473948,
     threshold=0.5,

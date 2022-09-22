@@ -1862,7 +1862,14 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     #         )
     #         # treat each as a separate observation in this frame.
     #         detections.append({"identity": label, "confidence": output})
-        detections =
+        detections =bezierPaddleHubResnet50ImageDogCatDetector(
+    image,
+    input_bias=0.0830047243746045,
+    skew=-0.4986098769473948,
+    threshold=0.5,
+    dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
+    cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
+    debug=False)
         dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
