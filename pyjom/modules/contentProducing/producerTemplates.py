@@ -543,7 +543,7 @@ def petsWithMusicOnlineProducer(
         )
         for config in configs:
             parsed_result = getMusicInfoParsed(config)
-            render_ass = config'render_ass']
+            render_ass = config.get('render_ass', False)
             # print(parsed_result)
             # breakpoint()
             # we only have one song here. you fucking know that?
