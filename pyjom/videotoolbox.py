@@ -7,11 +7,14 @@ import cv2
 from pyjom.imagetoolbox import *
 from functools import lru_cache
 
+
 def corruptVideoFilter(videoPath):
-    return corruptMediaFilter(videoPath, tag='video')
+    return corruptMediaFilter(videoPath, tag="video")
+
 
 def dummyFilterFunction(report: bool, *args, **kwargs):
     return report
+
 
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
@@ -221,7 +224,7 @@ def getVideoFrameIterator(
     # cap.release()
 
 
-def getVideoFrameIteratorWithFPS(videoPath, start: float, end: float, fps:float=1):
+def getVideoFrameIteratorWithFPS(videoPath, start: float, end: float, fps: float = 1):
     # this will set batch to 1
     from caer.video.frames_and_fps import get_fps_float
 
@@ -342,6 +345,7 @@ def getVideoFrameRate(videoPath):
 def getVideoWidthHeight(videoPath):
     try:
         from caer.video.frames_and_fps import get_res
+
         defaultWidth, defaultHeight = get_res(videoPath)
     except:
         from MediaInfo import MediaInfo
@@ -372,7 +376,9 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
     )
     return previewWidth, previewHeight
 
+
 from pyjom.imagetoolbox import getDeltaWidthHeight, getFourCorners
+
 
 @lru_cache(maxsize=30)
 def detectStationaryLogoOverTime(
@@ -1789,6 +1795,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
         "skew": skew,
     }  # maximize the output.
     from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
+
     # from pyjom.imagetoolbox import resizeImageWithPadding
 
     # dog_suffixs = ["狗", "犬", "梗"]
@@ -1841,35 +1848,36 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
 
     dataList = []
     for frame in getVideoFrameIteratorWithFPS(videoPath, -1, -1, fps=1):
-    #     padded_resized_frame = resizeImageWithPadding(
-    #         frame, 224, 224, border_type="replicate"
-    #     )  # pass the test only if three of these containing 'cats'
-    #     result = classifier.classification(
-    #         images=[padded_resized_frame], top_k=3, use_gpu=False
-    #     )  # check it?
-    #     resultList = paddleAnimalDetectionResultToList(result)
-    #     final_result_list = translateResultListToDogCatList(resultList)
-    #     if debug:
-    #         sprint("RESULT LIST:", final_result_list)
-    #     detections = []
-    #     for index, (label, confidence) in enumerate(final_result_list):
-    #         scope = final_result_list[index:]
-    #         scope_confidences = [elem[1] for elem in scope if elem[0] == label]
-    #         output = multiParameterExponentialNetwork(
-    #             *scope_confidences,
-    #             input_bias=input_bias,
-    #             curve_function_kwargs=curve_function_kwargs,
-    #         )
-    #         # treat each as a separate observation in this frame.
-    #         detections.append({"identity": label, "confidence": output})
-        detections =bezierPaddleHubResnet50ImageDogCatDetector(
-    frame,
-    input_bias=input_bias,
-    skew=skew,
-    threshold=threshold,
-    dog_label_file_path=dog_label_file_path,
-    cat_label_file_path=cat_label_file_path,
-    debug=debug)
+        #     padded_resized_frame = resizeImageWithPadding(
+        #         frame, 224, 224, border_type="replicate"
+        #     )  # pass the test only if three of these containing 'cats'
+        #     result = classifier.classification(
+        #         images=[padded_resized_frame], top_k=3, use_gpu=False
+        #     )  # check it?
+        #     resultList = paddleAnimalDetectionResultToList(result)
+        #     final_result_list = translateResultListToDogCatList(resultList)
+        #     if debug:
+        #         sprint("RESULT LIST:", final_result_list)
+        #     detections = []
+        #     for index, (label, confidence) in enumerate(final_result_list):
+        #         scope = final_result_list[index:]
+        #         scope_confidences = [elem[1] for elem in scope if elem[0] == label]
+        #         output = multiParameterExponentialNetwork(
+        #             *scope_confidences,
+        #             input_bias=input_bias,
+        #             curve_function_kwargs=curve_function_kwargs,
+        #         )
+        #         # treat each as a separate observation in this frame.
+        #         detections.append({"identity": label, "confidence": output})
+        detections = bezierPaddleHubResnet50ImageDogCatDetector(
+            frame,
+            input_bias=input_bias,
+            skew=skew,
+            threshold=threshold,
+            dog_label_file_path=dog_label_file_path,
+            cat_label_file_path=cat_label_file_path,
+            debug=debug,
+        )
         dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
