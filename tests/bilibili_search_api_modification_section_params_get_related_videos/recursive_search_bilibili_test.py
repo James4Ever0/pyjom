@@ -89,3 +89,4 @@ for videoMetadata in parseSearchVideoResult(result):
         links_in_description,
         bgms,
     ) = videoMetadata
+    if duration_seconds)
