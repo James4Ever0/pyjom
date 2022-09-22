@@ -136,7 +136,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     if "tag" not in disableList:
         tag = video["tag"]
         tags = tag.split(",")
-        for tag in tags:
+        tags = [tag for tag in tags if tag]
     else:
         tags = []
     if "typeid" not in disableList and "typename" not in disableList:
