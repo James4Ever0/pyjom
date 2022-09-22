@@ -163,17 +163,20 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                     breakpoint()
                 if len(bgms) > 0:
                     bgm_list += bgms
-                if checkMinMaxDict(duration_seconds, duration_limit):
-                    if checkMinMaxDict(play, play_limit):
-                        bvid_list += [bvid]
-                        cover_list += [cover]
-                        title_list += [title]  # this for topic modeling?
-                        if description not in ["", None]:
-                            description_list += [description]
-                        if len(tags) > 0:
-                            tag_list += [
-                                tags
-                            ]  # are you sure? this will make the tag_list into different shape!
+                try:
+                    if checkMinMaxDict(duration_seconds, duration_limit):
+                        if checkMinMaxDict(play, play_limit):
+                            bvid_list += [bvid]
+                            cover_list += [cover]
+                            title_list += [title]  # this for topic modeling?
+                            if description not in ["", None]:
+                                description_list += [description]
+                            if len(tags) > 0:
+                                tag_list += [
+                                    tags
+                                ]  # are you sure? this will make the tag_list into different shape!
+                except:
+                    trace
 
             def updateMyListsWithIterable(
                 iterable,
