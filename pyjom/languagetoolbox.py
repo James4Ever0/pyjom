@@ -134,7 +134,7 @@ def getChineseStopWords():
                         traceError(_breakpoint=True)
                 else:
                     mList = content.split("\n")
-                    mList = [x.replstrip() for x in mList]
+                    mList = [x.replace("\n",'').strip() for x in mList]
 
 
 def chineseSentencePreprocessing(sentence):
