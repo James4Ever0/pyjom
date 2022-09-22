@@ -224,7 +224,7 @@ if __name__ == "__main__":
         primaryVideoInfo = parseVideoSearchItem(
             data_copy, disableList=["tag", "typeid", "typename"]
         )
-        videoInfoList.append(primaryVideoInfo)
+        # videoInfoList.append(primaryVideoInfo)
         season = data["ugc_season"]  # we only care about this thing.
         season_cover = season["cover"]
         sections = season["sections"]
@@ -241,7 +241,7 @@ if __name__ == "__main__":
                     videoInfo,
                     disableList=["tag", "typeid", "typename", "description", "author"],
                 )  # author is the same as the original video.
-                videoInfoList.append(authorRelatedVideoInfo)
+                secondaryVideoInfoList.append(authorRelatedVideoInfo)
                 # BV1Cb4y1s7em
                 # []
                 # 0
