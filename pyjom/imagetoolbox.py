@@ -6,7 +6,7 @@ from functools import lru_cache
 
 
 @lru_cache(maxsize=1)
-def getEasyOCRReader(langs, gpu=True, recognizer=False):
+def getEasyOCRReader(langs:tuple, gpu=True, recognizer=False):
     import easyocr
 
     # no metal? no dbnet18?
