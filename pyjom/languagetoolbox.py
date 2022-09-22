@@ -124,7 +124,7 @@ def getChineseStopWords():
         if os.path.exists(filename) and os.path.isfile(filename):
             try:
                 with open(filename,'r') as f:
-                    content = f.read(filename)
+                    content = f.read()
                 if filename.endswith('.json'):
                     try:
                         mList = json.loads(content)
@@ -133,7 +133,7 @@ def getChineseStopWords():
                     except:
                         traceError(_breakpoint=True)
                 else:
-                    
+                    mList = 
 
 
 def chineseSentencePreprocessing(sentence):
