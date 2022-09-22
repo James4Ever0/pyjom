@@ -119,6 +119,7 @@ from lazero.utils.logger import traceError
 def getChineseStopWords():
     stopwordFileList = ["",""]
     import json
+    stopwords = []
     for filename in stopwordFileList:
         if os.path.exists(filename) and os.path.isfile(filename):
             try:
@@ -126,7 +127,9 @@ def getChineseStopWords():
                     content = f.read(filename)
                 if filename.endswith('.json'):
                     try:
-                        json.loads(content)
+                        mList = json.loads(content)
+                        assert type(mList) == list
+
 
 def chineseSentencePreprocessing(sentence):
     import jieba
