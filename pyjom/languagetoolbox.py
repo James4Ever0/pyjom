@@ -113,6 +113,9 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
     topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
     return topics
 
+def chineseSentencePreprocessing(sentence):
+    import jieba
+    wordsjieba.lcut(sentence)
 
 def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
