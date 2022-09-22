@@ -349,6 +349,7 @@ def getVideoWidthHeight(videoPath):
     defaultWidth = infoData["videoWidth"]
     defaultHeight = infoData["videoHeight"]
     # do not use this one.
+    # it's the damn gif!
     return defaultWidth, defaultHeight
 
 
