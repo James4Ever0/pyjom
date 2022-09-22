@@ -5,6 +5,36 @@ import cv2
 from functools import lru_cache
 
 
+    def getDeltaWidthHeight(defaultWidth, defaultHeight):
+        deltaWidthRatio = 4 + (4 - 3) * (defaultWidth / defaultHeight - 16 / 9) / (
+            16 / 9 - 9 / 16
+        )
+        deltaWidthRatio = makeValueInRange(deltaWidthRatio, 3, 4)
+        deltaHeightRatio = 8 + (8 - 6) * (defaultHeight / defaultWidth - 16 / 9) / (
+            16 / 9 - 9 / 16
+        )
+        deltaHeightRatio = makeValueInRange(deltaHeightRatio, 6, 8)
+        deltaWidth, deltaHeight = int(defaultWidth / deltaWidthRatio), int(
+            defaultHeight / deltaHeightRatio
+        )
+        return deltaWidth, deltaHeight
+
+    def getFourCorners(x, y, defaultWidth, defaultHeight):
+        deltaWidth, deltaHeight = getDeltaWidthHeight(defaultWidth, defaultHeight)
+        # (x1, y1), (x2, y2)
+        fourCorners = [
+            [(0, 0), (deltaWidth, deltaHeight)],
+            [(defaultWidth - deltaWidth, 0), (defaultWidth, deltaHeight)],
+            [
+                (defaultWidth - deltaWidth, defaultHeight - deltaHeight),
+                (defaultWidth, defaultHeight),
+            ],
+            [(0, defaultHeight - deltaHeight), (deltaWidth, defaultHeight)],
+        ]
+        fourCorners = [
+            [(a + x, b + y), (c + x, d + y)] for [(a, b), (c, d)] in fourCorners
+        ]
+        return fourCorners
 
 @lru_cache(maxsize=1)
 def getEasyOCRReader(langs:tuple, gpu=True, recognizer=False):
