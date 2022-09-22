@@ -288,6 +288,7 @@ if __name__ == "__main__":
         with open("video_related.json", "r") as f:
             data = f.read()
             data = json.loads(data)
+        for videoMetadata in 
     elif test_subject == "extract_links":
         description = (
             "http://www.toutiao.com/a6347649852365897986/ 男子送走从小养大的狗，狗狗用泪汪汪的眼神看着他\n"
