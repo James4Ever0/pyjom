@@ -9,8 +9,11 @@ path = "/dev/shm/randomName.mp4"
 from test_commons import *
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetector
+
+tag = ""
+
 with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
     y = x.download([videoLink])
     for frame in getVideoFrameIteratorWithFPS(path, -1,-1,fps=0.5):
-        detections = bezierPaddleHubResnet50ImageDogCatDetector(frame,)
+        detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
