@@ -141,3 +141,7 @@ topic_modeling_source_sentences = suggested_queries.copy()
 for tags in tag_list:
     sentence = " ".join(tags)
     topic_modeling_source_sentences.append(sentence)
+for title in title_list:
+    topic_modeling_soruce_sentences.append(title)
+
+from pyjom.
