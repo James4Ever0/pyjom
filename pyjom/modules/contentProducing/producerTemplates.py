@@ -69,11 +69,13 @@ def getMusicCutSpansCandidates(
 ):
     beats, bpm = audioOwlAnalysis(music["filepath"])
     if lyric_path is not None:
-    lyric = read_lrc(lyric_path)
-    # print(lyric)
-    # breakpoint()
-    lyric_times = [x["time"] for x in lyric]
-    lyric_times.sort()
+        lyric = read_lrc(lyric_path)
+        # print(lyric)
+        # breakpoint()
+        lyric_times = [x["time"] for x in lyric]
+        lyric_times.sort()
+    else:
+        lyric_times = []
     new_lyric_times = []
     last_time = 0
     for mtime in lyric_times:
