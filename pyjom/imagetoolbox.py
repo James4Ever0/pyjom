@@ -408,7 +408,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     # from pyjom.imagetoolbox import resizeImageWithPadding
     if type(image) == str:
         image = cv2.imread(image)
-        frame = image
+    frame = image
 
     dog_suffixs = ["狗", "犬", "梗"]
     cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
