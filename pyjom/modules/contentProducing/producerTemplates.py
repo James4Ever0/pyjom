@@ -680,7 +680,9 @@ def petsWithMusicOnlineProducer(
                 medialangScript = medialangObject.prettify()
                 medialangScript_savedPath = getRandomFileName('mdl')
 
-                with open()
+                with open(medialangScript_savedPath) as f:
+                    f.write(medialangScript)
+                print()
 
                 rendered_media_location = (
                     medialangObject.execute()
