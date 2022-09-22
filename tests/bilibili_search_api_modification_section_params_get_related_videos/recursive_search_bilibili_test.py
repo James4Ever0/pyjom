@@ -97,6 +97,6 @@ for videoMetadata in parseSearchVideoResult(result):
         if checkMinMaxDict(play, play_limit):
             bgm_list += bgms
             cover_list += [cover]
-            title_list += [title]
+            title_list += [title] # this for topic modeling?
             description_list += [description]
-            tag_list += tags
+            tag_list += tags # this?
