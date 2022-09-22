@@ -414,6 +414,7 @@ def renderList2MediaLang(
 @redisLRUCache()
 def getMusicInfoParsed(config):
     music = config["music"]
+    # check if music is corrupted?
     font = config.get("font",None)
     policy = config.get("policy",{})
     policy_names = [x for x in policy.keys()]
