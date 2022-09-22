@@ -4,15 +4,20 @@ import cv2
 
 from functools import lru_cache
 
+
 @lru_cache(maxsize=1)
 def getEasyOCRReader(langs, gpu=True, recognizer=False):
     import easyocr
+
     # no metal? no dbnet18?
     reader = easyocr.Reader(langs, gpu=gpu, recognizer=recognizer)
     return reader
 
+
 @lru_cache(maxsize=30)
-def getImageTextAreaRecognized(image, langs:tuple=('en',), gpu=True, recognizer=False, return_res =False):
+def getImageTextAreaRecognized(
+    image, langs: tuple = ("en",), gpu=True, recognizer=False, return_res=False
+):
     reader = getEasyOCRReader(langs, gpu=gpu, recognizer=recognizer)
     if type(image) == str:
         image = cv2.imread(image)
@@ -25,8 +30,18 @@ def getImageTextAreaRecognized(image, langs:tuple=('en',), gpu=True, recognizer=
     else:
         return detection, recognition
 
-def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False,debug=False, inpaint=False):
-    res, (detection, recognition) = getImageTextAreaRecognized(image, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True)
+
+def getImageTextAreaRatio(
+    image,
+    langs: tuple = ("en",),
+    gpu=True,
+    recognizer=False,
+    debug=False,
+    inpaint=False,
+):
+    res, (detection, recognition) = getImageTextAreaRecognized(
+        image, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True
+    )
     width, height = res
     img = np.zeros((height, width))
     if detection == [[]]:
@@ -39,13 +54,13 @@ def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False
         cv2.rectangle(img, (x, y), (x + w, y + h), 255, -1)
     # calculate the portion of the text area.
     textArea = np.sum(img)
-    textAreaRatio = (textArea/255)/(width*height)
+    textAreaRatio = (textArea / 255) / (width * height)
     if debug:
         print("text area: {:.2f} %".format(textAreaRatio))
         cv2.imshow("TEXT AREA", img)
         cv2.waitKey(0)
     if inpaint:
-        return cv2.inpaint(image,img,3,cv2.INPAINT_TELEA)
+        return cv2.inpaint(image, img, 3, cv2.INPAINT_TELEA)
     return textAreaRatio
 
 
@@ -80,6 +95,7 @@ def getImageColorCentrality(
     # NEARBY CENTER PERCENTAGE: 6.74 %
     # CENTRALITY: 7.32 %
     import numpy as np
+
     # image = cv2.imread(src)
     shape = image.shape
     if len(shape) > 3 or len(shape) < 2:
@@ -136,13 +152,14 @@ def getImageColorCentrality(
     # from sklearn.cluster import MiniBatchKMeans  # better?
 
     from sklearn.cluster import KMeans
+
     X = sample
     # kmeans = KMeans(n_clusters=5).fit(X) # not deterministic please?
     # here we've got issue.
     # import numpy as np
     # np.seterr(all='ignore')
-    kmeans_model = KMeans(init='k-means++', n_clusters=n_clusters)
-    kmeans = kmeans_model.fit(X) # fix this shit
+    kmeans_model = KMeans(init="k-means++", n_clusters=n_clusters)
+    kmeans = kmeans_model.fit(X)  # fix this shit
     # keep popping up error logs.
     # kmeans = MiniBatchKMeans(
     #     init="k-means++",
@@ -207,6 +224,8 @@ def getImageColorCentrality(
 
 
 import math
+
+
 def scanImageWithWindowSizeAutoResize(
     image,
     width,
@@ -271,6 +290,7 @@ def scanImageWithWindowSizeAutoResize(
 
 
 from typing import Literal
+
 
 def resizeImageWithPadding(
     image,
