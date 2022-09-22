@@ -23,7 +23,7 @@ def extractLinks(description):
     if links == None:
         links = []
     desc_without_link = re.sub(expression, "", description)
-    desc_without_link = [x.replace("") for x in desc_without_link.split("\n")]
+    desc_without_link = "\n".join([x.replace("\n",'').strip() for x in desc_without_link.split("\n")])
     return links, desc_without_link
 
 def videoDurationStringToSeconds(durationString):
