@@ -79,12 +79,12 @@ def parseVideoSearchItem(video, disableList:list=[], debug=False):
     links_in_description, description = extractLinks(description)
     duration_seconds = videoDurationStringToSeconds(duration)
     if debug:
-        for metadata in (author,author_id,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
+        for metadata in (author,author_id,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description,links_in_description):
             print(metadata)
     from lazero.utils.logger import sprint
     if debug:
         sprint()
-    return author,author_id,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description
+    return author,author_id,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description,links_in_description
 
 # you might want the creater's name, to filter out unwanted parts.
 
