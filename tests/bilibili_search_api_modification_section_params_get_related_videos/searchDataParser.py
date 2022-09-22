@@ -92,7 +92,7 @@ def removeAuthorRelatedTags(description_or_title, author):
 
 def removeTitleTags(title, author):
     import re
-    title_tags = re.findall("【\.+】", title)
+    title_tags = re.findall(r"【.+】", title)
     if title_tags ==None:
         title_tags = []
     else:
