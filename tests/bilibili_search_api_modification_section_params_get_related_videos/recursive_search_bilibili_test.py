@@ -44,12 +44,13 @@ dog_metatopic = {
 }
 
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
+from bilibili_api import sync, search
+
 
 dog_metatopicString = getMetaTopicString(dog_metatopic)
 
-print(metatopicString)
+print(dog_metatopicString)
 
-from bilibili_api import sync, search
 
 BSP = search.bilibiliSearchParams()
 
