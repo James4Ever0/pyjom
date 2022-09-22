@@ -114,7 +114,7 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
     return topics
 
 
-def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 1),n_components=5):
+def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
     for sentence in sentences:
         for x in "\n\r\t":
