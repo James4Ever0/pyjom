@@ -23,7 +23,7 @@ def extractLinks(description):
     if links == None:
         links = []
     desc_without_link = re.sub(expression, "", description)
-    return linksdesc_without_link.sub
+    return links, desc_without_link
 
 def videoDurationStringToSeconds(durationString):
     if type(durationString) == int:
@@ -76,7 +76,7 @@ def parseVideoSearchItem(video, disableList:list=[], debug=False):
         description = clearHtmlTags(description)
     else:
         description = ""
-    links_in_description = extractLinks()
+    links_in_description = extractLinks(description)
     duration_seconds = videoDurationStringToSeconds(duration)
     if debug:
         for metadata in (author,author_id,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
