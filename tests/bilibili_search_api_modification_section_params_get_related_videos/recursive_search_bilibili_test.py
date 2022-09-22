@@ -22,3 +22,5 @@ metatopic = {
     ],
     "dynamic": ["可爱", "萌", "萌宠", "行为", "燃"],
 }
+
+from pyjom.
