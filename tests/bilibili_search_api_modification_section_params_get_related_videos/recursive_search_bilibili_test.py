@@ -83,7 +83,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
 
     getRandomPage = lambda: random.randint(1,5)  # not so broad.
     # getRandomPage = lambda: random.randint(1, 50)  # broad range!
-    BSP.all.order.最多点击,BSP.all.order.最多收藏, BSP.all.order.最新发布, BSP.all.order.最多弹幕
+    BSP.all.order.最多点击,BSP.all.order.最多收藏, BSP.all.order.最新发布, BSP.all.order.最多弹幕, BSP.all.order.综合排序
     while True:
         try:
 
