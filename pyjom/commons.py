@@ -19,8 +19,10 @@ import random
 os.system('ulimit -n 1048576')
 
 def corruptMediaFilter(mediaPath, tag='media', bad_words= ["invalid", "failed", "error"]):
+    if not os.path.exists(mediaPath):
+        print("{} file does not exist".format(tag))
     import ffmpeg
-    not_nice = [word.lower() for word inbad_words]
+    not_nice = [word.lower() for word in bad_words]
     corrupted = False
     try:
         stdout, stderr = (
