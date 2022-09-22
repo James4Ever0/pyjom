@@ -179,11 +179,11 @@ def parseSearchAllResult(data, debug=False, generator=True):
             traceError("error iterating data results")
 
 
-def parseSearchVideoResult(data):
+def parseSearchVideoResult(data, debug=False):
     try:
         resultList = data["result"]
         try:
-            for videoMetadata in iterateResultList(resultList):
+            for videoMetadata in iterateResultList(resultList, debug=debug):
                 try:
                     yield videoMetadata
                 except:
