@@ -121,8 +121,10 @@ def getChineseStopWords():
     import json
     for filename in stopwordFileList:
         if os.path.exists(filename):
+            with open(filename) as f:
             if filename.endswith('.json'):
-                t
+                try:
+                    
 
 def chineseSentencePreprocessing(sentence):
     import jieba
