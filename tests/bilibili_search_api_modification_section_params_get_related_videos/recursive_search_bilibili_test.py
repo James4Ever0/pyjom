@@ -9,7 +9,7 @@ os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
 
 metatopic = {
-    "optional": [
+    "static": [
         [
             "狗狗",
             "狗",
