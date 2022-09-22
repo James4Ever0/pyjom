@@ -82,13 +82,13 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features="lxml")
     return a.text
 
-def removeAuthorRelatedKeywords(,author):
-                abandon=False
-            for keyword in author_keywords:
-                if len(keyword)>1:
-                    if keyword in title_tag:
-                        abandon=True
-                        break
+def removeAuthorRelatedKeywords(,author_keywords):
+    abandon=False
+    for keyword in author_keywords:
+        if len(keyword)>1:
+            if keyword in title_tag:
+                abandon=True
+                break
 
 def removeAuthorRelatedTags(description_or_title, author):
     templates = ["【{}】", "@{}", "{}"]
