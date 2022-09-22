@@ -9,6 +9,7 @@ path = "/dev/shm/testVideo.mp4"
 from test_commons import *
 from pyjom.videotoolbox import getVideoFrameSampler
 from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetector
+from pyjom.commons import checkMinMaxDict
 
 dog_or_cat = "dog"
 
@@ -25,4 +26,4 @@ with tmpfile(path=path) as TF:
         mDetections.sort(key=lambda x: -x['confidence']) # select the best one.
         if len(mDetections)>0:
             best_confidence = mDetections[0]['confidence']
-            if best_confidence, confidence_threshold)
+            if (best_confidence, confidence_threshold)
