@@ -26,7 +26,7 @@ def corruptMediaFilter(mediaPath, tag:str='media', bad_words:list[str]= ["invali
     corrupted = False
     try:
         stdout, stderr = (
-            ffmpeg.input(videoPath)
+            ffmpeg.input(mediaPath)
             .output("null", f="null")
             .run(capture_stdout=True, capture_stderr=True)
         )
@@ -47,7 +47,7 @@ def corruptMediaFilter(mediaPath, tag:str='media', bad_words:list[str]= ["invali
         print("video is fine")
     # return True for fine video.
     valid = not corrupted
-    print('{} file path:'.format(tag), mediaPath)
+    sprint('{} file path:'.format(tag), mediaPath)
     return valid
 
 ## bring about 'redis cache' for faster testing.
