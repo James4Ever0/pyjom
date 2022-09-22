@@ -113,7 +113,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     title = video["title"]  # remove those markers, please?
     title = clearHtmlTags(title)
     title = removeAuthorRelatedTags(title, author)
-    duration = video["duration"]  # this is not recommended. we need seconds.
+    duration = video["duration"] # this is not recommended. we need seconds.
     play = video.get("play", video.get("view"))  # select some hot videos.
     cover = video["pic"]
     cover = linkFixer(cover)
