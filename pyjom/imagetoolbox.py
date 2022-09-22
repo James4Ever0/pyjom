@@ -398,7 +398,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False):
     # from pyjom.imagetoolbox import resizeImageWithPadding
-        if type(image) == str:
+    if type(image) == str:
         image = cv2.imread(image)
         frame=image
 
