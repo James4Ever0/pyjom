@@ -20,6 +20,7 @@ def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False
         image = cv2.imread(image)
     frame = image
     height, width = frame.shape[:2]
+    res = (width, height)
     res, detection, recognition = reader.detect(frame)  # not very sure.
     img = np.zeros((height, width))
     if detection == [[]]:
