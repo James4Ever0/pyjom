@@ -248,7 +248,7 @@ def parseVideoRelated(videoRelatedData, debug=False):
         traceError()
 
 def generatorToList(generator):
-    re
+    return [x for x in generator]
 
 if __name__ == "__main__":
     # test_subject = "search_video"
