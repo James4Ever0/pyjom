@@ -69,6 +69,7 @@ def parseVideoSearchItem(video, disableList:list=[], debug=False):
     cover = linkFixer(cover)
     if 'description' not in disableList:
         description = video.get('description', video.get('desc'))
+        description = clearHtmlTags(description)
     else:
         description = ""
     links_in_description = extractLinks()
