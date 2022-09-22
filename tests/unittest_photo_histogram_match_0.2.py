@@ -34,7 +34,7 @@ import numpy as np
 
 transfer_02 = (target*0.8+transfer*0.2).astype(np.uint8)
 
-transfer_02_flip = cv2.flip(transfer_02)
+transfer_02_flip = cv2.flip(transfer_02,1)
 
 # show the images and wait for a key press
 show_image("Source", source)
