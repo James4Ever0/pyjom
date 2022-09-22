@@ -152,6 +152,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                     bgms,
                     title_tags,
                 ) = videoMetadata
+                print("VIDEO_METADATA",videoMetadata)
                 breakpoint()
                 if len(bgms) > 0:
                     bgm_list += bgms
