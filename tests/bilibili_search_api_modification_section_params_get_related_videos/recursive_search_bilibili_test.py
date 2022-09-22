@@ -65,4 +65,4 @@ result = sync(
     )
 )
 
-from searchDataParser import 
+from searchDataParser import parseSearchVideoResult
