@@ -88,13 +88,15 @@ def sentenceFlatten(sentence, padding = " "):
         sentence = sentence.replace(x, padding)
     while True:
         if padding*2 in sentence:
-            sentence = sentence.replace(padding*2 )
+            sentence = sentence.replace(padding*2, padding)
+        else:
+            break
+    return sentence
 
 def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
     for sentence in sentences:
 
-        sentence = sentence.strip()
         row = englishSentencePreprocessing(sentence)
         if len(row)>0:
             elem = " ".join(row)
