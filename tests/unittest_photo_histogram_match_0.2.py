@@ -28,10 +28,6 @@ def str2bool(v):
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-s", "--source", required = True,
-	help = "Path to the source image")
-ap.add_argument("-t", "--target", required = True,
-	help = "Path to the target image")
 ap.add_argument("-c", "--clip", type = str2bool, default = 't',
 	help = "Should np.clip scale L*a*b* values before final conversion to BGR? "
 		   "Approptiate min-max scaling used if False.")
