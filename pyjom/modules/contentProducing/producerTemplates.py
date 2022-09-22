@@ -660,12 +660,12 @@ def petsWithMusicOnlineProducer(
                 # maybe we need render the lyric file separately.
                 # using a ffmpeg filter.
 
-                final_output_location = getRandomFileName("mp4")
-                if 
-                import ffmpeg
-                ffmpeg.input(rendered_media_location).filter("ass", ass_file_path).output(
-                    final_output_location
-                ).run(overwrite_output=True)
+                if render_ass:
+                    final_output_location = getRandomFileName("mp4")
+                    import ffmpeg
+                    ffmpeg.input(rendered_media_location).filter("ass", ass_file_path).output(
+                        final_output_location
+                    ).run(overwrite_output=True)
                 yield final_output_location  # another generator?
             except:
                 from lazero.utils.logger import traceError
