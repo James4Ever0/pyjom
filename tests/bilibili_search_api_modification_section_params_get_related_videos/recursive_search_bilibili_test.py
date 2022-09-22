@@ -92,4 +92,5 @@ for videoMetadata in parseSearchVideoResult(result):
         links_in_description,
         bgms,
     ) = videoMetadata
-    if checkMinMaxDict(duration_seconds)
+    if checkMinMaxDict(duration_seconds, duration_limit):
+        
