@@ -27,8 +27,8 @@ source = cv2.imread(image_0)
 target = cv2.imread(image_1)
 
 # we inpaint this one from the beginning.
-from pyjom.imagetoolbox import getImageTextAreaRatio
-target = 
+from pyjom.imagetoolbox import getImageTextAreaRatio # also for image text removal.
+target = getImageTextAreaRatio()
 
 # transfer the color distribution from the source image
 # to the target image
