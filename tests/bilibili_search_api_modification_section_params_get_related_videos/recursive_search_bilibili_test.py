@@ -165,7 +165,7 @@ def getBilibiliPostMetadataForDogCat():
             topics = topicModeling(topic_modeling_source_sentences,lang='zh')
 
             selectedWord = topicWordSelection(
-                                    topics, core_topic_set, selected_topic_list_dict["dog"]
+                                    topics, core_topic_set, selected_topic_list_dict[dog_or_cat]
                                 )
             dog_or_cat = randomTarget()
             if selectedWord is not None:
