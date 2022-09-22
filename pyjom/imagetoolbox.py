@@ -4,8 +4,7 @@ import cv2
 
 from functools import lru_cache
 
-def imageCornersInpainting():
-    
+
 
 @lru_cache(maxsize=1)
 def getEasyOCRReader(langs:tuple, gpu=True, recognizer=False):
@@ -32,6 +31,8 @@ def getImageTextAreaRecognized(
     else:
         return detection, recognition
 
+def imageCornersInpainting():
+    
 
 def getImageTextAreaRatio(
     image,
