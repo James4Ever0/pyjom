@@ -17,7 +17,7 @@ import sys
 import random
 
 os.system('ulimit -n 1048576')
-from lazero.util.logger import sprint
+from lazero.utils.logger import sprint
 def corruptMediaFilter(mediaPath, tag:str='media', bad_words:list[str]= ["invalid", "failed", "error"]):
     if not os.path.exists(mediaPath):
         print("{} file does not exist".format(tag))
