@@ -708,6 +708,7 @@ def petsWithMusicOnlineProducer(
                 try:
                     print("MEDIALANG SCRIPT SAVED TO:",medialangScript_savedPath)
                 except:
+                    pass
                 breakpoint()
 
 def getProducerTemplate(template: str):
