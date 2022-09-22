@@ -42,11 +42,8 @@ target = cv2.imread(image_1)
 
 # transfer the color distribution from the source image
 # to the target image
-transfer = color_transfer(source, target, clip=True, preserve_paper=args["preservePaper"])
+transfer = color_transfer(source, target, clip=True, preserve_paper=True)
 
-# check to see if the output image should be saved
-if args["output"] is not None:
-	cv2.imwrite(args["output"], transfer)
 
 # show the images and wait for a key press
 show_image("Source", source)
