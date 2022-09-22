@@ -225,6 +225,7 @@ def parseVideoInfo(videoInfo):
             # 217
             # 27911
             # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
+    return primaryVideoInfo, secondaryVideoInfoList
 
 if __name__ == "__main__":
     # test_subject = "search_video"
