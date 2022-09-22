@@ -677,7 +677,7 @@ def petsWithMusicOnlineProducer(
                     backend="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
                 )  # what is the backend?
                 # we first create a backup for this medialang script, please?
-                medialangObject.prettify()
+                medialangScript = medialangObject.prettify()
 
                 rendered_media_location = (
                     medialangObject.execute()
