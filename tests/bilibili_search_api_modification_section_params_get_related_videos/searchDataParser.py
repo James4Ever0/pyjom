@@ -99,6 +99,7 @@ def removeTitleTags(title, author):
         title_tags = []
     else:
         title_tags = [x.lstrip("【").rstrip("】") for x in title_tags]
+        title_tags = [x for x in title_tags if ]
     return title, title_tags
 
 
