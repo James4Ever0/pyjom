@@ -163,7 +163,9 @@ def iterateResultList(resultList, debug=False):
             continue
 
 
-def parseSearchAllResult(data, debug=False):
+def parseSearchAllResult(data, debug=False, generator=True):
+    if not generator:
+        return 
     results = data["result"]
     for elem in results:
         try:
