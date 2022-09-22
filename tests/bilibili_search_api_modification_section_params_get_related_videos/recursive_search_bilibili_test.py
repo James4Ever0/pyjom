@@ -47,7 +47,7 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList # one of my classic methods
 
-selected_topic_list_dict = {"dog","cat"} = []
+selected_topic_list_dict = {"dog":[],"cat":[]}
 core_topic_set = {
         *flattenUnhashableList(dog_metatopic)
     }
