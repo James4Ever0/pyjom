@@ -172,7 +172,10 @@ elif test_subject == "video_related":
                 parseVideoSearchItem(videoInfo2,disableList = ['tag','typeid','typename'])
             except:
                 traceError()
-        
+        except:
+            traceError()
+    except:
+        traceError()
 elif test_subject == 'extract_links':
     descripton = 
 else:
