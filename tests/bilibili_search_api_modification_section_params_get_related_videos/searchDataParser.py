@@ -156,7 +156,12 @@ def parseSearchVideoResult(data):
     try:
         resultList = data["result"]
         try:
-            for videoMetadata in iterateResultList(resultList)
+            for videoMetadata in iterateResultList(resultList):
+                try:
+                    yield videoMetadata
+                except:
+                    
+            
 
 
 if __name__ == "__main__":
