@@ -34,6 +34,8 @@ import numpy as np
 
 transfer_02 = (target*0.8+transfer*0.2).astype(np.uint8)
 
+transfer_02_flip = transfer_02)
+
 # show the images and wait for a key press
 show_image("Source", source)
 show_image("Target", target)
