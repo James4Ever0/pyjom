@@ -341,7 +341,8 @@ def getVideoFrameRate(videoPath):
 
 def getVideoWidthHeight(videoPath):
     try:
-        from caer.video.
+        from caer.video.frames_and_fps import get_res
+        defaultWidth, defaultHeight = get_res(videoPath)
     except:
 
         from MediaInfo import MediaInfo
