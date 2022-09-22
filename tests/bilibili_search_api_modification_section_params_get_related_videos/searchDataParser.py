@@ -78,7 +78,7 @@ def iterateResultList(resultList):
         # be warned cause all these things might fail.
         try:
             if video['type'] == 'video':
-                parseVideoSearchItem(video)
+                yield parseVideoSearchItem(video)
         except:
             traceError('error iterating video metadata')
             continue
@@ -89,7 +89,7 @@ def parseSearchAllResult(data):
         try:
             if elem['result_type'] == 'video':
                 resultList = elem['data']
-                iterateResultList(resultList)
+                yield iterateResultList(resultList)
         except:
             traceError('error iterating data results')
 
