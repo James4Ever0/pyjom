@@ -109,3 +109,5 @@ if len(bvid_list)>0:
     from bilibili_api import video
     bvid = random.choice(bvid_list)
     v = video.Video(bvid=bvid)
+    videoInfo = sync(v.get_info())
+    
