@@ -270,6 +270,7 @@ if __name__ == "__main__":
         result = parseSearchAllResult(data, generator=False)
         print(result)
         print(type(result))
+        breakpoint()
     elif test_subject == "search_all":
         with open("search_result_all.json", "r") as f:
             data = f.read()
