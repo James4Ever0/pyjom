@@ -25,7 +25,7 @@ def getImageTextRecognized(image, langs:tuple=('en',), gpu=True, recognizer=Fals
     else:
         return detection, recognition
 def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False,debug=False, inpaint=False):
-    res, (detection, recognition) = getImageTextRecognized()
+    res, (detection, recognition) = getImageTextRecognized(image, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True)
     width, height = res
     img = np.zeros((height, width))
     if detection == [[]]:
