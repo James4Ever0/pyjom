@@ -22,7 +22,8 @@ def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False
     height, width = frame.shape[:2]
     res = (width, height)
     detection, recognition = reader.detect(frame)  # not very sure.
-    res
+    return res, (detection, recognition)
+    width, height = res
     img = np.zeros((height, width))
     if detection == [[]]:
         diagonalRects = []
