@@ -1873,7 +1873,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             frame,
             input_bias=input_bias,
             skew=skew,
-            threshold=threshold,
+            # threshold=threshold,
             dog_label_file_path=dog_label_file_path,
             cat_label_file_path=cat_label_file_path,
             debug=debug,
