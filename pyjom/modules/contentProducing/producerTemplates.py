@@ -565,11 +565,12 @@ def petsWithMusicOnlineProducer(
             render_list = []  # what is this freaking render_list?
             # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
             # if lyric_path:
-            ass_file_path = getRandomFileName("ass")
-            # print("lrc path:", lyric_path)
-            # print('ass file path:',ass_file_path)
-            # breakpoint()
-            lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path)
+            if render_ass:
+                ass_file_path = getRandomFileName("ass")
+                # print("lrc path:", lyric_path)
+                # print('ass file path:',ass_file_path)
+                # breakpoint()
+                lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path)
             data_ids = []
             # from tqdm.gui import tqdm
 
