@@ -33,7 +33,8 @@ def extractLinks(description, extract_bgm=True):
     desc_without_link_per_line = [x for x in desc_without_link_per_line if len(x) >0]
     bgms = []
     if not extract_bgm:
-        final_desc_list = de
+        final_desc_list = desc_without_link_per_line
+    else:
         for line in desc_without_link_per_line:
             bgmCandidateTemplates = ["{}：", "{}:","{} "]
             fixers = [x.format("") for x in bgmCandidateTemplates]
@@ -50,7 +51,7 @@ def extractLinks(description, extract_bgm=True):
                         bgms.append(bgm)
                     break
             if not has_bgm:
-                final_desc_list.append(link)
+                final_desc_list.append(line)
         
     return links,bgms, desc_without_link
 
