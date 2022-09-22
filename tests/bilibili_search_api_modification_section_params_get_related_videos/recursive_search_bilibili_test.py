@@ -119,7 +119,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
     randomOrder = lambda: random.choice(orders)
     while True:
         try:
-            core_topic_set = {*flattenUnhashableList([value for key,value in getMetatopic[dog_or_cat])}
+            core_topic_set = {*flattenUnhashableList([value for key,value in getMetatopic[dog_or_cat].item()])}
 
 
             metatopicString = getKeywords[dog_or_cat]()
