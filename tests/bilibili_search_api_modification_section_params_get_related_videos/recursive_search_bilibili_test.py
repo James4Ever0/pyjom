@@ -103,11 +103,12 @@ def updateMyLists(videoMetadata,duration_limit = {"min":70, 'max':5*60},play_lim
             title_list += [title] # this for topic modeling?
             description_list += [description]
             tag_list += tags # this?
+
 def updateMyListsWithIterable(iterable,duration_limit = {"min":70, 'max':5*60},play_limit = {"min": 10000}):
     for videoMetadata in iterable:
         updateMyLists(videoMetadata, duration_limit=duration_limit, play_limit=play_limit)
 
-updateparseSearchVideoResult(result)
+updateMyListsWithIterable(parseSearchVideoResult(result))
 
 # do the related video search?
 if len(bvid_list)>0:
