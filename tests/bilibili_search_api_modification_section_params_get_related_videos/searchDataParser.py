@@ -259,9 +259,10 @@ def parseVideoRelated(videoRelatedData, debug=False, generator=True):
 if __name__ == "__main__":
     # test_subject = "search_video"
     # test_subject = "search_all"
-    test_subject = 'video_related'
+    # test_subject = 'video_related'
     # test_subject = "video_info"
     # test_subject = 'extract_links'
+    test_subject = 'generator_to_list'
     if test_subject == 'generator_to_list':
         with open("search_result_all.json", "r") as f:
             data = f.read()
@@ -269,7 +270,6 @@ if __name__ == "__main__":
         result = parseSearchAllResult(data)
         print(result)
         print(type(result))
-
     elif test_subject == "search_all":
         with open("search_result_all.json", "r") as f:
             data = f.read()
