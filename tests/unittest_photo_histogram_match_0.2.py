@@ -5,29 +5,35 @@ image_0 = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 image_1 = "/root/Desktop/works/pyjom/samples/image/cute_cat.bmp"
 
 from lazero.utils.importers import cv2_custom_build_init
+
 cv2_custom_build_init()
 
 # import the necessary packages
 from color_transfer import color_transfer
 import cv2
 
-def show_image(title, image, width = 300):
-	# resize the image to have a constant width, just to
-	# make displaying the images take up less screen real
-	# estate
-	r = width / float(image.shape[1])
-	dim = (width, int(image.shape[0] * r))
-	resized = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)
 
-	# show the resized image
-	cv2.imshow(title, resized)
+def show_image(title, image, width=300):
+    # resize the image to have a constant width, just to
+    # make displaying the images take up less screen real
+    # estate
+    r = width / float(image.shape[1])
+    dim = (width, int(image.shape[0] * r))
+    resized = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
+
+    # show the resized image
+    cv2.imshow(title, resized)
+
 
 # load the images
 source = cv2.imread(image_0)
 target = cv2.imread(image_1)
 
 # we inpaint this one from the beginning.
-from pyjom.imagetoolbox import getImageTextAreaRatio, imageFourCornersInpainting # also for image text removal.
+from pyjom.imagetoolbox import (
+    getImageTextAreaRatio,
+    imageFourCornersInpainting,
+)  # also for image text removal.
 
 target = getImageTextAreaRatio(target, inpaint=True)
 target = imageFourCornersInpainting(target)
@@ -39,9 +45,9 @@ transfer = color_transfer(source, target)
 
 import numpy as np
 
-transfer_02 = (target*0.8+transfer*0.2).astype(np.uint8)
+transfer_02 = (target * 0.8 + transfer * 0.2).astype(np.uint8)
 
-transfer_02_flip = cv2.flip(transfer_02,1)
+transfer_02_flip = cv2.flip(transfer_02, 1)
 
 # show the images and wait for a key press
 show_image("Source", source)
