@@ -154,7 +154,7 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import topicModeling, top
 topics = topicModeling(topic_modeling_source_sentences,lang='zh')
 
 selectedWord = topicWordSelection(
-                        topics, core_topic_set, selected_topic_list
+                        topics, core_topic_set, selected_topic_list_dict["dog"]
                     )
 
 if selectedWord is not None:
