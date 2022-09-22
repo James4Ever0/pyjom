@@ -82,7 +82,7 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features="lxml")
     return a.text
 
-def removeAuthorRelatedKeywords(title_tag,author_keywords):
+def detectAuthorRelatedKeywords(title_tag,author_keywords):
     abandon=False
     for keyword in author_keywords:
         if len(keyword)>1:
@@ -118,7 +118,7 @@ def removeTitleTags(title, author, author_keywords):
         title_tags = [x for x in title_tags if len(x)>0]
         final_title_tags =[]
         for title_tag in title_tags:
-            abandon = 
+            abandon = detectAuthorRelatedKeywords
             if not abandon:
                 final_title_tags.append(title_tag)
 
