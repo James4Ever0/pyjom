@@ -40,7 +40,7 @@ dog_metatopic = {
             "狗子",
         ],
     ],
-    "dynamic": [["可爱", "萌", "萌宠"] ["行为", "燃"],["搞笑", "逗比", "魔性"]],
+    "dynamic": [["可爱", "萌", "萌宠"], ["行为", "燃"],["搞笑", "逗比", "魔性"]],
 }
 
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
