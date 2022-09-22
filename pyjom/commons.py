@@ -15,16 +15,7 @@ import pathlib
 import site
 import sys
 import random
-from functools import lru_cache
-
-@lru_cache(maxsize=3)
-def labelFileReader(filename):
-    with open(filename, "r") as f:
-        content = f.read()
-        content = content.split("\n")
-        content = [elem.replace("\n", "").strip() for elem in content]
-        content = [elem for elem in content if len(elem) > 0]
-    return content
+# from functools import lru_cache
 
 os.system('ulimit -n 1048576')
 from lazero.utils.logger import sprint
