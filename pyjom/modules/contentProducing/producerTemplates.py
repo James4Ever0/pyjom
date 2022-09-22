@@ -415,7 +415,7 @@ def renderList2MediaLang(
 def getMusicInfoParsed(config):
     music = config["music"]
     font = config.get("font",None)
-    policy = config["policy"]
+    policy = config.get("policy",{})
     policy_names = [x for x in policy.keys()]
     # get music duration here.
     music_metadata = get_media_info(music["filepath"])
