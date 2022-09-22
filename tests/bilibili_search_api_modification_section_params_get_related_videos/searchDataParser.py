@@ -119,7 +119,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
         description = removeAuthorRelatedTags(description, author)
     else:
         description = ""
-    links_in_description, description = extractLinks(description)
+    links_in_description, bgms,description = extractLinks(description)
     duration_seconds = videoDurationStringToSeconds(duration)
     if debug:
         for metadata in (
