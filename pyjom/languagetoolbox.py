@@ -125,7 +125,7 @@ def chineseSentencePreprocessing(sentence):
             continue
         elif word in string.punctuation:
             continue
-        elif word in stopwords:
+        elif word in chinese_stopwords:
             continue
         rows.append(word)
     return rows
