@@ -87,7 +87,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
         "cat": lambda: getMetaTopicString(cat_metatopic),
     }
     getMetatopic ={
-
+        "dog": dog_metatopic,
+        "cat": cat_metatopic,
     }
     BSP = search.bilibiliSearchParams()
 
