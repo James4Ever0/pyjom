@@ -1,6 +1,6 @@
-# videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em" # this is a dog.
+videoLink = "https://www.bilibili.com/video/BV1Cb4y1s7em" # this is a dog.
 
-videoLink = "https://www.bilibili.com/video/BV1Lx411B7X6"  # multipart download
+# videoLink = "https://www.bilibili.com/video/BV1Lx411B7X6"  # multipart download
 
 from lazero.filesystem.temp import tmpfile
 
@@ -26,7 +26,7 @@ text_area_threshold = {"max": 0.2}
 with tmpfile(path=path, replace=True) as TF:
     x = yt_dlp.YoutubeDL(
         {
-            "outtmpl": path, # seems only video p1 is download.
+            "outtmpl": path, # seems only video p1 is downloaded.
         }
     )
     y = x.download([videoLink])
