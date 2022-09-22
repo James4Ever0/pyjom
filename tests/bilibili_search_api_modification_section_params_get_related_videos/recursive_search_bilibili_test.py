@@ -54,6 +54,7 @@ def filterTitleWithCoreTopicSet(title, core_topic_set):
             
             break
 
+
 def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
     newTitleList = []
     for title in titleList:
