@@ -127,4 +127,4 @@ if len(bvid_list)>0:
     updateMyListsWithIterable(parseVideoRelated(result))
 
 # now what do you want? suggested keywords?
-suggested_queries = sync(search.get_suggest_keywords(keyword = dog_metatopicString))
+suggested_queries = sync(search.get_suggest_keywords(keyword = metatopicString))
