@@ -114,74 +114,75 @@ def parseSearchVideoResult(data):
     resultList = data['result']
     iterateResultList(resultList)
 
-# test_subject = "search_video"
-test_subject = "search_all"
-# test_subject = 'video_related'
-# test_subject = 'video_info'
-# test_subject = 'extract_links'
+if __name__ == "__main__":
+    # test_subject = "search_video"
+    test_subject = "search_all"
+    # test_subject = 'video_related'
+    # test_subject = 'video_info'
+    # test_subject = 'extract_links'
 
-if test_subject == "search_all":
-    with open("search_result_all.json", "r") as f:
-        data = f.read()
-        data = json.loads(data)
-    parseSearchAllResult(data)
-elif test_subject == "search_video":
-    with open("search_by_type_result_video.json", "r") as f:
-        data = f.read()
-        data = json.loads(data)
-    parseSearchVideoResult(data)
-elif test_subject =='video_info':
-    with open("video_info.json", "r") as f:
-        data = f.read()
-        data = json.loads(data)
-    # no tag out here.
-    data_copy = data.copy()
-    data_copy.update({"author":data['owner']['name'], "mid":data['owner']['mid']})
-    data_copy.update(data['stat'])
-    parseVideoSearchItem(data_copy, disableList=['tag','typeid','typename'])
-    season = data['ugc_season'] # we only care about this thing.
-    season_cover = season['cover']
-    sections = season['sections']
-    for section in sections:
-        for episode in section['episodes']:
-            # print(episode.keys())
-            # breakpoint()
-            arc = episode['arc']
-            stat = arc['stat']
-            videoInfo=episode.copy()
-            videoInfo.update(stat)
-            videoInfo.update(arc)
-            parseVideoSearchItem(videoInfo, disableList = ['tag', 'typeid','typename','description','author']) # author is the same as the original video.
-            # BV1Cb4y1s7em
-            # []
-            # 0
+    if test_subject == "search_all":
+        with open("search_result_all.json", "r") as f:
+            data = f.read()
+            data = json.loads(data)
+        parseSearchAllResult(data)
+    elif test_subject == "search_video":
+        with open("search_by_type_result_video.json", "r") as f:
+            data = f.read()
+            data = json.loads(data)
+        parseSearchVideoResult(data)
+    elif test_subject =='video_info':
+        with open("video_info.json", "r") as f:
+            data = f.read()
+            data = json.loads(data)
+        # no tag out here.
+        data_copy = data.copy()
+        data_copy.update({"author":data['owner']['name'], "mid":data['owner']['mid']})
+        data_copy.update(data['stat'])
+        parseVideoSearchItem(data_copy, disableList=['tag','typeid','typename'])
+        season = data['ugc_season'] # we only care about this thing.
+        season_cover = season['cover']
+        sections = season['sections']
+        for section in sections:
+            for episode in section['episodes']:
+                # print(episode.keys())
+                # breakpoint()
+                arc = episode['arc']
+                stat = arc['stat']
+                videoInfo=episode.copy()
+                videoInfo.update(stat)
+                videoInfo.update(arc)
+                parseVideoSearchItem(videoInfo, disableList = ['tag', 'typeid','typename','description','author']) # author is the same as the original video.
+                # BV1Cb4y1s7em
+                # []
+                # 0
 
-            # 这次真的燃起来了！！！
-            # 217
-            # 27911
-            # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
-elif test_subject == "video_related":
-    with open("video_related.json", "r") as f:
-        data = f.read()
-        data = json.loads(data)
-    try:
-        for videoInfo in data:
-            try:
-                videoInfo2 =videoInfo.copy()
-                videoInfo2.update({'author': videoInfo['owner']['name']})
-                videoInfo2.update({'mid': videoInfo['owner']['mid']})
+                # 这次真的燃起来了！！！
+                # 217
+                # 27911
+                # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
+    elif test_subject == "video_related":
+        with open("video_related.json", "r") as f:
+            data = f.read()
+            data = json.loads(data)
+        try:
+            for videoInfo in data:
                 try:
-                    parseVideoSearchItem(videoInfo2,disableList = ['tag','typeid','typename'])
+                    videoInfo2 =videoInfo.copy()
+                    videoInfo2.update({'author': videoInfo['owner']['name']})
+                    videoInfo2.update({'mid': videoInfo['owner']['mid']})
+                    try:
+                        parseVideoSearchItem(videoInfo2,disableList = ['tag','typeid','typename'])
+                    except:
+                        traceError()
                 except:
                     traceError()
-            except:
-                traceError()
-    except:
-        traceError()
-elif test_subject == 'extract_links':
-    description = "http://www.toutiao.com/a6347649852365897986/ 男子送走从小养大的狗，狗狗用泪汪汪的眼神看着他\n"+"https://www.youtube.com/watch?v=r724w57oXyU"+ " https://www.youtube.com/shorts/UYCy8HD1C7o"
-    links, desc = extractLinks(description)
-    print(links)
-    print(desc)
-else:
-    raise Exception("unknown test_subject:", test_subject)
+        except:
+            traceError()
+    elif test_subject == 'extract_links':
+        description = "http://www.toutiao.com/a6347649852365897986/ 男子送走从小养大的狗，狗狗用泪汪汪的眼神看着他\n"+"https://www.youtube.com/watch?v=r724w57oXyU"+ " https://www.youtube.com/shorts/UYCy8HD1C7o"
+        links, desc = extractLinks(description)
+        print(links)
+        print(desc)
+    else:
+        raise Exception("unknown test_subject:", test_subject)
