@@ -38,7 +38,7 @@ target = cv2.imread(image_1)
 
 # transfer the color distribution from the source image
 # to the target image
-transfer = color_transfer(source, target, clip=True, preserve_paper=True)
+transfer = color_transfer(source, target)
 
 
 # show the images and wait for a key press
