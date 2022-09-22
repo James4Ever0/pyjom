@@ -344,7 +344,6 @@ def getVideoWidthHeight(videoPath):
         from caer.video.frames_and_fps import get_res
         defaultWidth, defaultHeight = get_res(videoPath)
     except:
-
         from MediaInfo import MediaInfo
 
         info = MediaInfo(filename=videoPath)
