@@ -179,7 +179,7 @@ def parseSearchAllResult(data, debug=False, generator=True):
             traceError("error iterating data results")
 
 
-def parseSearchVideoResult(data, debug=False, generator=True):
+def parseSearchVideoResult(data, debug=False):
     # if not generator:
     #     return generatorToList(parseSearchVideoResult(data, debug=debug,generator=True))
     try:
