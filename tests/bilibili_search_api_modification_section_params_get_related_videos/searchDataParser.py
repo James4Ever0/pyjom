@@ -43,7 +43,8 @@ def extractLinks(description, extract_bgm=True):
                     bgm = bgm.strip()
                     for fixer in fixers:
                         bgm = bgm.strip(fixer)
-                    if
+                    if len(bgm)>0:
+                        bgms.append(bgm)
         
     return links,bgms, desc_without_link
 
