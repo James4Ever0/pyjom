@@ -52,7 +52,8 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
     for title in titleList:
         for core_topic in core_topic_set:
             if core_topic in title:
-                
+                titleList
+                break
 
 def randomChoiceTagList(tag_list):
     import random
