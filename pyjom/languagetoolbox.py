@@ -129,6 +129,11 @@ def getChineseStopWords():
                     try:
                         mList = json.loads(content)
                         assert type(mList) == list
+                        stopwords+=mList
+                    except:
+                        traceError(_breakpoint=True)
+                else:
+                    
 
 
 def chineseSentencePreprocessing(sentence):
