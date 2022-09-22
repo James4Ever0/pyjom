@@ -198,7 +198,7 @@ def getBilibiliPostMetadataForDogCat():
                             mTagSeries = randomChoiceTagList(tag_list) # a collection of tags.
                             mTitle = random.choice(title_list)
                             mBgm = random.choice(bgm_list)
-                            yield mCover, mTagSeries, mTitle, mBgm
+                            yield mCover, mTagSeries, mTitle, mBgm, dog_or_cat
             topic_modeling_source_sentences = suggested_queries.copy()
             for tags in tag_list:
                 sentence = " ".join(tags)
@@ -237,4 +237,5 @@ def getBilibiliPostMetadataForDogCat():
 
 if __name__ == "__main__":
     for videoMetadata in getBilibiliPostMetadataForDogCat():
-        mCover, mTagSeries, mTitle, mBgm = videoMetadata
+        mCover, mTagSeries, mTitle, mBgm, dog_or_cat = videoMetadata
+        breakpoint()
