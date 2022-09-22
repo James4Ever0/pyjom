@@ -9,8 +9,6 @@ cv2_custom_build_init()
 
 # import the necessary packages
 from color_transfer import color_transfer
-import numpy as np
-import argparse
 import cv2
 
 def show_image(title, image, width = 300):
