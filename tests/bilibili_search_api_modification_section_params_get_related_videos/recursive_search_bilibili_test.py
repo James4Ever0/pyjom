@@ -298,7 +298,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                             random.shuffle(cover_list)
                             for cover in cover_list:
                                 import os
-                                os.environ['http']
+                                os.environ['http'] = ""
+                                os.environ['https'] = ""
                                 import requests
                                 r = requests.get
                                 image = cv2.imread()
