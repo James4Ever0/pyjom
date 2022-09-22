@@ -117,7 +117,10 @@ from functools import lru_cache
 
 @lru_cache(maxsize=1)
 def getChineseStopWords():
-    stopwordFileList = []
+    stopwordFileList = ["",""]
+    import json
+    for filename in stopwordFileList:
+        if 
 
 def chineseSentencePreprocessing(sentence):
     import jieba
