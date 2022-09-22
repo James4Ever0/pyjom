@@ -121,22 +121,9 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
         description = ""
     links_in_description, bgms,description = extractLinks(description)
     duration_seconds = videoDurationStringToSeconds(duration)
+    
     if debug:
-        for metadata in (
-            author,
-            author_id,
-            bvid,
-            tags,
-            categoryId,
-            categoryName,
-            title,
-            duration_seconds,
-            play,
-            cover,
-            description,
-            links_in_description,
-            bgms,
-        ):
+        for metadata in resultTuple:
             print(metadata)
     from lazero.utils.logger import sprint
 
