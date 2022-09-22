@@ -387,7 +387,9 @@ def labelFileReader(filename):
         content = [elem for elem in content if len(elem) > 0]
     return content
 
+
 from pyjom.mathlib import multiParameterExponentialNetwork
+
 
 def bezierPaddleHubResnet50ImageDogCatDetector(
     videoPath,
@@ -396,11 +398,12 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     threshold=0.5,
     dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
-    debug=False):
+    debug=False,
+):
     # from pyjom.imagetoolbox import resizeImageWithPadding
     if type(image) == str:
         image = cv2.imread(image)
-        frame=image
+        frame = image
 
     dog_suffixs = ["狗", "犬", "梗"]
     cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
