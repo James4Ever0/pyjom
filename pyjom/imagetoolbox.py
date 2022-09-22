@@ -13,9 +13,6 @@ def getEasyOCRReader(langs, gpu=True, recognizer=False):
 
 @lru_cache(maxsize=30)
 def getImageTextRecognized(image, langs:tuple=('en',), gpu=True, recognizer=False, return_res =False):
-
-def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False,debug=False, inpaint=False):
-    
     reader = getEasyOCRReader(langs, gpu=gpu, recognizer=recognizer)
     if type(image) == str:
         image = cv2.imread(image)
@@ -23,7 +20,10 @@ def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False
     height, width = frame.shape[:2]
     res = (width, height)
     detection, recognition = reader.detect(frame)  # not very sure.
+    if return_res:
     return res, (detection, recognition)
+def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False,debug=False, inpaint=False):
+
     width, height = res
     img = np.zeros((height, width))
     if detection == [[]]:
