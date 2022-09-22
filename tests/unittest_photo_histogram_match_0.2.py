@@ -29,6 +29,8 @@ def show_image(title, image, width=300):
 source = cv2.imread(image_0)
 target = cv2.imread(image_1)
 
+from test_commons import *
+
 # we inpaint this one from the beginning.
 from pyjom.imagetoolbox import (
     getImageTextAreaRatio,
