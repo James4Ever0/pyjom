@@ -9,7 +9,7 @@ from functools import lru_cache
 
 def corruptMediaFilter(mediaPath, tag='media', bad_words= ["invalid", "failed", "error"]):
     import ffmpeg
-    not_nice = [word for bad_words]
+    not_nice = [word.lower() for word inbad_words]
     corrupted = False
     try:
         stdout, stderr = (
@@ -36,7 +36,7 @@ def corruptMediaFilter(mediaPath, tag='media', bad_words= ["invalid", "failed", 
     valid = not corrupted
     return valid
 def corruptVideoFilter(videoPath):
-
+    
 
 
 def dummyFilterFunction(report: bool, *args, **kwargs):
