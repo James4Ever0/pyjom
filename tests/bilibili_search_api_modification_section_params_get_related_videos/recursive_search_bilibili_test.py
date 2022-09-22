@@ -59,7 +59,9 @@ def filterTitleWithCoreTopicSet(title, core_topic_set):
 def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
     newTitleList = []
     for title in titleList:
-        filterTitleWithCoreTopicSet(title, core_topic_set)
+        result = filterTitleWithCoreTopicSet(title, core_topic_set)
+        if result:
+            newTitleList.append(title)
     print("TITLE LIST:", titleList)
     print("CORE TOPIC SET:", core_topic_set)
     sprint("NEW TITLE LIST:", newTitleList)
