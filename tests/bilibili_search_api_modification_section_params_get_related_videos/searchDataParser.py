@@ -190,41 +190,41 @@ def parseSearchVideoResult(data):
         traceError("error parsing search video result")
 
 def parseVideoInfo(videoInfo):
+    data = videoInfo
+    # no tag out here.
+    secondaryVideoInfoList = []
+    data_copy = data.copy()
+    data_copy.update({"author": data["owner"]["name"], "mid": data["owner"]["mid"]})
+    data_copy.update(data["stat"])
+    primaryVideoInfo = parseVideoSearchItem(
+        data_copy, disableList=["tag", "typeid", "typename"]
+    )
+    # videoInfoList.append(primaryVideoInfo)
+    season = data["ugc_season"]  # we only care about this thing.
+    season_cover = season["cover"]
+    sections = season["sections"]
+    for section in sections:
+        for episode in section["episodes"]:
+            # print(episode.keys())
+            # breakpoint()
+            arc = episode["arc"]
+            stat = arc["stat"]
+            videoInfo = episode.copy()
+            videoInfo.update(stat)
+            videoInfo.update(arc)
+            authorRelatedVideoInfo = parseVideoSearchItem(
+                videoInfo,
+                disableList=["tag", "typeid", "typename", "description", "author"],
+            )  # author is the same as the original video.
+            secondaryVideoInfoList.append(authorRelatedVideoInfo)
+            # BV1Cb4y1s7em
+            # []
+            # 0
 
-        # no tag out here.
-        secondaryVideoInfoList = []
-        data_copy = data.copy()
-        data_copy.update({"author": data["owner"]["name"], "mid": data["owner"]["mid"]})
-        data_copy.update(data["stat"])
-        primaryVideoInfo = parseVideoSearchItem(
-            data_copy, disableList=["tag", "typeid", "typename"]
-        )
-        # videoInfoList.append(primaryVideoInfo)
-        season = data["ugc_season"]  # we only care about this thing.
-        season_cover = season["cover"]
-        sections = season["sections"]
-        for section in sections:
-            for episode in section["episodes"]:
-                # print(episode.keys())
-                # breakpoint()
-                arc = episode["arc"]
-                stat = arc["stat"]
-                videoInfo = episode.copy()
-                videoInfo.update(stat)
-                videoInfo.update(arc)
-                authorRelatedVideoInfo = parseVideoSearchItem(
-                    videoInfo,
-                    disableList=["tag", "typeid", "typename", "description", "author"],
-                )  # author is the same as the original video.
-                secondaryVideoInfoList.append(authorRelatedVideoInfo)
-                # BV1Cb4y1s7em
-                # []
-                # 0
-
-                # 这次真的燃起来了！！！
-                # 217
-                # 27911
-                # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
+            # 这次真的燃起来了！！！
+            # 217
+            # 27911
+            # http://i2.hdslb.com/bfs/archive/c5a0d18ee077fb6a4ac0970ccb0a3788e137d14f.jpg
 
 if __name__ == "__main__":
     # test_subject = "search_video"
