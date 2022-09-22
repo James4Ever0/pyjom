@@ -32,6 +32,7 @@ def extractLinks(description, extract_bgm=True):
     desc_without_link_per_line = [x.replace("\n", "").strip() for x in desc_without_link.split("\n")]
     desc_without_link_per_line = [x for x in desc_without_link_per_line if len(x) >0]
     bgms = []
+    final_desc_list = []
     if not extract_bgm:
         final_desc_list = desc_without_link_per_line
     else:
@@ -52,7 +53,7 @@ def extractLinks(description, extract_bgm=True):
                     break
             if not has_bgm:
                 final_desc_list.append(line)
-        
+    desc_without_link = "\n".join(final_desc_list)
     return links,bgms, desc_without_link
 
 
