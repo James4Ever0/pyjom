@@ -21,7 +21,9 @@ def getImageTextRecognized(image, langs:tuple=('en',), gpu=True, recognizer=Fals
     res = (width, height)
     detection, recognition = reader.detect(frame)  # not very sure.
     if return_res:
-    return res, (detection, recognition)
+        return res, (detection, recognition)
+    else:
+        return detection, recognition
 def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False,debug=False, inpaint=False):
 
     width, height = res
