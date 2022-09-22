@@ -49,10 +49,11 @@ from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 
 def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
+    newTitleList = []
     for title in titleList:
         for core_topic in core_topic_set:
             if core_topic in title:
-                titleList
+                newTitleList.append(title)
                 break
 
 def randomChoiceTagList(tag_list):
