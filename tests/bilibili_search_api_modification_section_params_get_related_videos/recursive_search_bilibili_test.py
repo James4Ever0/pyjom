@@ -149,7 +149,7 @@ for tags in tag_list:
 for title in title_list:
     topic_modeling_source_sentences.append(title)
 
-from pyjom.modules.topicGenerator.onlineTopicGenerator import topicModeling
+from pyjom.modules.topicGenerator.onlineTopicGenerator import topicModeling, topicWordSelection
 
 topics = topicModeling(topic_modeling_source_sentences,lang='zh')
 
