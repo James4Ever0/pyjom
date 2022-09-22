@@ -99,6 +99,7 @@ def removeTitleTags(title, author):
         title_tags = []
     else:
         title_tags = [x.lstrip("【").rstrip("】") for x in title_tags]
+    return title, title_tags
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
