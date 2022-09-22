@@ -228,7 +228,24 @@ def parseVideoInfo(videoInfo):
     return primaryVideoInfo, secondaryVideoInfoList
 
 def parseVideoRelated(videoRelatedData):
-    
+    data = videoRelatedData
+    try:
+        for videoInfo in data:
+            try:
+                videoInfo2 = videoInfo.copy()
+                videoInfo2.update({"author": videoInfo["owner"]["name"]})
+                videoInfo2.update({"mid": videoInfo["owner"]["mid"]})
+                try:
+                    yield parseVideoSearchItem(
+                        videoInfo2, disableList=["tag", "typeid", "typename"], debug=debug
+                    )
+                    # print(videoMetadata)
+                except:
+                    traceError()
+            except:
+                traceError()
+    except:
+        traceError()
 
 if __name__ == "__main__":
     # test_subject = "search_video"
