@@ -120,8 +120,8 @@ def getChineseStopWords():
     stopwordFileList = ["",""]
     import json
     for filename in stopwordFileList:
-        if os.path.exists(filename):
-            with open(filename) as f:
+        if os.path.exists(filename) and os.path.isfile(filename):
+            with open(filename,'r') as f:
             if filename.endswith('.json'):
                 try:
                     
