@@ -126,4 +126,4 @@ if len(bvid_list)>0:
     from searchDataParser import parseVideoRelated
     updateMyListsWithIterable(parseVideoRelated(result))
 
-# now what do you want? related tags?
+# now what do you want? suggested keywords?
