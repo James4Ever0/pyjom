@@ -109,6 +109,8 @@ def removeTitleTags(title, author):
                     if keyword in title_tag:
                         abandon=True
                         break
+            if not abandon:
+                
 
     return title, title_tags
 
