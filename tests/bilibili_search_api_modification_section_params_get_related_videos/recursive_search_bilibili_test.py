@@ -297,7 +297,11 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                             # filtered_cover_list = []
                             random.shuffle(cover_list)
                             for cover in cover_list:
-                                image = 
+                                import os
+                                os.environ['http']
+                                import requests
+                                r = requests.get
+                                image = cv2.imread()
                             # mCover = random.choice(filtered_cover_list) # what is this cover list?
                             reference_histogram_cover = random.choice(cover_list)
                             mTagSeries = randomChoiceTagList(
