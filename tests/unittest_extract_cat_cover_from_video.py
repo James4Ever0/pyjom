@@ -13,6 +13,7 @@ from pyjom.commons import checkMinMaxDict
 
 dog_or_cat = "dog"
 confidence_threshold = {"min":0.7}
+text_threshold = {"max":0.2}
 
 with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
@@ -22,7 +23,7 @@ with tmpfile(path=path) as TF:
     duration = get_duration(path)
     mSampleSize = int(duration/2) # fps = 0.5 or something?
     for frame in getVideoFrameSampler(path, -1,-1,sample_size=mSampleSize,iterate=True):
-        
+
         detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
         mDetections = [x for x in detections if x['identity'] == dog_or_cat]
         mDetections.sort(key=lambda x: -x['confidence']) # select the best one.
