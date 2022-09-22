@@ -14,6 +14,8 @@ def traceError(errorMsg:str="error!", _breakpoint:bool=False):
     if _breakpoint:
         return breakpoint()
 
+def extractLinks()
+
 def videoDurationStringToSeconds(durationString):
     if type(durationString) == int:
         return durationString # not string at all.
