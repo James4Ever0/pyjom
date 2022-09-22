@@ -179,9 +179,9 @@ def parseSearchAllResult(data, debug=False, generator=True):
             traceError("error iterating data results")
 
 
-def parseSearchVideoResult(data, debug=False, generator=True):
+def parseSearchVideoResult(data, debug=False,):
     if not generator:
-        return generatorToList(parseSearchVideoResult(data, debug=debug,generator=True))
+        return generatorToList(parseSearchAllResult(data, debug=debug,generator=True))
     try:
         resultList = data["result"]
         try:
@@ -259,19 +259,11 @@ def parseVideoRelated(videoRelatedData, debug=False, generator=True):
 if __name__ == "__main__":
     # test_subject = "search_video"
     # test_subject = "search_all"
-    # test_subject = 'video_related'
+    test_subject = 'video_related'
     # test_subject = "video_info"
     # test_subject = 'extract_links'
-    test_subject = 'generator_to_list'
-    if test_subject == 'generator_to_list':
-        with open("search_result_all.json", "r") as f:
-            data = f.read()
-            data = json.loads(data)
-        result = parseSearchAllResult(data, generator=False)
-        print(result)
-        print(type(result))
-        breakpoint()
-    elif test_subject == "search_all":
+
+    if test_subject == "search_all":
         with open("search_result_all.json", "r") as f:
             data = f.read()
             data = json.loads(data)
