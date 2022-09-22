@@ -582,8 +582,8 @@ def petsWithMusicOnlineProducer(
             render_list = []  # what is this freaking render_list?
             # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
             # if lyric_path:
+            render_ass = render_ass and (lyric_path is not None)
             if render_ass:
-                if lyric_path is not None:
                 ass_file_path = getRandomFileName("ass")
                 # print("lrc path:", lyric_path)
                 # print('ass file path:',ass_file_path)
