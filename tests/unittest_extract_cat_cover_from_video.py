@@ -15,7 +15,7 @@ dog_or_cat = "dog"
 with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
     y = x.download([videoLink])
-# shall you use frame sampler instead of iterator?
+# shall you use frame sampler instead of iterator? cause this is dumb.
     for frame in getVideoFrameIteratorWithFPS(path, -1,-1,fps=0.5):
         detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
         mDetections = [x for x in detections if x['identity'] == dog_or_cat]
