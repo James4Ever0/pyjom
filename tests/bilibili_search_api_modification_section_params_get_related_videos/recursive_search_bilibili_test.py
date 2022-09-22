@@ -50,10 +50,10 @@ from lazero.utils.tools import flattenUnhashableList # one of my classic methods
 import random
 def getBilibiliPostMetadataForDogCat():
     selected_topic_list_dict = {"dog":[],"cat":[]}
-    dog_or_cat = random.choice(list(selected_topic_list_dict.keys()))
     core_topic_set = {
             *flattenUnhashableList(dog_metatopic)
         }
+    dog_or_cat = random.choice(list(selected_topic_list_dict.keys()))
     getKeywords = lambda:getMetaTopicString(dog_metatopic)
     metatopicString = getKeywords()
     import random
