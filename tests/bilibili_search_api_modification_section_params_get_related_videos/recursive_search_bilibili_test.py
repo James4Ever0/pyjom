@@ -167,14 +167,14 @@ def getBilibiliPostMetadataForDogCat():
             selectedWord = topicWordSelection(
                                     topics, core_topic_set, selected_topic_list_dict["dog"]
                                 )
-            dog_or_cat = 
+            dog_or_cat = randomTarget()
             if selectedWord is not None:
                 keywords = " ".join(
-                    [getKeywords(), selectedWord]
+                    [getKeywords[dog_or_cat](), selectedWord]
                 )  # for next iteration.
                 print("REFRESHING KEYWORDS:", keywords)
             else:
-                keywords = getKeywords()
+                keywords = getKeywords[dog_or_cat]()
             print(selected_topic_list_dict)
             breakpoint()
         except:
