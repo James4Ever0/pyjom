@@ -51,9 +51,9 @@ from lazero.utils.logger import sprint
 def filterTitleWithCoreTopicSet(title, core_topic_set):
     for core_topic in core_topic_set:
         if core_topic in title:
-            
+            value = True
             break
-
+    value = False
 
 def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
     newTitleList = []
