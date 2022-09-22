@@ -177,4 +177,5 @@ def getBilibiliPostMetadataForDogCat():
             print(selected_topic_list_dict)
             breakpoint()
         except:
-            from lazero.utils.logger import 
+            from lazero.utils.logger import traceError
+            traceError('error when fetching metatopic')
