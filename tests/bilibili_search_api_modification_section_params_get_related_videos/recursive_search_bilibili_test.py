@@ -49,6 +49,7 @@ from bilibili_api import sync, search
 dog_metatopicString = getMetaTopicString(dog_metatopic)
 import random
 getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid,BSP.all.tids.动物圈.汪星人])
+getRandomPage = lambda: random.randint(1,50)
 print(dog_metatopicString)
 
 # we use video only search.
