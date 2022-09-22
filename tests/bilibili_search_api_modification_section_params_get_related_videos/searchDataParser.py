@@ -153,6 +153,7 @@ def parseSearchAllResult(data, debug=False):
 
 
 def parseSearchVideoResult(data):
+    try:
     resultList = data["result"]
     iterateResultList(resultList)
 
