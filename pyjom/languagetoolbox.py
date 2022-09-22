@@ -81,11 +81,13 @@ def englishSentencePreprocessing(
         Stem_words.append(rootWord)
     return Stem_words
 
-def sentenceFlatten(sentence, ):
+def sentenceFlatten(sentence, padding = " "):
+    assert len(padding) == 1
+    assert type(padding) == str
     for x in "\n\r\t":
-        sentence = sentence.replace(x, " ")
+        sentence = sentence.replace(x, padding)
     while True:
-        if "  " in sentence:
+        if in sentence:
             sentence = sentence.replace(" ")
 
 def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
