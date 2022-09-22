@@ -366,3 +366,6 @@ def resizeImageWithPadding(
     else:
         raise Exception("unknown border_type: %s" % border_type)
     return padded
+
+
+def image
