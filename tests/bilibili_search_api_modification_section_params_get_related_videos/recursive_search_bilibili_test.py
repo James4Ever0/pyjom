@@ -48,15 +48,15 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList # one of my classic methods
 from lazero.utils.logger import sprint
-def filterTitleWithCoreTopicSet(title, core_topic_set)
-
-def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
-    newTitleList = []
-    for title in titleList:
+def filterTitleWithCoreTopicSet(title, core_topic_set):
         for core_topic in core_topic_set:
             if core_topic in title:
                 newTitleList.append(title)
                 break
+
+def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
+    newTitleList = []
+    for title in titleList:
     print("TITLE LIST:", titleList)
     print("CORE TOPIC SET:", core_topic_set)
     sprint("NEW TITLE LIST:", newTitleList)
