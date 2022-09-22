@@ -49,6 +49,7 @@ with tmpfile(path=path, replace=True) as TF:
             mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
             if len(mDetections) > 0:
                 best_confidence = mDetections[0]["confidence"]
+                print("BEST CONFIDENCE:", best_confidence)
                 if checkMinMaxDict(best_confidence, confidence_threshold):
                     target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
                     target = imageFourCornersInpainting(target)
