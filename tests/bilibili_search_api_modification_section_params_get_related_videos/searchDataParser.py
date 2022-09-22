@@ -14,7 +14,10 @@ def traceError(errorMsg:str="error!", _breakpoint:bool=False):
     if _breakpoint:
         return breakpoint()
 
-def extractLinks()
+def extractLinks(description):
+    """Extract and remove links in description"""
+    import re
+    
 
 def videoDurationStringToSeconds(durationString):
     if type(durationString) == int:
