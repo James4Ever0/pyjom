@@ -47,7 +47,8 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 
 dog_metatopicString = getMetaTopicString(dog_metatopic)
-
+import random
+getDogTid = lambda: 
 print(dog_metatopicString)
 
 # we use video only search.
@@ -57,7 +58,7 @@ BSP = search.bilibiliSearchParams()
 result = sync(
     search.search_by_type(
         keyword=dog_metatopicString,
-        params={"tids": BSP.all.tids.动物圈.tid, "duration": BSP.all.duration._10分钟以下},
+        params={"tids": getDogTid(), "duration": BSP.all.duration._10分钟以下},
         page=1,
         search_type=search.SearchObjectType.VIDEO,
     )
