@@ -54,6 +54,7 @@ def filterTitleWithCoreTopicSet(title, core_topic_set):
             value = True
             break
     value = False
+    return value
 
 def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
     newTitleList = []
