@@ -427,9 +427,11 @@ def getMusicInfoParsed(config):
     maxtime = config["maxtime"]
     mintime = config["mintime"]
     lyric_path = music.get("lyric_path", None)
-    if type(lyric_path) is not None:
+    if type(lyric_path) == str:
         if not os.path.exists(lyric_path):
             lyric_path = None
+    elif lyric_path is not None:
+        lyric_path = None
     demanded_cut_spans, standard_bpm_spans = getMusicCutSpans(
         music, music_duration, lyric_path, maxtime, mintime
     )
