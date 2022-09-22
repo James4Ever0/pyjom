@@ -24,3 +24,5 @@ metatopic = {
 }
 
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
+
+metatopicString = getMetaTopicString(metatopic)
