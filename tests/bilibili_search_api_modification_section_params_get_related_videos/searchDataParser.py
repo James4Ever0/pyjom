@@ -69,6 +69,7 @@ def parseVideoSearchItem(video, disableList:list=[]):
         print(metadata)
     from lazero.utils.logger import sprint
     sprint()
+    return author,author_id,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description
 
 # you might want the creater's name, to filter out unwanted parts.
 
