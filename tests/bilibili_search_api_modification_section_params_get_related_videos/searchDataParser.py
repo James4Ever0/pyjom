@@ -170,6 +170,9 @@ elif test_subject == "video_related":
             videoInfo2.update({'mid': videoInfo['owner']['mid']})
             try:
                 parseVideoSearchItem(videoInfo2,disableList = ['tag','typeid','typename'])
+            except:
+                traceError()
+        
 elif test_subject == 'extract_links':
     descripton = 
 else:
