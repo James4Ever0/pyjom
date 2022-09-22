@@ -68,6 +68,7 @@ def imageFourCornersInpainting(image):
     fourCorners = getFourCorners(0,0, defaultWidth, defaultHeight)
     img = np.zeros((defaultHeight, defaultWidth), dtype=np.uint8)
     for corner in fourCorners:
+        img = 
     
 
 def getImageTextAreaRatio(
