@@ -92,7 +92,11 @@ def removeAuthorRelatedTags(description_or_title, author):
 
 def removeTitleTags(title, author):
     import re
-    re.findall("【\.+】", title)
+    title_tags = re.findall("【\.+】", title)
+    if title_tags ==None:
+        title_tags = []
+    else:
+        title_tags = [x.lstrip("").rstrip("")]
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
