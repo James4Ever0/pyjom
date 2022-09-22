@@ -86,7 +86,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
         "dog": lambda: getMetaTopicString(dog_metatopic),
         "cat": lambda: getMetaTopicString(cat_metatopic),
     }
-    getMetatopic ={
+    getMetatopic = {
         "dog": dog_metatopic,
         "cat": cat_metatopic,
     }
