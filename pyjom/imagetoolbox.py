@@ -4,6 +4,7 @@ import cv2
 
 from functools import lru_cache
 
+def removeImage
 
 @lru_cache(maxsize=1)
 def getEasyOCRReader(langs:tuple, gpu=True, recognizer=False):
