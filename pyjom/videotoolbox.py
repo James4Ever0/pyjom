@@ -1784,6 +1784,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
     logic: Literal["AND", "OR"] = "OR",
+    use_gpu=False
 ):
     filter_dict = {
         "dog": {"min": threshold},
