@@ -189,6 +189,7 @@ def parseSearchVideoResult(data):
     except:
         traceError("error parsing search video result")
 
+def parseVideoInfo(videoInfo)
 
 if __name__ == "__main__":
     # test_subject = "search_video"
