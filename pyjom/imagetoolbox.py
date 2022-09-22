@@ -66,7 +66,7 @@ def imageFourCornersInpainting(image):
         image = cv2.imread(image)
     defaultHeight, defaultWidth = image.shape[:2]
     fourCorners = getFourCorners(0,0, defaultWidth, defaultHeight)
-    img = np.zeros((defaultHeight, defaultWidth))
+    img = np.zeros((defaultHeight, defaultWidth), dtype=np.uint8)
     for corner in fourCorners:
     
 
@@ -82,7 +82,7 @@ def getImageTextAreaRatio(
         image, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True
     )
     width, height = res
-    img = np.zeros((height, width))
+    img = np.zeros((height, width), dtype=np.uint8)
     if detection == [[]]:
         diagonalRects = []
     else:
