@@ -119,9 +119,9 @@ if len(bvid_list)>0:
     videoInfo = sync(v.get_info())
     from searchDataParser import parseVideoInfo
     primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(videoInfo)
-    for videoMetadata in secondaryVideoInfoList:
-        updateMyListsWithIterable(videoMetadata)
+    # for videoMetadata in secondaryVideoInfoList:
+    updateMyListsWithIterable(secondaryVideoInfoList)
     # then we get related videos.
     result = sync(v.get_related())
     from searchDataParser import parseVideoRelated
-    for videoMetadata in parseVideoRelated(result):
+    updateMyListsWithIterable(parseVideoRelated(result))
