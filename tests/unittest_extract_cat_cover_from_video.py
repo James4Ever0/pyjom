@@ -18,6 +18,7 @@ with tmpfile(path=path) as TF:
 # shall you use frame sampler instead of iterator? cause this is dumb.
     from caer.video.frames_and_fps import get_duration
     duration = get_duration(path)
+    mSampleSize = (duration/2)
     for frame in getVideoFrameSampler(path, -1,-1,sample_size=mSampleSize,iterator=True):
         detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
         mDetections = [x for x in detections if x['identity'] == dog_or_cat]
