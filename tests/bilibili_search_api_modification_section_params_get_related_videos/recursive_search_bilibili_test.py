@@ -84,7 +84,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
     getRandomPage = lambda: random.randint(1,5)  # not so broad.
     # getRandomPage = lambda: random.randint(1, 50)  # broad range!
     orders = [BSP.all.order.最多点击,BSP.all.order.最多收藏, BSP.all.order.最新发布, BSP.all.order.最多弹幕, BSP.all.order.综合排序]
-    
+    randomOrder = lambda: random.choice(orders)
     while True:
         try:
 
@@ -100,6 +100,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                     params={
                         "tids": getTid[dog_or_cat](),
                         "duration": BSP.all.duration._10分钟以下,
+                        'order':randomOrder()
                     },
                     page=getRandomPage(),
                     search_type=search.SearchObjectType.VIDEO,
