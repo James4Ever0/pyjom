@@ -424,8 +424,8 @@ def getMusicInfoParsed(config,maxtime=2, mintime=7.8,): #these are defaults.
     # get music duration here.
     music_metadata = get_media_info(music["filepath"])
     music_duration = music_metadata["duration"]
-    maxtime = config["maxtime"]
-    mintime = config["mintime"]
+    maxtime = config.get("maxtime", maxtime)
+    mintime = config.get("mintime", mintime)
     lyric_path = music.get("lyric_path", None)
     if type(lyric_path) == str:
         if not os.path.exists(lyric_path):
