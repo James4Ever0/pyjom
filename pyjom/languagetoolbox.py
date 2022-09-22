@@ -91,6 +91,7 @@ def sentenceFlatten(sentence, padding = " "):
             sentence = sentence.replace(padding*2, padding)
         else:
             break
+    sentence = sentence.strip()
     return sentence
 
 def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
