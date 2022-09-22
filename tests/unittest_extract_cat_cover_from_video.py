@@ -13,4 +13,4 @@ with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
     y = x.download([videoLink])
     for frame in getVideoFrameIteratorWithFPS(path, -1,-1,fps=0.5):
-        
+        detections = bezierPaddleHubResnet50ImageDogCatDetector(frame,)
