@@ -85,12 +85,6 @@ def getBilibiliPostMetadataForDogCat():
 
             from searchDataParser import parseSearchVideoResult
 
-            description_list = []
-            bgm_list = []
-            title_list = []
-            tag_list = []
-            cover_list = []
-            bvid_list = []
 
             from pyjom.commons import checkMinMaxDict
 
