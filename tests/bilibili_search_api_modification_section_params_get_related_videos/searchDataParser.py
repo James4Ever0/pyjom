@@ -22,7 +22,8 @@ def extractLinks(description):
     links = re.findall(expression,description)
     if links == None:
         links = []
-    re.sub(expression, "", description)
+    desc_without_link = re.sub(expression, "", description)
+    return linksdesc_without_link.sub
 
 def videoDurationStringToSeconds(durationString):
     if type(durationString) == int:
