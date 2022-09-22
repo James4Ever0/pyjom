@@ -121,7 +121,21 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
         description = ""
     links_in_description, bgms,description = extractLinks(description)
     duration_seconds = videoDurationStringToSeconds(duration)
-    
+    resultTuple =  (
+            author,
+            author_id,
+            bvid,
+            tags,
+            categoryId,
+            categoryName,
+            title,
+            duration_seconds,
+            play,
+            cover,
+            description,
+            links_in_description,
+            bgms,
+        )
     if debug:
         for metadata in resultTuple:
             print(metadata)
@@ -129,21 +143,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
 
     if debug:
         sprint()
-    return (
-        author,
-        author_id,
-        bvid,
-        tags,
-        categoryId,
-        categoryName,
-        title,
-        duration_seconds,
-        play,
-        cover,
-        description,
-        links_in_description,
-    )
-
+    return resultTuple
 
 # you might want the creater's name, to filter out unwanted parts.
 
