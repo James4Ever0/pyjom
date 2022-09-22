@@ -667,7 +667,7 @@ def petsWithMusicOnlineProducer(
                 yield final_output_location  # another generator?
             except:
                 from lazero.utils.logger import traceError
-                traceError("error while rendering ",_breakpoint=True)
+                traceError("error while rendering medialang script",_breakpoint=True)
 
 
 def getProducerTemplate(template: str):
