@@ -92,7 +92,7 @@ def removeAuthorRelatedTags(description_or_title, author):
 
 def removeTitleTags(title, author):
     import re
-    re.findall("")
+    re.findall("【(\.+)】")
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
