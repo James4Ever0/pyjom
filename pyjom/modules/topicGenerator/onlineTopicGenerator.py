@@ -61,7 +61,7 @@ def getMetaTopicString(metaTopic):
     samples = random.sample(
         dynamicCandidates, random.randint(0, len(dynamicCandidates))
     )
-    return " ".join(staticCandidates + samples)
+    return " ".join(staticCandidates + optionalCandidates + samples)
 
 
 @decorator
