@@ -415,7 +415,7 @@ def renderList2MediaLang(
 
 # fix long loading time.
 @redisLRUCache()
-def getMusicInfoParsed(config,maxtime=2, mintime=7.8,): #these are defaults.
+def getMusicInfoParsed(config,maxtime=2, mintime=7.8): #these are defaults.
     music = config["music"]
     # check if music is corrupted?
     font = config.get("font",None)
