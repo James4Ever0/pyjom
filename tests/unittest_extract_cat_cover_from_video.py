@@ -20,7 +20,7 @@ from pyjom.imagetoolbox import (
 from pyjom.commons import checkMinMaxDict
 
 dog_or_cat = "dog"
-confidence_threshold = {"min": 0.2}
+confidence_threshold = {"min": 0.7}
 text_area_threshold = {"max": 0.2}
 gpu=False
 
