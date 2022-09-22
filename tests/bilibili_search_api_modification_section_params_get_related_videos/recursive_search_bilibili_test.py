@@ -115,4 +115,5 @@ if len(bvid_list)>0:
     videoInfo = sync(v.get_info())
     from searchDataParser import parseVideoInfo
     primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(videoInfo)
-    for videoMetadata in 
+    for videoMetadata in secondaryVideoInfoList:
+        updateMyLists(videoMetadata=)
