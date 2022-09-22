@@ -39,7 +39,7 @@ y = x.download([videoLink])
 # breakpoint()
 from pyjom.videotoolbox import corruptVideoFilter
 
-
+video_fine = corruptVideoFilter(video)
 from caer.video.frames_and_fps import get_duration
 
 duration = get_duration(path)
