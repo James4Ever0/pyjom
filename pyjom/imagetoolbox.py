@@ -31,7 +31,8 @@ def getImageTextAreaRecognized(
     else:
         return detection, recognition
 
-def imageCornersInpainting(
+def imageCornersInpainting(image):
+    
 
 def getImageTextAreaRatio(
     image,
