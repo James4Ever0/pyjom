@@ -29,32 +29,34 @@ def extractLinks(description, extract_bgm=True):
     if links == None:
         links = []
     desc_without_link = re.sub(expression, "", description)
-    desc_without_link_per_line = [x.replace("\n", "").strip() for x in desc_without_link.split("\n")]
-    desc_without_link_per_line = [x for x in desc_without_link_per_line if len(x) >0]
+    desc_without_link_per_line = [
+        x.replace("\n", "").strip() for x in desc_without_link.split("\n")
+    ]
+    desc_without_link_per_line = [x for x in desc_without_link_per_line if len(x) > 0]
     bgms = []
     final_desc_list = []
     if not extract_bgm:
         final_desc_list = desc_without_link_per_line
     else:
         for line in desc_without_link_per_line:
-            bgmCandidateTemplates = ["{}：", "{}:","{} "]
+            bgmCandidateTemplates = ["{}：", "{}:", "{} "]
             fixers = [x.format("") for x in bgmCandidateTemplates]
-            bgmCandidates = [x.format('bgm') for x in bgmCandidateTemplates]
-            has_bgm=False
+            bgmCandidates = [x.format("bgm") for x in bgmCandidateTemplates]
+            has_bgm = False
             for candidate in bgmCandidates:
                 if line.lower().startswith(candidate):
                     has_bgm = True
-                    bgm = [len(bgmCandidates):]line
+                    bgm = line[len(bgmCandidates) :]
                     bgm = bgm.strip()
                     for fixer in fixers:
                         bgm = bgm.strip(fixer)
-                    if len(bgm)>0:
+                    if len(bgm) > 0:
                         bgms.append(bgm)
                     break
             if not has_bgm:
                 final_desc_list.append(line)
     desc_without_link = "\n".join(final_desc_list)
-    return links,bgms, desc_without_link
+    return links, bgms, desc_without_link
 
 
 def videoDurationStringToSeconds(durationString):
@@ -79,11 +81,12 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features="lxml")
     return a.text
 
+
 def removeAuthorRelatedTags(description_or_title, author):
-    templates = ["【{}】","@{}", "{}"]
+    templates = ["【{}】", "@{}", "{}"]
     tags = [template.format(author) for template in templates]
     for tag in tags:
-        description_or_title = description_or_title.replace(tag,"")
+        description_or_title = description_or_title.replace(tag, "")
     return description_or_title
 
 
@@ -119,23 +122,23 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
         description = removeAuthorRelatedTags(description, author)
     else:
         description = ""
-    links_in_description, bgms,description = extractLinks(description)
+    links_in_description, bgms, description = extractLinks(description)
     duration_seconds = videoDurationStringToSeconds(duration)
-    resultTuple =  (
-            author,
-            author_id,
-            bvid,
-            tags,
-            categoryId,
-            categoryName,
-            title,
-            duration_seconds,
-            play,
-            cover,
-            description,
-            links_in_description,
-            bgms,
-        )
+    resultTuple = (
+        author,
+        author_id,
+        bvid,
+        tags,
+        categoryId,
+        categoryName,
+        title,
+        duration_seconds,
+        play,
+        cover,
+        description,
+        links_in_description,
+        bgms,
+    )
     if debug:
         for metadata in resultTuple:
             print(metadata)
@@ -144,6 +147,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     if debug:
         sprint()
     return resultTuple
+
 
 # you might want the creater's name, to filter out unwanted parts.
 
@@ -183,15 +187,14 @@ def parseSearchVideoResult(data):
         except:
             traceError("error iterating result list")
     except:
-        traceError('error parsing search video result')
-            
+        traceError("error parsing search video result")
 
 
 if __name__ == "__main__":
     # test_subject = "search_video"
     # test_subject = "search_all"
     # test_subject = 'video_related'
-    test_subject = 'video_info'
+    test_subject = "video_info"
     # test_subject = 'extract_links'
 
     if test_subject == "search_all":
@@ -217,7 +220,9 @@ if __name__ == "__main__":
         data_copy = data.copy()
         data_copy.update({"author": data["owner"]["name"], "mid": data["owner"]["mid"]})
         data_copy.update(data["stat"])
-        primaryVideoInfo = parseVideoSearchItem(data_copy, disableList=["tag", "typeid", "typename"])
+        primaryVideoInfo = parseVideoSearchItem(
+            data_copy, disableList=["tag", "typeid", "typename"]
+        )
         videoInfoList.append(primaryVideoInfo)
         season = data["ugc_season"]  # we only care about this thing.
         season_cover = season["cover"]
