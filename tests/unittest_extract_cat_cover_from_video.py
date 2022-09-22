@@ -5,7 +5,7 @@ from lazero.filesystem.temp import tmpfile
 import yt_dlp
 # import pyidm
 
-path = "/dev/shm/testVideo"
+path = "/dev/shm/testVideo.mp4"
 from test_commons import *
 import cv2
 from pyjom.videotoolbox import getVideoFrameSampler
