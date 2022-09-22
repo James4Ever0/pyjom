@@ -48,14 +48,18 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 
+
 def randomChoiceTagList(tag_list):
     import random
-    selected_tags = random.sample(tag_list,3)
-    selected_tags = [random.sample(tags, min(len(tags),2)) for tags in selected_tags]
+
+    selected_tags = random.sample(tag_list, 3)
+    selected_tags = [random.sample(tags, min(len(tags), 2)) for tags in selected_tags]
     return list(set(selected_tags))
+
 
 def getBilibiliPostMetadataForDogCat(sleepTime=2):
     import random
+
     selected_topic_list_dict = {"dog": [], "cat": []}
     core_topic_set = {*flattenUnhashableList(dog_metatopic)}
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
@@ -73,13 +77,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
     }
     BSP = search.bilibiliSearchParams()
 
-
-    getDogTid = lambda: random.choice(
-        [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人]
-    )
-    getCatTid = lambda: random.choice(
-        [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人]
-    )
+    getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人])
+    getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人])
     getTid = {"dog": getDogTid, "cat": getCatTid}
 
     getRandomPage = lambda: random.randint(1, 5)  # broad range!
@@ -189,13 +188,15 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 suggested_queries = []
             # now we need to collect the keywords.
             # notice: we can only update this for selected topic like cat or dog. these keywords might not be shared.
-            if len(title_list)> 3:
+            if len(title_list) > 3:
                 if len(cover_list) > 3:
-                    if len(tag_list)>3:
-                        if len(bgm_list)>3:
+                    if len(tag_list) > 3:
+                        if len(bgm_list) > 3:
                             # time to yield something.
                             mCover = random.choice(cover_list)
-                            mTagSeries = randomChoiceTagList(tag_list) # a collection of tags.
+                            mTagSeries = randomChoiceTagList(
+                                tag_list
+                            )  # a collection of tags.
                             mTitle = random.choice(title_list)
                             mBgm = random.choice(bgm_list)
                             yield mCover, mTagSeries, mTitle, mBgm, dog_or_cat
@@ -228,6 +229,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
             # breakpoint()
         except:
             import time
+
             time.sleep(sleepTime)
             from lazero.utils.logger import traceError
 
