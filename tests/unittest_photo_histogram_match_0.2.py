@@ -34,11 +34,12 @@ import numpy as np
 
 transfer_02 = (target*0.8+transfer*0.2).astype(np.uint8)
 
-transfer_02_flip = transfer_02)
+transfer_02_flip = cv2.flip(transfer_02)
 
 # show the images and wait for a key press
 show_image("Source", source)
 show_image("Target", target)
 show_image("Transfer", transfer)
 show_image("Transfer_02", transfer_02)
+show_image("Transfer_02_flip", transfer_02_flip)
 cv2.waitKey(0)
