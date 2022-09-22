@@ -56,7 +56,7 @@ BSP = search.bilibiliSearchParams()
 
 result = sync(
     search.search_by_type(
-        keyword=dog_metatopicString
+        keyword=dog_metatopicString,
         params={"tids": BSP.all.tids.动物圈.tid, "duration": BSP.all.duration._10分钟以下},
         page=1,
         search_type=search.SearchObjectType.VIDEO,
