@@ -7,9 +7,9 @@ import cv2
 from pyjom.imagetoolbox import *
 from functools import lru_cache
 
-def corruptMediaFilter(mediaPath, tag='media', bad_words_lower = ):
+def corruptMediaFilter(mediaPath, tag='media', bad_words= ["invalid", "failed", "error"]):
     import ffmpeg
-    not_nice = ["invalid", "failed", "error"]
+    not_nice = [word for bad_words]
     corrupted = False
     try:
         stdout, stderr = (
