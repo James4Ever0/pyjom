@@ -666,6 +666,8 @@ def petsWithMusicOnlineProducer(
                     ffmpeg.input(rendered_media_location).filter("ass", ass_file_path).output(
                         final_output_location
                     ).run(overwrite_output=True)
+                else:
+                    os.
                 yield final_output_location  # another generator?
             except:
                 from lazero.utils.logger import traceError
