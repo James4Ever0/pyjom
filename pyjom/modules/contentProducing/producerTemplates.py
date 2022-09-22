@@ -553,7 +553,7 @@ def petsWithMusicOnlineProducer(
                     print("music file corrputed")
                     continue
             else:
-                report = 
+                print('music file does not exist')
             render_ass = config.get('render_ass', False)
             parsed_result = getMusicInfoParsed(config)
             # print(parsed_result)
