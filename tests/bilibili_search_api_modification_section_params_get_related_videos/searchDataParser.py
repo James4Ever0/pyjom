@@ -178,5 +178,6 @@ elif test_subject == "video_related":
         traceError()
 elif test_subject == 'extract_links':
     descripton = "http://www.toutiao.com/a6347649852365897986/ 男子送走从小养大的狗，狗狗用泪汪汪的眼神看着他\n"+"https://www.youtube.com/watch?v=r724w57oXyU"+ " https://www.youtube.com/shorts/UYCy8HD1C7o"
+    extractLinks(description)
 else:
     raise Exception("unknown test_subject:", test_subject)
