@@ -110,4 +110,4 @@ if len(bvid_list)>0:
     bvid = random.choice(bvid_list)
     v = video.Video(bvid=bvid)
     videoInfo = sync(v.get_info())
-    
+    from searchDataParser import parseVideoInfo
