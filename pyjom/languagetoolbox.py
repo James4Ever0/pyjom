@@ -81,7 +81,9 @@ def englishSentencePreprocessing(
         Stem_words.append(rootWord)
     return Stem_words
 
-def sentenceFlatten()
+def sentenceFlatten(sentence):
+    for x in "\n\r\t":
+        sentence = sentence.replace(x, " ")
 
 def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
