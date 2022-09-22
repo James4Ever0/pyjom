@@ -55,12 +55,11 @@ def getBilibiliPostMetadataForDogCat():
         }
     dog_or_cat = random.choice(list(selected_topic_list_dict.keys()))
     getKeywords = {"dog":lambda:getMetaTopicString(dog_metatopic),"cat":lambda:getMetaTopicString(cat_metatopic)}
-    metatopicString = getKeywords()
+    metatopicString = getKeywords[dog_or_cat]()
     import random
     getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid,BSP.all.tids.动物圈.汪星人])
     getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid,BSP.all.tids.动物圈.喵星人])
     getTid = {"dog":getDogTid,'cat':getCatTid}
-
 
     getRandomPage = lambda: random.randint(1,50)# broad range!
     print(metatopicString)
@@ -72,7 +71,7 @@ def getBilibiliPostMetadataForDogCat():
     result = sync(
         search.search_by_type(
             keyword=metatopicString,
-            params={"tids": getDogTid(), "duration": BSP.all.duration._10分钟以下},
+            params={"tids": getTid[dog_or_cat](), "duration": BSP.all.duration._10分钟以下},
             page=getRandomPage(),
             search_type=search.SearchObjectType.VIDEO,
         )
