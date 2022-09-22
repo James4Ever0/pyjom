@@ -45,8 +45,8 @@ def extractLinks(description, extract_bgm=True):
             bgmCandidates = [x.format("bgm")+"(.+)" for x in bgmCandidateTemplates]
             has_bgm = False
             for candidate in bgmCandidates:
-                re.findall(candidate,line.lower())
-                if is not None:
+                bgm_parse_result = re.findall(candidate,line.lower())
+                if bgm_parse_result is not None:
                     has_bgm = True
                     bgm = line[len(bgmCandidates) :]
                     bgm = bgm.strip()
