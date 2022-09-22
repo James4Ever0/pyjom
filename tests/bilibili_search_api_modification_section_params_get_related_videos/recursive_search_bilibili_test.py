@@ -54,7 +54,7 @@ def getBilibiliPostMetadataForDogCat():
             *flattenUnhashableList(dog_metatopic)
         }
     dog_or_cat = random.choice(list(selected_topic_list_dict.keys()))
-    if dog_or_cat = 
+    getTid = {"dog":getDogTid,'cat':getCatTid}
     getKeywords = lambda:getMetaTopicString(dog_metatopic)
     metatopicString = getKeywords()
     import random
