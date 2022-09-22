@@ -63,12 +63,13 @@ def getBilibiliPostMetadataForDogCat():
     tag_list = []
     cover_list = []
     bvid_list = []
+    getKeywords = {
+        "dog": lambda: getMetaTopicString(dog_metatopic),
+        "cat": lambda: getMetaTopicString(cat_metatopic),
+    }
     while True:
         try:
-            getKeywords = {
-                "dog": lambda: getMetaTopicString(dog_metatopic),
-                "cat": lambda: getMetaTopicString(cat_metatopic),
-            }
+
             metatopicString = getKeywords[dog_or_cat]()
             import random
 
