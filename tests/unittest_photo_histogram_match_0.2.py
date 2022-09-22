@@ -1,7 +1,7 @@
 # USAGE
 # python example.py --source images/ocean_sunset.jpg --target images/ocean_day.jpg
 
-image_0 = ""
+image_0 = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"
 image_1 = ""
 
 from lazero.utils.importers import cv2_custom_build_init
