@@ -73,6 +73,8 @@ titles = []
 tags = []
 covers = []
 
+duration_limit = {"min":}
+
 for videoMetadata in parseSearchVideoResult(result):
     (
         author,
