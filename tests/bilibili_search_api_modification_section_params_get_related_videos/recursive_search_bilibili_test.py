@@ -1,4 +1,3 @@
-
 import sys
 import os
 
@@ -32,7 +31,7 @@ cat_metatopic = {
 
 dog_metatopic = {
     "static": [
-       [
+        [
             "狗狗",
             "狗",
             "汪汪",
