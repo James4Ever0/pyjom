@@ -48,7 +48,8 @@ def extractLinks(description, extract_bgm=True):
                 bgm_parse_result = re.findall(candidate,line.lower())
                 if bgm_parse_result is not None:
                     has_bgm = True
-                    bgm = line[len(bgmCandidates) :]
+                    # bgm = line[len(bgmCandidates) :]
+                    bgm = bgm_parse_result[0]
                     bgm = bgm.strip()
                     for fixer in fixers:
                         bgm = bgm.strip(fixer)
