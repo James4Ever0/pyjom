@@ -261,23 +261,6 @@ if __name__ == "__main__":
         with open("video_related.json", "r") as f:
             data = f.read()
             data = json.loads(data)
-        try:
-            for videoInfo in data:
-                try:
-                    videoInfo2 = videoInfo.copy()
-                    videoInfo2.update({"author": videoInfo["owner"]["name"]})
-                    videoInfo2.update({"mid": videoInfo["owner"]["mid"]})
-                    try:
-                        yield parseVideoSearchItem(
-                            videoInfo2, disableList=["tag", "typeid", "typename"], debug=debug
-                        )
-                        # print(videoMetadata)
-                    except:
-                        traceError()
-                except:
-                    traceError()
-        except:
-            traceError()
     elif test_subject == "extract_links":
         description = (
             "http://www.toutiao.com/a6347649852365897986/ 男子送走从小养大的狗，狗狗用泪汪汪的眼神看着他\n"
