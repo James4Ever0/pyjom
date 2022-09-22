@@ -35,7 +35,7 @@ def extractLinks(description, extract_bgm=True):
     if extract_bgm:
         for line in desc_without_link_per_line:
             bgmCandidateTemplates = ["{}：", "{} ","{}:"]
-            fixers = [x ]
+            fixers = [x.format("") for x in bgmCandidateTemplates]
             bgmCandidates = [x.format('bgm') for x in bgmCandidateTemplates]
             for candidate in bgmCandidates:
                 if line.lower().startswith(candidate):
