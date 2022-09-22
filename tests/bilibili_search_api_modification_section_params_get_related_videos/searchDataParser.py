@@ -162,7 +162,9 @@ elif test_subject == "video_related":
     with open("video_related.json", "r") as f:
         data = f.read()
         data = json.loads(data)
+    try:
     for videoInfo in data:
+        try:
         videoInfo2 =videoInfo.copy()
         videoInfo2.update({'author': videoInfo['owner']['name']})
         videoInfo2.update({'mid': videoInfo['owner']['mid']})
