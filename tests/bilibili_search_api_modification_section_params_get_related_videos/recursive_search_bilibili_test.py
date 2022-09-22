@@ -176,7 +176,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                     tags
                                 ]  # are you sure? this will make the tag_list into different shape!
                 except:
-                    trace
+                    traceError()
+                    breakpoint()
 
             def updateMyListsWithIterable(
                 iterable,
