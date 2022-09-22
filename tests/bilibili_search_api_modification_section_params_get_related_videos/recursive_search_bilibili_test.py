@@ -137,3 +137,4 @@ if type(suggested_queries) !=list:
 topic_modeling_source_sentences = suggested_queries.copy()
 for tags in tag_list:
     sentence = " ".join(tags)
+    topic_modeling_source_sentences.append(sentence)
