@@ -96,7 +96,7 @@ def removeTitleTags(title, author):
     if title_tags ==None:
         title_tags = []
     else:
-        title_tags = [x.lstrip("").rstrip("")]
+        title_tags = [x.lstrip("【").rstrip("】") for ]
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
