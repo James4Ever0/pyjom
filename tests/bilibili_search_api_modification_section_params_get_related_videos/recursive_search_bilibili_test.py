@@ -225,9 +225,7 @@ def getBilibiliPostMetadataForDogCat():
                             mCover = random.choice(cover_list)
                             mTagSeries = randomChoiceTagList(tag_list) # a collection of tags.
                             mTitle = random.choice(title_list)
-
-
-
+                            mBgm = random.choice(bgm_list)
         except:
             import time
 
