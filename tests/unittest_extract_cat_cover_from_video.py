@@ -18,4 +18,6 @@ with tmpfile(path=path) as TF:
     for frame in getVideoFrameIteratorWithFPS(path, -1,-1,fps=0.5):
         detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
         mDetections = [x for x in detections if x['identity'] == dog_or_cat]
-        mDetections.sort(key=lambda x: -x['confidence'])
+        mDetections.sort(key=lambda x: -x['confidence']) # select the best one.
+        if len(mDetections)>0:
+            
