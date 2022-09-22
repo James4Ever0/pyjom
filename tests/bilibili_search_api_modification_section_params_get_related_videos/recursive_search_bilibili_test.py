@@ -155,10 +155,10 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 # print("VIDEO_METADATA",videoMetadata)
                 # breakpoint()
                 if duration_seconds == None:
-                    print("VIDEO_METADATA",videoMetadata)
+                    print(debugTag,"VIDEO_METADATA",videoMetadata)
                     breakpoint()
                 elif play == None:
-                    print("VIDEO_METADATA",videoMetadata)
+                    print(debugTag,"VIDEO_METADATA",videoMetadata)
                     breakpoint()
                 if len(bgms) > 0:
                     bgm_list += bgms
@@ -185,7 +185,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                         videoMetadata,
                         duration_limit=duration_limit,
                         play_limit=play_limit,
-                        debugTag = "debug"
+                        debugTag = debugTag
                     )
 
             updateMyListsWithIterable(parseSearchVideoResult(result))
