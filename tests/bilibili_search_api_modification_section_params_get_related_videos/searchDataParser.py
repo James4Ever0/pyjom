@@ -268,10 +268,10 @@ if __name__ == "__main__":
                     videoInfo2.update({"author": videoInfo["owner"]["name"]})
                     videoInfo2.update({"mid": videoInfo["owner"]["mid"]})
                     try:
-                        videoMetadata = parseVideoSearchItem(
-                            videoInfo2, disableList=["tag", "typeid", "typename"]
+                        yield parseVideoSearchItem(
+                            videoInfo2, disableList=["tag", "typeid", "typename"], debug=debug
                         )
-                        print(videoMetadata)
+                        # print(videoMetadata)
                     except:
                         traceError()
                 except:
