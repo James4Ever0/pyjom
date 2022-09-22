@@ -232,9 +232,9 @@ def parseVideoInfo(videoInfo, debug=False):
     return primaryVideoInfo, secondaryVideoInfoList
 
 def parseVideoRelated(videoRelatedData, debug=False, generator=True):
+    data = videoRelatedData
     if not generator:
         return generatorToList(parseVideoRelated(data, debug=debug,generator=True))
-    data = videoRelatedData
     try:
         for videoInfo in data:
             try:
