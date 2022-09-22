@@ -26,16 +26,6 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
-# construct the argument parser and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-c", "--clip", type = str2bool, default = 't',
-	help = "Should np.clip scale L*a*b* values before final conversion to BGR? "
-		   "Approptiate min-max scaling used if False.")
-ap.add_argument("-p", "--preservePaper", type = str2bool, default = 't',
-	help = "Should color transfer strictly follow methodology layed out in original paper?")
-ap.add_argument("-o", "--output", help = "Path to the output image (optional)")
-args = vars(ap.parse_args())
-
 # load the images
 source = cv2.imread(image_0)
 target = cv2.imread(image_1)
