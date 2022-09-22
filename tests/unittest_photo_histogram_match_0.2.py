@@ -30,6 +30,7 @@ target = cv2.imread(image_1)
 # to the target image
 transfer = color_transfer(source, target)
 
+import numpy as np
 
 transfer_02 = (target*0.8+transfer*0.2).astype(np.uint8)
 
