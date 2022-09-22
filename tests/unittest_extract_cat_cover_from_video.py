@@ -43,7 +43,7 @@ with tmpfile(path=path, replace=True) as TF:
     ):
         text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
         if checkMinMaxDict(text_area_ratio, text_area_threshold):
-            detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
+            detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
             mDetections = [x for x in detections if x["identity"] == dog_or_cat]
             mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
             if len(mDetections) > 0:
