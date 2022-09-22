@@ -68,7 +68,7 @@ result = sync(
 from searchDataParser import parseSearchVideoResult
 
 descriptions = []
-bgms = []
+bgm_list = []
 titles = []
 tags = []
 covers = []
@@ -95,4 +95,4 @@ for videoMetadata in parseSearchVideoResult(result):
     ) = videoMetadata
     if checkMinMaxDict(duration_seconds, duration_limit):
         if checkMinMaxDict(play, play_limit):
-            
+            bgms +=bgms
