@@ -642,7 +642,9 @@ def petsWithMusicOnlineProducer(
                 complete = len(demanded_cut_spans) == 0
                 if complete:
                     break
-            # the main shit will fu
+            # the main shit will fuck up again, maybe.
+            # so i wrapped it a little bit.
+            try:
             medialangObject = renderList2MediaLang(
                 render_list,
                 slient=True,
