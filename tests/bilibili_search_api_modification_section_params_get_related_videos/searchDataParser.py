@@ -154,8 +154,9 @@ def parseSearchAllResult(data, debug=False):
 
 def parseSearchVideoResult(data):
     try:
-    resultList = data["result"]
-    iterateResultList(resultList)
+        resultList = data["result"]
+        try:
+        iterateResultList(resultList)
 
 
 if __name__ == "__main__":
