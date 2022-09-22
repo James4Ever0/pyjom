@@ -30,7 +30,7 @@ def extractLinks(description, extract_bgm=True):
         links = []
     desc_without_link = re.sub(expression, "", description)
     desc_without_link_per_line = [x.replace("\n", "").strip() for x in desc_without_link.split("\n")]
-    desc_without_link_per_line = []
+    desc_without_link_per_line = [x for x in desc_without_link_per_line if len(x) >0]
     bgms = []
     if extract_bgm:
         for line in desc_without_link_per_line:
