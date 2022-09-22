@@ -211,8 +211,8 @@ def getBilibiliPostMetadataForDogCat():
                 print("REFRESHING KEYWORDS:", keywords)
             else:
                 keywords = getKeywords[dog_or_cat]()
-            print(selected_topic_list_dict)
-            breakpoint()
+            # print(selected_topic_list_dict)
+            # breakpoint()
 
         except:
             import time
