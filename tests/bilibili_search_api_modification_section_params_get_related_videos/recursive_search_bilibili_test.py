@@ -103,7 +103,8 @@ def updateMyLists(videoMetadata,duration_limit = {"min":70, 'max':5*60},play_lim
             cover_list += [cover]
             title_list += [title] # this for topic modeling?
             description_list += [description]
-            tag_list += [tags] # are you sure? this will make the tag_list into different shape!
+            if len(tags)>0:
+                tag_list += [tags] # are you sure? this will make the tag_list into different shape!
 
 def updateMyListsWithIterable(iterable,duration_limit = {"min":70, 'max':5*60},play_limit = {"min": 10000}):
     for videoMetadata in iterable:
