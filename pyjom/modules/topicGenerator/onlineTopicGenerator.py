@@ -58,15 +58,15 @@ def getMetaTopicString(metaTopic):
     if len(optionalCandidates)>0:
         optionalCandidates = random.choice(optionalCandidates)
     if type(optionalCandidates) != list:
-        optinalCandidates = [optionalCandidates]
+        optionalCandidates = [optionalCandidates]
     dynamicCandidates = [random.choice(x) for x in metaTopic.get("dynamic",[])]
     samples = random.sample(
         dynamicCandidates, random.randint(0, len(dynamicCandidates))
     )
-    print(staticCandidates)
-    print(optionalCandidates)
-    print(samples)
-    breakpoint()
+    # print(staticCandidates)
+    # print(optionalCandidates)
+    # print(samples)
+    # breakpoint()
     return " ".join(staticCandidates + optionalCandidates + samples)
 
 
