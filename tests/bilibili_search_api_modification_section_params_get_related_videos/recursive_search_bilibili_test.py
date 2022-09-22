@@ -55,7 +55,7 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
             if core_topic in title:
                 newTitleList.append(title)
                 break
-    print()
+    print("TITLE LIST: %s" % titleList)
     return newTitleList
 
 def randomChoiceTagList(tag_list):
