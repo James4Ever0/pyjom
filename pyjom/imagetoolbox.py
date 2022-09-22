@@ -450,26 +450,26 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
             final_result_list.append((new_name, confidence))
         return final_result_list
 
-    dataList = []
+    # dataList = []
     # for frame in getVideoFrameIteratorWithFPS(videoPath, -1, -1, fps=1):
-        padded_resized_frame = resizeImageWithPadding(
-            frame, 224, 224, border_type="replicate"
-        )  # pass the test only if three of these containing 'cats'
-        result = classifier.classification(
-            images=[padded_resized_frame], top_k=3, use_gpu=False
-        )  # check it?
-        resultList = paddleAnimalDetectionResultToList(result)
-        final_result_list = translateResultListToDogCatList(resultList)
-        if debug:
-            sprint("RESULT LIST:", final_result_list)
-        detections = []
-        for index, (label, confidence) in enumerate(final_result_list):
-            scope = final_result_list[index:]
-            scope_confidences = [elem[1] for elem in scope if elem[0] == label]
-            output = multiParameterExponentialNetwork(
-                *scope_confidences,
-                input_bias=input_bias,
-                curve_function_kwargs=curve_function_kwargs,
-            )
-            # treat each as a separate observation in this frame.
-            detections.append({"identity": label, "confidence": output})
+    padded_resized_frame = resizeImageWithPadding(
+        frame, 224, 224, border_type="replicate"
+    )  # pass the test only if three of these containing 'cats'
+    result = classifier.classification(
+        images=[padded_resized_frame], top_k=3, use_gpu=False
+    )  # check it?
+    resultList = paddleAnimalDetectionResultToList(result)
+    final_result_list = translateResultListToDogCatList(resultList)
+    if debug:
+        sprint("RESULT LIST:", final_result_list)
+    detections = []
+    for index, (label, confidence) in enumerate(final_result_list):
+        scope = final_result_list[index:]
+        scope_confidences = [elem[1] for elem in scope if elem[0] == label]
+        output = multiParameterExponentialNetwork(
+            *scope_confidences,
+            input_bias=input_bias,
+            curve_function_kwargs=curve_function_kwargs,
+        )
+        # treat each as a separate observation in this frame.
+        detections.append({"identity": label, "confidence": output})
