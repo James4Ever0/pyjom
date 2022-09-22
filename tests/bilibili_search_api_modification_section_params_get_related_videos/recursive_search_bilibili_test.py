@@ -164,3 +164,4 @@ if selectedWord is not None:
     print("REFRESHING KEYWORDS:", keywords)
 else:
     keywords = getKeywords()
+print(selected_topic_list_dict)
