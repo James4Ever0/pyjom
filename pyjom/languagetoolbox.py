@@ -115,7 +115,9 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
 
 def chineseSentencePreprocessing(sentence):
     import jieba
-    wordsjieba.lcut(sentence)
+    words=jieba.lcut(sentence)
+    for word in words:
+        
 
 def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
