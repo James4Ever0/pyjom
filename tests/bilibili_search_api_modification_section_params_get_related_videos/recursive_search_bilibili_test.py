@@ -247,6 +247,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
 
 if __name__ == "__main__":
     for videoMetadata in getBilibiliPostMetadataForDogCat():
-        print("FETCHED VIDEO METADATA:")
+        print("FETCHED VIDEO METADATA FOR PRODUCTION:")
+        print(videoMetadata)
         mCover, mTagSeries, mTitle, mBgm, dog_or_cat = videoMetadata
         breakpoint()
