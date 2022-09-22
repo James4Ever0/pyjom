@@ -12,7 +12,7 @@ def getEasyOCRReader(langs, gpu=True, recognizer=False):
     return reader
 
 @lru_cache(maxsize=30)
-def getImageTextRecognized(image, langs:tuple=('en',))
+def getImageTextRecognized(image, langs:tuple=('en',), gpu=True, recognizer=False):
 
 def getImageTextAreaRatio(image, langs:tuple=('en',), gpu=True, recognizer=False,debug=False, inpaint=False):
     reader = getEasyOCRReader(langs, gpu=gpu, recognizer=recognizer)
