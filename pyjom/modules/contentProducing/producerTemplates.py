@@ -552,9 +552,15 @@ def petsWithMusicOnlineProducer(
                 if not report:
                     print("music file corrputed")
                     sprint("music path:",musicPath)
+                    return False
             else:
                 print('music file does not exist')
                 sprint("music path:",musicPath)
+                return False
+            return True
+            if not report:
+                    continue
+
             render_ass = config.get('render_ass', False)
             parsed_result = getMusicInfoParsed(config)
             # print(parsed_result)
