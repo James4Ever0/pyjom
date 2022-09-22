@@ -68,4 +68,18 @@ result = sync(
 from searchDataParser import parseSearchVideoResult
 
 for videoMetadata in parseSearchVideoResult(result):
-    
+    (
+        author,
+        author_id,
+        bvid,
+        tags,
+        categoryId,
+        categoryName,
+        title,
+        duration_seconds,
+        play,
+        cover,
+        description,
+        links_in_description,
+        bgms,
+    ) = videoMetadata
