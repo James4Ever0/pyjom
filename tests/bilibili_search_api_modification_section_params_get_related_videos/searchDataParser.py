@@ -30,6 +30,7 @@ def extractLinks(description, extract_bgm=True):
         links = []
     desc_without_link = re.sub(expression, "", description)
     desc_without_link_per_line = [x.replace("\n", "").strip() for x in desc_without_link.split("\n")]
+    desc_without_link_per_line = []
     bgms = []
     if extract_bgm:
         for line in desc_without_link_per_line:
@@ -37,7 +38,7 @@ def extractLinks(description, extract_bgm=True):
             bgmCandidates = [x.format('bgm') for x in bgmCandidateTemplates]
             for candidate in bgmCandidates:
                 if line.lower().startswith(candidate):
-                    songName =
+                    bgm = bgmCandidates
         
     return links,bgms, desc_without_link
 
