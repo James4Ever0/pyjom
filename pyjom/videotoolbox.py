@@ -1863,8 +1863,8 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     #         # treat each as a separate observation in this frame.
     #         detections.append({"identity": label, "confidence": output})
         detections =bezierPaddleHubResnet50ImageDogCatDetector(
-    image,
-    input_bias=0.0830047243746045,
+    frame,
+    input_bias=input_bias,
     skew=skew,
     threshold=threshold,
     dog_label_file_path=dog_label_file_path,
