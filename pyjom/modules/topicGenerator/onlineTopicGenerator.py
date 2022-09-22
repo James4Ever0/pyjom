@@ -25,7 +25,7 @@ def topicModeling(sentences: list[str], lang="en"):  # specify language please?
         topics = englishTopicModeling(sentences)
         return topics
     elif lang == 'zh':
-        to
+        topics = chineseTopicModeling(sentences)
 
 
 def topicWordSelection(
