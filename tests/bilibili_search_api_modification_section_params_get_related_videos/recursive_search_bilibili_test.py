@@ -73,8 +73,8 @@ result = sync(
     )
 )
 
-print(result)
-breakpoint()
+# print(result)
+# breakpoint()
 
 from searchDataParser import parseSearchVideoResult
 
