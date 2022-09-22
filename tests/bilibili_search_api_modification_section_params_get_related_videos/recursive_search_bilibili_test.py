@@ -60,7 +60,7 @@ result = sync(
     search.search_by_type(
         keyword=dog_metatopicString,
         params={"tids": getDogTid(), "duration": BSP.all.duration._10分钟以下},
-        page=1,
+        page=getRandomPage(),
         search_type=search.SearchObjectType.VIDEO,
     )
 )
