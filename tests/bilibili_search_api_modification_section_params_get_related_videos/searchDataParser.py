@@ -126,13 +126,13 @@ def splitTitleTags(title,author_keywords):
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
     bvid = video["bvid"]
-    author_keywords = getAuthorKeywords(author)
     if "author" not in disableList:
         author = video["author"]
         author_id = video["mid"]
     else:
         author = ""
         author_id = -1
+    author_keywords = getAuthorKeywords(author)
     if "tag" not in disableList:
         tag = video["tag"]
         tags = tag.split(",")
