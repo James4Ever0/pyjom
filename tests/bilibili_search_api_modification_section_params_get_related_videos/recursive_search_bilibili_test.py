@@ -236,4 +236,5 @@ def getBilibiliPostMetadataForDogCat():
 
 
 if __name__ == "__main__":
-    for getBilibiliPostMetadataForDogCat()
+    for videoMetadata in getBilibiliPostMetadataForDogCat():
+        mCover, mTagSeries, mTitle, mBgm = videoMetadata
