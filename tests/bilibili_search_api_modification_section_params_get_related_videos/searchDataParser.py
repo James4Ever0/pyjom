@@ -235,8 +235,8 @@ def parseVideoInfo(videoInfo, debug=False):
 
 def parseVideoRelated(videoRelatedData, debug=False, generator=True):
     data = videoRelatedData
-    if not generator:
-        return generatorToList(parseVideoRelated(data, debug=debug,generator=True))
+    # if not generator:
+    #     return generatorToList(parseVideoRelated(data, debug=debug,generator=True))
     try:
         for videoInfo in data:
             try:
