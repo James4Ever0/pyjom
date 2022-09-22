@@ -89,8 +89,9 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
             sentence = sentence.replace(x, "")
         sentence = sentence.strip()
         row = englishSentencePreprocessing(sentence)
-        elem = " ".join(row)
-        dataList.append(elem)
+        if len(row)>0:
+            elem = " ".join(row)
+            dataList.append(elem)
 
     data = "\n".join(dataList)
 
