@@ -473,3 +473,4 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
         )
         # treat each as a separate observation in this frame.
         detections.append({"identity": label, "confidence": output})
+    return detections
