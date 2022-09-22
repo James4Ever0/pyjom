@@ -252,7 +252,7 @@ if __name__ == "__main__":
         with open("video_info.json", "r") as f:
             data = f.read()
             data = json.loads(data)
-
+        primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(data)
         # for mVideoInfo in videoInfoList:
         #     print(mVideoInfo)
         #     sprint()
