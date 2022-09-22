@@ -206,7 +206,7 @@ if __name__ == "__main__":
         data_copy = data.copy()
         data_copy.update({"author": data["owner"]["name"], "mid": data["owner"]["mid"]})
         data_copy.update(data["stat"])
-        parseVideoSearchItem(data_copy, disableList=["tag", "typeid", "typename"])
+        primaryVideoInfo = parseVideoSearchItem(data_copy, disableList=["tag", "typeid", "typename"])
         season = data["ugc_season"]  # we only care about this thing.
         season_cover = season["cover"]
         sections = season["sections"]
