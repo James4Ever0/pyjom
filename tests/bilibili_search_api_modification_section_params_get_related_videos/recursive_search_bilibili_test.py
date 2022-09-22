@@ -167,6 +167,7 @@ def getBilibiliPostMetadataForDogCat():
             selectedWord = topicWordSelection(
                                     topics, core_topic_set, selected_topic_list_dict["dog"]
                                 )
+            dog_or_cat = 
             if selectedWord is not None:
                 keywords = " ".join(
                     [getKeywords(), selectedWord]
