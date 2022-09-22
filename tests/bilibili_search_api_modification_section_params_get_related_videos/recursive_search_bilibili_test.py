@@ -68,15 +68,15 @@ def getBilibiliPostMetadataForDogCat():
         "cat": lambda: getMetaTopicString(cat_metatopic),
     }
 
-            getDogTid = lambda: random.choice(
-                [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人]
-            )
-            getCatTid = lambda: random.choice(
-                [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人]
-            )
-            getTid = {"dog": getDogTid, "cat": getCatTid}
+    getDogTid = lambda: random.choice(
+        [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人]
+    )
+    getCatTid = lambda: random.choice(
+        [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人]
+    )
+    getTid = {"dog": getDogTid, "cat": getCatTid}
 
-            getRandomPage = lambda: random.randint(1, 50)  # broad range!
+    getRandomPage = lambda: random.randint(1, 50)  # broad range!
     while True:
         try:
 
@@ -87,7 +87,6 @@ def getBilibiliPostMetadataForDogCat():
 
             # we use video only search.
 
-            BSP = search.bilibiliSearchParams()
 
             result = sync(
                 search.search_by_type(
