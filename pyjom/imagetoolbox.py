@@ -400,6 +400,11 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
 ):
+    curve_function_kwargs = {
+        "start": (0, 0),
+        "end": (1, 1),
+        "skew": skew,
+    }  # maximize the output.
     # from pyjom.imagetoolbox import resizeImageWithPadding
     if type(image) == str:
         image = cv2.imread(image)
