@@ -79,7 +79,7 @@ from pyjom.commons import checkMinMaxDict
 
 def updateMyListsWithIterable(iterable,duration_limit = {"min":70, 'max':5*60},play_limit = {"min": 10000}):
     for videoMetadata in iterable:
-        updateMyLists(videoMetadata, duration_limit=duration_limit, pl)
+        updateMyLists(videoMetadata, duration_limit=duration_limit, play_limit=play_limit)
 
 def updateMyLists(videoMetadata,duration_limit = {"min":70, 'max':5*60},play_limit = {"min": 10000}):
     global bvid_list, bgm_list, title_list, tag_list, cover_list, bvid_list, description_list # use nonlocal instead in nested functions.
@@ -120,7 +120,7 @@ if len(bvid_list)>0:
     from searchDataParser import parseVideoInfo
     primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(videoInfo)
     for videoMetadata in secondaryVideoInfoList:
-        updateMyLists(videoMetadata)
+        updateMyListsWithIterable(videoMetadata)
     # then we get related videos.
     result = sync(v.get_related())
     from searchDataParser import parseVideoRelated
