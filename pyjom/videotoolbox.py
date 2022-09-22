@@ -10,10 +10,8 @@ from functools import lru_cache
 def corruptVideoFilter(videoPath):
     return corruptMediaFilter(videoPath, tag='video')
 
-
 def dummyFilterFunction(report: bool, *args, **kwargs):
     return report
-
 
 def checkXYWH(XYWH, canvas, minArea=20):
     import math
