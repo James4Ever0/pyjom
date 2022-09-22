@@ -57,6 +57,9 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features="lxml")
     return a.text
 
+def removeAuthorRelatedTags(description, author):
+    ""
+
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
     bvid = video["bvid"]
