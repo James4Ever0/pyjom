@@ -48,6 +48,8 @@ def extractLinks(description, extract_bgm=True):
                     if len(bgm)>0:
                         bgms.append(bgm)
                     break
+            if has_bgm:
+                
         
     return links,bgms, desc_without_link
 
