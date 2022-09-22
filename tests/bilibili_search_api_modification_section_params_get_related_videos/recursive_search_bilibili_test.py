@@ -188,7 +188,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                         debugTag = debugTag
                     )
 
-            updateMyListsWithIterable(parseSearchVideoResult(result))
+            updateMyListsWithIterable(parseSearchVideoResult(result),'searchVideoResult')
 
             # do the related video search?
             if len(bvid_list) > 0:
