@@ -288,7 +288,7 @@ if __name__ == "__main__":
         with open("video_related.json", "r") as f:
             data = f.read()
             data = json.loads(data)
-        for videoMetadata in parseVideoRelated():
+        for videoMetadata in parseVideoRelated(data):
             print(videoMetadata)
             sprint()
     elif test_subject == "extract_links":
