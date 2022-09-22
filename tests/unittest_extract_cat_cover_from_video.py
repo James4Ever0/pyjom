@@ -40,7 +40,7 @@ with tmpfile(path=path, replace=True) as TF:
     for frame in getVideoFrameSampler(
         path, -1, -1, sample_size=mSampleSize, iterate=True
     ):
-        text_area_ratio = getImageTextAreaRatio(frame, gpu=False)
+        text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
         if checkMinMaxDict(text_area_ratio, text_area_threshold):
             detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
             mDetections = [x for x in detections if x["identity"] == dog_or_cat]
@@ -48,7 +48,7 @@ with tmpfile(path=path, replace=True) as TF:
             if len(mDetections) > 0:
                 best_confidence = mDetections[0]["confidence"]
                 if checkMinMaxDict(best_confidence, confidence_threshold):
-                    target = getImageTextAreaRatio(frame, inpaint=True)
+                    target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
                     target = imageFourCornersInpainting(target)
                     processed_frame = target
                     break
