@@ -24,8 +24,9 @@ confidence_threshold = {"min": 0.7}
 text_area_threshold = {"max": 0.2}
 gpu=False
 
+import os
 # with tmpfile(path=path, replace=True) as TF:
-path = 
+os.path.exists(path)
     x = yt_dlp.YoutubeDL(
         {
             "outtmpl": path, # seems only video p1 is downloaded.
