@@ -31,7 +31,7 @@ target = cv2.imread(image_1)
 transfer = color_transfer(source, target)
 
 
-transfer_0_2 = 
+transfer_02 = 
 
 # show the images and wait for a key press
 show_image("Source", source)
