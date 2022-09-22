@@ -186,7 +186,9 @@ if __name__ == "__main__":
         with open("search_by_type_result_video.json", "r") as f:
             data = f.read()
             data = json.loads(data)
-        for mresult in parseSearchVideoResult(data)
+        for mresult in parseSearchVideoResult(data):
+            print("VIDEO SEARCH RESULT:")
+            sprint(mresult)
     elif test_subject == "video_info":
         with open("video_info.json", "r") as f:
             data = f.read()
