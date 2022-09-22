@@ -45,7 +45,7 @@ dog_metatopic = {
 
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 
-metatopicString = getMetaTopicString(metatopic)
+dog_metatopicString = getMetaTopicString(dog_metatopic)
 
 print(metatopicString)
 
