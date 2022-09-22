@@ -71,6 +71,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
     tag_list = []
     cover_list = []
     bvid_list = []
+
     def clearMyLists():
         nonlocal bvid_list, bgm_list, title_list, tag_list, cover_list, bvid_list, description_list
         description_list = []
@@ -79,6 +80,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
         tag_list = []
         cover_list = []
         bvid_list = []
+
     getKeywords = {
         "dog": lambda: getMetaTopicString(dog_metatopic),
         "cat": lambda: getMetaTopicString(cat_metatopic),
