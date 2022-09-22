@@ -552,7 +552,6 @@ def petsWithMusicOnlineProducer(
                 if not report:
                     print("music file corrputed")
                     sprint("music path:",musicPath)
-                    continue
             else:
                 print('music file does not exist')
                 sprint("music path:",musicPath)
