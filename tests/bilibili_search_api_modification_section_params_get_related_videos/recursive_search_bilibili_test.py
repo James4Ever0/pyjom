@@ -28,3 +28,7 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 metatopicString = getMetaTopicString(metatopic)
 
 print(metatopicString)
+
+from bilibili_api import sync, search
+
+BSP = search.bilibiliSearchParams()
