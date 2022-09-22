@@ -189,7 +189,7 @@ def parseSearchVideoResult(data):
     except:
         traceError("error parsing search video result")
 
-def parseVideoInfo(videoInfo)
+def parseVideoInfo(videoInfo):
 
 if __name__ == "__main__":
     # test_subject = "search_video"
@@ -217,7 +217,7 @@ if __name__ == "__main__":
             data = f.read()
             data = json.loads(data)
         # no tag out here.
-        videoInfoList = []
+        secondaryVideoInfoList = []
         data_copy = data.copy()
         data_copy.update({"author": data["owner"]["name"], "mid": data["owner"]["mid"]})
         data_copy.update(data["stat"])
