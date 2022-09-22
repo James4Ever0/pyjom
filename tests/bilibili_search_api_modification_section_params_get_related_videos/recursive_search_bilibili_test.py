@@ -70,8 +70,8 @@ from searchDataParser import parseSearchVideoResult
 descriptions = []
 bgm_list = []
 titles = []
-tags = []
-covers = []
+tag_list = []
+cover_list = []
 
 duration_limit = {"min":70, 'max':5*60}
 play_limit = {"min": 10000}
