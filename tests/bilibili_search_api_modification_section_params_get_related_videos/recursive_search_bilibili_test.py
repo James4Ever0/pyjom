@@ -180,3 +180,6 @@ def getBilibiliPostMetadataForDogCat():
         except:
             from lazero.utils.logger import traceError
             traceError('error when fetching metatopic')
+    
+if __name__ == "__main__":
+    getBilibiliPostMetadataForDogCat()
