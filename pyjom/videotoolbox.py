@@ -1878,6 +1878,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             dog_label_file_path=dog_label_file_path,
             cat_label_file_path=cat_label_file_path,
             debug=debug,
+            use_gpu=use_gpu
         )
         dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
