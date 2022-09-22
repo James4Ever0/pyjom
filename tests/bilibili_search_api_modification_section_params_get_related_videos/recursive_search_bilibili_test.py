@@ -207,7 +207,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 result = sync(v.get_related())
                 from searchDataParser import parseVideoRelated
 
-                updateMyListsWithIterable(parseVideoRelated(result))
+                updateMyListsWithIterable(parseVideoRelated(result), debugTag = "videoRelated")
 
             # now what do you want? suggested keywords?
             suggested_queries = sync(
