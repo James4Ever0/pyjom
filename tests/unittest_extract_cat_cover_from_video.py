@@ -25,6 +25,7 @@ text_area_threshold = {"max": 0.2}
 gpu=False
 
 # with tmpfile(path=path, replace=True) as TF:
+path = 
     x = yt_dlp.YoutubeDL(
         {
             "outtmpl": path, # seems only video p1 is downloaded.
