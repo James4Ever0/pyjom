@@ -114,7 +114,7 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
     return topics
 
 from functools import lru_cache
-
+from lazero.utils.logger import 
 @lru_cache(maxsize=1)
 def getChineseStopWords():
     stopwordFileList = ["",""]
