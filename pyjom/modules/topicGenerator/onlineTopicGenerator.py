@@ -55,7 +55,8 @@ def topicWordSelection(
 def getMetaTopicString(metaTopic):
     staticCandidates = [random.choice(x) for x in metaTopic.get("static",[])]
     optionalCandidates = [random.choice(x) for x in metaTopic.get('optional',[])]
-    optionalCandidates = random.choice(optionalCandidates)
+    if len(optionalCandidates)>0:
+        optionalCandidates = random.choice(optionalCandidates)
     dynamicCandidates = [random.choice(x) for x in metaTopic.get("dynamic",[])]
     samples = random.sample(
         dynamicCandidates, random.randint(0, len(dynamicCandidates))
