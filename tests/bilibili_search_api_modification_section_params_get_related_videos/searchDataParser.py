@@ -92,7 +92,7 @@ def removeAuthorRelatedTags(description_or_title, author):
 
 def removeTitleTags(title, author):
     import re
-    import Levenshtein
+    import jieba
     pattern = r"【.+】"
     title_tags = re.findall(pattern, title)
     title = re.sub(pattern, title)
@@ -102,6 +102,7 @@ def removeTitleTags(title, author):
         title_tags = [x.lstrip("【").rstrip("】").strip() for x in title_tags]
         title_tags = [x for x in title_tags if len(x)>0]
         for title_tag in title_tags:
+            
 
     return title, title_tags
 
