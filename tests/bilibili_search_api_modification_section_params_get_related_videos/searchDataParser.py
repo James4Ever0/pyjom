@@ -18,7 +18,8 @@ def extractLinks(description):
     """Extract and remove links in description"""
     import re
     expression = r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
-    re.compile(expression)
+    expr = re.compile(expression)
+    expr.replace
 
 def videoDurationStringToSeconds(durationString):
     if type(durationString) == int:
