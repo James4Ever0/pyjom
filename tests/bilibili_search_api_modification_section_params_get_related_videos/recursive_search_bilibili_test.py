@@ -106,4 +106,5 @@ for videoMetadata in parseSearchVideoResult(result):
 # do the related video search?
 if len(bvid_list)>0:
     # get video info!
-    result = 
+    from bilibili_api import video
+    v = video.Video(bvid=bvid)
