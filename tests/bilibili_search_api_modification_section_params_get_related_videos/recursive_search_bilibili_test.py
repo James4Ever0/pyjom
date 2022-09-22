@@ -47,7 +47,7 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 
 core_topic_set = {
-        *flattenUnhashableList(dog_metaTopic)
+        *flattenUnhashableList(dog_metatopic)
     }
 metatopicString = getMetaTopicString(dog_metatopic)
 import random
