@@ -682,7 +682,7 @@ def petsWithMusicOnlineProducer(
 
                 with open(medialangScript_savedPath) as f:
                     f.write(medialangScript)
-                print(medialangScript_savedPath)
+                print("MEDIALANG SCRIPT SAVED TO:",medialangScript_savedPath)
 
                 rendered_media_location = (
                     medialangObject.execute()
