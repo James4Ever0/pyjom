@@ -16,7 +16,8 @@ with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
     y = x.download([videoLink])
 # shall you use frame sampler instead of iterator? cause this is dumb.
-    
+    from caer.video.frames_and_fps import get_duration
+    duration = get_duration(path)
     for frame in getVideoFrameSampler(path, -1,-1,sample_size=mSampleSize,iterator=True):
         detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
         mDetections = [x for x in detections if x['identity'] == dog_or_cat]
