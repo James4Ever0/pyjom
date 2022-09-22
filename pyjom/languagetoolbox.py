@@ -139,7 +139,7 @@ def getChineseStopWords(stopwordFileList = ["/root/Desktop/works/pyjom/tests/sto
                 stopwords+=mList
         except:
             traceError(_breakpoint=True)
-    return traceError
+    return list(set(stopwords))
 
 
 def chineseSentencePreprocessing(sentence):
