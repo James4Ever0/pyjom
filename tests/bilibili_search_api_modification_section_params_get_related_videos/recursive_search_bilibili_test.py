@@ -21,12 +21,12 @@ os.environ["https_proxy"] = ""
 #     ],
 #     "dynamic": [["可爱", "萌", "萌宠", "行为", "燃"]],
 # }
-dynamic
+dynamics=[["可爱", "萌", "萌宠"], ["行为", "燃"],["搞笑", "逗比", "魔性"]]
 cat_metatopic = {
     "static": [
         ["喵喵", "猫", "猫咪", "喵"],
     ],
-    "dynamic": [["可爱", "萌", "萌宠", "行为", "燃"]],
+    "dynamic": dynamics
 }
 
 dog_metatopic = {
