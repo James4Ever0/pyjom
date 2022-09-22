@@ -48,8 +48,8 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 
-def filterTitleListWithCoreTopicList(titleList, core_topic_set):
-
+def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
+    for core_topic in core_topic_set:
 
 def randomChoiceTagList(tag_list):
     import random
