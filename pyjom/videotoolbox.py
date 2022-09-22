@@ -1869,7 +1869,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     threshold=threshold,
     dog_label_file_path=dog_label_file_path,
     cat_label_file_path=cat_label_file_path,
-    debug=False)
+    debug=debug)
         dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
     detectionConfidence = calculateVideoMeanDetectionConfidence(dataList)
