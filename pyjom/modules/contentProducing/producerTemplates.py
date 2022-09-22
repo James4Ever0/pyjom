@@ -456,7 +456,6 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # how to auto-warp the AAS subtitle?
     # musicPath = config.get('music',"")
     musicPath = config.get('music',{}).get('filepath',"")
-
     report = corruptMediaFilter(musicPath)
     if not report:
         return False
