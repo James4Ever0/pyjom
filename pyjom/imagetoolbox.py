@@ -64,8 +64,8 @@ def getImageTextAreaRecognized(
 def imageFourCornersInpainting(image):
     if type(image) == str:
         image = cv2.imread(image)
-    height, width = image.shape[:2]
-    
+    defaultHeight, defaultWidth = image.shape[:2]
+
     
 
 def getImageTextAreaRatio(
