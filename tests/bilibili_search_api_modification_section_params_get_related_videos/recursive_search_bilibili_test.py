@@ -48,6 +48,8 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 
+def randomChoiceTagList(tag_list):
+    random.sample()
 
 def getBilibiliPostMetadataForDogCat():
     import random
@@ -220,7 +222,7 @@ def getBilibiliPostMetadataForDogCat():
                             # time to yield something.
                             mCover = random.choice(cover_list)
                             mTag = random.choice(tag_list)
-                            
+
 
         except:
             import time
