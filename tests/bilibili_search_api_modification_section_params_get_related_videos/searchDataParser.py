@@ -64,6 +64,7 @@ def parseVideoSearchItem(video, disableList:list=[], debug=False):
         description = video.get('description', video.get('desc'))
     else:
         description = ""
+    links_in_description = extractLinks
     duration_seconds = videoDurationStringToSeconds(duration)
     if debug:
         for metadata in (author,author_id,bvid,tags,categoryId, categoryName,title, duration_seconds, play, cover, description):
