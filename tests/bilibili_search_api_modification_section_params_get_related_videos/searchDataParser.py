@@ -242,9 +242,9 @@ def parseVideoInfo(videoInfo, debug=False):
         data_copy, disableList=["tag", "typeid", "typename"], debug=debug
     )
     # videoInfoList.append(primaryVideoInfo)
-    season = data["ugc_season"]  # we only care about this thing.
+    season = data.get("ugc_season",{})  # we only care about this thing.
     season_cover = season["cover"]
-    sections = season["sections"]
+    sections = season"sections"]
     for section in sections:
         for episode in section["episodes"]:
             # print(episode.keys())
