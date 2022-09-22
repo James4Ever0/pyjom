@@ -10,4 +10,4 @@ from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 with tmpfile(path=path) as TF:
     x = yt_dlp.YoutubeDL({"outtmpl":path,'format':'[ext=mp4]'})
     y = x.download([videoLink])
-    
+    for frame in getVideoFrameIteratorWithFPS(path, start=):
