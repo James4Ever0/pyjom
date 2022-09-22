@@ -189,7 +189,6 @@ def getBilibiliPostMetadataForDogCat():
                 suggested_queries = []
             # now we need to collect the keywords.
             # notice: we can only update this for selected topic like cat or dog. these keywords might not be shared.
-
             if len(title_list)> 3:
                 if len(cover_list) > 3:
                     if len(tag_list)>3:
@@ -199,6 +198,7 @@ def getBilibiliPostMetadataForDogCat():
                             mTagSeries = randomChoiceTagList(tag_list) # a collection of tags.
                             mTitle = random.choice(title_list)
                             mBgm = random.choice(bgm_list)
+                            yield mCover, mTagSeries, mTitle, mBgm
             topic_modeling_source_sentences = suggested_queries.copy()
             for tags in tag_list:
                 sentence = " ".join(tags)
