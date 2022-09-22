@@ -57,12 +57,12 @@ def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features="lxml")
     return a.text
 
-def removeAuthorRelatedTags(description, author):
+def removeAuthorRelatedTags(description_or_title, author):
     templates = ["@{}", "【{}】","{}"]
     tags = [template.format(author) for template in templates]
     for tag in tags:
-        description = description.replace(tag,"")
-    return 
+        description_or_title = description_or_title.replace(tag,"")
+    return description_or_title
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
