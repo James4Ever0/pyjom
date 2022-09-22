@@ -542,8 +542,8 @@ def petsWithMusicOnlineProducer(
             tempdir, ".".join([str(uuid.uuid4()), extension])
         )
         for config in configs:
-            parsed_result = getMusicInfoParsed(config)
             render_ass = config.get('render_ass', False)
+            parsed_result = getMusicInfoParsed(config)
             # print(parsed_result)
             # breakpoint()
             # we only have one song here. you fucking know that?
