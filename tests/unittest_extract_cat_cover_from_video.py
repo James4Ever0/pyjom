@@ -40,7 +40,7 @@ y = x.download([videoLink])
 # breakpoint()
 from pyjom.videotoolbox import corruptVideoFilter
 
-video_fine = corruptVideoFilter(videoLink)
+video_fine = corruptVideoFilter(path)
 
 if not video_fine:
     print("VIDEO FILE CORRUPTED")
