@@ -133,3 +133,4 @@ suggested_queries = sync(search.get_suggest_keywords(keyword = metatopicString))
 # notice: we can only update this for selected topic like cat or dog. these keywords might not be shared.
 
 topic_modeling_source_sentences = suggested_queries.copy()
+topic_modeling_source_sentences = 
