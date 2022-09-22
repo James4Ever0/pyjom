@@ -13,7 +13,6 @@ def linkFixer(link, prefix="http:"):
 
 def traceError(errorMsg: str = "error!", _breakpoint: bool = False):
     import traceback
-
     traceback.print_exc()
     sprint(errorMsg)
     if _breakpoint:
