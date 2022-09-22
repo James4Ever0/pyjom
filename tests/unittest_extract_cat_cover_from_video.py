@@ -5,7 +5,7 @@ from lazero.filesystem.temp import tmpfile
 import yt_dlp
 # import pyidm
 
-path = "/dev/shm/randomName.mp4"
+path = "/dev/shm/testVideo.mp4"
 from test_commons import *
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
 from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetector
@@ -17,3 +17,4 @@ with tmpfile(path=path) as TF:
     y = x.download([videoLink])
     for frame in getVideoFrameIteratorWithFPS(path, -1,-1,fps=0.5):
         detections = bezierPaddleHubResnet50ImageDogCatDetector(frame)
+        
