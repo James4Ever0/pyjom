@@ -61,7 +61,7 @@ def getImageTextAreaRecognized(
     else:
         return detection, recognition
 
-def imageCornersInpainting(image):
+def imageFourCornersInpainting(image):
     if type(image) == str:
         image = cv2.imread(image)
     height, width = frame.shape[:2]
