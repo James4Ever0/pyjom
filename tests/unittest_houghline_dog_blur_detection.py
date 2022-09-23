@@ -6,6 +6,9 @@ img1 = cv2.imread(imagePath)
 gray1 = cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
 edges1 = cv2.Canny(gray1,50,150,apertureSize=3)
 
+cv2.imshow(edge1)
+cv2.waitKey(0)
+
 lines1 = cv2.HoughLines(edges1,1,np.pi/180,200) # wtf?
 for rho, theta in lines1[0]:
     a=np.cos(theta)
