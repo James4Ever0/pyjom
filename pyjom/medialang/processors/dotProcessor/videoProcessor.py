@@ -18,14 +18,34 @@ def executeEditlyScript(medialangTmpDir, editly_json):
     assert returncode == 0
     print("RENDER SUCCESSFUL")
 
+
 from typing import Literal, List
+
+
 def ffmpegVideoPreProductionFilter(
     filepath,  # this is actually a video path. must be video here.
     start=None,
     end=None,
     cachePath=None,
-    filters:List[Literal["minterpolate", "removegrain", "bilateral",'randomFlip','superResolution',"pipCrop", "textRemoval", "logoRemoval"]]=["pipCrop", "textRemoval", "logoRemoval",'randomFlip', # these are common
-    'superResolution','minterpolate','removegrain' # optional
+    filters: List[
+        Literal[
+            "minterpolate",
+            "removegrain",
+            "bilateral",
+            "randomFlip",
+            "superResolution",
+            "pipCrop",
+            "textRemoval",
+            "logoRemoval",
+        ]
+    ] = [
+        "pipCrop",
+        "textRemoval",
+        "logoRemoval",
+        "randomFlip",  # these are common
+        "superResolution",
+        "minterpolate",
+        "removegrain",  # optional
     ],
     preview=True,
     # padding=True,
@@ -420,7 +440,11 @@ def dotVideoProcessor(
                             layerOriginalDuration = cutTo - cutFrom
 
                             processedFilePath = ffmpegVideoPreProductionFilter(
-                                filepath, start=cutFrom, end=cutTo, cachePath=cachePath, preview=fast
+                                filepath,
+                                start=cutFrom,
+                                end=cutTo,
+                                cachePath=cachePath,
+                                preview=fast,
                             )
                             # what is this filepath? man how do i handle this?
                             videoFilePath = processedFilePath
