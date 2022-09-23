@@ -59,9 +59,9 @@ new_df = df.loc[(df['area_ratio'] >= area_threshold) & (df['confidence'] >= conf
 
 count = new_df.count(axis=0)
 # print("COUNT: %d" % count)
-selected_col = new_df[0]
+# selected_col = new_df[0]
 # print(new_df)
-print(selected_col)
+# print(selected_col)
 print(count)
 breakpoint()
 # # results.save()
