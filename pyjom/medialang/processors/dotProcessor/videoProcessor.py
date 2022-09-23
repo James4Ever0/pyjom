@@ -186,6 +186,7 @@ def ffmpegVideoPreProductionFilter(
         # pass
     if "logoRemoval" in filters:
         # dual safe? no?
+        # the dict is not hashable. warning!
         stationaryLogoDicts = detectStationaryLogoOverTime(
             filepath, start, end, pipCropDicts=pipCropDicts
         )  # this need to be improvised. if it is long, we need to do another check.
