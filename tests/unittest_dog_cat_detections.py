@@ -7,7 +7,7 @@ os.environ["https_proxy"] = ""
 localModelDir = '/root/Desktop/works/pyjom/pyjom/models/yolov5/ultralytics_yolov5_master/'
 # import os
 os.environ["YOLOV5_MODEL_DIR"] = '/root/Desktop/works/pyjom/pyjom/models/yolov5/' # this is strange. must be a hack in the localModelDir
-model = torch.hub.load(localModelDir, 'yolov5s',source="local",)  # or yolov5m, yolov5l, yolov5x, custom
+model = torch.hub.load(localModelDir, 'yolov5s',source="local",map_location=torch.device('cpu'))  # or yolov5m, yolov5l, yolov5x, custom
 
 # Images
 img = '/media/root/help/pyjom/samples/image/miku_on_green.png'  # or file, Path, PIL, OpenCV, numpy, list
