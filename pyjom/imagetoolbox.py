@@ -93,8 +93,7 @@ def imageInpainting(image, mask, method: Literal["inpaint", "blur"] = "inpaint")
     if method == "inpaint":
         return cv2.inpaint(image, mask, 3, cv2.INPAINT_TELEA)
     elif method == "blur":
-        partial_blur(image, mask)
-        return
+        return partial_blur(image, mask)
     else:
         raise Exception("image inpainting method not supported:", method)
 
