@@ -62,7 +62,7 @@ def getImageTextAreaRecognized(
         return detection, recognition
 
 
-from typing import Literal, Optional
+from typing import Literal, Tuple
 
 
 def partial_blur(image0, mask, kernel:Literal[None, Tuple[int, int]],=None):
