@@ -381,6 +381,7 @@ from pyjom.imagetoolbox import getDeltaWidthHeight, getFourCorners
 
 
 # @lru_cache(maxsize=30)
+# we use dict as input, cannot use lru_cache.
 def detectStationaryLogoOverTime(
     filepath,
     start,
