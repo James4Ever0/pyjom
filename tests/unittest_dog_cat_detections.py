@@ -66,7 +66,7 @@ defaultCropWidth, defaultCropHeight = 1920 , 1080
 
 # you shall find the code elsewhere?
 
-allowedHeight = 
+allowedHeight = defaultWidth/defaultCropWidth*defaultHeight, def
 
 if count>=1:
     selected_col = new_df.iloc(0) # it is a dict-like object.
