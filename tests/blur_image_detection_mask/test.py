@@ -1,6 +1,7 @@
 import os
 import cv2
 import numpy
+# import logger
 import BlurDetection
 
 # img_path = raw_input("Please Enter Image Path: ")
@@ -22,5 +23,6 @@ def display(title, img, max_size=200000):
 
 # BlurDetection.scripts.display('img', img)
 display('img', img)
+display('msk', msk)
 # BlurDetection.scripts.display('msk', msk)
 cv2.waitKey(0)
