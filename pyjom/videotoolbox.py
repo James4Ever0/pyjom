@@ -1410,6 +1410,7 @@ def getEffectiveFPS(
             filepath: str = None,
             mpdecimate_args: Union[None, str] = "hi=576",
             video_size: Union[None, str] = None,
+            minterpolate_mode: Literal[]= 'blend'
         ):
             return wrapperFunc(
                 mpdecimate_export_duplicate_clip_ranges_base,
