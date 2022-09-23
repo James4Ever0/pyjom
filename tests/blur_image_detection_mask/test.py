@@ -10,7 +10,7 @@ assert os.path.exists(img_path), "img_path does not exists"
 img = cv2.imread(img_path)
 img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
-msk, val = BlurDetection.blur_mask(img)
+msk, result, blurry= BlurDetection.blur_mask(img)
 
 def display(title, img, max_size=200000):
     assert isinstance(img, numpy.ndarray), 'img must be a numpy array'
