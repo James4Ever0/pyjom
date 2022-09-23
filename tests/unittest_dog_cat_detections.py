@@ -62,7 +62,7 @@ count = len(new_df)
 # print("COUNT: %d" % count)
 
 defaultCropWidth, defaultCropHeight = 1920 , 1080
-
+# this is just to maintain the ratio.
 
 
 if count>=1:
