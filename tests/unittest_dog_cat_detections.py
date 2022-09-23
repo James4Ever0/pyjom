@@ -21,11 +21,11 @@ results = model(img)
 # # Results
 # breakpoint()
 print(results.pandas().xyxy[0])
-results.show()
-# results.print() # or .show(),
-# results.save()
-# # print(type(results),dir(results))
-breakpoint()
+# results.show()
+# # results.print() # or .show(),
+# # results.save()
+# # # print(type(results),dir(results))
+# breakpoint()
 # import cv2
 # image = cv2.imread("runs/detect/exp3/miku_on_green.jpg")
 # cv2.imshow("NONE",image)
