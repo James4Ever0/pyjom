@@ -64,28 +64,30 @@ def getImageTextAreaRecognized(
 
 from typing import Literal
 
-def partial_blur(image0,mask,kernel=None):
+
+def partial_blur(image0, mask, kernel=None):
     # need improvement. malnly the boundary.
     if kernel is None:
         height, width = image0.shape[:2]
-        kernel_w =int( width/40)*4
-        kernel_h =int( height/40)*4
+        kernel_w = int(width / 40) * 4
+        kernel_h = int(height / 40) * 4
     else:
         kernel_w, kernel_h = kernel
-        kernel_w =int( width/4)*4
-        kernel_h =int( height/4)*4
+        kernel_w = int(width / 4) * 4
+        kernel_h = int(height / 4) * 4
     kernel = (kernel_w, kernel_h)
 
     mask_total = mask
-    inv_mask_total = 255-mask_total
+    inv_mask_total = 255 - mask_total
     # mask0 = mask
     # mask0 = mask/255
     # inv_mask0 = inv_mask/255
     non_blur_image = cv2.bitwise_and(image0, image0, mask=inv_mask_total)
-    blur_image0 = cv2.blur(image0,kernel) # half quicklier.
+    blur_image0 = cv2.blur(image0, kernel)  # half quicklier.
     blur_image0 = cv2.bitwise_and(blur_image0, blur_image0, mask=mask_total)
     dst0 = blur_image0 + non_blur_image
     return dst0
+
 
 def imageInpainting(image, mask, method: Literal["inpaint", "blur"] = "inpaint"):
     if method == "inpaint":
