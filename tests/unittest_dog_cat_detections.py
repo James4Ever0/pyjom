@@ -83,7 +83,7 @@ if count>=1:
     # height_current = min(allowedHeight, int((width_current/defaultCropWidth)*defaultCropHeight))
     # (x1+x0)/2-width_current/2
     import random
-    x0_framework =( max((x1-width_current),0), min((x0+width_current), defaultWidth))
+    x0_framework =random.randint(max((x1-width_current),0), min((x0+width_current), defaultWidth))
     framework_XYWH = (x0_framework,y0_altered, width_current, height_current)
     x_f, y_f, w_f, h_f = framework_XYWH
     croppedImageCover = img[y_f:y_f+h_f,x_f:x_f+w_f,:]
