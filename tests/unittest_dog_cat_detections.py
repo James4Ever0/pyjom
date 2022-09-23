@@ -12,7 +12,7 @@ model = torch.hub.load(localModelDir, 'yolov5s',source="local")  # or yolov5m, y
 # Images
 # img = '/media/root/help/pyjom/samples/image/miku_on_green.png'  # or file, Path, PIL, OpenCV, numpy, list
 # img = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg"
-img='/root/Desktop/works/pyjom/samples/image/dog_blue_sky.png.sb-d93ff53a-Kg8lQl/dog_blue_sky.png'
+img='/root/Desktop/works/pyjom/samples/image/dog_blue_sky.png'
 
 # Inference
 results = model(img)
