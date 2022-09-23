@@ -680,7 +680,7 @@ def petsWithMusicOnlineProducer(
                 medialangScript = medialangObject.prettify()
                 medialangScript_savedPath = getRandomFileName('mdl')
 
-                with open(medialangScript_savedPath) as f:
+                with open(medialangScript_savedPath,'w+') as f:
                     f.write(medialangScript)
                 print("MEDIALANG SCRIPT SAVED TO:",medialangScript_savedPath)
 
