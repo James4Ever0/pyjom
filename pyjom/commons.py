@@ -520,7 +520,9 @@ def getTemplateFileBaseDir(tmpDir="templates"):
 
 yolov5_model = None
 
+from functools import lru_cache
 
+@lru_cache()
 def configYolov5(model="yolov5s"):
     global yolov5_model  # not the same
     if yolov5_model == None:
