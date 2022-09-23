@@ -38,7 +38,7 @@ animal_detection_dataframe['area_ratio'] = area/
 area_threshold = 0
 confidence_threshold = 0 # this is image quality maybe.
 
-y_expansion_rate = 0.1 # to make the y axis start less "headless"
+y_expansion_rate = 0.1 # to make the starting point on y axis less "headless"
 
 # # results.save()
 # # # print(type(results),dir(results))
