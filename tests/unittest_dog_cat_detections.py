@@ -11,7 +11,7 @@ model = torch.hub.load(localModelDir, 'yolov5s',source="local")  # or yolov5m, y
 
 # Images
 # img = '/media/root/help/pyjom/samples/image/miku_on_green.png'  # or file, Path, PIL, OpenCV, numpy, list
-img = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg"
+# img = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg"
 
 # Inference
 results = model(img)
@@ -19,6 +19,7 @@ results = model(img)
 # print(results)
 # # Results
 # breakpoint()
+results.show()
 # results.print() # or .show(),
 # results.save()
 # # print(type(results),dir(results))
