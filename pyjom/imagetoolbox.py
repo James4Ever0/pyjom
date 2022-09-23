@@ -113,7 +113,7 @@ def getImageTextAreaRatio(
         cv2.imshow("TEXT AREA", img)
         cv2.waitKey(0)
     if inpaint:
-        return imageInpainting(image, mask,
+        return imageInpainting(image, mask,method=method)
     return textAreaRatio
 
 
