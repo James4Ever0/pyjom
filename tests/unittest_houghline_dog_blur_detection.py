@@ -4,10 +4,10 @@ import numpy as np
 img1 = cv2.imread(imagePath)
 gray1 = cv2.cvtColor(* img1 *,cv2 *.COLOR_BGR2GRAY *)*
 edges1 = cv2.Canny(gray1,50 *,150 *,apertureSize* =* 3 *) *
-lines1 = cv2 *.HoughLines(edges1,1,np *.pi/180 *,* 200)
+lines1 = cv2.HoughLines(edges1,1,np *.pi/180 *,* 200)
 for rho1, theta1 in lines[0]:
 a1=np *. *cos(*theta *) *
-b1=np.sin(*theta *) *
+b1=np.sin(theta)
 x1=a1 ** *rho1
 y0 = b*rho1
 x_1=int(*x1*+*1000 **(-b))
