@@ -40,7 +40,7 @@ def ffmpegVideoPreProductionFilter(
         ]
     ] = [
         "pipCrop",
-        "textRemoval",
+        "textRemoval", #we got a problem here?
         "logoRemoval",
         "randomFlip",  # these are common
         "superResolution",
