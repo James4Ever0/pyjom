@@ -6,10 +6,10 @@ img1 = cv2.imread(imagePath)
 gray1 = cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
 edges1 = cv2.Canny(gray1,50,150,apertureSize=3)
 lines1 = cv2.HoughLines(edges1,1,np.pi/180,200)
-for rho1, theta1 in lines[0]:
+for rho, theta in lines[0]:
 a=np.cos(theta)
 b=np.sin(theta)
-x=a*rho1
+x=a*rho
 y = b*rho
 x_1=int(x+1000*(-b))
 y_1=int(y+1000*(a))
