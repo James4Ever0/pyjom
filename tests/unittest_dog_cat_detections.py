@@ -27,6 +27,7 @@ animal_detection_dataframe = results.pandas().xyxy[0]
 # # results.print() # or .show(),
 
 area_threshold = 0
+confidence_threshold = 0
 
 
 # # results.save()
