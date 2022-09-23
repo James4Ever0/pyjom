@@ -64,8 +64,8 @@ if count>=1:
     selected_col = new_df.iloc(0) # it is a dict-like object.
     # print(new_df)
     selected_col_dict = dict(selected_col)
-    print(selected_col_dict)
-    print(count)
+    # print(selected_col_dict)
+    # print(count)
     # breakpoint()
 # # results.save()
 # # # print(type(results),dir(results))
