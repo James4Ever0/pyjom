@@ -66,7 +66,8 @@ def imageInpainting(image, mask, method:Literal['inpaint','blur']='inpaint'):
     if method == 'inpaint':
         return
     elif method == 'blur':
-        
+    else:
+        raise Exception()
 
 def imageFourCornersInpainting(image):
     if type(image) == str:
