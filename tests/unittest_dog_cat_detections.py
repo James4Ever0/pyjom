@@ -25,6 +25,7 @@ results = model(img)
 animal_detection_dataframe = results.pandas().xyxy[0]
 # results.show()
 # # results.print() # or .show(),
+
 # # results.save()
 # # # print(type(results),dir(results))
 # breakpoint()
