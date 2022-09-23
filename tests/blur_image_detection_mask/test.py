@@ -21,5 +21,6 @@ def display(title, img, max_size=200000):
     cv2.imshow(title, img)
 
 # BlurDetection.scripts.display('img', img)
+display('img', img)
 # BlurDetection.scripts.display('msk', msk)
 cv2.waitKey(0)
