@@ -83,7 +83,7 @@ def partial_blur(image0, mask, kernel=None):
     # mask0 = mask/255
     # inv_mask0 = inv_mask/255
     non_blur_image = cv2.bitwise_and(image0, image0, mask=inv_mask_total)
-    blur_image0 = cv2.blur(image0, kernel)  # half quicklier.
+    blur_image0 = cv2.blur(image0, kernel) # half quicklier.
     blur_image0 = cv2.bitwise_and(blur_image0, blur_image0, mask=mask_total)
     dst0 = blur_image0 + non_blur_image
     return dst0
