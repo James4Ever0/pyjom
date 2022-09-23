@@ -43,9 +43,9 @@ def ffmpegVideoPreProductionFilter(
         "textRemoval", # we got a problem here?
         "logoRemoval",
         "randomFlip",  # these are common
-        "superResolution",
+        "superResolution", # optional
         "minterpolate",
-        "removegrain",  # optional
+        "removegrain",  
     ],
     preview=True,
     # padding=True,
