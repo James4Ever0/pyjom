@@ -1431,10 +1431,10 @@ def getEffectiveFPS(
         convertedVideoPath = str(uuid.uuid4()) + ".mp4"
         convertedVideoPath = os.path.join(tempdir, convertedVideoPath)
 
-        commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode=dup {}".format(
-            videoPath, conversionFPS, convertedVideoPath
-        )
-                commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode=dup {}".format(
+        # commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode=dup {}".format(
+        #     videoPath, conversionFPS, convertedVideoPath
+        # )
+        commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode={} {}".format(
             videoPath, conversionFPS, convertedVideoPath
         )
         # use blend instead?
