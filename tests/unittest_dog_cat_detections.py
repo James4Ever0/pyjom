@@ -82,7 +82,7 @@ if count>=1:
     # height_current = min(allowedHeight, int((width_current/defaultCropWidth)*defaultCropHeight))
     x0_framework = max((x1-width_current),0)
     framework_XYWH = (x0_framework,y0_altered, width_current, height_current)
-    croppedIm
+    croppedImageCover = 
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
