@@ -15,7 +15,7 @@ for rho, theta in lines1[0]:
     y_1=int(y+1000*(a))
     x_2=int(x-1000*(-b))
     y_2=int(y-1000*(a))
-cv2.line(*img1,(x_1,y_1),(x_2,y_2),(0,0,255),2)
+    cv2.line(img1,(x_1,y_1),(x_2,y_2),(0,0,255),2)
 # Creation of a GUI window in order to display the image on the screen
 cv2.imwrite('line detection.png', img1)
 # cv2.waitKey method used for holding the window on screen
