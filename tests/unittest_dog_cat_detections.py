@@ -64,7 +64,7 @@ if count>=1:
     selected_col = new_df.iloc(0) # it is a dict-like object.
     # print(new_df)
     selected_col_dict = dict(selected_col)
-    # this is floating point shits.
+    # these are floating point shits.
     # {'xmin': 1149.520263671875, 'ymin': 331.6445007324219, 'xmax': 1752.586181640625, 'ymax': 1082.3826904296875, 'confidence': 0.9185908436775208, 'class': 16, 'name': 'dog', 'area_ratio': 0.13691652620239364}
     x0, y0, x1, y1 = [int(selected_col_dict[key]) for key in ['xmin','ymin','xmax','ymax']]
     # print(selected_col_dict)
