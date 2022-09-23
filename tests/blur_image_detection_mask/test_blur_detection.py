@@ -1,6 +1,6 @@
-import blur_detector
 from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
+import blur_detector
 import cv2
 imagePath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
 if __name__ == '__main__':
