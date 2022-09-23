@@ -1,6 +1,6 @@
 import ffmpeg
 # mediaPath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
-mediaPath = "" # use the image with black background.
+mediaPath = "/root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png" # use the image with black background.
 # ffmpeg -loop 1 -i /root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png -t 15 -vf cropdetect -f null -
 
 stdout, stderr = (
