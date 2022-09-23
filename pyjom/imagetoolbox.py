@@ -67,7 +67,7 @@ from typing import Literal
 def partial_blur(image0,mask,kernel=(200,200)):
     # need improvement. malnly the boundary.
     height, width = image0.shape[:2]
-    kernel_w = width/
+    kernel_w =( width/100)
     kernel = (kernel_w, kernel_h)
     mask_total = mask
     inv_mask_total = 255-mask_total
