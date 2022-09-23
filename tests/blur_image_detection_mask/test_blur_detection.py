@@ -1,5 +1,6 @@
 import blur_detector
-
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
 import cv2
 if __name__ == '__main__':
     img = cv2.imread('image_name', 0)
