@@ -8,7 +8,7 @@ img1 = cv2.imread(imagePath)
 # gray1 = cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
 # edges1 = cv2.Canny(gray1,50,150,apertureSize=3)
 blurred = cv2.GaussianBlur(img1, (5, 5), 0)
-    edges = cv2.Canny(blurred,20,210,apertureSize = 3)
+edges1 = cv2.Canny(blurred,20,210,apertureSize = 3)
 
 cv2.imshow("EDGE",edges1)
 cv2.waitKey(0)
