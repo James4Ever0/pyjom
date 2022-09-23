@@ -92,6 +92,7 @@ if count>=1:
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
+    cv2.waitKey(0)
 else:
     print("NO COVER FOUND.")
 # # results.save()
