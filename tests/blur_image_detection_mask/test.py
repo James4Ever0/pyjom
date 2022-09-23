@@ -10,6 +10,16 @@ img = cv2.imread(img_path)
 img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
 msk, val = BlurDetection.blur_mask(img)
-BlurDetection.scripts.display('img', img)
-BlurDetection.scripts.display('msk', msk)
+
+def display(title, img, max_size=200000):
+    assert isinstance(img, numpy.ndarray), 'img must be a numpy array'
+    assert isinstance(title, str), 'title must be a string'
+    scale = numpy.sqrt(min(1.0, float(max_size)/(img.shape[0]*img.shape[1])))
+    logger.debug('image is being scaled by a factor of {0}'.format(scale))
+    shape = (int(scale*img.shape[1]), int(scale*img.shape[0]))
+    img = cv2.resize(img, shape)
+    cv2.imshow(title, img)
+
+# BlurDetection.scripts.display('img', img)
+# BlurDetection.scripts.display('msk', msk)
 cv2.waitKey(0)
