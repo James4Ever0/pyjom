@@ -64,7 +64,7 @@ def getImageTextAreaRecognized(
 from typing import Literal
 def imageInpainting(image, mask, method:Literal['inpaint','blur']='inpaint'):
     if method == 'inpaint':
-        return
+        return cv2.inpaint(image, mask, 3, cv2.INPAINT_TELEA)
     elif method == 'blur':
         return 
     else:
