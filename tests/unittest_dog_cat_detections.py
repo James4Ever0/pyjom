@@ -20,7 +20,7 @@ results = model(img)
 # print(results)
 # # Results
 # breakpoint()
-print(results.pandas().xyxy[0])
+animal_detection_dataframe = results.pandas().xyxy[0]
 # results.show()
 # # results.print() # or .show(),
 # # results.save()
