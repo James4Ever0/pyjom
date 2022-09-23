@@ -5,8 +5,8 @@ import numpy as np
 # command used for reading an image from the disk, cv2.imread function is used
 imagePath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
 img1 = cv2.imread(imagePath)
-gray1 = cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
-edges1 = cv2.Canny(gray1,50,150,apertureSize=1)
+# gray1 = cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
+# edges1 = cv2.Canny(gray1,50,150,apertureSize=1)
 
 cv2.imshow("EDGE",edges1)
 cv2.waitKey(0)
