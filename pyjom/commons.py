@@ -15,14 +15,20 @@ import pathlib
 import site
 import sys
 import random
+
 # from functools import lru_cache
 
-os.system('ulimit -n 1048576')
+os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
-def corruptMediaFilter(mediaPath, tag:str='media', bad_words:list[str]= ["invalid", "failed", "error"]):
+
+
+def corruptMediaFilter(
+    mediaPath, tag: str = "media", bad_words: list[str] = ["invalid", "failed", "error"]
+):
     if not os.path.exists(mediaPath):
         print("{} file does not exist".format(tag))
     import ffmpeg
+
     not_nice = [word.lower() for word in bad_words]
     corrupted = False
     try:
@@ -39,6 +45,7 @@ def corruptMediaFilter(mediaPath, tag:str='media', bad_words:list[str]= ["invali
                 break
     except:
         import traceback
+
         traceback.print_exc()
         corrupted = True
         print("corrupt {}".format(tag))
@@ -47,21 +54,24 @@ def corruptMediaFilter(mediaPath, tag:str='media', bad_words:list[str]= ["invali
         print("video is fine")
     # return True for fine video.
     valid = not corrupted
-    sprint('{} file path:'.format(tag), mediaPath)
+    sprint("{} file path:".format(tag), mediaPath)
     return valid
+
 
 ## bring about 'redis cache' for faster testing.
 import redis
 from redis_lru import RedisLRU
 
 # from functools import lru_cache
-oneDay = 60*60*24 # one day?
-redisExpire =oneDay*7 # god damn it!
+oneDay = 60 * 60 * 24  # one day?
+redisExpire = oneDay * 7  # god damn it!
 
 # @lru_cache(maxsize=1)
-def redisLRUCache(ttl=redisExpire,redisAddress = "127.0.0.1",redisPort = 9291,max_size=20,debug=True):
+def redisLRUCache(
+    ttl=redisExpire, redisAddress="127.0.0.1", redisPort=9291, max_size=20, debug=True
+):
     client = redis.StrictRedis(host=redisAddress, port=redisPort)
-    cache = RedisLRU(client,max_size=max_size,debug=debug)
+    cache = RedisLRU(client, max_size=max_size, debug=debug)
     return cache(ttl=ttl)
 
 
@@ -87,11 +97,11 @@ def frameSizeFilter(frameMeta, frame_size_filter):
 
 def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
     try:
-        assert [x for x in minMaxDict.keys() if x not in ['min', 'max']] == []
+        assert [x for x in minMaxDict.keys() if x not in ["min", "max"]] == []
     except:
         print("PARAMETERS DUMP:", value, minMaxDict, getMinMaxVal)
         breakpoint()
-    
+
     try:
         minVal = minMaxDict.get("min", value)
         maxVal = minMaxDict.get("max", value)
@@ -104,10 +114,11 @@ def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
             return flag
     except:
         import traceback
+
         traceback.print_exc()
         print("WTF IS GOING ON WITH CHECK_MIN_MAX_DICT")
         # breakpoint()
-        return False # usually we have issue getting the number. it is not a number.
+        return False  # usually we have issue getting the number. it is not a number.
 
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
@@ -129,6 +140,7 @@ mimetypes.init()
 
 def waitForServerUp(port, message, timeout=1):
     import requests
+
     while True:
         try:
             url = "http://localhost:{}".format(port)
@@ -352,6 +364,7 @@ import MediaInfo
 
 import subprocess
 
+
 def json_auto_float_int(jsonObj):
     jsonObj = jsonify(jsonObj)
     for location, content in jsonWalk(jsonObj):
@@ -378,9 +391,14 @@ def json_auto_float_int(jsonObj):
                     pass
     return jsonObj
 
+
 from typing import Union
-def ffprobe_media_info(filename, video_size:Union[None, str]=None):
-    cmd = "ffprobe{} -v quiet -print_format json -show_format -show_streams".format(" -video_size {}".format(video_size.strip()) if video_size else "")
+
+
+def ffprobe_media_info(filename, video_size: Union[None, str] = None):
+    cmd = "ffprobe{} -v quiet -print_format json -show_format -show_streams".format(
+        " -video_size {}".format(video_size.strip()) if video_size else ""
+    )
     cmd = cmd.split(" ")
     cmd = cmd + [filename]
     output = subprocess.check_output(cmd)
@@ -522,6 +540,7 @@ yolov5_model = None
 
 from functools import lru_cache
 
+
 @lru_cache(maxsize=1)
 def configYolov5(model="yolov5s"):
     global yolov5_model  # not the same
@@ -595,10 +614,10 @@ def jsonPrettyPrint(feedback, indent=4):
 def getFileType(fbase0):
     # quick dirty fix.
     # for gif we have a hard fix.
-    translateTable = {'gif':'video'} # force conversion.
+    translateTable = {"gif": "video"}  # force conversion.
     # print("FBASE:", fbase0)
     suffix = fbase0.split(".")[-1]
-    guessedType = translateTable.get(suffix,None)
+    guessedType = translateTable.get(suffix, None)
     # breakpoint()
     if guessedType:
         return guessedType
