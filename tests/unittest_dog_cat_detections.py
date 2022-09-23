@@ -78,8 +78,8 @@ if count>=1:
 
     y0_altered = max(int(y0-(y1-y0)*y_expansion_rate),0)
     height_current = min((y1-y0_altered),allowedHeight) # reasonable?
-    width_current = min(int((height_current/defaultCropHeight)*defaultCropWidth), defaultWidth)
-    height_current = min(allowedHeight, int((width_current/defaultCropWidth)*defaultCropHeight))
+    # width_current = min(int((height_current/defaultCropHeight)*defaultCropWidth), defaultWidth)
+    # height_current = min(allowedHeight, int((width_current/defaultCropWidth)*defaultCropHeight))
     x0_framework = max((x1-width_current),0)
     # print(selected_col_dict)
     # print(count)
