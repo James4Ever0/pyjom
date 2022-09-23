@@ -1,5 +1,6 @@
 import os
-from lazero.utils.importers import cv2_c
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
 import cv2
 import numpy
 # import logger
