@@ -17,7 +17,7 @@ assert os.path.exists(img_path), "img_path does not exists"
 img = cv2.imread(img_path)
 img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
-msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=190)
+msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=120)
 
 
 def display(title, img, max_size=200000):
