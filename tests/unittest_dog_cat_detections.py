@@ -38,7 +38,7 @@ animal_detection_dataframe['area_ratio'] = area/
 area_threshold = 0
 confidence_threshold = 0 # this is image quality maybe.
 
-
+y_e
 
 # # results.save()
 # # # print(type(results),dir(results))
