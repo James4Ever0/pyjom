@@ -76,7 +76,7 @@ if count>=1:
 
     y0_altered = max(int(y0-(y1-y0)*y_expansion_rate),0)
     height_current = y1-y0_altered # reasonable?
-    width_current = 
+    width_current = height_current/
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
