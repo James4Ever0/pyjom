@@ -19,7 +19,7 @@ import BlurDetection
 # img_path = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
 # img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample.webp"
 # img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample_2.webp"
-img_path="/root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png"
+img_path = "/root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png"
 # ffmpeg -loop 1 -i /root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png -t 15 -vf cropdetect -f null -
 # img_path="/root/Desktop/works/pyjom/samples/image/husky_cry.png"
 assert os.path.exists(img_path), "img_path does not exists"
@@ -28,11 +28,12 @@ img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
 msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=120)
 
-inv_msk = 255-msk
+inv_msk = 255 - msk
 # import numpy as np
 # print(np.max(msk), np.min(msk))
 # print(msk.shape)
 # breakpoint()
+
 
 def display(title, img, max_size=200000):
     assert isinstance(img, numpy.ndarray), "img must be a numpy array"
