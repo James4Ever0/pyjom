@@ -1,6 +1,6 @@
 # order:
 # remove watermark, remove text, remove potential watermark around corners using inpainting
-# 
+# use ffmpeg cropdetect, if 
 
 import os
 from lazero.utils.importers import cv2_custom_build_init
