@@ -1200,7 +1200,7 @@ def getEffectiveFPS(
     mpdecimate_args_choice: Literal[
         None, "hi=1:lo=1:frac=1:max=0", "hi=200:lo=200:frac=1:max=0"
     ] = None,
-    minterpolate_mode: Literal['dup', 'blend', 'mci']= 'blend'
+    minterpolate_mode: Literal["dup", "blend", "mci"] = "blend",
 ):
     # use ffmpeg to covert the target first!
     import uuid
@@ -1436,7 +1436,7 @@ def getEffectiveFPS(
         #     videoPath, conversionFPS, convertedVideoPath
         # )
         commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode={} {}".format(
-            videoPath, conversionFPS, minterpolate_mode,convertedVideoPath
+            videoPath, conversionFPS, minterpolate_mode, convertedVideoPath
         )
         # use blend instead?
         commandArgs = commandline.split(" ")
@@ -1789,7 +1789,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
     logic: Literal["AND", "OR"] = "OR",
-    use_gpu=False
+    use_gpu=False,
 ):
     filter_dict = {
         "dog": {"min": threshold},
@@ -1883,7 +1883,7 @@ def bezierPaddleHubResnet50VideoDogCatDetector(
             dog_label_file_path=dog_label_file_path,
             cat_label_file_path=cat_label_file_path,
             debug=debug,
-            use_gpu=use_gpu
+            use_gpu=use_gpu,
         )
         dataList.append({"detections": detections})
         # now we apply the thing? the yolov5 thing?
