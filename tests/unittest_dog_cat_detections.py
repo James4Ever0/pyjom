@@ -66,7 +66,7 @@ if count>=1:
     selected_col_dict = dict(selected_col)
     print(selected_col_dict)
     print(count)
-    breakpoint()
+    # breakpoint()
 # # results.save()
 # # # print(type(results),dir(results))
 # breakpoint()
