@@ -18,5 +18,8 @@ stderr_decoded = stderr.decode("utf-8")
 
 for line in stdout_decoded.split("\n"):
     print(line)
+
+breakpoint()
+
 for line in stderr_decoded.split("\n"):
     print(line)
