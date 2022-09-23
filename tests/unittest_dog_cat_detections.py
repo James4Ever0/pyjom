@@ -53,6 +53,8 @@ confidence_threshold = 0.7  # this is image quality maybe.
 
 y_expansion_rate = 0.1  # to make the starting point on y axis less "headless"
 
+df.loc[(df['Discount'] >= 1200) & (df['Fee'] >= 23000 )]
+
 # # results.save()
 # # # print(type(results),dir(results))
 # breakpoint()
