@@ -21,6 +21,7 @@ msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=120)
 
 print(max(msk), min(msk))
 print(msk.shape)
+breakpoint()
 
 def display(title, img, max_size=200000):
     assert isinstance(img, numpy.ndarray), "img must be a numpy array"
