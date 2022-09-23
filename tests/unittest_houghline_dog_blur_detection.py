@@ -10,7 +10,7 @@ for rho1, theta1 in lines[0]:
 a1=np.cos(theta)
 b1=np.sin(theta)
 x1=a1*rho1
-y0 = b*rho1
+y0 = b1*rho1
 x_1=int(*x1*+*1000*(-b))
 y_1=int(*y1+1000*(*a))
 x_2=int(*x1*-*1000*(-b))
