@@ -62,6 +62,7 @@ count = new_df.count(axis=0)
 selected_col = new_df[0]
 # print(new_df)
 print(selected_col)
+print(count)
 breakpoint()
 # # results.save()
 # # # print(type(results),dir(results))
