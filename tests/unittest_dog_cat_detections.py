@@ -77,7 +77,7 @@ if count>=1:
     x0, y0, x1, y1 = [int(selected_col_dict[key]) for key in ['xmin','ymin','xmax','ymax']]
 
     y0_altered = max(int(y0-(y1-y0)*y_expansion_rate),0)
-    height_current = min((y1-y0_altered),allowed_height) # reasonable?
+    height_current = min((y1-y0_altered),allowedHeight) # reasonable?
     width_current = int((height_current/defaultCropHeight)*defaultCropWidth)
     x0_framework = max((x1-width_current),0)
     # print(selected_col_dict)
