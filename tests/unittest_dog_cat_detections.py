@@ -55,7 +55,7 @@ y_expansion_rate = 0.1  # to make the starting point on y axis less "headless"
 
 df = animal_detection_dataframe
 
-df.loc[(df['area_ratio'] >= area_threshold) & (df['confidence'] >= confidence_threshold)]
+df.loc[(df['area_ratio'] >= area_threshold) & (df['confidence'] >= confidence_threshold) & (df[] )]
 
 # # results.save()
 # # # print(type(results),dir(results))
