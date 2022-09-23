@@ -26,6 +26,8 @@ animal_detection_dataframe = results.pandas().xyxy[0]
 # results.show()
 # # results.print() # or .show(),
 
+area_ratio = animal_detection_dataframe[]
+
 area_threshold = 0
 confidence_threshold = 0 # this is image quality maybe.
 
