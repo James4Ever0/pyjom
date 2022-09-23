@@ -81,6 +81,7 @@ if count>=1:
     width_current = min(int((height_current/defaultCropHeight)*defaultCropWidth), defaultWidth) # just for safety. not for mathematical accuracy.
     # height_current = min(allowedHeight, int((width_current/defaultCropWidth)*defaultCropHeight))
     x0_framework = max((x1-width_current),0)
+    framework_XYWH = (x0_framework,)
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
