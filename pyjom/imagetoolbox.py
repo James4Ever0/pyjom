@@ -61,7 +61,8 @@ def getImageTextAreaRecognized(
     else:
         return detection, recognition
 
-def imageInpainting(image, mask, method='inpaint')
+from typing import Literal
+def imageInpainting(image, mask, method:Literal['inpaint','blur']='inpaint')
 
 def imageFourCornersInpainting(image):
     if type(image) == str:
