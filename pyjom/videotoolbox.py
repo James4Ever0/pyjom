@@ -380,7 +380,7 @@ def getVideoPreviewPixels(videoPath, maxPixel=200):
 from pyjom.imagetoolbox import getDeltaWidthHeight, getFourCorners
 
 
-@lru_cache(maxsize=30)
+# @lru_cache(maxsize=30)
 def detectStationaryLogoOverTime(
     filepath,
     start,
