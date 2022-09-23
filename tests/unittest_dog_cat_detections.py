@@ -1,5 +1,8 @@
 import torch
 import os
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
+import cv2
 os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
 
