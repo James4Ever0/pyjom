@@ -61,16 +61,20 @@ def getImageTextAreaRecognized(
     else:
         return detection, recognition
 
-from typing import Literal
-def imageInpainting(image, mask, method:Literal['inpaint','blur']='inpaint'):
-    if method == 'inpaint':
-        return cv2.inpaint(image, mask, 3, cv2.INPAINT_TELEA)
-    elif method == 'blur':
-        return 
-    else:
-        raise Exception('image inpainting method not supported:', method)
 
-def imageFourCornersInpainting(image, method='inpaint'):
+from typing import Literal
+
+
+def imageInpainting(image, mask, method: Literal["inpaint", "blur"] = "inpaint"):
+    if method == "inpaint":
+        return cv2.inpaint(image, mask, 3, cv2.INPAINT_TELEA)
+    elif method == "blur":
+        return
+    else:
+        raise Exception("image inpainting method not supported:", method)
+
+
+def imageFourCornersInpainting(image, method="inpaint"):
     if type(image) == str:
         image = cv2.imread(image)
     defaultHeight, defaultWidth = image.shape[:2]
@@ -90,7 +94,7 @@ def getImageTextAreaRatio(
     recognizer=False,
     debug=False,
     inpaint=False,
-    method='inpaint'
+    method="inpaint",
 ):
     res, (detection, recognition) = getImageTextAreaRecognized(
         image, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True
@@ -113,7 +117,7 @@ def getImageTextAreaRatio(
         cv2.imshow("TEXT AREA", img)
         cv2.waitKey(0)
     if inpaint:
-        return imageInpainting(image, mask,method=method)
+        return imageInpainting(image, img, method=method)
     return textAreaRatio
 
 
@@ -408,7 +412,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
-    use_gpu=False
+    use_gpu=False,
 ):
     curve_function_kwargs = {
         "start": (0, 0),
@@ -474,7 +478,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
         frame, 224, 224, border_type="replicate"
     )  # pass the test only if three of these containing 'cats'
     result = classifier.classification(
-        images=[padded_resized_frame], top_k=3, use_gpu=use_gpu # cuda oom?
+        images=[padded_resized_frame], top_k=3, use_gpu=use_gpu  # cuda oom?
     )  # check it?
     resultList = paddleAnimalDetectionResultToList(result)
     final_result_list = translateResultListToDogCatList(resultList)
