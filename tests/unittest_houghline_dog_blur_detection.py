@@ -6,7 +6,7 @@ import numpy as np
 imagePath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
 # cannot find image without dark/black boundaries.
 
-# use blur detection, both for b
+# use blur detection, both for blur area removal and motion blur detection for 
 
 # tool for finding non-blur based black borders:
 # ffmpeg -loop 1 -i /root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png -t 15 -vf cropdetect -f null -
