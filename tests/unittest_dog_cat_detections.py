@@ -87,7 +87,7 @@ if count>=1:
     # resize image
     croppedImageCoverResized = cv2.resize(croppedImageCover, (defaultCropWidth, defaultCropHeight))
     cv2.imshow("CROPPED IMAGE COVER",croppedImageCover)
-    cv2.imshow("CROPPED IMAGE COVER ",croppedImageCover)
+    cv2.imshow("CROPPED IMAGE COVER RESIZED",croppedImageCoverResized)
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
