@@ -70,7 +70,7 @@ def imageInpainting(image, mask, method:Literal['inpaint','blur']='inpaint'):
     else:
         raise Exception('image inpainting method not supported:', method)
 
-def imageFourCornersInpainting(image):
+def imageFourCornersInpainting(image, method='inpaint'):
     if type(image) == str:
         image = cv2.imread(image)
     defaultHeight, defaultWidth = image.shape[:2]
@@ -80,7 +80,7 @@ def imageFourCornersInpainting(image):
         w, h = x2 - x1, y2 - y1
         x, y = x1, y1
         cv2.rectangle(img, (x, y), (x + w, y + h), 255, -1)
-    return imageInpainting(image, img)
+    return imageInpainting(image, img, method=method)
 
 
 def getImageTextAreaRatio(
