@@ -16,9 +16,9 @@ img = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg"
 # Inference
 results = model(img)
 
-print(results)
-# Results
-breakpoint()
+# print(results)
+# # Results
+# breakpoint()
 # results.print() # or .show(),
 # results.save()
 # # print(type(results),dir(results))
