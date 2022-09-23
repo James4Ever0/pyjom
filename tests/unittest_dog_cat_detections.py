@@ -21,7 +21,7 @@ imgPath='/root/Desktop/works/pyjom/samples/image/dog_blue_sky.png'
 
 img = cv2.imread(imgPath)
 
-de
+defaultHeight, defaultWidth = img.shalpe[:2]
 
 # Inference
 results = model(img)
