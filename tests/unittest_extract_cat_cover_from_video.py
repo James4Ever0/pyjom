@@ -10,7 +10,8 @@ import yt_dlp
 
 path = "/dev/shm/testVideo.mp4"
 from test_commons import *
-from lazero.utils.importers import cv
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
 import cv2
 
 from pyjom.videotoolbox import getVideoFrameSampler
