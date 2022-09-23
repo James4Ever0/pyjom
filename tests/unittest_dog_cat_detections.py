@@ -91,6 +91,8 @@ if count>=1:
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
+else:
+    print("NO ")
 # # results.save()
 # # # print(type(results),dir(results))
 # breakpoint()
