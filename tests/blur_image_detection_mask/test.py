@@ -19,6 +19,7 @@ img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
 msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=120)
 
+inv_msk = 
 import numpy as np
 print(np.max(msk), np.min(msk))
 print(msk.shape)
