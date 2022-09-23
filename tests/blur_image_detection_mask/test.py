@@ -1,5 +1,6 @@
 # order:
-# remove watermark, remove text, remove corners
+# remove watermark, remove text, remove potential watermark around corners using inpainting
+# 
 
 import os
 from lazero.utils.importers import cv2_custom_build_init
