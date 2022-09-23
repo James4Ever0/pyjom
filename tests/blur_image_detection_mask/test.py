@@ -20,7 +20,7 @@ print("this image {0} blurry".format(["isn't", "is"][blurry]))
 msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=120)
 
 import numpy as np
-print(max(msk), min(msk))
+print(np.max(msk), np.min(msk))
 print(msk.shape)
 breakpoint()
 
