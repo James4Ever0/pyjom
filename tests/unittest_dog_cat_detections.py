@@ -57,7 +57,8 @@ df = animal_detection_dataframe
 
 new_df = df.loc[(df['area_ratio'] >= area_threshold) & (df['confidence'] >= confidence_threshold) & (df['name'] == dog_or_cat)].sort_values(by=['confidence']) # this one is for 0.13
 
-count = new_df.count(axis=0)
+# count = new_df.count(axis=0)
+count = len(new_df)
 # print("COUNT: %d" % count)
 # selected_col = new_df[0]
 # print(new_df)
