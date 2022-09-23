@@ -22,4 +22,4 @@ for line in stdout_decoded.split("\n"):
 breakpoint()
 
 for line in stderr_decoded.split("\n"):
-    print(line) v
+    print(line)
