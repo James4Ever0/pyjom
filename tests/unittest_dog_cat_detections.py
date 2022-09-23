@@ -84,6 +84,8 @@ if count>=1:
     framework_XYWH = (x0_framework,y0_altered, width_current, height_current)
     x_f, y_f, w_f, h_f = framework_XYWH
     croppedImageCover = img[y_f:y_f+h_f,x_f:x_f+w_f,:]
+    # resize image
+    croppedImageCover = cv2.resize()
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
