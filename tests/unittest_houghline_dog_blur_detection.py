@@ -10,10 +10,10 @@ a1*=*np *. *cos(*theta *) *
 b1*=*np. *sin* (*theta *) *
 x1*=*a1 ** *rho1
 y0 = b*rho1
-x_1*=*int(*x1*+*1000 **(-b))
-y_1*=*int(*y1 *+ *1000 **(*a *))
-x_2*=*int(*x1*-*1000 **( *-b *))
-y_2*=*int(*y1*-*1000 **(*a *))
+x_1=int(*x1*+*1000 **(-b))
+y_1=int(*y1 *+ *1000 **(*a *))
+x_2=int(*x1*-*1000 **( *-b *))
+y_2=int(*y1*-*1000 **(*a *))
 cv2.line(*img1,(x_1, *y_1),(x_2, *y_2),(0, *0, *255) *, *2)
 # Creation of a GUI window in order to display the image on the screen
 cv2.imwrite('line detection.png', img1)
