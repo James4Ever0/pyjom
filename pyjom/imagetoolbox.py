@@ -66,6 +66,7 @@ def imageInpainting(image, mask, method:Literal['inpaint','blur']='inpaint'):
     if method == 'inpaint':
         return
     elif method == 'blur':
+        return 
     else:
         raise Exception('image inpainting method not supported:', method)
 
@@ -79,7 +80,7 @@ def imageFourCornersInpainting(image):
         w, h = x2 - x1, y2 - y1
         x, y = x1, y1
         cv2.rectangle(img, (x, y), (x + w, y + h), 255, -1)
-    return cv2.inpaint(image, img, 3, cv2.INPAINT_TELEA)
+    return 
 
 
 def getImageTextAreaRatio(
