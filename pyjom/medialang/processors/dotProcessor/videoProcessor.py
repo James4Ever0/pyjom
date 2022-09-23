@@ -24,7 +24,7 @@ def ffmpegVideoPreProductionFilter(
     start=None,
     end=None,
     cachePath=None,
-    filters:List[Literal["minterpolate", "removegrain", "bilateral",'randomFlip','superResolution',"pipCrop", "textRemoval", "logoRemoval"]]=["pipCrop", "textRemoval", "logoRemoval"],
+    filters:List[Literal["minterpolate", "removegrain", "bilateral",'randomFlip','superResolution',"pipCrop", "textRemoval", "logoRemoval"]]=["pipCrop", "textRemoval", "logoRemoval",'randomFlip','superResolution'],
     preview=True,
     # padding=True,
     paddingBlur=True,
