@@ -10,10 +10,12 @@ os.environ["YOLOV5_MODEL_DIR"] = '/root/Desktop/works/pyjom/pyjom/models/yolov5/
 model = torch.hub.load(localModelDir, 'yolov5s',source="local",map_location=torch.device('cpu'))  # or yolov5m, yolov5l, yolov5x, custom
 
 # Images
-img = '/media/root/help/pyjom/samples/image/miku_on_green.png'  # or file, Path, PIL, OpenCV, numpy, list
+# img = '/media/root/help/pyjom/samples/image/miku_on_green.png'  # or file, Path, PIL, OpenCV, numpy, list
+img = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg"
 
 # Inference
 results = model(img)
+
 
 # Results
 # results.print() # or .show(),
