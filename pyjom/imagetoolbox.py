@@ -61,6 +61,7 @@ def getImageTextAreaRecognized(
     else:
         return detection, recognition
 
+def imageInpainting(image, mask, method='inpaint')
 
 def imageFourCornersInpainting(image):
     if type(image) == str:
