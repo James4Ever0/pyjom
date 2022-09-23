@@ -12,8 +12,11 @@ stdout, stderr = (
 )
 
 
-stderr_decoded = stderr.decode("utf-8")
+stdout_decoded = stdout.decode("utf-8")
 stderr_decoded = stderr.decode("utf-8")
 
+
+for line in stdout_decoded.split("\n"):
+    print(line)
 for line in stderr_decoded.split("\n"):
     print(line)
