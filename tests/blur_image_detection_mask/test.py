@@ -3,7 +3,7 @@
 # remove watermark, remove text, remove potential watermark around corners using inpainting
 # use ffmpeg cropdetect, if has significant area change then no further processing
 # if no significant area change, use this blur detection to get the main area
-# then use the image, reuse the dog detection and get the crop from processed image.
+# then reuse the dog detection and get the crop from processed/cropped image.
 
 import os
 from lazero.utils.importers import cv2_custom_build_init
