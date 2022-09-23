@@ -60,7 +60,7 @@ new_df = df.loc[(df['area_ratio'] >= area_threshold) & (df['confidence'] >= conf
 # count = new_df.count(axis=0)
 count = len(new_df)
 # print("COUNT: %d" % count)
-selected_col = new_df.iloc(0)
+selected_col = new_df.iloc(0) # it is a dict-like object.
 # print(new_df)
 print(selected_col)
 print(count)
