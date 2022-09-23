@@ -19,6 +19,7 @@ dog_or_cat = "dog"
 # img = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg"
 imgPath='/root/Desktop/works/pyjom/samples/image/dog_blue_sky.png'
 
+img = cv2.imread(imgPath)
 
 # Inference
 results = model(img)
