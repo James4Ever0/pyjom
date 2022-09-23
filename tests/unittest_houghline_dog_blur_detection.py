@@ -1,4 +1,5 @@
-from lazero.utils.importers import cv2
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
 import cv2
 import numpy as np
 # command used for reading an image from the disk, cv2.imread function is used
