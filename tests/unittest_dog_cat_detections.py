@@ -49,7 +49,7 @@ area = (animal_detection_dataframe["xmax"] - animal_detection_dataframe["xmin"])
 animal_detection_dataframe["area_ratio"] = area / total_area
 
 area_threshold = 0
-confidence_threshold = 0  # this is image quality maybe.
+confidence_threshold = 0.7  # this is image quality maybe.
 
 y_expansion_rate = 0.1  # to make the starting point on y axis less "headless"
 
