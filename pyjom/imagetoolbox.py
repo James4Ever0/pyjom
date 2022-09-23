@@ -73,8 +73,8 @@ def partial_blur(image0, mask, kernel=None):
         kernel_h = int(height / 40) * 4
     else:
         kernel_w, kernel_h = kernel
-        kernel_w = int(width / 4) * 4
-        kernel_h = int(height / 4) * 4
+        kernel_w = int(kernel_w / 4) * 4
+        kernel_h = int(kernel_w / 4) * 4
     kernel = (kernel_w, kernel_h)
 
     mask_total = mask
