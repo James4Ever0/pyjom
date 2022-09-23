@@ -64,7 +64,7 @@ count = len(new_df)
 defaultCropWidth, defaultCropHeight = 1920 , 1080
 # this is just to maintain the ratio.
 
-
+# you shall find the code elsewhere?
 
 if count>=1:
     selected_col = new_df.iloc(0) # it is a dict-like object.
