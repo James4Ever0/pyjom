@@ -1,6 +1,7 @@
 # order:
 # remove watermark, remove text, remove potential watermark around corners using inpainting
-# use ffmpeg cropdetect, if 
+# use ffmpeg cropdetect, if has significant area change then no further processing
+# if no significant area change, use this blur detection to 
 
 import os
 from lazero.utils.importers import cv2_custom_build_init
