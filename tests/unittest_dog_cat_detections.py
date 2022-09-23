@@ -83,7 +83,7 @@ if count>=1:
     x0_framework = max((x1-width_current),0)
     framework_XYWH = (x0_framework,y0_altered, width_current, height_current)
     x_f, y_f, w_f, h_f = framework_XYWH
-    croppedImageCover = img[y_f:y_f+h_f,y0_altered:,:]
+    croppedImageCover = img[y_f:y_f+h_f,x_f:x_f+w_f,:]
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
