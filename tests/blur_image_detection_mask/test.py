@@ -1,5 +1,5 @@
 import os
-from lazero.
+from lazero.utils.importers import cv2_c
 import cv2
 import numpy
 # import logger
