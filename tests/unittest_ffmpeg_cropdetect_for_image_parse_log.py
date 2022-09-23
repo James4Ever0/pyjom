@@ -11,6 +11,9 @@ stdout, stderr = (
     .run(capture_stdout=True, capture_stderr=True)
 )
 
+
+stderr_decoded = stderr.decode("utf-8")
 stderr_decoded = stderr.decode("utf-8")
 
-for line in stderr_decoded.split("\n")
+for line in stderr_decoded.split("\n"):
+    print(line)
