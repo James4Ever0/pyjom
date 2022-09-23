@@ -7,8 +7,9 @@ imagePath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png
 # cannot find image without dark/black boundaries.
 
 # tool for finding non-blur based black borders:
-ffmpeg -loop 1 -i /root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png -t 15 -vf cropdetect -f null -
+# ffmpeg -loop 1 -i /root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png -t 15 -vf cropdetect -f null -
 
+# maybe you can change the seconds to something shorter.
 
 img1 = cv2.imread(imagePath)
 # gray1 = cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
