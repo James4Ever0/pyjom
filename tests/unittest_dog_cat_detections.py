@@ -62,6 +62,7 @@ count = len(new_df)
 # print("COUNT: %d" % count)
 selected_col = new_df.iloc(0) # it is a dict-like object.
 # print(new_df)
+selected_col_dict = dict(selected_col)
 print(selected_col)
 print(count)
 breakpoint()
