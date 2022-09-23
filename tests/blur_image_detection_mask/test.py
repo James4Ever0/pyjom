@@ -12,6 +12,7 @@ import BlurDetection
 # img_path = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
 img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample.webp"
 # img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample_2.webp"
+img_p
 assert os.path.exists(img_path), "img_path does not exists"
 img = cv2.imread(img_path)
 img_fft, val, blurry = BlurDetection.blur_detector(img)
