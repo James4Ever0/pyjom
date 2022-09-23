@@ -64,6 +64,7 @@ if count>=1:
     selected_col = new_df.iloc(0) # it is a dict-like object.
     # print(new_df)
     selected_col_dict = dict(selected_col)
+    # {'xmin': 1149.520263671875, 'ymin': 331.6445007324219, 'xmax': 1752.586181640625, 'ymax': 1082.3826904296875, 'confidence': 0.9185908436775208, 'class': 16, 'name': 'dog', 'area_ratio': 0.13691652620239364}
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
