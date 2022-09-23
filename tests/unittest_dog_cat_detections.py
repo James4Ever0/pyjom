@@ -21,6 +21,8 @@ imgPath='/root/Desktop/works/pyjom/samples/image/dog_blue_sky.png'
 
 img = cv2.imread(imgPath)
 
+de
+
 # Inference
 results = model(img)
 
@@ -33,7 +35,7 @@ animal_detection_dataframe = results.pandas().xyxy[0]
 
 area= (animal_detection_dataframe['xmax']-animal_detection_dataframe['xmin'])*(animal_detection_dataframe['ymax']-animal_detection_dataframe['ymin'])
 
-animal_detection_dataframe['area_ratio'] = area/
+animal_detection_dataframe['area_ratio'] = area/total_area
 
 area_threshold = 0
 confidence_threshold = 0 # this is image quality maybe.
