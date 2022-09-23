@@ -1435,7 +1435,7 @@ def getEffectiveFPS(
         #     videoPath, conversionFPS, convertedVideoPath
         # )
         commandline = "ffmpeg -y -i {} -vf minterpolate=fps={}:mi_mode={} {}".format(
-            videoPath, conversionFPS, convertedVideoPath
+            videoPath, conversionFPS, minterpolate_mode,convertedVideoPath
         )
         # use blend instead?
         commandArgs = commandline.split(" ")
