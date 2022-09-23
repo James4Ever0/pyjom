@@ -1,5 +1,5 @@
 import ffmpeg
-mediaPath = ""
+mediaPath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
 # ffmpeg -loop 1 -i /root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png -t 15 -vf cropdetect -f null -
 
 stdout, stderr = (
