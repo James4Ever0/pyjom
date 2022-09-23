@@ -75,7 +75,7 @@ if count>=1:
     x0, y0, x1, y1 = [int(selected_col_dict[key]) for key in ['xmin','ymin','xmax','ymax']]
 
     y0_altered = max(int(y0-(y1-y0)*y_expansion_rate),0)
-    
+    x0_startingPoint = 
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
