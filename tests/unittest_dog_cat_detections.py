@@ -16,19 +16,20 @@ img = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg"
 # Inference
 results = model(img)
 
-
+print(results)
 # Results
+breakpoint()
 # results.print() # or .show(),
-results.save()
-# print(type(results),dir(results))
-# breakpoint()
-import cv2
-image = cv2.imread("runs/detect/exp3/miku_on_green.jpg")
-cv2.imshow("NONE",image)
-# results.print()  # or .show(),
-# hold it.
-# image 1/1: 720x1280 1 bird # what the fuck is a bird?
-# os.system("pause")
-# input()
+# results.save()
+# # print(type(results),dir(results))
+# # breakpoint()
+# import cv2
+# image = cv2.imread("runs/detect/exp3/miku_on_green.jpg")
+# cv2.imshow("NONE",image)
+# # results.print()  # or .show(),
+# # hold it.
+# # image 1/1: 720x1280 1 bird # what the fuck is a bird?
+# # os.system("pause")
+# # input()
 
 # this shit has been detected but not in the right category.
