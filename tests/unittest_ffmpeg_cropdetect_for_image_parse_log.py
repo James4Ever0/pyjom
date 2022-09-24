@@ -44,3 +44,4 @@ for line in stderr_decoded.split("\n"):
     # this crop usually will never change. but let's count?
 common_crops_count_tuple_list = [(cropString, common_crops.count(cropString)) for cropString in set(common_crops)]
 common_crops_count_tuple_list.sort(key: lambda x: -x[1])
+selected_crop_string = common_crops_count_tuple_list[0]
