@@ -724,7 +724,7 @@ def imageDogCatDetectionForCoverExtraction(
     image,
     dog_or_cat="dog",
     area_threshold=0.08,  # min area?
-    confidence_threshold=0.7,  # this is image quality maybe.
+    confidence_threshold=0.85,  # this is image quality maybe.
     y_expansion_rate=0.03,  # to make the starting point on y axis less "headless"
     defaultCropWidth=1920,
     defaultCropHeight=1080,
