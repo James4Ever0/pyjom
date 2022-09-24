@@ -71,6 +71,8 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     # if animalCropDiagonalRect is not None:  # of course this is not None.
     # we need to identify this shit.
     # if checkMinMaxDict(text_area_ratio, text_area_threshold):
+    blurValue = imageCropoutBlurArea(frame)
+
 
     detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=False) # no gpu avaliable
     mDetections = [x for x in detections if x["identity"] == dog_or_cat]
