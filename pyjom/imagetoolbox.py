@@ -687,46 +687,6 @@ display("inv_msk", inv_msk)
 #     return cnt_area
 
 
-def draw_bounding_box_with_contour(
-    contours, image, area_threshold=20, debug=False
-):  # are you sure?
-    # this is the top-k approach.
-    # Call our function to get the list of contour areas
-    # cnt_area = contour_area(contours)
-
-    # Loop through each contour of our image
-    x0, y0, x1, y1 = [None] * 4
-    for i in range(0, len(contours), 1):
-        cnt = contours[i]
-        # Only draw the the largest number of boxes
-        if cv2.contourArea(cnt) > area_threshold:
-            # if (cv2.contourArea(cnt) > cnt_area[number_of_boxes]):
-
-            # Use OpenCV boundingRect function to get the details of the contour
-            x, y, w, h = cv2.boundingRect(cnt)
-            if x0 == None:
-                x0, y0, x1, y1 = x, y, x + w, y + h
-            if x < x0:
-                x0 = x
-            if y < y0:
-                y0 = y
-            if x + w > x1:
-                x1 = x + w
-            if y + h > y1:
-                y1 = y + h
-            # Draw the bounding box
-
-    if x0 is not None:
-        if debug:
-            image = cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), 2)
-            cv2.imshow("with_bounding_box", image)
-            cv2.waitKey(0)
-
-    if x0 is None:
-        height, width = image.shape[:2]
-        x0, y0, x1, y1 = 0, 0, width, height
-    return (x0, y0), (x1, y1)
-
 
 # BlurDetection.scripts.display('msk', msk)
 contours, hierarchy = cv2.findContours(inv_msk, 1, 2)
