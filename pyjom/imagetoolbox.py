@@ -706,9 +706,10 @@ def imageHistogramMatch(image, reference, delta=0.2):
     source = imageLoader(reference)
     transfer = color_transfer(source, target)
 
-import numpy as np
+    import numpy as np
 
-transfer_02 = (target * (1-delta)+ transfer * delta).astype(np.uint8)
+    transfer_02 = (target * (1-delta)+ transfer * delta).astype(np.uint8)
+    return transfer_02
 
 
 def imageDogCatDetectionForCoverExtraction(image, dog_or_cat='dog'):
