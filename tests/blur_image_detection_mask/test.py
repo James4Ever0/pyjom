@@ -55,43 +55,46 @@ display("inv_msk", inv_msk)
 # Generate contours based on our mask
 # This function allows us to create a descending sorted list of contour areas.
 def contour_area(contours):
-     
+
     # create an empty list
     cnt_area = []
-     
+
     # loop through all the contours
-    for i in range(0,len(contours),1):
+    for i in range(0, len(contours), 1):
         # for each contour, use OpenCV to calculate the area of the contour
         cnt_area.append(cv2.contourArea(contours[i]))
- 
+
     # Sort our list of contour areas in descending order
     list.sort(cnt_area, reverse=True)
     return cnt_area
 
-def draw_bounding_box(contours, image, area_threshold=20): # are you sure?
+
+def draw_bounding_box(contours, image, area_threshold=20):  # are you sure?
     # this is the top-k approach.
     # Call our function to get the list of contour areas
     cnt_area = contour_area(contours)
- 
+
     # Loop through each contour of our image
-    x0, y0, x1, y1 = [None]*4
-    for i in range(0,len(contours),1):
+    x0, y0, x1, y1 = [None] * 4
+    for i in range(0, len(contours), 1):
         cnt = contours[i]
         # Only draw the the largest number of boxes
-        if (cv2.contourArea(cnt) > area_threshold):
-        # if (cv2.contourArea(cnt) > cnt_area[number_of_boxes]):
-             
+        if cv2.contourArea(cnt) > area_threshold:
+            # if (cv2.contourArea(cnt) > cnt_area[number_of_boxes]):
+
             # Use OpenCV boundingRect function to get the details of the contour
-            x,y,w,h = cv2.boundingRect(cnt)
+            x, y, w, h = cv2.boundingRect(cnt)
             if x0 == None:
-                x0,y0, x1, y1 = x,y,x+w, y+h
-             
+                x0, y0, x1, y1 = x, y, x + w, y + h
+
             # Draw the bounding box
-        image=cv2.rectangle(image,(x0,y0),(x1,y1),(0,0,255),2)
- 
+        image = cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), 2)
+
     return image
+
+
 # BlurDetection.scripts.display('msk', msk)
-contours,hierarchy = cv2.findContours(inv_msk, 1, 2)
+contours, hierarchy = cv2.findContours(inv_msk, 1, 2)
 reddress = draw_bounding_box(contours, img)
-display("with_bounding_box",reddress)
+display("with_bounding_box", reddress)
 cv2.waitKey(0)
