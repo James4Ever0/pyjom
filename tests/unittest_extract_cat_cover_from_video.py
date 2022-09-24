@@ -61,7 +61,7 @@ if not video_fine:
 from caer.video.frames_and_fps import get_duration
 
 
-def imageDogCatCoverCropAdvanced():
+def imageDogCatCoverCropAdvanced(, dog_or_cat='dog',):
 
     detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=False) # no gpu avaliable
     mDetections = [x for x in detections if x["identity"] == dog_or_cat]
