@@ -772,7 +772,7 @@ def imageDogCatDetectionForCoverExtraction(
     # imgPath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky.png"
     imgPath = image
 
-    img = cv2.imread(imgPath)
+    # img = cv2.imread(imgPath)
 
     defaultHeight, defaultWidth = img.shape[:2]
     total_area = defaultHeight * defaultWidth
