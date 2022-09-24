@@ -76,10 +76,10 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
         print("TEXT AREA RATIO", text_area_ratio)
         # if animalCropDiagonalRect is not None:
         if checkMinMaxDict(text_area_ratio, text_area_threshold):
+            mFrame = imageFourCornersInpainting(mFrame)
             mFrame = getImageTextAreaRatio(frame, inpaint=True)
             mFrame = imageCropoutBlackArea(mFrame)
             mFrame = imageCropoutBlurArea(mFrame)
-            mFrame = imageFourCornersInpainting(mFrame)
             # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
             # cv2.waitKey(0)
             processed_frame = imageDogCatDetectionForCoverExtraction(
