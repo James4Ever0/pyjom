@@ -911,7 +911,8 @@ def imageDogCatCoverCropAdvanced(
     # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
     # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
     # if len(mDetections) > 0:
-    
+
+    if best_confidence >0: # just stub.
     #     best_confidence = mDetections[0]["confidence"]
     #     print("BEST CONFIDENCE:", best_confidence)
         if checkMinMaxDict(best_confidence, confidence_threshold):
