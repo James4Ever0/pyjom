@@ -85,7 +85,7 @@ def draw_bounding_box_with_contour(
 ):  # are you sure?
     # this is the top-k approach.
     # Call our function to get the list of contour areas
-    cnt_area = contour_area(contours)
+    # cnt_area = contour_area(contours)
 
     # Loop through each contour of our image
     x0, y0, x1, y1 = [None] * 4
