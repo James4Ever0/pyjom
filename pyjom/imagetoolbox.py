@@ -10,7 +10,9 @@ def imageCropWithDiagonalRectangle(image, diagonalRectangle, order='opencv'):
     x0,y0, x1, y1 = flattenUnhashableList(diagonalRectangle)
     imageShape = image.shape
     if len(imageShape) == 3:
+        if order == "opencv":
         return image[y0:y1, x0:x1,:]
+        elif order == 'normal':
     elif len(imageShape) == 2:
         return image[y0:y1, x0:x1]
     else:
