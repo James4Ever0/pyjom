@@ -885,6 +885,7 @@ def imageDogCatCoverCropAdvanced(
     yolov5_confidence_threshold=0.4,
     text_area_threshold={"max": 0.2},
     gpu=True,
+    corner=True,
     area_threshold=0.2,
 ):
     processed_frame = None
@@ -914,7 +915,8 @@ def imageDogCatCoverCropAdvanced(
             # if animalCropDiagonalRect is not None:
             if checkMinMaxDict(text_area_ratio, text_area_threshold):
                 mFrame = getImageTextAreaRatio(frame, gpu=gpu, inpaint=True)
-                mFrame = imageFourCornersInpainting(mFrame)
+                if corner:
+                    mFrame = imageFourCornersInpainting(mFrame)
                 mFrame = imageCropoutBlackArea(mFrame)
                 mFrame = imageCropoutBlurArea(mFrame)
                 # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
