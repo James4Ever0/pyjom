@@ -957,6 +957,6 @@ def imageDogCatCoverCropAdvanced(
 
         if p_area / area < area_threshold:
             processed_frame = None
-        elif 
+        elif not filterImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat=dog_or_cat,debug=debug,confidence_threshold=confidence_threshold)
 
     return processed_frame
