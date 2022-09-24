@@ -75,6 +75,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     blurValue = imageCropoutBlurArea(frame, value=True)
     if not checkMinMaxDict(blurValue, blurValue_threshold):
         
+        continue
 
 
     detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=False) # no gpu avaliable
