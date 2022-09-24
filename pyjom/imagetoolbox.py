@@ -917,39 +917,39 @@ def imageDogCatCoverCropAdvanced(
     # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
     # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
     # if len(mDetections) > 0:
-    best_confidence = 
+    # best_confidence = 
 
-    if best_confidence >0: # just stub.
+    # if best_confidence >0: # just stub.
     #     best_confidence = mDetections[0]["confidence"]
     #     print("BEST CONFIDENCE:", best_confidence)
-        if checkMinMaxDict(best_confidence, confidence_threshold):
-            # target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
-            # target = imageFourCornersInpainting(target)
-            # processed_frame = target
-            # break
-            text_area_ratio = getImageTextAreaRatio(
-                frame,
-                gpu=gpu,
+    if checkMinMaxDict(best_confidence, confidence_threshold):
+        # target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
+        # target = imageFourCornersInpainting(target)
+        # processed_frame = target
+        # break
+        text_area_ratio = getImageTextAreaRatio(
+            frame,
+            gpu=gpu,
+        )
+        # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
+        print("TEXT AREA RATIO", text_area_ratio)
+        # if animalCropDiagonalRect is not None:
+        if checkMinMaxDict(text_area_ratio, text_area_threshold):
+            mFrame = getImageTextAreaRatio(frame, gpu=gpu, inpaint=True)
+            if corner:
+                mFrame = imageFourCornersInpainting(mFrame)
+            mFrame = imageCropoutBlackArea(mFrame)
+            mFrame = imageCropoutBlurArea(mFrame)
+            # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
+            # cv2.waitKey(0)
+            processed_frame = imageDogCatDetectionForCoverExtraction(
+                mFrame,
+                dog_or_cat=dog_or_cat,
+                confidence_threshold=yolov5_confidence_threshold,
+                # area_threshold=0.15,
+                crop=True,
+                debug=True,
             )
-            # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
-            print("TEXT AREA RATIO", text_area_ratio)
-            # if animalCropDiagonalRect is not None:
-            if checkMinMaxDict(text_area_ratio, text_area_threshold):
-                mFrame = getImageTextAreaRatio(frame, gpu=gpu, inpaint=True)
-                if corner:
-                    mFrame = imageFourCornersInpainting(mFrame)
-                mFrame = imageCropoutBlackArea(mFrame)
-                mFrame = imageCropoutBlurArea(mFrame)
-                # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
-                # cv2.waitKey(0)
-                processed_frame = imageDogCatDetectionForCoverExtraction(
-                    mFrame,
-                    dog_or_cat=dog_or_cat,
-                    confidence_threshold=yolov5_confidence_threshold,
-                    # area_threshold=0.15,
-                    crop=True,
-                    debug=True,
-                )
     if processed_frame is not None:
         p_height, p_width = processed_frame.shape[:2]
         p_area = p_height * p_width
