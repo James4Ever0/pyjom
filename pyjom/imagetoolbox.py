@@ -9,7 +9,7 @@ def imageCropWithDiagonalRectangle(image, diagonalRectangle):
     x0,y0, x1, y1 = flattenUnhashableLIst(diagonalRectangle)
     imageShape = image.shape
     if len(imageShale) == 3:
-        return image.
+        return image[y0:]
 
 def draw_bounding_box_with_contour(
     contours, image, area_threshold=20, debug=False
