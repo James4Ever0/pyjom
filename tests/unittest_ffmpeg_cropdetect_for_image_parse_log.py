@@ -36,7 +36,7 @@ for line in stderr_decoded.split("\n"):
     result = parse.parse(formatString,line)
     if result is not None:
         # print(result)
-        cropString = "{}_{}_{}_{}".format(result['w','h',])
+        cropString = "{}_{}_{}_{}".format(result[key] for key in ['w','h','x','y'])
         common_crops.append(cropString)
         # breakpoint()
     # [Parsed_cropdetect_0 @ 0x56246a16cbc0] x1:360 x2:823 y1:0 y2:657 w:464 h:656 x:360 y:2 pts:3 t:0.120000 crop=464:656:360:2
