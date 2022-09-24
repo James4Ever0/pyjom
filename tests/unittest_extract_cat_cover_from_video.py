@@ -84,25 +84,25 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 # processed_frame = target
                 # break
                 text_area_ratio = getImageTextAreaRatio(frame)
-        # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
-        print("TEXT AREA RATIO", text_area_ratio)
-        # if animalCropDiagonalRect is not None:
-        if checkMinMaxDict(text_area_ratio, text_area_threshold):
-            mFrame = getImageTextAreaRatio(frame, inpaint=True)
-            mFrame = imageFourCornersInpainting(mFrame)
-            mFrame = imageCropoutBlackArea(mFrame)
-            mFrame = imageCropoutBlurArea(mFrame)
-            # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
-            # cv2.waitKey(0)
-            processed_frame = imageDogCatDetectionForCoverExtraction(
-                mFrame,
-                dog_or_cat=dog_or_cat,
-                confidence_threshold=confidence_threshold,
-                crop=True,
-                debug=False
-            )
-            if processed_frame is not None:
-                break
+                # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
+                print("TEXT AREA RATIO", text_area_ratio)
+                # if animalCropDiagonalRect is not None:
+                if checkMinMaxDict(text_area_ratio, text_area_threshold):
+                    mFrame = getImageTextAreaRatio(frame, inpaint=True)
+                    mFrame = imageFourCornersInpainting(mFrame)
+                    mFrame = imageCropoutBlackArea(mFrame)
+                    mFrame = imageCropoutBlurArea(mFrame)
+                    # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
+                    # cv2.waitKey(0)
+                    processed_frame = imageDogCatDetectionForCoverExtraction(
+                        mFrame,
+                        dog_or_cat=dog_or_cat,
+                        confidence_threshold=confidence_threshold,
+                        crop=True,
+                        debug=False
+                    )
+                    if processed_frame is not None:
+                        break
 if processed_frame is not None:
     print("COVER IMAGE FOUND!")
     processed_frame_show = cv2.resize(processed_frame, (int(1920/2), int(1080/2)))
