@@ -538,7 +538,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     return detections
 
 
-def imageCropoutBlackArea(image,cropped_area_threshold = 0.1):
+def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
 
 # import cv2
 
@@ -610,9 +610,10 @@ print("CROPPED AREA RATIO:", cropped_area_ratio)
 
 if cropped_area_ratio > cropped_area_threshold:
     print('we need to crop this. no further processing needed')
-    image_black_cropped = image[y:y1,x:x1]
-    cv2.imshow("CROPPED IMAGE", image_black_cropped)
-    cv2.waitKey(0)
+    if debug:
+        image_black_cropped = image[y:y1,x:x1]
+        cv2.imshow("CROPPED IMAGE", image_black_cropped)
+        cv2.waitKey(0)
 else:
     print('image no need to crop black borders. further processing needed')
     x,y,x1,y1 = 0,0,width, height
