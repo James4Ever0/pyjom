@@ -545,4 +545,4 @@ def imageCropoutBlurArea(image):
 def imageHistogramMatch(image, reference, delta=0.2):
 
 
-def imageDogCatDetectionForCoverExtraction(image, do):
+def imageDogCatDetectionForCoverExtraction(image, dog_or_cat='dog'):
