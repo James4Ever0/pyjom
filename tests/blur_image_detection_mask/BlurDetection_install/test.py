@@ -111,6 +111,8 @@ def draw_bounding_box_with_contour(contours, image, area_threshold=20, debug=Fal
     if debug:
         return image
     else:
+        if x0 is None:
+            return 0,0,w
         return x0, y0, x1, y1
 
 
