@@ -716,7 +716,9 @@ def imageHistogramMatch(image, reference, delta=0.2):
 
 def imageDogCatDetectionForCoverExtraction(image, dog_or_cat='dog',area_threshold = 0.08,  # min area?
 confidence_threshold = 0.7,  # this is image quality maybe.
-y_expansion_rate = 0.03  # to make the starting point on y axis less "headless"
+y_expansion_rate = 0.03,  # to make the starting point on y axis less "headless"
+defaultCropWidth = 1920, 1080
+defaultCropHeight 
 ):
     # return detected most significant dog area?
 model = configYolov5()
