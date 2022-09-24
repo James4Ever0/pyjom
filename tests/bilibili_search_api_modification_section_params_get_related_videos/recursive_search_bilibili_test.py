@@ -303,10 +303,12 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 import os
                                 os.environ['http'] = ""
                                 os.environ['https'] = ""
-                                from pyjom.imagetoolbox import imageLoader, imageDogCatCoverCropAdvanced
+                                from pyjom.imagetoolbox import imageLoader, imageDogCatCoverCropAdvanced, imageHistogramMatch
                                 image = imageLoader(cover)
                                 # import requests
-                                cropped_image = i
+                                cropped_image = imageDogCatCoverCropAdvanced(image)
+                                if cropped_image is not None:
+
                                 # r = requests.get(cover)
                                 # content = r.content
                                 # # corrupted or not?
