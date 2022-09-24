@@ -7,7 +7,7 @@ LONG_DESCRIPTION = 'Blur Detection for Image'
 # Setting up
 setup(
        # the name must match the folder name 'verysimplemodule'
-        name="lazero", 
+        name="BlurDetection", 
         version=VERSION,
         author="Jason Dsouza",
         author_email="<youremail@email.com>",
