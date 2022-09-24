@@ -190,7 +190,9 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 # breakpoint()
                 if len(tags)>0:
                     tagContainStaticCoreTopicFlags = [int(filterTitleWithCoreTopicSet(tag, static_core_topic_list)) for tag in tags]
-                    mTagFlag = sum(tagContainStaticCoreTopicFlags)
+                    mTagFlag = sum(tagContainStaticCoreTopicFlags)>0
+                    if not mTagFlag:
+                        continue
                 else:
                     continue
                 if duration_seconds == None:
