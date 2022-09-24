@@ -12,7 +12,7 @@ def imageLoader(image):
             import requests
             r = requests.get(image)
             content = r.content
-            image = cv2.imdecode(content)
+            image = cv2.imdecode(content,cv2.IMREAD_COLOR)
         else:
             raise Exception("unknown image link: %s" % image)
     return image
