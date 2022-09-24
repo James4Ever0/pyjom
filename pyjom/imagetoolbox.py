@@ -848,10 +848,10 @@ def imageDogCatDetectionForCoverExtraction(
         # height_current = min(allowedHeight, int((width_current/defaultCropWidth)*defaultCropHeight))
         # (x1+x0)/2-width_current/2
         import random
-        randStart, randEnd = 
-
+        randStart, randEnd = max((x1 - width_current), 0), min(x0, defaultWidth-width_current)
+        randRange = r
         x0_framework = random.randint(
-            max((x1 - width_current), 0), min(x0, defaultWidth-width_current)
+            
         )
         framework_XYWH = (x0_framework, y0_altered, width_current, height_current)
         x_f, y_f, w_f, h_f = framework_XYWH
