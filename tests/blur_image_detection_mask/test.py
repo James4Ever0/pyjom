@@ -84,7 +84,7 @@ def draw_bounding_box(contours, image, area_threshold=20): # are you sure?
             x,y,w,h = cv2.boundingRect(cnt)
              
             # Draw the bounding box
-            image=cv2.rectangle(image,(x,y),(x+w,y+h),(0,0,255),2)
+        image=cv2.rectangle(image,(x,y),(x+w,y+h),(0,0,255),2)
  
     return image
 # BlurDetection.scripts.display('msk', msk)
