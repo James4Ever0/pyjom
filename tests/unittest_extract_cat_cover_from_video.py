@@ -62,6 +62,7 @@ def imageDogCatCoverCropAdvanced(
     yolov5_confidence_threshold=0.4,
     text_area_threshold={"max": 0.2},
     gpu=True,
+    area_threshold = 0.5
 ):
     processed_frame = None
     frame = imageLoader(frame)
