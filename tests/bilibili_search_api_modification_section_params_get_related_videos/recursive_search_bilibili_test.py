@@ -200,11 +200,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 ) = videoMetadata
                 # print("VIDEO_METADATA",videoMetadata)
                 # breakpoint()
-                            filtered_title_list = [
-                title
-                for title in filtered_title_list
-                if checkMinMaxDict(len(title), {"min": 7, "max": 17})
-            ]
+                if not checkMinMaxDict(len(title), {"min": 7, "max": 17}):
+                    return
                 if len(tags) > 0:
                     tagContainStaticCoreTopicFlags = [
                         int(filterTitleWithCoreTopicSet(tag, static_core_topic_list))
