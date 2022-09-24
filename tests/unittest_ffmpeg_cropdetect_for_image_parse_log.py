@@ -67,3 +67,4 @@ cropped_area_ratio = 1 - (area / total_area)  # 0.5652352766414517
 print("CROPPED AREA RATIO:", cropped_area_ratio)
 
 if cropped_area_ratio > cropped_area_threshold:
+    print('we need to crop this. no further processing needed')
