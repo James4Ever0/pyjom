@@ -52,6 +52,8 @@ from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList # one of my classic methods
 from lazero.utils.logger import sprint
 def filterTitleWithCoreTopicSet(title, core_topic_set):
+    print("TITLE:", title)
+    breakpoint()
     for core_topic in core_topic_set:
         if core_topic in title:
             value = True
