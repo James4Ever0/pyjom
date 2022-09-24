@@ -137,7 +137,6 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
 
             static_core_topic_list =flattenUnhashableList(getMetatopic[dog_or_cat]['static'])
 
-
             metatopicString = getKeywords[dog_or_cat]()
 
             print("METATOPIC STRING:", metatopicString)
