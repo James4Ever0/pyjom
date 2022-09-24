@@ -65,5 +65,7 @@ def contour_area(contours):
     # Sort our list of contour areas in descending order
     list.sort(cnt_area, reverse=True)
     return cnt_area
+
+
 # BlurDetection.scripts.display('msk', msk)
 cv2.waitKey(0)
