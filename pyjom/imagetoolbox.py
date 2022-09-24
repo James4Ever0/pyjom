@@ -877,7 +877,7 @@ def imageDogCatDetectionForCoverExtraction(
     # return [(0, 0), (defaultWidth, defaultHeight)]
     return croppedImageCoverResized
 
-def getBestConfidenceWithBezierDogCatDetector
+def getImageBestConfidenceWithBezierDogCatDetector()
 
 def imageDogCatCoverCropAdvanced(
     frame,
