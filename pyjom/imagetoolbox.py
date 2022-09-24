@@ -898,6 +898,7 @@ def imageDogCatCoverCropAdvanced(
     gpu=True,
     corner=True,
     area_threshold=0.2,
+    debug=False
 ):
     processed_frame = None
     frame = imageLoader(frame)
@@ -910,6 +911,7 @@ def imageDogCatCoverCropAdvanced(
     # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
     # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
     # if len(mDetections) > 0:
+    
     #     best_confidence = mDetections[0]["confidence"]
     #     print("BEST CONFIDENCE:", best_confidence)
         if checkMinMaxDict(best_confidence, confidence_threshold):
