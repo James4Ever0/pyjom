@@ -660,15 +660,12 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
     return [(x,y), (x1,y1)]
 
 def imageCropoutBlurArea(image, thresh=10):
-    import cv2
+    # import cv2
 import numpy
 
 # import logger
 import BlurDetection
 
-# img_path = raw_input("Please Enter Image Path: ")
-# img_path = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
-# img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample.webp"
 img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample_2.webp"
 
 # img_path = "/root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png"
