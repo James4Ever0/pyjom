@@ -717,8 +717,8 @@ def imageHistogramMatch(image, reference, delta=0.2):
 def imageDogCatDetectionForCoverExtraction(image, dog_or_cat='dog',area_threshold = 0.08,  # min area?
 confidence_threshold = 0.7,  # this is image quality maybe.
 y_expansion_rate = 0.03,  # to make the starting point on y axis less "headless"
-defaultCropWidth = 1920, 1080
-defaultCropHeight 
+defaultCropWidth = 1920,
+defaultCropHeight = 1080
 ):
     # return detected most significant dog area?
 model = configYolov5()
@@ -804,8 +804,9 @@ if count >= 1:
     croppedImageCoverResized = cv2.resize(
         croppedImageCover, (defaultCropWidth, defaultCropHeight)
     )
-    cv2.imshow("CROPPED IMAGE COVER", croppedImageCover)
-    cv2.imshow("CROPPED IMAGE COVER RESIZED", croppedImageCoverResized)
+    if debug:
+        cv2.imshow("CROPPED IMAGE COVER", croppedImageCover)
+        cv2.imshow("CROPPED IMAGE COVER RESIZED", croppedImageCoverResized)
     # print(selected_col_dict)
     # print(count)
     # breakpoint()
