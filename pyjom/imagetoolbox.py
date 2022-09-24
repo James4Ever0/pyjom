@@ -786,12 +786,9 @@ def imageDogCatDetectionForCoverExtraction(
     )
     croppedImageCoverResized =None
     flag = count >=1
-    if count == 0:
         if not crop:
-            return count >
-    else:
-        if not crop:
-            return 
+            return flag
+    if flag:
         selected_col = new_df.iloc[0]  # it is a dict-like object.
         # print(new_df)
         # breakpoint()
