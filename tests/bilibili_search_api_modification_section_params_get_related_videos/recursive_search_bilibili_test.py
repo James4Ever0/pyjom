@@ -60,6 +60,7 @@ def filterTitleWithCoreTopicSet(title, core_topic_set):
     value = False
     print("TITLE:", title)
     print("CORE TOPIC SET:", core_topic_set)
+    print('VALUE:', value)
     breakpoint()
     return value
 
