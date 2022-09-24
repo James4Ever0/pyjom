@@ -71,26 +71,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     # if animalCropDiagonalRect is not None:  # of course this is not None.
         # we need to identify this shit.
         # if checkMinMaxDict(text_area_ratio, text_area_threshold):
-        text_area_ratio = getImageTextAreaRatio(frame)
-        # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
-        print("TEXT AREA RATIO", text_area_ratio)
-        # if animalCropDiagonalRect is not None:
-        if checkMinMaxDict(text_area_ratio, text_area_threshold):
-            mFrame = getImageTextAreaRatio(frame, inpaint=True)
-            mFrame = imageFourCornersInpainting(mFrame)
-            mFrame = imageCropoutBlackArea(mFrame)
-            mFrame = imageCropoutBlurArea(mFrame)
-            # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
-            # cv2.waitKey(0)
-            processed_frame = imageDogCatDetectionForCoverExtraction(
-                mFrame,
-                dog_or_cat=dog_or_cat,
-                confidence_threshold=confidence_threshold,
-                crop=True,
-                debug=False
-            )
-            if processed_frame is not None:
-                break
+
         # detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
         # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
         # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
