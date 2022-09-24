@@ -50,7 +50,6 @@ display("img", img)
 # display("msk", msk)
 display("inv_msk", inv_msk)
 # Generate contours based on our mask
-contours,hierarchy = cv2.findContours(inv_msk, 1, 2)
 # This function allows us to create a descending sorted list of contour areas.
 def contour_area(contours):
      
@@ -85,4 +84,6 @@ def draw_bounding_box(contours, image, number_of_boxes=1):
  
     return image
 # BlurDetection.scripts.display('msk', msk)
+contours,hierarchy = cv2.findContours(inv_msk, 1, 2)
+
 cv2.waitKey(0)
