@@ -27,7 +27,6 @@ from pyjom.imagetoolbox import imageDogCatCoverCropAdvanced
 #     imageDogCatDetectionForCoverExtraction,
 #     imageLoader,
 # )
-from pyjom.imagetoolbox import imageDogCatDetectio
 from pyjom.commons import checkMinMaxDict
 
 
