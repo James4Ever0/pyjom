@@ -94,7 +94,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 mFrame = imageCropoutBlackArea(mFrame)
 
                 mFrame = imageCropoutBlurArea(mFrame)
-                        blurValue = imageCropoutBlurArea(mFrame, value=True)
+                blurValue = imageCropoutBlurArea(mFrame, value=True)
                 print("BLUR VALUE:", blurValue)
                 if not checkMinMaxDict(blurValue, blurValue_threshold):
                     # will skip this one since it is not so clear.
