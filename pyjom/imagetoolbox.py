@@ -786,7 +786,8 @@ def imageDogCatDetectionForCoverExtraction(
     )
     croppedImageCoverResized =None
     if count == 0:
-        if crop
+        if not crop:
+            
     else:
         if not crop:
             return 
