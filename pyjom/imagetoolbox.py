@@ -681,7 +681,7 @@ def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50,debug=Fal
 
     inv_msk = 255 - msk
 
-    def display(title, img, max_size=200000, debug=False):
+    def display(title, img, max_size=200000):
         assert isinstance(img, numpy.ndarray), "img must be a numpy array"
         assert isinstance(title, str), "title must be a string"
         scale = numpy.sqrt(min(1.0, float(max_size) / (img.shape[0] * img.shape[1])))
