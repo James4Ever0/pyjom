@@ -306,6 +306,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 from pyjom.imagetoolbox import imageLoader, bezierPaddleHubResnet50ImageDogCatDetector
                                 image = imageLoader(cover)
                                 # import requests
+                                
                                 # r = requests.get(cover)
                                 # content = r.content
                                 # # corrupted or not?
