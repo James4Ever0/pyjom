@@ -6,8 +6,9 @@ from functools import lru_cache
 
 def imageLoader(image):
     if type(image) == str:
-        if os.
-        image = cv2.imread(image)
+        if os.path.exists(image):
+            image = cv2.imread(image)
+        else
     return image
 
 def getDeltaWidthHeight(defaultWidth, defaultHeight):
