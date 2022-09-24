@@ -8,8 +8,10 @@ os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
 
 from lazero.utils.importers import cv2_custom_build_init
+
 cv2_custom_build_init()
 import cv2
+
 # metatopic = {
 #     "optional": [
 #         [
@@ -49,8 +51,10 @@ dog_metatopic = {
 
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
-from lazero.utils.tools import flattenUnhashableList # one of my classic methods
+from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 from lazero.utils.logger import sprint
+
+
 def filterTitleWithCoreTopicSet(title, core_topic_set):
     value = False
     for core_topic in core_topic_set:
@@ -63,6 +67,7 @@ def filterTitleWithCoreTopicSet(title, core_topic_set):
     # breakpoint()
     return value
 
+
 def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
     newTitleList = []
     for title in titleList:
@@ -73,6 +78,7 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
     print("CORE TOPIC SET:", core_topic_set)
     sprint("NEW TITLE LIST:", newTitleList)
     return newTitleList
+
 
 def randomChoiceTagList(tag_list):
     import random
@@ -133,9 +139,15 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
     randomOrder = lambda: random.choice(orders)
     while True:
         try:
-            core_topic_set = {*flattenUnhashableList([value for key,value in getMetatopic[dog_or_cat].items()])}
+            core_topic_set = {
+                *flattenUnhashableList(
+                    [value for key, value in getMetatopic[dog_or_cat].items()]
+                )
+            }
 
-            static_core_topic_list =flattenUnhashableList(getMetatopic[dog_or_cat]['static'])
+            static_core_topic_list = flattenUnhashableList(
+                getMetatopic[dog_or_cat]["static"]
+            )
 
             metatopicString = getKeywords[dog_or_cat]()
 
@@ -169,7 +181,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 play_limit={"min": 10000},
                 debugTag="debug",
             ):
-                nonlocal bvid_list, bgm_list, title_list, tag_list, cover_list, bvid_list, description_list, static_core_topic_list # use nonlocal instead in nested functions.
+                nonlocal bvid_list, bgm_list, title_list, tag_list, cover_list, bvid_list, description_list, static_core_topic_list  # use nonlocal instead in nested functions.
                 (
                     author,
                     author_id,
@@ -188,9 +200,12 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 ) = videoMetadata
                 # print("VIDEO_METADATA",videoMetadata)
                 # breakpoint()
-                if len(tags)>0:
-                    tagContainStaticCoreTopicFlags = [int(filterTitleWithCoreTopicSet(tag, static_core_topic_list)) for tag in tags]
-                    mTagFlag = sum(tagContainStaticCoreTopicFlags)>0
+                if len(tags) > 0:
+                    tagContainStaticCoreTopicFlags = [
+                        int(filterTitleWithCoreTopicSet(tag, static_core_topic_list))
+                        for tag in tags
+                    ]
+                    mTagFlag = sum(tagContainStaticCoreTopicFlags) > 0
                     if not mTagFlag:
                         return
                 else:
@@ -256,12 +271,13 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 result = sync(v.get_related())
                 from searchDataParser import parseVideoRelated
                 import json
+
                 # print(json.dumps(result, indent=4, ensure_ascii=False))
                 # print('parsing related video info')
                 # breakpoint()
 
                 updateMyListsWithIterable(
-                    parseVideoRelated(result),debugTag="videoRelated"
+                    parseVideoRelated(result), debugTag="videoRelated"
                 )
 
             # now what do you want? suggested keywords?
@@ -301,7 +317,9 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 keywords = getKeywords[dog_or_cat]()
             # print(selected_topic_list_dict)
             # breakpoint()
-            filtered_title_list = filterTitleListWithCoreTopicSet(title_list, static_core_topic_list) # could be enhabced with CLIP
+            filtered_title_list = filterTitleListWithCoreTopicSet(
+                title_list, static_core_topic_list
+            )  # could be enhabced with CLIP
             # filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
             if len(filtered_title_list) > 3:
                 if len(cover_list) > 3:
@@ -313,19 +331,35 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                             random.shuffle(cover_list)
                             reference_histogram_cover = random.choice(cover_list)
 
-                            cover_target=None
+                            cover_target = None
 
                             for cover in cover_list:
                                 import os
-                                os.environ['http'] = ""
-                                os.environ['https'] = ""
-                                from pyjom.imagetoolbox import imageLoader, imageDogCatCoverCropAdvanced, imageHistogramMatch
+
+                                os.environ["http"] = ""
+                                os.environ["https"] = ""
+                                from pyjom.imagetoolbox import (
+                                    imageLoader,
+                                    imageDogCatCoverCropAdvanced,
+                                    imageHistogramMatch,
+                                )
+
                                 image = imageLoader(cover)
                                 # import requests
-                                cropped_image = imageDogCatCoverCropAdvanced(image, dog_or_cat=dog_or_cat_original, area_threshold=0.7)
+                                cropped_image = imageDogCatCoverCropAdvanced(
+                                    image,
+                                    dog_or_cat=dog_or_cat_original,
+                                    area_threshold=0.7,
+                                )
                                 if cropped_image is not None:
-                                    cropped_image_color_transfered = imageHistogramMatch(cropped_image, reference_histogram_cover)
-                                    cropped_image_color_transfered_fliped = cv2.flip(cropped_image_color_transfered,1)
+                                    cropped_image_color_transfered = (
+                                        imageHistogramMatch(
+                                            cropped_image, reference_histogram_cover
+                                        )
+                                    )
+                                    cropped_image_color_transfered_fliped = cv2.flip(
+                                        cropped_image_color_transfered, 1
+                                    )
                                     cover_target = cropped_image_color_transfered_fliped
                                     break
                                 # r = requests.get(cover)
@@ -351,11 +385,17 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
 
 
 if __name__ == "__main__":
-    for mCover, mTagSeries, mTitle, mBgm, dog_or_cat in getBilibiliPostMetadataForDogCat():
+    for (
+        mCover,
+        mTagSeries,
+        mTitle,
+        mBgm,
+        dog_or_cat,
+    ) in getBilibiliPostMetadataForDogCat():
         print("FETCHED VIDEO METADATA FOR PRODUCTION:")
         videoMetadata = mCover, mTagSeries, mTitle, mBgm, dog_or_cat
         print(videoMetadata)
-        mCover2 = cv2.resize(mCover,int(1920/2), int(1080/2))
+        mCover2 = cv2.resize(mCover, int(1920 / 2), int(1080 / 2))
         cv2.imshow("COVER", mCover2)
         cv2.waitKey(0)
         breakpoint()
