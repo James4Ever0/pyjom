@@ -94,11 +94,6 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 mFrame = imageCropoutBlackArea(mFrame)
 
                 mFrame = imageCropoutBlurArea(mFrame)
-                blurValue = imageCropoutBlurArea(processed_f, value=True)
-                print("BLUR VALUE:", blurValue)
-                if not checkMinMaxDict(blurValue, blurValue_threshold):
-                    # will skip this one since it is not so clear.
-                    continue
                 # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
                 # cv2.waitKey(0)
                 processed_frame = imageDogCatDetectionForCoverExtraction(
@@ -108,6 +103,11 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                     crop=True,
                     debug=False,
                 )
+                blurValue = imageCropoutBlurArea(processed_frame, value=True)
+                print("BLUR VALUE:", blurValue)
+                if not checkMinMaxDict(blurValue, blurValue_threshold):
+                    # will skip this one since it is not so clear.
+                    continue
                 if processed_frame is not None:
                     break
 if processed_frame is not None:
