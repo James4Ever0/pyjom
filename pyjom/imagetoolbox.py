@@ -847,7 +847,7 @@ def imageDogCatDetectionForCoverExtraction(
         if not crop:
             return diagonalRect
         # croppedImageCover = img[y_f : y_f + h_f, x_f : x_f + w_f, :]
-        croppedImageCover = imageCropWithDiagonalRectangle()
+        croppedImageCover = imageCropWithDiagonalRectangle(img, diagonalRect)
         # breakpoint()
         # resize image
         croppedImageCoverResized = cv2.resize(
