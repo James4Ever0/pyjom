@@ -8,6 +8,7 @@ import cv2
 
 image = cv2.imread(mediaPath)
 height, width = image.shape[:2]
+total_area = height*width
 
 stdout, stderr = (
     ffmpeg.input(mediaPath, loop=1, t=15)
