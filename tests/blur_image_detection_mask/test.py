@@ -33,6 +33,8 @@ import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 from pyjom.imagetoolbox import imageFourCornersInpainting, getImageTextAreaRatio
 
+img = imageFourCornersInpainting(img)
+
 img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
 msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=120)
