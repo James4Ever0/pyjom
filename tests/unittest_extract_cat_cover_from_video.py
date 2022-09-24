@@ -104,11 +104,11 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                     debug=False,
                 )
                 if processed_frame is not None:
-                    blurValue = imageCropoutBlurArea(processed_frame, value=True)
-                    print("BLUR VALUE:", blurValue)
-                    if not checkMinMaxDict(blurValue, blurValue_threshold):
-                        # will skip this one since it is not so clear.
-                        continue
+                    # blurValue = imageCropoutBlurArea(processed_frame, value=True)
+                    # print("BLUR VALUE:", blurValue)
+                    # if not checkMinMaxDict(blurValue, blurValue_threshold):
+                    #     # will skip this one since it is not so clear.
+                    #     continue
                     break
 if processed_frame is not None:
     print("COVER IMAGE FOUND!")
