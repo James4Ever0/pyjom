@@ -66,6 +66,23 @@ def contour_area(contours):
     list.sort(cnt_area, reverse=True)
     return cnt_area
 
-
+def draw_bounding_box(contours, image, number_of_boxes=1):
+    # Call our function to get the list of contour areas
+    cnt_area = contour_area(contours)
+ 
+    # Loop through each contour of our image
+    for i in range(0,len(contours),1):
+        cnt = contours[i]
+ 
+        # Only draw the the largest number of boxes
+        if (cv2.contourArea(cnt) > cnt_area[number_of_boxes]):
+             
+            # Use OpenCV boundingRect function to get the details of the contour
+            x,y,w,h = cv2.boundingRect(cnt)
+             
+            # Draw the bounding box
+            image=cv2.rectangle(image,(x,y),(x+w,y+h),(0,0,255),2)
+ 
+    return image
 # BlurDetection.scripts.display('msk', msk)
 cv2.waitKey(0)
