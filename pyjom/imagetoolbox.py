@@ -605,7 +605,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     return detections
 
 
-def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False):
+def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=True):
     image = imageLoader(image)
     height, width = image.shape[:2]
     total_area = height * width
