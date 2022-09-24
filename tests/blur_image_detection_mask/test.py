@@ -28,6 +28,10 @@ img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample_2.webp"
 # img_path="/root/Desktop/works/pyjom/samples/image/husky_cry.png"
 assert os.path.exists(img_path), "img_path does not exists"
 img = cv2.imread(img_path)
+
+
+
+
 img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
 msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=120)
