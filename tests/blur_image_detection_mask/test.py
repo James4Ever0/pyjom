@@ -31,7 +31,7 @@ img = cv2.imread(img_path)
 
 import sys
 sys.path.append("/root/Desktop/works/pyjom/")
-import pyjom.imagetoolbox
+from pyjom.imagetoolbox import 
 
 img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
