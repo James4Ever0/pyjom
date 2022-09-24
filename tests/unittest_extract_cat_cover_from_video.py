@@ -83,9 +83,9 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 target = imageFourCornersInpainting(target)
                 processed_frame = target
                 # break
-                        text_area_ratio = getImageTextAreaRatio(frame)
-        # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
-        print("TEXT AREA RATIO", text_area_ratio)
+        #         text_area_ratio = getImageTextAreaRatio(frame)
+        # # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
+        # print("TEXT AREA RATIO", text_area_ratio)
         # if animalCropDiagonalRect is not None:
         if checkMinMaxDict(text_area_ratio, text_area_threshold):
             mFrame = getImageTextAreaRatio(frame, inpaint=True)
