@@ -850,7 +850,7 @@ def imageDogCatDetectionForCoverExtraction(
         import random
         randStart, randEnd = max((x1 - width_current), 0), min(x0, defaultWidth-width_current)
         randRange = randEnd-randStart
-        randModRange = 
+        randModRange = *
         x0_framework = random.randint(
             
         )
