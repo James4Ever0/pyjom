@@ -716,3 +716,4 @@ def imageHistogramMatch(image, reference, delta=0.2):
 
 def imageDogCatDetectionForCoverExtraction(image, dog_or_cat='dog'):
     # return detected most significant dog area?
+    
