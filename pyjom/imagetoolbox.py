@@ -893,14 +893,14 @@ def imageDogCatCoverCropAdvanced(
     height, width = frame.shape[:2]
     area = height * width
 
-    detections = bezierPaddleHubResnet50ImageDogCatDetector(
-        frame, use_gpu=False
-    )  # no gpu avaliable
-    mDetections = [x for x in detections if x["identity"] == dog_or_cat]
-    mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
-    if len(mDetections) > 0:
-        best_confidence = mDetections[0]["confidence"]
-        print("BEST CONFIDENCE:", best_confidence)
+    # detections = bezierPaddleHubResnet50ImageDogCatDetector(
+    #     frame, use_gpu=False
+    # )  # no gpu avaliable
+    # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
+    # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
+    # if len(mDetections) > 0:
+    #     best_confidence = mDetections[0]["confidence"]
+    #     print("BEST CONFIDENCE:", best_confidence)
         if checkMinMaxDict(best_confidence, confidence_threshold):
             # target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
             # target = imageFourCornersInpainting(target)
@@ -932,7 +932,7 @@ def imageDogCatCoverCropAdvanced(
     if processed_frame is not None:
         p_height, p_width = processed_frame.shape[:2]
         p_area = p_height * p_width
-        
+
         if p_area / area < area_threshold:
             processed_frame = None
         elif 
