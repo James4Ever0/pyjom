@@ -192,9 +192,9 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                     tagContainStaticCoreTopicFlags = [int(filterTitleWithCoreTopicSet(tag, static_core_topic_list)) for tag in tags]
                     mTagFlag = sum(tagContainStaticCoreTopicFlags)>0
                     if not mTagFlag:
-                        continue
+                        return
                 else:
-                    continue
+                    return
                 if duration_seconds == None:
                     print(debugTag, "VIDEO_METADATA", videoMetadata)
                     breakpoint()
