@@ -123,7 +123,7 @@ def getImageTextAreaRatio(
 ):
     image_passed = image.copy()
     if edgeDetection:
-        image_passed = cv2.Canny(image_passed,
+        image_passed = cv2.Canny(image_passed,20,210,apertureSize = 3)
     res, (detection, recognition) = getImageTextAreaRecognized(
         image_passed, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True
     )
