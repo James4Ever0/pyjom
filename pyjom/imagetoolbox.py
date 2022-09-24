@@ -5,23 +5,28 @@ import cv2
 from functools import lru_cache
 from lazero.utils.tools import flattenUnhashableList
 from typing import Literal
-def imageCropWithDiagonalRectangle(image, diagonalRectangle, order:Literal['opencv', 'normal']='opencv'):
+
+
+def imageCropWithDiagonalRectangle(
+    image, diagonalRectangle, order: Literal["opencv", "normal"] = "opencv"
+):
     # order is opencv.
-    assert order in ['opencv', 'normal']
-    x0,y0, x1, y1 = flattenUnhashableList(diagonalRectangle)
+    assert order in ["opencv", "normal"]
+    x0, y0, x1, y1 = flattenUnhashableList(diagonalRectangle)
     imageShape = image.shape
     if len(imageShape) == 3:
         if order == "opencv":
-            return image[y0:y1, x0:x1,:]
-        elif order == 'normal':
-            return image[x0:x1, y0:y1,:]
+            return image[y0:y1, x0:x1, :]
+        elif order == "normal":
+            return image[x0:x1, y0:y1, :]
     elif len(imageShape) == 2:
-        if order == 'opencv':
+        if order == "opencv":
             return image[y0:y1, x0:x1]
-        elif order == 'normal':
+        elif order == "normal":
             return image[x0:x1, y0:y1]
     else:
         raise Exception("unknown image shape:", imageShape)
+
 
 def draw_bounding_box_with_contour(
     contours, image, area_threshold=20, debug=False
@@ -740,7 +745,7 @@ def imageHistogramMatch(image, reference, delta=0.2):
 
 def imageDogCatDetectionForCoverExtraction(
     image,
-    dog_or_cat:Literal['dog','cat']="dog",
+    dog_or_cat: Literal["dog", "cat"] = "dog",
     area_threshold=0.08,  # min area?
     confidence_threshold=0.85,  # this is image quality maybe.
     y_expansion_rate=0.03,  # to make the starting point on y axis less "headless"
