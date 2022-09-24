@@ -202,7 +202,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 # breakpoint()
                 if not checkMinMaxDict(len(title), {"min": 7, "max": 17}):
                     return
-                if not filterTitleWithCore
+                if not filterTitleWithCoreTopicSet(title,)
                 if len(tags) > 0:
                     tagContainStaticCoreTopicFlags = [
                         int(filterTitleWithCoreTopicSet(tag, static_core_topic_list))
