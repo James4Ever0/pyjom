@@ -74,6 +74,7 @@ def draw_bounding_box(contours, image, area_threshold=20): # are you sure?
     cnt_area = contour_area(contours)
  
     # Loop through each contour of our image
+    
     for i in range(0,len(contours),1):
         cnt = contours[i]
         # Only draw the the largest number of boxes
