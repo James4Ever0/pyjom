@@ -50,6 +50,6 @@ display("img", img)
 # display("msk", msk)
 display("inv_msk", inv_msk)
 # Generate contours based on our mask
-contours,hierarchy = cv2.findContours(mask, 1, 2)
+contours,hierarchy = cv2.findContours(inv_msk, 1, 2)
 # BlurDetection.scripts.display('msk', msk)
 cv2.waitKey(0)
