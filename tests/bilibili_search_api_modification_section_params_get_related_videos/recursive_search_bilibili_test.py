@@ -351,10 +351,10 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
 
 
 if __name__ == "__main__":
-    for videoMetadata in getBilibiliPostMetadataForDogCat():
+    for mCover, mTagSeries, mTitle, mBgm, dog_or_cat in getBilibiliPostMetadataForDogCat():
         print("FETCHED VIDEO METADATA FOR PRODUCTION:")
         print(videoMetadata)
-        mCover, mTagSeries, mTitle, mBgm, dog_or_cat = videoMetadata
+        videoMetadata =  = 
         mCover2 = cv2.resize(mCover,int(1920/2), int(1080/2))
         cv2.imshow("COVER", mCover2)
         cv2.waitKey(0)
