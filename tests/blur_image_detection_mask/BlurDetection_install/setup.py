@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 VERSION = '0.0.1' 
-DESCRIPTION = 'lazero'
+DESCRIPTION = 'BlurDetection'
 LONG_DESCRIPTION = 'AGI package'
 
 # Setting up
