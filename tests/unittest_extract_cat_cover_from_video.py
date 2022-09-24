@@ -60,6 +60,9 @@ if not video_fine:
 
 from caer.video.frames_and_fps import get_duration
 
+
+def imageDogCatCover
+
 duration = get_duration(path)
 mSampleSize = int(duration / 2)  # fps = 0.5 or something?
 processed_frame = None
