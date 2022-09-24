@@ -539,9 +539,10 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
 
 def imageCropoutBlackArea(image):
 
-import cv2
+# import cv2
 
-image = cv2.imread(mediaPath)
+# image = cv2.imread(mediaPath)
+image
 height, width = image.shape[:2]
 total_area = height * width
 areaThreshold = 0
