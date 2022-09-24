@@ -16,11 +16,6 @@ setup(
         packages=find_packages(),
         install_requires=[], # add any additional packages that 
         # needs to be installed along with your package. Eg: 'caer'
-        entry_points ={
-            'console_scripts': [
-                'lazero = lazero.__main__:main'
-            ]
-        },
         keywords=['python', 'first package'],
         classifiers= [
             "Development Status :: 3 - Alpha",
