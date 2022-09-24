@@ -323,7 +323,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 if checkMinMaxDict(len(title), {"min": 7, "max": 17})
             ]
             filtered_title_list = filterTitleListWithCoreTopicSet(
-                filtered_title_list, static_core_topic_list
+                title_list, static_core_topic_list
             )  # could be enhabced with CLIP
             # filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
             if len(filtered_title_list) > 3:
