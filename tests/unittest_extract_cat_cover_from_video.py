@@ -22,7 +22,7 @@ from pyjom.imagetoolbox import (
     imageFourCornersInpainting,
     imageCropoutBlackArea,
     imageCropoutBlurArea,
-    image
+    imageDogCatDetectionForCoverExtraction
 )
 from pyjom.commons import checkMinMaxDict
 
