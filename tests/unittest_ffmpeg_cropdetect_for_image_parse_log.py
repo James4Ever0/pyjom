@@ -43,7 +43,7 @@ for line in stderr_decoded.split("\n"):
         common_crops.append(cropString)
     # [Parsed_cropdetect_0 @ 0x56246a16cbc0] x1:360 x2:823 y1:0 y2:657 w:464 h:656 x:360 y:2 pts:3 t:0.120000 crop=464:656:360:2
     # this crop usually will never change. but let's count?
-if len(common_crops_count_tuple_list) > 0:
+if len(common_crops) > 0:
     common_crops_count_tuple_list = [(cropString, common_crops.count(cropString)) for cropString in set(common_crops)]
     common_crops_count_tuple_list.sort(key= lambda x: -x[1])
     selected_crop_string = common_crops_count_tuple_list[0][0]
