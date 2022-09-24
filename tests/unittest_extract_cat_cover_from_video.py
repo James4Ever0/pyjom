@@ -104,7 +104,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
         #         break
 if processed_frame is not None:
     print("COVER IMAGE FOUND!")
-    processed_frame_show = cv2.resize(processed_frame, (1920/2, 1080/2))
+    processed_frame_show = cv2.resize(processed_frame, (int(1920/2), int(1080/2)))
     cv2.imshow("image", processed_frame_show)
     cv2.waitKey(0)
 else:
