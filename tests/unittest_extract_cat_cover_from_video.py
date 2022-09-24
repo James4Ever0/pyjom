@@ -20,6 +20,8 @@ from pyjom.imagetoolbox import (
     # we deprecate this thing to make it somehow better.
     getImageTextAreaRatio,
     imageFourCornersInpainting,
+    imageCropoutBlackArea,
+    imageCropoutBlurArea,
     image
 )
 from pyjom.commons import checkMinMaxDict
