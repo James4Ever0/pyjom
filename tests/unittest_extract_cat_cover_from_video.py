@@ -108,7 +108,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     # if animalCropDiagonalRect is not None:  # of course this is not None.
     # we need to identify this shit.
     # if checkMinMaxDict(text_area_ratio, text_area_threshold):
-    processed_frame = 
+    processed_frame = imageDogCatCoverCropAdvanced(frame, dog_or_cat=dog_or_cat)
     if processed_frame is not None:
         # blurValue = imageCropoutBlurArea(processed_frame, value=True)
         # print("BLUR VALUE:", blurValue)
