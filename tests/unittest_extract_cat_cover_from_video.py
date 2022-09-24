@@ -17,6 +17,7 @@ import cv2
 from pyjom.videotoolbox import getVideoFrameSampler
 from pyjom.imagetoolbox import (
     # bezierPaddleHubResnet50ImageDogCatDetector,
+    # we deprecate this thing to make it somehow better.
     getImageTextAreaRatio,
     imageFourCornersInpainting,
 )
