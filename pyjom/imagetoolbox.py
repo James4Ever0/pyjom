@@ -685,7 +685,7 @@ def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=T
             print("image no need to crop black borders. further processing needed")
     diagonalRect = [(x, y), (x1, y1)]
     if crop:
-        return imageCropWithDiagonalRectangle(, diagonalRect)
+        return imageCropWithDiagonalRectangle(image, diagonalRect)
     return diagonalRect
 
 
