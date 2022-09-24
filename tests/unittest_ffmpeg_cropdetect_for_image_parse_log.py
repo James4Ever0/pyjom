@@ -49,5 +49,5 @@ if len(common_crops_count_tuple_list) > 0:
     selected_crop_string = common_crops_count_tuple_list[0][0]
 
     result = parse.parse('{w:d}:{h:d}:{x:d}:{y:d}', selected_crop_string)
-    w,h,x,y, = [result[key] for key in ['w','h','x','y']]
-    
+    w,h,x,y = [result[key] for key in ['w','h','x','y']]
+    x1, y1 = x
