@@ -320,14 +320,14 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 # # corrupted or not?
                                 # image = cv2.imdecode(content, cv2.IMREAD_COLOR)
                             # mCover = random.choice(filtered_cover_list) # what is this cover list?
-                            if cover_target is None:
-                            mTagSeries = randomChoiceTagList(
-                                tag_list
-                            )  # a collection of tags.
-                            mTitle = random.choice(filtered_title_list)
-                            mBgm = random.choice(bgm_list)
-                            yield mCover, mTagSeries, mTitle, mBgm, dog_or_cat_original
-                            clearMyLists()
+                            if cover_target is not None:
+                                mTagSeries = randomChoiceTagList(
+                                    tag_list
+                                )  # a collection of tags.
+                                mTitle = random.choice(filtered_title_list)
+                                mBgm = random.choice(bgm_list)
+                                yield mCover, mTagSeries, mTitle, mBgm, dog_or_cat_original
+                                clearMyLists()
         except:
             import time
 
