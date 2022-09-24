@@ -75,7 +75,6 @@ def imageLoader(image):
             image = cv2.imread(image)
         elif image.startswith("http"):
             import requests
-
             r = requests.get(image)
             content = r.content
             image = cv2.imdecode(content, cv2.IMREAD_COLOR)
