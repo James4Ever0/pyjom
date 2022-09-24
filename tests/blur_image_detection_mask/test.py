@@ -30,7 +30,8 @@ assert os.path.exists(img_path), "img_path does not exists"
 img = cv2.imread(img_path)
 
 import sys
-sys.path.append()
+sys.path.append("/root/Desktop/works/pyjom/")
+import pyjom
 
 img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
