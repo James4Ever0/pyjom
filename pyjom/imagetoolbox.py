@@ -622,7 +622,7 @@ def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=T
         mediaPath = path
         cv2.imwrite(mediaPath, image)
         stdout, stderr = (
-            ffmpeg.input(mediaPath, loop=1, t=15)
+            ffmpeg.input(mediaPath, loop=1, t=2)
             .filter("cropdetect")
             .output("null", f="null")
             .run(capture_stdout=True, capture_stderr=True)
