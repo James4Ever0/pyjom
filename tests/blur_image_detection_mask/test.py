@@ -89,7 +89,7 @@ def draw_bounding_box(contours, image, area_threshold=20):  # are you sure?
                 x0, y0, x1, y1 = x, y, x + w, y + h
             if x<x0: x0=x
             if y<y0: y0=y
-            if x+w > y1: y1=x+waitKey
+            if x+w > x1: x1=x+w
             if y+h 
             # Draw the bounding box
         image = cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), 2)
