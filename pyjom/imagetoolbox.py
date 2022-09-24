@@ -689,7 +689,7 @@ def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=T
     return diagonalRect
 
 
-def imageCropoutBlurArea(image, thresh=10, max_thresh=120, min_thresh=50, debug=False):
+def imageCropoutBlurArea(image, thresh=10, max_thresh=120, min_thresh=50, debug=False, crop=True):
     import numpy
 
     import BlurDetection
