@@ -4,7 +4,8 @@ import cv2
 
 from functools import lru_cache
 
-def imageCropWithDiagonalRectangle(image):
+def imageCropWithDiagonalRectangle(image, diagonalRectangle):
+    (x0, y0), (x1, y1) =
 
 def draw_bounding_box_with_contour(
     contours, image, area_threshold=20, debug=False
