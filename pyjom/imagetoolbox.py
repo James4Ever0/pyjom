@@ -7,6 +7,7 @@ from lazero.utils.tools import flattenUnhashableList
 
 def imageCropWithDiagonalRectangle(image, diagonalRectangle, order:='opencv'):
     # order is opencv.
+    assert order in ['opencv', 'normal']
     x0,y0, x1, y1 = flattenUnhashableList(diagonalRectangle)
     imageShape = image.shape
     if len(imageShape) == 3:
