@@ -5,7 +5,7 @@ import cv2
 from functools import lru_cache
 from lazero.utils.tools import flattenUnhashableList
 
-def imageCropWithDiagonalRectangle(image, diagonalRectangle, order:Literal['opencv', 'normal']='opencv'):
+def imageCropWithDiagonalRectangle(image, diagonalRectangle, order:Union['opencv', 'normal']='opencv'):
     # order is opencv.
     assert order in ['opencv', 'normal']
     x0,y0, x1, y1 = flattenUnhashableList(diagonalRectangle)
@@ -20,7 +20,6 @@ def imageCropWithDiagonalRectangle(image, diagonalRectangle, order:Literal['open
             return image[y0:y1, x0:x1]
         elif order == 'normal':
             return image[x0:x1, y0:y1]
-
     else:
         raise Exception("unknown image shape:", imageShape)
 
