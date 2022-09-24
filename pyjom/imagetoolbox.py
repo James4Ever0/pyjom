@@ -864,5 +864,5 @@ def imageDogCatDetectionForCoverExtraction(
         if debug:
             print("NO COVER FOUND.")
     if not crop:
-        
+        return []
     return croppedImageCoverResized
