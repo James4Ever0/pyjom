@@ -889,7 +889,7 @@ def imageDogCatCoverCropAdvanced(
 ):
     processed_frame = None
     frame = imageLoader(frame)
-
+    height, width = frame.shape[:2]
 
     detections = bezierPaddleHubResnet50ImageDogCatDetector(
         frame, use_gpu=False
@@ -923,4 +923,6 @@ def imageDogCatCoverCropAdvanced(
                     crop=True,
                     debug=True,
                 )
+    if processed_frame is not None:
+        
     return processed_frame
