@@ -5,7 +5,6 @@ import cv2
 from functools import lru_cache
 
 
-
 def draw_bounding_box_with_contour(
     contours, image, area_threshold=20, debug=False
 ):  # are you sure?
@@ -46,18 +45,21 @@ def draw_bounding_box_with_contour(
         x0, y0, x1, y1 = 0, 0, width, height
     return (x0, y0), (x1, y1)
 
+
 def imageLoader(image):
     if type(image) == str:
         if os.path.exists(image):
             image = cv2.imread(image)
         elif image.startswith("http"):
             import requests
+
             r = requests.get(image)
             content = r.content
-            image = cv2.imdecode(content,cv2.IMREAD_COLOR)
+            image = cv2.imdecode(content, cv2.IMREAD_COLOR)
         else:
             raise Exception("unknown image link: %s" % image)
     return image
+
 
 def getDeltaWidthHeight(defaultWidth, defaultHeight):
     deltaWidthRatio = 4 + (4 - 3) * (defaultWidth / defaultHeight - 16 / 9) / (
@@ -123,12 +125,12 @@ def partial_blur(image0, mask, kernel=None):
     # need improvement. malnly the boundary.
     if kernel is None:
         height, width = image0.shape[:2]
-        kernel_w = max(int(width / 40),1) * 4
-        kernel_h = max(int(height / 40),1) * 4
+        kernel_w = max(int(width / 40), 1) * 4
+        kernel_h = max(int(height / 40), 1) * 4
     else:
         kernel_w, kernel_h = kernel
-        kernel_w = max(int(kernel_w / 4),1) * 4
-        kernel_h = max(int(kernel_h / 4),1) * 4
+        kernel_w = max(int(kernel_w / 4), 1) * 4
+        kernel_h = max(int(kernel_h / 4), 1) * 4
     kernel = (kernel_w, kernel_h)
 
     mask_total = mask
@@ -137,7 +139,7 @@ def partial_blur(image0, mask, kernel=None):
     # mask0 = mask/255
     # inv_mask0 = inv_mask/255
     non_blur_image = cv2.bitwise_and(image0, image0, mask=inv_mask_total)
-    blur_image0 = cv2.blur(image0, kernel) # half quicklier.
+    blur_image0 = cv2.blur(image0, kernel)  # half quicklier.
     blur_image0 = cv2.bitwise_and(blur_image0, blur_image0, mask=mask_total)
     dst0 = blur_image0 + non_blur_image
     return dst0
@@ -173,11 +175,11 @@ def getImageTextAreaRatio(
     debug=False,
     inpaint=False,
     method="inpaint",
-    edgeDetection=False
+    edgeDetection=False,
 ):
     image_passed = image.copy()
     if edgeDetection:
-        image_passed = cv2.Canny(image_passed,20,210,apertureSize = 3)
+        image_passed = cv2.Canny(image_passed, 20, 210, apertureSize=3)
     res, (detection, recognition) = getImageTextAreaRecognized(
         image_passed, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True
     )
@@ -580,16 +582,18 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     return detections
 
 
-def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
+def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False):
     image = imageLoader(image)
     height, width = image.shape[:2]
     total_area = height * width
     import ffmpeg
+
     # it must be a existing image.
     from lazero.filesystem.temp import tmpfile
     import uuid
-    path = '/dev/shm/cropdetect_ffmpeg_black_border/{}.png'.format(str(uuid.uuid4()))
-    x,y,x1,y1 = 0,0,width, height
+
+    path = "/dev/shm/cropdetect_ffmpeg_black_border/{}.png".format(str(uuid.uuid4()))
+    x, y, x1, y1 = 0, 0, width, height
 
     with tmpfile(path=path) as TF:
         mediaPath = path
@@ -601,7 +605,6 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
             .run(capture_stdout=True, capture_stderr=True)
         )
 
-
         stdout_decoded = stdout.decode("utf-8")
         stderr_decoded = stderr.decode("utf-8")
 
@@ -611,7 +614,6 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
 
         # breakpoint()
         import parse
-
 
         common_crops = []
 
@@ -634,7 +636,8 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
         # x,x1,y,y1= 0,width, 0, height
         if len(common_crops) > 0:
             common_crops_count_tuple_list = [
-                (cropString, common_crops.count(cropString)) for cropString in set(common_crops)
+                (cropString, common_crops.count(cropString))
+                for cropString in set(common_crops)
             ]
             common_crops_count_tuple_list.sort(key=lambda x: -x[1])
             selected_crop_string = common_crops_count_tuple_list[0][0]
@@ -650,16 +653,17 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
         print("CROPPED AREA RATIO:", cropped_area_ratio)
 
         if cropped_area_ratio > cropped_area_threshold:
-            print('we need to crop this. no further processing needed')
+            print("we need to crop this. no further processing needed")
             if debug:
-                image_black_cropped = image[y:y1,x:x1]
+                image_black_cropped = image[y:y1, x:x1]
                 cv2.imshow("CROPPED IMAGE", image_black_cropped)
                 cv2.waitKey(0)
         else:
-            print('image no need to crop black borders. further processing needed')
-    return [(x,y), (x1,y1)]
+            print("image no need to crop black borders. further processing needed")
+    return [(x, y), (x1, y1)]
 
-def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50,debug=False):
+
+def imageCropoutBlurArea(image, thresh=10, max_thresh=120, min_thresh=50, debug=False):
     import numpy
 
     import BlurDetection
@@ -674,10 +678,12 @@ def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50,debug=Fal
     # img = imageFourCornersInpainting(img)
     # img = getImageTextAreaRatio(img, inpaint=True, edgeDetection=True)
 
-    img_fft, val, blurry = BlurDetection.blur_detector(img,thresh=thresh)
+    img_fft, val, blurry = BlurDetection.blur_detector(img, thresh=thresh)
     if debug:
         print("this image {0} blurry".format(["isn't", "is"][blurry]))
-    msk, result, blurry = BlurDetection.blur_mask(img, min_thresh=min_thresh,max_thresh=max_thresh)
+    msk, result, blurry = BlurDetection.blur_mask(
+        img, min_thresh=min_thresh, max_thresh=max_thresh
+    )
 
     inv_msk = 255 - msk
 
@@ -690,7 +696,6 @@ def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50,debug=Fal
         img = cv2.resize(img, shape)
         cv2.imshow(title, img)
 
-
     # BlurDetection.scripts.display('img', img)
     if debug:
         display("img", img)
@@ -701,6 +706,7 @@ def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50,debug=Fal
     rectangle_boundingbox = draw_bounding_box_with_contour(contours, img, debug=debug)
     return rectangle_boundingbox
 
+
 def imageHistogramMatch(image, reference, delta=0.2):
     from color_transfer import color_transfer
 
@@ -710,16 +716,19 @@ def imageHistogramMatch(image, reference, delta=0.2):
 
     import numpy as np
 
-    transfer_02 = (target * (1-delta)+ transfer * delta).astype(np.uint8)
+    transfer_02 = (target * (1 - delta) + transfer * delta).astype(np.uint8)
     return transfer_02
 
 
-def imageDogCatDetectionForCoverExtraction(image, dog_or_cat='dog',area_threshold = 0.08,  # min area?
-confidence_threshold = 0.7,  # this is image quality maybe.
-y_expansion_rate = 0.03,  # to make the starting point on y axis less "headless"
-defaultCropWidth = 1920,
-defaultCropHeight = 1080,
-debug=False
+def imageDogCatDetectionForCoverExtraction(
+    image,
+    dog_or_cat="dog",
+    area_threshold=0.08,  # min area?
+    confidence_threshold=0.7,  # this is image quality maybe.
+    y_expansion_rate=0.03,  # to make the starting point on y axis less "headless"
+    defaultCropWidth=1920,
+    defaultCropHeight=1080,
+    debug=False,
 ):
     # return detected most significant dog area?
     model = configYolov5()
@@ -753,7 +762,6 @@ debug=False
 
     animal_detection_dataframe["area_ratio"] = area / total_area
 
-
     df = animal_detection_dataframe
 
     new_df = df.loc[
@@ -772,7 +780,9 @@ debug=False
 
     # you shall find the code elsewhere?
 
-    allowedHeight = min(int(defaultWidth / defaultCropWidth * defaultHeight), defaultHeight)
+    allowedHeight = min(
+        int(defaultWidth / defaultCropWidth * defaultHeight), defaultHeight
+    )
 
     if count >= 1:
         selected_col = new_df.iloc[0]  # it is a dict-like object.
