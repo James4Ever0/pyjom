@@ -108,14 +108,14 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     # if animalCropDiagonalRect is not None:  # of course this is not None.
     # we need to identify this shit.
     # if checkMinMaxDict(text_area_ratio, text_area_threshold):
-
-                if processed_frame is not None:
-                    # blurValue = imageCropoutBlurArea(processed_frame, value=True)
-                    # print("BLUR VALUE:", blurValue)
-                    # if not checkMinMaxDict(blurValue, blurValue_threshold):
-                    #     # will skip this one since it is not so clear.
-                    #     continue
-                    break
+    
+    if processed_frame is not None:
+        # blurValue = imageCropoutBlurArea(processed_frame, value=True)
+        # print("BLUR VALUE:", blurValue)
+        # if not checkMinMaxDict(blurValue, blurValue_threshold):
+        #     # will skip this one since it is not so clear.
+        #     continue
+        break
 if processed_frame is not None:
     print("COVER IMAGE FOUND!")
     processed_frame_show = cv2.resize(processed_frame, (int(1920 / 2), int(1080 / 2)))
