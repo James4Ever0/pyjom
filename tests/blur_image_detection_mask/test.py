@@ -5,7 +5,6 @@
 # if no significant area change, use this blur detection to get the main area
 # remove watermark again??
 # then reuse the dog detection and get the crop from processed/cropped image.
-# 
 
 import os
 # from cv2 import waitKey
