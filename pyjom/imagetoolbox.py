@@ -722,7 +722,7 @@ def imageHistogramMatch(image, reference, delta=0.2):
 
 def imageDogCatDetectionForCoverExtraction(
     image,
-    dog_or_cat="dog",
+    dog_or_cat:Literal['dog','cat']="dog",
     area_threshold=0.08,  # min area?
     confidence_threshold=0.85,  # this is image quality maybe.
     y_expansion_rate=0.03,  # to make the starting point on y axis less "headless"
