@@ -24,8 +24,7 @@ stderr_decoded = stderr.decode("utf-8")
 for line in stderr_decoded.split("\n"):
     line = line.replace("\n", "").strip()
     import parse
-    formatString='[{}] x1:{x1:d} x2:{x2:d} y1:{y1:d} y2:{y2:d} w:{w:d} h:{h:d} x:{x:d} y:{y:d} pts:{pts
-    } t:{t} crop={}:{}:{}:{}'
+    formatString='[{}] x1:{x1:d} x2:{x2:d} y1:{y1:d} y2:{y2:d} w:{w:d} h:{h:d} x:{x:d} y:{y:d} pts:{pts:g} t:{t:g} crop={}:{}:{}:{}'
     # print(line)
     result = parse.parse(formatString,line)
     if result is not None:
