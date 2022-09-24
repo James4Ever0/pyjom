@@ -93,6 +93,7 @@ gpu = True):
                     crop=True,
                     debug=True,
                 )
+    return processed_frame
 
 duration = get_duration(path)
 mSampleSize = int(duration / 2)  # fps = 0.5 or something?
