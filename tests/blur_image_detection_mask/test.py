@@ -29,6 +29,8 @@ img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample_2.webp"
 assert os.path.exists(img_path), "img_path does not exists"
 img = cv2.imread(img_path)
 
+# remove artifacts first.
+
 
 
 
