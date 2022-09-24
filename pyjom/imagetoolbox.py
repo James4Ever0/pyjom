@@ -686,7 +686,7 @@ from pyjom.imagetoolbox import imageFourCornersInpainting, getImageTextAreaRatio
 img = imageFourCornersInpainting(img)
 img = getImageTextAreaRatio(img, inpaint=True, edgeDetection=True)
 
-img_fft, val, blurry = BlurDetection.blur_detector(img,)
+img_fft, val, blurry = BlurDetection.blur_detector(img,thresh=thresh)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
 msk, result, blurry = BlurDetection.blur_mask(img, max_thresh=120)
 
