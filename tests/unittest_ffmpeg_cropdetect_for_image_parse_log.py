@@ -9,6 +9,7 @@ import cv2
 image = cv2.imread(mediaPath)
 height, width = image.shape[:2]
 total_area = height*width
+areaThreshold = 0
 
 stdout, stderr = (
     ffmpeg.input(mediaPath, loop=1, t=15)
@@ -54,4 +55,4 @@ if len(common_crops) > 0:
     area = 0
     if x<x1 and y<y1:
         # allow to calculate the area.
-        area = 
+        area = (x1-x)*(y1-y)
