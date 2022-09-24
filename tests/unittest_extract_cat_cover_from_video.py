@@ -65,9 +65,10 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
     print("TEXT AREA RATIO", text_area_ratio)
     if checkMinMaxDict(text_area_ratio, text_area_threshold):
+        mFrame = getImageTextAreaRatio(frame, inpaint=True)
         animalCropDiagonalRect = imageDogCatDetectionForCoverExtraction(mFrame, dog_or_cat=dog_or_cat,confidence_threshold=confidence_threshold, crop=False) # you must use gpu this time.
         if animalCropDiagonalRect is not None:
-            mFrame = imageCropoutBlackArea(frame)
+            mFrame = imageCropoutBlackArea(mFrame)
             mFrame = imageCropoutBlurArea(mFrame)
             mFrame = 
         # detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
