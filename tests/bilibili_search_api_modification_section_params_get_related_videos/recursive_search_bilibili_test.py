@@ -301,6 +301,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                             random.shuffle(cover_list)
                             reference_histogram_cover = random.choice(cover_list)
 
+                            cover_target=None
+
                             for cover in cover_list:
                                 import os
                                 os.environ['http'] = ""
