@@ -169,7 +169,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 play_limit={"min": 10000},
                 debugTag="debug",
             ):
-                nonlocal bvid_list, bgm_list, title_list, tag_list, cover_list, bvid_list, description_list  # use nonlocal instead in nested functions.
+                nonlocal bvid_list, bgm_list, title_list, tag_list, cover_list, bvid_list, description_list, static_core_topic_list # use nonlocal instead in nested functions.
                 (
                     author,
                     author_id,
