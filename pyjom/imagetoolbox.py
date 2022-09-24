@@ -672,8 +672,9 @@ img_path = "/root/Desktop/works/pyjom/samples/image/blur_sample_2.webp"
 
 # ffmpeg -loop 1 -i /root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png -t 15 -vf cropdetect -f null -
 # img_path="/root/Desktop/works/pyjom/samples/image/husky_cry.png"
-assert os.path.exists(img_path), "img_path does not exists"
-img = cv2.imread(img_path)
+# assert os.path.exists(img_path), "img_path does not exists"
+# img = cv2.imread(img_path)
+img = imageLoader(image)
 
 import sys
 
