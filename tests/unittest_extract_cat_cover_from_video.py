@@ -31,7 +31,7 @@ dog_or_cat = "dog"
 confidence_threshold = 0.85
 # confidence_threshold = {"min": 0.7}
 text_area_threshold = {"max": 0.2}
-gpu = True
+# gpu = True
 
 import os
 
