@@ -26,6 +26,7 @@ from pyjom.videotoolbox import getVideoFrameSampler
 #     imageDogCatDetectionForCoverExtraction,
 #     imageLoader,
 # )
+from pyjom.imagetoolbox import imageDog
 from pyjom.commons import checkMinMaxDict
 
 
