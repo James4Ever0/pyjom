@@ -78,7 +78,6 @@ def imageLoader(image):
             r = requests.get(image)
             # content = r.content
             content = np.asarray(bytearray(r.read()), dtype="uint8")
-  
             image = cv2.imdecode(content, cv2.IMREAD_COLOR)
         else:
             raise Exception("unknown image link: %s" % image)
