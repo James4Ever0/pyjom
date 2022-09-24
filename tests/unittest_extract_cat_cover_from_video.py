@@ -64,7 +64,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
     print("TEXT AREA RATIO", text_area_ratio)
     if checkMinMaxDict(text_area_ratio, text_area_threshold):
-        
+        imageDogCatDetectionForCoverExtraction
         # detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
         # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
         # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
