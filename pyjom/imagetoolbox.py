@@ -690,7 +690,7 @@ def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=T
 
 
 def imageCropoutBlurArea(
-    image, thresh=10, max_thresh=120, min_thresh=50, debug=False, crop=True
+    image, thresh=10, max_thresh=120, min_thresh=50, debug=False, crop=True, value=False
 ):
     import numpy
 
