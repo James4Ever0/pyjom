@@ -7,6 +7,7 @@
 # then reuse the dog detection and get the crop from processed/cropped image.
 
 import os
+from cv2 import waitKey
 from lazero.utils.importers import cv2_custom_build_init
 
 cv2_custom_build_init()
@@ -88,7 +89,8 @@ def draw_bounding_box(contours, image, area_threshold=20):  # are you sure?
                 x0, y0, x1, y1 = x, y, x + w, y + h
             if x<x0: x0=x
             if y<y0: y0=y
-            if 
+            if x+w > y1: y1=x+waitKey
+            if y+h 
             # Draw the bounding box
         image = cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), 2)
 
