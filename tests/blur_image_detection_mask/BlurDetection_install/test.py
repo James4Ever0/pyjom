@@ -7,6 +7,7 @@
 # then reuse the dog detection and get the crop from processed/cropped image.
 
 import os
+
 # from cv2 import waitKey
 from lazero.utils.importers import cv2_custom_build_init
 
@@ -30,11 +31,12 @@ assert os.path.exists(img_path), "img_path does not exists"
 img = cv2.imread(img_path)
 
 import sys
+
 sys.path.append("/root/Desktop/works/pyjom/")
 from pyjom.imagetoolbox import imageFourCornersInpainting, getImageTextAreaRatio
 
 img = imageFourCornersInpainting(img)
-img = getImageTextAreaRatio(img,inpaint=True, edgeDetection=True)
+img = getImageTextAreaRatio(img, inpaint=True, edgeDetection=True)
 
 img_fft, val, blurry = BlurDetection.blur_detector(img)
 print("this image {0} blurry".format(["isn't", "is"][blurry]))
@@ -78,7 +80,9 @@ def contour_area(contours):
     return cnt_area
 
 
-def draw_bounding_box_with_contour(contours, image, area_threshold=20, debug=False):  # are you sure?
+def draw_bounding_box_with_contour(
+    contours, image, area_threshold=20, debug=False
+):  # are you sure?
     # this is the top-k approach.
     # Call our function to get the list of contour areas
     cnt_area = contour_area(contours)
@@ -104,7 +108,7 @@ def draw_bounding_box_with_contour(contours, image, area_threshold=20, debug=Fal
             if y + h > y1:
                 y1 = y + h
             # Draw the bounding box
-    
+
     if x0 is not None:
         if debug:
             image = cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), 2)
@@ -113,8 +117,9 @@ def draw_bounding_box_with_contour(contours, image, area_threshold=20, debug=Fal
     else:
         if x0 is None:
             height, width = image.shape[:2]
-            return 0,0,width, height
-        return x0, y0, x1, y1
+            return 0, 0, width, height
+        else:
+            return x0, y0, x1, y1
 
 
 # BlurDetection.scripts.display('msk', msk)
