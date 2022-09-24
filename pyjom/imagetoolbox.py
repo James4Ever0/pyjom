@@ -689,7 +689,9 @@ def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=T
     return diagonalRect
 
 
-def imageCropoutBlurArea(image, thresh=10, max_thresh=120, min_thresh=50, debug=False, crop=True):
+def imageCropoutBlurArea(
+    image, thresh=10, max_thresh=120, min_thresh=50, debug=False, crop=True
+):
     import numpy
 
     import BlurDetection
@@ -842,7 +844,7 @@ def imageDogCatDetectionForCoverExtraction(
         framework_XYWH = (x0_framework, y0_altered, width_current, height_current)
         x_f, y_f, w_f, h_f = framework_XYWH
         if not crop:
-            return [(x_f,y_f),(x_f+w_f,y_f+)]
+            return [(x_f, y_f), (x_f + w_f, y_f + h_f)]
         croppedImageCover = img[y_f : y_f + h_f, x_f : x_f + w_f, :]
         # breakpoint()
         # resize image
