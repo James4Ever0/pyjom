@@ -546,11 +546,11 @@ def imageCropoutBlackArea(image,areaThreshold = 0.1):
 image = imageLoader(image)
 height, width = image.shape[:2]
 total_area = height * width
-
+import ffmpeg
 # it must be a existing image.
 from lazero.filesystem.temp import tmpfile
 import uuid
-path = '/dev/shm/{}.png'.format(uuid.uuid4())
+path = '/dev/shm/{}.png'.format(str(uuid.uuid4()))
 with tmpfile(path=path) as TF:
 
 stdout, stderr = (
