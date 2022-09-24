@@ -927,4 +927,6 @@ def imageDogCatCoverCropAdvanced(
     if processed_frame is not None:
         p_height, p_width = processed_frame.shape[:2]
         p_area = p_height * p_width
+        if p_area/area < area_threshold:
+            processed_frame = None
     return processed_frame
