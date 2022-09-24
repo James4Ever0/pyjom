@@ -48,4 +48,4 @@ common_crops_count_tuple_list.sort(key= lambda x: -x[1])
 selected_crop_string = common_crops_count_tuple_list[0][0]
 
 result = parse.parse('{w:d}:{h:d}:{x:d}:{y:d}', selected_crop_string)
-result['w']
+w,h,x,y, = result[]
