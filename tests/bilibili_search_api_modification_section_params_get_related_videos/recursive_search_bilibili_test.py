@@ -303,11 +303,12 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 import os
                                 os.environ['http'] = ""
                                 os.environ['https'] = ""
-                                import requests
-                                r = requests.get(cover)
-                                content = r.content
-                                # corrupted or not?
-                                image = cv2.imdecode(content, cv2.IMREAD_COLOR)
+                                image = 
+                                # import requests
+                                # r = requests.get(cover)
+                                # content = r.content
+                                # # corrupted or not?
+                                # image = cv2.imdecode(content, cv2.IMREAD_COLOR)
                             # mCover = random.choice(filtered_cover_list) # what is this cover list?
                             reference_histogram_cover = random.choice(cover_list)
                             mTagSeries = randomChoiceTagList(
