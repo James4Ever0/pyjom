@@ -28,7 +28,6 @@ from pyjom.imagetoolbox import (
 )
 from pyjom.commons import checkMinMaxDict
 
-dog_or_cat = "dog"
 
 
 import os
@@ -98,6 +97,8 @@ gpu = True):
 duration = get_duration(path)
 mSampleSize = int(duration / 2)  # fps = 0.5 or something?
 processed_frame = None
+dog_or_cat = "dog"
+
 for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate=True):
     # animalCropDiagonalRect = imageDogCatDetectionForCoverExtraction(
     #     frame,
