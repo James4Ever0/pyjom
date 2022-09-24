@@ -7,7 +7,7 @@
 # then reuse the dog detection and get the crop from processed/cropped image.
 
 import os
-from cv2 import waitKey
+# from cv2 import waitKey
 from lazero.utils.importers import cv2_custom_build_init
 
 cv2_custom_build_init()
