@@ -785,8 +785,9 @@ def imageDogCatDetectionForCoverExtraction(
         int(defaultWidth / defaultCropWidth * defaultHeight), defaultHeight
     )
     croppedImageCoverResized =None
-
-    if count >= 1:
+    if count == 0:
+        
+    else:
         if not crop:
             return 
         selected_col = new_df.iloc[0]  # it is a dict-like object.
