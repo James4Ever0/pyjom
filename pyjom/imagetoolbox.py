@@ -4,6 +4,8 @@ import cv2
 
 from functools import lru_cache
 
+def imageLoader(image):
+    
 
 def getDeltaWidthHeight(defaultWidth, defaultHeight):
     deltaWidthRatio = 4 + (4 - 3) * (defaultWidth / defaultHeight - 16 / 9) / (
