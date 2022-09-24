@@ -659,47 +659,47 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
             print('image no need to crop black borders. further processing needed')
     return [(x,y), (x1,y1)]
 
-def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50):
-import numpy
+def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50,debug=False):
+    import numpy
 
-import BlurDetection
+    import BlurDetection
 
-img = imageLoader(image)
+    img = imageLoader(image)
 
-import sys
+    import sys
 
-# sys.path.append("/root/Desktop/works/pyjom/")
-# from pyjom.imagetoolbox import imageFourCornersInpainting, getImageTextAreaRatio
+    # sys.path.append("/root/Desktop/works/pyjom/")
+    # from pyjom.imagetoolbox import imageFourCornersInpainting, getImageTextAreaRatio
 
-# img = imageFourCornersInpainting(img)
-# img = getImageTextAreaRatio(img, inpaint=True, edgeDetection=True)
+    # img = imageFourCornersInpainting(img)
+    # img = getImageTextAreaRatio(img, inpaint=True, edgeDetection=True)
 
-img_fft, val, blurry = BlurDetection.blur_detector(img,thresh=thresh)
-if debug:
-    print("this image {0} blurry".format(["isn't", "is"][blurry]))
-msk, result, blurry = BlurDetection.blur_mask(img, min_thresh=min_thresh,max_thresh=max_thresh)
+    img_fft, val, blurry = BlurDetection.blur_detector(img,thresh=thresh)
+    if debug:
+        print("this image {0} blurry".format(["isn't", "is"][blurry]))
+    msk, result, blurry = BlurDetection.blur_mask(img, min_thresh=min_thresh,max_thresh=max_thresh)
 
-inv_msk = 255 - msk
+    inv_msk = 255 - msk
 
-def display(title, img, max_size=200000):
-    assert isinstance(img, numpy.ndarray), "img must be a numpy array"
-    assert isinstance(title, str), "title must be a string"
-    scale = numpy.sqrt(min(1.0, float(max_size) / (img.shape[0] * img.shape[1])))
-    print("image is being scaled by a factor of {0}".format(scale))
-    shape = (int(scale * img.shape[1]), int(scale * img.shape[0]))
-    img = cv2.resize(img, shape)
-    cv2.imshow(title, img)
+    def display(title, img, max_size=200000):
+        assert isinstance(img, numpy.ndarray), "img must be a numpy array"
+        assert isinstance(title, str), "title must be a string"
+        scale = numpy.sqrt(min(1.0, float(max_size) / (img.shape[0] * img.shape[1])))
+        print("image is being scaled by a factor of {0}".format(scale))
+        shape = (int(scale * img.shape[1]), int(scale * img.shape[0]))
+        img = cv2.resize(img, shape)
+        cv2.imshow(title, img)
 
 
-# BlurDetection.scripts.display('img', img)
-if debug:
-    display("img", img)
-    # display("msk", msk)
-    display("inv_msk", inv_msk)
-# BlurDetection.scripts.display('msk', msk)
-contours, hierarchy = cv2.findContours(inv_msk, 1, 2)
-rectangle_boundingbox = draw_bounding_box_with_contour(contours, img, debug=debug)
-return rectangle_boundingbox
+    # BlurDetection.scripts.display('img', img)
+    if debug:
+        display("img", img)
+        # display("msk", msk)
+        display("inv_msk", inv_msk)
+    # BlurDetection.scripts.display('msk', msk)
+    contours, hierarchy = cv2.findContours(inv_msk, 1, 2)
+    rectangle_boundingbox = draw_bounding_box_with_contour(contours, img, debug=debug)
+    return rectangle_boundingbox
 
 def imageHistogramMatch(image, reference, delta=0.2):
 
