@@ -1,0 +1,9 @@
+setup.py
+BlurDetection/FocusMask.py
+BlurDetection/__init__.py
+BlurDetection/main.py
+BlurDetection/scripts.py
+BlurDetection.egg-info/PKG-INFO
+BlurDetection.egg-info/SOURCES.txt
+BlurDetection.egg-info/dependency_links.txt
+BlurDetection.egg-info/top_level.txt
