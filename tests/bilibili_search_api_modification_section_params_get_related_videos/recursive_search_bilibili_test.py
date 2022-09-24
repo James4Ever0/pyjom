@@ -202,7 +202,8 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 # breakpoint()
                 if not checkMinMaxDict(len(title), {"min": 7, "max": 17}):
                     return
-                if not filterTitleWithCoreTopicSet(title,)
+                if not filterTitleWithCoreTopicSet(title, static_core_topic_list):
+                    return
                 if len(tags) > 0:
                     tagContainStaticCoreTopicFlags = [
                         int(filterTitleWithCoreTopicSet(tag, static_core_topic_list))
@@ -354,7 +355,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                     image,
                                     dog_or_cat=dog_or_cat_original,
                                     area_threshold=0.7,
-                                    corner=False
+                                    corner=False,
                                 )
                                 if cropped_image is not None:
                                     cropped_image_color_transfered = (
