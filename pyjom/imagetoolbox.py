@@ -547,6 +547,8 @@ image = imageLoader(image)
 height, width = image.shape[:2]
 total_area = height * width
 
+# it must be a existing image.
+
 stdout, stderr = (
     ffmpeg.input(mediaPath, loop=1, t=15)
     .filter("cropdetect")
