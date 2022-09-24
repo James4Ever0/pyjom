@@ -93,7 +93,6 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 mFrame = getImageTextAreaRatio(frame, inpaint=True)
                 mFrame = imageFourCornersInpainting(mFrame)
                 mFrame = imageCropoutBlackArea(mFrame)
-
                 mFrame = imageCropoutBlurArea(mFrame)
                 # cv2.imshow("PRE_FINAL_IMAGE", mFrame)
                 # cv2.waitKey(0)
