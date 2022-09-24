@@ -825,3 +825,4 @@ def imageDogCatDetectionForCoverExtraction(
             cv2.waitKey(0)
     else:
         print("NO COVER FOUND.")
+    return croppedImageCoverResized
