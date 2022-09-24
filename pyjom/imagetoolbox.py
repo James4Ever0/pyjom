@@ -730,6 +730,8 @@ def imageCropoutBlurArea(image, thresh=10, max_thresh=120, min_thresh=50, debug=
     # BlurDetection.scripts.display('msk', msk)
     contours, hierarchy = cv2.findContours(inv_msk, 1, 2)
     rectangle_boundingbox = draw_bounding_box_with_contour(contours, img, debug=debug)
+    if crop:
+        
     return rectangle_boundingbox
 
 
