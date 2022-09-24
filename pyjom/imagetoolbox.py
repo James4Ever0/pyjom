@@ -708,6 +708,7 @@ def display(title, img, max_size=200000):
 
 
 # BlurDetection.scripts.display('img', img)
+if debug:
 display("img", img)
 # display("msk", msk)
 display("inv_msk", inv_msk)
