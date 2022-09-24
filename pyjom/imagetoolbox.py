@@ -549,6 +549,7 @@ total_area = height * width
 
 # it must be a existing image.
 from lazero.filesystem.temp import tmpfile
+with tmpfile
 
 stdout, stderr = (
     ffmpeg.input(mediaPath, loop=1, t=15)
