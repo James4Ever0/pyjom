@@ -64,17 +64,17 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
     print("TEXT AREA RATIO", text_area_ratio)
     if checkMinMaxDict(text_area_ratio, text_area_threshold):
-        detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
-        mDetections = [x for x in detections if x["identity"] == dog_or_cat]
-        mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
-        if len(mDetections) > 0:
-            best_confidence = mDetections[0]["confidence"]
-            print("BEST CONFIDENCE:", best_confidence)
-            if checkMinMaxDict(best_confidence, confidence_threshold):
-                target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
-                target = imageFourCornersInpainting(target)
-                processed_frame = target
-                break
+        # detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
+        # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
+        # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
+        # if len(mDetections) > 0:
+        #     best_confidence = mDetections[0]["confidence"]
+        #     print("BEST CONFIDENCE:", best_confidence)
+        #     if checkMinMaxDict(best_confidence, confidence_threshold):
+        #         target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
+        #         target = imageFourCornersInpainting(target)
+        #         processed_frame = target
+        #         break
 if processed_frame is not None:
     print("COVER IMAGE FOUND!")
     cv2.imshow("image", processed_frame)
