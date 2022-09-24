@@ -615,7 +615,7 @@ if cropped_area_ratio > cropped_area_threshold:
     cv2.waitKey(0)
 else:
     print('image no need to crop black borders. further processing needed')
-    
+    x,y,x1,y1 = 0,0,
 return [(x,y), (x1,y1)]
 
 def imageCropoutBlurArea(image):
