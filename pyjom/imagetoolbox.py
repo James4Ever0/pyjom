@@ -538,7 +538,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     return detections
 
 
-def imageCropoutBlackArea(image,):
+def imageCropoutBlackArea(image,cropped_area_threshold = 0.1):
 
 # import cv2
 
@@ -570,7 +570,7 @@ stderr_decoded = stderr.decode("utf-8")
 
 # breakpoint()
 import parse
-cropped_area_threshold = 0.1
+
 
 common_crops = []
 
