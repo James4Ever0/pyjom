@@ -547,6 +547,8 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
     from lazero.filesystem.temp import tmpfile
     import uuid
     path = '/dev/shm/cropdetect_ffmpeg_black_border/{}.png'.format(str(uuid.uuid4()))
+    x,y,x1,y1 = 0,0,width, height
+
     with tmpfile(path=path) as TF:
         mediaPath = path
         cv2.imwrite(mediaPath, image)
@@ -587,7 +589,7 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
             # [Parsed_cropdetect_0 @ 0x56246a16cbc0] x1:360 x2:823 y1:0 y2:657 w:464 h:656 x:360 y:2 pts:3 t:0.120000 crop=464:656:360:2
             # this crop usually will never change. but let's count?
         area = 0
-        x,x1,y,y1= 0,width, 0, height
+        # x,x1,y,y1= 0,width, 0, height
         if len(common_crops) > 0:
             common_crops_count_tuple_list = [
                 (cropString, common_crops.count(cropString)) for cropString in set(common_crops)
