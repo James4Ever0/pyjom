@@ -709,12 +709,9 @@ def display(title, img, max_size=200000):
 
 # BlurDetection.scripts.display('img', img)
 if debug:
-display("img", img)
-# display("msk", msk)
-display("inv_msk", inv_msk)
-# Generate contours based on our mask
-# This function allows us to create a descending sorted list of contour areas.
-
+    display("img", img)
+    # display("msk", msk)
+    display("inv_msk", inv_msk)
 # BlurDetection.scripts.display('msk', msk)
 contours, hierarchy = cv2.findContours(inv_msk, 1, 2)
 rectangle_boundingbox = draw_bounding_box_with_contour(contours, img, debug=True)
