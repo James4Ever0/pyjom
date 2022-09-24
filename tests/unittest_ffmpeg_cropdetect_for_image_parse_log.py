@@ -30,7 +30,6 @@ stderr_decoded = stderr.decode("utf-8")
 common_crops = []
 for line in stderr_decoded.split("\n"):
     line = line.replace("\n", "").strip()
-    import parse
     formatString='[{}] x1:{x1:d} x2:{x2:d} y1:{y1:d} y2:{y2:d} w:{w:d} h:{h:d} x:{x:d} y:{y:d} pts:{pts:g} t:{t:g} crop={}:{}:{}:{}'
     # print(line)
     result = parse.parse(formatString,line)
@@ -44,4 +43,5 @@ for line in stderr_decoded.split("\n"):
     # this crop usually will never change. but let's count?
 common_crops_count_tuple_list = [(cropString, common_crops.count(cropString)) for cropString in set(common_crops)]
 common_crops_count_tuple_list.sort(key: lambda x: -x[1])
-selected_crop_string = common_crops_count_tuple_list[0]
+selected_crop_string = common_crops_count_tuple_list[0][0]
+
