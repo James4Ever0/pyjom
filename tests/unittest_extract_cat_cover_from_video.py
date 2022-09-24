@@ -68,8 +68,8 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
         confidence_threshold=confidence_threshold,
         crop=False,
     )  # you must use gpu this time.
-    if animalCropDiagonalRect is not None: # of course this is not None.
-        #we need to identify this shit.
+    if animalCropDiagonalRect is not None:  # of course this is not None.
+        # we need to identify this shit.
         # if checkMinMaxDict(text_area_ratio, text_area_threshold):
         text_area_ratio = getImageTextAreaRatio(frame)
         # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
