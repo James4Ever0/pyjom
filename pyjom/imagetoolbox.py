@@ -7,6 +7,7 @@ from lazero.utils.tools import flattenUnhashableList
 
 def imageCropWithDiagonalRectangle(image, diagonalRectangle):
     x0,y0, x1, y1 = flattenUnhashableLIst(diagonalRectangle)
+    
 
 def draw_bounding_box_with_contour(
     contours, image, area_threshold=20, debug=False
