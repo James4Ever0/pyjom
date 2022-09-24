@@ -101,7 +101,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                     mFrame,
                     dog_or_cat=dog_or_cat,
                     confidence_threshold=yolov5_confidence_threshold,
-                    area_threshold=0.15,
+                    # area_threshold=0.15,
                     crop=True,
                     debug=True,
                 )
