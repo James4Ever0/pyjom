@@ -31,7 +31,7 @@ img = cv2.imread(img_path)
 
 # remove artifacts first.
 
-
+from 
 
 
 img_fft, val, blurry = BlurDetection.blur_detector(img)
