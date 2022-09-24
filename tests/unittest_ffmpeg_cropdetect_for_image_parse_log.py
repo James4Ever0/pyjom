@@ -1,5 +1,6 @@
 import ffmpeg
-
+from lazero.utils.importers import cv2_custom_build_init
+cv2_custom_build_init()
 # mediaPath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
 mediaPath = "/root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png"  # use the image with black background.
 # ffmpeg -loop 1 -i /root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png -t 15 -vf cropdetect -f null -
