@@ -537,4 +537,5 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
         detections.append({"identity": label, "confidence": output})
     return detections
 
-def imageCropDetection
+def imageCropoutBlackBorders(image):
+    
