@@ -890,6 +890,7 @@ def imageDogCatCoverCropAdvanced(
     processed_frame = None
     frame = imageLoader(frame)
     height, width = frame.shape[:2]
+    area = height*width
 
     detections = bezierPaddleHubResnet50ImageDogCatDetector(
         frame, use_gpu=False
@@ -924,5 +925,6 @@ def imageDogCatCoverCropAdvanced(
                     debug=True,
                 )
     if processed_frame is not None:
-        
+        p_height, p_width = processed_frame.shape[:2]
+        p_area = p_height * p_width
     return processed_frame
