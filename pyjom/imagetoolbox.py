@@ -553,7 +553,7 @@ def imageCropoutBlackArea(image,cropped_area_threshold = 0.1, debug=False):
     path = '/dev/shm/cropdetect_ffmpeg_black_border/{}.png'.format(str(uuid.uuid4()))
     with tmpfile(path=path) as TF:
         mediaPath = path
-        cv2.imwrite(mediaPath, )
+        cv2.imwrite(mediaPath, image)
         stdout, stderr = (
             ffmpeg.input(mediaPath, loop=1, t=15)
             .filter("cropdetect")
