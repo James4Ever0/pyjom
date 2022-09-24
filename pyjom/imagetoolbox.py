@@ -5,7 +5,7 @@ import cv2
 from functools import lru_cache
 from lazero.utils.tools import flattenUnhashableList
 
-def imageCropWithDiagonalRectangle(image, diagonalRectangle, order='opencv'):
+def imageCropWithDiagonalRectangle(image, diagonalRectangle, order:='opencv'):
     # order is opencv.
     x0,y0, x1, y1 = flattenUnhashableList(diagonalRectangle)
     imageShape = image.shape
@@ -16,7 +16,7 @@ def imageCropWithDiagonalRectangle(image, diagonalRectangle, order='opencv'):
             return image[x0:x1, y0:y1,:]
     elif len(imageShape) == 2:
         return image[y0:y1, x0:x1]
-        
+
     else:
         raise Exception("unknown image shape:", imageShape)
 
