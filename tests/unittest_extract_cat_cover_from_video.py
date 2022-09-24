@@ -79,6 +79,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
             mFrame = imageCropoutBlackArea(mFrame)
             mFrame = imageCropoutBlurArea(mFrame)
             mFrame = imageFourCornersInpainting(mFrame)
+            cv2.imshow("PRE_FINAL_IMAGE", mFrame)
             processed_frame = imageDogCatDetectionForCoverExtraction(
                 mFrame,
                 dog_or_cat=dog_or_cat,
