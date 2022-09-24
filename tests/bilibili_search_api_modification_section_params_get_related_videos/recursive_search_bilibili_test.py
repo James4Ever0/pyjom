@@ -322,7 +322,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 from pyjom.imagetoolbox import imageLoader, imageDogCatCoverCropAdvanced, imageHistogramMatch
                                 image = imageLoader(cover)
                                 # import requests
-                                cropped_image = imageDogCatCoverCropAdvanced(image, dog_or_cat=dog_or_cat_original)
+                                cropped_image = imageDogCatCoverCropAdvanced(image, dog_or_cat=dog_or_cat_original, area_threshold=0.7)
                                 if cropped_image is not None:
                                     cropped_image_color_transfered = imageHistogramMatch(cropped_image, reference_histogram_cover)
                                     cropped_image_color_transfered_fliped = cv2.flip(cropped_image_color_transfered,1)
