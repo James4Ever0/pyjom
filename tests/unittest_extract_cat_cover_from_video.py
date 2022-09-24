@@ -62,10 +62,11 @@ def imageDogCatCoverCropAdvanced(
     yolov5_confidence_threshold=0.4,
     text_area_threshold={"max": 0.2},
     gpu=True,
-    area_threshold = 0.5
+    # area_threshold = 0.2
 ):
     processed_frame = None
     frame = imageLoader(frame)
+
 
     detections = bezierPaddleHubResnet50ImageDogCatDetector(
         frame, use_gpu=False
