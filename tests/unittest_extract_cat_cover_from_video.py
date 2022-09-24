@@ -99,16 +99,16 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 processed_frame = imageDogCatDetectionForCoverExtraction(
                     mFrame,
                     dog_or_cat=dog_or_cat,
-                    confidence_threshold=confidence_threshold['min'],
+                    confidence_threshold=yolov5_confidence_threshold,
                     crop=True,
                     debug=False,
                 )
                 if processed_frame is not None:
-                    blurValue = imageCropoutBlurArea(processed_frame, value=True)
-                    print("BLUR VALUE:", blurValue)
-                    if not checkMinMaxDict(blurValue, blurValue_threshold):
-                        # will skip this one since it is not so clear.
-                        continue
+                    # blurValue = imageCropoutBlurArea(processed_frame, value=True)
+                    # print("BLUR VALUE:", blurValue)
+                    # if not checkMinMaxDict(blurValue, blurValue_threshold):
+                    #     # will skip this one since it is not so clear.
+                    #     continue
                     break
 if processed_frame is not None:
     print("COVER IMAGE FOUND!")
