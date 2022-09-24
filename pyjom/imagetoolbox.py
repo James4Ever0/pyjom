@@ -669,7 +669,7 @@ img = imageLoader(image)
 
 import sys
 
-sys.path.append("/root/Desktop/works/pyjom/")
+# sys.path.append("/root/Desktop/works/pyjom/")
 from pyjom.imagetoolbox import imageFourCornersInpainting, getImageTextAreaRatio
 
 img = imageFourCornersInpainting(img)
