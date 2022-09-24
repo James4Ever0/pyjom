@@ -29,6 +29,7 @@ stderr_decoded = stderr.decode("utf-8")
 import parse
 
 common_crops = []
+
 for line in stderr_decoded.split("\n"):
     line = line.replace("\n", "").strip()
     formatString='[{}] x1:{x1:d} x2:{x2:d} y1:{y1:d} y2:{y2:d} w:{w:d} h:{h:d} x:{x:d} y:{y:d} pts:{pts:g} t:{t:g} crop={}:{}:{}:{}'
@@ -43,6 +44,6 @@ for line in stderr_decoded.split("\n"):
     # [Parsed_cropdetect_0 @ 0x56246a16cbc0] x1:360 x2:823 y1:0 y2:657 w:464 h:656 x:360 y:2 pts:3 t:0.120000 crop=464:656:360:2
     # this crop usually will never change. but let's count?
 common_crops_count_tuple_list = [(cropString, common_crops.count(cropString)) for cropString in set(common_crops)]
-common_crops_count_tuple_list.sort(key: lambda x: -x[1])
+common_crops_count_tuple_list.sort(key= lambda x: -x[1])
 selected_crop_string = common_crops_count_tuple_list[0][0]
 
