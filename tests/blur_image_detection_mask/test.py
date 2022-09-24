@@ -83,7 +83,7 @@ def draw_bounding_box(contours, image, area_threshold=20): # are you sure?
              
             # Use OpenCV boundingRect function to get the details of the contour
             x,y,w,h = cv2.boundingRect(cnt)
-            
+            if x
              
             # Draw the bounding box
         image=cv2.rectangle(image,(x0,y0),(x1,y1),(0,0,255),2)
