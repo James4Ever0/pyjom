@@ -552,7 +552,7 @@ from lazero.filesystem.temp import tmpfile
 import uuid
 path = '/dev/shm/{}.png'.format(str(uuid.uuid4()))
 with tmpfile(path=path) as TF:
-
+mediaPath = path
 stdout, stderr = (
     ffmpeg.input(mediaPath, loop=1, t=15)
     .filter("cropdetect")
