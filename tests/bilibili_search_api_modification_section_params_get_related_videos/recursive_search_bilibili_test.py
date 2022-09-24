@@ -310,7 +310,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 # import requests
                                 cropped_image = imageDogCatCoverCropAdvanced(image)
                                 if cropped_image is not None:
-                                    cropped_image_color_transfered = 
+                                    cropped_image_color_transfered = imageHistogramMatch()
                                     cropped_image_color_transfered_fliped = cv2.flip(cropped_image_color_transfered,1)
                                 # r = requests.get(cover)
                                 # content = r.content
