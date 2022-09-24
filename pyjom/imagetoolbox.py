@@ -8,7 +8,12 @@ def imageLoader(image):
     if type(image) == str:
         if os.path.exists(image):
             image = cv2.imread(image)
-        else
+        elif image.startswith("http"):
+            import requests
+            r = requests.get(image)
+            content = r.content
+            image = cv2.imread(content)
+        
     return image
 
 def getDeltaWidthHeight(defaultWidth, defaultHeight):
