@@ -108,8 +108,10 @@ def draw_bounding_box_with_contour(contours, image, area_threshold=20, debug=Fal
     if x0 is not None:
         if debug:
             image = cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), 2)
-    if debug
+    if debug:
         return image
+    else:
+        return x0, y0, x1, y1
 
 
 # BlurDetection.scripts.display('msk', msk)
