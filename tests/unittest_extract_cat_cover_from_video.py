@@ -73,9 +73,9 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
         text_area_ratio = getImageTextAreaRatio(frame)
         # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
         print("TEXT AREA RATIO", text_area_ratio)
-        mFrame = getImageTextAreaRatio(frame, inpaint=True)
         # if animalCropDiagonalRect is not None:
         if checkMinMaxDict(text_area_ratio, text_area_threshold):
+            mFrame = getImageTextAreaRatio(frame, inpaint=True)
             mFrame = imageCropoutBlackArea(mFrame)
             mFrame = imageCropoutBlurArea(mFrame)
             mFrame = imageFourCornersInpainting(mFrame)
@@ -84,6 +84,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 dog_or_cat=dog_or_cat,
                 confidence_threshold=confidence_threshold,
                 crop=True,
+                debug=True
             )
             if processed_frame is not None:
                 break

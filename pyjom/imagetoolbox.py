@@ -622,7 +622,7 @@ def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=T
         mediaPath = path
         cv2.imwrite(mediaPath, image)
         stdout, stderr = (
-            ffmpeg.input(mediaPath, loop=1, t=2)
+            ffmpeg.input(mediaPath, loop=1, t=1)
             .filter("cropdetect")
             .output("null", f="null")
             .run(capture_stdout=True, capture_stderr=True)
@@ -822,6 +822,9 @@ def imageDogCatDetectionForCoverExtraction(
     if flag:
         selected_col = new_df.iloc[0]  # it is a dict-like object.
         # print(new_df)
+        if debug:
+            print("selected_col")
+            print(selected_col)
         # breakpoint()
         # selected_col_dict = dict(selected_col)
         # these are floating point shits.
