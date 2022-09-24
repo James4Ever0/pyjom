@@ -549,8 +549,8 @@ total_area = height * width
 
 # it must be a existing image.
 from lazero.filesystem.temp import tmpfile
-
-path = '/dev/shm/{}.png'.format()
+import uuid
+path = '/dev/shm/{}.png'.format(uuid.uuid4())
 with tmpfile(path=path) as TF:
 
 stdout, stderr = (
