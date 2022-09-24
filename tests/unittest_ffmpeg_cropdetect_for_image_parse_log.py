@@ -37,7 +37,7 @@ for line in stderr_decoded.split("\n"):
     result = parse.parse(formatString,line)
     if result is not None:
         # print(result)
-        cropString = "{}_{}_{}_{}".format(*[result[key] for key in ['w','h','x','y']])
+        cropString = "{}_{}_{}_{}".format(*[result[key] for key in ['w','','x','y']])
         # print(cropString)
         # breakpoint()
         common_crops.append(cropString)
