@@ -11,6 +11,7 @@ import yt_dlp
 path = "/dev/shm/testVideo.mp4"
 from test_commons import *
 from lazero.utils.importers import cv2_custom_build_init
+
 cv2_custom_build_init()
 import cv2
 
@@ -22,7 +23,7 @@ from pyjom.imagetoolbox import (
     imageFourCornersInpainting,
     imageCropoutBlackArea,
     imageCropoutBlurArea,
-    imageDogCatDetectionForCoverExtraction
+    imageDogCatDetectionForCoverExtraction,
 )
 from pyjom.commons import checkMinMaxDict
 
@@ -61,9 +62,14 @@ duration = get_duration(path)
 mSampleSize = int(duration / 2)  # fps = 0.5 or something?
 processed_frame = None
 for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate=True):
-    animalCropDiagonalRect = imageDogCatDetectionForCoverExtraction(frame, dog_or_cat=dog_or_cat,confidence_threshold=confidence_threshold, crop=False) # you must use gpu this time.
+    animalCropDiagonalRect = imageDogCatDetectionForCoverExtraction(
+        frame,
+        dog_or_cat=dog_or_cat,
+        confidence_threshold=confidence_threshold,
+        crop=False,
+    )  # you must use gpu this time.
     if animalCropDiagonalRect is not None:
-    # if checkMinMaxDict(text_area_ratio, text_area_threshold):
+        # if checkMinMaxDict(text_area_ratio, text_area_threshold):
         text_area_ratio = getImageTextAreaRatio(frame)
         # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
         print("TEXT AREA RATIO", text_area_ratio)
@@ -73,7 +79,12 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
             mFrame = imageCropoutBlackArea(mFrame)
             mFrame = imageCropoutBlurArea(mFrame)
             mFrame = imageFourCornersInpainting(mFrame)
-            processed_frame = imageDogCatDetectionForCoverExtraction(mFrame, dog_or_cat=dog_or_cat,confidence_threshold=confidence_threshold, crop=True)
+            processed_frame = imageDogCatDetectionForCoverExtraction(
+                mFrame,
+                dog_or_cat=dog_or_cat,
+                confidence_threshold=confidence_threshold,
+                crop=True,
+            )
             if processed_frame is not None:
                 break
         # detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
