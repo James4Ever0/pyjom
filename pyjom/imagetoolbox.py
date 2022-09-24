@@ -14,7 +14,7 @@ def imageLoader(image):
             content = r.content
             image = cv2.imread(content)
         else:
-            raise Exception("unknown image ")
+            raise Exception("unknown image link: %s" % image)
     return image
 
 def getDeltaWidthHeight(defaultWidth, defaultHeight):
