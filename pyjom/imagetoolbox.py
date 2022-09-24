@@ -538,7 +538,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     return detections
 
 
-def imageCropoutBlackArea(image,areaThreshold = 0.1):
+def imageCropoutBlackArea(image,):
 
 # import cv2
 
