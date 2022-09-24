@@ -68,7 +68,7 @@ def contour_area(contours):
     list.sort(cnt_area, reverse=True)
     return cnt_area
 
-def draw_bounding_box(contours, image, number_of_boxes=4): # are you sure?
+def draw_bounding_box(contours, image): # are you sure?
     # this is the top-k approach.
     # Call our function to get the list of contour areas
     cnt_area = contour_area(contours)
