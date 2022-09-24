@@ -26,3 +26,6 @@ stack traceback:
 	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
 	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:196: in main chunk
 	[G]: ?
+2022/09/24 20:02:58.800 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/09/24 20:02:58.802 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/09/24 20:02:58.802 [E]  dial tcp 111.30.130.106:80: i/o timeout
