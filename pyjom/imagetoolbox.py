@@ -729,6 +729,7 @@ def imageDogCatDetectionForCoverExtraction(
     defaultCropWidth=1920,
     defaultCropHeight=1080,
     debug=False,
+    crop=
 ):
     # return detected most significant dog area?
     model = configYolov5()
