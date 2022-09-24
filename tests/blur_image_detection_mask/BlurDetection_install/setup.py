@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 VERSION = '0.0.1' 
 DESCRIPTION = 'BlurDetection'
-LONG_DESCRIPTION = 'AGI package'
+LONG_DESCRIPTION = 'Blur Detection for Image'
 
 # Setting up
 setup(
