@@ -75,6 +75,7 @@ def imageLoader(image):
             image = cv2.imread(image)
         elif image.startswith("http"):
             import requests
+
             r = requests.get(image)
             content = r.content
             content = np.asarray(bytearray(content), dtype="uint8")
@@ -877,7 +878,10 @@ def imageDogCatDetectionForCoverExtraction(
     # return [(0, 0), (defaultWidth, defaultHeight)]
     return croppedImageCoverResized
 
-def getImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat:Literal['dog', 'cat']='dog',debug=False):
+
+def getImageBestConfidenceWithBezierDogCatDetector(
+    frame, dog_or_cat: Literal["dog", "cat"] = "dog", debug=False
+):
     best_confidence = 0
     detections = bezierPaddleHubResnet50ImageDogCatDetector(
         frame, use_gpu=False
@@ -890,8 +894,16 @@ def getImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat:Literal['do
             print("BEST CONFIDENCE:", best_confidence)
     return best_confidence
 
-def filterImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat:Literal['dog','cat']='dog',debug=False,confidence_threshold={"min": 0.7}):
-    best_confidence = getImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat=dog_or_cat, debug=debug)
+
+def filterImageBestConfidenceWithBezierDogCatDetector(
+    frame,
+    dog_or_cat: Literal["dog", "cat"] = "dog",
+    debug=False,
+    confidence_threshold={"min": 0.7},
+):
+    best_confidence = getImageBestConfidenceWithBezierDogCatDetector(
+        frame, dog_or_cat=dog_or_cat, debug=debug
+    )
     return checkMinMaxDict(best_confidence, confidence_threshold)
 
 
@@ -904,7 +916,7 @@ def imageDogCatCoverCropAdvanced(
     gpu=True,
     corner=True,
     area_threshold=0.2,
-    debug=False
+    debug=False,
 ):
     processed_frame = None
     frame = imageLoader(frame)
@@ -917,13 +929,18 @@ def imageDogCatCoverCropAdvanced(
     # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
     # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
     # if len(mDetections) > 0:
-    # best_confidence = 
+    # best_confidence =
 
     # if best_confidence >0: # just stub.
     #     best_confidence = mDetections[0]["confidence"]
     #     print("BEST CONFIDENCE:", best_confidence)
     # if checkMinMaxDict(best_confidence, confidence_threshold):
-    if filterImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat=dog_or_cat,debug=debug,confidence_threshold=confidence_threshold):
+    if filterImageBestConfidenceWithBezierDogCatDetector(
+        frame,
+        dog_or_cat=dog_or_cat,
+        debug=debug,
+        confidence_threshold=confidence_threshold,
+    ):
         # target = getImageTextAreaRatio(frame, inpaint=True, gpu=gpu)
         # target = imageFourCornersInpainting(target)
         # processed_frame = target
@@ -957,6 +974,12 @@ def imageDogCatCoverCropAdvanced(
 
         if p_area / area < area_threshold:
             processed_frame = None
-        elif not filterImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat=dog_or_cat,debug=debug,confidence_threshold=confidence_threshold)
+        elif not filterImageBestConfidenceWithBezierDogCatDetector(
+            frame,
+            dog_or_cat=dog_or_cat,
+            debug=debug,
+            confidence_threshold=confidence_threshold,
+        ):
+            processed_frame = None
 
     return processed_frame
