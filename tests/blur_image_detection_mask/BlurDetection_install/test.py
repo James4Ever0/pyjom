@@ -104,6 +104,7 @@ def draw_bounding_box_with_contour(contours, image, area_threshold=20, debug=Fal
             if y + h > y1:
                 y1 = y + h
             # Draw the bounding box
+    
     if x0 is not None:
         image = cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), 2)
 
