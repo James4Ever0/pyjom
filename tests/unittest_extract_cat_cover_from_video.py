@@ -24,10 +24,9 @@ from pyjom.imagetoolbox import (
     imageCropoutBlackArea,
     imageCropoutBlurArea,
     imageDogCatDetectionForCoverExtraction,
-    imageLoader
+    imageLoader,
 )
 from pyjom.commons import checkMinMaxDict
-
 
 
 import os
@@ -55,14 +54,20 @@ if not video_fine:
 from caer.video.frames_and_fps import get_duration
 
 
-def imageDogCatCoverCropAdvanced(frame, dog_or_cat='dog',confidence_threshold = {"min": 0.7},
-yolov5_confidence_threshold=0.4,
-text_area_threshold = {"max": 0.2},
-gpu = True):
+def imageDogCatCoverCropAdvanced(
+    frame,
+    dog_or_cat="dog",
+    confidence_threshold={"min": 0.7},
+    yolov5_confidence_threshold=0.4,
+    text_area_threshold={"max": 0.2},
+    gpu=True,
+):
     processed_frame = None
     frame = imageLoader(frame)
 
-    detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=False) # no gpu avaliable
+    detections = bezierPaddleHubResnet50ImageDogCatDetector(
+        frame, use_gpu=False
+    )  # no gpu avaliable
     mDetections = [x for x in detections if x["identity"] == dog_or_cat]
     mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
     if len(mDetections) > 0:
@@ -93,6 +98,7 @@ gpu = True):
                     debug=True,
                 )
     return processed_frame
+
 
 duration = get_duration(path)
 mSampleSize = int(duration / 2)  # fps = 0.5 or something?
