@@ -540,3 +540,6 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
 def imageCropoutBlackArea(image):
 
 def imageCropoutBlurArea(image):
+
+
+def image
