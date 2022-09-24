@@ -874,7 +874,7 @@ def imageDogCatDetectionForCoverExtraction(
         if debug:
             print("NO COVER FOUND.")
     # if not crop:
-        # return [(0, 0), (defaultWidth, defaultHeight)]
+    # return [(0, 0), (defaultWidth, defaultHeight)]
     return croppedImageCoverResized
 
 
@@ -885,12 +885,12 @@ def imageDogCatCoverCropAdvanced(
     yolov5_confidence_threshold=0.4,
     text_area_threshold={"max": 0.2},
     gpu=True,
-    area_threshold = 0.2
+    area_threshold=0.2,
 ):
     processed_frame = None
     frame = imageLoader(frame)
     height, width = frame.shape[:2]
-    area = height*width
+    area = height * width
 
     detections = bezierPaddleHubResnet50ImageDogCatDetector(
         frame, use_gpu=False
@@ -905,12 +905,15 @@ def imageDogCatCoverCropAdvanced(
             # target = imageFourCornersInpainting(target)
             # processed_frame = target
             # break
-            text_area_ratio = getImageTextAreaRatio(frame)
+            text_area_ratio = getImageTextAreaRatio(
+                frame,
+                gpu=gpu,
+            )
             # text_area_ratio = getImageTextAreaRatio(frame, gpu=gpu)
             print("TEXT AREA RATIO", text_area_ratio)
             # if animalCropDiagonalRect is not None:
             if checkMinMaxDict(text_area_ratio, text_area_threshold):
-                mFrame = getImageTextAreaRatio(frame, inpaint=True)
+                mFrame = getImageTextAreaRatio(frame, gpu=gpu, inpaint=True)
                 mFrame = imageFourCornersInpainting(mFrame)
                 mFrame = imageCropoutBlackArea(mFrame)
                 mFrame = imageCropoutBlurArea(mFrame)
@@ -927,6 +930,6 @@ def imageDogCatCoverCropAdvanced(
     if processed_frame is not None:
         p_height, p_width = processed_frame.shape[:2]
         p_area = p_height * p_width
-        if p_area/area < area_threshold:
+        if p_area / area < area_threshold:
             processed_frame = None
     return processed_frame
