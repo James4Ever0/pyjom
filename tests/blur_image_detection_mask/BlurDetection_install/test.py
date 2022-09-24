@@ -65,19 +65,20 @@ display("img", img)
 display("inv_msk", inv_msk)
 # Generate contours based on our mask
 # This function allows us to create a descending sorted list of contour areas.
-def contour_area(contours):
 
-    # create an empty list
-    cnt_area = []
+# def contour_area(contours):
 
-    # loop through all the contours
-    for i in range(0, len(contours), 1):
-        # for each contour, use OpenCV to calculate the area of the contour
-        cnt_area.append(cv2.contourArea(contours[i]))
+#     # create an empty list
+#     cnt_area = []
 
-    # Sort our list of contour areas in descending order
-    list.sort(cnt_area, reverse=True)
-    return cnt_area
+#     # loop through all the contours
+#     for i in range(0, len(contours), 1):
+#         # for each contour, use OpenCV to calculate the area of the contour
+#         cnt_area.append(cv2.contourArea(contours[i]))
+
+#     # Sort our list of contour areas in descending order
+#     list.sort(cnt_area, reverse=True)
+#     return cnt_area
 
 
 def draw_bounding_box_with_contour(
