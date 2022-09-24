@@ -761,6 +761,7 @@ def imageDogCatDetectionForCoverExtraction(
     defaultCropWidth=1920,
     defaultCropHeight=1080,
     debug=False,
+    debug_show=False,
     crop=False,
 ):
     # return detected most significant dog area?
@@ -862,7 +863,7 @@ def imageDogCatDetectionForCoverExtraction(
         croppedImageCoverResized = cv2.resize(
             croppedImageCover, (defaultCropWidth, defaultCropHeight)
         )
-        if debug:
+        if debug_show:
             cv2.imshow("CROPPED IMAGE COVER", croppedImageCover)
             cv2.imshow("CROPPED IMAGE COVER RESIZED", croppedImageCoverResized)
             # print(selected_col_dict)
