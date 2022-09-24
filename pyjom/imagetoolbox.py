@@ -712,6 +712,8 @@ def imageCropoutBlurArea(
     msk, result, blurry = BlurDetection.blur_mask(
         img, min_thresh=min_thresh, max_thresh=max_thresh
     )
+    if value:
+        return result
 
     inv_msk = 255 - msk
 
