@@ -8,7 +8,7 @@ import cv2
 
 image = cv2.imread(mediaPath)
 height, width = image.shape[:2]
-total_area = height*width
+total_area = height * width
 areaThreshold = 0
 
 stdout, stderr = (
@@ -33,12 +33,14 @@ common_crops = []
 
 for line in stderr_decoded.split("\n"):
     line = line.replace("\n", "").strip()
-    formatString='[{}] x1:{x1:d} x2:{x2:d} y1:{y1:d} y2:{y2:d} w:{w:d} h:{h:d} x:{x:d} y:{y:d} pts:{pts:g} t:{t:g} crop={}:{}:{}:{}'
+    formatString = "[{}] x1:{x1:d} x2:{x2:d} y1:{y1:d} y2:{y2:d} w:{w:d} h:{h:d} x:{x:d} y:{y:d} pts:{pts:g} t:{t:g} crop={}:{}:{}:{}"
     # print(line)
-    result = parse.parse(formatString,line)
+    result = parse.parse(formatString, line)
     if result is not None:
         # print(result)
-        cropString = "{}_{}_{}_{}".format(*[result[key] for key in ['w','h','x','y']])
+        cropString = "{}_{}_{}_{}".format(
+            *[result[key] for key in ["w", "h", "x", "y"]]
+        )
         # print(cropString)
         # breakpoint()
         common_crops.append(cropString)
@@ -46,16 +48,18 @@ for line in stderr_decoded.split("\n"):
     # this crop usually will never change. but let's count?
 area = 0
 if len(common_crops) > 0:
-    common_crops_count_tuple_list = [(cropString, common_crops.count(cropString)) for cropString in set(common_crops)]
-    common_crops_count_tuple_list.sort(key= lambda x: -x[1])
+    common_crops_count_tuple_list = [
+        (cropString, common_crops.count(cropString)) for cropString in set(common_crops)
+    ]
+    common_crops_count_tuple_list.sort(key=lambda x: -x[1])
     selected_crop_string = common_crops_count_tuple_list[0][0]
 
-    result = parse.parse('{w:d}_{h:d}_{x:d}_{y:d}', selected_crop_string)
-    w,h,x,y = [result[key] for key in ['w','h','x','y']]
-    x1, y1 = min(x+w, width), min(y+h, height)
-    if x<x1 and y<y1:
+    result = parse.parse("{w:d}_{h:d}_{x:d}_{y:d}", selected_crop_string)
+    w, h, x, y = [result[key] for key in ["w", "h", "x", "y"]]
+    x1, y1 = min(x + w, width), min(y + h, height)
+    if x < x1 and y < y1:
         # allow to calculate the area.
-        area = (x1-x)*(y1-y)
-    cropped_area_ratio = 1-(area/total_area) # 0.5652352766414517
+        area = (x1 - x) * (y1 - y)
+    cropped_area_ratio = 1 - (area / total_area)  # 0.5652352766414517
     # use 0.1 as threshold?
-    print("CROPPED AREA RATIO:",cropped_area_ratio)
+    print("CROPPED AREA RATIO:", cropped_area_ratio)
