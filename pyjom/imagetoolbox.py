@@ -892,6 +892,8 @@ def getImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat:Literal['do
 
 def filterImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat:Literal['dog','cat']='dog',debug=False):
     best_confidence = getImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat=dog_or_cat, debug=debug)
+        if checkMinMaxDict(best_confidence, confidence_threshold):
+
 
 def imageDogCatCoverCropAdvanced(
     frame,
