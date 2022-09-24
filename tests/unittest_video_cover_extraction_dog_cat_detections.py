@@ -18,16 +18,17 @@ os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
 
 # Model
-localModelDir = (
-    "/root/Desktop/works/pyjom/pyjom/models/yolov5/ultralytics_yolov5_master/"
-)
-# import os
-os.environ[
-    "YOLOV5_MODEL_DIR"
-] = "/root/Desktop/works/pyjom/pyjom/models/yolov5/"  # this is strange. must be a hack in the localModelDir
-model = torch.hub.load(
-    localModelDir, "yolov5s", source="local"
-)  # or yolov5m, yolov5l, yolov5x, custom
+# localModelDir = (
+#     "/root/Desktop/works/pyjom/pyjom/models/yolov5/ultralytics_yolov5_master/"
+# )
+# # import os
+# os.environ[
+#     "YOLOV5_MODEL_DIR"
+# ] = "/root/Desktop/works/pyjom/pyjom/models/yolov5/"  # this is strange. must be a hack in the localModelDir
+# model = torch.hub.load(
+#     localModelDir, "yolov5s", source="local"
+# )  # or yolov5m, yolov5l, yolov5x, custom
+from test_commons import *
 from pyjom.commons import 
 model = 
 
