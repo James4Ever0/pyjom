@@ -843,7 +843,7 @@ def imageDogCatDetectionForCoverExtraction(
         )
         framework_XYWH = (x0_framework, y0_altered, width_current, height_current)
         x_f, y_f, w_f, h_f = framework_XYWH
-        diagonalRect= [(x_f, y_f), (x_f + w_f, y_f + h_f)]
+        diagonalRect = [(x_f, y_f), (x_f + w_f, y_f + h_f)]
         if not crop:
             return diagonalRect
         # croppedImageCover = img[y_f : y_f + h_f, x_f : x_f + w_f, :]
@@ -864,5 +864,5 @@ def imageDogCatDetectionForCoverExtraction(
         if debug:
             print("NO COVER FOUND.")
     if not crop:
-        return [(0,0),(defaultWidth, defaultHeight)]
+        return [(0, 0), (defaultWidth, defaultHeight)]
     return croppedImageCoverResized
