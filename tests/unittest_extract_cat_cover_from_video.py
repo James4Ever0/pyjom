@@ -16,16 +16,16 @@ cv2_custom_build_init()
 import cv2
 
 from pyjom.videotoolbox import getVideoFrameSampler
-from pyjom.imagetoolbox import (
-    bezierPaddleHubResnet50ImageDogCatDetector,
-    # we deprecate this thing to make it somehow better.
-    getImageTextAreaRatio,
-    imageFourCornersInpainting,
-    imageCropoutBlackArea,
-    imageCropoutBlurArea,
-    imageDogCatDetectionForCoverExtraction,
-    imageLoader,
-)
+# from pyjom.imagetoolbox import (
+#     bezierPaddleHubResnet50ImageDogCatDetector,
+#     # we deprecate this thing to make it somehow better.
+#     getImageTextAreaRatio,
+#     imageFourCornersInpainting,
+#     imageCropoutBlackArea,
+#     imageCropoutBlurArea,
+#     imageDogCatDetectionForCoverExtraction,
+#     imageLoader,
+# )
 from pyjom.commons import checkMinMaxDict
 
 
