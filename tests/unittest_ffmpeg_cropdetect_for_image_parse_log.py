@@ -54,3 +54,4 @@ if len(common_crops) > 0:
     area = 0
     if x<x1 and y<y1:
         # allow to calculate the area.
+        area = 
