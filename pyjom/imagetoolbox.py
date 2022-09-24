@@ -666,7 +666,7 @@ def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50,debug=Fal
 
     img = imageLoader(image)
 
-    import sys
+    # import sys
 
     # sys.path.append("/root/Desktop/works/pyjom/")
     # from pyjom.imagetoolbox import imageFourCornersInpainting, getImageTextAreaRatio
