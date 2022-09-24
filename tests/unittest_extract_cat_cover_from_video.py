@@ -29,7 +29,7 @@ from pyjom.commons import checkMinMaxDict
 
 dog_or_cat = "dog"
 confidence_threshold = {"min": 0.7}
-blurValue_threshold ={'max': 0.85}
+blurValue_threshold ={'max': 0.94}
 # confidence_threshold = 0.7
 # confidence_threshold = {"min": 0.7}
 text_area_threshold = {"max": 0.2}
