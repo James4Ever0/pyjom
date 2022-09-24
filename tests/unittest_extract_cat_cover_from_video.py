@@ -28,8 +28,8 @@ from pyjom.imagetoolbox import (
 from pyjom.commons import checkMinMaxDict
 
 dog_or_cat = "dog"
-# confidence_threshold = {"min": 0.8}
-confidence_threshold = 0.7
+confidence_threshold = {"min": 0.8}
+# confidence_threshold = 0.7
 # confidence_threshold = {"min": 0.7}
 text_area_threshold = {"max": 0.2}
 gpu = True
@@ -97,7 +97,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 processed_frame = imageDogCatDetectionForCoverExtraction(
                     mFrame,
                     dog_or_cat=dog_or_cat,
-                    confidence_threshold=confidence_threshold,
+                    confidence_threshold=confidence_threshold['min'],
                     crop=True,
                     debug=False,
                 )
