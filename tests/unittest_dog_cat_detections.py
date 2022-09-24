@@ -2,6 +2,15 @@ import torch
 import os
 from lazero.utils.importers import cv2_custom_build_init
 
+# order:
+# detect if dog/cat is there, satisfying the qualification
+# remove watermark, remove text, remove potential watermark around corners using inpainting
+# use ffmpeg cropdetect, if has significant area change then no further processing
+# if no significant area change, use this blur detection to get the main area
+# remove watermark again?? around corners?
+# then reuse the dog detection and get the crop from processed/cropped image.
+
+
 cv2_custom_build_init()
 import cv2
 
