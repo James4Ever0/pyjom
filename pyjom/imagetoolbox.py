@@ -877,7 +877,7 @@ def imageDogCatDetectionForCoverExtraction(
     # return [(0, 0), (defaultWidth, defaultHeight)]
     return croppedImageCoverResized
 
-def getImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat,debug=False):
+def getImageBestConfidenceWithBezierDogCatDetector(frame, dog_or_cat:Literal['dog', 'cat']='dog',debug=False):
     best_confidence = 0
     detections = bezierPaddleHubResnet50ImageDogCatDetector(
         frame, use_gpu=False
