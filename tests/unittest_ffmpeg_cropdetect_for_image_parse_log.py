@@ -56,5 +56,5 @@ if len(common_crops) > 0:
     if x<x1 and y<y1:
         # allow to calculate the area.
         area = (x1-x)*(y1-y)
-        cropped_area_ratio = 1-()
+        cropped_area_ratio = 1-(area/total_area)
         print("CROPPED AREA RATIO:",)
