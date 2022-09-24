@@ -73,7 +73,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
             mFrame = imageFourCornersInpainting(mFrame)
             processed_frame = imageDogCatDetectionForCoverExtraction(mFrame, dog_or_cat=dog_or_cat,confidence_threshold=confidence_threshold, crop=True)
             if processed_frame is not None:
-                breake
+                break
         # detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
         # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
         # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
