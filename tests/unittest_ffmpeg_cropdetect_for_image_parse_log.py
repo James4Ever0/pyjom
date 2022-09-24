@@ -72,4 +72,4 @@ if cropped_area_ratio > cropped_area_threshold:
     cv2.imshow("CROPPED IMAGE", image_black_cropped)
     cv2.waitKey(0)
 else:
-    print('image no need to crop black borders. ')
+    print('image no need to crop black borders. further processing needed')
