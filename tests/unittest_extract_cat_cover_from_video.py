@@ -62,13 +62,13 @@ duration = get_duration(path)
 mSampleSize = int(duration / 2)  # fps = 0.5 or something?
 processed_frame = None
 for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate=True):
-    animalCropDiagonalRect = imageDogCatDetectionForCoverExtraction(
-        frame,
-        dog_or_cat=dog_or_cat,
-        confidence_threshold=confidence_threshold,
-        crop=False,
-    )  # you must use gpu this time.
-    if animalCropDiagonalRect is not None:  # of course this is not None.
+    # animalCropDiagonalRect = imageDogCatDetectionForCoverExtraction(
+    #     frame,
+    #     dog_or_cat=dog_or_cat,
+    #     confidence_threshold=confidence_threshold,
+    #     crop=False,
+    # )  # you must use gpu this time.
+    # if animalCropDiagonalRect is not None:  # of course this is not None.
         # we need to identify this shit.
         # if checkMinMaxDict(text_area_ratio, text_area_threshold):
         text_area_ratio = getImageTextAreaRatio(frame)
