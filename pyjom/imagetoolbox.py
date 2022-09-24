@@ -537,15 +537,15 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
         detections.append({"identity": label, "confidence": output})
     return detections
 
-def imageCropoutBlackArea(image):
+areaThreshold = 0.1
+def imageCropoutBlackArea(image,):
 
 # import cv2
 
 # image = cv2.imread(mediaPath)
-image
+image = imageLoader(image)
 height, width = image.shape[:2]
 total_area = height * width
-areaThreshold = 0
 
 stdout, stderr = (
     ffmpeg.input(mediaPath, loop=1, t=15)
