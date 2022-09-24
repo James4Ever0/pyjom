@@ -119,6 +119,7 @@ def getImageTextAreaRatio(
     debug=False,
     inpaint=False,
     method="inpaint",
+    edgeDetection=
 ):
     res, (detection, recognition) = getImageTextAreaRecognized(
         image, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True
