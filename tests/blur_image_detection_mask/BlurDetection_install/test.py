@@ -113,11 +113,8 @@ def draw_bounding_box_with_contour(
     if x0 is not None:
         if debug:
             image = cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), 2)
-            display("with_bounding_box", image)
+            dcv2.imshow("with_bounding_box", image)
 
-    # if debug:
-        # return image
-    # else:
     if x0 is None:
         height, width = image.shape[:2]
         x0, y0, x1, y1 = 0, 0, width, height
