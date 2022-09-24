@@ -187,7 +187,10 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                 ) = videoMetadata
                 # print("VIDEO_METADATA",videoMetadata)
                 # breakpoint()
-                tags
+                if len(tags)>0:
+                    
+                else:
+                    continue
                 if duration_seconds == None:
                     print(debugTag, "VIDEO_METADATA", videoMetadata)
                     breakpoint()
