@@ -17,7 +17,7 @@ import cv2
 
 from pyjom.videotoolbox import getVideoFrameSampler
 from pyjom.imagetoolbox import (
-    # bezierPaddleHubResnet50ImageDogCatDetector,
+    bezierPaddleHubResnet50ImageDogCatDetector,
     # we deprecate this thing to make it somehow better.
     getImageTextAreaRatio,
     imageFourCornersInpainting,
@@ -32,7 +32,7 @@ dog_or_cat = "dog"
 confidence_threshold = 0.7
 # confidence_threshold = {"min": 0.7}
 text_area_threshold = {"max": 0.2}
-# gpu = True
+gpu = True
 
 import os
 
