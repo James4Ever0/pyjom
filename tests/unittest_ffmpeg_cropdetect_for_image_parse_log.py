@@ -51,4 +51,6 @@ if len(common_crops) > 0:
     result = parse.parse('{w:d}:{h:d}:{x:d}:{y:d}', selected_crop_string)
     w,h,x,y = [result[key] for key in ['w','h','x','y']]
     x1, y1 = min(x+w, width), min(y+h, height)
+    area = 0
     if x<x1 and y<y1:
+        # allow to calculate the area.
