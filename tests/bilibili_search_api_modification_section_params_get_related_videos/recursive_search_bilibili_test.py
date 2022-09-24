@@ -342,4 +342,6 @@ if __name__ == "__main__":
         print("FETCHED VIDEO METADATA FOR PRODUCTION:")
         print(videoMetadata)
         mCover, mTagSeries, mTitle, mBgm, dog_or_cat = videoMetadata
+        cv2.imshow("COVER", mCover)
+        cv2.waitKey(0)
         breakpoint()
