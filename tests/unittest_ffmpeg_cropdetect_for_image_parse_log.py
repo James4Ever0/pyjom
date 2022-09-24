@@ -28,6 +28,7 @@ stderr_decoded = stderr.decode("utf-8")
 
 # breakpoint()
 import parse
+cropped_area_threshold = 0.1
 
 common_crops = []
 
@@ -64,3 +65,5 @@ if len(common_crops) > 0:
 cropped_area_ratio = 1 - (area / total_area)  # 0.5652352766414517
 # use 0.1 as threshold?
 print("CROPPED AREA RATIO:", cropped_area_ratio)
+
+if cropped_area_threshold
