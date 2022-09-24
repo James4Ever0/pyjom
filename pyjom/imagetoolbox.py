@@ -718,12 +718,13 @@ def imageDogCatDetectionForCoverExtraction(image, dog_or_cat='dog'):
     # return detected most significant dog area?
 model = configYolov5()
 
-dog_or_cat = "dog"
+# dog_or_cat = "dog"
 
 # Images
 # img = '/media/root/help/pyjom/samples/image/miku_on_green.png'  # or file, Path, PIL, OpenCV, numpy, list
 # img = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg"
-imgPath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky.png"
+# imgPath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky.png"
+imgPath = image
 
 img = cv2.imread(imgPath)
 
