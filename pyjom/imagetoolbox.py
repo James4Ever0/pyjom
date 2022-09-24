@@ -4,7 +4,7 @@ import cv2
 
 from functools import lru_cache
 from lazero.utils.tools import flattenUnhashableList
-from  import Literal
+from typing import Literal
 def imageCropWithDiagonalRectangle(image, diagonalRectangle, order:Literal['opencv', 'normal']='opencv'):
     # order is opencv.
     assert order in ['opencv', 'normal']
