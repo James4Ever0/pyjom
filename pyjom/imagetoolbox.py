@@ -550,7 +550,7 @@ import ffmpeg
 # it must be a existing image.
 from lazero.filesystem.temp import tmpfile
 import uuid
-path = '/dev/shm/ffmpeg/{}.png'.format(str(uuid.uuid4()))
+path = '/dev/shm/cropdetect_ffmpeg_black_border/{}.png'.format(str(uuid.uuid4()))
 with tmpfile(path=path) as TF:
 mediaPath = path
 stdout, stderr = (
