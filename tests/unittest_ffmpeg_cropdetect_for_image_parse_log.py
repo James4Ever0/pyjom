@@ -7,6 +7,7 @@ mediaPath = "/root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png"
 import cv2
 
 image = cv2.imread(mediaPath)
+height, width = image.shape[:2]
 
 stdout, stderr = (
     ffmpeg.input(mediaPath, loop=1, t=15)
