@@ -795,6 +795,9 @@ def imageDogCatDetectionForCoverExtraction(
     animal_detection_dataframe["area_ratio"] = area / total_area
 
     df = animal_detection_dataframe
+    if debug:
+        print("DETECTION DATAFRAME")
+        print(df)
 
     new_df = df.loc[
         (df["area_ratio"] >= area_threshold)

@@ -87,7 +87,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                 dog_or_cat=dog_or_cat,
                 confidence_threshold=confidence_threshold,
                 crop=True,
-                # debug=True
+                debug=True
             )
             if processed_frame is not None:
                 break
