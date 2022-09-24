@@ -12,12 +12,13 @@ def imageCropWithDiagonalRectangle(image, diagonalRectangle, order:Literal['open
     imageShape = image.shape
     if len(imageShape) == 3:
         if order == "opencv":
-        return image[y0:y1, x0:x1,:]
+            return image[y0:y1, x0:x1,:]
         elif order == 'normal':
             return image[x0:x1, y0:y1,:]
     elif len(imageShape) == 2:
+        if order == 'opencv':
         return image[y0:y1, x0:x1]
-
+        elif order == 'normal':
     else:
         raise Exception("unknown image shape:", imageShape)
 
