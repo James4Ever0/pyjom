@@ -37,7 +37,7 @@ for line in stderr_decoded.split("\n"):
     result = parse.parse(formatString,line)
     if result is not None:
         # print(result)
-        cropString = "{}_{}_{}_{}".format(*[result[key] for key in ['w','','x','y']])
+        cropString = "{}_{}_{}_{}".format(*[result[key] for key in ['w','h','x','y']])
         # print(cropString)
         # breakpoint()
         common_crops.append(cropString)
@@ -48,4 +48,4 @@ common_crops_count_tuple_list.sort(key= lambda x: -x[1])
 selected_crop_string = common_crops_count_tuple_list[0][0]
 
 result = parse.parse('{w:d}:{h:d}:{x:d}:{y:d}', selected_crop_string)
-w,h,x,y, = result[]
+w,h,x,y, = [result[key] for key in ['w','h','x','y']]
