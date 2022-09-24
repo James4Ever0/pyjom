@@ -311,6 +311,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 cropped_image = imageDogCatCoverCropAdvanced(image)
                                 if cropped_image is not None:
                                     cropped_image_color_transfered = 
+                                    cv2.flip
                                 # r = requests.get(cover)
                                 # content = r.content
                                 # # corrupted or not?
