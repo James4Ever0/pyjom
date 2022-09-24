@@ -72,7 +72,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
     # we need to identify this shit.
     # if checkMinMaxDict(text_area_ratio, text_area_threshold):
 
-    detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=False) # no 
+    detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=False) # no gpu avaliable
     mDetections = [x for x in detections if x["identity"] == dog_or_cat]
     mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
     if len(mDetections) > 0:
