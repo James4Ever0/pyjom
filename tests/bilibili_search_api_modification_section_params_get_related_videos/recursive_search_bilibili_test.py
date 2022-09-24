@@ -303,7 +303,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                 import os
                                 os.environ['http'] = ""
                                 os.environ['https'] = ""
-                                from pyjom.imagetoolbox import imageLoader, bezierPaddleHubResnet50ImageDogCatDetector
+                                from pyjom.imagetoolbox import imageLoader, imageDogCatCoverCropAdvanced
                                 image = imageLoader(cover)
                                 # import requests
                                 
