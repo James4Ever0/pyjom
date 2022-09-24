@@ -102,7 +102,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
                     dog_or_cat=dog_or_cat,
                     confidence_threshold=yolov5_confidence_threshold,
                     crop=True,
-                    debug=False,
+                    debug=True,
                 )
                 if processed_frame is not None:
                     # blurValue = imageCropoutBlurArea(processed_frame, value=True)
