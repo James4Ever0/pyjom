@@ -327,6 +327,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                     cropped_image_color_transfered = imageHistogramMatch(cropped_image, reference_histogram_cover)
                                     cropped_image_color_transfered_fliped = cv2.flip(cropped_image_color_transfered,1)
                                     cover_target = cropped_image_color_transfered_fliped
+                                    break
                                 # r = requests.get(cover)
                                 # content = r.content
                                 # # corrupted or not?
