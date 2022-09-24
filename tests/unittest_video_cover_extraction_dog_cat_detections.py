@@ -28,6 +28,8 @@ os.environ[
 model = torch.hub.load(
     localModelDir, "yolov5s", source="local"
 )  # or yolov5m, yolov5l, yolov5x, custom
+from pyjom.commons import 
+model = 
 
 dog_or_cat = "dog"
 
