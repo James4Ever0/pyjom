@@ -26,6 +26,7 @@ stderr_decoded = stderr.decode("utf-8")
 #     print(line)
 
 # breakpoint()
+import parse
 
 common_crops = []
 for line in stderr_decoded.split("\n"):
