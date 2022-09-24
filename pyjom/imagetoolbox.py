@@ -877,7 +877,15 @@ def imageDogCatDetectionForCoverExtraction(
     # return [(0, 0), (defaultWidth, defaultHeight)]
     return croppedImageCoverResized
 
-def getImageBestConfidenceWithBezierDogCatDetector()
+def getImageBestConfidenceWithBezierDogCatDetector():
+    detections = bezierPaddleHubResnet50ImageDogCatDetector(
+        frame, use_gpu=False
+    )  # no gpu avaliable
+    mDetections = [x for x in detections if x["identity"] == dog_or_cat]
+    mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
+    if len(mDetections) > 0:
+        best_confidence = mDetections[0]["confidence"]
+        print("BEST CONFIDENCE:", best_confidence)
 
 def imageDogCatCoverCropAdvanced(
     frame,
