@@ -25,7 +25,7 @@ from pyjom.commons import checkMinMaxDict
 dog_or_cat = "dog"
 confidence_threshold = {"min": 0.7}
 text_area_threshold = {"max": 0.2}
-gpu = False
+gpu = True
 
 import os
 
