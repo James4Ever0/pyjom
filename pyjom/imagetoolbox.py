@@ -699,7 +699,7 @@ if debug:
     display("inv_msk", inv_msk)
 # BlurDetection.scripts.display('msk', msk)
 contours, hierarchy = cv2.findContours(inv_msk, 1, 2)
-rectangle_boundingbox = draw_bounding_box_with_contour(contours, img, debug=True)
+rectangle_boundingbox = draw_bounding_box_with_contour(contours, img, debug=debug)
 
 def imageHistogramMatch(image, reference, delta=0.2):
 
