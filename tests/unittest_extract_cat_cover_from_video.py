@@ -69,7 +69,7 @@ for frame in getVideoFrameSampler(path, -1, -1, sample_size=mSampleSize, iterate
         if animalCropDiagonalRect is not None:
             mFrame = imageCropoutBlackArea(frame)
             mFrame = imageCropoutBlurArea(mFrame)
-            
+            mFrame = 
         # detections = bezierPaddleHubResnet50ImageDogCatDetector(frame, use_gpu=gpu)
         # mDetections = [x for x in detections if x["identity"] == dog_or_cat]
         # mDetections.sort(key=lambda x: -x["confidence"])  # select the best one.
