@@ -119,7 +119,7 @@ def draw_bounding_box_with_contour(
             height, width = image.shape[:2]
             return 0, 0, width, height
         else:
-            return (x0, y0), (x1, y1)
+            return [(x0, y0), (x1, y1)]
 
 
 # BlurDetection.scripts.display('msk', msk)
