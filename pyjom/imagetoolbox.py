@@ -708,7 +708,7 @@ def imageHistogramMatch(image, reference, delta=0.2):
 
 import numpy as np
 
-transfer_02 = (target * 0.8 + transfer * 0.2).astype(np.uint8)
+transfer_02 = (target * (1-delta)+ transfer * delta).astype(np.uint8)
 
 
 def imageDogCatDetectionForCoverExtraction(image, dog_or_cat='dog'):
