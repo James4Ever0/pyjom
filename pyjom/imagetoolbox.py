@@ -122,7 +122,7 @@ def getImageTextAreaRatio(
     edgeDetection=
 ):
     res, (detection, recognition) = getImageTextAreaRecognized(
-        image, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True
+        image_passed, langs=langs, gpu=gpu, recognizer=recognizer, return_res=True
     )
     width, height = res
     img = np.zeros((height, width), dtype=np.uint8)
