@@ -124,5 +124,5 @@ def draw_bounding_box_with_contour(
 
 # BlurDetection.scripts.display('msk', msk)
 contours, hierarchy = cv2.findContours(inv_msk, 1, 2)
-reddress = draw_bounding_box_with_contour(contours, img, debug=True)
-cv2.waitKey(0)
+rectangle_boundingbox = draw_bounding_box_with_contour(contours, img, debug=True)
+# cv2.waitKey(0)
