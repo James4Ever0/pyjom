@@ -676,7 +676,8 @@ import sys
 # img = getImageTextAreaRatio(img, inpaint=True, edgeDetection=True)
 
 img_fft, val, blurry = BlurDetection.blur_detector(img,thresh=thresh)
-print("this image {0} blurry".format(["isn't", "is"][blurry]))
+if debug:
+    print("this image {0} blurry".format(["isn't", "is"][blurry]))
 msk, result, blurry = BlurDetection.blur_mask(img, min_thresh=min_thresh,max_thresh=max_thresh)
 
 inv_msk = 255 - msk
