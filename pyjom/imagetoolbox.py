@@ -702,6 +702,8 @@ def imageCropoutBlurArea(image, thresh=10,max_thresh=120,min_thresh=50,debug=Fal
     return rectangle_boundingbox
 
 def imageHistogramMatch(image, reference, delta=0.2):
+    target = imageLoader(image)
+    
     transfer = color_transfer(source, target)
 
 import numpy as np
