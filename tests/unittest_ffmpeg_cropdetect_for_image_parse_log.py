@@ -26,6 +26,9 @@ for line in stderr_decoded.split("\n"):
     import parse
     formatString='[{}] x1:{x1:d} x2:{x2:d} y1:{y1:d} y2:{y2:d} w:{w:d} h:{h:d} x:{x:d} y:{y:d} pts:{pts:f} t:{t} crop={}:{}:{}:{}'
     # print(line)
-    parse.parse(formatString,line)
+    result = parse.parse(formatString,line)
+    if result is not None:
+        print(result)
+        breakpoint()
     # [Parsed_cropdetect_0 @ 0x56246a16cbc0] x1:360 x2:823 y1:0 y2:657 w:464 h:656 x:360 y:2 pts:3 t:0.120000 crop=464:656:360:2
     # this crop usually will never change. but let's count?
