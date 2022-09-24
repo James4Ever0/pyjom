@@ -729,7 +729,7 @@ def imageDogCatDetectionForCoverExtraction(
     defaultCropWidth=1920,
     defaultCropHeight=1080,
     debug=False,
-    crop=False
+    crop=False,
 ):
     # return detected most significant dog area?
     model = configYolov5()
@@ -784,10 +784,10 @@ def imageDogCatDetectionForCoverExtraction(
     allowedHeight = min(
         int(defaultWidth / defaultCropWidth * defaultHeight), defaultHeight
     )
-    croppedImageCoverResized =None
-    flag = count >=1
-        if not crop:
-            return flag
+    croppedImageCoverResized = None
+    flag = count >= 1
+    if not crop:
+        return flag
     if flag:
         selected_col = new_df.iloc[0]  # it is a dict-like object.
         # print(new_df)
