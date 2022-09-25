@@ -466,7 +466,9 @@ const requestListener = function (req, res){
     response = iceAI_word(message, chatId)
     response.then((content) => {
       console.log("REAL RESPONSE:", content)
-    
+      if (content !=null){
+        
+      }
     })
 
   }else{
