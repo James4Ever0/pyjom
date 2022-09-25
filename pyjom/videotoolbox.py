@@ -641,7 +641,7 @@ def detectStationaryLogoOverTime(
                 else:
                     import parse
 
-                    parseResult = parse.parse("crop_{x}_{y}_{w}_{h}", crop_flag)
+                    parseResult = parse.parse("crop_{x:d}_{y:d}_{w:d}_{h:d}", crop_flag)
                     currentFourCorners = getFourCorners(
                         parseResult["x"],
                         parseResult["y"],
