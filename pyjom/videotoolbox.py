@@ -679,13 +679,13 @@ def detectStationaryLogoOverTime(
             # values = []
             for (mStart, mEnd) in start_end_ranges:
                 values.append(
-                    {delogoCommandSet: (mStart, mEnd)}
+                    (delogoCommandSet, (mStart, mEnd))
                 )  # can it be turned into something useful?
         delogoCommandList.extend(values)  # this is a sequential list.
     from pyjom.mathlib import sequentialToMergedRanges
     print(delogoCommandList)
     print("DELOGO COMMAND LIST")
-    breakpoint()
+    # breakpoint()
 
     delogoCommandDict = sequentialToMergedRanges(delogoCommandList)
 
