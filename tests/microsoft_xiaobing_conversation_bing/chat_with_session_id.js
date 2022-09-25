@@ -463,7 +463,7 @@ const requestListener = function (req, res){
   }
   chatId = topic_chatId_dict[topic]
   if (chatId !=null){
-response = iceAI_word(test_request, chatId) 
+response = iceAI_word(message, chatId) 
 
   }else{
     res.writeHead(401)
