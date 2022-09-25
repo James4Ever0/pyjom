@@ -80,7 +80,8 @@ from lazero.filesystem import tmpdir
 #         return False
 if __name__ == "__main__":
     import argparse
-    parser = argparse.A
+    parser = argparse.ArgumentParser()
+    parser.add_argument("")
     COMPLETE_TEST = True
     if COMPLETE_TEST:
         completeTest()
