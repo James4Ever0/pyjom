@@ -12,11 +12,11 @@ def getNow():
     return datetime.datetime.now()
 
 
-def getGPT2Status():
+def getGPT2Status(start=21, end=22):
     hour = getNow().hour
     print("HOUR: ", hour)
     # if hour >= 16 and hour <= 20: # for test
-    # if hour > 2 and hour <= 8:
+    # if hour >= 2 and hour <= 8:
     if hour >= 21 and hour <= 22:  # for practice
         return "train"
     else:
