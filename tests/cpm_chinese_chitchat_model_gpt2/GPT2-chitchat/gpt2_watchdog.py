@@ -16,6 +16,7 @@ def getGPT2Status():
     hour = getNow().hour
     # if hour > 16 and hour < 20: # for test
     # if hour > 2 and hour < 8:
+    if ho
         return "train"
     else:
         return "eval"
