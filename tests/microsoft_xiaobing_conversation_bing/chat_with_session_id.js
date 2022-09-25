@@ -459,7 +459,7 @@ const requestListener = function (req, res){
   console.log("MESSAGE:", message)
   console.log("TOPIC:", topic)
   if (topic_chatId_dict[topic] == null){
-    topic_chatId_dict[topic] = 
+    topic_chatId_dict[topic] = newChatId(topic)
   }
 
   }else{
