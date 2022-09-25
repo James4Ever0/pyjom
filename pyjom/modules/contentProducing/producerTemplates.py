@@ -521,7 +521,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     print("MEDIALANG CODE SAVED TO:", medialangCodeSavePath)
     # why use medialang? probably because these render language are not "fully automated" or "automated enough" to express some abstract ideas? or just to leave some blanks for redundent low-level implementations?
     # print("_________________MEDIALANG CODE_________________")
-    medialangObject.execute()  ## shit will happen.
+    editly_outputPath, medialang_item_list = medialangObject.execute()  ## shit will happen.
     # next time you could test medialang directly.
 
     # medialangObject.eval() # is something like that?
