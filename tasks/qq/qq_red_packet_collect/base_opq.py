@@ -50,7 +50,8 @@ bot = Botoy(qq = my_qq, port = opq_server["port"], host=opq_server["host"], log=
 ## this is the damn bot. how to get group name?
    
 myGroupList = action.getGroupList()
-print(myGroupList)
+from lazero.utils.logger import sprint
+sprint(myGroupList)
 breakpoint()
 # def getGroupName(group_id):
 #     return groupName
