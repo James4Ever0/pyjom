@@ -455,8 +455,7 @@ def dotVideoProcessor(
                             cutTo = layerElemItem.args.get("cutTo", endOfVideo)
                             layerOriginalDuration = cutTo - cutFrom
                             mute = layerElemItem.args.get("slient", False)
-
-
+                            
                             processedFilePath = ffmpegVideoPreProductionFilter(
                                 filepath,
                                 start=cutFrom,
