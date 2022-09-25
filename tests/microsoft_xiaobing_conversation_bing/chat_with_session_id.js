@@ -411,4 +411,5 @@ function getContents(opts) {
     });
 }
 // module.exports = { iceAI_word };
-let test_
+let test_request = "你好呀"
+let 
