@@ -428,7 +428,12 @@ function getContents(opts) {
 // let test_request = "不会吧"
 // let test_request = "python"
 const http = require('http');
-
+function getQueryParams(reqUrl) {
+  current_url = new URL('http://localhost' + reqUrl)
+  params = current_url.searchParams
+  console.log('query parameters:', params)
+  return params
+}
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
 query = 'python'
