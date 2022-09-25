@@ -266,7 +266,7 @@ async function iceAI_word(
         var h = {
             zoTextResponse: "",
             zoIsGCSResponse: false,
-            zoSearchQuery: ,
+            zoSearchQuery: query,
             zoTimestampUtc: "",
             zoIsStartOfSession: true,
             zoRequestId: getRequestId(),
