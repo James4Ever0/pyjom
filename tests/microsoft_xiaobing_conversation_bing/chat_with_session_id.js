@@ -289,6 +289,7 @@ async function iceAI_word(
             },
             body: JSON.stringify(h),
         });
+        if result
 
         // {"content":"嘿 啾 嘿 啾啊","type":1,"delayContents":null,"entityInfo":[{"Entity":"嘿 啾 嘿 啾啊","IsEntity":false}],"target":"b","history":null,"hasClientIdinMem":true,"needSayHello":false,"isHookStr":false,"showChatBox":true,"metadata":{"AnswerFeed":"RandomChitChatService","EmotionInfo":"{\"EmotionClassificationInfo\":[{\"Category\":\"Sad\",\"Score\":0.0651140139},{\"Category\":\"Happy\",\"Score\":0.139467061},{\"Category\":\"Surprise\",\"Score\":0.176786855},{\"Category\":\"Angry\",\"Score\":0.358794},{\"Category\":\"Disgust\",\"Score\":0.2598381}],\"NeutralScore\":0.9992748,\"DomainInMatchScenario\":\"None\"}"}}
         result = JSON.parse(result);
