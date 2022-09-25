@@ -241,7 +241,7 @@ async function iceAI_word({
 }) {
     var wquery = a(Content, "3d9d5f16-5df0-43d7-902e-19274eecdc41", 256);
     console.log("encrypt:" + wquery);
-    let config = {};
+    // let config = {};
 
     // if ((await mysqld.isHaveChatIdIn(fromQQ)) == true) {
     //     console.log("没有chatid，获取新id")
