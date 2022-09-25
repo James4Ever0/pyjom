@@ -441,7 +441,12 @@ const requestListener = function (req, res){
     if (req.url == "/") {
       res.writeHead(200);
       res.end('xiaoice chat server');
-  } else if (req.url.split("?")[0] == 'chat'
+  } else if (req.url.split("?")[0] == 'chat'){
+    callback = (result) => {
+      res.writeHead(200);
+      res.end(getResultParsed(result, ['text', 'sticker']))
+  }
+  }
 }
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
