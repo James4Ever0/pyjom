@@ -304,7 +304,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             # 'SrcContent', 'UserID'(list)
             content_at_target = ("@"+content_text.split("@")[1]).strip()
             content_text = content_text.replace(content_at_target,"")
-            content_text = removeDuplicateChar(content_text, " ",)
+            content_text = replaceDuplicateChar(content_text, " ",)
             # UserExt = Content_json["UserExt"]
             # # shit revised. no more 'UserExt'
             # for elem in UserExt:
