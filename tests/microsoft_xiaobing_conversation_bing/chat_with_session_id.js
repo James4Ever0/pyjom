@@ -469,7 +469,8 @@ const requestListener = function (req, res){
       if (content !=null){
         callback(content)
       }else{
-        
+        res.writeHead(401);
+        res.end(JSON.stringify({'msg':''}))
       }
     })
 
