@@ -53,6 +53,12 @@ myGroupList = action.getGroupList()
 from lazero.utils.logger import sprint
 sprint(myGroupList)
 breakpoint()
+{'GroupId': 118794, 'GroupMemberCount': 2818│GroupUserQQ 1464760755 
+GroupUsername BOSE(QC30，QC35ii,soundsport，│, 'GroupName': '攻防世界交流群', 'GroupNotic│GroupUsername 还有以后吗... 
+budspro，buds2，buds+)                      │e': '第四届“第五空间”网络安全大赛\n1、报名网│MsgType TextMsg
+MsgType TextMsg                             │站：\x01https://ctf.360.net/5space\x02\n2、 │Content 喜欢男的女的或者是动物，植物。都是我 
+Content 2Pro和Pro的调音风格不同 seq 177311 t│报名时间：8月30日--9月9日（沿用DSCTF）\n', '│seq 223277 time 1664108058  MsgRandom 1842363
+ime 1664108050  MsgRandom 602242481         │GroupOwner': 41495, 'GroupTotalCount': 3000}
 # def getGroupName(group_id):
 #     return groupName
 
