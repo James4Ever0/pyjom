@@ -1,8 +1,10 @@
 # env LD_LIBRARY_PATH=/usr/local/lib python3 test_auto_dog_video_giphy_online_producer.py 
 
 #### PHASE 1 ####
-FULL TEST
+# FULL TEST
 
-ulimit -n 1048576 # to avoid NOF issues.
-tmux kill-session -t online_dog_cat_generator_test && echo "killed session: online_dog_cat_generator_test"
-tmuxp load test_auto_dog_video_giphy_online_producer.yaml
+# ulimit -n 1048576 # to avoid NOF issues.
+# tmux kill-session -t online_dog_cat_generator_test && echo "killed session: online_dog_cat_generator_test"
+# tmuxp load test_auto_dog_video_giphy_online_producer.yaml
+
+#### PHASE 2 ####
