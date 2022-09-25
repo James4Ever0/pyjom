@@ -513,6 +513,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     import uuid
 
     randomName = str(uuid.uuid4())
+    # or just use some temporary file instead?
     medialangCodeSavePath = os.path.join(
         "/root/Desktop/works/pyjom/tests/medialang_tests", "{}.mdl".format(randomName)
     )
@@ -525,6 +526,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # next time you could test medialang directly.
 
     # medialangObject.eval() # is something like that?
+    return editly_outputPath
 
     # slient all things? despite its config.
     # now render the file. how to make it happen?
