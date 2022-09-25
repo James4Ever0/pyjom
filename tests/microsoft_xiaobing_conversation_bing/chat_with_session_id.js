@@ -447,7 +447,10 @@ const requestListener = function (req, res){
       content = {"msg": success,'reply': result}
       res.end(JSON.stringify(content))
   }
-  }else()
+  }else{
+    res.writeHead(400);
+    res.end()
+  }
 }
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
