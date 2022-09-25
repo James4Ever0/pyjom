@@ -434,7 +434,7 @@ function getQueryParams(reqUrl) {
   console.log('query parameters:', params)
   return params
 }
-let 
+let topic_chatId_dict = {}
 const requestListener = function (req, res){
   console.log("________________________________________________")
     console.log("REQUEST AT:", req.url, req.method)
