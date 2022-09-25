@@ -441,7 +441,7 @@ const requestListener = function (req, res){
     if (req.url == "/") {
       res.writeHead(200);
       res.end('xiaoice chat server');
-  } else if (req.url.split("?")[0] == 'chat'){
+  } else if (req.url.split("?")[0] == '/chat'){
     callback = (result) => {
       res.writeHead(200);
       content = {"msg": 'success','reply': result}
