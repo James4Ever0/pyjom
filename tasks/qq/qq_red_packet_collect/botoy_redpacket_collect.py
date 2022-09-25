@@ -223,6 +223,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # recommed you to check the curret group only.
     #    stderrPrint("checkGroupNoReply:",groupNoReplyStack.get(ctx.FromGroupId,None))
     data_dict = ctx.data  # recommend to use this json object. or not?
+    groupName = data_dict.get('FromGroupName',None)
     group_id = data_dict["FromGroupId"]
     sender_id = data_dict["FromUserId"]
     RedBaginfoDict = data_dict["RedBaginfo"]
