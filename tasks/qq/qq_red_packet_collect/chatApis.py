@@ -89,7 +89,8 @@ def chatXiaoIce(msg, group_id, retryFlag=False, timeout=5):
 >>> r = requests.get("http://localhost:8735/chat",params={"topic":"python","message":"吃了没有"})
 if r.status_code == 200:
 
-conten = r.json()
+content = r.json()
+assert content['msg'] == 'success'
 {'msg': 'success', 'reply': '你这么一说，我好像是有点饿'}
 >>> exit()
 
