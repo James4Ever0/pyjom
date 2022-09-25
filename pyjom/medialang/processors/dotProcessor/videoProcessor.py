@@ -153,9 +153,9 @@ def ffmpegVideoPreProductionFilter(
         filterPrefix = "{}_".format(filterName)
         filterCommandString = commandString[len(filterPrefix) :]
         args, kwargs = filterCommandStringParser(filterCommandString)
-        print(commandString)
-        print(args, kwargs)
-        breakpoint()
+        # print(commandString)
+        # print(args, kwargs)
+        # breakpoint()
         return stream.filter("scale", *args, **kwargs)
 
     # TODO: FIX THIS SHIT!
