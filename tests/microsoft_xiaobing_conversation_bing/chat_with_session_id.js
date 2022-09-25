@@ -252,6 +252,7 @@ async function iceAI_word({
     if (config) {
         console.log("config:" + config);
     } else {
+      console.log('no config for xiaoice chat.')
         return;
     }
     var h = {
