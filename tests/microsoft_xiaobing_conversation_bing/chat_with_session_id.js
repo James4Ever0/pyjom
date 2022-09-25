@@ -447,6 +447,7 @@ const requestListener = function (req, res){
       content = {"msg": success,'reply': result}
       res.end(JSON.stringify(content))
   }
+  p
   }else{
     res.writeHead(400);
     res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
