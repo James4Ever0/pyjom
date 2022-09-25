@@ -362,7 +362,7 @@ async function newChatId(fromQQ) {
         '":""}';
     config = JSON.parse(config);
     console.log(config);
-    mysqld.addChatId(fromQQ, config);
+    // mysqld.addChatId(fromQQ, config);
     return config;
 }
 async function getAuth(opts, redis) {
