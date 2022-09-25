@@ -85,8 +85,8 @@ def chatOwnThink(msg: str, group_id, retryFlag=False,timeout=5):
     # return content
 
 def chatXiaoIce(msg, group_id, retryFlag=False, timeout=5):
->>> import requests
->>> r = requests.get("http://localhost:8735/chat",params={"topic":"python","message":"吃了没有"})
+    import requests
+    r = requests.get("http://localhost:8735/chat",params={"topic":topic,"message":"吃了没有"})
     if r.status_code == 200:
         try:
             content = r.json()
