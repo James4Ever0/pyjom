@@ -243,12 +243,12 @@ async function iceAI_word({
     console.log("encrypt:" + wquery);
     let config = {};
 
-    if ((await mysqld.isHaveChatIdIn(fromQQ)) == true) {
-        console.log("没有chatid，获取新id")
-        config = await mysqld.getChatId(fromQQ);
-    } else {
-        config = await newChatId(fromQQ);
-    }
+    // if ((await mysqld.isHaveChatIdIn(fromQQ)) == true) {
+    //     console.log("没有chatid，获取新id")
+    //     config = await mysqld.getChatId(fromQQ);
+    // } else {
+    //     config = await newChatId(fromQQ);
+    // }
     if (config) {
         console.log("config:" + config);
     } else {
