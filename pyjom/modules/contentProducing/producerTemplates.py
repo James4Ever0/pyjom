@@ -416,7 +416,7 @@ def renderList2MediaLang(
 
 # fix long loading time.
 @redisLRUCache()
-def getMusicInfoParsed(config,maxtime=2, mintime=7.8): #these are defaults.
+def getMusicInfoParsed(config,mintime=2, maxtime=7.8): #these are defaults.
     music = config["music"]
     # check if music is corrupted?
     font = config.get("font",None)
@@ -554,7 +554,7 @@ def petsWithMusicOnlineProducer(
     tempdir="/dev/shm/medialang/pets_with_music_online",
     remove_unused=True,
     fast: bool = True,
-    medialangTmpdir="/dev/shm/medialang" # this thing is not so good.
+    medialangTmpdir="/dev/shm/medialang"
 ):
     import uuid
 
