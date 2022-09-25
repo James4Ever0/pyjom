@@ -412,6 +412,7 @@ function getContents(opts) {
 }
 // module.exports = { iceAI_word };
 let test_request = "不会吧"
+query = 'python'
 let config = newChatId(query)
 response = iceAI_word(test_request, config)
 console.log("RESPONSE:", response)
