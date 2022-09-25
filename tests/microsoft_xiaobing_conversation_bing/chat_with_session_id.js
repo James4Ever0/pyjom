@@ -441,7 +441,7 @@ const requestListener = function (req, res){
     if (req.url == "/") {
       res.writeHead(200);
       res.end('nodejs giphy server');
-  } else if (req.url.split("?")
+  } else if (req.url.split("?")[0] == 'chat'
 }
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
