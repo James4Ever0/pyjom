@@ -418,6 +418,8 @@ def renderList2MediaLang(
 @redisLRUCache()
 def getMusicInfoParsed(config,mintime=2, maxtime=7.8, gaussian=True): #these are defaults.
     music = config["music"]
+    gaussian = config.get("gaussian", True) # this is different. default to use gaussian instead.
+
     # check if music is corrupted?
     font = config.get("font",None)
     policy = config.get("policy",{})
