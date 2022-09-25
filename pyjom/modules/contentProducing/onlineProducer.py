@@ -7,7 +7,8 @@ def OnlineProducer(processed_info_generator, source = 'giphy',template=None, tem
     # template_configs is a generator, it generate configs.
     # print("PROCESSED_INFO_GENERATOR: ", processed_info_generator)
     # breakpoint()
-    with # must use another level of abstraction
+    import uuid
+    with tmpdir(path=# must use another level of abstraction
     if source == 'giphy':
         template_function = getProducerTemplate(template)
         # print("TEMPLATE FUNCTION ACQUIRED %s" % template_function)
