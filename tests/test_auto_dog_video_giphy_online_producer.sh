@@ -8,3 +8,4 @@
 # tmuxp load test_auto_dog_video_giphy_online_producer.yaml
 
 #### PHASE 2 ####
+# check medialang render result.
