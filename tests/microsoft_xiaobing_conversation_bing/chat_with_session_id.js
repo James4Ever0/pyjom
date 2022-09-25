@@ -5,6 +5,10 @@ function getRequestId() {
     return (ot() + ot() + ot() + ot() + ot() + ot() + ot() + ot()).toLowerCase();
 }
 
+const sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 function ot() {
     return (((1 + Math.random()) * 65536) | 0).toString(16).substring(1);
 }
