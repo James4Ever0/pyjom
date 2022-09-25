@@ -465,7 +465,7 @@ const requestListener = function (req, res){
   if (chatId !=null){
 
   }else{
-    
+    res.end(JSON.stringify({'msg':}))
   }
 
   }else{
