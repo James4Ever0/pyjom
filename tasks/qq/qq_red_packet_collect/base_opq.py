@@ -69,6 +69,8 @@ def getGroupName(group_id):
             return
     group_id = int(group_id)
     groupName = myGroupDict.get(group_id,None)
+    if groupName is None:
+        print("NO GROUP NAME AVALIABLE.")
     return groupName
 
 #  	搜索群组 添加好友
