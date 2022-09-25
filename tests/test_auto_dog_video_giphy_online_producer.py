@@ -90,7 +90,8 @@ if __name__ == "__main__":
         # a special hack
         # import tempfile
         with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
-            print("MEDIALANG SUPER TMPDIR:", medialangTmpDir)
+            print("MEDIALANG SUPER TMPDIR:", medialangTmpDir) # as some sort of protection.
+            
             result = PMRT_0(scriptFilePath, verbose=False)
             editly_outputPath, medialang_item_list = result  # this just return none!
             # data -> editly json
