@@ -84,7 +84,7 @@ if __name__ == "__main__":
     parser.add_argument("-p","--partial", action="store_true", default=False)
     args = parser.parse_args()
 
-    COMPLETE_TEST = not 
+    COMPLETE_TEST = not args.partial
     if COMPLETE_TEST:
         completeTest()
     # so we don't have to run it all the time. really?
