@@ -434,6 +434,10 @@ function getQueryParams(reqUrl) {
   console.log('query parameters:', params)
   return params
 }
+
+const requestListener = function (req, res){
+  
+}
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
 query = 'python'
