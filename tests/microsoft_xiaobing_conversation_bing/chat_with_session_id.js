@@ -440,7 +440,7 @@ const requestListener = function (req, res){
     console.log("REQUEST AT:", req.url, req.method)
     if (req.url == "/") {
       res.writeHead(200);
-      res.end('nodejs giphy server');
+      res.end('xiaoice chat server');
   } else if (req.url.split("?")[0] == 'chat'
 }
 let test_request = "你吃了没有"
