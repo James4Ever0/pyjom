@@ -422,7 +422,8 @@ function getContents(opts) {
 
             resolve(response.body);}catch(e){
                 console.log('ERROR',e)
-                console.log('no ')
+                console.log('request failed')
+                resolve()
             }
             
         });
