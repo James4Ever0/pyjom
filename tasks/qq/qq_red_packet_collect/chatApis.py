@@ -106,7 +106,7 @@ def chatXiaoIce(msg, group_id, retryFlag=False, timeout=5):
 def getChatApiReply(msg: str, group_id, chatApiIndex = 0,retryFlag=False,timeout=15): # 15 seconds of grace time.
     # chatApis = [chatQingKeYun, chatAtri]
     # blacklist chatOwnThink.
-    chatApis = [chatAtri, chatGPT2Local] # no random shit!
+    chatApis = [chatAtri, chatGPT2Local, chatXiaoIce] # no random shit!
     # chatApi = random.choice(chatApis)
     chatApi = chatApis[chatApiIndex]
     try:
