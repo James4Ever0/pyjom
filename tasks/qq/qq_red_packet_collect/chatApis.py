@@ -84,7 +84,7 @@ def chatOwnThink(msg: str, group_id, retryFlag=False,timeout=5):
     # content = data['content']
     # return content
 
-def chatXiaoIce(msg, group_id, retry_flag=False)
+def chatXiaoIce(msg, group_id, retryFlag=False, timeout=5):
 
 
 # changed. non_standard.
