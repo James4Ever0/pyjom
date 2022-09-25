@@ -448,8 +448,8 @@ const requestListener = function (req, res){
       res.end(JSON.stringify(content))
   }
   params = getQueryParams(req.url)
-  message =params.message
-  topic = params.topic
+  message =params/message
+  topic = params.get("topic")
   if (message==null){
     message = "你好呀"
   }
