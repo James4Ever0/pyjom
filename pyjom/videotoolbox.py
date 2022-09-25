@@ -289,7 +289,7 @@ def detectTextRegionOverTime(
         rangeStart, rangeEnd = index - convSpan, index + convSpan
         rangeStart, rangeEnd = max(0, rangeStart), min(maxListIndex, rangeEnd)
         mConvList = detectionList[rangeStart:rangeEnd]
-        mergedRects = getMergedRects(mConvList, width, height)
+        mergedRects = getMergedRects(mConvList, width, height) #XYWH.
         if top_k > 0:
             mergedRects.sort(
                 # key=lambda XYWH: -getDiagonalRectArea(diagonalRect)
