@@ -56,6 +56,7 @@ sprint(myGroupList)
 breakpoint()
 def getGroupName(group_id):
     group_id = int(group_id)
+    global myGroupList
     return groupName
 
 #  	搜索群组 添加好友
