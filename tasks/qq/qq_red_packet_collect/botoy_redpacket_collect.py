@@ -298,6 +298,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             Content = ctx.Content  # this is string.
             Content_json = json.loads(Content)
             content_text = Content_json["Content"]
+            breakpoint()
             UserExt = Content_json["UserExt"]
             for elem in UserExt:
                 QQNick = elem["QQNick"]
