@@ -233,6 +233,7 @@ def ffmpegVideoPreProductionFilter(
     renderList = mergedRangesToSequential(renderDict)
     renderVideoStreamList = []
     if audio:
+        # we may want audio sometime, but not this time.
         renderAudioStream = ffmpeg.input(filepath, ss=start, to=end).audio
     # for elem in renderList:
     #     print(elem)
