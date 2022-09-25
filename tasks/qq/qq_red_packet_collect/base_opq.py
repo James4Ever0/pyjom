@@ -68,7 +68,7 @@ def updateGroupNameDict(groupName, group_id):
         print("GROUP NAME:", groupName)
         myGroupDict.update({group_id:groupName})
 
-def getGroupName(group_id):
+def getGroupNameFromDict(group_id):
     global myGroupList, action, myGroupDict
     if myGroupList in [None, []]: # if not empty please update this dict elsewhere?
         try:
