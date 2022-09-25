@@ -82,7 +82,9 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("-p","--partial", action="store_true", default=False)
-    COMPLETE_TEST = True
+    args = parser.parse_args()
+
+    COMPLETE_TEST = not 
     if COMPLETE_TEST:
         completeTest()
     # so we don't have to run it all the time. really?
