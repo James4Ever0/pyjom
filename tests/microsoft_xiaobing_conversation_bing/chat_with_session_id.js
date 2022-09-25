@@ -472,7 +472,7 @@ const requestListener = function(req, res) {
         }
         chatId = topic_chatId_dict[topic]
         if (chatId != null) {
-            response = iceAI_word(message, chatId)
+            response = iceAI_word(message, chatId,topic)
             response.then((content) => {
                 console.log("REAL RESPONSE:", content)
                 if (content != null) {
