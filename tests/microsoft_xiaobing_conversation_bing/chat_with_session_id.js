@@ -458,6 +458,7 @@ const requestListener = function (req, res){
   }
   console.log("MESSAGE:", message)
   console.log("TOPIC:", topic)
+  if (topic_chatId_dict[topic)
   }else{
     res.writeHead(400);
     res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
