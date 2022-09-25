@@ -427,6 +427,8 @@ function getContents(opts) {
 // module.exports = { iceAI_word };
 // let test_request = "不会吧"
 // let test_request = "python"
+const http = require('http');
+
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
 query = 'python'
