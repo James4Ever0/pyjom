@@ -412,4 +412,5 @@ function getContents(opts) {
 }
 // module.exports = { iceAI_word };
 let test_request = "你好呀"
-response = iceAI_word.testRequest(test_request
+let config = new
+response = iceAI_word()
