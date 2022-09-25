@@ -313,7 +313,9 @@ async function iceAI_word(
             return reply;
         }
     }
-  } catch(e){}
+  } catch(e){
+    console.log('ERROR',e)
+  }
 }
 
 async function newChatId(query) {
