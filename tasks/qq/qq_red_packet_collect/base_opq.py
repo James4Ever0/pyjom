@@ -50,8 +50,10 @@ bot = Botoy(qq = my_qq, port = opq_server["port"], host=opq_server["host"], log=
 ## this is the damn bot. how to get group name?
    
 myGroupList = action.getGroupList()
-def getGroupName(group_id):
-    return groupName
+print(myGroupList)
+breakpoint()
+# def getGroupName(group_id):
+#     return groupName
 
 #  	搜索群组 添加好友
 # openRedBag 	打开红包
