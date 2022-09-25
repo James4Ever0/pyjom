@@ -420,6 +420,7 @@ let config = newChatId(query)
 response = iceAI_word(test_request, config) // automatically retry once. if keeping generating useless shits, we may decide to give it up?
 // it is a promise.
 
+// this is async shit.
 response.then((content) => {console.log("REAL RESPONSE:", content)})
 // REAL RESPONSE: 不想就不说了
 // console.log("RESPONSE:", response)
