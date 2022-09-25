@@ -59,7 +59,7 @@ except:
 # from lazero.utils.logger import sprint
 # sprint(myGroupList)
 # breakpoint()
-def updateGroupName(groupName, group_id):
+def updateGroupNameDict(groupName, group_id):
     global myGroupDict
     group_id = int(group_id)
     if group_id not in myGroupDict.keys():
