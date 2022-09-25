@@ -63,7 +63,8 @@ def updateGroupName(groupName, group_id):
     global myGroupDict
     group_id = int(group_id)
     if group_id not in myGroupDict.keys():
-        print("UPDATING GROUPID-> GROUP_NAME DICT")
+        print("UPDATING GROUP_ID -> GROUP_NAME DICT")
+        print("OROUP ID:". group_id)
         myGroupDict.update({group_id:groupName})
 
 def getGroupName(group_id):
