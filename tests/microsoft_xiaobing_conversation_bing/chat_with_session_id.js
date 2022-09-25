@@ -484,6 +484,10 @@ const requestListener = function (req, res){
     res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
   }
 }
+const server = http.createServer(requestListener);
+port = 873
+server.listen(port);
+console.log('server running on http://localhost:' + port);
 
 // // these code are just for test.
 // let test_request = "你吃了没有"
