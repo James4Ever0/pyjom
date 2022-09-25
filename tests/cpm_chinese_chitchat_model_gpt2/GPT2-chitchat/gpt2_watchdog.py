@@ -90,6 +90,7 @@ def terminateGPT2():
 
 def checkGPT2Status():
     gpt2status = getGPT2Status()
+    print("gpt2 status: " + gpt2status)
     if gpt2status == "train":
         terminateGPT2()
         trained = getGPT2TrainedStatus()
