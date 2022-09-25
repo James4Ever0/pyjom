@@ -684,7 +684,7 @@ def petsWithMusicOnlineProducer(
                     f.write(medialangScript)
                 print("MEDIALANG SCRIPT SAVED TO:",medialangScript_savedPath)
 
-                rendered_media_location = (
+                editly_outputPath, medialang_item_list = (
                     medialangObject.execute()
                 )  # how to control its 'fast' parameter?
                 # maybe we need render the lyric file separately.
