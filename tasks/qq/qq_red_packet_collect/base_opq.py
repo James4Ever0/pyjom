@@ -50,12 +50,13 @@ bot = Botoy(qq = my_qq, port = opq_server["port"], host=opq_server["host"], log=
 ## this is the damn bot. how to get group name?
    
 myGroupList = action.getGroupList()
+# [{'GroupId': 118794, 'GroupMemberCount': 2818, 'GroupName': '攻防世界交流群', 'GroupNotice': '第四届“第五空间”网络安全大赛\n1、报名网站：\x01https://ctf.360.net/5space\x02\n2、 报名时间：8月30日--9月9日（沿用DSCTF）\n', 'GroupOwner': 41495, 'GroupTotalCount': 3000},...]
 from lazero.utils.logger import sprint
-# {'GroupId': 118794, 'GroupMemberCount': 2818, 'GroupName': '攻防世界交流群', 'GroupNotice': '第四届“第五空间”网络安全大赛\n1、报名网站：\x01https://ctf.360.net/5space\x02\n2、 报名时间：8月30日--9月9日（沿用DSCTF）\n', 'GroupOwner': 41495, 'GroupTotalCount': 3000}
 sprint(myGroupList)
 breakpoint()
-# def getGroupName(group_id):
-#     return groupName
+def getGroupName(group_id):
+    group_id = int(group_id)
+    return groupName
 
 #  	搜索群组 添加好友
 # openRedBag 	打开红包
