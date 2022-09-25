@@ -423,9 +423,8 @@ function getContents(opts) {
             resolve(response.body);}catch(e){
                 console.log('ERROR',e)
                 console.log('request failed')
-                resolve(n
+                resolve(null);
             }
-            
         });
     });
 }
