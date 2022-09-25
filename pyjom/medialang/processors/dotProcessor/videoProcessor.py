@@ -27,6 +27,7 @@ def ffmpegVideoPreProductionFilter(
     start=None,
     end=None,
     cachePath=None,
+    audio=False,
     filters: List[
         Literal[
             "minterpolate",
