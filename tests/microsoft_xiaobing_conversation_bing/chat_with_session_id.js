@@ -461,7 +461,8 @@ const requestListener = function (req, res){
   if (topic_chatId_dict[topic] == null){
     topic_chatId_dict[topic] = newChatId(topic)
   }
-  chatId = 
+  chatId = topic_chatId_dict[topic]
+  if (chatId !=null)
 
   }else{
     res.writeHead(400);
