@@ -247,6 +247,7 @@ def ffmpegVideoPreProductionFilter(
         stream = ffmpeg.input(
             filepath, ss=mStart, to=mEnd
         ).video  # no audio? seriously?
+        # this is video stream.
         if renderCommandString == "empty":
             pass  # do not continue since maybe we have preview filter below?
             # still need to append shit below. we cannot skip this loop.
