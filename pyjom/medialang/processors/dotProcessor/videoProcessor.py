@@ -30,7 +30,7 @@ def ffmpegVideoPreProductionFilter(
     audio=False,
     filters: List[
         Literal[
-            "minterpolate",
+            "minterpolate", # add option for this shit. use 
             "removegrain",
             "bilateral",
             "randomFlip",
@@ -455,7 +455,7 @@ def dotVideoProcessor(
                             cutTo = layerElemItem.args.get("cutTo", endOfVideo)
                             layerOriginalDuration = cutTo - cutFrom
                             mute = layerElemItem.args.get("slient", False)
-                            
+
                             processedFilePath = ffmpegVideoPreProductionFilter(
                                 filepath,
                                 start=cutFrom,
