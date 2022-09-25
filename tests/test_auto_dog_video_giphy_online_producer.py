@@ -34,14 +34,14 @@ def completeTest():
     wbRev.main()
 
 
-def partialMedialangRenderTest(medialangScript, verbose=True):
+def partialMedialangRenderTest(medialangScript,medialangTmpDir,verbose=True):
     # copy that script to my dear clipboard please?
     medialangObject = Medialang(script=medialangScript, verbose=verbose, medialangTmpDir=medialangTmpDir)
     result = medialangObject.execute()
     return result
 
 
-def PMRT_0(scriptFilePath="", verbose=True):
+def PMRT_0(scriptFilePath, verbose=True):
     with open(scriptFilePath, "r") as f:
         medialangScript = f.read()
     return partialMedialangRenderTest(medialangScript, verbose=verbose)
