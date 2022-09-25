@@ -463,7 +463,7 @@ def dotVideoProcessor(
                                 end=cutTo,
                                 cachePath=cachePath,
                                 preview=fast,
-                                audio=audio
+                                audio=not mute
                             )
                             # what is this filepath? man how do i handle this?
                             videoFilePath = processedFilePath
