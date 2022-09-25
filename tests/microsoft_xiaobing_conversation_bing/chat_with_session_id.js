@@ -244,6 +244,7 @@ async function iceAI_word(
     // MsgId,
 ) {
   await sleep(1000);
+  // for whatever reason you have to wait for this long.
 
   try{
     var wquery = a(Content, "3d9d5f16-5df0-43d7-902e-19274eecdc41", 256);
