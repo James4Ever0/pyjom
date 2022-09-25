@@ -36,7 +36,7 @@ def completeTest():
 
 def partialMedialangRenderTest(medialangScript, verbose=True):
     # copy that script to my dear clipboard please?
-    medialangObject = Medialang(script=medialangScript, verbose=verbose)
+    medialangObject = Medialang(script=medialangScript, verbose=verbose, medialangTmpDir=medialangTmpDir)
     result = medialangObject.execute()
     return result
 
