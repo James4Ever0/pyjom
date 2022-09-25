@@ -61,10 +61,10 @@ def ffmpegVideoPreProductionFilter(
         video_stream = stream
         output_width = mWidth
         output_height = mHeight
-        layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter(
+        layer_0 = video_stream_split[0].filter("scale", w=output_width, h=output_height).filter(
             "gblur", sigma=9
         )
-        layer_1 = video_stream.filter(
+        layer_1 = video_stream_split[1].filter(
             "scale",
             w="min(floor(iw*{}/ih),{})".format(output_height, output_width),
             h="min(floor(ih*{}/iw),{})".format(output_width, output_height),
