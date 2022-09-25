@@ -81,7 +81,7 @@ from lazero.filesystem import tmpdir
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("")
+    parser.add_argument("-p","--partial", action="store_true", default=False)
     COMPLETE_TEST = True
     if COMPLETE_TEST:
         completeTest()
