@@ -41,10 +41,10 @@ def partialMedialangRenderTest(medialangScript,medialangTmpDir,verbose=True):
     return result
 
 
-def PMRT_0(scriptFilePath, verbose=True):
+def PMRT_0(scriptFilePath,medialangTmpDir, verbose=True):
     with open(scriptFilePath, "r") as f:
         medialangScript = f.read()
-    return partialMedialangRenderTest(medialangScript, verbose=verbose)
+    return partialMedialangRenderTest(medialangScript,medialangTmpDir, verbose=verbose)
 
 
 from lazero.filesystem import tmpdir
