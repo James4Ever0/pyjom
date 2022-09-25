@@ -496,9 +496,10 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         total_cuts, demanded_cut_spans
     )  # this might be an infinity loop.
     # but why the fuck we got 10 minutes long of the freaking video?
-    print(render_list)  # empty render list! wtf?
+    if debug:
+        print(render_list)  # empty render list! wtf?
     # why the fuck we have duplicated clips? why the fuck?
-    breakpoint()  # WTF IS GOING ON? LEADING TO 10 MINS OF CRAP?
+    # breakpoint()  # WTF IS GOING ON? LEADING TO 10 MINS OF CRAP?
     medialangObject = renderList2MediaLang(
         render_list,
         slient=True,
