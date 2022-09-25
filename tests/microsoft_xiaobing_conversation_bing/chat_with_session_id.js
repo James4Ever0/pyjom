@@ -463,9 +463,9 @@ const requestListener = function (req, res){
   }
   chatId = topic_chatId_dict[topic]
   if (chatId !=null){
-
+    
   }else{
-    res.writeHead(401);
+    res.writeHead(401)
     res.end(JSON.stringify({'msg':'error when getting chatid'}))
   }
 
