@@ -84,6 +84,8 @@ def chatOwnThink(msg: str, group_id, retryFlag=False,timeout=5):
     # content = data['content']
     # return content
 
+def 
+
 
 # changed. non_standard.
 def getChatApiReply(msg: str, group_id, chatApiIndex = 0,retryFlag=False,timeout=15): # 15 seconds of grace time.
