@@ -412,5 +412,5 @@ function getContents(opts) {
 }
 // module.exports = { iceAI_word };
 let test_request = "你好呀"
-let config = new
-response = iceAI_word()
+let config = newChatId()
+response = iceAI_word(test_request, config)
