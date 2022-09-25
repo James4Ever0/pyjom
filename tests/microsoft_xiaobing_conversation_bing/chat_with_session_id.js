@@ -485,9 +485,9 @@ const requestListener = function (req, res){
   }
 }
 const server = http.createServer(requestListener);
-port = 873
+port = 8735
 server.listen(port);
-console.log('server running on http://localhost:' + port);
+console.log('xiaoice server running on http://localhost:' + port);
 
 // // these code are just for test.
 // let test_request = "你吃了没有"
