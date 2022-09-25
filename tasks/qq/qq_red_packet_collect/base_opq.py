@@ -61,7 +61,7 @@ except:
 # breakpoint()
 def getGroupName(group_id):
     global myGroupList, action
-    if myGroupList in [None, []]:
+    if myGroupList in [None, []]: # if not empty please update this dict elsewhere?
         try:
             myGroupList = action.getGroupList()
         except:
