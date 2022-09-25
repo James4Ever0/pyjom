@@ -300,7 +300,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             content_text = Content_json["Content"]
             # print(Content_json)
             # breakpoint()
-            'SrcContent',
+            # 'SrcContent', 'UserID'(list)
             # UserExt = Content_json["UserExt"]
             # # shit revised. no more 'UserExt'
             # for elem in UserExt:
