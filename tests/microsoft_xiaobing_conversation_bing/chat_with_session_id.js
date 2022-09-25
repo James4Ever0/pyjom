@@ -450,7 +450,9 @@ const requestListener = function (req, res){
   params = getQueryParams(req.url)
   message =params.message
   topic = params.topic
-  if (message!=null)
+  if (message==null){
+    message = ""
+  }
   }else{
     res.writeHead(400);
     res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
