@@ -30,7 +30,7 @@ def ffmpegVideoPreProductionFilter(
     audio=False,
     filters: List[
         Literal[
-            "minterpolate", # add option for this shit. use 'blend' instead of 
+            "minterpolate", # add time-saver option for this shit. use 'blend' instead of motion vector based compensation.
             "removegrain",
             "bilateral",
             "randomFlip",
