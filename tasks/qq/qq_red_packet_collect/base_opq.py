@@ -60,10 +60,11 @@ except:
 # sprint(myGroupList)
 # breakpoint()
 def updateGroupName(groupName, group_id):
-    if 
+    group_id = int(group_id)
+    if group_id not in myGroupDict
 
 def getGroupName(group_id):
-    global myGroupList, action
+    global myGroupList, action, myGroupDict
     if myGroupList in [None, []]: # if not empty please update this dict elsewhere?
         try:
             myGroupList = action.getGroupList()
