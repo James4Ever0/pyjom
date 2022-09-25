@@ -421,6 +421,7 @@ response = iceAI_word(test_request, config) // automatically retry once. if keep
 // it is a promise.
 
 // this is async shit.
+// what if there's some error?
 response.then((content) => {console.log("REAL RESPONSE:", content)})
 // REAL RESPONSE: 不想就不说了
 // console.log("RESPONSE:", response)
