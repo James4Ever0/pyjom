@@ -463,7 +463,8 @@ const requestListener = function (req, res){
   }
   chatId = topic_chatId_dict[topic]
   if (chatId !=null){
-    
+response = iceAI_word(test_request, chatId) 
+
   }else{
     res.writeHead(401)
     res.end(JSON.stringify({'msg':'error when getting chatid'}))
