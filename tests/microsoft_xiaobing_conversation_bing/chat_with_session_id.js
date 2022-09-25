@@ -485,18 +485,18 @@ const requestListener = function (req, res){
   }
 }
 
+// // these code are just for test.
+// let test_request = "你吃了没有"
+// // let test_request2 = "你吃了没有"
+// query = 'python'
+// let config = newChatId(query)
+// response = iceAI_word(test_request, config) // automatically retry once. if keeping generating useless shits, we may decide to give it up?
+// // it is a promise.
 
-let test_request = "你吃了没有"
-// let test_request2 = "你吃了没有"
-query = 'python'
-let config = newChatId(query)
-response = iceAI_word(test_request, config) // automatically retry once. if keeping generating useless shits, we may decide to give it up?
-// it is a promise.
-
-// this is async shit.
-// what if there's some error?
-response.then((content) => {console.log("REAL RESPONSE:", content)})
-// REAL RESPONSE: 不想就不说了
-// console.log("RESPONSE:", response)
-// response = iceAI_word(test_request2, config)
-// console.log("RESPONSE:", response)
+// // this is async shit.
+// // what if there's some error?
+// response.then((content) => {console.log("REAL RESPONSE:", content)})
+// // REAL RESPONSE: 不想就不说了
+// // console.log("RESPONSE:", response)
+// // response = iceAI_word(test_request2, config)
+// // console.log("RESPONSE:", response)
