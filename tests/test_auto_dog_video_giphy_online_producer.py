@@ -79,6 +79,8 @@ from lazero.filesystem import tmpdir
 #         shutil.rmtree(tempdir)
 #         return False
 if __name__ == "__main__":
+    import argparse
+    
     COMPLETE_TEST = True
     if COMPLETE_TEST:
         completeTest()
