@@ -420,7 +420,10 @@ function getContents(opts) {
             console.log("requestCode:" + response.statusCode);
             var responseCookies = response.headers["set-cookie"];
 
-            resolve(response.body);}
+            resolve(response.body);}catch(e){
+                console.log('ERROR',e)
+                console.log('no ')
+            }
             
         });
     });
