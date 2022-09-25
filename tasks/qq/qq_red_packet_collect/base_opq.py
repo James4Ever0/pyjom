@@ -59,7 +59,9 @@ except:
 # breakpoint()
 def getGroupName(group_id):
     global myGroupList
-    if myGroupList is None:
+    if myGroupList in [None, []]:
+        try:
+        myGroupList = action.getGroupList()
     group_id = int(group_id)
     return groupName
 
