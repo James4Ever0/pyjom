@@ -467,7 +467,7 @@ const requestListener = function (req, res){
     response.then((content) => {
       console.log("REAL RESPONSE:", content)
       if (content !=null){
-        
+        callback(content)
       }
     })
 
