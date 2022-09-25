@@ -416,6 +416,9 @@ let test_request2 = "你吃了没有"
 query = 'python'
 let config = newChatId(query)
 response = iceAI_word(test_request, config)
+// it is a promise.
+
+reponse.then()
 // console.log("RESPONSE:", response)
 // response = iceAI_word(test_request2, config)
 // console.log("RESPONSE:", response)
