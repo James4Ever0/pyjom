@@ -365,6 +365,8 @@ def ffmpegVideoPreProductionFilter(
     # detect if there is really anything audio related!
     if audio:
         renderStream = ffmpeg.output(renderVideoStream, renderAudioStream, cachePath)
+    else:
+        renderStream = ffmpeg.output(renderVideoStream, cachePath)
     # DEBUG #
     # args = renderStream.get_args()
     # print(args)
