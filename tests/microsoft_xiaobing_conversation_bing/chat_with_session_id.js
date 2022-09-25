@@ -465,7 +465,7 @@ const requestListener = function(req, res) {
         if (topic == null) {
             topic = "hhh"
         }
-        message = message.split(" ")[-1]
+        message = message.split(" ").pop()
         console.log("MESSAGE:", message)
         console.log("TOPIC:", topic)
         if (topic_chatId_dict[topic] == null) {
