@@ -436,7 +436,9 @@ function getQueryParams(reqUrl) {
 }
 
 const requestListener = function (req, res){
-  
+  console.log("________________________________________________")
+    console.log("REQUEST AT:", req.url, req.method)
+    if re
 }
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
