@@ -35,5 +35,8 @@ windows:
       - shell_command: # text censor api
           - cd tasks/qq/qq_red_packet_collect/textfilter 
           - bash launch.sh
+      - shell_command: # text censor api
+          - cd tasks/qq/qq_red_packet_collect/textfilter 
+          - bash launch.sh
       # login first!
       # when pasting gitter tokens, be careful.
