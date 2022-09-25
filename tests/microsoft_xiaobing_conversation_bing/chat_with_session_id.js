@@ -463,6 +463,8 @@ const requestListener = function (req, res){
   }
   chatId = topic_chatId_dict[topic]
   if (chatId !=null){
+
+  }else{
     
   }
 
