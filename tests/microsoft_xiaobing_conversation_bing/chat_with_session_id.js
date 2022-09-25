@@ -320,6 +320,7 @@ async function iceAI_word(
   } catch(e){
     console.log('ERROR FETCHING XIAOBING CHAT',e)
     // will return nothing.
+    a
     // would you sleep for a while?
   }
 }
