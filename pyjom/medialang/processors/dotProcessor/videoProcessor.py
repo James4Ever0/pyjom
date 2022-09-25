@@ -57,7 +57,8 @@ def ffmpegVideoPreProductionFilter(
     # anyway it will get processed? or not?
     # uncertain. very uncertain.
     def paddingBlurFilter(stream, mWidth=1920, mHeight=1080):
-        video_stream = stream.video
+        # video_stream = stream.video
+        video_stream = stream
         output_width = mWidth
         output_height = mHeight
         layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter(
