@@ -1,7 +1,7 @@
 # ld_library_path is handled externally using env
 from test_commons import *
 from pyjom.primitives import *
-from pyjom.medialang.commons import *
+from pyjom.medialang.core import *
 
 autoArgs = {"subtitle_detector": {"timestep": 0.2}}
 template_names = ["subtitle_detector.mdl.j2"]
