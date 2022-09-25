@@ -238,18 +238,6 @@ async function iceAI_word({
     Content,
     MsgId,
 }) {
-    let example = {
-        ToUserName: "gh_919b00572d95", // 小程序/公众号的原始ID，资源复用配置多个时可以区别消息是给谁的
-        FromUserName: "oVneZ57wJnV-ObtCiGv26PRrOz2g", // 该小程序/公众号的用户身份openid
-        CreateTime: 1651049934, // 消息时间
-        MsgType: "text", // 消息类型
-        Content: "回复文本", // 消息内容
-        MsgId: 23637352235060880, // 唯一消息ID，可能发送多个重复消息，需要注意用此 ID 去重
-    };
-    var Content = Content.replace("[", "").replace("]", "");
-    let fromQQ = FromUserName;
-    Content = Content.replace("小姝", "小冰");
-    Content = Content.replace("姝而", "小冰");
     var wquery = a(Content, "3d9d5f16-5df0-43d7-902e-19274eecdc41", 256);
     console.log("encrypt:" + wquery);
     let config = {};
