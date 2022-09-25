@@ -378,6 +378,7 @@ def renderList2MediaLang(
     fast: bool = True,
     bgm=None,
     backend="ffmpeg",  # wtf is this ffmpeg?
+    medialangTmpdir = "/dev/shm/medialang"
 ):  # this is just a primitive. need to improve in many ways.
     # producer = ""
     scriptBase = [
@@ -409,7 +410,7 @@ def renderList2MediaLang(
     # print(scriptBase)
     # now return the medialang object.
     medialangScript = "\n\n".join(scriptBase)  # forced to double return. is it?
-    medialangObject = Medialang(script=medialangScript, medialangTmpdir=)
+    medialangObject = Medialang(script=medialangScript, medialangTmpdir=medialangTmpdir)
     return medialangObject
 
 
