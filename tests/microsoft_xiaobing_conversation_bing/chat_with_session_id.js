@@ -468,6 +468,8 @@ const requestListener = function (req, res){
       console.log("REAL RESPONSE:", content)
       if (content !=null){
         callback(content)
+      }else{
+        
       }
     })
 
