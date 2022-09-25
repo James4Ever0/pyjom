@@ -250,7 +250,7 @@ def detectTextRegionOverTime(
     sample_rate=3,
     mergeThreshold=10,
     langs: tuple = ("en",),
-    top_k=10,
+    top_k:int=10,
 ):  # this sample rate is too unreasonable. set it to 3 or something.
     iterator = getVideoFrameIterator(videoPath, start, end, sample_rate=sample_rate)
     detectionList = []
