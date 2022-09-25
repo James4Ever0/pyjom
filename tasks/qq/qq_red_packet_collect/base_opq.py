@@ -63,6 +63,7 @@ def getGroupName(group_id):
         try:
             myGroupList = action.getGroupList()
         except:
+            print("NO ")
             return
     group_id = int(group_id)
     return groupName
