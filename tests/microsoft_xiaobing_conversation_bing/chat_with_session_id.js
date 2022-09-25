@@ -240,7 +240,8 @@ async function iceAI_word(
     // CreateTime,
     // MsgType,
     Content,
-    config
+    config,
+    query
     // MsgId,
 ) {
     await sleep(1000);
