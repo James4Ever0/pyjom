@@ -205,6 +205,8 @@ def sendRandomGroupMessage():
         sendGPT2GroupChatMessage,
         sendChatLocalResponse,
         sendRepeaterResponse,
+        sendXiaoIceGroupChatMessage,
+
     ]
     weightList = [1, 3, 4, 2]
     replyGetterYielder = weightedRandomYielder(replyGetterList, weightList)
