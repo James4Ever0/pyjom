@@ -688,7 +688,7 @@ def petsWithMusicOnlineProducer(
                     medialangObject.execute()
                 )  # how to control its 'fast' parameter?
                 # maybe we need render the lyric file separately.
-                rendered_media_location = editly_outputPath
+                rendered_media_location = editly_outputPath # so where exactly is the file?
                 # using a ffmpeg filter.
                 print('RENDERED MEDIA LOCATION:',rendered_media_location)
                 breakpoint()
