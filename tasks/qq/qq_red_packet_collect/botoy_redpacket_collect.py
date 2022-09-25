@@ -9,7 +9,12 @@ import schedule
 from chat_local import getAbsSentiment
 
 from censorApis import censorReplyAbsSentiment
-from commons import weightedRandomYielder, generatedSentenceFixer, keywordDecorator, removeDuplicateWords
+from commons import (
+    weightedRandomYielder,
+    generatedSentenceFixer,
+    keywordDecorator,
+    removeDuplicateWords,
+)
 
 groupChatCursor = None
 
@@ -184,7 +189,7 @@ def sendRandomGroupMessage():
         "SENDING XIAOICE API REPLY:",
         True,
         True,
-    ) 
+    )
     sendChatLocalResponse = (
         getChatLocalResponse,
         ["group_id", "msg"],
@@ -206,9 +211,8 @@ def sendRandomGroupMessage():
         sendChatLocalResponse,
         sendRepeaterResponse,
         sendXiaoIceGroupChatMessage,
-
     ]
-    weightList = [1, 3, 4, 2]
+    weightList = [1, 3, 4, 2, 5]
     replyGetterYielder = weightedRandomYielder(replyGetterList, weightList)
     sendBotGroupTextMsg(replyGetterYielder)
 
@@ -221,7 +225,9 @@ schedule.every(1).minute.do(sendRandomGroupMessage)  # will this shit work?
 def printGroupTextChatJson(group_id, sender_id, content):
     message = {"group_id": group_id, "sender_id": sender_id, "content": content}
     message = json.dumps(message, ensure_ascii=False)
-    stderrPrint("[GROUP_TEXT_MESSAGE]",message) # strange. who the fuck added this shit?
+    stderrPrint(
+        "[GROUP_TEXT_MESSAGE]", message
+    )  # strange. who the fuck added this shit?
 
 
 @bot.on_group_msg
@@ -232,7 +238,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # recommed you to check the curret group only.
     #    stderrPrint("checkGroupNoReply:",groupNoReplyStack.get(ctx.FromGroupId,None))
     data_dict = ctx.data  # recommend to use this json object. or not?
-    groupName = data_dict.get('FromGroupName',None)
+    groupName = data_dict.get("FromGroupName", None)
     group_id = data_dict["FromGroupId"]
     if groupName is not None:
         updateGroupNameDict(groupName, group_id)
@@ -258,7 +264,9 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                 content_length <= recv_content_max_length
                 and content_length >= recv_content_min_length
             ):
-                printGroupTextChatJson(group_id, sender_id, Content) # why the fuck you are not printing?
+                printGroupTextChatJson(
+                    group_id, sender_id, Content
+                )  # why the fuck you are not printing?
             if (
                 content_length <= content_max_length
                 and content_length >= content_min_length
