@@ -1,6 +1,6 @@
 var request = require("request");
-var mysqld = require("./mysql");
-const { init: initDB, Counter, Chatid } = require("./db");
+// var mysqld = require("./mysql");
+// const { init: initDB, Counter, Chatid } = require("./db");
 function getRequestId() {
   return (ot() + ot() + ot() + ot() + ot() + ot() + ot() + ot()).toLowerCase();
 }
