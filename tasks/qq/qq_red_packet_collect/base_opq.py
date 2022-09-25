@@ -63,7 +63,7 @@ def updateGroupName(groupName, group_id):
     global myGroupDict
     group_id = int(group_id)
     if group_id not in myGroupDict.keys():
-        myGroupDict[group_id] = groupName
+        myGroupDict.update({group_id:groupName})
 
 def getGroupName(group_id):
     global myGroupList, action, myGroupDict
