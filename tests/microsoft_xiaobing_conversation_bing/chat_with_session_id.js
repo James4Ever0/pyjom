@@ -6,7 +6,7 @@ function getRequestId() {
 }
 
 const sleep = (ms) => {
-  return new Promise(resolve => setTimeout(resolve, ms))
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 function ot() {
@@ -243,95 +243,95 @@ async function iceAI_word(
     config
     // MsgId,
 ) {
-  await sleep(1000);
-  // for whatever reason you have to wait for this long.
+    await sleep(1000);
+    // for whatever reason you have to wait for this long.
 
-  try{
-    var wquery = a(Content, "3d9d5f16-5df0-43d7-902e-19274eecdc41", 256);
-    console.log("encrypt:" + wquery);
-    // let config = {};
+    try {
+        var wquery = a(Content, "3d9d5f16-5df0-43d7-902e-19274eecdc41", 256);
+        console.log("encrypt:" + wquery);
+        // let config = {};
 
-    // if ((await mysqld.isHaveChatIdIn(fromQQ)) == true) {
-    //     console.log("没有chatid，获取新id")
-    //     config = await mysqld.getChatId(fromQQ);
-    // } else {
-    //     config = await newChatId(fromQQ);
-    // }
-    if (config) {
-        console.log("config:" + config);
-    } else {
-      console.log('no config for xiaoice chat.')
-        return;
-    }
-    var h = {
-        zoTextResponse: "",
-        zoIsGCSResponse: false,
-        zoSearchQuery: "hhh",
-        zoTimestampUtc: "",
-        zoIsStartOfSession: true,
-        zoRequestId: getRequestId(),
-        conversationId: config.conversationId,
-        query: { NormalizedQuery: wquery },
-        from: "chatbox",
-        traceId: config.traceId,
-    };
-    var url = "https://cn.bing.com/english/zochatv2?cc=cn&ensearch=0";
-    // {"zoTextResponse":"","zoIsGCSResponse":"false","zoSearchQuery":"123","zoTimestampUtc":"","zoIsStartOfSession":"true","zoRequestId":"ff90e6f70a6048d4fe5cc3c3327bbd32","conversationId":"4a91fb33-73f7-43d4-b7b6-ba86a16e32fb","query":{"NormalizedQuery":"0x23028811be44f661169365"},"from":"chatbox","traceId":"B224B190F87941CD94AD0AC31A189D30"}
-    let result = await getContents({
-        url: url,
-        method: "POST",
-        headers: {
-            "content-type": "text/plain;charset=UTF-8",
-            origin: "https://cn.bing.com",
-            referer: "https://cn.bing.com/search?q=123&form=QBLH&sp=-1&pq=123&sc=6-3&qs=n&sk=&cvid=566F001FDA424EEB805E1C175363B5AE",
-            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36",
-            Connection: "keep-alive",
-        },
-        body: JSON.stringify(h),
-    });
-
-    // {"content":"嘿 啾 嘿 啾啊","type":1,"delayContents":null,"entityInfo":[{"Entity":"嘿 啾 嘿 啾啊","IsEntity":false}],"target":"b","history":null,"hasClientIdinMem":true,"needSayHello":false,"isHookStr":false,"showChatBox":true,"metadata":{"AnswerFeed":"RandomChitChatService","EmotionInfo":"{\"EmotionClassificationInfo\":[{\"Category\":\"Sad\",\"Score\":0.0651140139},{\"Category\":\"Happy\",\"Score\":0.139467061},{\"Category\":\"Surprise\",\"Score\":0.176786855},{\"Category\":\"Angry\",\"Score\":0.358794},{\"Category\":\"Disgust\",\"Score\":0.2598381}],\"NeutralScore\":0.9992748,\"DomainInMatchScenario\":\"None\"}"}}
-    result = JSON.parse(result);
-    if (result.content) {
-        var reply = result.content;
-        reply = reply.replace("小冰", "小姝");
-        var message = 1;
-        var unuseless =
-            "看的我一脸懵逼，都开始怀疑我的智商了。哎呀，不好意思，我刚刚好像走神了,感觉你知道的挺多的呢,额，我现在也不知道该说些什么,这个…不太好说啊,我语文不太好，不确定是不是懂了你的意思,刚刚不小心溜号了，真是不好意思";
-        if (unuseless.indexOf(reply) != -1) {
-          console.log('xiaoice is returning useless reply', reply)
-            //   message = 2;
-            //   Log.trace("iceAi have unuseless message");
-            //   request(
-            //     {
-            //       url:
-            //         "http://api.qingyunke.com/api.php?key=free&appid=0&msg=" +
-            //         encodeURIComponent(msg2),
-            //       method: "GET",
-            //     },
-            //     function (error, response, body) {
-            //       var result = JSON.parse(body);
-            //       reply = result.content;
-            //       var logtext = "";
-            //       return;
-            //     }
-            //   );
+        // if ((await mysqld.isHaveChatIdIn(fromQQ)) == true) {
+        //     console.log("没有chatid，获取新id")
+        //     config = await mysqld.getChatId(fromQQ);
+        // } else {
+        //     config = await newChatId(fromQQ);
+        // }
+        if (config) {
+            console.log("config:" + config);
         } else {
-            return reply;
+            console.log('no config for xiaoice chat.')
+            return;
         }
+        var h = {
+            zoTextResponse: "",
+            zoIsGCSResponse: false,
+            zoSearchQuery: "hhh",
+            zoTimestampUtc: "",
+            zoIsStartOfSession: true,
+            zoRequestId: getRequestId(),
+            conversationId: config.conversationId,
+            query: { NormalizedQuery: wquery },
+            from: "chatbox",
+            traceId: config.traceId,
+        };
+        var url = "https://cn.bing.com/english/zochatv2?cc=cn&ensearch=0";
+        // {"zoTextResponse":"","zoIsGCSResponse":"false","zoSearchQuery":"123","zoTimestampUtc":"","zoIsStartOfSession":"true","zoRequestId":"ff90e6f70a6048d4fe5cc3c3327bbd32","conversationId":"4a91fb33-73f7-43d4-b7b6-ba86a16e32fb","query":{"NormalizedQuery":"0x23028811be44f661169365"},"from":"chatbox","traceId":"B224B190F87941CD94AD0AC31A189D30"}
+        let result = await getContents({
+            url: url,
+            method: "POST",
+            headers: {
+                "content-type": "text/plain;charset=UTF-8",
+                origin: "https://cn.bing.com",
+                referer: "https://cn.bing.com/search?q=123&form=QBLH&sp=-1&pq=123&sc=6-3&qs=n&sk=&cvid=566F001FDA424EEB805E1C175363B5AE",
+                "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36",
+                Connection: "keep-alive",
+            },
+            body: JSON.stringify(h),
+        });
+
+        // {"content":"嘿 啾 嘿 啾啊","type":1,"delayContents":null,"entityInfo":[{"Entity":"嘿 啾 嘿 啾啊","IsEntity":false}],"target":"b","history":null,"hasClientIdinMem":true,"needSayHello":false,"isHookStr":false,"showChatBox":true,"metadata":{"AnswerFeed":"RandomChitChatService","EmotionInfo":"{\"EmotionClassificationInfo\":[{\"Category\":\"Sad\",\"Score\":0.0651140139},{\"Category\":\"Happy\",\"Score\":0.139467061},{\"Category\":\"Surprise\",\"Score\":0.176786855},{\"Category\":\"Angry\",\"Score\":0.358794},{\"Category\":\"Disgust\",\"Score\":0.2598381}],\"NeutralScore\":0.9992748,\"DomainInMatchScenario\":\"None\"}"}}
+        result = JSON.parse(result);
+        if (result.content) {
+            var reply = result.content;
+            reply = reply.replace("小冰", "小姝");
+            var message = 1;
+            var unuseless =
+                "看的我一脸懵逼，都开始怀疑我的智商了。哎呀，不好意思，我刚刚好像走神了,感觉你知道的挺多的呢,额，我现在也不知道该说些什么,这个…不太好说啊,我语文不太好，不确定是不是懂了你的意思,刚刚不小心溜号了，真是不好意思";
+            if (unuseless.indexOf(reply) != -1) {
+                console.log('xiaoice is returning useless reply', reply)
+                    //   message = 2;
+                    //   Log.trace("iceAi have unuseless message");
+                    //   request(
+                    //     {
+                    //       url:
+                    //         "http://api.qingyunke.com/api.php?key=free&appid=0&msg=" +
+                    //         encodeURIComponent(msg2),
+                    //       method: "GET",
+                    //     },
+                    //     function (error, response, body) {
+                    //       var result = JSON.parse(body);
+                    //       reply = result.content;
+                    //       var logtext = "";
+                    //       return;
+                    //     }
+                    //   );
+            } else {
+                return reply;
+            }
+        }
+    } catch (e) {
+        console.log('ERROR FETCHING XIAOBING CHAT', e)
+            // will return nothing.
+            // sleep for 1 second?
+            // would you sleep for a while?
     }
-  } catch(e){
-    console.log('ERROR FETCHING XIAOBING CHAT',e)
-    // will return nothing.
-    // sleep for 1 second?
-    // would you sleep for a while?
-  }
 }
 
 async function newChatId(query) {
     var options = options || {};
     var httpOptions = {
-        url: "https://cn.bing.com/search?q="+query+"&form=QBLH&rdr=1&rdrig=E8F3C1A722454F949CCC4B98C4570A4A",
+        url: "https://cn.bing.com/search?q=" + query + "&form=QBLH&rdr=1&rdrig=E8F3C1A722454F949CCC4B98C4570A4A",
         method: "get",
         timeout: 1000,
         headers: {
@@ -355,7 +355,7 @@ async function newChatId(query) {
             "accept-language": "zh-CN,zh;q=0.9",
             "cache-control": "max-age=0",
             "upgrade-insecure-requests": "1",
-            Referer: "referer: https://cn.bing.com/search?q="+query+"&form=QBLHCN&sp=-1&pq=a&sc=6-1&qs=n&sk=&cvid=A91AB41228AD45E694D5F2EEBF87FE70",
+            Referer: "referer: https://cn.bing.com/search?q=" + query + "&form=QBLHCN&sp=-1&pq=a&sc=6-1&qs=n&sk=&cvid=A91AB41228AD45E694D5F2EEBF87FE70",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36",
         },
@@ -413,15 +413,17 @@ function post(opts) {
 function getContents(opts) {
     return new Promise((resolve, reject) => {
         request(opts, function(error, response) {
-            try{if (error) reject(error);
-            if (response.statusCode != "200") {
+            try {
+                if (error) reject(error);
+                if (response.statusCode != "200") {
+                    console.log("requestCode:" + response.statusCode);
+                }
                 console.log("requestCode:" + response.statusCode);
-            }
-            console.log("requestCode:" + response.statusCode);
-            var responseCookies = response.headers["set-cookie"];
+                var responseCookies = response.headers["set-cookie"];
 
-            resolve(response.body);}catch(e){
-                console.log('ERROR',e)
+                resolve(response.body);
+            } catch (e) {
+                console.log('ERROR', e)
                 console.log('request failed')
                 resolve(null);
             }
@@ -432,61 +434,62 @@ function getContents(opts) {
 // let test_request = "不会吧"
 // let test_request = "python"
 const http = require('http');
+
 function getQueryParams(reqUrl) {
-  current_url = new URL('http://localhost' + reqUrl)
-  params = current_url.searchParams
-  console.log('query parameters:', params)
-  return params
+    current_url = new URL('http://localhost' + reqUrl)
+    params = current_url.searchParams
+    console.log('query parameters:', params)
+    return params
 }
 let topic_chatId_dict = {}
-const requestListener = function (req, res){
-  console.log("________________________________________________")
+const requestListener = function(req, res) {
+    console.log("________________________________________________")
     console.log("REQUEST AT:", req.url, req.method)
     if (req.url == "/") {
-      res.writeHead(200);
-      res.end('xiaoice chat server');
-  } else if (req.url.split("?")[0] == '/chat'){
-    callback = (result) => {
-      res.writeHead(200);
-      content = {"msg": 'success','reply': result}
-      res.end(JSON.stringify(content))
-  }
-  params = getQueryParams(req.url)
-  message =params.get("message")
-  topic = params.get("topic")
-  if (message==null){
-    message = "你好呀"
-  }
-  if (topic == null){
-    topic = "hhh"
-  }
-  console.log("MESSAGE:", message)
-  console.log("TOPIC:", topic)
-  if (topic_chatId_dict[topic] == null){
-    topic_chatId_dict[topic] = newChatId(topic)
-  }
-  chatId = topic_chatId_dict[topic]
-  if (chatId !=null){
-    response = iceAI_word(message, chatId)
-    response.then((content) => {
-      console.log("REAL RESPONSE:", content)
-      if (content !=null){
-        callback(content)
-      }else{
-        res.writeHead(401);
-        res.end(JSON.stringify({'msg':'empty response from microsoft xiaoice'}))
-      }
-    })
+        res.writeHead(200);
+        res.end('xiaoice chat server');
+    } else if (req.url.split("?")[0] == '/chat') {
+        callback = (result) => {
+            res.writeHead(200);
+            content = { "msg": 'success', 'reply': result }
+            res.end(JSON.stringify(content))
+        }
+        params = getQueryParams(req.url)
+        message = params.get("message")
+        topic = params.get("topic")
+        if (message == null) {
+            message = "你好呀"
+        }
+        if (topic == null) {
+            topic = "hhh"
+        }
+        console.log("MESSAGE:", message)
+        console.log("TOPIC:", topic)
+        if (topic_chatId_dict[topic] == null) {
+            topic_chatId_dict[topic] = newChatId(topic)
+        }
+        chatId = topic_chatId_dict[topic]
+        if (chatId != null) {
+            response = iceAI_word(message, chatId)
+            response.then((content) => {
+                console.log("REAL RESPONSE:", content)
+                if (content != null) {
+                    callback(content)
+                } else {
+                    res.writeHead(401);
+                    res.end(JSON.stringify({ 'msg': 'empty response from microsoft xiaoice' }))
+                }
+            })
 
-  }else{
-    res.writeHead(401)
-    res.end(JSON.stringify({'msg':'error when getting chatid'}))
-  }
+        } else {
+            res.writeHead(401)
+            res.end(JSON.stringify({ 'msg': 'error when getting chatid' }))
+        }
 
-  }else{
-    res.writeHead(400);
-    res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
-  }
+    } else {
+        res.writeHead(400);
+        res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
+    }
 }
 const server = http.createServer(requestListener);
 port = 8735
