@@ -470,7 +470,7 @@ const requestListener = function (req, res){
         callback(content)
       }else{
         res.writeHead(401);
-        res.end(JSON.stringify({'msg':''}))
+        res.end(JSON.stringify({'msg':'empty response from microsoft xiaoice'}))
       }
     })
 
