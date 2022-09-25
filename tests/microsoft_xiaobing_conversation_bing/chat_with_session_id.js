@@ -417,7 +417,7 @@ let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
 query = 'python'
 let config = newChatId(query)
-response = iceAI_word(test_request, config)
+response = iceAI_word(test_request, config) // automatically retry once. if keeping generating useless shits, we may decide to give it up?
 // it is a promise.
 
 response.then((content) => {console.log("REAL RESPONSE:", content)})
