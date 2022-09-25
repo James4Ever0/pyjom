@@ -484,6 +484,8 @@ const requestListener = function (req, res){
     res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
   }
 }
+
+
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
 query = 'python'
