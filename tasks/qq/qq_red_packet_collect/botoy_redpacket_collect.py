@@ -297,11 +297,11 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
         if MsgType == "AtMsg":
             Content = ctx.Content  # this is string.
             Content_json = json.loads(Content)
-            content_text = Content_json["Content"]
+            content_text = Content_json["Content"].strip()
             # print(Content_json)
             # breakpoint()
             # 'SrcContent', 'UserID'(list)
-            
+            content_at_target = content_text.replace("@")
             # UserExt = Content_json["UserExt"]
             # # shit revised. no more 'UserExt'
             # for elem in UserExt:
