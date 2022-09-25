@@ -554,6 +554,7 @@ def petsWithMusicOnlineProducer(
     tempdir="/dev/shm/medialang/pets_with_music_online",
     remove_unused=True,
     fast: bool = True,
+    medialangScript
 ):
     import uuid
 
