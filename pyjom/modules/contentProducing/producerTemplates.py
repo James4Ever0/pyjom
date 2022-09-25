@@ -565,6 +565,7 @@ def petsWithMusicOnlineProducer(
         )
         for config in configs:
             debug = config.get("debug", False)
+            gaussian = config.get("gaussian", False)
             musicPath = config.get('music',{}).get('filepath',"")
             # from pyjom.commons import corruptMediaFilter
             report = corruptMediaFilter(musicPath)
