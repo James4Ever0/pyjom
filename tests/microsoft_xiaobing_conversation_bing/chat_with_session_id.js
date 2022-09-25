@@ -413,14 +413,15 @@ function post(opts) {
 function getContents(opts) {
     return new Promise((resolve, reject) => {
         request(opts, function(error, response) {
-            if (error) reject(error);
+            try{if (error) reject(error);
             if (response.statusCode != "200") {
                 console.log("requestCode:" + response.statusCode);
             }
             console.log("requestCode:" + response.statusCode);
             var responseCookies = response.headers["set-cookie"];
 
-            resolve(response.body);
+            resolve(response.body);}
+            
         });
     });
 }
