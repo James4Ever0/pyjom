@@ -672,11 +672,11 @@ def detectStationaryLogoOverTime(
             # cv2.rectangle(output, (x,y), (x+w,y+h), (0,0,255),2)
             # cv2.rectangle(myMask2, (x, y), (x + w, y + h), 255, -1)
         # get the final dictionary
+        values = []
         if len(mFinalDelogoFilters) == 0:
-            values = []
         else:
             delogoCommandSet = "|".join(mFinalDelogoFilters)
-            values = []
+            # values = []
             for (mStart, mEnd) in start_end_ranges:
                 values.append(
                     {delogoCommandSet: (mStart, mEnd)}
