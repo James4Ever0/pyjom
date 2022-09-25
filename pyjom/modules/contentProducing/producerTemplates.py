@@ -416,7 +416,7 @@ def renderList2MediaLang(
 
 # fix long loading time.
 @redisLRUCache()
-def getMusicInfoParsed(config,mintime=2, maxtime=7.8, gaussian=True): #these are defaults.
+def getMusicInfoParsed(config,mintime=2, maxtime=7.8): #these are defaults.
     music = config["music"]
     gaussian = config.get("gaussian", True) # this is different. default to use gaussian instead.
 
