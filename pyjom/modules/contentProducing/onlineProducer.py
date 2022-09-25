@@ -8,7 +8,7 @@ def OnlineProducer(processed_info_generator, source = 'giphy',template=None, tem
     # print("PROCESSED_INFO_GENERATOR: ", processed_info_generator)
     # breakpoint()
     import uuid
-    with tmpdir(path=# must use another level of abstraction
+    with tmpdir(path=os.path.join(medialangTmpdirBase, str(uuid.uuid4())# must use another level of abstraction
     if source == 'giphy':
         template_function = getProducerTemplate(template)
         # print("TEMPLATE FUNCTION ACQUIRED %s" % template_function)
