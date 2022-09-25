@@ -34,17 +34,17 @@ def completeTest():
     wbRev.main()
 
 
-def partialMedialangRenderTest(medialangScript,medialangTmpDir,verbose=True):
+def partialMedialangRenderTest(medialangScript,medialangTmpdir,verbose=True):
     # copy that script to my dear clipboard please?
-    medialangObject = Medialang(script=medialangScript, verbose=verbose, medialangTmpdir=medialangTmpDir)
+    medialangObject = Medialang(script=medialangScript, verbose=verbose, medialangTmpdir=medialangTmpdir)
     result = medialangObject.execute()
     return result
 
 
-def PMRT_0(scriptFilePath,medialangTmpDir, verbose=True):
+def PMRT_0(scriptFilePath,medialangTmpdir, verbose=True):
     with open(scriptFilePath, "r") as f:
         medialangScript = f.read()
-    return partialMedialangRenderTest(medialangScript,medialangTmpDir, verbose=verbose)
+    return partialMedialangRenderTest(medialangScript,medialangTmpdir, verbose=verbose)
 
 
 from lazero.filesystem import tmpdir
