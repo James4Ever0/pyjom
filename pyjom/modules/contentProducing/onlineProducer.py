@@ -3,11 +3,11 @@ from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 
 from lazero.filesystem.temp import tmpdir
 @decorator
-def OnlineProducer(processed_info_generator, source = 'giphy',template=None, template_configs=None, fast:bool=True, medialangTmpdir="/dev/shm/medialang"):
+def OnlineProducer(processed_info_generator, source = 'giphy',template=None, template_configs=None, fast:bool=True, medialangTmpdirBase="/dev/shm/medialang"):
     # template_configs is a generator, it generate configs.
     # print("PROCESSED_INFO_GENERATOR: ", processed_info_generator)
     # breakpoint()
-    with # must use another 
+    with # must use another level of abstraction
     if source == 'giphy':
         template_function = getProducerTemplate(template)
         # print("TEMPLATE FUNCTION ACQUIRED %s" % template_function)
