@@ -444,7 +444,8 @@ const requestListener = function (req, res){
   } else if (req.url.split("?")[0] == 'chat'){
     callback = (result) => {
       res.writeHead(200);
-      res.end(getResultParsed(result, ['text', 'sticker']))
+      content = {}
+      res.end(JSON.stringify(content))
   }
   }
 }
