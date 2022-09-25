@@ -91,7 +91,7 @@ if __name__ == "__main__":
         # import tempfile
         with tmpdir(path="/dev/shm/medialang") as medialangTmpDir:
             print("MEDIALANG SUPER TMPDIR:", medialangTmpDir) # as some sort of protection.
-            # /dev/shm/medialang/<randomString>/
+            # /dev/shm/medialang/<randomString>/<randomUUID>.mp4 -> /dev/shm/medialang/<randomUUID>.mp4
             result = PMRT_0(scriptFilePath, verbose=False)
             editly_outputPath, medialang_item_list = result  # this just return none!
             # data -> editly json
