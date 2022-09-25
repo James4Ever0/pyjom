@@ -298,15 +298,15 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             Content = ctx.Content  # this is string.
             Content_json = json.loads(Content)
             content_text = Content_json["Content"]
-            print(Content_json)
-            breakpoint()
-            UserExt = Content_json["UserExt"]
-            # shit revised. no more 'UserExt'
-            for elem in UserExt:
-                QQNick = elem["QQNick"]
-                at_QQNick = "@{}".format(QQNick)
-                content_text = content_text.replace(at_QQNick + " " + at_QQNick, "")
-                content_text = content_text.replace(at_QQNick, "")
+            # print(Content_json)
+            # breakpoint()
+            # UserExt = Content_json["UserExt"]
+            # # shit revised. no more 'UserExt'
+            # for elem in UserExt:
+            #     QQNick = elem["QQNick"]
+            #     at_QQNick = "@{}".format(QQNick)
+            #     content_text = content_text.replace(at_QQNick + " " + at_QQNick, "")
+            #     content_text = content_text.replace(at_QQNick, "")
             # now the content is ready.
             writeGroupChatCursor(content_text)
         if MsgType == "TextMsg":
