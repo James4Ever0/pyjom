@@ -454,6 +454,8 @@ def dotVideoProcessor(
                             cutFrom = layerElemItem.args.get("cutFrom", 0)
                             cutTo = layerElemItem.args.get("cutTo", endOfVideo)
                             layerOriginalDuration = cutTo - cutFrom
+                            mute = layerElemItem.args.get("slient", False)
+
 
                             processedFilePath = ffmpegVideoPreProductionFilter(
                                 filepath,
@@ -461,6 +463,7 @@ def dotVideoProcessor(
                                 end=cutTo,
                                 cachePath=cachePath,
                                 preview=fast,
+                                audio=audio
                             )
                             # what is this filepath? man how do i handle this?
                             videoFilePath = processedFilePath
@@ -474,7 +477,6 @@ def dotVideoProcessor(
                             # was wrong.
                             layerDuration = (cutTo - cutFrom) / speed
                             layer_durations.append(layerDuration)
-                            mute = layerElemItem.args.get("slient", False)
                             layer = {
                                 "type": "video",
                                 "path": videoFilePath,
