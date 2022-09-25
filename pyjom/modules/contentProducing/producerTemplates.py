@@ -434,7 +434,7 @@ def getMusicInfoParsed(config,mintime=2, maxtime=7.8, gaussian=True): #these are
     elif lyric_path is not None:
         lyric_path = None
     demanded_cut_spans, standard_bpm_spans = getMusicCutSpans(
-        music, music_duration, lyric_path, maxtime, mintime, 
+        music, music_duration, lyric_path, maxtime, mintime, gaussian=gaussian
     )
     return (
         music,
