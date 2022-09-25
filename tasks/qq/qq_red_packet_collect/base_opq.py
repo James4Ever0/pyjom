@@ -58,10 +58,12 @@ except:
 # sprint(myGroupList)
 # breakpoint()
 def getGroupName(group_id):
-    global myGroupList
+    global myGroupList, action
     if myGroupList in [None, []]:
         try:
-        myGroupList = action.getGroupList()
+            myGroupList = action.getGroupList()
+        except:
+            return
     group_id = int(group_id)
     return groupName
 
