@@ -226,7 +226,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     groupName = data_dict.get('FromGroupName',None)
     group_id = data_dict["FromGroupId"]
     if groupName is not None:
-        updateGroupNameDict()
+        updateGroupNameDict(groupName, group_id)
     sender_id = data_dict["FromUserId"]
     RedBaginfoDict = data_dict["RedBaginfo"]
     RedBaginfo = ctx.RedBaginfo
