@@ -179,9 +179,9 @@ def sendRandomGroupMessage():
         True,
     )  # last is enableRetryFlag
     sendXiaoIceGroupChatMessage = (
-        keywordDecorator(getChatApiReply, chatApiIndex=1),
+        keywordDecorator(getChatApiReply, chatApiIndex=2),
         ["msg", "group_id"],
-        "SENDING GPT2 API REPLY:",
+        "SENDING XIAOICE API REPLY:",
         True,
         True,
     ) 
