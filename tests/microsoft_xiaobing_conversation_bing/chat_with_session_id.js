@@ -231,10 +231,10 @@ var o = [
     ];
 // n.encrypt = a
 async function iceAI_word({
-    ToUserName,
-    FromUserName,
-    CreateTime,
-    MsgType,
+    // ToUserName,
+    // FromUserName,
+    // CreateTime,
+    // MsgType,
     Content,
     MsgId,
 }) {
