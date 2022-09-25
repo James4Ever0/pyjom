@@ -86,9 +86,9 @@ def chatOwnThink(msg: str, group_id, retryFlag=False,timeout=5):
 
 def chatXiaoIce(msg, group_id, retryFlag=False, timeout=5):
     import requests
-    topic = getGroupNameFromDict()
+    topic = getGroupNameFromDict(group_id)
     if topic is None:
-        topic = 'aaa' # default topic.
+        topic = 'aaa' # default topic. nothing.
     r = requests.get("http://localhost:8735/chat",params={"topic":topic,"message":msg})
     if r.status_code == 200:
         try:
