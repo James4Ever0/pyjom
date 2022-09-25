@@ -92,6 +92,9 @@ if r.status_code == 200:
         content = r.json()
         assert content['msg'] == 'success'
         reply = content['reply']
+        return reply
+    except:
+        from lazero.utils.logger import 
 
 # changed. non_standard.
 def getChatApiReply(msg: str, group_id, chatApiIndex = 0,retryFlag=False,timeout=15): # 15 seconds of grace time.
