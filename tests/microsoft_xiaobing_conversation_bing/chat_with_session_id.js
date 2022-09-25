@@ -414,3 +414,4 @@ function getContents(opts) {
 let test_request = "你好呀"
 let config = newChatId()
 response = iceAI_word(test_request, config)
+console.log("RESPONSE:", response)
