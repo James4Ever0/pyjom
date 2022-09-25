@@ -92,7 +92,7 @@ if __name__ == "__main__":
         with tmpdir(path="/dev/shm/medialang") as medialangTmpdir:
             print("MEDIALANG SUPER TMPDIR:", medialangTmpdir) # as some sort of protection.
             # /dev/shm/medialang/<randomString>/<randomUUID>.mp4 -> /dev/shm/medialang/<randomUUID>.mp4
-            result = PMRT_0(scriptFilePath, medialangTmpdirverbose=False)
+            result = PMRT_0(scriptFilePath, medialangTmpdir,verbose=False)
             editly_outputPath, medialang_item_list = result  # this just return none!
             # data -> editly json
             # this output path is modified. we shall change this.
