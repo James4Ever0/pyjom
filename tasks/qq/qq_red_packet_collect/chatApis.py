@@ -94,7 +94,8 @@ if r.status_code == 200:
         reply = content['reply']
         return reply
     except:
-        from lazero.utils.logger import 
+        from lazero.utils.logger import traceError
+        traceError('xiaoice client error')
 
 # changed. non_standard.
 def getChatApiReply(msg: str, group_id, chatApiIndex = 0,retryFlag=False,timeout=15): # 15 seconds of grace time.
