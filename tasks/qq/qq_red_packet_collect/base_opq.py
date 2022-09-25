@@ -63,9 +63,10 @@ def getGroupName(group_id):
         try:
             myGroupList = action.getGroupList()
         except:
-            print("NO ")
+            print("NO GROUP LIST AVALIABLE.")
             return
     group_id = int(group_id)
+    groupName = myGroupList
     return groupName
 
 #  	搜索群组 添加好友
