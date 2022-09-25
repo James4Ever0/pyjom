@@ -73,6 +73,7 @@ def getGroupNameFromDict(group_id):
     if myGroupList in [None, []]: # if not empty please update this dict elsewhere?
         try:
             myGroupList = action.getGroupList()
+            myGroupDict.update({elem['GroupId'] : elem['GroupName'] for elem in myGroupList})
         except:
             print("NO GROUP LIST AVALIABLE.")
             return
