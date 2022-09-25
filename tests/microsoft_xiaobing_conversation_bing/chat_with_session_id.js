@@ -412,13 +412,13 @@ function getContents(opts) {
 }
 // module.exports = { iceAI_word };
 let test_request = "不会吧"
-let test_request2 = "你吃了没有"
+// let test_request2 = "你吃了没有"
 query = 'python'
 let config = newChatId(query)
 response = iceAI_word(test_request, config)
 // it is a promise.
 
-reponse.then((content) => {console.log("REAL RESPONSE:", content)})
+response.then((content) => {console.log("REAL RESPONSE:", content)})
 // console.log("RESPONSE:", response)
 // response = iceAI_word(test_request2, config)
 // console.log("RESPONSE:", response)
