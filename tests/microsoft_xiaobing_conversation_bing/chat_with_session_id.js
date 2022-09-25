@@ -453,7 +453,9 @@ const requestListener = function (req, res){
   if (message==null){
     message = "你好呀"
   }
-  if 
+  if (topic == null){
+    topic = "hhh"
+  }
   }else{
     res.writeHead(400);
     res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
