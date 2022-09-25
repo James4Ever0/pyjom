@@ -48,8 +48,11 @@ action = Action(qq = my_qq, port = opq_server["port"], host=opq_server["host"])
 bot = Botoy(qq = my_qq, port = opq_server["port"], host=opq_server["host"], log=log,log_file=log_file,group_blacklist=group_blacklist, friend_blacklist=friend_blacklist) # have info. have custom log file.
 
 ## this is the damn bot. how to get group name?
-   
-myGroupList = action.getGroupList()
+
+try:
+    myGroupList = action.getGroupList()
+except:
+    pass
 # [{'GroupId': 118794, 'GroupMemberCount': 2818, 'GroupName': '攻防世界交流群', 'GroupNotice': '第四届“第五空间”网络安全大赛\n1、报名网站：\x01https://ctf.360.net/5space\x02\n2、 报名时间：8月30日--9月9日（沿用DSCTF）\n', 'GroupOwner': 41495, 'GroupTotalCount': 3000},...]
 from lazero.utils.logger import sprint
 sprint(myGroupList)
