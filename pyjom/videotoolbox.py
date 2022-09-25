@@ -100,7 +100,7 @@ def getMergedRects(mConvList, width, height):
     for i in contours:
         x, y, w, h = cv2.boundingRect(i)
         mlist.append([x, y, w, h].copy())  # x,y,w,h!
-    return mlist
+    return mlist # this is not diagonal. fuck.
 
 
 def getVideoFrameSampler(videoPath, start, end, sample_size=60, iterate=False):
