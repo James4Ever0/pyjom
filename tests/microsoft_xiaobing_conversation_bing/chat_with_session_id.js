@@ -456,6 +456,8 @@ const requestListener = function (req, res){
   if (topic == null){
     topic = "hhh"
   }
+  console.log("MESSAGE:", message)
+  con
   }else{
     res.writeHead(400);
     res.end('please use /chat?topic={topic}&message={message} to chat with xiaoice.')
