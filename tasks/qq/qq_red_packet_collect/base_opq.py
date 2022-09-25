@@ -47,6 +47,7 @@ opq_server = {"host":"localhost","port":server_port} # this is for arm
 action = Action(qq = my_qq, port = opq_server["port"], host=opq_server["host"])
 bot = Botoy(qq = my_qq, port = opq_server["port"], host=opq_server["host"], log=log,log_file=log_file,group_blacklist=group_blacklist, friend_blacklist=friend_blacklist) # have info. have custom log file.
 
+## this is the damn bot. how to get group name?
 
 
 #  	搜索群组 添加好友
