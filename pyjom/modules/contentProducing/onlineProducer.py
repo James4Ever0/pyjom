@@ -8,14 +8,14 @@ def OnlineProducer(processed_info_generator, source = 'giphy',template=None, tem
     # print("PROCESSED_INFO_GENERATOR: ", processed_info_generator)
     # breakpoint()
     import uuid
-    with tmpdir(path=os.path.join(medialangTmpdirBase, str(uuid.uuid4()))) as TD:# must use another level of abstraction
-    if source == 'giphy':
-        template_function = getProducerTemplate(template)
-        # print("TEMPLATE FUNCTION ACQUIRED %s" % template_function)
-        # breakpoint()
-        exported_media_locations = template_function(processed_info_generator,configs=template_configs, fast=fast) # a generator!
-        # i guess the title/tags/cover are actually belongs to the poster, not producer.
-        for exported_media_location in exported_media_locations:
-            print('exported media location:', exported_media_location)
-            breakpoint()
-            yield exported_media_location
+    with tmpdir(path=) as TD:# must use another level of abstraction
+        if source == 'giphy':
+            template_function = getProducerTemplate(template)
+            # print("TEMPLATE FUNCTION ACQUIRED %s" % template_function)
+            # breakpoint()
+            exported_media_locations = template_function(processed_info_generator,configs=template_configs, fast=fast) # a generator!
+            # i guess the title/tags/cover are actually belongs to the poster, not producer.
+            for exported_media_location in exported_media_locations:
+                print('exported media location:', exported_media_location)
+                breakpoint()
+                yield exported_media_location
