@@ -411,7 +411,7 @@ function getContents(opts) {
     });
 }
 // module.exports = { iceAI_word };
-let test_request = "你好呀"
+let test_request = "不会吧"
 let config = newChatId()
 response = iceAI_word(test_request, config)
 console.log("RESPONSE:", response)
