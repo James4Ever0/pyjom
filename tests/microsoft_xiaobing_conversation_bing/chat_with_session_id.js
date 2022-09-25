@@ -312,7 +312,7 @@ async function iceAI_word({
     }
 }
 
-async function newChatId(fromQQ) {
+async function newChatId() {
     var options = options || {};
     var httpOptions = {
         url: "https://cn.bing.com/search?q=love&form=QBLH&rdr=1&rdrig=E8F3C1A722454F949CCC4B98C4570A4A",
