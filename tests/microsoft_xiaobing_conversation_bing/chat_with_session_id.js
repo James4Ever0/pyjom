@@ -418,7 +418,7 @@ let config = newChatId(query)
 response = iceAI_word(test_request, config)
 // it is a promise.
 
-reponse.then()
+reponse.then((content) => {console.log("REAL RESPONSE:", content)})
 // console.log("RESPONSE:", response)
 // response = iceAI_word(test_request2, config)
 // console.log("RESPONSE:", response)
