@@ -409,7 +409,7 @@ def renderList2MediaLang(
     # print(scriptBase)
     # now return the medialang object.
     medialangScript = "\n\n".join(scriptBase)  # forced to double return. is it?
-    medialangObject = Medialang(script=medialangScript)
+    medialangObject = Medialang(script=medialangScript, medialangTmpdir=)
     return medialangObject
 
 
