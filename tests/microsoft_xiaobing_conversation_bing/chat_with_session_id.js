@@ -230,7 +230,7 @@ var o = [
         [54, 0, 0, 0],
     ];
 // n.encrypt = a
-async function iceAI_word({
+async function iceAI_word(
     // ToUserName,
     // FromUserName,
     // CreateTime,
@@ -238,7 +238,7 @@ async function iceAI_word({
     Content,
     config
     // MsgId,
-}) {
+) {
     var wquery = a(Content, "3d9d5f16-5df0-43d7-902e-19274eecdc41", 256);
     console.log("encrypt:" + wquery);
     // let config = {};
