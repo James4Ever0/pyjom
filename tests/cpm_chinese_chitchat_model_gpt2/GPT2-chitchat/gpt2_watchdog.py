@@ -16,7 +16,7 @@ def getGPT2Status():
     hour = getNow().hour
     # if hour > 16 and hour < 20: # for test
     # if hour > 2 and hour < 8:
-    if hour>21 and hour < 22: # for practice
+    if hour > 21 and hour < 22:  # for practice
         return "train"
     else:
         return "eval"
@@ -32,6 +32,7 @@ def getGPT2TrainedStatus():
         return day == now.day
     except:
         import traceback
+
         traceback.print_exc()
         print("SOME ERROR WHEN CHECKING GPT2 TRAINED STATUS")
         # breakpoint()
@@ -59,8 +60,9 @@ process = None
 def getGPT2Running():
     global process
     if process != None:
-        return process.poll() == None # when no return code the program is running
-    return False # if process is None then program is not running
+        return process.poll() == None  # when no return code the program is running
+    return False  # if process is None then program is not running
+
 
 def startGPT2Server():
     global process
