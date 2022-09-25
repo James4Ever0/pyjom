@@ -438,7 +438,10 @@ function getQueryParams(reqUrl) {
 const requestListener = function (req, res){
   console.log("________________________________________________")
     console.log("REQUEST AT:", req.url, req.method)
-    if re
+    if (req.url == "/") {
+      res.writeHead(200);
+      res.end('nodejs giphy server');
+  } else if (
 }
 let test_request = "你吃了没有"
 // let test_request2 = "你吃了没有"
