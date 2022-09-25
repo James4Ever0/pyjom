@@ -423,7 +423,7 @@ function getContents(opts) {
             resolve(response.body);}catch(e){
                 console.log('ERROR',e)
                 console.log('request failed')
-                resolve()
+                resolve(n
             }
             
         });
