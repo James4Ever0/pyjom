@@ -301,6 +301,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             print(Content_json)
             breakpoint()
             UserExt = Content_json["UserExt"]
+            # shit revised. no more 'UserExt'
             for elem in UserExt:
                 QQNick = elem["QQNick"]
                 at_QQNick = "@{}".format(QQNick)
