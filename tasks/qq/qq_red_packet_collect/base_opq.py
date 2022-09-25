@@ -59,6 +59,8 @@ except:
 # from lazero.utils.logger import sprint
 # sprint(myGroupList)
 # breakpoint()
+def updateGroupName(group_id)
+
 def getGroupName(group_id):
     global myGroupList, action
     if myGroupList in [None, []]: # if not empty please update this dict elsewhere?
