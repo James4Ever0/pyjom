@@ -59,7 +59,8 @@ except:
 # from lazero.utils.logger import sprint
 # sprint(myGroupList)
 # breakpoint()
-def updateGroupName(group_id)
+def updateGroupName(groupName, group_id):
+    if 
 
 def getGroupName(group_id):
     global myGroupList, action
