@@ -236,7 +236,8 @@ async function iceAI_word({
     // CreateTime,
     // MsgType,
     Content,
-    MsgId,
+    config
+    // MsgId,
 }) {
     var wquery = a(Content, "3d9d5f16-5df0-43d7-902e-19274eecdc41", 256);
     console.log("encrypt:" + wquery);
