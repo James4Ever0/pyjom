@@ -212,7 +212,7 @@ def sendRandomGroupMessage():
         sendRepeaterResponse,
         sendXiaoIceGroupChatMessage,
     ]
-    weightList = [1, 3, 4, 2, 5]
+    weightList = [1, 3, 2, 2, 5]
     replyGetterYielder = weightedRandomYielder(replyGetterList, weightList)
     sendBotGroupTextMsg(replyGetterYielder)
 
