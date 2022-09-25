@@ -30,7 +30,7 @@ def ffmpegVideoPreProductionFilter(
     audio=False,
     filters: List[
         Literal[
-            "minterpolate", # add option for this shit. use 
+            "minterpolate", # add option for this shit. use 'blend' instead of 
             "removegrain",
             "bilateral",
             "randomFlip",
