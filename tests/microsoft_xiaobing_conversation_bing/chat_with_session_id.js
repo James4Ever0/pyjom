@@ -341,7 +341,7 @@ async function newChatId(query) {
             "accept-language": "zh-CN,zh;q=0.9",
             "cache-control": "max-age=0",
             "upgrade-insecure-requests": "1",
-            Referer: "referer: https://cn.bing.com/search?q=love&form=QBLHCN&sp=-1&pq=a&sc=6-1&qs=n&sk=&cvid=A91AB41228AD45E694D5F2EEBF87FE70",
+            Referer: "referer: https://cn.bing.com/search?q="+query+"&form=QBLHCN&sp=-1&pq=a&sc=6-1&qs=n&sk=&cvid=A91AB41228AD45E694D5F2EEBF87FE70",
             "Referrer-Policy": "strict-origin-when-cross-origin",
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36",
         },
