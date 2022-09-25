@@ -449,7 +449,7 @@ const requestListener = function (req, res){
   }
   }else{
     res.writeHead(400);
-    res.end('please use /chat?')
+    res.end('please use /chat?topic={topic}&message={message}')
   }
 }
 let test_request = "你吃了没有"
