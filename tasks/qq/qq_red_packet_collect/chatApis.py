@@ -88,10 +88,10 @@ def chatXiaoIce(msg, group_id, retryFlag=False, timeout=5):
 >>> import requests
 >>> r = requests.get("http://localhost:8735/chat",params={"topic":"python","message":"吃了没有"})
 if r.status_code == 200:
-
-    content = r.json()
-    assert content['msg'] == 'success'
-    reply = content['reply']
+    try:
+        content = r.json()
+        assert content['msg'] == 'success'
+        reply = content['reply']
 
 # changed. non_standard.
 def getChatApiReply(msg: str, group_id, chatApiIndex = 0,retryFlag=False,timeout=15): # 15 seconds of grace time.
