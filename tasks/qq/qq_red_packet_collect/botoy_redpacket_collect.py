@@ -57,7 +57,7 @@ def sendBotGroupTextMsg(
     replyGetterYielder,
     groupBannedErrorBuffer=100,  # 被禁言之后的buffer
     retry=3,
-    min_reply_length=5,  # some impirical value.
+    min_reply_length=3,  # some impirical value.
     delay_time_range=(5, 15),
     context_size_range=(1, 3),  # maybe we do not need no context. or not?
     maxRepeatRange=(2, 5),
