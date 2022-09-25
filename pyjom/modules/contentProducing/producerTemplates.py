@@ -512,16 +512,17 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     medialangCode = medialangObject.prettify()
     # print("_________________MEDIALANG CODE_________________")
     # print(medialangCode) # should you write it to somewhere?
-    import uuid
+    if debug:
+        import uuid
 
-    randomName = str(uuid.uuid4())
-    # or just use some temporary file instead?
-    medialangCodeSavePath = os.path.join(
-        "/root/Desktop/works/pyjom/tests/medialang_tests", "{}.mdl".format(randomName)
-    )
-    with open(medialangCodeSavePath, "w+") as f:
-        f.write(medialangCode)
-    print("MEDIALANG CODE SAVED TO:", medialangCodeSavePath)
+        randomName = str(uuid.uuid4())
+        # or just use some temporary file instead?
+        medialangCodeSavePath = os.path.join(
+            "/root/Desktop/works/pyjom/tests/medialang_tests", "{}.mdl".format(randomName)
+        )
+        with open(medialangCodeSavePath, "w+") as f:
+            f.write(medialangCode)
+        print("MEDIALANG CODE SAVED TO:", medialangCodeSavePath)
     # why use medialang? probably because these render language are not "fully automated" or "automated enough" to express some abstract ideas? or just to leave some blanks for redundent low-level implementations?
     # print("_________________MEDIALANG CODE_________________")
     editly_outputPath, medialang_item_list = medialangObject.execute()  ## shit will happen.
