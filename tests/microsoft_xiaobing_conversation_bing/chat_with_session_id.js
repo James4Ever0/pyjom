@@ -412,4 +412,4 @@ function getContents(opts) {
 }
 // module.exports = { iceAI_word };
 let test_request = "你好呀"
-let 
+response = iceAI_word.testRequest(test_request
