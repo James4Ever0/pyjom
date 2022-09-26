@@ -1,0 +1,1 @@
+# ffmpeg -i video.avi -af "volumedetect" 
