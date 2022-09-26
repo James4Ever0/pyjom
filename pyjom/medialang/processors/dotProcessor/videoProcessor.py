@@ -176,9 +176,10 @@ def ffmpegVideoPreProductionFilter(
         # how to parse this shit?
     simpleFilters = ["minterpolate", "removegrain", "bilateral"]
     for filterName in simpleFilters:
+        
         if filterName in filters:
-            if filterName == "minterpolate":
-                filterName += "_mi_mode=blend"
+            # if filterName == "minterpolate":
+                # filterName += "_mi_mode=blend"
                 # print("FILTER NAME:", filterName)
                 # breakpoint()
             mDict.update({filterName: [(start, end)]})
