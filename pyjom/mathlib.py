@@ -226,6 +226,8 @@ def mergedRangesToSequential(renderDict):
         commandTimeSpans = renderDict[renderCommandString].copy()
         # commandTimeSpan.sort(key=lambda x: x[0])
         for commandTimeSpan in commandTimeSpans:
+            mStart, mEnd = commandTimeSpan
+            
             renderList.append([renderCommandString, commandTimeSpan].copy())
     renderList.sort(key=lambda x: x[1][0])
     return renderList
