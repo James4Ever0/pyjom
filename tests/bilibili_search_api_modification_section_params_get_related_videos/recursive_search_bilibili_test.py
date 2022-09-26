@@ -328,6 +328,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
             )  # could be enhabced with CLIP
             filtered_description_list = filterTitleListWithCoreTopicSet(description_list, static_core_topic_list)
             # filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
+            if len(filtered_description_list) >3:
             if len(filtered_title_list) > 3:
                 if len(cover_list) > 3:
                     if len(tag_list) > 3:
