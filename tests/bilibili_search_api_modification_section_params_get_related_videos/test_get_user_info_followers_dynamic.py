@@ -19,7 +19,9 @@ error executing u.credential()
     "get_articles",
     "get_audios",
     "get_channel_list",
-    "get_channel_videos_season",
+    "get_channel_videos_season",#TypeError: get_channel_videos_season() missing 1 required positional argument: 'sid'
+error executing u.get_channel_videos_season()
+Traceback (most recent call last):
     "get_channel_videos_series",
     "get_channels",
     "get_cheese",
