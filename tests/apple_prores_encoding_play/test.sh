@@ -1,2 +1,2 @@
 videoPath=""
-ffmpeg -i $videoPath 
+ffmpeg -hwaccel videotoolbox -i $videoPath .prores
