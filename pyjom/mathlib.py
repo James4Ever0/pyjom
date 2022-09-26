@@ -158,7 +158,7 @@ def getContinualNonSympyMergeResult(inputMSetCandidates):
     for key, value in finalMappings.items():
         # value is an array containing subInterval tuples.
         value = mergeOverlappedInIntervalTupleList(value)
-        finalCats.update({key: value})
+        finalCats.update({key: valueCorrected})
 
     # print("______________FINAL CATS______________")
     # print(finalCats)
