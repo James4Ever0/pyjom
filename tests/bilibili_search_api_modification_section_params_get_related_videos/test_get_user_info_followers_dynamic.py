@@ -1,7 +1,7 @@
 from bilibili_api import user, sync
 
 u = user.User(660303135)
-u.get_channels
+u.get_channel_list
 # data = sync(u.get_relation_info())
 # ["follower"]
 # {'mid': 660303135, 'following': 34, 'whisper': 0, 'black': 0, 'follower': 1158}
