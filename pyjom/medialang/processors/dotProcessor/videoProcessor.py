@@ -255,7 +255,7 @@ def ffmpegVideoPreProductionFilter(
         mStart = max(start, mStart)
         mEnd = min(mEnd, end)
         clipDuration = mEnd - mStart
-        if clipDuration <= epsilon:
+        if clipDuration < epsilon:
             continue  # if so, this clip is shit.
         # print("CLIP TIMESPAN:", mStart, mEnd)
         stream = ffmpeg.input(
