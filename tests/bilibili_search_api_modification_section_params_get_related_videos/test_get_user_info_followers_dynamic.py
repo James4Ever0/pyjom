@@ -55,7 +55,7 @@ for key in progressbar.progressbar(potentialMethods):
     command = "u.{}()".format(key)
     try:
         result = sync(eval(command))
-        if type(result)
+        if type(result) not in [dict, lis]
         mdata.update({key:result})
         import time
         time.sleep(3)
