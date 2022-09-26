@@ -33,17 +33,19 @@ error executing u.credential()
     "get_overview_stat",
     "get_relation_info",
     "get_subscribed_bangumi",
-    "get_uid", # probabily not async. #    raise TypeError('An asyncio.Future, a coroutine or an awaitable is '
+    # "get_uid", # probabily not async. #    raise TypeError('An asyncio.Future, a coroutine or an awaitable is '
 # TypeError: An asyncio.Future, a coroutine or an awaitable is required
 # error executing u.get_uid()
-    "get_up_stat", # bilibili_api.exceptions.CredentialNoBiliJctException.CredentialNoBiliJctException: Credential 类未提供 bili_jct。
+    # "get_up_stat", # bilibili_api.exceptions.CredentialNoBiliJctException.CredentialNoBiliJctException: Credential 类未提供 bili_jct。
 # error executing u.get_up_stat()
     "get_user_info",
     "get_videos",
-    "modify_relation", # TypeError: modify_relation() missing 1 required positional argument: 'relation'
+    # "modify_relation", # TypeError: modify_relation() missing 1 required positional argument: 'relation'
 # error executing u.modify_relation()
+
 # our most wanted feature, top_followers.
-    "top_followers",# bilibili_api.exceptions.ResponseCodeException.ResponseCodeException: 接口返回错误代码：-101，信息：账号未登录。
+
+    # "top_followers",# bilibili_api.exceptions.ResponseCodeException.ResponseCodeException: 接口返回错误代码：-101，信息：账号未登录。
 # error executing u.top_followers()
 ]
 # breakpoint()
