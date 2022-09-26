@@ -36,7 +36,8 @@ error executing u.credential()
     "get_up_stat",
     "get_user_info",
     "get_videos",
-    "modify_relation",
+    "modify_relation", # TypeError: modify_relation() missing 1 required positional argument: 'relation'
+# error executing u.modify_relation()
     "top_followers",#bilibili_api.exceptions.ResponseCodeException.ResponseCodeException: 接口返回错误代码：-101，信息：账号未登录。
 # error executing u.top_followers()
 ]
