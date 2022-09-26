@@ -38,6 +38,7 @@ def ffmpegVideoPreProductionFilter(
             "pipCrop",
             "textRemoval",
             "logoRemoval",
+            "minterpolate_mi_mode=blend"
         ]
     ] = [
         "pipCrop",
