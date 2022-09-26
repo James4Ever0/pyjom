@@ -22,7 +22,7 @@ potentialMethods = [
     "get_channel_videos_series",
     "get_channels",
     "get_cheese",
-    "get_dynamics", # 
+    "get_dynamics", # has offset parameter.
     "get_followers",
     "get_followings",
     "get_live_info",
@@ -43,3 +43,4 @@ import json
 mdata = {}
 
 for key in potentialMethods:
+    mdata.update(result)
