@@ -47,6 +47,8 @@ for key in potentialMethods:
     try:
         result = sync(eval(command))
         mdata.update({key:result})
+        import time
+        time.sleep(3)
     except:
         import traceback
         traceback.print_exc()
