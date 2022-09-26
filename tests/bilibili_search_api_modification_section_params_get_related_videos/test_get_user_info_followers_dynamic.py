@@ -12,7 +12,7 @@ u = user.User(660303135)
 # print(dir(u))
 # you can also get followings to get the 'target video'
 potentialMethods = [
-    "credential",#TypeError: 'Credential' object is not callable
+    # "credential",#TypeError: 'Credential' object is not callable
 # error executing u.credential()
     "get_all_followings",
     "get_article_list",
