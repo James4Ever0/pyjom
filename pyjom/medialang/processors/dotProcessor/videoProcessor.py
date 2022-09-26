@@ -258,7 +258,7 @@ def ffmpegVideoPreProductionFilter(
             continue  # if so, this clip is shit.
         # print("CLIP TIMESPAN:", mStart, mEnd)
         stream = ffmpeg.input(
-            filepath, ss=mStart, to=mEnd
+            filepath, ss=mStart, to=mEnd,"vulkan"
         ).video  # no audio? seriously?
         # this is video stream.
         if renderCommandString == "empty":
