@@ -32,7 +32,7 @@ error executing u.credential()
     "get_overview_stat",
     "get_relation_info",
     "get_subscribed_bangumi",
-    "get_uid",#    raise TypeError('An asyncio.Future, a coroutine or an awaitable is '
+    "get_uid", # probabily not async. #    raise TypeError('An asyncio.Future, a coroutine or an awaitable is '
 # TypeError: An asyncio.Future, a coroutine or an awaitable is required
 # error executing u.get_uid()
     "get_up_stat", # bilibili_api.exceptions.CredentialNoBiliJctException.CredentialNoBiliJctException: Credential 类未提供 bili_jct。
