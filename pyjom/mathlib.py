@@ -198,7 +198,7 @@ def getContinualMappedNonSympyMergeResultWithRangedEmpty(
         key: [
             (mStart, mEnd)
             for mStart, mEnd in newRangesDict[key]
-            if mStart >= start and mEnd <= end
+            if mStart >= start and mEnd <= end and mStart ,
         ]
         for key in newRangesDict.keys()
     }
