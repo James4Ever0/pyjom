@@ -400,6 +400,7 @@ if __name__ == "__main__":
         mTagSeries,
         mTitle,
         mBgm,
+        mDescription,
         dog_or_cat,
     ) in getBilibiliPostMetadataForDogCat():
         print("FETCHED VIDEO METADATA FOR PRODUCTION:")
