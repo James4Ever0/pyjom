@@ -28,7 +28,7 @@ def ffmpegVideoPreProductionFilter(
     end=None,
     cachePath=None,
     audio=False,
-    epsilon = 0.000001
+    epsilon = 0.000001,
     filters: List[
         Literal[
             "minterpolate", # add time-saver option for this shit. use 'blend' instead of motion vector based compensation.
