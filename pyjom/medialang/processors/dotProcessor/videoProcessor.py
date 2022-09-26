@@ -47,7 +47,7 @@ def ffmpegVideoPreProductionFilter(
         "logoRemoval",
         "randomFlip",  # these are common
         # "superResolution",  # optional below
-        # "minterpolate_mi_mode=blend",
+        "minterpolate_mi_mode=blend",
         # "removegrain",
         # "bilateral",
     ],
