@@ -178,7 +178,7 @@ def ffmpegVideoPreProductionFilter(
     for filterName in simpleFilters:
         if filterName in filters:
             if filterName == "minterpolate":
-                filterName += "_mode=blend"
+                filterName += "_mi_mode=blend"
             mDict.update({filterName: [(start, end)]})
 
     pipCropDicts = None
