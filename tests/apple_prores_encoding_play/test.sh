@@ -1,4 +1,5 @@
 videoPath="/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
+prores_
 ffmpeg -hwaccel vulkan -i $videoPath  -c:v prores_ks  output.mkv
 # https://ottverse.com/ffmpeg-convert-to-apple-prores-422-4444-hq/#:~:text=FFmpeg%20contains%20two%20ProRes%20encoders%2C%20the%20prores-aw%20and,option%20to%20choose%20the%20ProRes%20profile%20to%20encode.
 # videoPath="/Users/jamesbrown/Desktop/works/pyjom_remote/samples/video/cute_cat_gif.mp4"
