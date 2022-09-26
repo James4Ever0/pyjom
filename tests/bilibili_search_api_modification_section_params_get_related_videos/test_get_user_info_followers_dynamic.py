@@ -37,7 +37,8 @@ error executing u.credential()
     "get_user_info",
     "get_videos",
     "modify_relation",
-    "top_followers",
+    "top_followers",#bilibili_api.exceptions.ResponseCodeException.ResponseCodeException: 接口返回错误代码：-101，信息：账号未登录。
+# error executing u.top_followers()
 ]
 # breakpoint()
 # get_overview_stat()
