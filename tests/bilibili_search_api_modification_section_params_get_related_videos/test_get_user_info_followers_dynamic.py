@@ -7,9 +7,9 @@ data = sync(u.get_relation_info())
 # {'mid': 660303135, 'following': 34, 'whisper': 0, 'black': 0, 'follower': 1158}
 # get followers less than 200 but view greater than 3000.
 # also get that damn publish date!
-print(data)
-print(data.keys())
-print(dir(u))
+# print(data)
+# print(data.keys())
+# print(dir(u))
 # you can also get followings to get the 'target video'
 [
     "credential",
@@ -38,3 +38,8 @@ print(dir(u))
 ]
 # breakpoint()
 # get_overview_stat()
+import json
+
+mdata = {}
+
+for key in
