@@ -43,5 +43,6 @@ import json
 mdata = {}
 
 for key in potentialMethods:
-    result = sync("u.{}()".format(key))
+    try:
+    result = sync(eval("u.{}()".format(key)))
     mdata.update({key:result})
