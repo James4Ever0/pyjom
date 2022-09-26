@@ -329,62 +329,62 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
             filtered_description_list = filterTitleListWithCoreTopicSet(description_list, static_core_topic_list)
             # filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
             if len(filtered_description_list) >3:
-            if len(filtered_title_list) > 3:
-                if len(cover_list) > 3:
-                    if len(tag_list) > 3:
-                        if len(bgm_list) > 3:
-                            # time to yield something.
-                            # detect this thing!
-                            # filtered_cover_list = []
-                            random.shuffle(cover_list)
-                            reference_histogram_cover = random.choice(cover_list)
+                if len(filtered_title_list) > 3:
+                    if len(cover_list) > 3:
+                        if len(tag_list) > 3:
+                            if len(bgm_list) > 3:
+                                # time to yield something.
+                                # detect this thing!
+                                # filtered_cover_list = []
+                                random.shuffle(cover_list)
+                                reference_histogram_cover = random.choice(cover_list)
 
-                            cover_target = None
+                                cover_target = None
 
-                            for cover in cover_list:
-                                import os
+                                for cover in cover_list:
+                                    import os
 
-                                os.environ["http"] = ""
-                                os.environ["https"] = ""
-                                from pyjom.imagetoolbox import (
-                                    imageLoader,
-                                    imageDogCatCoverCropAdvanced,
-                                    imageHistogramMatch,
-                                )
+                                    os.environ["http"] = ""
+                                    os.environ["https"] = ""
+                                    from pyjom.imagetoolbox import (
+                                        imageLoader,
+                                        imageDogCatCoverCropAdvanced,
+                                        imageHistogramMatch,
+                                    )
 
-                                image = imageLoader(cover)
-                                # import requests
-                                cropped_image = imageDogCatCoverCropAdvanced(
-                                    image,
-                                    dog_or_cat=dog_or_cat_original,
-                                    area_threshold=0.7,
-                                    corner=False,
-                                )
-                                if cropped_image is not None:
-                                    cropped_image_color_transfered = (
-                                        imageHistogramMatch(
-                                            cropped_image, reference_histogram_cover
+                                    image = imageLoader(cover)
+                                    # import requests
+                                    cropped_image = imageDogCatCoverCropAdvanced(
+                                        image,
+                                        dog_or_cat=dog_or_cat_original,
+                                        area_threshold=0.7,
+                                        corner=False,
+                                    )
+                                    if cropped_image is not None:
+                                        cropped_image_color_transfered = (
+                                            imageHistogramMatch(
+                                                cropped_image, reference_histogram_cover
+                                            )
                                         )
-                                    )
-                                    cropped_image_color_transfered_fliped = cv2.flip(
-                                        cropped_image_color_transfered, 1
-                                    )
-                                    cover_target = cropped_image_color_transfered_fliped
-                                    break
-                                # r = requests.get(cover)
-                                # content = r.content
-                                # # corrupted or not?
-                                # image = cv2.imdecode(content, cv2.IMREAD_COLOR)
-                            # mCover = random.choice(filtered_cover_list) # what is this cover list?
-                            mDescription = random.choice(filtered_description_list)
-                            if cover_target is not None:
-                                mTagSeries = randomChoiceTagList(
-                                    tag_list
-                                )  # a collection of tags.
-                                mTitle = random.choice(filtered_title_list)
-                                mBgm = random.choice(bgm_list)
-                                yield cover_target, mTagSeries, mTitle, mBgm, dog_or_cat_original
-                                clearMyLists()
+                                        cropped_image_color_transfered_fliped = cv2.flip(
+                                            cropped_image_color_transfered, 1
+                                        )
+                                        cover_target = cropped_image_color_transfered_fliped
+                                        break
+                                    # r = requests.get(cover)
+                                    # content = r.content
+                                    # # corrupted or not?
+                                    # image = cv2.imdecode(content, cv2.IMREAD_COLOR)
+                                # mCover = random.choice(filtered_cover_list) # what is this cover list?
+                                mDescription = random.choice(filtered_description_list)
+                                if cover_target is not None:
+                                    mTagSeries = randomChoiceTagList(
+                                        tag_list
+                                    )  # a collection of tags.
+                                    mTitle = random.choice(filtered_title_list)
+                                    mBgm = random.choice(bgm_list)
+                                    yield cover_target, mTagSeries, mTitle, mBgm, dog_or_cat_original
+                                    clearMyLists()
         except:
             import time
 
