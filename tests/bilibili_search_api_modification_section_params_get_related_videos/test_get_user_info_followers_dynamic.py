@@ -52,3 +52,4 @@ for key in potentialMethods:
         traceback.print_exc()
         print('error executing {}'.format(command))
 
+json.dumps(mdata, indent=4, ensure_ascii=False)
