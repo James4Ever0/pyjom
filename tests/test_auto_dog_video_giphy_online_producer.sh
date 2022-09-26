@@ -10,3 +10,4 @@
 #### PHASE 2 ####
 # check medialang render result.
 python3 test_auto_dog_video_giphy_online_producer.py -p
+# seems all good. but the time duration is not so good. maybe gaussian will help?
