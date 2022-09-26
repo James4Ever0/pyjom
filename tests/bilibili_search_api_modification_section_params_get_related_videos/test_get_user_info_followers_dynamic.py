@@ -10,4 +10,5 @@ data = sync(u.get_relation_info())
 print(data)
 print(data.keys())
 print(dir(u))
+# ['credential', 'get_all_followings', 'get_article_list', 'get_articles', 'get_audios', 'get_channel_list', 'get_channel_videos_season', 'get_channel_videos_series', 'get_channels', 'get_cheese', 'get_dynamics', 'get_followers', 'get_followings', 'get_live_info', 'get_overview_stat', 'get_relation_info', 'get_subscribed_bangumi', 'get_uid', 'get_up_stat', 'get_user_info', 'get_videos', 'modify_relation', 'top_followers']
 breakpoint()
