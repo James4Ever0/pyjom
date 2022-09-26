@@ -13,7 +13,7 @@ u = user.User(660303135)
 # you can also get followings to get the 'target video'
 potentialMethods = [
     "credential",#TypeError: 'Credential' object is not callable
-error executing u.credential()
+# error executing u.credential()
     "get_all_followings",
     "get_article_list",
     "get_articles",
