@@ -48,7 +48,8 @@ def ffmpegVideoPreProductionFilter(
         "randomFlip",  # these are common
         "superResolution",  # optional below
         "minterpolate_mi_mode=blend",
-        "removegrain",
+        # "removegrain",
+        # "bilateral",
     ],
     preview=True,
     # padding=True,
