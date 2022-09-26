@@ -43,10 +43,12 @@ import json
 mdata = {}
 
 for key in potentialMethods:
+    command = "u.{}()".format(key)
     try:
-        result = sync(eval("u.{}()".format(key)))
+        result = sync(eval(command))
         mdata.update({key:result})
     except:
         import traceback
         traceback.print_exc()
         print('error executing {}'.format(command))
+
