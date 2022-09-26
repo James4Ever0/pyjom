@@ -44,5 +44,7 @@ mdata = {}
 
 for key in potentialMethods:
     try:
-    result = sync(eval("u.{}()".format(key)))
-    mdata.update({key:result})
+        result = sync(eval("u.{}()".format(key)))
+        mdata.update({key:result})
+    except:
+        print('error executing {}'.format(command))
