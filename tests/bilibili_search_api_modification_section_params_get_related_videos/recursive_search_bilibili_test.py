@@ -404,7 +404,7 @@ if __name__ == "__main__":
         dog_or_cat,
     ) in getBilibiliPostMetadataForDogCat():
         print("FETCHED VIDEO METADATA FOR PRODUCTION:")
-        videoMetadata = mCover, mTagSeries, mTitle, mBgm, dog_or_cat
+        videoMetadata = mCover, mTagSeries, mTitle, mBgm, mDescription,dog_or_cat
         print(videoMetadata)
         mCover2 = cv2.resize(mCover, (int(1920 / 2), int(1080 / 2)))
         cv2.imshow("COVER", mCover2)
