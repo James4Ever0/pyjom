@@ -5,7 +5,6 @@
 audio_src = "/media/root/help/pyjom/samples/audio/dog_with_text/vocals.wav"
 
 # heard of dog woooling.
-import audioop
 
 import pydub
 
