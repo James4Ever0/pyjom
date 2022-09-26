@@ -137,7 +137,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
     bvid = video["bvid"]
     if "author" not in disableList:
         author = video["author"]
-        author_id = video["mid"]
+        author_id = video["mid"] # this is important. may let us able to find out the fans count.
     else:
         author = ""
         author_id = -1
