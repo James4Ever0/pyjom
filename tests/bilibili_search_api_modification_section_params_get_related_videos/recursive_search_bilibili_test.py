@@ -197,6 +197,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                     links_in_description,
                     bgms,
                     title_tags,
+                    pubdate
                 ) = videoMetadata
                 # print("VIDEO_METADATA",videoMetadata)
                 # breakpoint()
