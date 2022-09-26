@@ -58,6 +58,7 @@ for key in progressbar.progressbar(potentialMethods):
     command = "u.{}()".format(key)
     try:
         result = sync(eval(command))
+        # Object of type ChannelSeries is not JSON serializable
         if type(result) not in [dict, list, tuple, int, float, str]:
             print(type(result))
             print('COMMAND:',key)
