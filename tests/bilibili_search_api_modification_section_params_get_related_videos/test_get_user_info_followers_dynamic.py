@@ -33,7 +33,8 @@ error executing u.credential()
     "get_relation_info",
     "get_subscribed_bangumi",
     "get_uid",
-    "get_up_stat",
+    "get_up_stat", # bilibili_api.exceptions.CredentialNoBiliJctException.CredentialNoBiliJctException: Credential 类未提供 bili_jct。
+# error executing u.get_up_stat()
     "get_user_info",
     "get_videos",
     "modify_relation", # TypeError: modify_relation() missing 1 required positional argument: 'relation'
