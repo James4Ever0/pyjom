@@ -27,7 +27,7 @@ potentialMethods = [
     # "get_channels",
     "get_cheese",
     "get_dynamics", # has offset parameter.
-    "get_followers",
+    "get_followers", # key feature. we need this some how.
     "get_followings",
     "get_live_info",
     "get_overview_stat",
