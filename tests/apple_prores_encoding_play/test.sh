@@ -1,2 +1,3 @@
 videoPath=""
-ffmpeg -hwaccel videotoolbox -i $videoPath .prores
+ffmpeg -hwaccel vulkan -i $videoPath output.prores
+# ffmpeg -hwaccel videotoolbox -i $videoPath output.prores
