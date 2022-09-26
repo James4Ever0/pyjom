@@ -57,8 +57,9 @@ for key in progressbar.progressbar(potentialMethods):
         result = sync(eval(command))
         if type(result) not in [dict, list, tuple, int, float, str]:
             print(type(result))
-            print(key)
+            print('COMMAND:',key)
             breakpoint()
+            result = str(result)
         mdata.update({key:result})
         import time
         time.sleep(3)
