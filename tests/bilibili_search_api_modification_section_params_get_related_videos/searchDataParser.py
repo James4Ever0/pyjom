@@ -190,6 +190,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
         links_in_description,
         bgms,
         title_tags,
+        pubdate
     )
     if debug:
         for metadata in resultTuple:
