@@ -11,7 +11,7 @@ data = sync(u.get_relation_info())
 # print(data.keys())
 # print(dir(u))
 # you can also get followings to get the 'target video'
-[
+potentialMethods = [
     "credential",
     "get_all_followings",
     "get_article_list",
@@ -42,4 +42,5 @@ import json
 
 mdata = {}
 
-for key in
+for key in potentialMethods:
+    
