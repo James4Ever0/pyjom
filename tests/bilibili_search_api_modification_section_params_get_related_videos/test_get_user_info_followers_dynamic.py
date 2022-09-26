@@ -53,4 +53,6 @@ for key in potentialMethods:
         print('error executing {}'.format(command))
 
 mString = json.dumps(mdata, indent=4, ensure_ascii=False)
-impo
+with open('user_data_api.json','w+') as f:
+    f.write(mString)
+print("DUMP COMPLETE")
