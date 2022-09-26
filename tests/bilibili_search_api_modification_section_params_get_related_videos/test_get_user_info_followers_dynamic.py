@@ -26,7 +26,7 @@ print(dir(u))
     "get_followers",
     "get_followings",
     "get_live_info",
-    "get_overview_stat",
+    "get_overview_stat",# {'video': 79, 'bangumi': 15, 'cinema': 4, 'channel': {'master': 2, 'guest': 2}, 'favourite': {'master': 7, 'guest': 7}, 'tag': 0, 'article': 0, 'playlist': 0, 'album': 3, 'audio': 0, 'pugv': 0, 'season_num': 1}
     "get_relation_info",
     "get_subscribed_bangumi",
     "get_uid",
