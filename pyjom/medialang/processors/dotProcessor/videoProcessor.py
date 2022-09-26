@@ -41,7 +41,7 @@ def ffmpegVideoPreProductionFilter(
             "logoRemoval",
             "minterpolate_mi_mode=blend",
         ]
-    ] = [
+    ] = [ # what is slowing us down?
         "pipCrop",
         "textRemoval",  # we got a problem here?
         "logoRemoval",
