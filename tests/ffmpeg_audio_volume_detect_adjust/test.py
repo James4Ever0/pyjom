@@ -1,2 +1,4 @@
 # ffmpeg -i video.avi -af "volumedetect"
-shall we 
+# shall we get the output?
+import ffmpeg
+
