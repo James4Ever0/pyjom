@@ -28,10 +28,10 @@ def ffmpegVideoPreProductionFilter(
     end=None,
     cachePath=None,
     audio=False,
-    epsilon = 0.000001,
+    epsilon=0.000001,
     filters: List[
         Literal[
-            "minterpolate", # add time-saver option for this shit. use 'blend' instead of motion vector based compensation.
+            "minterpolate",  # add time-saver option for this shit. use 'blend' instead of motion vector based compensation.
             "removegrain",
             "bilateral",
             "randomFlip",
@@ -39,14 +39,14 @@ def ffmpegVideoPreProductionFilter(
             "pipCrop",
             "textRemoval",
             "logoRemoval",
-            "minterpolate_mi_mode=blend"
+            "minterpolate_mi_mode=blend",
         ]
     ] = [
         "pipCrop",
-        "textRemoval", # we got a problem here?
+        "textRemoval",  # we got a problem here?
         "logoRemoval",
         "randomFlip",  # these are common
-        "superResolution", # optional below
+        "superResolution",  # optional below
         "minterpolate_mi_mode=blend",
         "removegrain",
     ],
@@ -65,8 +65,10 @@ def ffmpegVideoPreProductionFilter(
         video_stream_split = video_stream.split()
         output_width = mWidth
         output_height = mHeight
-        layer_0 = video_stream_split[0].filter("scale", w=output_width, h=output_height).filter(
-            "gblur", sigma=9
+        layer_0 = (
+            video_stream_split[0]
+            .filter("scale", w=output_width, h=output_height)
+            .filter("gblur", sigma=9)
         )
         layer_1 = video_stream_split[1].filter(
             "scale",
@@ -180,7 +182,7 @@ def ffmpegVideoPreProductionFilter(
     for filterName in simpleFilters:
         for myFilter in filters:
             if myFilter.startswith(filterName):
-            # if filterName == "minterpolate":
+                # if filterName == "minterpolate":
                 # filterName += "_mi_mode=blend"
                 # print("FILTER NAME:", filterName)
                 # breakpoint()
@@ -259,7 +261,7 @@ def ffmpegVideoPreProductionFilter(
             continue  # if so, this clip is shit.
         # print("CLIP TIMESPAN:", mStart, mEnd)
         stream = ffmpeg.input(
-            filepath, ss=mStart, to=mEnd,hwaccel="vulkan"
+            filepath, ss=mStart, to=mEnd, hwaccel="vulkan"
         ).video  # no audio? seriously?
         # this is video stream.
         if renderCommandString == "empty":
@@ -469,7 +471,7 @@ def dotVideoProcessor(
                                 end=cutTo,
                                 cachePath=cachePath,
                                 preview=fast,
-                                audio=not mute
+                                audio=not mute,
                             )
                             # what is this filepath? man how do i handle this?
                             videoFilePath = processedFilePath
