@@ -47,4 +47,6 @@ for key in potentialMethods:
         result = sync(eval("u.{}()".format(key)))
         mdata.update({key:result})
     except:
+        import traceback
+        traceback.print_exc()
         print('error executing {}'.format(command))
