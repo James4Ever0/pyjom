@@ -1,1 +1,1 @@
-# first and foremost is the audio correction, the 
+# first and foremost is the audio correction, the volume detector, the audio detector.
