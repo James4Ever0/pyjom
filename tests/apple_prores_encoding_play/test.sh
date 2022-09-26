@@ -1,0 +1,2 @@
+videoPath=""
+ffmpeg -i $videoPath 
