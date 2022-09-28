@@ -1,3 +1,6 @@
+# moved to lazero.utils.mathlib
+from lazero.utils.mathlib import *
+
 # # not overriding math.
 # # do some ranged stuff here...
 
