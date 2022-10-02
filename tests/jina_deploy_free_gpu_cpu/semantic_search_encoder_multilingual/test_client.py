@@ -8,7 +8,7 @@ docArray[0].msg = None
 r = c.post('/', docArray)
 r_0 = r[0]
 print(dir(r_0))
-print(r_0)
+print(r_0.tags)
 breakpoint()
 # msg = r[0].msg
 # if msg == 'success':
