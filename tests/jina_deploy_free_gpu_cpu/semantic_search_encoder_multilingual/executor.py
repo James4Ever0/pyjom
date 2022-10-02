@@ -3,7 +3,6 @@ import numpy as np
 
 from txtai.embeddings import Embeddings
 
-
 class semantic_search_encoder_multilingual(Executor):
     embeddings = Embeddings({
             "path": "sentence-transformers/distiluse-base-multilingual-cased-v1"
