@@ -16,7 +16,7 @@ class semantic_search_encoder_multilingual(Executor):
             if len(command) == 0:
                 raise Exception('No command')
             response = self.embeddings.transform((None, command, None))
-            
+            response = np.array([response])
             docs[0].data = response
             docs[0].msg = 'success'
         # docs[1].text = 'goodbye, world!'
