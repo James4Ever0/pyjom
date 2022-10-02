@@ -1,8 +1,5 @@
 from jina import Executor, DocumentArray, requests
-
-import subprocess
-import os
-
+import numpy as np
 # ╭────────────── 🎉 Flow is available! ──────────────╮
 # │                                                   │
 # │   ID            7f015443e8                        │
@@ -52,7 +49,7 @@ class semantic_search_encoder_multilingual(Executor):
     def foo(self, docs: DocumentArray, **kwargs):
         try:
             command = docs[0].text
-            response = 
+            response = self.embeddings.encode()
             docs[0].data = response
             docs[0].msg = 'success'
         # docs[1].text = 'goodbye, world!'
