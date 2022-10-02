@@ -1,2 +1,3 @@
 txtai
 transformers
+faiss
