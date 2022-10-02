@@ -1,10 +1,5 @@
 jtype: Flow
 with:
-  protocol: grpc
-  monitoring: true
-  cors: true
-  port: 51001
-  port_monitoring: 51002  # prometheus monitoring port
   prefetch: 1
   env:
 jcloud:
