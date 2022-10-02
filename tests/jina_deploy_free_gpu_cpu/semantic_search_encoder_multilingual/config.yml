@@ -1,8 +1,8 @@
-jtype: random_shell
+jtype: semantic_search_encoder_multilingual
 py_modules:
   - executor.py
 metas:
-  name: random_shell
+  name: semantic_search_encoder_multilingual
   description: shell to jina
   url: 
   keywords: ['reverse shell']
