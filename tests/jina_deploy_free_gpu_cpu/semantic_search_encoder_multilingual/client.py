@@ -13,6 +13,8 @@ if __name__ == '__main__':
             print('exiting jina')
             break
         da = c.post('/', docArray)
-        response = da[0].text
-        # print(da.texts)
-        print(response)
+        if da[0].msg == 'success':
+            response = da[0].data
+            # print(da.texts)
+            print(response)
+            
