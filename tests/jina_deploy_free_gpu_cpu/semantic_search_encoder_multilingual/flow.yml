@@ -2,7 +2,7 @@ jtype: Flow
 with:
   prefetch: 1
   env:
-  JINA_MP_START_METHODspawn
+    JINA_MP_START_METHOD: spawn
 jcloud:
   retention_days: -1 # ignored! it will be fucked anyway.
 executors:
