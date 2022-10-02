@@ -5,7 +5,7 @@ import os
 if __name__ == "__main__":
     os.environ["http_proxy"] = ""
     os.environ["https_proxy"] = ""
-    f = Flow(port=12345).add(uses=semantic_search_encoder_multilingual, replicas=1)
+    f = Flow(port=12345,).add(uses=semantic_search_encoder_multilingual, replicas=1)
 
     with f:
         f.block()
