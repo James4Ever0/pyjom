@@ -1,1 +1,1 @@
-python3 test.py
+env JINA_MP_START_METHOD=spawn python3 test.py
