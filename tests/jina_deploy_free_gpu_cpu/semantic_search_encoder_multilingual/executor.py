@@ -41,7 +41,7 @@ import os
 
 # so jina hub will automatically build docker images in the cloud for you, act as 'docker hub' and serve apps for free? wtf?
 
-class random_shell(Executor):
+class semantic_search_encoder_multilingual(Executor):
     @requests
     def foo(self, docs: DocumentArray, **kwargs):
         try:
