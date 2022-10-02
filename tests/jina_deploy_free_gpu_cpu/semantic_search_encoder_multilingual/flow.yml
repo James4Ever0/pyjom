@@ -7,7 +7,7 @@ jcloud:
   retention_days: -1 # ignored! it will be fucked anyway.
 executors:
   - uses: jinahub+docker://semantic_search_encoder_multilingual/latest
-    name: jina_shell_random
+    name: semantic_search_encoder_multilingual
     jcloud:
       resources:
         gpu: 1
