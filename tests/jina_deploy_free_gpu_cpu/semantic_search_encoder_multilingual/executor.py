@@ -17,7 +17,7 @@ class semantic_search_encoder_multilingual(Executor):
             response = self.embeddings.transform((None, command, None))
             response = np.array([response])
             docs[0].embedding = response
-            docs[0].text = 'success'
+            docs[0].text = '_success'
         # docs[1].text = 'goodbye, world!'
         except:
             import traceback
