@@ -16,8 +16,8 @@ class semantic_search_encoder_multilingual(Executor):
                 raise Exception('No command')
             response = self.embeddings.transform((None, command, None))
             response = np.array([response])
-            docs[0].data = response
-            docs[0].msg = 'success'
+            docs[0].embedding = response
+            docs[0].text = 'success'
         # docs[1].text = 'goodbye, world!'
         except:
             import traceback
