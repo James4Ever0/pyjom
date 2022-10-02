@@ -12,7 +12,7 @@ class semantic_search_encoder_multilingual(Executor):
         try:
             command = docs[0].text
             command = command.strip()
-            if len(command) == 0:
+            if len(command) == 0 or command.startswith("_"):
                 raise Exception('No command')
             response = self.embeddings.transform((None, command, None))
             response = np.array([response])
