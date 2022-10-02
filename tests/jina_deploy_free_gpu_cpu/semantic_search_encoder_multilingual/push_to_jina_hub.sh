@@ -1,1 +1,1 @@
-jina hub push --public
+jina hub push --public .
