@@ -1,6 +1,14 @@
 jtype: Flow
+with:
+  protocol: grpc
+  monitoring: true
+  cors: true
+  port: 51001
+  port_monitoring: 51002  # prometheus monitoring port
+  prefetch: 1
+  env:
 jcloud:
-  retention_days: -1
+  retention_days: -1 # ignored! it will be fucked anyway.
 executors:
   - uses: jinahub+docker://semantic_search_encoder_multilingual/latest
     name: jina_shell_random
