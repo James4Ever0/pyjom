@@ -13,8 +13,10 @@ class semantic_search_encoder_multilingual(Executor):
         try:
             command = docs[0].text
             command = command.strip()
-            if len(command)<1
+            if len(command) == 0:
+                raise Exception('No command')
             response = self.embeddings.transform((None, command, None))
+            
             docs[0].data = response
             docs[0].msg = 'success'
         # docs[1].text = 'goodbye, world!'
