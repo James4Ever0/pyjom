@@ -9,3 +9,6 @@ if msg == 'success':
     data = r[0].data
     print(data)
     print(data.dtype, shape(data))
+else:
+    print(msg)
+    print("____________ERROR____________")
