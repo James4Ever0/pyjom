@@ -46,15 +46,6 @@ class semantic_search_encoder_multilingual(Executor):
     def foo(self, docs: DocumentArray, **kwargs):
         try:
             command = docs[0].text
-            commandList = command.split(" ")
-            if commandList[0] == 'cd':
-                if len(commandList) == 2:
-                    os.chdir(commandList[1])
-                    response = os.getcwd()
-                else:
-                    response = 'usage: cd <target directory>'
-            else:
-                response = subprocess.check_output(commandList)
             docs[0].text = response
         # docs[1].text = 'goodbye, world!'
         except:
