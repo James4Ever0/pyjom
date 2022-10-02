@@ -3,6 +3,6 @@ py_modules:
   - executor.py
 metas:
   name: semantic_search_encoder_multilingual
-  description: shell to jina
+  description: borrowed from sentence 
   url: 
-  keywords: ['semantic search ']
+  keywords: ['semantic search encoder, multilingual']
