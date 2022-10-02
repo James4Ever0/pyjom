@@ -3,6 +3,10 @@ import numpy as np
 
 from txtai.embeddings import Embeddings
 
+
+#     raise RuntimeError(
+# RuntimeError: Cannot re-initialize CUDA in forked subprocess. To use CUDA with multiprocessing, you must use the 'spawn' start method
+
 class semantic_search_encoder_multilingual(Executor):
     embeddings = Embeddings({
             "path": "sentence-transformers/distiluse-base-multilingual-cased-v1"
