@@ -41,11 +41,13 @@ import os
 
 # so jina hub will automatically build docker images in the cloud for you, act as 'docker hub' and serve apps for free? wtf?
 
+from txtai.embeddings import Embeddings
 
-embeddings = Embeddings({
+
+class semantic_search_encoder_multilingual(Executor):
+    embeddings = Embeddings({
             "path": "sentence-transformers/distiluse-base-multilingual-cased-v1"
         } )
-class semantic_search_encoder_multilingual(Executor):
     @requests
     def foo(self, docs: DocumentArray, **kwargs):
         try:
