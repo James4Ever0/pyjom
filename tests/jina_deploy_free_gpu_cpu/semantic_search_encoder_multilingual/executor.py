@@ -22,5 +22,6 @@ class semantic_search_encoder_multilingual(Executor):
         except:
             import traceback
             error = traceback.format_exc()
+            print(error)
             docs[0].data = None
             docs[0].msg = "\n".join(["error!", error])
