@@ -12,7 +12,7 @@ class semantic_search_encoder_multilingual(Executor):
     def foo(self, docs: DocumentArray, **kwargs):
         try:
             command = docs[0].text
-            response = self.embeddings.encode()
+            response = self.embeddings.transform((None, command, None))
             docs[0].data = response
             docs[0].msg = 'success'
         # docs[1].text = 'goodbye, world!'
