@@ -6,4 +6,5 @@ docArray[0].text = 'hello world'
 r = c.post('/', docArray)
 msg = r[0].msg
 if msg == 'success':
-    print(r[0])
+    print(r[0].data)
+    print(r[0].data.dtype, shape(data))
