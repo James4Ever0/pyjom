@@ -17,4 +17,6 @@ if __name__ == '__main__':
             response = da[0].data
             # print(da.texts)
             print(response)
-            
+        else:
+            print(da[0].msg)
+            print("ERROR!")
