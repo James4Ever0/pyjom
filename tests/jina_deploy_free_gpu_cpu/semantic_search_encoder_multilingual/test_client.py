@@ -6,7 +6,9 @@ docArray[0].text = 'hello world'
 docArray[0].data = None
 docArray[0].msg = None
 r = c.post('/', docArray)
-print(r[0])
+r_0 = r[0]
+print(dir(r_0))
+print(r_0)
 breakpoint()
 # msg = r[0].msg
 # if msg == 'success':
