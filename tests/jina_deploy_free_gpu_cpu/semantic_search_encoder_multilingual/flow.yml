@@ -10,5 +10,5 @@ executors:
     name: semantic_search_encoder_multilingual
     jcloud:
       resources:
-        gpu: 1
+        gpu: 1 # which means it will be shutdown shortly
         memory: 8G
