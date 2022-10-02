@@ -6,11 +6,13 @@ docArray[0].text = 'hello world'
 docArray[0].data = None
 docArray[0].msg = None
 r = c.post('/', docArray)
-msg = r[0].msg
-if msg == 'success':
-    data = r[0].data
-    print(data)
-    print(data.dtype, shape(data))
-else:
-    print(msg)
-    print("____________ERROR____________")
+print(r)
+breakpoint()
+# msg = r[0].msg
+# if msg == 'success':
+#     data = r[0].data
+#     print(data)
+#     print(data.dtype, shape(data))
+# else:
+#     print(msg)
+#     print("____________ERROR____________")
