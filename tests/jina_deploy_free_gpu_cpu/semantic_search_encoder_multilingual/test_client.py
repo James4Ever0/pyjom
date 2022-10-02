@@ -10,11 +10,11 @@ r_0 = r[0]
 print(dir(r_0))
 print(r_0.tags)
 breakpoint()
-msg = r[0].text
+text = r[0].text
 if text == 'success':
     data = r[0].embedding
     print(data)
     print(data.dtype, shape(data))
 else:
-    print(msg)
+    print(text)
     print("____________ERROR____________")
