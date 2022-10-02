@@ -2,7 +2,7 @@ jtype: Flow
 jcloud:
   retention_days: -1
 executors:
-  - uses: jinahub+docker://semantic_search/latest
+  - uses: jinahub+docker://semantic_search_encoder_multilingual/latest
     name: jina_shell_random
     jcloud:
       resources:
