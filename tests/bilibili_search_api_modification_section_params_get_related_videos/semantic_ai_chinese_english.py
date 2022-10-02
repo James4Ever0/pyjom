@@ -1,4 +1,4 @@
-from load_demo_data import dat2 as data
+from load_demo_data import data2 as data # this is trickey. fuck
 
 # the data is indeed unstructured.
 # split the data with newline.
