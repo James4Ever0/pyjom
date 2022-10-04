@@ -95,31 +95,6 @@ def frameSizeFilter(frameMeta, frame_size_filter):
     return True
 
 
-def checkMinMaxDict(value, minMaxDict, getMinMaxVal=False):
-    try:
-        assert [x for x in minMaxDict.keys() if x not in ["min", "max"]] == []
-    except:
-        print("PARAMETERS DUMP:", value, minMaxDict, getMinMaxVal)
-        breakpoint()
-
-    try:
-        minVal = minMaxDict.get("min", value)
-        maxVal = minMaxDict.get("max", value)
-        if minVal != value and maxVal != value:
-            assert minVal < maxVal
-        flag = value <= maxVal and value >= minVal
-        if getMinMaxVal:
-            return flag, (minVal, maxVal)
-        else:
-            return flag
-    except:
-        import traceback
-
-        traceback.print_exc()
-        print("WTF IS GOING ON WITH CHECK_MIN_MAX_DICT")
-        # breakpoint()
-        return False  # usually we have issue getting the number. it is not a number.
-
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
 os.environ["USE_NVIDIA_OPENCV"] = "yes"
