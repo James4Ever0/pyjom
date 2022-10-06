@@ -8,5 +8,5 @@ import audioread
 
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
-        totalsec = f.duration
-    return totalSec
+        totalSeconds = f.duration
+    return totalSeconds
