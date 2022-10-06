@@ -6,5 +6,4 @@
 
 import 
 
-def getAudioDuration(audioFile):
-    
+def getAudioDuration(audioFilePath):
