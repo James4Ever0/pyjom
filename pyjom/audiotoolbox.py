@@ -4,6 +4,6 @@
 # but first how to get the audio duration?
 # for video we have caer. but for audio?
 
-import 
+import audioread
 
 def getAudioDuration(audioFilePath):
