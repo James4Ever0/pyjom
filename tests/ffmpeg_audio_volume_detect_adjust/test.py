@@ -5,7 +5,7 @@ import ffmpeg
 
 def create_black_video_without_audio(length, mediapath):
     # ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest output.mp4
-    ffmpeg.input()
+    ffmpeg.input(t=)
 
 def create_test_video_with_editly(audio): # length is calculated by the audio length.
     ...
