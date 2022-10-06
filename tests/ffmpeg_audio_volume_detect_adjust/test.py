@@ -3,4 +3,5 @@
 # we can also detect if the stream does not have audio stream.
 import ffmpeg
 
-def create_
+def create_black_video_without_audio(length):
+    ...
