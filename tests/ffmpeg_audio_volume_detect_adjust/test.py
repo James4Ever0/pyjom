@@ -6,4 +6,5 @@ import ffmpeg
 def create_black_video_without_audio(length):
     ...
 
-def create_test_video_with_editly(audio): # length is calculated by the a
+def create_test_video_with_editly(audio): # length is calculated by the audio length.
+    ...
