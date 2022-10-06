@@ -12,7 +12,7 @@ def create_black_video_without_audio(length, mediapath):
 
 
 def create_test_video_with_editly(audio):  # length is calculated by the audio length.
-    ...
+    audio_length = 
 
 
 def detect_volume_average(mediapath):
