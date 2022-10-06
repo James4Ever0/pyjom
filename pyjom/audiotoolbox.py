@@ -3,3 +3,7 @@
 
 # but first how to get the audio file length?
 # for video we have caer. but for audio?
+
+import 
+
+def getAudio
