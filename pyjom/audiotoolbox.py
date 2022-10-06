@@ -7,3 +7,4 @@
 import audioread
 
 def getAudioDuration(audioFilePath):
+    audioread.audio_open(audioFilePath)
