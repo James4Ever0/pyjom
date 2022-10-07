@@ -31,6 +31,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
                 "clips": [],
             }
     duration = cutTo = audio_duration
+    cutFrom = 0
     {
                     "duration": duration,
                     "layers": [],
