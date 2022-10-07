@@ -1,0 +1,1 @@
+{"width": 1920, "height": 1080, "fast": true, "fps": 60, "outPath": "volDetect_test.mp4", "defaults": {"transition": null}, "clips": [{"duration": 302.915918367, "layers": [{"type": "video", "path": "black_video_with_equal_length_of_audio.mp4", "resizeMode": "contain", "cutFrom": 0, "cutTo": 302.915918367, "mixVolume": 0}]}]}
