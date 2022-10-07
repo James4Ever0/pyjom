@@ -113,6 +113,8 @@ def detect_volume_average(mediapath, debug=False):
         sprint("ERROR STATUS:", error)
     return volDict, error
 
+def 
+
 if __name__ == "__main__":
     # perform our test.
     # are you sure this won't change the volume?
