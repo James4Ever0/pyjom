@@ -122,7 +122,7 @@ def adjustVolumeInVideo(videoPath):
     # audio = media.audio
     # video = media.video
     # audio = audio.filter()
-    commandline = ["-o", outputPath,"-pr",videoPath]
+    commandline = ['ffmpeg-normalize', '-o", outputPath,"-pr",videoPath]
 
 if __name__ == "__main__":
     # perform our test.
