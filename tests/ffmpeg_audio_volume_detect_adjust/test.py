@@ -65,6 +65,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
 
 
 # commons.
+from pyjom.commons import getFileExtensionToMeaningDictFromString
 
 # commons.
 def getMediaFileExtensionToMeaningDict():
