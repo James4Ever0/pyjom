@@ -120,7 +120,7 @@ import subprocess
 
 
 def adjustVolumeInMedia(
-    mediaPath, outputPath, targets={"mean": -10.8, "max": 0.0}, overwrite_output=False, algorithm=[]
+    mediaPath, outputPath, targets={"mean": -10.8, "max": 0.0}, overwrite_output=False, algorithm:Literal[]
 ):  # must set target volume.
 
     # use ffmpeg-normalize?
