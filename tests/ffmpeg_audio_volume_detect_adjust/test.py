@@ -30,16 +30,19 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
                 "defaults": {"transition": None},
                 "clips": [],
             }
-    clip = {
+    {
+                    "duration": duration,
                     "layers": [],
                 }
-    layer = {
+    {
                                 "type": "video",
                                 "path": videoFilePath,
                                 "resizeMode": "contain",
-                                "mixVolume": 0
+                                "cutFrom": cutFrom,
+                                "cutTo": cutTo,
+                                # that's how we mute it.
+                                "mixVolume": 1 - int(mute),
                             }
-    clip.layers.append()
 
 
 def detect_volume_average(mediapath):
