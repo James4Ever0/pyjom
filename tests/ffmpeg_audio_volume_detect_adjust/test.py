@@ -153,7 +153,16 @@ GIF image - .gif
 Photoshop or PSD image - .psd
 Adobe Illustrator image - .ai
 TIFF image - .tif or .tiff]
-    documentExtensions = []
+    documentExtensions = [
+Microsoft Word file - .doc or .docx
+PDF file - .pdf
+Text file - .txt
+Microsoft Excel file - .xls
+Microsoft Excel Open XML file - .xlsx
+Microsoft Excel file with macros - .xlsm
+Microsoft PowerPoint presentation - .ppt
+Microsoft PowerPoint slide show - .pps
+Microsoft PowerPoint Open XML presentation - .pptx]
     audioExtensions = [MP3 audio file - .mp3
 AAC audio file -.aac
 AC3 audio file - .ac3
