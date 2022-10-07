@@ -104,7 +104,7 @@ def detect_volume_average(mediapath, debug=False):
         print("error when detecting volume for: %s" % mediapath)
         error = True
     if debug:
-        print()
+        print('MEDIA PATH: %s' % mediapath)
         print("VOLUME:", volDict)
         sprint("ERROR STATUS:", error)
     return volDict, error
