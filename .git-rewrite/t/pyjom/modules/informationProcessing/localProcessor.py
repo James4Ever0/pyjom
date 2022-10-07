@@ -28,6 +28,9 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                     resolution = {"height": e["Height"], "width": e["Width"]}
                     # color = e["ColorSpace"] # YUV for common video
             info = get_media_info(path)
+            # print("INFO OF %s", path)
+            # print(info)
+            # breakpoint()
             video_duration = info["videoDuration"]
             if "audioDuration" not in info.keys():
                 audioInfo = None
