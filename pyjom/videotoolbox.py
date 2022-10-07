@@ -9,6 +9,21 @@ from functools import lru_cache
 
 
 
+def createPureColorVideo(
+    duration:float,
+    mediapath,
+    overwrite_output=True,
+    color="black",
+    resolution="1280x720",
+    framerate=5,
+):
+    # ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest output.mp4
+    # length is in seconds.
+    videoInput = "color=c={}:s={}:r={}".format(color, resolution, framerate)
+    ffmpeg.input(videoInput, f="lavfi", t=duration).output(mediapath, crf=0).run(
+        overwrite_output=overwrite_output
+    )
+
 
 def corruptVideoFilter(videoPath):
     return corruptMediaFilter(videoPath, tag="video")
