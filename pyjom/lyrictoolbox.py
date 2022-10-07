@@ -292,7 +292,7 @@ def censorTextWithTextFilter(text):
         return data['response']
 
 @redisLRUCache()
-def getTextListTranslated(test):
+def getTextListTranslated(test, translate_method='baidu'):
     newLyricArray = []
     import progressbar
     isBilingual, needToTranslate = getLyricsLanguageType(test)
