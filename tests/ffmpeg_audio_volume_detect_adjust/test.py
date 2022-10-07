@@ -8,6 +8,7 @@ pyjom_path = "/root/Desktop/works/pyjom"
 sys.path.append(pyjom_path)
 import ffmpeg
 from pyjom.audiotoolbox import getAudioDuration
+from pyjom.medialang.processors.dotProcessor import 
 # import os
 # import json
 # import subprocess
