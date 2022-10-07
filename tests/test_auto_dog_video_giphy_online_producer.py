@@ -26,6 +26,7 @@ wbRev = OnlineAutoContentProducer(
             # "translate": True,
             # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
             # you can simply implement the method to cofigure and test ping for websites in lazero library so we can share the same code.
+            # or you can borrow code from the web.
             # "translate_method": "deepl",
         }
     ],
