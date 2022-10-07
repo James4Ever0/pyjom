@@ -76,20 +76,21 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
     print("media saved to: %s" % output_path)
     return output_path
 
+
 def getFileExtensionToMeaningDictFromString(inputString):
     inputStringList = inputString.split("\n")
     fileExtensionToMeaningDict = {}
     for line in inputStringList:
         line = line.strip()
-        if len(line)<5:
+        if len(line) < 5:
             continue
-        meaning, extensions= line.split(" - ")
+        meaning, extensions = line.split(" - ")
         meaning = meaning.strip()
         extensions = extensions.split(" or ")
         for extension in extensions:
             extension = extension.strip()
-            if len(extension) >0:
-                fileExtensionToMeaningDict.update({extension:meaning})
+            if len(extension) > 0:
+                fileExtensionToMeaningDict.update({extension: meaning})
     return fileExtensionToMeaningDict
 
 
@@ -120,6 +121,7 @@ def detect_volume_average(mediapath, debug=False):
                 volDict.update({volumeType: value})
     except:
         import traceback
+
         traceback.print_exc()
         # print(stderr)
         # nothing will be shown in stderr, if there is no audio in the media container.
@@ -140,7 +142,10 @@ from typing import Literal
 def adjustVolumeInMedia(
     mediaPath,
     outputPath,
-    targets={"mean": -10.8, "max": 0.0}, # what is the real value anyway? we want the volume fetched from web.
+    targets={
+        "mean": -10.8,
+        "max": 0.0,
+    },  # what is the real value anyway? we want the volume fetched from web.
     overwrite_output=False,
     algorithm: Literal["rms", "ebu", "peak"] = "rms",
 ):  # must set target volume.
@@ -209,7 +214,7 @@ AIF audio file - .aif"""
     if overwrite_output:
         commandline += ["-f"]
     commandline += [mediaPath]
-    status = subprocess.run(commandline) # is it even successful?
+    status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
     assert returncode == 0
     print("VOLUME NORMALIZATION SUCCESSFUL")
