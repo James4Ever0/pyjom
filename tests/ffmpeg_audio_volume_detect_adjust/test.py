@@ -97,5 +97,3 @@ if __name__ == "__main__":
 
 
 # audiotoolbox.
-def getAudioBitrate(mediaPath):
-    return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bitrate"])
