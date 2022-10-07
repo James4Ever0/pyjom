@@ -128,8 +128,11 @@ def adjustVolumeInMedia(
     commandline += [mediaPath]
     status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
-    assert returncode == 0
-    print("VOLUME NORMALIZATION SUCCESSFUL")
+    try:
+        assert returncode == 0
+        print("VOLUME NORMALIZATION SUCCESSFUL")
+    outputPath,
+        return  
     # media = ffmpeg.input(videoPath)
     # audio = media.audio
     # video = media.video
