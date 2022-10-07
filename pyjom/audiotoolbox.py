@@ -10,3 +10,4 @@ def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
         totalSeconds = f.duration
     return totalSeconds
+    # how about let's test this?
