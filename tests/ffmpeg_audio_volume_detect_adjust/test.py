@@ -130,8 +130,9 @@ Ogg Vorbis audio file - .ogg
 MIDI audio file - .midi or .mid
 CD audio file - .cda
 AIF audio file - .aif"""
-mapping = [('video', videoExtensions),('audio', audioExtensions),('document', documentExtensions)]
+    mapping = [('video', videoExtensions),('audio', audioExtensions),('document', documentExtensions)]
     mediaFileExtensionToMeaningDict = {key:getFileExtensionToMeaningDictFromString(value) for key, value in mapping}
+    return mediaFileExtensionToMeaningDict[key]
 
 
 def detect_volume_average(mediapath, debug=False):
