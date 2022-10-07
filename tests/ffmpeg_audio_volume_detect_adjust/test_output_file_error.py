@@ -13,4 +13,4 @@ detect_volume_average(normalizedOutputPath, debug=True)
 # VOLUME: {'mean': -25.1, 'max': -8.8}
 # ERROR STATUS: False
 # 'mean' -> target level
-# 'max' -> 
+# 'max' -> true peak (really?)
