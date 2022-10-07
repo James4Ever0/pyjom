@@ -93,7 +93,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
                 fileExtensionToMeaningDict.update({extension: meaning})
     return fileExtensionToMeaningDict
 
-def getAllFileExte
+def getAllFileExtensionToMeaningDictFromString(inputString
 
 def detect_volume_average(mediapath, debug=False):
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
