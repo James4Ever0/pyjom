@@ -27,6 +27,7 @@ def detect_volume_average(mediapath):
     audio = ffmpeg.input(mediapath).audio
     # might have exception. what to do with it then??
     volDict = {}
+    error = False
     try:
     stdout, stderr = audio.filter("volumedetect").output("/dev/null", f="null").run(capture_stdout=True, capture_stderr=True)
     # where is the output?
