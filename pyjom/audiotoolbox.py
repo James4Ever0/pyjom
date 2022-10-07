@@ -7,6 +7,8 @@
 import audioread
 from lazero.utils.logger import sprint
 import ffmpeg
+from typing import Literal
+
 
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
