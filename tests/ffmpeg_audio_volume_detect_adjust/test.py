@@ -88,12 +88,3 @@ if __name__ == "__main__":
     # VOLUME: {'mean': -16.8, 'max': -2.0}
     # ERROR STATUS: False
     # how to adjust the volume accordingly?
-
-# commons.
-
-
-# videotoolbox.
-# you also need to get the bitrate of video/audio
-
-
-# audiotoolbox.

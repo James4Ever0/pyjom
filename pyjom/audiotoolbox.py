@@ -10,6 +10,8 @@ import ffmpeg
 from typing import Literal
 from pyjom.commons import *
 
+def getAudioBitrate(mediaPath):
+    return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bitrate"])
 
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
