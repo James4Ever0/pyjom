@@ -147,7 +147,12 @@ def adjustVolumeInMedia(
     outputPathExtension = outputPath.lower().split(".")[-1]
     # treat this as a common repository.
     videoExtensions = ['mp4','flv','mkv','rmvb','h264','avi','mov','mpeg','mpg','m4v','3gp','wmv','vob']
-    imageExtensions = []
+    imageExtensions = [JPEG image - .jpeg or .jpg
+PNG image - .png
+GIF image - .gif
+Photoshop or PSD image - .psd
+Adobe Illustrator image - .ai
+TIFF image - .tif or .tiff]
     documentExtensions = []
     audioExtensions = [MP3 audio file - .mp3
 AAC audio file -.aac
