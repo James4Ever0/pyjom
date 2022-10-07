@@ -288,7 +288,7 @@ if __name__ == "__main__":
     # ERROR STATUS: False
     # how to adjust the volume accordingly?
 
-
+# commons.
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     # demo output:
     # {'programs': [], 'streams': [{'bit_rate': '130770'}]}
