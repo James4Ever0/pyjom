@@ -145,7 +145,7 @@ def adjustVolumeInMedia(
     # ERROR STATUS: False
     # video codec we use 'copy' if the extension name is the same.
     outputPathExtension = outputPath.lower().split(".")[-1]
-    videoExtensions = ['mp4','flv','mkv','rmvb','h264','avi','mov','mpeg','mpg','m4v',]
+    videoExtensions = ['mp4','flv','mkv','rmvb','h264','avi','mov','mpeg','mpg','m4v','3gp','wmv','']
     # problem is, the container must be video compabible.
     # list the thing here?
     if outputPathExtension == "mp4":
