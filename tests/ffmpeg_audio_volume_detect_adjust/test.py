@@ -32,4 +32,6 @@ def detect_volume_average(mediapath):
     formatString="[Parsed_volumedetect{}] {volumeType}_volume: {value:g} dB"
     for line in stderr_lines:
         line=line.strip()
-        parse.parse(formatString, line)
+        result = parse.parse(formatString, line)
+        if result is not None:
+            
