@@ -90,48 +90,6 @@ if __name__ == "__main__":
     # how to adjust the volume accordingly?
 
 # commons.
-def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
-    # demo output:
-    # {'programs': [], 'streams': [{'bit_rate': '130770'}]}
-    commandArguments = [
-        "ffprobe",
-        "-i",
-        mediaPath,
-        "-v",
-        "quiet",
-    ]
-    if audioOnly:
-        commandArguments += [
-            "-select_streams",
-            "a:0",
-        ]
-    elif videoOnly:
-        commandArguments += [
-            "-select_streams",
-            "v:0",
-        ]
-    commandArguments += [
-        "-show_entries",
-        "stream=bit_rate",
-        "-hide_banner",
-        "-print_format",
-        "json",
-    ]
-    result = subprocess.run(commandArguments, capture_output=True, encoding="UTF-8")
-    stdout = result.stdout
-    stderr = result.stderr
-    try:
-        assert result.returncode == 0
-        stdout_json = json.loads(stdout)
-        return stdout_json
-    except:
-        import traceback
-
-        traceback.print_exc()
-        print("potential error logs:")
-        print(stderr)
-        print("error when getting media bitrate")
-        return {}
 
 
 # videotoolbox.
