@@ -133,6 +133,8 @@ def adjustVolumeInMedia(
         commandline += ["-t", str(target_level)]
     if true_peak:
         commandline += ["-tp", str(true_peak)]
+    if overwrite_output:
+        commandline+= ['-f']
     commandline += [mediaPath]
     status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
