@@ -134,6 +134,7 @@ AIF audio file - .aif"""
     mapping = [
         ("video", videoExtensions),
         ("audio", audioExtensions),
+        ("audio", audioExtensions),
         ("document", documentExtensions),
     ]
     mediaFileExtensionToMeaningDict = {
