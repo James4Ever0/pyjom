@@ -66,8 +66,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
 # commons.
 
 # audiotoolbox.
-# from pyjom.audiotoolbox import detect_volume_average
-from pyjom.audiotoolbox import adjustVolumeInMedia
+from pyjom.audiotoolbox import detect_volume_average, adjustVolumeInMedia
 import subprocess
 
 
