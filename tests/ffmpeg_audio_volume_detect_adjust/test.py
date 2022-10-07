@@ -39,7 +39,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
                                 "resizeMode": "contain",
                                 "mixVolume": 0
                             }
-    
+    clip.layers.append()
 
 
 def detect_volume_average(mediapath):
