@@ -293,4 +293,5 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     try:
         assert result.returncode == 0
         stdout = result.stdout
+        stdout_json = json.loads(stdout)
         return stdout_json
