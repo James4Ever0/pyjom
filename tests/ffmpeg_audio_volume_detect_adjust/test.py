@@ -84,8 +84,10 @@ def getFileExtensionToMeaningDictFromString(inputString):
         line = line.strip()
         if len(line) < 5:
             continue
-        meaning, extensions = line.split(" - ")
-        print('line')
+        try:
+            meaning, extensions = line.split(" - ")
+        except:
+            print('line')
         meaning = meaning.strip()
         extensions = extensions.split(" or ")
         for extension in extensions:
