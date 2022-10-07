@@ -67,7 +67,6 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
 # commons.
 from pyjom.commons import determineMediaTypeByExtension
 
-
 # audiotoolbox.
 def detect_volume_average(mediapath, debug=False):
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
