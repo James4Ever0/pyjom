@@ -145,7 +145,8 @@ def adjustVolumeInMedia(
     # ERROR STATUS: False
     # video codec we use 'copy' if the extension name is the same.
     outputPathExtension = outputPath.lower().split(".")[-1]
-    # problem is, the container must be video compabi
+    # problem is, the container must be video compabible.
+    # list the thing here?
     if outputPathExtension == "mp4":
         commandline += ["-c:a", "aac"]
     if target_level:
