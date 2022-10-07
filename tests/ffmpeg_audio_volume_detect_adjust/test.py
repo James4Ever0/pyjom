@@ -129,8 +129,8 @@ def adjustVolumeInMedia(mediaPath, outputPath,targets={'mean':}):# must set targ
         commandline += ["-c:a", "aac"]
     if target_level:
         commandline +=['-t',str(target_level)]
-    if target_level:
-        commandline +=['-t',str(target_level)]
+    if true_peak:
+        commandline +=['-tp',str(true_peak)]
     commandline += [mediaPath]
     status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
