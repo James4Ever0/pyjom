@@ -278,12 +278,7 @@ if __name__ == "__main__":
     # ERROR STATUS: False
     # how to adjust the volume accordingly?
 
-# you also need to get the bitrate of video/audio
-def getVideoBitrate(mediaPath):
-    return getMediaBitrate(mediaPath, videoOnly=True)
 
-def getAudioBitrate(mediaPath):
-    return getMediaBitrate(mediaPath, audioOnly=True)
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     commandArguments = ["ffprobe", "-i", mediaPath, "-v", "quiet",]
     if audioOnly:
@@ -305,3 +300,10 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         print(stderr)
         print('error when getting media bitrate')
         return {}
+# you also need to get the bitrate of video/audio
+def getVideoBitrate(mediaPath):
+    return getMediaBitrate(mediaPath, videoOnly=True)
+
+def getAudioBitrate(mediaPath):
+    return getMediaBitrate(mediaPath, audioOnly=True)
+    
