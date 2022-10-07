@@ -8,7 +8,9 @@ def FilesystemInfoFilter(processed_info, filters={}):
         # abandon_flag = False
         # ensure all filter names must be inside
         abandon_flag = [filter_name in file_info.keys() for filter_name in filters.keys()]
-        abandon_flag = not all(abandon_flag)
+        print(file_info.keys(), filters.keys(), ab)
+        breakpoint()
+        abandon_flag = not all(abandon_flag) #what is this?
         metadata = file_info["meta"] # is that necessary? do we want to make any filter with it?
         if abandon_flag: continue # abandon those without qualificaton info.
         cuts = {}
@@ -43,11 +45,14 @@ def FilesystemInfoFilter(processed_info, filters={}):
                 objects, min_time = filter_content.get("objects",None), filter_content.get("min_time",2)
                 assert objects != None
                 assert min_time > 0
-                detected_objects = list(file_info[filter_name]["detected_objects_timespan"].keys())
-                abandon_flag = all([x in objects for x in detected_objects])
-                if abandon_flag: break
+                DOT = file_info[filter_name]["detected_objects_timespan"]
+                detected_objects = list(DOT.keys())
+                abandon_flag = any([x in objects for x in detected_objects])
+                # what is this?
+                # breakpoint()
+                if not abandon_flag: break
                 avaliable_cuts = {}
-                for detected_object, timespans in file_info[filter_name]["detected_objects_timespan"]:
+                for detected_object, timespans in DOT.items():
                     if detected_object not in objects: continue
                     for timespan in timespans:
                         stop, start = timespan[1],timespan[0]
@@ -56,7 +61,7 @@ def FilesystemInfoFilter(processed_info, filters={}):
                             timespan = (start, stop) # do this anyway.
                         timespan_length = stop-start
                         if timespan_length < min_time: continue
-                        avaliable_cuts.update({avaliable_cuts.get(detected_object,[])+[timespan]})
+                        avaliable_cuts.update({detected_object:avaliable_cuts.get(detected_object,[])+[timespan]})
                 # collect avaliable cuts.
                 cuts.update({filter_name:avaliable_cuts})
                 # filter out required durations.
@@ -91,13 +96,13 @@ def FilesystemInfoFilter(processed_info, filters={}):
 @decorator
 def FilesystemProducer(processed_info, filters={}, template=None, template_config={},):
     # print(processed_info) # why we only have one single goddamn path?
-    breakpoint()
+    # breakpoint()
     filtered_info = FilesystemInfoFilter(processed_info, filters=filters)
 
     template_function = getProducerTemplate(template)
 
     meta_info = {k:processed_info[k]["meta"] for k in processed_info.keys()} # so there is no additional "meta" key.
-    print(filtered_info)
+    print(filtered_info) # empty! shit.
     print(meta_info)
     breakpoint()
     
