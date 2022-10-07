@@ -8,7 +8,7 @@ import audioread
 from lazero.utils.logger import sprint
 import ffmpeg
 from typing import Literal
-from pyjom.commons import determineMediaTypeByExtension
+from pyjom.commons import *
 
 
 def getAudioDuration(audioFilePath):
