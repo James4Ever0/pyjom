@@ -178,7 +178,7 @@ AAC audio file -.aac
 AC3 audio file - .ac3
 WAV audio file - .wav
 WMA audio file - .wma
-Ogg Vorbis audo file - .ogg
+Ogg Vorbis audio file - .ogg
 MIDI audio file - .midi or .mid
 CD audio file - .cda
 AIF audio file - .aif]
