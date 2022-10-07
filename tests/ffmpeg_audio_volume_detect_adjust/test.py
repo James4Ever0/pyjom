@@ -282,4 +282,4 @@ if __name__ == "__main__":
 def getVideoBitrate():
 
 def getAudioBitrate():
-    ffprobe -i {} -v quiet -select_streams a:0 -show_entries stream=bit_rate -hide_banner
+    ffprobe -i mediaPath -v quiet -select_streams a:0 -show_entries stream=bit_rate -hide_banner
