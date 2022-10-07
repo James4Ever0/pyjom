@@ -225,7 +225,7 @@ def adjustVolumeInMedia(
     # use aac for mp4 output. let's do it!
     target_level = targets.get("mean", None)
     true_peak = targets.get("max", None)
-    commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr", "-nt", algorithm, '-b:a']
+    commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr", "-nt", algorithm,]
     # now much better. let's see if we have other methods.
     # VOLUME NORMALIZATION SUCCESSFUL
     # MEDIA PATH: normalized.mp4
