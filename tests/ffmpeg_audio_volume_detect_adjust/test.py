@@ -112,7 +112,7 @@ def detect_volume_average(mediapath, debug=False):
 if __name__ == "__main__":
     # perform our test.
     # are you sure this won't change the volume?
-    audiopath = ""
+    audiopath = "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
     detect_volume_average(audiopath, debug=True)
     output_path = create_test_video_with_editly(audiopath)
     detect_volume_average(output_path)
