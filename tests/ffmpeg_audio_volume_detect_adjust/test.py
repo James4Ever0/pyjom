@@ -9,6 +9,17 @@ sys.path.append(pyjom_path)
 import ffmpeg
 from pyjom.audiotoolbox import getAudioDuration
 
+def executeEditlyScript(medialangTmpDir, editly_json):
+    editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
+    with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
+        f.write(json.dumps(editly_json, ensure_ascii=False))
+    print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
+    commandline = ["xvfb-run", "editly", "--json", editlyJsonSavePath]
+    print(commandline)
+    status = subprocess.run(commandline)  # is it even successful?
+    returncode = status.returncode
+    assert returncode == 0
+    print("RENDER SUCCESSFUL")
 
 def create_black_video_without_audio(duration, mediapath):
     # ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest output.mp4
