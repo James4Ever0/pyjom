@@ -281,7 +281,7 @@ if __name__ == "__main__":
 # you also need to get the bitrate of video/audio
 def getVideoBitrate():
 
-def getAudioBitrate(, audio):
+def getAudioBitrate(, audioOnly=False, videoOnly=False):
 
 d
     ffprobe -i mediaPath -v quiet
