@@ -106,7 +106,7 @@ def detect_volume_average(mediapath, debug=False):
     if debug:
         print()
         print("VOLUME:", volDict)
-        print("ERROR STATUS:", error)
+        sprint("ERROR STATUS:", error)
     return volDict, error
 
 if __name__ == "__main__":
