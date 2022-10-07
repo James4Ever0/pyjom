@@ -128,3 +128,4 @@ if __name__ == "__main__":
     # MEDIA PATH: volDetect_test.mp4
     # VOLUME: {'mean': -16.8, 'max': -2.0}
     # ERROR STATUS: False
+    # how to adjust the volume accordingly?
