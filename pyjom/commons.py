@@ -60,7 +60,6 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         return stdout_json
     except:
         import traceback
-
         traceback.print_exc()
         print("potential error logs:")
         print(stderr)
