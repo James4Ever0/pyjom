@@ -301,8 +301,8 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         return {}
 # you also need to get the bitrate of video/audio
 def getVideoBitrate(mediaPath):
-    return getMediaBitrate(mediaPath, videoOnly=True)
+    return getMediaBitrate(mediaPath, videoOnly=True)['streams'][0]
 
 def getAudioBitrate(mediaPath):
-    return getMediaBitrate(mediaPath, audioOnly=True)
+    return getMediaBitrate(mediaPath, audioOnly=True)['streams'][0]
     
