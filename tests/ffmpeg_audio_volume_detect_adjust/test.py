@@ -290,13 +290,15 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         commandArguments +=["-select_streams", "v:0",]
     commandArguments+=["-show_entries", "stream=bit_rate", "-hide_banner","-print_format","json"]
     result = subprocess.run(commandArguments,capture_output=True, encoding='UTF-8')
+    stdout = result.stdout
+    stderr = result.stderr
     try:
         assert result.returncode == 0
-        stdout = result.stdout
         stdout_json = json.loads(stdout)
         return stdout_json
     except:
         import traceback
         traceback.print_exc()
         print('potential error logs:')
+        print(stderr)
         return {}
