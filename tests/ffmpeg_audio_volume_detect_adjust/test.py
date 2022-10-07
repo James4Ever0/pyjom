@@ -111,6 +111,7 @@ def detect_volume_average(mediapath, debug=False):
 
 if __name__ == "__main__":
     # perform our test.
+    # are you sure this won't change the volume?
     audiopath = ""
     detect_volume_average(audiopath, debug=True)
     output_path = create_test_video_with_editly(audiopath)
