@@ -11,7 +11,7 @@ from typing import Literal
 from pyjom.commons import *
 
 def getAudioBitrate(mediaPath):
-    return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bitrate"])
+    return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bit_rate"])
 
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
