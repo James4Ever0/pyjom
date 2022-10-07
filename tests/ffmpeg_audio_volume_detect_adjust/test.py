@@ -29,15 +29,15 @@ def detect_volume_average(mediapath):
     volDict = {}
     error = False
     try:
-    stdout, stderr = audio.filter("volumedetect").output("/dev/null", f="null").run(capture_stdout=True, capture_stderr=True)
-    # where is the output?
-    stderr = stderr.decode('utf-8')
-    stderr_lines = stderr.split('\n')
-    formatString="[Parsed_volumedetect{}] {volumeType}_volume: {value:g} dB"
-    for line in stderr_lines:
-        line=line.strip()
-        result = parse.parse(formatString, line)
-        if result is not None:
-            volumeType, value = result['volumeType'], result['value']
-            volDict.update({volumeType:value})
+        stdout, stderr = audio.filter("volumedetect").output("/dev/null", f="null").run(capture_stdout=True, capture_stderr=True)
+        # where is the output?
+        stderr = stderr.decode('utf-8')
+        stderr_lines = stderr.split('\n')
+        formatString="[Parsed_volumedetect{}] {volumeType}_volume: {value:g} dB"
+        for line in stderr_lines:
+            line=line.strip()
+            result = parse.parse(formatString, line)
+            if result is not None:
+                volumeType, value = result['volumeType'], result['value']
+                volDict.update({volumeType:value})
     return volDict
