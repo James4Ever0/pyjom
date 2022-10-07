@@ -94,7 +94,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
     return fileExtensionToMeaningDict
 
 
-def getMediaFileExtensionToMeaningDictFromString():
+def getMediaFileExtensionToMeaningDict():
     # no input needed.
     videoExtensions = """MP4 or MPEG4 video file - .mp4
 264 video file - .h264
