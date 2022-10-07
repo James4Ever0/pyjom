@@ -130,8 +130,8 @@ def adjustVolumeInMedia(
     commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr", '-nt','rms']
     # commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr"]
     # VOLUME: {'mean': -13.2, 'max': 0.0}
-# the 'mean' is still not correctified.
-# ERROR STATUS: False
+    # the 'mean' is still not correctified.
+    # ERROR STATUS: False
     if outputPath.lower().endswith(".mp4"):
         commandline += ["-c:a", "aac"]
     if target_level:
