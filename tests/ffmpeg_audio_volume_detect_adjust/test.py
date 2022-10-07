@@ -156,13 +156,13 @@ Apple MP4 video file - .m4v
 Adobe flash video - .flv
 3GP video file - .3gp
 Windows Media Video file - .wmv
-DVD Video Object - .vob]
+DVD Video Object - .vob""""""
     imageExtensions = """JPEG image - .jpeg or .jpg
 PNG image - .png
 GIF image - .gif
 Photoshop or PSD image - .psd
 Adobe Illustrator image - .ai
-TIFF image - .tif or .tiff]
+TIFF image - .tif or .tiff"""
     documentExtensions = """Microsoft Word file - .doc or .docx
 PDF file - .pdf
 Text file - .txt
