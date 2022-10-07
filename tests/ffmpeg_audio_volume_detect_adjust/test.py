@@ -21,7 +21,15 @@ def create_black_video_without_audio(duration, mediapath):
 
 def create_test_video_with_editly(audio):  # length is calculated by the audio length.
     audio_duration = getAudioDuration(audio)
-    editly_json = {}
+    editly_json = {
+                "width": 1920,
+                "height": 1080,
+                "fast": fast,
+                "fps": 60,
+                "outPath": output_path,
+                "defaults": {"transition": None},
+                "clips": [],
+            }
 
 
 def detect_volume_average(mediapath):
