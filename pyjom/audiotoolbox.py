@@ -9,6 +9,7 @@ from lazero.utils.logger import sprint
 import ffmpeg
 from typing import Literal
 from pyjom.commons import *
+import parse
 
 def getAudioBitrate(mediaPath):
     return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bit_rate"])
