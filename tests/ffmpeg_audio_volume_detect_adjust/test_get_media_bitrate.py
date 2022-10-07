@@ -1,3 +1,4 @@
+import test
 from pyjom.audiotoolbox import getAudioBitrate
 
 mediaPaths = [
