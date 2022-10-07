@@ -708,6 +708,7 @@ def petsWithMusicOnlineProducer(
                 
                 
                 # following process is non-destructive for audio.
+                # you need audio normalization before these process.
                 final_output_location = getRandomFileName("mp4")
                 if render_ass:
                     import ffmpeg
