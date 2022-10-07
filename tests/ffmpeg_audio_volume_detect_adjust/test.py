@@ -10,6 +10,7 @@ import ffmpeg
 from pyjom.audiotoolbox import getAudioDuration
 from pyjom.medialang.processors.dotProcessor.videoProcessor import executeEditlyScript
 from lazero.utils.logger import sprint
+
 # import os
 # import json
 # import subprocess
@@ -72,7 +73,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
     editly_json["clips"].append(clip)
     # execute the thing.
     executeEditlyScript(".", editly_json)
-    print('media saved to: %s' % output_path)
+    print("media saved to: %s" % output_path)
     return output_path
 
 
@@ -103,20 +104,23 @@ def detect_volume_average(mediapath, debug=False):
                 volDict.update({volumeType: value})
     except:
         import traceback
+
         traceback.print_exc()
         print(stderr)
         print("error when detecting volume for: %s" % mediapath)
         error = True
     if debug:
-        print('MEDIA PATH: %s' % mediapath)
+        print("MEDIA PATH: %s" % mediapath)
         print("VOLUME:", volDict)
         sprint("ERROR STATUS:", error)
     return volDict, error
 
+
 def adjustVolumeInVideo(videoPath):
     media = ffmpeg.input(videoPath)
-    audio=media.audio
-    
+    audio = media.audio
+    video = media.video
+
 
 if __name__ == "__main__":
     # perform our test.
