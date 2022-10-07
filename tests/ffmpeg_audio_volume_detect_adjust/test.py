@@ -93,6 +93,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
                 fileExtensionToMeaningDict.update({extension: meaning})
     return fileExtensionToMeaningDict
 
+
 def getAllFileExtensionToMeaningDictFromString():
     # no input needed.
     videoExtensions = """MP4 or MPEG4 video file - .mp4
@@ -130,8 +131,14 @@ Ogg Vorbis audio file - .ogg
 MIDI audio file - .midi or .mid
 CD audio file - .cda
 AIF audio file - .aif"""
-    mapping = [('video', videoExtensions),('audio', audioExtensions),('document', documentExtensions)]
-    mediaFileExtensionToMeaningDict = {key:getFileExtensionToMeaningDictFromString(value) for key, value in mapping}
+    mapping = [
+        ("video", videoExtensions),
+        ("audio", audioExtensions),
+        ("document", documentExtensions),
+    ]
+    mediaFileExtensionToMeaningDict = {
+        key: getFileExtensionToMeaningDictFromString(value) for key, value in mapping
+    }
     return mediaFileExtensionToMeaningDict
 
 
