@@ -154,7 +154,7 @@ def adjustVolumeInMedia(
     if overwrite_output:
         commandline += ["-f"]
     commandline += [mediaPath]
-    status = subprocess.run(commandline)  # is it even successful?
+    status = subprocess.run(commandline) # is it even successful?
     returncode = status.returncode
     assert returncode == 0
     print("VOLUME NORMALIZATION SUCCESSFUL")
