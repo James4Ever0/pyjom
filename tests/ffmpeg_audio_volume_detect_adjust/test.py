@@ -13,6 +13,7 @@ from lazero.utils.logger import sprint
 
 # import os
 import json
+
 # import subprocess
 
 # def executeEditlyScript(medialangTmpDir, editly_json):
@@ -85,7 +86,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
         if len(line) < 5:
             continue
         # try:
-        meaning, extensions = line.split(" - ") # problem fixed.
+        meaning, extensions = line.split(" - ")  # problem fixed.
         # except:
         #     print('line:',[line])
         #     breakpoint()
@@ -212,7 +213,7 @@ def adjustVolumeInMedia(
     mediaPath,
     outputPath,
     targets={
-        "mean": -10.8, # -13.2 fuck.
+        "mean": -10.8,  # -13.2 fuck.
         "max": 0.0,
     },  # what is the real value anyway? we want the volume fetched from web.
     overwrite_output=False,
@@ -278,14 +279,33 @@ if __name__ == "__main__":
     # ERROR STATUS: False
     # how to adjust the volume accordingly?
 
+
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
-    commandArguments = ["ffprobe", "-i", mediaPath, "-v", "quiet",]
+    commandArguments = [
+        "ffprobe",
+        "-i",
+        mediaPath,
+        "-v",
+        "quiet",
+    ]
     if audioOnly:
-        commandArguments += ["-select_streams", "a:0",]
+        commandArguments += [
+            "-select_streams",
+            "a:0",
+        ]
     elif videoOnly:
-        commandArguments +=["-select_streams", "v:0",]
-    commandArguments+=["-show_entries", "stream=bit_rate", "-hide_banner","-print_format","json"]
-    result = subprocess.run(commandArguments,capture_output=True, encoding='UTF-8')
+        commandArguments += [
+            "-select_streams",
+            "v:0",
+        ]
+    commandArguments += [
+        "-show_entries",
+        "stream=bit_rate",
+        "-hide_banner",
+        "-print_format",
+        "json",
+    ]
+    result = subprocess.run(commandArguments, capture_output=True, encoding="UTF-8")
     stdout = result.stdout
     stderr = result.stderr
     try:
@@ -294,15 +314,18 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         return stdout_json
     except:
         import traceback
+
         traceback.print_exc()
-        print('potential error logs:')
+        print("potential error logs:")
         print(stderr)
-        print('error when getting media bitrate')
+        print("error when getting media bitrate")
         return {}
+
+
 # you also need to get the bitrate of video/audio
 def getVideoBitrate(mediaPath):
-    return int(getMediaBitrate(mediaPath, videoOnly=True)['streams'][0]['bitrate'])
+    return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bitrate"])
+
 
 def getAudioBitrate(mediaPath):
-    return int(getMediaBitrate(mediaPath, audioOnly=True)['streams'][0]['bitrate'])
-    
+    return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bitrate"])
