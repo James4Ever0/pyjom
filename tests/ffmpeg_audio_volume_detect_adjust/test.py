@@ -157,7 +157,7 @@ Adobe flash video - .flv
 3GP video file - .3gp
 Windows Media Video file - .wmv
 DVD Video Object - .vob]
-    imageExtensions = [JPEG image - .jpeg or .jpg
+    imageExtensions = """JPEG image - .jpeg or .jpg
 PNG image - .png
 GIF image - .gif
 Photoshop or PSD image - .psd
@@ -180,7 +180,7 @@ WMA audio file - .wma
 Ogg Vorbis audio file - .ogg
 MIDI audio file - .midi or .mid
 CD audio file - .cda
-AIF audio file - .aif]
+AIF audio file - .aif"""
     # problem is, the container must be video compabible.
     # list the thing here?
     if outputPathExtension == "mp4":
