@@ -284,7 +284,7 @@ def getVideoBitrate():
 def getAudioBitrate(, audioOnly=False, videoOnly=False):
 
 d
-    ffprobe -i mediaPath -v quiet
+    ffprobe -i mediaPath -v quiet]
     + [-select_streams a:0]
     + [-select_streams v:0]
-    -show_entries stream=bit_rate -hide_banner
+    +[-show_entries stream=bit_rate -hide_banner]
