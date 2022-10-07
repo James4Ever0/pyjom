@@ -9,6 +9,7 @@ sys.path.append(pyjom_path)
 import ffmpeg
 from pyjom.audiotoolbox import getAudioDuration
 from pyjom.medialang.processors.dotProcessor.videoProcessor import executeEditlyScript
+
 # import os
 # import json
 # import subprocess
@@ -25,6 +26,7 @@ from pyjom.medialang.processors.dotProcessor.videoProcessor import executeEditly
 #     assert returncode == 0
 #     print("RENDER SUCCESSFUL")
 
+
 def create_black_video_without_audio(duration, mediapath):
     # ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest output.mp4
     # length is in seconds.
@@ -36,39 +38,40 @@ def create_black_video_without_audio(duration, mediapath):
 
 def create_test_video_with_editly(audio):  # length is calculated by the audio length.
     audio_duration = getAudioDuration(audio)
-    fast=True
-    output_path = 'volDetect_test.mp4'
-    videoFilePath = 'black_video_with_equal_length_of_audio.mp4'
+    fast = True
+    output_path = "volDetect_test.mp4"
+    videoFilePath = "black_video_with_equal_length_of_audio.mp4"
     create_black_video_without_audio(audio_duration, videoFilePath)
     editly_json = {
-                "width": 1920,
-                "height": 1080,
-                "fast": fast,
-                "fps": 60,
-                "outPath": output_path,
-                "defaults": {"transition": None},
-                "clips": [],
-            }
+        "width": 1920,
+        "height": 1080,
+        "fast": fast,
+        "fps": 60,
+        "outPath": output_path,
+        "defaults": {"transition": None},
+        "clips": [],
+    }
     duration = cutTo = audio_duration
     cutFrom = 0
-    mute=True
+    mute = True
     clip = {
-                    "duration": duration,
-                    "layers": [],
-                }
+        "duration": duration,
+        "layers": [],
+    }
     layer = {
-                                "type": "video",
-                                "path": videoFilePath,
-                                "resizeMode": "contain",
-                                "cutFrom": cutFrom,
-                                "cutTo": cutTo,
-                                # that's how we mute it.
-                                "mixVolume": 1 - int(mute),
-                            }
-    clip['layers'].append(layer)
-    editly_json['clips'].append(clip)
+        "type": "video",
+        "path": videoFilePath,
+        "resizeMode": "contain",
+        "cutFrom": cutFrom,
+        "cutTo": cutTo,
+        # that's how we mute it.
+        "mixVolume": 1 - int(mute),
+    }
+    clip["layers"].append(layer)
+    editly_json["clips"].append(clip)
     # execute the thing.
     executeEditlyScript(".", editly_json)
+
 
 def detect_volume_average(mediapath):
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
