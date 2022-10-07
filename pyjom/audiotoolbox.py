@@ -6,7 +6,7 @@
 
 import audioread
 from lazero.utils.logger import sprint
-    import ffmpeg
+import ffmpeg
 
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
@@ -53,3 +53,4 @@ def detect_volume_average(mediapath, debug=False):
         print("VOLUME:", volDict)
         sprint("ERROR STATUS:", error)
     return volDict, error
+
