@@ -38,8 +38,6 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
                                 "type": "video",
                                 "path": videoFilePath,
                                 "resizeMode": "contain",
-                                "cutFrom": cutFrom,
-                                "cutTo": cutTo,
                                 # that's how we mute it.
                                 "mixVolume": 1 - int(mute),
                             }
