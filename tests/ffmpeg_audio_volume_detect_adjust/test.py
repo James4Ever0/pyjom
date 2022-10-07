@@ -301,4 +301,5 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         traceback.print_exc()
         print('potential error logs:')
         print(stderr)
+        print('error when ')
         return {}
