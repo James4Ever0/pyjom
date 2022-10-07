@@ -136,7 +136,7 @@ AIF audio file - .aif"""
         ("audio", audioExtensions),
         ("image", imageExtensions),
         ("document", documentExtensions),
-    ] # gif 
+    ]
     mediaFileExtensionToMeaningDict = {
         key: getFileExtensionToMeaningDictFromString(value) for key, value in mapping
     }
