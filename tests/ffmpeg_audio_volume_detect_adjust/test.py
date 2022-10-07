@@ -35,3 +35,4 @@ def detect_volume_average(mediapath):
         result = parse.parse(formatString, line)
         if result is not None:
             volumeType, value = result['volumeType'], result['value']
+            
