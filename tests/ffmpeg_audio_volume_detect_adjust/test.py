@@ -37,3 +37,4 @@ def detect_volume_average(mediapath):
         if result is not None:
             volumeType, value = result['volumeType'], result['value']
             volDict.update({volumeType:value})
+    return volDict
