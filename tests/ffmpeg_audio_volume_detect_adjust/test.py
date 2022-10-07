@@ -51,7 +51,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
         "defaults": {"transition": None},
         "clips": [],
     }
-    editly_json.update({"audioFilePath": bgm})
+    editly_json.update({"audioFilePath": audio})
     duration = cutTo = audio_duration
     cutFrom = 0
     mute = True
