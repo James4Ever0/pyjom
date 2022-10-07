@@ -281,7 +281,9 @@ if __name__ == "__main__":
 # you also need to get the bitrate of video/audio
 def getVideoBitrate():
 
-def getAudioBitrate(, audioOnly=False, videoOnly=False):
+def getAudioBitrate()
+def getMediaBitrate()
+    , audioOnly=False, videoOnly=False):
     ["ffprobe", "-i", "mediaPath", "-v", "quiet",]
     + ["-select_streams", "a:0",]
     + ["-select_streams", "v:0",]
