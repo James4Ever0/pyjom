@@ -10,6 +10,7 @@ import math
 from pyjom.audiotoolbox import adjustVolumeInMedia
 
 import audioowl
+
 # from MediaInfo import MediaInfo
 from pyjom.medialang.core import *
 
@@ -69,7 +70,11 @@ def getMusicCutSpansCandidates(
     music, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
     beats, bpm = audioOwlAnalysis(music["filepath"])
-    if lyric_path is not None and type(lyric_path) == str and os.path.exists(lyric_path):
+    if (
+        lyric_path is not None
+        and type(lyric_path) == str
+        and os.path.exists(lyric_path)
+    ):
         lyric = read_lrc(lyric_path)
         # print(lyric)
         # breakpoint()
@@ -379,7 +384,7 @@ def renderList2MediaLang(
     fast: bool = True,
     bgm=None,
     backend="ffmpeg",  # wtf is this ffmpeg?
-    medialangTmpdir = "/dev/shm/medialang"
+    medialangTmpdir="/dev/shm/medialang",
 ):  # this is just a primitive. need to improve in many ways.
     # producer = ""
     scriptBase = [
@@ -417,13 +422,15 @@ def renderList2MediaLang(
 
 # fix long loading time.
 @redisLRUCache()
-def getMusicInfoParsed(config,mintime=2, maxtime=7.8): #these are defaults.
+def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
     music = config["music"]
-    gaussian = config.get("gaussian", True) # this is different. default to use gaussian instead.
+    gaussian = config.get(
+        "gaussian", True
+    )  # this is different. default to use gaussian instead.
 
     # check if music is corrupted?
-    font = config.get("font",None)
-    policy = config.get("policy",{})
+    font = config.get("font", None)
+    policy = config.get("policy", {})
     policy_names = [x for x in policy.keys()]
     # get music duration here.
     music_metadata = get_media_info(music["filepath"])
@@ -459,12 +466,12 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # config = {"music":{"filepath":"","lyric_path":""},"font":{"filepath":"","fontsize":30}, "policy":{"some_policy_name":{}},"meta":{"maxtime":3, "mintime":1}}
     # how to auto-warp the AAS subtitle?
     # musicPath = config.get('music',"")
-    musicPath = config.get('music',{}).get('filepath',"")
-    debug = config.get('debug', False)
+    musicPath = config.get("music", {}).get("filepath", "")
+    debug = config.get("debug", False)
     report = corruptMediaFilter(musicPath)
     if not report:
         return False
-    
+
     (
         music,
         font,
@@ -508,7 +515,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         render_list,
         slient=True,
         bgm=music["filepath"],
-        backend= "editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
+        backend="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
     )  # what is the backend?
 
     # print(medialangObject)
@@ -522,14 +529,18 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         randomName = str(uuid.uuid4())
         # or just use some temporary file instead?
         medialangCodeSavePath = os.path.join(
-            "/root/Desktop/works/pyjom/tests/medialang_tests", "{}.mdl".format(randomName)
+            "/root/Desktop/works/pyjom/tests/medialang_tests",
+            "{}.mdl".format(randomName),
         )
         with open(medialangCodeSavePath, "w+") as f:
             f.write(medialangCode)
         print("MEDIALANG CODE SAVED TO:", medialangCodeSavePath)
     # why use medialang? probably because these render language are not "fully automated" or "automated enough" to express some abstract ideas? or just to leave some blanks for redundent low-level implementations?
     # print("_________________MEDIALANG CODE_________________")
-    editly_outputPath, medialang_item_list = medialangObject.execute()  ## shit will happen.
+    (
+        editly_outputPath,
+        medialang_item_list,
+    ) = medialangObject.execute()  ## shit will happen.
     # next time you could test medialang directly.
 
     # medialangObject.eval() # is something like that?
@@ -557,7 +568,7 @@ def petsWithMusicOnlineProducer(
     tempdir="/dev/shm/medialang/pets_with_music_online",
     remove_unused=True,
     fast: bool = True,
-    medialangTmpdir="/dev/shm/medialang"
+    medialangTmpdir="/dev/shm/medialang",
 ):
     import uuid
 
@@ -568,16 +579,16 @@ def petsWithMusicOnlineProducer(
         )
         for config in configs:
             debug = config.get("debug", False)
-            musicPath = config.get('music',{}).get('filepath',"")
-            translate = config.get('translate',False)
+            musicPath = config.get("music", {}).get("filepath", "")
+            translate = config.get("translate", False)
             # also how to translate?
-            translate_method = config.get('translate_method','baidu')
+            translate_method = config.get("translate_method", "baidu")
             # from pyjom.commons import corruptMediaFilter
             report = corruptMediaFilter(musicPath)
             if not report:
                 continue
 
-            render_ass = config.get('render_ass', False)
+            render_ass = config.get("render_ass", False)
             parsed_result = getMusicInfoParsed(config)
             # print(parsed_result)
             # breakpoint()
@@ -606,7 +617,13 @@ def petsWithMusicOnlineProducer(
                 # print("lrc path:", lyric_path)
                 # print('ass file path:',ass_file_path)
                 # breakpoint()
-                lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path, translate=translate, translate_method=translate_method) # here's the 'no translation' flag.
+                lrcToAnimatedAss(
+                    music["filepath"],
+                    lyric_path,
+                    ass_file_path,
+                    translate=translate,
+                    translate_method=translate_method,
+                )  # here's the 'no translation' flag.
             data_ids = []
             # from tqdm.gui import tqdm
 
@@ -689,27 +706,32 @@ def petsWithMusicOnlineProducer(
                     fast=fast,
                     bgm=music["filepath"],
                     backend="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
-                    medialangTmpdir = medialangTmpdir
+                    medialangTmpdir=medialangTmpdir,
                 )  # what is the backend?
                 # we first create a backup for this medialang script, please?
                 medialangScript = medialangObject.prettify()
                 if debug:
-                    medialangScript_savedPath = getRandomFileName('mdl')
+                    medialangScript_savedPath = getRandomFileName("mdl")
 
-                    with open(medialangScript_savedPath,'w+') as f: # will this shit work?
+                    with open(
+                        medialangScript_savedPath, "w+"
+                    ) as f:  # will this shit work?
                         f.write(medialangScript)
-                    print("MEDIALANG SCRIPT SAVED TO:",medialangScript_savedPath)
+                    print("MEDIALANG SCRIPT SAVED TO:", medialangScript_savedPath)
 
-                editly_outputPath, medialang_item_list = (
-                    medialangObject.execute()
-                )  # how to control its 'fast' parameter?
+                (
+                    editly_outputPath,
+                    medialang_item_list,
+                ) = medialangObject.execute()  # how to control its 'fast' parameter?
                 # maybe we need render the lyric file separately.
                 # normalization starts here.
-                rendered_media_location = getRandomFileName('mp4')# so where exactly is the file?
-                print('___adjusting volume in media___')
+                rendered_media_location = getRandomFileName(
+                    "mp4"
+                )  # so where exactly is the file?
+                print("___adjusting volume in media___")
                 adjustVolumeInMedia(editly_outputPath, rendered_media_location)
                 # using a ffmpeg filter.
-                print('RENDERED MEDIA LOCATION:',rendered_media_location)
+                print("RENDERED MEDIA LOCATION:", rendered_media_location)
                 if debug:
                     breakpoint()
                 # following process is non-destructive for audio.
@@ -717,21 +739,25 @@ def petsWithMusicOnlineProducer(
                 final_output_location = getRandomFileName("mp4")
                 if render_ass:
                     import ffmpeg
-                    ffmpeg.input(rendered_media_location).filter("ass", ass_file_path).output(
-                        final_output_location
-                    ).run(overwrite_output=True)
+
+                    ffmpeg.input(rendered_media_location).filter(
+                        "ass", ass_file_path
+                    ).output(final_output_location).run(overwrite_output=True)
                 else:
                     import shutil
+
                     shutil.move(rendered_media_location, final_output_location)
                 yield final_output_location  # another generator?
             except:
                 from lazero.utils.logger import traceError
+
                 traceError("error while rendering medialang script")
                 try:
-                    print("MEDIALANG SCRIPT SAVED TO:",medialangScript_savedPath)
+                    print("MEDIALANG SCRIPT SAVED TO:", medialangScript_savedPath)
                 except:
                     pass
                 breakpoint()
+
 
 def getProducerTemplate(template: str):
     producer_mapping = {
