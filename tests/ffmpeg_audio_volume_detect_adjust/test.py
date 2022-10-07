@@ -30,5 +30,4 @@ def detect_volume_average(mediapath):
     stderr = stderr.decode('utf-8')
     stderr_lines = stderr.split('\n')
     for line in stderr_lines:
-        [Parsed_volumedetect{}] mean_volume: {} dB
-[Parsed_volumedetec{}] max_volume: {} dB
+        [Parsed_volumedetect{}] {}_volume: {} dB
