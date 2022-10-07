@@ -20,6 +20,8 @@ if not error:
     detect_volume_average(normalizedOutputPath, debug=True)
 else:
     print("error when detecting volume in media: %s" % online_fetched_media)
+    # what is cliping?
+    # WARNING: Adjusting will lead to clipping of 4.209296 dB                                 
 # even worse with default settings.
 # VOLUME NORMALIZATION SUCCESSFUL
 # MEDIA PATH: normalized.mp4
