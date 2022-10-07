@@ -332,12 +332,12 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         print("error when getting media bitrate")
         return {}
 
-
+# videotoolbox.
 # you also need to get the bitrate of video/audio
 def getVideoBitrate(mediaPath):
     return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bitrate"])
     # you might want this magic.
 
-
+# audiotoolbox.
 def getAudioBitrate(mediaPath):
     return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bitrate"])
