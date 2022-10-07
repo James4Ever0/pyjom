@@ -23,6 +23,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
     audio_duration = getAudioDuration(audio)
     fast=True
     output_path = 'volDetect_test.mp4'
+    
     editly_json = {
                 "width": 1920,
                 "height": 1080,
