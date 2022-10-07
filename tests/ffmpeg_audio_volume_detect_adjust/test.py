@@ -128,7 +128,7 @@ def adjustVolumeInMedia(
     target_level = targets.get("mean", None)
     true_peak = targets.get("max", None)
     commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr", '-nt','rms']
-    # now much better.
+    # now much better. let's see if we have other methods.
     # VOLUME NORMALIZATION SUCCESSFUL
     # MEDIA PATH: normalized.mp4
     # VOLUME: {'mean': -11.0, 'max': 0.0}
