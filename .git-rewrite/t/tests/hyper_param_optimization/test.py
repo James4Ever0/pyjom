@@ -3,4 +3,14 @@
 
 from hyperopt import hp
 
-space = hp.choice('a',[('case 1',1+hp.lognormal('c1',0,1)), ('case 2', hp.uniform('c2',-10,10))])
+space = hp.choice(
+    "a",
+    [("case 1", 1 + hp.lognormal("c1", 0, 1)), ("case 2", hp.uniform("c2", -10, 10))],
+)
+
+import hyperopt.pyll.stochastic as stochastic
+
+for _ in range(10):
+    sample = stochastic.sample(space)
+    print("SAMPLE: ", sample) # this will return the tuple. can we put some custom functions here?
+    # there must be some integrations with custom functions. 
