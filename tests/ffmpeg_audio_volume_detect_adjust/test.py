@@ -144,7 +144,8 @@ AIF audio file - .aif"""
 
 def determineMediaTypeByExtension(extension):
     extension = extension.strip()
-    if extension.startswith(".")
+    if not extension.startswith("."):
+        extension = "." + extension
     extension_lower = extension.lower()
     mediaFileExtensionToMeaningDict = getMediaFileExtensionToMeaningDict()
     for mediaType, fileExtensionToMeaningDict in mediaFileExtensionToMeaningDict.items():
