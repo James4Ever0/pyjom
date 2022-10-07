@@ -128,6 +128,10 @@ def adjustVolumeInMedia(
     target_level = targets.get("mean", None)
     true_peak = targets.get("max", None)
     commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr", '-nt','rms']
+    VOLUME NORMALIZATION SUCCESSFUL
+    MEDIA PATH: normalized.mp4
+    VOLUME: {'mean': -11.0, 'max': 0.0}
+    ERROR STATUS: False
     # commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr"]
     # VOLUME: {'mean': -13.2, 'max': 0.0}
     # the 'mean' is still not correctified.
