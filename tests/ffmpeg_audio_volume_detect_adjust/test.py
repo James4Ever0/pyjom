@@ -16,13 +16,21 @@ import json
 
 
 # videotoolbox?
-def create_black_video_without_audio(duration, mediapath, overwrite_output=True, color='black', resolution="1280x720", framerate=5):
+def create_black_video_without_audio(
+    duration,
+    mediapath,
+    overwrite_output=True,
+    color="black",
+    resolution="1280x720",
+    framerate=5,
+):
     # ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest output.mp4
     # length is in seconds.
-    videoInput = "color=c={}:s={}:r={}".format(color,resolution,framerate)
+    videoInput = "color=c={}:s={}:r={}".format(color, resolution, framerate)
     ffmpeg.input(videoInput, f="lavfi", t=duration).output(mediapath, crf=0).run(
         overwrite_output=overwrite_output
     )
+
 
 # this is for test only. not for work.
 def create_test_video_with_editly(audio):  # length is calculated by the audio length.
@@ -64,6 +72,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
     print("media saved to: %s" % output_path)
     return output_path
 
+
 # commons.
 def getFileExtensionToMeaningDictFromString(inputString):
     inputStringList = inputString.split("\n")
@@ -85,7 +94,8 @@ def getFileExtensionToMeaningDictFromString(inputString):
                 fileExtensionToMeaningDict.update({extension: meaning})
     return fileExtensionToMeaningDict
 
-#commons.
+
+# commons.
 def getMediaFileExtensionToMeaningDict():
     # no input needed.
     videoExtensions = """MP4 or MPEG4 video file - .mp4
@@ -134,6 +144,7 @@ AIF audio file - .aif"""
     }
     return mediaFileExtensionToMeaningDict
 
+
 # commons.
 def determineMediaTypeByExtension(extension):
     extension = extension.strip()
@@ -149,6 +160,7 @@ def determineMediaTypeByExtension(extension):
             if fileExtension.lower == extension_lower:
                 return mediaType
     return "unknown"
+
 
 # audiotoolbox.
 def detect_volume_average(mediapath, debug=False):
@@ -319,11 +331,13 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         print("error when getting media bitrate")
         return {}
 
+
 # videotoolbox.
 # you also need to get the bitrate of video/audio
 def getVideoBitrate(mediaPath):
     return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bitrate"])
     # you might want this magic.
+
 
 # audiotoolbox.
 def getAudioBitrate(mediaPath):
