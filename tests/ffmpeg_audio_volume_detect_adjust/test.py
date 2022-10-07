@@ -113,7 +113,8 @@ def detect_volume_average(mediapath, debug=False):
         sprint("ERROR STATUS:", error)
     return volDict, error
 
-def adjustVolumeInVideo(videoPath)
+def adjustVolumeInVideo(videoPath):
+    audio = 
 
 if __name__ == "__main__":
     # perform our test.
