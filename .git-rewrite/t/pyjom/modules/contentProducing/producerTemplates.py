@@ -254,7 +254,7 @@ def getRenderList(total_cuts, demanded_cut_spans):
             # random.shuffle(file_cuts)
             selected_cut = None
             for cut in file_cuts:
-                if cut is None: # break if the infinite generator is taking break.
+                if cut is None: # break if the infinite generator is taking a break.
                     break
                     # continue # really continue?
                 cut_span = cut["span"]
@@ -305,6 +305,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
         filtered_info, meta_info, standard_bpm_spans, policy_names
     )  # is this shit empty?
     # this can be infinity loop.
+    # sample: [{'span': (0, 3.9300226757369616), 'cut': {'span': (13.4, 18.0), 'modifiers': {}}, 'source': '/root/Desktop/works/pyjom/samples/video/LiGGLhv4E.mp4'}]
     # print(total_cuts)
     # breakpoint()
 
