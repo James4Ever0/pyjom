@@ -149,7 +149,15 @@ def adjustVolumeInMedia(
     videoExtensions = ['mp4','flv','mkv','rmvb','h264','avi','mov','mpeg','mpg','m4v','3gp','wmv','vob']
     imageExtensions = []
     documentExtensions = []
-    audioExtensions = []
+    audioExtensions = [MP3 audio file - .mp3
+AAC audio file -.aac
+AC3 audio file - .ac3
+WAV audio file - .wav
+WMA audio file - .wma
+Ogg Vorbis audo file - .ogg
+MIDI audio file - .midi or .mid
+CD audio file - .cda
+AIF audio file - .aif]
     # problem is, the container must be video compabible.
     # list the thing here?
     if outputPathExtension == "mp4":
