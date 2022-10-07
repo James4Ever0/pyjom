@@ -285,7 +285,7 @@ def getAudioBitrate(mediaPath):
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     commandArguments = ["ffprobe", "-i", mediaPath, "-v", "quiet",]
     if audioOnly:
-    + ["-select_streams", "a:0",]
+    commandArguments + ["-select_streams", "a:0",]
     elif videoOnly:
-    + ["-select_streams", "v:0",]
+    commandArguments + ["-select_streams", "v:0",]
     +["-show_entries", "stream=bit_rate", "-hide_banner","-print_format","json"]
