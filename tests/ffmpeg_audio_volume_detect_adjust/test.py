@@ -85,6 +85,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
         meaning, extensions= line.split(" - ")
         extensions = extensions.split(" or ")
         for extension in extensions:
+            extension = extension.strip()
             if len(extension)
 
 
