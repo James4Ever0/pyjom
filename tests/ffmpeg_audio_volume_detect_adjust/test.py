@@ -115,14 +115,17 @@ def detect_volume_average(mediapath, debug=False):
         sprint("ERROR STATUS:", error)
     return volDict, error
 
+
 import subprocess
+
+
 def adjustVolumeInMedia(mediaPath, outputPath):
     # use ffmpeg-normalize?
-    # use aac for mp4. let's do it!
-    commandline = ['ffmpeg-normalize', "-o", outputPath,"-pr"]
+    # use aac for mp4 output. let's do it!
+    commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr"]
     if outputPath.lower().endswith(".mp4"):
-        commandline+=['-c:a','aac']
-    commandline+=[mediaPath]
+        commandline += ["-c:a", "aac"]
+    commandline += [mediaPath]
     status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
     assert returncode == 0
@@ -131,6 +134,7 @@ def adjustVolumeInMedia(mediaPath, outputPath):
     # audio = media.audio
     # video = media.video
     # audio = audio.filter()
+
 
 if __name__ == "__main__":
     # perform our test.
