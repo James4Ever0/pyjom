@@ -119,7 +119,8 @@ import subprocess
 def adjustVolumeInMedia(mediaPath, outputPath):
     # use ffmpeg-normalize?
     # use aac for mp4. let's do it!
-    commandline = ['ffmpeg-normalize', "-o", outputPath,"-pr"]commandline+=[mediaPath]
+    commandline = ['ffmpeg-normalize', "-o", outputPath,"-pr"]
+    commandline+=[mediaPath]
     status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
     assert returncode == 0
