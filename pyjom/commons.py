@@ -601,7 +601,6 @@ def getTemplateFileBaseDir(tmpDir="templates"):
 
 yolov5_model = None
 
-from functools import lru_cache
 
 
 @lru_cache(maxsize=1)
