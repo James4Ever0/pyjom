@@ -122,6 +122,9 @@ import subprocess
 def adjustVolumeInMedia(
     mediaPath, outputPath, targets={"mean": -10.8, "max": 0.0}, overwrite_output=False
 ):  # must set target volume.
+# VOLUME: {'mean': -13.2, 'max': 0.0}
+# the 'mean' is still not correctified.
+# ERROR STATUS: False
     # use ffmpeg-normalize?
     # use aac for mp4 output. let's do it!
     target_level = targets.get("mean", None)
