@@ -29,3 +29,5 @@ def detect_volume_average(mediapath):
     # where is the output?
     stderr = stderr.decode('utf-8')
     stderr_lines = stderr.split('\n')
+    for line in stderr_lines:
+        
