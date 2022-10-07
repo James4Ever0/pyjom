@@ -325,6 +325,7 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
 # you also need to get the bitrate of video/audio
 def getVideoBitrate(mediaPath):
     return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bitrate"])
+    # you might want this magic.
 
 
 def getAudioBitrate(mediaPath):
