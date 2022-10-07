@@ -14,19 +14,6 @@ from lazero.utils.logger import sprint
 # import os
 import json
 
-# import subprocess
-
-# def executeEditlyScript(medialangTmpDir, editly_json):
-#     editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
-#     with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
-#         f.write(json.dumps(editly_json, ensure_ascii=False))
-#     print("EXECUTING EDITLY JSON AT %s" % editlyJsonSavePath)
-#     commandline = ["xvfb-run", "editly", "--json", editlyJsonSavePath]
-#     print(commandline)
-#     status = subprocess.run(commandline)  # is it even successful?
-#     returncode = status.returncode
-#     assert returncode == 0
-#     print("RENDER SUCCESSFUL")
 
 # videotoolbox?
 def create_black_video_without_audio(duration, mediapath):
