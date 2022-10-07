@@ -52,6 +52,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
                             }
     clip['layers'].append(layer)
     editly_json['clips'].append(clip)
+    
 
 def detect_volume_average(mediapath):
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
