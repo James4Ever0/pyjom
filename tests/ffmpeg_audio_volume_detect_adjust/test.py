@@ -67,21 +67,6 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
 # commons.
 from pyjom.commons import determineMediaTypeByExtension
 
-def determineMediaTypeByExtension(extension):
-    extension = extension.strip()
-    if not extension.startswith("."):
-        extension = "." + extension
-    extension_lower = extension.lower()
-    mediaFileExtensionToMeaningDict = getMediaFileExtensionToMeaningDict()
-    for (
-        mediaType,
-        fileExtensionToMeaningDict,
-    ) in mediaFileExtensionToMeaningDict.items():
-        for fileExtension, meaning in fileExtensionToMeaningDict.items():
-            if fileExtension.lower == extension_lower:
-                return mediaType
-    return "unknown"
-
 
 # audiotoolbox.
 def detect_volume_average(mediapath, debug=False):
