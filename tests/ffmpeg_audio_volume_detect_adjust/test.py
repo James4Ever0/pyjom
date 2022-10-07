@@ -10,6 +10,7 @@ import ffmpeg
 from pyjom.audiotoolbox import getAudioDuration
 import os
 import json
+import subprocess
 
 def executeEditlyScript(medialangTmpDir, editly_json):
     editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
