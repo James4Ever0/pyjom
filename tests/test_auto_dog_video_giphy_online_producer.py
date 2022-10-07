@@ -28,6 +28,7 @@ wbRev = OnlineAutoContentProducer(
             # you can simply implement the method to cofigure and test ping for websites in lazero library so we can share the same code.
             # or you can borrow code from the web. some clash manager library for python.
             # "translate_method": "deepl",
+            # damn cold for this mac!
         }
     ],
     # you can also translate funny videos from youtube.
