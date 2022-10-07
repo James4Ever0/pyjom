@@ -280,6 +280,7 @@ if __name__ == "__main__":
 
 # you also need to get the bitrate of video/audio
 def getVideoBitrate(mediaPath):
+    return getMediaBitrate(mediaPath, videoOnly=True)
 
 def getAudioBitrate(mediaPath):
     return getMediaBitrate(mediaPath, audioOnly=True)
