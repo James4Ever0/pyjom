@@ -1,0 +1,56 @@
+2022/08/07 02:21:32.826 [E]  Will ReConnect After:8 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:31:10.945 [E]  Will ReConnect After:9 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:31:29.957 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:48137->223.5.5.5:53: i/o timeout
+2022/08/07 04:31:29.958 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:48137->223.5.5.5:53: i/o timeout
+2022/08/07 04:31:29.959 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:48137->223.5.5.5:53: i/o timeout
+2022/08/07 04:31:29.961 [E]  Will ReConnect After:8 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:31:47.968 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:36803->223.5.5.5:53: i/o timeout
+2022/08/07 04:31:47.968 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:36803->223.5.5.5:53: i/o timeout
+2022/08/07 04:31:47.969 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:36803->223.5.5.5:53: i/o timeout
+2022/08/07 04:31:47.969 [E]  Will ReConnect After:5 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:32:02.975 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:38953->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:02.976 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:38953->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:02.976 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:38953->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:02.977 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:32:19.983 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:41233->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:19.984 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:41233->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:19.985 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:41233->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:19.985 [E]  Will ReConnect After:5 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:32:34.992 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:53060->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:34.993 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:53060->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:34.994 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:53060->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:34.994 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:32:52.000 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:39755->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:52.001 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:39755->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:52.001 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:39755->223.5.5.5:53: i/o timeout
+2022/08/07 04:32:52.002 [E]  Will ReConnect After:5 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:33:07.007 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:45294->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:07.008 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:45294->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:07.008 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:45294->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:07.009 [E]  Will ReConnect After:5 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:33:22.015 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:48740->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:22.016 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:48740->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:22.016 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:48740->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:22.017 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 04:33:38.023 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:59571->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:38.023 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:59571->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:38.024 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.4:59571->223.5.5.5:53: i/o timeout
+2022/08/07 04:33:38.024 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/08/07 14:10:20.954 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/08/07 14:10:29.085 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/08/07 14:10:35.180 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64_another_account/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
