@@ -14,6 +14,7 @@ def getAudioDuration(audioFilePath):
 
 
 def detect_volume_average(mediapath, debug=False):
+    import ffmpeg
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
     # audio = ffmpeg.input(mediapath)
     audio = ffmpeg.input(mediapath).audio
