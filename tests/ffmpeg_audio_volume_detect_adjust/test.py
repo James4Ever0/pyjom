@@ -131,7 +131,9 @@ def adjustVolumeInMedia(
     try:
         assert returncode == 0
         print("VOLUME NORMALIZATION SUCCESSFUL")
-        return  outputPath
+        return outputPath
+    else:
+        return None
     # media = ffmpeg.input(videoPath)
     # audio = media.audio
     # video = media.video
