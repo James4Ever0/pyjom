@@ -11,6 +11,8 @@ online_fetched_media = "/root/Desktop/works/pyjom/tests/calculate_separate_video
 targets, error = detect_volume_average(online_fetched_media, debug=True)
 # at least let me see this shit.
 breakpoint()
+# {'mean': -10.6, 'max': 0.0}
+# according to the volume, it seems that everyone agree with this 'industrial standard'
 if not error:
     adjustVolumeInMedia(output_path, normalizedOutputPath, overwrite_output=True)
     detect_volume_average(normalizedOutputPath, debug=True, targets=targets)
