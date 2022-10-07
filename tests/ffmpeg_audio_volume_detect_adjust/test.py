@@ -134,7 +134,7 @@ AIF audio file - .aif"""
     mapping = [
         ("video", videoExtensions),
         ("audio", audioExtensions),
-        ("image", imageExtensions), # gif could be video.
+        ("image", imageExtensions),  # gif could be video.
         ("document", documentExtensions),
     ]
     mediaFileExtensionToMeaningDict = {
@@ -142,17 +142,21 @@ AIF audio file - .aif"""
     }
     return mediaFileExtensionToMeaningDict
 
+
 def determineMediaTypeByExtension(extension):
     extension = extension.strip()
     if not extension.startswith("."):
         extension = "." + extension
     extension_lower = extension.lower()
     mediaFileExtensionToMeaningDict = getMediaFileExtensionToMeaningDict()
-    for mediaType, fileExtensionToMeaningDict in mediaFileExtensionToMeaningDict.items():
+    for (
+        mediaType,
+        fileExtensionToMeaningDict,
+    ) in mediaFileExtensionToMeaningDict.items():
         for fileExtension, meaning in fileExtensionToMeaningDict.items():
             if fileExtension.lower == extension_lower:
-                return fileExtension
-    return 'unknown'
+                return mediaType
+    return "unknown"
 
 
 def detect_volume_average(mediapath, debug=False):
