@@ -167,41 +167,6 @@ def adjustVolumeInMedia(
     # video codec we use 'copy' if the extension name is the same.
     outputPathExtension = outputPath.lower().split(".")[-1]
     # treat this as a common repository.
-    videoExtensions = """MP4 or MPEG4 video file - .mp4
-264 video file - .h264
-AVI video file - .avi
-MKV or Matroska Multimedia Container - .mkv
-MPEG video file - .mpeg or .mpg
-MOV or Apple QuickTime video file - .mov
-Apple MP4 video file - .m4v
-Adobe flash video - .flv
-3GP video file - .3gp
-Windows Media Video file - .wmv
-DVD Video Object - .vob"""
-    imageExtensions = """JPEG image - .jpeg or .jpg
-PNG image - .png
-GIF image - .gif
-Photoshop or PSD image - .psd
-Adobe Illustrator image - .ai
-TIFF image - .tif or .tiff"""
-    documentExtensions = """Microsoft Word file - .doc or .docx
-PDF file - .pdf
-Text file - .txt
-Microsoft Excel file - .xls
-Microsoft Excel Open XML file - .xlsx
-Microsoft Excel file with macros - .xlsm
-Microsoft PowerPoint presentation - .ppt
-Microsoft PowerPoint slide show - .pps
-Microsoft PowerPoint Open XML presentation - .pptx"""
-    audioExtensions = """MP3 audio file - .mp3
-AAC audio file -.aac
-AC3 audio file - .ac3
-WAV audio file - .wav
-WMA audio file - .wma
-Ogg Vorbis audio file - .ogg
-MIDI audio file - .midi or .mid
-CD audio file - .cda
-AIF audio file - .aif"""
 
     # problem is, the container must be video compabible.
     # list the thing here?
