@@ -76,6 +76,8 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
     print("media saved to: %s" % output_path)
     return output_path
 
+def get_
+
 
 def detect_volume_average(mediapath, debug=False):
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
