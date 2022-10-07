@@ -20,7 +20,7 @@ wbRev = FilesystemAutoContentProducer(
     "/media/root/help/pyjom/logs/local/1652502047_091761.json",# yolov5
     "/media/root/help/pyjom/logs/local/1652856912_480332.json", # framedifference_talib
     ],
-    filters={"yolov5":["dog","cat"],"meta":{"timelimit":{"min":1,}}},
+    filters={"yolov5":{"objects":["dog","cat"],"min_time":2},"meta":{"timelimit":{"min":1,}}},
     path_replacers=[
         [
             ["/media/root/help/pyjom/samples/",
@@ -29,12 +29,13 @@ wbRev = FilesystemAutoContentProducer(
             ],
             "/root/Desktop/works/pyjom/samples/"
         ]
-    ]
+    ],
+    template = "pets_with_music",
+    template_config = {"music":""}
     # filters={"yolov5":["dog","cat"],"labels":["dog","cat"],"framedifference_talib_detector":30}
     # you can also translate funny videos from youtube.
     # dummy_auto=False,
     # args=autoArgs,
-    # template_names=template_names,
     # semiauto=False # i do not want to comment shit.
 )
 

@@ -7,14 +7,22 @@ import random
 import sys
 import traceback
 
+from threading import Event
+
+
+exit_event = Event()
+exit_event.clear()
+
+def programExit():
+    exit_event.set()
 # my_qq = 1281727431 # freaking int! Yukio.
 import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--qq", type=int, default= 1281727431, required= False) # must not required since we have default value here.
 parser.add_argument("--port", type=int, default=8780, required= False)
-parser.add_argument("--log", type=int, default=1, required= False)
-parser.add_argument("--log_file", type=int, default=1, required= False)
+parser.add_argument("--log", action="store_true")
+parser.add_argument("--log_file", action="store_true")
 
 # 忽略信息的blacklist 还有user_blacklist
 group_blacklist = [927825838] # 微信的hook发布群
@@ -22,10 +30,11 @@ friend_blacklist = [364831018] # 发给我微信hook的人
 
 parsed_args = parser.parse_args()
 
+
 my_qq = parsed_args.qq
 server_port = parsed_args.port
-log = bool(parsed_args.log)
-log_file = bool(parsed_args.log_file)
+log = parsed_args.log
+log_file = parsed_args.log_file
 
 # you can pass the qq via enviorment variable.
 # it is already inside. so the call fails.
@@ -80,6 +89,8 @@ def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MRED
         if bag_type == 12:
             action.sendGroupText(group=group_id, content=title)
         for trial in range(3): # try three times till we get there.
+            if exit_event.is_set():
+                break
             try:
                 answer = action.openRedBag(RedBaginfo)
                 print(prefix,"RESULT:", answer, file=sys.stderr)
@@ -94,11 +105,11 @@ def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MRED
                 time.sleep(sleep_time)
 
 
-def startDaemonThread(target, args=(), kwargs={}):
-    thread = threading.Thread(target=target, args=args, kwargs={}, daemon=True)
+def startThread(target, args=(), kwargs={}):
+    thread = threading.Thread(target=target, args=args, kwargs=kwargs, daemon=False)
     thread.start()
 
-def asyncDaemonThread(func):
+def asyncThread(func):
     def new_func(*args, **kwargs):
-        startDaemonThread(func, args=args, kwargs=kwargs)
+        startThread(func, args=args, kwargs=kwargs)
     return new_func
