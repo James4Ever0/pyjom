@@ -181,7 +181,8 @@ schedule.every(1).minute.do(sendRandomGroupMessage)  # will this shit work?
 
 
 @bot.on_group_msg
-def group(ctx: GroupMsg, groupInitReplyDelayRange=(2, 20)):
+def group(ctx: GroupMsg, groupInitReplyDelayRange=(2, 10)):
+    # too broad for groupInitReplyDelayRange to be (2, 20)
     # global groupChatCursor
     # print('收到群消息，群号为', ctx.FromGroupId)
     data_dict = ctx.data  # recommend to use this json object. or not?
