@@ -820,7 +820,7 @@ def lrcToAnimatedAss(musicPath, lrcPath, assPath, translate=True, translate_meth
     textArray = lrcToTextArray(musicPath, lrcPath)
     textList = [elem['text'] for elem in textArray]
     if translate:
-        translatedList = getTextListTranslated(textList) # this is taking long time during test. make it redis lru cached!
+        translatedList = getTextListTranslated(textList, translate_method=translate_method) # this is taking long time during test. make it redis lru cached!
     else:
         translatedList = [] # notice, we need to examine this damn list.
     # so we pass both arguments to the ass generator.
