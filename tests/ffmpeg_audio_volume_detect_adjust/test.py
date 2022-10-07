@@ -141,7 +141,7 @@ if __name__ == "__main__":
     detect_volume_average(output_path, debug=True)
     normalizedOutputPath = "normalized.mp4"
     adjustVolumeInMedia(output_path, normalizedOutputPath)
-
+    detect_volume_average()
     # volume changed!
     # MEDIA PATH: volDetect_test.mp4
     # VOLUME: {'mean': -16.8, 'max': -2.0}
