@@ -7,6 +7,7 @@ from pyjom.commons import *
 import random
 import pylrc
 import math
+from pyjom.audiotoolbox import adjustVolumeInMedia
 
 import audioowl
 from MediaInfo import MediaInfo
