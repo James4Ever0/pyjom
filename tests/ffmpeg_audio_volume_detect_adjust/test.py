@@ -143,7 +143,7 @@ def adjustVolumeInMedia(
     # VOLUME: {'mean': -13.2, 'max': 0.0}
     # the 'mean' is still not correctified.
     # ERROR STATUS: False
-    # video codec we use 
+    # video codec we use 'copy' if the extension name is the same.
     if outputPath.lower().endswith(".mp4"):
         commandline += ["-c:a", "aac"]
     if target_level:
