@@ -279,9 +279,9 @@ if __name__ == "__main__":
     # how to adjust the volume accordingly?
 
 # you also need to get the bitrate of video/audio
-def getVideoBitrate():
+def getVideoBitrate(mediaPath):
 
-def getAudioBitrate()
+def getAudioBitrate(mediaPath):
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     ["ffprobe", "-i", "mediaPath", "-v", "quiet",]
     + ["-select_streams", "a:0",]
