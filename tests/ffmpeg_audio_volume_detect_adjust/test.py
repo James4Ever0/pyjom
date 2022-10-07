@@ -144,7 +144,8 @@ AIF audio file - .aif"""
 
 def determineMediaTypeByExtension(extension):
     extension = extension.lower()
-    mediaFileExtensionToMeaningDict = getMediaFileExtensionToMeaningDictFromString
+    mediaFileExtensionToMeaningDict = getMediaFileExtensionToMeaningDict()
+    for 
 
 
 def detect_volume_average(mediapath, debug=False):
