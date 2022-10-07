@@ -31,7 +31,8 @@ def createPureColorVideo(
         overwrite_output=overwrite_output
     )
 
-def create_black_video_without_audio()
+def create_black_video_without_audio(duration, mediapath):
+    createPureColorVideo(duration, mediapath)
 
 
 # this is for test only. not for work.
