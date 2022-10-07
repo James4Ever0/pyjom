@@ -283,7 +283,7 @@ def getVideoBitrate(mediaPath):
 
 def getAudioBitrate(mediaPath):
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
-    commandArgumetns = ["ffprobe", "-i", "mediaPath", "-v", "quiet",]
+    commandArguments = ["ffprobe", "-i", "mediaPath", "-v", "quiet",]
     if audioOnly:
     + ["-select_streams", "a:0",]
     elif videoOnly:
