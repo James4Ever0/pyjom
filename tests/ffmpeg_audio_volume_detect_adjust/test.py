@@ -48,7 +48,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
                                 "mixVolume": 1 - int(mute),
                             }
     clip['layers'].append(layer)
-
+    editl
 
 def detect_volume_average(mediapath):
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
