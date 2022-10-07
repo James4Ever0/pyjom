@@ -9,8 +9,10 @@ normalizedOutputPath = "normalized.mp4"
 online_fetched_media = "/root/Desktop/works/pyjom/tests/calculate_separate_video_scene_duration_in_dog_video_with_bgm/sample.mp4"
 # is this the standard?
 
+
 adjustVolumeInMedia(output_path, normalizedOutputPath, overwrite_output=True)
 detect_volume_average(normalizedOutputPath, debug=True)
+
 # even worse with default settings.
 # VOLUME NORMALIZATION SUCCESSFUL
 # MEDIA PATH: normalized.mp4
