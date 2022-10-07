@@ -1,0 +1,42 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/shape/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_shape",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/shape/test/test_shape.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_shape",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/shape/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_shape",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_shape",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_shape"
+	}
+}

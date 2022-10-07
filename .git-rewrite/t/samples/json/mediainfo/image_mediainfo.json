@@ -1,0 +1,32 @@
+{
+    "creatingLibrary": {
+        "name": "MediaInfoLib",
+        "version": "22.03",
+        "url": "https://mediaarea.net/MediaInfo"
+    },
+    "media": {
+        "@ref": "/media/root/help/pyjom/samples/image/dog_with_text.png",
+        "track": [{
+                "@type": "General",
+                "ImageCount": "1",
+                "FileExtension": "png",
+                "Format": "PNG",
+                "FileSize": "247866",
+                "StreamSize": "0",
+                "File_Modified_Date": "UTC 2022-05-21 15:42:34",
+                "File_Modified_Date_Local": "2022-05-21 23:42:34"
+            },
+            {
+                "@type": "Image",
+                "Format": "PNG",
+                "Format_Compression": "Deflate",
+                "Width": "852",
+                "Height": "480",
+                "ColorSpace": "RGB",
+                "BitDepth": "8",
+                "Compression_Mode": "Lossless",
+                "StreamSize": "247866"
+            }
+        ]
+    }
+}

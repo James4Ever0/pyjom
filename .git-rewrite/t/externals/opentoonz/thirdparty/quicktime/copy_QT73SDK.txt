@@ -1,0 +1,1 @@
+Copy folders in 'C:\Program Files (x86)\QuickTime SDK' to QT73SDK

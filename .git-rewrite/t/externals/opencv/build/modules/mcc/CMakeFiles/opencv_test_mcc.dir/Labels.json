@@ -1,0 +1,51 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/mcc/test/test_ccm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_mcc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/mcc/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_mcc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/mcc/test/test_mcc.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_mcc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/mcc/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_mcc",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_mcc",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_mcc"
+	}
+}

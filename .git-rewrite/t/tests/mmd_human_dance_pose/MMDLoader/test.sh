@@ -1,0 +1,1 @@
+./mmdview test_files/miku_v2.pmd test_files/walk.vmd

@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_cudafeatures2d
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/test/test_features2d.cpp
+ Extra
+ opencv_cudafeatures2d
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/test/test_main.cpp
+ Extra
+ opencv_cudafeatures2d
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafeatures2d/test/test_precomp.hpp
+ Extra
+ opencv_cudafeatures2d
+ AccuracyTest

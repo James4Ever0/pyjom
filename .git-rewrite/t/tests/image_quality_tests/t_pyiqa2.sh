@@ -1,0 +1,1 @@
+python3 pyiqa_test.py | xargs -iabc bash test_pyiqa.sh abc 2>&1 | grep "taking time"

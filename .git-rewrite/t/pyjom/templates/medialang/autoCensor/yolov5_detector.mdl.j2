@@ -1,0 +1,4 @@
+(".json", processor="yolov5_detector"{% if timestep %}, timestep={{timestep}}{% endif %} {% if threshold %}, threshold={{threshold}}{% endif %} {% if model %}, model="{{model}}"{% endif %}
+)
+
+("{{ mediafile }}")

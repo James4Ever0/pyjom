@@ -1,0 +1,162 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/include/opencv2/superres.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/include/opencv2/superres/optical_flow.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/btv_l1.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/btv_l1_cuda.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/frame_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/input_array_utility.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/optical_flow.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/super_resolution.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/opencl/superres_btvl1.cl",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/superres/opencl_kernels_superres.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/superres/opencl_kernels_superres.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/input_array_utility.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/ring_buffer.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/superres/src/cuda/btv_l1_gpu.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_superres",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/superres/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_btv_l1_gpu.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/superres/opencl_kernels_superres.cpp.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_superres",
+			"Module"
+		],
+		"name" : "opencv_superres"
+	}
+}

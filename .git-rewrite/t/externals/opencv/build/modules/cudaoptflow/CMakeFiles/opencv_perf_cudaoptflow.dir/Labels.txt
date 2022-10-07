@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_cudaoptflow
+ PerfTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/perf/perf_main.cpp
+ Extra
+ opencv_cudaoptflow
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/perf/perf_optflow.cpp
+ Extra
+ opencv_cudaoptflow
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/perf/perf_precomp.hpp
+ Extra
+ opencv_cudaoptflow
+ PerfTest

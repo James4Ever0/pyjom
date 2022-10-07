@@ -1,0 +1,21 @@
+# Target labels
+ Extra
+ opencv_text
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/text/test/test_detection.cpp
+ Extra
+ opencv_text
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/text/test/test_detection_swt.cpp
+ Extra
+ opencv_text
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/text/test/test_main.cpp
+ Extra
+ opencv_text
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/text/test/test_precomp.hpp
+ Extra
+ opencv_text
+ AccuracyTest

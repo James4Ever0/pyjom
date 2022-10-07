@@ -1,0 +1,128 @@
+PORTED FUNCs LIST (105 of 108):
+
+ void cv::xfeatures2d::matchGMS(Size size1, Size size2, vector_KeyPoint keypoints1, vector_KeyPoint keypoints2, vector_DMatch matches1to2, vector_DMatch& matchesGMS, bool withRotation = false, bool withScale = false, double thresholdFactor = 6.0)
+ void cv::xfeatures2d::matchLOGOS(vector_KeyPoint keypoints1, vector_KeyPoint keypoints2, vector_int nn1, vector_int nn2, vector_DMatch matches1to2)
+static Ptr_SURF_CUDA cv::cuda::SURF_CUDA::create(double _hessianThreshold, int _nOctaves = 4, int _nOctaveLayers = 2, bool _extended = false, float _keypointsRatio = 0.01f, bool _upright = false)
+ int cv::cuda::SURF_CUDA::descriptorSize()
+ int cv::cuda::SURF_CUDA::defaultNorm()
+double SURF_CUDA::hessianThreshold
+int SURF_CUDA::nOctaves
+int SURF_CUDA::nOctaveLayers
+bool SURF_CUDA::extended
+bool SURF_CUDA::upright
+float SURF_CUDA::keypointsRatio
+static Ptr_BEBLID cv::xfeatures2d::BEBLID::create(float scale_factor, int n_bits = BEBLID::SIZE_512_BITS)
+static Ptr_BoostDesc cv::xfeatures2d::BoostDesc::create(int desc = BoostDesc::BINBOOST_256, bool use_scale_orientation = true, float scale_factor = 6.25f)
+ void cv::xfeatures2d::BoostDesc::setUseScaleOrientation(bool use_scale_orientation)
+ bool cv::xfeatures2d::BoostDesc::getUseScaleOrientation()
+ void cv::xfeatures2d::BoostDesc::setScaleFactor(float scale_factor)
+ float cv::xfeatures2d::BoostDesc::getScaleFactor()
+static Ptr_BriefDescriptorExtractor cv::xfeatures2d::BriefDescriptorExtractor::create(int bytes = 32, bool use_orientation = false)
+static Ptr_DAISY cv::xfeatures2d::DAISY::create(float radius = 15, int q_radius = 3, int q_theta = 8, int q_hist = 8, DAISY_NormalizationType norm = DAISY::NRM_NONE, Mat H = Mat(), bool interpolation = true, bool use_orientation = false)
+static Ptr_FREAK cv::xfeatures2d::FREAK::create(bool orientationNormalized = true, bool scaleNormalized = true, float patternScale = 22.0f, int nOctaves = 4, vector_int selectedPairs = std::vector<int>())
+static Ptr_HarrisLaplaceFeatureDetector cv::xfeatures2d::HarrisLaplaceFeatureDetector::create(int numOctaves = 6, float corn_thresh = 0.01f, float DOG_thresh = 0.01f, int maxCorners = 5000, int num_layers = 4)
+static Ptr_LATCH cv::xfeatures2d::LATCH::create(int bytes = 32, bool rotationInvariance = true, int half_ssd_size = 3, double sigma = 2.0)
+static Ptr_LUCID cv::xfeatures2d::LUCID::create(int lucid_kernel = 1, int blur_kernel = 2)
+static Ptr_PCTSignatures cv::xfeatures2d::PCTSignatures::create(int initSampleCount = 2000, int initSeedCount = 400, int pointDistribution = 0)
+static Ptr_PCTSignatures cv::xfeatures2d::PCTSignatures::create(vector_Point2f initSamplingPoints, int initSeedCount)
+static Ptr_PCTSignatures cv::xfeatures2d::PCTSignatures::create(vector_Point2f initSamplingPoints, vector_int initClusterSeedIndexes)
+ void cv::xfeatures2d::PCTSignatures::computeSignature(Mat image, Mat& signature)
+ void cv::xfeatures2d::PCTSignatures::computeSignatures(vector_Mat images, vector_Mat signatures)
+static void cv::xfeatures2d::PCTSignatures::drawSignature(Mat source, Mat signature, Mat& result, float radiusToShorterSideRatio = 1.0 / 8, int borderThickness = 1)
+static void cv::xfeatures2d::PCTSignatures::generateInitPoints(vector_Point2f initPoints, int count, int pointDistribution)
+ int cv::xfeatures2d::PCTSignatures::getSampleCount()
+ int cv::xfeatures2d::PCTSignatures::getGrayscaleBits()
+ void cv::xfeatures2d::PCTSignatures::setGrayscaleBits(int grayscaleBits)
+ int cv::xfeatures2d::PCTSignatures::getWindowRadius()
+ void cv::xfeatures2d::PCTSignatures::setWindowRadius(int radius)
+ float cv::xfeatures2d::PCTSignatures::getWeightX()
+ void cv::xfeatures2d::PCTSignatures::setWeightX(float weight)
+ float cv::xfeatures2d::PCTSignatures::getWeightY()
+ void cv::xfeatures2d::PCTSignatures::setWeightY(float weight)
+ float cv::xfeatures2d::PCTSignatures::getWeightL()
+ void cv::xfeatures2d::PCTSignatures::setWeightL(float weight)
+ float cv::xfeatures2d::PCTSignatures::getWeightA()
+ void cv::xfeatures2d::PCTSignatures::setWeightA(float weight)
+ float cv::xfeatures2d::PCTSignatures::getWeightB()
+ void cv::xfeatures2d::PCTSignatures::setWeightB(float weight)
+ float cv::xfeatures2d::PCTSignatures::getWeightContrast()
+ void cv::xfeatures2d::PCTSignatures::setWeightContrast(float weight)
+ float cv::xfeatures2d::PCTSignatures::getWeightEntropy()
+ void cv::xfeatures2d::PCTSignatures::setWeightEntropy(float weight)
+ vector_Point2f cv::xfeatures2d::PCTSignatures::getSamplingPoints()
+ void cv::xfeatures2d::PCTSignatures::setWeight(int idx, float value)
+ void cv::xfeatures2d::PCTSignatures::setWeights(vector_float weights)
+ void cv::xfeatures2d::PCTSignatures::setTranslation(int idx, float value)
+ void cv::xfeatures2d::PCTSignatures::setTranslations(vector_float translations)
+ void cv::xfeatures2d::PCTSignatures::setSamplingPoints(vector_Point2f samplingPoints)
+ vector_int cv::xfeatures2d::PCTSignatures::getInitSeedIndexes()
+ void cv::xfeatures2d::PCTSignatures::setInitSeedIndexes(vector_int initSeedIndexes)
+ int cv::xfeatures2d::PCTSignatures::getInitSeedCount()
+ int cv::xfeatures2d::PCTSignatures::getIterationCount()
+ void cv::xfeatures2d::PCTSignatures::setIterationCount(int iterationCount)
+ int cv::xfeatures2d::PCTSignatures::getMaxClustersCount()
+ void cv::xfeatures2d::PCTSignatures::setMaxClustersCount(int maxClustersCount)
+ int cv::xfeatures2d::PCTSignatures::getClusterMinSize()
+ void cv::xfeatures2d::PCTSignatures::setClusterMinSize(int clusterMinSize)
+ float cv::xfeatures2d::PCTSignatures::getJoiningDistance()
+ void cv::xfeatures2d::PCTSignatures::setJoiningDistance(float joiningDistance)
+ float cv::xfeatures2d::PCTSignatures::getDropThreshold()
+ void cv::xfeatures2d::PCTSignatures::setDropThreshold(float dropThreshold)
+ int cv::xfeatures2d::PCTSignatures::getDistanceFunction()
+ void cv::xfeatures2d::PCTSignatures::setDistanceFunction(int distanceFunction)
+static Ptr_PCTSignaturesSQFD cv::xfeatures2d::PCTSignaturesSQFD::create(int distanceFunction = 3, int similarityFunction = 2, float similarityParameter = 1.0f)
+ float cv::xfeatures2d::PCTSignaturesSQFD::computeQuadraticFormDistance(Mat _signature0, Mat _signature1)
+ void cv::xfeatures2d::PCTSignaturesSQFD::computeQuadraticFormDistances(Mat sourceSignature, vector_Mat imageSignatures, vector_float distances)
+static Ptr_SURF cv::xfeatures2d::SURF::create(double hessianThreshold = 100, int nOctaves = 4, int nOctaveLayers = 3, bool extended = false, bool upright = false)
+ void cv::xfeatures2d::SURF::setHessianThreshold(double hessianThreshold)
+ double cv::xfeatures2d::SURF::getHessianThreshold()
+ void cv::xfeatures2d::SURF::setNOctaves(int nOctaves)
+ int cv::xfeatures2d::SURF::getNOctaves()
+ void cv::xfeatures2d::SURF::setNOctaveLayers(int nOctaveLayers)
+ int cv::xfeatures2d::SURF::getNOctaveLayers()
+ void cv::xfeatures2d::SURF::setExtended(bool extended)
+ bool cv::xfeatures2d::SURF::getExtended()
+ void cv::xfeatures2d::SURF::setUpright(bool upright)
+ bool cv::xfeatures2d::SURF::getUpright()
+static Ptr_StarDetector cv::xfeatures2d::StarDetector::create(int maxSize = 45, int responseThreshold = 30, int lineThresholdProjected = 10, int lineThresholdBinarized = 8, int suppressNonmaxSize = 5)
+static Ptr_TBMR cv::xfeatures2d::TBMR::create(int min_area = 60, float max_area_relative = 0.01f, float scale_factor = 1.25f, int n_scales = -1)
+ void cv::xfeatures2d::TBMR::setMinArea(int minArea)
+ int cv::xfeatures2d::TBMR::getMinArea()
+ void cv::xfeatures2d::TBMR::setMaxAreaRelative(float maxArea)
+ float cv::xfeatures2d::TBMR::getMaxAreaRelative()
+ void cv::xfeatures2d::TBMR::setScaleFactor(float scale_factor)
+ float cv::xfeatures2d::TBMR::getScaleFactor()
+ void cv::xfeatures2d::TBMR::setNScales(int n_scales)
+ int cv::xfeatures2d::TBMR::getNScales()
+static Ptr_VGG cv::xfeatures2d::VGG::create(int desc = VGG::VGG_120, float isigma = 1.4f, bool img_normalize = true, bool use_scale_orientation = true, float scale_factor = 6.25f, bool dsc_normalize = false)
+ void cv::xfeatures2d::VGG::setSigma(float isigma)
+ float cv::xfeatures2d::VGG::getSigma()
+ void cv::xfeatures2d::VGG::setUseNormalizeImage(bool img_normalize)
+ bool cv::xfeatures2d::VGG::getUseNormalizeImage()
+ void cv::xfeatures2d::VGG::setUseScaleOrientation(bool use_scale_orientation)
+ bool cv::xfeatures2d::VGG::getUseScaleOrientation()
+ void cv::xfeatures2d::VGG::setScaleFactor(float scale_factor)
+ float cv::xfeatures2d::VGG::getScaleFactor()
+ void cv::xfeatures2d::VGG::setUseNormalizeDescriptor(bool dsc_normalize)
+ bool cv::xfeatures2d::VGG::getUseNormalizeDescriptor()
+
+SKIPPED FUNCs LIST (3 of 108):
+
+ void cv::cuda::SURF_CUDA::downloadKeypoints(GpuMat keypointsGPU, vector_KeyPoint& keypoints)
+// Unknown type 'GpuMat' (I), skipping the function
+
+ void cv::cuda::SURF_CUDA::detect(GpuMat img, GpuMat mask, GpuMat& keypoints)
+// Unknown type 'GpuMat' (I), skipping the function
+
+ void cv::cuda::SURF_CUDA::detectWithDescriptors(GpuMat img, GpuMat mask, GpuMat& keypoints, GpuMat& descriptors, bool useProvidedKeypoints = false)
+// Unknown type 'GpuMat' (I), skipping the function
+
+
+0 def args - 84 funcs
+1 def args - 2 funcs
+2 def args - 3 funcs
+3 def args - 4 funcs
+4 def args - 2 funcs
+5 def args - 5 funcs
+6 def args - 1 funcs
+8 def args - 1 funcs

@@ -1,0 +1,192 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/conditioning.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/fundamental.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/io.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/numeric.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/projection.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/reconstruct.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/robust.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/simple_pipeline.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/triangulation.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/conditioning.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/fundamental.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/io.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/numeric.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/projection.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/reconstruct.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/robust.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/simple_pipeline.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/triangulation.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_sfm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_sfm",
+			"Module"
+		],
+		"name" : "opencv_sfm"
+	}
+}

@@ -1,0 +1,84 @@
+{
+	"enabledApiProposals": [
+		"inlineCompletions"
+	],
+	"name": "code-clippy",
+	"displayName": "Code Clippy",
+	"description": "Your friendly neighborhood Clippy, ready to help you with all your code needs :D!",
+	"version": "0.0.1",
+	"publisher": "ncoop57",
+	"icon": "code_clippy_logo.jpg",
+	"repository": "https://github.com/ncoop57/gpt-code-clippy/",
+	"engines": {
+		"vscode": "^1.34.0"
+	},
+	"license": "MIT",
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.code-clippy-settings",
+				"title": "Code Clippy Settings"
+			}
+		],
+		"menus": {
+			"editor/inlineCompletions/actions": [
+				{
+					"command": "extension.code-clippy-settings"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Code Clippy Configuration",
+			"properties": {
+				"conf.resource.hfModelName": {
+					"type": "string",
+					"default": "flax-community/gpt-neo-125M-code-clippy-dedup-2048",
+					"description": "Model name that will be used to generate the completions.",
+					"scope": "resource"
+				},
+				"conf.resource.hfAPIKey": {
+					"type": "string",
+					"default": "<API_KEY>",
+					"description": "API key for using Huggingface's Inference API: https://api-inference.huggingface.co/docs/node/html/quicktour.html",
+					"scope": "resource"
+				},
+				"conf.resource.useGPU": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether to use GPU for faster completions. Must have Startup plan at a minimum.",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./",
+		"download-api": "vscode-dts dev",
+		"postdownload-api": "vscode-dts main",
+		"postinstall": "npm run download-api"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"@types/node-fetch": "^2.5.10",
+		"@typescript-eslint/eslint-plugin": "^4.16.0",
+		"@typescript-eslint/parser": "^4.16.0",
+		"eslint": "^7.21.0",
+		"typescript": "^4.2.2",
+		"vscode-dts": "^0.3.1"
+	},
+	"dependencies": {
+		"@types/jsdom": "^16.2.12",
+		"jsdom": "^16.6.0",
+		"node-fetch": "^2.6.1"
+	}
+}

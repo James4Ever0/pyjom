@@ -1,0 +1,190 @@
+2022/07/03 22:08:13.907 [E]  Gitter 401::Access token required
+2022/07/10 11:27:17.470 [E]  cmd == nil, QQ 1281727431 data :0000004200002710ffffd8ed0000000f496e76616c69642041322e000000134f6964625376632e30783737335f3000000008e72c292c000000000000000462ca47150000000400000004
+2022/07/10 11:27:47.436 [E]  cmd == nil, QQ 1281727431 data :00000045000005feffffd8e8000000126e65656420413220616e642044320000001350757368536572766963652e67657400000008e72c292c000000000000000462ca473300000004000000c510022c3c4105fd56075075736853766366095376635265714765747d0001009c080001060953766352657147657418000106135151536572766963652e5376635265714765741d0000720a024c659bc710012600300b40015c60017c8c9cacbccd000010ac3f4e0ae671095e82dfff861bab5624d61031323831373237343331e79a846d6270e60d4d6163426f6f6b50726f392c31f60f20e78988e69cac2031302e31322e36efbc88e78988e58fb7203136473239efbc89f9100c0b8c980ca80c
+2022/07/10 11:28:17.420 [E]  cmd == nil, QQ 1281727431 data :00000045000005ffffffd8e8000000126e65656420413220616e642044320000001350757368536572766963652e67657400000008e72c292c000000000000000462ca475100000004000000c510022c3c4105fe56075075736853766366095376635265714765747d0001009c080001060953766352657147657418000106135151536572766963652e5376635265714765741d0000720a024c659bc710012600300b40015c60017c8c9cacbccd000010ac3f4e0ae671095e82dfff861bab5624d61031323831373237343331e79a846d6270e60d4d6163426f6f6b50726f392c31f60f20e78988e69cac2031302e31322e36efbc88e78988e58fb7203136473239efbc89f9100c0b8c980ca80c
+2022/07/10 11:28:47.426 [E]  cmd == nil, QQ 1281727431 data :0000004500000600ffffd8e8000000126e65656420413220616e642044320000001350757368536572766963652e67657400000008e72c292c000000000000000462ca476f00000004000000c510022c3c4105ff56075075736853766366095376635265714765747d0001009c080001060953766352657147657418000106135151536572766963652e5376635265714765741d0000720a024c659bc710012600300b40015c60017c8c9cacbccd000010ac3f4e0ae671095e82dfff861bab5624d61031323831373237343331e79a846d6270e60d4d6163426f6f6b50726f392c31f60f20e78988e69cac2031302e31322e36efbc88e78988e58fb7203136473239efbc89f9100c0b8c980ca80c
+2022/07/10 17:11:35.599 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/10 17:11:35.601 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/10 17:11:35.602 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/10 17:34:26.869 [E]  Will ReConnect After:8 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
+2022/07/10 17:34:49.874 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/10 17:34:49.875 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/10 17:34:49.876 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/10 17:34:49.877 [E]  Will ReConnect After:8 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
+2022/07/11 13:11:52.831 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/11 13:11:52.832 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/11 13:11:52.832 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/11 18:57:23.421 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/12 15:28:50.003 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/12 15:28:50.004 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/12 15:28:50.004 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/12 10:29:41.868 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/12 13:48:16.199 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/12 15:56:48.734 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
+2022/07/12 16:23:47.403 [E]  Will ReConnect After:5 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
+2022/07/12 16:24:07.405 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/12 16:24:07.405 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/12 16:24:07.405 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/12 16:24:07.406 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
+2022/07/13 15:54:40.259 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 15:54:40.261 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 15:54:40.262 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 08:09:19.879 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/13 08:22:49.878 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 08:22:49.879 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 08:22:49.879 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 09:13:00.991 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 09:13:00.992 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 09:13:00.992 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/13 19:08:18.093 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/13 19:08:23.134 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/13 19:08:28.182 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/13 19:11:23.402 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/13 19:11:28.430 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/13 19:11:35.463 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/14 11:53:25.821 [E]  Will ReConnect After:9 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
+2022/07/14 11:53:49.831 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/14 11:53:49.832 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/14 11:53:49.832 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/14 11:53:49.832 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
+2022/07/15 21:31:16.931 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/15 21:31:16.934 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/15 21:31:16.934 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 12:34:16.206 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 12:34:16.206 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 12:34:16.206 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 13:53:24.495 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 13:53:24.497 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 13:53:24.498 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 15:22:55.860 [E]  QQLuaPkgVM /root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: attempt to index a non-table object(nil) with key 'NextToken'
+stack traceback:
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: in main chunk
+	[G]: ?
+2022/07/16 15:23:15.735 [E]  SendWaitPkg err timeout
+2022/07/16 15:23:18.502 [E]  QQLuaPkgVM /root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: attempt to index a non-table object(nil) with key 'NextToken'
+stack traceback:
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: in main chunk
+	[G]: ?
+2022/07/16 15:24:55.554 [E]  QQLuaPkgVM /root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: attempt to index a non-table object(nil) with key 'NextToken'
+stack traceback:
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: in main chunk
+	[G]: ?
+2022/07/16 15:25:08.576 [E]  QQLuaPkgVM /root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: attempt to index a non-table object(nil) with key 'NextToken'
+stack traceback:
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: in main chunk
+	[G]: ?
+2022/07/16 15:26:39.035 [E]  QQLuaPkgVM /root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: attempt to index a non-table object(nil) with key 'NextToken'
+stack traceback:
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/CodecScripts/friendlist.GetTroopListReqV2.lua:10: in main chunk
+	[G]: ?
+2022/07/16 15:46:30.198 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 15:46:30.199 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 15:46:30.199 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 18:18:40.784 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 18:18:40.784 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 18:18:40.784 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 18:30:13.146 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
+2022/07/16 20:19:10.240 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 20:19:10.242 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/16 20:19:10.242 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 17:23:58.143 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 17:23:58.145 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 17:23:58.146 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 11:27:20.338 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 11:27:20.339 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 11:27:20.339 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 19:45:13.686 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/17 19:45:20.728 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/17 19:45:30.759 [E]  QQLuaHttpVmRun interface conversion: interface {} is nil, not string
+stack traceback:
+	[G]: in function 'Api_OpenRedBag'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:147: in function 'fSwitch'
+	/root/Desktop/works/pyjom/tests/qq_opqbot/opq_arm64/WebPlugins/Api_LuaCaller.lua:196: in main chunk
+	[G]: ?
+2022/07/17 20:10:35.125 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 20:10:35.126 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 20:10:35.126 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 20:20:57.637 [E]  Will ReConnect After:9 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
+2022/07/17 20:21:21.640 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 20:21:21.640 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 20:21:21.640 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 20:21:21.641 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
+2022/07/17 22:12:42.364 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 22:12:42.365 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 22:12:42.365 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 22:59:30.452 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 22:59:30.453 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 22:59:30.453 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:27:44.752 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:27:44.753 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:27:44.753 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:38:39.806 [E]  Will ReConnect After:7 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
+2022/07/17 23:39:01.810 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:39:01.810 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:39:01.810 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:39:01.810 [E]  Will ReConnect After:5 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
+2022/07/17 23:43:12.802 [E]  Will ReConnect After:5 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
+2022/07/17 23:43:32.806 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:43:32.807 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:43:32.807 [E]  dial tcp 111.30.130.106:80: i/o timeout
+2022/07/17 23:43:32.808 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 

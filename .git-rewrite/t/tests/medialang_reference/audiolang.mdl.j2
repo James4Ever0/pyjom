@@ -1,0 +1,24 @@
+(".mp3", speed=1.5
+)
+
+("/root/Desktop/works/pyjom/src/samples/video/dog_with_text.mp4",
+    speed=1.5, video=false
+)
+    ("/root/Desktop/works/pyjom/src/samples/video/IxEQhCslT.mp4",
+        padding="black"
+    )
+        ("text://you did a good job",
+            converter="voice", provider="tts_male",
+            speed=2
+        )
+
+{% for i in range(some_number) %}
+("/root/Desktop/works/pyjom/src/samples/video/dog_with_text.mp4",
+    speed={{ some_number }}
+)
+    ("text://{{ some_text }}",
+        converter="voice"
+    )
+
+{% endfor %}
+

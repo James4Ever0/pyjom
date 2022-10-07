@@ -1,0 +1,1 @@
+cat output.log | sed -e "s/https:\/\///g" - |sort | uniq |  xargs -iabc curl -o abc --create-dirs -L --proxy http://192.168.43.139:8899 https://abc

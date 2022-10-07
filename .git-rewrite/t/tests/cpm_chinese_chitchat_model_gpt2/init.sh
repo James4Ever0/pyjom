@@ -1,0 +1,1 @@
+git clone --depth 1 https://github.com/yangjianxin1/GPT2-chitchat

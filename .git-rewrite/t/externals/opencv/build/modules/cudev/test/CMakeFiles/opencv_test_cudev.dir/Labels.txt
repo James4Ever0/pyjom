@@ -1,0 +1,92 @@
+# Target labels
+ Extra
+ opencv_cudev
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_arithm_func.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_arithm_op.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_bitwize_op.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_cmp_op.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_color_cvt.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_cvt.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_deriv.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_integral.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_lut.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_nd.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_pyramids.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_reduction.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_scan.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_split_merge.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_warp.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_transpose.cu.o
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_arithm_func.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_arithm_op.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_bitwize_op.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_cmp_op.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_color_cvt.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_cvt.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_deriv.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_integral.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_lut.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_main.cpp
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_nd.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_pyramids.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_reduction.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_scan.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_split_merge.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_warp.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/transpose.cu
+ Extra
+ opencv_cudev
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudev/test/test_precomp.hpp
+ Extra
+ opencv_cudev
+ AccuracyTest

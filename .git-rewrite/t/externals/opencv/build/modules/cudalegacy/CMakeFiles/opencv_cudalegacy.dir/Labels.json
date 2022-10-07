@@ -1,0 +1,372 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NCV.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NCVBroxOpticalFlow.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NCVHaarObjectDetection.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NCVPyramid.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/NPP_staging.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/include/opencv2/cudalegacy/private.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/NCV.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/bm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/bm_fast.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/calib3d.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/fgd.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/gmg.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/graphcuts.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/image_pyramid.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/interpolate_frames.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/needle_map.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVAlg.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVColorConversion.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVPixelOperations.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVRuntimeTemplates.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/fgd.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCV.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVBroxOpticalFlow.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVHaarObjectDetection.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NCVPyramid.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/NPP_staging.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/bm.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/bm_fast.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/calib3d.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/ccomponetns.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/fgd.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/gmg.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/src/cuda/needle_map.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCV.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCVBroxOpticalFlow.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCVHaarObjectDetection.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCVPyramid.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NPP_staging.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bm.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bm_fast.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_calib3d.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_ccomponetns.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_fgd.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_gmg.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudalegacy/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_needle_map.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudalegacy",
+			"Module"
+		],
+		"name" : "opencv_cudalegacy"
+	}
+}

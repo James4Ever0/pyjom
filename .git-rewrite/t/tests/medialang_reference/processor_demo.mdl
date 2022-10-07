@@ -1,0 +1,6 @@
+(".json", processor="subtitle_detector"
+)
+
+("/root/Desktop/works/pyjom/samples/video/dog_with_text.mp4",
+    speed=1.5
+)

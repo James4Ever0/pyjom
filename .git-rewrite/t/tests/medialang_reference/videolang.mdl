@@ -1,0 +1,6 @@
+(".mp4", speed=1.5
+)
+
+("/root/Desktop/works/pyjom/src/samples/video/dog_with_text.mp4",
+    speed=1.5, video=false
+)

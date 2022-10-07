@@ -1,0 +1,120 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/include/opencv2/alphamat.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/cm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/infoflow.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/intraU.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/local_info.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/3rdparty/KDTreeVectorOfVectorsAdaptor.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/3rdparty/nanoflann.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/cm.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/intraU.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/local_info.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/alphamat/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_alphamat",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_alphamat",
+			"Module"
+		],
+		"name" : "opencv_alphamat"
+	}
+}

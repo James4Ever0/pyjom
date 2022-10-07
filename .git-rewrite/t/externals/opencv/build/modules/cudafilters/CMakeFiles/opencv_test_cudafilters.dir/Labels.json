@@ -1,0 +1,42 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/test/test_filters.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafilters",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafilters",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudafilters",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudafilters",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_cudafilters"
+	}
+}

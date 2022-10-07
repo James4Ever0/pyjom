@@ -1,0 +1,23 @@
+# Target labels
+ Extra
+ opencv_hdf
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/hdf/include/opencv2/hdf.hpp
+ Extra
+ opencv_hdf
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/hdf/include/opencv2/hdf/hdf5.hpp
+ Extra
+ opencv_hdf
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/hdf/src/hdf5.cpp
+ Extra
+ opencv_hdf
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/hdf/src/precomp.hpp
+ Extra
+ opencv_hdf
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp

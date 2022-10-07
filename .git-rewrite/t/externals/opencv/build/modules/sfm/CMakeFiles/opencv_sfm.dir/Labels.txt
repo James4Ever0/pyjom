@@ -1,0 +1,83 @@
+# Target labels
+ Extra
+ opencv_sfm
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/conditioning.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/fundamental.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/io.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/numeric.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/projection.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/reconstruct.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/robust.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/simple_pipeline.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/include/opencv2/sfm/triangulation.hpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/conditioning.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/fundamental.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/io.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/numeric.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/projection.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/reconstruct.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/robust.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/simple_pipeline.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/sfm/src/triangulation.cpp
+ Extra
+ opencv_sfm
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp

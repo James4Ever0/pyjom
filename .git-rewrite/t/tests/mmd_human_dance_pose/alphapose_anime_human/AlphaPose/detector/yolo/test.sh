@@ -1,0 +1,3 @@
+# darknet detect cfg/yolov3-spp-training.cfg data/yolov3-spp_anime_as_human.weights /media/root/help/pyjom/samples/image/miku_on_green.png # this one without training will not detect shit.
+darknet detect cfg/yolov3-spp-training.cfg backup/yolov3-spp-training_final.weights /media/root/help/pyjom/samples/image/miku_on_green.png # this will do.
+# darknet detect cfg/yolov3-spp-training.cfg data/yolov3-spp_anime_as_human.weights /media/root/help/pyjom/samples/image/dog_with_text2.png

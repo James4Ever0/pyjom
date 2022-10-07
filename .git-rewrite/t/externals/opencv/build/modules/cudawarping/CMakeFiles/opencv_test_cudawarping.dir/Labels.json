@@ -1,0 +1,87 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/test/test_pyramids.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/test/test_remap.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/test/test_resize.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/test/test_warp_affine.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/test/test_warp_perspective.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/test/interpolation.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudawarping",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_cudawarping"
+	}
+}

@@ -1,0 +1,6 @@
+# curl -L -o crossdressing.mp4 --cookie "e=1652443257" https://shiro.v.anime1.me/1019/6b.mp4
+# curl -L -o crossdressing.mp4 --cookie "e=1652443257; p=eyJpc3MiOiJhbmltZTEubWUiLCJleHAiOjE2NTI0NDMyNTcwMDAsImlhdCI6MTY1MjQyODk1NTAwMCwic3ViIjoiLzEwMTkvNmIubXA0In0" https://shiro.v.anime1.me/1019/6b.mp4
+# curl -L -o crossdressing.mp4 --cookie "h=i6CylEHO-BiMkCPCqFDk_A" https://shiro.v.anime1.me/1019/6b.mp4
+# curl -L -o crossdressing.mp4 --cookie "e=1652443257; p=eyJpc3MiOiJhbmltZTEubWUiLCJleHAiOjE2NTI0NDMyNTcwMDAsImlhdCI6MTY1MjQyODk1NTAwMCwic3ViIjoiLzEwMTkvNmIubXA0In0; h=i6CylEHO-BiMkCPCqFDk_A" https://shiro.v.anime1.me/1019/6b.mp4
+curl -L -o crossdressing.mp4 --cookie "e=1652443257; p=eyJpc3MiOiJhbmltZTEubWUiLCJleHAiOjE2NTI0NDMyNTcwMDAsImlhdCI6MTY1MjQyODk1NTAwMCwic3ViIjoiLzEwMTkvNmIubXA0In0; h=i6CylEHO-BiMkCPCqFDk_A" https://shiro.v.anime1.me/1019/6b.mp4 # the only way to be.
+# curl -L -o crossdressing.mp4 --cookie "e=1652443257; p=eyJpc3MiOiJhbmltZTEubWUiLCJleHAiOjE2NTI0NDMyNTcwMDAsImlhdCI6MTY1MjQyODk1NTAwMCwic3ViIjoiLzEwMTkvNmIubXA0In0; h=i6CylEHO-BiMkCPCqFDk_A; _ga=GA1.2.1032429949.1652428850; _gid=GA1.2.244096696.1652428850" https://shiro.v.anime1.me/1019/6b.mp4

@@ -1,0 +1,28 @@
+mediapipe==0.8.6.2
+# quaternion
+numpy-quaternion==2020.11.2.17.0.49
+# for bezier
+bezier==2020.5.19
+numba==0.48.0
+scipy
+fvcore>=0.1.1.post20200716
+loguru>=0.5.1
+matplotlib>=3.2.2
+open3d>=0.10.0.0
+opencv-python
+Pillow>=7.2.0
+pyrender>=0.1.43
+smplx>=0.1.21
+threadpoolctl>=2.1.0
+tqdm>=4.48.2
+trimesh>=3.8.1
+dlib
+imutils
+gast==0.2.2
+tensorflow-gpu==1.15
+cython
+scikit-image
+numpy
+# Pytorch
+#torch==1.6.0
+#torchvision==0.7.0

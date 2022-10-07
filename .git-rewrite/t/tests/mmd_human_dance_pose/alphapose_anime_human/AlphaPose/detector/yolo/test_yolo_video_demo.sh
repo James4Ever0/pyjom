@@ -1,0 +1,3 @@
+python3 video_demo.py --video /root/Desktop/works/pyjom/samples/video/dog_with_text.mp4 # use real human shit...
+# python3 video_demo.py --video /root/Desktop/works/pyjom/samples/video/ideal.webm
+# seems like this freaking model can only identify human. it will regard all shits into human. freaking insane.

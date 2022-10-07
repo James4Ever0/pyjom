@@ -1,0 +1,10 @@
+accum.simd.hpp
+colormap.cpp
+color_lab.cpp
+connectedcomponents.cpp
+filter.simd.hpp
+hershey_fonts.cpp
+histogram.cpp
+imgwarp.cpp
+resize.cpp
+smooth.simd.hpp

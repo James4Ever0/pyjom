@@ -1,0 +1,46 @@
+{
+    "name": "medialang-highlighter",
+    "displayName": "Medialang highlighter",
+    "description": "Medialang highlighter",
+    "version": "0.0.3",
+    "icon": "icons/icon.png",
+    "publisher": "medialang",
+    "engines": {
+        "vscode": "^1.40.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "medialang",
+            "aliases": ["Medialang", "medialang"],
+            "extensions": [".mdl", ".media"],
+            "configuration": "./language-configuration.json",
+            "icon": {
+                "light": "./icons/medialang-light.png",
+                "dark": "./icons/medialang-dark.png",
+                "highContrast": "./icons/medialang-dark.png"
+            }
+        }, {
+            "id": "medialang_jinia",
+            "aliases": ["Medialang Template", "medialang template"],
+            "extensions": [".mdl.j2", ".media.j2"],
+            "configuration": "./language-configuration-jinja.json",
+            "icon": {
+                "light": "./icons/medialang-light.png",
+                "dark": "./icons/medialang-dark.png",
+                "highContrast": "./icons/medialang-dark.png"
+            }
+        }],
+        "grammars": [{
+            "language": "medialang",
+            "scopeName": "source.mdl",
+            "path": "./syntaxes/medialang.tmLanguage.json"
+        }, {
+            "language": "medialang_jinia",
+            "scopeName": "source.mdl.j2",
+            "path": "./syntaxes/medialang_jinja.tmLanguage.json"
+        }]
+    }
+}

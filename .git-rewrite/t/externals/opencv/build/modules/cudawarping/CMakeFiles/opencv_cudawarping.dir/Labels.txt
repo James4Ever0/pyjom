@@ -1,0 +1,56 @@
+# Target labels
+ Extra
+ opencv_cudawarping
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/include/opencv2/cudawarping.hpp
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/pyramids.cpp
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/remap.cpp
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/resize.cpp
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/warp.cpp
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/precomp.hpp
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/cuda/pyr_down.cu
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/cuda/pyr_up.cu
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/cuda/remap.cu
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/cuda/resize.cu
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/src/cuda/warp.cu
+ Extra
+ opencv_cudawarping
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp
+/media/root/help1/pyjom/externals/opencv/build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyr_down.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyr_up.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_remap.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_resize.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_warp.cu.o

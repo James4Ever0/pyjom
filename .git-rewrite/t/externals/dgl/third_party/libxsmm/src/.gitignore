@@ -1,0 +1,12 @@
+generator_common_x86.c
+generator_gemm_amx.c
+generator_gemm_amx_emu.c
+generator_mateltwise_reduce_avx_avx512.c
+generator_mateltwise_transform_avx512.c
+generator_mateltwise_unary_binary_avx_avx512.c
+generator_x86_instructions.c
+libxsmm_dnn_convolution.c
+libxsmm_dnn_rnncell.c
+libxsmm_gemm.c
+libxsmm_main.c
+libxsmm_malloc.c

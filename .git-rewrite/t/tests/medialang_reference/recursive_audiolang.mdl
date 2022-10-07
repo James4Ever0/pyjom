@@ -1,0 +1,10 @@
+(".mp3", processor="subtitle_detector"
+)
+
+("/root/Desktop/works/pyjom/src/samples/video/dog_with_text.mp4",
+    speed=1.5
+)
+
+("/root/Desktop/works/pyjom/src/test/audiolang.mdl.j2",
+    format_args={"some_number": 2, "some_text": "shit"}
+)

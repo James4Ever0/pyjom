@@ -1,0 +1,1 @@
+./darknet detect /media/root/help/pyjom/tests/mmd_human_dance_pose/alphapose_anime_human/AlphaPose/detector/yolo/cfg/yolov3-spp-training.cfg /media/root/help/pyjom/tests/mmd_human_dance_pose/alphapose_anime_human/AlphaPose/detector/yolo/data/yolov3-spp_anime_as_human.weights /media/root/help/pyjom/samples/image/dog_with_text2.png

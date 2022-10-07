@@ -1,0 +1,3 @@
+# cat transfer_lib.log | grep /usr/local/lib | grep ".so" | awk -F "/" '{print $NF}' | xargs -iabc rm -rf /usr/local/lib/abc
+# cat transfer_lib.log | grep /usr/local/lib | grep ".so" | awk -F "/" '{print $NF}' | xargs -iabc rm -rf /usr/lib/x86_64-linux-gnu/abc
+# cat transfer_lib.log | grep /usr/local/lib | grep ".so" | awk -F "/" '{print $NF}' | xargs -iabc ln -P /usr/local/lib/abc /usr/lib/x86_64-linux-gnu/abc

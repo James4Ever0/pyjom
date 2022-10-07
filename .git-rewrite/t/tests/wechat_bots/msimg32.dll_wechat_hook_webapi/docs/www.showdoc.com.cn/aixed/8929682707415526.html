@@ -1,0 +1,290 @@
+<!DOCTYPE html><html>
+<!-- Mirrored from www.showdoc.com.cn/aixed/8929682707415526 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Jul 2022 14:49:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=renderer content=webkit><meta http-equiv=X-UA-Compatible content=edge><meta http-equiv=Expires content=0><meta http-equiv=Pragma content=no-cache><meta http-equiv=Cache-control content="no-cache, no-store, must-revalidate"><meta http-equiv=Cache content=no-cache><link rel=apple-touch-icon href=https://www.showdoc.com.cn/static/logo/w_64.png><link rel=apple-touch-icon-precomposed href=https://www.showdoc.com.cn/static/logo/w_64.png><link rel=icon href="data:;base64,="><title>ShowDoc</title><meta name=keywords content="在线API文档 技术文档 数据字典 在线手册"><meta name=description content=一个非常适合IT团队的在线API文档、技术文档工具。你可以使用Showdoc来编写在线API文档、技术文档、数据字典、在线手册><script src="http://source.showdoc.com.cn/static/status.js?v=2"></script><script type=text/javascript>// 挂在window下的全局配置
+      window.DocConfig = {
+        // "server":'http://127.0.0.1/showdoc.cc/server/index.php?s=',
+        server: 'https://source.showdoc.com.cn/server/index.php?s=',
+        originalServer: '/server/index.php?s=', // 原始服务器地址。上行的server有可能是别的域名。而这个originalServer则是原本的服务器
+        // "lang" :'en'
+        lang: 'zh-cn',
+        // staticPath: '//source.showdoc.com.cn/static/' ,// 使用别的域名加载静态资源
+        staticPath: '/static/'
+      }
+
+      // static/status.js里的SHOWDOC_SOURCE_STASTUS是undefined 则证明没加载好
+      if (typeof window.SHOWDOC_SOURCE_STASTUS == 'undefined') {
+        // 把全局变量中的静态资源路径给改一下
+        window.DocConfig.staticPath = 'https://www.showdoc.com.cn/static/'
+        window.DocConfig.server = 'https://www.showdoc.com.cn/server/index.php?s='
+      }
+
+      // 开发环境的配置
+      var host = window.location.host
+      if (
+        host.indexOf('local') > -1 ||
+        host.indexOf('wu.com') > -1 ||
+        host.indexOf('dummy_site') > -1
+      ) {
+        window.DocConfig.server =
+          'http://127.0.0.1/showdoc.cc/server/index.php?s='
+        window.DocConfig.staticPath = 'https://www.showdoc.com.cn/static/'
+      }</script><script src=http://cdn.staticfile.org/vue/2.6.10/vue.min.js></script><script src=http://cdn.staticfile.org/element-ui/2.13.0/index.js></script><link href=http://cdn.staticfile.org/element-ui/2.13.0/theme-chalk/index.css rel=stylesheet><script>// 判断一些加载公共cdn的资源文件是否正常，不正常则加载本服务器的文件
+      !window.Vue &&
+        document.write(
+          unescape('%3Cscript src="/static/vue/vue.min.js"%3E%3C/script%3E')
+        )
+      !window.ELEMENT &&
+        document.write(
+          unescape(
+            '%3Clink href="/static/element-ui/theme-chalk/index.css" rel="stylesheet"%3E%3C/link%3E'
+          )
+        )
+      !window.ELEMENT &&
+        document.write(
+          unescape(
+            '%3Cscript src="/static/element-ui/index.js"%3E%3C/script%3E'
+          )
+        )</script><link href=https://www.showdoc.com.cn/static/css/app.06120fafad3993a9b37964e43860e5dc.css rel=stylesheet></head><body class=grey-bg><div id=app></div><div class=index-item-block><div><h2>WxProject</h2><p>微信</p><br><article><h1>接收实时消息</h1><p><div><p>[TOC]</p>
+<h5>简要描述</h5>
+<ul>
+<li>接收实时消息, 本接口需自行搭建。用来接收微信实时消息。</li>
+</ul>
+<h5>发送给URL</h5>
+<ul>
+<li><code>http://127.0.0.1:30000/api/user/recive_msg</code></li>
+</ul>
+<h5>发送方式</h5>
+<ul>
+<li>POST </li>
+</ul>
+<h5>发送参数</h5>
+<pre><code>{
+    &amp;quot;businesstype&amp;quot;:&amp;quot;1&amp;quot;,
+    &amp;quot;businessdata&amp;quot;:&amp;quot;01FF8C6EA223445F1C&amp;quot;,
+    &amp;quot;msgtype&amp;quot;:&amp;quot;1&amp;quot;,
+    &amp;quot;device&amp;quot;:&amp;quot;1&amp;quot;,
+    &amp;quot;fromwxid&amp;quot;:&amp;quot;wxid_xxxx&amp;quot;,
+    &amp;quot;toid&amp;quot;:&amp;quot;filehelper&amp;quot;,
+    &amp;quot;msg&amp;quot;:&amp;quot;在吗&amp;quot;
+}</code></pre>
+<h5>参数说明</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">businesstype</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>业务类型代码</td>
+</tr>
+<tr>
+<td style="text-align: left;">businessdata</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>业务数据(16进制protobuf文本)</td>
+</tr>
+<tr>
+<td style="text-align: left;">msgtype</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>消息类型代码</td>
+</tr>
+<tr>
+<td style="text-align: left;">device</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>设备代码 手机=1 其他=0</td>
+</tr>
+<tr>
+<td style="text-align: left;">fromwxid</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>发送方微信ID</td>
+</tr>
+<tr>
+<td style="text-align: left;">toid</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>接收人微信ID/群ID</td>
+</tr>
+<tr>
+<td style="text-align: left;">msg</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>消息内容</td>
+</tr>
+</tbody>
+</table>
+<h3>msgtype 消息类型代码 二级代码参考：</h3>
+<p>1   文本消息
+3   图片消息
+34  语音消息
+37  好友确认消息
+40  POSSIBLEFRIEND_MSG
+42  共享名片
+43  视频消息
+47  动画表情
+48  位置消息
+49  分享链接
+50  VOIPMSG
+51  微信初始化消息
+52  VOIPNOTIFY
+53  VOIPINVITE
+62  小视频
+9999    SYSNOTICE
+10000   系统消息
+10002   撤回消息</p>
+<h5>返回值</h5>
+<p>返回值将被忽略</p>
+<h5>发送数据格式</h5>
+<p><img src="https://www.showdoc.com.cn/server/api/attachment/visitFile?sign=f56cb79c72ea2990d87124a9f60a688c" alt="" /></p>
+<h1>Python FLASK 代码示例</h1>
+<h4>获取聊天信息</h4>
+<pre><code># encoding:utf-8
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from GetTime import *
+from AES_1 import *
+from flask_sqlalchemy import SQLAlchemy
+import database_config
+import logging
+import re
+from threading import Timer
+
+from datetime import timedelta
+from datetime import timezone
+import datetime
+import urllib.request
+
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer, BadSignature, SignatureExpired
+from flask_httpauth import HTTPTokenAuth
+auth = HTTPTokenAuth(scheme='JWT')
+app = Flask(__name__)
+
+@app.route('/api/user/recive_msg', methods=[&amp;quot;POST&amp;quot;])
+def upload_msg():
+
+    if request.method == 'POST':
+
+        businesstype = request.json.get('businesstype')
+        print('[businesstype]', businesstype)
+
+        businessdata = request.json.get('businessdata')
+        print('[businessdata]', businessdata)
+
+        # 消息类型
+        msgtype = request.json.get('msgtype')
+        print('[msgtype]', msgtype)
+
+        # 设备代码
+        device = request.json.get('device')
+        print('[device]', device)
+
+        # 发送人微信ID
+        fromwxid = request.json.get('fromwxid')
+        print('[fromwxid]', fromwxid)
+
+        # 接收方微信ID/群ID
+        toid = request.json.get('toid')
+        print('[toid]', toid)
+
+        # 消息内容
+        msg = request.json.get('msg')
+        print('[msg]', msg)
+
+        return '1'
+
+    else:
+        # 请求方式错误
+        return '0'
+
+if __name__ == '__main__':
+
+    # 下面这行是支持中文的 不加的话中文就会乱码
+    app.config['JSON_AS_ASCII'] = False
+
+    # 支持跨域访问
+    CORS(app, supports_credentials=True)
+    app.run(host='0.0.0.0', port=30000, debug=True)
+</code></pre></div><p></article><h3>页面列表</h3><nav><a href="9019318364312888.html" title="发起好友语音聊天">发起好友语音聊天</a><a href="9019318842372957.html" title="发起好友视频聊天">发起好友视频聊天</a><a href="9019565404784998.html" title="查询群成员昵称">查询群成员昵称</a><a href="9019566491411017.html" title="查询群成员总数">查询群成员总数</a><a href="9019577323953766.html" title="查询群主微信ID">查询群主微信ID</a><a href="9019580625786730.html" title="修改自己的群昵称">修改自己的群昵称</a><a href="9019589526757527.html" title="切换当前聊天对象">切换当前聊天对象</a><a href="9019609319630104.html" title="创建群聊">创建群聊</a><a href="9019559882256250.html" title="群聊多人语音">群聊多人语音</a><a href="9008665345790557.html" title="退出微信">退出微信</a><a href="9063348367251383.html" title="关闭消息免打扰">关闭消息免打扰</a><a href="9063349491429947.html" title="显示群成员昵称">显示群成员昵称</a><a href="9063350057038457.html" title="关闭显示群成员昵称">关闭显示群成员昵称</a><a href="9063350563096436.html" title="置顶聊天">置顶聊天</a><a href="9063351366305816.html" title="取消置顶聊天">取消置顶聊天</a><a href="9063365453994960.html" title="保存到通讯录">保存到通讯录</a><a href="9063365712246544.html" title="从通讯录移除">从通讯录移除</a><a href="9063366035200767.html" title="折叠该群聊">折叠该群聊</a><a href="9063366996691400.html" title="取消折叠该群聊">取消折叠该群聊</a><a href="9063406230299073.html" title="取消关注公众号">取消关注公众号</a><a href="9063410601712380.html" title="无痕清粉">无痕清粉</a><a href="9063540299207309.html" title="再次启动微信">再次启动微信</a><a href="9032882631445023.html" title="同意加入群聊">同意加入群聊</a><a href="8962025006749060.html" title="查询微信本地数据库密钥">查询微信本地数据库密钥</a><a href="9020961696935450.html" title="开关朋友圈评论功能">开关朋友圈评论功能</a><a href="8929459103947241.html" title="转发好友名片">转发好友名片</a><a href="8929112442643628.html" title="发送文本消息">发送文本消息</a><a href="8929124214624404.html" title="发送图片消息">发送图片消息</a><a href="8929125290388797.html" title="发送文件消息">发送文件消息</a><a href="8929126402335432.html" title="发送视频消息">发送视频消息</a><a href="8929127822471500.html" title="发送GIF动画表情">发送GIF动画表情</a><a href="8929229624237103.html" title="发送@消息(限群聊)">发送@消息(限群聊)</a><a href="8961754683625021.html" title="添加新好友">添加新好友</a><a href="8993612184500147.html" title="群成员批量删除">群成员批量删除</a><a href="9020497967635095.html" title="修改好友备注">修改好友备注</a><a href="8995071288617868.html" title="获取好友和群清单">获取好友和群清单</a><a href="8993745484621751.html" title="修改群聊名称">修改群聊名称</a><a href="9020971162414036.html" title="添加好友进群(40人以下)">添加好友进群(40人以下)</a><a href="8929539190505167.html" title="转发文章消息">转发文章消息</a><a href="8929480485871668.html" title="用户故事">用户故事</a><a href="8992192586710557.html" title="实时消息接收自定义端口">实时消息接收自定义端口</a><a href="8994689342748667.html" title="修改群聊公告">修改群聊公告</a><a href="8994766712410900.html" title="修改群聊备注">修改群聊备注</a><a href="8992807300995123.html" title="获取小程序session(崩溃正在修复)">获取小程序session(崩溃正在修复)</a><a href="8929092413429617.html" title="朋友圈取消评论">朋友圈取消评论</a><a href="8929096202824749.html" title="PC微信接口使用说明">PC微信接口使用说明</a><a href="9063347648143133.html" title="开启消息免打扰">开启消息免打扰</a><a href="8929682707415526.html" title="接收实时消息">接收实时消息</a><a href="8929684534519164.html" title="自动收款(未实现)">自动收款(未实现)</a><a href="8929685205004781.html" title="确认收款">确认收款</a><a href="8929707428199536.html" title="解密图片">解密图片</a><a href="8929111706614173.html" title="获取个人详细信息">获取个人详细信息</a><a href="8992619194450930.html" title="实时消息接收自定义完整URL">实时消息接收自定义完整URL</a><a href="8991915897471323.html" title="获取微信登陆状态">获取微信登陆状态</a><a href="8929642778231025.html" title="转发网易云音乐">转发网易云音乐</a><a href="8929638412121701.html" title="转发小程序">转发小程序</a><a href="8996001801759077.html" title="同意好友申请">同意好友申请</a><a href="8992808224793118.html" title="关注公众号">关注公众号</a><a href="9021207508542836.html" title="批量获取群成员微信ID">批量获取群成员微信ID</a><a href="9021493538921140.html" title="邀请好友进群(40人以上)">邀请好友进群(40人以上)</a><a href="9019586393938696.html" title="获取当前聊天对象信息">获取当前聊天对象信息</a><a href="9026367939952187.html" title="获取登录二维码图片">获取登录二维码图片</a><a href="9026394176378170.html" title="开关消息撤回">开关消息撤回</a><a href="9026395406199369.html" title="接收实时撤回的消息">接收实时撤回的消息</a><a href="8929083282065703.html" title="刷新朋友圈">刷新朋友圈</a><a href="8929087905557074.html" title="朋友圈获取下一页内容">朋友圈获取下一页内容</a><a href="8929089716176919.html" title="朋友圈点赞">朋友圈点赞</a><a href="8929091706495732.html" title="朋友圈取消点赞">朋友圈取消点赞</a><a href="8929091996936675.html" title="朋友圈评论">朋友圈评论</a><a href="8968084332574571.html" title="获取小程序CODE">获取小程序CODE</a><a href="8968098266210910.html" title="打开内置浏览器">打开内置浏览器</a><a href="8981501348113066.html" title="删除好友">删除好友</a><a href="8966162223712985.html" title="刷新登录二维码">刷新登录二维码</a><a href="8981408454846254.html" title="群里@所有人 消息">群里@所有人 消息</a><a href="8982367120882654.html" title="网络查询陌生人信息">网络查询陌生人信息</a><a href="8984969039725273.html" title="取数据库操作句柄和文件名">取数据库操作句柄和文件名</a><a href="8986208243971483.html" title="查询数据库">查询数据库</a><p><a href="https://www.showdoc.com.cn/aixed" rel="pre"  title="返回主页">返回项目主页</a></p></nav></div><div>ITEM_HTML</div></div><script type=text/javascript src=https://www.showdoc.com.cn/static/js/manifest.2ae2e69a05c33dfc65f8.js></script><script type=text/javascript src=https://www.showdoc.com.cn/static/js/vendor.76cfcc75b1b6f96914e9.js></script><script type=text/javascript src=https://www.showdoc.com.cn/static/js/app.2c67697edee43cb9dc95.js></script></body>
+<!-- Mirrored from www.showdoc.com.cn/aixed/8929682707415526 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Jul 2022 14:49:07 GMT -->
+</html><script language=JavaScript>var Wwidth = window.innerWidth
+  window.addEventListener('resize', function() {
+    /// 宽度变化大于50像素的时候刷新整个窗口以适应新宽度
+    if (Math.abs(Wwidth - window.innerWidth) > 50) {
+      // console.log(window.innerWidth + ' ' + window.innerHeight);
+      // 如果不在编辑页面，则在窗口变化后刷新窗口以适应宽度
+      if (window.location.href.indexOf('/edit') === -1) {
+        window.location.reload()
+      }
+    }
+  })
+
+  // 防止被镜像站
+  var host = window.location.host
+  if (
+    host.indexOf('dummy_site') === -1 &&
+    host.indexOf('wu') === -1 &&
+    host.indexOf('showdoc') === -1 &&
+    host.indexOf('star7th.com') === -1 &&
+    host.indexOf('dummy_site') === -1
+  ) {
+    var href = window.location.href
+    var j = href.replace(new RegExp(host, 'g'), 'www.showdoc.com.cn')
+    window.location.href = j
+  }</script><script>// 百度统计
+  if (window.location.host == 'www.showdoc.com.cn') {
+    var _hmt = _hmt || []
+    ;(function() {
+      var hm = document.createElement('script')
+      hm.src = 'https://hm.baidu.com/hm.js?84e82fa31c8ca8671f6b6f972b7e54fb'
+      var s = document.getElementsByTagName('script')[0]
+      s.parentNode.insertBefore(hm, s)
+    })()
+  }</script><script>// SHOWDOC_js_STASTUS是undefined 则证明没加载好
+  // if (typeof window.SHOWDOC_JS_STASTUS == 'undefined') {
+  //   // 把script标签的js地址更改后再加载
+  //   var scripts = document.getElementsByTagName('script')
+  //   for (var i = 0; i < scripts.length; i++) {
+  //     var script = scripts[i]
+  //     if (
+  //       script &&
+  //       script.getAttribute('src') &&
+  //       script.getAttribute('src').indexOf('source.showdoc.com.cn') > -1
+  //     ) {
+  //       var url = script.getAttribute('src')
+  //       // console.log(url)
+  //       var script2 = document.createElement('script')
+  //       script2.async = false // 同步加载.很重要，不然会乱序加载
+  //       script2.src = url.replace('//source.showdoc.com.cn/', '/')
+  //       document.body.appendChild(script2)
+  //     }
+  //   }
+  //   // 把<link>标签的css地址更改后再加载
+  //   var links = document.getElementsByTagName('link')
+  //   for (var i = 0; i < links.length; i++) {
+  //     var link = links[i]
+  //     if (
+  //       link &&
+  //       link.getAttribute('href') &&
+  //       link.getAttribute('href').indexOf('source.showdoc.com.cn') > -1
+  //     ) {
+  //       var link2 = document.createElement('link')
+  //       var url = link.getAttribute('href')
+  //       // console.log(url)
+  //       link2.type = 'text/css'
+  //       link2.rel = 'stylesheet'
+  //       link2.href = url.replace('//source.showdoc.com.cn/', '/')
+  //       var head = document.getElementsByTagName('head')[0]
+  //       head.appendChild(link2)
+  //     }
+  //   }
+  // }</script>

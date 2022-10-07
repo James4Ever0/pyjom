@@ -1,0 +1,235 @@
+<!DOCTYPE html><html>
+<!-- Mirrored from www.showdoc.com.cn/aixed/8929083282065703 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Jul 2022 14:49:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=renderer content=webkit><meta http-equiv=X-UA-Compatible content=edge><meta http-equiv=Expires content=0><meta http-equiv=Pragma content=no-cache><meta http-equiv=Cache-control content="no-cache, no-store, must-revalidate"><meta http-equiv=Cache content=no-cache><link rel=apple-touch-icon href=https://www.showdoc.com.cn/static/logo/w_64.png><link rel=apple-touch-icon-precomposed href=https://www.showdoc.com.cn/static/logo/w_64.png><link rel=icon href="data:;base64,="><title>ShowDoc</title><meta name=keywords content="在线API文档 技术文档 数据字典 在线手册"><meta name=description content=一个非常适合IT团队的在线API文档、技术文档工具。你可以使用Showdoc来编写在线API文档、技术文档、数据字典、在线手册><script src="http://source.showdoc.com.cn/static/status.js?v=2"></script><script type=text/javascript>// 挂在window下的全局配置
+      window.DocConfig = {
+        // "server":'http://127.0.0.1/showdoc.cc/server/index.php?s=',
+        server: 'https://source.showdoc.com.cn/server/index.php?s=',
+        originalServer: '/server/index.php?s=', // 原始服务器地址。上行的server有可能是别的域名。而这个originalServer则是原本的服务器
+        // "lang" :'en'
+        lang: 'zh-cn',
+        // staticPath: '//source.showdoc.com.cn/static/' ,// 使用别的域名加载静态资源
+        staticPath: '/static/'
+      }
+
+      // static/status.js里的SHOWDOC_SOURCE_STASTUS是undefined 则证明没加载好
+      if (typeof window.SHOWDOC_SOURCE_STASTUS == 'undefined') {
+        // 把全局变量中的静态资源路径给改一下
+        window.DocConfig.staticPath = 'https://www.showdoc.com.cn/static/'
+        window.DocConfig.server = 'https://www.showdoc.com.cn/server/index.php?s='
+      }
+
+      // 开发环境的配置
+      var host = window.location.host
+      if (
+        host.indexOf('local') > -1 ||
+        host.indexOf('wu.com') > -1 ||
+        host.indexOf('dummy_site') > -1
+      ) {
+        window.DocConfig.server =
+          'http://127.0.0.1/showdoc.cc/server/index.php?s='
+        window.DocConfig.staticPath = 'https://www.showdoc.com.cn/static/'
+      }</script><script src=http://cdn.staticfile.org/vue/2.6.10/vue.min.js></script><script src=http://cdn.staticfile.org/element-ui/2.13.0/index.js></script><link href=http://cdn.staticfile.org/element-ui/2.13.0/theme-chalk/index.css rel=stylesheet><script>// 判断一些加载公共cdn的资源文件是否正常，不正常则加载本服务器的文件
+      !window.Vue &&
+        document.write(
+          unescape('%3Cscript src="/static/vue/vue.min.js"%3E%3C/script%3E')
+        )
+      !window.ELEMENT &&
+        document.write(
+          unescape(
+            '%3Clink href="/static/element-ui/theme-chalk/index.css" rel="stylesheet"%3E%3C/link%3E'
+          )
+        )
+      !window.ELEMENT &&
+        document.write(
+          unescape(
+            '%3Cscript src="/static/element-ui/index.js"%3E%3C/script%3E'
+          )
+        )</script><link href=https://www.showdoc.com.cn/static/css/app.06120fafad3993a9b37964e43860e5dc.css rel=stylesheet></head><body class=grey-bg><div id=app></div><div class=index-item-block><div><h2>WxProject</h2><p>微信</p><br><article><h1>刷新朋友圈</h1><p><div><p>[TOC]</p>
+<h5>简要描述</h5>
+<ul>
+<li>刷新并获取朋友圈第一页的内容，如果朋友圈有新动态则返回10条数据</li>
+</ul>
+<h5>请求URL</h5>
+<ul>
+<li><code>http://localhost:30001/TimelineGetFristPage</code></li>
+</ul>
+<h5>请求方式</h5>
+<ul>
+<li>POST </li>
+</ul>
+<h5>参数</h5>
+<p>无</p>
+<h5>返回示例（朋友圈无新动态）</h5>
+<pre><code>{
+    &amp;quot;havenewmsg&amp;quot;: &amp;quot;0&amp;quot;,
+    &amp;quot;data&amp;quot;: [
+        {
+            &amp;quot;msgid_full_10&amp;quot;: &amp;quot;&amp;quot;,
+            &amp;quot;msgid_full_16&amp;quot;: &amp;quot;&amp;quot;,
+            &amp;quot;msgid_1&amp;quot;: &amp;quot;&amp;quot;,
+            &amp;quot;msgid_2&amp;quot;: &amp;quot;&amp;quot;,
+            &amp;quot;msgtime&amp;quot;: &amp;quot;&amp;quot;,
+            &amp;quot;wxid&amp;quot;: &amp;quot;&amp;quot;,
+            &amp;quot;nickname&amp;quot;: &amp;quot;&amp;quot;,
+            &amp;quot;content&amp;quot;: &amp;quot;&amp;quot;
+        }
+    ]
+}</code></pre>
+<h5>返回示例（朋友圈有新动态）</h5>
+<pre><code>{
+    &amp;quot;havenewmsg&amp;quot;: &amp;quot;1&amp;quot;,
+    &amp;quot;data&amp;quot;: [
+        {
+            &amp;quot;msgid_full_10&amp;quot;: &amp;quot;13887224334110363962&amp;quot;,
+            &amp;quot;msgid_full_16&amp;quot;: &amp;quot;C0B954F446CF113A&amp;quot;,
+            &amp;quot;msgid_1&amp;quot;: &amp;quot;C0B954F4&amp;quot;,
+            &amp;quot;msgid_2&amp;quot;: &amp;quot;46CF113A&amp;quot;,
+            &amp;quot;msgtime&amp;quot;: &amp;quot;2022-06-17 23:43:01&amp;quot;,
+            &amp;quot;wxid&amp;quot;: &amp;quot;wxid_t6e2ioczoi4x21&amp;quot;,
+            &amp;quot;nickname&amp;quot;: &amp;quot;DmG@Fy&amp;quot;,
+            &amp;quot;content&amp;quot;: &amp;quot;&amp;lt;TimelineObject&amp;gt;&amp;lt;id&amp;gt;13887177649112748276&amp;lt;/id&amp;gt;&amp;lt;username&amp;gt;wxid_t6e2ioczoi4x21&amp;lt;/username&amp;gt;&amp;lt;createTime&amp;gt;1655480581&amp;lt;/createTime&amp;gt;&amp;lt;contentDesc&amp;gt;我相信一切都是最好的安排&amp;lt;/contentDesc&amp;gt;&amp;lt;contentDescShowType&amp;gt;0&amp;lt;/contentDescShowType&amp;gt;&amp;lt;contentDescScene&amp;gt;3&amp;lt;/contentDescScene&amp;gt;&amp;lt;private&amp;gt;0&amp;lt;/private&amp;gt;&amp;lt;sightFolded&amp;gt;0&amp;lt;/sightFolded&amp;gt;&amp;lt;showFlag&amp;gt;0&amp;lt;/showFlag&amp;gt;&amp;lt;appInfo&amp;gt;&amp;lt;id&amp;gt;&amp;lt;/id&amp;gt;&amp;lt;version&amp;gt;&amp;lt;/version&amp;gt;&amp;lt;appName&amp;gt;&amp;lt;/appName&amp;gt;&amp;lt;installUrl&amp;gt;&amp;lt;/installUrl&amp;gt;&amp;lt;fromUrl&amp;gt;&amp;lt;/fromUrl&amp;gt;&amp;lt;isForceUpdate&amp;gt;0&amp;lt;/isForceUpdate&amp;gt;&amp;lt;/appInfo&amp;gt;&amp;lt;sourceUserName&amp;gt;&amp;lt;/sourceUserName&amp;gt;&amp;lt;sourceNickName&amp;gt;&amp;lt;/sourceNickName&amp;gt;&amp;lt;statisticsData&amp;gt;&amp;lt;/statisticsData&amp;gt;&amp;lt;statExtStr&amp;gt;&amp;lt;/statExtStr&amp;gt;&amp;lt;ContentObject&amp;gt;&amp;lt;contentStyle&amp;gt;1&amp;lt;/contentStyle&amp;gt;&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;&amp;lt;description&amp;gt;&amp;lt;/description&amp;gt;&amp;lt;mediaList&amp;gt;&amp;lt;media&amp;gt;&amp;lt;id&amp;gt;13887177649842950377&amp;lt;/id&amp;gt;&amp;lt;type&amp;gt;2&amp;lt;/type&amp;gt;&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;&amp;lt;description&amp;gt;我相信一切都是最好的安排&amp;lt;/description&amp;gt;&amp;lt;private&amp;gt;0&amp;lt;/private&amp;gt;&amp;lt;userData&amp;gt;&amp;lt;/userData&amp;gt;&amp;lt;subType&amp;gt;0&amp;lt;/subType&amp;gt;&amp;lt;videoSize width=\&amp;quot;4032\&amp;quot; height=\&amp;quot;3024\&amp;quot;&amp;gt;&amp;lt;/videoSize&amp;gt;&amp;lt;url type=\&amp;quot;1\&amp;quot; md5=\&amp;quot;c99bc9a551a8787410ce4a1c4d9243ab\&amp;quot; videomd5=\&amp;quot;\&amp;quot;&amp;gt;http://shmmsns.qpic.cn/mmsns/UfTbp9VsXqwv6Osakym4Epa78kelUAE9hiaicW8fAIl5iaKibY4nx3iacl1YEuic1qYC04lpibPb0sRML0/0&amp;lt;/url&amp;gt;&amp;lt;thumb type=\&amp;quot;1\&amp;quot;&amp;gt;http://shmmsns.qpic.cn/mmsns/UfTbp9VsXqwv6Osakym4Epa78kelUAE9hiaicW8fAIl5iaKibY4nx3iacl1YEuic1qYC04lpibPb0sRML0/150&amp;lt;/thumb&amp;gt;&amp;lt;size width=\&amp;quot;1080.000000\&amp;quot; height=\&amp;quot;1440.000000\&amp;quot; totalSize=\&amp;quot;87596\&amp;quot;&amp;gt;&amp;lt;/size&amp;gt;&amp;lt;/media&amp;gt;&amp;lt;/mediaList&amp;gt;&amp;lt;contentUrl&amp;gt;&amp;lt;/contentUrl&amp;gt;&amp;lt;/ContentObject&amp;gt;&amp;lt;actionInfo&amp;gt;&amp;lt;appMsg&amp;gt;&amp;lt;messageAction&amp;gt;&amp;lt;/messageAction&amp;gt;&amp;lt;/appMsg&amp;gt;&amp;lt;/actionInfo&amp;gt;&amp;lt;location poiClassifyId=\&amp;quot;\&amp;quot; poiName=\&amp;quot;\&amp;quot; poiAddress=\&amp;quot;\&amp;quot; poiClassifyType=\&amp;quot;0\&amp;quot; city=\&amp;quot;\&amp;quot;&amp;gt;&amp;lt;/location&amp;gt;&amp;lt;publicUserName&amp;gt;&amp;lt;/publicUserName&amp;gt;&amp;lt;streamvideo&amp;gt;&amp;lt;streamvideourl&amp;gt;&amp;lt;/streamvideourl&amp;gt;&amp;lt;streamvideothumburl&amp;gt;&amp;lt;/streamvideothumburl&amp;gt;&amp;lt;streamvideoweburl&amp;gt;&amp;lt;/streamvideoweburl&amp;gt;&amp;lt;/streamvideo&amp;gt;&amp;lt;/TimelineObject&amp;gt;&amp;quot;
+        },
+        {
+            &amp;quot;msgid_full_10&amp;quot;: &amp;quot;13887200556839670134&amp;quot;,
+            &amp;quot;msgid_full_16&amp;quot;: &amp;quot;C0B93F5433091176&amp;quot;,
+            &amp;quot;msgid_1&amp;quot;: &amp;quot;C0B93F54&amp;quot;,
+            &amp;quot;msgid_2&amp;quot;: &amp;quot;33091176&amp;quot;,
+            &amp;quot;msgtime&amp;quot;: &amp;quot;2022-06-17 22:41:00&amp;quot;,
+            &amp;quot;wxid&amp;quot;: &amp;quot;wxid_vlzg9xb6ay5q21&amp;quot;,
+            &amp;quot;nickname&amp;quot;: &amp;quot;花青青&amp;quot;,
+            &amp;quot;content&amp;quot;: &amp;quot;&amp;lt;TimelineObject&amp;gt;&amp;lt;id&amp;gt;&amp;lt;![CDATA[13887146436086280518]]&amp;gt;&amp;lt;/id&amp;gt;&amp;lt;username&amp;gt;&amp;lt;![CDATA[wxid_vlzg9xb6ay5q21]]&amp;gt;&amp;lt;/username&amp;gt;&amp;lt;createTime&amp;gt;&amp;lt;![CDATA[1655476860]]&amp;gt;&amp;lt;/createTime&amp;gt;&amp;lt;contentDescShowType&amp;gt;0&amp;lt;/contentDescShowType&amp;gt;&amp;lt;contentDescScene&amp;gt;0&amp;lt;/contentDescScene&amp;gt;&amp;lt;private&amp;gt;&amp;lt;![CDATA[0]]&amp;gt;&amp;lt;/private&amp;gt;&amp;lt;contentDesc&amp;gt;&amp;lt;![CDATA[#国产操作系统 科技强国，教育筑梦。6月15日，广东省首个全国产化计算机教室落地，教室基于银河麒麟操作系统可进行多种课程教学。]]&amp;gt;&amp;lt;/contentDesc&amp;gt;&amp;lt;contentattr&amp;gt;&amp;lt;![CDATA[0]]&amp;gt;&amp;lt;/contentattr&amp;gt;&amp;lt;sourceUserName&amp;gt;&amp;lt;/sourceUserName&amp;gt;&amp;lt;sourceNickName&amp;gt;&amp;lt;/sourceNickName&amp;gt;&amp;lt;statisticsData&amp;gt;&amp;lt;/statisticsData&amp;gt;&amp;lt;weappInfo&amp;gt;&amp;lt;appUserName&amp;gt;&amp;lt;/appUserName&amp;gt;&amp;lt;pagePath&amp;gt;&amp;lt;/pagePath&amp;gt;&amp;lt;version&amp;gt;&amp;lt;![CDATA[0]]&amp;gt;&amp;lt;/version&amp;gt;&amp;lt;debugMode&amp;gt;&amp;lt;![CDATA[0]]&amp;gt;&amp;lt;/debugMode&amp;gt;&amp;lt;shareActionId&amp;gt;&amp;lt;/shareActionId&amp;gt;&amp;lt;isGame&amp;gt;&amp;lt;![CDATA[0]]&amp;gt;&amp;lt;/isGame&amp;gt;&amp;lt;messageExtraData&amp;gt;&amp;lt;/messageExtraData&amp;gt;&amp;lt;subType&amp;gt;&amp;lt;![CDATA[0]]&amp;gt;&amp;lt;/subType&amp;gt;&amp;lt;preloadResources&amp;gt;&amp;lt;/preloadResources&amp;gt;&amp;lt;/weappInfo&amp;gt;&amp;lt;canvasInfoXml&amp;gt;&amp;lt;/canvasInfoXml&amp;gt;&amp;lt;ContentObject&amp;gt;&amp;lt;contentStyle&amp;gt;&amp;lt;![CDATA[28]]&amp;gt;&amp;lt;/contentStyle&amp;gt;&amp;lt;contentSubStyle&amp;gt;&amp;lt;![CDATA[0]]&amp;gt;&amp;lt;/contentSubStyle&amp;gt;&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;&amp;lt;description&amp;gt;&amp;lt;/description&amp;gt;&amp;lt;contentUrl&amp;gt;&amp;lt;/contentUrl&amp;gt;&amp;lt;finderFeed&amp;gt;&amp;lt;objectId&amp;gt;13886983911789168669&amp;lt;/objectId&amp;gt;&amp;lt;objectNonceId&amp;gt;17475261834141258649&amp;lt;/objectNonceId&amp;gt;&amp;lt;feedType&amp;gt;4&amp;lt;/feedType&amp;gt;&amp;lt;nickname&amp;gt;麒麟软件有限公司&amp;lt;/nickname&amp;gt;&amp;lt;username&amp;gt;v2_060000231003b20faec8c7e28810c5d2c804e833b077386b264f8d29b4baf466edfe9b441b25@finder&amp;lt;/username&amp;gt;&amp;lt;avatar&amp;gt;&amp;lt;![CDATA[http://wx.qlogo.cn/finderhead/ver_1/9JoL1H4VchJBDRlNu33EicMibjps1J4ibHSCPQNOFtja0L9lGXfTTulSKiaamoxjicw7ZsoQsOtfShRagDZpkeKhtR5HsdIFnia9rfwnYo4MEaBfc/0]]&amp;gt;&amp;lt;/avatar&amp;gt;&amp;lt;desc&amp;gt;#国产操作系统 科技强国，教育筑梦。6月15日，广东省首个全国产化计算机教室落地，教室基于银河麒麟操作系统可进行多种课程教学。&amp;lt;/desc&amp;gt;&amp;lt;mediaCount&amp;gt;1&amp;lt;/mediaCount&amp;gt;&amp;lt;localId&amp;gt;0&amp;lt;/localId&amp;gt;&amp;lt;authIconType&amp;gt;0&amp;lt;/authIconType&amp;gt;&amp;lt;authIconUrl&amp;gt;&amp;lt;![CDATA[]]&amp;gt;&amp;lt;/authIconUrl&amp;gt;&amp;lt;mediaList&amp;gt;&amp;lt;media&amp;gt;&amp;lt;mediaType&amp;gt;4&amp;lt;/mediaType&amp;gt;&amp;lt;url&amp;gt;&amp;lt;![CDATA[http://wxapp.tc.qq.com/251/20302/stodownload?encfilekey=Cvvj5Ix3eewK0tHtibORqcsqchXNh0Gf3sJcaYqC2rQA02icdMEyNy7tVanzBADCI6LUQ9uefHiaV5icmIribJicV4go7kZFjcpnjUytCjdNpaEZEeEVdbLibK0DldMvaTLic2TS&amp;amp;adaptivelytrans=0&amp;amp;bizid=1023&amp;amp;dotrans=2991&amp;amp;hy=SH&amp;amp;idx=1&amp;amp;m=&amp;amp;token=x5Y29zUxcibD8zPTWchD0icibY2j1OibONvjz85E0jR0Le7fhqIzFnw8ibt65vYwbTWIbNlJz6KxZNaI&amp;amp;extg=9700]]&amp;gt;&amp;lt;/url&amp;gt;&amp;lt;thumbUrl&amp;gt;&amp;lt;![CDATA[http://wxapp.tc.qq.com/251/20304/stodownload?filekey=30250201010411300f020200fb0402534804000203020dea040d00000004627466730000000132&amp;amp;storeid=262ac46a7000e4d8d44d84926000000fb00004f5053482ad34b00b657d6a5d&amp;amp;adaptivelytrans=0&amp;amp;bizid=1023&amp;amp;dotrans=0&amp;amp;hy=SH&amp;amp;m=&amp;amp;scene=0]]&amp;gt;&amp;lt;/thumbUrl&amp;gt;&amp;lt;fullCoverUrl&amp;gt;&amp;lt;![CDATA[http://wxapp.tc.qq.com/251/20304/stodownload?encfilekey=S7s6ianIic0ia4PicKJSfB8EjyjpQibPUAXolialOicb3p4cxdWb9fEic2gmqJodGXzno92cbTZEqYJHDHC9GjTg5e7PGOc3yR1OwXgYEQhsKXmjeNP2aDUYeYSw9A&amp;amp;adaptivelytrans=0&amp;amp;bizid=1023&amp;amp;dotrans=0&amp;amp;hy=SH&amp;amp;idx=1&amp;amp;m=&amp;amp;scene=0&amp;amp;token=cztXnd9GyrGPFuk1kLtjF0uZeFb36ia5fRlyO2eaLMajxibLuRIibct89GqMS9vk0aS]]&amp;gt;&amp;lt;/fullCoverUrl&amp;gt;&amp;lt;fullClipInset&amp;gt;&amp;lt;![CDATA[]]&amp;gt;&amp;lt;/fullClipInset&amp;gt;&amp;lt;width&amp;gt;1920.0&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;1080.0&amp;lt;/height&amp;gt;&amp;lt;videoPlayDuration&amp;gt;44&amp;lt;/videoPlayDuration&amp;gt;&amp;lt;/media&amp;gt;&amp;lt;/mediaList&amp;gt;&amp;lt;megaVideo&amp;gt;&amp;lt;objectId&amp;gt;0&amp;lt;/objectId&amp;gt;&amp;lt;objectNonceId&amp;gt;&amp;lt;/objectNonceId&amp;gt;&amp;lt;/megaVideo&amp;gt;&amp;lt;bizUsername&amp;gt;&amp;lt;/bizUsername&amp;gt;&amp;lt;bizNickname&amp;gt;麒麟软件&amp;lt;/bizNickname&amp;gt;&amp;lt;bizAvatar&amp;gt;&amp;lt;![CDATA[http://wx.qlogo.cn/mmhead/Q3auHgzwzM6Wtzcw19YgOgiaAiaJzbFYQnicEmaAOVIIrJnzPR2LUqFyQ/132]]&amp;gt;&amp;lt;/bizAvatar&amp;gt;&amp;lt;bizUsernameV2&amp;gt;gh_e8b68c37ad7a&amp;lt;/bizUsernameV2&amp;gt;&amp;lt;bizAuthIconType&amp;gt;2&amp;lt;/bizAuthIconType&amp;gt;&amp;lt;bizAuthIconUrl&amp;gt;&amp;lt;![CDATA[https://dldir1v6.qq.com/weixin/checkresupdate/icons_filled_channels_authentication_enterprise_a2658032368245639e666fb11533a600.png]]&amp;gt;&amp;lt;/bizAuthIconUrl&amp;gt;&amp;lt;coverEffectType&amp;gt;0&amp;lt;/coverEffectType&amp;gt;&amp;lt;coverEffectText&amp;gt;&amp;lt;![CDATA[]]&amp;gt;&amp;lt;/coverEffectText&amp;gt;&amp;lt;/finderFeed&amp;gt;&amp;lt;/ContentObject&amp;gt;&amp;lt;actionInfo&amp;gt;&amp;lt;appMsg&amp;gt;&amp;lt;mediaTagName&amp;gt;&amp;lt;/mediaTagName&amp;gt;&amp;lt;messageExt&amp;gt;&amp;lt;/messageExt&amp;gt;&amp;lt;messageAction&amp;gt;&amp;lt;/messageAction&amp;gt;&amp;lt;/appMsg&amp;gt;&amp;lt;/actionInfo&amp;gt;&amp;lt;appInfo&amp;gt;&amp;lt;id&amp;gt;&amp;lt;/id&amp;gt;&amp;lt;/appInfo&amp;gt;&amp;lt;location poiClassifyId=\&amp;quot;\&amp;quot; poiName=\&amp;quot;\&amp;quot; poiAddress=\&amp;quot;\&amp;quot; poiClassifyType=\&amp;quot;0\&amp;quot; city=\&amp;quot;\&amp;quot;&amp;gt;&amp;lt;/location&amp;gt;&amp;lt;publicUserName&amp;gt;&amp;lt;/publicUserName&amp;gt;&amp;lt;streamvideo&amp;gt;&amp;lt;streamvideourl&amp;gt;&amp;lt;/streamvideourl&amp;gt;&amp;lt;streamvideothumburl&amp;gt;&amp;lt;/streamvideothumburl&amp;gt;&amp;lt;streamvideoweburl&amp;gt;&amp;lt;/streamvideoweburl&amp;gt;&amp;lt;/streamvideo&amp;gt;&amp;lt;/TimelineObject&amp;gt;&amp;quot;
+        },
+  .....
+    ]
+}</code></pre>
+<h5>返回参数说明</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">havenewmsg</td>
+<td style="text-align: left;">string</td>
+<td>朋友圈是否有新动态&lt;/br&gt;0=没有新动态&lt;/br&gt;1=有新动态</td>
+</tr>
+<tr>
+<td style="text-align: left;">msgid_full_10</td>
+<td style="text-align: left;">string</td>
+<td>朋友圈消息ID 10进制文本</td>
+</tr>
+<tr>
+<td style="text-align: left;">msgid_full_16</td>
+<td style="text-align: left;">string</td>
+<td>朋友圈消息ID 16进制文本</td>
+</tr>
+<tr>
+<td style="text-align: left;">msgid_1</td>
+<td style="text-align: left;">string</td>
+<td>朋友圈消息ID_1</td>
+</tr>
+<tr>
+<td style="text-align: left;">msgid_2</td>
+<td style="text-align: left;">string</td>
+<td>朋友圈消息ID_2</td>
+</tr>
+<tr>
+<td style="text-align: left;">msgtime</td>
+<td style="text-align: left;">string</td>
+<td>发布时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">wxid</td>
+<td style="text-align: left;">string</td>
+<td>发布人微信ID</td>
+</tr>
+<tr>
+<td style="text-align: left;">nickname</td>
+<td style="text-align: left;">string</td>
+<td>发布人微信昵称</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">string</td>
+<td>发布内容</td>
+</tr>
+</tbody>
+</table></div><p></article><h3>页面列表</h3><nav><a href="9019318364312888.html" title="发起好友语音聊天">发起好友语音聊天</a><a href="9019318842372957.html" title="发起好友视频聊天">发起好友视频聊天</a><a href="9019565404784998.html" title="查询群成员昵称">查询群成员昵称</a><a href="9019566491411017.html" title="查询群成员总数">查询群成员总数</a><a href="9019577323953766.html" title="查询群主微信ID">查询群主微信ID</a><a href="9019580625786730.html" title="修改自己的群昵称">修改自己的群昵称</a><a href="9019589526757527.html" title="切换当前聊天对象">切换当前聊天对象</a><a href="9019609319630104.html" title="创建群聊">创建群聊</a><a href="9019559882256250.html" title="群聊多人语音">群聊多人语音</a><a href="9008665345790557.html" title="退出微信">退出微信</a><a href="9063348367251383.html" title="关闭消息免打扰">关闭消息免打扰</a><a href="9063349491429947.html" title="显示群成员昵称">显示群成员昵称</a><a href="9063350057038457.html" title="关闭显示群成员昵称">关闭显示群成员昵称</a><a href="9063350563096436.html" title="置顶聊天">置顶聊天</a><a href="9063351366305816.html" title="取消置顶聊天">取消置顶聊天</a><a href="9063365453994960.html" title="保存到通讯录">保存到通讯录</a><a href="9063365712246544.html" title="从通讯录移除">从通讯录移除</a><a href="9063366035200767.html" title="折叠该群聊">折叠该群聊</a><a href="9063366996691400.html" title="取消折叠该群聊">取消折叠该群聊</a><a href="9063406230299073.html" title="取消关注公众号">取消关注公众号</a><a href="9063410601712380.html" title="无痕清粉">无痕清粉</a><a href="9063540299207309.html" title="再次启动微信">再次启动微信</a><a href="9032882631445023.html" title="同意加入群聊">同意加入群聊</a><a href="8962025006749060.html" title="查询微信本地数据库密钥">查询微信本地数据库密钥</a><a href="9020961696935450.html" title="开关朋友圈评论功能">开关朋友圈评论功能</a><a href="8929459103947241.html" title="转发好友名片">转发好友名片</a><a href="8929112442643628.html" title="发送文本消息">发送文本消息</a><a href="8929124214624404.html" title="发送图片消息">发送图片消息</a><a href="8929125290388797.html" title="发送文件消息">发送文件消息</a><a href="8929126402335432.html" title="发送视频消息">发送视频消息</a><a href="8929127822471500.html" title="发送GIF动画表情">发送GIF动画表情</a><a href="8929229624237103.html" title="发送@消息(限群聊)">发送@消息(限群聊)</a><a href="8961754683625021.html" title="添加新好友">添加新好友</a><a href="8993612184500147.html" title="群成员批量删除">群成员批量删除</a><a href="9020497967635095.html" title="修改好友备注">修改好友备注</a><a href="8995071288617868.html" title="获取好友和群清单">获取好友和群清单</a><a href="8993745484621751.html" title="修改群聊名称">修改群聊名称</a><a href="9020971162414036.html" title="添加好友进群(40人以下)">添加好友进群(40人以下)</a><a href="8929539190505167.html" title="转发文章消息">转发文章消息</a><a href="8929480485871668.html" title="用户故事">用户故事</a><a href="8992192586710557.html" title="实时消息接收自定义端口">实时消息接收自定义端口</a><a href="8994689342748667.html" title="修改群聊公告">修改群聊公告</a><a href="8994766712410900.html" title="修改群聊备注">修改群聊备注</a><a href="8992807300995123.html" title="获取小程序session(崩溃正在修复)">获取小程序session(崩溃正在修复)</a><a href="8929092413429617.html" title="朋友圈取消评论">朋友圈取消评论</a><a href="8929096202824749.html" title="PC微信接口使用说明">PC微信接口使用说明</a><a href="9063347648143133.html" title="开启消息免打扰">开启消息免打扰</a><a href="8929682707415526.html" title="接收实时消息">接收实时消息</a><a href="8929684534519164.html" title="自动收款(未实现)">自动收款(未实现)</a><a href="8929685205004781.html" title="确认收款">确认收款</a><a href="8929707428199536.html" title="解密图片">解密图片</a><a href="8929111706614173.html" title="获取个人详细信息">获取个人详细信息</a><a href="8992619194450930.html" title="实时消息接收自定义完整URL">实时消息接收自定义完整URL</a><a href="8991915897471323.html" title="获取微信登陆状态">获取微信登陆状态</a><a href="8929642778231025.html" title="转发网易云音乐">转发网易云音乐</a><a href="8929638412121701.html" title="转发小程序">转发小程序</a><a href="8996001801759077.html" title="同意好友申请">同意好友申请</a><a href="8992808224793118.html" title="关注公众号">关注公众号</a><a href="9021207508542836.html" title="批量获取群成员微信ID">批量获取群成员微信ID</a><a href="9021493538921140.html" title="邀请好友进群(40人以上)">邀请好友进群(40人以上)</a><a href="9019586393938696.html" title="获取当前聊天对象信息">获取当前聊天对象信息</a><a href="9026367939952187.html" title="获取登录二维码图片">获取登录二维码图片</a><a href="9026394176378170.html" title="开关消息撤回">开关消息撤回</a><a href="9026395406199369.html" title="接收实时撤回的消息">接收实时撤回的消息</a><a href="8929083282065703.html" title="刷新朋友圈">刷新朋友圈</a><a href="8929087905557074.html" title="朋友圈获取下一页内容">朋友圈获取下一页内容</a><a href="8929089716176919.html" title="朋友圈点赞">朋友圈点赞</a><a href="8929091706495732.html" title="朋友圈取消点赞">朋友圈取消点赞</a><a href="8929091996936675.html" title="朋友圈评论">朋友圈评论</a><a href="8968084332574571.html" title="获取小程序CODE">获取小程序CODE</a><a href="8968098266210910.html" title="打开内置浏览器">打开内置浏览器</a><a href="8981501348113066.html" title="删除好友">删除好友</a><a href="8966162223712985.html" title="刷新登录二维码">刷新登录二维码</a><a href="8981408454846254.html" title="群里@所有人 消息">群里@所有人 消息</a><a href="8982367120882654.html" title="网络查询陌生人信息">网络查询陌生人信息</a><a href="8984969039725273.html" title="取数据库操作句柄和文件名">取数据库操作句柄和文件名</a><a href="8986208243971483.html" title="查询数据库">查询数据库</a><p><a href="https://www.showdoc.com.cn/aixed" rel="pre"  title="返回主页">返回项目主页</a></p></nav></div><div>ITEM_HTML</div></div><script type=text/javascript src=https://www.showdoc.com.cn/static/js/manifest.2ae2e69a05c33dfc65f8.js></script><script type=text/javascript src=https://www.showdoc.com.cn/static/js/vendor.76cfcc75b1b6f96914e9.js></script><script type=text/javascript src=https://www.showdoc.com.cn/static/js/app.2c67697edee43cb9dc95.js></script></body>
+<!-- Mirrored from www.showdoc.com.cn/aixed/8929083282065703 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Jul 2022 14:49:07 GMT -->
+</html><script language=JavaScript>var Wwidth = window.innerWidth
+  window.addEventListener('resize', function() {
+    /// 宽度变化大于50像素的时候刷新整个窗口以适应新宽度
+    if (Math.abs(Wwidth - window.innerWidth) > 50) {
+      // console.log(window.innerWidth + ' ' + window.innerHeight);
+      // 如果不在编辑页面，则在窗口变化后刷新窗口以适应宽度
+      if (window.location.href.indexOf('/edit') === -1) {
+        window.location.reload()
+      }
+    }
+  })
+
+  // 防止被镜像站
+  var host = window.location.host
+  if (
+    host.indexOf('dummy_site') === -1 &&
+    host.indexOf('wu') === -1 &&
+    host.indexOf('showdoc') === -1 &&
+    host.indexOf('star7th.com') === -1 &&
+    host.indexOf('dummy_site') === -1
+  ) {
+    var href = window.location.href
+    var j = href.replace(new RegExp(host, 'g'), 'www.showdoc.com.cn')
+    window.location.href = j
+  }</script><script>// 百度统计
+  if (window.location.host == 'www.showdoc.com.cn') {
+    var _hmt = _hmt || []
+    ;(function() {
+      var hm = document.createElement('script')
+      hm.src = 'https://hm.baidu.com/hm.js?84e82fa31c8ca8671f6b6f972b7e54fb'
+      var s = document.getElementsByTagName('script')[0]
+      s.parentNode.insertBefore(hm, s)
+    })()
+  }</script><script>// SHOWDOC_js_STASTUS是undefined 则证明没加载好
+  // if (typeof window.SHOWDOC_JS_STASTUS == 'undefined') {
+  //   // 把script标签的js地址更改后再加载
+  //   var scripts = document.getElementsByTagName('script')
+  //   for (var i = 0; i < scripts.length; i++) {
+  //     var script = scripts[i]
+  //     if (
+  //       script &&
+  //       script.getAttribute('src') &&
+  //       script.getAttribute('src').indexOf('source.showdoc.com.cn') > -1
+  //     ) {
+  //       var url = script.getAttribute('src')
+  //       // console.log(url)
+  //       var script2 = document.createElement('script')
+  //       script2.async = false // 同步加载.很重要，不然会乱序加载
+  //       script2.src = url.replace('//source.showdoc.com.cn/', '/')
+  //       document.body.appendChild(script2)
+  //     }
+  //   }
+  //   // 把<link>标签的css地址更改后再加载
+  //   var links = document.getElementsByTagName('link')
+  //   for (var i = 0; i < links.length; i++) {
+  //     var link = links[i]
+  //     if (
+  //       link &&
+  //       link.getAttribute('href') &&
+  //       link.getAttribute('href').indexOf('source.showdoc.com.cn') > -1
+  //     ) {
+  //       var link2 = document.createElement('link')
+  //       var url = link.getAttribute('href')
+  //       // console.log(url)
+  //       link2.type = 'text/css'
+  //       link2.rel = 'stylesheet'
+  //       link2.href = url.replace('//source.showdoc.com.cn/', '/')
+  //       var head = document.getElementsByTagName('head')[0]
+  //       head.appendChild(link2)
+  //     }
+  //   }
+  // }</script>

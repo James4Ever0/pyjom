@@ -1,0 +1,3756 @@
+RECOGNIZED TEXT: 22
+RECOGNIZED TEXT: 22
+RECOGNIZED TEXT: 222
+RECOGNIZED TEXT: 227
+RECOGNIZED TEXT: 233
+RECOGNIZED TEXT: 你在哪儿呀
+RECOGNIZED TEXT: 你在哪儿呀
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你在哪儿呀 你在哪儿呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 39cb2ee8-d1b8-4936-a86f-de2fd0aec677
+
+RECOGNIZED TEXT: 你在哪儿呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你在哪儿呀 你在哪儿呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 39cb2ee8-d1b8-4936-a86f-de2fd0aec677
+
+RECOGNIZED TEXT: 你在哪儿呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你在哪儿呀 你在哪儿呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 39cb2ee8-d1b8-4936-a86f-de2fd0aec677
+
+RECOGNIZED TEXT: 你在哪儿呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你在哪儿呀 你在哪儿呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 39cb2ee8-d1b8-4936-a86f-de2fd0aec677
+
+RECOGNIZED TEXT: 你在哪儿呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你在哪儿呀 你在哪儿呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 39cb2ee8-d1b8-4936-a86f-de2fd0aec677
+
+RECOGNIZED TEXT: 你在哪儿呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你在哪儿呀 你在哪儿呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 39cb2ee8-d1b8-4936-a86f-de2fd0aec677
+
+RECOGNIZED TEXT: 你在哪儿呀
+test result: True True True
+3.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你在哪儿呀 你在哪儿呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 39cb2ee8-d1b8-4936-a86f-de2fd0aec677
+
+RECOGNIZED TEXT: 我找不到你呢
+line d
+RECOGNIZED TEXT: 我找不到你呢
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 我找不到你呢 我找不到你呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID 5cbdf7b3-c7d3-4046-9bec-d685a45bce90
+
+RECOGNIZED TEXT: 我找不到你呢
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 我找不到你呢 我找不到你呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID 5cbdf7b3-c7d3-4046-9bec-d685a45bce90
+
+RECOGNIZED TEXT: 我找不到你呢
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 我找不到你呢 我找不到你呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID 5cbdf7b3-c7d3-4046-9bec-d685a45bce90
+
+RECOGNIZED TEXT: 我找不到你呢
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 我找不到你呢 我找不到你呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID 5cbdf7b3-c7d3-4046-9bec-d685a45bce90
+
+RECOGNIZED TEXT: 我找不到你呢
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 我找不到你呢 我找不到你呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID 5cbdf7b3-c7d3-4046-9bec-d685a45bce90
+
+RECOGNIZED TEXT: 我找不到你呢
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 我找不到你呢 我找不到你呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID 5cbdf7b3-c7d3-4046-9bec-d685a45bce90
+
+RECOGNIZED TEXT: 我找不到你呢
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 我找不到你呢 我找不到你呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID 5cbdf7b3-c7d3-4046-9bec-d685a45bce90
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你是不是已经跑出去了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你是不是已经跑出去了 你是不是已经跑出去了
+REASON {'location': False, 'content': False, 'continual': False}
+ID ba140e98-3957-400b-8094-0f7213006e81
+
+RECOGNIZED TEXT: 你赶紧出来呀
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+-1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你赶紧出来呀
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你赶紧出来呀 你赶紧出来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 87576310-6b06-4726-b8c6-53cf200ba789
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+5.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+RECOGNIZED TEXT: 你快把我急死了
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快把我急死了 你快把我急死了
+REASON {'location': False, 'content': False, 'continual': False}
+ID aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7
+
+keyNum: 5
+{
+    "39cb2ee8-d1b8-4936-a86f-de2fd0aec677": [
+        {
+            "type": "stationary",
+            "text": "\u4f60\u5728\u54ea\u513f\u5440",
+            "location": [
+                [
+                    103.0,
+                    25.0
+                ],
+                [
+                    537.0,
+                    27.0
+                ],
+                [
+                    536.0,
+                    100.0
+                ],
+                [
+                    102.0,
+                    98.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 175,
+                    "time": 7.0
+                },
+                "end": {
+                    "frame": 210,
+                    "time": 8.4
+                }
+            }
+        }
+    ],
+    "5cbdf7b3-c7d3-4046-9bec-d685a45bce90": [
+        {
+            "type": "stationary",
+            "text": "\u6211\u627e\u4e0d\u5230\u4f60\u5462",
+            "location": [
+                [
+                    67.0,
+                    25.0
+                ],
+                [
+                    578.0,
+                    25.0
+                ],
+                [
+                    578.0,
+                    97.0
+                ],
+                [
+                    67.0,
+                    97.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 215,
+                    "time": 8.6
+                },
+                "end": {
+                    "frame": 250,
+                    "time": 10.0
+                }
+            }
+        }
+    ],
+    "ba140e98-3957-400b-8094-0f7213006e81": [
+        {
+            "type": "stationary",
+            "text": "\u4f60\u662f\u4e0d\u662f\u5df2\u7ecf\u8dd1\u51fa\u53bb\u4e86",
+            "location": [
+                [
+                    73.0,
+                    173.0
+                ],
+                [
+                    699.0,
+                    173.0
+                ],
+                [
+                    699.0,
+                    223.0
+                ],
+                [
+                    73.0,
+                    223.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 290,
+                    "time": 11.6
+                },
+                "end": {
+                    "frame": 350,
+                    "time": 14.0
+                }
+            }
+        }
+    ],
+    "87576310-6b06-4726-b8c6-53cf200ba789": [
+        {
+            "type": "stationary",
+            "text": "\u4f60\u8d76\u7d27\u51fa\u6765\u5440",
+            "location": [
+                [
+                    126.0,
+                    112.0
+                ],
+                [
+                    568.0,
+                    112.0
+                ],
+                [
+                    568.0,
+                    170.0
+                ],
+                [
+                    126.0,
+                    170.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 480,
+                    "time": 19.2
+                },
+                "end": {
+                    "frame": 540,
+                    "time": 21.6
+                }
+            }
+        }
+    ],
+    "aa6fd3f1-d22f-47a9-9f35-94dc4ad569f7": [
+        {
+            "type": "stationary",
+            "text": "\u4f60\u5feb\u628a\u6211\u6025\u6b7b\u4e86",
+            "location": [
+                [
+                    48.0,
+                    58.0
+                ],
+                [
+                    650.0,
+                    58.0
+                ],
+                [
+                    650.0,
+                    130.0
+                ],
+                [
+                    48.0,
+                    130.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 665,
+                    "time": 26.6
+                },
+                "end": {
+                    "frame": 725,
+                    "time": 29.0
+                }
+            }
+        }
+    ]
+}
+你在哪儿呀
+我找不到你呢
+你是不是已经跑出去了
+你赶紧出来呀
+你快把我急死了
+> /root/Desktop/works/pyjom/tests/test_ocr_entity_detector.py(21)<module>()
+-> for elem in mdata:
+(Pdb) RECOGNIZED TEXT: 八点半配音
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 双呀呀
+line d
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 艾呀呀
+line b
+FOUND IDENTICAL 艾呀呀 哎呀呀
+REASON {'location': True, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True False
+7.0 1 0.6666666666666666
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 艾呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True True
+11.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True True
+13.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈哈哈哈到家了到家了
+test result: True True True
+-1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈哈哈哈到家了到家了 哈哈哈哈哈哈到家了到家了
+REASON {'location': False, 'content': False, 'continual': False}
+ID f81e15b4-b598-4c7c-887a-e03732afd9ab
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True True
+4.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True True
+5.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True True
+3.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀味
+line d
+test result: True True False
+2.0 1 0.6666666666666666
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀味 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True False
+4.0 1 0.6666666666666666
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀味
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+test result: True True True
+3.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈回家喝口水啊 哈哈哈回家喝口水啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID c928a2e8-8b5e-4e26-821d-a084f974a6fd
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎呀呀
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎呀呀 哎呀呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 2909924b-be69-4aea-a314-97536092a5c2
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+test result: True True True
+4.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈回家喝口水啊 哈哈哈回家喝口水啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID c928a2e8-8b5e-4e26-821d-a084f974a6fd
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈回家喝口水啊 哈哈哈回家喝口水啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID c928a2e8-8b5e-4e26-821d-a084f974a6fd
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈回家喝口水啊 哈哈哈回家喝口水啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID c928a2e8-8b5e-4e26-821d-a084f974a6fd
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈回家喝口水啊 哈哈哈回家喝口水啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID c928a2e8-8b5e-4e26-821d-a084f974a6fd
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈回家喝口水啊 哈哈哈回家喝口水啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID c928a2e8-8b5e-4e26-821d-a084f974a6fd
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈回家喝口水啊 哈哈哈回家喝口水啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID c928a2e8-8b5e-4e26-821d-a084f974a6fd
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哈哈哈回家喝口水啊
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哈哈哈回家喝口水啊 哈哈哈回家喝口水啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID c928a2e8-8b5e-4e26-821d-a084f974a6fd
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 喝个屁水啊喝水
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 喝个屁水啊喝水
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 喝个屁水啊喝水 喝个屁水啊喝水
+REASON {'location': False, 'content': False, 'continual': False}
+ID c1047b56-ab7e-4ba1-9d0c-061609676580
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 喝个屁水啊喝水
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 喝个屁水啊喝水 喝个屁水啊喝水
+REASON {'location': False, 'content': False, 'continual': False}
+ID c1047b56-ab7e-4ba1-9d0c-061609676580
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 喝个屁水啊喝水
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 喝个屁水啊喝水 喝个屁水啊喝水
+REASON {'location': False, 'content': False, 'continual': False}
+ID c1047b56-ab7e-4ba1-9d0c-061609676580
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 喝个屁水啊喝水
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 喝个屁水啊喝水 喝个屁水啊喝水
+REASON {'location': False, 'content': False, 'continual': False}
+ID c1047b56-ab7e-4ba1-9d0c-061609676580
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 喝个屁水啊喝水
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 喝个屁水啊喝水 喝个屁水啊喝水
+REASON {'location': False, 'content': False, 'continual': False}
+ID c1047b56-ab7e-4ba1-9d0c-061609676580
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的吧还有一车呢
+line d
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的吧还有一车呢
+line d
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的吧还有一车呢 你快点的吧还有一车呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID f44c1719-4fac-412d-8e1f-1497ffddcba7
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的吧还有一车呢
+line d
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的吧还有一车呢 你快点的吧还有一车呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID f44c1719-4fac-412d-8e1f-1497ffddcba7
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的吧还有一车呢
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的吧还有一车呢 你快点的吧还有一车呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID f44c1719-4fac-412d-8e1f-1497ffddcba7
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的吧还有一车呢
+line d
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的吧还有一车呢 你快点的吧还有一车呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID f44c1719-4fac-412d-8e1f-1497ffddcba7
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的吧还有一车呢
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的吧还有一车呢 你快点的吧还有一车呢
+REASON {'location': False, 'content': False, 'continual': False}
+ID f44c1719-4fac-412d-8e1f-1497ffddcba7
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 中午前拉不完不给饭吃快点的吧 中午前拉不完不给饭吃快点的吧
+REASON {'location': False, 'content': False, 'continual': False}
+ID 48fdd4c9-80fc-47f5-99fb-2f577bb0dd98
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 中午前拉不完不给饭吃快点的吧 中午前拉不完不给饭吃快点的吧
+REASON {'location': False, 'content': False, 'continual': False}
+ID 48fdd4c9-80fc-47f5-99fb-2f577bb0dd98
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+test result: True True True
+3.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 中午前拉不完不给饭吃快点的吧 中午前拉不完不给饭吃快点的吧
+REASON {'location': False, 'content': False, 'continual': False}
+ID 48fdd4c9-80fc-47f5-99fb-2f577bb0dd98
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 中午前拉不完不给饭吃快点的吧 中午前拉不完不给饭吃快点的吧
+REASON {'location': False, 'content': False, 'continual': False}
+ID 48fdd4c9-80fc-47f5-99fb-2f577bb0dd98
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 中午前拉不完不给饭吃快点的吧 中午前拉不完不给饭吃快点的吧
+REASON {'location': False, 'content': False, 'continual': False}
+ID 48fdd4c9-80fc-47f5-99fb-2f577bb0dd98
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+test result: True True True
+3.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 中午前拉不完不给饭吃快点的吧 中午前拉不完不给饭吃快点的吧
+REASON {'location': False, 'content': False, 'continual': False}
+ID 48fdd4c9-80fc-47f5-99fb-2f577bb0dd98
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 中午前拉不完不给饭吃快点的吧 中午前拉不完不给饭吃快点的吧
+REASON {'location': False, 'content': False, 'continual': False}
+ID 48fdd4c9-80fc-47f5-99fb-2f577bb0dd98
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 中午前拉不完不给饭吃快点的吧
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 中午前拉不完不给饭吃快点的吧 中午前拉不完不给饭吃快点的吧
+REASON {'location': False, 'content': False, 'continual': False}
+ID 48fdd4c9-80fc-47f5-99fb-2f577bb0dd98
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎我太难了
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎我太难了
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎我太难了 哎我太难了
+REASON {'location': False, 'content': False, 'continual': False}
+ID a95ea867-9b1e-4e20-8abc-eef2beb521c0
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎我太难了
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎我太难了 哎我太难了
+REASON {'location': False, 'content': False, 'continual': False}
+ID a95ea867-9b1e-4e20-8abc-eef2beb521c0
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎我太难了
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎我太难了 哎我太难了
+REASON {'location': False, 'content': False, 'continual': False}
+ID a95ea867-9b1e-4e20-8abc-eef2beb521c0
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎我太难了
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎我太难了 哎我太难了
+REASON {'location': False, 'content': False, 'continual': False}
+ID a95ea867-9b1e-4e20-8abc-eef2beb521c0
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎我太难了
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎我太难了 哎我太难了
+REASON {'location': False, 'content': False, 'continual': False}
+ID a95ea867-9b1e-4e20-8abc-eef2beb521c0
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 哎我太难了
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 哎我太难了 哎我太难了
+REASON {'location': False, 'content': False, 'continual': False}
+ID a95ea867-9b1e-4e20-8abc-eef2beb521c0
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 嘎嘎来了
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 嘎嘎来了
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 嘎嘎来了 嘎嘎来了
+REASON {'location': False, 'content': False, 'continual': False}
+ID d7ce422c-2d70-4829-9cd2-3e0be476a1cc
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 嘎嘎来了
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 嘎嘎来了 嘎嘎来了
+REASON {'location': False, 'content': False, 'continual': False}
+ID d7ce422c-2d70-4829-9cd2-3e0be476a1cc
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 嘎嘎来了
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 嘎嘎来了 嘎嘎来了
+REASON {'location': False, 'content': False, 'continual': False}
+ID d7ce422c-2d70-4829-9cd2-3e0be476a1cc
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 嘎嘎来了
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 嘎嘎来了 嘎嘎来了
+REASON {'location': False, 'content': False, 'continual': False}
+ID d7ce422c-2d70-4829-9cd2-3e0be476a1cc
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜妇
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line e
+line h
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 1 0.8888888888888888
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃子 顶你瓜娃
+REASON {'location': False, 'content': False, 'continual': False}
+ID ef1cae83-c433-4374-9c16-36a229554035
+
+RECOGNIZED TEXT: 嗨驾快点的前进
+line d
+line d
+line d
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃子 顶你瓜娃子
+REASON {'location': False, 'content': False, 'continual': False}
+ID ef1cae83-c433-4374-9c16-36a229554035
+
+RECOGNIZED TEXT: 得驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+5.0 1 0.8571428571428571
+24 1 0.8
+line a
+FOUND IDENTICAL 得驾快点的前进 嗨驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True False
+13.0 1 0.75
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃 顶你瓜妇
+REASON {'location': False, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 喂驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 1 0.8571428571428571
+24 1 0.8
+line a
+FOUND IDENTICAL 喂驾快点的前进 得驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃 顶你瓜娃
+REASON {'location': False, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 1 0.9230769230769231
+24 1 0.8
+line a
+FOUND IDENTICAL 驾快点的前进 喂驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line b
+FOUND IDENTICAL 顶你瓜娃子 顶你瓜娃
+REASON {'location': True, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 驾快点的前进 驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+4.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃子 顶你瓜娃子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 喝驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+0.0 1 0.9230769230769231
+24 1 0.8
+line a
+FOUND IDENTICAL 喝驾快点的前进 驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+3.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃子 顶你瓜娃子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 嗨驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 1 0.8571428571428571
+24 1 0.8
+line a
+FOUND IDENTICAL 嗨驾快点的前进 喝驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+6.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃子 顶你瓜娃子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+0.0 1 0.9230769230769231
+24 1 0.8
+line a
+FOUND IDENTICAL 驾快点的前进 嗨驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line e
+line h
+line e
+line h
+RECOGNIZED TEXT: 驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 驾快点的前进 驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+5.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃子 顶你瓜娃子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 驾快点的前进
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 驾快点的前进 驾快点的前进
+REASON {'location': False, 'content': False, 'continual': False}
+ID 82fa5107-d9a6-4073-8ad9-a06316fe3c54
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃子 顶你瓜娃子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 顶你瓜娃
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+4.0 1 0.8888888888888888
+24 1 0.8
+line a
+FOUND IDENTICAL 顶你瓜娃 顶你瓜娃子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 96499706-5f2f-48aa-9517-f0c998a176dc
+
+RECOGNIZED TEXT: 别停下来呀
+line d
+line d
+line d
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 别停下来呀
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 别停下来呀 别停下来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 03995295-5965-4f25-a414-172f2298e838
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 别停下来呀
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 别停下来呀 别停下来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 03995295-5965-4f25-a414-172f2298e838
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 别停下来呀
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 别停下来呀 别停下来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 03995295-5965-4f25-a414-172f2298e838
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 别停下来呀
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 别停下来呀 别停下来呀
+REASON {'location': False, 'content': False, 'continual': False}
+ID 03995295-5965-4f25-a414-172f2298e838
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的让你停.说啊
+line d
+line d
+line d
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停..说啊
+line d
+line d
+line d
+line d
+line d
+test result: True False True
+2.0 2 0.9090909090909091
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停..说啊 你快点的让你停.说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停..说啊
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+10.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停..说啊 你快点的谁让你停..说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停说啊
+line d
+line d
+line d
+line d
+line d
+test result: True False True
+0.0 2 0.9090909090909091
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停说啊 你快点的谁让你停..说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停。说啊
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+3.0 1 0.9523809523809523
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停。说啊 你快点的谁让你停说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停。说啊
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停。说啊 你快点的谁让你停。说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停.说购
+line d
+line d
+line d
+line d
+line d
+test result: True False True
+2.0 2 0.8181818181818182
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停.说购 你快点的谁让你停。说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停··说啊
+line d
+line d
+line d
+line d
+line d
+line d
+line b
+FOUND IDENTICAL 你快点的谁让你停··说啊 你快点的谁让你停.说购
+REASON {'location': True, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停.··说啊
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+3.0 1 0.96
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停.··说啊 你快点的谁让你停··说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停.说啊
+line d
+line d
+line d
+line d
+test result: True False True
+8.0 2 0.9166666666666666
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停.说啊 你快点的谁让你停.··说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 你快点的谁让你停说啊
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 1 0.9523809523809523
+24 1 0.8
+line a
+FOUND IDENTICAL 你快点的谁让你停说啊 你快点的谁让你停.说啊
+REASON {'location': False, 'content': False, 'continual': False}
+ID 8470b330-1e4e-444b-b44d-1ddd18031bf3
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 咋不说了
+line d
+line d
+line d
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 不说了
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+0.0 1 0.8571428571428571
+24 1 0.8
+line a
+FOUND IDENTICAL 不说了 咋不说了
+REASON {'location': False, 'content': False, 'continual': False}
+ID 757664a8-32e9-4c11-a373-ad3464183bd1
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 不说了
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 不说了 不说了
+REASON {'location': False, 'content': False, 'continual': False}
+ID 757664a8-32e9-4c11-a373-ad3464183bd1
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 狗崽子滚下去
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 狗惠子滚下去
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+3.0 1 0.8333333333333334
+24 1 0.8
+line a
+FOUND IDENTICAL 狗惠子滚下去 狗崽子滚下去
+REASON {'location': False, 'content': False, 'continual': False}
+ID 7b3eb888-56b1-4c7a-ad2b-2bf67a023367
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 狗崽子滚下去
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 1 0.8333333333333334
+24 1 0.8
+line a
+FOUND IDENTICAL 狗崽子滚下去 狗惠子滚下去
+REASON {'location': False, 'content': False, 'continual': False}
+ID 7b3eb888-56b1-4c7a-ad2b-2bf67a023367
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 狗子滚下去
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 1 0.9090909090909091
+24 1 0.8
+line a
+FOUND IDENTICAL 狗子滚下去 狗崽子滚下去
+REASON {'location': False, 'content': False, 'continual': False}
+ID 7b3eb888-56b1-4c7a-ad2b-2bf67a023367
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 狗崽子滚下去
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 1 0.9090909090909091
+24 1 0.8
+line a
+FOUND IDENTICAL 狗崽子滚下去 狗子滚下去
+REASON {'location': False, 'content': False, 'continual': False}
+ID 7b3eb888-56b1-4c7a-ad2b-2bf67a023367
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 狗崽子滚下去
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 狗崽子滚下去 狗崽子滚下去
+REASON {'location': False, 'content': False, 'continual': False}
+ID 7b3eb888-56b1-4c7a-ad2b-2bf67a023367
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 狗崽子滚下去
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 狗崽子滚下去 狗崽子滚下去
+REASON {'location': False, 'content': False, 'continual': False}
+ID 7b3eb888-56b1-4c7a-ad2b-2bf67a023367
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 狗崽子滚下去
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 狗崽子滚下去 狗崽子滚下去
+REASON {'location': False, 'content': False, 'continual': False}
+ID 7b3eb888-56b1-4c7a-ad2b-2bf67a023367
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 敢骑我儿子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 敢骑我儿子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+2.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 敢骑我儿子 敢骑我儿子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 6609d128-773f-4c81-9e55-5497e415bd01
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 敢骑我儿子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 敢骑我儿子 敢骑我儿子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 6609d128-773f-4c81-9e55-5497e415bd01
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 敢骑我儿子
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+line d
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 敢骑我儿子 敢骑我儿子
+REASON {'location': False, 'content': False, 'continual': False}
+ID 6609d128-773f-4c81-9e55-5497e415bd01
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+1.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+RECOGNIZED TEXT: 八点半配音
+test result: True True True
+0.0 0 1.0
+24 1 0.8
+line a
+FOUND IDENTICAL 八点半配音 八点半配音
+REASON {'location': False, 'content': False, 'continual': False}
+ID 1d627128-e240-4a7e-bc65-ce816abdd43a
+
+keyNum: 18
+{
+    "1d627128-e240-4a7e-bc65-ce816abdd43a": [
+        {
+            "type": "stationary",
+            "text": "\u516b\u70b9\u534a\u914d\u97f3",
+            "location": [
+                [
+                    70.0,
+                    39.0
+                ],
+                [
+                    477.0,
+                    39.0
+                ],
+                [
+                    477.0,
+                    120.0
+                ],
+                [
+                    70.0,
+                    120.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 0,
+                    "time": 0.0
+                },
+                "end": {
+                    "frame": 714,
+                    "time": 23.8
+                }
+            }
+        }
+    ],
+    "f81e15b4-b598-4c7c-887a-e03732afd9ab": [
+        {
+            "type": "stationary",
+            "text": "\u54c8\u54c8\u54c8\u54c8\u54c8\u54c8\u5230\u5bb6\u4e86\u5230\u5bb6\u4e86",
+            "location": [
+                [
+                    133.0,
+                    629.0
+                ],
+                [
+                    406.0,
+                    629.0
+                ],
+                [
+                    406.0,
+                    649.0
+                ],
+                [
+                    133.0,
+                    649.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 12,
+                    "time": 0.4
+                },
+                "end": {
+                    "frame": 66,
+                    "time": 2.2
+                }
+            }
+        }
+    ],
+    "2909924b-be69-4aea-a314-97536092a5c2": [
+        {
+            "type": "stationary",
+            "timespan": {
+                "start": {
+                    "frame": 42,
+                    "time": 1.4
+                },
+                "end": {
+                    "frame": 102,
+                    "time": 3.4
+                }
+            },
+            "text": "\u54ce\u5440\u5440",
+            "location": [
+                [
+                    172.0,
+                    188.0
+                ],
+                [
+                    375.0,
+                    231.0
+                ],
+                [
+                    361.0,
+                    296.0
+                ],
+                [
+                    158.0,
+                    254.0
+                ]
+            ]
+        }
+    ],
+    "c928a2e8-8b5e-4e26-821d-a084f974a6fd": [
+        {
+            "type": "stationary",
+            "text": "\u54c8\u54c8\u54c8\u56de\u5bb6\u559d\u53e3\u6c34\u554a",
+            "location": [
+                [
+                    169.0,
+                    629.0
+                ],
+                [
+                    376.0,
+                    629.0
+                ],
+                [
+                    376.0,
+                    650.0
+                ],
+                [
+                    169.0,
+                    650.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 90,
+                    "time": 3.0
+                },
+                "end": {
+                    "frame": 138,
+                    "time": 4.6
+                }
+            }
+        }
+    ],
+    "c1047b56-ab7e-4ba1-9d0c-061609676580": [
+        {
+            "type": "stationary",
+            "text": "\u559d\u4e2a\u5c41\u6c34\u554a\u559d\u6c34",
+            "location": [
+                [
+                    191.0,
+                    627.0
+                ],
+                [
+                    354.0,
+                    627.0
+                ],
+                [
+                    354.0,
+                    651.0
+                ],
+                [
+                    191.0,
+                    651.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 150,
+                    "time": 5.0
+                },
+                "end": {
+                    "frame": 180,
+                    "time": 6.0
+                }
+            }
+        }
+    ],
+    "f44c1719-4fac-412d-8e1f-1497ffddcba7": [
+        {
+            "type": "stationary",
+            "text": "\u4f60\u5feb\u70b9\u7684\u5427\u8fd8\u6709\u4e00\u8f66\u5462",
+            "location": [
+                [
+                    158.0,
+                    629.0
+                ],
+                [
+                    388.0,
+                    629.0
+                ],
+                [
+                    388.0,
+                    650.0
+                ],
+                [
+                    158.0,
+                    650.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 192,
+                    "time": 6.4
+                },
+                "end": {
+                    "frame": 222,
+                    "time": 7.4
+                }
+            }
+        }
+    ],
+    "48fdd4c9-80fc-47f5-99fb-2f577bb0dd98": [
+        {
+            "type": "stationary",
+            "text": "\u4e2d\u5348\u524d\u62c9\u4e0d\u5b8c\u4e0d\u7ed9\u996d\u5403\u5feb\u70b9\u7684\u5427",
+            "location": [
+                [
+                    110.0,
+                    628.0
+                ],
+                [
+                    436.0,
+                    628.0
+                ],
+                [
+                    436.0,
+                    651.0
+                ],
+                [
+                    110.0,
+                    651.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 234,
+                    "time": 7.8
+                },
+                "end": {
+                    "frame": 282,
+                    "time": 9.4
+                }
+            }
+        }
+    ],
+    "a95ea867-9b1e-4e20-8abc-eef2beb521c0": [
+        {
+            "type": "stationary",
+            "text": "\u54ce\u6211\u592a\u96be\u4e86",
+            "location": [
+                [
+                    213.0,
+                    627.0
+                ],
+                [
+                    328.0,
+                    627.0
+                ],
+                [
+                    328.0,
+                    652.0
+                ],
+                [
+                    213.0,
+                    652.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 294,
+                    "time": 9.8
+                },
+                "end": {
+                    "frame": 330,
+                    "time": 11.0
+                }
+            }
+        }
+    ],
+    "d7ce422c-2d70-4829-9cd2-3e0be476a1cc": [
+        {
+            "type": "stationary",
+            "text": "\u560e\u560e\u6765\u4e86",
+            "location": [
+                [
+                    222.0,
+                    625.0
+                ],
+                [
+                    318.0,
+                    625.0
+                ],
+                [
+                    318.0,
+                    653.0
+                ],
+                [
+                    222.0,
+                    653.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 342,
+                    "time": 11.4
+                },
+                "end": {
+                    "frame": 366,
+                    "time": 12.2
+                }
+            }
+        }
+    ],
+    "96499706-5f2f-48aa-9517-f0c998a176dc": [
+        {
+            "type": "stationary",
+            "text": "\u9876\u4f60\u74dc\u5a03",
+            "location": [
+                [
+                    146.0,
+                    186.0
+                ],
+                [
+                    320.0,
+                    182.0
+                ],
+                [
+                    321.0,
+                    225.0
+                ],
+                [
+                    147.0,
+                    228.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 396,
+                    "time": 13.2
+                },
+                "end": {
+                    "frame": 426,
+                    "time": 14.2
+                }
+            }
+        },
+        {
+            "type": "stationary",
+            "timespan": {
+                "start": {
+                    "frame": 438,
+                    "time": 14.6
+                },
+                "end": {
+                    "frame": 474,
+                    "time": 15.8
+                }
+            },
+            "text": "\u9876\u4f60\u74dc\u5a03",
+            "location": [
+                [
+                    147.0,
+                    187.0
+                ],
+                [
+                    372.0,
+                    180.0
+                ],
+                [
+                    373.0,
+                    221.0
+                ],
+                [
+                    148.0,
+                    228.0
+                ]
+            ]
+        }
+    ],
+    "ef1cae83-c433-4374-9c16-36a229554035": [
+        {
+            "type": "stationary",
+            "text": "\u9876\u4f60\u74dc\u5a03",
+            "location": [
+                [
+                    149.0,
+                    188.0
+                ],
+                [
+                    374.0,
+                    188.0
+                ],
+                [
+                    374.0,
+                    226.0
+                ],
+                [
+                    149.0,
+                    226.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 402,
+                    "time": 13.4
+                },
+                "end": {
+                    "frame": 414,
+                    "time": 13.8
+                }
+            }
+        }
+    ],
+    "82fa5107-d9a6-4073-8ad9-a06316fe3c54": [
+        {
+            "type": "stationary",
+            "text": "\u9a7e\u5feb\u70b9\u7684\u524d\u8fdb",
+            "location": [
+                [
+                    184.0,
+                    627.0
+                ],
+                [
+                    360.0,
+                    629.0
+                ],
+                [
+                    360.0,
+                    653.0
+                ],
+                [
+                    184.0,
+                    651.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 408,
+                    "time": 13.6
+                },
+                "end": {
+                    "frame": 462,
+                    "time": 15.4
+                }
+            }
+        }
+    ],
+    "8530e047-3729-4222-9337-e7d9f22b51de": [],
+    "03995295-5965-4f25-a414-172f2298e838": [
+        {
+            "type": "stationary",
+            "text": "\u522b\u505c\u4e0b\u6765\u5440",
+            "location": [
+                [
+                    212.0,
+                    627.0
+                ],
+                [
+                    330.0,
+                    629.0
+                ],
+                [
+                    330.0,
+                    655.0
+                ],
+                [
+                    212.0,
+                    652.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 474,
+                    "time": 15.8
+                },
+                "end": {
+                    "frame": 498,
+                    "time": 16.6
+                }
+            }
+        }
+    ],
+    "8470b330-1e4e-444b-b44d-1ddd18031bf3": [
+        {
+            "type": "stationary",
+            "text": "\u4f60\u5feb\u70b9\u7684\u8c01\u8ba9\u4f60\u505c\u8bf4\u554a",
+            "location": [
+                [
+                    139.0,
+                    628.0
+                ],
+                [
+                    401.0,
+                    628.0
+                ],
+                [
+                    401.0,
+                    651.0
+                ],
+                [
+                    139.0,
+                    651.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 504,
+                    "time": 16.8
+                },
+                "end": {
+                    "frame": 540,
+                    "time": 18.0
+                }
+            }
+        },
+        {
+            "type": "stationary",
+            "timespan": {
+                "start": {
+                    "frame": 552,
+                    "time": 18.4
+                },
+                "end": {
+                    "frame": 564,
+                    "time": 18.8
+                }
+            },
+            "text": "\u4f60\u5feb\u70b9\u7684\u8c01\u8ba9\u4f60\u505c\u8bf4\u554a",
+            "location": [
+                [
+                    145.0,
+                    629.0
+                ],
+                [
+                    402.0,
+                    629.0
+                ],
+                [
+                    402.0,
+                    649.0
+                ],
+                [
+                    145.0,
+                    649.0
+                ]
+            ]
+        }
+    ],
+    "757664a8-32e9-4c11-a373-ad3464183bd1": [
+        {
+            "type": "stationary",
+            "text": "\u4e0d\u8bf4\u4e86",
+            "location": [
+                [
+                    219.0,
+                    628.0
+                ],
+                [
+                    316.0,
+                    628.0
+                ],
+                [
+                    316.0,
+                    652.0
+                ],
+                [
+                    219.0,
+                    652.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 582,
+                    "time": 19.4
+                },
+                "end": {
+                    "frame": 594,
+                    "time": 19.8
+                }
+            }
+        }
+    ],
+    "7b3eb888-56b1-4c7a-ad2b-2bf67a023367": [
+        {
+            "type": "stationary",
+            "text": "\u72d7\u5b50\u6eda\u4e0b\u53bb",
+            "location": [
+                [
+                    203.0,
+                    628.0
+                ],
+                [
+                    341.0,
+                    628.0
+                ],
+                [
+                    341.0,
+                    649.0
+                ],
+                [
+                    203.0,
+                    649.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 606,
+                    "time": 20.2
+                },
+                "end": {
+                    "frame": 648,
+                    "time": 21.6
+                }
+            }
+        }
+    ],
+    "6609d128-773f-4c81-9e55-5497e415bd01": [
+        {
+            "type": "stationary",
+            "text": "\u6562\u9a91\u6211\u513f\u5b50",
+            "location": [
+                [
+                    213.0,
+                    626.0
+                ],
+                [
+                    329.0,
+                    628.0
+                ],
+                [
+                    329.0,
+                    654.0
+                ],
+                [
+                    213.0,
+                    651.0
+                ]
+            ],
+            "timespan": {
+                "start": {
+                    "frame": 672,
+                    "time": 22.4
+                },
+                "end": {
+                    "frame": 690,
+                    "time": 23.0
+                }
+            }
+        }
+    ]
+}
+八点半配音
+哈哈哈哈哈哈到家了到家了
+哎呀呀
+哈哈哈回家喝口水啊
+喝个屁水啊喝水
+你快点的吧还有一车呢
+中午前拉不完不给饭吃快点的吧
+哎我太难了
+嘎嘎来了
+顶你瓜娃
+顶你瓜娃
+顶你瓜娃
+驾快点的前进
+别停下来呀
+你快点的谁让你停说啊
+你快点的谁让你停说啊
+不说了
+狗子滚下去
+敢骑我儿子
+> /root/Desktop/works/pyjom/tests/test_ocr_entity_detector.py(21)<module>()
+-> for elem in mdata:
+(Pdb) 

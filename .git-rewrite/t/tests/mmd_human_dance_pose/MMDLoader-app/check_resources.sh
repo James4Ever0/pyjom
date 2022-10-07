@@ -1,0 +1,1 @@
+rg -o "https://rawcdn.githack.com/[^\"^']+" > output2.log

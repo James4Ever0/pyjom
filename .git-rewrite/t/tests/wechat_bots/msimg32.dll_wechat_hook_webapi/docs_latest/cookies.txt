@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.showdoc.com.cn	TRUE	/	FALSE	1999999999	think_language	en
+www.showdoc.com.cn	TRUE	/	FALSE	1999999999	PHPSESSID	8b6d9eb2c5e8d2091363a4c6d47f413f
+

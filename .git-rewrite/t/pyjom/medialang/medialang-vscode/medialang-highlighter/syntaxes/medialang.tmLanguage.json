@@ -1,0 +1,47 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Medialang",
+    "scopeName": "source.mdl",
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "entity.name.class",
+                "match": "\\b([\\w]+)\\b"
+            }]
+        },
+        "booleans": {
+            "patterns": [{
+                "name": "keyword.control.flow",
+                "match": "\\b(True|False|true|false)\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [{
+                "name": "constant.character.escape",
+                "match": "\\\\."
+            }]
+        }
+    },
+    "patterns": [{
+            "include": "#strings"
+        },
+        {
+            "match": "[0-9]+\\.?([0-9]+)?",
+            "name": "constant.numeric"
+        },
+        {
+            "include": "#booleans"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "match": "#.*",
+            "name": "comment.line.number-sign"
+        }
+
+    ]
+}

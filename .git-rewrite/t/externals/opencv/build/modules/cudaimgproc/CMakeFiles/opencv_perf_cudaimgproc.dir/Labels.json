@@ -1,0 +1,123 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_bilateral_filter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_blend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_canny.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_color.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_corners.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_gftt.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_histogram.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_hough.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_match_template.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_mean_shift.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaimgproc",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_cudaimgproc"
+	}
+}

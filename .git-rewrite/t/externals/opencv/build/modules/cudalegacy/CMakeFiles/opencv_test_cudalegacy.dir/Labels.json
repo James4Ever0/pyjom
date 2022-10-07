@@ -1,0 +1,303 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestCompact.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestDrawRects.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHaarCascadeApplication.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHaarCascadeLoader.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHypothesesFilter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHypothesesGrow.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestIntegralImage.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestIntegralImageSquared.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestRectStdDev.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestResize.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestTranspose.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/main_nvidia.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_calib3d.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_labeling.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_nvidia.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/NCVAutoTestLister.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/NCVTest.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/NCVTestSourceProvider.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestCompact.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestDrawRects.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHaarCascadeApplication.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHaarCascadeLoader.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHypothesesFilter.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHypothesesGrow.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestIntegralImage.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestIntegralImageSquared.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestRectStdDev.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestResize.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestTranspose.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/main_test_nvidia.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudalegacy",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudalegacy",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_cudalegacy"
+	}
+}

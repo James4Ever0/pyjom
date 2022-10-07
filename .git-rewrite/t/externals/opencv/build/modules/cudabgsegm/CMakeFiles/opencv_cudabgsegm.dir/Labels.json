@@ -1,0 +1,90 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/include/opencv2/cudabgsegm.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/src/mog.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/src/mog2.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/src/cuda/mog2.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/src/cuda/mog.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudabgsegm/src/cuda/mog2.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudabgsegm",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudabgsegm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mog.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudabgsegm/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mog2.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudabgsegm",
+			"Module"
+		],
+		"name" : "opencv_cudabgsegm"
+	}
+}

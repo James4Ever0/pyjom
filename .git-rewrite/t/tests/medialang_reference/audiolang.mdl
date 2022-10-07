@@ -1,0 +1,20 @@
+(".mp3", speed=1.5
+)
+
+("/root/Desktop/works/pyjom/src/samples/video/dog_with_text.mp4",
+    speed=1.5, video=false
+)
+    ("/root/Desktop/works/pyjom/src/samples/video/IxEQhCslT.mp4",
+        padding="black"
+    )
+        ("text://you did a good job",
+            converter="voice", provider="tts_male",
+            speed=2
+        )
+
+("/root/Desktop/works/pyjom/src/samples/video/dog_with_text.mp4",
+    speed=1.5
+)
+    ("text://you did a bad job",
+        converter="voice"
+    )

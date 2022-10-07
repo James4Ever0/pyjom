@@ -1,0 +1,16 @@
+session_name: update_qq_files
+windows:
+  - window_name: qq_red_packet_window
+    layout: tiled
+    shell_command_before:
+      - cd ~/Desktop/works/pyjom/tests/qq_go_cqhttp # run as a first command in all panes
+      - bash # to ensure we use the right shell
+      - conda deactivate # to disable conda enviorment
+    panes:
+      - shell_command:
+          - bash launch.sh # will this work? when will the shit be ready?
+      - shell_command: 
+          - sleep 15
+          - cd tests
+          - python3 download_group_files.py # already configured download path.
+          - tmux kill-session -t update_qq_files # killing itself?

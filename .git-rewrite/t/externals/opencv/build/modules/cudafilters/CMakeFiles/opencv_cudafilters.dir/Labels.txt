@@ -1,0 +1,187 @@
+# Target labels
+ Extra
+ opencv_cudafilters
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/include/opencv2/cudafilters.hpp
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/filtering.cpp
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.hpp
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.hpp
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/precomp.hpp
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.16sc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.16sc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.16sc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.16uc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.16uc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.16uc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.32fc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.32fc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.32fc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.32sc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.32sc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.32sc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.8uc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.8uc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/column_filter.8uc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/filter2d.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/median_filter.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.16sc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.16sc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.16sc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.16uc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.16uc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.16uc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.32fc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.32fc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.32fc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.32sc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.32sc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.32sc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.8uc1.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.8uc3.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudafilters/src/cuda/row_filter.8uc4.cu
+ Extra
+ opencv_cudafilters
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16sc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16sc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16sc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16uc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16uc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16uc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.32fc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.32fc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.32fc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.32sc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.32sc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.32sc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.8uc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.8uc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.8uc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_filter2d.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_median_filter.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.16sc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.16sc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.16sc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.16uc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.16uc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.16uc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.32fc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.32fc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.32fc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.32sc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.32sc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.32sc4.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.8uc1.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.8uc3.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_row_filter.8uc4.cu.o

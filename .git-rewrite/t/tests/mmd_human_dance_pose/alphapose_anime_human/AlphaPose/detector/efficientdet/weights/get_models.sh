@@ -1,0 +1,1 @@
+curl -k -L -o efficientdet_d1.pth https://github.do/https://github.com/rwightman/efficientdet-pytorch/releases/download/v0.1/efficientdet_q0-bdf1bdb5.pth

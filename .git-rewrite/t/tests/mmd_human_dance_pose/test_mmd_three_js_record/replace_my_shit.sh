@@ -1,0 +1,2 @@
+rm /media/root/help/pyjom/tests/mmd_human_dance_pose/test_mmd_three_js_record/node_modules/gl/build/Release/webgl.node
+cp /media/root/help/pyjom/externals/gl/headless-gl/build/Release/webgl.node /media/root/help/pyjom/tests/mmd_human_dance_pose/test_mmd_three_js_record/node_modules/gl/build/Release/webgl.node

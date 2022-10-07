@@ -1,0 +1,387 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/include/opencv2/cudaimgproc.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/bilateral_filter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/blend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/canny.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/color.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/connectedcomponents.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/corners.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/generalized_hough.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/gftt.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/histogram.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/hough_circles.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/hough_lines.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/hough_segments.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/match_template.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/mean_shift.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/mssegmentation.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cvt_color_internal.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/bilateral_filter.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/blend.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/build_point_list.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/canny.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/clahe.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/color.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/connectedcomponents.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/corners.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/debayer.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/generalized_hough.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/gftt.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/hist.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/hough_circles.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/hough_lines.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/hough_segments.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/match_template.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/src/cuda/mean_shift.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bilateral_filter.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_blend.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_build_point_list.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_canny.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_clahe.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_color.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_connectedcomponents.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_corners.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_debayer.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_generalized_hough.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_gftt.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_hist.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_hough_circles.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_hough_lines.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_hough_segments.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_match_template.cu.o"
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_mean_shift.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaimgproc",
+			"Module"
+		],
+		"name" : "opencv_cudaimgproc"
+	}
+}

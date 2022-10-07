@@ -1,0 +1,132 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_bilateral_filter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_blend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_canny.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_color.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_connectedcomponents.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_corners.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_gftt.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_histogram.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_hough.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_match_template.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_mean_shift.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaimgproc/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaimgproc",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_cudaimgproc"
+	}
+}

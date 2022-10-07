@@ -1,0 +1,49 @@
+# Copyright (c) 2020 PaddlePaddle Authors. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+runner:
+  train_data_dir: "../../../datasets/BQ_simnet/big_train"
+  train_reader_path: "bq_reader_train"  # importlib format
+  train_batch_size: 1280
+  model_save_path: "output_model_all_simnet"
+
+  use_gpu: False
+  epochs: 1
+  print_interval: 1
+  
+  test_data_dir: "../../../datasets/BQ_simnet/big_test"
+  infer_reader_path: "bq_reader_infer"  # importlib format
+  infer_batch_size: 1
+  infer_load_path: "output_model_all_simnet"
+  infer_start_epoch: 0
+  infer_end_epoch: 1
+
+# hyper parameters of user-defined network
+hyper_parameters:
+  # optimizer config
+  optimizer:
+    class: Adam
+    learning_rate: 0.001
+  # user-defined <key, value> pairs
+  query_encoder: "gru"
+  title_encoder: "gru"
+  query_encode_dim: 128
+  title_encode_dim: 128
+  sparse_feature_dim: 6327
+  embedding_dim: 128
+  hidden_size: 128
+  margin: 0.1
+  query_len: 79
+  pos_len: 99
+  neg_len: 90

@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_cudawarping
+ PerfTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/perf/perf_main.cpp
+ Extra
+ opencv_cudawarping
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/perf/perf_warping.cpp
+ Extra
+ opencv_cudawarping
+ PerfTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudawarping/perf/perf_precomp.hpp
+ Extra
+ opencv_cudawarping
+ PerfTest

@@ -1,0 +1,8 @@
+example/simple_mmd_viewer_vulkan.cpp
+3485:           auto mmdGraoundShadowVSUB = reinterpret_cast<MMDGroundShadowVertexShaderUB*>(ubPtr + res.m_modelResource.m_mmdGroundShadowVSUBOffset);
+3512:           mmdGraoundShadowVSUB->m_wvp = wsvp;
+3594:                   auto mmdGraoundShadowFSUB = reinterpret_cast<MMDGroundShadowFragmentShaderUB*>(ubPtr + matRes.m_mmdGroundShadowFSUBOffset);
+3595:                   mmdGraoundShadowFSUB->m_shadowColor = glm::vec4(0.4f, 0.2f, 0.2f, 0.7f);
+
+viewer/Saba/GL/Model/MMD/GLMMDModelDrawer.cpp
+299:            if (ImGui::TreeNode("GraoundShadow"))

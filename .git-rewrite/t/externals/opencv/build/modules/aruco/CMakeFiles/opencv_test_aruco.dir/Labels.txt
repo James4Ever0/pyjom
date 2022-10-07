@@ -1,0 +1,33 @@
+# Target labels
+ Extra
+ opencv_aruco
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/test/test_arucodetection.cpp
+ Extra
+ opencv_aruco
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/test/test_boarddetection.cpp
+ Extra
+ opencv_aruco
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/test/test_charucodetection.cpp
+ Extra
+ opencv_aruco
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/test/test_main.cpp
+ Extra
+ opencv_aruco
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/test/test_misc.cpp
+ Extra
+ opencv_aruco
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/test/test_aruco_utils.hpp
+ Extra
+ opencv_aruco
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/aruco/test/test_precomp.hpp
+ Extra
+ opencv_aruco
+ AccuracyTest

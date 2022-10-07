@@ -1,0 +1,133 @@
+# Target labels
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestCompact.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestDrawRects.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHaarCascadeApplication.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHaarCascadeLoader.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHypothesesFilter.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHypothesesGrow.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestIntegralImage.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestIntegralImageSquared.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestRectStdDev.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestResize.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestTranspose.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/main_nvidia.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_calib3d.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_labeling.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_main.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_nvidia.cpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/NCVAutoTestLister.hpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/NCVTest.hpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/NCVTestSourceProvider.hpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestCompact.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestDrawRects.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHaarCascadeApplication.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHaarCascadeLoader.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHypothesesFilter.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestHypothesesGrow.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestIntegralImage.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestIntegralImageSquared.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestRectStdDev.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestResize.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/TestTranspose.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/main_test_nvidia.h
+ Extra
+ opencv_cudalegacy
+ AccuracyTest
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudalegacy/test/test_precomp.hpp
+ Extra
+ opencv_cudalegacy
+ AccuracyTest

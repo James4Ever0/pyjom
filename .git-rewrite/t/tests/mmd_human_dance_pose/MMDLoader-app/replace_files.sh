@@ -1,0 +1,1 @@
+sed -i -e "s/https:\/\/rawcdn.githack.com/rawcdn.githack.com/g" *.html 

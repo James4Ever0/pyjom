@@ -1,0 +1,12 @@
+aruco.inl.hpp
+calib3d.inl.hpp
+core.inl.hpp
+dnn.inl.hpp
+features2d.inl.hpp
+imgproc.inl.hpp
+ml.inl.hpp
+objdetect.inl.hpp
+photo.inl.hpp
+video.inl.hpp
+xfeatures2d.inl.hpp
+ximgproc.inl.hpp

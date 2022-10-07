@@ -1,0 +1,1 @@
+curl -O -L https://github.com/dwyl/english-words/raw/master/words.txt

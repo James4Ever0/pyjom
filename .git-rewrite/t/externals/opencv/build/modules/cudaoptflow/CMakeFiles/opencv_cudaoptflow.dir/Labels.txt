@@ -1,0 +1,55 @@
+# Target labels
+ Extra
+ opencv_cudaoptflow
+ Module
+# Source files and their labels
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/include/opencv2/cudaoptflow.hpp
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/brox.cpp
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/farneback.cpp
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/nvidiaOpticalFlow.cpp
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/pyrlk.cpp
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/tvl1flow.cpp
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/precomp.hpp
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/cuda/farneback.cu
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/cuda/nvidiaOpticalFlow.cu
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/cuda/pyrlk.cu
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/opencv_contrib-4.x/modules/cudaoptflow/src/cuda/tvl1flow.cu
+ Extra
+ opencv_cudaoptflow
+ Module
+/media/root/help1/pyjom/externals/opencv/build/cvconfig.h
+/media/root/help1/pyjom/externals/opencv/build/opencv2/opencv_modules.hpp
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaoptflow/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_farneback.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaoptflow/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_nvidiaOpticalFlow.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaoptflow/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyrlk.cu.o
+/media/root/help1/pyjom/externals/opencv/build/modules/cudaoptflow/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_tvl1flow.cu.o

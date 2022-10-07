@@ -1,0 +1,148 @@
+int *Print_Debug_Message(int a1, int a2, int a3, const char *a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int Time, int a19, int a20, int a21, int *a22, int a23, signed int a24, int a25, int a26, int a27, int a28, ...)
+{
+  int v28; // ebx
+  const char *v29; // esi
+  int v30; // ecx
+  int v31; // edi
+  const char *v32; // edx
+  int *result; // eax
+  __int128 *v34; // eax
+  signed int v35; // ecx
+  int v36; // eax
+  signed int v37; // edx
+  __int128 *v38; // ecx
+  __int128 v39; // xmm0
+  char *v40; // ST2C_4
+  DWORD v41; // eax
+  unsigned int msg_len; // kr00_4
+  int *v43; // ecx
+  int v44; // eax
+  char *v45; // esi
+  bool v46; // zf
+  int v47; // edx
+  int v48; // edx
+  int v49; // edx
+  int savedregs; // [esp+0h] [ebp+0h]
+  const char *retaddr; // [esp+4h] [ebp+4h]
+  int a1a; // [esp+8h] [ebp+8h]
+  __int128 v53[6]; // [esp+106Ch] [ebp+106Ch]
+  int v54; // [esp+10CCh] [ebp+10CCh]
+  int v55; // [esp+10D0h] [ebp+10D0h]
+  __int128 v56; // [esp+10D4h] [ebp+10D4h]
+  __int128 v57; // [esp+10E4h] [ebp+10E4h]
+  __int128 v58; // [esp+10F4h] [ebp+10F4h]
+  __int128 v59; // [esp+1104h] [ebp+1104h]
+  __int128 v60; // [esp+1114h] [ebp+1114h]
+  __int128 v61; // [esp+1124h] [ebp+1124h]
+  char v62; // [esp+1134h] [ebp+1134h]
+  char msg_info; // [esp+1174h] [ebp+1174h]
+  unsigned int v64; // [esp+1278h] [ebp+1278h]
+
+  __alloca_probe();
+  v64 = (unsigned int)&savedregs ^ __security_cookie;
+  v28 = a3;
+  v29 = a4;
+  v31 = v30;
+  retaddr = v32;
+  a1a = a2;
+  result = (int *)sub_1157BC30(v30);
+  if ( result )
+  {
+    v34 = v53;
+    v35 = 6;
+    do
+    {
+      *(_BYTE *)v34 = -1;
+      ++v34;
+      --v35;
+    }
+    while ( v35 );
+    LOBYTE(a25) = 0;
+    a22 = &a25;
+    v36 = 0;
+    v56 = *(_OWORD *)&a5;
+    a23 = 0;
+    v37 = 0;
+    v54 = 0;
+    v38 = &v56;
+    a24 = 4096;
+    v57 = *(_OWORD *)&a9;
+    v55 = 0;
+    v58 = *(_OWORD *)&a13;
+    v59 = *(_OWORD *)&a17;
+    v60 = *(_OWORD *)&a21;
+    v61 = *(_OWORD *)&a25;
+    do
+    {
+      if ( *(_BYTE *)v38 == -1 )
+        break;
+      v39 = *v38;
+      ++v37;
+      ++v38;
+      v53[v36] = v39;
+      v36 = v55++ + 1;
+    }
+    while ( v37 < 6 );
+    sub_107000B0(v29);
+    sub_106FFDC0(1);
+    *((_BYTE *)a22 + a23++) = 10;
+    GetLocalTime((LPSYSTEMTIME)&Time);
+    v40 = off_11E79714[v31 % 5];
+    v41 = GetCurrentThreadId();
+    StrTime(
+      (int)&msg_info,
+      256,
+      (int)"(%d-%d-%d:%d:%02d:%02d:%03d %05d)-%s/%s:",
+      (unsigned __int16)Time,
+      HIWORD(Time),
+      HIWORD(a19),
+      (unsigned __int16)a20,
+      HIWORD(a20),
+      (unsigned __int16)a21,
+      HIWORD(a21),
+      v41,
+      v40,
+      v28);
+    if ( msg_info )
+    {
+      msg_len = strlen(&msg_info);
+      sub_106FFDC0(msg_len);
+      sub_119F8DB0((char *)a22 + msg_len, a22, a23 + 1);
+      sub_119F8DB0(a22, &msg_info, msg_len);
+      v43 = a22;
+      v44 = msg_len + a23;
+      a23 += msg_len;
+      v45 = (char *)a22 + msg_len;
+    }
+    else
+    {
+      v44 = a23;
+      v45 = 0;
+      v43 = a22;
+    }
+    v46 = hThread == 0;
+    *((_BYTE *)v43 + v44) = 0;
+    if ( !v46 )
+    {
+      a2 = v31;
+      sub_119F8C50(&v62, 0, 64);
+      StrTime((int)&v62, 64, (int)"%s%s", "MMPC_", v28);
+      a3 = (int)&v62;
+      a4 = retaddr;
+      a5 = a1a;
+      a6 = a1a;
+      sub_1158E270(&a7, 0);
+      a10 = sub_1158E3D0();
+      a11 = v47;
+      a12 = sub_1158E440();
+      a13 = v48;
+      a14 = sub_1158E3C0();
+      a15 = v49;
+      sub_1157BC90(&a2, v45);
+    }
+    result = a22;
+    if ( a22 != &a25 )
+      result = (int *)sub_11A07A81(a22);
+  }
+  return result;
+}

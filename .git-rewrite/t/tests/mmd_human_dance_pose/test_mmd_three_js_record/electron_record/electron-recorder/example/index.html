@@ -1,0 +1,39 @@
+<html>
+  <body>
+    <h1>Test Movie</h1>
+    <script>
+      const electron = require('electron')
+      const createVideoRecorder = require('../index')
+
+      const win = electron.remote.getCurrentWindow()
+
+      win.setSize(200, 200)
+
+      const video = createVideoRecorder(win, {
+        fps: 60,
+        output: 'test.mp4'
+      })
+
+      let frameCount = 360
+      function renderFrame () {
+        const tag = document.querySelector('h1')
+
+        Object.assign(tag.style, {
+          'width': 100,
+          'margin-left': 50,
+          'margin-top': 50,
+          '-webkit-transform': 'rotate(' + frameCount + 'deg)'
+        })
+
+        if (--frameCount > 0) {
+          video.frame(renderFrame)
+        } else {
+          video.end()
+          win.close()
+        }
+      }
+
+      renderFrame()
+    </script>
+  </body>
+</html>
