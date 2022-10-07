@@ -25,7 +25,7 @@ wbRev = OnlineAutoContentProducer(
             # also determine how to translate the lyrics, whether to translate or not.
             # "translate": True,
             # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
-            # you can simply use 
+            # you can simply implement the method in lazero library so we can share the same code
             # "translate_method": "deepl",
         }
     ],
