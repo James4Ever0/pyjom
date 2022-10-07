@@ -1,4 +1,4 @@
-import test # for 
+import test # for appending path only.
 from pyjom.audiotoolbox import detect_volume_average, adjustVolumeInMedia
 
 output_path = "volDetect_test.mp4"
