@@ -11,7 +11,7 @@ online_fetched_media = "/root/Desktop/works/pyjom/tests/calculate_separate_video
 targets, error = detect_volume_average(online_fetched_media, debug=True)
 if not error:
     adjustVolumeInMedia(output_path, normalizedOutputPath, overwrite_output=True)
-    detect_volume_average(normalizedOutputPath, debug=True)
+    detect_volume_average(normalizedOutputPath, debug=True, targets=targets)
 else:
     print('error when detecting volume in media: %s' % online_fetched_media)
 # even worse with default settings.
