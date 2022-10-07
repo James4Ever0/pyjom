@@ -94,9 +94,6 @@ if __name__ == "__main__":
 
 # videotoolbox.
 # you also need to get the bitrate of video/audio
-def getVideoBitrate(mediaPath):
-    return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bitrate"])
-    # you might want this magic.
 
 
 # audiotoolbox.
