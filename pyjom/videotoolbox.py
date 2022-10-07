@@ -8,7 +8,7 @@ from pyjom.imagetoolbox import *
 from functools import lru_cache
 
 def getVideoBitrate(mediaPath):
-    return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bitrate"])
+    return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bit_rate"])
     # you might want this magic.
 
 def createPureColorVideo(
