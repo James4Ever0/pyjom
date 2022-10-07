@@ -277,3 +277,6 @@ if __name__ == "__main__":
     # VOLUME: {'mean': -16.8, 'max': -2.0}
     # ERROR STATUS: False
     # how to adjust the volume accordingly?
+
+# you also need to get the bitrate of video/audio
+def getVideoBitrate()
