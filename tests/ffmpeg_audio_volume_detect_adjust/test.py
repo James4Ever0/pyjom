@@ -94,7 +94,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
     return fileExtensionToMeaningDict
 
 
-def getAllFileExtensionToMeaningDictFromString():
+def getMediaFileExtensionToMeaningDictFromString():
     # no input needed.
     videoExtensions = """MP4 or MPEG4 video file - .mp4
 264 video file - .h264
@@ -144,8 +144,7 @@ AIF audio file - .aif"""
 
 def determineMediaTypeByExtension(extension):
     extension = extension.lower()
-
-    return mediaFileExtensionToMeaningDict
+    mediaFileExtensionToMeaningDict = getMedia
 
 
 def detect_volume_average(mediapath, debug=False):
