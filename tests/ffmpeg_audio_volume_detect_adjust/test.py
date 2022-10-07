@@ -118,4 +118,4 @@ if __name__ == "__main__":
     # ERROR STATUS: False
     # ______________________________
     output_path = create_test_video_with_editly(audiopath)
-    detect_volume_average(output_path)
+    detect_volume_average(output_path, debug=True)
