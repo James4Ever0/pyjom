@@ -71,7 +71,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
     editly_json["clips"].append(clip)
     # execute the thing.
     executeEditlyScript(".", editly_json)
-    print('media saved to: %s')
+    print('media saved to: %s', output_path)
 
 
 def detect_volume_average(mediapath):
