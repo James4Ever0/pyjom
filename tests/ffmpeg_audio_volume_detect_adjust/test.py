@@ -27,3 +27,5 @@ def detect_volume_average(mediapath):
     audio = ffmpeg.input(mediapath).audio
     stdout, stderr = audio.filter("volumedetect").output("/dev/null", f="null").run(capture_stdout=True, capture_stderr=True)
     # where is the output?
+    stderr = stderr.decode('utf-8')
+    stderr_lines = stderr.split('\n')
