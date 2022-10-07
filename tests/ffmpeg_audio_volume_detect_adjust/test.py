@@ -16,7 +16,7 @@ import json
 
 
 # videotoolbox?
-def create_black_video_without_audio(
+def createPureColorVideo(
     duration,
     mediapath,
     overwrite_output=True,
