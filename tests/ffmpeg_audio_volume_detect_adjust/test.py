@@ -217,6 +217,7 @@ def adjustVolumeInMedia(
         "max": 0.0,
     },  # what is the real value anyway? we want the volume fetched from web.
     overwrite_output=False,
+    bitrate=,
     algorithm: Literal["rms", "ebu", "peak"] = "rms",
 ):  # must set target volume.
 
