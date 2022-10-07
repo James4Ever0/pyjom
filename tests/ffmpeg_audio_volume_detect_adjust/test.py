@@ -77,7 +77,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
     print("media saved to: %s" % output_path)
     return output_path
 
-
+# commons.
 def getFileExtensionToMeaningDictFromString(inputString):
     inputStringList = inputString.split("\n")
     fileExtensionToMeaningDict = {}
@@ -98,7 +98,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
                 fileExtensionToMeaningDict.update({extension: meaning})
     return fileExtensionToMeaningDict
 
-
+#commons.
 def getMediaFileExtensionToMeaningDict():
     # no input needed.
     videoExtensions = """MP4 or MPEG4 video file - .mp4
