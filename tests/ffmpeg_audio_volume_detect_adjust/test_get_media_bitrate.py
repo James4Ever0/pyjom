@@ -1,4 +1,4 @@
-from test import getAudioBitrate
+from pyjom.audiotoolbox import getAudioBitrate
 
 mediaPaths = [
     "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3", # 320000
