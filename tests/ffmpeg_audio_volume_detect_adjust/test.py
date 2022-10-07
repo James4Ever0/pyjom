@@ -21,7 +21,7 @@ def create_black_video_without_audio(duration, mediapath):
     # length is in seconds.
     videoInput = "color=c=black:s=1280x720:r=5"
     ffmpeg.input(videoInput, f="lavfi", t=duration).output(mediapath, crf=0).run(
-        overwrite_output=True
+        overwrite_output=overwrite_output
     )
 
 # this is for test only. not for work.
