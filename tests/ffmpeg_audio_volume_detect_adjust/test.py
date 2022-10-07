@@ -115,11 +115,11 @@ def detect_volume_average(mediapath, debug=False):
         sprint("ERROR STATUS:", error)
     return volDict, error
 
-
+import subprocess
 def adjustVolumeInMedia(mediaPath, outputPath):
     # use ffmpeg-normalize?
     commandline = ['ffmpeg-normalize', "-o", outputPath,"-pr",mediaPath]
-        status = subprocess.run(commandline)  # is it even successful?
+    status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
     assert returncode == 0
     print("RENDER SUCCESSFUL")
