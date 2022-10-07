@@ -5,6 +5,8 @@
 # for video we have caer. but for audio?
 
 import audioread
+from lazero.utils.logger import sprint
+    import ffmpeg
 
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
@@ -14,7 +16,6 @@ def getAudioDuration(audioFilePath):
 
 
 def detect_volume_average(mediapath, debug=False):
-    import ffmpeg
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
     # audio = ffmpeg.input(mediapath)
     audio = ffmpeg.input(mediapath).audio
