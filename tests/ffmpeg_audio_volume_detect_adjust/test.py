@@ -17,7 +17,7 @@ import json
 
 # videotoolbox?
 def createPureColorVideo(
-    duration,
+    duration:float,
     mediapath,
     overwrite_output=True,
     color="black",
