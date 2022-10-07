@@ -31,6 +31,8 @@ def createPureColorVideo(
         overwrite_output=overwrite_output
     )
 
+def create_black_video_without_audio()
+
 
 # this is for test only. not for work.
 def create_test_video_with_editly(audio):  # length is calculated by the audio length.
