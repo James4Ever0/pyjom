@@ -281,6 +281,8 @@ if __name__ == "__main__":
 
 
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
+    # demo output:
+    # {'programs': [], 'streams': [{'bit_rate': '130770'}]}
     commandArguments = [
         "ffprobe",
         "-i",
