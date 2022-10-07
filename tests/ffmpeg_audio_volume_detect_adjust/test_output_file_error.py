@@ -5,7 +5,7 @@ output_path = "volDetect_test.mp4"
 normalizedOutputPath = "normalized.mp4"
 # Output extension mp4 does not support PCM audio. Please choose a suitable audio codec with the -c:a option.
 # wtf are you talking about?
-adjustVolumeInMedia(output_path, normalizedOutputPath)
+adjustVolumeInMedia(output_path, normalizedOutputPath, overwrite_output=True)
 detect_volume_average(normalizedOutputPath, debug=True)
 # even worse with default settings.
 # VOLUME NORMALIZATION SUCCESSFUL
