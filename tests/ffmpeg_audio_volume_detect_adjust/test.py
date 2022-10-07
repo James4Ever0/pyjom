@@ -133,7 +133,9 @@ def adjustVolumeInMedia(
         print("VOLUME NORMALIZATION SUCCESSFUL")
         return outputPath
     else:
-        return None
+        import traceback
+        traceback.print_exc()
+        print('error when ')
     # media = ffmpeg.input(videoPath)
     # audio = media.audio
     # video = media.video
