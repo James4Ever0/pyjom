@@ -181,6 +181,7 @@ Ogg Vorbis audio file - .ogg
 MIDI audio file - .midi or .mid
 CD audio file - .cda
 AIF audio file - .aif"""
+
     # problem is, the container must be video compabible.
     # list the thing here?
     if outputPathExtension == "mp4":
