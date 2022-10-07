@@ -9,23 +9,25 @@ keywords = "last friday night" # american pop music?
 # breakpoint()
 # phone, password = "19825089619","dbH361210110"
 # login_response = requests.get(baseUrl+"/login/cellphone",params={"phone": phone,"password": password})
-login_response = requests.get(baseUrl+"/logout")
-print(login_response_json)
+# login_response = requests.get(baseUrl+"/logout")
+# login_response_json = login_response.json()
+# print(login_response_json)
 
-login_response = requests.get(baseUrl+"/register/anonimous")
-login_response_json = login_response.json()
-# {'code': -460, 'message': '网络太拥挤，请稍候再试！'}
-# what the fuck is this shit?
-print(login_response_json)
+# login_response = requests.get(baseUrl+"/register/anonimous")
+# login_response_json = login_response.json()
+# # {'code': -460, 'message': '网络太拥挤，请稍候再试！'}
+# # what the fuck is this shit?
+# print(login_response_json)
 
 
-login_status = requests.get(baseUrl+"/login/status")
-login_status_json = login_status.json()
-print(login_status_json)
+# login_status = requests.get(baseUrl+"/login/status")
+# login_status_json = login_status.json()
+# print(login_status_json)
 
-breakpoint()
+# breakpoint()
 
-search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
+search_result = requests.get(baseUrl+"/search", params={"keywords": keywords})
+# search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
 
 search_result_json = search_result.json() # check search_result.json
 # breakpoint()
@@ -33,17 +35,20 @@ code = search_result_json["code"]
 result = search_result_json["result"]
 
 if code == 200: # no error here.
+    print(result)
+    breakpoint()
     songs = result["songs"]
-    mySong = songs[0]
+    mySong = songs[1]
     mySongName = mySong["name"]
     mySongId = mySong["id"]
     mySongArtists = mySong["ar"] # reserved for further use. like find other songs by the artist.
+    # mySong["artists"]
 
     print("SELECTED SONG:")
     print(mySongName, mySongId, mySongArtists)
 
     # download that thing.
-    download_result = requests.get(baseUrl + "/song/download/url", params = {"id":mySongId}) # 试听歌曲
+    download_result = requests.get(baseUrl + "/song/url", params = {"id":mySongId}) # 试听歌曲
     download_result_json = download_result.json()
 
     print(download_result_json) # no download url!
