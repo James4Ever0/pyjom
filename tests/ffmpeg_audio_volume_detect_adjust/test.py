@@ -119,7 +119,7 @@ def detect_volume_average(mediapath, debug=False):
 import subprocess
 
 
-def adjustVolumeInMedia(mediaPath, outputPath,mean=):# must set target volume.
+def adjustVolumeInMedia(mediaPath, outputPath,targets={'mean':}):# must set target volume.
     # use ffmpeg-normalize?
     # use aac for mp4 output. let's do it!
     commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr"]
