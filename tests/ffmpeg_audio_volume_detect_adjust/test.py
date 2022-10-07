@@ -84,10 +84,11 @@ def getFileExtensionToMeaningDictFromString(inputString):
         line = line.strip()
         if len(line) < 5:
             continue
-        try:
-            meaning, extensions = line.split(" - ")
-        except:
-            print('line')
+        # try:
+        meaning, extensions = line.split(" - ") # problem fixed.
+        # except:
+        #     print('line:',[line])
+        #     breakpoint()
         meaning = meaning.strip()
         extensions = extensions.split(" or ")
         for extension in extensions:
@@ -126,7 +127,7 @@ Microsoft PowerPoint presentation - .ppt
 Microsoft PowerPoint slide show - .pps
 Microsoft PowerPoint Open XML presentation - .pptx"""
     audioExtensions = """MP3 audio file - .mp3
-AAC audio file -.aac
+AAC audio file - .aac
 AC3 audio file - .ac3
 WAV audio file - .wav
 WMA audio file - .wma
