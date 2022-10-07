@@ -41,5 +41,8 @@ def detect_volume_average(mediapath):
                 volumeType, value = result['volumeType'], result['value']
                 volDict.update({volumeType:value})
     except:
+        import traceback
+        traceback.print_exc()
+        print("error when ")
         error=True
     return volDict, error
