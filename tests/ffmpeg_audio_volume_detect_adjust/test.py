@@ -130,7 +130,7 @@ Ogg Vorbis audio file - .ogg
 MIDI audio file - .midi or .mid
 CD audio file - .cda
 AIF audio file - .aif"""
-    mediaFileExtensionToMeaningDict = {""}
+    mediaFileExtensionToMeaningDict = {"video":getFileExtensionToMeaningDictFromString}
 
 
 def detect_volume_average(mediapath, debug=False):
