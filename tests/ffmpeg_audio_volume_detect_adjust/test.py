@@ -12,7 +12,7 @@ from pyjom.medialang.processors.dotProcessor.videoProcessor import executeEditly
 from lazero.utils.logger import sprint
 
 # import os
-# import json
+import json
 # import subprocess
 
 # def executeEditlyScript(medialangTmpDir, editly_json):
