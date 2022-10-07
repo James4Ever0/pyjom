@@ -105,3 +105,5 @@ def detect_volume_average(mediapath):
         error = True
     return volDict, error
 
+if __name__ == "__main__":
+    # perform our test.
