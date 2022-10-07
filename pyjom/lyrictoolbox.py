@@ -879,6 +879,6 @@ def lrcToAnimatedAss(
             textList, translate_method=translate_method
         )  # this is taking long time during test. make it redis lru cached!
     else:
-        translatedList = [(sourceText)]  # notice, we need to examine this damn list.
+        translatedList = [(sourceText,) for sourceText in textList]  # notice, we need to examine this damn list.
     # so we pass both arguments to the ass generator.
     return textArrayWithTranslatedListToAss(textArray, translatedList, assPath)
