@@ -163,7 +163,7 @@ def determineMediaTypeByExtension(extension):
                 return mediaType
     return "unknown"
 
-
+# audiotoolbox.
 def detect_volume_average(mediapath, debug=False):
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
     # audio = ffmpeg.input(mediapath)
@@ -208,7 +208,7 @@ import subprocess
 
 from typing import Literal
 
-
+# audiotoolbox
 def adjustVolumeInMedia(
     mediaPath,
     outputPath,
