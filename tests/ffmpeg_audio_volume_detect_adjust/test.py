@@ -2,7 +2,8 @@
 # shall we get the output?
 # we can also detect if the stream does not have audio stream.
 import sys
-sys.path.append("")
+pyjom_path = ''
+sys.path.append(pyjom_path)
 import ffmpeg
 
 
