@@ -1,6 +1,7 @@
 import pylrc
 from MediaInfo import MediaInfo
 from pyonfx import *
+from typing import Literal
 # wildcard not allowed in function
 from pyjom.commons import redisLRUCache
 
