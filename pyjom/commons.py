@@ -97,6 +97,7 @@ def determineMediaTypeByExtension(extension):
     if not extension.startswith("."):
         extension = "." + extension
     extension_lower = extension.lower()
+    # this has to be cached.
     mediaFileExtensionToMeaningDict = getMediaFileExtensionToMeaningDict()
     for (
         mediaType,
