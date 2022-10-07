@@ -142,7 +142,8 @@ AIF audio file - .aif"""
     }
     return mediaFileExtensionToMeaningDict
 
-def determine
+def determineMediaTypeByExtension(extension):
+    
 
 
 def detect_volume_average(mediapath, debug=False):
