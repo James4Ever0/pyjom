@@ -122,7 +122,7 @@ def adjustVolumeInMedia(mediaPath, outputPath):
     commandline = ['ffmpeg-normalize', "-o", outputPath,"-pr"]
     if outputPath.lower().endswith(".mp4"):
         commandline+=['-c:a','aac']
-    commandline+=[outputPath]
+    commandline+=[mediaPath]
     status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
     assert returncode == 0
