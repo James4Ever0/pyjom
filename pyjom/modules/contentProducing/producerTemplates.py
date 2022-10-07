@@ -570,7 +570,6 @@ def petsWithMusicOnlineProducer(
             debug = config.get("debug", False)
             musicPath = config.get('music',{}).get('filepath',"")
             translate = config.get('translate',False)
-            translate = config.get('translate',False)
             # also how to translate?
             translate_method = config.get('translate_method','baidu')
             # from pyjom.commons import corruptMediaFilter
