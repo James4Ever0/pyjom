@@ -43,6 +43,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
                 fileExtensionToMeaningDict.update({extension: meaning})
     return fileExtensionToMeaningDict
 
+@lru_cache(maxsize=1)
 def getMediaFileExtensionToMeaningDict():
     # no input needed.
     videoExtensions = """MP4 or MPEG4 video file - .mp4
