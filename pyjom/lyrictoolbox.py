@@ -303,7 +303,7 @@ def getTextListTranslated(test, translate_method='baidu'):
                 foreignText, nativeText = text
             else:
                 foreignText = text
-                nativeText = translate(foreignText, backend=)
+                nativeText = translate(foreignText, backend=translate_method)
             if foreignText != nativeText:
                 newLyricArray.append((foreignText, nativeText))
             else:
@@ -312,7 +312,7 @@ def getTextListTranslated(test, translate_method='baidu'):
         if needToTranslate:
             for elem in progressbar.progressbar(test):
                 foreignText = elem
-                nativeText = translate(foreignText, backend=)
+                nativeText = translate(foreignText, backend=translate_method)
                 if not nativeText == foreignText:
                     newLyricArray.append((foreignText, nativeText))
                 else:
