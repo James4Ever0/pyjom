@@ -13,7 +13,7 @@ if not error:
     adjustVolumeInMedia(output_path, normalizedOutputPath, overwrite_output=True)
     detect_volume_average(normalizedOutputPath, debug=True)
 else:
-    print('error when detecting volume in media: %s' % error)
+    print('error when detecting volume in media: %s' % online_fetched_media)
 # even worse with default settings.
 # VOLUME NORMALIZATION SUCCESSFUL
 # MEDIA PATH: normalized.mp4
