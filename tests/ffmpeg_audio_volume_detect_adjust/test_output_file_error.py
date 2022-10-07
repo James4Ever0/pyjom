@@ -10,10 +10,10 @@ online_fetched_media = "/root/Desktop/works/pyjom/tests/calculate_separate_video
 # is this the standard?
 targets, error = detect_volume_average(online_fetched_media, debug=True)
 if not error:
-
-adjustVolumeInMedia(output_path, normalizedOutputPath, overwrite_output=True)
-detect_volume_average(normalizedOutputPath, debug=True)
-
+    adjustVolumeInMedia(output_path, normalizedOutputPath, overwrite_output=True)
+    detect_volume_average(normalizedOutputPath, debug=True)
+else:
+    print('error when detecting volume in media: %s' % error)
 # even worse with default settings.
 # VOLUME NORMALIZATION SUCCESSFUL
 # MEDIA PATH: normalized.mp4
