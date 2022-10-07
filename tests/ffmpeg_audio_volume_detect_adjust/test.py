@@ -172,7 +172,7 @@ Microsoft Excel file with macros - .xlsm
 Microsoft PowerPoint presentation - .ppt
 Microsoft PowerPoint slide show - .pps
 Microsoft PowerPoint Open XML presentation - .pptx"""
-    audioExtensions = [MP3 audio file - .mp3
+    audioExtensions = """MP3 audio file - .mp3
 AAC audio file -.aac
 AC3 audio file - .ac3
 WAV audio file - .wav
