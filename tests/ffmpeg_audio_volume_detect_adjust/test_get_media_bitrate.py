@@ -1,1 +1,4 @@
-from test import getAudio
+from test import getAudioBitrate
+
+audioPath = ""
+getAudioBitrate(audioPath)
