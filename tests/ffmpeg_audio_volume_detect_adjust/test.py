@@ -80,7 +80,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
     inputStringList = inputString.split("\n")
     for line in inputStringList:
         line = line.strip()
-        if len(line)>
+        if len(line)<5:
 
 
 def detect_volume_average(mediapath, debug=False):
