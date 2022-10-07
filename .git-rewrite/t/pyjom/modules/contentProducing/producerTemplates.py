@@ -235,13 +235,15 @@ def getFileCuts(
     return total_cuts_dict
 
 
-def getRenderList(total_cuts, demanded_cut_spans):
+def getRenderList(total_cuts, demanded_cut_spans, noRepeat=True):
     file_access_list = [x for x in total_cuts.keys()]
     FAL_generator = infiniteShuffle(
         file_access_list
     )  # infinite generator! may cause serious problems.
     TC_generators = {key: infiniteShuffle(total_cuts[key]) for key in total_cuts.keys()} # again infinite generator!
     render_list = []
+    if noRepeat:
+        usedCuts = []
     for span in demanded_cut_spans:
         start, end = span
         span_length = end - start
@@ -263,6 +265,11 @@ def getRenderList(total_cuts, demanded_cut_spans):
                 if inRange(
                     cut_duration, [span_length, span_length * 1.5], tolerance=tolerance
                 ): # increase this tolerance gradually.
+                    if noRepeat:
+                        cut_str = str(cut)+filename
+                        isRepeat = cut_str in usedCuts
+                        if isRepeat: continue # repeated cuts!
+                        usedCuts.append(cut_str)
                     selected_cut = cut
                     break
             if not selected_cut is None:
@@ -271,11 +278,12 @@ def getRenderList(total_cuts, demanded_cut_spans):
                 break
     return render_list
 
-def renderList2MediaLang(renderList, slient=True, bgm=None): # this is just a primitive. need to improve in many ways.
-    producer = ""
-    scriptBase = ['(".mp4",producer = "%s", bgm = "%s")'  %(producer, bgm)
+def renderList2MediaLang(renderList, slient=True, bgm=None,producer="ffmpeg"): # this is just a primitive. need to improve in many ways.
+    # producer = ""
+    scriptBase = ['(".mp4",producer = "%s", bgm = "%s")'  %(producer, bgm)]
     for item in renderList:
-        
+        line = '("%s", video=true, slient=%s, speed=%d)'
+        scriptBase.append(line)
 
 def petsWithMusicProducer(filtered_info, meta_info, config={}):
     # what is this config? how the fuck we can arrange it?
@@ -322,7 +330,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     render_list = getRenderList(total_cuts, demanded_cut_spans) # this might be an infinity loop.
     # print(render_list)  # empty render list! wtf?
     # breakpoint()
-    render_medialang = renderList2MediaLang(render_list, slient=True, bgm=music["filepath"]) # what is the backend?
+    render_medialang = renderList2MediaLang(render_list, slient=True, bgm=music["filepath"],producer="") # what is the backend?
     # slient all things? despite its config.
     # now render the file. how to make it happen?
 # first, we state the format of the input.
