@@ -603,7 +603,7 @@ def petsWithMusicOnlineProducer(
                 # print("lrc path:", lyric_path)
                 # print('ass file path:',ass_file_path)
                 # breakpoint()
-                lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path)
+                lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path) # here's the 'no translation' flag.
             data_ids = []
             # from tqdm.gui import tqdm
 
