@@ -2,7 +2,7 @@
 # shall we get the output?
 # we can also detect if the stream does not have audio stream.
 import sys
-pyjom_path = ''
+pyjom_path = '/root/Desktop/works/pyjom/pyjom'
 sys.path.append(pyjom_path)
 import ffmpeg
 
