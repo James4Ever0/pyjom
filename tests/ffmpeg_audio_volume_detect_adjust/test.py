@@ -281,10 +281,10 @@ if __name__ == "__main__":
 # you also need to get the bitrate of video/audio
 def getVideoBitrate():
 
-def getAudioBitrate():
+def getAudioBitrate(, audioOnly=):
 
 d
     ffprobe -i mediaPath -v quiet
     + [-select_streams a:0]
-    + [-select_streams a:0]
+    + [-select_streams v:0]
     -show_entries stream=bit_rate -hide_banner
