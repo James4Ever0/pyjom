@@ -80,7 +80,7 @@ def detect_volume_average(mediapath, debug=False):
     # audio = ffmpeg.input(mediapath)
     audio = ffmpeg.input(mediapath).audio
     # does not have audio track, so error occurs.
-    # don't know how to capture the track. anyway, do it
+    # don't know how to capture the track. anyway, do put the audio into the test video.
     # might have exception. what to do with it then??
     volDict = {}
     error = False
