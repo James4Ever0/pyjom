@@ -146,7 +146,17 @@ def adjustVolumeInMedia(
     # video codec we use 'copy' if the extension name is the same.
     outputPathExtension = outputPath.lower().split(".")[-1]
     # treat this as a common repository.
-    videoExtensions = ['mp4','flv','mkv','rmvb','h264','avi','mov','mpeg','mpg','m4v','3gp','wmv','vob']
+    videoExtensions = [MP4 or MPEG4 video file - .mp4
+264 video file - .h264
+AVI video file - .avi
+MKV or Matroska Multimedia Container - .mkv
+MPEG video file - .mpeg or .mpg
+MOV or Apple QuickTime video file - .mov
+Apple MP4 video file - .m4v
+Adobe flash video - .flv
+3GP video file - .3gp
+Windows Media Video file - .wmv
+DVD Video Object - .vob]
     imageExtensions = [JPEG image - .jpeg or .jpg
 PNG image - .png
 GIF image - .gif
