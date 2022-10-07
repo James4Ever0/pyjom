@@ -569,6 +569,9 @@ def petsWithMusicOnlineProducer(
         for config in configs:
             debug = config.get("debug", False)
             musicPath = config.get('music',{}).get('filepath',"")
+            translate = config.get('translate',False)
+            # also how to translate?
+            translate_method = config.get('translate_method','baidu')
             # from pyjom.commons import corruptMediaFilter
             report = corruptMediaFilter(musicPath)
             if not report:
@@ -603,7 +606,7 @@ def petsWithMusicOnlineProducer(
                 # print("lrc path:", lyric_path)
                 # print('ass file path:',ass_file_path)
                 # breakpoint()
-                lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path) # here's the 'no translation' flag.
+                lrcToAnimatedAss(music["filepath"], lyric_path, ass_file_path, translate=translate) # here's the 'no translation' flag.
             data_ids = []
             # from tqdm.gui import tqdm
 
