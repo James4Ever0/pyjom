@@ -12,4 +12,5 @@ detect_volume_average(normalizedOutputPath, debug=True)
 # MEDIA PATH: normalized.mp4
 # VOLUME: {'mean': -25.1, 'max': -8.8}
 # ERROR STATUS: False
-'mean' -> target level
+# 'mean' -> target level
+# 'max' -> 
