@@ -150,7 +150,9 @@ def determineMediaTypeByExtension(extension):
     mediaFileExtensionToMeaningDict = getMediaFileExtensionToMeaningDict()
     for mediaType, fileExtensionToMeaningDict in mediaFileExtensionToMeaningDict.items():
         for fileExtension, meaning in fileExtensionToMeaningDict.items():
-            if fileExtension.lower == extension_lower
+            if fileExtension.lower == extension_lower:
+                return fileExtension
+    return 'unknown'
 
 
 def detect_volume_average(mediapath, debug=False):
