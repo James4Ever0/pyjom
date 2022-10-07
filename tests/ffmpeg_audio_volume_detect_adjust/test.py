@@ -289,5 +289,4 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     elif videoOnly:
         commandArguments +=["-select_streams", "v:0",]
     commandArguments+=["-show_entries", "stream=bit_rate", "-hide_banner","-print_format","json"]
-    subprocess.
-    subprocess.getoutput(commandArguments,capture_output=True, encoding='UTF-8')
+    subprocess.run(commandArguments,capture_output=True, encoding='UTF-8')
