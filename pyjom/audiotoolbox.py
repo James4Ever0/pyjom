@@ -17,7 +17,7 @@ def getAudioBitrate(mediaPath):
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
         totalSeconds = f.duration
-    return totalSeconds
+    return totalSeconds # is this float number or integer?
     # how about let's test this?
 
 
