@@ -226,7 +226,7 @@ def adjustVolumeInMedia(
     target_level = targets.get("mean", None)
     true_peak = targets.get("max", None)
     commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr", "-nt", algorithm,]
-    commandline+= '-b:a', str(bitrate)
+    commandline+=[ '-b:a', str(bitrate)] # the bitrate part.
     # now much better. let's see if we have other methods.
     # VOLUME NORMALIZATION SUCCESSFUL
     # MEDIA PATH: normalized.mp4
