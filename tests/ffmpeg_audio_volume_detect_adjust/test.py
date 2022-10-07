@@ -30,7 +30,10 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
                 "defaults": {"transition": None},
                 "clips": [],
             }
-    
+    {
+                    "duration": duration,
+                    "layers": [],
+                }
     {
                                 "type": "video",
                                 "path": videoFilePath,
