@@ -282,6 +282,7 @@ if __name__ == "__main__":
 def getVideoBitrate(mediaPath):
 
 def getAudioBitrate(mediaPath):
+    return getMediaBitrate(mediaPath, audioOnly=True)
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     commandArguments = ["ffprobe", "-i", mediaPath, "-v", "quiet",]
     if audioOnly:
