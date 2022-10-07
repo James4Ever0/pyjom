@@ -160,7 +160,7 @@ def getFileCuts(
         file_path,
         cuts,
     ) in (
-        filtered_info
+        filtered_info.items()
     ):  # sample these cuts, shuffle these samples. order these samples.
         file_cuts = []  # only for this single file.
         modifiers = {}
@@ -239,21 +239,29 @@ def getRenderList(total_cuts, demanded_cut_spans):
     FAL_generator = infiniteShuffle(
         file_access_list
     )  # infinite generator! may cause serious problems.
-    TC_generators = {key: infiniteShuffle(total_cuts[key]) for key in total_cuts.keys()}
+    TC_generators = {key: infiniteShuffle(total_cuts[key]) for key in total_cuts.keys()} # again infinite generator!
     render_list = []
     for span in demanded_cut_spans:
         start, end = span
         span_length = end - start
+        tolerance = 0.8
+        tolerance_decrease = lambda x: max(0.1,x-0.1)
         for filename in FAL_generator:
+            if filename is None:
+                tolerance = tolerance_decrease(tolerance)
+                continue
             file_cuts = TC_generators[filename]
             # random.shuffle(file_cuts)
             selected_cut = None
             for cut in file_cuts:
+                if cut is None: # break if the infinite generator is taking break.
+                    break
+                    # continue # really continue?
                 cut_span = cut["span"]
                 cut_duration = cut_span[1] - cut_span[0]
                 if inRange(
-                    cut_duration, [span_length, span_length * 1.5], tolerance=0.8
-                ):
+                    cut_duration, [span_length, span_length * 1.5], tolerance=tolerance
+                ): # increase this tolerance gradually.
                     selected_cut = cut
                     break
             if not selected_cut is None:
@@ -293,15 +301,18 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}):
     )
     # demanded_cut_spans is empty!
     # total_cuts
-    total_cuts = getFileCuts(filtered_info, meta_info, standard_bpm_spans, policy_names) # is this shit empty?
-    print(total_cuts)
-    breakpoint()
+    total_cuts = getFileCuts(
+        filtered_info, meta_info, standard_bpm_spans, policy_names
+    )  # is this shit empty?
+    # this can be infinity loop.
+    # print(total_cuts)
+    # breakpoint()
 
     # now generate the freaking video.
     # if "one_clip_per_file" in policy_names:
     #     used_files = [] # may raise exception.
     # total_cuts {} and demanded_cut_spans [] are both empty
-    render_list = getRenderList(total_cuts, demanded_cut_spans)
+    render_list = getRenderList(total_cuts, demanded_cut_spans) # this might be an infinity loop.
     print(render_list)  # empty render list! wtf?
     breakpoint()
 
