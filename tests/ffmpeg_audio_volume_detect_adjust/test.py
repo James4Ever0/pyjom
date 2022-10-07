@@ -16,7 +16,8 @@ import json
 
 
 # videotoolbox?
-from 
+from pyjom.videotoolbox import createPureColorVideo
+
 # for test only.
 def create_black_video_without_audio(duration, mediapath):
     createPureColorVideo(duration, mediapath)
