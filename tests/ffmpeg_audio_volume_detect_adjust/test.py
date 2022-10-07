@@ -116,7 +116,7 @@ def detect_volume_average(mediapath, debug=False):
     return volDict, error
 
 
-def adjustVolumeInVideo(videoPath):
+def adjustVolumeInVideo(videoPath, outputPath):
     # use ffmpeg-normalize?
     # media = ffmpeg.input(videoPath)
     # audio = media.audio
