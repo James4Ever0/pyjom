@@ -284,4 +284,6 @@ def getVideoBitrate():
 def getAudioBitrate():
 
 d
-    ffprobe -i mediaPath -v quiet  -show_entries stream=bit_rate -hide_banner
+    ffprobe -i mediaPath -v quiet
+    
+    -show_entries stream=bit_rate -hide_banner
