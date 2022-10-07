@@ -20,7 +20,7 @@ import random
 
 os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
-
+from functools import lru_cache
 
 
 def getFileExtensionToMeaningDictFromString(inputString):
