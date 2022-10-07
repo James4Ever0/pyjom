@@ -288,4 +288,4 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     commandArguments + ["-select_streams", "a:0",]
     elif videoOnly:
     commandArguments + ["-select_streams", "v:0",]
-    +["-show_entries", "stream=bit_rate", "-hide_banner","-print_format","json"]
+    commandArguments+=["-show_entries", "stream=bit_rate", "-hide_banner","-print_format","json"]
