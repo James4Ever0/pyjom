@@ -703,7 +703,7 @@ def petsWithMusicOnlineProducer(
                 # maybe we need render the lyric file separately.
                 # normalization starts here.
                 rendered_media_location = getRandomFileName('mp4')# so where exactly is the file?
-                (editly_outputPath)
+                adjustVolumeInMedia(editly_outputPath, rendered_media_location)
                 # using a ffmpeg filter.
                 print('RENDERED MEDIA LOCATION:',rendered_media_location)
                 if debug:
