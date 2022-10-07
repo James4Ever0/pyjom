@@ -7,6 +7,10 @@ import cv2
 from pyjom.imagetoolbox import *
 from functools import lru_cache
 
+def getVideoBitrate(mediaPath):
+    return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bitrate"])
+    # you might want this magic.
+
 def createPureColorVideo(
     duration:float,
     mediapath,
