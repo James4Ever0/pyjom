@@ -114,7 +114,7 @@ def detect_volume_average(mediapath, debug=False):
         import traceback
         traceback.print_exc()
         # print(stderr)
-        # nothing will be shown.
+        # nothing will be shown in stderr, if there is no audio in the media container.
         print("error when detecting volume for: %s" % mediapath)
         error = True
     if debug:
