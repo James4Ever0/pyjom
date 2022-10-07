@@ -212,7 +212,7 @@ def adjustVolumeInMedia(
     mediaPath,
     outputPath,
     targets={
-        "mean": -10.8,
+        "mean": -10.8, # -13.2 fuck.
         "max": 0.0,
     },  # what is the real value anyway? we want the volume fetched from web.
     overwrite_output=False,
