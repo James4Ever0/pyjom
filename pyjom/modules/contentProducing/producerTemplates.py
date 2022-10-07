@@ -705,6 +705,8 @@ def petsWithMusicOnlineProducer(
                 print('RENDERED MEDIA LOCATION:',rendered_media_location)
                 if debug:
                     breakpoint()
+                
+                
 
                 final_output_location = getRandomFileName("mp4")
                 if render_ass:
