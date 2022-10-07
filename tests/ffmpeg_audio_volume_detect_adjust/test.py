@@ -140,7 +140,7 @@ if __name__ == "__main__":
     output_path = create_test_video_with_editly(audiopath)
     detect_volume_average(output_path, debug=True)
     normalizedOutputPath = "normalized.mp4"
-    nor
+    adjust
 
     # volume changed!
     # MEDIA PATH: volDetect_test.mp4
