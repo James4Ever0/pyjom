@@ -9,7 +9,7 @@ sys.path.append(pyjom_path)
 import ffmpeg
 from pyjom.audiotoolbox import getAudioDuration
 from pyjom.medialang.processors.dotProcessor.videoProcessor import executeEditlyScript
-
+from lazero.utils.logger import sprint
 # import os
 # import json
 # import subprocess
