@@ -707,7 +707,7 @@ def petsWithMusicOnlineProducer(
                     breakpoint()
                 
                 
-                # following process is non-
+                # following process is non-destructive for audio.
                 final_output_location = getRandomFileName("mp4")
                 if render_ass:
                     import ffmpeg
