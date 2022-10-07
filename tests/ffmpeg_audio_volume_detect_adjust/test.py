@@ -119,15 +119,21 @@ def detect_volume_average(mediapath, debug=False):
 import subprocess
 
 from typing import Literal
+
+
 def adjustVolumeInMedia(
-    mediaPath, outputPath, targets={"mean": -10.8, "max": 0.0}, overwrite_output=False, algorithm:Literal['rms','ebu','peak']='rms'
+    mediaPath,
+    outputPath,
+    targets={"mean": -10.8, "max": 0.0},
+    overwrite_output=False,
+    algorithm: Literal["rms", "ebu", "peak"] = "rms",
 ):  # must set target volume.
 
     # use ffmpeg-normalize?
     # use aac for mp4 output. let's do it!
     target_level = targets.get("mean", None)
     true_peak = targets.get("max", None)
-    commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr", '-nt',algorithm]
+    commandline = ["ffmpeg-normalize", "-o", outputPath, "-pr", "-nt", algorithm]
     # now much better. let's see if we have other methods.
     # VOLUME NORMALIZATION SUCCESSFUL
     # MEDIA PATH: normalized.mp4
@@ -144,7 +150,7 @@ def adjustVolumeInMedia(
     if true_peak:
         commandline += ["-tp", str(true_peak)]
     if overwrite_output:
-        commandline+= ['-f']
+        commandline += ["-f"]
     commandline += [mediaPath]
     status = subprocess.run(commandline)  # is it even successful?
     returncode = status.returncode
