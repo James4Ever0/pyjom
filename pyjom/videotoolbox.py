@@ -17,7 +17,7 @@ def createPureColorVideo(
     resolution="1280x720",
     framerate=5,
 ):
-    import ffmpeg
+    import ffmpeg # prevent overwri
     # ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest output.mp4
     # length is in seconds.
     videoInput = "color=c={}:s={}:r={}".format(color, resolution, framerate)
