@@ -282,8 +282,7 @@ if __name__ == "__main__":
 def getVideoBitrate():
 
 def getAudioBitrate()
-def getMediaBitrate()
-    , audioOnly=False, videoOnly=False):
+def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     ["ffprobe", "-i", "mediaPath", "-v", "quiet",]
     + ["-select_streams", "a:0",]
     + ["-select_streams", "v:0",]
