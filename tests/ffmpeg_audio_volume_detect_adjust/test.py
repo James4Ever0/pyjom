@@ -5,7 +5,7 @@ import sys
 pyjom_path = '/root/Desktop/works/pyjom'
 sys.path.append(pyjom_path)
 import ffmpeg
-from pyjom.audiotoolbox import get
+from pyjom.audiotoolbox import getAudioDuration
 
 def create_black_video_without_audio(length, mediapath):
     # ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest output.mp4
