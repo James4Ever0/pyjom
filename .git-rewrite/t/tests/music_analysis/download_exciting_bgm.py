@@ -5,6 +5,11 @@ baseUrl = "http://localhost:4000"
 
 keywords = "last friday night" # american pop music?
 
+login_status = requests.get(baseUrl+"/login/status")
+login_status_json = login_status.json()
+print(login_status_json)
+# breakpoint()
+
 search_result = requests.get(baseUrl+"/cloudsearch", params={"keywords": keywords})
 
 search_result_json = search_result.json() # check search_result.json
@@ -23,10 +28,10 @@ if code == 200: # no error here.
     print(mySongName, mySongId, mySongArtists)
 
     # download that thing.
-    download_result = requests.get(baseUrl + "/song/url", params = {"id":mySongId}) # 试听歌曲
+    download_result = requests.get(baseUrl + "/song/download/url", params = {"id":mySongId}) # 试听歌曲
     download_result_json = download_result.json()
 
-    # print(download_result_json) # no download url!
+    print(download_result_json) # no download url!
     # breakpoint()
     code = download_result_json["code"]
     if code == 200: # allow to download now?
@@ -36,4 +41,11 @@ if code == 200: # no error here.
         myDownloadType = myDownload["type"]
 
         # now download the thing.
-        
+        result = requests.get(myDownloadUrl)
+        if result.status_code == 200:
+            data = result.content
+            with open(get_download_path(myDownloadType),"wb") as f:
+                f.write(data)
+            print("DOWNLOAD SONG DONE.")
+            # THIS IS FREAKING WRONG... SHALL I LOGIN?
+            # Duration                                 : 30 s 41 ms
