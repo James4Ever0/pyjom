@@ -78,12 +78,13 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
 
 def getFileExtensionToMeaningDictFromString(inputString):
     inputStringList = inputString.split("\n")
-    
+    meaningDict = {}
     for line in inputStringList:
         line = line.strip()
         if len(line)<5:
             continue
         meaning, extensions= line.split(" - ")
+        meaning = meaning.strip()
         extensions = extensions.split(" or ")
         for extension in extensions:
             extension = extension.strip()
