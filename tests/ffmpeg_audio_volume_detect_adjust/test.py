@@ -118,7 +118,7 @@ def detect_volume_average(mediapath, debug=False):
 
 import subprocess
 
-
+from typing import Literal
 def adjustVolumeInMedia(
     mediaPath, outputPath, targets={"mean": -10.8, "max": 0.0}, overwrite_output=False, algorithm:Literal[]
 ):  # must set target volume.
