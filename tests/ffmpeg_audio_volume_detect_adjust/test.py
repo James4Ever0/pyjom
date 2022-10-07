@@ -28,7 +28,7 @@ import json
 #     assert returncode == 0
 #     print("RENDER SUCCESSFUL")
 
-
+# videotoolbox?
 def create_black_video_without_audio(duration, mediapath):
     # ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest output.mp4
     # length is in seconds.
