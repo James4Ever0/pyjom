@@ -278,7 +278,6 @@ if __name__ == "__main__":
     # ERROR STATUS: False
     # how to adjust the volume accordingly?
 
-
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     commandArguments = ["ffprobe", "-i", mediaPath, "-v", "quiet",]
     if audioOnly:
