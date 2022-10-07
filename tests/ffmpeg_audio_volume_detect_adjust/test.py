@@ -232,7 +232,7 @@ def adjustVolumeInMedia(
     # video codec we use 'copy' if the extension name is the same.
     outputPathExtension = outputPath.lower().split(".")[-1]
     mediaPathExtension = mediaPath.lower().split(".")[-1]
-    outputMediaType = 
+    outputMediaType = determineMediaTypeByExtension(outputPathExtension)
     # treat this as a common repository.
     if outputPathExtension == mediaPathExtension and determine:
     # problem is, the container must be video compabible.
