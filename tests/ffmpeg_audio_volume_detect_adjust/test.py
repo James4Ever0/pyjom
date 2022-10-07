@@ -77,7 +77,7 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
     return output_path
 
 def getFileExtensionToMeaningDictFromString(inputString):
-    inputStringList
+    inputStringList = inputString.split("\n")
 
 
 def detect_volume_average(mediapath, debug=False):
