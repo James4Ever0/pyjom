@@ -143,6 +143,7 @@ AIF audio file - .aif"""
     return mediaFileExtensionToMeaningDict
 
 def determineMediaTypeByExtension(extension):
+    extension = extension.lower()
     
 
 
