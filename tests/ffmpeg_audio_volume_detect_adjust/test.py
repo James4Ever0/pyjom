@@ -114,3 +114,4 @@ if __name__ == "__main__":
     audiopath = ""
     detect_volume_average(audiopath, debug=True)
     output_path = create_test_video_with_editly(audiopath)
+    detect_volume_average(output_path)
