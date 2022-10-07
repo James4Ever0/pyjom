@@ -700,8 +700,9 @@ def petsWithMusicOnlineProducer(
                     medialangObject.execute()
                 )  # how to control its 'fast' parameter?
                 # maybe we need render the lyric file separately.
-                rendered_media_location = editly_outputPath # so where exactly is the file?
-                rendered_media_location = editly_outputPath # so where exactly is the file?
+                # normalization starts here.
+                rendered_media_location = getRandomFileName('mp4')# so where exactly is the file?
+                (editly_outputPath)
                 # using a ffmpeg filter.
                 print('RENDERED MEDIA LOCATION:',rendered_media_location)
                 if debug:
