@@ -89,6 +89,8 @@ def getFileExtensionToMeaningDictFromString(inputString):
         for extension in extensions:
             extension = extension.strip()
             if len(extension) >0:
+                fileExtensionToMeaningDict.update({extension:meaning})
+    return fileExtensionToMeaningDict
 
 
 def detect_volume_average(mediapath, debug=False):
