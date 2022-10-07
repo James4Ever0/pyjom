@@ -91,6 +91,23 @@ AIF audio file - .aif"""
     }
     return mediaFileExtensionToMeaningDict
 
+
+def determineMediaTypeByExtension(extension):
+    extension = extension.strip()
+    if not extension.startswith("."):
+        extension = "." + extension
+    extension_lower = extension.lower()
+    mediaFileExtensionToMeaningDict = getMediaFileExtensionToMeaningDict()
+    for (
+        mediaType,
+        fileExtensionToMeaningDict,
+    ) in mediaFileExtensionToMeaningDict.items():
+        for fileExtension, meaning in fileExtensionToMeaningDict.items():
+            if fileExtension.lower == extension_lower:
+                return mediaType
+    return "unknown"
+
+
 def corruptMediaFilter(
     mediaPath, tag: str = "media", bad_words: list[str] = ["invalid", "failed", "error"]
 ):
