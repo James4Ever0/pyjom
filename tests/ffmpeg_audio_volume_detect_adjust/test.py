@@ -281,4 +281,5 @@ if __name__ == "__main__":
 # you also need to get the bitrate of video/audio
 def getVideoBitrate():
 
-def getAudioBitrate()
+def getAudioBitrate():
+    ffprobe -i sample_5.mp4 -v quiet -select_streams a:0 -show_entries stream=bit_rate -hide_banner
