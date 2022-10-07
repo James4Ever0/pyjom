@@ -77,7 +77,8 @@ def create_test_video_with_editly(audio):  # length is calculated by the audio l
 
 def detect_volume_average(mediapath, debug=False):
     # ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null
-    audio = ffmpeg.input(mediapath).audio
+    audio = ffmpeg.input(mediapath)
+    # audio = ffmpeg.input(mediapath).audio
     # might have exception. what to do with it then??
     volDict = {}
     error = False
