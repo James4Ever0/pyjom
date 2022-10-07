@@ -1,4 +1,4 @@
-download_path = "exciting_bgm.mp3" # is the extension right?
+get_download_path = lambda extension:"exciting_bgm.{}".format(extension) # is the extension right?
 
 import requests
 baseUrl = "http://localhost:4000"
@@ -23,8 +23,17 @@ if code == 200: # no error here.
     print(mySongName, mySongId, mySongArtists)
 
     # download that thing.
-    download_result = requests.get(baseUrl + "/song/download/url", params = {"id":mySongId})
+    download_result = requests.get(baseUrl + "/song/url", params = {"id":mySongId}) # 试听歌曲
     download_result_json = download_result.json()
 
-    print(download_result_json) # no download url!
-    breakpoint()
+    # print(download_result_json) # no download url!
+    # breakpoint()
+    code = download_result_json["code"]
+    if code == 200: # allow to download now?
+        myDownloads = download_result_json["data"]
+        myDownload = myDownloads[0]
+        myDownloadUrl = myDownload["url"]
+        myDownloadType = myDownload["type"]
+
+        # now download the thing.
+        
