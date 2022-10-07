@@ -134,7 +134,7 @@ AIF audio file - .aif"""
     mapping = [
         ("video", videoExtensions),
         ("audio", audioExtensions),
-        ("image", imageExtensions),
+        ("image", imageExtensions), # gif could be video.
         ("document", documentExtensions),
     ]
     mediaFileExtensionToMeaningDict = {
