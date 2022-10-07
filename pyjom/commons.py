@@ -22,6 +22,27 @@ os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
 
 
+def getFileExtensionToMeaningDictFromString(inputString):
+    inputStringList = inputString.split("\n")
+    fileExtensionToMeaningDict = {}
+    for line in inputStringList:
+        line = line.strip()
+        if len(line) < 5:
+            continue
+        # try:
+        meaning, extensions = line.split(" - ")  # problem fixed.
+        # except:
+        #     print('line:',[line])
+        #     breakpoint()
+        meaning = meaning.strip()
+        extensions = extensions.split(" or ")
+        for extension in extensions:
+            extension = extension.strip()
+            if len(extension) > 0:
+                fileExtensionToMeaningDict.update({extension: meaning})
+    return fileExtensionToMeaningDict
+
+
 def corruptMediaFilter(
     mediaPath, tag: str = "media", bad_words: list[str] = ["invalid", "failed", "error"]
 ):
