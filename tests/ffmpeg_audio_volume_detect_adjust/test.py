@@ -234,7 +234,7 @@ def adjustVolumeInMedia(
     mediaPathExtension = mediaPath.lower().split(".")[-1]
     outputMediaType = determineMediaTypeByExtension(outputPathExtension)
     # treat this as a common repository.
-    if outputPathExtension == mediaPathExtension and determine:
+    if outputPathExtension == mediaPathExtension and outputMediaType == 'video':
     # problem is, the container must be video compabible.
     # list the thing here?
     if outputPathExtension == "mp4":
