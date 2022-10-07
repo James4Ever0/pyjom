@@ -10,7 +10,7 @@ import math
 from pyjom.audiotoolbox import adjustVolumeInMedia
 
 import audioowl
-from MediaInfo import MediaInfo
+# from MediaInfo import MediaInfo
 from pyjom.medialang.core import *
 
 
