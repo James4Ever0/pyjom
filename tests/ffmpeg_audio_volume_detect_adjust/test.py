@@ -130,7 +130,7 @@ Ogg Vorbis audio file - .ogg
 MIDI audio file - .midi or .mid
 CD audio file - .cda
 AIF audio file - .aif"""
-mapping = [('video', videoExtensions),('video', videoExtensions)]
+mapping = [('video', videoExtensions),('video', videoExtensions),('video', videoExtensions)]
     mediaFileExtensionToMeaningDict = {key:getFileExtensionToMeaningDictFromString(value) for key, value in mapping}
 
 
