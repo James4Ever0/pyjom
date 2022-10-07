@@ -117,6 +117,7 @@ def detect_volume_average(mediapath, debug=False):
 
 
 def adjustVolumeInVideo(videoPath):
+    # use ffmpeg-normalize?
     # media = ffmpeg.input(videoPath)
     # audio = media.audio
     # video = media.video
