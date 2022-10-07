@@ -8,6 +8,8 @@ pyjom_path = "/root/Desktop/works/pyjom"
 sys.path.append(pyjom_path)
 import ffmpeg
 from pyjom.audiotoolbox import getAudioDuration
+import os
+import json
 
 def executeEditlyScript(medialangTmpDir, editly_json):
     editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
