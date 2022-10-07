@@ -124,7 +124,7 @@ from typing import Literal
 def adjustVolumeInMedia(
     mediaPath,
     outputPath,
-    targets={"mean": -10.8, "max": 0.0},
+    targets={"mean": -10.8, "max": 0.0}, # what is the real value anyway? we want the volume fetched from web.
     overwrite_output=False,
     algorithm: Literal["rms", "ebu", "peak"] = "rms",
 ):  # must set target volume.
