@@ -23,6 +23,7 @@ wbRev = OnlineAutoContentProducer(
             "fast": True,  # pass this flag to medialang export engine
             "render_ass": True,
             # also determine how to translate the lyrics, whether to translate or not.
+            # "translate":
         }
     ],
     # you can also translate funny videos from youtube.
