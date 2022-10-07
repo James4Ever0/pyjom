@@ -132,7 +132,7 @@ CD audio file - .cda
 AIF audio file - .aif"""
     mapping = [('video', videoExtensions),('audio', audioExtensions),('document', documentExtensions)]
     mediaFileExtensionToMeaningDict = {key:getFileExtensionToMeaningDictFromString(value) for key, value in mapping}
-    return mediaFileExtensionToMeaningDict[key]
+    return mediaFileExtensionToMeaningDict
 
 
 def detect_volume_average(mediapath, debug=False):
