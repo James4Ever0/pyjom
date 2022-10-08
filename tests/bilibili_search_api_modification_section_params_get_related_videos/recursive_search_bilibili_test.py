@@ -93,6 +93,7 @@ def randomChoiceTagList(tag_list):
     selected_tags = flattenUnhashableList(selected_tags)
     return list(set(selected_tags))
 
+BSP = search.bilibiliSearchParams()
 
 def getBilibiliPostMetadataForDogCat(
     sleepTime=2,
@@ -129,9 +130,9 @@ def getBilibiliPostMetadataForDogCat(
     }
 
 
-    getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人])
-    getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人])
-    getTid = {"dog": getDogTid, "cat": getCatTid}
+    # getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人])
+    # getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人])
+    # getTid = {"dog": getDogTid, "cat": getCatTid}
 
     getRandomPage = lambda: random.randint(1, 5)  # not so broad.
     # getRandomPage = lambda: random.randint(1, 50)  # broad range!
