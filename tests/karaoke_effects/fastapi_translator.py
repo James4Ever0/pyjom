@@ -83,7 +83,9 @@ def deeplTranslator(text, sleep=2, timeout=5, mod=40):
     useProxy(False)
     import random
 
-    if refreshProxyCounter % mod == 0: # make sure it will be launched at the first request.
+    if (
+        refreshProxyCounter % mod == 0
+    ):  # make sure it will be launched at the first request.
         proxyList = getTestedProxyList()
         refreshProxyCounter %= mod
     refreshProxyCounter += 1
