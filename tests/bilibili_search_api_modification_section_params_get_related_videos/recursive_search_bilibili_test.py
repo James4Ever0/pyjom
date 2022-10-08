@@ -87,6 +87,7 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
         ),
     )
 
+from typing import Literal
 
 def getCoverTargetFromCoverListDefault(
     cover_list,
