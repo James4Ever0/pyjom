@@ -22,7 +22,7 @@ async def main(sessdata="", bili_jct="", buvid3=""):
             "up_close_danmaku": close_danmaku,
             "up_close_reply": close_reply
         }
-    page = video_uploader.VideoUploaderPage(video_stream=open(videoPath, 'rb'), title=title, description=desc, extension=videoExtension) # are you sure?
+    page = video_uploader.VideoUploaderPage(video_stream=open(videoPath, 'rb'), title=title, description=description, extension=videoExtension) # are you sure?
     uploader = video_uploader.VideoUploader([page], meta, credential, threads=1, cover_path=cover_path)
 
     @uploader.on("__ALL__")
