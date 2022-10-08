@@ -73,6 +73,12 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
 def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original):
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
+    lambda image: imageDogCatCoverCropAdvanced(
+            image,
+            dog_or_cat=dog_or_cat_original,
+            area_threshold=0.7,
+            corner=False,
+        )
     import random
     random.shuffle(cover_list)
     reference_histogram_cover = random.choice(cover_list)
