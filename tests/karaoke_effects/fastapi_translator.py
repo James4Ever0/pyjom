@@ -75,7 +75,7 @@ from lazero.network.proxy.clash import (
     clashProxyStateManager,
 )
 
-proxyList = getProxyList()
+proxyList = getProxyList(timeout=5000)
 refreshProxyCounter = 0
 
 
@@ -86,7 +86,7 @@ def deeplTranslator(text, sleep=2, timeout=5, mod=40):
 
     refreshProxyCounter += 1
     if refreshProxyCounter % mod == (mod - 1):
-        proxyList = getProxyList()
+        proxyList = getProxyList(timeout=5000)
     proxyName = random.choice([proxy["name"] for proxy in proxyList] + ["DIRECT"])
     setProxyWithSelector(proxyName)
     # better use proxy instead. you need to config it here, and make sure the deepl adaptor uses the proxy.
