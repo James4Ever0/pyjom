@@ -36,9 +36,8 @@ def testProxyList(
 
 
 def setProxy(proxyName, port=9911):
-    clashUrl = localhostWithPort(port) + "/"
-    proxies/:name
-
+    clashUrl = localhostWithPort(port) + "/proxies/{}".format(proxyName)
+    
 
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
