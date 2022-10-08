@@ -23,9 +23,10 @@ def testProxyList(
     proxyList, port=9911, url="https://deepl.com", debug=False, timeout=3000 # in miliseconds?
 ):  # test the speed for given url
     # first, generate the proper list of requests.
+    params = {'timeout': timeout, 'url': url}
+
     for proxyName in proxyList:
         testUrl = localhostWithPort(port) + "/proxies/{}/delay".format(proxyName)
-        params = {'timeout': timeout, 'url': url}
         r = requests.get(testUrl, params=params)
         # we need to test the non-async version.
         req_json = r.json()
