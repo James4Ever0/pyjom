@@ -1,30 +1,48 @@
 from bilibili_api import sync, video_uploader, Credential
 
-async def main(sessdata="", bili_jct="", buvid3="",description="", dynamic="", tagString="", tagId=0,title="",close_danmaku=False, close_reply=False,videoPath="",cover_path=""):
+
+async def main(
+    sessdata="",
+    bili_jct="",
+    buvid3="",
+    description="",
+    dynamic="",
+    tagString="",
+    tagId=0,
+    title="",
+    close_danmaku=False,
+    close_reply=False,
+    videoPath="",
+    cover_path="",
+):
     videoExtension = videoPath.split(".")[-1].lower()
     credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # 具体请查阅相关文档
     meta = {
-            "copyright": 1, 
-            "source": "", # no source?
-            "desc": description,
-            "desc_format_id": 0,
-            "dynamic": dynamic, # could be the same as desc.
-            "interactive": 0,
-            "open_elec": 1,
-            "no_reprint": 1,
-            "subtitles": {
-                "lan": "",
-                "open": 0
-            },
-            "tag": tagString,
-            "tid": tagId, # original is 21. what is it?
-            "title": title,
-            "up_close_danmaku": close_danmaku,
-            "up_close_reply": close_reply
-        }
-    page = video_uploader.VideoUploaderPage(video_stream=open(videoPath, 'rb'), title=title, description=description, extension=videoExtension) # are you sure?
-    uploader = video_uploader.VideoUploader([page], meta, credential, threads=1, cover_path=cover_path)
+        "copyright": 1,
+        "source": "",  # no source?
+        "desc": description,
+        "desc_format_id": 0,
+        "dynamic": dynamic,  # could be the same as desc.
+        "interactive": 0,
+        "open_elec": 1,
+        "no_reprint": 1,
+        "subtitles": {"lan": "", "open": 0},
+        "tag": tagString,
+        "tid": tagId,  # original is 21. what is it?
+        "title": title,
+        "up_close_danmaku": close_danmaku,
+        "up_close_reply": close_reply,
+    }
+    page = video_uploader.VideoUploaderPage(
+        video_stream=open(videoPath, "rb"),
+        title=title,
+        description=description,
+        extension=videoExtension,
+    )  # are you sure?
+    uploader = video_uploader.VideoUploader(
+        [page], meta, credential, threads=1, cover_path=cover_path
+    )
 
     @uploader.on("__ALL__")
     async def ev(data):
