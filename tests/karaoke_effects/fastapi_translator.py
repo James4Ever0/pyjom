@@ -71,9 +71,10 @@ from lazero.network.proxy.clash import getProxyList, testProxyList, setProxyWith
 
 proxyList = getProxyList()
 
-def deeplTranslator(text, sleep=2, timeout=5):
+
+def deeplTranslator(text, sleep=2, timeout=5, mod=40):
     global proxyList, refreshProxyCounter
-    refreshProxyCOunter+=1
+    refreshProxyCounter+=1
     if refreshProxyCounter % mod == (mod-1):
         proxyList = getProxyList()
     useProxy(False)
