@@ -44,3 +44,4 @@ if __name__ == "__main__":
     proxyDelayList = zip(delayList,proxyList)
     for delayDict, proxyName in proxyDelayList:
         if "delay" in delayDict.keys():
+            delay = delayDict["delay"]
