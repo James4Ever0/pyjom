@@ -360,7 +360,7 @@ def getBilibiliPostMetadataForDogCat(
                                 # time to yield something.
                                 # detect this thing!
                                 # filtered_cover_list = []
-                                cover_target = getCoverTarget
+                                cover_target = getCoverTargetFromCoverList()
                                 random.shuffle(cover_list)
                                 reference_histogram_cover = random.choice(cover_list)
 
