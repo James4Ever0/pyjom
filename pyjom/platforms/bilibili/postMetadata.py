@@ -199,7 +199,7 @@ def getBilibiliPostMetadata(
             # print(result)
             # breakpoint()
 
-            from searchDataParser import parseSearchVideoResult
+            from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult
 
             from pyjom.commons import checkMinMaxDict
 
@@ -300,7 +300,7 @@ def getBilibiliPostMetadata(
                 bvid = random.choice(bvid_list)
                 v = video.Video(bvid=bvid)
                 videoInfo = sync(v.get_info())
-                from searchDataParser import parseVideoInfo
+                from pyjom.platforms.bilibili.searchDataParser import parseVideoInfo
 
                 primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(videoInfo)
                 # for videoMetadata in secondaryVideoInfoList:
@@ -309,7 +309,7 @@ def getBilibiliPostMetadata(
                 )
                 # then we get related videos.
                 result = sync(v.get_related())
-                from searchDataParser import parseVideoRelated
+                from pyjom.platforms.bilibili.searchDataParser import parseVideoRelated
 
                 # import json
 
