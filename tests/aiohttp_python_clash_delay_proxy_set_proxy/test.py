@@ -41,7 +41,7 @@ def setProxyWithSelector(
     proxyName, selector="GLOBAL", port: int = 9911, debug=False
 ):  # how to make sure it will use 'GLOBAL'? it needs to be done with the config.
     if debug:
-        print('select proxy %s with selector %s' % (proxyName, selector proxyName)
+        print('select proxy %s with selector %s' % (proxyName, selector))
     clashUrl = localhostWithPort(port) + "/proxies/{}".format(selector)
     r = requests.put(
         clashUrl, data=json.dumps({"name": proxyName}, ensure_ascii=False).encode()
