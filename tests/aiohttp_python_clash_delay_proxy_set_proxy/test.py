@@ -35,7 +35,7 @@ def testProxyList(
     return concurrentGet(url_list, processor=lambda x: x.json(), params=params)
 
 
-def setProxy(proxy, port=9911):
+def setProxy(proxyName, port=9911):
     ...
 
 
@@ -57,4 +57,3 @@ if __name__ == "__main__":
             info.update({"name": proxyName})
             validProxyDelayList.append(info)
     validProxyDelayList.sort(key=lambda x: x["delay"])
-    
