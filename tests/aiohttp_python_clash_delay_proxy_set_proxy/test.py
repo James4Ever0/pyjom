@@ -20,12 +20,20 @@ def getProxyList(port=9911, debug=False):
 
 
 def testProxyList(
-    proxyList, port=9911, url="https://deepl.com", debug=False, timeout=3000 # in miliseconds?
+    proxyList,
+    port=9911,
+    url="https://deepl.com",
+    debug=False,
+    timeout=3000,  # in miliseconds?
 ):  # test the speed for given url
     # first, generate the proper list of requests.
-    params = {'timeout': timeout, 'url': url}
-    url_list = [localhostWithPort(port) + "/proxies/{}/delay".format(proxyName) for proxyName in proxyList]
-    return concurrentGet(url_list,processor=lambda x: x.json(),params=params)
+    params = {"timeout": timeout, "url": url}
+    url_list = [
+        localhostWithPort(port) + "/proxies/{}/delay".format(proxyName)
+        for proxyName in proxyList
+    ]
+    return concurrentGet(url_list, processor=lambda x: x.json(), params=params)
+
 
 def setProxy(proxy, port=9911):
     ...
@@ -41,9 +49,12 @@ if __name__ == "__main__":
     proxyList = getProxyList(debug=True)
     # pprint.pprint(result)
     delayList = testProxyList(proxyList)
-    proxyDelayList = zip(delayList,proxyList)
+    proxyDelayList = zip(delayList, proxyList)
     for delayDict, proxyName in proxyDelayList:
-        if "delay" in delayDict.keys(): # we only get those with valid responses.
+        if "delay" in delayDict.keys():  # we only get those with valid responses.
             # delay = delayDict["delay"]
             info = delayDict.copy()
+            info.update({"name": proxyName})
             validProxyDelayList.append(info)
+    validProxyDelayList.sort(key=lambda x: x["delay"])
+    
