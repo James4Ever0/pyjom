@@ -9,7 +9,7 @@ from lazero.network.proxy.clash import (
 import requests
 
 if __name__ == "__main__":
-    validProxyDelayList = []
+    # validProxyDelayList = []
     proxyList = getProxyList(debug=True)
     # pprint.pprint(result)
     validProxyDelayList = testProxyList(proxyList, timeout=5000)
