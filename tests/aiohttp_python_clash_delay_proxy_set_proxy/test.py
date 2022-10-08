@@ -43,9 +43,9 @@ def setProxyWithSelector(proxyName, selector='GLOBAL',port=9911):
     except:
         import traceback
         traceback.print_exc()
-        
-        print(r.content)
-        print('error code:', r.status_code)
+        try:
+            print(r.content)
+            print('error code:', r.status_code)
         print(error when fetching )
 
 
