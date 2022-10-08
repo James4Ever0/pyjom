@@ -23,11 +23,11 @@ wbRev = OnlineAutoContentProducer(
             "fast": True,  # pass this flag to medialang export engine
             "render_ass": True,
             # also determine how to translate the lyrics, whether to translate or not.
-            "translate": True, # default: False
+            "translate": True,  # default: False
             # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
             # you can simply implement the method to cofigure and test ping for websites in lazero library so we can share the same code.
             # or you can borrow code from the web. some clash manager library for python.
-            "translate_method": "deepl", # default: baidu
+            "translate_method": "deepl",  # default: baidu
             # damn cold for this mac!
         }
     ],
