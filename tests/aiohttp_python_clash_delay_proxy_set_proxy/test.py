@@ -56,7 +56,7 @@ def setProxyWithSelector(proxyName, selector="GLOBAL", port=9911): # how to make
 
 def setProxyMode(port=9911):
     clashUrl = localhostWithPort(port)+"/configs"
-    r = requests.patch(clashUrl,data=json.dumps({'mode':}))
+    r = requests.patch(clashUrl,data=json.dumps({'mode':mode}))
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
     clashUrl = localhostWithPort(port) + "/configs"
