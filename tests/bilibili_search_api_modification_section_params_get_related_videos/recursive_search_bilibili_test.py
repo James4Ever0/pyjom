@@ -80,6 +80,8 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
             corner=False,
         )
     import random
+    if flip == 'random':
+        flip =
     random.shuffle(cover_list)
     reference_histogram_cover = random.choice(cover_list)
 
