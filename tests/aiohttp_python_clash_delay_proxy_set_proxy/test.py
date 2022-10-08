@@ -46,7 +46,7 @@ def setProxyWithSelector(proxyName, selector='GLOBAL',port=9911):
         try:
             print(r.content)
             print('error code:', r.status_code)
-        print("error when setting proxy with selector"")
+        print("error when setting proxy %s with selector %s" % (proxyName, selector))
 
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
