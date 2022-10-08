@@ -83,7 +83,7 @@ def getConnectionGateway(
     configs = r.json()
     http_port = configs['port']
     gateway = localhostWithPort(http_port)
-    return configs
+    return gateway
 
 
 if __name__ == "__main__":
