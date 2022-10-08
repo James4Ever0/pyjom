@@ -25,4 +25,4 @@ def getConnectionGateway(port=9911):  # get the clash local http proxy connectio
     ...
 
 if __name__ == "__main__":
-    getProxyList(debug=False)
+    getProxyList(debug=True)
