@@ -58,6 +58,10 @@ def setProxyConfig(port=9911, http_port=None,mode:Literal['Global','Rule','Direc
     # https://clash.gitbook.io/doc/restful-api/config
     # sure you can patch more things but that's enough for now.
     clashUrl = localhostWithPort(port)+"/configs"
+    configs = {}
+    if http_port:
+        configs.update({})
+    if 
     r = requests.patch(clashUrl,data=json.dumps({'mode':mode}))
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
