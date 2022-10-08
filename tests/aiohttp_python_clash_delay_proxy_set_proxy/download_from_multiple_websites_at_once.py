@@ -11,7 +11,7 @@ async def get(url, processor=lambda x: x, params = {}):
 
 def concurrentGet(url_list, processor=lambda x: x, params = {} debug=False):
     loop = asyncio.get_event_loop()
-    multiple_requests = [get(url, processor=processor) for url in url_list]
+    multiple_requests = [get(url, processor=processor, params=params) for url in url_list]
     results = loop.run_until_complete(asyncio.gather(*multiple_requests))
     if debug:
         print("Results: %s" % results)
