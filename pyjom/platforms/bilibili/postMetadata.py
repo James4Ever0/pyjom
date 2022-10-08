@@ -7,6 +7,8 @@ from lazero.utils.logger import sprint
             from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult
 
                 from pyjom.platforms.bilibili.searchDataParser import parseVideoRelated
+                from pyjom.platforms.bilibili.searchDataParser import parseVideoInfo
+
 
 
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
@@ -305,7 +307,6 @@ def getBilibiliPostMetadata(
                 bvid = random.choice(bvid_list)
                 v = video.Video(bvid=bvid)
                 videoInfo = sync(v.get_info())
-                from pyjom.platforms.bilibili.searchDataParser import parseVideoInfo
 
                 primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(videoInfo)
                 # for videoMetadata in secondaryVideoInfoList:
