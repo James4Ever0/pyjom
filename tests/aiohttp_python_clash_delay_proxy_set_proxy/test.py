@@ -14,7 +14,7 @@ def getProxyList(port=9911, debug=False):
     if debug:
         print(clashUrl)
     r = requests.get('http://localhost:9911')
-    return r.json()
+    return r.content
 
 
 def testProxyList(
