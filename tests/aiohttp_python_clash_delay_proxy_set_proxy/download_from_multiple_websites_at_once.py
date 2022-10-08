@@ -8,7 +8,6 @@ async def get(url, processor=lambda x: x, params={}):
         async with session.get(url, params=params) as response:
             result = await processor(response) # do we need to _await_?
             return result
-            # so far it is good. but we need something better than that.
 
 
 def concurrentGet(url_list, processor=lambda x: x, params={}, debug=False):
