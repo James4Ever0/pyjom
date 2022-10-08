@@ -10,6 +10,7 @@ async def download_file(session: aiohttp.ClientSession, url: str):
         # For large files use response.content.read(chunk_size) instead.
         return url, await response.read()
 
+
 @asyncio.coroutine
 def download_multiple(session: aiohttp.ClientSession):
     urls = (
@@ -29,7 +30,7 @@ def download_multiple(session: aiohttp.ClientSession):
 async def main(loop):
     # with closing(asyncio.get_event_loop()) as loop:
     async with aiohttp.ClientSession(loop=loop) as session:
-        result = [await x for x in download_multiple(session)]
+        result = [wx for x in download_multiple(session)]
         print('finished:', result)
 
 loop = asyncio.get_event_loop()
