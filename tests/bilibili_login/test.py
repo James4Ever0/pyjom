@@ -12,4 +12,5 @@ userName = sync(user.get_self_info(credential))['name']
 print("欢迎，", userName, "!")
 credential.buvid3
 credential.bili_jct
+credential.sessdata
 credential.dedeuserid # this is userid, better use this instead?
