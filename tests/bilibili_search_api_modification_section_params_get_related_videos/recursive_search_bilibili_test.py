@@ -190,6 +190,7 @@ def getBilibiliPostMetadataForDogCat(
             def updateMyLists(
                 videoMetadata,
                 duration_limit={"min": 70, "max": 5 * 60},
+                titleLengthLimit = 
                 play_limit={"min": 10000},
                 debugTag="debug",
             ):
