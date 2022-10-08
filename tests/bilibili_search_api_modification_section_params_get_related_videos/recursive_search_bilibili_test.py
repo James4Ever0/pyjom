@@ -120,6 +120,23 @@ def getCoverTargetFromCoverListDefault(
             break
     return cover_target
 
+def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
+    from pyjom.imagetoolbox import (
+        # imageLoader,
+        imageDogCatCoverCropAdvanced,
+        # imageHistogramMatch,
+    )
+
+    return getCoverTargetFromCoverListDefault(
+        cover_list,
+        dog_or_cat_original,
+        filter_function=lambda image: imageDogCatCoverCropAdvanced(
+            image,
+            dog_or_cat=dog_or_cat_original,
+            area_threshold=0.7,
+            corner=False,
+        ),
+    )
 
 BSP = search.bilibiliSearchParams()
 import random
