@@ -71,8 +71,8 @@ from lazero.network.proxy.clash import getProxyList, testProxyList, setProxyWith
 
 from contextlib import AbstractContextManager
 
-class tmpdir(AbstractContextManager):
-    def __init__(self, path=None):
+class clashProxyState(AbstractContextManager):
+    def __init__(self, enter, exit):
         assert type(path) == str
         if not os.path.isabs(path):
             path = os.path.abspath(path)
