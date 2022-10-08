@@ -188,7 +188,7 @@ def getBilibiliPostMetadata(
                 search.search_by_type(
                     keyword=metatopicString,
                     params={
-                        "tids": getTid[dog_or_cat](),
+                        "tids": current_tid,
                         "duration": duration,
                         "order": randomOrder(),
                     },
