@@ -18,6 +18,7 @@ def getProxyList(port: int = 9911, debug=False, nosubcatego):
     r = requests.get(clashUrl)
     # return r.content
     proxyInfo = r.json()
+    pprint(proxyInfo)
 
     # proxyList = [key for key in proxyInfo["proxies"].keys()]
     # return proxyList
