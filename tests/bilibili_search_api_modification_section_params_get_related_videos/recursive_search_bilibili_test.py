@@ -190,7 +190,7 @@ def getBilibiliPostMetadataForDogCat(
             def updateMyLists(
                 videoMetadata,
                 duration_limit={"min": 70, "max": 5 * 60},
-                titleLengthLimit = 
+                titleLengthLimit = {"min": 7, "max": 17},
                 play_limit={"min": 10000},
                 debugTag="debug",
             ):
@@ -214,7 +214,7 @@ def getBilibiliPostMetadataForDogCat(
                 ) = videoMetadata
                 # print("VIDEO_METADATA",videoMetadata)
                 # breakpoint()
-                if not checkMinMaxDict(len(title), {"min": 7, "max": 17}):
+                if not checkMinMaxDict(len(title), titleLengthLimit):
                     return
                 if not filterTitleWithCoreTopicSet(title, static_core_topic_list):
                     return
