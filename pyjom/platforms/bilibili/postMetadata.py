@@ -50,7 +50,6 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
     return list(set(selected_tags))
 
 
-from typing import Literal
 
 
 def getCoverTargetFromCoverListDefault(
