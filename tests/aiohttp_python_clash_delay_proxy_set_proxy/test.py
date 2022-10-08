@@ -23,6 +23,7 @@ if __name__ == "__main__":
     gateway = getConnectionGateway()
     print('valid proxies:', len(validProxyDelayList))
     validProxyName = validProxyDelayList[1]["name"]
+    
     setProxyConfig(mode="Global")
     # you can switch to 'Rule' if you want the baidu translation
     setProxyWithSelector(validProxyName, debug=True)
