@@ -54,7 +54,7 @@ def setProxyWithSelector(proxyName, selector="GLOBAL", port=9911): # how to make
             ...
         print("error when setting proxy %s with selector %s" % (proxyName, selector))
 
-def setProxyConfig(port=9911, http_port=None,mode):
+def setProxyConfig(port=9911, http_port=None,mode=Literal[]):
     # https://clash.gitbook.io/doc/restful-api/config
     # sure you can patch more things but that's enough for now.
     clashUrl = localhostWithPort(port)+"/configs"
