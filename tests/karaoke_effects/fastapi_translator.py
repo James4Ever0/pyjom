@@ -74,7 +74,7 @@ from lazero.network.proxy.clash import (
     clashProxyStateManager,
 )
 
-proxyList = getTestedProxyList()
+proxyList = []
 refreshProxyCounter = 0
 
 
