@@ -9,6 +9,8 @@ from pyjom.platforms.bilibili.searchDataParser import (
     parseVideoRelated,
     parseVideoInfo,
 )
+import os
+
 from typing import Literal
 
 
@@ -40,7 +42,6 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
 
 
 def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=2):
-    import random
 
     selected_tags = random.sample(tag_list, selected_tag_groups)
     selected_tags = [
