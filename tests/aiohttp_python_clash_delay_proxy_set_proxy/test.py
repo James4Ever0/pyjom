@@ -7,7 +7,7 @@ if __name__ == "__main__":
     validProxyDelayList = []
     proxyList = getProxyList(debug=True)
     # pprint.pprint(result)
-    delayList = testProxyList(proxyList)
+    delayList = testProxyList(proxyList) # better change the timeout to 5000 or 6000.
     proxyDelayList = zip(delayList, proxyList)
     for delayDict, proxyName in proxyDelayList:
         if "delay" in delayDict.keys():  # we only get those with valid responses.
