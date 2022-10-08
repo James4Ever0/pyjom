@@ -41,8 +41,4 @@ if __name__ == "__main__":
     proxyList = getProxyList(debug=True)
     # pprint.pprint(result)
     delayList = testProxyList(proxyList)
-        print(result)
-        # {'message': 'Timeout'}
-        # {'message': 'An error occurred in the delay test'}
-        # {'delay': 1760}
-        breakpoint()
+    proxyDelayList 
