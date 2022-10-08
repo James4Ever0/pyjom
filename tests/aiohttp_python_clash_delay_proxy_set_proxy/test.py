@@ -45,4 +45,4 @@ if __name__ == "__main__":
 
     result = getProxyList(debug=True)
     pprint.pprint(result)
-    for result in 
+    for result in testProxyList()
