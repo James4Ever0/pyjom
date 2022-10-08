@@ -113,4 +113,4 @@ if __name__ == "__main__":
 #  'socks-port': 0,
 #  'tproxy-port': 0}
     gateway = getConnectionGateway()
-    setProxyConfig(validProxyDelayList,)
+    setProxyConfig(validProxyDelayList[])
