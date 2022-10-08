@@ -22,7 +22,7 @@ def getProxyList(port=9911, debug=False):
 def testProxyList(
     proxyList, port=9911, url="https://deepl.com", debug=False,timeout=3
 ):  # test the speed for given url
-    ...
+    # first, generate the proper list of requests.
 
 
 def setProxy(proxy, port=9911):
