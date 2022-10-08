@@ -72,6 +72,7 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
 
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
+    return getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original)
 def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: image,histogramMatch=True,delta=0.2,flip:Literal[True, False, 'random']=True):
     lambda image: imageDogCatCoverCropAdvanced(
             image,
