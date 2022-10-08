@@ -1,5 +1,6 @@
 from download_from_multiple_websites_at_once import concurrentGet
 from lazero.network.proxy.clash import getProxyList, testProxyList, getConnectionGateway, setProxyConfig,setProxyWithSelector
+import requests
 
 if __name__ == "__main__":
 
