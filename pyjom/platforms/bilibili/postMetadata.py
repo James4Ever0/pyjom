@@ -10,8 +10,15 @@ from pyjom.platforms.bilibili.searchDataParser import (
     parseVideoInfo,
 )
 import os
-
+import random
 from typing import Literal
+from pyjom.imagetoolbox import (
+    imageLoader,
+    imageDogCatCoverCropAdvanced,
+    imageHistogramMatch,
+)
+BSP = search.bilibiliSearchParams()
+from pyjom.commons import checkMinMaxDict
 
 
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
@@ -63,7 +70,7 @@ def getCoverTargetFromCoverListDefault(
     delta=0.2,
     flip: Literal[True, False, "random"] = True,
 ):  # default function does not process this tag.
-    import random
+    # import random
 
     if flip == "random":
         flip = random.choice([True, False])
@@ -76,11 +83,11 @@ def getCoverTargetFromCoverListDefault(
 
         os.environ["http"] = ""
         os.environ["https"] = ""
-        from pyjom.imagetoolbox import (
-            imageLoader,
-            # imageDogCatCoverCropAdvanced,
-            imageHistogramMatch,
-        )
+        # from pyjom.imagetoolbox import (
+        #     imageLoader,
+        #     # imageDogCatCoverCropAdvanced,
+        #     imageHistogramMatch,
+        # )
 
         image = imageLoader(cover)
         cropped_image = filter_function(image)
@@ -97,11 +104,6 @@ def getCoverTargetFromCoverListDefault(
 
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
-    from pyjom.imagetoolbox import (
-        # imageLoader,
-        imageDogCatCoverCropAdvanced,
-        # imageHistogramMatch,
-    )
 
     return getCoverTargetFromCoverListDefault(
         cover_list,
@@ -115,8 +117,7 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
     )
 
 
-BSP = search.bilibiliSearchParams()
-import random
+# import random
 
 
 def getBilibiliPostMetadata(
@@ -207,7 +208,6 @@ def getBilibiliPostMetadata(
             # print(result)
             # breakpoint()
 
-            from pyjom.commons import checkMinMaxDict
 
             def updateMyLists(
                 videoMetadata,
