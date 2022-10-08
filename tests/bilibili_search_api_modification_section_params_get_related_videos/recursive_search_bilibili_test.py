@@ -467,7 +467,6 @@ def getBilibiliPostMetadataForDogCat():
     return getBilibiliPostMetadata(
         getMetatopic=getMetatopic,
         getTids=getTids,
-        
         getCoverTargetFromCoverList=getCoverTargetFromCoverListForDogCat,
     )
 
