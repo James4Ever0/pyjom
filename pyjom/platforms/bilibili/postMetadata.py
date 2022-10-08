@@ -202,7 +202,6 @@ def getBilibiliPostMetadata(
             # print(result)
             # breakpoint()
 
-            from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult
 
             from pyjom.commons import checkMinMaxDict
 
