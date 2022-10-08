@@ -103,12 +103,12 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
         cropped_image = filter_function(image)
         if cropped_image is not None:
             if histogramMatch:
-                cropped_image_processed = imageHistogramMatch(
+                cropped_image = imageHistogramMatch(
                 cropped_image, reference_histogram_cover, delta=delta
             )
             if flip:
                 cropped_image_color_transfered_fliped = cv2.flip(
-                cropped_image_processed, 1
+                cropped_image, 1
             )
             cover_target = cropped_image_color_transfered_fliped
             break
