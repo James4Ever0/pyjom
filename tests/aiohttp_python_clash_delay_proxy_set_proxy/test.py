@@ -82,7 +82,7 @@ def getConnectionGateway(
     r = requests.get(clashUrl)
     configs = r.json()
     port = configs['port']
-    gateway = 'http://'
+    gateway = localhostWithPort(port) +
     return configs
 
 
