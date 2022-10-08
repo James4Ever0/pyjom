@@ -9,21 +9,22 @@ import requests
 
 # so, how do you get the proxy list and test the speed for deepl.com?
 def getProxyList(port=9911, debug=False):
-    clashUrl = localhostWithPort(port)+"/proxies" # this will reduce one layer of "/"
+    clashUrl = localhostWithPort(port) + "/proxies"  # this will reduce one layer of "/"
     if debug:
         print(clashUrl)
     r = requests.get(clashUrl)
     # return r.content
     proxyInfo = r.json()
-    proxyList = [key for key in proxyInfo['proxies'].keys()]
+    proxyList = [key for key in proxyInfo["proxies"].keys()]
     return proxyList
 
+
 def testProxyList(
-    proxyList, port=9911, url="https://deepl.com", debug=False,timeout=3
+    proxyList, port=9911, url="https://deepl.com", debug=False, timeout=3
 ):  # test the speed for given url
     # first, generate the proper list of requests.
     for proxyName in proxyList:
-        testUrl =  localhostWithPort(port)+"/proxies/{}/delay".format(proxyName)
+        testUrl = localhostWithPort(port) + "/proxies/{}/delay".format(proxyName)
 
 
 def setProxy(proxy, port=9911):
