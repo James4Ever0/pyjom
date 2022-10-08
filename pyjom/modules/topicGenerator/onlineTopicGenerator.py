@@ -7,42 +7,6 @@ import requests
 from typing import Literal
 
 
-def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
-    value = False
-    for core_topic in core_topic_set:
-        if core_topic in title:
-            value = True
-            break
-    if debug:
-        print("TITLE:", title)
-        print("CORE TOPIC SET:", core_topic_set)
-        print("VALUE:", value)
-        breakpoint()
-    return value
-
-
-def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
-    newTitleList = []
-    for title in titleList:
-        result = filterTitleWithCoreTopicSet(title, core_topic_set)
-        if result:
-            newTitleList.append(title)
-    if debug:
-        print("TITLE LIST:", titleList)
-        print("CORE TOPIC SET:", core_topic_set)
-        sprint("NEW TITLE LIST:", newTitleList)
-    return newTitleList
-
-
-def randomChoiceTagList(tag_list):
-    import random
-
-    selected_tags = random.sample(tag_list, 3)
-    selected_tags = [random.sample(tags, min(len(tags), 2)) for tags in selected_tags]
-    # flatten this thing.
-    selected_tags = flattenUnhashableList(selected_tags)
-    return list(set(selected_tags))
-
 
 def removeKeywordDuplicates(keywords):
     keywordsType = type(keywords)
