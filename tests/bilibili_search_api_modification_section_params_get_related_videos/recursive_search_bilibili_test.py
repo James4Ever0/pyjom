@@ -136,7 +136,7 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
 BSP = search.bilibiliSearchParams()
 
 
-def getBilibiliPostMetadataForDogCat(
+def getBilibiliPostMetadata(
     sleepTime=2,
     getMetatopic={
         "dog": dog_metatopic,
