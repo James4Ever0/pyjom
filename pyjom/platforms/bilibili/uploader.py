@@ -6,9 +6,9 @@ async def main(sessdata="", bili_jct="", buvid3=""):
     meta = {
             "copyright": 1,
             "source": "",
-            "desc": "desc",
+            "desc": desc,
             "desc_format_id": 0,
-            "dynamic": dynamic, # 
+            "dynamic": dynamic, # could be the same as desc.
             "interactive": 0,
             "open_elec": 1,
             "no_reprint": 1,
