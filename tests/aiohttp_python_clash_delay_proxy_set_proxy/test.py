@@ -43,6 +43,6 @@ def getConnectionGateway(port=9911):  # get the clash local http proxy connectio
 if __name__ == "__main__":
     import pprint
 
-     = getProxyList(debug=True)
+    proxyList = getProxyList(debug=True)
     # pprint.pprint(result)
-    for result in testProxyList()
+    for result in testProxyList(proxyList)
