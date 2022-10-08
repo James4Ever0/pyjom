@@ -69,13 +69,12 @@ def baiduTranslator(text, sleep=1):  # target language must be chinese.
 
 
 from lazero.network.proxy.clash import (
-    getProxyList,
-    testProxyList,
+    getTestedProxyList,
     setProxyWithSelector,
     clashProxyStateManager,
 )
 
-proxyList = getProxyList(timeout=5000)
+proxyList = getTestedProxyList()
 refreshProxyCounter = 0
 
 
