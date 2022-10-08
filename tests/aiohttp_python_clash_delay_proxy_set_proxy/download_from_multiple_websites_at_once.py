@@ -3,7 +3,7 @@ import asyncio
 
 # clearly it is not clean enough.
 # also i worry about the memory leakage, open file limit exceeding.
-async def get(url):
+async def get(url, processor=lambda x: x):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
             return response
