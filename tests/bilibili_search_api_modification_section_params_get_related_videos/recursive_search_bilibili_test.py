@@ -26,6 +26,8 @@ import cv2
 #     ],
 #     "dynamic": [["可爱", "萌", "萌宠", "行为", "燃"]],
 # }
+
+# this is task specific.
 dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
 
 cat_metatopic = {
@@ -68,15 +70,16 @@ def filterTitleWithCoreTopicSet(title, core_topic_set):
     return value
 
 
-def filterTitleListWithCoreTopicSet(titleList, core_topic_set):
+def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
     newTitleList = []
     for title in titleList:
         result = filterTitleWithCoreTopicSet(title, core_topic_set)
         if result:
             newTitleList.append(title)
-    print("TITLE LIST:", titleList)
-    print("CORE TOPIC SET:", core_topic_set)
-    sprint("NEW TITLE LIST:", newTitleList)
+    if debug:
+        print("TITLE LIST:", titleList)
+        print("CORE TOPIC SET:", core_topic_set)
+        sprint("NEW TITLE LIST:", newTitleList)
     return newTitleList
 
 
