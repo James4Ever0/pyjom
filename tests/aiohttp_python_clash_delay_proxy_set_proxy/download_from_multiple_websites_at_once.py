@@ -32,5 +32,5 @@ async def main():
         async with aiohttp.ClientSession() as session:
             result = loop.run_until_complete(download_multiple(session))
             print('finished:', result)
-
-loop.run_until_complete
+with closing(asyncio.get_event_loop()) as loop:
+    loop.run_until_complete(main)
