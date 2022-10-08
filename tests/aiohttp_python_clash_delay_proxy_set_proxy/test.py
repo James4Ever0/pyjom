@@ -10,7 +10,7 @@ localhostWithPort = lambda port: "{}:{}".format(localhost, port)
 import requests
 
 # so, how do you get the proxy list and test the speed for deepl.com?
-def getProxyList(port:int=9911, debug=False):
+def getProxyList(port: int = 9911, debug=False):
     clashUrl = localhostWithPort(port) + "/proxies"  # this will reduce one layer of "/"
     if debug:
         print(clashUrl)
@@ -23,7 +23,7 @@ def getProxyList(port:int=9911, debug=False):
 
 def testProxyList(
     proxyList,
-    port:int=9911,
+    port: int = 9911,
     url="https://deepl.com",
     debug=False,
     timeout=3000,  # in miliseconds?
@@ -38,7 +38,7 @@ def testProxyList(
 
 
 def setProxyWithSelector(
-    proxyName, selector="GLOBAL", port:int=9911
+    proxyName, selector="GLOBAL", port: int = 9911
 ):  # how to make sure it will use 'GLOBAL'? it needs to be done with the config.
     clashUrl = localhostWithPort(port) + "/proxies/{}".format(selector)
     r = requests.put(
@@ -59,7 +59,7 @@ def setProxyWithSelector(
 
 
 def setProxyConfig(
-    port:int=9911,
+    port: int = 9911,
     http_port: Union[None, int] = None,
     mode: Literal["Global", "Rule", "Direct", None] = None,
 ):
@@ -75,7 +75,9 @@ def setProxyConfig(
     assert r.status_code == 204
 
 
-def getConnectionGateway(port:int=9911):  # get the clash local http proxy connection port.
+def getConnectionGateway(
+    port: int = 9911,
+):  # get the clash local http proxy connection port.
     clashUrl = localhostWithPort(port) + "/configs"
     r = requests.get(clashUrl)
     configs = r.json()
