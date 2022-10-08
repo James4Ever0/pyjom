@@ -7,7 +7,7 @@ import requests
 
 # so, how do you get the proxy list and test the speed for deepl.com?
 def getProxyList(port=9911):
-    clashUrl = localhostWithPort(port) / localhostWithPort
+    clashUrl = localhostWithPort(port) / 
 
 
 def testProxyList(
