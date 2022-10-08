@@ -116,8 +116,8 @@ BSP = search.bilibiliSearchParams()
 
 def getBilibiliPostMetadata(
     sleepTime=2,
-    getMetatopic={}, 
-    getTids={}, # these two are not specified here.
+    getMetatopic={},
+    getTids={},  # these two are not specified here.
     orders=[
         BSP.all.order.最多点击,
         BSP.all.order.最多收藏,
@@ -404,8 +404,7 @@ def getBilibiliPostMetadata(
             traceError("error when fetching metatopic")
 
 
-def getBilibiliPostMetadataForDogCat(
-):
+def getBilibiliPostMetadataForDogCat():
     dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
 
     cat_metatopic = {
@@ -428,18 +427,19 @@ def getBilibiliPostMetadataForDogCat(
         ],
         "dynamic": dynamics,
     }
-    getMetatopic={
+    getMetatopic = {
         "dog": dog_metatopic,
         "cat": cat_metatopic,
     }
-    getTids={
+    getTids = {
         "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
         "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
     }
     return getBilibiliPostMetadata(
-    getMetatopic=getMetatopic,
-    getTids=getTids,)
-    
+        getMetatopic=getMetatopic,
+        getTids=getTids,
+    )
+
 
 if __name__ == "__main__":
     for (
