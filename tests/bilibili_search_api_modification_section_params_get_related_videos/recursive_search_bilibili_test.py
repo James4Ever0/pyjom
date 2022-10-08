@@ -133,6 +133,7 @@ def getBilibiliPostMetadataForDogCat(
     # getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人])
     # getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人])
     # getTid = {"dog": getDogTid, "cat": getCatTid}
+    getTid = {key: lambda: random.choice(value) for key, value in getTids.items()}
 
     getRandomPage = lambda: random.randint(1, 5)  # not so broad.
     # getRandomPage = lambda: random.randint(1, 50)  # broad range!
