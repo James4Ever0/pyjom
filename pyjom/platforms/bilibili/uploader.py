@@ -4,8 +4,8 @@ async def main(sessdata="", bili_jct="", buvid3=""):
     credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # 具体请查阅相关文档
     meta = {
-            "copyright": 1,
-            "source": "",
+            "copyright": 1, 
+            "source": "", # no source?
             "desc": desc,
             "desc_format_id": 0,
             "dynamic": dynamic, # could be the same as desc.
