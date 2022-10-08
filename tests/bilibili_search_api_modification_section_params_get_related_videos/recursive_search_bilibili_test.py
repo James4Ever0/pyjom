@@ -63,10 +63,11 @@ def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
         if core_topic in title:
             value = True
             break
-    # print("TITLE:", title)
-    # print("CORE TOPIC SET:", core_topic_set)
-    # print('VALUE:', value)
-    # breakpoint()
+    if debug:
+        print("TITLE:", title)
+        print("CORE TOPIC SET:", core_topic_set)
+        print('VALUE:', value)
+        breakpoint()
     return value
 
 
