@@ -43,5 +43,5 @@ if __name__ == "__main__":
     delayList = testProxyList(proxyList)
     proxyDelayList = zip(delayList,proxyList)
     for delayDict, proxyName in proxyDelayList:
-        if "delay" in delayDict.keys():
+        if "delay" in delayDict.keys(): # we only get those with valid responses.
             delay = delayDict["delay"]
