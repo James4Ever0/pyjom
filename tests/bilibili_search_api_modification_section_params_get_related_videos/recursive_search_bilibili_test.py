@@ -389,12 +389,9 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
                                     clearMyLists()
         except:
             import time
-
             time.sleep(sleepTime)
             from lazero.utils.logger import traceError
-
             traceError("error when fetching metatopic")
-
 
 if __name__ == "__main__":
     for (
