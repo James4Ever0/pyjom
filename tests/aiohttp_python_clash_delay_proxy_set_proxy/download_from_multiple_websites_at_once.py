@@ -29,7 +29,7 @@ def download_multiple(session: aiohttp.ClientSession):
 
 async def main():
     with closing(asyncio.get_event_loop()) as loop:
-        with aiohttp.ClientSession() as session:
+        async with aiohttp.ClientSession() as session:
             result = loop.run_until_complete(download_multiple(session))
             print('finished:', result)
 
