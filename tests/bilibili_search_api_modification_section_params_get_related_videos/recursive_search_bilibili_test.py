@@ -128,7 +128,6 @@ def getBilibiliPostMetadataForDogCat(
         key: lambda: getMetaTopicString(value) for key, value in getMetatopic.items()
     }
 
-    BSP = search.bilibiliSearchParams()
 
     getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人])
     getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人])
