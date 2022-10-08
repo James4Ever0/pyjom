@@ -10,4 +10,5 @@ except:
     exit()
 print("欢迎，", sync(user.get_self_info(credential))['name'], "!")
 credential.buvid3
+credential.bili_jct
 credential.
