@@ -1,4 +1,5 @@
 from pyjom.commons import *
+import cv2
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
