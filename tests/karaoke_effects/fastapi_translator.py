@@ -29,7 +29,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-import time
+# import time
 
 # you want to wait? or you want to swap?
 
@@ -67,19 +67,28 @@ def baiduTranslator(text, sleep=1):  # target language must be chinese.
             print("ERROR ON BAIDU TRANSLATOR")
             return None
 
-from lazero.network.proxy.clash import getProxyList, testProxyList, setProxyWithSelector, clashProxyStateManager
+
+from lazero.network.proxy.clash import (
+    getProxyList,
+    testProxyList,
+    setProxyWithSelector,
+    clashProxyStateManager,
+)
 
 proxyList = getProxyList()
 refreshProxyCounter = 0
 
+
 def deeplTranslator(text, sleep=2, timeout=5, mod=40):
     global proxyList, refreshProxyCounter
-    import random
-    refreshProxyCounter+=1
-    if refreshProxyCounter % mod == (mod-1):
-        proxyList = getProxyList()
-    random.choice([proxy['name'] for proxy in proxyList]+[])
     useProxy(False)
+    import random
+
+    refreshProxyCounter += 1
+    if refreshProxyCounter % mod == (mod - 1):
+        proxyList = getProxyList()
+    proxyName = random.choice([proxy["name"] for proxy in proxyList] + ["DIRECT"])
+    setProxyWithSelector(proxyName)
     # better use proxy instead. you need to config it here, and make sure the deepl adaptor uses the proxy.
     import requests
     import time
@@ -88,7 +97,7 @@ def deeplTranslator(text, sleep=2, timeout=5, mod=40):
     lock = filelock.FileLock(
         "/root/Desktop/works/pyjom/tests/karaoke_effects/deepl_translator.lock"
     )
-    with clashProxyStateManager('Global','Rule'):
+    with clashProxyStateManager("Global", "Rule"):
         with lock:
             time.sleep(sleep)
             port = 8281
@@ -175,7 +184,10 @@ def metaTranslator(text, backend="baidu"):
     import random
 
     getUseDirect = lambda: False
-    backends = {"baidu":(baiduTranslator,lambda: True), 'deepl':(deeplTranslator,lambda: True)}
+    backends = {
+        "baidu": (baiduTranslator, lambda: True),
+        "deepl": (deeplTranslator, lambda: True),
+    }
     translator, getUseDirect = backends[backend]
     proxyName = None
     firstTime = True
@@ -231,16 +243,19 @@ def read_root():
     # waitForServerUp(8677, "clash update controller")  # probe the clash updator
     return "unified translator hooked on some clash server"
 
+
 translatedDict = {}
 
 translatedDictCacheLimit = 100
 
+
 @app.get("/translate")
 def read_item(backend: str, text: str):
     global translatedDict
-    if len(list(translatedDict.keys()))>translatedDictCacheLimit:
+    if len(list(translatedDict.keys())) > translatedDictCacheLimit:
         mkeys = list(translatedDict.keys())
         import random
+
         random.shuffle(mkeys)
         for key in mkeys[:translatedDictCacheLimit]:
             del translatedDict[key]
@@ -249,10 +264,10 @@ def read_item(backend: str, text: str):
         code = 400
         result = "INVALID BACKEND"
     else:
-        if len(text)<30 and text in translatedDict.keys():
+        if len(text) < 30 and text in translatedDict.keys():
             result = translatedDict[text]
         else:
             result = metaTranslator(text, backend=backend)
-            if len(result)<30 and len(text)<30:
-                translatedDict.update({text:result})
+            if len(result) < 30 and len(text) < 30:
+                translatedDict.update({text: result})
     return {"code": code, "result": result}
