@@ -70,8 +70,8 @@ def baiduTranslator(text, sleep=1):  # target language must be chinese.
 
 
 def deeplTranslator(text, sleep=2, timeout=3):
-    # useProxy(False)
-    # better use proxy instead.
+    useProxy(False)
+    # better use proxy instead. you need to config it here, and make sure 
     import requests
     import time
     import filelock
