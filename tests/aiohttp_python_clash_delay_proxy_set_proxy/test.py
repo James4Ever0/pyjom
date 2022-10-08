@@ -47,3 +47,4 @@ if __name__ == "__main__":
     # pprint.pprint(result)
     for result in testProxyList(proxyList):
         print(result)
+        breakpoint()
