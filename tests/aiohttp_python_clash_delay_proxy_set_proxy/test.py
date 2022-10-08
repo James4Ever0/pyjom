@@ -119,7 +119,7 @@ if __name__ == "__main__":
     #  'tproxy-port': 0}
     gateway = getConnectionGateway()
     validProxyName = validProxyDelayList[11]["name"]
-    setProxyConfig(mode='')
+    setProxyConfig(mode='Global')
     setProxyWithSelector(validProxyName, debug=True)
     # now use the proxy!
     r = requests.get("https://deepl.com", proxies={"http": gateway, "https": gateway})
