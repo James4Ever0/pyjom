@@ -64,7 +64,7 @@ def setProxyConfig(port=9911, http_port=None,mode:Literal['Global','Rule','Direc
         configs.update({'port':http_port})
     if mode:
         configs.update({'mode':mode})
-    r = requests.patch(clashUrl,data=json.dumps({'mode':mode}))
+    r = requests.patch(clashUrl,data=json.dumps(configs))
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
     clashUrl = localhostWithPort(port) + "/configs"
