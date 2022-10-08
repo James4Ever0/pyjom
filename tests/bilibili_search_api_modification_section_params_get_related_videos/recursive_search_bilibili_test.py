@@ -85,7 +85,6 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
 
 def randomChoiceTagList(tag_list):
     import random
-
     selected_tags = random.sample(tag_list, 3)
     selected_tags = [random.sample(tags, min(len(tags), 2)) for tags in selected_tags]
     # flatten this thing.
@@ -95,7 +94,6 @@ def randomChoiceTagList(tag_list):
 
 def getBilibiliPostMetadataForDogCat(sleepTime=2):
     import random
-
     selected_topic_list_dict = {"dog": [], "cat": []}
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
     dog_or_cat = randomTarget()
