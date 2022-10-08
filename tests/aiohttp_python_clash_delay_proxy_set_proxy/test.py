@@ -10,4 +10,4 @@ def testProxyList(proxyList,port=...):
 def setProxy(proxy, port=...):
     ...
 
-def getConnectionGateway(port=...): # get the clash local http proxy 
+def getConnectionGateway(port=...): # get the clash local http proxy connection port.
