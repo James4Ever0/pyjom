@@ -124,8 +124,7 @@ def getBilibiliPostMetadataForDogCat(
         bvid_list = []
 
     getKeywords = {
-        key: lambda: getMetaTopicString(value),
-        "cat": lambda: getMetaTopicString(cat_metatopic),
+        key: lambda: getMetaTopicString(value) for key, value in getMetatopic.items()
     }
 
     BSP = search.bilibiliSearchParams()
