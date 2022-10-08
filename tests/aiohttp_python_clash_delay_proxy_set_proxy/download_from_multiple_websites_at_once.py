@@ -10,8 +10,8 @@ async def get(url):
 
 def concurrentGet(url_list):
 loop = asyncio.get_event_loop()
-multiple_requests = [get(url) for url in url_list]
+    multiple_requests = [get(url) for url in url_list]
 
-results = loop.run_until_complete(asyncio.gather(*multiple_requests))
+    results = loop.run_until_complete(asyncio.gather(*multiple_requests))
 
-print("Results: %s" % results)
+    print("Results: %s" % results)
