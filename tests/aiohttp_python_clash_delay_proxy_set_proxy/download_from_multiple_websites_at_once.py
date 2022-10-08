@@ -1,6 +1,7 @@
 import aiohttp
 import asyncio
 
+# clearly it is not clean enough.
 async def get(url):
     async with aiohttp.ClientSession() as session:
           async with session.get(url) as response:
