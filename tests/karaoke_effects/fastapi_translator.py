@@ -74,7 +74,7 @@ proxyList = getProxyList()
 def deeplTranslator(text, sleep=2, timeout=5):
     global proxyList, refreshProxyCounter
     refreshProxyCOunter+=1
-    if refreshProxyCounter 
+    if refreshProxyCounter % 40
     useProxy(False)
     # better use proxy instead. you need to config it here, and make sure the deepl adaptor uses the proxy.
     import requests
