@@ -114,5 +114,6 @@ if __name__ == "__main__":
 #  'tproxy-port': 0}
     gateway = getConnectionGateway()
     validProxyName = validProxyDelayList[3]['name']
+    print('select proxy:', v)
     setProxyWithSelector(validProxyName)
     
