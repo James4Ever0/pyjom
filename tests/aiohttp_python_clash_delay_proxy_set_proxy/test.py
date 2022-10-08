@@ -40,7 +40,7 @@ def setProxy(proxyName, port=9911):
 
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
-    ...
+    clashUrl  = localhostWithPort(port)+ "/configs"
 
 
 if __name__ == "__main__":
