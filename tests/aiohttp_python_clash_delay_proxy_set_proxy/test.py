@@ -33,7 +33,6 @@ def getProxyList(
     # proxyList = [key for key in proxyInfo["proxies"].keys()]
     return proxyList
 
-
 def testProxyList(
     proxyList,
     port: int = 9911,
