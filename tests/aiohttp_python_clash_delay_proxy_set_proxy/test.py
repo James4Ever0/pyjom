@@ -40,6 +40,8 @@ def testProxyList(
 def setProxyWithSelector(
     proxyName, selector="GLOBAL", port: int = 9911, debug=False
 ):  # how to make sure it will use 'GLOBAL'? it needs to be done with the config.
+    if debug:
+
     clashUrl = localhostWithPort(port) + "/proxies/{}".format(selector)
     r = requests.put(
         clashUrl, data=json.dumps({"name": proxyName}, ensure_ascii=False).encode()
@@ -114,6 +116,5 @@ if __name__ == "__main__":
 #  'tproxy-port': 0}
     gateway = getConnectionGateway()
     validProxyName = validProxyDelayList[3]['name']
-    print('select proxy:', v)
     setProxyWithSelector(validProxyName)
     
