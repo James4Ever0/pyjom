@@ -1,1 +1,1 @@
-from lazero.network.async import concurrentGet
+from lazero.network.asyncio import concurrentGet
