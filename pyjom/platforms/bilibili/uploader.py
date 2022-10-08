@@ -6,7 +6,7 @@ async def main(sessdata="", bili_jct="", buvid3=""):
     meta = {
             "copyright": 1, 
             "source": "", # no source?
-            "desc": desc,
+            "desc": description,
             "desc_format_id": 0,
             "dynamic": dynamic, # could be the same as desc.
             "interactive": 0,
