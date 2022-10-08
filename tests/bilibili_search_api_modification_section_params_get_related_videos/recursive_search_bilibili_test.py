@@ -142,7 +142,7 @@ def getBilibiliPostMetadataForDogCat(
     # getTid = {"dog": getDogTid, "cat": getCatTid}
     getTid = {key: lambda: random.choice(value) for key, value in getTids.items()}
 
-    getRandomPage = lambda: random.randint(*pageRange)  # not so broad.
+    getRandomPage = lambda: random.randint(*pageIndexRange)  # not so broad.
     # getRandomPage = lambda: random.randint(1, 50)  # broad range!
 
     randomOrder = lambda: random.choice(orders)
