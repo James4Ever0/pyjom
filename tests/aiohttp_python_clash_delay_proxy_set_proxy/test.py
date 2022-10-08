@@ -25,7 +25,7 @@ def testProxyList(
     proxyList,
     port: int = 9911,
     url="https://deepl.com",
-    debug=False,
+    # debug=False,
     timeout=3000,  # in miliseconds?
 ):  # test the speed for given url
     # first, generate the proper list of requests.
