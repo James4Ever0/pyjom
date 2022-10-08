@@ -15,8 +15,8 @@ def getProxyList(port=9911, debug=False):
         print(clashUrl)
     r = requests.get(clashUrl)
     # return r.content
-    return r.json()
-
+    proxyInfo = r.json()
+    proxyList = [key for key in proxyInfo]
 
 def testProxyList(
     proxyList, port=9911, url="https://deepl.com", debug=False,timeout=3
