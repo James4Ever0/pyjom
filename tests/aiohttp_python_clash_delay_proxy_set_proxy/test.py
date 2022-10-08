@@ -85,7 +85,7 @@ def getConnectionGateway(
 
 
 if __name__ == "__main__":
-    # import pprint
+    from pprint import pprint
     validProxyDelayList = []
     proxyList = getProxyList(debug=True)
     # pprint.pprint(result)
