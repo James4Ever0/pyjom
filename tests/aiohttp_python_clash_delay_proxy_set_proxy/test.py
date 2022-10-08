@@ -99,4 +99,15 @@ if __name__ == "__main__":
             validProxyDelayList.append(info)
     validProxyDelayList.sort(key=lambda x: x["delay"])
     gateway = getConnectionGateway()
-    pprint(gateway)
+#     pprint(gateway)
+#     {'allow-lan': True,
+#  'authentication': [],
+#  'bind-address': '*',
+#  'ipv6': False,
+#  'log-level': 'info',
+#  'mixed-port': 0,
+#  'mode': 'rule',
+#  'port': 8381,
+#  'redir-port': 0,
+#  'socks-port': 0,
+#  'tproxy-port': 0}
