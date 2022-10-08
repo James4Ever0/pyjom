@@ -9,6 +9,8 @@ from pyjom.platforms.bilibili.searchDataParser import (
     parseVideoRelated,
     parseVideoInfo,
 )
+from typing import Literal
+
 
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
     value = False
@@ -70,7 +72,6 @@ def getCoverTargetFromCoverListDefault(
     cover_target = None
 
     for cover in cover_list:
-        import os
 
         os.environ["http"] = ""
         os.environ["https"] = ""
