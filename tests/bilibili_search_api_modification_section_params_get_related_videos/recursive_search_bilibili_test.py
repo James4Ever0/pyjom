@@ -115,7 +115,7 @@ def getBilibiliPostMetadataForDogCat(
     duration_limit={"min": 70, "max": 5 * 60},
                 play_limit={"min": 10000},
                 titleLengthLimit = {"min": 7, "max": 17},
-                
+
 ):
     import random
 
@@ -360,6 +360,7 @@ def getBilibiliPostMetadataForDogCat(
                                 # time to yield something.
                                 # detect this thing!
                                 # filtered_cover_list = []
+                                
                                 random.shuffle(cover_list)
                                 reference_histogram_cover = random.choice(cover_list)
 
