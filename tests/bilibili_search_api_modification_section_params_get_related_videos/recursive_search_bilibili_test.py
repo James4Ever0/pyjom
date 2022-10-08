@@ -100,7 +100,7 @@ def getBilibiliPostMetadataForDogCat(
         "dog": dog_metatopic,
         "cat": cat_metatopic,
     },
-    get
+    getTids = {}
 ):
     import random
 
