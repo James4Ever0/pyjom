@@ -27,6 +27,8 @@ def testProxyList(
         testUrl = localhostWithPort(port) + "/proxies/{}/delay".format(proxyName)
         params = {'timeout': timeout, 'url': url}
         r = requests.get(testUrl, params=params)
+        # we need to test the non-async version.
+        
 
 
 def setProxy(proxy, port=9911):
