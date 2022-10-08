@@ -25,9 +25,7 @@ def testProxyList(
     # first, generate the proper list of requests.
     params = {'timeout': timeout, 'url': url}
     url_list = [localhostWithPort(port) + "/proxies/{}/delay".format(proxyName) for proxyName in proxyList]
-    concurrentGet(url_list,processor=lambda x: x.json(),params=params)
-    
-
+    return concurrentGet(url_list,processor=lambda x: x.json(),params=params)
 
 def setProxy(proxy, port=9911):
     ...
