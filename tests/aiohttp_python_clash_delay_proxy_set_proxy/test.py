@@ -7,5 +7,5 @@ def getProxyList(port=...):
 def testProxyList(proxyList,port=...):
     ...
 
-def setProxy():
+def setProxy(proxy, port=...):
     ...
