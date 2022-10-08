@@ -183,6 +183,7 @@ def getBilibiliPostMetadata(
             print("METATOPIC STRING:", metatopicString)
 
             # we use video only search.
+            search_tid = getTid[dog_or_cat]()
 
             result = sync(
                 search.search_by_type(
