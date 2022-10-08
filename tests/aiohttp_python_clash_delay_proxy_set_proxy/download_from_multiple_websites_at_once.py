@@ -5,8 +5,9 @@ import asyncio
 # also i worry about the memory leakage, open file limit exceeding.
 async def get(url):
     async with aiohttp.ClientSession() as session:
-          async with session.get(url) as response:
-                return response
+        async with session.get(url) as response:
+            return response
+
 
 def concurrentGet(url_list, debug=False):
     loop = asyncio.get_event_loop()
