@@ -2,7 +2,7 @@
 from download_from_multiple_websites_at_once import concurrentGet
 import pathlib
 
-localhost = "http://localhost"
+localhost = "http://127.0.0.1"
 localhostWithPort = lambda port: pathlib.Path("{}:{}".format(localhost, port))
 import requests
 
