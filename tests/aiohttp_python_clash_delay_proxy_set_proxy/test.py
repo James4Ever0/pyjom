@@ -22,3 +22,6 @@ def setProxy(proxy, port=9911):
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
     ...
+
+if __name__ == "__main__":
+    getProxyList()
