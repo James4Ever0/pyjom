@@ -16,7 +16,7 @@ async def main(sessdata="", bili_jct="", buvid3=""):
                 "lan": "",
                 "open": 0
             },
-            "tag": "标签1,标签2,标签3",
+            "tag": tagString,
             "tid": 21,
             "title": "title",
             "up_close_danmaku": True,
