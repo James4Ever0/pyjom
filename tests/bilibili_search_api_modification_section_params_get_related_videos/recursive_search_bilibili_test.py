@@ -78,7 +78,7 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
             area_threshold=0.7,
             corner=False,
         ))
-def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: image,histogramMatch=True,delta=0.2,flip:Literal[True, False, 'random']=True):
+def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: image,histogramMatch=True,delta=0.2,flip:Literal[True, False, 'random']=True): # default function does not process this tag.
     import random
     if flip == 'random':
         flip = random.choice([True, False])
