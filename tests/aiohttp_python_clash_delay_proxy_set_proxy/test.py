@@ -23,7 +23,7 @@ def getProxyList(port: int = 9911, debug=False, disallowed_types=['URLTest',"Rej
     for proxyName, proxy in proxyInfo['proxies'].items():
         proxyType = proxy['type']
         # print(proxyType)
-        if proxyType in disallowed_types:
+        if  proxyType not in disallowed_types:
     breakpoint()
     # proxyList = [key for key in proxyInfo["proxies"].keys()]
     # return proxyList
