@@ -2,6 +2,7 @@ import aiohttp
 import asyncio
 
 # clearly it is not clean enough.
+# also i worry about the memory leakage.
 async def get(url):
     async with aiohttp.ClientSession() as session:
           async with session.get(url) as response:
