@@ -34,3 +34,4 @@ async def main(loop):
         print('finished:', result)
 
 asyncio.get_event_loop()
+loop.run_until_complete(main(loop))
