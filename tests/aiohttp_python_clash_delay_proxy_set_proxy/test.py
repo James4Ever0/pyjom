@@ -129,7 +129,7 @@ if __name__ == "__main__":
     #  'socks-port': 0,
     #  'tproxy-port': 0}
     gateway = getConnectionGateway()
-    validProxyName = validProxyDelayList[11]["name"]
+    validProxyName = validProxyDelayList[2]["name"]
     setProxyConfig(mode="Global")
     # you can switch to 'Rule' if you want the baidu translation
     setProxyWithSelector(validProxyName, debug=True)
