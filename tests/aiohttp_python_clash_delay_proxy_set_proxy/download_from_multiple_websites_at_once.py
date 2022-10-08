@@ -28,11 +28,8 @@ def download_multiple(session: aiohttp.ClientSession):
     return urls
 
 @asyncio.coroutine
-
-async def main():
+def main():
     with closing(asyncio.get_event_loop()) as loop:
         async with aiohttp.ClientSession() as session:
             result = loop.run_until_complete(download_multiple(session))
             print('finished:', result)
-
-asyncio.run_coroutine_threadsafe(download_multiple, asyncio.get_event_loop())
