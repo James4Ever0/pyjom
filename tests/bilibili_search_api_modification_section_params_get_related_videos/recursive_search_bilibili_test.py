@@ -27,7 +27,7 @@ import cv2
 #     "dynamic": [["可爱", "萌", "萌宠", "行为", "燃"]],
 # }
 
-# maybe this is not task specific.
+# maybe this is not task specific. just maybe.
 
 
 if __name__ == "__main__":
