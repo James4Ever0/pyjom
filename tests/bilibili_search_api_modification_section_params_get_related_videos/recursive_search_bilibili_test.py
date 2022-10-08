@@ -443,6 +443,14 @@ def getBilibiliPostMetadataForDogCat(
         ],
         "dynamic": dynamics,
     }
+        getMetatopic={
+        "dog": dog_metatopic,
+        "cat": cat_metatopic,
+    },
+    getTids={
+        "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
+        "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
+    },
     return getBilibiliPostMetadata(sleepTime=sleepTime,
     getMetatopic=getMetatopic,
     getTids=getTids,
