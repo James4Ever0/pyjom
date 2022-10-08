@@ -19,8 +19,8 @@ async def main(sessdata="", bili_jct="", buvid3=""):
             "tag": tagString,
             "tid": tagId, # original is 21. what is it?
             "title": title,
-            "up_close_danmaku": True,
-            "up_close_reply": True
+            "up_close_danmaku": danmaku,
+            "up_close_reply": reply
         }
     page = video_uploader.VideoUploaderPage(video_stream=open('video.mp4', 'rb'), title='test', description='', extension='mp4')
     uploader = video_uploader.VideoUploader([page], meta, credential, threads=1)
