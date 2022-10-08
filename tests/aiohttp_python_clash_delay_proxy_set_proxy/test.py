@@ -12,7 +12,11 @@ import requests
 
 # so, how do you get the proxy list and test the speed for deepl.com?
 # if you really want to fall back, just change the proxy config.
-def getProxyList(port: int = 9911, debug=False, disallowed_types=['URLTest',"Reject","Selector",'Direct','Fallback']): # default do not return proxy groups. only standalone proxies.
+def getProxyList(
+    port: int = 9911,
+    debug=False,
+    disallowed_types=["URLTest", "Reject", "Selector", "Direct", "Fallback"],
+):  # default do not return proxy groups. only standalone proxies.
     clashUrl = localhostWithPort(port) + "/proxies"  # this will reduce one layer of "/"
     if debug:
         print(clashUrl)
@@ -20,13 +24,14 @@ def getProxyList(port: int = 9911, debug=False, disallowed_types=['URLTest',"Rej
     # return r.content
     proxyInfo = r.json()
     # pprint(proxyInfo)
-    for proxyName, proxy in proxyInfo['proxies'].items():
-        proxyType = proxy['type']
+    proxyList = []
+    for proxyName, proxy in proxyInfo["proxies"].items():
+        proxyType = proxy["type"]
         # print(proxyType)
-        if  proxyType not in disallowed_types:
-            proxyList.append()
+        if proxyType not in disallowed_types:
+            proxyList.append(proxyName)
     # proxyList = [key for key in proxyInfo["proxies"].keys()]
-    # return proxyList
+    return proxyList
 
 
 def testProxyList(
@@ -126,7 +131,7 @@ if __name__ == "__main__":
     #  'tproxy-port': 0}
     gateway = getConnectionGateway()
     validProxyName = validProxyDelayList[11]["name"]
-    setProxyConfig(mode='Global')
+    setProxyConfig(mode="Global")
     # you can switch to 'Rule' if you want the baidu translation
     setProxyWithSelector(validProxyName, debug=True)
     # now use the proxy!
