@@ -19,3 +19,5 @@ bili_jct = credential.bili_jct
 sessdata = credential.sessdata
 userId = credential.dedeuserid  # this is userid, better use this instead?
 
+# check validity of my credentials?
+
