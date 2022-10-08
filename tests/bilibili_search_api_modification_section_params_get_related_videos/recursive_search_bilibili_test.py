@@ -99,7 +99,6 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
         )
 
         image = imageLoader(cover)
-        # import requests
         cropped_image = filter_function(image)
         if cropped_image is not None:
             if histogramMatch:
