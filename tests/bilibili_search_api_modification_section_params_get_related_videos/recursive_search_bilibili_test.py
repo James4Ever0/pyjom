@@ -28,28 +28,6 @@ import cv2
 # }
 
 # this is task specific.
-dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
-
-cat_metatopic = {
-    "static": [
-        ["喵喵", "猫", "猫咪", "喵"],
-    ],
-    "dynamic": dynamics,
-}
-
-dog_metatopic = {
-    "static": [
-        [
-            "狗狗",
-            "狗",
-            "汪汪",
-            "修勾",
-            "汪",
-            "狗子",
-        ],
-    ],
-    "dynamic": dynamics,
-}
 
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
@@ -139,7 +117,7 @@ BSP = search.bilibiliSearchParams()
 def getBilibiliPostMetadata(
     sleepTime=2,
     getMetatopic={}, 
-    getTids={}, # these two are not specified 
+    getTids={}, # these two are not specified here.
     orders=[
         BSP.all.order.最多点击,
         BSP.all.order.最多收藏,
