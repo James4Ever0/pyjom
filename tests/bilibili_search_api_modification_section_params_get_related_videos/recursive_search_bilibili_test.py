@@ -138,8 +138,8 @@ BSP = search.bilibiliSearchParams()
 
 def getBilibiliPostMetadata(
     sleepTime=2,
-    getMetatopic={},
-    getTids={},
+    getMetatopic={}, 
+    getTids={}, 
     orders=[
         BSP.all.order.最多点击,
         BSP.all.order.最多收藏,
