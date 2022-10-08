@@ -14,9 +14,9 @@ async def uploadVideo(
     close_reply=False,
     videoPath="",
     cover_path="",
-    threads=3,
+    # threads=3,
 ):
-    videoExtension = videoPath.split(".")[-1].lower()
+    # videoExtension = videoPath.split(".")[-1].lower()
     credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # 具体请查阅相关文档
     meta = {
@@ -36,13 +36,12 @@ async def uploadVideo(
         "up_close_reply": close_reply,
     }
     page = video_uploader.VideoUploaderPage(
-        video_stream=open(videoPath, "rb"),
+        path = videoPath,
         title=title,
         description=description,
-        extension=videoExtension,
     )  # are you sure?
     uploader = video_uploader.VideoUploader(
-        [page], meta, credential, threads=threads, cover_path=cover_path
+        [page], meta, credential,cover_path=cover_path
     )
 
     @uploader.on("__ALL__")
