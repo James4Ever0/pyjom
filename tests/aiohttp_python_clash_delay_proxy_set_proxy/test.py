@@ -4,7 +4,7 @@ from download_from_multiple_websites_at_once import concurrentGet
 def getProxyList(port=...):
     ...
 
-def testProxyList():
+def testProxyList(port=...,):
     ...
 
 def setProxy():
