@@ -8,7 +8,7 @@ async def uploadVideo(
     description="",
     dynamic="",
     tagString="",
-    tagId=0, # what is 21?
+    tagId=21, # what is 21? -> 日常
     title="",
     close_danmaku=False,
     close_reply=False,
