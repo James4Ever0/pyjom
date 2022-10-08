@@ -456,7 +456,7 @@ def getBilibiliPostMetadataForDogCat(
     play_limit={"min": 10000},
     titleLengthLimit={"min": 7, "max": 17},
 ):
-    return getBilibiliPostMetadata(sleepTime=2,
+    return getBilibiliPostMetadata(sleepTime=sleepTime,
     getMetatopic=getMetatopic,
     getTids=getTids,
     orders=orders,
@@ -465,7 +465,7 @@ def getBilibiliPostMetadataForDogCat(
     lang=lang,
     duration_limit=duration_limit,
     play_limit=play_limit,
-    titleLengthLimit=titles.length)
+    titleLengthLimit=titleLengthLimit)
     
 
 if __name__ == "__main__":
