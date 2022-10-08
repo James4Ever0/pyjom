@@ -133,7 +133,7 @@ def getCoverTargetFromCoverListDefault(
                     cropped_image, reference_histogram_cover, delta=delta
                 )
             if flip:
-                cropped_image_color_transfered_fliped = cv2.flip(cropped_image, 1)
+                cropped_image = cv2.flip(cropped_image, 1)
             cover_target = cropped_image
             break
     return cover_target
