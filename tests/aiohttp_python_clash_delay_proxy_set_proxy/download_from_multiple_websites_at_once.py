@@ -9,7 +9,7 @@ async def get(url):
                 return response
 loop = asyncio.get_event_loop()
 
-multiple_requests = [get(url) for _ in range(10)]
+multiple_requests = [get(url) for url in url_list]
 
 results = loop.run_until_complete(asyncio.gather(*multiple_requests))
 
