@@ -42,6 +42,8 @@ def setProxyWithSelector(proxyName, selector='GLOBAL',port=9911):
         assert r.status_code == 204
     except:
         print(r.content)
+        print('error code:', r.status_code)
+        print(error when fetching )
 
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
