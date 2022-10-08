@@ -41,6 +41,9 @@ def setProxyWithSelector(proxyName, selector='GLOBAL',port=9911):
     try:
         assert r.status_code == 204
     except:
+        import traceback
+        traceback.print_exc()
+        
         print(r.content)
         print('error code:', r.status_code)
         print(error when fetching )
