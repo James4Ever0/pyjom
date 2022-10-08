@@ -1,5 +1,4 @@
 from download_from_multiple_websites_at_once import concurrentGet
-import pathlib
 import os
 
 os.environ["http_proxy"] = ""
