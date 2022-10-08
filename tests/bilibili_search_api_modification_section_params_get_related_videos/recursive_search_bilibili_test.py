@@ -170,7 +170,7 @@ def getBilibiliPostMetadataForDogCat(
                     keyword=metatopicString,
                     params={
                         "tids": getTid[dog_or_cat](),
-                        "duration": BSP.all.duration._10分钟以下,
+                        "duration": duration,
                         "order": randomOrder(),
                     },
                     page=getRandomPage(),
