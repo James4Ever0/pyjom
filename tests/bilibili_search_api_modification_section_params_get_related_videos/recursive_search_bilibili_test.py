@@ -64,14 +64,11 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
 
 def randomChoiceTagList(tag_list):
     import random
-
     selected_tags = random.sample(tag_list, 3)
     selected_tags = [random.sample(tags, min(len(tags), 2)) for tags in selected_tags]
     # flatten this thing.
     selected_tags = flattenUnhashableList(selected_tags)
     return list(set(selected_tags))
-
-# leave it be. we need it here.
 
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
