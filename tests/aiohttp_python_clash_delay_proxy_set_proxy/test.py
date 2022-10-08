@@ -4,7 +4,7 @@ from download_from_multiple_websites_at_once import concurrentGet
 def getProxyList(port=...):
     ...
 
-def testProxyList(proxyList,port=...): # test the speed for deepl.com
+def testProxyList(proxyList,port=...): # test the speed for given url
     ...
 
 def setProxy(proxy, port=...):
