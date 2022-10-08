@@ -77,11 +77,7 @@ class clashProxyState(AbstractContextManager):
         self.exit = exit
 
     def __enter__(self):
-        print("temporary directory: %s" % self._tmpdir)
-        if os.path.exists(self._tmpdir):
-            shutil.rmtree(self._tmpdir)
-        os.makedirs(self._tmpdir)
-        return self._tmpdir
+        
 
     def __exit__(self, exctype, excinst, exctb):
         # try not to handle exceptions?
