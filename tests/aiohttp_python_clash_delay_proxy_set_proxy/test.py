@@ -36,12 +36,14 @@ def getConnectionGateway(port=9911):  # get the clash local http proxy connectio
 
 
 if __name__ == "__main__":
-    import pprint
-
+    # import pprint
+    validProxyDelayList = []
     proxyList = getProxyList(debug=True)
     # pprint.pprint(result)
     delayList = testProxyList(proxyList)
     proxyDelayList = zip(delayList,proxyList)
     for delayDict, proxyName in proxyDelayList:
         if "delay" in delayDict.keys(): # we only get those with valid responses.
-            delay = delayDict["delay"]
+            # delay = delayDict["delay"]
+            info = delayDict.copy()
+            validProxyDelayList.append(info)
