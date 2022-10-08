@@ -98,4 +98,4 @@ if __name__ == "__main__":
             info.update({"name": proxyName})
             validProxyDelayList.append(info)
     validProxyDelayList.sort(key=lambda x: x["delay"])
-    
+    getConnectionGateway = getConnectionGateway
