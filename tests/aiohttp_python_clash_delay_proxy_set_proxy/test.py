@@ -1,7 +1,9 @@
-
 from download_from_multiple_websites_at_once import concurrentGet
 import pathlib
+import os
 
+os.environ["http_proxy"] = ""
+os.environ["https_proxy"] = ""
 localhost = "http://127.0.0.1"
 localhostWithPort = lambda port: pathlib.Path("{}:{}".format(localhost, port))
 import requests
@@ -11,7 +13,7 @@ def getProxyList(port=9911, debug=False):
     clashUrl = localhostWithPort(port) / "proxies"
     if debug:
         print(clashUrl)
-    r = requests.get(clashUrl)
+    r = requests.get('http://localhost:9911')
     return r.json()
 
 
@@ -31,5 +33,6 @@ def getConnectionGateway(port=9911):  # get the clash local http proxy connectio
 
 if __name__ == "__main__":
     import pprint
+
     result = getProxyList(debug=True)
     pprint.pprint(result)
