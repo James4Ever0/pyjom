@@ -120,7 +120,7 @@ if __name__ == "__main__":
     gateway = getConnectionGateway()
     validProxyName = validProxyDelayList[11]["name"]
     setProxyConfig(mode='Global')
-    # you can switch to 'Rule
+    # you can switch to 'Rule' if you want the baidu translation
     setProxyWithSelector(validProxyName, debug=True)
     # now use the proxy!
     r = requests.get("https://deepl.com", proxies={"http": gateway, "https": gateway})
