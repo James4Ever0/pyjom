@@ -35,7 +35,7 @@ def testProxyList(
     return concurrentGet(url_list, processor=lambda x: x.json(), params=params)
 
 
-def setProxy(proxyName, port=9911):
+def setProxy(proxyName, selector='GLOBAL',port=9911):
     clashUrl = localhostWithPort(port) + "/proxies/{}".format(proxyName)
     r = requests.put(clashUrl,)
 
