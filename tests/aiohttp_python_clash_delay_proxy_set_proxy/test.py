@@ -99,3 +99,4 @@ if __name__ == "__main__":
             validProxyDelayList.append(info)
     validProxyDelayList.sort(key=lambda x: x["delay"])
     gateway = getConnectionGateway()
+    pprint(gateway)
