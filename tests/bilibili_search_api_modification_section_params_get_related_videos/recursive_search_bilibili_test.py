@@ -428,28 +428,28 @@ def getBilibiliPostMetadataForDogCat(
     play_limit={"min": 10000},
     titleLengthLimit={"min": 7, "max": 17},
 ):
-dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
+    dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
 
-cat_metatopic = {
-    "static": [
-        ["喵喵", "猫", "猫咪", "喵"],
-    ],
-    "dynamic": dynamics,
-}
-
-dog_metatopic = {
-    "static": [
-        [
-            "狗狗",
-            "狗",
-            "汪汪",
-            "修勾",
-            "汪",
-            "狗子",
+    cat_metatopic = {
+        "static": [
+            ["喵喵", "猫", "猫咪", "喵"],
         ],
-    ],
-    "dynamic": dynamics,
-}
+        "dynamic": dynamics,
+    }
+
+    dog_metatopic = {
+        "static": [
+            [
+                "狗狗",
+                "狗",
+                "汪汪",
+                "修勾",
+                "汪",
+                "狗子",
+            ],
+        ],
+        "dynamic": dynamics,
+    }
     return getBilibiliPostMetadata(sleepTime=sleepTime,
     getMetatopic=getMetatopic,
     getTids=getTids,
