@@ -321,7 +321,7 @@ def getBilibiliPostMetadataForDogCat(
                 topicWordSelection,
             )
 
-            topics = topicModeling(topic_modeling_source_sentences, lang=l)
+            topics = topicModeling(topic_modeling_source_sentences, lang=lang)
 
             selectedWord = topicWordSelection(
                 topics, core_topic_set, selected_topic_list_dict[dog_or_cat]
