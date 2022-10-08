@@ -60,7 +60,7 @@ def setProxyConfig(port=9911, http_port=None,mode:Literal['Global','Rule','Direc
     clashUrl = localhostWithPort(port)+"/configs"
     configs = {}
     if http_port:
-        configs.update({})
+        configs.update({'port':http_port})
     if mode:
         configs.update({'mode':mode})
     r = requests.patch(clashUrl,data=json.dumps({'mode':mode}))
