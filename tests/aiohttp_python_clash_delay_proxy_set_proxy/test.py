@@ -23,7 +23,7 @@ def testProxyList(
 ):  # test the speed for given url
     # first, generate the proper list of requests.
     for proxyName in proxyList:
-        "/proxies/{}/delay".format(proxyName)
+        testUrl =  localhostWithPort(port)+"/proxies/{}/delay".format(proxyName)
 
 
 def setProxy(proxy, port=9911):
