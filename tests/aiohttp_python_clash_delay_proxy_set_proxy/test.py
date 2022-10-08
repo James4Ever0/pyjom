@@ -1,5 +1,11 @@
 # from download_from_multiple_websites_at_once import concurrentGet
-from lazero.network.proxy.clash import getProxyList, testProxyList, getConnectionGateway, setProxyConfig,setProxyWithSelector
+from lazero.network.proxy.clash import (
+    getProxyList,
+    testProxyList,
+    getConnectionGateway,
+    setProxyConfig,
+    setProxyWithSelector,
+)
 import requests
 
 if __name__ == "__main__":
@@ -20,7 +26,7 @@ if __name__ == "__main__":
     #  'socks-port': 0,
     #  'tproxy-port': 0}
     gateway = getConnectionGateway()
-    print('valid proxies:', len(validProxyDelayList))
+    print("valid proxies:", len(validProxyDelayList))
     validProxyName = validProxyDelayList[0]["name"]
     # if no valid proxy, better do another run.
     setProxyConfig(mode="Global")
