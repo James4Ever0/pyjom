@@ -117,4 +117,5 @@ if __name__ == "__main__":
     gateway = getConnectionGateway()
     validProxyName = validProxyDelayList[3]['name']
     setProxyWithSelector(validProxyName, debug=True)
+    # now use the proxy!
     
