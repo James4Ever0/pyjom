@@ -92,7 +92,12 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
 
         image = imageLoader(cover)
         # import requests
-        cropped_image = 
+        cropped_image = imageDogCatCoverCropAdvanced(
+            image,
+            dog_or_cat=dog_or_cat_original,
+            area_threshold=0.7,
+            corner=False,
+        )
         if cropped_image is not None:
             cropped_image_color_transfered = imageHistogramMatch(
                 cropped_image, reference_histogram_cover,
