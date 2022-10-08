@@ -93,7 +93,10 @@ def randomChoiceTagList(tag_list):
     return list(set(selected_tags))
 
 
-def getBilibiliPostMetadataForDogCat(sleepTime=2):
+def getBilibiliPostMetadataForDogCat(sleepTime=2,    getMetatopic = {
+        "dog": dog_metatopic,
+        "cat": cat_metatopic,
+    }):
     import random
     selected_topic_list_dict = {"dog": [], "cat": []}
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
@@ -119,10 +122,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2):
         "dog": lambda: getMetaTopicString(dog_metatopic),
         "cat": lambda: getMetaTopicString(cat_metatopic),
     }
-    getMetatopic = {
-        "dog": dog_metatopic,
-        "cat": cat_metatopic,
-    }
+
     BSP = search.bilibiliSearchParams()
 
     getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人])
