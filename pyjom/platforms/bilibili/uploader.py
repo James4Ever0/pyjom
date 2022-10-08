@@ -50,7 +50,3 @@ async def uploadVideo(
         print(data)
 
     await uploader.start()
-
-
-def uploadVideoSync
-sync(main())
