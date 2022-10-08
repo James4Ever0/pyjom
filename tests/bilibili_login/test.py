@@ -8,7 +8,7 @@ try:
 except:
     print("登陆失败。。。")
     exit()
-
 print("欢迎，", sync(user.get_self_info(credential))['name'], "!")
 print('credential', credential)
 breakpoint()
+credential.
