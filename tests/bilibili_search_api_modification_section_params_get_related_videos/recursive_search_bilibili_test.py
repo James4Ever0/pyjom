@@ -103,7 +103,7 @@ def getBilibiliPostMetadataForDogCat(
 ):
     import random
 
-    selected_topic_list_dict = {"dog": [], "cat": []}
+    selected_topic_list_dict = {key: []}
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
     dog_or_cat = randomTarget()
 
