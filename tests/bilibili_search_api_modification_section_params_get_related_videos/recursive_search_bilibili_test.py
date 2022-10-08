@@ -108,7 +108,7 @@ def getBilibiliPostMetadataForDogCat(
         BSP.all.order.最新发布,
         BSP.all.order.最多弹幕,
         BSP.all.order.综合排序,
-    ]
+    ],
 ):
     import random
 
