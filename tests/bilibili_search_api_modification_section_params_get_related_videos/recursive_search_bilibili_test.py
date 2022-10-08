@@ -361,6 +361,7 @@ def getBilibiliPostMetadataForDogCat(
                                 # detect this thing!
                                 # filtered_cover_list = []
                                 cover_target = getCoverTargetFromCoverList(cover_list)
+                                # this is a general thing.
                                 random.shuffle(cover_list)
                                 reference_histogram_cover = random.choice(cover_list)
 
