@@ -62,7 +62,7 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
     return newTitleList
 
 
-def randomChoiceTagList(tag_list, selected_):
+def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=2):
     import random
     selected_tags = random.sample(tag_list, 3)
     selected_tags = [random.sample(tags, min(len(tags), 2)) for tags in selected_tags]
