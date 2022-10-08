@@ -1,15 +1,61 @@
 from pyjom.commons import *
 from pyjom.languagetoolbox import englishTopicModeling, chineseTopicModeling
-from lazero.utils.tools import flattenUnhashableList # one of my classic methods
+from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 import requests
 
 # import jieba
 from typing import Literal
 
+
+def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
+    value = False
+    for core_topic in core_topic_set:
+        if core_topic in title:
+            value = True
+            break
+    if debug:
+        print("TITLE:", title)
+        print("CORE TOPIC SET:", core_topic_set)
+        print("VALUE:", value)
+        breakpoint()
+    return value
+
+
+def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
+    newTitleList = []
+    for title in titleList:
+        result = filterTitleWithCoreTopicSet(title, core_topic_set)
+        if result:
+            newTitleList.append(title)
+    if debug:
+        print("TITLE LIST:", titleList)
+        print("CORE TOPIC SET:", core_topic_set)
+        sprint("NEW TITLE LIST:", newTitleList)
+    return newTitleList
+
+
+def randomChoiceTagList(tag_list):
+    import random
+
+    selected_tags = random.sample(tag_list, 3)
+    selected_tags = [random.sample(tags, min(len(tags), 2)) for tags in selected_tags]
+    # flatten this thing.
+    selected_tags = flattenUnhashableList(selected_tags)
+    return list(set(selected_tags))
+
+
 def removeKeywordDuplicates(keywords):
     keywordsType = type(keywords)
-    inputFuncs = {str: lambda x: x.split(" "), list: lambda x: x, tuple: lambda x: list(x)}
-    outputFuncs = {str: lambda x: " ".join(x), list: lambda x: x, tuple: lambda x: tuple(x)}
+    inputFuncs = {
+        str: lambda x: x.split(" "),
+        list: lambda x: x,
+        tuple: lambda x: list(x),
+    }
+    outputFuncs = {
+        str: lambda x: " ".join(x),
+        list: lambda x: x,
+        tuple: lambda x: tuple(x),
+    }
     if keywordsType in inputFuncs.keys():
         keywordsList = inputFuncs[keywordsType](keywords)
     else:
@@ -24,7 +70,7 @@ def topicModeling(sentences: list[str], lang="en"):  # specify language please?
     if lang == "en":
         topics = englishTopicModeling(sentences)
         return topics
-    elif lang == 'zh':
+    elif lang == "zh":
         topics = chineseTopicModeling(sentences)
         return topics
     else:
@@ -58,13 +104,13 @@ def topicWordSelection(
 
 
 def getMetaTopicString(metaTopic):
-    staticCandidates = [random.choice(x) for x in metaTopic.get("static",[])]
-    optionalCandidates = [random.choice(x) for x in metaTopic.get('optional',[])]
-    if len(optionalCandidates)>0:
+    staticCandidates = [random.choice(x) for x in metaTopic.get("static", [])]
+    optionalCandidates = [random.choice(x) for x in metaTopic.get("optional", [])]
+    if len(optionalCandidates) > 0:
         optionalCandidates = random.choice(optionalCandidates)
     if type(optionalCandidates) != list:
         optionalCandidates = [optionalCandidates]
-    dynamicCandidates = [random.choice(x) for x in metaTopic.get("dynamic",[])]
+    dynamicCandidates = [random.choice(x) for x in metaTopic.get("dynamic", [])]
     samples = random.sample(
         dynamicCandidates, random.randint(0, len(dynamicCandidates))
     )
@@ -94,6 +140,7 @@ def OnlineTopicGenerator(
         keywords = getKeywords()
         while True:
             import time
+
             time.sleep(0.5)
             harvestedData = []
             try:
@@ -102,26 +149,34 @@ def OnlineTopicGenerator(
                 if random.random() > 0.5:
                     with requests.get(
                         "http://127.0.0.1:8902/random",
-                        params={"q": keywords, "rating": "g", "type": source_type}, verify=False, proxies=None,
-                    ) as mRandomPicture: # may you get stickers?
+                        params={"q": keywords, "rating": "g", "type": source_type},
+                        verify=False,
+                        proxies=None,
+                    ) as mRandomPicture:  # may you get stickers?
                         mRandomPictureJson = mRandomPicture.json()
                         harvestedData += mRandomPictureJson["data"]
                         randomPictureId = mRandomPictureJson["data"][0]["id"]
                 else:
                     with requests.get(
                         "http://127.0.0.1:8902/search",
-                        params={"q": keywords, "rating": "g", "type": source_type}, verify=False, proxies=None,
+                        params={"q": keywords, "rating": "g", "type": source_type},
+                        verify=False,
+                        proxies=None,
                     ) as mSearchPictures:
                         mSearchPicturesJson = mSearchPictures.json()
                         harvestedData += mSearchPicturesJson["data"]
-                        randomPictureId = random.choice(mSearchPicturesJson["data"])["id"]
-                selectedWord=None
+                        randomPictureId = random.choice(mSearchPicturesJson["data"])[
+                            "id"
+                        ]
+                selectedWord = None
                 with requests.get(
                     "http://127.0.0.1:8902/related",
                     params={
                         "q": randomPictureId,
                         "type": source_type,
-                    }, verify=False, proxies=None,  # seems not working? wtf?
+                    },
+                    verify=False,
+                    proxies=None,  # seems not working? wtf?
                 ) as mRelatedPictures:
                     mRelatedPicturesJson = mRelatedPictures.json()
                     harvestedData += mRelatedPicturesJson["data"]
@@ -141,6 +196,7 @@ def OnlineTopicGenerator(
                 keywords = removeKeywordDuplicates(keywords)
             except:
                 import traceback
+
                 traceback.print_exc()
                 print("ERROR WHEN FETCHING GIPHY TOPIC")
             for elem in harvestedData:
