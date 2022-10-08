@@ -33,4 +33,4 @@ async def main():
             result = loop.run_until_complete(download_multiple(session))
             print('finished:', result)
 
-asyncio.run(main)
+asyncio.get_event_loop().run_until_complete(main())
