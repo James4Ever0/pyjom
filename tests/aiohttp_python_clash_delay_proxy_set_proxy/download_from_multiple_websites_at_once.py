@@ -8,10 +8,10 @@ async def get(url):
           async with session.get(url) as response:
                 return response
 
-def concurrentGet(url_list):
-loop = asyncio.get_event_loop()
+def concurrentGet(url_list, debug=False):
+    loop = asyncio.get_event_loop()
     multiple_requests = [get(url) for url in url_list]
-
     results = loop.run_until_complete(asyncio.gather(*multiple_requests))
-
-    print("Results: %s" % results)
+    if debug:
+        print("Results: %s" % results)
+    return results
