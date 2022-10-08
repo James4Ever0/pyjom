@@ -80,6 +80,7 @@ def deeplTranslator(text, sleep=2, timeout=3):
     lock = filelock.FileLock(
         "/root/Desktop/works/pyjom/tests/karaoke_effects/deepl_translator.lock"
     )
+    with clashProxyStateManager('Global','Rule'):
     with lock:
         time.sleep(sleep)
         port = 8281
