@@ -7,7 +7,7 @@ try:
     credential.raise_for_no_bili_jct()  # 判断是否成功
     credential.raise_for_no_sessdata()  # 判断是否成功
     credential.raise_for_no_buvid3()
-    credential.raise_for_no_
+    credential.raise_for_no_dedeuserid()
 except:
     print("登陆失败。。。")
     exit()
