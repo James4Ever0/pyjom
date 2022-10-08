@@ -20,6 +20,8 @@ def getProxyList(port: int = 9911, debug=False, groups=False): # default do not 
     proxyInfo = r.json()
     # pprint(proxyInfo)
     # breakpoint()
+    for proxy in proxyInfo['proxies']:
+        proxy['type']
     # proxyList = [key for key in proxyInfo["proxies"].keys()]
     # return proxyList
 
