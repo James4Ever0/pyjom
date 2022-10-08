@@ -4,10 +4,7 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 from lazero.utils.logger import sprint
-            from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult
-
-                from pyjom.platforms.bilibili.searchDataParser import parseVideoRelated
-                from pyjom.platforms.bilibili.searchDataParser import parseVideoInfo
+from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult,parseVideoRelated,parseVideoInfo
 
 
 
