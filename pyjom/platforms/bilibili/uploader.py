@@ -8,7 +8,7 @@ async def main(
     description="",
     dynamic="",
     tagString="",
-    tagId=0,
+    tagId=0, # what is 21?
     title="",
     close_danmaku=False,
     close_reply=False,
