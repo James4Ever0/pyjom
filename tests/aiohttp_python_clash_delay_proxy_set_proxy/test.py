@@ -6,7 +6,7 @@ if __name__ == "__main__":
     validProxyDelayList = []
     proxyList = getProxyList(debug=True)
     # pprint.pprint(result)
-    validProxyDelayList = testProxyList(proxyList)
+    validProxyDelayList = testProxyList(proxyList, timeout=5000)
     #     pprint(gateway)
     #     {'allow-lan': True,
     #  'authentication': [],
