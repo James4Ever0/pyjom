@@ -70,7 +70,7 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
     selected_tags = flattenUnhashableList(selected_tags)
     return list(set(selected_tags))
 
-def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: image,histogramMatch=True,delta=,flip:L):
+def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: image,histogramMatch=True,delta=,flip:Literal[True, False, 'random']=True):
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
     lambda image: imageDogCatCoverCropAdvanced(
