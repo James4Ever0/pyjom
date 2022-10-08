@@ -24,9 +24,9 @@ def testProxyList(
 ):  # test the speed for given url
     # first, generate the proper list of requests.
     params = {'timeout': timeout, 'url': url}
-    url_list = [localhostWithPort(port) + "/proxies/{}/delay".format(proxyName)]
+    url_list = [localhostWithPort(port) + "/proxies/{}/delay".format(proxyName) for proxyName in proxyList]
     concurrentGet(url_list,processor=lambda x: x.json(),params=params)
-    for proxyName in proxyList:
+    :
         testUrl = 
         r = requests.get(testUrl, params=params)
         # we need to test the non-async version.
