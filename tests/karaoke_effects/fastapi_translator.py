@@ -85,7 +85,7 @@ def deeplTranslator(text, sleep=2, timeout=5, mod=40):
 
     if refreshProxyCounter % mod == (mod - 1):
         proxyList = getTestedProxyList()
-        refreshProxyCounter = 0
+        refreshProxyCounter %= 0
     refreshProxyCounter += 1
     proxyName = random.choice([proxy["name"] for proxy in proxyList] + ["DIRECT"])
     setProxyWithSelector(proxyName)
