@@ -5,4 +5,5 @@ def getProxyList():
 
 def testProxyList():
 
-def 
+def setProxy():
+    ...
