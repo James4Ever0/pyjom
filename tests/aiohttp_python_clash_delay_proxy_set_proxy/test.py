@@ -1,3 +1,4 @@
+from pickle import FALSE
 from download_from_multiple_websites_at_once import concurrentGet
 import pathlib
 
@@ -6,7 +7,7 @@ localhostWithPort = lambda port: pathlib.Path("{}:{}".format(localhost, port))
 import requests
 
 # so, how do you get the proxy list and test the speed for deepl.com?
-def getProxyList(port=9911):
+def getProxyList(port=9911, debug=FALSE):
     clashUrl = localhostWithPort(port) / "proxies"
     print(clashUrl)
 
