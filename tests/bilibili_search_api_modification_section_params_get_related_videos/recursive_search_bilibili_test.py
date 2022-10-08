@@ -436,16 +436,9 @@ def getBilibiliPostMetadataForDogCat(
         "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
         "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
     }
-    return getBilibiliPostMetadata(sleepTime=sleepTime,
+    return getBilibiliPostMetadata(
     getMetatopic=getMetatopic,
-    getTids=getTids,
-    orders=orders,
-    pageIndexRange=pageIndexRange,
-    duration=duration,
-    lang=lang,
-    duration_limit=duration_limit,
-    play_limit=play_limit,
-    titleLengthLimit=titleLengthLimit)
+    getTids=getTids,)
     
 
 if __name__ == "__main__":
