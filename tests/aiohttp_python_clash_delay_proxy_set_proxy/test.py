@@ -118,7 +118,7 @@ if __name__ == "__main__":
     #  'socks-port': 0,
     #  'tproxy-port': 0}
     gateway = getConnectionGateway()
-    validProxyName = validProxyDelayList[5]["name"]
+    validProxyName = validProxyDelayList[11]["name"]
     setProxyWithSelector(validProxyName, debug=True)
     # now use the proxy!
     r = requests.get("https://deepl.com", proxies={"http": gateway, "https": gateway})
