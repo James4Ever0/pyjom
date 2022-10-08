@@ -26,12 +26,7 @@ def testProxyList(
     params = {'timeout': timeout, 'url': url}
     url_list = [localhostWithPort(port) + "/proxies/{}/delay".format(proxyName) for proxyName in proxyList]
     concurrentGet(url_list,processor=lambda x: x.json(),params=params)
-    :
-        testUrl = 
-        r = requests.get(testUrl, params=params)
-        # we need to test the non-async version.
-        req_json = r.json()
-        yield req_json
+    
 
 
 def setProxy(proxy, port=9911):
