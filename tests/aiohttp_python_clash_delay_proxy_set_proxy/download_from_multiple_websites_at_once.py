@@ -32,3 +32,4 @@ async def main(loop):
     async with aiohttp.ClientSession(loop=loop) as session:
         result = download_multiple(session)
         print('finished:', result)
+
