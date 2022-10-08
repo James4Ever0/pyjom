@@ -46,7 +46,6 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
     return list(set(selected_tags))
 
 
-
 from typing import Literal
 
 
@@ -91,6 +90,7 @@ def getCoverTargetFromCoverListDefault(
             break
     return cover_target
 
+
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
     from pyjom.imagetoolbox import (
         # imageLoader,
@@ -108,6 +108,7 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
             corner=False,
         ),
     )
+
 
 BSP = search.bilibiliSearchParams()
 import random
@@ -393,7 +394,7 @@ def getBilibiliPostMetadata(
                                     )  # a collection of tags.
                                     mTitle = random.choice(filtered_title_list)
                                     mBgm = random.choice(bgm_list)
-                                    yield cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid
+                                    yield cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid  # one additional return value
                                     clearMyLists()
         except:
             import time
@@ -435,7 +436,7 @@ def getBilibiliPostMetadataForDogCat():
         "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
         "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
     }
-    return getBilibiliPostMetadata( # this is a premature version. the deeplearning version might interest you more. but how the fuck i can integrate DL into this shit?
+    return getBilibiliPostMetadata(  # this is a premature version. the deeplearning version might interest you more. but how the fuck i can integrate DL into this shit?
         getMetatopic=getMetatopic,
         getTids=getTids,
         getCoverTargetFromCoverList=getCoverTargetFromCoverListForDogCat,
