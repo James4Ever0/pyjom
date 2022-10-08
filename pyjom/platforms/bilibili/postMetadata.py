@@ -10,7 +10,6 @@ from pyjom.platforms.bilibili.searchDataParser import (
     parseVideoInfo,
 )
 
-
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
     value = False
     for core_topic in core_topic_set:
