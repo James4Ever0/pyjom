@@ -61,7 +61,7 @@ def setProxyWithSelector(
 def setProxyConfig(
     port: int = 9911,
     http_port: Union[None, int] = None,
-    mode: Literal["Global", "Rule", "Direct", None] = None,
+    mode: Literal["Global", "Rule", "Direct", None] = None, # currently this mode is configured as 'rule' so everything related to 'deepl' will be redirected.
 ):
     # https://clash.gitbook.io/doc/restful-api/config
     # sure you can patch more things but that's enough for now.
