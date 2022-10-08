@@ -13,7 +13,7 @@ def getProxyList(port=9911, debug=False):
     clashUrl = localhostWithPort(port) / "proxies"
     if debug:
         print(clashUrl)
-    r = requests.get('http://127.0.0.1t:9911')
+    r = requests.get(clashUrl)
     return r.content
 
 
