@@ -10,15 +10,16 @@ localhostWithPort = lambda port: "{}:{}".format(localhost, port)
 import requests
 
 # so, how do you get the proxy list and test the speed for deepl.com?
-def getProxyList(port: int = 9911, debug=False, nosub):
+def getProxyList(port: int = 9911, debug=False, nosubcatego):
     clashUrl = localhostWithPort(port) + "/proxies"  # this will reduce one layer of "/"
     if debug:
         print(clashUrl)
     r = requests.get(clashUrl)
     # return r.content
     proxyInfo = r.json()
-    proxyList = [key for key in proxyInfo["proxies"].keys()]
-    return proxyList
+    
+    # proxyList = [key for key in proxyInfo["proxies"].keys()]
+    # return proxyList
 
 
 def testProxyList(
