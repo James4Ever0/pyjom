@@ -35,9 +35,9 @@ def testProxyList(
     return concurrentGet(url_list, processor=lambda x: x.json(), params=params)
 
 
-def setProxy(proxyName, selector='GLOBAL',port=9911):
-    clashUrl = localhostWithPort(port) + "/proxies/{}".format(proxyName)
-    r = requests.put(clashUrl,)
+def setProxyWithSelector(proxyName, selector='GLOBAL',port=9911):
+    clashUrl = localhostWithPort(port) + "/proxies/{}".format(selector)
+    r = requests.put(clashUrl,data=json.dumps({"name": proxy_name}, ensure_ascii=False).encode())
 
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
