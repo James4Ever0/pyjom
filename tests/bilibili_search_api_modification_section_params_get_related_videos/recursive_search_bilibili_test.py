@@ -124,7 +124,7 @@ def getBilibiliPostMetadataForDogCat(
         bvid_list = []
 
     getKeywords = {
-        "dog": lambda: getMetaTopicString(dog_metatopic),
+        "dog": lambda: getMetaTopicString(getMetatopic),
         "cat": lambda: getMetaTopicString(cat_metatopic),
     }
 
