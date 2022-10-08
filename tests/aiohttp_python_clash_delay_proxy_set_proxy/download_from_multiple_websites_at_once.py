@@ -30,5 +30,5 @@ def download_multiple(session: aiohttp.ClientSession):
 async def main(loop):
     # with closing(asyncio.get_event_loop()) as loop:
         async with aiohttp.ClientSession(loop=loop) as session:
-            result = await download_multiple(session)
+            result = download_multiple(session)
             print('finished:', result)
