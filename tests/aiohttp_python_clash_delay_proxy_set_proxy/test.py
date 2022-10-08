@@ -118,4 +118,5 @@ if __name__ == "__main__":
     validProxyName = validProxyDelayList[3]['name']
     setProxyWithSelector(validProxyName, debug=True)
     # now use the proxy!
-    requests.get('https://deepl.com', proxies={'http': gateway,'https':gateway})
+    r = requests.get('https://deepl.com', proxies={'http': gateway,'https':gateway})
+    print(r.status_code)
