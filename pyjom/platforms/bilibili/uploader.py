@@ -1,6 +1,6 @@
-from bilibili_api import sync, video_uploader, Credential
+from bilibili_api import video_uploader, Credential
 
-
+# you may use the 'sync' method elsewhere.
 async def uploadVideo(
     sessdata="",
     bili_jct="",
