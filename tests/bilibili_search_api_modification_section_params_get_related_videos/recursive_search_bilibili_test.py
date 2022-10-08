@@ -256,6 +256,7 @@ def getBilibiliPostMetadataForDogCat(
                 iterable,
                 duration_limit={"min": 70, "max": 5 * 60},
                 play_limit={"min": 10000},
+                titleLengthLimit = {"min": 7, "max": 17},
                 debugTag="debug",
             ):
                 for videoMetadata in iterable:
@@ -263,6 +264,7 @@ def getBilibiliPostMetadataForDogCat(
                         videoMetadata,
                         duration_limit=duration_limit,
                         play_limit=play_limit,
+                        titleLengthLimit=titleLengthLimit,
                         debugTag=debugTag,
                     )
 
