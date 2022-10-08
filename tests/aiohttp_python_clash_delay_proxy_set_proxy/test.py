@@ -9,3 +9,5 @@ def testProxyList(proxyList,port=...):
 
 def setProxy(proxy, port=...):
     ...
+
+def getConnectionGateway(port=...):
