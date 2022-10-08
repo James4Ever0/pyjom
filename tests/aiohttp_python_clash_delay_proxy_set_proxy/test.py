@@ -49,4 +49,5 @@ if __name__ == "__main__":
         print(result)
         # {'message': 'Timeout'}
         # {'message': 'An error occurred in the delay test'}
+        # {'delay': 1760}
         breakpoint()
