@@ -64,23 +64,41 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
 
 def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=2):
     import random
+
     selected_tags = random.sample(tag_list, selected_tag_groups)
-    selected_tags = [random.sample(tags, min(len(tags), selected_tag_per_group)) for tags in selected_tags]
+    selected_tags = [
+        random.sample(tags, min(len(tags), selected_tag_per_group))
+        for tags in selected_tags
+    ]
     # flatten this thing.
     selected_tags = flattenUnhashableList(selected_tags)
     return list(set(selected_tags))
 
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
-    return getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: imageDogCatCoverCropAdvanced(
+    return getCoverTargetFromCoverListDefault(
+        cover_list,
+        dog_or_cat_original,
+        filter_function=lambda image: imageDogCatCoverCropAdvanced(
             image,
             dog_or_cat=dog_or_cat_original,
             area_threshold=0.7,
             corner=False,
-        ))
-def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: image,histogramMatch=True,delta=0.2,flip:Literal[True, False, 'random']=True): # default function does not process this tag.
+        ),
+    )
+
+
+def getCoverTargetFromCoverListDefault(
+    cover_list,
+    dog_or_cat_original,
+    filter_function=lambda image: image,
+    histogramMatch=True,
+    delta=0.2,
+    flip: Literal[True, False, "random"] = True,
+):  # default function does not process this tag.
     import random
-    if flip == 'random':
+
+    if flip == "random":
         flip = random.choice([True, False])
     random.shuffle(cover_list)
     reference_histogram_cover = random.choice(cover_list)
@@ -103,12 +121,10 @@ def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_f
         if cropped_image is not None:
             if histogramMatch:
                 cropped_image = imageHistogramMatch(
-                cropped_image, reference_histogram_cover, delta=delta
-            )
+                    cropped_image, reference_histogram_cover, delta=delta
+                )
             if flip:
-                cropped_image_color_transfered_fliped = cv2.flip(
-                cropped_image, 1
-            )
+                cropped_image_color_transfered_fliped = cv2.flip(cropped_image, 1)
             cover_target = cropped_image
             break
     return cover_target
@@ -135,7 +151,9 @@ def getBilibiliPostMetadata(
     duration_limit={"min": 70, "max": 5 * 60},
     play_limit={"min": 10000},
     titleLengthLimit={"min": 7, "max": 17},
-    getCoverTargetFromCoverList = lambda cover_list, dog_or_cat_original: random.choice(cover_list) # what is the default process?
+    getCoverTargetFromCoverList=lambda cover_list, dog_or_cat_original: random.choice(
+        cover_list
+    ),  # what is the default process?
 ):
 
     selected_topic_list_dict = {key: [] for key in getMetatopic.keys()}
