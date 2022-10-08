@@ -11,6 +11,7 @@ def getProxyList(port=9911, debug=False):
     if debug:
         print(clashUrl)
 
+
 def testProxyList(
     proxyList, port=9911, url=..., timeout=...
 ):  # test the speed for given url
@@ -23,6 +24,7 @@ def setProxy(proxy, port=9911):
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
     ...
+
 
 if __name__ == "__main__":
     getProxyList(debug=True)
