@@ -11,7 +11,7 @@ except:
 userName = sync(user.get_self_info(credential))['name']
 print("欢迎，", userName, "!")
 # dict(credential)
-# credential.buvid3
-# credential.bili_jct
-# credential.sessdata
-# credential.dedeuserid # this is userid, better use this instead?
+credential.buvid3
+credential.bili_jct
+credential.sessdata
+userId = credential.dedeuserid # this is userid, better use this instead?
