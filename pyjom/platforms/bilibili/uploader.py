@@ -4,7 +4,7 @@ from bilibili_api import sync, video_uploader, Credential
 async def main(
     sessdata="",
     bili_jct="",
-    buvid3="",
+    buvid3="", # credentials.
     description="",
     dynamic="",
     tagString="",
