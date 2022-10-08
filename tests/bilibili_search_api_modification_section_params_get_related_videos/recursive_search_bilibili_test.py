@@ -70,7 +70,7 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
     selected_tags = flattenUnhashableList(selected_tags)
     return list(set(selected_tags))
 
-def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: image,histogramMatch=True,delta=,flip:Literal[True, False, 'random']=True):
+def getCoverTargetFromCoverListDefault(cover_list, dog_or_cat_original, filter_function = lambda image: image,histogramMatch=True,delta=0.2,flip:Literal[True, False, 'random']=True):
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
     lambda image: imageDogCatCoverCropAdvanced(
@@ -103,7 +103,7 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
         cropped_image = filter_function(image)
         if cropped_image is not None:
             cropped_image_color_transfered = imageHistogramMatch(
-                cropped_image, reference_histogram_cover, delta=0.2
+                cropped_image, reference_histogram_cover, delta=delta
             )
             if flip:
                 cropped_image_color_transfered_fliped = cv2.flip(
