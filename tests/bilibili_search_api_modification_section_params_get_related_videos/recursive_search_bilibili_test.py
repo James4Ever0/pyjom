@@ -111,7 +111,7 @@ def getBilibiliPostMetadataForDogCat(
     ],
     pageIndexRange = (1, 5),
     duration = BSP.all.duration._10分钟以下,
-
+    lang = "zh",
 ):
     import random
 
