@@ -17,7 +17,7 @@ async def main(sessdata="", bili_jct="", buvid3=""):
                 "open": 0
             },
             "tag": tagString,
-            "tid": tagId,
+            "tid": tagId, # original is 21. what is it?
             "title": title,
             "up_close_danmaku": True,
             "up_close_reply": True
