@@ -17,8 +17,8 @@ async def main(sessdata="", bili_jct="", buvid3=""):
                 "open": 0
             },
             "tag": tagString,
-            "tid": 21,
-            "title": "title",
+            "tid": tagId,
+            "title": title,
             "up_close_danmaku": True,
             "up_close_reply": True
         }
