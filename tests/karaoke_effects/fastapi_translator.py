@@ -69,9 +69,10 @@ def baiduTranslator(text, sleep=1):  # target language must be chinese.
 
 from lazero.network.proxy.clash import getProxyList, testProxyList, setProxyWithSelector, clashProxyStateManager
 
-proxyList = 
+proxyList = getProxyList()
 
 def deeplTranslator(text, sleep=2, timeout=5):
+    global proxyList,
     useProxy(False)
     # better use proxy instead. you need to config it here, and make sure the deepl adaptor uses the proxy.
     import requests
