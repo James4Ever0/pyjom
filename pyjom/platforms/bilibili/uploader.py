@@ -1,6 +1,6 @@
 from bilibili_api import sync, video_uploader, Credential
 
-async def main(sessdata="", bili_jct="", buvid3="",description="", dynamic="", ):
+async def main(sessdata="", bili_jct="", buvid3="",description="", dynamic="", tagString="", tagId=0,):
     credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # 具体请查阅相关文档
     meta = {
