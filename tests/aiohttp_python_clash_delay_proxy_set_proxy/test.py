@@ -59,7 +59,9 @@ def setProxyWithSelector(
 
 
 def setProxyConfig(
-    port=9911, http_port:Union[None, int]=None, mode: Literal["Global", "Rule", "Direct", None] = None
+    port=9911,
+    http_port: Union[None, int] = None,
+    mode: Literal["Global", "Rule", "Direct", None] = None,
 ):
     # https://clash.gitbook.io/doc/restful-api/config
     # sure you can patch more things but that's enough for now.
