@@ -34,4 +34,4 @@ async def main():
             result = loop.run_until_complete(download_multiple(session))
             print('finished:', result)
 
-main()
+asyncio.run_coroutine_threadsafe(main)
