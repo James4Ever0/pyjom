@@ -270,7 +270,7 @@ def getBilibiliPostMetadataForDogCat(
 
             updateMyListsWithIterable(
                 parseSearchVideoResult(result), 
-                duration_limit={"min": 70, "max": 5 * 60},
+                duration_limit=duration_limit,
                 play_limit=play_limit,
                 titleLengthLimit = titleLengthLimit,debugTag="searchVideoResult"
             )
