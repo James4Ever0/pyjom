@@ -1,1 +1,1 @@
-# you need to manage credentials
+# you need to manage login/logout and storage.
