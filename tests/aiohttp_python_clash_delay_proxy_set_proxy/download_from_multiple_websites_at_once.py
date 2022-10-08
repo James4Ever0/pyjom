@@ -6,7 +6,7 @@ import asyncio
 async def get(url, processor=lambda x: x, params={}):
     async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params) as response:
-            return processor(response) # do we need to _await_?
+            result = await processor(response) # do we need to _await_?
 
 
 def concurrentGet(url_list, processor=lambda x: x, params={}, debug=False):
