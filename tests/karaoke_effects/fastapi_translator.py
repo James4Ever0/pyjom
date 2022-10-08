@@ -67,7 +67,7 @@ def baiduTranslator(text, sleep=1):  # target language must be chinese.
             print("ERROR ON BAIDU TRANSLATOR")
             return None
 
-from lazero.network.proxy.clash import  
+from lazero.network.proxy.clash import getProxyList, testProxyList,
 def deeplTranslator(text, sleep=2, timeout=3):
     useProxy(False)
     # better use proxy instead. you need to config it here, and make sure the deepl adaptor uses the proxy.
