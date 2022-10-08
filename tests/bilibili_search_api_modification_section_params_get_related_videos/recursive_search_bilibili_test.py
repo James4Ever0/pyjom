@@ -57,7 +57,7 @@ from lazero.utils.tools import flattenUnhashableList  # one of my classic method
 from lazero.utils.logger import sprint
 
 
-def filterTitleWithCoreTopicSet(title, core_topic_set):
+def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
     value = False
     for core_topic in core_topic_set:
         if core_topic in title:
