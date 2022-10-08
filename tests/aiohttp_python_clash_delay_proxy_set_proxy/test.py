@@ -21,7 +21,7 @@ if __name__ == "__main__":
     #  'tproxy-port': 0}
     gateway = getConnectionGateway()
     print('valid proxies:', len(validProxyDelayList))
-    validProxyName = validProxyDelayList[1]["name"]
+    validProxyName = validProxyDelayList[0]["name"]
     # if no valid proxy, better do another run.
     setProxyConfig(mode="Global")
     # you can switch to 'Rule' if you want the baidu translation
