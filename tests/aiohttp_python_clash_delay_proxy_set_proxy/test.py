@@ -11,6 +11,7 @@ localhostWithPort = lambda port: "{}:{}".format(localhost, port)
 import requests
 
 # so, how do you get the proxy list and test the speed for deepl.com?
+# if you really want to fall back, just change the proxy config.
 def getProxyList(port: int = 9911, debug=False, disallowed_types=['URLTest',"Reject","Selector",'Direct','Fallback']): # default do not return proxy groups. only standalone proxies.
     clashUrl = localhostWithPort(port) + "/proxies"  # this will reduce one layer of "/"
     if debug:
