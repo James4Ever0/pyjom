@@ -2,6 +2,7 @@ from download_from_multiple_websites_at_once import concurrentGet
 import os
 import json
 from typing import Literal, Union
+from pprint import pprint
 
 os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
@@ -17,7 +18,7 @@ def getProxyList(port: int = 9911, debug=False, nosubcatego):
     r = requests.get(clashUrl)
     # return r.content
     proxyInfo = r.json()
-    
+
     # proxyList = [key for key in proxyInfo["proxies"].keys()]
     # return proxyList
 
@@ -92,7 +93,6 @@ def getConnectionGateway(
 
 
 if __name__ == "__main__":
-    from pprint import pprint
 
     validProxyDelayList = []
     proxyList = getProxyList(debug=True)
