@@ -7,8 +7,9 @@ async def get(url):
     async with aiohttp.ClientSession() as session:
           async with session.get(url) as response:
                 return response
-loop = asyncio.get_event_loop()
 
+def concurrent
+loop = asyncio.get_event_loop()
 multiple_requests = [get(url) for url in url_list]
 
 results = loop.run_until_complete(asyncio.gather(*multiple_requests))
