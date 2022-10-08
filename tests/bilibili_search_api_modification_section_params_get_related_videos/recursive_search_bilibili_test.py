@@ -93,6 +93,46 @@ def randomChoiceTagList(tag_list):
     selected_tags = flattenUnhashableList(selected_tags)
     return list(set(selected_tags))
 
+def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
+    import random
+    random.shuffle(cover_list)
+    reference_histogram_cover = random.choice(cover_list)
+
+    cover_target = None
+
+    for cover in cover_list:
+        import os
+
+        os.environ["http"] = ""
+        os.environ["https"] = ""
+        from pyjom.imagetoolbox import (
+            imageLoader,
+            imageDogCatCoverCropAdvanced,
+            imageHistogramMatch,
+        )
+
+        image = imageLoader(cover)
+        # import requests
+        cropped_image = imageDogCatCoverCropAdvanced(
+            image,
+            dog_or_cat=dog_or_cat_original,
+            area_threshold=0.7,
+            corner=False,
+        )
+        if cropped_image is not None:
+            cropped_image_color_transfered = (
+                imageHistogramMatch(
+                    cropped_image, reference_histogram_cover
+                )
+            )
+            cropped_image_color_transfered_fliped = (
+                cv2.flip(cropped_image_color_transfered, 1)
+            )
+            cover_target = (
+                cropped_image_color_transfered_fliped
+            )
+            break
+
 BSP = search.bilibiliSearchParams()
 
 def getBilibiliPostMetadataForDogCat(
@@ -362,43 +402,6 @@ def getBilibiliPostMetadataForDogCat(
                                 # filtered_cover_list = []
                                 cover_target = getCoverTargetFromCoverList(cover_list)
                                 # this is a general thing.
-                                random.shuffle(cover_list)
-                                reference_histogram_cover = random.choice(cover_list)
-
-                                cover_target = None
-
-                                for cover in cover_list:
-                                    import os
-
-                                    os.environ["http"] = ""
-                                    os.environ["https"] = ""
-                                    from pyjom.imagetoolbox import (
-                                        imageLoader,
-                                        imageDogCatCoverCropAdvanced,
-                                        imageHistogramMatch,
-                                    )
-
-                                    image = imageLoader(cover)
-                                    # import requests
-                                    cropped_image = imageDogCatCoverCropAdvanced(
-                                        image,
-                                        dog_or_cat=dog_or_cat_original,
-                                        area_threshold=0.7,
-                                        corner=False,
-                                    )
-                                    if cropped_image is not None:
-                                        cropped_image_color_transfered = (
-                                            imageHistogramMatch(
-                                                cropped_image, reference_histogram_cover
-                                            )
-                                        )
-                                        cropped_image_color_transfered_fliped = (
-                                            cv2.flip(cropped_image_color_transfered, 1)
-                                        )
-                                        cover_target = (
-                                            cropped_image_color_transfered_fliped
-                                        )
-                                        break
                                     # r = requests.get(cover)
                                     # content = r.content
                                     # # corrupted or not?
