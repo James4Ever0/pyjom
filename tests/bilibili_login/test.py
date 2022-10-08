@@ -1,17 +1,18 @@
 from bilibili_api import login, user, sync
+
 print("请登录：")
-credential = login.login_with_qrcode() # what are you doing here?
+credential = login.login_with_qrcode()  # what are you doing here?
 # this is some GUI function. no terminal support!
 try:
-    credential.raise_for_no_bili_jct() # 判断是否成功
-    credential.raise_for_no_sessdata() # 判断是否成功
+    credential.raise_for_no_bili_jct()  # 判断是否成功
+    credential.raise_for_no_sessdata()  # 判断是否成功
 except:
     print("登陆失败。。。")
     exit()
-userName = sync(user.get_self_info(credential))['name']
+userName = sync(user.get_self_info(credential))["name"]
 print("欢迎，", userName, "!")
 # dict(credential)
-credential.buvid3
-bili_jct=credential.bili_jct
+buvid3 = credential.buvid3
+bili_jct = credential.bili_jct
 sessdata = credential.sessdata
-userId = credential.dedeuserid # this is userid, better use this instead?
+userId = credential.dedeuserid  # this is userid, better use this instead?
