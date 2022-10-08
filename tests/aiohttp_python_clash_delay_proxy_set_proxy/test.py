@@ -29,6 +29,7 @@ def testProxyList(
         r = requests.get(testUrl, params=params)
         # we need to test the non-async version.
         req_json = r.json()
+        return req_json
 
 
 def setProxy(proxy, port=9911):
