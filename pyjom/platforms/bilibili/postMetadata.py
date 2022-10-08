@@ -434,7 +434,7 @@ def getBilibiliPostMetadataForDogCat():
         "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
         "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
     }
-    return getBilibiliPostMetadata( # this is a premature version. the deeplearning version might interest you more. but how the fuck I can integrate DL into this shit?
+    return getBilibiliPostMetadata( # this is a premature version. the deeplearning version might interest you more. but how the fuck i can integrate DL into this shit?
         getMetatopic=getMetatopic,
         getTids=getTids,
         getCoverTargetFromCoverList=getCoverTargetFromCoverListForDogCat,
