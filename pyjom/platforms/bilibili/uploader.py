@@ -8,7 +8,7 @@ async def main(sessdata="", bili_jct="", buvid3=""):
             "source": "",
             "desc": "desc",
             "desc_format_id": 0,
-            "dynamic": "233",
+            "dynamic": dynamic, # 
             "interactive": 0,
             "open_elec": 1,
             "no_reprint": 1,
