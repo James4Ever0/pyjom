@@ -66,7 +66,7 @@ def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
     if debug:
         print("TITLE:", title)
         print("CORE TOPIC SET:", core_topic_set)
-        print('VALUE:', value)
+        print("VALUE:", value)
         breakpoint()
     return value
 
@@ -86,6 +86,7 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
 
 def randomChoiceTagList(tag_list):
     import random
+
     selected_tags = random.sample(tag_list, 3)
     selected_tags = [random.sample(tags, min(len(tags), 2)) for tags in selected_tags]
     # flatten this thing.
@@ -93,11 +94,15 @@ def randomChoiceTagList(tag_list):
     return list(set(selected_tags))
 
 
-def getBilibiliPostMetadataForDogCat(sleepTime=2,    getMetatopic = {
+def getBilibiliPostMetadataForDogCat(
+    sleepTime=2,
+    getMetatopic={
         "dog": dog_metatopic,
         "cat": cat_metatopic,
-    }):
+    },
+):
     import random
+
     selected_topic_list_dict = {"dog": [], "cat": []}
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
     dog_or_cat = randomTarget()
@@ -199,7 +204,7 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2,    getMetatopic = {
                     links_in_description,
                     bgms,
                     title_tags,
-                    pubdate
+                    pubdate,
                 ) = videoMetadata
                 # print("VIDEO_METADATA",videoMetadata)
                 # breakpoint()
@@ -328,9 +333,11 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2,    getMetatopic = {
             filtered_title_list = filterTitleListWithCoreTopicSet(
                 title_list, static_core_topic_list
             )  # could be enhabced with CLIP
-            filtered_description_list = filterTitleListWithCoreTopicSet(description_list, static_core_topic_list)
+            filtered_description_list = filterTitleListWithCoreTopicSet(
+                description_list, static_core_topic_list
+            )
             # filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
-            if len(filtered_description_list) >3:
+            if len(filtered_description_list) > 3:
                 if len(filtered_title_list) > 3:
                     if len(cover_list) > 3:
                         if len(tag_list) > 3:
@@ -368,10 +375,12 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2,    getMetatopic = {
                                                 cropped_image, reference_histogram_cover
                                             )
                                         )
-                                        cropped_image_color_transfered_fliped = cv2.flip(
-                                            cropped_image_color_transfered, 1
+                                        cropped_image_color_transfered_fliped = (
+                                            cv2.flip(cropped_image_color_transfered, 1)
                                         )
-                                        cover_target = cropped_image_color_transfered_fliped
+                                        cover_target = (
+                                            cropped_image_color_transfered_fliped
+                                        )
                                         break
                                     # r = requests.get(cover)
                                     # content = r.content
@@ -389,9 +398,12 @@ def getBilibiliPostMetadataForDogCat(sleepTime=2,    getMetatopic = {
                                     clearMyLists()
         except:
             import time
+
             time.sleep(sleepTime)
             from lazero.utils.logger import traceError
+
             traceError("error when fetching metatopic")
+
 
 if __name__ == "__main__":
     for (
@@ -403,7 +415,7 @@ if __name__ == "__main__":
         dog_or_cat,
     ) in getBilibiliPostMetadataForDogCat():
         print("FETCHED VIDEO METADATA FOR PRODUCTION:")
-        videoMetadata = mCover, mTagSeries, mTitle, mBgm, mDescription,dog_or_cat
+        videoMetadata = mCover, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat
         print(videoMetadata)
         mCover2 = cv2.resize(mCover, (int(1920 / 2), int(1080 / 2)))
         cv2.imshow("COVER", mCover2)
