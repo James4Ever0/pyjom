@@ -73,10 +73,8 @@ from contextlib import AbstractContextManager
 
 class clashProxyState(AbstractContextManager):
     def __init__(self, enter, exit):
-        assert type(path) == str
-        if not os.path.isabs(path):
-            path = os.path.abspath(path)
-        self._tmpdir = path
+        self.enter = enter
+        self.exit = exit
 
     def __enter__(self):
         print("temporary directory: %s" % self._tmpdir)
