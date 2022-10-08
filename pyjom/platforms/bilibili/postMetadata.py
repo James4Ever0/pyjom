@@ -4,6 +4,9 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 from lazero.utils.logger import sprint
+            from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult
+
+                from pyjom.platforms.bilibili.searchDataParser import parseVideoRelated
 
 
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
@@ -311,7 +314,6 @@ def getBilibiliPostMetadata(
                 )
                 # then we get related videos.
                 result = sync(v.get_related())
-                from pyjom.platforms.bilibili.searchDataParser import parseVideoRelated
 
                 # import json
 
