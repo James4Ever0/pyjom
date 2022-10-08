@@ -1,7 +1,7 @@
 from download_from_multiple_websites_at_once import concurrentGet
 import pathlib
 localhost="http://127.0.0.1"
-localhostWithPort = lambda port: "{}:{}".format(localhost, port)
+localhostWithPort = lambda port: pathlib.Path("{}:{}".format(localhost, port))
 import requests
 # so, how do you get the proxy list and test the speed for deepl.com?
 def getProxyList(port=9911):
