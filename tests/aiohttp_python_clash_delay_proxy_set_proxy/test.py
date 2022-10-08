@@ -1,7 +1,7 @@
 from download_from_multiple_websites_at_once import concurrentGet
 import os
 import json
-from typing import Literal
+from typing import Literal, Union
 
 os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
@@ -37,7 +37,9 @@ def testProxyList(
     return concurrentGet(url_list, processor=lambda x: x.json(), params=params)
 
 
-def setProxyWithSelector(proxyName, selector="GLOBAL", port=9911): # how to make sure it will use 'GLOBAL'? it needs to be done with the config.
+def setProxyWithSelector(
+    proxyName, selector="GLOBAL", port=9911
+):  # how to make sure it will use 'GLOBAL'? it needs to be done with the config.
     clashUrl = localhostWithPort(port) + "/proxies/{}".format(selector)
     r = requests.put(
         clashUrl, data=json.dumps({"name": proxyName}, ensure_ascii=False).encode()
@@ -55,17 +57,21 @@ def setProxyWithSelector(proxyName, selector="GLOBAL", port=9911): # how to make
             ...
         print("error when setting proxy %s with selector %s" % (proxyName, selector))
 
-def setProxyConfig(port=9911, http_port=None,mode:Literal['Global','Rule','Direct', None]=None):
+
+def setProxyConfig(
+    port=9911, http_port=None, mode: Literal["Global", "Rule", "Direct", None] = None
+):
     # https://clash.gitbook.io/doc/restful-api/config
     # sure you can patch more things but that's enough for now.
-    clashUrl = localhostWithPort(port)+"/configs"
+    clashUrl = localhostWithPort(port) + "/configs"
     configs = {}
     if http_port:
-        configs.update({'port':http_port})
+        configs.update({"port": http_port})
     if mode:
-        configs.update({'mode':mode})
-    r = requests.patch(clashUrl,data=json.dumps(configs,ensure_ascii=False).encode())
+        configs.update({"mode": mode})
+    r = requests.patch(clashUrl, data=json.dumps(configs, ensure_ascii=False).encode())
     assert r.status_code == 204
+
 
 def getConnectionGateway(port=9911):  # get the clash local http proxy connection port.
     clashUrl = localhostWithPort(port) + "/configs"
