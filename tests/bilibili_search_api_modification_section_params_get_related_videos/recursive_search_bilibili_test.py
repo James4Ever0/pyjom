@@ -93,8 +93,10 @@ def randomChoiceTagList(tag_list):
     selected_tags = flattenUnhashableList(selected_tags)
     return list(set(selected_tags))
 
+
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
     import random
+
     random.shuffle(cover_list)
     reference_histogram_cover = random.choice(cover_list)
 
@@ -120,20 +122,19 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
             corner=False,
         )
         if cropped_image is not None:
-            cropped_image_color_transfered = (
-                imageHistogramMatch(
-                    cropped_image, reference_histogram_cover
-                )
+            cropped_image_color_transfered = imageHistogramMatch(
+                cropped_image, reference_histogram_cover
             )
-            cropped_image_color_transfered_fliped = (
-                cv2.flip(cropped_image_color_transfered, 1)
+            cropped_image_color_transfered_fliped = cv2.flip(
+                cropped_image_color_transfered, 1
             )
-            cover_target = (
-                cropped_image_color_transfered_fliped
-            )
+            cover_target = cropped_image_color_transfered_fliped
             break
+    return cover_target
+
 
 BSP = search.bilibiliSearchParams()
+
 
 def getBilibiliPostMetadataForDogCat(
     sleepTime=2,
@@ -141,21 +142,23 @@ def getBilibiliPostMetadataForDogCat(
         "dog": dog_metatopic,
         "cat": cat_metatopic,
     },
-    getTids = {'dog':[BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],'cat':[BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人]},
-        orders = [
+    getTids={
+        "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
+        "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
+    },
+    orders=[
         BSP.all.order.最多点击,
         BSP.all.order.最多收藏,
         BSP.all.order.最新发布,
         BSP.all.order.最多弹幕,
         BSP.all.order.综合排序,
     ],
-    pageIndexRange = (1, 5),
-    duration = BSP.all.duration._10分钟以下,
-    lang = "zh",
+    pageIndexRange=(1, 5),
+    duration=BSP.all.duration._10分钟以下,
+    lang="zh",
     duration_limit={"min": 70, "max": 5 * 60},
-                play_limit={"min": 10000},
-                titleLengthLimit = {"min": 7, "max": 17},
-
+    play_limit={"min": 10000},
+    titleLengthLimit={"min": 7, "max": 17},
 ):
     import random
 
@@ -182,7 +185,6 @@ def getBilibiliPostMetadataForDogCat(
     getKeywords = {
         key: lambda: getMetaTopicString(value) for key, value in getMetatopic.items()
     }
-
 
     # getDogTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人])
     # getCatTid = lambda: random.choice([BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人])
@@ -234,7 +236,7 @@ def getBilibiliPostMetadataForDogCat(
             def updateMyLists(
                 videoMetadata,
                 duration_limit={"min": 70, "max": 5 * 60},
-                titleLengthLimit = {"min": 7, "max": 17},
+                titleLengthLimit={"min": 7, "max": 17},
                 play_limit={"min": 10000},
                 debugTag="debug",
             ):
@@ -300,7 +302,7 @@ def getBilibiliPostMetadataForDogCat(
                 iterable,
                 duration_limit={"min": 70, "max": 5 * 60},
                 play_limit={"min": 10000},
-                titleLengthLimit = {"min": 7, "max": 17},
+                titleLengthLimit={"min": 7, "max": 17},
                 debugTag="debug",
             ):
                 for videoMetadata in iterable:
@@ -313,10 +315,11 @@ def getBilibiliPostMetadataForDogCat(
                     )
 
             updateMyListsWithIterable(
-                parseSearchVideoResult(result), 
+                parseSearchVideoResult(result),
                 duration_limit=duration_limit,
                 play_limit=play_limit,
-                titleLengthLimit = titleLengthLimit,debugTag="searchVideoResult"
+                titleLengthLimit=titleLengthLimit,
+                debugTag="searchVideoResult",
             )
 
             # do the related video search?
@@ -337,6 +340,7 @@ def getBilibiliPostMetadataForDogCat(
                 # then we get related videos.
                 result = sync(v.get_related())
                 from searchDataParser import parseVideoRelated
+
                 # import json
 
                 # print(json.dumps(result, indent=4, ensure_ascii=False))
@@ -400,12 +404,15 @@ def getBilibiliPostMetadataForDogCat(
                                 # time to yield something.
                                 # detect this thing!
                                 # filtered_cover_list = []
-                                cover_target = getCoverTargetFromCoverList(cover_list)
+                                cover_target = getCoverTargetFromCoverList(
+                                    cover_list,
+                                    dog_or_cat_original,  # this is the label of the selected metatopic. might be useful.
+                                )
                                 # this is a general thing.
-                                    # r = requests.get(cover)
-                                    # content = r.content
-                                    # # corrupted or not?
-                                    # image = cv2.imdecode(content, cv2.IMREAD_COLOR)
+                                # r = requests.get(cover)
+                                # content = r.content
+                                # # corrupted or not?
+                                # image = cv2.imdecode(content, cv2.IMREAD_COLOR)
                                 # mCover = random.choice(filtered_cover_list) # what is this cover list?
                                 mDescription = random.choice(filtered_description_list)
                                 if cover_target is not None:
@@ -418,8 +425,10 @@ def getBilibiliPostMetadataForDogCat(
                                     clearMyLists()
         except:
             import time
+
             time.sleep(sleepTime)
             from lazero.utils.logger import traceError
+
             traceError("error when fetching metatopic")
 
 
