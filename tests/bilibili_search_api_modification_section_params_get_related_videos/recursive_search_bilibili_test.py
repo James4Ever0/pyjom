@@ -101,7 +101,14 @@ def getBilibiliPostMetadataForDogCat(
         "dog": dog_metatopic,
         "cat": cat_metatopic,
     },
-    getTids = {'dog':[BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],'cat':[BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人]}
+    getTids = {'dog':[BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],'cat':[BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人]},
+        orders = [
+        BSP.all.order.最多点击,
+        BSP.all.order.最多收藏,
+        BSP.all.order.最新发布,
+        BSP.all.order.最多弹幕,
+        BSP.all.order.综合排序,
+    ]
 ):
     import random
 
