@@ -69,25 +69,6 @@ def baiduTranslator(text, sleep=1):  # target language must be chinese.
 
 from lazero.network.proxy.clash import getProxyList, testProxyList, setProxyWithSelector, setProxyConfig
 
-from contextlib import AbstractContextManager
-
-class clashProxyState(AbstractContextManager):
-    def __init__(self, enter, exit):
-        self.enter = enter
-        self.exit = exit
-
-    def __enter__(self):
-        
-
-    def __exit__(self, exctype, excinst, exctb):
-        # try not to handle exceptions?
-        tempdir = self._tmpdir
-        print("cleaning tempdir: %s" % tempdir)
-        if os.path.exists(tempdir):
-            if os.path.isdir(tempdir):
-                shutil.rmtree(tempdir)
-        return False
-
 def deeplTranslator(text, sleep=2, timeout=3):
     useProxy(False)
     # better use proxy instead. you need to config it here, and make sure the deepl adaptor uses the proxy.
