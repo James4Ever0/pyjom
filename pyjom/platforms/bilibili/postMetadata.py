@@ -4,21 +4,6 @@ from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
 from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 from lazero.utils.logger import sprint
-from pyjom.platforms.bilibili.searchDataParser import (
-    parseSearchVideoResult,
-    parseVideoRelated,
-    parseVideoInfo,
-)
-import os
-import random
-from typing import Literal
-from pyjom.imagetoolbox import (
-    imageLoader,
-    imageDogCatCoverCropAdvanced,
-    imageHistogramMatch,
-)
-BSP = search.bilibiliSearchParams()
-from pyjom.commons import checkMinMaxDict
 
 
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
@@ -49,6 +34,7 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
 
 
 def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=2):
+    import random
 
     selected_tags = random.sample(tag_list, selected_tag_groups)
     selected_tags = [
@@ -60,6 +46,7 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
     return list(set(selected_tags))
 
 
+from typing import Literal
 
 
 def getCoverTargetFromCoverListDefault(
@@ -70,7 +57,7 @@ def getCoverTargetFromCoverListDefault(
     delta=0.2,
     flip: Literal[True, False, "random"] = True,
 ):  # default function does not process this tag.
-    # import random
+    import random
 
     if flip == "random":
         flip = random.choice([True, False])
@@ -80,14 +67,15 @@ def getCoverTargetFromCoverListDefault(
     cover_target = None
 
     for cover in cover_list:
+        import os
 
         os.environ["http"] = ""
         os.environ["https"] = ""
-        # from pyjom.imagetoolbox import (
-        #     imageLoader,
-        #     # imageDogCatCoverCropAdvanced,
-        #     imageHistogramMatch,
-        # )
+        from pyjom.imagetoolbox import (
+            imageLoader,
+            # imageDogCatCoverCropAdvanced,
+            imageHistogramMatch,
+        )
 
         image = imageLoader(cover)
         cropped_image = filter_function(image)
@@ -104,6 +92,11 @@ def getCoverTargetFromCoverListDefault(
 
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
+    from pyjom.imagetoolbox import (
+        # imageLoader,
+        imageDogCatCoverCropAdvanced,
+        # imageHistogramMatch,
+    )
 
     return getCoverTargetFromCoverListDefault(
         cover_list,
@@ -117,7 +110,8 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
     )
 
 
-# import random
+BSP = search.bilibiliSearchParams()
+import random
 
 
 def getBilibiliPostMetadata(
@@ -207,7 +201,10 @@ def getBilibiliPostMetadata(
 
             # print(result)
             # breakpoint()
+pyjom/platforms/bilibili/searchDataParser.py
+            from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult
 
+            from pyjom.commons import checkMinMaxDict
 
             def updateMyLists(
                 videoMetadata,
@@ -306,6 +303,7 @@ def getBilibiliPostMetadata(
                 bvid = random.choice(bvid_list)
                 v = video.Video(bvid=bvid)
                 videoInfo = sync(v.get_info())
+                from pyjom.platforms.bilibili.searchDataParser import parseVideoInfo
 
                 primaryVideoInfo, secondaryVideoInfoList = parseVideoInfo(videoInfo)
                 # for videoMetadata in secondaryVideoInfoList:
@@ -314,6 +312,7 @@ def getBilibiliPostMetadata(
                 )
                 # then we get related videos.
                 result = sync(v.get_related())
+                from pyjom.platforms.bilibili.searchDataParser import parseVideoRelated
 
                 # import json
 
