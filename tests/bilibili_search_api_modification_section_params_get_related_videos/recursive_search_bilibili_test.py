@@ -76,6 +76,11 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
 
 
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
+    from pyjom.imagetoolbox import (
+            imageLoader,
+            imageDogCatCoverCropAdvanced,
+            imageHistogramMatch,
+        )
     return getCoverTargetFromCoverListDefault(
         cover_list,
         dog_or_cat_original,
@@ -113,7 +118,7 @@ def getCoverTargetFromCoverListDefault(
         os.environ["https"] = ""
         from pyjom.imagetoolbox import (
             imageLoader,
-            imageDogCatCoverCropAdvanced,
+            # imageDogCatCoverCropAdvanced,
             imageHistogramMatch,
         )
 
