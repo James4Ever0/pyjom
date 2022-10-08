@@ -14,6 +14,7 @@ async def main(
     close_reply=False,
     videoPath="",
     cover_path="",
+    threads=3,
 ):
     videoExtension = videoPath.split(".")[-1].lower()
     credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
@@ -41,7 +42,7 @@ async def main(
         extension=videoExtension,
     )  # are you sure?
     uploader = video_uploader.VideoUploader(
-        [page], meta, credential, threads=1, cover_path=cover_path
+        [page], meta, credential, threads=threads, cover_path=cover_path
     )
 
     @uploader.on("__ALL__")
