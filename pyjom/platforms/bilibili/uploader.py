@@ -44,6 +44,7 @@ async def uploadVideo(
         [page], meta, credential,cover_path=cover_path
     )
 
+    # will this work as expected?
     @uploader.on("__ALL__")
     async def ev(data):
         print(data)
