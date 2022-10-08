@@ -432,40 +432,8 @@ def getBilibiliPostMetadata(
             traceError("error when fetching metatopic")
 
 
-def getBilibiliPostMetadataForDogCat(
-    sleepTime=2,
-    getMetatopic={
-        "dog": dog_metatopic,
-        "cat": cat_metatopic,
-    },
-    getTids={
-        "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
-        "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
-    },
-    orders=[
-        BSP.all.order.最多点击,
-        BSP.all.order.最多收藏,
-        BSP.all.order.最新发布,
-        BSP.all.order.最多弹幕,
-        BSP.all.order.综合排序,
-    ],
-    pageIndexRange=(1, 5),
-    duration=BSP.all.duration._10分钟以下,
-    lang="zh",
-    duration_limit={"min": 70, "max": 5 * 60},
-    play_limit={"min": 10000},
-    titleLengthLimit={"min": 7, "max": 17},
-):
-    return getBilibiliPostMetadata(sleepTime=sleepTime,
-    getMetatopic=getMetatopic,
-    getTids=getTids,
-    orders=orders,
-    pageIndexRange=pageIndexRange,
-    duration=duration,
-    lang=lang,
-    duration_limit=duration_limit,
-    play_limit=play_limit,
-    titleLengthLimit=titleLengthLimit)
+def getBilibiliPostMetadataForDogCat():
+    return getBilibiliPostMetadata
     
 
 if __name__ == "__main__":
