@@ -1,6 +1,8 @@
 from pyjom.commons import *
 
 
+
+
 @decorator
 def BilibiliPoster(content, iterate=False):
     if iterate:
