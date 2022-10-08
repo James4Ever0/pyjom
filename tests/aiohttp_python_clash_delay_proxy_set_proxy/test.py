@@ -42,4 +42,4 @@ if __name__ == "__main__":
     # pprint.pprint(result)
     delayList = testProxyList(proxyList)
     proxyDelayList = zip(delayList,proxyList)
-    for delay, proxyName in 
+    for delay, proxyName in delayList:
