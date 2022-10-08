@@ -52,4 +52,5 @@ async def uploadVideo(
     await uploader.start()
 
 
+def uploadVideoSync
 sync(main())
