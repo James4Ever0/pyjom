@@ -26,7 +26,7 @@ def testProxyList(
     for proxyName in proxyList:
         testUrl = localhostWithPort(port) + "/proxies/{}/delay".format(proxyName)
         params = {'timeout': timeout, 'url': url}
-        requests
+        r = requests.get(testUrl, params=params)
 
 
 def setProxy(proxy, port=9911):
