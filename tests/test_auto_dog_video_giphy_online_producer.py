@@ -11,6 +11,7 @@ template_names = ["subtitle_detector.mdl.j2"]
 wbRev = OnlineAutoContentProducer(
     source="giphy",
     template="pets_with_music_online",
+    
     template_configs=[
         {
             "music": {
