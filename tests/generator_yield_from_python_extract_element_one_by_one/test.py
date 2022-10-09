@@ -11,11 +11,11 @@ def iterator(lambdaFunction):
         print(result)
 
 def generator3(myGenerator):
-     = generator2()
+
     getNextNumber = lambda: myGenerator.__next__()
     for _ in range(3):
         iterator(getNextNumber)
         print("_"*30)
 
 if __name__ == "__main__":
-    generator3() # good.
+    generator3(     = generator2()) # good.
