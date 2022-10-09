@@ -1,5 +1,5 @@
 from pyjom.commons import *
-
+from pyjom.platforms.bilibili.
 
 @decorator
 def BilibiliPoster(content, iterate=False, contentType='video'):
