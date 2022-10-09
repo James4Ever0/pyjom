@@ -2,5 +2,5 @@ import tinydb
 
 dbLocation = "test.json"
 db = tinydb.TinyDB(dbLocation)
-db.upsert({'abc': 'def'})
 table = db.table('mytable')
+table.upsert({'abc': 'def'})
