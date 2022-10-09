@@ -3,7 +3,7 @@ import pathlib
 def generator(tempfile):
     with tmpfile(tempfile):
         pathlib.Path(tempfile).touch()
-        for index in range(100):
+        for index in range(100): # zero to 11
             yield index
 
 
@@ -38,6 +38,6 @@ if __name__ == "__main__":
     generator3(myGenerator)  # good.
     # not over yet.
     checkFileExists(tempfile, debug=True)
-    myGenerator.close() # choose to close this so you would 
+    myGenerator.close() # choose to close this so you would get this result.
     checkFileExists(tempfile, debug=True)
     # another test on generator, about tempfiles during iteration.
