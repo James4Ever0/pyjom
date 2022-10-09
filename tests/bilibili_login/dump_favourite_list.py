@@ -35,4 +35,6 @@ if len(dataList) == 1:
     # now you have it.
     favourite_list = sync(favorite_list.get_video_favorite_list(int(dedeuserid),None, credential))
     print(favourite_list) # None? wtf?
-    favList = favourite_list
+    favLists = favourite_list['list']
+    for favList in favLists:
+        
