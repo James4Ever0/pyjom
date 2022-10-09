@@ -13,4 +13,5 @@ def iterator(lambdaFunction):
 def generator3():
     myGenerator = generator2()
     getNextNumber = lambda: myGenerator.__next__()
-    
+    for _ in range(3):
+    iterator(getNextNumber)
