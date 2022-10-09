@@ -12,7 +12,8 @@ User = tinydb.Query()
 
 def verifyCredential(credential):
     name = sync(get_self_info(credential))["name"]
-    print('credential valid:')
+    print('credential valid for:', name)
+    
 
 def getCredentialByDedeUserId(dedeuserid):
     dataList = db.search(User.dedeuserid == dedeuserid)
