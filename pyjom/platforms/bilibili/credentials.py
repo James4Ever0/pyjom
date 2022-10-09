@@ -46,6 +46,7 @@ def getCredentialByDedeUserId(dedeuserid):
     if len(dataList) !=1:
         if len(dataList) != 0:
             # remove all related records.
+            print('multiple credentials found for dedeuserid:', dedeuserid)
             removeCredentialByDedeUserId(dedeuserid)
         else:
             print('no credential found for dedeuserid:', dedeuserid)
