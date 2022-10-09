@@ -1,5 +1,5 @@
 from pyjom.commons import *
-from p
+from lazero.program.functools
 
 @decorator
 @
