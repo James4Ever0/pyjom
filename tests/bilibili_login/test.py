@@ -59,6 +59,7 @@ if credential != None:
     bili_jct = credential.bili_jct
     sessdata = credential.sessdata
     userId = credential.dedeuserid  # this is userid, better use this instead?
+    User = tinydb.Query()
     db.upsert({}, User.)
     # how to perform atomic insert in tinydb?
     breakpoint()
