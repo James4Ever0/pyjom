@@ -10,7 +10,8 @@ template_names = ["subtitle_detector.mdl.j2"]
 
 # you want musictoolbox? well shit...
 # just because you want download music.
-# also where is 
+# also where are the places for 'video/audio/voice/artwork' generation?
+# maybe it is not the time to release such kind of things...
 from pyjom.
 
 wbRev = OnlineAutoContentProducer(
