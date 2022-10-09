@@ -37,6 +37,4 @@ if len(dataList) == 1:
     if result !=list or len(result) == 0:
         break
     for elem in result:
-
-
     # it has description.
