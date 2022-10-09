@@ -1,7 +1,7 @@
 from pyjom.commons import *
 
 
-@decorator
+@decorator # called 'iterate with 
 def dummyOptimizer(topic, feedback, iterate=False): # wtf is this?
     # not optimized. need schedule.
     if not iterate:
