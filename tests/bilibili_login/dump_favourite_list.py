@@ -38,3 +38,4 @@ if len(dataList) == 1:
     favLists = favourite_list['list']
     for favList in favLists:
         listId = favList['id']
+        listName = favList['name']
