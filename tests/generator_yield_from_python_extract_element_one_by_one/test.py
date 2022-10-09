@@ -39,6 +39,8 @@ if __name__ == "__main__":
     if os.path.exists(tempfile):
         os.remove(tempfile)
     myGenerator = generator2(tempfile)
+    print(type(myGenerator))
+    breakpoint()
     generator3(myGenerator, tempfile)  # good.
     # not over yet.
     checkFileExists(tempfile, debug=True)
