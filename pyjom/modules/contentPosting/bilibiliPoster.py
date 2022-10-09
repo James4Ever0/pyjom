@@ -7,6 +7,5 @@ def BilibiliPoster(content, iterate=False, postMetadataGenerator=None,contentTyp
     # anyway let's write for video.
     if iterate:
         for elem in content:
-            print("READY TO POST CONTENT FROM:", elem)
     # content id?
     return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
