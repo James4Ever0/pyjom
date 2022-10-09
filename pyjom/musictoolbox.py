@@ -4,4 +4,4 @@
 
 # pitch shift, speedup/slowdown is for audiotoolbox
 
-# voice change is for voicetoolbox.
+# voice change/synthesis is for voicetoolbox.
