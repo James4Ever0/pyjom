@@ -9,7 +9,7 @@ from bilibili_api import sync
 # 2. 验证码登录
 # 请输入 1/2
 # """))
-mode = 
+mode = 2
 
 credential = None
 
