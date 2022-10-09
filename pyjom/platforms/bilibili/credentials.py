@@ -36,7 +36,7 @@ def removeCredentialByDedeUserId(dedeuserid):
     except:
         import traceback
         traceback.print_exc()
-        print('error when removing credential from database')
+        print('error when removing credential from database for dedeuserid:)
 
 
 def getCredentialByDedeUserId(dedeuserid):
