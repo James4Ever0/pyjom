@@ -1,11 +1,11 @@
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
 from typing import Generator
-from lazero.filesystem.temp import temp
+from lazero.filesystem.temp import tmpdir
 # that generator you must put beforehand.
 @decorator
 def BilibiliPoster(content, iterate=False, postMetadataGenerator:Generator=...,# must be a generator. a called generator function.
-contentType='video', dedeuserid:str = "397424026", temp):
+contentType='video', dedeuserid:str = "397424026", tempdir = '/dev/shm/medialang/bilibili'):
     # are you sure this 'postMetadataGenerator' will generate valid data for us?
     # anyway let's write for video.
     # there are two generators. what do you want?
