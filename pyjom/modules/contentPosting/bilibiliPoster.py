@@ -8,7 +8,7 @@ def BilibiliPoster(content, iterate=False, postMetadataGenerator=None,contentTyp
     # there are two generators. what do you want?
     # def postContent(elem):
         print("READY TO POST CONTENT FROM:", elem)
-    for postMedadata in postMetadataGenerator()
+    for postMedadata in postMetadataGenerator
     if iterate:
         for elem in content:
     # content id?
