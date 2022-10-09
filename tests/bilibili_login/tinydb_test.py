@@ -1,4 +1,5 @@
 import tinydb
 
 dbLocation = "test.json"
-db = tinydb.TinyDB()
+db = tinydb.TinyDB(dbLocation)
+db.
