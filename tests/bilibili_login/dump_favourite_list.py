@@ -40,3 +40,9 @@ if len(dataList) == 1:
         listId = favList['id'] # integer.
         listName = favList['name']
         sync(favorite_list.get_video_favorite_list_content(listId, page=page))
+        if type(result) != list or len(result) == 0:
+            break
+        for elem in result:
+            # it has description.
+            videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
+            dbHistory.upsert(videoData, User.bvid == videoData["bvid"])
