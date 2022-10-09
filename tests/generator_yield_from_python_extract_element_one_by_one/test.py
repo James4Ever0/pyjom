@@ -1,5 +1,13 @@
 from lazero.filesystem.temp import tmpfile
 import pathlib
+
+import os
+
+def checkFileExists(filePath, debug=False):
+    result = os.path.exists(filePath)
+    if debug:
+        print('exists?', result)
+
 def generator(tempfile):
     with tmpfile(tempfile):
         pathlib.Path(tempfile).touch()
@@ -12,16 +20,17 @@ def generator2(tempfile):
     yield from generator(tempfile)  # this is to simplifying the process of iteration.
 
 
-def iterator(lambdaFunction):
+def iterator(lambdaFunction, tempfile):
     for _ in range(4):
         result = lambdaFunction()
         print(result)
+        checkFileExists(tempfile, debug=True)
 
 
-def generator3(myGenerator):
+def generator3(myGenerator, tempfile):
     getNextNumber = lambda: myGenerator.__next__()
     for _ in range(3):
-        iterator(getNextNumber)
+        iterator(getNextNumber, tempfile)
         print("_" * 30)
 
 
