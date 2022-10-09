@@ -36,7 +36,7 @@ if len(dataList) == 1:
     result = sync(favorite_list.get_video_favorite_list(int(dedeuserid),None, credential))
     print(result) # None? wtf?
     favLists = result['list']
-    for favList in favLists:
+    for favList in favLists:    
         listId = favList['id']
         listName = favList['name']
         sync(favorite_list.get_video_favorite_list_content())
