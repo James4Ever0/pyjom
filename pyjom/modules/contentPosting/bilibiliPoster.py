@@ -6,7 +6,6 @@ def BilibiliPoster(content, iterate=False, postMetadataGenerator=None,contentTyp
     # are you sure this 'postMetadataGenerator' will generate valid data for us?
     # anyway let's write for video.
     # there are two generators. what do you want?
-    # def postContent(elem):
         print("READY TO POST CONTENT FROM:", elem)
 
     if iterate:
