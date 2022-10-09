@@ -12,7 +12,7 @@ import tinydb
 db = tinydb.TinyDB(dbPath)
 User = tinydb.Query()
 dataList = db.search(User.dedeuserid == ) # this will never change i suppose?
-if dataList
+if len(dataList)
 credential = Credential()
 from bilibili_api import sync
 name = sync(get_self_info(credential))['name']
