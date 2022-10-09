@@ -30,11 +30,11 @@ def verifyCredential(credential,returnName=True):
         if returnName:
             db.upsert(
         {
-            "name": name,
-            "dedeuserid": dedeuserid,
-            "bili_jct": bili_jct,
-            "buvid3": buvid3,
-            "sessdata": sessdata,
+            "name": credential.name,
+            "dedeuserid": credential.dedeuserid,
+            "bili_jct": credential.bili_jct,
+            "buvid3": credential.buvid3,
+            "sessdata": credential.sessdata,
         },
         User.dedeuserid == dedeuserid,
     )
