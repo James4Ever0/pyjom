@@ -15,5 +15,5 @@ def OnlinePoster(
         content,
         iterate=iterate,
         contentType=contentType,
-        postMetadataGenerator=postMetadataGenerator,
+        postMetadataGenerator=get,
     )
