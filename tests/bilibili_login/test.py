@@ -1,5 +1,6 @@
 from bilibili_api import login, user, sync
 
+while True:
 print("请登录：")
 credential = login.login_with_qrcode()  # what are you doing here?
 # this is some GUI function. no terminal support!
