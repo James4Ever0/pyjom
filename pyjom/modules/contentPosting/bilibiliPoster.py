@@ -10,14 +10,14 @@ contentType='video', dedeuserid:str = "397424026"):
     # anyway let's write for video.
     # there are two generators. what do you want?
     getPostMetadata = lambda: postMetadataGenerator.__next__()
-    def postContent(elem, contentType=):
+    def postContent(elem, contentType='video'):
         print("READY TO POST CONTENT FROM:", elem)
         return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
 
     
-    def postContentIterate(content, contentType=):
+    def postContentIterate(content, contentType='video'):
         for elem in content:
-            yield postContent(elem, contentType=)
+            yield postContent(elem, contentType=contentType)
     if iterate:
         return postContentIterate
     else:
