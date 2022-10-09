@@ -33,10 +33,10 @@ if len(dataList) == 1:
         db.upsert(data, User.dedeuserid == dedeuserid)
     print("login successful:", name)
     # now you have it.
-    favourite_list = sync(favorite_list.get_video_favorite_list(int(dedeuserid),None, credential))
-    print(favourite_list) # None? wtf?
-    favLists = favourite_list['list']
+    result = sync(favorite_list.get_video_favorite_list(int(dedeuserid),None, credential))
+    print(result) # None? wtf?
+    favLists = result['list']
     for favList in favLists:
         listId = favList['id']
         listName = favList['name']
-        
+        sync(favourite_list)
