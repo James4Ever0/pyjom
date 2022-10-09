@@ -39,12 +39,13 @@ class OnlineAutoContentProducer(ContentProducer):
                 ),  # this is the second thing. how do you process this?
                 # "reviewer": filesystemReviewer,
                 "producer": keywordDecorator(
-                    OnlineProducer,
+                    OnlineProducer, # what does this 'OnlineProducer' generate?
                     source=source,
                     template=template,
                     fast=self.fast,
                     template_configs=template_configs,
                 ),
-                'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
+                'poster':keywordDecorator(BilibiliPoster, iterate=True,) # just for debugging.
+                # 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
             }
         )
