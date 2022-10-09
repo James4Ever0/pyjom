@@ -50,7 +50,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     template_configs=template_configs,
                 ),
                 "poster": keywordDecorator(
-                    OnlinePoster, # you need to be prudent. this is not kids stuff. figure out how to post to multiple platforms the same time, figure out how to post to individual platforms 
+                    OnlinePoster,  # you need to be prudent. this is not kids stuff. figure out how to post to multiple platforms the same time, figure out how to post to individual platform one by one.
                     iterate=True,
                     contentType=contentType,
                     postMetadataGenerator=postMetadataGenerator,
