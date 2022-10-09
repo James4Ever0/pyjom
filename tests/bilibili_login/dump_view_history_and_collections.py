@@ -25,3 +25,5 @@ if len(dataList) == 1:
         data['name']=name
         db.upsert(data, User.dedeuserid == dedeuserid)
     print('login successful:', name)
+    # now continue.
+    
