@@ -20,4 +20,4 @@ if len(dataList) == 1:
     name = sync(get_self_info(credential))['name']
     if oldName !=name:
         data['name']=name
-        db.upsert(data)
+        db.upsert(data, User.dedeuserid == dedeuserid)
