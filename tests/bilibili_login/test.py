@@ -49,3 +49,8 @@ else:
 if credential != None:
     name = sync(get_self_info(credential))['name']
     print(f"欢迎，{name}!")
+    buvid3 = credential.buvid3
+    bili_jct = credential.bili_jct
+    sessdata = credential.sessdata
+    userId = credential.dedeuserid  # this is userid, better use this instead?
+    breakpoint()
