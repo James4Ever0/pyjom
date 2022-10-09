@@ -10,7 +10,7 @@ def dummyFeedback(
         return "pending"
     def innerIterator(content):
         for elem in content:
-
+            yield inner(elem)
     if not iterate:
         return inner()
         
