@@ -19,5 +19,5 @@ if len(dataList) == 1:
     from bilibili_api import sync
     name = sync(get_self_info(credential))['name']
     if oldName !=name:
-        data.
+        data['name']=name
         db.upsert(data)
