@@ -98,6 +98,7 @@ def getCredentialByDedeUserId(dedeuserid:str="397424026"):
             if credential.dedeuserid == dedeuserid:
                 return credential
             else:
-                print('')
+                print('dedeuserid not right.')
+                print('user %s ')
         else:
             print('登陆失败')
