@@ -23,7 +23,7 @@ contentType='video', dedeuserid:str = "397424026", tempdir = '/dev/shm/medialang
             with tmpfile(cover_path):
                 cv2.imwrite(cover_path, cover_target)
             # you need to save this 'cover_target' to file.
-                contentId = uploadVideo(dedeuserid = dedeuserid,description = mDescription,dynamic=mDescription, tagString = tagString,)
+                contentId = uploadVideo(dedeuserid = dedeuserid,description = mDescription,dynamic=mDescription, tagString = tagString,tagId = search_tid,)
         return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
     
     def postContentIterate(content):
