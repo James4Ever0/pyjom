@@ -2,7 +2,7 @@
 from bilibili_api.user import get_self_info
 from bilibili_api import Credential
 
-from bilibili_api import favourite
+from bilibili_api import favourite_list
 
 # how to load credential from our stored things?
 from bilibili_api import user
