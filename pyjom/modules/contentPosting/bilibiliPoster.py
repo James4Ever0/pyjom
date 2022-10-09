@@ -38,11 +38,11 @@ def BilibiliPoster(
                 )
                 (
                     cover_target,
-                    mTagSeries, # are you sure this is a list of tags?
+                    mTagSeries,  # are you sure this is a list of tags?
                     mTitle,
-                    mBgm,# what is the bgm here used for?
+                    mBgm,  # what is the bgm here used for?
                     mDescription,
-                    dog_or_cat_original, # what again is this dog/cat label?
+                    dog_or_cat_original,  # what again is this dog/cat label?
                     search_tid,
                 ) = postMetadata  # assumptions on video type.
                 # you can fetch this from database. you can pickle this thing.
