@@ -30,6 +30,9 @@ def verifyCredential(credential,returnName=True):
         print('invalid credential:', credential)
         return False
 
+def removeCredentialByDedeUserId(dedeuserid):
+            db.remove(User.dedeuserid == dedeuserid)
+
 
 def getCredentialByDedeUserId(dedeuserid):
     dataList = db.search(User.dedeuserid == dedeuserid)
