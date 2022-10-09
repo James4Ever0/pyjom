@@ -44,7 +44,6 @@ if len(dataList) == 1:
         page = 0
         while True:
             import time
-
             time.sleep(3)
             page += 1
             result = sync(
