@@ -5,8 +5,10 @@ from pyjom.commons import *
 def dummyFeedback(
     content, iterate=False
 ):  # anyway, it is dummy. i don't expect nothing.
-    def inner()
+    def inner(elem):
+        print("from poster:", elem)
+        return "pending"
     if not iterate:
-        content = [content]
+        return inner()
     for elem in content:
         
