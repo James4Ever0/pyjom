@@ -5,7 +5,7 @@ from pyjom.platforms.bilibili.uploader import uploadVideo
 def BilibiliPoster(content, iterate=False, postMetadataGenerator=None,contentType='video'):
     # are you sure this 'postMetadataGenerator' will generate valid data for us?
     # anyway let's write for video.
-    def postContent()
+    def postContent(elem):
     if iterate:
         for elem in content:
     # content id?
