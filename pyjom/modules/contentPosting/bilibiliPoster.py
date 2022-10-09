@@ -13,7 +13,7 @@ contentType='video', dedeuserid:str = "397424026"):
     def postContent(elem): # what is this elem? please check for video producer.
         postMetadata = getPostMetadata()
         print("READY TO POST CONTENT FROM:", elem)# this elem is video location for me.
-        if contentType == 'video':
+        if contentType == 'video': # single video upload without grouping.
         contentId = uploadVideo(dedeuserid,descript)
         return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
     
