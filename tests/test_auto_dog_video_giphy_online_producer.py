@@ -11,8 +11,8 @@ template_names = ["subtitle_detector.mdl.j2"]
 # you want musictoolbox? well shit...
 # just because you want download music.
 # also where are the places for 'video/audio/voice/artwork' generation?
-# maybe it is not the time to use such kind of things... you know the ram.
-from pyjom.
+# maybe it is not the time to use such kind of things... you know the ram best.
+from pyjom.platforms.bilibili.postMetadata import 
 
 wbRev = OnlineAutoContentProducer(
     source="giphy",
