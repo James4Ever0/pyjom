@@ -21,8 +21,9 @@ if len(dataList) == 1:
     from bilibili_api import sync
     name = sync(get_self_info(credential))['name']
     # 'GetCookieReq.Session' Error:Field validation for 'Session' failed on the 'gte' tag。
-    # don't know how. maybe this works/
+    # don't know how. maybe this works?
     # if oldName !=name:
     #     data['name']=name
     #     db.upsert(data, User.dedeuserid == dedeuserid)
+    # will never succeed.
     print('login successful:', name)
