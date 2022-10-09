@@ -3,7 +3,7 @@ from pyjom.commons import *
 
 @decorator
 def dummyFeedback(
-    content, iterate=False
+    content, iterate=False # i think i need another function decorator for this.
 ):  # anyway, it is dummy. i don't expect nothing.
     def inner(elem):
         print("from poster:", elem)
