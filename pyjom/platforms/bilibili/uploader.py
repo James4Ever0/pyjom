@@ -18,6 +18,8 @@ async def uploadVideo(
     cover_path: str = "",
     # threads=3,
 ):
+assert os.path.exists(videoPath)
+assert os.path.exists(cover_apth
     credential = getCredentialByDedeUserId(dedeuserid)
     # videoExtension = videoPath.split(".")[-1].lower()
     # credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
