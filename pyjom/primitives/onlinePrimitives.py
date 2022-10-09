@@ -1,18 +1,19 @@
 from pyjom.main import *
 from typing import Generator
 
+
 class OnlineAutoContentProducer(ContentProducer):
     def __init__(
         self,
         source=None,
         enable_log=True,
         fast: bool = True,
-        postMetadataGenerator:Generator = ...,
+        postMetadataGenerator: Generator = ...,
         processor_filters={},
         producer_filters={},
         template: str = "pets_with_music_online",
         template_configs: list = [],  # list or 'template_config' generator
-        contentType:str="video", # for poster.
+        contentType: str = "video",  # for poster.
         tempdir: str = "/dev/shm/medialang/online",
         metaTopic={
             "static": [["dog", "cat", "puppy"], ["funny", "cute"]],
@@ -48,7 +49,11 @@ class OnlineAutoContentProducer(ContentProducer):
                     template_configs=template_configs,
                 ),
                 "poster": keywordDecorator(
-                    OnlinePoster, iterate=True, contentType=contentType,postMetadataGenerator=postMetadataGenerator, platform='bilibili'
+                    OnlinePoster,
+                    iterate=True,
+                    contentType=contentType,
+                    postMetadataGenerator=postMetadataGenerator,
+                    platform="bilibili",
                 )  # just for debugging.
                 # you also need to change the logic below, for other 'dummy' stuffs.
                 # 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
