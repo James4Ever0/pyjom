@@ -8,7 +8,7 @@ template_names = ["subtitle_detector.mdl.j2"]
 
 # warning: if you want to post it, you must review, and you must not use 'fast' mode aka preview.
 
-# you want musictoolbox? 
+# you want musictoolbox? well shit.
 from pyjom.
 
 wbRev = OnlineAutoContentProducer(
