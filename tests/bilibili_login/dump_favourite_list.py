@@ -58,8 +58,8 @@ if len(dataList) == 1:
             has_more = result["has_more"]
             print("__________result__________")
             medias = result["medias"]
-            # if type(medias) != list or len(medias) == 0:
-            #     break
+            if type(medias) != list or len(medias) == 0:
+                break
 
             for elem in medias:
                 # print('ELEM:',elem)
@@ -69,3 +69,5 @@ if len(dataList) == 1:
                 # here we call 'desc' as 'intro.
                 videoData.update({"desc": elem["intro"]})
                 db.upsert(videoData, User.bvid == videoData["bvid"])
+            if not has_more:
+                break
