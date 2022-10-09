@@ -56,7 +56,6 @@ if len(dataList) == 1:
                 )
             )
             # import pprint
-
             # pprint.pprint(result)
             has_more = result["has_more"]
             # print("__________result__________")
