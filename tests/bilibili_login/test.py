@@ -10,7 +10,8 @@ try:
     credential.raise_for_no_dedeuserid()
 except:
     print("登陆失败。。。")
-    exit()
+    # exit()
+    # do not exit! retry!
 userName = sync(user.get_self_info(credential))["name"]
 print("欢迎，", userName, "!")
 # dict(credential)
