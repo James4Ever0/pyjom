@@ -6,4 +6,4 @@ def BilibiliPoster(content, iterate=False):
     if iterate:
         for elem in content:
             print("READY TO POST CONTENT FROM:", elem)
-    return "bilibili://{}/{}/{}".format(user, contentType, contentId)
+    return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
