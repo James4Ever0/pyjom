@@ -4,5 +4,5 @@ def generator():
 
 myGenerator = generator()
 for _ in range(20):
-    result = myGenerator.__iter__().__iter__()
+    result = myGenerator.
     print('iterate result:', result)
