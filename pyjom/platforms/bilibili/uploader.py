@@ -56,5 +56,5 @@ async def uploadVideo(
     # async def ev(data):
     #     print(data)
 
-    result = await uploader.start()
+    result = await uploader.start() # with bvid, aid as key.
     # please tell me where the fuck you upload my video upto?
