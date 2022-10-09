@@ -1,7 +1,7 @@
 from typing import Generator
 from pyjom.modules.contentPosting.bilibiliPoster import BilibiliPoster
 
-# there is no 
+# there is no decorator!
 def OnlinePoster(
     content,
     iterate=False,
