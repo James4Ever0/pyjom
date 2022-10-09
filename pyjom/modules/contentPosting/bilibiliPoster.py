@@ -20,6 +20,7 @@ contentType='video', dedeuserid:str = "397424026", tempdir = '/dev/shm/medialang
             cover_path = getRandomFileNameUnderDirectoryWithExtension('png',tempdir)
             cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid = postMetadata # assumptions on video type.
             # what is the bgm here used for?
+            # you can fetch this from database. you can pickle this thing.
             tagString = ",".join(mTagSeries)
             with tmpfile(cover_path):
                 cv2.imwrite(cover_path, cover_target)
