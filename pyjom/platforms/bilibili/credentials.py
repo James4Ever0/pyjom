@@ -99,6 +99,6 @@ def getCredentialByDedeUserId(dedeuserid:str="397424026"):
                 return credential
             else:
                 print('dedeuserid not right.')
-                print('user %s ')
+                print('user %s (dedeuserid: %s) does not have dedeuserid: %s' %())
         else:
             print('登陆失败')
