@@ -38,7 +38,7 @@ def BilibiliPoster(
                 )
                 (
                     cover_target,
-                    mTagSeries,
+                    mTagSeries, # are you sure this is a list of tags?
                     mTitle,
                     mBgm,# what is the bgm here used for?
                     mDescription,
