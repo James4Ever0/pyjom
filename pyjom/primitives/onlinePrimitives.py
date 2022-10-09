@@ -7,6 +7,7 @@ class OnlineAutoContentProducer(ContentProducer):
         source=None,
         enable_log=True,
         fast: bool = True,
+        postMetadataGenerator:Generator = ...,
         processor_filters={},
         producer_filters={},
         template: str = "pets_with_music_online",
