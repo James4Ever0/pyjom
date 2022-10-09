@@ -63,4 +63,5 @@ if len(dataList) == 1:
                 # breakpoint()
                 # it has description.
                 videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
+                # here we call 'desc' as 'intro.
                 db.upsert(videoData, User.bvid == videoData["bvid"])
