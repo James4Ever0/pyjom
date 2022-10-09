@@ -4,11 +4,12 @@ from bilibili_api.user import get_self_info
 from bilibili_api import settings
 from bilibili_api import sync
 
-mode = int(input("""请选择登录方式：
-1. 密码登录
-2. 验证码登录
-请输入 1/2
-"""))
+# mode = int(input("""请选择登录方式：
+# 1. 密码登录
+# 2. 验证码登录
+# 请输入 1/2
+# """))
+mode = 
 
 credential = None
 
