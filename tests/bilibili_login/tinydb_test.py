@@ -1,6 +1,6 @@
 import tinydb
 
-dbLocation = "test.json"
+dbLocation = "test_credential.json"
 db = tinydb.TinyDB(dbLocation)
 # table = db.table('mytable')
 User = tinydb.Query()
