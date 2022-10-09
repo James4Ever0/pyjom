@@ -37,6 +37,6 @@ if len(dataList) == 1:
     print(result) # None? wtf?
     favLists = result['list']
     for favList in favLists:
-        listId = favList['id']
+        listId = favList['id'] # integer.
         listName = favList['name']
         sync(favorite_list.get_video_favorite_list_content(listId, page=page))
