@@ -3,7 +3,7 @@ import pathlib
 def generator(tempfile):
     with tmpfile(tempfile):
         pathlib.Path(tempfile).touch()
-        for index in range(100): # zero to 11
+        for index in range(12): # 0 to 11 means 12
             yield index
 
 
