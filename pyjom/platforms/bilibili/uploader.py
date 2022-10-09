@@ -58,6 +58,6 @@ async def uploadVideo(
 
     result = await uploader.start() # with bvid, aid as key.
     # please tell me where the fuck you upload my video upto?
-    print('upload result:', result)
-    breakpoint()
+    print('upload video result:', result)
+    breakpoint() # comment it out later?
     return result['bvid'] # choose to be in this way?
