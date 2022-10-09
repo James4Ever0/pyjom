@@ -7,11 +7,10 @@ def generator2():
 
 def iterator(lambdaFunction):
     for _ in range(4):
-        
+        result = lambdaFunction()
         print(result)
 
 def generator3():
     myGenerator = generator2()
     getNextNumber = lambda: myGenerator.__next__()
-    result = getNextNumber()  # good.
-    print("iterate result:", result)
+    
