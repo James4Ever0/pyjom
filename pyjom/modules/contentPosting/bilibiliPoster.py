@@ -21,5 +21,5 @@ contentType='video', dedeuserid:str = "397424026"):
     if iterate:
         return postContentIterate(content, contentType=contentType)
     else:
-        return postContent(content,)
+        return postContent(content, contentType=contentType)
     # content id?
