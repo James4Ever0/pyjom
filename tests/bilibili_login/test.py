@@ -75,7 +75,7 @@ if credential != None:
             "buvid3": buvid3,
             "sessdata": sessdata,
         },
-        User.dedeuserid,
+        User.dedeuserid == dedeuserid,
     )
     # how to perform atomic insert in tinydb?
     breakpoint()
