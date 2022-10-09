@@ -1,20 +1,21 @@
 from bilibili_api import video_uploader, Credential
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
+
 # you may use the 'sync' method elsewhere.
 async def uploadVideo(
     # sessdata="",
     # bili_jct="",
     # buvid3="", # credentials.
-    dedeuserid:str="397424026",
-    description:str="",
-    dynamic:str="",
-    tagString:str="",
-    tagId:int=21, # what is 21? -> 日常
-    title:str="",
-    close_danmaku:bool=False,
-    close_reply:bool=False,
-    videoPath:str="",
-    cover_path:str="",
+    dedeuserid: str = "397424026",
+    description: str = "",
+    dynamic: str = "",
+    tagString: str = "",
+    tagId: int = 21,  # what is 21? -> 日常
+    title: str = "",
+    close_danmaku: bool = False,
+    close_reply: bool = False,
+    videoPath: str = "",
+    cover_path: str = "",
     # threads=3,
 ):
     credential = getCredentialByDedeUserId(dedeuserid)
@@ -39,12 +40,12 @@ async def uploadVideo(
         "up_close_reply": close_reply,
     }
     page = video_uploader.VideoUploaderPage(
-        path = videoPath,
+        path=videoPath,
         title=title,
         description=description,
     )  # are you sure?
     uploader = video_uploader.VideoUploader(
-        [page], meta, credential,cover_path=cover_path
+        [page], meta, credential, cover_path=cover_path
     )
 
     # will this work as expected?
