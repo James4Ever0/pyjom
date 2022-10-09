@@ -58,7 +58,7 @@ home = getHomeDirectory()
 dbPath = os.path.join(home, ".bilibili_api.json")
 import tinydb
 
-db = tinydb.database(dbPath)
+db = tinydb.TInyDB(dbPath)
 if credential != None:
     name = sync(get_self_info(credential))["name"]
     print(f"欢迎，{name}!")
