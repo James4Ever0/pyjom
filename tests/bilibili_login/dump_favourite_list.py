@@ -56,7 +56,7 @@ if len(dataList) == 1:
 
             pprint.pprint(result)
             has_more = result["has_more"]
-            print("__________result__________")
+            # print("__________result__________")
             medias = result["medias"]
             if type(medias) != list or len(medias) == 0:
                 break
