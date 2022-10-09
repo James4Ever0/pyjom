@@ -34,6 +34,8 @@ if len(dataList) == 1:
     )
     # import pprint
     # pprint.pprint(result)
+    if result
     for elem in result:
-        
+
+
     # it has description.
