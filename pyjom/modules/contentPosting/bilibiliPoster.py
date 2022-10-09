@@ -20,7 +20,7 @@ contentType='video', dedeuserid:str = "397424026", tempdir = '/dev/shm/medialang
             cover_path = getRandomFileNameUnderDirectoryWithExtension('png',tempdir)
             cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid = postMetadata # assumptions on video type.
             with tmpfile(cover_path):
-                cv2.
+                cv2.imwrite()
             # you need to save this 'cover_target' to file.
             contentId = uploadVideo(dedeuserid = dedeuserid,description = )
         return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
