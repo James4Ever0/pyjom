@@ -28,11 +28,7 @@ def verifyCredential(credential,returnName=True):
         name = sync(get_self_info(credential))["name"]
         print('credential valid for:', name)
         if returnName:
-            data = {}
-            dedeuserid = credential.dedeuserid
-            data["name"] = name
-            db.upsert(data, User.dedeuserid == dedeuserid)
-                b.upsert(
+            db.upsert(
         {
             "name": name,
             "dedeuserid": dedeuserid,
