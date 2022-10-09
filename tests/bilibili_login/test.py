@@ -46,6 +46,8 @@ else:
     print("请输入 1/2 ！")
     exit()
 
+from lazero.search.api import getHomeDirectory
+home = getHomeDirectory()
 if credential != None:
     name = sync(get_self_info(credential))['name']
     print(f"欢迎，{name}!")
@@ -53,6 +55,6 @@ if credential != None:
     bili_jct = credential.bili_jct
     sessdata = credential.sessdata
     userId = credential.dedeuserid  # this is userid, better use this instead?
-    
+
     # how to perform atomic insert in tinydb?
     breakpoint()
