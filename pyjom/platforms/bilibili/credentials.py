@@ -10,3 +10,4 @@ import tinydb
 db = tinydb.TinyDB(dbPath) # is this variable shared in this module?
 User = tinydb.Query()
 
+def getCredentialBy
