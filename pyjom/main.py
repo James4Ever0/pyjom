@@ -13,6 +13,7 @@ class ContentProducer:
             "processor": dummyProcessor,
             "producer": dummyProducer,
             "poster": dummyPoster,
+            # below three all switched to 'auto'
             "feedback": dummyFeedback,
             "optimizer": dummyOptimizer,
             "updator": dummyUpdator,
