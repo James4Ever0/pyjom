@@ -11,7 +11,7 @@ dbPath = os.path.join(home, ".bilibili_api.json")
 import tinydb
 db = tinydb.TinyDB(dbPath)
 User = tinydb.Query()
-dedeuserid = 
+dedeuserid = # pass it before
 dataList = db.search(User.dedeuserid == dedeuserid) # this will never change i suppose?
 if len(dataList) == 1:
     data = dataList[0].copy()
