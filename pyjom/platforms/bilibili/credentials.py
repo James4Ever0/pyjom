@@ -6,4 +6,4 @@ import os
 home = getHomeDirectory()
 dbPath = os.path.join(home, ".bilibili_api.json")
 import tinydb
-db= tinydb.Tiny
+db= tinydb.TinyDB(dbPath)
