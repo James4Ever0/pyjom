@@ -52,7 +52,8 @@ if len(dataList) == 1:
             if type(result) != list or len(result) == 0:
                 break
             for elem in result:
-                print(elem)
+                print('ELEM:',elem)
+                breakpoint()
                 # it has description.
                 videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
                 db.upsert(videoData, User.bvid == videoData["bvid"])
