@@ -17,7 +17,7 @@ dbPath = os.path.join(home, ".bilibili_api.json")
 import tinydb
 
 db = tinydb.TinyDB(dbPath)
-dbFavList = tinydb.TinyDB('bilibiliFavouriteList.json')
+dbFavList = tinydb.TinyDB("bilibiliFavouriteList.json")
 User = tinydb.Query()
 dedeuserid = "397424026"  # pass it before you do shit!
 dataList = db.search(User.dedeuserid == dedeuserid)  # this will never change i suppose?
@@ -42,14 +42,14 @@ if len(dataList) == 1:
     for favList in favLists:
         listId = favList["id"]  # integer.
         listName = favList["title"]
-        print('processing favList:', listName)
+        print("processing favList:", listName)
         page = 0
         while True:
             import time
 
             time.sleep(3)
             page += 1
-            print('processing page:', page)
+            print("processing page:", page)
             result = sync(
                 favorite_list.get_video_favorite_list_content(
                     listId, page=page, credential=credential
