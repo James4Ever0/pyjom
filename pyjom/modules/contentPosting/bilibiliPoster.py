@@ -14,8 +14,9 @@ contentType='video', dedeuserid:str = "397424026"):
         print("READY TO POST CONTENT FROM:", elem)
     
     def postContentIterate(content):
-    if iterate:
         for elem in content:
+
+    if iterate:
     else:
         return postContent(content,)
     # content id?
