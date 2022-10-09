@@ -1,7 +1,7 @@
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
 from typing import Generator
-
+from lazero.filesystem.temp import temp
 # that generator you must put beforehand.
 @decorator
 def BilibiliPoster(content, iterate=False, postMetadataGenerator:Generator=...,# must be a generator. a called generator function.
