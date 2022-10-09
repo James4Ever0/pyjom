@@ -34,14 +34,14 @@ if len(dataList) == 1:
     page_num = 0
     while True:
         page_num+=1 # starts with 1
-    result = sync(
-        user.get_self_history(page_num=page_num, per_page_item=100, credential=credential)
-    )
-    # import pprint
-    # pprint.pprint(result)
-    if result !=list or len(result) == 0:
-        break
-    for elem in result:
-    # it has description.
-        videoData = {key:elem[key] for key in ['bvid', 'desc','title']}
-        db.upsert(videoData,User.bvid == videoData['bvid'])
+        result = sync(
+            user.get_self_history(page_num=page_num, per_page_item=100, credential=credential)
+        )
+        # import pprint
+        # pprint.pprint(result)
+        if result !=list or len(result) == 0:
+            break
+        for elem in result:
+        # it has description.
+            videoData = {key:elem[key] for key in ['bvid', 'desc','title']}
+            db.upsert(videoData,User.bvid == videoData['bvid'])
