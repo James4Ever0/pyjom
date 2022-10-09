@@ -84,5 +84,6 @@ def getCredentialByDedeUserId(dedeuserid:str="397424026"):
         credential = c
         # first, check if this is a valid credential.
         name = verifyCredential(credential)
+        if name != False:
         print("登录成功")
         # next, check if this is the credential we need.
