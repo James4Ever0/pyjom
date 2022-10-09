@@ -1,4 +1,4 @@
-from bilibili_api import video_uploader, Credential
+from bilibili_api import video_uploader
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 import os
 
