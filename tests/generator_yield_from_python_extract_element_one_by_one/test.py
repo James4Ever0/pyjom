@@ -14,4 +14,5 @@ def generator3():
     myGenerator = generator2()
     getNextNumber = lambda: myGenerator.__next__()
     for _ in range(3):
-    iterator(getNextNumber)
+        iterator(getNextNumber)
+        print("_"*30)
