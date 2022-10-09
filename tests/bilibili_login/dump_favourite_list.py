@@ -32,5 +32,5 @@ if len(dataList) == 1:
         data["name"] = name
         db.upsert(data, User.dedeuserid == dedeuserid)
     print("login successful:", name)
-    favourite_list = sync(favorite_list.get_video_favorite_list(int(dedeuserid),))
+    favourite_list = sync(favorite_list.get_video_favorite_list(int(dedeuserid),None, credential))
     print(favourite_list) # None? wtf?
