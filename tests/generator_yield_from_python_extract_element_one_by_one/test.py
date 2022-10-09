@@ -19,6 +19,7 @@ def generator3(myGenerator):
         iterator(getNextNumber)
         print("_" * 30)
 
+from lazero.filesystem.temp import 
 
 if __name__ == "__main__":
     generator3(generator2())  # good.
