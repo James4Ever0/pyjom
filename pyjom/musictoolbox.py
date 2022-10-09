@@ -6,4 +6,4 @@
 
 # voice change/synthesis is for voicetoolbox.
 
-# diffusion based painter, ai colorization, video editing is for artworktoolbox
+# diffusion based painter, ai colorization, video editing is for artworktoolbox. maybe the naming is not right/necessary.
