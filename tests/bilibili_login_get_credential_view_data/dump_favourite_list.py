@@ -4,7 +4,7 @@ from bilibili_api import favorite_list
 # dedeuserid = "397424026"
 # how to?
 from bilibili_api.user import get_self_info
-from bilibili_api import Credential
+from bilibili_api import sync, Credential
 
 # how to load credential from our stored things?
 # from bilibili_api import user
