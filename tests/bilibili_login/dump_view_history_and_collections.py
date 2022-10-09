@@ -31,8 +31,9 @@ if len(dataList) == 1:
     # now continue.
     # how many pages you want? infinite?
     import time
+    page_num = 0
     while True:
-        page_num+=1
+        page_num+=1 # starts with 1
     result = sync(
         user.get_self_history(page_num=1, per_page_item=100, credential=credential)
     )
