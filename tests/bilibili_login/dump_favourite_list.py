@@ -2,6 +2,8 @@
 from bilibili_api.user import get_self_info
 from bilibili_api import Credential
 
+from bilibili_api import favourite
+
 # how to load credential from our stored things?
 from bilibili_api import user
 from lazero.search.api import getHomeDirectory
