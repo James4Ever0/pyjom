@@ -50,4 +50,4 @@ def getCredentialByDedeUserId(dedeuserid):
                 db.upsert(data, User.dedeuserid == dedeuserid)
             print("login successful:", name)
         else:
-            print("login failed:",
+            print("login failed:
