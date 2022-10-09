@@ -15,8 +15,7 @@ dedeuserid = # pass it before you do shit!
 dataList = db.search(User.dedeuserid == dedeuserid) # this will never change i suppose?
 if len(dataList) == 1:
     data = dataList[0].copy()
-    print('login credential fetched from db:', data)
-
+    print('try to login credential fetched from db:', data)
     oldName = data.pop('name')
     credential = Credential(**data)
     from bilibili_api import sync
