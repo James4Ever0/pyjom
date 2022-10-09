@@ -39,4 +39,4 @@ if len(dataList) == 1:
     for favList in favLists:
         listId = favList['id']
         listName = favList['name']
-        sync(favorite_list.get_video_favorite_list_content())
+        sync(favorite_list.get_video_favorite_list_content(, page=page))
