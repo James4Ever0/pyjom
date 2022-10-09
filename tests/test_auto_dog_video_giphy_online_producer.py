@@ -8,10 +8,12 @@ template_names = ["subtitle_detector.mdl.j2"]
 
 # warning: if you want to post it, you must review, and you must not use 'fast' mode aka preview.
 
+
+
 wbRev = OnlineAutoContentProducer(
     source="giphy",
     template="pets_with_music_online",
-    postMetadataGenerator=postM
+    postMetadataGenerator=postMetadataGenerator,
     template_configs=[
         {
             "music": {
