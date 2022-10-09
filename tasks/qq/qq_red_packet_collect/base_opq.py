@@ -124,7 +124,7 @@ def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MRED
         time.sleep(sleep_time)
         title = RedBaginfoDict["Tittle"]
         # filter this title shit.
-        if any([keyword in title.lower() for keyword in keywords]):
+        if any([keyword in title.lower() for keyword in forbiddenKeywords]):
             print('title containing forbidden keywords')
             print('refuse to open red bag:', title.__repr__())
             return
