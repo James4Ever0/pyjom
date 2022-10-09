@@ -49,7 +49,7 @@ else:
 from lazero.search.api import getHomeDirectory
 import os
 home = getHomeDirectory()
-d
+dbPath = os.path.join(home,".bilibili_api.json")
 if credential != None:
     name = sync(get_self_info(credential))['name']
     print(f"欢迎，{name}!")
