@@ -23,3 +23,4 @@ if len(dataList) == 1:
         data['name']=name
         db.upsert(data, User.dedeuserid == dedeuserid)
     print('login credential fetched from db:', data)
+    print('login successful:', name)
