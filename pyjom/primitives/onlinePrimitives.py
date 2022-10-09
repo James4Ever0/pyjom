@@ -11,6 +11,7 @@ class OnlineAutoContentProducer(ContentProducer):
         postMetadataGenerator: Generator = ...,
         processor_filters={},
         producer_filters={},
+        platform:str = "bilibili",
         template: str = "pets_with_music_online",
         template_configs: list = [],  # list or 'template_config' generator
         contentType: str = "video",  # for poster.
