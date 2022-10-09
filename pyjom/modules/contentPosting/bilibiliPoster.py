@@ -1,3 +1,4 @@
+from ast import Lambda
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
 from typing import Generator
@@ -16,7 +17,7 @@ import cv2
 def BilibiliPoster(
     content,
     iterate=False,
-    getPostMetadata:lambda= ...,  # must be a generator. a called generator function.
+    getPostMetadata:Lambda= ...,  # must be a generator. a called generator function.
     contentType="video",
     dedeuserid: str = "397424026",
     tempdir="/dev/shm/medialang/bilibiliPoster",
