@@ -48,7 +48,7 @@ class OnlineAutoContentProducer(ContentProducer):
                 "poster": keywordDecorator(
                     BilibiliPoster, iterate=True, contentType="video"
                 )  # just for debugging.
-                # you also need to change the logic below. for other 'dummy' stuffs.
+                # you also need to change the logic below, for other 'dummy' stuffs.
                 # 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
             }
         )
