@@ -9,7 +9,7 @@ async def uploadVideo(
     description:str="",
     dynamic:str="",
     tagString:str="",
-    tagId=21, # what is 21? -> 日常
+    tagId:int=21, # what is 21? -> 日常
     title="",
     close_danmaku=False,
     close_reply=False,
