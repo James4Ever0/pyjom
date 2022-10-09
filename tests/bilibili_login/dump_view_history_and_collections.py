@@ -29,6 +29,7 @@ if len(dataList) == 1:
         db.upsert(data, User.dedeuserid == dedeuserid)
     print("login successful:", name)
     # now continue.
+    # how many pages you want? infinite?
     result = sync(
         user.get_self_history(page_num=1, per_page_item=100, credential=credential)
     )
