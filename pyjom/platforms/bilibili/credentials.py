@@ -44,3 +44,5 @@ def getCredentialByDedeUserId(dedeuserid):
         oldName = data.pop("name")
         credential = Credential(**data)
         name = verifyCredential(credential)
+        if name != False:
+            
