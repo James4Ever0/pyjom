@@ -43,4 +43,4 @@ def getCredentialByDedeUserId(dedeuserid):
         print("try to login credential fetched from db:", data)
         oldName = data.pop("name")
         credential = Credential(**data)
-        name = verifyCredential(credential
+        name = verifyCredential(credential)
