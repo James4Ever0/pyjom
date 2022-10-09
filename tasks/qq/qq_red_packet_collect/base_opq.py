@@ -175,7 +175,7 @@ def openRedBag(
         # filter this title shit.
         if any([keyword in title.lower() for keyword in forbiddenKeywords]):
             stderrPrint("title containing forbidden keywords")
-            print("refuse to open red bag:", title.__repr__())
+            stderrPrint("refuse to open red bag:", title.__repr__())
             return
         if bag_type == 12:
             action.sendGroupText(group=group_id, content=title)
