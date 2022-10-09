@@ -5,10 +5,12 @@ def generator():
 def generator2():
     yield from generator() # this is to simplifying the process of iteration.
 
+def iterator(lambdaFunction):
+for _ in range(20):
+    for 
 
 def generator3():
     myGenerator = generator2()
     getNextNumber = lambda: myGenerator.__next__()
-for _ in range(20):
     result = getNextNumber()  # good.
     print("iterate result:", result)
