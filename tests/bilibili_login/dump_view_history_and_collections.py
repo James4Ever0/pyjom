@@ -26,4 +26,4 @@ if len(dataList) == 1:
         db.upsert(data, User.dedeuserid == dedeuserid)
     print('login successful:', name)
     # now continue.
-    
+    get_self_history()
