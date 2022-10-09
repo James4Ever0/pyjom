@@ -51,5 +51,5 @@ if len(dataList) == 1:
         for elem in result:
             # it has description.
             videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
-            dhHistory.search
+            dbHistory.search(User.bvid == videoData["bvid"])
             dbHistory.upsert(videoData, User.bvid == videoData["bvid"])
