@@ -2,7 +2,7 @@
 # first you need to get 'home' directory
 from lazero.search.api import getHomeDirectory
 import os
-from bilibili_api import sync
+from bilibili_api import sync, Credential
 from bilibili_api.user import get_self_info
 from bilibili_api import settings
 
