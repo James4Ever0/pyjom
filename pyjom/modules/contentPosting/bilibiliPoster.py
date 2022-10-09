@@ -16,9 +16,9 @@ contentType='video', dedeuserid:str = "397424026"):
     
     def postContentIterate(content, contentType='video'):
         for elem in content:
-            yield postContent(elem, contentType=contentType)
+            yield postContent(elem)
     if iterate:
-        return postContentIterate(content, contentType=contentType)
+        return postContentIterate(content)
     else:
-        return postContent(content, contentType=contentType)
+        return postContent(content)
     # content id?
