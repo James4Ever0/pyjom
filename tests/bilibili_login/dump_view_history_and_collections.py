@@ -44,4 +44,4 @@ if len(dataList) == 1:
     for elem in result:
     # it has description.
         videoData = {key:elem[key] for key in ['bvid', 'desc','title']}
-        videoData,User.bvid == videoData['bvid']
+        db.upsert(videoData,User.bvid == videoData['bvid'])
