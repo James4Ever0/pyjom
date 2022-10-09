@@ -6,4 +6,4 @@
 
 # voice change/synthesis is for voicetoolbox.
 
-# diffusion based painter, ai colorization is for paintingtoolbox
+# diffusion based painter, ai colorization is for artworktoolbox
