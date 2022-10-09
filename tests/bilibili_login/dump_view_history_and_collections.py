@@ -31,19 +31,22 @@ if len(dataList) == 1:
     # now continue.
     # how many pages you want? infinite?
     import time
+
     page_num = 0
     while True:
         time.sleep(3)
-        page_num+=1 # starts with 1
-        print('now processing page:', page_num)
+        page_num += 1  # starts with 1
+        print("now processing page:", page_num)
         result = sync(
-            user.get_self_history(page_num=page_num, per_page_item=100, credential=credential)
+            user.get_self_history(
+                page_num=page_num, per_page_item=100, credential=credential
+            )
         )
         # import pprint
         # pprint.pprint(result)
-        if result !=list or len(result) == 0:
+        if result != list or len(result) == 0:
             break
         for elem in result:
-        # it has description.
-            videoData = {key:elem[key] for key in ['bvid', 'desc','title']}
-            db.upsert(videoData,User.bvid == videoData['bvid'])
+            # it has description.
+            videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
+            db.upsert(videoData, User.bvid == videoData["bvid"])
