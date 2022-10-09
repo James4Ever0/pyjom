@@ -1,7 +1,7 @@
 from ast import Lambda
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
-# from typing import Generator
+from typing import Function
 from lazero.filesystem.temp import (
     tmpdir,
     getRandomFileNameUnderDirectoryWithExtension,
