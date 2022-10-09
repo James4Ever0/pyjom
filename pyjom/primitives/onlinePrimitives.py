@@ -1,5 +1,5 @@
 from pyjom.main import *
-
+from typing import Generator
 
 class OnlineAutoContentProducer(ContentProducer):
     def __init__(
