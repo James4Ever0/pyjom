@@ -71,5 +71,5 @@ if len(dataList) == 1:
                 # here we call 'desc' as 'intro.
                 videoData.update({"desc": elem["intro"]})
                 dbFavList.upsert(videoData, User.bvid == videoData["bvid"])
-            if not has_more:
+            if not has_more or breakFlag:
                 break
