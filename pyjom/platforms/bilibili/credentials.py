@@ -47,6 +47,8 @@ def getCredentialByDedeUserId(dedeuserid):
         if len(dataList) != 0:
             # remove all related records.
             removeCredentialByDedeUserId(dedeuserid)
+        else:
+            print('no credential found for dedeuserid:', dedeuserid)
     else:
         # check validity.
         data = dataList[0].copy()
@@ -65,7 +67,7 @@ def getCredentialByDedeUserId(dedeuserid):
             removeCredentialByDedeUserId(dedeuserid)
     # anyway if you are here, nothing in database related to this dedeuserid now.
     # you choose to login via SMS.
-        phone = input("请输入手机号：")
+    phone = input("请输入手机号：")
     print("正在登录。")
     send_sms(PhoneNumber(phone, country="+86"))  # 默认设置地区为中国大陆
     code = input("请输入验证码：")
