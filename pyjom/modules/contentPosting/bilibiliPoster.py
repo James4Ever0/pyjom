@@ -13,6 +13,5 @@ contentType='video', dedeuserid:str = "397424026"):
     # def postContent(elem):
         print("READY TO POST CONTENT FROM:", elem)
     if iterate:
-        for elem in content:
     # content id?
     return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
