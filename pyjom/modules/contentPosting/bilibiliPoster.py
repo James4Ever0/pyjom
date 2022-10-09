@@ -1,5 +1,5 @@
 from pyjom.commons import *
-from pyjom.platforms.bilibili.uploader import uploadVideo, upload
+from pyjom.platforms.bilibili.uploader import uploadVideo
 
 @decorator
 def BilibiliPoster(content, iterate=False, contentType='video'):
