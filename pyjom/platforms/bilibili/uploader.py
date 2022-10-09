@@ -52,9 +52,9 @@ async def uploadVideo(
     )
 
     # will this work as expected?
-    @uploader.on("__ALL__")
-    async def ev(data):
-        print(data)
+    # @uploader.on("__ALL__")
+    # async def ev(data):
+    #     print(data)
 
     result = await uploader.start()
     # please tell me where the fuck you upload my video upto?
