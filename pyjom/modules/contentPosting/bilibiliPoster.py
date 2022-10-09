@@ -71,7 +71,7 @@ def BilibiliPoster(
             yield postContent(elem)
 
     if iterate:
-        return postContentIterate(content) # you make iterated 
+        return postContentIterate(content)
     else:
         return postContent(content)
     # content id?
