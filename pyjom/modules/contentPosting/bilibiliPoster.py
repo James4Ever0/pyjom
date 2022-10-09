@@ -17,7 +17,7 @@ import cv2
 def BilibiliPoster(
     content,
     iterate=False,
-    getPostMetadata:Lambda= ...,  # must be a generator. a called generator function.
+    getPostMetadata= ...,  # 
     contentType="video",
     dedeuserid: str = "397424026",
     tempdir="/dev/shm/medialang/bilibiliPoster",
