@@ -11,6 +11,7 @@ class OnlineAutoContentProducer(ContentProducer):
         producer_filters={},
         template: str = "pets_with_music_online",
         template_configs: list = [],  # list or 'template_config' generator
+        contentType:str="video",
         tempdir: str = "/dev/shm/medialang/online",
         metaTopic={
             "static": [["dog", "cat", "puppy"], ["funny", "cute"]],
