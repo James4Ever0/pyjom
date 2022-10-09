@@ -8,3 +8,5 @@ dbPath = os.path.join(home, ".bilibili_api.json")
 import tinydb
 
 db = tinydb.TinyDB(dbPath) # is this variable shared in this module?
+User = tinydb.Query()
+
