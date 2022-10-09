@@ -15,7 +15,7 @@ contentType='video', dedeuserid:str = "397424026"):
         print("READY TO POST CONTENT FROM:", elem)# this elem is video location for me.
         if contentType == 'video': # single video upload without grouping.
             videoPath = elem
-            contentId = uploadVideo(dedeuserid,description = )
+            contentId = uploadVideo(dedeuserid = dedeuserid,description = )
         return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
     
     def postContentIterate(content):
