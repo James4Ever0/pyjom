@@ -17,7 +17,7 @@ if len(dataList) == 1:
     data = dataList[0].copy()
     print('try to login credential fetched from db:', data)
     oldName = data.pop('name')
-    credential = Credential(**{})
+    credential = Credential(**{'dedeuserid': dedeuserid})
     from bilibili_api import sync
     name = sync(get_self_info(credential))['name']
     if oldName !=name:
