@@ -6,4 +6,4 @@
 
 # voice change/synthesis is for voicetoolbox.
 
-# 
+# diffusion based painter is for painting
