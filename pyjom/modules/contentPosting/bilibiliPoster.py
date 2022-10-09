@@ -11,7 +11,6 @@ contentType='video', dedeuserid:str = "397424026", tempdir = '/dev/shm/medialang
     # there are two generators. what do you want?
     getPostMetadata = lambda: postMetadataGenerator.__next__()
     def postContent(elem): # what is this elem? please check for video producer.
-        
         with tmpdir(path=tempdir):
         postMetadata = getPostMetadata()
         print("READY TO POST CONTENT FROM:", elem)# this elem is video location for me.
