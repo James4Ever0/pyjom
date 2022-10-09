@@ -1,5 +1,5 @@
 from bilibili_api import video_uploader, Credential
-from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId, getCredentialByDedePasswordString
+from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 # you may use the 'sync' method elsewhere.
 async def uploadVideo(
     # sessdata="",
@@ -17,7 +17,7 @@ async def uploadVideo(
     cover_path="",
     # threads=3,
 ):
-    credential = get
+    credential = getCredentialByDedeUserId(dedeuserid)
     # videoExtension = videoPath.split(".")[-1].lower()
     # credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # you can pass it from somewhere else.
