@@ -8,6 +8,6 @@ def dummyFeedback(
 ):  # anyway, it is dummy. i don't expect nothing.
     @iterateWithTempDirectory()
     def inner(elem):
-        print("from poster:", elem)
+        print("from poster:", content)
         return "pending"
     return inner(elem)
