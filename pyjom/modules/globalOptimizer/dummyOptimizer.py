@@ -7,6 +7,7 @@ def dummyOptimizer(topic, feedback, iterate=False): # wtf is this?
     if not iterate:
         feedback = [feedback] # feedback is the go. it must be iterable.
     for elem in feedback:
+    def inner()
         print("from feedback:", elem)
     return "pending"
 
