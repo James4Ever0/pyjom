@@ -43,4 +43,4 @@ if len(dataList) == 1:
         break
     for elem in result:
     # it has description.
-        bvid = {key:elem[key] for key in ['bvid', 'desc','title']}
+        videoData = {key:elem[key] for key in ['bvid', 'desc','title']}
