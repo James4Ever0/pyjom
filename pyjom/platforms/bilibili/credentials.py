@@ -2,6 +2,8 @@
 # first you need to get 'home' directory
 from lazero.search.api import getHomeDirectory
 import os
+from bilibili_api import sync
+
 
 home = getHomeDirectory()
 dbPath = os.path.join(home, ".bilibili_api.json")
