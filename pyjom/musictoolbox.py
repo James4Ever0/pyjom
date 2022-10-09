@@ -1,2 +1,2 @@
 # you will have a better name for other toolboxs.
-# for now, the musictoolbox 
+# for now, the musictoolbox is responsible for music retrieval, track separation, bpm, 
