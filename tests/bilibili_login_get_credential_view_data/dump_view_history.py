@@ -55,3 +55,5 @@ if len(dataList) == 1:
             if len(searchResult) != 0:
                 breakFlag=True
             dbHistory.upsert(videoData, User.bvid == videoData["bvid"])
+        if breakFlag:
+            break
