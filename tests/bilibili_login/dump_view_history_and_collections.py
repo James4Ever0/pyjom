@@ -35,7 +35,7 @@ if len(dataList) == 1:
     while True:
         page_num+=1 # starts with 1
     result = sync(
-        user.get_self_history(page_num=1, per_page_item=100, credential=credential)
+        user.get_self_history(page_num=page_num, per_page_item=100, credential=credential)
     )
     # import pprint
     # pprint.pprint(result)
