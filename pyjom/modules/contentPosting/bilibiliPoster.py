@@ -1,6 +1,6 @@
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
-
+from typing import Generator
 @decorator
 def BilibiliPoster(content, iterate=False, postMetadataGenerator=None # must be a generator. a called generator function.
 ,contentType='video', dedeuserid:str = "397424026"):
