@@ -14,7 +14,7 @@ template_names = ["subtitle_detector.mdl.j2"]
 # maybe it is not the time to use such kind of things... you know the ram best.
 from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogCat
 
-postMetadataGenerator = getBilibiliPostMetadataForDogCat()
+postMetadataGenerator = getBilibiliPostMetadataForDogCat() # metadata you can fetch from database, maybe you can preprocess this.
 
 wbRev = OnlineAutoContentProducer(
     source="giphy",
