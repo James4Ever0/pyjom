@@ -35,7 +35,7 @@ def audioOwlAnalysis(myMusic):
     beat_times = [x / c for x in a]
     return beat_times, bpm
 
-
+# lyrictoolbox
 def getLyricNearbyBpmCandidates(lyric_times, beats):
     nearbys, remains = [], []
     mbeats = beats.copy()
@@ -51,7 +51,7 @@ def getLyricNearbyBpmCandidates(lyric_times, beats):
     remains = mbeats
     return nearbys, remains
 
-
+# lyrictoolbox
 def read_lrc(lrc_path):
     assert lrc_path.endswith(".lrc")
     with open(lrc_path, "r") as f:
@@ -65,7 +65,7 @@ def read_lrc(lrc_path):
             # another square bracket that could kill me.
         return sublist
 
-
+# musictoolbox
 def getMusicCutSpansCandidates(
     music, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
@@ -108,7 +108,7 @@ def getMusicCutSpansCandidates(
     candidates = sorted_lyrics_nearby_bpm_candidates + sorted_remained_bpm_candidates
     return candidates, standard_bpm_spans
 
-
+# musictoolbox
 def getMusicCutSpans(
     music,
     music_duration,
@@ -215,7 +215,7 @@ def getMusicCutSpans(
     # breakpoint()
     return demanded_cut_spans, standard_bpm_spans
 
-
+# local
 def getFileCuts(
     filtered_info, meta_info, standard_bpm_spans, policy_names, mbeat_time_tolerance=0.8
 ):
@@ -297,7 +297,7 @@ def getFileCuts(
         total_cuts_dict.update({file_path: compiled_file_cuts.copy()})
     return total_cuts_dict
 
-
+# local
 def getRenderList(
     total_cuts,
     demanded_cut_spans,
@@ -377,7 +377,7 @@ def getRenderList(
                 break
     return render_list
 
-
+# local
 def renderList2MediaLang(
     renderList,
     slient=True,
