@@ -36,7 +36,6 @@ def generator3(myGenerator, tempfile):
 
 if __name__ == "__main__":
     tempfile = "tmp_test"
-    generator
     if os.path.exists(tempfile):
         os.remove(tempfile)
     myGenerator = generator2(tempfile)
