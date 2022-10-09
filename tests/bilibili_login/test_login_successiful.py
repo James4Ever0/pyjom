@@ -16,7 +16,7 @@ dataList = db.search(User.dedeuserid == dedeuserid) # this will never change i s
 if len(dataList) == 1:
     data = dataList[0].copy()
     oldName = data[0]['name']
-    credential = Credential()
+    credential = Credential(**data)
     from bilibili_api import sync
     name = sync(get_self_info(credential))['name']
     if oldName !=name:
