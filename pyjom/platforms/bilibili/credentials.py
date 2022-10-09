@@ -49,5 +49,6 @@ def getCredentialByDedeUserId(dedeuserid):
                 data["name"] = name
                 db.upsert(data, User.dedeuserid == dedeuserid)
             print("login successful:", name)
+            return credential
         else:
             print("login failed for user:", oldName)
