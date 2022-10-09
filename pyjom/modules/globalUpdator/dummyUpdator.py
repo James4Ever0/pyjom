@@ -1,5 +1,5 @@
 from pyjom.commons import *
-from lazero.program.functools
+from lazero.program.functools import iterateWithTempDirectory
 
 @decorator
 @
