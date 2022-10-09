@@ -123,6 +123,7 @@ def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MRED
         print(prefix,"SLEEP TIME:", sleep_time, file=sys.stderr)
         time.sleep(sleep_time)
         title = RedBaginfoDict["Tittle"]
+        
         if bag_type == 12:
             action.sendGroupText(group=group_id, content=title)
         for trial in range(3): # try three times till we get there.
