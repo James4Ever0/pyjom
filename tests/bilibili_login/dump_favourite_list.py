@@ -39,7 +39,8 @@ if len(dataList) == 1:
     for favList in favLists:
         listId = favList['id'] # integer.
         listName = favList['name']
-        whi
+        while True:
+            
         result = sync(favorite_list.get_video_favorite_list_content(listId, page=page))
         if type(result) != list or len(result) == 0:
             break
