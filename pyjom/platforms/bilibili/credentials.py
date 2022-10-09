@@ -64,4 +64,4 @@ def getCredentialByDedeUserId(dedeuserid):
             print("login failed with existing credential for user:", oldName)
             removeCredentialByDedeUserId(dedeuserid)
     # anyway if you are here, nothing in database related to this dedeuserid now.
-    
+    # you choose to login via SMS.
