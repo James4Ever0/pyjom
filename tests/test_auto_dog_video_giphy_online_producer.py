@@ -6,6 +6,8 @@ from pyjom.medialang.core import *
 autoArgs = {"subtitle_detector": {"timestep": 0.2}}
 template_names = ["subtitle_detector.mdl.j2"]
 
+
+
 wbRev = OnlineAutoContentProducer(
     source="giphy",
     template="pets_with_music_online",
