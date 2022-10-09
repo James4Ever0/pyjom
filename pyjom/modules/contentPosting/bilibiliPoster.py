@@ -13,7 +13,7 @@ contentType='video', dedeuserid:str = "397424026"):
     def postContent(elem):
         postMetadata = getPostMetadata()
         print("READY TO POST CONTENT FROM:", elem)
-        c
+        contentId = uploadVideo()
         return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
     
     def postContentIterate(content):
