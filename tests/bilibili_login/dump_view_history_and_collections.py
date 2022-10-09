@@ -34,7 +34,8 @@ if len(dataList) == 1:
     )
     # import pprint
     # pprint.pprint(result)
-    if result !=list
+    if result !=list or len(result) == 0:
+        break
     for elem in result:
 
 
