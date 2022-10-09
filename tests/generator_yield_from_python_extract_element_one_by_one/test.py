@@ -24,12 +24,6 @@ def generator3(myGenerator):
         iterator(getNextNumber)
         print("_" * 30)
 
-import os
-
-def checkFileExists(filePath, debug=False):
-    result = os.path.exists(filePath)
-    if debug:
-        print('exists?', result)
 
 if __name__ == "__main__":
     tempfile = "tmp_test"
