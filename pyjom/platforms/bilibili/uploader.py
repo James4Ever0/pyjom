@@ -6,9 +6,9 @@ async def uploadVideo(
     # bili_jct="",
     # buvid3="", # credentials.
     dedeuserid:str="397424026",
-    description="",
-    dynamic="",
-    tagString="",
+    description:str="",
+    dynamic:str="",
+    tagString:str="",
     tagId=21, # what is 21? -> 日常
     title="",
     close_danmaku=False,
