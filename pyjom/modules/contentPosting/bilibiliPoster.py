@@ -11,6 +11,7 @@ from lazero.filesystem.temp import (
 import cv2
 
 
+# why you have decorator? so OnlinePoster will not have decorator.
 @decorator
 def BilibiliPoster(
     content,
