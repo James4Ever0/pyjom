@@ -126,6 +126,7 @@ def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MRED
         # filter this title shit.
         if any([keyword in title.lower() for keyword in keywords]):
             print('title containing forbidden keywords')
+            print('refuse to open red bag:', title.__repr__())
             return
         if bag_type == 12:
             action.sendGroupText(group=group_id, content=title)
