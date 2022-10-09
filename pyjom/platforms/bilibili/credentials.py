@@ -29,7 +29,7 @@ def verifyCredential(credential,returnName=True):
         print('credential valid for:', name)
         if returnName:
             data = {}
-            dedeuserid = 
+            dedeuserid = credential.dedeuserid
             data["name"] = name
             db.upsert(data, User.dedeuserid == dedeuserid)
             return name
