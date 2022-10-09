@@ -64,4 +64,5 @@ if len(dataList) == 1:
                 # it has description.
                 videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
                 # here we call 'desc' as 'intro.
+                videoData.update('')
                 db.upsert(videoData, User.bvid == videoData["bvid"])
