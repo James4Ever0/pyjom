@@ -55,9 +55,9 @@ if len(dataList) == 1:
                     listId, page=page, credential=credential
                 )
             )
-            import pprint
+            # import pprint
 
-            pprint.pprint(result)
+            # pprint.pprint(result)
             has_more = result["has_more"]
             # print("__________result__________")
             medias = result["medias"]
