@@ -56,4 +56,4 @@ async def uploadVideo(
     async def ev(data):
         print(data)
 
-    await uploader.start()
+    result = await uploader.start()
