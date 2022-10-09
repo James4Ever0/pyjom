@@ -15,6 +15,8 @@ dedeuserid = # pass it before you do shit!
 dataList = db.search(User.dedeuserid == dedeuserid) # this will never change i suppose?
 if len(dataList) == 1:
     data = dataList[0].copy()
+    print('login credential fetched from db:', data)
+
     oldName = data.pop('name')
     credential = Credential(**data)
     from bilibili_api import sync
@@ -22,5 +24,4 @@ if len(dataList) == 1:
     if oldName !=name:
         data['name']=name
         db.upsert(data, User.dedeuserid == dedeuserid)
-    print('login credential fetched from db:', data)
     print('login successful:', name)
