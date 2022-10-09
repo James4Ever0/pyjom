@@ -58,3 +58,4 @@ async def uploadVideo(
 
     result = await uploader.start() # with bvid, aid as key.
     # please tell me where the fuck you upload my video upto?
+    return result
