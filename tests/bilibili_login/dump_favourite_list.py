@@ -57,7 +57,7 @@ if len(dataList) == 1:
             print('__________result__________')
             # if type(result) != list or len(result) == 0:
             #     break
-            
+            medias = result['medias']
             for elem in medias:
                 # print('ELEM:',elem)
                 # breakpoint()
