@@ -1,5 +1,5 @@
-
 from bilibili_api import favorite_list
+
 # that favourite list is public. i just want that.
 # dedeuserid = "397424026"
 # how to?
@@ -33,21 +33,26 @@ if len(dataList) == 1:
         db.upsert(data, User.dedeuserid == dedeuserid)
     print("login successful:", name)
     # now you have it.
-    result = sync(favorite_list.get_video_favorite_list(int(dedeuserid),None, credential))
-    print(result) # None? wtf?
-    favLists = result['list']
+    result = sync(
+        favorite_list.get_video_favorite_list(int(dedeuserid), None, credential)
+    )
+    print(result)  # None? wtf?
+    favLists = result["list"]
     for favList in favLists:
-        listId = favList['id'] # integer.
-        listName = favList['name']
+        listId = favList["id"]  # integer.
+        listName = favList["name"]
         page = 0
         while True:
             import time
+
             time.sleep(3)
-            page+=1
-            result = sync(favorite_list.get_video_favorite_list_content(listId, page=page))
-                if type(result) != list or len(result) == 0:
-                    break
-                for elem in result:
-                    # it has description.
-                    videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
-                    db.upsert(videoData, User.bvid == videoData["bvid"])
+            page += 1
+            result = sync(
+                favorite_list.get_video_favorite_list_content(listId, page=page)
+            )
+            if type(result) != list or len(result) == 0:
+                break
+            for elem in result:
+                # it has description.
+                videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
+                db.upsert(videoData, User.bvid == videoData["bvid"])
