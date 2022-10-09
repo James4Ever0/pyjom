@@ -6,7 +6,7 @@ def generator2():
     yield from generator() # this is to simplifying the process of iteration.
 
 def iterator(lambdaFunction):
-    for _ in range(20):
+    for _ in range(4):
         print()
 
 def generator3():
