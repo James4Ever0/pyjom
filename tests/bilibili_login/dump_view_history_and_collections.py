@@ -33,7 +33,7 @@ if len(dataList) == 1:
     import time
 
     page_num = 0
-    dbHistory = tinydb.TinyDB('bilibiliHistory.json')
+    dbHistory = tinydb.TinyDB("bilibiliHistory.json")
     while True:
         time.sleep(3)
         page_num += 1  # starts with 1
