@@ -32,6 +32,16 @@ def verifyCredential(credential,returnName=True):
             dedeuserid = credential.dedeuserid
             data["name"] = name
             db.upsert(data, User.dedeuserid == dedeuserid)
+                db.upsert(
+        {
+            "name": name,
+            "dedeuserid": dedeuserid,
+            "bili_jct": bili_jct,
+            "buvid3": buvid3,
+            "sessdata": sessdata,
+        },
+        User.dedeuserid == dedeuserid,
+    )
             return name
         else:
             return True
