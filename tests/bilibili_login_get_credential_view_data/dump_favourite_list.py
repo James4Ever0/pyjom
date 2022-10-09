@@ -21,7 +21,6 @@ dbFavList = tinydb.TinyDB("bilibiliFavouriteList.json")
 User = tinydb.Query()
 dedeuserid = "397424026"  # pass it before you do shit!
 dataList = db.search(User.dedeuserid == dedeuserid)  # this will never change i suppose?
-db.remove()
 if len(dataList) == 1:
     data = dataList[0].copy()
     print("try to login credential fetched from db:", data)
