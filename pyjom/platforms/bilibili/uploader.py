@@ -5,6 +5,7 @@ async def uploadVideo(
     # sessdata="",
     # bili_jct="",
     # buvid3="", # credentials.
+    dedeuserid="",
     description="",
     dynamic="",
     tagString="",
