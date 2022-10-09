@@ -50,7 +50,7 @@ def verifyCredential(credential, returnName=True):
         return False
 
 
-def removeCredentialByDedeUserId(dedeuserid):
+def removeCredentialByDedeUserId(dedeuserid:str):
     try:
         db.remove(User.dedeuserid == dedeuserid)
         return True
