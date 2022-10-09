@@ -38,6 +38,6 @@ if __name__ == "__main__":
     generator3(myGenerator)  # good.
     # not over yet.
     checkFileExists(tempfile, debug=True)
-    myGenerator.close()
+    myGenerator.close() # choose to close this so you would 
     checkFileExists(tempfile, debug=True)
     # another test on generator, about tempfiles during iteration.
