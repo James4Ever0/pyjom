@@ -16,3 +16,6 @@ def generator3():
     for _ in range(3):
         iterator(getNextNumber)
         print("_"*30)
+
+if __name__ == "__main__":
+    generator3() # good.
