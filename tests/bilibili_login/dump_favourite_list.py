@@ -70,6 +70,6 @@ if len(dataList) == 1:
                 videoData = {key: elem[key] for key in ["bvid", "title"]}
                 # here we call 'desc' as 'intro.
                 videoData.update({"desc": elem["intro"]})
-                db.upsert(videoData, User.bvid == videoData["bvid"])
+                dbFavList.upsert(videoData, User.bvid == videoData["bvid"])
             if not has_more:
                 break
