@@ -33,7 +33,9 @@ if len(dataList) == 1:
     import time
     page_num = 0
     while True:
+        time.sleep(3)
         page_num+=1 # starts with 1
+        print('now processing page:', page_num)
         result = sync(
             user.get_self_history(page_num=page_num, per_page_item=100, credential=credential)
         )
