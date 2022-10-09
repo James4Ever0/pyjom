@@ -10,11 +10,11 @@ async def uploadVideo(
     dynamic:str="",
     tagString:str="",
     tagId:int=21, # what is 21? -> 日常
-    title="",
-    close_danmaku=False,
-    close_reply=False,
-    videoPath="",
-    cover_path="",
+    title:str="",
+    close_danmaku:bool=False,
+    close_reply:bool=False,
+    videoPath:str="",
+    cover_path:str="",
     # threads=3,
 ):
     credential = getCredentialByDedeUserId(dedeuserid)
