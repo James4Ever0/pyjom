@@ -22,4 +22,4 @@ if len(dataList) == 1:
     if oldName !=name:
         data['name']=name
         db.upsert(data, User.dedeuserid == dedeuserid)
-    print('login credential fetched from db')
+    print('login credential fetched from db:')
