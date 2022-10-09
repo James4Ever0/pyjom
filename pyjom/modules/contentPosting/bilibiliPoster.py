@@ -17,6 +17,6 @@ contentType='video', dedeuserid:str = "397424026"):
     if iterate:
         for elem in content:
     else:
-        return postContent
+        return postContent(content,)
     # content id?
     return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
