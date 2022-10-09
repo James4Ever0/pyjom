@@ -45,7 +45,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     fast=self.fast,
                     template_configs=template_configs,
                 ),
-                'poster':keywordDecorator(BilibiliPoster, iterate=True,) # just for debugging.
+                'poster':keywordDecorator(BilibiliPoster, iterate=True,contentType='video') # just for debugging.
                 # 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
             }
         )
