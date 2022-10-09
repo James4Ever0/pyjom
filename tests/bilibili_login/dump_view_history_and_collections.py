@@ -32,6 +32,6 @@ if len(dataList) == 1:
     result = sync(
         user.get_self_history(page_num=1, per_page_item=100, credential=credential)
     )
-    import pprint
-    pprint.pprint(result)
+    # import pprint
+    # pprint.pprint(result)
     # it has description.
