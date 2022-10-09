@@ -27,17 +27,17 @@ User = tinydb.Query()
 def verifyCredential(credential, returnName=True):
     try:
         name = sync(get_self_info(credential))["name"]
-        print("credential valid for:", name)
+        print("credential is valid for:", name)
         db.upsert(
-                {
-                    "name": credential.name,
-                    "dedeuserid": credential.dedeuserid,
-                    "bili_jct": credential.bili_jct,
-                    "buvid3": credential.buvid3,
-                    "sessdata": credential.sessdata,
-                },
-                User.dedeuserid == credential.dedeuserid,
-            )
+            {
+                "name": credential.name,
+                "dedeuserid": credential.dedeuserid,
+                "bili_jct": credential.bili_jct,
+                "buvid3": credential.buvid3,
+                "sessdata": credential.sessdata,
+            },
+            User.dedeuserid == credential.dedeuserid,
+        )
         if returnName:
             return name
         else:
@@ -50,7 +50,7 @@ def verifyCredential(credential, returnName=True):
         return False
 
 
-def removeCredentialByDedeUserId(dedeuserid:str):
+def removeCredentialByDedeUserId(dedeuserid: str):
     try:
         db.remove(User.dedeuserid == dedeuserid)
         return True
