@@ -1,4 +1,3 @@
-
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
 
@@ -17,7 +16,7 @@ import cv2
 def BilibiliPoster(
     content,
     iterate=False,
-    getPostMetadata= ...,  # some lambda calling generator.__next__()
+    getPostMetadata=...,  # some lambda calling generator.__next__()
     contentType="video",
     dedeuserid: str = "397424026",
     tempdir="/dev/shm/medialang/bilibiliPoster",
