@@ -6,14 +6,14 @@ class OnlineAutoContentProducer(ContentProducer):
         self,
         source=None,
         enable_log=True,
-        fast:bool=True,
+        fast: bool = True,
         processor_filters={},
         producer_filters={},
-        template:str="pets_with_music_online",
-        template_configs:list=[], # list or 'template_config' generator
-        tempdir:str = '/dev/shm/medialang/online',
+        template: str = "pets_with_music_online",
+        template_configs: list = [],  # list or 'template_config' generator
+        tempdir: str = "/dev/shm/medialang/online",
         metaTopic={
-            "static": [["dog", "cat", 'puppy'], ["funny", "cute"]],
+            "static": [["dog", "cat", "puppy"], ["funny", "cute"]],
             "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
         },
     ):  # something in this metaTopic is not droppable.
@@ -21,7 +21,7 @@ class OnlineAutoContentProducer(ContentProducer):
         assert source is not None
         self.source = source
         self.tempdir = tempdir
-        self.fast=fast
+        self.fast = fast
         self.metaTopic = metaTopic  # 所谓的超话 超级话题
         if enable_log:
             self.log_location = "logs/local/"
@@ -32,20 +32,22 @@ class OnlineAutoContentProducer(ContentProducer):
                     OnlineTopicGenerator, source=source, metaTopic=metaTopic
                 ),  # how to generate this?
                 "info": keywordDecorator(
-                    OnlineFetcher, source=source, tempdir = tempdir
+                    OnlineFetcher, source=source, tempdir=tempdir
                 ),  # can you do that?
                 "processor": keywordDecorator(
-                    OnlineProcessor,source=source
+                    OnlineProcessor, source=source
                 ),  # this is the second thing. how do you process this?
                 # "reviewer": filesystemReviewer,
                 "producer": keywordDecorator(
-                    OnlineProducer, # what does this 'OnlineProducer' generate?
+                    OnlineProducer,  # what does this 'OnlineProducer' generate?
                     source=source,
                     template=template,
                     fast=self.fast,
                     template_configs=template_configs,
                 ),
-                'poster':keywordDecorator(BilibiliPoster, iterate=True,contentType='video') # just for debugging.
+                "poster": keywordDecorator(
+                    BilibiliPoster, iterate=True, contentType="video"
+                )  # just for debugging.
                 # you also need to change the logic below. for other 'dummy' stuffs.
                 # 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
             }
