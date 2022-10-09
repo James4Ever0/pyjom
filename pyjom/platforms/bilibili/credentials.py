@@ -28,7 +28,7 @@ def verifyCredential(credential, returnName=True):
     try:
         name = sync(get_self_info(credential))["name"]
         print("credential valid for:", name)
-            db.upsert(
+        db.upsert(
                 {
                     "name": credential.name,
                     "dedeuserid": credential.dedeuserid,
