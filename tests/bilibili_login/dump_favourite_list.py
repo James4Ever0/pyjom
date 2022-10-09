@@ -51,7 +51,7 @@ if len(dataList) == 1:
             )
             import pprint
             pprint.pprint(result)
-            has_more = 
+            has_more = result['has_more']
             print('__________result__________')
             if type(result) != list or len(result) == 0:
                 break
