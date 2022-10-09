@@ -2,7 +2,7 @@ from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
 from typing import Generator
 @decorator
-def BilibiliPoster(content, iterate=False, postMetadataGenerator:=None # must be a generator. a called generator function.
+def BilibiliPoster(content, iterate=False, postMetadataGenerator:Generator=... # must be a generator. a called generator function.
 ,contentType='video', dedeuserid:str = "397424026"):
     # are you sure this 'postMetadataGenerator' will generate valid data for us?
     # anyway let's write for video.
