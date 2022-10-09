@@ -1,5 +1,5 @@
 from bilibili_api import video_uploader, Credential
-
+from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId, getCredentialByDedePasswordString
 # you may use the 'sync' method elsewhere.
 async def uploadVideo(
     # sessdata="",
