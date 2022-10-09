@@ -1,4 +1,4 @@
-from pyjom.commons import * # really swap this shit?
+from pyjom.commons import *  # really swap this shit?
 from pyjom.modules import *
 
 
@@ -114,7 +114,7 @@ class ContentReviewer(ContentProducer):
         optimized_result, source = dummyReviewOptimizer(topic, feedback, review)
         return optimized_result  # this with instant feedback.
 
-    def main(self,skip_review = False):
+    def main(self, skip_review=False):
         if self.trash_location is not None:
             print("dumping trash at:\n{}".format(self.trash_location))
             dumpTrashDir(self.trash_location)
@@ -127,7 +127,7 @@ class ContentReviewer(ContentProducer):
             review = self.review_content(content)  # dummy reviewer.
             # print("reviewed content:", review)
         else:
-            review = {key:[] for key in content.keys()} # test feedback
+            review = {key: [] for key in content.keys()}  # test feedback
             # of course nothing will be there.
 
         feedback = self.collect_some_feedback(review)  # instant feedback.
