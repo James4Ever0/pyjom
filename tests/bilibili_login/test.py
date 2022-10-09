@@ -67,7 +67,7 @@ if credential != None:
     sessdata = credential.sessdata
     dedeuserid = credential.dedeuserid  # this is userid, better use this instead?
     User = tinydb.Query()
-    # assume that we are here to preserve
+    # assume that we are here to fetch valid data.
     db.upsert(
         {
             "name": name,
