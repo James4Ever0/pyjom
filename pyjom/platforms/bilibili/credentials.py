@@ -95,6 +95,6 @@ def getCredentialByDedeUserId(dedeuserid:str="397424026"):
             print("登录成功")
             # update with this credential!
             # next, check if this is the credential we need.
-            
+            credential.dedeuserid == de
         else:
             print('登陆失败')
