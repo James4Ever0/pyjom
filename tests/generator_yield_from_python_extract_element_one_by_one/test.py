@@ -1,4 +1,4 @@
-def generator():
+def generator(tempdir='./'):
     for index in range(100):
         yield index
 
