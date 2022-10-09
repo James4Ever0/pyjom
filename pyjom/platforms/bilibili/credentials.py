@@ -82,5 +82,6 @@ def getCredentialByDedeUserId(dedeuserid:str="397424026"):
         code = input("请输入验证码：")
         c = login_with_sms(PhoneNumber(phone, country="+86"), code)
         credential = c
-        
+        # first, check if this is a valid credential.
         print("登录成功")
+        # next
