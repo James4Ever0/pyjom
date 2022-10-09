@@ -1,10 +1,14 @@
-def generator(tempfile=''):
-    for index in range(100):
-        yield index
+from lazero.filesystem.temp import tmpfile
+import pathlib
+def generator(tempfile):
+    with tmpfile(tempfile):
+        pathlib.Path(tempfile).touch()
+        for index in range(100):
+            yield index
 
 
-def generator2():
-    yield from generator()  # this is to simplifying the process of iteration.
+def generator2(tempfile):
+    yield from generator(tempfile)  # this is to simplifying the process of iteration.
 
 
 def iterator(lambdaFunction):
@@ -19,9 +23,9 @@ def generator3(myGenerator):
         iterator(getNextNumber)
         print("_" * 30)
 
-from lazero.filesystem.temp import tmpdir
 
 if __name__ == "__main__":
-    myGenerator = generator2()
+    tempfile = "tmp_test"
+    myGenerator = generator2(tempfile)
     generator3(myGenerator)  # good.
     # another test on generator, about tempfiles during iteration.
