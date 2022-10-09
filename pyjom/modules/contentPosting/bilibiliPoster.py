@@ -1,4 +1,4 @@
-from ast import Lambda
+
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
 
