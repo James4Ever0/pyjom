@@ -4,4 +4,4 @@ def generator():
 
 myGenerator = generator()
 for _ in range(20):
-    result = myGenerator.
+    result = myGenerator.send()
