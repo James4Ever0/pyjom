@@ -4,10 +4,7 @@ from bilibili_api.user import get_self_info
 
 from lazero.search.api import getHomeDirectory
 import os
-
-
-dbLocation = "test_credential.json"
-db = tinydb.TinyDB(dbLocation)
+import tinydb
 
 home = getHomeDirectory()
 dbPath = os.path.join(home, ".bilibili_api.json")
