@@ -44,25 +44,29 @@ if len(dataList) == 1:
         page = 0
         while True:
             import time
+
             time.sleep(3)
             page += 1
             result = sync(
-                favorite_list.get_video_favorite_list_content(listId, page=page, credential=credential)
+                favorite_list.get_video_favorite_list_content(
+                    listId, page=page, credential=credential
+                )
             )
             import pprint
+
             pprint.pprint(result)
-            has_more = result['has_more']
+            has_more = result["has_more"]
             if not has_more:
                 break
-            print('__________result__________')
+            print("__________result__________")
             # if type(result) != list or len(result) == 0:
             #     break
-            medias = result['medias']
+            medias = result["medias"]
             for elem in medias:
                 # print('ELEM:',elem)
                 # breakpoint()
                 # it has description.
                 videoData = {key: elem[key] for key in ["bvid", "title"]}
                 # here we call 'desc' as 'intro.
-                videoData.update({'desc':elem['intro']})
+                videoData.update({"desc": elem["intro"]})
                 db.upsert(videoData, User.bvid == videoData["bvid"])
