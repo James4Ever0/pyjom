@@ -52,9 +52,11 @@ if len(dataList) == 1:
             import pprint
             pprint.pprint(result)
             has_more = result['has_more']
-            print('__________result__________')
-            if type(result) != list or len(result) == 0:
+            if not has_more:
                 break
+            print('__________result__________')
+            # if type(result) != list or len(result) == 0:
+            #     break
             for elem in result:
                 # print('ELEM:',elem)
                 # breakpoint()
