@@ -37,3 +37,4 @@ def getCredentialByDedeUserId(dedeuserid):
         if len(dataList) != 0:
             # remove all related records.
             db.remove(User.dedeuserid == dedeuserid)
+        
