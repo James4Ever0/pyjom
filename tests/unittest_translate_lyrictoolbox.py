@@ -1,3 +1,4 @@
 from test_commons import *
 from pyjom.lyrictoolbox import translate
-translate("are you ok", backend='deepl')
+result = translate("are you ok", backend='deepl')
+print('source:')
