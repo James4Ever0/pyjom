@@ -17,7 +17,7 @@ async def uploadVideo(
     cover_path="",
     # threads=3,
 ):
-    credential = 
+    credential = get
     # videoExtension = videoPath.split(".")[-1].lower()
     # credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # you can pass it from somewhere else.
