@@ -114,7 +114,7 @@ def addFriend(friend_id, reason="",sourceString="search",group_id=0):
     print("ADD FRIEND RESULT: ", result)
     return result
 
-def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MREDBAG_LOG]", forbiddenKeywords = []):
+def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MREDBAG_LOG]", forbiddenKeywords = [test”、“测试”、“别抢”、“不要"]):
     bag_type = RedBaginfoDict["RedType"]
     print(prefix, "THREAD LAUCHED", file=sys.stderr)
     if bag_type in [4, 6, 12]:
