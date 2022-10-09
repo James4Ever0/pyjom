@@ -16,6 +16,7 @@ contentType='video', dedeuserid:str = "397424026", tempdir = '/dev/shm/medialang
         print("READY TO POST CONTENT FROM:", elem)# this elem is video location for me.
         if contentType == 'video': # single video upload without grouping.
             videoPath = elem
+            cover_path = 
             # you need to save this 'cover_target' to file.
             cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid = postMetadata # assumptions on video type.
             contentId = uploadVideo(dedeuserid = dedeuserid,description = )
