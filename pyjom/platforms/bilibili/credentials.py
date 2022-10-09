@@ -78,6 +78,7 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
         data = dataList[0].copy()
         print("try to login credential fetched from db:", data)
         oldName = data.pop("name")
+        print('previous name:', oldName)
         credential = Credential(**data)
         name = verifyCredential(credential)
         if name != False:
