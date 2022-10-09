@@ -11,3 +11,4 @@ db = tinydb.TinyDB(dbPath) # is this variable shared in this module?
 User = tinydb.Query()
 
 def getCredentialByDedeUserId(dedeuserid):
+    dataList = db.search(User.dedeuserid == dedeuserid)
