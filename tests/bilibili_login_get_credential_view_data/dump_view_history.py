@@ -52,5 +52,6 @@ if len(dataList) == 1:
             # it has description.
             videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
             searchResult= dbHistory.search(User.bvid == videoData["bvid"])
-            if len(searchResult) == 0:
+            if len(searchResult) != 0:
+                breakFlag=True
             dbHistory.upsert(videoData, User.bvid == videoData["bvid"])
