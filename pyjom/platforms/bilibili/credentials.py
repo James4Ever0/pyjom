@@ -28,7 +28,6 @@ def verifyCredential(credential, returnName=True):
     try:
         name = sync(get_self_info(credential))["name"]
         print("credential valid for:", name)
-        if returnName:
             db.upsert(
                 {
                     "name": credential.name,
@@ -39,6 +38,7 @@ def verifyCredential(credential, returnName=True):
                 },
                 User.dedeuserid == credential.dedeuserid,
             )
+        if returnName:
             return name
         else:
             return True
