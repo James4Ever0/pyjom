@@ -22,5 +22,5 @@ def generator3(myGenerator):
 from lazero.filesystem.temp import tmpdir
 
 if __name__ == "__main__":
-    generator3(generator2())  # good.
+    generator3(myGenerator)  # good.
     # another test on generator, about tempfiles during iteration.
