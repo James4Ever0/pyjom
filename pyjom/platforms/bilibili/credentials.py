@@ -5,6 +5,13 @@ import os
 from bilibili_api import sync, Credential
 from bilibili_api.user import get_self_info
 from bilibili_api import settings
+from bilibili_api.login import (
+    login_with_password,
+    login_with_sms,
+    send_sms,
+    PhoneNumber,
+    Check,
+)
 
 settings.geetest_auto_open = False
 
