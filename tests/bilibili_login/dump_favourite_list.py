@@ -49,7 +49,9 @@ if len(dataList) == 1:
             result = sync(
                 favorite_list.get_video_favorite_list_content(listId, page=page, credential=credential)
             )
-            print('result')
+            import pprint
+            pprint.pprint(result)
+            print('__________result__________')
             if type(result) != list or len(result) == 0:
                 break
             for elem in result:
