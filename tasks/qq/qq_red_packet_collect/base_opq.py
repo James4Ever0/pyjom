@@ -124,7 +124,7 @@ def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MRED
         time.sleep(sleep_time)
         title = RedBaginfoDict["Tittle"]
         # filter this title shit.
-        if title.contains()
+        if any([])
         if bag_type == 12:
             action.sendGroupText(group=group_id, content=title)
         for trial in range(3): # try three times till we get there.
