@@ -39,3 +39,8 @@ def getCredentialByDedeUserId(dedeuserid):
             db.remove(User.dedeuserid == dedeuserid)
     else:
         # check validity.
+
+    data = dataList[0].copy()
+    print("try to login credential fetched from db:", data)
+    oldName = data.pop("name")
+    credential = Credential(**data)
