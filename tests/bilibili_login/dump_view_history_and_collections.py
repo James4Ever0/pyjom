@@ -43,4 +43,4 @@ if len(dataList) == 1:
         break
     for elem in result:
     # it has description.
-        bvid = elem['bvid']
+        bvid = elem['bvid', '']
