@@ -17,7 +17,15 @@ def verifyCredential(credential,returnName=True):
     try:
         name = sync(get_self_info(credential))["name"]
         print('credential valid for:', name)
-        return name
+        if returnName:
+            return name
+        else:
+            return True
+    except:
+        import traceback
+        traceback.print_exc()
+        print('invalid credential:', credential)
+        return False
 
 
 def getCredentialByDedeUserId(dedeuserid):
