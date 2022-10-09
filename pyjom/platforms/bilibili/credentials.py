@@ -11,8 +11,8 @@ db = tinydb.TinyDB(dbPath) # is this variable shared in this module?
 User = tinydb.Query()
 
 def verifyCredential(credential):
-
     name = sync(get_self_info(credential))["name"]
+    print('credential valid:')
 
 def getCredentialByDedeUserId(dedeuserid):
     dataList = db.search(User.dedeuserid == dedeuserid)
