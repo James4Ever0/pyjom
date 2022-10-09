@@ -23,9 +23,21 @@ def generator3(myGenerator):
         iterator(getNextNumber)
         print("_" * 30)
 
+import os
+
+def checkFileExists(filePath, debug=False):
+    result = os.path.exists(filePath)
+    if debug:
+        print('exists?', result)
 
 if __name__ == "__main__":
     tempfile = "tmp_test"
+    if os.path.exists(tempfile):
+        os.remove(tempfile)
     myGenerator = generator2(tempfile)
     generator3(myGenerator)  # good.
+    # not over yet.
+    checkFileExists(tempfile, debug=True)
+    myGenerator.close()
+    checkFileExists(tempfile, debug=True)
     # another test on generator, about tempfiles during iteration.
