@@ -47,7 +47,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     template_configs=template_configs,
                 ),
                 "poster": keywordDecorator(
-                    BilibiliPoster, iterate=True, contentType=contentType,postMeta
+                    BilibiliPoster, iterate=True, contentType=contentType,postMetadataGenerator=postMetadataGenerator,
                 )  # just for debugging.
                 # you also need to change the logic below, for other 'dummy' stuffs.
                 # 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
