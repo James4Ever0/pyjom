@@ -33,10 +33,12 @@ def verifyCredential(credential,returnName=True):
 def removeCredentialByDedeUserId(dedeuserid):
     try:
         db.remove(User.dedeuserid == dedeuserid)
+        return True
     except:
         import traceback
         traceback.print_exc()
-        print('error when removing credential from database for dedeuserid:)
+        print('error when removing credential from database for dedeuserid:', dedeuserid)
+        return True
 
 
 def getCredentialByDedeUserId(dedeuserid):
