@@ -36,7 +36,7 @@ def verifyCredential(credential,returnName=True):
             "buvid3": credential.buvid3,
             "sessdata": credential.sessdata,
         },
-        User.dedeuserid == dedeuserid,
+        User.dedeuserid == credential.dedeuserid,
     )
             return name
         else:
