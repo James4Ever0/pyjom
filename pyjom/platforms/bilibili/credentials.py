@@ -46,6 +46,7 @@ def getCredentialByDedeUserId(dedeuserid):
     if len(dataList) !=1:
         if len(dataList) != 0:
             # remove all related records.
+            removeCredentialByDedeUserId(dedeuserid)
     else:
         # check validity.
         data = dataList[0].copy()
