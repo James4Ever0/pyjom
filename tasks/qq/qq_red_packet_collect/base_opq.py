@@ -174,7 +174,7 @@ def openRedBag(
         title = RedBaginfoDict["Tittle"]
         # filter this title shit.
         if any([keyword in title.lower() for keyword in forbiddenKeywords]):
-            print("title containing forbidden keywords")
+            stderrPrint("title containing forbidden keywords")
             print("refuse to open red bag:", title.__repr__())
             return
         if bag_type == 12:
