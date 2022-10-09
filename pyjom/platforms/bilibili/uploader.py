@@ -2,9 +2,9 @@ from bilibili_api import video_uploader, Credential
 
 # you may use the 'sync' method elsewhere.
 async def uploadVideo(
-    sessdata="",
-    bili_jct="",
-    buvid3="", # credentials.
+    # sessdata="",
+    # bili_jct="",
+    # buvid3="", # credentials.
     description="",
     dynamic="",
     tagString="",
@@ -18,7 +18,7 @@ async def uploadVideo(
 ):
     # videoExtension = videoPath.split(".")[-1].lower()
     credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
-    # you can pass it somewhere else.
+    # you can pass it from somewhere else.
     # 具体请查阅相关文档
     meta = {
         "copyright": 1,
