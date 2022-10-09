@@ -88,4 +88,4 @@ def getCredentialByDedeUserId(dedeuserid:str="397424026"):
             print("登录成功")
             # next, check if this is the credential we need.
         else:
-            print('')
+            print('登陆失败')
