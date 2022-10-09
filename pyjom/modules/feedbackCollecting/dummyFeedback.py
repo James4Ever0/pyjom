@@ -10,4 +10,4 @@ def dummyFeedback(
     def inner(elem):
         print("from poster:", elem)
         return "pending"
-    return inner(elem, iterate=iterate)
+    return inner(elem)
