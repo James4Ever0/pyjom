@@ -50,7 +50,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     template_configs=template_configs,
                 ),
                 "poster": keywordDecorator(
-                    OnlinePoster,
+                    OnlinePoster, # you need to be prudent. this is not kids stuff.
                     iterate=True,
                     contentType=contentType,
                     postMetadataGenerator=postMetadataGenerator,
