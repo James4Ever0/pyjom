@@ -51,5 +51,5 @@ def getCredentialByDedeUserId(dedeuserid):
             print("login successful:", name)
             return credential
         else:
-            print("login failed for user:", oldName)
+            print("login failed with existing credential for user:", oldName)
     # anyway if you are here, nothing in database related to this dedeuserid now.
