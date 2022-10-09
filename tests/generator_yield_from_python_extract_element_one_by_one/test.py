@@ -22,3 +22,4 @@ def generator3(myGenerator):
 
 if __name__ == "__main__":
     generator3(generator2())  # good.
+    # another test on generator, about tempfiles.
