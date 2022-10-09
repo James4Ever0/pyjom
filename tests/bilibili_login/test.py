@@ -2,7 +2,7 @@
 from bilibili_api.login import login_with_password, login_with_sms, send_sms, PhoneNumber, Check
 from bilibili_api.user import get_self_info
 from bilibili_api import settings
-from bilibili_api import sync
+from bilibili_api import sync, Credential
 
 # mode = int(input("""请选择登录方式：
 # 1. 密码登录
