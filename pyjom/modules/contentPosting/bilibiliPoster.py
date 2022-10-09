@@ -40,7 +40,6 @@ def BilibiliPoster(
                     cover_target,
                     mTagSeries,
                     mTitle,
-            
                     mBgm,# what is the bgm here used for?
                     mDescription,
                     dog_or_cat_original, # what again is this dog/cat label?
