@@ -37,4 +37,4 @@ if len(dataList) == 1:
     print(favourite_list) # None? wtf?
     favLists = favourite_list['list']
     for favList in favLists:
-        
+        listId = favList['id']
