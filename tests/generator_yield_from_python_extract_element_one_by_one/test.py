@@ -7,7 +7,8 @@ def generator2():
 
 def iterator(lambdaFunction):
     for _ in range(4):
-        print()
+        
+        print(result)
 
 def generator3():
     myGenerator = generator2()
