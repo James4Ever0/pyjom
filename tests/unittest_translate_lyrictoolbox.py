@@ -3,6 +3,6 @@ from pyjom.lyrictoolbox import translate
 from lazero.utils.logger import sprint
 sources = ['are you ok']
 for source in sources:
-    result = translate(source, backend='baidu')
+    result = translate(source, backend='deepl')
     print('source:',source)
     sprint('result:',result)
