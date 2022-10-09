@@ -49,11 +49,12 @@ if len(dataList) == 1:
             result = sync(
                 favorite_list.get_video_favorite_list_content(listId, page=page, credential=credential)
             )
+            print('result')
             if type(result) != list or len(result) == 0:
                 break
             for elem in result:
-                print('ELEM:',elem)
-                breakpoint()
+                # print('ELEM:',elem)
+                # breakpoint()
                 # it has description.
                 videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
                 db.upsert(videoData, User.bvid == videoData["bvid"])
