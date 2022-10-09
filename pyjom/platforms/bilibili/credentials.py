@@ -3,6 +3,7 @@
 from lazero.search.api import getHomeDirectory
 import os
 from bilibili_api import sync
+from bilibili_api.user import get_self_info
 
 
 home = getHomeDirectory()
