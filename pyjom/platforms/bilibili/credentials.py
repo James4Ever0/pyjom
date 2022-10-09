@@ -13,7 +13,7 @@ import tinydb
 db = tinydb.TinyDB(dbPath) # is this variable shared in this module?
 User = tinydb.Query()
 
-def verifyCredentialAndGetName(credential):
+def verifyCredential(credential):
     try:
         name = sync(get_self_info(credential))["name"]
         print('credential valid for:', name)
