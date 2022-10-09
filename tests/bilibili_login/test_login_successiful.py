@@ -11,7 +11,7 @@ dbPath = os.path.join(home, ".bilibili_api.json")
 import tinydb
 db = tinydb.TinyDB(dbPath)
 User = tinydb.Query()
-db.search(User.name == 'John')
+db.search(User.dedeuseriid == 'John')
 credential = Credential()
 from bilibili_api import sync
 name = sync(get_self_info(credential))['name']
