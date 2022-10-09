@@ -40,7 +40,7 @@ if len(dataList) == 1:
     favLists = result["list"]
     for favList in favLists:
         listId = favList["id"]  # integer.
-        listName = favList["name"]
+        listName = favList["title"]
         page = 0
         while True:
             import time
