@@ -62,7 +62,7 @@ if len(dataList) == 1:
             medias = result["medias"]
             if type(medias) != list or len(medias) == 0:
                 break
-
+            breakFlag = False
             for elem in medias:
                 # print('ELEM:',elem)
                 # breakpoint()
