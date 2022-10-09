@@ -53,7 +53,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     iterate=True,
                     contentType=contentType,
                     postMetadataGenerator=postMetadataGenerator,
-                    platform="bilibili",
+                    platform=platform,
                 )  # just for debugging.
                 # you also need to change the logic below, for other 'dummy' stuffs.
                 # 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
