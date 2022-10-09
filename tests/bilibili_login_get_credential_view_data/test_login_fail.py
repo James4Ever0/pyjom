@@ -19,8 +19,8 @@ if len(dataList) == 1:
     oldName = data.pop('name')
     credential = Credential(**{'dedeuserid': dedeuserid,'sessdata':'fakeSessionData'})
     from bilibili_api import sync
-    name = sync(get_self_info(credential))['name']
-    if oldName !=name:
-        data['name']=name
-        db.upsert(data, User.dedeuserid == dedeuserid)
+    # name = sync(get_self_info(credential))['name']
+    # if oldName !=name:
+    #     data['name']=name
+    #     db.upsert(data, User.dedeuserid == dedeuserid)
     print('login successful:', name)
