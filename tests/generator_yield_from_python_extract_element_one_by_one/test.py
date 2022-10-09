@@ -25,7 +25,7 @@ def iterator(lambdaFunction, tempfile):
         result = lambdaFunction()
         print(result) # cleaned after next FAILED iteration, which is what we need the most.
         checkFileExists(tempfile, debug=True)
-        # cleaning after 'close' or n
+        # cleaning after 'close' or next iteration.
 
 
 def generator3(myGenerator, tempfile):
