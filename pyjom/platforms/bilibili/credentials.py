@@ -32,7 +32,7 @@ def verifyCredential(credential,returnName=True):
             dedeuserid = credential.dedeuserid
             data["name"] = name
             db.upsert(data, User.dedeuserid == dedeuserid)
-                db.upsert(
+                b.upsert(
         {
             "name": name,
             "dedeuserid": dedeuserid,
