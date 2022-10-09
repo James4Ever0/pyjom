@@ -23,7 +23,7 @@ def generator2(tempfile):
 def iterator(lambdaFunction, tempfile):
     for _ in range(4):
         result = lambdaFunction()
-        print(result) # cleaned 
+        print(result) # cleaned after next iteration
         checkFileExists(tempfile, debug=True)
 
 
