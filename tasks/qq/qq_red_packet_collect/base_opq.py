@@ -124,7 +124,7 @@ def openRedBag(RedBaginfoDict, group_id, RedBaginfo, delay=(5,10), prefix="[MRED
         time.sleep(sleep_time)
         title = RedBaginfoDict["Tittle"]
         # filter this title shit.
-        if any([keyword in title for keyword in keywords]):
+        if any([keyword in title.lower() for keyword in keywords]):
             print('title containing forbidden keywords')
             return
         if bag_type == 12:
