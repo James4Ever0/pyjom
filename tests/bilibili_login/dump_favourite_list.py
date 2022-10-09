@@ -47,7 +47,7 @@ if len(dataList) == 1:
             time.sleep(3)
             page += 1
             result = sync(
-                favorite_list.get_video_favorite_list_content(listId, page=page)
+                favorite_list.get_video_favorite_list_content(listId, page=page, credential=credential)
             )
             if type(result) != list or len(result) == 0:
                 break
