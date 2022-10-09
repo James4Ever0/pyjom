@@ -12,5 +12,7 @@ def dummyFeedback(
         for elem in content:
             yield inner(elem)
     if not iterate:
-        return inner()
+        return inner(content)
+    else:
+        return innerIterator(content)
         
