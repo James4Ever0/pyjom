@@ -11,7 +11,7 @@ def OnlinePoster(
 ):
     posters = {"bilibili": BilibiliPoster}
     assert platform in posters.keys()
-    getPostMetadata = 
+    getPostMetadata = postMetadataGenerator.__next__()
     return posters[platform](
         content,
         iterate=iterate,
