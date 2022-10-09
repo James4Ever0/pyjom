@@ -8,8 +8,9 @@ def dummyFeedback(
     def inner(elem):
         print("from poster:", elem)
         return "pending"
-    def innerIterator()
+    def innerIterator(content):
+        for elem in content:
+
     if not iterate:
         return inner()
-    for elem in content:
         
