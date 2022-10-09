@@ -47,6 +47,7 @@ if len(dataList) == 1:
         # pprint.pprint(result)
         if type(result) != list or len(result) == 0:
             break
+        breakflag=False
         for elem in result:
             # it has description.
             videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
