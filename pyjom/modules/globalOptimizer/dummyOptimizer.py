@@ -8,7 +8,7 @@ def dummyOptimizer(topic, feedback, iterate=False): # wtf is this?
     def inner(elem):
         print("from feedback:", elem)
         return "pending"
-    return inner(feedback)
+    return inner(feedback, iterate=iterate)
 
 
 @decorator
