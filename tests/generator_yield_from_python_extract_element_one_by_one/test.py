@@ -39,7 +39,7 @@ if __name__ == "__main__":
     if os.path.exists(tempfile):
         os.remove(tempfile)
     myGenerator = generator2(tempfile)
-    generator3(myGenerator)  # good.
+    generator3(myGenerator, tempfile)  # good.
     # not over yet.
     checkFileExists(tempfile, debug=True)
     myGenerator.close() # choose to close this so you would get this result.
