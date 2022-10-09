@@ -9,9 +9,8 @@ def checkFileExists(filePath, debug=False):
         print('exists?', result)
 
 def generator(tempfile):
-        # for index in range(12): # 0 to 11 means 12
-        for index in range(11): # what if it is 11? -> StopIteration and shit get cleaned.
-
+    # for index in range(12): # 0 to 11 means 12
+    for index in range(11): # what if it is 11? -> StopIteration and shit get cleaned.
         with tmpfile(tempfile):
             pathlib.Path(tempfile).touch()
             yield index
