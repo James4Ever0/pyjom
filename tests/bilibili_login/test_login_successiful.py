@@ -10,7 +10,8 @@ home = getHomeDirectory()
 dbPath = os.path.join(home, ".bilibili_api.json")
 import tinydb
 db = tinydb.TinyDB(dbPath)
-db.
+db.query
+db.all
 credential = Credential()
 from bilibili_api import sync
 name = sync(get_self_info(credential))['name']
