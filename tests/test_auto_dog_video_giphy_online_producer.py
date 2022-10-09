@@ -13,6 +13,7 @@ template_names = ["subtitle_detector.mdl.j2"]
 # also where are the places for 'video/audio/voice/artwork' generation?
 # maybe it is not the time to use such kind of things... you know the ram best.
 from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogCat
+
 postMetadataGenerator = getBilibiliPostMetadataForDogCat()
 
 wbRev = OnlineAutoContentProducer(
