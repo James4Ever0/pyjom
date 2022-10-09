@@ -30,6 +30,9 @@ if len(dataList) == 1:
     print("login successful:", name)
     # now continue.
     # how many pages you want? infinite?
+    import time
+    while True:
+        page_num+=1
     result = sync(
         user.get_self_history(page_num=1, per_page_item=100, credential=credential)
     )
