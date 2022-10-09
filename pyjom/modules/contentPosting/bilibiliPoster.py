@@ -15,6 +15,7 @@ contentType='video', dedeuserid:str = "397424026"):
         print("READY TO POST CONTENT FROM:", elem)# this elem is video location for me.
         if contentType == 'video': # single video upload without grouping.
             videoPath = elem
+            # you need to save this 'cover_target' to path.
             cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid = postMetadata # assumptions on video type.
             contentId = uploadVideo(dedeuserid = dedeuserid,description = )
         return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
