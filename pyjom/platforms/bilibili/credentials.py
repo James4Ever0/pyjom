@@ -86,7 +86,7 @@ def getCredentialByDedeUserId(dedeuserid:str="397424026"):
         name = verifyCredential(credential)
         if name != False:
             print("登录成功")
-            # update with 
+            # update with this credential!
             # next, check if this is the credential we need.
             
         else:
