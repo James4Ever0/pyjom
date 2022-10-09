@@ -47,7 +47,9 @@ else:
     exit()
 
 from lazero.search.api import getHomeDirectory
+import os
 home = getHomeDirectory()
+d
 if credential != None:
     name = sync(get_self_info(credential))['name']
     print(f"欢迎，{name}!")
