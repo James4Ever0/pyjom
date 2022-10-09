@@ -27,4 +27,5 @@ if len(dataList) == 1:
     #     db.upsert(data, User.dedeuserid == dedeuserid)
     # will never succeed.
     # don't know using some expired sessdata will get what?
+    # maybe will still fail?
     print('login successful:', name)
