@@ -59,5 +59,5 @@ async def uploadVideo(
     result = await uploader.start() # with bvid, aid as key.
     # please tell me where the fuck you upload my video upto?
     print('upload video result:', result)
-    breakpoint() # comment it out later?
+    breakpoint() # comment it out later? or we will check why this upload fails. maybe it is because we have 
     return result['bvid'] # choose to be in this way?
