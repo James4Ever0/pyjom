@@ -1,5 +1,5 @@
 from pyjom.commons import *
-from lazero.program.functools import iterateWithTempDirectory
+from lazero.program.functools import iterateWithTempDirectory # you can also switch to 'AUTO'
 
 @decorator # called 'iterateWithTempDirectory'
 def dummyOptimizer(topic, feedback, iterate=False): # wtf is this?
