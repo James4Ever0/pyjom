@@ -39,12 +39,13 @@ if len(dataList) == 1:
     for favList in favLists:
         listId = favList['id'] # integer.
         listName = favList['name']
+        page = 0
         while True:
-            
+            page+=1
         result = sync(favorite_list.get_video_favorite_list_content(listId, page=page))
-        if type(result) != list or len(result) == 0:
-            break
-        for elem in result:
-            # it has description.
-            videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
-            dbHistory.upsert(videoData, User.bvid == videoData["bvid"])
+            if type(result) != list or len(result) == 0:
+                break
+            for elem in result:
+                # it has description.
+                videoData = {key: elem[key] for key in ["bvid", "desc", "title"]}
+                dbHistory.upsert(videoData, User.bvid == videoData["bvid"])
