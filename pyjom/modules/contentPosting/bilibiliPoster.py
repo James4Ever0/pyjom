@@ -12,6 +12,8 @@ contentType='video', dedeuserid:str = "397424026"):
     getPostMetadata = lambda: postMetadataGenerator.__next__()
     # def postContent(elem):
         print("READY TO POST CONTENT FROM:", elem)
+    
+    def postContentIterate(content)
     if iterate:
         for elem in content:
     # content id?
