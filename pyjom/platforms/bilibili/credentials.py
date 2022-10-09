@@ -33,5 +33,4 @@ def verifyCredential(credential,returnName=True):
 
 def getCredentialByDedeUserId(dedeuserid):
     dataList = db.search(User.dedeuserid == dedeuserid)
-    if len(dataList) == 0:
-        
+    if len(dataList) !=1:
