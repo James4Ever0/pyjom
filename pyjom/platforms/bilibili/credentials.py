@@ -65,9 +65,6 @@ def getCredentialByDedeUserId(dedeuserid:str="397424026"):
         credential = Credential(**data)
         name = verifyCredential(credential)
         if name != False:
-            if oldName != name:
-                data["name"] = name
-                db.upsert(data, User.dedeuserid == dedeuserid)
             print("login successful:", name)
             return credential
         else:
