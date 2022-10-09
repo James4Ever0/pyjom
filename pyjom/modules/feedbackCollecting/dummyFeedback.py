@@ -9,4 +9,4 @@ def dummyFeedback(
         content = [content]
     for elem in content:
         print("from poster:", elem)
-    return "pending"
+        return "pending"
