@@ -18,6 +18,7 @@ postMetadataGenerator = (
     getBilibiliPostMetadataForDogCat()
 )  # metadata you can fetch from database, maybe you can preprocess this.
 
+# when use 'complete test' it stops iterating.
 wbRev = OnlineAutoContentProducer(
     source="giphy",
     fast=False,
