@@ -2,8 +2,8 @@ from lazero.filesystem.io import readFile
 import jinja2
 
 template_configs = {
-    "defaultFontname": 'Arial', # integer?
-    "defaultFontsize": None,
+    "defaultFontname": 'Arial', 
+    "defaultFontsize": 48,# integer?
     "translationFontname": 'Migu 1P',
     "translationFontsize": 48,
     "kanjiFontname": 'Migu 1P',
