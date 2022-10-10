@@ -1,5 +1,6 @@
 from pyjom.main import *
 from typing import Generator
+from types import FunctionType
 
 
 class OnlineAutoContentProducer(ContentProducer):

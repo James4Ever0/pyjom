@@ -28,7 +28,7 @@ def cleanupMedialangTmpdir():
         if os.path.isfile(fpath):
             os.remove(fpath)
 wbRev = OnlineAutoContentProducer(
-    afterPosting = cleanupMedialangTmpdir
+    afterPosting = cleanupMedialangTmpdir,
     source="giphy",
     fast=False,
     # fast= True,  # pass this flag to medialang export engine
