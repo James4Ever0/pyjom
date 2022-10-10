@@ -197,7 +197,7 @@ def metaTranslator(text, backend="baidu"):
     firstTime = True
     while True:
         try:
-            if not firstTime:
+            if not firstTime: # after first 'failed' trial we will change the strategy.
                 key = random.choice(backendList)
                 translator, getUseDirect = backends[key]
                 proxyName = changeProxy(useDirect=getUseDirect())
