@@ -357,6 +357,7 @@ def textArrayWithTranslatedListToAss(
     import random
     import math
     import jinja2
+    from lazero.filesystem.io import readFile
     template = jinja2.Template(source = )
 
     io = Ass(
