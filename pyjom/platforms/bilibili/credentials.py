@@ -86,7 +86,7 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
             return credential
         else:
             print("login failed with existing credential for user:", oldName)
-            removeCredentialByDedeUserId(dedeuserid)
+            removeCredentialByDedeUserId(dedeuserid) # warning. my credential has been removed because of that async problem. please relogin.
     # anyway if you are here, nothing in database related to this dedeuserid now.
     # you choose to login via SMS.
     while True:
@@ -112,3 +112,9 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
                 )
         else:
             print("登陆失败")
+
+def bilibiliCredential(func):
+    def wrapper(*args, dedeuserid="", **kwargs):
+        credential = getCredentialByDedeUserId(dedeuserid)
+        return func(*args, credential=credential, **kwargs)
+    return wrapper

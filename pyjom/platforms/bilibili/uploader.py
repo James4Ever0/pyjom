@@ -1,5 +1,5 @@
 from bilibili_api import video_uploader, Credential
-from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
+from pyjom.platforms.bilibili.credentials import bilibiliCredential
 import os
 from pyjom.platforms.bilibili.utils import bilibiliSync
 
@@ -7,11 +7,7 @@ from pyjom.platforms.bilibili.utils import bilibiliSync
 # damn. out of sync.
 # recall the order of applying decorators
 # WTF is the order?
-def bilibiliCredential(func):
-    def wrapper(*args, dedeuserid="", **kwargs):
-        credential = getCredentialByDedeUserId(dedeuserid)
-        return func(*args, credential=credential, **kwargs)
-    return wrapper
+
 
 @bilibiliSync
 @bilibiliCredential # keyword 'dedeuserid' with default value.
