@@ -492,7 +492,7 @@ def petsWithMusicOnlineProducer(
                 adjustVolumeInMedia(editly_outputPath, rendered_media_location)
                 # using a ffmpeg filter.
                 print("RENDERED MEDIA LOCATION:", rendered_media_location)
-                if debug:
+                if debug:# where is this debug??
                     breakpoint()
                 # following process is non-destructive for audio.
                 # you need audio normalization before these process.
