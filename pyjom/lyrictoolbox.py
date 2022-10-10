@@ -384,7 +384,7 @@ def textArrayWithTranslatedListToAss(
 
     template = jinja2.Template(source=readFile(template_path))
     template_configured = template.render(**mTemplateConfigs)
-    from lazero.filesystem.temp import tmpfile, 
+    from lazero.filesystem.temp import tmpfile, getRandomFileNameUnderDirectoryWithExtension
     with 
 
     io = Ass(template_configured_savedPath, path_output=assPath)
