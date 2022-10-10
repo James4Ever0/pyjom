@@ -840,7 +840,7 @@ def textArrayWithTranslatedListToAss(
         # if translatedText == None:
         #     addSylToLine(lineMod, charShift = 10)
         # else:
-        addSylToLine(lineMod)
+        addSylToLine(lineMod) # this function is to locate this thing.
         # breakpoint()
         # pyonfx.ass_core.Syllable
         source = lineMod.copy()
