@@ -8,5 +8,5 @@ def bilibiliSync(func):
         if type(coroutineMaybe) == types.CoroutineType:
             return sync(coroutineMaybe)
         else:
-            return func(*args, **kwargs)
+            return coroutineMaybe
     return wrapper
