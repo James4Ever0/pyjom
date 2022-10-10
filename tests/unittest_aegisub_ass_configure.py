@@ -3,7 +3,7 @@ import jinja2
 
 template_configs = {
     "defaultFontname": "Arial",
-    "defaultFontsize": 48,  # integer?
+    "defaultFontsize": 50,  # integer?
     "translationFontname": "Migu 1P",
     "translationFontsize": 48,
     "kanjiFontname": "Migu 1P",
