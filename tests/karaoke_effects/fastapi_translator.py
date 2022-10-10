@@ -115,6 +115,8 @@ def deeplTranslator(text, sleep=2, timeout=5, mod=40):
             else:
                 print("DEEPL RESPONSE ERROR. PLEASE CHECK")
                 print(response)
+                proxyList = getTestedProxyList()
+                
                 # breakpoint()
                 return None
 
