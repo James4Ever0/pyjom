@@ -28,7 +28,7 @@ wbRev = OnlineAutoContentProducer(
     postMetadataGenerator=postMetadataGenerator,
     template_configs=[
         {
-            'debug': True, # we need to preview this video.
+            "debug": True,  # we need to preview this video.
             "music": {
                 "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
                 "lyric_path": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc",  ## you can choose not to pass the lyric_path anyway. also format different than .lrc is on the way?
@@ -46,8 +46,8 @@ wbRev = OnlineAutoContentProducer(
             # or you can borrow code from the web. some clash manager library for python.
             "translate_method": "deepl",  # default: baidu
             # damn cold for this mac!
-            "ass_template_configs"={},
-            "assStyleConfig"={}
+            "ass_template_configs": {},
+            "assStyleConfig": {},
         }
     ],
     # you can also translate funny videos from youtube.
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     else:
         # scriptFilePath = "/root/Desktop/works/pyjom/tests/medialang_tests/aef2ab90-6414-4b55-a40e-63014e5648a8.mdl"
         # set this scriptFilePath to something else.
-        scriptFilePath = "/root/Desktop/works/pyjom/samples/medialang/dog_cat_test_nofast.mdl" # make it real, not preview.
+        scriptFilePath = "/root/Desktop/works/pyjom/samples/medialang/dog_cat_test_nofast.mdl"  # make it real, not preview.
         # scriptFilePath = "/root/Desktop/works/pyjom/samples/medialang/dog_cat_test.mdl" # make it real, not preview.
         # a special hack
         # import tempfile
