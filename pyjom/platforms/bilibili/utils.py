@@ -4,8 +4,8 @@ from bilibili_api import sync
 # wtf is async generator type?
 def bilibiliSync(func):
     def wrapper(*args, **kwargs):
-        
-        if type(func) == types.CoroutineType:
+        unknownObject=func(*args, **kwargs)
+        if type(c) == types.CoroutineType:
             return sync(unknownObject)
         else:
             return func(*args, **kwargs)
