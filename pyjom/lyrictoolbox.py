@@ -843,8 +843,6 @@ def textArrayWithTranslatedListToAss(
         addSylToLine(lineMod) # this function is to locate this thing.
         # breakpoint()
         # pyonfx.ass_core.Syllable
-
-        styleConfig = {'original':{'method':romaji,'style':'Romaji'}, 'translated':{'method':kanji,'style':'Kanji'}}
         lineMod.style = styleConfig['original']['style']
         source = lineMod.copy()
         target = lineMod.copy()
