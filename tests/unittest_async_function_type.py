@@ -1,6 +1,7 @@
 async def randomFunction():
     return 1
 async def randomFunctionGenerator():
+    yield await randomFunction()
 
 import types
 type0=  type(randomFunction)
