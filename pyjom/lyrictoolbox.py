@@ -353,7 +353,10 @@ def textArrayWithTranslatedListToAss(
     template_path="/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass.j2",  # but the style. you know.
     # aegisub use system fonts. you pass font name into it.
     template_configs={},
-    styleConfig = {'original':{'method':'romaji','style':'Romaji'}, 'translated':{'method':'kanji','style':'Kanji'}}
+    styleConfig={
+        "original": {"method": "romaji", "style": "Romaji"},
+        "translated": {"method": "kanji", "style": "Kanji"},
+    }
     # editly does not support to put the .ass subtitle directly.
 ):
     # newTextArray = [] # dummy shit. must be removed immediately.
@@ -713,11 +716,11 @@ def textArrayWithTranslatedListToAss(
         if line.styleref.alignment >= 7:
             lineModSource = line.copy()
             break
-        elif line.styleref.alignment >= 4: # what is this shit?
+        elif line.styleref.alignment >= 4:  # what is this shit?
             lineModSource = line.copy()
             break
     lineModSourceKanji = lineModSource.copy()
-    lineModSourceKanji.style = 'Kanji'
+    lineModSourceKanji.style = "Kanji"
 
     # from test_pylrc import *
     # just a test.
@@ -841,19 +844,21 @@ def textArrayWithTranslatedListToAss(
         # if translatedText == None:
         #     addSylToLine(lineMod, charShift = 10)
         # else:
-        addSylToLine(lineMod) # this function is to locate this thing.
+        addSylToLine(lineMod)  # this function is to locate this thing.
         # breakpoint()
         # pyonfx.ass_core.Syllable
-        lineMod.style = styleConfig['original']['style']
+        lineMod.style = styleConfig["original"]["style"]
         source = lineMod.copy()
         target = lineMod.copy()
-        methodMapping = {'kanji':kanji, 'romaji':romaji}
-        methodMapping[ styleConfig['original']['method']](source,target) # writing 'kanji' style to romaji?
-        
+        methodMapping = {"kanji": kanji, "romaji": romaji}
+        methodMapping[styleConfig["original"]["method"]](
+            source, target
+        )  # writing 'kanji' style to romaji?
+
         if translatedText:
             # source.style = styleConfig['original']['style']
             lineMod2 = lineMod.copy()
-            lineMod2.style = styleConfig['translated']['style']
+            lineMod2.style = styleConfig["translated"]["style"]
             translatedText = translatedText.replace(" ", "")
             lineMod2.text = translatedText
             translateShift = 100
@@ -861,7 +866,7 @@ def textArrayWithTranslatedListToAss(
             source = lineMod2.copy()
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
-            methodMapping[styleConfig['translated']['method']](source, target)
+            methodMapping[styleConfig["translated"]["method"]](source, target)
         # breakpoint()
         # else:
         #     romaji(source, target)
