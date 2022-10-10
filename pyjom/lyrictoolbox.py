@@ -712,7 +712,7 @@ def textArrayWithTranslatedListToAss(
         if line.styleref.alignment >= 7:
             lineModSource = line.copy()
             break
-        elif line.styleref.alignment >= 4:
+        elif line.styleref.alignment >= 4: # what is this shit?
             lineModSource = line.copy()
             break
 
