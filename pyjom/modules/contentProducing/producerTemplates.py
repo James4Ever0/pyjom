@@ -386,6 +386,9 @@ def petsWithMusicOnlineProducer(
                     ass_file_path,
                     translate=translate,
                     translate_method=translate_method,
+
+            ass_template_configs=config.get('ass_template_configs',{})
+            assStyleConfig=config.get('assStyleConfig',{})
                 )  # here's the 'no translation' flag.
             data_ids = []
             # from tqdm.gui import tqdm
