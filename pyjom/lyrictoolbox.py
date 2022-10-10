@@ -385,7 +385,7 @@ def textArrayWithTranslatedListToAss(
     template = jinja2.Template(source=readFile(template_path))
     template_configured = template.render(**mTemplateConfigs)
 
-    io = Ass(template_configured, path_output=assPath)
+    io = Ass(template_configured_savedPath, path_output=assPath)
     meta, styles, lines = io.get_data()
 
     # Creating the star and extracting all the color changes from the input file
