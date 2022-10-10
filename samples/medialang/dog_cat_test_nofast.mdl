@@ -1,6 +1,6 @@
 (".mp4", backend="editly",
     bgm="/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",
-    fast=true
+    fast=false
 )
 
 ("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_gWkCsQZ4YlU1a]_[300x214].gif",
