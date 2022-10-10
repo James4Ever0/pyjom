@@ -225,3 +225,4 @@ def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
         demanded_cut_spans,
         standard_bpm_spans,
     )
+
