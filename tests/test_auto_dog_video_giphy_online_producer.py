@@ -18,7 +18,7 @@ postMetadataGenerator = getBilibiliPostMetadataForDogCat() # metadata you can fe
 
 wbRev = OnlineAutoContentProducer(
     source="giphy",
-    fast= True,  # pass this flag to medialang export engine
+    fast= False,
     # fast= True,  # pass this flag to medialang export engine
     template="pets_with_music_online",
     postMetadataGenerator=postMetadataGenerator,
