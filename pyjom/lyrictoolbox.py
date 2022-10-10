@@ -356,9 +356,10 @@ def textArrayWithTranslatedListToAss(
     # newTextArray = [] # dummy shit. must be removed immediately.
     import random
     import math
+    import jinja2
 
     io = Ass(
-        template_path, path_output=assPath
+        template, path_output=assPath
     )
     meta, styles, lines = io.get_data()
 
