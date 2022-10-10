@@ -913,8 +913,8 @@ def lrcToAnimatedAss(
         "baidu", "deepl", "random"
     ] = "baidu",  # so how the fuck you can use deepl?
 
-            ass_template_configs=config.get('ass_template_configs',{})
-            assStyleConfig=config.get('assStyleConfig',{})
+            ass_template_configs={})
+            assStyleConfig={})
 ):
     # already moved to lyrictoolbox
     # TODO: more styles incoming
