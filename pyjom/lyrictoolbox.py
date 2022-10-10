@@ -362,7 +362,7 @@ def textArrayWithTranslatedListToAss(
     star = Shape.star(5, 4, 10)
     CU = ColorUtility(lines)
 
-    # test 
+    # test this elsewhere. please?
 
     def romaji(line, l):
         # Setting up a delay, we will use it as duration time of the leadin and leadout effects
