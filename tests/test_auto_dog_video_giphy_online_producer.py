@@ -20,7 +20,15 @@ postMetadataGenerator = (
 
 # when use 'complete test' it stops iterating.
 # maybe because the last one is a generator. goddamn it.
+def cleanupMedialangTmpdir():
+    tmpdirPath= '/dev/shm/medialang'
+    files_and_dirs = os.listdir(tmpdirPath)
+    for f in files_and_dirs:
+        fpath = os.path.join(tmpdirPath, f)
+        if os.path.isfile(fpath):
+            os.remove(fpath)
 wbRev = OnlineAutoContentProducer(
+    afterPosting = cleanupMedialangTmpdir
     source="giphy",
     fast=False,
     # fast= True,  # pass this flag to medialang export engine

@@ -67,6 +67,7 @@ def BilibiliPoster(
                 raise Exception(
                     "unknown content type to upload for bilibiliPoster:", contentType
                 )
+            afterPosting() # execute no matter what. after posting the content.
             return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
 
     def postContentIterate(content):

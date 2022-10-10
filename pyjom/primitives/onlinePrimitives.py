@@ -9,6 +9,7 @@ class OnlineAutoContentProducer(ContentProducer):
         debug=False,
         enable_log=True,
         fast: bool = True,
+        afterPosting:Functi
         postMetadataGenerator: Generator = ...,
         processor_filters={},
         producer_filters={},
