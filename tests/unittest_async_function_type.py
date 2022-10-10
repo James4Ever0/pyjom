@@ -10,4 +10,5 @@ type3 = type(randomFunctionGenerator())
 type4 = types.CoroutineType
 type5 = type(randomFunctionGenerator)
 print(type0, type1, type2, type3, type4, type5)
-print(type0 == )
+print(type1== type4)
+print(type)
