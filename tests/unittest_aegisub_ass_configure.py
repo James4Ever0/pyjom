@@ -4,12 +4,12 @@ import jinja2
 template_configs = {
     "defaultFontname": None, # integer?
     "defaultFontsize": None,
-    "translationFontname": None,
-    "translationFontsize": None,
-    "kanjiFontname": None,
-    "kanjiFontsize": None,
-    "romajiFontname": None,
-    "romajiFontsize": None,
+    "translationFontname": 'Migu 1P',
+    "translationFontsize": 48,
+    "kanjiFontname": 'Migu 1P',
+    "kanjiFontsize": 48,
+    "romajiFontname": 'Migu 1P',
+    "romajiFontsize": 48,
 }
 # template_configs = {'defaultFontname':'Anonymous Pro'}
 template_path = "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass.j2"
