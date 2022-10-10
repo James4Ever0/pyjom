@@ -47,8 +47,8 @@ wbRev = OnlineAutoContentProducer(
             "translate_method": "deepl",  # default: baidu
             # damn cold for this mac!
 
-            ass_template_configs=config.get('ass_template_configs',{})
-            assStyleConfig=config.get('assStyleConfig',{})
+            ass_template_configs={})
+            assStyleConfig={})
         }
     ],
     # you can also translate funny videos from youtube.
