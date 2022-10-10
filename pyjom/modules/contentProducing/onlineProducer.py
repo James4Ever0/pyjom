@@ -2,6 +2,7 @@ from pyjom.commons import *
 from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 
 from lazero.filesystem.temp import tmpdir
+
 @decorator
 def OnlineProducer(processed_info_generator, source = 'giphy',template=None, template_configs=None, fast:bool=True, medialangTmpdirBase="/dev/shm/medialang", debug=False):
     # template_configs is a generator, it generate configs.
