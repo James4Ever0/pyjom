@@ -275,7 +275,7 @@ def petsWithMusicProducer(filtered_info, meta_info, config={}, fast=False):
         slient=True,
         bgm=music["filepath"],
         backend="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
-        fast=fast
+        fast=fast,
     )  # what is the backend?
 
     # print(medialangObject)
@@ -338,7 +338,7 @@ def petsWithMusicOnlineProducer(
             tempdir, ".".join([str(uuid.uuid4()), extension])
         )
         for config in configs:
-            debug = config.get("debug", False) # in config.
+            debug = config.get("debug", False)  # in config.
             musicPath = config.get("music", {}).get("filepath", "")
             translate = config.get("translate", False)
             # also how to translate?
@@ -349,9 +349,9 @@ def petsWithMusicOnlineProducer(
                 continue
 
             render_ass = config.get("render_ass", False)
-            ass_template_configs=config.get('ass_template_configs',{})
-            assStyleConfig=config.get('assStyleConfig',{})
-    
+            ass_template_configs = config.get("ass_template_configs", {})
+            assStyleConfig = config.get("assStyleConfig", {})
+
             parsed_result = getMusicInfoParsed(config)
             # print(parsed_result)
             # breakpoint()
@@ -386,9 +386,8 @@ def petsWithMusicOnlineProducer(
                     ass_file_path,
                     translate=translate,
                     translate_method=translate_method,
-
-            ass_template_configs=ass_template_configs,
-            assStyleConfig=assStyleConfig
+                    ass_template_configs=ass_template_configs,
+                    assStyleConfig=assStyleConfig,
                 )  # here's the 'no translation' flag.
             data_ids = []
             # from tqdm.gui import tqdm
@@ -498,7 +497,7 @@ def petsWithMusicOnlineProducer(
                 adjustVolumeInMedia(editly_outputPath, rendered_media_location)
                 # using a ffmpeg filter.
                 print("RENDERED MEDIA LOCATION:", rendered_media_location)
-                if debug:# where is this debug??
+                if debug:  # where is this debug??
                     breakpoint()
                 # following process is non-destructive for audio.
                 # you need audio normalization before these process.
