@@ -845,9 +845,9 @@ def textArrayWithTranslatedListToAss(
         # pyonfx.ass_core.Syllable
 
         styleConfig = {'original':{'method':romaji,'style':'Romaji'}, 'translated':{'method':kanji,'style':'Kanji'}}
+        source = lineMod.copy()
+        target = lineMod.copy()
         if translatedText:
-            source = lineMod.copy()
-            target = lineMod.copy()
             kanji(source,target) # writing 'kanji' style to romaji?
             lineMod2 = lineMod.copy()
             lineMod2.style =  kanjiStyleName
