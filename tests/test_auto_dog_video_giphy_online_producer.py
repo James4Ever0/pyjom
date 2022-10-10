@@ -46,6 +46,9 @@ wbRev = OnlineAutoContentProducer(
             # or you can borrow code from the web. some clash manager library for python.
             "translate_method": "deepl",  # default: baidu
             # damn cold for this mac!
+
+            ass_template_configs=config.get('ass_template_configs',{})
+            assStyleConfig=config.get('assStyleConfig',{})
         }
     ],
     # you can also translate funny videos from youtube.
