@@ -220,7 +220,7 @@ def renderList2MediaLang(
 
 
 # local
-def petsWithMusicProducer(filtered_info, meta_info, config={}):
+def petsWithMusicProducer(filtered_info, meta_info, config={}, fast=False):
     # what is this config? how the fuck we can arrange it?
     # config = {"music":{"filepath":"","lyric_path":""},"font":{"filepath":"","fontsize":30}, "policy":{"some_policy_name":{}},"meta":{"maxtime":3, "mintime":1}}
     # how to auto-warp the AAS subtitle?
