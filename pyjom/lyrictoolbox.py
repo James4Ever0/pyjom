@@ -358,8 +358,12 @@ def textArrayWithTranslatedListToAss(
     # editly does not support to put the .ass subtitle directly.
 ):
     defaultStyleConfig = {
-        "original": {"method": "romaji", "style": "Romaji"},
-        "translated": {"method": "kanji", "style": "Kanji"},
+        "original": {
+            "method": "romaji",
+            "style": "Romaji",
+            "cutOneByOne": False,
+        },  # this is default. you can change this.
+        "translated": {"method": "kanji", "style": "Kanji", "cutOneByOne": True},
     }
     # newTextArray = [] # dummy shit. must be removed immediately.
     styleConfig = defaultStyleConfig.copy()
@@ -376,9 +380,9 @@ def textArrayWithTranslatedListToAss(
         "translationFontname": "Migu 1P",
         "translationFontsize": 48,
         "kanjiFontname": "Migu 1P",
-        "kanjiFontsize": 46, # increase. make 'kanji' one char at a time.
+        "kanjiFontsize": 60,  # 46,  # increase. make 'kanji' one char at a time.
         "romajiFontname": "Migu 1P",
-        "romajiFontsize": 38, # increase to 60.
+        "romajiFontsize": 60,  # 38,  # increase to 60. expand the space!
     }
     mTemplateConfigs = default_template_configs.copy()
     mTemplateConfigs.update(ass_template_configs)
@@ -794,7 +798,7 @@ def textArrayWithTranslatedListToAss(
             mTop=25,
             mMiddle=49.0,
             mBottom=73.0,
-            cutOneByOne=False
+            cutOneByOne=False,
         ):
             lineMod.center = CENTER  # wtf?
             if cutOneByOne:
@@ -875,7 +879,9 @@ def textArrayWithTranslatedListToAss(
         # if translatedText == None:
         #     addSylToLine(lineMod, charShift = 10)
         # else:
-        addSylToLine(lineMod)  # this function is to locate this thing.
+        addSylToLine(
+            lineMod, cutOneByOne=styleConfig["translated"]["cutOneByOne"]
+        )  # this function is to locate this thing.
         # breakpoint()
         # pyonfx.ass_core.Syllable
         lineMod.style = styleConfig["original"]["style"]
@@ -893,7 +899,11 @@ def textArrayWithTranslatedListToAss(
             translatedText = translatedText.replace(" ", "")
             lineMod2.text = translatedText
             translateShift = 100
-            addSylToLine(lineMod2, translateShift=translateShift, styleConfig['translated']['cutOneByOne)
+            addSylToLine(
+                lineMod2,
+                translateShift=translateShift,
+                cutOneByOne=styleConfig["translated"]["cutOneByOne"],
+            )
             source = lineMod2.copy()
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
