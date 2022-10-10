@@ -348,7 +348,7 @@ def textArrayWithTranslatedListToAss(
     shiftAdjust=600,
     censor=True,
     puncturalRemoval=True,
-    template_path = "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass" # but the style. you know.
+    template_path = "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass.j2" # but the style. you know.
     # editly does not support to put the .ass subtitle directly.
 ):
     # newTextArray = [] # dummy shit. must be removed immediately.
