@@ -88,7 +88,8 @@ class ContentProducer:
         optimized_result = self.optimize_topic_by_feedback(topic, feedback)
         the_end = self.update_optimized_result(optimized_result)
         if type(the_end) == GeneratorType:
-            
+            while True:
+                the_end.__next__()
 
 
 class ContentReviewer(ContentProducer):
