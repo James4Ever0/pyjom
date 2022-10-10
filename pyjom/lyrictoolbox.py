@@ -244,6 +244,7 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
     import requests
+
     url = "http://localhost:8974/translate"
     mTranslate = lambda text, backend: requests.get(
         url, params={"backend": backend, "text": text}
@@ -251,6 +252,7 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     backendList = ["deepl", "baidu"]
     if backend == "random":
         import random
+
         backend = random.choice(backendList)
     assert backend in backendList
     translatedText = text
@@ -348,9 +350,9 @@ def textArrayWithTranslatedListToAss(
     shiftAdjust=600,
     censor=True,
     puncturalRemoval=True,
-    template_path = "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass.j2" # but the style. you know.
+    template_path="/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass.j2",  # but the style. you know.
     # aegisub use system fonts. you pass font name into it.
-    font_configs = {}
+    template_configs={}
     # editly does not support to put the .ass subtitle directly.
 ):
     # newTextArray = [] # dummy shit. must be removed immediately.
@@ -358,11 +360,11 @@ def textArrayWithTranslatedListToAss(
     import math
     import jinja2
     from lazero.filesystem.io import readFile
-    template = jinja2.Template(source = readFile(template_path))
 
-    io = Ass(
-        template_configured, path_output=assPath
-    )
+    template = jinja2.Template(source=readFile(template_path))
+    template_configured = template.render(**template_configs)
+
+    io = Ass(template_configured, path_output=assPath)
     meta, styles, lines = io.get_data()
 
     # Creating the star and extracting all the color changes from the input file
@@ -877,7 +879,9 @@ def lrcToAnimatedAss(
     lrcPath,
     assPath,
     translate=True,
-    translate_method: Literal["baidu", "deepl", "random"] = "baidu", # so how the fuck you can use deepl?
+    translate_method: Literal[
+        "baidu", "deepl", "random"
+    ] = "baidu",  # so how the fuck you can use deepl?
 ):
     # already moved to lyrictoolbox
     # TODO: more styles incoming
@@ -895,7 +899,6 @@ def lrcToAnimatedAss(
     return textArrayWithTranslatedListToAss(textArray, translatedList, assPath)
 
 
-
 # lyrictoolbox
 def getLyricNearbyBpmCandidates(lyric_times, beats):
     nearbys, remains = [], []
@@ -911,6 +914,7 @@ def getLyricNearbyBpmCandidates(lyric_times, beats):
             mbeats.remove(elem)
     remains = mbeats
     return nearbys, remains
+
 
 # lyrictoolbox
 def read_lrc(lrc_path):
