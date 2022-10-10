@@ -8,3 +8,4 @@ type1 = type(randomFunction())
 type2 = types.AsyncGeneratorType
 type3 = types.
 type4 = types.CoroutineType
+type5 = types.me
