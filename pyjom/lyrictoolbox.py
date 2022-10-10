@@ -517,7 +517,6 @@ def textArrayWithTranslatedListToAss(
             # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
             # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
             l.dur = l.end_time - l.start_time
-            l.
             if l.dur <= 0:
                 continue
 
