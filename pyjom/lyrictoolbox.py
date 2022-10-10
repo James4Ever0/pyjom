@@ -846,7 +846,7 @@ def textArrayWithTranslatedListToAss(
         source = lineMod.copy()
         target = lineMod.copy()
         if translatedText:
-            kanji(source2 target2)
+            kanji(source,target)
             lineMod2 = lineMod.copy()
             lineMod2.style =  kanjiStyleName
             translatedText = translatedText.replace(" ", "")
