@@ -1,3 +1,4 @@
+from types import FunctionType
 from typing import Generator
 from pyjom.modules.contentPosting.bilibiliPoster import BilibiliPoster
 
@@ -8,6 +9,7 @@ def OnlinePoster(
     contentType="video",
     postMetadataGenerator: Generator = ...,
     platform="bilibili",
+    afterPosting:FunctionType=...
 ):
     posters = {"bilibili": BilibiliPoster}
     assert platform in posters.keys()
@@ -17,4 +19,5 @@ def OnlinePoster(
         iterate=iterate,
         contentType=contentType,
         getPostMetadata=getPostMetadata,
+        afterPosting=afterPosting,
     )

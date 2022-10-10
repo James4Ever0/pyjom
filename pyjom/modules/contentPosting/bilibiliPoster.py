@@ -1,3 +1,4 @@
+from types import FunctionType
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
 
@@ -20,6 +21,7 @@ def BilibiliPoster(
     contentType="video",
     dedeuserid: str = "397424026",
     tempdir="/dev/shm/medialang/bilibiliPoster",
+    afterPosting:FunctionType=...
 ):
     # are you sure this 'postMetadataGenerator' will generate valid data for us?
     # anyway let's write for video.
