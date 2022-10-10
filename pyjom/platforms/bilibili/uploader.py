@@ -4,6 +4,7 @@ import os
 from pyjom.platforms.bilibili.utils import bilibiliSync
 
 # you may use the 'sync' method elsewhere.
+# damn. ou
 @bilibiliSync
 async def uploadVideo(
     # sessdata="",
