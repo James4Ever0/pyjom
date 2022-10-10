@@ -388,7 +388,7 @@ def textArrayWithTranslatedListToAss(
     from lazero.filesystem.io import writeFile
     template_configured_savedPath = getRandomFileNameUnderDirectoryWithExtension('ass','/dev/shm/medialang')
     with tmpfile(getRandomFileNameUnderDirectoryWithExtension):
-        writeFile(template_configured_savedPath)
+        writeFile(template_configured_savedPath, template_configured)
         io = Ass(template_configured_savedPath, path_output=assPath)
     meta, styles, lines = io.get_data()
 
