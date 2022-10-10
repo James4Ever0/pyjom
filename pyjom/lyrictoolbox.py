@@ -362,7 +362,7 @@ def textArrayWithTranslatedListToAss(
     # newTextArray = [] # dummy shit. must be removed immediately.
     styleConfig = defaultStyleConfig.copy()
     for key in styleConfig.keys():
-        styleConfig[key].update(assStyleConfig)
+        styleConfig[key].update(assStyleConfig[key])
     import random
     import math
     import jinja2
