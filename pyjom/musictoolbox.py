@@ -183,3 +183,45 @@ def getMusicCutSpans(
     # print("DEMANDED MUSIC CUT SPANS GENERATED")
     # breakpoint()
     return demanded_cut_spans, standard_bpm_spans
+
+
+# musictoolbox
+# fix long loading time.
+@redisLRUCache()
+def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
+    music = config["music"]
+    gaussian = config.get(
+        "gaussian", True
+    )  # this is different. default to use gaussian instead.
+
+    # check if music is corrupted?
+    font = config.get("font", None)
+    policy = config.get("policy", {})
+    policy_names = [x for x in policy.keys()]
+    # get music duration here.
+    music_metadata = get_media_info(music["filepath"])
+    music_duration = music_metadata["duration"]
+    maxtime = config.get("maxtime", maxtime)
+    mintime = config.get("mintime", mintime)
+    lyric_path = music.get("lyric_path", None)
+    if type(lyric_path) == str:
+        if not os.path.exists(lyric_path):
+            lyric_path = None
+    elif lyric_path is not None:
+        lyric_path = None
+    demanded_cut_spans, standard_bpm_spans = getMusicCutSpans(
+        music, music_duration, lyric_path, maxtime, mintime, gaussian=gaussian
+    )
+    return (
+        music,
+        font,
+        policy,
+        policy_names,
+        music_metadata,
+        music_duration,
+        maxtime,
+        mintime,
+        lyric_path,
+        demanded_cut_spans,
+        standard_bpm_spans,
+    )
