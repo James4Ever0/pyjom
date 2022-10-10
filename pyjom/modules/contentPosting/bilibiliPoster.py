@@ -52,7 +52,7 @@ def BilibiliPoster(
                     cv2.imwrite(cover_path, cover_target)
                     # you need to save this 'cover_target' to file.
                     contentId = uploadVideo(
-                        dedeuserid=dedeuserid,
+                        dedeuserid=dedeuserid,  # by decorator.
                         description=mDescription,
                         dynamic=mDescription,
                         tagString=tagString,

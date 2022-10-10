@@ -114,7 +114,7 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
             print("登陆失败")
 
 def bilibiliCredential(func):
-    def wrapper(*args, dedeuserid="", **kwargs):
+    def wrapper(*args, dedeuserid="397424026", **kwargs):
         credential = getCredentialByDedeUserId(dedeuserid)
         return func(*args, credential=credential, **kwargs)
     return wrapper
