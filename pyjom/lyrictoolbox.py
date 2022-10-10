@@ -362,8 +362,14 @@ def textArrayWithTranslatedListToAss(
             "method": "romaji",
             "style": "Romaji",
             "cutOneByOne": False,
+            "charShift": 45,
         },  # this is default. you can change this.
-        "translated": {"method": "kanji", "style": "Kanji", "cutOneByOne": True},
+        "translated": {
+            "method": "kanji",
+            "style": "Kanji",
+            "cutOneByOne": True,
+            "charShift": 30,
+        },
     }
     # newTextArray = [] # dummy shit. must be removed immediately.
     styleConfig = defaultStyleConfig.copy()
@@ -792,7 +798,7 @@ def textArrayWithTranslatedListToAss(
         def addSylToLine(
             lineMod,
             translateShift=0,
-            charShift=30, # increase this!
+            charShift=30,  # increase this!
             CENTER=1600 / 2,
             mSylYShift=600,
             mTop=25,
@@ -880,7 +886,9 @@ def textArrayWithTranslatedListToAss(
         #     addSylToLine(lineMod, charShift = 10)
         # else:
         addSylToLine(
-            lineMod, cutOneByOne=styleConfig["original"]["cutOneByOne"],charShift=styleConfig["original"]["charShift"]
+            lineMod,
+            cutOneByOne=styleConfig["original"]["cutOneByOne"],
+            charShift=styleConfig["original"]["charShift"],
         )  # this function is to locate this thing.
         # breakpoint()
         # pyonfx.ass_core.Syllable
@@ -902,7 +910,8 @@ def textArrayWithTranslatedListToAss(
             addSylToLine(
                 lineMod2,
                 translateShift=translateShift,
-                cutOneByOne=styleConfig["translated"]["cutOneByOne"],charShift=styleConfig["original"]["charShift"]
+                cutOneByOne=styleConfig["translated"]["cutOneByOne"],
+                charShift=styleConfig["translated"]["charShift"],
             )
             source = lineMod2.copy()
             target = lineMod2.copy()
