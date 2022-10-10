@@ -391,10 +391,10 @@ def textArrayWithTranslatedListToAss(
     )
     from lazero.filesystem.io import writeFile
 
+    template_configured_savedPath = getRandomFileNameUnderDirectoryWithExtension(
+        "ass", tempdir, check=False
+    )
     with tmpfile(template_configured_savedPath):
-        template_configured_savedPath = getRandomFileNameUnderDirectoryWithExtension(
-            "ass", tempdir, check=False
-        )
         writeFile(template_configured_savedPath, template_configured)
         io = Ass(template_configured_savedPath, path_output=assPath)
     meta, styles, lines = io.get_data()
