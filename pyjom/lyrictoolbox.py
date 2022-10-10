@@ -843,10 +843,11 @@ def textArrayWithTranslatedListToAss(
         addSylToLine(lineMod) # this function is to locate this thing.
         # breakpoint()
         # pyonfx.ass_core.Syllable
-        source = lineMod.copy()
-        target = lineMod.copy()
+
         styleConfig = {'original':{'method':romaji,'style':'Romaji'}, 'translated':{'method':kanji,'style':'Kanji'}}
         if translatedText:
+            source = lineMod.copy()
+            target = lineMod.copy()
             kanji(source,target) # writing 'kanji' style to romaji?
             lineMod2 = lineMod.copy()
             lineMod2.style =  kanjiStyleName
@@ -857,6 +858,7 @@ def textArrayWithTranslatedListToAss(
             source = lineMod2.copy()
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
+            romaji(source, target)
         else:
             romaji(source, target)
         # breakpoint()
