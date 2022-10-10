@@ -792,7 +792,7 @@ def textArrayWithTranslatedListToAss(
         def addSylToLine(
             lineMod,
             translateShift=0,
-            charShift=30,
+            charShift=30, # increase this!
             CENTER=1600 / 2,
             mSylYShift=600,
             mTop=25,
@@ -880,7 +880,7 @@ def textArrayWithTranslatedListToAss(
         #     addSylToLine(lineMod, charShift = 10)
         # else:
         addSylToLine(
-            lineMod, cutOneByOne=styleConfig["translated"]["cutOneByOne"]
+            lineMod, cutOneByOne=styleConfig["original"]["cutOneByOne"],charShift=styleConfig["original"]["charShift"]
         )  # this function is to locate this thing.
         # breakpoint()
         # pyonfx.ass_core.Syllable
@@ -902,7 +902,7 @@ def textArrayWithTranslatedListToAss(
             addSylToLine(
                 lineMod2,
                 translateShift=translateShift,
-                cutOneByOne=styleConfig["translated"]["cutOneByOne"],
+                cutOneByOne=styleConfig["translated"]["cutOneByOne"],charShift=styleConfig["original"]["charShift"]
             )
             source = lineMod2.copy()
             target = lineMod2.copy()
