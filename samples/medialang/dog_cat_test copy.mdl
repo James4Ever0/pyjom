@@ -1,0 +1,319 @@
+(".mp4", backend="editly",
+    bgm="/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",
+    fast=true
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_gWkCsQZ4YlU1a]_[300x214].gif",
+    video=true, slient=true, speed=1.043468,
+    cutFrom=0.0, cutTo=2.4
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_2tNwXMxMpUAsiSbyck]_[480x270].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.564027
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_dTYI2Cu25gsTK]_[242x250].gif",
+    video=true, slient=true, speed=1.006185,
+    cutFrom=0.0, cutTo=6.5
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_5Y8xYjHG9AcjWlz23h]_[480x480].gif",
+    video=true, slient=true, speed=0.997826,
+    cutFrom=0.0, cutTo=4.6
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_iOGRWFLgGBRTxz7i22]_[270x480].gif",
+    video=true, slient=true, speed=1.050456,
+    cutFrom=0.0, cutTo=10.2
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_MB7AnGuoZ0ruqsFM1G]_[480x400].gif",
+    video=true, slient=true, speed=0.934218,
+    cutFrom=0.0, cutTo=3.017544
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_UuebWyG4pts3rboawU]_[480x480].gif",
+    video=true, slient=true, speed=0.976488,
+    cutFrom=0.0, cutTo=5.4
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_kOEYOwSaKbFra]_[350x197].gif",
+    video=true, slient=true, speed=1.006486,
+    cutFrom=0.0, cutTo=9.3
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_QGSEGsTr04bPW]_[450x254].gif",
+    video=true, slient=true, speed=0.833326,
+    cutFrom=0.0, cutTo=2.3
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_23kXtcba8igBvs8DQ1]_[400x225].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=11.076082
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_ANWIS2HYfROI8]_[250x250].gif",
+    video=true, slient=true, speed=1.04277,
+    cutFrom=0.0, cutTo=5.297297
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_3oEduYITQ7uOYLPZjq]_[480x270].gif",
+    video=true, slient=true, speed=0.981427,
+    cutFrom=0.0, cutTo=4.985673
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_26BRGvcRTuqWhoLzW]_[320x320].gif",
+    video=true, slient=true, speed=0.937354,
+    cutFrom=0.0, cutTo=5.192982
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_S3KIhtDGjLKWbnwtrQ]_[480x270].gif",
+    video=true, slient=true, speed=0.990204,
+    cutFrom=0.0, cutTo=7.08
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_JPayEyQPRCUTe]_[245x177].gif",
+    video=true, slient=true, speed=0.93862,
+    cutFrom=0.0, cutTo=2.6
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_TGKnLbfAzkk3DDNt8K]_[320x480].gif",
+    video=true, slient=true, speed=1.096676,
+    cutFrom=0.0, cutTo=5.066667
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_3boPPdHk2ueo8]_[480x270].gif",
+    video=true, slient=true, speed=1.079128,
+    cutFrom=0.0, cutTo=3.0
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_UvvK8rOSHPxgjo9ryD]_[728x728].gif",
+    video=true, slient=true, speed=0.999996,
+    cutFrom=0.0, cutTo=6.0
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_3o6fJ9cQXux6wfA2BO]_[480x264].gif",
+    video=true, slient=true, speed=0.987647,
+    cutFrom=0.0, cutTo=3.2
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_OOTtmh8oXrFK5ccNU7]_[460x460].gif",
+    video=true, slient=true, speed=1.018824,
+    cutFrom=0.0, cutTo=4.004
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_Dcf2hNSaAiLV6]_[400x300].gif",
+    video=true, slient=true, speed=0.987007,
+    cutFrom=0.0, cutTo=6.84
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_yXBqba0Zx8S4]_[480x324].gif",
+    video=true, slient=true, speed=0.976134,
+    cutFrom=0.0, cutTo=4.5
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_bhSi84uFsp66s]_[354x306].gif",
+    video=true, slient=true, speed=1.026876,
+    cutFrom=0.0, cutTo=4.733945
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_NmGbJwLl7Y4lG]_[480x270].gif",
+    video=true, slient=true, speed=0.96385,
+    cutFrom=0.0, cutTo=4.0
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_FOL5mK0tXUmXe]_[450x254].gif",
+    video=true, slient=true, speed=0.830318,
+    cutFrom=0.0, cutTo=2.3
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_77vjJEy9IRqJW]_[303x476].gif",
+    video=true, slient=true, speed=1.192301,
+    cutFrom=0.0, cutTo=4.96
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_T7nRl5WHw7Yru]_[320x240].gif",
+    video=true, slient=true, speed=0.883147,
+    cutFrom=0.0, cutTo=3.25
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_37R1oJeXReoJW]_[291x294].gif",
+    video=true, slient=true, speed=1.010094,
+    cutFrom=0.0, cutTo=7.0
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_3oz8xEFHNzQE3VIRCE]_[480x490].gif",
+    video=true, slient=true, speed=1.010619,
+    cutFrom=0.0, cutTo=4.2042
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_Bkcls2eA8Fc6A]_[480x480].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=10.692054
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_11kgieHVYW53lC]_[480x360].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.564027
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_Ev17f0KeO9qkE]_[300x169].gif",
+    video=true, slient=true, speed=0.817758,
+    cutFrom=0.0, cutTo=3.017544
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_U7969wTwwtn6KBvEdA]_[384x480].gif",
+    video=true, slient=true, speed=1.009003,
+    cutFrom=0.0, cutTo=3.733333
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_IPUFTmRYZqG2s]_[480x270].gif",
+    video=true, slient=true, speed=0.973326,
+    cutFrom=0.0, cutTo=5.84
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_hNRA4W7qJnbpK]_[389x415].gif",
+    video=true, slient=true, speed=1.15384,
+    cutFrom=0.0, cutTo=4.8
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_Ul2rAQJqNXp9S]_[400x225].gif",
+    video=true, slient=true, speed=0.963845,
+    cutFrom=0.0, cutTo=4.0
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_4MXO2o9MbPBi6M79G6]_[480x270].gif",
+    video=true, slient=true, speed=0.99367,
+    cutFrom=0.0, cutTo=3.666667
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_HC995u2L4I7mg]_[300x169].gif",
+    video=true, slient=true, speed=0.817758,
+    cutFrom=0.0, cutTo=3.017544
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_i0lkOcXmpcE92]_[400x225].gif",
+    video=true, slient=true, speed=1.054048,
+    cutFrom=0.0, cutTo=3.9
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_QxqqwXQuSWufNazWWU]_[448x450].gif",
+    video=true, slient=true, speed=0.86666,
+    cutFrom=0.0, cutTo=5.2
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_XlNkepH9WJO3C]_[245x160].gif",
+    video=true, slient=true, speed=0.975598,
+    cutFrom=0.0, cutTo=3.6
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_cEPFSJokR4hzi]_[480x270].gif",
+    video=true, slient=true, speed=1.031923,
+    cutFrom=0.0, cutTo=8.08
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_ghHZVf7kK9379nbcuh]_[442x468].gif",
+    video=true, slient=true, speed=0.969893,
+    cutFrom=0.0, cutTo=3.578947
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_5t7AJfJQnmsP5Tm1QS]_[480x480].gif",
+    video=true, slient=true, speed=1.042304,
+    cutFrom=0.0, cutTo=6.733333
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_x42zjj678Sr6M]_[420x241].gif",
+    video=true, slient=true, speed=1.071709,
+    cutFrom=0.0, cutTo=7.92
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_wBQa0CjlSySUE]_[320x180].gif",
+    video=true, slient=true, speed=1.005696,
+    cutFrom=0.0, cutTo=8.82
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_fJdpdS5jaDje8]_[361x194].gif",
+    video=true, slient=true, speed=0.882244,
+    cutFrom=0.0, cutTo=5.302326
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_IT4fLZjxyDu24]_[720x540].gif",
+    video=true, slient=true, speed=0.83194,
+    cutFrom=0.0, cutTo=5.0
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_q9ETKoMaBMsNy]_[300x300].gif",
+    video=true, slient=true, speed=0.956076,
+    cutFrom=0.0, cutTo=6.16
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_lQI2sf2qserJsrixfw]_[270x480].gif",
+    video=true, slient=true, speed=0.992241,
+    cutFrom=0.0, cutTo=6.4
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_MOgAd5Z2LZRHW]_[338x254].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.564
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_GSsTZNQjPvl1m]_[500x377].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.564
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_pCyN4mn4MbGCY]_[306x215].gif",
+    video=true, slient=true, speed=0.984554,
+    cutFrom=0.0, cutTo=7.266055
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_czpet1H4pnyAE]_[208x296].gif",
+    video=true, slient=true, speed=1.074398,
+    cutFrom=0.0, cutTo=7.93985
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_WhCYptDg5hgIg]_[181x180].gif",
+    video=true, slient=true, speed=1.017585,
+    cutFrom=0.0, cutTo=7.52
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_pytb6SgEJuPGE]_[250x246].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=10.512054
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_zUdFehNEYEMFi]_[406x293].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=10.500082
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_1xl9CXjjK64iFItin7]_[480x480].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.552
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_1WbITXJruDYLgYPPgy]_[400x480].gif",
+    video=true, slient=true, speed=1.174338,
+    cutFrom=0.0, cutTo=8.666667
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_l1Joh6GmLESwGYjmw]_[480x352].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.552
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_9EcYmq8ofAAkbIlooc]_[480x480].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.552
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_PdSfuPb8ZGV9P2w5IP]_[384x480].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.552
+)
+
+("/root/Desktop/works/pyjom/samples/medialang/source/video/video_[giphy_JQL87nbjGPYL52tCvF]_[270x480].gif",
+    video=true, slient=true, speed=1.2,
+    cutFrom=0.0, cutTo=0.54
+)
