@@ -190,7 +190,7 @@ def metaTranslator(text, backend="baidu"):
     getUseDirect = lambda: False
     backends = {
         "baidu": (baiduTranslator, lambda: True),
-        "deepl": (deeplTranslator, lambda: True),
+        "deepl": (deeplTranslator, lambda: True), # use direct? no proxy?
     }
     translator, getUseDirect = backends[backend]
     proxyName = None
