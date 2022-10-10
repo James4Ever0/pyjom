@@ -6,6 +6,6 @@ import types
 type0=  type(randomFunction)
 type1 = type(randomFunction())
 type2 = types.AsyncGeneratorType
-type3 = types.
+type3 = type()
 type4 = types.CoroutineType
-type5 = types.me
+type5 = types.
