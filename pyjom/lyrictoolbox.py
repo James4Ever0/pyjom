@@ -360,7 +360,9 @@ def textArrayWithTranslatedListToAss(
     # editly does not support to put the .ass subtitle directly.
 ):
     # newTextArray = [] # dummy shit. must be removed immediately.
-    styleConfig = defaultStyleConfig.copy().update(assStyleConfig)
+    styleConfig = defaultStyleConfig.copy()
+    for key in styleConfig.keys():
+        styleConfig[key].update(assStyleConfig)
     import random
     import math
     import jinja2
