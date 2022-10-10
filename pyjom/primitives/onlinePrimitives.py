@@ -6,6 +6,7 @@ class OnlineAutoContentProducer(ContentProducer):
     def __init__(
         self,
         source=None,
+        debug=False,
         enable_log=True,
         fast: bool = True,
         postMetadataGenerator: Generator = ...,
