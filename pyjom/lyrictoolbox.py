@@ -882,3 +882,35 @@ def lrcToAnimatedAss(
         ]  # notice, we need to examine this damn list.
     # so we pass both arguments to the ass generator.
     return textArrayWithTranslatedListToAss(textArray, translatedList, assPath)
+
+
+
+# lyrictoolbox
+def getLyricNearbyBpmCandidates(lyric_times, beats):
+    nearbys, remains = [], []
+    mbeats = beats.copy()
+    mbeats = list(set(mbeats))
+    mbeats.sort()
+
+    for ltime in lyric_times:
+        mbeats.sort(key=lambda x: abs(x - ltime))
+        nearby = mbeats[:2].copy()
+        nearbys += nearby
+        for elem in nearby:
+            mbeats.remove(elem)
+    remains = mbeats
+    return nearbys, remains
+
+# lyrictoolbox
+def read_lrc(lrc_path):
+    assert lrc_path.endswith(".lrc")
+    with open(lrc_path, "r") as f:
+        lrc_string = f.read()
+        subs = pylrc.parse(lrc_string)
+        sublist = []
+        for sub in subs:
+            time_in_secs = sub.time
+            content = sub.text
+            sublist.append({"time": time_in_secs, "content": content})
+            # another square bracket that could kill me.
+        return sublist
