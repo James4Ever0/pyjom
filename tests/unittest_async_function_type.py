@@ -17,6 +17,6 @@ print(type2 == type3)
 # no breakpoint support for async functions? wtf?
 # data = randomFunctionGenerator() # this is async generator. different!
 data = randomFunction()
-# data = sync(data)
+data = sync(data)
 # # not good.
-# print(type(data))
+print(type(data),data)
