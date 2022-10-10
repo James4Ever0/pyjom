@@ -5,12 +5,18 @@ from pyjom.platforms.bilibili.utils import bilibiliSync
 
 # you may use the 'sync' method elsewhere.
 # damn. out of sync.
-# recall the order of applying decorators, from the closest one of the function.
+# recall the order of applying decorators
+# WTF is the order?
+def bilibiliCredential(func):
+    def wrapper(*args, dedeuserid="", **kwargs):
+        credential = getCredentialByDedeUserId(dedeuserid)
+        return func(*args, credential=credential, **kwargs)
+    return wrapper
+
 @bilibiliSync
-    credential = getCredentialByDedeUserId(dedeuserid)
-@bilibiliCredential(dedeuserid = "397424026")
+@bilibiliCredential # keyword 'dedeuserid' with default value.
 async def uploadVideo(
-    credential:Credential=...
+    credential:Credential=...,
     # sessdata="",
     # bili_jct="",
     # buvid3="", # credentials.
