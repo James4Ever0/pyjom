@@ -364,21 +364,22 @@ def textArrayWithTranslatedListToAss(
     import math
     import jinja2
     from lazero.filesystem.io import readFile
-    default_template_configs =  {
-    "defaultFontname": "Arial",
-    "defaultFontsize": 48,  # integer?
-    "translationFontname": "Migu 1P",
-    "translationFontsize": 48,
-    "kanjiFontname": "Migu 1P",
-    "kanjiFontsize": 46,
-    "romajiFontname": "Migu 1P",
-    "romajiFontsize": 38,
-}
+
+    default_template_configs = {
+        "defaultFontname": "Arial",
+        "defaultFontsize": 48,  # integer?
+        "translationFontname": "Migu 1P",
+        "translationFontsize": 48,
+        "kanjiFontname": "Migu 1P",
+        "kanjiFontsize": 46,
+        "romajiFontname": "Migu 1P",
+        "romajiFontsize": 38,
+    }
     mTemplateConfigs = default_template_configs.copy()
     mTemplateConfigs.update(template_configs)
 
     template = jinja2.Template(source=readFile(template_path))
-    template_configured = template.render(**templateConfigs)
+    template_configured = template.render(**mTemplateConfigs)
 
     io = Ass(template_configured, path_output=assPath)
     meta, styles, lines = io.get_data()
