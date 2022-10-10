@@ -76,7 +76,7 @@ class ContentProducer:
         update_result, source = self.methodsList["updator"](optimized_result)
         if type(update_result) == GeneratorType:
             while True:
-                update_result.__next__()
+                update_result.__next__() # to fix not iterating bug.
         self.identifier.updatorFix(source)
 
     def main(self):
