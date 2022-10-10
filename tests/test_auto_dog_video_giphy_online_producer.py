@@ -19,6 +19,7 @@ postMetadataGenerator = (
 )  # metadata you can fetch from database, maybe you can preprocess this.
 
 # when use 'complete test' it stops iterating.
+# maybe because the last one is a generator. goddamn it.
 wbRev = OnlineAutoContentProducer(
     source="giphy",
     fast=False,
