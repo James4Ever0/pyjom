@@ -352,16 +352,16 @@ def textArrayWithTranslatedListToAss(
     puncturalRemoval=True,
     template_path="/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass.j2",  # but the style. you know.
     # aegisub use system fonts. you pass font name into it.
- template_configs= {
-    "defaultFontname": "Arial",
-    "defaultFontsize": 48,  # integer?
-    "translationFontname": "Migu 1P",
-    "translationFontsize": 48,
-    "kanjiFontname": "Migu 1P",
-    "kanjiFontsize": 46,
-    "romajiFontname": "Migu 1P",
-    "romajiFontsize": 38,
-},
+    template_configs={
+        "defaultFontname": "Arial",
+        "defaultFontsize": 48,  # integer?
+        "translationFontname": "Migu 1P",
+        "translationFontsize": 48,
+        "kanjiFontname": "Migu 1P",
+        "kanjiFontsize": 46,
+        "romajiFontname": "Migu 1P",
+        "romajiFontsize": 38,
+    },
     styleConfig={
         "original": {"method": "romaji", "style": "Romaji"},
         "translated": {"method": "kanji", "style": "Kanji"},
