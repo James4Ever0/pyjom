@@ -9,7 +9,7 @@ class OnlineAutoContentProducer(ContentProducer):
         debug=False,
         enable_log=True,
         fast: bool = True,
-        afterPosting:Functi
+        afterPosting: FunctionType = ...,
         postMetadataGenerator: Generator = ...,
         processor_filters={},
         producer_filters={},
@@ -30,7 +30,7 @@ class OnlineAutoContentProducer(ContentProducer):
         self.fast = fast
         self.metaTopic = metaTopic  # 所谓的超话 超级话题
         if enable_log:
-            self.log_location = "logs/local/" # what location?
+            self.log_location = "logs/local/"  # what location?
         self.identifier.typeFix(type(self).__name__)
         self.methodsList.update(
             {
@@ -50,7 +50,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     template=template,
                     fast=self.fast,
                     template_configs=template_configs,
-                    debug=debug, # overkill?
+                    debug=debug,  # overkill?
                 ),
                 "poster": keywordDecorator(
                     OnlinePoster,  # you need to be prudent. this is not kids stuff. figure out how to post to multiple platforms the same time, figure out how to post to individual platform one by one.
@@ -58,6 +58,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     contentType=contentType,
                     postMetadataGenerator=postMetadataGenerator,
                     platform=platform,
+                    afterPosting=afterPosting,
                 )  # just for debugging.
                 # you also need to change the logic below, for other 'dummy' stuffs.
                 # 'poster':keywordDecorator(dummyPoster, iterate=True) # just for debugging.
