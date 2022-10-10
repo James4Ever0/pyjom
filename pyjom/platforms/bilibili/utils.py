@@ -8,3 +8,4 @@ def bilibiliSync(func):
             return sync(func(*args, **kwargs))
         else:
             return func(*args, **kwargs)
+    return wrapper
