@@ -749,7 +749,7 @@ def textArrayWithTranslatedListToAss(
         lineMod.text = elem["text"].strip()
         while True:
             if "  " in lineMod.text:
-                lineMod.text = lineMod.text.replace("  ", "")
+                lineMod.text = lineMod.text.replace("  ", " ")
             else:
                 break
         # print(lineMod)
