@@ -389,8 +389,7 @@ def textArrayWithTranslatedListToAss(
     template_configured_savedPath = getRandomFileNameUnderDirectoryWithExtension('ass','/dev/shm/medialang')
     with tmpfile(getRandomFileNameUnderDirectoryWithExtension):
         writeFile(template_configured_savedPath)
-
-    io = Ass(template_configured_savedPath, path_output=assPath)
+        io = Ass(template_configured_savedPath, path_output=assPath)
     meta, styles, lines = io.get_data()
 
     # Creating the star and extracting all the color changes from the input file
