@@ -363,7 +363,7 @@ def textArrayWithTranslatedListToAss(
     # newTextArray = [] # dummy shit. must be removed immediately.
     styleConfig = defaultStyleConfig.copy()
     for key in styleConfig.keys():
-        styleConfig[key].update(assStyleConfig.get(key,{}))
+        styleConfig[key].update(assStyleConfig.get(key, {}))
     import random
     import math
     import jinja2
@@ -928,9 +928,13 @@ def lrcToAnimatedAss(
             (sourceText,) for sourceText in textList
         ]  # notice, we need to examine this damn list.
     # so we pass both arguments to the ass generator.
-    return textArrayWithTranslatedListToAss(textArray, translatedList, assPath,
-            ass_template_configs=ass_template_configs,
-            assStyleConfig=assStyleConfig)
+    return textArrayWithTranslatedListToAss(
+        textArray,
+        translatedList,
+        assPath,
+        ass_template_configs=ass_template_configs,
+        assStyleConfig=assStyleConfig,
+    )
 
 
 # lyrictoolbox
