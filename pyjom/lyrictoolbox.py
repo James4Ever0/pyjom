@@ -374,7 +374,7 @@ def textArrayWithTranslatedListToAss(
     "romajiFontname": "Migu 1P",
     "romajiFontsize": 38,
 }
-    default_template_configs.copy()
+    mTemplateConfigs = default_template_configs.copy()
 
     template = jinja2.Template(source=readFile(template_path))
     template_configured = template.render(**template_configs)
