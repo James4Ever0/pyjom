@@ -354,7 +354,7 @@ def textArrayWithTranslatedListToAss(
     import math
 
     io = Ass(
-        "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass", path_output=assPath
+        template_path, path_output=assPath
     )
     meta, styles, lines = io.get_data()
 
