@@ -11,6 +11,7 @@
 import audioowl
 import math
 from pyjom.commons import *
+from pyjom.lyrictoolbox import read_lrc
 # musictoolbox
 def audioOwlAnalysis(myMusic):
     # get sample rate
