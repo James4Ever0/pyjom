@@ -508,7 +508,8 @@ def petsWithMusicOnlineProducer(
                     # [Parsed_ass_0 @ 0x5568c7a266c0] Glyph 0x665A not found, selecting one more font for (Migu 1P, 700, 0)
                     # [Parsed_ass_0 @ 0x5568c7a266c0] fontselect: (Migu 1P, 700, 0) -> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc, 0, WenQuanYiZenHei
 
-                    ffmpeg.input(rendered_media_location).filter(
+                    videoInput = ffmpeg.input(rendered_media_location).video
+                    audioInput = ffmpeg.input(rendered_media_location)..filter(
                         "ass", ass_file_path
                     ).output(final_output_location).run(overwrite_output=True)
                 else:
