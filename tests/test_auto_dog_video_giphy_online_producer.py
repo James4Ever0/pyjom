@@ -110,8 +110,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--partial", action="store_true", default=False)
     args = parser.parse_args()
-    print('args.partial:', args.partial)
-    breakpoint()
+    # print('args.partial:', args.partial)
+    # breakpoint()
 
     COMPLETE_TEST = not args.partial
     if COMPLETE_TEST:
