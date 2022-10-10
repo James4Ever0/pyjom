@@ -354,7 +354,7 @@ def textArrayWithTranslatedListToAss(
     # aegisub use system fonts. you pass font name into it.
     ass_template_configs={},
     assStyleConfig={},
-    tempdir = '/dev/shm/medialang/lyrictoolbox'
+    tempdir="/dev/shm/medialang/lyrictoolbox"
     # editly does not support to put the .ass subtitle directly.
 ):
     defaultStyleConfig = {
@@ -385,9 +385,15 @@ def textArrayWithTranslatedListToAss(
 
     template = jinja2.Template(source=readFile(template_path))
     template_configured = template.render(**mTemplateConfigs)
-    from lazero.filesystem.temp import tmpfile, getRandomFileNameUnderDirectoryWithExtension
+    from lazero.filesystem.temp import (
+        tmpfile,
+        getRandomFileNameUnderDirectoryWithExtension,
+    )
     from lazero.filesystem.io import writeFile
-    template_configured_savedPath = getRandomFileNameUnderDirectoryWithExtension('ass',tempdir)
+
+    template_configured_savedPath = getRandomFileNameUnderDirectoryWithExtension(
+        "ass", tempdir
+    )
     with tmpfile(getRandomFileNameUnderDirectoryWithExtension):
         writeFile(template_configured_savedPath, template_configured)
         io = Ass(template_configured_savedPath, path_output=assPath)
