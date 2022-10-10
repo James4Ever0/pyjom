@@ -13,7 +13,7 @@ type5 = type(randomFunctionGenerator)
 print(type0, type1, type2, type3, type4, type5)
 print(type1== type4)
 print(type2 == type3)
-data = randomFunctionGenerator()
+data = randomFunctionGenerator() # this is 
 data = sync(data)
 # not good.
 print(type(data))
