@@ -23,12 +23,13 @@ postMetadataGenerator = (
 wbRev = OnlineAutoContentProducer(
     source="giphy",
     fast=False,
+            'debug': True, # we need to preview this video.
+
     # fast= True,  # pass this flag to medialang export engine
     template="pets_with_music_online",
     postMetadataGenerator=postMetadataGenerator,
     template_configs=[
         {
-            'debug': True, # we need to preview this video.
             "music": {
                 "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
                 "lyric_path": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc",  ## you can choose not to pass the lyric_path anyway. also format different than .lrc is on the way?
