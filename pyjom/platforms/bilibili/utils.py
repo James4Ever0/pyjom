@@ -5,7 +5,7 @@ from bilibili_api import sync
 def bilibiliSync(func):
     def wrapper(*args, **kwargs):
         unknownObject=func(*args, **kwargs)
-        if type(c) == types.CoroutineType:
+        if type(coroutimeMaybe) == types.CoroutineType:
             return sync(unknownObject)
         else:
             return func(*args, **kwargs)
