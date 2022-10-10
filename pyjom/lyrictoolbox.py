@@ -715,7 +715,8 @@ def textArrayWithTranslatedListToAss(
         elif line.styleref.alignment >= 4: # what is this shit?
             lineModSource = line.copy()
             break
-    lineModSourceKanji = 
+    lineModSourceKanji = lineModSource.copy()
+    lineModSourceKanji.style = ''
 
     # from test_pylrc import *
     # just a test.
