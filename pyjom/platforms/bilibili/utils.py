@@ -1,0 +1,2 @@
+def bilibiliSync(func):
+    
