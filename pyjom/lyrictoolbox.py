@@ -794,9 +794,12 @@ def textArrayWithTranslatedListToAss(
             mTop=25,
             mMiddle=49.0,
             mBottom=73.0,
+            cutOneByOne=False
         ):
             lineMod.center = CENTER  # wtf?
-            if lineMod.text.count(" ") >= 1:
+            if cutOneByOne:
+                lineMod.words = list(lineMod.text)
+            elif lineMod.text.count(" ") >= 1:
                 lineMod.words = lineMod.text.split(" ")
             else:
                 lineMod.words = getJiebaCuttedText(lineMod.text)
@@ -890,7 +893,7 @@ def textArrayWithTranslatedListToAss(
             translatedText = translatedText.replace(" ", "")
             lineMod2.text = translatedText
             translateShift = 100
-            addSylToLine(lineMod2, translateShift=translateShift)
+            addSylToLine(lineMod2, translateShift=translateShift, styleConfig['translated']['cutOneByOne)
             source = lineMod2.copy()
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
