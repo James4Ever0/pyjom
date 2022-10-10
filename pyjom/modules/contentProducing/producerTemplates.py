@@ -509,9 +509,11 @@ def petsWithMusicOnlineProducer(
                     # [Parsed_ass_0 @ 0x5568c7a266c0] fontselect: (Migu 1P, 700, 0) -> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc, 0, WenQuanYiZenHei
 
                     videoInput = ffmpeg.input(rendered_media_location).video
-                    audioInput = ffmpeg.input(rendered_media_location)..filter(
+                    audioInput = ffmpeg.input(rendered_media_location).audio
+                    videoInput = videoInput.filter(
                         "ass", ass_file_path
-                    ).output(final_output_location).run(overwrite_output=True)
+                    )
+                    ffmpeg.output(videoInput,audioInput,final_output_location,acodec='copy').run(overwrite_output=True)
                 else:
                     import shutil
 
