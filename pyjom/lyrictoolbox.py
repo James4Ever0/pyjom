@@ -6,7 +6,7 @@ from typing import Literal
 # wildcard not allowed in function
 from pyjom.commons import redisLRUCache
 
-# change the lyric font and font size for 
+# change the lyric font and font size for hanzi and romaji
 
 import os
 
