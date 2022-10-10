@@ -1,7 +1,7 @@
 from bilibili_api import video_uploader
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 import os
-from pyjom.platforms.bilibili.
+from pyjom.platforms.bilibili.utils import bilibiliSync
 
 # you may use the 'sync' method elsewhere.
 @bilibiliSync
