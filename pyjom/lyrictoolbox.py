@@ -716,7 +716,7 @@ def textArrayWithTranslatedListToAss(
             lineModSource = line.copy()
             break
     lineModSourceKanji = lineModSource.copy()
-    lineModSourceKanji.style = ''
+    lineModSourceKanji.style = 'Kanji'
 
     # from test_pylrc import *
     # just a test.
