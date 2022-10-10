@@ -74,10 +74,9 @@ class ContentProducer:
 
     def update_optimized_result(self, optimized_result):
         update_result, source = self.methodsList["updator"](optimized_result)
-                if type(update_result) == GeneratorType:
+        if type(update_result) == GeneratorType:
             while True:
                 update_result.__next__()
-
         self.identifier.updatorFix(source)
 
     def main(self):
