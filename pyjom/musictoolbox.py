@@ -8,6 +8,7 @@
 
 # diffusion based painter, ai colorization, video editing is for artworktoolbox. maybe the naming is not right/necessary.
 
+import audioowl
 
 # musictoolbox
 def audioOwlAnalysis(myMusic):
