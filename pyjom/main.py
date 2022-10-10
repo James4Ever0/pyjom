@@ -74,6 +74,10 @@ class ContentProducer:
 
     def update_optimized_result(self, optimized_result):
         update_result, source = self.methodsList["updator"](optimized_result)
+                if type(update_result) == GeneratorType:
+            while True:
+                update_result.__next__()
+
         self.identifier.updatorFix(source)
 
     def main(self):
@@ -87,9 +91,6 @@ class ContentProducer:
         feedback = self.collect_some_feedback(posted_location)
         optimized_result = self.optimize_topic_by_feedback(topic, feedback)
         self.update_optimized_result(optimized_result)
-        if type(update_result) == GeneratorType:
-            while True:
-                update_result.__next__()
 
 
 class ContentReviewer(ContentProducer):
