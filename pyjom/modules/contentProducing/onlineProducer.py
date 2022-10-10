@@ -35,5 +35,5 @@ def OnlineProducer(
             for exported_media_location in exported_media_locations:
                 print("exported media location:", exported_media_location)
                 if debug:
-                    breakpoint()
+                    breakpoint() # another breakpoint. after merging aegisub ass file.
                 yield exported_media_location
