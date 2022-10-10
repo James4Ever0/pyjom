@@ -1,3 +1,4 @@
+from types import GeneratorType
 from pyjom.commons import *  # really swap this shit?
 from pyjom.modules import *
 
@@ -85,7 +86,9 @@ class ContentProducer:
         posted_location = self.post_some_content(content)
         feedback = self.collect_some_feedback(posted_location)
         optimized_result = self.optimize_topic_by_feedback(topic, feedback)
-        self.update_optimized_result(optimized_result)
+        the_end = self.update_optimized_result(optimized_result)
+        if type(the_end) == GeneratorType:
+            
 
 
 class ContentReviewer(ContentProducer):
