@@ -94,6 +94,7 @@ def getFileCuts(
         total_cuts_dict.update({file_path: compiled_file_cuts.copy()})
     return total_cuts_dict
 
+
 # local
 def getRenderList(
     total_cuts,
@@ -174,6 +175,7 @@ def getRenderList(
                 break
     return render_list
 
+
 # local
 def renderList2MediaLang(
     renderList,
@@ -215,7 +217,6 @@ def renderList2MediaLang(
     medialangScript = "\n\n".join(scriptBase)  # forced to double return. is it?
     medialangObject = Medialang(script=medialangScript, medialangTmpdir=medialangTmpdir)
     return medialangObject
-
 
 
 # local
@@ -515,6 +516,7 @@ def petsWithMusicOnlineProducer(
                 except:
                     pass
                 breakpoint()
+
 
 # local
 def getProducerTemplate(template: str):

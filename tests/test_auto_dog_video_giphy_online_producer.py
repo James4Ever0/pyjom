@@ -18,6 +18,7 @@ postMetadataGenerator = getBilibiliPostMetadataForDogCat() # metadata you can fe
 
 wbRev = OnlineAutoContentProducer(
     source="giphy",
+    fast= True,  # pass this flag to medialang export engine
     template="pets_with_music_online",
     postMetadataGenerator=postMetadataGenerator,
     template_configs=[
@@ -31,7 +32,6 @@ wbRev = OnlineAutoContentProducer(
             "policy": {},
             "maxtime": 7.8,
             "mintime": 2,  # we've write this shit!
-            "fast": True,  # pass this flag to medialang export engine
             "render_ass": True,
             # also determine how to translate the lyrics, whether to translate or not.
             "translate": True,  # default: False
