@@ -2,7 +2,7 @@ async def randomFunction():
     return 1
 async def randomFunctionGenerator():
     yield await randomFunction()
-
+from bilibili_api import sync
 import types
 type0=  type(randomFunction)
 type1 = type(randomFunction())
