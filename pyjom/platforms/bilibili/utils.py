@@ -6,7 +6,7 @@ def bilibiliSync(func):
     def wrapper(*args, **kwargs):
         coroutineMaybe=func(*args, **kwargs)
         if type(coroutineMaybe) == types.CoroutineType:
-            return sync(unknownObject)
+            return sync(coroutineMaybe)
         else:
             return func(*args, **kwargs)
     return wrapper
