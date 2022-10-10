@@ -357,6 +357,7 @@ def textArrayWithTranslatedListToAss(
     import random
     import math
     import jinja2
+    template = jinja2.Template
 
     io = Ass(
         template, path_output=assPath
