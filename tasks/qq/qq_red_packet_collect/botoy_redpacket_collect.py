@@ -213,8 +213,8 @@ def sendRandomGroupMessage():
         sendRepeaterResponse,
         sendXiaoIceGroupChatMessage,
     ]
-    weightList = [2, 7, 1, 1, 7]
-    # weightList = [1, 3, 2, 2, 5]
+    weightList = [2, 5, 1, 1, 5]
+    # weightList = [1, 3, 2, 2, 5] # said that is girish, because of xiaoice.
     replyGetterYielder = weightedRandomYielder(replyGetterList, weightList)
     sendBotGroupTextMsg(replyGetterYielder)
 
@@ -303,9 +303,9 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             # print(Content_json)
             # breakpoint()
             # 'SrcContent', 'UserID'(list)
-            content_at_target = ("@"+content_text.split("@")[1]).strip()
-            content_text = content_text.replace(content_at_target,"")
-            content_text = replaceDuplicateChar(content_text," ",maxRepeat=1)
+            content_at_target = ("@" + content_text.split("@")[1]).strip()
+            content_text = content_text.replace(content_at_target, "")
+            content_text = replaceDuplicateChar(content_text, " ", maxRepeat=1)
             # UserExt = Content_json["UserExt"]
             # # shit revised. no more 'UserExt'
             # for elem in UserExt:
