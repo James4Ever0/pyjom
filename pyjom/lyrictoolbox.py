@@ -852,7 +852,7 @@ def textArrayWithTranslatedListToAss(
             target.style = styleConfig['original']['style']
             styleConfig['original']['method'](source,target) # writing 'kanji' style to romaji?
             lineMod2 = lineMod.copy()
-            lineMod2.style = styleConfig['translated']
+            lineMod2.style = styleConfig['translated']['style']
             translatedText = translatedText.replace(" ", "")
             lineMod2.text = translatedText
             translateShift = 100
