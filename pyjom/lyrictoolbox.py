@@ -353,16 +353,13 @@ def textArrayWithTranslatedListToAss(
     template_path="/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass.j2",  # but the style. you know.
     # aegisub use system fonts. you pass font name into it.
     ass_template_configs={},
-    assStyleConfig={
-        "original": {"method": "romaji", "style": "Romaji"},
-        "translated": {"method": "kanji", "style": "Kanji"},
-    }
+    assStyleConfig=
     # editly does not support to put the .ass subtitle directly.
 ):
     # newTextArray = [] # dummy shit. must be removed immediately.
     styleConfig = defaultStyleConfig.copy()
     for key in styleConfig.keys():
-        styleConfig[key].update(assStyleConfig[key])
+        styleConfig[key].update(assStyleConfig.get(key,{}))
     import random
     import math
     import jinja2
