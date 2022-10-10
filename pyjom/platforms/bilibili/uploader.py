@@ -1,16 +1,20 @@
-from bilibili_api import video_uploader
+from bilibili_api import video_uploader, Credential
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 import os
 from pyjom.platforms.bilibili.utils import bilibiliSync
 
 # you may use the 'sync' method elsewhere.
-# damn. ou
+# damn. out of sync.
+# recall the order of applying decorators, from the closest one of the function.
 @bilibiliSync
+    credential = getCredentialByDedeUserId(dedeuserid)
+@bilibiliCredential(dedeuserid = "397424026")
 async def uploadVideo(
+    credential:Credential=...
     # sessdata="",
     # bili_jct="",
     # buvid3="", # credentials.
-    dedeuserid: str = "397424026",
+    # dedeuserid: str = "397424026",
     description: str = "",
     dynamic: str = "",
     tagString: str = "",
@@ -24,7 +28,6 @@ async def uploadVideo(
 ):
     assert os.path.exists(videoPath)
     assert os.path.exists(cover_path)
-    credential = getCredentialByDedeUserId(dedeuserid)
     # videoExtension = videoPath.split(".")[-1].lower()
     # credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # you can pass it from somewhere else.
