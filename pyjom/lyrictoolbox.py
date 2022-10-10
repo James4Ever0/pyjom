@@ -376,9 +376,9 @@ def textArrayWithTranslatedListToAss(
         "translationFontname": "Migu 1P",
         "translationFontsize": 48,
         "kanjiFontname": "Migu 1P",
-        "kanjiFontsize": 46,
+        "kanjiFontsize": 46, # increase. make 'kanji' one char at a time.
         "romajiFontname": "Migu 1P",
-        "romajiFontsize": 38,
+        "romajiFontsize": 38, # increase to 60.
     }
     mTemplateConfigs = default_template_configs.copy()
     mTemplateConfigs.update(ass_template_configs)
