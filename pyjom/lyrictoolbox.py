@@ -358,7 +358,7 @@ def textArrayWithTranslatedListToAss(
     import math
     import jinja2
     from lazero.filesystem.io import readFile
-    template = jinja2.Template(source = )
+    template = jinja2.Template(source = readFile(template_path))
 
     io = Ass(
         template_configured, path_output=assPath
