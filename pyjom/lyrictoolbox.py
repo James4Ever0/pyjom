@@ -348,6 +348,7 @@ def textArrayWithTranslatedListToAss(
     shiftAdjust=600,
     censor=True,
     puncturalRemoval=True,
+    template_path = "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass"
 ):
     # newTextArray = [] # dummy shit. must be removed immediately.
     import random
