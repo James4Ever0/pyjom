@@ -13,7 +13,8 @@ type5 = type(randomFunctionGenerator)
 print(type0, type1, type2, type3, type4, type5)
 print(type1== type4)
 print(type2 == type3)
-# async generator can only be used for 
+# async generator can only be used within async methods.
+# no breakpoint support?
 data = randomFunctionGenerator() # this is async generator. different!
 data = sync(data)
 # not good.
