@@ -41,7 +41,7 @@ def ffmpegVideoPreProductionFilter(
             "logoRemoval",
             "minterpolate_mi_mode=blend",
         ]
-    ] = [ # what is slowing us down?
+    ] = [  # what is slowing us down?
         "pipCrop",
         "textRemoval",  # we got a problem here?
         "logoRemoval",
@@ -405,7 +405,7 @@ def dotVideoProcessor(
         medialangTmpDir, randomUUID + "." + format
     )  # this is temporary!
     # usually we choose to use something under medialang tempdir as the storage place.
-    print('medialang config:',format, backend, fast, bgm)
+    print("medialang config:", format, backend, fast, bgm)
 
     # the "previous" is the clips, was fucked, filled with non-existant intermediate mpegts files, but no source was out there.
     # this is initially decided to output mp4, however you might want to decorate it.
