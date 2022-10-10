@@ -5,7 +5,6 @@ from pyjom.commons import *
 
 # maybe you need to render this into ffmpeg arguments or mltframework arguments.
 import random
-import pylrc
 import math
 from pyjom.audiotoolbox import adjustVolumeInMedia
 
