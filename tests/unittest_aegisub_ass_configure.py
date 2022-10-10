@@ -2,7 +2,7 @@ from lazero.filesystem.io import readFile
 import jinja2
 
 template_configs = {
-    "defaultFontname": None,
+    "defaultFontname": None, # integer?
     "defaultFontsize": None,
     "translationFontname": None,
     "translationFontsize": None,
