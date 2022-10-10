@@ -338,7 +338,7 @@ def petsWithMusicOnlineProducer(
             tempdir, ".".join([str(uuid.uuid4()), extension])
         )
         for config in configs:
-            debug = config.get("debug", False)
+            debug = config.get("debug", False) # in config.
             musicPath = config.get("music", {}).get("filepath", "")
             translate = config.get("translate", False)
             # also how to translate?
