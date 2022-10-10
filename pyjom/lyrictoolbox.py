@@ -928,7 +928,9 @@ def lrcToAnimatedAss(
             (sourceText,) for sourceText in textList
         ]  # notice, we need to examine this damn list.
     # so we pass both arguments to the ass generator.
-    return textArrayWithTranslatedListToAss(textArray, translatedList, assPath)
+    return textArrayWithTranslatedListToAss(textArray, translatedList, assPath,
+            ass_template_configs=config.get('ass_template_configs',{})
+            assStyleConfig=config.get('assStyleConfig',{}))
 
 
 # lyrictoolbox
