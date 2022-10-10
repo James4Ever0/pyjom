@@ -394,7 +394,7 @@ def textArrayWithTranslatedListToAss(
     template_configured_savedPath = getRandomFileNameUnderDirectoryWithExtension(
         "ass", tempdir
     )
-    with tmpdir(getRandomFileNameUnderDirectoryWithExtension):
+    with tmpdir(tempdir):
         writeFile(template_configured_savedPath, template_configured)
         io = Ass(template_configured_savedPath, path_output=assPath)
     meta, styles, lines = io.get_data()
