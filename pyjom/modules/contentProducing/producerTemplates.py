@@ -349,6 +349,8 @@ def petsWithMusicOnlineProducer(
                 continue
 
             render_ass = config.get("render_ass", False)
+                ass_template_configs={},
+    assStyleConfig={}
             parsed_result = getMusicInfoParsed(config)
             # print(parsed_result)
             # breakpoint()
