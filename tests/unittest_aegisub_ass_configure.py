@@ -7,9 +7,9 @@ template_configs = {
     "translationFontname": 'Migu 1P',
     "translationFontsize": 48,
     "kanjiFontname": 'Migu 1P',
-    "kanjiFontsize": 48,
+    "kanjiFontsize": 46,
     "romajiFontname": 'Migu 1P',
-    "romajiFontsize": 48,
+    "romajiFontsize": 38,
 }
 # template_configs = {'defaultFontname':'Anonymous Pro'}
 template_path = "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass.j2"
