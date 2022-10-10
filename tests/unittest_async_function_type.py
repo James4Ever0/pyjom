@@ -15,4 +15,5 @@ print(type1== type4)
 print(type2 == type3)
 data = randomFunctionGenerator()
 data = sync(data)
+# not good.
 print(type(data))
