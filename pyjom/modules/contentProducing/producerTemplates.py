@@ -6,7 +6,7 @@ from pyjom.commons import *
 # maybe you need to render this into ffmpeg arguments or mltframework arguments.
 import random
 from pyjom.audiotoolbox import adjustVolumeInMedia
-from pyjom.musictoolbox import 
+from pyjom.musictoolbox import getMusicInfoParsed
 
 # from MediaInfo import MediaInfo
 from pyjom.medialang.core import *
