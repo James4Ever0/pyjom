@@ -6,6 +6,8 @@ from typing import Literal
 # wildcard not allowed in function
 from pyjom.commons import redisLRUCache
 
+# change the lyric font and font size!
+
 import os
 
 os.environ["http_proxy"] = ""
