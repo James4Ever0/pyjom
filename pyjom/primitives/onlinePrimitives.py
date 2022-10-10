@@ -49,7 +49,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     template=template,
                     fast=self.fast,
                     template_configs=template_configs,
-                    debug=debug,
+                    debug=debug, # overkill?
                 ),
                 "poster": keywordDecorator(
                     OnlinePoster,  # you need to be prudent. this is not kids stuff. figure out how to post to multiple platforms the same time, figure out how to post to individual platform one by one.
