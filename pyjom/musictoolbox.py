@@ -362,8 +362,8 @@ def recognizeMusicFromFileMidomi(
     if len(extension) == 0:
         extension = "mp3"
     musicLength = getAudioDuration(filepath)
-    needSegment = musicLength <= segmentLength
-    if needSegment:
+    needSegment = musicLength > segmentLength
+    if not needSegment:
         maxRetry = 1
     for index in range(maxRetry):
         if debug:
