@@ -236,8 +236,9 @@ def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
 # shazamio needs event loop. be careful!
 from typing import Literal
 import subprocess
+import traceback
 
-def runCommandGetJson(commandLine:list[str],timeout:int=5):
+def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False):
     result = subprocess.run(commandLine, timeout=timeout,capture_output=True)
     try:
         assert result.returncode == 0
@@ -246,16 +247,27 @@ def runCommandGetJson(commandLine:list[str],timeout:int=5):
         output = json.loads(stdout)
         return True,output
     except:
-        import traceback
-        traceback.print_exc()
+        if debug:
+            traceback.print_exc()
     return False,{}
 
+def process
+
 # you can choose to return raw data or not. which is the raw json data.
-def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5):
+def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5, debug=False):
     commandLine = ['songrec','audio-file-to-recognized-song','filepath']
-    success, data = runCommandGetJson(commandLine)
+    success, data = runCommandGetJson(commandLine, debug=debug, timeout=timeout)
     if success:
         if not raw_data:
+            # more processing. may alter the success flag.
+            try:
+                artist = data[]
+                trackName = data[]
+                data = {'artist': artist, 'trackName': trackName}
+            except:
+                success = False
+                if debug:
+                    traceback.print_exc()
     return success, data
 
 
