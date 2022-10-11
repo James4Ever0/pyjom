@@ -250,14 +250,15 @@ def runCommandGetJson(
     shell: bool = False,
     workingDirectory: Union[str, None] = None,
 ):
-    result = subprocess.run(
-        commandLine,
-        timeout=timeout,
-        capture_output=True,
-        shell=shell,
-        cwd=workingDirectory,
-    )
+
     try:
+        result = subprocess.run(
+            commandLine,
+            timeout=timeout,
+            capture_output=True,
+            shell=shell,
+            cwd=workingDirectory,
+        )
         assert result.returncode == 0
         stdout = result.stdout
         stdout = stdout.decode("utf-8")
@@ -346,7 +347,7 @@ from lazero.filesystem.temp import tmpfile, getRandomFileNameUnderDirectoryWithE
 def recognizeMusicFromFileMidomi(
     filepath,
     raw_data=False,
-    timeout=7,
+    timeout=10,
     debug: bool = False,
     maxRetry=3,
     segmentLength: int = 10,
