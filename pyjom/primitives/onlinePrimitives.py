@@ -25,6 +25,12 @@ class OnlineAutoContentProducer(ContentProducer):
         },
     ):  # something in this metaTopic is not droppable.
         super().__init__()
+        # do afterPosting before even start it.
+        # now we might want to check our product before another test.
+        try:
+            afterPosting()
+        except:
+            pass
         assert source is not None
         self.source = source
         self.tempdir = tempdir
