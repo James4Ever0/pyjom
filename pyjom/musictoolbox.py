@@ -290,7 +290,12 @@ def midomiSongRecognizationResultProcessMethod(data):
     return data
 # what is the correct timeout for this one?
 from lazero.filesystem.temp import tmpfile, getRandomFileNameUnderDirectoryWithExtension
-def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3, segmentLength:int= 10): # this one is different. maybe we can wait.
+def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3, segmentLength:int= 10, extension:Union[str, None]=None): # this one is different. maybe we can wait.
+    if extension == None:
+        splitedFilePath = os.path.basename(filepath).split(".")
+        if len(splitedFilePath)>1:
+            extension = splitedFilePath[-1]
+            if len(extension) == 0:
     musicLength = getAudioDuration(filepath)
     needSegment = musicLength <= segmentLength
     if needSegment:
@@ -298,7 +303,7 @@ def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool
     for index in range(maxRetry):
         if debug:
             print('trial {} for midomi'.format(index+1))
-        segmentName = getRandomFileNameUnderDirectoryWithExtension(extension,)
+        segmentName = getRandomFileNameUnderDirectoryWithExtension(extension,'/dev/shm')
         
         with tmpfile(segmentName):
             if needSegment:
