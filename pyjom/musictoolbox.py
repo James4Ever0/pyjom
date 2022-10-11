@@ -251,24 +251,28 @@ def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False):
             traceback.print_exc()
     return False,{}
 
-def process
-
-# you can choose to return raw data or not. which is the raw json data.
-def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5, debug=False):
-    commandLine = ['songrec','audio-file-to-recognized-song','filepath']
-    success, data = runCommandGetJson(commandLine, debug=debug, timeout=timeout)
+def processSongRecognizationJson(success, data,processMethod, raw_data:bool=False,debug:bool=False):
     if success:
         if not raw_data:
             # more processing. may alter the success flag.
             try:
-                artist = data[]
-                trackName = data[]
-                data = {'artist': artist, 'trackName': trackName}
+                data = processMethod(data)
             except:
                 success = False
                 if debug:
                     traceback.print_exc()
     return success, data
+
+# you can choose to return raw data or not. which is the raw json data.
+def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5, debug=False):
+    commandLine = ['songrec','audio-file-to-recognized-song','filepath']
+    success, data = runCommandGetJson(commandLine, debug=debug, timeout=timeout)
+    def processMethod(data):
+        artist = data[]
+        trackName = data[]
+        data = {'artist': artist, 'trackName': trackName}
+        return data
+    success, data = processSongRecognizationJson(success, data, processMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 
 def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=7):
