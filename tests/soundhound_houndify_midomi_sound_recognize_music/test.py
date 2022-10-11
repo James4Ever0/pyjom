@@ -17,3 +17,18 @@
 # apt-get install opencc
 
 # you need to filter out those parts without singing voice, if download music from kugou/qq music
+
+audioFile = "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3"
+
+import asyncio
+from shazamio import Shazam
+
+
+async def main():
+    shazam = Shazam()
+    out = await shazam.recognize_song(audioFile)
+    print(out)
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
