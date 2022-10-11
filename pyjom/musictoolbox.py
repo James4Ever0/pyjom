@@ -281,11 +281,18 @@ def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=20, debug:b
     commandLine = ['python3','/root/Desktop/works/pyjom/tests/soundhound_houndify_midomi_sound_recognize_music/shazamio_recognize_music.py','--file',filepath]
     return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
-
+def midomiSongRecognizationResultProcessMethod(data):
+    artist = data[]
+    trackName = data[]
+    data = {'artist': artist, 'trackName': trackName}
+    return data
 # what is the correct timeout for this one?
 def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3): # this one is different. maybe we can wait.
-    for _ in range(maxRetry):
-        commandLine = []
+    for index in range(maxRetry):
+        if debug:
+            print('trial {} for midomi'.format(index+1))
+        with tmpfile(segmentName):
+        commandLine = ['node',segmentName]
         success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
         if success:
             break
