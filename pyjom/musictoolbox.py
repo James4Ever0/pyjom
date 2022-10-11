@@ -239,8 +239,8 @@ from typing import Literal
 import subprocess
 import traceback
 
-def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False):
-    result = subprocess.run(commandLine, timeout=timeout,capture_output=True)
+def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False, shell:bool=False):
+    result = subprocess.run(commandLine, timeout=timeout,capture_output=True, shell=shell)
     try:
         assert result.returncode == 0
         stdout = result.stdout
@@ -264,22 +264,22 @@ def runCommandAndProcessSongRecognizationJson(commandLine:list[str],processMetho
                 if debug:
                     traceback.print_exc()
     return success, data
-
+def shazamSongRecognizationResultProcessMethod(data):
+    artist = data['track']['subtitle']
+    trackName = data['track']['title']
+    data = {'artist': artist, 'trackName': trackName}
+    return data
 # you can choose to return raw data or not. which is the raw json data.
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=6, debug=False):
     commandLine = ['songrec','audio-file-to-recognized-song',filepath]
-    def processMethod(data):
-        artist = data['track']['subtitle']
-        trackName = data['track']['title']
-        data = {'artist': artist, 'trackName': trackName}
-        return data
-    return runCommandAndProcessSongRecognizationJson(commandLine, processMethod, raw_data=raw_data, debug=debug, timeout=timeout)
+    return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 
 def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=20):
     # how to timeout this shit? use subprocess again?
     # maybe yes.
-    return success, data
+    commandLine = ['python3','','--file',filepath]
+    return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 
 def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7): # this one is different. maybe we can wait.
