@@ -17,6 +17,7 @@ from pyjom.commons import *
 from pyjom.lyrictoolbox import read_lrc, getLyricNearbyBpmCandidates
 from pyjom.audiotoolbox import getAudioDuration
 import ffmpeg
+
 # musictoolbox
 def audioOwlAnalysis(myMusic):
     # get sample rate
@@ -240,21 +241,44 @@ from typing import Literal
 import subprocess
 import traceback
 
-def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False, shell:bool=False, workingDirectory:Union[str, None]=None):
-    result = subprocess.run(commandLine, timeout=timeout,capture_output=True, shell=shell,cwd=workingDirectory)
+
+def runCommandGetJson(
+    commandLine: list[str],
+    timeout: int = 5,
+    debug: bool = False,
+    shell: bool = False,
+    workingDirectory: Union[str, None] = None,
+):
+    result = subprocess.run(
+        commandLine,
+        timeout=timeout,
+        capture_output=True,
+        shell=shell,
+        cwd=workingDirectory,
+    )
     try:
         assert result.returncode == 0
         stdout = result.stdout
-        stdout = stdout.decode('utf-8')
+        stdout = stdout.decode("utf-8")
         output = json.loads(stdout)
-        return True,output
+        return True, output
     except:
         if debug:
             traceback.print_exc()
-    return False,{}
+    return False, {}
 
-def runCommandAndProcessSongRecognizationJson(commandLine:list[str],processMethod:FunctionType, raw_data:bool=False,debug:bool=False, timeout:int=5, workingDirectory:Union[None, str]=None):
-    success, data = runCommandGetJson(commandLine, debug=debug, timeout=timeout, workingDirectory=workingDirectory)
+
+def runCommandAndProcessSongRecognizationJson(
+    commandLine: list[str],
+    processMethod: FunctionType,
+    raw_data: bool = False,
+    debug: bool = False,
+    timeout: int = 5,
+    workingDirectory: Union[None, str] = None,
+):
+    success, data = runCommandGetJson(
+        commandLine, debug=debug, timeout=timeout, workingDirectory=workingDirectory
+    )
     if success:
         if not raw_data:
             # more processing. may alter the success flag.
@@ -265,36 +289,73 @@ def runCommandAndProcessSongRecognizationJson(commandLine:list[str],processMetho
                 if debug:
                     traceback.print_exc()
     return success, data
+
+
 def shazamSongRecognizationResultProcessMethod(data):
-    artist = data['track']['subtitle']
-    trackName = data['track']['title']
-    data = {'artist': artist, 'trackName': trackName}
+    artist = data["track"]["subtitle"]
+    trackName = data["track"]["title"]
+    data = {"artist": artist, "trackName": trackName}
     return data
+
+
 # you can choose to return raw data or not. which is the raw json data.
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=6, debug=False):
-    commandLine = ['songrec','audio-file-to-recognized-song',filepath]
-    return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
+    commandLine = ["songrec", "audio-file-to-recognized-song", filepath]
+    return runCommandAndProcessSongRecognizationJson(
+        commandLine,
+        shazamSongRecognizationResultProcessMethod,
+        raw_data=raw_data,
+        debug=debug,
+        timeout=timeout,
+    )
 
 
-def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=20, debug:bool=False):
+def recognizeMusicFromFileShazamIO(
+    filepath, raw_data=False, timeout=20, debug: bool = False
+):
     # how to timeout this shit? use subprocess again?
     # maybe yes.
-    commandLine = ['python3','/root/Desktop/works/pyjom/tests/soundhound_houndify_midomi_sound_recognize_music/shazamio_recognize_music.py','--file',filepath]
-    return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
+    commandLine = [
+        "python3",
+        "/root/Desktop/works/pyjom/tests/soundhound_houndify_midomi_sound_recognize_music/shazamio_recognize_music.py",
+        "--file",
+        filepath,
+    ]
+    return runCommandAndProcessSongRecognizationJson(
+        commandLine,
+        shazamSongRecognizationResultProcessMethod,
+        raw_data=raw_data,
+        debug=debug,
+        timeout=timeout,
+    )
+
 
 def midomiSongRecognizationResultProcessMethod(data):
-    trackData = data['AllResults'][0]['NativeData']['Tracks'][0]
-    artist = data['ArtistName']
-    trackName = data['TrackName']
-    data = {'artist': artist, 'trackName': trackName}
+    trackData = data["AllResults"][0]["NativeData"]["Tracks"][0]
+    artist = data["ArtistName"]
+    trackName = data["TrackName"]
+    data = {"artist": artist, "trackName": trackName}
     return data
+
+
 # what is the correct timeout for this one?
 from lazero.filesystem.temp import tmpfile, getRandomFileNameUnderDirectoryWithExtension
-def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3, segmentLength:int= 10, extension:Union[str, None]=None): # this one is different. maybe we can wait.
+
+
+def recognizeMusicFromFileMidomi(
+    filepath,
+    raw_data=False,
+    timeout=7,
+    debug: bool = False,
+    maxRetry=3,
+    segmentLength: int = 10,
+    extension: Union[str, None] = None,
+):  # this one is different. maybe we can wait.
+    success, data = False, {}
     if extension == None:
         extension = ""
         splitedFilePath = os.path.basename(filepath).split(".")
-        if len(splitedFilePath)>1:
+        if len(splitedFilePath) > 1:
             extension = splitedFilePath[-1]
     if len(extension) == 0:
         extension = "mp3"
@@ -304,23 +365,34 @@ def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool
         maxRetry = 1
     for index in range(maxRetry):
         if debug:
-            print('trial {} for midomi'.format(index+1))
-        segmentName = getRandomFileNameUnderDirectoryWithExtension(extension,'/dev/shm')
-        
+            print("trial {} for midomi".format(index + 1))
+        segmentName = getRandomFileNameUnderDirectoryWithExtension(
+            extension, "/dev/shm"
+        )
+
         with tmpfile(segmentName):
             if needSegment:
-                start = random.uniform(0, musicLength-segmentLength)
-                end = start+segmentLength
-                ffmpeg.input(filepath, ss=start, to=end).output(segmentName).run(overwrite_output=True)
+                start = random.uniform(0, musicLength - segmentLength)
+                end = start + segmentLength
+                ffmpeg.input(filepath, ss=start, to=end).output(segmentName).run(
+                    overwrite_output=True
+                )
             else:
                 pathlib.Path(segmentName).touch()
                 segmentName = filepath
-        # you will change to given directory, will you?
-            commandLine = ['npx', 'ts-node' ,'midomi_music_recognize.ts',segmentName]
-            success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout, workingDirectory="/root/Desktop/works/pyjom/tests/music_recognization/AmadeusCore")
+            # you will change to given directory, will you?
+            commandLine = ["npx", "ts-node", "midomi_music_recognize.ts", segmentName]
+            success, data = runCommandAndProcessSongRecognizationJson(
+                commandLine,
+                midomiSongRecognizationResultProcessMethod,
+                raw_data=raw_data,
+                debug=debug,
+                timeout=timeout,
+                workingDirectory="/root/Desktop/works/pyjom/tests/music_recognization/AmadeusCore",
+            )
         if success:
             break
-    return success,data
+    return success, data
 
 
 def recognizeMusicFromFile(
