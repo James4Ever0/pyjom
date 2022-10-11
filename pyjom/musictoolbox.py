@@ -282,6 +282,9 @@ def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=20, debug:b
     return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 def midomiSongRecognizationResultProcessMethod(data):
+    trackData = data[.AllResults[0]?.NativeData.Tracks[0];
+    if (!track) return null;
+    // let fullName = `${track.ArtistName} - ${track.TrackName}`;]
     artist = data[]
     trackName = data[]
     data = {'artist': artist, 'trackName': trackName}
