@@ -415,7 +415,7 @@ def recognizeMusicFromFile(
     keys.sort(key=lambda x: -int(x == backend))
     for key in keys:
         method = methods[key]
-        success, data = method(filepath)
+        success, data = method(filepath, debug=debug)
         if debug:
             print("DATA:")
             print(data)
