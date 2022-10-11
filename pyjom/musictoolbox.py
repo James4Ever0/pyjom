@@ -333,8 +333,8 @@ def recognizeMusicFromFileShazamIO(
 
 def midomiSongRecognizationResultProcessMethod(data):
     trackData = data["AllResults"][0]["NativeData"]["Tracks"][0]
-    artist = data["ArtistName"]
-    trackName = data["TrackName"]
+    artist = trackData["ArtistName"]
+    trackName = trackData["TrackName"]
     data = {"artist": artist, "trackName": trackName}
     return data
 
@@ -398,7 +398,7 @@ def recognizeMusicFromFileMidomi(
 
 def recognizeMusicFromFile(
     filepath,
-    backend: Literal["songrec", "shazamio", "midomi"] = "midomi",
+    backend: Literal["songrec", "shazamio", "midomi", None] = None,
     raw_data=False,
     debug=False,
 ):  # if not returning raw_data, only track data and artist data are returned.
@@ -406,6 +406,12 @@ def recognizeMusicFromFile(
     # if returning raw_data, must also return the provider name, for easy parsing.
     # you can try all methods. but if all three methods fails, you know what to do. what indicates the recognizer has failed?
     # you can try something erotic.
+    if backend is None:  # auto
+        musicDuration = getAudioDuration(filepath)
+        if musicDuration <= 15:
+            backend = "midomi"
+        else:
+            backend = "songrec"
     methods = {
         "midomi": recognizeMusicFromFileMidomi,
         "songrec": recognizeMusicFromFileSongrec,
@@ -427,7 +433,7 @@ def recognizeMusicFromFile(
             else:
                 return success, data
         if debug:
-            break # no retry then.
+            break  # no retry then.
     if raw_data:
         return False, {}, ""
     return False, {}

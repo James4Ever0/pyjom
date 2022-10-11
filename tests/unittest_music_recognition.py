@@ -5,7 +5,8 @@ from lazero.utils.logger import sprint
 filepath = (
     "/root/Desktop/works/pyjom/tests/music_recognization/exciting_bgm_cut_10seconds.mp3"
 )
-methods = ["songrec", "shazamio", "midomi"]
+methods = ["midomi"]
+# methods = ["songrec", "shazamio", "midomi"]
 import time
 
 for method in methods:
