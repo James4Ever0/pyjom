@@ -227,3 +227,9 @@ def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
         demanded_cut_spans,
         standard_bpm_spans,
     )
+
+# for midomi we need to chop music apart.
+# for shazam, nope.
+# shazamio needs event loop. be careful!
+from typing import Literal
+def recognizeMusicFromFile(filepath, backend:Literal['songrec','shazamio','midomi']='midomi'): # you can try all methods.
