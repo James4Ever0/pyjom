@@ -5,7 +5,7 @@ import websockets
 
 async def hello():
     async with websockets.connect(url) as websocket:
-        await websocket.send({})
+        await websocket.send({ "version": "1.0" })
         await websocket.recv()
 
 asyncio.run(hello())
