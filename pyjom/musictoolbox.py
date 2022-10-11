@@ -282,20 +282,23 @@ def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=20, debug:b
     return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 def midomiSongRecognizationResultProcessMethod(data):
-    trackData = data[.AllResults[0]?.NativeData.Tracks[0];
-    if (!track) return null;
-    // let fullName = `${track.ArtistName} - ${track.TrackName}`;]
-    artist = data[]
-    trackName = data[]
+    trackData = data['AllResults'][0]['NativeData']['Tracks'][0]
+    artist = data['ArtistName']
+    trackName = data['TrackName']
     data = {'artist': artist, 'trackName': trackName}
     return data
 # what is the correct timeout for this one?
-def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3): # this one is different. maybe we can wait.
+def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3, segmentLength:int= 10): # this one is different. maybe we can wait.
+    musicLength = getMusicDuration(filepath)
+    needSegment = musicLength <= segmentLength
+    if needSegment:
+        maxRetry = 1
     for index in range(maxRetry):
         if debug:
             print('trial {} for midomi'.format(index+1))
         with ():
         with tmpfile(segmentName):
+            if needSegment:
         # you will change to given directory, will you?
         commandLine = ['ts-node',segmentName]
         success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
