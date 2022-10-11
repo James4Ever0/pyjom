@@ -1,3 +1,5 @@
+# launch netease api server. we need it to download new music, currently.
+
 cd /root/Desktop/works/pyjom/tests/karaoke_effects/
 gnome-terminal -- bash /root/Desktop/works/pyjom/tests/karaoke_effects/load_translator.sh
 
