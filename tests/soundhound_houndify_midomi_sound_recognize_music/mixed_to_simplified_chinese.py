@@ -14,3 +14,4 @@ cc = OpenCC('t2s')  # convert from Simplified Chinese to Traditional Chinese
 to_convert = testData
 converted = cc.convert(to_convert)
 print("CONVERTED: ", converted) # great.
+# similar song/bgm label in video/audio -> song fullname -> music platform -> download song with lyrics

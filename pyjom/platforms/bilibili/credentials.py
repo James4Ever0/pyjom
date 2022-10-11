@@ -30,7 +30,7 @@ def verifyCredential(credential, returnName=True):
         print("credential is valid for:", name)
         db.upsert(
             {
-                "name": credential.name,
+                "name": name, # does not show up in credential.
                 "dedeuserid": credential.dedeuserid,
                 "bili_jct": credential.bili_jct,
                 "buvid3": credential.buvid3,
