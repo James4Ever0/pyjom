@@ -10,4 +10,4 @@
 
 # asyncio.run(hello())
 # the nodejs works for soundhound right now.
-# move upon other platforms.
+# move upon other platforms: shazam (2 tools), netease.
