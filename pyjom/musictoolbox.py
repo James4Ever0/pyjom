@@ -233,8 +233,17 @@ def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
 # shazamio needs event loop. be careful!
 from typing import Literal
 def recognizeMusicFromFileSongrec(filepath):
+    return success, data
 def recognizeMusicFromFileShazamIO(filepath):
+    return success, data
 def recognizeMusicFromFileMidomi(filepath):
+    return success, data
 def recognizeMusicFromFile(filepath, backend:Literal['songrec','shazamio','midomi']='midomi'):
     # you can try all methods. but if all three methods fails, you know what to do. what indicates the recognizer has failed?
     # you can try something erotic.
+    methods = {'midomi':recognizeMusicFromFileMidomi,'songrec':recognizeMusicFromFileSongrec,'shazamio':recognizeMusicFromFileShazamIO}
+    keys = list(methods.keys())
+    keys.sort(key=lambda x: -int(x == backend))
+    for key in keys:
+        method = methods["midomi"]
+        success, data = 
