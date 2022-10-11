@@ -16,6 +16,7 @@ import math
 from pyjom.commons import *
 from pyjom.lyrictoolbox import read_lrc, getLyricNearbyBpmCandidates
 from pyjom.audiotoolbox import getAudioDuration
+import ffmpeg
 # musictoolbox
 def audioOwlAnalysis(myMusic):
     # get sample rate
@@ -288,6 +289,7 @@ def midomiSongRecognizationResultProcessMethod(data):
     data = {'artist': artist, 'trackName': trackName}
     return data
 # what is the correct timeout for this one?
+from lazero.filesystem.temp import tmpfile, getRandomFileNameUnderDirectoryWithExtension
 def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3, segmentLength:int= 10): # this one is different. maybe we can wait.
     musicLength = getAudioDuration(filepath)
     needSegment = musicLength <= segmentLength
@@ -296,18 +298,19 @@ def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool
     for index in range(maxRetry):
         if debug:
             print('trial {} for midomi'.format(index+1))
-        with ():
+        segmentName = getRandomFileNameUnderDirectoryWithExtension(extension,)
+        
         with tmpfile(segmentName):
             if needSegment:
                 start = random.uniform(0, musicLength-segmentLength)
                 end = start+segmentLength
-                ffmpeg.
+                ffmpeg.input(filepath, ss=start, to=end).output(segmentName).run(overwrite_output=True)
             else:
                 pathlib.Path(segmentName).touch()
                 segmentName = filepath
         # you will change to given directory, will you?
         commandLine = ['ts-node',segmentName]
-        success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
+        success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout, workingDirectory="")
         if success:
             break
     return success,data
