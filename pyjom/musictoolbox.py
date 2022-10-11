@@ -240,7 +240,12 @@ import subprocess
 # you can choose to return raw data or not. which is the raw json data.
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5):
     commandLine = ['songrec','audio-file-to-recognized-song','filepath']
-    subprocess.run(commandLine, timeout=timeout,)
+    result = subprocess.run(commandLine, timeout=timeout,capture_output=True)
+    assert result.returncode == 0
+    stdout = result.stdout
+    stdout = stdout.decode('utf-8')
+    output = json.loads(stdout)
+    return True,output
     return success, data
 
 
