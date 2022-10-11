@@ -275,15 +275,21 @@ def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=6, debug=Fal
     return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 
-def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=20):
+def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=20, debug:bool=False):
     # how to timeout this shit? use subprocess again?
     # maybe yes.
-    commandLine = ['python3','','--file',filepath]
+    commandLine = ['python3','/root/Desktop/works/pyjom/tests/soundhound_houndify_midomi_sound_recognize_music/shazamio_recognize_music.py','--file',filepath]
     return runCommandAndProcessSongRecognizationJson(commandLine, shazamSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 
-def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7): # this one is different. maybe we can wait.
-    return success, data
+# what is the correct timeout for this one?
+def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3): # this one is different. maybe we can wait.
+    for _ in range(maxRetry):
+        commandLine = []
+        success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
+        if success:
+            break
+    return success,data
 
 
 def recognizeMusicFromFile(
