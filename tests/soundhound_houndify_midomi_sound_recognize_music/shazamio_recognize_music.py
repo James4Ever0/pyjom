@@ -13,8 +13,8 @@ import json
 async def main():
     shazam = Shazam()
     out = await shazam.recognize_song(audioFile)
-    print(out)
-
+    jsonString = json.dumps(out, ensure_ascii=False,indent=4)
+    print(jsonString)
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
