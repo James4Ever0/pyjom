@@ -10,6 +10,7 @@
 
 # check AmadeusCore, /root/Desktop/works/pyjom/tests/music_recognization/AmadeusCore/src/components/app/models/
 
+from types import FunctionType
 import audioowl
 import math
 from pyjom.commons import *
@@ -251,7 +252,8 @@ def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False):
             traceback.print_exc()
     return False,{}
 
-def processSongRecognizationJson(success, data,processMethod, raw_data:bool=False,debug:bool=False):
+def runCommandAndProcessSongRecognizationJson(commandLine:list[str],processMethod:FunctionType, raw_data:bool=False,debug:bool=False, timeout:int=5):
+    success, data = runCommandGetJson(commandLine, debug=debug, timeout=timeout)
     if success:
         if not raw_data:
             # more processing. may alter the success flag.
@@ -265,14 +267,13 @@ def processSongRecognizationJson(success, data,processMethod, raw_data:bool=Fals
 
 # you can choose to return raw data or not. which is the raw json data.
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5, debug=False):
-    commandLine = ['songrec','audio-file-to-recognized-song','filepath']
-    success, data = runCommandGetJson(commandLine, debug=debug, timeout=timeout)
+    commandLine = ['songrec','audio-file-to-recognized-song',filepath]
     def processMethod(data):
         artist = data[]
         trackName = data[]
         data = {'artist': artist, 'trackName': trackName}
         return data
-    success, data = processSongRecognizationJson(success, data, processMethod, raw_data=raw_data, debug=debug, timeout=timeout)
+    return runCommandAndProcessSongRecognizationJson(commandLine, processMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 
 def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=7):
