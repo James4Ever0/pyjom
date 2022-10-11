@@ -11,3 +11,4 @@
 # asyncio.run(hello())
 # the nodejs works for soundhound right now.
 # move upon other platforms: shazam (2 tools), netease.
+# shazam works for our chinese songs. one problem: it has traditional chinese.
