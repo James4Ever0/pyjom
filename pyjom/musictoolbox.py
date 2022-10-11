@@ -269,8 +269,8 @@ def runCommandAndProcessSongRecognizationJson(commandLine:list[str],processMetho
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5, debug=False):
     commandLine = ['songrec','audio-file-to-recognized-song',filepath]
     def processMethod(data):
-        artist = data[]
-        trackName = data[]
+        artist = data['track']['subtitle']
+        trackName = data['track']['title']
         data = {'artist': artist, 'trackName': trackName}
         return data
     return runCommandAndProcessSongRecognizationJson(commandLine, processMethod, raw_data=raw_data, debug=debug, timeout=timeout)
