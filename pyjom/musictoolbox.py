@@ -15,7 +15,7 @@ import audioowl
 import math
 from pyjom.commons import *
 from pyjom.lyrictoolbox import read_lrc, getLyricNearbyBpmCandidates
-
+from pyjom.audiotoolbox import getAudioDuration
 # musictoolbox
 def audioOwlAnalysis(myMusic):
     # get sample rate
@@ -289,7 +289,7 @@ def midomiSongRecognizationResultProcessMethod(data):
     return data
 # what is the correct timeout for this one?
 def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool=False, maxRetry = 3, segmentLength:int= 10): # this one is different. maybe we can wait.
-    musicLength = getMusicDuration(filepath)
+    musicLength = getAudioDuration(filepath)
     needSegment = musicLength <= segmentLength
     if needSegment:
         maxRetry = 1
@@ -299,6 +299,12 @@ def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool
         with ():
         with tmpfile(segmentName):
             if needSegment:
+                start = random.uniform(0, musicLength-segmentLength)
+                end = start+segmentLength
+                ffmpeg.
+            else:
+                pathlib.Path(segmentName).touch()
+                segmentName = filepath
         # you will change to given directory, will you?
         commandLine = ['ts-node',segmentName]
         success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
