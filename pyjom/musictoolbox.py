@@ -266,7 +266,7 @@ def runCommandAndProcessSongRecognizationJson(commandLine:list[str],processMetho
     return success, data
 
 # you can choose to return raw data or not. which is the raw json data.
-def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5, debug=False):
+def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=6, debug=False):
     commandLine = ['songrec','audio-file-to-recognized-song',filepath]
     def processMethod(data):
         artist = data['track']['subtitle']
@@ -276,7 +276,7 @@ def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5, debug=Fal
     return runCommandAndProcessSongRecognizationJson(commandLine, processMethod, raw_data=raw_data, debug=debug, timeout=timeout)
 
 
-def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=7):
+def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=20):
     # how to timeout this shit? use subprocess again?
     # maybe yes.
     return success, data

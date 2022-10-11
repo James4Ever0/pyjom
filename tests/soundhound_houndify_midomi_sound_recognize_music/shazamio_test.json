@@ -1,0 +1,120 @@
+{
+    "matches": [
+        {
+            "id": "53448651",
+            "offset": 0.014303229999999998,
+            "timeskew": 2.2768974e-05,
+            "frequencyskew": 8.058548e-05
+        }
+    ],
+    "location": {
+        "accuracy": 0.01
+    },
+    "timestamp": 1665499579140,
+    "timezone": "Europe/Moscow",
+    "track": {
+        "layout": "5",
+        "type": "MUSIC",
+        "key": "53447829",
+        "title": "Last Friday Night (T.G.I.F.;Almighty Mixshow Edit)",
+        "subtitle": "Katy Perry",
+        "share": {
+            "subject": "Last Friday Night (T.G.I.F.;Almighty Mixshow Edit) - Katy Perry",
+            "text": "I used Shazam to discover Last Friday Night (T.G.I.F.;Almighty Mixshow Edit) by Katy Perry.",
+            "href": "https://www.shazam.com/track/53447829/last-friday-night-tgifalmighty-mixshow-edit",
+            "twitter": "I used @Shazam to discover Last Friday Night (T.G.I.F.;Almighty Mixshow Edit) by Katy Perry.",
+            "html": "https://www.shazam.com/snippets/email-share/53447829?lang=en&country=GB",
+            "snapchat": "https://www.shazam.com/partner/sc/track/53447829"
+        },
+        "hub": {
+            "type": "APPLEMUSIC",
+            "image": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic_{scalefactor}.png",
+            "options": [
+                {
+                    "caption": "OPEN IN",
+                    "actions": [
+                        {
+                            "name": "hub:applemusic:subscribe",
+                            "type": "applemusicopen",
+                            "uri": "https://music.apple.com/subscribe?mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                        },
+                        {
+                            "name": "hub:applemusic:subscribe",
+                            "type": "uri",
+                            "uri": "https://music.apple.com/subscribe?mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                        }
+                    ],
+                    "beacondata": {
+                        "type": "open",
+                        "providername": "applemusic"
+                    },
+                    "image": "https://images.shazam.com/static/icons/hub/ios/v5/overflow-open-option_{scalefactor}.png",
+                    "type": "open",
+                    "listcaption": "Open in Apple Music",
+                    "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic-overflow_{scalefactor}.png",
+                    "colouroverflowimage": false,
+                    "providername": "applemusic"
+                }
+            ],
+            "providers": [
+                {
+                    "caption": "Open in Spotify",
+                    "images": {
+                        "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/spotify-overflow_{scalefactor}.png",
+                        "default": "https://images.shazam.com/static/icons/hub/ios/v5/spotify_{scalefactor}.png"
+                    },
+                    "actions": [
+                        {
+                            "name": "hub:spotify:searchdeeplink",
+                            "type": "uri",
+                            "uri": "spotify:search:Last%20Friday%20Night%20%28T.G.I.F.%3BAlmighty%20Mixshow%20Edit%29%20Katy%20Perry"
+                        }
+                    ],
+                    "type": "SPOTIFY"
+                },
+                {
+                    "caption": "Open in Deezer",
+                    "images": {
+                        "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/deezer-overflow_{scalefactor}.png",
+                        "default": "https://images.shazam.com/static/icons/hub/ios/v5/deezer_{scalefactor}.png"
+                    },
+                    "actions": [
+                        {
+                            "name": "hub:deezer:searchdeeplink",
+                            "type": "uri",
+                            "uri": "deezer-query://www.deezer.com/play?query=%7Btrack%3A%27Last+Friday+Night+%28T.G.I.F.%3BAlmighty+Mixshow+Edit%29%27%20artist%3A%27Katy+Perry%27%7D"
+                        }
+                    ],
+                    "type": "DEEZER"
+                }
+            ],
+            "explicit": false,
+            "displayname": "APPLE MUSIC"
+        },
+        "sections": [
+            {
+                "type": "SONG",
+                "metapages": [],
+                "tabname": "Song",
+                "metadata": [
+                    {
+                        "title": "Title",
+                        "text": "Last Friday Night (T.G.I.F.;Almighty Mixshow Edit)"
+                    }
+                ]
+            },
+            {
+                "type": "VIDEO",
+                "tabname": "Video",
+                "youtubeurl": "https://cdn.shazam.com/video/v3/-/GB/iphone/53447829/youtube/video?q=Katy+Perry+%22Last+Friday+Night+(T.G.I.F.;Almighty+Mixshow+Edit)%22"
+            }
+        ],
+        "url": "https://www.shazam.com/track/53447829/last-friday-night-tgifalmighty-mixshow-edit",
+        "urlparams": {
+            "{tracktitle}": "Last+Friday+Night+%28T.G.I.F.%3BAlmighty+Mixshow+Edit%29",
+            "{trackartist}": "Katy+Perry"
+        },
+        "highlightsurls": {}
+    },
+    "tagid": "66A60C02-E1B8-42F3-B6BD-0E48E1BA1EF0"
+}

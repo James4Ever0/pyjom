@@ -17,4 +17,6 @@ async def main():
     print(jsonString)
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
+loop.run_until_complete(main()) # 12 seconds or something. 20 secs most?
+
+# suggest to use songrec. the quickest.
