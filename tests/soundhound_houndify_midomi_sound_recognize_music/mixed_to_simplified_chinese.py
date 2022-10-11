@@ -3,8 +3,13 @@ testData = """mixed content 我 從來沒想過我
 不經意間傷了你的心
 如果 我們還有可 简体中文在这里 绝对是简体"""
 
-import pyopencc
-CN2TW = pyopencc.OpenCC('zhs2zhtw_vp.ini').convert
-
-if __name__ == '__main__':
-  print(CN2TW("中国鼠标软件打印机"))
+# pip3 install opencc-python-reimplemented
+# import opencc
+from opencc import OpenCC
+cc = OpenCC('t2s')  # convert from Simplified Chinese to Traditional Chinese
+# you can also try s2t
+# can also set conversion by calling set_conversion
+# cc.set_conversion('s2tw')
+to_convert = testData
+converted = cc.convert(to_convert)
+print("CONVERTED: ", converted) # great.
