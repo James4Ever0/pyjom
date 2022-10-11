@@ -243,22 +243,24 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 
 mimetypes.init()
 
-
-def waitForServerUp(port, message, timeout=1):
+def waitForServerUp(port, message, timeout=1, messageLength:Union[None, int]=None):
     import requests
 
     while True:
         try:
             url = "http://localhost:{}".format(port)
             with requests.get(url, timeout=timeout) as r:
-                if type(message) == str:
-                    text = r.text.strip('"').strip("'")
+                if messageLength is not None:
+                    contentLength = r.content
                 else:
-                    text = r.json()
-                print("SERVER AT PORT %d RESPONDS:" % port, [text])
-                assert text == message
-                print("SERVER AT PORT %d IS UP" % port)
-                break
+                    elif type(message) == str:
+                        text = r.text.strip('"').strip("'")
+                    else:
+                        text = r.json()
+                    print("SERVER AT PORT %d RESPONDS:" % port, [text])
+                    assert text == message
+                    print("SERVER AT PORT %d IS UP" % port)
+                    break
         except:
             import traceback
 
