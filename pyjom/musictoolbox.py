@@ -247,5 +247,13 @@ def recognizeMusicFromFile(filepath, backend:Literal['songrec','shazamio','midom
     keys = list(methods.keys())
     keys.sort(key=lambda x: -int(x == backend))
     for key in keys:
-        method = methods["midomi"]
+        method = methods[key]
         success, data = method(filepath)
+        if success:
+            if raw_data:
+                return success, data, key
+            else:
+                return success, data
+    if raw_data:
+        return False, {}, ""
+    return False, {}
