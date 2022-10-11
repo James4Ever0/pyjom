@@ -237,15 +237,25 @@ def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
 from typing import Literal
 import subprocess
 
+def runCommandGetJson(commandLine:list[str],timeout:int=5):
+    result = subprocess.run(commandLine, timeout=timeout,capture_output=True)
+    try:
+        assert result.returncode == 0
+        stdout = result.stdout
+        stdout = stdout.decode('utf-8')
+        output = json.loads(stdout)
+        return True,output
+    except:
+        import traceback
+        traceback.print_exc()
+    return False,{}
+
 # you can choose to return raw data or not. which is the raw json data.
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5):
     commandLine = ['songrec','audio-file-to-recognized-song','filepath']
-    result = subprocess.run(commandLine, timeout=timeout,capture_output=True)
-    assert result.returncode == 0
-    stdout = result.stdout
-    stdout = stdout.decode('utf-8')
-    output = json.loads(stdout)
-    return True,output
+    success, data = runCommandGetJson(commandLine)
+    if success:
+        if not raw_data:
     return success, data
 
 
