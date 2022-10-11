@@ -8,6 +8,8 @@
 
 # diffusion based painter, ai colorization, video editing is for artworktoolbox. maybe the naming is not right/necessary.
 
+# check AmadeusCore, /root/Desktop/works/pyjom/tests/music_recognization/AmadeusCore/src/components/app/models/
+
 import audioowl
 import math
 from pyjom.commons import *
