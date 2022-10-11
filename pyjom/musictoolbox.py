@@ -426,6 +426,8 @@ def recognizeMusicFromFile(
                 return success, data, key
             else:
                 return success, data
+        if debug:
+            break # no retry then.
     if raw_data:
         return False, {}, ""
     return False, {}
