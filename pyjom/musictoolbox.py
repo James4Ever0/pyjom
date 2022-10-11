@@ -14,6 +14,7 @@ import audioowl
 import math
 from pyjom.commons import *
 from pyjom.lyrictoolbox import read_lrc, getLyricNearbyBpmCandidates
+
 # musictoolbox
 def audioOwlAnalysis(myMusic):
     # get sample rate
@@ -78,6 +79,7 @@ def getMusicCutSpansCandidates(
 
     candidates = sorted_lyrics_nearby_bpm_candidates + sorted_remained_bpm_candidates
     return candidates, standard_bpm_spans
+
 
 # musictoolbox
 def getMusicCutSpans(
@@ -228,22 +230,38 @@ def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
         standard_bpm_spans,
     )
 
+
 # for midomi we need to chop music apart.
 # for shazam, nope.
 # shazamio needs event loop. be careful!
 from typing import Literal
+
 # you can choose to return raw data or not. which is the raw json data.
-def recognizeMusicFromFileSongrec(filepath, raw_data=False):
+def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5):
     return success, data
-def recognizeMusicFromFileShazamIO(filepath, raw_data=False):
+
+
+def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=5):
     return success, data
-def recognizeMusicFromFileMidomi(filepath, raw_data=False):
+
+
+def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7): # this one is different. maybe we can wait.
     return success, data
-def recognizeMusicFromFile(filepath, backend:Literal['songrec','shazamio','midomi']='midomi', raw_data=False): # if not returning raw_data, only track data and artist data are returned.
+
+
+def recognizeMusicFromFile(
+    filepath,
+    backend: Literal["songrec", "shazamio", "midomi"] = "midomi",
+    raw_data=False,
+):  # if not returning raw_data, only track data and artist data are returned.
     # if returning raw_data, must also return the provider name, for easy parsing.
     # you can try all methods. but if all three methods fails, you know what to do. what indicates the recognizer has failed?
     # you can try something erotic.
-    methods = {'midomi':recognizeMusicFromFileMidomi,'songrec':recognizeMusicFromFileSongrec,'shazamio':recognizeMusicFromFileShazamIO}
+    methods = {
+        "midomi": recognizeMusicFromFileMidomi,
+        "songrec": recognizeMusicFromFileSongrec,
+        "shazamio": recognizeMusicFromFileShazamIO,
+    }
     keys = list(methods.keys())
     keys.sort(key=lambda x: -int(x == backend))
     for key in keys:
