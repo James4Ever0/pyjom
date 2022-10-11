@@ -232,13 +232,15 @@ def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
 # for shazam, nope.
 # shazamio needs event loop. be careful!
 from typing import Literal
-def recognizeMusicFromFileSongrec(filepath):
+# you can choose to return raw data or not. which is the raw json data.
+def recognizeMusicFromFileSongrec(filepath, raw_data=False):
     return success, data
-def recognizeMusicFromFileShazamIO(filepath):
+def recognizeMusicFromFileShazamIO(filepath, raw_data=False):
     return success, data
-def recognizeMusicFromFileMidomi(filepath):
+def recognizeMusicFromFileMidomi(filepath, raw_data=False):
     return success, data
-def recognizeMusicFromFile(filepath, backend:Literal['songrec','shazamio','midomi']='midomi'):
+def recognizeMusicFromFile(filepath, backend:Literal['songrec','shazamio','midomi']='midomi', raw_data=False): # if not returning raw_data, only track data and artist data are returned.
+    # if returning raw_data, must also return the provider name, for easy parsing.
     # you can try all methods. but if all three methods fails, you know what to do. what indicates the recognizer has failed?
     # you can try something erotic.
     methods = {'midomi':recognizeMusicFromFileMidomi,'songrec':recognizeMusicFromFileSongrec,'shazamio':recognizeMusicFromFileShazamIO}
@@ -246,4 +248,4 @@ def recognizeMusicFromFile(filepath, backend:Literal['songrec','shazamio','midom
     keys.sort(key=lambda x: -int(x == backend))
     for key in keys:
         method = methods["midomi"]
-        success, data = 
+        success, data = method(filepath)
