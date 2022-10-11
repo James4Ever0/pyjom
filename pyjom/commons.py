@@ -1,4 +1,6 @@
 from pyjom.config import *
+from typing import Union
+
 import datetime
 import os
 import shutil
@@ -508,7 +510,6 @@ def json_auto_float_int(jsonObj):
     return jsonObj
 
 
-from typing import Union
 
 
 def ffprobe_media_info(filename, video_size: Union[None, str] = None):

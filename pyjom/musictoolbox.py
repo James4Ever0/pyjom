@@ -11,6 +11,7 @@
 # check AmadeusCore, /root/Desktop/works/pyjom/tests/music_recognization/AmadeusCore/src/components/app/models/
 
 from types import FunctionType
+from typing import Union
 import audioowl
 import math
 from pyjom.commons import *
