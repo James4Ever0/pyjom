@@ -240,8 +240,8 @@ from typing import Literal
 import subprocess
 import traceback
 
-def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False, shell:bool=False):
-    result = subprocess.run(commandLine, timeout=timeout,capture_output=True, shell=shell)
+def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False, shell:bool=False, workingDirectory:Union[str, None]=None):
+    result = subprocess.run(commandLine, timeout=timeout,capture_output=True, shell=shell,cwd=workingDirectory)
     try:
         assert result.returncode == 0
         stdout = result.stdout
@@ -253,8 +253,8 @@ def runCommandGetJson(commandLine:list[str],timeout:int=5, debug:bool=False, she
             traceback.print_exc()
     return False,{}
 
-def runCommandAndProcessSongRecognizationJson(commandLine:list[str],processMethod:FunctionType, raw_data:bool=False,debug:bool=False, timeout:int=5):
-    success, data = runCommandGetJson(commandLine, debug=debug, timeout=timeout)
+def runCommandAndProcessSongRecognizationJson(commandLine:list[str],processMethod:FunctionType, raw_data:bool=False,debug:bool=False, timeout:int=5, workingDirectory:Union[None, str]=None):
+    success, data = runCommandGetJson(commandLine, debug=debug, timeout=timeout, workingDirectory=workingDirectory)
     if success:
         if not raw_data:
             # more processing. may alter the success flag.
@@ -316,8 +316,8 @@ def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool
                 pathlib.Path(segmentName).touch()
                 segmentName = filepath
         # you will change to given directory, will you?
-        commandLine = ['ts-node',segmentName]
-        success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout, workingDirectory="")
+            commandLine = ['npx', 'ts-node' ,'midomi_music_recognize.ts',segmentName]
+            success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout, workingDirectory="/root/Desktop/works/pyjom/tests/music_recognization/AmadeusCore")
         if success:
             break
     return success,data
