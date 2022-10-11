@@ -253,6 +253,7 @@ def recognizeMusicFromFile(
     filepath,
     backend: Literal["songrec", "shazamio", "midomi"] = "midomi",
     raw_data=False,
+    debug=False,
 ):  # if not returning raw_data, only track data and artist data are returned.
     # if returning raw_data, must also return the provider name, for easy parsing.
     # you can try all methods. but if all three methods fails, you know what to do. what indicates the recognizer has failed?
@@ -267,6 +268,11 @@ def recognizeMusicFromFile(
     for key in keys:
         method = methods[key]
         success, data = method(filepath)
+        if debug:
+            print("DATA:")
+            print(data)
+            print("RETURN FROM MUSIC RECOGNIZE METHOD: %s" % key)
+            print("SUCCESS:", success)
         if success:
             if raw_data:
                 return success, data, key
