@@ -235,9 +235,11 @@ def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
 # for shazam, nope.
 # shazamio needs event loop. be careful!
 from typing import Literal
+import subprocess
 
 # you can choose to return raw data or not. which is the raw json data.
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5):
+    commandLine = ['songrec',audio-file-to-recognized-song 'filepath']
     return success, data
 
 
@@ -255,6 +257,7 @@ def recognizeMusicFromFile(
     raw_data=False,
     debug=False,
 ):  # if not returning raw_data, only track data and artist data are returned.
+    assert os.path.exists(filepath)
     # if returning raw_data, must also return the provider name, for easy parsing.
     # you can try all methods. but if all three methods fails, you know what to do. what indicates the recognizer has failed?
     # you can try something erotic.
