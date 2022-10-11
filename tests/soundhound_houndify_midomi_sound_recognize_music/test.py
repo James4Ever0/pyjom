@@ -14,3 +14,6 @@
 # shazam works for our chinese songs. one problem: it has traditional chinese.
 # better convert traditional chinese to simplified chinese, for better searching experience.
 # or you bet it. maybe another way of censorship circumvention?
+# apt-get install opencc
+
+# you need to filter out those parts without singing voice, if download music from kugou/qq music
