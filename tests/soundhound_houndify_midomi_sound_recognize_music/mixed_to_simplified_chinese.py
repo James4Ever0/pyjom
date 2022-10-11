@@ -4,8 +4,9 @@ testData = """mixed content 我 從來沒想過我
 如果 我們還有可 简体中文在这里 绝对是简体"""
 
 # pip3 install opencc-python-reimplemented
+# pip3 install opencc (if you want to)
 # import opencc
-from opencc import OpenCC
+from opencc import OpenCC # all the same.
 cc = OpenCC('t2s')  # convert from Simplified Chinese to Traditional Chinese
 # you can also try s2t
 # can also set conversion by calling set_conversion
