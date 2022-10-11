@@ -1,0 +1,331 @@
+{
+  "location": {
+    "accuracy": 0.01,
+    "altitude": 300.0,
+    "latitude": 45.0,
+    "longitude": 2.0
+  },
+  "matches": [
+    {
+      "frequencyskew": -0.00028187037,
+      "id": "209373900",
+      "offset": 89.19014843699999,
+      "timeskew": 0.031404495
+    },
+    {
+      "frequencyskew": 0.00013804436,
+      "id": "212442923",
+      "offset": 89.091078125,
+      "timeskew": 0.030490518
+    },
+    {
+      "frequencyskew": 0.007843733,
+      "id": "493467390",
+      "offset": 534.317375,
+      "timeskew": 0.007938623
+    }
+  ],
+  "tagid": "b78423fe-d600-4d94-8973-8461c3c2d0a9",
+  "timestamp": 3330436607,
+  "timezone": "Europe/Paris",
+  "track": {
+    "albumadamid": "716153185",
+    "artists": [
+      {
+        "adamid": "64387566",
+        "id": "42"
+      }
+    ],
+    "genres": {
+      "primary": "Teen Pop"
+    },
+    "highlightsurls": {
+      "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en/US/android/64387566/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am&videoIdToFilter=1365317790",
+      "trackhighlighturl": "https://cdn.shazam.com/video/v3/en/US/android/highlights/1365317790?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am"
+    },
+    "hub": {
+      "actions": [
+        {
+          "id": "716153612",
+          "name": "apple",
+          "type": "applemusicplay"
+        },
+        {
+          "name": "apple",
+          "type": "uri",
+          "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/7a/c8/1a/7ac81aa3-e0c5-efbb-e487-2ce891bf5aea/mzaf_10711866960058631235.plus.aac.ep.m4a"
+        }
+      ],
+      "displayname": "APPLE MUSIC",
+      "explicit": false,
+      "image": "https://images.shazam.com/static/icons/hub/android/v5/applemusic_{scalefactor}.png",
+      "options": [
+        {
+          "actions": [
+            {
+              "name": "hub:applemusic:deeplink",
+              "type": "intent",
+              "uri": "intent://music.apple.com/us/album/last-friday-night-t-g-i-f/716153185?i=716153612&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_android_am&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_android_am#Intent;scheme=http;package=com.apple.android.music;action=android.intent.action.VIEW;end"
+            },
+            {
+              "id": "716153612",
+              "name": "hub:applemusic:connect",
+              "type": "applemusicconnect",
+              "uri": "https://unsupported.shazam.com"
+            },
+            {
+              "name": "hub:applemusic:androidstore",
+              "type": "uri",
+              "uri": "https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=https%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fmttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am"
+            }
+          ],
+          "beacondata": {
+            "providername": "applemusic",
+            "type": "open"
+          },
+          "caption": "OPEN",
+          "colouroverflowimage": false,
+          "image": "https://images.shazam.com/static/icons/hub/android/v5/overflow-open-option_{scalefactor}.png",
+          "listcaption": "Open in Apple Music",
+          "overflowimage": "https://images.shazam.com/static/icons/hub/android/v5/applemusic-overflow_{scalefactor}.png",
+          "providername": "applemusic",
+          "type": "open"
+        }
+      ],
+      "providers": [
+        {
+          "actions": [
+            {
+              "name": "hub:spotify:searchdeeplink",
+              "type": "uri",
+              "uri": "spotify:search:Last%20Friday%20Night%20%28T.G.I.F.%29%20Katy%20Perry"
+            }
+          ],
+          "caption": "Open in Spotify",
+          "images": {
+            "default": "https://images.shazam.com/static/icons/hub/android/v5/spotify_{scalefactor}.png",
+            "overflow": "https://images.shazam.com/static/icons/hub/android/v5/spotify-overflow_{scalefactor}.png"
+          },
+          "type": "SPOTIFY"
+        },
+        {
+          "actions": [
+            {
+              "name": "hub:youtubemusic:androiddeeplink",
+              "type": "uri",
+              "uri": "https://music.youtube.com/search?q=Last+Friday+Night+%28T.G.I.F.%29+Katy+Perry&feature=shazam"
+            }
+          ],
+          "caption": "Open in YouTube Music",
+          "images": {
+            "default": "https://images.shazam.com/static/icons/hub/android/v5/youtubemusic_{scalefactor}.png",
+            "overflow": "https://images.shazam.com/static/icons/hub/android/v5/youtubemusic-overflow_{scalefactor}.png"
+          },
+          "type": "YOUTUBEMUSIC"
+        },
+        {
+          "actions": [
+            {
+              "name": "hub:deezer:searchdeeplink",
+              "type": "uri",
+              "uri": "deezer-query://www.deezer.com/play?query=%7Btrack%3A%27Last+Friday+Night+%28T.G.I.F.%29%27%20artist%3A%27Katy+Perry%27%7D"
+            }
+          ],
+          "caption": "Open in Deezer",
+          "images": {
+            "default": "https://images.shazam.com/static/icons/hub/android/v5/deezer_{scalefactor}.png",
+            "overflow": "https://images.shazam.com/static/icons/hub/android/v5/deezer-overflow_{scalefactor}.png"
+          },
+          "type": "DEEZER"
+        }
+      ],
+      "type": "APPLEMUSIC"
+    },
+    "images": {
+      "background": "https://is3-ssl.mzstatic.com/image/thumb/Features112/v4/4b/23/19/4b2319f0-d705-9c27-f6bc-ab127cb4b9cd/mza_656989125661554021.png/800x800cc.jpg",
+      "coverart": "https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/04/9d/ba/049dbaef-e018-f641-2c82-4599ec755b19/13UABIM57788.rgb.jpg/400x400cc.jpg",
+      "coverarthq": "https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/04/9d/ba/049dbaef-e018-f641-2c82-4599ec755b19/13UABIM57788.rgb.jpg/400x400cc.jpg",
+      "joecolor": "b:d6c5cdp:0f0d0ds:120d0et:373133q:393234"
+    },
+    "isrc": "USCA21001264",
+    "key": "52639454",
+    "layout": "5",
+    "relatedtracksurl": "https://cdn.shazam.com/shazam/v3/en/US/android/-/tracks/track-similarities-id-52639454?startFrom=0&pageSize=20&connected=",
+    "sections": [
+      {
+        "metadata": [
+          {
+            "text": "Teenage Dream",
+            "title": "Album"
+          },
+          {
+            "text": "Capitol Records",
+            "title": "Label"
+          },
+          {
+            "text": "2010",
+            "title": "Released"
+          }
+        ],
+        "metapages": [
+          {
+            "caption": "Katy Perry",
+            "image": "https://is3-ssl.mzstatic.com/image/thumb/Features112/v4/4b/23/19/4b2319f0-d705-9c27-f6bc-ab127cb4b9cd/mza_656989125661554021.png/800x800cc.jpg"
+          },
+          {
+            "caption": "Last Friday Night (T.G.I.F.)",
+            "image": "https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/04/9d/ba/049dbaef-e018-f641-2c82-4599ec755b19/13UABIM57788.rgb.jpg/400x400cc.jpg"
+          }
+        ],
+        "tabname": "Song",
+        "type": "SONG"
+      },
+      {
+        "beacondata": {
+          "commontrackid": "10302056",
+          "lyricsid": "28512079",
+          "providername": "musixmatch"
+        },
+        "footer": "Writer(s): Katheryn Elizabeth Hudson, Bonnie Leigh Mckee, Lukasz Gottwald, Martin Max Sandberg\nLyrics powered by www.musixmatch.com",
+        "tabname": "Lyrics",
+        "text": [
+          "Ayo, Katy! Let's hit 'em with this remix, baby",
+          "(T.G.I.F., T.G.I.F., T.G.I.F.)",
+          "Oh, let's go",
+          "",
+          "It's a Friday night, now here we go",
+          "I ain't no strippin', but I work the pole",
+          "Bartender, can you pour some more?",
+          "And I'm so tipsy, comin' out my clothes",
+          "",
+          "Fly high, high, high",
+          "And I can't see, so I can't drive",
+          "I party 'til I'm out my mind",
+          "I kiss on him, but he don't mind",
+          "",
+          "Then I wake up in the morn",
+          "I got a guy in my bed like, \"Hello, good morn\"",
+          "Don't remember how I got him home",
+          "But Friday night, it was nice and long",
+          "",
+          "Last Friday night",
+          "Yeah, we danced on table tops",
+          "And we took too many shots",
+          "Think we kissed, but I forgot",
+          "",
+          "Last Friday night",
+          "Yeah, we maxed our credit cards",
+          "And got kicked out of the bars",
+          "So we hit the boulevard",
+          "",
+          "Last Friday night",
+          "We went streaking in the park",
+          "Skinny dipping in the dark",
+          "Then had a ménage à trois",
+          "",
+          "Last Friday night",
+          "Yeah, I think we broke the law",
+          "Always say we're gonna stop-op, ooh-whoa",
+          "",
+          "This Friday night, do it all again",
+          "This Friday night, do it all again",
+          "",
+          "Trying to connect the dots",
+          "Don't know what to tell my boss",
+          "Think the city towed my car",
+          "Chandelier is on the floor",
+          "",
+          "Ripped my favorite party dress",
+          "Warrant's out for my arrest",
+          "Think I need a ginger ale",
+          "That was such an epic fail",
+          "",
+          "Pictures of last night ended up online",
+          "I'm screwed, oh, well",
+          "It's a blacked out blur, but I'm pretty sure it ruled",
+          "Damn",
+          "",
+          "Last Friday night",
+          "Yeah, we danced on table tops",
+          "And we took too many shots",
+          "Think we kissed, but I forgot",
+          "",
+          "Last Friday night",
+          "Yeah, we maxed our credit cards",
+          "And got kicked out of the bars",
+          "So we hit the boulevard",
+          "",
+          "Last Friday night",
+          "We went streaking in the park",
+          "Skinny dipping in the dark",
+          "Then had a ménage à trois",
+          "",
+          "Last Friday night",
+          "Yeah, I think we broke the law",
+          "Always say we're gonna stop-op, ooh-whoa",
+          "",
+          "This Friday night, do it all again (do it all again)",
+          "This Friday night, do it all again (do it all again)",
+          "This Friday night",
+          "",
+          "T.G.I.F., T.G.I.F.",
+          "Let's do this shit like every weekend",
+          "T.G.I.F., T.G.I.F., T.G.I.F.",
+          "Now pour my drink 'til there ain't nothing left",
+          "T.G.I.F., T.G.I.F., T.G.I.F.",
+          "",
+          "Last Friday night",
+          "Yeah, we danced on table tops",
+          "And we took too many shots",
+          "Think we kissed, but I forgot",
+          "",
+          "Last Friday night",
+          "Yeah, we maxed our credit cards",
+          "And got kicked out of the bars",
+          "So we hit the boulevard",
+          "",
+          "Last Friday night",
+          "We went streaking in the park",
+          "Skinny dipping in the dark",
+          "Then had a ménage à trois",
+          "",
+          "Last Friday night",
+          "Yeah, I think we broke the law",
+          "Always say we're gonna stop-op, ooh-whoa",
+          "",
+          "This Friday night, do it all again"
+        ],
+        "type": "LYRICS",
+        "url": "https://cdn.shazam.com/lyrics/v1/en/US/android/musixmatch/subtitles/10302056/231/1?token=a404e90675799e06f4d1f8268ef4d0db"
+      },
+      {
+        "tabname": "Video",
+        "type": "VIDEO",
+        "youtubeurl": "https://cdn.shazam.com/video/v3/-/US/android/52639454/youtube/video?q=Katy+Perry+%22Last+Friday+Night+(T.G.I.F.)%22"
+      },
+      {
+        "tabname": "Related",
+        "type": "RELATED",
+        "url": "https://cdn.shazam.com/shazam/v3/en/US/android/-/tracks/track-similarities-id-52639454?startFrom=0&pageSize=20&connected="
+      }
+    ],
+    "share": {
+      "avatar": "https://is3-ssl.mzstatic.com/image/thumb/Features112/v4/4b/23/19/4b2319f0-d705-9c27-f6bc-ab127cb4b9cd/mza_656989125661554021.png/800x800cc.jpg",
+      "href": "https://www.shazam.com/track/52639454/last-friday-night-t-g-i-f",
+      "html": "https://www.shazam.com/snippets/email-share/52639454?lang=en&country=US",
+      "image": "https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/04/9d/ba/049dbaef-e018-f641-2c82-4599ec755b19/13UABIM57788.rgb.jpg/400x400cc.jpg",
+      "snapchat": "https://www.shazam.com/partner/sc/track/52639454",
+      "subject": "Last Friday Night (T.G.I.F.) - Katy Perry",
+      "text": "I used Shazam to discover Last Friday Night (T.G.I.F.) by Katy Perry.",
+      "twitter": "I used @Shazam to discover Last Friday Night (T.G.I.F.) by Katy Perry."
+    },
+    "subtitle": "Katy Perry",
+    "title": "Last Friday Night (T.G.I.F.)",
+    "type": "MUSIC",
+    "url": "https://www.shazam.com/track/52639454/last-friday-night-t-g-i-f",
+    "urlparams": {
+      "{trackartist}": "Katy+Perry",
+      "{tracktitle}": "Last+Friday+Night+%28T.G.I.F.%29"
+    }
+  }
+}
