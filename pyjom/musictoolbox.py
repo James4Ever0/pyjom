@@ -291,8 +291,10 @@ def recognizeMusicFromFileMidomi(filepath, raw_data=False, timeout=7, debug:bool
     for index in range(maxRetry):
         if debug:
             print('trial {} for midomi'.format(index+1))
+        with ():
         with tmpfile(segmentName):
-        commandLine = ['node',segmentName]
+        # you will change to given directory, will you?
+        commandLine = ['ts-node',segmentName]
         success, data = runCommandAndProcessSongRecognizationJson(commandLine, midomiSongRecognizationResultProcessMethod, raw_data=raw_data, debug=debug, timeout=timeout)
         if success:
             break
