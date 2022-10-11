@@ -23,7 +23,6 @@ from lazero.utils.logger import sprint
 from functools import lru_cache
 
 
-
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     # demo output:
     # {'programs': [], 'streams': [{'bit_rate': '130770'}]}
@@ -60,11 +59,13 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         return stdout_json
     except:
         import traceback
+
         traceback.print_exc()
         print("potential error logs:")
         print(stderr)
         print("error when getting media bitrate")
         return {}
+
 
 def getFileExtensionToMeaningDictFromString(inputString):
     inputStringList = inputString.split("\n")
@@ -85,6 +86,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
             if len(extension) > 0:
                 fileExtensionToMeaningDict.update({extension: meaning})
     return fileExtensionToMeaningDict
+
 
 @lru_cache(maxsize=1)
 def getMediaFileExtensionToMeaningDict():
@@ -225,6 +227,7 @@ def frameSizeFilter(frameMeta, frame_size_filter):
         return False
     return True
 
+
 from lazero.utils.mathlib import checkMinMaxDict
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
@@ -243,7 +246,10 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 
 mimetypes.init()
 
-def waitForServerUp(port, message, timeout=1, messageLength:Union[None, int]=None):
+
+def waitForServerUp(
+    port, message, timeout=1, messageLength: Union[None, int] = None  # for netease.
+):  # this messageLength is the length of the binary message.
     import requests
 
     while True:
@@ -251,9 +257,11 @@ def waitForServerUp(port, message, timeout=1, messageLength:Union[None, int]=Non
             url = "http://localhost:{}".format(port)
             with requests.get(url, timeout=timeout) as r:
                 if messageLength is not None:
-                    contentLength = r.content
+                    contentLength = len(r.content)
+                    if messageLength <= contentLength:
+                        break
                 else:
-                    elif type(message) == str:
+                    if type(message) == str:
                         text = r.text.strip('"').strip("'")
                     else:
                         text = r.json()
@@ -645,7 +653,6 @@ def getTemplateFileBaseDir(tmpDir="templates"):
 
 
 yolov5_model = None
-
 
 
 @lru_cache(maxsize=1)
