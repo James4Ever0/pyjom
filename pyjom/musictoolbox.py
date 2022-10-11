@@ -239,11 +239,14 @@ import subprocess
 
 # you can choose to return raw data or not. which is the raw json data.
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=5):
-    commandLine = ['songrec',audio-file-to-recognized-song 'filepath']
+    commandLine = ['songrec','audio-file-to-recognized-song','filepath']
+    subprocess.run(commandLine, timeout=timeout,)
     return success, data
 
 
-def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=5):
+def recognizeMusicFromFileShazamIO(filepath, raw_data=False, timeout=7):
+    # how to timeout this shit? use subprocess again?
+    # maybe yes.
     return success, data
 
 
