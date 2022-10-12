@@ -30,7 +30,7 @@ def verifyCredential(credential, returnName=True):
         print("credential is valid for:", name)
         db.upsert(
             {
-                "name": name, # does not show up in credential.
+                "name": name,  # does not show up in credential.
                 "dedeuserid": credential.dedeuserid,
                 "bili_jct": credential.bili_jct,
                 "buvid3": credential.buvid3,
@@ -63,7 +63,9 @@ def removeCredentialByDedeUserId(dedeuserid: str):
         )
         return False
 
+
 from lazero.program.functools import skipException
+
 
 @skipException()
 def getCredentialViaSMS():
@@ -76,6 +78,7 @@ def getCredentialViaSMS():
     # first, check if this is a valid credential.
     name = verifyCredential(credential)
     return credential, name
+
 
 def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
     dataList = db.search(User.dedeuserid == dedeuserid)
@@ -91,7 +94,7 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
         data = dataList[0].copy()
         print("try to login credential fetched from db:", data)
         oldName = data.pop("name")
-        print('previous name:', oldName)
+        print("previous name:", oldName)
         credential = Credential(**data)
         name = verifyCredential(credential)
         if name != False:
@@ -99,13 +102,15 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
             return credential
         else:
             print("login failed with existing credential for user:", oldName)
-            removeCredentialByDedeUserId(dedeuserid) # warning. my credential has been removed because of that async problem. please relogin.
+            removeCredentialByDedeUserId(
+                dedeuserid
+            )  # warning. my credential has been removed because of that async problem. please relogin.
     # anyway if you are here, nothing in database related to this dedeuserid now.
     # you choose to login via SMS.
     while True:
         # could be troublesome.
         result = getCredentialViaSMS()
-        if result !=None:
+        if result != None: # has type check here?
             credential, name = result
             if name != False:
                 print("登录成功")
@@ -122,8 +127,10 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
         else:
             print("登陆失败")
 
+
 def bilibiliCredential(func):
     def wrapper(*args, dedeuserid="397424026", **kwargs):
         credential = getCredentialByDedeUserId(dedeuserid)
         return func(*args, credential=credential, **kwargs)
+
     return wrapper
