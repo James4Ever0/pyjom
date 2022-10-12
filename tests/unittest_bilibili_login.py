@@ -1,9 +1,11 @@
 from test_commons import *
-from pyjom.platforms.bilibili.credentials import getCredentialViaSMS
+from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId, getCredentialViaSMS
 
-myvalue = getCredentialViaSMS()
-print(myvalue)
-
+# myvalue = getCredentialViaSMS()
+# print(myvalue)
+val = getCredentialByDedeUserId()
+print(val)
+# you may want to remove database.
 # how the fuck you can do that?
 # not possible. "RETURN OUTSIDE OF FUNCTION"
 # def myfunction():
