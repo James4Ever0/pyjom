@@ -176,7 +176,7 @@ def ffmpegVideoPreProductionFilter(
     if "randomFlip" in filters:
         if random.random() > 0.5:
             mDict.update({"hflip": [(start, end)]})
-    if "superResolution" in filters:
+    if "superResolution" in filters: # not working for extremely poor quality images. however, we can fetch these video elsewhere. no need to repair.
         mDict.update({"scale_w=iw*2:h=ih*2:flags=lanczos": [(start, end)]})
         # how to parse this shit?
     simpleFilters = ["minterpolate", "removegrain", "bilateral"]
