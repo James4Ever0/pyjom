@@ -3,6 +3,7 @@
 // try to disable security? disable ssl-spdy and spdy
 ////////////////////////////////////////////////////////////////////////
 
+// try this first anyway.
 setTimeout(function () {
     console.log('start——*-*-*-*-*-');
    Java.perform(function () {
