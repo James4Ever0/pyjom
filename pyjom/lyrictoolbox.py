@@ -362,13 +362,13 @@ def textArrayWithTranslatedListToAss(
             "method": "romaji",
             "style": "Romaji",
             "cutOneByOne": False,
-            "charShift": 45,
+            "charShift": 35,
         },  # this is default. you can change this.
         "translated": {
             "method": "kanji",
             "style": "Kanji",
             "cutOneByOne": True,
-            "charShift": 30,
+            "charShift": 25, # smaller?
         },
     }
     # newTextArray = [] # dummy shit. must be removed immediately.
