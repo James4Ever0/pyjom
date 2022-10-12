@@ -1,8 +1,15 @@
+import os
+credpath = "/root/.bilibili_api.json"
+if os.path.exists(credpath):
+    os.remove(credpath)
+
 from test_commons import *
+
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId, getCredentialViaSMS
 
 # myvalue = getCredentialViaSMS()
 # print(myvalue)
+
 val = getCredentialByDedeUserId()
 print(val)
 # you may want to remove database.
