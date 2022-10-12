@@ -25,6 +25,12 @@ from lazero.utils.logger import sprint
 from functools import lru_cache
 
 
+def shuffleAndPopFromList(mlist):
+    import random
+    random.shuffle(mlist)
+    return mlist.pop(0)
+
+
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     # demo output:
     # {'programs': [], 'streams': [{'bit_rate': '130770'}]}
