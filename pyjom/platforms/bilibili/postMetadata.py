@@ -38,7 +38,7 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
     if not pop:
         selected_tags = random.sample(tag_list, selected_tag_groups)
     else:
-        selected_tags = [shuffleAndPopFromList(tag_list) for _ in range(selected_tag_per_group)]
+        selected_tags = [shuffleAndPopFromList(tag_list) for _ in range(selected_tag_groups)]
     selected_tags = [
         random.sample(tags, min(len(tags), selected_tag_per_group))
         for tags in selected_tags
