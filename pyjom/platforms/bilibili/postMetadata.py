@@ -82,7 +82,7 @@ def getCoverTargetFromCoverListDefault(
         )
 
         image = imageLoader(cover)
-        cropped_image = filter_function(image)
+        cropped_image = filter_function(image) # we should do something to the filter function!
         if cropped_image is not None:
             if histogramMatch:
                 cropped_image = imageHistogramMatch(
