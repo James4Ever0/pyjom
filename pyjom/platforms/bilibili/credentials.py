@@ -64,10 +64,11 @@ def removeCredentialByDedeUserId(dedeuserid: str):
         return False
 
 
-from lazero.program.functools import skipException
+# from lazero.program.functools import skipException
 
 
-@skipException(defaultReturn = None, breakpoint_flag=True, debug_flag=True, global_variables=globals(), local_variables=locals()) # send_sms is not definded here. WTF?
+# @skipException(defaultReturn = None, breakpoint_flag=True, debug_flag=True, global_variables=globals(), local_variables=locals()) # send_sms is not definded here. WTF?
+@suppressException(defaultReturn=None, showException=True) # trycatch based.
 def getCredentialViaSMS():
     phone = input("请输入手机号：")
     print("正在登录。")
