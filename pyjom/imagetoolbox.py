@@ -459,10 +459,11 @@ from typing import Literal
 
 def resizeImageWithPadding(
     image,
-    width,
-    height,
+    width:Union[int, None],
+    height:Union[int, None],
     border_type: Literal["constant_black", "replicate"] = "constant_black",
 ):
+    assert any([type(param) == int for param in [width, height]])
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape

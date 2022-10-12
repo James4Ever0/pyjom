@@ -82,6 +82,8 @@ def getCoverTargetFromCoverListDefault(
         )
 
         image = imageLoader(cover)
+        # downscale this image first.
+        from pyjom.imagetoolbox import 
         cropped_image = filter_function(image) # we should do something to the filter function!
         if cropped_image is not None:
             if histogramMatch:
