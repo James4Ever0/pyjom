@@ -8,10 +8,11 @@
 from mimetypes import suffix_map
 from os import SCHED_FIFO
 from socket import _SendableFile
-from xml.dom.pulldom import SAX2DOM
+from xml.dom.pulldom    import \
+    SAX2DOM
 
 
-print('aaa'
+    print('aaa'
         ) # there is no repairing on this bracket for autopep8
 
 # about the dog_or_cat recognition of our cover:
