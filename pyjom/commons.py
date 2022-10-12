@@ -1,5 +1,6 @@
 from pyjom.config import *
 from typing import Union
+from pyjom.mathlib import checkMinMaxDict
 
 import datetime
 import os
@@ -23,6 +24,7 @@ import random
 os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
 from functools import lru_cache
+
 
 
 def shuffleAndPopFromList(mlist):
@@ -236,7 +238,6 @@ def frameSizeFilter(frameMeta, frame_size_filter):
     return True
 
 
-from lazero.utils.mathlib import checkMinMaxDict
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
 os.environ["USE_NVIDIA_OPENCV"] = "yes"
