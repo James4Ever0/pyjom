@@ -1,1 +1,1 @@
-mitm
+mitmproxy -r logs.log
