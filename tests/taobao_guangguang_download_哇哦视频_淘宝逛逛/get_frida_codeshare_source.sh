@@ -1,0 +1,1 @@
+curl "https://codeshare.frida.re/@Gand3lf/xamarin-antiroot/" 2>/dev/null | grep "projectSource: " | sed 's/$/'
