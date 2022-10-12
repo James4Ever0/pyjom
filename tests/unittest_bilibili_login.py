@@ -19,6 +19,11 @@ else:
     # how the fuck you can do that?
     # not possible. "RETURN OUTSIDE OF FUNCTION"
     def myfunction():
-        exec('val= 1234'+';break'*1000000)
+        try:
+            # exec('val= 1234'+';break'*1000)
+            val = eval('1234')
+        except:
+            ...
+        print(val)
     value = myfunction()
     print(value)
