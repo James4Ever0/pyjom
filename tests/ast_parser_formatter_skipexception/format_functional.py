@@ -1,0 +1,1 @@
+code = with open('test.py')
