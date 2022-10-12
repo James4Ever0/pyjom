@@ -33,12 +33,17 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
     return newTitleList
 
 
-def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=2, pop=True):
+def randomChoiceTagList(
+    tag_list, selected_tag_groups=3, selected_tag_per_group=2, pop=True
+):
     import random
+
     if not pop:
         selected_tags = random.sample(tag_list, selected_tag_groups)
     else:
-        selected_tags = [shuffleAndPopFromList(tag_list) for _ in range(selected_tag_groups)]
+        selected_tags = [
+            shuffleAndPopFromList(tag_list) for _ in range(selected_tag_groups)
+        ]
     selected_tags = [
         random.sample(tags, min(len(tags), selected_tag_per_group))
         for tags in selected_tags
@@ -55,8 +60,8 @@ from pyjom.imagetoolbox import resizeImageWithPadding
 def getCoverTargetFromCoverListDefault(
     cover_list,
     dog_or_cat_original,
-    input_width:int=1200,
-    output_width:int=1920,
+    input_width: int = 1200,
+    output_width: int = 1920,
     filter_function=lambda image: image,
     histogramMatch=True,
     delta=0.2,
@@ -73,9 +78,10 @@ def getCoverTargetFromCoverListDefault(
     cover_target = None
 
     # for cover in cover_list:
-    while len(cover_list)>0:
+    while len(cover_list) > 0:
         cover = shuffleAndPopFromList(cover_list)
         import os
+
         os.environ["http"] = ""
         os.environ["https"] = ""
         from pyjom.imagetoolbox import (
@@ -86,8 +92,12 @@ def getCoverTargetFromCoverListDefault(
 
         image = imageLoader(cover)
         # downscale this image first.
-        image = resizeImageWithPadding(image, input_width, None,border_type='replicate') # are you sure? it is just a cover image.
-        cropped_image = filter_function(image) # we should do something to the filter function!
+        image = resizeImageWithPadding(
+            image, input_width, None, border_type="replicate"
+        )  # are you sure? it is just a cover image.
+        cropped_image = filter_function(
+            image
+        )  # we should do something to the filter function!
         if cropped_image is not None:
             if histogramMatch:
                 cropped_image = imageHistogramMatch(
@@ -98,7 +108,9 @@ def getCoverTargetFromCoverListDefault(
             cover_target = cropped_image
             break
     if cover_target is not None:
-        cover_target = resizeImageWithPadding(cover_target, output_width, None, border_type='replicate') # this is strange.
+        cover_target = resizeImageWithPadding(
+            cover_target, output_width, None, border_type="replicate"
+        )  # this is strange.
     return cover_target
 
 
@@ -114,9 +126,9 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
         dog_or_cat_original,
         filter_function=lambda image: imageDogCatCoverCropAdvanced(
             image,
-            yolov5_confidence_threshold=0.27, # you made it smaller.
-            dog_or_cat=dog_or_cat_original,
-            area_threshold=0.35, # 0.7 # could be smaller.
+            yolov5_confidence_threshold=0.27,  # you made it smaller.
+            dog_or_cat=dog_or_cat_original,  # already configured. no need to do shit.
+            area_threshold=0.30,  # 0.7 # could be smaller.
             corner=False,
         ),
     )
@@ -216,7 +228,7 @@ def getBilibiliPostMetadata(
 
             from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult
 
-            from pyjom.commons import checkMinMaxDict
+            from pyjom.mathlib import checkMinMaxDict
 
             def updateMyLists(
                 videoMetadata,
@@ -401,7 +413,9 @@ def getBilibiliPostMetadata(
                                 # image = cv2.imdecode(content, cv2.IMREAD_COLOR)
                                 # mCover = random.choice(filtered_cover_list) # what is this cover list?
                                 # mDescription = random.choice(filtered_description_list)
-                                mDescription = shuffleAndPopFromList(filtered_description_list)
+                                mDescription = shuffleAndPopFromList(
+                                    filtered_description_list
+                                )
                                 if cover_target is not None:
                                     # you want to pop these things?
                                     mTagSeries = randomChoiceTagList(
