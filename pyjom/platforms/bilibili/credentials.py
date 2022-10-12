@@ -63,6 +63,18 @@ def removeCredentialByDedeUserId(dedeuserid: str):
         )
         return False
 
+from lazero.program.functools import skipException
+@skipException()
+def getCredentialViaSMS():
+    phone = input("请输入手机号：")
+    print("正在登录。")
+    send_sms(PhoneNumber(phone, country="+86"))  # 默认设置地区为中国大陆
+    code = input("请输入验证码：")
+    c = login_with_sms(PhoneNumber(phone, country="+86"), code)
+    credential = c
+    # first, check if this is a valid credential.
+    name = verifyCredential(credential)
+    return credential, name
 
 def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
     dataList = db.search(User.dedeuserid == dedeuserid)
@@ -91,27 +103,21 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
     # you choose to login via SMS.
     while True:
         # could be troublesome.
-        def getCredentialViaSMS():
-            phone = input("请输入手机号：")
-            print("正在登录。")
-            send_sms(PhoneNumber(phone, country="+86"))  # 默认设置地区为中国大陆
-            code = input("请输入验证码：")
-            c = login_with_sms(PhoneNumber(phone, country="+86"), code)
-            credential = c
-            # first, check if this is a valid credential.
-            name = verifyCredential(credential)
-        if name != False:
-            print("登录成功")
-            # update with this credential!
-            # next, check if this is the credential we need.
-            if credential.dedeuserid == dedeuserid:
-                return credential
-            else:
-                print("dedeuserid not right.")
-                print(
-                    "user %s (dedeuserid: %s) does not have dedeuserid: %s"
-                    % (name, credential.dedeuserid, dedeuserid)
-                )
+        result = getCredentialViaSMS()
+        if result !=None:
+            credential, name = result
+            if name != False:
+                print("登录成功")
+                # update with this credential!
+                # next, check if this is the credential we need.
+                if credential.dedeuserid == dedeuserid:
+                    return credential
+                else:
+                    print("dedeuserid not right.")
+                    print(
+                        "user %s (dedeuserid: %s) does not have dedeuserid: %s"
+                        % (name, credential.dedeuserid, dedeuserid)
+                    )
         else:
             print("登陆失败")
 
