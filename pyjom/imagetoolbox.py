@@ -459,14 +459,19 @@ from typing import Literal
 
 def resizeImageWithPadding(
     image,
-    width:Union[int, None],
-    height:Union[int, None],
+    width: Union[int, None],
+    height: Union[int, None],
     border_type: Literal["constant_black", "replicate"] = "constant_black",
 ):
     assert any([type(param) == int for param in [width, height]])
     shape = image.shape
     assert len(shape) == 3
     ih, iw, channels = shape
+    if width is None:
+        width = max(1, math.floor((height / ih) * iw))
+    if height is None:
+        height = max(1, math.floor((width / iw) * ih))
+
     targetWidth = min(width, math.floor(iw * height / ih))
     targetHeight = min(height, math.floor(ih * width / iw))
     resized = cv2.resize(
