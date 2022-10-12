@@ -33,7 +33,7 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
     return newTitleList
 
 
-def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=2):
+def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=2, pop=True):
     import random
 
     selected_tags = random.sample(tag_list, selected_tag_groups)
@@ -61,14 +61,16 @@ def getCoverTargetFromCoverListDefault(
 
     if flip == "random":
         flip = random.choice([True, False])
-    random.shuffle(cover_list)
-    reference_histogram_cover = random.choice(cover_list)
+    # random.shuffle(cover_list)
+    # reference_histogram_cover = random.choice(cover_list)
+    reference_histogram_cover = shuffleAndPopFromList(cover_list)
 
     cover_target = None
 
-    for cover in cover_list:
+    # for cover in cover_list:
+    while len(cover_list)>0:
+        cover = shuffleAndPopFromList(cover_list)
         import os
-
         os.environ["http"] = ""
         os.environ["https"] = ""
         from pyjom.imagetoolbox import (
@@ -378,6 +380,7 @@ def getBilibiliPostMetadata(
                                 # time to yield something.
                                 # detect this thing!
                                 # filtered_cover_list = []
+                                # this method needs to change. the cover_list.
                                 cover_target = getCoverTargetFromCoverList(
                                     cover_list,
                                     dog_or_cat_original,  # this is the label of the selected metatopic. might be useful.
@@ -388,7 +391,8 @@ def getBilibiliPostMetadata(
                                 # # corrupted or not?
                                 # image = cv2.imdecode(content, cv2.IMREAD_COLOR)
                                 # mCover = random.choice(filtered_cover_list) # what is this cover list?
-                                mDescription = random.choice(filtered_description_list)
+                                # mDescription = random.choice(filtered_description_list)
+                                mDescription = shuffleAndPopFromList(filtered_description_list)
                                 if cover_target is not None:
                                     # you want to pop these things?
                                     mTagSeries = randomChoiceTagList(
