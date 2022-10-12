@@ -67,7 +67,7 @@ def removeCredentialByDedeUserId(dedeuserid: str):
 from lazero.program.functools import skipException
 
 
-@skipException(defaultReturn = None)
+@skipException(defaultReturn = None, )
 def getCredentialViaSMS():
     phone = input("请输入手机号：")
     print("正在登录。")
