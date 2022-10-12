@@ -1,0 +1,1 @@
+two main problems, one is to detect identical video files, one is to find 'repeated interval' inside each other.
