@@ -47,9 +47,10 @@ def ffmpegVideoPreProductionFilter(
         "logoRemoval",
         "randomFlip",  # these are common
         "superResolution",  # optional below
+        "minterpolate",
         # "minterpolate_mi_mode=blend", # this might be the problem.
-        # "removegrain",
-        # "bilateral",
+        "removegrain",
+        "bilateral",
     ],
     preview=True,
     # padding=True,
