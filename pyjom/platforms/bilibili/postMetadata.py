@@ -49,11 +49,14 @@ def randomChoiceTagList(tag_list, selected_tag_groups=3, selected_tag_per_group=
 
 
 from typing import Literal
+from pyjom.imagetoolbox import resizeImageWithPadding
 
 
 def getCoverTargetFromCoverListDefault(
     cover_list,
     dog_or_cat_original,
+    input_width:int=1200,
+    output_width:int=1920,
     filter_function=lambda image: image,
     histogramMatch=True,
     delta=0.2,
@@ -83,8 +86,7 @@ def getCoverTargetFromCoverListDefault(
 
         image = imageLoader(cover)
         # downscale this image first.
-        from pyjom.imagetoolbox import resizeImageWithPadding
-        
+        image = resizeImageWithPadding(image, input_width, None,border_type='replicate') # are you sure? it is just a cover image.
         cropped_image = filter_function(image) # we should do something to the filter function!
         if cropped_image is not None:
             if histogramMatch:
@@ -95,6 +97,8 @@ def getCoverTargetFromCoverListDefault(
                 cropped_image = cv2.flip(cropped_image, 1)
             cover_target = cropped_image
             break
+    if cover_target is not None:
+        cover_target = resizeImageWithPadding(cover_target, output_width, None, border_type='replicate') # this is strange.
     return cover_target
 
 
