@@ -390,11 +390,15 @@ def getBilibiliPostMetadata(
                                 # mCover = random.choice(filtered_cover_list) # what is this cover list?
                                 mDescription = random.choice(filtered_description_list)
                                 if cover_target is not None:
+                                    # you want to pop these things?
                                     mTagSeries = randomChoiceTagList(
-                                        tag_list
+                                        tag_list, pop=True
                                     )  # a collection of tags.
-                                    mTitle = random.choice(filtered_title_list)
-                                    mBgm = random.choice(bgm_list)
+                                    # mTitle = random.shuffle(filtered_title_list)
+                                    mTitle = shuffleAndPopFromList(filtered_title_list)
+                                    # mBgm = random.choice(bgm_list)
+                                    # really serious?
+                                    mBgm = shuffleAndPopFromList(bgm_list)
                                     yield cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid  # one additional return value
                                     clearMyLists()
         except:
