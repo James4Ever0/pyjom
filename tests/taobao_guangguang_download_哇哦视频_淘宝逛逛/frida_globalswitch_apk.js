@@ -12,6 +12,11 @@ setTimeout(function () {
            console.log("开启抓包" + ret);
            return false;
        }
+       SwitchConfig.isGlobalSpdySslSwitchOpen.overload().implementation = function () {
+        var ret = this.isGlobalSpdySslSwitchOpen.apply(this, arguments);
+        console.log("开启抓包" + ret);
+        return false;
+       }
    });
 });
 // ————————————————
