@@ -1,8 +1,22 @@
 
 ////////////////////////////////////////////////////////////////////////
-// try to disable security?
+// try to disable security? disable ssl-spdy and spdy
 ////////////////////////////////////////////////////////////////////////
 
+setTimeout(function () {
+    console.log('start——*-*-*-*-*-');
+   Java.perform(function () {
+       var SwitchConfig = Java.use('mtopsdk.mtop.global.SwitchConfig');
+       SwitchConfig.isGlobalSpdySwitchOpen.overload().implementation = function () {
+           var ret = this.isGlobalSpdySwitchOpen.apply(this, arguments);
+           console.log("开启抓包" + ret);
+           return false;
+       }
+   });
+});
+// ————————————————
+// 版权声明：本文为CSDN博主「哈里哈气」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+// 原文链接：https://blog.csdn.net/qq_34067821/article/details/103203549
 
 ////////////////////////////////////////////////////////////////////////
 // print class names
