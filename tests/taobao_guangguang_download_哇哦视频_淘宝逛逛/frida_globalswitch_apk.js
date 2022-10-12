@@ -1,4 +1,5 @@
- 
+// program name: com.taobao.taobao
+
 function hook_spdy(){
     var SwitchConfig = Java.use('mtopsdk.mtop.global.SwitchConfig');
     SwitchConfig.isGlobalSpdySwitchOpen.overload().implementation = function(){
