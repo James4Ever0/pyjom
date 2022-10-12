@@ -103,8 +103,9 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
         dog_or_cat_original,
         filter_function=lambda image: imageDogCatCoverCropAdvanced(
             image,
+            yolov5_confidence_threshold=0.27, # you made it smaller.
             dog_or_cat=dog_or_cat_original,
-            area_threshold=0.7,
+            area_threshold=0.35, # 0.7 # could be smaller.
             corner=False,
         ),
     )
