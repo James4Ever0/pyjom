@@ -51,6 +51,7 @@ setTimeout(function () {
 // // Java.perform(function () {
 // //     // Function to hook is defined here
 // //     //所有响应
+// in this apk we do not find 'Response' shit.
 // //     var Response = Java.use('mtopsdk.network.domain.Response');
 // //     Response.$init.overload('mtopsdk.network.domain.Response$Builder').implementation = function() {
 // //         //PrintStack()
