@@ -33,4 +33,6 @@ connection = connections.connect(
 from pymilvus import Collection
 collection = Collection("book")      # Get an existing collection.
 collection.load()
+
+# seems hard to setup.
 # not started!
