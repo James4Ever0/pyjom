@@ -20,12 +20,13 @@ try:
     utility.drop_collection(collection_name)
 except:
     import traceback
+
     traceback.print_exc()
     print("maybe the collection does not exist")
 
 from pymilvus import CollectionSchema, FieldSchema, DataType
 
-video_semantic_id = FieldSchema(
+video_semantic_id = FieldSchema(  # how to insert this shit without prior knowledge?
     name="video_semantic_id",
     dtype=DataType.INT64,
     is_primary=True,
@@ -34,7 +35,9 @@ video_length = FieldSchema(
     name="video_length",
     dtype=DataType.FLOAT,
 )
-video_phash = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64)  # 64
+video_phash = FieldSchema(
+    name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64
+)  # 64
 # single dimension? no multi dimension support?
 schema = CollectionSchema(
     fields=[video_semantic_id, video_length, video_phash],
@@ -53,7 +56,7 @@ collection = Collection(
 # seems hard to setup.
 # not started!
 # https://milvus.io/docs/v2.0.0/metric.md#binary
- 
+# the metric is important to us.
 search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}
 import numpy as np
 
@@ -76,7 +79,7 @@ import bitarray
 queryData = bitarray.bitarray("".join(queryData), endian="little")
 queryData = queryData.tobytes()
 # dimension: 8*8=64
-collection.insert([[1], [np.float32(3.5)], [queryData]])
+collection.insert([[None], [np.float32(3.5)], [queryData]])
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
