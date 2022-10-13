@@ -12,8 +12,32 @@ connection = connections.connect(
   port='19530'
 )
 
+
+
 from pymilvus import Collection
-collection = Collection("video")      # Get an existing collection.
+
+from pymilvus import CollectionSchema, FieldSchema, DataType
+book_id = FieldSchema(
+  name="video_semantic_id", 
+  dtype=DataType.INT64, 
+  is_primary=True, 
+)
+word_count = FieldSchema(
+  name="video_length", 
+  dtype=DataType.FLOAT,  
+)
+book_intro = FieldSchema(
+  name="video_phash", 
+  dtype=DataType.BINARY_VECTOR, 
+  dim=2
+)
+schema = CollectionSchema(
+  fields=[book_id, word_count, book_intro], 
+  description="Test video deduplication"
+)
+collection_name = "video"
+
+# collection = Collection("video")      # Get an existing collection.
 
 # is this demo collection?
 collection.load()
