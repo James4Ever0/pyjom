@@ -1,4 +1,4 @@
 # we need suggestion, related topics, also search results.
 # can be used in title generation.
 
-# keyword -> suggested query -> search results -> extract 
+# title/message as query (-> keyword -> suggested query) -> search results -> extract response/title
