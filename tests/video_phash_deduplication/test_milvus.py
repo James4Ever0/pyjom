@@ -104,8 +104,11 @@ collection.insert([[np.float32(3.5)], [queryData3]])  # more difference.
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
-collection.load()
+# collection.load()
 collection.insert([[np.float32(3.5)], [queryData]]) # still three.
+
+# can release even if not loaded.
+collection.release() # unload.
 collection.load()
 
 # insert after load?
