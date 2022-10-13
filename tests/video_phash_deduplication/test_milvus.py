@@ -79,7 +79,6 @@ collection.insert([[1], [np.float32(3.5)], [queryData]])
 # # print(queryData.shape)
 # breakpoint()
 collection.load()
-collection.
 
 # # 1,64
 # what is wrong? wtf?
@@ -92,4 +91,4 @@ results = collection.search(
     expr=None,
     consistency_level="Strong",
 )
-print(results)
+print(results[0].ids)
