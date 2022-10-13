@@ -35,10 +35,15 @@ schema = CollectionSchema(
   fields=[book_id, word_count, book_intro], 
   description="Test video deduplication"
 )
-collection_name = "video"
+collection_name = "video_deduplication"
 
 # collection = Collection("video")      # Get an existing collection.
-
+collection = Collection(
+    name=collection_name, 
+    schema=schema, 
+    using='default', 
+    shards_num=2,
+    )
 # is this demo collection?
 collection.load()
 
@@ -48,7 +53,7 @@ search_params = {"metric_type": "L2", "params": {"nprobe": 10}}
 
 results = collection.search(
 	data=[[0.1, 0.2]], 
-	anns_field="book_intro", 
+	anns_field="video_phash", 
 	param=search_params, 
 	limit=10,
 	expr=None,

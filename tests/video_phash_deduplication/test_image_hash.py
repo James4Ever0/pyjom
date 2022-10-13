@@ -12,11 +12,11 @@ hashs = [imagehash.phash(Image.open(pic)) for pic in pics]
 dis0 = hashs[0]-hashs[1]
 dis1 = hashs[1]-hashs[2]
 
-print(dis0, dis1)
 # 0 24
 # 6 24
 
 # well, let's check?
-# print(hashs)
+print(hashs)
+print(dis0, dis1)
 # three truth tables.
 # 2^4 = 16, total 2*8 digits=16?
