@@ -5,4 +5,6 @@
 
 # suggestion, trending topics/keywords
 
-# black hat seo, 
+# black hat seo, https://www.blackhatworld.com/forums/black-hat-seo.28/
+
+# paste your link 'elsewhere', submit your link somehow
