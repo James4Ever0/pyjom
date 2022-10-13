@@ -185,12 +185,14 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
         def upload(
             self,
             filepath,
-            title,
-            tid,
+            cover_path,
+            metadata,
+            title="",
+            tid=0,
             tag="",
             desc="",
             source="",
-            cover_path="",
+            # cover_path="",
             dynamic="",
             mission_id=None,
             no_reprint=1,
@@ -243,6 +245,7 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
                     }
                 ],
             }
+            params.update(metadata)
             if source:
                 del params["no_reprint"]
             if mission_id is None:
@@ -251,6 +254,7 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
             response = self.session.post(url, json=params)
             print("SET VIDEO INFO:", response.text, file=sys.stderr)
             return response.json()
+            ## what is this fucking json?
 
     # def checkFile(cf):
     #     assert os.path.isabs(cf)
@@ -288,15 +292,8 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
         uper = Uploader(cookie_string)
         uper.upload(
                 filepath,
-                title,
-                tid,
-                tag=tag,
-                desc=desc,
-                source=source,
-                cover_path=cover_path,
-                dynamic=dynamic,
-                mission_id=mission_id,
-                no_reprint=no_reprint,
+                coverpath,
+                metadata
         )
         return True
     except:
