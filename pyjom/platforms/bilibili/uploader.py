@@ -10,7 +10,12 @@ import os
 # WTF is the order?
 
 ##############################################################
-def videoMultithreadUploader(cookies_dict: dict = ...):
+def videoMultithreadUploader(
+    cookies_dict: dict = ...,
+    filepath: str = ...,
+    coverpath: str = ...,
+    metadata: dict = ...,
+):
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
     import os
@@ -184,19 +189,19 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
 
         def upload(
             self,
-            filepath,
-            cover_path,
-            metadata,
-            title="",
-            tid=0,
-            tag="",
-            desc="",
-            source="",
-            # cover_path="",
-            dynamic="",
-            mission_id=None,
-            no_reprint=1,
+            filepath: str,
+            cover_path: str,
+            metadata: dict,
         ):
+            title = ""
+            tid = 0
+            tag = ""
+            desc = ""
+            source = ""
+            # cover_path="",
+            dynamic = ""
+            mission_id = None
+            no_reprint = 1
             """视频投稿
             Args:
                 filepath   : 视频文件路径
@@ -216,6 +221,7 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
             # 上传文件, 获取上传信息
             upload_info = self._upload(filepath)
             if not upload_info:
+                ## fuck?
                 return
             # 获取图片链接
             cover_url = self._cover_up(cover_path) if cover_path else ""
@@ -290,11 +296,7 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
     # while True:
     try:
         uper = Uploader(cookie_string)
-        uper.upload(
-                filepath,
-                coverpath,
-                metadata
-        )
+        uper.upload(filepath, coverpath, metadata)
         return True
     except:
         print("Exception found when uploading video.")
