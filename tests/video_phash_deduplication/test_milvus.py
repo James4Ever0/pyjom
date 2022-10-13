@@ -5,12 +5,12 @@
 
 # import pymilvus
 from pymilvus import connections
-form functools import lru_cache
+from functools import lru_cache
 
 @lru_cache(maxsize=1)
-def connectMilvusDatabase():
-	connection = connections.connect(alias="default", host="localhost", port="19530")# can we reconnect?
-	print('milconnected')
+def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
+	connection = connections.connect(alias=alias, host=host, port=port)# can we reconnect?
+	print('milvus connected')
 
 connectMilvusDatabase()
 connectMilvusDatabase() # will not connect again.
