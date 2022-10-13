@@ -7,4 +7,4 @@
 
 # black hat seo, https://www.blackhatworld.com/forums/black-hat-seo.28/
 
-# paste your link 'elsewhere', submit your link somehow
+# paste your link 'elsewhere', submit your link to search engine somehow, visit your link from search engine somehow
