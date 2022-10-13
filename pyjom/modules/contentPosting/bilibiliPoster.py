@@ -27,7 +27,7 @@ def BilibiliPoster(
     # anyway let's write for video.
     # there are two generators. what do you want?
     # getPostMetadata = lambda: postMetadataGenerator.__next__()
-
+    @retry()
     def postContent(elem):  # what is this elem? please check for video producer.
         with tmpdir(path=tempdir):
             postMetadata = getPostMetadata()
@@ -50,6 +50,7 @@ def BilibiliPoster(
                 ) = postMetadata  # assumptions on video type.
                 # you can fetch this from database. you can pickle this thing.
                 tagString = ",".join(mTagSeries)
+                # will have exceptions when having name clash. handle it!
                 with tmpfile(cover_path):
                     cv2.imwrite(cover_path, cover_target)
                     # you need to save this 'cover_target' to file.
