@@ -65,7 +65,11 @@ queryData = np.array(
         [False, False, True, False, False, True, False, False],
     ]
 )
-queryData = queryData.reshape(1,-1)
+queryData = queryData.reshape(1,-1).tolist()
+print(queryData.shape)
+breakpoint()
+# 1,64
+# what is wrong? wtf?
 # queryData = queryData.tolist()
 results = collection.search(
     data=queryData,  # this is the float dimension.
