@@ -30,6 +30,7 @@ video_semantic_id = FieldSchema(  # how to insert this shit without prior knowle
     name="video_semantic_id",
     dtype=DataType.INT64,
     is_primary=True,
+	auto_id=True # no need for id generation.
 )
 video_length = FieldSchema(
     name="video_length",
@@ -79,8 +80,9 @@ import bitarray
 queryData = bitarray.bitarray("".join(queryData), endian="little")
 queryData = queryData.tobytes()
 # dimension: 8*8=64
-collection.insert([[1], [np.float32(3.5)], [queryData]])
-collection.insert([[1], [np.float32(3.5)], [queryData]])
+# collection.insert([[1], [np.float32(3.5)], [queryData]])
+collection.insert([[np.float32(3.5)], [queryData]])
+collection.insert([[np.float32(3.5)], [queryData]])
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
