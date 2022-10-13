@@ -262,27 +262,6 @@ def videoMultithreadUploader(
             return response.json()
             ## what is this fucking json?
 
-    # def checkFile(cf):
-    #     assert os.path.isabs(cf)
-    #     assert os.path.exists(cf)
-    #     assert os.path.isfile(cf)
-
-    # if __name__ == '__main__':
-    # parser = argparse.ArgumentParser(description='上传bilibili视频')
-    # parser.add_argument('-k','--json', help="full cookie dump json absolute path", required=True)
-    # parser.add_argument('-f', '--file', help='video file absolute path', required=True)
-    #    parser.add_argument('-t', '--title', help='标题', required=True)
-    #    parser.add_argument('-c', '--channel', type=int, help='频道id, 详见https://member.bilibili.com/x/web/archive/pre', required=True)
-    #    parser.add_argument('-T', '--tag', nargs='*', help='标签')
-    # parser.add_argument("-m","--metadata", help="json metadata of post information absolute path", required = True)
-    # parser.add_argument('-c', '--cover', help="cover picture absolute path")
-    # args = parser.parse_args()
-    # class videoPostData:
-    #     def __init__(self, file, json, metadata, cover):
-    #         self.file = file
-    #         self.json = json
-    #         self.metadata = metadata
-    #         self.cover =cover
     cookies = cookies_dict
     mustcook = ["DedeUserID", "bili_jct"]
     cookie_string = ""
@@ -328,6 +307,7 @@ def uploadVideo(
 ):
     assert os.path.exists(videoPath)
     assert os.path.exists(cover_path)
+    {'buvid3','DedeUserID','bili_jct','SESSDATA'}
     # videoExtension = videoPath.split(".")[-1].lower()
     # credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # you can pass it from somewhere else.
