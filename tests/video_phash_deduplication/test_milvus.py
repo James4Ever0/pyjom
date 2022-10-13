@@ -106,9 +106,12 @@ results = collection.search(
     param=search_params,
 	output_fields=["video_length"],
     limit=10,
-    expr=None,
+    expr='video_length > 1.2 and video_length < 4',
+    # expr='video_length < 1.2',
 )
 theHit = results[0]
+print(theHit)
+# results[0][0].entity.get('video_length')
 # print(results[0].ids)
 # now, we want to have the 'distance' parameter.
 # print(results[0])
@@ -116,5 +119,5 @@ theHit = results[0]
 # distances = theHit.distances
 # results = [x for x in theHit]
 # hits = len(theHit)
-breakpoint()
+# breakpoint()
 # how to get document by id? wtf
