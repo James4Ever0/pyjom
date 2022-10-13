@@ -20,3 +20,5 @@ print(dis0, dis1)
 # print(hashs)
 # three truth tables.
 # 2^4 = 16, total 2*8 digits=16?
+
+# towhee(multimodal search like jina), haystack, milvus
