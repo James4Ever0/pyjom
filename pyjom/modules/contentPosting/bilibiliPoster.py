@@ -27,7 +27,8 @@ def BilibiliPoster(
     # anyway let's write for video.
     # there are two generators. what do you want?
     # getPostMetadata = lambda: postMetadataGenerator.__next__()
-    @retry()
+    from retry import retry
+    @retry(tries=10, delay=5) # if causing trouble
     def postContent(elem):  # what is this elem? please check for video producer.
         with tmpdir(path=tempdir):
             postMetadata = getPostMetadata()
