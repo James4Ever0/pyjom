@@ -29,8 +29,8 @@ from pymilvus import CollectionSchema, FieldSchema, DataType
 video_semantic_id = FieldSchema(  # how to insert this shit without prior knowledge?
     name="video_semantic_id",
     dtype=DataType.INT64,
-    is_primary=True,
-	auto_id=True # no need for id generation.
+    is_primary=True,  # if is primary, will do check for 'not duplicate' or something.
+    auto_id=True,  # no need for id generation.
 )
 video_length = FieldSchema(
     name="video_length",
@@ -79,7 +79,7 @@ import bitarray
 
 queryData = bitarray.bitarray("".join(queryData), endian="little")
 queryData2 = queryData.copy()
-queryData2[1:4]= 0
+queryData2[1:4] = 0
 queryData3 = queryData2.copy()
 queryData2 = queryData2.tobytes()
 queryData3[8:15] = 0
@@ -89,9 +89,9 @@ queryData = queryData.tobytes()
 # collection.insert([[1], [np.float32(3.5)], [queryData]])
 # collection.insert([[np.float32(3.5)], [queryData]])
 for _ in range(8):
-	collection.insert([[np.float32(3.5)], [queryData]])
-collection.insert([[np.float32(3.5)], [queryData2]]) # slight difference. 
-collection.insert([[np.float32(3.5)], [queryData3]]) # more difference. 
+    collection.insert([[np.float32(3.5)], [queryData]])
+collection.insert([[np.float32(3.5)], [queryData2]])  # slight difference.
+collection.insert([[np.float32(3.5)], [queryData3]])  # more difference.
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
@@ -107,5 +107,10 @@ results = collection.search(
     limit=10,
     expr=None,
 )
-print(results)
+theHit = results[0]
 # print(results[0].ids)
+# now, we want to have the 'distance' parameter.
+# print(results[0])
+print(theHit)
+distances = theHit.distances
+breakpoint()
