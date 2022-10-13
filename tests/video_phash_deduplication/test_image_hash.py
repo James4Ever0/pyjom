@@ -19,4 +19,4 @@ print(dis0, dis1)
 # well, let's check?
 # print(hashs)
 # three truth tables.
-# 2^4 = 16, to
+# 2^4 = 16, total 2*8 digits=16?
