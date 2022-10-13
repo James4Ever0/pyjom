@@ -32,10 +32,10 @@ video_length = FieldSchema(
     name="video_length",
     dtype=DataType.FLOAT,
 )
-video_phash = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64) # 64
+video_phash = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=8) # 64
 # single dimension? no multi dimension support?
 schema = CollectionSchema(
-    fields=[video_semantic_id, video_length, video_phash], description="Test video deduplication"
+    fields=[video_semantic_id,  video_length, video_phash], description="Test video deduplication"
 )
 
 # collection = Collection("video")      # Get an existing collection.
@@ -71,7 +71,7 @@ import bitarray
 queryData = bitarray.bitarray("".join(queryData), endian='little')
 queryData = queryData.tobytes()
 # dimension: 8*8=64
-collection.insert([[1],[3.5],[queryData]])
+collection.insert([[1],[b'\x07']])
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
