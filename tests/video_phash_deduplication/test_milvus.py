@@ -32,7 +32,7 @@ word_count = FieldSchema(
     name="video_length",
     dtype=DataType.FLOAT,
 )
-book_intro = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=8*8) # 64
+book_intro = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=8) # 64
 # single dimension? no multi dimension support?
 schema = CollectionSchema(
     fields=[book_id, word_count, book_intro], description="Test video deduplication"
@@ -65,9 +65,9 @@ queryData = np.array(
         [False, False, True, False, False, True, False, False],
     ]
 )
-queryData = queryData.reshape(1,-1).tolist()
-print(queryData.shape)
-breakpoint()
+# queryData = queryData.reshape(1,-1).tolist()
+# print(queryData.shape)
+# breakpoint()
 # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
