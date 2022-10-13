@@ -52,10 +52,11 @@ collection.load()
 search_params = {"metric_type": "L2", "params": {"nprobe": 10}}
 
 results = collection.search(
-	data=[[0.1, 0.2]], 
+	data=[[0.1, 0.2]],  # this is the float dimension.
 	anns_field="video_phash", 
 	param=search_params, 
 	limit=10,
 	expr=None,
 	consistency_level="Strong"
 )
+print(results)
