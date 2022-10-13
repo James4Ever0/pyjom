@@ -24,11 +24,11 @@ postMetadataGenerator = (
 )  # metadata you can fetch from database, maybe you can preprocess this.
 
 metaTopics ={'dog':{
-            "static": [["dog", "puppy"], ["funny", "cute"]],
-            "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
+            "static": [["dog", "puppy"]],
+            "dynamic": [["samoyed", "husky", "teddy", "chiwawa"],['meme'],["funny", "cute",'love']],
         },"cat":{
-            "static": [["cat"], ["funny", "cute"]],
-            "dynamic": [["purr",'paws','meme','']],
+            "static": [["cat"]],
+            "dynamic": [["purr",'paws','meme'],["funny", "cute"]],
         }}
 
 # when use 'complete test' it stops iterating.
