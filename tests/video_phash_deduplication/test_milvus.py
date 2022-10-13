@@ -5,8 +5,16 @@
 
 # import pymilvus
 from pymilvus import connections
+form functools import lru_cache
 
-connection = connections.connect(alias="default", host="localhost", port="19530")
+@lru_cache(maxsize=1)
+def connectMilvusDatabase():
+	connection = connections.connect(alias="default", host="localhost", port="19530")# can we reconnect?
+	print('milconnected')
+
+connectMilvusDatabase()
+connectMilvusDatabase() # will not connect again.
+
 collection_name = "video_deduplication"
 
 
@@ -17,7 +25,8 @@ from pymilvus import Collection
 from pymilvus import utility
 
 try:
-    utility.drop_collection(collection_name)
+    if utility.has_collection(collection_name):  # be prudent.
+        utility.drop_collection(collection_name)
 except:
     import traceback
 
@@ -104,9 +113,9 @@ results = collection.search(
     data=[queryData],  # this is the float dimension.
     anns_field="video_phash",
     param=search_params,
-	output_fields=["video_length"],
+    output_fields=["video_length"],
     limit=10,
-    expr='video_length > 1.2 and video_length < 4',
+    expr="video_length > 1.2 and video_length < 4",
     # expr='video_length < 1.2',
 )
 theHit = results[0]
