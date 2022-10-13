@@ -200,7 +200,7 @@ def videoMultithreadUploader(
             source = ""
             # cover_path="",
             dynamic = ""
-            mission_id = None
+            # mission_id = None
             no_reprint = 1
             """视频投稿
             Args:
@@ -239,7 +239,7 @@ def videoMultithreadUploader(
                 "tag": tag,
                 "no_reprint": no_reprint,
                 "desc": desc,
-                "mission_id": mission_id,
+                # "mission_id": mission_id,
                 "desc_format_id": 0,
                 "dynamic": dynamic,
                 "cover": cover_url,
@@ -254,8 +254,8 @@ def videoMultithreadUploader(
             params.update(metadata)
             if source:
                 del params["no_reprint"]
-            if mission_id is None:
-                del params["mission_id"]
+            # if mission_id is None:
+            #     del params["mission_id"]
             url = "https://member.bilibili.com/x/vu/web/add?csrf=" + self.csrf
             response = self.session.post(url, json=params)
             print("SET VIDEO INFO:", response.text, file=sys.stderr)
@@ -331,6 +331,8 @@ def uploadVideo(
     }
     if multithread:
         return videoMultithreadUploader(cookie_dict,videoPath, cover_path, meta)
+    else:
+        return asyncVideoUploader(videoPath, title, description,meta, credential, cover_path)
 
 @bilibiliSync
 async def asyncVideoUploader(videoPath, title, description,meta, credential, cover_path):
