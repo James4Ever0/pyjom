@@ -268,88 +268,12 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
     # parser.add_argument('-c', '--cover', help="cover picture absolute path")
     # args = parser.parse_args()
     class videoPostData:
-        def __init__(self, file, json, metadata):
+        def __init__(self, file, json, metadata, cover):
             self.file = file
             self.json = json
             self.metadata = metadata
+            self.cover =cover
 
-    args = videoPostData()
-    checkFile(args.file)
-    checkFile(args.json)
-    musthave = ["title", "tid"]
-    checkFile(args.metadata)
-    parsed = None
-    with open(args.metadata, "r", encoding="utf-8") as fi:
-        parsed = json.loads(fi.read())
-    if parsed == None:
-        print("metadata error")
-    assert type(parsed) == dict
-    key_parsed = list(parsed.keys())
-    for x in musthave:
-        assert x in key_parsed
-    assert type(parsed["title"]) == str
-    assert type(parsed["tid"]) == int
-    title = parsed["title"]
-    assert len(title) > 0
-    tid = parsed["tid"]
-    tag = ""
-    desc = ""
-    source = ""
-    cover_path = ""
-    mission_id = None
-    if args.cover is not None:
-        checkFile(args.cover)
-        cover_path = args.cover
-    dynamic = ""
-    no_reprint = 1
-    if "tag" in key_parsed:
-        assert type(parsed["tag"]) == list
-        for x in parsed["tag"]:
-            assert type(x) == str
-            assert len(x) > 0
-            assert "," not in x
-        tag = ",".join(parsed["tag"])
-    if "desc" in key_parsed:
-        assert type(parsed["desc"]) == str
-        if len(parsed["desc"]) == 0:
-            desc = "-"
-        else:
-            desc = parsed["desc"]
-    if "source" in key_parsed:
-        assert type(parsed["source"]) == str
-        source = parsed["source"]
-    if "mission_id" in key_parsed:
-        assert type(parsed["mission_id"]) == int
-        # checkFile(parsed["mission_id"])
-        mission_id = parsed["mission_id"]
-    if "dynamic" in key_parsed:
-        assert type(parsed["dynamic"]) == dict
-        ddyn = parsed["dynamic"]
-        ddyn_keys = list(ddyn.keys())
-        assert len(ddyn_keys) == 2
-        assert "tags" in ddyn_keys
-        assert "content" in ddyn_keys
-        dtags = ddyn["tags"]
-        dcont = ddyn["content"]
-        assert type(dtags) == list
-        assert type(dcont) == str
-        assert len(dcont) > 0
-        assert "#" not in dcont
-        for x in dtags:
-            assert type(x) == str
-            assert "#" not in x
-            dynamic += "#" + x + "#"
-        dynamic += " " + dcont
-    if "no_reprint" in key_parsed:
-        nop = parsed["no_reprint"]
-        assert type(nop) == int
-        assert nop in [0, 1]
-        no_reprint = nop
-    cookie_string = ""
-    cookies = cookies_dict
-    # with open(args.json,"r",encoding="utf-8") as f:
-    #     cookies = json.loads(f.read())
-    assert type(cookies) == dict
     mustcook = ["DedeUserID", "bili_jct"]
     for x in mustcook:
         assert x in cookies.keys()
