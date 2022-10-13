@@ -104,7 +104,7 @@ results = collection.search(
     data=[queryData],  # this is the float dimension.
     anns_field="video_phash",
     param=search_params,
-	output_fields=[""],
+	output_fields=["video_length"],
     limit=10,
     expr=None,
 )
@@ -112,9 +112,9 @@ theHit = results[0]
 # print(results[0].ids)
 # now, we want to have the 'distance' parameter.
 # print(results[0])
-print(theHit)
-distances = theHit.distances
-results = [x for x in theHit]
-hits = len(theHit)
+# print(theHit)
+# distances = theHit.distances
+# results = [x for x in theHit]
+# hits = len(theHit)
 breakpoint()
 # how to get document by id? wtf
