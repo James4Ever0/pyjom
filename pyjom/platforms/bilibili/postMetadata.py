@@ -437,7 +437,7 @@ def getBilibiliPostMetadata(
             traceError("error when fetching metatopic")
 
 
-def getBilibiliPostMetadataForDogCat():
+def getBilibiliPostMetadataForDogCat(dog_or_cat:Literal['dog', 'cat']='dog'):
     dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
 
     cat_metatopic = {
@@ -468,6 +468,9 @@ def getBilibiliPostMetadataForDogCat():
         "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
         "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
     }
+    ## then the decision.
+    getMetatopic = {key:value for key,value in getTids.items()}
+
     return getBilibiliPostMetadata(  # this is a premature version. the deeplearning version might interest you more. but how the fuck i can integrate DL into this shit?
         getMetatopic=getMetatopic,
         getTids=getTids,

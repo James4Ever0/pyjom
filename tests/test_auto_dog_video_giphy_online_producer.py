@@ -15,6 +15,7 @@ template_names = ["subtitle_detector.mdl.j2"]
 from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogCat
 
 # decide to do this in sync.
+# preconfigure the dog_or_cat value.
 
 postMetadataGenerator = (
     getBilibiliPostMetadataForDogCat()
