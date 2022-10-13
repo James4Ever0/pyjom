@@ -79,7 +79,8 @@ import bitarray
 queryData = bitarray.bitarray("".join(queryData), endian="little")
 queryData = queryData.tobytes()
 # dimension: 8*8=64
-collection.insert([[None], [np.float32(3.5)], [queryData]])
+collection.insert([[1], [np.float32(3.5)], [queryData]])
+collection.insert([[1], [np.float32(3.5)], [queryData]])
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
