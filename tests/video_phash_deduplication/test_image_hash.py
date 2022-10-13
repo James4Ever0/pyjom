@@ -16,7 +16,8 @@ dis1 = hashs[1]-hashs[2]
 # 6 24
 
 # well, let's check?
-print(hashs)
+print([type(h) for h in hashs])
+breakpoint()
 print(dis0, dis1)
 # three truth tables.
 # 2^4 = 16, total 2*8 digits=16?

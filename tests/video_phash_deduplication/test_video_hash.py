@@ -52,6 +52,7 @@ dis2 = hashs[0] - hashs[2]  # big
 dis3 = hashs[0] - hashs[3]  # big
 
 print(dis0, dis1, dis2, dis3)
+
 # 4 4 4
 # strange. why?
 # 4 4 4 42
