@@ -111,6 +111,7 @@ results = collection.search(
 )
 theHit = results[0]
 print(theHit)
+# so we can perform search without filtering afterwards.
 # results[0][0].entity.get('video_length')
 # print(results[0].ids)
 # now, we want to have the 'distance' parameter.
