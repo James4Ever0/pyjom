@@ -19,17 +19,24 @@ from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogC
 
 dog_or_cat = "dog"
 # we need preconfigured things.
-postMetadataGenerator = (
-    getBilibiliPostMetadataForDogCat(dog_or_cat=dog_or_cat)
+postMetadataGenerator = getBilibiliPostMetadataForDogCat(
+    dog_or_cat=dog_or_cat
 )  # metadata you can fetch from database, maybe you can preprocess this.
 
-metaTopics ={'dog':{
-            "static": [["dog", "puppy"]],
-            "dynamic": [["samoyed", "husky", "teddy", "chiwawa"],['meme'],["funny", "cute",'love']],
-        },"cat":{
-            "static": [["cat"]],
-            "dynamic": [["purr",'paws','meme'],["funny", "cute"]],
-        }}
+metaTopics = {
+    "dog": {
+        "static": [["dog", "puppy"]],
+        "dynamic": [
+            ["samoyed", "husky", "teddy", "chiwawa"],
+            ["meme"],
+            ["funny", "cute", "love"],
+        ],
+    },
+    "cat": {
+        "static": [["cat",'kitten']],
+        "dynamic": [["purr", "paws", "meme"], ["funny", "cute"]],
+    },
+}
 
 # when use 'complete test' it stops iterating.
 # maybe because the last one is a generator. goddamn it.
@@ -46,7 +53,7 @@ wbRev = OnlineAutoContentProducer(
     afterPosting=cleanupMedialangTmpdir,
     source="giphy",
     fast=False,
-    metaTopic = metaTopics[dog_or_cat]
+    metaTopic=metaTopics[dog_or_cat],
     # fast= True,  # pass this flag to medialang export engine
     template="pets_with_music_online",
     postMetadataGenerator=postMetadataGenerator,
