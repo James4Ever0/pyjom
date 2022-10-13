@@ -78,11 +78,20 @@ queryData = ["1" if x else "0" for x in queryData]
 import bitarray
 
 queryData = bitarray.bitarray("".join(queryData), endian="little")
+queryData2 = queryData.copy()
+queryData2[1:4]= 0
+queryData3 = queryData2.copy()
+queryData2 = queryData2.tobytes()
+queryData3[8:15] = 0
+queryData3 = queryData3.tobytes()
 queryData = queryData.tobytes()
 # dimension: 8*8=64
 # collection.insert([[1], [np.float32(3.5)], [queryData]])
-collection.insert([[np.float32(3.5)], [queryData]])
-collection.insert([[np.float32(3.5)], [queryData]])
+# collection.insert([[np.float32(3.5)], [queryData]])
+for _ in range(8):
+	collection.insert([[np.float32(3.5)], [queryData]])
+collection.insert([[np.float32(3.5)], [queryData2]]) # slight difference. 
+collection.insert([[np.float32(3.5)], [queryData3]]) # more difference. 
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
