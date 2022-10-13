@@ -23,19 +23,19 @@ except:
 
 from pymilvus import CollectionSchema, FieldSchema, DataType
 
-book_id = FieldSchema(
+video_semantic_id = FieldSchema(
     name="video_semantic_id",
     dtype=DataType.INT64,
     is_primary=True,
 )
-word_count = FieldSchema(
+video_length = FieldSchema(
     name="video_length",
     dtype=DataType.FLOAT,
 )
-book_intro = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64) # 64
+video_phash = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64) # 64
 # single dimension? no multi dimension support?
 schema = CollectionSchema(
-    fields=[book_id, word_count, book_intro], description="Test video deduplication"
+    fields=[video_semantic_id, video_length], description="Test video deduplication"
 )
 
 # collection = Collection("video")      # Get an existing collection.
@@ -71,6 +71,7 @@ import bitarray
 queryData = bitarray.bitarray("".join(queryData), endian='little')
 queryData = queryData.tobytes()
 # dimension: 8*8=64
+collection.insert([[1],[3.5],[queryData]])
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
