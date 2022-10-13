@@ -66,9 +66,13 @@ queryData = np.array(
     ]
 )
 queryData = queryData.reshape(-1).tolist()
-queryData = ['1']
+queryData = ['1' if x else '0' for x in queryData]
+import bitarray
+queryData = bitarray.bitarray("".join(queryData), endian='little')
+queryData = queryData.tobytes()
+print(len(queryData), len(queryData)//8)
 # print(queryData.shape)
-# breakpoint()
+breakpoint()
 # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
