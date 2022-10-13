@@ -2,7 +2,7 @@ from bilibili_api import video_uploader, Credential
 from pyjom.platforms.bilibili.credentials import bilibiliCredential
 import os
 
-# from pyjom.platforms.bilibili.utils import bilibiliSync
+from pyjom.platforms.bilibili.utils import bilibiliSync
 
 # you may use the 'sync' method elsewhere.
 # damn. out of sync.
@@ -286,7 +286,7 @@ def videoMultithreadUploader(
 ##############################################################
 
 # @bilibiliSync
-# no need to be sync.
+# no need to be sync. really?
 @bilibiliCredential  # keyword 'dedeuserid' with default value.
 def uploadVideo(
     credential: Credential = ...,
@@ -303,11 +303,12 @@ def uploadVideo(
     close_reply: bool = False,
     videoPath: str = "",
     cover_path: str = "",
+    multithread:bool=True,
     # threads=3,
 ):
     assert os.path.exists(videoPath)
     assert os.path.exists(cover_path)
-    {'buvid3','DedeUserID','bili_jct','SESSDATA'}
+    cookie_dict = {key: credential.__dict__[key.lower()] for key in ['buvid3','DedeUserID','bili_jct','SESSDATA']}
     # videoExtension = videoPath.split(".")[-1].lower()
     # credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # you can pass it from somewhere else.
