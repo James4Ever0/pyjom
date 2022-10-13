@@ -23,5 +23,14 @@ hashs = [imagehash.phash(Image.open(pic)) for pic in pics]
 
 # towhee(multimodal search like jina), haystack, milvus
 
-import pymilvus
-
+# import pymilvus
+from pymilvus import connections
+connection = connections.connect(
+  alias="default", 
+  host='localhost', 
+  port='19530'
+)
+from pymilvus import Collection
+collection = Collection("book")      # Get an existing collection.
+collection.load()
+# not started!
