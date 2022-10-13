@@ -65,9 +65,8 @@ queryData = np.array(
         [False, False, True, False, False, True, False, False],
     ]
 )
-queryData = queryData.reshape(1,-1).tolist()
-import bitstring
-bitstring.BitArray()
+queryData = queryData.reshape(-1).tolist()
+queryData = ['1']
 # print(queryData.shape)
 # breakpoint()
 # 1,64
