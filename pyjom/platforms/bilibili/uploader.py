@@ -252,10 +252,10 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
             print("SET VIDEO INFO:", response.text, file=sys.stderr)
             return response.json()
 
-    def checkFile(cf):
-        assert os.path.isabs(cf)
-        assert os.path.exists(cf)
-        assert os.path.isfile(cf)
+    # def checkFile(cf):
+    #     assert os.path.isabs(cf)
+    #     assert os.path.exists(cf)
+    #     assert os.path.isfile(cf)
 
     # if __name__ == '__main__':
     # parser = argparse.ArgumentParser(description='上传bilibili视频')
@@ -267,14 +267,15 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
     # parser.add_argument("-m","--metadata", help="json metadata of post information absolute path", required = True)
     # parser.add_argument('-c', '--cover', help="cover picture absolute path")
     # args = parser.parse_args()
-    class videoPostData:
-        def __init__(self, file, json, metadata, cover):
-            self.file = file
-            self.json = json
-            self.metadata = metadata
-            self.cover =cover
-
+    # class videoPostData:
+    #     def __init__(self, file, json, metadata, cover):
+    #         self.file = file
+    #         self.json = json
+    #         self.metadata = metadata
+    #         self.cover =cover
+    cookies = cookies_dict
     mustcook = ["DedeUserID", "bili_jct"]
+    cookie_string = ""
     for x in mustcook:
         assert x in cookies.keys()
     ckeys = mustcook + [x for x in cookies.keys() if x not in mustcook]
@@ -282,11 +283,11 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
     for x in ckeys:  # oh shit maybe i know it.
         cookie_string += x + "=" + cookies[x] + "; "
     cookie_string = cookie_string[:-2]
-    while True:
-        try:
-            uper = Uploader(cookie_string)
-            uper.upload(
-                args.file,
+    # while True:
+    try:
+        uper = Uploader(cookie_string)
+        uper.upload(
+                filepath,
                 title,
                 tid,
                 tag=tag,
@@ -296,13 +297,12 @@ def videoMultithreadUploader(cookies_dict: dict = ...):
                 dynamic=dynamic,
                 mission_id=mission_id,
                 no_reprint=no_reprint,
-            )
-            break
-        except:
-            print("Exception found when uploading video.")
-            traceback.print_exc()
-            return False
-    return True
+        )
+        return True
+    except:
+        print("Exception found when uploading video.")
+        traceback.print_exc()
+        return False
 
 
 ##############################################################
