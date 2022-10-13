@@ -329,6 +329,11 @@ def uploadVideo(
         "up_close_danmaku": close_danmaku,
         "up_close_reply": close_reply,
     }
+    if multithread:
+        return videoMultithreadUploader(cookie_dict,videoPath, cover_path, meta)
+
+@bilibiliSync
+async def asyncVideoUploader(videoPath, title, description,meta, credential, cover_path):
     page = video_uploader.VideoUploaderPage(
         path=videoPath,
         title=title,
@@ -346,5 +351,6 @@ def uploadVideo(
     result = await uploader.start()  # with bvid, aid as key.
     # please tell me where the fuck you upload my video upto?
     print("upload video result:", result)
-    breakpoint()  # comment it out later? or we will check why this upload fails. maybe it is because we have duplicated name/cover.
+    # upload video result: {'aid': 901508571, 'bvid': 'BV1MN4y1P7mq'}
+    # breakpoint()  # comment it out later? or we will check why this upload fails. maybe it is because we have duplicated name/cover.
     return result["bvid"]  # choose to be in this way?
