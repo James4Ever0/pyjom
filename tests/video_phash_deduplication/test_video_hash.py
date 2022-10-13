@@ -9,7 +9,7 @@ from lazero.program.subprocess import runCommandGetJson
 videoPaths = ["cute_cat_gif.mp4", "cute_cat_gif.gif", "cat_delogo.gif"]
 
 
-def getVideoPHash(filepath, debug=False):
+def getVideoPHash(filepath, debug=False, timeout=100):
     import os
     import imagehash
 
@@ -22,11 +22,13 @@ def getVideoPHash(filepath, debug=False):
         "-json",
         filepath,
     ]
-    success,myJson = runCommandGetJson(commandLine, debug=debug)
+    success,myJson = runCommandGetJson(commandLine, debug=debug, timeout=timeout)
+    if debug:
+        print("SUCCESS?", success)
+        print(myJson, type(myJson))
     if not success:
         return
-    print(myJson, type(myJson))
-    breakpoint()
+    # breakpoint()
     phashString = myJson["phash"]
     phash = imagehash.hex_to_hash(phashString)
     if debug:
