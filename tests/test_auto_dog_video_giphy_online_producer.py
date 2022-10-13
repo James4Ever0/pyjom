@@ -18,16 +18,17 @@ from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogC
 # preconfigure the dog_or_cat value.
 
 dog_or_cat = "dog"
+# we need preconfigured things.
 postMetadataGenerator = (
     getBilibiliPostMetadataForDogCat(dog_or_cat=dog_or_cat)
 )  # metadata you can fetch from database, maybe you can preprocess this.
 
 metaTopics ={'dog':{
-            "static": [["dog", "cat", "puppy"], ["funny", "cute"]],
+            "static": [["dog", "puppy"], ["funny", "cute"]],
             "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
         },"cat":{
-            "static": [["dog", "cat", "puppy"], ["funny", "cute"]],
-            "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
+            "static": [["cat"], ["funny", "cute"]],
+            "dynamic": [["purr",'paws','meme','']],
         }}
 
 # when use 'complete test' it stops iterating.
