@@ -32,7 +32,7 @@ word_count = FieldSchema(
     name="video_length",
     dtype=DataType.FLOAT,
 )
-book_intro = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=8) # 64
+book_intro = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64) # 64
 # single dimension? no multi dimension support?
 schema = CollectionSchema(
     fields=[book_id, word_count, book_intro], description="Test video deduplication"
@@ -70,10 +70,11 @@ queryData = ['1' if x else '0' for x in queryData]
 import bitarray
 queryData = bitarray.bitarray("".join(queryData), endian='little')
 queryData = queryData.tobytes()
-print(len(queryData), len(queryData)//8)
-# print(queryData.shape)
-breakpoint()
-# 1,64
+# dimension: 8*8=64
+# print(len(queryData), len(queryData)*8)
+# # print(queryData.shape)
+# breakpoint()
+# # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
 results = collection.search(
