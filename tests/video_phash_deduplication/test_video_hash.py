@@ -56,5 +56,7 @@ print(dis0, dis1, dis2, dis3)
 # strange. why?
 # 4 4 4 42
 # huge difference.
-# what do you decide to be duplicate?
-# phash < 7 ( really? )
+# what value do you decide to be duplicate?
+# phash < 7 (really?)
+
+# so how do we run this test?
