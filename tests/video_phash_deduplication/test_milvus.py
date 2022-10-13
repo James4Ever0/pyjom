@@ -52,7 +52,9 @@ collection = Collection(
 
 # seems hard to setup.
 # not started!
-search_params = {"metric_type": "L2", "params": {"nprobe": 10}}
+# https://milvus.io/docs/v2.0.0/metric.md#binary
+ 
+search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}
 import numpy as np
 
 queryData = np.array(
@@ -89,6 +91,6 @@ results = collection.search(
     param=search_params,
     limit=10,
     expr=None,
-    consistency_level="Strong",
 )
-print(results[0].ids)
+print(results)
+# print(results[0].ids)
