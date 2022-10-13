@@ -97,14 +97,18 @@ queryData = queryData.tobytes()
 # dimension: 8*8=64
 # collection.insert([[1], [np.float32(3.5)], [queryData]])
 # collection.insert([[np.float32(3.5)], [queryData]])
-for _ in range(8):
-    collection.insert([[np.float32(3.5)], [queryData]])
+# for _ in range(8):
+collection.insert([[np.float32(3.5)], [queryData]])
 collection.insert([[np.float32(3.5)], [queryData2]])  # slight difference.
 collection.insert([[np.float32(3.5)], [queryData3]])  # more difference.
 # print(len(queryData), len(queryData)*8)
 # # print(queryData.shape)
 # breakpoint()
 collection.load()
+collection.insert([[np.float32(3.5)], [queryData]]) # still three.
+collection.load()
+
+# insert after load?
 
 # # 1,64
 # what is wrong? wtf?
