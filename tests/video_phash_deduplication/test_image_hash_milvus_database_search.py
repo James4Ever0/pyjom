@@ -9,10 +9,10 @@ import imagehash
 pics = [pic_0, pic_0_similar, pic_1]
 hashs = [imagehash.phash(Image.open(pic)) for pic in pics]
 
-dis0 = hashs[0]-hashs[1]
-dis1 = hashs[1]-hashs[2]
+# dis0 = hashs[0]-hashs[1]
+# dis1 = hashs[1]-hashs[2]
 
-print(dis0, dis1)
+# print(dis0, dis1)
 # 0 24
 # 6 24
 
