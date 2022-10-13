@@ -9,6 +9,34 @@ from pyjom.platforms.bilibili.utils import bilibiliSync
 # recall the order of applying decorators
 # WTF is the order?
 
+
+@bilibiliSync
+async def asyncVideoUploader(
+    videoPath, title, description, meta, credential, cover_path
+):
+    page = video_uploader.VideoUploaderPage(
+        path=videoPath,
+        title=title,
+        description=description,
+    )  # are you sure?
+    uploader = video_uploader.VideoUploader(
+        [page], meta, credential, cover_path=cover_path
+    )
+
+    # will this work as expected?
+    # @uploader.on("__ALL__")
+    # async def ev(data):
+    #     print(data)
+
+    result = await uploader.start()  # with bvid, aid as key.
+    # please tell me where the fuck you upload my video upto?
+    # print("upload video result:", result)
+    return result
+    # upload video result: {'aid': 901508571, 'bvid': 'BV1MN4y1P7mq'}
+    # breakpoint()  # comment it out later? or we will check why this upload fails. maybe it is because we have duplicated name/cover.
+    # return result["bvid"]  # choose to be in this way?
+
+
 ##############################################################
 def videoMultithreadUploader(
     cookies_dict: dict = ...,
@@ -303,12 +331,15 @@ def uploadVideo(
     close_reply: bool = False,
     videoPath: str = "",
     cover_path: str = "",
-    multithread:bool=True,
+    multithread: bool = True,
     # threads=3,
 ):
     assert os.path.exists(videoPath)
     assert os.path.exists(cover_path)
-    cookie_dict = {key: credential.__dict__[key.lower()] for key in ['buvid3','DedeUserID','bili_jct','SESSDATA']}
+    cookie_dict = {
+        key: credential.__dict__[key.lower()]
+        for key in ["buvid3", "DedeUserID", "bili_jct", "SESSDATA"]
+    }
     # videoExtension = videoPath.split(".")[-1].lower()
     # credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3)
     # you can pass it from somewhere else.
@@ -330,30 +361,11 @@ def uploadVideo(
         "up_close_reply": close_reply,
     }
     if multithread:
-        return videoMultithreadUploader(cookie_dict,videoPath, cover_path, meta)
+        result = videoMultithreadUploader(cookie_dict, videoPath, cover_path, meta)
     else:
-        return asyncVideoUploader(videoPath, title, description,meta, credential, cover_path)
-
-@bilibiliSync
-async def asyncVideoUploader(videoPath, title, description,meta, credential, cover_path):
-    page = video_uploader.VideoUploaderPage(
-        path=videoPath,
-        title=title,
-        description=description,
-    )  # are you sure?
-    uploader = video_uploader.VideoUploader(
-        [page], meta, credential, cover_path=cover_path
-    )
-
-    # will this work as expected?
-    # @uploader.on("__ALL__")
-    # async def ev(data):
-    #     print(data)
-
-    result = await uploader.start()  # with bvid, aid as key.
-    # please tell me where the fuck you upload my video upto?
-    # print("upload video result:", result)
+        result = asyncVideoUploader(
+            videoPath, title, description, meta, credential, cover_path
+        )
+    print("multithread?", multithread)
+    print("upload video result:", result)
     return result
-    # upload video result: {'aid': 901508571, 'bvid': 'BV1MN4y1P7mq'}
-    # breakpoint()  # comment it out later? or we will check why this upload fails. maybe it is because we have duplicated name/cover.
-    # return result["bvid"]  # choose to be in this way?
