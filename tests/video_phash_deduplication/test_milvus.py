@@ -12,8 +12,14 @@ collection_name = "video_deduplication"
 
 from pymilvus import Collection
 # Collection(collection_name)
+# remote this thing.
 from pymilvus import utility
-utility.drop_collection("book")
+try:
+  utility.drop_collection(collection_name)
+except:
+  import traceback
+  traceback.print_exc()
+  print('maybe the collection does not exist')
 
 from pymilvus import CollectionSchema, FieldSchema, DataType
 
@@ -26,7 +32,8 @@ word_count = FieldSchema(
     name="video_length",
     dtype=DataType.FLOAT,
 )
-book_intro = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=(8,8))
+book_intro = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=8*8) # 64
+# single dimension? no multi dimension support?
 schema = CollectionSchema(
     fields=[book_id, word_count, book_intro], description="Test video deduplication"
 )
@@ -58,6 +65,8 @@ queryData = np.array(
         [False, False, True, False, False, True, False, False],
     ]
 )
+queryData = queryData.reshape(1,-1)
+# queryData = queryData.tolist()
 results = collection.search(
     data=queryData,  # this is the float dimension.
     anns_field="video_phash",
