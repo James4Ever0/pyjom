@@ -35,7 +35,7 @@ video_length = FieldSchema(
 video_phash = FieldSchema(name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64) # 64
 # single dimension? no multi dimension support?
 schema = CollectionSchema(
-    fields=[video_semantic_id, video_length], description="Test video deduplication"
+    fields=[video_semantic_id, video_length, video_phash], description="Test video deduplication"
 )
 
 # collection = Collection("video")      # Get an existing collection.
@@ -46,7 +46,7 @@ collection = Collection(
     shards_num=2,
 )
 # is this demo collection?
-collection.load()
+# collection.load()
 
 # seems hard to setup.
 # not started!
