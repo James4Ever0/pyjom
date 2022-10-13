@@ -22,3 +22,6 @@ hashs = [imagehash.phash(Image.open(pic)) for pic in pics]
 # 2^4 = 16, total 2*8 digits=16?
 
 # towhee(multimodal search like jina), haystack, milvus
+
+import pymilvus
+
