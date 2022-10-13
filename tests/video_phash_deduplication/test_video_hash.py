@@ -12,4 +12,4 @@ if not os.path.isabs(filepath):
 commandLine = ["/root/Desktop/works/pyjom/tests/video_phash_deduplication/videohashes/videohashes-linux","-json",filepath]
 myJson = runCommandGetJson(commandLine)
 phashString = myJson['phash']
-phash = 
+phash = imagehash.
