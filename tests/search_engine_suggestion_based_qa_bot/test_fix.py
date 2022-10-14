@@ -7,5 +7,8 @@ from pprint import pprint
 result = spider.search_web(query, pn= 1)
 print(result.plain)
 # change the div class name.
+# change all 'result-op' into 'result'
+# file: 
+# https://github.com/BaiduSpider/BaiduSpider/pull/151
 # https://github.com/BaiduSpider/BaiduSpider/pull/151/files
 breakpoint()
