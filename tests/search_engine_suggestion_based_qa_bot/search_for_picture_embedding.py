@@ -13,3 +13,4 @@ breakpoint()
 # result.raw[0].url is the original url. however you won't get the picture.
 # result.raw[0].thumbnail
 # 'origin', 'similarity', 'thumbnail', 'title', 'url'
+# result.raw[0].origin['ajaxUrl'] -> get more similar images of this one
