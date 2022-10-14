@@ -10,10 +10,11 @@ result = baidu.search(file=image)
 # print(result)
 # better not to query 'ajax' unless you want to get banned.
 # breakpoint()
+# you want to use phash, width, height for this.
 for elem in result.raw:
     elem = elem.__dict__
-    print(elem)
-    breakpoint()
+    # print(elem)
+    # breakpoint()
     thumbnail = elem.get('thumbnail')
     simi = elem.get('similarity')
     title = elem.get('title')
