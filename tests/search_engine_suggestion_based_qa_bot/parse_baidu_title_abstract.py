@@ -32,7 +32,9 @@ def processQueryResult(abstract, minMaxDict={'min':5,'max':20}):
 candidates = []
 import Levenshtein
 
-query = ""
+query = "python有个问题想请教一下 为什么我这个函数跑不通"
+# use another model please?
+# haystack?
 for elem in data:
     title = elem.get('title')
     abstract = elem.get('abstract')

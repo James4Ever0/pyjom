@@ -49,8 +49,8 @@ results = search(next_query, num_results=20)  # returns 20 or less results
 # # print(results) #this is working.
 # # breakpoint()
 # import parse
-print(results)
 
+# use jina? hahaha...
 import json
 string = json.dumps(results, ensure_ascii=False, indent=4)
 with open('result_baidu.json', 'w+') as f:
