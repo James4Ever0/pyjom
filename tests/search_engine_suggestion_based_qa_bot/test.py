@@ -31,5 +31,6 @@ from pprint import pprint
 result = spider.search_web(query)
 print(result)
 breakpoint()
+# result.related 
 
 # 'baike', 'blog', 'calc', 'gitee', 'music', 'news', 'normal', 'pages', 'plain', 'related', 'tieba', 'total', 'video'
