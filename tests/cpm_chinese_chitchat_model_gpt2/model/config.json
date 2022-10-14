@@ -34,7 +34,7 @@
   "summary_type": "cls_index",
   "summary_use_proj": true,
   "torch_dtype": "float32",
-  "transformers_version": "4.22.2",
+  "transformers_version": "4.21.2",
   "use_cache": true,
   "vocab_size": 13317
 }
