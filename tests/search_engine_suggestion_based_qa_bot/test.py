@@ -52,18 +52,17 @@ import parse
 threshold = 4
 import spacy
 nlp = spacy.load("zh_core_web_sm")
-# doc = nlp(s)
-# for i in doc.sents:
+
  
 for elem in results:
     # 'title', 'abstract', 'url', 'rank'
     # url is encrypted.
     title = elem.get('title')
     abstract = elem.get('abstract')
-    texts = abstract.replace("-",'\n').split('\n')
-    for text in texts:
-        print(text)
-        breakpoint()
+    doc = nlp(abstract)
+    for text in doc.sents:
+        # print(text)
+        # breakpoint()
         if len(text)<threshold:
             continue
         mtime = parse.parse('.*{:d}年{:d}月{:d}日.*', text)
