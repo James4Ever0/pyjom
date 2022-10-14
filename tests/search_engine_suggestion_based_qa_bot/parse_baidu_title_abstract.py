@@ -41,4 +41,7 @@ for elem in data:
     for phrase in processQueryResult(abstract):
         candidates.append(phrase) # what is your query?
 
-candidates.sort(key=lambda phrase: len(phrase)-Levenshtein())
+def countCommonCandidates(phrase_1,phrase_2):
+    words_1 = jieba.lcut(phrase_1.lower())
+
+candidates.sort(key=lambda phrase: 
