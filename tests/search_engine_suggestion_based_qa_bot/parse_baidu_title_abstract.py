@@ -93,6 +93,14 @@ print("TOP",top_k)
 topKCandidates = bm25.get_top_n(tokenized_query, candidates, n=top_k)
 # count chinese chars.
 # count for english/chinese portion. (strange hack.)
+def calculateChinesePortion(phrase):
+    length = len(phrase)
+    for char in phrase:
+        isalpha = char.isalpha()
+        isascii = char.isascii()
+        isdigit = char.isdigit()
+        ischinese = not (isalpha or isascii or isdigit)
+        data = []
 
 topKCandidates.sort(key=lambda phrase: -len(phrase))
 # topKCandidates.sort(key=lambda phrase: -len(phrase))
