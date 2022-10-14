@@ -48,15 +48,21 @@ results = search(next_query, num_results=20)  # returns 20 or less results
 # # print(next_result)
 # # print(results) #this is working.
 # # breakpoint()
+import parse
 for elem in results:
     # 'title', 'abstract', 'url', 'rank'
     # url is encrypted.
     title = elem.get('title')
     abstract = elem.get('abstract')
+    texts = abstract.replace("-",'\n').replace(" ",'\n').split('\n')
+    for text in texts:
+        if len(text)<threshold:
+            continue
+        mtime = parse.parse('{}年{}月{}')
     # you need to parse it.
-    print(title)
-    print(abstract)
-    breakpoint()
+    # print(title)
+    # print(abstract)
+    # breakpoint()
 # no search result! fuck.
 # what is going on?
 
