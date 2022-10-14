@@ -37,22 +37,26 @@ related = result.related
 next_query = random.choice(related)
 # next_query = 'python'
 print('next query: %s' % next_query)
-# from baidusearch.baidusearch import search
+from baidusearch.baidusearch import search
 
 # the abstract is bad
 # use toapi to make website into api.
 # https://github.com/gaojiuli/toapi
 
-# results = search(next_query, num_results=20)  # returns 20 or less results
+results = search(next_query, num_results=20)  # returns 20 or less results
 # # next_result = spider.search_web(next_query, pn= 1)
 # # print(next_result)
 # # print(results) #this is working.
 # # breakpoint()
-# for elem in results:
-#     # 'title', 'abstract', 'url', 'rank'
-#     # url is encrypted.
-#     abstract = elem.get('abstract')
+for elem in results:
+    # 'title', 'abstract', 'url', 'rank'
+    # url is encrypted.
+    title = elem.get('title')
+    abstract = elem.get('abstract')
     # you need to parse it.
+    print(title)
+    print(abstract)
+    breakpoint()
 # no search result! fuck.
 # what is going on?
 
