@@ -1,10 +1,27 @@
 import pyjq
 
-def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
+from lazero.program.functools import try
+def standardJsonParser(obj):
     command = "(.data.cardData[] | select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi})"
-
-
     processed_obj = pyjq.first(command, obj)
+    return processed_obj
+def hiddenJsParser(obj):
+    for index in range(3):
+    data = pyjq.first(".data.commonData.js[{}]".format(index), obj2)
+    if not ('titles' in data and 'titles_url' in data):
+        continue
+    lines = data.split("\n")
+    for line in lines:
+        line = line.strip()
+        hint = "var cardData = "
+        # print(line)
+        if line.startswith(hint):
+            import javascript
+            cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
+            real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
+            # import pprint
+            # pprint.pprint(real_data)
+def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
     import pandas as pd
 
     # from pprint import pprint
@@ -52,18 +69,3 @@ from lazero.filesystem.io import readJsonObjectFromFile
 # obj = readJsonObjectFromFile("ajax_baidu.json")
 
 obj2 = readJsonObjectFromFile("jq_image_2.json")
-for index in range(3):
-    data = pyjq.first(".data.commonData.js[{}]".format(index), obj2)
-    if not ('titles' in data and 'titles_url' in data):
-        continue
-    lines = data.split("\n")
-for line in lines:
-    line = line.strip()
-    hint = "var cardData = "
-    # print(line)
-    if line.startswith(hint):
-        import javascript
-        cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
-        real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
-        import pprint
-        pprint.pprint(real_data)
