@@ -8,6 +8,11 @@ click ok after input password:
 
 https://stackoverflow.com/questions/29072501/how-to-unlock-android-phone-through-adb
 
+scrcpy client
+
+https://github.com/leng-yue/py-scrcpy-client
+https://leng-yue.github.io/py-scrcpy-client/guide.html#bind-events
+
 you want to use android emulator on macos m1?
 
 https://github.com/google/android-emulator-m1-preview/releases/tag/0.3
