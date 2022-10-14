@@ -49,25 +49,11 @@ results = search(next_query, num_results=20)  # returns 20 or less results
 # # print(results) #this is working.
 # # breakpoint()
 # import parse
-import re
-threshold = 4
-for elem in results:
-    # 'title', 'abstract', 'url', 'rank'
-    # url is encrypted.
-    title = elem.get('title')
-    abstract = elem.get('abstract')
-    for text in doc.sents:
-        print(text) # OOM?
-        breakpoint()
-        if len(text)<threshold:
-            continue
-        mtime = re.findall(r'\d+年\d+月\d+日', text)
-        if mtime is not None:
-            text = text.replace(mtime,"")
-    # you need to parse it.
-    # print(title)
-    # print(abstract)
-    # breakpoint()
+print(results)
+import json
+string = json.dumps(results, ensure_ascii=False, indent=4)
+with open('result_baidu.json', 'w+') as f:
+    f.write(string)
 # no search result! fuck.
 # what is going on?
 
