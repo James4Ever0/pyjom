@@ -49,4 +49,7 @@ def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
     return df_title_snippets, df_img_sim_width_height
 
 from lazero.filesystem.io import readJsonObjectFromFile
-obj = readJsonObjectFromFile("ajax_baidu.json")
+# obj = readJsonObjectFromFile("ajax_baidu.json")
+
+obj2 = readJsonObjectFromFile("jq_image_2.json")
+pyjq.first(".data.commonData.js[2]", obj2)
