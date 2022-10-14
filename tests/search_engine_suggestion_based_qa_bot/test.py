@@ -10,3 +10,5 @@
 # paste your link 'elsewhere', submit your link to search engine somehow, visit your link from search engine somehow
 
 # seo without website
+
+# create short links and submit them to search engine
