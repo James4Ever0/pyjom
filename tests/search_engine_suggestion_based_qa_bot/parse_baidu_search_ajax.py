@@ -80,8 +80,10 @@ def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
         print(df_img_sim_width_height.head())
     return df_title_snippets, df_img_sim_width_height
 
-from lazero.filesystem.io import readJsonObjectFromFile
-# obj = readJsonObjectFromFile("ajax_baidu.json")
-
-obj2 = readJsonObjectFromFile("jq_image_2.json")
-getBaiduImageSearchAjaxInfoParsed(obj2, debug=True)
+# the "js" response may contain video info which may help with our reverse video search.
+# but the keyword also helps!
+if __name__ == "__main__":
+    from lazero.filesystem.io import readJsonObjectFromFile
+    # obj = readJsonObjectFromFile("ajax_baidu.json")
+    obj2 = readJsonObjectFromFile("jq_image_2.json")
+    getBaiduImageSearchAjaxInfoParsed(obj2, debug=True)
