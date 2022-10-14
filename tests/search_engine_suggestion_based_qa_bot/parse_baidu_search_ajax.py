@@ -57,7 +57,7 @@ lines = data.split("\n")
 for line in lines:
     line = line.strip()
     hint = "var cardData = "
-    if line.startswith(hint):
+    if 'titles' in line and 'titles_url' in line:
         import javascript
         cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
         # print(dir(cardData))
@@ -67,3 +67,4 @@ for line in lines:
         import pprint
         pprint.pprint(cardData)
         # print(real_data)
+        break
