@@ -31,10 +31,11 @@ def getWidthHeight(url):
     # breakpoint()
     width = int(mdict['w'][0])
     height = int(mdict['h'][0])
-    return width, height
+    area = width*height
+    return width, height, area
 # pre_qs = df_img_sim['imgs_src'].split("?")
-width_height = df_img_sim['imgs_src'].apply(lambda v:pd.Series(getWidthHeight(v), index=['width','height']))
-width_
+width_height = df_img_sim['imgs_src'].apply(lambda v:pd.Series(getWidthHeight(v), index=['width','height','area']))
+df_img_sim_width_height =pd.concat([df_img_sim,width_height],axis=1,join='inner')
 # qs = parse_qs(pre_qs)
 # print(qs)
-print(width_height)
+print(df_img_sim_width_height.head())
