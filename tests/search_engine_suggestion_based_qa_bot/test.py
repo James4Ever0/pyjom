@@ -35,10 +35,11 @@ import random
 # result.related 
 related = result.related
 next_query = random.choice(related)
+# next_query = 'python'
 print('next query: %s' % next_query)
-next_result = spider.search_web(next_query, pn= 1)
-print(next_result)
-breakpoint()
+# next_result = spider.search_web(next_query, pn= 1)
+# print(next_result)
+# breakpoint()
 # no search result! fuck.
 # what is going on?
 
