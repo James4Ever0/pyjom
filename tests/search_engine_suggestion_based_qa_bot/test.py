@@ -21,3 +21,8 @@
 # https://www.pemavor.com/seo-keyword-clustering-with-python/
 
 # i have bookmarked links for further use on macbook chrome.
+
+query = "python有个问题想请教一下 为什么我这个函数跑不通"
+
+import baiduspider
+
