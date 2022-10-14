@@ -52,4 +52,12 @@ from lazero.filesystem.io import readJsonObjectFromFile
 # obj = readJsonObjectFromFile("ajax_baidu.json")
 
 obj2 = readJsonObjectFromFile("jq_image_2.json")
-pyjq.first(".data.commonData.js[2]", obj2)
+data = pyjq.first(".data.commonData.js[2]", obj2)
+lines = data.split("\n")
+for line in lines:
+    line = line.strip()
+    if line.startswith("var cardData"):
+        import javascript
+        javascript.eval_js(line)
+        print(cardData)
+        print(line)
