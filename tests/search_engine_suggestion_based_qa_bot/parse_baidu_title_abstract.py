@@ -49,9 +49,17 @@ def getCuttedWords(phrase):
         if len(word)>0:
             wordList.append(word)
     return wordList
-def countCommonCandidates(phrase_1,phrase_2):
-    words_1 = set(getCuttedWords(phrase_1))
-    words_2 =
-    return len(list(set()&set()))
+def countCommonWords(phrase_1, phrase_2, wordCount=False):
+    words_1 = getCuttedWords(phrase_1)
+    words_2 = getCuttedWords(phrase_2)
+    # count for longest total length?
+    result = list(set(words_1)&set(words_2))
+    if wordCount:
+        return len(result)
+    else:
+        return len("".join(result))
 
-candidates.sort(key=lambda phrase: 
+candidates.sort(key=lambda phrase: -countCommonWords(phrase,query))
+print("TOP 10")
+for elem in candidates[:10]:
+    print(elem)
