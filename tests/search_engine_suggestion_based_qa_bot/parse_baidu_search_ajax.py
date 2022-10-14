@@ -1,7 +1,7 @@
 import pyjq
 
 def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
-    commonFilter = "select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} | select (.titles !=null)"
+    commonFilter = "select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets, imgs_src, simi} | select (.titles !=null)"
     def standardJsonParser(obj):
         command = ".data.cardData[] | {}".format(commonFilter)
         processed_obj = pyjq.first(command, obj)
