@@ -1,16 +1,28 @@
 from lazero.filesystem.io import readJsonObjectFromFile
-from lazero. import checkMinMaxDict
+from lazero.utils.mathlib import checkMinMaxDict
 data = readJsonObjectFromFile('result_baidu.json')
 import string
 from zhon import hanzi
-for elem in data:
-    title = elem.get('title')
-    abstract = elem.get('abstract')
-    punctuations = set(list(string.punctuation+hanzi.punctuation))
-    punctuations.remove(" ")
+
+
+punctuations = set(list(string.punctuation+hanzi.punctuation))
+permitted = [" "]
+for perm in permitted:
+    if perm in punctuations:
+        punctuations.remove(perm)
+    
+def processQueryResult(abstract, minMaxDict={'min':5,'max':15}):
     for punc in punctuations:
         abstract = abstract.replace(punc, "\n")
     abstract = abstract.split("\n")
     for phrase in abstract:
+        phrase = phrase.strip()
+        phrase = removeTimeInfo(phrase)
         if not checkMinMaxDict(len(phrase), minMaxDict):
-    return abstract
+            continue
+        else:
+            yield phrase
+for elem in data:
+    title = elem.get('title')
+    abstract = elem.get('abstract')
+    for phrase in processQueryResult(abstract):
