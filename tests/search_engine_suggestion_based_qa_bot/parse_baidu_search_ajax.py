@@ -19,7 +19,7 @@ def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
                 if line.startswith(hint):
                     import javascript
                     cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
-                    real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
+                    real_data = pyjq.first("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
                     # import pprint
                     return real_data
                     # pprint.pprint(real_data)
@@ -36,6 +36,8 @@ def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
     if processed_obj is None:
         if debug:
             print('cannot parse info from obj')
+    # print(processed_obj)
+    # breakpoint()
     # from pprint import pprint
     # pprint(processed_obj)
     title_snippets = pyjq.first("{titles, snippets}", processed_obj)
