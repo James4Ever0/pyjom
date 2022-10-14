@@ -28,9 +28,9 @@ import baiduspider
 spider=baiduspider.BaiduSpider()
 from pprint import pprint
 
-result = spider.search_web(query)
-print(result)
-breakpoint()
+result = spider.search_web(query, pn= 1)
+# print(result)
+# breakpoint()
 # result.related 
 
 # 'baike', 'blog', 'calc', 'gitee', 'music', 'news', 'normal', 'pages', 'plain', 'related', 'tieba', 'total', 'video'
