@@ -7,8 +7,10 @@ from pprint import pprint
 result = spider.search_web(query, pn= 1)
 print(result.plain)
 # change the div class name.
-# change all 'result-op' into 'result' line 153
+# change 'result-op' into 'result' at line 153
 # file: /usr/local/lib/python3.9/dist-packages/baiduspider/parser/__init__.py:153
 # https://github.com/BaiduSpider/BaiduSpider/pull/151
 # https://github.com/BaiduSpider/BaiduSpider/pull/151/files
-breakpoint()
+# breakpoint()
+
+# 'des', 'origin', 'plain', 'snapshot', 'time', 'title', 'url'
