@@ -18,7 +18,7 @@ def removeTimeInfo(phrase):
     for timeinfo in timeinfos:
         phrase = phrase.replace(timeinfo, "")
     return phrase
-def processQueryResult(abstract, minMaxDict={'min':5,'max':24}):
+def processQueryResult(abstract, minMaxDict={'min':8,'max':24}):
     for punc in punctuations:
         abstract = abstract.replace(punc, "\n")
     abstract = abstract.split("\n")
@@ -51,10 +51,12 @@ for elem in data:
             if len(name)>0:
                 realWebsiteNames.append(name)
     abstract = elem.get('abstract')
+    # print(abstract)
+    # breakpoint()
     for name in realWebsiteNames:
         abstract = abstract.replace(name,"") # remove website names
     for phrase in processQueryResult(abstract):
-        if phrase not in candidates:
+        if phrase not in candidates and not phrase.endswith(""): # magic char.
             candidates.append(phrase) # what is your query?
 import jieba
 def getCuttedWords(phrase):
@@ -91,4 +93,4 @@ print("TOP",top_k)
 topKCandidates = bm25.get_top_n(tokenized_query, candidates, n=top_k)
 topKCandidates.sort(key=lambda phrase: -len(phrase))
 for elem in topKCandidates:
-    print(elem)
+    print(elem.__repr__())
