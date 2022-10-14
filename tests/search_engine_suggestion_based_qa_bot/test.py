@@ -51,14 +51,11 @@ results = search(next_query, num_results=20)  # returns 20 or less results
 # import parse
 import re
 threshold = 4
-import spacy
-nlp = spacy.load("zh_core_web_sm")
 for elem in results:
     # 'title', 'abstract', 'url', 'rank'
     # url is encrypted.
     title = elem.get('title')
     abstract = elem.get('abstract')
-    doc = nlp(abstract)
     for text in doc.sents:
         print(text) # OOM?
         breakpoint()
