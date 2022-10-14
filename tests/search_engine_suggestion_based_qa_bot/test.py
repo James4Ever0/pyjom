@@ -25,4 +25,11 @@
 query = "python有个问题想请教一下 为什么我这个函数跑不通"
 
 import baiduspider
+spider=baiduspider.BaiduSpider()
+from pprint import pprint
 
+result = spider.search_web(query)
+print(result)
+breakpoint()
+
+# 'baike', 'blog', 'calc', 'gitee', 'music', 'news', 'normal', 'pages', 'plain', 'related', 'tieba', 'total', 'video'
