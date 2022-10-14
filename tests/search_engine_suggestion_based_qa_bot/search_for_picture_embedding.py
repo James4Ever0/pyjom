@@ -35,7 +35,11 @@ for elem in result.raw:
         from parse_baidu_search_ajax import getBaiduImageSearchAjaxInfoParsed
         title_some, url_meta_some= getBaiduImageSearchAjaxInfoParsed(myJson, debug=True)
     except:
+        import traceback
+        traceback.print_exc()
+        print(ajaxUrl)
         print('error!')
+        breakpoint()
     # breakpoint()
 # ['origin', 'raw', 'url']
 # result.raw[0].url is the original url. however you won't get the picture.
