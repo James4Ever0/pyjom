@@ -40,3 +40,5 @@ for elem in data:
     abstract = elem.get('abstract')
     for phrase in processQueryResult(abstract):
         candidates.append(phrase) # what is your query?
+
+candidates.sort(key=lambda phrase: len(phrase)-Levenshtein())
