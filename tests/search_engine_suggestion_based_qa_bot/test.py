@@ -30,7 +30,16 @@ from pprint import pprint
 
 result = spider.search_web(query, pn= 1)
 # print(result)
-# breakpoint()
+# nothing returned.
+import random
 # result.related 
+related = result.related
+next_query = random.choice(related)
+print('next query: %s' % next_query)
+next_result = spider.search_web(next_query, pn= 1)
+print(next_result)
+breakpoint()
+# no search result! fuck.
+# what is going on?
 
 # 'baike', 'blog', 'calc', 'gitee', 'music', 'news', 'normal', 'pages', 'plain', 'related', 'tieba', 'total', 'video'
