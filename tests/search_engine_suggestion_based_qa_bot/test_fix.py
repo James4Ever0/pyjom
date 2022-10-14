@@ -13,4 +13,6 @@ print(result.plain)
 # https://github.com/BaiduSpider/BaiduSpider/pull/151/files
 # breakpoint()
 # result.normal[0].url
+# also update the news extraction logic:
+# https://github.com/BaiduSpider/BaiduSpider/pull/127/files
 # 'des', 'origin', 'plain', 'snapshot', 'time', 'title', 'url'
