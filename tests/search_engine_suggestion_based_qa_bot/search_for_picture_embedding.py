@@ -7,4 +7,6 @@ from PicImageSearch.sync import BaiDu
 
 baidu = BaiDu()
 result = baidu.search(file=image)
-print(result)
+# print(result)
+breakpoint()
+# ['origin', 'raw', 'url']
