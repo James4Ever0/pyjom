@@ -29,8 +29,12 @@ def processQueryResult(abstract, minMaxDict={'min':5,'max':20}):
             continue
         else:
             yield phrase
+candidates = []
+import Levenshtein
+
+query = ""
 for elem in data:
     title = elem.get('title')
     abstract = elem.get('abstract')
     for phrase in processQueryResult(abstract):
-        print(phrase)
+        candidates.append(phrase) # what is your query?

@@ -50,6 +50,7 @@ results = search(next_query, num_results=20)  # returns 20 or less results
 # # breakpoint()
 # import parse
 print(results)
+
 import json
 string = json.dumps(results, ensure_ascii=False, indent=4)
 with open('result_baidu.json', 'w+') as f:
