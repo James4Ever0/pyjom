@@ -4,3 +4,5 @@
 image = "prettyGirl.jpeg" # girl image
 
 from PicImageSearch.sync import BaiDu
+
+search = BaiDu
