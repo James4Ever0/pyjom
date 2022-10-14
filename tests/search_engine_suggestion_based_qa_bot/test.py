@@ -11,4 +11,6 @@
 
 # seo without website
 
+# write a blog on github?
+
 # create short links and submit them to search engine
