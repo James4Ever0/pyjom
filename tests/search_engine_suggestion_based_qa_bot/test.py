@@ -42,8 +42,13 @@ from baidusearch.baidusearch import search
 results = search(next_query, num_results=20)  # returns 20 or less results
 # next_result = spider.search_web(next_query, pn= 1)
 # print(next_result)
-print(results) #this is working.
-breakpoint()
+# print(results) #this is working.
+# breakpoint()
+for elem in results:
+    # 'title', 'abstract', 'url', 'rank'
+    # url is encrypted.
+    abstract = elem.get('abstract')
+    # you need to parse it.
 # no search result! fuck.
 # what is going on?
 
