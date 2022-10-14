@@ -8,7 +8,13 @@ from PicImageSearch.sync import BaiDu
 baidu = BaiDu()
 result = baidu.search(file=image)
 # print(result)
-breakpoint()
+# better not to query 'ajax' unless you want to get banned.
+# breakpoint()
+for elem in result.raw:
+    thumbnail = elem.get('thumbnail')
+    sim = elem.get('similarity')
+    title = elem.get('title')
+    # url is not necessary since we 
 # ['origin', 'raw', 'url']
 # result.raw[0].url is the original url. however you won't get the picture.
 # result.raw[0].thumbnail
