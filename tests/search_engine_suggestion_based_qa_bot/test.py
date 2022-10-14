@@ -40,8 +40,8 @@ print('next query: %s' % next_query)
 # from baidusearch.baidusearch import search
 
 # the abstract is bad
-
-
+# use toapi to make website into api.
+# https://github.com/gaojiuli/toapi
 
 # results = search(next_query, num_results=20)  # returns 20 or less results
 # # next_result = spider.search_web(next_query, pn= 1)
