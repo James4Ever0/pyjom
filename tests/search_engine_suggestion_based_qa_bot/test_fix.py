@@ -12,5 +12,5 @@ print(result.plain)
 # https://github.com/BaiduSpider/BaiduSpider/pull/151
 # https://github.com/BaiduSpider/BaiduSpider/pull/151/files
 # breakpoint()
-
+# result.normal[0].url
 # 'des', 'origin', 'plain', 'snapshot', 'time', 'title', 'url'
