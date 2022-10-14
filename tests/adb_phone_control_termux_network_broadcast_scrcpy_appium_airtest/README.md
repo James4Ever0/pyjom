@@ -1,0 +1,1 @@
+device discovery, termux daemon, 
