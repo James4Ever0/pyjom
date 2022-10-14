@@ -36,6 +36,8 @@ query = "python有个问题想请教一下 为什么我这个函数跑不通"
 # haystack?
 for elem in data:
     title = elem.get('title')
+    print('title: %s' % title)
+    spliter = [" - ","-","_"]
     abstract = elem.get('abstract')
     for phrase in processQueryResult(abstract):
         if phrase not in candidates:
