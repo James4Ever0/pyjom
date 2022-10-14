@@ -56,8 +56,10 @@ data = pyjq.first(".data.commonData.js[2]", obj2)
 lines = data.split("\n")
 for line in lines:
     line = line.strip()
-    if line.startswith("var cardData"):
+    hint = "var cardData = "
+    if line.startswith(hint):
         import javascript
-        javascript.eval_js(line)
-        print(cardData)
-        print(line)
+        cardData = javascript.eval_js(line.replace(hint,""))
+        # print(cardData)
+        real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
+        print(real_data)
