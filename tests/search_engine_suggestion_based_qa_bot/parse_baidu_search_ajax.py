@@ -57,14 +57,16 @@ lines = data.split("\n")
 for line in lines:
     line = line.strip()
     hint = "var cardData = "
-    if 'titles' in line and 'titles_url' in line:
-        import javascript
-        cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
+    print(line)
+    # if 'titles' in line:
+        # print(line)
+        # import javascript
+        # cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
         # print(dir(cardData))
         # breakpoint()
         # print(cardData)
         # real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
-        import pprint
-        pprint.pprint(cardData)
+        # import pprint
+        # pprint.pprint(cardData)
         # print(real_data)
-        break
+        # break
