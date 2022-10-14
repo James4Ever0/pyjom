@@ -14,3 +14,6 @@
 # write a blog on github?
 
 # create short links and submit them to search engine
+
+# get query count, perform n-gram analysis
+# https://www.aeripret.com/ngrams-analysis-seo/
