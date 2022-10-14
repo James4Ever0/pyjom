@@ -39,14 +39,20 @@ for elem in data:
     print('title: %s' % title)
     spliters = [" - ","-","_"]
     for spliter in spliters:
-        potentialWebsiteNames = title.split(spliter)
-        if len(potentialWebsiteNames)>1:
-            websiteNames = potentialWebsiteNames[1:]
-            for name in websiteNames:
-                for spliter in spliters:
-                    name.split(spliter)
-        title = potentialWebsiteNames[0]
+        title = title.replace(spliter,'_')
+    
+    potentialWebsiteNames = title.split("_")
+    title = potentialWebsiteNames[0].strip()
+    realWebsiteNames = []
+    if len(potentialWebsiteNames)>1:
+        websiteNames = potentialWebsiteNames[1:]
+        for name in websiteNames:
+            name = name.strip()
+            if len(name)>0:
+                realWebsiteNames.append(name)
     abstract = elem.get('abstract')
+    for name in realWebsiteNames:
+        abstract = abstract.replace(name,"") # remove website names
     for phrase in processQueryResult(abstract):
         if phrase not in candidates:
             candidates.append(phrase) # what is your query?
