@@ -11,6 +11,7 @@ result = baidu.search(file=image)
 # better not to query 'ajax' unless you want to get banned.
 # breakpoint()
 # you want to use phash, width, height for this.
+import requests
 for elem in result.raw:
     elem = elem.__dict__
     # print(elem)
@@ -21,6 +22,11 @@ for elem in result.raw:
     # url is not necessary since we almost can't get the picture.
     ajaxUrl = elem['origin'].get('ajaxUrl')
     print(thumbnail, simi, title, ajaxUrl)
+    myJson = requests.get(ajaxUrl)
+    myJson = myJson.json()
+    from import getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
+    getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
+    breakpoint()
 # ['origin', 'raw', 'url']
 # result.raw[0].url is the original url. however you won't get the picture.
 # result.raw[0].thumbnail
