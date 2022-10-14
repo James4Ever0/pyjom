@@ -30,7 +30,6 @@ def processQueryResult(abstract, minMaxDict={'min':5,'max':24}):
         else:
             yield phrase
 candidates = []
-import Levenshtein
 
 query = "python有个问题想请教一下 为什么我这个函数跑不通"
 # use another model please?
@@ -63,6 +62,11 @@ def countCommonWords(phrase_1, phrase_2, wordCount=False):
 # candidates.sort(key=lambda phrase: -countCommonWords(phrase,query))
 # use bm25?
 # this sorting is wrong.
+
+from rank_bm25 import BM25Okapi
+
+corpus = [getCuttedWords(phrase) for phrase in candidates]
+
 top_k = 20
 print("TOP",top_k)
 topKCandidates = candidates[:top_k]
