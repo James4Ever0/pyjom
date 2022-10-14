@@ -59,7 +59,11 @@ for line in lines:
     hint = "var cardData = "
     if line.startswith(hint):
         import javascript
-        cardData = javascript.eval_js(line.replace(hint,""))
+        cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
+        # print(dir(cardData))
+        # breakpoint()
         # print(cardData)
-        real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
-        print(real_data)
+        # real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
+        import pprint
+        pprint.pprint(cardData)
+        # print(real_data)
