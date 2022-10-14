@@ -27,11 +27,13 @@ from urllib.parse import parse_qs
 def getWidthHeight(url):
     qs = url.split("?")[-1]
     mdict = parse_qs(qs)
-    width = int(mdict['w'])
-    height = int(mdict['h'])
+    # print(mdict)
+    # breakpoint()
+    width = int(mdict['w'][0])
+    height = int(mdict['h'][0])
     return {'w':width, 'h':height}
 # pre_qs = df_img_sim['imgs_src'].split("?")
-width_height = df_img_sim['imgs_src'].apply(getWidthHeight)
+width_height = df_img_sim['imgs_src'].apply(getWidthHeight, result_type='expand')
 # qs = parse_qs(pre_qs)
 # print(qs)
 print(width_height)
