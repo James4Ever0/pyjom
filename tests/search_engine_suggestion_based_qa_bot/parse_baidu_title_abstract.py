@@ -40,8 +40,18 @@ for elem in data:
     abstract = elem.get('abstract')
     for phrase in processQueryResult(abstract):
         candidates.append(phrase) # what is your query?
-
+import jieba
+def getCuttedWords(phrase):
+    candidates = jieba.lcut(phrase.lower())
+    wordList = []
+    for word in candidates:
+        word = word.strip()
+        if len(word)>0:
+            wordList.append(word)
+    return wordList
 def countCommonCandidates(phrase_1,phrase_2):
-    words_1 = jieba.lcut(phrase_1.lower())
+    words_1 = set(getCuttedWords(phrase_1))
+    words_2 =
+    return len(list(set()&set()))
 
 candidates.sort(key=lambda phrase: 
