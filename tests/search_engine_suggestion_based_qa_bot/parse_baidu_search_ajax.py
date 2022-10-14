@@ -23,4 +23,7 @@ elem = df_img_sim["simi"][0]
 print(type(elem), elem)  # str?
 # breakpoint()
 from urllib.parse import parse_qs
-df_img_sim['imgs_src'].split("?")
+pre_qs = df_img_sim['imgs_src'].split("?")
+# qs = parse_qs(pre_qs)
+# print(qs)
+print(pre_qs)
