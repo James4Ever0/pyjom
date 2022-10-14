@@ -48,12 +48,11 @@ results = search(next_query, num_results=20)  # returns 20 or less results
 # # print(next_result)
 # # print(results) #this is working.
 # # breakpoint()
-import parse
+# import parse
+import re
 threshold = 4
 import spacy
 nlp = spacy.load("zh_core_web_sm")
-
- 
 for elem in results:
     # 'title', 'abstract', 'url', 'rank'
     # url is encrypted.
@@ -61,14 +60,13 @@ for elem in results:
     abstract = elem.get('abstract')
     doc = nlp(abstract)
     for text in doc.sents:
-        # print(text)
-        # breakpoint()
+        print(text) # OOM?
+        breakpoint()
         if len(text)<threshold:
             continue
-        mtime = parse.parse('.*{:d}年{:d}月{:d}日.*', text)
+        mtime = re.findall(r'\d+年\d+月\d+日', text)
         if mtime is not None:
-            print(mtime)
-            breakpoint()
+            text = text.replace(mtime,"")
     # you need to parse it.
     # print(title)
     # print(abstract)
