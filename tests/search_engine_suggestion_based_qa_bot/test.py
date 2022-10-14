@@ -37,9 +37,13 @@ related = result.related
 next_query = random.choice(related)
 # next_query = 'python'
 print('next query: %s' % next_query)
+from baidusearch.baidusearch import search
+
+results = search(next_query, num_results=20)  # returns 20 or less results
 # next_result = spider.search_web(next_query, pn= 1)
 # print(next_result)
-# breakpoint()
+print(results) #this is working.
+breakpoint()
 # no search result! fuck.
 # what is going on?
 
