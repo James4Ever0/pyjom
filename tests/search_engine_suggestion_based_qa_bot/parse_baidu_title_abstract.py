@@ -43,7 +43,7 @@ query = "python有个问题想请教一下 为什么我这个函数跑不通"
 for elem in data:
     title = elem.get("title")
     print("title: %s" % title)
-    spliters = [" - ", "-", "_"]
+    spliters = [" - ", "-", "_", "－"]
     for spliter in spliters:
         title = title.replace(spliter, "_")
 
