@@ -58,8 +58,9 @@ def countCommonWords(phrase_1, phrase_2, wordCount=False):
         return len(result)
     else:
         return len("".join(result))
-
+# candidates = list(set(candidates))
 candidates.sort(key=lambda phrase: -countCommonWords(phrase,query))
-print("TOP 10")
-for elem in candidates[:10]:
+top_k = 20
+print("TOP",top_k)
+for elem in candidates[:top_k]:
     print(elem)
