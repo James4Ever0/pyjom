@@ -120,9 +120,13 @@ def calculateChinesePortion(phrase):
     mdata = np.array([isalpha, isascii, isdigit, ischinese]) / length
     return mdata
 
-queryChinesePortion = calculateChinesePortion(query)
 
-topKCandidates.sort(key=lambda phrase: -len(phrase))
+queryChinesePortion = calculateChinesePortion(query)
+from scipy.spatial.distance import cosine
+
+topKCandidates.sort(
+    key=lambda phrase: cosine(calculateChinesePortion(phrase), queryChinesePortion)
+)
 # topKCandidates.sort(key=lambda phrase: -len(phrase))
 for elem in topKCandidates:
     print(elem.__repr__())
