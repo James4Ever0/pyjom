@@ -59,10 +59,9 @@ def countCommonWords(phrase_1, phrase_2, wordCount=False):
     else:
         return len("".join(result))
 # candidates = list(set(candidates))
-
+# https://pypi.org/project/rank-bm25/
 # candidates.sort(key=lambda phrase: -countCommonWords(phrase,query))
-import Levenshtein
-Levenshtein.distance(phrase, query)/ len()
+# use bm25?
 # this sorting is wrong.
 top_k = 20
 print("TOP",top_k)
