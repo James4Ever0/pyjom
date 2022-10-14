@@ -91,6 +91,6 @@ bm25 = BM25Okapi(tokenized_corpus)
 top_k = 20
 print("TOP",top_k)
 topKCandidates = bm25.get_top_n(tokenized_query, candidates, n=top_k)
-topKCandidates.sort(key=lambda phrase: -len(phrase))
+# topKCandidates.sort(key=lambda phrase: -len(phrase))
 for elem in topKCandidates:
     print(elem.__repr__())
