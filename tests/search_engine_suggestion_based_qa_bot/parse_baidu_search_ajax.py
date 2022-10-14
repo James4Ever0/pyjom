@@ -52,21 +52,18 @@ from lazero.filesystem.io import readJsonObjectFromFile
 # obj = readJsonObjectFromFile("ajax_baidu.json")
 
 obj2 = readJsonObjectFromFile("jq_image_2.json")
-data = pyjq.first(".data.commonData.js[2]", obj2)
-lines = data.split("\n")
+for index in range(3):
+    data = pyjq.first(".data.commonData.js[{}]".format(index), obj2)
+    if not ('titles' in data and 'titles_url' in data):
+        continue
+    lines = data.split("\n")
 for line in lines:
     line = line.strip()
     hint = "var cardData = "
-    print(line)
-    # if 'titles' in line:
-        # print(line)
-        # import javascript
-        # cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
-        # print(dir(cardData))
-        # breakpoint()
-        # print(cardData)
-        # real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
-        # import pprint
-        # pprint.pprint(cardData)
-        # print(real_data)
-        # break
+    # print(line)
+    if line.startswith(hint):
+        import javascript
+        cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
+        real_data = pyjq.apply("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
+        import pprint
+        pprint.pprint(real_data)
