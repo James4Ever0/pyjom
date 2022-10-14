@@ -20,4 +20,4 @@
 
 # https://www.pemavor.com/seo-keyword-clustering-with-python/
 
-# 
+# i have bookmarked links for further use on macbook chrome.
