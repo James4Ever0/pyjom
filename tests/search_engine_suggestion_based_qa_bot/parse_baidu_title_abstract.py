@@ -38,7 +38,8 @@ for elem in data:
     title = elem.get('title')
     abstract = elem.get('abstract')
     for phrase in processQueryResult(abstract):
-        candidates.append(phrase) # what is your query?
+        if phrase not in candidates:
+            candidates.append(phrase) # what is your query?
 import jieba
 def getCuttedWords(phrase):
     candidates = jieba.lcut(phrase.lower())
@@ -65,11 +66,13 @@ def countCommonWords(phrase_1, phrase_2, wordCount=False):
 
 from rank_bm25 import BM25Okapi
 
-corpus = [getCuttedWords(phrase) for phrase in candidates]
-
+tokenized_corpus = [getCuttedWords(phrase) for phrase in candidates]
+tokenized_query = getCuttedWords(query)
+bm25 = BM25Okapi(tokenized_corpus)
+# doc_scores = bm25.get_scores(tokenized_query)
 top_k = 20
 print("TOP",top_k)
-topKCandidates = candidates[:top_k]
+topKCandidates = bm25.get_top_n(tokenized_query, candidates, n=top_k)
 topKCandidates.sort(key=lambda phrase: -len(phrase))
 for elem in topKCandidates:
     print(elem)
