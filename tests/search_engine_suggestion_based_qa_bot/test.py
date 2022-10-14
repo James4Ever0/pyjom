@@ -17,3 +17,7 @@
 
 # get query count, perform n-gram analysis
 # https://www.aeripret.com/ngrams-analysis-seo/
+
+# https://www.pemavor.com/seo-keyword-clustering-with-python/
+
+# 
