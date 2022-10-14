@@ -50,6 +50,11 @@ results = search(next_query, num_results=20)  # returns 20 or less results
 # # breakpoint()
 import parse
 threshold = 4
+import spacy
+nlp = spacy.load("zh_core_web_sm")
+# doc = nlp(s)
+# for i in doc.sents:
+ 
 for elem in results:
     # 'title', 'abstract', 'url', 'rank'
     # url is encrypted.
