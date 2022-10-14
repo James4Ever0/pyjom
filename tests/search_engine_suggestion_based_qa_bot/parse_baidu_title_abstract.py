@@ -18,7 +18,7 @@ def removeTimeInfo(phrase):
     for timeinfo in timeinfos:
         phrase = phrase.replace(timeinfo, "")
     return phrase
-def processQueryResult(abstract, minMaxDict={'min':5,'max':20}):
+def processQueryResult(abstract, minMaxDict={'min':5,'max':24}):
     for punc in punctuations:
         abstract = abstract.replace(punc, "\n")
     abstract = abstract.split("\n")
@@ -59,8 +59,14 @@ def countCommonWords(phrase_1, phrase_2, wordCount=False):
     else:
         return len("".join(result))
 # candidates = list(set(candidates))
-candidates.sort(key=lambda phrase: -countCommonWords(phrase,query))
+
+# candidates.sort(key=lambda phrase: -countCommonWords(phrase,query))
+import Levenshtein
+Levenshtein.distance(phrase, query)/ len()
+# this sorting is wrong.
 top_k = 20
 print("TOP",top_k)
-for elem in candidates[:top_k]:
+topKCandidates = candidates[:top_k]
+topKCandidates.sort(key=lambda phrase: -len(phrase))
+for elem in topKCandidates:
     print(elem)
