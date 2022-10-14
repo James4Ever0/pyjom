@@ -1,8 +1,9 @@
 import pyjq
 
 def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
+    commonFilter = "select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} | select (.titles !=null)"
     def standardJsonParser(obj):
-        command = "(.data.cardData[] | select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi})"
+        command = ".data.cardData[] | {}".format(commonFilter)
         processed_obj = pyjq.first(command, obj)
         return processed_obj
     def hiddenJsParser(obj):
@@ -19,7 +20,7 @@ def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
                 if line.startswith(hint):
                     import javascript
                     cardData = javascript.eval_js(line.replace(hint,"")).valueOf()
-                    real_data = pyjq.first("select(.extData) | .extData.showInfo | select(. != null) | {titles, snippets,imgs_src,simi} ",cardData)
+                    real_data = pyjq.first(commonFilter,cardData)
                     # import pprint
                     return real_data
                     # pprint.pprint(real_data)
