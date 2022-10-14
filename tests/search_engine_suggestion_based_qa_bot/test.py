@@ -41,17 +41,6 @@ print('next query: %s' % next_query)
 
 # the abstract is bad
 
-from MagicBaidu import MagicBaidu
-import pprint
-
-mb = MagicBaidu()
-
-# Get {'title','url','text'}
-for i in mb.search(query='python'):
-	try:
-		pprint.pprint(i)
-	except:
-		pass
 
 
 # results = search(next_query, num_results=20)  # returns 20 or less results
