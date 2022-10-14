@@ -7,7 +7,7 @@
 
 # black hat seo, https://www.blackhatworld.com/forums/black-hat-seo.28/
 
-# paste your link 'elsewhere', submit your link to search engine somehow, visit your link from search engine somehow
+# paste your link 'elsewhere' 自动评论 自动发布信息 私信, submit your link to search engine somehow, visit your link from search engine somehow
 
 # seo without website
 
