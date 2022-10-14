@@ -21,11 +21,16 @@ for elem in result.raw:
     title = elem.get('title')
     # url is not necessary since we almost can't get the picture.
     ajaxUrl = elem['origin'].get('ajaxUrl')
+    import time
     print(thumbnail, simi, title, ajaxUrl)
-    myJson = requests.get(ajaxUrl)
-    myJson = myJson.json()
-    from import getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
-    getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
+    time.sleep(3)
+    r = requests.get(ajaxUrl)
+    myJson = r.json()
+    from lazero.filesystem.io import writeJsonObjectToFile
+    writeJsonObjectToFile('jq_image_2.json',myJson)
+    breakpoint()
+    from parse_baidu_search_ajax import getBaiduImageSearchAjaxInfoParsed
+    title_some, url_meta_some= getBaiduImageSearchAjaxInfoParsed(myJson, debug=True)
     breakpoint()
 # ['origin', 'raw', 'url']
 # result.raw[0].url is the original url. however you won't get the picture.
