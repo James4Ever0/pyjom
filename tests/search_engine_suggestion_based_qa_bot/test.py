@@ -49,16 +49,22 @@ results = search(next_query, num_results=20)  # returns 20 or less results
 # # print(results) #this is working.
 # # breakpoint()
 import parse
+threshold = 4
 for elem in results:
     # 'title', 'abstract', 'url', 'rank'
     # url is encrypted.
     title = elem.get('title')
     abstract = elem.get('abstract')
-    texts = abstract.replace("-",'\n').replace(" ",'\n').split('\n')
+    texts = abstract.replace("-",'\n').split('\n')
     for text in texts:
+        print(text)
+        breakpoint()
         if len(text)<threshold:
             continue
-        mtime = parse.parse('{}年{}月{}')
+        mtime = parse.parse('.*{:d}年{:d}月{:d}日.*', text)
+        if mtime is not None:
+            print(mtime)
+            breakpoint()
     # you need to parse it.
     # print(title)
     # print(abstract)
