@@ -37,7 +37,15 @@ query = "python有个问题想请教一下 为什么我这个函数跑不通"
 for elem in data:
     title = elem.get('title')
     print('title: %s' % title)
-    spliter = [" - ","-","_"]
+    spliters = [" - ","-","_"]
+    for spliter in spliters:
+        potentialWebsiteNames = title.split(spliter)
+        if len(potentialWebsiteNames)>1:
+            websiteNames = potentialWebsiteNames[1:]
+            for name in websiteNames:
+                for spliter in spliters:
+                    name.split(spliter)
+        title = potentialWebsiteNames[0]
     abstract = elem.get('abstract')
     for phrase in processQueryResult(abstract):
         if phrase not in candidates:
