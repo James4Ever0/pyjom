@@ -99,8 +99,7 @@ def reloadMilvusCollection(collection):
 # # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
-search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}
-
+def searchMilvussearch_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True):
 results = collection.search(
     data=[queryData],  # this is the float dimension.
     anns_field="video_phash",
