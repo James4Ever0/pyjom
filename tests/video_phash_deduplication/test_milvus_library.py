@@ -87,6 +87,7 @@ def indexVideoWithVideoDurationAndPhashFromFile(collection, videoFilePath):
     videoDuration = 
     videoPhash = 
     indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash)
+    return videoDuration, videoPhash
 
 
 def reloadMilvusCollection(collection):
@@ -99,17 +100,19 @@ def reloadMilvusCollection(collection):
 # # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
-def searchMilvussearch_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True):
-results = collection.search(
-    data=[queryData],  # this is the float dimension.
-    anns_field="video_phash",
-    param=search_params,
-    output_fields=["video_length"],
-    limit=10,
-    expr="video_length > 1.2 and video_length < 4",
-    # expr='video_length < 1.2',
-)
-theHit = results[0]
+def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True):
+    if autoreload:
+        reloadMilvusCollection(collection)
+    results = collection.search(
+        data=[queryData],  # this is the float dimension.
+        anns_field="video_phash",
+        param=search_params,
+        output_fields=["video_length"],
+        limit=10,
+        expr="video_length > 1.2 and video_length < 4",
+        # expr='video_length < 1.2',
+    )
+    theHit = results[0]
 # print(theHit)
 # so we can perform search without filtering afterwards.
 # results[0][0].entity.get('video_length')
