@@ -15,7 +15,7 @@ from Foundation import NSObject
 from Cocoa import NSEvent, NSKeyDownMask
 from PyObjCTools import AppHelper
 
-
+# NSLeftMouseUpMask, NSLeftMouseDownMask, NSLeftMouseDraggedMask
 
 
 class AppDelegate(NSObject):
