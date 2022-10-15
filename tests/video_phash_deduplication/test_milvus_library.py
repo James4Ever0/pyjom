@@ -83,7 +83,7 @@ def indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash):
     collection.insert([[np.float32(videoDuration)], [queryData]])
 # can release even if not loaded.
 
-def indexVideoWithVideoDurationAndPhashFromFile(collection, videoFile):
+def indexVideoWithVideoDurationAndPhashFromFile(collection, videoFilePath):
     videoDuration = 
     videoPhash = 
     indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash)
