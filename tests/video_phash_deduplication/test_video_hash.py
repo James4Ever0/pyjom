@@ -15,7 +15,8 @@ def getVideoPHash(filepath, withDuration=True,debug=False, timeout=100):
     if not os.path.isabs(filepath):
         filepath = os.path.abspath(filepath)
     commandLine = [
-        "/root/Desktop/works/pyjom/tests/video_phash_deduplication/videohashes/videohashes-linux",
+        "videohashes", # installed in path.
+        # "/root/Desktop/works/pyjom/tests/video_phash_deduplication/videohashes/videohashes-linux",
         "-json",
         filepath,
     ]
@@ -31,7 +32,7 @@ def getVideoPHash(filepath, withDuration=True,debug=False, timeout=100):
     if debug:
         print("FILEPATH: %s" % filepath)
         print(myJson)
-        print("PHASH: ", phash)
+        print("PHASH:", phash)
     if withDuration:
         duration = myJson["duration"]
         return duration, phash
