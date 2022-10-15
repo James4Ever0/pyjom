@@ -33,8 +33,26 @@ warning: this command could be offline for a short period of time after using th
 adb -s 192.168.10.3:5555 shell getevent
 ```
 
-to get focused window:
+to get focused window title:
+
+general method:
+```python
+
+```
+
+for linux:
+```bash
+watch -n 2 xdotool getactivewindow getwindowname
+```
+
 
 to get input events on macos:
+```bash
+
+```
 
 input events on linux:
+
+```bash
+xinput test-xi2 --root
+```
