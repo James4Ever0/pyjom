@@ -47,11 +47,11 @@ for linux:
 watch -n 2 xdotool getactivewindow getwindowname
 ```
 
-for macos: (allow permission first)
+for macos: (allow permission first, deprecated since it will not get the window title instead of the program name)
 https://alvinalexander.com/mac-os-x/applescript-unix-mac-osx-foreground-application-result/
 (where is the window name?)
 ```bash
-osascript -e 'tell application "System Events"' -e 'set frontApp to name of first application process whose frontmost is true' -e 'end tell'
+sleep 3 && osascript -e 'tell application "System Events"' -e 'set frontApp to name of first application process whose frontmost is true' -e 'end tell'
 ```
 
 
