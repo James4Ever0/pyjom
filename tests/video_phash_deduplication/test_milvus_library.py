@@ -139,4 +139,14 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(collection,videoFilePat
 
 if __name__ == '__main__':
     connectMilvusDatabase()
-    
+    collection = getMilvusVideoDeduplicationCollection()
+    videoPaths = [
+        "cute_cat_gif.mp4",
+        "cute_cat_gif.gif",
+        "cat_delogo.gif",
+        "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif",
+    ]
+    for videoPath in videoPaths:
+        indexVideoWithVideoDurationAndPhashFromFile(collection, videoPath) # anyway let's do this.
+    reloadMilvusCollection(collection)
+        
