@@ -67,9 +67,7 @@ import bitarray
 @lru_cache(maxsize=1)
 def transformVideoPhash(videoPhash):
     # we need the raw phash.
-    queryData = np.array(
-        videoPhashTruthTable8x8
-    )
+    queryData = videoPhash.hash # videoPhashTruthTable8x8 or something
     queryData = queryData.reshape(-1).tolist()
     queryData = ["1" if x else "0" for x in queryData]
     queryData = bitarray.bitarray("".join(queryData), endian="little")

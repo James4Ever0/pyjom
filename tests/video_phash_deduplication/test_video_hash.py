@@ -48,7 +48,6 @@ if __name__ == "__main__":
 
     hashs = [getVideoPHash(filepath,debug=True) for filepath in videoPaths]
 
-
     dis0 = hashs[0] - hashs[1]  # small
     dis1 = hashs[1] - hashs[2]  # big
     dis2 = hashs[0] - hashs[2]  # big
