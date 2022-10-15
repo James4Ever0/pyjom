@@ -14,7 +14,12 @@ myPort = 5555
 myInterface = "wlan0"
 
 # list avaliable devices.
+from adb_wrapper import 
 
+devices = adb.get_connected_devices()
+print(devices)
+exit()
+# not working.
 
 if os.geteuid() != 0:
         print('You need to be root to run this script', file=sys.stderr)
