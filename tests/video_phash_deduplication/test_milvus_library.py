@@ -83,9 +83,11 @@ def indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash):
 # can release even if not loaded.
 
 from test_video_hash import getVideoPHash
+import caer
+
 @lru_cache(maxsize=1)
 def getVideoDurationAndPhashFromFile(videoFilePath):
-    videoDuration = 
+    videoDuration = caer.video.frames_and_fps.get_duration(videoFilePath)
     videoPhash = getVideoPHash(videoFilePath)
     return videoDuration, videoPhash
 
