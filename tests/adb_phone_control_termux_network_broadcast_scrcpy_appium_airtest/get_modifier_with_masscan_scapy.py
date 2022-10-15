@@ -57,7 +57,8 @@ if scanAddress is not None:
                 print(connect_address)
                 if not connect_address in connected_addresses:
                     print("connecting device:", connect_address)
-                    command1 = "adb tcpip 5555"
+                    # command1 = "adb tcpip 5555"
+                    # no need to restart?
                     command2 = "adb connect {}".format(connect_address)
-                    os.system(command1)
+                    # os.system(command1)
                     os.system(command2)

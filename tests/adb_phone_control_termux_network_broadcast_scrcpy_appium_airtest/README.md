@@ -34,11 +34,12 @@ adb -s 192.168.10.3:5555 shell getevent
 ```
 
 to get focused window title:
-hint: for headless ssh sessions, must set apropriate xorg environment variables
+hint: for headless ssh sessions, must set apropriate xorg environment variables, eg: `env XAUTHORITY="/run/user/0/gdm/Xauthority" DISPLAY=:1 python3`
 
 general method:
 ```python
-
+import pywinctl
+pywinctl.getActiveWindowTitle()
 ```
 
 for linux:
