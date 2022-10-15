@@ -120,15 +120,17 @@ def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params =
         expr="video_length > {minVideoLength} and video_length < {maxVideoLength}".format(minVideoLength=minVideoLength, maxVideoLength=maxVideoLength),
     )
     theHit = results[0]
-# print(theHit)
-# so we can perform search without filtering afterwards.
-# results[0][0].entity.get('video_length')
-# print(results[0].ids)
-# now, we want to have the 'distance' parameter.
-# print(results[0])
-# print(theHit)
-# distances = theHit.distances
-# results = [x for x in theHit]
-# hits = len(theHit)
-# breakpoint()
-# how to get document by id? wtf
+    # print(theHit)
+    # so we can perform search without filtering afterwards.
+    # results[0][0].entity.get('video_length')
+    # print(results[0].ids)
+    # now, we want to have the 'distance' parameter.
+    # print(results[0])
+    # print(theHit)
+    distances = theHit.distances
+    minDistance = min(distances)
+    # returh the closest distance?
+    # results = [x for x in theHit]
+    # hits = len(theHit)
+    # breakpoint()
+    # how to get document by id? wtf
