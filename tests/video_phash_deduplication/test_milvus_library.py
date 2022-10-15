@@ -72,7 +72,6 @@ def transformVideoPhash(videoPhash):
     )
     queryData = queryData.reshape(-1).tolist()
     queryData = ["1" if x else "0" for x in queryData]
-
     queryData = bitarray.bitarray("".join(queryData), endian="little")
     queryData = queryData.tobytes()
     return queryData
@@ -105,7 +104,7 @@ def reloadMilvusCollection(collection):
 # # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
-def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True, span:float=2):
+def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True, span:float=2, limit:int=10):
     if autoreload:
         reloadMilvusCollection(collection)
     videoDuration, videoPhash = getVideoDurationAndPhashFromFile(videoFilePath)
@@ -117,7 +116,7 @@ def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params =
         anns_field="video_phash",
         param=search_params,
         output_fields=["video_length"],
-        limit=10,
+        limit=limit,
         expr="video_length > {minVideoLength} and video_length < {maxVideoLength}".format(minVideoLength=minVideoLength, maxVideoLength=maxVideoLength),
         # expr='video_length < 1.2',
     )
