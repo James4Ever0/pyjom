@@ -32,6 +32,9 @@ def getVideoPHash(filepath, withDuration=True,debug=False, timeout=100):
         print("FILEPATH: %s" % filepath)
         print(myJson)
         print("PHASH: ", phash)
+    if withDuration:
+        duration = myJson["duration"]
+        return duration, phash
     return phash
 
 if __name__ == "__main__":
