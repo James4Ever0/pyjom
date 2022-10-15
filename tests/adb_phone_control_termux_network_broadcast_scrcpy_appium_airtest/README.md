@@ -23,4 +23,12 @@ https://android.stackexchange.com/questions/191086/adb-commands-to-get-screen-st
 
 Bonjour/Avahi/Zeroconf
 
-logic: if the kill switch is off, when no physical input events happens, or not focused on scrcpy window with keyboard/mouse input events on pc for some time, allow to interact with the phone
+logic: if the kill switch is off, when no physical input events happens, or not focused on scrcpy window with keyboard/mouse input events on pc for some time, allow to interact with the phone.
+
+get physical events:
+
+warning: this command could be offline for a short period of time after using the scrcpy. must automatically reconnect if the device is not offline.
+
+```bash
+adb -s 192.168.10.3:5555 shell getevent
+```
