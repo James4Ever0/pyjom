@@ -12,6 +12,10 @@ import getopt
 import sys
 myPort = 5555
 myInterface = "wlan0"
+
+
+
+
 if os.geteuid() != 0:
         print('You need to be root to run this script', file=sys.stderr)
         sys.exit(1)
@@ -39,3 +43,5 @@ if scanAddress is not None:
             if port['port'] == myPort and port['status'] =='open':
                 print(address, myPort)
                 # we need to connect to it!
+                command1 = "adb tcpip 5555"
+                command2 = "adb connect {}:{}".format(address, myPort)
