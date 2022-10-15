@@ -12,16 +12,13 @@ def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
 	connection = connections.connect(alias=alias, host=host, port=port)# can we reconnect?
 	print('milvus connected')
 
-connectMilvusDatabase()
-connectMilvusDatabase() # will not connect again.
+# connectMilvusDatabase()
+# connectMilvusDatabase() # will not connect again.
 
 collection_name = "video_deduplication"
 
-
 from pymilvus import Collection
 
-# Collection(collection_name)
-# remote this thing.
 from pymilvus import utility
 
 try:
