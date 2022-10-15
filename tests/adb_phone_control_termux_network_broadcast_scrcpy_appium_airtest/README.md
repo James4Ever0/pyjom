@@ -45,9 +45,9 @@ for linux:
 watch -n 2 xdotool getactivewindow getwindowname
 ```
 
-for macos:
+for macos: (allow permission first)
 ```bash
-
+osascript -e 'tell application "System Events"' -e 'set frontApp to name of first application process whose frontmost is true' -e 'end tell'
 ```
 
 
