@@ -14,49 +14,47 @@ def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
 
 # connectMilvusDatabase()
 # connectMilvusDatabase() # will not connect again.
-
-collection_name = "video_deduplication"
-
 from pymilvus import Collection
-
 from pymilvus import utility
-
-try:
-    if utility.has_collection(collection_name):  # be prudent.
-        utility.drop_collection(collection_name)
-except:
-    import traceback
-
-    traceback.print_exc()
-    print("maybe the collection does not exist")
-
 from pymilvus import CollectionSchema, FieldSchema, DataType
 
-video_semantic_id = FieldSchema(  # how to insert this shit without prior knowledge?
-    name="video_semantic_id",
-    dtype=DataType.INT64,
-    is_primary=True,  # if is primary, will do check for 'not duplicate' or something.
-    auto_id=True,  # no need for id generation.
-)
-video_length = FieldSchema(
-    name="video_length",
-    dtype=DataType.FLOAT,
-)
-video_phash = FieldSchema(
-    name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64
-)  # 64
-# single dimension? no multi dimension support?
-schema = CollectionSchema(
-    fields=[video_semantic_id, video_length, video_phash],
-    description="Test video deduplication",
-)
+import traceback
 
-# collection = Collection("video")      # Get an existing collection.
-collection = Collection(
-    name=collection_name,
-    schema=schema,
-    using="default",
-    shards_num=2,
+def getMilvusVideoDeduplicationCollection():
+    collection_name = "video_deduplication"
+    try:
+        if utility.has_collection(collection_name):  # be prudent.
+            utility.drop_collection(collection_name)
+    except:
+        traceback.print_exc()
+        print("maybe the collection does not exist")
+
+
+    video_semantic_id = FieldSchema(  # how to insert this shit without prior knowledge?
+        name="video_semantic_id",
+        dtype=DataType.INT64,
+        is_primary=True,  # if is primary, will do check for 'not duplicate' or something.
+        auto_id=True,  # no need for id generation.
+    )
+    video_length = FieldSchema(
+        name="video_length",
+        dtype=DataType.FLOAT,
+    )
+    video_phash = FieldSchema(
+        name="video_phash", dtype=DataType.BINARY_VECTOR, dim=64
+    )  # 64
+    # single dimension? no multi dimension support?
+    schema = CollectionSchema(
+        fields=[video_semantic_id, video_length, video_phash],
+        description="Test video deduplication",
+    )
+
+    # collection = Collection("video")      # Get an existing collection.
+    collection = Collection(
+        name=collection_name,
+        schema=schema,
+        using="default",
+        shards_num=2,
 )
 # is this demo collection?
 
@@ -66,7 +64,11 @@ collection = Collection(
 # the metric is important to us.
 search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}
 import numpy as np
+import bitarray
 
+
+def transformVideoPhash(videoPhash):
+    # we need the raw phash.
 queryData = np.array(
     [
         [True, True, True, False, False, True, False, True],
@@ -81,7 +83,6 @@ queryData = np.array(
 )
 queryData = queryData.reshape(-1).tolist()
 queryData = ["1" if x else "0" for x in queryData]
-import bitarray
 
 queryData = bitarray.bitarray("".join(queryData), endian="little")
 queryData2 = queryData.copy()
