@@ -77,10 +77,21 @@ def transformVideoPhash(videoPhash):
     queryData = queryData.tobytes()
     return queryData
 # dimension: 8*8=64
-collection.insert([[np.float32(3.5)], [queryData]])
+
+def indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash):
+    queryData = transformVideoPhash(videoPhash)
+    collection.insert([[np.float32(videoDuration)], [queryData]])
 # can release even if not loaded.
-collection.release() # unload.
-collection.load()
+
+def indexVideoWithVideoDurationAndPhashFromFile(collection, videoFile):
+    videoDuration = 
+    videoPhash = 
+    indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash)
+
+
+def reloadMilvusCollection(collection):
+    collection.release() # unload.
+    collection.load()
 # make it into some library!
 
 # insert after load?
