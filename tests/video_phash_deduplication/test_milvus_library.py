@@ -109,7 +109,7 @@ def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params =
         param=search_params,
         output_fields=["video_length"],
         limit=10,
-        expr="video_length > 1.2 and video_length < 4",
+        expr="video_length > {minVideoLength} and video_length < {maxVideoLength}".format(minVideoLength=minVideoLength, maxVideoLength=maxVideoLength),
         # expr='video_length < 1.2',
     )
     theHit = results[0]
