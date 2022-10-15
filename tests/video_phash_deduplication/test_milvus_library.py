@@ -99,7 +99,6 @@ def reloadMilvusCollection(collection):
     collection.release() # unload.
     collection.load()
 # make it into some library!
-
 # insert after load?
 
 # # 1,64
@@ -119,7 +118,6 @@ def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params =
         output_fields=["video_length"],
         limit=limit,
         expr="video_length > {minVideoLength} and video_length < {maxVideoLength}".format(minVideoLength=minVideoLength, maxVideoLength=maxVideoLength),
-        # expr='video_length < 1.2',
     )
     theHit = results[0]
 # print(theHit)
