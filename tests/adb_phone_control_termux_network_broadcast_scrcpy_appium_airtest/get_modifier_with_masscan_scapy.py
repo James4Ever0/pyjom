@@ -17,7 +17,7 @@ myInterface = "wlan0"
 from adb_wrapper import AdbWrapper
 a = AdbWrapper()
 devices = a.devices()
-# print(devices)
+print(devices)
 # exit()
 connected_addresses = []
 for key, value in devices.items():
@@ -51,8 +51,13 @@ if scanAddress is not None:
         address = key
         for port in value:
             if port['port'] == myPort and port['status'] =='open':
-                print(address, myPort)
+                # print(address, myPort)
                 # we need to connect to it!
                 connect_address = "{}:{}".format(address,port)
-                command1 = "adb tcpip 5555"
-                command2 = "adb connect  {}"
+                print(connect_address)
+                if not connect_address in connected_addresses:
+                    print("connecting device:", connect_address)
+                    command1 = "adb tcpip 5555"
+                    command2 = "adb connect {}".format(connect_address)
+                    os.system(command1)
+                    os.system(command2)
