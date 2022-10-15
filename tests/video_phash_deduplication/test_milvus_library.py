@@ -64,7 +64,7 @@ def getMilvusVideoDeduplicationCollection(get_existing:bool=True): # most of the
 import numpy as np
 import bitarray
 
-
+@lru_cache(maxsize=1)
 def transformVideoPhash(videoPhash):
     # we need the raw phash.
     queryData = np.array(
@@ -108,7 +108,8 @@ def reloadMilvusCollection(collection):
 def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True, span:float=2):
     if autoreload:
         reloadMilvusCollection(collection)
-    videoDuration, videoPhash = 
+    videoDuration, videoPhash = getVideoDurationAndPhashFromFile(videoFilePath)
+    queryData = transformVideoPhash(videoPhash)
     minVideoLength = max(0, videoDuration - span)
     maxVideoLength = videoDuration +span
     results = collection.search(
