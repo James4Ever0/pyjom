@@ -13,7 +13,7 @@ import sys
 myPort = 5555
 myInterface = "wlan0"
 
-
+# list avaliable devices.
 
 
 if os.geteuid() != 0:
