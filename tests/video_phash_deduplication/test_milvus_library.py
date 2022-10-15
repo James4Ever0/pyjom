@@ -128,7 +128,9 @@ def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params =
     # print(results[0])
     # print(theHit)
     distances = theHit.distances
+    return distances
     minDistance = min(distances)
+    # what is the distance? we need to try.
     # returh the closest distance?
     # results = [x for x in theHit]
     # hits = len(theHit)
