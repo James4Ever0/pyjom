@@ -104,7 +104,7 @@ def reloadMilvusCollection(collection):
 # # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
-def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True, span:float=2, limit:int=10):
+def getDistancesBySearchingDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True, span:float=2, limit:int=10):
     if autoreload:
         reloadMilvusCollection(collection)
     videoDuration, videoPhash = getVideoDurationAndPhashFromFile(videoFilePath)
@@ -129,10 +129,14 @@ def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params =
     # print(theHit)
     distances = theHit.distances
     return distances
-    minDistance = min(distances)
+    # minDistance = min(distances)
     # what is the distance? we need to try.
     # returh the closest distance?
     # results = [x for x in theHit]
     # hits = len(theHit)
     # breakpoint()
     # how to get document by id? wtf
+
+if __name__ == '__main__':
+    connectMilvusDatabase()
+    
