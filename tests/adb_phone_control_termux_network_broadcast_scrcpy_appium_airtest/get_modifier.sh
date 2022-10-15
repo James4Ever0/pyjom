@@ -1,1 +1,1 @@
-adb tcpip 5555 # will not restart if already in tcpip mode
+adb tcpip 5555 # will not restart if already in tcpip mode\
