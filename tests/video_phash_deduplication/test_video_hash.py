@@ -6,7 +6,7 @@ from lazero.program.subprocess import runCommandGetJson
 # aaaa398a2faa5d8a not delogoed.
 # aaaa3c8a2faa5e8a mp4 (very similar to delogoed version)
 
-def getVideoPHash(filepath, withDuration=True,debug=False, timeout=100):
+def getVideoPHash(filepath,debug=False, timeout=100):
     import os
     import imagehash
 
@@ -33,9 +33,10 @@ def getVideoPHash(filepath, withDuration=True,debug=False, timeout=100):
         print("FILEPATH: %s" % filepath)
         print(myJson)
         print("PHASH:", phash)
-    if withDuration:
-        duration = myJson["duration"]
-        return duration, phash
+    # if withDuration:
+    #     duration = myJson["duration"]
+    #     return duration, phash
+    # duration is inaccurate
     return phash
 
 if __name__ == "__main__":
