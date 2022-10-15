@@ -53,7 +53,7 @@ if scanAddress is not None:
             if port['port'] == myPort and port['status'] =='open':
                 # print(address, myPort)
                 # we need to connect to it!
-                connect_address = "{}:{}".format(address,port)
+                connect_address = "{}:{}".format(address,myPort)
                 print(connect_address)
                 if not connect_address in connected_addresses:
                     print("connecting device:", connect_address)
