@@ -82,10 +82,11 @@ def indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash):
     collection.insert([[np.float32(videoDuration)], [queryData]])
 # can release even if not loaded.
 
+from test_video_hash import getVideoPHash
 @lru_cache(maxsize=1)
 def getVideoDurationAndPhashFromFile(videoFilePath):
     videoDuration = 
-    videoPhash = 
+    videoPhash = getVideoPHash(videoFilePath)
     return videoDuration, videoPhash
 
 

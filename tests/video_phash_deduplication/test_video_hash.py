@@ -6,15 +6,7 @@ from lazero.program.subprocess import runCommandGetJson
 # aaaa398a2faa5d8a not delogoed.
 # aaaa3c8a2faa5e8a mp4 (very similar to delogoed version)
 
-videoPaths = [
-    "cute_cat_gif.mp4",
-    "cute_cat_gif.gif",
-    "cat_delogo.gif",
-    "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif",
-]
-
-
-def getVideoPHash(filepath, debug=False, timeout=100):
+def getVideoPHash(filepath, withDuration=True,debug=False, timeout=100):
     import os
     import imagehash
 
@@ -42,22 +34,29 @@ def getVideoPHash(filepath, debug=False, timeout=100):
         print("PHASH: ", phash)
     return phash
 
+if __name__ == "__main__":
+    videoPaths = [
+        "cute_cat_gif.mp4",
+        "cute_cat_gif.gif",
+        "cat_delogo.gif",
+        "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif",
+    ]
 
-hashs = [getVideoPHash(filepath,debug=True) for filepath in videoPaths]
+    hashs = [getVideoPHash(filepath,debug=True) for filepath in videoPaths]
 
 
-dis0 = hashs[0] - hashs[1]  # small
-dis1 = hashs[1] - hashs[2]  # big
-dis2 = hashs[0] - hashs[2]  # big
-dis3 = hashs[0] - hashs[3]  # big
+    dis0 = hashs[0] - hashs[1]  # small
+    dis1 = hashs[1] - hashs[2]  # big
+    dis2 = hashs[0] - hashs[2]  # big
+    dis3 = hashs[0] - hashs[3]  # big
 
-print(dis0, dis1, dis2, dis3)
+    print(dis0, dis1, dis2, dis3)
 
-# 4 4 4
-# strange. why?
-# 4 4 4 42
-# huge difference.
-# what value do you decide to be duplicate?
-# phash < 7 (really?)
+    # 4 4 4
+    # strange. why?
+    # 4 4 4 42
+    # huge difference.
+    # what value do you decide to be duplicate?
+    # phash < 7 (really?)
 
-# so how do we run this test?
+    # so how do we run this test?
