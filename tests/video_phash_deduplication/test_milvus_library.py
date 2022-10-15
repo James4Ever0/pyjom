@@ -61,21 +61,21 @@ def getMilvusVideoDeduplicationCollection(get_existing:bool=True): # most of the
 # not started!
 # https://milvus.io/docs/v2.0.0/metric.md#binary
 # the metric is important to us.
-search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}
 import numpy as np
 import bitarray
 
 
 def transformVideoPhash(videoPhash):
     # we need the raw phash.
-queryData = np.array(
-    videoPhashTruthTable8x8
-)
-queryData = queryData.reshape(-1).tolist()
-queryData = ["1" if x else "0" for x in queryData]
+    queryData = np.array(
+        videoPhashTruthTable8x8
+    )
+    queryData = queryData.reshape(-1).tolist()
+    queryData = ["1" if x else "0" for x in queryData]
 
-queryData = bitarray.bitarray("".join(queryData), endian="little")
-queryData = queryData.tobytes()
+    queryData = bitarray.bitarray("".join(queryData), endian="little")
+    queryData = queryData.tobytes()
+    return queryData
 # dimension: 8*8=64
 collection.insert([[np.float32(3.5)], [queryData]])
 # can release even if not loaded.
@@ -88,6 +88,8 @@ collection.load()
 # # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
+search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}
+
 results = collection.search(
     data=[queryData],  # this is the float dimension.
     anns_field="video_phash",
@@ -98,7 +100,7 @@ results = collection.search(
     # expr='video_length < 1.2',
 )
 theHit = results[0]
-print(theHit)
+# print(theHit)
 # so we can perform search without filtering afterwards.
 # results[0][0].entity.get('video_length')
 # print(results[0].ids)
