@@ -22,3 +22,5 @@ check android screen lock/unlock state
 https://android.stackexchange.com/questions/191086/adb-commands-to-get-screen-state-and-locked-state
 
 Bonjour/Avahi/Zeroconf
+
+logic: if the kill switch is off, when no physical input events happens, or not focused on scrcpy window with keyboard/mouse input events on pc for some time, allow to interact with the phone
