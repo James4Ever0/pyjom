@@ -3,7 +3,6 @@
 
 # you want to clear the collection after this run?
 
-# import pymilvus
 from pymilvus import connections
 from functools import lru_cache
 
@@ -20,16 +19,16 @@ from pymilvus import CollectionSchema, FieldSchema, DataType
 
 import traceback
 
-def getMilvusVideoDeduplicationCollection():
+def getMilvusVideoDeduplicationCollection(get_existing:bool):
     collection_name = "video_deduplication"
     try:
         if utility.has_collection(collection_name):  # be prudent.
+            if get_existing:
+                return Collection(collection_name)
             utility.drop_collection(collection_name)
     except:
         traceback.print_exc()
         print("maybe the collection does not exist")
-
-
     video_semantic_id = FieldSchema(  # how to insert this shit without prior knowledge?
         name="video_semantic_id",
         dtype=DataType.INT64,
@@ -49,14 +48,14 @@ def getMilvusVideoDeduplicationCollection():
         description="Test video deduplication",
     )
 
-    # collection = Collection("video")      # Get an existing collection.
     collection = Collection(
         name=collection_name,
         schema=schema,
         using="default",
         shards_num=2,
-)
-# is this demo collection?
+    )
+    # is this demo collection?
+    return collection
 
 # seems hard to setup.
 # not started!
@@ -70,41 +69,15 @@ import bitarray
 def transformVideoPhash(videoPhash):
     # we need the raw phash.
 queryData = np.array(
-    [
-        [True, True, True, False, False, True, False, True],
-        [True, False, False, True, False, True, True, False],
-        [True, False, False, True, True, False, False, True],
-        [True, True, True, True, True, False, False, True],
-        [True, False, False, True, False, True, True, False],
-        [False, True, True, False, False, False, False, True],
-        [True, True, False, False, False, True, True, False],
-        [False, False, True, False, False, True, False, False],
-    ]
+    videoPhashTruthTable8x8
 )
 queryData = queryData.reshape(-1).tolist()
 queryData = ["1" if x else "0" for x in queryData]
 
 queryData = bitarray.bitarray("".join(queryData), endian="little")
-queryData2 = queryData.copy()
-queryData2[1:4] = 0
-queryData3 = queryData2.copy()
-queryData2 = queryData2.tobytes()
-queryData3[8:15] = 0
-queryData3 = queryData3.tobytes()
 queryData = queryData.tobytes()
 # dimension: 8*8=64
-# collection.insert([[1], [np.float32(3.5)], [queryData]])
-# collection.insert([[np.float32(3.5)], [queryData]])
-# for _ in range(8):
 collection.insert([[np.float32(3.5)], [queryData]])
-collection.insert([[np.float32(3.5)], [queryData2]])  # slight difference.
-collection.insert([[np.float32(3.5)], [queryData3]])  # more difference.
-# print(len(queryData), len(queryData)*8)
-# # print(queryData.shape)
-# breakpoint()
-# collection.load()
-collection.insert([[np.float32(3.5)], [queryData]]) # still three.
-
 # can release even if not loaded.
 collection.release() # unload.
 collection.load()
