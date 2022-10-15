@@ -54,6 +54,8 @@ osascript -e 'tell application "System Events"' -e 'set frontApp to name of firs
 
 
 to get input events on macos:
+download keylogger here:
+https://github.com/SkrewEverything/Swift-Keylogger
 ```bash
 
 ```
