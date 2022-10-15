@@ -34,6 +34,7 @@ adb -s 192.168.10.3:5555 shell getevent
 ```
 
 to get focused window title:
+hint: for headless ssh sessions, must set apropriate xorg environment variables
 
 general method:
 ```python
