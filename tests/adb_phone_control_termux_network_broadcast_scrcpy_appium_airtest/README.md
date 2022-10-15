@@ -55,9 +55,10 @@ osascript -e 'tell application "System Events"' -e 'set frontApp to name of firs
 
 to get input events on macos:
 download keylogger here:
-https://github.com/SkrewEverything/Swift-Keylogger
+https://hackernoon.com/writing-an-keylogger-for-macos-in-python-24adfa22722
+https://github.com/beatsbears/pkl?ref=hackernoon.com
 ```bash
-
+python pkl_nowriting.py
 ```
 
 input events on linux:
