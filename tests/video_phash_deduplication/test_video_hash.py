@@ -9,7 +9,6 @@ from lazero.program.subprocess import runCommandGetJson
 def getVideoPHash(filepath,debug=False, timeout=100):
     import os
     import imagehash
-
     assert os.path.exists(filepath)
     assert os.path.isfile(filepath)
     if not os.path.isabs(filepath):
