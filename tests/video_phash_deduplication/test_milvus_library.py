@@ -127,6 +127,7 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(
     search_params={"metric_type": "Jaccard", "params": {"nprobe": 10}},
     autoreload: bool = True,
     span: float = 2,
+    debug: bool = False,
     limit: int = 10,
 ):
     if autoreload:
@@ -154,6 +155,9 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(
     # print(results[0])
     # print(theHit)
     distances = theHit.distances
+    if debug:
+        print("distances: %s" % distances)
+
     return distances
     # what is the distance? we need to try.
     # returh the closest distance?
@@ -174,22 +178,24 @@ if __name__ == "__main__":
         "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif",
     ]
     # for videoPath in videoPaths:
+    from lazero.utils.logger import sprint
     for videoPath in videoPaths:
-        threshold:bool= 0.15 # are you sure?
-        insertDuplicatedVector:bool=False
+        print("filepath: %s" % videoPath)
+def checkDuplicatedVideoAndInsertVector(collection, videoPath):
+        threshold:float= 0.15 # are you sure?
+        insertDuplicatedVector:bool=True
         reloadMilvusCollection(collection)
         distances = getDistancesBySearchingDuplicatedVideoInMilvusByFile(
             collection, videoPath
         )
-        print("filepath: %s" % videoPath)
-        from lazero.utils.logger import sprint
-        sprint("distances: %s" % distances)
+        
         minDistance = min(distances)
-        duplicate = minDistance < threshold
-
-        indexVideoWithVideoDurationAndPhashFromFile(
-            collection, videoPath
-        )  # anyway let's do this.
+        duplicated = minDistance < threshold
+        if insertDuplicatedVector or (not duplicated):
+            indexVideoWithVideoDurationAndPhashFromFile(
+                collection, videoPath
+            )  # anyway let's do this.
+        return duplicated
 
 """
 filepath: cute_cat_gif.mp4
