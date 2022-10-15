@@ -45,6 +45,11 @@ for linux:
 watch -n 2 xdotool getactivewindow getwindowname
 ```
 
+for macos:
+```bash
+
+```
+
 
 to get input events on macos:
 ```bash
