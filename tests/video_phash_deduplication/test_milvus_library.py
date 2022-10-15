@@ -6,10 +6,14 @@
 from pymilvus import connections
 from functools import lru_cache
 
+
 @lru_cache(maxsize=1)
 def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
-	connection = connections.connect(alias=alias, host=host, port=port)# can we reconnect?
-	print('milvus connected')
+    connection = connections.connect(
+        alias=alias, host=host, port=port
+    )  # can we reconnect?
+    print("milvus connected")
+
 
 # connectMilvusDatabase()
 # connectMilvusDatabase() # will not connect again.
@@ -19,7 +23,10 @@ from pymilvus import CollectionSchema, FieldSchema, DataType
 
 import traceback
 
-def getMilvusVideoDeduplicationCollection(get_existing:bool=True): # most of the time we just use the same 
+
+def getMilvusVideoDeduplicationCollection(
+    get_existing: bool = True,
+):  # most of the time we just use the same
     collection_name = "video_deduplication"
     try:
         if utility.has_collection(collection_name):  # be prudent.
@@ -57,6 +64,7 @@ def getMilvusVideoDeduplicationCollection(get_existing:bool=True): # most of the
     # is this demo collection?
     return collection
 
+
 # seems hard to setup.
 # not started!
 # https://milvus.io/docs/v2.0.0/metric.md#binary
@@ -64,24 +72,31 @@ def getMilvusVideoDeduplicationCollection(get_existing:bool=True): # most of the
 import numpy as np
 import bitarray
 
+
 @lru_cache(maxsize=1)
 def transformVideoPhash(videoPhash):
     # we need the raw phash.
-    queryData = videoPhash.hash # videoPhashTruthTable8x8 or something
+    queryData = videoPhash.hash  # videoPhashTruthTable8x8 or something
     queryData = queryData.reshape(-1).tolist()
     queryData = ["1" if x else "0" for x in queryData]
     queryData = bitarray.bitarray("".join(queryData), endian="little")
     queryData = queryData.tobytes()
     return queryData
+
+
 # dimension: 8*8=64
+
 
 def indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash):
     queryData = transformVideoPhash(videoPhash)
     collection.insert([[np.float32(videoDuration)], [queryData]])
+
+
 # can release even if not loaded.
 
 from test_video_hash import getVideoPHash
 import caer
+
 
 @lru_cache(maxsize=1)
 def getVideoDurationAndPhashFromFile(videoFilePath):
@@ -96,28 +111,39 @@ def indexVideoWithVideoDurationAndPhashFromFile(collection, videoFilePath):
 
 
 def reloadMilvusCollection(collection):
-    collection.release() # unload.
+    collection.release()  # unload.
     collection.load()
+
+
 # make it into some library!
 # insert after load?
 
 # # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
-def getDistancesBySearchingDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True, span:float=2, limit:int=10):
+def getDistancesBySearchingDuplicatedVideoInMilvusByFile(
+    collection,
+    videoFilePath,
+    search_params={"metric_type": "Jaccard", "params": {"nprobe": 10}},
+    autoreload: bool = True,
+    span: float = 2,
+    limit: int = 10,
+):
     if autoreload:
         reloadMilvusCollection(collection)
     videoDuration, videoPhash = getVideoDurationAndPhashFromFile(videoFilePath)
     queryData = transformVideoPhash(videoPhash)
     minVideoLength = max(0, videoDuration - span)
-    maxVideoLength = videoDuration +span
+    maxVideoLength = videoDuration + span
     results = collection.search(
         data=[queryData],  # this is the float dimension.
         anns_field="video_phash",
         param=search_params,
         output_fields=["video_length"],
         limit=limit,
-        expr="video_length > {minVideoLength} and video_length < {maxVideoLength}".format(minVideoLength=minVideoLength, maxVideoLength=maxVideoLength),
+        expr="video_length > {minVideoLength} and video_length < {maxVideoLength}".format(
+            minVideoLength=minVideoLength, maxVideoLength=maxVideoLength
+        ),
     )
     theHit = results[0]
     # print(theHit)
@@ -137,7 +163,8 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(collection,videoFilePat
     # breakpoint()
     # how to get document by id? wtf
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     connectMilvusDatabase()
     collection = getMilvusVideoDeduplicationCollection()
     videoPaths = [
@@ -147,6 +174,15 @@ if __name__ == '__main__':
         "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif",
     ]
     for videoPath in videoPaths:
-        indexVideoWithVideoDurationAndPhashFromFile(collection, videoPath) # anyway let's do this.
+        indexVideoWithVideoDurationAndPhashFromFile(
+            collection, videoPath
+        )  # anyway let's do this.
     reloadMilvusCollection(collection)
-        
+    for videoPath in videoPaths:
+        distances = getDistancesBySearchingDuplicatedVideoInMilvusByFile(
+            collection, videoPath
+        )
+        print("filepath: %s" % videoPath)
+        from lazero.utils.logger import sprint
+
+        sprint("distances: %s" % distances)
