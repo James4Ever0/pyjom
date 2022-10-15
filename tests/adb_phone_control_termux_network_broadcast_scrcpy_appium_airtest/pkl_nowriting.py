@@ -15,7 +15,7 @@ from Foundation import NSObject
 from Cocoa import NSEvent, NSKeyDownMask
 from PyObjCTools import AppHelper
 
-# NSLeftMouseUpMask, NSLeftMouseDownMask, NSLeftMouseDraggedMask
+# NSLeftMouseUpMask, NSLeftMouseDownMask, NSLeftMouseDraggedMask, NSRightMouseDownMask, NSRightMouseDraggedMask, NSRightMouseUpMask, NSMouseMovedMask
 
 
 class AppDelegate(NSObject):
@@ -26,6 +26,8 @@ class AppDelegate(NSObject):
     def applicationDidFinishLaunching_(self, notification):
         mask_down = NSKeyDownMask
         NSEvent.addGlobalMonitorForEventsMatchingMask_handler_(mask_down, key_handler)
+        for mouse_mask in mouse_masks:
+            NSEvent.addGlobalMonitorForEventsMatchingMask_handler_
 
 # w = Writer()
 
