@@ -155,7 +155,6 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(
     # print(theHit)
     distances = theHit.distances
     return distances
-    # minDistance = min(distances)
     # what is the distance? we need to try.
     # returh the closest distance?
     # results = [x for x in theHit]
@@ -174,19 +173,23 @@ if __name__ == "__main__":
         "cat_delogo.gif",
         "/root/Desktop/works/pyjom/samples/video/dog_with_large_text.gif",
     ]
+    # for videoPath in videoPaths:
     for videoPath in videoPaths:
-        indexVideoWithVideoDurationAndPhashFromFile(
-            collection, videoPath
-        )  # anyway let's do this.
-    reloadMilvusCollection(collection)
-    for videoPath in videoPaths:
+        threshold:bool= 0.15 # are you sure?
+        insertDuplicatedVector:bool=False
+        reloadMilvusCollection(collection)
         distances = getDistancesBySearchingDuplicatedVideoInMilvusByFile(
             collection, videoPath
         )
         print("filepath: %s" % videoPath)
         from lazero.utils.logger import sprint
-
         sprint("distances: %s" % distances)
+        minDistance = min(distances)
+        duplicate = minDistance < threshold
+
+        indexVideoWithVideoDurationAndPhashFromFile(
+            collection, videoPath
+        )  # anyway let's do this.
 
 """
 filepath: cute_cat_gif.mp4
