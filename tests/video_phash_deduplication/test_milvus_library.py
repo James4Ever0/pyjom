@@ -19,7 +19,7 @@ from pymilvus import CollectionSchema, FieldSchema, DataType
 
 import traceback
 
-def getMilvusVideoDeduplicationCollection(get_existing:bool):
+def getMilvusVideoDeduplicationCollection(get_existing:bool=True): # most of the time we just use the same 
     collection_name = "video_deduplication"
     try:
         if utility.has_collection(collection_name):  # be prudent.
