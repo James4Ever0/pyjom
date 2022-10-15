@@ -163,7 +163,8 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(
     # breakpoint()
     # how to get document by id? wtf
 
-
+# shall we insert that vector or not, even if we have detected the duplicated media?
+# you choose.
 if __name__ == "__main__":
     connectMilvusDatabase()
     collection = getMilvusVideoDeduplicationCollection()
