@@ -25,7 +25,7 @@ import traceback
 
 
 def getMilvusVideoDeduplicationCollection(
-    get_existing: bool = True,
+    get_existing: bool = False,
 ):  # most of the time we just use the same
     collection_name = "video_deduplication"
     try:
@@ -166,6 +166,22 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(
     # breakpoint()
     # how to get document by id? wtf
 
+def checkDuplicatedVideoAndInsertVector(collection, videoPath,
+    threshold:float= 0.15,# are you sure?
+    insertDuplicatedVector:bool=True,
+    debug:bool=True):
+    reloadMilvusCollection(collection)
+    distances = getDistancesBySearchingDuplicatedVideoInMilvusByFile(
+        collection, videoPath, debug=debug
+    )
+    
+    minDistance = min(distances)
+    duplicated = minDistance < threshold
+    if insertDuplicatedVector or (not duplicated):
+        indexVideoWithVideoDurationAndPhashFromFile(
+            collection, videoPath
+        )  # anyway let's do this.
+    return duplicated
 # shall we insert that vector or not, even if we have detected the duplicated media?
 # you choose.
 if __name__ == "__main__":
@@ -181,21 +197,8 @@ if __name__ == "__main__":
     from lazero.utils.logger import sprint
     for videoPath in videoPaths:
         print("filepath: %s" % videoPath)
-def checkDuplicatedVideoAndInsertVector(collection, videoPath):
-        threshold:float= 0.15 # are you sure?
-        insertDuplicatedVector:bool=True
-        reloadMilvusCollection(collection)
-        distances = getDistancesBySearchingDuplicatedVideoInMilvusByFile(
-            collection, videoPath
-        )
-        
-        minDistance = min(distances)
-        duplicated = minDistance < threshold
-        if insertDuplicatedVector or (not duplicated):
-            indexVideoWithVideoDurationAndPhashFromFile(
-                collection, videoPath
-            )  # anyway let's do this.
-        return duplicated
+        duplicated = checkDuplicatedVideoAndInsertVector(collection, videoPath)
+        sprint('duplicated?', duplicated)
 
 """
 filepath: cute_cat_gif.mp4
