@@ -83,11 +83,18 @@ def indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash):
     collection.insert([[np.float32(videoDuration)], [queryData]])
 # can release even if not loaded.
 
+@lru_cache(maxsize=1)
+def getVideoDurationAndPhashFromFile(videoFilePath):
+    
+    return videoDuration, videoPhash
+
+
 def indexVideoWithVideoDurationAndPhashFromFile(collection, videoFilePath):
+    return videoDuration, videoPhash = g
+
     videoDuration = 
     videoPhash = 
     indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash)
-    return videoDuration, videoPhash
 
 
 def reloadMilvusCollection(collection):
@@ -103,6 +110,7 @@ def reloadMilvusCollection(collection):
 def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True, span:float=2):
     if autoreload:
         reloadMilvusCollection(collection)
+    videoDuration, videoPhash = 
     minVideoLength = max(0, videoDuration - span)
     maxVideoLength = videoDuration +span
     results = collection.search(
