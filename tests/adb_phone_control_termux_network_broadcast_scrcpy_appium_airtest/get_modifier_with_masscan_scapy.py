@@ -10,6 +10,7 @@ import errno
 import os
 import getopt
 import sys
+myPort = 5555
 myInterface = "wlan0"
 if os.geteuid() != 0:
         print('You need to be root to run this script', file=sys.stderr)
@@ -27,5 +28,12 @@ if scanAddress is not None:
     # now scan this interface with masscan.
     import masscan
     mas = masscan.PortScanner()
-    mas.scan(scanAddress, ports='5555', arguments='--max-rate 1000')
-    print(mas.scan_result)
+    mas.scan(scanAddress, ports=str(myPort), arguments='--max-rate 1000')
+    result = mas.scan_result
+    # usually it only show opens.
+    scanResultDict= result['scan']
+    for key, value in scanResultDict.items():
+        address = key
+        for port in value:
+            if port['port'] == myPort and port['status'] =='open':
+                print(address, myPort)
