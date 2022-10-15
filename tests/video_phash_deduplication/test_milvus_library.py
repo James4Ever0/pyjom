@@ -154,7 +154,7 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(
     # now, we want to have the 'distance' parameter.
     # print(results[0])
     # print(theHit)
-    distances = theHit.distances
+    distances = list(theHit.distances)
     if debug:
         print("distances: %s" % distances)
 
@@ -166,27 +166,35 @@ def getDistancesBySearchingDuplicatedVideoInMilvusByFile(
     # breakpoint()
     # how to get document by id? wtf
 
-def checkDuplicatedVideoAndInsertVector(collection, videoPath,
-    threshold:float= 0.15,# are you sure?
-    insertDuplicatedVector:bool=True,
-    debug:bool=True):
+
+def checkDuplicatedVideoAndInsertVector(
+    collection,
+    videoPath,
+    threshold: float = 0.15,  # are you sure?
+    insertDuplicatedVector: bool = True,
+    debug: bool = True,
+):
     reloadMilvusCollection(collection)
     distances = getDistancesBySearchingDuplicatedVideoInMilvusByFile(
         collection, videoPath, debug=debug
     )
-    
-    minDistance = min(distances)
+
+    minDistance = min(distances + [1])  # empty!
     duplicated = minDistance < threshold
     if insertDuplicatedVector or (not duplicated):
         indexVideoWithVideoDurationAndPhashFromFile(
             collection, videoPath
         )  # anyway let's do this.
     return duplicated
+
+
 # shall we insert that vector or not, even if we have detected the duplicated media?
 # you choose.
 if __name__ == "__main__":
     connectMilvusDatabase()
-    collection = getMilvusVideoDeduplicationCollection()
+    collection = (
+        getMilvusVideoDeduplicationCollection()
+    )  # will not get existing collections
     videoPaths = [
         "cute_cat_gif.mp4",
         "cute_cat_gif.gif",
@@ -195,10 +203,11 @@ if __name__ == "__main__":
     ]
     # for videoPath in videoPaths:
     from lazero.utils.logger import sprint
+
     for videoPath in videoPaths:
         print("filepath: %s" % videoPath)
         duplicated = checkDuplicatedVideoAndInsertVector(collection, videoPath)
-        sprint('duplicated?', duplicated)
+        sprint("duplicated?", duplicated)
 
 """
 filepath: cute_cat_gif.mp4
