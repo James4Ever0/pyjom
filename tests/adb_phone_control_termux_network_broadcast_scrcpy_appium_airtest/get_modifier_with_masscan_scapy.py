@@ -31,9 +31,11 @@ if scanAddress is not None:
     mas.scan(scanAddress, ports=str(myPort), arguments='--max-rate 1000')
     result = mas.scan_result
     # usually it only show opens.
-    scanResultDict= result['scan']
+    import json
+    scanResultDict = json.loads(result)['scan']
     for key, value in scanResultDict.items():
         address = key
         for port in value:
             if port['port'] == myPort and port['status'] =='open':
                 print(address, myPort)
+                # we need to connect to it!
