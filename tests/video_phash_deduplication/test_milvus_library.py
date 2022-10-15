@@ -103,6 +103,8 @@ def reloadMilvusCollection(collection):
 def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True):
     if autoreload:
         reloadMilvusCollection(collection)
+    minVideoLength = max(0, videoDuration - span)
+    maxVideoLength = videoDuration +span
     results = collection.search(
         data=[queryData],  # this is the float dimension.
         anns_field="video_phash",
