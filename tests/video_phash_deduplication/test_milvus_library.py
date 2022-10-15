@@ -85,15 +85,13 @@ def indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash):
 
 @lru_cache(maxsize=1)
 def getVideoDurationAndPhashFromFile(videoFilePath):
-    
+    videoDuration = 
+    videoPhash = 
     return videoDuration, videoPhash
 
 
 def indexVideoWithVideoDurationAndPhashFromFile(collection, videoFilePath):
-    return videoDuration, videoPhash = g
-
-    videoDuration = 
-    videoPhash = 
+    videoDuration, videoPhash = getVideoDurationAndPhashFromFile(videoFilePath)
     indexVideoWithVideoDurationAndPhash(collection, videoDuration, videoPhash)
 
 
