@@ -100,7 +100,7 @@ def reloadMilvusCollection(collection):
 # # 1,64
 # what is wrong? wtf?
 # queryData = queryData.tolist()
-def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True):
+def searchDuplicatedVideoInMilvusByFile(collection,videoFilePath,search_params = {"metric_type": "Jaccard", "params": {"nprobe": 10}}, autoreload:bool=True, span:float=2):
     if autoreload:
         reloadMilvusCollection(collection)
     minVideoLength = max(0, videoDuration - span)
