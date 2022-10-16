@@ -24,7 +24,8 @@ def OnlineProcessor(
         os.environ["https_proxy"] = proxy_url
 
     # flag = "topic_with_fetcher"
-    
+    collection = getMilvusVideoDeduplicationCollection()
+    def duplicatedVideoFilter(clear_every:int=80):
 
     with tmpdir(path=tmpPath) as testDir:
         # elif flag == "topic_with_fetcher":
@@ -56,7 +57,6 @@ def OnlineProcessor(
                 # fps_valid = checkMinMaxDict(fps_float,fps_filter)
                 from pyjom.videotoolbox import (
                     corruptVideoFilter,
-                    duplicateVideoFilter,
                     getVideoColorCentrality,
                     checkVideoColorCentrality,
                     getEffectiveFPS,
@@ -102,6 +102,7 @@ def OnlineProcessor(
                         "EffectiveFPS",
                     ],  # also, the dog/cat detector! fuck.
                     [NSFWVideoFilter, None, dummyFilterFunction, "NSFW"],
+                    [duplicatedVideoFilter, None, dummyFilterFunction,'video duplication filter'],
                 ]
                 for function, mFilter, filterFunction, flag in mList:
                     try:
