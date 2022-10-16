@@ -1,4 +1,4 @@
-from pyjom.commons import *
+from pyjom.commons import decorator
 
 
 @decorator

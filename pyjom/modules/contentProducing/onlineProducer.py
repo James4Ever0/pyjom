@@ -1,4 +1,4 @@
-from pyjom.commons import *
+from pyjom.commons import decorator,os
 from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 
 from lazero.filesystem.temp import tmpdir

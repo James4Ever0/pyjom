@@ -1,4 +1,16 @@
-from pyjom.commons import *
+from pyjom.commons import (
+    decorator,
+    get_media_info,
+    json_media_info,
+    ffprobe_media_info,
+    read_json,
+    getTextFileLength,
+    multi_replacer,
+    append_sublist,
+    extract_span,
+    convoluted,
+    update_subdict,
+)
 
 # you may want to remove text.
 
@@ -230,8 +242,8 @@ def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
                     )
 
     # finally remove those without filter keys.
-    
-    filterKeys = filters.get("ensure",[y for y in filters.keys() if y != "meta"])
+
+    filterKeys = filters.get("ensure", [y for y in filters.keys() if y != "meta"])
     for k in list(fileinfo.keys()):
         # do metainfo extraction.
         # print("CORE PATH")
