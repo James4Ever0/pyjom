@@ -56,9 +56,7 @@ def removeRedisValueByKeys(keys:list[str], debug:bool=False,host='localhost', po
         removeRedisValueByKey(key, debug=debug,host=host, port=port)
 
 @lru_cache(maxsize=1)
-def getSafeEvalEnvironment(version="3.8"):
-    import PythonSafeEval
-    sf = PythonSafeEval.SafeEval(version=version)
+def getSafeEvalEnvironment():
     return sf
 
 def safe_eval(code):
@@ -70,6 +68,8 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
     connection = getRedisConnection(host=host, port=port)
     value = connection.get(key)
     if value is not None:
+        if debug:
+            print('data '{}' is not None'.format(key))
         if dataType == None:
             return dataType
         elif dataType in [int, float, str, tuple, list, dict]:
@@ -88,7 +88,8 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
             return dill.loads(value)
         else:
             raise Exception('unknown dataType:', dataType)
-    
+    if debug:
+        print('data '{}' is None'.format(key))
 
 def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commonRedisPort):
 
