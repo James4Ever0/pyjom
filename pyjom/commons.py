@@ -90,6 +90,9 @@ commonIterableDataTypes = [tuple, list, dict, set]
 commonNonIterableDataTypes = [int, float, str, bool]
 commonDataTypes = commonNonIterableDataTypes + commonIterableDataTypes
 
+def stringifiableCheck(value):
+    str_value = str(value)
+    restored_value = 
 
 def setRedisValueByKey(
     key: str,
@@ -107,7 +110,7 @@ def setRedisValueByKey(
     connection = getRedisConnection(host=host, port=port)
     if dataType is None:
         dataType = type(value)
-        if dataType in commonDataTypes:
+        if dataType in commonDataTypes stringifiableCheck(value):
             data = stringifyAndEncode(value)
         else:
             dataType = "dill"
