@@ -60,32 +60,7 @@ wbRev = OnlineAutoContentProducer(
     # fast= True,  # pass this flag to medialang export engine
     template="pets_with_music_online",
     postMetadataGenerator=postMetadataGenerator,
-    template_configs=[
-        {
-            "debug": True,  # we need to preview this video.
-            "music": {
-                "filepath": musicFilePath,  # these things were not right.
-                # how to get this music file? by bgm search?
-                # "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
-                "lyric_path": lyricPath,  ## you can choose not to pass the lyric_path anyway. also format different than .lrc is on the way?
-            },
-            "font": "/root/.local/share/fonts/simhei.ttf",
-            # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
-            "policy": {},
-            "maxtime": 7.8,
-            "mintime": 2,  # we've write this shit!
-            "render_ass": True,
-            # also determine how to translate the lyrics, whether to translate or not.
-            "translate": True,  # default: False
-            # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
-            # you can simply implement the method to cofigure and test ping for websites in lazero library so we can share the same code.
-            # or you can borrow code from the web. some clash manager library for python.
-            "translate_method": "deepl",  # default: baidu
-            # damn cold for this mac!
-            "ass_template_configs": {},
-            "assStyleConfig": {},
-        }
-    ],
+    template_configs=templateConfigsGenerator,
     # you can also translate funny videos from youtube.
     # dummy_auto=False,
     # args=autoArgs,
