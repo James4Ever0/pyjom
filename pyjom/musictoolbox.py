@@ -461,9 +461,12 @@ class neteaseMusic:
         r_json = self.requestWithParamsGetJson("/simi/song",params={"id":music_id},debug=debug)
 
     def getMusicUrlFromNetease(self,music_id:int, debug:bool=False):
+        r_json = self.requestWithParamsGetJson("/song/url",params={"id":music_id},debug=debug)
 
     def checkMusicFromNetEase(self,music_id:int, debug:bool=False):
+        r_json = self.requestWithParamsGetJson("check/music",params={"id":music_id},debug=debug)
 
     def getMusicLyricUrlFromNetease(self,music_id:int, debug:bool=False):
+        r_json = self.requestWithParamsGetJson("")
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
