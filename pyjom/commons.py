@@ -99,7 +99,7 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
     value = connection.get(key)
     if value is not None:
         if debug:
-            print('data '{}' is not None'.format(key))
+            print('data "{}" is not None'.format(key))
         if dataType == None:
             return dataType
         elif dataType in commonDataTypes:
@@ -119,9 +119,12 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
         else:
             raise Exception('unknown dataType:', dataType)
     if debug:
-        print('data '{}' is None'.format(key))
+        print('data "{}" is None'.format(key))
 
-def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commonRedisPort):
+def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commonRedisPort, dataType='dill'):
+    # so we know this datatype is set!
+    # but what is our plan? we use dill by default.
+    
 
 def addToRedisCachedSet(item, setName:str):
 
