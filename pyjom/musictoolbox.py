@@ -417,4 +417,15 @@ def recognizeMusicFromFile(
     return False, {}
 
 
-############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC B
+############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
+
+def searchNeteaseMusicByQuery(query:Union[list, str]):
+    if type(query) == str:
+        query = query.strip()
+    else:
+        query = [elem.strip() for elem in query]
+        query = " ".join([elem for elem in query if len(elem)>0])
+    assert len(query)>0
+
+
+############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
