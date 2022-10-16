@@ -7,11 +7,11 @@ from lazero.filesystem import tmpdir
 
 
 # # flag = "topic_with_fetcher"
-# collection = getMilvusVideoDeduplicationCollection()
 # duplicatedVideoFilterCallCounter = 0
 # # should't we have our judgement here?
 # def duplicatedVideoFilter(clear_every:int=120): # 80 segments?
 #     global duplicatedVideoFilterCallCounter
+    # collection = getMilvusVideoDeduplicationCollection()
 #     duplicatedVideoFilterCallCounter %= clear_every
 #     get_existing = not( duplicatedVideoFilterCallCounter== 0)
 #     duplicatedVideoFilterCallCounter +=1
