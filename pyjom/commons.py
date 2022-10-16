@@ -125,11 +125,16 @@ def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commo
     # so we know this datatype is set!
     # but what is our plan? we use dill by default.
     data = getRedisValueByKey(setName, debug=debug,host=host,port=port, dataType=dataType)
-
+    if data is None:
+        return set()
+    assert type(data) == set
+    return data
     
-
-
-def addToRedisCachedSet(item, setName:str):
+def addToRedisCachedSet(item, setName:str, debug:bool=False, host='localhost', port=commonRedisPort, dataType='dill'):
+    cachedSet = getRedisCachedSet(setName,debug=debug, host=host, port=port,dataType=dataType)
+    cachedSet.add(item)
+    setRedisValueByKey(setName, cachedSet, dataType=dataType, host=host, port=port)
+    return cachedSet
 
 
 
