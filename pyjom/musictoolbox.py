@@ -108,6 +108,7 @@ def getMusicCutSpans(
     assert len(standard_bpm_spans) >= 1
     if gaussian:
         from lazero.utils.mathlib import getTruncatedNormalDistribution
+
         std, mean = gaussian_args["std"], gaussian_args["mean"]
         # scale, loc = std, mean
         myStart, myEnd = mintime, maxtime
@@ -246,6 +247,7 @@ import subprocess
 import traceback
 
 from lazero.program.subprocess import runCommandGetJson
+
 
 def runCommandAndProcessSongRecognizationJson(
     commandLine: list[str],
@@ -421,52 +423,81 @@ def recognizeMusicFromFile(
 
 import requests
 
+
 class neteaseMusic:
-    def __init__(self, port:int=4042):
+    def __init__(self, port: int = 4042):
         self.baseUrl = "http://localhost:{}".format(port)
 
-    def verifyResponseCodeAndGetJson(self,response,debug:bool=False, success_codes:list[int]=[200]):
-        response_json = response.json() # check search_result.json
+    def verifyResponseCodeAndGetJson(
+        self, response, debug: bool = False, success_codes: list[int] = [200]
+    ):
+        response_json = response.json()  # check search_result.json
         code = response_json["code"]
 
         if not code in success_codes:
             if debug:
                 print(response_json)
             import traceback
+
             traceback.print_exc()
             raise Exception("ERROR CODE IN NETEASE API RESPONSE:", code)
         return response_json
-    
-    def requestWithParamsGetJson(self,suffix:str, params:dict={},debug:bool=False, success_codes:list[int]=[200]):
+
+    def requestWithParamsGetJson(
+        self,
+        suffix: str,
+        params: dict = {},
+        debug: bool = False,
+        success_codes: list[int] = [200],
+    ):
         suffix = suffix.strip()
-        if not suffix.startswith("/"): suffix = "/"+suffix
+        if not suffix.startswith("/"):
+            suffix = "/" + suffix
         link = self.baseUrl = suffix
-        result = requests.get(link,params=params)
-        result_json = self.verifyResponseCodeAndGetJson(result, debug=debug, success_codes=success_codes)
+        result = requests.get(link, params=params)
+        result_json = self.verifyResponseCodeAndGetJson(
+            result, debug=debug, success_codes=success_codes
+        )
         return result_json
 
     from retry import retry
+
     @retry(tries=3, delay=3)
-    def searchNeteaseMusicByQuery(self,query:Union[list, str], debug:bool=False):
+    def searchNeteaseMusicByQuery(self, query: Union[list, str], debug: bool = False):
         if type(query) == str:
             query = query.strip()
         else:
             query = [elem.strip() for elem in query]
-            query = " ".join([elem for elem in query if len(elem)>0])
-        assert len(query)>0
-        search_result_json = self.requestWithParamsGetJson("/search",params={"keywords": query, "timestamp":getJSTimeStamp()},debug=debug)
+            query = " ".join([elem for elem in query if len(elem) > 0])
+        assert len(query) > 0
+        search_result_json = self.requestWithParamsGetJson(
+            "/search",
+            params={"keywords": query, "timestamp": getJSTimeStamp()},
+            debug=debug,
+        )
         return search_result_json
 
-    def getSimilarMusicByIdFromNetease(self,music_id:int, debug:bool=False):
-        r_json = self.requestWithParamsGetJson("/simi/song",params={"id":music_id},debug=debug)
+    def getSimilarMusicByIdFromNetease(self, music_id: int, debug: bool = False):
+        r_json = self.requestWithParamsGetJson(
+            "/simi/song", params={"id": music_id}, debug=debug
+        )
 
-    def getMusicUrlFromNetease(self,music_id:int, debug:bool=False):
-        r_json = self.requestWithParamsGetJson("/song/url",params={"id":music_id},debug=debug)
+    def getMusicUrlFromNetease(self, music_id: int, debug: bool = False):
+        r_json = self.requestWithParamsGetJson(
+            "/song/url", params={"id": music_id}, debug=debug
+        )
 
-    def checkMusicFromNetEase(self,music_id:int, debug:bool=False):
-        r_json = self.requestWithParamsGetJson("check/music",params={"id":music_id},debug=debug)
+    def checkMusicFromNetEase(self, music_id: int, debug: bool = False):
+        r_json = self.requestWithParamsGetJson(
+            "check/music", params={"id": music_id}, debug=debug
+        )
 
-    def getMusicLyricUrlFromNetease(self,music_id:int, debug:bool=False):
-        r_json = self.requestWithParamsGetJson("")
+    def getMusicLyricUrlFromNetease(self, music_id: int, debug: bool = False):
+        r_json = self.requestWithParamsGetJson(
+            "/lyric",
+            params={"id": music_id, "timestamp": getJSTimeStamp()},
+            debug=debug,
+        )
+
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
