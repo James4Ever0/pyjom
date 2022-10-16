@@ -401,6 +401,8 @@ def getBilibiliPostMetadata(
                     if len(cover_list) > 3:
                         if len(tag_list) > 3:
                             if len(bgm_list) > 3:
+                                if bgmCacheSetName:
+                                    
                                 # time to yield something.
                                 # detect this thing!
                                 # filtered_cover_list = []
