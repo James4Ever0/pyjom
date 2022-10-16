@@ -7,7 +7,7 @@ import cv2
 from pyjom.imagetoolbox import *
 from functools import lru_cache
 
-connect
+connectMilvusDatabase()
 
 def getVideoBitrate(mediaPath):
     return int(getMediaBitrate(mediaPath, videoOnly=True)["streams"][0]["bit_rate"])
@@ -2571,5 +2571,7 @@ def getVideoTextAreaRatio(
 # you'd better check avaliability of milvus server. how?
 
 ########################### VIDEO DEDUPLICATION WITH MILVUS #########################
+
+
 
 ########################### VIDEO DEDUPLICATION WITH MILVUS #########################
