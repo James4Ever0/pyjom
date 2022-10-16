@@ -141,6 +141,7 @@ import random
 def getBilibiliPostMetadata(
     sleepTime=2,
     getMetatopic={},
+    bgmCacheSetName='bilibili_cached_bgm_set',
     getTids={},  # these two are not specified here.
     orders=[
         BSP.all.order.最多点击,
