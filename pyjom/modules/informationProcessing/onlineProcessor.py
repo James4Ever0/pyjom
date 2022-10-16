@@ -3,7 +3,7 @@ import os
 from lazero.utils import sprint
 from lazero.network import waitForServerUp
 from lazero.filesystem import tmpdir
-
+from pyjom.videotoolbox import getMilvusVideoDeduplicationCollection, checkDuplicatedVideoAndInsertVector
 
 @decorator
 def OnlineProcessor(
