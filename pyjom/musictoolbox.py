@@ -418,7 +418,9 @@ def recognizeMusicFromFile(
 
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
+
 import requests
+
 class neteaseMusic:
     def __init__(self, port:int=4042):
         self.baseUrl = "http://localhost:{}".format(port)
@@ -435,7 +437,13 @@ class neteaseMusic:
             raise Exception("ERROR CODE IN NETEASE API RESPONSE:", code)
         return response_json
     
-    def requestWithParamsGetJson(self,suffix:str, params:dict={})
+    def requestWithParamsGetJson(self,suffix:str, params:dict={},debug:bool=False, success_codes:list[int]=[200]):
+        suffix = suffix.strip()
+        if not suffix.startswith("/"): suffix = "/"+suffix
+        link = self.baseUrl = suffix
+        result = requests.get(link,params=params)
+        result_json = self.verifyResponseCodeAndGetJson(result, debug=debug)
+        return result_json
 
     from retry import retry
     @retry(tries=3, delay=3)
@@ -456,12 +464,11 @@ class neteaseMusic:
         link = self.baseUrl+"/simi/song"
         r = requests.get(link, params = {"id":music_id})
         r_json = self.verifyResponseCodeAndGetJson(r, debug=debug)
-        
 
-    def getMusicUrlFromNetease(self,music_id:int):
+    def getMusicUrlFromNetease(self,music_id:int, debug:bool=False):
 
-    def checkMusicFromNetEase(self,music_id:int):
+    def checkMusicFromNetEase(self,music_id:int, debug:bool=False):
 
-    def getMusicLyricUrlFromNetease(self,music_id:int):
+    def getMusicLyricUrlFromNetease(self,music_id:int, debug:bool=False):
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
