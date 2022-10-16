@@ -422,6 +422,8 @@ def recognizeMusicFromFile(
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
 
 import requests
+from lazero.program.functools import suppressException
+
 
 
 class neteaseMusic:
@@ -459,9 +461,8 @@ class neteaseMusic:
             result, debug=debug, success_codes=success_codes
         )
         return result_json
-    from lazero.program.functools import suppressException
-    from retry import retry
 
+    @suppressException(tries=3)
     def searchNeteaseMusicByQuery(self, query: Union[list, str], debug: bool = False):
         if type(query) == str:
             query = query.strip()
