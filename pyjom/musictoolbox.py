@@ -418,11 +418,13 @@ def recognizeMusicFromFile(
 
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
-
+import requests
 class neteaseMusic:
     def __init__(self, port:int=4042):
         self.baseUrl = "http://localhost:{}".format(port)
-    def searchNeteaseMusicByQuery(self,query:Union[list, str]):
+    from retry import retry
+    @retry(tries=3, delay=3)
+    def searchNeteaseMusicByQuery(self,query:Union[list, str], debug:bool=False):
         if type(query) == str:
             query = query.strip()
         else:
@@ -430,7 +432,15 @@ class neteaseMusic:
             query = " ".join([elem for elem in query if len(elem)>0])
         assert len(query)>0
         keywords = query
-        search_result = requests.get(self.baseUrl+"/search", params={"keywords": keywords, "timestamp":getJSTimeStamp()})
+        search_result = requests.get(self.baseUrl+"/search", params={"keywords": keywords, "timestamp":getJSTimeStamp()}) # avoid retry trouble.
+        code = search_result_json["code"]
+
+        if not code == 200:
+            if debug:
+                print(search_result_json)
+            raise Exception("ERROR CODE IN SEARCH:", code)
+
+        return search_result_json
 
     def getSimilarMusicByIdFromNetease(self,music_id:int):
 
