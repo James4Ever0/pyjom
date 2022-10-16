@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 from pyjom.config import *
 from typing import Union
 from pyjom.mathlib import checkMinMaxDict
@@ -65,16 +66,27 @@ def safe_eval(code, safenodes=['List','Dict','Tuple','Set','Expression','Constan
     return result
 import pickle, dill
 
+commonIterableDataTypes = [ tuple, list, dict, set]
+commonDataTypes = [int, float, str, bool ]+commonIterableDataTypes
 def setRedisValueByKey(key:str, value,dataType=None, encoding:str='utf-8',debug:bool=False, host='localhost', port=commonRedisPort):
+    def stringifyAndEncode(value):
+        data = str(value)
+        data = data.encode(encoding)
+        return data
     connection = getRedisConnection(host=host, port=port)
     if dataType is None:
         dataType = type(value)
-        if dataType in [int, float, str, tuple, list, dict, set, bool]:
-            data = str(value)
-            data = data.encode(encoding)
+        if dataType in commonDataTypes:
+            data = stringifyAndEncode(value)
         else:
+            dataType = 'dill'
             data = dill.dumps(value)
-        connection.insert(value)
+    else:
+        if dataType in commonDataTypes:
+            data = stringifyAndEncode(value)
+        
+            
+        connection.set(key,value)
 
 def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=False,host='localhost', port=commonRedisPort):
     connection = getRedisConnection(host=host, port=port)
@@ -84,7 +96,7 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
             print('data '{}' is not None'.format(key))
         if dataType == None:
             return dataType
-        elif dataType in [int, float, str, tuple, list, dict, set, bool]:
+        elif dataType in [int, float, str, bool]:
             decoded_value = value.decode(encoding)
             if dataType in [int, float, str, bool]:
                 if dataType == str:
