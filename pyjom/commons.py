@@ -45,8 +45,9 @@ def getRedisConnection(host='localhost', port=commonRedisPort):
 
 def removeRedisValueByKey(key:str, debug:bool=False,host='localhost', port=commonRedisPort):
     returnCode = getRedisConnection(host=host, port=port)
+    messages = {0:'key ',1:''}
     if debug:
-        print(message[returnCode])
+        print(messages[returnCode])
 def removeRedisValueByKeys(keys:list[str]):
     for key in keys:
         removeRedisValueByKey(key)
