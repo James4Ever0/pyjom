@@ -56,15 +56,14 @@ def removeRedisValueByKeys(keys:list[str], debug:bool=False,host='localhost', po
         removeRedisValueByKey(key, debug=debug,host=host, port=port)
 
 @lru_cache(maxsize=1)
-def getSafeEvalEnvironment():
+def getSafeEvalEnvironment(version="3.8"):
     import PythonSafeEval
-    sf = PythonSafeEval.SafeEval(version="3.8")
+    sf = PythonSafeEval.SafeEval(version=version)
     return sf
 
 def safe_eval(code):
     sf = getSafeEvalEnvironment()
     return sf.eval(code)
-
 
 def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=False,host='localhost', port=commonRedisPort):
     import pickle, dill
