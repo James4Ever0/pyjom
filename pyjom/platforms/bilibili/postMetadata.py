@@ -141,7 +141,7 @@ import random
 def getBilibiliPostMetadata(
     sleepTime=2,
     getMetatopic={},
-    bgmCacheSetName:Union[str, None]='bilibili_cached_bgm_set',
+    bgmCacheSetName: Union[str, None] = "bilibili_cached_bgm_set",
     getTids={},  # these two are not specified here.
     orders=[
         BSP.all.order.最多点击,
@@ -160,7 +160,7 @@ def getBilibiliPostMetadata(
     bgmCacheAutoPurge=False,
 ):
     if bgmCacheSetName and bgmCacheAutoPurge:
-        
+        removeRedisValueByKey(bgmCacheSetName)
     selected_topic_list_dict = {key: [] for key in getMetatopic.keys()}
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
     dog_or_cat = randomTarget()
@@ -398,14 +398,15 @@ def getBilibiliPostMetadata(
             # filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
             # store the bgm elsewhere?
             # where? you store it where?
+
+            if bgmCacheSetName:  # no matter what you got to do this.
+                for item in bgm_list:
+                    addToRedisCachedSet(item, bgmCacheSetName)
             if len(filtered_description_list) > 3:
                 if len(filtered_title_list) > 3:
                     if len(cover_list) > 3:
                         if len(tag_list) > 3:
                             if len(bgm_list) > 3:
-                                if bgmCacheSetName:
-                                    for item in bgm_list:
-                                        addToRedisCachedSet(item, bgmCacheSetName)
                                 # time to yield something.
                                 # detect this thing!
                                 # filtered_cover_list = []
@@ -445,7 +446,11 @@ def getBilibiliPostMetadata(
             traceError("error when fetching metatopic")
 
 
-def getBilibiliPostMetadataForDogCat(dog_or_cat: Literal["dog", "cat"] = "dog", bgmCacheSetName='bilibili_cached_bgm_set'):
+def getBilibiliPostMetadataForDogCat(
+    dog_or_cat: Literal["dog", "cat"] = "dog",
+    bgmCacheSetName="bilibili_cached_bgm_set",
+    bgmCacheAutoPurge=False,
+):
     dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
 
     cat_metatopic = {
@@ -486,5 +491,6 @@ def getBilibiliPostMetadataForDogCat(dog_or_cat: Literal["dog", "cat"] = "dog", 
         getMetatopic=getMetatopic,
         getTids=getTids,
         getCoverTargetFromCoverList=getCoverTargetFromCoverListForDogCat,
-        bgmCacheSetName=bgmCacheSetName
+        bgmCacheSetName=bgmCacheSetName,
+        bgmCacheAutoPurge=bgmCacheAutoPurge,
     )
