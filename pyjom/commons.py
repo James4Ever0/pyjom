@@ -65,7 +65,16 @@ def safe_eval(code, safenodes=['List','Dict','Tuple','Set','Expression','Constan
     return result
 import pickle, dill
 
-def setRedisValueByKey(key:str, dataType=None, encoding:str='utf-8',debug:bool=False, host='localhost', port=commonRedisPort):
+def setRedisValueByKey(key:str, value,dataType=None, encoding:str='utf-8',debug:bool=False, host='localhost', port=commonRedisPort):
+    connection = getRedisConnection(host=host, port=port)
+    if dataType is None:
+        dataType = type(value)
+        if dataType in [int, float, str, tuple, list, dict, set, bool]:
+            data = str(value)
+            data = data.encode(encoding)
+        else:
+            data = dill.dumps(value)
+        connection.insert(value)
 
 def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=False,host='localhost', port=commonRedisPort):
     connection = getRedisConnection(host=host, port=port)
@@ -75,9 +84,9 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
             print('data '{}' is not None'.format(key))
         if dataType == None:
             return dataType
-        elif dataType in [int, float, str, tuple, list, dict, set]:
+        elif dataType in [int, float, str, tuple, list, dict, set, bool]:
             decoded_value = value.decode(encoding)
-            if dataType in [int, float, str]:
+            if dataType in [int, float, str, bool]:
                 if dataType == str:
                     return decoded_value
                 else:
