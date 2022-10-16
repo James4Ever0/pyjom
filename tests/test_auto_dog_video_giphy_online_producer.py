@@ -21,7 +21,7 @@ dog_or_cat = "dog"
 # we need preconfigured things.
 bgmCacheSetName = 'bilibili_cached_bgm_set'
 postMetadataGenerator = getBilibiliPostMetadataForDogCat(
-    dog_or_cat=dog_or_cat, bgmCacheSetName = bgmCacheSetName
+    dog_or_cat=dog_or_cat, bgmCacheSetName = bgmCacheSetName, bgmCacheAutoPurge=True,
 )  # metadata you can fetch from database, maybe you can preprocess this.
 
 metaTopics = {
