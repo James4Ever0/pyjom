@@ -141,7 +141,7 @@ import random
 def getBilibiliPostMetadata(
     sleepTime=2,
     getMetatopic={},
-    bgmCacheSetName='bilibili_cached_bgm_set',
+    bgmCacheSetName:Union[str, None]='bilibili_cached_bgm_set',
     getTids={},  # these two are not specified here.
     orders=[
         BSP.all.order.最多点击,
@@ -157,8 +157,10 @@ def getBilibiliPostMetadata(
     play_limit={"min": 10000},
     titleLengthLimit={"min": 7, "max": 17},
     getCoverTargetFromCoverList=getCoverTargetFromCoverListDefault,  # what is the default process?
+    bgmCacheAutoPurge=False,
 ):
-
+    if bgmCacheSetName and bgmCacheAutoPurge:
+        
     selected_topic_list_dict = {key: [] for key in getMetatopic.keys()}
     randomTarget = lambda: random.choice(list(selected_topic_list_dict.keys()))
     dog_or_cat = randomTarget()
@@ -402,7 +404,8 @@ def getBilibiliPostMetadata(
                         if len(tag_list) > 3:
                             if len(bgm_list) > 3:
                                 if bgmCacheSetName:
-                                    
+                                    for item in bgm_list:
+                                        addToRedisCachedSet(item, bgmCacheSetName)
                                 # time to yield something.
                                 # detect this thing!
                                 # filtered_cover_list = []
