@@ -459,10 +459,9 @@ class neteaseMusic:
             result, debug=debug, success_codes=success_codes
         )
         return result_json
-
+    from lazero.program.functools import suppressException
     from retry import retry
 
-    @retry(tries=3, delay=3)
     def searchNeteaseMusicByQuery(self, query: Union[list, str], debug: bool = False):
         if type(query) == str:
             query = query.strip()
