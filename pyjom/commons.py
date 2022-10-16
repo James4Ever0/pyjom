@@ -21,6 +21,7 @@ import random
 
 # from functools import lru_cache
 
+commonRedisPort = 9291
 os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
 from functools import lru_cache
@@ -36,6 +37,8 @@ def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
     print("milvus connected")
 
 # what is the redis connection?
+
+def getRedisConnection(host='localhost', port=)
 
 def removeRedisValueByKey(key:str):
 def removeRedisValueByKeys(keys:list[str]):
@@ -230,7 +233,7 @@ redisExpire = oneDay * 7  # god damn it!
 
 # @lru_cache(maxsize=1)
 def redisLRUCache(
-    ttl=redisExpire, redisAddress="127.0.0.1", redisPort=9291, max_size=20, debug=True
+    ttl=redisExpire, redisAddress="127.0.0.1", redisPort=commonRedisPort, max_size=20, debug=True
 ):
     client = redis.StrictRedis(host=redisAddress, port=redisPort)
     cache = RedisLRU(client, max_size=max_size, debug=debug)
