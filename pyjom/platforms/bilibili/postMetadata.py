@@ -439,7 +439,7 @@ def getBilibiliPostMetadata(
             traceError("error when fetching metatopic")
 
 
-def getBilibiliPostMetadataForDogCat(dog_or_cat: Literal["dog", "cat"] = "dog", enableBgmCaching=True):
+def getBilibiliPostMetadataForDogCat(dog_or_cat: Literal["dog", "cat"] = "dog", bgmCacheSetName='bilibili_cached_bgm_set'):
     dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
 
     cat_metatopic = {
@@ -480,4 +480,5 @@ def getBilibiliPostMetadataForDogCat(dog_or_cat: Literal["dog", "cat"] = "dog", 
         getMetatopic=getMetatopic,
         getTids=getTids,
         getCoverTargetFromCoverList=getCoverTargetFromCoverListForDogCat,
+        bgmCacheSetName=bgmCacheSetName
     )
