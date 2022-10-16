@@ -1,5 +1,5 @@
 from pyjom.videotoolbox import duplicatedVideoFilter
-from pyjom.commons import *
+from pyjom.commons import decorator
 import os
 from lazero.utils import sprint
 from lazero.network import waitForServerUp
