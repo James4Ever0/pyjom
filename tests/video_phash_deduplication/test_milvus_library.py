@@ -190,8 +190,17 @@
 
 # shall we insert that vector or not, even if we have detected the duplicated media?
 # you choose.
+import sys
+import os
+
+os.chdir("../../")
+sys.path.append(".")
+# ignore the global proxy now, we are not going to use that.
+os.environ["http_proxy"] = ""
+os.environ["https_proxy"] = ""
+from pyjom.videotoolbox import getMilvusVideoDeduplicationCollection,checkDuplicatedVideoAndInsertVector
 if __name__ == "__main__":
-    connectMilvusDatabase()
+    # connectMilvusDatabase()
     collection = (
         getMilvusVideoDeduplicationCollection()
     )  # will not get existing collections
