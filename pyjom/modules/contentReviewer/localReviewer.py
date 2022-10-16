@@ -1,4 +1,4 @@
-from pyjom.commons import *
+from pyjom.commons import jsonPrettyPrint,decorator
 from pyjom.modules.contentCensoring.core import localCensor
 import json
 
