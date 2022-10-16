@@ -55,6 +55,8 @@ def cleanupMedialangTmpdir():
 
 def makeTemplateConfigsGenerator():
     while True:
+        # download one music, either from hottest songs or from fetched music list.
+        musicFilePath, lyricPath = 
         data = {
             "debug": True,  # we need to preview this video.
             # use generator instead.
