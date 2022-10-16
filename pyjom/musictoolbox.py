@@ -423,6 +423,19 @@ class neteaseMusic:
     def __init__(self, port:int=4042):
         self.baseUrl = "http://localhost:{}".format(port)
 
+    def verifyResponseCodeAndGetJson(self,response,debug:bool=False):
+        response_json = response.json() # check search_result.json
+        code = response_json["code"]
+
+        if not code == 200:
+            if debug:
+                print(response_json)
+            import traceback
+            traceback.print_exc()
+            raise Exception("ERROR CODE IN NETEASE API RESPONSE:", code)
+        return response_json
+
+
     from retry import retry
     @retry(tries=3, delay=3)
     def searchNeteaseMusicByQuery(self,query:Union[list, str], debug:bool=False):
@@ -435,20 +448,14 @@ class neteaseMusic:
         assert len(query)>0
         keywords = query
         search_result = requests.get(link, params={"keywords": keywords, "timestamp":getJSTimeStamp()}) # avoid retry trouble.
-        search_result_json = search_result.json() # check search_result.json
-        code = search_result_json["code"]
-
-        if not code == 200:
-            if debug:
-                print(search_result_json)
-            import traceback
-            traceback.print_exc()
-            raise Exception("ERROR CODE IN NETEASE MUSIC SEARCH:", code)
-
+        search_result_json = 
         return search_result_json
 
     def getSimilarMusicByIdFromNetease(self,music_id:int):
-        link = self.baseUrl+""
+        link = self.baseUrl+"/simi/song"
+        r = requests.get(link, params = {"id":music_id})
+        r_json = r.json()
+        code = r_json["code"]
         
 
     def getMusicUrlFromNetease(self,music_id:int):
