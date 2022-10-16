@@ -45,16 +45,21 @@ def getRedisConnection(host='localhost', port=commonRedisPort):
 
 def removeRedisValueByKey(key:str, debug:bool=False,host='localhost', port=commonRedisPort):
     connection = getRedisConnection(host=host, port=port)
-    returnCode = connection.get(key)
+    returnCode = connection.delete(key)
     messages = {0:'key {} not found'.format(key),1:'delete key {} successfully'.format(key)}
     if debug:
         print(messages.get(returnCode,'unknown return code: {}'.format(returnCode)))
     return returnCode
 
-def removeRedisValueByKeys(keys:list[str]):
+def removeRedisValueByKeys(keys:list[str], debug:bool=False,host='localhost', port=commonRedisPort):
     for key in keys:
-        removeRedisValueByKey(key)
-def getRedisCachedSet(setName:str):
+        removeRedisValueByKey(key, debug=debug,host=host, port=port)
+
+def getRedisValueByKey(key:str, dataType=None):
+    
+def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commonRedisPort):
+    connection = getRedisConnection(host=host, port=port)
+
 def addToRedisCachedSet(item, setName:str):
 
 
