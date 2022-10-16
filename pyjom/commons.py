@@ -55,10 +55,23 @@ def removeRedisValueByKeys(keys:list[str], debug:bool=False,host='localhost', po
     for key in keys:
         removeRedisValueByKey(key, debug=debug,host=host, port=port)
 
-def getRedisValueByKey(key:str, dataType=None):
-    
-def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commonRedisPort):
+def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=False,host='localhost', port=commonRedisPort):
+    import pickle, dill
     connection = getRedisConnection(host=host, port=port)
+    value = connection.get(key)
+    if value is not None:
+        if dataType == None:
+            return dataType
+        elif dataType == 
+        elif dataType == str:
+            return value.decode(encoding)
+        elif dataType == 'pickle':
+            return pickle.loads(value)
+        elif dataType == 'dill':
+            return dill.loads(value)
+    
+
+def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commonRedisPort):
 
 def addToRedisCachedSet(item, setName:str):
 
