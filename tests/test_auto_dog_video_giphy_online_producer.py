@@ -25,6 +25,7 @@ postMetadataGenerator = getBilibiliPostMetadataForDogCat(
     bgmCacheSetName=bgmCacheSetName,
     bgmCacheAutoPurge=True,  # autopurge bgm, not sure we are using the latest bgm!
 )  # metadata you can fetch from database, maybe you can preprocess this.
+postMetadataGenerator.__next__() # for getting some bgm, just in case.
 
 metaTopics = {
     "dog": {
@@ -52,6 +53,36 @@ def cleanupMedialangTmpdir():
             os.remove(fpath)
 
 
+def makeTemplateConfigsGenerator():
+    while True:
+        data = {
+            "debug": True,  # we need to preview this video.
+            # use generator instead.
+            "music": {
+                "filepath": musicFilePath,  # these things were not right.
+                # how to get this music file? by bgm search?
+                # "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
+                "lyric_path": lyricPath,  ## you can choose not to pass the lyric_path anyway. also format different than .lrc is on the way?
+            },
+            "font": "/root/.local/share/fonts/simhei.ttf",
+            # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
+            "policy": {},
+            "maxtime": 7.8,
+            "mintime": 2,  # we've write this shit!
+            "render_ass": True,
+            # also determine how to translate the lyrics, whether to translate or not.
+            "translate": True,  # default: False
+            # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
+            # you can simply implement the method to cofigure and test ping for websites in lazero library so we can share the same code.
+            # or you can borrow code from the web. some clash manager library for python.
+            "translate_method": "deepl",  # default: baidu
+            # damn cold for this mac!
+            "ass_template_configs": {},
+            "assStyleConfig": {},
+        }
+        yield data
+
+templateConfigsGenerator = makeTemplateConfigsGenerator()
 wbRev = OnlineAutoContentProducer(
     afterPosting=cleanupMedialangTmpdir,
     source="giphy",
