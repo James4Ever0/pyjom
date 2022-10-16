@@ -394,6 +394,7 @@ def getBilibiliPostMetadata(
             )
             # filtered_title_list = filterTitleListWithCoreTopicSet(title_list, core_topic_set) # could be enhabced with CLIP
             # store the bgm elsewhere?
+            # where? you store it where?
             if len(filtered_description_list) > 3:
                 if len(filtered_title_list) > 3:
                     if len(cover_list) > 3:

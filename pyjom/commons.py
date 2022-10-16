@@ -35,6 +35,7 @@ def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
     )  # can we reconnect?
     print("milvus connected")
 
+def redisCachedSet(item, clear)
 
 
 def shuffleAndPopFromList(mlist):
