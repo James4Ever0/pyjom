@@ -26,7 +26,8 @@ def OnlineProcessor(
     # flag = "topic_with_fetcher"
     collection = getMilvusVideoDeduplicationCollection()
     duplicatedVideoFilterCallCounter = 0
-    def duplicatedVideoFilter(clear_every:int=80): # 80 segments?
+    # should't we have our judgement here?
+    def duplicatedVideoFilter(clear_every:int=120): # 80 segments?
         global duplicatedVideoFilterCallCounter
         duplicatedVideoFilterCallCounter %= clear_every
         get_existing = not( duplicatedVideoFilterCallCounter== 0)
