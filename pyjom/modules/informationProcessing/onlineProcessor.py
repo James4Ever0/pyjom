@@ -25,7 +25,13 @@ def OnlineProcessor(
 
     # flag = "topic_with_fetcher"
     collection = getMilvusVideoDeduplicationCollection()
-    def duplicatedVideoFilter(clear_every:int=80):
+    duplicatedVideoFilterCallCounter = 0
+    def duplicatedVideoFilter(clear_every:int=80): # 80 segments?
+        global duplicatedVideoFilterCallCounter
+        duplicatedVideoFilterCallCounter %= clear_every
+        get_existing = not( duplicatedVideoFilterCallCounter== 0)
+        duplicatedVideoFilterCallCounter +=1
+        collection = getMilvusVideoDeduplicationCollection(get_existing = get_existing)
 
     with tmpdir(path=tmpPath) as testDir:
         # elif flag == "topic_with_fetcher":
