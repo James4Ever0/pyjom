@@ -3,9 +3,9 @@
 
 # you want to clear the collection after this run?
 
-from pymilvus import connections
 from functools import lru_cache
 
+from pymilvus import connections
 
 @lru_cache(maxsize=1)
 def connectMilvusDatabase(alias="default", host="localhost", port="19530"):

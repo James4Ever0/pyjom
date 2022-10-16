@@ -26,6 +26,16 @@ from lazero.utils.logger import sprint
 from functools import lru_cache
 
 
+from pymilvus import connections
+
+@lru_cache(maxsize=1)
+def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
+    connection = connections.connect(
+        alias=alias, host=host, port=port
+    )  # can we reconnect?
+    print("milvus connected")
+
+
 
 def shuffleAndPopFromList(mlist):
     import random
