@@ -28,9 +28,7 @@ os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
 from functools import lru_cache
 
-
 from pymilvus import connections
-
 
 @lru_cache(maxsize=1)
 def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
@@ -99,7 +97,7 @@ def stringifiableCheck(value, debug: bool = False):
         return restored_value == value
     except:
         if debug:
-            traceback.print_exc()       
+            traceback.print_exc()
     return False
 
 
