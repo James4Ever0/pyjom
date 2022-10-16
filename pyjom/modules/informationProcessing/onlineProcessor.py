@@ -1,4 +1,4 @@
-from pyjom.videotoolbox import duplicatedVideoFilter
+import pyjom.videotoolbox as vtb
 from pyjom.commons import decorator
 import os
 from lazero.utils import sprint
@@ -103,7 +103,7 @@ def OnlineProcessor(
                         "EffectiveFPS",
                     ],  # also, the dog/cat detector! fuck.
                     [NSFWVideoFilter, None, dummyFilterFunction, "NSFW"],
-                    [duplicatedVideoFilter, None, dummyFilterFunction,'video duplication filter'],
+                    [vtb.duplicatedVideoFilter, None, dummyFilterFunction,'video duplication filter'],
                 ]
                 for function, mFilter, filterFunction, flag in mList:
                     try:
