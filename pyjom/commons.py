@@ -28,6 +28,9 @@ os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
 from functools import lru_cache
 
+def getJSTimeStamp(): return int(time.time()*1000)
+
+
 from pymilvus import connections
 
 @lru_cache(maxsize=1)
