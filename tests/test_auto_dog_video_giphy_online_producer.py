@@ -17,11 +17,13 @@ from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogC
 # decide to do this in sync.
 # preconfigure the dog_or_cat value.
 
-dog_or_cat = "dog"
+dog_or_cat = random.choice(["dog","cat"]) # strange.
 # we need preconfigured things.
-bgmCacheSetName = 'bilibili_cached_bgm_set'
+bgmCacheSetName = "bilibili_cached_bgm_set"
 postMetadataGenerator = getBilibiliPostMetadataForDogCat(
-    dog_or_cat=dog_or_cat, bgmCacheSetName = bgmCacheSetName, bgmCacheAutoPurge=True,
+    dog_or_cat=dog_or_cat,
+    bgmCacheSetName=bgmCacheSetName,
+    bgmCacheAutoPurge=True,  # autopurge bgm, not sure we are using the latest bgm!
 )  # metadata you can fetch from database, maybe you can preprocess this.
 
 metaTopics = {
@@ -34,7 +36,7 @@ metaTopics = {
         ],
     },
     "cat": {
-        "static": [["cat",'kitten']],
+        "static": [["cat", "kitten"]],
         "dynamic": [["purr", "paws", "meme"], ["funny", "cute"]],
     },
 }
