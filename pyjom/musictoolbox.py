@@ -442,28 +442,23 @@ class neteaseMusic:
         if not suffix.startswith("/"): suffix = "/"+suffix
         link = self.baseUrl = suffix
         result = requests.get(link,params=params)
-        result_json = self.verifyResponseCodeAndGetJson(result, debug=debug)
+        result_json = self.verifyResponseCodeAndGetJson(result, debug=debug, success_codes=success_codes)
         return result_json
 
     from retry import retry
     @retry(tries=3, delay=3)
     def searchNeteaseMusicByQuery(self,query:Union[list, str], debug:bool=False):
-        link = self.baseUrl+"/search"
         if type(query) == str:
             query = query.strip()
         else:
             query = [elem.strip() for elem in query]
             query = " ".join([elem for elem in query if len(elem)>0])
         assert len(query)>0
-        keywords = query
-        search_result = requests.get(link, params={"keywords": keywords, "timestamp":getJSTimeStamp()}) # avoid retry trouble.
-        search_result_json = self.verifyResponseCodeAndGetJson(search_result, debug=debug)
+        search_result_json = self.requestWithParamsGetJson("/search",params={"keywords": query, "timestamp":getJSTimeStamp()},debug=debug)
         return search_result_json
 
     def getSimilarMusicByIdFromNetease(self,music_id:int, debug:bool=False):
-        link = self.baseUrl+"/simi/song"
-        r = requests.get(link, params = {"id":music_id})
-        r_json = self.verifyResponseCodeAndGetJson(r, debug=debug)
+        r_json = self.requestWithParamsGetJson("/simi/song",params={"id":music_id},debug=debug)
 
     def getMusicUrlFromNetease(self,music_id:int, debug:bool=False):
 
