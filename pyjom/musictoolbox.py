@@ -427,5 +427,12 @@ def searchNeteaseMusicByQuery(query:Union[list, str]):
         query = " ".join([elem for elem in query if len(elem)>0])
     assert len(query)>0
 
+def getSimilarMusicByIdFromNetease(music_id:int):
+
+def getMusicUrlFromNetease(music_id:int):
+
+def checkMusicFromNetEase(music_id:int):
+
+def getMusicLyricUrlFromNetease(music_id:int):
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
