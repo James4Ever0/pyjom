@@ -67,8 +67,9 @@ def safe_eval(code, safenodes=['List','Dict','Tuple','Set','Expression','Constan
 import pickle, dill
 
 commonIterableDataTypes = [ tuple, list, dict, set]
-commonDataTypes = [int, float, str, bool ]+commonIterableDataTypes
-def setRedisValueByKey(key:str, value,dataType=None, encoding:str='utf-8',debug:bool=False, host='localhost', port=commonRedisPort):
+commonNonIterableDataTypes = [int, float, str, bool ]
+commonDataTypes = commonNonIterableDataTypes+commonIterableDataTypes
+def setRedisValueByKey(key:str, value,dataType=None, encoding:str='utf-8', host='localhost', port=commonRedisPort):
     def stringifyAndEncode(value):
         data = str(value)
         data = data.encode(encoding)
@@ -84,9 +85,14 @@ def setRedisValueByKey(key:str, value,dataType=None, encoding:str='utf-8',debug:
     else:
         if dataType in commonDataTypes:
             data = stringifyAndEncode(value)
-        
-            
-        connection.set(key,value)
+        elif dataType == 'dill':
+            data = dill.dumps(value)
+        elif dataType == 'pickle':
+            data = pickle.dumps(value)
+        else:
+            raise Exception('unknown dataType:', dataType)
+    connection.set(key,data)
+    return dataType
 
 def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=False,host='localhost', port=commonRedisPort):
     connection = getRedisConnection(host=host, port=port)
@@ -96,9 +102,9 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
             print('data '{}' is not None'.format(key))
         if dataType == None:
             return dataType
-        elif dataType in [int, float, str, bool]:
+        elif dataType in commonDataTypes:
             decoded_value = value.decode(encoding)
-            if dataType in [int, float, str, bool]:
+            if dataType in commonNonIterableDataTypes:
                 if dataType == str:
                     return decoded_value
                 else:
