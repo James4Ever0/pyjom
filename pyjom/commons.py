@@ -70,11 +70,14 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
                 else:
                     return dataType(decoded_value)
             else:
+                # safe eval using nsjail?
                 return safe_eval(decoded_value)
         elif dataType == 'pickle':
             return pickle.loads(value)
         elif dataType == 'dill':
             return dill.loads(value)
+        else:
+            raise Exception('unknown dataType:', dataType)
     
 
 def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commonRedisPort):
