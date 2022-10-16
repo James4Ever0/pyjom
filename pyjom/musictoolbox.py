@@ -422,6 +422,7 @@ import requests
 class neteaseMusic:
     def __init__(self, port:int=4042):
         self.baseUrl = "http://localhost:{}".format(port)
+        
     from retry import retry
     @retry(tries=3, delay=3)
     def searchNeteaseMusicByQuery(self,query:Union[list, str], debug:bool=False):
@@ -433,12 +434,15 @@ class neteaseMusic:
         assert len(query)>0
         keywords = query
         search_result = requests.get(self.baseUrl+"/search", params={"keywords": keywords, "timestamp":getJSTimeStamp()}) # avoid retry trouble.
+        search_result_json = search_result.json() # check search_result.json
         code = search_result_json["code"]
 
         if not code == 200:
             if debug:
                 print(search_result_json)
-            raise Exception("ERROR CODE IN SEARCH:", code)
+            import traceback
+            traceback.print_exc()
+            raise Exception("ERROR CODE IN NETEASE MUSIC SEARCH:", code)
 
         return search_result_json
 
