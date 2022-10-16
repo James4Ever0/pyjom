@@ -99,7 +99,7 @@ def stringifiableCheck(value, debug: bool = False):
         return restored_value == value
     except:
         if debug:
-            traceback.print_exc()
+            traceback.print_exc()       
     return False
 
 
