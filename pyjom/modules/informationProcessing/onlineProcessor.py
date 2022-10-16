@@ -3,18 +3,12 @@ import os
 from lazero.utils import sprint
 from lazero.network import waitForServerUp
 from lazero.filesystem import tmpdir
-# from pyjom.videotoolbox import getMilvusVideoDeduplicationCollection, checkDuplicatedVideoAndInsertVector
+from pyjom.videotoolbox import getMilvusVideoDeduplicationCollection, checkDuplicatedVideoAndInsertVector
 
 
 # # flag = "topic_with_fetcher"
-# duplicatedVideoFilterCallCounter = 0
 # # should't we have our judgement here?
-# def duplicatedVideoFilter(clear_every:int=120): # 80 segments?
-#     global duplicatedVideoFilterCallCounter
-    # collection = getMilvusVideoDeduplicationCollection()
-#     duplicatedVideoFilterCallCounter %= clear_every
-#     get_existing = not( duplicatedVideoFilterCallCounter== 0)
-#     duplicatedVideoFilterCallCounter +=1
+
 #     collection = getMilvusVideoDeduplicationCollection(get_existing = get_existing)
 @decorator
 def OnlineProcessor(
