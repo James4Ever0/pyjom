@@ -30,6 +30,7 @@ from functools import lru_cache
 
 from pymilvus import connections
 
+
 @lru_cache(maxsize=1)
 def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
     connection = connections.connect(
@@ -37,64 +38,101 @@ def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
     )  # can we reconnect?
     print("milvus connected")
 
+
 # what is the redis connection?
 import redis
+
+
 @lru_cache(maxsize=1)
-def getRedisConnection(host='localhost', port=commonRedisPort):
+def getRedisConnection(host="localhost", port=commonRedisPort):
     connection = redis.Redis(host=host, port=port)
     return connection
 
-def removeRedisValueByKey(key:str, debug:bool=False,host='localhost', port=commonRedisPort):
+
+def removeRedisValueByKey(
+    key: str, debug: bool = False, host="localhost", port=commonRedisPort
+):
     connection = getRedisConnection(host=host, port=port)
     returnCode = connection.delete(key)
-    messages = {0:'key {} not found'.format(key),1:'delete key {} successfully'.format(key)}
+    messages = {
+        0: "key {} not found".format(key),
+        1: "delete key {} successfully".format(key),
+    }
     if debug:
-        print(messages.get(returnCode,'unknown return code: {}'.format(returnCode)))
+        print(messages.get(returnCode, "unknown return code: {}".format(returnCode)))
     return returnCode
 
-def removeRedisValueByKeys(keys:list[str], debug:bool=False,host='localhost', port=commonRedisPort):
+
+def removeRedisValueByKeys(
+    keys: list[str], debug: bool = False, host="localhost", port=commonRedisPort
+):
     for key in keys:
-        removeRedisValueByKey(key, debug=debug,host=host, port=port)
+        removeRedisValueByKey(key, debug=debug, host=host, port=port)
+
 
 # @lru_cache(maxsize=1)
 # def getSafeEvalEnvironment():
 #     return sf
 
-def safe_eval(code, safenodes=['List','Dict','Tuple','Set','Expression','Constant','Load']): # strange.
+
+def safe_eval(
+    code, safenodes=["List", "Dict", "Tuple", "Set", "Expression", "Constant", "Load"]
+):  # strange.
     from evalidate import safeeval
-    result = safeeval(code,{}, safenodes=safenodes)
+
+    result = safeeval(code, {}, safenodes=safenodes)
     return result
+
+
 import pickle, dill
 
-commonIterableDataTypes = [ tuple, list, dict, set]
-commonNonIterableDataTypes = [int, float, str, bool ]
-commonDataTypes = commonNonIterableDataTypes+commonIterableDataTypes
-def setRedisValueByKey(key:str, value,dataType=None, encoding:str='utf-8', host='localhost', port=commonRedisPort):
+commonIterableDataTypes = [tuple, list, dict, set]
+commonNonIterableDataTypes = [int, float, str, bool]
+commonDataTypes = commonNonIterableDataTypes + commonIterableDataTypes
+
+
+def setRedisValueByKey(
+    key: str,
+    value,
+    dataType=None,
+    encoding: str = "utf-8",
+    host="localhost",
+    port=commonRedisPort,
+):
     def stringifyAndEncode(value):
         data = str(value)
         data = data.encode(encoding)
         return data
+
     connection = getRedisConnection(host=host, port=port)
     if dataType is None:
         dataType = type(value)
         if dataType in commonDataTypes:
             data = stringifyAndEncode(value)
         else:
-            dataType = 'dill'
+            dataType = "dill"
             data = dill.dumps(value)
     else:
         if dataType in commonDataTypes:
             data = stringifyAndEncode(value)
-        elif dataType == 'dill':
+        elif dataType == "dill":
             data = dill.dumps(value)
-        elif dataType == 'pickle':
+        elif dataType == "pickle":
             data = pickle.dumps(value)
         else:
-            raise Exception('unknown dataType:', dataType)
-    connection.set(key,data)
+            raise Exception("unknown dataType:", dataType)
+    connection.set(key, data)
     return dataType
 
-def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=False,host='localhost', port=commonRedisPort):
+
+def getRedisValueByKey(
+    key: str,
+    dataType=None,
+    encoding: str = "utf-8",
+    debug: bool = False,
+    host="localhost",
+    port=commonRedisPort,
+):
     connection = getRedisConnection(host=host, port=port)
     value = connection.get(key)
     if value is not None:
@@ -112,34 +150,53 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
             else:
                 # safe eval using nsjail?
                 return safe_eval(decoded_value)
-        elif dataType == 'pickle':
+        elif dataType == "pickle":
             return pickle.loads(value)
-        elif dataType == 'dill':
+        elif dataType == "dill":
             return dill.loads(value)
         else:
-            raise Exception('unknown dataType:', dataType)
+            raise Exception("unknown dataType:", dataType)
     if debug:
         print('data "{}" is None'.format(key))
 
-def getRedisCachedSet(setName:str, debug:bool=False,host='localhost', port=commonRedisPort, dataType='dill'):
+
+def getRedisCachedSet(
+    setName: str,
+    debug: bool = False,
+    host="localhost",
+    port=commonRedisPort,
+    dataType="dill",
+) -> set:
     # so we know this datatype is set!
     # but what is our plan? we use dill by default.
-    data = getRedisValueByKey(setName, debug=debug,host=host,port=port, dataType=dataType)
+    data = getRedisValueByKey(
+        setName, debug=debug, host=host, port=port, dataType=dataType
+    )
     if data is None:
         return set()
     assert type(data) == set
     return data
-    
-def addToRedisCachedSet(item, setName:str, debug:bool=False, host='localhost', port=commonRedisPort, dataType='dill'):
-    cachedSet = getRedisCachedSet(setName,debug=debug, host=host, port=port,dataType=dataType)
+
+
+def addToRedisCachedSet(
+    item,
+    setName: str,
+    debug: bool = False,
+    host="localhost",
+    port=commonRedisPort,
+    dataType="dill",
+):
+    cachedSet = getRedisCachedSet(
+        setName, debug=debug, host=host, port=port, dataType=dataType
+    )
     cachedSet.add(item)
     setRedisValueByKey(setName, cachedSet, dataType=dataType, host=host, port=port)
     return cachedSet
 
 
-
 def shuffleAndPopFromList(mlist):
     import random
+
     random.shuffle(mlist)
     return mlist.pop(0)
 
@@ -322,7 +379,11 @@ redisExpire = oneDay * 7  # god damn it!
 
 # @lru_cache(maxsize=1)
 def redisLRUCache(
-    ttl=redisExpire, redisAddress="127.0.0.1", redisPort=commonRedisPort, max_size=20, debug=True
+    ttl=redisExpire,
+    redisAddress="127.0.0.1",
+    redisPort=commonRedisPort,
+    max_size=20,
+    debug=True,
 ):
     client = redis.StrictRedis(host=redisAddress, port=redisPort)
     cache = RedisLRU(client, max_size=max_size, debug=debug)
@@ -347,7 +408,6 @@ def frameSizeFilter(frameMeta, frame_size_filter):
         )
         return False
     return True
-
 
 
 # site_path = pathlib.Path([x for x in site.getsitepackages() if "site-packages" in x][0])
@@ -626,8 +686,6 @@ def json_auto_float_int(jsonObj):
                 except:
                     pass
     return jsonObj
-
-
 
 
 def ffprobe_media_info(filename, video_size: Union[None, str] = None):
