@@ -3,8 +3,19 @@ import os
 from lazero.utils import sprint
 from lazero.network import waitForServerUp
 from lazero.filesystem import tmpdir
-from pyjom.videotoolbox import getMilvusVideoDeduplicationCollection, checkDuplicatedVideoAndInsertVector
+# from pyjom.videotoolbox import getMilvusVideoDeduplicationCollection, checkDuplicatedVideoAndInsertVector
 
+
+# # flag = "topic_with_fetcher"
+# collection = getMilvusVideoDeduplicationCollection()
+# duplicatedVideoFilterCallCounter = 0
+# # should't we have our judgement here?
+# def duplicatedVideoFilter(clear_every:int=120): # 80 segments?
+#     global duplicatedVideoFilterCallCounter
+#     duplicatedVideoFilterCallCounter %= clear_every
+#     get_existing = not( duplicatedVideoFilterCallCounter== 0)
+#     duplicatedVideoFilterCallCounter +=1
+#     collection = getMilvusVideoDeduplicationCollection(get_existing = get_existing)
 @decorator
 def OnlineProcessor(
     newElems,  # a generator.
@@ -23,16 +34,6 @@ def OnlineProcessor(
         os.environ["http_proxy"] = proxy_url
         os.environ["https_proxy"] = proxy_url
 
-    # flag = "topic_with_fetcher"
-    collection = getMilvusVideoDeduplicationCollection()
-    duplicatedVideoFilterCallCounter = 0
-    # should't we have our judgement here?
-    def duplicatedVideoFilter(clear_every:int=120): # 80 segments?
-        global duplicatedVideoFilterCallCounter
-        duplicatedVideoFilterCallCounter %= clear_every
-        get_existing = not( duplicatedVideoFilterCallCounter== 0)
-        duplicatedVideoFilterCallCounter +=1
-        collection = getMilvusVideoDeduplicationCollection(get_existing = get_existing)
 
     with tmpdir(path=tmpPath) as testDir:
         # elif flag == "topic_with_fetcher":
