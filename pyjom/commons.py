@@ -62,9 +62,12 @@ def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=Fa
     if value is not None:
         if dataType == None:
             return dataType
-        elif dataType == 
-        elif dataType == str:
-            return value.decode(encoding)
+        elif dataType in [int, float, str, tuple, list, dict]:
+            decoded_value = value.decode(encoding)
+            if dataType == str:
+                return decoded_value
+            else:
+                return dataType(decoded_value)
         elif dataType == 'pickle':
             return pickle.loads(value)
         elif dataType == 'dill':
