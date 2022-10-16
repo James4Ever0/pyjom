@@ -415,3 +415,6 @@ def recognizeMusicFromFile(
     if raw_data:
         return False, {}, ""
     return False, {}
+
+
+############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC B
