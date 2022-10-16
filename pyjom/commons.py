@@ -55,13 +55,14 @@ def removeRedisValueByKeys(keys:list[str], debug:bool=False,host='localhost', po
     for key in keys:
         removeRedisValueByKey(key, debug=debug,host=host, port=port)
 
-@lru_cache(maxsize=1)
-def getSafeEvalEnvironment():
-    return sf
+# @lru_cache(maxsize=1)
+# def getSafeEvalEnvironment():
+#     return sf
 
-def safe_eval(code):
-    sf = getSafeEvalEnvironment()
-    return sf.eval(code)
+def safe_eval(code, safenodes=['List','Dict','Tuple','Expression','Constant','Load']): # strange.
+    from evalidate import safeeval
+    result = safeeval(code,{}, safenodes=safenodes)
+    return result
 
 def getRedisValueByKey(key:str, dataType=None,encoding:str='utf-8',debug:bool=False,host='localhost', port=commonRedisPort):
     import pickle, dill
