@@ -42,7 +42,7 @@ code = search_result_json["code"]
 # {'msg': '操作频繁，请稍候再试', 'code': 405, 'message': '操作频繁，请稍候再试'} # too frequent.
 
 
-if not code == 200: 
+if not code == 200:
     print("ERROR CODE IN SEARCH:", code)
     print(search_result_json)
 else:# no error here.
