@@ -35,7 +35,15 @@ def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
     )  # can we reconnect?
     print("milvus connected")
 
-def redisCachedSet(item, clear)
+# what is the redis connection?
+
+def removeRedisValueByKey(key:str):
+def removeRedisValueByKeys(keys:list[str]):
+    for key in keys:
+        removeRedisValueByKey(key)
+def getRedisCachedSet(setName:str):
+def addToRedisCachedSet(item, setName:str):
+
 
 
 def shuffleAndPopFromList(mlist):
