@@ -94,7 +94,7 @@ commonDataTypes = commonNonIterableDataTypes + commonIterableDataTypes
 
 def stringifiableCheck(value, debug: bool = False):
     try:
-        str_value = str(value)
+        str_value = repr(value)
         restored_value = safe_eval(value)
         return restored_value == value
     except:
@@ -113,7 +113,7 @@ def setRedisValueByKey(
     debug: bool = False,
 ):
     def stringifyAndEncode(value):
-        data = str(value)
+        data = repr(value)
         data = data.encode(encoding)
         return data
 
