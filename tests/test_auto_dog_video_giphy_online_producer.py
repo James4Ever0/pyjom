@@ -61,8 +61,9 @@ wbRev = OnlineAutoContentProducer(
         {
             "debug": True,  # we need to preview this video.
             "music": {
-                "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
-                "lyric_path": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.lrc",  ## you can choose not to pass the lyric_path anyway. also format different than .lrc is on the way?
+                "filepath": musicFilePath,  # these things were not right.
+                # "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
+                "lyric_path": lyricPath,  ## you can choose not to pass the lyric_path anyway. also format different than .lrc is on the way?
             },
             "font": "/root/.local/share/fonts/simhei.ttf",
             # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
