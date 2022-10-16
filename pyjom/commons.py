@@ -1,4 +1,5 @@
 from multiprocessing.sharedctypes import Value
+import traceback
 from pyjom.config import *
 from typing import Union
 from pyjom.mathlib import checkMinMaxDict
@@ -90,9 +91,17 @@ commonIterableDataTypes = [tuple, list, dict, set]
 commonNonIterableDataTypes = [int, float, str, bool]
 commonDataTypes = commonNonIterableDataTypes + commonIterableDataTypes
 
-def stringifiableCheck(value):
-    str_value = str(value)
-    restored_value = 
+
+def stringifiableCheck(value, debug: bool = False):
+    try:
+        str_value = str(value)
+        restored_value = safe_eval(value)
+        return restored_value == value
+    except:
+        if debug:
+            traceback.print_exc()
+    return False
+
 
 def setRedisValueByKey(
     key: str,
@@ -101,6 +110,7 @@ def setRedisValueByKey(
     encoding: str = "utf-8",
     host="localhost",
     port=commonRedisPort,
+    debug: bool = False,
 ):
     def stringifyAndEncode(value):
         data = str(value)
@@ -110,7 +120,9 @@ def setRedisValueByKey(
     connection = getRedisConnection(host=host, port=port)
     if dataType is None:
         dataType = type(value)
-        if dataType in commonDataTypes stringifiableCheck(value):
+        if dataType in commonDataTypes and stringifiableCheck(
+            value, debug=debug
+        ):  # this automation only happens when leaving blank for dataType.
             data = stringifyAndEncode(value)
         else:
             dataType = "dill"
