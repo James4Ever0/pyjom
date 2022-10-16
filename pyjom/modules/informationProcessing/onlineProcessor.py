@@ -24,6 +24,7 @@ def OnlineProcessor(
         os.environ["https_proxy"] = proxy_url
 
     # flag = "topic_with_fetcher"
+    
 
     with tmpdir(path=tmpPath) as testDir:
         # elif flag == "topic_with_fetcher":
@@ -55,6 +56,7 @@ def OnlineProcessor(
                 # fps_valid = checkMinMaxDict(fps_float,fps_filter)
                 from pyjom.videotoolbox import (
                     corruptVideoFilter,
+                    duplicateVideoFilter,
                     getVideoColorCentrality,
                     checkVideoColorCentrality,
                     getEffectiveFPS,
