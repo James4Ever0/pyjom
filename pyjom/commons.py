@@ -37,10 +37,15 @@ def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
     print("milvus connected")
 
 # what is the redis connection?
+import redis
+@lru_cache(maxsize=1)
+def getRedisConnection(host='localhost', port=commonRedisPort):
+    connection = redis.Redis(host=host, port=port)
+    return connection
 
-def getRedisConnection(host='localhost', port=)
-
-def removeRedisValueByKey(key:str):
+def removeRedisValueByKey(key:str, debug:bool=False):
+    if debug:
+        
 def removeRedisValueByKeys(keys:list[str]):
     for key in keys:
         removeRedisValueByKey(key)
