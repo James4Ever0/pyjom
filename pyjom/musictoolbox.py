@@ -419,21 +419,25 @@ def recognizeMusicFromFile(
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
 
+class neteaseMusic:
+    def __init__(self, port:int=4042):
+        self.baseUrl = "http://localhost:{}".format(port)
+    def searchNeteaseMusicByQuery(self,query:Union[list, str]):
+        if type(query) == str:
+            query = query.strip()
+        else:
+            query = [elem.strip() for elem in query]
+            query = " ".join([elem for elem in query if len(elem)>0])
+        assert len(query)>0
+        keywords = query
+        search_result = requests.get(self.baseUrl+"/search", params={"keywords": keywords, "timestamp":getJSTimeStamp()})
 
-def searchNeteaseMusicByQuery(query:Union[list, str]):
-    if type(query) == str:
-        query = query.strip()
-    else:
-        query = [elem.strip() for elem in query]
-        query = " ".join([elem for elem in query if len(elem)>0])
-    assert len(query)>0
+    def getSimilarMusicByIdFromNetease(self,music_id:int):
 
-def getSimilarMusicByIdFromNetease(music_id:int):
+    def getMusicUrlFromNetease(self,music_id:int):
 
-def getMusicUrlFromNetease(music_id:int):
+    def checkMusicFromNetEase(self,music_id:int):
 
-def checkMusicFromNetEase(music_id:int):
-
-def getMusicLyricUrlFromNetease(music_id:int):
+    def getMusicLyricUrlFromNetease(self,music_id:int):
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
