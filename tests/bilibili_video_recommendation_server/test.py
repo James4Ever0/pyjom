@@ -3,7 +3,11 @@
 
 # you'd better mimic the video that you have never recommend, and these audience have never seen before.
 
-def searchVideos():
+def searchVideos(query):
+    # search the thing directly? or you distill keywords from it?
+    # or you use some baidu magic?
+    # anyway, let's begin.
+    
 
 def searchMyVideos():
     # better use semantic search. but now we use hybrid search instead.
