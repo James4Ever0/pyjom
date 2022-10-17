@@ -52,13 +52,13 @@ int_flags = [int(flag) for flag in flags]
 
 mySpans = extract_span(int_flags, target=1)
 print(mySpans) # this will work.
-# this span is for the range function. 
+# this span is for the range function. no need to add one to the end.
 
 total_length = 0
 
 new_lyric_list = []
 for mstart, mend in mySpans:
-    length = mend-mstart+1
+    length = mend-mstart
     total_length+=length
     if length >= min_lines_of_lyrics:
         # process these lines.
@@ -77,6 +77,10 @@ for mstart, mend in mySpans:
                     new_lyric_list.append(("",line_end_time))
             else:
                 continue
+for elem in new_lyric_list:
+    print(elem)
+exit()
+
 if total_length >= min_total_lines_of_lyrics:
     print("LYRIC ACCEPTED.")
     new_lrc = pylrc.classes.Lyrics()
