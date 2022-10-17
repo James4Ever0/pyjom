@@ -524,7 +524,7 @@ class neteaseMusic:
         return True
 
     @suppressException()
-    def getMusicLyricUrlFromNetease(
+    def getMusicLyricFromNetease(
         self, music_id: int, debug: bool = False, refresh: bool = False
     ):
         r_json = self.requestWithParamsGetJson(
@@ -552,8 +552,12 @@ class neteaseMusic:
         music_url = self.getMusicUrlFromNetease(song_id, debug=debug, refresh=True)
         # download the music right now.
         r = requests.get(music_url)
+        if debug:
+            print('download music status code:', r.status_code)
+        assert r.status_code == 200 # are you sure the code is ok?
         music_format = r.split(".")[-1]
         music_content = r.content
-        
+        lyric_string = self.getMusicLyricFromNetease(song_id)
+
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
