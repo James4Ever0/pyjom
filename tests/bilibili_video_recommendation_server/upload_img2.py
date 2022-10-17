@@ -36,7 +36,7 @@ cookie = {
 	"userid": "22690801",
 	"wxky": "1"
 }
-cookie_str = ";".join(["{}:{}".format(k, v) for k, v in cookie.items()])
+cookie_str = "; ".join(["{}:{}".format(k, v) for k, v in cookie.items()])
 files = {
     "Filedata": open(filePath, "rb"),
     "id": "WU_FILE_0",
@@ -75,7 +75,7 @@ req_headers = [
 			# },
 			{
 				"name": "Cookie",
-				"value": "pgv_pvid=977259220; pac_uid=1_917521610; RK=bNrVuDJjGZ; ptcz=cff0fae128e230ac9cbdca6b44c812da07a8a27199142b3856073da30bd7d37f; tvfe_boss_uuid=ba12af7c5a70407c; o_cookie=917521610; iip=0; TSID=fg2om4ff3b0028rpbovnpafde1; pgv_info=ssid=s2914806624; ts_last=om.qq.com/userReg/mediaInfo; ts_uid=6110293192; csrfToken=csrf-1666038340355; appOmDownClose=1; ptui_loginuin=917521610@qq.com; userid=22690801; omaccesstoken=00a8d53ee83b92ec4e3111998ca616ad566b9d6fe80814f1be12d2a5c1e7a267baf531f268514a1be2670c9e98da4549a31b36408ed199c6ccd0e069f62ba65438x0; omtoken=00a8d53ee83b92ec4e3111998ca616ad566b9d6fe80814f1be12d2a5c1e7a267baf531f268514a1be2670c9e98da4549a31b36408ed199c6ccd0e069f62ba65438x0; wxky=1; alertclicked=%7C%7C"
+				"value": "pgv_pvid=977259220; pac_uid=1_917521610; RK=bNrVuDJjGZ; ptcz=cff0fae128e230ac9cbdca6b44c812da07a8a27199142b3856073da30bd7d37f; tvfe_boss_uuid=ba12af7c5a70407c; o_cookie=917521610; iip=0; TSID=fg2om4ff3b0028rpbovnpafde1; pgv_info=ssid=s2914806624; ts_last=om.qq.com/userReg/mediaInfo; ts_uid=6110293192; csrfToken=csrf-1666038340355; appOmDownClose=1; ptui_loginuin=917521610@qq.com; userid=22690801; omaccesstoken=00a8d53ee83b92ec4e3111998ca616ad566b9d6fe80814f1be12d2a5c1e7a267baf531f268514a1be2670c9e98da4549a31b36408ed199c6ccd0e069f62ba65438x0; wxky=1; alertclicked=%7C%7C"
 			},
 			{
 				"name": "Host",
