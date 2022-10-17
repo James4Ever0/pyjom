@@ -56,15 +56,20 @@ from pyjom.commons import getRedisCachedSet
 from pyjom.musictoolbox import neteaseMusic
 def makeTemplateConfigsGenerator():
     NMClient = neteaseMusic()
+
     while True:
         # download one music, either from hottest songs or from fetched music list.
         # even if we search for the name, we will randomly choose the song to avoid problems.
         # you must download the file in a fixed location.
         while True:
             bgmCacheSet= getRedisCachedSet(bgmCacheSetName)
-            keywords = random.choice(list(bgmCacheSet))
-            (music_content, music_format), lyric_string = NMClient.
+            keywords = random.choice(list(bgmCacheSet)).strip()
+            if len(keywords)>0:
+                (music_content, music_format), lyric_string = NMClient.getMusicAndLyricWithKeywords(keywords)
+                if music_content is not None:
+                    break
         musicFilePath, lyricPath = 
+        
         data = {
             "debug": True,  # we need to preview this video.
             # use generator instead.
