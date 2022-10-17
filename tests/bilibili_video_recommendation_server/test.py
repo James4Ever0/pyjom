@@ -17,9 +17,17 @@ from bilibili_api import sync, search, user
 
 import schedule
 
-def getUserObject(dedeuserid:int=):
-    credential = 
-    u = user.User(dedeuserid, credential=credential)
+# do we really need credential for checking our video? you can try.
+from functools import lru_cache
+
+@lru_cache(maxsize=1)
+def getUserObject(dedeuserid:str=, use_credential:bool=False):
+    if use_credential:
+        credential = 
+    else:
+        credential = None
+    u = user.User(dedeuserid_int, credential=credential)
+    return u
 def refresh_status():
 
 refresh_status()
