@@ -41,4 +41,8 @@ for line in lrc_parsed_list:
 
 # select consecutive spans.
 from test_commons import *
-from pyjom.commons import 
+from pyjom.mathlib import extract_span
+
+int_flags = [int(flag) for flag in flags]
+
+extract_span(int_flags, target=1)

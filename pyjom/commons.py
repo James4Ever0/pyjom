@@ -645,31 +645,7 @@ def multi_replacer(content, replacer_list=[[[], ""]]):
         content = replacer(content, sources=sources, target=target)
     return content
 
-
-from itertools import groupby
-
-
-def extract_span(mlist, target=0):
-    counter = 0
-    spanList = []
-    target_list = [(a, len(list(b))) for a, b in groupby(mlist)]
-    for a, b in target_list:
-        nextCounter = counter + b
-        if a == target:
-            spanList.append((counter, nextCounter))
-        counter = nextCounter
-    return spanList
-
-
-def convoluted(array, k=2, pad=0):  # simple convolution. no tail.
-    pad_size = k - 1
-    new_array = [pad] * pad_size + array
-    result = []
-    for i in range(len(array)):
-        sliced = new_array[i : i + k]
-        value = sum(sliced) / k
-        result.append(value)
-    return result
+from pyjom.mathlib import extract_span, convoluted
 
 
 import MediaInfo
