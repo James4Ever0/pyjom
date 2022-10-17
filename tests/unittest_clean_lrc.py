@@ -54,6 +54,8 @@ mySpans = extract_span(int_flags, target=1)
 print(mySpans) # this will work.
 
 total_length = 0
+
+new_lyric_list = []
 for mstart, mend in mySpans:
     length = mend-mstart+1
     total_length+=length
@@ -61,15 +63,19 @@ for mstart, mend in mySpans:
         # process these lines.
         for index in range(mstart, mend+1):
             line_start_time = lrc_parsed_list[index].time
+            line_text = lrc_parsed_list[index].text
             if line_start_time <= song_duration:
                 line_end_time = song_duration
                 if index+1 < len(lrc_parsed_list):
                     line_end_time = lrc_parsed_list[index+1].time
                     if line_end_time > song_duration:
                         line_end_time = song_duration
-                
+                new_lyric_list.append((line_text,line_start_time))
+                if index == mend:
+                    # append one more thing.
+                    new_lyric_list.append(("",line_end_time))
             else:
                 continue
-
 if total_length >= min_total_lines_of_lyrics:
     print("LYRIC ACCEPTED.")
+    new_lrc = 
