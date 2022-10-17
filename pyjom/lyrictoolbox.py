@@ -1008,8 +1008,8 @@ def cleanLrcFromWeb(
     song_duration: float,
     min_lines_of_lyrics: int = 5, # whatever. fuck this.
     min_total_lines_of_lyrics: int = 10,
-    potential_forbidden_chars=[], # how to deal with these? just remove the line?
-    # potential_forbidden_chars=["[", "]", "【", "】", "「", "」", "《", "》", "/", "(", ")"],
+    # potential_forbidden_chars=[], # how to deal with these? just remove the line?
+    potential_forbidden_chars=["[", "]", "【", "】", "「", "」", "《", "》", "/", "(", ")"],
     core_forbidden_chars=[":", "：", "@"],
 ):
 
@@ -1017,11 +1017,8 @@ def cleanLrcFromWeb(
 
     # you'd better inspect the thing. what is really special about the lyric, which can never appear?
 
-    def checkLyricText(text, core_only=False):
-        if core_only:
-            forbidden_chars = core_forbidden_chars
-        else:
-            forbidden_chars = core_forbidden_chars + potential_forbidden_chars
+    def checkLyricText(text):
+        forbidden_chars = core_forbidden_chars
         return not any([char in text for char in forbidden_chars])
 
     # also get the total time covered by lyric.
@@ -1040,11 +1037,11 @@ def cleanLrcFromWeb(
         text = line.text.strip()
         # startTime = line.time
         if not begin:
-            flag = checkLyricText(text, core_only=False)
+            flag = checkLyricText(text)
             if not flag:
                 begin = True
         else:
-            flag = checkLyricText(text, core_only=True)
+            flag = checkLyricText(text)
             if flag:
                 begin = False
         flags.append(flag)
@@ -1071,6 +1068,9 @@ def cleanLrcFromWeb(
             for index in range(mstart, mend):
                 line_start_time = lrc_parsed_list[index].time
                 line_text = lrc_parsed_list[index].text
+                if removeLinesWithPotentialForbiddenChars:
+                if any([char in line_text for char in potential_forbidden_chars]):
+                    line_text = ""
                 if line_start_time <= song_duration:
                     line_end_time = song_duration
                     if index + 1 < len(lrc_parsed_list):
