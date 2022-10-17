@@ -439,6 +439,7 @@ class neteaseMusic:
                 if debug:
                     print(response_json)
                 import traceback
+
                 traceback.print_exc()
                 raise Exception("ERROR CODE IN NETEASE API RESPONSE:", code)
         return response_json
@@ -504,8 +505,8 @@ class neteaseMusic:
             "/song/url", params={"id": music_id}, debug=debug, refresh=refresh
         )  # this song might expire. warning!
         # expire in a few seconds.
-        url = r_json['data'][0].get("url", None)
-        return url # you may test this url. later.
+        url = r_json["data"][0].get("url", None)
+        return url  # you may test this url. later.
 
     @suppressException(defaultReturn=False)
     def checkMusicFromNetEase(
@@ -517,7 +518,11 @@ class neteaseMusic:
         # }
         # no need to check the return code.
         r_json = self.requestWithParamsGetJson(
-            "check/music", params={"id": music_id}, debug=debug, refresh=refresh, success_codes = []
+            "check/music",
+            params={"id": music_id},
+            debug=debug,
+            refresh=refresh,
+            success_codes=[],
         )
         assert r_json["success"] == True
         assert r_json["message"] == "ok"
@@ -534,15 +539,20 @@ class neteaseMusic:
             refresh=refresh,
         )
         # warning: the fetched lrc could be not so clean. clean it somehow!
-        lyric_string = r_json['lrc']['lyric']
+        lyric_string = r_json["lrc"]["lyric"]
         return lyric_string
-    
-    @suppressException(defaultReturn=(None, None))
-    def getMusicAndLyricWithKeywords(self, keywords:str,similar:bool=False, debug:bool=False):
+
+    @suppressException(defaultReturn=((None, None), None))
+    def getMusicAndLyricWithKeywords(
+        self, keywords: str, similar: bool = False, debug: bool = False
+    ):
         import pyjq
+
         # store the downloaded file in some place please?
         search_data_json = self.searchNeteaseMusicByQuery(keywords, debug=debug)
-        song_ids = pyjq.first(".result.songs[] | select (.id !=null) | .id", search_data_json)
+        song_ids = pyjq.first(
+            ".result.songs[] | select (.id !=null) | .id", search_data_json
+        )
         song_id = random.choice(song_ids)
         # how to parse this shit?
         if similar:
@@ -553,11 +563,18 @@ class neteaseMusic:
         # download the music right now.
         r = requests.get(music_url)
         if debug:
-            print('download music status code:', r.status_code)
-        assert r.status_code == 200 # are you sure the code is ok?
-        music_format = r.split(".")[-1]
+            print("download music status code:", r.status_code)
+        assert r.status_code == 200  # are you sure the code is ok?
+        music_format = music_url.split(".")[-1]
         music_content = r.content
+        # how to get song duration?
+        with tempfile.NamedTemporaryFile(suffix=".{}".format(music_format))
         lyric_string = self.getMusicLyricFromNetease(song_id)
+        if lyric_string != None:
+            from pyjom.lyrictoolbox import cleanLrcFromWeb
+
+            lyric_string = cleanLrcFromWeb(lyric_string, song_duration)
+        return (music_content, music_format), lyric_string
 
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
