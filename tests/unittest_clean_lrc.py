@@ -56,6 +56,15 @@ for mstart, mend in mySpans:
     if length >= min_lines_of_lyrics:
         # process these lines.
         for index in range(mstart, mend+1):
+            line_start_time = lrc_parsed_list[index].time
+            if line_start_time <= song_start_time:
+                line_end_time = 
+                if index+1 < len(lrc_parsed_list):
+                    line_end_time = lrc_parsed_list[index+1].time
+                    if line_end_time > song_end_time
+                
+            else:
+                continue
 
 if total_length >= min_total_lines_of_lyrics:
     print("LYRIC ACCEPTED.")
