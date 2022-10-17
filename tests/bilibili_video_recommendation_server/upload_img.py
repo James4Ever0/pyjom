@@ -6,7 +6,7 @@ url = "https://om.qq.com/image/orginalupload"
 add something like this in your website
 <img src='http://inews.gtimg.com/newsapp_ls/0/14966062446/0' width="200"  referrerpolicy="no-referrer" />
 """
-filepath = "test_cover.jpg"
+filePath = "test_cover.jpg"
 import requests
 
 # with open(filepath, "rb") as f:
@@ -14,7 +14,8 @@ import requests
     # upload elsewhere.
 url = 'https://om.qq.com/image/exactupload?relogin=1'
 picUrl = "https://open.gtimg.cn/open/app_icon/00/95/17/76/100951776_100_m.png"
-data = {'url': picUrl, 'opCode': 151, 'isUpOrg': 1, 'subModule': 'normal_cover'}
-response = requests.post(url, data)
-res = response.json()
+url = 'https://om.qq.com/image/archscaleupload?isRetImgAttr=1&relogin=1'
+files = {'Filedata': open(filePath, 'rb')}
+respone = requests.post(url, files=files)
+res = respone.json()
 print(res)
