@@ -568,7 +568,10 @@ class neteaseMusic:
         music_format = music_url.split(".")[-1]
         music_content = r.content
         # how to get song duration?
-        with tempfile.NamedTemporaryFile(suffix=".{}".format(music_format))
+        import tempfile
+        with tempfile.NamedTemporaryFile(mode="wb",suffix=".{}".format(music_format)) as f:
+            name = f.name
+            f.write(music_content)
         lyric_string = self.getMusicLyricFromNetease(song_id)
         if lyric_string != None:
             from pyjom.lyrictoolbox import cleanLrcFromWeb
