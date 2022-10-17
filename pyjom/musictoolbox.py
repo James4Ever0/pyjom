@@ -462,7 +462,7 @@ class neteaseMusic:
         )
         return result_json
 
-    @suppressException(tries=2)
+    @suppressException(tries=2, defaultReturn={})
     def searchNeteaseMusicByQuery(self, query: Union[list, str], debug: bool = False):
         if type(query) == str:
             query = query.strip()
