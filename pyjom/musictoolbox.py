@@ -466,7 +466,7 @@ class neteaseMusic:
         return result_json
 
     @suppressException(tries=2, defaultReturn={})
-    def searchNeteaseMusicByQuery(self, query: Union[list, str], debug: bool = False):
+    def searchNeteaseMusicByQuery(self, query: Union[list, str], debug: bool = False,refresh:bool = False):
         if type(query) == str:
             query = query.strip()
         else:
@@ -477,13 +477,14 @@ class neteaseMusic:
             "/search",
             params={"keywords": query, "timestamp": getJSTimeStamp()},
             debug=debug,
+            refresh=refresh
         )
         return search_result_json
 
     @suppressException(defaultReturn = [])
-    def getSimilarMusicByIdFromNetease(self, music_id: int, debug: bool = False):
+    def getSimilarMusicByIdFromNetease(self, music_id: int, debug: bool = False,refresh:bool = False):
         r_json = self.requestWithParamsGetJson(
-            "/simi/song", params={"id": music_id}, debug=debug
+            "/simi/song", params={"id": music_id}, debug=debug, refresh=refresh
         )
         song_ids =[]
         for song in r_json['songs']:
