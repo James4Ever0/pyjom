@@ -433,15 +433,14 @@ class neteaseMusic:
         self, response, debug: bool = False, success_codes: list[int] = [200]
     ):
         response_json = response.json()  # check search_result.json
-        code = response_json["code"]
-
-        if not code in success_codes:
-            if debug:
-                print(response_json)
-            import traceback
-
-            traceback.print_exc()
-            raise Exception("ERROR CODE IN NETEASE API RESPONSE:", code)
+        if success_codes != []:
+            code = response_json["code"]
+            if not code in success_codes:
+                if debug:
+                    print(response_json)
+                import traceback
+                traceback.print_exc()
+                raise Exception("ERROR CODE IN NETEASE API RESPONSE:", code)
         return response_json
 
     def requestWithParamsGetJson(
@@ -512,8 +511,13 @@ class neteaseMusic:
     def checkMusicFromNetEase(
         self, music_id: int, debug: bool = False, refresh: bool = False
     ):
+        #     {
+        #   "success": true,
+        #   "message": "ok"
+        # }
+        # no need to check the return code.
         r_json = self.requestWithParamsGetJson(
-            "check/music", params={"id": music_id}, debug=debug, refresh=refresh
+            "check/music", params={"id": music_id}, debug=debug, refresh=refresh, success_codes = []
         )
 
     def getMusicLyricUrlFromNetease(
