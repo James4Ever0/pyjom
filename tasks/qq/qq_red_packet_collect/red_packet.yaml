@@ -37,6 +37,7 @@ windows:
           - bash launch.sh
       - shell_command: # xiaoice chat api
           - cd tests/microsoft_xiaobing_conversation_bing
-          - node chat_with_session_id.js
+          # - node chat_with_session_id.js
+          - bash xiaobing_server_keepalive.sh
       # login first!
       # when pasting gitter tokens, be careful.
