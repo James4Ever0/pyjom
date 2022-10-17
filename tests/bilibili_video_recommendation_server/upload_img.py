@@ -9,19 +9,12 @@ add something like this in your website
 filepath = "test_cover.jpg"
 import requests
 
-with open(filepath, "rb") as f:
-    content = f.read()
-    data = {
-        "Filedata": content,
-        "subModule": "userAuth_individual_head",
-        "id": "FILE_0",
-        "name": "test_cover.jpg",
-        "type": "image/jpeg",
-        # 'lastModifiedDate' : 'Tue Oct 18 03:07:38 GMT+0800 (中国标准时间)',
-        "appkey": "1",
-        "isRetImgAttr": "1",
-        "from": "user",
-    }
-    r = requests.post(url, data=data)
-    print(r.status_code)
-    print(r.content)
+# with open(filepath, "rb") as f:
+#     content = f.read()
+    # upload elsewhere.
+url = 'https://om.qq.com/image/exactupload?relogin=1'
+picUrl = "https://open.gtimg.cn/open/app_icon/00/95/17/76/100951776_100_m.png"
+data = {'url': picUrl, 'opCode': 151, 'isUpOrg': 1, 'subModule': 'normal_cover'}
+response = requests.post(url, data)
+res = response.json()
+print(res)
