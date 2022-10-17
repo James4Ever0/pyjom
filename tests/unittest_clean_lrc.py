@@ -17,12 +17,14 @@ def checkLyricText(text, core_only=False):
 # also get the total time covered by lyric.
 # the time must be long enough, compared to the total time of the song.
 lrc_parsed = pylrc.parse(lyric_string)
+lrc_parsed_list = [line for line in lrc_parsed]
 begin = False
-end = False
+# end = False
 line_counter = 0
 new_lines = []
 # lrc_parsed: pylrc.classes.Lyrics
-for line in lrc_parsed:
+flags = []
+for line in lrc_parsed_list:
     # print(line)
     text = line.text.strip()
     startTime = line.time
@@ -30,4 +32,13 @@ for line in lrc_parsed:
         flag = checkLyricText(text, core_only=False)
         if not flag:
             begin=True
+    else:
+        flag = checkLyricText(text, core_only=True)
+        if flag:
+            begin=False
+    flags.append(flag)
     # breakpoint()
+
+# select consecutive spans.
+from test_commons import *
+from pyjom.commons import 
