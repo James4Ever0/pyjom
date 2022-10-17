@@ -8,11 +8,11 @@ import pylrc
 min_lines_of_lyrics = 10
 potential_forbidden_chars = ["[","]","【","】","「","」","《","》","/","(",")"]
 core_forbidden_chars = [":","：", "@"]
-def checkLyricText(text, coreOnly=False):
+def checkLyricText(text, core_only=False):
     if core_only:
-        forbidden_chars = core_forbidden_chars+potential_forbidden_chars
+        forbidden_chars = core_forbidden_chars
     else:
-
+        forbidden_chars = core_forbidden_chars+potential_forbidden_chars
 # also get the total time covered by lyric.
 # the time must be long enough, compared to the total time of the song.
 lrc_parsed = pylrc.parse(lyric_string)
