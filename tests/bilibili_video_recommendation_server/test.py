@@ -5,6 +5,8 @@
 import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
+from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
+
 
 from bilibili_api import sync, search, user
 
@@ -21,17 +23,22 @@ import schedule
 from functools import lru_cache
 
 @lru_cache(maxsize=1)
-def getUserObject(dedeuserid:str=, use_credential:bool=False):
+def getUserObject(dedeuserid:str="397424026", use_credential:bool=False):
+    dedeuserid_int = int(dedeuserid)
     if use_credential:
-        credential = 
+        credential = getCredentialByDedeUserId(dedeuserid)
     else:
         credential = None
     u = user.User(dedeuserid_int, credential=credential)
     return u
+
+
 def refresh_status():
+    ...
 
 refresh_status()
 schedule.every(20).minutes.do(refresh_status)
+
 def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
         schedule.run_pending()
@@ -45,9 +52,8 @@ def searchVideos(query):
     # anyway, let's begin.
     # warning: this is coroutine.
     # you might want some magic. with 'suppressException' and pickledFunction?
-    sync(search.
+    sync(search.search_by_type()
 
-from pyjom.platforms.bilibili.credentials import bilibiliCredential
 # you need my credential!
 # better reuse the code.
 @refresh_status_decorator
