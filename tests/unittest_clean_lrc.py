@@ -67,6 +67,7 @@ for mstart, mend in mySpans:
                     line_end_time = lrc_parsed_list[index+1].time
                     if line_end_time > song_duration:
                         line_end_time = song_duration
+                
             else:
                 continue
 
