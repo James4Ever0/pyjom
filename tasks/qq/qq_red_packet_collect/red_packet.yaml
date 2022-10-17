@@ -39,6 +39,6 @@ windows:
           - cd tests/microsoft_xiaobing_conversation_bing
           # - node chat_with_session_id.js
           # - bash xiaobing_server_keepalive.sh
-          - keepalive 
+          - keepalive node chat_with_session_id.js # try it. you may want to replace it with python.
       # login first!
       # when pasting gitter tokens, be careful.
