@@ -48,7 +48,7 @@ def refresh_status_decorator(func):
     return wrapper
 
 @refresh_status_decorator
-def searchVideos(query:str):
+def searchVideos(query:str): # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
     # anyway, let's begin.
@@ -56,7 +56,7 @@ def searchVideos(query:str):
     # you might want some magic. with 'suppressException' and pickledFunction?
     search_type = search.SearchObjectType.VIDEO
     params = {"duration": BSP.all.duration._10分钟以下}
-    sync(search.search_by_type(query,search_type)
+    result = sync(search.search_by_type(query,search_type, params=params))
 
 # you need my credential!
 # better reuse the code.
