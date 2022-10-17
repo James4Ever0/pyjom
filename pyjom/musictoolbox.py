@@ -554,12 +554,12 @@ class neteaseMusic:
 
         # store the downloaded file in some place please?
         search_data_json = self.searchNeteaseMusicByQuery(keywords, debug=debug)
-        print(search_data_json)
-        song_ids = pyjq.first(
+        # print(search_data_json)
+        song_ids = pyjq.all(
             ".result.songs[] | select (.id !=null) | .id", search_data_json
-        )
-        print(song_ids)
-        breakpoint()
+        ) # incorrect. use pyjq.all
+        # print(song_ids)
+        # breakpoint()
 
         song_id = random.choice(song_ids)
         # how to parse this shit?
