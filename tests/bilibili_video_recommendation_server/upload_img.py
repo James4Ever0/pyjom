@@ -20,10 +20,12 @@ files = {
     "id": "WU_FILE_0",
     "name": "test_cover.jpg",
     "type": "image/jpeg",
-    "lastModifiedDate": "2022-10-17T20:07:46.551Z",
-    "Filename": "test_cover.jpg",
+    "lastModifiedDate": "10/18/2022, 4:27:08 AM",
+    'appKey':'1',
+    'isRetImgAttr':'1',
+    'from':'user',
     'subModule':'userAuth_individual_head'
 }
-respone = requests.post(url, files=files)
+respone = requests.post(url, files=files,)
 res = respone.json()
 print(res)
