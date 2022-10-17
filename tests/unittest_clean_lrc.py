@@ -6,12 +6,18 @@ import pylrc
 # you'd better inspect the thing. what is really special about the lyric, which can never appear?
 
 min_lines_of_lyrics = 10
-forbidden_chars = [":","：", "[","]","【","】","「","」","《","》","/","@","(",")"]
+potential_forbidden_chars = ["[","]","【","】","「","」","《","》","/","(",")"]
+forbidden_chars = [":","：", "@"]+potential_forbidden_chars
 # also get the total time covered by lyric.
 # the time must be long enough, compared to the total time of the song.
 lrc_parsed = pylrc.parse(lyric_string)
+begin = False
+end = False
+line_counter = 0
+new_lines = []
+# lrc_parsed: pylrc.classes.Lyrics
 for line in lrc_parsed:
-    print(line)
-    text = line.text
+    # print(line)
+    text = line.text.strip()
     startTime = line.time
-    breakpoint()
+    # breakpoint()
