@@ -511,7 +511,7 @@ class neteaseMusic:
     def checkMusicFromNetEase(
         self, music_id: int, debug: bool = False, refresh: bool = False
     ):
-        #     {
+        # {
         #   "success": true,
         #   "message": "ok"
         # }
@@ -519,6 +519,9 @@ class neteaseMusic:
         r_json = self.requestWithParamsGetJson(
             "check/music", params={"id": music_id}, debug=debug, refresh=refresh, success_codes = []
         )
+        assert r_json["success"] == True
+        assert r_json["message"] == "ok"
+        return True
 
     def getMusicLyricUrlFromNetease(
         self, music_id: int, debug: bool = False, refresh: bool = False
