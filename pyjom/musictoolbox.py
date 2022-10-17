@@ -477,14 +477,18 @@ class neteaseMusic:
         )
         return search_result_json
 
+    @suppressException(defaultReturn = [])
     def getSimilarMusicByIdFromNetease(self, music_id: int, debug: bool = False):
         r_json = self.requestWithParamsGetJson(
             "/simi/song", params={"id": music_id}, debug=debug
         )
+        song_ids =[]
         for song in r_json['songs']:
             name = song['name']
             song_id = song['id']
+            song_ids.append(song_id)
             # what you want?
+        return song_ids
 
     def getMusicUrlFromNetease(self, music_id: int, debug: bool = False):
         r_json = self.requestWithParamsGetJson(
