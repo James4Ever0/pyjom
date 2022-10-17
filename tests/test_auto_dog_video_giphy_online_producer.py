@@ -52,11 +52,15 @@ def cleanupMedialangTmpdir():
         if os.path.isfile(fpath):
             os.remove(fpath)
 
+from pyjom.commons import getRedisCachedSet
 
 def makeTemplateConfigsGenerator():
     while True:
         # download one music, either from hottest songs or from fetched music list.
         # even if we search for the name, we will randomly choose the song to avoid problems.
+        # you must download the file in a fixed location.
+        while True:
+            keywords = 
         musicFilePath, lyricPath = 
         data = {
             "debug": True,  # we need to preview this video.
