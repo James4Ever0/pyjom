@@ -12,4 +12,6 @@ forbidden_chars = [":","：", "[","]","【","】","「","」","《","》","/","@
 lrc_parsed = pylrc.parse(lyric_string)
 for line in lrc_parsed:
     print(line)
+    text = line.text
+    startTime = line.time
     breakpoint()
