@@ -78,4 +78,6 @@ for mstart, mend in mySpans:
                 continue
 if total_length >= min_total_lines_of_lyrics:
     print("LYRIC ACCEPTED.")
-    new_lrc = 
+    new_lrc = pylrc.classes.Lyrics()
+    for text, myTime in new_lyric_list:
+        myLine = pylrc.classes.
