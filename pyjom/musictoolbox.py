@@ -550,7 +550,10 @@ class neteaseMusic:
             song_id = random.choice(similar_song_ids)
         # now download the music.
         music_url = self.getMusicUrlFromNetease(song_id, debug=debug, refresh=True)
+        # download the music right now.
+        r = requests.get(music_url)
+        music_format = r.split(".")[-1]
+        music_content = r.content
         
-
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
