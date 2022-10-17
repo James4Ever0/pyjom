@@ -542,7 +542,7 @@ class neteaseMusic:
         lyric_string = r_json["lrc"]["lyric"]
         return lyric_string
 
-    @suppressException(defaultReturn=((None, None), None))
+    @suppressException(tries=2,defaultReturn=((None, None), None))
     def getMusicAndLyricWithKeywords(
         self,
         keywords: str,
