@@ -451,7 +451,10 @@ class neteaseMusic:
         params: dict = {},
         debug: bool = False,
         success_codes: list[int] = [200],
+        refresh:bool = False
     ):
+        if refresh:
+            params.update({"timestamp": getJSTimeStamp()})
         suffix = suffix.strip()
         if not suffix.startswith("/"):
             suffix = "/" + suffix
@@ -493,18 +496,18 @@ class neteaseMusic:
     def getMusicUrlFromNetease(self, music_id: int, debug: bool = False):
         r_json = self.requestWithParamsGetJson(
             "/song/url", params={"id": music_id}, debug=debug
-        )
-
+        ) # this song might expire. warning!
     def checkMusicFromNetEase(self, music_id: int, debug: bool = False):
         r_json = self.requestWithParamsGetJson(
             "check/music", params={"id": music_id}, debug=debug
         )
 
-    def getMusicLyricUrlFromNetease(self, music_id: int, debug: bool = False):
+    def getMusicLyricUrlFromNetease(self, music_id: int, debug: bool = False, refresh:bool=False):
         r_json = self.requestWithParamsGetJson(
             "/lyric",
-            params={"id": music_id, "timestamp": getJSTimeStamp()},
+            params={"id": music_id},
             debug=debug,
+            refresh=refresh,
         )
 
 
