@@ -68,6 +68,8 @@ def makeTemplateConfigsGenerator():
                 (music_content, music_format), lyric_string = NMClient.getMusicAndLyricWithKeywords(keywords)
                 if music_content is not None:
                     break
+        with tempfile.NamedTemporaryFile('wb', suffix=".{}".format(music_format)) as music_file:
+            with tempfile.NamedTemporaryFile('wb', suffix=ame
         musicFilePath, lyricPath = 
         
         data = {
