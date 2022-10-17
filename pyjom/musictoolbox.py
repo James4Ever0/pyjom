@@ -425,7 +425,6 @@ import requests
 from lazero.program.functools import suppressException
 
 
-
 class neteaseMusic:
     def __init__(self, port: int = 4042):
         self.baseUrl = "http://localhost:{}".format(port)
@@ -451,7 +450,7 @@ class neteaseMusic:
         params: dict = {},
         debug: bool = False,
         success_codes: list[int] = [200],
-        refresh:bool = False
+        refresh: bool = False,
     ):
         if refresh:
             params.update({"timestamp": getJSTimeStamp()})
@@ -466,7 +465,9 @@ class neteaseMusic:
         return result_json
 
     @suppressException(tries=2, defaultReturn={})
-    def searchNeteaseMusicByQuery(self, query: Union[list, str], debug: bool = False,refresh:bool = False):
+    def searchNeteaseMusicByQuery(
+        self, query: Union[list, str], debug: bool = False, refresh: bool = False
+    ):
         if type(query) == str:
             query = query.strip()
         else:
@@ -475,35 +476,45 @@ class neteaseMusic:
         assert len(query) > 0
         search_result_json = self.requestWithParamsGetJson(
             "/search",
-            params={"keywords": query, "timestamp": getJSTimeStamp()},
+            params={"keywords": query},
             debug=debug,
-            refresh=refresh
+            refresh=refresh,
         )
         return search_result_json
 
-    @suppressException(defaultReturn = [])
-    def getSimilarMusicByIdFromNetease(self, music_id: int, debug: bool = False,refresh:bool = False):
+    @suppressException(defaultReturn=[])
+    def getSimilarMusicByIdFromNetease(
+        self, music_id: int, debug: bool = False, refresh: bool = False
+    ):
         r_json = self.requestWithParamsGetJson(
             "/simi/song", params={"id": music_id}, debug=debug, refresh=refresh
         )
-        song_ids =[]
-        for song in r_json['songs']:
-            name = song['name']
-            song_id = song['id']
+        song_ids = []
+        for song in r_json["songs"]:
+            name = song["name"]
+            song_id = song["id"]
             song_ids.append(song_id)
             # what you want?
         return song_ids
 
-    def getMusicUrlFromNetease(self, music_id: int, debug: bool = False):
+    def getMusicUrlFromNetease(
+        self, music_id: int, debug: bool = False, refresh: bool = False
+    ):
         r_json = self.requestWithParamsGetJson(
-            "/song/url", params={"id": music_id}, debug=debug
-        ) # this song might expire. warning!
-    def checkMusicFromNetEase(self, music_id: int, debug: bool = False):
+            "/song/url", params={"id": music_id}, debug=debug, refresh=refresh
+        )  # this song might expire. warning!
+        # expire in a few seconds.
+
+    def checkMusicFromNetEase(
+        self, music_id: int, debug: bool = False, refresh: bool = False
+    ):
         r_json = self.requestWithParamsGetJson(
-            "check/music", params={"id": music_id}, debug=debug
+            "check/music", params={"id": music_id}, debug=debug, refresh=refresh
         )
 
-    def getMusicLyricUrlFromNetease(self, music_id: int, debug: bool = False, refresh:bool=False):
+    def getMusicLyricUrlFromNetease(
+        self, music_id: int, debug: bool = False, refresh: bool = False
+    ):
         r_json = self.requestWithParamsGetJson(
             "/lyric",
             params={"id": music_id},
