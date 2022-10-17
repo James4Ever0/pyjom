@@ -1000,3 +1000,86 @@ def read_lrc(lrc_path):
             sublist.append({"time": time_in_secs, "content": content})
             # another square bracket that could kill me.
         return sublist
+
+# mainly for netease, this may change.
+def cleanLrcFromWeb(lyric_string:str,song_duration:float):
+    import pylrc
+    # you'd better inspect the thing. what is really special about the lyric, which can never appear?
+
+    min_lines_of_lyrics = 5
+    min_total_lines_of_lyrics = 10
+    potential_forbidden_chars = ["[","]","【","】","「","」","《","》","/","(",")"]
+    core_forbidden_chars = [":","：", "@"]
+    def checkLyricText(text, core_only=False):
+        if core_only:
+            forbidden_chars = core_forbidden_chars
+        else:
+            forbidden_chars = core_forbidden_chars+potential_forbidden_chars
+        return not any([char in text for char in forbidden_chars])
+    # also get the total time covered by lyric.
+    # the time must be long enough, compared to the total time of the song.
+    lrc_parsed = pylrc.parse(lyric_string)
+    lrc_parsed_list = [line for line in lrc_parsed]
+    lrc_parsed_list.sort(key=lambda line: line.time)
+    begin = False
+    # end = False
+    line_counter = 0
+    new_lines = []
+    # lrc_parsed: pylrc.classes.Lyrics
+    flags = []
+    for line in lrc_parsed_list:
+        # print(line)
+        text = line.text.strip()
+        startTime = line.time
+        if not begin:
+            flag = checkLyricText(text, core_only=False)
+            if not flag:
+                begin=True
+        else:
+            flag = checkLyricText(text, core_only=True)
+            if flag:
+                begin=False
+        flags.append(flag)
+        # breakpoint()
+
+    # select consecutive spans.
+    from test_commons import *
+    from pyjom.mathlib import extract_span
+
+    int_flags = [int(flag) for flag in flags]
+
+    mySpans = extract_span(int_flags, target=1)
+    print(mySpans) # this will work.
+
+    total_length = 0
+
+    new_lyric_list = []
+    for mstart, mend in mySpans:
+        length = mend-mstart+1
+        total_length+=length
+        if length >= min_lines_of_lyrics:
+            # process these lines.
+            for index in range(mstart, mend+1):
+                line_start_time = lrc_parsed_list[index].time
+                line_text = lrc_parsed_list[index].text
+                if line_start_time <= song_duration:
+                    line_end_time = song_duration
+                    if index+1 < len(lrc_parsed_list):
+                        line_end_time = lrc_parsed_list[index+1].time
+                        if line_end_time > song_duration:
+                            line_end_time = song_duration
+                    new_lyric_list.append((line_text,line_start_time))
+                    if index == mend:
+                        # append one more thing.
+                        new_lyric_list.append(("",line_end_time))
+                else:
+                    continue
+    if total_length >= min_total_lines_of_lyrics:
+        print("LYRIC ACCEPTED.")
+        new_lrc = pylrc.classes.Lyrics()
+        for text, myTime in new_lyric_list:
+            timecode_min, timecode_sec= divmod(myTime,60)
+            timecode = "[{}:{:.3f}]".format(timecode_min, timecode_sec)
+            myLine = pylrc.classes.LyricLine(timecode, text)
+            new_lrc.append(myLine)
+        new_lrc_string = new_lrc.toLRC()
