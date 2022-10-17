@@ -539,11 +539,18 @@ class neteaseMusic:
     
     @suppressException(defaultReturn=(None, None))
     def getMusicAndLyricWithKeywords(self, keywords:str,similar:bool=False, debug:bool=False):
+        import pyjq
         # store the downloaded file in some place please?
         search_data_json = self.searchNeteaseMusicByQuery(keywords, debug=debug)
+        song_ids = pyjq.first(".result.songs[] | select (.id !=null) | .id", search_data_json)
+        song_id = random.choice(song_ids)
         # how to parse this shit?
         if similar:
-            similar_song_ids = self.getSimilarMusicByIdFromNetease()
+            similar_song_ids = self.getSimilarMusicByIdFromNetease(song_id, debug=debug)
+            song_id = random.choice(similar_song_ids)
+        # now download the music.
+        music_url = self.getMusicUrlFromNetease(song_id, debug=debug, refresh=True)
+        
 
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
