@@ -75,8 +75,7 @@ req_headers = [
 			# },
 			{ # do some cookie hook to get these data in playwright.
 				"name": "Cookie",
-				"value": "userid=22690801; omaccesstoken=344192fc43e008b36dd60e781d1122c191da172f038b83aa3f4a50d8cd92f66f2898b7ca8276d94fcfadf6515505723a3c30da51ba7936bf00f01976f46bdf91499255b1c9dca51a8f07293d2d5fc94c"
-				# "value": "userid=22690801; omaccesstoken=00a8d53ee83b92ec4e3111998ca616ad566b9d6fe80814f1be12d2a5c1e7a267baf531f268514a1be2670c9e98da4549a31b36408ed199c6ccd0e069f62ba65438x0"
+				"value": "userid=22690801; omaccesstoken=00a8d53ee83b92ec4e3111998ca616ad566b9d6fe80814f1be12d2a5c1e7a267baf531f268514a1be2670c9e98da4549a31b36408ed199c6ccd0e069f62ba65438x0"
 			},
 			{
 				"name": "Host",
