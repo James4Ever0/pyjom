@@ -80,5 +80,5 @@ if total_length >= min_total_lines_of_lyrics:
     print("LYRIC ACCEPTED.")
     new_lrc = pylrc.classes.Lyrics()
     for text, myTime in new_lyric_list:
-        timecode = 
+        timecode_min, timecode_sec= divmod(myTime,60)
         myLine = pylrc.classes.
