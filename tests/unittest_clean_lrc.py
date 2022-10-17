@@ -4,3 +4,12 @@ lyric_string = """[00:00.000] 作词 : 苏喜多/挡风玻璃\n[00:01.000] 作�
 
 import pylrc
 # you'd better inspect the thing. what is really special about the lyric, which can never appear?
+
+min_lines_of_lyrics = 10
+forbidden
+# also get the total time covered by lyric.
+# the time must be long enough, compared to the total time of the song.
+lrc_parsed = pylrc.parse(lyric_string)
+for line in lrc_parsed:
+    print(line)
+    breakpoint()
