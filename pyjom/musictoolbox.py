@@ -544,8 +544,12 @@ class neteaseMusic:
 
     @suppressException(defaultReturn=((None, None), None))
     def getMusicAndLyricWithKeywords(
-        self, keywords: str, similar: bool = False, debug: bool = False
-    ):
+        self,
+        keywords: str,
+        similar: bool = False,
+        debug: bool = False,
+        min_audio_length: float = 2.5 * 60,
+    ):  # minimum 2.5 minutes of music.
         import pyjq
 
         # store the downloaded file in some place please?
@@ -569,9 +573,16 @@ class neteaseMusic:
         music_content = r.content
         # how to get song duration?
         import tempfile
-        with tempfile.NamedTemporaryFile(mode="wb",suffix=".{}".format(music_format)) as f:
+
+        with tempfile.NamedTemporaryFile(
+            mode="wb", suffix=".{}".format(music_format)
+        ) as f:
             name = f.name
+            name = os.path.abspath(name)
             f.write(music_content)
+            song_duration = getAudioDuration(name)
+        if song_duration < min_audio_length:
+            raise Exception("audio too short, total {} seconds".format(song_duration))
         lyric_string = self.getMusicLyricFromNetease(song_id)
         if lyric_string != None:
             from pyjom.lyrictoolbox import cleanLrcFromWeb
