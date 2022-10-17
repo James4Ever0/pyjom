@@ -540,6 +540,9 @@ class neteaseMusic:
         )
         # warning: the fetched lrc could be not so clean. clean it somehow!
         lyric_string = r_json["lrc"]["lyric"]
+        if lyric_string != None and type(lyric_string) == str:
+            from pyjom.lyrictoolbox import cleanLrcFromWeb
+            lyric_string = cleanLrcFromWeb(lyric_string, song_duration)
         return lyric_string
 
     @suppressException(tries=2,defaultReturn=((None, None), None))
@@ -588,10 +591,6 @@ class neteaseMusic:
         if song_duration < min_audio_length:
             raise Exception("audio too short, total {} seconds".format(song_duration))
         lyric_string = self.getMusicLyricFromNetease(song_id)
-        if lyric_string != None:
-            from pyjom.lyrictoolbox import cleanLrcFromWeb
-
-            lyric_string = cleanLrcFromWeb(lyric_string, song_duration)
         return (music_content, music_format), lyric_string
 
 

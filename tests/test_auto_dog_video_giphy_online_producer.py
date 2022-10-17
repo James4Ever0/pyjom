@@ -78,7 +78,6 @@ def makeTemplateConfigsGenerator():
             "wb", suffix=".{}".format(music_format)
         ) as music_file:
             with tempfile.NamedTemporaryFile("w+", suffix=".lrc") as lyric_file:
-
                 musicFilePath, lyricPath = music_file.name, lyric_file.name
                 music_file.write(music_content)
                 music_file.seek(0)
