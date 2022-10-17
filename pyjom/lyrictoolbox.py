@@ -368,7 +368,7 @@ def textArrayWithTranslatedListToAss(
             "method": "kanji",
             "style": "Kanji",
             "cutOneByOne": True,
-            "charShift": 25, # smaller?
+            "charShift": 25,  # smaller?
         },
     }
     # newTextArray = [] # dummy shit. must be removed immediately.
@@ -1001,22 +1001,28 @@ def read_lrc(lrc_path):
             # another square bracket that could kill me.
         return sublist
 
+
 # mainly for netease, this may change.
-def cleanLrcFromWeb(lyric_string:str,song_duration:float,
-min_lines_of_lyrics:int = 5,
-min_total_lines_of_lyrics:int = 10,
-potential_forbidden_chars = ["[","]","【","】","「","」","《","》","/","(",")"],
-core_forbidden_chars = [":","：", "@"]):
+def cleanLrcFromWeb(
+    lyric_string: str,
+    song_duration: float,
+    min_lines_of_lyrics: int = 5,
+    min_total_lines_of_lyrics: int = 10,
+    potential_forbidden_chars=["[", "]", "【", "】", "「", "」", "《", "》", "/", "(", ")"],
+    core_forbidden_chars=[":", "：", "@"],
+):
 
     import pylrc
+
     # you'd better inspect the thing. what is really special about the lyric, which can never appear?
 
     def checkLyricText(text, core_only=False):
         if core_only:
             forbidden_chars = core_forbidden_chars
         else:
-            forbidden_chars = core_forbidden_chars+potential_forbidden_chars
+            forbidden_chars = core_forbidden_chars + potential_forbidden_chars
         return not any([char in text for char in forbidden_chars])
+
     # also get the total time covered by lyric.
     # the time must be long enough, compared to the total time of the song.
     lrc_parsed = pylrc.parse(lyric_string)
@@ -1035,11 +1041,11 @@ core_forbidden_chars = [":","：", "@"]):
         if not begin:
             flag = checkLyricText(text, core_only=False)
             if not flag:
-                begin=True
+                begin = True
         else:
             flag = checkLyricText(text, core_only=True)
             if flag:
-                begin=False
+                begin = False
         flags.append(flag)
         # breakpoint()
 
@@ -1050,15 +1056,15 @@ core_forbidden_chars = [":","：", "@"]):
     int_flags = [int(flag) for flag in flags]
 
     mySpans = extract_span(int_flags, target=1)
-    print(mySpans) # this will work.
+    print(mySpans)  # this will work.
     # this span is for the range function. no need to add one to the end.
 
     total_length = 0
 
     new_lyric_list = []
     for mstart, mend in mySpans:
-        length = mend-mstart
-        total_length+=length
+        length = mend - mstart
+        total_length += length
         if length >= min_lines_of_lyrics:
             # process these lines.
             for index in range(mstart, mend):
@@ -1066,14 +1072,14 @@ core_forbidden_chars = [":","：", "@"]):
                 line_text = lrc_parsed_list[index].text
                 if line_start_time <= song_duration:
                     line_end_time = song_duration
-                    if index+1 < len(lrc_parsed_list):
-                        line_end_time = lrc_parsed_list[index+1].time
+                    if index + 1 < len(lrc_parsed_list):
+                        line_end_time = lrc_parsed_list[index + 1].time
                         if line_end_time > song_duration:
                             line_end_time = song_duration
-                    new_lyric_list.append((line_text,line_start_time))
-                    if index == mend-1:
+                    new_lyric_list.append((line_text, line_start_time))
+                    if index == mend - 1:
                         # append one more thing.
-                        new_lyric_list.append(("",line_end_time))
+                        new_lyric_list.append(("", line_end_time))
                 else:
                     continue
     # for elem in new_lyric_list:
@@ -1084,10 +1090,11 @@ core_forbidden_chars = [":","：", "@"]):
         print("LYRIC ACCEPTED.")
         new_lrc = pylrc.classes.Lyrics()
         for text, myTime in new_lyric_list:
-            timecode_min, timecode_sec= divmod(myTime,60)
+            timecode_min, timecode_sec = divmod(myTime, 60)
             timecode = "[{:d}:{:.3f}]".format(int(timecode_min), timecode_sec)
             myLine = pylrc.classes.LyricLine(timecode, text)
             new_lrc.append(myLine)
         new_lrc_string = new_lrc.toLRC()
         return new_lrc_string
         # print(new_lrc_string)
+        # if nothing returned, you know what to do.
