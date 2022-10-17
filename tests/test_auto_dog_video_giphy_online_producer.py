@@ -53,14 +53,17 @@ def cleanupMedialangTmpdir():
             os.remove(fpath)
 
 from pyjom.commons import getRedisCachedSet
-
+from pyjom.musictoolbox import neteaseMusic
 def makeTemplateConfigsGenerator():
+    NMClient = neteaseMusic()
     while True:
         # download one music, either from hottest songs or from fetched music list.
         # even if we search for the name, we will randomly choose the song to avoid problems.
         # you must download the file in a fixed location.
         while True:
-            keywords = 
+            bgmCacheSet= getRedisCachedSet(bgmCacheSetName)
+            keywords = random.choice(list(bgmCacheSet))
+            (music_content, music_format), lyric_string = NMClient.
         musicFilePath, lyricPath = 
         data = {
             "debug": True,  # we need to preview this video.
