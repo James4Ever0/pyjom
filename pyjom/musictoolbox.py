@@ -457,7 +457,7 @@ class neteaseMusic:
         suffix = suffix.strip()
         if not suffix.startswith("/"):
             suffix = "/" + suffix
-        link = self.baseUrl = suffix
+        link = self.baseUrl + suffix
         result = requests.get(link, params=params)
         result_json = self.verifyResponseCodeAndGetJson(
             result, debug=debug, success_codes=success_codes
@@ -554,9 +554,13 @@ class neteaseMusic:
 
         # store the downloaded file in some place please?
         search_data_json = self.searchNeteaseMusicByQuery(keywords, debug=debug)
+        print(search_data_json)
         song_ids = pyjq.first(
             ".result.songs[] | select (.id !=null) | .id", search_data_json
         )
+        print(song_ids)
+        breakpoint()
+
         song_id = random.choice(song_ids)
         # how to parse this shit?
         if similar:
