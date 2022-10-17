@@ -2,13 +2,17 @@
 # by means of query? or just directly ask me for it.
 
 # you'd better mimic the video that you have never recommend, and these audience have never seen before.
+import sys
+sys.path.append("/root/Desktop/works/pyjom/")
 
 def searchVideos(query):
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
     # anyway, let's begin.
-    
 
+from pyjom.platforms.bilibili.credentials import bilibiliCredential
+# you need my credential!
+# better reuse the code.
 def searchMyVideos():
     # better use semantic search. but now we use hybrid search instead.
     # hybrid search: metatopic plus bm25
