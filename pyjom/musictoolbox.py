@@ -536,9 +536,14 @@ class neteaseMusic:
         # warning: the fetched lrc could be not so clean. clean it somehow!
         lyric_string = r_json['lrc']['lyric']
         return lyric_string
-
-    def getMusicAndLyricWithKeywords(self, keywords:str,similar:bool):
-        
+    
+    @suppressException(defaultReturn=(None, None))
+    def getMusicAndLyricWithKeywords(self, keywords:str,similar:bool=False, debug:bool=False):
+        # store the downloaded file in some place please?
+        search_data_json = self.searchNeteaseMusicByQuery(keywords, debug=debug)
+        # how to parse this shit?
+        if similar:
+            similar_song_ids = self.getSimilarMusicByIdFromNetease()
 
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
