@@ -1008,7 +1008,7 @@ def cleanLrcFromWeb(
     song_duration: float,
     min_lines_of_lyrics: int = 5, # whatever. fuck this.
     min_total_lines_of_lyrics: int = 10,
-    potential_forbidden_chars=[],
+    potential_forbidden_chars=[], # how to deal with these? just remove the line?
     # potential_forbidden_chars=["[", "]", "【", "】", "「", "」", "《", "》", "/", "(", ")"],
     core_forbidden_chars=[":", "：", "@"],
 ):
@@ -1031,14 +1031,14 @@ def cleanLrcFromWeb(
     lrc_parsed_list.sort(key=lambda line: line.time)
     begin = False
     # end = False
-    line_counter = 0
-    new_lines = []
+    # line_counter = 0
+    # new_lines = []
     # lrc_parsed: pylrc.classes.Lyrics
     flags = []
     for line in lrc_parsed_list:
         # print(line)
         text = line.text.strip()
-        startTime = line.time
+        # startTime = line.time
         if not begin:
             flag = checkLyricText(text, core_only=False)
             if not flag:
