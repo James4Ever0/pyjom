@@ -523,6 +523,7 @@ class neteaseMusic:
         assert r_json["message"] == "ok"
         return True
 
+    @suppressException()
     def getMusicLyricUrlFromNetease(
         self, music_id: int, debug: bool = False, refresh: bool = False
     ):
@@ -534,6 +535,10 @@ class neteaseMusic:
         )
         # warning: the fetched lrc could be not so clean. clean it somehow!
         lyric_string = r_json['lrc']['lyric']
+        return lyric_string
+
+    def getMusicAndLyricWithKeywords(self, keywords:str,similar:bool):
+        
 
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
