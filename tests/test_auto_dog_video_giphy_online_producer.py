@@ -71,7 +71,7 @@ def makeTemplateConfigsGenerator():
                 (
                     music_content,
                     music_format,
-                ), lyric_string = NMClient.getMusicAndLyricWithKeywords(keywords)
+                ), lyric_string = NMClient.getMusicAndLyricWithKeywords(keywords,similar=random.choice([True, False]))
                 if music_content is not None:
                     break
         with tempfile.NamedTemporaryFile(
@@ -87,7 +87,6 @@ def makeTemplateConfigsGenerator():
                     lyric_file.seek(0)
                 else:
                     lyricPath = None
-
                 data = {
                     "debug": True,  # we need to preview this video.
                     # use generator instead.
