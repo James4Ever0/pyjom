@@ -4,6 +4,7 @@
 # you'd better mimic the video that you have never recommend, and these audience have never seen before.
 import sys
 sys.path.append("/root/Desktop/works/pyjom/")
+# you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 
 from bilibili_api import sync, search
 
@@ -12,7 +13,8 @@ def searchVideos(query):
     # or you use some baidu magic?
     # anyway, let's begin.
     # warning: this is coroutine.
-    sync(search())
+    # you might want some magic. with 'suppressException' and pickledFunction?
+    sync(search.
 
 from pyjom.platforms.bilibili.credentials import bilibiliCredential
 # you need my credential!
