@@ -497,6 +497,7 @@ class neteaseMusic:
             # what you want?
         return song_ids
 
+    @suppressException()
     def getMusicUrlFromNetease(
         self, music_id: int, debug: bool = False, refresh: bool = False
     ):
@@ -504,7 +505,10 @@ class neteaseMusic:
             "/song/url", params={"id": music_id}, debug=debug, refresh=refresh
         )  # this song might expire. warning!
         # expire in a few seconds.
+        url = r_json['data'][0].get("url", None)
+        return url # you may test this url. later.
 
+    @suppressException(defaultReturn=False)
     def checkMusicFromNetEase(
         self, music_id: int, debug: bool = False, refresh: bool = False
     ):
