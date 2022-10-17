@@ -5,4 +5,4 @@ def searchVideos():
 
 def getMyVideos():
 
-def submitMyVideos()
+def submitMyVideo(): # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
