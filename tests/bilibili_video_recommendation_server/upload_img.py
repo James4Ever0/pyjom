@@ -11,17 +11,18 @@ import requests
 
 # with open(filepath, "rb") as f:
 #     content = f.read()
-    # upload elsewhere.
-url = 'https://om.qq.com/image/exactupload?relogin=1'
+# upload elsewhere.
+url = "https://om.qq.com/image/exactupload?relogin=1"
 picUrl = "https://open.gtimg.cn/open/app_icon/00/95/17/76/100951776_100_m.png"
-url = 'https://om.qq.com/image/archscaleupload?isRetImgAttr=1&relogin=1'
-files = {'Filedata': open(filePath, 'rb'),
-        fd.append("id", "WU_FILE_0");
-        fd.append("name", 'test_cover.jpg',);
-        'type':'image/jpeg'
-        fd.append("type", file.type);
-        fd.append('lastModifiedDate', new Date());
-        fd.append('Filename', 'test_cover.jpg');
+url = "https://om.qq.com/image/archscaleupload?isRetImgAttr=1&relogin=1"
+files = {
+    "Filedata": open(filePath, "rb"),
+    "id": "WU_FILE_0",
+    "name": "test_cover.jpg",
+    "type": "image/jpeg",
+    "lastModifiedDate": "2022-10-17T20:07:46.551Z",
+    "Filename": "test_cover.jpg",
+}
 respone = requests.post(url, files=files)
 res = respone.json()
 print(res)
