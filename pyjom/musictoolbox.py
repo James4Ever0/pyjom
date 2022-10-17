@@ -530,7 +530,11 @@ class neteaseMusic:
 
     @suppressException()
     def getMusicLyricFromNetease(
-        self, music_id: int, debug: bool = False, refresh: bool = False
+        self,
+        music_id: int,
+        debug: bool = False,
+        refresh: bool = False,
+        minLyricStringLength: int = 50,
     ):
         r_json = self.requestWithParamsGetJson(
             "/lyric",
@@ -541,11 +545,10 @@ class neteaseMusic:
         # warning: the fetched lrc could be not so clean. clean it somehow!
         lyric_string = r_json["lrc"]["lyric"]
         if lyric_string != None and type(lyric_string) == str:
-            from pyjom.lyrictoolbox import cleanLrcFromWeb
-            lyric_string = cleanLrcFromWeb(lyric_string, song_duration)
-        return lyric_string
+            if len(lyric_string) > minLyricStringLength:
+                return lyric_string
 
-    @suppressException(tries=2,defaultReturn=((None, None), None))
+    @suppressException(tries=2, defaultReturn=((None, None), None))
     def getMusicAndLyricWithKeywords(
         self,
         keywords: str,
@@ -560,7 +563,7 @@ class neteaseMusic:
         # print(search_data_json)
         song_ids = pyjq.all(
             ".result.songs[] | select (.id !=null) | .id", search_data_json
-        ) # incorrect. use pyjq.all
+        )  # incorrect. use pyjq.all
         # print(song_ids)
         # breakpoint()
 
@@ -591,6 +594,10 @@ class neteaseMusic:
         if song_duration < min_audio_length:
             raise Exception("audio too short, total {} seconds".format(song_duration))
         lyric_string = self.getMusicLyricFromNetease(song_id)
+        if type(lyric_string) != None:
+            from pyjom.lyrictoolbox import cleanLrcFromWeb # cleaning needs song duration.
+
+            lyric_string = cleanLrcFromWeb(lyric_string, song_duration)
         return (music_content, music_format), lyric_string
 
 
