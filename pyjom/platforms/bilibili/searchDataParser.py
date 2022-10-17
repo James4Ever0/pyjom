@@ -315,6 +315,7 @@ def parseVideoRelated(videoRelatedData, debug=False):
 
 
 if __name__ == "__main__":
+    # fake tests.
     # test_subject = "search_video"
     # test_subject = "search_all"
     # test_subject = 'video_related'

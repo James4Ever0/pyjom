@@ -6,6 +6,9 @@ import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 
+dedeuserid = -1
+u = user.User(dedeuserid)
+
 from bilibili_api import sync, search
 
 def searchVideos(query):
