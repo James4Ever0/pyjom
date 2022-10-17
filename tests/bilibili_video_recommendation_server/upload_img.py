@@ -8,8 +8,20 @@ add something like this in your website
 """
 filepath = "test_cover.jpg"
 import requests
+
 with open(filepath, "rb") as f:
     content = f.read()
-    r = requests.post(url, data=content)
+    data = {
+        "Filedata": content,
+        "subModule": "userAuth_individual_head",
+        "id": "FILE_0",
+        "name": "test_cover.jpg",
+        "type": "image/jpeg",
+        # 'lastModifiedDate' : 'Tue Oct 18 03:07:38 GMT+0800 (中国标准时间)',
+        "appkey": "1",
+        "isRetImgAttr": "1",
+        "from": "user",
+    }
+    r = requests.post(url, data=data)
     print(r.status_code)
-    # print(r.content)
+    print(r.content)
