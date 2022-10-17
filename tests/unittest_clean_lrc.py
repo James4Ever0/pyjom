@@ -47,4 +47,14 @@ from pyjom.mathlib import extract_span
 int_flags = [int(flag) for flag in flags]
 
 mySpans = extract_span(int_flags, target=1)
-print(mySpans)
+print(mySpans) # this will work.
+
+total_length = 0
+for mstart, mend in mySpans:
+    length = mend-mstart+1
+    total_length+=length
+    if length >= min_lines_of_lyrics:
+        # process these lines.
+
+if total_length >= min_total_lines_of_lyrics:
+    print("LYRIC ACCEPTED.")
