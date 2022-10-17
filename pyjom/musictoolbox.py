@@ -532,6 +532,8 @@ class neteaseMusic:
             debug=debug,
             refresh=refresh,
         )
+        # warning: the fetched lrc could be not so clean. clean it somehow!
+        lyric_string = r_json['lrc']['lyric']
 
 
 ############ SEARCH NETEASE MUSIC, GET SIMILAR MUSIC BY ID, DOWNLOAD MUSIC AND LYRICS ############
