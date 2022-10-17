@@ -81,5 +81,5 @@ if total_length >= min_total_lines_of_lyrics:
     new_lrc = pylrc.classes.Lyrics()
     for text, myTime in new_lyric_list:
         timecode_min, timecode_sec= divmod(myTime,60)
-        "{:.3f}"
+        "[{}:{:.3f}]".format(timecode_min, timecode_sec)
         myLine = pylrc.classes.
