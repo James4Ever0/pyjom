@@ -2,6 +2,8 @@ lyric_string = """[00:00.000] 作词 : 苏喜多/挡风玻璃\n[00:01.000] 作�
 那儿没有花朵 也没有失落\n[03:41.904]在那个岛屿 洒满了繁星\n[03:48.661]拥有我和你 再没有失落\n[03:59.159]有一个岛屿 在北极冰川\n[04:05.654]那儿没有花朵 也没有失落\n[04:12.659]在那个岛屿 洒满了繁星\n[04:19.152]拥有我和你 再没有失落\n[04:26.405]有一个岛屿
 在北极冰川\n[04:33.658]那儿没有花朵 也没有失落…\n[04:40.401]吉他：陈恒家\n[04:42.654]钢琴：陈恒冠\n[04:47.407]混音：陈恒家\n[04:49.907]母带：陈恒家\n[04:53.907]监制：1991与她\n"""
 
+# assume song duration is 
+
 import pylrc
 # you'd better inspect the thing. what is really special about the lyric, which can never appear?
 
@@ -19,6 +21,7 @@ def checkLyricText(text, core_only=False):
 # the time must be long enough, compared to the total time of the song.
 lrc_parsed = pylrc.parse(lyric_string)
 lrc_parsed_list = [line for line in lrc_parsed]
+lrc_parsed_list.sort(key=lambda line: line.time)
 begin = False
 # end = False
 line_counter = 0
@@ -57,12 +60,12 @@ for mstart, mend in mySpans:
         # process these lines.
         for index in range(mstart, mend+1):
             line_start_time = lrc_parsed_list[index].time
-            if line_start_time <= song_start_time:
-                line_end_time = 
+            if line_start_time <= song_duration:
+                line_end_time = song_duration
                 if index+1 < len(lrc_parsed_list):
                     line_end_time = lrc_parsed_list[index+1].time
-                    if line_end_time > song_end_time
-                
+                    if line_end_time > song_duration:
+                        line_end_time = song_duration
             else:
                 continue
 
