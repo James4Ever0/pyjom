@@ -52,6 +52,7 @@ int_flags = [int(flag) for flag in flags]
 
 mySpans = extract_span(int_flags, target=1)
 print(mySpans) # this will work.
+# this span is for the range function. 
 
 total_length = 0
 
