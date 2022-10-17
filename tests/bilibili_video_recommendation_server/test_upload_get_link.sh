@@ -1,3 +1,3 @@
 cd free-img
-PICTURE=
-python3 cli/free-img.py  -i $PICTURE -s 
+PICTURE=/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/test_cover.jpg
+python3 cli/free-img.py  -i $PICTURE -s gtimg
