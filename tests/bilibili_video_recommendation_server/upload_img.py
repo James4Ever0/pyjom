@@ -6,7 +6,10 @@ url = "https://om.qq.com/image/orginalupload"
 add something like this in your website
 <img src='http://inews.gtimg.com/newsapp_ls/0/14966062446/0' width="200"  referrerpolicy="no-referrer" />
 """
-filepath = 
+filepath = "test_cover.jpg"
 import requests
-with open
-r = requests.post(url, data=)
+with open(filepath, "rb") as f:
+    content = f.read()
+    r = requests.post(url, data=content)
+    print(r.status_code)
+    # print(r.content)
