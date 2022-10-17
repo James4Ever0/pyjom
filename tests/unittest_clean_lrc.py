@@ -5,7 +5,8 @@ lyric_string = """[00:00.000] 作词 : 苏喜多/挡风玻璃\n[00:01.000] 作�
 import pylrc
 # you'd better inspect the thing. what is really special about the lyric, which can never appear?
 
-min_lines_of_lyrics = 10
+min_lines_of_lyrics = 5
+min_total_lines_of_lyrics = 10
 potential_forbidden_chars = ["[","]","【","】","「","」","《","》","/","(",")"]
 core_forbidden_chars = [":","：", "@"]
 def checkLyricText(text, core_only=False):
@@ -45,4 +46,5 @@ from pyjom.mathlib import extract_span
 
 int_flags = [int(flag) for flag in flags]
 
-extract_span(int_flags, target=1)
+mySpans = extract_span(int_flags, target=1)
+print(mySpans)
