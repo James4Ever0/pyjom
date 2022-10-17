@@ -65,10 +65,10 @@ req_headers = [
 				"name": "Connection",
 				"value": "keep-alive"
 			},
-			{
-				"name": "Content-Length",
-				"value": "197582"
-			},
+			# {
+			# 	"name": "Content-Length",
+			# 	"value": "197582"
+			# },
 			# {
 				# "name": "Content-Type",
 				# "value": "multipart/form-data; boundary=---------------------------26791228924136332743854048233"
