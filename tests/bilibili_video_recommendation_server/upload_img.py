@@ -22,6 +22,7 @@ files = {
     "type": "image/jpeg",
     "lastModifiedDate": "2022-10-17T20:07:46.551Z",
     "Filename": "test_cover.jpg",
+    'subModule':'userAuth_individual_head'
 }
 respone = requests.post(url, files=files)
 res = respone.json()
