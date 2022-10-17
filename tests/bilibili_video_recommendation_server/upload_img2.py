@@ -73,7 +73,7 @@ req_headers = [
 				# "name": "Content-Type",
 				# "value": "multipart/form-data; boundary=---------------------------26791228924136332743854048233"
 			# },
-			{
+			{ # do some cookie hook to get these data in playwright.
 				"name": "Cookie",
 				"value": "userid=22690801; omaccesstoken=00a8d53ee83b92ec4e3111998ca616ad566b9d6fe80814f1be12d2a5c1e7a267baf531f268514a1be2670c9e98da4549a31b36408ed199c6ccd0e069f62ba65438x0"
 			},
