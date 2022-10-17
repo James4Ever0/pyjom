@@ -594,6 +594,8 @@ class neteaseMusic:
         if song_duration < min_audio_length:
             raise Exception("audio too short, total {} seconds".format(song_duration))
         lyric_string = self.getMusicLyricFromNetease(song_id)
+        if debug:
+            print("LYRICS:", lyric_string)
         if type(lyric_string) != None:
             from pyjom.lyrictoolbox import cleanLrcFromWeb # cleaning needs song duration.
 
