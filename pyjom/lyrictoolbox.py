@@ -1006,9 +1006,10 @@ def read_lrc(lrc_path):
 def cleanLrcFromWeb(
     lyric_string: str,
     song_duration: float,
-    min_lines_of_lyrics: int = 5, # whatever. fuck this.
+    min_lines_of_lyrics: int = 5,  # whatever. fuck this.
     min_total_lines_of_lyrics: int = 10,
     # potential_forbidden_chars=[], # how to deal with these? just remove the line?
+    removeLinesWithPotentialForbiddenChars: bool = True,
     potential_forbidden_chars=["[", "]", "【", "】", "「", "」", "《", "》", "/", "(", ")"],
     core_forbidden_chars=[":", "：", "@"],
 ):
@@ -1069,8 +1070,8 @@ def cleanLrcFromWeb(
                 line_start_time = lrc_parsed_list[index].time
                 line_text = lrc_parsed_list[index].text
                 if removeLinesWithPotentialForbiddenChars:
-                if any([char in line_text for char in potential_forbidden_chars]):
-                    line_text = ""
+                    if any([char in line_text for char in potential_forbidden_chars]):
+                        line_text = ""
                 if line_start_time <= song_duration:
                     line_end_time = song_duration
                     if index + 1 < len(lrc_parsed_list):
