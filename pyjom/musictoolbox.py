@@ -481,6 +481,10 @@ class neteaseMusic:
         r_json = self.requestWithParamsGetJson(
             "/simi/song", params={"id": music_id}, debug=debug
         )
+        for song in r_json['songs']:
+            name = song['name']
+            song_id = song['id']
+            # what you want?
 
     def getMusicUrlFromNetease(self, music_id: int, debug: bool = False):
         r_json = self.requestWithParamsGetJson(
