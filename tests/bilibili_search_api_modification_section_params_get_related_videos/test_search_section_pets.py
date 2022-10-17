@@ -33,7 +33,7 @@
 class bilibiliSearchParams:
     class _path:
         综合 = "all"
-        视频 = "video"
+        视频 = "video" # for now you only search for video, recommend it to qq. use your
         番剧 = "bangumi"
         影视 = "pgc"
         直播 = "live"
