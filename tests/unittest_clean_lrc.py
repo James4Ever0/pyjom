@@ -6,7 +6,7 @@ import pylrc
 # you'd better inspect the thing. what is really special about the lyric, which can never appear?
 
 min_lines_of_lyrics = 10
-forbidden
+forbidden_chars = [":","：", "[","]","【","】","「","」","《","》","/","@","(",")"]
 # also get the total time covered by lyric.
 # the time must be long enough, compared to the total time of the song.
 lrc_parsed = pylrc.parse(lyric_string)
