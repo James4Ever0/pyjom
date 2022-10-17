@@ -1,2 +1,3 @@
 cd free-img
-python3 cli/free-img.py 
+PICTURE=
+python3 cli/free-img.py  -i $PICTURE -s 
