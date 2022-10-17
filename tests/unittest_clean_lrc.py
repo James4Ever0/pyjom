@@ -55,6 +55,7 @@ for mstart, mend in mySpans:
     total_length+=length
     if length >= min_lines_of_lyrics:
         # process these lines.
+        for index in range(mstart, mend+1):
 
 if total_length >= min_total_lines_of_lyrics:
     print("LYRIC ACCEPTED.")
