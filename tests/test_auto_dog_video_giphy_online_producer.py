@@ -17,7 +17,7 @@ from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogC
 # decide to do this in sync.
 # preconfigure the dog_or_cat value.
 
-dog_or_cat = random.choice(["dog","cat"]) # strange.
+dog_or_cat = random.choice(["dog", "cat"])  # strange.
 # we need preconfigured things.
 bgmCacheSetName = "bilibili_cached_bgm_set"
 postMetadataGenerator = getBilibiliPostMetadataForDogCat(
@@ -25,7 +25,7 @@ postMetadataGenerator = getBilibiliPostMetadataForDogCat(
     bgmCacheSetName=bgmCacheSetName,
     bgmCacheAutoPurge=True,  # autopurge bgm, not sure we are using the latest bgm!
 )  # metadata you can fetch from database, maybe you can preprocess this.
-postMetadataGenerator.__next__() # for getting some bgm, just in case.
+postMetadataGenerator.__next__()  # for getting some bgm, just in case.
 
 metaTopics = {
     "dog": {
@@ -52,8 +52,11 @@ def cleanupMedialangTmpdir():
         if os.path.isfile(fpath):
             os.remove(fpath)
 
+
 from pyjom.commons import getRedisCachedSet
 from pyjom.musictoolbox import neteaseMusic
+
+
 def makeTemplateConfigsGenerator():
     NMClient = neteaseMusic()
 
@@ -62,42 +65,56 @@ def makeTemplateConfigsGenerator():
         # even if we search for the name, we will randomly choose the song to avoid problems.
         # you must download the file in a fixed location.
         while True:
-            bgmCacheSet= getRedisCachedSet(bgmCacheSetName)
+            bgmCacheSet = getRedisCachedSet(bgmCacheSetName)
             keywords = random.choice(list(bgmCacheSet)).strip()
-            if len(keywords)>0:
-                (music_content, music_format), lyric_string = NMClient.getMusicAndLyricWithKeywords(keywords)
+            if len(keywords) > 0:
+                (
+                    music_content,
+                    music_format,
+                ), lyric_string = NMClient.getMusicAndLyricWithKeywords(keywords)
                 if music_content is not None:
                     break
-        with tempfile.NamedTemporaryFile('wb', suffix=".{}".format(music_format)) as music_file:
-            with tempfile.NamedTemporaryFile('wb', suffix=ame
-        musicFilePath, lyricPath = 
-        
-        data = {
-            "debug": True,  # we need to preview this video.
-            # use generator instead.
-            "music": {
-                "filepath": musicFilePath,  # these things were not right.
-                # how to get this music file? by bgm search?
-                # "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
-                "lyric_path": lyricPath,  ## you can choose not to pass the lyric_path anyway. also format different than .lrc is on the way?
-            },
-            "font": "/root/.local/share/fonts/simhei.ttf",
-            # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
-            "policy": {},
-            "maxtime": 7.8,
-            "mintime": 2,  # we've write this shit!
-            "render_ass": True,
-            # also determine how to translate the lyrics, whether to translate or not.
-            "translate": True,  # default: False
-            # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
-            # you can simply implement the method to cofigure and test ping for websites in lazero library so we can share the same code.
-            # or you can borrow code from the web. some clash manager library for python.
-            "translate_method": "deepl",  # default: baidu
-            # damn cold for this mac!
-            "ass_template_configs": {},
-            "assStyleConfig": {},
-        }
-        yield data
+        with tempfile.NamedTemporaryFile(
+            "wb", suffix=".{}".format(music_format)
+        ) as music_file:
+            with tempfile.NamedTemporaryFile("w+", suffix=".lrc") as lyric_file:
+
+                musicFilePath, lyricPath = music_file.name, lyric_file.name
+                music_file.write(music_content)
+                music_file.seek(0)
+                if lyric_string is not None:
+                    lyric_file.write(lyric_string)
+                    lyric_file.seek(0)
+                else:
+                    lyricPath = None
+
+                data = {
+                    "debug": True,  # we need to preview this video.
+                    # use generator instead.
+                    "music": {
+                        "filepath": musicFilePath,  # these things were not right.
+                        # how to get this music file? by bgm search?
+                        # "filepath": "/root/Desktop/works/pyjom/tests/music_analysis/exciting_bgm.mp3",  # these things were not right.
+                        "lyric_path": lyricPath,  ## you can choose not to pass the lyric_path anyway. also format different than .lrc is on the way?
+                    },
+                    "font": "/root/.local/share/fonts/simhei.ttf",
+                    # "font": "/root/.local/share/fonts/simyou.ttf", # 幼圆可能打不出来
+                    "policy": {},
+                    "maxtime": 7.8,
+                    "mintime": 2,  # we've write this shit!
+                    "render_ass": True,
+                    # also determine how to translate the lyrics, whether to translate or not.
+                    "translate": True,  # default: False
+                    # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
+                    # you can simply implement the method to cofigure and test ping for websites in lazero library so we can share the same code.
+                    # or you can borrow code from the web. some clash manager library for python.
+                    "translate_method": "deepl",  # default: baidu
+                    # damn cold for this mac!
+                    "ass_template_configs": {},
+                    "assStyleConfig": {},
+                }
+                yield data
+
 
 templateConfigsGenerator = makeTemplateConfigsGenerator()
 wbRev = OnlineAutoContentProducer(
