@@ -8,6 +8,17 @@ sys.path.append("/root/Desktop/works/pyjom/")
 
 from bilibili_api import sync, search, user
 
+# you can query for the server status.
+# make it into a dashboard like thing.
+
+# also make a decorator for refreshing status, add it to every function.
+# thie refresher is scheduled.
+# you may want to run this
+
+import schedule
+
+def refresh_status(func)
+
 def getUserObject(dedeuserid:int=):
     credential = 
     u = user.User(dedeuserid, credential=credential)
