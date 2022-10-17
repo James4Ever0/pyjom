@@ -10,6 +10,8 @@ from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
 from bilibili_api import sync, search, user
 
+
+BSP = search.bilibiliSearchParams
 # you can query for the server status.
 # make it into a dashboard like thing.
 
@@ -46,13 +48,15 @@ def refresh_status_decorator(func):
     return wrapper
 
 @refresh_status_decorator
-def searchVideos(query):
+def searchVideos(query:str):
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
     # anyway, let's begin.
     # warning: this is coroutine.
     # you might want some magic. with 'suppressException' and pickledFunction?
-    sync(search.search_by_type()
+    search_type = search.SearchObjectType.VIDEO
+    params = {"duration": BSP.all.duration._10分钟以下}
+    sync(search.search_by_type(query,search_type)
 
 # you need my credential!
 # better reuse the code.
