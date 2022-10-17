@@ -5,10 +5,14 @@
 import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 
+from bilibili_api import sync, search
+
 def searchVideos(query):
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
     # anyway, let's begin.
+    # warning: this is coroutine.
+    sync(search())
 
 from pyjom.platforms.bilibili.credentials import bilibiliCredential
 # you need my credential!
