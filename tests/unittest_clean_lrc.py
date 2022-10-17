@@ -13,6 +13,7 @@ def checkLyricText(text, core_only=False):
         forbidden_chars = core_forbidden_chars
     else:
         forbidden_chars = core_forbidden_chars+potential_forbidden_chars
+    return not any([char in text for char in forbidden_chars])
 # also get the total time covered by lyric.
 # the time must be long enough, compared to the total time of the song.
 lrc_parsed = pylrc.parse(lyric_string)
@@ -25,4 +26,8 @@ for line in lrc_parsed:
     # print(line)
     text = line.text.strip()
     startTime = line.time
+    if not begin:
+        flag = checkLyricText(text, core_only=False)
+        if not flag:
+            begin=True
     # breakpoint()
