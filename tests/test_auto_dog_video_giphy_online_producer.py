@@ -59,7 +59,6 @@ from pyjom.musictoolbox import neteaseMusic
 
 def makeTemplateConfigsGenerator():
     NMClient = neteaseMusic()
-
     while True:
         # download one music, either from hottest songs or from fetched music list.
         # even if we search for the name, we will randomly choose the song to avoid problems.
@@ -100,7 +99,7 @@ def makeTemplateConfigsGenerator():
                     "policy": {},
                     "maxtime": 7.8,
                     "mintime": 2,  # we've write this shit!
-                    "render_ass": True,
+                    "render_ass": lyricPath is not None,
                     # also determine how to translate the lyrics, whether to translate or not.
                     "translate": True,  # default: False
                     # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
