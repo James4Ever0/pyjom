@@ -10,6 +10,11 @@ apiUrl ="https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/shor
 longUrl = "https://www.bilibili.com/video/BV1Wv41157Wz"
 params= {"url":longUrl,"href":"https://xiaojuzi.fun/bili-short-url/"}
 
+
+
+
 import requests
 
-r = requests.get(apiUrl, )
+r = requests.get(apiUrl, params=params)
+if r.status_code == 200:
+    print(r.json())
