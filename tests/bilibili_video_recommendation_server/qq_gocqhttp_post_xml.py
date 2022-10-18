@@ -9,8 +9,10 @@ group = 543780931
 import requests
 
 url = baseUrl +"/send_group_msg"
+# message = 'test'
 message = "[CQ:xml,data={}]".format(content) # xml thing.
 data = {'group_id':group, 'message':message,'auto_escape':False}
 r = requests.post(url,data=data)
 print(r.json())
+# cannot send json. wtf?
 # 请参考 go-cqhttp 端输出
