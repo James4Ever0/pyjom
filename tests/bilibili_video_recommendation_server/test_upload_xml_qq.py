@@ -21,24 +21,26 @@ content = """<?xml version='1.0' encoding='UTF-8' standalone='yes'?><msg templat
 group = 543780931
 # have error when sending group xml? why?
 # result = action.sendGroupXml(group=group, content=content)
-# result = action.sendGroupJson(group=group, content=content)
+
+result = action.sendGroupJson(group=group, content=content)
+print(result)
 # result = action.sendGroupText(group=group,content='test')
 # result = action.sendGroupText(group=group,content=content)
-funcname = "SendMsgV2"
+# funcname = "SendMsgV2"
 # content = """<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><msg serviceID='1' templateID='1' action='' brief='&#91;群僵尸任务&#93;' sourceMsgId='0' url='' flag='2' adverSign='0' multiMsgFlag='0'><item layout='0'><title size='38' color='#9900CC' style='1'>🆕已经启动🆕</title></item><item layout='0'><hr hidden='false' style='0' /></item><item layout='6'><summary color='#FF0033'>1⃣️</summary><summary color='#FF0099'>💪正在扫秒僵尸💪</summary></item><source name='' icon='' action='' appid='-1' /></msg>"""
 # content = """<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><msg serviceID="2" templateID="1" action="web" brief="&#91;分享&#93; 十年" sourceMsgId="0" url="https://i.y.qq.com/v8/playsong.html?_wv=1&amp;songid=4830342&amp;souce=qqshare&amp;source=qqshare&amp;ADTAG=qqshare" flag="0" adverSign="0" multiMsgFlag="0" ><item layout="2"><audio cover="http://imgcache.qq.com/music/photo/album_500/26/500_albumpic_89526_0.jpg" src="http://ws.stream.qqmusic.qq.com/C400003mAan70zUy5O.m4a?guid=1535153710&amp;vkey=D5315B8C0603653592AD4879A8A3742177F59D582A7A86546E24DD7F282C3ACF81526C76E293E57EA1E42CF19881C561275D919233333ADE&amp;uin=&amp;fromtag=3" /><title>十年</title><summary>陈奕迅</summary></item><source name="QQ音乐" icon="https://i.gtimg.cn/open/app_icon/01/07/98/56/1101079856_100_m.png" url="http://web.p.qq.com/qqmpmobile/aio/app.html?id=1101079856" action="app"  a_actionData="com.tencent.qqmusic" i_actionData="tencent1101079856://" appid="1101079856" /></msg>"""
-content = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?><msg serviceID="1" templateID="1" action="" brief="QQ红包" sourceMsgId="0" flag="8" adverSign="0" multiMsgFlag="0"><item layout="6"><title color="#EE00EE" style="4">阿深真帅</title><summary color="#9A32CD">是不是很无语</summary><picture cover="http://t1.hddhhn.com/uploads/tu/20150507/20405-eBE9jO.jpg" action="web" url="http://url.cn/5g4eOiY" w="0" h="0"/></item></msg>"""
-payload = {
-    "ToUserUid": group,
-    "SendToType": 2,
-    "SendMsgType": "XmlMsg",
-    "Content": content,
-}
-result = action.baseRequest(
-    method="POST",
-    funcname=funcname,
-    path="/v1/LuaApiCaller",
-    params={"qq": qq, "funcname": funcname},
-    payload=payload,
-)
-print(result)
+# content = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?><msg serviceID="1" templateID="1" action="" brief="QQ红包" sourceMsgId="0" flag="8" adverSign="0" multiMsgFlag="0"><item layout="6"><title color="#EE00EE" style="4">阿深真帅</title><summary color="#9A32CD">是不是很无语</summary><picture cover="http://t1.hddhhn.com/uploads/tu/20150507/20405-eBE9jO.jpg" action="web" url="http://url.cn/5g4eOiY" w="0" h="0"/></item></msg>"""
+# payload = {
+#     "ToUserUid": group,
+#     "SendToType": 2,
+#     "SendMsgType": "XmlMsg",
+#     "Content": content,
+# }
+# result = action.baseRequest(
+#     method="POST",
+#     funcname=funcname,
+#     path="/v1/LuaApiCaller",
+#     params={"qq": qq, "funcname": funcname},
+#     payload=payload,
+# )
+# print(result)
