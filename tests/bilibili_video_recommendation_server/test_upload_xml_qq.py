@@ -1,3 +1,6 @@
-# let's just upload the xml for whatever reason
+from botoy import Action
 
-from botoy import 
+qq = 
+port = 
+action = Action(qq=qq, port=port, host='127.0.0.1')
+action.sendFriendXml()
