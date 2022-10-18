@@ -22,6 +22,7 @@ group = 543780931
 # result = action.sendGroupJson(group=group, content=content)
 # result = action.sendGroupText(group=group,content='test')
 # result = action.sendGroupText(group=group,content=content)
-
-action.baseRequest(method="POST",funcname="SendMsgV2",path=)
+funcname = "SendMsgV2"
+payload={"ToUserUid":group,"SendToType":2,"SendMsgType":"XmlMsg","Content":content}
+result = action.baseRequest(method="POST",funcname=funcname,path="/v1/LuaApiCaller",params={'qq':qq, 'funcname':funcname}, payload=payload)
 print(result)
