@@ -18,9 +18,10 @@ content = """<?xml version='1.0' encoding='UTF-8' standalone='yes'?><msg templat
 # content="""{"app":"com.tencent.gamecenter.gameshare","desc":"","view":"noDataView","ver":"0.0.0.0","prompt":"邪少QQXML论坛","appID":"","sourceName":"","actionData":"","actionData_A":"","sourceUrl":"","meta":{"shareData":{"scene":"SCENE_SHARE_VIDEO","jumpUrl":"https://attachments-cdn.shimo.im/ozL6gi2dwLpsUdA9.mp4","type":"video","url":"https://t.cn/A6AXIo8E"}},"config":{"forward":1},"text":"","sourceAd":""}"""
 group = 543780931
 # have error when sending group xml? why?
-result = action.sendGroupXml(group=group, content=content)
+# result = action.sendGroupXml(group=group, content=content)
 # result = action.sendGroupJson(group=group, content=content)
 # result = action.sendGroupText(group=group,content='test')
 # result = action.sendGroupText(group=group,content=content)
 
+action.baseRequest(method="POST",funcname="SendMsgV2",path=)
 print(result)
