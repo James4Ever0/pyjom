@@ -1,1 +1,5 @@
 {"app":"com.tencent.structmsg"&#44;"desc":"新闻"&#44;"view":"news"&#44;"ver":"0.0.0.1"&#44;"prompt":"&#91;分享&#93;哔哩哔哩"&#44;"meta":{"news":{"action":""&#44;"android_pkg_name":""&#44;"app_type":1&#44;"appid":100951776&#44;"ctime":1666081902&#44;"desc":"外国博主英文讲解：二十大为什么如此重要？"&#44;"jumpUrl":"https:\/\/b23.tv\/B64KMQq?share_medium=android&amp;share_source=qq&amp;bbid=XY1BB721B1F97348DBDE4297FE1B4ABE26BAA&amp;ts=1666081860133"&#44;"preview":"https:\/\/pic.ugcimg.cn\/58a74c8432a80e7e2de612e6e53e37f3\/jpg1"&#44;"source_icon":"https:\/\/open.gtimg.cn\/open\/app_icon\/00\/95\/17\/76\/100951776_100_m.png?t=1659061321"&#44;"source_url":""&#44;"tag":"哔哩哔哩"&#44;"title":"哔哩哔哩"&#44;"uin":1281727431}}&#44;"config":{"ctime":1666081902&#44;"forward":true&#44;"token":"d7cc3a93e7c3a9acd1c8662157e3e5fb"&#44;"type":"normal"}}
+
+ArkApp.ArkLocalAppMgr
+
+com.tencent.structmsg
