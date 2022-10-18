@@ -7,3 +7,8 @@ cover)
 group = 543780931
 
 import requests
+
+url = baseUrl +"/send_group_msg"
+message = "" # xml thing.
+data = {'group_id':group, 'message':message,'auto_escape':False}
+requests.get(url,data=data)
