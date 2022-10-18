@@ -101,7 +101,7 @@ def makeTemplateConfigsGenerator():
                     "mintime": 2,  # we've write this shit!
                     "render_ass": lyricPath is not None,
                     # also determine how to translate the lyrics, whether to translate or not.
-                    "translate": True,  # default: False
+                    "translate": lyricPath is not None,  # default: False
                     # are you sure you want to use deepl? this is hard to configure. especially the goddamn proxy.
                     # you can simply implement the method to cofigure and test ping for websites in lazero library so we can share the same code.
                     # or you can borrow code from the web. some clash manager library for python.
