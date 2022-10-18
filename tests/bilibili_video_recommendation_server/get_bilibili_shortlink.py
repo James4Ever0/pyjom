@@ -9,7 +9,10 @@ url = "https://api.bilibili.com/x/share/click"
 apiUrl = "https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/short_url"
 longUrl = "https://www.bilibili.com/video/BV1Wv41157Wz"
 import urllib.parse as urlparse
-params = {"url": longUrl, "href": "https://xiaojuzi.fun/bili-short-url/"}
+# params = {"url": longUrl}
+params = {"url": urlparse.quote(longUrl).replace("/","%2F")}
+print(params)
+# exit()
 
 headers = {
     "accept": "*/*",
