@@ -10,7 +10,7 @@ apiUrl = "https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/sho
 longUrl = "https://www.bilibili.com/video/BV1Wv41157Wz"
 import urllib.parse as urlparse
 # params = {"url": longUrl}
-params = {"url": urlparse.quote(longUrl).replace("/","%2F")}
+params = {"url": urlparse.quote(longUrl).replace("/","%2F"), 'href':"https://xiaojuzi.fun/bili-short-url/"}
 print(params)
 # exit()
 
@@ -29,7 +29,8 @@ headers = {
 }
 
 import requests
-
-r = requests.get(apiUrl, params=params, headers=headers)
+request_url = apiUrl+"?url={url}&href={href}".format(**params)
+print(request_url)
+r = requests.get(request_url, headers=headers)
 if r.status_code == 200:
     print(r.json())
