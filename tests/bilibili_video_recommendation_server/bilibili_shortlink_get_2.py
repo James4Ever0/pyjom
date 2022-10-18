@@ -16,4 +16,13 @@ data = {
         "share_id": "public.webview.0.0.pv",
         "share_mode": 3,
     }
-requests.post(url, data=data))["content"]
+import requests
+r=requests.post(url, data=data)
+# we have the link!
+if r.status_code == 200:
+    # print(r.content)
+    r_json=r.json()
+    code=r_json["code"]
+    if code==0:
+        link=r_json["data"]['content']
+        print(link)
