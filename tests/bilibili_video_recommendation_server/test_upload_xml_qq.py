@@ -17,11 +17,11 @@ content = """<?xml version='1.0' encoding='UTF-8' standalone='yes'?><msg templat
 # result= action.sendFriendXml(user=user, content=content)
 # print(result)
 
-# content="""{"app":"com.tencent.gamecenter.gameshare","desc":"","view":"noDataView","ver":"0.0.0.0","prompt":"邪少QQXML论坛","appID":"","sourceName":"","actionData":"","actionData_A":"","sourceUrl":"","meta":{"shareData":{"scene":"SCENE_SHARE_VIDEO","jumpUrl":"https://attachments-cdn.shimo.im/ozL6gi2dwLpsUdA9.mp4","type":"video","url":"https://t.cn/A6AXIo8E"}},"config":{"forward":1},"text":"","sourceAd":""}"""
+# content="""{"app":"com.tencent.gamecenter.gameshare","desc":"","view":"singleImg","ver":"0.0.0.0","prompt":"邪少QQXML论坛","appID":"","sourceName":"","actionData":"","actionData_A":"","sourceUrl":"","meta":{"singleImg":{"mainImage":"https://gchat.qpic.cn/gchatpic_new/3020005669/916530575-2949639428-6E45D21EADE33511C565E25AB432AB59/0?term=2","mainUrl":""}},"config":{"forward":1},"text":"","sourceAd":""}"""
 group = 543780931
 # have error when sending group xml? why?
 # result = action.sendGroupXml(group=group, content=content)
-content = """{"app":"com.tencent.mobileqq.reading","desc":"","view":"singleImg","ver":"1.0.0.70","prompt":"百元大钞","appID":"","sourceName":"","actionData":"","actionData_A":"","sourceUrl":"","meta":{"singleImg":{"mainImage":"https://gchat.qpic.cn/gchatpic_new/3020005669/916530575-2949639428-6E45D21EADE33511C565E25AB432AB59/0?term=2","mainUrl":""}},"text":"","extraApps":[],"sourceAd":"","config":{"forward":1}}"""
+content = """{"app":"com.tencent.gamecenter.gameshare","desc":"","view":"singleImg","ver":"0.0.0.0","prompt":"邪少QQXML论坛","appID":"","sourceName":"","actionData":"","actionData_A":"","sourceUrl":"","meta":{"singleImg":{"mainImage":"https://gchat.qpic.cn/gchatpic_new/3020005669/916530575-2949639428-6E45D21EADE33511C565E25AB432AB59/0?term=2","mainUrl":""}},"text":"","extraApps":[],"sourceAd":"","config":{"forward":1}}"""
 result = action.sendGroupJson(group=group, content=content)
 print(result)
 # result = action.sendGroupText(group=group,content='test')
