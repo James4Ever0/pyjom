@@ -22,4 +22,5 @@ result = action.sendGroupXml(group=group, content=content)
 # result = action.sendGroupJson(group=group, content=content)
 # result = action.sendGroupText(group=group,content='test')
 # result = action.sendGroupText(group=group,content=content)
+
 print(result)
