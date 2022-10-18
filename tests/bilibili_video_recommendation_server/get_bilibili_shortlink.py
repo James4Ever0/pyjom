@@ -4,7 +4,7 @@ longUrl = "https://www.bilibili.com/video/BV1Wv41157Wz"
 import urllib.parse as urlparse
 # params = {"url": longUrl}
 params = {"url": urlparse.quote(longUrl).replace("/","%2F"), 'href':"https://xiaojuzi.fun/bili-short-url/"}
-print(params)
+# print(params)
 # exit()
 
 headers = {
@@ -34,3 +34,4 @@ if r.status_code == 200:
     if success:
         short_url = r_json.get('short_url', None)
         print(short_url)
+# starts with 'https://b23.tv'

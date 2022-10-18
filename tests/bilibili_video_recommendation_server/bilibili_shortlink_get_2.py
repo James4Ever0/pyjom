@@ -17,7 +17,8 @@ data = {
         "share_mode": 3,
     }
 import requests
-r=requests.post(url, data=data)
+headers={'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'}
+r=requests.post(url, data=data,headers=headers) # maybe you two share the same user agent!
 # we have the link!
 if r.status_code == 200:
     # print(r.content)
