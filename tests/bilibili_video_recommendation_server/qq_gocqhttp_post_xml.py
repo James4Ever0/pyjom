@@ -30,6 +30,8 @@ content = (
 # the token is likely to be some checksum, md5 or something. some aes/rsa?
 # message = "[CQ:json,data={}]".format(content)  # json thing.
 message = "[CQ:tts,text=嘤嘤嘤]"
+# content = """<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><msg serviceID="2" templateID="1" action="web" brief="&#91;分享&#93; 十年" sourceMsgId="0" url="http://music.163.com/m/song/409650368" flag="0" adverSign="0" multiMsgFlag="0" ><item layout="2"><audio cover="http://p2.music.126.net/g-Qgb9ibk9Wp_0HWra0xQQ==/16636710440565853.jpg?param=90y90" src="https://music.163.com/song/media/outer/url?id=409650368.mp3" /><title>十年</title><summary>黄梦之</summary></item><source name="网易云音乐" icon="https://pic.rmb.bdstatic.com/911423bee2bef937975b29b265d737b3.png" url="http://web.p.qq.com/qqmpmobile/aio/app.html?id=1101079856" action="app" a_actionData="com.netease.cloudmusic" i_actionData="tencent100495085://" appid="100495085" /></msg>"""
+# message = '[CQ:xml,data={}]'.format(content)
 data = {"group_id": group, "message": message, "auto_escape": False}
 r = requests.post(url, data=data)
 print(r.json())
