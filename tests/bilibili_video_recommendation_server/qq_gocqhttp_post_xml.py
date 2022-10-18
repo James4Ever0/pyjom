@@ -28,7 +28,8 @@ content = (
 
 
 # the token is likely to be some checksum, md5 or something. some aes/rsa?
-message = "[CQ:json,data={}]".format(content)  # json thing.
+# message = "[CQ:json,data={}]".format(content)  # json thing.
+message = "[CQ:tts,text=嘤嘤嘤]"
 data = {"group_id": group, "message": message, "auto_escape": False}
 r = requests.post(url, data=data)
 print(r.json())
