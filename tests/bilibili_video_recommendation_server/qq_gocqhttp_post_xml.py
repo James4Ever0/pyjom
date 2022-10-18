@@ -9,6 +9,8 @@ group = 543780931
 import requests
 
 url = baseUrl +"/send_group_msg"
-message = "" # xml thing.
+message = "[CQ:xml,data={}]".format(content) # xml thing.
 data = {'group_id':group, 'message':message,'auto_escape':False}
-requests.get(url,data=data)
+r = requests.post(url,data=data)
+print(r.json())
+# 请参考 go-cqhttp 端输出
