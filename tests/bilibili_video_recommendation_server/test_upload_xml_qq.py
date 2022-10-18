@@ -21,7 +21,7 @@ content = """<?xml version='1.0' encoding='UTF-8' standalone='yes'?><msg templat
 group = 543780931
 # have error when sending group xml? why?
 # result = action.sendGroupXml(group=group, content=content)
-
+content = """{"app":"com.tencent.mobileqq.reading","desc":"","view":"singleImg","ver":"1.0.0.70","prompt":"百元大钞","appID":"","sourceName":"","actionData":"","actionData_A":"","sourceUrl":"","meta":{"singleImg":{"mainImage":"https://gchat.qpic.cn/gchatpic_new/3020005669/916530575-2949639428-6E45D21EADE33511C565E25AB432AB59/0?term=2","mainUrl":""}},"text":"","extraApps":[],"sourceAd":"","config":{"forward":1}}"""
 result = action.sendGroupJson(group=group, content=content)
 print(result)
 # result = action.sendGroupText(group=group,content='test')
