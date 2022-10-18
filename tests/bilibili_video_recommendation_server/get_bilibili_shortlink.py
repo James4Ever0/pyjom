@@ -1,10 +1,3 @@
-url = "https://api.bilibili.com/x/share/click"
-# url = "https://111.19.247.143/x/share/click"
-# is it api.bilibili.com?
-# yes, it is.
-# use post.
-# the damn picture?
-# the damn picture is generated. it needs to be uploaded to tencent.
 
 apiUrl = "https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/short_url"
 longUrl = "https://www.bilibili.com/video/BV1Wv41157Wz"
@@ -26,11 +19,18 @@ headers = {
     "sec-fetch-site": "cross-site",
     "Referer": "https://xiaojuzi.fun/",
     "Referrer-Policy": "strict-origin-when-cross-origin",
+    'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36' # this is important.
 }
 
 import requests
 request_url = apiUrl+"?url={url}&href={href}".format(**params)
-print(request_url)
+# request_url = 'https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/short_url?url=https%3A%2F%2Fwww.bilibili.com%2Fvideo%2FBV1Wv41157Wz&href=https://xiaojuzi.fun/bili-short-url/'
+# print(request_url)
 r = requests.get(request_url, headers=headers)
 if r.status_code == 200:
-    print(r.json())
+    # print(r.json())
+    r_json = r.json()
+    success = r_json.get('success', False)
+    if success:
+        short_url = r_json.get('short_url', None)
+        print(short_url)
