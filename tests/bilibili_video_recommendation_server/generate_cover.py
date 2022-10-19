@@ -2,7 +2,8 @@
 pic_file = "sample_cover.jpg"
 qrcode_file = "MyQRCode1.png"
 # we need some font for this.
-font_location = "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc"
+# font_location = "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc" # ttc -> ttf
+font_location = "./wqy-microhei0.ttf"
 
 import pixie
 
@@ -20,6 +21,8 @@ image.fill_text(
     transform = pixie.translate(10, 10)
 )
 
-print('image type:', type(image))
+# print('image type:', type(image))
+# 'pixie.pixie.Image'
+# hard to say.
 
 image.write_file("text.png")

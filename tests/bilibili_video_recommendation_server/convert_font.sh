@@ -1,0 +1,1 @@
+python3 ttc2ttf/ttc2ttf.py wqy-microhei.ttc
