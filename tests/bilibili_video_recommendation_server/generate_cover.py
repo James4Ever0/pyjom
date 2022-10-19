@@ -42,9 +42,17 @@ transform=pixie.translate(50,50)
 qrcode_width=qrcode_height = 50
 
 qrcode_image = pixie.read_image(qrcode_file)
+qrcode_image = qrcode_image.resize(qrcode_width, qrcode_height)
+qrcode_transform = pixie.translate(150,150)
+
 
 image.draw(picture,transform=transform)
 # image.draw(picture)
 # image.draw(picture,transform=transform)
+image.draw(qrcode_image,transform=qrcode_transform)
 
 image.write_file("text.png")
+
+# now we try to reverse engineer that thing.
+
+# first of all, the picture needs to be big.
