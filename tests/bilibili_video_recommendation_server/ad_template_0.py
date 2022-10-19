@@ -55,4 +55,8 @@ image.write_file("ad_0.png")
 
 # now we try to reverse engineer that thing.
 
+# not only we need to create ads, we need to modify ads on the fly.
+
+# detect qr code and replace the code with ours.
+
 # first of all, the picture needs to be big.
