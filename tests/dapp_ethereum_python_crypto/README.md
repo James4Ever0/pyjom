@@ -1,0 +1,1 @@
+not sure how to validate my 'hacker' program in AGI. just create some dummy crypto things.
