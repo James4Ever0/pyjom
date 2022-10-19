@@ -40,7 +40,7 @@ picture = picture.resize(width, height) # recommend to do this in pyjom.imagetoo
 picture.mask_draw(mask)
 # transform=pixie.translate(10,10)
 
-image.draw(picture)
+image.draw(picture,transform=transform)
 # image.draw(picture,transform=transform)
 
 image.write_file("text.png")
