@@ -35,7 +35,8 @@ mask.fill_path(path)
 
 picture = pixie.read_image("sample_cover.jpg")
 # we need to reshape this.
-picture.reshape()
+width, height = 
+picture.resize(width, height) # recommend to do this in pyjom.imagetoolbox since that will be safer.
 picture.mask_draw(mask)
 image.draw(picture)
 
