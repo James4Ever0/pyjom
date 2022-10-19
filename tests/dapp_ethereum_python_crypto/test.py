@@ -20,9 +20,12 @@ target_account = "0x033799af9b29e1d7dbf3c8dd64647df345f67bf1"
 b = web3.eth.get_balance(web3.eth.coinbase)
 print(b)
 # proof of authority, puppeth
+
+## need password!
+web3.eth.
 web3.eth.send_transaction(
     {
-        "to": target_account,
+        "to": Web3.toChecksumAddress(target_account),
         "from": web3.eth.coinbase,
         "value": 12345,
     }
