@@ -1,5 +1,8 @@
 from web3 import Web3
 
+# testnet, bitcoind, regtest
+# https://bitcoin.stackexchange.com/questions/42026/is-it-possible-to-use-bitcoind-as-a-private-blockchain
+
 # mine only when pending transaction happens:
 # https://ethereum.stackexchange.com/questions/3151/how-to-make-miner-to-mine-only-when-there-are-pending-transactions
 
