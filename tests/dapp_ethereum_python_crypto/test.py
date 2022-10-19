@@ -6,7 +6,7 @@ web3 = Web3(Web3.IPCProvider(link))
 
 print(web3.isConnected())
 
-# account = "0x90316d605bbe3e8caa2bb90f5d63a35dbfada842"
+account_genesis = "0xde478bde26d711414fae26133e759d8a82a202ab"
 # you've connect ethereum to mainnet! not good.
 
 # anyway, we need money!
