@@ -50,7 +50,6 @@ image.draw(picture,transform=transform)
 # image.draw(picture)
 # image.draw(picture,transform=transform)
 image.draw(qrcode_image,transform=qrcode_transform)
-
 image.write_file("ad_0.png")
 
 # now we try to reverse engineer that thing.
