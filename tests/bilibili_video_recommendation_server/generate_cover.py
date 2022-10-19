@@ -10,7 +10,8 @@ import pixie
 font = pixie.read_font(font_location)
 font.size=20
 
-text = "Typesetting is the arrangement and composition of text in graphic design and publishing in both digital and traditional medias."
+text = "中文能够显示么 超出了字符边缘能不能显示 Typesetting is the arrangement and composition of text in graphic design and publishing in both digital and traditional medias."
+# 可以显示 但是边缘的字符需要被注意到 看看是不是超出了边界
 image = pixie.Image(200, 200)
 image.fill(pixie.Color(1, 1, 1, 1))
 
