@@ -20,3 +20,8 @@ target_account = "0x033799af9b29e1d7dbf3c8dd64647df345f67bf1"
 b = web3.eth.get_balance(web3.eth.coinbase)
 print(b)
 # proof of authority, puppeth
+web3.eth.send_transaction(web3.eth.coinbase, target_account)
+
+
+b = web3.eth.get_balance(target_account))
+print(b)
