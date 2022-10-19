@@ -7,7 +7,8 @@ web3 = Web3(Web3.IPCProvider(link))
 
 print(web3.isConnected())
 
-account_genesis = "0xde478bde26d711414fae26133e759d8a82a202ab"  # aka: eth.coinbase
+# account_genesis = "0xde478bde26d711414fae26133e759d8a82a202ab"  # aka: eth.coinbase
+account_genesis = "0x6fe20a7157fdb705278fffda4ea0ebf4694f31ea"
 account_genesis = Web3.toChecksumAddress(account_genesis)
 password_genesis = "abcdefg"
 # let's see!
