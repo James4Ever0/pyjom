@@ -26,4 +26,17 @@ image.fill_text(
 # 'pixie.pixie.Image'
 # hard to say.
 
+path = pixie.Path()
+path.rounded_rect(50, 50, 100, 100, 25, 25, 25, 25)
+# how to use mask?
+
+mask = pixie.Mask(200, 200)
+mask.fill_path(path)
+
+picture = pixie.read_image("sample_cover.jpg")
+# we need to reshape this.
+picture.reshape()
+picture.mask_draw(mask)
+image.draw(picture)
+
 image.write_file("text.png")
