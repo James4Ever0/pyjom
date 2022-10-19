@@ -35,10 +35,12 @@ mask.fill_path(path)
 
 picture = pixie.read_image("sample_cover.jpg")
 # we need to reshape this.
-width, height = 200,200
+width, height = 100,100
 picture = picture.resize(width, height) # recommend to do this in pyjom.imagetoolbox since that will be safer.
 picture.mask_draw(mask)
-transform=transform
-image.draw(picture,transform=tramsform)
+# transform=pixie.translate(10,10)
+
+image.draw(picture)
+# image.draw(picture,transform=transform)
 
 image.write_file("text.png")
