@@ -3,7 +3,7 @@ from web3 import Web3
 # mine only when pending transaction happens:
 # https://ethereum.stackexchange.com/questions/3151/how-to-make-miner-to-mine-only-when-there-are-pending-transactions
 
-# maybe you want money even if without transaction
+# maybe you want money even if without transaction, or low in cash.
 
 # https://hackernoon.com/hands-on-creating-your-own-local-private-geth-node-beginner-friendly-3d45902cc612
 link = "/root/.ethereum/geth.ipc"
