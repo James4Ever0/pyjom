@@ -16,3 +16,6 @@ target_account = "0x033799af9b29e1d7dbf3c8dd64647df345f67bf1"
 # you was connected ethereum to mainnet! not good.
 
 # anyway, we need money!
+
+b = web3.eth.get_balance(web3.eth.coinbase)
+print(b)
