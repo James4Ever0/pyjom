@@ -29,19 +29,18 @@ image.fill_text(
 path = pixie.Path()
 path.rounded_rect(0,0, 100, 100, 25, 25, 25, 25)
 # how to use mask?
-
-mask = pixie.Mask(100,100) # must match mask size?
+cover_width, cover_height = 100,100
+mask = pixie.Mask(cover_width, cover_height) # must match mask size?
 mask.fill_path(path)
 
 picture = pixie.read_image("sample_cover.jpg")
 # we need to reshape this.
-width, height = 100,100
-picture = picture.resize(width, height) # recommend to do this in pyjom.imagetoolbox since that will be safer.
+picture = picture.resize(cover_width, cover_height) # recommend to do this in pyjom.imagetoolbox since that will be safer.
 picture.mask_draw(mask)
-# transform=pixie.translate(10,10)
+transform=pixie.translate(50,50)
 
-# image.draw(picture,transform=transform)
-image.draw(picture)
+image.draw(picture,transform=transform)
+# image.draw(picture)
 # image.draw(picture,transform=transform)
 
 image.write_file("text.png")
