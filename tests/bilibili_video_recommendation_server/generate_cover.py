@@ -33,11 +33,15 @@ cover_width, cover_height = 100,100
 mask = pixie.Mask(cover_width, cover_height) # must match mask size?
 mask.fill_path(path)
 
-picture = pixie.read_image("sample_cover.jpg")
+picture = pixie.read_image(pic_file)
 # we need to reshape this.
 picture = picture.resize(cover_width, cover_height) # recommend to do this in pyjom.imagetoolbox since that will be safer.
 picture.mask_draw(mask)
 transform=pixie.translate(50,50)
+
+qrcode_width=qrcode_height = 50
+
+qrcode_image = pixie.read_image(qrcode_file)
 
 image.draw(picture,transform=transform)
 # image.draw(picture)
