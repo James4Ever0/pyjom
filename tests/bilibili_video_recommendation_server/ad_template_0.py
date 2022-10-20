@@ -107,6 +107,11 @@ bilibili_logo = pixie.read_image(bilibili_logo_path)
 bilibili_logo = bilibili_logo.resize(50,100)
 image.draw(bilibili_logo)
 
-# so no more masking here. we need some 
+play_button_path = 'play_button.png'
+play_button = pixie.read_image(play_button_path)
+play_button = play_button.resize(50,50)
+t4 = pixie.translate(100,100)
+image.draw(play_button, t4)
+# so no more masking here. we need some png magic.
 
 image.write_file("ad_0.png")
