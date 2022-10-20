@@ -11,7 +11,7 @@ def getImageW2H(image_path):
     w2h = width / height
     return w2h
 
-
+night_mode = True
 ad_width, ad_height = 1000, 1000
 font_path = "./wqy-microhei0.ttf"
 font_bold_path = "./wqy-microhei1.ttf"
@@ -27,9 +27,13 @@ stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, dan
 qrcode_scan_text = "\n"+"\n".join(list("扫码观看"))
 title_text = "真·朋克！揭秘《赛博朋克2077》屏幕之外的魔幻换弹操作"
 white = pixie.Color(1, 1, 1, 1)
+black = pixie.Color(0,0,0, 1)
 image = pixie.Image(ad_width, ad_height)
 # we are creating this, not replacing qr code.
-image.fill(white)
+if night_mode:
+    image.fill(black)
+else:
+    image.fill(white)
 
 # place the cover.
 cover_w2h = getImageW2H(cover_path)
@@ -144,7 +148,10 @@ image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke
 
 font = pixie.read_font(font_bold_path)
 font.size = int(ad_width*0.06)
-font.paint.color = pixie.parse_color("#4F4F4F")
+if night_mode:
+    font.paint.color = pixie.parse_color("#B0B0B0")
+else:
+    font.paint.color = pixie.parse_color("#4F4F4F")
 # use some gray text.
 # font.paint.color = pixie.parse_color("#4F42B5")
 # font.paint.color = pixie.parse_color("#FC427B")
