@@ -40,7 +40,7 @@ if not framework_only:
     else:
         image.fill(white)
 else:
-    image2 = image.copy()
+    image2 = image.copy() # as mask.
 
 # place the cover.
 cover_w2h = getImageW2H(cover_path)
@@ -70,11 +70,17 @@ cover_mask_path.rounded_rect(
 cover_mask = pixie.Mask(cover_width, cover_height)
 
 cover_mask.fill_path(cover_mask_path)
-cover.mask_draw(cover_mask)
+
+over.mask_draw(cover_mask)
 
 
 cover_transform_width = cover_transform_height = int((ad_width - cover_width) / 2)
 cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
+
+if framework_only:
+    image2_paint = pixie.Paint(pixie.SOLID_PAINT)
+    image2_paint.color = white
+    image2.fill_path(cover_mask_path,image2_paint,cover_transform)
 
 cover_stroke_paint = pixie.Paint(pixie.SOLID_PAINT)
 cover_stroke_paint.color = pixie.parse_color("#FC427B")
