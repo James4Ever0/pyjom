@@ -2,6 +2,9 @@ import pixie
 from lazero.utils.importers import cv2_custom_build_init
 cv2_custom_build_init()
 import cv2
+
+def getSolidColorFromCode():
+    color = pixie.Color()
 def getImageW2H(image_path):
     height, width, _ = cv2.imread(image_path)
     w2h = width/height
@@ -13,5 +16,7 @@ qrcode_path = "MyQRCode1.png"
 play_button_path = "play_button.png"
 bilibili_logo_path = "bilibili.png"
 
-
 image = pixie.Image(ad_width, ad_height)
+# we are creating this, not replacing qr code.
+image.fill()
+image.write('ad_2.png')
