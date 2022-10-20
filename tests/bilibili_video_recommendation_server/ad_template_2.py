@@ -68,7 +68,7 @@ bilibili_logo_height = int(bilibili_logo_width / bilibili_logo_w2h)
 bilibili_logo = bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
 
 bilibili_logo_transform = pixie.translate(
-    cover_transform_width, int(cover_transform_width - (bilibili_logo_height / 4))
+    cover_transform_width+int(bilibili_logo_height/8), int(cover_transform_width +(bilibili_logo_height/4))
 )
 # bilibili_logo_transform = pixie.translate(
 #     cover_transform_width, 0
