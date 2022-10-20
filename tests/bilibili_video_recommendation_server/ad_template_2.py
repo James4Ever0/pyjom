@@ -38,6 +38,23 @@ cover_height = int(cover_width / cover_w2h)
 cover_round_corner_radius = int(ad_width * 0.05)
 cover = pixie.read_image(cover_path)
 cover = cover.resize(cover_width, cover_height)
+# cover gradient.
+
+
+paint = pixie.Paint(pixie.RADIAL_GRADIENT_PAINT)
+
+paint.gradient_handle_positions.append(pixie.Vector2(100, 100))
+paint.gradient_handle_positions.append(pixie.Vector2(200, 100))
+paint.gradient_handle_positions.append(pixie.Vector2(100, 200))
+
+paint.gradient_stops.append(pixie.ColorStop(pixie.Color(1, 0, 0, 1), 0))
+paint.gradient_stops.append(pixie.ColorStop(pixie.Color(1, 0, 0, 0.15625), 1))
+
+path = pixie.parse_path
+cover.fill_path(path, paint)
+
+
+
 cover_mask = pixie.Mask(cover_width, cover_height)
 cover_mask_path = pixie.Path()
 cover_mask_path.rounded_rect(
