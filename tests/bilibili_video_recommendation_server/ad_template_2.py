@@ -17,9 +17,9 @@ font_path = "./wqy-microhei0.ttf"
 font_bold_path = "./wqy-microhei1.ttf"
 cover_path = "sample_cover.jpg"
 qrcode_path = "MyQRCode1.png"
-play_button_path = "play_new.png"
+play_button_path = "pink_play.png"
 # play_button_path = "play_b.png"
-bilibili_logo_path = "bilibili_b.png"
+bilibili_logo_path = "pink_bili.png"
 
 play_count = comment_count = danmaku_count = "1万"
 stats_text = "{}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
