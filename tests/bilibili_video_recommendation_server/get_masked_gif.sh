@@ -2,6 +2,4 @@ WIDTH=936
 HEIGHT=598
 
 
-# ffmpeg -i anime.gif -i ad_2_mask.png -filter_complex "[0]scale=936:598[v0]​" anime_masked.gif
-
-ffmpeg -i anime.gif -i ad_2_mask.png -filter_complex "scale=$WIDTH:$HEIGHT"
+ffmpeg -y -i anime.gif  -i ad_2_mask.png -loop 1  -filter_complex "[0]scale=$WIDTH:$HEIGHT[v];[1]alphaextract[v1];[v][v1]alphamerge" anime_masked.gif
