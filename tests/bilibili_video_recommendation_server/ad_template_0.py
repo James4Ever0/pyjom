@@ -59,3 +59,7 @@ image.write_file("ad_0.png")
 # detect qr code and replace the code with ours.
 
 # first of all, the picture needs to be big.
+
+
+avatar_path = "up_image.png"
+up_name = "j4deutschland"
