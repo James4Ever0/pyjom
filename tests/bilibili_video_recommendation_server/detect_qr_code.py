@@ -10,18 +10,17 @@ detector = cv2.QRCodeDetector()
 
 data, bbox, _ = detector.detectAndDecode(img)
 
+qrcode_count = len(bbox)
+print("total %d qrcode(s)" % qrcode_count)
 if bbox is not None:
     # display the image with lines
     # print(bbox)
     # breakpoint()
     for i in range(len(bbox)):
         # draw all lines
-        
         for index in range(4):
-            pt0 = tuple(bbox[i][index%4].astype(int))
-            pt1 = tuple(bbox[i][index+1%4].astype(int))
-            print(pt0)
-            print(pt1)
+            pt0 = tuple(bbox[i][index % 4].astype(int))
+            pt1 = tuple(bbox[i][(index + 1) % 4].astype(int))
             cv2.line(
                 img,
                 pt0,
@@ -29,8 +28,9 @@ if bbox is not None:
                 color=(255, 0, 0),
                 thickness=2,
             )
-    if data:
-        print("[+] QR Code detected, data:", data)
+if data:
+    print("[+] QR Code detected, data:", data)
+    # what is the link inside the qr code?
 # display the result
 cv2.imshow("img", img)
 cv2.waitKey(0)
