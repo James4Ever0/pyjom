@@ -12,7 +12,7 @@ def detect_qr(inputFrame):
     img = Image.fromarray(inputFrame)
     decodedImg = decode(img, symbols=[ZBarSymbol.QRCODE])
     # it reads the content. but where is the code?
-    print('total %d qrcode detected',len(decodedImg))
+    print('total %d qrcode detected' % len(decodedImg))
     # breakpoint()
     # length: 2
 
@@ -30,6 +30,8 @@ def detect_qr(inputFrame):
     else:
         return False
 image = "output_qrcode2.png"
+# image = "test_image_with_qr_code.png" # what about this?
+# it fails. so we better have some other way to get the barcode.
 
 inputImage = cv2.imread(image)
 # frame = imutils.resize(inputImage, width=400)
