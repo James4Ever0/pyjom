@@ -16,8 +16,8 @@ ad_width, ad_height = 1000, 1000
 font_path = "./wqy-microhei0.ttf"
 cover_path = "sample_cover.jpg"
 qrcode_path = "MyQRCode1.png"
-play_button_path = "play_button.png"
-bilibili_logo_path = "bilibili_transparent.png"
+play_button_path = "play_b.png"
+bilibili_logo_path = "bilibili_b.png"
 
 play_count = comment_count = danmaku_count = "1万"
 stats_text = "{}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
@@ -71,7 +71,7 @@ bilibili_logo = bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
 bilibili_logo_transform = pixie.translate(
     cover_transform_width, 0
 )
-# image.draw(bilibili_logo, bilibili_logo_transform)
+image.draw(bilibili_logo, bilibili_logo_transform)
 
 # now place the play button.
 
@@ -84,7 +84,7 @@ play_button_transform = pixie.translate(
     int(cover_transform_width + (cover_width - play_button_width) / 2),
     int(cover_transform_width + (cover_height - play_button_height) / 2),
 )
-# image.draw(play_button, play_button_transform)
+image.draw(play_button, play_button_transform)
 
 # place some stats.
 
