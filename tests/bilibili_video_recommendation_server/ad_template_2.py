@@ -54,7 +54,7 @@ gradient_paint.gradient_handle_positions.append(pixie.Vector2(100, int(cover_hei
 gradient_paint.gradient_handle_positions.append(pixie.Vector2(100, cover_height))
 
 gradient_paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0), 0))
-gradient_paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 1), 1))
+gradient_paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0.3), 1))
 
 cover_mask_path = pixie.Path()
 cover_mask_path.rounded_rect(
