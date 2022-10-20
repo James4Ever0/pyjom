@@ -125,7 +125,9 @@ image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke
 
 font = pixie.read_font(font_path)
 font.size = int(ad_width*0.06)
-font.paint.color = pixie.Color(0,0,0,1)
+font.paint.color = pixie.parse_color("#EC326B")
+# font.paint.color = pixie.parse_color("#FC427B")
+# font.paint.color = pixie.Color(0,0,0,1)
 title_text_transform = pixie.translate(int(font.size*0.8), int(ad_height-qrcode_height*1.1))
 title_text_bounds = pixie.Vector2(int(qrcode_scan_text_transform_x -font.size*1.1),int(qrcode_height))
 image.fill_text(
