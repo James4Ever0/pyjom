@@ -67,7 +67,7 @@ stroke_param=100
 stroke_width = int(ad_width / stroke_param)
 stroke_width_half = int(ad_width / stroke_param/2)
 cover_mask_path2 = pixie.Path()
-cover_round_corner_radius2 = int(cover_round_corner_radius*0.8)
+cover_round_corner_radius2 = int(cover_round_corner_radius*0.85)
 
 cover_mask_path2.rounded_rect(
     stroke_width_half, stroke_width_half, cover_width-stroke_width, cover_height-stroke_width, *([cover_round_corner_radius2] * 4)
