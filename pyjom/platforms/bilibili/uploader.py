@@ -208,18 +208,19 @@ def videoMultithreadUploader(
             import tempfile
             import cv2
             with tempfile.NamedTemporaryFile(suffix='.jpg') as f:
-                
-
-            fp = open(jpeg_image_path, "rb")
-            encode_data = base64.b64encode(fp.read())
+                jpeg_image_path = f.name
+                image = cv2.imread(image_path)
+                cv2.imwrite(jpeg_image_path,image)
+                fp = open(jpeg_image_path, "rb")
+                encode_data = base64.b64encode(fp.read())
             # warning. forced to use jpeg.
-            url = "https://member.bilibili.com/x/vu/web/cover/up"
-            data = {
-                "cover": b"data:image/jpeg;base64," + encode_data,
-                "csrf": self.csrf,
-            }
-            response = self.session.post(url, data=data)
-            return response.json()["data"]["url"]
+                url = "https://member.bilibili.com/x/vu/web/cover/up"
+                data = {
+                    "cover": b"data:image/jpeg;base64," + encode_data,
+                    "csrf": self.csrf,
+                }
+                response = self.session.post(url, data=data)
+                return response.json()["data"]["url"]
 
         def upload(
             self,
