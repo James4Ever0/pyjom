@@ -63,11 +63,13 @@ cover_mask_path = pixie.Path()
 cover_mask_path.rounded_rect(
     0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
 )
+stroke_param=100
+stroke_width = int(ad_width / stroke_param)
+stroke_width_half = int(ad_width / stroke_param/2)
+cover_mask_path2 = pixie.Path()
 
-stroke_width = int(ad_width / 100)
-stroke_width_half = int(stroke_width/2)
 cover_mask_path2.rounded_rect(
-    0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
+    stroke_width_half, stroke_width_half, cover_width-stroke_width_half, cover_height-stroke_width_half, *([cover_round_corner_radius] * 4)
 )
 
 # path = cover_mask_path
@@ -86,6 +88,7 @@ cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
 
 if framework_only:
     # image2.fill(black)
+
     image2_paint = pixie.Paint(pixie.SOLID_PAINT)
     image2_paint.color = white
     image2.fill_path(cover_mask_path,image2_paint,cover_transform)
