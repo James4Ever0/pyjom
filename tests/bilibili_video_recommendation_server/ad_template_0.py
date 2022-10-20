@@ -81,49 +81,18 @@ font2.paint.color = pixie.Color(0, 0.5, 0.953125, 1)
 val = image.fill_text(font2, up_name, transform=pixie.translate(25 + 50, 20))
 # print('VAL',val) # NONE
 
+path3 = pixie.Path()
+path3.rounded_rect(0,0,50,50,10,10,10,10)
+
+paint = pixie.Paint(pixie.SOLID_PAINT)
+paint.color = pixie.parse_color("#FC427B")
+image.fill_path(path3, paint)
+
 label_text = "UP主"
 
 image.fill_text(
     font2, label_text, transform=pixie.translate(25 + 50 + 50, 20)
 )  # where should i put the thing?
 
-paint = pixie.Paint(pixie.SOLID_PAINT)
-paint.color = pixie.Color(0, 1, 0, 1)
-
-#######################MAGIC DO NOT TOUCH#########################
-
-lines = pixie.Image(200, 200)
-lines.fill(pixie.parse_color("#FC427B"))
-# lines.fill(pixie.parse_color("#FC427B"))
-
-paint = pixie.Paint(pixie.SOLID_PAINT)
-# paint.color = pixie.Color(0,0,0,0)
-paint.color = pixie.parse_color("#F8D1DD")
-
-ctx = lines.new_context()
-ctx.stroke_style = paint
-ctx.line_width = 30
-
-ctx.stroke_segment(25, 25, 175, 175)
-ctx.stroke_segment(25, 175, 175, 25)
-
-path = pixie.parse_path(
-    """
-    M 20 60
-    A 40 40 90 0 1 100 60
-    A 40 40 90 0 1 180 60
-    Q 180 120 100 180
-    Q 20 120 20 60
-    z
-    """
-)
-
-mask = pixie.Mask(200, 200)
-mask.fill_path(path)
-
-lines.mask_draw(mask)
-
-image.draw(lines)
-#######################MAGIC DO NOT TOUCH#########################
 
 image.write_file("ad_0.png")
