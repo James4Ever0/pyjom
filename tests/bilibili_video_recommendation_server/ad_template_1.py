@@ -129,6 +129,7 @@ image.draw(play_button, t4)
 # we need to get the raw pixel data.
 # ['apply_opacity', 'arrangement_fill_text', 'arrangement_stroke_text', 'blur', 'copy', 'draw', 'fill', 'fill_gradient', 'fill_path', 'fill_text', 'flip_horizontal', 'flip_vertical', 'get_color', 'height', 'invert', 'magnify_by2', 'mask_draw', 'minify_by2', 'new_context', 'new_mask', 'ref', 'resize', 'set_color', 'shadow', 'stroke_path', 'stroke_text', 'sub_image', 'super_image', 'width', 'write_file']
 # raw_pixel = image.
-print(dir(image))
-breakpoint()
+# print(dir(image))
+# breakpoint()
+# sorry you cannot do this.
 # image.write_file("ad_1.png")
