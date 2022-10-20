@@ -40,8 +40,7 @@ cover = pixie.read_image(cover_path)
 cover = cover.resize(cover_width, cover_height)
 # cover gradient.
 
-
-paint = pixie.Paint(pixie.RADIAL_GRADIENT_PAINT)
+paint = pixie.Paint(pixie.LINEAR_GRADIENT_PAINT)
 
 paint.gradient_handle_positions.append(pixie.Vector2(100, 100))
 paint.gradient_handle_positions.append(pixie.Vector2(200, 100))
