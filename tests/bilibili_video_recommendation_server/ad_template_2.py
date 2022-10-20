@@ -34,7 +34,13 @@ cover_mask_path = pixie.Path()
 cover_mask_path.rounded_rect(
     0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
 )
-cover_mask.mask_draw()
+cover_mask.fill_path(cover_mask_path)
+cover.mask_draw(cover_mask)
 
+image.draw(cover)
+
+cover_transform_width = cover_transform_height =int((ad_width- cover_width)/2)
+cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
+image.draw(cover, )
 
 image.write_file("ad_2.png")
