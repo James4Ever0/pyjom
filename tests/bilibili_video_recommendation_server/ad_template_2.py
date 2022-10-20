@@ -43,11 +43,10 @@ cover = cover.resize(cover_width, cover_height)
 paint = pixie.Paint(pixie.LINEAR_GRADIENT_PAINT)
 
 paint.gradient_handle_positions.append(pixie.Vector2(100, 100))
-paint.gradient_handle_positions.append(pixie.Vector2(200, 100))
-paint.gradient_handle_positions.append(pixie.Vector2(100, 200))
+paint.gradient_handle_positions.append(pixie.Vector2(100, cover_height))
 
-paint.gradient_stops.append(pixie.ColorStop(pixie.Color(1, 0, 0, 1), 0))
-paint.gradient_stops.append(pixie.ColorStop(pixie.Color(1, 0, 0, 0.15625), 1))
+paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 1), 0))
+paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0), 1))
 
 path = pixie.parse_path
 cover.fill_path(path, paint)
