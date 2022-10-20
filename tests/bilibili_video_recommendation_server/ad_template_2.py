@@ -172,8 +172,7 @@ image.fill_text(
     font,title_text, bounds = title_text_bounds,transform=title_text_transform
 )
 
-
+standalone_cover_image = image.sub_image(cover_transform_width, cover_transform_height,cover_width,cover_height)
+standalone_cover_image.write_file("ad_2_standalone_cover.png")
 image.write_file("ad_2.png")
 
-
-standalone_cover_image = image
