@@ -127,7 +127,10 @@ qrcode = qrcode.resize(qrcode_width, qrcode_height)
 
 font = pixie.read_font(font_path)
 font.size = int(ad_width*0.04)
-font.paint.color = pixie.Color(0,0,0,1)
+if night_mode:
+    font.paint.color = pixie.Color(1,1,1,1)
+else:
+    font.paint.color = pixie.Color(0,0,0,1)
 qrcode_scan_text_transform_x = int(ad_width-qrcode_width*1.1-font.size*1)
 qrcode_scan_text_transform = pixie.translate(qrcode_scan_text_transform_x+qrcode_width, int(ad_height-qrcode_height*1.1))
 image.fill_text(
@@ -135,12 +138,19 @@ image.fill_text(
 )
 
 qrcode_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font.size*1.2), int(ad_height-qrcode_height*1.1))
-image.draw(qrcode, qrcode_transform)
+
 
 qrcode_rounded_corner = int(0.05*ad_width)
 qrcode_stroke_path = pixie.Path()
 qrcode_stroke_path.rounded_rect(0,0,qrcode_width,qrcode_height, *([qrcode_rounded_corner]*4))
 image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke_width=int(ad_width / 100))
+
+qrcode_mask = pixie.Mask(qrcode_width, qrcode_width)
+qrcode_mask.fill_path(qrcode_stroke_path)
+qrcode.mask_draw(qrcode_mask)
+
+image.draw(qrcode, qrcode_transform)
+
 
 
 
