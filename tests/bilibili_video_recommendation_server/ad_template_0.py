@@ -85,7 +85,7 @@ val = image.fill_text(
 label_text = "UP主"
 
 image.fill_text(
-    font2,label_text, transform=pixie.translate(25+50, 20)
-)
+    font2,label_text, transform=pixie.translate(25+50+50, 20)
+) # where should i put the thing?
 
 image.write_file("ad_0.png")
