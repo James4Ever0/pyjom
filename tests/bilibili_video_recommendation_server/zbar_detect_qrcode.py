@@ -29,9 +29,11 @@ def detect_qr(inputFrame):
         return True
     else:
         return False
+
 image = "output_qrcode2.png"
 # image = "test_image_with_qr_code.png" # what about this?
 # it fails. so we better have some other way to get the barcode.
+# if resolution is low, resize the image and make sure it will contain the qrcode, make it readable.
 
 inputImage = cv2.imread(image)
 # frame = imutils.resize(inputImage, width=400)
