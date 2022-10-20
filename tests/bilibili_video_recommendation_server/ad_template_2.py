@@ -18,6 +18,9 @@ cover_path = "sample_cover.jpg"
 qrcode_path = "MyQRCode1.png"
 play_button_path = "play_button.png"
 bilibili_logo_path = "bilibili_transparent.png"
+
+play_count = "1"
+stats_text = "{}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
 white = pixie.Color(1, 1, 1, 1)
 image = pixie.Image(ad_width, ad_height)
 # we are creating this, not replacing qr code.
@@ -73,9 +76,10 @@ play_button_width = play_button_height = int(ad_width * 0.2)
 play_button = play_button.resize(play_button_width, play_button_height)
 
 play_button_transform = pixie.translate(
-    int(cover_transform_width + cover_width / 2 - play_button_width),
-    int(cover_transform_width + cover_height / 2 - play_button_height),
+    int(cover_transform_width + (cover_width - play_button_width) / 2),
+    int(cover_transform_width + (cover_height - play_button_height) / 2),
 )
 image.draw(play_button, play_button_transform)
 
+# place some stats.
 image.write_file("ad_2.png")
