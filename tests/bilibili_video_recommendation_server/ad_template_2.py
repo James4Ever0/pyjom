@@ -67,9 +67,10 @@ stroke_param=100
 stroke_width = int(ad_width / stroke_param)
 stroke_width_half = int(ad_width / stroke_param/2)
 cover_mask_path2 = pixie.Path()
+cover_round_corner_radius2 = int(cover_round_corner_radius*0.8)
 
 cover_mask_path2.rounded_rect(
-    stroke_width_half, stroke_width_half, cover_width-stroke_width_half, cover_height-stroke_width_half, *([cover_round_corner_radius] * 4)
+    stroke_width_half, stroke_width_half, cover_width-stroke_width, cover_height-stroke_width, *([cover_round_corner_radius2] * 4)
 )
 
 # path = cover_mask_path
@@ -103,7 +104,7 @@ image.stroke_path(
 )
 if not framework_only:
     image.draw(cover, cover_transform) # you can choose to discard the cover
-image.fill_path(cover_mask_path, gradient_paint, cover_transform)
+image.fill_path(cover_mask_path2, gradient_paint, cover_transform)
 
 # now place the bilibili logo.
 
