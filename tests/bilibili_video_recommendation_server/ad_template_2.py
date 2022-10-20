@@ -24,9 +24,17 @@ image.fill(white)
 
 # place the cover.
 cover_w2h = getImageW2H(cover_path)
-cover_width = int(ad_width*0.8)
-cover_height = int(cover_width/cover_w2h)
-cover = pixie.image
+cover_width = int(ad_width * 0.8)
+cover_height = int(cover_width / cover_w2h)
+cover_round_corner_radius = int(ad_width * 0.05)
+cover = pixie.read_image(cover_path)
+cover = cover.resize(cover_width, cover_height)
+cover_mask = pixie.Mask(cover_width, cover_height)
+cover_mask_path = pixie.Path()
+cover_mask_path.rounded_rect(
+    0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
+)
+cover_mask.mask_draw()
 
 
 image.write_file("ad_2.png")
