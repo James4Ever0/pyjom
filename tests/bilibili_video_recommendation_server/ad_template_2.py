@@ -95,7 +95,12 @@ image.fill_text(
 # place the qrcode.
 qrcode = pixie.read_image(qrcode_path)
 qrcode_width = qrcode_height = int(0.3*ad_width)
-image.write_file()
+qrcode = qrcode.resize(qrcode_width, qrcode_height)
+qrcode_transform = pixie.translate(ad_width-qrcode_width, ad_height-qrcode_height)
+image.draw(qrcode, qrcode_transform)
+
+qrcode_stroke_path = pixie.Path()
+qrcode_stroke_path.rounded_rect(0,0,qrcode_width,qrcode_height, )
 
 
 image.write_file("ad_2.png")
