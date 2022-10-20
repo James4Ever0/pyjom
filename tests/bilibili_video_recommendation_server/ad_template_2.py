@@ -42,22 +42,23 @@ cover = cover.resize(cover_width, cover_height)
 
 paint = pixie.Paint(pixie.LINEAR_GRADIENT_PAINT)
 
-paint.gradient_handle_positions.append(pixie.Vector2(100, 100))
+paint.gradient_handle_positions.append(pixie.Vector2(100,int(cover_height)*0.8))
 paint.gradient_handle_positions.append(pixie.Vector2(100, cover_height))
 
-paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 1), 0))
-paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0), 1))
+paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0), 0))
+paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 1), 1))
 
-path = pixie.parse_path
+cover_mask_path = pixie.Path()
+cover_mask_path.rounded_rect(
+    0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
+)
+path = cover_mask_path
 cover.fill_path(path, paint)
 
 
 
 cover_mask = pixie.Mask(cover_width, cover_height)
-cover_mask_path = pixie.Path()
-cover_mask_path.rounded_rect(
-    0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
-)
+
 cover_mask.fill_path(cover_mask_path)
 cover.mask_draw(cover_mask)
 
