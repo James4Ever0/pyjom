@@ -50,7 +50,6 @@ image.draw(picture, transform=transform)
 # image.draw(picture)
 # image.draw(picture,transform=transform)
 image.draw(qrcode_image, transform=qrcode_transform)
-image.write_file("ad_0.png")
 
 # now we try to reverse engineer that thing.
 
@@ -61,9 +60,18 @@ image.write_file("ad_0.png")
 # first of all, the picture needs to be big.
 
 
-avatar_path = "up_image.png"
+avatar_path = "up_image.jpg"
 up_name = "J4D"
 
 avatar_width, avatar_height = 50,50
 path2 = pixie.Path()
 path2.circle(25,25,25)
+mask2 = pixie.Mask(avatar_width, avatar_height)
+mask2.fill_path(path2)
+avatar = pixie.read_image(avatar_path)
+avatar = avatar.resize(avatar_width, avatar_height)
+avatar.mask_draw(mask2)
+a_transform=pixie.translate(25,25)
+image.draw(avatar, a_transform)
+
+image.write_file("ad_0.png")
