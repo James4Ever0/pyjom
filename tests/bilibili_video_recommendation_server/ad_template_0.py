@@ -100,4 +100,13 @@ image.fill_text(
 )  # where should i put the thing?
 
 
+
+bilibili_logo_path = "bilibili_logo.png"
+
+bilibili_logo = pixie.read_image(bilibili_logo_path)
+bilibili_logo = bilibili_logo.resize(50,100)
+image.draw(bilibili_logo)
+
+# so no more masking here. we need some 
+
 image.write_file("ad_0.png")
