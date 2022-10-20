@@ -13,6 +13,7 @@ def getImageW2H(image_path):
 
 
 night_mode = True
+framework_only=True
 ad_width, ad_height = 1000, 1000
 font_path = "./wqy-microhei0.ttf"
 font_bold_path = "./wqy-microhei1.ttf"
@@ -46,20 +47,20 @@ cover = pixie.read_image(cover_path)
 cover = cover.resize(cover_width, cover_height)
 # cover gradient.
 
-paint = pixie.Paint(pixie.LINEAR_GRADIENT_PAINT)
+gradient_paint = pixie.Paint(pixie.LINEAR_GRADIENT_PAINT)
 
-paint.gradient_handle_positions.append(pixie.Vector2(100, int(cover_height) * 0.8))
-paint.gradient_handle_positions.append(pixie.Vector2(100, cover_height))
+gradient_paint.gradient_handle_positions.append(pixie.Vector2(100, int(cover_height) * 0.8))
+gradient_paint.gradient_handle_positions.append(pixie.Vector2(100, cover_height))
 
-paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0), 0))
-paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 1), 1))
+gradient_paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0), 0))
+gradient_paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 1), 1))
 
 cover_mask_path = pixie.Path()
 cover_mask_path.rounded_rect(
     0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
 )
-path = cover_mask_path
-cover.fill_path(path, paint)
+# path = cover_mask_path
+# cover.fill_path(cover_mask_path, gradient_paint)
 
 
 cover_mask = pixie.Mask(cover_width, cover_height)
@@ -79,7 +80,8 @@ image.stroke_path(
     cover_transform,
     stroke_width=int(ad_width / 100),
 )
-image.draw(cover, cover_transform)
+image.draw(cover, cover_transform) # you can choose to discard the cover
+image.fill_path(cover_mask_path, gradient_paint, cover_transform)
 
 # now place the bilibili logo.
 
