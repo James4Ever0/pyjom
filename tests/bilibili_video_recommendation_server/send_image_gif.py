@@ -18,7 +18,7 @@ content = "观看视频:\n{}\n{}".format(link, title_text)
 import base64
 
 # picture_path = "qrcode.gif"
-picture_path = "anime.gif"
+picture_path = "anime_overlay.gif"
 # where is the gif? my god?
 
 # there is no way to scan the code in the gif. better send the link instead.
