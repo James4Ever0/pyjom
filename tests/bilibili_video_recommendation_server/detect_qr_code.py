@@ -1,4 +1,7 @@
-image = "test_image_with_qr_code.png"
+# image = "test_image_with_qr_code.png"
+# fail to obtain the qrcode.
+# but we might want use our original qrcode.
+image = "MyQRCode1.png"
 
 from lazero.utils.importers import cv2_custom_build_init
 
