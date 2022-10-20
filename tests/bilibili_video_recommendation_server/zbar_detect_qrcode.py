@@ -13,13 +13,18 @@ def detect_qr(inputFrame):
     decodedImg = decode(img, symbols=[ZBarSymbol.QRCODE])
     # it reads the content. but where is the code?
     print(len(decodedImg))
+    breakpoint()
     # length: 2
 
     if len(decodedImg) > 0:
-        decodedBytes = decodedImg[0].data
-        stringData = decodedBytes.decode("utf-8")
-        print("QRCode content:")
-        print(stringData)
+        for code in decodedImg:
+            decodedBytes = code.data
+            stringData = decodedBytes.decode("utf-8")
+            print("QRCode content:")
+            print(stringData)
+            polygon = code.polygon
+            print(polygon)
+            print('POLYGON')
 
         return True
     else:
