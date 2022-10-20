@@ -111,7 +111,8 @@ image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke
 font = pixie.read_font(font_path)
 font.size = int(ad_width*0.06)
 font.paint.color = pixie.Color(0,0,0,1)
-qrcode_scan_text_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font.size*1.2), int(ad_height-qrcode_height*1.1))
+qrcode_scan_text_transform_x = int(ad_width-qrcode_width*1.1-font.size*1.2)
+qrcode_scan_text_transform = pixie.translate(qrcode_scan_text_transform_x, int(ad_height-qrcode_height*1.1))
 image.fill_text(
     font,qrcode_scan_text, transform=qrcode_scan_text_transform
 )
@@ -120,10 +121,11 @@ image.fill_text(
 
 font = pixie.read_font(font_path)
 font.size = int(ad_width*0.06)
-font.paint.color = pixie.Color(0,,0,1)
-qrcode_scan_text_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font.size*1.2), int(ad_height-qrcode_height*1.1))
+font.paint.color = pixie.Color(0.2,0.8,0.5,1)
+title_text_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font.size*1.2), int(ad_height-qrcode_height*1.1))
+title_text_bounds = pixie.Vector2(qrcode_scan_text_transform_x -font)
 image.fill_text(
-    font,qrcode_scan_text, transform=qrcode_scan_text_transform
+    font,title_text, bounds = title_text_bounds,transform=title_text_transform
 )
 
 
