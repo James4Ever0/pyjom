@@ -89,6 +89,12 @@ paint.color = pixie.parse_color("#FC427B")
 transform3 = pixie.translate(25+50+50, 20)
 image.fill_path(path3, paint, transform3)
 
+path4 = pixie.Path()
+path4.rounded_rect(25+50+50+5,20+5, 90,40, 10,10,10,10)
+mask4 = pixie.Mask(200,200)
+mask4.fill_path(path4)
+image.fill_mask(mask4)
+
 label_text = "UP主"
 
 
