@@ -81,6 +81,16 @@ font2.paint.color = pixie.Color(0, 0.5, 0.953125, 1)
 val = image.fill_text(font2, up_name, transform=pixie.translate(25 + 50, 20))
 # print('VAL',val) # NONE
 
+
+path4 = pixie.Path()
+path4.rounded_rect(25+50+50+5,20+5, 90,40, 10,10,10,10)
+mask4 = pixie.Mask(200,200)
+mask4.fill_path(path4)
+image2 = image.copy()
+image2.mask_draw(mask4) #?
+image.draw(image2)
+
+
 path3 = pixie.Path()
 path3.rounded_rect(0,0,100,50,10,10,10,10)
 
@@ -88,12 +98,6 @@ paint = pixie.Paint(pixie.SOLID_PAINT)
 paint.color = pixie.parse_color("#FC427B")
 transform3 = pixie.translate(25+50+50, 20)
 image.fill_path(path3, paint, transform3)
-
-path4 = pixie.Path()
-path4.rounded_rect(25+50+50+5,20+5, 90,40, 10,10,10,10)
-mask4 = pixie.Mask(200,200)
-mask4.fill_path(path4)
-image.fill_mask(mask4)
 
 label_text = "UP主"
 
