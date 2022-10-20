@@ -99,8 +99,6 @@ image.fill_text(
     font3, label_text, transform=pixie.translate(25 + 50 + 50, 20)
 )  # where should i put the thing?
 
-
-
 bilibili_logo_path = "bilibili_transparent.png"
 
 bilibili_logo = pixie.read_image(bilibili_logo_path)

@@ -1,6 +1,5 @@
 # test to broadcast all these things.
 
-
 # this method might fail to behave correctly.
 # maybe we need to upload the image and get url? no thanks?
 # we use jpg instead? must use cv2.
@@ -16,11 +15,12 @@ title_text = "真·朋克！揭秘《赛博朋克2077》屏幕之外的魔幻换
 content = "观看视频:\n{}\n{}".format(link, title_text)
 
 import base64
+
 picture_path = "ad_2_standalone_cover.png"
 with open(picture_path, "rb") as img_file:
     b64_string = base64.b64encode(img_file.read())
 # print(b64_string)
-result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'))
+result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode("utf-8"))
 
 print(result)
 action.sendFriendText(user=user, content=content)
@@ -32,4 +32,6 @@ picture_path = "ad_2.png"
 with open(picture_path, "rb") as img_file:
     b64_string = base64.b64encode(img_file.read())
 # print(b64_string)
-result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8')) # better without content.
+result = action.sendFriendPic(
+    user=user, picBase64Buf=b64_string.decode("utf-8")
+)  # better without content.
