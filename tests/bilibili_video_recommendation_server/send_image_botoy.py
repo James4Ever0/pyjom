@@ -1,5 +1,8 @@
 # test to broadcast all these things.
 
+
+# this method might fail to behave correctly.
+# maybe we need to upload the 
 from botoy import Action
 
 qq = 917521610
@@ -24,4 +27,4 @@ picture_path = "ad_2.png"
 with open(picture_path, "rb") as img_file:
     b64_string = base64.b64encode(img_file.read())
 # print(b64_string)
-result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'))
+result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'), content=content)
