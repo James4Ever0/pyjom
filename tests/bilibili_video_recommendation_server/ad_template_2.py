@@ -42,10 +42,15 @@ cover.mask_draw(cover_mask)
 cover_transform_width = cover_transform_height = int((ad_width - cover_width) / 2)
 cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
 
-cover_stroke_paint = pixie.parse_color()
-paint = pixie.Paint(pixie.SOLID_PAINT)
-paint.color = pixie.parse_color("#FC427B")
-image.stroke_path(cover_mask_path, cover_stroke_paint,stroke_width=int(ad_width/100))
+cover_stroke_paint = pixie.Paint(pixie.SOLID_PAINT)
+cover_stroke_paint.color = pixie.parse_color("#FC427B")
+image.stroke_path(cover_mask_path, cover_stroke_paint,cover_transform,stroke_width=int(ad_width/100))
 image.draw(cover, cover_transform)
+
+# now place the bilibili logo.
+
+bilibili_logo = pixie.read_image(bilibili_logo_path)
+bilibili_logo_w2h = 
+bilibili_logo_width = 
 
 image.write_file("ad_2.png")
