@@ -11,7 +11,7 @@ def getImageW2H(image_path):
     w2h = width / height
     return w2h
 
-night_mode = False
+night_mode = True
 ad_width, ad_height = 1000, 1000
 font_path = "./wqy-microhei0.ttf"
 font_bold_path = "./wqy-microhei1.ttf"
