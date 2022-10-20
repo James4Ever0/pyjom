@@ -19,12 +19,16 @@ picture_path = "ad_2_standalone_cover.png"
 with open(picture_path, "rb") as img_file:
     b64_string = base64.b64encode(img_file.read())
 # print(b64_string)
-result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'),content = content)
+result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'))
+
 print(result)
+action.sendFriendText(user=user, content=content)
+# send separately.
+# result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'),content = content)
 
 
 picture_path = "ad_2.png"
 with open(picture_path, "rb") as img_file:
     b64_string = base64.b64encode(img_file.read())
 # print(b64_string)
-result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'), content=content)
+result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8')) # better without content.
