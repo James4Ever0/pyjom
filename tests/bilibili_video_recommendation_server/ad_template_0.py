@@ -97,6 +97,8 @@ ctx.fill_style = paint
 ctx.rounded_rect(50, 50, 100, 100, 25, 25, 25, 25)
 lines = pixie.Image(200, 200)
 lines.fill(pixie.parse_color("#FC427B"))
+mask3 = pixie.Mask()
+mask3.fill_path()
 
 ctx.mask_draw(mask3)
 
