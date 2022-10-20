@@ -111,9 +111,19 @@ image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke
 font = pixie.read_font(font_path)
 font.size = int(ad_width*0.06)
 font.paint.color = pixie.Color(0,0,0,1)
-qrcode_scan_text_transform = pixie.translate(int(ad_width-qrcode_width*1.1-), int(ad_height-qrcode_height*1.1))
+qrcode_scan_text_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font.size*1.2), int(ad_height-qrcode_height*1.1))
 image.fill_text(
-    font,stats_text, transform=stats_transform
+    font,qrcode_scan_text, transform=qrcode_scan_text_transform
+)
+
+# now for the title
+
+font = pixie.read_font(font_path)
+font.size = int(ad_width*0.06)
+font.paint.color = pixie.Color(0,,0,1)
+qrcode_scan_text_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font.size*1.2), int(ad_height-qrcode_height*1.1))
+image.fill_text(
+    font,qrcode_scan_text, transform=qrcode_scan_text_transform
 )
 
 
