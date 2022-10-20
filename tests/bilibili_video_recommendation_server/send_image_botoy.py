@@ -18,3 +18,10 @@ with open(picture_path, "rb") as img_file:
 # print(b64_string)
 result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'),content = content)
 print(result)
+
+
+picture_path = "ad_2.png"
+with open(picture_path, "rb") as img_file:
+    b64_string = base64.b64encode(img_file.read())
+# print(b64_string)
+result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'))
