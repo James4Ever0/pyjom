@@ -96,7 +96,7 @@ image.fill_text(
 qrcode = pixie.read_image(qrcode_path)
 qrcode_width = qrcode_height = int(0.3*ad_width)
 qrcode = qrcode.resize(qrcode_width, qrcode_height)
-qrcode_transform = pixie.translate(ad_width-qrcode_width, ad_height-qrcode_height)
+qrcode_transform = pixie.translate(int(ad_width-qrcode_width*1.1), int(ad_height-qrcode_height*1.1))
 image.draw(qrcode, qrcode_transform)
 
 qrcode_rounded_corner = int(0.05*ad_width)
