@@ -123,6 +123,12 @@ play_button = pixie.read_image(play_button_path)
 play_button = play_button.resize(50,50)
 t4 = pixie.translate(100,100)
 image.draw(play_button, t4)
+# you can stroke path! what is it?
 # so no more masking here. we need some png magic.
 
-image.write_file("ad_1.png")
+# we need to get the raw pixel data.
+# ['apply_opacity', 'arrangement_fill_text', 'arrangement_stroke_text', 'blur', 'copy', 'draw', 'fill', 'fill_gradient', 'fill_path', 'fill_text', 'flip_horizontal', 'flip_vertical', 'get_color', 'height', 'invert', 'magnify_by2', 'mask_draw', 'minify_by2', 'new_context', 'new_mask', 'ref', 'resize', 'set_color', 'shadow', 'stroke_path', 'stroke_text', 'sub_image', 'super_image', 'width', 'write_file']
+# raw_pixel = image.
+print(dir(image))
+breakpoint()
+# image.write_file("ad_1.png")
