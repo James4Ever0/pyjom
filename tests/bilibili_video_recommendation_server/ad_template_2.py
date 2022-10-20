@@ -55,6 +55,7 @@ bilibili_logo_width = int(ad_width*0.2)
 bilibili_logo_height = int(bilibili_logo_width / bilibili_logo_w2h)
 bilibili_logo=bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
 
-image.draw(bilibili_logo, cover_transform, blend_mode=)
+bilibili_logo_transform = pixie.translate(cover_transform_width, int(cover_transform_width-(bilibili_logo_height/3)))
+image.draw(bilibili_logo, bilibili_logo_transform, blend_mode=pixie.COLOR_BURN_BLEND)
 
 image.write_file("ad_2.png")
