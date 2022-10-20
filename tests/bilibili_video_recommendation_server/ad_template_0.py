@@ -90,18 +90,40 @@ image.fill_text(
 paint = pixie.Paint(pixie.SOLID_PAINT)
 paint.color = pixie.Color(0, 1, 0, 1)
 
+#######################MAGIC DO NOT TOUCH#########################
+
 lines = pixie.Image(200, 200)
-ctx = lines.new_context()
-ctx.fill_style = paint
-ctx.rounded_rect(45, 45, 110, 110, 25, 25, 25, 25)
-
 lines.fill(pixie.parse_color("#FC427B"))
-mask3 = pixie.Mask(200, 200)
-path3 = pixie.Path()
-path3.rounded_rect(50, 50, 100, 100, 25, 25, 25, 25)
-mask3.fill_path(path3)
+# lines.fill(pixie.parse_color("#FC427B"))
 
-lines.mask_draw(mask3)
+paint = pixie.Paint(pixie.SOLID_PAINT)
+# paint.color = pixie.Color(0,0,0,0)
+paint.color = pixie.parse_color("#F8D1DD")
+
+ctx = lines.new_context()
+ctx.stroke_style = paint
+ctx.line_width = 30
+
+ctx.stroke_segment(25, 25, 175, 175)
+ctx.stroke_segment(25, 175, 175, 25)
+
+path = pixie.parse_path(
+    """
+    M 20 60
+    A 40 40 90 0 1 100 60
+    A 40 40 90 0 1 180 60
+    Q 180 120 100 180
+    Q 20 120 20 60
+    z
+    """
+)
+
+mask = pixie.Mask(200, 200)
+mask.fill_path(path)
+
+lines.mask_draw(mask)
+
 image.draw(lines)
+#######################MAGIC DO NOT TOUCH#########################
 
 image.write_file("ad_0.png")
