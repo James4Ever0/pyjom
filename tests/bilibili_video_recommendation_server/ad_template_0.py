@@ -101,7 +101,7 @@ image.fill_text(
 
 
 
-bilibili_logo_path = "bilibili_logo.png"
+bilibili_logo_path = "bilibili_transparent.png"
 
 bilibili_logo = pixie.read_image(bilibili_logo_path)
 bilibili_logo = bilibili_logo.resize(50,100)
