@@ -71,7 +71,7 @@ cover_mask = pixie.Mask(cover_width, cover_height)
 
 cover_mask.fill_path(cover_mask_path)
 
-over.mask_draw(cover_mask)
+cover.mask_draw(cover_mask)
 
 
 cover_transform_width = cover_transform_height = int((ad_width - cover_width) / 2)
@@ -200,11 +200,14 @@ image.fill_text(
     font, title_text, bounds=title_text_bounds, transform=title_text_transform
 )
 delta = int(cover_width * 0.02)
-standalone_cover_image = image.sub_image(
+sub_image_params = (
     cover_transform_width - delta,
     cover_transform_height - delta,
     cover_width + 2 * delta,
-    cover_height + 2 * delta,
+    cover_height + 2 * delta,)
+standalone_cover_image = image.sub_image(*sub_image_params
 )
 standalone_cover_image.write_file("ad_2_standalone_cover.png")
 image.write_file("ad_2.png")
+if framework_only:
+    image2.sub_image(*sub_image_params).write_file("ad_2_mask.png")
