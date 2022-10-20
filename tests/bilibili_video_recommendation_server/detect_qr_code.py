@@ -12,17 +12,23 @@ data, bbox, _ = detector.detectAndDecode(img)
 
 if bbox is not None:
     # display the image with lines
-    print(bbox)
-    breakpoint()
+    # print(bbox)
+    # breakpoint()
     for i in range(len(bbox)):
         # draw all lines
-        cv2.line(
-            img,
-            tuple(bbox[i][0]),
-            tuple(bbox[(i + 1) % len(bbox)][0]),
-            color=(255, 0, 0),
-            thickness=2,
-        )
+        
+        for index in range(4):
+            pt0 = tuple(bbox[i][index%4].astype(int))
+            pt1 = tuple(bbox[i][index+1%4].astype(int))
+            print(pt0)
+            print(pt1)
+            cv2.line(
+                img,
+                pt0,
+                pt1,
+                color=(255, 0, 0),
+                thickness=2,
+            )
     if data:
         print("[+] QR Code detected, data:", data)
 # display the result
