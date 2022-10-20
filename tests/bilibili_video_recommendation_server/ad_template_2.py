@@ -11,7 +11,7 @@ def getImageW2H(image_path):
     w2h = width / height
     return w2h
 
-night_mode = True
+night_mode = False
 ad_width, ad_height = 1000, 1000
 font_path = "./wqy-microhei0.ttf"
 font_bold_path = "./wqy-microhei1.ttf"
@@ -32,6 +32,7 @@ image = pixie.Image(ad_width, ad_height)
 # we are creating this, not replacing qr code.
 if night_mode:
     image.fill(black)
+    # irreversible!
 else:
     image.fill(white)
 
@@ -171,8 +172,8 @@ title_text_bounds = pixie.Vector2(int(qrcode_scan_text_transform_x -font.size*1.
 image.fill_text(
     font,title_text, bounds = title_text_bounds,transform=title_text_transform
 )
-
-standalone_cover_image = image.sub_image(cover_transform_width, cover_transform_height,cover_width,cover_height)
+delta = int(cover_width*0.02)
+standalone_cover_image = image.sub_image(cover_transform_width-delta, cover_transform_height-delta,cover_width+2*delta,cover_height+2*delta)
 standalone_cover_image.write_file("ad_2_standalone_cover.png")
 image.write_file("ad_2.png")
 
