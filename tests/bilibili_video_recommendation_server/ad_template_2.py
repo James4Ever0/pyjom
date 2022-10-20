@@ -22,7 +22,7 @@ bilibili_logo_path = "bilibili_transparent.png"
 play_count = comment_count = danmaku_count = "1万"
 stats_text = "{}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
 qrcode_scan_text = "\n".join(list("扫码观看"))
-title_text = "战象在我大明的火炮前不堪一击！【帝国时代4】"
+title_text = "真·朋克！揭秘《赛博朋克2077》屏幕之外的魔幻换弹操作"
 white = pixie.Color(1, 1, 1, 1)
 image = pixie.Image(ad_width, ad_height)
 # we are creating this, not replacing qr code.
@@ -100,7 +100,18 @@ image.fill_text(
 qrcode = pixie.read_image(qrcode_path)
 qrcode_width = qrcode_height = int(0.3*ad_width)
 qrcode = qrcode.resize(qrcode_width, qrcode_height)
-qrcode_transform = pixie.translate(int(ad_width-qrcode_width*1.1), int(ad_height-qrcode_height*1.1))
+
+
+font = pixie.read_font(font_path)
+font.size = int(ad_width*0.06)
+font.paint.color = pixie.Color(0,0,0,1)
+qrcode_scan_text_transform_x = int(ad_width-qrcode_width*1.1-font.size*1.2)
+qrcode_scan_text_transform = pixie.translate(qrcode_scan_text_transform_x+qrcode_width, int(ad_height-qrcode_height*1.1))
+image.fill_text(
+    font,qrcode_scan_text, transform=qrcode_scan_text_transform
+)
+
+qrcode_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font), int(ad_height-qrcode_height*1.1))
 image.draw(qrcode, qrcode_transform)
 
 qrcode_rounded_corner = int(0.05*ad_width)
@@ -108,21 +119,14 @@ qrcode_stroke_path = pixie.Path()
 qrcode_stroke_path.rounded_rect(0,0,qrcode_width,qrcode_height, *([qrcode_rounded_corner]*4))
 image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke_width=int(ad_width / 100))
 
-font = pixie.read_font(font_path)
-font.size = int(ad_width*0.06)
-font.paint.color = pixie.Color(0,0,0,1)
-qrcode_scan_text_transform_x = int(ad_width-qrcode_width*1.1-font.size*1.2)
-qrcode_scan_text_transform = pixie.translate(qrcode_scan_text_transform_x, int(ad_height-qrcode_height*1.1))
-image.fill_text(
-    font,qrcode_scan_text, transform=qrcode_scan_text_transform
-)
+
 
 # now for the title
 
 font = pixie.read_font(font_path)
 font.size = int(ad_width*0.06)
 font.paint.color = pixie.Color(0,0,0,1)
-title_text_transform = pixie.translate(int(font.size*1.2), int(ad_height-qrcode_height*1.1))
+title_text_transform = pixie.translate(int(font.size*0.8), int(ad_height-qrcode_height*1.1))
 title_text_bounds = pixie.Vector2(int(qrcode_scan_text_transform_x -font.size*1.1),int(qrcode_height))
 image.fill_text(
     font,title_text, bounds = title_text_bounds,transform=title_text_transform
