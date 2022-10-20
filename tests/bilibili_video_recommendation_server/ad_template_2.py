@@ -42,8 +42,13 @@ cover.mask_draw(cover_mask)
 cover_transform_width = cover_transform_height = int((ad_width - cover_width) / 2)
 cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
 
-shadow_param = int(ad_width / 100)
-cover_shadow = cover.shadow(
+cover_mask_image = pixie.Image(cover_width, cover_height)
+
+cover_mask_paint = pixie.Paint(pixie.SOLID_PAINT)
+cover_mask_paint.color = pixie.Color(1, 1, 1, 1)
+cover_mask_image.fill_path(cover_mask_path, cover_mask_paint)
+shadow_param = int(ad_width / 200)
+cover_shadow = cover_mask_image.shadow(
     offset=pixie.Vector2(shadow_param, shadow_param),
     spread=shadow_param,
     blur=shadow_param * 5,
