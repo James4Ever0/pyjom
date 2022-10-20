@@ -63,6 +63,13 @@ cover_mask_path = pixie.Path()
 cover_mask_path.rounded_rect(
     0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
 )
+
+stroke_width = int(ad_width / 100)
+stroke_width_half = int(stroke_width/2)
+cover_mask_path2.rounded_rect(
+    0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
+)
+
 # path = cover_mask_path
 # cover.fill_path(cover_mask_path, gradient_paint)
 
@@ -89,7 +96,7 @@ image.stroke_path(
     cover_mask_path,
     cover_stroke_paint,
     cover_transform,
-    stroke_width=int(ad_width / 100),
+    stroke_width=stroke_width,
 )
 if not framework_only:
     image.draw(cover, cover_transform) # you can choose to discard the cover
@@ -169,7 +176,7 @@ image.stroke_path(
     qrcode_stroke_path,
     cover_stroke_paint,
     qrcode_transform,
-    stroke_width=int(ad_width / 100),
+    stroke_width=stroke_width,
 )
 
 qrcode_mask = pixie.Mask(qrcode_width, qrcode_width)
