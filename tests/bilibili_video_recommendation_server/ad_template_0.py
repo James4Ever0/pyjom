@@ -77,8 +77,15 @@ image.draw(avatar, a_transform)
 
 font2 = pixie.read_font(font_location)
 font2.size=40
-image.fill_text(
+val = image.fill_text(
     font2,up_name, transform=pixie.translate(25+50, 20)
+)
+# print('VAL',val) # NONE
+
+label_text = "UP主"
+
+image.fill_text(
+    font2,label_text, transform=pixie.translate(25+50, 20)
 )
 
 image.write_file("ad_0.png")
