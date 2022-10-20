@@ -90,11 +90,12 @@ image.fill_text(
 ) # where should i put the thing?
 
 paint = pixie.Paint(pixie.SOLID_PAINT)
+paint.
 paint.color = pixie.Color(0, 1, 0, 1)
 
 ctx = image.new_context()
 ctx.fill_style = paint
 ctx.rounded_rect(50, 50, 100, 100, 25, 25, 25, 25)
-# ctx.fill()
+ctx.mask
 
 image.write_file("ad_0.png")
