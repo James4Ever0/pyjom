@@ -21,6 +21,7 @@ bilibili_logo_path = "bilibili_transparent.png"
 
 play_count = comment_count = danmaku_count = "1万"
 stats_text = "{}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
+qrcode_scan_text = "\n".join(list("扫码观看"))
 title_text = "cyberpunk 2077"
 white = pixie.Color(1, 1, 1, 1)
 image = pixie.Image(ad_width, ad_height)
@@ -64,8 +65,11 @@ bilibili_logo_width = int(ad_width * 0.2)
 bilibili_logo_height = int(bilibili_logo_width / bilibili_logo_w2h)
 bilibili_logo = bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
 
+# bilibili_logo_transform = pixie.translate(
+#     cover_transform_width, int(cover_transform_width - (bilibili_logo_height / 4))
+# )
 bilibili_logo_transform = pixie.translate(
-    cover_transform_width, int(cover_transform_width - (bilibili_logo_height / 4))
+    cover_transform_width, 0
 )
 image.draw(bilibili_logo, bilibili_logo_transform)
 
@@ -103,6 +107,14 @@ qrcode_rounded_corner = int(0.05*ad_width)
 qrcode_stroke_path = pixie.Path()
 qrcode_stroke_path.rounded_rect(0,0,qrcode_width,qrcode_height, *([qrcode_rounded_corner]*4))
 image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke_width=int(ad_width / 100))
+
+font = pixie.read_font(font_path)
+font.size = int(ad_width*0.06)
+font.paint.color = pixie.Color(0,0,0,1)
+qrcode_scan_text_transform = pixie.translate(int(ad_width-qrcode_width*1.1-), int(ad_height-qrcode_height*1.1))
+image.fill_text(
+    font,stats_text, transform=stats_transform
+)
 
 
 image.write_file("ad_2.png")
