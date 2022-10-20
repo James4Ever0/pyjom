@@ -25,8 +25,8 @@ img = cv2.imread(export_path)
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # print(img_gray)
 
-rects = cv2.boundingRect(img_gray)
+rect = cv2.boundingRect(img_gray)
 # fuck?
-print(rects)
+print(rect)
 # (10, 13, 130, 21)
 # x,y,w,h?
