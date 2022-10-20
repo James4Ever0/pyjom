@@ -88,7 +88,6 @@ mask4 = pixie.Mask(200,200)
 mask4.fill_path(path4)
 image2 = image.copy()
 image2.mask_draw(mask4) #?
-image.draw(image2)
 
 
 path3 = pixie.Path()
@@ -98,13 +97,15 @@ paint = pixie.Paint(pixie.SOLID_PAINT)
 paint.color = pixie.parse_color("#FC427B")
 transform3 = pixie.translate(25+50+50, 20)
 image.fill_path(path3, paint, transform3)
+image.draw(image2)
 
 label_text = "UP主"
 
 
 font3 = pixie.read_font(font_location)
 font3.size = 30
-font3.paint.color = pixie.Color(1,1,1, 1)
+# font3.paint.color = pixie.Color(1,0,1, 1)
+font3.paint.color =  pixie.parse_color("#FC427B")
 image.fill_text(
     font3, label_text, transform=pixie.translate(25 + 50 + 50, 20)
 )  # where should i put the thing?
