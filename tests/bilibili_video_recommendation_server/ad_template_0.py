@@ -92,13 +92,15 @@ image.fill_text(
 paint = pixie.Paint(pixie.SOLID_PAINT)
 paint.color = pixie.Color(0, 1, 0, 1)
 
-ctx = image.new_context()
+lines = pixie.Image(200, 200)
+ctx = lines.new_context()
 ctx.fill_style = paint
 ctx.rounded_rect(50, 50, 100, 100, 25, 25, 25, 25)
-lines = pixie.Image(200, 200)
 lines.fill(pixie.parse_color("#FC427B"))
 mask3 = pixie.Mask()
-mask3.fill_path()
+path_outline = pixie.Path().rounded_rect(45,45,110,110,25,25,25,25)
+mask3.fill_path(path_outline)
+
 
 ctx.mask_draw(mask3)
 
