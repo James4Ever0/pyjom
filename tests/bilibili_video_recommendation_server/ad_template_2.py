@@ -55,7 +55,17 @@ bilibili_logo_width = int(ad_width*0.2)
 bilibili_logo_height = int(bilibili_logo_width / bilibili_logo_w2h)
 bilibili_logo=bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
 
-bilibili_logo_transform = pixie.translate(cover_transform_width, int(cover_transform_width-(bilibili_logo_height/3)))
+bilibili_logo_transform = pixie.translate(cover_transform_width, int(cover_transform_width-(bilibili_logo_height/4)))
 image.draw(bilibili_logo, bilibili_logo_transform, blend_mode=pixie.COLOR_BURN_BLEND)
+
+# now place the play button.
+
+play_button = pixie.read_image(play_button_path)
+play_button_w2h = getImageW2H(play_button_path)
+play_button_width =play_button_height= int(ad_width*0.2)
+play_button = play_button.resize(play_button_width,play_button_height)
+
+play_button_transform = pixie.translate(cover_transform_width, int(cover
+image.draw(play_button, play_button_transform)
 
 image.write_file("ad_2.png")
