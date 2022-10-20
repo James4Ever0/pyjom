@@ -84,11 +84,11 @@ image.draw(play_button, play_button_transform)
 # place some stats.
 
 font = pixie.read_font(font_path)
-font.size = int(ad_width*0.05)
+font.size = int(ad_width*0.04)
 font.paint.color = pixie.Color(1,1,1,1)
-stats_transform = pixie.translate(cover_transform_width, cover_transform_width+cover_height - font.size)
+stats_transform = pixie.translate(int(cover_transform_width*1.2), cover_transform_width*0.8+cover_height - int(font.size*2))
 image.fill_text(
-    font,stats_text, bounds=pixie.Vector2(180, 180), transform=stats_transform
+    font,stats_text, transform=stats_transform
 )
 
 
