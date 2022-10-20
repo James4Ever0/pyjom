@@ -44,28 +44,38 @@ cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
 
 cover_stroke_paint = pixie.Paint(pixie.SOLID_PAINT)
 cover_stroke_paint.color = pixie.parse_color("#FC427B")
-image.stroke_path(cover_mask_path, cover_stroke_paint,cover_transform,stroke_width=int(ad_width/100))
+image.stroke_path(
+    cover_mask_path,
+    cover_stroke_paint,
+    cover_transform,
+    stroke_width=int(ad_width / 100),
+)
 image.draw(cover, cover_transform)
 
 # now place the bilibili logo.
 
 bilibili_logo = pixie.read_image(bilibili_logo_path)
 bilibili_logo_w2h = getImageW2H(bilibili_logo_path)
-bilibili_logo_width = int(ad_width*0.2)
+bilibili_logo_width = int(ad_width * 0.2)
 bilibili_logo_height = int(bilibili_logo_width / bilibili_logo_w2h)
-bilibili_logo=bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
+bilibili_logo = bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
 
-bilibili_logo_transform = pixie.translate(cover_transform_width, int(cover_transform_width-(bilibili_logo_height/4)))
-image.draw(bilibili_logo, bilibili_logo_transform, blend_mode=pixie.COLOR_BURN_BLEND)
+bilibili_logo_transform = pixie.translate(
+    cover_transform_width, int(cover_transform_width - (bilibili_logo_height / 4))
+)
+image.draw(bilibili_logo, bilibili_logo_transform)
 
 # now place the play button.
 
 play_button = pixie.read_image(play_button_path)
 play_button_w2h = getImageW2H(play_button_path)
-play_button_width =play_button_height= int(ad_width*0.2)
-play_button = play_button.resize(play_button_width,play_button_height)
+play_button_width = play_button_height = int(ad_width * 0.2)
+play_button = play_button.resize(play_button_width, play_button_height)
 
-play_button_transform = pixie.translate(cover_transform_width, int(cover
+play_button_transform = pixie.translate(
+    int(cover_transform_width + cover_width / 2 - play_button_width),
+    int(cover_transform_width + cover_height / 2 - play_button_height),
+)
 image.draw(play_button, play_button_transform)
 
 image.write_file("ad_2.png")
