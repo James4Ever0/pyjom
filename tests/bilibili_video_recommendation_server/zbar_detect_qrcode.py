@@ -36,3 +36,5 @@ inputImage = cv2.imread(image)
 print(detect_qr(inputImage))
 
 # fantastic.
+
+# usually there should be no more than 1 qrcode in image to allow user to scan the code in qq.
