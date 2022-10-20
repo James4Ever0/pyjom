@@ -63,31 +63,29 @@ image.draw(qrcode_image, transform=qrcode_transform)
 avatar_path = "up_image.jpg"
 up_name = "J4D"
 
-avatar_width, avatar_height = 50,50
+avatar_width, avatar_height = 50, 50
 path2 = pixie.Path()
-path2.circle(25,25,25)
+path2.circle(25, 25, 25)
 mask2 = pixie.Mask(avatar_width, avatar_height)
 mask2.fill_path(path2)
 avatar = pixie.read_image(avatar_path)
 avatar = avatar.resize(avatar_width, avatar_height)
 avatar.mask_draw(mask2)
-a_transform=pixie.translate(25,25)
+a_transform = pixie.translate(25, 25)
 image.draw(avatar, a_transform)
 
 
 font2 = pixie.read_font(font_location)
-font2.size=40
-font2.paint.color =  pixie.Color(0, 0.5, 0.953125, 1)
-val = image.fill_text(
-    font2,up_name, transform=pixie.translate(25+50, 20)
-)
+font2.size = 40
+font2.paint.color = pixie.Color(0, 0.5, 0.953125, 1)
+val = image.fill_text(font2, up_name, transform=pixie.translate(25 + 50, 20))
 # print('VAL',val) # NONE
 
 label_text = "UP主"
 
 image.fill_text(
-    font2,label_text, transform=pixie.translate(25+50+50, 20)
-) # where should i put the thing?
+    font2, label_text, transform=pixie.translate(25 + 50 + 50, 20)
+)  # where should i put the thing?
 
 paint = pixie.Paint(pixie.SOLID_PAINT)
 paint.color = pixie.Color(0, 1, 0, 1)
@@ -95,13 +93,15 @@ paint.color = pixie.Color(0, 1, 0, 1)
 lines = pixie.Image(200, 200)
 ctx = lines.new_context()
 ctx.fill_style = paint
-ctx.rounded_rect(50, 50, 100, 100, 25, 25, 25, 25)
+ctx.rounded_rect(45, 45, 110, 110, 25, 25, 25, 25)
+
 lines.fill(pixie.parse_color("#FC427B"))
-mask3 = pixie.Mask(200,200)
+mask3 = pixie.Mask(200, 200)
 path3 = pixie.Path()
-path_outline = path3.rounded_rect(45,45,110,110,25,25,25,25)
-mask3.fill_path(path_outline)
+path3.rounded_rect(50, 50, 100, 100, 25, 25, 25, 25)
+mask3.fill_path(path3)
 
 lines.mask_draw(mask3)
+image.draw(lines)
 
 image.write_file("ad_0.png")
