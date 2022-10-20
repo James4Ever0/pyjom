@@ -17,9 +17,9 @@ content = "观看视频:\n{}\n{}".format(link, title_text)
 
 import base64
 
-picture_path = "ad_2_standalone_cover.png"
+picture_path = "anime.gif"
 with open(picture_path, "rb") as img_file:
     b64_string = base64.b64encode(img_file.read())
 # print(b64_string)
-result = action.sendGroupPic(group=group, picBase64Buf=b64_string.decode("utf-8"))
+result = action.sendGroupPic(group=group, picBase64Buf=b64_string.decode("utf-8"), content=content)
 print(result)
