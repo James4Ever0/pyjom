@@ -71,7 +71,7 @@ bilibili_logo = bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
 bilibili_logo_transform = pixie.translate(
     cover_transform_width, 0
 )
-image.draw(bilibili_logo, bilibili_logo_transform)
+# image.draw(bilibili_logo, bilibili_logo_transform)
 
 # now place the play button.
 
@@ -84,7 +84,7 @@ play_button_transform = pixie.translate(
     int(cover_transform_width + (cover_width - play_button_width) / 2),
     int(cover_transform_width + (cover_height - play_button_height) / 2),
 )
-image.draw(play_button, play_button_transform)
+# image.draw(play_button, play_button_transform)
 
 # place some stats.
 
@@ -105,13 +105,13 @@ qrcode = qrcode.resize(qrcode_width, qrcode_height)
 font = pixie.read_font(font_path)
 font.size = int(ad_width*0.06)
 font.paint.color = pixie.Color(0,0,0,1)
-qrcode_scan_text_transform_x = int(ad_width-qrcode_width*1.1-font.size*1.2)
+qrcode_scan_text_transform_x = int(ad_width-qrcode_width*1.1-font.size*1)
 qrcode_scan_text_transform = pixie.translate(qrcode_scan_text_transform_x+qrcode_width, int(ad_height-qrcode_height*1.1))
 image.fill_text(
     font,qrcode_scan_text, transform=qrcode_scan_text_transform
 )
 
-qrcode_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font), int(ad_height-qrcode_height*1.1))
+qrcode_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font.size*1.2), int(ad_height-qrcode_height*1.1))
 image.draw(qrcode, qrcode_transform)
 
 qrcode_rounded_corner = int(0.05*ad_width)
