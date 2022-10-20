@@ -22,7 +22,8 @@ play_button_path = "play_white_b.png"
 bilibili_logo_path = "bili_white_b_cropped.png"
 
 play_count = comment_count = danmaku_count = "1万"
-stats_text = "{}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
+# one extra space.
+stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
 qrcode_scan_text = "\n"+"\n".join(list("扫码观看"))
 title_text = "真·朋克！揭秘《赛博朋克2077》屏幕之外的魔幻换弹操作"
 white = pixie.Color(1, 1, 1, 1)
