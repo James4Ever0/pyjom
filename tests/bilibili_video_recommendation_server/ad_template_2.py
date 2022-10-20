@@ -14,6 +14,7 @@ def getImageW2H(image_path):
 
 ad_width, ad_height = 1000, 1000
 font_path = "./wqy-microhei0.ttf"
+font_bold_path = "./wqy-microhei1.ttf"
 cover_path = "sample_cover.jpg"
 qrcode_path = "MyQRCode1.png"
 play_button_path = "play_b.png"
@@ -123,7 +124,7 @@ image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke
 
 # now for the title
 
-font = pixie.read_font(font_path)
+font = pixie.read_font(font_bold_path)
 font.size = int(ad_width*0.06)
 font.paint.color = pixie.parse_color("#4F4F4F")
 # use some gray text.
