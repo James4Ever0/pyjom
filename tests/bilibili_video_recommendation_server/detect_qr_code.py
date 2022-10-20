@@ -1,7 +1,10 @@
 # image = "test_image_with_qr_code.png"
 # fail to obtain the qrcode.
 # but we might want use our original qrcode.
+# image = "output_qrcode2.png"
 image = "MyQRCode1.png"
+# shit! for picture with 2 qrcodes it fails to detect.
+# bbox return None
 
 from lazero.utils.importers import cv2_custom_build_init
 
