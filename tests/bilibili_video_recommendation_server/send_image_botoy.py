@@ -7,4 +7,4 @@ port = 8784
 action = Action(qq=qq, port=port, host="127.0.0.1")
 user = 1281727431
 
-action.sendGroupPic(group=)
+action.sendFriendPic(user=user, picUrl="",content = content)
