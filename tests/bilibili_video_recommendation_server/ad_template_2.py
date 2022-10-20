@@ -31,6 +31,7 @@ title_text = "真·朋克！揭秘《赛博朋克2077》屏幕之外的魔幻换
 white = pixie.Color(1, 1, 1, 1)
 black = pixie.Color(0, 0, 0, 1)
 image = pixie.Image(ad_width, ad_height)
+
 # we are creating this, not replacing qr code.
 if not framework_only:
     if night_mode:
@@ -38,6 +39,8 @@ if not framework_only:
         # irreversible!
     else:
         image.fill(white)
+else:
+    image2 = image.copy()
 
 # place the cover.
 cover_w2h = getImageW2H(cover_path)
