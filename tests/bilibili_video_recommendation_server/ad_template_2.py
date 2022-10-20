@@ -11,6 +11,7 @@ def getImageW2H(image_path):
     w2h = width / height
     return w2h
 
+
 night_mode = True
 ad_width, ad_height = 1000, 1000
 font_path = "./wqy-microhei0.ttf"
@@ -24,10 +25,10 @@ bilibili_logo_path = "bili_white_b_cropped.png"
 play_count = comment_count = danmaku_count = "1万"
 # one extra space.
 stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
-qrcode_scan_text = "\n"+"\n".join(list("扫码观看"))
+qrcode_scan_text = "\n" + "\n".join(list("扫码观看"))
 title_text = "真·朋克！揭秘《赛博朋克2077》屏幕之外的魔幻换弹操作"
 white = pixie.Color(1, 1, 1, 1)
-black = pixie.Color(0,0,0, 1)
+black = pixie.Color(0, 0, 0, 1)
 image = pixie.Image(ad_width, ad_height)
 # we are creating this, not replacing qr code.
 if night_mode:
@@ -47,7 +48,7 @@ cover = cover.resize(cover_width, cover_height)
 
 paint = pixie.Paint(pixie.LINEAR_GRADIENT_PAINT)
 
-paint.gradient_handle_positions.append(pixie.Vector2(100,int(cover_height)*0.8))
+paint.gradient_handle_positions.append(pixie.Vector2(100, int(cover_height) * 0.8))
 paint.gradient_handle_positions.append(pixie.Vector2(100, cover_height))
 
 paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0), 0))
@@ -59,7 +60,6 @@ cover_mask_path.rounded_rect(
 )
 path = cover_mask_path
 cover.fill_path(path, paint)
-
 
 
 cover_mask = pixie.Mask(cover_width, cover_height)
@@ -90,7 +90,8 @@ bilibili_logo_height = int(bilibili_logo_width / bilibili_logo_w2h)
 bilibili_logo = bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
 
 bilibili_logo_transform = pixie.translate(
-    cover_transform_width+int(bilibili_logo_height/8), int(cover_transform_width +(bilibili_logo_height/4))
+    cover_transform_width + int(bilibili_logo_height / 8),
+    int(cover_transform_width + (bilibili_logo_height / 4)),
 )
 # bilibili_logo_transform = pixie.translate(
 #     cover_transform_width, 0
@@ -113,38 +114,49 @@ image.draw(play_button, play_button_transform)
 # place some stats.
 
 font = pixie.read_font(font_path)
-font.size = int(ad_width*0.04)
-font.paint.color = pixie.Color(1,1,1,1)
-stats_transform = pixie.translate(int(cover_transform_width*1.3), cover_transform_width+cover_height - int(font.size*2))
-image.fill_text(
-    font,stats_text, transform=stats_transform
+font.size = int(ad_width * 0.04)
+font.paint.color = pixie.Color(1, 1, 1, 1)
+stats_transform = pixie.translate(
+    int(cover_transform_width * 1.3),
+    cover_transform_width + cover_height - int(font.size * 2),
 )
+image.fill_text(font, stats_text, transform=stats_transform)
 
 # place the qrcode.
 qrcode = pixie.read_image(qrcode_path)
-qrcode_width = qrcode_height = int(0.3*ad_width)
+qrcode_width = qrcode_height = int(0.3 * ad_width)
 qrcode = qrcode.resize(qrcode_width, qrcode_height)
 
 
 font = pixie.read_font(font_path)
-font.size = int(ad_width*0.04)
+font.size = int(ad_width * 0.04)
 if night_mode:
-    font.paint.color = pixie.Color(1,1,1,1)
+    font.paint.color = pixie.Color(1, 1, 1, 1)
 else:
-    font.paint.color = pixie.Color(0,0,0,1)
-qrcode_scan_text_transform_x = int(ad_width-qrcode_width*1.1-font.size*1)
-qrcode_scan_text_transform = pixie.translate(qrcode_scan_text_transform_x+qrcode_width, int(ad_height-qrcode_height*1.1))
-image.fill_text(
-    font,qrcode_scan_text, transform=qrcode_scan_text_transform
+    font.paint.color = pixie.Color(0, 0, 0, 1)
+qrcode_scan_text_transform_x = int(ad_width - qrcode_width * 1.1 - font.size * 1)
+qrcode_scan_text_transform = pixie.translate(
+    qrcode_scan_text_transform_x + qrcode_width, int(ad_height - qrcode_height * 1.1)
+)
+image.fill_text(font, qrcode_scan_text, transform=qrcode_scan_text_transform)
+
+qrcode_transform = pixie.translate(
+    int(ad_width - qrcode_width * 1.1 - font.size * 1.2),
+    int(ad_height - qrcode_height * 1.1),
 )
 
-qrcode_transform = pixie.translate(int(ad_width-qrcode_width*1.1-font.size*1.2), int(ad_height-qrcode_height*1.1))
 
-
-qrcode_rounded_corner = int(0.05*ad_width)
+qrcode_rounded_corner = int(0.05 * ad_width)
 qrcode_stroke_path = pixie.Path()
-qrcode_stroke_path.rounded_rect(0,0,qrcode_width,qrcode_height, *([qrcode_rounded_corner]*4))
-image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke_width=int(ad_width / 100))
+qrcode_stroke_path.rounded_rect(
+    0, 0, qrcode_width, qrcode_height, *([qrcode_rounded_corner] * 4)
+)
+image.stroke_path(
+    qrcode_stroke_path,
+    cover_stroke_paint,
+    qrcode_transform,
+    stroke_width=int(ad_width / 100),
+)
 
 qrcode_mask = pixie.Mask(qrcode_width, qrcode_width)
 qrcode_mask.fill_path(qrcode_stroke_path)
@@ -153,12 +165,10 @@ qrcode.mask_draw(qrcode_mask)
 image.draw(qrcode, qrcode_transform)
 
 
-
-
 # now for the title
 
 font = pixie.read_font(font_bold_path)
-font.size = int(ad_width*0.06)
+font.size = int(ad_width * 0.06)
 if night_mode:
     font.paint.color = pixie.parse_color("#B0B0B0")
 else:
@@ -167,13 +177,21 @@ else:
 # font.paint.color = pixie.parse_color("#4F42B5")
 # font.paint.color = pixie.parse_color("#FC427B")
 # font.paint.color = pixie.Color(0,0,0,1)
-title_text_transform = pixie.translate(int(font.size*0.8), int(ad_height-qrcode_height*1.1))
-title_text_bounds = pixie.Vector2(int(qrcode_scan_text_transform_x -font.size*1.1),int(qrcode_height))
-image.fill_text(
-    font,title_text, bounds = title_text_bounds,transform=title_text_transform
+title_text_transform = pixie.translate(
+    int(font.size * 0.8), int(ad_height - qrcode_height * 1.1)
 )
-delta = int(cover_width*0.02)
-standalone_cover_image = image.sub_image(cover_transform_width-delta, cover_transform_height-delta,cover_width+2*delta,cover_height+2*delta)
+title_text_bounds = pixie.Vector2(
+    int(qrcode_scan_text_transform_x - font.size * 1.1), int(qrcode_height)
+)
+image.fill_text(
+    font, title_text, bounds=title_text_bounds, transform=title_text_transform
+)
+delta = int(cover_width * 0.02)
+standalone_cover_image = image.sub_image(
+    cover_transform_width - delta,
+    cover_transform_height - delta,
+    cover_width + 2 * delta,
+    cover_height + 2 * delta,
+)
 standalone_cover_image.write_file("ad_2_standalone_cover.png")
 image.write_file("ad_2.png")
-
