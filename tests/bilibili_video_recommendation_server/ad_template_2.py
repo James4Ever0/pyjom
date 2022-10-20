@@ -22,7 +22,7 @@ bilibili_logo_path = "bilibili_transparent.png"
 play_count = comment_count = danmaku_count = "1万"
 stats_text = "{}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
 qrcode_scan_text = "\n".join(list("扫码观看"))
-title_text = "cyberpunk 2077"
+title_text = "战象在我大明的火炮前不堪一击！【帝国时代4】"
 white = pixie.Color(1, 1, 1, 1)
 image = pixie.Image(ad_width, ad_height)
 # we are creating this, not replacing qr code.
@@ -121,7 +121,7 @@ image.fill_text(
 
 font = pixie.read_font(font_path)
 font.size = int(ad_width*0.06)
-font.paint.color = pixie.Color(0.2,0.8,0.5,1)
+font.paint.color = pixie.Color(0,0,0,1)
 title_text_transform = pixie.translate(int(font.size*1.2), int(ad_height-qrcode_height*1.1))
 title_text_bounds = pixie.Vector2(int(qrcode_scan_text_transform_x -font.size*1.1),int(qrcode_height))
 image.fill_text(
