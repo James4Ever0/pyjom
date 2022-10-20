@@ -6,7 +6,8 @@ import cv2
 
 
 def getImageW2H(image_path):
-    height, width, _ = cv2.imread(image_path)
+    image = cv2.imread(image_path)
+    height, width = image.shape[:2]
     w2h = width / height
     return w2h
 
@@ -24,7 +25,7 @@ image.fill(white)
 
 # place the cover.
 cover_w2h = getImageW2H(cover_path)
-cover_width = int(ad_width * 0.8)
+cover_width = int(ad_width * 0.9)
 cover_height = int(cover_width / cover_w2h)
 cover_round_corner_radius = int(ad_width * 0.05)
 cover = pixie.read_image(cover_path)
@@ -37,10 +38,18 @@ cover_mask_path.rounded_rect(
 cover_mask.fill_path(cover_mask_path)
 cover.mask_draw(cover_mask)
 
-image.draw(cover)
 
 cover_transform_width = cover_transform_height =int((ad_width- cover_width)/2)
 cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
-image.draw(cover, )
+
+cover_shadow = cover.shadow(
+    offset = pixie.Vector2(2, 2),
+    spread = 2,
+    blur = 10,
+    color = pixie.Color(0, 0, 0, 0.78125)
+)
+
+image.draw(cover_shadow)
+image.draw(cover, cover_transform)
 
 image.write_file("ad_2.png")
