@@ -13,7 +13,8 @@ def getImageW2H(image_path):
 
 
 night_mode = True
-framework_only=True
+framework_only = False
+# framework_only=True
 ad_width, ad_height = 1000, 1000
 font_path = "./wqy-microhei0.ttf"
 font_bold_path = "./wqy-microhei1.ttf"
@@ -40,7 +41,7 @@ if not framework_only:
     else:
         image.fill(white)
 else:
-    image2 = image.copy() # as mask.
+    image2 = image.copy()  # as mask.
 
 # place the cover.
 cover_w2h = getImageW2H(cover_path)
@@ -53,7 +54,9 @@ cover = cover.resize(cover_width, cover_height)
 
 gradient_paint = pixie.Paint(pixie.LINEAR_GRADIENT_PAINT)
 
-gradient_paint.gradient_handle_positions.append(pixie.Vector2(100, int(cover_height) * 0.8))
+gradient_paint.gradient_handle_positions.append(
+    pixie.Vector2(100, int(cover_height) * 0.8)
+)
 gradient_paint.gradient_handle_positions.append(pixie.Vector2(100, cover_height))
 
 gradient_paint.gradient_stops.append(pixie.ColorStop(pixie.Color(0, 0, 0, 0), 0))
@@ -63,14 +66,18 @@ cover_mask_path = pixie.Path()
 cover_mask_path.rounded_rect(
     0, 0, cover_width, cover_height, *([cover_round_corner_radius] * 4)
 )
-stroke_param=100
+stroke_param = 100
 stroke_width = int(ad_width / stroke_param)
-stroke_width_half = int(ad_width / stroke_param/2)
+stroke_width_half = int(ad_width / stroke_param / 2)
 cover_mask_path2 = pixie.Path()
-cover_round_corner_radius2 = int(cover_round_corner_radius*0.85)
+cover_round_corner_radius2 = int(cover_round_corner_radius * 0.85)
 
 cover_mask_path2.rounded_rect(
-    stroke_width_half, stroke_width_half, cover_width-stroke_width, cover_height-stroke_width, *([cover_round_corner_radius2] * 4)
+    stroke_width_half,
+    stroke_width_half,
+    cover_width - stroke_width,
+    cover_height - stroke_width,
+    *([cover_round_corner_radius2] * 4)
 )
 
 # path = cover_mask_path
@@ -92,7 +99,7 @@ if framework_only:
 
     image2_paint = pixie.Paint(pixie.SOLID_PAINT)
     image2_paint.color = white
-    image2.fill_path(cover_mask_path,image2_paint,cover_transform)
+    image2.fill_path(cover_mask_path, image2_paint, cover_transform)
 
 cover_stroke_paint = pixie.Paint(pixie.SOLID_PAINT)
 cover_stroke_paint.color = pixie.parse_color("#FC427B")
@@ -103,7 +110,7 @@ image.stroke_path(
     stroke_width=stroke_width,
 )
 if not framework_only:
-    image.draw(cover, cover_transform) # you can choose to discard the cover
+    image.draw(cover, cover_transform)  # you can choose to discard the cover
 image.fill_path(cover_mask_path2, gradient_paint, cover_transform)
 
 # now place the bilibili logo.
@@ -216,9 +223,9 @@ sub_image_params = (
     cover_transform_width - delta,
     cover_transform_height - delta,
     cover_width + 2 * delta,
-    cover_height + 2 * delta,)
-standalone_cover_image = image.sub_image(*sub_image_params
+    cover_height + 2 * delta,
 )
+standalone_cover_image = image.sub_image(*sub_image_params)
 standalone_cover_image.write_file("ad_2_standalone_cover.png")
 image.write_file("ad_2.png")
 if framework_only:
