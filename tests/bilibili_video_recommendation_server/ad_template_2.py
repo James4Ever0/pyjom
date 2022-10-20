@@ -32,11 +32,12 @@ white = pixie.Color(1, 1, 1, 1)
 black = pixie.Color(0, 0, 0, 1)
 image = pixie.Image(ad_width, ad_height)
 # we are creating this, not replacing qr code.
-if night_mode:
-    image.fill(black)
-    # irreversible!
-else:
-    image.fill(white)
+if not framework_only:
+    if night_mode:
+        image.fill(black)
+        # irreversible!
+    else:
+        image.fill(white)
 
 # place the cover.
 cover_w2h = getImageW2H(cover_path)
@@ -80,7 +81,8 @@ image.stroke_path(
     cover_transform,
     stroke_width=int(ad_width / 100),
 )
-image.draw(cover, cover_transform) # you can choose to discard the cover
+if not framework_only:
+    image.draw(cover, cover_transform) # you can choose to discard the cover
 image.fill_path(cover_mask_path, gradient_paint, cover_transform)
 
 # now place the bilibili logo.
