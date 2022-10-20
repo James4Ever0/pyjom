@@ -62,4 +62,8 @@ image.write_file("ad_0.png")
 
 
 avatar_path = "up_image.png"
-up_name = "j4deutschland"
+up_name = "J4D"
+
+avatar_width, avatar_height = 50,50
+path2 = pixie.Path()
+path2.circle(25,25,25)
