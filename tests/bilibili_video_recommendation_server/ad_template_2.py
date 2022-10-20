@@ -79,7 +79,7 @@ cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
 
 if framework_only:
     image2_paint = pixie.Paint(pixie.SOLID_PAINT)
-    image2_paint.color = white
+    image2_paint.color = black
     image2.fill_path(cover_mask_path,image2_paint,cover_transform)
 
 cover_stroke_paint = pixie.Paint(pixie.SOLID_PAINT)
