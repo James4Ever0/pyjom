@@ -99,8 +99,10 @@ qrcode = qrcode.resize(qrcode_width, qrcode_height)
 qrcode_transform = pixie.translate(ad_width-qrcode_width, ad_height-qrcode_height)
 image.draw(qrcode, qrcode_transform)
 
+qrcode_rounded_corner = int(0.05*ad_width)
 qrcode_stroke_path = pixie.Path()
-qrcode_stroke_path.rounded_rect(0,0,qrcode_width,qrcode_height, )
+qrcode_stroke_path.rounded_rect(0,0,qrcode_width,qrcode_height, *([qrcode_rounded_corner]*4))
+image.stroke_path(qrcode_stroke_path,cover_stroke_paint, qrcode_transform,stroke_width=int(ad_width / 100))
 
 
 image.write_file("ad_2.png")
