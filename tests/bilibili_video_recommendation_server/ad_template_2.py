@@ -17,7 +17,7 @@ font_path = "./wqy-microhei0.ttf"
 cover_path = "sample_cover.jpg"
 qrcode_path = "MyQRCode1.png"
 play_button_path = "play_button.png"
-bilibili_logo_path = "bilibili.png"
+bilibili_logo_path = "bilibili_transparent.png"
 white = pixie.Color(1, 1, 1, 1)
 image = pixie.Image(ad_width, ad_height)
 # we are creating this, not replacing qr code.
@@ -50,7 +50,11 @@ image.draw(cover, cover_transform)
 # now place the bilibili logo.
 
 bilibili_logo = pixie.read_image(bilibili_logo_path)
-bilibili_logo_w2h = 
-bilibili_logo_width = 
+bilibili_logo_w2h = getImageW2H(bilibili_logo_path)
+bilibili_logo_width = int(ad_width*0.2)
+bilibili_logo_height = int(bilibili_logo_width / bilibili_logo_w2h)
+bilibili_logo=bilibili_logo.resize(bilibili_logo_width, bilibili_logo_height)
+
+image.draw(bilibili_logo, cover_transform, blend_mode=)
 
 image.write_file("ad_2.png")
