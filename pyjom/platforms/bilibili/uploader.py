@@ -205,8 +205,14 @@ def videoMultithreadUploader(
             """上传图片并获取图片链接"""
             if not os.path.isfile(image_path):
                 return ""
-            fp = open(image_path, "rb")
+            import tempfile
+            import cv2
+            with tempfile.NamedTemporaryFile(suffix='.jpg') as f:
+                
+
+            fp = open(jpeg_image_path, "rb")
             encode_data = base64.b64encode(fp.read())
+            # warning. forced to use jpeg.
             url = "https://member.bilibili.com/x/vu/web/cover/up"
             data = {
                 "cover": b"data:image/jpeg;base64," + encode_data,
