@@ -82,16 +82,21 @@ val = image.fill_text(font2, up_name, transform=pixie.translate(25 + 50, 20))
 # print('VAL',val) # NONE
 
 path3 = pixie.Path()
-path3.rounded_rect(0,0,50,50,10,10,10,10)
+path3.rounded_rect(0,0,100,50,10,10,10,10)
 
 paint = pixie.Paint(pixie.SOLID_PAINT)
 paint.color = pixie.parse_color("#FC427B")
-image.fill_path(path3, paint)
+transform3 = pixie.translate(25+50+50, 20)
+image.fill_path(path3, paint, transform3)
 
 label_text = "UP主"
 
+
+font3 = pixie.read_font(font_location)
+font3.size = 30
+font3.paint.color = pixie.Color(1,1,1, 1)
 image.fill_text(
-    font2, label_text, transform=pixie.translate(25 + 50 + 50, 20)
+    font3, label_text, transform=pixie.translate(25 + 50 + 50, 20)
 )  # where should i put the thing?
 
 
