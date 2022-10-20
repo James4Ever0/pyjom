@@ -176,4 +176,4 @@ image.fill_text(
 image.write_file("ad_2.png")
 
 
-standalone_cover_image = 
+standalone_cover_image = image
