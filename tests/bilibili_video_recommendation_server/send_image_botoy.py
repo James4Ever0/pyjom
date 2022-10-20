@@ -2,7 +2,8 @@
 
 
 # this method might fail to behave correctly.
-# maybe we need to upload the 
+# maybe we need to upload the image and get url? no thanks?
+# we use jpg instead? must use cv2.
 from botoy import Action
 
 qq = 917521610
