@@ -28,6 +28,7 @@ list_trainer.train([
 question = '你好'
 print(question)
 response = Chinese_bot.get_response(question)
+Chinese_bot.gene
 print(response)
 
 # question: will this chatbot get infinitely large so we have to train another one?
