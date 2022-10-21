@@ -47,6 +47,7 @@ list_trainer.train(trainset_0)
 
 
 # 测试一下
+
 question = "你好"
 print(question)
 response = Chinese_bot.get_response(question)
