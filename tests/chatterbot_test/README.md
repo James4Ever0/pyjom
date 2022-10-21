@@ -1,1 +1,3 @@
-this library needs to be trained. also we need to 
+this library needs to be trained. also we need to replace this with the original 'levenshtein' based repeater bot.
+
+warning: chatterbot use spacy. it may leads to OOM. better reserve its use for now. maybe the sentence bert based vector search is better than chatterbot.
