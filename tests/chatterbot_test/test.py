@@ -11,6 +11,7 @@ from chatterbot.trainers import ListTrainer
 
 Chinese_bot = ChatBot("Training demo")
 # already trained on these shits.
+# these shits are not needed for our bot.
 # from chatterbot.trainers import ChatterBotCorpusTrainer
 # Create a new trainer for the chatbot
 # trainer = ChatterBotCorpusTrainer(Chinese_bot)
