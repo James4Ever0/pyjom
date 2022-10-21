@@ -2,7 +2,9 @@
 import os
 
 # we use md5 to represent the image.
-if os.path.exists()
+db_path = 'db.sqlite3'
+if os.path.exists(db_path):
+    os.remove(db_path)
 #手动设置一些语料
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
@@ -22,6 +24,10 @@ trainset_0 = [
     '想买数据科学的课程',
     '具体是数据科学哪块呢？'
     '机器学习',
+]
+
+trainset_1 = [
+    '[speaker:{}]'.format(speakers)
 ]
 list_trainer.train(trainset_0)
 
