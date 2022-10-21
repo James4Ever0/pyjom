@@ -26,8 +26,14 @@ trainset_0 = [
     '机器学习',
 ]
 
+import random
+speakers = ['asoul','猫猫','小狗']
+import uuid
+images = [str(uuid.uuid4()) for _ in range(4)]
+embeddings = ['猫咪','绝对领域','涩图']
+r = lambda 
 trainset_1 = [
-    '[speaker:{}]'.format(speakers)
+    '[[speaker]{}][[image]{}[embedding]{}]]'.format(speakers, images, embeddings)
 ]
 list_trainer.train(trainset_0)
 
