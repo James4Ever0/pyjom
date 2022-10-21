@@ -21,6 +21,8 @@ list_trainer.train([
     '机器学习',
 ])
 
+# test if the bot will say what i have taught it before.
+
 
 #` 测试一下
 question = '你好'
