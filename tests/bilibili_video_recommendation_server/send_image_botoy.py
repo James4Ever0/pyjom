@@ -3,6 +3,9 @@
 # this method might fail to behave correctly.
 # maybe we need to upload the image and get url? no thanks?
 # we use jpg instead? must use cv2.
+
+# 暂时用不到转发消息的功能
+
 from botoy import Action
 
 qq = 917521610
