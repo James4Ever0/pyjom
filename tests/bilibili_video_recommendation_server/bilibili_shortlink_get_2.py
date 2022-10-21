@@ -9,7 +9,8 @@ url = "https://api.bilibili.com/x/share/click"
 # burl="https://www.bilibili.com/video/BV1Wv41157Wz"
 # burl = "https://www.bilibili.com/v/pay/charge?upmid=85300402&upurl=%2F%2Fspace.bilibili.com%2F85300402&upname=J4D&upavatar=https%3A%2F%2Fi1.hdslb.com%2Fbfs%2Fface%2F73f1323696c857eb5f47f4a8bd03c1115a056af1.jpg&oid=85300402&otype=up&from=zone"
 # only from 
-burl = "https://space.bilibili.com/85300402"
+# burl = "https://space.bilibili.com/85300402" # my space.
+burl = "https://www.bilibili.com/read/cv19232041" # my article with e-begging
 data = {
     "build": 6700300,
         "buvid": 0,
