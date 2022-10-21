@@ -35,7 +35,7 @@ embeddings = ["猫咪", "绝对领域", "涩图"]
 r = lambda mlist: random.choice(mlist)
 contents = ['今天倒了血霉了',"买兴业银行","和家里借钱"]
 trainset_1 = [
-    "[[speaker]{}]{}[[image]{}[embedding]{}]".format(
+    "[[speaker]{}][[image]{}[embedding]{}]{}".format(
         r(speakers), r(contents),r(images), r(embeddings)
     )
     for _ in range(20)
