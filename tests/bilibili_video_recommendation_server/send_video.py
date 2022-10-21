@@ -19,7 +19,7 @@ video_path = "big_breast_video.mp4"
 video_abspath = os.path.abspath(video_path)
 content = "file://"+video_abspath
 
-message = "[CQ:video,file={}]".format(content) 
+message = "[CQ:video,file={}]".format(content)
 data = {"group_id": group, "message": message, "auto_escape": False}
 r = requests.post(url, data=data)
 print(r.json())
