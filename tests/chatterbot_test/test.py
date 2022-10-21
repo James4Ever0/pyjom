@@ -24,7 +24,7 @@ list_trainer.train([
 # test if the bot will say what i have taught it before.
 
 
-#` 测试一下
+# 测试一下
 question = '你好'
 print(question)
 response = Chinese_bot.get_response(question)
