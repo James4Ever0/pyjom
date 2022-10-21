@@ -9,7 +9,6 @@ from pyjom.platforms.bilibili.utils import bilibiliSync
 # recall the order of applying decorators
 # WTF is the order?
 
-
 @bilibiliSync
 async def asyncVideoUploader(
     videoPath, title, description, meta, credential, cover_path
