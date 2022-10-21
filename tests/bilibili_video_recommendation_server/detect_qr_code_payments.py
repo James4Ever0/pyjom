@@ -4,6 +4,13 @@
 # image = "output_qrcode2.png"
 images=['alipay_payment_code.png','wechat_payment_code.jpg']
 
+
+# qrcodes:
+# https://qr.alipay.com/tsx10243tdewwaxrvullge8
+# wxp://f2f0V92qUQI0aBO5PXtWezujxMm-C1KFub6qCi1Obt3cn1KjZqDPqoWKn8ICCcwdt8zU
+
+# they are both long urls. which one is effective in qq?
+
 from lazero.utils.importers import cv2_custom_build_init
 
 from PIL import Image
@@ -40,5 +47,6 @@ for image in images:
 # shit! for picture with 2 qrcodes it fails to detect.
 # bbox return None
     img = cv2.imread(image)
-    detect_qr(img)
+    result=detect_qr(img)
+    print("RESULT:", result)
     print("_"*20)
