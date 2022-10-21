@@ -1,6 +1,9 @@
 #!/usr/bin/python
 import os
 
+# looks like the only option we have is to forget the dialog in the past and retrain.
+# there is no native 'forget' option.
+
 # we use md5 to represent the image.
 db_path = "db.sqlite3"
 if os.path.exists(db_path):
