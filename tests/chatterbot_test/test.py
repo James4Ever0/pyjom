@@ -3,11 +3,15 @@
 #手动设置一些语料
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
- 
- 
+
 Chinese_bot = ChatBot("Training demo")
-Chinese_bot.set_trainer(ListTrainer)
-Chinese_bot.train([
+from chatterbot.trainers import ChatterBotCorpusTrainer
+# Create a new trainer for the chatbot
+trainer = ChatterBotCorpusTrainer(Chinese_bot)
+trainer.train("chatterbot.corpus.chinese")
+trainer.train("chatterbot.corpus.english")
+list_trainer = ListTrainer(Chinese_bot)
+list_trainer.train([
     '你好',
     '你好',
     '有什么能帮你的？',
@@ -15,7 +19,8 @@ Chinese_bot.train([
     '具体是数据科学哪块呢？'
     '机器学习',
 ])
- 
+
+
 #` 测试一下
 question = '你好'
 print(question)
