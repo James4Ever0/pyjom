@@ -30,6 +30,8 @@ print(question)
 response = Chinese_bot.get_response(question)
 print(response)
 
+# question: will this chatbot get infinitely large so we have to train another one?
+
 print("\n")
 
 question = '请问哪里能买数据科学的课程'
