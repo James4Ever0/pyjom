@@ -5,11 +5,12 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
 Chinese_bot = ChatBot("Training demo")
-from chatterbot.trainers import ChatterBotCorpusTrainer
+# already trained on these shits.
+# from chatterbot.trainers import ChatterBotCorpusTrainer
 # Create a new trainer for the chatbot
-trainer = ChatterBotCorpusTrainer(Chinese_bot)
-trainer.train("chatterbot.corpus.chinese")
-trainer.train("chatterbot.corpus.english")
+# trainer = ChatterBotCorpusTrainer(Chinese_bot)
+# trainer.train("chatterbot.corpus.chinese")
+# trainer.train("chatterbot.corpus.english")
 list_trainer = ListTrainer(Chinese_bot)
 list_trainer.train([
     '你好',
@@ -33,3 +34,7 @@ question = '请问哪里能买数据科学的课程'
 print(question)
 response = Chinese_bot.get_response(question)
 print(response)
+while True:
+    question = input("> ")
+    response = Chinese_bot.get_response(question)
+    print(response)
