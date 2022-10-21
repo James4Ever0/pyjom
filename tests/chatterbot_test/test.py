@@ -34,8 +34,8 @@ images = [str(uuid.uuid4()) for _ in range(4)]
 embeddings = ["猫咪", "绝对领域", "涩图"]
 r = lambda mlist: random.choice(mlist)
 contents = ['今天倒了血霉了',"买兴业银行","和家里借钱"]
-trainset_1 = [
-    "[[speaker] {} ] [[image]{}[embedding] {} ] {}".format(
+trainset_1 = [ # make sure our names/embeddings/hashes are wrapped in spaces.
+    "[[speaker] {} ] [[image] {} [embedding] {} ] {}".format(
         r(speakers),r(images), r(embeddings),r(contents)
     )
     for _ in range(20)
