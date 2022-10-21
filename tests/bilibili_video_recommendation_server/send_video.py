@@ -3,6 +3,7 @@
 # repostVideo2Friend	转发视频给好友
 # getVideoURL	获取短视频链接
 
+
 # cqhttp can post video.
 # https://docs.go-cqhttp.org/cqcode/#%E7%9F%AD%E8%A7%86%E9%A2%91
 

@@ -35,3 +35,4 @@ with open(picture_path, "rb") as img_file:
 result = action.sendFriendPic(
     user=user, picBase64Buf=b64_string.decode("utf-8")
 )  # better without content.
+
