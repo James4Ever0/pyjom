@@ -1,5 +1,8 @@
 #!/usr/bin/python
+import os
 
+# we use md5 to represent the image.
+if os.path.exists()
 #手动设置一些语料
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
@@ -12,14 +15,15 @@ Chinese_bot = ChatBot("Training demo")
 # trainer.train("chatterbot.corpus.chinese")
 # trainer.train("chatterbot.corpus.english")
 list_trainer = ListTrainer(Chinese_bot)
-list_trainer.train([
+trainset_0 = [
     '你好',
     '你好',
     '有什么能帮你的？',
     '想买数据科学的课程',
     '具体是数据科学哪块呢？'
     '机器学习',
-])
+]
+list_trainer.train(trainset_0)
 
 # test if the bot will say what i have taught it before.
 
@@ -28,7 +32,7 @@ list_trainer.train([
 question = '你好'
 print(question)
 response = Chinese_bot.get_response(question)
-Chinese_bot.gene
+
 print(response)
 
 # question: will this chatbot get infinitely large so we have to train another one?
