@@ -377,4 +377,3 @@ def uploadVideo(
     return result
 
 # host your web application online, then make money through it!
-# starts where?
