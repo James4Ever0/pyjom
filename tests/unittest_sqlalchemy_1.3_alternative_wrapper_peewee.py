@@ -98,8 +98,10 @@ db.create_tables([User2])
 User2.get_or_create(username="abcdef")
 print([x for x in User2.select()])
 
+User2.
 try:
     answer = User2.get(username="nonexistant")
     print("ANSWER:", answer)
-except e:
-    
+except Exception as e:
+    print('exception type:', type(e))
+    # exception type: <class '__main__.User2DoesNotExist'>
