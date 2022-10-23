@@ -34,7 +34,9 @@ db.create_tables([User])
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
 charlie = User.update(username='charlie') # will work without exception.
-charlie = User.update(username='michael') # no insertion?
+# charlie = User.update(username='michael') # no insertion?
+# use get_or_create here.
+michael = User.get_or_create(username = 'michael')
 
 data = User.get() # this can only get one such instance?
 # get one single instance, aka: first.
