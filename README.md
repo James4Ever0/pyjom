@@ -15,33 +15,30 @@ readthedocs [文档地址](https://pyjom.readthedocs.io/en/latest/)
 
 本工程非常的乱 如果你能跑通 祝贺你
 
+自己以前写过很多有关于自媒体自动化的程序 不知道放到什么地方去了 可以的话会进行整理
 
+以前还有一些关于AGI的代码 量化交易相关的 感兴趣自行查看
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  安装linux系统
+2.  安装python3
+3.  一切随缘
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  随便xjb乱看乱execute
+2.  看看我的笔记
+3.  看看相关的项目
 
 #### 参与贡献
 
 1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
+2.  本地运行
 3.  提交代码
 4.  新建 Pull Request
 
 
 #### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+本人擅长
