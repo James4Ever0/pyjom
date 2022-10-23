@@ -34,7 +34,9 @@ class User(db.Model):
 
 
 class Account(db.Model):
-    user = ForeignKeyField(User)
+    # charlie_account.user_id to get username?
+    user = ForeignKeyField(User) # what is this??
+    # user = ForeignKeyField(User, field=User.username) # what is this??
     password = CharField() # you need to create a new table. do not modify this in place.
     # maybe you want tinydb or something else.
 
