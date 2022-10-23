@@ -33,6 +33,10 @@ def getUserObject(dedeuserid:str="397424026", use_credential:bool=False):
     u = user.User(dedeuserid_int, credential=credential)
     return u
 
+@lru_cache(maxsize=1)
+def getBilibiliVideoDatabase():
+    
+
 
 def refresh_status():
     return
