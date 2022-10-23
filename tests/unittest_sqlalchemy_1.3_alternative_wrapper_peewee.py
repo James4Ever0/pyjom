@@ -34,10 +34,12 @@ db.create_tables([User])
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
 charlie = User.update(username='charlie') # will work without exception.
+charlie = User.update(username='michael') # no insertion?
 
 data = User.get() # this can only get one such instance?
 # get one single instance, aka: first.
 # print(data)
 # breakpoint()
 
-selection = User.select()
+selection = User.select() # still iterable?
+breakpoint()
