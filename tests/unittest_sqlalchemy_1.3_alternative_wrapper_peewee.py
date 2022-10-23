@@ -25,23 +25,28 @@ from peewee import *
 #             database = self
 #     return BaseModel
 
-db = SqliteDatabase('my_database.db')
+db = SqliteDatabase("my_database.db")
+
+
 class User(db.Model):
     username = CharField(unique=True)
+
+
 # db.connect()``
 # if using context manager, it will auto connect. no need to do shit.
 db.create_tables([User])
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
-charlie = User.update(username='charlie') # will work without exception.
+charlie = User.update(username="charlie")  # will work without exception.
 # charlie = User.update(username='michael') # no insertion?
 # use get_or_create here.
-michael = User.get_or_create(username = 'michael')
+michael = User.get_or_create(username="michael")
+# (data, flag)
 
-data = User.get() # this can only get one such instance?
+data = User.get()  # this can only get one such instance?
 # get one single instance, aka: first.
 # print(data)
 # breakpoint()
 
-selection = User.select() # still iterable?
+selection = User.select()  # still iterable?
 breakpoint()
