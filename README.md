@@ -46,15 +46,11 @@ readthedocs [文档地址](https://pyjom.readthedocs.io/en/latest/)
 
 既然自媒体已经演变成ebegging了 我也深刻认识到了这一点 那么来吧 如果你想捐款 就投喂我吧~
 
-<a align="left">
-
-</a><a align="right">alipay投喂
-
 
 <table border="0">
   <tr>
-    <th>wechat投喂</th>
-    <th>Savings</th>
+    <th>微信投喂</th>
+    <th>支付宝投喂</th>
   </tr>
   <tr>
     <td>
