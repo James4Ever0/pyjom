@@ -46,4 +46,10 @@ readthedocs [文档地址](https://pyjom.readthedocs.io/en/latest/)
 
 既然自媒体已经演变成ebegging了 我也深刻认识到了这一点 那么来吧 如果你想捐款 就投喂我吧~
 
-(https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example)
+wechat投喂
+
+![wechat_qrcode](https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=wxp://f2f0V92qUQI0aBO5PXtWezujxMm-C1KFub6qCi1Obt3cn1KjZqDPqoWKn8ICCcwdt8zU)
+
+alipay投喂
+
+![alipay_qrcode](https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://qr.alipay.com/tsx10243tdewwaxrvullge8)
