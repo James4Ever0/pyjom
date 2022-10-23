@@ -36,12 +36,17 @@ def getUserObject(dedeuserid:str="397424026", use_credential:bool=False):
 
 from lazero.filesystem.env import getHomeDirectory
 from pathlib import Path
+import os
 
+from peewee import *
 @lru_cache(maxsize=1)
 def getBilibiliVideoDatabase():
     db_dir = Path(getHomeDirectory()) / ".bilibili_video"
-    db_path = db_dir /"database.db"
-    return db_path
+    if not os.path.exists(db_dir):
+        os.mkdir(db_dir)
+    db_path = db_dir /"database.db" # sure this works?
+    db = SqliteDatabase(db_path)
+    return db
 
 
 def refresh_status():
