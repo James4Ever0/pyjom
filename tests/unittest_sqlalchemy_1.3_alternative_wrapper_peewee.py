@@ -48,11 +48,12 @@ class Account(db.Model):
 class User2(Model):  # what is this model for? empty?
     username = CharField(unique=True)
 
+import datetime
 
 class BilibiliVideo(db.Model):
     bvid = CharField(unique=True)
     visible = BooleanField()
-    last_check = DateTimeField()
+    last_check = DateTimeField(default=datetime.datetime.now)
     # poster = ForeignKeyField(User) # is it my account anyway?
 
 
@@ -70,7 +71,8 @@ charlie, flag = User.get_or_create(username="charlie") # will work without excep
 # print(charlie)
 # breakpoint()
 
-last_check = 
+# why we can pass a function instead of the object?
+# last_check = datetime.datetime.now()
 
 video_record, flag = BilibiliVideo.get_or_create(bvid='BV123',visible=False,last_check=last_check)
 
