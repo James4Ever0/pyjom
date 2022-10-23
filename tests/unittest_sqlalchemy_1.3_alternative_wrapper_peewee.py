@@ -100,7 +100,7 @@ print([x for x in User2.select()])
 
 username="nonexistant"
 try:
-    answer = User2.get(username=username)
+    answer = User2.get(User2.username == username)
     print("ANSWER:", answer)
 except Exception as e:
     # print('exception type:', type(e))
