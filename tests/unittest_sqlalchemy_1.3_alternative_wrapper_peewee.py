@@ -25,7 +25,7 @@ from peewee import *
 #             database = self
 #     return BaseModel
 
-db = SqliteDatabase("my_database.db")
+db = SqliteDatabase("my_database.db") # this database exists in local filesystem.
 
 
 class User(db.Model):
@@ -58,5 +58,6 @@ selection = User.select()  # still iterable?
 # let's bind some database.
 User2.bind(db)
 # you need create such table first.
-User2.creat
-User2.create(username='abcdef')
+User2.create_table()
+User2.get_or_create(username='abcdef')
+print([x for x in User2.select()])
