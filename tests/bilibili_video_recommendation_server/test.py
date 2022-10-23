@@ -9,6 +9,7 @@ from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
 from bilibili_api import sync, search, user
 
+from peewee import *
 
 BSP = search.bilibiliSearchParams
 # you can query for the server status.
@@ -33,9 +34,11 @@ def getUserObject(dedeuserid:str="397424026", use_credential:bool=False):
     u = user.User(dedeuserid_int, credential=credential)
     return u
 
+from lazero.filesystem.io import 
+
 @lru_cache(maxsize=1)
 def getBilibiliVideoDatabase():
-    
+    dbpath = 
 
 
 def refresh_status():
