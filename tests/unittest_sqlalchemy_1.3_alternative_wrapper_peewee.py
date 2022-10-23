@@ -93,6 +93,7 @@ print(results_1) # these are just raw sql statements. have't executed yet.
 breakpoint()
 
 # warning: our table name is lowercased. may cause trouble.
+# but many sql statements are lower cased. case insensitive. at least my data are not case insensitive.
 
 charlie_account, flag = Account.get_or_create(
     user=charlie, password="abcd"
