@@ -7,7 +7,6 @@ sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
-
 from bilibili_api import sync, search, user
 
 
@@ -60,6 +59,10 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 
 # you need my credential!
 # better reuse the code.
+
+
+def checkVideoInDatabase(bvid):
+    ...
 
 # get my videos first!
 @refresh_status_decorator
