@@ -76,11 +76,15 @@ charlie, flag = User.get_or_create(username="charlie") # will work without excep
 
 video_record, flag = BilibiliVideo.get_or_create(bvid='BV123',visible=False)
 
-print(video_record) # it will be good.
+# print(video_record) # it will be good.
 # breakpoint()
 
+next_check_time = datetime.datetime.now() - datetime.timedelta(minutes=20) # every 20 minutes check these things.
+
+# but for those which are already recognized as visible, we may not want to check these video till we select/search them. this is to reserve bandwidth.
+
 results_0 = BilibiliVideo.select().where(BilibiliVideo.last_check < datetime.datetime.now())
-results_0 = BilibiliVideo.select().where(BilibiliVideo.last_check < datetime.datetime.now())
+results_1 = BilibiliVideo.select().where(BilibiliVideo.last_check > datetime.datetime.now())
 
 charlie_account, flag = Account.get_or_create(
     user=charlie, password="abcd"
