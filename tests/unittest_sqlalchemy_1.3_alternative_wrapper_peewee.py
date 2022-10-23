@@ -25,7 +25,7 @@ from peewee import *
 #             database = self
 #     return BaseModel
 
-db = SqliteDatabase("my_database.db") # this database exists in local filesystem.
+db = SqliteDatabase("my_database.db")  # this database exists in local filesystem.
 
 
 class User(db.Model):
@@ -35,33 +35,43 @@ class User(db.Model):
 
 class Account(db.Model):
     # charlie_account.user_id to get username?
-    user = ForeignKeyField(User) # what is this??
+    user = ForeignKeyField(User)  # what is this??
     # if you don't set field, the user_id will be the default User.id
     # user = ForeignKeyField(User, field=User.username) # what is this??
-    password = CharField() # you need to create a new table. do not modify this in place.
+    password = (
+        CharField()
+    )  # you need to create a new table. do not modify this in place.
     # maybe you want tinydb or something else.
 
 
 # User.bind(db) # this can dynamically change the database. maybe.
-class User2(Model): # what is this model for? empty?
+class User2(Model):  # what is this model for? empty?
     username = CharField(unique=True)
 
-class Video(db.Model):
-    video_entry = CharField(unique=True)
-    
+
+class BilibiliVideo(db.Model):
+    bvid = CharField(unique=True)
+    visible = BooleanField()
+    last_check = DateTimeField()
+    # poster = ForeignKeyField(User) # is it my account anyway?
+
 
 # db.connect()
 # if using context manager, it will auto connect. no need to do shit.
 # are you sure you want to comment out the db.connect?
 # actually no need to connect this. it will auto connect.
-db.create_tables([User, Account]) # it is the same damn database. but shit has happened already.
+db.create_tables(
+    [User, Account]
+)  # it is the same damn database. but shit has happened already.
 # it is the foreign key reference.
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
-charlie, flag= User.get_or_create(username="charlie")  # will work without exception.
+charlie, flag = User.get_or_create(username="charlie")  # will work without exception.
 # print(charlie)
 # breakpoint()
-charlie_account, flag= Account.get_or_create(user = charlie, password='abcd') # this is not unique. warning!
+charlie_account, flag = Account.get_or_create(
+    user=charlie, password="abcd"
+)  # this is not unique. warning!
 print(charlie_account)
 breakpoint()
 # charlie = User.update(username='michael') # no insertion?
@@ -85,5 +95,5 @@ selection = User.select()  # still iterable?
 # User2.create_table()
 db.create_tables([User2])
 
-User2.get_or_create(username='abcdef')
+User2.get_or_create(username="abcdef")
 print([x for x in User2.select()])
