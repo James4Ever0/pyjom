@@ -14,7 +14,6 @@
 # warning! might be incompatible.
 
 from peewee import *
-import datetime
 
 # some patch on /usr/local/lib/python3.9/dist-packages/peewee.py:3142
 
@@ -37,5 +36,8 @@ db.create_tables([User])
 charlie = User.update(username='charlie') # will work without exception.
 
 data = User.get() # this can only get one such instance?
-print(data)
-breakpoint()
+# get one single instance, aka: first.
+# print(data)
+# breakpoint()
+
+selection = User.select()
