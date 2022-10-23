@@ -66,7 +66,7 @@ db.create_tables(
 # it is the foreign key reference.
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
-charlie, flag = User.get_or_create(username="charlie")  # will work without exception.
+charlie, flag = User.get_or_create(username="charlie") # will work without exception.
 # print(charlie)
 # breakpoint()
 
