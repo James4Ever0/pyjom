@@ -31,6 +31,9 @@ db = SqliteDatabase("my_database.db")
 class User(db.Model):
     username = CharField(unique=True)
 
+# User.bind(db) # this can dynamically change the database. maybe.
+class User2(Database.Model):
+    
 
 # db.connect()``
 # if using context manager, it will auto connect. no need to do shit.
