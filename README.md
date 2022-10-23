@@ -5,9 +5,16 @@ jerk off machine in python, or in other words, "we media machine", "fully automa
 
 #### 文档 （正在编写 有可能有用 对于新手来说）
 
+readthedocs [文档地址](https://pyjom.readthedocs.io/en/latest/)
+
+#### 我的笔记
+
+[杂乱的笔记](https://github.com/James4Ever0/notes) 有可能对你理解本项目有帮助
 
 #### 软件架构
-软件架构说明
+
+本工程非常的乱 如果你能跑通 祝贺你
+
 
 
 #### 安装教程
