@@ -1,7 +1,8 @@
-pic_0= 'cat.png'
+pic_0 = "cat.png"
 pic_0_similar = "cat3.png"
 pic_1 = "/root/Desktop/works/pyjom/samples/image/dick.png"
 from PIL import Image
+
 # >>> import imagehash
 # >>> hash = imagehash.average_hash(Image.open
 import imagehash
@@ -25,13 +26,11 @@ hashs = [imagehash.phash(Image.open(pic)) for pic in pics]
 
 # import pymilvus
 from pymilvus import connections
-connection = connections.connect(
-  alias="default", 
-  host='localhost', 
-  port='19530'
-)
+
+connection = connections.connect(alias="default", host="localhost", port="19530")
 from pymilvus import Collection
-collection = Collection("book")      # Get an existing collection.
+
+collection = Collection("book")  # Get an existing collection.
 collection.load()
 
 # seems hard to setup.

@@ -62,6 +62,7 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 
 
 def checkVideoInDatabase(bvid):
+    # we use peewee (of course our modified version)
     ...
 
 # get my videos first!
