@@ -62,13 +62,15 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 # better reuse the code.
 
 # get my videos first!
-def getMyVideos():
+@refresh_status_decorator
+def getMyVideos(): # all videos?
+    user = getUserObject()
+    video = user.get_videos()
 
 @refresh_status_decorator
 def searchMyVideos():
     # better use semantic search. but now we use hybrid search instead.
     # hybrid search: metatopic plus bm25
-
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
 def submitMyVideo(): # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
