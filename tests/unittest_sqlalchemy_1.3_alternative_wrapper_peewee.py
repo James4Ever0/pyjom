@@ -53,7 +53,7 @@ import datetime
 class BilibiliVideo(db.Model):
     bvid = CharField(unique=True)
     visible = BooleanField()
-    last_check = DateTimeField(default=datetime.datetime.now)
+    last_check = DateTimeField(default=datetime.datetime.now) # this is default callable. will be managed as expected
     # poster = ForeignKeyField(User) # is it my account anyway?
 
 
@@ -74,7 +74,13 @@ charlie, flag = User.get_or_create(username="charlie") # will work without excep
 # why we can pass a function instead of the object?
 # last_check = datetime.datetime.now()
 
-video_record, flag = BilibiliVideo.get_or_create(bvid='BV123',visible=False,last_check=last_check)
+video_record, flag = BilibiliVideo.get_or_create(bvid='BV123',visible=False)
+
+print(video_record) # it will be good.
+# breakpoint()
+
+results_0 = BilibiliVideo.select().where(BilibiliVideo.last_check < datetime.datetime.now())
+results_0 = BilibiliVideo.select().where(BilibiliVideo.last_check < datetime.datetime.now())
 
 charlie_account, flag = Account.get_or_create(
     user=charlie, password="abcd"
