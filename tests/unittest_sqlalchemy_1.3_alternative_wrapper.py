@@ -8,3 +8,5 @@
 
 # https://github.com/coleifer/peewee
 
+# 1.3.24 original sqlalchemy version, for our dearly chatterbot.
+# currently:-1.4.42
