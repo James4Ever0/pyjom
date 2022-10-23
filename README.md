@@ -54,9 +54,7 @@ readthedocs 编写中 [文档地址](https://pyjom.readthedocs.io/en/latest/)
     <th>支付宝投喂</th>
   </tr>
   <tr>
-    <td>
-<img width="100" height="100" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=wxp://f2f0V92qUQI0aBO5PXtWezujxMm-C1KFub6qCi1Obt3cn1KjZqDPqoWKn8ICCcwdt8zU"></td>
-    <td><img  width="100" height="100" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://qr.alipay.com/tsx10243tdewwaxrvullge8">
-</a></td>
+    <td><img width="100" height="100" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=wxp://f2f0V92qUQI0aBO5PXtWezujxMm-C1KFub6qCi1Obt3cn1KjZqDPqoWKn8ICCcwdt8zU"></td>
+    <td><img width="100" height="100" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://qr.alipay.com/tsx10243tdewwaxrvullge8"></td>
   </tr>
 </table>
