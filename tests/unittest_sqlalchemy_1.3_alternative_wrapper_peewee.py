@@ -32,8 +32,9 @@ class User(db.Model):
     username = CharField(unique=True)
 
 # User.bind(db) # this can dynamically change the database. maybe.
-class User2(Database.Model):
-    
+class User2(Model): # what is this model for? empty?
+    username = CharField(unique=True)
+
 
 # db.connect()``
 # if using context manager, it will auto connect. no need to do shit.
