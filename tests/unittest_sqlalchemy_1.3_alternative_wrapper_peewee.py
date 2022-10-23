@@ -53,4 +53,10 @@ data = User.get()  # this can only get one such instance?
 # breakpoint()
 
 selection = User.select()  # still iterable?
-breakpoint()
+# breakpoint()
+
+# let's bind some database.
+User2.bind(db)
+# you need create such table first.
+User2.creat
+User2.create(username='abcdef')
