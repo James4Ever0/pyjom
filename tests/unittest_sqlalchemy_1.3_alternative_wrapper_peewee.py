@@ -23,7 +23,11 @@ import datetime
 # def Model(self): # this is interesting. does it work as expected?
 #     class BaseModel(Model):
 #         class Meta:
-#             database = db
+#             database = self
 #     return BaseModel
 
 db = SqliteDatabase('my_database.db')
+
+
+class User(BaseModel):
+    username = CharField(unique=True)
