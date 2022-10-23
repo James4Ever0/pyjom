@@ -33,7 +33,9 @@ class User(db.Model):
 # if using context manager, it will auto connect. no need to do shit.
 db.create_tables([User])
 
-charlie = User.create(username='charlie') # fail 
+# charlie = User.create(username='charlie') # fail the unique check. will raise exception.
+charlie = User.update(username='charlie') # will work without exception.
 
-data = User.get()
+data = User.get() # this can only get one such instance?
 print(data)
+breakpoint()
