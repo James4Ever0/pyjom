@@ -39,14 +39,7 @@ from pathlib import Path
 import os
 
 from peewee import *
-@lru_cache(maxsize=1)
-def getBilibiliVideoDatabase():
-    db_dir = Path(getHomeDirectory()) / ".bilibili_video"
-    if not os.path.exists(db_dir):
-        os.mkdir(db_dir)
-    db_path = db_dir /"database.db" # sure this works?
-    db = SqliteDatabase(db_path)
-    return db
+
 
 
 def refresh_status():
@@ -60,6 +53,17 @@ def refresh_status_decorator(func):
         schedule.run_pending()
         return func(*args, **kwargs)
     return wrapper
+
+@refresh_status_decorator # this might prevent you adding the decorator everywhere?
+@lru_cache(maxsize=1)
+def getBilibiliVideoDatabase():
+    db_dir = Path(getHomeDirectory()) / ".bilibili_video"
+    if not os.path.exists(db_dir):
+        os.mkdir(db_dir)
+    db_path = db_dir /"database.db" # sure this works?
+    db = SqliteDatabase(db_path)
+    return db
+
 
 @refresh_status_decorator
 def searchVideos(query:str): # what do you expect? you want the xml object let's get it!
@@ -78,10 +82,10 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 
 def checkVideoInDatabase(bvid):
     # we use peewee (of course our modified version)
-    ...
+    
 
 # get my videos first!
-@refresh_status_decorator
+# @refresh_status_decorator
 def getMyVideos(): # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
@@ -99,7 +103,7 @@ def getMyVideos(): # all videos? just at init.
         breakpoint()
         pn +=1
 
-@refresh_status_decorator
+
 def searchMyVideos():
     # better use semantic search. but now we use hybrid search instead.
     # hybrid search: metatopic plus bm25
