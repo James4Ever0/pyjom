@@ -41,6 +41,7 @@ class Account(db.Model):
     password = CharField() # you need to create a new table. do not modify this in place.
     # maybe you want tinydb or something else.
 
+
 # User.bind(db) # this can dynamically change the database. maybe.
 class User2(Model): # what is this model for? empty?
     username = CharField(unique=True)
