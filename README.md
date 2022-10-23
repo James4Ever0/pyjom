@@ -2,6 +2,7 @@
 
 #### 介绍
 jerk off machine in python, or in other words, "we media machine", "fully automated content producer", "the repeater", "the feedback loop", "retribution"
+自动化的自媒体内容制造机 自动运维自媒体 无人值守创作直播 全平台可运行 做一个有思想的复读机 有金饭碗的ebegger
 
 #### 文档 （正在编写 有可能有用 对于新手来说）
 
@@ -41,4 +42,6 @@ readthedocs [文档地址](https://pyjom.readthedocs.io/en/latest/)
 
 #### 特技
 
-本人擅长
+本人擅长到处聊天然后寻找灵感 毕竟没有灵感就没有代码 没有笔记
+
+既然自媒体已经演变成ebegging了 我也深刻认识到了这一点 那么来吧 如果你想捐款 就投喂我吧~
