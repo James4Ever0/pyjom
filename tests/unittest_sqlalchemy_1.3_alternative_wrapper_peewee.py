@@ -83,8 +83,16 @@ next_check_time = datetime.datetime.now() - datetime.timedelta(minutes=20) # eve
 
 # but for those which are already recognized as visible, we may not want to check these video till we select/search them. this is to reserve bandwidth.
 
+print("NEXT CHECK TIME:", next_check_time)
+
 results_0 = BilibiliVideo.select().where(BilibiliVideo.last_check < datetime.datetime.now())
 results_1 = BilibiliVideo.select().where(BilibiliVideo.last_check > datetime.datetime.now())
+
+print(results_0)
+print(results_1) # these are just raw sql statements. have't executed yet.
+breakpoint()
+
+# warning: our table name is lowercased. may cause trouble.
 
 charlie_account, flag = Account.get_or_create(
     user=charlie, password="abcd"
