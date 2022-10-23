@@ -6,7 +6,7 @@
 
 ## 文档
 
-readthedocs [文档地址](https://pyjom.readthedocs.io/en/latest/)
+readthedocs 编写中 [文档地址](https://pyjom.readthedocs.io/en/latest/)
 
 ## 我的笔记
 
@@ -22,9 +22,10 @@ readthedocs [文档地址](https://pyjom.readthedocs.io/en/latest/)
 
 ## 安装教程
 
-1.  安装linux系统
-2.  安装python3
-3.  一切随缘
+1.  pull下来本仓库
+2.  安装linux系统
+3.  安装python3
+4.  一切随缘
 
 ## 使用说明
 
