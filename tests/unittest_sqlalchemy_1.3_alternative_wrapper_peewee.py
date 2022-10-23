@@ -57,7 +57,10 @@ selection = User.select()  # still iterable?
 
 # let's bind some database.
 User2.bind(db)
+# if i don't bind the database what would happen?
+# error!
 # you need create such table first.
-User2.create_table()
+# User2.create_table()
+db.create_tables([User2])
 User2.get_or_create(username='abcdef')
 print([x for x in User2.select()])
