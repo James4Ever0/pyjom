@@ -99,10 +99,12 @@ User2.get_or_create(username="abcdef")
 print([x for x in User2.select()])
 
 username="nonexistant"
-try:
-    answer = User2.get(User2.username == username)
-    print("ANSWER:", answer)
-except Exception as e:
-    # print('exception type:', type(e))
+# try:
+answer = User2.get_or_none(User2.username == username) # still raise exception huh?
+print("ANSWER:", answer) # great this is simpler.
+if answer is None:
     print('username does not exist:', username)
-    # exception type: <class '__main__.User2DoesNotExist'>
+# except Exception as e:
+#     # print('exception type:', type(e))
+#     print('username does not exist:', username)
+#     # exception type: <class '__main__.User2DoesNotExist'>
