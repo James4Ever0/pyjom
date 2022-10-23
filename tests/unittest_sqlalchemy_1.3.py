@@ -4,4 +4,7 @@
 
 # the data we put into are some timestamps.
 
+import sqlalchemy
+
+dbpath = "test_sqlalchemy.db"
 
