@@ -34,7 +34,7 @@ def getUserObject(dedeuserid:str="397424026", use_credential:bool=False):
     u = user.User(dedeuserid_int, credential=credential)
     return u
 
-from lazero.filesystem.io import 
+from lazero.search.api import getHomeDirectory
 
 @lru_cache(maxsize=1)
 def getBilibiliVideoDatabase():
