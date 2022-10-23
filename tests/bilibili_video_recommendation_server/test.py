@@ -64,6 +64,17 @@ def getBilibiliVideoDatabase():
     db = SqliteDatabase(db_path)
     return db
 
+class BilibiliUser(Model):
+    username = CharField()
+    user_id = 
+
+class BilibiliVideo(Model):
+    bvid = CharField(unique=True)
+    visible = BooleanField()
+    last_check = DateTimeField()
+    poster = ForeignKeyField(BilibiliUser) # is it my account anyway?
+
+
 
 # @refresh_status_decorator
 def searchVideos(query:str): # what do you expect? you want the xml object let's get it!
@@ -82,7 +93,7 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 
 def checkVideoInDatabase(bvid):
     # we use peewee (of course our modified version)
-    
+    db = getBilibiliVideoDatabase()
 
 # get my videos first!
 # @refresh_status_decorator
