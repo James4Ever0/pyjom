@@ -16,6 +16,14 @@
 from peewee import *
 import datetime
 
+# some patch on /usr/local/lib/python3.9/dist-packages/peewee.py:3142
+
+# is it just a single file? no other files?
+# @property
+# def Model(self): # this is interesting. does it work as expected?
+#     class BaseModel(Model):
+#         class Meta:
+#             database = db
+#     return BaseModel
 
 db = SqliteDatabase('my_database.db')
-db.
