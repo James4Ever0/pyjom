@@ -73,7 +73,7 @@ charlie_account, flag = Account.get_or_create(
     user=charlie, password="abcd"
 )  # this is not unique. warning!
 print(charlie_account)
-breakpoint()
+# breakpoint()
 # charlie = User.update(username='michael') # no insertion?
 # use get_or_create here.
 michael = User.get_or_create(username="michael")
@@ -97,3 +97,9 @@ db.create_tables([User2])
 
 User2.get_or_create(username="abcdef")
 print([x for x in User2.select()])
+
+try:
+    answer = User2.get(username="nonexistant")
+    print("ANSWER:", answer)
+except e:
+    
