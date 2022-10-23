@@ -12,3 +12,10 @@
 
 # currently: 1.4.42
 # warning! might be incompatible.
+
+from peewee import *
+import datetime
+
+
+db = SqliteDatabase('my_database.db')
+db.
