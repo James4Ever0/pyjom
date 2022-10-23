@@ -36,6 +36,7 @@ class User(db.Model):
 class Account(db.Model):
     # charlie_account.user_id to get username?
     user = ForeignKeyField(User) # what is this??
+    # if you don't set field, the user_id will be the default User.id
     # user = ForeignKeyField(User, field=User.username) # what is this??
     password = CharField() # you need to create a new table. do not modify this in place.
     # maybe you want tinydb or something else.
@@ -47,7 +48,8 @@ class User2(Model): # what is this model for? empty?
 
 # db.connect()``
 # if using context manager, it will auto connect. no need to do shit.
-db.create_tables([User, Account])
+db.create_tables([User, Account]) # it is the same damn database. but shit has happened already.
+# it is the foreign key reference.
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
 charlie, flag= User.get_or_create(username="charlie")  # will work without exception.
