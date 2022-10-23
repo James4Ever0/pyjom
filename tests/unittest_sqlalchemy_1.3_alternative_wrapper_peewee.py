@@ -27,7 +27,8 @@ import datetime
 #     return BaseModel
 
 db = SqliteDatabase('my_database.db')
-
-
-class User(BaseModel):
+class User(db.Model):
     username = CharField(unique=True)
+# db.connect()
+# if using context manager, it will auto connect. no need to do shit.
+db.create_tables([User])
