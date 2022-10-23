@@ -45,11 +45,15 @@ class User2(Model): # what is this model for? empty?
 
 # db.connect()``
 # if using context manager, it will auto connect. no need to do shit.
-db.create_tables([User])
+db.create_tables([User, Account])
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
-charlie = User.update(username="charlie")  # will work without exception.
-Account.get_or_create(user = charlie)
+charlie, flag= User.get_or_create(username="charlie")  # will work without exception.
+# print(charlie)
+# breakpoint()
+charlie_account, flag= Account.get_or_create(user = charlie, password='abcd') # this is not unique. warning!
+print(charlie_account)
+breakpoint()
 # charlie = User.update(username='michael') # no insertion?
 # use get_or_create here.
 michael = User.get_or_create(username="michael")
