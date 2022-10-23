@@ -46,10 +46,20 @@ readthedocs [文档地址](https://pyjom.readthedocs.io/en/latest/)
 
 既然自媒体已经演变成ebegging了 我也深刻认识到了这一点 那么来吧 如果你想捐款 就投喂我吧~
 
-<a align="left">wechat投喂
+<a align="left">
 
-<img width="100" height="100" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=wxp://f2f0V92qUQI0aBO5PXtWezujxMm-C1KFub6qCi1Obt3cn1KjZqDPqoWKn8ICCcwdt8zU">
-</a><a align="left"><a>alipay投喂</a>
+</a><a align="right">alipay投喂
 
-<img  width="100" height="100" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://qr.alipay.com/tsx10243tdewwaxrvullge8">
-</a>
+
+<table border="0">
+  <tr>
+    <th>wechat投喂</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>
+<img width="100" height="100" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=wxp://f2f0V92qUQI0aBO5PXtWezujxMm-C1KFub6qCi1Obt3cn1KjZqDPqoWKn8ICCcwdt8zU"></td>
+    <td><img  width="100" height="100" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://qr.alipay.com/tsx10243tdewwaxrvullge8">
+</a></td>
+  </tr>
+</table>
