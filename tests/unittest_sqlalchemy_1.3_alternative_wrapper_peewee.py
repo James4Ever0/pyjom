@@ -61,7 +61,7 @@ class BilibiliVideo(db.Model):
 # are you sure you want to comment out the db.connect?
 # actually no need to connect this. it will auto connect.
 db.create_tables(
-    [User, Account]
+    [User, Account, BilibiliVideo]
 )  # it is the same damn database. but shit has happened already.
 # it is the foreign key reference.
 
@@ -69,6 +69,11 @@ db.create_tables(
 charlie, flag = User.get_or_create(username="charlie")  # will work without exception.
 # print(charlie)
 # breakpoint()
+
+last_check = 
+
+video_record, flag = BilibiliVideo.get_or_create(bvid='BV123',visible=False,last_check=last_check)
+
 charlie_account, flag = Account.get_or_create(
     user=charlie, password="abcd"
 )  # this is not unique. warning!

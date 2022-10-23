@@ -66,14 +66,14 @@ def getBilibiliVideoDatabase():
 
 class BilibiliUser(Model):
     username = CharField()
-    user_id = 
+    user_id = IntegerField(unique=True)
+    is_mine = BooleanField(default=False)
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
     visible = BooleanField()
-    last_check = DateTimeField()
-    poster = ForeignKeyField(BilibiliUser) # is it my account anyway?
-
+    last_check = DateTimeField() # well this is not tested. test it!
+    poster = ForeignKeyField(BilibiliUser, field=BilibiliUser.user_id) # is it my account anyway?
 
 
 # @refresh_status_decorator
