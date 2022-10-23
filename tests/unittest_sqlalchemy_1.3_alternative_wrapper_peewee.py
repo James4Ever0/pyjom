@@ -32,3 +32,8 @@ class User(db.Model):
 # db.connect()
 # if using context manager, it will auto connect. no need to do shit.
 db.create_tables([User])
+
+charlie = User.create(username='charlie') # fail 
+
+data = User.get()
+print(data)
