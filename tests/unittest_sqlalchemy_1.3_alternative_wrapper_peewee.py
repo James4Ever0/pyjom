@@ -31,7 +31,11 @@ db = SqliteDatabase("my_database.db") # this database exists in local filesystem
 class User(db.Model):
     username = CharField(unique=True)
     # what about let's modify this shit?
-    password = CharField() # you need to create a new table
+
+
+
+    password = CharField() # you need to create a new table. do not modify this in place.
+    # maybe you want tinydb or something else.
 
 # User.bind(db) # this can dynamically change the database. maybe.
 class User2(Model): # what is this model for? empty?
