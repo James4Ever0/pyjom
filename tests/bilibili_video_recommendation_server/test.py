@@ -65,7 +65,7 @@ def getBilibiliVideoDatabase():
     return db
 
 
-@refresh_status_decorator
+# @refresh_status_decorator
 def searchVideos(query:str): # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
