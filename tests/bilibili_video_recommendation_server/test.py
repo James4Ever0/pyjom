@@ -34,11 +34,14 @@ def getUserObject(dedeuserid:str="397424026", use_credential:bool=False):
     u = user.User(dedeuserid_int, credential=credential)
     return u
 
-from lazero.search.api import getHomeDirectory
+from lazero.filesystem.env import getHomeDirectory
+from pathlib import Path
 
 @lru_cache(maxsize=1)
 def getBilibiliVideoDatabase():
-    dbpath = 
+    db_dir = Path(getHomeDirectory()) / ".bilibili_video"
+    db_path = db_dir /"database.db"
+    return db_path
 
 
 def refresh_status():
