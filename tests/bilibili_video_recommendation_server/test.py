@@ -64,6 +64,8 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 # get my videos first!
 @refresh_status_decorator
 def getMyVideos(): # all videos? just at init.
+    # some stop condition for early termination.
+    # if any of the video exists in the database, we stop this shit.
     user = getUserObject()
     pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
@@ -87,4 +89,14 @@ def searchMyVideos():
 def registerMyVideo(): # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     ...
 
-def check
+def checkRegisteredVideo():
+    # check if they are published or not.
+    ...
+
+def checkPublishedVideo():
+    # check if video is still visible or taken down.
+    # if video is not visible then we delete this video from database.
+    ...
+
+# i suggest you to use sqlalchemy. since this is no ordinary task.
+# you cannot just check every video of your own in the past.
