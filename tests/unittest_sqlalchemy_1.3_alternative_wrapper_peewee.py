@@ -46,9 +46,14 @@ class Account(db.Model):
 class User2(Model): # what is this model for? empty?
     username = CharField(unique=True)
 
+class Video(db.Model):
+    video_entry = CharField(unique=True)
+    
 
-# db.connect()``
+# db.connect()
 # if using context manager, it will auto connect. no need to do shit.
+# are you sure you want to comment out the db.connect?
+# actually no need to connect this. it will auto connect.
 db.create_tables([User, Account]) # it is the same damn database. but shit has happened already.
 # it is the foreign key reference.
 
