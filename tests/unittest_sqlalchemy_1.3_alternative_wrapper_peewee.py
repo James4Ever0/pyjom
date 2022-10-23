@@ -33,7 +33,8 @@ class User(db.Model):
     # what about let's modify this shit?
 
 
-
+class Account(db.Model):
+    user = ForeignKeyField(User)
     password = CharField() # you need to create a new table. do not modify this in place.
     # maybe you want tinydb or something else.
 
@@ -48,6 +49,7 @@ db.create_tables([User])
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
 charlie = User.update(username="charlie")  # will work without exception.
+Account.get_or_create(user = charlie)
 # charlie = User.update(username='michael') # no insertion?
 # use get_or_create here.
 michael = User.get_or_create(username="michael")
