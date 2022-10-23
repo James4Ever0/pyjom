@@ -3,6 +3,9 @@
 #### 介绍
 jerk off machine in python, or in other words, "we media machine", "fully automated content producer", "the repeater", "the feedback loop", "retribution"
 
+#### 文档 （正在编写 有可能有用 对于新手来说）
+
+
 #### 软件架构
 软件架构说明
 
