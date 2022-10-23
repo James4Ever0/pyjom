@@ -36,7 +36,7 @@ def getUserObject(dedeuserid:str="397424026", use_credential:bool=False):
 
 
 def refresh_status():
-    ...
+    return
 
 refresh_status()
 schedule.every(20).minutes.do(refresh_status)
@@ -63,9 +63,20 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 
 # get my videos first!
 @refresh_status_decorator
-def getMyVideos(): # all videos?
+def getMyVideos(): # all videos? just at init.
     user = getUserObject()
-    video = user.get_videos()
+    pn = 1
+    # tid	int, optional	分区 ID. Defaults to 0（全部）
+    # pn	int, optional	页码，从 1 开始. Defaults to 1.
+    # ps	(int, optional)	每一页的视频数. Defaults to 30.
+    # keyword	str, optional	搜索关键词. Defaults to "".
+    # order	VideoOrder, optional	排序方式. Defaults to VideoOrder.PUBDATE
+    # this is async. use sync.
+    while True:
+        videos = sync(user.get_videos(pn=pn))
+        print(videos)
+        breakpoint()
+        pn +=1
 
 @refresh_status_decorator
 def searchMyVideos():
@@ -73,4 +84,7 @@ def searchMyVideos():
     # hybrid search: metatopic plus bm25
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
-def submitMyVideo(): # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
+def registerMyVideo(): # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
+    ...
+
+def check
