@@ -11,7 +11,7 @@ from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
 # updated anyio. does that work? will it break dependencies?
 
-import 
+import pyjq
 
 from bilibili_api import sync, search, user
 
