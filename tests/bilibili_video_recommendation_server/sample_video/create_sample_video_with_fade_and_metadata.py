@@ -5,3 +5,9 @@ video_path = "sample_video.mp4"
 title = "世上所有的小猫都是天使变的！"
 
 # we shall use editly to do this job shall we?
+
+# image overlay can be done in editly
+
+editlyJson = {
+    
+}
