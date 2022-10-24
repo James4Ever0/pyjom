@@ -6,19 +6,8 @@ wechat_link = (
     "wxp://f2f0V92qUQI0aBO5PXtWezujxMm-C1KFub6qCi1Obt3cn1KjZqDPqoWKn8ICCcwdt8zU"
 )
 
-styleSuites = {
-    "alipay":{
-        'paint':
-        'qrcode':alipay_link,
-        'text':"支付宝投喂"
-    },
-    'wechat':{
-        'paint':
-        'qrcode':
-        'text':
-    }
-}
 
+selected_style_suite = styleSuites['wechat']
 from generate_qr_code import makeAndSaveQrcode
 
 qrcode_path = "test_ebegging.png"
@@ -34,7 +23,6 @@ ad_height = 850
 ad_width = 700
 night_mode = True
 style_mode = True
-qrcode_scan_text = 
 output_path = "ebegging_template.png"
 # white = pixie.Color(1, 1, 1, 1)
 # black = pixie.Color(0, 0, 0, 1)
@@ -53,7 +41,22 @@ grass_green, grass_green_paint = makeColorAndPaintFromColorCode("#00A619")
 white, white_paint = makeColorAndPaintFromColorCode("#FFFFFF")
 black, black_paint = makeColorAndPaintFromColorCode("#000000")
 
-qrcode_stroke_paint = ocean_blue_paint  # for alipay
+
+styleSuites = {
+    "alipay":{
+        'paint':ocean_blue_paint,
+        'qrcode':alipay_link,
+        'text':"支付宝投喂"
+    },
+    'wechat':{
+        'paint':grass_green_paint,
+        'qrcode':wechat_link,
+        'text':"微信投喂"
+    }
+}
+
+qrcode_stroke_paint = selected_style_suite['paint']  # for alipay
+qrcode_scan_text = selected_style_suite['text']
 
 image = pixie.Image(ad_width, ad_height)
 
