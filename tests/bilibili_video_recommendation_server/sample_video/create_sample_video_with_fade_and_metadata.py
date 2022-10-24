@@ -65,8 +65,8 @@ editlyJson = {
                     "height": 1,
                 },
                 {
-                    "type": "title-background",
-                    # "type": "title",
+                    # "type": "title-background",
+                    "type": "title",
                     "text": title,
                     # "background": "#000000",
                     "fontPath": fontPath,
