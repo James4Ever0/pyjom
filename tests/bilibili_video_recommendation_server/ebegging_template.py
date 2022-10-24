@@ -6,6 +6,19 @@ wechat_link = (
     "wxp://f2f0V92qUQI0aBO5PXtWezujxMm-C1KFub6qCi1Obt3cn1KjZqDPqoWKn8ICCcwdt8zU"
 )
 
+styleSuites = {
+    "alipay":{
+        'paint':
+        'qrcode':alipay_link,
+        'text':"支付宝投喂"
+    },
+    'wechat':{
+        'paint':
+        'qrcode':
+        'text':
+    }
+}
+
 from generate_qr_code import makeAndSaveQrcode
 
 qrcode_path = "test_ebegging.png"
@@ -21,7 +34,7 @@ ad_height = 850
 ad_width = 700
 night_mode = True
 style_mode = True
-qrcode_scan_text = "支付宝投喂"
+qrcode_scan_text = 
 output_path = "ebegging_template.png"
 # white = pixie.Color(1, 1, 1, 1)
 # black = pixie.Color(0, 0, 0, 1)
@@ -79,10 +92,13 @@ font.size = int(
     qrcode_width * (0.04 / 0.3)
 )  # questionable. we shall check the font size.
 
-if night_mode:
-    font.paint.color = white
+if style_mode:
+    if night_mode:
+        font.paint.color = white
+    else:
+        font.paint.color = black
 else:
-    font.paint.color = black
+    font.paint.color = white
 
 text_bound_x = ad_width
 text_bound_y = ad_height - ad_width
