@@ -3,17 +3,17 @@
 
 video_path = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/sample_video/sample_video.mp4"
 title = "世上所有的小猫都是天使变的！"
-from caer.video.frames_and_fps import get_duration
+from caer.video.frames_and_fps import get_duration, get_res
 video_duration = get_duration(video_path)
-
+video_width, video_height = get_res(video_path)
 # we shall use editly to do this job shall we?
 
 # image overlay can be done in editly
 
 editlyJson = {
     'outPath':'output.mp4',
-    'width':1920,
-    'height': 1080,
+    'width':video_width,
+    'height': video_height,
     'fps':30, # different from the default value.
     'fast':False,
     'keepSourceAudio':True,
@@ -27,7 +27,7 @@ editlyJson = {
                     "path":"/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/up_image.jpg",
                     "position":,
                     "width":,
-                    "height":
+                    "height": 
                 }
             ]
         }
