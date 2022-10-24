@@ -20,7 +20,7 @@ import pixie
 font_path = "./wqy-microhei0.ttf"
 ad_height = 850
 ad_width = 700
-night_mode = True
+night_mode = False
 style_mode = False
 output_path = "ebegging_template.png"
 # white = pixie.Color(1, 1, 1, 1)
@@ -97,10 +97,12 @@ font.size = int(
     qrcode_width * (0.04 / 0.3)
 )  # questionable. we shall check the font size.
 
-if style_mode:
+if not style_mode:
     if night_mode:
-        font.paint.color = qrcode_stroke_paint.color
+        font.paint.color = white
+        # font.paint.color = qrcode_stroke_paint.color
     else:
+        # font.paint.color = qrcode_stroke_paint.color
         font.paint.color = black
 else:
     font.paint.color = white
