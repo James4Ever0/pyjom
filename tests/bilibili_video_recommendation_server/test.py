@@ -111,6 +111,7 @@ def searchVideos(
     # print(result)
     mresult = pyjq.all(".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag,typename, typeid, review, favorites, danmaku, rank_score, like} | select (.title != null and .bvid != null)",result)
     # so you want to persist these results or not?
+    # better persist so we can reuse.
     # no persistance?
     # check some interesting result.
     return mresult
@@ -159,7 +160,6 @@ def searchVideos(
     #     "danmaku",
     # ]
     # rank score is important!
-
 
 # you need my credential!
 # better reuse the code.
