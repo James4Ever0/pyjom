@@ -107,51 +107,52 @@ def searchVideos(
     search_type = search.SearchObjectType.VIDEO
     params = {"duration": BSP.all.duration._10分钟以下}
     result = sync(search.search_by_type(query, search_type, params=params))
-    numPages = result["numPages"]  # usually we select the topmost candidates.
-    print(result)
+    # numPages = result["numPages"]  # usually we select the topmost candidates.
+    # print(result)
+    mresult = pyjq.all(".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag,typename, typeid, review, favorites, danmaku, rank_score, like} | select (.title != null and .bvid != null)",result)
     # you should use the parser found elsewhere. or not?
-    breakpoint()
+    # breakpoint()
     # remove keyword highlight from title. will you?
     # result['result'][0].keys()
-    keys = [
-        "type",
-        "id",
-        "author",
-        "mid",
-        "typeid",
-        "typename",
-        "arcurl",
-        "aid",
-        "bvid",
-        "title",
-        "description",
-        "arcrank",
-        "pic",
-        "play",
-        "video_review",
-        "favorites",
-        "tag",
-        "review",
-        "pubdate",
-        "senddate",
-        "duration",
-        "badgepay",
-        "hit_columns",
-        "view_type",
-        "is_pay",
-        "is_union_video",
-        "rec_tags",
-        "new_rec_tags",
-        "rank_score",
-        "like",
-        "upic",
-        "corner",
-        "cover",
-        "desc",
-        "url",
-        "rec_reason",
-        "danmaku",
-    ]
+    # keys = [
+    #     "type",
+    #     "id",
+    #     "author",
+    #     "mid",
+    #     "typeid",
+    #     "typename",
+    #     "arcurl",
+    #     "aid",
+    #     "bvid",
+    #     "title",
+    #     "description",
+    #     "arcrank",
+    #     "pic",
+    #     "play",
+    #     "video_review",
+    #     "favorites",
+    #     "tag",
+    #     "review",
+    #     "pubdate",
+    #     "senddate",
+    #     "duration",
+    #     "badgepay",
+    #     "hit_columns",
+    #     "view_type",
+    #     "is_pay",
+    #     "is_union_video",
+    #     "rec_tags",
+    #     "new_rec_tags",
+    #     "rank_score",
+    #     "like",
+    #     "upic",
+    #     "corner",
+    #     "cover",
+    #     "desc",
+    #     "url",
+    #     "rec_reason",
+    #     "danmaku",
+    # ]
     # rank score is important!
 
 
