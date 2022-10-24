@@ -56,11 +56,13 @@ editlyJson = {
             "layers": [
                 {
                     "type": "title-background",
+                    # "type": "title",
                     "text": title,
-                    "background": "#000000",
+                    # "background": "#000000",
                     "fontPath": fontPath,
                     "textColor": "#FFFFFF",
                 },
+                {'type':'image-overlay','path':cat_image,'position':}
                 {"type": "audio", "path": audio_path}, # order matters!
             ],
         },
