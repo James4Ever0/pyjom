@@ -18,12 +18,12 @@
             "duration": 3.31,
             "layers": [
                 {
-                    "type": "fill-color",
-                    "color": "#000000"
+                    "type": "audio",
+                    "path": "output.mp3.mp3"
                 },
                 {
-                    "type": "detached-audio",
-                    "path": "output.mp3.mp3"
+                    "type": "fill-color",
+                    "color": "#000000"
                 }
             ]
         },
