@@ -183,6 +183,7 @@ def checkVideoInDatabase(bvid: str):
 
 
 # get my videos first!
+import math
 # @refresh_status_decorator
 from bilibili_api.user import VideoOrder
 def getMyVideos(tid=0, keyword="",order=VideoOrder.PUBDATE):  # all videos? just at init.
@@ -201,7 +202,7 @@ def getMyVideos(tid=0, keyword="",order=VideoOrder.PUBDATE):  # all videos? just
         print(videos)
         # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
         page = videos['page'] # pagination options
-        
+        numPages = math.ceil(page['count'] / page['ps'])
         breakpoint()
         pn += 1
 
