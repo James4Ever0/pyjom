@@ -49,5 +49,6 @@ from lazero.filesystem.io import writeJsonObjectToFile
 writeJsonObjectToFile(template_name, editlyJson)
 
 import subprocess
-command = ['editly',]
+# use xvfb you SOB
+command = ['editly',template_name] # no need to specify --out outputPath here
 subprocess.run(command)
