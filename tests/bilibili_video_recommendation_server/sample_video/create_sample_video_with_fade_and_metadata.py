@@ -58,19 +58,19 @@ editlyJson = {
             "duration": audio_duration,
             "layers": [
                 {
+                    "type": "image-overlay",
+                    "path": cat_image,
+                    "position": "center",
+                    "width": 1,
+                    "height": 1,
+                },
+                {
                     "type": "title-background",
                     # "type": "title",
                     "text": title,
                     # "background": "#000000",
                     "fontPath": fontPath,
                     "textColor": "#FFFFFF",
-                },
-                {
-                    "type": "image-overlay",
-                    "path": cat_image,
-                    "position": "center",
-                    "width": 1,
-                    "height": 1,
                 },
                 {"type": "audio", "path": audio_path},  # order matters!
             ],
