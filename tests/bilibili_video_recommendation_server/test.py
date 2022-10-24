@@ -120,9 +120,11 @@ def searchMyVideos():
     # better use semantic search. but now we use hybrid search instead.
     # hybrid search: metatopic plus bm25
     # how to search my video? and how to measure relevance?
+    ...
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
-def registerMyVideo(): # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
+def registerMyVideo(bvid:str,user_id:int): # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
+    # register user first, then register the video.
     ...
 
 def checkRegisteredVideo():
