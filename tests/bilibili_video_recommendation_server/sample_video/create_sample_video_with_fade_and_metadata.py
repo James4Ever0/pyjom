@@ -5,6 +5,7 @@ video_path = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_serv
 up_image_path = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/up_image.jpg"
 output_path = 'output.mp4'
 title = "世上所有的小猫都是天使变的！"
+template_name = "template.json"
 from caer.video.frames_and_fps import get_duration, get_res
 video_duration = get_duration(video_path)
 video_width, video_height = get_res(video_path)
@@ -43,4 +44,10 @@ editlyJson = {
     ]
 }
 
-with open("")
+from lazero.filesystem.io import writeJsonObjectToFile
+
+writeJsonObjectToFile(template_name, editlyJson)
+
+import subprocess
+command = ['editly',]
+subprocess.run(command)
