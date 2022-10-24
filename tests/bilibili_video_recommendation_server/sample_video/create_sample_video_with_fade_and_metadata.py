@@ -16,8 +16,8 @@ video_width, video_height = get_res(video_path)
 
 min_video_scalar = min(video_width, video_height)
 up_image_scalar = int(min_video_scalar * 0.2)
-up_image_width = up_image_scalar/video_width
-up_image_height = up_image_scalar/video_height
+up_image_width = up_image_scalar / video_width
+up_image_height = up_image_scalar / video_height
 
 # some parameters are using floating point numbers between 0 and 1
 # image overlay can be done in editly
@@ -27,19 +27,27 @@ editlyJson = {
     "width": video_width,
     "height": video_height,
     "fps": 30,  # different from the default value.
-    "fast": True, # just for preview. if not turning this on, will be too slow.
-    "keepSourceAudio": True, # it does!
+    "fast": True,  # just for preview. if not turning this on, will be too slow.
+    "keepSourceAudio": True,  # it does!
+    "defaults": {
+        "transition": {
+            "duration": 0.5,
+            "name": "fade",
+            "audioOutCurve": "tri",
+            "audioInCurve": "tri",
+        }
+    },
     "clips": [
         {
-            "transition": "fade",  # or we just use random?
+            # "transition": "fade",  # or we just use random?
             "duration": video_duration,
             "layers": [
-                {"type": "video", "path": video_path}, # order is important.
+                {"type": "video", "path": video_path},  # order is important.
                 {
                     "type": "image-overlay",
                     "path": up_image_path,
                     "position": "top-left",
-                    "width": up_image_width, # float numbers.
+                    "width": up_image_width,  # float numbers.
                     "height": up_image_height,
                 },
             ],

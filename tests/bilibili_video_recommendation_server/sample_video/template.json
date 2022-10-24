@@ -5,9 +5,16 @@
     "fps": 30,
     "fast": true,
     "keepSourceAudio": true,
+    "defaults": {
+        "transition": {
+            "duration": 0.5,
+            "name": "fade",
+            "audioOutCurve": "tri",
+            "audioInCurve": "tri"
+        }
+    },
     "clips": [
         {
-            "transition": "fade",
             "duration": 20.0,
             "layers": [
                 {
