@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://pyjom.readthedocs.io/en/latest/">
-    <img src="https://user-images.githubusercontent.com/25968335/120111974-8abef880-c139-11eb-99cd-fa928348b198.png" alt="pyjom">
+    <img src="" alt="pyjom">
   </a>
 </p>
 
