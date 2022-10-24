@@ -7,6 +7,9 @@ up_image_path = (
 )
 output_path = "output.mp4"
 fontPath = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/wqy-microhei0.ttf"
+cat_image = (
+    "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/cat_image.jpg"
+)
 title = "世上所有的小猫都是天使变的！"
 audio_path = "output.mp3.mp3"
 audio_duration = 3.31
@@ -62,8 +65,14 @@ editlyJson = {
                     "fontPath": fontPath,
                     "textColor": "#FFFFFF",
                 },
-                {'type':'image-overlay','path':cat_image,'position':}
-                {"type": "audio", "path": audio_path}, # order matters!
+                {
+                    "type": "image-overlay",
+                    "path": cat_image,
+                    "position": "center",
+                    "width": 1,
+                    "height": 1,
+                },
+                {"type": "audio", "path": audio_path},  # order matters!
             ],
         },
         {

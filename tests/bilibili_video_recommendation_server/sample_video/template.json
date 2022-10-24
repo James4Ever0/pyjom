@@ -20,9 +20,15 @@
                 {
                     "type": "title-background",
                     "text": "世上所有的小猫都是天使变的！",
-                    "background": "#000000",
                     "fontPath": "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/wqy-microhei0.ttf",
                     "textColor": "#FFFFFF"
+                },
+                {
+                    "type": "image-overlay",
+                    "path": "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/cat_image.jpg",
+                    "position": "center",
+                    "width": 1,
+                    "height": 1
                 },
                 {
                     "type": "audio",
