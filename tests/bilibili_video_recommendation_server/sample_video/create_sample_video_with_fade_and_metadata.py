@@ -47,6 +47,7 @@ editlyJson = {
             "duration": audio_duration,
             "layers": [
                 {"type": "fill-color", "color": "#000000"},
+                # {"type": "detached-audio", "path": audio_path}, # will make sure nothing visual presents.
                 {"type": "detached-audio", "path": audio_path},
             ],
         },
