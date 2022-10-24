@@ -28,7 +28,7 @@ from functools import lru_cache
 def getUserObject(dedeuserid:str="397424026", use_credential:bool=False):
     dedeuserid_int = int(dedeuserid)
     if use_credential:
-        credential = getCredentialByDedeUserId(dedeuserid)
+        credential = getCredentialByDedeUserId(dedeuserid) # this will cache the cookies. so it allows multiple accounts.
     else:
         credential = None
     u = user.User(dedeuserid_int, credential=credential)
@@ -138,3 +138,9 @@ def checkPublishedVideo():
 
 # i suggest you to use sqlalchemy. since this is no ordinary task.
 # you cannot just check every video of your own in the past.
+
+## following code is for test purpose.
+
+if __name__ == '__main__':
+    query = "cod19" # recent hot videos.
+    results = searchVideos(query)
