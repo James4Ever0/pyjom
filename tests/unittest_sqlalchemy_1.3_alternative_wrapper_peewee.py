@@ -85,8 +85,8 @@ next_check_time = datetime.datetime.now() - datetime.timedelta(minutes=20) # eve
 
 print("NEXT CHECK TIME:", next_check_time)
 
-results_0 = BilibiliVideo.select().where(BilibiliVideo.last_check < datetime.datetime.now())
-results_1 = BilibiliVideo.select().where(BilibiliVideo.last_check > datetime.datetime.now())
+results_0 = BilibiliVideo.select().where(BilibiliVideo.last_check < datetime.datetime.now()) # needs to check
+results_1 = BilibiliVideo.select().where(BilibiliVideo.last_check > datetime.datetime.now()) # no need to check
 
 print(results_0)
 print(results_1) # these are just raw sql statements. have't executed yet.
@@ -110,7 +110,7 @@ data = User.get()  # this can only get one such instance?
 # print(data)
 # breakpoint()
 
-selection = User.select()  # still iterable?
+selection = User.select() # still iterable?
 # breakpoint()
 
 # let's bind some database.
