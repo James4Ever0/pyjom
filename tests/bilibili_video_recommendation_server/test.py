@@ -98,7 +98,9 @@ class BilibiliVideo(Model):
 def bilibiliTimecodeToSeconds(bilibili_timecode:str):
     import vtc
     timecode ="{}:0".format(bilibili_timecode)
-    seconds = vtc.Timecode(timecode, rate=1).seconds
+    decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
+    seconds = round(decimal_seconds)
+    return seconds
 # @refresh_status_decorator
 def searchVideos(
     query: str,
