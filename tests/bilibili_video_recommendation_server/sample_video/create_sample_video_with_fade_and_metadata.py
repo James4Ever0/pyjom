@@ -15,5 +15,10 @@ editlyJson = {
     'fps':30, # different from the default value.
     'fast':False,
     'keepSourceAudio':True,
-    
+    'clips':[
+        {
+            "trasition":"",
+            "duration":
+        }
+    ]
 }
