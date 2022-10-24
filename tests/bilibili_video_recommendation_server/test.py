@@ -7,6 +7,8 @@ sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
+# will it load the overheads of pyjom.commons?
+
 from bilibili_api import sync, search, user
 
 from peewee import *
