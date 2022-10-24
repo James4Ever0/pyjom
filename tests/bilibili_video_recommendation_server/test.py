@@ -40,8 +40,6 @@ import os
 
 from peewee import *
 
-
-
 def refresh_status():
     return
 
@@ -94,6 +92,8 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 def checkVideoInDatabase(bvid):
     # we use peewee (of course our modified version)
     db = getBilibiliVideoDatabase()
+    db.create_tables([BilibiliVideo, BilibiliUser])
+    BilibiliVideo.
 
 # get my videos first!
 # @refresh_status_decorator
