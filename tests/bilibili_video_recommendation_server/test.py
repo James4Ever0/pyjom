@@ -101,6 +101,8 @@ def bilibiliTimecodeToSeconds(bilibili_timecode:str):
     decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
     seconds = round(decimal_seconds)
     return seconds
+
+
 # @refresh_status_decorator
 def searchVideos(
     query: str,
@@ -182,6 +184,7 @@ def checkVideoInDatabase(bvid: str):
 
 # get my videos first!
 # @refresh_status_decorator
+from bilibili_api.user import VideoOrder
 def getMyVideos(tid=0, keyword="",order=VideoOrder.PUBDATE):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
@@ -233,6 +236,7 @@ def checkPublishedVideo():
 
 if __name__ == "__main__":
     # query = "cod19"  # recent hot videos.
-    # results = searchVideos(query)
+    # results = searchVideos(query) 
     # no keywords? are you kidding?
-    getMyVideos()
+    results = getMyVideos()
+    print(results)
