@@ -21,7 +21,7 @@ font_path = "./wqy-microhei0.ttf"
 ad_height = 850
 ad_width = 700
 night_mode = True
-style_mode = True
+style_mode = False
 output_path = "ebegging_template.png"
 # white = pixie.Color(1, 1, 1, 1)
 # black = pixie.Color(0, 0, 0, 1)
@@ -54,8 +54,8 @@ styleSuites = {
     }
 }
 
-# selected_style_suite = styleSuites['wechat']
-selected_style_suite = styleSuites['alipay']
+selected_style_suite = styleSuites['wechat']
+# selected_style_suite = styleSuites['alipay']
 
 qrcode_stroke_paint = selected_style_suite['paint']  # for alipay
 qrcode_scan_text = selected_style_suite['text']
@@ -99,7 +99,7 @@ font.size = int(
 
 if style_mode:
     if night_mode:
-        font.paint.color = white
+        font.paint.color = qrcode_stroke_paint.color
     else:
         font.paint.color = black
 else:
