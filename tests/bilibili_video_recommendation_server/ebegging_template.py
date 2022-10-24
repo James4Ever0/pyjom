@@ -19,6 +19,9 @@ ad_height = 1000
 ad_width = 700
 night_mode=False
 qrcode_scan_text = "支付宝投喂"
+output_path = 'ebegging_template.png'
+ocean_blue = "#0A3CCF"
+grass_green = 
 
 image = pixie.Image(ad_width, ad_height)
 
@@ -46,14 +49,14 @@ qrcode_transform = pixie.translate(
 )
 
 
-qrcode_rounded_corner = int(0.05 * ad_width)
+qrcode_rounded_corner = int(0.05 * 0.3 * qrcode_width)
 qrcode_stroke_path = pixie.Path()
 qrcode_stroke_path.rounded_rect(
     0, 0, qrcode_width, qrcode_height, *([qrcode_rounded_corner] * 4)
 )
 image.stroke_path(
     qrcode_stroke_path,
-    cover_stroke_paint,
+    qrcode_stroke_paint,
     qrcode_transform,
     stroke_width=stroke_width,
 )
@@ -63,3 +66,5 @@ qrcode_mask.fill_path(qrcode_stroke_path)
 qrcode.mask_draw(qrcode_mask)
 
 image.draw(qrcode, qrcode_transform)
+
+image.write_file(output_path)
