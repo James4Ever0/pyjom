@@ -7,7 +7,7 @@
     "keepSourceAudio": true,
     "clips": [
         {
-            "trasition": "fade",
+            "transition": "fade",
             "duration": 20.0,
             "layers": [
                 {
@@ -18,8 +18,8 @@
                     "type": "image-overlay",
                     "path": "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/up_image.jpg",
                     "position": "top-left",
-                    "width": 216,
-                    "height": 216
+                    "width": 0.1125,
+                    "height": 0.2
                 }
             ]
         }

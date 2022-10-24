@@ -19,8 +19,7 @@ up_image_scalar = int(min_video_scalar * 0.2)
 up_image_width = up_image_scalar/video_width
 up_image_height = up_image_scalar/video_height
 
-# warning! not accurate when doing preview.
-
+# some parameters are using floating point numbers between 0 and 1
 # image overlay can be done in editly
 
 editlyJson = {
@@ -32,7 +31,7 @@ editlyJson = {
     "keepSourceAudio": True, # it does!
     "clips": [
         {
-            "trasition": "fade",  # or we just use random?
+            "transition": "fade",  # or we just use random?
             "duration": video_duration,
             "layers": [
                 {"type": "video", "path": video_path}, # order is important.
