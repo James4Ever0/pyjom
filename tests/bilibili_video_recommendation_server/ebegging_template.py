@@ -50,7 +50,10 @@ qrcode_stroke_path.rounded_rect(
     0, 0, qrcode_width, qrcode_height, *([qrcode_rounded_corner] * 4)
 )
 
+ebegging_mask_path = pixie.Path()
+ebegging_mask_path.rounded_rect(0,0,ad_width,ad_height,*([qrcode_rounded_corner] * 4))
 
+# fill the ebegging ad with appropriate color first
 
 font = pixie.read_font(font_path)
 font.size = int(qrcode_width * (0.04/0.3)) # questionable. we shall check the font size.
