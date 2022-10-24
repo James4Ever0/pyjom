@@ -23,6 +23,8 @@ up_image_height = up_image_scalar / video_height
 # some parameters are using floating point numbers between 0 and 1
 # image overlay can be done in editly
 
+# no need to render that silly karaoke effects.
+
 editlyJson = {
     "outPath": output_path,
     "width": video_width,
