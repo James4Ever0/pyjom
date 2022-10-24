@@ -14,5 +14,6 @@ editlyJson = {
     'height': 1080,
     'fps':30, # different from the default value.
     'fast':False,
+    'keepSourceAudio':True,
     
 }
