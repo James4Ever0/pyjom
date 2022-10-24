@@ -6,7 +6,7 @@ import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
-
+from pyjom.platforms.bilibili.searchDataParser import 
 # will it load the overheads of pyjom.commons?
 
 # updated anyio. does that work? will it break dependencies?
@@ -92,7 +92,9 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
     result = sync(search.search_by_type(query,search_type, params=params))
     numPages = result['numPages'] # usually we select the topmost candidates.
     print(result)
+    # you should use the parser found elsewhere. or not?
     breakpoint()
+    # remove keyword highlight from title. will you?
     # result['result'][0].keys()
     # dict_keys(['type', 'id', 'author', 'mid', 'typeid', 'typename', 'arcurl', 'aid', 'bvid', 'title', 'description', 'arcrank', 'pic', 'play', 'video_review', 'favorites', 'tag', 'review', 'pubdate', 'senddate', 'duration', 'badgepay', 'hit_columns', 'view_type', 'is_pay', 'is_union_video', 'rec_tags', 'new_rec_tags', 'rank_score', 'like', 'upic', 'corner', 'cover', 'desc', 'url', 'rec_reason', 'danmaku'])
 
