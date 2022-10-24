@@ -17,7 +17,7 @@ makeAndSaveQrcode(alipay_link, qrcode_path)
 import pixie
 
 font_path = "./wqy-microhei0.ttf"
-ad_height = 1000
+ad_height = 850
 ad_width = 700
 night_mode = False
 qrcode_scan_text = "支付宝投喂"
@@ -44,8 +44,16 @@ qrcode_width = qrcode_height = int(0.9 * ad_width)
 qrcode = qrcode.resize(qrcode_width, qrcode_height)
 
 
+qrcode_rounded_corner = int((0.05 /0.3)* qrcode_width)
+qrcode_stroke_path = pixie.Path()
+qrcode_stroke_path.rounded_rect(
+    0, 0, qrcode_width, qrcode_height, *([qrcode_rounded_corner] * 4)
+)
+
+
+
 font = pixie.read_font(font_path)
-font.size = int(qrcode_width * 0.04) # questionable. we shall check the font size.
+font.size = int(qrcode_width * (0.04/0.3)) # questionable. we shall check the font size.
 if night_mode:
     font.paint.color = pixie.Color(1, 1, 1, 1)
 else:
@@ -62,11 +70,6 @@ qrcode_transform = pixie.translate(
 )
 
 
-qrcode_rounded_corner = int((0.05 /0.3)* qrcode_width)
-qrcode_stroke_path = pixie.Path()
-qrcode_stroke_path.rounded_rect(
-    0, 0, qrcode_width, qrcode_height, *([qrcode_rounded_corner] * 4)
-)
 
 
 stroke_param = 100/3
