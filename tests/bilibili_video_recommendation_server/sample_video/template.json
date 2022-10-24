@@ -15,15 +15,6 @@
     },
     "clips": [
         {
-            "duration": 0.5,
-            "layers": [
-                {
-                    "type": "fill-color",
-                    "color": "#000000"
-                }
-            ]
-        },
-        {
             "duration": 20.0,
             "layers": [
                 {
