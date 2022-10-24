@@ -199,6 +199,9 @@ def getMyVideos(tid=0, keyword="",order=VideoOrder.PUBDATE):  # all videos? just
     while True:
         videos = sync(user.get_videos(pn=pn))
         print(videos)
+        # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
+        page = videos['page'] # pagination options
+        
         breakpoint()
         pn += 1
 
