@@ -50,5 +50,5 @@ writeJsonObjectToFile(template_name, editlyJson)
 
 import subprocess
 # use xvfb you SOB
-command = ['editly',template_name] # no need to specify --out outputPath here
+command = ['xvfb-run','editly',template_name] # no need to specify --out outputPath here
 subprocess.run(command)
