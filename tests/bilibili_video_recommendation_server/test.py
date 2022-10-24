@@ -109,7 +109,8 @@ def searchVideos(
     result = sync(search.search_by_type(query, search_type, params=params))
     # numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
-    mresult = pyjq.all(".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag,typename, typeid, review, favorites, danmaku, rank_score, like} | select (.title != null and .bvid != null)",result)
+    # you can use the upic to render some deceptive ads, but better not?
+    mresult = pyjq.all(".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag,typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",result)
     # so you want to persist these results or not?
     # better persist so we can reuse.
     # no persistance?
