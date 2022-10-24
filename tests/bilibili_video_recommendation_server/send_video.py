@@ -15,7 +15,8 @@ import requests
 url = baseUrl + "/send_group_msg"
 import os
 # video_path = "big_breast_video.mp4"
-video_path = "sample_video/sample_video.mp4" # this video have some problem. needs intro and outro. need to show some metadata on the way.
+# video_path = "sample_video/sample_video.mp4" # this video have some problem. needs intro and outro. need to show some metadata on the way.
+video_path = "sample_video/output.mp4" # the 'moderated' video
 video_abspath = os.path.abspath(video_path)
 content = "file://"+video_abspath
 
