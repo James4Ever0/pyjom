@@ -7,7 +7,6 @@ wechat_link = (
 )
 
 
-selected_style_suite = styleSuites['wechat']
 from generate_qr_code import makeAndSaveQrcode
 
 qrcode_path = "test_ebegging.png"
@@ -54,6 +53,9 @@ styleSuites = {
         'text':"微信投喂"
     }
 }
+
+# selected_style_suite = styleSuites['wechat']
+selected_style_suite = styleSuites['alipay']
 
 qrcode_stroke_paint = selected_style_suite['paint']  # for alipay
 qrcode_scan_text = selected_style_suite['text']
