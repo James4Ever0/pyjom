@@ -86,6 +86,7 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
     search_type = search.SearchObjectType.VIDEO
     params = {"duration": BSP.all.duration._10分钟以下}
     result = sync(search.search_by_type(query,search_type, params=params))
+    print(result)
 
 # you need my credential!
 # better reuse the code.
