@@ -38,6 +38,7 @@ editlyJson = {
         }
     },
     "clips": [
+        {"duration": 0.5, "layers": [{"type": "fill-color", "color": "#000000"}]},
         {
             # "transition": "fade",  # or we just use random?
             "duration": video_duration,
@@ -51,7 +52,8 @@ editlyJson = {
                     "height": up_image_height,
                 },
             ],
-        }
+        },
+        {"duration": 0.5, "layers": [{"type": "fill-color", "color": "#000000"}]},
     ],
 }
 
