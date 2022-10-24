@@ -40,7 +40,9 @@ editlyJson = {
     "clips": [
         # {"duration": 0.5, "layers": [{"type": "fill-color", "color": "#000000"}]},
         # we disable this clip.
-        {'duration':1, 'layers:'}
+        {'duration':1, 'layers':[
+            {'type':'title-background',, 'textColor':"#FFFFFF"}
+        ]}
         {
             # "transition": "fade",  # or we just use random?
             "duration": video_duration,
