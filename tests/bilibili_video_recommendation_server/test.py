@@ -93,6 +93,8 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
     numPages = result['numPages'] # usually we select the topmost candidates.
     print(result)
     breakpoint()
+    # result['result'][0].keys()
+    # dict_keys(['type', 'id', 'author', 'mid', 'typeid', 'typename', 'arcurl', 'aid', 'bvid', 'title', 'description', 'arcrank', 'pic', 'play', 'video_review', 'favorites', 'tag', 'review', 'pubdate', 'senddate', 'duration', 'badgepay', 'hit_columns', 'view_type', 'is_pay', 'is_union_video', 'rec_tags', 'new_rec_tags', 'rank_score', 'like', 'upic', 'corner', 'cover', 'desc', 'url', 'rec_reason', 'danmaku'])
 
 # you need my credential!
 # better reuse the code.
