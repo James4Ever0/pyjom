@@ -12,7 +12,6 @@ wechat_link = (
 from generate_qr_code import makeAndSaveQrcode
 
 qrcode_path = "test_ebegging.png"
-makeAndSaveQrcode(alipay_link, qrcode_path)
 
 # now we plan to draw this thing.
 # how big is the canvas? no fill?
@@ -58,6 +57,11 @@ styleSuites = {
 
 selected_style_suite = styleSuites['wechat']
 # selected_style_suite = styleSuites['alipay']
+
+
+qrcode_link = selected_style_suite['qrcode']
+makeAndSaveQrcode(qrcode_link, qrcode_path)
+
 
 qrcode_stroke_paint = selected_style_suite['paint']  # for alipay
 qrcode_scan_text = selected_style_suite['text']
