@@ -19,7 +19,8 @@ import pixie
 font_path = "./wqy-microhei0.ttf"
 ad_height = 850
 ad_width = 700
-night_mode = False
+night_mode = True
+style_mode = False
 qrcode_scan_text = "支付宝投喂"
 output_path = "ebegging_template.png"
 # white = pixie.Color(1, 1, 1, 1)
@@ -59,10 +60,13 @@ ebegging_mask_path.rounded_rect(
     0, 0, ad_width, ad_height, *([qrcode_rounded_corner] * 4)
 )
 
-if not night_mode:
-    fill_paint = white_paint
+if not style_mode:
+    if not night_mode:
+        fill_paint = white_paint
+    else:
+        fill_paint = black_paint
 else:
-    fill_paint = black_paint
+    fill_paint = qrcode_stroke_paint
 
 image.fill_path(
     ebegging_mask_path, fill_paint
