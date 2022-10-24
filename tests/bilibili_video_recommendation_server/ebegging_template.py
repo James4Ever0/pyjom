@@ -86,6 +86,10 @@ if not style_mode:
 else:
     fill_paint = qrcode_stroke_paint
 
+import copy
+fill_paint = copy.deepcopy(fill_paint)
+fill_paint.opacity = 0.6
+
 image.fill_path(
     ebegging_mask_path, fill_paint
 )
