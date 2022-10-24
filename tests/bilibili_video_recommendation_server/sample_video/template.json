@@ -3,7 +3,7 @@
     "width": 1920,
     "height": 1080,
     "fps": 30,
-    "fast": false,
+    "fast": true,
     "keepSourceAudio": true,
     "clips": [
         {
@@ -11,15 +11,15 @@
             "duration": 20.0,
             "layers": [
                 {
+                    "type": "video",
+                    "path": "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/sample_video/sample_video.mp4"
+                },
+                {
                     "type": "image-overlay",
                     "path": "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/up_image.jpg",
                     "position": "top-left",
                     "width": 216,
                     "height": 216
-                },
-                {
-                    "type": "video",
-                    "path": "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/sample_video/sample_video.mp4"
                 }
             ]
         }
