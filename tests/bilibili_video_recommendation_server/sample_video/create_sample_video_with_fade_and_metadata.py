@@ -10,7 +10,7 @@ fontPath = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server
 cat_image = (
     "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/cat_image.jpg"
 )
-title = "世上所有的小猫都是天使变的！"
+title = "世上所有的小猫\n\n都是天使变的！"
 audio_path = "output.mp3.mp3"
 audio_duration = 3.31
 template_name = "template.json"
