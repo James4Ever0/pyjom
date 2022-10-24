@@ -21,11 +21,11 @@ font_path = "./wqy-microhei0.ttf"
 ad_height = 850
 ad_width = 700
 night_mode = False
-style_mode = True
+style_mode = False
 output_path = "ebegging_template.png"
 # white = pixie.Color(1, 1, 1, 1)
 # black = pixie.Color(0, 0, 0, 1)
-
+background_opacity = 0.6
 
 def makeColorAndPaintFromColorCode(color_code: str):
     assert len(color_code) == 6 + 1 and color_code.startswith("#")
@@ -88,7 +88,8 @@ else:
 
 import copy
 fill_paint = copy.deepcopy(fill_paint)
-fill_paint.opacity = 0.6
+fill_paint.color = copy.deepcopy(fill_paint.color)
+fill_paint.opacity = background_opacity
 
 image.fill_path(
     ebegging_mask_path, fill_paint
