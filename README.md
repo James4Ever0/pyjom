@@ -1,5 +1,12 @@
 # pyjom
 
+<p align="center">
+  <a href="https://pyjom.readthedocs.io/en/latest/">
+    <img src="https://user-images.githubusercontent.com/25968335/120111974-8abef880-c139-11eb-99cd-fa928348b198.png" alt="pyjom">
+  </a>
+</p>
+
+
 ## 介绍
 
 自动化的自媒体内容制造机 自动运维自媒体 无人值守创作直播 全平台可运行 做一个有思想的复读机 有金饭碗的ebegger
