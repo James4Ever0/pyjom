@@ -75,6 +75,10 @@ qrcode_stroke_path.rounded_rect(
     0, 0, qrcode_width, qrcode_height, *([qrcode_rounded_corner] * 4)
 )
 
+
+qrcode_width_margin = int((ad_width - qrcode_width) / 2)
+qrcode_height_margin = int(ad_height - qrcode_height - qrcode_width_margin)
+
 ebegging_mask_path = pixie.Path()
 ebegging_mask_path.rounded_rect(
     0, 0, ad_width, ad_height, *([qrcode_rounded_corner] * 4)
@@ -115,7 +119,7 @@ else:
     font.paint.color = white
 
 text_bound_x = ad_width
-text_bound_y = ad_height - ad_width
+text_bound_y = qrcode_height_margin
 
 image.fill_text(
     font,
@@ -126,8 +130,8 @@ image.fill_text(
 )
 
 qrcode_transform = pixie.translate(
-    int((ad_width - qrcode_width) / 2),
-    int(ad_height - ad_width),
+    qrcode_width_margin,
+    qrcode_height_margin,
 )
 
 
