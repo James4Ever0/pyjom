@@ -20,14 +20,14 @@ makeAndSaveQrcode(alipay_link, qrcode_path)
 import pixie
 
 font_path = "./wqy-microhei0.ttf"
-ad_height = 850
+ad_height = 800
 ad_width = 700
-night_mode = False
-style_mode = False
+night_mode = True
+style_mode = True
 output_path = "ebegging_template.png"
 # white = pixie.Color(1, 1, 1, 1)
 # black = pixie.Color(0, 0, 0, 1)
-background_opacity = 0.6
+background_opacity = 1
 
 def makeColorAndPaintFromColorCode(color_code: str):
     assert len(color_code) == 6 + 1 and color_code.startswith("#")
@@ -81,7 +81,7 @@ qrcode_height_margin = int(ad_height - qrcode_height - qrcode_width_margin)
 
 ebegging_mask_path = pixie.Path()
 ebegging_mask_path.rounded_rect(
-    0, 0, ad_width, ad_height, *([qrcode_rounded_corner] * 4)
+    0, 0, ad_width, ad_height, *([int(qrcode_rounded_corner*1.2)] * 4)
 )
 
 if not style_mode:
