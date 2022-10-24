@@ -55,8 +55,8 @@ styleSuites = {
     }
 }
 
-selected_style_suite = styleSuites['wechat']
-# selected_style_suite = styleSuites['alipay']
+# selected_style_suite = styleSuites['wechat']
+selected_style_suite = styleSuites['alipay']
 
 
 qrcode_link = selected_style_suite['qrcode']
