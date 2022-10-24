@@ -7,6 +7,7 @@ import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
+
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
 # will it load the overheads of pyjom.commons?
@@ -95,9 +96,10 @@ class BilibiliVideo(Model):
     )  # is it my account anyway?
 
 
-def bilibiliTimecodeToSeconds(bilibili_timecode:str):
+def bilibiliTimecodeToSeconds(bilibili_timecode: str):
     import vtc
-    timecode ="{}:0".format(bilibili_timecode)
+
+    timecode = "{}:0".format(bilibili_timecode)
     decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
     seconds = round(decimal_seconds)
     return seconds
@@ -118,7 +120,10 @@ def searchVideos(
     # numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
     # you can use the upic to render some deceptive ads, but better not?
-    mresult = pyjq.all(".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag,typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",result)
+    mresult = pyjq.all(
+        ".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag,typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",
+        result,
+    )
     # so you want to persist these results or not?
     # better persist so we can reuse.
     # no persistance?
@@ -170,6 +175,7 @@ def searchVideos(
     # ]
     # rank score is important!
 
+
 # you need my credential!
 # better reuse the code.
 
@@ -184,9 +190,14 @@ def checkVideoInDatabase(bvid: str):
 
 # get my videos first!
 import math
+
 # @refresh_status_decorator
 from bilibili_api.user import VideoOrder
-def getMyVideos(tid=0, keyword="",order=VideoOrder.PUBDATE):  # all videos? just at init.
+
+
+def getMyVideos(
+    tid=0, keyword="", order=VideoOrder.PUBDATE
+):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
     user = getUserObject()
@@ -197,19 +208,24 @@ def getMyVideos(tid=0, keyword="",order=VideoOrder.PUBDATE):  # all videos? just
     # keyword	str, optional	搜索关键词. Defaults to "".
     # order	VideoOrder, optional	排序方式. Defaults to VideoOrder.PUBDATE
     # this is async. use sync.
-    while True:
+    stopped = False
+    while not stopped:
         videos = sync(user.get_videos(pn=pn))
         print(videos)
         # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
-        page = videos['page'] # pagination options
-        numPages = math.ceil(page['count'] / page['ps'])
-        topicList = videos['list']['tlist']
+        page = videos["page"]  # pagination options
+        numPages = math.ceil(page["count"] / page["ps"])
+        topicList = videos["list"]["tlist"]
         # {'1': {'tid': 1, 'count': 13, 'name': '动画'}, '160': {'tid': 160, 'count': 257, 'name': '生活'}, '181': {'tid': 181, 'count': 2, 'name': '影视'}, '188': {'tid': 188, 'count': 4, 'name': '科技'}, '217': {'tid': 217, 'count': 4, 'name': '动物圈'}, '234': {'tid': 234, 'count': 1, 'name': '运动'}, '3': {'tid': 3, 'count': 9, 'name': '音乐'}, '36': {'tid': 36, 'count': 30, 'name': '知识'}, '4': {'tid': 4, 'count': 67, 'name': '游戏'}}
 
         # breakpoint()
-        video_list = videos['list']['vlist']
+        video_list = videos["list"]["vlist"]
         for video in video_list:
-            
+            bvid = video["bvid"]
+            result = checkVideoInDatabase(bvid)
+            if result:
+                stopped = True
+                break
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
         pn += 1
@@ -250,7 +266,7 @@ def checkPublishedVideo():
 
 if __name__ == "__main__":
     # query = "cod19"  # recent hot videos.
-    # results = searchVideos(query) 
+    # results = searchVideos(query)
     # no keywords? are you kidding?
     results = getMyVideos()
     print(results)
