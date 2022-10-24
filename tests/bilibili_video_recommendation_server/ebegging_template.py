@@ -57,19 +57,19 @@ text_bound_y = ad_height-ad_width
 image.fill_text(font, qrcode_scan_text, bounds=pixie.Vector2(text_bound_x, text_bound_y),h_align = pixie.CENTER_ALIGN, v_align=pixie.MIDDLE_ALIGN)
 
 qrcode_transform = pixie.translate(
-    int(ad_width - qrcode_width * 1.1 - font.size * 1.2),
-    int(ad_height - qrcode_height * 1.1),
+    int((ad_width - qrcode_width)/2),
+    int(ad_height - ad_width),
 )
 
 
-qrcode_rounded_corner = int(0.05 * 0.3 * qrcode_width)
+qrcode_rounded_corner = int((0.05 /0.3)* qrcode_width)
 qrcode_stroke_path = pixie.Path()
 qrcode_stroke_path.rounded_rect(
     0, 0, qrcode_width, qrcode_height, *([qrcode_rounded_corner] * 4)
 )
 
 
-stroke_param = 50
+stroke_param = 100/3
 stroke_width = int(qrcode_width / stroke_param)
 image.stroke_path(
     qrcode_stroke_path,
