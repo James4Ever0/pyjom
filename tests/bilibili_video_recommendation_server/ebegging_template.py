@@ -45,17 +45,16 @@ qrcode = qrcode.resize(qrcode_width, qrcode_height)
 
 
 font = pixie.read_font(font_path)
-font.size = int(qrcode_width * 0.04)
+font.size = int(qrcode_width * 0.04) # questionable. we shall check the font size.
 if night_mode:
     font.paint.color = pixie.Color(1, 1, 1, 1)
 else:
     font.paint.color = pixie.Color(0, 0, 0, 1)
 
-qrcode_scan_text_transform_x = int(ad_width - qrcode_width * 1.1 - font.size * 1)
-qrcode_scan_text_transform = pixie.translate(
-    qrcode_scan_text_transform_x + qrcode_width, int(ad_height - qrcode_height * 1.1)
-)
-image.fill_text(font, qrcode_scan_text, transform=qrcode_scan_text_transform)
+text_bound_x = ad_width
+text_bound_y = ad_height-ad_width
+
+image.fill_text(font, qrcode_scan_text, bounds=pixie.Vector2(text_bound_x, text_bound_y),h_align = pixie.CENTER_ALIGN, v_align=pixie.MIDDLE_ALIGN)
 
 qrcode_transform = pixie.translate(
     int(ad_width - qrcode_width * 1.1 - font.size * 1.2),
