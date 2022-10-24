@@ -41,7 +41,7 @@ editlyJson = {
         }
     },
     "clips": [
-        # {"duration": 0.5, "layers": [{"type": "fill-color", "color": "#000000"}]},
+        {"duration": audio_duration, "layers": [{"type": "fill-color", "color": "#000000"}]},
         # we disable this clip.
         {
             "duration": 1,
