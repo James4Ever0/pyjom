@@ -8,6 +8,8 @@ up_image_path = (
 output_path = "output.mp4"
 fontPath = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/wqy-microhei0.ttf"
 title = "世上所有的小猫都是天使变的！"
+audio_path = "output.mp3.mp3"
+audio_duration = 3.31
 template_name = "template.json"
 from caer.video.frames_and_fps import get_duration, get_res
 
@@ -41,7 +43,13 @@ editlyJson = {
         }
     },
     "clips": [
-        {"duration": audio_duration, "layers": [{"type": "fill-color", "color": "#000000"}]},
+        {
+            "duration": audio_duration,
+            "layers": [
+                {"type": "fill-color", "color": "#000000"},
+                {"type": "detached-audio", "path": audio_path},
+            ],
+        },
         # we disable this clip.
         {
             "duration": 1,
