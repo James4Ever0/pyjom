@@ -18,7 +18,16 @@ editlyJson = {
     'clips':[
         {
             "trasition":"",
-            "duration":
+            "duration":20,
+            "layers":[
+                {
+                    "type":"image-overlay",
+                    "path":,
+                    "position":,
+                    "width":,
+                    "height":
+                }
+            ]
         }
     ]
 }
