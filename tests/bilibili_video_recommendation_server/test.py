@@ -232,5 +232,6 @@ def checkPublishedVideo():
 ## following code is for test purpose.
 
 if __name__ == "__main__":
-    query = "cod19"  # recent hot videos.
-    results = searchVideos(query)
+    # query = "cod19"  # recent hot videos.
+    # results = searchVideos(query)
+    getMyVideos()
