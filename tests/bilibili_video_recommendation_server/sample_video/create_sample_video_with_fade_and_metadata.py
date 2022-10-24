@@ -19,7 +19,7 @@ editlyJson = {
     'keepSourceAudio':True,
     'clips':[
         {
-            "trasition":"",
+            "trasition":"fade", # or we just use random?
             "duration":video_duration,
             "layers":[
                 {
@@ -27,7 +27,7 @@ editlyJson = {
                     "path":"/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/up_image.jpg",
                     "position":,
                     "width":,
-                    "height": 
+                    "height":
                 }
             ]
         }
