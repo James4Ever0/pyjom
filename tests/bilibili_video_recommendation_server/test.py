@@ -11,6 +11,8 @@ from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
 # updated anyio. does that work? will it break dependencies?
 
+import 
+
 from bilibili_api import sync, search, user
 
 from peewee import *
@@ -89,6 +91,7 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
     params = {"duration": BSP.all.duration._10分钟以下}
     result = sync(search.search_by_type(query,search_type, params=params))
     print(result)
+    breakpoint()
 
 # you need my credential!
 # better reuse the code.
