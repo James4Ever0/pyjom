@@ -22,8 +22,18 @@ ad_width = 700
 night_mode = False
 qrcode_scan_text = "支付宝投喂"
 output_path = "ebegging_template.png"
-ocean_blue = pixie.parse_color("#0A3CCF")
-grass_green = pixie.parse_color("#00A619")
+
+
+def makeColorAndPaintFromColorCode(color_code: str):
+    assert len(color_code) == 6 + 1 and color_code.startswith("#")
+    color = pixie.parse_color(color_code)
+    paint = pixie.Paint(pixie.SOLID_PAINT)
+    paint.color = color
+    return color, paint
+
+
+ocean_blue, ocean_blue_paint = makeColorAndPaintFromColorCode("#0A3CCF")
+grass_green, grass_green_paint = makeColorAndPaintFromColorCode("#00A619")
 
 qrcode_stroke_paint = ocean_blue_paint  # for alipay
 
