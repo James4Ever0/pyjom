@@ -36,8 +36,7 @@ editlyJson = {
                 },
                 {
                     "type":"video",
-                    "path":video_path,
-                    
+                    "path":video_path
                 }
             ]
         }
