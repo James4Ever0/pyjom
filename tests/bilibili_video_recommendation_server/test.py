@@ -89,11 +89,12 @@ def searchVideos(query:str): # what do you expect? you want the xml object let's
 # better reuse the code.
 
 
-def checkVideoInDatabase(bvid):
+def checkVideoInDatabase(bvid:str):
     # we use peewee (of course our modified version)
     db = getBilibiliVideoDatabase()
     db.create_tables([BilibiliVideo, BilibiliUser])
-    BilibiliVideo.
+    result = BilibiliVideo.get_or_none(BilibiliVideo.bvid == bvid)
+    return result # check it elsewhere?
 
 # get my videos first!
 # @refresh_status_decorator
@@ -118,6 +119,7 @@ def getMyVideos(): # all videos? just at init.
 def searchMyVideos():
     # better use semantic search. but now we use hybrid search instead.
     # hybrid search: metatopic plus bm25
+    # how to search my video? and how to measure relevance?
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
 def registerMyVideo(): # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
