@@ -110,6 +110,9 @@ def searchVideos(
     # numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
     mresult = pyjq.all(".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag,typename, typeid, review, favorites, danmaku, rank_score, like} | select (.title != null and .bvid != null)",result)
+    # check some interesting result.
+    return mresult
+    # no selection?
     # you should use the parser found elsewhere. or not?
     # breakpoint()
     # remove keyword highlight from title. will you?
