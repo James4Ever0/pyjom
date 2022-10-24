@@ -14,7 +14,8 @@ import requests
 
 url = baseUrl + "/send_group_msg"
 import os
-video_path = "big_breast_video.mp4"
+# video_path = "big_breast_video.mp4"
+video_path = "sample_video/sample_video.mp4"
 video_abspath = os.path.abspath(video_path)
 content = "file://"+video_abspath
 
