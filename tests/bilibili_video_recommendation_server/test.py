@@ -9,6 +9,8 @@ from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
 # will it load the overheads of pyjom.commons?
 
+# updated anyio. does that work? will it break dependencies?
+
 from bilibili_api import sync, search, user
 
 from peewee import *
