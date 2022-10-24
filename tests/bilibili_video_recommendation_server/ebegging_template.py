@@ -73,8 +73,6 @@ qrcode_transform = pixie.translate(
 )
 
 
-
-
 stroke_param = 100/3
 stroke_width = int(qrcode_width / stroke_param)
 image.stroke_path(
