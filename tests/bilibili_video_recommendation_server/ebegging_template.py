@@ -22,6 +22,8 @@ ad_width = 700
 night_mode = False
 qrcode_scan_text = "支付宝投喂"
 output_path = "ebegging_template.png"
+# white = pixie.Color(1, 1, 1, 1)
+# black = pixie.Color(0, 0, 0, 1)
 
 
 def makeColorAndPaintFromColorCode(color_code: str):
@@ -34,6 +36,8 @@ def makeColorAndPaintFromColorCode(color_code: str):
 
 ocean_blue, ocean_blue_paint = makeColorAndPaintFromColorCode("#0A3CCF")
 grass_green, grass_green_paint = makeColorAndPaintFromColorCode("#00A619")
+white, white_paint = makeColorAndPaintFromColorCode("#FFFFFF")
+black, black_paint = makeColorAndPaintFromColorCode("#000000")
 
 qrcode_stroke_paint = ocean_blue_paint  # for alipay
 
@@ -44,21 +48,32 @@ qrcode_width = qrcode_height = int(0.9 * ad_width)
 qrcode = qrcode.resize(qrcode_width, qrcode_height)
 
 
-qrcode_rounded_corner = int((0.05 /0.3)* qrcode_width)
+qrcode_rounded_corner = int((0.05 / 0.3) * qrcode_width)
 qrcode_stroke_path = pixie.Path()
 qrcode_stroke_path.rounded_rect(
     0, 0, qrcode_width, qrcode_height, *([qrcode_rounded_corner] * 4)
 )
 
 ebegging_mask_path = pixie.Path()
-ebegging_mask_path.rounded_rect(0,0,ad_width,ad_height,*([qrcode_rounded_corner] * 4))
+ebegging_mask_path.rounded_rect(
+    0, 0, ad_width, ad_height, *([qrcode_rounded_corner] * 4)
+)
 
-image.fill_path(ebedding_mask_path, )
+if not night_mode:
+    fill_paint = white_paint
+else:
+    fill_paint = black_paint
+
+image.fill_path(
+    ebegging_mask_path, fill_paint
+)
 
 # fill the ebegging ad with appropriate color first
 
 font = pixie.read_font(font_path)
-font.size = int(qrcode_width * (0.04/0.3)) # questionable. we shall check the font size.
+font.size = int(
+    qrcode_width * (0.04 / 0.3)
+)  # questionable. we shall check the font size.
 
 if night_mode:
     font.paint.color = white
@@ -66,17 +81,23 @@ else:
     font.paint.color = black
 
 text_bound_x = ad_width
-text_bound_y = ad_height-ad_width
+text_bound_y = ad_height - ad_width
 
-image.fill_text(font, qrcode_scan_text, bounds=pixie.Vector2(text_bound_x, text_bound_y),h_align = pixie.CENTER_ALIGN, v_align=pixie.MIDDLE_ALIGN)
+image.fill_text(
+    font,
+    qrcode_scan_text,
+    bounds=pixie.Vector2(text_bound_x, text_bound_y),
+    h_align=pixie.CENTER_ALIGN,
+    v_align=pixie.MIDDLE_ALIGN,
+)
 
 qrcode_transform = pixie.translate(
-    int((ad_width - qrcode_width)/2),
+    int((ad_width - qrcode_width) / 2),
     int(ad_height - ad_width),
 )
 
 
-stroke_param = 100/3
+stroke_param = 100 / 3
 stroke_width = int(qrcode_width / stroke_param)
 image.stroke_path(
     qrcode_stroke_path,
