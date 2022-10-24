@@ -43,13 +43,13 @@ editlyJson = {
         }
     },
     "clips": [
-        {
-            "duration": 0.5,
-            "layers": [
-                # {"type": "fill-color", "color": "#000000"},
-                # {"type": "detached-audio", "path": audio_path}, # will make sure nothing visual presents.
-            ],
-        },
+        # {
+        #     "duration": 0.5,
+        #     "layers": [
+        #         # {"type": "fill-color", "color": "#000000"},
+        #         # {"type": "detached-audio", "path": audio_path}, # will make sure nothing visual presents.
+        #     ],
+        # },
         # we disable this clip.
         {
             "duration": audio_duration,
@@ -60,7 +60,8 @@ editlyJson = {
                     "background": "#000000",
                     "fontPath": fontPath,
                     "textColor": "#FFFFFF",
-                }
+                },
+                {"type": "audio", "path": audio_path}, # order matters!
             ],
         },
         {
