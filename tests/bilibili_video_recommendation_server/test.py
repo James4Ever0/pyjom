@@ -182,7 +182,7 @@ def checkVideoInDatabase(bvid: str):
 
 # get my videos first!
 # @refresh_status_decorator
-def getMyVideos():  # all videos? just at init.
+def getMyVideos(tid=0, keyword="",order=VideoOrder.PUBDATE):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
     user = getUserObject()
@@ -234,4 +234,5 @@ def checkPublishedVideo():
 if __name__ == "__main__":
     # query = "cod19"  # recent hot videos.
     # results = searchVideos(query)
+    # no keywords? are you kidding?
     getMyVideos()
