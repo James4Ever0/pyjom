@@ -217,6 +217,8 @@ def searchMyVideos():
     ...
 
 
+# you can make excerpt from video to lure people into viewing your video.
+
 # no need to decorate this thing. only put some 'unchecked' video into array.
 def registerMyVideo(
     bvid: str, user_id: int
