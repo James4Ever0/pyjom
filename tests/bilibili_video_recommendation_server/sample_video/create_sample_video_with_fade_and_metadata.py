@@ -1,8 +1,10 @@
 # maybe this time you can burn uploader logo to the video
 # the title of the video, intro, outro.
 
-video_path = "sample_video.mp4"
+video_path = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/sample_video/sample_video.mp4"
 title = "世上所有的小猫都是天使变的！"
+from caer.video.frames_and_fps import get_duration
+video_duration = get_duration(video_path)
 
 # we shall use editly to do this job shall we?
 
@@ -18,11 +20,11 @@ editlyJson = {
     'clips':[
         {
             "trasition":"",
-            "duration":20,
+            "duration":video_duration,
             "layers":[
                 {
                     "type":"image-overlay",
-                    "path":,
+                    "path":"/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/up_image.jpg",
                     "position":,
                     "width":,
                     "height":
