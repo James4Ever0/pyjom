@@ -6,7 +6,7 @@ import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
-from pyjom.platforms.bilibili.searchDataParser import 
+from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult
 # will it load the overheads of pyjom.commons?
 
 # updated anyio. does that work? will it break dependencies?
