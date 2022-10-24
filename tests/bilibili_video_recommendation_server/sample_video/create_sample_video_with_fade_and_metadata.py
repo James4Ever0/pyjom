@@ -15,7 +15,11 @@ video_width, video_height = get_res(video_path)
 # we shall use editly to do this job shall we?
 
 min_video_scalar = min(video_width, video_height)
-up_image_scaler = int(min_video_scalar * 0.2)
+up_image_scalar = int(min_video_scalar * 0.2)
+up_image_width = up_image_scalar/video_width
+up_image_height = up_image_scalar/video_height
+
+# warning! not accurate when doing preview.
 
 # image overlay can be done in editly
 
@@ -36,8 +40,8 @@ editlyJson = {
                     "type": "image-overlay",
                     "path": up_image_path,
                     "position": "top-left",
-                    "width": up_image_scaler,
-                    "height": up_image_scaler,
+                    "width": up_image_width, # float numbers.
+                    "height": up_image_height,
                 },
             ],
         }
