@@ -6,6 +6,7 @@ up_image_path = (
     "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/up_image.jpg"
 )
 output_path = "output.mp4"
+fontPath = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/wqy-microhei0.ttf"
 title = "世上所有的小猫都是天使变的！"
 template_name = "template.json"
 from caer.video.frames_and_fps import get_duration, get_res
@@ -40,9 +41,18 @@ editlyJson = {
     "clips": [
         # {"duration": 0.5, "layers": [{"type": "fill-color", "color": "#000000"}]},
         # we disable this clip.
-        {'duration':1, 'layers':[
-            {'type':'title-background',, 'textColor':"#FFFFFF"}
-        ]}
+        {
+            "duration": 1,
+            "layers": [
+                {
+                    "type": "title-background",
+                    "text": title,
+                    "background": "#000000",
+                    "fontPath": fontPath,
+                    "textColor": "#FFFFFF",
+                }
+            ],
+        },
         {
             # "transition": "fade",  # or we just use random?
             "duration": video_duration,
