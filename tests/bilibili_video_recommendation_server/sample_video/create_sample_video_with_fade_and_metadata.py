@@ -31,8 +31,13 @@ editlyJson = {
                     "type":"image-overlay",
                     "path":up_image_path,
                     "position":"top-left",
-                    "width":up_image_scalar,
-                    "height"::
+                    "width":up_image_scaler,
+                    "height":up_image_scaler,
+                },
+                {
+                    "type":"video",
+                    "path":video_path,
+                    
                 }
             ]
         }
