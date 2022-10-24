@@ -9,5 +9,10 @@ title = "世上所有的小猫都是天使变的！"
 # image overlay can be done in editly
 
 editlyJson = {
+    'outPath':'output.mp4',
+    'width':1920,
+    'height': 1080,
+    'fps':30, # different from the default value.
+    'fast':False,
     
 }
