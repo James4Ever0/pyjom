@@ -254,8 +254,11 @@ def registerMyVideo(
     # register user first, then register the video.
     ...
 
+import datetime
 
-def checkRegisteredVideo():
+# grace period to be one day. that's long enough. or not?
+# we still need some more experiment.
+def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta):
     # check if they are published or not.
     ...
     # basically the same thing. but we do not delete these video till the time is too late, after check.
@@ -277,7 +280,7 @@ def checkPublishedVideo(bvid:str):
     visible = state == 0
     # info['stat'].keys()
     # dict_keys(['aid', 'view', 'danmaku', 'reply', 'favorite', 'coin', 'share', 'now_rank', 'his_rank', 'like', 'dislike', 'evaluation', 'argue_msg'])
-    breakpoint()
+    # breakpoint()
     # if anything goes wrong, do not return the state.
     # if you want update, better do it here. we are checking and updating the video.
     # we use some random video for test.
