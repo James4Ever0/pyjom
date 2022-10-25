@@ -67,7 +67,7 @@ class BilibiliUser(Model):
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
-    visible = BooleanField(null=True)
+    visible = BooleanField(null=True) # are you sure?
     last_check = DateTimeField()  # well this is not tested. test it!
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
@@ -96,12 +96,16 @@ def getBilibiliVideoDatabase():
     db = SqliteDatabase(db_path)
     return db
 
+def getBilibiliVideoDatabaseAndCreateTables():
+    db = getBilibiliVideoDatabase()
+    db.create_tables([BilibiliUser, BilibiliVideo])
+    return db
 
 def refresh_status():
     # what to do? just select and update?
     # but you need the database object. it is loop dependency!
     # well we can split the function.
-    db = getBilibiliVideoDatabase()
+    db = getBilibiliVideoDatabaseAndCreateTables()
     return
 
 
@@ -110,8 +114,8 @@ schedule.every(20).minutes.do(refresh_status)
 
 
 @refresh_status_decorator  # this might prevent you adding the decorator everywhere?
-def getBilibiliVideoDatabaseRefreshStatus():
-    db = getBilibiliVideoDatabase()
+def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
+    db = getBilibiliVideoDatabaseAndCreateTables()
     return db
 
 
