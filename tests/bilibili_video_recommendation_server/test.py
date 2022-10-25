@@ -260,9 +260,10 @@ import datetime
 # we still need some more experiment.
 
 # check api doc for hint.
-def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta):
+def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta, interval = datetime.timedelta):
     # check if they are published or not.
     ...
+    # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
 
 # seems bilibili can automatically categorize video.
