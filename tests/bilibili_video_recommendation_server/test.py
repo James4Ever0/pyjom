@@ -270,7 +270,7 @@ def checkPublishedVideo(bvid:str):
     print(info)
     # dict_keys(['bvid', 'aid', 'videos', 'tid', 'tname', 'copyright', 'pic', 'title', 'pubdate', 'ctime', 'desc', 'desc_v2', 'state', 'duration', 'forward', 'rights', 'owner', 'stat', 'dynamic', 'dimension', 'premiere', 'teenage_mode', 'is_chargeable_season', 'is_story', 'no_cache', 'subtitle', 'is_season_display', 'user_garb', 'honor_reply', 'like_icon'])
     #  'state': -4,
-    # bad state! what is the report 
+    # bad state! what is the meaning of this state?
     # normal; state -> 0
     state = info['state']
     visible = state == 0
@@ -293,9 +293,11 @@ if __name__ == "__main__":
     # no keywords? are you kidding?
     # results = getMyVideos()
     # print(results)
-    video_bvid_invisible = "BV1x84y1B7Nb"
+    video_bvid_invisible = ""
+    video_bvid_abnormal = "BV1x84y1B7Nb"
     video_bvid_visible = "BV1Fs411k7e9" # 老戴的视频
     # 啊叻？视频不见了？
     # checkPublishedVideo(video_bvid_invisible)
-    checkPublishedVideo(video_bvid_visible)
+    # checkPublishedVideo(video_bvid_visible)
+    checkPublishedVideo(video_bvid_abnormal)
     # 视频撞车了 需要原创视频哦
