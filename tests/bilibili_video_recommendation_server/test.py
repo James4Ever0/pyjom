@@ -124,7 +124,7 @@ def searchVideos(
     # print(result)
     # you can use the upic to render some deceptive ads, but better not?
     mresult = pyjq.all(
-        ".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag,typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",
+        ".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag, typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",
         result,
     )
     # so you want to persist these results or not?
@@ -199,7 +199,7 @@ from bilibili_api.user import VideoOrder
 
 
 def getUserVideos(
-    tid=0, keyword="", order=VideoOrder.PUBDATE, dedeuserid:str = "397424026", use_credential:bool=False
+    tid=0, keyword="", order=VideoOrder.PUBDATE, dedeuserid:str = "397424026", use_credential:bool=False, stop_on_duplicate:bool=True
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
@@ -213,7 +213,7 @@ def getUserVideos(
     # this is async. use sync.
     stopped = False
     while not stopped:
-        videos = sync(u.get_videos(pn=pn))
+        videos = sync(u.get_videos(pn=pn, keyword=keyword))
         print(videos)
         # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
         page = videos["page"]  # pagination options
@@ -226,9 +226,10 @@ def getUserVideos(
         for video in video_list:
             bvid = video["bvid"]
             result = checkVideoInDatabase(bvid)
-            if result:
+            if result and stop_on_duplicate:
                 stopped = True
                 break
+            yield video
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
         pn += 1
@@ -245,11 +246,13 @@ def searchUserVideos(keyword:str, dedeuserid: str = "397424026", method:Union['o
     # how to search my video? and how to measure relevance?
     if method == 'online':
         u= getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
-        info = u.get_videos(keyword=keyword,order=videoOrder)
+        # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == 'bm25':
         # export all video? shit?
+        ...
     elif method == 'contain':
         # use some builtin peewee method instead?
+        ...
 
 # you can make excerpt from video to lure people into viewing your video.
 
