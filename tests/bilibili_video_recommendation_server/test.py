@@ -67,16 +67,16 @@ class BilibiliUser(Model):
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
-    visible = BooleanField()
+    visible = BooleanField(null=True)
     last_check = DateTimeField()  # well this is not tested. test it!
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
     )  # is it my account anyway?
     description = CharField(max_length=350)  # will it work?
-    play = IntegerField()
+    play = IntegerField(null=True)
     pic = CharField()
     length = IntegerField()
-    review = IntegerField()  # you want to update? according to this?
+    review = IntegerField(null=True)  # you want to update? according to this?
 
 
 def refresh_status_decorator(func):
@@ -126,10 +126,11 @@ def bilibiliTimecodeToSeconds(bilibili_timecode: str):
 
 # @refresh_status_decorator
 def searchVideos(
-    query: str, iterate:bool=False, page_start:int=1,
-    params = {"duration": BSP.all.duration._10分钟以下},  # is that right? maybe?
-    search_type = search.SearchObjectType.VIDEO
-
+    query: str,
+    iterate: bool = False,
+    page_start: int = 1,
+    params={"duration": BSP.all.duration._10分钟以下},  # is that right? maybe?
+    search_type=search.SearchObjectType.VIDEO,
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
@@ -138,17 +139,21 @@ def searchVideos(
     # you might want some magic. with 'suppressException' and pickledFunction?
     def getResultParsed(result):
         mresult = pyjq.all(
-        ".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag, typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",
-        result,
-    )
+            ".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag, typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",
+            result,
+        )
         return mresult
+
     def getResult(page):
-        result = sync(search.search_by_type(query, search_type, params=params,page=page))
+        result = sync(
+            search.search_by_type(query, search_type, params=params, page=page)
+        )
         return result
+
     result = getResult(page_start)
     numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
-    if numPages <= page_start:
+    if numPages < page_start:
         page_start_current = 1
     else:
         page_start_current = page_start
@@ -156,15 +161,17 @@ def searchVideos(
         for video in mresult:
             yield video
     if not iterate:
-        page_range = range(page_start_current, page_start_current+1)
+        page_range = range(page_start_current, page_start_current + 1)
     else:
-        page_range = range(page_start_current, numPages+1)
+        page_range = range(page_start_current, numPages + 1)
     for page in page_range:
         if page != page_start:
             result = getResult(page)
-            
+            mresult = getResultParsed(result)
+            for video in mresult:
+                yield video
     # you can use the upic to render some deceptive ads, but better not?
-    
+
     # so you want to persist these results or not?
     # better persist so we can reuse.
     # no persistance?
@@ -275,7 +282,8 @@ def getUserVideos(
             yield video
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
-        if page  == numPages: break
+        if page == numPages:
+            break
         pn += 1
 
 
