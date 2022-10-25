@@ -392,7 +392,7 @@ if __name__ == "__main__":
         bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
             username=author, user_id=mid, avatar=upic
         )
-        bilibiliVideo, flag = BilibiliVideo.get_and_update_or_create(
+        bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
             bvid=v["bvid"],
             visible=True,  # are you sure?
             last_check=datetime.datetime.now(),  # well this is not tested. test it!
@@ -406,7 +406,7 @@ if __name__ == "__main__":
         # records:
         # BV1De4y1m7ve 2022-10-25 15:32:37.886978
         # 
-        print(bilibiliVideo.bvid, bilibiliVideo.last_check)
+        # print(bilibiliVideo.bvid, bilibiliVideo.last_check)
         breakpoint()
 
     # breakpoint()
