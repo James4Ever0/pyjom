@@ -8,6 +8,7 @@ sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
+
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
 # will it load the overheads of pyjom.commons?
@@ -401,7 +402,7 @@ if __name__ == "__main__":
     poster = bilibiliUser,  # is it my account anyway?
     description = v['description'] # will it work?
     play = v['play']
-    pic = CharField()
+    pic = linkFixer(v['pic'])
     length = IntegerField()
     review)
         breakpoint()
