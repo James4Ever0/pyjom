@@ -23,6 +23,7 @@ class OnlineAutoContentProducer(ContentProducer):
             "static": [["dog", "cat", "puppy"], ["funny", "cute"]],
             "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
         },
+        dog_or_cat='dog',
     ):  # something in this metaTopic is not droppable.
         super().__init__()
         # do afterPosting before even start it.
@@ -48,7 +49,7 @@ class OnlineAutoContentProducer(ContentProducer):
                     OnlineFetcher, source=source, tempdir=tempdir
                 ),  # can you do that?
                 "processor": keywordDecorator(
-                    OnlineProcessor, source=source
+                    OnlineProcessor, source=source, dog_or_cat=dog_or_cat
                 ),  # this is the second thing. how do you process this?
                 # "reviewer": filesystemReviewer,
                 "producer": keywordDecorator(

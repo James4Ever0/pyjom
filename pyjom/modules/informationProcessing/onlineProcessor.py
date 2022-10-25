@@ -18,6 +18,8 @@ def OnlineProcessor(
     proxy_url="http://127.0.0.1:8381",
     tmpPath="/dev/shm/medialang/onlineProcessor",
     debug=False,
+    # dog_or_cat?
+    dog_or_cat="dog",
 ):
     if use_proxy:
         clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
@@ -62,7 +64,7 @@ def OnlineProcessor(
                     checkVideoColorCentrality,
                     getEffectiveFPS,
                     NSFWVideoFilter,
-                    yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
+                    keywordDecorator(yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
                     dummyFilterFunction,  # just for dog and cat, no other animals.
                     getVideoTextAreaRatio,
                 )
