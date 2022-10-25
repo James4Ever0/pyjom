@@ -16,7 +16,7 @@ from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 
 import pyjq
 
-from bilibili_api import sync, search, user
+from bilibili_api import sync, search, user, video
 
 from peewee import *
 
@@ -261,9 +261,8 @@ def checkRegisteredVideo():
 def checkPublishedVideo(bvid:str):
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
-
+    video.
     # we use some random video for test.
-    ...
 
 
 # i suggest you to use sqlalchemy. since this is no ordinary task.
@@ -277,3 +276,6 @@ if __name__ == "__main__":
     # no keywords? are you kidding?
     # results = getMyVideos()
     # print(results)
+    video_bvid_invisible = "BV1x84y1B7Nb"
+    # 啊叻？视频不见了？
+    checkPublishedVideo(video_bvid_invisible)
