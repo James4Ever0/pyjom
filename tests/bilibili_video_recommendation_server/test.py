@@ -34,7 +34,7 @@ import schedule
 from functools import lru_cache
 
 
-@lru_cache(maxsize=3) # could be bigger.
+@lru_cache(maxsize=3)  # could be bigger.
 def getUserObject(dedeuserid: str = "397424026", use_credential: bool = False):
     dedeuserid_int = int(dedeuserid)
     if use_credential:
@@ -53,8 +53,10 @@ import os
 
 from peewee import *
 
+
 def refresh_status():
     return
+
 
 refresh_status()
 schedule.every(20).minutes.do(refresh_status)
@@ -83,6 +85,7 @@ class BilibiliUser(Model):
     username = CharField()
     user_id = IntegerField(unique=True)
     is_mine = BooleanField(default=False)
+    followers = IntegerField() # how to get that?
 
 
 class BilibiliVideo(Model):
@@ -92,11 +95,11 @@ class BilibiliVideo(Model):
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
     )  # is it my account anyway?
-    description=CharField()
-    play=CharField()
-    pic=CharField()
+    description = CharField()
+    play = CharField()
+    pic = CharField()
     length = IntegerField()
-    review = IntegerField() # you want to update? according to this?
+    review = IntegerField()  # you want to update? according to this?
 
 
 def bilibiliTimecodeToSeconds(bilibili_timecode: str):
@@ -118,7 +121,7 @@ def searchVideos(
     # warning: this is coroutine.
     # you might want some magic. with 'suppressException' and pickledFunction?
     search_type = search.SearchObjectType.VIDEO
-    params = {"duration": BSP.all.duration._10分钟以下} # is that right? maybe?
+    params = {"duration": BSP.all.duration._10分钟以下}  # is that right? maybe?
     result = sync(search.search_by_type(query, search_type, params=params))
     # numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
@@ -199,7 +202,12 @@ from bilibili_api.user import VideoOrder
 
 
 def getUserVideos(
-    tid=0, keyword="", order=VideoOrder.PUBDATE, dedeuserid:str = "397424026", use_credential:bool=False, stop_on_duplicate:bool=True
+    tid=0,
+    keyword="",
+    order=VideoOrder.PUBDATE,
+    dedeuserid: str = "397424026",
+    use_credential: bool = False,
+    stop_on_duplicate: bool = True,
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
@@ -233,9 +241,19 @@ def getUserVideos(
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
         pn += 1
+
+
 from typing import Union
 
-def searchUserVideos(keyword:str, dedeuserid: str = "397424026", method:Union['online','bm25','contain']='online', use_credential:bool=False, videoOrder=VideoOrder.PUBDATE): # you can support this in database?
+
+def searchUserVideos(
+    keyword: str,
+    tid: int = 0,
+    dedeuserid: str = "397424026",
+    method: Union["online", "bm25", "contain"] = "online",
+    use_credential: bool = False,
+    videoOrder=VideoOrder.PUBDATE,
+):  # you can support this in database?
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
     # better use semantic search. but now we use hybrid search instead.
@@ -244,15 +262,23 @@ def searchUserVideos(keyword:str, dedeuserid: str = "397424026", method:Union['o
     # just dump that shit.
     # check if keyword overlaps.
     # how to search my video? and how to measure relevance?
-    if method == 'online':
-        u= getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
+    if method == "online":
+        for video in getUserVideos(
+            tid=tid,
+            keyword=keyword,
+            dedeuserid=dedeuserid,
+            use_credential=use_credential,
+            stop_on_duplicate=False,
+        ):
+            ...
         # info = u.get_videos(keyword=keyword,order=videoOrder)
-    elif method == 'bm25':
+    elif method == "bm25":
         # export all video? shit?
         ...
-    elif method == 'contain':
+    elif method == "contain":
         # use some builtin peewee method instead?
         ...
+
 
 # you can make excerpt from video to lure people into viewing your video.
 
@@ -264,32 +290,38 @@ def registerMyVideo(
     # you will store it to database.
     ...
 
+
 import datetime
 
 # grace period to be one day. that's long enough. or not?
 # we still need some more experiment.
 
 # check api doc for hint.
-def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta(days=1),check_interval = datetime.timedelta(hours=1)): # maybe the video is not immediately visible after registration.
+def checkRegisteredVideo(
+    bvid: str,
+    grace_period=datetime.timedelta(days=1),
+    check_interval=datetime.timedelta(hours=1),
+):  # maybe the video is not immediately visible after registration.
     # check if they are published or not.
     ...
     # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
 
+
 # seems bilibili can automatically categorize video.
 # we just need to find out how?
-def checkPublishedVideo(bvid:str):
+def checkPublishedVideo(bvid: str):
     # if published, the video is taken down afterwards, we will delete it.
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
-    v= video.Video(bvid=bvid)
-    info = sync(v.get_info()) # getting shit? we need some normal video for test.
+    v = video.Video(bvid=bvid)
+    info = sync(v.get_info())  # getting shit? we need some normal video for test.
     print(info)
     # dict_keys(['bvid', 'aid', 'videos', 'tid', 'tname', 'copyright', 'pic', 'title', 'pubdate', 'ctime', 'desc', 'desc_v2', 'state', 'duration', 'forward', 'rights', 'owner', 'stat', 'dynamic', 'dimension', 'premiere', 'teenage_mode', 'is_chargeable_season', 'is_story', 'no_cache', 'subtitle', 'is_season_display', 'user_garb', 'honor_reply', 'like_icon'])
     #  'state': -4,
     # bad state! what is the meaning of this state?
     # normal; state -> 0
-    state = info['state']
+    state = info["state"]
     visible = state == 0
     # info['stat'].keys()
     # dict_keys(['aid', 'view', 'danmaku', 'reply', 'favorite', 'coin', 'share', 'now_rank', 'his_rank', 'like', 'dislike', 'evaluation', 'argue_msg'])
@@ -310,10 +342,10 @@ if __name__ == "__main__":
     # no keywords? are you kidding?
     # results = getMyVideos()
     # print(results)
-    video_bvid_invisible = "BV1pd4y1y7cu" # too fucking fast. i can't see shit.
+    video_bvid_invisible = "BV1pd4y1y7cu"  # too fucking fast. i can't see shit.
     # some hard rule on this? like being invisible for how long we will disable video source for good?
     video_bvid_abnormal = "BV1x84y1B7Nb"
-    video_bvid_visible = "BV1Fs411k7e9" # 老戴的视频
+    video_bvid_visible = "BV1Fs411k7e9"  # 老戴的视频
     # 啊叻？视频不见了？
     checkPublishedVideo(video_bvid_invisible)
     # checkPublishedVideo(video_bvid_visible)
