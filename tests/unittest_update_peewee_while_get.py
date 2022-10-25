@@ -19,7 +19,7 @@ import uuid
 username = str(uuid.uuid4())
 
 # u, _ = BilibiliUser.get_and_update_or_create(username=username, user_id=1)
-BilibiliUser.update(username=username).where(BilibiliUser.user_id == 1)
+BilibiliUser.update(username=username).where(BilibiliUser.user_id == 1).execute()
 # why don't you update? need i delete it manually?
 
 u = BilibiliUser.get(user_id = 1)
