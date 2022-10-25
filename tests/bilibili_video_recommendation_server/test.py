@@ -258,9 +258,11 @@ def checkRegisteredVideo():
     ...
 
 
-def checkPublishedVideo():
+def checkPublishedVideo(bvid:str):
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
+
+    # we use some random video for test.
     ...
 
 
@@ -273,5 +275,5 @@ if __name__ == "__main__":
     # query = "cod19"  # recent hot videos.
     # results = searchVideos(query)
     # no keywords? are you kidding?
-    results = getMyVideos()
-    print(results)
+    # results = getMyVideos()
+    # print(results)
