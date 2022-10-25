@@ -85,7 +85,7 @@ class BilibiliUser(Model):
     username = CharField()
     user_id = IntegerField(unique=True)
     is_mine = BooleanField(default=False)
-    followers = IntegerField() # how to get that?
+    followers = IntegerField(null=True) # how to get that? every time you get some video you do this shit? will get you blocked.
 
 
 class BilibiliVideo(Model):
