@@ -87,17 +87,18 @@ class BilibiliUser(Model):
     is_mine = BooleanField(default=False)
     followers = IntegerField(null=True) # how to get that? every time you get some video you do this shit? will get you blocked.
     # well you can check it later.
+    avatar = CharField(null=True) # warning! charfield max length is 255
 
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
     visible = BooleanField()
-    last_check = DateTimeField()  # well this is not tested. test it!
+    last_check = DateTimeField() # well this is not tested. test it!
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
     )  # is it my account anyway?
-    description = CharField()
-    play = CharField()
+    description = CharField(max_length=350) # will it work?
+    play = IntegerField()
     pic = CharField()
     length = IntegerField()
     review = IntegerField()  # you want to update? according to this?
@@ -105,12 +106,10 @@ class BilibiliVideo(Model):
 
 def bilibiliTimecodeToSeconds(bilibili_timecode: str):
     import vtc
-
     timecode = "{}:0".format(bilibili_timecode)
     decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
     seconds = round(decimal_seconds)
     return seconds
-
 
 # @refresh_status_decorator
 def searchVideos(
