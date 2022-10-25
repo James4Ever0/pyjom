@@ -126,7 +126,7 @@ def bilibiliTimecodeToSeconds(bilibili_timecode: str):
 
 # @refresh_status_decorator
 def searchVideos(
-    query: str, iterate:bool=False
+    query: str, iterate:bool=False, page_start:int=1
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
@@ -135,9 +135,11 @@ def searchVideos(
     # you might want some magic. with 'suppressException' and pickledFunction?
     search_type = search.SearchObjectType.VIDEO
     params = {"duration": BSP.all.duration._10分钟以下}  # is that right? maybe?
-    result = sync(search.search_by_type(query, search_type, params=params))
+    result = sync(search.search_by_type(query, search_type, params=params,page=page_start))
     numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
+    if iterate:
+        page_end = 
     # you can use the upic to render some deceptive ads, but better not?
     mresult = pyjq.all(
         ".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag, typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",
@@ -147,7 +149,8 @@ def searchVideos(
     # better persist so we can reuse.
     # no persistance?
     # check some interesting result.
-    return mresult
+    for video in mresult:
+        yield mresult
     # no selection?
     # you should use the parser found elsewhere. or not?
     # breakpoint()
