@@ -395,7 +395,15 @@ if __name__ == "__main__":
         print(v)
         mid, author, upic= v['mid'], v['author'], v['upic']
         bilibiliUser, _ = BilibiliUser.get_or_create(username=author, user_id = mid,avatar = upic)
-        BilibiliVideo.get_or_create()
+        BilibiliVideo.get_or_create(bvid = v['bvid'],
+    visible = True ,# are you sure?
+    last_check = datetime.datetime.now(),  # well this is not tested. test it!
+    poster = bilibiliUser,  # is it my account anyway?
+    description = v['description'] # will it work?
+    play = v['play']
+    pic = CharField()
+    length = IntegerField()
+    review)
         breakpoint()
     # no keywords? are you kidding?
     # results = getMyVideos()
