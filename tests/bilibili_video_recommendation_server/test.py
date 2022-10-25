@@ -336,7 +336,8 @@ def registerMyVideo(
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     # register user first, then register the video.
     # you will store it to database.
-    ...
+    info = getVideoInfo(bvid)
+    
 
 
 import datetime
