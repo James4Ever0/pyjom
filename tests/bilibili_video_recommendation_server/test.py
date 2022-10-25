@@ -390,8 +390,12 @@ def checkPublishedVideo(bvid: str):
 if __name__ == "__main__":
     query = "cod19"  # recent hot videos.
     results = searchVideos(query)
+    db = getBilibiliVideoDatabaseAndCreateTables()
     for v in results:
         print(v)
+        mid, author = v['mid'], v['author']
+        bilibiliUser, _ = BilibiliUser.get_or_create()
+        breakpoint()
     # no keywords? are you kidding?
     # results = getMyVideos()
     # print(results)
