@@ -20,11 +20,11 @@ def OnlineProcessor(
     debug=False,
     # dog_or_cat?
     dog_or_cat="dog",
-):
-    yolov5_default_filter_dict = {
+    yolov5_default_filter_dict={
         "dog": {"min": 0.5},
         "cat": {"min": 0.5},
-    }
+    },
+):
     if use_proxy:
         clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
         waitForServerUp(clash_refresher_port, "clash update controller")
