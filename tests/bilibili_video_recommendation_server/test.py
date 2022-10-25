@@ -257,13 +257,15 @@ def checkRegisteredVideo():
     # check if they are published or not.
     ...
 
-
+# seems bilibili can automatically categorize video.
+# we just need to find out how?
 def checkPublishedVideo(bvid:str):
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
     v= video.Video(bvid=bvid)
     info = sync(v.get_info()) # getting shit? we need some normal video for test.
     print(info)
+    # dict_keys(['bvid', 'aid', 'videos', 'tid', 'tname', 'copyright', 'pic', 'title', 'pubdate', 'ctime', 'desc', 'desc_v2', 'state', 'duration', 'forward', 'rights', 'owner', 'stat', 'dynamic', 'dimension', 'premiere', 'teenage_mode', 'is_chargeable_season', 'is_story', 'no_cache', 'subtitle', 'is_season_display', 'user_garb', 'honor_reply', 'like_icon'])
     #  'state': -4,
     breakpoint()
     # we use some random video for test.
@@ -283,4 +285,6 @@ if __name__ == "__main__":
     video_bvid_invisible = "BV1x84y1B7Nb"
     video_bvid_visible = "BV1Fs411k7e9" # 老戴的视频
     # 啊叻？视频不见了？
-    checkPublishedVideo(video_bvid_invisible)
+    # checkPublishedVideo(video_bvid_invisible)
+    checkPublishedVideo(video_bvid_visible)
+    # 视频撞车了 需要原创视频哦
