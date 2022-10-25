@@ -133,24 +133,36 @@ def searchVideos(
     # anyway, let's begin.
     # warning: this is coroutine.
     # you might want some magic. with 'suppressException' and pickledFunction?
+    def getResultParsed(result):
+        mresult = pyjq.all(
+        ".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag, typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",
+        result,
+    )
+        return mresult
     search_type = search.SearchObjectType.VIDEO
     params = {"duration": BSP.all.duration._10分钟以下}  # is that right? maybe?
     result = sync(search.search_by_type(query, search_type, params=params,page=page_start))
     numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
-    if iterate:
-        page_end = 
+    if numPages <= page_start:
+        page_start = 1
+    else:
+        mresult = 
+        for video in mresult:
+            yield mresult
+    if not iterate:
+        page_range = range(page_start, page_start+1)
+    else:
+        page_range = range(page_start, numPages+1)
+    for page in page_range:
+        
     # you can use the upic to render some deceptive ads, but better not?
-    mresult = pyjq.all(
-        ".result[] | {mid, author, pic, play, is_pay, duration, bvid, description, title, pubdate, tag, typename, typeid, review, favorites, danmaku, rank_score, like, upic} | select (.title != null and .bvid != null)",
-        result,
-    )
+    
     # so you want to persist these results or not?
     # better persist so we can reuse.
     # no persistance?
     # check some interesting result.
-    for video in mresult:
-        yield mresult
+
     # no selection?
     # you should use the parser found elsewhere. or not?
     # breakpoint()
