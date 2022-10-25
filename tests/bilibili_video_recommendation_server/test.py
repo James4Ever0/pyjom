@@ -393,8 +393,9 @@ if __name__ == "__main__":
     db = getBilibiliVideoDatabaseAndCreateTables()
     for v in results:
         print(v)
-        mid, author = v['mid'], v['author']
-        bilibiliUser, _ = BilibiliUser.get_or_create()
+        mid, author, upic= v['mid'], v['author'], v['upic']
+        bilibiliUser, _ = BilibiliUser.get_or_create(username=author, user_id = mid,avatar = upic)
+        BilibiliVideo.get_or_create()
         breakpoint()
     # no keywords? are you kidding?
     # results = getMyVideos()
