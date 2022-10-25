@@ -384,6 +384,10 @@ def checkPublishedVideo(bvid: str):
 
 ## following code is for test purpose.
 
+# shall write some server.
+# not fastapi!
+
+
 if __name__ == "__main__":
     # query = "cod19"  # recent hot videos.
     # results = searchVideos(query)
