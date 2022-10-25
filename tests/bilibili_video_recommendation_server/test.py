@@ -394,7 +394,7 @@ if __name__ == "__main__":
         )
         bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
             bvid=v["bvid"],
-            visible=True,  # are you sure?
+            visible=True, # are you sure?
             last_check=datetime.datetime.now(),  # well this is not tested. test it!
             poster=bilibiliUser,  # is it my account anyway?
             description=v["description"],  # will it work?
