@@ -267,7 +267,15 @@ def checkPublishedVideo(bvid:str):
     print(info)
     # dict_keys(['bvid', 'aid', 'videos', 'tid', 'tname', 'copyright', 'pic', 'title', 'pubdate', 'ctime', 'desc', 'desc_v2', 'state', 'duration', 'forward', 'rights', 'owner', 'stat', 'dynamic', 'dimension', 'premiere', 'teenage_mode', 'is_chargeable_season', 'is_story', 'no_cache', 'subtitle', 'is_season_display', 'user_garb', 'honor_reply', 'like_icon'])
     #  'state': -4,
+    # normal; state -> 0
+    state = info['state']
+    visible = state == 0
+    # info['stat'].keys()
+    # dict_keys(['aid', 'view', 'danmaku', 'reply', 'favorite', 'coin', 'share', 'now_rank', 'his_rank', 'like', 'dislike', 'evaluation', 'argue_msg'])
     breakpoint()
+    # if anything goes wrong, do not return the state.
+    # if you want update, better do it here. we are checking and updating the video.
+
     # we use some random video for test.
 
 
