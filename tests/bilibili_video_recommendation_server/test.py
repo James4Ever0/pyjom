@@ -258,11 +258,12 @@ def registerMyVideo(
 def checkRegisteredVideo():
     # check if they are published or not.
     ...
-    # basically the same thing. but we do not delete these video 
+    # basically the same thing. but we do not delete these video till the time is too late, after check.
 
 # seems bilibili can automatically categorize video.
 # we just need to find out how?
 def checkPublishedVideo(bvid:str):
+    # if published, the video is taken down afterwards, we will delete it.
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
     v= video.Video(bvid=bvid)
@@ -294,6 +295,7 @@ if __name__ == "__main__":
     # results = getMyVideos()
     # print(results)
     video_bvid_invisible = "BV1pd4y1y7cu" # too fucking fast. i can't see shit.
+    # some hard rule on this? like being invisible for how long we will disable video source for good?
     video_bvid_abnormal = "BV1x84y1B7Nb"
     video_bvid_visible = "BV1Fs411k7e9" # 老戴的视频
     # 啊叻？视频不见了？
