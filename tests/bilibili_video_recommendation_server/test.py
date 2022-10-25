@@ -267,7 +267,7 @@ import datetime
 # we still need some more experiment.
 
 # check api doc for hint.
-def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta,check_interval = datetime.timedelta): # maybe the video is not immediately visible after registration.
+def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta(days=1),check_interval = datetime.timedelta(hours=1)): # maybe the video is not immediately visible after registration.
     # check if they are published or not.
     ...
     # you can schedule check every hour. not all the time.
