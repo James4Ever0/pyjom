@@ -392,7 +392,6 @@ if __name__ == "__main__":
         bilibiliUser, _ = BilibiliUser.get_or_create(
             username=author, user_id=mid, avatar=upic
         )
-        BilibiliVideo.update
         bilibiliVideo, flag = BilibiliVideo.get_or_create(
             bvid=v["bvid"],
             visible=True,  # are you sure?
@@ -404,6 +403,10 @@ if __name__ == "__main__":
             length=videoDurationStringToSeconds(v["duration"]),
             review=v["review"],
         )
+        # records:
+        # BV1De4y1m7ve 2022-10-25 15:32:37.886978
+        print(bilibiliVideo.bvid, bilibiliVideo.last_check)
+        breakpoint()
 
     # breakpoint()
     # you want to select video after search?
