@@ -86,6 +86,7 @@ class BilibiliUser(Model):
     user_id = IntegerField(unique=True)
     is_mine = BooleanField(default=False)
     followers = IntegerField(null=True) # how to get that? every time you get some video you do this shit? will get you blocked.
+    # well you can check it later.
 
 
 class BilibiliVideo(Model):
