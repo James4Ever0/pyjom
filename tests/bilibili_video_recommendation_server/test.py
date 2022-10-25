@@ -126,7 +126,10 @@ def bilibiliTimecodeToSeconds(bilibili_timecode: str):
 
 # @refresh_status_decorator
 def searchVideos(
-    query: str, iterate:bool=False, page_start:int=1
+    query: str, iterate:bool=False, page_start:int=1,
+    params = {"duration": BSP.all.duration._10分钟以下},  # is that right? maybe?
+    search_type = search.SearchObjectType.VIDEO
+
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
@@ -139,23 +142,27 @@ def searchVideos(
         result,
     )
         return mresult
-    search_type = search.SearchObjectType.VIDEO
-    params = {"duration": BSP.all.duration._10分钟以下}  # is that right? maybe?
-    result = sync(search.search_by_type(query, search_type, params=params,page=page_start))
+    def getResult(page):
+        result = sync(search.search_by_type(query, search_type, params=params,page=page))
+        return result
+    result = getResult(page_start)
     numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
     if numPages <= page_start:
-        page_start = 1
+        page_start_current = 1
     else:
-        mresult = 
+        page_start_current = page_start
+        mresult = getResultParsed(result)
         for video in mresult:
-            yield mresult
+            yield video
     if not iterate:
-        page_range = range(page_start, page_start+1)
+        page_range = range(page_start_current, page_start_current+1)
     else:
-        page_range = range(page_start, numPages+1)
+        page_range = range(page_start_current, numPages+1)
     for page in page_range:
-        
+        if page != page_start:
+            result = getResult(page)
+            
     # you can use the upic to render some deceptive ads, but better not?
     
     # so you want to persist these results or not?
