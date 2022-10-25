@@ -293,11 +293,11 @@ if __name__ == "__main__":
     # no keywords? are you kidding?
     # results = getMyVideos()
     # print(results)
-    video_bvid_invisible = ""
+    video_bvid_invisible = "BV1pd4y1y7cu" # too fucking fast. i can't see shit.
     video_bvid_abnormal = "BV1x84y1B7Nb"
     video_bvid_visible = "BV1Fs411k7e9" # 老戴的视频
     # 啊叻？视频不见了？
-    # checkPublishedVideo(video_bvid_invisible)
+    checkPublishedVideo(video_bvid_invisible)
     # checkPublishedVideo(video_bvid_visible)
-    checkPublishedVideo(video_bvid_abnormal)
+    # checkPublishedVideo(video_bvid_abnormal)
     # 视频撞车了 需要原创视频哦
