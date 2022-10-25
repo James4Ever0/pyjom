@@ -261,7 +261,11 @@ def checkRegisteredVideo():
 def checkPublishedVideo(bvid:str):
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
-    video.
+    v= video.Video(bvid=bvid)
+    info = sync(v.get_info()) # getting shit? we need some normal video for test.
+    print(info)
+    #  'state': -4,
+    breakpoint()
     # we use some random video for test.
 
 
@@ -277,5 +281,6 @@ if __name__ == "__main__":
     # results = getMyVideos()
     # print(results)
     video_bvid_invisible = "BV1x84y1B7Nb"
+    video_bvid_visible = "BV1Fs411k7e9" # 老戴的视频
     # 啊叻？视频不见了？
     checkPublishedVideo(video_bvid_invisible)
