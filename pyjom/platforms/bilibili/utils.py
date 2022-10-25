@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
 
 
-
 # wtf is async generator type?
 def bilibiliSync(func):
     def wrapper(*args, **kwargs):
@@ -18,8 +17,10 @@ def bilibiliSync(func):
 
     return wrapper
 
+
 ######## import all below functions to searchDataParser.
 # from pyjom.platforms.bilibili.utils import generatorToList, linkFixer,traceError, extractLinks,videoDurationStringToSeconds,getAuthorKeywords,clearHtmlTags,splitTitleTags,removeAuthorRelatedTags
+
 
 def generatorToList(generator):
     return [x for x in generator]
@@ -83,22 +84,35 @@ def extractLinks(description, extract_bgm=True):
     return links, bgms, desc_without_link
 
 
-def videoDurationStringToSeconds(durationString):
-    if type(durationString) == int:
-        return durationString  # not string at all.
-    if type(durationString) != str:
-        print("unknown durationString type: %s" % type(durationString))
-        return None
-    durationString = durationString.strip()
-    mList = durationString.split(":")[::-1]
-    if len(mList) > 3:
-        print("DURATION STRING TOO LONG")
-        return None
-    seconds = 0
-    for index, elem in enumerate(mList):
-        elem = int(elem)
-        seconds += (60**index) * elem
-    return seconds
+from typing import Union
+
+
+def videoDurationStringToSeconds(durationString, method: Union["vtc", "basic"] = "vtc"):
+    if method == "vtc":
+        import vtc
+
+        timecode = "{}:0".format(durationString)
+        decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
+        seconds = round(decimal_seconds)
+        return seconds
+    elif method == "basic":
+        if type(durationString) == int:
+            return durationString  # not string at all.
+        if type(durationString) != str:
+            print("unknown durationString type: %s" % type(durationString))
+            return None
+        durationString = durationString.strip()
+        mList = durationString.split(":")[::-1]
+        if len(mList) > 3:
+            print("DURATION STRING TOO LONG")
+            return None
+        seconds = 0
+        for index, elem in enumerate(mList):
+            elem = int(elem)
+            seconds += (60**index) * elem
+        return seconds
+    else:
+        raise Exception("method %s does not exist" % method)
 
 
 def clearHtmlTags(htmlObject):

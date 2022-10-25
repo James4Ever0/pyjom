@@ -119,12 +119,6 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     return db
 
 
-def bilibiliTimecodeToSeconds(bilibili_timecode: str):
-    import vtc
-    timecode = "{}:0".format(bilibili_timecode)
-    decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
-    seconds = round(decimal_seconds)
-    return seconds
 
 
 # @refresh_status_decorator
@@ -400,10 +394,10 @@ if __name__ == "__main__":
     visible = True ,# are you sure?
     last_check = datetime.datetime.now(),  # well this is not tested. test it!
     poster = bilibiliUser,  # is it my account anyway?
-    description = v['description'] # will it work?
-    play = v['play']
+    description = v['description'], # will it work?
+    play = v['play'],
     pic = linkFixer(v['pic'])
-    length = IntegerField()
+    length = 
     review)
         breakpoint()
     # no keywords? are you kidding?
