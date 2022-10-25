@@ -406,7 +406,7 @@ if __name__ == "__main__":
         # records:
         # BV1De4y1m7ve 2022-10-25 15:32:37.886978
         # 
-        # print(bilibiliVideo.bvid, bilibiliVideo.last_check)
+        print(bilibiliVideo.bvid, bilibiliVideo.last_check)
         breakpoint()
 
     # breakpoint()
