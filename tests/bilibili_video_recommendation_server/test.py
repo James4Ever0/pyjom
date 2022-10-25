@@ -96,7 +96,9 @@ class BilibiliVideo(Model):
     )  # is it my account anyway?
     description=CharField()
     play=CharField()
-    
+    pic=CharField()
+    length = IntegerField()
+    review = IntegerField() # you want to update? according to this?
 
 
 def bilibiliTimecodeToSeconds(bilibili_timecode: str):
