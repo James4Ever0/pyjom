@@ -258,6 +258,8 @@ import datetime
 
 # grace period to be one day. that's long enough. or not?
 # we still need some more experiment.
+
+# check api doc for hint.
 def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta):
     # check if they are published or not.
     ...
