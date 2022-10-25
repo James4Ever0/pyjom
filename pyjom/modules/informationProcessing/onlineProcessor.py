@@ -1,5 +1,5 @@
 import pyjom.videotoolbox as vtb
-from pyjom.commons import decorator
+from pyjom.commons import decorator, keywordDecorator
 import os
 from lazero.utils import sprint
 from lazero.network import waitForServerUp
@@ -32,7 +32,6 @@ def OnlineProcessor(
     def set_proxy():
         os.environ["http_proxy"] = proxy_url
         os.environ["https_proxy"] = proxy_url
-
 
     with tmpdir(path=tmpPath) as testDir:
         # elif flag == "topic_with_fetcher":
@@ -68,7 +67,7 @@ def OnlineProcessor(
                     checkVideoColorCentrality,
                     getEffectiveFPS,
                     NSFWVideoFilter,
-                    keywordDecorator(yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter, filter_dict= {key:value for key, value in yolov5_default_filter_dict.items() if key == dog_or_cat}),
+                    yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
                     dummyFilterFunction,  # just for dog and cat, no other animals.
                     getVideoTextAreaRatio,
                 )
@@ -81,7 +80,12 @@ def OnlineProcessor(
                 videoTextAreaRatioFilter = {"max": 0.3}
                 valid = True
                 mList = [
-                    [corruptVideoFilter,None, dummyFilterFunction,'video corruption filter'],
+                    [
+                        corruptVideoFilter,
+                        None,
+                        dummyFilterFunction,
+                        "video corruption filter",
+                    ],
                     [get_duration, duration_filter, checkMinMaxDict, "duration"],
                     [get_fps_float, fps_filter, checkMinMaxDict, "fps"],
                     [
@@ -91,7 +95,15 @@ def OnlineProcessor(
                         "videoTextAreaRatioFilter",
                     ],
                     [
-                        yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
+                        # yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
+                        keywordDecorator(
+                            yolov5_bezier_paddlehub_resnet50_dog_cat_video_filter,
+                            filter_dict={
+                                key: value
+                                for key, value in yolov5_default_filter_dict.items()
+                                if key == dog_or_cat
+                            },
+                        ),
                         None,
                         dummyFilterFunction,
                         "DogCat",
@@ -109,7 +121,12 @@ def OnlineProcessor(
                         "EffectiveFPS",
                     ],  # also, the dog/cat detector! fuck.
                     [NSFWVideoFilter, None, dummyFilterFunction, "NSFW"],
-                    [vtb.duplicatedVideoFilter, None, dummyFilterFunction,'video duplication filter'],
+                    [
+                        vtb.duplicatedVideoFilter,
+                        None,
+                        dummyFilterFunction,
+                        "video duplication filter",
+                    ],
                 ]
                 for function, mFilter, filterFunction, flag in mList:
                     try:
@@ -121,9 +138,10 @@ def OnlineProcessor(
                             break
                     except:
                         import traceback
+
                         traceback.print_exc()
                         print("skipping due to exception during filtering")
-                        valid=False
+                        valid = False
                         break
                 if not valid:
                     print("abandon video:", item_id)
