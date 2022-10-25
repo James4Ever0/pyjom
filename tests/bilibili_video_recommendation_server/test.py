@@ -126,7 +126,7 @@ def bilibiliTimecodeToSeconds(bilibili_timecode: str):
 
 # @refresh_status_decorator
 def searchVideos(
-    query: str,
+    query: str, iterate:bool=False
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     # or you use some baidu magic?
@@ -136,7 +136,7 @@ def searchVideos(
     search_type = search.SearchObjectType.VIDEO
     params = {"duration": BSP.all.duration._10分钟以下}  # is that right? maybe?
     result = sync(search.search_by_type(query, search_type, params=params))
-    # numPages = result["numPages"]  # usually we select the topmost candidates.
+    numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
     # you can use the upic to render some deceptive ads, but better not?
     mresult = pyjq.all(
@@ -253,6 +253,7 @@ def getUserVideos(
             yield video
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
+        if page  == numPages: break
         pn += 1
 
 
