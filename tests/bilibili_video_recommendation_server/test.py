@@ -234,17 +234,24 @@ def getUserVideos(
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
         pn += 1
+from typing import Union
 
-
-def searchUserVideos(keyword:str, dedeuserid: str = "397424026", method='online', use_credential:bool=False, videoOrder=VideoOrder.PUBDATE):
+def searchUserVideos(keyword:str, dedeuserid: str = "397424026", method:Union['online','bm25','contain']='online', use_credential:bool=False, videoOrder=VideoOrder.PUBDATE): # you can support this in database?
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
     # better use semantic search. but now we use hybrid search instead.
     # hybrid search: metatopic plus bm25
+    # or not?
+    # just dump that shit.
+    # check if keyword overlaps.
     # how to search my video? and how to measure relevance?
     if method == 'online':
         u= getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
-        info = u.get_videos(keyword=keyword, videoOrder=videoOrder)
+        info = u.get_videos(keyword=keyword,order=videoOrder)
+    elif method == 'bm25':
+        # export all video? shit?
+    elif method == 'contain':
+        # use some 
 
 
 # you can make excerpt from video to lure people into viewing your video.
