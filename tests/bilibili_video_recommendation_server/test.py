@@ -34,7 +34,7 @@ import schedule
 from functools import lru_cache
 
 
-@lru_cache(maxsize=1)
+@lru_cache(maxsize=3) # could be bigger.
 def getUserObject(dedeuserid: str = "397424026", use_credential: bool = False):
     dedeuserid_int = int(dedeuserid)
     if use_credential:
@@ -236,7 +236,7 @@ def getMyVideos(
         pn += 1
 
 
-def searchMyVideos():
+def searchMyVideos(keyword:str):
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
     # better use semantic search. but now we use hybrid search instead.
@@ -260,7 +260,7 @@ import datetime
 # we still need some more experiment.
 
 # check api doc for hint.
-def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta, interval = datetime.timedelta):
+def checkRegisteredVideo(bvid:str, grace_period = datetime.timedelta,check_interval = datetime.timedelta): # maybe the video is not immediately visible after registration.
     # check if they are published or not.
     ...
     # you can schedule check every hour. not all the time.
