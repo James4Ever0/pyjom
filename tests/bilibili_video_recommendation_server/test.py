@@ -54,12 +54,6 @@ import os
 from peewee import *
 
 
-def refresh_status():
-    return
-
-
-refresh_status()
-schedule.every(20).minutes.do(refresh_status)
 
 
 def refresh_status_decorator(func):
@@ -70,7 +64,6 @@ def refresh_status_decorator(func):
     return wrapper
 
 
-@refresh_status_decorator  # this might prevent you adding the decorator everywhere?
 @lru_cache(maxsize=1)
 def getBilibiliVideoDatabase():
     db_dir = Path(getHomeDirectory()) / ".bilibili_video"
@@ -79,6 +72,21 @@ def getBilibiliVideoDatabase():
     db_path = db_dir / "database.db"  # sure this works?
     db = SqliteDatabase(db_path)
     return db
+
+def refresh_status():
+    # what to do? just select and update?
+    # but you need the database object. it is loop dependency!
+    # well we can split the function.
+    return
+
+refresh_status()
+schedule.every(20).minutes.do(refresh_status)
+
+
+@refresh_status_decorator  # this might prevent you adding the decorator everywhere?
+def getBilibiliVideoDatabaseRefreshStatus():
+    db = getBilibiliVideoDatabase()
+    
 
 
 class BilibiliUser(Model):
