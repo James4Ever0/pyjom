@@ -53,10 +53,8 @@ import os
 
 from peewee import *
 
-
 def refresh_status():
     return
-
 
 refresh_status()
 schedule.every(20).minutes.do(refresh_status)
@@ -120,7 +118,7 @@ def searchVideos(
     # warning: this is coroutine.
     # you might want some magic. with 'suppressException' and pickledFunction?
     search_type = search.SearchObjectType.VIDEO
-    params = {"duration": BSP.all.duration._10分钟以下}
+    params = {"duration": BSP.all.duration._10分钟以下} # is that right? maybe?
     result = sync(search.search_by_type(query, search_type, params=params))
     # numPages = result["numPages"]  # usually we select the topmost candidates.
     # print(result)
@@ -251,8 +249,7 @@ def searchUserVideos(keyword:str, dedeuserid: str = "397424026", method:Union['o
     elif method == 'bm25':
         # export all video? shit?
     elif method == 'contain':
-        # use some 
-
+        # use some builtin peewee method instead?
 
 # you can make excerpt from video to lure people into viewing your video.
 
@@ -261,6 +258,7 @@ def registerMyVideo(
     bvid: str, user_id: int
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     # register user first, then register the video.
+    # you will store it to database.
     ...
 
 import datetime
