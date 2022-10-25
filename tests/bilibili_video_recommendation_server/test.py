@@ -94,6 +94,9 @@ class BilibiliVideo(Model):
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
     )  # is it my account anyway?
+    description=CharField()
+    play=CharField()
+    
 
 
 def bilibiliTimecodeToSeconds(bilibili_timecode: str):
