@@ -7,7 +7,7 @@ import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
-from pyjom.platforms.bilibili.utils import linkFixer
+from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSeconds
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
@@ -68,7 +68,7 @@ class BilibiliUser(Model):
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
-    visible = BooleanField(null=True) # are you sure?
+    visible = BooleanField(null=True)  # are you sure?
     last_check = DateTimeField()  # well this is not tested. test it!
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
@@ -84,6 +84,7 @@ def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
         schedule.run_pending()
         return func(*args, **kwargs)
+
     return wrapper
 
 
@@ -96,10 +97,12 @@ def getBilibiliVideoDatabase():
     db = SqliteDatabase(db_path)
     return db
 
+
 def getBilibiliVideoDatabaseAndCreateTables():
     db = getBilibiliVideoDatabase()
     db.create_tables([BilibiliUser, BilibiliVideo])
     return db
+
 
 def refresh_status():
     # what to do? just select and update?
@@ -117,8 +120,6 @@ schedule.every(20).minutes.do(refresh_status)
 def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     db = getBilibiliVideoDatabaseAndCreateTables()
     return db
-
-
 
 
 # @refresh_status_decorator
@@ -284,14 +285,14 @@ def getUserVideos(
         pn += 1
 
 
-from typing import Union
+from typing import Literal
 
 
 def searchUserVideos(
     keyword: str,
     tid: int = 0,
     dedeuserid: str = "397424026",
-    method: Union["online", "bm25", "contain"] = "online",
+    method: Literal["online", "bm25", "contain"] = "online",
     use_credential: bool = False,
     videoOrder=VideoOrder.PUBDATE,
 ):  # you can support this in database?
@@ -330,7 +331,6 @@ def registerMyVideo(
     # register user first, then register the video.
     # you will store it to database.
     info = getVideoInfo(bvid)
-
 
 
 import datetime
@@ -387,19 +387,23 @@ if __name__ == "__main__":
     results = searchVideos(query)
     db = getBilibiliVideoDatabaseAndCreateTables()
     for v in results:
-        print(v)
-        mid, author, upic= v['mid'], v['author'], v['upic']
-        bilibiliUser, _ = BilibiliUser.get_or_create(username=author, user_id = mid,avatar = upic)
-        BilibiliVideo.get_or_create(bvid = v['bvid'],
-    visible = True ,# are you sure?
-    last_check = datetime.datetime.now(),  # well this is not tested. test it!
-    poster = bilibiliUser,  # is it my account anyway?
-    description = v['description'], # will it work?
-    play = v['play'],
-    pic = linkFixer(v['pic'])
-    length = 
-    review)
-        breakpoint()
+        # print(v)
+        mid, author, upic = v["mid"], v["author"], v["upic"]
+        bilibiliUser, _ = BilibiliUser.get_or_create(
+            username=author, user_id=mid, avatar=upic
+        )
+        BilibiliVideo.get_or_create(
+            bvid=v["bvid"],
+            visible=True,  # are you sure?
+            last_check=datetime.datetime.now(),  # well this is not tested. test it!
+            poster=bilibiliUser,  # is it my account anyway?
+            description=v["description"],  # will it work?
+            play=v["play"],
+            pic=linkFixer(v["pic"]),
+            length=videoDurationStringToSeconds(v["duration"]),
+            review=v["review"],
+        )
+    breakpoint()
     # no keywords? are you kidding?
     # results = getMyVideos()
     # print(results)

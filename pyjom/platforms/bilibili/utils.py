@@ -84,10 +84,10 @@ def extractLinks(description, extract_bgm=True):
     return links, bgms, desc_without_link
 
 
-from typing import Union
+from typing import Literal
 
 
-def videoDurationStringToSeconds(durationString, method: Union["vtc", "basic"] = "vtc"):
+def videoDurationStringToSeconds(durationString, method: Literal["vtc", "basic"] = "vtc"):
     if method == "vtc":
         import vtc
 
