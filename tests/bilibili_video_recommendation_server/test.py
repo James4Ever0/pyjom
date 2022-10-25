@@ -83,7 +83,6 @@ def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
         schedule.run_pending()
         return func(*args, **kwargs)
-
     return wrapper
 
 
@@ -121,7 +120,6 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 def bilibiliTimecodeToSeconds(bilibili_timecode: str):
     import vtc
-
     timecode = "{}:0".format(bilibili_timecode)
     decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
     seconds = round(decimal_seconds)
@@ -162,8 +160,8 @@ def searchVideos(
     else:
         page_start_current = page_start
         mresult = getResultParsed(result)
-        for video in mresult:
-            yield video
+        for v in mresult:
+            yield v
     if not iterate:
         page_range = range(page_start_current, page_start_current + 1)
     else:
@@ -172,8 +170,8 @@ def searchVideos(
         if page != page_start:
             result = getResult(page)
             mresult = getResultParsed(result)
-            for video in mresult:
-                yield video
+            for v in mresult:
+                yield v
     # you can use the upic to render some deceptive ads, but better not?
 
     # so you want to persist these results or not?
@@ -277,13 +275,13 @@ def getUserVideos(
 
         # breakpoint()
         video_list = videos["list"]["vlist"]
-        for video in video_list:
-            bvid = video["bvid"]
+        for v in video_list:
+            bvid = v["bvid"]
             result = checkVideoInDatabase(bvid)
             if result and stop_on_duplicate:
                 stopped = True
                 break
-            yield video
+            yield v
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
         if page == numPages:
@@ -337,7 +335,7 @@ def registerMyVideo(
     # register user first, then register the video.
     # you will store it to database.
     info = getVideoInfo(bvid)
-    
+
 
 
 import datetime
@@ -390,17 +388,19 @@ def checkPublishedVideo(bvid: str):
 
 
 if __name__ == "__main__":
-    # query = "cod19"  # recent hot videos.
-    # results = searchVideos(query)
+    query = "cod19"  # recent hot videos.
+    results = searchVideos(query)
+    for v in results:
+        print(v)
     # no keywords? are you kidding?
     # results = getMyVideos()
     # print(results)
-    video_bvid_invisible = "BV1pd4y1y7cu"  # too fucking fast. i can't see shit.
-    # some hard rule on this? like being invisible for how long we will disable video source for good?
-    video_bvid_abnormal = "BV1x84y1B7Nb"
-    video_bvid_visible = "BV1Fs411k7e9"  # 老戴的视频
-    # 啊叻？视频不见了？
-    checkPublishedVideo(video_bvid_invisible)
+    # video_bvid_invisible = "BV1pd4y1y7cu"  # too fucking fast. i can't see shit.
+    # # some hard rule on this? like being invisible for how long we will disable video source for good?
+    # video_bvid_abnormal = "BV1x84y1B7Nb"
+    # video_bvid_visible = "BV1Fs411k7e9"  # 老戴的视频
+    # # 啊叻？视频不见了？
+    # checkPublishedVideo(video_bvid_invisible)
     # checkPublishedVideo(video_bvid_visible)
     # checkPublishedVideo(video_bvid_abnormal)
     # 视频撞车了 需要原创视频哦
