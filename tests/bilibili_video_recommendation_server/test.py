@@ -54,6 +54,29 @@ import os
 from peewee import *
 
 
+class BilibiliUser(Model):
+    username = CharField()
+    user_id = IntegerField(unique=True)
+    is_mine = BooleanField(default=False)
+    followers = IntegerField(
+        null=True
+    )  # how to get that? every time you get some video you do this shit? will get you blocked.
+    # well you can check it later.
+    avatar = CharField(null=True)  # warning! charfield max length is 255
+
+
+class BilibiliVideo(Model):
+    bvid = CharField(unique=True)
+    visible = BooleanField()
+    last_check = DateTimeField()  # well this is not tested. test it!
+    poster = ForeignKeyField(
+        BilibiliUser, field=BilibiliUser.user_id
+    )  # is it my account anyway?
+    description = CharField(max_length=350)  # will it work?
+    play = IntegerField()
+    pic = CharField()
+    length = IntegerField()
+    review = IntegerField()  # you want to update? according to this?
 
 
 def refresh_status_decorator(func):
@@ -73,11 +96,14 @@ def getBilibiliVideoDatabase():
     db = SqliteDatabase(db_path)
     return db
 
+
 def refresh_status():
     # what to do? just select and update?
     # but you need the database object. it is loop dependency!
     # well we can split the function.
+    db = getBilibiliVideoDatabase()
     return
+
 
 refresh_status()
 schedule.every(20).minutes.do(refresh_status)
@@ -86,38 +112,17 @@ schedule.every(20).minutes.do(refresh_status)
 @refresh_status_decorator  # this might prevent you adding the decorator everywhere?
 def getBilibiliVideoDatabaseRefreshStatus():
     db = getBilibiliVideoDatabase()
-    
-
-
-class BilibiliUser(Model):
-    username = CharField()
-    user_id = IntegerField(unique=True)
-    is_mine = BooleanField(default=False)
-    followers = IntegerField(null=True) # how to get that? every time you get some video you do this shit? will get you blocked.
-    # well you can check it later.
-    avatar = CharField(null=True) # warning! charfield max length is 255
-
-
-class BilibiliVideo(Model):
-    bvid = CharField(unique=True)
-    visible = BooleanField()
-    last_check = DateTimeField() # well this is not tested. test it!
-    poster = ForeignKeyField(
-        BilibiliUser, field=BilibiliUser.user_id
-    )  # is it my account anyway?
-    description = CharField(max_length=350) # will it work?
-    play = IntegerField()
-    pic = CharField()
-    length = IntegerField()
-    review = IntegerField()  # you want to update? according to this?
+    return db
 
 
 def bilibiliTimecodeToSeconds(bilibili_timecode: str):
     import vtc
+
     timecode = "{}:0".format(bilibili_timecode)
     decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
     seconds = round(decimal_seconds)
     return seconds
+
 
 # @refresh_status_decorator
 def searchVideos(
