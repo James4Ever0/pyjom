@@ -392,7 +392,7 @@ if __name__ == "__main__":
         bilibiliUser, _ = BilibiliUser.get_or_create(
             username=author, user_id=mid, avatar=upic
         )
-        BilibiliVideo.update()
+        BilibiliVideo.update
         bilibiliVideo, flag = BilibiliVideo.get_or_create(
             bvid=v["bvid"],
             visible=True,  # are you sure?
@@ -404,6 +404,7 @@ if __name__ == "__main__":
             length=videoDurationStringToSeconds(v["duration"]),
             review=v["review"],
         )
+
     # breakpoint()
     # you want to select video after search?
     # no keywords? are you kidding?
