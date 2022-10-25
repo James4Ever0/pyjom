@@ -19,6 +19,7 @@ def bilibiliSync(func):
     return wrapper
 
 ######## import all below functions to searchDataParser.
+# from pyjom.platforms.bilibili.utils import generatorToList, linkFixer,traceError, extractLinks,videoDurationStringToSeconds,getAuthorKeywords,clearHtmlTags,splitTitleTags,removeAuthorRelatedTags
 
 def generatorToList(generator):
     return [x for x in generator]

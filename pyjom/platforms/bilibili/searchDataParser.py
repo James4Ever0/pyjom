@@ -1,16 +1,28 @@
 import json
-from bs4 import BeautifulSoup
+
+# from bs4 import BeautifulSoup
 from lazero.utils.logger import sprint
-
-
+from pyjom.platforms.bilibili.utils import (
+    # generatorToList,
+    linkFixer,
+    traceError,
+    extractLinks,
+    videoDurationStringToSeconds,
+    getAuthorKeywords,
+    clearHtmlTags,
+    splitTitleTags,
+    removeAuthorRelatedTags,
+)
 
 
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
     bvid = video["bvid"]
-    pubdate = video['pubdate']
+    pubdate = video["pubdate"]
     if "author" not in disableList:
         author = video["author"]
-        author_id = video["mid"] # this is important. may let us able to find out the fans count.
+        author_id = video[
+            "mid"
+        ]  # this is important. may let us able to find out the fans count.
     else:
         author = ""
         author_id = -1
@@ -62,7 +74,7 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
         links_in_description,
         bgms,
         title_tags,
-        pubdate
+        pubdate,
     )
     if debug:
         for metadata in resultTuple:
