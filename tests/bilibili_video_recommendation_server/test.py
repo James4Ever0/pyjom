@@ -200,12 +200,12 @@ import math
 from bilibili_api.user import VideoOrder
 
 
-def getMyVideos(
-    tid=0, keyword="", order=VideoOrder.PUBDATE, dedeuserid:str = 
+def getUserVideos(
+    tid=0, keyword="", order=VideoOrder.PUBDATE, dedeuserid:str = "397424026", use_credential:bool=False
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
-    u = getUserObject()
+    u = getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
     pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
     # pn	int, optional	页码，从 1 开始. Defaults to 1.
@@ -236,14 +236,15 @@ def getMyVideos(
         pn += 1
 
 
-def searchMyVideos(keyword:str, dedeuserid: str = "397424026", method='online'):
+def searchUserVideos(keyword:str, dedeuserid: str = "397424026", method='online', use_credential:bool=False, videoOrder=VideoOrder.PUBDATE):
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
     # better use semantic search. but now we use hybrid search instead.
     # hybrid search: metatopic plus bm25
     # how to search my video? and how to measure relevance?
     if method == 'online':
-        u= getuserObject()
+        u= getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
+        info = u.get_videos(keyword=keyword, videoOrder=videoOrder)
 
 
 # you can make excerpt from video to lure people into viewing your video.
