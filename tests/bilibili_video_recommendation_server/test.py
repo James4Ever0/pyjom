@@ -201,11 +201,11 @@ from bilibili_api.user import VideoOrder
 
 
 def getMyVideos(
-    tid=0, keyword="", order=VideoOrder.PUBDATE
+    tid=0, keyword="", order=VideoOrder.PUBDATE, dedeuserid:str = 
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
-    user = getUserObject()
+    u = getUserObject()
     pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
     # pn	int, optional	页码，从 1 开始. Defaults to 1.
@@ -215,7 +215,7 @@ def getMyVideos(
     # this is async. use sync.
     stopped = False
     while not stopped:
-        videos = sync(user.get_videos(pn=pn))
+        videos = sync(u.get_videos(pn=pn))
         print(videos)
         # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
         page = videos["page"]  # pagination options
@@ -236,13 +236,14 @@ def getMyVideos(
         pn += 1
 
 
-def searchMyVideos(keyword:str):
+def searchMyVideos(keyword:str, dedeuserid: str = "397424026", method='online'):
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
     # better use semantic search. but now we use hybrid search instead.
     # hybrid search: metatopic plus bm25
     # how to search my video? and how to measure relevance?
-    ...
+    if method == 'online':
+        u= getuserObject()
 
 
 # you can make excerpt from video to lure people into viewing your video.
