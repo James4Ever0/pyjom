@@ -334,7 +334,8 @@ def searchUserVideos(
         for video_index in results:
             bilibiliVideo = BilibiliVideo.get(id = video_index.id)
             # what is the count? you need to reorder?
-            favourite = bilibiliVideo.
+            favorites = bilibiliVideo.favorites
+            view = bilibiliVideo.view
 
 
 # you can make excerpt from video to lure people into viewing your video.
