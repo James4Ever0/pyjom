@@ -26,6 +26,8 @@ object, flag = BilibiliVideoIndex.get_and_update_or_create(rowid=1, title=random
 
 
 BilibiliVideoIndex.get_and_update_or_create(rowid=2, title='hello world', content = 'learn python the hard way', _unique_keys=['rowid'])
+BilibiliVideoIndex.get_and_update_or_create(rowid=3, title='hello world', content = 'learn python the hard way', _unique_keys=['rowid'])
+BilibiliVideoIndex.get_and_update_or_create(rowid=4, title='hello world', content = 'learn python the hard way', _unique_keys=['rowid'])
 print(object)
 print(flag)
 
@@ -37,8 +39,11 @@ print(object.rowid, object.title, object.content)
 # now search for it.
 
 term = 'python world'
-results = BilibiliVideoIndex.search_bm25(term) # just how many?
-breakpoint()
+results = BilibiliVideoIndex.search_bm25(term).limit(2) # just how many?
+# breakpoint()
+# it does have the limit.
+
+# it is ordered.
 for result in results:
     print('RESULT',result)
     breakpoint()
