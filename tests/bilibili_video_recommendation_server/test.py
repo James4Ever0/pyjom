@@ -305,7 +305,7 @@ def searchUserVideos(
     dedeuserid: str = "397424026",
     method: Literal["online", "bm25"] = "online",
     use_credential: bool = False,
-    videoOrder=VideoOrder.PUBDATE,
+    videoOrder=VideoOrder.PUBDATE, # FAVOURITE, VIEW
     limit:int=10,
 ):  # you can support this in database?
     # you want keyword search or not? it's better than searching in database. i think.
@@ -332,6 +332,8 @@ def searchUserVideos(
         results = BilibiliVideoIndex.search_bm25(keyword).limit(limit)
         for video_index in results:
             bilibiliVideo = BilibiliVideo.get(id = video_index.id)
+            # what is the count? you need to reorder?
+            favourite = bilibiliVideo.
 
 
 # you can make excerpt from video to lure people into viewing your video.
