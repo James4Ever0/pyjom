@@ -12,9 +12,8 @@ class BilibiliVideoIndex(FTSModel):
     title = SearchField()
     content = SearchField()
     class Meta:
-        # database = db
         database=None # that's good.
-        options = {'tokenize': 'porter'}
+        options = {'tokenize': 'porter'} # you need manually separate some 
 
 db.create_tables([BilibiliVideoIndex])
 
