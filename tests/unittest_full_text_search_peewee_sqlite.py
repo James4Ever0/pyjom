@@ -8,7 +8,7 @@ db = SqliteExtDatabase(db_path, pragmas={
     'cache_size': -1024 * 64})
 
 class BilibiliVideoIndex(FTSModel):
-    rowid = RowIDField()
+    rowid = RowIDField() # this does not support 
     title = SearchField()
     content = SearchField()
     class Meta:
@@ -16,4 +16,6 @@ class BilibiliVideoIndex(FTSModel):
         database=None # that's good.
         options = {'tokenize': 'porter'}
 
-[BilibiliVideoIndex]
+db.create_tables([BilibiliVideoIndex])
+
+BilibiliVideoIndex.get_and_update_or_create()
