@@ -413,8 +413,8 @@ if __name__ == "__main__":
             length=videoDurationStringToSeconds(v["duration"]),
             review=v["review"],
         )
-        BilibiliVideoIndex.get_and_update_or_create(
-        bilibiliVideo.id, description=v["description"],
+        bilibiliVideoIndex, _BilibiliVideoIndex.get_and_update_or_create(rowid=
+        bilibiliVideo.id, description=v["description"],title=v['title']
         )
 
         # records:
