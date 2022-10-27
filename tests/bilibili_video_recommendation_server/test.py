@@ -111,7 +111,7 @@ def getBilibiliVideoDatabase():
 
 def getBilibiliVideoDatabaseAndCreateTables():
     db = getBilibiliVideoDatabase()
-    db.create_tables([BilibiliUser, BilibiliVideo])
+    db.create_tables([BilibiliUser, BilibiliVideo, BilibiliVideoIndex])
     return db
 
 
