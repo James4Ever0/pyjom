@@ -24,6 +24,8 @@ randomContent = lambda: str(uuid.uuid4())
 
 object, flag = BilibiliVideoIndex.get_and_update_or_create(rowid=1, title=randomContent(), content = randomContent(),_unique_keys=['rowid'])
 
+
+BilibiliVideoIndex.get_and_update_or_create(rowid=2, title='hello world', content = 'learn python the hard way', _unique_keys=['rowid'])
 print(object)
 print(flag)
 
@@ -32,6 +34,6 @@ print(object.rowid, object.title, object.content)
 # don't know what magic is inside. whatever.
 
 # updated. my lord.
-
+# now search for it.
 
 breakpoint()
