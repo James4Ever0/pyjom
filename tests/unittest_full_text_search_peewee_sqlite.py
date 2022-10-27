@@ -36,4 +36,7 @@ print(object.rowid, object.title, object.content)
 # updated. my lord.
 # now search for it.
 
+term = 'python world'
+BilibiliVideoIndex.search_bm25(term)
+
 breakpoint()
