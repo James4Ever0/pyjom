@@ -303,7 +303,7 @@ def searchUserVideos(
     keyword: str,
     tid: int = 0,
     dedeuserid: str = "397424026",
-    method: Literal["online", "bm25", "contain"] = "online",
+    method: Literal["online", "bm25"] = "online",
     use_credential: bool = False,
     videoOrder=VideoOrder.PUBDATE,
 ):  # you can support this in database?
@@ -327,9 +327,6 @@ def searchUserVideos(
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
         # export all video? shit?
-        ...
-    elif method == "contain":
-        # use some builtin peewee method instead?
         ...
 
 
