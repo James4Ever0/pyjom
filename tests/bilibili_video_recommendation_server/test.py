@@ -77,6 +77,7 @@ class BilibiliVideo(Model):
     play = IntegerField(null=True)
     pic = CharField()
     length = IntegerField()
+    pubdate = IntegerField(null=True)
     review = IntegerField(null=True)  # you want to update? according to this?
     favorites = IntegerField(default=0)
 
