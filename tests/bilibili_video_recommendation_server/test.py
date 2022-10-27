@@ -331,8 +331,8 @@ def searchUserVideos(
         # export all video? shit?
         # you should tokenize the thing.
         # but this search does not have limitations!
-        user_video_ids = BilibiliVideo.select(dedeuserid = d)
-        results = BilibiliVideoIndex.search_bm25(keyword).where(BilibiliVideoIndex.rowid in ).limit(limit)
+        user_video_ids = [v.id for v in BilibiliVideo.select(dedeuserid = dedeuserid)]
+        results = BilibiliVideoIndex.search_bm25(keyword).where(BilibiliVideoIndex.rowid in user_video_ids).limit(limit)
         []
         for video_index in results:
             bilibiliVideo = BilibiliVideo.get(id = video_index.id)
