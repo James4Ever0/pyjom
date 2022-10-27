@@ -20,7 +20,7 @@ import pyjq
 from bilibili_api import sync, search, user, video
 
 from peewee import *
-from playhouse.sqlite_ext import SqliteExtDatabase
+from playhouse.sqlite_ext import SqliteExtDatabase, FTSModel, SearchField, RowIDField
 
 BSP = search.bilibiliSearchParams
 # you can query for the server status.
@@ -408,12 +408,12 @@ if __name__ == "__main__":
             visible=True, # are you sure?
             last_check=datetime.datetime.now(),  # well this is not tested. test it!
             poster=bilibiliUser,  # is it my account anyway?
-            description=v["description"],  # will it work?
             play=v["play"],
             pic=linkFixer(v["pic"]),
             length=videoDurationStringToSeconds(v["duration"]),
             review=v["review"],
         )
+            description=v["description"],
         # records:
         # BV1De4y1m7ve 2022-10-25 15:32:37.886978
         # 
