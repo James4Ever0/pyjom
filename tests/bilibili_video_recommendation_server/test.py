@@ -78,6 +78,7 @@ class BilibiliVideo(Model):
     pic = CharField()
     length = IntegerField()
     review = IntegerField(null=True)  # you want to update? according to this?
+    favorites = IntegerField(default=0)
 
 class BilibiliVideoIndex(FTSModel):
     rowid = RowIDField() # this does not support 
