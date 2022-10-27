@@ -331,7 +331,7 @@ def searchUserVideos(
         # you should tokenize the thing.
         results = BilibiliVideoIndex.search_bm25(keyword).limit(limit)
         for video_index in results:
-            bilibiliVideo
+            bilibiliVideo = BilibiliVideo.get(id = video_index.id)
 
 
 # you can make excerpt from video to lure people into viewing your video.
