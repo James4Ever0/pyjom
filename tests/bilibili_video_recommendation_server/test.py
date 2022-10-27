@@ -415,7 +415,7 @@ if __name__ == "__main__":
             pic=linkFixer(v["pic"]),
             length=videoDurationStringToSeconds(v["duration"]),
             review=v["review"],
-            favourites = v['favourites']
+            favorites = v['favorites']
         )
         bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(rowid=
         bilibiliVideo.id, description=v["description"],title=v['title']
