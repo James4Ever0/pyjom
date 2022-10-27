@@ -305,8 +305,8 @@ def searchUserVideos(
     dedeuserid: str = "397424026",
     method: Literal["online", "bm25"] = "online",
     use_credential: bool = False,
-    videoOrder=VideoOrder.PUBDATE, # this order might not be avaliable.
-    limit=
+    videoOrder=VideoOrder.PUBDATE,
+    limit:int=10,
 ):  # you can support this in database?
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
@@ -328,7 +328,7 @@ def searchUserVideos(
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
         # export all video? shit?
-        BilibiliVideoIndex.search(keyword).limit(limit)
+        results = BilibiliVideoIndex.search(keyword).limit(limit)
 
 
 # you can make excerpt from video to lure people into viewing your video.
