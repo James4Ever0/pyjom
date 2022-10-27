@@ -20,6 +20,7 @@ import pyjq
 from bilibili_api import sync, search, user, video
 
 from peewee import *
+from playhouse.sqlite_ext import SqliteExtDatabase
 
 BSP = search.bilibiliSearchParams
 # you can query for the server status.
@@ -95,7 +96,7 @@ def getBilibiliVideoDatabase():
         os.mkdir(db_dir)
     db_path = db_dir / "database.db"  # sure this works?
     # db = SqliteDatabase(db_path)
-    db = 
+    db = SqliteExtDatabase(db_path, )
     return db
 
 
