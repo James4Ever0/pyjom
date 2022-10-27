@@ -27,4 +27,10 @@ object, flag = BilibiliVideoIndex.get_and_update_or_create(rowid=1, title=random
 print(object)
 print(flag)
 
+print(object.rowid, object.title, object.content)
+
+# don't know what magic is inside. whatever.
+
+# updated. my lord.
+
 breakpoint()
