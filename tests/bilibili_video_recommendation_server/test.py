@@ -77,7 +77,7 @@ class BilibiliVideo(Model):
     play = IntegerField(null=True)
     pic = CharField()
     length = IntegerField()
-    pubdate = IntegerField(null=True)
+    pubdate = IntegerField(default=0)
     review = IntegerField(null=True)  # you want to update? according to this?
     favorites = IntegerField(default=0)
 
@@ -338,15 +338,23 @@ def searchUserVideos(
         for index, video_index in enumerate(results):
             bilibiliVideo = BilibiliVideo.get(id = video_index.id)
             # what is the count? you need to reorder?
+            bvid = bili
             favorites = bilibiliVideo.favorites
+            pubdate = bilibiliVideo.pubdate
             view = bilibiliVideo.play
             if videoOrder == VideoOrder.FAVORITE:
                 order = -favorites
             elif videoOrder == VideoOrder.VIEW:
                 order = -view
+            elif videoOrder == VideoOrder.PUBDATE:
+                order = -pubdate # most recent video.
             else:
                 order = index
             # you should return the video_index.
+            resultList.append(((video_index, bvid), order))
+        resultList.sort(key = lambda x: x[1])
+        for (video_index, bvid), _ in resultList:
+            yield video_index, bvid# this is bilibiliVideoIndex, but you also needs the bvid.
 
 
 # you can make excerpt from video to lure people into viewing your video.
@@ -428,6 +436,7 @@ if __name__ == "__main__":
             pic=linkFixer(v["pic"]),
             length=videoDurationStringToSeconds(v["duration"]),
             review=v["review"],
+            pubdate = v["pubdate"],
             favorites = v['favorites']
         )
         bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(rowid=
