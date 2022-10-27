@@ -94,7 +94,8 @@ def getBilibiliVideoDatabase():
     if not os.path.exists(db_dir):
         os.mkdir(db_dir)
     db_path = db_dir / "database.db"  # sure this works?
-    db = SqliteDatabase(db_path)
+    # db = SqliteDatabase(db_path)
+    db = 
     return db
 
 
