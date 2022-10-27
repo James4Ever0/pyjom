@@ -37,6 +37,8 @@ print(object.rowid, object.title, object.content)
 # now search for it.
 
 term = 'python world'
-BilibiliVideoIndex.search_bm25(term)
-
+results = BilibiliVideoIndex.search_bm25(term) # just how many?
 breakpoint()
+for result in results:
+    print('RESULT',result)
+    breakpoint()
