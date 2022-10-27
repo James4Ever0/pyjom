@@ -328,7 +328,9 @@ def searchUserVideos(
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
         # export all video? shit?
-        results = BilibiliVideoIndex.search(keyword).limit(limit)
+        results = BilibiliVideoIndex.search_bm25(keyword).limit(limit)
+        for video in results:
+            ...
 
 
 # you can make excerpt from video to lure people into viewing your video.
