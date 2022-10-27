@@ -328,6 +328,7 @@ def searchUserVideos(
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
         # export all video? shit?
+        # you should tokenize the thing.
         results = BilibiliVideoIndex.search_bm25(keyword).limit(limit)
         for video in results:
             ...
