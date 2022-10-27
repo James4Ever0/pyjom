@@ -330,7 +330,8 @@ def searchUserVideos(
     elif method == "bm25":
         # export all video? shit?
         # you should tokenize the thing.
-        results = BilibiliVideoIndex.search_bm25(keyword).limit(limit)
+        # but this search does not have limitations!
+        results = BilibiliVideoIndex.search_bm25(keyword).where().limit(limit)
         []
         for video_index in results:
             bilibiliVideo = BilibiliVideo.get(id = video_index.id)
