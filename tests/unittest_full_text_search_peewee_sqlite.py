@@ -18,4 +18,4 @@ class BilibiliVideoIndex(FTSModel):
 
 db.create_tables([BilibiliVideoIndex])
 
-BilibiliVideoIndex.get_and_update_or_create()
+BilibiliVideoIndex.get_and_update_or_create(,_uniq_keys=[''])
