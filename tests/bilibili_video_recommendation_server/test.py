@@ -339,6 +339,7 @@ def searchUserVideos(
             # what is the count? you need to reorder?
             favorites = bilibiliVideo.favorites
             view = bilibiliVideo.play
+            if videoOrder == VideoOrder.
             # you should return the video_index.
 
 
