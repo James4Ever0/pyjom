@@ -333,7 +333,7 @@ def searchUserVideos(
         # but this search does not have limitations!
         user_video_ids = [v.id for v in BilibiliVideo.select(dedeuserid = dedeuserid)]
         results = BilibiliVideoIndex.search_bm25(keyword).where(BilibiliVideoIndex.rowid in user_video_ids).limit(limit)
-        []
+        
         for video_index in results:
             bilibiliVideo = BilibiliVideo.get(id = video_index.id)
             # what is the count? you need to reorder?
