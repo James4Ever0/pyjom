@@ -96,7 +96,9 @@ def getBilibiliVideoDatabase():
         os.mkdir(db_dir)
     db_path = db_dir / "database.db"  # sure this works?
     # db = SqliteDatabase(db_path)
-    db = SqliteExtDatabase(db_path, )
+    db = SqliteExtDatabase(db_path, pragmas={
+    'journal_mode': 'wal',
+    'cache_size': -1024 * 64})
     return db
 
 
