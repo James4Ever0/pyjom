@@ -99,6 +99,7 @@ def getBilibiliVideoDatabase():
     db = SqliteExtDatabase(db_path, pragmas={
     'journal_mode': 'wal',
     'cache_size': -1024 * 64})
+    # test the full text search function elsewhere. please?
     return db
 
 
