@@ -413,10 +413,9 @@ if __name__ == "__main__":
             length=videoDurationStringToSeconds(v["duration"]),
             review=v["review"],
         )
-        bilibiliVideoIndex, _BilibiliVideoIndex.get_and_update_or_create(rowid=
+        bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(rowid=
         bilibiliVideo.id, description=v["description"],title=v['title']
         )
-
         # records:
         # BV1De4y1m7ve 2022-10-25 15:32:37.886978
         # 
