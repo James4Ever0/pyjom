@@ -18,4 +18,13 @@ class BilibiliVideoIndex(FTSModel):
 
 db.create_tables([BilibiliVideoIndex])
 
-BilibiliVideoIndex.get_and_update_or_create(,_uniq_keys=[''])
+import uuid
+
+randomContent = lambda: str(uuid.uuid4())
+
+object, flag = BilibiliVideoIndex.get_and_update_or_create(rowid=1, title=randomContent(), content = randomContent(),_unique_keys=['rowid'])
+
+print(object)
+print(flag)
+
+breakpoint()
