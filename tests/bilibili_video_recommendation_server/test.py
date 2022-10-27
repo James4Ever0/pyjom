@@ -74,12 +74,18 @@ class BilibiliVideo(Model):
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
     )  # is it my account anyway?
-    description = CharField(max_length=350)  # will it work?
     play = IntegerField(null=True)
     pic = CharField()
     length = IntegerField()
     review = IntegerField(null=True)  # you want to update? according to this?
 
+class BilibiliVideoIndex(FTSModel):
+    rowid = RowIDField() # this does not support 
+    title = SearchField()
+    description = SearchField()
+    class Meta:
+        database=None # that's good.
+        options = {'tokenize': 'porter'} # you need manually separate some 
 
 def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
