@@ -585,11 +585,13 @@ def refresh_status():
     # what to do? just select and update?
     # but you need the database object. it is loop dependency!
     # well we can split the function.
-    db = getBilibiliVideoDatabaseAndCreateTables()
-    checkRegisteredVideo()
+    # just for initialization?
+    selector = 
+    for bvid in selector:
+        checkRegisteredVideo(bvid)
     return
 
-
+db = getBilibiliVideoDatabaseAndCreateTables()
 refresh_status()  # ensure the database is connected.
 schedule.every(20).minutes.do(refresh_status)
 
