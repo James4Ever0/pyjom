@@ -454,7 +454,8 @@ def checkPublishedVideo(bvid: str): # this is only done during retrieval.
     # normal; state -> 0
     avaliable=False
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
-    if bilibiliVideo is not None:
+    if bilibiliVideo is not None: # might be our 'registered' video but not yet been published.
+        needCheck = checkRegisteredVideo(bvid)
         info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
         state = info["state"]
         visible = state == 0
