@@ -87,6 +87,7 @@ class BilibiliVideo(Model):
 class BilibiliVideoIndex(FTSModel):
     rowid = RowIDField()  # this does not support
     title = SearchField()
+    tag= SearchField()
     description = SearchField()
 
     class Meta:
