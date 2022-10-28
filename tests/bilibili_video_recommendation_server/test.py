@@ -496,7 +496,7 @@ if __name__ == "__main__":
     if test == 'searchUserVideos':
         query = '猫'
         for v in searchUserVideos(test):
-            print(v)
+            print('fetched value:',v)
             breakpoint()
     elif test == 'registerMyVideo':
         bvid = "BV1iw411Z7xt"
