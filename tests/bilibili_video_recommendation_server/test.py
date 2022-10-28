@@ -535,7 +535,7 @@ if __name__ == "__main__":
             print('fetched value:',v)
             breakpoint()
     elif test == 'registerMyVideo':
-        bvid = "BV1iw411Z7xt"
+        bvid = "BV1fR4y1w7BL"
         dedeuserid = "397424026"
         registerUserVideo(bvid, dedeuserid)
     elif test == "searchVideos":
