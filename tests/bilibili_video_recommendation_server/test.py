@@ -317,9 +317,8 @@ def getUserVideos(
                 play=v["play"],
                 pic=linkFixer(v["pic"]),
                 length=videoDurationStringToSeconds(v["length"]),
-                review=v["review"],
+                review=v["comment"],
                 pubdate=v["created"],
-                favorites=v["favorites"],
             )
             bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
                 rowid=bilibiliVideo.id, description=v["description"], title=v["title"], tag=v['tag']
