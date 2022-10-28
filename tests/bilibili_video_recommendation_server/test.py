@@ -454,7 +454,7 @@ def checkRegisteredVideo(
                 if visible:
                     published=True
                 elif needRemove:
-                    
+                    bilibiliVideo.delete_instance()
     # you update that 'last_check' and compare it with 'checkin_date'
     # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
