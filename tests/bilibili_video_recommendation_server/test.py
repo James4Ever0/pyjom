@@ -386,7 +386,7 @@ def searchUserVideos(
         order = None
         for video_index, bvid, cover in getUserVideos(
             tid=tid,
-            videoOrder = 
+            order = videoOrder,
             keyword=keyword,
             dedeuserid=dedeuserid,
             use_credential=use_credential,
