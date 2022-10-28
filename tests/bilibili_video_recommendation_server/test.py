@@ -416,7 +416,7 @@ def getVideoInfo(bvid:str):
     return info
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
-def registerUser(dedeuserid:str)
+def registerUser(dedeuserid:str, is_mine:bool=False)
 
 def registerUserVideo(
     bvid: str, dedeuserid:str, is_mine:bool=False
