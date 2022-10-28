@@ -503,7 +503,8 @@ def checkPublishedVideo(bvid: str):
 
 def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,params={"duration": BSP.all.duration._10分钟以下}):
     results = searchVideos(query, iterate=iterate, page_start=page_start, params=params)
-    db = getBilibiliVideoDatabaseAndCreateTables()
+    # db = getBilibiliVideoDatabaseAndCreateTables()
+    # this database connection will be established elsewhere.
     for v in results:
         # print(v)
         # breakpoint()
