@@ -578,7 +578,8 @@ def refresh_status():
     # but you need the database object. it is loop dependency!
     # well we can split the function.
     # just for initialization?
-    selector = BilibiliVideo.select(BilibiliVideo.bvid).where()
+    
+    selector = BilibiliVideo.select(BilibiliVideo.bvid).where(BilibiliVideo.last_check < now) # need check or not?
     for bvid in selector:
         checkRegisteredVideo(bvid)
     return
