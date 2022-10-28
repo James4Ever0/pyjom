@@ -2,7 +2,7 @@
 # by means of query? or just directly ask me for it.
 
 # you'd better mimic the video that you have never recommend, and these audience have never seen before.
-from http.client import TOO_MANY_REQUESTS
+import time
 import sys
 import datetime
 
