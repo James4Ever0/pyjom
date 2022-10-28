@@ -506,7 +506,7 @@ def checkPublishedVideo(bvid: str):  # this is only done during retrieval.
     if (
         bilibiliVideo is not None
     ):  # might be our 'registered' video but not yet been published.
-        published = checkRegisteredVideo(bvid)
+        published, needCheckAgain= checkRegisteredVideo(bvid)
         if published:
             visible = checkVideoVisibility(bvid)
             avaliable = visible
