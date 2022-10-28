@@ -451,6 +451,7 @@ def checkPublishedVideo(bvid: str): # this is only done during retrieval.
     # bad state! what is the meaning of this state?
     # normal; state -> 0
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
+    
     if bilibiliVideo is not None:
         info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
         state = info["state"]
@@ -466,6 +467,8 @@ def checkPublishedVideo(bvid: str): # this is only done during retrieval.
             bilibiliVideo.last_check = datetime.datetime.now()
             bilibiliVideo.visible=True
             bilibiliVideo.save()
+    else:
+        print('video %s is not registered.' % bvid)
     # info['stat'].keys()
     # dict_keys(['aid', 'view', 'danmaku', 'reply', 'favorite', 'coin', 'share', 'now_rank', 'his_rank', 'like', 'dislike', 'evaluation', 'argue_msg'])
     # breakpoint()
