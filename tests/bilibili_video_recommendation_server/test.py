@@ -432,7 +432,9 @@ def checkRegisteredVideo(
     check_interval=datetime.timedelta(hours=1),
 ):  # maybe the video is not immediately visible after registration.
     # check if they are published or not.
-    info = getVideoInfo(bvid)
+    needCheck = 
+    if needCheck:
+        info = getVideoInfo(bvid)
     # you update that 'last_check' and compare it with 'checkin_date'
     # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
