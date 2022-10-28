@@ -447,7 +447,9 @@ def checkRegisteredVideo(
         if needCheck:
             needRemove = now - bilibiliVideo.register_date >=grace_period
             visible= getVideoVisibility(bvid)
-            
+            if visible:
+                published=True
+            elif needRemove:
     # you update that 'last_check' and compare it with 'checkin_date'
     # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
