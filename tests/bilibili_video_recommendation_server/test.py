@@ -431,7 +431,7 @@ def registerUserVideo(
         username = userInfo['name']
         followers = followersInfo['total']
         avatar = userInfo['face']
-        u, _ = BilibiliUser.get_or_create(user_id = user_id,username = username,is_mine = True,followers = followers,avatar = avatar)
+        u, _ = BilibiliUser.get_or_create(user_id = user_id,username = username,is_mine =is_mine,followers = followers,avatar = avatar)
     # when to update? maybe later.
     BilibiliVideo.create(bvid=bvid, visible=False, poster=u) # it must be new.
 
