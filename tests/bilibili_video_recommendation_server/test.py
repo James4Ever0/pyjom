@@ -475,6 +475,7 @@ def checkPublishedVideo(bvid: str): # this is only done during retrieval.
     # if anything goes wrong, do not return the state.
     # if you want update, better do it here. we are checking and updating the video.
     # we use some random video for test.
+    return avaliable
 
 
 # i suggest you to use sqlalchemy. since this is no ordinary task.
