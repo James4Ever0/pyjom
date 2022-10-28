@@ -490,7 +490,8 @@ def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,
         yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
 
 if __name__ == "__main__":
-    test = 'searchVideos'
+    # test = 'searchVideos'
+    test = 'searchUserVideos'
     # test = 'registerMyVideo'
     if test == 'registerMyVideo':
         bvid = "BV1iw411Z7xt"
