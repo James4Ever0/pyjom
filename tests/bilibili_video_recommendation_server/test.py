@@ -456,6 +456,7 @@ def checkPublishedVideo(bvid: str): # this is only done during retrieval.
         info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
         state = info["state"]
         visible = state == 0
+        avaliable = visible
         if not visible:
             # remove that thing.
                 bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
