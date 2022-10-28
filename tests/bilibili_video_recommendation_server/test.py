@@ -425,7 +425,8 @@ def registerUserVideo(
     # you will store it to database.
     user_id = int(dedeuserid)
     u= BilibiliUser.get_or_none(user_id = user_id)
-    if u is None:
+    if u
+    elif u is None:
         userObject = user.User(user_id)
         userInfo = sync(userObject.get_user_info())
         # print(userInfo)
