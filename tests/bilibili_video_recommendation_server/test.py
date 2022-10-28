@@ -304,10 +304,7 @@ def getUserVideos(
             user_info = sync(u.get_user_info())
             upic = user_info['face']
             followers = sync(u.get_followers())['total']
-            bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
-                username=author, user_id=mid, avatar=linkFixer(upic),
-                followers=followers
-            )
+            bilibiliUser = registerUser(dedeuserid, )
     pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
     # pn	int, optional	页码，从 1 开始. Defaults to 1.
