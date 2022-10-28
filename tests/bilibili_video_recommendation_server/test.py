@@ -430,9 +430,9 @@ def checkPublishedVideo(bvid: str):
     # normal; state -> 0
     state = info["state"]
     visible = state == 0
+    bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
     if not visible:
         # remove that thing.
-        bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
         if bilibiliVideo is not None:
             bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
             bilibiliVideo.delete_instance()
