@@ -425,8 +425,8 @@ def registerUserVideo(
     # you will store it to database.
     user_id = int(dedeuserid)
     u= BilibiliUser.get_or_none(user_id = user_id)
-    if u
-    elif u is None:
+    
+    if u is None:
         userObject = user.User(user_id)
         userInfo = sync(userObject.get_user_info())
         # print(userInfo)
@@ -439,7 +439,10 @@ def registerUserVideo(
         followers = followersInfo['total']
         avatar = userInfo['face']
         u, _ = BilibiliUser.get_or_create(user_id = user_id,username = username,is_mine =is_mine,followers = followers,avatar = avatar)
-    # when to update? maybe later.
+        # when to update? maybe later.
+    elif u.is_mine != is_mine:
+        u.is_mine = is_mine
+        u.save()
     return u
     BilibiliVideo.create(bvid=bvid, visible=False, poster=u) # it must be new.
 
