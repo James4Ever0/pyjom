@@ -495,7 +495,7 @@ if __name__ == "__main__":
     # test = 'registerMyVideo'
     if test == 'searchUserVideos':
         query = '猫'
-        
+        for v in 
     elif test == 'registerMyVideo':
         bvid = "BV1iw411Z7xt"
         dedeuserid = "397424026"
