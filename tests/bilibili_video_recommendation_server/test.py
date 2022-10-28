@@ -297,14 +297,7 @@ def getUserVideos(
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
-    u = getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
-
-            mid, author = v["mid"], v["author"]
-            # print("USER OBJECT:",dir(u))
-            user_info = sync(u.get_user_info())
-            upic = user_info['face']
-            followers = sync(u.get_followers())['total']
-            bilibiliUser = registerUser(dedeuserid, )
+    bilibiliUser = registerUser(dedeuserid, )
     pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
     # pn	int, optional	页码，从 1 开始. Defaults to 1.
