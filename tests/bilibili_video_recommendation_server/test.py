@@ -420,14 +420,14 @@ def registerUserVideo(
     user_id = int(dedeuserid)
     u= BilibiliUser.get_or_none(user_id = user_id)
     if u is None:
-        myUser = user.User(user_id)
-        userInfo = sync(myUser.get_user_info())
+        userObject = user.User(user_id)
+        userInfo = sync(userObject.get_user_info())
         # print(userInfo)
         # print(dir(userInfo))
         # breakpoint()
         # dict_keys(['list', 're_version', 'total'])
         # in the 'list' we've got a few recent followers.
-        followersInfo = sync(myUser.get_followers())
+        followersInfo = sync(userObject.get_followers())
         username = userInfo['name']
         followers = followersInfo['total']
         avatar = userInfo['face']
