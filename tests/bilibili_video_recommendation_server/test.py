@@ -145,7 +145,7 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
-def registerUser(dedeuserid:str, is_mine:bool=False):
+def registerUser(dedeuserid:str, is_mine:bool, None)=None):
     user_id = int(dedeuserid)
     u= BilibiliUser.get_or_none(user_id = user_id)
     if u is None:
