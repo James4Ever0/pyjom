@@ -2,6 +2,7 @@
 # by means of query? or just directly ask me for it.
 
 # you'd better mimic the video that you have never recommend, and these audience have never seen before.
+from http.client import TOO_MANY_REQUESTS
 import sys
 import datetime
 
@@ -265,7 +266,7 @@ def getUserVideos(
     keyword="",
     order=VideoOrder.PUBDATE,
     dedeuserid: str = "397424026",
-    use_credential: bool = False,
+    use_credential: bool = TOO_MANY_REQUESTS,
     stop_on_duplicate: bool = True,
 ):  # all videos? just at init.
     # some stop condition for early termination.
