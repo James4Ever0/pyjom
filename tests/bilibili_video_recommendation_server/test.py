@@ -325,7 +325,7 @@ def searchUserVideos(
     # check if keyword overlaps.
     # how to search my video? and how to measure relevance?
     if method == "online":
-        for video in getUserVideos(
+        for v in getUserVideos(
             tid=tid,
             keyword=keyword,
             dedeuserid=dedeuserid,
@@ -333,7 +333,7 @@ def searchUserVideos(
             stop_on_duplicate=False,
         ):
             # what is the content? plan to update?
-            print("SEARCHED USER VIDEO:", video)
+            print("SEARCHED USER VIDEO:", v)
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
         # export all video? shit?
