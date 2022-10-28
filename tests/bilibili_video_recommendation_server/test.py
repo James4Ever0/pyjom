@@ -293,6 +293,7 @@ def getUserVideos(
 
         # breakpoint()
         video_list = videos["list"]["vlist"]
+        breakpoint()
         if video_list == []: break
         for v in video_list:
             bvid = v["bvid"]
@@ -331,6 +332,7 @@ def searchUserVideos(
     # just dump that shit.
     # check if keyword overlaps.
     # how to search my video? and how to measure relevance?
+    resultList = []
     if method == "online":
         for v in getUserVideos(
             tid=tid,
@@ -353,7 +355,6 @@ def searchUserVideos(
             .where(BilibiliVideoIndex.rowid in user_video_ids)
             .limit(limit)
         )
-        resultList = []
         for index, video_index in enumerate(results):
             bilibiliVideo = BilibiliVideo.get(id=video_index.id)
             # what is the count? you need to reorder?
