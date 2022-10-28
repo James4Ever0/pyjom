@@ -416,16 +416,9 @@ def getVideoInfo(bvid:str):
     return info
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
-def registerUser(dedeuserid:str, is_mine:bool=False)
-
-def registerUserVideo(
-    bvid: str, dedeuserid:str, is_mine:bool=False
-):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
-    # register user first, then register the video.
-    # you will store it to database.
+def registerUser(dedeuserid:str, is_mine:bool=False):
     user_id = int(dedeuserid)
     u= BilibiliUser.get_or_none(user_id = user_id)
-    
     if u is None:
         userObject = user.User(user_id)
         userInfo = sync(userObject.get_user_info())
@@ -444,6 +437,13 @@ def registerUserVideo(
         u.is_mine = is_mine
         u.save()
     return u
+def registerUserVideo(
+    bvid: str, dedeuserid:str, is_mine:bool=False
+):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
+    # register user first, then register the video.
+    # you will store it to database.
+
+    u = registerUser(dedeuserid, is_mine)
     BilibiliVideo.create(bvid=bvid, visible=False, poster=u) # it must be new.
 
 
