@@ -305,8 +305,9 @@ def getUserVideos(
             # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
             # breakpoint()
             mid, author = v["mid"], v["author"]
-            print("USER OBJECT:",dir(u))
-            breakpoint()
+            # print("USER OBJECT:",dir(u))
+            user_info = sync(u.get_user_info())
+            upic = user_info['face']
             bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
                 username=author, user_id=mid, avatar=linkFixer(upic)
             )
