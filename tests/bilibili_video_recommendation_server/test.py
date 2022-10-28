@@ -505,6 +505,7 @@ def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,
         )
         bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
             bvid=v["bvid"],
+            typeid=v['typeid'],
             visible=True,  # are you sure?
             last_check=datetime.datetime.now(),  # well this is not tested. test it!
             poster=bilibiliUser,  # is it my account anyway?
