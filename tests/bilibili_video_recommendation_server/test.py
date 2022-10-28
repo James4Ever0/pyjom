@@ -441,11 +441,12 @@ def checkRegisteredVideo(
     # __________GP__________ (after check video info. decide to delete or not.)
     published=False
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
-    visible = bilibiliVideo.visible
     now = datetime.datetime.now()
-    needRemove = now - bilibiliVideo.register_date >=grace_period
     if bilibiliVideo:
+        visible = bilibiliVideo.visible
+        needRemove = now - bilibiliVideo.register_date >=grace_period
         if visible and needRemove:
+            published=True
         else:
             needCheck = now - bilibiliVideo.last_check >=check_interval
             if needCheck:
