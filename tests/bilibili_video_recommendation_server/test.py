@@ -3,6 +3,7 @@
 
 # you'd better mimic the video that you have never recommend, and these audience have never seen before.
 import sys
+import datetime
 
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
@@ -70,24 +71,28 @@ class BilibiliUser(Model):
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
     visible = BooleanField(null=True)  # are you sure?
-    last_check = DateTimeField()  # well this is not tested. test it!
+    last_check = DateTimeField(default=datetime.datetime.now)  # well this is not tested. test it!
+    register_date = DateTimeField(default=datetime.datetime.now)
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
     )  # is it my account anyway?
     play = IntegerField(null=True)
-    pic = CharField()
-    length = IntegerField()
+    pic = CharField(null=True)
+    length = IntegerField(null=True)
     pubdate = IntegerField(default=0)
     review = IntegerField(null=True)  # you want to update? according to this?
     favorites = IntegerField(default=0)
 
+
 class BilibiliVideoIndex(FTSModel):
-    rowid = RowIDField() # this does not support 
+    rowid = RowIDField()  # this does not support
     title = SearchField()
     description = SearchField()
+
     class Meta:
-        database=None # that's good.
-        options = {'tokenize': 'porter'} # you need manually separate some 
+        database = None  # that's good.
+        options = {"tokenize": "porter"}  # you need manually separate some
+
 
 def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
@@ -104,9 +109,9 @@ def getBilibiliVideoDatabase():
         os.mkdir(db_dir)
     db_path = db_dir / "database.db"  # sure this works?
     # db = SqliteDatabase(db_path)
-    db = SqliteExtDatabase(db_path, pragmas={
-    'journal_mode': 'wal',
-    'cache_size': -1024 * 64})
+    db = SqliteExtDatabase(
+        db_path, pragmas={"journal_mode": "wal", "cache_size": -1024 * 64}
+    )
     # test the full text search function elsewhere. please?
     return db
 
@@ -141,9 +146,9 @@ def searchVideos(
     iterate: bool = False,
     page_start: int = 1,
     params={"duration": BSP.all.duration._10分钟以下},  # is that right? maybe?
-    search_type=search.SearchObjectType.VIDEO,
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
+    search_type=search.SearchObjectType.VIDEO
     # or you use some baidu magic?
     # anyway, let's begin.
     # warning: this is coroutine.
@@ -307,8 +312,8 @@ def searchUserVideos(
     dedeuserid: str = "397424026",
     method: Literal["online", "bm25"] = "online",
     use_credential: bool = False,
-    videoOrder=VideoOrder.PUBDATE, # FAVOURITE, VIEW
-    limit:int=10,
+    videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
+    limit: int = 10,
 ):  # you can support this in database?
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
@@ -332,13 +337,18 @@ def searchUserVideos(
         # export all video? shit?
         # you should tokenize the thing.
         # but this search does not have limitations!
-        user_video_ids = [v.id for v in BilibiliVideo.select(dedeuserid = dedeuserid)]
-        results = BilibiliVideoIndex.search_bm25(keyword).where(BilibiliVideoIndex.rowid in user_video_ids).limit(limit)
+        user_video_ids = [v.id for v in BilibiliVideo.select(dedeuserid=dedeuserid)]
+        results = (
+            BilibiliVideoIndex.search_bm25(keyword)
+            .where(BilibiliVideoIndex.rowid in user_video_ids)
+            .limit(limit)
+        )
         resultList = []
         for index, video_index in enumerate(results):
-            bilibiliVideo = BilibiliVideo.get(id = video_index.id)
+            bilibiliVideo = BilibiliVideo.get(id=video_index.id)
             # what is the count? you need to reorder?
-            bvid = bili
+            bvid = bilibiliVideo.bvid
+            cover = bilibiliVideo.pic
             favorites = bilibiliVideo.favorites
             pubdate = bilibiliVideo.pubdate
             view = bilibiliVideo.play
@@ -347,28 +357,47 @@ def searchUserVideos(
             elif videoOrder == VideoOrder.VIEW:
                 order = -view
             elif videoOrder == VideoOrder.PUBDATE:
-                order = -pubdate # most recent video.
+                order = -pubdate  # most recent video.
             else:
                 order = index
             # you should return the video_index.
-            resultList.append(((video_index, bvid), order))
-        resultList.sort(key = lambda x: x[1])
-        for (video_index, bvid), _ in resultList:
-            yield video_index, bvid# this is bilibiliVideoIndex, but you also needs the bvid.
+            resultList.append(((video_index, bvid, cover), order))
+        resultList.sort(key=lambda x: x[1])
+    for (video_index, bvid, cover), _ in resultList:
+        yield video_index, bvid, cover  # this is bilibiliVideoIndex, but you also needs the bvid.
 
 
 # you can make excerpt from video to lure people into viewing your video.
 
+def getVideoInfo(bvid:str):
+    v = video.Video(bvid=bvid)
+    info = sync(v.get_info())
+    return info
+
 # no need to decorate this thing. only put some 'unchecked' video into array.
 def registerMyVideo(
-    bvid: str, user_id: int
+    bvid: str, dedeuserid:str
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     # register user first, then register the video.
     # you will store it to database.
-    info = getVideoInfo(bvid)
+    user_id = int(dedeuserid)
+    u= BilibiliUser.get_or_none(user_id = user_id)
+    if u is None:
+        myUser = user.User(user_id)
+        userInfo = sync(myUser.get_user_info())
+        # print(userInfo)
+        # print(dir(userInfo))
+        # breakpoint()
+        # dict_keys(['list', 're_version', 'total'])
+        # in the 'list' we've got a few recent followers.
+        followersInfo = sync(myUser.get_followers())
+        username = userInfo['name']
+        followers = followersInfo['total']
+        avatar = userInfo['face']
+        u, _ = BilibiliUser.get_or_create(user_id = user_id,username = username,is_mine = True,followers = followers,avatar = avatar)
+    # when to update? maybe later.
+    BilibiliVideo.create(bvid=bvid, visible=False, poster=u) # it must be new.
 
-
-import datetime
 
 # grace period to be one day. that's long enough. or not?
 # we still need some more experiment.
@@ -380,7 +409,8 @@ def checkRegisteredVideo(
     check_interval=datetime.timedelta(hours=1),
 ):  # maybe the video is not immediately visible after registration.
     # check if they are published or not.
-    ...
+    info = getVideoInfo(bvid)
+    # you update that 'last_check' and compare it with 'checkin_date'
     # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
 
@@ -391,15 +421,22 @@ def checkPublishedVideo(bvid: str):
     # if published, the video is taken down afterwards, we will delete it.
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
-    v = video.Video(bvid=bvid)
-    info = sync(v.get_info())  # getting shit? we need some normal video for test.
-    print(info)
+    # v = video.Video(bvid=bvid)
+    info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
+    # print(info)
     # dict_keys(['bvid', 'aid', 'videos', 'tid', 'tname', 'copyright', 'pic', 'title', 'pubdate', 'ctime', 'desc', 'desc_v2', 'state', 'duration', 'forward', 'rights', 'owner', 'stat', 'dynamic', 'dimension', 'premiere', 'teenage_mode', 'is_chargeable_season', 'is_story', 'no_cache', 'subtitle', 'is_season_display', 'user_garb', 'honor_reply', 'like_icon'])
     #  'state': -4,
     # bad state! what is the meaning of this state?
     # normal; state -> 0
     state = info["state"]
     visible = state == 0
+    if not visible:
+        # remove that thing.
+        bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
+        if bilibiliVideo is not None:
+            bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
+            if bilibiliVideoIndex is not None:
+                # remove that thing.
     # info['stat'].keys()
     # dict_keys(['aid', 'view', 'danmaku', 'reply', 'favorite', 'coin', 'share', 'now_rank', 'his_rank', 'like', 'dislike', 'evaluation', 'argue_msg'])
     # breakpoint()
@@ -417,48 +454,57 @@ def checkPublishedVideo(bvid: str):
 # not fastapi!
 
 
-if __name__ == "__main__":
-    query = "cod19"  # recent hot videos.
-    results = searchVideos(query)
+def searchAndRegisterVideos(query:str,iterate: bool = False,
+    page_start: int = 1,
+    params={"duration": BSP.all.duration._10分钟以下}):
+    results = searchVideos(query, iterate=iterate, page_start=page_start, params=params)
     db = getBilibiliVideoDatabaseAndCreateTables()
     for v in results:
         # print(v)
+        # breakpoint()
         mid, author, upic = v["mid"], v["author"], v["upic"]
         bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
             username=author, user_id=mid, avatar=upic
         )
         bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
             bvid=v["bvid"],
-            visible=True, # are you sure?
+            visible=True,  # are you sure?
             last_check=datetime.datetime.now(),  # well this is not tested. test it!
             poster=bilibiliUser,  # is it my account anyway?
             play=v["play"],
             pic=linkFixer(v["pic"]),
             length=videoDurationStringToSeconds(v["duration"]),
             review=v["review"],
-            pubdate = v["pubdate"],
-            favorites = v['favorites']
+            pubdate=v["pubdate"],
+            favorites=v["favorites"],
         )
-        bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(rowid=
-        bilibiliVideo.id, description=v["description"],title=v['title']
+        bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
+            rowid=bilibiliVideo.id, description=v["description"], title=v["title"]
         )
-        # records:
-        # BV1De4y1m7ve 2022-10-25 15:32:37.886978
-        # 
-        print(bilibiliVideo.bvid, bilibiliVideo.last_check)
-        breakpoint()
+        yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
 
-    # breakpoint()
-    # you want to select video after search?
-    # no keywords? are you kidding?
-    # results = getMyVideos()
-    # print(results)
-    # video_bvid_invisible = "BV1pd4y1y7cu"  # too fucking fast. i can't see shit.
-    # # some hard rule on this? like being invisible for how long we will disable video source for good?
-    # video_bvid_abnormal = "BV1x84y1B7Nb"
-    # video_bvid_visible = "BV1Fs411k7e9"  # 老戴的视频
-    # # 啊叻？视频不见了？
-    # checkPublishedVideo(video_bvid_invisible)
-    # checkPublishedVideo(video_bvid_visible)
-    # checkPublishedVideo(video_bvid_abnormal)
-    # 视频撞车了 需要原创视频哦
+if __name__ == "__main__":
+    test = 'searchVideos'
+    # test = 'registerMyVideo'
+    if test == 'registerMyVideo':
+        bvid = "BV1iw411Z7xt"
+        dedeuserid = "397424026"
+        registerMyVideo(bvid, dedeuserid)
+    elif test == "searchVideos":
+        query = "cod19"  # recent hot videos.
+        # breakpoint()
+        for v in searchAndRegisterVideos(query):
+            print(v)
+        # you want to select video after search?
+        # no keywords? are you kidding?
+        # results = getMyVideos()
+        # print(results)
+        # video_bvid_invisible = "BV1pd4y1y7cu"  # too fucking fast. i can't see shit.
+        # # some hard rule on this? like being invisible for how long we will disable video source for good?
+        # video_bvid_abnormal = "BV1x84y1B7Nb"
+        # video_bvid_visible = "BV1Fs411k7e9"  # 老戴的视频
+        # # 啊叻？视频不见了？
+        # checkPublishedVideo(video_bvid_invisible)
+        # checkPublishedVideo(video_bvid_visible)
+        # checkPublishedVideo(video_bvid_abnormal)
+        # 视频撞车了 需要原创视频哦
