@@ -333,6 +333,7 @@ def searchUserVideos(
             stop_on_duplicate=False,
         ):
             # what is the content? plan to update?
+            print("USER VIDEO ")
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
         # export all video? shit?
