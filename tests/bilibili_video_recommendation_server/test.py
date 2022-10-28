@@ -508,19 +508,22 @@ def checkPublishedVideo(bvid: str):  # this is only done during retrieval.
     ):  # might be our 'registered' video but not yet been published.
         published, needCheckAgain= checkRegisteredVideo(bvid)
         if published:
-            visible = checkVideoVisibility(bvid)
-            avaliable = visible
-            if not visible:
-                # remove that thing.
-                bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
-                bilibiliVideo.delete_instance()
-                if bilibiliVideoIndex is not None:
-                    # remove that thing.
-                    bilibiliVideoIndex.delete_instance()
+            if not needCheckAgain:
+                published=True
             else:
-                bilibiliVideo.last_check = datetime.datetime.now()
-                bilibiliVideo.visible = True
-                bilibiliVideo.save()
+                visible = checkVideoVisibility(bvid)
+                avaliable = visible
+                if not visible:
+                    # remove that thing.
+                    bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
+                    bilibiliVideo.delete_instance()
+                    if bilibiliVideoIndex is not None:
+                        # remove that thing.
+                        bilibiliVideoIndex.delete_instance()
+                else:
+                    bilibiliVideo.last_check = datetime.datetime.now()
+                    bilibiliVideo.visible = True
+                    bilibiliVideo.save()
     else:
         print("video %s is not registered." % bvid)
     # info['stat'].keys()
