@@ -437,8 +437,7 @@ def checkRegisteredVideo(
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
     now = datetime.datetime.now()
     if bilibiliVideo:
-        needCheck =
-        bilibiliVideo.last_check
+        needCheck = now - bilibiliVideo.last_check >=check_interval
         bilibiliVideo.register_date
         if needCheck:
             info = getVideoInfo(bvid)
