@@ -268,6 +268,7 @@ def getUserVideos(
     dedeuserid: str = "397424026",
     use_credential: bool =False,
     stop_on_duplicate: bool = True,
+    sleep:int=2,
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
@@ -320,7 +321,6 @@ def searchUserVideos(
     use_credential: bool = False,
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,
-    sleep:int=2,
 ):  # you can support this in database?
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
