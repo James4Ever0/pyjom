@@ -5,7 +5,7 @@
 import time
 import sys
 import datetime
-
+from typing import Union
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
@@ -145,7 +145,7 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
-def registerUser(dedeuserid:str, is_mine:bool, None)=None):
+def registerUser(dedeuserid:str, is_mine:Union[bool, None]=None):
     user_id = int(dedeuserid)
     u= BilibiliUser.get_or_none(user_id = user_id)
     if u is None:
