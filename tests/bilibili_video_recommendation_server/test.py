@@ -267,6 +267,7 @@ def getUserVideos(
     dedeuserid: str = "397424026",
     use_credential: bool = False,
     stop_on_duplicate: bool = True,
+    maxPage = 
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
