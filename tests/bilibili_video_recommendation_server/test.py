@@ -427,12 +427,11 @@ def checkPublishedVideo(bvid: str):
     #  'state': -4,
     # bad state! what is the meaning of this state?
     # normal; state -> 0
-    state = info["state"]
-    visible = state == 0
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
     if bilibiliVideo is not None:
         info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
-
+        state = info["state"]
+        visible = state == 0
         if not visible:
             # remove that thing.
                 bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
