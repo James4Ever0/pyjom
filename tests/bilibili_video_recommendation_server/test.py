@@ -100,13 +100,6 @@ class BilibiliVideoIndex(FTSModel):
         options = {"tokenize": "porter"}  # you need manually separate some
 
 
-def refresh_status_decorator(func):
-    def wrapper(*args, **kwargs):
-        schedule.run_pending()
-        return func(*args, **kwargs)
-    return wrapper
-
-
 @lru_cache(maxsize=1)
 def getBilibiliVideoDatabase():
     db_dir = Path(getHomeDirectory()) / ".bilibili_video"
@@ -585,7 +578,7 @@ def refresh_status():
     # but you need the database object. it is loop dependency!
     # well we can split the function.
     # just for initialization?
-    selector = 
+    selector = BilibiliVideo.
     for bvid in selector:
         checkRegisteredVideo(bvid)
     return
@@ -594,6 +587,12 @@ db = getBilibiliVideoDatabaseAndCreateTables()
 refresh_status()  # ensure the database is connected.
 schedule.every(20).minutes.do(refresh_status)
 
+
+def refresh_status_decorator(func):
+    def wrapper(*args, **kwargs):
+        schedule.run_pending()
+        return func(*args, **kwargs)
+    return wrapper
 
 @refresh_status_decorator  # this might prevent you adding the decorator everywhere?
 def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
