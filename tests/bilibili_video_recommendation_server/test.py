@@ -440,7 +440,7 @@ def checkRegisteredVideo(
 
 # seems bilibili can automatically categorize video.
 # we just need to find out how?
-def checkPublishedVideo(bvid: str):
+def checkPublishedVideo(bvid: str): # this is only done during retrieval.
     # if published, the video is taken down afterwards, we will delete it.
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
@@ -519,6 +519,7 @@ def refresh_status():
     # but you need the database object. it is loop dependency!
     # well we can split the function.
     db = getBilibiliVideoDatabaseAndCreateTables()
+    checkRegisteredVideo()
     return
 
 
