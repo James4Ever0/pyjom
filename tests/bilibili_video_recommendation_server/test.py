@@ -438,8 +438,8 @@ def checkRegisteredVideo(
     now = datetime.datetime.now()
     if bilibiliVideo:
         needCheck = now - bilibiliVideo.last_check >=check_interval
-        bilibiliVideo.register_date
         if needCheck:
+            needRemove = now - bilibiliVideo.register_date >=grace_period
             info = getVideoInfo(bvid)
     # you update that 'last_check' and compare it with 'checkin_date'
     # you can schedule check every hour. not all the time.
