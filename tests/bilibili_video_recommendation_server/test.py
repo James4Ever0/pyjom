@@ -298,6 +298,16 @@ def getUserVideos(
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
     u = getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
+
+            mid, author = v["mid"], v["author"]
+            # print("USER OBJECT:",dir(u))
+            user_info = sync(u.get_user_info())
+            upic = user_info['face']
+            followers = sync(u.get_followers())['total']
+            bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
+                username=author, user_id=mid, avatar=linkFixer(upic),
+                followers=followers
+            )
     pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
     # pn	int, optional	页码，从 1 开始. Defaults to 1.
@@ -329,15 +339,6 @@ def getUserVideos(
             # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
             # breakpoint()
             # bad idea. you should get the bilibiliUser before you do this.
-            mid, author = v["mid"], v["author"]
-            # print("USER OBJECT:",dir(u))
-            user_info = sync(u.get_user_info())
-            upic = user_info['face']
-            followers = sync(u.get_followers())['total']
-            bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
-                username=author, user_id=mid, avatar=linkFixer(upic),
-                followers=followers
-            )
             bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
                 bvid=v["bvid"],
                 typeid = v['typeid'],
