@@ -162,7 +162,7 @@ def registerUser(dedeuserid:str, is_mine:Union[bool, None]=None):
         avatar = userInfo['face']
         u, _ = BilibiliUser.get_or_create(user_id = user_id,username = username,is_mine =is_mine,followers = followers,avatar = avatar)
         # when to update? maybe later.
-    elif u.is_mine != is_mine:
+    elif is_mine is not None and u.is_mine != is_mine:
         u.is_mine = is_mine
         u.save()
     return u
