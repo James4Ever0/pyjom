@@ -334,7 +334,7 @@ def searchUserVideos(
     # how to search my video? and how to measure relevance?
     resultList = []
     if method == "online":
-        for v in getUserVideos(
+        for v_id in getUserVideos(
             tid=tid,
             keyword=keyword,
             dedeuserid=dedeuserid,
@@ -342,7 +342,7 @@ def searchUserVideos(
             stop_on_duplicate=False,
         ):
             # what is the content? plan to update?
-            print("SEARCHED USER VIDEO:", v)
+            print("SEARCHED USER VIDEO ID:", v_id)
             yield v# will change please?
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
