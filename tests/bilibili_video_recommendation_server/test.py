@@ -498,16 +498,18 @@ def checkPublishedVideo(bvid: str):  # this is only done during retrieval.
     if (
         bilibiliVideo is not None
     ):  # might be our 'registered' video but not yet been published.
-        published, needCheckAgain= checkRegisteredVideo(bvid)
+        published, needCheckAgain = checkRegisteredVideo(bvid)
         if published:
             if not needCheckAgain:
-                published=True
+                published = True
             else:
                 visible = checkVideoVisibility(bvid)
                 avaliable = visible
                 if not visible:
                     # remove that thing.
-                    bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
+                    bilibiliVideoIndex = BilibiliVideo.get_or_none(
+                        rowid=bilibiliVideo.id
+                    )
                     bilibiliVideo.delete_instance()
                     if bilibiliVideoIndex is not None:
                         # remove that thing.
@@ -534,6 +536,7 @@ def checkPublishedVideo(bvid: str):  # this is only done during retrieval.
 
 # shall write some server.
 # not fastapi!
+
 
 def searchAndRegisterVideos(
     query: str,
@@ -575,16 +578,22 @@ def searchAndRegisterVideos(
 
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
-    check_interval=datetime.timedelta(hours=1),):
+    check_interval=datetime.timedelta(hours=1),
+):
     # what to do? just select and update?
     # but you need the database object. it is loop dependency!
     # well we can split the function.
     # just for initialization?
     now_minus_check_period = datetime.datetime.now() - check_interval
-    selector = BilibiliVideo.select(BilibiliVideo.bvid).where(BilibiliVideo.last_check < now_minus_check_period) # need check or not?
+    selector = BilibiliVideo.select(BilibiliVideo.bvid).where(
+        BilibiliVideo.last_check < now_minus_check_period
+    )  # need check or not?
     for bvid in selector:
-        checkRegisteredVideo(bvid, grace_period=grace_period,check_interval=check_interval)
+        checkRegisteredVideo(
+            bvid, grace_period=grace_period, check_interval=check_interval
+        )
     return
+
 
 db = getBilibiliVideoDatabaseAndCreateTables()
 refresh_status()  # ensure the database is connected.
@@ -595,7 +604,9 @@ def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
         schedule.run_pending()
         return func(*args, **kwargs)
+
     return wrapper
+
 
 @refresh_status_decorator  # this might prevent you adding the decorator everywhere?
 def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
