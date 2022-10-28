@@ -435,8 +435,10 @@ def checkPublishedVideo(bvid: str):
         bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
         if bilibiliVideo is not None:
             bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
+            bilibiliVideo.delete_instance()
             if bilibiliVideoIndex is not None:
                 # remove that thing.
+                bilibiliVideoIndex.delete_instance()
     # info['stat'].keys()
     # dict_keys(['aid', 'view', 'danmaku', 'reply', 'favorite', 'coin', 'share', 'now_rank', 'his_rank', 'like', 'dislike', 'evaluation', 'argue_msg'])
     # breakpoint()
