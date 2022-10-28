@@ -422,7 +422,6 @@ def checkPublishedVideo(bvid: str):
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
     # v = video.Video(bvid=bvid)
-    info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
     # print(info)
     # dict_keys(['bvid', 'aid', 'videos', 'tid', 'tname', 'copyright', 'pic', 'title', 'pubdate', 'ctime', 'desc', 'desc_v2', 'state', 'duration', 'forward', 'rights', 'owner', 'stat', 'dynamic', 'dimension', 'premiere', 'teenage_mode', 'is_chargeable_season', 'is_story', 'no_cache', 'subtitle', 'is_season_display', 'user_garb', 'honor_reply', 'like_icon'])
     #  'state': -4,
@@ -432,6 +431,8 @@ def checkPublishedVideo(bvid: str):
     visible = state == 0
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
     if bilibiliVideo is not None:
+        info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
+
         if not visible:
             # remove that thing.
                 bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
