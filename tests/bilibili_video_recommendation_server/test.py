@@ -431,7 +431,8 @@ def checkRegisteredVideo(
     check_interval=datetime.timedelta(hours=1),
 ):  # maybe the video is not immediately visible after registration.
     # check if they are published or not.
-    # ____CI____CI____
+    # ____CI____CI____CI____
+    # __________GP__________
     published=False
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
     if bilibiliVideo:
