@@ -543,7 +543,6 @@ def checkPublishedVideo(bvid: str):  # this is only done during retrieval.
 # shall write some server.
 # not fastapi!
 
-
 def searchAndRegisterVideos(
     query: str,
     iterate: bool = False,
