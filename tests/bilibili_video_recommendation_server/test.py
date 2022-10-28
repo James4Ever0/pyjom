@@ -480,7 +480,7 @@ def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,
         # breakpoint()
         mid, author, upic = v["mid"], v["author"], v["upic"]
         bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
-            username=author, user_id=mid, avatar=upic
+            username=author, user_id=mid, avatar=linkFixer(upic)
         )
         bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
             bvid=v["bvid"],
