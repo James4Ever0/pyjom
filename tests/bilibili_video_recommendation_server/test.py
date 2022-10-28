@@ -104,7 +104,6 @@ def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
         schedule.run_pending()
         return func(*args, **kwargs)
-
     return wrapper
 
 
