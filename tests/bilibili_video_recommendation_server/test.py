@@ -493,7 +493,9 @@ if __name__ == "__main__":
     # test = 'searchVideos'
     test = 'searchUserVideos'
     # test = 'registerMyVideo'
-    if test == 'registerMyVideo':
+    if test == 'searchUserVideos':
+        query = ''
+    elif test == 'registerMyVideo':
         bvid = "BV1iw411Z7xt"
         dedeuserid = "397424026"
         registerMyVideo(bvid, dedeuserid)
