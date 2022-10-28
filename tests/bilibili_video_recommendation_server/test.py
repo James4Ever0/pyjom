@@ -290,6 +290,7 @@ def getUserVideos(
 
         # breakpoint()
         video_list = videos["list"]["vlist"]
+        if video_list == []: break
         for v in video_list:
             bvid = v["bvid"]
             result = checkVideoInDatabase(bvid)
