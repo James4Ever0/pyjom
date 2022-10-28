@@ -341,6 +341,7 @@ def searchUserVideos(
             # what is the content? plan to update?
             print("SEARCHED USER VIDEO:", v)
             yield v# will change please?
+            time.sleep(sleep)
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
         # export all video? shit?
