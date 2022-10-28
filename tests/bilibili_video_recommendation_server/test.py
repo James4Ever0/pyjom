@@ -432,9 +432,11 @@ def checkRegisteredVideo(
 ):  # maybe the video is not immediately visible after registration.
     # check if they are published or not.
     published=False
-    needCheck = 
-    if needCheck:
-        info = getVideoInfo(bvid)
+    bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
+    if bilibiliVideo:
+        needCheck = bilibiliVideo.
+        if needCheck:
+            info = getVideoInfo(bvid)
     # you update that 'last_check' and compare it with 'checkin_date'
     # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
