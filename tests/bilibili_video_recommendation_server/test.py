@@ -6,6 +6,7 @@ import time
 import sys
 import datetime
 from typing import Union
+
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
@@ -60,7 +61,7 @@ from peewee import *
 
 class BilibiliUser(Model):
     username = CharField()
-    user_id = IntegerField(unique=True) # this is integer.
+    user_id = IntegerField(unique=True)  # this is integer.
     is_mine = BooleanField(default=False)
     followers = IntegerField(
         null=True
@@ -71,9 +72,11 @@ class BilibiliUser(Model):
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
-    typeid=IntegerField(null=True)
+    typeid = IntegerField(null=True)
     visible = BooleanField(null=True)  # are you sure?
-    last_check = DateTimeField(default=datetime.datetime.now)  # well this is not tested. test it!
+    last_check = DateTimeField(
+        default=datetime.datetime.now
+    )  # well this is not tested. test it!
     register_date = DateTimeField(default=datetime.datetime.now)
     poster = ForeignKeyField(
         BilibiliUser, field=BilibiliUser.user_id
@@ -89,7 +92,7 @@ class BilibiliVideo(Model):
 class BilibiliVideoIndex(FTSModel):
     rowid = RowIDField()  # this does not support
     title = SearchField()
-    tag= SearchField()
+    tag = SearchField()
     description = SearchField()
 
     class Meta:
@@ -126,12 +129,12 @@ def getBilibiliVideoDatabaseAndCreateTables():
 
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
-def registerUser(dedeuserid:str, is_mine:Union[bool, None]=None):
+def registerUser(dedeuserid: str, is_mine: Union[bool, None] = None):
     user_id = int(dedeuserid)
-    u= BilibiliUser.get_or_none(user_id = user_id)
+    u = BilibiliUser.get_or_none(user_id=user_id)
     if u is None:
         if is_mine is None:
-            is_mine=False
+            is_mine = False
         userObject = user.User(user_id)
         userInfo = sync(userObject.get_user_info())
         # print(userInfo)
@@ -140,15 +143,22 @@ def registerUser(dedeuserid:str, is_mine:Union[bool, None]=None):
         # dict_keys(['list', 're_version', 'total'])
         # in the 'list' we've got a few recent followers.
         followersInfo = sync(userObject.get_followers())
-        username = userInfo['name']
-        followers = followersInfo['total']
-        avatar = userInfo['face']
-        u, _ = BilibiliUser.get_or_create(user_id = user_id,username = username,is_mine =is_mine,followers = followers,avatar = avatar)
+        username = userInfo["name"]
+        followers = followersInfo["total"]
+        avatar = userInfo["face"]
+        u, _ = BilibiliUser.get_or_create(
+            user_id=user_id,
+            username=username,
+            is_mine=is_mine,
+            followers=followers,
+            avatar=avatar,
+        )
         # when to update? maybe later.
     elif is_mine is not None and u.is_mine != is_mine:
         u.is_mine = is_mine
         u.save()
     return u
+
 
 # @refresh_status_decorator
 def searchVideos(
@@ -158,7 +168,7 @@ def searchVideos(
     params={"duration": BSP.all.duration._10分钟以下},  # is that right? maybe?
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
-    search_type=search.SearchObjectType.VIDEO
+    search_type = search.SearchObjectType.VIDEO
     # or you use some baidu magic?
     # anyway, let's begin.
     # warning: this is coroutine.
@@ -274,13 +284,15 @@ def getUserVideos(
     keyword="",
     order=VideoOrder.PUBDATE,
     dedeuserid: str = "397424026",
-    use_credential: bool =False,
+    use_credential: bool = False,
     stop_on_duplicate: bool = True,
-    sleep:int=2,
+    sleep: int = 2,
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
-    bilibiliUser = registerUser(dedeuserid, )
+    bilibiliUser = registerUser(
+        dedeuserid,
+    )
     pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
     # pn	int, optional	页码，从 1 开始. Defaults to 1.
@@ -301,7 +313,8 @@ def getUserVideos(
         # breakpoint()
         video_list = videos["list"]["vlist"]
         # breakpoint()
-        if video_list == []: break
+        if video_list == []:
+            break
         for v in video_list:
             bvid = v["bvid"]
             result = checkVideoInDatabase(bvid)
@@ -314,7 +327,7 @@ def getUserVideos(
             # bad idea. you should get the bilibiliUser before you do this.
             bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
                 bvid=v["bvid"],
-                typeid = v['typeid'],
+                typeid=v["typeid"],
                 visible=True,  # are you sure?
                 last_check=datetime.datetime.now(),  # well this is not tested. test it!
                 poster=bilibiliUser,  # is it my account anyway?
@@ -325,9 +338,12 @@ def getUserVideos(
                 pubdate=v["created"],
             )
             bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
-                rowid=bilibiliVideo.id, description=v["description"], title=v["title"], tag=v['tag']
+                rowid=bilibiliVideo.id,
+                description=v["description"],
+                title=v["title"],
+                tag=v["tag"],
             )
-            yield bilibiliVideoIndex, v['bvid'], v['pic']
+            yield bilibiliVideoIndex, v["bvid"], v["pic"]
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
         if page >= numPages:
@@ -361,7 +377,7 @@ def searchUserVideos(
         order = None
         for video_index, bvid, cover in getUserVideos(
             tid=tid,
-            order = videoOrder,
+            order=videoOrder,
             keyword=keyword,
             dedeuserid=dedeuserid,
             use_credential=use_credential,
@@ -376,7 +392,12 @@ def searchUserVideos(
         # you should tokenize the thing.
         # but this search does not have limitations!
         poster = registerUser(dedeuserid)
-        user_video_ids = [v.id for v in BilibiliVideo.select(BilibiliVideo.id).where(BilibiliVideo.poster==poster)]
+        user_video_ids = [
+            v.id
+            for v in BilibiliVideo.select(BilibiliVideo.id).where(
+                BilibiliVideo.poster == poster
+            )
+        ]
         results = (
             BilibiliVideoIndex.search_bm25(keyword)
             .where(BilibiliVideoIndex.rowid in user_video_ids)
@@ -407,28 +428,32 @@ def searchUserVideos(
 
 # you can make excerpt from video to lure people into viewing your video.
 
-def getVideoInfo(bvid:str):
+
+def getVideoInfo(bvid: str):
     v = video.Video(bvid=bvid)
     info = sync(v.get_info())
     return info
 
+
 def registerUserVideo(
-    bvid: str, dedeuserid:str, is_mine:bool=False
+    bvid: str, dedeuserid: str, is_mine: bool = False
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     # register user first, then register the video.
     # you will store it to database.
     u = registerUser(dedeuserid, is_mine)
-    BilibiliVideo.create(bvid=bvid, visible=False, poster=u) # it must be new.
+    BilibiliVideo.create(bvid=bvid, visible=False, poster=u)  # it must be new.
 
 
 # grace period to be one day. that's long enough. or not?
 # we still need some more experiment.
 
-def checkVideoVisibility(bvid:str):
-    info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
+
+def checkVideoVisibility(bvid: str):
+    info = getVideoInfo(bvid)  # getting shit? we need some normal video for test.
     state = info["state"]
     visible = state == 0
     return visible
+
 
 # check api doc for hint.
 def checkRegisteredVideo(
@@ -439,19 +464,23 @@ def checkRegisteredVideo(
     # check if they are published or not.
     # ____CI____CI____CI____ (before check video info. decide to check or not.)
     # __________GP__________ (after check video info. decide to delete or not.)
-    published=False
+    published = False
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
     now = datetime.datetime.now()
+    needCheck = False
     if bilibiliVideo:
         visible = bilibiliVideo.visible
-        needRemove = now - bilibiliVideo.register_date >=grace_period
-        if visible and needRemove: # do not remove. it just need to be check again, when using checkPublishedVideo. this value is used for double check.
-            published=True
+        needCheck = now - bilibiliVideo.last_check >= check_interval
+        needRemove = now - bilibiliVideo.register_date >= grace_period
+        if (
+            visible and needRemove
+        ):  # do not remove. it just need to be check again, when using checkPublishedVideo. this value is used for double check.
+            published = True
         else:
             if needCheck:
-                visible= checkVideoVisibility(bvid)
+                visible = checkVideoVisibility(bvid)
                 if visible:
-                    published=True
+                    published = True
                 elif needRemove:
                     bilibiliVideo.delete_instance()
     # you update that 'last_check' and compare it with 'checkin_date'
@@ -462,7 +491,7 @@ def checkRegisteredVideo(
 
 # seems bilibili can automatically categorize video.
 # we just need to find out how?
-def checkPublishedVideo(bvid: str): # this is only done during retrieval.
+def checkPublishedVideo(bvid: str):  # this is only done during retrieval.
     # if published, the video is taken down afterwards, we will delete it.
     # check if video is still visible or taken down.
     # if video is not visible then we delete this video from database.
@@ -472,26 +501,28 @@ def checkPublishedVideo(bvid: str): # this is only done during retrieval.
     #  'state': -4,
     # bad state! what is the meaning of this state?
     # normal; state -> 0
-    avaliable=False
+    avaliable = False
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
-    if bilibiliVideo is not None: # might be our 'registered' video but not yet been published.
+    if (
+        bilibiliVideo is not None
+    ):  # might be our 'registered' video but not yet been published.
         published = checkRegisteredVideo(bvid)
         if published:
             visible = checkVideoVisibility(bvid)
             avaliable = visible
             if not visible:
                 # remove that thing.
-                    bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
-                    bilibiliVideo.delete_instance()
-                    if bilibiliVideoIndex is not None:
-                        # remove that thing.
-                        bilibiliVideoIndex.delete_instance()
+                bilibiliVideoIndex = BilibiliVideo.get_or_none(rowid=bilibiliVideo.id)
+                bilibiliVideo.delete_instance()
+                if bilibiliVideoIndex is not None:
+                    # remove that thing.
+                    bilibiliVideoIndex.delete_instance()
             else:
                 bilibiliVideo.last_check = datetime.datetime.now()
-                bilibiliVideo.visible=True
+                bilibiliVideo.visible = True
                 bilibiliVideo.save()
     else:
-        print('video %s is not registered.' % bvid)
+        print("video %s is not registered." % bvid)
     # info['stat'].keys()
     # dict_keys(['aid', 'view', 'danmaku', 'reply', 'favorite', 'coin', 'share', 'now_rank', 'his_rank', 'like', 'dislike', 'evaluation', 'argue_msg'])
     # breakpoint()
@@ -510,7 +541,12 @@ def checkPublishedVideo(bvid: str): # this is only done during retrieval.
 # not fastapi!
 
 
-def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,params={"duration": BSP.all.duration._10分钟以下}):
+def searchAndRegisterVideos(
+    query: str,
+    iterate: bool = False,
+    page_start: int = 1,
+    params={"duration": BSP.all.duration._10分钟以下},
+):
     results = searchVideos(query, iterate=iterate, page_start=page_start, params=params)
     # db = getBilibiliVideoDatabaseAndCreateTables()
     # this database connection will be established elsewhere.
@@ -523,7 +559,7 @@ def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,
         )
         bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
             bvid=v["bvid"],
-            typeid=v['typeid'],
+            typeid=v["typeid"],
             visible=True,  # are you sure?
             last_check=datetime.datetime.now(),  # well this is not tested. test it!
             poster=bilibiliUser,  # is it my account anyway?
@@ -535,10 +571,12 @@ def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,
             favorites=v["favorites"],
         )
         bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
-            rowid=bilibiliVideo.id, description=v["description"], title=v["title"], tag=v['tag']
+            rowid=bilibiliVideo.id,
+            description=v["description"],
+            title=v["title"],
+            tag=v["tag"],
         )
         yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
-
 
 
 def refresh_status():
@@ -550,7 +588,7 @@ def refresh_status():
     return
 
 
-refresh_status() # ensure the database is connected.
+refresh_status()  # ensure the database is connected.
 schedule.every(20).minutes.do(refresh_status)
 
 
@@ -559,17 +597,18 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     db = getBilibiliVideoDatabaseAndCreateTables()
     return db
 
+
 if __name__ == "__main__":
     # test = 'searchVideos'
-    test = 'searchUserVideos'
+    test = "searchUserVideos"
     # test = 'registerMyVideo'
-    if test == 'searchUserVideos':
-        query = '猫'
+    if test == "searchUserVideos":
+        query = "猫"
         for v in searchUserVideos(query):
-            print('fetched value:',v)
+            print("fetched value:", v)
             breakpoint()
-    elif test == 'registerMyVideo':
-        bvid = "BV1fR4y1w7BL" # that's surely yours.
+    elif test == "registerMyVideo":
+        bvid = "BV1fR4y1w7BL"  # that's surely yours.
         dedeuserid = "397424026"
         registerUserVideo(bvid, dedeuserid)
     elif test == "searchVideos":
