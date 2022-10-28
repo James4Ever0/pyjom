@@ -504,7 +504,7 @@ if __name__ == "__main__":
     # test = 'registerMyVideo'
     if test == 'searchUserVideos':
         query = '猫'
-        for v in searchUserVideos(test):
+        for v in searchUserVideos(query):
             print('fetched value:',v)
             breakpoint()
     elif test == 'registerMyVideo':
