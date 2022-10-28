@@ -573,12 +573,14 @@ def searchAndRegisterVideos(
         yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
 
 
-def refresh_status():
+def refresh_status(
+    grace_period=datetime.timedelta(days=1),
+    check_interval=datetime.timedelta(hours=1),):
     # what to do? just select and update?
     # but you need the database object. it is loop dependency!
     # well we can split the function.
     # just for initialization?
-    now_minus_check_period = datetime.datetime.now()
+    now_minus_check_period = datetime.datetime.now() - check_interval
     selector = BilibiliVideo.select(BilibiliVideo.bvid).where(BilibiliVideo.last_check < now) # need check or not?
     for bvid in selector:
         checkRegisteredVideo(bvid)
