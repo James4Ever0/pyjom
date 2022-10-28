@@ -71,6 +71,7 @@ class BilibiliUser(Model):
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
+    typeid=IntegerField(null=True)
     visible = BooleanField(null=True)  # are you sure?
     last_check = DateTimeField(default=datetime.datetime.now)  # well this is not tested. test it!
     register_date = DateTimeField(default=datetime.datetime.now)
