@@ -441,6 +441,7 @@ def checkPublishedVideo(bvid: str):
                     bilibiliVideoIndex.delete_instance()
         else:
             bilibiliVideo.
+            bilibiliVideo.save()
     # info['stat'].keys()
     # dict_keys(['aid', 'view', 'danmaku', 'reply', 'favorite', 'coin', 'share', 'now_rank', 'his_rank', 'like', 'dislike', 'evaluation', 'argue_msg'])
     # breakpoint()
