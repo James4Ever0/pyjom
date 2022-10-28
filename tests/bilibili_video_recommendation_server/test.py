@@ -266,7 +266,7 @@ def getUserVideos(
     keyword="",
     order=VideoOrder.PUBDATE,
     dedeuserid: str = "397424026",
-    use_credential: bool = TOO_MANY_REQUESTS,
+    use_credential: bool =True,
     stop_on_duplicate: bool = True,
 ):  # all videos? just at init.
     # some stop condition for early termination.
