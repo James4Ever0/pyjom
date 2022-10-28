@@ -316,7 +316,7 @@ def getUserVideos(
                 poster=bilibiliUser,  # is it my account anyway?
                 play=v["play"],
                 pic=linkFixer(v["pic"]),
-                length=videoDurationStringToSeconds(v["duration"]),
+                length=v['length'],
                 review=v["review"],
                 pubdate=v["pubdate"],
                 favorites=v["favorites"],
