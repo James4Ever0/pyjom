@@ -484,7 +484,7 @@ def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,
             favorites=v["favorites"],
         )
         bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
-            rowid=bilibiliVideo.id, description=v["description"], title=v["title"]
+            rowid=bilibiliVideo.id, description=v["description"], title=v["title"], tag=v['tag']
         )
         yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
 
