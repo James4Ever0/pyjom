@@ -434,7 +434,9 @@ def checkRegisteredVideo(
     published=False
     bilibiliVideo = BilibiliVideo.get_or_none(bvid=bvid)
     if bilibiliVideo:
-        needCheck = bilibiliVideo.
+        needCheck =
+        bilibiliVideo.last_check
+        bilibiliVideo.register_date
         if needCheck:
             info = getVideoInfo(bvid)
     # you update that 'last_check' and compare it with 'checkin_date'
