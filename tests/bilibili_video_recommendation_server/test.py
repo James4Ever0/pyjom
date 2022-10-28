@@ -375,7 +375,7 @@ def searchUserVideos(
         # export all video? shit?
         # you should tokenize the thing.
         # but this search does not have limitations!
-        poster = BilibiliVideo.
+        poster = BilibiliUser.get_or_none(user_id = int(dedeuserid))
         user_video_ids = [v.id for v in BilibiliVideo.select(poster=poster)]
         results = (
             BilibiliVideoIndex.search_bm25(keyword)
