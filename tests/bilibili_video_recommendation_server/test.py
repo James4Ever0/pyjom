@@ -448,7 +448,6 @@ def checkRegisteredVideo(
         if visible and needRemove: # do not remove. it just need to be check again, when using checkPublishedVideo. this value is used for double check.
             published=True
         else:
-            needCheck = now - bilibiliVideo.last_check >=check_interval
             if needCheck:
                 visible= checkVideoVisibility(bvid)
                 if visible:
@@ -458,7 +457,7 @@ def checkRegisteredVideo(
     # you update that 'last_check' and compare it with 'checkin_date'
     # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
-    return published
+    return published, not needCheck
 
 
 # seems bilibili can automatically categorize video.
