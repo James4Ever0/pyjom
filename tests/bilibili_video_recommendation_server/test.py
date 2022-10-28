@@ -306,7 +306,7 @@ def getUserVideos(
             yield v
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
-        if page == numPages:
+        if page >= numPages:
             break
         time.sleep(sleep)
         pn += 1
