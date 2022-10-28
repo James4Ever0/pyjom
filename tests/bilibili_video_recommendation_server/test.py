@@ -424,6 +424,12 @@ def registerUserVideo(
 # grace period to be one day. that's long enough. or not?
 # we still need some more experiment.
 
+def checkVideoVisibility(bvid:str):
+
+            info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
+            state = info["state"]
+            visible = state == 0
+
 # check api doc for hint.
 def checkRegisteredVideo(
     bvid: str,
@@ -464,9 +470,7 @@ def checkPublishedVideo(bvid: str): # this is only done during retrieval.
     if bilibiliVideo is not None: # might be our 'registered' video but not yet been published.
         published = checkRegisteredVideo(bvid)
         if published:
-            info = getVideoInfo(bvid) # getting shit? we need some normal video for test.
-            state = info["state"]
-            visible = state == 0
+            visible = checkVideoVisibility(bvid)
             avaliable = visible
             if not visible:
                 # remove that thing.
