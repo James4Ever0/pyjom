@@ -581,9 +581,9 @@ def refresh_status(
     # well we can split the function.
     # just for initialization?
     now_minus_check_period = datetime.datetime.now() - check_interval
-    selector = BilibiliVideo.select(BilibiliVideo.bvid).where(BilibiliVideo.last_check < now) # need check or not?
+    selector = BilibiliVideo.select(BilibiliVideo.bvid).where(BilibiliVideo.last_check < now_minus_check_period) # need check or not?
     for bvid in selector:
-        checkRegisteredVideo(bvid)
+        checkRegisteredVideo(bvid, grace_period=grace_period,check_interval=check_interval)
     return
 
 db = getBilibiliVideoDatabaseAndCreateTables()
