@@ -309,7 +309,7 @@ def getUserVideos(
             user_info = sync(u.get_user_info())
             upic = user_info['face']
             bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
-                username=author, user_id=mid, avatar=linkFixer(upic)
+                username=author, user_id=mid, avatar=linkFixer(upic), is_mine=True, 
             )
             bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
                 bvid=v["bvid"],
