@@ -377,7 +377,8 @@ def searchUserVideos(
         # but this search does not have limitations!
         poster = BilibiliUser.get_or_none(user_id = int(dedeuserid))
         if poster is None:
-            u = 
+            u = getUserObject(dedeuserid=dedeuserid)
+            BilibiliUser.get_or_create
         user_video_ids = [v.id for v in BilibiliVideo.select(poster=poster)]
         results = (
             BilibiliVideoIndex.search_bm25(keyword)
