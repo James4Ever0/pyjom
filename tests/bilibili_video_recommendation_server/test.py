@@ -143,6 +143,30 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     return db
 
 
+
+# no need to decorate this thing. only put some 'unchecked' video into array.
+def registerUser(dedeuserid:str, is_mine:bool=False):
+    user_id = int(dedeuserid)
+    u= BilibiliUser.get_or_none(user_id = user_id)
+    if u is None:
+        userObject = user.User(user_id)
+        userInfo = sync(userObject.get_user_info())
+        # print(userInfo)
+        # print(dir(userInfo))
+        # breakpoint()
+        # dict_keys(['list', 're_version', 'total'])
+        # in the 'list' we've got a few recent followers.
+        followersInfo = sync(userObject.get_followers())
+        username = userInfo['name']
+        followers = followersInfo['total']
+        avatar = userInfo['face']
+        u, _ = BilibiliUser.get_or_create(user_id = user_id,username = username,is_mine =is_mine,followers = followers,avatar = avatar)
+        # when to update? maybe later.
+    elif u.is_mine != is_mine:
+        u.is_mine = is_mine
+        u.save()
+    return u
+
 # @refresh_status_decorator
 def searchVideos(
     query: str,
