@@ -445,7 +445,7 @@ def checkRegisteredVideo(
     if bilibiliVideo:
         visible = bilibiliVideo.visible
         needRemove = now - bilibiliVideo.register_date >=grace_period
-        if visible and needRemove:
+        if visible and needRemove: # do not remove. it just need to be check again, when using checkPublishedVideo. this value is used for double check.
             published=True
         else:
             needCheck = now - bilibiliVideo.last_check >=check_interval
