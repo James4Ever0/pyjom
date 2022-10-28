@@ -60,7 +60,7 @@ from peewee import *
 
 class BilibiliUser(Model):
     username = CharField()
-    user_id = IntegerField(unique=True)
+    user_id = IntegerField(unique=True) # this is integer.
     is_mine = BooleanField(default=False)
     followers = IntegerField(
         null=True
@@ -375,7 +375,8 @@ def searchUserVideos(
         # export all video? shit?
         # you should tokenize the thing.
         # but this search does not have limitations!
-        user_video_ids = [v.id for v in BilibiliVideo.select(dedeuserid=dedeuserid)]
+        poster = BilibiliVideo.
+        user_video_ids = [v.id for v in BilibiliVideo.select(poster=poster)]
         results = (
             BilibiliVideoIndex.search_bm25(keyword)
             .where(BilibiliVideoIndex.rowid in user_video_ids)
