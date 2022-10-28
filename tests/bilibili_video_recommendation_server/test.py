@@ -417,7 +417,6 @@ def registerUserVideo(
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     # register user first, then register the video.
     # you will store it to database.
-
     u = registerUser(dedeuserid, is_mine)
     BilibiliVideo.create(bvid=bvid, visible=False, poster=u) # it must be new.
 
@@ -432,12 +431,14 @@ def checkRegisteredVideo(
     check_interval=datetime.timedelta(hours=1),
 ):  # maybe the video is not immediately visible after registration.
     # check if they are published or not.
+    published=False
     needCheck = 
     if needCheck:
         info = getVideoInfo(bvid)
     # you update that 'last_check' and compare it with 'checkin_date'
     # you can schedule check every hour. not all the time.
     # basically the same thing. but we do not delete these video till the time is too late, after check.
+    return published
 
 
 # seems bilibili can automatically categorize video.
