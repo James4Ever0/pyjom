@@ -416,6 +416,8 @@ def getVideoInfo(bvid:str):
     return info
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
+def registerUser(dedeuserid:str)
+
 def registerUserVideo(
     bvid: str, dedeuserid:str, is_mine:bool=False
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
@@ -437,6 +439,7 @@ def registerUserVideo(
         avatar = userInfo['face']
         u, _ = BilibiliUser.get_or_create(user_id = user_id,username = username,is_mine =is_mine,followers = followers,avatar = avatar)
     # when to update? maybe later.
+    return u
     BilibiliVideo.create(bvid=bvid, visible=False, poster=u) # it must be new.
 
 
