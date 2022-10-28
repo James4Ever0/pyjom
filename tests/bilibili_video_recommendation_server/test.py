@@ -318,7 +318,7 @@ def getUserVideos(
                 pic=linkFixer(v["pic"]),
                 length=v['length'],
                 review=v["review"],
-                pubdate=v["pubdate"],
+                pubdate=v["created"],
                 favorites=v["favorites"],
             )
             bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
