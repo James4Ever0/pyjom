@@ -412,8 +412,8 @@ def getVideoInfo(bvid:str):
     return info
 
 # no need to decorate this thing. only put some 'unchecked' video into array.
-def registerMyVideo(
-    bvid: str, dedeuserid:str
+def registerUserVideo(
+    bvid: str, dedeuserid:str, is_mine:bool=False
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     # register user first, then register the video.
     # you will store it to database.
