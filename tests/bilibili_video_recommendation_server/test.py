@@ -537,7 +537,7 @@ if __name__ == "__main__":
     elif test == 'registerMyVideo':
         bvid = "BV1iw411Z7xt"
         dedeuserid = "397424026"
-        registerMyVideo(bvid, dedeuserid)
+        registerUserVideo(bvid, dedeuserid)
     elif test == "searchVideos":
         query = "cod19"  # recent hot videos.
         # breakpoint()
