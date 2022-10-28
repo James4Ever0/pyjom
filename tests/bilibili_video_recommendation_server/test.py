@@ -400,7 +400,7 @@ def searchUserVideos(
         # you should tokenize the thing.
         # but this search does not have limitations!
         poster = registerUser(dedeuserid)
-        user_video_ids = [v.id for v in BilibiliVideo.select(BilibiliVideo.poster==poster)]
+        user_video_ids = [v.id for v in BilibiliVideo.select(BilibiliVideo.id).where(BilibiliVideo.poster==poster)]
         results = (
             BilibiliVideoIndex.search_bm25(keyword)
             .where(BilibiliVideoIndex.rowid in user_video_ids)
