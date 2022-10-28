@@ -303,26 +303,26 @@ def getUserVideos(
             # print(v)
             # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
             # breakpoint()
-
-        mid, author = v["mid"], v["author"]
-        bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
-            username=author, user_id=mid, avatar=linkFixer(upic)
-        )
-        bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
-            bvid=v["bvid"],
-            visible=True,  # are you sure?
-            last_check=datetime.datetime.now(),  # well this is not tested. test it!
-            poster=bilibiliUser,  # is it my account anyway?
-            play=v["play"],
-            pic=linkFixer(v["pic"]),
-            length=videoDurationStringToSeconds(v["duration"]),
-            review=v["review"],
-            pubdate=v["pubdate"],
-            favorites=v["favorites"],
-        )
-        bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
-            rowid=bilibiliVideo.id, description=v["description"], title=v["title"], tag=v['tag']
-        )
+            mid, author = v["mid"], v["author"]
+            upic = 
+            bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
+                username=author, user_id=mid, avatar=linkFixer(upic)
+            )
+            bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
+                bvid=v["bvid"],
+                visible=True,  # are you sure?
+                last_check=datetime.datetime.now(),  # well this is not tested. test it!
+                poster=bilibiliUser,  # is it my account anyway?
+                play=v["play"],
+                pic=linkFixer(v["pic"]),
+                length=videoDurationStringToSeconds(v["duration"]),
+                review=v["review"],
+                pubdate=v["pubdate"],
+                favorites=v["favorites"],
+            )
+            bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
+                rowid=bilibiliVideo.id, description=v["description"], title=v["title"], tag=v['tag']
+            )
             yield bilibiliVideoIndex, v['bvid'], v['pic']
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
