@@ -130,10 +130,11 @@ def refresh_status():
     # but you need the database object. it is loop dependency!
     # well we can split the function.
     db = getBilibiliVideoDatabaseAndCreateTables()
+    
     return
 
 
-refresh_status()
+refresh_status() # ensure the database is connected.
 schedule.every(20).minutes.do(refresh_status)
 
 
