@@ -125,25 +125,6 @@ def getBilibiliVideoDatabaseAndCreateTables():
     return db
 
 
-def refresh_status():
-    # what to do? just select and update?
-    # but you need the database object. it is loop dependency!
-    # well we can split the function.
-    db = getBilibiliVideoDatabaseAndCreateTables()
-    
-    return
-
-
-refresh_status() # ensure the database is connected.
-schedule.every(20).minutes.do(refresh_status)
-
-
-@refresh_status_decorator  # this might prevent you adding the decorator everywhere?
-def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
-    db = getBilibiliVideoDatabaseAndCreateTables()
-    return db
-
-
 # no need to decorate this thing. only put some 'unchecked' video into array.
 def registerUser(dedeuserid:str, is_mine:Union[bool, None]=None):
     user_id = int(dedeuserid)
@@ -530,6 +511,25 @@ def searchAndRegisterVideos(query:str,iterate: bool = False,page_start: int = 1,
             rowid=bilibiliVideo.id, description=v["description"], title=v["title"], tag=v['tag']
         )
         yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
+
+
+
+def refresh_status():
+    # what to do? just select and update?
+    # but you need the database object. it is loop dependency!
+    # well we can split the function.
+    db = getBilibiliVideoDatabaseAndCreateTables()
+    return
+
+
+refresh_status() # ensure the database is connected.
+schedule.every(20).minutes.do(refresh_status)
+
+
+@refresh_status_decorator  # this might prevent you adding the decorator everywhere?
+def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
+    db = getBilibiliVideoDatabaseAndCreateTables()
+    return db
 
 if __name__ == "__main__":
     # test = 'searchVideos'
