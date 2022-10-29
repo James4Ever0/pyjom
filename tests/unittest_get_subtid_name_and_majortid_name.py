@@ -2,6 +2,6 @@ from bilibili_api import search
 
 BSP = search.bilibiliSearchParams
 
-for elem in BSP.all.tids.__dict__.items():
-    print(elem)
+for key,value in BSP.all.tids.__dict__.items():
+    print(value)
 
