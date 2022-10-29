@@ -24,7 +24,7 @@ def getOpenCCConverter(converter_type:str='t2s'):
 
 def containChineseCharacters(text):
     for char in text:
-        if char '\u4e00' >= and char <=:
+        if char  >='\u4e00' and char <='\u9fff':
             return True
     return False
 
