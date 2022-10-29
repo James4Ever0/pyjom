@@ -1,5 +1,7 @@
-
+from bilibili_api import search
 
 BSP = search.bilibiliSearchParams
 
-BSP.all.tids
+for elem in BSP.all.tids:
+    print(elem)
+
