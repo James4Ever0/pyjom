@@ -26,7 +26,7 @@ def getMajorMinorTopicMappings(debug:bool=False):
 
 majorMinorTopicMappings = getMajorMinorTopicMappings()
 
-def getMajorMinorTopic
+def getTagsFromMajorMinorTopics
 
 
 tid = 1
