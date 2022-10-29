@@ -398,7 +398,7 @@ def getUserVideos(
         for v in video_list:
             bvid = v["bvid"]
             subTypeId = v['typeid']
-            tagString = get
+            tagString = getTagStringFromTid(subTypeId)
             result = checkVideoInDatabase(bvid)
             if result and stop_on_duplicate:
                 stopped = True
@@ -418,12 +418,13 @@ def getUserVideos(
                 length=videoDurationStringToSeconds(v["length"]),
                 review=v["comment"],
                 pubdate=v["created"],
+                description=v["description"],
+                title=v["title"],
+                tag=tagString
             )
             bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
                 rowid=bilibiliVideo.id,
-                description=v["description"],
-                title=v["title"],
-                tag=tagString, # there is no tag.
+                description=, # there is no tag.
             )
             yield bilibiliVideoIndex, v["bvid"], v["pic"]
         # videos['list']['vlist'][0].keys()
