@@ -71,6 +71,9 @@ def textPreprocessing(text):
     return " ".join(finalWordList)
 
 
+def keywordExtracting(text):
+    
+
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
 # will it load the overheads of pyjom.commons?
