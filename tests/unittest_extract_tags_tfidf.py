@@ -9,4 +9,4 @@ import jieba
 text_splited = " ".join(jieba.lcut(text))
 
 ana.set_stop_words(myStopwords)
-tags=ana.extract_tags(text_splited,)
+tags=ana.extrac_tags(text_splited,topK=5,)
