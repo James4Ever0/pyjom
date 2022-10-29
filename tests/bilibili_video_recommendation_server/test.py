@@ -33,7 +33,7 @@ def textPreprocessing(text):
         word =w.strip()
         if len(word)>0:
             final_wordlist.append(word)
-    [isChinese() for word in final_wordlist]
+    flags = [containChineseCharacters(word) for word in final_wordlist]
     # return " ".join(final_wordlist)
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
