@@ -378,7 +378,7 @@ import math
 from bilibili_api.user import VideoOrder
 
 
-def indexAndGetVideoObject():
+def indexAndGetVideoObject(v, bilibiliUser):
     bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
         bvid=v["bvid"],
         typeid=v["typeid"],
@@ -392,7 +392,7 @@ def indexAndGetVideoObject():
         pubdate=v["created"],
         description=v["description"],
         title=v["title"],
-        tag=tagString,
+        tag=v['tag'],
     )
     bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
         rowid=bilibiliVideo.id,
@@ -433,7 +433,7 @@ def getUserVideos(
         page = videos["page"]  # pagination options
         numPages = math.ceil(page["count"] / page["ps"])
         # print('NUM PAGES',numPages)
-        topicDict = videos["list"]["tlist"]
+        # topicDict = videos["list"]["tlist"]
         # {'1': {'tid': 1, 'count': 13, 'name': '动画'}, '160': {'tid': 160, 'count': 257, 'name': '生活'}, '181': {'tid': 181, 'count': 2, 'name': '影视'}, '188': {'tid': 188, 'count': 4, 'name': '科技'}, '217': {'tid': 217, 'count': 4, 'name': '动物圈'}, '234': {'tid': 234, 'count': 1, 'name': '运动'}, '3': {'tid': 3, 'count': 9, 'name': '音乐'}, '36': {'tid': 36, 'count': 30, 'name': '知识'}, '4': {'tid': 4, 'count': 67, 'name': '游戏'}}
         # breakpoint()
         video_list = videos["list"]["vlist"]
@@ -444,6 +444,7 @@ def getUserVideos(
             bvid = v["bvid"]
             subTypeId = v["typeid"]
             tagString = getTagStringFromTid(subTypeId)
+            v.update({'tag': tagString})
             result = checkVideoInDatabase(bvid)
             if result and stop_on_duplicate:
                 stopped = True
@@ -452,7 +453,7 @@ def getUserVideos(
             # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
             # breakpoint()
             # bad idea. you should get the bilibiliUser before you do this.
-            bilibiliVideo = indexAndGetVideoObject()
+            bilibiliVideo = indexAndGetVideoObject(v, bilibiliUser)
             yield bilibiliVideo
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
