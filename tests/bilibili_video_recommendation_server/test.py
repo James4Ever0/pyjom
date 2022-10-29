@@ -659,12 +659,15 @@ def searchAndRegisterVideos(
             review=v["review"],
             pubdate=v["pubdate"],
             favorites=v["favorites"],
-        )
-        bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
-            rowid=bilibiliVideo.id,
             description=v["description"],
             title=v["title"],
             tag=v["tag"],
+        )
+        bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
+            rowid=bilibiliVideo.id,
+                description=textPreprocessing(bilibiliVideo.description),
+                tag=textPreprocessing(bilibiliVideo.tag), 
+                title=textPreprocessing(bilibiliVideo.title), 
         )
         yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
 
