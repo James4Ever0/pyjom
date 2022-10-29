@@ -82,13 +82,14 @@ def keywordExtracting(text,method:Literal['tfidf','random']='tfidf',languages:tu
     # remove all stopwords.
     keyword_list = textPreprocessing(text).split(" ")
     if method == 'random':
-    stopword_list = getStopwords(languages=languages)
-    results = []
-    for k in keyword_list:
-        k = k.lower()
-        if k not in stopword_list:
-            results.append(k)
-    return results
+        stopword_list = getStopwords(languages=languages)
+        results = []
+        for k in keyword_list:
+            k = k.lower()
+            if k not in stopword_list:
+                results.append(k)
+        random.shuffle(results)
+        return results[:topK]
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
