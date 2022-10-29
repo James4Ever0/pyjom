@@ -82,8 +82,9 @@ def getStopwords(languages:tuple=('chinese','english')):
 def keywordExtracting(text,method:Literal['tfidf','random']='tfidf',languages:tuple=('chinese','english'), topK:int= 5):
     # remove all stopwords.
     keyword_list = textPreprocessing(text).split(" ")
+    stopword_list = getStopwords(languages=languages)
+
     if method == 'random':
-        stopword_list = getStopwords(languages=languages)
         results = []
         for k in keyword_list:
             k = k.lower()

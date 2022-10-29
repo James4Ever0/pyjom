@@ -6,9 +6,13 @@ myStopwords = stopwords.words(['chinese', 'english'])
 import jieba.analyse as ana
 import jieba
 
-text_splited = " ".join(jieba.lcut(text))
+words = jieba.lcut(text)
+words_filtered = []
+for word in words:
+    if word.lower() not in myStopwords:
+        words_filtered.append(word)
 
-
+text_splited = " ".join(words_filtered)
 
 tags=ana.extract_tags(text_splited,topK=5,)
 print(tags)
