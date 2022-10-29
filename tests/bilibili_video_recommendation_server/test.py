@@ -14,7 +14,7 @@ from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSecon
 
 from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 
-def textPreprocessor(text):
+def textPreprocessing(text):
     final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
     breakpoint()
 
@@ -633,7 +633,8 @@ if __name__ == "__main__":
     # test = 'registerMyVideo'
     if test = 'textPreprocessing':
         text = "猫 咪 钢 琴 家 searchUserVideos have a nice day 新闻联播"
-        result = textPre
+        result = textPreprocessing(text)
+        print("RESULT:", result)
     elif test == "searchUserVideos":
         query = "猫"
         for v in searchUserVideos(query):
