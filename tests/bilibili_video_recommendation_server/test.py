@@ -75,6 +75,8 @@ BSP = search.bilibiliSearchParams
 # you can query for the server status.
 # make it into a dashboard like thing.
 
+BSP.all.tids
+
 # also make a decorator for refreshing status, add it to every function.
 # thie refresher is scheduled.
 # you may want to run this beforehand...
