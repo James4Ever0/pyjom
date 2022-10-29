@@ -23,7 +23,8 @@ def getOpenCCConverter(converter_type:str='t2s'):
     return converter
 
 def isChineseCharacter(char):
-    return all([])
+    assert len(char) == 1
+    return 
 
 def containChineseCharacters(text):
     for char in text:
