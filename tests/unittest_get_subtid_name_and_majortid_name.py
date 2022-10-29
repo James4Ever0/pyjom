@@ -39,3 +39,4 @@ def getTagsFromTid(tid):
     return ",".join(tags)
 
 tid = 1
+tags = 
