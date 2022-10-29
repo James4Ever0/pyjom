@@ -7,6 +7,7 @@ import sys
 import datetime
 from typing import Union
 from functools import lru_cache
+import random
 
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
@@ -90,6 +91,10 @@ def keywordExtracting(text,method:Literal['tfidf','random']='tfidf',languages:tu
                 results.append(k)
         random.shuffle(results)
         return results[:topK]
+    elif method == 'tfidf':
+        return 
+    else:
+        raise Exception('Unknown keyword extraction method: %s' % method)
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
