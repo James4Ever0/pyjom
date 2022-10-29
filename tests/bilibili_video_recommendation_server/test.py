@@ -629,9 +629,11 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 if __name__ == "__main__":
     # test = 'searchVideos'
     # test = "searchUserVideos"
-    test = ""
+    test = "textPreprocessing"
     # test = 'registerMyVideo'
-    if test == "searchUserVideos":
+    if test = 'textPreprocessing':
+        text = "猫 咪 钢 琴 家"
+    elif test == "searchUserVideos":
         query = "猫"
         for v in searchUserVideos(query):
             print("fetched value:", v)
