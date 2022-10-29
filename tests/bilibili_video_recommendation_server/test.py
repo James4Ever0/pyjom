@@ -12,11 +12,11 @@ sys.path.append("/root/Desktop/works/pyjom/")
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSeconds
 
-import jieba
+from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 
 def textPreprocessor(text):
-    jieba.lcut(text)
-    
+    final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
+    breakpoint()
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
@@ -628,7 +628,8 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 if __name__ == "__main__":
     # test = 'searchVideos'
-    test = "searchUserVideos"
+    # test = "searchUserVideos"
+    test = ""
     # test = 'registerMyVideo'
     if test == "searchUserVideos":
         query = "猫"
