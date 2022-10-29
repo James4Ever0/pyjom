@@ -12,7 +12,9 @@ def getNow():
     return datetime.datetime.now()
 
 
-def getGPT2Status(start=21, end=22, ): # how about disable the training capability? since that eats our VRAM.
+def getGPT2Status(start=21, end=22, force_eval:bool=True): # how about disable the training capability? since that eats our VRAM.
+    if force_eval:
+        return 'eval'
     hour = getNow().hour
     print("HOUR: ", hour)
     # if hour >= 16 and hour <= 20: # for test
