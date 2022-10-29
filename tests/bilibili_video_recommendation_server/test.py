@@ -16,8 +16,10 @@ from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 import jieba
 import opencc
 
+def getOpenCCConverter()
+
 def textPreprocessing(text):
-    converter = get
+    converter = getOpenCCConverter()
     text = converter.convert(text)
     final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
     # breakpoint()
