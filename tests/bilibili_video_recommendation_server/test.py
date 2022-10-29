@@ -14,8 +14,10 @@ from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSecon
 
 from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 import jieba
+import opencc
 
 def textPreprocessing(text):
+    text = opencc.
     final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
     # breakpoint()
     wordlist = jieba.lcut(final_cutted_line)
@@ -24,7 +26,7 @@ def textPreprocessing(text):
         word =w.strip()
         if len(word)>0:
             final_wordlist.append(word)
-    
+    [isChinese() for word in final_wordlist]
     # return " ".join(final_wordlist)
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
