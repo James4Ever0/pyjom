@@ -527,7 +527,7 @@ def searchUserVideos(
             # you should return the video_index.
             resultList.append((bilibiliVideo, order))
         resultList.sort(key=lambda x: x[1])
-    for ( v, _ in resultList:
+    for v, _ in resultList:
         yield v  # this is bilibiliVideoIndex, but you also needs the bvid.
 
 
