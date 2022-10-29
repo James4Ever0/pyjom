@@ -387,13 +387,13 @@ def indexAndGetVideoObject(v, bilibiliUser):
         poster=bilibiliUser,  # is it my account anyway?
         play=v["play"],
         pic=linkFixer(v["pic"]),
-        length=videoDurationStringToSeconds(v.get("length", v.get('duration'))),
-        review=v.get("comment", v.get('review')),
-        pubdate=v.get("created", v.get('pubdate')),
+        length=videoDurationStringToSeconds(v.get("length", v.get("duration"))),
+        review=v.get("comment", v.get("review")),
+        pubdate=v.get("created", v.get("pubdate")),
         description=v["description"],
-        favorites=v.get('favorites', None),
+        favorites=v.get("favorites", None),
         title=v["title"],
-        tag=v['tag'],
+        tag=v["tag"],
     )
     bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
         rowid=bilibiliVideo.id,
@@ -445,7 +445,7 @@ def getUserVideos(
             bvid = v["bvid"]
             subTypeId = v["typeid"]
             tagString = getTagStringFromTid(subTypeId)
-            v.update({'tag': tagString})
+            v.update({"tag": tagString})
             result = checkVideoInDatabase(bvid)
             if result and stop_on_duplicate:
                 stopped = True
@@ -675,7 +675,7 @@ def searchAndRegisterVideos(
             username=author, user_id=mid, avatar=linkFixer(upic)
         )
         # v.update({'comment':v['review'],'created':v['pubdate']})
-        bilibiliVideo = indexAndGetVideoObject(v,bilibiliUser)
+        bilibiliVideo = indexAndGetVideoObject(v, bilibiliUser)
         # bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
         #     bvid=v["bvid"],
         #     typeid=v["typeid"],
