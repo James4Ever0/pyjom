@@ -2,7 +2,8 @@ from bilibili_api import search
 
 BSP = search.bilibiliSearchParams
 
-def getMajorMinorTidsMappings()
+
+def getMajorMinorTopicMappings(debug:bool=False):
     majorMinorMappings = {}
     for key, value in BSP.all.tids.__dict__.items():
         try:
@@ -23,3 +24,4 @@ def getMajorMinorTidsMappings()
         except:
             pass
     return majorMinorMappings
+
