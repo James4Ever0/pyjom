@@ -12,6 +12,11 @@ sys.path.append("/root/Desktop/works/pyjom/")
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSeconds
 
+import jieba
+
+def textPreprocessor(text):
+    jieba.lcut(text)
+
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
 # will it load the overheads of pyjom.commons?
