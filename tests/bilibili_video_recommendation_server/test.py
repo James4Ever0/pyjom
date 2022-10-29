@@ -19,9 +19,11 @@ def textPreprocessing(text):
     final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
     breakpoint()
     wordlist = jieba.lcut(final_cutted_stemmed_line)
+    final_wordlist =[]
     for w in wordlist:
         if w.strip()>0:
-            
+            final_wordlist.append(w)
+    return " ".join(final_wordlist)
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
