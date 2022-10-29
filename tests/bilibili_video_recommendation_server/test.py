@@ -93,7 +93,8 @@ class BilibiliVideo(Model):
 
 
 class BilibiliVideoIndex(FTSModel):
-    rowid = RowIDField()  # this does not support
+    rowid = RowIDField()
+    # these three must be preprocessed before put into the search engine, or we cannot retrieve the data correctly.
     title = SearchField()
     tag = SearchField()
     description = SearchField()
