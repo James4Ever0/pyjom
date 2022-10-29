@@ -70,6 +70,7 @@ def textPreprocessing(text):
         finalWordList.extend(subWordList)
     return " ".join(finalWordList)
 
+@lru_cache(maxsize=1)
 
 def keywordExtracting(text):
     # remove all stopwords.
