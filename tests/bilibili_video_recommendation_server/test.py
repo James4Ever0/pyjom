@@ -73,6 +73,7 @@ def textPreprocessing(text):
 
 def keywordExtracting(text):
     # remove all stopwords.
+    text_processed = t
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
