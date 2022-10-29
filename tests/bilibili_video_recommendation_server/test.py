@@ -22,6 +22,8 @@ def getOpenCCConverter(converter_type:str='t2s'):
     converter = opencc.OpenCC(converter_type)
     return converter
 
+def containChineseCharacters()
+
 def textPreprocessing(text):
     converter = getOpenCCConverter()
     text = converter.convert(text)
