@@ -73,6 +73,7 @@ def textPreprocessing(text):
     return " ".join(finalWordList)
 
 from nltk.corpus import stopwords
+
 @lru_cache(maxsize=1)
 def getStopwords(languages:tuple=('chinese','english')):
     stopword_list = []
