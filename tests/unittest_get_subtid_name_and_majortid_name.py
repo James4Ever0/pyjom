@@ -8,10 +8,10 @@ for key, value in BSP.all.tids.__dict__.items():
     try:
         major_tid = value.tid
         # print("MAJOR", key, major_tid)
+        content = {"major": {"tid": major_tid, "name": key}}
         majorMinorMappings.update(
-            {major_tid: {"major": {"tid": major_tid, "name": key}}}
+            {major_tid: content,key:content}
         )
-        majorMinorMappings.update({key: {"major": {"tid": major_tid, "name": key}}})
         for subkey, subvalue in value.__dict__.items():
             if subkey != "tid" and type(subvalue) == int:
                 print("MINOR", subkey, subvalue)
