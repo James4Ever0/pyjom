@@ -23,3 +23,10 @@ def getMajorMinorTopicMappings(debug:bool=False):
         except:
             pass
     return majorMinorMappings
+
+majorMinorTopicMappings = getMajorMinorTopicMappings()
+
+def getMajorMinorTopic
+
+
+tid = 1
