@@ -379,28 +379,28 @@ from bilibili_api.user import VideoOrder
 
 
 def indexAndGetVideoObject():
-
-            bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
-                bvid=v["bvid"],
-                typeid=v["typeid"],
-                visible=True,  # are you sure?
-                last_check=datetime.datetime.now(),  # well this is not tested. test it!
-                poster=bilibiliUser,  # is it my account anyway?
-                play=v["play"],
-                pic=linkFixer(v["pic"]),
-                length=videoDurationStringToSeconds(v["length"]),
-                review=v["comment"],
-                pubdate=v["created"],
-                description=v["description"],
-                title=v["title"],
-                tag=tagString,
-            )
-            bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
-                rowid=bilibiliVideo.id,
-                description=textPreprocessing(bilibiliVideo.description),
-                tag=textPreprocessing(bilibiliVideo.tag),
-                title=textPreprocessing(bilibiliVideo.title),
-            )
+    bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
+        bvid=v["bvid"],
+        typeid=v["typeid"],
+        visible=True,  # are you sure?
+        last_check=datetime.datetime.now(),  # well this is not tested. test it!
+        poster=bilibiliUser,  # is it my account anyway?
+        play=v["play"],
+        pic=linkFixer(v["pic"]),
+        length=videoDurationStringToSeconds(v["length"]),
+        review=v["comment"],
+        pubdate=v["created"],
+        description=v["description"],
+        title=v["title"],
+        tag=tagString,
+    )
+    bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
+        rowid=bilibiliVideo.id,
+        description=textPreprocessing(bilibiliVideo.description),
+        tag=textPreprocessing(bilibiliVideo.tag),
+        title=textPreprocessing(bilibiliVideo.title),
+    )
+    return bilibiliVideo
 
 
 def getUserVideos(
