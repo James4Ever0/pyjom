@@ -398,7 +398,7 @@ def getUserVideos(
         for v in video_list:
             bvid = v["bvid"]
             subTypeId = v['typeid']
-            topicName = topicDict.get(str(majorTypeId),{}).get('name',"")
+            tagString = get
             result = checkVideoInDatabase(bvid)
             if result and stop_on_duplicate:
                 stopped = True
@@ -423,7 +423,7 @@ def getUserVideos(
                 rowid=bilibiliVideo.id,
                 description=v["description"],
                 title=v["title"],
-                tag=topicName, # there is no tag.
+                tag=tagString, # there is no tag.
             )
             yield bilibiliVideoIndex, v["bvid"], v["pic"]
         # videos['list']['vlist'][0].keys()
