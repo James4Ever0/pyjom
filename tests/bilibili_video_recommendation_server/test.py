@@ -17,6 +17,7 @@ from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSecon
 from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 import jieba
 import opencc
+import jieba.analyse as ana
 
 
 @lru_cache(maxsize=4)
