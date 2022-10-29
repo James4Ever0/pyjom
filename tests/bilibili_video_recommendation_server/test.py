@@ -16,7 +16,9 @@ from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 import jieba
 import opencc
 
-def getOpenCCConverter()
+def getOpenCCConverter(converter_type:str=):
+
+    converter = opencc.OpenCC(converter_type)
 
 def textPreprocessing(text):
     converter = getOpenCCConverter()
