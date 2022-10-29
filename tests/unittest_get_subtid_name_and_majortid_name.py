@@ -2,7 +2,6 @@ from bilibili_api import search
 
 BSP = search.bilibiliSearchParams
 
-
 def getMajorMinorTopicMappings(debug:bool=False):
     majorMinorMappings = {}
     for key, value in BSP.all.tids.__dict__.items():
@@ -20,8 +19,7 @@ def getMajorMinorTopicMappings(debug:bool=False):
                         "major": {"tid": major_tid, "name": key},
                         "minor": {"tid": subvalue, "name": subkey},
                     }
-                    majorMinorMappings.update({subvalue: content, subkey: content, str()})
+                    majorMinorMappings.update({subvalue: content, subkey: content, str(subvalue):content})
         except:
             pass
     return majorMinorMappings
-
