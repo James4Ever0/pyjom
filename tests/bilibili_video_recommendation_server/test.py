@@ -72,13 +72,13 @@ def textPreprocessing(text):
 
 from nltk.corpus import stopwords
 @lru_cache(maxsize=1)
-def getStopwords(languages:list[str]=['chinese','english']):
+def getStopwords(languages:tuple[str]=('chinese','english')):
     stopword_list = []
     for lang in languages:
         stopword_list.extend(stopwords.words(lang))
     return stopword_list
 
-def keywordExtracting(text,languages:list[str]=['chinese','english']):
+def keywordExtracting(text,languages:tuple[str]=('chinese','english')):
     # remove all stopwords.
     keyword_list = textPreprocessing(text).split(" ")
     stopword_list = getStopwords(languages=languages)
