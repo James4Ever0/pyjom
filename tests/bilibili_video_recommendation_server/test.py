@@ -17,14 +17,17 @@ from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 import jieba
 import opencc
 
+
 @lru_cache(maxsize=4)
-def getOpenCCConverter(converter_type:str='t2s'):
+def getOpenCCConverter(converter_type: str = "t2s"):
     converter = opencc.OpenCC(converter_type)
     return converter
 
+
 def isChineseCharacter(char):
     assert len(char) == 1
-    return  char  >='\u4e00' and char <='\u9fff'
+    return char >= "\u4e00" and char <= "\u9fff"
+
 
 def containChineseCharacters(text):
     for char in text:
@@ -32,31 +35,41 @@ def containChineseCharacters(text):
             return True
     return False
 
+
 from lazero.utils.mathlib import extract_span
+
 
 def textPreprocessing(text):
     converter = getOpenCCConverter()
     text = converter.convert(text)
-    final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
+    (
+        final_line,
+        final_cutted_line,
+        final_stemmed_line,
+        final_cutted_stemmed_line,
+    ) = getFourVersionsOfProcessedLine(text)
     # breakpoint()
     wordlist = jieba.lcut(final_cutted_line)
-    final_wordlist =[]
+    final_wordlist = []
     for w in wordlist:
-        word =w.strip()
-        if len(word)>0:
+        word = w.strip()
+        if len(word) > 0:
             final_wordlist.append(word)
     flags = [int(containChineseCharacters(word)) for word in final_wordlist]
     chineseSpans = extract_span(flags, target=1)
     nonChineseSpans = extract_span(flags, target=0)
-    finalSpans = [(span, True ) for span in chineseSpans]+[(span, False) for span in nonChineseSpans]
+    finalSpans = [(span, True) for span in chineseSpans] + [
+        (span, False) for span in nonChineseSpans
+    ]
     finalSpans.sort(key=lambda span: span[0])
     finalWordList = []
     for span, isChineseSpan in finalSpans:
-        subWordList = final_wordlist[span[0]:span[1]]
+        subWordList = final_wordlist[span[0] : span[1]]
         if isChineseSpan:
             subWordList = jieba.lcut_for_search("".join(subWordList))
         finalWordList.extend(subWordList)
     return " ".join(finalWordList)
+
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
@@ -77,7 +90,7 @@ BSP = search.bilibiliSearchParams
 
 
 @lru_cache(maxsize=1)
-def getMajorMinorTopicMappings(debug:bool=False):
+def getMajorMinorTopicMappings(debug: bool = False):
     majorMinorMappings = {}
     for key, value in BSP.all.tids.__dict__.items():
         try:
@@ -85,7 +98,9 @@ def getMajorMinorTopicMappings(debug:bool=False):
             if debug:
                 print("MAJOR", key, major_tid)
             content = {"major": {"tid": major_tid, "name": key}}
-            majorMinorMappings.update({major_tid: content, key: content, str(major_tid):content})
+            majorMinorMappings.update(
+                {major_tid: content, key: content, str(major_tid): content}
+            )
             for subkey, subvalue in value.__dict__.items():
                 if subkey != "tid" and type(subvalue) == int:
                     if debug:
@@ -94,7 +109,9 @@ def getMajorMinorTopicMappings(debug:bool=False):
                         "major": {"tid": major_tid, "name": key},
                         "minor": {"tid": subvalue, "name": subkey},
                     }
-                    majorMinorMappings.update({subvalue: content, subkey: content, str(subvalue):content})
+                    majorMinorMappings.update(
+                        {subvalue: content, subkey: content, str(subvalue): content}
+                    )
         except:
             pass
     return majorMinorMappings
@@ -102,16 +119,17 @@ def getMajorMinorTopicMappings(debug:bool=False):
 
 def getTagStringFromTid(tid):
     majorMinorTopicMappings = getMajorMinorTopicMappings()
-    topic = majorMinorTopicMappings.get(tid,None)
+    topic = majorMinorTopicMappings.get(tid, None)
     tags = []
     if topic:
-        majorTopic = topic.get('major',{}).get('name',None)
-        minorTopic = topic.get('minor',{}).get('name',None)
+        majorTopic = topic.get("major", {}).get("name", None)
+        minorTopic = topic.get("minor", {}).get("name", None)
         if majorTopic:
             tags.append(majorTopic)
             if minorTopic:
                 tags.append(minorTopic)
     return ",".join(tags)
+
 
 # also make a decorator for refreshing status, add it to every function.
 # thie refresher is scheduled.
@@ -170,16 +188,18 @@ class BilibiliVideo(Model):
     pubdate = IntegerField(default=0)
     review = IntegerField(null=True)  # you want to update? according to this?
     favorites = IntegerField(default=0)
-    title=CharField(null=True)
-    tag=CharField(null=True)
-    description=CharField(null=True)
+    title = CharField(null=True)
+    tag = CharField(null=True)
+    description = CharField(null=True)
 
 
 class BilibiliVideoIndex(FTSModel):
     rowid = RowIDField()
     # these three must be preprocessed before put into the search engine, or we cannot retrieve the data correctly.
     title = SearchField()
-    tag = SearchField() # also what the fuck is going on with the tag? why we cannot get the tag/topic name?
+    tag = (
+        SearchField()
+    )  # also what the fuck is going on with the tag? why we cannot get the tag/topic name?
     description = SearchField()
 
     class Meta:
@@ -397,7 +417,7 @@ def getUserVideos(
             break
         for v in video_list:
             bvid = v["bvid"]
-            subTypeId = v['typeid']
+            subTypeId = v["typeid"]
             tagString = getTagStringFromTid(subTypeId)
             result = checkVideoInDatabase(bvid)
             if result and stop_on_duplicate:
@@ -420,13 +440,13 @@ def getUserVideos(
                 pubdate=v["created"],
                 description=v["description"],
                 title=v["title"],
-                tag=tagString
+                tag=tagString,
             )
             bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
                 rowid=bilibiliVideo.id,
                 description=textPreprocessing(bilibiliVideo.description),
-                tag=textPreprocessing(bilibiliVideo.tag), 
-                title=textPreprocessing(bilibiliVideo.title), 
+                tag=textPreprocessing(bilibiliVideo.tag),
+                title=textPreprocessing(bilibiliVideo.title),
             )
             yield bilibiliVideo, v["bvid"], v["pic"]
         # videos['list']['vlist'][0].keys()
@@ -665,9 +685,9 @@ def searchAndRegisterVideos(
         )
         bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
             rowid=bilibiliVideo.id,
-                description=textPreprocessing(bilibiliVideo.description),
-                tag=textPreprocessing(bilibiliVideo.tag), 
-                title=textPreprocessing(bilibiliVideo.title), 
+            description=textPreprocessing(bilibiliVideo.description),
+            tag=textPreprocessing(bilibiliVideo.tag),
+            title=textPreprocessing(bilibiliVideo.title),
         )
         yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
 
@@ -689,7 +709,6 @@ def refresh_status(
             bvid, grace_period=grace_period, check_interval=check_interval
         )
     return
-
 
 
 def refresh_status_decorator(func):
@@ -714,7 +733,7 @@ if __name__ == "__main__":
     # test = "searchUserVideos"
     test = "textPreprocessing"
     # test = 'registerMyVideo'
-    if test == 'textPreprocessing':
+    if test == "textPreprocessing":
         text = "猫  咪  钢  琴  家 searchUserVideos have a nice day 新闻联播"
         result = textPreprocessing(text)
         print("RESULT:", result)
