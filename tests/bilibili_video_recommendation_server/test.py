@@ -91,7 +91,8 @@ def keywordExtracting(text,method:Literal['tfidf','random']='tfidf',languages:tu
         random.shuffle(results)
         return results[:topK]
     elif method == 'tfidf':
-        
+        myText = " ".join(results)
+        ana.
         return 
     else:
         raise Exception('Unknown keyword extraction method: %s' % method)
