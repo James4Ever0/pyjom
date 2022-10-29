@@ -334,7 +334,7 @@ def getUserVideos(
                 rowid=bilibiliVideo.id,
                 description=v["description"],
                 title=v["title"],
-                tag=v["tag"],
+                tag=v["tag"], # there is no tag.
             )
             yield bilibiliVideoIndex, v["bvid"], v["pic"]
         # videos['list']['vlist'][0].keys()
