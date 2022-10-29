@@ -30,6 +30,6 @@ def getTagsFromTid(tid):
     topic = majorMinorTopicMappings.get(tid,None)
     tags = []
     if topic:
-        
+        majorTopic = topic.get('major',{}).get('')
 
 tid = 1
