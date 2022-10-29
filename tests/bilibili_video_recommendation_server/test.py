@@ -75,7 +75,7 @@ from nltk.corpus import stopwords
 def getStopwords(languages:list[str]=['chinese','english']):
     stopword_list = []
     for lang in languages:
-
+        stopword_list.extend(stopwords.)
 
 def keywordExtracting(text):
     # remove all stopwords.
