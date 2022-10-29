@@ -5,4 +5,6 @@ myStopwords = stopwords(['chinese', 'english'])
 
 import jieba.analyse as ana
 
-ana.
+ana.set_stop_words(myStopwords)
+
+ana.extract_tags
