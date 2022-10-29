@@ -70,9 +70,12 @@ def textPreprocessing(text):
         finalWordList.extend(subWordList)
     return " ".join(finalWordList)
 
+from nltk.corpus import 
 @lru_cache(maxsize=1)
 def getStopwords(languages:list[str]=['chinese','english']):
     stopwords = []
+    for lang in languages:
+
 
 def keywordExtracting(text):
     # remove all stopwords.
