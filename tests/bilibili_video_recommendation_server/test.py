@@ -32,7 +32,7 @@ def containChineseCharacters(text):
             return True
     return False
 
-from lazero.utils.mathlib import 
+from lazero.utils.mathlib import extract_span
 
 def textPreprocessing(text):
     converter = getOpenCCConverter()
@@ -46,7 +46,7 @@ def textPreprocessing(text):
         if len(word)>0:
             final_wordlist.append(word)
     flags = [int(containChineseCharacters(word)) for word in final_wordlist]
-
+    ex
     # return " ".join(final_wordlist)
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
