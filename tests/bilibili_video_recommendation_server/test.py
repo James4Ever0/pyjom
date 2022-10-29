@@ -673,7 +673,7 @@ def searchAndRegisterVideos(
         bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
             username=author, user_id=mid, avatar=linkFixer(upic)
         )
-        v.update({})
+        v.update({'comment':v['review'],'created':v['']})
         bilibiliVideo = indexAndGetVideoObject(v,bilibiliUser)
         # bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
         #     bvid=v["bvid"],
