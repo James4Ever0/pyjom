@@ -424,9 +424,9 @@ def getUserVideos(
             )
             bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
                 rowid=bilibiliVideo.id,
-                description=textPreprocessing(bilibiliVideo.description), 
-                description=textPreprocessing(bilibiliVideo.description), 
-                description=textPreprocessing(bilibiliVideo.description), 
+                description=textPreprocessing(bilibiliVideo.description),
+                tag=textPreprocessing(bilibiliVideo.tag), 
+                title=textPreprocessing(bilibiliVideo.title), 
             )
             yield bilibiliVideo, v["bvid"], v["pic"]
         # videos['list']['vlist'][0].keys()
