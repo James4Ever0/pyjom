@@ -1,6 +1,8 @@
 from bilibili_api import search
 BSP = search.bilibiliSearchParams
 
+majorMinorMappings = {}
+
 for key,value in BSP.all.tids.__dict__.items():
     try:
         major_tid = value.tid
