@@ -17,7 +17,8 @@ import jieba
 import opencc
 
 def textPreprocessing(text):
-    text = opencc.
+    converter = get
+    text = converter.convert(text)
     final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
     # breakpoint()
     wordlist = jieba.lcut(final_cutted_line)
