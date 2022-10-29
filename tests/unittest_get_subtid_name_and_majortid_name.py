@@ -10,7 +10,7 @@ for key,value in BSP.all.tids.__dict__.items():
         for subkey, subvalue in value.__dict__.items():
             if subkey !='tid' and type(subvalue) == int:
                 print("MINOR",subkey, subvalue)
-                majorMinorMappings.append({subvalue:{'major':}})
+                majorMinorMappings.append({subvalue:{'major':{'tid':}}})
     except:
         pass
 
