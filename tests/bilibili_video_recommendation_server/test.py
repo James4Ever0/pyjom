@@ -71,6 +71,7 @@ def textPreprocessing(text):
     return " ".join(finalWordList)
 
 @lru_cache(maxsize=1)
+def getStopwords(languages:list)
 
 def keywordExtracting(text):
     # remove all stopwords.
