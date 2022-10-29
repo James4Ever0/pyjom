@@ -96,7 +96,7 @@ class BilibiliVideoIndex(FTSModel):
     rowid = RowIDField()
     # these three must be preprocessed before put into the search engine, or we cannot retrieve the data correctly.
     title = SearchField()
-    tag = SearchField()
+    tag = SearchField() # also what the fuck is going on with the tag? why we cannot get the tag/topic name?
     description = SearchField()
 
     class Meta:
