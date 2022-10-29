@@ -377,7 +377,6 @@ import math
 # @refresh_status_decorator
 from bilibili_api.user import VideoOrder
 
-
 def indexAndGetVideoObject(v, bilibiliUser):
     bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
         bvid=v["bvid"],
