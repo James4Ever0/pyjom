@@ -6,8 +6,8 @@ for key,value in BSP.all.tids.__dict__.items():
         major_tid = value.tid
         print("MAJOR",key, major_tid)
         for subkey, subvalue in value.__dict__.items():
-            if subkey !='tid':
-                
+            if subkey !='tid' and type(subvalue) == int:
+                print("MINOR",subkey, subvalue)
     except:
         pass
 
