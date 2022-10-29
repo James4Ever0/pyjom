@@ -304,13 +304,13 @@ def getUserVideos(
         topicList = videos["list"]["tlist"]
         # {'1': {'tid': 1, 'count': 13, 'name': '动画'}, '160': {'tid': 160, 'count': 257, 'name': '生活'}, '181': {'tid': 181, 'count': 2, 'name': '影视'}, '188': {'tid': 188, 'count': 4, 'name': '科技'}, '217': {'tid': 217, 'count': 4, 'name': '动物圈'}, '234': {'tid': 234, 'count': 1, 'name': '运动'}, '3': {'tid': 3, 'count': 9, 'name': '音乐'}, '36': {'tid': 36, 'count': 30, 'name': '知识'}, '4': {'tid': 4, 'count': 67, 'name': '游戏'}}
         # breakpoint()
-        
         video_list = videos["list"]["vlist"]
         # breakpoint()
         if video_list == []:
             break
         for v in video_list:
             bvid = v["bvid"]
+            topicName = topicList.get(,"")
             result = checkVideoInDatabase(bvid)
             if result and stop_on_duplicate:
                 stopped = True
