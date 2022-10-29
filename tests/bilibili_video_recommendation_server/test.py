@@ -673,28 +673,30 @@ def searchAndRegisterVideos(
         bilibiliUser, _ = BilibiliUser.get_and_update_or_create(
             username=author, user_id=mid, avatar=linkFixer(upic)
         )
-        bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
-            bvid=v["bvid"],
-            typeid=v["typeid"],
-            visible=True,  # are you sure?
-            last_check=datetime.datetime.now(),  # well this is not tested. test it!
-            poster=bilibiliUser,  # is it my account anyway?
-            play=v["play"],
-            pic=linkFixer(v["pic"]),
-            length=videoDurationStringToSeconds(v["duration"]),
-            review=v["review"],
-            pubdate=v["pubdate"],
-            favorites=v["favorites"],
-            description=v["description"],
-            title=v["title"],
-            tag=v["tag"],
-        )
-        bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
-            rowid=bilibiliVideo.id,
-            description=textPreprocessing(bilibiliVideo.description),
-            tag=textPreprocessing(bilibiliVideo.tag),
-            title=textPreprocessing(bilibiliVideo.title),
-        )
+        v.update({})
+        bilibiliVideo = indexAndGetVideoObject(v,bilibiliUser)
+        # bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
+        #     bvid=v["bvid"],
+        #     typeid=v["typeid"],
+        #     visible=True,  # are you sure?
+        #     last_check=datetime.datetime.now(),  # well this is not tested. test it!
+        #     poster=bilibiliUser,  # is it my account anyway?
+        #     play=v["play"],
+        #     pic=linkFixer(v["pic"]),
+        #     length=videoDurationStringToSeconds(v["duration"]),
+        #     review=v["review"],
+        #     pubdate=v["pubdate"],
+        #     favorites=v["favorites"],
+        #     description=v["description"],
+        #     title=v["title"],
+        #     tag=v["tag"],
+        # )
+        # bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
+        #     rowid=bilibiliVideo.id,
+        #     description=textPreprocessing(bilibiliVideo.description),
+        #     tag=textPreprocessing(bilibiliVideo.tag),
+        #     title=textPreprocessing(bilibiliVideo.title),
+        # )
         yield bilibiliVideo
 
 
