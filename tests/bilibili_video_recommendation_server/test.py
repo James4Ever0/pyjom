@@ -525,10 +525,10 @@ def searchUserVideos(
             else:
                 order = index
             # you should return the video_index.
-            resultList.append(((video_index, bvid, cover), order))
+            resultList.append((bilibiliVideo, order))
         resultList.sort(key=lambda x: x[1])
-    for (video_index, bvid, cover), _ in resultList:
-        yield video_index, bvid, cover  # this is bilibiliVideoIndex, but you also needs the bvid.
+    for ( v, _ in resultList:
+        yield v  # this is bilibiliVideoIndex, but you also needs the bvid.
 
 
 # you can make excerpt from video to lure people into viewing your video.
