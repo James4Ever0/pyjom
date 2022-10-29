@@ -285,6 +285,7 @@ def getUserVideos(
     bilibiliUser = registerUser(
         dedeuserid,
     )
+    u = getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
     pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
     # pn	int, optional	页码，从 1 开始. Defaults to 1.
