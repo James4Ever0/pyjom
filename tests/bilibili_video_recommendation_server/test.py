@@ -16,6 +16,7 @@ import jieba
 
 def textPreprocessor(text):
     jieba.lcut(text)
+    
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
