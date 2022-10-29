@@ -25,7 +25,7 @@ def getMajorMinorTopicMappings(debug:bool=False):
     return majorMinorMappings
 
 
-def getTagsFromTid(tid):
+def getTagStringFromTid(tid):
     majorMinorTopicMappings = getMajorMinorTopicMappings()
     topic = majorMinorTopicMappings.get(tid,None)
     tags = []
@@ -39,4 +39,5 @@ def getTagsFromTid(tid):
     return ",".join(tags)
 
 tid = 1
-tags = 
+tagString = getTagStringFromTid(tid)
+print(tid,tagString)
