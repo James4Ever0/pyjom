@@ -389,7 +389,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
         pic=linkFixer(v["pic"]),
         length=videoDurationStringToSeconds(v.get("length", v.get('duration'))),
         review=v.get("comment", v.get('review')),
-        pubdate=v["created"],
+        pubdate=v.get("created", v.get('pubdate')),
         description=v["description"],
         favorites=v.get('favorites', None)
         title=v["title"],
