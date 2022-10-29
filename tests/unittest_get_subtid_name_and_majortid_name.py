@@ -34,5 +34,8 @@ def getTagsFromTid(tid):
         minorTopic = topic.get('minor',{}).get('name',None)
         if majorTopic:
             tags.append(majorTopic)
+            if minorTopic:
+                tags.append(minorTopic)
+    return ",".join(tags)
 
 tid = 1
