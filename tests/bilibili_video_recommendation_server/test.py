@@ -51,11 +51,12 @@ def textPreprocessing(text):
     resultList = []
     finalSpans = [(span, True ) for span in chineseSpans]+[(span, False) for span in nonChineseSpans]
     finalSpans.sort(key=lambda span: span[0])
+    finalWordList = []
     for span, isChineseSpan in finalSpans:
         subWordList = final_wordlist[span[0]:span[1]]
         if isChineseSpan:
             subWordList = jieba.lcut("".join(subWordList))
-        else:
+        
 
 
     # return " ".join(final_wordlist)
