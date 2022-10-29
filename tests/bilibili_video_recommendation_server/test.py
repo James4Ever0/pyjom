@@ -82,8 +82,11 @@ def keywordExtracting(text,languages:list[str]=['chinese','english']):
     # remove all stopwords.
     keyword_list = textPreprocessing(text).split(" ")
     stopword_list = getStopwords(languages=languages)
+    results = []
     for k in keyword_list:
-        
+        k = k.lower()
+        if k not in stopword_list:
+            results.append(k)
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
