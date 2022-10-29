@@ -480,7 +480,7 @@ def searchUserVideos(
     resultList = []
     if method == "online":
         order = None
-        for video_index, bvid, cover in getUserVideos(
+        for v in getUserVideos(
             tid=tid,
             order=videoOrder,
             keyword=keyword,
@@ -490,7 +490,7 @@ def searchUserVideos(
         ):
             # what is the content? plan to update?
             # print("SEARCHED USER VIDEO ID:", v_id)
-            resultList.append(((video_index, bvid, cover), order))
+            resultList.append((v, order))
         # info = u.get_videos(keyword=keyword,order=videoOrder)
     elif method == "bm25":
         # export all video? shit?
