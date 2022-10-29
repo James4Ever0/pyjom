@@ -88,7 +88,6 @@ BSP = search.bilibiliSearchParams
 # you can query for the server status.
 # make it into a dashboard like thing.
 
-
 @lru_cache(maxsize=1)
 def getMajorMinorTopicMappings(debug: bool = False):
     majorMinorMappings = {}
