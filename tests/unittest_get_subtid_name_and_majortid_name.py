@@ -27,7 +27,9 @@ def getMajorMinorTopicMappings(debug:bool=False):
 
 def getTagsFromTid(tid):
     majorMinorTopicMappings = getMajorMinorTopicMappings()
-    to
-
+    topic = majorMinorTopicMappings.get(tid,None)
+    tags = []
+    if topic:
+        
 
 tid = 1
