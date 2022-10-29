@@ -70,10 +70,10 @@ def textPreprocessing(text):
         finalWordList.extend(subWordList)
     return " ".join(finalWordList)
 
-from nltk.corpus import 
+from nltk.corpus import stopwords
 @lru_cache(maxsize=1)
 def getStopwords(languages:list[str]=['chinese','english']):
-    stopwords = []
+    stopword_list = []
     for lang in languages:
 
 
