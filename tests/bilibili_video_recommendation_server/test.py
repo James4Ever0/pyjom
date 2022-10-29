@@ -24,11 +24,11 @@ def getOpenCCConverter(converter_type:str='t2s'):
 
 def isChineseCharacter(char):
     assert len(char) == 1
-    return 
+    return  char  >='\u4e00' and char <='\u9fff'
 
 def containChineseCharacters(text):
     for char in text:
-        if char  >='\u4e00' and char <='\u9fff':
+        if isChineseCharacter(char):
             return True
     return False
 
