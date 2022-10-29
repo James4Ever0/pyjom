@@ -94,7 +94,7 @@ def keywordExtracting(text,method:Literal['tfidf','random']='tfidf',languages:tu
     elif method == 'tfidf':
         myText = " ".join(results)
         tags = ana.extract_tags(myText, topK=topK)
-        returntags
+        return tags
     else:
         raise Exception('Unknown keyword extraction method: %s' % method)
 
