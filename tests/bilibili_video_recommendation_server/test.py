@@ -6,6 +6,7 @@ import time
 import sys
 import datetime
 from typing import Union
+from functools import lru_cache
 
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
@@ -59,7 +60,6 @@ BSP = search.bilibiliSearchParams
 import schedule
 
 # do we really need credential for checking our video? you can try.
-from functools import lru_cache
 
 
 @lru_cache(maxsize=3)  # could be bigger.
