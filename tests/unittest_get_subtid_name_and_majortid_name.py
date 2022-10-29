@@ -11,6 +11,7 @@ for key,value in BSP.all.tids.__dict__.items():
             if subkey !='tid' and type(subvalue) == int:
                 print("MINOR",subkey, subvalue)
                 majorMinorMappings.update({subvalue:{'major':{'tid':major_tid, 'name':key}, 'minor':{'tid':subvalue,'name':subkey}}})
+                majorMinorMappings.update({subkey:{'major':{'tid':major_tid, 'name':key}, 'minor':{'tid':subvalue,'name':subkey}}})
     except:
         pass
 
