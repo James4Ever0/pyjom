@@ -87,6 +87,7 @@ def keywordExtracting(text,languages:list[str]=['chinese','english']):
         k = k.lower()
         if k not in stopword_list:
             results.append(k)
+    return results
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
