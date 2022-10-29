@@ -310,7 +310,7 @@ def getUserVideos(
             break
         for v in video_list:
             bvid = v["bvid"]
-            topicName = topicList.get(str(),{}).get('name',"")
+            topicName = topicList.get(str(v['typeid']),{}).get('name',"")
             result = checkVideoInDatabase(bvid)
             if result and stop_on_duplicate:
                 stopped = True
