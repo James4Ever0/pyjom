@@ -87,7 +87,9 @@ class BilibiliVideo(Model):
     pubdate = IntegerField(default=0)
     review = IntegerField(null=True)  # you want to update? according to this?
     favorites = IntegerField(default=0)
-    title=
+    title=CharField(null=True)
+    tag=CharField(null=True)
+    description=CharField(null=True)
 
 
 class BilibiliVideoIndex(FTSModel):
