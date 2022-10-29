@@ -13,11 +13,15 @@ from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSeconds
 
 from lazero.search.preprocessing import getFourVersionsOfProcessedLine
+import jieba
 
 def textPreprocessing(text):
     final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
     breakpoint()
-    
+    wordlist = jieba.lcut(final_cutted_stemmed_line)
+    for w in wordlist:
+        if w.strip()>0:
+            
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
