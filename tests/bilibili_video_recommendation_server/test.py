@@ -72,7 +72,7 @@ def textPreprocessing(text):
 
 
 def keywordExtracting(text):
-    
+    # for query 
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
