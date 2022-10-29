@@ -632,7 +632,8 @@ if __name__ == "__main__":
     test = "textPreprocessing"
     # test = 'registerMyVideo'
     if test = 'textPreprocessing':
-        text = "猫 咪 钢 琴 家"
+        text = "猫 咪 钢 琴 家 searchUserVideos have a nice day 新闻联播"
+        result = textPre
     elif test == "searchUserVideos":
         query = "猫"
         for v in searchUserVideos(query):
