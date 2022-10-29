@@ -709,9 +709,9 @@ def refresh_status(
     # but you need the database object. it is loop dependency!
     # well we can split the function.
     # just for initialization?
-    now_minus_check_period = datetime.datetime.now() - check_interval
+    now_minus_check_interval = datetime.datetime.now() - check_interval
     selector = BilibiliVideo.select(BilibiliVideo.bvid).where(
-        BilibiliVideo.last_check < now_minus_check_period
+        BilibiliVideo.last_check < now_minus_check_interval
     )  # need check or not?
     for bvid in selector:
         checkRegisteredVideo(
