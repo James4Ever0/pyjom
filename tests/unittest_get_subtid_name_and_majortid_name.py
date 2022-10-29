@@ -2,6 +2,6 @@ from bilibili_api import search
 BSP = search.bilibiliSearchParams
 
 for key,value in BSP.all.tids.__dict__.items():
-    if type(value) == object:
+    if type(value) == :
         print(key, value)
 
