@@ -448,7 +448,7 @@ def getUserVideos(
                 tag=textPreprocessing(bilibiliVideo.tag),
                 title=textPreprocessing(bilibiliVideo.title),
             )
-            yield bilibiliVideo, v["bvid"], v["pic"]
+            yield bilibiliVideo
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
         if pn >= numPages:
@@ -689,7 +689,7 @@ def searchAndRegisterVideos(
             tag=textPreprocessing(bilibiliVideo.tag),
             title=textPreprocessing(bilibiliVideo.title),
         )
-        yield bilibiliVideoIndex, bilibiliVideo.bvid, bilibiliVideo.pic
+        yield bilibiliVideo
 
 
 def refresh_status(
