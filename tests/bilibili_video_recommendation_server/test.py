@@ -84,11 +84,11 @@ def keywordExtracting(text,method:Literal['tfidf','random']='tfidf',languages:tu
     keyword_list = textPreprocessing(text).split(" ")
     stopword_list = getStopwords(languages=languages)
 
+    results = []
+    for k in keyword_list:
+        if k.lower() not in stopword_list:
+            results.append(k)
     if method == 'random':
-        results = []
-        for k in keyword_list:
-            if k.lower() not in stopword_list:
-                results.append(k)
         random.shuffle(results)
         return results[:topK]
     elif method == 'tfidf':
