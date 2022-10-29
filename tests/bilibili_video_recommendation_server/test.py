@@ -48,7 +48,6 @@ def textPreprocessing(text):
     flags = [int(containChineseCharacters(word)) for word in final_wordlist]
     chineseSpans = extract_span(flags, target=1)
     nonChineseSpans = extract_span(flags, target=0)
-    resultList = []
     finalSpans = [(span, True ) for span in chineseSpans]+[(span, False) for span in nonChineseSpans]
     finalSpans.sort(key=lambda span: span[0])
     finalWordList = []
@@ -58,9 +57,6 @@ def textPreprocessing(text):
             subWordList = jieba.lcut("".join(subWordList))
         finalWordList.extend(subWordList)
     return " ".join(finalWordList)
-
-
-    # return " ".join(final_wordlist)
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
