@@ -378,6 +378,31 @@ import math
 from bilibili_api.user import VideoOrder
 
 
+def indexAndGetVideoObject():
+
+            bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
+                bvid=v["bvid"],
+                typeid=v["typeid"],
+                visible=True,  # are you sure?
+                last_check=datetime.datetime.now(),  # well this is not tested. test it!
+                poster=bilibiliUser,  # is it my account anyway?
+                play=v["play"],
+                pic=linkFixer(v["pic"]),
+                length=videoDurationStringToSeconds(v["length"]),
+                review=v["comment"],
+                pubdate=v["created"],
+                description=v["description"],
+                title=v["title"],
+                tag=tagString,
+            )
+            bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
+                rowid=bilibiliVideo.id,
+                description=textPreprocessing(bilibiliVideo.description),
+                tag=textPreprocessing(bilibiliVideo.tag),
+                title=textPreprocessing(bilibiliVideo.title),
+            )
+
+
 def getUserVideos(
     tid=0,
     keyword="",
@@ -427,27 +452,7 @@ def getUserVideos(
             # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
             # breakpoint()
             # bad idea. you should get the bilibiliUser before you do this.
-            bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
-                bvid=v["bvid"],
-                typeid=v["typeid"],
-                visible=True,  # are you sure?
-                last_check=datetime.datetime.now(),  # well this is not tested. test it!
-                poster=bilibiliUser,  # is it my account anyway?
-                play=v["play"],
-                pic=linkFixer(v["pic"]),
-                length=videoDurationStringToSeconds(v["length"]),
-                review=v["comment"],
-                pubdate=v["created"],
-                description=v["description"],
-                title=v["title"],
-                tag=tagString,
-            )
-            bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
-                rowid=bilibiliVideo.id,
-                description=textPreprocessing(bilibiliVideo.description),
-                tag=textPreprocessing(bilibiliVideo.tag),
-                title=textPreprocessing(bilibiliVideo.title),
-            )
+            bilibiliVideo = indexAndGetVideoObject()
             yield bilibiliVideo
         # videos['list']['vlist'][0].keys()
         # dict_keys(['comment', 'typeid', 'play', 'pic', 'subtitle', 'description', 'copyright', 'title', 'review', 'author', 'mid', 'created', 'length', 'video_review', 'aid', 'bvid', 'hide_click', 'is_pay', 'is_union_video', 'is_steins_gate', 'is_live_playback'])
