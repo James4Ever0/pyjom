@@ -607,10 +607,6 @@ def refresh_status(
     return
 
 
-db = getBilibiliVideoDatabaseAndCreateTables()
-refresh_status()  # ensure the database is connected.
-schedule.every(20).minutes.do(refresh_status)
-
 
 def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
@@ -627,6 +623,9 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 
 if __name__ == "__main__":
+    db = getBilibiliVideoDatabaseAndCreateTables()
+    refresh_status()  # ensure the database is connected.
+    schedule.every(20).minutes.do(refresh_status)
     # test = 'searchVideos'
     # test = "searchUserVideos"
     test = "textPreprocessing"
