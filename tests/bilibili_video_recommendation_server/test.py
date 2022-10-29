@@ -17,6 +17,7 @@ from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 def textPreprocessing(text):
     final_line, final_cutted_line, final_stemmed_line, final_cutted_stemmed_line = getFourVersionsOfProcessedLine(text)
     breakpoint()
+    
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
