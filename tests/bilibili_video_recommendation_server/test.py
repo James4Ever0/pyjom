@@ -304,6 +304,7 @@ def getUserVideos(
         topicList = videos["list"]["tlist"]
         # {'1': {'tid': 1, 'count': 13, 'name': '动画'}, '160': {'tid': 160, 'count': 257, 'name': '生活'}, '181': {'tid': 181, 'count': 2, 'name': '影视'}, '188': {'tid': 188, 'count': 4, 'name': '科技'}, '217': {'tid': 217, 'count': 4, 'name': '动物圈'}, '234': {'tid': 234, 'count': 1, 'name': '运动'}, '3': {'tid': 3, 'count': 9, 'name': '音乐'}, '36': {'tid': 36, 'count': 30, 'name': '知识'}, '4': {'tid': 4, 'count': 67, 'name': '游戏'}}
         # breakpoint()
+        
         video_list = videos["list"]["vlist"]
         # breakpoint()
         if video_list == []:
@@ -334,7 +335,7 @@ def getUserVideos(
                 rowid=bilibiliVideo.id,
                 description=v["description"],
                 title=v["title"],
-                tag=v["tag"], # there is no tag.
+                tag=topicName, # there is no tag.
             )
             yield bilibiliVideoIndex, v["bvid"], v["pic"]
         # videos['list']['vlist'][0].keys()
