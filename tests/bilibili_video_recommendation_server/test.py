@@ -49,6 +49,7 @@ def textPreprocessing(text):
     chineseSpans = extract_span(flags, target=1)
     nonChineseSpans = extract_span(flags, target=0)
     resultList = []
+    finalSpans = [(, True )]+[(, False)]
     for span in chineseSpans:
         chineseWordList = final_wordlist[span[0]:span[1]]
         chineseWordList = jieba.lcut("".join(chineseWordList))
