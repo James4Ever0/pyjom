@@ -577,7 +577,7 @@ def searchRegisteredVideos(keyword: str,
     dedeuserid: Union[str,None] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,):
-
+    resultList = searc
 
 def searchUserVideos(
     keyword: str,
