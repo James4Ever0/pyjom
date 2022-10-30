@@ -853,7 +853,7 @@ if __name__ == "__main__":
         print("RESULT:", result)
     elif test == "searchUserVideos":
         query = "猫"
-        for v in searchUserVideos(query):
+        for v in searchUserVideos(query,method='bm25'):
             print("fetched value:", v)
             breakpoint()
     elif test == "registerMyVideo":
