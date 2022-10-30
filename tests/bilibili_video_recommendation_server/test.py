@@ -217,7 +217,7 @@ class BilibiliVideo(Model):
     )  # well this is not tested. test it!
     register_date = DateTimeField(default=datetime.datetime.now)
     poster = ForeignKeyField(
-        BilibiliUser, field=BilibiliUser.user_id
+        BilibiliUser, field=BilibiliUser.user_id,null=True
     )  # is it my account anyway?
     play = IntegerField(null=True)
     pic = CharField(null=True)
