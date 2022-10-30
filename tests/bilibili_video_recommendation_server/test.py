@@ -222,7 +222,7 @@ class BilibiliVideo(Model):
     play = IntegerField(null=True)
     pic = CharField(null=True)
     length = IntegerField(null=True)
-    pubdate = IntegerField(default=0)
+    pubdate = IntegerField(default=0,null=True)
     review = IntegerField(null=True)  # you want to update? according to this?
     favorites = IntegerField(default=0,null=True)
     title = CharField(null=True)
