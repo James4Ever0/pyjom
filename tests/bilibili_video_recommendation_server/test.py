@@ -519,7 +519,8 @@ def resolveTidsFromTid(tid:int):
     else:
         myTids = set()
         myTids.add(tid)
-        myTopic = allTids[]
+        myTopic = allTids[tid]
+        if myTopic.
 
 def searchRegisteredVideos()
 
