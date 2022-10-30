@@ -517,7 +517,7 @@ def resolveTidsFromTid(tid:int):
     elif tid not in allTids:
         raise Exception('Invalid tid: %d' % tid)
     else:
-        topic = MMTM[tid]
+        
 
 def searchRegisteredVideos()
 
