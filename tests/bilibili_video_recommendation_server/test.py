@@ -672,7 +672,7 @@ def registerUserVideo(
 
 
 def checkVideoVisibility(bvid: str, debug:bool=False):
-    visible = False # you might want some 'err' parameter. but that only indicates inavalibility of certain video, not video flagged as invisible.
+    visible = False # you might want some 'err' parameter. but that only indicates inavalibility of certain video, not video flagged as permanently invisible.
     try:
         info = getVideoInfo(bvid)  # getting shit? we need some normal video for test.
         state = info["state"]
