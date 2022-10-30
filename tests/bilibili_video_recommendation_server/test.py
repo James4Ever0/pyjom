@@ -72,16 +72,24 @@ def textPreprocessing(text):
         finalWordList.extend(subWordList)
     return " ".join(finalWordList)
 
+
 from nltk.corpus import stopwords
 
+
 @lru_cache(maxsize=1)
-def getStopwords(languages:tuple=('chinese','english')):
+def getStopwords(languages: tuple = ("chinese", "english")):
     stopword_list = []
     for lang in languages:
         stopword_list.extend(stopwords.words(lang))
     return stopword_list
 
-def keywordExtracting(text,method:Literal["tfidf","random"]='tfidf',languages:tuple=('chinese','english'), topK:int= 5):
+
+def keywordExtracting(
+    text,
+    method: Literal["tfidf", "random"] = "tfidf",
+    languages: tuple = ("chinese", "english"),
+    topK: int = 5,
+):
     # remove all stopwords.
     keyword_list = textPreprocessing(text).split(" ")
     stopword_list = getStopwords(languages=languages)
@@ -89,15 +97,16 @@ def keywordExtracting(text,method:Literal["tfidf","random"]='tfidf',languages:tu
     for k in keyword_list:
         if k.lower() not in stopword_list:
             results.append(k)
-    if method == 'random':
+    if method == "random":
         random.shuffle(results)
         return results[:topK]
-    elif method == 'tfidf':
+    elif method == "tfidf":
         myText = " ".join(results)
         tags = ana.extract_tags(myText, topK=topK)
         return tags
     else:
-        raise Exception('Unknown keyword extraction method: %s' % method)
+        raise Exception("Unknown keyword extraction method: %s" % method)
+
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
 
@@ -115,6 +124,7 @@ from playhouse.sqlite_ext import SqliteExtDatabase, FTSModel, SearchField, RowID
 BSP = search.bilibiliSearchParams
 # you can query for the server status.
 # make it into a dashboard like thing.
+
 
 @lru_cache(maxsize=1)
 def getMajorMinorTopicMappings(debug: bool = False):
@@ -403,6 +413,7 @@ import math
 
 # @refresh_status_decorator
 from bilibili_api.user import VideoOrder
+
 
 def indexAndGetVideoObject(v, bilibiliUser):
     bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
