@@ -69,9 +69,9 @@ def textPreprocessing(text):
     for span, isChineseSpan in finalSpans:
         subWordList = final_wordlist[span[0] : span[1]]
         if isChineseSpan:
-            subWordList = jieba.lcut_for_search("".join(subWordList))
+            subWordList = jieba.lcut_for_search("".join(subCharList))
         finalWordList.extend(subWordList)
-        finalWordList.extend(sub)
+        finalWordList.extend(subCharList)
     return " ".join(finalWordList)
 
 
