@@ -578,7 +578,8 @@ def searchRegisteredVideos(keyword: str,
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,):
     resultList = searchRegisteredVideosAndGetResultList(tid=tid,dedeuserid=dedeuserid,videoOrder=videoOrder,limit=limit,keyword=keyword)
-    
+    for v, _ in resultList:
+    yield v  # this is bilibiliVideoIndex, but you also needs the bvid.
 
 def searchUserVideos(
     keyword: str,
