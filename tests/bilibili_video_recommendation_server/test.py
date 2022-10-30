@@ -222,9 +222,9 @@ class BilibiliVideo(Model):
     play = IntegerField(null=True)
     pic = CharField(null=True)
     length = IntegerField(null=True)
-    pubdate = IntegerField(default=0,null=True)
+    pubdate = IntegerField(default=0, null=True)
     review = IntegerField(null=True)  # you want to update? according to this?
-    favorites = IntegerField(default=0,null=True)
+    favorites = IntegerField(default=0, null=True)
     title = CharField(null=True)
     tag = CharField(null=True)
     description = CharField(null=True)
@@ -417,7 +417,7 @@ from bilibili_api.user import VideoOrder
 
 def indexAndGetVideoObject(v, bilibiliUser):
     favdict = {}
-    favorites=v.get("favorites", None)
+    favorites = v.get("favorites", None)
     if favorites is not None:
         favdict["favorites"] = favorites
     bilibiliVideo, flag = BilibiliVideo.get_and_update_or_create(
@@ -437,7 +437,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
         **favdict,
         _debug=True
     )
-    print('f',flag)
+    print("f", flag)
     print(v)
     print(bilibiliUser)
     breakpoint()
@@ -508,8 +508,6 @@ def getUserVideos(
             break
         time.sleep(sleep)
         pn += 1
-
-
 
 
 def searchUserVideos(
