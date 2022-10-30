@@ -873,7 +873,7 @@ if __name__ == "__main__":
     port = 7341
     if objective == 'server':
         from fastapi import FastAPI
-        app = FastAPI()
+        app = FastAPI(port=port)
     elif objective == 'test':
         test = "searchVideos"
         # test = "searchUserVideos"
