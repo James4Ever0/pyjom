@@ -509,42 +509,43 @@ def getUserVideos(
         time.sleep(sleep)
         pn += 1
 
-def resolveSubTidsFromTid(tid:int):
+
+def resolveSubTidsFromTid(tid: int):
     MMTM = getMajorMinorTopicMappings()
     allTids = [t for t in MMTM.keys() if type(t) == int]
     if tid == 0:
         return allTids
     elif tid not in allTids:
-        raise Exception('Invalid tid: %d' % tid)
+        raise Exception("Invalid tid: %d" % tid)
     else:
         myTids = set()
         myTids.add(tid)
         myTopic = allTids[tid]
-        if myTopic.get('minor', None) == None:
+        if myTopic.get("minor", None) == None:
             # this is a major topic
             for t in allTids:
                 subTopic = MMTM[t]
-                if subTopic.get('major',{}).get('tid',None) == tid:
-                    subTid = subTopic.get('minor',{}).get('tid', tid)
+                if subTopic.get("major", {}).get("tid", None) == tid:
+                    subTid = subTopic.get("minor", {}).get("tid", tid)
                     myTids.add(subTid)
         return list(myTids)
 
-def searchRegisteredVideosAndGetResultList(keyword: str,
+
+def searchRegisteredVideosAndGetResultList(
+    keyword: str,
     tid: int = 0,
-    dedeuserid: Union[str,None] = "397424026",
+    dedeuserid: Union[str, None] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
-    limit: int = 10,):
-    resultList=[]
+    limit: int = 10,
+):
+    resultList = []
     resolvedTids = resolveSubTidsFromTid(tid)
-    condition=(BilibiliVideo.tid in resolvedTids)
+    condition = BilibiliVideo.tid in resolvedTids
     if dedeuserid:
         poster = registerUser(dedeuserid)
-        condition&=(BilibiliVideo.poster == poster)
+        condition &= BilibiliVideo.poster == poster
     user_video_ids = [
-        v.id
-        for v in BilibiliVideo.select(BilibiliVideo.id).where(
-            condition
-        )
+        v.id for v in BilibiliVideo.select(BilibiliVideo.id).where(condition)
     ]
     results = (
         BilibiliVideoIndex.search_bm25(keyword)
@@ -572,14 +573,24 @@ def searchRegisteredVideosAndGetResultList(keyword: str,
     resultList.sort(key=lambda x: x[1])
     return resultList
 
-def searchRegisteredVideos(keyword: str,
+
+def searchRegisteredVideos(
+    keyword: str,
     tid: int = 0,
-    dedeuserid: Union[str,None] = "397424026",
+    dedeuserid: Union[str, None] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
-    limit: int = 10,):
-    resultList = searchRegisteredVideosAndGetResultList(tid=tid,dedeuserid=dedeuserid,videoOrder=videoOrder,limit=limit,keyword=keyword)
+    limit: int = 10,
+):
+    resultList = searchRegisteredVideosAndGetResultList(
+        tid=tid,
+        dedeuserid=dedeuserid,
+        videoOrder=videoOrder,
+        limit=limit,
+        keyword=keyword,
+    )
     for v, _ in resultList:
         yield v  # this is bilibiliVideoIndex, but you also needs the bvid.
+
 
 def searchUserVideos(
     keyword: str,
@@ -617,7 +628,13 @@ def searchUserVideos(
         # export all video? shit?
         # you should tokenize the thing.
         # but this search does not have limitations!
-        resultList=searchRegisteredVideosAndGetResultList(tid=tid,dedeuserid=dedeuserid,videoOrder=videoOrder,limit=limit,keyword=keyword)
+        resultList = searchRegisteredVideosAndGetResultList(
+            tid=tid,
+            dedeuserid=dedeuserid,
+            videoOrder=videoOrder,
+            limit=limit,
+            keyword=keyword,
+        )
     for v, _ in resultList:
         yield v  # this is bilibiliVideoIndex, but you also needs the bvid.
 
