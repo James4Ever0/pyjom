@@ -684,7 +684,6 @@ def checkVideoVisibility(bvid: str, debug:bool=False):
             print('error when checking video status: %s' % bvid)
     return visible
 
-
 # check api doc for hint.
 def checkRegisteredVideo(
     bvid: str,
