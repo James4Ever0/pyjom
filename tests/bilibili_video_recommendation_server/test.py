@@ -554,7 +554,7 @@ def searchRegisteredVideosAndGetResultList(
         .limit(limit)
     )
     for index, video_index in enumerate(results):
-        bilibiliVideo = BilibiliVideo.get(id=video_index.id)
+        bilibiliVideo = BilibiliVideo.get(id=video_index.rowid)
         # what is the count? you need to reorder?
         # bvid = bilibiliVideo.bvid
         # cover = bilibiliVideo.pic
