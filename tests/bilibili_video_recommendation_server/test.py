@@ -434,6 +434,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
         description=v["description"],
         title=v["title"],
         tag=v["tag"],
+        **favdict,
         _debug=True
     )
     print('f',flag)
