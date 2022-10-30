@@ -548,10 +548,11 @@ def searchUserVideos(
         # you should tokenize the thing.
         # but this search does not have limitations!
         poster = registerUser(dedeuserid)
+        resolvedTids = resolveTid
         user_video_ids = [
             v.id
             for v in BilibiliVideo.select(BilibiliVideo.id).where(
-                BilibiliVideo.poster == poster and BilibiliVideo.tid in 
+                BilibiliVideo.poster == poster and BilibiliVideo.tid in resolvedTids
             )
         ]
         results = (
