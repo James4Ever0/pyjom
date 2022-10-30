@@ -531,10 +531,11 @@ def resolveSubTidsFromTid(tid:int):
 
 def searchRegisteredVideosAndGetResultList(keyword: str,
     tid: int = 0,
-    dedeuserid: str = "397424026",
+    dedeuserid: Union[str,None] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,):
     poster = registerUser(dedeuserid)
+    (BilibiliVideo.poster == poster) & (BilibiliVideo.tid in resolvedTids)
     resolvedTids = resolveSubTidsFromTid(tid)
     user_video_ids = [
         v.id
