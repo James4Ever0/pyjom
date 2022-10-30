@@ -509,7 +509,7 @@ def getUserVideos(
         time.sleep(sleep)
         pn += 1
 
-def resolveSubtidsFromTid(tid:int):
+def resolveSubTidsFromTid(tid:int):
     MMTM = getMajorMinorTopicMappings()
     allTids = [t for t in MMTM.keys() if type(t) == int]
     if tid == 0:
@@ -568,7 +568,7 @@ def searchUserVideos(
         # you should tokenize the thing.
         # but this search does not have limitations!
         poster = registerUser(dedeuserid)
-        resolvedTids = resolveTidsFromTid(tid)
+        resolvedTids = resolveSubTidsFromTid(tid)
         user_video_ids = [
             v.id
             for v in BilibiliVideo.select(BilibiliVideo.id).where(
