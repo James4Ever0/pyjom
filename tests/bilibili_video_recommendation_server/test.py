@@ -511,7 +511,7 @@ def getUserVideos(
 
 def resolveTidsFromTid(tid:int):
     MMTM = getMajorMinorTopicMappings()
-    allTids = [t for t in MMTM.keys()]
+    allTids = [t for t in MMTM.keys() if type(t) == int]
     if tid == 0:
         return allTids
     elif tid not in allTids:
