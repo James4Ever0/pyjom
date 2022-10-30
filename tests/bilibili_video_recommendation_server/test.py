@@ -532,9 +532,40 @@ def resolveSubTidsFromTid(tid:int):
 def searchRegisteredVideosAndGetResultList(keyword: str,
     tid: int = 0,
     dedeuserid: str = "397424026",
-    use_credential: bool = False,
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,):
+        poster = registerUser(dedeuserid)
+        resolvedTids = resolveSubTidsFromTid(tid)
+        user_video_ids = [
+            v.id
+            for v in BilibiliVideo.select(BilibiliVideo.id).where(
+                (BilibiliVideo.poster == poster) & (BilibiliVideo.tid in resolvedTids)
+            )
+        ]
+        results = (
+            BilibiliVideoIndex.search_bm25(keyword)
+            .where(BilibiliVideoIndex.rowid in user_video_ids)
+            .limit(limit)
+        )
+        for index, video_index in enumerate(results):
+            bilibiliVideo = BilibiliVideo.get(id=video_index.id)
+            # what is the count? you need to reorder?
+            bvid = bilibiliVideo.bvid
+            cover = bilibiliVideo.pic
+            favorites = bilibiliVideo.favorites
+            pubdate = bilibiliVideo.pubdate
+            view = bilibiliVideo.play
+            if videoOrder == VideoOrder.FAVORITE:
+                order = -favorites
+            elif videoOrder == VideoOrder.VIEW:
+                order = -view
+            elif videoOrder == VideoOrder.PUBDATE:
+                order = -pubdate  # most recent video.
+            else:
+                order = index
+            # you should return the video_index.
+            resultList.append((bilibiliVideo, order))
+        resultList.sort(key=lambda x: x[1])
 
 def searchRegisteredVideos():
 
@@ -575,38 +606,7 @@ def searchUserVideos(
         # export all video? shit?
         # you should tokenize the thing.
         # but this search does not have limitations!
-        poster = registerUser(dedeuserid)
-        resolvedTids = resolveSubTidsFromTid(tid)
-        user_video_ids = [
-            v.id
-            for v in BilibiliVideo.select(BilibiliVideo.id).where(
-                (BilibiliVideo.poster == poster) & (BilibiliVideo.tid in resolvedTids)
-            )
-        ]
-        results = (
-            BilibiliVideoIndex.search_bm25(keyword)
-            .where(BilibiliVideoIndex.rowid in user_video_ids)
-            .limit(limit)
-        )
-        for index, video_index in enumerate(results):
-            bilibiliVideo = BilibiliVideo.get(id=video_index.id)
-            # what is the count? you need to reorder?
-            bvid = bilibiliVideo.bvid
-            cover = bilibiliVideo.pic
-            favorites = bilibiliVideo.favorites
-            pubdate = bilibiliVideo.pubdate
-            view = bilibiliVideo.play
-            if videoOrder == VideoOrder.FAVORITE:
-                order = -favorites
-            elif videoOrder == VideoOrder.VIEW:
-                order = -view
-            elif videoOrder == VideoOrder.PUBDATE:
-                order = -pubdate  # most recent video.
-            else:
-                order = index
-            # you should return the video_index.
-            resultList.append((bilibiliVideo, order))
-        resultList.sort(key=lambda x: x[1])
+
     for v, _ in resultList:
         yield v  # this is bilibiliVideoIndex, but you also needs the bvid.
 
