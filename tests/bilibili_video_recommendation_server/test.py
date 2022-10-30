@@ -815,7 +815,7 @@ def refresh_status(
     selector = BilibiliVideo.select(BilibiliVideo.bvid).where(
         BilibiliVideo.last_check < now_minus_check_interval
     )  # need check or not?
-    for bvid in selector:
+    for bvid in progressbar.progressbar(selector):
         checkRegisteredVideo(
             bvid, grace_period=grace_period, check_interval=check_interval
         )
