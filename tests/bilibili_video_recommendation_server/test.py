@@ -539,7 +539,7 @@ def searchRegisteredVideosAndGetResultList(keyword: str,
     user_video_ids = [
         v.id
         for v in BilibiliVideo.select(BilibiliVideo.id).where(
-            (BilibiliVideo.poster == poster) & (BilibiliVideo.tid in resolvedTids)
+            condition
         )
     ]
     results = (
