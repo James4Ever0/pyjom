@@ -671,7 +671,8 @@ def registerUserVideo(
 # we still need some more experiment.
 
 
-def checkVideoVisibility(bvid: str):
+def checkVideoVisibility(bvid: str, debug:bool=False):
+    visible = False
     try:
         info = getVideoInfo(bvid)  # getting shit? we need some normal video for test.
         state = info["state"]
