@@ -572,7 +572,11 @@ def searchRegisteredVideosAndGetResultList(keyword: str,
     resultList.sort(key=lambda x: x[1])
     return resultList
 
-def searchRegisteredVideos():
+def searchRegisteredVideos(keyword: str,
+    tid: int = 0,
+    dedeuserid: Union[str,None] = "397424026",
+    videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
+    limit: int = 10,):
 
 
 def searchUserVideos(
