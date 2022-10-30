@@ -870,10 +870,9 @@ if __name__ == "__main__":
     schedule.every(20).minutes.do(refresh_status)
     # objective = 'test'
     objective = 'server'
-    port = 7341
     if objective == 'server':
         from fastapi import FastAPI
-        app = FastAPI(port=port)
+        app = FastAPI()
     elif objective == 'test':
         test = "searchVideos"
         # test = "searchUserVideos"
