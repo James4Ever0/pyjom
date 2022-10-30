@@ -659,7 +659,10 @@ def getVideoInfo(bvid: str):
 
 
 def registerUserVideo(
-    bvid: str, dedeuserid: str, is_mine: bool = False, visible:bool=False
+    bvid: str,
+    dedeuserid: str,
+    is_mine: bool = False,
+    visible: bool = False,  # no checking on video visibility?
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     # register user first, then register the video.
     # you will store it to database.
@@ -671,8 +674,8 @@ def registerUserVideo(
 # we still need some more experiment.
 
 
-def checkVideoVisibility(bvid: str, debug:bool=False):
-    visible = False # you might want some 'err' parameter. but that only indicates inavalibility of certain video, not video flagged as permanently invisible.
+def checkVideoVisibility(bvid: str, debug: bool = False):
+    visible = False  # you might want some 'err' parameter. but that only indicates inavalibility of certain video, not video flagged as permanently invisible.
     try:
         info = getVideoInfo(bvid)  # getting shit? we need some normal video for test.
         state = info["state"]
@@ -680,9 +683,11 @@ def checkVideoVisibility(bvid: str, debug:bool=False):
     except:
         if debug:
             import traceback
+
             traceback.print_exc()
-            print('error when checking video status: %s' % bvid)
+            print("error when checking video status: %s" % bvid)
     return visible
+
 
 # check api doc for hint.
 def checkRegisteredVideo(
@@ -830,7 +835,9 @@ def refresh_status(
     now_minus_check_interval = datetime.datetime.now() - check_interval
     selector = BilibiliVideo.select(BilibiliVideo.bvid).where(
         (BilibiliVideo.last_check < now_minus_check_interval)
-        & (BilibiliVideo.visible == False) # only check invisible videos. invisible videos will be removed after 1 day of inavaliability.
+        & (
+            BilibiliVideo.visible == False
+        )  # only check invisible videos. invisible videos will be removed after 1 day of inavaliability.
     )  # need check or not?
     print("refreshing video status")
     for bvid in progressbar.progressbar(selector):
