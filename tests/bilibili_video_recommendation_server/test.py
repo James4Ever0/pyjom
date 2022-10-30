@@ -535,8 +535,9 @@ def searchRegisteredVideosAndGetResultList(keyword: str,
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,):
     poster = registerUser(dedeuserid)
-    (BilibiliVideo.poster == poster) & (BilibiliVideo.tid in resolvedTids)
+    (BilibiliVideo.poster == poster) & 
     resolvedTids = resolveSubTidsFromTid(tid)
+    condition=(BilibiliVideo.tid in resolvedTids)
     user_video_ids = [
         v.id
         for v in BilibiliVideo.select(BilibiliVideo.id).where(
