@@ -858,8 +858,8 @@ if __name__ == "__main__":
     elif test == "searchUserVideos":
         query = "猫"
         for v in searchUserVideos(query):
-        # for v in searchUserVideos(query, method="bm25"):
-            print("fetched value:", v)
+        for v in searchUserVideos(query, method="bm25"):
+            # print("fetched value:", v)
             breakpoint()
     elif test == "registerMyVideo":
         bvid = "BV1fR4y1w7BL"  # that's surely yours.
