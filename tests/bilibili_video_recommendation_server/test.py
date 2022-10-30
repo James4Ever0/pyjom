@@ -617,7 +617,7 @@ def searchUserVideos(
         # export all video? shit?
         # you should tokenize the thing.
         # but this search does not have limitations!
-        resultList=
+        resultList=searchRegisteredVideosAndGetResultList(tid=tid,dedeuserid=dedeuserid,videoOrder=videoOrder,limit=limit,keyword=keyword)
     for v, _ in resultList:
         yield v  # this is bilibiliVideoIndex, but you also needs the bvid.
 
