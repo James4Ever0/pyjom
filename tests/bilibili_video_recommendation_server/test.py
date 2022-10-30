@@ -874,8 +874,7 @@ if __name__ == "__main__":
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
     if objective == 'server':
-        from fastapi import FastAPI
-        app = FastAPI()
+        # cannot use fastapi. sorry for your loss?
         @app.get("/")
         def read_root():
             return "bilibili recommendation server"
