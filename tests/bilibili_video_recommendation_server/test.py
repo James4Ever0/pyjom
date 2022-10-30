@@ -416,6 +416,8 @@ from bilibili_api.user import VideoOrder
 
 
 def indexAndGetVideoObject(v, bilibiliUser):
+    print(v)
+    breakpoint()
     bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
         bvid=v["bvid"],
         typeid=v["typeid"],
