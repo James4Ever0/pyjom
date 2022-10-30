@@ -784,7 +784,7 @@ def searchAndRegisterVideos(
     query: str,
     iterate: bool = False,
     page_start: int = 1,
-    params={"duration": BSP.all.duration._10分钟以下},
+    params={"duration": BSP.all.duration._10分钟以下, BSP.all.order.},
 ):
     results = searchVideos(query, iterate=iterate, page_start=page_start, params=params)
     # db = getBilibiliVideoDatabaseAndCreateTables()
