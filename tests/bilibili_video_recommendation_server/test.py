@@ -5,7 +5,7 @@
 import time
 import sys
 import datetime
-from typing import Union
+from typing import Union, Literal
 from functools import lru_cache
 import random
 
@@ -501,7 +501,6 @@ def getUserVideos(
         pn += 1
 
 
-from typing import Literal
 
 
 def searchUserVideos(
