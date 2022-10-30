@@ -435,6 +435,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
     )
     print('f',flag)
     print(v)
+    print(bilibiliUser)
     breakpoint()
     bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
         rowid=bilibiliVideo.id,
