@@ -553,7 +553,7 @@ def searchRegisteredVideosAndGetResultList(
     ]
     # print('user video ids',user_video_ids)
     results = (
-        BilibiliVideoIndex.search_lucene(keyword)
+        BilibiliVideoIndex.search_bm25(keyword)
         .where(BilibiliVideoIndex.rowid in user_video_ids)
         .limit(limit)
     )
@@ -857,7 +857,7 @@ if __name__ == "__main__":
         print("RESULT:", result)
     elif test == "searchUserVideos":
         query = "猫"
-        for v in searchUserVideos(query):
+        # for v in searchUserVideos(query):
         for v in searchUserVideos(query, method="bm25"):
             # print("fetched value:", v)
             breakpoint()
