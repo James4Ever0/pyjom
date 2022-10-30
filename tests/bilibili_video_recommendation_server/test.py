@@ -682,7 +682,7 @@ def checkVideoVisibility(bvid: str, debug:bool=False):
             import traceback
             traceback.print_exc()
             print('error when checking video status: %s' % bvid)
-        return visible
+    return visible
 
 
 # check api doc for hint.
