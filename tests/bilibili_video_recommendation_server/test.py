@@ -593,8 +593,7 @@ def searchUserVideos(
     # check if keyword overlaps.
     # how to search my video? and how to measure relevance?
     if method == "online":
-    resultList = []
-
+        resultList = []
         order = None
         for v in getUserVideos(
             tid=tid,
@@ -612,7 +611,7 @@ def searchUserVideos(
         # export all video? shit?
         # you should tokenize the thing.
         # but this search does not have limitations!
-
+        resultList=
     for v, _ in resultList:
         yield v  # this is bilibiliVideoIndex, but you also needs the bvid.
 
