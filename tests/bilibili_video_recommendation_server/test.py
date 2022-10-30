@@ -534,38 +534,39 @@ def searchRegisteredVideosAndGetResultList(keyword: str,
     dedeuserid: str = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,):
-        poster = registerUser(dedeuserid)
-        resolvedTids = resolveSubTidsFromTid(tid)
-        user_video_ids = [
-            v.id
-            for v in BilibiliVideo.select(BilibiliVideo.id).where(
-                (BilibiliVideo.poster == poster) & (BilibiliVideo.tid in resolvedTids)
-            )
-        ]
-        results = (
-            BilibiliVideoIndex.search_bm25(keyword)
-            .where(BilibiliVideoIndex.rowid in user_video_ids)
-            .limit(limit)
+    poster = registerUser(dedeuserid)
+    resolvedTids = resolveSubTidsFromTid(tid)
+    user_video_ids = [
+        v.id
+        for v in BilibiliVideo.select(BilibiliVideo.id).where(
+            (BilibiliVideo.poster == poster) & (BilibiliVideo.tid in resolvedTids)
         )
-        for index, video_index in enumerate(results):
-            bilibiliVideo = BilibiliVideo.get(id=video_index.id)
-            # what is the count? you need to reorder?
-            bvid = bilibiliVideo.bvid
-            cover = bilibiliVideo.pic
-            favorites = bilibiliVideo.favorites
-            pubdate = bilibiliVideo.pubdate
-            view = bilibiliVideo.play
-            if videoOrder == VideoOrder.FAVORITE:
-                order = -favorites
-            elif videoOrder == VideoOrder.VIEW:
-                order = -view
-            elif videoOrder == VideoOrder.PUBDATE:
-                order = -pubdate  # most recent video.
-            else:
-                order = index
-            # you should return the video_index.
-            resultList.append((bilibiliVideo, order))
-        resultList.sort(key=lambda x: x[1])
+    ]
+    results = (
+        BilibiliVideoIndex.search_bm25(keyword)
+        .where(BilibiliVideoIndex.rowid in user_video_ids)
+        .limit(limit)
+    )
+    for index, video_index in enumerate(results):
+        bilibiliVideo = BilibiliVideo.get(id=video_index.id)
+        # what is the count? you need to reorder?
+        bvid = bilibiliVideo.bvid
+        cover = bilibiliVideo.pic
+        favorites = bilibiliVideo.favorites
+        pubdate = bilibiliVideo.pubdate
+        view = bilibiliVideo.play
+        if videoOrder == VideoOrder.FAVORITE:
+            order = -favorites
+        elif videoOrder == VideoOrder.VIEW:
+            order = -view
+        elif videoOrder == VideoOrder.PUBDATE:
+            order = -pubdate  # most recent video.
+        else:
+            order = index
+        # you should return the video_index.
+        resultList.append((bilibiliVideo, order))
+    resultList.sort(key=lambda x: x[1])
+    return resultList
 
 def searchRegisteredVideos():
 
