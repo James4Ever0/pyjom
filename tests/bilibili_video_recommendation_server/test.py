@@ -509,7 +509,7 @@ def getUserVideos(
         time.sleep(sleep)
         pn += 1
 
-def resolveTidsFromTid(tid:int):
+def resolveSubtidsFromTid(tid:int):
     MMTM = getMajorMinorTopicMappings()
     allTids = [t for t in MMTM.keys() if type(t) == int]
     if tid == 0:
