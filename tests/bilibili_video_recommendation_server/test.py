@@ -538,7 +538,7 @@ def resolveSubTidsFromTid(tid: int):
 def searchRegisteredVideosAndGetResultList(
     keyword: str,
     tid: int = 0,
-    dedeuserid: Union[str, None,list[str]] = "397424026",
+    dedeuserid: Union[str, None, list[str]] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,
 ):
@@ -823,7 +823,8 @@ def refresh_status(
     # just for initialization?
     now_minus_check_interval = datetime.datetime.now() - check_interval
     selector = BilibiliVideo.select(BilibiliVideo.bvid).where(
-        BilibiliVideo.last_check < now_minus_check_interval & (BilibiliVideo.visible== False)
+        (BilibiliVideo.last_check < now_minus_check_interval)
+        & (BilibiliVideo.visible == False)
     )  # need check or not?
     print("refreshing video status")
     for bvid in progressbar.progressbar(selector):
@@ -852,7 +853,7 @@ if __name__ == "__main__":
     db = getBilibiliVideoDatabaseAndCreateTables()
     refresh_status()  # ensure the database is connected.
     schedule.every(20).minutes.do(refresh_status)
-    test = 'searchVideos'
+    test = "searchVideos"
     # test = "searchUserVideos"
     # test = "textPreprocessing"
     # test = 'registerMyVideo'
