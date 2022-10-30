@@ -868,6 +868,8 @@ if __name__ == "__main__":
     db = getBilibiliVideoDatabaseAndCreateTables()
     refresh_status()  # ensure the database is connected.
     schedule.every(20).minutes.do(refresh_status)
+    objective = 'test'
+    objective = 'test'
     test = "searchVideos"
     # test = "searchUserVideos"
     # test = "textPreprocessing"
