@@ -887,7 +887,7 @@ if __name__ == "__main__":
     elif test == "searchVideos":
         query = "cod19"  # recent hot videos.
         for v in searchAndRegisterVideos(query):
-            print(v)
+            print(v) # warning: title containing markup language.
             breakpoint()
         # you want to select video after search?
         # no keywords? are you kidding?
