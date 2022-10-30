@@ -819,6 +819,7 @@ def refresh_status(
         checkRegisteredVideo(
             bvid, grace_period=grace_period, check_interval=check_interval
         )
+        time.sleep(sleep)
     return
 
 
