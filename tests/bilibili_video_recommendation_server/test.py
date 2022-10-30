@@ -510,8 +510,10 @@ def getUserVideos(
         pn += 1
 
 def resolveTidsFromTid(tid:int):
-    if tid not in tid:
+    if tid == 0:
         return allTids
+    elif tid not in allTids:
+        raise Exception('Invalid tid: %d' % tid)
 
 def searchRegisteredVideos()
 
