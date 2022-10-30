@@ -1,5 +1,0 @@
-2022/10/30 03:20:22.915 [E]  Will ReConnect After:7 s TXSERVER 111.30.130.106:80 User 917521610 Offline Nick 喵喵姬 
-2022/10/30 03:20:44.919 [E]  dial tcp 111.30.130.106:80: i/o timeout
-2022/10/30 03:20:44.919 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
-2022/10/30 03:20:44.919 [E]  dial tcp 111.30.130.106:80: i/o timeout
-2022/10/30 03:20:44.919 [E]  Will ReConnect After:5 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
