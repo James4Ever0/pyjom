@@ -418,7 +418,7 @@ from bilibili_api.user import VideoOrder
 def indexAndGetVideoObject(v, bilibiliUser):
     print(v)
     breakpoint()
-    bilibiliVideo, _ = BilibiliVideo.get_and_update_or_create(
+    bilibiliVideo, flag = BilibiliVideo.get_and_update_or_create(
         bvid=v["bvid"],
         typeid=v["typeid"],
         visible=True,  # are you sure?
@@ -434,6 +434,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
         title=v["title"],
         tag=v["tag"],
     )
+    flag=
     bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
         rowid=bilibiliVideo.id,
         description=textPreprocessing(bilibiliVideo.description),
