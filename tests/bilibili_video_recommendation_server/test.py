@@ -424,7 +424,6 @@ def indexAndGetVideoObject(v, bilibiliUser):
     favorites = v.get("favorites", None)
     if favorites is not None:
         favdict["favorites"] = favorites
-    title = clearHtmlTags(v["title"])
     bilibiliVideo, flag = BilibiliVideo.get_and_update_or_create(
         bvid=v["bvid"],
         typeid=v["typeid"],
@@ -437,7 +436,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
         review=v.get("comment", v.get("review")),
         pubdate=v.get("created", v.get("pubdate")),
         description=v["description"],
-        title=title, # it may contain highlights. be warned
+        title=clearHtmlTags(v["title"]), # it may contain highlights. be warned
         tag=v["tag"],
         **favdict,
         # _debug=True
