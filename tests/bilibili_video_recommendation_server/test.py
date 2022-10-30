@@ -510,7 +510,7 @@ def getUserVideos(
         pn += 1
 
 def resolveTidsFromTid(tid:int):
-    allTids = []
+    allTids = [t for t in ]
     if tid == 0:
         return allTids
     elif tid not in allTids:
