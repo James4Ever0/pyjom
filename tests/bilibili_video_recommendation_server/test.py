@@ -875,10 +875,12 @@ if __name__ == "__main__":
     # python3 -m uvicorn --port 7341 test:app
     if objective == 'server':
         from fastapi import FastAPI
+        import uvicorn
         app = FastAPI()
         @app.get("/")
         def read_root():
             return "bilibili recommendation server"
+        uvicorn.run(app, host="0.0.0.0", port=8000)
     elif objective == 'test':
         test = "searchVideos"
         # test = "searchUserVideos"
