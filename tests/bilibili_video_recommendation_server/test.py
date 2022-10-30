@@ -520,7 +520,14 @@ def resolveTidsFromTid(tid:int):
         myTids = set()
         myTids.add(tid)
         myTopic = allTids[tid]
-        if myTopic.
+        if myTopic.get('minor', None) == None:
+            # this is a major topic
+            for t in allTids:
+                subTopic = MMTM[t]
+                if subTopic.get('major',{}).get('tid',None) == tid:
+                    subTid = subTopic.get('minor',{}).get('tid', tid)
+                    myTids.add(subTid)
+        return list(myTids)
 
 def searchRegisteredVideos()
 
