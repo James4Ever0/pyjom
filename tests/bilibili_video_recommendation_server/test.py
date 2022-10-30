@@ -870,7 +870,9 @@ if __name__ == "__main__":
     schedule.every(20).minutes.do(refresh_status)
     # objective = 'test'
     objective = 'server'
-    if objective == 'test':
+    if objective == 'server':
+        ...
+    elif objective == 'test':
         test = "searchVideos"
         # test = "searchUserVideos"
         # test = "textPreprocessing"
