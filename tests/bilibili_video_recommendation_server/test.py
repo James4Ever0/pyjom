@@ -548,7 +548,7 @@ def searchRegisteredVideosAndGetResultList(
     user_video_ids = [
         v.id for v in BilibiliVideo.select(BilibiliVideo.id).where(condition)
     ]
-    print(user_video_ids)
+    print('user video ids',user_video_ids)
     results = (
         BilibiliVideoIndex.search_bm25(keyword)
         .where(BilibiliVideoIndex.rowid in user_video_ids)
