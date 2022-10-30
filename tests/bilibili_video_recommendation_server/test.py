@@ -534,6 +534,7 @@ def searchRegisteredVideosAndGetResultList(keyword: str,
     dedeuserid: Union[str,None] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,):
+    resultList=[]
     resolvedTids = resolveSubTidsFromTid(tid)
     condition=(BilibiliVideo.tid in resolvedTids)
     if dedeuserid:
@@ -553,8 +554,8 @@ def searchRegisteredVideosAndGetResultList(keyword: str,
     for index, video_index in enumerate(results):
         bilibiliVideo = BilibiliVideo.get(id=video_index.id)
         # what is the count? you need to reorder?
-        bvid = bilibiliVideo.bvid
-        cover = bilibiliVideo.pic
+        # bvid = bilibiliVideo.bvid
+        # cover = bilibiliVideo.pic
         favorites = bilibiliVideo.favorites
         pubdate = bilibiliVideo.pubdate
         view = bilibiliVideo.play
@@ -591,8 +592,9 @@ def searchUserVideos(
     # just dump that shit.
     # check if keyword overlaps.
     # how to search my video? and how to measure relevance?
-    resultList = []
     if method == "online":
+    resultList = []
+
         order = None
         for v in getUserVideos(
             tid=tid,
