@@ -872,8 +872,8 @@ if __name__ == "__main__":
     objective = 'server'
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
-    port = 7341
     if objective == 'server':
+        port = 7341
         from fastapi import FastAPI
         import uvicorn
         app = FastAPI()
