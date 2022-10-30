@@ -436,7 +436,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
         review=v.get("comment", v.get("review")),
         pubdate=v.get("created", v.get("pubdate")),
         description=v["description"],
-        title=v["title"],
+        title=title, # it may contain highlights. be warned
         tag=v["tag"],
         **favdict,
         # _debug=True
