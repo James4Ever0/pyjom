@@ -529,11 +529,16 @@ def resolveSubTidsFromTid(tid:int):
                     myTids.add(subTid)
         return list(myTids)
 
-def searchRegisteredVideosAndGetResultList():
+def searchRegisteredVideosAndGetResultList(keyword: str,
+    tid: int = 0,
+    dedeuserid: str = "397424026",
+    use_credential: bool = False,
+    videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
+    limit: int = 10,):
 
 def searchRegisteredVideos():
 
-    
+
 def searchUserVideos(
     keyword: str,
     tid: int = 0,
