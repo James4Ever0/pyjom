@@ -509,6 +509,7 @@ def getUserVideos(
         time.sleep(sleep)
         pn += 1
 
+def searchRegisteredVideos()
 
 def searchUserVideos(
     keyword: str,
