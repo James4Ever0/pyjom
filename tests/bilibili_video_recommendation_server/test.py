@@ -872,10 +872,9 @@ if __name__ == "__main__":
         registerUserVideo(bvid, dedeuserid)
     elif test == "searchVideos":
         query = "cod19"  # recent hot videos.
-        # breakpoint()
         for v in searchAndRegisterVideos(query):
             print(v)
-            
+            breakpoint()
         # you want to select video after search?
         # no keywords? are you kidding?
         # results = getMyVideos()
