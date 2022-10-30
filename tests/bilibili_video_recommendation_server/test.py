@@ -672,10 +672,11 @@ def registerUserVideo(
 
 
 def checkVideoVisibility(bvid: str):
-    info = getVideoInfo(bvid)  # getting shit? we need some normal video for test.
-    state = info["state"]
-    visible = state == 0
-    return visible
+    try:
+        info = getVideoInfo(bvid)  # getting shit? we need some normal video for test.
+        state = info["state"]
+        visible = state == 0
+        return visible
 
 
 # check api doc for hint.
