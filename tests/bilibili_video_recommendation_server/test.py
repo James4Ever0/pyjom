@@ -429,7 +429,6 @@ def indexAndGetVideoObject(v, bilibiliUser):
         review=v.get("comment", v.get("review")),
         pubdate=v.get("created", v.get("pubdate")),
         description=v["description"],
-        favorites=v.get("favorites", 0),
         title=v["title"],
         tag=v["tag"],
         _debug=True
