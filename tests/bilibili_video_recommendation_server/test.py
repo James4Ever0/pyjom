@@ -878,7 +878,7 @@ if __name__ == "__main__":
         app = FastAPI()
         @app.get("/")
         def read_root():
-            return "hello world"
+            return "bilibili recommendation server"
     elif objective == 'test':
         test = "searchVideos"
         # test = "searchUserVideos"
