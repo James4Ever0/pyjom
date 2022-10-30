@@ -432,6 +432,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
         favorites=v.get("favorites", None),
         title=v["title"],
         tag=v["tag"],
+        _debug=True
     )
     print('f',flag)
     print(v)
