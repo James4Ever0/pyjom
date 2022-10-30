@@ -877,6 +877,8 @@ if __name__ == "__main__":
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
     if objective == "server":
+        # somewhere here:
+        # https://fastapi.tiangolo.com/es/tutorial/debugging/
         port = 7341
         from fastapi import FastAPI
         import uvicorn
