@@ -69,7 +69,7 @@ def textPreprocessing(text):
     for span, isChineseSpan in finalSpans:
         subWordList = final_wordlist[span[0] : span[1]]
         subChars = "".join(subWordList)
-        subCharList = [c for c in subChars]
+        subCharList = [c for c in subChars] # 直接给你逐字切割了 说不定就有用了
         if isChineseSpan:
             subWordList = jieba.lcut_for_search(subChars)
         finalWordList.extend(subWordList)
@@ -857,8 +857,8 @@ if __name__ == "__main__":
         print("RESULT:", result)
     elif test == "searchUserVideos":
         query = "猫"
-        # for v in searchUserVideos(query):
-        for v in searchUserVideos(query, method="bm25"):
+        for v in searchUserVideos(query):
+        # for v in searchUserVideos(query, method="bm25"):
             print("fetched value:", v)
             breakpoint()
     elif test == "registerMyVideo":
