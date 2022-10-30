@@ -538,7 +538,7 @@ def resolveSubTidsFromTid(tid: int):
 def searchRegisteredVideosAndGetResultList(
     keyword: str,
     tid: int = 0,
-    dedeuserid: Union[str, None] = "397424026",
+    dedeuserid: Union[str, None,list[str]] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,
 ):
