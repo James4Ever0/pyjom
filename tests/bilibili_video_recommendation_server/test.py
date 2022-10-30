@@ -848,7 +848,7 @@ if __name__ == "__main__":
     refresh_status()  # ensure the database is connected.
     schedule.every(20).minutes.do(refresh_status)
     # test = 'searchVideos'
-    test = "searchUserVideos"
+    # test = "searchUserVideos"
     # test = "textPreprocessing"
     # test = 'registerMyVideo'
     if test == "textPreprocessing":
