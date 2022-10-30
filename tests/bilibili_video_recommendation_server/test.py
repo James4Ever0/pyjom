@@ -417,7 +417,9 @@ from bilibili_api.user import VideoOrder
 
 def indexAndGetVideoObject(v, bilibiliUser):
     favdict = {}
-    favorites=v.get("favorites", None),
+    favorites=v.get("favorites", None)
+    if favorites is not None:
+        favdict["favorites"] = favorites
     bilibiliVideo, flag = BilibiliVideo.get_and_update_or_create(
         bvid=v["bvid"],
         typeid=v["typeid"],
