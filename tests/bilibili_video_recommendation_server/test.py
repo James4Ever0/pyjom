@@ -18,6 +18,7 @@ from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 import jieba
 import opencc
 import jieba.analyse as ana
+import progressbar
 
 
 @lru_cache(maxsize=4)
