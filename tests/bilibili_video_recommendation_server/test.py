@@ -69,9 +69,9 @@ def textPreprocessing(text):
     for span, isChineseSpan in finalSpans:
         subWordList = final_wordlist[span[0] : span[1]]
         subChars = "".join(subWordList)
-        subCharList =[c for c in subChars]
+        subCharList = [c for c in subChars]
         if isChineseSpan:
-            subWordList = jieba.lcut_for_search(subCharList))
+            subWordList = jieba.lcut_for_search(subChars)
         finalWordList.extend(subWordList)
         finalWordList.extend(subCharList)
     return " ".join(finalWordList)
@@ -810,7 +810,7 @@ def searchAndRegisterVideos(
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
     check_interval=datetime.timedelta(hours=1),
-    sleep:int=2
+    sleep: int = 2,
 ):
     # what to do? just select and update?
     # but you need the database object. it is loop dependency!
@@ -820,7 +820,7 @@ def refresh_status(
     selector = BilibiliVideo.select(BilibiliVideo.bvid).where(
         BilibiliVideo.last_check < now_minus_check_interval
     )  # need check or not?
-    print('refreshing video status')
+    print("refreshing video status")
     for bvid in progressbar.progressbar(selector):
         checkRegisteredVideo(
             bvid, grace_period=grace_period, check_interval=check_interval
@@ -858,7 +858,7 @@ if __name__ == "__main__":
     elif test == "searchUserVideos":
         query = "猫"
         # for v in searchUserVideos(query):
-        for v in searchUserVideos(query,method='bm25'):
+        for v in searchUserVideos(query, method="bm25"):
             print("fetched value:", v)
             breakpoint()
     elif test == "registerMyVideo":
