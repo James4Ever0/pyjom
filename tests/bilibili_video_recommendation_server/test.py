@@ -541,7 +541,7 @@ def searchRegisteredVideosAndGetResultList(
 ):
     resultList = []
     resolvedTids = resolveSubTidsFromTid(tid)
-    condition = BilibiliVideo.tid in resolvedTids
+    condition = BilibiliVideo.typeid in resolvedTids
     if dedeuserid:
         poster = registerUser(dedeuserid)
         condition &= BilibiliVideo.poster == poster
