@@ -224,7 +224,7 @@ class BilibiliVideo(Model):
     length = IntegerField(null=True)
     pubdate = IntegerField(default=0)
     review = IntegerField(null=True)  # you want to update? according to this?
-    favorites = IntegerField(default=0)
+    favorites = IntegerField(default=0,null=True)
     title = CharField(null=True)
     tag = CharField(null=True)
     description = CharField(null=True)
