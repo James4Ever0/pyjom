@@ -510,6 +510,7 @@ def getUserVideos(
         pn += 1
 
 def resolveTidsFromTid(tid:int):
+    getMajorMinorTopicMappings = lambda tid
     allTids = [t for t in ]
     if tid == 0:
         return allTids
