@@ -547,7 +547,8 @@ def searchRegisteredVideosAndGetResultList(
     condition = BilibiliVideo.typeid in resolvedTids
     if dedeuserid:
         if type(dedeuserid) == str:
-            dedeuserids = 
+            dedeuserids = [dedeuserid]
+        for 
         poster = registerUser(dedeuserid)
         condition &= BilibiliVideo.poster == poster
     user_video_ids = [
