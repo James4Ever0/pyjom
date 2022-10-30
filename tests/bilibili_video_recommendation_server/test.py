@@ -777,7 +777,7 @@ if __name__ == "__main__":
     # test = 'searchVideos'
     # test = "searchUserVideos"
     # test = "textPreprocessing"
-    # test = 'registerMyVideo'
+    test = 'registerMyVideo'
     if test == "textPreprocessing":
         text = "猫  咪  钢  琴  家 searchUserVideos have a nice day 新闻联播,动物圈,汪星人,喵星人"
         result = textPreprocessing(text)
