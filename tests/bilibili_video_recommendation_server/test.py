@@ -517,7 +517,8 @@ def resolveTidsFromTid(tid:int):
     elif tid not in allTids:
         raise Exception('Invalid tid: %d' % tid)
     else:
-        myTids = []
+        myTids = set()
+        myTids.add(tid)
         
 
 def searchRegisteredVideos()
