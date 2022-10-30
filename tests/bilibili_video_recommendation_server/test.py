@@ -677,6 +677,10 @@ def checkVideoVisibility(bvid: str, debug:bool=False):
         info = getVideoInfo(bvid)  # getting shit? we need some normal video for test.
         state = info["state"]
         visible = state == 0
+    except:
+        if debug:
+        import traceback
+        traceback.print_exc()
         return visible
 
 
