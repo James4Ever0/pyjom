@@ -824,7 +824,7 @@ def refresh_status(
     now_minus_check_interval = datetime.datetime.now() - check_interval
     selector = BilibiliVideo.select(BilibiliVideo.bvid).where(
         (BilibiliVideo.last_check < now_minus_check_interval)
-        & (BilibiliVideo.visible == False)
+        & (BilibiliVideo.visible == False) # only check invisible videos.
     )  # need check or not?
     print("refreshing video status")
     for bvid in progressbar.progressbar(selector):
