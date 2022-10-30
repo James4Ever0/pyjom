@@ -852,7 +852,7 @@ if __name__ == "__main__":
     db = getBilibiliVideoDatabaseAndCreateTables()
     refresh_status()  # ensure the database is connected.
     schedule.every(20).minutes.do(refresh_status)
-    # test = 'searchVideos'
+    test = 'searchVideos'
     # test = "searchUserVideos"
     # test = "textPreprocessing"
     # test = 'registerMyVideo'
@@ -875,6 +875,7 @@ if __name__ == "__main__":
         # breakpoint()
         for v in searchAndRegisterVideos(query):
             print(v)
+            
         # you want to select video after search?
         # no keywords? are you kidding?
         # results = getMyVideos()
