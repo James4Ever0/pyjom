@@ -551,7 +551,7 @@ def searchUserVideos(
         user_video_ids = [
             v.id
             for v in BilibiliVideo.select(BilibiliVideo.id).where(
-                BilibiliVideo.poster == poster
+                BilibiliVideo.poster == poster and BilibiliVideo.tid in 
             )
         ]
         results = (
