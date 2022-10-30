@@ -12,7 +12,7 @@ import random
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
-from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSeconds
+from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSeconds, clearHtmlTags
 
 from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 import jieba
