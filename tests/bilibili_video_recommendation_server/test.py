@@ -510,7 +510,7 @@ def getUserVideos(
         pn += 1
 
 def resolveTidsFromTid(tid:int):
-    if tid == 0:
+    if tid not in tid:
         return allTids
 
 def searchRegisteredVideos()
