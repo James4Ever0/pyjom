@@ -435,12 +435,12 @@ def indexAndGetVideoObject(v, bilibiliUser):
         title=v["title"],
         tag=v["tag"],
         **favdict,
-        _debug=True
+        # _debug=True
     )
-    print("f", flag)
-    print(v)
-    print(bilibiliUser)
-    breakpoint()
+    # print("f", flag)
+    # print(v)
+    # print(bilibiliUser)
+    # breakpoint()
     bilibiliVideoIndex, _ = BilibiliVideoIndex.get_and_update_or_create(
         rowid=bilibiliVideo.id,
         description=textPreprocessing(bilibiliVideo.description),
