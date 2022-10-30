@@ -509,6 +509,9 @@ def getUserVideos(
         time.sleep(sleep)
         pn += 1
 
+def resolveTidsFromTid(tid:int):
+    
+
 def searchRegisteredVideos()
 
 def searchUserVideos(
