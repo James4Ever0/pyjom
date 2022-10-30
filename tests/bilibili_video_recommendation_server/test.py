@@ -534,11 +534,12 @@ def searchRegisteredVideosAndGetResultList(keyword: str,
     dedeuserid: Union[str,None] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     limit: int = 10,):
-    (BilibiliVideo.poster == poster) & 
     resolvedTids = resolveSubTidsFromTid(tid)
     condition=(BilibiliVideo.tid in resolvedTids)
     if dedeuserid:
         poster = registerUser(dedeuserid)
+    (BilibiliVideo.poster == poster) & condition
+
 
     user_video_ids = [
         v.id
