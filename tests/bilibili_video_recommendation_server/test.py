@@ -870,7 +870,9 @@ if __name__ == "__main__":
     schedule.every(20).minutes.do(refresh_status)
     # objective = 'test'
     objective = 'server'
-    port = 7341
+    # port = 7341
+    # can't specify port here.
+    # python3 -m uvicorn --port 8576 
     if objective == 'server':
         from fastapi import FastAPI
         app = FastAPI()
