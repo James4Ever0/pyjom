@@ -12,7 +12,11 @@ import random
 sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
-from pyjom.platforms.bilibili.utils import linkFixer, videoDurationStringToSeconds, clearHtmlTags
+from pyjom.platforms.bilibili.utils import (
+    linkFixer,
+    videoDurationStringToSeconds,
+    clearHtmlTags,
+)
 
 from lazero.search.preprocessing import getFourVersionsOfProcessedLine
 import jieba
@@ -436,7 +440,7 @@ def indexAndGetVideoObject(v, bilibiliUser):
         review=v.get("comment", v.get("review")),
         pubdate=v.get("created", v.get("pubdate")),
         description=v["description"],
-        title=clearHtmlTags(v["title"]), # it may contain highlights. be warned
+        title=clearHtmlTags(v["title"]),  # it may contain highlights. be warned
         tag=v["tag"],
         **favdict,
         # _debug=True
@@ -869,19 +873,22 @@ if __name__ == "__main__":
     refresh_status()  # ensure the database is connected.
     schedule.every(20).minutes.do(refresh_status)
     # objective = 'test'
-    objective = 'server'
+    objective = "server"
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
-    if objective == 'server':
+    if objective == "server":
         port = 7341
         from fastapi import FastAPI
         import uvicorn
+
         app = FastAPI()
+
         @app.get("/")
         def read_root():
             return "bilibili recommendation server"
+
         uvicorn.run(app, host="0.0.0.0", port=port)
-    elif objective == 'test':
+    elif objective == "test":
         test = "searchVideos"
         # test = "searchUserVideos"
         # test = "textPreprocessing"
@@ -903,7 +910,7 @@ if __name__ == "__main__":
         elif test == "searchVideos":
             query = "cod19"  # recent hot videos.
             for v in searchAndRegisterVideos(query):
-                print(v) # warning: title containing markup language.
+                print(v)  # warning: title containing markup language.
                 breakpoint()
             # you want to select video after search?
             # no keywords? are you kidding?
