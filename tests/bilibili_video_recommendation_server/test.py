@@ -662,7 +662,7 @@ def registerUserVideo(
     bvid: str,
     dedeuserid: str,
     is_mine: bool = False,
-    visible: bool = False,  # no checking on video visibility?
+    visible: bool = False,  # no checking on video visibility? maybe we need to do this 
 ):  # this is the video i just post. must be regularly checked then add to candidate list. you can check it when another call for my videos has been issued.
     # register user first, then register the video.
     # you will store it to database.
