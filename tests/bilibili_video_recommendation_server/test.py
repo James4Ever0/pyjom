@@ -901,7 +901,7 @@ if __name__ == "__main__":
         def register_user_video():
             ...
         
-        @app.get('/checkVideoVisibility') # are you sure to release some invisible video to our candidate?
+        @app.get('/checkVideoVisibility') # are you sure to release some invisible video to our client?
         def check_video_visibility():
             ...
         uvicorn.run(app, host="0.0.0.0", port=port)
