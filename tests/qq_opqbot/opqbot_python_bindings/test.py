@@ -17,6 +17,6 @@ print(qzoneManager) # so far so good.
 # result =
 # it is not running. fuck.
 content = 'hello world'
-qzoneManager.RefreshToken()
+qzoneManager.GetQzoneToken()
 result = qzoneManager.SendShuoShuo(content)
 print(result) # error to get qzone token. wtf?
