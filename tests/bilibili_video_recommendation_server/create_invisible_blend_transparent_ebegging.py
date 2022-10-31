@@ -18,5 +18,5 @@ ebImage = ebImage.resize(e_w, e_h)
 ebImage.apply_opacity(0.5)
 t_w, t_h = bgImage.width-e_w, bgImage.height-e_h
 
-bgImage.draw(ebImage,transform = pixie.translate(t_w, t_h),blend_mode=pixie.DARKEN_BLEND)
+bgImage.draw(ebImage,transform = pixie.translate(t_w, t_h))
 bgImage.write_file('ebegging_setu_transparent.png')
