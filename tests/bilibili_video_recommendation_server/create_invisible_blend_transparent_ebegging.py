@@ -3,7 +3,7 @@ background = "setu2.jpg"
 ebegging = "ebegging_template.png"
 
 import pixie
-
+ 
 bgImage = pixie.read_image(background)
 ebImage = pixie.read_image(ebegging)
 
