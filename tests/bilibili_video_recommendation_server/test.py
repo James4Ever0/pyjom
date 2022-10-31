@@ -891,14 +891,15 @@ if __name__ == "__main__":
 
         # just asking. post or get?
         @app.get("/searchVideos")
-        def search_video():
+        def search_videos():
             searchAndRegisterVideos()
         
         @app.get('/searchRegisteredVideos')
-        def search_registered_video():
+        def search_registered_videos():
+            ...
 
         @app.get("/searchUserVideos")
-        def search_user_video():
+        def search_user_videos():
             ...
 
         @app.get("/registerUserVideo")
