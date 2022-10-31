@@ -41,4 +41,3 @@ elif objective == 'send_image':
     result = action.sendFriendPic(
         user=user, picBase64Buf=b64_string.decode("utf-8")
     )  # better without content.
-
