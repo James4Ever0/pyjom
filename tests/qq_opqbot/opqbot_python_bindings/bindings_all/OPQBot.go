@@ -2958,130 +2958,101 @@ func OPQBot_Set_FaceMap(val CGoHandle) {
 
 // ---- Structs ---
 
-// --- wrapping struct: OPQBot.Reply ---
-//export OPQBot_Reply_CTor
-func OPQBot_Reply_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_Reply(&OPQBot.Reply{}))
+// --- wrapping struct: OPQBot.AtMsg ---
+//export OPQBot_AtMsg_CTor
+func OPQBot_AtMsg_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_AtMsg(&OPQBot.AtMsg{}))
 }
 
-//export OPQBot_Reply_Content_Get
-func OPQBot_Reply_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Reply(handle)
+//export OPQBot_AtMsg_Content_Get
+func OPQBot_AtMsg_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_AtMsg(handle)
 	return C.CString(op.Content)
 }
 
-//export OPQBot_Reply_Content_Set
-func OPQBot_Reply_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Reply(handle)
+//export OPQBot_AtMsg_Content_Set
+func OPQBot_AtMsg_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_AtMsg(handle)
 	op.Content = C.GoString(val)
 }
 
-//export OPQBot_Reply_SrcContent_Get
-func OPQBot_Reply_SrcContent_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Reply(handle)
-	return C.CString(op.SrcContent)
-}
-
-//export OPQBot_Reply_SrcContent_Set
-func OPQBot_Reply_SrcContent_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Reply(handle)
-	op.SrcContent = C.GoString(val)
-}
-
-//export OPQBot_Reply_MsgSeq_Get
-func OPQBot_Reply_MsgSeq_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_Reply(handle)
-	return C.longlong(op.MsgSeq)
-}
-
-//export OPQBot_Reply_MsgSeq_Set
-func OPQBot_Reply_MsgSeq_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_Reply(handle)
-	op.MsgSeq = int(val)
-}
-
-//export OPQBot_Reply_Tips_Get
-func OPQBot_Reply_Tips_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Reply(handle)
-	return C.CString(op.Tips)
-}
-
-//export OPQBot_Reply_Tips_Set
-func OPQBot_Reply_Tips_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Reply(handle)
-	op.Tips = C.GoString(val)
-}
-
-//export OPQBot_Reply_UserID_Get
-func OPQBot_Reply_UserID_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_OPQBot_Reply(handle)
+//export OPQBot_AtMsg_UserID_Get
+func OPQBot_AtMsg_UserID_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_OPQBot_AtMsg(handle)
 	return handleFromPtr_Slice_int64(&op.UserID)
 }
 
-//export OPQBot_Reply_UserID_Set
-func OPQBot_Reply_UserID_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_OPQBot_Reply(handle)
+//export OPQBot_AtMsg_UserID_Set
+func OPQBot_AtMsg_UserID_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_OPQBot_AtMsg(handle)
 	op.UserID = deptrFromHandle_Slice_int64(val)
 }
 
-// --- wrapping struct: OPQBot.SendTypeTextMsgContentPrivateChat ---
-//export OPQBot_SendTypeTextMsgContentPrivateChat_CTor
-func OPQBot_SendTypeTextMsgContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeTextMsgContentPrivateChat(&OPQBot.SendTypeTextMsgContentPrivateChat{}))
+//export OPQBot_AtMsg_Clean
+func OPQBot_AtMsg_Clean(_handle CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*OPQBot.AtMsg")
+	if __err != nil {
+		return handleFromPtr_OPQBot_AtMsg(nil)
+	}
+	cret := gopyh.Embed(vifc, reflect.TypeOf(OPQBot.AtMsg{})).(*OPQBot.AtMsg).Clean()
+
+	return handleFromPtr_OPQBot_AtMsg(&cret)
 }
 
-//export OPQBot_SendTypeTextMsgContentPrivateChat_Content_Get
-func OPQBot_SendTypeTextMsgContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeTextMsgContentPrivateChat(handle)
-	return C.CString(op.Content)
+// --- wrapping struct: OPQBot.GroupFileMsg ---
+//export OPQBot_GroupFileMsg_CTor
+func OPQBot_GroupFileMsg_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupFileMsg(&OPQBot.GroupFileMsg{}))
 }
 
-//export OPQBot_SendTypeTextMsgContentPrivateChat_Content_Set
-func OPQBot_SendTypeTextMsgContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeTextMsgContentPrivateChat(handle)
-	op.Content = C.GoString(val)
+//export OPQBot_GroupFileMsg_FileID_Get
+func OPQBot_GroupFileMsg_FileID_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
+	return C.CString(op.FileID)
 }
 
-//export OPQBot_SendTypeTextMsgContentPrivateChat_Group_Get
-func OPQBot_SendTypeTextMsgContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeTextMsgContentPrivateChat(handle)
-	return C.longlong(op.Group)
+//export OPQBot_GroupFileMsg_FileID_Set
+func OPQBot_GroupFileMsg_FileID_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
+	op.FileID = C.GoString(val)
 }
 
-//export OPQBot_SendTypeTextMsgContentPrivateChat_Group_Set
-func OPQBot_SendTypeTextMsgContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeTextMsgContentPrivateChat(handle)
-	op.Group = int64(val)
+//export OPQBot_GroupFileMsg_FileName_Get
+func OPQBot_GroupFileMsg_FileName_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
+	return C.CString(op.FileName)
 }
 
-// --- wrapping struct: OPQBot.SendTypeVoiceByLocalContentPrivateChat ---
-//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_CTor
-func OPQBot_SendTypeVoiceByLocalContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeVoiceByLocalContentPrivateChat(&OPQBot.SendTypeVoiceByLocalContentPrivateChat{}))
+//export OPQBot_GroupFileMsg_FileName_Set
+func OPQBot_GroupFileMsg_FileName_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
+	op.FileName = C.GoString(val)
 }
 
-//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Get
-func OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContentPrivateChat(handle)
-	return C.CString(op.Path)
+//export OPQBot_GroupFileMsg_FileSize_Get
+func OPQBot_GroupFileMsg_FileSize_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
+	return C.longlong(op.FileSize)
 }
 
-//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set
-func OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContentPrivateChat(handle)
-	op.Path = C.GoString(val)
+//export OPQBot_GroupFileMsg_FileSize_Set
+func OPQBot_GroupFileMsg_FileSize_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
+	op.FileSize = int(val)
 }
 
-//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Get
-func OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContentPrivateChat(handle)
-	return C.longlong(op.Group)
+//export OPQBot_GroupFileMsg_Tips_Get
+func OPQBot_GroupFileMsg_Tips_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
+	return C.CString(op.Tips)
 }
 
-//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set
-func OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContentPrivateChat(handle)
-	op.Group = int64(val)
+//export OPQBot_GroupFileMsg_Tips_Set
+func OPQBot_GroupFileMsg_Tips_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
+	op.Tips = C.GoString(val)
 }
 
 // --- wrapping struct: OPQBot.Context ---
@@ -3153,198 +3124,6 @@ func OPQBot_Context_Next(_handle CGoHandle, currentQQ C.longlong, result *C.char
 	}
 }
 
-// --- wrapping struct: OPQBot.GroupList ---
-//export OPQBot_GroupList_CTor
-func OPQBot_GroupList_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupList(&OPQBot.GroupList{}))
-}
-
-//export OPQBot_GroupList_Count_Get
-func OPQBot_GroupList_Count_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_GroupList(handle)
-	return C.longlong(op.Count)
-}
-
-//export OPQBot_GroupList_Count_Set
-func OPQBot_GroupList_Count_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_GroupList(handle)
-	op.Count = int(val)
-}
-
-//export OPQBot_GroupList_NextToken_Get
-func OPQBot_GroupList_NextToken_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupList(handle)
-	return C.CString(op.NextToken)
-}
-
-//export OPQBot_GroupList_NextToken_Set
-func OPQBot_GroupList_NextToken_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupList(handle)
-	op.NextToken = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeForwordContent ---
-//export OPQBot_SendTypeForwordContent_CTor
-func OPQBot_SendTypeForwordContent_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeForwordContent(&OPQBot.SendTypeForwordContent{}))
-}
-
-//export OPQBot_SendTypeForwordContent_ForwordBuf_Get
-func OPQBot_SendTypeForwordContent_ForwordBuf_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
-	return C.CString(op.ForwordBuf)
-}
-
-//export OPQBot_SendTypeForwordContent_ForwordBuf_Set
-func OPQBot_SendTypeForwordContent_ForwordBuf_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
-	op.ForwordBuf = C.GoString(val)
-}
-
-//export OPQBot_SendTypeForwordContent_ForwordField_Get
-func OPQBot_SendTypeForwordContent_ForwordField_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
-	return C.longlong(op.ForwordField)
-}
-
-//export OPQBot_SendTypeForwordContent_ForwordField_Set
-func OPQBot_SendTypeForwordContent_ForwordField_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
-	op.ForwordField = int(val)
-}
-
-//export OPQBot_SendTypeForwordContent_Content_Get
-func OPQBot_SendTypeForwordContent_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeForwordContent_Content_Set
-func OPQBot_SendTypeForwordContent_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
-	op.Content = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeJsonContentPrivateChat ---
-//export OPQBot_SendTypeJsonContentPrivateChat_CTor
-func OPQBot_SendTypeJsonContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeJsonContentPrivateChat(&OPQBot.SendTypeJsonContentPrivateChat{}))
-}
-
-//export OPQBot_SendTypeJsonContentPrivateChat_Content_Get
-func OPQBot_SendTypeJsonContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeJsonContentPrivateChat(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeJsonContentPrivateChat_Content_Set
-func OPQBot_SendTypeJsonContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeJsonContentPrivateChat(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypeJsonContentPrivateChat_Group_Get
-func OPQBot_SendTypeJsonContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeJsonContentPrivateChat(handle)
-	return C.longlong(op.Group)
-}
-
-//export OPQBot_SendTypeJsonContentPrivateChat_Group_Set
-func OPQBot_SendTypeJsonContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeJsonContentPrivateChat(handle)
-	op.Group = int64(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeVoiceByUrlContent ---
-//export OPQBot_SendTypeVoiceByUrlContent_CTor
-func OPQBot_SendTypeVoiceByUrlContent_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeVoiceByUrlContent(&OPQBot.SendTypeVoiceByUrlContent{}))
-}
-
-//export OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Get
-func OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContent(handle)
-	return C.CString(op.VoiceUrl)
-}
-
-//export OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Set
-func OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContent(handle)
-	op.VoiceUrl = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeVoiceByUrlContentPrivateChat ---
-//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_CTor
-func OPQBot_SendTypeVoiceByUrlContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeVoiceByUrlContentPrivateChat(&OPQBot.SendTypeVoiceByUrlContentPrivateChat{}))
-}
-
-//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Get
-func OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContentPrivateChat(handle)
-	return C.CString(op.VoiceUrl)
-}
-
-//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set
-func OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContentPrivateChat(handle)
-	op.VoiceUrl = C.GoString(val)
-}
-
-//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Get
-func OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContentPrivateChat(handle)
-	return C.longlong(op.Group)
-}
-
-//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set
-func OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContentPrivateChat(handle)
-	op.Group = int64(val)
-}
-
-// --- wrapping struct: OPQBot.GroupAdminSysNotifyPack ---
-//export OPQBot_GroupAdminSysNotifyPack_CTor
-func OPQBot_GroupAdminSysNotifyPack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupAdminSysNotifyPack(&OPQBot.GroupAdminSysNotifyPack{}))
-}
-
-// --- wrapping struct: OPQBot.GroupShutPack ---
-//export OPQBot_GroupShutPack_CTor
-func OPQBot_GroupShutPack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupShutPack(&OPQBot.GroupShutPack{}))
-}
-
-// --- wrapping struct: OPQBot.SendTypeXmlContentPrivateChat ---
-//export OPQBot_SendTypeXmlContentPrivateChat_CTor
-func OPQBot_SendTypeXmlContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeXmlContentPrivateChat(&OPQBot.SendTypeXmlContentPrivateChat{}))
-}
-
-//export OPQBot_SendTypeXmlContentPrivateChat_Content_Get
-func OPQBot_SendTypeXmlContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeXmlContentPrivateChat(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeXmlContentPrivateChat_Content_Set
-func OPQBot_SendTypeXmlContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeXmlContentPrivateChat(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypeXmlContentPrivateChat_Group_Get
-func OPQBot_SendTypeXmlContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeXmlContentPrivateChat(handle)
-	return C.longlong(op.Group)
-}
-
-//export OPQBot_SendTypeXmlContentPrivateChat_Group_Set
-func OPQBot_SendTypeXmlContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeXmlContentPrivateChat(handle)
-	op.Group = int64(val)
-}
-
 // --- wrapping struct: OPQBot.GroupMemberList ---
 //export OPQBot_GroupMemberList_CTor
 func OPQBot_GroupMemberList_CTor() CGoHandle {
@@ -3387,610 +3166,22 @@ func OPQBot_GroupMemberList_LastUin_Set(handle CGoHandle, val C.longlong) {
 	op.LastUin = int64(val)
 }
 
-// --- wrapping struct: OPQBot.MyRecord ---
-//export OPQBot_MyRecord_CTor
-func OPQBot_MyRecord_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_MyRecord(&OPQBot.MyRecord{}))
+// --- wrapping struct: OPQBot.SendTypeVoiceByLocalContent ---
+//export OPQBot_SendTypeVoiceByLocalContent_CTor
+func OPQBot_SendTypeVoiceByLocalContent_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeVoiceByLocalContent(&OPQBot.SendTypeVoiceByLocalContent{}))
 }
 
-//export OPQBot_MyRecord_FromGroupID_Get
-func OPQBot_MyRecord_FromGroupID_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	return C.longlong(op.FromGroupID)
-}
-
-//export OPQBot_MyRecord_FromGroupID_Set
-func OPQBot_MyRecord_FromGroupID_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	op.FromGroupID = int64(val)
-}
-
-//export OPQBot_MyRecord_MsgRandom_Get
-func OPQBot_MyRecord_MsgRandom_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	return C.longlong(op.MsgRandom)
-}
-
-//export OPQBot_MyRecord_MsgRandom_Set
-func OPQBot_MyRecord_MsgRandom_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	op.MsgRandom = int64(val)
-}
-
-//export OPQBot_MyRecord_MsgSeq_Get
-func OPQBot_MyRecord_MsgSeq_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	return C.longlong(op.MsgSeq)
-}
-
-//export OPQBot_MyRecord_MsgSeq_Set
-func OPQBot_MyRecord_MsgSeq_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	op.MsgSeq = int(val)
-}
-
-//export OPQBot_MyRecord_MsgTime_Get
-func OPQBot_MyRecord_MsgTime_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	return C.longlong(op.MsgTime)
-}
-
-//export OPQBot_MyRecord_MsgTime_Set
-func OPQBot_MyRecord_MsgTime_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	op.MsgTime = int(val)
-}
-
-//export OPQBot_MyRecord_MsgType_Get
-func OPQBot_MyRecord_MsgType_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	return C.CString(op.MsgType)
-}
-
-//export OPQBot_MyRecord_MsgType_Set
-func OPQBot_MyRecord_MsgType_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	op.MsgType = C.GoString(val)
-}
-
-//export OPQBot_MyRecord_Content_Get
-func OPQBot_MyRecord_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_MyRecord_Content_Set
-func OPQBot_MyRecord_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_MyRecord(handle)
-	op.Content = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypePicMsgByBase64Content ---
-//export OPQBot_SendTypePicMsgByBase64Content_CTor
-func OPQBot_SendTypePicMsgByBase64Content_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByBase64Content(&OPQBot.SendTypePicMsgByBase64Content{}))
-}
-
-//export OPQBot_SendTypePicMsgByBase64Content_Content_Get
-func OPQBot_SendTypePicMsgByBase64Content_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypePicMsgByBase64Content_Content_Set
-func OPQBot_SendTypePicMsgByBase64Content_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByBase64Content_Base64_Get
-func OPQBot_SendTypePicMsgByBase64Content_Base64_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
-	return C.CString(op.Base64)
-}
-
-//export OPQBot_SendTypePicMsgByBase64Content_Base64_Set
-func OPQBot_SendTypePicMsgByBase64Content_Base64_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
-	op.Base64 = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByBase64Content_Flash_Get
-func OPQBot_SendTypePicMsgByBase64Content_Flash_Get(handle CGoHandle) C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
-	return boolGoToPy(op.Flash)
-}
-
-//export OPQBot_SendTypePicMsgByBase64Content_Flash_Set
-func OPQBot_SendTypePicMsgByBase64Content_Flash_Set(handle CGoHandle, val C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
-	op.Flash = boolPyToGo(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypePicMsgByLocalContentPrivateChat ---
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_CTor
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByLocalContentPrivateChat(&OPQBot.SendTypePicMsgByLocalContentPrivateChat{}))
-}
-
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Get
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Get
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+//export OPQBot_SendTypeVoiceByLocalContent_Path_Get
+func OPQBot_SendTypeVoiceByLocalContent_Path_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContent(handle)
 	return C.CString(op.Path)
 }
 
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+//export OPQBot_SendTypeVoiceByLocalContent_Path_Set
+func OPQBot_SendTypeVoiceByLocalContent_Path_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContent(handle)
 	op.Path = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Get
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
-	return C.longlong(op.Group)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
-	op.Group = int64(val)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Get
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Get(handle CGoHandle) C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
-	return boolGoToPy(op.Flash)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set
-func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set(handle CGoHandle, val C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
-	op.Flash = boolPyToGo(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypePicMsgByMd5ContentPrivateChat ---
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_CTor
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(&OPQBot.SendTypePicMsgByMd5ContentPrivateChat{}))
-}
-
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Get
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Get
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
-	return handleFromPtr_Slice_string(&op.Md5s)
-}
-
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Set
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
-	op.Md5s = deptrFromHandle_Slice_string(val)
-}
-
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Get
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
-	return C.longlong(op.Group)
-}
-
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
-	op.Group = int64(val)
-}
-
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Get
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Get(handle CGoHandle) C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
-	return boolGoToPy(op.Flash)
-}
-
-//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set
-func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set(handle CGoHandle, val C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
-	op.Flash = boolPyToGo(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypePicMsgByUrlContentPrivateChat ---
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_CTor
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByUrlContentPrivateChat(&OPQBot.SendTypePicMsgByUrlContentPrivateChat{}))
-}
-
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Get
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Get
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
-	return C.CString(op.PicUrl)
-}
-
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
-	op.PicUrl = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Get
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
-	return C.longlong(op.Group)
-}
-
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
-	op.Group = int64(val)
-}
-
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Get
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Get(handle CGoHandle) C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
-	return boolGoToPy(op.Flash)
-}
-
-//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set
-func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set(handle CGoHandle, val C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
-	op.Flash = boolPyToGo(val)
-}
-
-// --- wrapping struct: OPQBot.FriendFileResult ---
-//export OPQBot_FriendFileResult_CTor
-func OPQBot_FriendFileResult_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_FriendFileResult(&OPQBot.FriendFileResult{}))
-}
-
-//export OPQBot_FriendFileResult_FileName_Get
-func OPQBot_FriendFileResult_FileName_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
-	return C.CString(op.FileName)
-}
-
-//export OPQBot_FriendFileResult_FileName_Set
-func OPQBot_FriendFileResult_FileName_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
-	op.FileName = C.GoString(val)
-}
-
-//export OPQBot_FriendFileResult_FileSize_Get
-func OPQBot_FriendFileResult_FileSize_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
-	return C.longlong(op.FileSize)
-}
-
-//export OPQBot_FriendFileResult_FileSize_Set
-func OPQBot_FriendFileResult_FileSize_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
-	op.FileSize = int(val)
-}
-
-//export OPQBot_FriendFileResult_FromUin_Get
-func OPQBot_FriendFileResult_FromUin_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
-	return C.longlong(op.FromUin)
-}
-
-//export OPQBot_FriendFileResult_FromUin_Set
-func OPQBot_FriendFileResult_FromUin_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
-	op.FromUin = int64(val)
-}
-
-//export OPQBot_FriendFileResult_URL_Get
-func OPQBot_FriendFileResult_URL_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
-	return C.CString(op.URL)
-}
-
-//export OPQBot_FriendFileResult_URL_Set
-func OPQBot_FriendFileResult_URL_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
-	op.URL = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.GroupJoinPack ---
-//export OPQBot_GroupJoinPack_CTor
-func OPQBot_GroupJoinPack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupJoinPack(&OPQBot.GroupJoinPack{}))
-}
-
-// --- wrapping struct: OPQBot.VideoMsg ---
-//export OPQBot_VideoMsg_CTor
-func OPQBot_VideoMsg_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_VideoMsg(&OPQBot.VideoMsg{}))
-}
-
-//export OPQBot_VideoMsg_ForwordBuf_Get
-func OPQBot_VideoMsg_ForwordBuf_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	return C.CString(op.ForwordBuf)
-}
-
-//export OPQBot_VideoMsg_ForwordBuf_Set
-func OPQBot_VideoMsg_ForwordBuf_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	op.ForwordBuf = C.GoString(val)
-}
-
-//export OPQBot_VideoMsg_ForwordField_Get
-func OPQBot_VideoMsg_ForwordField_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	return C.longlong(op.ForwordField)
-}
-
-//export OPQBot_VideoMsg_ForwordField_Set
-func OPQBot_VideoMsg_ForwordField_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	op.ForwordField = int(val)
-}
-
-//export OPQBot_VideoMsg_VideoMd5_Get
-func OPQBot_VideoMsg_VideoMd5_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	return C.CString(op.VideoMd5)
-}
-
-//export OPQBot_VideoMsg_VideoMd5_Set
-func OPQBot_VideoMsg_VideoMd5_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	op.VideoMd5 = C.GoString(val)
-}
-
-//export OPQBot_VideoMsg_VideoSize_Get
-func OPQBot_VideoMsg_VideoSize_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	return C.CString(op.VideoSize)
-}
-
-//export OPQBot_VideoMsg_VideoSize_Set
-func OPQBot_VideoMsg_VideoSize_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	op.VideoSize = C.GoString(val)
-}
-
-//export OPQBot_VideoMsg_VideoUrl_Get
-func OPQBot_VideoMsg_VideoUrl_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	return C.CString(op.VideoUrl)
-}
-
-//export OPQBot_VideoMsg_VideoUrl_Set
-func OPQBot_VideoMsg_VideoUrl_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	op.VideoUrl = C.GoString(val)
-}
-
-//export OPQBot_VideoMsg_Tips_Get
-func OPQBot_VideoMsg_Tips_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	return C.CString(op.Tips)
-}
-
-//export OPQBot_VideoMsg_Tips_Set
-func OPQBot_VideoMsg_Tips_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_VideoMsg(handle)
-	op.Tips = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeReplyContent ---
-//export OPQBot_SendTypeReplyContent_CTor
-func OPQBot_SendTypeReplyContent_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeReplyContent(&OPQBot.SendTypeReplyContent{}))
-}
-
-//export OPQBot_SendTypeReplyContent_Content_Get
-func OPQBot_SendTypeReplyContent_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeReplyContent(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeReplyContent_Content_Set
-func OPQBot_SendTypeReplyContent_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeReplyContent(handle)
-	op.Content = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeTextMsgContent ---
-//export OPQBot_SendTypeTextMsgContent_CTor
-func OPQBot_SendTypeTextMsgContent_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeTextMsgContent(&OPQBot.SendTypeTextMsgContent{}))
-}
-
-//export OPQBot_SendTypeTextMsgContent_Content_Get
-func OPQBot_SendTypeTextMsgContent_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeTextMsgContent(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeTextMsgContent_Content_Set
-func OPQBot_SendTypeTextMsgContent_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeTextMsgContent(handle)
-	op.Content = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.GroupFileMsg ---
-//export OPQBot_GroupFileMsg_CTor
-func OPQBot_GroupFileMsg_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupFileMsg(&OPQBot.GroupFileMsg{}))
-}
-
-//export OPQBot_GroupFileMsg_FileID_Get
-func OPQBot_GroupFileMsg_FileID_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
-	return C.CString(op.FileID)
-}
-
-//export OPQBot_GroupFileMsg_FileID_Set
-func OPQBot_GroupFileMsg_FileID_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
-	op.FileID = C.GoString(val)
-}
-
-//export OPQBot_GroupFileMsg_FileName_Get
-func OPQBot_GroupFileMsg_FileName_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
-	return C.CString(op.FileName)
-}
-
-//export OPQBot_GroupFileMsg_FileName_Set
-func OPQBot_GroupFileMsg_FileName_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
-	op.FileName = C.GoString(val)
-}
-
-//export OPQBot_GroupFileMsg_FileSize_Get
-func OPQBot_GroupFileMsg_FileSize_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
-	return C.longlong(op.FileSize)
-}
-
-//export OPQBot_GroupFileMsg_FileSize_Set
-func OPQBot_GroupFileMsg_FileSize_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
-	op.FileSize = int(val)
-}
-
-//export OPQBot_GroupFileMsg_Tips_Get
-func OPQBot_GroupFileMsg_Tips_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
-	return C.CString(op.Tips)
-}
-
-//export OPQBot_GroupFileMsg_Tips_Set
-func OPQBot_GroupFileMsg_Tips_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupFileMsg(handle)
-	op.Tips = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.GroupRevokePack ---
-//export OPQBot_GroupRevokePack_CTor
-func OPQBot_GroupRevokePack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupRevokePack(&OPQBot.GroupRevokePack{}))
-}
-
-// --- wrapping struct: OPQBot.PicMsg ---
-//export OPQBot_PicMsg_CTor
-func OPQBot_PicMsg_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_PicMsg(&OPQBot.PicMsg{}))
-}
-
-//export OPQBot_PicMsg_Content_Get
-func OPQBot_PicMsg_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_PicMsg(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_PicMsg_Content_Set
-func OPQBot_PicMsg_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_PicMsg(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_PicMsg_Tips_Get
-func OPQBot_PicMsg_Tips_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_PicMsg(handle)
-	return C.CString(op.Tips)
-}
-
-//export OPQBot_PicMsg_Tips_Set
-func OPQBot_PicMsg_Tips_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_PicMsg(handle)
-	op.Tips = C.GoString(val)
-}
-
-//export OPQBot_PicMsg_UserID_Get
-func OPQBot_PicMsg_UserID_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_OPQBot_PicMsg(handle)
-	return handleFromPtr_Slice_int64(&op.UserID)
-}
-
-//export OPQBot_PicMsg_UserID_Set
-func OPQBot_PicMsg_UserID_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_OPQBot_PicMsg(handle)
-	op.UserID = deptrFromHandle_Slice_int64(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeJsonContent ---
-//export OPQBot_SendTypeJsonContent_CTor
-func OPQBot_SendTypeJsonContent_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeJsonContent(&OPQBot.SendTypeJsonContent{}))
-}
-
-//export OPQBot_SendTypeJsonContent_Content_Get
-func OPQBot_SendTypeJsonContent_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeJsonContent(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeJsonContent_Content_Set
-func OPQBot_SendTypeJsonContent_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeJsonContent(handle)
-	op.Content = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeReplyContentPrivateChat ---
-//export OPQBot_SendTypeReplyContentPrivateChat_CTor
-func OPQBot_SendTypeReplyContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeReplyContentPrivateChat(&OPQBot.SendTypeReplyContentPrivateChat{}))
-}
-
-//export OPQBot_SendTypeReplyContentPrivateChat_Content_Get
-func OPQBot_SendTypeReplyContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeReplyContentPrivateChat(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeReplyContentPrivateChat_Content_Set
-func OPQBot_SendTypeReplyContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeReplyContentPrivateChat(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypeReplyContentPrivateChat_Group_Get
-func OPQBot_SendTypeReplyContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeReplyContentPrivateChat(handle)
-	return C.longlong(op.Group)
-}
-
-//export OPQBot_SendTypeReplyContentPrivateChat_Group_Set
-func OPQBot_SendTypeReplyContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeReplyContentPrivateChat(handle)
-	op.Group = int64(val)
 }
 
 // --- wrapping struct: OPQBot.UserCardInfo ---
@@ -4113,208 +3304,10 @@ func OPQBot_GroupExitSuccessPack_CTor() CGoHandle {
 	return CGoHandle(handleFromPtr_OPQBot_GroupExitSuccessPack(&OPQBot.GroupExitSuccessPack{}))
 }
 
-// --- wrapping struct: OPQBot.GroupExitPack ---
-//export OPQBot_GroupExitPack_CTor
-func OPQBot_GroupExitPack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupExitPack(&OPQBot.GroupExitPack{}))
-}
-
-// --- wrapping struct: OPQBot.FriendList ---
-//export OPQBot_FriendList_CTor
-func OPQBot_FriendList_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_FriendList(&OPQBot.FriendList{}))
-}
-
-//export OPQBot_FriendList_FriendCount_Get
-func OPQBot_FriendList_FriendCount_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendList(handle)
-	return C.longlong(op.FriendCount)
-}
-
-//export OPQBot_FriendList_FriendCount_Set
-func OPQBot_FriendList_FriendCount_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendList(handle)
-	op.FriendCount = int(val)
-}
-
-//export OPQBot_FriendList_GetfriendCount_Get
-func OPQBot_FriendList_GetfriendCount_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendList(handle)
-	return C.longlong(op.GetfriendCount)
-}
-
-//export OPQBot_FriendList_GetfriendCount_Set
-func OPQBot_FriendList_GetfriendCount_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendList(handle)
-	op.GetfriendCount = int(val)
-}
-
-//export OPQBot_FriendList_StartIndex_Get
-func OPQBot_FriendList_StartIndex_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendList(handle)
-	return C.longlong(op.StartIndex)
-}
-
-//export OPQBot_FriendList_StartIndex_Set
-func OPQBot_FriendList_StartIndex_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendList(handle)
-	op.StartIndex = int(val)
-}
-
-//export OPQBot_FriendList_TotoalFriendCount_Get
-func OPQBot_FriendList_TotoalFriendCount_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendList(handle)
-	return C.longlong(op.TotoalFriendCount)
-}
-
-//export OPQBot_FriendList_TotoalFriendCount_Set
-func OPQBot_FriendList_TotoalFriendCount_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendList(handle)
-	op.TotoalFriendCount = int(val)
-}
-
-// --- wrapping struct: OPQBot.GroupFileResult ---
-//export OPQBot_GroupFileResult_CTor
-func OPQBot_GroupFileResult_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupFileResult(&OPQBot.GroupFileResult{}))
-}
-
-//export OPQBot_GroupFileResult_Ret_Get
-func OPQBot_GroupFileResult_Ret_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_GroupFileResult(handle)
-	return C.longlong(op.Ret)
-}
-
-//export OPQBot_GroupFileResult_Ret_Set
-func OPQBot_GroupFileResult_Ret_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_GroupFileResult(handle)
-	op.Ret = int(val)
-}
-
-//export OPQBot_GroupFileResult_URL_Get
-func OPQBot_GroupFileResult_URL_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupFileResult(handle)
-	return C.CString(op.URL)
-}
-
-//export OPQBot_GroupFileResult_URL_Set
-func OPQBot_GroupFileResult_URL_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupFileResult(handle)
-	op.URL = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.GroupMsgPack ---
-//export OPQBot_GroupMsgPack_CTor
-func OPQBot_GroupMsgPack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupMsgPack(&OPQBot.GroupMsgPack{}))
-}
-
-//export OPQBot_GroupMsgPack_Content_Get
-func OPQBot_GroupMsgPack_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_GroupMsgPack_Content_Set
-func OPQBot_GroupMsgPack_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_GroupMsgPack_FromGroupID_Get
-func OPQBot_GroupMsgPack_FromGroupID_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.longlong(op.FromGroupID)
-}
-
-//export OPQBot_GroupMsgPack_FromGroupID_Set
-func OPQBot_GroupMsgPack_FromGroupID_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.FromGroupID = int64(val)
-}
-
-//export OPQBot_GroupMsgPack_FromGroupName_Get
-func OPQBot_GroupMsgPack_FromGroupName_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.CString(op.FromGroupName)
-}
-
-//export OPQBot_GroupMsgPack_FromGroupName_Set
-func OPQBot_GroupMsgPack_FromGroupName_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.FromGroupName = C.GoString(val)
-}
-
-//export OPQBot_GroupMsgPack_FromNickName_Get
-func OPQBot_GroupMsgPack_FromNickName_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.CString(op.FromNickName)
-}
-
-//export OPQBot_GroupMsgPack_FromNickName_Set
-func OPQBot_GroupMsgPack_FromNickName_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.FromNickName = C.GoString(val)
-}
-
-//export OPQBot_GroupMsgPack_FromUserID_Get
-func OPQBot_GroupMsgPack_FromUserID_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.longlong(op.FromUserID)
-}
-
-//export OPQBot_GroupMsgPack_FromUserID_Set
-func OPQBot_GroupMsgPack_FromUserID_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.FromUserID = int64(val)
-}
-
-//export OPQBot_GroupMsgPack_MsgRandom_Get
-func OPQBot_GroupMsgPack_MsgRandom_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.longlong(op.MsgRandom)
-}
-
-//export OPQBot_GroupMsgPack_MsgRandom_Set
-func OPQBot_GroupMsgPack_MsgRandom_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.MsgRandom = int64(val)
-}
-
-//export OPQBot_GroupMsgPack_MsgSeq_Get
-func OPQBot_GroupMsgPack_MsgSeq_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.longlong(op.MsgSeq)
-}
-
-//export OPQBot_GroupMsgPack_MsgSeq_Set
-func OPQBot_GroupMsgPack_MsgSeq_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.MsgSeq = int(val)
-}
-
-//export OPQBot_GroupMsgPack_MsgTime_Get
-func OPQBot_GroupMsgPack_MsgTime_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.longlong(op.MsgTime)
-}
-
-//export OPQBot_GroupMsgPack_MsgTime_Set
-func OPQBot_GroupMsgPack_MsgTime_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.MsgTime = int(val)
-}
-
-//export OPQBot_GroupMsgPack_MsgType_Get
-func OPQBot_GroupMsgPack_MsgType_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	return C.CString(op.MsgType)
-}
-
-//export OPQBot_GroupMsgPack_MsgType_Set
-func OPQBot_GroupMsgPack_MsgType_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
-	op.MsgType = C.GoString(val)
+// --- wrapping struct: OPQBot.GroupShutPack ---
+//export OPQBot_GroupShutPack_CTor
+func OPQBot_GroupShutPack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupShutPack(&OPQBot.GroupShutPack{}))
 }
 
 // --- wrapping struct: OPQBot.GroupSystemNotifyPack ---
@@ -4323,365 +3316,94 @@ func OPQBot_GroupSystemNotifyPack_CTor() CGoHandle {
 	return CGoHandle(handleFromPtr_OPQBot_GroupSystemNotifyPack(&OPQBot.GroupSystemNotifyPack{}))
 }
 
-// --- wrapping struct: OPQBot.SendTypePicMsgByBase64ContentPrivateChat ---
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_CTor
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(&OPQBot.SendTypePicMsgByBase64ContentPrivateChat{}))
+// --- wrapping struct: OPQBot.FriendMsgPack ---
+//export OPQBot_FriendMsgPack_CTor
+func OPQBot_FriendMsgPack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_FriendMsgPack(&OPQBot.FriendMsgPack{}))
 }
 
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Get
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+//export OPQBot_FriendMsgPack_Content_Get
+func OPQBot_FriendMsgPack_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
 	return C.CString(op.Content)
 }
 
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Set
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+//export OPQBot_FriendMsgPack_Content_Set
+func OPQBot_FriendMsgPack_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
 	op.Content = C.GoString(val)
 }
 
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Get
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
-	return C.CString(op.Base64)
+//export OPQBot_FriendMsgPack_FromUin_Get
+func OPQBot_FriendMsgPack_FromUin_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+	return C.longlong(op.FromUin)
 }
 
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Set
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
-	op.Base64 = C.GoString(val)
+//export OPQBot_FriendMsgPack_FromUin_Set
+func OPQBot_FriendMsgPack_FromUin_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+	op.FromUin = int64(val)
 }
 
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Get
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
-	return C.longlong(op.Group)
+//export OPQBot_FriendMsgPack_MsgSeq_Get
+func OPQBot_FriendMsgPack_MsgSeq_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+	return C.longlong(op.MsgSeq)
 }
 
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
-	op.Group = int64(val)
+//export OPQBot_FriendMsgPack_MsgSeq_Set
+func OPQBot_FriendMsgPack_MsgSeq_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+	op.MsgSeq = int(val)
 }
 
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Get
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Get(handle CGoHandle) C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
-	return boolGoToPy(op.Flash)
+//export OPQBot_FriendMsgPack_MsgType_Get
+func OPQBot_FriendMsgPack_MsgType_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+	return C.CString(op.MsgType)
 }
 
-//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set
-func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set(handle CGoHandle, val C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
-	op.Flash = boolPyToGo(val)
+//export OPQBot_FriendMsgPack_MsgType_Set
+func OPQBot_FriendMsgPack_MsgType_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+	op.MsgType = C.GoString(val)
 }
 
-// --- wrapping struct: OPQBot.AtMsg ---
-//export OPQBot_AtMsg_CTor
-func OPQBot_AtMsg_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_AtMsg(&OPQBot.AtMsg{}))
+//export OPQBot_FriendMsgPack_ToUin_Get
+func OPQBot_FriendMsgPack_ToUin_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+	return C.longlong(op.ToUin)
 }
 
-//export OPQBot_AtMsg_Content_Get
-func OPQBot_AtMsg_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_AtMsg(handle)
+//export OPQBot_FriendMsgPack_ToUin_Set
+func OPQBot_FriendMsgPack_ToUin_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+	op.ToUin = int64(val)
+}
+
+// --- wrapping struct: OPQBot.GroupRevokePack ---
+//export OPQBot_GroupRevokePack_CTor
+func OPQBot_GroupRevokePack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupRevokePack(&OPQBot.GroupRevokePack{}))
+}
+
+// --- wrapping struct: OPQBot.SendTypeJsonContent ---
+//export OPQBot_SendTypeJsonContent_CTor
+func OPQBot_SendTypeJsonContent_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeJsonContent(&OPQBot.SendTypeJsonContent{}))
+}
+
+//export OPQBot_SendTypeJsonContent_Content_Get
+func OPQBot_SendTypeJsonContent_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeJsonContent(handle)
 	return C.CString(op.Content)
 }
 
-//export OPQBot_AtMsg_Content_Set
-func OPQBot_AtMsg_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_AtMsg(handle)
+//export OPQBot_SendTypeJsonContent_Content_Set
+func OPQBot_SendTypeJsonContent_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeJsonContent(handle)
 	op.Content = C.GoString(val)
-}
-
-//export OPQBot_AtMsg_UserID_Get
-func OPQBot_AtMsg_UserID_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_OPQBot_AtMsg(handle)
-	return handleFromPtr_Slice_int64(&op.UserID)
-}
-
-//export OPQBot_AtMsg_UserID_Set
-func OPQBot_AtMsg_UserID_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_OPQBot_AtMsg(handle)
-	op.UserID = deptrFromHandle_Slice_int64(val)
-}
-
-//export OPQBot_AtMsg_Clean
-func OPQBot_AtMsg_Clean(_handle CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*OPQBot.AtMsg")
-	if __err != nil {
-		return handleFromPtr_OPQBot_AtMsg(nil)
-	}
-	cret := gopyh.Embed(vifc, reflect.TypeOf(OPQBot.AtMsg{})).(*OPQBot.AtMsg).Clean()
-
-	return handleFromPtr_OPQBot_AtMsg(&cret)
-}
-
-// --- wrapping struct: OPQBot.Cookie ---
-//export OPQBot_Cookie_CTor
-func OPQBot_Cookie_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_Cookie(&OPQBot.Cookie{}))
-}
-
-//export OPQBot_Cookie_ClientKey_Get
-func OPQBot_Cookie_ClientKey_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	return C.CString(op.ClientKey)
-}
-
-//export OPQBot_Cookie_ClientKey_Set
-func OPQBot_Cookie_ClientKey_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	op.ClientKey = C.GoString(val)
-}
-
-//export OPQBot_Cookie_Cookies_Get
-func OPQBot_Cookie_Cookies_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	return C.CString(op.Cookies)
-}
-
-//export OPQBot_Cookie_Cookies_Set
-func OPQBot_Cookie_Cookies_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	op.Cookies = C.GoString(val)
-}
-
-//export OPQBot_Cookie_Gtk_Get
-func OPQBot_Cookie_Gtk_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	return C.CString(op.Gtk)
-}
-
-//export OPQBot_Cookie_Gtk_Set
-func OPQBot_Cookie_Gtk_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	op.Gtk = C.GoString(val)
-}
-
-//export OPQBot_Cookie_Gtk32_Get
-func OPQBot_Cookie_Gtk32_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	return C.CString(op.Gtk32)
-}
-
-//export OPQBot_Cookie_Gtk32_Set
-func OPQBot_Cookie_Gtk32_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	op.Gtk32 = C.GoString(val)
-}
-
-//export OPQBot_Cookie_Skey_Get
-func OPQBot_Cookie_Skey_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	return C.CString(op.Skey)
-}
-
-//export OPQBot_Cookie_Skey_Set
-func OPQBot_Cookie_Skey_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Cookie(handle)
-	op.Skey = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeVoiceByLocalContent ---
-//export OPQBot_SendTypeVoiceByLocalContent_CTor
-func OPQBot_SendTypeVoiceByLocalContent_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeVoiceByLocalContent(&OPQBot.SendTypeVoiceByLocalContent{}))
-}
-
-//export OPQBot_SendTypeVoiceByLocalContent_Path_Get
-func OPQBot_SendTypeVoiceByLocalContent_Path_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContent(handle)
-	return C.CString(op.Path)
-}
-
-//export OPQBot_SendTypeVoiceByLocalContent_Path_Set
-func OPQBot_SendTypeVoiceByLocalContent_Path_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContent(handle)
-	op.Path = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypeXmlContent ---
-//export OPQBot_SendTypeXmlContent_CTor
-func OPQBot_SendTypeXmlContent_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeXmlContent(&OPQBot.SendTypeXmlContent{}))
-}
-
-//export OPQBot_SendTypeXmlContent_Content_Get
-func OPQBot_SendTypeXmlContent_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeXmlContent(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeXmlContent_Content_Set
-func OPQBot_SendTypeXmlContent_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeXmlContent(handle)
-	op.Content = C.GoString(val)
-}
-
-// --- wrapping struct: OPQBot.Result ---
-//export OPQBot_Result_CTor
-func OPQBot_Result_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_Result(&OPQBot.Result{}))
-}
-
-//export OPQBot_Result_Msg_Get
-func OPQBot_Result_Msg_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_Result(handle)
-	return C.CString(op.Msg)
-}
-
-//export OPQBot_Result_Msg_Set
-func OPQBot_Result_Msg_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_Result(handle)
-	op.Msg = C.GoString(val)
-}
-
-//export OPQBot_Result_Ret_Get
-func OPQBot_Result_Ret_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_Result(handle)
-	return C.longlong(op.Ret)
-}
-
-//export OPQBot_Result_Ret_Set
-func OPQBot_Result_Ret_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_Result(handle)
-	op.Ret = int(val)
-}
-
-// --- wrapping struct: OPQBot.SendMsgPack ---
-//export OPQBot_SendMsgPack_CTor
-func OPQBot_SendMsgPack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendMsgPack(&OPQBot.SendMsgPack{}))
-}
-
-//export OPQBot_SendMsgPack_SendToType_Get
-func OPQBot_SendMsgPack_SendToType_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendMsgPack(handle)
-	return C.longlong(op.SendToType)
-}
-
-//export OPQBot_SendMsgPack_SendToType_Set
-func OPQBot_SendMsgPack_SendToType_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendMsgPack(handle)
-	op.SendToType = int(val)
-}
-
-//export OPQBot_SendMsgPack_ToUserUid_Get
-func OPQBot_SendMsgPack_ToUserUid_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendMsgPack(handle)
-	return C.longlong(op.ToUserUid)
-}
-
-//export OPQBot_SendMsgPack_ToUserUid_Set
-func OPQBot_SendMsgPack_ToUserUid_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendMsgPack(handle)
-	op.ToUserUid = int64(val)
-}
-
-// --- wrapping struct: OPQBot.GroupAdminPack ---
-//export OPQBot_GroupAdminPack_CTor
-func OPQBot_GroupAdminPack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_GroupAdminPack(&OPQBot.GroupAdminPack{}))
-}
-
-// --- wrapping struct: OPQBot.SendTypeForwordContentPrivateChat ---
-//export OPQBot_SendTypeForwordContentPrivateChat_CTor
-func OPQBot_SendTypeForwordContentPrivateChat_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypeForwordContentPrivateChat(&OPQBot.SendTypeForwordContentPrivateChat{}))
-}
-
-//export OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Get
-func OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
-	return C.CString(op.ForwordBuf)
-}
-
-//export OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set
-func OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
-	op.ForwordBuf = C.GoString(val)
-}
-
-//export OPQBot_SendTypeForwordContentPrivateChat_Content_Get
-func OPQBot_SendTypeForwordContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypeForwordContentPrivateChat_Content_Set
-func OPQBot_SendTypeForwordContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Get
-func OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
-	return C.longlong(op.ForwordField)
-}
-
-//export OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set
-func OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
-	op.ForwordField = int(val)
-}
-
-//export OPQBot_SendTypeForwordContentPrivateChat_Group_Get
-func OPQBot_SendTypeForwordContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
-	return C.longlong(op.Group)
-}
-
-//export OPQBot_SendTypeForwordContentPrivateChat_Group_Set
-func OPQBot_SendTypeForwordContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
-	op.Group = int64(val)
-}
-
-// --- wrapping struct: OPQBot.SendTypePicMsgByLocalContent ---
-//export OPQBot_SendTypePicMsgByLocalContent_CTor
-func OPQBot_SendTypePicMsgByLocalContent_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByLocalContent(&OPQBot.SendTypePicMsgByLocalContent{}))
-}
-
-//export OPQBot_SendTypePicMsgByLocalContent_Content_Get
-func OPQBot_SendTypePicMsgByLocalContent_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
-	return C.CString(op.Content)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContent_Content_Set
-func OPQBot_SendTypePicMsgByLocalContent_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
-	op.Content = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContent_Path_Get
-func OPQBot_SendTypePicMsgByLocalContent_Path_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
-	return C.CString(op.Path)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContent_Path_Set
-func OPQBot_SendTypePicMsgByLocalContent_Path_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
-	op.Path = C.GoString(val)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContent_Flash_Get
-func OPQBot_SendTypePicMsgByLocalContent_Flash_Get(handle CGoHandle) C.char {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
-	return boolGoToPy(op.Flash)
-}
-
-//export OPQBot_SendTypePicMsgByLocalContent_Flash_Set
-func OPQBot_SendTypePicMsgByLocalContent_Flash_Set(handle CGoHandle, val C.char) {
-	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
-	op.Flash = boolPyToGo(val)
 }
 
 // --- wrapping struct: OPQBot.SendTypePicMsgByMd5Content ---
@@ -4768,58 +3490,22 @@ func OPQBot_SendTypePicMsgByUrlContent_Flash_Set(handle CGoHandle, val C.char) {
 	op.Flash = boolPyToGo(val)
 }
 
-// --- wrapping struct: OPQBot.UserInfo ---
-//export OPQBot_UserInfo_CTor
-func OPQBot_UserInfo_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_UserInfo(&OPQBot.UserInfo{}))
+// --- wrapping struct: OPQBot.SendTypeReplyContent ---
+//export OPQBot_SendTypeReplyContent_CTor
+func OPQBot_SendTypeReplyContent_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeReplyContent(&OPQBot.SendTypeReplyContent{}))
 }
 
-//export OPQBot_UserInfo_Code_Get
-func OPQBot_UserInfo_Code_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_UserInfo(handle)
-	return C.longlong(op.Code)
+//export OPQBot_SendTypeReplyContent_Content_Get
+func OPQBot_SendTypeReplyContent_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeReplyContent(handle)
+	return C.CString(op.Content)
 }
 
-//export OPQBot_UserInfo_Code_Set
-func OPQBot_UserInfo_Code_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_UserInfo(handle)
-	op.Code = int(val)
-}
-
-//export OPQBot_UserInfo_Default_Get
-func OPQBot_UserInfo_Default_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_UserInfo(handle)
-	return C.longlong(op.Default)
-}
-
-//export OPQBot_UserInfo_Default_Set
-func OPQBot_UserInfo_Default_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_UserInfo(handle)
-	op.Default = int(val)
-}
-
-//export OPQBot_UserInfo_Message_Get
-func OPQBot_UserInfo_Message_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_UserInfo(handle)
-	return C.CString(op.Message)
-}
-
-//export OPQBot_UserInfo_Message_Set
-func OPQBot_UserInfo_Message_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_UserInfo(handle)
-	op.Message = C.GoString(val)
-}
-
-//export OPQBot_UserInfo_Subcode_Get
-func OPQBot_UserInfo_Subcode_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_UserInfo(handle)
-	return C.longlong(op.Subcode)
-}
-
-//export OPQBot_UserInfo_Subcode_Set
-func OPQBot_UserInfo_Subcode_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_UserInfo(handle)
-	op.Subcode = int(val)
+//export OPQBot_SendTypeReplyContent_Content_Set
+func OPQBot_SendTypeReplyContent_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeReplyContent(handle)
+	op.Content = C.GoString(val)
 }
 
 // --- wrapping struct: OPQBot.BotManager ---
@@ -5450,70 +4136,1384 @@ func OPQBot_BotManager_SendGroupXmlMsg(_handle CGoHandle, GroupUin C.longlong, C
 	}
 }
 
-// --- wrapping struct: OPQBot.FriendMsgPack ---
-//export OPQBot_FriendMsgPack_CTor
-func OPQBot_FriendMsgPack_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_OPQBot_FriendMsgPack(&OPQBot.FriendMsgPack{}))
+// --- wrapping struct: OPQBot.Cookie ---
+//export OPQBot_Cookie_CTor
+func OPQBot_Cookie_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_Cookie(&OPQBot.Cookie{}))
 }
 
-//export OPQBot_FriendMsgPack_Content_Get
-func OPQBot_FriendMsgPack_Content_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+//export OPQBot_Cookie_ClientKey_Get
+func OPQBot_Cookie_ClientKey_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	return C.CString(op.ClientKey)
+}
+
+//export OPQBot_Cookie_ClientKey_Set
+func OPQBot_Cookie_ClientKey_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	op.ClientKey = C.GoString(val)
+}
+
+//export OPQBot_Cookie_Cookies_Get
+func OPQBot_Cookie_Cookies_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	return C.CString(op.Cookies)
+}
+
+//export OPQBot_Cookie_Cookies_Set
+func OPQBot_Cookie_Cookies_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	op.Cookies = C.GoString(val)
+}
+
+//export OPQBot_Cookie_Gtk_Get
+func OPQBot_Cookie_Gtk_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	return C.CString(op.Gtk)
+}
+
+//export OPQBot_Cookie_Gtk_Set
+func OPQBot_Cookie_Gtk_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	op.Gtk = C.GoString(val)
+}
+
+//export OPQBot_Cookie_Gtk32_Get
+func OPQBot_Cookie_Gtk32_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	return C.CString(op.Gtk32)
+}
+
+//export OPQBot_Cookie_Gtk32_Set
+func OPQBot_Cookie_Gtk32_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	op.Gtk32 = C.GoString(val)
+}
+
+//export OPQBot_Cookie_Skey_Get
+func OPQBot_Cookie_Skey_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	return C.CString(op.Skey)
+}
+
+//export OPQBot_Cookie_Skey_Set
+func OPQBot_Cookie_Skey_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Cookie(handle)
+	op.Skey = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByBase64Content ---
+//export OPQBot_SendTypePicMsgByBase64Content_CTor
+func OPQBot_SendTypePicMsgByBase64Content_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByBase64Content(&OPQBot.SendTypePicMsgByBase64Content{}))
+}
+
+//export OPQBot_SendTypePicMsgByBase64Content_Content_Get
+func OPQBot_SendTypePicMsgByBase64Content_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
 	return C.CString(op.Content)
 }
 
-//export OPQBot_FriendMsgPack_Content_Set
-func OPQBot_FriendMsgPack_Content_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+//export OPQBot_SendTypePicMsgByBase64Content_Content_Set
+func OPQBot_SendTypePicMsgByBase64Content_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
 	op.Content = C.GoString(val)
 }
 
-//export OPQBot_FriendMsgPack_FromUin_Get
-func OPQBot_FriendMsgPack_FromUin_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+//export OPQBot_SendTypePicMsgByBase64Content_Base64_Get
+func OPQBot_SendTypePicMsgByBase64Content_Base64_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
+	return C.CString(op.Base64)
+}
+
+//export OPQBot_SendTypePicMsgByBase64Content_Base64_Set
+func OPQBot_SendTypePicMsgByBase64Content_Base64_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
+	op.Base64 = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByBase64Content_Flash_Get
+func OPQBot_SendTypePicMsgByBase64Content_Flash_Get(handle CGoHandle) C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
+	return boolGoToPy(op.Flash)
+}
+
+//export OPQBot_SendTypePicMsgByBase64Content_Flash_Set
+func OPQBot_SendTypePicMsgByBase64Content_Flash_Set(handle CGoHandle, val C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64Content(handle)
+	op.Flash = boolPyToGo(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByLocalContent ---
+//export OPQBot_SendTypePicMsgByLocalContent_CTor
+func OPQBot_SendTypePicMsgByLocalContent_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByLocalContent(&OPQBot.SendTypePicMsgByLocalContent{}))
+}
+
+//export OPQBot_SendTypePicMsgByLocalContent_Content_Get
+func OPQBot_SendTypePicMsgByLocalContent_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContent_Content_Set
+func OPQBot_SendTypePicMsgByLocalContent_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContent_Path_Get
+func OPQBot_SendTypePicMsgByLocalContent_Path_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
+	return C.CString(op.Path)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContent_Path_Set
+func OPQBot_SendTypePicMsgByLocalContent_Path_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
+	op.Path = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContent_Flash_Get
+func OPQBot_SendTypePicMsgByLocalContent_Flash_Get(handle CGoHandle) C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
+	return boolGoToPy(op.Flash)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContent_Flash_Set
+func OPQBot_SendTypePicMsgByLocalContent_Flash_Set(handle CGoHandle, val C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContent(handle)
+	op.Flash = boolPyToGo(val)
+}
+
+// --- wrapping struct: OPQBot.UserInfo ---
+//export OPQBot_UserInfo_CTor
+func OPQBot_UserInfo_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_UserInfo(&OPQBot.UserInfo{}))
+}
+
+//export OPQBot_UserInfo_Code_Get
+func OPQBot_UserInfo_Code_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_UserInfo(handle)
+	return C.longlong(op.Code)
+}
+
+//export OPQBot_UserInfo_Code_Set
+func OPQBot_UserInfo_Code_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_UserInfo(handle)
+	op.Code = int(val)
+}
+
+//export OPQBot_UserInfo_Default_Get
+func OPQBot_UserInfo_Default_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_UserInfo(handle)
+	return C.longlong(op.Default)
+}
+
+//export OPQBot_UserInfo_Default_Set
+func OPQBot_UserInfo_Default_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_UserInfo(handle)
+	op.Default = int(val)
+}
+
+//export OPQBot_UserInfo_Message_Get
+func OPQBot_UserInfo_Message_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_UserInfo(handle)
+	return C.CString(op.Message)
+}
+
+//export OPQBot_UserInfo_Message_Set
+func OPQBot_UserInfo_Message_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_UserInfo(handle)
+	op.Message = C.GoString(val)
+}
+
+//export OPQBot_UserInfo_Subcode_Get
+func OPQBot_UserInfo_Subcode_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_UserInfo(handle)
+	return C.longlong(op.Subcode)
+}
+
+//export OPQBot_UserInfo_Subcode_Set
+func OPQBot_UserInfo_Subcode_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_UserInfo(handle)
+	op.Subcode = int(val)
+}
+
+// --- wrapping struct: OPQBot.FriendFileResult ---
+//export OPQBot_FriendFileResult_CTor
+func OPQBot_FriendFileResult_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_FriendFileResult(&OPQBot.FriendFileResult{}))
+}
+
+//export OPQBot_FriendFileResult_FileName_Get
+func OPQBot_FriendFileResult_FileName_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
+	return C.CString(op.FileName)
+}
+
+//export OPQBot_FriendFileResult_FileName_Set
+func OPQBot_FriendFileResult_FileName_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
+	op.FileName = C.GoString(val)
+}
+
+//export OPQBot_FriendFileResult_FileSize_Get
+func OPQBot_FriendFileResult_FileSize_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
+	return C.longlong(op.FileSize)
+}
+
+//export OPQBot_FriendFileResult_FileSize_Set
+func OPQBot_FriendFileResult_FileSize_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
+	op.FileSize = int(val)
+}
+
+//export OPQBot_FriendFileResult_FromUin_Get
+func OPQBot_FriendFileResult_FromUin_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
 	return C.longlong(op.FromUin)
 }
 
-//export OPQBot_FriendMsgPack_FromUin_Set
-func OPQBot_FriendMsgPack_FromUin_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+//export OPQBot_FriendFileResult_FromUin_Set
+func OPQBot_FriendFileResult_FromUin_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
 	op.FromUin = int64(val)
 }
 
-//export OPQBot_FriendMsgPack_MsgSeq_Get
-func OPQBot_FriendMsgPack_MsgSeq_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+//export OPQBot_FriendFileResult_URL_Get
+func OPQBot_FriendFileResult_URL_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
+	return C.CString(op.URL)
+}
+
+//export OPQBot_FriendFileResult_URL_Set
+func OPQBot_FriendFileResult_URL_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_FriendFileResult(handle)
+	op.URL = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.FriendList ---
+//export OPQBot_FriendList_CTor
+func OPQBot_FriendList_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_FriendList(&OPQBot.FriendList{}))
+}
+
+//export OPQBot_FriendList_FriendCount_Get
+func OPQBot_FriendList_FriendCount_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendList(handle)
+	return C.longlong(op.FriendCount)
+}
+
+//export OPQBot_FriendList_FriendCount_Set
+func OPQBot_FriendList_FriendCount_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendList(handle)
+	op.FriendCount = int(val)
+}
+
+//export OPQBot_FriendList_GetfriendCount_Get
+func OPQBot_FriendList_GetfriendCount_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendList(handle)
+	return C.longlong(op.GetfriendCount)
+}
+
+//export OPQBot_FriendList_GetfriendCount_Set
+func OPQBot_FriendList_GetfriendCount_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendList(handle)
+	op.GetfriendCount = int(val)
+}
+
+//export OPQBot_FriendList_StartIndex_Get
+func OPQBot_FriendList_StartIndex_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendList(handle)
+	return C.longlong(op.StartIndex)
+}
+
+//export OPQBot_FriendList_StartIndex_Set
+func OPQBot_FriendList_StartIndex_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendList(handle)
+	op.StartIndex = int(val)
+}
+
+//export OPQBot_FriendList_TotoalFriendCount_Get
+func OPQBot_FriendList_TotoalFriendCount_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_FriendList(handle)
+	return C.longlong(op.TotoalFriendCount)
+}
+
+//export OPQBot_FriendList_TotoalFriendCount_Set
+func OPQBot_FriendList_TotoalFriendCount_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_FriendList(handle)
+	op.TotoalFriendCount = int(val)
+}
+
+// --- wrapping struct: OPQBot.GroupExitPack ---
+//export OPQBot_GroupExitPack_CTor
+func OPQBot_GroupExitPack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupExitPack(&OPQBot.GroupExitPack{}))
+}
+
+// --- wrapping struct: OPQBot.GroupFileResult ---
+//export OPQBot_GroupFileResult_CTor
+func OPQBot_GroupFileResult_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupFileResult(&OPQBot.GroupFileResult{}))
+}
+
+//export OPQBot_GroupFileResult_Ret_Get
+func OPQBot_GroupFileResult_Ret_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_GroupFileResult(handle)
+	return C.longlong(op.Ret)
+}
+
+//export OPQBot_GroupFileResult_Ret_Set
+func OPQBot_GroupFileResult_Ret_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_GroupFileResult(handle)
+	op.Ret = int(val)
+}
+
+//export OPQBot_GroupFileResult_URL_Get
+func OPQBot_GroupFileResult_URL_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupFileResult(handle)
+	return C.CString(op.URL)
+}
+
+//export OPQBot_GroupFileResult_URL_Set
+func OPQBot_GroupFileResult_URL_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupFileResult(handle)
+	op.URL = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.Reply ---
+//export OPQBot_Reply_CTor
+func OPQBot_Reply_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_Reply(&OPQBot.Reply{}))
+}
+
+//export OPQBot_Reply_Content_Get
+func OPQBot_Reply_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Reply(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_Reply_Content_Set
+func OPQBot_Reply_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Reply(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_Reply_SrcContent_Get
+func OPQBot_Reply_SrcContent_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Reply(handle)
+	return C.CString(op.SrcContent)
+}
+
+//export OPQBot_Reply_SrcContent_Set
+func OPQBot_Reply_SrcContent_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Reply(handle)
+	op.SrcContent = C.GoString(val)
+}
+
+//export OPQBot_Reply_MsgSeq_Get
+func OPQBot_Reply_MsgSeq_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_Reply(handle)
 	return C.longlong(op.MsgSeq)
 }
 
-//export OPQBot_FriendMsgPack_MsgSeq_Set
-func OPQBot_FriendMsgPack_MsgSeq_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+//export OPQBot_Reply_MsgSeq_Set
+func OPQBot_Reply_MsgSeq_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_Reply(handle)
 	op.MsgSeq = int(val)
 }
 
-//export OPQBot_FriendMsgPack_MsgType_Get
-func OPQBot_FriendMsgPack_MsgType_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+//export OPQBot_Reply_Tips_Get
+func OPQBot_Reply_Tips_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Reply(handle)
+	return C.CString(op.Tips)
+}
+
+//export OPQBot_Reply_Tips_Set
+func OPQBot_Reply_Tips_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Reply(handle)
+	op.Tips = C.GoString(val)
+}
+
+//export OPQBot_Reply_UserID_Get
+func OPQBot_Reply_UserID_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_OPQBot_Reply(handle)
+	return handleFromPtr_Slice_int64(&op.UserID)
+}
+
+//export OPQBot_Reply_UserID_Set
+func OPQBot_Reply_UserID_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_OPQBot_Reply(handle)
+	op.UserID = deptrFromHandle_Slice_int64(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeForwordContentPrivateChat ---
+//export OPQBot_SendTypeForwordContentPrivateChat_CTor
+func OPQBot_SendTypeForwordContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeForwordContentPrivateChat(&OPQBot.SendTypeForwordContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Get
+func OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
+	return C.CString(op.ForwordBuf)
+}
+
+//export OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set
+func OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
+	op.ForwordBuf = C.GoString(val)
+}
+
+//export OPQBot_SendTypeForwordContentPrivateChat_Content_Get
+func OPQBot_SendTypeForwordContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypeForwordContentPrivateChat_Content_Set
+func OPQBot_SendTypeForwordContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Get
+func OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
+	return C.longlong(op.ForwordField)
+}
+
+//export OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set
+func OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
+	op.ForwordField = int(val)
+}
+
+//export OPQBot_SendTypeForwordContentPrivateChat_Group_Get
+func OPQBot_SendTypeForwordContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypeForwordContentPrivateChat_Group_Set
+func OPQBot_SendTypeForwordContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByBase64ContentPrivateChat ---
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_CTor
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(&OPQBot.SendTypePicMsgByBase64ContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Get
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Set
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Get
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+	return C.CString(op.Base64)
+}
+
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Set
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+	op.Base64 = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Get
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Get
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Get(handle CGoHandle) C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+	return boolGoToPy(op.Flash)
+}
+
+//export OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set
+func OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set(handle CGoHandle, val C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByBase64ContentPrivateChat(handle)
+	op.Flash = boolPyToGo(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByMd5ContentPrivateChat ---
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_CTor
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(&OPQBot.SendTypePicMsgByMd5ContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Get
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Get
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
+	return handleFromPtr_Slice_string(&op.Md5s)
+}
+
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Set
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
+	op.Md5s = deptrFromHandle_Slice_string(val)
+}
+
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Get
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Get
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Get(handle CGoHandle) C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
+	return boolGoToPy(op.Flash)
+}
+
+//export OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set
+func OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set(handle CGoHandle, val C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByMd5ContentPrivateChat(handle)
+	op.Flash = boolPyToGo(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeVoiceByUrlContentPrivateChat ---
+//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_CTor
+func OPQBot_SendTypeVoiceByUrlContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeVoiceByUrlContentPrivateChat(&OPQBot.SendTypeVoiceByUrlContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Get
+func OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContentPrivateChat(handle)
+	return C.CString(op.VoiceUrl)
+}
+
+//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set
+func OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContentPrivateChat(handle)
+	op.VoiceUrl = C.GoString(val)
+}
+
+//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Get
+func OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set
+func OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+// --- wrapping struct: OPQBot.MyRecord ---
+//export OPQBot_MyRecord_CTor
+func OPQBot_MyRecord_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_MyRecord(&OPQBot.MyRecord{}))
+}
+
+//export OPQBot_MyRecord_FromGroupID_Get
+func OPQBot_MyRecord_FromGroupID_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	return C.longlong(op.FromGroupID)
+}
+
+//export OPQBot_MyRecord_FromGroupID_Set
+func OPQBot_MyRecord_FromGroupID_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	op.FromGroupID = int64(val)
+}
+
+//export OPQBot_MyRecord_MsgRandom_Get
+func OPQBot_MyRecord_MsgRandom_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	return C.longlong(op.MsgRandom)
+}
+
+//export OPQBot_MyRecord_MsgRandom_Set
+func OPQBot_MyRecord_MsgRandom_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	op.MsgRandom = int64(val)
+}
+
+//export OPQBot_MyRecord_MsgSeq_Get
+func OPQBot_MyRecord_MsgSeq_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	return C.longlong(op.MsgSeq)
+}
+
+//export OPQBot_MyRecord_MsgSeq_Set
+func OPQBot_MyRecord_MsgSeq_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	op.MsgSeq = int(val)
+}
+
+//export OPQBot_MyRecord_MsgTime_Get
+func OPQBot_MyRecord_MsgTime_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	return C.longlong(op.MsgTime)
+}
+
+//export OPQBot_MyRecord_MsgTime_Set
+func OPQBot_MyRecord_MsgTime_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	op.MsgTime = int(val)
+}
+
+//export OPQBot_MyRecord_MsgType_Get
+func OPQBot_MyRecord_MsgType_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
 	return C.CString(op.MsgType)
 }
 
-//export OPQBot_FriendMsgPack_MsgType_Set
-func OPQBot_FriendMsgPack_MsgType_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
+//export OPQBot_MyRecord_MsgType_Set
+func OPQBot_MyRecord_MsgType_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
 	op.MsgType = C.GoString(val)
 }
 
-//export OPQBot_FriendMsgPack_ToUin_Get
-func OPQBot_FriendMsgPack_ToUin_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
-	return C.longlong(op.ToUin)
+//export OPQBot_MyRecord_Content_Get
+func OPQBot_MyRecord_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	return C.CString(op.Content)
 }
 
-//export OPQBot_FriendMsgPack_ToUin_Set
-func OPQBot_FriendMsgPack_ToUin_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_OPQBot_FriendMsgPack(handle)
-	op.ToUin = int64(val)
+//export OPQBot_MyRecord_Content_Set
+func OPQBot_MyRecord_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_MyRecord(handle)
+	op.Content = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.PicMsg ---
+//export OPQBot_PicMsg_CTor
+func OPQBot_PicMsg_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_PicMsg(&OPQBot.PicMsg{}))
+}
+
+//export OPQBot_PicMsg_Content_Get
+func OPQBot_PicMsg_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_PicMsg(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_PicMsg_Content_Set
+func OPQBot_PicMsg_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_PicMsg(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_PicMsg_Tips_Get
+func OPQBot_PicMsg_Tips_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_PicMsg(handle)
+	return C.CString(op.Tips)
+}
+
+//export OPQBot_PicMsg_Tips_Set
+func OPQBot_PicMsg_Tips_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_PicMsg(handle)
+	op.Tips = C.GoString(val)
+}
+
+//export OPQBot_PicMsg_UserID_Get
+func OPQBot_PicMsg_UserID_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_OPQBot_PicMsg(handle)
+	return handleFromPtr_Slice_int64(&op.UserID)
+}
+
+//export OPQBot_PicMsg_UserID_Set
+func OPQBot_PicMsg_UserID_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_OPQBot_PicMsg(handle)
+	op.UserID = deptrFromHandle_Slice_int64(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeForwordContent ---
+//export OPQBot_SendTypeForwordContent_CTor
+func OPQBot_SendTypeForwordContent_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeForwordContent(&OPQBot.SendTypeForwordContent{}))
+}
+
+//export OPQBot_SendTypeForwordContent_ForwordBuf_Get
+func OPQBot_SendTypeForwordContent_ForwordBuf_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
+	return C.CString(op.ForwordBuf)
+}
+
+//export OPQBot_SendTypeForwordContent_ForwordBuf_Set
+func OPQBot_SendTypeForwordContent_ForwordBuf_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
+	op.ForwordBuf = C.GoString(val)
+}
+
+//export OPQBot_SendTypeForwordContent_ForwordField_Get
+func OPQBot_SendTypeForwordContent_ForwordField_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
+	return C.longlong(op.ForwordField)
+}
+
+//export OPQBot_SendTypeForwordContent_ForwordField_Set
+func OPQBot_SendTypeForwordContent_ForwordField_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
+	op.ForwordField = int(val)
+}
+
+//export OPQBot_SendTypeForwordContent_Content_Get
+func OPQBot_SendTypeForwordContent_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypeForwordContent_Content_Set
+func OPQBot_SendTypeForwordContent_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeForwordContent(handle)
+	op.Content = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByLocalContentPrivateChat ---
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_CTor
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByLocalContentPrivateChat(&OPQBot.SendTypePicMsgByLocalContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Get
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Get
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+	return C.CString(op.Path)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+	op.Path = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Get
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Get
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Get(handle CGoHandle) C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+	return boolGoToPy(op.Flash)
+}
+
+//export OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set
+func OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set(handle CGoHandle, val C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByLocalContentPrivateChat(handle)
+	op.Flash = boolPyToGo(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByUrlContentPrivateChat ---
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_CTor
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypePicMsgByUrlContentPrivateChat(&OPQBot.SendTypePicMsgByUrlContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Get
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Get
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
+	return C.CString(op.PicUrl)
+}
+
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
+	op.PicUrl = C.GoString(val)
+}
+
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Get
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Get
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Get(handle CGoHandle) C.char {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
+	return boolGoToPy(op.Flash)
+}
+
+//export OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set
+func OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set(handle CGoHandle, val C.char) {
+	op := ptrFromHandle_OPQBot_SendTypePicMsgByUrlContentPrivateChat(handle)
+	op.Flash = boolPyToGo(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeVoiceByLocalContentPrivateChat ---
+//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_CTor
+func OPQBot_SendTypeVoiceByLocalContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeVoiceByLocalContentPrivateChat(&OPQBot.SendTypeVoiceByLocalContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Get
+func OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContentPrivateChat(handle)
+	return C.CString(op.Path)
+}
+
+//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set
+func OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContentPrivateChat(handle)
+	op.Path = C.GoString(val)
+}
+
+//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Get
+func OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set
+func OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByLocalContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeXmlContent ---
+//export OPQBot_SendTypeXmlContent_CTor
+func OPQBot_SendTypeXmlContent_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeXmlContent(&OPQBot.SendTypeXmlContent{}))
+}
+
+//export OPQBot_SendTypeXmlContent_Content_Get
+func OPQBot_SendTypeXmlContent_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeXmlContent(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypeXmlContent_Content_Set
+func OPQBot_SendTypeXmlContent_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeXmlContent(handle)
+	op.Content = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeXmlContentPrivateChat ---
+//export OPQBot_SendTypeXmlContentPrivateChat_CTor
+func OPQBot_SendTypeXmlContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeXmlContentPrivateChat(&OPQBot.SendTypeXmlContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypeXmlContentPrivateChat_Content_Get
+func OPQBot_SendTypeXmlContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeXmlContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypeXmlContentPrivateChat_Content_Set
+func OPQBot_SendTypeXmlContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeXmlContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypeXmlContentPrivateChat_Group_Get
+func OPQBot_SendTypeXmlContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeXmlContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypeXmlContentPrivateChat_Group_Set
+func OPQBot_SendTypeXmlContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeXmlContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+// --- wrapping struct: OPQBot.GroupAdminPack ---
+//export OPQBot_GroupAdminPack_CTor
+func OPQBot_GroupAdminPack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupAdminPack(&OPQBot.GroupAdminPack{}))
+}
+
+// --- wrapping struct: OPQBot.GroupList ---
+//export OPQBot_GroupList_CTor
+func OPQBot_GroupList_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupList(&OPQBot.GroupList{}))
+}
+
+//export OPQBot_GroupList_Count_Get
+func OPQBot_GroupList_Count_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_GroupList(handle)
+	return C.longlong(op.Count)
+}
+
+//export OPQBot_GroupList_Count_Set
+func OPQBot_GroupList_Count_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_GroupList(handle)
+	op.Count = int(val)
+}
+
+//export OPQBot_GroupList_NextToken_Get
+func OPQBot_GroupList_NextToken_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupList(handle)
+	return C.CString(op.NextToken)
+}
+
+//export OPQBot_GroupList_NextToken_Set
+func OPQBot_GroupList_NextToken_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupList(handle)
+	op.NextToken = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.GroupMsgPack ---
+//export OPQBot_GroupMsgPack_CTor
+func OPQBot_GroupMsgPack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupMsgPack(&OPQBot.GroupMsgPack{}))
+}
+
+//export OPQBot_GroupMsgPack_Content_Get
+func OPQBot_GroupMsgPack_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_GroupMsgPack_Content_Set
+func OPQBot_GroupMsgPack_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_GroupMsgPack_FromGroupID_Get
+func OPQBot_GroupMsgPack_FromGroupID_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.longlong(op.FromGroupID)
+}
+
+//export OPQBot_GroupMsgPack_FromGroupID_Set
+func OPQBot_GroupMsgPack_FromGroupID_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.FromGroupID = int64(val)
+}
+
+//export OPQBot_GroupMsgPack_FromGroupName_Get
+func OPQBot_GroupMsgPack_FromGroupName_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.CString(op.FromGroupName)
+}
+
+//export OPQBot_GroupMsgPack_FromGroupName_Set
+func OPQBot_GroupMsgPack_FromGroupName_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.FromGroupName = C.GoString(val)
+}
+
+//export OPQBot_GroupMsgPack_FromNickName_Get
+func OPQBot_GroupMsgPack_FromNickName_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.CString(op.FromNickName)
+}
+
+//export OPQBot_GroupMsgPack_FromNickName_Set
+func OPQBot_GroupMsgPack_FromNickName_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.FromNickName = C.GoString(val)
+}
+
+//export OPQBot_GroupMsgPack_FromUserID_Get
+func OPQBot_GroupMsgPack_FromUserID_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.longlong(op.FromUserID)
+}
+
+//export OPQBot_GroupMsgPack_FromUserID_Set
+func OPQBot_GroupMsgPack_FromUserID_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.FromUserID = int64(val)
+}
+
+//export OPQBot_GroupMsgPack_MsgRandom_Get
+func OPQBot_GroupMsgPack_MsgRandom_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.longlong(op.MsgRandom)
+}
+
+//export OPQBot_GroupMsgPack_MsgRandom_Set
+func OPQBot_GroupMsgPack_MsgRandom_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.MsgRandom = int64(val)
+}
+
+//export OPQBot_GroupMsgPack_MsgSeq_Get
+func OPQBot_GroupMsgPack_MsgSeq_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.longlong(op.MsgSeq)
+}
+
+//export OPQBot_GroupMsgPack_MsgSeq_Set
+func OPQBot_GroupMsgPack_MsgSeq_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.MsgSeq = int(val)
+}
+
+//export OPQBot_GroupMsgPack_MsgTime_Get
+func OPQBot_GroupMsgPack_MsgTime_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.longlong(op.MsgTime)
+}
+
+//export OPQBot_GroupMsgPack_MsgTime_Set
+func OPQBot_GroupMsgPack_MsgTime_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.MsgTime = int(val)
+}
+
+//export OPQBot_GroupMsgPack_MsgType_Get
+func OPQBot_GroupMsgPack_MsgType_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	return C.CString(op.MsgType)
+}
+
+//export OPQBot_GroupMsgPack_MsgType_Set
+func OPQBot_GroupMsgPack_MsgType_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_GroupMsgPack(handle)
+	op.MsgType = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.Result ---
+//export OPQBot_Result_CTor
+func OPQBot_Result_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_Result(&OPQBot.Result{}))
+}
+
+//export OPQBot_Result_Msg_Get
+func OPQBot_Result_Msg_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_Result(handle)
+	return C.CString(op.Msg)
+}
+
+//export OPQBot_Result_Msg_Set
+func OPQBot_Result_Msg_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_Result(handle)
+	op.Msg = C.GoString(val)
+}
+
+//export OPQBot_Result_Ret_Get
+func OPQBot_Result_Ret_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_Result(handle)
+	return C.longlong(op.Ret)
+}
+
+//export OPQBot_Result_Ret_Set
+func OPQBot_Result_Ret_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_Result(handle)
+	op.Ret = int(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeJsonContentPrivateChat ---
+//export OPQBot_SendTypeJsonContentPrivateChat_CTor
+func OPQBot_SendTypeJsonContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeJsonContentPrivateChat(&OPQBot.SendTypeJsonContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypeJsonContentPrivateChat_Content_Get
+func OPQBot_SendTypeJsonContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeJsonContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypeJsonContentPrivateChat_Content_Set
+func OPQBot_SendTypeJsonContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeJsonContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypeJsonContentPrivateChat_Group_Get
+func OPQBot_SendTypeJsonContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeJsonContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypeJsonContentPrivateChat_Group_Set
+func OPQBot_SendTypeJsonContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeJsonContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeTextMsgContent ---
+//export OPQBot_SendTypeTextMsgContent_CTor
+func OPQBot_SendTypeTextMsgContent_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeTextMsgContent(&OPQBot.SendTypeTextMsgContent{}))
+}
+
+//export OPQBot_SendTypeTextMsgContent_Content_Get
+func OPQBot_SendTypeTextMsgContent_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeTextMsgContent(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypeTextMsgContent_Content_Set
+func OPQBot_SendTypeTextMsgContent_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeTextMsgContent(handle)
+	op.Content = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeTextMsgContentPrivateChat ---
+//export OPQBot_SendTypeTextMsgContentPrivateChat_CTor
+func OPQBot_SendTypeTextMsgContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeTextMsgContentPrivateChat(&OPQBot.SendTypeTextMsgContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypeTextMsgContentPrivateChat_Content_Get
+func OPQBot_SendTypeTextMsgContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeTextMsgContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypeTextMsgContentPrivateChat_Content_Set
+func OPQBot_SendTypeTextMsgContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeTextMsgContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypeTextMsgContentPrivateChat_Group_Get
+func OPQBot_SendTypeTextMsgContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeTextMsgContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypeTextMsgContentPrivateChat_Group_Set
+func OPQBot_SendTypeTextMsgContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeTextMsgContentPrivateChat(handle)
+	op.Group = int64(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeVoiceByUrlContent ---
+//export OPQBot_SendTypeVoiceByUrlContent_CTor
+func OPQBot_SendTypeVoiceByUrlContent_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeVoiceByUrlContent(&OPQBot.SendTypeVoiceByUrlContent{}))
+}
+
+//export OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Get
+func OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContent(handle)
+	return C.CString(op.VoiceUrl)
+}
+
+//export OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Set
+func OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeVoiceByUrlContent(handle)
+	op.VoiceUrl = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.VideoMsg ---
+//export OPQBot_VideoMsg_CTor
+func OPQBot_VideoMsg_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_VideoMsg(&OPQBot.VideoMsg{}))
+}
+
+//export OPQBot_VideoMsg_ForwordBuf_Get
+func OPQBot_VideoMsg_ForwordBuf_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	return C.CString(op.ForwordBuf)
+}
+
+//export OPQBot_VideoMsg_ForwordBuf_Set
+func OPQBot_VideoMsg_ForwordBuf_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	op.ForwordBuf = C.GoString(val)
+}
+
+//export OPQBot_VideoMsg_ForwordField_Get
+func OPQBot_VideoMsg_ForwordField_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	return C.longlong(op.ForwordField)
+}
+
+//export OPQBot_VideoMsg_ForwordField_Set
+func OPQBot_VideoMsg_ForwordField_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	op.ForwordField = int(val)
+}
+
+//export OPQBot_VideoMsg_VideoMd5_Get
+func OPQBot_VideoMsg_VideoMd5_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	return C.CString(op.VideoMd5)
+}
+
+//export OPQBot_VideoMsg_VideoMd5_Set
+func OPQBot_VideoMsg_VideoMd5_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	op.VideoMd5 = C.GoString(val)
+}
+
+//export OPQBot_VideoMsg_VideoSize_Get
+func OPQBot_VideoMsg_VideoSize_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	return C.CString(op.VideoSize)
+}
+
+//export OPQBot_VideoMsg_VideoSize_Set
+func OPQBot_VideoMsg_VideoSize_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	op.VideoSize = C.GoString(val)
+}
+
+//export OPQBot_VideoMsg_VideoUrl_Get
+func OPQBot_VideoMsg_VideoUrl_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	return C.CString(op.VideoUrl)
+}
+
+//export OPQBot_VideoMsg_VideoUrl_Set
+func OPQBot_VideoMsg_VideoUrl_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	op.VideoUrl = C.GoString(val)
+}
+
+//export OPQBot_VideoMsg_Tips_Get
+func OPQBot_VideoMsg_Tips_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	return C.CString(op.Tips)
+}
+
+//export OPQBot_VideoMsg_Tips_Set
+func OPQBot_VideoMsg_Tips_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_VideoMsg(handle)
+	op.Tips = C.GoString(val)
+}
+
+// --- wrapping struct: OPQBot.GroupJoinPack ---
+//export OPQBot_GroupJoinPack_CTor
+func OPQBot_GroupJoinPack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupJoinPack(&OPQBot.GroupJoinPack{}))
+}
+
+// --- wrapping struct: OPQBot.GroupAdminSysNotifyPack ---
+//export OPQBot_GroupAdminSysNotifyPack_CTor
+func OPQBot_GroupAdminSysNotifyPack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_GroupAdminSysNotifyPack(&OPQBot.GroupAdminSysNotifyPack{}))
+}
+
+// --- wrapping struct: OPQBot.SendMsgPack ---
+//export OPQBot_SendMsgPack_CTor
+func OPQBot_SendMsgPack_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendMsgPack(&OPQBot.SendMsgPack{}))
+}
+
+//export OPQBot_SendMsgPack_SendToType_Get
+func OPQBot_SendMsgPack_SendToType_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendMsgPack(handle)
+	return C.longlong(op.SendToType)
+}
+
+//export OPQBot_SendMsgPack_SendToType_Set
+func OPQBot_SendMsgPack_SendToType_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendMsgPack(handle)
+	op.SendToType = int(val)
+}
+
+//export OPQBot_SendMsgPack_ToUserUid_Get
+func OPQBot_SendMsgPack_ToUserUid_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendMsgPack(handle)
+	return C.longlong(op.ToUserUid)
+}
+
+//export OPQBot_SendMsgPack_ToUserUid_Set
+func OPQBot_SendMsgPack_ToUserUid_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendMsgPack(handle)
+	op.ToUserUid = int64(val)
+}
+
+// --- wrapping struct: OPQBot.SendTypeReplyContentPrivateChat ---
+//export OPQBot_SendTypeReplyContentPrivateChat_CTor
+func OPQBot_SendTypeReplyContentPrivateChat_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_OPQBot_SendTypeReplyContentPrivateChat(&OPQBot.SendTypeReplyContentPrivateChat{}))
+}
+
+//export OPQBot_SendTypeReplyContentPrivateChat_Content_Get
+func OPQBot_SendTypeReplyContentPrivateChat_Content_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_OPQBot_SendTypeReplyContentPrivateChat(handle)
+	return C.CString(op.Content)
+}
+
+//export OPQBot_SendTypeReplyContentPrivateChat_Content_Set
+func OPQBot_SendTypeReplyContentPrivateChat_Content_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_OPQBot_SendTypeReplyContentPrivateChat(handle)
+	op.Content = C.GoString(val)
+}
+
+//export OPQBot_SendTypeReplyContentPrivateChat_Group_Get
+func OPQBot_SendTypeReplyContentPrivateChat_Group_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_OPQBot_SendTypeReplyContentPrivateChat(handle)
+	return C.longlong(op.Group)
+}
+
+//export OPQBot_SendTypeReplyContentPrivateChat_Group_Set
+func OPQBot_SendTypeReplyContentPrivateChat_Group_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_OPQBot_SendTypeReplyContentPrivateChat(handle)
+	op.Group = int64(val)
 }
 
 // ---- Slices ---
@@ -5522,34 +5522,19 @@ func OPQBot_FriendMsgPack_ToUin_Set(handle CGoHandle, val C.longlong) {
 
 // ---- Constructors ---
 
-//export OPQBot_ParserGroupReplyMsg
-func OPQBot_ParserGroupReplyMsg(pack CGoHandle) CGoHandle {
+//export OPQBot_ParserGroupAtMsg
+func OPQBot_ParserGroupAtMsg(pack CGoHandle) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := OPQBot.ParserGroupReplyMsg(*ptrFromHandle_OPQBot_GroupMsgPack(pack))
+	cret, __err := OPQBot.ParserGroupAtMsg(*ptrFromHandle_OPQBot_GroupMsgPack(pack))
 
 	C.PyEval_RestoreThread(_saved_thread)
 	if __err != nil {
 		estr := C.CString(__err.Error())
 		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
 		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_OPQBot_Reply(nil)
+		return handleFromPtr_OPQBot_AtMsg(nil)
 	}
-	return handleFromPtr_OPQBot_Reply(&cret)
-}
-
-//export OPQBot_ParserVideoMsg
-func OPQBot_ParserVideoMsg(pack CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := OPQBot.ParserVideoMsg(*ptrFromHandle_OPQBot_GroupMsgPack(pack))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_OPQBot_VideoMsg(nil)
-	}
-	return handleFromPtr_OPQBot_VideoMsg(&cret)
+	return handleFromPtr_OPQBot_AtMsg(&cret)
 }
 
 //export OPQBot_ParserGroupFileMsg
@@ -5567,6 +5552,29 @@ func OPQBot_ParserGroupFileMsg(pack CGoHandle) CGoHandle {
 	return handleFromPtr_OPQBot_GroupFileMsg(&cret)
 }
 
+//export OPQBot_NewBotManager
+func OPQBot_NewBotManager(QQ C.longlong, OPQUrl *C.char) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return handleFromPtr_Ptr_OPQBot_BotManager(OPQBot.NewBotManager(int64(QQ), C.GoString(OPQUrl)))
+
+}
+
+//export OPQBot_ParserGroupReplyMsg
+func OPQBot_ParserGroupReplyMsg(pack CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	cret, __err := OPQBot.ParserGroupReplyMsg(*ptrFromHandle_OPQBot_GroupMsgPack(pack))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return handleFromPtr_OPQBot_Reply(nil)
+	}
+	return handleFromPtr_OPQBot_Reply(&cret)
+}
+
 //export OPQBot_ParserGroupPicMsg
 func OPQBot_ParserGroupPicMsg(pack CGoHandle) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
@@ -5582,36 +5590,28 @@ func OPQBot_ParserGroupPicMsg(pack CGoHandle) CGoHandle {
 	return handleFromPtr_OPQBot_PicMsg(&cret)
 }
 
-//export OPQBot_ParserGroupAtMsg
-func OPQBot_ParserGroupAtMsg(pack CGoHandle) CGoHandle {
+//export OPQBot_ParserVideoMsg
+func OPQBot_ParserVideoMsg(pack CGoHandle) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := OPQBot.ParserGroupAtMsg(*ptrFromHandle_OPQBot_GroupMsgPack(pack))
+	cret, __err := OPQBot.ParserVideoMsg(*ptrFromHandle_OPQBot_GroupMsgPack(pack))
 
 	C.PyEval_RestoreThread(_saved_thread)
 	if __err != nil {
 		estr := C.CString(__err.Error())
 		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
 		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_OPQBot_AtMsg(nil)
+		return handleFromPtr_OPQBot_VideoMsg(nil)
 	}
-	return handleFromPtr_OPQBot_AtMsg(&cret)
-}
-
-//export OPQBot_NewBotManager
-func OPQBot_NewBotManager(QQ C.longlong, OPQUrl *C.char) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	return handleFromPtr_Ptr_OPQBot_BotManager(OPQBot.NewBotManager(int64(QQ), C.GoString(OPQUrl)))
-
+	return handleFromPtr_OPQBot_VideoMsg(&cret)
 }
 
 // ---- Functions ---
 
-//export OPQBot_MacroId
-func OPQBot_MacroId() *C.char {
+//export OPQBot_MacroAt
+func OPQBot_MacroAt(qqs CGoHandle) *C.char {
 	_saved_thread := C.PyEval_SaveThread()
 	defer C.PyEval_RestoreThread(_saved_thread)
-	return C.CString(OPQBot.MacroId())
+	return C.CString(OPQBot.MacroAt(deptrFromHandle_Slice_int64(qqs)))
 
 }
 
@@ -5630,31 +5630,19 @@ func OPQBot_VoiceSilkToMp3(base64EncodedSilk *C.char) CGoHandle {
 	return handleFromPtr_Slice_byte(&cret)
 }
 
-//export OPQBot_DecodeFaceFromSentences
-func OPQBot_DecodeFaceFromSentences(encode *C.char, format *C.char) *C.char {
+//export OPQBot_DecodeFace
+func OPQBot_DecodeFace(encodeFace *C.char) *C.char {
 	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	return C.CString(OPQBot.DecodeFaceFromSentences(C.GoString(encode), C.GoString(format)))
+	cret, __err := OPQBot.DecodeFace(C.GoString(encodeFace))
 
-}
-
-//export OPQBot_SetLog
-func OPQBot_SetLog(l CGoHandle, goRun C.char) {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	if boolPyToGo(goRun) {
-		go OPQBot.SetLog(ptrFromHandle_Ptr_logrus_Entry(l))
-	} else {
-		OPQBot.SetLog(ptrFromHandle_Ptr_logrus_Entry(l))
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return C.CString("")
 	}
-}
-
-//export OPQBot_MacroAtAll
-func OPQBot_MacroAtAll() *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	return C.CString(OPQBot.MacroAtAll())
-
+	return C.CString(cret)
 }
 
 //export OPQBot_VoiceMp3ToSilk
@@ -5672,27 +5660,39 @@ func OPQBot_VoiceMp3ToSilk(mp3Path *C.char) *C.char {
 	return C.CString(cret)
 }
 
-//export OPQBot_DecodeFace
-func OPQBot_DecodeFace(encodeFace *C.char) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := OPQBot.DecodeFace(C.GoString(encodeFace))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		C.free(unsafe.Pointer(estr))
-		return C.CString("")
-	}
-	return C.CString(cret)
-}
-
-//export OPQBot_MacroAt
-func OPQBot_MacroAt(qqs CGoHandle) *C.char {
+//export OPQBot_DecodeFaceFromSentences
+func OPQBot_DecodeFaceFromSentences(encode *C.char, format *C.char) *C.char {
 	_saved_thread := C.PyEval_SaveThread()
 	defer C.PyEval_RestoreThread(_saved_thread)
-	return C.CString(OPQBot.MacroAt(deptrFromHandle_Slice_int64(qqs)))
+	return C.CString(OPQBot.DecodeFaceFromSentences(C.GoString(encode), C.GoString(format)))
 
+}
+
+//export OPQBot_MacroAtAll
+func OPQBot_MacroAtAll() *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return C.CString(OPQBot.MacroAtAll())
+
+}
+
+//export OPQBot_MacroId
+func OPQBot_MacroId() *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return C.CString(OPQBot.MacroId())
+
+}
+
+//export OPQBot_SetLog
+func OPQBot_SetLog(l CGoHandle, goRun C.char) {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	if boolPyToGo(goRun) {
+		go OPQBot.SetLog(ptrFromHandle_Ptr_logrus_Entry(l))
+	} else {
+		OPQBot.SetLog(ptrFromHandle_Ptr_logrus_Entry(l))
+	}
 }
 
 // ---- Package: qzone ---
@@ -5801,24 +5801,6 @@ func handleFromPtr_qzone_UploadPicResult(p interface{}) CGoHandle {
 
 // ---- Structs ---
 
-// --- wrapping struct: qzone.UploadPicResult ---
-//export qzone_UploadPicResult_CTor
-func qzone_UploadPicResult_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_qzone_UploadPicResult(&qzone.UploadPicResult{}))
-}
-
-//export qzone_UploadPicResult_Ret_Get
-func qzone_UploadPicResult_Ret_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_qzone_UploadPicResult(handle)
-	return C.longlong(op.Ret)
-}
-
-//export qzone_UploadPicResult_Ret_Set
-func qzone_UploadPicResult_Ret_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_qzone_UploadPicResult(handle)
-	op.Ret = int(val)
-}
-
 // --- wrapping struct: qzone.Manager ---
 //export qzone_Manager_CTor
 func qzone_Manager_CTor() CGoHandle {
@@ -5916,6 +5898,24 @@ func qzone_Manager_GetQzoneToken(_handle CGoHandle) *C.char {
 	return C.CString(cret)
 }
 
+//export qzone_Manager_RefreshToken
+func qzone_Manager_RefreshToken(_handle CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*qzone.Manager")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(qzone.Manager{})).(*qzone.Manager).RefreshToken()
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
 //export qzone_Manager_GetShuoShuoList
 func qzone_Manager_GetShuoShuoList(_handle CGoHandle) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
@@ -5954,25 +5954,6 @@ func qzone_Manager_SendShuoShuo(_handle CGoHandle, Content *C.char) CGoHandle {
 	return handleFromPtr_qzone_SendShuoShuoResult(&cret)
 }
 
-//export qzone_Manager_SendShuoShuoWithPic
-func qzone_Manager_SendShuoShuoWithPic(_handle CGoHandle, Content *C.char, picBo *C.char, richVal *C.char) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*qzone.Manager")
-	if __err != nil {
-		return handleFromPtr_qzone_SendShuoShuoResult(nil)
-	}
-	cret, __err := gopyh.Embed(vifc, reflect.TypeOf(qzone.Manager{})).(*qzone.Manager).SendShuoShuoWithPic(C.GoString(Content), C.GoString(picBo), C.GoString(richVal))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_qzone_SendShuoShuoResult(nil)
-	}
-	return handleFromPtr_qzone_SendShuoShuoResult(&cret)
-}
-
 //export qzone_Manager_UploadPic
 func qzone_Manager_UploadPic(_handle CGoHandle, picBase64 *C.char) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
@@ -5990,6 +5971,44 @@ func qzone_Manager_UploadPic(_handle CGoHandle, picBase64 *C.char) CGoHandle {
 		return handleFromPtr_qzone_UploadPicResult(nil)
 	}
 	return handleFromPtr_qzone_UploadPicResult(&cret)
+}
+
+//export qzone_Manager_SendShuoShuoWithBase64Pic
+func qzone_Manager_SendShuoShuoWithBase64Pic(_handle CGoHandle, Content *C.char, pics CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*qzone.Manager")
+	if __err != nil {
+		return handleFromPtr_qzone_SendShuoShuoResult(nil)
+	}
+	cret, __err := gopyh.Embed(vifc, reflect.TypeOf(qzone.Manager{})).(*qzone.Manager).SendShuoShuoWithBase64Pic(C.GoString(Content), deptrFromHandle_Slice_string(pics))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return handleFromPtr_qzone_SendShuoShuoResult(nil)
+	}
+	return handleFromPtr_qzone_SendShuoShuoResult(&cret)
+}
+
+//export qzone_Manager_SendShuoShuoWithLocalPic
+func qzone_Manager_SendShuoShuoWithLocalPic(_handle CGoHandle, content *C.char, pics CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*qzone.Manager")
+	if __err != nil {
+		return handleFromPtr_qzone_SendShuoShuoResult(nil)
+	}
+	cret, __err := gopyh.Embed(vifc, reflect.TypeOf(qzone.Manager{})).(*qzone.Manager).SendShuoShuoWithLocalPic(C.GoString(content), deptrFromHandle_Slice_string(pics))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return handleFromPtr_qzone_SendShuoShuoResult(nil)
+	}
+	return handleFromPtr_qzone_SendShuoShuoResult(&cret)
 }
 
 //export qzone_Manager_Like
@@ -6202,6 +6221,24 @@ func qzone_ShuoshuoList_Default_Set(handle CGoHandle, val C.longlong) {
 	op.Default = int(val)
 }
 
+// --- wrapping struct: qzone.UploadPicResult ---
+//export qzone_UploadPicResult_CTor
+func qzone_UploadPicResult_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_qzone_UploadPicResult(&qzone.UploadPicResult{}))
+}
+
+//export qzone_UploadPicResult_Ret_Get
+func qzone_UploadPicResult_Ret_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_qzone_UploadPicResult(handle)
+	return C.longlong(op.Ret)
+}
+
+//export qzone_UploadPicResult_Ret_Set
+func qzone_UploadPicResult_Ret_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_qzone_UploadPicResult(handle)
+	op.Ret = int(val)
+}
+
 // ---- Slices ---
 
 // ---- Maps ---
@@ -6225,4 +6262,19 @@ func qzone_GenderGTK(sKey *C.char) *C.char {
 	defer C.PyEval_RestoreThread(_saved_thread)
 	return C.CString(qzone.GenderGTK(C.GoString(sKey)))
 
+}
+
+//export qzone_GetBase64
+func qzone_GetBase64(path *C.char) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	cret, __err := qzone.GetBase64(C.GoString(path))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return C.CString("")
+	}
+	return C.CString(cret)
 }

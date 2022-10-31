@@ -555,8 +555,8 @@ def Set_FaceMap(value):
 
 # ---- Structs ---
 
-# Python type for struct OPQBot.Reply
-class Reply(go.GoClass):
+# Python type for struct OPQBot.AtMsg
+class AtMsg(go.GoClass):
 	""""""
 	def __init__(self, *args, **kwargs):
 		"""
@@ -571,33 +571,21 @@ class Reply(go.GoClass):
 			self.handle = args[0].handle
 			_OPQBot.IncRef(self.handle)
 		else:
-			self.handle = _OPQBot.OPQBot_Reply_CTor()
+			self.handle = _OPQBot.OPQBot_AtMsg_CTor()
 			_OPQBot.IncRef(self.handle)
 			if  0 < len(args):
 				self.Content = args[0]
 			if "Content" in kwargs:
 				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.SrcContent = args[1]
-			if "SrcContent" in kwargs:
-				self.SrcContent = kwargs["SrcContent"]
 			if  2 < len(args):
-				self.MsgSeq = args[2]
-			if "MsgSeq" in kwargs:
-				self.MsgSeq = kwargs["MsgSeq"]
-			if  3 < len(args):
-				self.Tips = args[3]
-			if "Tips" in kwargs:
-				self.Tips = kwargs["Tips"]
-			if  4 < len(args):
-				self.UserID = args[4]
+				self.UserID = args[2]
 			if "UserID" in kwargs:
 				self.UserID = kwargs["UserID"]
 	def __del__(self):
 		_OPQBot.DecRef(self.handle)
 	def __str__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.Reply{'
+		sv = 'OPQBot.AtMsg{'
 		first = True
 		for v in pr:
 			if callable(v[1]):
@@ -610,59 +598,35 @@ class Reply(go.GoClass):
 		return sv + '}'
 	def __repr__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.Reply ( '
+		sv = 'OPQBot.AtMsg ( '
 		for v in pr:
 			if not callable(v[1]):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 	@property
 	def Content(self):
-		return _OPQBot.OPQBot_Reply_Content_Get(self.handle)
+		return _OPQBot.OPQBot_AtMsg_Content_Get(self.handle)
 	@Content.setter
 	def Content(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Reply_Content_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_AtMsg_Content_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_Reply_Content_Set(self.handle, value)
-	@property
-	def SrcContent(self):
-		return _OPQBot.OPQBot_Reply_SrcContent_Get(self.handle)
-	@SrcContent.setter
-	def SrcContent(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Reply_SrcContent_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Reply_SrcContent_Set(self.handle, value)
-	@property
-	def MsgSeq(self):
-		return _OPQBot.OPQBot_Reply_MsgSeq_Get(self.handle)
-	@MsgSeq.setter
-	def MsgSeq(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Reply_MsgSeq_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Reply_MsgSeq_Set(self.handle, value)
-	@property
-	def Tips(self):
-		return _OPQBot.OPQBot_Reply_Tips_Get(self.handle)
-	@Tips.setter
-	def Tips(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Reply_Tips_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Reply_Tips_Set(self.handle, value)
+			_OPQBot.OPQBot_AtMsg_Content_Set(self.handle, value)
 	@property
 	def UserID(self):
-		return go.Slice_int64(handle=_OPQBot.OPQBot_Reply_UserID_Get(self.handle))
+		return go.Slice_int64(handle=_OPQBot.OPQBot_AtMsg_UserID_Get(self.handle))
 	@UserID.setter
 	def UserID(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Reply_UserID_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_AtMsg_UserID_Set(self.handle, value.handle)
 		else:
 			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
+	def Clean(self):
+		"""Clean() object"""
+		return AtMsg(handle=_OPQBot.OPQBot_AtMsg_Clean(self.handle))
 
-# Python type for struct OPQBot.SendTypeTextMsgContentPrivateChat
-class SendTypeTextMsgContentPrivateChat(go.GoClass):
+# Python type for struct OPQBot.GroupFileMsg
+class GroupFileMsg(go.GoClass):
 	""""""
 	def __init__(self, *args, **kwargs):
 		"""
@@ -677,21 +641,29 @@ class SendTypeTextMsgContentPrivateChat(go.GoClass):
 			self.handle = args[0].handle
 			_OPQBot.IncRef(self.handle)
 		else:
-			self.handle = _OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_CTor()
+			self.handle = _OPQBot.OPQBot_GroupFileMsg_CTor()
 			_OPQBot.IncRef(self.handle)
 			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
+				self.FileID = args[0]
+			if "FileID" in kwargs:
+				self.FileID = kwargs["FileID"]
 			if  1 < len(args):
-				self.Group = args[1]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
+				self.FileName = args[1]
+			if "FileName" in kwargs:
+				self.FileName = kwargs["FileName"]
+			if  2 < len(args):
+				self.FileSize = args[2]
+			if "FileSize" in kwargs:
+				self.FileSize = kwargs["FileSize"]
+			if  3 < len(args):
+				self.Tips = args[3]
+			if "Tips" in kwargs:
+				self.Tips = kwargs["Tips"]
 	def __del__(self):
 		_OPQBot.DecRef(self.handle)
 	def __str__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeTextMsgContentPrivateChat{'
+		sv = 'OPQBot.GroupFileMsg{'
 		first = True
 		for v in pr:
 			if callable(v[1]):
@@ -704,96 +676,47 @@ class SendTypeTextMsgContentPrivateChat(go.GoClass):
 		return sv + '}'
 	def __repr__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeTextMsgContentPrivateChat ( '
+		sv = 'OPQBot.GroupFileMsg ( '
 		for v in pr:
 			if not callable(v[1]):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
+	def FileID(self):
+		return _OPQBot.OPQBot_GroupFileMsg_FileID_Get(self.handle)
+	@FileID.setter
+	def FileID(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Content_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_GroupFileMsg_FileID_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Content_Set(self.handle, value)
+			_OPQBot.OPQBot_GroupFileMsg_FileID_Set(self.handle, value)
 	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
+	def FileName(self):
+		return _OPQBot.OPQBot_GroupFileMsg_FileName_Get(self.handle)
+	@FileName.setter
+	def FileName(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Group_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_GroupFileMsg_FileName_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Group_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeVoiceByLocalContentPrivateChat
-class SendTypeVoiceByLocalContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Path = args[0]
-			if "Path" in kwargs:
-				self.Path = kwargs["Path"]
-			if  1 < len(args):
-				self.Group = args[1]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeVoiceByLocalContentPrivateChat{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeVoiceByLocalContentPrivateChat ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
+			_OPQBot.OPQBot_GroupFileMsg_FileName_Set(self.handle, value)
 	@property
-	def Path(self):
-		return _OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Get(self.handle)
-	@Path.setter
-	def Path(self, value):
+	def FileSize(self):
+		return _OPQBot.OPQBot_GroupFileMsg_FileSize_Get(self.handle)
+	@FileSize.setter
+	def FileSize(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_GroupFileMsg_FileSize_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set(self.handle, value)
+			_OPQBot.OPQBot_GroupFileMsg_FileSize_Set(self.handle, value)
 	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
+	def Tips(self):
+		return _OPQBot.OPQBot_GroupFileMsg_Tips_Get(self.handle)
+	@Tips.setter
+	def Tips(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_GroupFileMsg_Tips_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set(self.handle, value)
+			_OPQBot.OPQBot_GroupFileMsg_Tips_Set(self.handle, value)
 
 # Python type for struct OPQBot.Context
 class Context(go.GoClass):
@@ -891,490 +814,6 @@ class Context(go.GoClass):
 		"""Next(long currentQQ, str result) """
 		_OPQBot.OPQBot_Context_Next(self.handle, currentQQ, result, goRun)
 
-# Python type for struct OPQBot.GroupList
-class GroupList(go.GoClass):
-	"""GroupList 获取群列表表单\n"""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupList_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Count = args[0]
-			if "Count" in kwargs:
-				self.Count = kwargs["Count"]
-			if  1 < len(args):
-				self.NextToken = args[1]
-			if "NextToken" in kwargs:
-				self.NextToken = kwargs["NextToken"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupList{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupList ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Count(self):
-		return _OPQBot.OPQBot_GroupList_Count_Get(self.handle)
-	@Count.setter
-	def Count(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupList_Count_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupList_Count_Set(self.handle, value)
-	@property
-	def NextToken(self):
-		return _OPQBot.OPQBot_GroupList_NextToken_Get(self.handle)
-	@NextToken.setter
-	def NextToken(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupList_NextToken_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupList_NextToken_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeForwordContent
-class SendTypeForwordContent(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeForwordContent_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.ForwordBuf = args[0]
-			if "ForwordBuf" in kwargs:
-				self.ForwordBuf = kwargs["ForwordBuf"]
-			if  1 < len(args):
-				self.ForwordField = args[1]
-			if "ForwordField" in kwargs:
-				self.ForwordField = kwargs["ForwordField"]
-			if  2 < len(args):
-				self.Content = args[2]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeForwordContent{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeForwordContent ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def ForwordBuf(self):
-		return _OPQBot.OPQBot_SendTypeForwordContent_ForwordBuf_Get(self.handle)
-	@ForwordBuf.setter
-	def ForwordBuf(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeForwordContent_ForwordBuf_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeForwordContent_ForwordBuf_Set(self.handle, value)
-	@property
-	def ForwordField(self):
-		return _OPQBot.OPQBot_SendTypeForwordContent_ForwordField_Get(self.handle)
-	@ForwordField.setter
-	def ForwordField(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeForwordContent_ForwordField_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeForwordContent_ForwordField_Set(self.handle, value)
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeForwordContent_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeForwordContent_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeForwordContent_Content_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeJsonContentPrivateChat
-class SendTypeJsonContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeJsonContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.Group = args[1]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeJsonContentPrivateChat{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeJsonContentPrivateChat ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Content_Set(self.handle, value)
-	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Group_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Group_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeVoiceByUrlContent
-class SendTypeVoiceByUrlContent(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeVoiceByUrlContent_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.VoiceUrl = args[0]
-			if "VoiceUrl" in kwargs:
-				self.VoiceUrl = kwargs["VoiceUrl"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeVoiceByUrlContent{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeVoiceByUrlContent ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def VoiceUrl(self):
-		return _OPQBot.OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Get(self.handle)
-	@VoiceUrl.setter
-	def VoiceUrl(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeVoiceByUrlContentPrivateChat
-class SendTypeVoiceByUrlContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.VoiceUrl = args[0]
-			if "VoiceUrl" in kwargs:
-				self.VoiceUrl = kwargs["VoiceUrl"]
-			if  1 < len(args):
-				self.Group = args[1]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeVoiceByUrlContentPrivateChat{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeVoiceByUrlContentPrivateChat ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def VoiceUrl(self):
-		return _OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Get(self.handle)
-	@VoiceUrl.setter
-	def VoiceUrl(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set(self.handle, value)
-	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set(self.handle, value)
-
-# Python type for struct OPQBot.GroupAdminSysNotifyPack
-class GroupAdminSysNotifyPack(Context):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupAdminSysNotifyPack_CTor()
-			_OPQBot.IncRef(self.handle)
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupAdminSysNotifyPack{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupAdminSysNotifyPack ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-
-# Python type for struct OPQBot.GroupShutPack
-class GroupShutPack(Context):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupShutPack_CTor()
-			_OPQBot.IncRef(self.handle)
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupShutPack{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupShutPack ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-
-# Python type for struct OPQBot.SendTypeXmlContentPrivateChat
-class SendTypeXmlContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeXmlContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.Group = args[1]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeXmlContentPrivateChat{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeXmlContentPrivateChat ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Content_Set(self.handle, value)
-	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Group_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Group_Set(self.handle, value)
-
 # Python type for struct OPQBot.GroupMemberList
 class GroupMemberList(go.GoClass):
 	""""""
@@ -1455,8 +894,8 @@ class GroupMemberList(go.GoClass):
 		else:
 			_OPQBot.OPQBot_GroupMemberList_LastUin_Set(self.handle, value)
 
-# Python type for struct OPQBot.MyRecord
-class MyRecord(go.GoClass):
+# Python type for struct OPQBot.SendTypeVoiceByLocalContent
+class SendTypeVoiceByLocalContent(go.GoClass):
 	""""""
 	def __init__(self, *args, **kwargs):
 		"""
@@ -1471,228 +910,17 @@ class MyRecord(go.GoClass):
 			self.handle = args[0].handle
 			_OPQBot.IncRef(self.handle)
 		else:
-			self.handle = _OPQBot.OPQBot_MyRecord_CTor()
+			self.handle = _OPQBot.OPQBot_SendTypeVoiceByLocalContent_CTor()
 			_OPQBot.IncRef(self.handle)
 			if  0 < len(args):
-				self.FromGroupID = args[0]
-			if "FromGroupID" in kwargs:
-				self.FromGroupID = kwargs["FromGroupID"]
-			if  1 < len(args):
-				self.MsgRandom = args[1]
-			if "MsgRandom" in kwargs:
-				self.MsgRandom = kwargs["MsgRandom"]
-			if  2 < len(args):
-				self.MsgSeq = args[2]
-			if "MsgSeq" in kwargs:
-				self.MsgSeq = kwargs["MsgSeq"]
-			if  3 < len(args):
-				self.MsgTime = args[3]
-			if "MsgTime" in kwargs:
-				self.MsgTime = kwargs["MsgTime"]
-			if  4 < len(args):
-				self.MsgType = args[4]
-			if "MsgType" in kwargs:
-				self.MsgType = kwargs["MsgType"]
-			if  5 < len(args):
-				self.Content = args[5]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.MyRecord{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.MyRecord ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def FromGroupID(self):
-		return _OPQBot.OPQBot_MyRecord_FromGroupID_Get(self.handle)
-	@FromGroupID.setter
-	def FromGroupID(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_MyRecord_FromGroupID_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_MyRecord_FromGroupID_Set(self.handle, value)
-	@property
-	def MsgRandom(self):
-		return _OPQBot.OPQBot_MyRecord_MsgRandom_Get(self.handle)
-	@MsgRandom.setter
-	def MsgRandom(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_MyRecord_MsgRandom_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_MyRecord_MsgRandom_Set(self.handle, value)
-	@property
-	def MsgSeq(self):
-		return _OPQBot.OPQBot_MyRecord_MsgSeq_Get(self.handle)
-	@MsgSeq.setter
-	def MsgSeq(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_MyRecord_MsgSeq_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_MyRecord_MsgSeq_Set(self.handle, value)
-	@property
-	def MsgTime(self):
-		return _OPQBot.OPQBot_MyRecord_MsgTime_Get(self.handle)
-	@MsgTime.setter
-	def MsgTime(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_MyRecord_MsgTime_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_MyRecord_MsgTime_Set(self.handle, value)
-	@property
-	def MsgType(self):
-		return _OPQBot.OPQBot_MyRecord_MsgType_Get(self.handle)
-	@MsgType.setter
-	def MsgType(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_MyRecord_MsgType_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_MyRecord_MsgType_Set(self.handle, value)
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_MyRecord_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_MyRecord_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_MyRecord_Content_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypePicMsgByBase64Content
-class SendTypePicMsgByBase64Content(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypePicMsgByBase64Content_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.Base64 = args[1]
-			if "Base64" in kwargs:
-				self.Base64 = kwargs["Base64"]
-			if  2 < len(args):
-				self.Flash = args[2]
-			if "Flash" in kwargs:
-				self.Flash = kwargs["Flash"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByBase64Content{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByBase64Content ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByBase64Content_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Content_Set(self.handle, value)
-	@property
-	def Base64(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByBase64Content_Base64_Get(self.handle)
-	@Base64.setter
-	def Base64(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Base64_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Base64_Set(self.handle, value)
-	@property
-	def Flash(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByBase64Content_Flash_Get(self.handle)
-	@Flash.setter
-	def Flash(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Flash_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Flash_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypePicMsgByLocalContentPrivateChat
-class SendTypePicMsgByLocalContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.Path = args[1]
+				self.Path = args[0]
 			if "Path" in kwargs:
 				self.Path = kwargs["Path"]
-			if  2 < len(args):
-				self.Group = args[2]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-			if  3 < len(args):
-				self.Flash = args[3]
-			if "Flash" in kwargs:
-				self.Flash = kwargs["Flash"]
 	def __del__(self):
 		_OPQBot.DecRef(self.handle)
 	def __str__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByLocalContentPrivateChat{'
+		sv = 'OPQBot.SendTypeVoiceByLocalContent{'
 		first = True
 		for v in pr:
 			if callable(v[1]):
@@ -1705,929 +933,20 @@ class SendTypePicMsgByLocalContentPrivateChat(go.GoClass):
 		return sv + '}'
 	def __repr__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByLocalContentPrivateChat ( '
+		sv = 'OPQBot.SendTypeVoiceByLocalContent ( '
 		for v in pr:
 			if not callable(v[1]):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set(self.handle, value)
-	@property
 	def Path(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Get(self.handle)
+		return _OPQBot.OPQBot_SendTypeVoiceByLocalContent_Path_Get(self.handle)
 	@Path.setter
 	def Path(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_SendTypeVoiceByLocalContent_Path_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set(self.handle, value)
-	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set(self.handle, value)
-	@property
-	def Flash(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Get(self.handle)
-	@Flash.setter
-	def Flash(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypePicMsgByMd5ContentPrivateChat
-class SendTypePicMsgByMd5ContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.Md5s = args[1]
-			if "Md5s" in kwargs:
-				self.Md5s = kwargs["Md5s"]
-			if  2 < len(args):
-				self.Group = args[2]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-			if  3 < len(args):
-				self.Flash = args[3]
-			if "Flash" in kwargs:
-				self.Flash = kwargs["Flash"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByMd5ContentPrivateChat{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByMd5ContentPrivateChat ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set(self.handle, value)
-	@property
-	def Md5s(self):
-		return go.Slice_string(handle=_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Get(self.handle))
-	@Md5s.setter
-	def Md5s(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Set(self.handle, value.handle)
-		else:
-			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
-	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set(self.handle, value)
-	@property
-	def Flash(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Get(self.handle)
-	@Flash.setter
-	def Flash(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypePicMsgByUrlContentPrivateChat
-class SendTypePicMsgByUrlContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.PicUrl = args[1]
-			if "PicUrl" in kwargs:
-				self.PicUrl = kwargs["PicUrl"]
-			if  2 < len(args):
-				self.Group = args[2]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-			if  3 < len(args):
-				self.Flash = args[3]
-			if "Flash" in kwargs:
-				self.Flash = kwargs["Flash"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByUrlContentPrivateChat{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByUrlContentPrivateChat ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set(self.handle, value)
-	@property
-	def PicUrl(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Get(self.handle)
-	@PicUrl.setter
-	def PicUrl(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set(self.handle, value)
-	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set(self.handle, value)
-	@property
-	def Flash(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Get(self.handle)
-	@Flash.setter
-	def Flash(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set(self.handle, value)
-
-# Python type for struct OPQBot.FriendFileResult
-class FriendFileResult(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_FriendFileResult_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.FileName = args[0]
-			if "FileName" in kwargs:
-				self.FileName = kwargs["FileName"]
-			if  1 < len(args):
-				self.FileSize = args[1]
-			if "FileSize" in kwargs:
-				self.FileSize = kwargs["FileSize"]
-			if  2 < len(args):
-				self.FromUin = args[2]
-			if "FromUin" in kwargs:
-				self.FromUin = kwargs["FromUin"]
-			if  3 < len(args):
-				self.URL = args[3]
-			if "URL" in kwargs:
-				self.URL = kwargs["URL"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.FriendFileResult{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.FriendFileResult ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def FileName(self):
-		return _OPQBot.OPQBot_FriendFileResult_FileName_Get(self.handle)
-	@FileName.setter
-	def FileName(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendFileResult_FileName_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_FriendFileResult_FileName_Set(self.handle, value)
-	@property
-	def FileSize(self):
-		return _OPQBot.OPQBot_FriendFileResult_FileSize_Get(self.handle)
-	@FileSize.setter
-	def FileSize(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendFileResult_FileSize_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_FriendFileResult_FileSize_Set(self.handle, value)
-	@property
-	def FromUin(self):
-		return _OPQBot.OPQBot_FriendFileResult_FromUin_Get(self.handle)
-	@FromUin.setter
-	def FromUin(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendFileResult_FromUin_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_FriendFileResult_FromUin_Set(self.handle, value)
-	@property
-	def URL(self):
-		return _OPQBot.OPQBot_FriendFileResult_URL_Get(self.handle)
-	@URL.setter
-	def URL(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendFileResult_URL_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_FriendFileResult_URL_Set(self.handle, value)
-
-# Python type for struct OPQBot.GroupJoinPack
-class GroupJoinPack(Context):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupJoinPack_CTor()
-			_OPQBot.IncRef(self.handle)
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupJoinPack{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupJoinPack ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-
-# Python type for struct OPQBot.VideoMsg
-class VideoMsg(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_VideoMsg_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.ForwordBuf = args[0]
-			if "ForwordBuf" in kwargs:
-				self.ForwordBuf = kwargs["ForwordBuf"]
-			if  1 < len(args):
-				self.ForwordField = args[1]
-			if "ForwordField" in kwargs:
-				self.ForwordField = kwargs["ForwordField"]
-			if  2 < len(args):
-				self.VideoMd5 = args[2]
-			if "VideoMd5" in kwargs:
-				self.VideoMd5 = kwargs["VideoMd5"]
-			if  3 < len(args):
-				self.VideoSize = args[3]
-			if "VideoSize" in kwargs:
-				self.VideoSize = kwargs["VideoSize"]
-			if  4 < len(args):
-				self.VideoUrl = args[4]
-			if "VideoUrl" in kwargs:
-				self.VideoUrl = kwargs["VideoUrl"]
-			if  5 < len(args):
-				self.Tips = args[5]
-			if "Tips" in kwargs:
-				self.Tips = kwargs["Tips"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.VideoMsg{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.VideoMsg ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def ForwordBuf(self):
-		return _OPQBot.OPQBot_VideoMsg_ForwordBuf_Get(self.handle)
-	@ForwordBuf.setter
-	def ForwordBuf(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_VideoMsg_ForwordBuf_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_VideoMsg_ForwordBuf_Set(self.handle, value)
-	@property
-	def ForwordField(self):
-		return _OPQBot.OPQBot_VideoMsg_ForwordField_Get(self.handle)
-	@ForwordField.setter
-	def ForwordField(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_VideoMsg_ForwordField_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_VideoMsg_ForwordField_Set(self.handle, value)
-	@property
-	def VideoMd5(self):
-		return _OPQBot.OPQBot_VideoMsg_VideoMd5_Get(self.handle)
-	@VideoMd5.setter
-	def VideoMd5(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_VideoMsg_VideoMd5_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_VideoMsg_VideoMd5_Set(self.handle, value)
-	@property
-	def VideoSize(self):
-		return _OPQBot.OPQBot_VideoMsg_VideoSize_Get(self.handle)
-	@VideoSize.setter
-	def VideoSize(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_VideoMsg_VideoSize_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_VideoMsg_VideoSize_Set(self.handle, value)
-	@property
-	def VideoUrl(self):
-		return _OPQBot.OPQBot_VideoMsg_VideoUrl_Get(self.handle)
-	@VideoUrl.setter
-	def VideoUrl(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_VideoMsg_VideoUrl_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_VideoMsg_VideoUrl_Set(self.handle, value)
-	@property
-	def Tips(self):
-		return _OPQBot.OPQBot_VideoMsg_Tips_Get(self.handle)
-	@Tips.setter
-	def Tips(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_VideoMsg_Tips_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_VideoMsg_Tips_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeReplyContent
-class SendTypeReplyContent(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeReplyContent_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  1 < len(args):
-				self.Content = args[1]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeReplyContent{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeReplyContent ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeReplyContent_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeReplyContent_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeReplyContent_Content_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeTextMsgContent
-class SendTypeTextMsgContent(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeTextMsgContent_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeTextMsgContent{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeTextMsgContent ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeTextMsgContent_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeTextMsgContent_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeTextMsgContent_Content_Set(self.handle, value)
-
-# Python type for struct OPQBot.GroupFileMsg
-class GroupFileMsg(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupFileMsg_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.FileID = args[0]
-			if "FileID" in kwargs:
-				self.FileID = kwargs["FileID"]
-			if  1 < len(args):
-				self.FileName = args[1]
-			if "FileName" in kwargs:
-				self.FileName = kwargs["FileName"]
-			if  2 < len(args):
-				self.FileSize = args[2]
-			if "FileSize" in kwargs:
-				self.FileSize = kwargs["FileSize"]
-			if  3 < len(args):
-				self.Tips = args[3]
-			if "Tips" in kwargs:
-				self.Tips = kwargs["Tips"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupFileMsg{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupFileMsg ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def FileID(self):
-		return _OPQBot.OPQBot_GroupFileMsg_FileID_Get(self.handle)
-	@FileID.setter
-	def FileID(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupFileMsg_FileID_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupFileMsg_FileID_Set(self.handle, value)
-	@property
-	def FileName(self):
-		return _OPQBot.OPQBot_GroupFileMsg_FileName_Get(self.handle)
-	@FileName.setter
-	def FileName(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupFileMsg_FileName_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupFileMsg_FileName_Set(self.handle, value)
-	@property
-	def FileSize(self):
-		return _OPQBot.OPQBot_GroupFileMsg_FileSize_Get(self.handle)
-	@FileSize.setter
-	def FileSize(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupFileMsg_FileSize_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupFileMsg_FileSize_Set(self.handle, value)
-	@property
-	def Tips(self):
-		return _OPQBot.OPQBot_GroupFileMsg_Tips_Get(self.handle)
-	@Tips.setter
-	def Tips(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupFileMsg_Tips_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupFileMsg_Tips_Set(self.handle, value)
-
-# Python type for struct OPQBot.GroupRevokePack
-class GroupRevokePack(Context):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupRevokePack_CTor()
-			_OPQBot.IncRef(self.handle)
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupRevokePack{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupRevokePack ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-
-# Python type for struct OPQBot.PicMsg
-class PicMsg(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_PicMsg_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  2 < len(args):
-				self.Tips = args[2]
-			if "Tips" in kwargs:
-				self.Tips = kwargs["Tips"]
-			if  4 < len(args):
-				self.UserID = args[4]
-			if "UserID" in kwargs:
-				self.UserID = kwargs["UserID"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.PicMsg{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.PicMsg ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_PicMsg_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_PicMsg_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_PicMsg_Content_Set(self.handle, value)
-	@property
-	def Tips(self):
-		return _OPQBot.OPQBot_PicMsg_Tips_Get(self.handle)
-	@Tips.setter
-	def Tips(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_PicMsg_Tips_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_PicMsg_Tips_Set(self.handle, value)
-	@property
-	def UserID(self):
-		return go.Slice_int64(handle=_OPQBot.OPQBot_PicMsg_UserID_Get(self.handle))
-	@UserID.setter
-	def UserID(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_PicMsg_UserID_Set(self.handle, value.handle)
-		else:
-			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
-
-# Python type for struct OPQBot.SendTypeJsonContent
-class SendTypeJsonContent(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeJsonContent_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeJsonContent{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeJsonContent ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeJsonContent_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeJsonContent_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeJsonContent_Content_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeReplyContentPrivateChat
-class SendTypeReplyContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeReplyContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  1 < len(args):
-				self.Content = args[1]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  2 < len(args):
-				self.Group = args[2]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeReplyContentPrivateChat{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeReplyContentPrivateChat ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Content_Set(self.handle, value)
-	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Group_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Group_Set(self.handle, value)
+			_OPQBot.OPQBot_SendTypeVoiceByLocalContent_Path_Set(self.handle, value)
 
 # Python type for struct OPQBot.UserCardInfo
 class UserCardInfo(go.GoClass):
@@ -2828,8 +1147,8 @@ class GroupExitSuccessPack(Context):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 
-# Python type for struct OPQBot.GroupExitPack
-class GroupExitPack(Context):
+# Python type for struct OPQBot.GroupShutPack
+class GroupShutPack(Context):
 	""""""
 	def __init__(self, *args, **kwargs):
 		"""
@@ -2844,13 +1163,13 @@ class GroupExitPack(Context):
 			self.handle = args[0].handle
 			_OPQBot.IncRef(self.handle)
 		else:
-			self.handle = _OPQBot.OPQBot_GroupExitPack_CTor()
+			self.handle = _OPQBot.OPQBot_GroupShutPack_CTor()
 			_OPQBot.IncRef(self.handle)
 	def __del__(self):
 		_OPQBot.DecRef(self.handle)
 	def __str__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupExitPack{'
+		sv = 'OPQBot.GroupShutPack{'
 		first = True
 		for v in pr:
 			if callable(v[1]):
@@ -2863,329 +1182,11 @@ class GroupExitPack(Context):
 		return sv + '}'
 	def __repr__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupExitPack ( '
+		sv = 'OPQBot.GroupShutPack ( '
 		for v in pr:
 			if not callable(v[1]):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
-
-# Python type for struct OPQBot.FriendList
-class FriendList(go.GoClass):
-	"""FriendList 获取好友列表表单\n"""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_FriendList_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.FriendCount = args[0]
-			if "FriendCount" in kwargs:
-				self.FriendCount = kwargs["FriendCount"]
-			if  2 < len(args):
-				self.GetfriendCount = args[2]
-			if "GetfriendCount" in kwargs:
-				self.GetfriendCount = kwargs["GetfriendCount"]
-			if  3 < len(args):
-				self.StartIndex = args[3]
-			if "StartIndex" in kwargs:
-				self.StartIndex = kwargs["StartIndex"]
-			if  4 < len(args):
-				self.TotoalFriendCount = args[4]
-			if "TotoalFriendCount" in kwargs:
-				self.TotoalFriendCount = kwargs["TotoalFriendCount"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.FriendList{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.FriendList ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def FriendCount(self):
-		return _OPQBot.OPQBot_FriendList_FriendCount_Get(self.handle)
-	@FriendCount.setter
-	def FriendCount(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendList_FriendCount_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_FriendList_FriendCount_Set(self.handle, value)
-	@property
-	def GetfriendCount(self):
-		return _OPQBot.OPQBot_FriendList_GetfriendCount_Get(self.handle)
-	@GetfriendCount.setter
-	def GetfriendCount(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendList_GetfriendCount_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_FriendList_GetfriendCount_Set(self.handle, value)
-	@property
-	def StartIndex(self):
-		return _OPQBot.OPQBot_FriendList_StartIndex_Get(self.handle)
-	@StartIndex.setter
-	def StartIndex(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendList_StartIndex_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_FriendList_StartIndex_Set(self.handle, value)
-	@property
-	def TotoalFriendCount(self):
-		return _OPQBot.OPQBot_FriendList_TotoalFriendCount_Get(self.handle)
-	@TotoalFriendCount.setter
-	def TotoalFriendCount(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendList_TotoalFriendCount_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_FriendList_TotoalFriendCount_Set(self.handle, value)
-
-# Python type for struct OPQBot.GroupFileResult
-class GroupFileResult(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupFileResult_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Ret = args[0]
-			if "Ret" in kwargs:
-				self.Ret = kwargs["Ret"]
-			if  1 < len(args):
-				self.URL = args[1]
-			if "URL" in kwargs:
-				self.URL = kwargs["URL"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupFileResult{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupFileResult ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Ret(self):
-		return _OPQBot.OPQBot_GroupFileResult_Ret_Get(self.handle)
-	@Ret.setter
-	def Ret(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupFileResult_Ret_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupFileResult_Ret_Set(self.handle, value)
-	@property
-	def URL(self):
-		return _OPQBot.OPQBot_GroupFileResult_URL_Get(self.handle)
-	@URL.setter
-	def URL(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupFileResult_URL_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupFileResult_URL_Set(self.handle, value)
-
-# Python type for struct OPQBot.GroupMsgPack
-class GroupMsgPack(Context):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupMsgPack_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  1 < len(args):
-				self.Content = args[1]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  2 < len(args):
-				self.FromGroupID = args[2]
-			if "FromGroupID" in kwargs:
-				self.FromGroupID = kwargs["FromGroupID"]
-			if  3 < len(args):
-				self.FromGroupName = args[3]
-			if "FromGroupName" in kwargs:
-				self.FromGroupName = kwargs["FromGroupName"]
-			if  4 < len(args):
-				self.FromNickName = args[4]
-			if "FromNickName" in kwargs:
-				self.FromNickName = kwargs["FromNickName"]
-			if  5 < len(args):
-				self.FromUserID = args[5]
-			if "FromUserID" in kwargs:
-				self.FromUserID = kwargs["FromUserID"]
-			if  6 < len(args):
-				self.MsgRandom = args[6]
-			if "MsgRandom" in kwargs:
-				self.MsgRandom = kwargs["MsgRandom"]
-			if  7 < len(args):
-				self.MsgSeq = args[7]
-			if "MsgSeq" in kwargs:
-				self.MsgSeq = kwargs["MsgSeq"]
-			if  8 < len(args):
-				self.MsgTime = args[8]
-			if "MsgTime" in kwargs:
-				self.MsgTime = kwargs["MsgTime"]
-			if  9 < len(args):
-				self.MsgType = args[9]
-			if "MsgType" in kwargs:
-				self.MsgType = kwargs["MsgType"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupMsgPack{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupMsgPack ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_GroupMsgPack_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_Content_Set(self.handle, value)
-	@property
-	def FromGroupID(self):
-		return _OPQBot.OPQBot_GroupMsgPack_FromGroupID_Get(self.handle)
-	@FromGroupID.setter
-	def FromGroupID(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_FromGroupID_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_FromGroupID_Set(self.handle, value)
-	@property
-	def FromGroupName(self):
-		return _OPQBot.OPQBot_GroupMsgPack_FromGroupName_Get(self.handle)
-	@FromGroupName.setter
-	def FromGroupName(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_FromGroupName_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_FromGroupName_Set(self.handle, value)
-	@property
-	def FromNickName(self):
-		return _OPQBot.OPQBot_GroupMsgPack_FromNickName_Get(self.handle)
-	@FromNickName.setter
-	def FromNickName(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_FromNickName_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_FromNickName_Set(self.handle, value)
-	@property
-	def FromUserID(self):
-		return _OPQBot.OPQBot_GroupMsgPack_FromUserID_Get(self.handle)
-	@FromUserID.setter
-	def FromUserID(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_FromUserID_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_FromUserID_Set(self.handle, value)
-	@property
-	def MsgRandom(self):
-		return _OPQBot.OPQBot_GroupMsgPack_MsgRandom_Get(self.handle)
-	@MsgRandom.setter
-	def MsgRandom(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_MsgRandom_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_MsgRandom_Set(self.handle, value)
-	@property
-	def MsgSeq(self):
-		return _OPQBot.OPQBot_GroupMsgPack_MsgSeq_Get(self.handle)
-	@MsgSeq.setter
-	def MsgSeq(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_MsgSeq_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_MsgSeq_Set(self.handle, value)
-	@property
-	def MsgTime(self):
-		return _OPQBot.OPQBot_GroupMsgPack_MsgTime_Get(self.handle)
-	@MsgTime.setter
-	def MsgTime(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_MsgTime_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_MsgTime_Set(self.handle, value)
-	@property
-	def MsgType(self):
-		return _OPQBot.OPQBot_GroupMsgPack_MsgType_Get(self.handle)
-	@MsgType.setter
-	def MsgType(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_GroupMsgPack_MsgType_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_GroupMsgPack_MsgType_Set(self.handle, value)
 
 # Python type for struct OPQBot.GroupSystemNotifyPack
 class GroupSystemNotifyPack(Context):
@@ -3228,8 +1229,8 @@ class GroupSystemNotifyPack(Context):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 
-# Python type for struct OPQBot.SendTypePicMsgByBase64ContentPrivateChat
-class SendTypePicMsgByBase64ContentPrivateChat(go.GoClass):
+# Python type for struct OPQBot.FriendMsgPack
+class FriendMsgPack(Context):
 	""""""
 	def __init__(self, *args, **kwargs):
 		"""
@@ -3244,581 +1245,33 @@ class SendTypePicMsgByBase64ContentPrivateChat(go.GoClass):
 			self.handle = args[0].handle
 			_OPQBot.IncRef(self.handle)
 		else:
-			self.handle = _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_CTor()
+			self.handle = _OPQBot.OPQBot_FriendMsgPack_CTor()
 			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.Base64 = args[1]
-			if "Base64" in kwargs:
-				self.Base64 = kwargs["Base64"]
-			if  2 < len(args):
-				self.Group = args[2]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
-			if  3 < len(args):
-				self.Flash = args[3]
-			if "Flash" in kwargs:
-				self.Flash = kwargs["Flash"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByBase64ContentPrivateChat{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByBase64ContentPrivateChat ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Set(self.handle, value)
-	@property
-	def Base64(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Get(self.handle)
-	@Base64.setter
-	def Base64(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Set(self.handle, value)
-	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set(self.handle, value)
-	@property
-	def Flash(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Get(self.handle)
-	@Flash.setter
-	def Flash(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set(self.handle, value)
-
-# Python type for struct OPQBot.AtMsg
-class AtMsg(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_AtMsg_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  2 < len(args):
-				self.UserID = args[2]
-			if "UserID" in kwargs:
-				self.UserID = kwargs["UserID"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.AtMsg{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.AtMsg ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_AtMsg_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_AtMsg_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_AtMsg_Content_Set(self.handle, value)
-	@property
-	def UserID(self):
-		return go.Slice_int64(handle=_OPQBot.OPQBot_AtMsg_UserID_Get(self.handle))
-	@UserID.setter
-	def UserID(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_AtMsg_UserID_Set(self.handle, value.handle)
-		else:
-			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
-	def Clean(self):
-		"""Clean() object"""
-		return AtMsg(handle=_OPQBot.OPQBot_AtMsg_Clean(self.handle))
-
-# Python type for struct OPQBot.Cookie
-class Cookie(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_Cookie_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.ClientKey = args[0]
-			if "ClientKey" in kwargs:
-				self.ClientKey = kwargs["ClientKey"]
-			if  1 < len(args):
-				self.Cookies = args[1]
-			if "Cookies" in kwargs:
-				self.Cookies = kwargs["Cookies"]
-			if  2 < len(args):
-				self.Gtk = args[2]
-			if "Gtk" in kwargs:
-				self.Gtk = kwargs["Gtk"]
-			if  3 < len(args):
-				self.Gtk32 = args[3]
-			if "Gtk32" in kwargs:
-				self.Gtk32 = kwargs["Gtk32"]
-			if  5 < len(args):
-				self.Skey = args[5]
-			if "Skey" in kwargs:
-				self.Skey = kwargs["Skey"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.Cookie{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.Cookie ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def ClientKey(self):
-		return _OPQBot.OPQBot_Cookie_ClientKey_Get(self.handle)
-	@ClientKey.setter
-	def ClientKey(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Cookie_ClientKey_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Cookie_ClientKey_Set(self.handle, value)
-	@property
-	def Cookies(self):
-		return _OPQBot.OPQBot_Cookie_Cookies_Get(self.handle)
-	@Cookies.setter
-	def Cookies(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Cookie_Cookies_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Cookie_Cookies_Set(self.handle, value)
-	@property
-	def Gtk(self):
-		return _OPQBot.OPQBot_Cookie_Gtk_Get(self.handle)
-	@Gtk.setter
-	def Gtk(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Cookie_Gtk_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Cookie_Gtk_Set(self.handle, value)
-	@property
-	def Gtk32(self):
-		return _OPQBot.OPQBot_Cookie_Gtk32_Get(self.handle)
-	@Gtk32.setter
-	def Gtk32(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Cookie_Gtk32_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Cookie_Gtk32_Set(self.handle, value)
-	@property
-	def Skey(self):
-		return _OPQBot.OPQBot_Cookie_Skey_Get(self.handle)
-	@Skey.setter
-	def Skey(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Cookie_Skey_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Cookie_Skey_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeVoiceByLocalContent
-class SendTypeVoiceByLocalContent(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeVoiceByLocalContent_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Path = args[0]
-			if "Path" in kwargs:
-				self.Path = kwargs["Path"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeVoiceByLocalContent{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeVoiceByLocalContent ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Path(self):
-		return _OPQBot.OPQBot_SendTypeVoiceByLocalContent_Path_Get(self.handle)
-	@Path.setter
-	def Path(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeVoiceByLocalContent_Path_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeVoiceByLocalContent_Path_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendTypeXmlContent
-class SendTypeXmlContent(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeXmlContent_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeXmlContent{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeXmlContent ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Content(self):
-		return _OPQBot.OPQBot_SendTypeXmlContent_Content_Get(self.handle)
-	@Content.setter
-	def Content(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeXmlContent_Content_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeXmlContent_Content_Set(self.handle, value)
-
-# Python type for struct OPQBot.Result
-class Result(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_Result_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Msg = args[0]
-			if "Msg" in kwargs:
-				self.Msg = kwargs["Msg"]
-			if  1 < len(args):
-				self.Ret = args[1]
-			if "Ret" in kwargs:
-				self.Ret = kwargs["Ret"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.Result{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.Result ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Msg(self):
-		return _OPQBot.OPQBot_Result_Msg_Get(self.handle)
-	@Msg.setter
-	def Msg(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Result_Msg_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Result_Msg_Set(self.handle, value)
-	@property
-	def Ret(self):
-		return _OPQBot.OPQBot_Result_Ret_Get(self.handle)
-	@Ret.setter
-	def Ret(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_Result_Ret_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_Result_Ret_Set(self.handle, value)
-
-# Python type for struct OPQBot.SendMsgPack
-class SendMsgPack(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendMsgPack_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.SendToType = args[0]
-			if "SendToType" in kwargs:
-				self.SendToType = kwargs["SendToType"]
-			if  1 < len(args):
-				self.ToUserUid = args[1]
-			if "ToUserUid" in kwargs:
-				self.ToUserUid = kwargs["ToUserUid"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendMsgPack{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendMsgPack ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def SendToType(self):
-		return _OPQBot.OPQBot_SendMsgPack_SendToType_Get(self.handle)
-	@SendToType.setter
-	def SendToType(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendMsgPack_SendToType_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendMsgPack_SendToType_Set(self.handle, value)
-	@property
-	def ToUserUid(self):
-		return _OPQBot.OPQBot_SendMsgPack_ToUserUid_Get(self.handle)
-	@ToUserUid.setter
-	def ToUserUid(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendMsgPack_ToUserUid_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendMsgPack_ToUserUid_Set(self.handle, value)
-
-# Python type for struct OPQBot.GroupAdminPack
-class GroupAdminPack(Context):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_GroupAdminPack_CTor()
-			_OPQBot.IncRef(self.handle)
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupAdminPack{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.GroupAdminPack ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-
-# Python type for struct OPQBot.SendTypeForwordContentPrivateChat
-class SendTypeForwordContentPrivateChat(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.ForwordBuf = args[0]
-			if "ForwordBuf" in kwargs:
-				self.ForwordBuf = kwargs["ForwordBuf"]
 			if  1 < len(args):
 				self.Content = args[1]
 			if "Content" in kwargs:
 				self.Content = kwargs["Content"]
 			if  2 < len(args):
-				self.ForwordField = args[2]
-			if "ForwordField" in kwargs:
-				self.ForwordField = kwargs["ForwordField"]
+				self.FromUin = args[2]
+			if "FromUin" in kwargs:
+				self.FromUin = kwargs["FromUin"]
 			if  3 < len(args):
-				self.Group = args[3]
-			if "Group" in kwargs:
-				self.Group = kwargs["Group"]
+				self.MsgSeq = args[3]
+			if "MsgSeq" in kwargs:
+				self.MsgSeq = kwargs["MsgSeq"]
+			if  4 < len(args):
+				self.MsgType = args[4]
+			if "MsgType" in kwargs:
+				self.MsgType = kwargs["MsgType"]
+			if  6 < len(args):
+				self.ToUin = args[6]
+			if "ToUin" in kwargs:
+				self.ToUin = kwargs["ToUin"]
 	def __del__(self):
 		_OPQBot.DecRef(self.handle)
 	def __str__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeForwordContentPrivateChat{'
+		sv = 'OPQBot.FriendMsgPack{'
 		first = True
 		for v in pr:
 			if callable(v[1]):
@@ -3831,50 +1284,59 @@ class SendTypeForwordContentPrivateChat(go.GoClass):
 		return sv + '}'
 	def __repr__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypeForwordContentPrivateChat ( '
+		sv = 'OPQBot.FriendMsgPack ( '
 		for v in pr:
 			if not callable(v[1]):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 	@property
-	def ForwordBuf(self):
-		return _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Get(self.handle)
-	@ForwordBuf.setter
-	def ForwordBuf(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set(self.handle, value)
-	@property
 	def Content(self):
-		return _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Content_Get(self.handle)
+		return _OPQBot.OPQBot_FriendMsgPack_Content_Get(self.handle)
 	@Content.setter
 	def Content(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Content_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_FriendMsgPack_Content_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Content_Set(self.handle, value)
+			_OPQBot.OPQBot_FriendMsgPack_Content_Set(self.handle, value)
 	@property
-	def ForwordField(self):
-		return _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Get(self.handle)
-	@ForwordField.setter
-	def ForwordField(self, value):
+	def FromUin(self):
+		return _OPQBot.OPQBot_FriendMsgPack_FromUin_Get(self.handle)
+	@FromUin.setter
+	def FromUin(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_FriendMsgPack_FromUin_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set(self.handle, value)
+			_OPQBot.OPQBot_FriendMsgPack_FromUin_Set(self.handle, value)
 	@property
-	def Group(self):
-		return _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Group_Get(self.handle)
-	@Group.setter
-	def Group(self, value):
+	def MsgSeq(self):
+		return _OPQBot.OPQBot_FriendMsgPack_MsgSeq_Get(self.handle)
+	@MsgSeq.setter
+	def MsgSeq(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Group_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_FriendMsgPack_MsgSeq_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Group_Set(self.handle, value)
+			_OPQBot.OPQBot_FriendMsgPack_MsgSeq_Set(self.handle, value)
+	@property
+	def MsgType(self):
+		return _OPQBot.OPQBot_FriendMsgPack_MsgType_Get(self.handle)
+	@MsgType.setter
+	def MsgType(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendMsgPack_MsgType_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendMsgPack_MsgType_Set(self.handle, value)
+	@property
+	def ToUin(self):
+		return _OPQBot.OPQBot_FriendMsgPack_ToUin_Get(self.handle)
+	@ToUin.setter
+	def ToUin(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendMsgPack_ToUin_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendMsgPack_ToUin_Set(self.handle, value)
 
-# Python type for struct OPQBot.SendTypePicMsgByLocalContent
-class SendTypePicMsgByLocalContent(go.GoClass):
+# Python type for struct OPQBot.GroupRevokePack
+class GroupRevokePack(Context):
 	""""""
 	def __init__(self, *args, **kwargs):
 		"""
@@ -3889,25 +1351,13 @@ class SendTypePicMsgByLocalContent(go.GoClass):
 			self.handle = args[0].handle
 			_OPQBot.IncRef(self.handle)
 		else:
-			self.handle = _OPQBot.OPQBot_SendTypePicMsgByLocalContent_CTor()
+			self.handle = _OPQBot.OPQBot_GroupRevokePack_CTor()
 			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Content = args[0]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
-			if  1 < len(args):
-				self.Path = args[1]
-			if "Path" in kwargs:
-				self.Path = kwargs["Path"]
-			if  2 < len(args):
-				self.Flash = args[2]
-			if "Flash" in kwargs:
-				self.Flash = kwargs["Flash"]
 	def __del__(self):
 		_OPQBot.DecRef(self.handle)
 	def __str__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByLocalContent{'
+		sv = 'OPQBot.GroupRevokePack{'
 		first = True
 		for v in pr:
 			if callable(v[1]):
@@ -3920,38 +1370,65 @@ class SendTypePicMsgByLocalContent(go.GoClass):
 		return sv + '}'
 	def __repr__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.SendTypePicMsgByLocalContent ( '
+		sv = 'OPQBot.GroupRevokePack ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+
+# Python type for struct OPQBot.SendTypeJsonContent
+class SendTypeJsonContent(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeJsonContent_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeJsonContent{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeJsonContent ( '
 		for v in pr:
 			if not callable(v[1]):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 	@property
 	def Content(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByLocalContent_Content_Get(self.handle)
+		return _OPQBot.OPQBot_SendTypeJsonContent_Content_Get(self.handle)
 	@Content.setter
 	def Content(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Content_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_SendTypeJsonContent_Content_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Content_Set(self.handle, value)
-	@property
-	def Path(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByLocalContent_Path_Get(self.handle)
-	@Path.setter
-	def Path(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Path_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Path_Set(self.handle, value)
-	@property
-	def Flash(self):
-		return _OPQBot.OPQBot_SendTypePicMsgByLocalContent_Flash_Get(self.handle)
-	@Flash.setter
-	def Flash(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Flash_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Flash_Set(self.handle, value)
+			_OPQBot.OPQBot_SendTypeJsonContent_Content_Set(self.handle, value)
 
 # Python type for struct OPQBot.SendTypePicMsgByMd5Content
 class SendTypePicMsgByMd5Content(go.GoClass):
@@ -4113,9 +1590,9 @@ class SendTypePicMsgByUrlContent(go.GoClass):
 		else:
 			_OPQBot.OPQBot_SendTypePicMsgByUrlContent_Flash_Set(self.handle, value)
 
-# Python type for struct OPQBot.UserInfo
-class UserInfo(go.GoClass):
-	"""UserInfo 用户信息表单\n"""
+# Python type for struct OPQBot.SendTypeReplyContent
+class SendTypeReplyContent(go.GoClass):
+	""""""
 	def __init__(self, *args, **kwargs):
 		"""
 		handle=A Go-side object is always initialized with an explicit handle=arg
@@ -4129,29 +1606,17 @@ class UserInfo(go.GoClass):
 			self.handle = args[0].handle
 			_OPQBot.IncRef(self.handle)
 		else:
-			self.handle = _OPQBot.OPQBot_UserInfo_CTor()
+			self.handle = _OPQBot.OPQBot_SendTypeReplyContent_CTor()
 			_OPQBot.IncRef(self.handle)
-			if  0 < len(args):
-				self.Code = args[0]
-			if "Code" in kwargs:
-				self.Code = kwargs["Code"]
-			if  2 < len(args):
-				self.Default = args[2]
-			if "Default" in kwargs:
-				self.Default = kwargs["Default"]
-			if  3 < len(args):
-				self.Message = args[3]
-			if "Message" in kwargs:
-				self.Message = kwargs["Message"]
-			if  4 < len(args):
-				self.Subcode = args[4]
-			if "Subcode" in kwargs:
-				self.Subcode = kwargs["Subcode"]
+			if  1 < len(args):
+				self.Content = args[1]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
 	def __del__(self):
 		_OPQBot.DecRef(self.handle)
 	def __str__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.UserInfo{'
+		sv = 'OPQBot.SendTypeReplyContent{'
 		first = True
 		for v in pr:
 			if callable(v[1]):
@@ -4164,47 +1629,20 @@ class UserInfo(go.GoClass):
 		return sv + '}'
 	def __repr__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.UserInfo ( '
+		sv = 'OPQBot.SendTypeReplyContent ( '
 		for v in pr:
 			if not callable(v[1]):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 	@property
-	def Code(self):
-		return _OPQBot.OPQBot_UserInfo_Code_Get(self.handle)
-	@Code.setter
-	def Code(self, value):
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeReplyContent_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_UserInfo_Code_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_SendTypeReplyContent_Content_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_UserInfo_Code_Set(self.handle, value)
-	@property
-	def Default(self):
-		return _OPQBot.OPQBot_UserInfo_Default_Get(self.handle)
-	@Default.setter
-	def Default(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_UserInfo_Default_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_UserInfo_Default_Set(self.handle, value)
-	@property
-	def Message(self):
-		return _OPQBot.OPQBot_UserInfo_Message_Get(self.handle)
-	@Message.setter
-	def Message(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_UserInfo_Message_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_UserInfo_Message_Set(self.handle, value)
-	@property
-	def Subcode(self):
-		return _OPQBot.OPQBot_UserInfo_Subcode_Get(self.handle)
-	@Subcode.setter
-	def Subcode(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_UserInfo_Subcode_Set(self.handle, value.handle)
-		else:
-			_OPQBot.OPQBot_UserInfo_Subcode_Set(self.handle, value)
+			_OPQBot.OPQBot_SendTypeReplyContent_Content_Set(self.handle, value)
 
 # Python type for struct OPQBot.BotManager
 class BotManager(go.GoClass):
@@ -4501,8 +1939,8 @@ class BotManager(go.GoClass):
 		"""
 		_OPQBot.OPQBot_BotManager_SendGroupXmlMsg(self.handle, GroupUin, Content, goRun)
 
-# Python type for struct OPQBot.FriendMsgPack
-class FriendMsgPack(Context):
+# Python type for struct OPQBot.Cookie
+class Cookie(go.GoClass):
 	""""""
 	def __init__(self, *args, **kwargs):
 		"""
@@ -4517,33 +1955,33 @@ class FriendMsgPack(Context):
 			self.handle = args[0].handle
 			_OPQBot.IncRef(self.handle)
 		else:
-			self.handle = _OPQBot.OPQBot_FriendMsgPack_CTor()
+			self.handle = _OPQBot.OPQBot_Cookie_CTor()
 			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.ClientKey = args[0]
+			if "ClientKey" in kwargs:
+				self.ClientKey = kwargs["ClientKey"]
 			if  1 < len(args):
-				self.Content = args[1]
-			if "Content" in kwargs:
-				self.Content = kwargs["Content"]
+				self.Cookies = args[1]
+			if "Cookies" in kwargs:
+				self.Cookies = kwargs["Cookies"]
 			if  2 < len(args):
-				self.FromUin = args[2]
-			if "FromUin" in kwargs:
-				self.FromUin = kwargs["FromUin"]
+				self.Gtk = args[2]
+			if "Gtk" in kwargs:
+				self.Gtk = kwargs["Gtk"]
 			if  3 < len(args):
-				self.MsgSeq = args[3]
-			if "MsgSeq" in kwargs:
-				self.MsgSeq = kwargs["MsgSeq"]
-			if  4 < len(args):
-				self.MsgType = args[4]
-			if "MsgType" in kwargs:
-				self.MsgType = kwargs["MsgType"]
-			if  6 < len(args):
-				self.ToUin = args[6]
-			if "ToUin" in kwargs:
-				self.ToUin = kwargs["ToUin"]
+				self.Gtk32 = args[3]
+			if "Gtk32" in kwargs:
+				self.Gtk32 = kwargs["Gtk32"]
+			if  5 < len(args):
+				self.Skey = args[5]
+			if "Skey" in kwargs:
+				self.Skey = kwargs["Skey"]
 	def __del__(self):
 		_OPQBot.DecRef(self.handle)
 	def __str__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.FriendMsgPack{'
+		sv = 'OPQBot.Cookie{'
 		first = True
 		for v in pr:
 			if callable(v[1]):
@@ -4556,56 +1994,2618 @@ class FriendMsgPack(Context):
 		return sv + '}'
 	def __repr__(self):
 		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'OPQBot.FriendMsgPack ( '
+		sv = 'OPQBot.Cookie ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def ClientKey(self):
+		return _OPQBot.OPQBot_Cookie_ClientKey_Get(self.handle)
+	@ClientKey.setter
+	def ClientKey(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Cookie_ClientKey_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Cookie_ClientKey_Set(self.handle, value)
+	@property
+	def Cookies(self):
+		return _OPQBot.OPQBot_Cookie_Cookies_Get(self.handle)
+	@Cookies.setter
+	def Cookies(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Cookie_Cookies_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Cookie_Cookies_Set(self.handle, value)
+	@property
+	def Gtk(self):
+		return _OPQBot.OPQBot_Cookie_Gtk_Get(self.handle)
+	@Gtk.setter
+	def Gtk(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Cookie_Gtk_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Cookie_Gtk_Set(self.handle, value)
+	@property
+	def Gtk32(self):
+		return _OPQBot.OPQBot_Cookie_Gtk32_Get(self.handle)
+	@Gtk32.setter
+	def Gtk32(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Cookie_Gtk32_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Cookie_Gtk32_Set(self.handle, value)
+	@property
+	def Skey(self):
+		return _OPQBot.OPQBot_Cookie_Skey_Get(self.handle)
+	@Skey.setter
+	def Skey(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Cookie_Skey_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Cookie_Skey_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypePicMsgByBase64Content
+class SendTypePicMsgByBase64Content(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypePicMsgByBase64Content_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.Base64 = args[1]
+			if "Base64" in kwargs:
+				self.Base64 = kwargs["Base64"]
+			if  2 < len(args):
+				self.Flash = args[2]
+			if "Flash" in kwargs:
+				self.Flash = kwargs["Flash"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByBase64Content{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByBase64Content ( '
 		for v in pr:
 			if not callable(v[1]):
 				sv += v[0] + '=' + str(v[1]) + ', '
 		return sv + ')'
 	@property
 	def Content(self):
-		return _OPQBot.OPQBot_FriendMsgPack_Content_Get(self.handle)
+		return _OPQBot.OPQBot_SendTypePicMsgByBase64Content_Content_Get(self.handle)
 	@Content.setter
 	def Content(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendMsgPack_Content_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Content_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_FriendMsgPack_Content_Set(self.handle, value)
+			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Content_Set(self.handle, value)
+	@property
+	def Base64(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByBase64Content_Base64_Get(self.handle)
+	@Base64.setter
+	def Base64(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Base64_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Base64_Set(self.handle, value)
+	@property
+	def Flash(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByBase64Content_Flash_Get(self.handle)
+	@Flash.setter
+	def Flash(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Flash_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByBase64Content_Flash_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypePicMsgByLocalContent
+class SendTypePicMsgByLocalContent(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypePicMsgByLocalContent_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.Path = args[1]
+			if "Path" in kwargs:
+				self.Path = kwargs["Path"]
+			if  2 < len(args):
+				self.Flash = args[2]
+			if "Flash" in kwargs:
+				self.Flash = kwargs["Flash"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByLocalContent{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByLocalContent ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByLocalContent_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Content_Set(self.handle, value)
+	@property
+	def Path(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByLocalContent_Path_Get(self.handle)
+	@Path.setter
+	def Path(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Path_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Path_Set(self.handle, value)
+	@property
+	def Flash(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByLocalContent_Flash_Get(self.handle)
+	@Flash.setter
+	def Flash(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Flash_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContent_Flash_Set(self.handle, value)
+
+# Python type for struct OPQBot.UserInfo
+class UserInfo(go.GoClass):
+	"""UserInfo 用户信息表单\n"""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_UserInfo_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Code = args[0]
+			if "Code" in kwargs:
+				self.Code = kwargs["Code"]
+			if  2 < len(args):
+				self.Default = args[2]
+			if "Default" in kwargs:
+				self.Default = kwargs["Default"]
+			if  3 < len(args):
+				self.Message = args[3]
+			if "Message" in kwargs:
+				self.Message = kwargs["Message"]
+			if  4 < len(args):
+				self.Subcode = args[4]
+			if "Subcode" in kwargs:
+				self.Subcode = kwargs["Subcode"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.UserInfo{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.UserInfo ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Code(self):
+		return _OPQBot.OPQBot_UserInfo_Code_Get(self.handle)
+	@Code.setter
+	def Code(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_UserInfo_Code_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_UserInfo_Code_Set(self.handle, value)
+	@property
+	def Default(self):
+		return _OPQBot.OPQBot_UserInfo_Default_Get(self.handle)
+	@Default.setter
+	def Default(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_UserInfo_Default_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_UserInfo_Default_Set(self.handle, value)
+	@property
+	def Message(self):
+		return _OPQBot.OPQBot_UserInfo_Message_Get(self.handle)
+	@Message.setter
+	def Message(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_UserInfo_Message_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_UserInfo_Message_Set(self.handle, value)
+	@property
+	def Subcode(self):
+		return _OPQBot.OPQBot_UserInfo_Subcode_Get(self.handle)
+	@Subcode.setter
+	def Subcode(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_UserInfo_Subcode_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_UserInfo_Subcode_Set(self.handle, value)
+
+# Python type for struct OPQBot.FriendFileResult
+class FriendFileResult(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_FriendFileResult_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.FileName = args[0]
+			if "FileName" in kwargs:
+				self.FileName = kwargs["FileName"]
+			if  1 < len(args):
+				self.FileSize = args[1]
+			if "FileSize" in kwargs:
+				self.FileSize = kwargs["FileSize"]
+			if  2 < len(args):
+				self.FromUin = args[2]
+			if "FromUin" in kwargs:
+				self.FromUin = kwargs["FromUin"]
+			if  3 < len(args):
+				self.URL = args[3]
+			if "URL" in kwargs:
+				self.URL = kwargs["URL"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.FriendFileResult{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.FriendFileResult ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def FileName(self):
+		return _OPQBot.OPQBot_FriendFileResult_FileName_Get(self.handle)
+	@FileName.setter
+	def FileName(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendFileResult_FileName_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendFileResult_FileName_Set(self.handle, value)
+	@property
+	def FileSize(self):
+		return _OPQBot.OPQBot_FriendFileResult_FileSize_Get(self.handle)
+	@FileSize.setter
+	def FileSize(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendFileResult_FileSize_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendFileResult_FileSize_Set(self.handle, value)
 	@property
 	def FromUin(self):
-		return _OPQBot.OPQBot_FriendMsgPack_FromUin_Get(self.handle)
+		return _OPQBot.OPQBot_FriendFileResult_FromUin_Get(self.handle)
 	@FromUin.setter
 	def FromUin(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendMsgPack_FromUin_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_FriendFileResult_FromUin_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_FriendMsgPack_FromUin_Set(self.handle, value)
+			_OPQBot.OPQBot_FriendFileResult_FromUin_Set(self.handle, value)
+	@property
+	def URL(self):
+		return _OPQBot.OPQBot_FriendFileResult_URL_Get(self.handle)
+	@URL.setter
+	def URL(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendFileResult_URL_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendFileResult_URL_Set(self.handle, value)
+
+# Python type for struct OPQBot.FriendList
+class FriendList(go.GoClass):
+	"""FriendList 获取好友列表表单\n"""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_FriendList_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.FriendCount = args[0]
+			if "FriendCount" in kwargs:
+				self.FriendCount = kwargs["FriendCount"]
+			if  2 < len(args):
+				self.GetfriendCount = args[2]
+			if "GetfriendCount" in kwargs:
+				self.GetfriendCount = kwargs["GetfriendCount"]
+			if  3 < len(args):
+				self.StartIndex = args[3]
+			if "StartIndex" in kwargs:
+				self.StartIndex = kwargs["StartIndex"]
+			if  4 < len(args):
+				self.TotoalFriendCount = args[4]
+			if "TotoalFriendCount" in kwargs:
+				self.TotoalFriendCount = kwargs["TotoalFriendCount"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.FriendList{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.FriendList ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def FriendCount(self):
+		return _OPQBot.OPQBot_FriendList_FriendCount_Get(self.handle)
+	@FriendCount.setter
+	def FriendCount(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendList_FriendCount_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendList_FriendCount_Set(self.handle, value)
+	@property
+	def GetfriendCount(self):
+		return _OPQBot.OPQBot_FriendList_GetfriendCount_Get(self.handle)
+	@GetfriendCount.setter
+	def GetfriendCount(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendList_GetfriendCount_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendList_GetfriendCount_Set(self.handle, value)
+	@property
+	def StartIndex(self):
+		return _OPQBot.OPQBot_FriendList_StartIndex_Get(self.handle)
+	@StartIndex.setter
+	def StartIndex(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendList_StartIndex_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendList_StartIndex_Set(self.handle, value)
+	@property
+	def TotoalFriendCount(self):
+		return _OPQBot.OPQBot_FriendList_TotoalFriendCount_Get(self.handle)
+	@TotoalFriendCount.setter
+	def TotoalFriendCount(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_FriendList_TotoalFriendCount_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_FriendList_TotoalFriendCount_Set(self.handle, value)
+
+# Python type for struct OPQBot.GroupExitPack
+class GroupExitPack(Context):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_GroupExitPack_CTor()
+			_OPQBot.IncRef(self.handle)
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupExitPack{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupExitPack ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+
+# Python type for struct OPQBot.GroupFileResult
+class GroupFileResult(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_GroupFileResult_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Ret = args[0]
+			if "Ret" in kwargs:
+				self.Ret = kwargs["Ret"]
+			if  1 < len(args):
+				self.URL = args[1]
+			if "URL" in kwargs:
+				self.URL = kwargs["URL"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupFileResult{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupFileResult ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Ret(self):
+		return _OPQBot.OPQBot_GroupFileResult_Ret_Get(self.handle)
+	@Ret.setter
+	def Ret(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupFileResult_Ret_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupFileResult_Ret_Set(self.handle, value)
+	@property
+	def URL(self):
+		return _OPQBot.OPQBot_GroupFileResult_URL_Get(self.handle)
+	@URL.setter
+	def URL(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupFileResult_URL_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupFileResult_URL_Set(self.handle, value)
+
+# Python type for struct OPQBot.Reply
+class Reply(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_Reply_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.SrcContent = args[1]
+			if "SrcContent" in kwargs:
+				self.SrcContent = kwargs["SrcContent"]
+			if  2 < len(args):
+				self.MsgSeq = args[2]
+			if "MsgSeq" in kwargs:
+				self.MsgSeq = kwargs["MsgSeq"]
+			if  3 < len(args):
+				self.Tips = args[3]
+			if "Tips" in kwargs:
+				self.Tips = kwargs["Tips"]
+			if  4 < len(args):
+				self.UserID = args[4]
+			if "UserID" in kwargs:
+				self.UserID = kwargs["UserID"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.Reply{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.Reply ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_Reply_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Reply_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Reply_Content_Set(self.handle, value)
+	@property
+	def SrcContent(self):
+		return _OPQBot.OPQBot_Reply_SrcContent_Get(self.handle)
+	@SrcContent.setter
+	def SrcContent(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Reply_SrcContent_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Reply_SrcContent_Set(self.handle, value)
 	@property
 	def MsgSeq(self):
-		return _OPQBot.OPQBot_FriendMsgPack_MsgSeq_Get(self.handle)
+		return _OPQBot.OPQBot_Reply_MsgSeq_Get(self.handle)
 	@MsgSeq.setter
 	def MsgSeq(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendMsgPack_MsgSeq_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_Reply_MsgSeq_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_FriendMsgPack_MsgSeq_Set(self.handle, value)
+			_OPQBot.OPQBot_Reply_MsgSeq_Set(self.handle, value)
+	@property
+	def Tips(self):
+		return _OPQBot.OPQBot_Reply_Tips_Get(self.handle)
+	@Tips.setter
+	def Tips(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Reply_Tips_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Reply_Tips_Set(self.handle, value)
+	@property
+	def UserID(self):
+		return go.Slice_int64(handle=_OPQBot.OPQBot_Reply_UserID_Get(self.handle))
+	@UserID.setter
+	def UserID(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Reply_UserID_Set(self.handle, value.handle)
+		else:
+			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
+
+# Python type for struct OPQBot.SendTypeForwordContentPrivateChat
+class SendTypeForwordContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.ForwordBuf = args[0]
+			if "ForwordBuf" in kwargs:
+				self.ForwordBuf = kwargs["ForwordBuf"]
+			if  1 < len(args):
+				self.Content = args[1]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  2 < len(args):
+				self.ForwordField = args[2]
+			if "ForwordField" in kwargs:
+				self.ForwordField = kwargs["ForwordField"]
+			if  3 < len(args):
+				self.Group = args[3]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeForwordContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeForwordContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def ForwordBuf(self):
+		return _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Get(self.handle)
+	@ForwordBuf.setter
+	def ForwordBuf(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set(self.handle, value)
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def ForwordField(self):
+		return _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Get(self.handle)
+	@ForwordField.setter
+	def ForwordField(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeForwordContentPrivateChat_Group_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypePicMsgByBase64ContentPrivateChat
+class SendTypePicMsgByBase64ContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.Base64 = args[1]
+			if "Base64" in kwargs:
+				self.Base64 = kwargs["Base64"]
+			if  2 < len(args):
+				self.Group = args[2]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+			if  3 < len(args):
+				self.Flash = args[3]
+			if "Flash" in kwargs:
+				self.Flash = kwargs["Flash"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByBase64ContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByBase64ContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def Base64(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Get(self.handle)
+	@Base64.setter
+	def Base64(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Base64_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set(self.handle, value)
+	@property
+	def Flash(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Get(self.handle)
+	@Flash.setter
+	def Flash(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypePicMsgByMd5ContentPrivateChat
+class SendTypePicMsgByMd5ContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.Md5s = args[1]
+			if "Md5s" in kwargs:
+				self.Md5s = kwargs["Md5s"]
+			if  2 < len(args):
+				self.Group = args[2]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+			if  3 < len(args):
+				self.Flash = args[3]
+			if "Flash" in kwargs:
+				self.Flash = kwargs["Flash"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByMd5ContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByMd5ContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def Md5s(self):
+		return go.Slice_string(handle=_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Get(self.handle))
+	@Md5s.setter
+	def Md5s(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Set(self.handle, value.handle)
+		else:
+			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set(self.handle, value)
+	@property
+	def Flash(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Get(self.handle)
+	@Flash.setter
+	def Flash(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeVoiceByUrlContentPrivateChat
+class SendTypeVoiceByUrlContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.VoiceUrl = args[0]
+			if "VoiceUrl" in kwargs:
+				self.VoiceUrl = kwargs["VoiceUrl"]
+			if  1 < len(args):
+				self.Group = args[1]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeVoiceByUrlContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeVoiceByUrlContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def VoiceUrl(self):
+		return _OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Get(self.handle)
+	@VoiceUrl.setter
+	def VoiceUrl(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set(self.handle, value)
+
+# Python type for struct OPQBot.MyRecord
+class MyRecord(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_MyRecord_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.FromGroupID = args[0]
+			if "FromGroupID" in kwargs:
+				self.FromGroupID = kwargs["FromGroupID"]
+			if  1 < len(args):
+				self.MsgRandom = args[1]
+			if "MsgRandom" in kwargs:
+				self.MsgRandom = kwargs["MsgRandom"]
+			if  2 < len(args):
+				self.MsgSeq = args[2]
+			if "MsgSeq" in kwargs:
+				self.MsgSeq = kwargs["MsgSeq"]
+			if  3 < len(args):
+				self.MsgTime = args[3]
+			if "MsgTime" in kwargs:
+				self.MsgTime = kwargs["MsgTime"]
+			if  4 < len(args):
+				self.MsgType = args[4]
+			if "MsgType" in kwargs:
+				self.MsgType = kwargs["MsgType"]
+			if  5 < len(args):
+				self.Content = args[5]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.MyRecord{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.MyRecord ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def FromGroupID(self):
+		return _OPQBot.OPQBot_MyRecord_FromGroupID_Get(self.handle)
+	@FromGroupID.setter
+	def FromGroupID(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_MyRecord_FromGroupID_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_MyRecord_FromGroupID_Set(self.handle, value)
+	@property
+	def MsgRandom(self):
+		return _OPQBot.OPQBot_MyRecord_MsgRandom_Get(self.handle)
+	@MsgRandom.setter
+	def MsgRandom(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_MyRecord_MsgRandom_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_MyRecord_MsgRandom_Set(self.handle, value)
+	@property
+	def MsgSeq(self):
+		return _OPQBot.OPQBot_MyRecord_MsgSeq_Get(self.handle)
+	@MsgSeq.setter
+	def MsgSeq(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_MyRecord_MsgSeq_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_MyRecord_MsgSeq_Set(self.handle, value)
+	@property
+	def MsgTime(self):
+		return _OPQBot.OPQBot_MyRecord_MsgTime_Get(self.handle)
+	@MsgTime.setter
+	def MsgTime(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_MyRecord_MsgTime_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_MyRecord_MsgTime_Set(self.handle, value)
 	@property
 	def MsgType(self):
-		return _OPQBot.OPQBot_FriendMsgPack_MsgType_Get(self.handle)
+		return _OPQBot.OPQBot_MyRecord_MsgType_Get(self.handle)
 	@MsgType.setter
 	def MsgType(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendMsgPack_MsgType_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_MyRecord_MsgType_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_FriendMsgPack_MsgType_Set(self.handle, value)
+			_OPQBot.OPQBot_MyRecord_MsgType_Set(self.handle, value)
 	@property
-	def ToUin(self):
-		return _OPQBot.OPQBot_FriendMsgPack_ToUin_Get(self.handle)
-	@ToUin.setter
-	def ToUin(self, value):
+	def Content(self):
+		return _OPQBot.OPQBot_MyRecord_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
 		if isinstance(value, go.GoClass):
-			_OPQBot.OPQBot_FriendMsgPack_ToUin_Set(self.handle, value.handle)
+			_OPQBot.OPQBot_MyRecord_Content_Set(self.handle, value.handle)
 		else:
-			_OPQBot.OPQBot_FriendMsgPack_ToUin_Set(self.handle, value)
+			_OPQBot.OPQBot_MyRecord_Content_Set(self.handle, value)
+
+# Python type for struct OPQBot.PicMsg
+class PicMsg(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_PicMsg_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  2 < len(args):
+				self.Tips = args[2]
+			if "Tips" in kwargs:
+				self.Tips = kwargs["Tips"]
+			if  4 < len(args):
+				self.UserID = args[4]
+			if "UserID" in kwargs:
+				self.UserID = kwargs["UserID"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.PicMsg{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.PicMsg ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_PicMsg_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_PicMsg_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_PicMsg_Content_Set(self.handle, value)
+	@property
+	def Tips(self):
+		return _OPQBot.OPQBot_PicMsg_Tips_Get(self.handle)
+	@Tips.setter
+	def Tips(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_PicMsg_Tips_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_PicMsg_Tips_Set(self.handle, value)
+	@property
+	def UserID(self):
+		return go.Slice_int64(handle=_OPQBot.OPQBot_PicMsg_UserID_Get(self.handle))
+	@UserID.setter
+	def UserID(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_PicMsg_UserID_Set(self.handle, value.handle)
+		else:
+			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
+
+# Python type for struct OPQBot.SendTypeForwordContent
+class SendTypeForwordContent(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeForwordContent_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.ForwordBuf = args[0]
+			if "ForwordBuf" in kwargs:
+				self.ForwordBuf = kwargs["ForwordBuf"]
+			if  1 < len(args):
+				self.ForwordField = args[1]
+			if "ForwordField" in kwargs:
+				self.ForwordField = kwargs["ForwordField"]
+			if  2 < len(args):
+				self.Content = args[2]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeForwordContent{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeForwordContent ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def ForwordBuf(self):
+		return _OPQBot.OPQBot_SendTypeForwordContent_ForwordBuf_Get(self.handle)
+	@ForwordBuf.setter
+	def ForwordBuf(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeForwordContent_ForwordBuf_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeForwordContent_ForwordBuf_Set(self.handle, value)
+	@property
+	def ForwordField(self):
+		return _OPQBot.OPQBot_SendTypeForwordContent_ForwordField_Get(self.handle)
+	@ForwordField.setter
+	def ForwordField(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeForwordContent_ForwordField_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeForwordContent_ForwordField_Set(self.handle, value)
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeForwordContent_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeForwordContent_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeForwordContent_Content_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypePicMsgByLocalContentPrivateChat
+class SendTypePicMsgByLocalContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.Path = args[1]
+			if "Path" in kwargs:
+				self.Path = kwargs["Path"]
+			if  2 < len(args):
+				self.Group = args[2]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+			if  3 < len(args):
+				self.Flash = args[3]
+			if "Flash" in kwargs:
+				self.Flash = kwargs["Flash"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByLocalContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByLocalContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def Path(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Get(self.handle)
+	@Path.setter
+	def Path(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set(self.handle, value)
+	@property
+	def Flash(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Get(self.handle)
+	@Flash.setter
+	def Flash(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypePicMsgByUrlContentPrivateChat
+class SendTypePicMsgByUrlContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.PicUrl = args[1]
+			if "PicUrl" in kwargs:
+				self.PicUrl = kwargs["PicUrl"]
+			if  2 < len(args):
+				self.Group = args[2]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+			if  3 < len(args):
+				self.Flash = args[3]
+			if "Flash" in kwargs:
+				self.Flash = kwargs["Flash"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByUrlContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypePicMsgByUrlContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def PicUrl(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Get(self.handle)
+	@PicUrl.setter
+	def PicUrl(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set(self.handle, value)
+	@property
+	def Flash(self):
+		return _OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Get(self.handle)
+	@Flash.setter
+	def Flash(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeVoiceByLocalContentPrivateChat
+class SendTypeVoiceByLocalContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Path = args[0]
+			if "Path" in kwargs:
+				self.Path = kwargs["Path"]
+			if  1 < len(args):
+				self.Group = args[1]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeVoiceByLocalContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeVoiceByLocalContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Path(self):
+		return _OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Get(self.handle)
+	@Path.setter
+	def Path(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeXmlContent
+class SendTypeXmlContent(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeXmlContent_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeXmlContent{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeXmlContent ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeXmlContent_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeXmlContent_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeXmlContent_Content_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeXmlContentPrivateChat
+class SendTypeXmlContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeXmlContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.Group = args[1]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeXmlContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeXmlContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeXmlContentPrivateChat_Group_Set(self.handle, value)
+
+# Python type for struct OPQBot.GroupAdminPack
+class GroupAdminPack(Context):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_GroupAdminPack_CTor()
+			_OPQBot.IncRef(self.handle)
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupAdminPack{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupAdminPack ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+
+# Python type for struct OPQBot.GroupList
+class GroupList(go.GoClass):
+	"""GroupList 获取群列表表单\n"""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_GroupList_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Count = args[0]
+			if "Count" in kwargs:
+				self.Count = kwargs["Count"]
+			if  1 < len(args):
+				self.NextToken = args[1]
+			if "NextToken" in kwargs:
+				self.NextToken = kwargs["NextToken"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupList{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupList ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Count(self):
+		return _OPQBot.OPQBot_GroupList_Count_Get(self.handle)
+	@Count.setter
+	def Count(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupList_Count_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupList_Count_Set(self.handle, value)
+	@property
+	def NextToken(self):
+		return _OPQBot.OPQBot_GroupList_NextToken_Get(self.handle)
+	@NextToken.setter
+	def NextToken(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupList_NextToken_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupList_NextToken_Set(self.handle, value)
+
+# Python type for struct OPQBot.GroupMsgPack
+class GroupMsgPack(Context):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_GroupMsgPack_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  1 < len(args):
+				self.Content = args[1]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  2 < len(args):
+				self.FromGroupID = args[2]
+			if "FromGroupID" in kwargs:
+				self.FromGroupID = kwargs["FromGroupID"]
+			if  3 < len(args):
+				self.FromGroupName = args[3]
+			if "FromGroupName" in kwargs:
+				self.FromGroupName = kwargs["FromGroupName"]
+			if  4 < len(args):
+				self.FromNickName = args[4]
+			if "FromNickName" in kwargs:
+				self.FromNickName = kwargs["FromNickName"]
+			if  5 < len(args):
+				self.FromUserID = args[5]
+			if "FromUserID" in kwargs:
+				self.FromUserID = kwargs["FromUserID"]
+			if  6 < len(args):
+				self.MsgRandom = args[6]
+			if "MsgRandom" in kwargs:
+				self.MsgRandom = kwargs["MsgRandom"]
+			if  7 < len(args):
+				self.MsgSeq = args[7]
+			if "MsgSeq" in kwargs:
+				self.MsgSeq = kwargs["MsgSeq"]
+			if  8 < len(args):
+				self.MsgTime = args[8]
+			if "MsgTime" in kwargs:
+				self.MsgTime = kwargs["MsgTime"]
+			if  9 < len(args):
+				self.MsgType = args[9]
+			if "MsgType" in kwargs:
+				self.MsgType = kwargs["MsgType"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupMsgPack{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupMsgPack ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_GroupMsgPack_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_Content_Set(self.handle, value)
+	@property
+	def FromGroupID(self):
+		return _OPQBot.OPQBot_GroupMsgPack_FromGroupID_Get(self.handle)
+	@FromGroupID.setter
+	def FromGroupID(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_FromGroupID_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_FromGroupID_Set(self.handle, value)
+	@property
+	def FromGroupName(self):
+		return _OPQBot.OPQBot_GroupMsgPack_FromGroupName_Get(self.handle)
+	@FromGroupName.setter
+	def FromGroupName(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_FromGroupName_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_FromGroupName_Set(self.handle, value)
+	@property
+	def FromNickName(self):
+		return _OPQBot.OPQBot_GroupMsgPack_FromNickName_Get(self.handle)
+	@FromNickName.setter
+	def FromNickName(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_FromNickName_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_FromNickName_Set(self.handle, value)
+	@property
+	def FromUserID(self):
+		return _OPQBot.OPQBot_GroupMsgPack_FromUserID_Get(self.handle)
+	@FromUserID.setter
+	def FromUserID(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_FromUserID_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_FromUserID_Set(self.handle, value)
+	@property
+	def MsgRandom(self):
+		return _OPQBot.OPQBot_GroupMsgPack_MsgRandom_Get(self.handle)
+	@MsgRandom.setter
+	def MsgRandom(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_MsgRandom_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_MsgRandom_Set(self.handle, value)
+	@property
+	def MsgSeq(self):
+		return _OPQBot.OPQBot_GroupMsgPack_MsgSeq_Get(self.handle)
+	@MsgSeq.setter
+	def MsgSeq(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_MsgSeq_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_MsgSeq_Set(self.handle, value)
+	@property
+	def MsgTime(self):
+		return _OPQBot.OPQBot_GroupMsgPack_MsgTime_Get(self.handle)
+	@MsgTime.setter
+	def MsgTime(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_MsgTime_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_MsgTime_Set(self.handle, value)
+	@property
+	def MsgType(self):
+		return _OPQBot.OPQBot_GroupMsgPack_MsgType_Get(self.handle)
+	@MsgType.setter
+	def MsgType(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_GroupMsgPack_MsgType_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_GroupMsgPack_MsgType_Set(self.handle, value)
+
+# Python type for struct OPQBot.Result
+class Result(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_Result_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Msg = args[0]
+			if "Msg" in kwargs:
+				self.Msg = kwargs["Msg"]
+			if  1 < len(args):
+				self.Ret = args[1]
+			if "Ret" in kwargs:
+				self.Ret = kwargs["Ret"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.Result{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.Result ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Msg(self):
+		return _OPQBot.OPQBot_Result_Msg_Get(self.handle)
+	@Msg.setter
+	def Msg(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Result_Msg_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Result_Msg_Set(self.handle, value)
+	@property
+	def Ret(self):
+		return _OPQBot.OPQBot_Result_Ret_Get(self.handle)
+	@Ret.setter
+	def Ret(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_Result_Ret_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_Result_Ret_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeJsonContentPrivateChat
+class SendTypeJsonContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeJsonContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.Group = args[1]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeJsonContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeJsonContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeJsonContentPrivateChat_Group_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeTextMsgContent
+class SendTypeTextMsgContent(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeTextMsgContent_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeTextMsgContent{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeTextMsgContent ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeTextMsgContent_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeTextMsgContent_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeTextMsgContent_Content_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeTextMsgContentPrivateChat
+class SendTypeTextMsgContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.Content = args[0]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  1 < len(args):
+				self.Group = args[1]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeTextMsgContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeTextMsgContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeTextMsgContentPrivateChat_Group_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeVoiceByUrlContent
+class SendTypeVoiceByUrlContent(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeVoiceByUrlContent_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.VoiceUrl = args[0]
+			if "VoiceUrl" in kwargs:
+				self.VoiceUrl = kwargs["VoiceUrl"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeVoiceByUrlContent{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeVoiceByUrlContent ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def VoiceUrl(self):
+		return _OPQBot.OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Get(self.handle)
+	@VoiceUrl.setter
+	def VoiceUrl(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeVoiceByUrlContent_VoiceUrl_Set(self.handle, value)
+
+# Python type for struct OPQBot.VideoMsg
+class VideoMsg(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_VideoMsg_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.ForwordBuf = args[0]
+			if "ForwordBuf" in kwargs:
+				self.ForwordBuf = kwargs["ForwordBuf"]
+			if  1 < len(args):
+				self.ForwordField = args[1]
+			if "ForwordField" in kwargs:
+				self.ForwordField = kwargs["ForwordField"]
+			if  2 < len(args):
+				self.VideoMd5 = args[2]
+			if "VideoMd5" in kwargs:
+				self.VideoMd5 = kwargs["VideoMd5"]
+			if  3 < len(args):
+				self.VideoSize = args[3]
+			if "VideoSize" in kwargs:
+				self.VideoSize = kwargs["VideoSize"]
+			if  4 < len(args):
+				self.VideoUrl = args[4]
+			if "VideoUrl" in kwargs:
+				self.VideoUrl = kwargs["VideoUrl"]
+			if  5 < len(args):
+				self.Tips = args[5]
+			if "Tips" in kwargs:
+				self.Tips = kwargs["Tips"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.VideoMsg{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.VideoMsg ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def ForwordBuf(self):
+		return _OPQBot.OPQBot_VideoMsg_ForwordBuf_Get(self.handle)
+	@ForwordBuf.setter
+	def ForwordBuf(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_VideoMsg_ForwordBuf_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_VideoMsg_ForwordBuf_Set(self.handle, value)
+	@property
+	def ForwordField(self):
+		return _OPQBot.OPQBot_VideoMsg_ForwordField_Get(self.handle)
+	@ForwordField.setter
+	def ForwordField(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_VideoMsg_ForwordField_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_VideoMsg_ForwordField_Set(self.handle, value)
+	@property
+	def VideoMd5(self):
+		return _OPQBot.OPQBot_VideoMsg_VideoMd5_Get(self.handle)
+	@VideoMd5.setter
+	def VideoMd5(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_VideoMsg_VideoMd5_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_VideoMsg_VideoMd5_Set(self.handle, value)
+	@property
+	def VideoSize(self):
+		return _OPQBot.OPQBot_VideoMsg_VideoSize_Get(self.handle)
+	@VideoSize.setter
+	def VideoSize(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_VideoMsg_VideoSize_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_VideoMsg_VideoSize_Set(self.handle, value)
+	@property
+	def VideoUrl(self):
+		return _OPQBot.OPQBot_VideoMsg_VideoUrl_Get(self.handle)
+	@VideoUrl.setter
+	def VideoUrl(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_VideoMsg_VideoUrl_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_VideoMsg_VideoUrl_Set(self.handle, value)
+	@property
+	def Tips(self):
+		return _OPQBot.OPQBot_VideoMsg_Tips_Get(self.handle)
+	@Tips.setter
+	def Tips(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_VideoMsg_Tips_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_VideoMsg_Tips_Set(self.handle, value)
+
+# Python type for struct OPQBot.GroupJoinPack
+class GroupJoinPack(Context):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_GroupJoinPack_CTor()
+			_OPQBot.IncRef(self.handle)
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupJoinPack{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupJoinPack ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+
+# Python type for struct OPQBot.GroupAdminSysNotifyPack
+class GroupAdminSysNotifyPack(Context):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_GroupAdminSysNotifyPack_CTor()
+			_OPQBot.IncRef(self.handle)
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupAdminSysNotifyPack{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.GroupAdminSysNotifyPack ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+
+# Python type for struct OPQBot.SendMsgPack
+class SendMsgPack(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendMsgPack_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  0 < len(args):
+				self.SendToType = args[0]
+			if "SendToType" in kwargs:
+				self.SendToType = kwargs["SendToType"]
+			if  1 < len(args):
+				self.ToUserUid = args[1]
+			if "ToUserUid" in kwargs:
+				self.ToUserUid = kwargs["ToUserUid"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendMsgPack{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendMsgPack ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def SendToType(self):
+		return _OPQBot.OPQBot_SendMsgPack_SendToType_Get(self.handle)
+	@SendToType.setter
+	def SendToType(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendMsgPack_SendToType_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendMsgPack_SendToType_Set(self.handle, value)
+	@property
+	def ToUserUid(self):
+		return _OPQBot.OPQBot_SendMsgPack_ToUserUid_Get(self.handle)
+	@ToUserUid.setter
+	def ToUserUid(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendMsgPack_ToUserUid_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendMsgPack_ToUserUid_Set(self.handle, value)
+
+# Python type for struct OPQBot.SendTypeReplyContentPrivateChat
+class SendTypeReplyContentPrivateChat(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.OPQBot_SendTypeReplyContentPrivateChat_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  1 < len(args):
+				self.Content = args[1]
+			if "Content" in kwargs:
+				self.Content = kwargs["Content"]
+			if  2 < len(args):
+				self.Group = args[2]
+			if "Group" in kwargs:
+				self.Group = kwargs["Group"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeReplyContentPrivateChat{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'OPQBot.SendTypeReplyContentPrivateChat ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Content(self):
+		return _OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Content_Get(self.handle)
+	@Content.setter
+	def Content(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Content_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Content_Set(self.handle, value)
+	@property
+	def Group(self):
+		return _OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Group_Get(self.handle)
+	@Group.setter
+	def Group(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Group_Set(self.handle, value.handle)
+		else:
+			_OPQBot.OPQBot_SendTypeReplyContentPrivateChat_Group_Set(self.handle, value)
 
 
 # ---- Slices ---
@@ -4615,59 +4615,59 @@ class FriendMsgPack(Context):
 
 
 # ---- Constructors ---
-def ParserGroupReplyMsg(pack):
-	"""ParserGroupReplyMsg(object pack) object a, str e"""
-	return Reply(handle=_OPQBot.OPQBot_ParserGroupReplyMsg(pack.handle))
-def ParserVideoMsg(pack):
-	"""ParserVideoMsg(object pack) object a, str e"""
-	return VideoMsg(handle=_OPQBot.OPQBot_ParserVideoMsg(pack.handle))
-def ParserGroupFileMsg(pack):
-	"""ParserGroupFileMsg(object pack) object a, str e"""
-	return GroupFileMsg(handle=_OPQBot.OPQBot_ParserGroupFileMsg(pack.handle))
-def ParserGroupPicMsg(pack):
-	"""ParserGroupPicMsg(object pack) object a, str e"""
-	return PicMsg(handle=_OPQBot.OPQBot_ParserGroupPicMsg(pack.handle))
 def ParserGroupAtMsg(pack):
 	"""ParserGroupAtMsg(object pack) object a, str e"""
 	return AtMsg(handle=_OPQBot.OPQBot_ParserGroupAtMsg(pack.handle))
+def ParserGroupFileMsg(pack):
+	"""ParserGroupFileMsg(object pack) object a, str e"""
+	return GroupFileMsg(handle=_OPQBot.OPQBot_ParserGroupFileMsg(pack.handle))
 def NewBotManager(QQ, OPQUrl):
 	"""NewBotManager(long QQ, str OPQUrl) object"""
 	return BotManager(handle=_OPQBot.OPQBot_NewBotManager(QQ, OPQUrl))
+def ParserGroupReplyMsg(pack):
+	"""ParserGroupReplyMsg(object pack) object a, str e"""
+	return Reply(handle=_OPQBot.OPQBot_ParserGroupReplyMsg(pack.handle))
+def ParserGroupPicMsg(pack):
+	"""ParserGroupPicMsg(object pack) object a, str e"""
+	return PicMsg(handle=_OPQBot.OPQBot_ParserGroupPicMsg(pack.handle))
+def ParserVideoMsg(pack):
+	"""ParserVideoMsg(object pack) object a, str e"""
+	return VideoMsg(handle=_OPQBot.OPQBot_ParserVideoMsg(pack.handle))
 
 
 # ---- Functions ---
-def MacroId():
-	"""MacroId() str"""
-	return _OPQBot.OPQBot_MacroId()
-def VoiceSilkToMp3(base64EncodedSilk):
-	"""VoiceSilkToMp3(str base64EncodedSilk) []int, str
-	
-	VoiceSilkToMp3 Silk转Mp3 silk->mp3 Output: []byte
-	"""
-	return go.Slice_byte(handle=_OPQBot.OPQBot_VoiceSilkToMp3(base64EncodedSilk))
-def DecodeFaceFromSentences(encode, format):
-	"""DecodeFaceFromSentences(str encode, str format) str"""
-	return _OPQBot.OPQBot_DecodeFaceFromSentences(encode, format)
-def SetLog(l, goRun=False):
-	"""SetLog(object l) """
-	_OPQBot.OPQBot_SetLog(l.handle, goRun)
-def MacroAtAll():
-	"""MacroAtAll() str"""
-	return _OPQBot.OPQBot_MacroAtAll()
-def VoiceMp3ToSilk(mp3Path):
-	"""VoiceMp3ToSilk(str mp3Path) str, str
-	
-	VoiceMp3ToSilk Mp3转Silk mp3->silk Output: base64 String
-	"""
-	return _OPQBot.OPQBot_VoiceMp3ToSilk(mp3Path)
-def DecodeFace(encodeFace):
-	"""DecodeFace(str encodeFace) str, str"""
-	return _OPQBot.OPQBot_DecodeFace(encodeFace)
 def MacroAt(qqs):
 	"""MacroAt([]long qqs) str
 	
 	MacroAt At宏
 	"""
 	return _OPQBot.OPQBot_MacroAt(qqs.handle)
+def VoiceSilkToMp3(base64EncodedSilk):
+	"""VoiceSilkToMp3(str base64EncodedSilk) []int, str
+	
+	VoiceSilkToMp3 Silk转Mp3 silk->mp3 Output: []byte
+	"""
+	return go.Slice_byte(handle=_OPQBot.OPQBot_VoiceSilkToMp3(base64EncodedSilk))
+def DecodeFace(encodeFace):
+	"""DecodeFace(str encodeFace) str, str"""
+	return _OPQBot.OPQBot_DecodeFace(encodeFace)
+def VoiceMp3ToSilk(mp3Path):
+	"""VoiceMp3ToSilk(str mp3Path) str, str
+	
+	VoiceMp3ToSilk Mp3转Silk mp3->silk Output: base64 String
+	"""
+	return _OPQBot.OPQBot_VoiceMp3ToSilk(mp3Path)
+def DecodeFaceFromSentences(encode, format):
+	"""DecodeFaceFromSentences(str encode, str format) str"""
+	return _OPQBot.OPQBot_DecodeFaceFromSentences(encode, format)
+def MacroAtAll():
+	"""MacroAtAll() str"""
+	return _OPQBot.OPQBot_MacroAtAll()
+def MacroId():
+	"""MacroId() str"""
+	return _OPQBot.OPQBot_MacroId()
+def SetLog(l, goRun=False):
+	"""SetLog(object l) """
+	_OPQBot.OPQBot_SetLog(l.handle, goRun)
 
 

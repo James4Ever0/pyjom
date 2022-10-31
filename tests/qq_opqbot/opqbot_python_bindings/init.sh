@@ -10,6 +10,6 @@ go mod init dummy.com/dum
 
 PKGNAME=github.com/mcoo/OPQBot
 PKGNAME2=github.com/mcoo/OPQBot/qzone # wtf?
-go get $PKGNAME
-go get $PKGNAME2
+# go get $PKGNAME
+# go get $PKGNAME2
 gopy build -output=bindings_all -vm=python3 $PKGNAME $PKGNAME2

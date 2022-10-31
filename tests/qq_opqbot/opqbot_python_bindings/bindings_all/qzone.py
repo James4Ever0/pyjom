@@ -24,7 +24,7 @@ os.chdir(cwd)
 # and then refer to everything using qzone. prefix
 # packages imported by this package listed below:
 
-from .import OPQBot
+import OPQBot
 
 
 
@@ -44,60 +44,6 @@ from .import OPQBot
 
 
 # ---- Structs ---
-
-# Python type for struct qzone.UploadPicResult
-class UploadPicResult(go.GoClass):
-	""""""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_OPQBot.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_OPQBot.IncRef(self.handle)
-		else:
-			self.handle = _OPQBot.qzone_UploadPicResult_CTor()
-			_OPQBot.IncRef(self.handle)
-			if  1 < len(args):
-				self.Ret = args[1]
-			if "Ret" in kwargs:
-				self.Ret = kwargs["Ret"]
-	def __del__(self):
-		_OPQBot.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'qzone.UploadPicResult{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'qzone.UploadPicResult ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Ret(self):
-		return _OPQBot.qzone_UploadPicResult_Ret_Get(self.handle)
-	@Ret.setter
-	def Ret(self, value):
-		if isinstance(value, go.GoClass):
-			_OPQBot.qzone_UploadPicResult_Ret_Set(self.handle, value.handle)
-		else:
-			_OPQBot.qzone_UploadPicResult_Ret_Set(self.handle, value)
 
 # Python type for struct qzone.Manager
 class Manager(go.GoClass):
@@ -220,18 +166,24 @@ class Manager(go.GoClass):
 	def GetQzoneToken(self):
 		"""GetQzoneToken() str, str"""
 		return _OPQBot.qzone_Manager_GetQzoneToken(self.handle)
+	def RefreshToken(self):
+		"""RefreshToken() str"""
+		return _OPQBot.qzone_Manager_RefreshToken(self.handle)
 	def GetShuoShuoList(self):
 		"""GetShuoShuoList() object, str"""
 		return ShuoshuoList(handle=_OPQBot.qzone_Manager_GetShuoShuoList(self.handle))
 	def SendShuoShuo(self, Content):
 		"""SendShuoShuo(str Content) object, str"""
 		return SendShuoShuoResult(handle=_OPQBot.qzone_Manager_SendShuoShuo(self.handle, Content))
-	def SendShuoShuoWithPic(self, Content, picBo, richVal):
-		"""SendShuoShuoWithPic(str Content, str picBo, str richVal) object, str"""
-		return SendShuoShuoResult(handle=_OPQBot.qzone_Manager_SendShuoShuoWithPic(self.handle, Content, picBo, richVal))
 	def UploadPic(self, picBase64):
 		"""UploadPic(str picBase64) object, str"""
 		return UploadPicResult(handle=_OPQBot.qzone_Manager_UploadPic(self.handle, picBase64))
+	def SendShuoShuoWithBase64Pic(self, Content, pics):
+		"""SendShuoShuoWithBase64Pic(str Content, []str pics) object, str"""
+		return SendShuoShuoResult(handle=_OPQBot.qzone_Manager_SendShuoShuoWithBase64Pic(self.handle, Content, pics.handle))
+	def SendShuoShuoWithLocalPic(self, content, pics):
+		"""SendShuoShuoWithLocalPic(str content, []str pics) object, str"""
+		return SendShuoShuoResult(handle=_OPQBot.qzone_Manager_SendShuoShuoWithLocalPic(self.handle, content, pics.handle))
 	def Like(self, unikey, curkey, appid):
 		"""Like(str unikey, str curkey, str appid) str"""
 		return _OPQBot.qzone_Manager_Like(self.handle, unikey, curkey, appid)
@@ -513,6 +465,60 @@ class ShuoshuoList(go.GoClass):
 		else:
 			_OPQBot.qzone_ShuoshuoList_Default_Set(self.handle, value)
 
+# Python type for struct qzone.UploadPicResult
+class UploadPicResult(go.GoClass):
+	""""""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_OPQBot.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_OPQBot.IncRef(self.handle)
+		else:
+			self.handle = _OPQBot.qzone_UploadPicResult_CTor()
+			_OPQBot.IncRef(self.handle)
+			if  1 < len(args):
+				self.Ret = args[1]
+			if "Ret" in kwargs:
+				self.Ret = kwargs["Ret"]
+	def __del__(self):
+		_OPQBot.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'qzone.UploadPicResult{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'qzone.UploadPicResult ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Ret(self):
+		return _OPQBot.qzone_UploadPicResult_Ret_Get(self.handle)
+	@Ret.setter
+	def Ret(self, value):
+		if isinstance(value, go.GoClass):
+			_OPQBot.qzone_UploadPicResult_Ret_Set(self.handle, value.handle)
+		else:
+			_OPQBot.qzone_UploadPicResult_Ret_Set(self.handle, value)
+
 
 # ---- Slices ---
 
@@ -533,5 +539,8 @@ def GenderGTK(sKey):
 	GenderGTK 生成GTK
 	"""
 	return _OPQBot.qzone_GenderGTK(sKey)
+def GetBase64(path):
+	"""GetBase64(str path) str, str"""
+	return _OPQBot.qzone_GetBase64(path)
 
 
