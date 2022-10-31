@@ -890,16 +890,17 @@ if __name__ == "__main__":
             return "bilibili recommendation server"
 
         # just asking. post or get?
-        @app.get("/searchVideos") # what do you want to have? all 
+        @app.get("/searchVideos")  # what do you want to have? all fields?
         def search_videos(
-            query:str,
-    iterate: bool = False,
-    page_start: int = 1,
-    params={}):
-            params= {"duration": BSP.all.duration._10分钟以下}.update(params)
-            for v in searchAndRegisterVideos(query,iterate=iterate,page_start=page_start, params=params):
-        
-        @app.get('/searchRegisteredVideos')
+            query: str, iterate: bool = False, page_start: int = 1, params={}
+        ):
+            params = {"duration": BSP.all.duration._10分钟以下}.update(params)
+            for v in searchAndRegisterVideos(
+                query, iterate=iterate, page_start=page_start, params=params
+            ):
+                ...
+
+        @app.get("/searchRegisteredVideos")
         def search_registered_videos():
             ...
 
