@@ -6,7 +6,8 @@ OPQUrl = "http://localhost:"+serverPort
 bot = OPQBot.NewBotManager(QQ, OPQUrl)
 bot.Start()
 # print(bot)
-qzone.SendShuoShuoResult
+cookie = bot.
+qzoneManager =qzone.NewQzoneManager(QQ, cookie)
 
 # result =
 # it is not running. fuck.
