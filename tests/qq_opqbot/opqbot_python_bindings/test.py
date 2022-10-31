@@ -8,7 +8,7 @@ bot.Start()
 # print(bot)
 cookie = bot.GetUserCookie()
 print(cookie)
-qzoneManager =qzone.NewQzoneManager(QQ, cookie)
+qzoneManager = qzone.NewQzoneManager(QQ, cookie)
 
 # result =
 # it is not running. fuck.
