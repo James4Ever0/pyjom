@@ -9,6 +9,7 @@ bot.Start()
 cookie = bot.GetUserCookie()
 # print(cookie, type(cookie))
 # <class 'bindings.OPQBot.Cookie'>
+qzone.
 qzoneManager = qzone.NewQzoneManager(QQ, cookie)
 
 # result =
