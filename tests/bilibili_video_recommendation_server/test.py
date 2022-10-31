@@ -889,6 +889,7 @@ if __name__ == "__main__":
         def server_hello():
             return "bilibili recommendation server"
 
+        # just asking. post or get?
         @app.get("/searchVideos")
         def search_video():
             searchAndRegisterVideos()
