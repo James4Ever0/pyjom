@@ -13,6 +13,7 @@ e_w, e_h = int(ratio*ebImage.width), int(ratio*ebImage.height)
 print(e_w, e_h)
 print(ratio)
 print(bgImage.width, bgImage.height)
+print()
 
 ebImage = ebImage.resize(e_w, e_h)
 t_w, t_h = bgImage.width-e_w, bgImage.height-e_h
