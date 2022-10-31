@@ -890,11 +890,11 @@ if __name__ == "__main__":
             return "bilibili recommendation server"
 
         @app.get("/searchVideos")
-        def query_video():
+        def search_video():
             ...
 
         @app.get("/searchUserVideos")
-        def query_user_video():
+        def search_user_video():
             ...
 
         @app.get("/registerUserVideo")
