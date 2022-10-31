@@ -4,4 +4,4 @@ ebegging = "ebegging_template.png"
 
 import pixie
 
-pixie.I
+pixie.read_image(background)
