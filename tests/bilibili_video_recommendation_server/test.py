@@ -896,6 +896,7 @@ if __name__ == "__main__":
         @app.get("/searchUserVideos")
         def query_user_video():
             ...
+
         @app.get('/registerUserVideo')
         def register_user_video():
             ...
@@ -923,7 +924,7 @@ if __name__ == "__main__":
         elif test == "searchVideos":
             query = "cod19"  # recent hot videos.
             for v in searchAndRegisterVideos(query):
-                print(v)  # warning: title containing markup language.
+                print(v) # warning: title containing markup language.
                 breakpoint()
             # you want to select video after search?
             # no keywords? are you kidding?
