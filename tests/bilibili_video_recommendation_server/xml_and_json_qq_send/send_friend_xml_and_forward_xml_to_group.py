@@ -12,8 +12,12 @@ baseUrl = "http://0.0.0.0:5700" # the thing is not ready yet.
 import requests
 
 url = baseUrl + "/send_private_msg"
-message = '[CQ:share,url=http://baidu.com,title=百度]'
+# message = '[CQ:share,url=http://baidu.com,title=百度]'
 
-data = {"user_id": user, "message": message, "auto_escape": False}
-r = requests.post(url, data=data)
-print(r.json())
+# data = {"user_id": user, "message": message, "auto_escape": False}
+# r = requests.post(url, data=data)
+# print(r.json())
+
+message = "[CQ:forward,id={}].format()
+
+#"
