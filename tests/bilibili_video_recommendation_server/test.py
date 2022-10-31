@@ -901,6 +901,9 @@ if __name__ == "__main__":
         def register_user_video():
             ...
         
+        @app.get('/checkVideoVisibility')
+        def check_video_visibility():
+            ...
         uvicorn.run(app, host="0.0.0.0", port=port)
     elif objective == "test":
         test = "searchVideos"
