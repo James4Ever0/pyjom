@@ -12,4 +12,4 @@ PKGNAME=github.com/mcoo/OPQBot
 PKGNAME2=github.com/mcoo/OPQBot/qzone # wtf?
 go get $PKGNAME
 go get $PKGNAME2
-gopy build -output=bindings_qzone -vm=python3 $PKGNAME
+gopy build -output=bindings_all -vm=python3 $PKGNAME $PKGNAME2
