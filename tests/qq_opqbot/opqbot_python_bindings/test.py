@@ -7,7 +7,7 @@ bot = OPQBot.NewBotManager(QQ, OPQUrl)
 bot.Start()
 # print(bot)
 cookie = bot.GetUserCookie()
-print(cookie)
+print(cookie, type(cookie))
 qzoneManager = qzone.NewQzoneManager(QQ, cookie)
 
 # result =
