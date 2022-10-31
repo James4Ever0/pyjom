@@ -16,5 +16,6 @@ qzoneManager = qzone.NewQzoneManager(QQ, cookie)
 print(qzoneManager) # so far so good.
 # result =
 # it is not running. fuck.
-
-result = qzoneManager.SendShuoShuo
+content = 'hello world'
+result = qzoneManager.SendShuoShuo(content)
+print(result) # error to get qzone token. wtf?
