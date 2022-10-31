@@ -4,8 +4,7 @@ QQ=917521610
 serverPort = "8784"
 OPQUrl = "http://localhost:"+serverPort
 bot = OPQBot.NewBotManager(QQ, OPQUrl)
-OPQBot
 bot.Start()
 print(bot)
-result =
+# result =
 # it is not running. fuck.
