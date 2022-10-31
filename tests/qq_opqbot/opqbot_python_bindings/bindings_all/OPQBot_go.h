@@ -315,102 +315,6 @@ extern long long int Map_string_string_keys(long long int handle);
 extern long long int OPQBot_FaceMap();
 extern void OPQBot_Set_FaceMap(long long int val);
 
-// --- wrapping struct: OPQBot.AtMsg ---
-extern long long int OPQBot_AtMsg_CTor();
-extern char* OPQBot_AtMsg_Content_Get(long long int handle);
-extern void OPQBot_AtMsg_Content_Set(long long int handle, char* val);
-extern long long int OPQBot_AtMsg_UserID_Get(long long int handle);
-extern void OPQBot_AtMsg_UserID_Set(long long int handle, long long int val);
-extern long long int OPQBot_AtMsg_Clean(long long int _handle);
-
-// --- wrapping struct: OPQBot.GroupFileMsg ---
-extern long long int OPQBot_GroupFileMsg_CTor();
-extern char* OPQBot_GroupFileMsg_FileID_Get(long long int handle);
-extern void OPQBot_GroupFileMsg_FileID_Set(long long int handle, char* val);
-extern char* OPQBot_GroupFileMsg_FileName_Get(long long int handle);
-extern void OPQBot_GroupFileMsg_FileName_Set(long long int handle, char* val);
-extern long long int OPQBot_GroupFileMsg_FileSize_Get(long long int handle);
-extern void OPQBot_GroupFileMsg_FileSize_Set(long long int handle, long long int val);
-extern char* OPQBot_GroupFileMsg_Tips_Get(long long int handle);
-extern void OPQBot_GroupFileMsg_Tips_Set(long long int handle, char* val);
-
-// --- wrapping struct: OPQBot.Context ---
-extern long long int OPQBot_Context_CTor();
-extern char OPQBot_Context_Ban_Get(long long int handle);
-extern void OPQBot_Context_Ban_Set(long long int handle, char val);
-extern long long int OPQBot_Context_NowIndex_Get(long long int handle);
-extern void OPQBot_Context_NowIndex_Set(long long int handle, long long int val);
-extern long long int OPQBot_Context_MaxIndex_Get(long long int handle);
-extern void OPQBot_Context_MaxIndex_Set(long long int handle, long long int val);
-extern long long int OPQBot_Context_Bot_Get(long long int handle);
-extern void OPQBot_Context_Bot_Set(long long int handle, long long int val);
-extern void OPQBot_Context_Next(long long int _handle, long long int currentQQ, char* result, char goRun);
-
-// --- wrapping struct: OPQBot.GroupMemberList ---
-extern long long int OPQBot_GroupMemberList_CTor();
-extern long long int OPQBot_GroupMemberList_Count_Get(long long int handle);
-extern void OPQBot_GroupMemberList_Count_Set(long long int handle, long long int val);
-extern long long int OPQBot_GroupMemberList_GroupUin_Get(long long int handle);
-extern void OPQBot_GroupMemberList_GroupUin_Set(long long int handle, long long int val);
-extern long long int OPQBot_GroupMemberList_LastUin_Get(long long int handle);
-extern void OPQBot_GroupMemberList_LastUin_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.SendTypeVoiceByLocalContent ---
-extern long long int OPQBot_SendTypeVoiceByLocalContent_CTor();
-extern char* OPQBot_SendTypeVoiceByLocalContent_Path_Get(long long int handle);
-extern void OPQBot_SendTypeVoiceByLocalContent_Path_Set(long long int handle, char* val);
-
-// --- wrapping struct: OPQBot.UserCardInfo ---
-extern long long int OPQBot_UserCardInfo_CTor();
-extern long long int OPQBot_UserCardInfo_Age_Get(long long int handle);
-extern void OPQBot_UserCardInfo_Age_Set(long long int handle, long long int val);
-extern char* OPQBot_UserCardInfo_City_Get(long long int handle);
-extern void OPQBot_UserCardInfo_City_Set(long long int handle, char* val);
-extern long long int OPQBot_UserCardInfo_LikeNums_Get(long long int handle);
-extern void OPQBot_UserCardInfo_LikeNums_Set(long long int handle, long long int val);
-extern long long int OPQBot_UserCardInfo_LoginDays_Get(long long int handle);
-extern void OPQBot_UserCardInfo_LoginDays_Set(long long int handle, long long int val);
-extern char* OPQBot_UserCardInfo_NickName_Get(long long int handle);
-extern void OPQBot_UserCardInfo_NickName_Set(long long int handle, char* val);
-extern char* OPQBot_UserCardInfo_Province_Get(long long int handle);
-extern void OPQBot_UserCardInfo_Province_Set(long long int handle, char* val);
-extern long long int OPQBot_UserCardInfo_QQLevel_Get(long long int handle);
-extern void OPQBot_UserCardInfo_QQLevel_Set(long long int handle, long long int val);
-extern long long int OPQBot_UserCardInfo_QQUin_Get(long long int handle);
-extern void OPQBot_UserCardInfo_QQUin_Set(long long int handle, long long int val);
-extern long long int OPQBot_UserCardInfo_Sex_Get(long long int handle);
-extern void OPQBot_UserCardInfo_Sex_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.GroupExitSuccessPack ---
-extern long long int OPQBot_GroupExitSuccessPack_CTor();
-
-// --- wrapping struct: OPQBot.GroupShutPack ---
-extern long long int OPQBot_GroupShutPack_CTor();
-
-// --- wrapping struct: OPQBot.GroupSystemNotifyPack ---
-extern long long int OPQBot_GroupSystemNotifyPack_CTor();
-
-// --- wrapping struct: OPQBot.FriendMsgPack ---
-extern long long int OPQBot_FriendMsgPack_CTor();
-extern char* OPQBot_FriendMsgPack_Content_Get(long long int handle);
-extern void OPQBot_FriendMsgPack_Content_Set(long long int handle, char* val);
-extern long long int OPQBot_FriendMsgPack_FromUin_Get(long long int handle);
-extern void OPQBot_FriendMsgPack_FromUin_Set(long long int handle, long long int val);
-extern long long int OPQBot_FriendMsgPack_MsgSeq_Get(long long int handle);
-extern void OPQBot_FriendMsgPack_MsgSeq_Set(long long int handle, long long int val);
-extern char* OPQBot_FriendMsgPack_MsgType_Get(long long int handle);
-extern void OPQBot_FriendMsgPack_MsgType_Set(long long int handle, char* val);
-extern long long int OPQBot_FriendMsgPack_ToUin_Get(long long int handle);
-extern void OPQBot_FriendMsgPack_ToUin_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.GroupRevokePack ---
-extern long long int OPQBot_GroupRevokePack_CTor();
-
-// --- wrapping struct: OPQBot.SendTypeJsonContent ---
-extern long long int OPQBot_SendTypeJsonContent_CTor();
-extern char* OPQBot_SendTypeJsonContent_Content_Get(long long int handle);
-extern void OPQBot_SendTypeJsonContent_Content_Set(long long int handle, char* val);
-
 // --- wrapping struct: OPQBot.SendTypePicMsgByMd5Content ---
 extern long long int OPQBot_SendTypePicMsgByMd5Content_CTor();
 extern char* OPQBot_SendTypePicMsgByMd5Content_Content_Get(long long int handle);
@@ -429,10 +333,185 @@ extern void OPQBot_SendTypePicMsgByUrlContent_PicUrl_Set(long long int handle, c
 extern char OPQBot_SendTypePicMsgByUrlContent_Flash_Get(long long int handle);
 extern void OPQBot_SendTypePicMsgByUrlContent_Flash_Set(long long int handle, char val);
 
-// --- wrapping struct: OPQBot.SendTypeReplyContent ---
-extern long long int OPQBot_SendTypeReplyContent_CTor();
-extern char* OPQBot_SendTypeReplyContent_Content_Get(long long int handle);
-extern void OPQBot_SendTypeReplyContent_Content_Set(long long int handle, char* val);
+// --- wrapping struct: OPQBot.SendTypeXmlContent ---
+extern long long int OPQBot_SendTypeXmlContent_CTor();
+extern char* OPQBot_SendTypeXmlContent_Content_Get(long long int handle);
+extern void OPQBot_SendTypeXmlContent_Content_Set(long long int handle, char* val);
+
+// --- wrapping struct: OPQBot.Context ---
+extern long long int OPQBot_Context_CTor();
+extern char OPQBot_Context_Ban_Get(long long int handle);
+extern void OPQBot_Context_Ban_Set(long long int handle, char val);
+extern long long int OPQBot_Context_NowIndex_Get(long long int handle);
+extern void OPQBot_Context_NowIndex_Set(long long int handle, long long int val);
+extern long long int OPQBot_Context_MaxIndex_Get(long long int handle);
+extern void OPQBot_Context_MaxIndex_Set(long long int handle, long long int val);
+extern long long int OPQBot_Context_Bot_Get(long long int handle);
+extern void OPQBot_Context_Bot_Set(long long int handle, long long int val);
+extern void OPQBot_Context_Next(long long int _handle, long long int currentQQ, char* result, char goRun);
+
+// --- wrapping struct: OPQBot.GroupJoinPack ---
+extern long long int OPQBot_GroupJoinPack_CTor();
+
+// --- wrapping struct: OPQBot.GroupMsgPack ---
+extern long long int OPQBot_GroupMsgPack_CTor();
+extern char* OPQBot_GroupMsgPack_Content_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_Content_Set(long long int handle, char* val);
+extern long long int OPQBot_GroupMsgPack_FromGroupID_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_FromGroupID_Set(long long int handle, long long int val);
+extern char* OPQBot_GroupMsgPack_FromGroupName_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_FromGroupName_Set(long long int handle, char* val);
+extern char* OPQBot_GroupMsgPack_FromNickName_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_FromNickName_Set(long long int handle, char* val);
+extern long long int OPQBot_GroupMsgPack_FromUserID_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_FromUserID_Set(long long int handle, long long int val);
+extern long long int OPQBot_GroupMsgPack_MsgRandom_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_MsgRandom_Set(long long int handle, long long int val);
+extern long long int OPQBot_GroupMsgPack_MsgSeq_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_MsgSeq_Set(long long int handle, long long int val);
+extern long long int OPQBot_GroupMsgPack_MsgTime_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_MsgTime_Set(long long int handle, long long int val);
+extern char* OPQBot_GroupMsgPack_MsgType_Get(long long int handle);
+extern void OPQBot_GroupMsgPack_MsgType_Set(long long int handle, char* val);
+
+// --- wrapping struct: OPQBot.SendTypeForwordContentPrivateChat ---
+extern long long int OPQBot_SendTypeForwordContentPrivateChat_CTor();
+extern char* OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Get(long long int handle);
+extern void OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set(long long int handle, char* val);
+extern char* OPQBot_SendTypeForwordContentPrivateChat_Content_Get(long long int handle);
+extern void OPQBot_SendTypeForwordContentPrivateChat_Content_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Get(long long int handle);
+extern void OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set(long long int handle, long long int val);
+extern long long int OPQBot_SendTypeForwordContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypeForwordContentPrivateChat_Group_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.SendTypeJsonContent ---
+extern long long int OPQBot_SendTypeJsonContent_CTor();
+extern char* OPQBot_SendTypeJsonContent_Content_Get(long long int handle);
+extern void OPQBot_SendTypeJsonContent_Content_Set(long long int handle, char* val);
+
+// --- wrapping struct: OPQBot.SendTypeXmlContentPrivateChat ---
+extern long long int OPQBot_SendTypeXmlContentPrivateChat_CTor();
+extern char* OPQBot_SendTypeXmlContentPrivateChat_Content_Get(long long int handle);
+extern void OPQBot_SendTypeXmlContentPrivateChat_Content_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypeXmlContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypeXmlContentPrivateChat_Group_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByBase64Content ---
+extern long long int OPQBot_SendTypePicMsgByBase64Content_CTor();
+extern char* OPQBot_SendTypePicMsgByBase64Content_Content_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByBase64Content_Content_Set(long long int handle, char* val);
+extern char* OPQBot_SendTypePicMsgByBase64Content_Base64_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByBase64Content_Base64_Set(long long int handle, char* val);
+extern char OPQBot_SendTypePicMsgByBase64Content_Flash_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByBase64Content_Flash_Set(long long int handle, char val);
+
+// --- wrapping struct: OPQBot.SendTypeReplyContentPrivateChat ---
+extern long long int OPQBot_SendTypeReplyContentPrivateChat_CTor();
+extern char* OPQBot_SendTypeReplyContentPrivateChat_Content_Get(long long int handle);
+extern void OPQBot_SendTypeReplyContentPrivateChat_Content_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypeReplyContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypeReplyContentPrivateChat_Group_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.SendTypeVoiceByLocalContent ---
+extern long long int OPQBot_SendTypeVoiceByLocalContent_CTor();
+extern char* OPQBot_SendTypeVoiceByLocalContent_Path_Get(long long int handle);
+extern void OPQBot_SendTypeVoiceByLocalContent_Path_Set(long long int handle, char* val);
+
+// --- wrapping struct: OPQBot.AtMsg ---
+extern long long int OPQBot_AtMsg_CTor();
+extern char* OPQBot_AtMsg_Content_Get(long long int handle);
+extern void OPQBot_AtMsg_Content_Set(long long int handle, char* val);
+extern long long int OPQBot_AtMsg_UserID_Get(long long int handle);
+extern void OPQBot_AtMsg_UserID_Set(long long int handle, long long int val);
+extern long long int OPQBot_AtMsg_Clean(long long int _handle);
+
+// --- wrapping struct: OPQBot.FriendList ---
+extern long long int OPQBot_FriendList_CTor();
+extern long long int OPQBot_FriendList_FriendCount_Get(long long int handle);
+extern void OPQBot_FriendList_FriendCount_Set(long long int handle, long long int val);
+extern long long int OPQBot_FriendList_GetfriendCount_Get(long long int handle);
+extern void OPQBot_FriendList_GetfriendCount_Set(long long int handle, long long int val);
+extern long long int OPQBot_FriendList_StartIndex_Get(long long int handle);
+extern void OPQBot_FriendList_StartIndex_Set(long long int handle, long long int val);
+extern long long int OPQBot_FriendList_TotoalFriendCount_Get(long long int handle);
+extern void OPQBot_FriendList_TotoalFriendCount_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.GroupFileResult ---
+extern long long int OPQBot_GroupFileResult_CTor();
+extern long long int OPQBot_GroupFileResult_Ret_Get(long long int handle);
+extern void OPQBot_GroupFileResult_Ret_Set(long long int handle, long long int val);
+extern char* OPQBot_GroupFileResult_URL_Get(long long int handle);
+extern void OPQBot_GroupFileResult_URL_Set(long long int handle, char* val);
+
+// --- wrapping struct: OPQBot.GroupSystemNotifyPack ---
+extern long long int OPQBot_GroupSystemNotifyPack_CTor();
+
+// --- wrapping struct: OPQBot.PicMsg ---
+extern long long int OPQBot_PicMsg_CTor();
+extern char* OPQBot_PicMsg_Content_Get(long long int handle);
+extern void OPQBot_PicMsg_Content_Set(long long int handle, char* val);
+extern char* OPQBot_PicMsg_Tips_Get(long long int handle);
+extern void OPQBot_PicMsg_Tips_Set(long long int handle, char* val);
+extern long long int OPQBot_PicMsg_UserID_Get(long long int handle);
+extern void OPQBot_PicMsg_UserID_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.GroupAdminSysNotifyPack ---
+extern long long int OPQBot_GroupAdminSysNotifyPack_CTor();
+
+// --- wrapping struct: OPQBot.GroupRevokePack ---
+extern long long int OPQBot_GroupRevokePack_CTor();
+
+// --- wrapping struct: OPQBot.Result ---
+extern long long int OPQBot_Result_CTor();
+extern char* OPQBot_Result_Msg_Get(long long int handle);
+extern void OPQBot_Result_Msg_Set(long long int handle, char* val);
+extern long long int OPQBot_Result_Ret_Get(long long int handle);
+extern void OPQBot_Result_Ret_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.UserInfo ---
+extern long long int OPQBot_UserInfo_CTor();
+extern long long int OPQBot_UserInfo_Code_Get(long long int handle);
+extern void OPQBot_UserInfo_Code_Set(long long int handle, long long int val);
+extern long long int OPQBot_UserInfo_Default_Get(long long int handle);
+extern void OPQBot_UserInfo_Default_Set(long long int handle, long long int val);
+extern char* OPQBot_UserInfo_Message_Get(long long int handle);
+extern void OPQBot_UserInfo_Message_Set(long long int handle, char* val);
+extern long long int OPQBot_UserInfo_Subcode_Get(long long int handle);
+extern void OPQBot_UserInfo_Subcode_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByUrlContentPrivateChat ---
+extern long long int OPQBot_SendTypePicMsgByUrlContentPrivateChat_CTor();
+extern char* OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set(long long int handle, char* val);
+extern char* OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set(long long int handle, long long int val);
+extern char OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set(long long int handle, char val);
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByLocalContentPrivateChat ---
+extern long long int OPQBot_SendTypePicMsgByLocalContentPrivateChat_CTor();
+extern char* OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set(long long int handle, char* val);
+extern char* OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set(long long int handle, long long int val);
+extern char OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set(long long int handle, char val);
+
+// --- wrapping struct: OPQBot.SendTypePicMsgByMd5ContentPrivateChat ---
+extern long long int OPQBot_SendTypePicMsgByMd5ContentPrivateChat_CTor();
+extern char* OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Set(long long int handle, long long int val);
+extern long long int OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set(long long int handle, long long int val);
+extern char OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Get(long long int handle);
+extern void OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set(long long int handle, char val);
 
 // --- wrapping struct: OPQBot.BotManager ---
 extern long long int OPQBot_BotManager_CTor();
@@ -493,14 +572,17 @@ extern void OPQBot_Cookie_Gtk32_Set(long long int handle, char* val);
 extern char* OPQBot_Cookie_Skey_Get(long long int handle);
 extern void OPQBot_Cookie_Skey_Set(long long int handle, char* val);
 
-// --- wrapping struct: OPQBot.SendTypePicMsgByBase64Content ---
-extern long long int OPQBot_SendTypePicMsgByBase64Content_CTor();
-extern char* OPQBot_SendTypePicMsgByBase64Content_Content_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByBase64Content_Content_Set(long long int handle, char* val);
-extern char* OPQBot_SendTypePicMsgByBase64Content_Base64_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByBase64Content_Base64_Set(long long int handle, char* val);
-extern char OPQBot_SendTypePicMsgByBase64Content_Flash_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByBase64Content_Flash_Set(long long int handle, char val);
+// --- wrapping struct: OPQBot.GroupExitSuccessPack ---
+extern long long int OPQBot_GroupExitSuccessPack_CTor();
+
+// --- wrapping struct: OPQBot.GroupMemberList ---
+extern long long int OPQBot_GroupMemberList_CTor();
+extern long long int OPQBot_GroupMemberList_Count_Get(long long int handle);
+extern void OPQBot_GroupMemberList_Count_Set(long long int handle, long long int val);
+extern long long int OPQBot_GroupMemberList_GroupUin_Get(long long int handle);
+extern void OPQBot_GroupMemberList_GroupUin_Set(long long int handle, long long int val);
+extern long long int OPQBot_GroupMemberList_LastUin_Get(long long int handle);
+extern void OPQBot_GroupMemberList_LastUin_Set(long long int handle, long long int val);
 
 // --- wrapping struct: OPQBot.SendTypePicMsgByLocalContent ---
 extern long long int OPQBot_SendTypePicMsgByLocalContent_CTor();
@@ -511,16 +593,12 @@ extern void OPQBot_SendTypePicMsgByLocalContent_Path_Set(long long int handle, c
 extern char OPQBot_SendTypePicMsgByLocalContent_Flash_Get(long long int handle);
 extern void OPQBot_SendTypePicMsgByLocalContent_Flash_Set(long long int handle, char val);
 
-// --- wrapping struct: OPQBot.UserInfo ---
-extern long long int OPQBot_UserInfo_CTor();
-extern long long int OPQBot_UserInfo_Code_Get(long long int handle);
-extern void OPQBot_UserInfo_Code_Set(long long int handle, long long int val);
-extern long long int OPQBot_UserInfo_Default_Get(long long int handle);
-extern void OPQBot_UserInfo_Default_Set(long long int handle, long long int val);
-extern char* OPQBot_UserInfo_Message_Get(long long int handle);
-extern void OPQBot_UserInfo_Message_Set(long long int handle, char* val);
-extern long long int OPQBot_UserInfo_Subcode_Get(long long int handle);
-extern void OPQBot_UserInfo_Subcode_Set(long long int handle, long long int val);
+// --- wrapping struct: OPQBot.SendTypeVoiceByUrlContentPrivateChat ---
+extern long long int OPQBot_SendTypeVoiceByUrlContentPrivateChat_CTor();
+extern char* OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Get(long long int handle);
+extern void OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set(long long int handle, long long int val);
 
 // --- wrapping struct: OPQBot.FriendFileResult ---
 extern long long int OPQBot_FriendFileResult_CTor();
@@ -533,26 +611,19 @@ extern void OPQBot_FriendFileResult_FromUin_Set(long long int handle, long long 
 extern char* OPQBot_FriendFileResult_URL_Get(long long int handle);
 extern void OPQBot_FriendFileResult_URL_Set(long long int handle, char* val);
 
-// --- wrapping struct: OPQBot.FriendList ---
-extern long long int OPQBot_FriendList_CTor();
-extern long long int OPQBot_FriendList_FriendCount_Get(long long int handle);
-extern void OPQBot_FriendList_FriendCount_Set(long long int handle, long long int val);
-extern long long int OPQBot_FriendList_GetfriendCount_Get(long long int handle);
-extern void OPQBot_FriendList_GetfriendCount_Set(long long int handle, long long int val);
-extern long long int OPQBot_FriendList_StartIndex_Get(long long int handle);
-extern void OPQBot_FriendList_StartIndex_Set(long long int handle, long long int val);
-extern long long int OPQBot_FriendList_TotoalFriendCount_Get(long long int handle);
-extern void OPQBot_FriendList_TotoalFriendCount_Set(long long int handle, long long int val);
-
 // --- wrapping struct: OPQBot.GroupExitPack ---
 extern long long int OPQBot_GroupExitPack_CTor();
 
-// --- wrapping struct: OPQBot.GroupFileResult ---
-extern long long int OPQBot_GroupFileResult_CTor();
-extern long long int OPQBot_GroupFileResult_Ret_Get(long long int handle);
-extern void OPQBot_GroupFileResult_Ret_Set(long long int handle, long long int val);
-extern char* OPQBot_GroupFileResult_URL_Get(long long int handle);
-extern void OPQBot_GroupFileResult_URL_Set(long long int handle, char* val);
+// --- wrapping struct: OPQBot.GroupFileMsg ---
+extern long long int OPQBot_GroupFileMsg_CTor();
+extern char* OPQBot_GroupFileMsg_FileID_Get(long long int handle);
+extern void OPQBot_GroupFileMsg_FileID_Set(long long int handle, char* val);
+extern char* OPQBot_GroupFileMsg_FileName_Get(long long int handle);
+extern void OPQBot_GroupFileMsg_FileName_Set(long long int handle, char* val);
+extern long long int OPQBot_GroupFileMsg_FileSize_Get(long long int handle);
+extern void OPQBot_GroupFileMsg_FileSize_Set(long long int handle, long long int val);
+extern char* OPQBot_GroupFileMsg_Tips_Get(long long int handle);
+extern void OPQBot_GroupFileMsg_Tips_Set(long long int handle, char* val);
 
 // --- wrapping struct: OPQBot.Reply ---
 extern long long int OPQBot_Reply_CTor();
@@ -567,17 +638,6 @@ extern void OPQBot_Reply_Tips_Set(long long int handle, char* val);
 extern long long int OPQBot_Reply_UserID_Get(long long int handle);
 extern void OPQBot_Reply_UserID_Set(long long int handle, long long int val);
 
-// --- wrapping struct: OPQBot.SendTypeForwordContentPrivateChat ---
-extern long long int OPQBot_SendTypeForwordContentPrivateChat_CTor();
-extern char* OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Get(long long int handle);
-extern void OPQBot_SendTypeForwordContentPrivateChat_ForwordBuf_Set(long long int handle, char* val);
-extern char* OPQBot_SendTypeForwordContentPrivateChat_Content_Get(long long int handle);
-extern void OPQBot_SendTypeForwordContentPrivateChat_Content_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Get(long long int handle);
-extern void OPQBot_SendTypeForwordContentPrivateChat_ForwordField_Set(long long int handle, long long int val);
-extern long long int OPQBot_SendTypeForwordContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypeForwordContentPrivateChat_Group_Set(long long int handle, long long int val);
-
 // --- wrapping struct: OPQBot.SendTypePicMsgByBase64ContentPrivateChat ---
 extern long long int OPQBot_SendTypePicMsgByBase64ContentPrivateChat_CTor();
 extern char* OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Content_Get(long long int handle);
@@ -589,23 +649,85 @@ extern void OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Group_Set(long long 
 extern char OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Get(long long int handle);
 extern void OPQBot_SendTypePicMsgByBase64ContentPrivateChat_Flash_Set(long long int handle, char val);
 
-// --- wrapping struct: OPQBot.SendTypePicMsgByMd5ContentPrivateChat ---
-extern long long int OPQBot_SendTypePicMsgByMd5ContentPrivateChat_CTor();
-extern char* OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Content_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Md5s_Set(long long int handle, long long int val);
-extern long long int OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Group_Set(long long int handle, long long int val);
-extern char OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByMd5ContentPrivateChat_Flash_Set(long long int handle, char val);
+// --- wrapping struct: OPQBot.GroupList ---
+extern long long int OPQBot_GroupList_CTor();
+extern long long int OPQBot_GroupList_Count_Get(long long int handle);
+extern void OPQBot_GroupList_Count_Set(long long int handle, long long int val);
+extern char* OPQBot_GroupList_NextToken_Get(long long int handle);
+extern void OPQBot_GroupList_NextToken_Set(long long int handle, char* val);
 
-// --- wrapping struct: OPQBot.SendTypeVoiceByUrlContentPrivateChat ---
-extern long long int OPQBot_SendTypeVoiceByUrlContentPrivateChat_CTor();
-extern char* OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Get(long long int handle);
-extern void OPQBot_SendTypeVoiceByUrlContentPrivateChat_VoiceUrl_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypeVoiceByUrlContentPrivateChat_Group_Set(long long int handle, long long int val);
+// --- wrapping struct: OPQBot.SendTypeTextMsgContent ---
+extern long long int OPQBot_SendTypeTextMsgContent_CTor();
+extern char* OPQBot_SendTypeTextMsgContent_Content_Get(long long int handle);
+extern void OPQBot_SendTypeTextMsgContent_Content_Set(long long int handle, char* val);
+
+// --- wrapping struct: OPQBot.SendTypeVoiceByLocalContentPrivateChat ---
+extern long long int OPQBot_SendTypeVoiceByLocalContentPrivateChat_CTor();
+extern char* OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Get(long long int handle);
+extern void OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.UserCardInfo ---
+extern long long int OPQBot_UserCardInfo_CTor();
+extern long long int OPQBot_UserCardInfo_Age_Get(long long int handle);
+extern void OPQBot_UserCardInfo_Age_Set(long long int handle, long long int val);
+extern char* OPQBot_UserCardInfo_City_Get(long long int handle);
+extern void OPQBot_UserCardInfo_City_Set(long long int handle, char* val);
+extern long long int OPQBot_UserCardInfo_LikeNums_Get(long long int handle);
+extern void OPQBot_UserCardInfo_LikeNums_Set(long long int handle, long long int val);
+extern long long int OPQBot_UserCardInfo_LoginDays_Get(long long int handle);
+extern void OPQBot_UserCardInfo_LoginDays_Set(long long int handle, long long int val);
+extern char* OPQBot_UserCardInfo_NickName_Get(long long int handle);
+extern void OPQBot_UserCardInfo_NickName_Set(long long int handle, char* val);
+extern char* OPQBot_UserCardInfo_Province_Get(long long int handle);
+extern void OPQBot_UserCardInfo_Province_Set(long long int handle, char* val);
+extern long long int OPQBot_UserCardInfo_QQLevel_Get(long long int handle);
+extern void OPQBot_UserCardInfo_QQLevel_Set(long long int handle, long long int val);
+extern long long int OPQBot_UserCardInfo_QQUin_Get(long long int handle);
+extern void OPQBot_UserCardInfo_QQUin_Set(long long int handle, long long int val);
+extern long long int OPQBot_UserCardInfo_Sex_Get(long long int handle);
+extern void OPQBot_UserCardInfo_Sex_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.SendTypeForwordContent ---
+extern long long int OPQBot_SendTypeForwordContent_CTor();
+extern char* OPQBot_SendTypeForwordContent_ForwordBuf_Get(long long int handle);
+extern void OPQBot_SendTypeForwordContent_ForwordBuf_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypeForwordContent_ForwordField_Get(long long int handle);
+extern void OPQBot_SendTypeForwordContent_ForwordField_Set(long long int handle, long long int val);
+extern char* OPQBot_SendTypeForwordContent_Content_Get(long long int handle);
+extern void OPQBot_SendTypeForwordContent_Content_Set(long long int handle, char* val);
+
+// --- wrapping struct: OPQBot.SendTypeJsonContentPrivateChat ---
+extern long long int OPQBot_SendTypeJsonContentPrivateChat_CTor();
+extern char* OPQBot_SendTypeJsonContentPrivateChat_Content_Get(long long int handle);
+extern void OPQBot_SendTypeJsonContentPrivateChat_Content_Set(long long int handle, char* val);
+extern long long int OPQBot_SendTypeJsonContentPrivateChat_Group_Get(long long int handle);
+extern void OPQBot_SendTypeJsonContentPrivateChat_Group_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.SendTypeReplyContent ---
+extern long long int OPQBot_SendTypeReplyContent_CTor();
+extern char* OPQBot_SendTypeReplyContent_Content_Get(long long int handle);
+extern void OPQBot_SendTypeReplyContent_Content_Set(long long int handle, char* val);
+
+// --- wrapping struct: OPQBot.FriendMsgPack ---
+extern long long int OPQBot_FriendMsgPack_CTor();
+extern char* OPQBot_FriendMsgPack_Content_Get(long long int handle);
+extern void OPQBot_FriendMsgPack_Content_Set(long long int handle, char* val);
+extern long long int OPQBot_FriendMsgPack_FromUin_Get(long long int handle);
+extern void OPQBot_FriendMsgPack_FromUin_Set(long long int handle, long long int val);
+extern long long int OPQBot_FriendMsgPack_MsgSeq_Get(long long int handle);
+extern void OPQBot_FriendMsgPack_MsgSeq_Set(long long int handle, long long int val);
+extern char* OPQBot_FriendMsgPack_MsgType_Get(long long int handle);
+extern void OPQBot_FriendMsgPack_MsgType_Set(long long int handle, char* val);
+extern long long int OPQBot_FriendMsgPack_ToUin_Get(long long int handle);
+extern void OPQBot_FriendMsgPack_ToUin_Set(long long int handle, long long int val);
+
+// --- wrapping struct: OPQBot.GroupAdminPack ---
+extern long long int OPQBot_GroupAdminPack_CTor();
+
+// --- wrapping struct: OPQBot.GroupShutPack ---
+extern long long int OPQBot_GroupShutPack_CTor();
 
 // --- wrapping struct: OPQBot.MyRecord ---
 extern long long int OPQBot_MyRecord_CTor();
@@ -622,114 +744,12 @@ extern void OPQBot_MyRecord_MsgType_Set(long long int handle, char* val);
 extern char* OPQBot_MyRecord_Content_Get(long long int handle);
 extern void OPQBot_MyRecord_Content_Set(long long int handle, char* val);
 
-// --- wrapping struct: OPQBot.PicMsg ---
-extern long long int OPQBot_PicMsg_CTor();
-extern char* OPQBot_PicMsg_Content_Get(long long int handle);
-extern void OPQBot_PicMsg_Content_Set(long long int handle, char* val);
-extern char* OPQBot_PicMsg_Tips_Get(long long int handle);
-extern void OPQBot_PicMsg_Tips_Set(long long int handle, char* val);
-extern long long int OPQBot_PicMsg_UserID_Get(long long int handle);
-extern void OPQBot_PicMsg_UserID_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.SendTypeForwordContent ---
-extern long long int OPQBot_SendTypeForwordContent_CTor();
-extern char* OPQBot_SendTypeForwordContent_ForwordBuf_Get(long long int handle);
-extern void OPQBot_SendTypeForwordContent_ForwordBuf_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypeForwordContent_ForwordField_Get(long long int handle);
-extern void OPQBot_SendTypeForwordContent_ForwordField_Set(long long int handle, long long int val);
-extern char* OPQBot_SendTypeForwordContent_Content_Get(long long int handle);
-extern void OPQBot_SendTypeForwordContent_Content_Set(long long int handle, char* val);
-
-// --- wrapping struct: OPQBot.SendTypePicMsgByLocalContentPrivateChat ---
-extern long long int OPQBot_SendTypePicMsgByLocalContentPrivateChat_CTor();
-extern char* OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByLocalContentPrivateChat_Content_Set(long long int handle, char* val);
-extern char* OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByLocalContentPrivateChat_Path_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByLocalContentPrivateChat_Group_Set(long long int handle, long long int val);
-extern char OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByLocalContentPrivateChat_Flash_Set(long long int handle, char val);
-
-// --- wrapping struct: OPQBot.SendTypePicMsgByUrlContentPrivateChat ---
-extern long long int OPQBot_SendTypePicMsgByUrlContentPrivateChat_CTor();
-extern char* OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByUrlContentPrivateChat_Content_Set(long long int handle, char* val);
-extern char* OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByUrlContentPrivateChat_PicUrl_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByUrlContentPrivateChat_Group_Set(long long int handle, long long int val);
-extern char OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Get(long long int handle);
-extern void OPQBot_SendTypePicMsgByUrlContentPrivateChat_Flash_Set(long long int handle, char val);
-
-// --- wrapping struct: OPQBot.SendTypeVoiceByLocalContentPrivateChat ---
-extern long long int OPQBot_SendTypeVoiceByLocalContentPrivateChat_CTor();
-extern char* OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Get(long long int handle);
-extern void OPQBot_SendTypeVoiceByLocalContentPrivateChat_Path_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypeVoiceByLocalContentPrivateChat_Group_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.SendTypeXmlContent ---
-extern long long int OPQBot_SendTypeXmlContent_CTor();
-extern char* OPQBot_SendTypeXmlContent_Content_Get(long long int handle);
-extern void OPQBot_SendTypeXmlContent_Content_Set(long long int handle, char* val);
-
-// --- wrapping struct: OPQBot.SendTypeXmlContentPrivateChat ---
-extern long long int OPQBot_SendTypeXmlContentPrivateChat_CTor();
-extern char* OPQBot_SendTypeXmlContentPrivateChat_Content_Get(long long int handle);
-extern void OPQBot_SendTypeXmlContentPrivateChat_Content_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypeXmlContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypeXmlContentPrivateChat_Group_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.GroupAdminPack ---
-extern long long int OPQBot_GroupAdminPack_CTor();
-
-// --- wrapping struct: OPQBot.GroupList ---
-extern long long int OPQBot_GroupList_CTor();
-extern long long int OPQBot_GroupList_Count_Get(long long int handle);
-extern void OPQBot_GroupList_Count_Set(long long int handle, long long int val);
-extern char* OPQBot_GroupList_NextToken_Get(long long int handle);
-extern void OPQBot_GroupList_NextToken_Set(long long int handle, char* val);
-
-// --- wrapping struct: OPQBot.GroupMsgPack ---
-extern long long int OPQBot_GroupMsgPack_CTor();
-extern char* OPQBot_GroupMsgPack_Content_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_Content_Set(long long int handle, char* val);
-extern long long int OPQBot_GroupMsgPack_FromGroupID_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_FromGroupID_Set(long long int handle, long long int val);
-extern char* OPQBot_GroupMsgPack_FromGroupName_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_FromGroupName_Set(long long int handle, char* val);
-extern char* OPQBot_GroupMsgPack_FromNickName_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_FromNickName_Set(long long int handle, char* val);
-extern long long int OPQBot_GroupMsgPack_FromUserID_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_FromUserID_Set(long long int handle, long long int val);
-extern long long int OPQBot_GroupMsgPack_MsgRandom_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_MsgRandom_Set(long long int handle, long long int val);
-extern long long int OPQBot_GroupMsgPack_MsgSeq_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_MsgSeq_Set(long long int handle, long long int val);
-extern long long int OPQBot_GroupMsgPack_MsgTime_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_MsgTime_Set(long long int handle, long long int val);
-extern char* OPQBot_GroupMsgPack_MsgType_Get(long long int handle);
-extern void OPQBot_GroupMsgPack_MsgType_Set(long long int handle, char* val);
-
-// --- wrapping struct: OPQBot.Result ---
-extern long long int OPQBot_Result_CTor();
-extern char* OPQBot_Result_Msg_Get(long long int handle);
-extern void OPQBot_Result_Msg_Set(long long int handle, char* val);
-extern long long int OPQBot_Result_Ret_Get(long long int handle);
-extern void OPQBot_Result_Ret_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.SendTypeJsonContentPrivateChat ---
-extern long long int OPQBot_SendTypeJsonContentPrivateChat_CTor();
-extern char* OPQBot_SendTypeJsonContentPrivateChat_Content_Get(long long int handle);
-extern void OPQBot_SendTypeJsonContentPrivateChat_Content_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypeJsonContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypeJsonContentPrivateChat_Group_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.SendTypeTextMsgContent ---
-extern long long int OPQBot_SendTypeTextMsgContent_CTor();
-extern char* OPQBot_SendTypeTextMsgContent_Content_Get(long long int handle);
-extern void OPQBot_SendTypeTextMsgContent_Content_Set(long long int handle, char* val);
+// --- wrapping struct: OPQBot.SendMsgPack ---
+extern long long int OPQBot_SendMsgPack_CTor();
+extern long long int OPQBot_SendMsgPack_SendToType_Get(long long int handle);
+extern void OPQBot_SendMsgPack_SendToType_Set(long long int handle, long long int val);
+extern long long int OPQBot_SendMsgPack_ToUserUid_Get(long long int handle);
+extern void OPQBot_SendMsgPack_ToUserUid_Set(long long int handle, long long int val);
 
 // --- wrapping struct: OPQBot.SendTypeTextMsgContentPrivateChat ---
 extern long long int OPQBot_SendTypeTextMsgContentPrivateChat_CTor();
@@ -757,40 +777,36 @@ extern char* OPQBot_VideoMsg_VideoUrl_Get(long long int handle);
 extern void OPQBot_VideoMsg_VideoUrl_Set(long long int handle, char* val);
 extern char* OPQBot_VideoMsg_Tips_Get(long long int handle);
 extern void OPQBot_VideoMsg_Tips_Set(long long int handle, char* val);
-
-// --- wrapping struct: OPQBot.GroupJoinPack ---
-extern long long int OPQBot_GroupJoinPack_CTor();
-
-// --- wrapping struct: OPQBot.GroupAdminSysNotifyPack ---
-extern long long int OPQBot_GroupAdminSysNotifyPack_CTor();
-
-// --- wrapping struct: OPQBot.SendMsgPack ---
-extern long long int OPQBot_SendMsgPack_CTor();
-extern long long int OPQBot_SendMsgPack_SendToType_Get(long long int handle);
-extern void OPQBot_SendMsgPack_SendToType_Set(long long int handle, long long int val);
-extern long long int OPQBot_SendMsgPack_ToUserUid_Get(long long int handle);
-extern void OPQBot_SendMsgPack_ToUserUid_Set(long long int handle, long long int val);
-
-// --- wrapping struct: OPQBot.SendTypeReplyContentPrivateChat ---
-extern long long int OPQBot_SendTypeReplyContentPrivateChat_CTor();
-extern char* OPQBot_SendTypeReplyContentPrivateChat_Content_Get(long long int handle);
-extern void OPQBot_SendTypeReplyContentPrivateChat_Content_Set(long long int handle, char* val);
-extern long long int OPQBot_SendTypeReplyContentPrivateChat_Group_Get(long long int handle);
-extern void OPQBot_SendTypeReplyContentPrivateChat_Group_Set(long long int handle, long long int val);
 extern long long int OPQBot_ParserGroupAtMsg(long long int pack);
-extern long long int OPQBot_ParserGroupFileMsg(long long int pack);
-extern long long int OPQBot_NewBotManager(long long int QQ, char* OPQUrl);
-extern long long int OPQBot_ParserGroupReplyMsg(long long int pack);
 extern long long int OPQBot_ParserGroupPicMsg(long long int pack);
+extern long long int OPQBot_NewBotManager(long long int QQ, char* OPQUrl);
+extern long long int OPQBot_ParserGroupFileMsg(long long int pack);
+extern long long int OPQBot_ParserGroupReplyMsg(long long int pack);
 extern long long int OPQBot_ParserVideoMsg(long long int pack);
 extern char* OPQBot_MacroAt(long long int qqs);
-extern long long int OPQBot_VoiceSilkToMp3(char* base64EncodedSilk);
+extern char* OPQBot_DecodeFaceFromSentences(char* encode, char* format);
+extern char* OPQBot_MacroId();
 extern char* OPQBot_DecodeFace(char* encodeFace);
 extern char* OPQBot_VoiceMp3ToSilk(char* mp3Path);
-extern char* OPQBot_DecodeFaceFromSentences(char* encode, char* format);
-extern char* OPQBot_MacroAtAll();
-extern char* OPQBot_MacroId();
 extern void OPQBot_SetLog(long long int l, char goRun);
+extern long long int OPQBot_VoiceSilkToMp3(char* base64EncodedSilk);
+extern char* OPQBot_MacroAtAll();
+
+// --- wrapping struct: qzone.ShuoshuoList ---
+extern long long int qzone_ShuoshuoList_CTor();
+extern long long int qzone_ShuoshuoList_Code_Get(long long int handle);
+extern void qzone_ShuoshuoList_Code_Set(long long int handle, long long int val);
+extern long long int qzone_ShuoshuoList_Subcode_Get(long long int handle);
+extern void qzone_ShuoshuoList_Subcode_Set(long long int handle, long long int val);
+extern char* qzone_ShuoshuoList_Message_Get(long long int handle);
+extern void qzone_ShuoshuoList_Message_Set(long long int handle, char* val);
+extern long long int qzone_ShuoshuoList_Default_Get(long long int handle);
+extern void qzone_ShuoshuoList_Default_Set(long long int handle, long long int val);
+
+// --- wrapping struct: qzone.UploadPicResult ---
+extern long long int qzone_UploadPicResult_CTor();
+extern long long int qzone_UploadPicResult_Ret_Get(long long int handle);
+extern void qzone_UploadPicResult_Ret_Set(long long int handle, long long int val);
 
 // --- wrapping struct: qzone.Manager ---
 extern long long int qzone_Manager_CTor();
@@ -839,22 +855,6 @@ extern char* qzone_SendShuoShuoResult_Tid_Get(long long int handle);
 extern void qzone_SendShuoShuoResult_Tid_Set(long long int handle, char* val);
 extern char* qzone_SendShuoShuoResult_Vote_Get(long long int handle);
 extern void qzone_SendShuoShuoResult_Vote_Set(long long int handle, char* val);
-
-// --- wrapping struct: qzone.ShuoshuoList ---
-extern long long int qzone_ShuoshuoList_CTor();
-extern long long int qzone_ShuoshuoList_Code_Get(long long int handle);
-extern void qzone_ShuoshuoList_Code_Set(long long int handle, long long int val);
-extern long long int qzone_ShuoshuoList_Subcode_Get(long long int handle);
-extern void qzone_ShuoshuoList_Subcode_Set(long long int handle, long long int val);
-extern char* qzone_ShuoshuoList_Message_Get(long long int handle);
-extern void qzone_ShuoshuoList_Message_Set(long long int handle, char* val);
-extern long long int qzone_ShuoshuoList_Default_Get(long long int handle);
-extern void qzone_ShuoshuoList_Default_Set(long long int handle, long long int val);
-
-// --- wrapping struct: qzone.UploadPicResult ---
-extern long long int qzone_UploadPicResult_CTor();
-extern long long int qzone_UploadPicResult_Ret_Get(long long int handle);
-extern void qzone_UploadPicResult_Ret_Set(long long int handle, long long int val);
 extern long long int qzone_NewQzoneManager(long long int qq, long long int cookie);
 extern char* qzone_GenderGTK(char* sKey);
 extern char* qzone_GetBase64(char* path);
