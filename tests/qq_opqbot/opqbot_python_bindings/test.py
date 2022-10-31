@@ -9,6 +9,7 @@ bot.Start()
 # print(bot)
 cookie = bot.GetUserCookie()
 print(cookie)
+breakpoint()
 # you might want the cookie.
 # <class 'bindings.OPQBot.Cookie'>
 # qzone.OPQBot
