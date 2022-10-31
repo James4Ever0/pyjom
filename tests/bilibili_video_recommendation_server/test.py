@@ -891,8 +891,12 @@ if __name__ == "__main__":
 
         # just asking. post or get?
         @app.get("/searchVideos")
-        def search_videos(keyword:str,):
-            searchRegisteredVideos(keyword,)
+        def search_videos(
+            query:str,
+    iterate: bool = False,
+    page_start: int = 1,
+    params={"duration": BSP.all.duration._10分钟以下},):
+            searchAndRegisterVideos(query,)
         
         @app.get('/searchRegisteredVideos')
         def search_registered_videos():
