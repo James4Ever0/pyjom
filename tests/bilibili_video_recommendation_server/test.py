@@ -858,9 +858,7 @@ def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
         schedule.run_pending()
         return func(*args, **kwargs)
-
     return wrapper
-
 
 @refresh_status_decorator  # this might prevent you adding the decorator everywhere?
 def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
