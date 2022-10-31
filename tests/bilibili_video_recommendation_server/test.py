@@ -889,7 +889,7 @@ if __name__ == "__main__":
         def read_root():
             return "bilibili recommendation server"
         
-        @app.get("/")
+        @app.get("/searchVideo")
 
         uvicorn.run(app, host="0.0.0.0", port=port)
     elif objective == "test":
