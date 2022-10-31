@@ -11,7 +11,7 @@ baseUrl = "http://0.0.0.0:5700" # the thing is not ready yet.
 
 import requests
 
-url = baseUrl + "/send_group_msg"
+url = baseUrl + "/send_friend_msg"
 message = '[CQ:share,url=http://baidu.com,title=百度]'
 
 data = {"group_id": group, "message": message, "auto_escape": False}
