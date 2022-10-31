@@ -896,6 +896,7 @@ if __name__ == "__main__":
         @app.get("/searchUserVideos")
         def query_user_video():
             ...
+        @app.get('/registerVideo')
         uvicorn.run(app, host="0.0.0.0", port=port)
     elif objective == "test":
         test = "searchVideos"
