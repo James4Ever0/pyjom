@@ -20,6 +20,6 @@ breakpoint()
 
 # it is not running. fuck.
 # content = 'hello world'
-# qzoneManager.GetQzoneToken()
+qzoneManager.RefreshToken()
 # result = qzoneManager.SendShuoShuo(content)
 # print(result) # error to get qzone token. wtf?
