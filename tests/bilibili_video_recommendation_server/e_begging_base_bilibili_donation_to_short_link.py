@@ -6,6 +6,7 @@
 # it will generate a one-time payment code.
 # https://api.bilibili.com/x/ugcpay/trade/elec/pay/order/status?qr_token=1875b75b1299497888ce9c33089dc676
 # calling for the qrcode token status.
+# but we must have the cookie first.
 
 my_donation_link = "https://www.bilibili.com/v/pay/charge?upmid=85300402&upurl=%2F%2Fspace.bilibili.com%2F85300402&upname=J4D&upavatar=https%3A%2F%2Fi1.hdslb.com%2Fbfs%2Fface%2F73f1323696c857eb5f47f4a8bd03c1115a056af1.jpg&oid=85300402&otype=up&from=zone"
 
