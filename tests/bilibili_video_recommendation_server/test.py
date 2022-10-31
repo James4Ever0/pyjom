@@ -891,7 +891,7 @@ if __name__ == "__main__":
 
         @app.get("/searchVideos")
         def search_video():
-            searchAndRegisterVideos
+            searchAndRegisterVideos()
 
         @app.get("/searchUserVideos")
         def search_user_video():
@@ -899,12 +899,6 @@ if __name__ == "__main__":
 
         @app.get("/registerUserVideo")
         def register_user_video():
-            ...
-
-        @app.get(
-            "/checkVideoVisibility"
-        )  # are you sure to release some invisible video to our client?
-        def check_video_visibility():
             ...
 
         uvicorn.run(app, host="0.0.0.0", port=port)
