@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/mcoo/OPQBot"
-	"github.com/mcoo/OPQBot/qzone"
 )
 
 func main() {
@@ -18,7 +17,7 @@ func main() {
 	defer opqBot.Stop() // what is this defer?
 	// fmt.Println("waiting!")
     ck, _ := opqBot.GetUserCookie()
-	qz := qzone.NewQzoneManager(opqBot.QQ, ck)
+	qz := OPQBot.qzone.NewQzoneManager(opqBot.QQ, ck)
     fmt.Println(qz)
 	// opqBot.Wait() // wait for what? what are you doing?
 	// fmt.Println("logic follows here?") // nothing here!
