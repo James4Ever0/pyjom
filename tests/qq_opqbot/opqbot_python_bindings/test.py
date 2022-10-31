@@ -5,6 +5,8 @@ serverPort = "8784"
 OPQUrl = "http://localhost:"+serverPort
 bot = OPQBot.NewBotManager(QQ, OPQUrl)
 bot.Start()
-print(bot)
+# print(bot)
+qzone.SendShuoShuoResult
+
 # result =
 # it is not running. fuck.
