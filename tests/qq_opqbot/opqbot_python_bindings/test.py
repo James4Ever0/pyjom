@@ -17,4 +17,4 @@ print(qzoneManager) # so far so good.
 # result =
 # it is not running. fuck.
 
-result = qzoneManager.
+result = qzoneManager.SendShuoShuo
