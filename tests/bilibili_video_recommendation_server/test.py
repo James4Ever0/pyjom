@@ -890,7 +890,7 @@ if __name__ == "__main__":
             return "bilibili recommendation server"
 
         # just asking. post or get?
-        @app.get("/searchVideos")
+        @app.get("/searchVideos") # what do you want to have? all 
         def search_videos(
             query:str,
     iterate: bool = False,
