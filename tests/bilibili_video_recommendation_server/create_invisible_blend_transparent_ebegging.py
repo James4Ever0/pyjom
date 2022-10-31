@@ -13,3 +13,4 @@ e_w, e_h = int(ratio*ebImage.width), int(ratio*ebImage.height)
 
 ebImage = ebImage.resize(e_w, e_h)
 
+bgImage.draw()
