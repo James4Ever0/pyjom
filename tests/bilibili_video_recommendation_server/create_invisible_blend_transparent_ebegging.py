@@ -12,6 +12,6 @@ ratio = min(bgImage.width, bgImage.height)/(max(ebImage.width, bgImage.height)*4
 e_w, e_h = int(ratio*ebImage.width), int(ratio*ebImage.height)
 
 ebImage = ebImage.resize(e_w, e_h)
-t_w, t_h = bgImage.width-e_w, bgImage.height
+t_w, t_h = bgImage.width-e_w, bgImage.height-e_h
 
-bgImage.draw(ebImage,transform = pixie.translate(t_w, t_h) )
+bgImage.draw(ebImage,transform = pixie.translate(t_w, t_h))
