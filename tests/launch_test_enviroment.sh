@@ -1,4 +1,8 @@
+# launch qq cqhttp
+cd /root/Desktop/works/pyjom/tests/qq_go_cqhttp
+
 # make sure milvus is running.
+cd /root/Desktop/works/pyjom/tests/video_phash_deduplication/
 bash /root/Desktop/works/pyjom/tests/video_phash_deduplication/config_milvus.sh
 
 # launch netease api server. we need it to download new music, currently.
