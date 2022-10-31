@@ -1,7 +1,7 @@
 # from bindings import OPQBot
 # from bindings_qzone import qzone
-from bindings import OPQBot
-from bindings_qzone import qzone
+from bindings import 
+from bindings_all import qzone,
 QQ=917521610
 serverPort = "8784"
 OPQUrl = "http://localhost:"+serverPort
