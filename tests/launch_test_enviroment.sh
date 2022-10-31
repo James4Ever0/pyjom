@@ -1,6 +1,6 @@
 # launch qq cqhttp
 cd /root/Desktop/works/pyjom/tests/qq_go_cqhttp
-gnome-terminal -- bash /root/Desktop/works/pyjom/externals/NeteaseCloudMusicApi/launch.sh
+gnome-terminal -- bash /root/Desktop/works/pyjom/tests/qq_go_cqhttp/launch.sh
 
 # make sure milvus is running.
 cd /root/Desktop/works/pyjom/tests/video_phash_deduplication/
