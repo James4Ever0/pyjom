@@ -7,6 +7,9 @@ user = 1281727431
 
 group = 543780931
 
+baseUrl = "http://0.0.0.0:5700"
+
+
 import requests
 
 url = baseUrl + "/send_group_msg"
