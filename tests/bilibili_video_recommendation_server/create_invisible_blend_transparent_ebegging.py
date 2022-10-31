@@ -7,4 +7,4 @@ import pixie
 bgImage = pixie.read_image(background)
 ebImage = pixie.read_image(ebegging)
 
-print(bgImage.width)
+ratio = bgImage.width, bgImage.height)
