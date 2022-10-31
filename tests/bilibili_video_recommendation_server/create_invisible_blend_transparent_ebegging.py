@@ -15,4 +15,4 @@ ebImage = ebImage.resize(e_w, e_h)
 t_w, t_h = bgImage.width-e_w, bgImage.height-e_h
 
 bgImage.draw(ebImage,transform = pixie.translate(t_w, t_h))
-bgImage.save('ebegging_setu_transparent.png')
+bgImage.write_image('ebegging_setu_transparent.png')
