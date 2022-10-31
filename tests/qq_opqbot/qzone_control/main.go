@@ -12,7 +12,7 @@ func main() {
     if err != nil {
         fmt.Println(err.Error())
     }
-    defer opqBot.Stop()
+    defer opqBot.Stop() // what is this defer?
     // fmt.Println("waiting!")
     opqBot.Wait() // wait for what? what are you doing?
     // fmt.Println("logic follows here?") // nothing here!
