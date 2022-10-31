@@ -7,3 +7,9 @@ qq = 917521610
 port = 8784
 action = Action(qq=qq, port=port, host="127.0.0.1")
 user = 1281727431
+
+group = 543780931
+
+import requests
+
+url = baseUrl + "/send_group_msg"
