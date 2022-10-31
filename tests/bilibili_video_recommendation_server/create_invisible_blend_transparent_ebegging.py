@@ -1,3 +1,4 @@
 background = "setu.jpg"
 
-ebegging = ""
+ebegging = "ebegging_template.png"
+
