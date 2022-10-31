@@ -10,9 +10,9 @@ ebImage = pixie.read_image(ebegging)
 ratio = min(bgImage.width, bgImage.height)/(max(ebImage.width, ebImage.height)*4)
 
 e_w, e_h = int(ratio*ebImage.width), int(ratio*ebImage.height)
-print(e_w, e_h)
-print(ratio)
-print(bgImage.width, bgImage.height)
+# print(e_w, e_h)
+# print(ratio)
+# print(bgImage.width, bgImage.height)
 
 ebImage = ebImage.resize(e_w, e_h)
 t_w, t_h = bgImage.width-e_w, bgImage.height-e_h
