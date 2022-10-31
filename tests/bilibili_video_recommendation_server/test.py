@@ -563,7 +563,7 @@ def searchRegisteredVideosAndGetResultList(
     # print('user video ids',user_video_ids)
     results = (
         BilibiliVideoIndex.search_bm25(keyword)
-        .where(BilibiliVideoIndex.rowid in user_video_ids)
+        .where(BilibiliVideoIndex.rowid in user_video_ids and )
         .limit(limit)
     )
     for index, video_index in enumerate(results):
