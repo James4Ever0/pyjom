@@ -21,6 +21,7 @@ import requests
 message = "[CQ:forward,id={}]".format(291457889)
 
 url = baseUrl+"/send_group_msg"
-data = 
+data = {"group_id":group, "message": message, "auto_escape": False}
+
 r = requests.post(url,data=data)
 print(r.json())
