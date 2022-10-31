@@ -11,4 +11,8 @@ baseUrl = "http://0.0.0.0:5700" # the thing is not ready yet.
 
 import requests
 
-url = baseUrl + "/send_group_msg"
+url = baseUrl + "/send_friend_msg"
+
+data = {"group_id": group, "message": message, "auto_escape": False}
+r = requests.post(url, data=data)
+print(r.json())
