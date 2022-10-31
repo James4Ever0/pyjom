@@ -890,6 +890,8 @@ if __name__ == "__main__":
             return "bilibili recommendation server"
         
         @app.get("/searchVideo")
+        def query_video():
+            
 
         uvicorn.run(app, host="0.0.0.0", port=port)
     elif objective == "test":
