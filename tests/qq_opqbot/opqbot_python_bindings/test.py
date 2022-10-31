@@ -13,13 +13,13 @@ print(cookie)
 # you might want the cookie.
 # <class 'bindings.OPQBot.Cookie'>
 # qzone.OPQBot
-qzoneManager = qzone.NewQzoneManager(QQ, cookie) # we have forced the code replacement. we clone the code from github and replace it with previous version. will that work?
+# qzoneManager = qzone.NewQzoneManager(QQ, cookie) # we have forced the code replacement. we clone the code from github and replace it with previous version. will that work?
 # print(qzoneManager) # so far so good.
 # result =
 # breakpoint()
 
 # it is not running. fuck.
 # content = 'hello world'
-qzoneManager.RefreshToken()
+# qzoneManager.RefreshToken()
 # result = qzoneManager.SendShuoShuo(content)
 # print(result) # error to get qzone token. wtf?
