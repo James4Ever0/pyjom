@@ -548,7 +548,7 @@ def searchRegisteredVideosAndGetResultList(
 ):
     resultList = []
     resolvedTids = resolveSubTidsFromTid(tid)
-    condition = BilibiliVideo.typeid in resolvedTids
+    condition = (BilibiliVideo.typeid in resolvedTids) & (BilibiliVideo.visible == True)
     if dedeuserid:
         if type(dedeuserid) == str:
             dedeuserids = [dedeuserid]
@@ -558,7 +558,7 @@ def searchRegisteredVideosAndGetResultList(
             poster = registerUser(userid)
             condition &= BilibiliVideo.poster == poster
     user_video_ids = [
-        v.id for v in BilibiliVideo.select(BilibiliVideo.id).where(condition & BilibiliVideo.)
+        v.id for v in BilibiliVideo.select(BilibiliVideo.id).where(condition)
     ]
     # print('user video ids',user_video_ids)
     results = (
@@ -888,7 +888,7 @@ if __name__ == "__main__":
         @app.get("/")
         def read_root():
             return "bilibili recommendation server"
-        
+
         @app.get("/searchVideos")
         def query_video():
             ...
@@ -897,13 +897,11 @@ if __name__ == "__main__":
         def query_user_video():
             ...
 
-        @app.get('/registerUserVideo')
+        @app.get("/registerUserVideo")
         def register_user_video():
             ...
-        
-        @app.get('/checkVideoVisibility') # are you sure to release some invisible video to our client?
-        def check_video_visibility():
-            ...
+
+
         uvicorn.run(app, host="0.0.0.0", port=port)
     elif objective == "test":
         test = "searchVideos"
@@ -927,7 +925,7 @@ if __name__ == "__main__":
         elif test == "searchVideos":
             query = "cod19"  # recent hot videos.
             for v in searchAndRegisterVideos(query):
-                print(v) # warning: title containing markup language.
+                print(v)  # warning: title containing markup language.
                 breakpoint()
             # you want to select video after search?
             # no keywords? are you kidding?
