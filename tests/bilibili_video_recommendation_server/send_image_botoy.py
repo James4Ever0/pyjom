@@ -34,7 +34,7 @@ if objective == 'send_video_ad':
 elif objective == 'send_image':
     # picture_path = "ad_2.png"
     # picture_path = "ebegging_setu_transparent.png"
-    picture_path = "image_with_text_3.png"
+    picture_path = "image_with_text_4.png"
     with open(picture_path, "rb") as img_file:
         b64_string = base64.b64encode(img_file.read())
     # print(b64_string)
