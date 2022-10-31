@@ -15,6 +15,7 @@ e_w, e_h = int(ratio*ebImage.width), int(ratio*ebImage.height)
 # print(bgImage.width, bgImage.height)
 
 ebImage = ebImage.resize(e_w, e_h)
+ebImage.alpha=0.2
 t_w, t_h = bgImage.width-e_w, bgImage.height-e_h
 
 bgImage.draw(ebImage,transform = pixie.translate(t_w, t_h),blend_mode=pixie.DARKEN_BLEND)
