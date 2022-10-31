@@ -10,6 +10,7 @@ bot.Start()
 cookie = bot.GetUserCookie()
 print(cookie)
 breakpoint()
+# 'ClientKey', 'Cookies', 'Gtk', 'Gtk32', 'Skey'
 # you might want the cookie.
 # <class 'bindings.OPQBot.Cookie'>
 # qzone.OPQBot
