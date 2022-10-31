@@ -8,15 +8,15 @@ bot = OPQBot.NewBotManager(QQ, OPQUrl)
 bot.Start()
 # print(bot)
 cookie = bot.GetUserCookie()
-# print(cookie)
+print(cookie)
 # you might want the cookie.
 # <class 'bindings.OPQBot.Cookie'>
 # qzone.OPQBot
-qzoneManager = qzone.NewQzoneManager(QQ, cookie)
-print(qzoneManager) # so far so good.
+# qzoneManager = qzone.NewQzoneManager(QQ, cookie)
+# print(qzoneManager) # so far so good.
 # result =
 # it is not running. fuck.
-content = 'hello world'
-qzoneManager.GetQzoneToken()
-result = qzoneManager.SendShuoShuo(content)
-print(result) # error to get qzone token. wtf?
+# content = 'hello world'
+# qzoneManager.GetQzoneToken()
+# result = qzoneManager.SendShuoShuo(content)
+# print(result) # error to get qzone token. wtf?
