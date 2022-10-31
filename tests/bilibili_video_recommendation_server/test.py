@@ -896,9 +896,8 @@ if __name__ == "__main__":
     iterate: bool = False,
     page_start: int = 1,
     params={}):
-    default_params = {"duration": BSP.all.duration._10分钟以下}
-    params.
-            searchAndRegisterVideos(query,iterate=iterate,page_start=page_start, params=params)
+            params= {"duration": BSP.all.duration._10分钟以下}.update(params)
+            for v in searchAndRegisterVideos(query,iterate=iterate,page_start=page_start, params=params):
         
         @app.get('/searchRegisteredVideos')
         def search_registered_videos():
