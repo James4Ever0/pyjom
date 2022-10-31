@@ -13,5 +13,6 @@ func main() {
         fmt.Println(err.Error())
     }
     defer opqBot.Stop()
-    opqBot.Wait()
+    opqBot.Wait() // wait for what? what are you doing?
+    fmt.Println("logic follows here?")
 }
