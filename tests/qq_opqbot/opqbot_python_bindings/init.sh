@@ -8,8 +8,8 @@ go mod init dummy.com/dum
 # go get $PKGNAME
 # gopy build -output=bindings_qzone -vm=python3 $PKGNAME
 
-PKGNAME=github.com/mcoo/OPQBot
-PKGNAME2=github.com/mcoo/OPQBot/qzone # wtf?
+PKGNAME=github.com/mcoo/OPQBot@latest
+PKGNAME2=github.com/mcoo/OPQBot/qzone@latest # wtf?
 go get $PKGNAME
 go get $PKGNAME2
 gopy build -output=bindings_all -vm=python3 $PKGNAME $PKGNAME2
