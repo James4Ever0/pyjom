@@ -1,2 +1,2 @@
-export GOPATH=$HOME/.go
-go install github.com/mcoo/OPQBot@latest
+# export GOPATH=$HOME/.go
+go get github.com/mcoo/OPQBot@latest
