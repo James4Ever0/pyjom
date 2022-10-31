@@ -24,7 +24,7 @@ os.chdir(cwd)
 # and then refer to everything using qzone. prefix
 # packages imported by this package listed below:
 
-import OPQBot
+from .import OPQBot
 
 
 
