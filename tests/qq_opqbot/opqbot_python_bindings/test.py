@@ -9,14 +9,15 @@ bot.Start()
 # print(bot)
 cookie = bot.GetUserCookie()
 print(cookie)
-breakpoint()
 # 'ClientKey', 'Cookies', 'Gtk', 'Gtk32', 'Skey'
 # you might want the cookie.
 # <class 'bindings.OPQBot.Cookie'>
 # qzone.OPQBot
-# qzoneManager = qzone.NewQzoneManager(QQ, cookie)
+qzoneManager = qzone.NewQzoneManager(QQ, cookie)
 # print(qzoneManager) # so far so good.
 # result =
+breakpoint()
+
 # it is not running. fuck.
 # content = 'hello world'
 # qzoneManager.GetQzoneToken()
