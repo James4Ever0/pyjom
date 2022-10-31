@@ -32,14 +32,13 @@ if objective == 'send_video_ad':
     action.sendFriendText(user=user, content=content)
     # send separately.
     # result = action.sendFriendPic(user=user, picBase64Buf=b64_string.decode('utf-8'),content = content)
-
-
-# picture_path = "ad_2.png"
-picture_path = ""
-with open(picture_path, "rb") as img_file:
-    b64_string = base64.b64encode(img_file.read())
-# print(b64_string)
-result = action.sendFriendPic(
-    user=user, picBase64Buf=b64_string.decode("utf-8")
-)  # better without content.
+elif objective == 'send_image':
+    # picture_path = "ad_2.png"
+    picture_path = ""
+    with open(picture_path, "rb") as img_file:
+        b64_string = base64.b64encode(img_file.read())
+    # print(b64_string)
+    result = action.sendFriendPic(
+        user=user, picBase64Buf=b64_string.decode("utf-8")
+    )  # better without content.
 
