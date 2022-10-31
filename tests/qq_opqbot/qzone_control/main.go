@@ -16,6 +16,8 @@ func main() {
 	}
 	defer opqBot.Stop() // what is this defer?
 	// fmt.Println("waiting!")
-	opqBot.Wait() // wait for what? what are you doing?
+    //ck, _ := opqBot.GetUserCookie()
+	//qz := qzone.NewQzoneManager(opqBot.QQ, ck)
+	// opqBot.Wait() // wait for what? what are you doing?
 	// fmt.Println("logic follows here?") // nothing here!
 }
