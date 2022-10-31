@@ -1,1 +1,3 @@
-from bindings import OPQBOT
+from bindings import OPQBot
+
+bot = OPQBot.BotManager()
