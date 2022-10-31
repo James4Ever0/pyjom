@@ -9,8 +9,8 @@ bot.Start()
 cookie = bot.GetUserCookie()
 # print(cookie, type(cookie))
 # <class 'bindings.OPQBot.Cookie'>
-qzone.
-qzoneManager = qzone.NewQzoneManager(QQ, cookie)
+qzone.OPQBot
+# qzoneManager = qzone.NewQzoneManager(QQ, cookie)
 
 # result =
 # it is not running. fuck.
