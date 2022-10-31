@@ -7,7 +7,8 @@ import pixie
 bgImage = pixie.read_image(background)
 ebImage = pixie.read_image(ebegging)
 
-ratio = min(bgImage.width, bgImage.height)/(max(ebImage.width, ebImage.height)*4)
+factor = 5
+ratio = min(bgImage.width, bgImage.height)/(max(ebImage.width, ebImage.height)*factor)
 
 e_w, e_h = int(ratio*ebImage.width), int(ratio*ebImage.height)
 # print(e_w, e_h)
