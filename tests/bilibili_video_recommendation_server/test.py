@@ -886,7 +886,7 @@ if __name__ == "__main__":
         app = FastAPI()
 
         @app.get("/")
-        def read_root():
+        def server_hello():
             return "bilibili recommendation server"
 
         @app.get("/searchVideos")
