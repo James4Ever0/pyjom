@@ -888,6 +888,8 @@ if __name__ == "__main__":
         @app.get("/")
         def read_root():
             return "bilibili recommendation server"
+        
+        @app.get("/")
 
         uvicorn.run(app, host="0.0.0.0", port=port)
     elif objective == "test":
