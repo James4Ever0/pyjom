@@ -7,7 +7,7 @@ import pixie
 bgImage = pixie.read_image(background)
 ebImage = pixie.read_image(ebegging)
 
-ratio_0 = 1200 /min(bgImage.width,bgImage.height)
+ratio_0 = 1200 / min(bgImage.width,bgImage.height)
 
 factor = 5
 ratio = min(bgImage.width, bgImage.height)/(max(ebImage.width, ebImage.height)*factor)
