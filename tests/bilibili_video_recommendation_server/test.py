@@ -895,6 +895,7 @@ if __name__ == "__main__":
             searchAndRegisterVideos()
         
         @app.get('/searchRegisteredVideos')
+        def search_registered_video():
 
         @app.get("/searchUserVideos")
         def search_user_video():
