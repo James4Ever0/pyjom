@@ -1,0 +1,16 @@
+src_type : app
+version : 1
+file_type : news
+file_data : /storage/emulated/0/Pictures/share/1272064354
+file_uri : content://tv.danmaku.bili.fileprovider/opensdk_external/share2qq_temp42095493ab8eddaff31d5cfcaf3f1704.jpg
+title : 哔哩哔哩
+description : 大型政论片｜新时代答卷
+share_id : 100951776
+url : https://b23.tv/tdJdgzY?share_medium=android&share_source=qq&bbid=XY1BB721B1F97348DBDE4297FE1B4ABE26BAA&ts=1667275482816
+app_name : 哔哩哔哩
+req_type : 7
+mini_program_appid : 1109937557
+mini_program_path : pages/video/video?bvid=BV1ne411L7hy&share_source=qq_ugc&unique_k=tdJdgzY
+mini_program_type : 3
+cflag : 0
+third_sd : true

@@ -1,0 +1,13 @@
+com.tencent.mobileqq
+
+main interface
+
+com.tencent.mobileqq.activity.SplashActivity
+
+search interface
+
+com.tencent.mobileqq.search.activity.UniteSearchActivity
+
+share interface
+
+com.tencent.mobileqq.activity.ForwardRecentActivity
