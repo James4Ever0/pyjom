@@ -892,7 +892,7 @@ if __name__ == "__main__":
         def search_videos(
             query: str, iterate: bool = False, page_start: int = 1, params={}
         ):
-            params = {"duration": BSP.all.duration._10分钟以下}.update(params)
+            params = {"duration": BSP.all.duration._10分钟以下}.update(params) # this is default parameter.
             for v in searchAndRegisterVideos(
                 query, iterate=iterate, page_start=page_start, params=params
             ):
