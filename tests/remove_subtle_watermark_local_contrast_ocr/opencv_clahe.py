@@ -25,10 +25,13 @@ colorimage_b = clahe_model.apply(colorimage[:,:,0])
 colorimage_g = clahe_model.apply(colorimage[:,:,1])
 colorimage_r = clahe_model.apply(colorimage[:,:,2])
 
+
+colorimage_clahe = np.stack((colorimage_b,colorimage_g,colorimage_r), axis=2)
+
 # Ordinary thresholding the same image
 # _, ordinary_img = cv2.threshold(image_bw, 155, 255, cv2.THRESH_BINARY)
 
 # Showing all the three images
 # cv2.imshow("ordinary threshold", ordinary_img)
 # cv2.imshow("CLAHE image", final_img)
-cv2.imwrite("clahe_image.jpeg", final_img)
+cv2.imwrite("clahe_image.jpeg", colorimage_clahe)
