@@ -34,7 +34,7 @@ mask = None
 # fn = os.path.join(dir, 'original.tif')
 fn = "IWWS.jpeg"
 imp = IJ.openImage(fn)
-output_fn = "output.jpg"
+output_fn = "imagej_output.jpg"
 imp = IJ.openImage(fn)
   
 Flat.getFastInstance().run( imp, 
