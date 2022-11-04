@@ -32,7 +32,7 @@ clahe_model = cv2.createCLAHE(clipLimit = 5)
 img = cv2.cvtColor(colorimage, cv2.COLOR_RGB2Lab)
 
 #configure CLAHE
-clahe = cv2.createCLAHE(clipLimit=5,tileGridSize=(8,8))
+clahe = cv2.createCLAHE(clipLimit=5,tileGridSize=(12,12))
 
 # better?
 # https://www.appsloveworld.com/opencv/100/1/how-to-apply-clahe-on-rgb-color-images
