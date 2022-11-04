@@ -1,0 +1,3 @@
+how to get upload_id:
+
+https://github.com/xunsword/bilibil/blob/2abf66a9771daebc12c181f88d8af82613975548/bilibili_up.py
