@@ -8,8 +8,8 @@ import jpype
 jpype.startJVM(classpath=["/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/jars/*","/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*"])
 
 
-# from ij import IJ
-# import os
+from ij import IJ
+import os
 
 from mpicbg.ij.clahe import Flat
 from ij.process import ImageConverter
