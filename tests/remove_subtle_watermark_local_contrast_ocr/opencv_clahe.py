@@ -28,7 +28,7 @@ clahe_model = cv2.createCLAHE(clipLimit = 5)
 # colorimage_r = clahe_model.apply(colorimage[:,:,2])
 
 
-img = cv2.cvtColor(img, cv2.COLOR_RGB2Lab)
+img = cv2.cvtColor(colorimage, cv2.COLOR_RGB2Lab)
 
 #configure CLAHE
 clahe = cv2.createCLAHE(clipLimit=10,tileGridSize=(8,8))
