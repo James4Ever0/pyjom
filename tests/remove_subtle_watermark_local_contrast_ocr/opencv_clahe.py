@@ -39,6 +39,8 @@ clahe = cv2.createCLAHE(clipLimit=10,tileGridSize=(8,8))
 # https://www.appsloveworld.com/opencv/100/1/how-to-apply-clahe-on-rgb-color-images
 #0 to 'L' channel, 1 to 'a' channel, and 2 to 'b' channel
 img[:,:,0] = clahe.apply(img[:,:,0])
+simg = cv2.cvtColor(img, cv2.COLOR_Lab2RGB)
+
 img[:,:,0] = clahe.apply(img[:,:,0])
 
 # still need this?
