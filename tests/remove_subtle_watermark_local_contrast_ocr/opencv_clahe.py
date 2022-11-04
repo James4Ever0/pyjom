@@ -28,6 +28,16 @@ clahe_model = cv2.createCLAHE(clipLimit = 5)
 # colorimage_r = clahe_model.apply(colorimage[:,:,2])
 
 
+img = cv2.cvtColor(img, cv2.COLOR_RGB2Lab)
+
+#configure CLAHE
+clahe = cv2.createCLAHE(clipLimit=10,tileGridSize=(8,8))
+
+#0 to 'L' channel, 1 to 'a' channel, and 2 to 'b' channel
+img[:,:,0] = clahe.apply(img[:,:,0])
+
+img = cv2.cvtColor(img, cv2.COLOR_Lab2RGB)
+
 # colorimage_clahe = np.stack((colorimage_b,colorimage_g,colorimage_r), axis=2)
 
 # Ordinary thresholding the same image
@@ -36,4 +46,4 @@ clahe_model = cv2.createCLAHE(clipLimit = 5)
 # Showing all the three images
 # cv2.imshow("ordinary threshold", ordinary_img)
 # cv2.imshow("CLAHE image", final_img)
-cv2.imwrite("clahe_image.jpeg", colorimage_clahe)
+cv2.imwrite("clahe_image.jpeg", colorimage)
