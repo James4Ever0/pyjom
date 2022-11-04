@@ -1,8 +1,5 @@
 # https://www.geeksforgeeks.org/clahe-histogram-eqalization-opencv/
 
-
-
-https://www.appsloveworld.com/opencv/100/1/how-to-apply-clahe-on-rgb-color-images
 import cv2
 import numpy as np
 
@@ -24,6 +21,9 @@ clahe_model = cv2.createCLAHE(clipLimit = 5)
 # final_img = clahe.apply(image)
 
 # For ease of understanding, we explicitly equalize each channel individually
+
+## highly unstable. do not use.
+
 # colorimage_b = clahe_model.apply(colorimage[:,:,0])
 # colorimage_g = clahe_model.apply(colorimage[:,:,1])
 # colorimage_r = clahe_model.apply(colorimage[:,:,2])
