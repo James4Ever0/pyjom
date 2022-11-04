@@ -43,7 +43,7 @@ Flat.getFastInstance().run( imp,
                         maximum_slope,
                         mask,
                         composite )
-ImageConverter(imp).convertToGray8()
+# ImageConverter(imp).convertToGray8()
 
 IJ.save(imp, output_fn)
 
