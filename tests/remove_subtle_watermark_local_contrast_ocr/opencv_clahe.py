@@ -24,4 +24,4 @@ final_img = clahe.apply(image_bw) + 30
 # Showing all the three images
 # cv2.imshow("ordinary threshold", ordinary_img)
 # cv2.imshow("CLAHE image", final_img)
-cv2.imwrite("", final_img)
+cv2.imwrite("clahe_image.jpeg", final_img)
