@@ -50,6 +50,8 @@ imp = IJ.openImage(fn)
 Flat.getFastInstance().run(
     imp, blocksize, histogram_bins, maximum_slope, mask, composite
 )
+IJ.save(imp, output_fn)
+
 Flat.getFastInstance().run(
     imp, blocksize, histogram_bins, maximum_slope, mask, composite
 )
