@@ -5,12 +5,18 @@
 import jpype
 import jpype.imports
 from jpype.types import *
+
 # jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/jars/*")
 # jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/jars/*/*")
 # jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*")
 # jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*/*")
 
-jpype.startJVM(classpath=["/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/jars/*","/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*"])
+jpype.startJVM(
+    classpath=[
+        "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/jars/*",
+        "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*",
+    ]
+)
 
 
 from ij import IJ
@@ -22,7 +28,7 @@ from ij.process import ImageConverter
 # http://fiji.sc/wiki/index.php/Enhance_Local_Contrast_(CLAHE)
 # http://fiji.sc/cgi-bin/gitweb.cgi?p=mpicbg.git;a=blob;f=mpicbg/ij/clahe/PlugIn.java;h=663153764493547de560c08ee11f2e6b1e7e1a32;hb=HEAD
 
-dir = "/usr/people/tmacrina/seungmount/research/Julimaps/datasets/AIBS_pilot_v1/0_raw/"
+# dir = "/usr/people/tmacrina/seungmount/research/Julimaps/datasets/AIBS_pilot_v1/0_raw/"
 
 blocksize = 63
 histogram_bins = 255
@@ -40,13 +46,10 @@ fn = "IWWS.jpeg"
 imp = IJ.openImage(fn)
 output_fn = "imagej_output.jpg"
 imp = IJ.openImage(fn)
-  
-Flat.getFastInstance().run( imp, 
-                        blocksize,
-                        histogram_bins,
-                        maximum_slope,
-                        mask,
-                        composite )
+
+Flat.getFastInstance().run(
+    imp, blocksize, histogram_bins, maximum_slope, mask, composite
+)
 # ImageConverter(imp).convertToGray8()
 
 IJ.save(imp, output_fn)
