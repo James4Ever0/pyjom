@@ -3,7 +3,8 @@ import imagej
 # fiji_path = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app"
 # ij = imagej.init(fiji_path)
 import scyjava
-plugins_dir = '/Applications/Fiji.app/plugins'
+# plugins_dir = '/Applications/Fiji.app/plugins'
+plugins_dir = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins"
 scyjava.config.add_option(f'-Dplugins.dir={plugins_dir}')
 ij = imagej.init()
 
