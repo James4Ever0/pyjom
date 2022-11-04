@@ -30,9 +30,9 @@ from ij.process import ImageConverter
 
 # dir = "/usr/people/tmacrina/seungmount/research/Julimaps/datasets/AIBS_pilot_v1/0_raw/"
 
-blocksize = 63
+blocksize = 40
 histogram_bins = 255
-maximum_slope = 3
+maximum_slope = 5
 mask = "*None*"
 composite = False
 mask = None
