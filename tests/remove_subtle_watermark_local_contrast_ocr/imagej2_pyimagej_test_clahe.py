@@ -5,7 +5,9 @@ jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_loca
 jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*")
 jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*/*")
 
-jpype.
+jpype.startJVM()
+
+from 
 
 # # Create an ImageJ2 gateway with the newest available version of ImageJ2.
 # # fiji_path = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app"
