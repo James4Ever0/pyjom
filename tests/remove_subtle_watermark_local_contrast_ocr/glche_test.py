@@ -93,7 +93,8 @@ def main(path, name):
     img = Image.fromarray(y)
     img.save(name + '-en.jpg')
     
-# if __name__ == "__main__":
+if __name__ == "__main__":
+    main(picPath, imageName)
 #     dirs = '..\\'
 #     count = 0
 #     for num in ('9', '14', '43', '45', '99'):
