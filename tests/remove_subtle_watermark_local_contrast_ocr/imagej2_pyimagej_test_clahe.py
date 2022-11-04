@@ -31,7 +31,8 @@ mask = None
 # files.sort()
 # for file in files:
 #      if file.endswith(".tif")
-fn = os.path.join(dir, 'original.tif')
+# fn = os.path.join(dir, 'original.tif')
+fn = 
 imp = IJ.openImage(fn)
 output_fn = os.path.splitext(fn)[0] + "_CLAHE_8bit.tif"
 imp = IJ.openImage(fn)
