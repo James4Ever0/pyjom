@@ -32,7 +32,7 @@ mask = None
 # for file in files:
 #      if file.endswith(".tif")
 # fn = os.path.join(dir, 'original.tif')
-fn = ""
+fn = "IWWS.jpeg"
 imp = IJ.openImage(fn)
 output_fn = "output.jpg"
 imp = IJ.openImage(fn)
