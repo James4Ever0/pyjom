@@ -16,6 +16,8 @@ image = cv2.imread("IWWS.jpeg")
 # The declaration of CLAHE
 # clipLimit -> Threshold for contrast limiting
 clahe = cv2.createCLAHE(clipLimit = 5)
+
+# you may use the luminosity 
 final_img = clahe.apply(image)
 
 # Ordinary thresholding the same image
