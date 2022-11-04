@@ -11,12 +11,12 @@ image = cv2.imread("IWWS.jpeg")
 
 # The initial processing of the image
 # image = cv2.medianBlur(image, 3)
-image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+# image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # The declaration of CLAHE
 # clipLimit -> Threshold for contrast limiting
 clahe = cv2.createCLAHE(clipLimit = 5)
-final_img = clahe.apply(image_bw)
+final_img = clahe.apply(image)
 
 # Ordinary thresholding the same image
 # _, ordinary_img = cv2.threshold(image_bw, 155, 255, cv2.THRESH_BINARY)
