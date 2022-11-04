@@ -1,1 +1,1 @@
-watermark inside wand enhanced picture, darktable local contrast enhanced pictures can be recognized
+watermarks inside wand enhanced picture, darktable local contrast enhanced pictures can be recognized. the original one failed.
