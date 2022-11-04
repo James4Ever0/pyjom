@@ -13,3 +13,6 @@ with Image(filename ='IWWS.jpeg') as image:
 		local_contrast.local_contrast(12, 200) # radius, sigma
 		# Save the image
 		local_contrast.save(filename ='local_contrast1.jpg')
+		local_contrast.local_contrast(12, 100) # radius, sigma
+		local_contrast.save(filename ='local_contrast2.jpg')
+
