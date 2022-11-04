@@ -5,7 +5,7 @@ import jpype
 # jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*")
 # jpype.addClassPath("/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*/*")
 
-jpype.startJVM(classpath=)
+jpype.startJVM(classpath=[])
 
 #!/usr/bin/env jython
 
