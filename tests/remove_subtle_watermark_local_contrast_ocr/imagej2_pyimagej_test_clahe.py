@@ -13,7 +13,7 @@ from ij import IJ
 import os
 
 from mpicbg.ij.clahe import Flat
-# from ij.process import ImageConverter
+from ij.process import ImageConverter
 
 # http://fiji.sc/wiki/index.php/Enhance_Local_Contrast_(CLAHE)
 # http://fiji.sc/cgi-bin/gitweb.cgi?p=mpicbg.git;a=blob;f=mpicbg/ij/clahe/PlugIn.java;h=663153764493547de560c08ee11f2e6b1e7e1a32;hb=HEAD
