@@ -11,4 +11,5 @@ jimage = ij.io().open(image_url)
 image = ij.py.from_java(jimage)
 
 # Display the image (backed by matplotlib).
-ij.py.show(image, cmap='gray')
+# ij.py.show(image, cmap='gray')
+print(ij)
