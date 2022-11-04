@@ -1,8 +1,8 @@
 # Create an ImageJ2 gateway with the newest available version of ImageJ2.
 import imagej
-# fiji_path = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app"
-# ij = imagej.init(fiji_path)
-ij = imagej.init()
+fiji_path = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app"
+ij = imagej.init(fiji_path)
+# ij = imagej.init()
 
 # Load an image.
 image_url = "IWWS.jpeg"
