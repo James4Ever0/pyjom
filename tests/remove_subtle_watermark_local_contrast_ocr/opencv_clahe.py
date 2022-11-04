@@ -39,8 +39,9 @@ clahe = cv2.createCLAHE(clipLimit=10,tileGridSize=(8,8))
 #0 to 'L' channel, 1 to 'a' channel, and 2 to 'b' channel
 img[:,:,0] = clahe.apply(img[:,:,0])
 
+# still need this?
 img[:,:,1] = clahe.apply(img[:,:,1])
-img[:,:,2] = clahe.apply(img[:,:,2])
+# img[:,:,2] = clahe.apply(img[:,:,2])
 
 img = cv2.cvtColor(img, cv2.COLOR_Lab2RGB)
 
