@@ -42,12 +42,12 @@ img[:,:,0] = clahe.apply(img[:,:,0])
 simg = cv2.cvtColor(img, cv2.COLOR_Lab2RGB)
 
 img[:,:,0] = clahe.apply(img[:,:,0])
+simg = cv2.cvtColor(img, cv2.COLOR_Lab2RGB)
 
 # still need this?
 # img[:,:,1] = clahe.apply(img[:,:,1])
 # img[:,:,2] = clahe.apply(img[:,:,2])
 
-img = cv2.cvtColor(img, cv2.COLOR_Lab2RGB)
 
 # colorimage_clahe = np.stack((colorimage_b,colorimage_g,colorimage_r), axis=2)
 
@@ -57,4 +57,3 @@ img = cv2.cvtColor(img, cv2.COLOR_Lab2RGB)
 # Showing all the three images
 # cv2.imshow("ordinary threshold", ordinary_img)
 # cv2.imshow("CLAHE image", final_img)
-cv2.imwrite("clahe_image.jpeg", img)
