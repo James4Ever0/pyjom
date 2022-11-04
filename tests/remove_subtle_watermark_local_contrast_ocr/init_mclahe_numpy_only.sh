@@ -1,0 +1,1 @@
+pip3 install --upgrade https://github.com/VincentStimper/mclahe/archive/numpy.zip
