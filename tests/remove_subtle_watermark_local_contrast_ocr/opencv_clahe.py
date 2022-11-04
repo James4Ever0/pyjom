@@ -1,7 +1,8 @@
 # https://www.geeksforgeeks.org/clahe-histogram-eqalization-opencv/
 
-## highly unstable. do not use.
 
+
+https://www.appsloveworld.com/opencv/100/1/how-to-apply-clahe-on-rgb-color-images
 import cv2
 import numpy as np
 
