@@ -19,8 +19,8 @@ clahe = cv2.createCLAHE(clipLimit = 5)
 final_img = clahe.apply(image_bw) + 30
 
 # Ordinary thresholding the same image
-_, ordinary_img = cv2.threshold(image_bw, 155, 255, cv2.THRESH_BINARY)
+# _, ordinary_img = cv2.threshold(image_bw, 155, 255, cv2.THRESH_BINARY)
 
 # Showing all the three images
-cv2.imshow("ordinary threshold", ordinary_img)
+# cv2.imshow("ordinary threshold", ordinary_img)
 cv2.imshow("CLAHE image", final_img)
