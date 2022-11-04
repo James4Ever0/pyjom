@@ -6,7 +6,7 @@ import scyjava
 # plugins_dir = '/Applications/Fiji.app/plugins'
 plugins_dir = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins"
 # scyjava.config.add_option(f'-Dplugins.dir={plugins_dir}')
-scyjava.config.add_option(f'-')
+scyjava.config.add_option(f'-cp ')
 ij = imagej.init()
 
 # Load an image.
