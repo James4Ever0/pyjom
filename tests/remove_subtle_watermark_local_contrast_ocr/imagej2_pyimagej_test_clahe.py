@@ -57,7 +57,7 @@ Flat.getFastInstance().run(
 )
 # ImageConverter(imp).convertToGray8()
 
-IJ.save(imp, output_fn)
+IJ.save(imp, "imagej_double.jpg")
 
 # # Create an ImageJ2 gateway with the newest available version of ImageJ2.
 # # fiji_path = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app"
