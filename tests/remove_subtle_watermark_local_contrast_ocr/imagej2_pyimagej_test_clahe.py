@@ -1,5 +1,4 @@
 # Create an ImageJ2 gateway with the newest available version of ImageJ2.
-import imagej
 # fiji_path = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app"
 # ij = imagej.init(fiji_path)
 import scyjava
@@ -7,6 +6,8 @@ import scyjava
 # plugins_dir = "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins"
 # scyjava.config.add_option(f'-Dplugins.dir={plugins_dir}')
 scyjava.config.add_repositories({'scijava.public': 'https://maven.scijava.org/content/groups/public'})
+import imagej
+
 ij = imagej.init()
 
 # Load an image.
