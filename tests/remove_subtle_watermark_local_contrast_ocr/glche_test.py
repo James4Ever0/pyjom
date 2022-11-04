@@ -94,6 +94,8 @@ def main(path, name):
     img.save(name + '-en.jpg')
     
 if __name__ == "__main__":
+    picPath = "IWWS.jpeg"
+    imageName = "IWWS-glche.jpeg"
     main(picPath, imageName)
 #     dirs = '..\\'
 #     count = 0
