@@ -48,7 +48,7 @@ def fusion(i):
     
     return w_d
 
-def main(path, name):
+def main(path, name): # no parameter? fuck.
     x = np.array(Image.open(path)).astype(np.float64)
     x_r, x_g, x_b = x[:, :, 0], x[:, :, 1], x[:, :, 2]
     x_max = np.max(np.max(np.max(x)))
