@@ -32,9 +32,9 @@ mask = None
 # for file in files:
 #      if file.endswith(".tif")
 # fn = os.path.join(dir, 'original.tif')
-fn = 
+fn = ""
 imp = IJ.openImage(fn)
-output_fn = os.path.splitext(fn)[0] + "_CLAHE_8bit.tif"
+output_fn = "output.jpg"
 imp = IJ.openImage(fn)
   
 Flat.getFastInstance().run( imp, 
