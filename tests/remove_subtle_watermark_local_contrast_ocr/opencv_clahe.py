@@ -46,4 +46,4 @@ img = cv2.cvtColor(img, cv2.COLOR_Lab2RGB)
 # Showing all the three images
 # cv2.imshow("ordinary threshold", ordinary_img)
 # cv2.imshow("CLAHE image", final_img)
-cv2.imwrite("clahe_image.jpeg", colorimage)
+cv2.imwrite("clahe_image.jpeg", img)
