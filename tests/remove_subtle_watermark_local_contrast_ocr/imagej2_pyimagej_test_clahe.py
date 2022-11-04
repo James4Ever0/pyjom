@@ -7,7 +7,6 @@ import jpype
 
 jpype.startJVM(classpath=["/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/jars/*","/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/*"])
 
-#!/usr/bin/env jython
 
 # from ij import IJ
 # import os
