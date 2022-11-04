@@ -50,6 +50,9 @@ imp = IJ.openImage(fn)
 Flat.getFastInstance().run(
     imp, blocksize, histogram_bins, maximum_slope, mask, composite
 )
+Flat.getFastInstance().run(
+    imp, blocksize, histogram_bins, maximum_slope, mask, composite
+)
 # ImageConverter(imp).convertToGray8()
 
 IJ.save(imp, output_fn)
