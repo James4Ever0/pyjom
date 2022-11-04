@@ -9,8 +9,8 @@ jpype.startJVM(classpath=["/root/Desktop/works/pyjom/tests/remove_subtle_waterma
 
 #!/usr/bin/env jython
 
-from ij import IJ
-import os
+# from ij import IJ
+# import os
 
 from mpicbg.ij.clahe import Flat
 from ij.process import ImageConverter
