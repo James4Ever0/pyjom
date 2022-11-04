@@ -1,0 +1,1 @@
+wand enhanced picture, darktable local contrast enhanced pictures can be recognized
