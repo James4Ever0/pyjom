@@ -21,9 +21,9 @@ clahe_model = cv2.createCLAHE(clipLimit = 5)
 # final_img = clahe.apply(image)
 
 # For ease of understanding, we explicitly equalize each channel individually
-colorimage_b = clahe_model.apply(colorimage[:,:,0])
+colorimage_b = clahe_model.apply(colorimage[:,:,2])
 colorimage_g = clahe_model.apply(colorimage[:,:,1])
-colorimage_r = clahe_model.apply(colorimage[:,:,2])
+colorimage_r = clahe_model.apply(colorimage[:,:,0])
 
 
 colorimage_clahe = np.stack((colorimage_b,colorimage_g,colorimage_r), axis=2)
