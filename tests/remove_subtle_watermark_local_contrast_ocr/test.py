@@ -10,9 +10,9 @@ with Image(filename ='IWWS.jpeg') as image:
 	with image.clone() as local_contrast:
         # radius is related to text size and picture size.
 		# Invoke local_contrast function with radius 12 and sigma 3
-		local_contrast.local_contrast(12, 100) # radius, sigma
+		local_contrast.local_contrast(8, 100) # radius, sigma
 		# Save the image
 		local_contrast.save(filename ='local_contrast1.jpg')
-		local_contrast.local_contrast(12, 100) # radius, sigma
+		local_contrast.local_contrast(12, 200) # radius, sigma
 		local_contrast.save(filename ='local_contrast2.jpg')
 
