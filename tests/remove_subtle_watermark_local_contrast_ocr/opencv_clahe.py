@@ -1,5 +1,7 @@
 # https://www.geeksforgeeks.org/clahe-histogram-eqalization-opencv/
 
+## highly unstable. do not use.
+
 import cv2
 import numpy as np
 
