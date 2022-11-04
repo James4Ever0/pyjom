@@ -1,10 +1,10 @@
 # https://www.geeksforgeeks.org/clahe-histogram-eqalization-opencv/
 
 import cv2
-# import numpy as np
+import numpy as np
 
 # Reading the image from the present directory
-color_image = cv2.imread("IWWS.jpeg")
+colorimage = cv2.imread("IWWS.jpeg")
 # Resizing the image for compatibility
 # image = cv2.resize(image, (500, 600))
 # why?
