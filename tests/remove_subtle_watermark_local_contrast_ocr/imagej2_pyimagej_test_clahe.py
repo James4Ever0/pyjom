@@ -2,6 +2,8 @@
 # https://github.com/seung-lab/Alembic/blob/575c8ed2a5f8789e65de652c9349993c530de718/src/archive/import/convert_dir_to_CLAHE.py
 # https://github.com/search?q=mpicbg.ij.clahe&type=code
 
+# for jpython you need to append all 
+
 import jpype
 import jpype.imports
 from jpype.types import *
