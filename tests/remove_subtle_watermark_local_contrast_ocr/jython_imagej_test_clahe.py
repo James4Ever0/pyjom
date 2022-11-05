@@ -1,7 +1,10 @@
 import os
 import sys
 
-cpdirs = ["/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/jars/","/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/"]
+cpdirs = [
+    "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/jars/",
+    "/root/Desktop/works/pyjom/tests/remove_subtle_watermark_local_contrast_ocr/imagej_fiji_linux/Fiji.app/plugins/",
+]
 
 for d in cpdirs:
     abspath = os.path.abspath(d)
@@ -14,6 +17,7 @@ for d in cpdirs:
 # now begin work.
 
 from ij import IJ
+
 # import os
 
 from mpicbg.ij.clahe import Flat
