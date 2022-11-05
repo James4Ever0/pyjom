@@ -14,7 +14,7 @@ for d in cpdirs:
 # now begin work.
 
 from ij import IJ
-import os
+# import os
 
 from mpicbg.ij.clahe import Flat
 from ij.process import ImageConverter
