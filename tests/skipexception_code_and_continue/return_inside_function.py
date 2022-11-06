@@ -4,6 +4,7 @@ def error_func():
     except:
         print('you must somehow return something')
         code = input('please set some return statement.')
+        if code.startswith('return '):
         exec(
         
         return val
