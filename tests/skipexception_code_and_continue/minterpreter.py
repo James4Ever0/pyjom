@@ -10,7 +10,7 @@ for line in source_code:
     exceptCode = "except: print('current execution code:')"
     if len(registeredLevels) > 0 and indentLevel <= registeredLevels[-1]:
         mIndentLevel = registeredLevels.pop(-1)
-        print((mIndentLevel * 2) * 4 * " " + "except:"
+        print((mIndentLevel * 2) * 4 * " " + "except:")
         print((mIndentLevel * 2+1) * 4 * " " +exceptCode)
     if line == "":
         continue
@@ -19,4 +19,5 @@ for line in source_code:
     if line.startswith("def "):
         registeredLevels.append(indentLevel)
         continue
+    print((indentLevel * 2) * 4 * " " + exceptCode)
     print((indentLevel * 2) * 4 * " " + exceptCode)
