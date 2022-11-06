@@ -4,3 +4,5 @@ def troubleFunction():
         if statement.startswith('return '):
             val = eval(statement.replace('return ',''))
             return val
+        else:
+            exec()
