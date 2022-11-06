@@ -1,0 +1,2 @@
+def troubleFunction():
+    statementsAtSameLevel = []
