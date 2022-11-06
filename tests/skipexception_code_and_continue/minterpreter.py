@@ -20,4 +20,5 @@ for line in source_code:
         registeredLevels.append(indentLevel)
         continue
     print((indentLevel * 2) * 4 * " " + 'except:')
+    for exceptCode in exceptCodes:
     print((indentLevel * 2+1) * 4 * " " + exceptCode)
