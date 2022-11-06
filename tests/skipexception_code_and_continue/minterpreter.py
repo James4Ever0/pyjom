@@ -1,3 +1,6 @@
 # shall the code share modified version of statements?
 
-source_code = ""
+source_code = open('test.py', 'r').readlines()
+
+for line in source_code:
+    print(line)
