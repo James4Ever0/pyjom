@@ -15,3 +15,4 @@ for line in source_code:
         registeredLevels.append(indentLevel)
         continue
     print((indentLevel*2)*4*" "+'except: pass')
+    print((indentLevel*2)*4*" "+'except: pass')
