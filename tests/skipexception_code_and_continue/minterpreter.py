@@ -12,5 +12,6 @@ for line in source_code:
     print((indentLevel*2+1)*4*" "+line, "[{}]".format(indentLevel))
     if line.startswith("def "):
         unclosedTryExceptCounts+=1
+        registeredLevels.append()
         continue
     print((indentLevel*2)*4*" "+'except: pass')
