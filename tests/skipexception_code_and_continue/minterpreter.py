@@ -16,7 +16,7 @@ for lineNumber, line in enumerate(source_code):
     if line == "":
         continue
     print((indentLevel * 2) * 4 * " " + "try:")
-    print((indentLevel * 2 + 1) * 4 * " " + "print('entering code:"
+    print((indentLevel * 2 + 1) * 4 * " " + "print('entering code: {}"
     print((indentLevel * 2 + 1) * 4 * " " + line, "# indent[{}]".format(indentLevel))
     if line.startswith("def "):
         registeredLevels.append(indentLevel)
