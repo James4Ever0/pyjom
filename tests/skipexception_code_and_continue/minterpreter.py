@@ -3,4 +3,5 @@
 source_code = open('test.py', 'r').readlines()
 
 for line in source_code:
-    print(line)
+    indentLevel = line.strip()
+    print(line, indentLevel)
