@@ -6,7 +6,7 @@ def error_func():
         while True:
             code = input('please set some return statement.')
             if code.startswith('return '):
-                exec("myReturnValue = {}".format(code.replace('return ','')))
+                myReturnValue = exec("{}".format(code.replace('return ','')))
                 return myReturnValue
             else:
                 exec(code)
