@@ -11,3 +11,5 @@ def troubleFunction():
             except:
                 print('error code: %d' % statement)
                 statement = input('please enter remedy:\n')
+
+troubleFunction()
