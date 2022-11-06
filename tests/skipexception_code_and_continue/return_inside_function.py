@@ -8,6 +8,7 @@ def error_func():
             if code.startswith('return '):
                 myReturnValue = eval("{}".format(code.replace('return ','')))
                 print('about to return value')
+                __
                 return myReturnValue
             else:
                 exec(code)
