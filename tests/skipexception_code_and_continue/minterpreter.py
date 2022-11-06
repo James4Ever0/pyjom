@@ -3,10 +3,11 @@
 source_code = open('test.py', 'r').readlines()
 
 registeredLevels = []
-unclosedTryExceptCounts=0
 for line in source_code:
     line=line.replace('\n','')
     indentLevel = int(len(line.replace(line.strip(),""))/4)
+    if indentLevel< 
+
     if line == "": continue
     print((indentLevel*2)*4*" "+'try:')
     print((indentLevel*2+1)*4*" "+line, "[{}]".format(indentLevel))
