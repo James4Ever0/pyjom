@@ -3,7 +3,9 @@
 source_code = open('test.py', 'r').readlines()
 
 for line in source_code:
-    indentLevel = int(len(line.replace(line.strip(),"").replace('\n',''))/4)
+    line=line.replace('\n','')
+    indentLevel = int(len(line.replace(line.strip(),""))/4)
     print(line, indentLevel)
     if line.startswith('def '):
-        # wrap with 
+        # wrap with some decorator!
+        print('@funcdecorator')
