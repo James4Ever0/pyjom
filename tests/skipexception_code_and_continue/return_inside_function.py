@@ -6,14 +6,12 @@ def error_func():
         print('you must somehow return something')
         while True:
             code = input('please set some return statement.\n')
-            try:
-                if code.startswith('return '):
-                    myReturnValue = eval("{}".format(code.replace('return ','')))
-                    print('about to return value')
-                    return myReturnValue
-                else:
-                    exec(code)
-            break
+            if code.startswith('return '):
+                myReturnValue = eval("{}".format(code.replace('return ','')))
+                print('about to return value')
+                return myReturnValue
+            else:
+                exec(code)
 
 val = error_func()
 print('value returned:',val)
