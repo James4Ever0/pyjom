@@ -18,4 +18,5 @@ def troubleFunction():
                 print('error code:',statement)
                 statement = input('please enter remedy:\n')
 
-troubleFunction()
+val = troubleFunction()
+print('get value:',val)
