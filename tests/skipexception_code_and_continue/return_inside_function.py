@@ -3,7 +3,7 @@ def error_func():
         return a
     except:
         print('you must somehow return something')
-        breakpoint() # use pdb?
+        return val
 
 val = error_func()
 print('value returned:',val)
