@@ -18,10 +18,11 @@ for lineNumber, line in enumerate(source_code):
         continue
     print((indentLevel * 2) * 4 * " " + "try:")
     print((indentLevel * 2 + 1) * 4 * " " + "print('entering code line: {}')".format(lineNumber))
+    line=line.strip()
     if not line.startswith('return '):
-        print((indentLevel * 2 + 1) * 4 * " " + line.strip(), "# indent[{}]".format(indentLevel))
+        print((indentLevel * 2 + 1) * 4 * " " + line, "# indent[{}]".format(indentLevel))
     else:
-        print()
+        print('RETURN STATEMENT')
     if line.startswith("def "):
         registeredLevels.append(indentLevel)
         continue
