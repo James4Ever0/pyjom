@@ -6,4 +6,4 @@ def error_func():
         breakpoint() # use pdb?
 
 val = error_func()
-print(val)
+print('value returned:',val)
