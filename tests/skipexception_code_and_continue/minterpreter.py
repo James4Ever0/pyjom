@@ -6,5 +6,5 @@ for line in source_code:
     line=line.replace('\n','')
     indentLevel = int(len(line.replace(line.strip(),""))/4)
     print('try:')
-    print((indentLevel+1)*4line, "[{}]".format(indentLevel))
+    print((indentLevel*2+1)*4*" "+line, "[{}]".format(indentLevel))
     print('except: pass')
