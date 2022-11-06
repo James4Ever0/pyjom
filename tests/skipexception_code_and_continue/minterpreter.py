@@ -10,12 +10,10 @@ for line in source_code:
         mIndentLevel = registeredLevels.pop(-1)
         print((mIndentLevel*2)*4*" "+'except: pass')
 
-
     if line == "": continue
     print((indentLevel*2)*4*" "+'try:')
     print((indentLevel*2+1)*4*" "+line, "[{}]".format(indentLevel))
     if line.startswith("def "):
-        unclosedTryExceptCounts+=1
         registeredLevels.append(indentLevel)
         continue
     print((indentLevel*2)*4*" "+'except: pass')
