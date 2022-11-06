@@ -3,5 +3,5 @@
 source_code = open('test.py', 'r').readlines()
 
 for line in source_code:
-    indentLevel = len(line.replace(line.strip(),"").replace('\n','')/4
+    indentLevel = int(len(line.replace(line.strip(),"").replace('\n',''))/4)
     print(line, indentLevel)
