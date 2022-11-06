@@ -1,5 +1,3 @@
-from ctypes import _FuncPointer
-
 
 def error_func():
     try:
@@ -11,7 +9,7 @@ def error_func():
             if code.startswith('return '):
                 myReturnValue = eval("{}".format(code.replace('return ','')))
                 print('about to return value')
-                f
+            
                 return myReturnValue
             else:
                 exec(code)
