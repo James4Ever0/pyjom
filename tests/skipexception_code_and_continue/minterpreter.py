@@ -2,8 +2,8 @@
 
 source_code = open('test.py', 'r').readlines()
 
-registeredLevel = -1
-unclosed
+registeredLevel = 0
+unclosedTryExceptCounts=0
 for line in source_code:
     line=line.replace('\n','')
     indentLevel = int(len(line.replace(line.strip(),""))/4)
@@ -11,5 +11,6 @@ for line in source_code:
     print((indentLevel*2)*4*" "+'try:')
     print((indentLevel*2+1)*4*" "+line, "[{}]".format(indentLevel))
     if line.startswith("def "):
+        unclosedTryExceptCounts+=1
         continue
     print((indentLevel*2)*4*" "+'except: pass')
