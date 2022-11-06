@@ -8,4 +8,5 @@ for line in source_code:
     print(line, indentLevel)
     if line.startswith('def '):
         # wrap with some decorator!
+        # do not modify too much. the decorator is recursive so every function will be analyzed. is it?
         print('@funcdecorator')
