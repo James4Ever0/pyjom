@@ -3,8 +3,9 @@ def error_func():
         return a
     except:
         print('you must somehow return something')
+        code = input('please set some return statement.')
         exec(
-        input('please set some return statement.')
+        
         return val
 
 val = error_func()
