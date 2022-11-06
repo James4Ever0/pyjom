@@ -3,6 +3,7 @@
 source_code = open("test.py", "r").readlines()
 
 registeredLevels = []
+# should use restorable arrays/dict.
 for lineNumber, line in enumerate(source_code):
     line = line.replace("\n", "")
     indentLevel = int(len(line.replace(line.strip(), "")) / 4)
