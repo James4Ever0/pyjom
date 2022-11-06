@@ -19,5 +19,5 @@ for line in source_code:
     if line.startswith("def "):
         registeredLevels.append(indentLevel)
         continue
-    print((indentLevel * 2) * 4 * " " + exceptCode)
-    print((indentLevel * 2) * 4 * " " + exceptCode)
+    print((indentLevel * 2) * 4 * " " + 'except:')
+    print((indentLevel * 2+1) * 4 * " " + exceptCode)
