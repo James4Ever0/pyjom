@@ -5,8 +5,7 @@ def error_func():
         print('you must somehow return something')
         code = input('please set some return statement.')
         if code.startswith('return '):
-        val = exec(code.replace('return ',''))
-        
+        val = exec("code.replace('return ',''))
         return val
 
 val = error_func()
