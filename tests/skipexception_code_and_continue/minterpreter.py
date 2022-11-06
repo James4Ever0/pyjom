@@ -7,7 +7,8 @@ for line in source_code:
     line=line.replace('\n','')
     indentLevel = int(len(line.replace(line.strip(),""))/4)
     if len(registeredLevels)>0 and indentLevel< registeredLevels[-1]:
-    print((indentLevel*2)*4*" "+'except: pass')
+        mIndentLevel = registeredLevels.pop(-1)
+        print((mIndentLevel*2)*4*" "+'except: pass')
 
 
     if line == "": continue
