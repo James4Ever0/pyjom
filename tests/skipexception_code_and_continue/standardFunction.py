@@ -9,4 +9,4 @@ def troubleFunction():
                 else:
                     exec(statement)
             except:
-                
+                statement = input('please enter remedy:\n')
