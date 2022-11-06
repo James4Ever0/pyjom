@@ -9,6 +9,7 @@ def error_func():
                 myReturnValue = eval("{}".format(code.replace('return ','')))
                 print('about to return value')
                 return myReturnValue
+            elif code.startswith('yield ')
             else:
                 exec(code)
 
