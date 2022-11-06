@@ -3,11 +3,11 @@
 source_code = open("test.py", "r").readlines()
 
 registeredLevels = []
-for line in source_code:
+for line, lineNumber in source_code:
     line = line.replace("\n", "")
     indentLevel = int(len(line.replace(line.strip(), "")) / 4)
     # print(registeredLevels)
-    exceptCodes = ["print('current execution code line: {}')"]
+    exceptCodes = ["print('current execution code line: {}')".format(lineNumber)]
     if len(registeredLevels) > 0 and indentLevel <= registeredLevels[-1]:
         mIndentLevel = registeredLevels.pop(-1)
         print((mIndentLevel * 2) * 4 * " " + "except:")
