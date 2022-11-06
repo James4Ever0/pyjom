@@ -5,4 +5,5 @@ def error_func():
         print('you must somehow return something')
         breakpoint() # use pdb?
 
-error_func()
+val = error_func()
+print(val)
