@@ -39,4 +39,4 @@ with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wt
         maketrouble() # no content here! it fucking triggered the alarm.
     except:
         pass
-    print("won't have problem."")
+    print("won't have problem.")
