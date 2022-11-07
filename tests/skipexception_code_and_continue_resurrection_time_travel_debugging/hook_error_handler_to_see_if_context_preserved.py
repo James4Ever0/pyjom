@@ -5,7 +5,9 @@ import tempfile
 def customExceptHook():
     print("context preserved! please take action!")
     while True:
-        input('exit? (y for exit)\n')
+        i = input('exit? (y for exit)\n')
+        if i == 'y':
+            break
     print('closing program now!')
 
 sys.excepthook=customExceptHook
