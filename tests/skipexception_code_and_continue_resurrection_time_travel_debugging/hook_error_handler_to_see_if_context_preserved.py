@@ -65,7 +65,7 @@ def someFunction():
 
 # @reloading
 def anotherFunction():
-    raise Exception('another shit!')
+    raise Exception('just another shit!')
     # it does not hook the function.
     # return 'yes please'
 
