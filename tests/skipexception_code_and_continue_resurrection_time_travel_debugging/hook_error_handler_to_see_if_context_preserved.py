@@ -63,10 +63,10 @@ def someFunction():
         print("won't have problem.")
     return 'myValue'
 
-# from reloading import reloading
+from reloading import reloading
 
-# @reloading
-@autoreload
+@reloading
+# @autoreload
 def anotherFunction():
     raise Exception('and just another shit!')
     # it does not hook the function.
