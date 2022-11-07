@@ -46,4 +46,4 @@ def someFunction():
             import code
             code.interact(local=locals())
         print("won't have problem.")
-    
+    return 'myValue'
