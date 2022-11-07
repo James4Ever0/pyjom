@@ -16,3 +16,5 @@ text_splited = " ".join(words_filtered)
 
 tags=ana.extract_tags(text_splited,topK=5,)
 print(tags)
+
+# seems like you can only change the source to make it into somewhat solveable 
