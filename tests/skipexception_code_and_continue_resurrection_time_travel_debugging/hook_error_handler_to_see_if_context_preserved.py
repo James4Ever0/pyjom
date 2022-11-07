@@ -12,7 +12,7 @@ def customExceptHook(a,b,c):
     print('closing program now!')
 
 sys.excepthook=customExceptHook
-
+import os
 with tempfile.NamedTemporaryFile(suffix='123',dir=".") as f:
-    print('LOCATION:',f.path)
+    print('LOCATION:',os.system(f.path))
     maketrouble()
