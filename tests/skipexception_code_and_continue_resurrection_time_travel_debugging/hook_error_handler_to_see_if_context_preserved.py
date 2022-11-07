@@ -26,6 +26,9 @@ import os
 
 # no support for block statements yet.
 
+def makeTrouble():
+    return 'success!'
+
 with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wtf?
     # print('LOCATION:',dir(f))
     # /tmp/tmp7c5ffugz123
@@ -40,5 +43,5 @@ with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wt
         maketrouble() # no content here! it fucking triggered the alarm.
     except:
         import code
-        code.interact()
+        code.interact(local=locals())
     print("won't have problem.")
