@@ -43,6 +43,5 @@ with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wt
         maketrouble() # no content here! it fucking triggered the alarm.
     except:
         import code
-        try:
-            code‘.interact(local=locals())
+        code.interact(local=locals())
     print("won't have problem.")
