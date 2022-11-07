@@ -44,6 +44,11 @@ def someFunction():
             maketrouble() # no content here! it fucking triggered the alarm.
         except:
             import code
+            def myReadFunc(string):
+                print('you entered:', string)
+                return string
             code.interact(readfunc=myReadFunc,local=locals())
         print("won't have problem.")
     return 'myValue'
+
+val = 
