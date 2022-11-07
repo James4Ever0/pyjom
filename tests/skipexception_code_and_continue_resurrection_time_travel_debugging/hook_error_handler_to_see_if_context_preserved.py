@@ -37,3 +37,6 @@ with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wt
     # breakpoint() # we have the content here.
     try:
         maketrouble() # no content here! it fucking triggered the alarm.
+    except:
+        pass
+    print("won't have problem."")
