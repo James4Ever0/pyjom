@@ -45,6 +45,7 @@ def someFunction():
         except:
             import code
             def myReadFunc(string):
+                input(string)
                 print('you entered:', string)
                 return string
             code.interact(readfunc=myReadFunc,local=locals())
