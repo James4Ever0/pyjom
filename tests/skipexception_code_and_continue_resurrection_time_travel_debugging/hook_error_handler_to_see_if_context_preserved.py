@@ -86,6 +86,8 @@ def mFunction():
 import progressbar
 
 import time
+
+def main():
 print('please wait...')
 for _ in progressbar.progressbar(range(5)):
     time.sleep(1)
