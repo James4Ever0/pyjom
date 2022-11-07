@@ -17,5 +17,6 @@ sys.excepthook=customExceptHook
 import os
 with tempfile.NamedTemporaryFile(suffix='123') as f:
     # print('LOCATION:',dir(f))
+    # /tmp/tmp7c5ffugz123 
     print('LOCATION:',os.path.abspath(f.name))
     maketrouble()
