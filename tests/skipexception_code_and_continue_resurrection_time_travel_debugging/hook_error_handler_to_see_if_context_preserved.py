@@ -61,12 +61,13 @@ def someFunction():
         print("won't have problem.")
     return 'myValue'
 
-from reloading import reloading
+# from reloading import reloading
 
-@reloading
+# @reloading
 def anotherFunction():
-    # raise Exception('shit!')
-    return 'yes please'
+    raise Exception('shit!')
+    # it does not hook the function.
+    # return 'yes please'
 
 def mFunction():
     while True:
@@ -82,5 +83,6 @@ def mFunction():
                 if i == 'y':
                     break
 
-val = mFunction()
+val = anotherFunction()
+# val = mFunction()
 print('value returned:', val)
