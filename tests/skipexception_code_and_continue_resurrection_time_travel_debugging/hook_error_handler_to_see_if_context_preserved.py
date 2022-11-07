@@ -33,6 +33,6 @@ with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wt
     f.write('abcdefg')
     f.flush() # write to disk.
     print('LOCATION:',os.path.abspath(f.name))
+    print('has file?', os.path.exists(f.path))
     # breakpoint() # we have the content here.
     maketrouble() # no content here! it fucking triggered the alarm.
-    print('has file?', os.path.exists(f.path))
