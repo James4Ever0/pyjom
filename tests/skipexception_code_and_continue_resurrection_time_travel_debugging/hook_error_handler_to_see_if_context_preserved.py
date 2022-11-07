@@ -66,5 +66,9 @@ from reloading import reloading
 @reloading
 def anotherFunction():
 
+def mFunction():
+    while True:
+        v
+
 val = someFunction()
 print('value returned:', val)
