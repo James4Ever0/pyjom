@@ -70,13 +70,13 @@ def mFunction():
     while True:
         try:
             val= anotherFunction()
+            return val
         except:
             print('please modify your code')
             while True:
                 i = input('done? (y for done)\n').lower()
                 if i == 'y':
                     break
-        return val
 
 val = someFunction()
 print('value returned:', val)
