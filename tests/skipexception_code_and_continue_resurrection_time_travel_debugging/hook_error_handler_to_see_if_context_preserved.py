@@ -83,6 +83,13 @@ def mFunction():
                 if i == 'y':
                     break
 
+import progressbar
+
+import time
+print('please wait...')
+for _ in progressbar.progressbar(5):
+    time.sleep(1)
+
 val = anotherFunction()
 # val = mFunction()
 print('value returned:', val)
