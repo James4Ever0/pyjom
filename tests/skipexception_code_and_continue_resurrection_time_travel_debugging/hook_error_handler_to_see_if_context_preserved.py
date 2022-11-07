@@ -11,3 +11,5 @@ def customExceptHook():
     print('closing program now!')
 
 sys.excepthook=customExceptHook
+
+with tempfile.NamedTemporaryFile(suffix
