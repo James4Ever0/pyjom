@@ -20,7 +20,7 @@ with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wt
     # /tmp/tmp7c5ffugz123
     # still exist?
     f.write('abcdefg')
-    f.flush()
+    f.flush() # write to disk.
     print('LOCATION:',os.path.abspath(f.name))
-    breakpoint()
+    breakpoint() # we have the content here.
     maketrouble()
