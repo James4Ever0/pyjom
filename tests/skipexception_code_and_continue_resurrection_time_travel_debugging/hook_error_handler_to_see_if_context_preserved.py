@@ -43,6 +43,7 @@ def someFunction():
         try:
             maketrouble() # no content here! it fucking triggered the alarm.
         except:
+            mCode=None
             while True:
                 try:
                     mCode = input("remedy>>> ")
