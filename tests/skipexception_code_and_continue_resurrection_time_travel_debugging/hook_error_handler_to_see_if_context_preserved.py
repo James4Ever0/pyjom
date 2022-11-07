@@ -73,7 +73,9 @@ def mFunction():
         except:
             print('please modify your code')
             while True:
-                input('done? (y for done)\n')
+                i = input('done? (y for done)\n').lower()
+                if i == 'y':
+                    break
         return val
 
 val = someFunction()
