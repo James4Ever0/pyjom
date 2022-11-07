@@ -17,6 +17,7 @@ def customExceptHook(a,b,c):
 
 sys.excepthook=customExceptHook
 import os
+
 with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wtf?
     # print('LOCATION:',dir(f))
     # /tmp/tmp7c5ffugz123
