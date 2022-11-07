@@ -61,7 +61,7 @@ def someFunction():
         print("won't have problem.")
     return 'myValue'
 
-
+from reloading import reloading
 
 @reloading
 def anotherFunction():
