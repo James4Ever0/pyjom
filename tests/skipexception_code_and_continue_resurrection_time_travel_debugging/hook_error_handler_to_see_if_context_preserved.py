@@ -14,4 +14,5 @@ def customExceptHook(a,b,c):
 sys.excepthook=customExceptHook
 
 with tempfile.NamedTemporaryFile(suffix='123',dir=".") as f:
+    print('LOCATION:',f.path)
     maketrouble()
