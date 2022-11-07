@@ -4,7 +4,7 @@ import tempfile
 
 def customExceptHook():
     print("context preserved! please take action!")
-    breakpoint()
-    print('')
+    
+    print('closing program now!')
 
 sys.excepthook=customExceptHook
