@@ -94,7 +94,7 @@ def main():
 
     val = anotherFunction()
     # val = mFunction()
-    print('value returned:', val) # it cannot restart the 
+    print('value returned:', val) # it cannot restart the function actually raises the exception!
 
 if __name__ == "__main__":
     main()
