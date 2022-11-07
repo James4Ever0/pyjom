@@ -40,7 +40,7 @@ def someFunction():
         print('has file?', os.path.exists(f.name)) # debugpy is nice.
         # breakpoint() # we have the content here.
         # this exception is caught, handled, but still recognized by the damn debugger.
-        try:
+        try: # this must be directly in that context.
             maketrouble() # no content here! it fucking triggered the alarm.
         except:
             mCode=None
