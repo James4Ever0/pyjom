@@ -25,7 +25,9 @@ import os
 # add reloading to all these files? are you sure?
 
 # no support for block statements yet.
+from reloadr import autoreload
 
+@autoreload
 def makeTrouble():
     return 'success!'
 
