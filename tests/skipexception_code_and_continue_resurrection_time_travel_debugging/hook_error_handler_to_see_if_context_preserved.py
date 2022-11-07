@@ -3,6 +3,7 @@ import sys
 import tempfile
 
 def customExceptHook(a,b,c):
+    print('ERROR INFO:', a,b,c)
     print("context preserved! please take action!")
     while True:
         i = input('exit? (y for exit)\n').lower()
