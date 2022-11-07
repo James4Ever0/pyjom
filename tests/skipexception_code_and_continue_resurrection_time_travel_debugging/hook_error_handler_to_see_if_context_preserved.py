@@ -12,4 +12,4 @@ def customExceptHook():
 
 sys.excepthook=customExceptHook
 
-with tempfile.NamedTemporaryFile(suffix
+with tempfile.NamedTemporaryFile(suffix='123',dir="."
