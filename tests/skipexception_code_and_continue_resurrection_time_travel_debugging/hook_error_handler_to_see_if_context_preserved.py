@@ -39,5 +39,6 @@ with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wt
     try:
         maketrouble() # no content here! it fucking triggered the alarm.
     except:
-        pass
+        import code
+        code.interact
     print("won't have problem.")
