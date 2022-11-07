@@ -8,6 +8,7 @@ def customExceptHook(a,b,c):
     # it is a traceback object.
     print("context preserved! please take action!")
     # preserved my ass.
+    # this won't preserve context in any degree.
     while True:
         i = input('exit? (y for exit)\n').lower()
         if i == 'y':
