@@ -61,7 +61,9 @@ def someFunction():
         print("won't have problem.")
     return 'myValue'
 
-@reload
+
+
+@reloading
 def anotherFunction():
 
 val = someFunction()
