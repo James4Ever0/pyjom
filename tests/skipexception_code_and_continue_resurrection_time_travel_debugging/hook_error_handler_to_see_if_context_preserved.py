@@ -61,12 +61,12 @@ def someFunction():
         print("won't have problem.")
     return 'myValue'
 
-import reloading
+from reloading import reloading
 
-@reloading.reloading
+@reloading
 def anotherFunction():
-    # raise Exception('shit!')
-    return 'yes please'
+    raise Exception('shit!')
+    # return 'yes please'
 
 def mFunction():
     while True:
