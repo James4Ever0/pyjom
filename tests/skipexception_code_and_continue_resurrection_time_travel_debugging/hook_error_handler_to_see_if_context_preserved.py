@@ -45,9 +45,9 @@ def someFunction():
         except:
             import code
             def myReadFunc(string):
-                input(string)
+                myInput = input(string)
                 print('you entered:', string)
-                return string
+                return myInput
             code.interact(readfunc=myReadFunc,local=locals())
         print("won't have problem.")
     return 'myValue'
