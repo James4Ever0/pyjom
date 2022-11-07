@@ -57,7 +57,7 @@ def someFunction():
                 except:
                     import traceback
                     traceback.print_exc()
-                    print('trouble while execute code:', mCode)
+                    print('trouble while executing code:', mCode)
         print("won't have problem.")
     return 'myValue'
 
