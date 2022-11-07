@@ -1,8 +1,9 @@
 # 
 # import sys
 
-from basic import 
+from basic import on_error_resume_next, err
 
+on_error_resume_next()
 import tempfile
 
 # def customExceptHook(a,b,c):
@@ -20,6 +21,8 @@ import tempfile
 
 # sys.excepthook=customExceptHook
 import os
+
+# no support for block statements yet.
 
 with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wtf?
     # print('LOCATION:',dir(f))
