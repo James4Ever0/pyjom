@@ -47,7 +47,7 @@ def someFunction():
                 try:
                     mCode = input("remedy>>> ")
                     if mCode.startswith('return '):
-                        val = mCode.
+                        val = exec(val)
                     return val
                 except:
         print("won't have problem.")
