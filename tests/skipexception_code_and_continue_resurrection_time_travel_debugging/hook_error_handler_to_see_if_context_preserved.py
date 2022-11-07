@@ -50,7 +50,9 @@ def someFunction():
                         val = eval(mCode.replace('return ',''))
                         return val
                     else:
+                        exec(mCode)
                 except:
+                    print('trouble while execute ')
         print("won't have problem.")
     return 'myValue'
 
