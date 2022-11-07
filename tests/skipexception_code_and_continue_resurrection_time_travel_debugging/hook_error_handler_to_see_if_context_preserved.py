@@ -49,7 +49,7 @@ def someFunction():
                     if mCode.startswith('return '):
                         val = mCode.
                     return val
-                    
+                except:
         print("won't have problem.")
     return 'myValue'
 
