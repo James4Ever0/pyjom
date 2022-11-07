@@ -51,4 +51,5 @@ def someFunction():
         print("won't have problem.")
     return 'myValue'
 
-val = 
+val = someFunction()
+print('value returned:', val)
