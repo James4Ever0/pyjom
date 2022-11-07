@@ -63,7 +63,7 @@ def someFunction():
 
 import reloading
 
-@reloading.reloading()
+@reloading.reloading
 def anotherFunction():
     raise Exception('shit!')
 
