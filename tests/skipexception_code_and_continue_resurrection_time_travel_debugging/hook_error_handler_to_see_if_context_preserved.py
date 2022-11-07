@@ -72,6 +72,8 @@ def mFunction():
             val= anotherFunction()
         except:
             print('please modify your code')
+            while True:
+                input('done? (y for done)\n')
         return val
 
 val = someFunction()
