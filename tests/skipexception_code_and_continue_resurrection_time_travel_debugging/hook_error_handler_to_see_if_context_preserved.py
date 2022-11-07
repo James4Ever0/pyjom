@@ -65,8 +65,8 @@ from reloading import reloading
 
 @reloading
 def anotherFunction():
-    raise Exception('shit!')
-    # return 'yes please'
+    # raise Exception('shit!')
+    return 'yes please'
 
 def mFunction():
     while True:
