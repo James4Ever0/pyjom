@@ -55,6 +55,8 @@ def someFunction():
                     else:
                         exec(mCode)
                 except:
+                    import traceback
+                    traceback.print_exc()
                     print('trouble while execute code:', mCode)
         print("won't have problem.")
     return 'myValue'
