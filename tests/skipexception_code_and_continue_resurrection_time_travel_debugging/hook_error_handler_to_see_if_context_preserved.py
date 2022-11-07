@@ -35,4 +35,5 @@ with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wt
     print('LOCATION:',os.path.abspath(f.name))
     print('has file?', os.path.exists(f.name)) # debugpy is nice.
     # breakpoint() # we have the content here.
-    maketrouble() # no content here! it fucking triggered the alarm.
+    try:
+        maketrouble() # no content here! it fucking triggered the alarm.
