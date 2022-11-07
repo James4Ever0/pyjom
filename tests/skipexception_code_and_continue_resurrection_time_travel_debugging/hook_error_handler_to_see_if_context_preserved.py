@@ -88,10 +88,13 @@ import progressbar
 import time
 
 def main():
-print('please wait...')
-for _ in progressbar.progressbar(range(5)):
-    time.sleep(1)
+    print('please wait...')
+    for _ in progressbar.progressbar(range(5)):
+        time.sleep(1)
 
-val = anotherFunction()
-# val = mFunction()
-print('value returned:', val)
+    val = anotherFunction()
+    # val = mFunction()
+    print('value returned:', val)
+
+if __name__ == "__main__":
+    main()
