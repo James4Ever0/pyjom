@@ -1,9 +1,9 @@
 # 
 # import sys
 
-from basic import on_error_resume_next, err
+# from basic import on_error_resume_next, err
 
-on_error_resume_next()
+# on_error_resume_next()
 import tempfile
 
 # def customExceptHook(a,b,c):
