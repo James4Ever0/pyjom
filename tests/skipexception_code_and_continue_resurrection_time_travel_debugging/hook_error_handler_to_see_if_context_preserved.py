@@ -29,19 +29,21 @@ import os
 def makeTrouble():
     return 'success!'
 
-with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wtf?
-    # print('LOCATION:',dir(f))
-    # /tmp/tmp7c5ffugz123
-    # still exist?
-    f.write('abcdefg')
-    f.flush() # write to disk.
-    print('LOCATION:',os.path.abspath(f.name))
-    print('has file?', os.path.exists(f.name)) # debugpy is nice.
-    # breakpoint() # we have the content here.
-    # this exception is caught, handled, but still recognized by the damn debugger.
-    try:
-        maketrouble() # no content here! it fucking triggered the alarm.
-    except:
-        import code
-        code.interact(local=locals())
-    print("won't have problem.")
+def someFunction():
+    with tempfile.NamedTemporaryFile('w+',suffix='123') as f: # no such file now. wtf?
+        # print('LOCATION:',dir(f))
+        # /tmp/tmp7c5ffugz123
+        # still exist?
+        f.write('abcdefg')
+        f.flush() # write to disk.
+        print('LOCATION:',os.path.abspath(f.name))
+        print('has file?', os.path.exists(f.name)) # debugpy is nice.
+        # breakpoint() # we have the content here.
+        # this exception is caught, handled, but still recognized by the damn debugger.
+        try:
+            maketrouble() # no content here! it fucking triggered the alarm.
+        except:
+            import code
+            code.interact(local=locals())
+        print("won't have problem.")
+    
