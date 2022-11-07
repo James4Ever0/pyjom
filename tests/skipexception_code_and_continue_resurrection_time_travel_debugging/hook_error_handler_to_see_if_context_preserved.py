@@ -44,6 +44,7 @@ def someFunction():
             maketrouble() # no content here! it fucking triggered the alarm.
         except:
             while True:
+                mCode = input("remedy>>> ")
                 
                 return val
         print("won't have problem.")
