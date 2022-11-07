@@ -2,4 +2,8 @@ import sys
 
 import tempfile
 
-sys.excepthook=
+def customExceptHook():
+    print("context preserved! please take action!")
+    
+
+sys.excepthook=customExceptHook
