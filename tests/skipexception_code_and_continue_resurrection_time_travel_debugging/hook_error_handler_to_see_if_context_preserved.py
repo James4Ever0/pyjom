@@ -68,7 +68,9 @@ def anotherFunction():
 
 def mFunction():
     while True:
-        v
+        try:
+        val= anotherFunction()
+        return val
 
 val = someFunction()
 print('value returned:', val)
