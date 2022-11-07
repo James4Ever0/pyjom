@@ -45,6 +45,7 @@ def someFunction():
         except:
             while True:
                 
+                return val
         print("won't have problem.")
     return 'myValue'
 
