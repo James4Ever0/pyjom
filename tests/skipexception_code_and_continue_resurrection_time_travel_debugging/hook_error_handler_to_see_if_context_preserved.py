@@ -54,7 +54,7 @@ def someFunction():
                     else:
                         exec(mCode)
                 except:
-                    print('trouble while execute ')
+                    print('trouble while execute code:', mCode)
         print("won't have problem.")
     return 'myValue'
 
