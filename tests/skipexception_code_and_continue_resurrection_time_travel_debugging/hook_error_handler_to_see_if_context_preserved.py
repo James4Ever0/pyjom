@@ -65,6 +65,7 @@ from reloading import reloading
 
 @reloading
 def anotherFunction():
+    
 
 def mFunction():
     while True:
@@ -78,5 +79,5 @@ def mFunction():
                 if i == 'y':
                     break
 
-val = someFunction()
+val = mFunction()
 print('value returned:', val)
