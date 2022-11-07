@@ -68,9 +68,9 @@ def someFunction():
 # @reloading
 @autoreload
 def anotherFunction():
-    # raise Exception('and just another shit!')
+    raise Exception('and just another shit!')
     # it does not hook the function.
-    return 'yes please'
+    # return 'yes please'
 
 def mFunction():
     while True:
