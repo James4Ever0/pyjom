@@ -46,7 +46,9 @@ def someFunction():
             while True:
                 try:
                     mCode = input("remedy>>> ")
-                    if mCode.startswith('return '):
+                    if mCode == 'return':
+                        return
+                    elif mCode.startswith('return '):
                         val = eval(mCode.replace('return ',''))
                         return val
                     else:
