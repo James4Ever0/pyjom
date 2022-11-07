@@ -65,7 +65,8 @@ import reloading
 
 @reloading.reloading
 def anotherFunction():
-    raise Exception('shit!')
+    # raise Exception('shit!')
+    return 'yes please'
 
 def mFunction():
     while True:
@@ -73,6 +74,8 @@ def mFunction():
             val= anotherFunction()
             return val
         except:
+            import traceback
+            traceback.print_exc()
             print('please modify your code')
             while True:
                 i = input('done? (y for done)\n').lower()
