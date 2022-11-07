@@ -61,9 +61,9 @@ def someFunction():
         print("won't have problem.")
     return 'myValue'
 
-from reloading import reloading
+import reloading
 
-@reloading
+@reloading.reloading()
 def anotherFunction():
     raise Exception('shit!')
 
