@@ -4,6 +4,8 @@ import tempfile
 
 def customExceptHook(a,b,c):
     print('ERROR INFO:', a,b,c)
+    # <class 'AttributeError'> '_io.BufferedRandom' object has no attribute 'path' <traceback object at 0x7fd6c4325080>
+    # it is a traceback object.
     print("context preserved! please take action!")
     while True:
         i = input('exit? (y for exit)\n').lower()
