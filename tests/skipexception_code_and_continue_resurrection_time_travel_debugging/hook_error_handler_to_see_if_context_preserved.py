@@ -69,7 +69,9 @@ def anotherFunction():
 def mFunction():
     while True:
         try:
-        val= anotherFunction()
+            val= anotherFunction()
+        except:
+            print('please modify your code')
         return val
 
 val = someFunction()
