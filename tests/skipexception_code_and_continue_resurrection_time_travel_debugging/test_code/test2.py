@@ -14,7 +14,8 @@
 import shit # just a shitty import. it won't decorate.
 
 
-# @k
+@k
+# i am a fucking comment.
 def a():
     return b
 
