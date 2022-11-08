@@ -1,8 +1,9 @@
 from reloading import reloading
 
 # decorate here!
-@dec
-@someRandomDecorator
+# @dec # won't fix here.
+# @someRandomDecorator
+@reloading
 def someFunction (a,b,c,d=1,f=2
 ):
     # not touching this function!
