@@ -4,7 +4,7 @@ comby = Comby()
 source_old = open('new_test.py','r').read()
 kw = 'from reloading import reloading\n'
 if source_old.startswith(kw):
-    source_old = source_old[:len(kw)]
+    source_old = source_old[len(kw):]
 
 match = ':[prefix~$]def :[functionName](:[args]):'
 # rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
