@@ -16,4 +16,4 @@ if __name__ == '__main__':
             fpath = os.path.join(basedir, fname)
             if fname.endswith('.py'):
     
-    
+    for index, pyfile in pyfiles:
