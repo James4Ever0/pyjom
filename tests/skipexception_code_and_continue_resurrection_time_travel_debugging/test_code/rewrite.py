@@ -13,4 +13,7 @@ def rewrite(source_old):
         source_new = 'from reloading import reloading\n'+source_new
 
 if __name__ == "__main__":
+
+    source_old = open('test.py','r').read()
+    source_new = 
     print(source_new)
