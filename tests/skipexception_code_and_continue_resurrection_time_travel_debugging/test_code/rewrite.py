@@ -11,5 +11,6 @@ source_new = comby.rewrite(source_old, match, rewrite)
 
 
 # -> 'print("hello world")
-source_new = 'from reloading import reloading\n'+source_new
+if source_new !=source_old:
+    source_new = 'from reloading import reloading\n'+source_new
 print(source_new)
