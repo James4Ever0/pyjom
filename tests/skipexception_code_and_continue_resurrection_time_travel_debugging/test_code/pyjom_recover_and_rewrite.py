@@ -16,7 +16,8 @@ if __name__ == '__main__':
             fpath = os.path.join(basedir, fname)
             if fname.endswith('.py'):
                 pyfiles.append(fpath)
-    
+    mod=100
     for index, pyfile in progressbar.progressbar(enumerate(pyfiles)):
         if index % mod == 0:
             print('processing file at path: %s' % pyfile)
+            change_file_at_path(pyfile
