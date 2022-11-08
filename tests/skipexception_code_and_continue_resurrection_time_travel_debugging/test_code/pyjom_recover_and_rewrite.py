@@ -11,4 +11,5 @@ if __name__ == '__main__':
         with open(path,'w') as f:
             f.write(source_new)
     for basedir, dirs, files in os.walk(dirpath):
-        print(elem)
+        for fname in files:
+            fpath = os.path.join(basedir, fname)
