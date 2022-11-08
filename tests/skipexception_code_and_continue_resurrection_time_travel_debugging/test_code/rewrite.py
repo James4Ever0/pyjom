@@ -2,14 +2,14 @@ from comby import Comby
 
 comby = Comby()
 source_old = open('test.py','r').read()
-def rewrite()
-match = ':[prefix~$]def :[functionName](:[args]):'
-rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
+def rewrite(source_old):
+    match = ':[prefix~$]def :[functionName](:[args]):'
+    rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
 
-source_new = comby.rewrite(source_old, match, rewrite)
+    source_new = comby.rewrite(source_old, match, rewrite)
 
 
-# -> 'print("hello world")
-if source_new !=source_old:
-    source_new = 'from reloading import reloading\n'+source_new
+    # -> 'print("hello world")
+    if source_new !=source_old:
+        source_new = 'from reloading import reloading\n'+source_new
 print(source_new)
