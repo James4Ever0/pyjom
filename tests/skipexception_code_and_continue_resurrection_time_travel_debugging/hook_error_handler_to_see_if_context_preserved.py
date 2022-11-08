@@ -1,7 +1,7 @@
 # 
 # import sys
 
-# i can assure that nothing has been added to my code manually
+# i can assure that not a single 'reloading' decorator has been added to my code manually yet.
 
 # from basic import on_error_resume_next, err
 
