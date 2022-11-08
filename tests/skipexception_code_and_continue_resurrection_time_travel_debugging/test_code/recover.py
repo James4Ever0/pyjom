@@ -6,7 +6,7 @@ kw = 'from reloading import reloading\n'
 if source_old.startswith(kw):
     source_old = source_old[len(kw):]
 
-match = ':[prefix~$]def :[functionName](:[args]):'
+match = ':[prefix~@reloading.*$]def :[functionName](:[args]):'
 # rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
 rewrite = 'def :[functionName](:[args]):'
 
