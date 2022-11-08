@@ -15,3 +15,5 @@ def someFunction (a,b,c,d=1,f=2
 
 async def shitfunction():
     return shit
+
+if __name__ == "__main__":
