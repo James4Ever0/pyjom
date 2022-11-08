@@ -7,6 +7,9 @@ randomString = str(uuid.uuid4())
 
 # how about let's generate shit?
 # use multithread uploader instead of that.
+import tempfile
+with tempfile.NamedTemporaryFile(suffix=".mp4") as f:
+    fpath = f.name
 uploadVideo(
     description="test video",
     dynamic="nothing",
