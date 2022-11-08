@@ -3,8 +3,7 @@ from comby import Comby
 comby = Comby()
 source_old = open('new_test.py','r').read()
 kw = 'from reloading import reloading\n'
-if source_old.startswith(kw):
-    source_old = source_old[len(kw):]
+source_old = source_old.replace(kw,"") # obliterate this thing.
 
 match = ':[prefix~@reloading.*$]def :[functionName](:[args]):'
 rewrite = 'def :[functionName](:[args]):'
