@@ -6,4 +6,4 @@
 
 # cat test.py | comby ':[prefix~(@.+)*$]def :[functionName](:[args]):'  ':[prefix] @reloading def :[functionName](:[args]):' -rule 'where match :[prefix] { | :[_@someRandomDecorator.*] -> true | :[_] -> false } ' -stdin -stdout -matcher .py -match-only
 
-cat /root/Desktop/works/pyjom/pyjom/platforms/bilibili/utils.py 
+cat /root/Desktop/works/pyjom/pyjom/platforms/bilibili/utils.py | comby ':[prefix~(@.+)*$]def :[functionName](:[args]):'  ':[prefix] @reloading def :[functionName](:[args]):' -rule 'where match :[prefix] { | :[_@someRandomDecorator.*] -> true | :[_] -> false } ' -stdin -stdout -matcher .py -match-only
