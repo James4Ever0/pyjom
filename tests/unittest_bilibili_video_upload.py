@@ -4,5 +4,15 @@ from pyjom.platforms.bilibili.uploader import uploadVideo
 import uuid
 
 randomString = str(uuid.uuid4())
+
+# how about let's generate shit?
 # use multithread uploader instead of that.
-uploadVideo(description='test video',dynamic='nothing', tagString='狗狗',title='just a test {}'.format(randomString),videoPath=videoPath, cover_path=cover_path, multithread=True) # it is with credential right now.
+uploadVideo(
+    description="test video",
+    dynamic="nothing",
+    tagString="狗狗",
+    title="just a test {}".format(randomString),
+    videoPath=videoPath,
+    cover_path=cover_path,
+    multithread=True,
+)  # it is with credential right now.
