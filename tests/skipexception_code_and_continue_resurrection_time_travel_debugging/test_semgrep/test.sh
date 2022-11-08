@@ -1,1 +1,1 @@
-semgrep --lang python --pattern 'foo($X)' --replacement 'bar($X)' --autofix
+cat test.py | semgrep --lang python --pattern 'foo($X)' --replacement 'bar($X)' --autofix
