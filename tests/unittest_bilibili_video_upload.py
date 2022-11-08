@@ -12,6 +12,7 @@ with tempfile.NamedTemporaryFile(suffix='.jpeg') as pic:
     cover_path = pic.name
     with tempfile.NamedTemporaryFile(suffix=".mp4") as f:
         videoPath = f.name
+        ffmpeg.input()
         uploadVideo(
             description="test video",
             dynamic="nothing",
