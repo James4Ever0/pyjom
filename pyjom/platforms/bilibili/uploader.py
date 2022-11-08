@@ -323,9 +323,7 @@ def videoMultithreadUploader(
 
 # @bilibiliSync
 # no need to be sync. really?
-@reloading
 @bilibiliCredential  # keyword 'dedeuserid' with default value.
-# @reloading
 def uploadVideo(
     credential: Credential = ...,
     # sessdata="",
