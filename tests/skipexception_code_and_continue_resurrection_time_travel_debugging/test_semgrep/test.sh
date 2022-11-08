@@ -1,2 +1,2 @@
-semgrep --lang python --pattern 'foo($X)' --replacement 'bar($X)' --autofix --dryrun # all files. dry run will not output cleanly, not like what 
+semgrep --lang python --pattern 'foo($X)' --replacement 'bar($X)' --autofix --dryrun # all files. dry run will not output cleanly in this way, not like what comby does.
 # semgrep --lang python --pattern 'foo($X)' --replacement 'bar($X)' --autofix --dryrun test.py # will not care about test2.py
