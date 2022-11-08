@@ -2,6 +2,6 @@
 
 # you can first replace the code with the selected 
 
-cat new_test.py | comby ':[prefix~@reloading.*$]def :[functionName](:[args]):'  'def :[functionName](:[args]):' -stdin -stdout -matcher .py |  comby 'from reloading import reloading'  '' -stdin -stdout -matcher .py | black - 2>
+cat new_test.py | comby ':[prefix~@reloading.*$]def :[functionName](:[args]):'  'def :[functionName](:[args]):' -stdin -stdout -matcher .py |  comby 'from reloading import reloading'  '' -stdin -stdout -matcher .py | black - 2>/dev/null
 
 # cat test.py | comby ':[prefix~(@.+)*$]def :[functionName](:[args]):'  ':[prefix] @reloading def :[functionName](:[args]):' -rule 'where match :[prefix] { | :[_@someRandomDecorator.*] -> true | :[_] -> false } ' -stdin -stdout -matcher .py -match-only
