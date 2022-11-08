@@ -3,7 +3,7 @@ from reloading import reloading
 # decorate here!
 # @dec # won't fix here.
 # @someRandomDecorator
-@reloading
+@reloading # it won't help with everything.
 def someFunction (a,b,c,d=1,f=2
 ):
     # not touching this function!
