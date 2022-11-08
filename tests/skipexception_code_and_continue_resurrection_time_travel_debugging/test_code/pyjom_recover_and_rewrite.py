@@ -15,6 +15,7 @@ if __name__ == '__main__':
         for fname in files:
             fpath = os.path.join(basedir, fname)
             if fname.endswith('.py'):
+                pyfiles.append(fpath)
     
     for index, pyfile in progressbar.progressbar(enumerate(pyfiles)):
         if index % mod == 0:
