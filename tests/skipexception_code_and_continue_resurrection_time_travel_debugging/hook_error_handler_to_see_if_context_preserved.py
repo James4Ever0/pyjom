@@ -1,6 +1,8 @@
 # 
 # import sys
 
+# i can assure that nothing has been added to my code manually
+
 # from basic import on_error_resume_next, err
 
 # on_error_resume_next()
