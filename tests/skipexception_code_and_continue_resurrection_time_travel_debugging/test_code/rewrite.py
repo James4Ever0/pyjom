@@ -1,6 +1,5 @@
 from comby import Comby
 
-comby = Comby()
 def rewrite(source_old):
     match = ':[prefix~$]def :[functionName](:[args]):'
     rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
