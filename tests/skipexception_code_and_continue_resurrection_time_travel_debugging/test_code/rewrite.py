@@ -1,6 +1,8 @@
 from comby import Comby
 comby = Comby()
 
+# better not to uae this!
+
 def rewrite(source_old):
     # match = ':[prefix~$]def :[functionName](:[args]):'
     match = ':[prefix~\n$]def :[functionName](:[args]):'
