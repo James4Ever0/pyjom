@@ -1,2 +1,2 @@
 # are you sensitive to return?
-cat test.py | comby ':[prefix~$]def :[functionName](:[args]):'  ':[prefix] @reloading def :[functionName](:[args]):' 'where rewrite :[prefix] { a:[t]. -> :[t] }' .py  -matcher .py -newline_
+cat test.py | comby ':[prefix~$]def :[functionName](:[args]):'  ':[prefix] @reloading def :[functionName](:[args]):' 'where rewrite :[prefix] { a:[t]. -> :[t] }' .py  -matcher .py 
