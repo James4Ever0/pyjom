@@ -26,5 +26,5 @@ if __name__ == "__main__":
     mod=100
     for pyfile in progressbar.progressbar(pyfiles):
         # if index % mod == 0:
-        #     print('processing file at path: %s' % pyfile)
+        print('processing file at path: %s' % pyfile)
         change_file_at_path(pyfile)
