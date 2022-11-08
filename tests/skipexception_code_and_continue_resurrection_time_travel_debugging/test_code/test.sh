@@ -1,2 +1,2 @@
 # are you sensitive to return?
-comby 'def [functionName](:[args]):'
+comby '@[decorator] def [functionName](:[args]):'
