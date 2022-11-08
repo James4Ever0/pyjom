@@ -8,7 +8,7 @@ randomString = str(uuid.uuid4())
 # how about let's generate shit?
 # use multithread uploader instead of that.
 import tempfile
-
+duration = random.uniform()
 with tempfile.NamedTemporaryFile(suffix='.jpeg') as pic:
     cover_path = pic.name
     with tempfile.NamedTemporaryFile(suffix=".mp4") as f:
