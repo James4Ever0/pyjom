@@ -3,6 +3,8 @@ from comby import Comby
 comby = Comby()
 source_old = open('new_test.py','r').read()
 
+if source_old.startswith('from import ')
+
 match = ':[prefix~$]def :[functionName](:[args]):'
 rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
 source_new = comby.rewrite(source_old, match, rewrite)
