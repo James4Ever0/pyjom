@@ -1,2 +1,2 @@
 # are you sensitive to return?
-comby '@:[decorator] def :[functionName](:[args]):' -match-only
+cat test.py | comby '@:[decorator] def :[functionName](:[args]):' -match-only -matcher .py
