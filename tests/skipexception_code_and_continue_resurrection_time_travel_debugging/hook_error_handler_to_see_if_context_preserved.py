@@ -66,7 +66,6 @@ def someFunction():
 from reloading import reloading
 
 @reloading
-# @autoreload
 def anotherFunction():
     # raise Exception('but just another shit!')
     # it does not hook the function.
