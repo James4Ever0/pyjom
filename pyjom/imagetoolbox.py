@@ -717,6 +717,7 @@ def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=T
     return diagonalRect
 
 
+@reloading
 def imageCropoutBlurArea(
     image, thresh=10, max_thresh=120, min_thresh=50, debug=False, crop=True, value=False
 ):
@@ -767,6 +768,7 @@ def imageCropoutBlurArea(
     return rectangle_boundingbox
 
 
+@reloading
 def imageHistogramMatch(image, reference, delta=0.2):
     from color_transfer import color_transfer
 
@@ -780,6 +782,7 @@ def imageHistogramMatch(image, reference, delta=0.2):
     return transfer_02
 
 
+@reloading
 def imageDogCatDetectionForCoverExtraction(
     image,
     dog_or_cat: Literal["dog", "cat"] = "dog",
@@ -912,6 +915,7 @@ def imageDogCatDetectionForCoverExtraction(
     return croppedImageCoverResized
 
 
+@reloading
 def getImageBestConfidenceWithBezierDogCatDetector(
     frame, dog_or_cat: Literal["dog", "cat"] = "dog", debug=False
 ):
@@ -928,6 +932,7 @@ def getImageBestConfidenceWithBezierDogCatDetector(
     return best_confidence
 
 
+@reloading
 def filterImageBestConfidenceWithBezierDogCatDetector(
     frame,
     dog_or_cat: Literal["dog", "cat"] = "dog",
@@ -940,6 +945,7 @@ def filterImageBestConfidenceWithBezierDogCatDetector(
     return checkMinMaxDict(best_confidence, confidence_threshold)
 
 
+@reloading
 def imageDogCatCoverCropAdvanced(
     frame,
     dog_or_cat="dog",

@@ -250,6 +250,7 @@ def getLyricsLanguageType(test):
     return isBilingual, needToTranslate
 
 
+@reloading
 def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
@@ -277,6 +278,7 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     # we know the translator cannot respond the same shit to us right?
 
 
+@reloading
 def waitForServerUp(port, message, timeout=1):
     import requests
 
@@ -311,6 +313,7 @@ waitForServerUp(
 )  # this is text filter.
 
 
+@reloading
 def censorTextWithTextFilter(text):
     port = 8932
     import requests
@@ -322,6 +325,7 @@ def censorTextWithTextFilter(text):
 
 
 @redisLRUCache()
+@reloading
 def getTextListTranslated(test, translate_method="baidu"):
     newLyricArray = []
     import progressbar
@@ -353,6 +357,7 @@ def getTextListTranslated(test, translate_method="baidu"):
     return newLyricArray
 
 
+@reloading
 def textArrayWithTranslatedListToAss(
     textArray,
     translatedList,
@@ -948,6 +953,7 @@ def previewAssWithVideo(sample_video, assPath):
     os.system(cmd)
 
 
+@reloading
 def lrcToAnimatedAss(
     musicPath,
     lrcPath,
@@ -982,6 +988,7 @@ def lrcToAnimatedAss(
 
 
 # lyrictoolbox
+@reloading
 def getLyricNearbyBpmCandidates(lyric_times, beats):
     nearbys, remains = [], []
     mbeats = beats.copy()
@@ -999,6 +1006,7 @@ def getLyricNearbyBpmCandidates(lyric_times, beats):
 
 
 # lyrictoolbox
+@reloading
 def read_lrc(lrc_path):
     assert lrc_path.endswith(".lrc")
     with open(lrc_path, "r") as f:
@@ -1014,6 +1022,7 @@ def read_lrc(lrc_path):
 
 
 # mainly for netease, this may change.
+@reloading
 def cleanLrcFromWeb(
     lyric_string: str,
     song_duration: float,
