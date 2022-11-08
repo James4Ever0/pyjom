@@ -10,4 +10,5 @@ if __name__ == '__main__':
             source_new = recover_and_rewrite(source_old)
         with open(path,'w') as f:
             f.write(source_new)
-    os.walk(dirpath)
+    for elem in os.walk(dirpath):
+        print(elem)
