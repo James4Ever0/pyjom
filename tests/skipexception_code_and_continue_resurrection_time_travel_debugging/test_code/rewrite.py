@@ -1,4 +1,5 @@
 from comby import Comby
+comby = Comby()
 
 def rewrite(source_old):
     match = ':[prefix~$]def :[functionName](:[args]):'
@@ -13,7 +14,7 @@ def rewrite(source_old):
 if __name__ == "__main__":
     # source_old = open('test2.py','r').read()
     source_old = open('/root/Desktop/works/pyjom/pyjom/platforms/bilibili/uploader.py','r').read()
-    comby = Comby()
+    # comby = Comby()
 
     source_new = rewrite(source_old)
     print(source_new)

@@ -2,9 +2,9 @@ from recover_and_rewrite import recover_and_rewrite
 
 if __name__ == "__main__":
     import os
-    from comby import Comby
+    # from comby import Comby
 
-    comby = Comby()
+    # comby = Comby()
     dirpath = "/root/Desktop/works/pyjom/pyjom"
 
     def change_file_at_path(path):
@@ -22,9 +22,9 @@ if __name__ == "__main__":
             fpath = os.path.join(basedir, fname)
             if fname.endswith(".py"):
                 pyfiles.append(fpath)
-                print(fpath)
+                # print(fpath)
     mod=100
-    for index, pyfile in progressbar.progressbar(enumerate(pyfiles)):
-        if index % mod == 0:
-            print('processing file at path: %s' % pyfile)
+    for pyfile in progressbar.progressbar(pyfiles):
+        # if index % mod == 0:
+        #     print('processing file at path: %s' % pyfile)
         change_file_at_path(pyfile)

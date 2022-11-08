@@ -1,6 +1,6 @@
 from comby import Comby
 
-# comby = Comby()
+comby = Comby()
 def recover(source_old):
     kw = 'from reloading import reloading\n'
     source_old = source_old.replace(kw,"") # obliterate this thing. shall we?
@@ -12,7 +12,7 @@ def recover(source_old):
     return source_new
 
 if __name__ == "__main__":
-    comby = Comby()
+    # comby = Comby()
 
     source_old = open('new_test.py','r').read()
     source_new = recover(source_old)
