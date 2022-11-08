@@ -6,4 +6,5 @@ rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
 source_old = open('test.py','r').read()
 source_new = comby.rewrite(source_old, match, rewrite)
 # -> 'print("hello world")
+source_new = source_new +'from rewrite import rewrite\n'
 print(source_new)
