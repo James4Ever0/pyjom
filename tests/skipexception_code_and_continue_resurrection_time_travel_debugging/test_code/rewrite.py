@@ -2,7 +2,8 @@ from comby import Comby
 comby = Comby()
 
 def rewrite(source_old):
-    match = ':[prefix~$]def :[functionName](:[args]):'
+    # match = ':[prefix~$]def :[functionName](:[args]):'
+    match = ':[prefix~(@.+)*$]def :[functionName](:[args]):'
     rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
 
     source_new = comby.rewrite(source_old, match, rewrite)
