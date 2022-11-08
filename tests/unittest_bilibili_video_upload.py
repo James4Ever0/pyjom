@@ -17,7 +17,7 @@ with tempfile.NamedTemporaryFile(suffix='.jpeg') as pic:
         command = f"""ffmpeg -f lavfi -i nullsrc=s=1920x1080 -filter_complex "geq=random(1)*255:128:128;aevalsrc=-2+random(0)" -t {duration:.2f} {videoPath}"""
         os.system(command)
         picgen_command=f"""ffmpeg -i {videoPath} -ss 1 {cover_path}"""
-        os
+        os.system(picgen_command)
         print('uploading video')
         uploadVideo(
             description="test video",
