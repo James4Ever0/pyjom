@@ -10,6 +10,7 @@ if __name__ == "__main__":
     def change_file_at_path(path):
         with open(path, "r") as f:
             source_old = f.read()
+            if len(source_old)<20 or "\ndef " 
             source_new = recover_and_rewrite(source_old)
         with open(path, "w+") as f:
             f.write(source_new)
