@@ -18,4 +18,4 @@ if __name__ == '__main__':
     
     for index, pyfile in pyfiles:
         if index % mod == 0:
-            print('processing file at path: %s' % path)
+            print('processing file at path: %s' % pyfile)
