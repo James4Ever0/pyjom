@@ -1,1 +1,1 @@
-comby 
+comby 'def [functionName](:[args]):'
