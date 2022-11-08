@@ -16,7 +16,6 @@ def bilibiliSync(func):
             return sync(coroutineMaybe)
         else:
             return coroutineMaybe
-
     return wrapper
 
 
