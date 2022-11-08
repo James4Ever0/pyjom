@@ -19,4 +19,4 @@ def a():
     return b
 
 def g():
-    retu
+    return c
