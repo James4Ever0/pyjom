@@ -537,6 +537,7 @@ def petsWithMusicOnlineProducer(
 
 
 # local
+@reloading
 def getProducerTemplate(template: str):
     producer_mapping = {
         "pets_with_music": petsWithMusicProducer,

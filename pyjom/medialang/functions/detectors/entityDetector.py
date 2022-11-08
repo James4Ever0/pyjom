@@ -87,6 +87,7 @@ def getEnglishLen(string2):
             counter+=1
     return counter
 
+@reloading
 def getMinMaxText(a,b):
     mlist = [a,b]
     clens = [getChineseLen(x) for x in mlist]
@@ -102,9 +103,11 @@ def getMinMaxText(a,b):
             return b
         return a
 
+@reloading
 def pointDifference(a,b):
     return [a[0] - b[0], a[1] - b[1]]
 
+@reloading
 def makeOCREntity(ocrData,minMaxThresh = 24 ,# max difference is ten pixel. or it is considered as moving.
 strDisThreshold = 2 ,# or considered as changing?
 certThreshold = 0.6,
@@ -269,6 +272,7 @@ strSimThreshold = 0.8):
     # print("___________")
 
 
+@reloading
 def staticOCRCombinator(myresult,simThreshold= 0.8):
     # we use wordninja to do the english spliting.
     # you can also get this working for non-static.
