@@ -2,7 +2,7 @@ from comby import Comby
 
 comby = Comby()
 source_old = open('test.py','r').read()
-
+def rewrite()
 match = ':[prefix~$]def :[functionName](:[args]):'
 rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
 
