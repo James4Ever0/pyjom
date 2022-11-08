@@ -8,7 +8,7 @@ def recover(source_old):
     match = ':[prefix~@reloading.*$]def :[functionName](:[args]):'
     rewrite = 'def :[functionName](:[args]):'
 
-    source_new = comby.rewrite(source_old, match, rewrite)
+    source_new = comby.rewrite(source_old, match, rewrite, language='.py')
     return source_new
 
 if __name__ == "__main__":
