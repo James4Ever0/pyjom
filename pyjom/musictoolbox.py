@@ -1,3 +1,4 @@
+from reloading import reloading
 # you will have a better name for other toolboxs.
 
 # for now, the musictoolbox is responsible for music/lyric retrieval/download, track separation, bpm, music recognition
@@ -20,6 +21,7 @@ from pyjom.audiotoolbox import getAudioDuration
 import ffmpeg
 
 # musictoolbox
+@reloading
 def audioOwlAnalysis(myMusic):
     # get sample rate
     # info = MediaInfo(filename = myMusic)
@@ -42,6 +44,7 @@ def audioOwlAnalysis(myMusic):
 
 
 # musictoolbox
+@reloading
 def getMusicCutSpansCandidates(
     music, lyric_path, maxtime, mintime, mbeat_time_tolerance=0.8
 ):
@@ -86,6 +89,7 @@ def getMusicCutSpansCandidates(
 
 
 # musictoolbox
+@reloading
 def getMusicCutSpans(
     music,
     music_duration,
@@ -200,6 +204,7 @@ def getMusicCutSpans(
 # musictoolbox
 # fix long loading time.
 @redisLRUCache()
+@reloading
 def getMusicInfoParsed(config, mintime=2, maxtime=7.8):  # these are defaults.
     music = config["music"]
     gaussian = config.get(
@@ -249,6 +254,7 @@ import traceback
 from lazero.program.subprocess import runCommandGetJson
 
 
+@reloading
 def runCommandAndProcessSongRecognizationJson(
     commandLine: list[str],
     processMethod: FunctionType,
@@ -272,6 +278,7 @@ def runCommandAndProcessSongRecognizationJson(
     return success, data
 
 
+@reloading
 def shazamSongRecognizationResultProcessMethod(data):
     artist = data["track"]["subtitle"]
     trackName = data["track"]["title"]
@@ -280,6 +287,7 @@ def shazamSongRecognizationResultProcessMethod(data):
 
 
 # you can choose to return raw data or not. which is the raw json data.
+@reloading
 def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=6, debug=False):
     commandLine = ["songrec", "audio-file-to-recognized-song", filepath]
     return runCommandAndProcessSongRecognizationJson(
@@ -291,6 +299,7 @@ def recognizeMusicFromFileSongrec(filepath, raw_data=False, timeout=6, debug=Fal
     )
 
 
+@reloading
 def recognizeMusicFromFileShazamIO(
     filepath, raw_data=False, timeout=20, debug: bool = False
 ):
@@ -311,6 +320,7 @@ def recognizeMusicFromFileShazamIO(
     )
 
 
+@reloading
 def midomiSongRecognizationResultProcessMethod(data):
     trackData = data["AllResults"][0]["NativeData"]["Tracks"][0]
     artist = trackData["ArtistName"]
@@ -323,6 +333,7 @@ def midomiSongRecognizationResultProcessMethod(data):
 from lazero.filesystem.temp import tmpfile, getRandomFileNameUnderDirectoryWithExtension
 
 
+@reloading
 def recognizeMusicFromFileMidomi(
     filepath,
     raw_data=False,
@@ -376,6 +387,7 @@ def recognizeMusicFromFileMidomi(
     return success, data
 
 
+@reloading
 def recognizeMusicFromFile(
     filepath,
     backend: Literal["songrec", "shazamio", "midomi", None] = None,

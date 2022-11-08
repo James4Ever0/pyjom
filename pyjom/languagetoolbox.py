@@ -1,8 +1,10 @@
+from reloading import reloading
 englishNLP = None
 englishStopWords = None
 porterStemmer = None
 
 
+@reloading
 def get_topics(model, feature_names, n_top_words):
     # 首先是遍历模型中存储的话题序号和话题内容
     topics = []
@@ -24,6 +26,7 @@ def get_topics(model, feature_names, n_top_words):
     return topics
 
 
+@reloading
 def print_topics(model, feature_names, n_top_words):
     # 首先是遍历模型中存储的话题序号和话题内容
     for topic_idx, topic in enumerate(model.components_):
@@ -49,6 +52,7 @@ def print_topics(model, feature_names, n_top_words):
     print()
 
 
+@reloading
 def englishSentencePreprocessing(
     text, unwantedPOS=["PRON", "CCONJ", "ADP", "PART", "PUNCT", "AUX"]
 ):
@@ -81,6 +85,7 @@ def englishSentencePreprocessing(
         Stem_words.append(rootWord)
     return Stem_words
 
+@reloading
 def sentenceFlatten(sentence, padding = " "):
     assert len(padding) == 1
     assert type(padding) == str
@@ -94,6 +99,7 @@ def sentenceFlatten(sentence, padding = " "):
     sentence = sentence.strip()
     return sentence
 
+@reloading
 def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
     for sentence in sentences:
@@ -128,6 +134,7 @@ from functools import lru_cache
 from lazero.utils.logger import traceError
 # import os
 @lru_cache(maxsize=1)
+@reloading
 def getChineseStopWords(stopwordFileList = ["/root/Desktop/works/pyjom/tests/stopwords/chinese_stopwords.txt","/root/Desktop/works/pyjom/tests/stopwords/stopwords-zh/stopwords-zh.json"]):
     import json
     stopwords = []
@@ -153,6 +160,7 @@ def getChineseStopWords(stopwordFileList = ["/root/Desktop/works/pyjom/tests/sto
     return list(set(stopwords))
 
 
+@reloading
 def chineseSentencePreprocessing(sentence):
     import jieba
     import string
@@ -172,6 +180,7 @@ def chineseSentencePreprocessing(sentence):
     return rows
 
 
+@reloading
 def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
     dataList = []
     for sentence in sentences:

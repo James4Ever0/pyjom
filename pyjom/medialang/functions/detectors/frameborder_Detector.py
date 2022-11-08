@@ -1,3 +1,4 @@
+from reloading import reloading
 from .mediaDetector import *
 import numpy as np
 import cv2
@@ -13,6 +14,7 @@ import copy
 # maybe you can paint translated words with paddleocr?
 
 # framedifference can only be applied to videos, not freaking images.
+@reloading
 def huffline_stillImage_Identifier(mediapath,**config): # wtf?
     img = cv2.imread(mediapath)
     line_thresh =  config["line_thresh"]
@@ -101,6 +103,7 @@ def huffline_stillImage_Identifier(mediapath,**config): # wtf?
         # print(rect_dict_main_list) # maybe i want this shit?
     return rects
 
+@reloading
 def huffline_horizontal_vertical_FrameIterator(mediapath,**config):
     video_file = mediapath # this one with cropped boundaries.
 
@@ -525,6 +528,7 @@ def huffline_horizontal_vertical_FrameIterator(mediapath,**config):
     # break
     return total_rect_dict
 
+@reloading
 def framedifference_talib_FrameIterator(mediapath,**config):
     algorithm = (
         bgs.FrameDifference()
@@ -693,6 +697,7 @@ def framedifference_talib_FrameIterator(mediapath,**config):
     # {1: {'coords': ((80, 199), (496, 825)), 'start': 13, 'end': 269}, 2: {'coords': ((80, 381), (483, 644)), 'start': 297, 'end': 601}}
 
 
+@reloading
 def frameborder_default_configs(model="framedifference_talib"):
     assert model in ["framedifference_talib","huffline_horizontal_vertical"]
     if model == "framedifference_talib":
@@ -703,6 +708,7 @@ def frameborder_default_configs(model="framedifference_talib"):
     return df_config
 
 
+@reloading
 def frameborder_Detector(mediapaths, model="framedifference_talib",config={}):
     print("MODEL:",model)
     # breakpoint()

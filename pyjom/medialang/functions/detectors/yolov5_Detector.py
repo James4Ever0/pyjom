@@ -1,7 +1,9 @@
+from reloading import reloading
 from .mediaDetector import *
 # assume you not to run many instances at once?
 # how to identify same video in a sequence?
 
+@reloading
 def yolov5_Identifier(frame, threshold=0.4,model = "yolov5s"):
     model = configYolov5(model=model)
     # assert to be read from opencv2
@@ -24,6 +26,7 @@ def yolov5_Identifier(frame, threshold=0.4,model = "yolov5s"):
     return data
 
 
+@reloading
 def yolov5_Detector(mediapaths, model="yolov5s", threshold=0.4, timestep=0.2):
     # any better detectors? deeplearning?
     results = []

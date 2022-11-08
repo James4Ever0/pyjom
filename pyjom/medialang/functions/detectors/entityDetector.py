@@ -1,9 +1,11 @@
+from reloading import reloading
 from .mediaDetector import *
 import Levenshtein
 import string
 import zhon.hanzi
 import wordninja
 
+@reloading
 def resplitedEnglish(string2,skipSpecial=True):
     if skipSpecial:
         header = string2[0]
@@ -21,16 +23,19 @@ def resplitedEnglish(string2,skipSpecial=True):
 
 # maybe you can read it here?
 # you need double language check. both chinese and english. or really?
+@reloading
 def ocrEntityDetector(mdata):
     alteredData = [] # we should do a demo. 
     
     return alteredData # now we are on the same page, paddleocr is using cuda 11.2 which is compatible to 11.3
 
+@reloading
 def getMinLenStr(a,b):
     la,lb = len(a),len(b)
     if la < lb:return a
     return b
 
+@reloading
 def getBlockType(dlocation,dcontent):
     if not dlocation:
         if not dcontent: return "stationary"
@@ -39,12 +44,15 @@ def getBlockType(dlocation,dcontent):
         if not dcontent: return "typing_moving"
         else: return "moving"
 
+@reloading
 def getStringDistance(a,b):
     return Levenshtein.distance(a,b)
 
+@reloading
 def getStringSimilarity(a,b):
     return Levenshtein.ratio(a,b)
 
+@reloading
 def getChineseLen(string2):
     counter  = 0
     upperLimit, lowerLimit = 0x4e00, 0x9fff
@@ -54,6 +62,7 @@ def getChineseLen(string2):
             counter+=1
     return counter
 
+@reloading
 def getPunctualLen(string2):
     counter = 0
     chinesePunctuals = zhon.hanzi.punctuation
@@ -65,6 +74,7 @@ def getPunctualLen(string2):
     return counter
 
 
+@reloading
 def getEnglishLen(string2):
     counter = 0
     standardString = "abcdefghijklmnopqrstuvwxyz"

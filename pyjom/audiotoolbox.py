@@ -1,3 +1,4 @@
+from reloading import reloading
 # first and foremost is the audio correction, the volume detector, the audio detector.
 # https://trac.ffmpeg.org/wiki/AudioVolume
 
@@ -11,9 +12,11 @@ from typing import Literal
 from pyjom.commons import *
 import parse
 
+@reloading
 def getAudioBitrate(mediaPath):
     return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bit_rate"])
 
+@reloading
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
         totalSeconds = f.duration
@@ -61,6 +64,7 @@ def detect_volume_average(mediapath, debug=False):
     return volDict, error
 
 
+@reloading
 def adjustVolumeInMedia(
     mediaPath,
     outputPath,

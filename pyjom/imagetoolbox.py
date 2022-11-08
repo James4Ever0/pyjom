@@ -1,3 +1,4 @@
+from reloading import reloading
 from pyjom.commons import *
 import numpy as np
 import cv2
@@ -7,6 +8,7 @@ from lazero.utils.tools import flattenUnhashableList
 from typing import Literal
 
 
+@reloading
 def imageCropWithDiagonalRectangle(
     image, diagonalRectangle, order: Literal["opencv", "normal"] = "opencv"
 ):
@@ -28,6 +30,7 @@ def imageCropWithDiagonalRectangle(
         raise Exception("unknown image shape:", imageShape)
 
 
+@reloading
 def draw_bounding_box_with_contour(
     contours, image, area_threshold=20, debug=False
 ):  # are you sure?
@@ -69,6 +72,7 @@ def draw_bounding_box_with_contour(
     return (x0, y0), (x1, y1)
 
 
+@reloading
 def imageLoader(image):
     if type(image) == str:
         if os.path.exists(image):
@@ -85,6 +89,7 @@ def imageLoader(image):
     return image
 
 
+@reloading
 def getDeltaWidthHeight(defaultWidth, defaultHeight):
     deltaWidthRatio = 4 + (4 - 3) * (defaultWidth / defaultHeight - 16 / 9) / (
         16 / 9 - 9 / 16
@@ -100,6 +105,7 @@ def getDeltaWidthHeight(defaultWidth, defaultHeight):
     return deltaWidth, deltaHeight
 
 
+@reloading
 def getFourCorners(x, y, defaultWidth, defaultHeight):
     deltaWidth, deltaHeight = getDeltaWidthHeight(defaultWidth, defaultHeight)
     # (x1, y1), (x2, y2)
@@ -117,6 +123,7 @@ def getFourCorners(x, y, defaultWidth, defaultHeight):
 
 
 @lru_cache(maxsize=1)
+@reloading
 def getEasyOCRReader(langs: tuple, gpu=True, recognizer=False):
     import easyocr
 
@@ -126,6 +133,7 @@ def getEasyOCRReader(langs: tuple, gpu=True, recognizer=False):
 
 
 # @lru_cache(maxsize=30)
+@reloading
 def getImageTextAreaRecognized(
     image, langs: tuple = ("en",), gpu=True, recognizer=False, return_res=False
 ):
@@ -145,6 +153,7 @@ def getImageTextAreaRecognized(
 from typing import Literal
 
 
+@reloading
 def partial_blur(image0, mask, kernel=None):
     # need improvement. malnly the boundary.
     if kernel is None:
@@ -169,6 +178,7 @@ def partial_blur(image0, mask, kernel=None):
     return dst0
 
 
+@reloading
 def imageInpainting(image, mask, method: Literal["inpaint", "blur"] = "inpaint"):
     if method == "inpaint":
         return cv2.inpaint(image, mask, 3, cv2.INPAINT_TELEA)
@@ -178,6 +188,7 @@ def imageInpainting(image, mask, method: Literal["inpaint", "blur"] = "inpaint")
         raise Exception("image inpainting method not supported:", method)
 
 
+@reloading
 def imageFourCornersInpainting(image, method="inpaint"):
     if type(image) == str:
         image = cv2.imread(image)
@@ -191,6 +202,7 @@ def imageFourCornersInpainting(image, method="inpaint"):
     return imageInpainting(image, img, method=method)
 
 
+@reloading
 def getImageTextAreaRatio(
     image,
     langs: tuple = ("en",),
@@ -229,12 +241,14 @@ def getImageTextAreaRatio(
     return textAreaRatio
 
 
+@reloading
 def LRTBToDiagonal(lrtb):
     left, right, top, bottom = lrtb
     x0, y0, x1, y1 = left, top, right, bottom
     return (x0, y0, x1, y1)
 
 
+@reloading
 def imageDenoise(image):
     shape = image.shape
     if len(shape) == 3:
@@ -243,6 +257,7 @@ def imageDenoise(image):
     return cv2.fastNlMeansDenoising(image, None, 4, 7, 35)
 
 
+@reloading
 def getImageColorCentrality(
     image,
     sample_size_limit=5000,
@@ -391,6 +406,7 @@ def getImageColorCentrality(
 import math
 
 
+@reloading
 def scanImageWithWindowSizeAutoResize(
     image,
     width,
@@ -457,6 +473,7 @@ def scanImageWithWindowSizeAutoResize(
 from typing import Literal
 
 
+@reloading
 def resizeImageWithPadding(
     image,
     width: Union[int, None],
@@ -500,12 +517,14 @@ from functools import lru_cache
 
 
 @lru_cache(maxsize=1)
+@reloading
 def getPaddleResnet50AnimalsClassifier():
     classifier = hub.Module(name="resnet50_vd_animals")
     return classifier
 
 
 @lru_cache(maxsize=3)
+@reloading
 def labelFileReader(filename):
     with open(filename, "r") as f:
         content = f.read()
@@ -518,6 +537,7 @@ def labelFileReader(filename):
 from pyjom.mathlib import multiParameterExponentialNetwork
 
 
+@reloading
 def bezierPaddleHubResnet50ImageDogCatDetector(
     image,
     input_bias=0.0830047243746045,
@@ -612,6 +632,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     return detections
 
 
+@reloading
 def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=True):
     image = imageLoader(image)
     height, width = image.shape[:2]

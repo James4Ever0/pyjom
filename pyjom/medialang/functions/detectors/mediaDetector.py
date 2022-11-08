@@ -1,3 +1,4 @@
+from reloading import reloading
 from pyjom.medialang.commons import *
 
 import cv2
@@ -7,6 +8,7 @@ import srt
 import progressbar
 
 
+@reloading
 def videoFrameIterator(
     mediapath, timestep=0.5, framebatch=1, data_producer=None, keyword=None
 ):

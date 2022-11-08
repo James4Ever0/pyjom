@@ -1,6 +1,8 @@
+from reloading import reloading
 from .mediaDetector import *
 
 
+@reloading
 def frameDifferential(frame_a, frame_b, cut=3, absolute=True, method="average"):
     assert cut >= 1
     # calculate average difference.
@@ -36,6 +38,7 @@ def frameDifferential(frame_a, frame_b, cut=3, absolute=True, method="average"):
     # not required all the time though.
 
 
+@reloading
 def videoDiffDetector(mediapaths, cut=3, absolute=True, method="average", timestep=0.2):
     # any better detectors? deeplearning?
     results = []

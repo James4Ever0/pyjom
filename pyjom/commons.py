@@ -1,3 +1,4 @@
+from reloading import reloading
 from multiprocessing.sharedctypes import Value
 import traceback
 from pyjom.config import *
@@ -28,12 +29,14 @@ os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
 from functools import lru_cache
 import time 
+@reloading
 def getJSTimeStamp(): return int(time.time()*1000)
 
 
 from pymilvus import connections
 
 @lru_cache(maxsize=1)
+@reloading
 def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
     connection = connections.connect(
         alias=alias, host=host, port=port
@@ -46,11 +49,13 @@ import redis
 
 
 @lru_cache(maxsize=1)
+@reloading
 def getRedisConnection(host="localhost", port=commonRedisPort):
     connection = redis.Redis(host=host, port=port)
     return connection
 
 
+@reloading
 def removeRedisValueByKey(
     key: str, debug: bool = False, host="localhost", port=commonRedisPort
 ):
@@ -65,6 +70,7 @@ def removeRedisValueByKey(
     return returnCode
 
 
+@reloading
 def removeRedisValueByKeys(
     keys: list[str], debug: bool = False, host="localhost", port=commonRedisPort
 ):
@@ -77,6 +83,7 @@ def removeRedisValueByKeys(
 #     return sf
 
 
+@reloading
 def safe_eval(
     code, safenodes=["List", "Dict", "Tuple", "Set", "Expression", "Constant", "Load"]
 ):  # strange.
@@ -93,6 +100,7 @@ commonNonIterableDataTypes = [int, float, str, bool]
 commonDataTypes = commonNonIterableDataTypes + commonIterableDataTypes
 
 
+@reloading
 def stringifiableCheck(value, debug: bool = False):
     try:
         str_value = repr(value)
@@ -104,6 +112,7 @@ def stringifiableCheck(value, debug: bool = False):
     return False
 
 
+@reloading
 def setRedisValueByKey(
     key: str,
     value,
@@ -141,6 +150,7 @@ def setRedisValueByKey(
     return dataType
 
 
+@reloading
 def getRedisValueByKey(
     key: str,
     dataType=None,
@@ -194,6 +204,7 @@ def getRedisCachedSet(
     return data
 
 
+@reloading
 def addToRedisCachedSet(
     item,
     setName: str,
@@ -210,6 +221,7 @@ def addToRedisCachedSet(
     return cachedSet
 
 
+@reloading
 def shuffleAndPopFromList(mlist):
     import random
 
@@ -217,6 +229,7 @@ def shuffleAndPopFromList(mlist):
     return mlist.pop(0)
 
 
+@reloading
 def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
     # demo output:
     # {'programs': [], 'streams': [{'bit_rate': '130770'}]}
@@ -261,6 +274,7 @@ def getMediaBitrate(mediaPath, audioOnly=False, videoOnly=False):
         return {}
 
 
+@reloading
 def getFileExtensionToMeaningDictFromString(inputString):
     inputStringList = inputString.split("\n")
     fileExtensionToMeaningDict = {}
@@ -283,6 +297,7 @@ def getFileExtensionToMeaningDictFromString(inputString):
 
 
 @lru_cache(maxsize=1)
+@reloading
 def getMediaFileExtensionToMeaningDict():
     # no input needed.
     videoExtensions = """MP4 or MPEG4 video file - .mp4
@@ -332,6 +347,7 @@ AIF audio file - .aif"""
     return mediaFileExtensionToMeaningDict
 
 
+@reloading
 def determineMediaTypeByExtension(extension):
     extension = extension.strip()
     if not extension.startswith("."):
@@ -349,6 +365,7 @@ def determineMediaTypeByExtension(extension):
     return "unknown"
 
 
+@reloading
 def corruptMediaFilter(
     mediaPath, tag: str = "media", bad_words: list[str] = ["invalid", "failed", "error"]
 ):
@@ -394,6 +411,7 @@ oneDay = 60 * 60 * 24  # one day?
 redisExpire = oneDay * 7  # god damn it!
 
 # @lru_cache(maxsize=1)
+@reloading
 def redisLRUCache(
     ttl=redisExpire,
     redisAddress="127.0.0.1",
@@ -407,6 +425,7 @@ def redisLRUCache(
 
 
 # this is root. this is not site-packages.
+@reloading
 def frameSizeFilter(frameMeta, frame_size_filter):
     width, height = frameMeta["width"], frameMeta["height"]
     flagWidth, (minWidth, maxWidth) = checkMinMaxDict(
@@ -443,6 +462,7 @@ if os.environ["USE_NVIDIA_OPENCV"] == "yes":
 mimetypes.init()
 
 
+@reloading
 def waitForServerUp(
     port, message, timeout=1, messageLength: Union[None, int] = None  # for netease.
 ):  # this messageLength is the length of the binary message.
@@ -482,6 +502,7 @@ class D2Point:
         self.y = y
 
 
+@reloading
 def doRectOverlap(l1, r1, l2, r2):
     # if rectangle has area 0, no overlap
     if l1.x == r1.x or l1.y == r1.y or r2.x == l2.x or l2.y == r2.y:
@@ -494,6 +515,7 @@ def doRectOverlap(l1, r1, l2, r2):
     return True
 
 
+@reloading
 def checkRectOverlap(rect0, rect1):
     assert len(rect0) == 2
     assert len(rect1) == 2
@@ -502,6 +524,7 @@ def checkRectOverlap(rect0, rect1):
     )
 
 
+@reloading
 def getOverlapRect(rect0, rect1):
     if checkRectOverlap(rect0, rect1):
         leftXList = (rect0[0][0], rect1[0][0])
@@ -517,12 +540,14 @@ def getOverlapRect(rect0, rect1):
         return None
 
 
+@reloading
 def makeValueInRange(value, minVal, maxVal):
     assert minVal < maxVal
     return min(max(minVal, value), maxVal)
 
 
 # this sucks...
+@reloading
 def infiniteShuffle(access_list, shuffle=True, infinite=True, endMark=True):
     flag = True
     while flag:
@@ -536,6 +561,7 @@ def infiniteShuffle(access_list, shuffle=True, infinite=True, endMark=True):
             flag = False
 
 
+@reloading
 def inRange(target, mRange, tolerance=1):
     assert tolerance <= 1
     assert tolerance > 0
@@ -544,6 +570,7 @@ def inRange(target, mRange, tolerance=1):
     return target >= start and target <= end
 
 
+@reloading
 def overlapRange(range_a, range_b):
     begin_a, end_a = range_a
     begin_b, end_b = range_b
@@ -553,10 +580,12 @@ def overlapRange(range_a, range_b):
     # return common range.
 
 
+@reloading
 def jsonify(jsonObj):
     return json.loads(json.dumps(jsonObj))
 
 
+@reloading
 def jsonWalk(jsonObj, location=[]):
     # this is not tuple. better convert it first?
     # mlocation = copy.deepcopy(location)
@@ -584,11 +613,13 @@ def jsonWalk(jsonObj, location=[]):
         raise Exception("Not a JSON compatible object: {}".format(type(jsonObj)))
 
 
+@reloading
 def jsonWalk2(jsonObj):
     jsonObj = jsonify(jsonObj)
     return jsonWalk(jsonObj)
 
 
+@reloading
 def jsonLocate(jsonObj, location=[]):
     # print("object:",jsonObj)
     # print("location:",location)
@@ -600,6 +631,7 @@ def jsonLocate(jsonObj, location=[]):
     return jsonObj
 
 
+@reloading
 def jsonUpdate(jsonObj, location=[], update_content=None):
     if location != []:
         if type(jsonObj) == dict:
@@ -634,12 +666,14 @@ def jsonUpdate(jsonObj, location=[], update_content=None):
 json.__dict__.update({"walk": jsonWalk, "locate": jsonLocate, "update": jsonUpdate})
 
 
+@reloading
 def replacer(content, sources=[], target=""):
     for source in sources:
         content = content.replace(source, target)
     return content
 
 
+@reloading
 def multi_replacer(content, replacer_list=[[[], ""]]):
     for sources, target in replacer_list:
         content = replacer(content, sources=sources, target=target)
@@ -653,6 +687,7 @@ import MediaInfo
 import subprocess
 
 
+@reloading
 def json_auto_float_int(jsonObj):
     jsonObj = jsonify(jsonObj)
     for location, content in jsonWalk(jsonObj):
@@ -680,6 +715,7 @@ def json_auto_float_int(jsonObj):
     return jsonObj
 
 
+@reloading
 def ffprobe_media_info(filename, video_size: Union[None, str] = None):
     cmd = "ffprobe{} -v quiet -print_format json -show_format -show_streams".format(
         " -video_size {}".format(video_size.strip()) if video_size else ""
@@ -690,26 +726,31 @@ def ffprobe_media_info(filename, video_size: Union[None, str] = None):
     return json_auto_float_int(json.loads(output))
 
 
+@reloading
 def json_media_info(filename):
     cmd = ["mediainfo", "--Output=JSON", filename]
     output = subprocess.check_output(cmd)
     return json_auto_float_int(json.loads(output))
 
 
+@reloading
 def get_media_info(filename):
     mdf = MediaInfo.MediaInfo(filename=filename)
     return json_auto_float_int(mdf.getInfo())
 
 
+@reloading
 def getTextFileLength(path):
     with open(path, "r", encoding="utf-8") as f:
         return len(f.read())
 
 
+@reloading
 def append_sublist(main_dict, sublist_key, item):
     main_dict[sublist_key] = main_dict.get(sublist_key, []) + [item]
 
 
+@reloading
 def update_subdict(mdict, key, subdict):
     # print("UPDATING SUBDICT", mdict,key, subdict)
     if key not in mdict:
@@ -719,11 +760,13 @@ def update_subdict(mdict, key, subdict):
     return mdict
 
 
+@reloading
 def read_json(filepath):
     with open(filepath, "r") as f:
         return json.loads(f.read())
 
 
+@reloading
 def list_to_range(mlist, rangeLimit):
     mlist = set(mlist)
     mlist = list(sorted(mlist))
@@ -755,6 +798,7 @@ def list_to_range(mlist, rangeLimit):
 
 
 # from youtube science.
+@reloading
 def list_startswith(a, b):
     value = 0
     if len(a) < len(b):
@@ -766,6 +810,7 @@ def list_startswith(a, b):
     return value == len(b)
 
 
+@reloading
 def list_endswith(a, b):
     value = 0
     if len(a) < len(b):
@@ -778,6 +823,7 @@ def list_endswith(a, b):
     return value == len(b)
 
 
+@reloading
 def cv2_HWC2CHW(frame):
     if len(frame.shape) == 3:
         img = frame[:, :, ::-1].transpose((2, 0, 1))
@@ -793,6 +839,7 @@ ocrConfig = {
 }  # it can detect english too. but no space included.
 
 
+@reloading
 def configOCR(**kwargs):
     global ocrCore, ocrConfig
     if ocrCore is not None:
@@ -808,12 +855,14 @@ def configOCR(**kwargs):
     return ocrCore
 
 
+@reloading
 def getScriptFileBaseDir(script_file):
     basepath = os.path.abspath(script_file)
     basepath = basepath.replace(os.path.basename(basepath), "")
     return basepath
 
 
+@reloading
 def getTemplateFileBaseDir(tmpDir="templates"):
     basedir = getScriptFileBaseDir(__file__)
     basedir = os.path.join(basedir, tmpDir)
@@ -825,6 +874,7 @@ yolov5_model = None
 
 
 @lru_cache(maxsize=1)
+@reloading
 def configYolov5(model="yolov5s"):
     global yolov5_model  # not the same
     if yolov5_model == None:
@@ -840,6 +890,7 @@ def configYolov5(model="yolov5s"):
     return yolov5_model
 
 
+@reloading
 def getTemplatePath(template_dirs, template_path):
     basedir = getTemplateFileBaseDir()
     for template_dir in template_dirs:
@@ -850,12 +901,14 @@ def getTemplatePath(template_dirs, template_path):
     return template_path
 
 
+@reloading
 def joinScriptFileBaseDir(script_file, local_file_path):
     basepath = getScriptFileBaseDir(script_file)
     file_path = os.path.join(basepath, local_file_path)
     return file_path
 
 
+@reloading
 def renderTemplate(template, template_args, enable_json=True):
     template = jinja2.Template(template)
     if enable_json:
@@ -871,6 +924,7 @@ def renderTemplate(template, template_args, enable_json=True):
     return script
 
 
+@reloading
 def configDecorator(func, config="config.json"):
     def mytarget(*args, **kwargs):
         return func(*args, **kwargs, config=config)
@@ -878,6 +932,7 @@ def configDecorator(func, config="config.json"):
     return mytarget
 
 
+@reloading
 def jsonPrettyPrint(feedback, indent=4):
     assert type(indent) == int
     mtype = "json"
@@ -894,6 +949,7 @@ def jsonPrettyPrint(feedback, indent=4):
     return mtype, mfeedback_content
 
 
+@reloading
 def getFileType(fbase0):
     # quick dirty fix.
     # for gif we have a hard fix.
@@ -911,6 +967,7 @@ def getFileType(fbase0):
     return "unknown"
 
 
+@reloading
 def getAbsoluteFilePath(fpath):
     assert os.path.exists(fpath)
     if os.path.isabs(fpath):
@@ -918,21 +975,25 @@ def getAbsoluteFilePath(fpath):
     return os.path.abspath(fpath)
 
 
+@reloading
 def getFileExtension(fpath):
     basename = os.path.basename(fpath)
     assert "." in basename
     return basename.split(".")[-1]
 
 
+@reloading
 def getLocalFileType(fpath):  # this is guessing, not file probing.
     fbase = os.path.basename(fpath)
     return getFileType(fbase)
 
 
+@reloading
 def getHostname():
     return socket.gethostname()
 
 
+@reloading
 def keywordDecorator(func, **kwargs2):
     def mytarget(*margs, **kwargs):
         if "trace_source" in kwargs.keys():
@@ -945,6 +1006,7 @@ def keywordDecorator(func, **kwargs2):
     return mytarget
 
 
+@reloading
 def decorator(func):
     def mytarget(*args, **kwargs):
         return func(*args, **kwargs), ".".join([__name__, func.__name__])
@@ -952,6 +1014,7 @@ def decorator(func):
     return mytarget
 
 
+@reloading
 def chineseDetector(string):
     base, celi = 0x4E00, 0x9FA5
     for elem in string:
@@ -961,10 +1024,12 @@ def chineseDetector(string):
     return False
 
 
+@reloading
 def getTimestamp():
     return datetime.datetime.now().timestamp()
 
 
+@reloading
 def dumpTrashDir(trash_dir):
     if os.path.exists(trash_dir):
         if os.path.isdir(trash_dir):
@@ -973,6 +1038,7 @@ def dumpTrashDir(trash_dir):
             os.remove(trash_dir)
 
 
+@reloading
 def writeFileWithPath(path, fname, content, mode, encoding=None):
     if not os.path.exists(path):
         os.makedirs(path)
