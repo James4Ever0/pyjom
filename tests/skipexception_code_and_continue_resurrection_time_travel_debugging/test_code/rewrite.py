@@ -13,7 +13,8 @@ def rewrite(source_old):
 
 if __name__ == "__main__":
     # source_old = open('test2.py','r').read()
-    source_old = open('/root/Desktop/works/pyjom/pyjom/platforms/bilibili/uploader.py','r').read()
+    source_old = open('/root/Desktop/works/pyjom/pyjom/platforms/bilibili/utils.py','r').read()
+    # source_old = open('/root/Desktop/works/pyjom/pyjom/platforms/bilibili/uploader.py','r').read()
     # comby = Comby()
 
     source_new = rewrite(source_old)
