@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Dataloaders and dataset utils
@@ -43,6 +44,7 @@ for orientation in ExifTags.TAGS.keys():
         break
 
 
+@reloading
 def get_hash(paths):
     # Returns a single hash value of a list of paths (files or dirs)
     size = sum(os.path.getsize(p) for p in paths if os.path.exists(p))  # sizes
@@ -51,6 +53,7 @@ def get_hash(paths):
     return h.hexdigest()  # return hash
 
 
+@reloading
 def exif_size(img):
     # Returns exif-corrected PIL size
     s = img.size  # (width, height)
@@ -66,6 +69,7 @@ def exif_size(img):
     return s
 
 
+@reloading
 def exif_transpose(image):
     """
     Transpose a PIL image accordingly if it has an EXIF Orientation tag.
@@ -92,6 +96,7 @@ def exif_transpose(image):
     return image
 
 
+@reloading
 def create_dataloader(path,
                       imgsz,
                       batch_size,
@@ -385,6 +390,7 @@ class LoadStreams:
         return len(self.sources)  # 1E12 frames = 32 streams at 30 FPS for 30 years
 
 
+@reloading
 def img2label_paths(img_paths):
     # Define label paths as a function of image paths
     sa, sb = os.sep + 'images' + os.sep, os.sep + 'labels' + os.sep  # /images/, /labels/ substrings
@@ -843,6 +849,7 @@ class LoadImagesAndLabels(Dataset):
 
 
 # Ancillary functions --------------------------------------------------------------------------------------------------
+@reloading
 def create_folder(path='./new'):
     # Create folder
     if os.path.exists(path):
@@ -850,6 +857,7 @@ def create_folder(path='./new'):
     os.makedirs(path)  # make new output folder
 
 
+@reloading
 def flatten_recursive(path=DATASETS_DIR / 'coco128'):
     # Flatten a recursive directory by bringing all files to top level
     new_path = Path(str(path) + '_flat')
@@ -858,6 +866,7 @@ def flatten_recursive(path=DATASETS_DIR / 'coco128'):
         shutil.copyfile(file, new_path / Path(file).name)
 
 
+@reloading
 def extract_boxes(path=DATASETS_DIR / 'coco128'):  # from utils.datasets import *; extract_boxes()
     # Convert detection dataset into classification dataset, with one directory per class
     path = Path(path)  # images dir
@@ -892,6 +901,7 @@ def extract_boxes(path=DATASETS_DIR / 'coco128'):  # from utils.datasets import 
                     assert cv2.imwrite(str(f), im[b[1]:b[3], b[0]:b[2]]), f'box failure in {f}'
 
 
+@reloading
 def autosplit(path=DATASETS_DIR / 'coco128/images', weights=(0.9, 0.1, 0.0), annotated_only=False):
     """ Autosplit a dataset into train/val/test splits and save path/autosplit_*.txt files
     Usage: from utils.datasets import *; autosplit()
@@ -916,6 +926,7 @@ def autosplit(path=DATASETS_DIR / 'coco128/images', weights=(0.9, 0.1, 0.0), ann
                 f.write('./' + img.relative_to(path.parent).as_posix() + '\n')  # add image to txt file
 
 
+@reloading
 def verify_image_label(args):
     # Verify one image-label pair
     im_file, lb_file, prefix = args
@@ -968,6 +979,7 @@ def verify_image_label(args):
         return [None, None, None, None, nm, nf, ne, nc, msg]
 
 
+@reloading
 def dataset_stats(path='coco128.yaml', autodownload=False, verbose=False, profile=False, hub=False):
     """ Return dataset statistics dictionary with images and instances counts per split per class
     To run in parent directory: export PYTHONPATH="$PWD/yolov5"

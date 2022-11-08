@@ -1,3 +1,4 @@
+from reloading import reloading
 from pyjom.commons import *
 
 # from pyjom.modules.contentProducing.videoProcessing import *
@@ -13,6 +14,7 @@ from pyjom.medialang.core import *
 
 
 # local
+@reloading
 def getFileCuts(
     filtered_info, meta_info, standard_bpm_spans, policy_names, mbeat_time_tolerance=0.8
 ):
@@ -96,6 +98,7 @@ def getFileCuts(
 
 
 # local
+@reloading
 def getRenderList(
     total_cuts,
     demanded_cut_spans,
@@ -177,6 +180,7 @@ def getRenderList(
 
 
 # local
+@reloading
 def renderList2MediaLang(
     renderList,
     slient=True,
@@ -220,6 +224,7 @@ def renderList2MediaLang(
 
 
 # local
+@reloading
 def petsWithMusicProducer(filtered_info, meta_info, config={}, fast=False):
     # what is this config? how the fuck we can arrange it?
     # config = {"music":{"filepath":"","lyric_path":""},"font":{"filepath":"","fontsize":30}, "policy":{"some_policy_name":{}},"meta":{"maxtime":3, "mintime":1}}
@@ -322,6 +327,7 @@ from lazero.filesystem import tmpdir
 from lazero.network.progressbar.client import netProgressbar
 
 # local
+@reloading
 def petsWithMusicOnlineProducer(
     dataGenerator,
     configs,

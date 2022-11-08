@@ -1,6 +1,8 @@
+from reloading import reloading
 from pyjom.commons import *
 
 @decorator
+@reloading
 def dummyPoster(content, iterate=False):
     if iterate:
         for elem in content:

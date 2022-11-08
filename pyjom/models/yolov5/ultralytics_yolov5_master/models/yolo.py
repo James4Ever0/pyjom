@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 YOLO-specific modules
@@ -246,6 +247,7 @@ class Model(nn.Module):
         return self
 
 
+@reloading
 def parse_model(d, ch):  # model_dict, input_channels(3)
     LOGGER.info(f"\n{'':>3}{'from':>18}{'n':>3}{'params':>10}  {'module':<40}{'arguments':<30}")
     anchors, nc, gd, gw = d['anchors'], d['nc'], d['depth_multiple'], d['width_multiple']

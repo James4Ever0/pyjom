@@ -1,9 +1,11 @@
+from reloading import reloading
 from pyjom.commons import *
 from pyjom.modules.contentCensoring.core import weiboCensor
 import json
 
 
 @decorator
+@reloading
 def weiboSearchReviewer(content, basedir=None, auto=False, semiauto=True,dummy_auto=True,template_names=[], args={}):
     mreview = {}
     for key in content.keys():

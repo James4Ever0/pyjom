@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Validate a trained YOLOv5 model accuracy on a custom dataset
@@ -46,6 +47,7 @@ from utils.plots import output_to_target, plot_images, plot_val_study
 from utils.torch_utils import select_device, time_sync
 
 
+@reloading
 def save_one_txt(predn, save_conf, shape, file):
     # Save one txt result
     gn = torch.tensor(shape)[[1, 0, 1, 0]]  # normalization gain whwh
@@ -56,6 +58,7 @@ def save_one_txt(predn, save_conf, shape, file):
             f.write(('%g ' * len(line)).rstrip() % line + '\n')
 
 
+@reloading
 def save_one_json(predn, jdict, path, class_map):
     # Save one JSON result {"image_id": 42, "category_id": 18, "bbox": [258.15, 41.29, 348.26, 243.78], "score": 0.236}
     image_id = int(path.stem) if path.stem.isnumeric() else path.stem
@@ -69,6 +72,7 @@ def save_one_json(predn, jdict, path, class_map):
             'score': round(p[4], 5)})
 
 
+@reloading
 def process_batch(detections, labels, iouv):
     """
     Return correct predictions matrix. Both sets of boxes are in (x1, y1, x2, y2) format.
@@ -94,6 +98,7 @@ def process_batch(detections, labels, iouv):
 
 
 @torch.no_grad()
+@reloading
 def run(
         data,
         weights=None,  # model.pt path(s)
@@ -323,6 +328,7 @@ def run(
     return (mp, mr, map50, map, *(loss.cpu() / len(dataloader)).tolist()), maps, t
 
 
+@reloading
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='dataset.yaml path')
@@ -354,6 +360,7 @@ def parse_opt():
     return opt
 
 
+@reloading
 def main(opt):
     check_requirements(requirements=ROOT / 'requirements.txt', exclude=('tensorboard', 'thop'))
 

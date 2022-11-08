@@ -1,9 +1,11 @@
+from reloading import reloading
 from pyjom.commons import *
 from typing import Literal
 from lazero.network import download
 from lazero.filesystem import tmpdir
 
 @decorator
+@reloading
 def OnlineFetcher(
     infoList,
     source: Literal["giphy"] = "giphy",

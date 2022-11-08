@@ -1,3 +1,4 @@
+from reloading import reloading
 from pyjom.commons import *
 from pyjom.languagetoolbox import englishTopicModeling, chineseTopicModeling
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
@@ -8,6 +9,7 @@ from typing import Literal
 
 
 
+@reloading
 def removeKeywordDuplicates(keywords):
     keywordsType = type(keywords)
     inputFuncs = {
@@ -29,6 +31,7 @@ def removeKeywordDuplicates(keywords):
     return outputFuncs[keywordsType](keywordsSetList)
 
 
+@reloading
 def topicModeling(sentences: list[str], lang="en"):  # specify language please?
     # python does not enforce type checking. use third party tool such as linter instead.
     if lang == "en":
@@ -41,6 +44,7 @@ def topicModeling(sentences: list[str], lang="en"):  # specify language please?
         raise Exception("Unknown language: %s" % lang)
 
 
+@reloading
 def topicWordSelection(
     topics,
     core_topic_set: set,
@@ -67,6 +71,7 @@ def topicWordSelection(
     return None
 
 
+@reloading
 def getMetaTopicString(metaTopic):
     staticCandidates = [random.choice(x) for x in metaTopic.get("static", [])]
     optionalCandidates = [random.choice(x) for x in metaTopic.get("optional", [])]
@@ -86,6 +91,7 @@ def getMetaTopicString(metaTopic):
 
 
 @decorator
+@reloading
 def OnlineTopicGenerator(
     source="giphy",
     metaTopic={

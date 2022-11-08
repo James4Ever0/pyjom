@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Export a YOLOv5 PyTorch model to other formats. TensorFlow exports authored by https://github.com/zldrobit
@@ -71,6 +72,7 @@ from utils.general import (LOGGER, check_dataset, check_img_size, check_requirem
 from utils.torch_utils import select_device
 
 
+@reloading
 def export_formats():
     # YOLOv5 export formats
     x = [
@@ -88,6 +90,7 @@ def export_formats():
     return pd.DataFrame(x, columns=['Format', 'Argument', 'Suffix', 'GPU'])
 
 
+@reloading
 def export_torchscript(model, im, file, optimize, prefix=colorstr('TorchScript:')):
     # YOLOv5 TorchScript model export
     try:
@@ -108,6 +111,7 @@ def export_torchscript(model, im, file, optimize, prefix=colorstr('TorchScript:'
         LOGGER.info(f'{prefix} export failure: {e}')
 
 
+@reloading
 def export_onnx(model, im, file, opset, train, dynamic, simplify, prefix=colorstr('ONNX:')):
     # YOLOv5 ONNX export
     try:
@@ -162,6 +166,7 @@ def export_onnx(model, im, file, opset, train, dynamic, simplify, prefix=colorst
         LOGGER.info(f'{prefix} export failure: {e}')
 
 
+@reloading
 def export_openvino(model, im, file, prefix=colorstr('OpenVINO:')):
     # YOLOv5 OpenVINO export
     try:
@@ -180,6 +185,7 @@ def export_openvino(model, im, file, prefix=colorstr('OpenVINO:')):
         LOGGER.info(f'\n{prefix} export failure: {e}')
 
 
+@reloading
 def export_coreml(model, im, file, prefix=colorstr('CoreML:')):
     # YOLOv5 CoreML export
     try:
@@ -200,6 +206,7 @@ def export_coreml(model, im, file, prefix=colorstr('CoreML:')):
         return None, None
 
 
+@reloading
 def export_engine(model, im, file, train, half, simplify, workspace=4, verbose=False, prefix=colorstr('TensorRT:')):
     # YOLOv5 TensorRT export https://developer.nvidia.com/tensorrt
     try:
@@ -254,6 +261,7 @@ def export_engine(model, im, file, train, half, simplify, workspace=4, verbose=F
         LOGGER.info(f'\n{prefix} export failure: {e}')
 
 
+@reloading
 def export_saved_model(model,
                        im,
                        file,
@@ -306,6 +314,7 @@ def export_saved_model(model,
         return None, None
 
 
+@reloading
 def export_pb(keras_model, im, file, prefix=colorstr('TensorFlow GraphDef:')):
     # YOLOv5 TensorFlow GraphDef *.pb export https://github.com/leimao/Frozen_Graph_TensorFlow
     try:
@@ -327,6 +336,7 @@ def export_pb(keras_model, im, file, prefix=colorstr('TensorFlow GraphDef:')):
         LOGGER.info(f'\n{prefix} export failure: {e}')
 
 
+@reloading
 def export_tflite(keras_model, im, file, int8, data, ncalib, prefix=colorstr('TensorFlow Lite:')):
     # YOLOv5 TensorFlow Lite export
     try:
@@ -359,6 +369,7 @@ def export_tflite(keras_model, im, file, int8, data, ncalib, prefix=colorstr('Te
         LOGGER.info(f'\n{prefix} export failure: {e}')
 
 
+@reloading
 def export_edgetpu(keras_model, im, file, prefix=colorstr('Edge TPU:')):
     # YOLOv5 Edge TPU export https://coral.ai/docs/edgetpu/models-intro/
     try:
@@ -388,6 +399,7 @@ def export_edgetpu(keras_model, im, file, prefix=colorstr('Edge TPU:')):
         LOGGER.info(f'\n{prefix} export failure: {e}')
 
 
+@reloading
 def export_tfjs(keras_model, im, file, prefix=colorstr('TensorFlow.js:')):
     # YOLOv5 TensorFlow.js export
     try:
@@ -424,6 +436,7 @@ def export_tfjs(keras_model, im, file, prefix=colorstr('TensorFlow.js:')):
 
 
 @torch.no_grad()
+@reloading
 def run(
         data=ROOT / 'data/coco128.yaml',  # 'dataset.yaml path'
         weights=ROOT / 'yolov5s.pt',  # weights path
@@ -542,6 +555,7 @@ def run(
     return f  # return list of exported files/dirs
 
 
+@reloading
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='dataset.yaml path')
@@ -574,6 +588,7 @@ def parse_opt():
     return opt
 
 
+@reloading
 def main(opt):
     for opt.weights in (opt.weights if isinstance(opt.weights, list) else [opt.weights]):
         run(**vars(opt))

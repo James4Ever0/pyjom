@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Download utils
@@ -15,12 +16,14 @@ import requests
 import torch
 
 
+@reloading
 def gsutil_getsize(url=''):
     # gs://bucket/file size https://cloud.google.com/storage/docs/gsutil/commands/du
     s = subprocess.check_output(f'gsutil du {url}', shell=True).decode('utf-8')
     return eval(s.split(' ')[0]) if len(s) else 0  # bytes
 
 
+@reloading
 def safe_download(file, url, url2=None, min_bytes=1E0, error_msg=''):
     # Attempts to download file from url or url2, checks and removes incomplete downloads < min_bytes
     file = Path(file)
@@ -40,6 +43,7 @@ def safe_download(file, url, url2=None, min_bytes=1E0, error_msg=''):
         print('')
 
 
+@reloading
 def attempt_download(file, repo='ultralytics/yolov5'):  # from utils.downloads import *; attempt_download()
     # Attempt file download if does not exist
     file = Path(str(file).strip().replace("'", ''))
@@ -83,6 +87,7 @@ def attempt_download(file, repo='ultralytics/yolov5'):  # from utils.downloads i
     return str(file)
 
 
+@reloading
 def gdrive_download(id='16TiPfZj7htmTyhntwcZyEEAejOUxuT6m', file='tmp.zip'):
     # Downloads a file from Google Drive. from yolov5.utils.downloads import *; gdrive_download()
     t = time.time()
@@ -118,6 +123,7 @@ def gdrive_download(id='16TiPfZj7htmTyhntwcZyEEAejOUxuT6m', file='tmp.zip'):
     return r
 
 
+@reloading
 def get_token(cookie="./cookie"):
     with open(cookie) as f:
         for line in f:

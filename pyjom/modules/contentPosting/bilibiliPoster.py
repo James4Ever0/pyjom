@@ -1,3 +1,4 @@
+from reloading import reloading
 from types import FunctionType
 from pyjom.commons import *
 from pyjom.platforms.bilibili.uploader import uploadVideo
@@ -14,6 +15,7 @@ import cv2
 
 # why you have decorator? so OnlinePoster will not have decorator.
 @decorator
+@reloading
 def BilibiliPoster(
     content,
     iterate=False,

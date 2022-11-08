@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Model validation metrics
@@ -12,12 +13,14 @@ import numpy as np
 import torch
 
 
+@reloading
 def fitness(x):
     # Model fitness as a weighted combination of metrics
     w = [0.0, 0.0, 0.1, 0.9]  # weights for [P, R, mAP@0.5, mAP@0.5:0.95]
     return (x[:, :4] * w).sum(1)
 
 
+@reloading
 def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='.', names=(), eps=1e-16):
     """ Compute the average precision, given the recall and precision curves.
     Source: https://github.com/rafaelpadilla/Object-Detection-Metrics.
@@ -86,6 +89,7 @@ def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='.', names
     return tp, fp, p, r, f1, ap, unique_classes.astype('int32')
 
 
+@reloading
 def compute_ap(recall, precision):
     """ Compute the average precision, given the recall and precision curves
     # Arguments

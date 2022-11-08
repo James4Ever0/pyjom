@@ -1,8 +1,10 @@
+from reloading import reloading
 from pyjom.commons import *
 import requests
 import json
 
 
+@reloading
 def weiboCheckFeedback(meta, with_user=False):
     feedback = {"comments": []}
     id_ = meta["id"]
@@ -40,6 +42,7 @@ def weiboCheckFeedback(meta, with_user=False):
 
 
 @decorator
+@reloading
 def weiboFeedback(content,with_user=False):
     mfeedback = {}  # ordered by the blog id.
     # it will create shit after all. debug first.

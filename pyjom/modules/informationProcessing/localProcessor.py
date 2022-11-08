@@ -1,3 +1,4 @@
+from reloading import reloading
 from pyjom.commons import (
     decorator,
     get_media_info,
@@ -16,6 +17,7 @@ from pyjom.commons import (
 
 
 @decorator
+@reloading
 def FilesystemProcessor(info, reviewerLogs, filters={}, path_replacers={}):
     # print("FILESYSTEM_PROCESSOR INTERCEPTED INFO",info)
     # print("REVIEWER LOGS:", reviewerLogs)

@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Run YOLOv5 benchmarks on all supported export formats
@@ -45,6 +46,7 @@ from utils.general import LOGGER, print_args
 from utils.torch_utils import select_device
 
 
+@reloading
 def run(
         weights=ROOT / 'yolov5s.pt',  # weights path
         imgsz=640,  # inference size (pixels)
@@ -84,6 +86,7 @@ def run(
     return py
 
 
+@reloading
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', type=str, default=ROOT / 'yolov5s.pt', help='weights path')
@@ -97,6 +100,7 @@ def parse_opt():
     return opt
 
 
+@reloading
 def main(opt):
     run(**vars(opt))
 

@@ -1,9 +1,11 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 utils/initialization
 """
 
 
+@reloading
 def notebook_init(verbose=True):
     # Check system software and hardware
     print('Checking setup...')

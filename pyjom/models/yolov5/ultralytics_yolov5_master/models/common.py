@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Common modules
@@ -28,6 +29,7 @@ from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import copy_attr, time_sync
 
 
+@reloading
 def autopad(k, p=None):  # kernel, padding
     # Pad to 'same'
     if p is None:

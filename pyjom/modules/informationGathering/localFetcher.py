@@ -1,7 +1,9 @@
+from reloading import reloading
 from pyjom.commons import *
 
 
 @decorator
+@reloading
 def filesystemFetcher(topic):
     protocol = topic["protocol"]
     path = topic["path"]

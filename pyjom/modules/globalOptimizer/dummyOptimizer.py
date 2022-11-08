@@ -1,3 +1,4 @@
+from reloading import reloading
 from pyjom.commons import *
 from lazero.program.functools import (
     iterateWithTempDirectory,
@@ -5,6 +6,7 @@ from lazero.program.functools import (
 
 
 @decorator  # called 'iterateWithTempDirectory'
+@reloading
 def dummyOptimizer(topic, feedback):  # wtf is this?
     # not optimized. need schedule.
     @iterateWithTempDirectory()
@@ -17,5 +19,6 @@ def dummyOptimizer(topic, feedback):  # wtf is this?
 
 
 @decorator
+@reloading
 def dummyReviewOptimizer(topic, feedback, review):
     return "processed and labeled content."

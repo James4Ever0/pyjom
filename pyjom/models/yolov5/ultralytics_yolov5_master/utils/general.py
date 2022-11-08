@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 General utils
@@ -51,6 +52,7 @@ os.environ['NUMEXPR_MAX_THREADS'] = str(NUM_THREADS)  # NumExpr max threads
 os.environ['OMP_NUM_THREADS'] = str(NUM_THREADS)  # OpenMP max threads (PyTorch and SciPy)
 
 
+@reloading
 def is_kaggle():
     # Is environment a Kaggle Notebook?
     try:
@@ -61,6 +63,7 @@ def is_kaggle():
         return False
 
 
+@reloading
 def is_writeable(dir, test=False):
     # Return True if directory has write permissions, test opening a file with write permissions if test=True
     if test:  # method 1
@@ -76,6 +79,7 @@ def is_writeable(dir, test=False):
         return os.access(dir, os.R_OK)  # possible issues on Windows
 
 
+@reloading
 def set_logging(name=None, verbose=VERBOSE):
     # Sets level and returns logger
     if is_kaggle():
@@ -89,6 +93,7 @@ def set_logging(name=None, verbose=VERBOSE):
 LOGGER = set_logging('yolov5')  # define globally (used in train.py, val.py, detect.py, etc.)
 
 
+@reloading
 def user_config_dir(dir='Ultralytics', env_var='YOLOV5_CONFIG_DIR'):
     # Return path of user configuration directory. Prefer environment variable if exists. Make dir if required.
     env = os.getenv(env_var)

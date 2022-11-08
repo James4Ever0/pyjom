@@ -1,7 +1,9 @@
+from reloading import reloading
 from pyjom.commons import *
 
 
 @decorator
+@reloading
 def petsTopicGenerator():
     # this is just some primitive topic, always return the same thing.
     # topics cannot be multilingual.
