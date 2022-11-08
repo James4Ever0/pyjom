@@ -569,6 +569,7 @@ class WandbLogger():
 
 
 @contextmanager
+@reloading
 def all_logging_disabled(highest_level=logging.CRITICAL):
     """ source - https://gist.github.com/simon-weber/7853144
     A context manager that will prevent any logging messages triggered during the body from being processed.

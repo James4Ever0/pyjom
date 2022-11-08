@@ -154,6 +154,7 @@ class WorkingDirectory(contextlib.ContextDecorator):
         os.chdir(self.cwd)
 
 
+@reloading
 def try_except(func):
     # try-except function. Usage: @try_except decorator
     def handler(*args, **kwargs):
@@ -165,11 +166,13 @@ def try_except(func):
     return handler
 
 
+@reloading
 def methods(instance):
     # Get class/instance methods
     return [f for f in dir(instance) if callable(getattr(instance, f)) and not f.startswith("__")]
 
 
+@reloading
 def print_args(args: Optional[dict] = None, show_file=True, show_fcn=False):
     # Print function arguments (optional args dict)
     x = inspect.currentframe().f_back  # previous frame
@@ -181,6 +184,7 @@ def print_args(args: Optional[dict] = None, show_file=True, show_fcn=False):
     LOGGER.info(colorstr(s) + ', '.join(f'{k}={v}' for k, v in args.items()))
 
 
+@reloading
 def init_seeds(seed=0):
     # Initialize random number generator (RNG) seeds https://pytorch.org/docs/stable/notes/randomness.html
     # cudnn seed 0 settings are slower and more reproducible, else faster and less reproducible
@@ -191,22 +195,26 @@ def init_seeds(seed=0):
     cudnn.benchmark, cudnn.deterministic = (False, True) if seed == 0 else (True, False)
 
 
+@reloading
 def intersect_dicts(da, db, exclude=()):
     # Dictionary intersection of matching keys and shapes, omitting 'exclude' keys, using da values
     return {k: v for k, v in da.items() if k in db and not any(x in k for x in exclude) and v.shape == db[k].shape}
 
 
+@reloading
 def get_latest_run(search_dir='.'):
     # Return path to most recent 'last.pt' in /runs (i.e. to --resume from)
     last_list = glob.glob(f'{search_dir}/**/last*.pt', recursive=True)
     return max(last_list, key=os.path.getctime) if last_list else ''
 
 
+@reloading
 def is_docker():
     # Is environment a Docker container?
     return Path('/workspace').exists()  # or Path('/.dockerenv').exists()
 
 
+@reloading
 def is_colab():
     # Is environment a Google Colab instance?
     try:
@@ -216,39 +224,46 @@ def is_colab():
         return False
 
 
+@reloading
 def is_pip():
     # Is file in a pip package?
     return 'site-packages' in Path(__file__).resolve().parts
 
 
+@reloading
 def is_ascii(s=''):
     # Is string composed of all ASCII (no UTF) characters? (note str().isascii() introduced in python 3.7)
     s = str(s)  # convert list, tuple, None, etc. to str
     return len(s.encode().decode('ascii', 'ignore')) == len(s)
 
 
+@reloading
 def is_chinese(s='人工智能'):
     # Is string composed of any Chinese characters?
     return True if re.search('[\u4e00-\u9fff]', str(s)) else False
 
 
+@reloading
 def emojis(str=''):
     # Return platform-dependent emoji-safe version of string
     return str.encode().decode('ascii', 'ignore') if platform.system() == 'Windows' else str
 
 
+@reloading
 def file_age(path=__file__):
     # Return days since last file update
     dt = (datetime.now() - datetime.fromtimestamp(Path(path).stat().st_mtime))  # delta
     return dt.days  # + dt.seconds / 86400  # fractional days
 
 
+@reloading
 def file_update_date(path=__file__):
     # Return human-readable file modification date, i.e. '2021-3-26'
     t = datetime.fromtimestamp(Path(path).stat().st_mtime)
     return f'{t.year}-{t.month}-{t.day}'
 
 
+@reloading
 def file_size(path):
     # Return file/dir size (MB)
     mb = 1 << 20  # bytes to MiB (1024 ** 2)
@@ -261,6 +276,7 @@ def file_size(path):
         return 0.0
 
 
+@reloading
 def check_online():
     # Check internet connectivity
     import socket
@@ -271,6 +287,7 @@ def check_online():
         return False
 
 
+@reloading
 def git_describe(path=ROOT):  # path must be a directory
     # Return human-readable git description, i.e. v5.0-5-g3e25f1e https://git-scm.com/docs/git-describe
     try:
@@ -281,6 +298,7 @@ def git_describe(path=ROOT):  # path must be a directory
 
 @try_except
 @WorkingDirectory(ROOT)
+@reloading
 def check_git_status():
     # Recommend 'git pull' if code is out of date
     msg = ', for updates see https://github.com/ultralytics/yolov5'
@@ -300,11 +318,13 @@ def check_git_status():
     LOGGER.info(emojis(s))  # emoji-safe
 
 
+@reloading
 def check_python(minimum='3.7.0'):
     # Check current python version vs. required python version
     check_version(platform.python_version(), minimum, name='Python ', hard=True)
 
 
+@reloading
 def check_version(current='0.0.0', minimum='0.0.0', name='version ', pinned=False, hard=False, verbose=False):
     # Check version vs. required version
     current, minimum = (pkg.parse_version(x) for x in (current, minimum))
@@ -318,6 +338,7 @@ def check_version(current='0.0.0', minimum='0.0.0', name='version ', pinned=Fals
 
 
 @try_except
+@reloading
 def check_requirements(requirements=ROOT / 'requirements.txt', exclude=(), install=True):
     # Check installed dependencies meet requirements (pass *.txt file or list of packages)
     prefix = colorstr('red', 'bold', 'requirements:')
@@ -354,6 +375,7 @@ def check_requirements(requirements=ROOT / 'requirements.txt', exclude=(), insta
         LOGGER.info(emojis(s))
 
 
+@reloading
 def check_img_size(imgsz, s=32, floor=0):
     # Verify image size is a multiple of stride s in each dimension
     if isinstance(imgsz, int):  # integer i.e. img_size=640
@@ -366,6 +388,7 @@ def check_img_size(imgsz, s=32, floor=0):
     return new_size
 
 
+@reloading
 def check_imshow():
     # Check if environment supports image displays
     try:
@@ -381,6 +404,7 @@ def check_imshow():
         return False
 
 
+@reloading
 def check_suffix(file='yolov5s.pt', suffix=('.pt',), msg=''):
     # Check file(s) for acceptable suffix
     if file and suffix:
@@ -392,11 +416,13 @@ def check_suffix(file='yolov5s.pt', suffix=('.pt',), msg=''):
                 assert s in suffix, f"{msg}{f} acceptable suffix is {suffix}"
 
 
+@reloading
 def check_yaml(file, suffix=('.yaml', '.yml')):
     # Search/download YAML file (if necessary) and return path, checking suffix
     return check_file(file, suffix)
 
 
+@reloading
 def check_file(file, suffix=''):
     # Search/download file (if necessary) and return path
     check_suffix(file, suffix)  # optional
@@ -422,6 +448,7 @@ def check_file(file, suffix=''):
         return files[0]  # return file
 
 
+@reloading
 def check_font(font=FONT):
     # Download font to CONFIG_DIR if necessary
     font = Path(font)
@@ -431,6 +458,7 @@ def check_font(font=FONT):
         torch.hub.download_url_to_file(url, str(font), progress=False)
 
 
+@reloading
 def check_dataset(data, autodownload=True):
     # Download and/or unzip dataset if not found locally
     # Usage: https://github.com/ultralytics/yolov5/releases/download/v1.0/coco128_with_yaml.zip
@@ -489,6 +517,7 @@ def check_dataset(data, autodownload=True):
     return data  # dictionary
 
 
+@reloading
 def url2file(url):
     # Convert URL to filename, i.e. https://url.com/file.txt?auth -> file.txt
     url = str(Path(url)).replace(':/', '://')  # Pathlib turns :// -> :/
@@ -496,6 +525,7 @@ def url2file(url):
     return file
 
 
+@reloading
 def download(url, dir='.', unzip=True, delete=True, curl=False, threads=1):
     # Multi-threaded file download and unzip function, used in data.yaml for autodownload
     def download_one(url, dir):
@@ -530,6 +560,7 @@ def download(url, dir='.', unzip=True, delete=True, curl=False, threads=1):
             download_one(u, dir)
 
 
+@reloading
 def make_divisible(x, divisor):
     # Returns nearest x divisible by divisor
     if isinstance(divisor, torch.Tensor):
@@ -537,16 +568,19 @@ def make_divisible(x, divisor):
     return math.ceil(x / divisor) * divisor
 
 
+@reloading
 def clean_str(s):
     # Cleans a string by replacing special characters with underscore _
     return re.sub(pattern="[|@#!¡·$€%&()=?¿^*;:,¨´><+]", repl="_", string=s)
 
 
+@reloading
 def one_cycle(y1=0.0, y2=1.0, steps=100):
     # lambda function for sinusoidal ramp from y1 to y2 https://arxiv.org/pdf/1812.01187.pdf
     return lambda x: ((1 - math.cos(x * math.pi / steps)) / 2) * (y2 - y1) + y1
 
 
+@reloading
 def colorstr(*input):
     # Colors a string https://en.wikipedia.org/wiki/ANSI_escape_code, i.e.  colorstr('blue', 'hello world')
     *args, string = input if len(input) > 1 else ('blue', 'bold', input[0])  # color arguments, string
@@ -573,6 +607,7 @@ def colorstr(*input):
     return ''.join(colors[x] for x in args) + f'{string}' + colors['end']
 
 
+@reloading
 def labels_to_class_weights(labels, nc=80):
     # Get class weights (inverse frequency) from training labels
     if labels[0] is None:  # no labels loaded
@@ -592,6 +627,7 @@ def labels_to_class_weights(labels, nc=80):
     return torch.from_numpy(weights)
 
 
+@reloading
 def labels_to_image_weights(labels, nc=80, class_weights=np.ones(80)):
     # Produces image weights based on class_weights and image contents
     class_counts = np.array([np.bincount(x[:, 0].astype(np.int), minlength=nc) for x in labels])
@@ -600,6 +636,7 @@ def labels_to_image_weights(labels, nc=80, class_weights=np.ones(80)):
     return image_weights
 
 
+@reloading
 def coco80_to_coco91_class():  # converts 80-index (val2014) to 91-index (paper)
     # https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/
     # a = np.loadtxt('data/coco.names', dtype='str', delimiter='\n')
@@ -613,6 +650,7 @@ def coco80_to_coco91_class():  # converts 80-index (val2014) to 91-index (paper)
     return x
 
 
+@reloading
 def xyxy2xywh(x):
     # Convert nx4 boxes from [x1, y1, x2, y2] to [x, y, w, h] where xy1=top-left, xy2=bottom-right
     y = x.clone() if isinstance(x, torch.Tensor) else np.copy(x)
@@ -623,6 +661,7 @@ def xyxy2xywh(x):
     return y
 
 
+@reloading
 def xywh2xyxy(x):
     # Convert nx4 boxes from [x, y, w, h] to [x1, y1, x2, y2] where xy1=top-left, xy2=bottom-right
     y = x.clone() if isinstance(x, torch.Tensor) else np.copy(x)
@@ -633,6 +672,7 @@ def xywh2xyxy(x):
     return y
 
 
+@reloading
 def xywhn2xyxy(x, w=640, h=640, padw=0, padh=0):
     # Convert nx4 boxes from [x, y, w, h] normalized to [x1, y1, x2, y2] where xy1=top-left, xy2=bottom-right
     y = x.clone() if isinstance(x, torch.Tensor) else np.copy(x)
@@ -643,6 +683,7 @@ def xywhn2xyxy(x, w=640, h=640, padw=0, padh=0):
     return y
 
 
+@reloading
 def xyxy2xywhn(x, w=640, h=640, clip=False, eps=0.0):
     # Convert nx4 boxes from [x1, y1, x2, y2] to [x, y, w, h] normalized where xy1=top-left, xy2=bottom-right
     if clip:
@@ -655,6 +696,7 @@ def xyxy2xywhn(x, w=640, h=640, clip=False, eps=0.0):
     return y
 
 
+@reloading
 def xyn2xy(x, w=640, h=640, padw=0, padh=0):
     # Convert normalized segments into pixel segments, shape (n,2)
     y = x.clone() if isinstance(x, torch.Tensor) else np.copy(x)
@@ -663,6 +705,7 @@ def xyn2xy(x, w=640, h=640, padw=0, padh=0):
     return y
 
 
+@reloading
 def segment2box(segment, width=640, height=640):
     # Convert 1 segment label to 1 box label, applying inside-image constraint, i.e. (xy1, xy2, ...) to (xyxy)
     x, y = segment.T  # segment xy
@@ -671,6 +714,7 @@ def segment2box(segment, width=640, height=640):
     return np.array([x.min(), y.min(), x.max(), y.max()]) if any(x) else np.zeros((1, 4))  # xyxy
 
 
+@reloading
 def segments2boxes(segments):
     # Convert segment labels to box labels, i.e. (cls, xy1, xy2, ...) to (cls, xywh)
     boxes = []
@@ -680,6 +724,7 @@ def segments2boxes(segments):
     return xyxy2xywh(np.array(boxes))  # cls, xywh
 
 
+@reloading
 def resample_segments(segments, n=1000):
     # Up-sample an (n,2) segment
     for i, s in enumerate(segments):
@@ -689,6 +734,7 @@ def resample_segments(segments, n=1000):
     return segments
 
 
+@reloading
 def scale_coords(img1_shape, coords, img0_shape, ratio_pad=None):
     # Rescale coords (xyxy) from img1_shape to img0_shape
     if ratio_pad is None:  # calculate from img0_shape
@@ -705,6 +751,7 @@ def scale_coords(img1_shape, coords, img0_shape, ratio_pad=None):
     return coords
 
 
+@reloading
 def clip_coords(boxes, shape):
     # Clip bounding xyxy bounding boxes to image shape (height, width)
     if isinstance(boxes, torch.Tensor):  # faster individually
@@ -717,6 +764,7 @@ def clip_coords(boxes, shape):
         boxes[:, [1, 3]] = boxes[:, [1, 3]].clip(0, shape[0])  # y1, y2
 
 
+@reloading
 def non_max_suppression(prediction,
                         conf_thres=0.25,
                         iou_thres=0.45,
@@ -819,6 +867,7 @@ def non_max_suppression(prediction,
     return output
 
 
+@reloading
 def strip_optimizer(f='best.pt', s=''):  # from utils.general import *; strip_optimizer()
     # Strip optimizer from 'f' to finalize training, optionally save as 's'
     x = torch.load(f, map_location=torch.device('cpu'))
@@ -835,6 +884,7 @@ def strip_optimizer(f='best.pt', s=''):  # from utils.general import *; strip_op
     LOGGER.info(f"Optimizer stripped from {f},{(' saved as %s,' % s) if s else ''} {mb:.1f}MB")
 
 
+@reloading
 def print_mutation(results, hyp, save_dir, bucket, prefix=colorstr('evolve: ')):
     evolve_csv = save_dir / 'evolve.csv'
     evolve_yaml = save_dir / 'hyp_evolve.yaml'
@@ -875,6 +925,7 @@ def print_mutation(results, hyp, save_dir, bucket, prefix=colorstr('evolve: ')):
         os.system(f'gsutil cp {evolve_csv} {evolve_yaml} gs://{bucket}')  # upload
 
 
+@reloading
 def apply_classifier(x, model, img, im0):
     # Apply a second stage classifier to YOLO outputs
     # Example model = torchvision.models.__dict__['efficientnet_b0'](pretrained=True).to(device).eval()
@@ -911,6 +962,7 @@ def apply_classifier(x, model, img, im0):
     return x
 
 
+@reloading
 def increment_path(path, exist_ok=False, sep='', mkdir=False):
     # Increment file or directory path, i.e. runs/exp --> runs/exp{sep}2, runs/exp{sep}3, ... etc.
     path = Path(path)  # os-agnostic
@@ -930,10 +982,12 @@ def increment_path(path, exist_ok=False, sep='', mkdir=False):
 imshow_ = cv2.imshow  # copy to avoid recursion errors
 
 
+@reloading
 def imread(path):
     return cv2.imdecode(np.fromfile(path, np.uint8), cv2.IMREAD_COLOR)
 
 
+@reloading
 def imwrite(path, im):
     try:
         cv2.imencode(Path(path).suffix, im)[1].tofile(path)
@@ -942,6 +996,7 @@ def imwrite(path, im):
         return False
 
 
+@reloading
 def imshow(path, im):
     imshow_(path.encode('unicode_escape').decode(), im)
 

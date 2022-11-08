@@ -1,3 +1,4 @@
+from reloading import reloading
 import pyjom.videotoolbox as vtb
 from pyjom.commons import decorator, keywordDecorator
 import os
@@ -10,6 +11,7 @@ from lazero.filesystem import tmpdir
 
 #     collection = getMilvusVideoDeduplicationCollection(get_existing = get_existing)
 @decorator
+@reloading
 def OnlineProcessor(
     newElems,  # a generator.
     source="giphy",

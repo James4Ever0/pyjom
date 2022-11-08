@@ -92,6 +92,7 @@ def extractLinks(description, extract_bgm=True):
 from typing import Literal
 
 
+@reloading
 def videoDurationStringToSeconds(durationString, method: Literal["vtc", "basic"] = "vtc"):
     if method == "vtc":
         import vtc
@@ -120,11 +121,13 @@ def videoDurationStringToSeconds(durationString, method: Literal["vtc", "basic"]
         raise Exception("method %s does not exist" % method)
 
 
+@reloading
 def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features="lxml")
     return a.text
 
 
+@reloading
 def detectAuthorRelatedKeywords(title_tag, author_keywords):
     abandon = False
     for keyword in author_keywords:
@@ -135,6 +138,7 @@ def detectAuthorRelatedKeywords(title_tag, author_keywords):
     return abandon
 
 
+@reloading
 def getAuthorKeywords(author):
     author = author.strip()
     import jieba
@@ -145,6 +149,7 @@ def getAuthorKeywords(author):
     return author_keywords
 
 
+@reloading
 def removeAuthorRelatedTags(description_or_title, author):
     templates = ["【{}】", "@{}", "{}"]
     tags = [template.format(author) for template in templates]
@@ -153,6 +158,7 @@ def removeAuthorRelatedTags(description_or_title, author):
     return description_or_title
 
 
+@reloading
 def splitTitleTags(title, author_keywords):
     import re
 
