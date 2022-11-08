@@ -17,4 +17,4 @@ async def shitfunction():
     return shit
 
 if __name__ == "__main__":
-    someFunction()
+    someFunction(1,2,3)
