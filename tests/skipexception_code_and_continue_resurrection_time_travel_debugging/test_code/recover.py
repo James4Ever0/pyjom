@@ -3,7 +3,8 @@ from comby import Comby
 comby = Comby()
 source_old = open('new_test.py','r').read()
 
-if source_old.startswith('from reloading import reloading\n')
+if source_old.startswith('from reloading import reloading\n'):
+    source_old = source_old.lstrip()
 
 match = ':[prefix~$]def :[functionName](:[args]):'
 rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
