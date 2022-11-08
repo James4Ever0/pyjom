@@ -1,1 +1,2 @@
-semgrep --lang python --pattern 'foo($X)' --replacement 'bar($X)' --autofix --dryrun test.py
+semgrep --lang python --pattern 'foo($X)' --replacement 'bar($X)' --autofix --dryrun
+# semgrep --lang python --pattern 'foo($X)' --replacement 'bar($X)' --autofix --dryrun test.py # will not care about test2.py
