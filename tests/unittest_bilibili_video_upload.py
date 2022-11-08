@@ -4,7 +4,7 @@ from pyjom.platforms.bilibili.uploader import uploadVideo
 import uuid
 
 randomString = str(uuid.uuid4())
-
+import ffmpeg
 # how about let's generate shit?
 # use multithread uploader instead of that.
 import tempfile
