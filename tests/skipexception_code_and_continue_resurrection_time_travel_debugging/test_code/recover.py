@@ -7,7 +7,6 @@ if source_old.startswith(kw):
     source_old = source_old[len(kw):]
 
 match = ':[prefix~@reloading.*$]def :[functionName](:[args]):'
-# rewrite = ':[prefix]\n@reloading\ndef :[functionName](:[args]):'
 rewrite = 'def :[functionName](:[args]):'
 
 source_new = comby.rewrite(source_old, match, rewrite)
