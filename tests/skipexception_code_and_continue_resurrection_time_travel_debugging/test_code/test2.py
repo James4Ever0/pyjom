@@ -12,3 +12,11 @@
 #     return abcdefg # I need you to decorate this thing.
 
 import shit # just a shitty import. it won't decorate.
+
+
+@k
+def a():
+    return b
+
+def g():
+    retu
