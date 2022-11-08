@@ -7,4 +7,5 @@ def recover_and_rewrite(source_old):
     return source_new
 
 if __name__ == '__main__':
-    source_old = open('')
+    source_old = open('new_test.py','r').read()
+    
