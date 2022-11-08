@@ -1,3 +1,4 @@
+from reloading import reloading
 import json
 
 # from bs4 import BeautifulSoup
@@ -15,6 +16,7 @@ from pyjom.platforms.bilibili.utils import (
 )
 
 
+@reloading
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
     bvid = video["bvid"]
     pubdate = video["pubdate"]

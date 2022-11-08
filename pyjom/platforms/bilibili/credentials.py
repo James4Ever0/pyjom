@@ -1,3 +1,4 @@
+from reloading import reloading
 # you need to manage login/logout and credential storage.
 # first you need to get 'home' directory
 from lazero.search.api import getHomeDirectory
@@ -24,6 +25,7 @@ db = tinydb.TinyDB(dbPath)  # is this variable shared in this module?
 User = tinydb.Query()
 
 
+@reloading
 def verifyCredential(credential, returnName=True):
     try:
         name = sync(get_self_info(credential))["name"]
@@ -50,6 +52,7 @@ def verifyCredential(credential, returnName=True):
         return False
 
 
+@reloading
 def removeCredentialByDedeUserId(dedeuserid: str):
     try:
         db.remove(User.dedeuserid == dedeuserid)
@@ -69,6 +72,7 @@ from lazero.program.functools import suppressException
 
 # @skipException(defaultReturn = None, breakpoint_flag=True, debug_flag=True, global_variables=globals(), local_variables=locals()) # send_sms is not definded here. WTF?
 @suppressException(defaultReturn=None, showException=True) # trycatch based.
+@reloading
 def getCredentialViaSMS():
     phone = input("请输入手机号：")
     print("正在登录。")
@@ -81,6 +85,7 @@ def getCredentialViaSMS():
     return credential, name
 
 
+@reloading
 def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
     dataList = db.search(User.dedeuserid == dedeuserid)
     if len(dataList) != 1:
@@ -129,6 +134,7 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
             print("登陆失败")
 
 
+@reloading
 def bilibiliCredential(func):
     def wrapper(*args, dedeuserid="397424026", **kwargs):
         credential = getCredentialByDedeUserId(dedeuserid)

@@ -1,3 +1,4 @@
+from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Image augmentation functions
@@ -44,6 +45,7 @@ class Albumentations:
         return im, labels
 
 
+@reloading
 def augment_hsv(im, hgain=0.5, sgain=0.5, vgain=0.5):
     # HSV color-space augmentation
     if hgain or sgain or vgain:
@@ -60,6 +62,7 @@ def augment_hsv(im, hgain=0.5, sgain=0.5, vgain=0.5):
         cv2.cvtColor(im_hsv, cv2.COLOR_HSV2BGR, dst=im)  # no return needed
 
 
+@reloading
 def hist_equalize(im, clahe=True, bgr=False):
     # Equalize histogram on BGR image 'im' with im.shape(n,m,3) and range 0-255
     yuv = cv2.cvtColor(im, cv2.COLOR_BGR2YUV if bgr else cv2.COLOR_RGB2YUV)
@@ -71,6 +74,7 @@ def hist_equalize(im, clahe=True, bgr=False):
     return cv2.cvtColor(yuv, cv2.COLOR_YUV2BGR if bgr else cv2.COLOR_YUV2RGB)  # convert YUV image to RGB
 
 
+@reloading
 def replicate(im, labels):
     # Replicate labels
     h, w = im.shape[:2]
@@ -88,6 +92,7 @@ def replicate(im, labels):
     return im, labels
 
 
+@reloading
 def letterbox(im, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleFill=False, scaleup=True, stride=32):
     # Resize and pad image while meeting stride-multiple constraints
     shape = im.shape[:2]  # current shape [height, width]
@@ -121,6 +126,7 @@ def letterbox(im, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleF
     return im, ratio, (dw, dh)
 
 
+@reloading
 def random_perspective(im,
                        targets=(),
                        segments=(),
@@ -217,6 +223,7 @@ def random_perspective(im,
     return im, targets
 
 
+@reloading
 def copy_paste(im, labels, segments, p=0.5):
     # Implement Copy-Paste augmentation https://arxiv.org/abs/2012.07177, labels as nx5 np.array(cls, xyxy)
     n = len(segments)
@@ -241,6 +248,7 @@ def copy_paste(im, labels, segments, p=0.5):
     return im, labels, segments
 
 
+@reloading
 def cutout(im, labels, p=0.5):
     # Applies image cutout augmentation https://arxiv.org/abs/1708.04552
     if random.random() < p:
@@ -268,6 +276,7 @@ def cutout(im, labels, p=0.5):
     return labels
 
 
+@reloading
 def mixup(im, labels, im2, labels2):
     # Applies MixUp augmentation https://arxiv.org/pdf/1710.09412.pdf
     r = np.random.beta(32.0, 32.0)  # mixup ratio, alpha=beta=32.0
@@ -276,6 +285,7 @@ def mixup(im, labels, im2, labels2):
     return im, labels
 
 
+@reloading
 def box_candidates(box1, box2, wh_thr=2, ar_thr=100, area_thr=0.1, eps=1e-16):  # box1(4,n), box2(4,n)
     # Compute candidate boxes: box1 before augment, box2 after augment, wh_thr (pixels), aspect_ratio_thr, area_ratio
     w1, h1 = box1[2] - box1[0], box1[3] - box1[1]

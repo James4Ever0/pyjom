@@ -1,3 +1,4 @@
+from reloading import reloading
 from bilibili_api import video_uploader, Credential
 from pyjom.platforms.bilibili.credentials import bilibiliCredential
 import os
@@ -37,6 +38,7 @@ async def asyncVideoUploader(
 
 
 ##############################################################
+@reloading
 def videoMultithreadUploader(
     cookies_dict: dict = ...,
     filepath: str = ...,
@@ -322,6 +324,7 @@ def videoMultithreadUploader(
 # @bilibiliSync
 # no need to be sync. really?
 @bilibiliCredential  # keyword 'dedeuserid' with default value.
+@reloading
 def uploadVideo(
     credential: Credential = ...,
     # sessdata="",

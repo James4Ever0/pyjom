@@ -1,3 +1,4 @@
+from reloading import reloading
 """Utilities and tools for tracking runs with Weights & Biases."""
 
 import logging
@@ -29,10 +30,12 @@ RANK = int(os.getenv('RANK', -1))
 WANDB_ARTIFACT_PREFIX = 'wandb-artifact://'
 
 
+@reloading
 def remove_prefix(from_string, prefix=WANDB_ARTIFACT_PREFIX):
     return from_string[len(prefix):]
 
 
+@reloading
 def check_wandb_config_file(data_config_file):
     wandb_config = '_wandb.'.join(data_config_file.rsplit('.', 1))  # updated data.yaml path
     if Path(wandb_config).is_file():
@@ -40,6 +43,7 @@ def check_wandb_config_file(data_config_file):
     return data_config_file
 
 
+@reloading
 def check_wandb_dataset(data_file):
     is_trainset_wandb_artifact = False
     is_valset_wandb_artifact = False
@@ -56,6 +60,7 @@ def check_wandb_dataset(data_file):
         return check_dataset(data_file)
 
 
+@reloading
 def get_run_info(run_path):
     run_path = Path(remove_prefix(run_path, WANDB_ARTIFACT_PREFIX))
     run_id = run_path.stem
@@ -65,6 +70,7 @@ def get_run_info(run_path):
     return entity, project, run_id, model_artifact_name
 
 
+@reloading
 def check_wandb_resume(opt):
     process_wandb_config_ddp_mode(opt) if RANK not in [-1, 0] else None
     if isinstance(opt.resume, str):
@@ -79,6 +85,7 @@ def check_wandb_resume(opt):
     return None
 
 
+@reloading
 def process_wandb_config_ddp_mode(opt):
     with open(check_file(opt.data), errors='ignore') as f:
         data_dict = yaml.safe_load(f)  # data dict

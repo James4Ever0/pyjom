@@ -1,3 +1,4 @@
+from reloading import reloading
 import types
 from bilibili_api import sync
 
@@ -7,6 +8,7 @@ from lazero.utils.logger import sprint
 
 
 # wtf is async generator type?
+@reloading
 def bilibiliSync(func):
     def wrapper(*args, **kwargs):
         coroutineMaybe = func(*args, **kwargs)
@@ -22,16 +24,19 @@ def bilibiliSync(func):
 # from pyjom.platforms.bilibili.utils import generatorToList, linkFixer,traceError, extractLinks,videoDurationStringToSeconds,getAuthorKeywords,clearHtmlTags,splitTitleTags,removeAuthorRelatedTags
 
 
+@reloading
 def generatorToList(generator):
     return [x for x in generator]
 
 
+@reloading
 def linkFixer(link, prefix="http:"):
     if link.startswith("//"):
         return prefix + link
     return link
 
 
+@reloading
 def traceError(errorMsg: str = "error!", _breakpoint: bool = False):
     import traceback
 
@@ -41,6 +46,7 @@ def traceError(errorMsg: str = "error!", _breakpoint: bool = False):
         return breakpoint()
 
 
+@reloading
 def extractLinks(description, extract_bgm=True):
     """Extract and remove links in description"""
     import re

@@ -1,3 +1,4 @@
+from reloading import reloading
 from pyjom.commons import *
 import cv2
 from pyjom.modules.topicGenerator.onlineTopicGenerator import getMetaTopicString
@@ -6,6 +7,7 @@ from lazero.utils.tools import flattenUnhashableList  # one of my classic method
 from lazero.utils.logger import sprint
 
 
+@reloading
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
     value = False
     for core_topic in core_topic_set:
@@ -20,6 +22,7 @@ def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
     return value
 
 
+@reloading
 def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
     newTitleList = []
     for title in titleList:
@@ -33,6 +36,7 @@ def filterTitleListWithCoreTopicSet(titleList, core_topic_set, debug=False):
     return newTitleList
 
 
+@reloading
 def randomChoiceTagList(
     tag_list, selected_tag_groups=3, selected_tag_per_group=2, pop=True
 ):
@@ -57,6 +61,7 @@ from typing import Literal
 from pyjom.imagetoolbox import resizeImageWithPadding
 
 
+@reloading
 def getCoverTargetFromCoverListDefault(
     cover_list,
     dog_or_cat_original,
@@ -114,6 +119,7 @@ def getCoverTargetFromCoverListDefault(
     return cover_target
 
 
+@reloading
 def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
     from pyjom.imagetoolbox import (
         # imageLoader,
@@ -138,6 +144,7 @@ BSP = search.bilibiliSearchParams()
 import random
 
 
+@reloading
 def getBilibiliPostMetadata(
     sleepTime=2,
     getMetatopic={},
@@ -446,6 +453,7 @@ def getBilibiliPostMetadata(
             traceError("error when fetching metatopic")
 
 
+@reloading
 def getBilibiliPostMetadataForDogCat(
     dog_or_cat: Literal["dog", "cat"] = "dog",
     bgmCacheSetName="bilibili_cached_bgm_set",
