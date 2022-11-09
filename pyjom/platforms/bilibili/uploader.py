@@ -432,8 +432,9 @@ def uploadVideo(
         )
     print("multithread?", multithread)
     print("upload video result:", result)
-
-    assert 'aid' in result.keys():
+    try:
+        assert 'aid' in result.keys()
+        assert 'bvid' in result.keys()
         raise Exception("error: no upload result obtained:", result)
     return result
 
