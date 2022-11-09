@@ -1,4 +1,5 @@
-from codemod_redbaron.pasta_test import recover_and_rewrite
+
+from pasta_test import recover_and_rewrite
 
 if __name__ == "__main__":
     import os
