@@ -333,7 +333,7 @@ def videoMultithreadUploader(
     # append new events?
     # planning using two jsons. one for credential, one for video details.
     # get picture.
-    def getCookieString(cookies_dict):
+    def getCookieStringForMultithread(cookies_dict):
         cookies = cookies_dict
         mustcook = ["DedeUserID", "bili_jct"]
         cookie_string = ""
@@ -346,7 +346,7 @@ def videoMultithreadUploader(
             if key is not None and value is not None:
                 cookie_string += key + "=" + value + "; "
         cookie_string = cookie_string[:-2]
-    cookie_string = getCookieString(cookies_dict)
+    cookie_string = getCookieStringForMultithread(cookies_dict)
     # while True:
     try:
         uper = MultithreadUploader(cookie_string)
