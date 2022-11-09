@@ -4,6 +4,7 @@ import ast
 
 tree=pasta.parse(c)
 # print(dir(tree))
+for i in range(len(tree)):
 f=tree.body[0]
 # print(dir(f))
 # del f.decorator_list[0]
