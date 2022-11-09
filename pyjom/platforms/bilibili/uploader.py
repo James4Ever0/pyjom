@@ -419,7 +419,7 @@ def uploadVideo(
         exception, mresult = videoMultithreadUploader(cookie_dict, videoPath, cover_path, meta)
         if exception:
             raise Exception('videoMultithreadUploader error: %s' % exception)
-        code
+        code, message = 
     else:
         result = asyncVideoUploader(
             videoPath, title, description, meta, credential, cover_path
