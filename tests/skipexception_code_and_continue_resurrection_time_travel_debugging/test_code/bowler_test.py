@@ -21,4 +21,4 @@ pattern="""(
 
 q = bowler.Query(src)
 f = q.select(pattern)
-print(f)
+print(f, dir(f))
