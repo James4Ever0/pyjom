@@ -2,9 +2,10 @@ import pasta
 import ast
 
 
+def 
 tree=pasta.parse(c)
 # print(dir(tree))
-for i in range(len(tree)):
+for i in range(len(tree.body)):
     f = tree.body[i]
     if type(f) == ast.FunctionDef:
         removeList = []
