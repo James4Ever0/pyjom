@@ -246,7 +246,15 @@ def videoMultithreadUploader(
                 }
                 response = self.session.post(url, data=data)
                 return response.json()["data"]["url"]
-
+        def upload_video_and_cover(self, filepath, cover_path):
+            # 上传文件, 获取上传信息
+            upload_info = self._upload(filepath)
+            if not upload_info:
+                ## fuck?
+                print("upload failed?")
+                return
+            # 获取图片链接
+            cover_url = self._cover_up(cover_path) if cover_path else ""
         def upload(
             self,
             filepath: str,
