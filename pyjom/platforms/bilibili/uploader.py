@@ -39,14 +39,6 @@ async def asyncVideoUploader(
     # return result["bvid"]  # choose to be in this way?
 
 
-##############################################################
-@reloading
-def videoMultithreadUploader(
-    cookies_dict: dict = ...,
-    filepath: str = ...,
-    coverpath: str = ...,
-    metadata: dict = ...,
-):
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
     import os
@@ -60,6 +52,14 @@ def videoMultithreadUploader(
     from threading import Event
     import copy
     import traceback
+##############################################################
+@reloading
+def videoMultithreadUploader(
+    cookies_dict: dict = ...,
+    filepath: str = ...,
+    coverpath: str = ...,
+    metadata: dict = ...,
+):
 
     # append new events?
     # planning using two jsons. one for credential, one for video details.
