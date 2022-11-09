@@ -20,9 +20,9 @@ def recover_and_rewrite(c):
                         cached = True
                 elif type(elem) == ast.Call:
                     # breakpoint()
-                    if elem.func) == 
-                    if "lru_cache" in elem.func.id:
-                        cached = True
+                    if type(elem.func) == ast.Name:
+                        if "lru_cache" in elem.func.id:
+                            cached = True
             for index in removeList:
                 del f.decorator_list[index]
             # if len(f.decorator_list) == 0: # are you sure this will be ok?
