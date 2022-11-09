@@ -8,17 +8,18 @@ randomString = str(uuid.uuid4())
 # how about let's generate shit?
 # use multithread uploader instead of that.
 import tempfile
+
 # import random
 duration = 5
-with tempfile.NamedTemporaryFile(suffix='.jpeg') as pic:
+with tempfile.NamedTemporaryFile(suffix=".jpeg") as pic:
     cover_path = pic.name
     with tempfile.NamedTemporaryFile(suffix=".mp4") as f:
         videoPath = f.name
         command = f"""ffmpeg -y -f lavfi -i nullsrc=s=1920x1080 -filter_complex "geq=random(1)*255:128:128;aevalsrc=-2+random(0)" -t {duration:.2f} {videoPath}"""
         os.system(command)
-        picgen_command=f"""ffmpeg -y -i {videoPath} -ss 1 {cover_path}"""
+        picgen_command = f"""ffmpeg -y -i {videoPath} -ss 1 {cover_path}"""
         os.system(picgen_command)
-        print('uploading video')
+        print("uploading video")
         uploadVideo(
             description="test video",
             dynamic="nothing",
