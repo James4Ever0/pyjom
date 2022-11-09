@@ -130,7 +130,10 @@ def videoMultithreadUploader(
 
             print("UPLOAD INFO:", upload_info, file=sys.stderr)
             return upload_url, upload_info, upload_session
-        def _multithread_upload(self, filename, filesize, upload_url,upload_info, upload_session):
+
+        def _multithread_upload(
+            self, filename, filesize, upload_url, upload_info, upload_session
+        ):
             # 3.分块上传文件
             CHUNK_SIZE = 4 * 1024 * 1024
             total_chunks = math.ceil(filesize * 1.0 / CHUNK_SIZE)
@@ -199,9 +202,13 @@ def videoMultithreadUploader(
 
             filename = os.path.basename(filepath)
             filesize = os.path.getsize(filepath)
-            upload_url, upload_info, upload_session= self._preupload(filename, filesize)
+            upload_url, upload_info, upload_session = self._preupload(
+                filename, filesize
+            )
             # 4.标记本次上传完成
-            parts_info = self._multithread_upload(filename, filesize, upload_url,upload_info, upload_session)
+            parts_info = self._multithread_upload(
+                filename, filesize, upload_url, upload_info, upload_session
+            )
             params = {
                 "output": "json",
                 "name": filename,
@@ -210,9 +217,11 @@ def videoMultithreadUploader(
                 "biz_id": upload_info["biz_id"],
             }
             response = upload_session.post(upload_url, params=params, data=parts_info)
-            print("UPLOAD RESULT:", response.text, file=sys.stderr) # here we do not have the result.
+            print(
+                "UPLOAD RESULT:", response.text, file=sys.stderr
+            )  # here we do not have the result.
 
-            return upload_info # still, not the bvid thing we want.
+            return upload_info  # still, not the bvid thing we want.
 
         def _cover_up(self, image_path):
             """上传图片并获取图片链接"""
