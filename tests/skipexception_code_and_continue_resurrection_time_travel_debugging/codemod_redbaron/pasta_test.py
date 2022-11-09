@@ -1,12 +1,11 @@
-c=open("test2.py","r").read()
 
 import pasta
+import ast
 
 tree=pasta.parse(c)
-print(dir(tree))
+# print(dir(tree))
 f=tree.body[0]
 # print(dir(f))
-import ast
 del f.decorator_list[0]
 f.decorator_list.append(ast.Name('newdec')) #seems good?
 # ast.FunctionDef and ast.AsyncFunctionDef are different.
