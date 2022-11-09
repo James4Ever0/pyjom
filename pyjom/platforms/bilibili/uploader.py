@@ -423,7 +423,7 @@ def uploadVideo(
         assert code == 0 
         assert message == '0'
         except:
-            raise Exception('videoMultithreadUploader error:
+            raise Exception('videoMultithreadUploader error: invalid response:', mresult)
     else:
         result = asyncVideoUploader(
             videoPath, title, description, meta, credential, cover_path
