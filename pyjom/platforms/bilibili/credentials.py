@@ -135,7 +135,7 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
             print("登陆失败")
 
 
-@reloading
+# @reloading
 def bilibiliCredential(func):
     def wrapper(*args, dedeuserid="397424026", **kwargs):
         credential = getCredentialByDedeUserId(dedeuserid)
