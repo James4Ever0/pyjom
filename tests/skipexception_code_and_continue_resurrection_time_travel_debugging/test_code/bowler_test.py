@@ -20,7 +20,7 @@ pattern="""(
 )"""
 
 q = bowler.Query(src)
-f = q.select(pattern).is_def().diff(interactive=True)
+f = q.select(pattern).is_def().dump()
 print(f, dir(f))
 # for x in f:
 #     print(x)
