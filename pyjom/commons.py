@@ -36,7 +36,6 @@ def getJSTimeStamp(): return int(time.time()*1000)
 from pymilvus import connections
 
 @lru_cache(maxsize=1)
-@reloading
 def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
     connection = connections.connect(
         alias=alias, host=host, port=port
@@ -49,7 +48,6 @@ import redis
 
 
 @lru_cache(maxsize=1)
-@reloading
 def getRedisConnection(host="localhost", port=commonRedisPort):
     connection = redis.Redis(host=host, port=port)
     return connection
@@ -298,7 +296,6 @@ def getFileExtensionToMeaningDictFromString(inputString):
 
 
 @lru_cache(maxsize=1)
-@reloading
 def getMediaFileExtensionToMeaningDict():
     # no input needed.
     videoExtensions = """MP4 or MPEG4 video file - .mp4
@@ -875,7 +872,6 @@ yolov5_model = None
 
 
 @lru_cache(maxsize=1)
-@reloading
 def configYolov5(model="yolov5s"):
     global yolov5_model  # not the same
     if yolov5_model == None:

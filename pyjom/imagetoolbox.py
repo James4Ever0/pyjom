@@ -123,7 +123,6 @@ def getFourCorners(x, y, defaultWidth, defaultHeight):
 
 
 @lru_cache(maxsize=1)
-@reloading
 def getEasyOCRReader(langs: tuple, gpu=True, recognizer=False):
     import easyocr
 
@@ -517,14 +516,12 @@ from functools import lru_cache
 
 
 @lru_cache(maxsize=1)
-@reloading
 def getPaddleResnet50AnimalsClassifier():
     classifier = hub.Module(name="resnet50_vd_animals")
     return classifier
 
 
 @lru_cache(maxsize=3)
-@reloading
 def labelFileReader(filename):
     with open(filename, "r") as f:
         content = f.read()
