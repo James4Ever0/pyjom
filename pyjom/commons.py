@@ -998,7 +998,7 @@ def keywordDecorator(func, **kwargs2):
                 return func(*margs, **(kwargs|kwargs2)), ".".join(
                     [__name__, func.__name__]
                 )
-        return func(*margs, **kwargs, **kwargs2)
+        return func(*margs, **(kwargs|kwargs2))
 
     return mytarget
 
