@@ -127,7 +127,7 @@ def videoMultithreadUploader(
 
             # 2.获取本次上传的upload_id
             response = upload_session.post(upload_url + "?uploads&output=json")
-            upload_info["upload_id"] = response.json()["upload_id"]
+            upload_info["upload_id"] = response.json()["upload_id"] # here you have upload_id
 
             print("UPLOAD INFO:", upload_info, file=sys.stderr)
 
