@@ -16,10 +16,10 @@ def recover_and_rewrite(c):
                     if elem.id == 'reloading':
                         removeList.append(index)
                     elif elem.id == 'lru_cache':
-                        
+                        cached=True
                 elif type(elem) == ast.Call:
                     if elem.func.id == 'lru_cache':
-                        
+                        cached=True
             for index in removeList:
                 del f.decorator_list[index]
             # if len(f.decorator_list) == 0: # are you sure this will be ok?
