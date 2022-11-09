@@ -419,9 +419,10 @@ def uploadVideo(
         exception, mresult = videoMultithreadUploader(cookie_dict, videoPath, cover_path, meta)
         if exception:
             raise Exception('videoMultithreadUploader error: %s' % exception)
-        code, message = mresult.get('code'), mresult.get('message')
-        assert code == 0 
-        assert message == '0'
+        try:
+            code, message = mresult.get('code'), mresult.get('message')
+            assert code == 0 
+            assert message == '0'
         except:
             raise Exception('videoMultithreadUploader error: invalid response:', mresult)
     else:
