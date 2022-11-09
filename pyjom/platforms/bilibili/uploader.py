@@ -307,7 +307,8 @@ def videoMultithreadUploader(
     assert "bili_jct" in cookies.keys()
     # breakpoint()
     for key, value in cookies.items():  # oh shit maybe i know it.
-        cookie_string += key + "=" + value + "; "
+        if key is not None and value is not None:
+            cookie_string += key + "=" + value + "; "
     cookie_string = cookie_string[:-2]
     # while True:
     try:
