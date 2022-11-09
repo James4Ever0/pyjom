@@ -53,11 +53,8 @@ def videoMultithreadUploader(
     import re
     import sys
     import math
-    import time
-    import json
     import base64
     import requests
-    import argparse
     from requests.adapters import HTTPAdapter
     import threading
     from threading import Event
