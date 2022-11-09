@@ -435,6 +435,7 @@ def uploadVideo(
     try:
         assert 'aid' in result.keys()
         assert 'bvid' in result.keys()
+    except:
         raise Exception("error: no upload result obtained:", result)
     return result
 
