@@ -67,7 +67,7 @@ def videoMultithreadUploader(
     # append new events?
     # planning using two jsons. one for credential, one for video details.
     # get picture.
-    class Uploader(object):
+    class MultithreadUploader(object):
         ## what is the cookie string look like?
         def __init__(self, cookie_string):
             # TODO: 增加登录接口使用账号密码登陆
