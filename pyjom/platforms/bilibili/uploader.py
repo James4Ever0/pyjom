@@ -52,19 +52,8 @@ import threading
 from threading import Event
 import copy
 import traceback
-##############################################################
-@reloading
-def videoMultithreadUploader(
-    cookies_dict: dict = ...,
-    filepath: str = ...,
-    coverpath: str = ...,
-    metadata: dict = ...,
-):
 
-    # append new events?
-    # planning using two jsons. one for credential, one for video details.
-    # get picture.
-    class MultithreadUploader(object):
+class MultithreadUploader(object):
         ## what is the cookie string look like?
         def __init__(self, cookie_string):
             # TODO: 增加登录接口使用账号密码登陆
@@ -332,6 +321,19 @@ def videoMultithreadUploader(
             response_json = self.postupload(upload_info, cover_url, metadata)
             return response_json
 
+##############################################################
+@reloading
+def videoMultithreadUploader(
+    cookies_dict: dict = ...,
+    filepath: str = ...,
+    coverpath: str = ...,
+    metadata: dict = ...,
+):
+
+    # append new events?
+    # planning using two jsons. one for credential, one for video details.
+    # get picture.
+    
     cookies = cookies_dict
     mustcook = ["DedeUserID", "bili_jct"]
     cookie_string = ""
