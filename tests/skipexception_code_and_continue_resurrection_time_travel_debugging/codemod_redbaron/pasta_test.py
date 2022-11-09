@@ -17,7 +17,7 @@ def recover_and_rewrite(c):
                         removeList.append(index)
                     elif elem.id == ''
                 elif type(elem) == ast.Call:
-                    elem.func
+                    if elem.func.id == 'lru_cache'
             for index in removeList:
                 del f.decorator_list[index]
             # if len(f.decorator_list) == 0: # are you sure this will be ok?
