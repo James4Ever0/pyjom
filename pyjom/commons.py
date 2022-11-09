@@ -995,7 +995,7 @@ def keywordDecorator(func, **kwargs2):
     def mytarget(*margs, **kwargs):
         if "trace_source" in kwargs.keys():
             if kwargs2["trace_source"]:
-                return func(*margs, **kwargs, **kwargs2), ".".join(
+                return func(*margs, **(kwargs|kwargs2)), ".".join(
                     [__name__, func.__name__]
                 )
         return func(*margs, **kwargs, **kwargs2)
