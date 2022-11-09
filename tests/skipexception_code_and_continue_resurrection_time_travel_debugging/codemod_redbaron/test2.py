@@ -13,3 +13,6 @@ def a():
 def b():
     def c():
         fuck
+
+async def shit():
+    ...
