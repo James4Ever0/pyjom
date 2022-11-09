@@ -321,22 +321,22 @@ class MultithreadUploader(object):
         response_json = self.postupload(upload_info, cover_url, metadata)
         return response_json
 
-
-    def getCookieStringFromCookieDict(cookies_dict,mustcook = ["DedeUserID", "bili_jct"]):
-        cookies = cookies_dict
-        cookie_string = ""
-        for x in mustcook:
-            assert x in cookies.keys()
-        # ckeys = mustcook + [x for x in cookies.keys() if x not in mustcook]
-        # assert "bili_jct" in cookies.keys()
-        for key in mustcook:
-            assert key in cookies.keys()
-        # breakpoint()
-        for key, value in cookies.items():  # oh shit maybe i know it.
-            if key is not None and value is not None:
-                cookie_string += key + "=" + value + "; "
-        cookie_string = cookie_string[:-2]
-        return cookie_string
+@reloading
+def getCookieStringFromCookieDict(cookies_dict,mustcook = ["DedeUserID", "bili_jct"]):
+    cookies = cookies_dict
+    cookie_string = ""
+    for x in mustcook:
+        assert x in cookies.keys()
+    # ckeys = mustcook + [x for x in cookies.keys() if x not in mustcook]
+    # assert "bili_jct" in cookies.keys()
+    for key in mustcook:
+        assert key in cookies.keys()
+    # breakpoint()
+    for key, value in cookies.items():  # oh shit maybe i know it.
+        if key is not None and value is not None:
+            cookie_string += key + "=" + value + "; "
+    cookie_string = cookie_string[:-2]
+    return cookie_string
 
 ##############################################################
 @reloading
