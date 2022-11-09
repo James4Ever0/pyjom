@@ -285,7 +285,6 @@ def videoMultithreadUploader(
             # 获取图片链接
             cover_url = self._cover_up(cover_path) if cover_path else ""
             # 版权判断, 转载无版权
-            copyright = 2 if source else 1
             # tag设置
             if isinstance(tag, list):
                 tag = ",".join(tag)
