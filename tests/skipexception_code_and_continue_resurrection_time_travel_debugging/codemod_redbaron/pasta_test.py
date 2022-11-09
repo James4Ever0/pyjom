@@ -7,11 +7,14 @@ tree=pasta.parse(c)
 for i in range(len(tree)):
     f = tree.body[i]
     if type(f) == ast.FunctionDef:
-        
-    # f=tree.body[0]
-    # print(dir(f))
-    # del f.decorator_list[0]
-    # f.decorator_list.append(ast.Name('newdec')) #seems good?
+        removeList = []
+        for index, elem in f.decorator_list:
+            if type(elem) == ast.Name:
+                if elem.id == 'reloading':
+                    removeList.append(index)
+        for index in removeList:
+            del f.decorator_list[index]
+        f.decorator_list.append(ast.Name('reloading')) #seems good?
     # ast.FunctionDef and ast.AsyncFunctionDef are different.
     dec = f.decorator_list
     # print(dec)
