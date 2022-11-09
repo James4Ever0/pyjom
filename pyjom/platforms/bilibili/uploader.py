@@ -10,6 +10,7 @@ from pyjom.platforms.bilibili.utils import bilibiliSync
 # recall the order of applying decorators
 # WTF is the order?
 
+
 @bilibiliSync
 async def asyncVideoUploader(
     videoPath, title, description, meta, credential, cover_path
@@ -89,7 +90,7 @@ def videoMultithreadUploader(
             self.session.headers[
                 "Referer"
             ] = "https://space.bilibili.com/{mid}/#!/".format(mid=self.mid)
-            self.upload_id =None
+            self.upload_id = None
 
         def _upload(self, filepath):
             """执行上传文件操作"""
@@ -129,8 +130,10 @@ def videoMultithreadUploader(
 
             # 2.获取本次上传的upload_id
             response = upload_session.post(upload_url + "?uploads&output=json")
-            upload_info["upload_id"] = response.json()["upload_id"] # here you have upload_id
-            self.upload_id = upload_info['upload_id']
+            upload_info["upload_id"] = response.json()[
+                "upload_id"
+            ]  # here you have upload_id
+            self.upload_id = upload_info["upload_id"]
 
             print("UPLOAD INFO:", upload_info, file=sys.stderr)
 
@@ -211,13 +214,14 @@ def videoMultithreadUploader(
                 return ""
             import tempfile
             import cv2
-            with tempfile.NamedTemporaryFile(suffix='.jpg') as f:
+
+            with tempfile.NamedTemporaryFile(suffix=".jpg") as f:
                 jpeg_image_path = f.name
                 image = cv2.imread(image_path)
-                cv2.imwrite(jpeg_image_path,image)
+                cv2.imwrite(jpeg_image_path, image)
                 fp = open(jpeg_image_path, "rb")
                 encode_data = base64.b64encode(fp.read())
-            # warning. forced to use jpeg.
+                # warning. forced to use jpeg.
                 url = "https://member.bilibili.com/x/vu/web/cover/up"
                 data = {
                     "cover": b"data:image/jpeg;base64," + encode_data,
@@ -383,5 +387,6 @@ def uploadVideo(
     print("multithread?", multithread)
     print("upload video result:", result)
     return result
+
 
 # host your web application online, then make money through it!
