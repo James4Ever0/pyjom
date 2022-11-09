@@ -10,6 +10,7 @@ def recover_and_rewrite(c):
     for i in range(len(tree.body)):
         f = tree.body[i]
         if type(f) == ast.FunctionDef:
+            cached=False
             removeList = []
             for index, elem in enumerate(f.decorator_list):
                 if type(elem) == ast.Name:
