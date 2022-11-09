@@ -332,7 +332,7 @@ def videoMultithreadUploader(
             if upload_info == {}:
                 # something went wrong.
                 return
-            response_json = self.
+            response_json = self.postupload(upload_info, cover_url, metadata)
 
     cookies = cookies_dict
     mustcook = ["DedeUserID", "bili_jct"]
