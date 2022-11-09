@@ -17,4 +17,5 @@ def b():
 async def shit():
     ...
 
-with ()
+with (re() as a, re2() as b):
+    print('fuck')
