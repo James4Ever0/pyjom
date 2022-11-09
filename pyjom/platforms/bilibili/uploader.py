@@ -206,7 +206,7 @@ def videoMultithreadUploader(
             response = upload_session.post(upload_url, params=params, data=parts_info)
             print("UPLOAD RESULT:", response.text, file=sys.stderr)
 
-            return upload_info
+            return upload_info # still, not the bvid thing we want.
 
         def _cover_up(self, image_path):
             """上传图片并获取图片链接"""
