@@ -135,12 +135,12 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
             print("登陆失败")
 
 
-# @reloading
+@reloading
 def bilibiliCredential(func):
     def wrapper(*args, dedeuserid="397424026", **kwargs):
         credential = getCredentialByDedeUserId(dedeuserid)
         if type(kwargs) != dict:
             kwargs = {}
-        return func(*args, **(kwargs | {credential: credential}))
+        return func(*args, **(kwargs | {'credential': credential}))
 
     return wrapper
