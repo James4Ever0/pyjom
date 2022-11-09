@@ -2,7 +2,7 @@ from comby import Comby
 
 comby = Comby()
 def recover(source_old):
-    kws = 'from reloading import reloading'
+    kws = ['from reloading import reloading', @reloading"
     # source_old = source_old.replace(kw,"") # obliterate this thing. shall we?
 
     match = ':[prefix~@reloading.*$]def :[functionName](:[args]):'
