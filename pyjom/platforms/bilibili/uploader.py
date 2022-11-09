@@ -253,7 +253,7 @@ def videoMultithreadUploader(
             cover_path: str,
             metadata: dict,
         ):
-
+            self.upload_video_and_cover(filepath, cover_path)
             # 上传文件, 获取上传信息
             upload_info = self._upload(filepath)
             if not upload_info:
@@ -262,7 +262,7 @@ def videoMultithreadUploader(
                 return
             # 获取图片链接
             cover_url = self._cover_up(cover_path) if cover_path else ""
-            
+
             title = ""
             tid = 0
             tag = ""
