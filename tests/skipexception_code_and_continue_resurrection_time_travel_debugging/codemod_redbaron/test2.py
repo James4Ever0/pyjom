@@ -17,6 +17,6 @@ def b():
 async def shit():
     ...
 
-# not supported anywhere. not redbaron, not baron.
+# not supported anywhere. not redbaron, not pasta.
 # with (re() as a, re2() as b):
 #     print(fuck)
