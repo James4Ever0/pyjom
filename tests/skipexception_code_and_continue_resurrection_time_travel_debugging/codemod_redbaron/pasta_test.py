@@ -1,7 +1,6 @@
 
 import pasta
 import ast
-c=open("test2.py","r").read()
 
 tree=pasta.parse(c)
 # print(dir(tree))
@@ -17,3 +16,6 @@ c0=pasta.dump(tree)
 print("___")
 print(c0)
 # ast.FunctionDef 
+
+if __name__ == "__main__":
+    c=open("test2.py","r").read()
