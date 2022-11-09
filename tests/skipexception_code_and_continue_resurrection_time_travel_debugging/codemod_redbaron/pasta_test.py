@@ -15,9 +15,11 @@ def recover_and_rewrite(c):
                 if type(elem) == ast.Name:
                     if elem.id == 'reloading':
                         removeList.append(index)
-                    elif elem.id == ''
+                    elif elem.id == 'lru_cache':
+                        
                 elif type(elem) == ast.Call:
-                    if elem.func.id == 'lru_cache'
+                    if elem.func.id == 'lru_cache':
+                        
             for index in removeList:
                 del f.decorator_list[index]
             # if len(f.decorator_list) == 0: # are you sure this will be ok?
