@@ -266,6 +266,7 @@ def videoMultithreadUploader(
         ):
             upload_info, cover_url = self.upload_video_and_cover(filepath, cover_path)
             if upload_info == {}:
+                # something went wrong.
                 return
 
             title = ""
