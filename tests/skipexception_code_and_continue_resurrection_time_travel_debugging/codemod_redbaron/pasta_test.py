@@ -8,5 +8,5 @@ f=tree.body[0]
 print(dir(f))
 print(f.decorator_list)
 #c0=pasta.dump(tree)
-
+print(f)
 #print(c0)
