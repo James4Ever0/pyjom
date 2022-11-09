@@ -100,42 +100,7 @@ def videoMultithreadUploader(
 
             filename = os.path.basename(filepath)
             filesize = os.path.getsize(filepath)
-
-            # 1.获取本次上传所需信息
-            preupload_url = "https://member.bilibili.com/preupload"
-            params = {
-                "os": "upos",
-                "r": "upos",
-                "ssl": "0",
-                "name": filename,
-                "size": filesize,
-                "upcdn": self.cdn,
-                "profile": self.profile,
-            }
-            response = self.session.get(preupload_url, params=params)
-            upload_info = response.json()
-
-            # 本次上传bilibili端文件名
-            upload_info["bili_filename"] = (
-                upload_info["upos_uri"].split("/")[-1].split(".")[0]
-            )
-            # 本次上传url
-            endpoint = "http:%s/" % upload_info["endpoint"]
-            upload_url = re.sub(r"^upos://", endpoint, upload_info["upos_uri"])
-            print("UPLOAD URL:", upload_url, file=sys.stderr)
-            # 本次上传session
-            upload_session = requests.session()
-            upload_session.mount("http://", HTTPAdapter(max_retries=self.MAX_RETRYS))
-            upload_session.headers["X-Upos-Auth"] = upload_info["auth"]
-
-            # 2.获取本次上传的upload_id
-            response = upload_session.post(upload_url + "?uploads&output=json")
-            upload_info["upload_id"] = response.json()[
-                "upload_id"
-            ]  # here you have upload_id
-            self.upload_id = upload_info["upload_id"]
-
-            print("UPLOAD INFO:", upload_info, file=sys.stderr)
+            
 
             # 3.分块上传文件
             CHUNK_SIZE = 4 * 1024 * 1024
