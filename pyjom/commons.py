@@ -929,7 +929,7 @@ def renderTemplate(template, template_args, enable_json=True):
 @reloading
 def configDecorator(func, config="config.json"):
     def mytarget(*args, **kwargs):
-        return func(*args, **(kwargs, config=config))
+        return func(*args, **(kwargs|{"config":config})
 
     return mytarget
 
