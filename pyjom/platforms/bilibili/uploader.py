@@ -253,6 +253,16 @@ def videoMultithreadUploader(
             cover_path: str,
             metadata: dict,
         ):
+
+            # 上传文件, 获取上传信息
+            upload_info = self._upload(filepath)
+            if not upload_info:
+                ## fuck?
+                print("upload failed?")
+                return
+            # 获取图片链接
+            cover_url = self._cover_up(cover_path) if cover_path else ""
+            
             title = ""
             tid = 0
             tag = ""
@@ -278,14 +288,6 @@ def videoMultithreadUploader(
             # 1.增加多P上传
             # 2.对已投稿视频进行删改, 包括删除投稿，修改信息，加P删P等
 
-            # 上传文件, 获取上传信息
-            upload_info = self._upload(filepath)
-            if not upload_info:
-                ## fuck?
-                print("upload failed?")
-                return
-            # 获取图片链接
-            cover_url = self._cover_up(cover_path) if cover_path else ""
 
             # 设置视频基本信息
             params = {
