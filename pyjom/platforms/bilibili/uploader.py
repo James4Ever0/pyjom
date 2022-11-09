@@ -312,7 +312,7 @@ def videoMultithreadUploader(
             if source:
                 del params["no_reprint"]
             # tag设置
-            if isinstance(parmastag, list):
+            if isinstance(parmas.get('tag'), list):
                 tag = ",".join(tag)
             # if mission_id is None:
             #     del params["mission_id"]
