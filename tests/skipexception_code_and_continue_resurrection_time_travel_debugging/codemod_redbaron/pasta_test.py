@@ -11,7 +11,7 @@ def recover_and_rewrite(c):
         f = tree.body[i]
         if type(f) == ast.FunctionDef:
             removeList = []
-            for index, elem in f.decorator_list:
+            for index, elem in enumerate(f.decorator_list):
                 if type(elem) == ast.Name:
                     if elem.id == 'reloading':
                         removeList.append(index)
@@ -23,4 +23,5 @@ def recover_and_rewrite(c):
 
 if __name__ == "__main__":
     c=open("test2.py","r").read()
-    
+    c0 = recover_and_rewrite(c)
+    print(c0)
