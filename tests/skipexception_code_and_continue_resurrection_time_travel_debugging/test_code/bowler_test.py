@@ -21,6 +21,6 @@ pattern="""(
 
 q = bowler.Query(src)
 f = q.select(pattern)
-# print(f, dir(f))
-for x in f:
-    print(x)
+print(f, dir(f))
+# for x in f:
+#     print(x)
