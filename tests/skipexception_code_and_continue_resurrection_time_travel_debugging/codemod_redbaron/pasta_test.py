@@ -16,3 +16,4 @@ c0=pasta.dump(tree)
 # print(dec[1].id) # now this is not a name object. it is a call object.
 print("___")
 print(c0)
+# ast.FunctionDef 
