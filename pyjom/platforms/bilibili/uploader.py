@@ -55,7 +55,7 @@ import traceback
 
 
 # you better embed it inside your function? what a creep?
-# but that will make it impossible to 
+# but that will make it impossible to test against other shits.
 class MultithreadUploader(object):
     ## what is the cookie string look like?
     def __init__(self, cookie_string):
