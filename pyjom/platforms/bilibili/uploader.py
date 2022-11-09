@@ -190,7 +190,7 @@ class MultithreadUploader(object):
 
         filename = os.path.basename(filepath)
         filesize = os.path.getsize(filepath)
-        upload_url, upload_info, upload_session = self._preupload(filename, filesize)
+        upload_url, upload_info, upload_session = self._preupload(filepath, filesize)
         # 4.标记本次上传完成
         parts_info = self._multithread_upload(
             filename, filesize, upload_url, upload_info, upload_session
