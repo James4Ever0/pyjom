@@ -2,7 +2,8 @@ import pasta
 import ast
 
 
-def 
+def recover_and_rewrite(c):
+    c = c.replace("")
 tree=pasta.parse(c)
 # print(dir(tree))
 for i in range(len(tree.body)):
