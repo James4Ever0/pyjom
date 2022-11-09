@@ -1,4 +1,4 @@
-t=open("test2.py","r").read()
+t=open("/root/Desktop/works/pyjom/pyjom/platforms/bilibili/postMetadata.py","r").read()
 
 import redbaron
 from create_decnode import getd
