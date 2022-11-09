@@ -21,7 +21,7 @@ if __name__ == "__main__":
             except:
                 import traceback
                 traceback.print_exc()
-                print('pasta failed to process the code at path: %s' % path
+                print('pasta failed to process the code at path: %s' % path)
                 source_new = rar2(source_old)
         with open(path, "w+") as f:
             f.write(source_new)
