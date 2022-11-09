@@ -1,4 +1,5 @@
 from reloading import reloading
+
 # you need to manage login/logout and credential storage.
 # first you need to get 'home' directory
 from lazero.search.api import getHomeDirectory
@@ -71,7 +72,7 @@ def removeCredentialByDedeUserId(dedeuserid: str):
 from lazero.program.functools import suppressException
 
 # @skipException(defaultReturn = None, breakpoint_flag=True, debug_flag=True, global_variables=globals(), local_variables=locals()) # send_sms is not definded here. WTF?
-@suppressException(defaultReturn=None, showException=True) # trycatch based.
+@suppressException(defaultReturn=None, showException=True)  # trycatch based.
 @reloading
 def getCredentialViaSMS():
     phone = input("请输入手机号：")
@@ -116,7 +117,7 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
     while True:
         # could be troublesome.
         result = getCredentialViaSMS()
-        if result != None: # has type check here?
+        if result != None:  # has type check here?
             credential, name = result
             if name != False:
                 print("登录成功")
@@ -140,6 +141,6 @@ def bilibiliCredential(func):
         credential = getCredentialByDedeUserId(dedeuserid)
         if type(kwargs) != dict:
             kwargs = {}
-        return func(*args,**(kwargs|{credential:credential}))
+        return func(*args, **(kwargs | {credential: credential}))
 
     return wrapper
