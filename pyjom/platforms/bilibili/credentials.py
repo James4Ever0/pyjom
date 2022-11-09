@@ -138,6 +138,7 @@ def getCredentialByDedeUserId(dedeuserid: str = "397424026"):
 def bilibiliCredential(func):
     def wrapper(*args, dedeuserid="397424026", **kwargs):
         credential = getCredentialByDedeUserId(dedeuserid)
-        return func(*args, credential=credential, **kwargs)
+        
+        return func(*args,**kwargs)
 
     return wrapper
