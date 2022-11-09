@@ -140,6 +140,6 @@ def bilibiliCredential(func):
         credential = getCredentialByDedeUserId(dedeuserid)
         if kwargs == dict:
             kwargs = kwargs.update({})
-        return func(*args,**kwargs)
+        return func(*args,**(kwargs|{credential:credential})
 
     return wrapper
