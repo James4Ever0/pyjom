@@ -20,6 +20,7 @@ def recover_and_rewrite(c):
             f.decorator_list.append(ast.Name('reloading')) #seems good?
         # ast.FunctionDef and ast.AsyncFunctionDef are different.
     c0=pasta.dump(tree)
+    return c0
 
 if __name__ == "__main__":
     c=open("test2.py","r").read()
