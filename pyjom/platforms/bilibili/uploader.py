@@ -258,7 +258,7 @@ def videoMultithreadUploader(
             cover_url = self._cover_up(cover_path) if cover_path else ""
             return upload_info, ""
         
-        def postupload(self,upload_info,cover_path, metadata):
+        def postupload(self,upload_info,cover_url, metadata):
 
             title = ""
             tid = 0
@@ -332,7 +332,7 @@ def videoMultithreadUploader(
             if upload_info == {}:
                 # something went wrong.
                 return
-
+            response_json = self.
 
     cookies = cookies_dict
     mustcook = ["DedeUserID", "bili_jct"]
