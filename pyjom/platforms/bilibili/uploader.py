@@ -347,7 +347,7 @@ def videoMultithreadUploader(
             if key is not None and value is not None:
                 cookie_string += key + "=" + value + "; "
         cookie_string = cookie_string[:-2]
-    cookie_string = getCookieStringForMultithreadUploader(cookies_dict)
+    cookie_string = getCookieStringFromCookieDict(cookies_dict)
     # while True:
     try:
         uper = MultithreadUploader(cookie_string)
