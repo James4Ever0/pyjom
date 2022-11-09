@@ -193,7 +193,7 @@ class MultithreadUploader(object):
         upload_url, upload_info, upload_session = self._preupload(filename, filesize)
         # 4.标记本次上传完成
         parts_info = self._multithread_upload(
-            filename, filesize, upload_url, upload_info, upload_session
+            filepath, filesize, upload_url, upload_info, upload_session
         )
         params = {
             "output": "json",
