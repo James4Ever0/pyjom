@@ -389,6 +389,7 @@ def uploadVideo(
     multithread: bool = True,
     # threads=3,
 ):
+    # title='abdefg'
     assert os.path.exists(videoPath)
     assert os.path.exists(cover_path)
     cookie_dict = {
