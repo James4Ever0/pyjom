@@ -17,8 +17,8 @@ pattern="""
                 'def' function_name='{name}'
                 function_parameters=parameters< '(' function_arguments=any* ')' >
                 any*
-            )
-    }
+            >
+    )
 """
 
 q = bowler.Query(src)
