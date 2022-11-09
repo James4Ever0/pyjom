@@ -129,7 +129,7 @@ def videoMultithreadUploader(
             self.upload_id = upload_info["upload_id"]
 
             print("UPLOAD INFO:", upload_info, file=sys.stderr)
-            return upload_info
+            return upload_info, upload_session
         def _upload(self, filepath):
             """执行上传文件操作"""
             if not os.path.isfile(filepath):
