@@ -218,7 +218,7 @@ def videoMultithreadUploader(
             }
             response = upload_session.post(upload_url, params=params, data=parts_info)
             print(
-                "UPLOAD RESULT:", response.text, file=sys.stderr
+                "UPLOAD RESULT:", response.text, file=sys.stderr # but till then we can use the upload_id.
             )  # here we do not have the result.
 
             return upload_info  # still, not the bvid thing we want.
@@ -280,6 +280,7 @@ def videoMultithreadUploader(
             upload_info = self._upload(filepath)
             if not upload_info:
                 ## fuck?
+                print('upload failed?')
                 return
             # 获取图片链接
             cover_url = self._cover_up(cover_path) if cover_path else ""
