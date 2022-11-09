@@ -129,6 +129,7 @@ def videoMultithreadUploader(
             self.upload_id = upload_info["upload_id"]
 
             print("UPLOAD INFO:", upload_info, file=sys.stderr)
+            return upload_info
         def _upload(self, filepath):
             """执行上传文件操作"""
             if not os.path.isfile(filepath):
@@ -137,7 +138,7 @@ def videoMultithreadUploader(
 
             filename = os.path.basename(filepath)
             filesize = os.path.getsize(filepath)
-            self._preupload(filename, filesize)
+            upload_info = self._preupload(filename, filesize)
 
             # 3.分块上传文件
             CHUNK_SIZE = 4 * 1024 * 1024
