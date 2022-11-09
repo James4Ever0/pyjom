@@ -54,7 +54,7 @@ import copy
 import traceback
 
 
-# you better embed it inside your function? 
+# you better embed it inside your function? what a creep?
 class MultithreadUploader(object):
     ## what is the cookie string look like?
     def __init__(self, cookie_string):
