@@ -416,7 +416,7 @@ def uploadVideo(
         "up_close_reply": close_reply,
     }
     if multithread:
-        exception, mresult = videoMultithreadUploader(cookie_dict, videoPath, cover_path, meta)
+        no_exception, mresult = videoMultithreadUploader(cookie_dict, videoPath, cover_path, meta)
         if exception:
             raise Exception('videoMultithreadUploader error: %s' % exception)
         try:
