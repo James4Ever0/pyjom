@@ -17,5 +17,6 @@ def b():
 async def shit():
     ...
 
-with (re() as a, re2() as b):
-    print(fuck)
+# not supported anywhere.
+# with (re() as a, re2() as b):
+#     print(fuck)
