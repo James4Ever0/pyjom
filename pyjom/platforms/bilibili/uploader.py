@@ -432,6 +432,9 @@ def uploadVideo(
         )
     print("multithread?", multithread)
     print("upload video result:", result)
+
+    if result:
+        raise Exception("error: no upload result obtained:", result)
     return result
 
 
