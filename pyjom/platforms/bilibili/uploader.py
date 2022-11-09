@@ -310,7 +310,7 @@ def videoMultithreadUploader(
                 ],
             }
             params.update(metadata)
-            copyright = 2 if source else 1
+            copyright = 2 if params['source'] else 1
             if source:
                 del params["no_reprint"]
             # if mission_id is None:
