@@ -2,8 +2,7 @@ import bowler
 
 src ='test2.py'
 
-pattern="""
-(
+pattern="""(
     decorated=decorated<
         decorators=decorators
         function_def=funcdef<
@@ -18,8 +17,7 @@ pattern="""
         function_parameters=parameters< '(' function_arguments=any* ')' >
         any*
     >
-)
-"""
+)"""
 
 q = bowler.Query(src)
 f = q.select(pattern)
