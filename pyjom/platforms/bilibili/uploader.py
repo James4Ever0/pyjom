@@ -259,18 +259,6 @@ def videoMultithreadUploader(
             return upload_info, ""
         
         def postupload(self,upload_info,cover_path, metadata):
-            
-
-        def upload(
-            self,
-            filepath: str,
-            cover_path: str,
-            metadata: dict,
-        ):
-            upload_info, cover_url = self.upload_video_and_cover(filepath, cover_path)
-            if upload_info == {}:
-                # something went wrong.
-                return
 
             title = ""
             tid = 0
@@ -333,6 +321,18 @@ def videoMultithreadUploader(
             print("SET VIDEO INFO:", response.text, file=sys.stderr)
             return response.json()
             ## what is this fucking json?
+
+        def upload(
+            self,
+            filepath: str,
+            cover_path: str,
+            metadata: dict,
+        ):
+            upload_info, cover_url = self.upload_video_and_cover(filepath, cover_path)
+            if upload_info == {}:
+                # something went wrong.
+                return
+
 
     cookies = cookies_dict
     mustcook = ["DedeUserID", "bili_jct"]
