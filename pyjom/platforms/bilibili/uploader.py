@@ -321,18 +321,7 @@ class MultithreadUploader(object):
         response_json = self.postupload(upload_info, cover_url, metadata)
         return response_json
 
-##############################################################
-@reloading
-def videoMultithreadUploader(
-    cookies_dict: dict = ...,
-    filepath: str = ...,
-    coverpath: str = ...,
-    metadata: dict = ...,
-):
 
-    # append new events?
-    # planning using two jsons. one for credential, one for video details.
-    # get picture.
     def getCookieStringFromCookieDict(cookies_dict,mustcook = ["DedeUserID", "bili_jct"]):
         cookies = cookies_dict
         cookie_string = ""
@@ -348,6 +337,19 @@ def videoMultithreadUploader(
                 cookie_string += key + "=" + value + "; "
         cookie_string = cookie_string[:-2]
         return cookie_string
+
+##############################################################
+@reloading
+def videoMultithreadUploader(
+    cookies_dict: dict = ...,
+    filepath: str = ...,
+    coverpath: str = ...,
+    metadata: dict = ...,
+):
+
+    # append new events?
+    # planning using two jsons. one for credential, one for video details.
+    # get picture.
     cookie_string = getCookieStringFromCookieDict(cookies_dict)
     # while True:
     try:
