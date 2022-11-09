@@ -6,6 +6,8 @@ tree=pasta.parse(c)
 # print(dir(tree))
 for i in range(len(tree)):
     f = tree.body[i]
+    if type(f) == ast.FunctionDef:
+        
     # f=tree.body[0]
     # print(dir(f))
     # del f.decorator_list[0]
