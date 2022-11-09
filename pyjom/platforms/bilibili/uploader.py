@@ -417,8 +417,8 @@ def uploadVideo(
     }
     if multithread:
         no_exception, mresult = videoMultithreadUploader(cookie_dict, videoPath, cover_path, meta)
-        if exception:
-            raise Exception('videoMultithreadUploader error: %s' % exception)
+        if not no_exception:
+            raise Exception('videoMultithreadUploader error")
         try:
             code, message = mresult.get('code'), mresult.get('message')
             assert code == 0 
