@@ -333,7 +333,6 @@ def videoMultithreadUploader(
     # append new events?
     # planning using two jsons. one for credential, one for video details.
     # get picture.
-    
     cookies = cookies_dict
     mustcook = ["DedeUserID", "bili_jct"]
     cookie_string = ""
@@ -348,7 +347,7 @@ def videoMultithreadUploader(
     cookie_string = cookie_string[:-2]
     # while True:
     try:
-        uper = Uploader(cookie_string)
+        uper = MultithreadUploader(cookie_string)
         data = uper.upload(filepath, coverpath, metadata)
         return True, data
     except:
