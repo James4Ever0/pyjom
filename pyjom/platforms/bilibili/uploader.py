@@ -306,7 +306,8 @@ class MultithreadUploader(object):
         url = "https://member.bilibili.com/x/vu/web/add?csrf=" + self.csrf
         response = self.session.post(url, json=params)
         print("SET VIDEO INFO:", response.text, file=sys.stderr)
-        return response.json()
+        return response.json() # {"code":0,"message":"0","ttl":1,"data":{"aid":604946025,"bvid":"BV1y84y1v7tM"}}
+        # seriously, it is a ugc platform.
         ## what is this fucking json?
 
     def upload(
