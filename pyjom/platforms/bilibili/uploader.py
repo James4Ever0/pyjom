@@ -287,7 +287,6 @@ def videoMultithreadUploader(
 
             # 设置视频基本信息
             params = {
-                "copyright": 1,
                 "source": source,
                 "title": title,
                 "tid": tid,
