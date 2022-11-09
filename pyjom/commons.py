@@ -186,6 +186,7 @@ def getRedisValueByKey(
         print('data "{}" is None'.format(key))
 
 
+@reloading
 def getRedisCachedSet(
     setName: str,
     debug: bool = False,
