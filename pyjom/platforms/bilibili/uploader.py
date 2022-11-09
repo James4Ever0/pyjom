@@ -130,7 +130,7 @@ def videoMultithreadUploader(
 
             print("UPLOAD INFO:", upload_info, file=sys.stderr)
             return upload_url, upload_info, upload_session
-        def _multithread_upload(self,filename, filesize, upload_url,upload_info, upload_session):
+        def _multithread_upload(self, filename, filesize, upload_url,upload_info, upload_session):
             # 3.分块上传文件
             CHUNK_SIZE = 4 * 1024 * 1024
             total_chunks = math.ceil(filesize * 1.0 / CHUNK_SIZE)
@@ -201,6 +201,7 @@ def videoMultithreadUploader(
             filesize = os.path.getsize(filepath)
             upload_url, upload_info, upload_session= self._preupload(filename, filesize)
             # 4.标记本次上传完成
+            self._multithread_upload(filename, filesize, upload_url,upload_info, upload_session)
             params = {
                 "output": "json",
                 "name": filename,
