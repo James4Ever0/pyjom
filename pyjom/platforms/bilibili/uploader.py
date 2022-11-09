@@ -258,7 +258,8 @@ def videoMultithreadUploader(
             cover_url = self._cover_up(cover_path) if cover_path else ""
             return upload_info, ""
         
-        def postupload(self,upload_info,cover_path, metadata)
+        def postupload(self,upload_info,cover_path, metadata):
+            
 
         def upload(
             self,
