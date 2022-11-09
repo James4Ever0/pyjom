@@ -309,11 +309,11 @@ def videoMultithreadUploader(
             params.update(metadata)
             # 版权判断, 转载无版权
             copyright = 2 if params['source'] else 1
-            # tag设置
-            if isinstance(tag, list):
-                tag = ",".join(tag)
             if source:
                 del params["no_reprint"]
+            # tag设置
+            if isinstance(parmastag, list):
+                tag = ",".join(tag)
             # if mission_id is None:
             #     del params["mission_id"]
             url = "https://member.bilibili.com/x/vu/web/add?csrf=" + self.csrf
