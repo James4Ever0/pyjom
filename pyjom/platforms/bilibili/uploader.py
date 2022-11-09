@@ -120,7 +120,7 @@ class MultithreadUploader(object):
         return upload_url, upload_info, upload_session
 
     def _multithread_upload(
-        self, filename, filesize, upload_url, upload_info, upload_session
+        self, filepath, filesize, upload_url, upload_info, upload_session
     ):
         # 3.分块上传文件
         CHUNK_SIZE = 4 * 1024 * 1024
@@ -190,7 +190,7 @@ class MultithreadUploader(object):
 
         filename = os.path.basename(filepath)
         filesize = os.path.getsize(filepath)
-        upload_url, upload_info, upload_session = self._preupload(filepath, filesize)
+        upload_url, upload_info, upload_session = self._preupload(filename, filesize)
         # 4.标记本次上传完成
         parts_info = self._multithread_upload(
             filename, filesize, upload_url, upload_info, upload_session
