@@ -2,7 +2,7 @@
 #fuck
 @shit #and fuck
 #shit
-@fuck
+@fuck(shit)
 #oh shit
 def a():
     #fucl
