@@ -129,57 +129,57 @@ class MultithreadUploader(object):
         chunk = 0
         parts_info = {"parts": []}
         with open(filepath, "rb") as fp:
-        events = []
-        while True:
-            blob = fp.read(CHUNK_SIZE)
-            if not blob:
-                break
-            params = {
-                "partNumber": chunk + 1,
-                "uploadId": upload_info["upload_id"],
-                "chunk": chunk,
-                "chunks": total_chunks,
-                "size": len(blob),
-                "start": offset,
-                "end": offset + len(blob),
-                "total": filesize,
-            }
-            # here we go?
-            def multiparts():
-                blob0 = copy.deepcopy(blob)
-                chunk0 = chunk
-                thisevent = Event()
-                events.append(thisevent)
-                offset0 = offset
-                while True:
-                    try:
-                        response = upload_session.put(
-                            upload_url, params=params, data=blob0
-                        )
-                        print(
-                            "Uploading...",
-                            math.floor(chunk0 / total_chunks * 100),
-                            "%  UPLOAD CHUNK",
-                            chunk0,
-                            ":",
-                            response.text,
-                            file=sys.stderr,
-                        )
-                        print("done for {}".format(offset0))
-                        thisevent.set()
-                        break
-                    except:
-                        print("error in chunk {}".format(offset0))
-                        traceback.print_exc()
+            events = []
+            while True:
+                blob = fp.read(CHUNK_SIZE)
+                if not blob:
+                    break
+                params = {
+                    "partNumber": chunk + 1,
+                    "uploadId": upload_info["upload_id"],
+                    "chunk": chunk,
+                    "chunks": total_chunks,
+                    "size": len(blob),
+                    "start": offset,
+                    "end": offset + len(blob),
+                    "total": filesize,
+                }
+                # here we go?
+                def multiparts():
+                    blob0 = copy.deepcopy(blob)
+                    chunk0 = chunk
+                    thisevent = Event()
+                    events.append(thisevent)
+                    offset0 = offset
+                    while True:
+                        try:
+                            response = upload_session.put(
+                                upload_url, params=params, data=blob0
+                            )
+                            print(
+                                "Uploading...",
+                                math.floor(chunk0 / total_chunks * 100),
+                                "%  UPLOAD CHUNK",
+                                chunk0,
+                                ":",
+                                response.text,
+                                file=sys.stderr,
+                            )
+                            print("done for {}".format(offset0))
+                            thisevent.set()
+                            break
+                        except:
+                            print("error in chunk {}".format(offset0))
+                            traceback.print_exc()
 
-            threading.Thread(target=multiparts, args=(), daemon=True).start()
+                threading.Thread(target=multiparts, args=(), daemon=True).start()
 
-            parts_info["parts"].append({"partNumber": chunk + 1, "eTag": "etag"})
-            chunk += 1
-            offset += len(blob)
-        for event in events:
-            event.wait()
-        print("finished waiting.")
+                parts_info["parts"].append({"partNumber": chunk + 1, "eTag": "etag"})
+                chunk += 1
+                offset += len(blob)
+            for event in events:
+                event.wait()
+            print("finished waiting.")
         return parts_info
 
     def _upload(self, filepath):
