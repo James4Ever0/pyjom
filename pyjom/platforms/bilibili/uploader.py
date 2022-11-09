@@ -305,7 +305,7 @@ def videoMultithreadUploader(
         assert x in cookies.keys()
     # ckeys = mustcook + [x for x in cookies.keys() if x not in mustcook]
     assert "bili_jct" in cookies.keys()
-    breakpoint()
+    # breakpoint()
     for key, value in cookies.items():  # oh shit maybe i know it.
         cookie_string += key + "=" + value + "; "
     cookie_string = cookie_string[:-2]
