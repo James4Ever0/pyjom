@@ -16,3 +16,5 @@ def b():
 
 async def shit():
     ...
+
+with ()
