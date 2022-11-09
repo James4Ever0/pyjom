@@ -19,6 +19,7 @@ def recover_and_rewrite(c):
                     elif "lru_cache" in elem.id: # are you sure you won't call that again?
                         cached = True
                 elif type(elem) == ast.Call:
+                    breakpoint()
                     if "lru_cache" in elem.func.id:
                         cached = True
             for index in removeList:
