@@ -128,7 +128,7 @@ class MultithreadUploader(object):
         offset = 0
         chunk = 0
         parts_info = {"parts": []}
-        fp = open(filepath, "rb")
+        with open(filepath, "rb") as fp:
         events = []
         while True:
             blob = fp.read(CHUNK_SIZE)
