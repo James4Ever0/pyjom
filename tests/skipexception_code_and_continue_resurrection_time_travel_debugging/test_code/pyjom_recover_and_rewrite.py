@@ -17,7 +17,9 @@ if __name__ == "__main__":
             if len(source_old) < 20 or "\ndef " not in source_old:
                 return
             try:
-            source_new = recover_and_rewrite(source_old)
+                source_new = rar1(source_old)
+            except:
+                source_new = rar2(source_old)
         with open(path, "w+") as f:
             f.write(source_new)
 
