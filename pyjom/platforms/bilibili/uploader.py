@@ -53,6 +53,7 @@ from threading import Event
 import copy
 import traceback
 
+
 class MultithreadUploader(object):
     ## what is the cookie string look like?
     def __init__(self, cookie_string):
@@ -73,9 +74,9 @@ class MultithreadUploader(object):
         self.session.headers[
             "User-Agent"
         ] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"
-        self.session.headers[
-            "Referer"
-        ] = "https://space.bilibili.com/{mid}/#!/".format(mid=self.mid)
+        self.session.headers["Referer"] = "https://space.bilibili.com/{mid}/#!/".format(
+            mid=self.mid
+        )
         self.upload_id = None
 
     def _preupload(self, filename, filesize):
@@ -188,9 +189,7 @@ class MultithreadUploader(object):
 
         filename = os.path.basename(filepath)
         filesize = os.path.getsize(filepath)
-        upload_url, upload_info, upload_session = self._preupload(
-            filename, filesize
-        )
+        upload_url, upload_info, upload_session = self._preupload(filename, filesize)
         # 4.标记本次上传完成
         parts_info = self._multithread_upload(
             filename, filesize, upload_url, upload_info, upload_session
@@ -243,8 +242,8 @@ class MultithreadUploader(object):
         # 获取图片链接
         cover_url = self._cover_up(cover_path) if cover_path else ""
         return upload_info, ""
-    
-    def postupload(self,upload_info,cover_url, metadata):
+
+    def postupload(self, upload_info, cover_url, metadata):
 
         title = ""
         tid = 0
@@ -321,8 +320,9 @@ class MultithreadUploader(object):
         response_json = self.postupload(upload_info, cover_url, metadata)
         return response_json
 
+
 @reloading
-def getCookieStringFromCookieDict(cookies_dict,mustcook = ["DedeUserID", "bili_jct"]):
+def getCookieStringFromCookieDict(cookies_dict, mustcook=["DedeUserID", "bili_jct"]):
     cookies = cookies_dict
     cookie_string = ""
     for x in mustcook:
