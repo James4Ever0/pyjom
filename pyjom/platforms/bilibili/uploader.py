@@ -32,6 +32,7 @@ async def asyncVideoUploader(
     # please tell me where the fuck you upload my video upto?
     # print("upload video result:", result)
     return result
+    # if possible please return something like upload_id?
     # upload video result: {'aid': 901508571, 'bvid': 'BV1MN4y1P7mq'}
     # breakpoint()  # comment it out later? or we will check why this upload fails. maybe it is because we have duplicated name/cover.
     # return result["bvid"]  # choose to be in this way?
