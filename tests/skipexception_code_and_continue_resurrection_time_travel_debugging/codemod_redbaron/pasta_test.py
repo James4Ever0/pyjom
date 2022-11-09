@@ -3,7 +3,7 @@ import ast
 
 
 def recover_and_rewrite(c):
-    c = c.replace("")
+    c = c.replace("from reloading import reloading\n","")
 tree=pasta.parse(c)
 # print(dir(tree))
 for i in range(len(tree.body)):
