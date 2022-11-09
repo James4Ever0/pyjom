@@ -1,7 +1,7 @@
 import sys
 sys.path.append("/root/Desktop/works/pyjom/tests/skipexception_code_and_continue_resurrection_time_travel_debugging/codemod_redbaron")
-from pasta_test import recover_and_rewrite
-from recover_and_rewrite import recover_and_rewrite
+from pasta_test import recover_and_rewrite as rar1
+from recover_and_rewrite import recover_and_rewrite as rar2
 
 if __name__ == "__main__":
     import os
@@ -16,6 +16,7 @@ if __name__ == "__main__":
             source_old = f.read()
             if len(source_old) < 20 or "\ndef " not in source_old:
                 return
+            try:
             source_new = recover_and_rewrite(source_old)
         with open(path, "w+") as f:
             f.write(source_new)
