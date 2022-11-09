@@ -337,7 +337,7 @@ def videoMultithreadUploader(
     # while True:
     try:
         uper = Uploader(cookie_string)
-        uper.upload(filepath, coverpath, metadata)
+        data = uper.upload(filepath, coverpath, metadata)
         return True
     except:
         print("Exception found when uploading video.")
