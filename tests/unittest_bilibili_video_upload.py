@@ -29,6 +29,6 @@ with tempfile.NamedTemporaryFile(suffix=".jpeg") as pic:
             cover_path=cover_path,
             multithread=True,
         )  # it is with credential right now.
-        print('reply:', reply)
+        print('reply:', reply) # reply true? what the fuck?
         print("----")
         breakpoint()
