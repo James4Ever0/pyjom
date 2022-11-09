@@ -252,9 +252,10 @@ def videoMultithreadUploader(
             if not upload_info:
                 ## fuck?
                 print("upload failed?")
-                return 
+                return {},""
             # 获取图片链接
             cover_url = self._cover_up(cover_path) if cover_path else ""
+            return 
         def upload(
             self,
             filepath: str,
