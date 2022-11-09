@@ -420,7 +420,8 @@ def uploadVideo(
         if exception:
             raise Exception('videoMultithreadUploader error: %s' % exception)
         code, message = mresult.get('code'), mresult.get('message')
-        assert code ==0 
+        assert code == 0 
+        assert message == '0'
     else:
         result = asyncVideoUploader(
             videoPath, title, description, meta, credential, cover_path
