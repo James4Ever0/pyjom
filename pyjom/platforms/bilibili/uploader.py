@@ -204,7 +204,7 @@ def videoMultithreadUploader(
                 "biz_id": upload_info["biz_id"],
             }
             response = upload_session.post(upload_url, params=params, data=parts_info)
-            print("UPLOAD RESULT:", response.text, file=sys.stderr)
+            print("UPLOAD RESULT:", response.text, file=sys.stderr) # here we do not have the result.
 
             return upload_info # still, not the bvid thing we want.
 
