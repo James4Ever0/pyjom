@@ -1,5 +1,5 @@
 from test_commons import *
-
+import os
 from pyjom.platforms.bilibili.uploader import uploadVideo
 import uuid
 
@@ -20,7 +20,7 @@ with tempfile.NamedTemporaryFile(suffix=".jpeg") as pic:
         picgen_command = f"""ffmpeg -y -i {videoPath} -ss 1 {cover_path}"""
         os.system(picgen_command)
         print("uploading video")
-        uploadVideo(
+        reply = uploadVideo(
             description="test video",
             dynamic="nothing",
             tagString="狗狗",
@@ -29,3 +29,6 @@ with tempfile.NamedTemporaryFile(suffix=".jpeg") as pic:
             cover_path=cover_path,
             multithread=True,
         )  # it is with credential right now.
+        print('reply:', reply)
+        print("----")
+        breakpoint()
