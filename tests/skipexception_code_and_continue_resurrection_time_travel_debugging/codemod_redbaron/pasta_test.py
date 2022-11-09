@@ -7,6 +7,7 @@ print(dir(tree))
 f=tree.body[0]
 # print(dir(f))
 import ast
+del f.decorator_list[0]
 f.decorator_list.append(ast.Name('newdec')) #seems good?
 # ast.FunctionDef and ast.AsyncFunctionDef are different.
 dec = f.decorator_list
