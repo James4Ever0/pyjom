@@ -17,8 +17,8 @@ def recover_and_rewrite(c):
                         removeList.append(index)
             for index in removeList:
                 del f.decorator_list[index]
-            
-            f.decorator_list.append(ast.Name('reloading')) #seems good?
+            if len(f.decorator_list) == 0: # are you sure this will be ok?
+                f.decorator_list.append(ast.Name('reloading')) #seems good?
         # ast.FunctionDef and ast.AsyncFunctionDef are different.
     c0=pasta.dump(tree)
     return c0
