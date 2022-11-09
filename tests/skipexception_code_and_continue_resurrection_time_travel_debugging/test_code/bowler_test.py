@@ -6,14 +6,14 @@ pattern="""(
     decorated=decorated<
         decorators=decorators
         function_def=funcdef<
-            'def' function_name=function_name
+            'def' function_name=any
             function_parameters=parameters< '(' function_arguments=any* ')' >
             any*
         >
     >
 |
     function_def=funcdef<
-        'def' function_name=function_name
+        'def' function_name=any
         function_parameters=parameters< '(' function_arguments=any* ')' >
         any*
     >
