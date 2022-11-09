@@ -311,8 +311,9 @@ def videoMultithreadUploader(
             if source:
                 del params["no_reprint"]
             # tag设置
+            mtag = 
             if isinstance(params.get('tag'), list):
-                tag = ",".join(tag)
+                params['tag'] = ",".join(tag)
             # if mission_id is None:
             #     del params["mission_id"]
             url = "https://member.bilibili.com/x/vu/web/add?csrf=" + self.csrf
