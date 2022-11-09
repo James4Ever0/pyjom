@@ -189,7 +189,7 @@ def videoMultithreadUploader(
             for event in events:
                 event.wait()
             print("finished waiting.")
-
+            return parts_info
 
         def _upload(self, filepath):
             """执行上传文件操作"""
@@ -201,7 +201,7 @@ def videoMultithreadUploader(
             filesize = os.path.getsize(filepath)
             upload_url, upload_info, upload_session= self._preupload(filename, filesize)
             # 4.标记本次上传完成
-            self._multithread_upload(filename, filesize, upload_url,upload_info, upload_session)
+            parts_info = self._multithread_upload(filename, filesize, upload_url,upload_info, upload_session)
             params = {
                 "output": "json",
                 "name": filename,
