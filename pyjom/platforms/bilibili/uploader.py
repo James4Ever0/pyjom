@@ -138,7 +138,7 @@ def videoMultithreadUploader(
 
             filename = os.path.basename(filepath)
             filesize = os.path.getsize(filepath)
-            upload_info = self._preupload(filename, filesize)
+            upload_info, upload_session= self._preupload(filename, filesize)
 
             # 3.分块上传文件
             CHUNK_SIZE = 4 * 1024 * 1024
