@@ -218,7 +218,9 @@ def videoMultithreadUploader(
             }
             response = upload_session.post(upload_url, params=params, data=parts_info)
             print(
-                "UPLOAD RESULT:", response.text, file=sys.stderr # but till then we can use the upload_id.
+                "UPLOAD RESULT:",
+                response.text,
+                file=sys.stderr,  # but till then we can use the upload_id.
             )  # here we do not have the result.
 
             return upload_info  # still, not the bvid thing we want.
@@ -280,7 +282,7 @@ def videoMultithreadUploader(
             upload_info = self._upload(filepath)
             if not upload_info:
                 ## fuck?
-                print('upload failed?')
+                print("upload failed?")
                 return
             # 获取图片链接
             cover_url = self._cover_up(cover_path) if cover_path else ""
@@ -307,13 +309,13 @@ def videoMultithreadUploader(
             }
             params.update(metadata)
             # 版权判断, 转载无版权
-            params['copyright'] = 2 if params.get('source') else 1
+            params["copyright"] = 2 if params.get("source") else 1
             if source:
                 del params["no_reprint"]
             # tag设置
-            mtag = params.get('tag')
+            mtag = params.get("tag")
             if isinstance(mtag, list):
-                params['tag'] = ",".join(mtag)
+                params["tag"] = ",".join(mtag)
             # if mission_id is None:
             #     del params["mission_id"]
             url = "https://member.bilibili.com/x/vu/web/add?csrf=" + self.csrf
@@ -338,11 +340,11 @@ def videoMultithreadUploader(
     try:
         uper = Uploader(cookie_string)
         data = uper.upload(filepath, coverpath, metadata)
-        return data
+        return True, data
     except:
         print("Exception found when uploading video.")
         traceback.print_exc()
-        return False
+        return False, {}
 
 
 ##############################################################
