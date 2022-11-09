@@ -28,12 +28,16 @@ commonRedisPort = 9291
 os.system("ulimit -n 1048576")
 from lazero.utils.logger import sprint
 from functools import lru_cache
-import time 
+import time
+
+
 @reloading
-def getJSTimeStamp(): return int(time.time()*1000)
+def getJSTimeStamp():
+    return int(time.time() * 1000)
 
 
 from pymilvus import connections
+
 
 @lru_cache(maxsize=1)
 def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
@@ -677,6 +681,7 @@ def multi_replacer(content, replacer_list=[[[], ""]]):
         content = replacer(content, sources=sources, target=target)
     return content
 
+
 from pyjom.mathlib import extract_span, convoluted
 
 
@@ -995,10 +1000,10 @@ def keywordDecorator(func, **kwargs2):
     def mytarget(*margs, **kwargs):
         if "trace_source" in kwargs.keys():
             if kwargs2["trace_source"]:
-                return func(*margs, **(kwargs|kwargs2)), ".".join(
+                return func(*margs, **(kwargs | kwargs2)), ".".join(
                     [__name__, func.__name__]
                 )
-        return func(*margs, **(kwargs|kwargs2))
+        return func(*margs, **(kwargs | kwargs2))
 
     return mytarget
 
