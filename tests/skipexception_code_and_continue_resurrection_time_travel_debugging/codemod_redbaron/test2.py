@@ -5,7 +5,7 @@
 @fuck(shit)
 #oh shit
 def a():
-    #fucl
+    #fuck
 #fuck
     return shit # oh fuck
 
