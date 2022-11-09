@@ -39,19 +39,19 @@ async def asyncVideoUploader(
     # return result["bvid"]  # choose to be in this way?
 
 
-    #!/usr/bin/env python
-    # -*- coding: utf-8 -*-
-    import os
-    import re
-    import sys
-    import math
-    import base64
-    import requests
-    from requests.adapters import HTTPAdapter
-    import threading
-    from threading import Event
-    import copy
-    import traceback
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os
+import re
+import sys
+import math
+import base64
+import requests
+from requests.adapters import HTTPAdapter
+import threading
+from threading import Event
+import copy
+import traceback
 ##############################################################
 @reloading
 def videoMultithreadUploader(
