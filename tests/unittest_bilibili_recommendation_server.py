@@ -15,5 +15,5 @@ params = {
 }  # check if this works?
 # params = {'params':{}}
 
-r = requests.post(baseurl + "/searchVideos", data=params)
+r = requests.post(baseurl + "/searchVideos", json=params)
 print("response:", r.text)
