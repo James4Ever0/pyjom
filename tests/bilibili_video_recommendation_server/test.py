@@ -388,7 +388,8 @@ def searchVideos(
         page_range = range(page_start_current, page_start_current + 1)
     else:
         import progressbar
-        page_range = range(page_start_current, numPages + 1)
+
+        page_range = progressbar.progressbar(range(page_start_current, numPages + 1))
     for page in page_range:
         if page != page_start:
             result = getResult(page)
