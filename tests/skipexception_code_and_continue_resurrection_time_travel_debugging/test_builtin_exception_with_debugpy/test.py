@@ -1,4 +1,3 @@
 import os
 
-
-os.path.join(1,23)
+os.path.join(1,2) #exception. where?
