@@ -940,7 +940,7 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 # utils.
 
 
-def default(value, default_, isInstance=lambda v: v == ...):
+def default(value, default_, isInstance=lambda v: v in [..., None]):
     if isInstance(value):
         return default_
     return value
