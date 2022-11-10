@@ -629,10 +629,10 @@ def searchRegisteredVideosAndGetResultList(
         # condition &= BilibiliVideo.poster.rel_field in [int(userid) for userid in dedeuserids]
     # vlist = [v for v in (BilibiliVideo.select().where(condition) or [])]
     # http://docs.peewee-orm.com/en/latest/peewee/relationships.html#relationships
-    vgen = BilibiliVideo.select(BilibiliVideo.id).where(condition)
+    vgen = BilibiliVideo.select(BilibiliVideo.id, BilibiliVideo.poster).where(condition)
     # breakpoint()
     if dedeuserids:
-        vgen = vgen.join(Bilibi)
+        vgen = vgen.join(Bilibili)
     user_video_ids = [
         v.id for v in vgen or []
     ]
