@@ -896,7 +896,7 @@ if __name__ == "__main__":
             for v in searchAndRegisterVideos(
                 query, iterate=iterate, page_start=page_start, params=params
             ):
-                ...
+                print(v)
 
         @app.get("/searchRegisteredVideos")
         def search_registered_videos():
