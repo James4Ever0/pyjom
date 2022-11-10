@@ -31,7 +31,7 @@ class myClass:
 
 @reloading
 def main():
-    MClass = myClass()
+    MClass = mClass()
     print(MClass)
     val = MClass.someMethod()
     print('return value:', val)
