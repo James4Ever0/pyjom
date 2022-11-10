@@ -15,6 +15,7 @@ class Mydecorator:
     #accept the class's __init__ method arguments
     def __call__(self, name):
         #define a new display method
+        print('CALL NAME', name)
         return self.student
 
 # @mreload
