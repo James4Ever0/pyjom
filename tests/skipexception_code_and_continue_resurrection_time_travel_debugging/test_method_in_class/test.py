@@ -60,7 +60,7 @@ class a:
 
 @reloading
 def main():
-    A = a
+    A = a() # shit
     print(A)
     # breakpoint()
     # val = A.someMethod()
