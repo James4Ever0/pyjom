@@ -250,10 +250,7 @@ class BilibiliVideo(Model):
     tag = CharField(null=True)
     description = CharField(null=True)
     def videoInfoExtractor(self, blacklist=['id','last_check','register_date','poster']):
-        keys = [key for key in self.__data__.keys() if key not in blacklist]
-        # print(self.__data__)
-        # breakpoint()
-        info = {key: self.__data__[key] for key in keys}
+        info = {key: value for key, value in self.__data__.items() if key not in blacklist}
         poster = self.poster
         try:
             info["poster"] = poster.userInfoExtracter()  # well it will return as always. no live fetching! it is stored in database.
