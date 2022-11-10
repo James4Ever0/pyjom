@@ -620,13 +620,7 @@ def searchRegisteredVideosAndGetResultList(
     else:
         dedeuserids = None
         # print("DEDEUSERIDS:", dedeuserids)
-        # from functools import reduce
-
-        # condition &= reduce(
-        #     lambda a, b: a | b,
-        #     [BilibiliVideo.poster in registerUser(userid) for userid in dedeuserids],
-        # )
-        # condition &= BilibiliVideo.poster.rel_field in [int(userid) for userid in dedeuserids]
+        
     # vlist = [v for v in (BilibiliVideo.select().where(condition) or [])]
     # http://docs.peewee-orm.com/en/latest/peewee/relationships.html#relationships
     vgen = BilibiliVideo.select()
