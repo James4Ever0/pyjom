@@ -999,6 +999,7 @@ class searchRegisteredVideoForm(queryForm):
     dedeuserid: Union[str, None] = None
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
+def ellipsisToDefault(value, default)
 
 @app.post("/searchRegisteredVideos")
 # @reloading
