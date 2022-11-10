@@ -217,6 +217,7 @@ class BilibiliUser(Model):
     # well you can check it later.
     avatar = CharField(null=True)  # warning! charfield max length is 255
     def userInfoExtracter(self):
+        u=self
         keys = [
             # "id",
             "username",
@@ -974,7 +975,7 @@ if __name__ == "__main__":
             ):
                 # print(v)
                 # breakpoint()
-                info = videoInfoExtractor()
+                info = v.videoInfoExtractor()
 
         @app.get("/searchRegisteredVideos")
         def search_registered_videos():
