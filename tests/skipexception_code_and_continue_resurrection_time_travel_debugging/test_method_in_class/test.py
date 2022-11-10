@@ -18,7 +18,8 @@ class Mydecorator:
         #define a new display method
         print('CALL ARGS', args)
         print('CALL KWARGS',kwargs)
-        class_ = self.class_()
+        class_ = self.class_(*args, **kwargs)
+        return class_
 
 # @mreload
 @Mydecorator
