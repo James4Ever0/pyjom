@@ -33,12 +33,10 @@ class myClass:
 def main():
     MClass = myClass() # shit
     print(MClass)
-    # breakpoint()
-    val = A.someMethod()
+    val = MClass.someMethod()
     print('return value:', val)
-
     val = MClass.runAsync()
-    print('return value:', val)
+    print('return async value:', val)
     # print('shit')
     print('good')
 
