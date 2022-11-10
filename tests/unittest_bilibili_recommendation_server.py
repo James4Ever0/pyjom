@@ -14,6 +14,8 @@ params = {
     "page_start": 1,
 }  # check if this works?
 # params = {'params':{}}
+import json
+data = json.dumps(params)
 
-r = requests.post(baseurl + "/searchVideos", data=params)
+r = requests.post(baseurl + "/searchVideos", data=data)
 print("response:", r.text)
