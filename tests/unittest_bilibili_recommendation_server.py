@@ -32,7 +32,7 @@ elif objective == "searchUserVideos":
     # params = dict(query="猫", method="bm25", videoOrder="click")
     params = dict(query='猫',method='bm25')
     # params = dict(query='猫',method='bm25', dedeuserid=None)
-    params=dict(bvid="BV1MN4y1P7mq",dedeuserid=, is_mine=F, form.visible)
+    params=dict(bvid="BV1MN4y1P7mq",dedeuserid=, is_mine=False, visible)
 else:
     raise Exception("invalid objective: %s" % objective)
 
