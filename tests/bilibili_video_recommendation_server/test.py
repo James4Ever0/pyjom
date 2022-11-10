@@ -1041,7 +1041,7 @@ def search_videos(form: searchVideoForm):
 @reloading
 class searchRegisteredVideoForm(queryForm):
     tid: int = 0
-    dedeuserid: Union[str, None] = None
+    dedeuserid: Union[List[str], str, None] = "397424026"
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
 
@@ -1065,6 +1065,7 @@ from typing import List
 
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
+    dedeuserid: Union[str, None] = None
     method: Literal["online", "bm25"] = "online"
     use_credential: bool = False
 
