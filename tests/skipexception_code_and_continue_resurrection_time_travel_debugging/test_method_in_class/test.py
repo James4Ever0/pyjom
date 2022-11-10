@@ -31,11 +31,13 @@ class myClass:
 
 @reloading
 def main():
-    MCLASS = myClass() # shit
-    print(MCLASS)
+    MClass = myClass() # shit
+    print(MClass)
     # breakpoint()
-    # val = A.someMethod()
-    val = A.runAsync()
+    val = A.someMethod()
+    print('return value:', val)
+
+    val = MClass.runAsync()
     print('return value:', val)
     # print('shit')
     print('good')
