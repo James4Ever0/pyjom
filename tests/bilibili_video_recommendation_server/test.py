@@ -948,7 +948,7 @@ class searchRegisteredVideoForm(pydantic.BaseModel):
     query:str
     tid:int=0
     dedeuserid:Union[str, None]=None
-    videoOrder:
+    videoOrder:VideoOrder=VideoOrder.
 
 @app.get("/searchRegisteredVideos")
 @reloading
