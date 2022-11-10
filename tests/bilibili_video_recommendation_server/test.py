@@ -989,7 +989,7 @@ class searchUserVideoForm(searchRegisteredVideoForm):
 
 @app.get("/searchUserVideos")
 @reloading
-def search_user_videos():
+def search_user_videos(form: searchUserVideoForm):
     searchUserVideos(form.query, form.tid, form.dedeuserid, form.method,form.use_credential,form.videoOrder, form.limit)
 
 
