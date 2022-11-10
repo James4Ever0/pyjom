@@ -1114,6 +1114,7 @@ def register_user_video(form: registerUserVideoForm):
         print("----")
     else:
         print('video already registered.')
+    return {''}
 
 
 # you should recommend by label instead of by name. but whatever.
