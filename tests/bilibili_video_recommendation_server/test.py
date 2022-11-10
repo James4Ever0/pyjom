@@ -977,6 +977,8 @@ if __name__ == "__main__":
                 # breakpoint()
                 if v is not None:
                     info = v.videoInfoExtractor()
+                    print(info)
+                    breakpoint()
 
         @app.get("/searchRegisteredVideos")
         def search_registered_videos():
