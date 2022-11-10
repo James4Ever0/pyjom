@@ -29,7 +29,7 @@ class Mydecorator:
 # @mreload
 @Mydecorator
 class a:
-    raise Exception('shit')
+    # raise Exception('shit')
     # cannot raise exception here. the compiler will complain.
     # good?
     @reloading # does this work?
