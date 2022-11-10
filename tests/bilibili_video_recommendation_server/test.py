@@ -912,7 +912,8 @@ class searchVideoForm(pydantic.BaseModel):
 
 @reloading
 class searchRegisteredVideoForm(pydantic.BaseModel):
-    keyword:
+    query:str
+    tid
 
 app = FastAPI()
 
