@@ -1,4 +1,4 @@
 import os
 
 
-os.system('shit')
+os.path.join(1,23)
