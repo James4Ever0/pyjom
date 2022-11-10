@@ -16,9 +16,10 @@ if objective == 'searchVideos':
         "iterate": True,
         "page_start": 1,
     }  # check if this works?
-    r = requests.post(baseurl + "/"+objective, json=params)
 elif objective == "searchRegisteredVideos":
     params = {}
-    r = requests.post(baseurl + "/"+objective, json=params)
+else:
+    raise Exception('invalid objective: %s' % objective)
+r = requests.post(baseurl + "/"+objective, json=params)
 print('objective: %s' % objective)
 print("response:", r.text)
