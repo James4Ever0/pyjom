@@ -626,9 +626,13 @@ def searchRegisteredVideosAndGetResultList(
     vgen = BilibiliVideo.select()
     # breakpoint()
     if dedeuserids:
+        from functools import reduce
+        condition &= reduce(
+            lambda a, b: a | b,
+            [BilibiliUser.user_id  ==  int(userid) for userid in dedeuserids],
+        )
         vgen = vgen.join(
-            BilibiliUser, on=(BilibiliVideo.poster == BilibiliUser.user_id)
-        ).where(condition & mconditionBilibiliUser.user_id in dedeuserids) # this statement does not work.
+            BilibiliUser).where(condition & mconditionBilibiliUser.user_id in dedeuserids) # this statement does not work.
     else:
         vgen = vgen.where(condition)
     user_video_ids = [v.id for v in vgen or []]
