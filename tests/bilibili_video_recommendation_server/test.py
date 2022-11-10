@@ -616,7 +616,7 @@ def searchRegisteredVideosAndGetResultList(
         else:
             dedeuserids = dedeuserid
         :
-            condition reduce(lambda a,b:a|b,[BilibiliVideo.poster == registerUser(userid) for userid in dedeuserids])
+            condition ||reduce(lambda a,b:a|b,[BilibiliVideo.poster == registerUser(userid) for userid in dedeuserids])
     user_video_ids = [
         v.id for v in (BilibiliVideo.select(BilibiliVideo.id).where(condition) or [])
     ]
