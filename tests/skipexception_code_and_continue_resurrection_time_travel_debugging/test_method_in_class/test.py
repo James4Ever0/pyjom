@@ -8,9 +8,9 @@ class a:
     def someMethod(self):
         @reloading
         def someothermethod():
-            # raise Exception('but just another shit')
+            raise Exception('exception1')
             return 'value'
-        # raise Exception('just another shit')
+        raise Exception('exception2')
         val = someothermethod()
         return val
     @reloading
