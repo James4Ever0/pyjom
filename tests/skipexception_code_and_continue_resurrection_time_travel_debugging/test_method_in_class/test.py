@@ -11,10 +11,10 @@ class Mydecorator:
     #accept the class as argument
     def __init__(self, student):
         print("STUDENT:", student)
-        self.class = student
+        self.class_ = student
     
     #accept the class's __init__ method arguments
-    def __call__(self, name):
+    def __call__(self,*args, **kwargs):
         #define a new display method
         print('CALL NAME', name)
         return self.student
