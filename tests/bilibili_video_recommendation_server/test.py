@@ -896,7 +896,61 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 
 # utils.
+        # somewhere here:
+        # https://fastapi.tiangolo.com/es/tutorial/debugging/
+        port = 7341
+        from fastapi import FastAPI
+        import uvicorn
+        import pydantic
 
+        class searchVideoForm(pydantic.BaseModel):
+            query: str  # required?
+            iterate: bool = False
+            page_start: int = 1
+            params: dict = {}  # let's just see what you've got here.
+
+        app = FastAPI()
+
+        @app.get("/")
+        def server_hello():
+            return "bilibili recommendation server"
+
+        # just asking. post or get?
+        @app.post("/searchVideos")  # what do you want to have? all fields?
+        def search_videos(form: searchVideoForm):
+            # print('received params:',params) # it is str.
+            # breakpoint()
+            videoInfos = []
+            params = {
+                "duration": BSP.all.duration._10分钟以下
+            } | form.params  # this is default parameter.
+            # breakpoint()
+            for v in searchAndRegisterVideos(
+                form.query,
+                iterate=form.iterate,
+                page_start=form.page_start,
+                params=params,
+            ):
+                # print(v)
+                # breakpoint()
+                if type(v) == BilibiliVideo:
+                    info = v.videoInfoExtractor() # static method?
+                    # print('videoInfo:',info)
+                    # breakpoint()
+                    videoInfos.append(info)
+                return videoInfos
+
+        @app.get("/searchRegisteredVideos")
+        def search_registered_videos():
+            ...
+
+        @app.get("/searchUserVideos")
+        def search_user_videos():
+            ...
+
+        @app.get("/registerUserVideo")
+        def register_user_video():
+            ...
 
 
 # you should recommend by label instead of by name. but whatever.
@@ -909,8 +963,6 @@ if __name__ == "__main__":
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
     if objective == "server":
-
-
         uvicorn.run(app, host="0.0.0.0", port=port)
     elif objective == "test":
         test = "searchVideos"
