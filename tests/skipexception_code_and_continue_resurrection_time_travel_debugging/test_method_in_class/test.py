@@ -8,4 +8,5 @@ class a:
         return 'fine'
 
 A = a()
-A.someMethod()
+val = A.someMethod()
+print('return value:', val)
