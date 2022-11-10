@@ -103,31 +103,32 @@ def videoDurationStringToSeconds(
         return None
     if re.findall(r"\d", durationString) == []:
         return None
-    if method == "vtc":
-        import vtc
+    try:
+        if method == "vtc":
+            import vtc
 
-        timecode = "{}:0".format(durationString)
-        decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
-        seconds = round(decimal_seconds)
-        return seconds
-    elif method == "basic":
-        if type(durationString) == int:
-            return durationString  # not string at all.
-        if type(durationString) != str:
-            print("unknown durationString type: %s" % type(durationString))
-            return None
-        durationString = durationString.strip()
-        mList = durationString.split(":")[::-1]
-        if len(mList) > 3:
-            print("DURATION STRING TOO LONG")
-            return None
-        seconds = 0
-        for index, elem in enumerate(mList):
-            elem = int(elem)
-            seconds += (60**index) * elem
-        return seconds
-    else:
-        raise Exception("method %s does not exist" % method)
+            timecode = "{}:0".format(durationString)
+            decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
+            seconds = round(decimal_seconds)
+            return seconds
+        elif method == "basic":
+            if type(durationString) == int:
+                return durationString  # not string at all.
+            if type(durationString) != str:
+                print("unknown durationString type: %s" % type(durationString))
+                return None
+            durationString = durationString.strip()
+            mList = durationString.split(":")[::-1]
+            if len(mList) > 3:
+                print("DURATION STRING TOO LONG")
+                return None
+            seconds = 0
+            for index, elem in enumerate(mList):
+                elem = int(elem)
+                seconds += (60**index) * elem
+            return seconds
+        else:
+            raise Exception("method %s does not exist" % method)
 
 
 @reloading
