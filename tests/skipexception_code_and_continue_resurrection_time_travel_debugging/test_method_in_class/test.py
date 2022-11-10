@@ -8,6 +8,7 @@ def mreload(mclass):
     #     def __init__(self, *args, **kwargs):
     #         print('good')
     # return newclass
+    return mclass
 
 class Mydecorator:
     #accept the class as argument
