@@ -59,7 +59,7 @@ class a:
         return val
 
 
-A = a
+A = a()
 print(A)
 # breakpoint()
 # val = A.someMethod()
