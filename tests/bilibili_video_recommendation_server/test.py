@@ -985,7 +985,7 @@ def search_videos(form: searchVideoForm):
     vgen = searchAndRegisterVideos(
         form.query,
         iterate=form.iterate,
-        page_start=form.page_start,
+        page_start=form.page_num,
         params=params,
         page_size=form.page_size,
     )
