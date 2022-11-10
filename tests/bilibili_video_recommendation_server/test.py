@@ -1009,22 +1009,24 @@ def search_user_videos(form: searchUserVideoForm):
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
 
+
 @reloading
 class registerUserVideoForm(pydantic.BaseModel):
-    bvid:str
-    dedeuserid:str
-    is_mine:bool
-    visible:bool=False
+    bvid: str
+    dedeuserid: str
+    is_mine: bool = False
+    visible: bool = False
+
 
 @app.get("/registerUserVideo")
 @reloading
-def register_user_video(form:registerUserVideoForm):
+def register_user_video(form: registerUserVideoForm):
     registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
     print("----")
-    print('registered user video:', form.bvid)
-    print('user:', form.dedeuserid)
-    print('is_mine:', form.is_mine)
-    print('visible:', form.visible)
+    print("registered user video:", form.bvid)
+    print("user:", form.dedeuserid)
+    print("is_mine:", form.is_mine)
+    print("visible:", form.visible)
     print("----")
 
 
