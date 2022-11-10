@@ -891,16 +891,16 @@ if __name__ == "__main__":
             return "bilibili recommendation server"
 
         # just asking. post or get?
-        @app.get("/searchVideos")  # what do you want to have? all fields?
+        @app.post("/searchVideos")  # what do you want to have? all fields?
         def search_videos(
             query: str, iterate: bool = False, page_start: int = 1, params:dict={} # let's just see what you've got here.
         ):
-            print('received params:',params) # it is str.
-            breakpoint()
+            # print('received params:',params) # it is str.
+            # breakpoint()
             params = {
                 "duration": BSP.all.duration._10分钟以下
             } | params  # this is default parameter.
-            breakpoint()
+            # breakpoint()
             for v in searchAndRegisterVideos(
                 query, iterate=iterate, page_start=page_start, params=params
             ):
