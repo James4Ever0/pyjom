@@ -942,7 +942,7 @@ class searchVideoForm(queryForm):
 def getVideoInfoListFromVideoGenerator(vgen):
     for v in vgen:
         if type(v) == BilibiliVideo:
-            vlist.append(v.)
+            vlist.append(v.videoInfoExtractor())
 
 # just asking. post or get?
 @app.post("/searchVideos")  # what do you want to have? all fields?
