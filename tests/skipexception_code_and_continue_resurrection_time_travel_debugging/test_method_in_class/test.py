@@ -32,6 +32,8 @@ class a:
 
 
 A = a()
+print(A)
+breakpoint()
 # val = A.someMethod()
 val = A.runAsync()
 print('return value:', val)
