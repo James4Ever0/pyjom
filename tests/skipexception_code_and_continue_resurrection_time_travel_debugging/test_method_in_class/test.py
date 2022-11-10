@@ -11,7 +11,7 @@ class a:
         val = someothermethod()
         return val
     @reloading
-    async def someOtherMethod(self):
+    async def someOtherMethod(self): # cannot decorate async function?
         raise Exception('shit')
     @reloading
     def runAsync(self):
