@@ -216,16 +216,8 @@ class BilibiliUser(Model):
     )  # how to get that? every time you get some video you do this shit? will get you blocked.
     # well you can check it later.
     avatar = CharField(null=True)  # warning! charfield max length is 255
-    def userInfoExtracter(self):
-        keys = [
-            # "id",
-            "username",
-            "user_id",
-            "is_mine",
-            "followers",
-            "avatar",
-        ]
-        info = [self.__data__[key] for key in keys]
+    def userInfoExtracter(self, blacklist=['id']):
+        info = {key: value for key, value in self.__data__.items() if key not in blacklist}
         return info
 
 
