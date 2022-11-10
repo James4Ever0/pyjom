@@ -525,7 +525,7 @@ def getUserVideos(
     # this is async. use sync.
     stopped = False
     while not stopped:
-        videos = sync(u.get_videos(pn=pn, keyword=keyword, tid=tid, order=order))
+        videos = sync(u.get_videos(pn=pn, keyword=keyword, tid=tid, order=order,ps=page_size))
         # print(videos)
         # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
         page = videos["page"]  # pagination options
