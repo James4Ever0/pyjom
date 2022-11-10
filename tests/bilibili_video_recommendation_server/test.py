@@ -520,7 +520,7 @@ def getUserVideos(
     page_num: int = 1,
     page_size: int = 30,
 ):  # all videos? just at init.
-    pn=page_num
+    pn = page_num
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
     bilibiliUser = registerUser(
@@ -536,9 +536,7 @@ def getUserVideos(
     stopped = False
     while not stopped:
         videos = sync(
-            u.get_videos(
-                pn=pn, keyword=keyword, tid=tid, order=order, ps=page_size
-            )
+            u.get_videos(pn=pn, keyword=keyword, tid=tid, order=order, ps=page_size)
         )
         # print(videos)
         # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
