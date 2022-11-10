@@ -903,6 +903,7 @@ from fastapi import FastAPI
 import uvicorn
 import pydantic
 
+@reloading
 class searchVideoForm(pydantic.BaseModel):
     query: str  # required?
     iterate: bool = False
@@ -912,11 +913,13 @@ class searchVideoForm(pydantic.BaseModel):
 app = FastAPI()
 
 @app.get("/")
+@reloading
 def server_hello():
     return "bilibili recommendation server"
 
 # just asking. post or get?
 @app.post("/searchVideos")  # what do you want to have? all fields?
+@reloading
 def search_videos(form: searchVideoForm):
     # print('received params:',params) # it is str.
     # breakpoint()
