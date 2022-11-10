@@ -423,7 +423,7 @@ import math
 from bilibili_api.user import VideoOrder
 
 
-def indexAndGetVideoObject(v, bilibiliUser):
+def indexAndGetVideoObject(v, bilibiliUser): # let's wrap this shit.
     try:
         v["typeid"] = int(v["typeid"])
     except:
