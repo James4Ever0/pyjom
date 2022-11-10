@@ -596,7 +596,7 @@ def searchRegisteredVideosAndGetResultList(
     tid: int = 0,
     dedeuserid: Union[str, None, list[str]] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
-    limit: int = 10,
+    page_size: int = 10,
 ):
     resultList = []
     resolvedTids = resolveSubTidsFromTid(tid)
@@ -616,7 +616,7 @@ def searchRegisteredVideosAndGetResultList(
     results = (
         BilibiliVideoIndex.search_bm25(keyword)
         .where(BilibiliVideoIndex.rowid in user_video_ids)
-        .paginate()
+        .paginate(page_num, page_size)
     )
     for index, video_index in enumerate(results):
         bilibiliVideo = BilibiliVideo.get(id=video_index.rowid)
