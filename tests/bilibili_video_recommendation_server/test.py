@@ -1003,8 +1003,8 @@ class searchRegisteredVideoForm(queryForm):
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
 
-def default(value, default_):
-    if value == ...:
+def default(value, default_, trigger = lambda v: v == ...):
+    if isInstance(value):
         return default_
     return value
 
