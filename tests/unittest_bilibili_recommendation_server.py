@@ -7,7 +7,7 @@ from lazero.network.checker import waitForServerUp
 message = "bilibili recommendation server"
 waitForServerUp(port, message = message)
 
-objective = ""
+objective = "searchRegisteredVideos"
 if objective == 'searchVideos':
     params = {
         # "params": {"hop": 1}, # there is no such parameter here.
@@ -17,7 +17,7 @@ if objective == 'searchVideos':
         "page_start": 1,
     }  # check if this works?
 elif objective == "searchRegisteredVideos":
-    params = dict(query=, tid=..., dedeuserid=..., videoOrder=..., limit=...)
+    params = dict(query='hello world', tid=..., dedeuserid=..., videoOrder=..., limit=...)
     print(params)
     exit()
 else:
