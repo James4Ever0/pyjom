@@ -572,7 +572,7 @@ def getUserVideos(
         if pn >= numPages:
             break
         elif not stop_on_duplicate:
-            break
+            break # this is the hint of merely using this as a search tool
         time.sleep(sleep)
         pn += 1
 
