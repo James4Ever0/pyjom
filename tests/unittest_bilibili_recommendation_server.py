@@ -5,7 +5,7 @@ baseurl = "http://localhost:{}".format(port)
 
 from lazero.network.checker import waitForServerUp
 
-waitForServerUp()
+waitForServerUp(port, message = )
 
 params = {
     "params": {"hop": 1}, # there is no such parameter here.
