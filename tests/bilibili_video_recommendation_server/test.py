@@ -947,7 +947,7 @@ import typing
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
-    page_size: Union[int,typing.Ellipsis] = ...
+    page_size: Union[int,type.ellipsis] = ...
     page_start: int = 1
 
 
