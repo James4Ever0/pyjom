@@ -1105,12 +1105,15 @@ class registerUserVideoForm(pydantic.BaseModel):
 # @reloading
 def register_user_video(form: registerUserVideoForm):
     new = registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
-    print("----")
-    print("registered user video:", form.bvid)
-    print("user:", form.dedeuserid)
-    print("is_mine:", form.is_mine)
-    print("visible:", form.visible)
-    print("----")
+    if new:
+        print("----")
+        print("registered user video:", form.bvid)
+        print("user:", form.dedeuserid)
+        print("is_mine:", form.is_mine)
+        print("visible:", form.visible)
+        print("----")
+    else:
+        print('video already registered.')
 
 
 # you should recommend by label instead of by name. but whatever.
