@@ -1047,7 +1047,7 @@ def search_videos(form: searchVideoForm):
 @reloading
 class searchRegisteredVideoForm(queryForm):
     tid: int = 0
-    dedeuserid: Union[List[str], str, None] = None
+    dedeuserid: Union[list[str], str, None] = None
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
 
