@@ -939,7 +939,7 @@ class searchVideoForm(queryForm):
     params: dict = {}  # let's just see what you've got here.
 
 @reloading
-def getVideoInfoListFromVideoGenerator(vgen):
+def getVideoInfosFromVideoGenerator(vgen):
     vlist = []
     for v in vgen:
         if type(v) == BilibiliVideo:
@@ -962,7 +962,7 @@ def search_videos(form: searchVideoForm):
         page_start=form.page_start,
         params=params,
     )
-    videoInfos = getVideoInfos
+    videoInfos = getVideoInfosFromVideoGenerator(vgen)
         # print(v)
         # breakpoint()
         if type(v) == BilibiliVideo:
