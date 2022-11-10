@@ -977,13 +977,10 @@ class searchRegisteredVideoForm(queryForm):
 @app.get("/searchRegisteredVideos")
 @reloading
 def search_registered_videos(form: searchRegisteredVideoForm):
-    videoList = [
-        v.videoInfoExtractor()
-        for v in searchRegisteredVideos(
+    videoInfos = searchRegisteredVideos(
             form.query, form.tid, form.dedeuserid, form.videoOrder, form.limit
         )
-    ]
-    return videoList
+    return videoInfos
 
 
 @reloading
