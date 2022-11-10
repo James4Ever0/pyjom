@@ -1041,7 +1041,7 @@ def search_user_videos(form: searchUserVideoForm):
         form.method,
         form.use_credential,
         form.videoOrder,
-        form.limit,
+        form.page_num,
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
