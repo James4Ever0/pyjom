@@ -985,6 +985,7 @@ def search_registered_videos(form: searchRegisteredVideoForm):
 
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
+    method:Literal['online','bm25']
     pass
 
 @app.get("/searchUserVideos")
