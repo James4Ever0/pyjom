@@ -704,7 +704,8 @@ def searchUserVideos(
             tid=tid,
             dedeuserid=dedeuserid,
             videoOrder=videoOrder,
-            limit=limit,
+            page_num=page_num,
+            page_size=page_size,
             keyword=keyword,
         )
     for v, _ in resultList:
