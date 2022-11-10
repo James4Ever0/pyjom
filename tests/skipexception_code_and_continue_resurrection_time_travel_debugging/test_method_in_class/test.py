@@ -8,6 +8,7 @@ class mClass:
     def forLoopInFunction(self):
         for i in reloading(range(3)):
             # raise Exception('shit')
+            # return in primary function, not here!
             if i == 1:
                 val = 'value'
                 break
