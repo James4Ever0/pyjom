@@ -10,9 +10,9 @@ class mClass:
     def someMethod(self):
         @reloading
         def someInnerMethod():
-            raise Exception("inner exception1")
+            raise Exception("inner exception")
             return "inside function return"
-        raise Exception("exception2")
+        raise Exception("exception")
         val = someInnerMethod()
         return val
 
