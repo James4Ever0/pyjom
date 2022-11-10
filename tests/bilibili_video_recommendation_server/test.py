@@ -516,7 +516,7 @@ def getUserVideos(
     use_credential: bool = False,
     stop_on_duplicate: bool = True,
     sleep: int = 2,
-    pn=1,
+    page_num=1,
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
