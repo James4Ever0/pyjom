@@ -17,10 +17,10 @@ class a:
     async def someOtherMethod(self):
         # raise Exception('async exception1')
         @reloading
-        async def shit():
-            # raise Exception('async exception2')
+        async def asyncInside():
+            raise Exception('async exception2')
             return 'abcdef'
-        val = await shit()
+        val = await asyncInside()
         return val
     @reloading
     def runAsync(self):
