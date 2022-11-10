@@ -659,14 +659,6 @@ def searchRegisteredVideosAndGetResultList(
         favorites = bilibiliVideo.favorites
         pubdate = bilibiliVideo.pubdate
         view = bilibiliVideo.play
-        if videoOrder == VideoOrder.FAVORITE: # this is fake ordering.
-            order = -favorites # desc
-        elif videoOrder == VideoOrder.VIEW:
-            order = -view # desc
-        elif videoOrder == VideoOrder.PUBDATE: # also desc.
-            order = -pubdate  # most recent video.
-        else:
-            order = index
         order = None
         # you should return the video_index.
         resultList.append((bilibiliVideo, order))
