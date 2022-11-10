@@ -1,6 +1,7 @@
 from reloading import reloading
 from lazero.utils.json import jsonify
 
+ellipsis = type(...)
 # serve my video, serve my cat video, dog video, set priority, serve others video
 # by means of query? or just directly ask me for it.
 
