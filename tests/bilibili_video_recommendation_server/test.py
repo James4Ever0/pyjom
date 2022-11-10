@@ -616,7 +616,7 @@ def searchRegisteredVideosAndGetResultList(
         else:
             dedeuserids = dedeuserid
         # print("DEDEUSERIDS:", dedeuserids)
-        condition &= BilibiliVideo.poster in [registerUser(userid) for userid in dedeuserids]
+        condition &= BilibiliVideo.poster. in [registerUser(userid) for userid in dedeuserids]
     user_video_ids = [
         v.id for v in (BilibiliVideo.select(BilibiliVideo.id).where(condition) or [])
     ]
