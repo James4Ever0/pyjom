@@ -926,9 +926,11 @@ app = FastAPI()
 def server_hello():
     return "bilibili recommendation server"
 
+
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
+
 
 @reloading
 class searchVideoForm(queryForm):
@@ -983,16 +985,26 @@ def search_registered_videos(form: searchRegisteredVideoForm):
     ]
     return videoList
 
+
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
-    dedeuserid:str="397424026"
-    method:Literal['online','bm25']='online'
-    use_credential=
+    dedeuserid: str = "397424026"
+    method: Literal["online", "bm25"] = "online"
+    use_credential: bool = False
+
 
 @app.get("/searchUserVideos")
 @reloading
 def search_user_videos(form: searchUserVideoForm):
-    searchUserVideos(form.query, form.tid, form.dedeuserid, form.method,form.use_credential,form.videoOrder, form.limit)
+    searchUserVideos(
+        form.query,
+        form.tid,
+        form.dedeuserid,
+        form.method,
+        form.use_credential,
+        form.videoOrder,
+        form.limit,
+    )
 
 
 @app.get("/registerUserVideo")
