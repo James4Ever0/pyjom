@@ -945,9 +945,9 @@ if __name__ == "__main__":
             ):
                 # print(v)
                 # breakpoint()
-                if v is not None:
+                if type(v) == bilibiliVideo:
                     info = v.videoInfoExtractor() # static method?
-                    print(info)
+                    print('videoInfo:',info)
                     breakpoint()
 
         @app.get("/searchRegisteredVideos")
