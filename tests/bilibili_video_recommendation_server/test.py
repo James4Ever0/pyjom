@@ -951,7 +951,7 @@ def getVideoInfosFromVideoGenerator(vgen):
 
 # just asking. post or get?
 @app.post("/searchVideos")  # what do you want to have? all fields?
-@reloading
+# @reloading
 def search_videos(form: searchVideoForm):
     # print('received params:',params) # it is str.
     # breakpoint()
@@ -978,7 +978,7 @@ class searchRegisteredVideoForm(queryForm):
 
 
 @app.get("/searchRegisteredVideos")
-@reloading
+# @reloading
 def search_registered_videos(form: searchRegisteredVideoForm):
     vgen = searchRegisteredVideos(
         form.query, form.tid, form.dedeuserid, form.videoOrder, form.limit
