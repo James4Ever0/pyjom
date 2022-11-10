@@ -895,7 +895,8 @@ if __name__ == "__main__":
         def search_videos(
             query: str, iterate: bool = False, page_start: int = 1, params={} # let's just see what you've got here.
         ):
-            print('received params:',params)
+            print('received params:',params) # it is str.
+            breakpoint()
             params = {
                 "duration": BSP.all.duration._10分钟以下
             } | params  # this is default parameter.
