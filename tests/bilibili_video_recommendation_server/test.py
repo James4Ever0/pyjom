@@ -886,18 +886,34 @@ if __name__ == "__main__":
         import pydantic
 
         class searchVideoForm(pydantic.BaseModel):
-            query: str # required?
+            query: str  # required?
             iterate: bool = False
             page_start: int = 1
-            params:dict = {}  # let's just see what you've got here.
-
+            params: dict = {}  # let's just see what you've got here.
 
         app = FastAPI()
 
         def videoInfoExtractor(v):
             # keys = v._meta.fields.keys()
-            keys= ['id', 'bvid', 'typeid', 'visible', 'last_check', 'register_date', 'poster', 'play', 'pic', 'length', 'pubdate', 'review', 'favorites', 'title', 'tag', 'description']
-            info = {key:v.__dict__[key] for key in keys}
+            keys = [
+                "id",
+                "bvid",
+                "typeid",
+                "visible",
+                "last_check",
+                "register_date",
+                "poster",
+                "play",
+                "pic",
+                "length",
+                "pubdate",
+                "review",
+                "favorites",
+                "title",
+                "tag",
+                "description",
+            ]
+            info = {key: v.__dict__[key] for key in keys}
             return info
 
         @app.get("/")
@@ -906,9 +922,7 @@ if __name__ == "__main__":
 
         # just asking. post or get?
         @app.post("/searchVideos")  # what do you want to have? all fields?
-        def search_videos(
-            form: searchVideoForm
-        ):
+        def search_videos(form: searchVideoForm):
             # print('received params:',params) # it is str.
             # breakpoint()
             params = {
@@ -916,7 +930,10 @@ if __name__ == "__main__":
             } | form.params  # this is default parameter.
             # breakpoint()
             for v in searchAndRegisterVideos(
-                form.query, iterate=form.iterate, page_start=form.page_start, params=params
+                form.query,
+                iterate=form.iterate,
+                page_start=form.page_start,
+                params=params,
             ):
                 print(v)
                 breakpoint()
