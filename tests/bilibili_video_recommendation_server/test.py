@@ -902,54 +902,6 @@ if __name__ == "__main__":
 
         app = FastAPI()
 
-        def userInfoExtracter(u):
-            keys = [
-                # "id",
-                "username",
-                "user_id",
-                "is_mine",
-                "followers",
-                "avatar",
-            ]
-            info = [u.__dict__[key] for key in keys]
-            return info
-
-        def videoInfoExtractor(v):
-            # keys = v._meta.fields.keys()
-            keys = [
-                # "id",
-                "bvid",
-                "typeid",  # str?
-                "visible",
-                # "last_check",
-                # "register_date",
-                # "poster",
-                "play",
-                "pic",
-                "length",
-                "pubdate",
-                "review",
-                "favorites",
-                "title",
-                "tag",
-                "description",
-            ]
-            info = {key: v.__dict__[key] for key in keys}
-            poster = v.poster
-            try:
-                info["poster"] = userInfoExtracter(
-                    poster
-                )  # well it will return as always. no live fetching! it is stored in database.
-            except:
-                import traceback
-                traceback.print_exc()
-                print('userinfo might be missing from videoinfo.')
-            try:
-                info["typeid"] = int(info["typeid"])
-            except:
-                pass
-            return info
-
         @app.get("/")
         def server_hello():
             return "bilibili recommendation server"
