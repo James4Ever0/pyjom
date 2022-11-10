@@ -640,9 +640,9 @@ def searchRegisteredVideosAndGetResultList(
         else:
             vgen = vgen.where(condition)
 
-        favorites = bilibiliVideo.favorites
-        pubdate = bilibiliVideo.pubdate
-        view = bilibiliVideo.play
+        favorites = BilibiliVideo.favorites
+        pubdate = BilibiliVideo.pubdate
+        view = BilibiliVideo.play
         if videoOrder == VideoOrder.FAVORITE: # this is fake ordering.
             order = -favorites # desc
         elif videoOrder == VideoOrder.VIEW:
