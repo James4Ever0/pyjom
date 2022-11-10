@@ -45,7 +45,7 @@ class a:
     @reloading
     async def someOtherMethod(self): # cannot decorate async function?
         # raise Exception('just another shit')
-        def 
+        def shit():
         return 'good'
     @reloading
     def runAsync(self):
