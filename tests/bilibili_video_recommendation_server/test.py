@@ -638,7 +638,7 @@ def searchRegisteredVideosAndGetResultList(
     else:
         vgen = vgen.where(condition)
     user_video_ids = [v.id for v in vgen or []]
-    print('user of videos',set([v.poster.]))
+    print('user of videos',set([v.poster.user_id for v in vgen or []]))
 
     results = (
         BilibiliVideoIndex.search_bm25(keyword)
