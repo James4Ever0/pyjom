@@ -1,5 +1,6 @@
 from reloading import reloading
 import asyncio
+
 class a:
     @reloading # does this work?
     def someMethod(self):
