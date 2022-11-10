@@ -945,7 +945,7 @@ if __name__ == "__main__":
             ):
                 # print(v)
                 # breakpoint()
-                if type(v) == bilibiliVideo:
+                if type(v) == BilibiliVideo:
                     info = v.videoInfoExtractor() # static method?
                     print('videoInfo:',info)
                     breakpoint()
