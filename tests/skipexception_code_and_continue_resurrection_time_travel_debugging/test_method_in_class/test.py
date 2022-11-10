@@ -13,9 +13,9 @@ class mClass:
     def someMethod(self):
         @reloading
         def someInnerMethod():
-            raise Exception("inner exception")
+            # raise Exception("inner exception")
             return "inside function return"
-        raise Exception("exception")
+        # raise Exception("exception")
         val = someInnerMethod()
         return val
 
@@ -23,9 +23,9 @@ class mClass:
     async def someOtherMethod(self):
         @reloading
         async def asyncInside():
-            raise Exception("inner async exception")
+            # raise Exception("inner async exception")
             return "async inside return"
-        raise Exception('async exception')
+        # raise Exception('async exception')
         val = await asyncInside()
         return val
 
