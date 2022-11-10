@@ -913,6 +913,7 @@ if __name__ == "__main__":
                 form.query, iterate=form.iterate, page_start=form.page_start, params=params
             ):
                 print(v)
+                breakpoint()
 
         @app.get("/searchRegisteredVideos")
         def search_registered_videos():
