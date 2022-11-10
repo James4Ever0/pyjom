@@ -795,7 +795,7 @@ def searchAndRegisterVideos(
     results = searchVideos(query, iterate=iterate, page_start=page_start, params=params)
     # db = getBilibiliVideoDatabaseAndCreateTables()
     # this database connection will be established elsewhere.
-    for v in results:
+    for v in results: # shall you called them 'tags' instead of 'tag'.
         # print(v)
         # breakpoint()
         mid, author, upic = v["mid"], v["author"], v["upic"]
