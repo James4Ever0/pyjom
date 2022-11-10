@@ -216,8 +216,7 @@ class BilibiliUser(Model):
     )  # how to get that? every time you get some video you do this shit? will get you blocked.
     # well you can check it later.
     avatar = CharField(null=True)  # warning! charfield max length is 255
-    @staticmethod
-    def userInfoExtracter(u):
+    def userInfoExtracter(self):
         keys = [
             # "id",
             "username",
@@ -226,7 +225,7 @@ class BilibiliUser(Model):
             "followers",
             "avatar",
         ]
-        info = [.__data__[key] for key in keys]
+        info = [self.__data__[key] for key in keys]
         return info
 
 
