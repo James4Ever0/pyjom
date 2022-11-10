@@ -974,7 +974,7 @@ def search_videos(form: searchVideoForm):
         iterate=form.iterate,
         page_start=form.page_start,
         params=params,
-        
+        page_size=form.page_size
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
