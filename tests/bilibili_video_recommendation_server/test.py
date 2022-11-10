@@ -843,9 +843,9 @@ def searchAndRegisterVideos(
     params={"duration": BSP.all.duration._10分钟以下},
     # 'order': BSP.all.order.综合排序
     # # you can add this parameter later on.
-    
+    page_size:int=...
 ):
-    results = searchVideos(query, iterate=iterate, page_start=page_start, params=params)
+    results = searchVideos(query, iterate=iterate, page_start=page_start, params=params, page_size=page_size)
     # db = getBilibiliVideoDatabaseAndCreateTables()
     # this database connection will be established elsewhere.
     for v in results:  # shall you called them 'tags' instead of 'tag'.
