@@ -885,6 +885,8 @@ if __name__ == "__main__":
         import uvicorn
         import pydantic
 
+        class searchVideoForm(pydantic.)
+
 
         app = FastAPI()
 
