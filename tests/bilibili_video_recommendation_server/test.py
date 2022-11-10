@@ -946,7 +946,7 @@ def search_videos(form: searchVideoForm):
 @app.get("/searchRegisteredVideos")
 @reloading
 def search_registered_videos():
-    videoList = [video for searchRegisteredVideos(form.keyword, form.tid, form.dedeuserid,form.videoOrder,form.limit)
+    videoList = [v. for searchRegisteredVideos(form.keyword, form.tid, form.dedeuserid,form.videoOrder,form.limit)
 
 @app.get("/searchUserVideos")
 @reloading
