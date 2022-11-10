@@ -424,6 +424,9 @@ from bilibili_api.user import VideoOrder
 
 
 def indexAndGetVideoObject(v, bilibiliUser):
+    try:
+        v['typeid'] = int(v['typeid'])
+    except:pass
     favdict = {}
     favorites = v.get("favorites", None)
     if favorites is not None:
