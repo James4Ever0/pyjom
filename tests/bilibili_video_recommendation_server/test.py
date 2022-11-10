@@ -623,18 +623,19 @@ def searchRegisteredVideosAndGetResultList(
         
     # vlist = [v for v in (BilibiliVideo.select().where(condition) or [])]
     # http://docs.peewee-orm.com/en/latest/peewee/relationships.html#relationships
-    vgen = selector
-    # breakpoint()
-    if dedeuserids:
-        from functools import reduce
-        condition &= reduce(
-            lambda a, b: a | b,
-            [BilibiliUser.user_id  == int(userid) for userid in dedeuserids],
-        )
-        vgen = vgen.join(
-            BilibiliUser).where(condition) # this statement does not work.
-    else:
-        vgen = vgen.where(condition)
+    def getVgen(selector):
+        vgen = selector
+        # breakpoint()
+        if dedeuserids:
+            from functools import reduce
+            condition &= reduce(
+                lambda a, b: a | b,
+                [BilibiliUser.user_id  == int(userid) for userid in dedeuserids],
+            )
+            vgen = vgen.join(
+                BilibiliUser).where(condition) # this statement does not work.
+        else:
+            vgen = vgen.where(condition)
     return vgen
     # user_video_ids = [v.id for v in vgen or []]
     # print('user of videos',set([v.poster.user_id for v in vgen or []]))
