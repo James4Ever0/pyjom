@@ -612,6 +612,7 @@ def searchRegisteredVideosAndGetResultList(
     condition = (BilibiliVideo.typeid in resolvedTids) & (BilibiliVideo.visible == True)
     if dedeuserid is not None:
         from functools import reduce
+
         if type(dedeuserid) == str:
             dedeuserids = [dedeuserid]
         else:
