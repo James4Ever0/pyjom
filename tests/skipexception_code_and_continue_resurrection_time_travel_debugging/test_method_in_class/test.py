@@ -1,9 +1,15 @@
 from reloading import reloading
 import asyncio
 
-@reloading
+def mreload(mclass):
+    class newclass:
+        def __init__(self, *args, **kwargs):
+            print('good')
+    return newclass
+
+@mreload
 class a:
-    raise Exception('shit')
+    # raise Exception('shit')
     @reloading # does this work?
     def someMethod(self):
         # @reloading # this will not work.
