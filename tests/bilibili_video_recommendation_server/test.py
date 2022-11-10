@@ -933,6 +933,7 @@ if __name__ == "__main__":
         def search_videos(form: searchVideoForm):
             # print('received params:',params) # it is str.
             # breakpoint()
+            videoInfos = []
             params = {
                 "duration": BSP.all.duration._10分钟以下
             } | form.params  # this is default parameter.
