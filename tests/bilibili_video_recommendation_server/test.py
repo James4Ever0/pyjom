@@ -249,8 +249,7 @@ class BilibiliVideo(Model):
     title = CharField(null=True)
     tag = CharField(null=True)
     description = CharField(null=True)
-    @staticmethod
-    def videoInfoExtractor(v):
+    def videoInfoExtractor(self):
         # keys = v._meta.fields.keys()
         keys = [
             # "id",
