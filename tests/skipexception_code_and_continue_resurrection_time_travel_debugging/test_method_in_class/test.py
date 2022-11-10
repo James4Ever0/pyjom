@@ -12,7 +12,7 @@ class mClass:
             # return in primary function, not here!
             if i == 1:
                 val = 'value'
-                break
+                # break # break outside loop? fuck?
         return val
 
     @reloading
