@@ -218,7 +218,7 @@ class BilibiliUser(Model):
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
-    typeid = IntegerField(null=True)
+    typeid = IntegerField(null=True) # string? wtf?
     visible = BooleanField(null=True)  # are you sure?
     last_check = DateTimeField(
         default=datetime.datetime.now
