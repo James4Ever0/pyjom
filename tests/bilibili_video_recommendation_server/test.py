@@ -681,7 +681,7 @@ def searchRegisteredVideosAndGetResultList(
 def searchRegisteredVideos(
     keyword: str,
     tid: int = 0,
-    dedeuserid: Union[list[str],str, None] = "397424026",
+    dedeuserid: Union[list[str], str, None] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
     page_num: int = 1,
     page_size: int = 30,
@@ -768,7 +768,7 @@ def registerUserVideo(
     # you will store it to database.
     u = registerUser(dedeuserid, is_mine)
     # check if exists.
-    v= BilibiliVideo.get_or_none(BilibiliVideo.bvid == bvid)
+    v = BilibiliVideo.get_or_none(BilibiliVideo.bvid == bvid)
     new = v is None
     if new:
         BilibiliVideo.create(bvid=bvid, visible=visible, poster=u)  # it must be new.
@@ -1113,8 +1113,8 @@ def register_user_video(form: registerUserVideoForm):
         print("visible:", form.visible)
         print("----")
     else:
-        print('video already registered.')
-    return {''}
+        print("video already registered.")
+    return {"is_new": new}
 
 
 # you should recommend by label instead of by name. but whatever.
