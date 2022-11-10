@@ -1050,10 +1050,10 @@ def search_registered_videos(form: searchRegisteredVideoForm):
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
 
-
+from typing import List
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
-    dedeuserid: list[str] = "397424026"
+    dedeuserid: List[str] = "397424026"
     method: Literal["online", "bm25"] = "online"
     use_credential: bool = False
 
