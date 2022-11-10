@@ -18,8 +18,9 @@ if objective == 'searchVideos':
     }  # check if this works?
 elif objective == "searchRegisteredVideos":
     params = dict(query='hello world', tid=..., dedeuserid=..., videoOrder=..., limit=...) # does not remove ellipsis?
+    import json
     j = json.dumps(params)
-    print(params)
+    print(j)
     exit()
 else:
     raise Exception('invalid objective: %s' % objective)
