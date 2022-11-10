@@ -1,30 +1,5 @@
 from reloading import reloading
 import asyncio
-
-def mreload(mclass):
-    print(mclass)
-    breakpoint()
-    # class newclass:
-    #     def __init__(self, *args, **kwargs):
-    #         print('good')
-    # return newclass
-    return mclass
-
-class Mydecorator:
-    #accept the class as argument
-    def __init__(self, student):
-        print("STUDENT:", student)
-        breakpoint()
-        self.class_ = student
-    
-    #accept the class's __init__ method arguments
-    def __call__(self,*args, **kwargs):
-        #define a new display method
-        print('CALL ARGS', args)
-        print('CALL KWARGS',kwargs)
-        class_ = self.class_(*args, **kwargs)
-        return class_
-
 # @mreload
 @reloading
 # no reloading on class?
