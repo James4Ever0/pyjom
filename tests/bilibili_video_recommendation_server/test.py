@@ -1053,7 +1053,7 @@ def search_registered_videos(form: searchRegisteredVideoForm):
 from typing import List
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
-    dedeuserid: List[str] = "397424026"
+    dedeuserid: Union[List[str], str, None] = "397424026"
     method: Literal["online", "bm25"] = "online"
     use_credential: bool = False
 
