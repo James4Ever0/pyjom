@@ -890,7 +890,7 @@ if __name__ == "__main__":
         # just asking. post or get?
         @app.get("/searchVideos")  # what do you want to have? all fields?
         def search_videos(
-            query: str, iterate: bool = False, page_start: int = 1, params={}
+            query: str, iterate: bool = False, page_start: int = 1, params:dict={}
         ):
             params = {"duration": BSP.all.duration._10分钟以下}.update(params) # this is default parameter.
             for v in searchAndRegisterVideos(
