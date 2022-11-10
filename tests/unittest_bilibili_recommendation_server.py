@@ -7,6 +7,7 @@ from lazero.network.checker import waitForServerUp
 message = "bilibili recommendation server"
 waitForServerUp(port, message = message)
 
+objective = ""
 if objective == 'searchVideos':
     params = {
         # "params": {"hop": 1}, # there is no such parameter here.
