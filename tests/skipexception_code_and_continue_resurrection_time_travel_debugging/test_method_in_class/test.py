@@ -10,6 +10,9 @@ class a:
         # raise Exception('just another shit')
         val = someothermethod()
         return val
+    @reloading
+    async def someOtherMethod(self):
+        
 
 A = a()
 val = A.someMethod()
