@@ -985,8 +985,8 @@ def search_registered_videos(form: searchRegisteredVideoForm):
 
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
-    method:Literal['online','bm25']
-    pass
+    method:Literal['online','bm25']='online'
+    use_credential=
 
 @app.get("/searchUserVideos")
 @reloading
