@@ -249,7 +249,7 @@ class BilibiliVideo(Model):
     title = CharField(null=True)
     tag = CharField(null=True)
     description = CharField(null=True)
-    def videoInfoExtractor(self):
+    def videoInfoExtractor(self, blacklist=[]):
         # keys = v._meta.fields.keys()
         keys = [
             # "id",
@@ -269,10 +269,10 @@ class BilibiliVideo(Model):
             "tag",
             "description",
         ]
-        print(v.__data__)
+        print(self.__data__)
         breakpoint()
-        info = {key: v.__data__[key] for key in keys}
-        poster = v.poster
+        info = {key: self.__data__[key] for key in keys}
+        poster = self.poster
         try:
             info["poster"] = poster.userInfoExtracter()  # well it will return as always. no live fetching! it is stored in database.
         except:
