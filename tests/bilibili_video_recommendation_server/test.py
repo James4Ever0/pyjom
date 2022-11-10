@@ -250,9 +250,9 @@ class BilibiliVideo(Model):
     tag = CharField(null=True)
     description = CharField(null=True)
     def videoInfoExtractor(self, blacklist=['id','last_check','register_date','poster']):
-        keys = [key for key in v._meta.fields.keys() if key not in blacklist]
-        print(self.__data__)
-        breakpoint()
+        keys = [key for key in self._meta.fields.keys() if key not in blacklist]
+        # print(self.__data__)
+        # breakpoint()
         info = {key: self.__data__[key] for key in keys}
         poster = self.poster
         try:
