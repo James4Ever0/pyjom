@@ -4,7 +4,7 @@ port = 7341
 baseurl = "http://localhost:{}".format(port)
 
 from lazero.network.checker import waitForServerUp
-"bilibili recommendation server"
+message = "bilibili recommendation server"
 waitForServerUp(port, message = message)
 
 params = {
