@@ -893,7 +893,7 @@ if __name__ == "__main__":
         # just asking. post or get?
         @app.get("/searchVideos")  # what do you want to have? all fields?
         def search_videos(
-            query: str, iterate: bool = False, page_start: int = 1, params={} # let's just see what you've got here.
+            query: str, iterate: bool = False, page_start: int = 1, params:dict={} # let's just see what you've got here.
         ):
             print('received params:',params) # it is str.
             breakpoint()
