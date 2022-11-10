@@ -910,7 +910,7 @@ if __name__ == "__main__":
             } | form.params  # this is default parameter.
             # breakpoint()
             for v in searchAndRegisterVideos(
-                query, iterate=iterate, page_start=page_start, params=params
+                query, iterate=form.iterate, page_start=form.page_start, params=params
             ):
                 print(v)
 
