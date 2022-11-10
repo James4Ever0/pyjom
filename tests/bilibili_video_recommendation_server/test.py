@@ -923,7 +923,7 @@ app = FastAPI()
 
 
 @app.get("/")
-@reloading
+# @reloading
 def server_hello():
     return "bilibili recommendation server"
 
