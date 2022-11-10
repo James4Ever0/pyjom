@@ -648,7 +648,7 @@ def searchRegisteredVideosAndGetResultList(
         BilibiliVideoIndex.search_bm25(keyword).join(
             BilibiliVideo, on=(BilibiliVideoIndex.rowid == BilibiliVideo.id)
         )
-    ).paginate(  # again this is wrong.
+    ).order_by().paginate(  # again this is wrong.
         page_num, page_size
     )
     for index, video_index in enumerate(results):
