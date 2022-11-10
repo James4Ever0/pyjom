@@ -17,7 +17,7 @@ if objective == 'searchVideos':
         "page_start": 1,
     }  # check if this works?
     r = requests.post(baseurl + "/searchVideos", json=params)
-    print("response:", r.text)
 elif objective == "":
     params = {}
     r = requests.post(baseurl + "/", json=params)
+    print("response:", r.text)
