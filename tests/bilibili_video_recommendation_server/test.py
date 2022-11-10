@@ -1010,6 +1010,7 @@ def search_user_videos(form: searchUserVideoForm):
 
 @reloading
 class registerUserVideoForm(pydantic.BaseModel):
+    
 
 @app.get("/registerUserVideo")
 @reloading
