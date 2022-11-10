@@ -5,4 +5,5 @@ class a:
     def someMethod(self):
         raise Exception('shit')
 
-a.someMethod()
+A = a()
+A.someMethod()
