@@ -904,7 +904,7 @@ if __name__ == "__main__":
                 "bvid",
                 "typeid",
                 "visible",
-                "last_check",
+                # "last_check",
                 "register_date",
                 "poster",
                 "play",
