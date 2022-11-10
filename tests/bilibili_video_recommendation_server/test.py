@@ -656,9 +656,6 @@ def searchRegisteredVideosAndGetResultList(
         # what is the count? you need to reorder?
         # bvid = bilibiliVideo.bvid
         # cover = bilibiliVideo.pic
-        favorites = bilibiliVideo.favorites
-        pubdate = bilibiliVideo.pubdate
-        view = bilibiliVideo.play
         order = None
         # you should return the video_index.
         resultList.append((bilibiliVideo, order))
