@@ -346,7 +346,7 @@ def searchVideos(
     iterate: bool = False,
     page_start: int = 1,
     params={"duration": BSP.all.duration._10分钟以下},  # is that right? maybe?
-    page_size:int=...
+    page_size: int = ...,
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     search_type = search.SearchObjectType.VIDEO
@@ -843,9 +843,15 @@ def searchAndRegisterVideos(
     params={"duration": BSP.all.duration._10分钟以下},
     # 'order': BSP.all.order.综合排序
     # # you can add this parameter later on.
-    page_size:int=...
+    page_size: int = ...,
 ):
-    results = searchVideos(query, iterate=iterate, page_start=page_start, params=params, page_size=page_size)
+    results = searchVideos(
+        query,
+        iterate=iterate,
+        page_start=page_start,
+        params=params,
+        page_size=page_size,
+    )
     # db = getBilibiliVideoDatabaseAndCreateTables()
     # this database connection will be established elsewhere.
     for v in results:  # shall you called them 'tags' instead of 'tag'.
@@ -941,9 +947,8 @@ def server_hello():
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
-    page_size:int=...
+    page_size: int = ...
     page_start: int = 1
-
 
 
 @reloading
@@ -976,7 +981,7 @@ def search_videos(form: searchVideoForm):
         iterate=form.iterate,
         page_start=form.page_start,
         params=params,
-        page_size=form.page_size
+        page_size=form.page_size,
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
