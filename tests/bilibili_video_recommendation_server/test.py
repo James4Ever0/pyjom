@@ -1013,6 +1013,7 @@ def search_user_videos(form: searchUserVideoForm):
 @reloading
 def register_user_video(form:registerUserVideoForm):
     registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
+    print('registered:')
 
 
 # you should recommend by label instead of by name. but whatever.
