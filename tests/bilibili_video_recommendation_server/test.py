@@ -596,6 +596,7 @@ def searchRegisteredVideosAndGetResultList(
     tid: int = 0,
     dedeuserid: Union[str, None, list[str]] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
+    page_num:int=1,
     page_size: int = 10,
 ):
     resultList = []
