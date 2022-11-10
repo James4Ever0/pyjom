@@ -1,3 +1,4 @@
 import requests
 
-requests.get(baseurl)
+r = requests.get(baseurl)
+print(r.text)
