@@ -2,7 +2,7 @@ from reloading import reloading
 import asyncio
 
 @reloading
-class a:
+class myClass:
     someval = 1
     @reloading
     def someMethod(self):
