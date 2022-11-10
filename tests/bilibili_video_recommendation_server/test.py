@@ -939,10 +939,12 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 # utils.
 
-def default(value, default_, isInstance = lambda v: v == ...):
+
+def default(value, default_, isInstance=lambda v: v == ...):
     if isInstance(value):
         return default_
     return value
+
 
 # somewhere here:
 # https://fastapi.tiangolo.com/es/tutorial/debugging/
@@ -997,7 +999,7 @@ def search_videos(form: searchVideoForm):
         iterate=form.iterate,
         page_start=form.page_num,
         params=params,
-        page_size=default(form.page_size,...,lambda v: v == None),
+        page_size=default(form.page_size, ..., lambda v: v == None),
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
@@ -1008,7 +1010,6 @@ class searchRegisteredVideoForm(queryForm):
     tid: int = 0
     dedeuserid: Union[str, None] = None
     videoOrder: VideoOrder = VideoOrder.PUBDATE
-
 
 
 @app.post("/searchRegisteredVideos")
@@ -1044,7 +1045,7 @@ def search_user_videos(form: searchUserVideoForm):
         form.use_credential,
         form.videoOrder,
         form.page_num,
-        default(form.page_size,30)
+        default(form.page_size, 30),
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
