@@ -25,7 +25,8 @@ class a:
         return val
 
 
-A = a()
-# val = A.someMethod()
-val = A.runAsync()
-print('return value:', val)
+# A = a()
+# # val = A.someMethod()
+# val = A.runAsync()
+# print('return value:', val)
+# print('shit')
