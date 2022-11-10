@@ -635,7 +635,8 @@ def searchRegisteredVideosAndGetResultList(
             BilibiliUser).where(condition) # this statement does not work.
     else:
         vgen = vgen.where(condition)
-    user_video_ids = [v.id for v in vgen or []]
+    return vgen
+    # user_video_ids = [v.id for v in vgen or []]
     # print('user of videos',set([v.poster.user_id for v in vgen or []]))
     # breakpoint()
     results = (
