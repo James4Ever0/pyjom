@@ -947,7 +947,7 @@ def server_hello():
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
-    page_size: Union[int,...] = ...
+    page_size: Union[int,Ellipsis] = ...
     page_start: int = 1
 
 
