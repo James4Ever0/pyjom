@@ -26,7 +26,8 @@ else:
     raise Exception('invalid objective: %s' % objective)
 
 
-from lazero.
+from lazero.utils.json import jsonify
+params=jsonify(params)
 r = requests.post(baseurl + "/"+objective, json=params)
 print('objective: %s' % objective)
 print("response:", r.text)
