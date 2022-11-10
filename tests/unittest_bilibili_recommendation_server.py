@@ -20,4 +20,5 @@ if objective == 'searchVideos':
 elif objective == "":
     params = {}
     r = requests.post(baseurl + "/", json=params)
+print('objective: %s' % objective)
 print("response:", r.text)
