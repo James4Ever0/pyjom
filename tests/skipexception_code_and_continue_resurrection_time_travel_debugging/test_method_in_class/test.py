@@ -2,8 +2,8 @@ from reloading import reloading
 import asyncio
 
 @reloading
-class myClass:
-    someval = 1
+class mClass:
+    someValue = 2
     @reloading
     def someMethod(self):
         @reloading
