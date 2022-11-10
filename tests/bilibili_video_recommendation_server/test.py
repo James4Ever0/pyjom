@@ -216,8 +216,8 @@ class BilibiliUser(Model):
     )  # how to get that? every time you get some video you do this shit? will get you blocked.
     # well you can check it later.
     avatar = CharField(null=True)  # warning! charfield max length is 255
-    def userInfoExtracter(self):
-        u=self
+    @staticmethod
+    def userInfoExtracter(u):
         keys = [
             # "id",
             "username",
