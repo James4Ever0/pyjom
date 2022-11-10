@@ -7,11 +7,11 @@ class a:
     @reloading
     def someMethod(self):
         @reloading
-        def someothermethod():
+        def someInnerMethod():
             raise Exception('exception1')
             return 'value'
         raise Exception('exception2')
-        val = someothermethod()
+        val = someInnerMethod()
         return val
     @reloading
     async def someOtherMethod(self):
