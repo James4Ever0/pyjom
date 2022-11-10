@@ -895,7 +895,7 @@ if __name__ == "__main__":
         app = FastAPI()
 
         def videoInfoExtractor(v):
-            keys = ['title','play','pic','pubdate','description','favorites','bvid','length']
+            keys = v._meta.fields.keys()
             info = {key:v.__dict__[key] for key in keys}
             return info
 
