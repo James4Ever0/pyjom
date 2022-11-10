@@ -208,7 +208,7 @@ from peewee import *
 
 
 class BilibiliUser(Model):
-    username = CharField() # can be updated later.
+    username = CharField()  # can be updated later.
     user_id = IntegerField(unique=True)  # this is integer.
     is_mine = BooleanField(default=False)
     followers = IntegerField(
@@ -216,8 +216,11 @@ class BilibiliUser(Model):
     )  # how to get that? every time you get some video you do this shit? will get you blocked.
     # well you can check it later.
     avatar = CharField(null=True)  # warning! charfield max length is 255
-    def userInfoExtracter(self, blacklist=['id']):
-        info = {key: value for key, value in self.__data__.items() if key not in blacklist}
+
+    def userInfoExtracter(self, blacklist=["id"]):
+        info = {
+            key: value for key, value in self.__data__.items() if key not in blacklist
+        }
         return info
 
 
@@ -241,21 +244,30 @@ class BilibiliVideo(Model):
     title = CharField(null=True)
     tag = CharField(null=True)
     description = CharField(null=True)
-    def videoInfoExtractor(self, blacklist=['id','last_check','register_date','poster']):
-        info = {key: value for key, value in self.__data__.items() if key not in blacklist}
+
+    def videoInfoExtractor(
+        self, blacklist=["id", "last_check", "register_date", "poster"]
+    ):
+        info = {
+            key: value for key, value in self.__data__.items() if key not in blacklist
+        }
         poster = self.poster
         try:
-            info["poster"] = poster.userInfoExtracter()  # well it will return as always. no live fetching! it is stored in database.
+            info[
+                "poster"
+            ] = (
+                poster.userInfoExtracter()
+            )  # well it will return as always. no live fetching! it is stored in database.
         except:
             import traceback
+
             traceback.print_exc()
-            print('userinfo might be missing from videoinfo.')
+            print("userinfo might be missing from videoinfo.")
         try:
             info["typeid"] = int(info["typeid"])
         except:
             pass
         return info
-
 
 
 class BilibiliVideoIndex(FTSModel):
@@ -296,7 +308,7 @@ def getBilibiliVideoDatabaseAndCreateTables():
 def registerUser(dedeuserid: str, is_mine: Union[bool, None] = None):
     user_id = int(dedeuserid)
     u = BilibiliUser.get_or_none(user_id=user_id)
-    if u is None: # this is to create.
+    if u is None:  # this is to create.
         if is_mine is None:
             is_mine = False
         userObject = user.User(user_id)
@@ -310,7 +322,10 @@ def registerUser(dedeuserid: str, is_mine: Union[bool, None] = None):
         username = userInfo["name"]
         followers = followersInfo["total"]
         avatar = userInfo["face"]
-        u, _ = BilibiliUser.get_and_update_or_create( # this is wrong. maybe the username is updated.
+        (
+            u,
+            _,
+        ) = BilibiliUser.get_and_update_or_create(  # this is wrong. maybe the username is updated.
             user_id=user_id,
             username=username,
             is_mine=is_mine,
@@ -905,10 +920,12 @@ import pydantic
 
 app = FastAPI()
 
+
 @app.get("/")
 @reloading
 def server_hello():
     return "bilibili recommendation server"
+
 
 @reloading
 class searchVideoForm(pydantic.BaseModel):
@@ -916,6 +933,7 @@ class searchVideoForm(pydantic.BaseModel):
     iterate: bool = False
     page_start: int = 1
     params: dict = {}  # let's just see what you've got here.
+
 
 # just asking. post or get?
 @app.post("/searchVideos")  # what do you want to have? all fields?
@@ -937,29 +955,39 @@ def search_videos(form: searchVideoForm):
         # print(v)
         # breakpoint()
         if type(v) == BilibiliVideo:
-            info = v.videoInfoExtractor() # static method?
+            info = v.videoInfoExtractor()  # static method?
             # print('videoInfo:',info)
             # breakpoint()
             videoInfos.append(info)
         return videoInfos
 
+
 @reloading
 class searchRegisteredVideoForm(pydantic.BaseModel):
-    query:str
-    tid:int=0
-    dedeuserid:Union[str, None]=None
-    videoOrder:VideoOrder=VideoOrder.
+    query: str
+    tid: int = 0
+    dedeuserid: Union[str, None] = None
+    videoOrder: VideoOrder = VideoOrder.PUBDATE
+    limit: int = 10
+
 
 @app.get("/searchRegisteredVideos")
 @reloading
-def search_registered_videos(form:searchRegisteredVideoForm):
-    videoList = [v.videoInfoExtractor() for v in searchRegisteredVideos(form.query, form.tid, form.dedeuserid,form.videoOrder,form.limit)]
+def search_registered_videos(form: searchRegisteredVideoForm):
+    videoList = [
+        v.videoInfoExtractor()
+        for v in searchRegisteredVideos(
+            form.query, form.tid, form.dedeuserid, form.videoOrder, form.limit
+        )
+    ]
     return videoList
+
 
 @app.get("/searchUserVideos")
 @reloading
 def search_user_videos():
     ...
+
 
 @app.get("/registerUserVideo")
 @reloading
