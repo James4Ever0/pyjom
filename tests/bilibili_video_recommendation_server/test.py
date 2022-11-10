@@ -273,7 +273,7 @@ def videoInfoExtractor(v):
     info = {key: v.__dict__[key] for key in keys}
     poster = v.poster
     try:
-        info["poster"] = userInfoExtracter(
+        info["poster"] = poster.userInfoExtracter(
             poster
         )  # well it will return as always. no live fetching! it is stored in database.
     except:
