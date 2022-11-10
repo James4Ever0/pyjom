@@ -10,8 +10,8 @@ class mClass:
         for i in reloading(range(3)): # still not solved!
             # raise Exception('shit')
             # return in primary function, not here!
-            if i == 1:
-                val = 'value'
+            if True:
+                val = 'value'# value not assigned correctly.
                 # break # break outside loop? fuck?
                 # what the fuck?
         return val
