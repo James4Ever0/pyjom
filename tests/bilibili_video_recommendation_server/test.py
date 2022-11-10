@@ -994,7 +994,7 @@ class searchUserVideoForm(searchRegisteredVideoForm):
     use_credential: bool = False
 
 
-@app.get("/searchUserVideos")
+@app.post("/searchUserVideos")
 # @reloading
 def search_user_videos(form: searchUserVideoForm):
     vgen = searchUserVideos(
@@ -1018,7 +1018,7 @@ class registerUserVideoForm(pydantic.BaseModel):
     visible: bool = False
 
 
-@app.get("/registerUserVideo")
+@app.post("/registerUserVideo")
 # @reloading
 def register_user_video(form: registerUserVideoForm):
     registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
