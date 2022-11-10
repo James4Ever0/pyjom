@@ -911,7 +911,8 @@ if __name__ == "__main__":
                 "followers",
                 "avatar",
             ]
-            inf
+            info = [u.__dict__[key] for key in keys]
+            return info
 
         def videoInfoExtractor(v):
             # keys = v._meta.fields.keys()
