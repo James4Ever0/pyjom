@@ -878,17 +878,7 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 
 # utils.
-def userInfoExtracter(u):
-    keys = [
-        # "id",
-        "username",
-        "user_id",
-        "is_mine",
-        "followers",
-        "avatar",
-    ]
-    info = [u.__dict__[key] for key in keys]
-    return info
+
 
 def videoInfoExtractor(v):
     # keys = v._meta.fields.keys()
