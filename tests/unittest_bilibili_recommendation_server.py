@@ -12,7 +12,7 @@ if objective == 'searchVideos':
     params = {
         # "params": {"hop": 1}, # there is no such parameter here.
         # can we pass shit without params?
-        "params"
+        "params":...,
         "query": "hello world",
         "iterate": True,
         "page_start": 1,
@@ -24,6 +24,9 @@ elif objective == "searchRegisteredVideos":
     # exit()
 else:
     raise Exception('invalid objective: %s' % objective)
+
+
+from lazero.
 r = requests.post(baseurl + "/"+objective, json=params)
 print('objective: %s' % objective)
 print("response:", r.text)
