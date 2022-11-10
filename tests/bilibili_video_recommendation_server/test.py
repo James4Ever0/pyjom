@@ -938,6 +938,12 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 
 # utils.
+
+def default(value, default_, isInstance = lambda v: v == ...):
+    if isInstance(value):
+        return default_
+    return value
+
 # somewhere here:
 # https://fastapi.tiangolo.com/es/tutorial/debugging/
 port = 7341
@@ -991,7 +997,7 @@ def search_videos(form: searchVideoForm):
         iterate=form.iterate,
         page_start=form.page_num,
         params=params,
-        page_size=form.page_size,
+        page_size=default(form.page_size,...,,
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
