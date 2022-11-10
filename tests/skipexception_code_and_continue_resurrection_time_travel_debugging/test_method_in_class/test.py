@@ -45,8 +45,11 @@ class a:
     @reloading
     async def someOtherMethod(self): # cannot decorate async function?
         # raise Exception('just another shit')
-        def shit():
-        return 'good'
+        @reloading
+        async def shit():
+            raise Exception('just another shit')
+            # return 'abcdef'
+        return val
     @reloading
     def runAsync(self):
         loop= asyncio.get_event_loop()
