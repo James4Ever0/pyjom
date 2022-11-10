@@ -897,6 +897,9 @@ if __name__ == "__main__":
 
         app = FastAPI()
 
+        def userInfoExtracter(u):
+            keys = ['id', 'username', 'user_id', 'is_mine', 'followers', 'avatar']
+
         def videoInfoExtractor(v):
             # keys = v._meta.fields.keys()
             keys = [
