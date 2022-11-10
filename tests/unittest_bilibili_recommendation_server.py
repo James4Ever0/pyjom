@@ -17,7 +17,9 @@ if objective == 'searchVideos':
         "page_start": 1,
     }  # check if this works?
 elif objective == "searchRegisteredVideos":
-    params = dict(query=, tid=, dedeuserid=, videoOrder=, limit=)
+    params = dict(query=, tid=..., dedeuserid=..., videoOrder=..., limit=...)
+    print(params)
+    exit()
 else:
     raise Exception('invalid objective: %s' % objective)
 r = requests.post(baseurl + "/"+objective, json=params)
