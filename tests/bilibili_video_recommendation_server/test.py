@@ -906,7 +906,7 @@ if __name__ == "__main__":
                 "visible",
                 # "last_check",
                 # "register_date",
-                "poster",
+                # "poster",
                 "play",
                 "pic",
                 "length",
