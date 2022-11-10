@@ -636,7 +636,7 @@ def searchRegisteredVideosAndGetResultList(
          .join(User, on=(Tweet.user == User.id))
          .where(User.username == 'huey'))
     if dedeuserids:
-        vgen = vgen.join(BilibiliUser,on=()).where(condition & BilibiliUser.user_id in dedeuserids)
+        vgen = vgen.join(BilibiliUser,on=(BilibiliVideo.)).where(condition & BilibiliUser.user_id in dedeuserids)
     else:
         vgen = vgen.where(condition)
     user_video_ids = [
