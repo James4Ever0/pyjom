@@ -31,8 +31,8 @@ class myClass:
 
 @reloading
 def main():
-    A = a() # shit
-    print(A)
+    MCLASS = myClass() # shit
+    print(MCLASS)
     # breakpoint()
     # val = A.someMethod()
     val = A.runAsync()
