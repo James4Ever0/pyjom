@@ -877,7 +877,7 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     return db
 
 
-
+# utils.
 def userInfoExtracter(u):
     keys = [
         # "id",
