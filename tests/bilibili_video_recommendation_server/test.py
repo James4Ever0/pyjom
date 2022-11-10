@@ -883,6 +883,7 @@ if __name__ == "__main__":
         port = 7341
         from fastapi import FastAPI
         import uvicorn
+        
 
         app = FastAPI()
 
@@ -893,10 +894,7 @@ if __name__ == "__main__":
         # just asking. post or get?
         @app.post("/searchVideos")  # what do you want to have? all fields?
         def search_videos(
-            query: str,
-            iterate: bool = False,
-            page_start: int = 1,
-            params:dict = {},  # let's just see what you've got here.
+            searchVideoForm
         ):
             print('received params:',params) # it is str.
             breakpoint()
