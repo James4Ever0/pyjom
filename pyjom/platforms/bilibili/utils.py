@@ -129,7 +129,10 @@ def videoDurationStringToSeconds(
             return seconds
         else:
             raise Exception("method %s does not exist" % method)
-
+    except:
+        import traceback
+        traceback.print_exc()
+        print("exception durion video duration string conversion")
 
 @reloading
 def clearHtmlTags(htmlObject):
