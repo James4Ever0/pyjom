@@ -941,7 +941,9 @@ if __name__ == "__main__":
                     poster
                 )  # well it will return as always. no live fetching! it is stored in database.
             except:
-                print('')
+                import traceback
+                traceback.print_exc()
+                print('userinfo might be missing from videoinfo.')
             try:
                 info["typeid"] = int(info["typeid"])
             except:
