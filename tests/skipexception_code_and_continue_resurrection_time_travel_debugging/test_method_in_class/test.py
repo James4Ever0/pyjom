@@ -1,16 +1,12 @@
 from reloading import reloading
 import asyncio
-# @mreload
+
 @reloading
-# no reloading on class?
 class a:
-    # raise Exception('shit')
-    # cannot raise exception here. the compiler will complain.
-    # good?
     someval = 1
-    @reloading # does this work?
+    @reloading
     def someMethod(self):
-        @reloading # this will not work. will it?
+        @reloading
         def someothermethod():
             # raise Exception('but just another shit')
             return 'value'
