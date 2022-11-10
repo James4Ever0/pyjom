@@ -944,14 +944,17 @@ def search_videos(form: searchVideoForm):
         return videoInfos
 
 @app.get("/searchRegisteredVideos")
+@reloading
 def search_registered_videos():
     ...
 
 @app.get("/searchUserVideos")
+@reloading
 def search_user_videos():
     ...
 
 @app.get("/registerUserVideo")
+@reloading
 def register_user_video():
     ...
 
