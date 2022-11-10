@@ -624,8 +624,9 @@ def searchRegisteredVideosAndGetResultList(
         #     [BilibiliVideo.poster in registerUser(userid) for userid in dedeuserids],
         # )
         condition &= BilibiliVideo.poster.rel_field in [int(userid) for userid in dedeuserids]
+    vlist = (BilibiliVideo.select(BilibiliVideo.id).where(condition) or [])
     user_video_ids = [
-        v.id for v in (BilibiliVideo.select(BilibiliVideo.id).where(condition) or [])
+        v.id for v in vlist
     ]
     # print('user video ids',user_video_ids)
     results = (
