@@ -898,7 +898,7 @@ if __name__ == "__main__":
             params = {
                 "duration": BSP.all.duration._10分钟以下
             } | params  # this is default parameter.
-            print('received params':params)
+            print('received params:',params)
             breakpoint()
             for v in searchAndRegisterVideos(
                 query, iterate=iterate, page_start=page_start, params=params
