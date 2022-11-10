@@ -943,11 +943,11 @@ app = FastAPI()
 def server_hello():
     return "bilibili recommendation server"
 
-
+import typing
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
-    page_size: Union[int,Ellipsis] = ...
+    page_size: Union[int,typing.Ellipsis] = ...
     page_start: int = 1
 
 
