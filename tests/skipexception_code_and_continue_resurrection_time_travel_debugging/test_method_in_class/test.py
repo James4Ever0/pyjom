@@ -3,9 +3,12 @@ from reloading import reloading
 class a:
     @reloading # does this work?
     def someMethod(self):
-        # raise Exception('shit')
+        @reloading
+        def someothermethod():
+            raise Exception('shit')
         # raise Exception('just another shit')
-        return 'fine'
+        val = someothermethod()
+        return 'val
 
 A = a()
 val = A.someMethod()
