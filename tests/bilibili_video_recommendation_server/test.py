@@ -624,7 +624,7 @@ def searchRegisteredVideosAndGetResultList(
     # vlist = [v for v in (BilibiliVideo.select().where(condition) or [])]
     # http://docs.peewee-orm.com/en/latest/peewee/relationships.html#relationships
     def getVgen(selector):
-        nonlocal condition
+        nonlocal condition, dedeuserids
         vgen = selector
         # breakpoint()
         if dedeuserids:
@@ -637,7 +637,7 @@ def searchRegisteredVideosAndGetResultList(
                 BilibiliUser).where(condition) # this statement does not work.
         else:
             vgen = vgen.where(condition)
-    return vgen
+        return vgen
     # user_video_ids = [v.id for v in vgen or []]
     # print('user of videos',set([v.poster.user_id for v in vgen or []]))
     # breakpoint()
