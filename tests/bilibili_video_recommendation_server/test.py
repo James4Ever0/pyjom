@@ -768,8 +768,9 @@ def registerUserVideo(
     # you will store it to database.
     u = registerUser(dedeuserid, is_mine)
     # check if exists.
-    v= BilibiliVideo.get(BilibiliVideo.bvid == bvid)
-    BilibiliVideo.create(bvid=bvid, visible=visible, poster=u)  # it must be new.
+    v= BilibiliVideo.get_or_none(BilibiliVideo.bvid == bvid)
+    if v is None:
+        BilibiliVideo.create(bvid=bvid, visible=visible, poster=u)  # it must be new.
 
 
 # grace period to be one day. that's long enough. or not?
