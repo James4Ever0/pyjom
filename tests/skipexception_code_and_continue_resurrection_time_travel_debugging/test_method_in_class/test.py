@@ -27,6 +27,7 @@ class Mydecorator:
 
 # @mreload
 @reloading
+# no reloading on class?
 class a:
     # raise Exception('shit')
     # cannot raise exception here. the compiler will complain.
