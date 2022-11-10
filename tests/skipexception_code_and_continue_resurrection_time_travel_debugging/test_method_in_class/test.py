@@ -1,2 +1,5 @@
+
+
 class a:
-    def 
+    def someMethod(self):
+        raise Exception('shit')
