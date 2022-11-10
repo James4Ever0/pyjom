@@ -623,7 +623,7 @@ def searchRegisteredVideosAndGetResultList(
         
     # vlist = [v for v in (BilibiliVideo.select().where(condition) or [])]
     # http://docs.peewee-orm.com/en/latest/peewee/relationships.html#relationships
-    vgen = BilibiliVideo.select()
+    vgen = selector
     # breakpoint()
     if dedeuserids:
         from functools import reduce
