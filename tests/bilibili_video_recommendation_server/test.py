@@ -1004,7 +1004,7 @@ class searchRegisteredVideoForm(queryForm):
 # @reloading
 def search_registered_videos(form: searchRegisteredVideoForm):
     vgen = searchRegisteredVideos(
-        form.query, form.tid, form.dedeuserid, form.videoOrder, form.page_num, form.page_size
+        form.query, form.tid, form.dedeuserid, form.videoOrder, form.page_num, page_size
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
