@@ -1012,8 +1012,7 @@ def search_user_videos(form: searchUserVideoForm):
 @app.get("/registerUserVideo")
 @reloading
 def register_user_video(form:registerUserVideoForm):
-    infoList = [form.bvid, form.dedeuserid, form.is_mine, form.visible]
-    registerUserVideo(*infoList)
+    registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
     print("----")
     print('registered user video:', form.bvid)
     print('user:', form.dedeuserid)
