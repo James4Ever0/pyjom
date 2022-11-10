@@ -667,6 +667,7 @@ def searchRegisteredVideosAndGetResultList(
             order = -pubdate  # most recent video.
         else:
             order = index
+        order = None
         # you should return the video_index.
         resultList.append((bilibiliVideo, order))
     # resultList.sort(key=lambda x: x[1])
