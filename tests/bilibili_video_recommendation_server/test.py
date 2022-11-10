@@ -631,6 +631,10 @@ def searchRegisteredVideosAndGetResultList(
     # http://docs.peewee-orm.com/en/latest/peewee/relationships.html#relationships
     vgen = BilibiliVideo.select()
     # breakpoint()
+    query = (Tweet
+         .select()
+         .join(User, on=(Tweet.user == User.id))
+         .where(User.username == 'huey'))
     if dedeuserids:
         vgen = vgen.join(BilibiliUser).where(condition & BilibiliUser.user_id in dedeuserids)
     else:
