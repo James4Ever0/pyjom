@@ -3,6 +3,7 @@ import asyncio
 
 @reloading
 class a:
+    shit
     @reloading # does this work?
     def someMethod(self):
         # @reloading # this will not work.
