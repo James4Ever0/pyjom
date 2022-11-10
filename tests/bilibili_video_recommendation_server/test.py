@@ -903,21 +903,19 @@ from fastapi import FastAPI
 import uvicorn
 import pydantic
 
-@reloading
-class searchVideoForm(pydantic.BaseModel):
-    query: str  # required?
-    iterate: bool = False
-    page_start: int = 1
-    params: dict = {}  # let's just see what you've got here.
-
-
-
 app = FastAPI()
 
 @app.get("/")
 @reloading
 def server_hello():
     return "bilibili recommendation server"
+
+@reloading
+class searchVideoForm(pydantic.BaseModel):
+    query: str  # required?
+    iterate: bool = False
+    page_start: int = 1
+    params: dict = {}  # let's just see what you've got here.
 
 # just asking. post or get?
 @app.post("/searchVideos")  # what do you want to have? all fields?
@@ -949,8 +947,9 @@ def search_videos(form: searchVideoForm):
 class searchRegisteredVideoForm(pydantic.BaseModel):
     query:str
     tid:int=0
-    dedeuserid:Union[]
-    
+    dedeuserid:Union[str, None]=None
+    videoOrder:
+
 @app.get("/searchRegisteredVideos")
 @reloading
 def search_registered_videos(form:searchRegisteredVideoForm):
