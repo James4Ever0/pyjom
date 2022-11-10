@@ -7,9 +7,9 @@ def mreload(mclass):
             print('good')
     return newclass
 
-@mreload
+# @mreload
 class a:
-    # raise Exception('shit')
+    raise Exception('shit')
     @reloading # does this work?
     def someMethod(self):
         # @reloading # this will not work.
