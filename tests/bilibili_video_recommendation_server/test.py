@@ -269,6 +269,7 @@ class BilibiliVideo(Model):
             "tag",
             "description",
         ]
+        print(v.__data__)
         breakpoint()
         info = {key: v.__data__[key] for key in keys}
         poster = v.poster
