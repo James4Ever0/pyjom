@@ -1003,7 +1003,7 @@ class searchRegisteredVideoForm(queryForm):
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
 
-def ellipsisToDefault(value, default):
+def default(value, default):
     if value == ...:
         return default
     return value
