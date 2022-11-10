@@ -5,7 +5,8 @@ class a:
     def someMethod(self):
         # @reloading # this will not work.
         def someothermethod():
-            raise Exception('shit')
+            raise Exception('another shit')
+
         # raise Exception('just another shit')
         val = someothermethod()
         return val
