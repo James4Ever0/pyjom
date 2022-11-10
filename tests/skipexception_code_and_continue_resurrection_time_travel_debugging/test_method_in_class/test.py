@@ -44,6 +44,7 @@ def main():
     val = MClass.someMethod()
     print("return value:", val)
     val = MClass.runAsync()
+    val = MClass.forLoopInFunction()
     print("return async value:", val)
     print("success!")
 
