@@ -11,7 +11,7 @@ waitForServerUp(port, message=message)
 # objective = "searchRegisteredVideos"
 # objective = "searchVideos"
 # objective = "searchUserVideos"
-object
+objective = "registerUserVideo"
 if objective == "searchVideos":
     params = {
         # "params": {"hop": 1}, # there is no such parameter here.
