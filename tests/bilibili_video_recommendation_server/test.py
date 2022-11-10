@@ -1000,13 +1000,14 @@ class searchRegisteredVideoForm(queryForm):
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
 def ellipsisToDefault(value, default):
-    if value == ..:
+    if value == ...: return default
+    return value
 
 @app.post("/searchRegisteredVideos")
 # @reloading
 def search_registered_videos(form: searchRegisteredVideoForm):
     vgen = searchRegisteredVideos(
-        form.query, form.tid, form.dedeuserid, form.videoOrder, form.page_num, page_size
+        form.query, form.tid, form.dedeuserid, form.videoOrder, form.page_num, ellipsisToDefault(form.page_size, 30)
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
