@@ -46,7 +46,7 @@ class mClass:
 
 def forLoop():
     val = None
-    for i in reloading(range(3)):
+    for i in reloading(range(3)): # multiple reloading for for-loop is not supported.
         val = 'abcd'
     return val
 
