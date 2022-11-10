@@ -652,7 +652,7 @@ def searchRegisteredVideosAndGetResultList(
         page_num, page_size
     )
     for index, video_index in enumerate(results):
-        bilibiliVideo = BilibiliVideo.get(id=video_index.rowid)
+        bilibiliVideo = BilibiliVideo.get(id=video_index.rowid) # this shall be fast.
         # what is the count? you need to reorder?
         # bvid = bilibiliVideo.bvid
         # cover = bilibiliVideo.pic
