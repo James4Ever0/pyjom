@@ -1,4 +1,5 @@
 from reloading import reloading
+
 # serve my video, serve my cat video, dog video, set priority, serve others video
 # by means of query? or just directly ask me for it.
 
@@ -423,8 +424,11 @@ import math
 # @refresh_status_decorator
 from bilibili_api.user import VideoOrder
 
+
 @reloading
-def indexAndGetVideoObject(v, bilibiliUser): # let's wrap this shit. eliminate those 'erroneous' display.
+def indexAndGetVideoObject(
+    v, bilibiliUser
+):  # let's wrap this shit. eliminate those 'erroneous' display.
     try:
         v["typeid"] = int(v["typeid"])
     except:
