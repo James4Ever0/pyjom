@@ -984,7 +984,8 @@ def search_registered_videos(form: searchRegisteredVideoForm):
     return videoList
 
 @reloading
-class searchUserVideoForm
+class searchUserVideoForm(searchRegisteredVideoForm):
+    
 
 @app.get("/searchUserVideos")
 @reloading
