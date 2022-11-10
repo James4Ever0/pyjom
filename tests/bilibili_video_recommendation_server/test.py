@@ -986,7 +986,7 @@ def search_registered_videos(form: searchRegisteredVideoForm):
 @app.get("/searchUserVideos")
 @reloading
 def search_user_videos():
-    ...
+    searchUserVideos(form.query, form.tid, form.dedeuserid, form.videoOrder)
 
 
 @app.get("/registerUserVideo")
