@@ -27,6 +27,7 @@ class a:
     # raise Exception('shit')
     # cannot raise exception here. the compiler will complain.
     # good?
+    someval = 1
     @reloading # does this work?
     def someMethod(self):
         # @reloading # this will not work.
