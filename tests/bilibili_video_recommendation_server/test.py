@@ -902,10 +902,10 @@ if __name__ == "__main__":
             keys = [
                 # "id",
                 "bvid",
-                "typeid",
+                "typeid", # str?
                 "visible",
                 # "last_check",
-                "register_date",
+                # "register_date",
                 "poster",
                 "play",
                 "pic",
