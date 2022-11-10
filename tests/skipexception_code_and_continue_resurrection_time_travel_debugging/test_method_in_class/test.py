@@ -56,9 +56,9 @@ class a:
 
 A = a()
 print(A)
-breakpoint()
+# breakpoint()
 val = A.someMethod()
 # val = A.runAsync()
-# print('return value:', val)
+print('return value:', val)
 # print('shit')
-# print('good')
+print('good')
