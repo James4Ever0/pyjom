@@ -1,4 +1,4 @@
 import os
 
 
-os.
+os.system('shit')
