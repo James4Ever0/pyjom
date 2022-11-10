@@ -2,10 +2,12 @@ from reloading import reloading
 import asyncio
 
 def mreload(mclass):
-    class newclass:
-        def __init__(self, *args, **kwargs):
-            print('good')
-    return newclass
+    print(mclass)
+    breakpoint()
+    # class newclass:
+    #     def __init__(self, *args, **kwargs):
+    #         print('good')
+    # return newclass
 
 class Mydecorator:
     #accept the class as argument
