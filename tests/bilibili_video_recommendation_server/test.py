@@ -689,6 +689,8 @@ def searchUserVideos(
             dedeuserid=dedeuserid,
             use_credential=use_credential,
             stop_on_duplicate=False,
+            page_num=page_num,
+            page_size=page_size
         ):
             # what is the content? plan to update?
             # print("SEARCHED USER VIDEO ID:", v_id)
