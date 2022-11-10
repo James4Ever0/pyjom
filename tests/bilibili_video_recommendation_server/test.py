@@ -883,6 +883,7 @@ if __name__ == "__main__":
         port = 7341
         from fastapi import FastAPI
         import uvicorn
+        import pydantic
 
 
         app = FastAPI()
