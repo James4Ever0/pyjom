@@ -218,7 +218,7 @@ class BilibiliUser(Model):
 
 class BilibiliVideo(Model):
     bvid = CharField(unique=True)
-    typeid = IntegerField(null=True) # string? wtf?
+    typeid = IntegerField(null=True)  # string? wtf?
     visible = BooleanField(null=True)  # are you sure?
     last_check = DateTimeField(
         default=datetime.datetime.now
@@ -425,7 +425,7 @@ from bilibili_api.user import VideoOrder
 
 def indexAndGetVideoObject(v, bilibiliUser):
     try:
-        v['typeid'] = int(v['typeid'])
+        v["typeid"] = int(v["typeid"])
     except:
         pass
     favdict = {}
@@ -898,14 +898,14 @@ if __name__ == "__main__":
         app = FastAPI()
 
         def userInfoExtracter(u):
-            keys = ['id', 'username', 'user_id', 'is_mine', 'followers', 'avatar']
+            keys = ["id", "username", "user_id", "is_mine", "followers", "avatar"]
 
         def videoInfoExtractor(v):
             # keys = v._meta.fields.keys()
             keys = [
                 # "id",
                 "bvid",
-                "typeid", # str?
+                "typeid",  # str?
                 "visible",
                 # "last_check",
                 # "register_date",
@@ -922,9 +922,9 @@ if __name__ == "__main__":
             ]
             info = {key: v.__dict__[key] for key in keys}
             poster = v.poster
-            info['poster'] = 
+            info["poster"] = userInfoExtracter(poster)
             try:
-                info['typeid'] = int(info['typeid'])
+                info["typeid"] = int(info["typeid"])
             except:
                 pass
             return info
