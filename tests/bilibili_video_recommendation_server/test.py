@@ -1066,8 +1066,6 @@ def search_registered_videos(form: searchRegisteredVideoForm):
     return videoInfos
 
 
-from typing import List
-
 
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
