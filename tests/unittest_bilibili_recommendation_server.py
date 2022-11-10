@@ -14,7 +14,7 @@ if objective == 'searchVideos':
         # can we pass shit without params?
         "params":...,
         "query": "hello world",
-        "iterate":False,
+        "iterate":False, # not all pages, you dumb fool!
         "page_num": 1,
     }  # check if this works?
 elif objective == "searchRegisteredVideos":
