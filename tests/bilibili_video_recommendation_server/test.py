@@ -347,7 +347,7 @@ def searchVideos(
     iterate: bool = False,
     page_start: int = 1,
     params={"duration": BSP.all.duration._10分钟以下},  # is that right? maybe?
-    page_size: Union[int, ellipsis] = ...,
+    page_size: int = ...,
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     search_type = search.SearchObjectType.VIDEO
@@ -855,7 +855,7 @@ def searchAndRegisterVideos(
     params={"duration": BSP.all.duration._10分钟以下},
     # 'order': BSP.all.order.综合排序
     # # you can add this parameter later on.
-    page_size: Union[int, ellipsis] = ...,
+    page_size: int = ...,
 ):
     results = searchVideos(
         query,
