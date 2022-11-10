@@ -388,7 +388,8 @@ def searchVideos(
         page_range = range(page_start_current, page_start_current + 1)
     else:
         import progressbar
-        print(f'iterating page range: {page_start_current}-{numPages}')
+
+        print(f"iterating page range: {page_start_current}-{numPages}")
         page_range = progressbar.progressbar(range(page_start_current, numPages + 1))
     for page in page_range:
         if page != page_start:
@@ -572,7 +573,7 @@ def getUserVideos(
         if pn >= numPages:
             break
         elif not stop_on_duplicate:
-            break # this is the hint of merely using this as a search tool
+            break  # this is the hint of merely using this as a search tool
         time.sleep(sleep)
         pn += 1
 
@@ -611,12 +612,15 @@ def searchRegisteredVideosAndGetResultList(
     condition = (BilibiliVideo.typeid in resolvedTids) & (BilibiliVideo.visible == True)
     if dedeuserid:
         from functools import reduce
+
         if type(dedeuserid) == str:
             dedeuserids = [dedeuserid]
         else:
             dedeuserids = dedeuserid
-        :
-            condition ||reduce(lambda a,b:a|b,[BilibiliVideo.poster == registerUser(userid) for userid in dedeuserids])
+        condition &= reduce(
+            lambda a, b: a | b,
+            [BilibiliVideo.poster == registerUser(userid) for userid in dedeuserids],
+        )
     user_video_ids = [
         v.id for v in (BilibiliVideo.select(BilibiliVideo.id).where(condition) or [])
     ]
