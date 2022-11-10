@@ -12,6 +12,10 @@ class a:
         return val
     @reloading
     async def someOtherMethod(self):
+        raise Exception('shit')
+    
+    @reloading
+    def runAsync(self):
         
 
 A = a()
