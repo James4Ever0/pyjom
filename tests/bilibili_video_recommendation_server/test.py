@@ -611,13 +611,14 @@ def searchRegisteredVideosAndGetResultList(
     resolvedTids = resolveSubTidsFromTid(tid)
     condition = (BilibiliVideo.typeid in resolvedTids) & (BilibiliVideo.visible == True)
     if dedeuserid is not None:
-        from functools import reduce
 
         if type(dedeuserid) == str:
             dedeuserids = [dedeuserid]
         else:
             dedeuserids = dedeuserid
         # print("DEDEUSERIDS:", dedeuserids)
+        # from functools import reduce
+
         condition &= reduce(
             lambda a, b: a | b,
             [BilibiliVideo.poster in registerUser(userid) for userid in dedeuserids],
