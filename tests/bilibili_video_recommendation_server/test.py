@@ -995,7 +995,7 @@ class searchUserVideoForm(searchRegisteredVideoForm):
 
 
 @app.get("/searchUserVideos")
-@reloading
+# @reloading
 def search_user_videos(form: searchUserVideoForm):
     vgen = searchUserVideos(
         form.query,
