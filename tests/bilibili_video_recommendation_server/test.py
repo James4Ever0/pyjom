@@ -994,7 +994,7 @@ class searchUserVideoForm(searchRegisteredVideoForm):
 @app.get("/searchUserVideos")
 @reloading
 def search_user_videos(form: searchUserVideoForm):
-    videoList = [v.videoInfoExtractor() for v in searchUserVideos(
+    vgen =  in searchUserVideos(
         form.query,
         form.tid,
         form.dedeuserid,
