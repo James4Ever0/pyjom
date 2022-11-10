@@ -668,7 +668,8 @@ def searchUserVideos(
     method: Literal["online", "bm25"] = "online",
     use_credential: bool = False,
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
-    limit: int = 10,
+    page_num:int=1,
+    page_size: int = 30,
 ):  # you can support this in database?
     # you want keyword search or not? it's better than searching in database. i think.
     # but database search saves bandwidth.
