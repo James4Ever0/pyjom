@@ -7,7 +7,6 @@ class a:
         def someothermethod():
             # raise Exception('just another shit')
             return 'value'
-
         # raise Exception('just another shit')
         val = someothermethod()
         return val
