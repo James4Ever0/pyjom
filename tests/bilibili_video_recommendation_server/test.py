@@ -520,6 +520,7 @@ def getUserVideos(
     page_num: int = 1,
     page_size: int = 30,
 ):  # all videos? just at init.
+    pn=page_num
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
     bilibiliUser = registerUser(
@@ -536,7 +537,7 @@ def getUserVideos(
     while not stopped:
         videos = sync(
             u.get_videos(
-                pn=page_num, keyword=keyword, tid=tid, order=order, ps=page_size
+                pn=pn, keyword=keyword, tid=tid, order=order, ps=page_size
             )
         )
         # print(videos)
@@ -615,7 +616,7 @@ def searchRegisteredVideosAndGetResultList(
             poster = registerUser(userid)
             condition &= BilibiliVideo.poster == poster
     user_video_ids = [
-        v.id for v in BilibiliVideo.select(BilibiliVideo.id).where(condition)
+        v.id for v in BilibiliVideo.select(BilibiliVideo.id).where(condition) or []
     ]
     # print('user video ids',user_video_ids)
     results = (
@@ -657,7 +658,8 @@ def searchRegisteredVideos(
         tid=tid,
         dedeuserid=dedeuserid,
         videoOrder=videoOrder,
-        limit=limit,
+        page_num=page_num,
+        page_size=page_size,
         keyword=keyword,
     )
     for v, _ in resultList:
