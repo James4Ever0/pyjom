@@ -945,6 +945,12 @@ def search_videos(form: searchVideoForm):
             videoInfos.append(info)
         return videoInfos
 
+@reloading
+class searchRegisteredVideoForm(pydantic.BaseModel):
+    query:str
+    tid:int=0
+    dedeuserid:Union[]
+    
 @app.get("/searchRegisteredVideos")
 @reloading
 def search_registered_videos(form:searchRegisteredVideoForm):
