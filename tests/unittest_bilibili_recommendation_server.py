@@ -7,6 +7,7 @@ from lazero.network.checker import waitForServerUp
 message = "bilibili recommendation server"
 waitForServerUp(port, message = message)
 
+if objective == ''
 params = {
     # "params": {"hop": 1}, # there is no such parameter here.
     # can we pass shit without params?
@@ -14,5 +15,5 @@ params = {
     "iterate": True,
     "page_start": 1,
 }  # check if this works?
-# r = requests.post(baseurl + "/searchVideos", json=params)
+# r = requests.post(baseurl + , json=params)
 # print("response:", r.text)
