@@ -620,7 +620,7 @@ def searchRegisteredVideosAndGetResultList(
         # print("DEDEUSERIDS:", dedeuserids)
         condition &= reduce(
             lambda a, b: a | b,
-            [BilibiliVideo.poster.i == registerUser(userid) for userid in dedeuserids],
+            [BilibiliVideo.poster in == registerUser(userid) for userid in dedeuserids],
         )
     user_video_ids = [
         v.id for v in (BilibiliVideo.select(BilibiliVideo.id).where(condition) or [])
