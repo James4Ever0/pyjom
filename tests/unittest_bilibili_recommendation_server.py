@@ -8,7 +8,7 @@ message = "bilibili recommendation server"
 waitForServerUp(port, message = message)
 
 params = {
-    "params": {"hop": 1}, # there is no such parameter here.
+    # "params": {"hop": 1}, # there is no such parameter here.
     "query": "hello world",
     "iterate": True,
     "page_start": 1,
