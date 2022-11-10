@@ -767,6 +767,8 @@ def registerUserVideo(
     # register user first, then register the video.
     # you will store it to database.
     u = registerUser(dedeuserid, is_mine)
+    # check if exists.
+    BilibiliVideo.get(BilibiliVideo.get)
     BilibiliVideo.create(bvid=bvid, visible=visible, poster=u)  # it must be new.
 
 
