@@ -7,7 +7,7 @@ class mClass:
     someValue = 2
     def forLoopInFunction(self):
         val='shit'
-        for i in reloading(range(3)):
+        for i in reloading(range(3)): # still not solved!
             # raise Exception('shit')
             # return in primary function, not here!
             if i == 1:
