@@ -580,7 +580,7 @@ def overlapRange(range_a, range_b):
         return possible_overlap
     # return common range.
 
-from lazero.utils
+from lazero.utils.json import 
 
 json.__dict__.update({"walk": jsonWalk, "locate": jsonLocate, "update": jsonUpdate})
 
