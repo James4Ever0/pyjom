@@ -96,7 +96,7 @@ import re
 def videoDurationStringToSeconds(durationString, method: Literal["vtc", "basic"] = "vtc"):
     if durationString in ["-", None]:
         return None
-    if re.findall(r'\d',durationString) ==0:
+    if re.findall(r'\d',durationString) ==[]:
         return NOne
     if method == "vtc":
         import vtc
