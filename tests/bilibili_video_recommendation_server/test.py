@@ -891,7 +891,7 @@ if __name__ == "__main__":
             return "bilibili recommendation server"
 
         # just asking. post or get?
-        @app.get("/searchVideos")  # what do you want to have? all fields?
+        @app.post("/searchVideos")  # what do you want to have? all fields?
         def search_videos(
             query: str, iterate: bool = False, page_start: int = 1, params: dict = {}
         ):
