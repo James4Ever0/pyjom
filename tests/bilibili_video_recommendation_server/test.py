@@ -208,7 +208,7 @@ from peewee import *
 
 
 class BilibiliUser(Model):
-    username = CharField()
+    username = CharField() # can be updated later.
     user_id = IntegerField(unique=True)  # this is integer.
     is_mine = BooleanField(default=False)
     followers = IntegerField(
