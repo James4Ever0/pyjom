@@ -27,8 +27,7 @@ elif objective == "searchRegisteredVideos":
     )  # does not remove ellipsis?
     # print(j)
     # exit()
-objective == "searchUserVideos":
-elif 
+elif objective == "searchUserVideos":
 else:
     raise Exception("invalid objective: %s" % objective)
 
