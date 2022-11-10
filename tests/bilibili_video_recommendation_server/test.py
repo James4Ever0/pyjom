@@ -362,7 +362,7 @@ def searchVideos(
 
     def getResult(page):
         result = sync(
-            search.search_by_type(query, search_type, params=params, page=page, page_size=page_size)
+            search.search_by_type(query, search_type, params=params, page=page, dict(page_size=page_size))
         )
         return result
 
