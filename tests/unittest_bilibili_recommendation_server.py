@@ -19,7 +19,7 @@ if objective == 'searchVideos':
     }  # check if this works?
 elif objective == "searchRegisteredVideos":
     # params = dict(query='hello world') # does not remove ellipsis?
-    params = dict(query='hello world', tid=..., dedeuserid=..., videoOrder=..., limit=...) # does not remove ellipsis?
+    params = dict(query='hello world', tid=..., dedeuserid=..., videoOrder=..., page_num=2) # does not remove ellipsis?
     # print(j)
     # exit()
 else:
