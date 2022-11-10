@@ -1012,9 +1012,9 @@ def search_user_videos(form: searchUserVideoForm):
 @reloading
 class registerUserVideoForm(pydantic.BaseModel):
     bvid:str
-    dedeuserid:string
+    dedeuserid:str
     is_mine:bool
-    visible:bool
+    visible:bool=False
 
 @app.get("/registerUserVideo")
 @reloading
