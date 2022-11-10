@@ -509,6 +509,8 @@ def getUserVideos(
     use_credential: bool = False,
     stop_on_duplicate: bool = True,
     sleep: int = 2,
+    pn = 1
+
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
@@ -516,7 +518,6 @@ def getUserVideos(
         dedeuserid,
     )
     u = getUserObject(dedeuserid=dedeuserid, use_credential=use_credential)
-    pn = 1
     # tid	int, optional	分区 ID. Defaults to 0（全部）
     # pn	int, optional	页码，从 1 开始. Defaults to 1.
     # ps	(int, optional)	每一页的视频数. Defaults to 30.
