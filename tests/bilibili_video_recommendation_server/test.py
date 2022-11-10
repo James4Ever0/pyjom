@@ -647,7 +647,7 @@ def searchRegisteredVideosAndGetResultList(
     results = getVgen(
         BilibiliVideoIndex.search_bm25(keyword).join(
             BilibiliVideo, on=(BilibiliVideoIndex.rowid == BilibiliVideo.id)
-        )
+        ), videoOrder
     ).order_by().paginate(  # again this is wrong.
         page_num, page_size
     )
