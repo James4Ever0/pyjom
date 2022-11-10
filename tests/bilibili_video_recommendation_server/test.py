@@ -795,7 +795,7 @@ def searchAndRegisterVideos(
     results = searchVideos(query, iterate=iterate, page_start=page_start, params=params)
     # db = getBilibiliVideoDatabaseAndCreateTables()
     # this database connection will be established elsewhere.
-    for v in results: # shall you called them 'tags' instead of 'tag'.
+    for v in results:  # shall you called them 'tags' instead of 'tag'.
         # print(v)
         # breakpoint()
         mid, author, upic = v["mid"], v["author"], v["upic"]
@@ -858,12 +858,15 @@ def refresh_status_decorator(func):
     def wrapper(*args, **kwargs):
         schedule.run_pending()
         return func(*args, **kwargs)
+
     return wrapper
+
 
 @refresh_status_decorator  # this might prevent you adding the decorator everywhere?
 def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     db = getBilibiliVideoDatabaseAndCreateTables()
     return db
+
 
 # you should recommend by label instead of by name. but whatever.
 if __name__ == "__main__":
@@ -890,9 +893,11 @@ if __name__ == "__main__":
         # just asking. post or get?
         @app.get("/searchVideos")  # what do you want to have? all fields?
         def search_videos(
-            query: str, iterate: bool = False, page_start: int = 1, params:dict={}
+            query: str, iterate: bool = False, page_start: int = 1, params: dict = {}
         ):
-            params = ({"duration": BSP.all.duration._10分钟以下}|params) # this is default parameter.
+            params = {
+                "duration": BSP.all.duration._10分钟以下
+            } | params  # this is default parameter.
             for v in searchAndRegisterVideos(
                 query, iterate=iterate, page_start=page_start, params=params
             ):
