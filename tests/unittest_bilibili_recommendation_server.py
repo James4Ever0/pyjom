@@ -4,7 +4,7 @@ port = 7341
 baseurl = "http://localhost:{}".format(port)
 
 params = {
-    "params": {"hop": 1},
+    "params": {"hop": 1}, # there is no such parameter here.
     "query": "hello world",
     "iterate": True,
     "page_start": 1,
