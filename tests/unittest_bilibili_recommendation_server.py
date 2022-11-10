@@ -1,5 +1,6 @@
 import requests
-port=
+
+port = 7341
 baseurl = "http://localhost:{}".format(port)
 
 r = requests.get(baseurl)
