@@ -13,7 +13,7 @@ class a:
     @reloading
     async def someOtherMethod(self): # cannot decorate async function?
         # raise Exception('just another shit')
-        return val
+        return 'good'
     @reloading
     def runAsync(self):
         loop= asyncio.get_event_loop()
