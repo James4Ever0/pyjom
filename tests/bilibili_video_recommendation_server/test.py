@@ -629,7 +629,7 @@ def searchRegisteredVideosAndGetResultList(
         from functools import reduce
         condition &= reduce(
             lambda a, b: a | b,
-            [BilibiliUser.user_id  ==  int(userid) for userid in dedeuserids],
+            [BilibiliUser.user_id  == int(userid) for userid in dedeuserids],
         )
         vgen = vgen.join(
             BilibiliUser).where(condition) # this statement does not work.
