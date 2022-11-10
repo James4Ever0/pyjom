@@ -963,14 +963,7 @@ def search_videos(form: searchVideoForm):
         params=params,
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
-        # print(v)
-        # breakpoint()
-        if type(v) == BilibiliVideo:
-            info = v.videoInfoExtractor()  # static method?
-            # print('videoInfo:',info)
-            # breakpoint()
-            videoInfos.append(info)
-        return videoInfos
+    return videoInfos
 
 
 @reloading
