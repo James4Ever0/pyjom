@@ -17,5 +17,5 @@ params = {
 import json
 data = json.dumps(params)
 
-r = requests.post(baseurl + "/searchVideos", data=data)
+r = requests.post(baseurl + "/searchVideos", json=data)
 print("response:", r.text)
