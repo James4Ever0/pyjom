@@ -883,7 +883,7 @@ if __name__ == "__main__":
         port = 7341
         from fastapi import FastAPI
         import uvicorn
-        
+
 
         app = FastAPI()
 
@@ -896,8 +896,8 @@ if __name__ == "__main__":
         def search_videos(
             searchVideoForm
         ):
-            print('received params:',params) # it is str.
-            breakpoint()
+            # print('received params:',params) # it is str.
+            # breakpoint()
             params = {
                 "duration": BSP.all.duration._10分钟以下
             } | params  # this is default parameter.
