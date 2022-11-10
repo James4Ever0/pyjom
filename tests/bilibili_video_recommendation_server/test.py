@@ -617,7 +617,7 @@ def searchRegisteredVideosAndGetResultList(
             dedeuserids = [dedeuserid]
         else:
             dedeuserids = dedeuserid
-        print("DEDEUSERIDS:", dedeuserids)
+        # print("DEDEUSERIDS:", dedeuserids)
         condition &= reduce(
             lambda a, b: a | b,
             [BilibiliVideo.poster == registerUser(userid) for userid in dedeuserids],
