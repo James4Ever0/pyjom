@@ -620,7 +620,7 @@ def searchRegisteredVideosAndGetResultList(
     else:
         dedeuserids = None
         # print("DEDEUSERIDS:", dedeuserids)
-        
+
     # vlist = [v for v in (BilibiliVideo.select().where(condition) or [])]
     # http://docs.peewee-orm.com/en/latest/peewee/relationships.html#relationships
     def getVgen(selector):
@@ -629,22 +629,27 @@ def searchRegisteredVideosAndGetResultList(
         # breakpoint()
         if dedeuserids:
             from functools import reduce
+
             condition &= reduce(
                 lambda a, b: a | b,
-                [BilibiliUser.user_id  == int(userid) for userid in dedeuserids],
+                [BilibiliUser.user_id == int(userid) for userid in dedeuserids],
             )
-            vgen = vgen.join(
-                BilibiliUser).where(condition) # this statement does not work.
+            vgen = vgen.join(BilibiliUser).where(
+                condition
+            )  # this statement does not work.
         else:
             vgen = vgen.where(condition)
         return vgen
+
     # user_video_ids = [v.id for v in vgen or []]
     # print('user of videos',set([v.poster.user_id for v in vgen or []]))
     # breakpoint()
-    results = (
-        getVgen(BilibiliVideoIndex.search_bm25(keyword)
-        .join(BilibiliVideo, on=(BilibiliVideoIndex.rowid == BilibiliVideo.id))) # again this is wrong.
-        .paginate(page_num, page_size)
+    results = getVgen(
+        BilibiliVideoIndex.search_bm25(keyword).join(
+            BilibiliVideo, on=(BilibiliVideoIndex.rowid == BilibiliVideo.id)
+        )
+    ).paginate(  # again this is wrong.
+        page_num, page_size
     )
     for index, video_index in enumerate(results):
         bilibiliVideo = BilibiliVideo.get(id=video_index.rowid)
@@ -1050,7 +1055,10 @@ def search_registered_videos(form: searchRegisteredVideoForm):
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
 
+
 from typing import List
+
+
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
     dedeuserid: Union[List[str], str, None] = "397424026"
