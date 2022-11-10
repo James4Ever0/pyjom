@@ -9,6 +9,7 @@ waitForServerUp(port, message = message)
 
 params = {
     # "params": {"hop": 1}, # there is no such parameter here.
+    # can we pass shit without params?
     "query": "hello world",
     "iterate": True,
     "page_start": 1,
