@@ -640,7 +640,7 @@ def searchRegisteredVideosAndGetResultList(
     # breakpoint()
     results = (
         BilibiliVideoIndex.search_bm25(keyword)
-        .where(BilibiliVideoIndex.rowid in user_video_ids) # again this is wrong.
+        .join((BilibiliVideoIndex.rowid in user_video_ids) # again this is wrong.
         .paginate(page_num, page_size)
     )
     for index, video_index in enumerate(results):
