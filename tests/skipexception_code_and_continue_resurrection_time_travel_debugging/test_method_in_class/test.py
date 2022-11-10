@@ -58,9 +58,9 @@ class a:
         print('value from async func:', val)
         return val
 
-
+@reloading
 def main():
-    A = a()
+    A = a
     print(A)
     # breakpoint()
     # val = A.someMethod()
@@ -68,3 +68,5 @@ def main():
     print('return value:', val)
     # print('shit')
     print('good')
+
+main()
