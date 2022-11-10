@@ -965,8 +965,7 @@ def search_videos(form: searchVideoForm):
 
 
 @reloading
-class searchRegisteredVideoForm(pydantic.BaseModel):
-    query: str
+class searchRegisteredVideoForm(queryForm):
     tid: int = 0
     dedeuserid: Union[str, None] = None
     videoOrder: VideoOrder = VideoOrder.PUBDATE
