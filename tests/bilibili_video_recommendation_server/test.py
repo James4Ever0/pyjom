@@ -616,6 +616,7 @@ def searchRegisteredVideosAndGetResultList(
             dedeuserids = [dedeuserid]
         else:
             dedeuserids = dedeuserid
+        dedeuserids = int(dedeuserid)
     else:
         dedeuserids = None
         # print("DEDEUSERIDS:", dedeuserids)
