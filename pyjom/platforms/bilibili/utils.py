@@ -16,6 +16,7 @@ def bilibiliSync(func):
             return sync(coroutineMaybe)
         else:
             return coroutineMaybe
+
     return wrapper
 
 
@@ -92,14 +93,19 @@ def extractLinks(description, extract_bgm=True):
 from typing import Literal
 
 import re
+
+
 @reloading
-def videoDurationStringToSeconds(durationString, method: Literal["vtc", "basic"] = "vtc"):
+def videoDurationStringToSeconds(
+    durationString, method: Literal["vtc", "basic"] = "vtc"
+):
     if durationString in ["-", None]:
         return None
-    if re.findall(r'\d',durationString) ==[]:
-        return NOne
+    if re.findall(r"\d", durationString) == []:
+        return None
     if method == "vtc":
         import vtc
+
         timecode = "{}:0".format(durationString)
         decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
         seconds = round(decimal_seconds)
