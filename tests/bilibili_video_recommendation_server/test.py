@@ -892,41 +892,6 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 # utils.
 
 
-def videoInfoExtractor(v):
-    # keys = v._meta.fields.keys()
-    keys = [
-        # "id",
-        "bvid",
-        "typeid",  # str?
-        "visible",
-        # "last_check",
-        # "register_date",
-        # "poster",
-        "play",
-        "pic",
-        "length",
-        "pubdate",
-        "review",
-        "favorites",
-        "title",
-        "tag",
-        "description",
-    ]
-    info = {key: v.__dict__[key] for key in keys}
-    poster = v.poster
-    try:
-        info["poster"] = userInfoExtracter(
-            poster
-        )  # well it will return as always. no live fetching! it is stored in database.
-    except:
-        import traceback
-        traceback.print_exc()
-        print('userinfo might be missing from videoinfo.')
-    try:
-        info["typeid"] = int(info["typeid"])
-    except:
-        pass
-    return info
 
 # you should recommend by label instead of by name. but whatever.
 if __name__ == "__main__":
