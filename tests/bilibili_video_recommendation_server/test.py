@@ -896,7 +896,7 @@ if __name__ == "__main__":
             query: str,
             iterate: bool = False,
             page_start: int = 1,
-            params = {},  # let's just see what you've got here.
+            params:dict = {},  # let's just see what you've got here.
         ):
             print('received params:',params) # it is str.
             breakpoint()
