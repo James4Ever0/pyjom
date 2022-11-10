@@ -4,31 +4,35 @@ port = 7341
 baseurl = "http://localhost:{}".format(port)
 
 from lazero.network.checker import waitForServerUp
+
 message = "bilibili recommendation server"
-waitForServerUp(port, message = message)
+waitForServerUp(port, message=message)
 
 # objective = "searchRegisteredVideos"
-objective = 'searchVideos'
-if objective == 'searchVideos':
+objective = "searchVideos"
+if objective == "searchVideos":
     params = {
         # "params": {"hop": 1}, # there is no such parameter here.
         # can we pass shit without params?
-        "params":...,
+        "params": ...,
         "query": "hello world",
-        "iterate":False, # not all pages, you dumb fool!
+        "iterate": False,  # not all pages, you dumb fool!
         "page_num": 1,
     }  # check if this works?
 elif objective == "searchRegisteredVideos":
     # params = dict(query='hello world') # does not remove ellipsis?
-    params = dict(query='hello world', tid=..., dedeuserid=..., videoOrder=..., page_num=2) # does not remove ellipsis?
+    params = dict(
+        query="hello world", tid=..., dedeuserid=..., videoOrder=..., page_num=2
+    )  # does not remove ellipsis?
     # print(j)
     # exit()
 else:
-    raise Exception('invalid objective: %s' % objective)
+    raise Exception("invalid objective: %s" % objective)
 
 
 from lazero.utils.json import jsonify
-params=jsonify(params)
-r = requests.post(baseurl + "/"+objective, json=params)
-print('objective: %s' % objective)
+
+params = jsonify(params)
+r = requests.post(baseurl + "/" + objective, json=params)
+print("objective: %s" % objective)
 print("response:", r.text)
