@@ -901,13 +901,13 @@ if __name__ == "__main__":
         # just asking. post or get?
         @app.post("/searchVideos")  # what do you want to have? all fields?
         def search_videos(
-            searchVideoForm
+            form: searchVideoForm
         ):
             # print('received params:',params) # it is str.
             # breakpoint()
             params = {
                 "duration": BSP.all.duration._10分钟以下
-            } | params  # this is default parameter.
+            } | form.params  # this is default parameter.
             # breakpoint()
             for v in searchAndRegisterVideos(
                 query, iterate=iterate, page_start=page_start, params=params
