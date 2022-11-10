@@ -1065,7 +1065,6 @@ from typing import List
 
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
-    dedeuserid: Union[List[str], str, None] = "397424026"
     method: Literal["online", "bm25"] = "online"
     use_credential: bool = False
 
