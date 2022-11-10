@@ -15,8 +15,8 @@ class a:
         raise Exception('shit')
     @reloading
     def runAsync(self):
-        val = asyncio.get_event_loop()
-        
+        loop= asyncio.get_event_loop()
+        val = loop.run_until_complete(self.someOtherMethod())
 
 
 A = a()
