@@ -623,7 +623,7 @@ def searchRegisteredVideosAndGetResultList(
 
     # vlist = [v for v in (BilibiliVideo.select().where(condition) or [])]
     # http://docs.peewee-orm.com/en/latest/peewee/relationships.html#relationships
-    def getVgen(selector):
+    def getVgen(selector, videoOrder):
         nonlocal condition, dedeuserids
         vgen = selector
         # breakpoint()
