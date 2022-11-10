@@ -936,7 +936,7 @@ if __name__ == "__main__":
             ]
             info = {key: v.__dict__[key] for key in keys}
             poster = v.poster
-            info["poster"] = userInfoExtracter(poster)
+            info["poster"] = userInfoExtracter(poster) # well it will return as always. it is stored in database.
             try:
                 info["typeid"] = int(info["typeid"])
             except:
