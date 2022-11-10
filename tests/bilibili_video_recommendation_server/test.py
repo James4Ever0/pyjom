@@ -918,6 +918,10 @@ if __name__ == "__main__":
                 "description",
             ]
             info = {key: v.__dict__[key] for key in keys}
+            try:
+                info['typeid'] = int(info['typeid'])
+            except:
+                pass
             return info
 
         @app.get("/")
