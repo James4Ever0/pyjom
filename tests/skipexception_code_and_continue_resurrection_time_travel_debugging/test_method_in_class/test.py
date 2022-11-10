@@ -13,9 +13,10 @@ class a:
     @reloading
     async def someOtherMethod(self):
         raise Exception('shit')
-    
     @reloading
     def runAsync(self):
+        val = asyncio.get_event_loop()
+        
 
 
 A = a()
