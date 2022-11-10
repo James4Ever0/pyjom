@@ -977,7 +977,7 @@ class searchRegisteredVideoForm(queryForm):
     limit: int = 10
 
 
-@app.get("/searchRegisteredVideos")
+@app.post("/searchRegisteredVideos")
 # @reloading
 def search_registered_videos(form: searchRegisteredVideoForm):
     vgen = searchRegisteredVideos(
