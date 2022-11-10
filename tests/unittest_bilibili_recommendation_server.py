@@ -17,10 +17,10 @@ if objective == 'searchVideos':
         "page_start": 1,
     }  # check if this works?
 elif objective == "searchRegisteredVideos":
-    params = dict(query='hello world', tid=..., dedeuserid=..., videoOrder=..., limit=...) # does not remove ellipsis?
+    params = dict(query='hello world') # does not remove ellipsis?
     # params = dict(query='hello world', tid=..., dedeuserid=..., videoOrder=..., limit=...) # does not remove ellipsis?
-    print(j)
-    exit()
+    # print(j)
+    # exit()
 else:
     raise Exception('invalid objective: %s' % objective)
 r = requests.post(baseurl + "/"+objective, json=params)
