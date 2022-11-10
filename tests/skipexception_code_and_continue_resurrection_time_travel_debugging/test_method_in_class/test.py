@@ -51,7 +51,7 @@ class a:
         return val
 
 
-A = a('abcdef')
+A = a()
 print(A)
 breakpoint()
 # val = A.someMethod()
