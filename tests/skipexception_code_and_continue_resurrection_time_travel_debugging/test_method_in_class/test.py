@@ -47,7 +47,7 @@ class a:
         # raise Exception('just another shit')
         @reloading
         async def shit():
-            raise Exception('but just and but just another shit')
+            # raise Exception('but just and but just another shit')
             return 'abcdef'
         val = await shit()
         return val
@@ -60,7 +60,7 @@ class a:
 
 @reloading
 def main():
-    A = a() # shit
+    A = a # shit
     print(A)
     # breakpoint()
     # val = A.someMethod()
