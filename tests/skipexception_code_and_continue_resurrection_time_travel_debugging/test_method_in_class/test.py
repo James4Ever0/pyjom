@@ -16,7 +16,8 @@ class Mydecorator:
     #accept the class's __init__ method arguments
     def __call__(self,*args, **kwargs):
         #define a new display method
-        print('CALL ARGS', args, kwargs)
+        print('CALL ARGS', args)
+        print('CALL KWARGS',kwargs)
         return self.student
 
 # @mreload
