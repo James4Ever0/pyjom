@@ -14,11 +14,11 @@ class a:
         val = someothermethod()
         return val
     @reloading
-    async def someOtherMethod(self): # cannot decorate async function?
-        # raise Exception('just another shit')
+    async def someOtherMethod(self):
+        # raise Exception('async exception1')
         @reloading
         async def shit():
-            # raise Exception('but just and but just another shit')
+            # raise Exception('async exception2')
             return 'abcdef'
         val = await shit()
         return val
