@@ -941,6 +941,7 @@ def server_hello():
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
+    page
 
 
 @reloading
