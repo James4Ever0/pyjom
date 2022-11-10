@@ -37,8 +37,8 @@ class a:
     def someMethod(self):
         @reloading # this will not work.
         def someothermethod():
-            # raise Exception('just another shit')
-            return 'value'
+            raise Exception('but just another shit')
+            # return 'value'
         # raise Exception('just another shit')
         val = someothermethod()
         return val
