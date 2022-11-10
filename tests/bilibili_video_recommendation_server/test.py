@@ -238,7 +238,7 @@ class BilibiliVideo(Model):
     title = CharField(null=True)
     tag = CharField(null=True)
     description = CharField(null=True)
-    def userInfoExtracter(u):
+    def userInfoExtracter(self):
         keys = [
             # "id",
             "username",
@@ -247,7 +247,7 @@ class BilibiliVideo(Model):
             "followers",
             "avatar",
         ]
-        info = [u.__dict__[key] for key in keys]
+        info = [self.__dict__[key] for key in keys]
         return info
 
 
