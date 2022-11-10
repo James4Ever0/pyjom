@@ -956,12 +956,13 @@ def search_videos(form: searchVideoForm):
         "duration": BSP.all.duration._10分钟以下
     } | form.params  # this is default parameter.
     # breakpoint()
-    videoInfos = searchAndRegisterVideos(
+    vgen = searchAndRegisterVideos(
         form.query,
         iterate=form.iterate,
         page_start=form.page_start,
         params=params,
-    ):
+    )
+    videoInfos = getVideoInfos
         # print(v)
         # breakpoint()
         if type(v) == BilibiliVideo:
