@@ -225,7 +225,7 @@ class BilibiliUser(Model):
             "followers",
             "avatar",
         ]
-        info = [self.__dict__[key] for key in keys]
+        info = [u.__dict__[key] for key in keys]
         return info
 
 
