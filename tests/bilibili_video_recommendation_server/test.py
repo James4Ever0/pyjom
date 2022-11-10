@@ -939,7 +939,9 @@ class searchVideoForm(queryForm):
     params: dict = {}  # let's just see what you've got here.
 
 @reloading
-def getVideoInfoListFromVideo
+def getVideoInfoListFromVideoGenerator(vgen):
+    for v in vgen:
+        if type(v) == Bilibi
 
 # just asking. post or get?
 @app.post("/searchVideos")  # what do you want to have? all fields?
