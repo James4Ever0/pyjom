@@ -45,6 +45,7 @@ class a:
     @reloading
     async def someOtherMethod(self): # cannot decorate async function?
         # raise Exception('just another shit')
+        def 
         return 'good'
     @reloading
     def runAsync(self):
@@ -57,8 +58,8 @@ class a:
 A = a()
 print(A)
 # breakpoint()
-val = A.someMethod()
-# val = A.runAsync()
+# val = A.someMethod()
+val = A.runAsync()
 print('return value:', val)
 # print('shit')
 print('good')
