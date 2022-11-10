@@ -37,7 +37,6 @@ def main():
     print('return value:', val)
     val = MClass.runAsync()
     print('return async value:', val)
-    # print('shit')
-    print('good')
+    print('success!')
 
 main()
