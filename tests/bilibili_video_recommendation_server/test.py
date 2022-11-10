@@ -769,9 +769,10 @@ def registerUserVideo(
     u = registerUser(dedeuserid, is_mine)
     # check if exists.
     v= BilibiliVideo.get_or_none(BilibiliVideo.bvid == bvid)
-    if v is None:
+    new = v is None
+    if new:
         BilibiliVideo.create(bvid=bvid, visible=visible, poster=u)  # it must be new.
-    return v is None
+    return new
 
 
 # grace period to be one day. that's long enough. or not?
