@@ -957,7 +957,7 @@ def server_hello():
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
-    page_size: Union[int, None] = ...
+    page_size: Union[int, None] = None
     page_num: int = 1
 
 
@@ -1003,11 +1003,6 @@ class searchRegisteredVideoForm(queryForm):
     dedeuserid: Union[str, None] = None
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
-
-def default(value, default_, isInstance = lambda v: v == ...):
-    if isInstance(value):
-        return default_
-    return value
 
 
 @app.post("/searchRegisteredVideos")
