@@ -6,9 +6,9 @@ import asyncio
 class mClass:
     someValue = 2
     def forLoopInFunction(self):
-        for i in range(3):
+        for i in reloading(range(3)):
             # raise Exception('shit')
-            if i == 1: return 'value'
+            if i == 1: val = return 'value'
 
     @reloading
     def someMethod(self):
