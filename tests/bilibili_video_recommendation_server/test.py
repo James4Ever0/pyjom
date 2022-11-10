@@ -1003,7 +1003,7 @@ class searchRegisteredVideoForm(queryForm):
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
 
-def default(value, default_, trigger = lambda v: v == ...):
+def default(value, default_, isInstance = lambda v: v == ...):
     if isInstance(value):
         return default_
     return value
@@ -1018,7 +1018,7 @@ def search_registered_videos(form: searchRegisteredVideoForm):
         form.dedeuserid,
         form.videoOrder,
         form.page_num,
-        ellipsisToDefault(form.page_size, 30),
+        default(form.page_size, 30),
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
