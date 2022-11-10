@@ -9,6 +9,7 @@ class mClass:
         for i in reloading(range(3)):
             # raise Exception('shit')
             if i == 1: val = 'value'
+            
         return val
 
     @reloading
