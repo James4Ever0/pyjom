@@ -8,7 +8,7 @@ class a:
             raise Exception('shit')
         # raise Exception('just another shit')
         val = someothermethod()
-        return 'val
+        return val
 
 A = a()
 val = A.someMethod()
