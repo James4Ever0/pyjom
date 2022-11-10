@@ -25,7 +25,8 @@ class Mydecorator:
         class_ = self.class_(*args, **kwargs)
         return class_
 
-@mreload
+# @mreload
+@reloading
 class a:
     # raise Exception('shit')
     # cannot raise exception here. the compiler will complain.
