@@ -1,3 +1,4 @@
+import string
 from reloading import reloading
 
 # serve my video, serve my cat video, dog video, set priority, serve others video
@@ -1010,7 +1011,10 @@ def search_user_videos(form: searchUserVideoForm):
 
 @reloading
 class registerUserVideoForm(pydantic.BaseModel):
-    
+    bvid:str
+    dedeuserid:string
+    is_mine:bool
+    visible:bool
 
 @app.get("/registerUserVideo")
 @reloading
