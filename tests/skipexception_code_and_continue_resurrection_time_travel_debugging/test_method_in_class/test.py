@@ -43,6 +43,11 @@ class mClass:
         print("value from async func:", val)
         return val
 
+def forLoop():
+    val = None
+    for i in reloading(range(3)):
+        val = 'abcd'
+    return val
 
 @reloading
 def main():
@@ -53,6 +58,8 @@ def main():
     val = MClass.runAsync()
     print("return async value:", val)
     val = MClass.forLoopInFunction()
+    print("return for loop value:", val)
+    val = forLoop()
     print("return for loop value:", val)
     print("success!")
 
