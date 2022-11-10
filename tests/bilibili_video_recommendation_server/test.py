@@ -642,8 +642,8 @@ def searchRegisteredVideosAndGetResultList(
     # print('user of videos',set([v.poster.user_id for v in vgen or []]))
     # breakpoint()
     results = (
-        BilibiliVideoIndex.search_bm25(keyword)
-        .join(BilibiliVideo, on=(BilibiliVideoIndex.rowid == BilibiliVideo.id)) # again this is wrong.
+        getVgen(BilibiliVideoIndex.search_bm25(keyword)
+        .join(BilibiliVideo, on=(BilibiliVideoIndex.rowid == BilibiliVideo.id))) # again this is wrong.
         .paginate(page_num, page_size)
     )
     for index, video_index in enumerate(results):
