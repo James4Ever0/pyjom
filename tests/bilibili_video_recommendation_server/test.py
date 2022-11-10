@@ -950,6 +950,8 @@ if __name__ == "__main__":
                     info = v.videoInfoExtractor() # static method?
                     # print('videoInfo:',info)
                     # breakpoint()
+                    videoInfos.append(info)
+                return videoInfos
 
         @app.get("/searchRegisteredVideos")
         def search_registered_videos():
