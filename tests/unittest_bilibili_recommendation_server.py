@@ -10,5 +10,6 @@ params = {
     "page_start": 1,
 }  # check if this works?
 # params = {'params':{}}
+
 r = requests.get(baseurl + "/searchVideos", params=params)
 print("response:", r.text)
