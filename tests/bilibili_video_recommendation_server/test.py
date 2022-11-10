@@ -1008,6 +1008,8 @@ def search_user_videos(form: searchUserVideoForm):
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
 
+@reloading
+class registerUserVideoForm(pydantic.BaseModel):
 
 @app.get("/registerUserVideo")
 @reloading
