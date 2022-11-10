@@ -96,7 +96,6 @@ from typing import Literal
 def videoDurationStringToSeconds(durationString, method: Literal["vtc", "basic"] = "vtc"):
     if method == "vtc":
         import vtc
-
         timecode = "{}:0".format(durationString)
         decimal_seconds = vtc.Timecode(timecode, rate=1).seconds
         seconds = round(decimal_seconds)
