@@ -938,6 +938,7 @@ class searchVideoForm(queryForm):
     page_start: int = 1
     params: dict = {}  # let's just see what you've got here.
 
+
 @reloading
 def getVideoInfosFromVideoGenerator(vgen):
     vlist = []
@@ -945,6 +946,7 @@ def getVideoInfosFromVideoGenerator(vgen):
         if type(v) == BilibiliVideo:
             vlist.append(v.videoInfoExtractor())
     return vlist
+
 
 # just asking. post or get?
 @app.post("/searchVideos")  # what do you want to have? all fields?
@@ -978,8 +980,8 @@ class searchRegisteredVideoForm(queryForm):
 @reloading
 def search_registered_videos(form: searchRegisteredVideoForm):
     vgen = searchRegisteredVideos(
-            form.query, form.tid, form.dedeuserid, form.videoOrder, form.limit
-        )
+        form.query, form.tid, form.dedeuserid, form.videoOrder, form.limit
+    )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
 
@@ -994,7 +996,7 @@ class searchUserVideoForm(searchRegisteredVideoForm):
 @app.get("/searchUserVideos")
 @reloading
 def search_user_videos(form: searchUserVideoForm):
-    vgen =  in searchUserVideos(
+    vgen = searchUserVideos(
         form.query,
         form.tid,
         form.dedeuserid,
@@ -1003,6 +1005,8 @@ def search_user_videos(form: searchUserVideoForm):
         form.videoOrder,
         form.limit,
     )
+    videoInfos = getVideoInfosFromVideoGenerator(vgen)
+    return videoInfos
 
 
 @app.get("/registerUserVideo")
