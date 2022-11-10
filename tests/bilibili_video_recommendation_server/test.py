@@ -516,8 +516,8 @@ def getUserVideos(
     use_credential: bool = False,
     stop_on_duplicate: bool = True,
     sleep: int = 2,
-    page_num:int=1,
-    page_size:int=30,
+    page_num: int = 1,
+    page_size: int = 30,
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
@@ -534,7 +534,9 @@ def getUserVideos(
     stopped = False
     while not stopped:
         videos = sync(
-            u.get_videos(pn=page_num, keyword=keyword, tid=tid, order=order, ps=page_size)
+            u.get_videos(
+                pn=page_num, keyword=keyword, tid=tid, order=order, ps=page_size
+            )
         )
         # print(videos)
         # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
@@ -597,7 +599,7 @@ def searchRegisteredVideosAndGetResultList(
     tid: int = 0,
     dedeuserid: Union[str, None, list[str]] = "397424026",
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
-    page_num:int=1,
+    page_num: int = 1,
     page_size: int = 10,
 ):
     resultList = []
@@ -668,7 +670,7 @@ def searchUserVideos(
     method: Literal["online", "bm25"] = "online",
     use_credential: bool = False,
     videoOrder=VideoOrder.PUBDATE,  # FAVOURITE, VIEW
-    page_num:int=1,
+    page_num: int = 1,
     page_size: int = 30,
 ):  # you can support this in database?
     # you want keyword search or not? it's better than searching in database. i think.
@@ -690,7 +692,7 @@ def searchUserVideos(
             use_credential=use_credential,
             stop_on_duplicate=False,
             page_num=page_num,
-            page_size=page_size
+            page_size=page_size,
         ):
             # what is the content? plan to update?
             # print("SEARCHED USER VIDEO ID:", v_id)
@@ -950,10 +952,11 @@ app = FastAPI()
 def server_hello():
     return "bilibili recommendation server"
 
+
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
-    page_size: Union[int,ellipsis] = ...
+    page_size: Union[int, ellipsis] = ...
     page_num: int = 1
 
 
@@ -999,15 +1002,23 @@ class searchRegisteredVideoForm(queryForm):
     dedeuserid: Union[str, None] = None
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
+
 def ellipsisToDefault(value, default):
-    if value == ...: return default
+    if value == ...:
+        return default
     return value
+
 
 @app.post("/searchRegisteredVideos")
 # @reloading
 def search_registered_videos(form: searchRegisteredVideoForm):
     vgen = searchRegisteredVideos(
-        form.query, form.tid, form.dedeuserid, form.videoOrder, form.page_num, ellipsisToDefault(form.page_size, 30)
+        form.query,
+        form.tid,
+        form.dedeuserid,
+        form.videoOrder,
+        form.page_num,
+        ellipsisToDefault(form.page_size, 30),
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
