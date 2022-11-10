@@ -1019,7 +1019,7 @@ class registerUserVideoForm(pydantic.BaseModel):
 
 
 @app.get("/registerUserVideo")
-@reloading
+# @reloading
 def register_user_video(form: registerUserVideoForm):
     registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
     print("----")
