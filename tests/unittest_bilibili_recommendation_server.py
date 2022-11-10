@@ -17,5 +17,5 @@ params = {
 import json
 data = json.dumps(params)
 # print(data)
-r = requests.post(baseurl + "/searchVideos", data=data,headers={"Content-Type": "application/json; charset=utf-8"})
+r = requests.post(baseurl + "/searchVideos", json=data,headers={"Content-Type": "application/json; charset=utf-8"})
 print("response:", r.text)
