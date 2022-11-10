@@ -3,7 +3,9 @@ import requests
 port = 7341
 baseurl = "http://localhost:{}".format(port)
 
+from lazero.network.checker import waitForServerUp
 
+waitForServerUp()
 
 params = {
     "params": {"hop": 1}, # there is no such parameter here.
