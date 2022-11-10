@@ -926,10 +926,12 @@ app = FastAPI()
 def server_hello():
     return "bilibili recommendation server"
 
+@reloading
+class queryForm(pydantic.BaseModel):
+    query: str  # required?
 
 @reloading
-class searchVideoForm(pydantic.BaseModel):
-    query: str  # required?
+class searchVideoForm(queryForm):
     iterate: bool = False
     page_start: int = 1
     params: dict = {}  # let's just see what you've got here.
