@@ -644,13 +644,13 @@ def searchRegisteredVideosAndGetResultList(
         pubdate = BilibiliVideo.pubdate
         view = BilibiliVideo.play
         if videoOrder == VideoOrder.FAVORITE: # this is fake ordering.
-            order = -favorites.desc # desc
+            order = favorites.desc() # desc
         elif videoOrder == VideoOrder.VIEW:
-            order = -view.desc # desc
+            order = view.desc() # desc
         elif videoOrder == VideoOrder.PUBDATE: # also desc.
-            order = -pubdate.desc  # most recent video.
+            order = pubdate.desc()  # most recent video.
         else:
-            order = index
+            order = None
         return vgen
 
     # user_video_ids = [v.id for v in vgen or []]
