@@ -26,7 +26,7 @@ class Mydecorator:
         return class_
 
 # @mreload
-@reloading
+@reloading(every=10)
 # no reloading on class?
 class a:
     # raise Exception('shit')
