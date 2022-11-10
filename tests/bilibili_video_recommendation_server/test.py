@@ -918,6 +918,8 @@ if __name__ == "__main__":
                 "description",
             ]
             info = {key: v.__dict__[key] for key in keys}
+            poster = v.poster
+            info['poster'] = 
             try:
                 info['typeid'] = int(info['typeid'])
             except:
