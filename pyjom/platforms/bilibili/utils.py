@@ -101,6 +101,7 @@ def videoDurationStringToSeconds(
 ):
     if durationString in ["-", None]:
         return None
+    if type(durationString)
     if re.findall(r"\d", durationString) == []:
         return None
     try:
@@ -131,8 +132,10 @@ def videoDurationStringToSeconds(
             raise Exception("method %s does not exist" % method)
     except:
         import traceback
+
         traceback.print_exc()
         print("exception durion video duration string conversion")
+
 
 @reloading
 def clearHtmlTags(htmlObject):
