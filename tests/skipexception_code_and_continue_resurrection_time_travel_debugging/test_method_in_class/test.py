@@ -2,7 +2,7 @@ from reloading import reloading
 import asyncio
 
 # you had better decorate this.
-@reloading
+# @reloading
 class mClass:
     someValue = 2
 
