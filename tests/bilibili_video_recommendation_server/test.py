@@ -896,7 +896,7 @@ if __name__ == "__main__":
         def videoInfoExtractor(v):
             # keys = v._meta.fields.keys()
             keys = [
-                "id",
+                # "id",
                 "bvid",
                 "typeid",
                 "visible",
