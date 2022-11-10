@@ -954,7 +954,7 @@ def server_hello():
 class queryForm(pydantic.BaseModel):
     query: str  # required?
     page_size: Union[int,ellipsis] = ...
-    page_start: int = 1
+    page_num: int = 1
 
 
 @reloading
@@ -1004,7 +1004,7 @@ class searchRegisteredVideoForm(queryForm):
 # @reloading
 def search_registered_videos(form: searchRegisteredVideoForm):
     vgen = searchRegisteredVideos(
-        form.query, form.tid, form.dedeuserid, form.videoOrder, form.limit
+        form.query, form.tid, form.dedeuserid, form.videoOrder, form.page_num, form.page_size
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
     return videoInfos
