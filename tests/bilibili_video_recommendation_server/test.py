@@ -1012,7 +1012,7 @@ def search_user_videos(form: searchUserVideoForm):
 @app.get("/registerUserVideo")
 @reloading
 def register_user_video():
-    registerUserVideo()
+    registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
 
 
 # you should recommend by label instead of by name. but whatever.
