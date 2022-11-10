@@ -347,7 +347,7 @@ def searchVideos(
     iterate: bool = False,
     page_start: int = 1,
     params={"duration": BSP.all.duration._10分钟以下},  # is that right? maybe?
-    page_size: Union[int, None] = ,
+    page_size: Union[int, ellipsis] = ...,
 ):  # what do you expect? you want the xml object let's get it!
     # search the thing directly? or you distill keywords from it?
     search_type = search.SearchObjectType.VIDEO
@@ -957,7 +957,7 @@ def server_hello():
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
-    page_size: Union[int, ellipsis] = ...
+    page_size: int = ...
     page_num: int = 1
 
 
