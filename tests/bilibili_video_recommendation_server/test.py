@@ -249,7 +249,7 @@ class BilibiliVideo(Model):
     title = CharField(null=True)
     tag = CharField(null=True)
     description = CharField(null=True)
-    def videoInfoExtractor(self, blacklist=[]):
+    def videoInfoExtractor(self, blacklist=['id','last_check','register_date','poster']):
         # keys = v._meta.fields.keys()
         keys = [
             # "id",
