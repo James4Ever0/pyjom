@@ -651,6 +651,8 @@ def searchRegisteredVideosAndGetResultList(
             order = pubdate.desc()  # most recent video.
         else:
             order = None
+        if order is not None:
+            vgen = vgen.order_by(order)
         return vgen
 
     # user_video_ids = [v.id for v in vgen or []]
