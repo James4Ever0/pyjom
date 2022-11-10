@@ -25,7 +25,6 @@ class Mydecorator:
         return class_
 
 @mreload
-# @Mydecorator
 class a:
     # raise Exception('shit')
     # cannot raise exception here. the compiler will complain.
