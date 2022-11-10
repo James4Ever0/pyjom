@@ -616,8 +616,7 @@ def searchRegisteredVideosAndGetResultList(
         else:
             dedeuserids = dedeuserid
         for userid in dedeuserids:
-            poster = registerUser(userid)
-            mcondition |= BilibiliVideo.poster == poster
+            mcondition lambda a,b:a|b,BilibiliVideo.poster == registerUser(userid)
     user_video_ids = [
         v.id for v in (BilibiliVideo.select(BilibiliVideo.id).where(condition) or [])
     ]
