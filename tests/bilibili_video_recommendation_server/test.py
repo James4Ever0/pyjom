@@ -274,7 +274,7 @@ class BilibiliVideo(Model):
         info = {key: v.__data__[key] for key in keys}
         poster = v.poster
         try:
-            info["poster"] = poster.userInfoExtracter(poster)  # well it will return as always. no live fetching! it is stored in database.
+            info["poster"] = poster.userInfoExtracter()  # well it will return as always. no live fetching! it is stored in database.
         except:
             import traceback
             traceback.print_exc()
