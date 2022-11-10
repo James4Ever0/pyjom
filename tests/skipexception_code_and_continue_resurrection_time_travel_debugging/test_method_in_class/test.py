@@ -20,9 +20,9 @@ class mClass:
     async def someOtherMethod(self):
         @reloading
         async def asyncInside():
-            # raise Exception("inner async exception")
+            raise Exception("inner async exception")
             return "async inside return"
-        # raise Exception('async exception')
+        raise Exception('async exception')
         val = await asyncInside()
         return val
 
@@ -36,7 +36,7 @@ class mClass:
 
 @reloading
 def main():
-    MClass = mClass()
+    MClass = mClass
     print(MClass)
     val = MClass.someMethod()
     print("return value:", val)
