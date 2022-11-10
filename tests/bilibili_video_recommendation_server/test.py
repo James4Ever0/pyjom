@@ -639,6 +639,18 @@ def searchRegisteredVideosAndGetResultList(
             )  # this statement does not work.
         else:
             vgen = vgen.where(condition)
+
+        favorites = bilibiliVideo.favorites
+        pubdate = bilibiliVideo.pubdate
+        view = bilibiliVideo.play
+        if videoOrder == VideoOrder.FAVORITE: # this is fake ordering.
+            order = -favorites # desc
+        elif videoOrder == VideoOrder.VIEW:
+            order = -view # desc
+        elif videoOrder == VideoOrder.PUBDATE: # also desc.
+            order = -pubdate  # most recent video.
+        else:
+            order = index
         return vgen
 
     # user_video_ids = [v.id for v in vgen or []]
