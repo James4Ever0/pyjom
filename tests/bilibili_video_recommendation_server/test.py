@@ -936,9 +936,12 @@ if __name__ == "__main__":
             ]
             info = {key: v.__dict__[key] for key in keys}
             poster = v.poster
-            info["poster"] = userInfoExtracter(
-                poster
-            )  # well it will return as always. no live fetching! it is stored in database.
+            try:
+                info["poster"] = userInfoExtracter(
+                    poster
+                )  # well it will return as always. no live fetching! it is stored in database.
+            except:
+                print('')
             try:
                 info["typeid"] = int(info["typeid"])
             except:
