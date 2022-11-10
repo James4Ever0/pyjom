@@ -1014,7 +1014,7 @@ def search_user_videos(form: searchUserVideoForm):
 def register_user_video(form:registerUserVideoForm):
     infoList = [form.bvid, form.dedeuserid, form.is_mine, form.visible]
     registerUserVideo(*infoList)
-    print('registered user video:')
+    print('registered user video:', form.bvid)
 
 
 # you should recommend by label instead of by name. but whatever.
