@@ -226,7 +226,7 @@ class BilibiliUser(Model):
             "followers",
             "avatar",
         ]
-        info = [u.__dict__[key] for key in keys]
+        info = [.__data__[key] for key in keys]
         return info
 
 
@@ -272,7 +272,7 @@ class BilibiliVideo(Model):
             "description",
         ]
         breakpoint()
-        info = {key: v.__dict__[key] for key in keys}
+        info = {key: v.__data__[key] for key in keys}
         poster = v.poster
         try:
             info["poster"] = poster.userInfoExtracter(poster)  # well it will return as always. no live fetching! it is stored in database.
