@@ -296,7 +296,7 @@ def getBilibiliVideoDatabaseAndCreateTables():
 def registerUser(dedeuserid: str, is_mine: Union[bool, None] = None):
     user_id = int(dedeuserid)
     u = BilibiliUser.get_or_none(user_id=user_id)
-    if u is None:
+    if u is None: # this is create.
         if is_mine is None:
             is_mine = False
         userObject = user.User(user_id)
