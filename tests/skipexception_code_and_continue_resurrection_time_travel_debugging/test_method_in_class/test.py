@@ -59,11 +59,12 @@ class a:
         return val
 
 
-A = a()
-print(A)
-# breakpoint()
-# val = A.someMethod()
-val = A.runAsync()
-print('return value:', val)
-# print('shit')
-print('good')
+def main():
+    A = a()
+    print(A)
+    # breakpoint()
+    # val = A.someMethod()
+    val = A.runAsync()
+    print('return value:', val)
+    # print('shit')
+    print('good')
