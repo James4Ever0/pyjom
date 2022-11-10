@@ -7,6 +7,7 @@ class mClass:
     someValue = 2
     def forLoopInFunction(self):
         for i in reloading(range(3)):
+            raise Exception('shit')
             if i == 1: return 'value'
 
     @reloading
