@@ -8,6 +8,7 @@ message = "bilibili recommendation server"
 waitForServerUp(port, message = message)
 
 objective = "searchRegisteredVideos"
+# if objective == 'searchVideos':
 if objective == 'searchVideos':
     params = {
         # "params": {"hop": 1}, # there is no such parameter here.
