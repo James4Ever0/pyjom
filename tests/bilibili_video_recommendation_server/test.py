@@ -985,7 +985,7 @@ def search_registered_videos(form: searchRegisteredVideoForm):
 
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
-    dedeuserid:str='39'
+    dedeuserid:str="397424026"
     method:Literal['online','bm25']='online'
     use_credential=
 
