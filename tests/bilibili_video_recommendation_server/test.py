@@ -616,6 +616,8 @@ def searchRegisteredVideosAndGetResultList(
             dedeuserids = [dedeuserid]
         else:
             dedeuserids = dedeuserid
+    else:
+        dedeuserids = None
         # print("DEDEUSERIDS:", dedeuserids)
         # from functools import reduce
 
