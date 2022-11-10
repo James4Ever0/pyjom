@@ -28,8 +28,9 @@ elif objective == "searchRegisteredVideos":
     # print(j)
     # exit()
 elif objective == "searchUserVideos":
-    params = dict(query="猫", method="bm25", videoOrder="click")
-    # params = dict(query='猫',method='bm25')
+    # it is good.
+    # params = dict(query="猫", method="bm25", videoOrder="click")
+    params = dict(query='猫',method='bm25')
     # params = dict(query='猫',method='bm25', dedeuserid=None)
 else:
     raise Exception("invalid objective: %s" % objective)
