@@ -904,8 +904,14 @@ if __name__ == "__main__":
 
         def userInfoExtracter(u):
             keys = [
-                # "id", 
-            "username", "user_id", "is_mine", "followers", "avatar"]
+                # "id",
+                "username",
+                "user_id",
+                "is_mine",
+                "followers",
+                "avatar",
+            ]
+            inf
 
         def videoInfoExtractor(v):
             # keys = v._meta.fields.keys()
