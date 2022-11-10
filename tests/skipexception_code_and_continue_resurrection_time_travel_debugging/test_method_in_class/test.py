@@ -49,6 +49,7 @@ class a:
         async def shit():
             raise Exception('just another shit')
             # return 'abcdef'
+        val = await shit()
         return val
     @reloading
     def runAsync(self):
