@@ -22,5 +22,6 @@ class a:
 
 
 A = a()
-val = A.someMethod()
+# val = A.someMethod()
+val = A.runAsync()
 print('return value:', val)
