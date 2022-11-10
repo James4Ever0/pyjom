@@ -941,13 +941,14 @@ def server_hello():
 @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
-    page
+    page_size:int=...
+    page_start: int = 1
+
 
 
 @reloading
 class searchVideoForm(queryForm):
     iterate: bool = False
-    page_start: int = 1
     params: dict = {}  # let's just see what you've got here.
 
 
