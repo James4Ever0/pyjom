@@ -1,5 +1,5 @@
 from reloading import reloading
-import string
+from lazero.utils.json import jsonify
 
 # serve my video, serve my cat video, dog video, set priority, serve others video
 # by means of query? or just directly ask me for it.
@@ -362,7 +362,13 @@ def searchVideos(
 
     def getResult(page):
         result = sync(
-            search.search_by_type(query, search_type, params=params, page=page, **jsonify(dict(page_size=page_size)))
+            search.search_by_type(
+                query,
+                search_type,
+                params=params,
+                page=page,
+                **jsonify(dict(page_size=page_size)),
+            )
         )
         return result
 
@@ -509,7 +515,7 @@ def getUserVideos(
     use_credential: bool = False,
     stop_on_duplicate: bool = True,
     sleep: int = 2,
-    pn = 1,
+    pn=1,
 ):  # all videos? just at init.
     # some stop condition for early termination.
     # if any of the video exists in the database, we stop this shit.
@@ -525,7 +531,9 @@ def getUserVideos(
     # this is async. use sync.
     stopped = False
     while not stopped:
-        videos = sync(u.get_videos(pn=pn, keyword=keyword, tid=tid, order=order,ps=page_size))
+        videos = sync(
+            u.get_videos(pn=pn, keyword=keyword, tid=tid, order=order, ps=page_size)
+        )
         # print(videos)
         # dict_keys(['list', 'page', 'episodic_button', 'is_risk', 'gaia_res_type', 'gaia_data'])
         page = videos["page"]  # pagination options
