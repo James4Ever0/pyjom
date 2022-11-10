@@ -886,7 +886,7 @@ if __name__ == "__main__":
         import pydantic
 
         class searchVideoForm(pydantic.BaseModel):
-            query: str
+            query: str # required?
             iterate: bool = False
             page_start: int = 1
             params:dict = {}  # let's just see what you've got here.
