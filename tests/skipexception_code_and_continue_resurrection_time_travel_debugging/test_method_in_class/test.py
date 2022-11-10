@@ -11,7 +11,7 @@ class Mydecorator:
     #accept the class as argument
     def __init__(self, student):
         print("STUDENT:", student)
-        self.student = student
+        self.class = student
     
     #accept the class's __init__ method arguments
     def __call__(self, name):
