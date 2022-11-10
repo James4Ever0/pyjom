@@ -26,7 +26,7 @@ class Mydecorator:
         return class_
 
 # @mreload
-@reloading(every=10)
+@reloading
 # no reloading on class?
 class a:
     # raise Exception('shit')
@@ -47,7 +47,7 @@ class a:
         # raise Exception('just another shit')
         @reloading
         async def shit():
-            raise Exception('just and but just another shit')
+            # raise Exception('just and but just another shit')
             return 'abcdef'
         val = await shit()
         return val
