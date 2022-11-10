@@ -975,7 +975,7 @@ if __name__ == "__main__":
                 # print(v)
                 # breakpoint()
                 if v is not None:
-                    info = v.videoInfoExtractor()
+                    info = v.videoInfoExtractor(v) # static method?
                     print(info)
                     breakpoint()
 
