@@ -632,7 +632,7 @@ def searchRegisteredVideosAndGetResultList(
     vgen = BilibiliVideo.select(BilibiliVideo.id).where(condition)
     # breakpoint()
     if dedeuserids:
-        
+        vgen = vgen.join(Bilibi)
     user_video_ids = [
         v.id for v in vgen or []
     ]
