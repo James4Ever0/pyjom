@@ -216,6 +216,17 @@ class BilibiliUser(Model):
     )  # how to get that? every time you get some video you do this shit? will get you blocked.
     # well you can check it later.
     avatar = CharField(null=True)  # warning! charfield max length is 255
+    def userInfoExtracter(self):
+        keys = [
+            # "id",
+            "username",
+            "user_id",
+            "is_mine",
+            "followers",
+            "avatar",
+        ]
+        info = [self.__dict__[key] for key in keys]
+        return info
 
 
 class BilibiliVideo(Model):
@@ -238,17 +249,7 @@ class BilibiliVideo(Model):
     title = CharField(null=True)
     tag = CharField(null=True)
     description = CharField(null=True)
-    def userInfoExtracter(self):
-        keys = [
-            # "id",
-            "username",
-            "user_id",
-            "is_mine",
-            "followers",
-            "avatar",
-        ]
-        info = [self.__dict__[key] for key in keys]
-        return info
+
 
 
 class BilibiliVideoIndex(FTSModel):
