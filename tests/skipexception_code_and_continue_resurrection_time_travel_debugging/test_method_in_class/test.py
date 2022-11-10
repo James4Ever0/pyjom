@@ -17,6 +17,7 @@ class a:
     def runAsync(self):
         loop= asyncio.get_event_loop()
         val = loop.run_until_complete(self.someOtherMethod())
+        print('value from async func:', val)
         return val
 
 
