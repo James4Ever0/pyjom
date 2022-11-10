@@ -11,6 +11,7 @@ def mreload(mclass):
 class a:
     # raise Exception('shit')
     # cannot raise exception here. the compiler will complain.
+    # good?
     @reloading # does this work?
     def someMethod(self):
         # @reloading # this will not work.
