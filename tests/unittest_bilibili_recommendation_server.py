@@ -14,9 +14,5 @@ params = {
     "iterate": True,
     "page_start": 1,
 }  # check if this works?
-# params = {'params':{}}
-# import json
-# data = json.dumps(params)
-# print(data)
 # r = requests.post(baseurl + "/searchVideos", json=params)
-print("response:", r.text)
+# print("response:", r.text)
