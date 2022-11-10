@@ -632,7 +632,7 @@ def searchRegisteredVideosAndGetResultList(
             [BilibiliUser.user_id  ==  int(userid) for userid in dedeuserids],
         )
         vgen = vgen.join(
-            BilibiliUser).where(condition & mconditionBilibiliUser.user_id in dedeuserids) # this statement does not work.
+            BilibiliUser).where(condition) # this statement does not work.
     else:
         vgen = vgen.where(condition)
     user_video_ids = [v.id for v in vgen or []]
