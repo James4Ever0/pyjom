@@ -910,10 +910,7 @@ class searchVideoForm(pydantic.BaseModel):
     page_start: int = 1
     params: dict = {}  # let's just see what you've got here.
 
-@reloading
-class searchRegisteredVideoForm(pydantic.BaseModel):
-    query:str
-    tid
+
 
 app = FastAPI()
 
