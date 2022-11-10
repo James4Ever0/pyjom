@@ -35,7 +35,7 @@ class a:
     someval = 1
     @reloading # does this work?
     def someMethod(self):
-        # @reloading # this will not work.
+        @reloading # this will not work.
         def someothermethod():
             # raise Exception('just another shit')
             return 'value'
