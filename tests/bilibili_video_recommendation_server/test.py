@@ -643,11 +643,11 @@ def searchRegisteredVideosAndGetResultList(
         favorites = BilibiliVideo.favorites
         pubdate = BilibiliVideo.pubdate
         view = BilibiliVideo.play
-        if videoOrder == VideoOrder.FAVORITE: # this is fake ordering.
-            order = favorites.desc() # desc
+        if videoOrder == VideoOrder.FAVORITE:  # this is fake ordering.
+            order = favorites.desc()  # desc
         elif videoOrder == VideoOrder.VIEW:
-            order = view.desc() # desc
-        elif videoOrder == VideoOrder.PUBDATE: # also desc.
+            order = view.desc()  # desc
+        elif videoOrder == VideoOrder.PUBDATE:  # also desc.
             order = pubdate.desc()  # most recent video.
         else:
             order = None
@@ -661,12 +661,13 @@ def searchRegisteredVideosAndGetResultList(
     results = getVgen(
         BilibiliVideoIndex.search_bm25(keyword).join(
             BilibiliVideo, on=(BilibiliVideoIndex.rowid == BilibiliVideo.id)
-        ), videoOrder
+        ),
+        videoOrder,
     ).paginate(  # again this is wrong.
         page_num, page_size
     )
     for index, video_index in enumerate(results):
-        bilibiliVideo = BilibiliVideo.get(id=video_index.rowid) # this shall be fast.
+        bilibiliVideo = BilibiliVideo.get(id=video_index.rowid)  # this shall be fast.
         # what is the count? you need to reorder?
         # bvid = bilibiliVideo.bvid
         # cover = bilibiliVideo.pic
@@ -1041,7 +1042,7 @@ def search_videos(form: searchVideoForm):
 @reloading
 class searchRegisteredVideoForm(queryForm):
     tid: int = 0
-    dedeuserid: Union[List[str], str, None] =None 
+    dedeuserid: Union[List[str], str, None] = None
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
 
@@ -1065,7 +1066,7 @@ from typing import List
 
 @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
-    dedeuserid: str = 
+    dedeuserid: str = "397424026"
     method: Literal["online", "bm25"] = "online"
     use_credential: bool = False
 
