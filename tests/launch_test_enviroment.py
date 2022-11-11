@@ -17,7 +17,7 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
         import traceback
         traceback.print_exc()
         print('failed while launching program with parameters:')
-        print(f"[D]:{directory}\n[I}{intepreter}\n[E]])
+        print(f"[D]:{directory}\n[I]{intepreter}\n[E]{executable}\n[C]{}")
 
 # launch billibili recommendation server
 ["/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server","python3","test.py"],{}
