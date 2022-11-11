@@ -35,6 +35,8 @@ console.log(query);
 //     // console.log(module)
 // module.exports = exports // must use this to export things.
 
+// this is self-reference.
+
 class Query {
     constructor(a, b) {
         this.a = a
