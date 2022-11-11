@@ -9,6 +9,8 @@ console.log(query);
 // console.log(module.loaded) // false
 // export all functions?
 // module.exports = 
-module.exports = {myfunc:function myfunc() {
-    return query;
-}}
+module.exports = {
+    myfunc: () => {
+        return query;
+    }
+}
