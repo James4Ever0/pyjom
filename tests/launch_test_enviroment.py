@@ -6,8 +6,11 @@ def launchProgramWithTerminal(
     directory, intepreter, executable, sleep=None, no_terminal=False
 ):
     try:
-        if type(sleep) in [int, float] and sleep > 0: # logic shortcut please?
-            time.sleep(sleep)
+        if type(sleep) in [int, float]:
+            if sleep > 0: # logic shortcut please?
+                time.sleep(sleep)
+            else:
+                raise Exception('negative or zero sleep duration:', sleep)
         directory = os.path.abspath(directory)
         assert os.path.exists(directory)
         os.chdir(directory)
