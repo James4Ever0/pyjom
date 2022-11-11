@@ -27,7 +27,9 @@ def launchProgramWithTerminal(
             f"[D]:{directory}\n[I]{intepreter}\n[E]{executable}\n[C]{dict(sleep=sleep, no_terminal=no_terminal)}"
         )
         breakpoint()
+    return None
 
+def execute
 
 # common paths
 pyjom_directory = "/root/Desktop/works/pyjom"
