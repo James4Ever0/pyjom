@@ -1017,6 +1017,7 @@ def bilibiliRecommendationServer(
         page_size: Union[int, None] = None
         page_num: int = 1
         query_for_search_cached: Union[str, None] = None
+        # you are going to inherit this.
 
         @property
         def query_for_search(self):
