@@ -1,7 +1,7 @@
-from reloading import reloading
 import sys
 sys.path.append("/root/Desktop/works/pyjom/")
 
+from reloading import reloading
 from lazero.utils.json import jsonify
 
 # ellipsis = type(...)
@@ -51,7 +51,6 @@ def containChineseCharacters(text):
 
 from lazero.utils.mathlib import extract_span
 
-
 def textPreprocessing(text):
     converter = getOpenCCConverter()
     text = converter.convert(text)
@@ -89,14 +88,12 @@ def textPreprocessing(text):
 
 from nltk.corpus import stopwords
 
-
 @lru_cache(maxsize=1)
 def getStopwords(languages: tuple = ("chinese", "english")):
     stopword_list = []
     for lang in languages:
         stopword_list.extend(stopwords.words(lang))
     return stopword_list
-
 
 def keywordExtracting(
     text,
@@ -138,7 +135,6 @@ from playhouse.sqlite_ext import SqliteExtDatabase, FTSModel, SearchField, RowID
 BSP = search.bilibiliSearchParams
 # you can query for the server status.
 # make it into a dashboard like thing.
-
 
 @lru_cache(maxsize=1)
 def getMajorMinorTopicMappings(debug: bool = False):
@@ -977,7 +973,6 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     db = getBilibiliVideoDatabaseAndCreateTables()
     return db
 
-
 # utils.
 
 
@@ -990,131 +985,133 @@ def default(value, default_, isInstance=lambda v: v in [..., None]):
 # somewhere here:
 # https://fastapi.tiangolo.com/es/tutorial/debugging/
 port = 7341
-from fastapi import FastAPI
-import uvicorn
-import pydantic
+    from fastapi import FastAPI
+    import uvicorn
+    import pydantic
 
-app = FastAPI()
-
-
-@app.get("/")
-# @reloading
-def server_hello():
-    return "bilibili recommendation server"
+    app = FastAPI()
 
 
-@reloading
-class queryForm(pydantic.BaseModel):
-    query: str  # required?
-    page_size: Union[int, None] = None
-    page_num: int = 1
+    @app.get("/")
+    # @reloading
+    def server_hello():
+        return "bilibili recommendation server"
 
 
-@reloading
-class searchVideoForm(queryForm):
-    iterate: bool = False
-    params: dict = {}  # let's just see what you've got here.
+    @reloading
+    class queryForm(pydantic.BaseModel):
+        query: str  # required?
+        page_size: Union[int, None] = None
+        page_num: int = 1
 
 
-@reloading
-def getVideoInfosFromVideoGenerator(vgen):
-    vlist = []
-    for v in vgen:
-        if type(v) == BilibiliVideo:
-            vlist.append(v.videoInfoExtractor())
-    return vlist
+    @reloading
+    class searchVideoForm(queryForm):
+        iterate: bool = False
+        params: dict = {}  # let's just see what you've got here.
 
 
-# just asking. post or get?
-@app.post("/searchVideos")  # what do you want to have? all fields?
-# @reloading
-def search_videos(form: searchVideoForm):
-    # print('received params:',params) # it is str.
-    # breakpoint()
-    params = {
-        "duration": BSP.all.duration._10分钟以下
-    } | form.params  # this is default parameter.
-    # breakpoint()
-    vgen = searchAndRegisterVideos(
-        form.query,
-        iterate=form.iterate,
-        page_start=form.page_num,
-        params=params,
-        page_size=default(form.page_size, ...),
-    )
-    videoInfos = getVideoInfosFromVideoGenerator(vgen)
-    return videoInfos
+    @reloading
+    def getVideoInfosFromVideoGenerator(vgen):
+        vlist = []
+        for v in vgen:
+            if type(v) == BilibiliVideo:
+                vlist.append(v.videoInfoExtractor())
+        return vlist
 
 
-@reloading
-class searchRegisteredVideoForm(queryForm):
-    tid: int = 0
-    dedeuserid: Union[list[str], str, None] = None
-    videoOrder: VideoOrder = VideoOrder.PUBDATE
+    # just asking. post or get?
+    @app.post("/searchVideos")  # what do you want to have? all fields?
+    # @reloading
+    def search_videos(form: searchVideoForm):
+        # print('received params:',params) # it is str.
+        # breakpoint()
+        params = {
+            "duration": BSP.all.duration._10分钟以下
+        } | form.params  # this is default parameter.
+        # breakpoint()
+        vgen = searchAndRegisterVideos(
+            form.query,
+            iterate=form.iterate,
+            page_start=form.page_num,
+            params=params,
+            page_size=default(form.page_size, ...),
+        )
+        videoInfos = getVideoInfosFromVideoGenerator(vgen)
+        return videoInfos
 
 
-@app.post("/searchRegisteredVideos")
-# @reloading
-def search_registered_videos(form: searchRegisteredVideoForm):
-    vgen = searchRegisteredVideos(
-        form.query,
-        form.tid,
-        form.dedeuserid,
-        form.videoOrder,
-        form.page_num,
-        default(form.page_size, 30),
-    )
-    videoInfos = getVideoInfosFromVideoGenerator(vgen)
-    return videoInfos
+    @reloading
+    class searchRegisteredVideoForm(queryForm):
+        tid: int = 0
+        dedeuserid: Union[list[str], str, None] = None
+        videoOrder: VideoOrder = VideoOrder.PUBDATE
+
+
+    @app.post("/searchRegisteredVideos")
+    # @reloading
+    def search_registered_videos(form: searchRegisteredVideoForm):
+        vgen = searchRegisteredVideos(
+            form.query,
+            form.tid,
+            form.dedeuserid,
+            form.videoOrder,
+            form.page_num,
+            default(form.page_size, 30),
+        )
+        videoInfos = getVideoInfosFromVideoGenerator(vgen)
+        return videoInfos
 
 
 
-@reloading
-class searchUserVideoForm(searchRegisteredVideoForm):
-    dedeuserid: str = "397424026"
-    method: Literal["online", "bm25"] = "online"
-    use_credential: bool = False
+    @reloading
+    class searchUserVideoForm(searchRegisteredVideoForm):
+        dedeuserid: str = "397424026"
+        method: Literal["online", "bm25"] = "online"
+        use_credential: bool = False
 
 
-@app.post("/searchUserVideos")
-# @reloading
-def search_user_videos(form: searchUserVideoForm):
-    vgen = searchUserVideos(
-        form.query,
-        form.tid,
-        form.dedeuserid,
-        form.method,
-        form.use_credential,
-        form.videoOrder,
-        form.page_num,
-        default(form.page_size, 30),
-    )
-    videoInfos = getVideoInfosFromVideoGenerator(vgen)
-    return videoInfos
+    @app.post("/searchUserVideos")
+    # @reloading
+    def search_user_videos(form: searchUserVideoForm):
+        vgen = searchUserVideos(
+            form.query,
+            form.tid,
+            form.dedeuserid,
+            form.method,
+            form.use_credential,
+            form.videoOrder,
+            form.page_num,
+            default(form.page_size, 30),
+        )
+        videoInfos = getVideoInfosFromVideoGenerator(vgen)
+        return videoInfos
 
 
-@reloading
-class registerUserVideoForm(pydantic.BaseModel):
-    bvid: str
-    dedeuserid: str
-    is_mine: bool = False
-    visible: bool = False
+    @reloading
+    class registerUserVideoForm(pydantic.BaseModel):
+        bvid: str
+        dedeuserid: str
+        is_mine: bool = False
+        visible: bool = False
 
 
-@app.post("/registerUserVideo")
-# @reloading
-def register_user_video(form: registerUserVideoForm):
-    new = registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
-    if new:
-        print("----")
-        print("registered user video:", form.bvid)
-        print("user:", form.dedeuserid)
-        print("is_mine:", form.is_mine)
-        print("visible:", form.visible)
-        print("----")
-    else:
-        print("video already registered.")
-    return {"is_new": new}
+    @app.post("/registerUserVideo")
+    # @reloading
+    def register_user_video(form: registerUserVideoForm):
+        new = registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
+        if new:
+            print("----")
+            print("registered user video:", form.bvid)
+            print("user:", form.dedeuserid)
+            print("is_mine:", form.is_mine)
+            print("visible:", form.visible)
+            print("----")
+        else:
+            print("video already registered.")
+        return {"is_new": new}
+
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 
 # you should recommend by label instead of by name. but whatever.
@@ -1127,7 +1124,6 @@ if __name__ == "__main__":
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
     if objective == "server":
-        uvicorn.run(app, host="0.0.0.0", port=port)
     elif objective == "test":
         test = "searchVideos"
         # test = "searchUserVideos"
