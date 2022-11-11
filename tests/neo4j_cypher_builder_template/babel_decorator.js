@@ -1,4 +1,4 @@
-function decorate(func){
+function dec(func){
     function innerfunc(...args){
         console.log('calling func with args:', args)
         func(...args)
@@ -6,7 +6,7 @@ function decorate(func){
     return innerfunc
 }
 
-@decorate
+@dec
 function myfunc(val){
     return val
 }
