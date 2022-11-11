@@ -1,3 +1,4 @@
+//'use strict';
 var cypher = function(str) { return str; }
 var sql = function(str) { return str; }
 var a = cypher `create (n)-[:married]->(r)`; // well that's good.
