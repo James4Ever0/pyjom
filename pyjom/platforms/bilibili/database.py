@@ -1036,12 +1036,14 @@ def bilibiliRecommendationServer(
     def search_videos(form: searchVideoForm):
         # print('received params:',params) # it is str.
         # breakpoint()
+        query = form.query
+        
         params = {
             "duration": BSP.all.duration._10分钟以下
         } | form.params  # this is default parameter.
         # breakpoint()
         vgen = searchAndRegisterVideos(
-            form.query,
+            query,
             iterate=form.iterate,
             page_start=form.page_num,
             params=params,
