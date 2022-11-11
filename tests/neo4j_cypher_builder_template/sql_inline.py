@@ -5,7 +5,7 @@ b = "create (n:person)"  # cypher # not working!
 from javascript import require, globalThis
 
 chalk = require(
-    "./cypher_inline.js"
+    "./cypher_inline.js"chr
 )  # that might be some drop-in replacement for jinja? should they work together?
 
 # print(dir(chalk))
