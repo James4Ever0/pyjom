@@ -40,7 +40,7 @@ pyjom_externals = os.path.join(pyjom_directory, "externals")
 
 # how to check avaliability of netease cloud music api?
 
-[os.path.join(pyjom_tests,"karaoke_effects"),"bash","load_translator.sh"]
+[os.path.join(pyjom_tests,"karaoke_effects"),"bash","load_translator.sh"],{}
 
 [os.path.join(pyjom_tests,"redis_music_info_persistance"),"bash", "launch_redis.sh"],dict(sleep=1)
 
@@ -48,4 +48,4 @@ pyjom_externals = os.path.join(pyjom_directory, "externals")
 [os.path.join(pyjom_tests,"random_giphy_gifs"),"node","nodejs_server.js"],dict(sleep=1)
 
 
-[os.path.join(pyjom_tests,"nsfw_violence_drug_detection","node","nsfwjs_test.js"],dict(sleep=1)
+[os.path.join(pyjom_tests,"nsfw_violence_drug_detection"),"node","nsfwjs_test.js"],dict(sleep=1)
