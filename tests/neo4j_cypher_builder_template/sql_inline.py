@@ -2,5 +2,7 @@ a="select * from user"
 
 
 b="create (n:person)" # cypher # not working!
+from javascript import require, globalThis
 
-import 
+chalk, fs = require("chalk"), require("fs")
+ 
