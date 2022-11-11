@@ -1,7 +1,7 @@
 var cypher = function(strArray, ...opts) { // this is bad.
     console.log('input:', strArray, opts) // here we've got the thing.
     // this will be good.
-    suppose we put string, object into this thing.
+    // suppose we put string, object into this thing.
     return strArray;
 }
 var sql = function(str) { return str; }
