@@ -1,6 +1,6 @@
 import sys
 sys.path.append("/root/Desktop/works/pyjom/")
-from pyjom.platforms.bilibili.
+from pyjom.platforms.bilibili.database import bilibiliRecommendationServer,
 
 # you should recommend by label instead of by name. but whatever.
 if __name__ == "__main__":
