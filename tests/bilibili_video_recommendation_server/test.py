@@ -1121,7 +1121,6 @@ def bilibiliRecommendationServer(
 
 # you should recommend by label instead of by name. but whatever.
 if __name__ == "__main__":
-
     # objective = 'test'
     import argparse
 
@@ -1134,6 +1133,7 @@ if __name__ == "__main__":
     if objective == "server":
         bilibiliRecommendationServer()
     elif objective == "test":
+        bootstrap()
         test = "searchVideos"
         # test = "searchUserVideos"
         # test = "textPreprocessing"
