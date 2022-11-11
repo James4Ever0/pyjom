@@ -20,10 +20,10 @@ console.log(query);
 // what if they are interdependent?
 
 module.exports = {
-    otherfunc(){
+    otherfunc:()=>{
         console.log('calling otherfunc')
     }
-    myfunc() {
+    myfunc:() =>{
         otherfunc()
         return query;
     }
