@@ -35,12 +35,12 @@ launchList = [[os.path.join(pyjom_tests,"bilibili_video_recommendation_server"),
 
 # launch netease api server. we need it to download new music, currently.
 # video phash is the last step among all filters.
-[os.path.join(pyjom_externals,"NeteaseCloudMusicApi"),
-"bash","launch.sh"],{} # port is 4042. port 4000 is used. don't know why.
+[[os.path.join(pyjom_externals,"NeteaseCloudMusicApi"),
+"bash","launch.sh"],{} ]# port is 4042. port 4000 is used. don't know why.
 
 # how to check avaliability of netease cloud music api?
-
-[os.path.join(pyjom_tests,"karaoke_effects"),"bash","load_translator.sh"],{}
+[
+[os.path.join(pyjom_tests,"karaoke_effects"),"bash","load_translator.sh"],{}]
 [
 [os.path.join(pyjom_tests,"redis_music_info_persistance"),"bash", "launch_redis.sh"],dict(sleep=1)
 ]
