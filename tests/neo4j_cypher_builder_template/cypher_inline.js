@@ -10,9 +10,9 @@ var cypher = function(strArray, ...opts) { // this is bad.
 var sql = function(str) { return str; }
 var myexpression = {obj:2}; // not supplied to cypher?
 // create (n)-[:married]->(r) [object Object]
+// wtf?
 var myexpression2 = '3';
 var b = `create (n)-[:married]->(r) ${myexpression}`
-create (n)-[:married]->(r) [object Object]
 console.log(b) // create (n)-[:married]->(r) 2
     // this will format the thing.
 var a = cypher `create (n:person{name:${myexpression}})-[:married]->(r) ${myexpression2}`; // well that's good.
