@@ -101,7 +101,9 @@ for argumentList, kwargs in launchList:
     try:
         assert type(kwargs) == dict
         [directory, intepreter, executable] = argumentList
-        launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
+        command = launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
+        if command is not None:
+            raise Exception('command is None')
     except:
         import traceback
 
