@@ -11,7 +11,13 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
         executable_path = os.path.join(directory, executable)
         assert os.path.exists(executable_path)
         command = f'{"gnome-terminal -- " if not no_terminal else ""}{intepreter} {executable_path}'
+        print('executing command:', command)
         os.system(command)
+    except:
+        import traceback
+        traceback.print_exc()
+        print('failed while launching program with parameters:')
+        print("[D]:directory)
 
 # launch billibili recommendation server
 ["/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server","python3","test.py"],{}
