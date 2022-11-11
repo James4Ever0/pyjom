@@ -89,4 +89,4 @@ for argumentList, kwargs in launchList:
         launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
     except:
         print('error when decomposing program launch parameters')
-        print(f'[AL]{argumentList}\n{')
+        print(f'[AL]{argumentList}\n[KW]{kwargs}')
