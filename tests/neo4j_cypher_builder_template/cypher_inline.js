@@ -1,4 +1,3 @@
-
 var cypher = function(str) { return str; }
 var sql = function(str) { return str; }
 var a = cypher `create (n)-[:married]->(r)`; // well that's good.
@@ -20,12 +19,12 @@ console.log(query);
 // what if they are interdependent?
 
 module.exports = {
-    otherfunc:()=>{
-        console.log('calling otherfunc')
+        otherfunc: () => {
+            console.log('calling otherfunc');
+        },
+        myfunc: () => {
+            otherfunc()
+            return query;
+        }
     }
-    myfunc:() =>{
-        otherfunc()
-        return query;
-    }
-}
-// console.log(module)
+    // console.log(module)
