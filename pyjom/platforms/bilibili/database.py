@@ -1037,7 +1037,7 @@ def bilibiliRecommendationServer(
         # print('received params:',params) # it is str.
         # breakpoint()
         query = form.query
-        
+        query = textPreprocessing(query)
         params = {
             "duration": BSP.all.duration._10分钟以下
         } | form.params  # this is default parameter.
