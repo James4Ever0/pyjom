@@ -82,5 +82,5 @@ launchList = [
     ],
 ]
 
-for[ directory, intepreter, executable], kwargs in launchList:
+for [directory, intepreter, executable], kwargs in launchList:
     launchProgramWithTerminal(directory, intepreter, executable, kwargs)
