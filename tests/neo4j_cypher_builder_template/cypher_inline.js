@@ -49,7 +49,8 @@ class Query {
     }
     static myfunc() {
         // static myfunc() {
-        Query.otherfunc() // strange shit.
+        // Query.otherfunc() // strange shit.
+        this.otherfunc() // strange shit.
         return query;
     }
 }
