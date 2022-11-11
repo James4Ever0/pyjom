@@ -1,5 +1,5 @@
 
-def launchTerminal(directory, )
+def launchTerminal(directory, intepreter,executable, sleep=0)
 
 # launch billibili recommendation server
 cd /root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server
