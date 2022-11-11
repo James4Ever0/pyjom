@@ -4,19 +4,20 @@ var a = cypher `create (n)-[:married]->(r)`; // well that's good.
 console.log(a);
 const query = sql `SELECT * FROM users`;
 console.log(query);
-function otherfunc(){
-    console.log('calling otherfunc')
-    return 'other func'
-}
-function myfunc() {
-    otherfunc()
-    return query;
-}
-// __export__
-// console.log(module.loaded) // false
-// export all functions?
-module.exports = {otherfunc, myfunc} // also some bloated shit.
+// function otherfunc(){
+//     console.log('calling otherfunc')
+//     return 'other func'
+// }
+// function myfunc() {
+//     otherfunc()
+//     return query;
+// }
+// // __export__
+// // console.log(module.loaded) // false
+// // export all functions?
+// module.exports = {otherfunc, myfunc} // also some bloated shit.
 // which one you want? damn...
+// you want some object?
 
 // what if they are interdependent?
 
