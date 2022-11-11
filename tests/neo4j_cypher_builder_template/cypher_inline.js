@@ -42,7 +42,8 @@ class Query {
         this.a = a
         this.b = b
     }
-    otherfunc() {
+    static otherfunc() {
+    // otherfunc() {
         console.log('calling otherfunc');
         return 'otherfunc'
     }

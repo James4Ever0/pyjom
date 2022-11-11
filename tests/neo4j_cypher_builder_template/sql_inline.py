@@ -10,7 +10,7 @@ chalk = require(
 
 # print(dir(chalk))
 # what the fuck?
-q = chalk.Query(1,2)
+q = chalk.Query # use static method this time?
 # q = chalk.Query(1,2)
 val = q.myfunc() # this is similar to the original shit.
 # val = chalk.myfunc()
