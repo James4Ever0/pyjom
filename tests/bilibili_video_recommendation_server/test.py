@@ -984,7 +984,8 @@ def default(value, default_, isInstance=lambda v: v in [..., None]):
 
 # somewhere here:
 # https://fastapi.tiangolo.com/es/tutorial/debugging/
-def launchServer()
+port = 7341
+def bilibiliRecommendationServer():
     from fastapi import FastAPI
     import uvicorn
     import pydantic
