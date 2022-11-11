@@ -34,6 +34,8 @@ console.log(query);
 //     }
 //     // console.log(module)
 
-class Query
+class Query{
+    
+}
 
 // module.exports = exports // must use this to export things.
