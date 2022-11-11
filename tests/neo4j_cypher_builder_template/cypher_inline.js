@@ -21,6 +21,7 @@ console.log(query);
 exports = {
         otherfunc: () => {
             console.log('calling otherfunc');
+            return 'otherfunc'
         },
         myfunc: () => {
             exports.otherfunc() // strange shit.
