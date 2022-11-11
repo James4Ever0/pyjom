@@ -1,4 +1,7 @@
 from reloading import reloading
+import sys
+sys.path.append("/root/Desktop/works/pyjom/")
+
 from lazero.utils.json import jsonify
 
 # ellipsis = type(...)
@@ -7,13 +10,12 @@ from lazero.utils.json import jsonify
 
 # you'd better mimic the video that you have never recommend, and these audience have never seen before.
 import time
-import sys
+
 import datetime
 from typing import Union, Literal
 from functools import lru_cache
 import random
 
-sys.path.append("/root/Desktop/works/pyjom/")
 # you might want to add this to bilibili platform api, if there's no use of pyjom.commons
 from pyjom.platforms.bilibili.credentials import getCredentialByDedeUserId
 from pyjom.platforms.bilibili.utils import (
