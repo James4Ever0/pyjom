@@ -1020,11 +1020,10 @@ def bilibiliRecommendationServer(
 
         @property
         def query_for_search(self):
-            if self._query_for_search:
-            else:
+            if not self._query_for_search:
                 query = self.query
                 self._query_for_search =textPreprocessing(query)
-                return self._query_for_search
+            return self._query_for_search
 
 
     @reloading
