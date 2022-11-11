@@ -102,3 +102,4 @@ for argumentList, kwargs in launchList:
         traceback.print_exc()
         print("error when decomposing program launch parameters")
         print(f"[AL]{argumentList}\n[KW]{kwargs}")
+        breakpoint()
