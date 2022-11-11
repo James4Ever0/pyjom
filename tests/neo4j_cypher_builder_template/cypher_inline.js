@@ -18,12 +18,12 @@ console.log(query);
 
 // what if they are interdependent?
 var _ = module.exports
-_ = {
+exports = {
         otherfunc: () => {
             console.log('calling otherfunc');
         },
         myfunc: () => {
-            _.otherfunc()
+            exports.otherfunc()
             return query;
         }
     }
