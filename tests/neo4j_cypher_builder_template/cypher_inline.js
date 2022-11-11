@@ -3,10 +3,11 @@ var cypher = function(str, opt, opt1) {
     return str; }
 var sql = function(str) { return str; }
 var myexpression = '2'; // not supplied to cypher?
+var myexpression = '2'; // not supplied to cypher?
 var b = `create (n)-[:married]->(r) ${myexpression}`
 console.log(b) // create (n)-[:married]->(r) 2
 // this will format the thing.
-var a = cypher `create (n:person{name:${myexpression}})-[:married]->(r) ${myexpression}`; // well that's good.
+var a = cypher `create (n:person{name:${myexpression}})-[:married]->(r) ${myexpression2}`; // well that's good.
 console.log(a);
 const query = sql `SELECT * FROM users`;
 console.log(query);
