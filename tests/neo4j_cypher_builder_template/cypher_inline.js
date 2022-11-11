@@ -1,5 +1,5 @@
-var cypher = function(str, opt, opt1) { 
-    console.log('input:', str, opt, opt1) // here we've got the thing.
+var cypher = function(strArray, opt, opt1) { // this is bad.
+    console.log('input:', strArray, opt, opt1) // here we've got the thing.
     return str; }
 var sql = function(str) { return str; }
 var myexpression = '2'; // not supplied to cypher?
