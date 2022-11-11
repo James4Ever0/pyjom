@@ -1,4 +1,3 @@
-
 from reloading import reloading
 from lazero.utils.json import jsonify
 
@@ -988,6 +987,7 @@ def default(value, default_, isInstance=lambda v: v in [..., None]):
 # somewhere here:
 # https://fastapi.tiangolo.com/es/tutorial/debugging/
 
+
 @lru_cache(maxsize=1)
 def bootstrap():
     db = getBilibiliVideoDatabaseAndCreateTables()
@@ -1016,6 +1016,7 @@ def bilibiliRecommendationServer(
         query: str  # required?
         page_size: Union[int, None] = None
         page_num: int = 1
+
         @property
         def query_for_search(self):
             query = self.query
@@ -1119,6 +1120,7 @@ def bilibiliRecommendationServer(
         return {"is_new": new}
 
     uvicorn.run(app, host="0.0.0.0", port=port)
+
 
 if __name__ == "__main__":
     bilibiliRecommendationServer()
