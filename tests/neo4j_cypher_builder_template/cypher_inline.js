@@ -5,7 +5,7 @@ var a = cypher `create (n)-[:married]->(r)`; // well that's good.
 console.log(a);
 const query = sql `SELECT * FROM users`;
 console.log(query);
-const query2 = python ``;
+const query2 = python `import sql`;
 
 function myfunc() {
     return query;
