@@ -16,6 +16,7 @@ function myfunc() {
 // console.log(module.loaded) // false
 // export all functions?
 module.exports = {otherfunc, myfunc} // also some bloated shit.
+// which one you want? damn...
 
 // what if they are interdependent?
 
