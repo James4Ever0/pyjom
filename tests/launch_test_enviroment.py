@@ -9,14 +9,14 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
     os.system(command)
 
 # launch billibili recommendation server
-["/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server","python3","test.py"]
+["/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server","python3","test.py"],{}
 
 # launch qq cqhttp
-["/root/Desktop/works/pyjom/tests/qq_go_cqhttp","bash","launch.sh"]
+["/root/Desktop/works/pyjom/tests/qq_go_cqhttp","bash","launch.sh"],{}
 
 # make sure milvus is running.
 cd /root/Desktop/works/pyjom/tests/video_phash_deduplication/
-bash" /root/Desktop/works/pyjom/tests/video_phash_deduplication/config_milvus.sh
+bash" /root/Desktop/works/pyjom/tests/video_phash_deduplication/config_milvus.sh,dict(no_terminal=True)
 
 # launch netease api server. we need it to download new music, currently.
 # video phash is the last step among all filters.
