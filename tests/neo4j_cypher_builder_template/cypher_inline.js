@@ -6,7 +6,7 @@ var myexpression = '2'; // not supplied to cypher?
 var b = `create (n)-[:married]->(r) ${myexpression}`
 console.log(b) // create (n)-[:married]->(r) 2
 // this will format the thing.
-var a = cypher `create (n)-[:married]->(r) ${myexpression}`; // well that's good.
+var a = cypher `create (n)-[:married]->(r) `; // well that's good.
 console.log(a);
 const query = sql `SELECT * FROM users`;
 console.log(query);
