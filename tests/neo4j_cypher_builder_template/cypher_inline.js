@@ -9,4 +9,6 @@ console.log(query);
 // console.log(module.loaded) // false
 // export all functions?
 // module.exports = 
-console.log(global)
+module.exports = {myfunc:function myfunc() {
+    return query;
+}}
