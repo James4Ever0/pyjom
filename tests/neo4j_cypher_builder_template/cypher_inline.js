@@ -35,14 +35,14 @@ console.log(query);
 //     // console.log(module)
 
 class Query{
-    //         otherfunc: () => {
-//             console.log('calling otherfunc');
-//             return 'otherfunc'
-//         },
-//         myfunc: () => {
-//             exports.otherfunc() // strange shit.
-//             return query;
-//         }
+            otherfunc() {
+            console.log('calling otherfunc');
+            return 'otherfunc'
+        },
+        myfunc() {
+            exports.otherfunc() // strange shit.
+            return query;
+        }
 }
 
 // module.exports = exports // must use this to export things.
