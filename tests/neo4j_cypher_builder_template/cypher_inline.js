@@ -11,4 +11,4 @@ function myfunc() {
 // console.log(module.loaded) // false
 // export all functions?
 // module.exports = 
-console.log(this)
+console.log(global)
