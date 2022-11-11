@@ -8,7 +8,7 @@ var cypher = function(strArray, ...opts) { // this is bad.
     return strArray;
 }
 var sql = function(str) { return str; }
-var myexpression = '2'; // not supplied to cypher?
+var myexpression = {}; // not supplied to cypher?
 var myexpression2 = '3';
 var b = `create (n)-[:married]->(r) ${myexpression}`
 console.log(b) // create (n)-[:married]->(r) 2
