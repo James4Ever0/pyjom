@@ -1121,8 +1121,8 @@ if __name__ == "__main__":
     schedule.every(20).minutes.do(refresh_status)
     # objective = 'test'
     import argparse
-    aargparse.ArgumentParser()
-    add_argument
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-o','--objective',)
     objective = "server"
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
