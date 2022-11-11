@@ -65,7 +65,7 @@ class Query {
     }
     static myfunc(...args) {
         // static myfunc() {
-            console.log(args)
+            console.log('myfunc args:',args)
         Query.otherfunc() // strange shit.
             // this.otherfunc() // still working for static functions.
             // javascript is a beast.
