@@ -1020,10 +1020,10 @@ def bilibiliRecommendationServer(
 
         @property
         def query_for_search(self):
-            if self._query_for_search is None:
+            if self.query_for_search_cached is None:
                 query = self.query
-                self._query_for_search = textPreprocessing(query)
-            return self._query_for_search
+                self.query_for_search_cached = textPreprocessing(query)
+            return self.query_for_search_cached
 
     @reloading
     class searchVideoForm(queryForm):
