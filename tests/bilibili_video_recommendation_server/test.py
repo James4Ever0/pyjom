@@ -1115,6 +1115,9 @@ def bilibiliRecommendationServer(
 
 # you should recommend by label instead of by name. but whatever.
 if __name__ == "__main__":
+    db = getBilibiliVideoDatabaseAndCreateTables()
+    refresh_status()  # ensure the database is connected.
+    schedule.every(20).minutes.do(refresh_status)
     # objective = 'test'
     import argparse
 
