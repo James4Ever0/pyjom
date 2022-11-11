@@ -9,5 +9,5 @@ function myfunc() {
     return query;
 }
 // __export__
-module.loaded
+// console.log(module.loaded)
 // module.exports = { myfunc: myfunc }
