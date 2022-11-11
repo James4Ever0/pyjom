@@ -1,11 +1,11 @@
 import time
 import os
 
-def launchProgramWithTerminal(directory, intepreter,executable, sleep=None):
+def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_terminal=False):
     if sleep:
         time.sleep(sleep)
     os.chdir(directory)
-    command = f'gnome-terminal -- {intepreter} {os.path.join(directory, executable)}'
+    command = f'gnome-terminal -- }{intepreter} {os.path.join(directory, executable)}'
     os.system(command)
 
 # launch billibili recommendation server
