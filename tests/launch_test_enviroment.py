@@ -2,15 +2,16 @@ import time
 import os
 
 def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_terminal=False):
-    if sleep:
-        time.sleep(sleep)
-    directory = os.path.abspath(directory)
-    assert os.path.exists(directory)
-    os.chdir(directory)
-    executable_path = os.path.join(directory, executable)
-    assert 
-    command = f'{"gnome-terminal -- " if not no_terminal else ""}{intepreter} {executable_path}'
-    os.system(command)
+    try:
+        if sleep:
+            time.sleep(sleep)
+        directory = os.path.abspath(directory)
+        assert os.path.exists(directory)
+        os.chdir(directory)
+        executable_path = os.path.join(directory, executable)
+        assert os.path.exists(executable_path)
+        command = f'{"gnome-terminal -- " if not no_terminal else ""}{intepreter} {executable_path}'
+        os.system(command)
 
 # launch billibili recommendation server
 ["/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server","python3","test.py"],{}
