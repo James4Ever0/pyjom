@@ -1,6 +1,6 @@
 # launch billibili recommendation server
 cd /root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server
-
+gnome-terminal -- python3 /root/Desktop/works/pyjom/tests/qq_go_cqhttp/launch.sh
 
 # launch qq cqhttp
 cd /root/Desktop/works/pyjom/tests/qq_go_cqhttp
