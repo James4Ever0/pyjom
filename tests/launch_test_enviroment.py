@@ -82,4 +82,5 @@ launchList = [
     ],
 ]
 
-for[ directory, intepreter, executable,] kwargs
+for[ directory, intepreter, executable], kwargs in launchList:
+    
