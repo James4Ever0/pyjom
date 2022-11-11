@@ -49,3 +49,4 @@ launchList = [[os.path.join(pyjom_tests,"bilibili_video_recommendation_server"),
 
 
 [os.path.join(pyjom_tests,"nsfw_violence_drug_detection"),"node","nsfwjs_test.js"],dict(sleep=1)
+]
