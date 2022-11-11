@@ -25,7 +25,7 @@ pyjom_tests = os.path.join(pyjom_directory, "tests")
 pyjom_externals = os.path.join(pyjom_directory, "externals")
 
 # launch billibili recommendation server
-[os.path.join(pyjom_tests,"bilibili_video_recommendation_server"),"python3","test.py"],{}
+launchList = [[os.path.join(pyjom_tests,"bilibili_video_recommendation_server"),"python3","test.py"],{}
 
 # launch qq cqhttp
 [os.path.join(pyjom_tests,"qq_go_cqhttp"),"bash","launch.sh"],{}
