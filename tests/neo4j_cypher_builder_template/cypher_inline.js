@@ -1,13 +1,15 @@
-var cypher = function(strArray,...opts) { // this is bad.
+var cypher = function(strArray, ...opts) { // this is bad.
     console.log('input:', strArray, opts) // here we've got the thing.
-    // what will be your 
-    return strArray; }
+    // this will be good.
+        // what will be your 
+    return strArray;
+}
 var sql = function(str) { return str; }
 var myexpression = '2'; // not supplied to cypher?
-var myexpression2 = '3'; 
+var myexpression2 = '3';
 var b = `create (n)-[:married]->(r) ${myexpression}`
 console.log(b) // create (n)-[:married]->(r) 2
-// this will format the thing.
+    // this will format the thing.
 var a = cypher `create (n:person{name:${myexpression}})-[:married]->(r) ${myexpression2}`; // well that's good.
 console.log(a);
 const query = sql `SELECT * FROM users`;
@@ -58,11 +60,11 @@ class Query {
     static myfunc() {
         // static myfunc() {
         Query.otherfunc() // strange shit.
-        // this.otherfunc() // still working for static functions.
-        // javascript is a beast.
+            // this.otherfunc() // still working for static functions.
+            // javascript is a beast.
         return query;
     }
 }
 module.exports = { Query }
-// console.log(.cypher)
-// console.log('QUERY?',globalThis.Query, this.sql) // all undefinded.
+    // console.log(.cypher)
+    // console.log('QUERY?',globalThis.Query, this.sql) // all undefinded.
