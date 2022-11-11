@@ -1016,15 +1016,14 @@ def bilibiliRecommendationServer(
         query: str  # required?
         page_size: Union[int, None] = None
         page_num: int = 1
-        _query_for_search:Union[str, None]=None
+        _query_for_search: Union[str, None] = None
 
         @property
         def query_for_search(self):
             if not self._query_for_search:
                 query = self.query
-                self._query_for_search =textPreprocessing(query)
+                self._query_for_search = textPreprocessing(query)
             return self._query_for_search
-
 
     @reloading
     class searchVideoForm(queryForm):
