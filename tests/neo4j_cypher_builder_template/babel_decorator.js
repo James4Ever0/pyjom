@@ -10,3 +10,6 @@ function decorate(func){
 function myfunc(val){
     return val
 }
+
+val = myfunc('myval')
+console.log('val:', val)
