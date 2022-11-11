@@ -4,6 +4,6 @@ a="select * from user"
 b="create (n:person)" # cypher # not working!
 from javascript import require, globalThis
 
-chalk, fs = require("cypher_inline")
+chalk = require("cypher_inline")
 
- 
+print(dir(chalk))
