@@ -7,10 +7,10 @@ def launchProgramWithTerminal(
 ):
     try:
         if type(sleep) in [int, float]:
-            if sleep > 0: # logic shortcut please?
+            if sleep > 0:  # logic shortcut please?
                 time.sleep(sleep)
             else:
-                raise Exception('negative or zero sleep duration:', sleep)
+                raise Exception("negative or zero sleep duration:", sleep)
         directory = os.path.abspath(directory)
         assert os.path.exists(directory)
         os.chdir(directory)
@@ -33,9 +33,9 @@ def launchProgramWithTerminal(
 pyjom_directory = "/root/Desktop/works/pyjom"
 pyjom_tests = os.path.join(pyjom_directory, "tests")
 pyjom_externals = os.path.join(pyjom_directory, "externals")
-node_exec
-python3_exec
-bash_exec
+node_exec = "node"
+python3_exec = "python3"
+bash_exec = "bash"
 
 # launch billibili recommendation server
 launchList = [
@@ -65,7 +65,10 @@ launchList = [
         {},
     ],  # port is 4042. port 4000 is used. don't know why.
     # how to check avaliability of netease cloud music api?
-    [[os.path.join(pyjom_tests, "karaoke_effects"), bash_exec, "load_translator.sh"], {}],
+    [
+        [os.path.join(pyjom_tests, "karaoke_effects"), bash_exec, "load_translator.sh"],
+        {},
+    ],
     [
         [
             os.path.join(pyjom_tests, "redis_music_info_persistance"),
