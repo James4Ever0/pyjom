@@ -29,10 +29,12 @@ def launchProgramWithTerminal(
         )
         breakpoint()
 
-
+# paths
 pyjom_directory = "/root/Desktop/works/pyjom"
 pyjom_tests = os.path.join(pyjom_directory, "tests")
 pyjom_externals = os.path.join(pyjom_directory, "externals")
+
+# interpreters
 node_exec = "node"
 python3_exec = "python3"
 bash_exec = "bash"
