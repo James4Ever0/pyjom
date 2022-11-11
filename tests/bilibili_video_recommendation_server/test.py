@@ -1,4 +1,5 @@
 import sys
+
 sys.path.append("/root/Desktop/works/pyjom/")
 
 from reloading import reloading
@@ -51,6 +52,7 @@ def containChineseCharacters(text):
 
 from lazero.utils.mathlib import extract_span
 
+
 def textPreprocessing(text):
     converter = getOpenCCConverter()
     text = converter.convert(text)
@@ -88,12 +90,14 @@ def textPreprocessing(text):
 
 from nltk.corpus import stopwords
 
+
 @lru_cache(maxsize=1)
 def getStopwords(languages: tuple = ("chinese", "english")):
     stopword_list = []
     for lang in languages:
         stopword_list.extend(stopwords.words(lang))
     return stopword_list
+
 
 def keywordExtracting(
     text,
@@ -135,6 +139,7 @@ from playhouse.sqlite_ext import SqliteExtDatabase, FTSModel, SearchField, RowID
 BSP = search.bilibiliSearchParams
 # you can query for the server status.
 # make it into a dashboard like thing.
+
 
 @lru_cache(maxsize=1)
 def getMajorMinorTopicMappings(debug: bool = False):
@@ -973,6 +978,7 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     db = getBilibiliVideoDatabaseAndCreateTables()
     return db
 
+
 # utils.
 
 
@@ -981,11 +987,15 @@ def default(value, default_, isInstance=lambda v: v in [..., None]):
         return default_
     return value
 
+
 # somewhere here:
 # https://fastapi.tiangolo.com/es/tutorial/debugging/
 
+
 @reloading
-def bilibiliRecommendationServer(welcome_message="bilibili recommendation server",port = 7341):
+def bilibiliRecommendationServer(
+    welcome_message="bilibili recommendation server", port=7341
+):
     from fastapi import FastAPI
     import uvicorn
     import pydantic
@@ -997,19 +1007,16 @@ def bilibiliRecommendationServer(welcome_message="bilibili recommendation server
     def server_hello():
         return welcome_message
 
-
     @reloading
     class queryForm(pydantic.BaseModel):
         query: str  # required?
         page_size: Union[int, None] = None
         page_num: int = 1
 
-
     @reloading
     class searchVideoForm(queryForm):
         iterate: bool = False
         params: dict = {}  # let's just see what you've got here.
-
 
     @reloading
     def getVideoInfosFromVideoGenerator(vgen):
@@ -1018,7 +1025,6 @@ def bilibiliRecommendationServer(welcome_message="bilibili recommendation server
             if type(v) == BilibiliVideo:
                 vlist.append(v.videoInfoExtractor())
         return vlist
-
 
     # just asking. post or get?
     @app.post("/searchVideos")  # what do you want to have? all fields?
@@ -1040,13 +1046,11 @@ def bilibiliRecommendationServer(welcome_message="bilibili recommendation server
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
 
-
     @reloading
     class searchRegisteredVideoForm(queryForm):
         tid: int = 0
         dedeuserid: Union[list[str], str, None] = None
         videoOrder: VideoOrder = VideoOrder.PUBDATE
-
 
     @app.post("/searchRegisteredVideos")
     # @reloading
@@ -1062,14 +1066,11 @@ def bilibiliRecommendationServer(welcome_message="bilibili recommendation server
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
 
-
-
     @reloading
     class searchUserVideoForm(searchRegisteredVideoForm):
         dedeuserid: str = "397424026"
         method: Literal["online", "bm25"] = "online"
         use_credential: bool = False
-
 
     @app.post("/searchUserVideos")
     # @reloading
@@ -1087,14 +1088,12 @@ def bilibiliRecommendationServer(welcome_message="bilibili recommendation server
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
 
-
     @reloading
     class registerUserVideoForm(pydantic.BaseModel):
         bvid: str
         dedeuserid: str
         is_mine: bool = False
         visible: bool = False
-
 
     @app.post("/registerUserVideo")
     # @reloading
@@ -1121,8 +1120,9 @@ if __name__ == "__main__":
     schedule.every(20).minutes.do(refresh_status)
     # objective = 'test'
     import argparse
+
     parser = argparse.ArgumentParser()
-    parser.add_argument('-o','--objective',type=str, default="server")
+    parser.add_argument("-o", "--objective", type=str, default="server")
     parsed_args = parser.parse_args()
     objective = parsed_args.objective
     # can't specify port here.
