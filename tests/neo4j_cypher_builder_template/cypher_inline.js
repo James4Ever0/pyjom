@@ -35,7 +35,7 @@ console.log(query);
 //     // console.log(module)
 
 class Query{
-            otherfunc() {
+        otherfunc() {
             console.log('calling otherfunc');
             return 'otherfunc'
         },
