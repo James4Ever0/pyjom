@@ -33,6 +33,9 @@ def launchProgramWithTerminal(
 pyjom_directory = "/root/Desktop/works/pyjom"
 pyjom_tests = os.path.join(pyjom_directory, "tests")
 pyjom_externals = os.path.join(pyjom_directory, "externals")
+node_exec
+python3_exec
+bash_exec
 
 # launch billibili recommendation server
 launchList = [
