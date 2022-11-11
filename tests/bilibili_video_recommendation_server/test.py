@@ -991,11 +991,18 @@ def default(value, default_, isInstance=lambda v: v in [..., None]):
 # somewhere here:
 # https://fastapi.tiangolo.com/es/tutorial/debugging/
 
+@lru_cache(maxsize=1)
+def bootstrap():
+    db = getBilibiliVideoDatabaseAndCreateTables()
+    refresh_status()  # ensure the database is connected.
+    schedule.every(20).minutes.do(refresh_status)
+
 
 @reloading
 def bilibiliRecommendationServer(
     welcome_message="bilibili recommendation server", port=7341
 ):
+    bootstrap()
     from fastapi import FastAPI
     import uvicorn
     import pydantic
@@ -1112,12 +1119,9 @@ def bilibiliRecommendationServer(
 
     uvicorn.run(app, host="0.0.0.0", port=port)
 
-
 # you should recommend by label instead of by name. but whatever.
 if __name__ == "__main__":
-    db = getBilibiliVideoDatabaseAndCreateTables()
-    refresh_status()  # ensure the database is connected.
-    schedule.every(20).minutes.do(refresh_status)
+
     # objective = 'test'
     import argparse
 
