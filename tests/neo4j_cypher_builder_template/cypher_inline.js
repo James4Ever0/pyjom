@@ -11,4 +11,4 @@ function myfunc() {
 // __export__
 // console.log(module.loaded) // false
 // export all functions?
-// module.exports = { myfunc: myfunc }
+module.exports = { myfunc: myfunc }
