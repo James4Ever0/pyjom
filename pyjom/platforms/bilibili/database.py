@@ -1043,7 +1043,7 @@ def bilibiliRecommendationServer(
         } | form.params  # this is default parameter.
         # breakpoint()
         vgen = searchAndRegisterVideos(
-            query,
+            form.query_for_search,
             iterate=form.iterate,
             page_start=form.page_num,
             params=params,
