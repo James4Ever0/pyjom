@@ -3,6 +3,7 @@ import os
 def launchTerminal(directory, intepreter,executable, sleep=None):
     if sleep:
         time.sleep(sleep)
+    os.chdir(directory)
 
 # launch billibili recommendation server
 cd /root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server
