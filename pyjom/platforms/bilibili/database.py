@@ -1024,7 +1024,8 @@ def bilibiliRecommendationServer(
             else:
                 query = self.query
                 self._query_for_search =textPreprocessing(query)
-            return 
+                return self._query_for_search
+
 
     @reloading
     class searchVideoForm(queryForm):
