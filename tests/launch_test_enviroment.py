@@ -28,10 +28,10 @@ pyjom_externals = os.path.join(pyjom_directory, "externals")
 launchList = [[os.path.join(pyjom_tests,"bilibili_video_recommendation_server"),"python3","test.py"],{}
 
 # launch qq cqhttp
-[os.path.join(pyjom_tests,"qq_go_cqhttp"),"bash","launch.sh"],{}
-
+[[os.path.join(pyjom_tests,"qq_go_cqhttp"),"bash","launch.sh"],{}
+]
 # make sure milvus is running.
-[os.path.join(pyjom_tests,"video_phash_deduplication"),"bash","config_milvus.sh",dict(no_terminal=True)
+[[os.path.join(pyjom_tests,"video_phash_deduplication"),"bash","config_milvus.sh",dict(no_terminal=True)]
 
 # launch netease api server. we need it to download new music, currently.
 # video phash is the last step among all filters.
