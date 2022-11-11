@@ -12,7 +12,7 @@ chalk = require(
 # what the fuck?
 q = chalk.Query # use static method this time?
 # q = chalk.Query(1,2)
-val = q.myfunc(dict(somearg:1)) # this is similar to the original shit.
+val = q.myfunc(dict(somearg=1)) # this is similar to the original shit.
 # val = chalk.myfunc()
 print("VALUE", list(val), type(val))  # it can be converted.
 val = q.otherfunc()
