@@ -56,3 +56,4 @@ class Query {
     }
 }
 module.exports = { Query }
+.cypher
