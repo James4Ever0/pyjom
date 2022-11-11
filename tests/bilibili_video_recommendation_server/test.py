@@ -1124,6 +1124,7 @@ if __name__ == "__main__":
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
     if objective == "server":
+        b
     elif objective == "test":
         test = "searchVideos"
         # test = "searchUserVideos"
