@@ -1,5 +1,5 @@
-
-def launchTerminal(directory, intepreter,executable, sleep=0)
+import time
+def launchTerminal(directory, intepreter,executable, sleep=None):
 
 # launch billibili recommendation server
 cd /root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server
