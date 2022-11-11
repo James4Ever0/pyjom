@@ -47,7 +47,7 @@ class Query {
         console.log('calling otherfunc');
         return 'otherfunc'
     }
-    myfunc() {
+    static myfunc() {
         this.otherfunc() // strange shit.
         return query;
     }
