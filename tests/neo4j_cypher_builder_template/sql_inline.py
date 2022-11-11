@@ -12,3 +12,5 @@ chalk = require(
 # what the fuck?
 val = chalk.myfunc()
 print("VALUE", list(val), type(val))  # it can be converted.
+val = chalk.otherfunc()
+print("VALUE", list(val), type(val))  # it can be converted.
