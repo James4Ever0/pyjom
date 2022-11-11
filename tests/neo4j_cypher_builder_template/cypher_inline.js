@@ -1,3 +1,5 @@
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 var cypher = function(strArray, ...opts) { // this is bad.
     console.log('input:', strArray, opts) // here we've got the thing.
     // this will be good.
