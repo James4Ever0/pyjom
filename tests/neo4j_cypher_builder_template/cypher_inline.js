@@ -35,10 +35,13 @@ console.log(query);
 //     // console.log(module)
 
 class Query{
+    constructor(a,b){
+        
+    }
         otherfunc() {
             console.log('calling otherfunc');
             return 'otherfunc'
-        },
+        }
         myfunc() {
             exports.otherfunc() // strange shit.
             return query;
