@@ -9,8 +9,8 @@ message = "bilibili recommendation server"
 waitForServerUp(port, message=message)
 
 # objective = "searchRegisteredVideos"
-# objective = "searchVideos"
-objective = "searchUserVideos"
+objective = "searchVideos"
+# objective = "searchUserVideos"
 # objective = "registerUserVideo"
 if objective == "searchVideos":
     params = {
