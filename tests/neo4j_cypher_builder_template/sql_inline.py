@@ -1,4 +1,4 @@
 a="select * from user"
 
 
-b=""
+b="create (n) "
