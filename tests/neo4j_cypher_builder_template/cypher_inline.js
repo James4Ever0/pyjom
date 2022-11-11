@@ -1,5 +1,9 @@
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+
+// official javascript driver
+// https://neo4j.com/developer/javascript/
 var cypher = function(strArray, ...opts) { // this is bad.
     console.log('input:', strArray, opts) // here we've got the thing.
     // passed here. good.
