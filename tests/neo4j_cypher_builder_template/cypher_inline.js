@@ -14,7 +14,7 @@ console.log(query);
 // __export__
 // console.log(module.loaded) // false
 // export all functions?
-// module.exports = 
+// module.exports = {otherfunc, myfunc}
 
 // what if they are interdependent?
 
