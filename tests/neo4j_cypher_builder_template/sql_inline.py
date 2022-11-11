@@ -9,4 +9,3 @@ chalk = require("./cypher_inline.js")
 # print(dir(chalk))
 # what the fuck?
 val = chalk.myfunc()
-print(val)
