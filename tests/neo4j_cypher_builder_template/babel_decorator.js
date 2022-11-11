@@ -1,5 +1,7 @@
 function decorate(func){
-    function innerfunc()
+    function innerfunc(...args){
+        
+    }
     return innerfunc
 }
 
