@@ -10,8 +10,9 @@ console.log(query);
 // console.log(module.loaded) // false
 // export all functions?
 // module.exports = 
+
+// what if they are interdependent?
+
 module.exports = {
-    myfunc: () => {
-        return query;
-    }
+    
 }
