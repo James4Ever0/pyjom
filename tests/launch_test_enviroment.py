@@ -29,9 +29,11 @@ def launchProgramWithTerminal(
         breakpoint()
     return None
 
+
 def executeCommand(command):
     print("executing command:", command)
     os.system(command)
+
 
 # common paths
 pyjom_directory = "/root/Desktop/works/pyjom"
@@ -103,7 +105,7 @@ for argumentList, kwargs in launchList:
         [directory, intepreter, executable] = argumentList
         command = launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
         if command is not None:
-            raise Exception('command is None')
+            raise Exception("command is None")
         else:
             executeCommand(command)
     except:
