@@ -1122,7 +1122,7 @@ if __name__ == "__main__":
     # objective = 'test'
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('-o','--objective',)
+    parser.add_argument('-o','--objective',type=str, default=)
     objective = "server"
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
