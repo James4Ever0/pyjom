@@ -1,4 +1,4 @@
-var cypher = function(str) { 
+var cypher = function(str, opt) { 
     console.log('input:', str)
     return str; }
 var sql = function(str) { return str; }
