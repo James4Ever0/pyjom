@@ -36,7 +36,8 @@ console.log(query);
 
 class Query{
     constructor(a,b){
-        
+        this.a=a
+        this.b=b
     }
         otherfunc() {
             console.log('calling otherfunc');
