@@ -88,4 +88,5 @@ for argumentList, kwargs in launchList:
         [directory, intepreter, executable] = argumentList
         launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
     except:
-        print('error when decomposing p')
+        print('error when decomposing program launch parameters')
+        print(f'[AL]{argumentList}\n{')
