@@ -57,4 +57,4 @@ class Query {
 }
 module.exports = { Query }
 // console.log(.cypher)
-console.log('QUERY?',globalThis.Query, this.sql) // all undefinded.
+// console.log('QUERY?',globalThis.Query, this.sql) // all undefinded.
