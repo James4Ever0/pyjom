@@ -984,13 +984,12 @@ def default(value, default_, isInstance=lambda v: v in [..., None]):
 
 # somewhere here:
 # https://fastapi.tiangolo.com/es/tutorial/debugging/
-port = 7341
+def launchServer()
     from fastapi import FastAPI
     import uvicorn
     import pydantic
 
     app = FastAPI()
-
 
     @app.get("/")
     # @reloading
