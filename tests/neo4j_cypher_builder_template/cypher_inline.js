@@ -1,1 +1,1 @@
-var a=cp``;
+var a=cypher`create (n)`;
