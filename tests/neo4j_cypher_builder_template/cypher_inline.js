@@ -33,6 +33,7 @@ console.log(query);
 //         }
 //     }
 //     // console.log(module)
+// module.exports = exports // must use this to export things.
 
 class Query {
     constructor(a, b) {
@@ -48,5 +49,4 @@ class Query {
         return query;
     }
 }
-
-// module.exports = exports // must use this to export things.
+module.exports={Query}
