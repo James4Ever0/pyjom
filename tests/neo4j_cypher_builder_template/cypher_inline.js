@@ -1,6 +1,7 @@
 var cypher = function(str) { return str; }
 var sql = function(str) { return str; }
 var myexpression = 1+1;
+var b = `create (n)-[:married]->(r) ${myexpression}`
 var a = cypher `create (n)-[:married]->(r) ${myexpression}`; // well that's good.
 console.log(a);
 const query = sql `SELECT * FROM users`;
