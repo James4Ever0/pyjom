@@ -45,4 +45,4 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
 
 
 cd /root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection
-gnome-terminal -- node /root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection/nsfwjs_test.js
+gnome-terminal -- node /root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection/nsfwjs_test.js,dict(sleep=1)
