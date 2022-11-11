@@ -4,7 +4,7 @@ a = "select * from user"
 b = "create (n:person)"  # cypher # not working!
 from javascript import require, globalThis
 
-chalk = require("./cypher_inline.js")
+chalk = require("./cypher_inline.js") # that might be some drop-in replacement for jinja?
 
 # print(dir(chalk))
 # what the fuck?
