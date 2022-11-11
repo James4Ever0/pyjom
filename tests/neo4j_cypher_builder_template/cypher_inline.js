@@ -1,6 +1,6 @@
 var cypher = function(str) { return str; }
 var sql = function(str) { return str; }
-var myexpression = '2'; // not supplied to 
+myexpression = '2'; // not supplied to cypher?
 var b = `create (n)-[:married]->(r) ${myexpression}`
 console.log(b) // create (n)-[:married]->(r) 2
 // this will format the thing.
