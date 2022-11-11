@@ -23,10 +23,10 @@ exports = {
             console.log('calling otherfunc');
         },
         myfunc: () => {
-            exports.otherfunc()
+            exports.otherfunc() // strange shit.
             return query;
         }
     }
     // console.log(module)
 
-    var _ = module.exports
+module.exports = exports
