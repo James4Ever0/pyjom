@@ -6,7 +6,7 @@ def launchProgramWithTerminal(
     directory, intepreter, executable, sleep=None, no_terminal=False
 ):
     try:
-        if sleep:
+        if type(sleep) in [int, float] and sleep >0:
             time.sleep(sleep)
         directory = os.path.abspath(directory)
         assert os.path.exists(directory)
