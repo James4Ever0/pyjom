@@ -1,4 +1,5 @@
-cd /root/Desktop/works/pyjom/tests/launch_test_enviroment.py
+cd /root/Desktop/works/pyjom/tests/
+python3 launch_test_enviroment.py
 
 # # launch billibili recommendation server
 # cd /root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server
