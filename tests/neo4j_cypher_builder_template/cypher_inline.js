@@ -5,13 +5,13 @@ var a = cypher `create (n)-[:married]->(r)`; // well that's good.
 console.log(a);
 const query = sql `SELECT * FROM users`;
 console.log(query);
-function otherfunc(){
-    console.log('calling otherfunc')
-}
-function myfunc() {
-    otherfunc()
-    return query;
-}
+// function otherfunc(){
+//     console.log('calling otherfunc')
+// }
+// function myfunc() {
+//     otherfunc()
+//     return query;
+// }
 // __export__
 // console.log(module.loaded) // false
 // export all functions?
@@ -20,6 +20,12 @@ function myfunc() {
 // what if they are interdependent?
 
 module.exports = {
-    myfunc: myfunc
+    otherfunc(){
+        console.log('calling otherfunc')
+    }
+    myfunc() {
+        otherfunc()
+        return query;
+    }
 }
 // console.log(module)
