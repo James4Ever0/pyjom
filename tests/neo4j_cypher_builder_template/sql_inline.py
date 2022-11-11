@@ -1,4 +1,4 @@
 a="select * from user"
 
 
-b="create (n:person)"
+b="create (n:person)" #cypher
