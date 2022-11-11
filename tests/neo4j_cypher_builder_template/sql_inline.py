@@ -13,6 +13,8 @@ chalk = require(
 q = chalk.Query # use static method this time?
 # q = chalk.Query(1,2)
 val = q.myfunc(dict(somearg=1)) # this is similar to the original shit.
+# myfunc args: [ { somearg: 1 } ]
+# good?
 # val = chalk.myfunc()
 print("VALUE", list(val), type(val))  # it can be converted.
 val = q.otherfunc()
