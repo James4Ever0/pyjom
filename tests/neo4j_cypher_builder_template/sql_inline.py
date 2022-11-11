@@ -1,4 +1,6 @@
 a="select * from user"
 
-#cypher
-b="create (n:person)" 
+
+b="create (n:person)" # cypher # not working!
+
+import 
