@@ -1016,6 +1016,7 @@ def bilibiliRecommendationServer(
         query: str  # required?
         page_size: Union[int, None] = None
         page_num: int = 1
+        def query_for_search()
 
     @reloading
     class searchVideoForm(queryForm):
@@ -1036,8 +1037,6 @@ def bilibiliRecommendationServer(
     def search_videos(form: searchVideoForm):
         # print('received params:',params) # it is str.
         # breakpoint()
-        query = form.query
-        query = textPreprocessing(query)
         params = {
             "duration": BSP.all.duration._10分钟以下
         } | form.params  # this is default parameter.
