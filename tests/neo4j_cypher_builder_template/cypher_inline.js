@@ -6,6 +6,7 @@ const query = sql `SELECT * FROM users`;
 console.log(query);
 function otherfunc(){
     console.log('calling otherfunc')
+    return 'other func'
 }
 function myfunc() {
     otherfunc()
