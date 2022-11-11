@@ -18,16 +18,17 @@ module.exports = {otherfunc, myfunc}
 
 // what if they are interdependent?
 
-exports = {
-        otherfunc: () => {
-            console.log('calling otherfunc');
-            return 'otherfunc'
-        },
-        myfunc: () => {
-            exports.otherfunc() // strange shit.
-            return query;
-        }
-    }
-    // console.log(module)
+// this is some other strange shit.
+// exports = {
+//         otherfunc: () => {
+//             console.log('calling otherfunc');
+//             return 'otherfunc'
+//         },
+//         myfunc: () => {
+//             exports.otherfunc() // strange shit.
+//             return query;
+//         }
+//     }
+//     // console.log(module)
 
-module.exports = exports // must use this to export things.
+// module.exports = exports // must use this to export things.
