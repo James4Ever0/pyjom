@@ -1016,11 +1016,14 @@ def bilibiliRecommendationServer(
         query: str  # required?
         page_size: Union[int, None] = None
         page_num: int = 1
+        _query_for_search:Union[str, None]=None
 
         @property
         def query_for_search(self):
             if self._query_for_search:
                 return self._query_for_search
+            else:
+                
             query = self.query
             return textPreprocessing(query)
 
