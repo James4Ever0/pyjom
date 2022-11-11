@@ -104,6 +104,8 @@ for argumentList, kwargs in launchList:
         command = launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
         if command is not None:
             raise Exception('command is None')
+        else:
+            executeCommand(command)
     except:
         import traceback
 
