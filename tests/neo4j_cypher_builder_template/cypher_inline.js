@@ -1,4 +1,6 @@
-var cypher = function(str) { return str; }
+var cypher = function(str) { 
+    console.log('input:', str)
+    return str; }
 var sql = function(str) { return str; }
 var myexpression = '2'; // not supplied to cypher?
 var b = `create (n)-[:married]->(r) ${myexpression}`
