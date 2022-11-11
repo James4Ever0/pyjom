@@ -14,5 +14,5 @@ console.log(query);
 // what if they are interdependent?
 
 module.exports = {
-    
+    myfunc: myfunc
 }
