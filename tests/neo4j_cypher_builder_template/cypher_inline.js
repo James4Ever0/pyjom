@@ -30,4 +30,4 @@ exports = {
     }
     // console.log(module)
 
-module.exports = exports
+// module.exports = exports
