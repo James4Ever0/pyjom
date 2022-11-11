@@ -7,3 +7,4 @@ console.log(query);
 function myfunc(){
     return query;
 }
+__export__
