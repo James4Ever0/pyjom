@@ -20,7 +20,7 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
         print(f"[D]:{directory}\n[I]{intepreter}\n[E]{executable}\n[C]{dict(sleep=sleep, no_terminal=no_terminal)}")
         breakpoint()
 
-
+pyjom_directory = "/root/Desktop/works/pyjom/"
 
 # launch billibili recommendation server
 ["/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server","python3","test.py"],{}
