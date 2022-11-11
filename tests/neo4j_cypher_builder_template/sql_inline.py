@@ -7,3 +7,5 @@ from javascript import require, globalThis
 chalk = require("./cypher_inline.js")
 
 # print(dir(chalk))
+# what the fuck?
+chalk.
