@@ -17,7 +17,7 @@ console.log(query);
 // module.exports = 
 
 // what if they are interdependent?
-var _ = module.exports
+
 exports = {
         otherfunc: () => {
             console.log('calling otherfunc');
@@ -28,3 +28,5 @@ exports = {
         }
     }
     // console.log(module)
+
+    var _ = module.exports
