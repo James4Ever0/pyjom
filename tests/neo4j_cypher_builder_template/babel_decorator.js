@@ -1,4 +1,6 @@
-function decorate()
+function decorate(func){
+    
+}
 
 @decorate
 function myfunc(val){
