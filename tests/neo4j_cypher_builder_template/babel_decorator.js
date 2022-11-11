@@ -1,3 +1,7 @@
+
+require("@babel/core").transformSync("code", {
+    plugins: ["@babel/plugin-syntax-decorators"]
+  });
 function dec(func){
     function innerfunc(...args){
         console.log('calling func with args:', args)
