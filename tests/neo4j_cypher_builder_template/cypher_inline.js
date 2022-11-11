@@ -49,8 +49,9 @@ class Query {
     }
     static myfunc() {
         // static myfunc() {
-        // Query.otherfunc() // strange shit.
-        this.otherfunc() // strange shit.
+        Query.otherfunc() // strange shit.
+        // this.otherfunc() // still working for static functions.
+        // javascript is a beast.
         return query;
     }
 }
