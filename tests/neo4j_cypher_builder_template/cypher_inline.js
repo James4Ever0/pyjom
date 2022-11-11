@@ -10,4 +10,4 @@ function myfunc() {
 // __export__
 // console.log(module.loaded) // false
 // export all functions?
-module.exports = global()
+module.exports = globalThis
