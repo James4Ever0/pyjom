@@ -84,6 +84,8 @@ launchList = [
 
 for argumentList, kwargs in launchList:
     try:
-    assert type(kwargs) == dict
-    [directory, intepreter, executable] = argumentList
-    launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
+        assert type(kwargs) == dict
+        [directory, intepreter, executable] = argumentList
+        launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
+    except:
+        print('error when decomposing p')
