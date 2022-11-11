@@ -1120,11 +1120,13 @@ if __name__ == "__main__":
     refresh_status()  # ensure the database is connected.
     schedule.every(20).minutes.do(refresh_status)
     # objective = 'test'
+    import argparse
+    
     objective = "server"
     # can't specify port here.
     # python3 -m uvicorn --port 7341 test:app
     if objective == "server":
-        b
+        bilibiliRecommendationServer()
     elif objective == "test":
         test = "searchVideos"
         # test = "searchUserVideos"
