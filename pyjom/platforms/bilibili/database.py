@@ -1064,7 +1064,7 @@ def bilibiliRecommendationServer(
         query = form.query
         query = textPreprocessing(query)
         vgen = searchRegisteredVideos(
-            query,
+            form.query_for_search,
             form.tid,
             form.dedeuserid,
             form.videoOrder,
@@ -1083,8 +1083,6 @@ def bilibiliRecommendationServer(
     @app.post("/searchUserVideos")
     # @reloading
     def search_user_videos(form: searchUserVideoForm):
-        query = form.query
-        query = textPreprocessing(query)
         vgen = searchUserVideos(
             form.query_for_search,
             form.tid,
