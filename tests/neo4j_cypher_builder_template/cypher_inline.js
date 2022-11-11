@@ -22,4 +22,4 @@ function myfunc() {
 module.exports = {
     myfunc: myfunc
 }
-console.log(module)
+// console.log(module)
