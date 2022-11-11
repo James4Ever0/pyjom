@@ -10,9 +10,9 @@ chalk = require(
 
 # print(dir(chalk))
 # what the fuck?
-val = chalk.myfunc()
+val = chalk.Query.myfunc()
 # val = chalk.myfunc()
 print("VALUE", list(val), type(val))  # it can be converted.
-val = chalk.otherfunc()
+val = chalk.Query.otherfunc()
 # val = chalk.otherfunc()
 print("VALUE", val, type(val))  # it can be converted.
