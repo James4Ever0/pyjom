@@ -23,7 +23,7 @@ module.exports = {
             console.log('calling otherfunc');
         },
         myfunc: () => {
-            otherfunc()
+            module.exports.otherfunc()
             return query;
         }
     }
