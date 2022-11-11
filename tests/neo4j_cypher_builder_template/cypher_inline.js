@@ -45,7 +45,7 @@ class Query {
         return 'otherfunc'
     }
     myfunc() {
-        exports.otherfunc() // strange shit.
+        this.otherfunc() // strange shit.
         return query;
     }
 }
