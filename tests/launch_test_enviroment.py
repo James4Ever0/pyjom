@@ -29,6 +29,7 @@ def launchProgramWithTerminal(
         )
         breakpoint()
 
+
 # common paths
 pyjom_directory = "/root/Desktop/works/pyjom"
 pyjom_tests = os.path.join(pyjom_directory, "tests")
@@ -40,7 +41,7 @@ python3_exec = "python3"
 bash_exec = "bash"
 
 launchList = [
-# launch billibili recommendation server
+    # launch billibili recommendation server
     [
         [
             os.path.join(pyjom_tests, "bilibili_video_recommendation_server"),
