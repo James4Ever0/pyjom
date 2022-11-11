@@ -9,11 +9,10 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None):
     os.system(command)
 
 # launch billibili recommendation server
-["/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server","python3",/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/test.py
+["/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server","python3","test.py"]
 
 # launch qq cqhttp
-cd /root/Desktop/works/pyjom/tests/qq_go_cqhttp
-gnome-terminal -- bash /root/Desktop/works/pyjom/tests/qq_go_cqhttp/launch.sh
+["/root/Desktop/works/pyjom/tests/qq_go_cqhttp","bash","launch.sh"]
 
 # make sure milvus is running.
 cd /root/Desktop/works/pyjom/tests/video_phash_deduplication/
