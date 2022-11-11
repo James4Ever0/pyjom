@@ -29,7 +29,9 @@ def launchProgramWithTerminal(
         breakpoint()
     return None
 
-def execute
+def executeCommand(command):
+    print("executing command:", command)
+    os.system(command)
 
 # common paths
 pyjom_directory = "/root/Desktop/works/pyjom"
