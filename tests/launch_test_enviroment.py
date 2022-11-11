@@ -5,7 +5,8 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
     if sleep:
         time.sleep(sleep)
     os.chdir(directory)
-    command = f'{"gnome-terminal -- " if not no_terminal else ""}{intepreter} {os.path.join(directory, executable)}'
+    executable_path = os.path.join(directory, executable)
+    command = f'{"gnome-terminal -- " if not no_terminal else ""}{intepreter} {executable_path}'
     os.system(command)
 
 # launch billibili recommendation server
@@ -15,7 +16,7 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
 ["/root/Desktop/works/pyjom/tests/qq_go_cqhttp","bash","launch.sh"],{}
 
 # make sure milvus is running.
-"/root/Desktop/works/pyjom/tests/video_phash_deduplication/","bash" "config_milvus.sh",dict(no_terminal=True)
+["/root/Desktop/works/pyjom/tests/video_phash_deduplication/","bash","config_milvus.sh",dict(no_terminal=True)
 
 # launch netease api server. we need it to download new music, currently.
 # video phash is the last step among all filters.
