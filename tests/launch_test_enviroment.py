@@ -83,5 +83,6 @@ launchList = [
 ]
 
 for argumentList, kwargs in launchList:
-    assert type(kwargs == dict
+    assert type(kwargs) == dict
+    [directory, intepreter, executable] = argumentList
     launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
