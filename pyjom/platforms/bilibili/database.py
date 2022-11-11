@@ -1020,7 +1020,7 @@ def bilibiliRecommendationServer(
         # you are going to inherit this.
 
         @property
-        def query_for_search(self): # make sure the preprocessing is only called once.
+        def query_for_search(self): # make sure the preprocessing is only called once. really?
             if self.query_for_search_cached is None:
                 query = self.query
                 self.query_for_search_cached = textPreprocessing(query)
