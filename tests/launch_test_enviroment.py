@@ -45,4 +45,4 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
 ["/root/Desktop/works/pyjom/tests/random_giphy_gifs/","node","nodejs_server.js"],dict(sleep=1)
 
 
-["/root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection","node /root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection/nsfwjs_test.js,dict(sleep=1)
+["/root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection","node","nsfwjs_test.js"],dict(sleep=1)
