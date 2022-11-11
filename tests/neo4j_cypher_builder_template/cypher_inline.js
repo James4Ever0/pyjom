@@ -1,11 +1,11 @@
 var cypher = function(str) { return str; }
 var sql = function(str) { return str; }
-var py = function(str) { return str; }
+var python = function(str) { return str; }
 var a = cypher `create (n)-[:married]->(r)`; // well that's good.
 console.log(a);
 const query = sql `SELECT * FROM users`;
 console.log(query);
-const query2 = py ``;
+const query2 = python ``;
 
 function myfunc() {
     return query;
