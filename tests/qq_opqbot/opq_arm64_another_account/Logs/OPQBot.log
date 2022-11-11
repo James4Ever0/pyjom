@@ -128,3 +128,56 @@
 2022/11/11 19:44:28.142 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:60412->223.5.5.5:53: i/o timeout
 2022/11/11 19:44:28.143 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:60412->223.5.5.5:53: i/o timeout
 2022/11/11 19:44:28.143 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:50:39.004 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:50:55.008 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:51413->223.5.5.5:53: i/o timeout
+2022/11/11 20:50:55.008 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:51413->223.5.5.5:53: i/o timeout
+2022/11/11 20:50:55.008 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:51413->223.5.5.5:53: i/o timeout
+2022/11/11 20:50:55.008 [E]  Will ReConnect After:9 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:51:14.011 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43376->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:14.011 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43376->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:14.012 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43376->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:14.012 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:51:31.016 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:33802->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:31.016 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:33802->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:31.016 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:33802->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:31.016 [E]  Will ReConnect After:9 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:51:50.020 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43876->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:50.020 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43876->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:50.020 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43876->223.5.5.5:53: i/o timeout
+2022/11/11 20:51:50.020 [E]  Will ReConnect After:5 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:52:05.023 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:59393->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:05.023 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:59393->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:05.023 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:59393->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:05.024 [E]  Will ReConnect After:8 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:52:23.025 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52158->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:23.025 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52158->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:23.025 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52158->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:23.026 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:52:39.031 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:59704->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:39.031 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:59704->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:39.031 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:59704->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:39.031 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:52:56.035 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52215->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:56.035 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52215->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:56.035 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52215->223.5.5.5:53: i/o timeout
+2022/11/11 20:52:56.035 [E]  Will ReConnect After:8 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:53:14.038 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52537->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:14.039 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52537->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:14.039 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:52537->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:14.039 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:53:31.041 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:56762->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:31.041 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:56762->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:31.041 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:56762->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:31.041 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:53:47.045 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:35094->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:47.045 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:35094->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:47.045 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:35094->223.5.5.5:53: i/o timeout
+2022/11/11 20:53:47.045 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:54:03.049 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43131->223.5.5.5:53: i/o timeout
+2022/11/11 20:54:03.049 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43131->223.5.5.5:53: i/o timeout
+2022/11/11 20:54:03.049 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:43131->223.5.5.5:53: i/o timeout
+2022/11/11 20:54:03.049 [E]  Will ReConnect After:6 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
+2022/11/11 20:54:19.052 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:39981->223.5.5.5:53: i/o timeout
+2022/11/11 20:54:19.053 [E]  Dial Faild:dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:39981->223.5.5.5:53: i/o timeout
+2022/11/11 20:54:19.053 [E]  dial tcp: lookup msfwifi.3g.qq.com on 192.168.10.1:53: read udp 192.168.10.6:39981->223.5.5.5:53: i/o timeout
+2022/11/11 20:54:19.053 [E]  Will ReConnect After:9 s TXSERVER msfwifi.3g.qq.com:8080 User 917521610 Offline Nick 喵喵姬 
