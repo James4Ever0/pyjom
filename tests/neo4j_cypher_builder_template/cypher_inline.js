@@ -43,7 +43,7 @@ class Query {
         this.b = b
     }
     static otherfunc() {
-    // otherfunc() {
+        // otherfunc() {
         console.log('calling otherfunc');
         return 'otherfunc'
     }
@@ -53,4 +53,4 @@ class Query {
         return query;
     }
 }
-module.exports={Query}
+module.exports = { Query }
