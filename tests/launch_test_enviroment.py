@@ -38,8 +38,7 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
 
 ["/root/Desktop/works/pyjom/tests/karaoke_effects/","bash","load_translator.sh"]
 
-cd /root/Desktop/works/pyjom/tests/redis_music_info_persistance
-gnome-terminal -- bash "launch_redis.sh",dict(sleep=1)
+["/root/Desktop/works/pyjom/tests/redis_music_info_persistance","bash", "launch_redis.sh"],dict(sleep=1)
 
 sleep 1
 cd /root/Desktop/works/pyjom/tests/random_giphy_gifs/
