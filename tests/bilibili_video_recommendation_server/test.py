@@ -1,6 +1,6 @@
 import sys
 sys.path.append("/root/Desktop/works/pyjom/")
-from pyjom.platforms.bilibili.database import bilibiliRecommendationServer,bootstrap, textPreprocessing,searchUserVideos,registerUserVideo,
+from pyjom.platforms.bilibili.database import bilibiliRecommendationServer,bootstrap, textPreprocessing,searchUserVideos,registerUserVideo,searchAndRegisterVideos
 
 # you should recommend by label instead of by name. but whatever.
 if __name__ == "__main__":
@@ -23,7 +23,7 @@ if __name__ == "__main__":
         # test = 'registerMyVideo'
         if test == "textPreprocessing":
             text = "猫  咪  钢  琴  家 searchUserVideos have a nice day 新闻联播,动物圈,汪星人,喵星人"
-            result = textPreprocessing(text)
+            result = textPreprocessing(text) # shall you do the same to this thing.
             print("RESULT:", result)
         elif test == "searchUserVideos":
             query = "猫"
