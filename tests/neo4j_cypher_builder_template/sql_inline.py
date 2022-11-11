@@ -10,7 +10,8 @@ chalk = require(
 
 # print(dir(chalk))
 # what the fuck?
-val = chalk.Query(1,2).myfunc()
+q = chalk.Query(1,2)
+val = q.myfunc()
 # val = chalk.myfunc()
 print("VALUE", list(val), type(val))  # it can be converted.
 val = chalk.Query(1,2).otherfunc()
