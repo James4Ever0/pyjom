@@ -57,3 +57,4 @@ class Query {
 }
 module.exports = { Query }
 // console.log(.cypher)
+console.log(global.)
