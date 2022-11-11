@@ -1,2 +1,4 @@
 @decorate
-function myfunc
+function myfunc(val){
+    return val
+}
