@@ -31,13 +31,12 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
 
 # launch netease api server. we need it to download new music, currently.
 # video phash is the last step among all filters.
-"/root/Desktop/works/pyjom/externals/NeteaseCloudMusicApi",
-"bash","launch.sh" # port is 4042. port 4000 is used. don't know why.
+["/root/Desktop/works/pyjom/externals/NeteaseCloudMusicApi",
+"bash","launch.sh"],{} # port is 4042. port 4000 is used. don't know why.
 
 # how to check avaliability of netease cloud music api?
 
-cd /root/Desktop/works/pyjom/tests/karaoke_effects/
-gnome-terminal -- bash /root/Desktop/works/pyjom/tests/karaoke_effects/load_translator.sh
+["/root/Desktop/works/pyjom/tests/karaoke_effects/","bash","load_translator.sh"]
 
 sleep 1
 cd /root/Desktop/works/pyjom/tests/redis_music_info_persistance
