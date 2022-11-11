@@ -1016,7 +1016,9 @@ def bilibiliRecommendationServer(
         query: str  # required?
         page_size: Union[int, None] = None
         page_num: int = 1
-        def query_for_search()
+        @property
+        def query_for_search(self):
+            return self.query
 
     @reloading
     class searchVideoForm(queryForm):
