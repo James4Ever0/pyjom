@@ -8,8 +8,8 @@ from lazero.network.checker import waitForServerUp
 message = "bilibili recommendation server"
 waitForServerUp(port, message=message)
 
-objective = "searchRegisteredVideos"
-# objective = "searchVideos"
+# objective = "searchRegisteredVideos"
+objective = "searchVideos"
 # objective = "searchUserVideos"
 # objective = "registerUserVideo"
 if objective == "searchVideos":
