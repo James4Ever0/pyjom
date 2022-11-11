@@ -40,9 +40,9 @@ def launchProgramWithTerminal(directory, intepreter,executable, sleep=None, no_t
 
 ["/root/Desktop/works/pyjom/tests/redis_music_info_persistance","bash", "launch_redis.sh"],dict(sleep=1)
 
-sleep 1
+
 cd /root/Desktop/works/pyjom/tests/random_giphy_gifs/
-gnome-terminal -- node /root/Desktop/works/pyjom/tests/random_giphy_gifs/nodejs_server.js
+gnome-terminal -- node /root/Desktop/works/pyjom/tests/random_giphy_gifs/nodejs_server.js"],dict(sleep=1)
 
 sleep 1
 cd /root/Desktop/works/pyjom/tests/nsfw_violence_drug_detection
