@@ -1,7 +1,6 @@
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
-
 // official javascript driver
 // https://neo4j.com/developer/javascript/
 var cypher = function(strArray, ...opts) { // this is bad.
