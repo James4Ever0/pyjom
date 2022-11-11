@@ -22,3 +22,4 @@ function myfunc() {
 module.exports = {
     myfunc: myfunc
 }
+console.log(module)
