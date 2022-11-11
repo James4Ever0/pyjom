@@ -1086,7 +1086,7 @@ def bilibiliRecommendationServer(
         query = form.query
         query = textPreprocessing(query)
         vgen = searchUserVideos(
-            query,
+            form.,
             form.tid,
             form.dedeuserid,
             form.method,
