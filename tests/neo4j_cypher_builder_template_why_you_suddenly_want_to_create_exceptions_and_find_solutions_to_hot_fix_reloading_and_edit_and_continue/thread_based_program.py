@@ -2,6 +2,8 @@ import threading
 
 event = threading.Event()
 event.clear()
+
+# is it event driven? can we launch repl after this?
 def program(*args): # in elixir/erlang this is simpler.
     event.wait()
     event.clear()
