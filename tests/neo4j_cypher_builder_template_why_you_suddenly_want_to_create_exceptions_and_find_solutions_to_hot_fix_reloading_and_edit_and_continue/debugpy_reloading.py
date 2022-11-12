@@ -2,7 +2,6 @@
 
 def shit():
     raise Exception("oh shit")
-
     return "VALUE"
 
 val = shit()
