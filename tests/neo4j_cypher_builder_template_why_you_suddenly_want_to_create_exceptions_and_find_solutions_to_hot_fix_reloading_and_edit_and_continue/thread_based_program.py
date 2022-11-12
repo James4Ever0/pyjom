@@ -13,6 +13,7 @@ def program(*args): # in elixir/erlang this is simpler.
     event.set()
     result = 'myresult'
 
+def mainThread():
 threading.Thread(target=program, args=(1,2))
 print('waiting output? probably never.')
 result = event.wait()
