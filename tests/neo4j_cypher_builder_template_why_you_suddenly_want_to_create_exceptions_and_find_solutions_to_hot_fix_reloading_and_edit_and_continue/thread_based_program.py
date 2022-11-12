@@ -1,5 +1,5 @@
 import threading
 
-def program():
+def program(): # in elixir this is simpler.
 
 threading.Thread()
