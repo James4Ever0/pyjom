@@ -24,3 +24,4 @@ print('starting main thread')
 threading.Thread(target=mainThread, daemon=True).start()
 print('starting repl')
 # be ready to re-execute the program?
+# do you want something like nodejs promises?
