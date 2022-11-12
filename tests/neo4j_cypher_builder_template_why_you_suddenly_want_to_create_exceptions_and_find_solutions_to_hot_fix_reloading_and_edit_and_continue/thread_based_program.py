@@ -1,3 +1,5 @@
 import threading
 
-threading.Thread()
+def program():
+
+result = threading.Thread()
