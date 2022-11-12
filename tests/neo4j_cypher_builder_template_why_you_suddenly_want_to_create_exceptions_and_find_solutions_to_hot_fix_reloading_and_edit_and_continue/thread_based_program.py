@@ -24,6 +24,8 @@ def mainThread():
     while True:
         if event.wait(0.0001):
             break # are you sure this is the event you want?
+        else:
+            
     print('result:',result) # another thread? are you sharing things?
     print('main thread execution succeed')
 
