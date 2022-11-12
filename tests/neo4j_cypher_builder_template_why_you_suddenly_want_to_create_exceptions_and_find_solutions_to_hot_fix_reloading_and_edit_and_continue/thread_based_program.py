@@ -6,7 +6,7 @@ event.clear()
 # is it event driven? can we launch repl after this?
 def program(*args): # in elixir/erlang this is simpler.
     while True:
-        if event.wait(0.1):
+        if event.wait(0.0001):
             break # this is blocking. fuck. not like elixir in any kind.
     event.clear()
     print('begin execution')
@@ -16,10 +16,10 @@ def program(*args): # in elixir/erlang this is simpler.
     result = 'myresult'
 
 def mainThread():
-    threading.Thread(target=program, args=(1,2), daemon=True).run()
+    threading.Thread(target=program, args=(1,2), daemon=True).start()
     print('waiting output? probably never.')
     while True:
-        if event.wait(0.1):
+        if event.wait(0.0001):
             break # are you sure this is the event you want?
     print('result:',result) # another thread? are you sharing things?
     print('main thread execution succeed')
