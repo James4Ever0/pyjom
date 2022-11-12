@@ -11,5 +11,5 @@ def program(*args): # in elixir/erlang this is simpler.
     result = 'myresult'
 
 threading.Thread(target=program, args=(1,2))
-result = event.
+result = event.wait()
 print('result:',result)
