@@ -16,16 +16,16 @@ def program(*args): # in elixir/erlang this is simpler.
     result = 'myresult'
 
 def mainThread():
-    threading.Thread(target=program, args=(1,2), daemon=True).start()
+    threading.Thread(target=program, args=(1,2), daemon=True).run()
     print('waiting output? probably never.')
     while True:
         if event.wait(0.1):
             break # are you sure this is the event you want?
-    print('result:',result)
+    print('result:',result) # another thread? are you sharing things?
     print('main thread execution succeed')
 
 print('starting main thread')
-threading.Thread(target=mainThread, daemon=True).start()
+threading.Thread(target=mainThread, daemon=True).run()
 print('starting repl')
 # be ready to re-execute the program?
 # do you want something like nodejs promises?
