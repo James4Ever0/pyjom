@@ -7,6 +7,7 @@ def program(*args): # in elixir/erlang this is simpler.
     print('begin execution')
     print("arguments:", args)
     raise Exception('shit man')
+    event.set()
     result = 'myresult'
 
 threading.Thread(target=program, args=(1,2))
