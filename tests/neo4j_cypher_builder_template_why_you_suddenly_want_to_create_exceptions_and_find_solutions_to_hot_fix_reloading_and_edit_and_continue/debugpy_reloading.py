@@ -4,4 +4,5 @@ def shit():
     raise Exception("oh shit")
     return "VALUE"
 
-shit()
+val = shit()
+print("returned value:", val)
