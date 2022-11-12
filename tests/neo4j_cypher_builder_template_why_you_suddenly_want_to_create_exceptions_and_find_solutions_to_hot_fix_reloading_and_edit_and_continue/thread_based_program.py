@@ -7,7 +7,7 @@ event.clear()
 def program(*args): # in elixir/erlang this is simpler.
     print('running program')
     while True:
-        if event.wait(0.0001):
+        if event.wait(0.00000001):
             break # this is blocking. fuck. not like elixir in any kind.
         else:
             event.set()
@@ -22,7 +22,7 @@ def mainThread():
     threading.Thread(target=program, args=(1,2), daemon=True).start()
     print('waiting output? probably never.')
     while True:
-        if event.wait(0.0001):
+        if event.wait(0.00000001):
             break # are you sure this is the event you want?
         else:
             event.set()
