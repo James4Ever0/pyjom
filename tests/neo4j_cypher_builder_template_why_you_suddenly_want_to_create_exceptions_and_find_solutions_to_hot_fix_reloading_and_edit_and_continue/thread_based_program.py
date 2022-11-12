@@ -9,6 +9,8 @@ def program(*args): # in elixir/erlang this is simpler.
     while True:
         if event.wait(0.0001):
             break # this is blocking. fuck. not like elixir in any kind.
+        else:
+            event.set()
     event.clear()
     print('begin execution')
     print("arguments:", args)
