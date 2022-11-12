@@ -14,10 +14,10 @@ def program(*args): # in elixir/erlang this is simpler.
     result = 'myresult'
 
 def mainThread():
-    threading.Thread(target=program, args=(1,2))
+    threading.Thread(target=program, args=(1,2)).start()
     print('waiting output? probably never.')
     result = event.wait() # are you sure this is the event you want?
     print('result:',result)
     print('main thread execution succeed')
 
-threading.Thread(target=mainThread)
+threading.Thread(target=mainThread).start()
