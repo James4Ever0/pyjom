@@ -20,3 +20,4 @@ def mainThread():
     print('result:',result)
     print('main thread execution succeed')
 
+threading.Thread(target=mainThread)
