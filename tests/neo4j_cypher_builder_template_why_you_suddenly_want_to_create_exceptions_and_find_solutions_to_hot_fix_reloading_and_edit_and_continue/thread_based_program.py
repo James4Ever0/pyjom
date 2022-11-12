@@ -5,7 +5,7 @@ event.clear()
 
 # is it event driven? can we launch repl after this?
 def program(*args): # in elixir/erlang this is simpler.
-    event.wait()
+    event.wait() # this is blocking. fuck. not like elixir in any kind.
     event.clear()
     print('begin execution')
     print("arguments:", args)
