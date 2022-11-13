@@ -1,7 +1,6 @@
-# let's raise shit.
 
 # use bpython?
-def shit():
+def ():
     raise Exception("oh shit")
     return "VALUE"
 
