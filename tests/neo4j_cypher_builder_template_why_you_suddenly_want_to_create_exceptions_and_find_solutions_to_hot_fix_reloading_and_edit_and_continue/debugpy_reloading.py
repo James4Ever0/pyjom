@@ -4,9 +4,9 @@ def program():
     return "VALUE"
 
 while True:
-try:
-    val = program()
-    print("returned value:", val)
-except:
-    import importlib
-    importlib.reload(".")
+    try:
+        val = program()
+        print("returned value:", val)
+    except:
+        import importlib
+        importlib.reload()
