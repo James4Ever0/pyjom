@@ -11,4 +11,4 @@ while True:
         input('are you finished?')
         import importlib
         # importlib.reload(program)
-        importlib.
+        print(importlib.__cached__
