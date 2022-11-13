@@ -1,6 +1,6 @@
 
 def program():
-    raise Exception("Exception in program")
+    # raise Exception("Exception in program")
     return "VALUE"
 
 if __name__ == "__main__":
@@ -15,3 +15,4 @@ if __name__ == "__main__":
             input('are you done yet?')
             import importlib
             importlib.reload(some_module)
+            break
