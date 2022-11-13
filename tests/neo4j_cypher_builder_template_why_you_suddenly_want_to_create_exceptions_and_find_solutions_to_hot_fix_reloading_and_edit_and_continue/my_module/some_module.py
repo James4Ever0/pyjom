@@ -1,7 +1,7 @@
 
 def program():
-    # raise Exception("Exception in program")
-    return "VALUE"
+    raise Exception("Exception in program")
+    # return "VALUE"
 
 if __name__ == "__main__":
     while True:
