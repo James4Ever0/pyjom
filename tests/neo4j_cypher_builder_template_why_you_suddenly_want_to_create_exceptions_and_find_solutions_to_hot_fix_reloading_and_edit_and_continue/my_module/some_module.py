@@ -1,3 +1,4 @@
+# inside some_module.py
 
 def program():
     raise Exception("Exception in program")
