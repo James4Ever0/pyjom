@@ -9,4 +9,5 @@ try:
     val = shit()
     print("returned value:", val)
 except:
-    
+    import importlib
+    importlib.reload()
