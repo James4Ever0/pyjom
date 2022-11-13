@@ -13,4 +13,4 @@ if __name__ == "__main__":
             import traceback
             traceback.print_exc()
             import importlib
-            importlib.reload(my_module)
+            importlib.reload(some_module)
