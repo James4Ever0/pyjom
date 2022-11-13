@@ -5,9 +5,10 @@ def program():
     # return "VALUE"
 
 if __name__ == "__main__":
+            import some_module
+
     while True:
         try:
-            import some_module
             val = some_module.program()
             print("returned value:", val)
             break
