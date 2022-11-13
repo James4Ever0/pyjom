@@ -6,8 +6,8 @@ def program():
 if __name__ == "__main__":
     while True:
         try:
-            from some_module import program
-            val = program()
+            import some_module
+            val = some_module.program()
             print("returned value:", val)
         except:
             import traceback
