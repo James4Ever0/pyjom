@@ -5,10 +5,10 @@ def program():
 
 while True:
     try:
+        from my_module import program
         val = program()
         print("returned value:", val)
     except:
-        input('are you finished?')
+        import traceback
+        traceback.print_exc()
         import importlib
-        # importlib.reload(program)
-        print(importlib.__cached__)
