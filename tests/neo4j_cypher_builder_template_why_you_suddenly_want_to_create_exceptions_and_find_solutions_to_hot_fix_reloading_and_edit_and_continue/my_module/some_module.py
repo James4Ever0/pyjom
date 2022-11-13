@@ -7,7 +7,7 @@ def program():
 if __name__ == "__main__":
     while True:
         try:
-            import some_module
+            import some_module # will it even succeed? doubt this.
             val = some_module.program()
             print("returned value:", val)
             break
