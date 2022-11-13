@@ -10,8 +10,8 @@ if __name__ == "__main__":
             val = some_module.program()
             print("returned value:", val)
         except:
-            print('')
             import traceback
             traceback.print_exc()
+            input('are you done yet?')
             import importlib
             importlib.reload(some_module)
