@@ -10,4 +10,4 @@ try:
     print("returned value:", val)
 except:
     import importlib
-    importlib.reload(this)
+    importlib.reload(".")
