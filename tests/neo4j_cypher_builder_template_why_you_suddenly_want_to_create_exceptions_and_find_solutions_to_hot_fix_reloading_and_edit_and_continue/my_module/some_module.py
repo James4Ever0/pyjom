@@ -10,6 +10,7 @@ if __name__ == "__main__":
             val = some_module.program()
             print("returned value:", val)
         except:
+            print('')
             import traceback
             traceback.print_exc()
             import importlib
