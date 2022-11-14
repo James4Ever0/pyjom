@@ -1,5 +1,5 @@
 import hy
-# this is different. no a
+# this is different. no access to hidden member.
 print('message before repl')
 repl = hy.cmdline.HyREPL()
 repl.run()
