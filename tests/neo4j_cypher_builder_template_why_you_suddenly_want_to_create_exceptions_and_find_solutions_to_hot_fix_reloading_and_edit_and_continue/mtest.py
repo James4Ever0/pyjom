@@ -1,4 +1,4 @@
 Exception()
-# def shit():
-#     raise Exception('shit')
-#     return "value"
+def shit():
+    raise Exception('shit')
+    return "value"
