@@ -1,4 +1,5 @@
 import hy
 print('message before repl')
-hy.cmdline.HyREPL.run()
+repl = hy.cmdline.HyREPL()
+repl.run()
 print('message after repl')
