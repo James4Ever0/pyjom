@@ -1,5 +1,0 @@
-2022/11/07 03:20:59.026 [E]  Will ReConnect After:6 s TXSERVER 111.30.130.106:80 User 1281727431 Offline Nick Yukio 
-2022/11/07 03:21:20.028 [E]  dial tcp 111.30.130.106:80: i/o timeout
-2022/11/07 03:21:20.028 [E]  Dial Faild:dial tcp 111.30.130.106:80: i/o timeout
-2022/11/07 03:21:20.028 [E]  dial tcp 111.30.130.106:80: i/o timeout
-2022/11/07 03:21:20.028 [E]  Will ReConnect After:7 s TXSERVER msfwifi.3g.qq.com:8080 User 1281727431 Offline Nick Yukio 
