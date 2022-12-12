@@ -20,7 +20,7 @@ def getGPT2TrainedStatus():
         content = datetime.datetime.fromisoformat(content)
         day = content.day
         now = getNow()
-        print("TODAY?",day)
+        print("MARKED DAY?",day)
         print("NOW?",now)
         return day == now.day
     except:
