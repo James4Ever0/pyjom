@@ -19,9 +19,11 @@ def getGPT2TrainedStatus():
             content = f.read()
         content = datetime.datetime.fromisoformat(content)
         day = content.day
+        superday = day+content.month+content.year
         now = getNow()
-        print("MARKED DAY?",day)
-        print("NOW?",now)
+        supernow = now.day+now.month+now.year
+        # print("MARKED DAY?",day) #day is same, but year and month is not the same.
+        # print("NOW?",now)
         return day == now.day
     except:
         import traceback
