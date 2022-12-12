@@ -24,7 +24,8 @@ def getGPT2TrainedStatus():
         supernow = now.day+now.month+now.year
         # print("MARKED DAY?",day) #day is same, but year and month is not the same.
         # print("NOW?",now)
-        return day == now.day
+        # return day == now.day
+        return superday == supernow
     except:
         import traceback
         traceback.print_exc()
