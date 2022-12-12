@@ -48,7 +48,9 @@ def getGPT2TrainedStatus():
 # import os
 def startGPT2Training():
     print("START TRAINING")
-    # 
+    # acquire the lock.
+    import filelock
+    filelock.
     os.system("/usr/bin/python3 train_model_fastapi.py")
 
 
