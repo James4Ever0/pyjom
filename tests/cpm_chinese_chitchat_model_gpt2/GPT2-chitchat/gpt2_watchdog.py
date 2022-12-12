@@ -48,6 +48,7 @@ def getGPT2TrainedStatus():
 # import os
 def startGPT2Training():
     print("START TRAINING")
+    # 
     os.system("/usr/bin/python3 train_model_fastapi.py")
 
 
