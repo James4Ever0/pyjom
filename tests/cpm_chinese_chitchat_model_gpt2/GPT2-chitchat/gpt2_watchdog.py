@@ -50,7 +50,7 @@ def startGPT2Training():
     print("START TRAINING")
     # acquire the lock.
     import filelock
-    with filelock.FileLock("model_training.lock", timeout=5): # you may have problems.
+    with filelock.FileLock("model_training.lock", timeout=5): # you may have problems. y
         os.system("/usr/bin/python3 train_model_fastapi.py")
 
 
