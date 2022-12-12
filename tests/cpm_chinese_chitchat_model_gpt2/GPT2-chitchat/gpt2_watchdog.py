@@ -12,15 +12,16 @@ def getNow():
     return datetime.datetime.now()
 
 # fuck! if you disable this, you must clean our cache of talks!
-def getGPT2Status(start=21, end=22, force_eval:bool=False): # how about disable the training capability? since that eats our VRAM.
+def getGPT2Status(start=0, end=1, force_eval:bool=False): # how about disable the training capability? since that eats our VRAM.
     # but again, while training, gpt2 is offline and the bot might be on some inconsistent state, luring the administrator to remove our bot.
+    # if you want to write unit tests for your video making app, this is the time.
     if force_eval:
         return 'eval'
     hour = getNow().hour
     print("HOUR: ", hour)
     # if hour >= 16 and hour <= 20: # for test
     # if hour >= 2 and hour <= 8:
-    if hour >= start and hour <= end:  # for practice
+    # if hour >= start and hour <= end:  # for practice
     # if hour >= 21 and hour <= 22:  # for practice
         return "train"
     else:
