@@ -23,7 +23,6 @@ def getGPT2TrainedStatus():
         return day == now.day
     except:
         import traceback
-
         traceback.print_exc()
         print("SOME ERROR WHEN CHECKING GPT2 TRAINED STATUS")
         # breakpoint()
