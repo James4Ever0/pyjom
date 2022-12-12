@@ -50,7 +50,7 @@ def startGPT2Training():
     print("START TRAINING")
     # acquire the lock.
     import filelock
-    with filelock.FileLock("model_training.lock", timeout=5): # you may have problems. you may set others who wants to acquire this lock with 
+    with filelock.FileLock("/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/model_training.lock", timeout=5): # you may have problems. you may set others who wants to acquire this lock with very short timeout like 0.00001
         os.system("/usr/bin/python3 train_model_fastapi.py")
 
 
