@@ -12,7 +12,7 @@ def getNow():
     return datetime.datetime.now()
 
 # fuck! if you disable this, you must clean our cache of talks!
-def getGPT2Status(start=21, end=22, force_eval:bool=True): # how about disable the training capability? since that eats our VRAM.
+def getGPT2Status(start=21, end=22, force_eval:bool=False): # how about disable the training capability? since that eats our VRAM.
     # but again, while training, gpt2 is offline and the bot might be on some inconsistent state, luring the administrator to remove our bot.
     if force_eval:
         return 'eval'
