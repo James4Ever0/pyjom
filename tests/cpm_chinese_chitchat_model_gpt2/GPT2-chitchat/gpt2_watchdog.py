@@ -11,7 +11,7 @@ os.chdir(
 def getNow():
     return datetime.datetime.now()
 
-
+# fuck! if you disable this, you must clean our cache of talks!
 def getGPT2Status(start=21, end=22, force_eval:bool=True): # how about disable the training capability? since that eats our VRAM.
     if force_eval:
         return 'eval'
