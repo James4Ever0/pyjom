@@ -21,7 +21,7 @@ def getGPT2Status(start=0, end=1, force_eval:bool=False): # how about disable th
     print("HOUR: ", hour)
     # if hour >= 16 and hour <= 20: # for test
     # if hour >= 2 and hour <= 8:
-    # if hour >= start and hour <= end:  # for practice
+    if hour >= start and hour <= end:  # for practice?
     # if hour >= 21 and hour <= 22:  # for practice
         return "train"
     else:
