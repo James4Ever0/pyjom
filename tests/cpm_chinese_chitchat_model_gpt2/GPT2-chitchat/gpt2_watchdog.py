@@ -105,6 +105,7 @@ def checkGPT2Status():
         terminateGPT2()
         trained = getGPT2TrainedStatus()
         if not trained:
+            # make sure this is not interrupted.
             startGPT2Training()
             markGPT2Trained()
         else:
