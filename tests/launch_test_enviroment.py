@@ -26,7 +26,15 @@ def launchProgramWithTerminal(
         #     if (not keep_on) or no_terminal
         #     else "bash -c \"{}; echo; echo 'error log above...'; date; bash;\""
         # )
-        mkeep_on = ("{}" if not keep_on else ("bash -c \"{}; if [[ '$!' -ne 0 ]] then; echo; echo 'error log above...'; date; bash; fi;\"" if no_terminal else ))
+        mkeep_on = (
+            "{}"
+            if not keep_on
+            else (
+                "bash -c \"{}; if [[ '$!' -ne 0 ]] then; echo; echo 'error log above...'; date; bash; fi;\""
+                if not no_terminal
+                else "bash -c \"{}; echo; echo 'error log above...'; date; bash;\""
+            )
+        )
         command = f'{"gnome-terminal -- " if not no_terminal else ""}{mkeep_on.format(f"{intepreter} {executable_path}")}'
         return command
     except:
