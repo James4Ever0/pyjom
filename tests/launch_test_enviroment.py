@@ -16,7 +16,7 @@ def launchProgramWithTerminal(
         os.chdir(directory)
         executable_path = os.path.join(directory, executable)
         assert os.path.exists(executable_path)
-        mkeep_on = ("{}" if not keep_on else "bash --login -c \"{}\"")
+        mkeep_on = ("{}" if not keep_on else "bash -c \"{}; echo; echo 'error log above...'; date; bash\"")
         command = f'{"gnome-terminal -- " if not no_terminal else ""}{mkeep_on.format(f"{intepreter} {executable_path}")}'
         return command
     except:
