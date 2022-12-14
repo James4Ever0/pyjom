@@ -31,7 +31,7 @@ def launchProgramWithTerminal(
             if not keep_on
             else (
                 "bash -c \"{}; if [[ '$!' -ne 0 ]] then; echo; echo 'error log above...'; date; bash; fi;\""
-                if not no_terminal
+                if no_terminal
                 else "bash -c \"{}; echo; echo 'error log above...'; date; bash;\""
             )
         )
