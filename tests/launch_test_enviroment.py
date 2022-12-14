@@ -16,7 +16,7 @@ def launchProgramWithTerminal(
         os.chdir(directory)
         executable_path = os.path.join(directory, executable)
         assert os.path.exists(executable_path)
-        command = f'{"gnome-terminal -- " if not no_terminal else ""}{("")+f"{intepreter} {executable_path}"}'
+        command = f'{"gnome-terminal -- " if not no_terminal else ""}{("{}" if not keep_on else "{bash }").format(f"{intepreter} {executable_path}")}'
         return command
     except:
         import traceback
