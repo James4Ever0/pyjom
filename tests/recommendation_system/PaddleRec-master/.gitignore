@@ -6,3 +6,7 @@ paddlerec.egg-info/
 *.pyc
 *.DS_Store
 kernel_meta/README.md
+<<<<<<< HEAD
+=======
+README.md
+>>>>>>> e34391654 ([2022-12-14 18:59:35])

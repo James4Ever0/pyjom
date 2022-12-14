@@ -25,3 +25,7 @@ test/treeshake/stats.html
 
 
 **/node_modulespackage-lock.json
+<<<<<<< HEAD
+=======
+package-lock.json
+>>>>>>> e34391654 ([2022-12-14 18:59:35])

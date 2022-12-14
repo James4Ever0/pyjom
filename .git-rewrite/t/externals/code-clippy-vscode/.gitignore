@@ -5,3 +5,8 @@ node_modules
 
 yarn.lock
 package-lock.jsonvscode.d.ts
+<<<<<<< HEAD
+=======
+package-lock.json
+vscode.d.ts
+>>>>>>> e34391654 ([2022-12-14 18:59:35])
