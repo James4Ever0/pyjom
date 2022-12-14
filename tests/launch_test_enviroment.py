@@ -104,7 +104,7 @@ for argumentList, kwargs in launchList:
         assert type(kwargs) == dict
         [directory, intepreter, executable] = argumentList
         command = launchProgramWithTerminal(directory, intepreter, executable, **kwargs)
-        if command is not None:
+        if command is None:
             raise Exception("command is None")
         else:
             executeCommand(command)
