@@ -3,7 +3,7 @@ import os
 
 
 def launchProgramWithTerminal(
-    directory, intepreter, executable, sleep=None, no_terminal=False
+    directory, intepreter, executable, sleep=None, no_terminal=False, keep_on = True # preserve error log
 ):
     try:
         if type(sleep) in [int, float]:
@@ -16,7 +16,7 @@ def launchProgramWithTerminal(
         os.chdir(directory)
         executable_path = os.path.join(directory, executable)
         assert os.path.exists(executable_path)
-        command = f'{"gnome-terminal -- " if not no_terminal else ""}{intepreter} {executable_path}'
+        command = f'{"gnome-terminal -- " if not no_terminal else ""}{f"{intepreter} {executable_path}"}'
         return command
     except:
         import traceback
