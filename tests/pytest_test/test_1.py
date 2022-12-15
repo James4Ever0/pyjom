@@ -2,6 +2,7 @@ def non_test():
     print("no test")
     return 1
 
+# use class?
 def test_a():
     print("TEST!")
 
