@@ -8,8 +8,13 @@ class ValueStorage:
 
 def test_a():
     ValueStorage.value1 = 1
+    from non_test import shit
+    shit()
     print("TEST!")
 
 def test_b():
     print("test b") # no printing?
     assert ValueStorage.value1 == 1
+
+def test_c():
+    assert ValueStorage.value2 == 1
