@@ -2,12 +2,14 @@ def non_test():
     print("no test")
     return 1
 
-class test_class():
-    # use class?
-    def test_a(self):
-        self.a = 1
-        print("TEST!")
+class ValueStorage:
+    value1 = None
+    value2 = None
 
-    def test_b(self):
-        print("test b") # no printing?
-        assert self.a == 1
+def test_a():
+    ValueStorage.value1 = 1
+    print("TEST!")
+
+def test_b():
+    print("test b") # no printing?
+    assert ValueStorage.value1 == 1

@@ -1,1 +1,1 @@
-pytest -v --capture=no # disable stdout/stderr capturing
+pytest -v --capture=no . # disable stdout/stderr capturing
