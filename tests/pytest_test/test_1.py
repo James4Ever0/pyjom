@@ -10,7 +10,7 @@ def test_a():
     ValueStorage.value1 = 1
     from non_test import shit
     shit()
-    print("TEST!")
+    print("TEST!") # does have traceback.
 
 def test_b():
     print("test b") # no printing?
