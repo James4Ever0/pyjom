@@ -4,7 +4,7 @@ import os
 import datetime
 
 os.chdir(
-    "/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/"
+    basedir:="/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/"
 )
 
 
@@ -60,6 +60,7 @@ def startGPT2Training():
 
 
 def markGPT2Trained():
+    try:
     with open("trained.log", "w+") as f:
         content = getNow().isoformat()
         f.write(content)
