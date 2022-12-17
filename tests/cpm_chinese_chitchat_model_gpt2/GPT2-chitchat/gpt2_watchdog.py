@@ -14,8 +14,10 @@ def getNow():
 
 
 def getGPT2TrainedStatus():
+    content = None
+    trained_log_path = basedir+"trained.log"
     try:
-        with open("trained.log", "r+") as f:
+        with open(trained_log_path, "r+") as f:
             content = f.read()
         content = datetime.datetime.fromisoformat(content)
         day = content.day
@@ -27,9 +29,13 @@ def getGPT2TrainedStatus():
         # return day == now.day
         return superday == supernow
     except:
+        if content is None:
+            os.system("touch %s" % trained_log_path)
+            raise Exception("file access error, probably missing")
         import traceback
         traceback.print_exc()
         print("SOME ERROR WHEN CHECKING GPT2 TRAINED STATUS")
+        # has error, but why?
         # breakpoint()
     return False
 
@@ -60,8 +66,7 @@ def startGPT2Training():
 
 
 def markGPT2Trained():
-    try:
-    with open("trained.log", "w+") as f:
+    with open(basedir+"trained.log", "w+") as f:
         content = getNow().isoformat()
         f.write(content)
     print("GPT2 TRAINED STATUS MARKED")
