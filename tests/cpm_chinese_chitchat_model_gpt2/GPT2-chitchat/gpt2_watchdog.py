@@ -5,10 +5,15 @@ import datetime
 
 import retry
 
-def init():
 os.chdir(
     basedir:="/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/"
 )
+
+def init(func):
+    def inner(*args, **kwargs):
+        os.chdir(basedir)
+        return func(*args, **kwargs)
+    return inner
 
 
 def getNow():
@@ -16,6 +21,7 @@ def getNow():
 
 
 @retry.retry(tries=10,delay=2)
+@init
 def getGPT2TrainedStatus():
     content = None
     trained_log_path = basedir+"trained.log"
@@ -68,6 +74,7 @@ def startGPT2Training():
         os.system("/usr/bin/python3 train_model_fastapi.py")
 
 @retry.retry(delay=3,tries=10)
+@init
 def markGPT2Trained():
     with open(basedir+"trained.log", "w+") as f:
         content = getNow().isoformat()
@@ -87,6 +94,7 @@ def getGPT2Running():
     return False  # if process is None then program is not running
 
 @retry.retry(delay=2,tries=10)
+@init
 def startGPT2Server():
     global process
     process = subprocess.Popen(
