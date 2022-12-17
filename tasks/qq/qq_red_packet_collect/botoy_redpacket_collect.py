@@ -232,7 +232,8 @@ def printGroupTextChatJson(group_id, sender_id, content):
     )  # strange. who the fuck added this shit?
 
 # convert to simplified chinese.
-
+import opencc
+chinese_t2s = opencc.OpenCC()
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # too broad for groupInitReplyDelayRange to be (2, 20)
@@ -255,6 +256,8 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
         groupNoReplyStack.update({group_id: -random.randint(*groupInitReplyDelayRange)})
 
     def writeGroupChatCursor(Content):
+        chinese_t2s.convert(Content)
+        # content need to converted into simplified chinese.
         global groupChatCursor, chat_stack_lock
         # maybe we should create the mapping table here.
         content_length = len(Content)
