@@ -255,8 +255,9 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     if group_id not in groupNoReplyStack.keys():
         groupNoReplyStack.update({group_id: -random.randint(*groupInitReplyDelayRange)})
 
-    def writeGroupChatCursor(Content):
-        chinese_t2s.convert(Content)
+    def writeGroupChatCursor(Content,enable_t2s=True):
+        if enable_t2s:
+            Content = chinese_t2s.convert(Content)
         # content need to converted into simplified chinese.
         global groupChatCursor, chat_stack_lock
         # maybe we should create the mapping table here.
