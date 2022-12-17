@@ -231,6 +231,7 @@ def printGroupTextChatJson(group_id, sender_id, content):
         "[GROUP_TEXT_MESSAGE]", message
     )  # strange. who the fuck added this shit?
 
+# convert to simplified chinese.
 
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
