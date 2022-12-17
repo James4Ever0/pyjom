@@ -10,6 +10,7 @@ os.chdir(
 )
 
 def init(func):
+    @retry.retry(delay=3,tries=10)
     def inner(*args, **kwargs):
         os.chdir(basedir)
         return func(*args, **kwargs)
@@ -20,7 +21,7 @@ def getNow():
     return datetime.datetime.now()
 
 
-@retry.retry(tries=10,delay=2)
+# @retry.retry(tries=10,delay=2)
 @init
 def getGPT2TrainedStatus():
     content = None
@@ -66,6 +67,8 @@ def getGPT2Status(start=0, end=1, force_eval:bool=False): # how about disable th
         return "eval"
 
 # import os
+# @retry.retry(delay=3,tries=10)
+@init
 def startGPT2Training():
     print("START TRAINING")
     # acquire the lock.
@@ -73,7 +76,7 @@ def startGPT2Training():
     with filelock.FileLock("/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/model_training.lock", timeout=5): # you may have problems. you may set others who wants to acquire this lock with very short timeout like 0.00001
         os.system("/usr/bin/python3 train_model_fastapi.py")
 
-@retry.retry(delay=3,tries=10)
+# @retry.retry(delay=3,tries=10)
 @init
 def markGPT2Trained():
     with open(basedir+"trained.log", "w+") as f:
@@ -93,7 +96,7 @@ def getGPT2Running():
         return process.poll() == None  # when no return code the program is running
     return False  # if process is None then program is not running
 
-@retry.retry(delay=2,tries=10)
+# @retry.retry(delay=2,tries=10)
 @init
 def startGPT2Server():
     global process
