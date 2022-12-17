@@ -3,6 +3,9 @@ import schedule
 import os
 import datetime
 
+import retry
+
+def init():
 os.chdir(
     basedir:="/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/"
 )
@@ -12,7 +15,7 @@ def getNow():
     return datetime.datetime.now()
 
 
-
+@retry.retry(tries=10,delay=2)
 def getGPT2TrainedStatus():
     content = None
     trained_log_path = basedir+"trained.log"
@@ -64,7 +67,7 @@ def startGPT2Training():
     with filelock.FileLock("/root/Desktop/works/pyjom/tests/cpm_chinese_chitchat_model_gpt2/GPT2-chitchat/model_training.lock", timeout=5): # you may have problems. you may set others who wants to acquire this lock with very short timeout like 0.00001
         os.system("/usr/bin/python3 train_model_fastapi.py")
 
-
+@retry.retry(delay=3,tries=10)
 def markGPT2Trained():
     with open(basedir+"trained.log", "w+") as f:
         content = getNow().isoformat()
@@ -83,11 +86,11 @@ def getGPT2Running():
         return process.poll() == None  # when no return code the program is running
     return False  # if process is None then program is not running
 
-
+@retry.retry(delay=2,tries=10)
 def startGPT2Server():
     global process
     process = subprocess.Popen(
-        ["/usr/bin/python3", "interact_fastapi.py", "--model_path", "../model"]
+        ["/usr/bin/python3", basedir+"interact_fastapi.py", "--model_path", basedir+"../model"]
     )
     # process.poll()
 
