@@ -79,4 +79,10 @@ editly_script = {
         {"layers": [{"type": "image", "path": os.path.join(mdir, mfile)}]}
         for mfile in mfiles
     ],
+    "audioFilePath":"the_happy_troll.mp3"
 }
+
+import json5
+editly_spec_file = "spec_file.json5"
+with open(editly_spec_file,'w+') as fp:
+    json5.dump(editly_script,fp)
