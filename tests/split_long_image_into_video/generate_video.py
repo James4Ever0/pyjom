@@ -60,12 +60,14 @@ ffmpeg.input(os.path.join(mdir, fout)).filter()
 
 mfiles = os.listdir(mdir)
 import re
+output_path ="./output.mp4"
 
 mfiles.sort(key=lambda x: int(re.findall(r"[0-9]+", x)[0]))
 editly_script = {
     "width": mwidth,
     "height": mheight,
-    "outPath": "./output.mp4",
+    "fps":60,
+    "outPath": output_path,
     "defaults": {
         "transition": {
             "duration": 0.5,
@@ -86,3 +88,7 @@ import json5
 editly_spec_file = "spec_file.json5"
 with open(editly_spec_file,'w+') as fp:
     json5.dump(editly_script,fp)
+
+# now execute
+import os
+os.system("editly {}".format(editly_spec_file))
