@@ -19,4 +19,8 @@ im1 = "intermediate.png"
 mheight, mwidth = 1080,1920
 width, height = getWidthHeight(im0)
 import ffmpeg
-ffmpeg.input(im0).
+ffmpeg.input(im0).filter("scale", w=mwidth, h=-1).output(im1, overwrite_output=True).run()
+width0, height0 = getWidthHeight(im1)
+pad_total = height0//width0
+if pad_total != 0:
+    
