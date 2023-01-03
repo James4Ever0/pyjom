@@ -22,9 +22,7 @@ mheight, mwidth = 1080, 1920
 width, height = getWidthHeight(im0)
 import ffmpeg
 
-ffmpeg.input(im0).filter("scale", w=mwidth, h=-1).output(
-    im1, overwrite_output=True
-).run()
+ffmpeg.input(im0).filter("scale", w=mwidth, h=-1).output(im1).run(overwrite_output=True)
 width0, height0 = getWidthHeight(im1)
 pad_total = height0 % mheight
 if pad_total != 0:
@@ -34,7 +32,7 @@ if pad_total != 0:
     # then you must rewrite this shit.
     ffmpeg.input(im1).filter(
         "pad", w="iw", h="ih+{}".format(pad_total), x=0, y=pad_above, color="white"
-    ).output(im2, overwrite_output=True).run()
+    ).output(im2).run(overwrite_output=True)
 else:
     im2 = im1
 
@@ -53,20 +51,20 @@ import math
 
 mh = math.ceil(height0 / mheight)
 mlayout = "1x{}".format(mh)
-ffmpeg.input(im2).filter("untile", layout=mlayout).output(
-    mfout, overwrite_output=True
-).run()
-ffmpeg.input(os.path.join(mdir, fout)).filter()
+ffmpeg.input(im2).filter("untile", layout=mlayout).output(mfout).run(
+    overwrite_output=True
+)
 
 mfiles = os.listdir(mdir)
 import re
-output_path ="./output.mp4"
+
+output_path = "./output.mp4"
 
 mfiles.sort(key=lambda x: int(re.findall(r"[0-9]+", x)[0]))
 editly_script = {
     "width": mwidth,
     "height": mheight,
-    "fps":60,
+    "fps": 60,
     "outPath": output_path,
     "defaults": {
         "transition": {
@@ -81,14 +79,16 @@ editly_script = {
         {"layers": [{"type": "image", "path": os.path.join(mdir, mfile)}]}
         for mfile in mfiles
     ],
-    "audioFilePath":"the_happy_troll.mp3"
+    "audioFilePath": "the_happy_troll.mp3",
 }
 
 import json5
+
 editly_spec_file = "spec_file.json5"
-with open(editly_spec_file,'w+') as fp:
-    json5.dump(editly_script,fp)
+with open(editly_spec_file, "w+") as fp:
+    json5.dump(editly_script, fp)
 
 # now execute
 import os
+
 os.system("editly {}".format(editly_spec_file))
