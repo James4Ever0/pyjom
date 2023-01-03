@@ -24,9 +24,9 @@ import ffmpeg
 
 ffmpeg.input(im0).filter("scale", w=mwidth, h=-1).output(im1).run(overwrite_output=True)
 width0, height0 = getWidthHeight(im1)
-pad_total = height0 % mheight
-print("PAD TOTAL?", pad_total)
-breakpoint()
+pad_total =( mheight-(height0 % mheight)) % mheight
+# print("PAD TOTAL?", pad_total)
+# breakpoint()
 if pad_total != 0:
     im2 = "intermediate_0.png"
     pad_above = pad_total // 2
@@ -93,4 +93,5 @@ with open(editly_spec_file, "w+") as fp:
 # now execute
 import os
 
-os.system("editly {}".format(editly_spec_file))
+os.system("rm -rf editly-tmp*")
+os.system("xvfb-run editly {}".format(editly_spec_file))
