@@ -21,7 +21,7 @@ width, height = getWidthHeight(im0)
 import ffmpeg
 ffmpeg.input(im0).filter("scale", w=mwidth, h=-1).output(im1, overwrite_output=True).run()
 width0, height0 = getWidthHeight(im1)
-pad_total = height0%width0
+pad_total = height0%mheight
 if pad_total != 0:
     im2 = "intermediate_0.png"
     pad_above = pad_total//2
@@ -40,5 +40,10 @@ mdir ="output"
 if os.path.exists(mdir):
     shutil.rmtree(mdir)
 os.mkdir(mdir)
-
-ffmpeg.input(im2).filter("untile",)
+mfout =os.path.join(mdir,fout)
+import math
+fout = "output%d.png"
+mh = math.ceil(height0/mheight)
+mlayout = "1x{}".format(mh)
+ffmpeg.input(im2).filter("untile",layout=mlayout).output(mfout, overwrite_output=True).run()
+ffmpeg.input(os.path.join(mdir,fout)).filter()
