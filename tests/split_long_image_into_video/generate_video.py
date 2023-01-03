@@ -21,6 +21,12 @@ width, height = getWidthHeight(im0)
 import ffmpeg
 ffmpeg.input(im0).filter("scale", w=mwidth, h=-1).output(im1, overwrite_output=True).run()
 width0, height0 = getWidthHeight(im1)
-pad_total = height0//width0
+pad_total = height0%width0
 if pad_total != 0:
-    
+    im2 = "intermediate_0.png"
+    pad_above = pad_total//2
+    pad_below = pad_total-pad_above
+    # then you must rewrite this shit.
+    ffmpeg.input(im1).filter("pad",w='iw',h='ih+{}'.format(pad_total),x=0, y=pad_above,color='white').output(im2, overwrite_output=True).run()
+else:
+    im2 = im1
