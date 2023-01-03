@@ -48,16 +48,18 @@ mlayout = "1x{}".format(mh)
 ffmpeg.input(im2).filter("untile",layout=mlayout).output(mfout, overwrite_output=True).run()
 ffmpeg.input(os.path.join(mdir,fout)).filter()
 
+mfiles = os.listdir(mdir)
+import re
+mfiles.sort(key=lambda x: int(re.findall(r'[0-9]+',x)[0]))
 editly_script = {
-  width:mwidth,
-  height:mheight,
-  outPath: './image.mp4',
-  defaults: {
-    transition: ,
-    duration: 2,
+  "width":mwidth,
+  "height":mheight,
+  "outPath": './image.mp4',
+  "defaults": {
+    "transition": ,
+    "duration": 3,
   },
-  clips: [
-    { layers: [{ type: 'image', path: './assets/pano.jpg' }] },
-    { layers: [{ type: 'image', path: './assets/vertical.jpg' }] },
+  "clips": [
+    { "layers": [{ "type": 'image', "path": os.path.join(mdir,mfile) }] } for mfile in mfiles
   ]
 }
