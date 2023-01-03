@@ -1,0 +1,1 @@
+# to get a proper cover, let's simply crop.
