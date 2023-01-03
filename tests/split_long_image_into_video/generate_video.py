@@ -30,3 +30,15 @@ if pad_total != 0:
     ffmpeg.input(im1).filter("pad",w='iw',h='ih+{}'.format(pad_total),x=0, y=pad_above,color='white').output(im2, overwrite_output=True).run()
 else:
     im2 = im1
+
+# then chop it up.
+import os
+import shutil
+
+mdir ="output"
+
+if os.path.exists(mdir):
+    shutil.rmtree(mdir)
+os.mkdir(mdir)
+
+ffmpeg.input(im2).filter("untile",)
