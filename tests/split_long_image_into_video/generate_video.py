@@ -4,4 +4,10 @@
 
 # first, get picture aspect.
 
-from caer.core import 
+import cv2
+d = cv2.imread("long_and_funny_image_about_ai_painting.jpg")
+# print(d.shape)
+height, width, channels = d.shape
+# very high, low width.
+# calculate actual output?
+mheight, mwidth = 1080,1920
