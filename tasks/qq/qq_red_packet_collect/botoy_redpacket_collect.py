@@ -235,7 +235,7 @@ def printGroupTextChatJson(group_id, sender_id, content):
 import opencc
 chinese_t2s = opencc.OpenCC()
 
-# hook up this thing, send cat video only if 
+# hook up this thing, send cat video only if we receive that topic.
 
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
@@ -299,6 +299,9 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                     # do not do anything about the chat_stack while locked.
                     return
                 else:
+                    # check if we are hit by something interesting?
+                    cat_or_dog = checkCatOrDog(Content)
+                    # act accordingly. decide to send ad or not.
                     updateChatStack(group_id, Content)
                     # or we could simply add the filter on the reply side.
 
