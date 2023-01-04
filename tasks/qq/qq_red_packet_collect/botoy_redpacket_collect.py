@@ -2,7 +2,7 @@
 
 # disable that 复读机 plugin.
 from chat_local import *
-
+from adtools import *
 from chatApis import getChatApiReply
 from base_opq import *
 import schedule
