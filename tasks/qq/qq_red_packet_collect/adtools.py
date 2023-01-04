@@ -18,6 +18,14 @@ def checkCatOrDog(Content: str):
                 return key
     return None
 
+# pip3 install python_cypher
+# pip3 install neo4j
+from functools import lru_cache
+
+def getNeo4jDriver():
+from neo4j import GraphDatabase
+
+driver = GraphDatabase.driver("neo4j://localhost:7687",
+                              auth=("neo4j", "password"))
 
 def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str): # whatever.
-    
