@@ -17,3 +17,7 @@ def checkCatOrDog(Content: str):
             if elem in Content.lower():
                 return key
     return None
+
+
+def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str): # whatever.
+    
