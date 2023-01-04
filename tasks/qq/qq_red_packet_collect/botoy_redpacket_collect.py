@@ -234,6 +234,9 @@ def printGroupTextChatJson(group_id, sender_id, content):
 # convert to simplified chinese.
 import opencc
 chinese_t2s = opencc.OpenCC()
+
+# hook up this thing, send cat video only if 
+
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # too broad for groupInitReplyDelayRange to be (2, 20)
