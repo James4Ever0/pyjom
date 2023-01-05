@@ -309,7 +309,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                         if adBuffer.get(str(group_id),0)<=0:
                             adBuffer[str(group_id)]=50
                             # send the ad.
-                            sendCatOrDogAd(str(group_id), cat_or_dog)
+                            sendCatOrDogAd(str(group_id), cat_or_dog,action)
                     updateChatStack(group_id, Content)
                     # or we could simply add the filter on the reply side.
 
