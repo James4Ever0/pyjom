@@ -25,6 +25,7 @@ FONT_BOLD_PATH = "wqy-microhei1.ttf"
 COVER_PATH = "sample_cover.jpg"
 QRCODE_PATH = "MyQRCode1.png"
 PLAY_BUTTON_PATH = "play_white_b.png"
+BILIBILI_LOGO_PATH= "bili_white_b_cropped.png"
 def prepareMaterials(tmpDirPath=TMP_DIR_PATH, resourcePath = RESOURCE_PATH):
     ...
 
@@ -44,8 +45,9 @@ play_button_path =  os.path.join(TMP_DIR_PATH,PLAY_BUTTON_PATH)
 # just copy these files to temp directory till success!
 
 # play_button_path = "play_b.png"
-bilibili_logo_path = "bili_white_b_cropped.png"
+bilibili_logo_path = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH)
 
+10-100w (),100-1000, 500-3000
 play_count = comment_count = danmaku_count = "1万" # fake these numbers.
 # one extra space.
 stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
