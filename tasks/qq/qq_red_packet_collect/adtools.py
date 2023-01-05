@@ -22,11 +22,15 @@ def checkCatOrDog(Content: str):
 # pip3 install neo4j
 from functools import lru_cache
 
-def getNeo4jDriver(address="neo4j://localhost:7687",username="neo4j", password="password" ):
+# @lru_cache(maxsize=1)
+def getNeo4jDriver(address="neo4j://localhost:7687",username="neo4j", password="password",debug=False):
     from neo4j import GraphDatabase
     driver = GraphDatabase.driver(address,
                                 auth=(username,password))
+    if debug:
+        print("login successful: username:%s password:%s" % (username, password))
     return driver
 
 from pypher import Pypher
 def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str): # whatever.
+    ...
