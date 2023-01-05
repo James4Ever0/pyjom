@@ -72,9 +72,15 @@ BILIBILI_RECOMMENDATION_SERVER_PORT = 7341
 waitForServerUp(BILIBILI_RECOMMENDATION_SERVER_PORT,"bilibili recommendation server")
 
 import requests
+
+from bilibili_api.utils import 
 def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT)):
     # how do we get one? by label? by category? by name?
-    ...
+    url = server+"/searchUserVideos"
+    data = {"tid":}
+    r = requests.post(url,data=data)
+    response = r.json()
+    print("RESPONSE?",response)
 
 from botoy import Action
 def sendCatOrDogAd(group_id:str, cat_or_dog:str,action:Action):
