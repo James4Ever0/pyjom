@@ -43,6 +43,12 @@ import filelock
 def getAdLock(lockPath:str = os.path.join(TMP_DIR_PATH,AD_LOCK)):
     return filelock.FileLock(lockPath)
 
+def withAdLock(func):
+    def innerFunc(*args,**kwargs):
+        with getAdLock():
+            return func(*args,**kwargs)
+    return innerFunc
+
 RESOURCES_RELATIVE_PATH = [
 FONT_PATH ,
 FONT_BOLD_PATH ,
