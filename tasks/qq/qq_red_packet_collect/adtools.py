@@ -1,3 +1,6 @@
+
+import rich
+
 catSignals = ["喵喵", "猫", "猫咪", "喵"]
 
 dogSignals = [
@@ -86,8 +89,10 @@ BILIBILI_RECOMMENDATION_SERVER_PORT = 7341
 waitForServerUp(BILIBILI_RECOMMENDATION_SERVER_PORT,"bilibili recommendation server")
 
 import requests
-import random
+# import random
 from bilibili_api.search import bilibiliSearchParams
+
+# you might just want some delay when searching online.
 
 def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT),debug:bool=False):
     # how do we get one? by label? by category? by name?
@@ -114,17 +119,19 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
         # data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
         data = {"query":queryWord,"tid":animalTid,'method':'bm25'}
         if debug:
-            print("POSTING DATA:",data)
+            print("POSTING DATA:")
+            rich.print(data)
 
         r = requests.post(url,json=data)
         response = r.json()
         for elem in response:
             if elem not in responses:
                 responses.append(elem)
-    responses.sort(key=lambda elem:elem.)
-        if debug:
-            print("RESPONSES?",responses)
-    return response
+    responses.sort(key=lambda elem:-elem.get('pubdate',-1))
+    if debug:
+        print("RESPONSES?")
+        rich.print(responses)
+    return responses
 
 from botoy import Action
 def sendCatOrDogAd(group_id:str, cat_or_dog:str,action:Action):
