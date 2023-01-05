@@ -185,7 +185,7 @@ def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = os.path.join(TMP_DIR
 
 def generateBilibiliVideoAd(bvid:str,title_text:str):
     generateQRCodeFromBVID(bvid)
-    generateVideoAdUniversal(title_text=title_text)
+    return generateVideoAdUniversal(title_text=title_text)
 
 # you must have some lock outside while using this.
 def generateVideoAdUniversal(
