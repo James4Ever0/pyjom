@@ -416,3 +416,6 @@ def generateVideoAdUniversal(
         image2.sub_image(*sub_image_params).write_file(output_masked_path)
     return output_path, output_standalone, output_masked_path # well, pick up if you want.
 
+def removeQRCodes(image_path:str):
+
+def replaceQRCode(image_path:str,): # remove all detected QRCodes.
