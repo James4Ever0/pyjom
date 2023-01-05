@@ -9,20 +9,20 @@ dogSignals = [
     "狗子",
 ]
 
-def getQueryWordFromSignals(signals:list):
-    msignals = signals.copy()
-    msignals.sort(key=lambda x: len(x))
-    response = []
-    for s in msignals:
-        if s not in " ".join(response):
-            response.append(s)
-    return " ".join(response)
+# def getQueryWordFromSignals(signals:list):
+#     msignals = signals.copy()
+#     msignals.sort(key=lambda x: len(x))
+#     response = []
+#     for s in msignals:
+#         if s not in " ".join(response):
+#             response.append(s)
+#     return " ".join(response)
 
 catDogElemDict = {"cat": catSignals, "dog": dogSignals}
-catQueryWord = getQueryWordFromSignals(catSignals)
-dogQueryWord = getQueryWordFromSignals(dogSignals)
-# print("DOG QUERY WORD?",dogQueryWord)
-catDogQueryWords = {"cat": catQueryWord,"dog":dogQueryWord}
+# catQueryWord = getQueryWordFromSignals(catSignals)
+# dogQueryWord = getQueryWordFromSignals(dogSignals)
+# # print("DOG QUERY WORD?",dogQueryWord)
+# catDogQueryWords = {"cat": catQueryWord,"dog":dogQueryWord}
 
 def checkCatOrDog(Content: str):
     # cat? dog? None?
@@ -93,17 +93,18 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     # how do we get one? by label? by category? by name?
     url = server+"/searchUserVideos"
 
-    queryWord = catDogQueryWords.get(cat_or_dog,None)
-    try:
-        assert queryWord is not None
-    except Exception as e:
-        print("Could not find topic with keyword:",cat_or_dog)
-        raise e
+    # queryWord = catDogQueryWords.get(cat_or_dog,None)
+    # queryWords = catDogElemDict.get(cat_or_dog,None)
+    # try:
+    #     assert queryWords is not None
+    # except Exception as e:
+    #     print("Could not find topic with keyword:",cat_or_dog)
+    #     raise e
     
     animalTid = bilibiliSearchParams.video.tids.动物圈.tid
     myTids = {"cat":bilibiliSearchParams.video.tids.动物圈.喵星人,"dog":bilibiliSearchParams.video.tids.动物圈.汪星人}
     myTid = myTids[cat_or_dog]
-    queryWord = random.choice("",random.choice()) # you can still have things without query
+    queryWord = random.choice(["",random.choice(queryWords)]) # you can still have things without query
 
     data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
     if debug:
