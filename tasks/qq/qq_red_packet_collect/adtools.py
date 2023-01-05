@@ -39,9 +39,9 @@ def checkCatOrDog(Content: str):
 # pip3 install python_cypher
 # pip3 install neo4j
 from functools import lru_cache
-
+NEO4J_PORT=7687
 @lru_cache(maxsize=1)
-def getNeo4jDriver(address="neo4j://localhost:7687",username="neo4j", password="kali",debug=False): # so we bruteforced it. thanks to chatgpt.
+def getNeo4jDriver(address="neo4j://localhost:{}".format(NEO4J_PORT),username="neo4j", password="kali",debug=False): # so we bruteforced it. thanks to chatgpt.
     from neo4j import GraphDatabase
     driver = GraphDatabase.driver(address,
                                 auth=(username,password))
@@ -133,7 +133,7 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
         rich.print(responses)
     return responses # select one such response.
 
-def generateAdFromVideoInfo(videoInfo):
+def generateAdFromVideoInfo(videoInfo): # which style you want the most?
     # selected video info.
     bvid, pic, title = videoInfo['bvid'], videoInfo['pic'], videoInfo['title']
 
