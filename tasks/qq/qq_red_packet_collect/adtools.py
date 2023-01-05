@@ -33,4 +33,19 @@ def getNeo4jDriver(address="neo4j://localhost:7687",username="neo4j", password="
 
 from pypher import Pypher
 def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str): # whatever.
-    ...
+    # Create a new Pypher object
+    with getNeo4jDriver().session() as session:
+        p = Pypher()
+
+        # Use the MERGE clause to create the nodes if they do not already exist
+        p.MERGE.node('n1').properties(name='Node 1')
+        p.MERGE.node('n2').properties(name='Node 2')
+
+        # Use the MERGE clause to create the relationship between the nodes if it does not already exist
+        p.MERGE.node('n1').relationship('r').node('n2')
+
+        # Generate the Cypher query string
+        query = p.statement
+
+        # Execute the query using the Neo4j driver
+        result = session.run(query)
