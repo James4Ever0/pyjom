@@ -7,6 +7,13 @@ def test_login():
     for u in usernames:
         for p in passwords:
             try:
-                getNeo4jDriver(username=u, password=p,debug=False)
+                print("USING:",u,p)
+                r = getNeo4jDriver(username=u, password=p,debug=False)
+                # print('RESPONSE?',r)
+                with driver.session() as session:
+    result = session.run("MATCH (n) RETURN n LIMIT 1")
+    print(result.single())
+
             except:
-                pass
+                import traceback
+                traceback.print_exc()
