@@ -26,6 +26,7 @@ def generateFakeVideoStats():
     danmaku_count = random.randint(500,3000)
     return play_count, comment_count,danmaku_count
 
+
 RESOURCE_PATH = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server"
 
 QRCODE_PATH = "MyQRCode1.png"
@@ -46,10 +47,25 @@ BILIBILI_LOGO_PATH]
 OUTPUT_STANDALONE = "ad_2_standalone_cover.png"
 OUTPUT_PATH = "ad_2.png"
 OUTPUT_MASKED_PATH = "ad_2_mask.png"
-
+import progressbar
 def prepareMaterials(tmpDirPath:str=TMP_DIR_PATH, resourcePath :str= RESOURCE_PATH):
-    for path in RESOURCES_RELATIVE_PATH:
-        
+    print("Preparing materials...")
+    for path in progressbar.progressbar(RESOURCES_RELATIVE_PATH):
+        shutil.copy(os.path.join(tmpDirPath,path),os.path.join(resourcePath,path))
+
+
+def generateBilibiliShortLink(videoLink:str):
+    ...
+
+def makeQRCode(content:str, savePath:str):
+    ...
+
+def generateQRCodeFromBVID(bvid:str,qrCodeSavePath:str=...):
+    videoLink = "https://www.bilibili.com/video/{}".format(bvid)
+    shortLink = generateBilibiliShortLink(videoLink)
+    makeQRCode(shortLink, qrCodeSavePath)
+
+
 
 def generateVideoAd(
 videoStats = generateFakeVideoStats(),
