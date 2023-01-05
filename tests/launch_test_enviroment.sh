@@ -1,7 +1,7 @@
 cd /root/Desktop/works/pyjom/tests/
 python3 launch_test_enviroment.py
 
-# # launch billibili recommendation server
+# # launch bilibili recommendation server
 # cd /root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server
 # gnome-terminal -- python3 /root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server/test.py
 

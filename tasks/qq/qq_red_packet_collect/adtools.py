@@ -64,7 +64,9 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:b
         if debug:
             print("RESULT?", result)
 
-def getCatOrDogAd(cat_or_dog:str):
+import requests
+def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:"):
+    # how do we get one? by label? by category? by name?
     ...
 
 from botoy import Action
