@@ -98,7 +98,10 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     except Exception as e:
         print("Could not find topic with keyword:",cat_or_dog)
         raise e
-    data = {"":queryWord,"tid":random.choice()}
+    animalTid = bilibiliSearchParams.video.tids.动物圈.tid
+    myTids = {"cat":bilibiliSearchParams.video.tids.动物圈.喵星人,"dog":bilibiliSearchParams.video.tids.动物圈.汪星人}
+    myTid = myTids[cat_or_dog]
+    data = {"":queryWord,"tid":random.choice([0,animalTid, myTid])}
 
     r = requests.post(url,data=data)
     response = r.json()
