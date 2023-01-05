@@ -18,6 +18,13 @@ if os.path.exists(TMP_DIR_PATH):
     shutil.rmtree(TMP_DIR_PATH)
 os.mkdir(TMP_DIR_PATH)
 
+import random
+
+def generateFakeVideoStats():
+    play_count = "{}万".format(random.randint(100,1000)*.1) # anyway both int and str are compatible
+    comment_count = random.randint(100,1000)
+    danmaku_count = random.randint(500,3000)
+
 RESOURCE_PATH = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server"
 
 FONT_PATH = "wqy-microhei0.ttf"
@@ -29,6 +36,7 @@ BILIBILI_LOGO_PATH= "bili_white_b_cropped.png"
 OUTPUT_STANDALONE = "ad_2_standalone_cover.png"
 OUTPUT_PATH = "ad_2.png"
 OUTPUT_MASKED_PATH = "ad_2_mask.png"
+
 def prepareMaterials(tmpDirPath=TMP_DIR_PATH, resourcePath = RESOURCE_PATH):
     ...
 
@@ -45,7 +53,8 @@ cover_path = os.path.join(TMP_DIR_PATH,COVER_PATH)
 qrcode_path = os.path.join(TMP_DIR_PATH,QRCODE_PATH)
 play_button_path = os.path.join(TMP_DIR_PATH,PLAY_BUTTON_PATH)
 output_path = os.path.join(TMP_DIR_PATH,OUTPUT_PATH)
-output_standalone_path = os.path.join(TMP_DIR_PATH,OUTPUT_STANDALONE_PATH)
+output_standalone = os.path.join(TMP_DIR_PATH,OUTPUT_STANDALONE)
+output_masked_path= os.path.join(TMP_DIR_PATH,OUTPUT_MASKED_PATH)
 
 # but what about these buttons?
 # just copy these files to temp directory till success!
@@ -53,11 +62,7 @@ output_standalone_path = os.path.join(TMP_DIR_PATH,OUTPUT_STANDALONE_PATH)
 # play_button_path = "play_b.png"
 bilibili_logo_path = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH)
 
-import random
-
-play_count = "{}万".format(random.randint(100,1000)*.1)
-comment_count = random.randint(100,1000)
-danmaku_count = random.randint(500,3000) # fake these numbers.
+ # fake these numbers.
 # one extra space.
 
 stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
