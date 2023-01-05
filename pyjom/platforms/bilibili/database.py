@@ -589,7 +589,12 @@ def resolveSubTidsFromTid(tid: int):
     else:
         myTids = set()
         myTids.add(tid)
+        print("ALL TIDS?")
+        import rich
+        # rich.print(allTids)
+        rich.print(MMTM)
         myTopic = allTids[tid]
+        # myTopic = allTids[tid]
         if myTopic.get("minor", None) == None:
             # this is a major topic
             for t in allTids:
