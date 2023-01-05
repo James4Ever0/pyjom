@@ -576,8 +576,10 @@ def getUserVideos(
         time.sleep(sleep)
         pn += 1
 
-
+# cannot resolve 217?
 def resolveSubTidsFromTid(tid: int):
+    if type(tid)!= int:
+        tid = int(tid)
     MMTM = getMajorMinorTopicMappings()
     allTids = [t for t in MMTM.keys() if type(t) == int]
     if tid == 0:
