@@ -39,9 +39,10 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:b
         p = Pypher()
         if delete:
 
-            p.MATCH.node('n1',labels='qq_group', group_id=group_id).WITH.node('n1').DETACHDELETE.node('n1')
-            p.MATCH.node('n2',labels ='qq_user', user_id=sender_id).WITH.node('n2').DETACHDELETE.node('n2')
-            p.MATCH.node('n3',labels ='ad_keyword', keyword=cat_or_dog).WITH.node('n3').DETACHDELETE.node('n3')
+            p.MATCH.node('n1',labels='qq_group', group_id=group_id)
+            p.MATCH.node('n2',labels ='qq_user', user_id=sender_id)
+            p.MATCH.node('n3',labels ='ad_keyword', keyword=cat_or_dog) # fine.
+            p.DETACHDELETE.node('n1').DETACHDELETE.node('n2').DETACHDELETE.node('n3')
 
         # Use the MERGE clause to create the nodes if they do not already exist
         else:
