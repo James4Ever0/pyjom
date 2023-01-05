@@ -63,13 +63,17 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:b
         result = session.run(query, parameters=p.bound_params)
         if debug:
             print("RESULT?", result)
+
+def getCatOrDogAd(cat_or_dog:str):
+    ...
 from botoy import Action
 def sendCatOrDogAd(group_id:str, cat_or_dog:str,action:Action):
-sendMessageStatus = action.sendGroupText(
+    sendMessageStatus = action.sendGroupText(
                         group=group_id, content=reply
-                    )
+    )
                     # stderrPrint("SENT MESSAGE STATUS:",sendMessageStatus)
-                    if not (
-                        sendMessageStatus["ErrMsg"] == ""
-                        and sendMessageStatus["Ret"] == 0
-                    ):
+    success = (
+        sendMessageStatus["ErrMsg"] == ""
+        and sendMessageStatus["Ret"] == 0
+    )
+    return success
