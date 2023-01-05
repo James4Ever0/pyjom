@@ -79,8 +79,10 @@ def prepareMaterials(tmpDirPath: str = TMP_DIR_PATH, resourcePath: str = RESOURC
     for path in progressbar.progressbar(RESOURCES_RELATIVE_PATH):
         shutil.copy(os.path.join(tmpDirPath, path), os.path.join(resourcePath, path))
 
+def generateBilibiliShortLinkMethod2(videoLink: str):
+    ...
 
-def generateBilibiliShortLink(videoLink: str): # get bilibili user email address by asking them from chat. if they give the email address, send setu as gift.
+def generateBilibiliShortLinkMethod1(videoLink: str): # get bilibili user email address by asking them from chat. if they give the email address, send setu as gift. for other users, you may improvise. send video link, recommendations
     url = "https://api.bilibili.com/x/share/click"
     # burl = "https://www.bilibili.com/read/cv19232041" # my article with e-begging
     burl = videoLink
@@ -104,6 +106,9 @@ def generateBilibiliShortLink(videoLink: str): # get bilibili user email address
         if code==0:
             link=r_json["data"]['content']
             print(link)
+            return link
+    # fail, obviously.
+    # you improvise.
 
 
 def makeQRCode(content: str, savePath: str):
