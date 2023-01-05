@@ -38,7 +38,6 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:b
     with getNeo4jDriver().session() as session:
         p = Pypher()
         if delete:
-
             p.MATCH.node('n1',labels='qq_group', group_id=group_id)
             p.MATCH.node('n2',labels ='qq_user', user_id=sender_id)
             p.MATCH.node('n3',labels ='ad_keyword', keyword=cat_or_dog) # fine.
