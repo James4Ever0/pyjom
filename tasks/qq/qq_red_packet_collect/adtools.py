@@ -66,6 +66,7 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:b
 
 def getCatOrDogAd(cat_or_dog:str):
     ...
+
 from botoy import Action
 def sendCatOrDogAd(group_id:str, cat_or_dog:str,action:Action):
     sendMessageStatus = action.sendGroupText(
