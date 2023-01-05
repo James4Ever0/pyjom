@@ -37,6 +37,12 @@ COVER_PATH = "sample_cover.jpg"
 PLAY_BUTTON_PATH = "play_white_b.png"
 BILIBILI_LOGO_PATH= "bili_white_b_cropped.png"
 
+AD_LOCK = "ad_lock.lock"
+import filelock
+
+def getAdLock(lockPath:str = os.path.join(TMP_DIR_PATH,AD_LOCK)):
+    return filelock.FileLock(lockPath)
+
 RESOURCES_RELATIVE_PATH = [
 FONT_PATH ,
 FONT_BOLD_PATH ,
@@ -65,9 +71,8 @@ def generateQRCodeFromBVID(bvid:str,qrCodeSavePath:str=...):
     shortLink = generateBilibiliShortLink(videoLink)
     makeQRCode(shortLink, qrCodeSavePath)
 
-
-
-def generateVideoAd(
+# you must have some lock.
+def generateVideoAdUniversal(
 videoStats = generateFakeVideoStats(),
 night_mode :bool= True,
 title_text:str = "",
