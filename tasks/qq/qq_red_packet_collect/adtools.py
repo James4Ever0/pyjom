@@ -106,19 +106,24 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     # myTid = myTids[cat_or_dog]
     # queryWord = random.choice(["",random.choice(queryWords)]) # you can still have things without query
     # queryWord = " ".join(queryWords)
-    queryWord = {"cat":'猫',"dog":'狗'}[cat_or_dog] # Whatever. fuck it. replace it with semantic search later? or you use multiple searches.
+    # queryWord = {"cat":'猫',"dog":'狗'}[cat_or_dog] # Whatever. fuck it. replace it with semantic search later? or you use multiple searches.
 
     # you cannot just ignore the queryWord in bm25
+    responses = []
+    for queryWord in queryWords:
+        # data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
+        data = {"query":queryWord,"tid":animalTid,'method':'bm25'}
+        if debug:
+            print("POSTING DATA:",data)
 
-    # data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
-    data = {"query":queryWord,"tid":animalTid,'method':'bm25'}
-    if debug:
-        print("POSTING DATA:",data)
-
-    r = requests.post(url,json=data)
-    response = r.json()
-    if debug:
-        print("RESPONSE?",response)
+        r = requests.post(url,json=data)
+        response = r.json()
+        for elem in response:
+            if elem not in responses:
+                responses.append(elem)
+    responses.sort(key=lambda elem:elem.)
+        if debug:
+            print("RESPONSES?",responses)
     return response
 
 from botoy import Action
