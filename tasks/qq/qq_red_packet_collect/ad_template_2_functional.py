@@ -18,6 +18,13 @@ if os.path.exists(TMP_DIR_PATH):
     shutil.rmtree(TMP_DIR_PATH)
 os.mkdir(TMP_DIR_PATH)
 
+RESOURCE_PATH = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server"
+
+FONT_PATH = "wqy-microhei0.ttf"
+FONT_BOLD_PATH = "wqy-microhei1.ttf"
+COVER_PATH = "sample_cover.jpg"
+QRCODE_PATH = "MyQRCode1.png"
+PLAY_BUTTON_PATH = "play_white_b.png"
 def prepareMaterials(tmpDirPath=TMP_DIR_PATH, resourcePath = RESOURCE_PATH):
     ...
 
@@ -27,11 +34,11 @@ framework_only = False
 ad_width, ad_height = 1000, 1000
 # can you load these fonts successfully?
 # make sure you place the QRCode under some temporary directory. not here!
-font_path = "./wqy-microhei0.ttf"
-font_bold_path = "./wqy-microhei1.ttf"
-cover_path = "sample_cover.jpg"
-qrcode_path = "MyQRCode1.png"
-play_button_path = "play_white_b.png"
+font_path = os.path.join(TMP_DIR_PATH,FONT_PATH)
+font_bold_path =  os.path.join(TMP_DIR_PATH,FONT_BOLD_PATH)
+cover_path =  os.path.join(TMP_DIR_PATH,COVER_PATH)
+qrcode_path =  os.path.join(TMP_DIR_PATH,QRCODE_PATH)
+play_button_path =  os.path.join(TMP_DIR_PATH,PLAY_BUTTON_PATH)
 
 # but what about these buttons?
 # just copy these files to temp directory till success!
