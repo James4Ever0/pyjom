@@ -17,16 +17,20 @@ framework_only = False
 # framework_only=True
 ad_width, ad_height = 1000, 1000
 # can you load these fonts successfully?
-# make sure you place the 
+# make sure you place the QRCode under some temporary directory. not here!
 font_path = "./wqy-microhei0.ttf"
 font_bold_path = "./wqy-microhei1.ttf"
 cover_path = "sample_cover.jpg"
 qrcode_path = "MyQRCode1.png"
 play_button_path = "play_white_b.png"
+
+# but what about these buttons?
+# just copy these files to temp directory till success!
+
 # play_button_path = "play_b.png"
 bilibili_logo_path = "bili_white_b_cropped.png"
 
-play_count = comment_count = danmaku_count = "1万"
+play_count = comment_count = danmaku_count = "1万" # fake these numbers.
 # one extra space.
 stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
 qrcode_scan_text = "\n" + "\n".join(list("扫码观看"))
@@ -229,6 +233,6 @@ sub_image_params = (
 )
 standalone_cover_image = image.sub_image(*sub_image_params)
 standalone_cover_image.write_file("ad_2_standalone_cover.png")
-image.write_file("ad_2.png")
+image.write_file("ad_2.png") # make sure you write to desired temp path.
 if framework_only:
     image2.sub_image(*sub_image_params).write_file("ad_2_mask.png")
