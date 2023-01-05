@@ -21,8 +21,8 @@ def getQueryWordFromSignals(signals:list):
 catDogElemDict = {"cat": catSignals, "dog": dogSignals}
 catQueryWord = getQueryWordFromSignals(catSignals)
 dogQueryWord = getQueryWordFromSignals(dogSignals)
-print("DOG QUERY WORD?",dogQueryWord)
-catDogQueryWords = {"cat": catSignals,"dog":dogSignals}
+# print("DOG QUERY WORD?",dogQueryWord)
+catDogQueryWords = {"cat": catQueryWord,"dog":dogQueryWord}
 
 def checkCatOrDog(Content: str):
     # cat? dog? None?
@@ -103,6 +103,7 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     animalTid = bilibiliSearchParams.video.tids.动物圈.tid
     myTids = {"cat":bilibiliSearchParams.video.tids.动物圈.喵星人,"dog":bilibiliSearchParams.video.tids.动物圈.汪星人}
     myTid = myTids[cat_or_dog]
+    queryWord = random.choice("",random.choice()) # you can still have things without query
 
     data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
     if debug:
