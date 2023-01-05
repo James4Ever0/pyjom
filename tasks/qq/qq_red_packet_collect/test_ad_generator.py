@@ -1,4 +1,4 @@
-from ad_template_2_functional import generateBilibiliVideoAd
+from ad_template_2_functional import generateBilibiliVideoAd, getAdLock
 
 videoData = [
     [
@@ -16,9 +16,10 @@ videoData = [
 import cv2
 
 for (bvid, title_text, image_link) in videoData:
-    output_path, output_standalone, output_masked_path = generateBilibiliVideoAd(
-        bvid, title_text, image_link
-    )
-    img = cv2.imread(output_path)
-    cv2.imshow("IMAGE", img)
-    cv2.waitKey(0)
+    with getAdLock():
+        output_path, output_standalone, output_masked_path = generateBilibiliVideoAd(
+            bvid, title_text, image_link
+        )
+        img = cv2.imread(output_path)
+        cv2.imshow("IMAGE", img)
+        cv2.waitKey(0)
