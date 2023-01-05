@@ -28,18 +28,28 @@ def generateFakeVideoStats():
 
 RESOURCE_PATH = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server"
 
+QRCODE_PATH = "MyQRCode1.png"
+
 FONT_PATH = "wqy-microhei0.ttf"
 FONT_BOLD_PATH = "wqy-microhei1.ttf"
 COVER_PATH = "sample_cover.jpg"
-QRCODE_PATH = "MyQRCode1.png"
 PLAY_BUTTON_PATH = "play_white_b.png"
 BILIBILI_LOGO_PATH= "bili_white_b_cropped.png"
+
+RESOURCES_RELATIVE_PATH = [
+FONT_PATH ,
+FONT_BOLD_PATH ,
+COVER_PATH,
+PLAY_BUTTON_PATH,
+BILIBILI_LOGO_PATH]
+
 OUTPUT_STANDALONE = "ad_2_standalone_cover.png"
 OUTPUT_PATH = "ad_2.png"
 OUTPUT_MASKED_PATH = "ad_2_mask.png"
 
 def prepareMaterials(tmpDirPath:str=TMP_DIR_PATH, resourcePath :str= RESOURCE_PATH):
-    ...
+    for path in RESOURCES_RELATIVE_PATH:
+        
 
 def generateVideoAd(
 videoStats = generateFakeVideoStats(),
