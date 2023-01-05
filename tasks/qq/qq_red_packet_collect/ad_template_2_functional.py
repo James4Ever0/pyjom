@@ -416,6 +416,16 @@ def generateVideoAdUniversal(
         image2.sub_image(*sub_image_params).write_file(output_masked_path)
     return output_path, output_standalone, output_masked_path # well, pick up if you want.
 
-def removeQRCodes(image_path:str):
+IMAGE_WITH_QRCODE_PATH = "image_with_qrcode.png"
+OUTPUT_WITH_QRCODE_PATH = "output_with_qrcode.png"
 
-def replaceQRCode(image_path:str,): # remove all detected QRCodes.
+def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH)):
+    # use best method to remove qrcode.
+    return QRCodeCoordinates
+
+def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
+    QRCodeCoordinates = removeQRCodes(image_with_qrcode_path)
+    hasQRCode = len(QRCodeCoordinates) >0
+    if hasQRCode: # put the biggest one there.
+    else:
+        # randomly select one place to insert the shit.
