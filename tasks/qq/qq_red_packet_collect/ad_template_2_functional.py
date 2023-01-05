@@ -415,3 +415,4 @@ def generateVideoAdUniversal(
     if framework_only:
         image2.sub_image(*sub_image_params).write_file(output_masked_path)
     return output_path, output_standalone, output_masked_path # well, pick up if you want.
+
