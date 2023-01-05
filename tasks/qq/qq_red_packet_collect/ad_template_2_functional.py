@@ -47,8 +47,10 @@ play_button_path =  os.path.join(TMP_DIR_PATH,PLAY_BUTTON_PATH)
 # play_button_path = "play_b.png"
 bilibili_logo_path = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH)
 
-10-100w (),100-1000, 500-3000
-play_count = comment_count = danmaku_count = "1万" # fake these numbers.
+import random
+play_count = "{}万".format(random.randint(100,1000)*.1)
+comment_count = random.randint(100,1000)
+danmaku_count = random.randint(500,3000) # fake these numbers.
 # one extra space.
 stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
 qrcode_scan_text = "\n" + "\n".join(list("扫码观看"))
