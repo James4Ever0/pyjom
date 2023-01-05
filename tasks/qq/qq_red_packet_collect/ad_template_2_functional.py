@@ -11,6 +11,10 @@ def getImageW2H(image_path):
     w2h = width / height
     return w2h
 
+TMP_DIR_PATH = "/dev/shm/qq_ad"
+
+def prepareMaterials(tmpDirPath=TMP_DIR_PATH):
+    ...
 
 night_mode = True
 framework_only = False
