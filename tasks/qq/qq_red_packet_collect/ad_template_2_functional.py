@@ -190,11 +190,11 @@ def generateBilibiliVideoAd(bvid:str,title_text:str,image_link:str,cover_path: s
         c = r.content
         f.write(c)
     generateQRCodeFromBVID(bvid)
-    return generateVideoAdUniversal(title_text=title_text,cover_path=cover_path)
+    return generateVideoAdUniversal(videoStats = generateFakeVideoStats(),title_text=title_text,cover_path=cover_path)
 
 # you must have some lock outside while using this.
 def generateVideoAdUniversal(
-    videoStats=generateFakeVideoStats(), # will it work?
+    videoStats=None, # will it work?
     night_mode: bool = True,
     title_text: str = "",
     framework_only: bool = False,
@@ -212,6 +212,7 @@ def generateVideoAdUniversal(
 ):
     # fake these numbers.
     # one extra space.
+    assert videoStats is not None
     play_count, comment_count, danmaku_count = videoStats
     assert title_text != ""
     stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
