@@ -131,11 +131,11 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     if debug:
         print("RESPONSES?")
         rich.print(responses)
-    return responses
+    return responses # select one such response.
 
 def generateAdFromVideoInfo(videoInfo):
     # selected video info.
-    bvid, pic,
+    bvid, pic, title = videoInfo['bvid'], videoInfo['pic'], videoInfo['title']
 
 from botoy import Action
 def sendCatOrDogAd(group_id:str, cat_or_dog:str,action:Action):
