@@ -1,19 +1,32 @@
-    catSignals = ["喵喵", "猫", "猫咪", "喵"]
+catSignals = ["喵喵", "猫", "猫咪", "喵"]
 
-    dogSignals = [
-        "狗狗",
-        "狗",
-        "汪汪",
-        "修勾",
-        "汪",
-        "狗子",
-    ]
+dogSignals = [
+    "狗狗",
+    "狗",
+    "汪汪",
+    "修勾",
+    "汪",
+    "狗子",
+]
+
+def getQueryWordFromSignals(signals:list):
+    msignals = signals.copy()
+    msignals.sort(key=lambda x: len(x))
+    response = []
+    for s in msignals:
+        if s not in " ".join(response):
+            response.append(s)
+    return " ".join(response)
+
+catDogElemDict = {"cat": catSignals, "dog": dogSignals}
+catQueryWord = getQueryWordFromSignals(catSignals)
+dogQueryWord = getQueryWordFromSignals(dogSignals)
+catDogQueryWords = {"cat": catSignals,"dog":dogSignals}
+
 def checkCatOrDog(Content: str):
     # cat? dog? None?
 
-    dogSignals = []
-    elemDict = {"cat": catSignals, "dog": dogSignals}
-    for key, elems in elemDict.items():
+    for key, elems in catDogElemDict.items():
         for elem in elems:
             if elem in Content.lower():
                 return key
@@ -72,22 +85,21 @@ BILIBILI_RECOMMENDATION_SERVER_PORT = 7341
 waitForServerUp(BILIBILI_RECOMMENDATION_SERVER_PORT,"bilibili recommendation server")
 
 import requests
-
+import random
 from bilibili_api.search import bilibiliSearchParams
 
 def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT)):
     # how do we get one? by label? by category? by name?
     url = server+"/searchUserVideos"
-catSignals = ["喵喵", "猫", "猫咪", "喵"]
 
-    dogSignals = [
-        "狗狗",
-        "狗",
-        "汪汪",
-        "修勾",
-        "汪",
-        "狗子",
-    ]
+    queryWord = catDogQueryWords.get(cat_or_dog,None)
+    try:
+        assert queryWord is not None
+    except Exception as e:
+        print("Could not find topic with keyword:",cat_or_dog)
+        raise e
+    data = {"":queryWord,"tid":random.choice()}
+
     r = requests.post(url,data=data)
     response = r.json()
     print("RESPONSE?",response)
