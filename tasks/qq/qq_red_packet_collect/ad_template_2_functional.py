@@ -26,6 +26,9 @@ COVER_PATH = "sample_cover.jpg"
 QRCODE_PATH = "MyQRCode1.png"
 PLAY_BUTTON_PATH = "play_white_b.png"
 BILIBILI_LOGO_PATH= "bili_white_b_cropped.png"
+OUTPUT_STANDALONE = "ad_2_standalone_cover.png"
+OUTPUT_PATH = "ad_2.png"
+OUTPUT_MASKED_PATH = "ad_2_mask.png"
 def prepareMaterials(tmpDirPath=TMP_DIR_PATH, resourcePath = RESOURCE_PATH):
     ...
 
@@ -35,11 +38,14 @@ framework_only = False
 ad_width, ad_height = 1000, 1000
 # can you load these fonts successfully?
 # make sure you place the QRCode under some temporary directory. not here!
+
 font_path = os.path.join(TMP_DIR_PATH,FONT_PATH)
-font_bold_path =  os.path.join(TMP_DIR_PATH,FONT_BOLD_PATH)
-cover_path =  os.path.join(TMP_DIR_PATH,COVER_PATH)
-qrcode_path =  os.path.join(TMP_DIR_PATH,QRCODE_PATH)
-play_button_path =  os.path.join(TMP_DIR_PATH,PLAY_BUTTON_PATH)
+font_bold_path = os.path.join(TMP_DIR_PATH,FONT_BOLD_PATH)
+cover_path = os.path.join(TMP_DIR_PATH,COVER_PATH)
+qrcode_path = os.path.join(TMP_DIR_PATH,QRCODE_PATH)
+play_button_path = os.path.join(TMP_DIR_PATH,PLAY_BUTTON_PATH)
+output_path = os.path.join(TMP_DIR_PATH,OUTPUT_PATH)
+output_standalone_path = os.path.join(TMP_DIR_PATH,OUTPUT_STANDALONE_PATH)
 
 # but what about these buttons?
 # just copy these files to temp directory till success!
@@ -48,13 +54,15 @@ play_button_path =  os.path.join(TMP_DIR_PATH,PLAY_BUTTON_PATH)
 bilibili_logo_path = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH)
 
 import random
+
 play_count = "{}万".format(random.randint(100,1000)*.1)
 comment_count = random.randint(100,1000)
 danmaku_count = random.randint(500,3000) # fake these numbers.
 # one extra space.
+
 stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
 qrcode_scan_text = "\n" + "\n".join(list("扫码观看"))
-title_text = "真·朋克！揭秘《赛博朋克2077》屏幕之外的魔幻换弹操作"
+title_text = "" # no you replace this shit.
 white = pixie.Color(1, 1, 1, 1)
 black = pixie.Color(0, 0, 0, 1)
 image = pixie.Image(ad_width, ad_height)
@@ -252,7 +260,7 @@ sub_image_params = (
     cover_height + 2 * delta,
 )
 standalone_cover_image = image.sub_image(*sub_image_params)
-standalone_cover_image.write_file("ad_2_standalone_cover.png")
-image.write_file("ad_2.png") # make sure you write to desired temp path.
+standalone_cover_image.write_file(output_standalone)
+image.write_file(output_path) # make sure you write to desired temp path.
 if framework_only:
-    image2.sub_image(*sub_image_params).write_file("ad_2_mask.png")
+    image2.sub_image(*sub_image_params).write_file(output_masked_path)
