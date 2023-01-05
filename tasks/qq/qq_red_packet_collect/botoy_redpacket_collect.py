@@ -248,6 +248,13 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     data_dict = ctx.data  # recommend to use this json object. or not?
     groupName = data_dict.get("FromGroupName", None)
     group_id = data_dict["FromGroupId"]
+
+    # decrease that ad counter.
+    adCounter = adBuffer.get(str(group_id),0)
+    if adCounter>0:
+        adCounter-=1
+    adBuffer[str(group_id)] = adCounter
+
     if groupName is not None:
         updateGroupNameDict(groupName, group_id)
     sender_id = data_dict["FromUserId"]
@@ -307,9 +314,13 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                         makeCatOrDogConnections(str(group_id), str(sender_id), cat_or_dog)
                         # act accordingly. decide to send ad or not.
                         if adBuffer.get(str(group_id),0)<=0:
-                            adBuffer[str(group_id)]=50
+                            penalty = 10
                             # send the ad.
-                            sendCatOrDogAd(str(group_id), cat_or_dog,action)
+                            success = sendCatOrDogAd(str(group_id), cat_or_dog,action)
+                            if success:
+                                penalty+=40
+                            adBuffer[str(group_id)]=penalty
+                        # decrease that counter by standard group messages.
                     updateChatStack(group_id, Content)
                     # or we could simply add the filter on the reply side.
 
