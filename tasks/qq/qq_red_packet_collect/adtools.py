@@ -21,6 +21,7 @@ def getQueryWordFromSignals(signals:list):
 catDogElemDict = {"cat": catSignals, "dog": dogSignals}
 catQueryWord = getQueryWordFromSignals(catSignals)
 dogQueryWord = getQueryWordFromSignals(dogSignals)
+print("DOG QUERY WORD?",dogQueryWord)
 catDogQueryWords = {"cat": catSignals,"dog":dogSignals}
 
 def checkCatOrDog(Content: str):
@@ -107,7 +108,7 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     if debug:
         print("POSTING DATA:",data)
 
-    r = requests.post(url,data=data)
+    r = requests.post(url,json=data)
     response = r.json()
     if debug:
         print("RESPONSE?",response)
