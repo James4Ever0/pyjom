@@ -82,7 +82,8 @@ def prepareMaterials(tmpDirPath: str = TMP_DIR_PATH, resourcePath: str = RESOURC
 
 def generateBilibiliShortLink(videoLink: str): # get bilibili user email address by asking them from chat. if they give the email address, send setu as gift.
     url = "https://api.bilibili.com/x/share/click"
-    burl = "https://www.bilibili.com/read/cv19232041" # my article with e-begging
+    # burl = "https://www.bilibili.com/read/cv19232041" # my article with e-begging
+    burl = videoLink
     data = {
         "build": 6700300,
             "buvid": 0,
