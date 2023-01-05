@@ -425,7 +425,7 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
 
 def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
     QRCodeCoordinates = removeQRCodes(image_with_qrcode_path)
-    hasQRCode = len(QRCodeCoordinates) >0
+    hasQRCode = len(QRCodeCoordinates) > 0
     if hasQRCode: # put the biggest one there.
     else:
         # randomly select one place to insert the shit.
