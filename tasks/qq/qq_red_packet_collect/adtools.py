@@ -101,12 +101,14 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     #     print("Could not find topic with keyword:",cat_or_dog)
     #     raise e
     
-    animalTid = bilibiliSearchParams.video.tids.动物圈.tid
+    # animalTid = bilibiliSearchParams.video.tids.动物圈.tid
     myTids = {"cat":bilibiliSearchParams.video.tids.动物圈.喵星人,"dog":bilibiliSearchParams.video.tids.动物圈.汪星人}
     myTid = myTids[cat_or_dog]
-    queryWord = random.choice(["",random.choice(queryWords)]) # you can still have things without query
+    # queryWord = random.choice(["",random.choice(queryWords)]) # you can still have things without query
+    queryWord = ""
 
-    data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
+    # data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
+    data = {"query":queryWord,"tid":0,}
     if debug:
         print("POSTING DATA:",data)
 
