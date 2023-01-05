@@ -77,7 +77,7 @@ import progressbar
 def prepareMaterials(tmpDirPath: str = TMP_DIR_PATH, resourcePath: str = RESOURCE_PATH):
     print("Preparing materials...")
     for path in progressbar.progressbar(RESOURCES_RELATIVE_PATH):
-        shutil.copy(os.path.join(tmpDirPath, path), os.path.join(resourcePath, path))
+        shutil.copy( os.path.join(resourcePath, path),os.path.join(tmpDirPath, path))
 
 prepareMaterials()
 
