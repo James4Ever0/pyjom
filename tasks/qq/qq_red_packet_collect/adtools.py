@@ -32,19 +32,26 @@ def getNeo4jDriver(address="neo4j://localhost:7687",username="neo4j", password="
     return driver
 
 from pypher import Pypher
-def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:bool=False): # whatever.
+
+def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:bool=False, delete:bool=False): # whatever.
     # Create a new Pypher object
     with getNeo4jDriver().session() as session:
         p = Pypher()
+        if delete:
+
+            p.MATCH.node('n1',labels='qq_group', group_id=group_id).DETACHDELETE
+            p.MATCH.node('n2',labels ='qq_user', user_id=sender_id).DETACHDELETE
+            p.MATCH.node('n3',labels ='ad_keyword', keyword=cat_or_dog).DETACHDELETE
 
         # Use the MERGE clause to create the nodes if they do not already exist
-        p.MERGE.node('n1',labels='qq_group', group_id=group_id)
-        p.MERGE.node('n2',labels ='qq_user', user_id=sender_id)
-        p.MERGE.node('n3',labels ='ad_keyword', keyword=cat_or_dog)
+        else:
+            p.MERGE.node('n1',labels='qq_group', group_id=group_id)
+            p.MERGE.node('n2',labels ='qq_user', user_id=sender_id)
+            p.MERGE.node('n3',labels ='ad_keyword', keyword=cat_or_dog)
 
-        # Use the MERGE clause to create the relationship between the nodes if it does not already exist
-        p.MERGE.node('n1').rel_out('r', labels='includes').node('n2')
-        p.MERGE.node('n2').rel_out('r1', labels='talks_of').node('n3')
+            # Use the MERGE clause to create the relationship between the nodes if it does not already exist
+            p.MERGE.node('n1').rel_out('r', labels='includes').node('n2')
+            p.MERGE.node('n2').rel_out('r1', labels='talks_of').node('n3')
 
         # Generate the Cypher query string
         query = str(p)
