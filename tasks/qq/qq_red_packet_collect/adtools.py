@@ -88,7 +88,7 @@ import requests
 import random
 from bilibili_api.search import bilibiliSearchParams
 
-def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT)):
+def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT),debug:bool=False):
     # how do we get one? by label? by category? by name?
     url = server+"/searchUserVideos"
 
@@ -98,14 +98,18 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     except Exception as e:
         print("Could not find topic with keyword:",cat_or_dog)
         raise e
+    
     animalTid = bilibiliSearchParams.video.tids.动物圈.tid
     myTids = {"cat":bilibiliSearchParams.video.tids.动物圈.喵星人,"dog":bilibiliSearchParams.video.tids.动物圈.汪星人}
     myTid = myTids[cat_or_dog]
-    data = {"":queryWord,"tid":random.choice([0,animalTid, myTid])}
+
+    data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
+    
 
     r = requests.post(url,data=data)
     response = r.json()
-    print("RESPONSE?",response)
+    if debug:
+        print("RESPONSE?",response)
 
 from botoy import Action
 def sendCatOrDogAd(group_id:str, cat_or_dog:str,action:Action):
