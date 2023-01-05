@@ -79,6 +79,8 @@ def prepareMaterials(tmpDirPath: str = TMP_DIR_PATH, resourcePath: str = RESOURC
     for path in progressbar.progressbar(RESOURCES_RELATIVE_PATH):
         shutil.copy(os.path.join(tmpDirPath, path), os.path.join(resourcePath, path))
 
+prepareMaterials()
+
 def generateBilibiliShortLinkMethod2(videoLink: str):
 
     apiUrl = "https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/short_url"
@@ -176,11 +178,14 @@ def makeQRCode(content: str, savePath: str):
     makeAndSaveQrcode(data, save_path)
 
 
-def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = ...):
+def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = os.path.join(TMP_DIR_PATH, QRCODE_PATH)):
     videoLink = "https://www.bilibili.com/video/{}".format(bvid)
     shortLink = generateBilibiliShortLink(videoLink)
     makeQRCode(shortLink, qrCodeSavePath)
 
+def generateBilibiliVideoAd(bvid:str,title_text:str):
+    generateQRCodeFromBVID(bvid)
+    generateVideoAdUniversal(title_text=title_text)
 
 # you must have some lock outside while using this.
 def generateVideoAdUniversal(
