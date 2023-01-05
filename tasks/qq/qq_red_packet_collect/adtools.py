@@ -109,7 +109,7 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     # queryWord = {"cat":'猫',"dog":'狗'}[cat_or_dog]
 
     # data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
-    data = {"query":queryWord,"tid":animalTid,'offline':True}
+    data = {"query":queryWord,"tid":animalTid,'method':'bm25'}
     if debug:
         print("POSTING DATA:",data)
 
