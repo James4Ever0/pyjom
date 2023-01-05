@@ -40,19 +40,19 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:b
         # Use the MERGE clause to create the nodes if they do not already exist
         p.MERGE.node('n1',labels='qq_group', group_id=group_id)
         p.MERGE.node('n2',labels ='qq_user', user_id=sender_id)
-        # p.MERGE.node('n3',labels ='ad_keyword', keyword=cat_or_dog)
+        p.MERGE.node('n3',labels ='ad_keyword', keyword=cat_or_dog)
 
         # Use the MERGE clause to create the relationship between the nodes if it does not already exist
         p.MERGE.node('n1').rel_out('r', labels='includes').node('n2')
-        # p.MERGE.node('n2').rel_out('r1', labels='talks_of').node('n3')
+        p.MERGE.node('n2').rel_out('r1', labels='talks_of').node('n3')
 
         # Generate the Cypher query string
-        query = p.statement
+        query = str(p)
         if debug:
             print("QUERY?", query)
             print("QUERY TYPE?", type(query))
             # how to roll back?
         # Execute the query using the Neo4j driver
-        result = session.run(str(query), parameters=p.bound_params)
+        result = session.run(query, parameters=p.bound_params)
         if debug:
             print("RESULT?", result)
