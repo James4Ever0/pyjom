@@ -183,9 +183,14 @@ def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = os.path.join(TMP_DIR
     shortLink = generateBilibiliShortLink(videoLink)
     makeQRCode(shortLink, qrCodeSavePath)
 
-def generateBilibiliVideoAd(bvid:str,title_text:str):
+def generateBilibiliVideoAd(bvid:str,title_text:str,image_link:str,cover_path: str = os.path.join(TMP_DIR_PATH, COVER_PATH)):
+    import requests
+    r = requests.get(image_link)
+    with open(cover_path,'wb') as f:
+        c = r.content
+        f.write(c)
     generateQRCodeFromBVID(bvid)
-    return generateVideoAdUniversal(title_text=title_text)
+    return generateVideoAdUniversal(title_text=title_text,cover_path=cover_path)
 
 # you must have some lock outside while using this.
 def generateVideoAdUniversal(
