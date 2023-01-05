@@ -11,20 +11,25 @@ def getImageW2H(image_path):
     w2h = width / height
     return w2h
 
+
 TMP_DIR_PATH = "/dev/shm/qq_ad"
 import shutil
 import os
+
 if os.path.exists(TMP_DIR_PATH):
     shutil.rmtree(TMP_DIR_PATH)
 os.mkdir(TMP_DIR_PATH)
 
 import random
 
+
 def generateFakeVideoStats():
-    play_count = "{}万".format(random.randint(100,1000)*.1) # anyway both int and str are compatible
-    comment_count = random.randint(100,1000)
-    danmaku_count = random.randint(500,3000)
-    return play_count, comment_count,danmaku_count
+    play_count = "{}万".format(
+        random.randint(100, 1000) * 0.1
+    )  # anyway both int and str are compatible
+    comment_count = random.randint(100, 1000)
+    danmaku_count = random.randint(500, 3000)
+    return play_count, comment_count, danmaku_count
 
 
 RESOURCE_PATH = "/root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server"
@@ -35,69 +40,81 @@ FONT_PATH = "wqy-microhei0.ttf"
 FONT_BOLD_PATH = "wqy-microhei1.ttf"
 COVER_PATH = "sample_cover.jpg"
 PLAY_BUTTON_PATH = "play_white_b.png"
-BILIBILI_LOGO_PATH= "bili_white_b_cropped.png"
+BILIBILI_LOGO_PATH = "bili_white_b_cropped.png"
 
 AD_LOCK = "ad_lock.lock"
 import filelock
 
-def getAdLock(lockPath:str = os.path.join(TMP_DIR_PATH,AD_LOCK)):
+
+def getAdLock(lockPath: str = os.path.join(TMP_DIR_PATH, AD_LOCK)):
     return filelock.FileLock(lockPath)
 
+
+# use this decorator outside. not here. not any function written in here.
 def withAdLock(func):
-    def innerFunc(*args,**kwargs):
+    def innerFunc(*args, **kwargs):
         with getAdLock():
-            return func(*args,**kwargs)
+            return func(*args, **kwargs)
+
     return innerFunc
 
+
 RESOURCES_RELATIVE_PATH = [
-FONT_PATH ,
-FONT_BOLD_PATH ,
-COVER_PATH,
-PLAY_BUTTON_PATH,
-BILIBILI_LOGO_PATH]
+    FONT_PATH,
+    FONT_BOLD_PATH,
+    COVER_PATH,
+    PLAY_BUTTON_PATH,
+    BILIBILI_LOGO_PATH,
+]
 
 OUTPUT_STANDALONE = "ad_2_standalone_cover.png"
 OUTPUT_PATH = "ad_2.png"
 OUTPUT_MASKED_PATH = "ad_2_mask.png"
+
 import progressbar
-def prepareMaterials(tmpDirPath:str=TMP_DIR_PATH, resourcePath :str= RESOURCE_PATH):
+
+
+def prepareMaterials(tmpDirPath: str = TMP_DIR_PATH, resourcePath: str = RESOURCE_PATH):
     print("Preparing materials...")
     for path in progressbar.progressbar(RESOURCES_RELATIVE_PATH):
-        shutil.copy(os.path.join(tmpDirPath,path),os.path.join(resourcePath,path))
+        shutil.copy(os.path.join(tmpDirPath, path), os.path.join(resourcePath, path))
 
 
-def generateBilibiliShortLink(videoLink:str):
+def generateBilibiliShortLink(videoLink: str):
     ...
 
-def makeQRCode(content:str, savePath:str):
+
+def makeQRCode(content: str, savePath: str):
     ...
 
-def generateQRCodeFromBVID(bvid:str,qrCodeSavePath:str=...):
+
+def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = ...):
     videoLink = "https://www.bilibili.com/video/{}".format(bvid)
     shortLink = generateBilibiliShortLink(videoLink)
     makeQRCode(shortLink, qrCodeSavePath)
 
+
 # you must have some lock.
 def generateVideoAdUniversal(
-videoStats = generateFakeVideoStats(),
-night_mode :bool= True,
-title_text:str = "",
-framework_only :bool= False,
-ad_width:int=1000,
-ad_height:int=1000,
-font_path :str= os.path.join(TMP_DIR_PATH,FONT_PATH),
-font_bold_path :str= os.path.join(TMP_DIR_PATH,FONT_BOLD_PATH),
-cover_path:str = os.path.join(TMP_DIR_PATH,COVER_PATH),
-qrcode_path :str= os.path.join(TMP_DIR_PATH,QRCODE_PATH),
-play_button_path :str= os.path.join(TMP_DIR_PATH,PLAY_BUTTON_PATH),
-output_path:str = os.path.join(TMP_DIR_PATH,OUTPUT_PATH),
-output_standalone :str= os.path.join(TMP_DIR_PATH,OUTPUT_STANDALONE),
-output_masked_path:str= os.path.join(TMP_DIR_PATH,OUTPUT_MASKED_PATH),
-bilibili_logo_path:str = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH),
-    ):
+    videoStats=generateFakeVideoStats(),
+    night_mode: bool = True,
+    title_text: str = "",
+    framework_only: bool = False,
+    ad_width: int = 1000,
+    ad_height: int = 1000,
+    font_path: str = os.path.join(TMP_DIR_PATH, FONT_PATH),
+    font_bold_path: str = os.path.join(TMP_DIR_PATH, FONT_BOLD_PATH),
+    cover_path: str = os.path.join(TMP_DIR_PATH, COVER_PATH),
+    qrcode_path: str = os.path.join(TMP_DIR_PATH, QRCODE_PATH),
+    play_button_path: str = os.path.join(TMP_DIR_PATH, PLAY_BUTTON_PATH),
+    output_path: str = os.path.join(TMP_DIR_PATH, OUTPUT_PATH),
+    output_standalone: str = os.path.join(TMP_DIR_PATH, OUTPUT_STANDALONE),
+    output_masked_path: str = os.path.join(TMP_DIR_PATH, OUTPUT_MASKED_PATH),
+    bilibili_logo_path: str = os.path.join(TMP_DIR_PATH, BILIBILI_LOGO_PATH),
+):
     # fake these numbers.
     # one extra space.
-    play_count, comment_count,danmaku_count = videoStats
+    play_count, comment_count, danmaku_count = videoStats
     assert title_text != ""
     stats_text = " {}播放 {}评论 {}弹幕".format(play_count, comment_count, danmaku_count)
     qrcode_scan_text = "\n" + "\n".join(list("扫码观看"))
@@ -155,13 +172,11 @@ bilibili_logo_path:str = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH),
     # path = cover_mask_path
     # cover.fill_path(cover_mask_path, gradient_paint)
 
-
     cover_mask = pixie.Mask(cover_width, cover_height)
 
     cover_mask.fill_path(cover_mask_path)
 
     cover.mask_draw(cover_mask)
-
 
     cover_transform_width = cover_transform_height = int((ad_width - cover_width) / 2)
     cover_transform = pixie.translate(cover_transform_width, cover_transform_height)
@@ -231,7 +246,6 @@ bilibili_logo_path:str = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH),
     qrcode_width = qrcode_height = int(0.3 * ad_width)
     qrcode = qrcode.resize(qrcode_width, qrcode_height)
 
-
     font = pixie.read_font(font_path)
     font.size = int(ad_width * 0.04)
     if night_mode:
@@ -240,7 +254,8 @@ bilibili_logo_path:str = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH),
         font.paint.color = pixie.Color(0, 0, 0, 1)
     qrcode_scan_text_transform_x = int(ad_width - qrcode_width * 1.1 - font.size * 1)
     qrcode_scan_text_transform = pixie.translate(
-        qrcode_scan_text_transform_x + qrcode_width, int(ad_height - qrcode_height * 1.1)
+        qrcode_scan_text_transform_x + qrcode_width,
+        int(ad_height - qrcode_height * 1.1),
     )
     image.fill_text(font, qrcode_scan_text, transform=qrcode_scan_text_transform)
 
@@ -248,7 +263,6 @@ bilibili_logo_path:str = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH),
         int(ad_width - qrcode_width * 1.1 - font.size * 1.2),
         int(ad_height - qrcode_height * 1.1),
     )
-
 
     qrcode_rounded_corner = int(0.05 * ad_width)
     qrcode_stroke_path = pixie.Path()
@@ -267,7 +281,6 @@ bilibili_logo_path:str = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH),
     qrcode.mask_draw(qrcode_mask)
 
     image.draw(qrcode, qrcode_transform)
-
 
     # now for the title
 
@@ -299,6 +312,7 @@ bilibili_logo_path:str = os.path.join(TMP_DIR_PATH,BILIBILI_LOGO_PATH),
     )
     standalone_cover_image = image.sub_image(*sub_image_params)
     standalone_cover_image.write_file(output_standalone)
-    image.write_file(output_path) # make sure you write to desired temp path.
+    image.write_file(output_path)  # make sure you write to desired temp path.
     if framework_only:
         image2.sub_image(*sub_image_params).write_file(output_masked_path)
+    return output_path, output_standalone, output_masked_path # well, pick up if you want.
