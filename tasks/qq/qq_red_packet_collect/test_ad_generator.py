@@ -1,0 +1,3 @@
+from ad_template_2_functional import generateVideoAdUniversal
+
+generateVideoAdUniversal()

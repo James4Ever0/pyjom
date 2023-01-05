@@ -117,6 +117,7 @@ def generateBilibiliShortLinkMethod2(videoLink: str):
         if success:
             short_url = r_json.get('short_url', None)
             print(short_url)
+            return short_url
     # starts with 'https://b23.tv'
 
 def generateBilibiliShortLinkMethod1(videoLink: str): # get bilibili user email address by asking them from chat. if they give the email address, send setu as gift. for other users, you may improvise. send video link, recommendations
@@ -160,7 +161,19 @@ def generateBilibiliShortLink(videoLink:str):
 
 
 def makeQRCode(content: str, savePath: str):
-    ...
+    # Importing library
+    import qrcode
+
+    # Encoding data using make() function
+    def makeAndSaveQrcode(data, save_path, debug=False):
+        img = qrcode.make(data)
+        if debug:
+            print("image type:", type(img))
+        img.save(save_path)
+
+    data=content
+    save_path = savePath
+    makeAndSaveQrcode(data, save_path)
 
 
 def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = ...):
@@ -171,7 +184,7 @@ def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = ...):
 
 # you must have some lock outside while using this.
 def generateVideoAdUniversal(
-    videoStats=generateFakeVideoStats(),
+    videoStats=generateFakeVideoStats(), # will it work?
     night_mode: bool = True,
     title_text: str = "",
     framework_only: bool = False,
