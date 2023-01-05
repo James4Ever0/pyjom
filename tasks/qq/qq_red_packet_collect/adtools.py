@@ -1,6 +1,3 @@
-
-def checkCatOrDog(Content: str):
-    # cat? dog? None?
     catSignals = ["喵喵", "猫", "猫咪", "喵"]
 
     dogSignals = [
@@ -11,6 +8,9 @@ def checkCatOrDog(Content: str):
         "汪",
         "狗子",
     ]
+def checkCatOrDog(Content: str):
+    # cat? dog? None?
+
     dogSignals = []
     elemDict = {"cat": catSignals, "dog": dogSignals}
     for key, elems in elemDict.items():
@@ -73,11 +73,21 @@ waitForServerUp(BILIBILI_RECOMMENDATION_SERVER_PORT,"bilibili recommendation ser
 
 import requests
 
-from bilibili_api.utils import 
+from bilibili_api.search import bilibiliSearchParams
+
 def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT)):
     # how do we get one? by label? by category? by name?
     url = server+"/searchUserVideos"
-    data = {"tid":}
+catSignals = ["喵喵", "猫", "猫咪", "喵"]
+
+    dogSignals = [
+        "狗狗",
+        "狗",
+        "汪汪",
+        "修勾",
+        "汪",
+        "狗子",
+    ]
     r = requests.post(url,data=data)
     response = r.json()
     print("RESPONSE?",response)
