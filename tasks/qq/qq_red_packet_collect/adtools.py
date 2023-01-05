@@ -38,8 +38,8 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str): # what
         p = Pypher()
 
         # Use the MERGE clause to create the nodes if they do not already exist
-        p.MERGE.node('n1').properties(name='Node 1')
-        p.MERGE.node('n2').properties(name='Node 2')
+        p.MERGE.node('n1',labels='qq_group', group_id=group_id)
+        p.MERGE.node('n2',labels = 'qq_user', user_id=sender_id)
 
         # Use the MERGE clause to create the relationship between the nodes if it does not already exist
         p.MERGE.node('n1').relationship('r').node('n2')
