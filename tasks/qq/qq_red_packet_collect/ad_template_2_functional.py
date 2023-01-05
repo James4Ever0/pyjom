@@ -12,8 +12,13 @@ def getImageW2H(image_path):
     return w2h
 
 TMP_DIR_PATH = "/dev/shm/qq_ad"
+import shutil
+import os
+if os.path.exists(TMP_DIR_PATH):
+    shutil.rmtree(TMP_DIR_PATH)
+os.mkdir(TMP_DIR_PATH)
 
-def prepareMaterials(tmpDirPath=TMP_DIR_PATH):
+def prepareMaterials(tmpDirPath=TMP_DIR_PATH, resourcePath = RESOURCE_PATH):
     ...
 
 night_mode = True
