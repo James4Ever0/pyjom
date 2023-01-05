@@ -22,8 +22,8 @@ def checkCatOrDog(Content: str):
 # pip3 install neo4j
 from functools import lru_cache
 
-# @lru_cache(maxsize=1)
-def getNeo4jDriver(address="neo4j://localhost:7687",username="neo4j", password="password",debug=False):
+@lru_cache(maxsize=1)
+def getNeo4jDriver(address="neo4j://localhost:7687",username="neo4j", password="kali",debug=False): # so we bruteforced it. thanks to chatgpt.
     from neo4j import GraphDatabase
     driver = GraphDatabase.driver(address,
                                 auth=(username,password))
