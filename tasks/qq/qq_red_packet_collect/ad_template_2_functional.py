@@ -94,7 +94,7 @@ def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = ...):
     makeQRCode(shortLink, qrCodeSavePath)
 
 
-# you must have some lock.
+# you must have some lock outside while using this.
 def generateVideoAdUniversal(
     videoStats=generateFakeVideoStats(),
     night_mode: bool = True,
