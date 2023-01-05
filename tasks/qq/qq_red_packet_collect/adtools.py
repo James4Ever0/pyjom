@@ -52,6 +52,6 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:b
             print("QUERY?", query)
             # how to roll back?
         # Execute the query using the Neo4j driver
-        result = session.run(query)
+        result = session.run(query, parameters=)
         if debug:
             print("RESULT?", result)
