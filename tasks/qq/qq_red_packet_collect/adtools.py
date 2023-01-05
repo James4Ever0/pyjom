@@ -1,3 +1,4 @@
+
 def checkCatOrDog(Content: str):
     # cat? dog? None?
     catSignals = ["喵喵", "猫", "猫咪", "喵"]
@@ -64,8 +65,14 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:b
         if debug:
             print("RESULT?", result)
 
+from lazero.network.checker import waitForServerUp
+
+BILIBILI_RECOMMENDATION_SERVER_PORT = 7341
+
+waitForServerUp(BILIBILI_RECOMMENDATION_SERVER_PORT,"bilibili recommendation server")
+
 import requests
-def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:"):
+def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT)):
     # how do we get one? by label? by category? by name?
     ...
 
