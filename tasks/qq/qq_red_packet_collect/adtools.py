@@ -104,12 +104,14 @@ def getCatOrDogAd(cat_or_dog:str,server:str = "http://localhost:{}".format(BILIB
     myTid = myTids[cat_or_dog]
 
     data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
-    
+    if debug:
+        print("POSTING DATA:",data)
 
     r = requests.post(url,data=data)
     response = r.json()
     if debug:
         print("RESPONSE?",response)
+    return response
 
 from botoy import Action
 def sendCatOrDogAd(group_id:str, cat_or_dog:str,action:Action):
