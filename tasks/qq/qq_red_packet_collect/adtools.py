@@ -32,15 +32,15 @@ def getNeo4jDriver(address="neo4j://localhost:7687",username="neo4j", password="
     return driver
 
 from pypher import Pypher
-def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str): # whatever.
+def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str, debug:bool=False): # whatever.
     # Create a new Pypher object
     with getNeo4jDriver().session() as session:
         p = Pypher()
 
         # Use the MERGE clause to create the nodes if they do not already exist
         p.MERGE.node('n1',labels='qq_group', group_id=group_id)
-        p.MERGE.node('n2',labels = 'qq_user', user_id=sender_id)
-        p.MERGE.node('n3',labels = 'ad_keyword', keyword=cat_or_dog)
+        p.MERGE.node('n2',labels ='qq_user', user_id=sender_id)
+        p.MERGE.node('n3',labels ='ad_keyword', keyword=cat_or_dog)
 
         # Use the MERGE clause to create the relationship between the nodes if it does not already exist
         p.MERGE.node('n1').rel_out('r', labels='includes').node('n2')
@@ -48,7 +48,10 @@ def makeCatOrDogConnections(group_id:str, sender_id:str, cat_or_dog:str): # what
 
         # Generate the Cypher query string
         query = p.statement
-        print("QUERY?", query)
-
+        if debug:
+            print("QUERY?", query)
+            # how to roll back?
         # Execute the query using the Neo4j driver
-        # result = session.run(query)
+        result = session.run(query)
+        if debug:
+            print("RESULT?", result)
