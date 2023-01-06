@@ -519,7 +519,13 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
             QRHeight = int(QRSize)
         startingPoint = [random.randint(0,math.floor(width-QRWidth)),random.randint(0,math.floor(height-QRHeight))]
         angle, center = 0, [startingPoint[0]+int(QRWidth/2),startingPoint[1]+int(QRHeight/2)]
-        biggest_polygon = np.array([startingPoint, startingPoint[0], startingPoint[1]+])
+        biggest_polygon = np.array([
+            startingPoint, 
+            [startingPoint[0], startingPoint[1]+QRHeight],
+            [startingPoint[0]+QRWidth, startingPoint[1]+QRHeight],
+            [startingPoint[0]+QRWidth, startingPoint[1]],
+        ]
+            )
         cv2.fillPoly(img, [biggest_polygon],(0,0,0))
 
     QRImage = cv2.resize(QRImage,(QRWidth,QRHeight),interpolation=cv2.INTER_LINEAR)
