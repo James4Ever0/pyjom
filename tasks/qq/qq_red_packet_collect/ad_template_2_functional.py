@@ -421,6 +421,7 @@ OUTPUT_WITH_QRCODE_PATH = "output_with_qrcode.png"
 
 def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH)):
     # use best method to remove qrcode.
+    
     return QRCodeCoordinates
 
 def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
