@@ -469,7 +469,8 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
         inpainted_im = img
     return QRCodeCoordinates, inpainted_im
 
-def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
+def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),qrcode_path:str=os.path.join(TMP_DIR_PATH,),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
+    QRImage = cv2.imread()
     import math
 
     def get_rotation_angle_and_center(p1, p2, p3, p4):
@@ -499,7 +500,9 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     if hasQRCode: # put the biggest one there.
         QRCodeCoordinates.sort(key=lambda x: -Polygon(x.tolist()).area)
         biggest_polygon = QRCodeCoordinates[0]
-        angle, center = get_rotation_angle_and_center(biggest_polygon)
+        angle, center = get_rotation_angle_and_center(*biggest_polygon.tolist()) # will fail?
     else:
         # randomly select one place to insert the shit.
-        ...
+        height, width= img.shape[:2]
+        QRSize = min(height, width)/5
+        QRHeight, QRWidth = 
