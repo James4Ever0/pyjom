@@ -478,8 +478,8 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
         center_x =( (p1[0] + p3[0]) / 2 +(p2[0] + p4[0]) / 2 )/2
         center_y = ((p1[1] + p3[1]) / 2+(p2[1] + p4[1]) / 2 )/2
         center = (center_x, center_y)
-        width = math.sqrt(p1[0]-p2[0])
-        height = math.sqrt(p2[0]-p3[0])
+        width = math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2)
+        height = math.sqrt((p2[0]-p3[0])**2+(p2[1]-p3[1])**2)
         
         # Calculate the slope of one of the edges
         slope = (p2[1] - p1[1]) / (p2[0] - p1[0])
@@ -493,7 +493,7 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
                 angle += math.pi/2
             else:
                 break
-        return angle, center
+        return angle, center, width,height
 
 
     QRCodeCoordinates,img = removeQRCodes(image_with_qrcode_path)
@@ -503,7 +503,7 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
         QRCodeCoordinates.sort(key=lambda x: -Polygon(x.tolist()).area)
         biggest_polygon = QRCodeCoordinates[0]
         angle, center,width,height  = get_rotation_angle_and_center(*biggest_polygon.tolist()) # will fail?
-        QRWidth, QRHeight = 
+        QRWidth, QRHeight = int(width), int(height)
     else:
         # randomly select one place to insert the shit.
         height, width= img.shape[:2]
@@ -515,4 +515,5 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
         else:
             QRWidth = int((QRWidth/QRHeight) * QRSize)
             QRHeight = int(QRSize)
-        QRImage = cv2.resize(QRImage,(QRWidth,QRHeight),interpolation=cv2.INTER_LINEAR)
+        angle, center = 0, [random.randint(0,math.floor(width-QRWidth)),random.randint(0,math.floor(height-QRHeight))]
+    QRImage = cv2.resize(QRImage,(QRWidth,QRHeight),interpolation=cv2.INTER_LINEAR)
