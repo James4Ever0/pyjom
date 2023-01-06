@@ -459,7 +459,10 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
     QRCodeCoordinates = detect_qr(image_with_qrcode_path)
     if QRCodeCoordinates!=[]:
         img = cv2.imread(image_with_qrcode_path)
-        cv2.
+        mask_image = np.zeros(img.shape, dtype=img.dtype)
+        for poly in QRCodeCoordinates:
+            cv2.fillPoly(mask_image,[poly],(255,255,255))
+        inpainted_im = cv2.inpaint(img, mask_image, 3, cv2.INPAINT_TELEA)
     return QRCodeCoordinates
 
 def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
