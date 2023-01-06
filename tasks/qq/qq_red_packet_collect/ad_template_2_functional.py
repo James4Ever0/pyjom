@@ -475,8 +475,8 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
 
     def get_rotation_angle_and_center(p1, p2, p3, p4):
         # Find the center of the rectangle
-        center_x =( (p1[0] + p3[0]) / 2 +(p2[0] + p4[0]) / 2 )/2
-        center_y = ((p1[1] + p3[1]) / 2+(p2[1] + p4[1]) / 2 )/2
+        center_x =int( (p1[0] + p3[0]) / 2 +(p2[0] + p4[0]) / 2 )/2
+        center_y = int((p1[1] + p3[1]) / 2+(p2[1] + p4[1]) / 2 )/2
         center = (center_x, center_y)
         width = math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2)
         height = math.sqrt((p2[0]-p3[0])**2+(p2[1]-p3[1])**2)
@@ -506,6 +506,7 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
         cv2.fillPoly(img, [biggest_polygon],(0,0,0))
         angle, center,width,height  = get_rotation_angle_and_center(*biggest_polygon.tolist()) # will fail?
         QRWidth, QRHeight = int(width), int(height)
+        startingPoint = [int(center]
     else:
         # randomly select one place to insert the shit.
         height, width= img.shape[:2]
@@ -529,3 +530,5 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
         cv2.fillPoly(img, [biggest_polygon],(0,0,0))
 
     QRImage = cv2.resize(QRImage,(QRWidth,QRHeight),interpolation=cv2.INTER_LINEAR)
+    # then we expand the image.
+    expanded_QR = np.zeros(img.shape,dtype=img.dtype)
