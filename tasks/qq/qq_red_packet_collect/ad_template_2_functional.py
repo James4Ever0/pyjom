@@ -421,6 +421,41 @@ OUTPUT_WITH_QRCODE_PATH = "output_with_qrcode.png"
 
 def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH)):
     # use best method to remove qrcode.
+    # import cv2
+    # import imutils
+    from PIL import Image
+    from pyzbar.pyzbar import decode, ZBarSymbol
+
+    # @function 'detect_qr' detect and decode qrcode from frame using pyzbar lib
+    # @param 'inputFrame' type <class 'numpy.ndarray'>
+    # @return if detected type 'bool'
+    import numpy as np
+    def detect_qr(inputFrame):
+        img = Image.fromarray(inputFrame)
+        decodedImg = decode(img, symbols=[ZBarSymbol.QRCODE])
+        # it reads the content. but where is the code?
+        print('total %d qrcode detected' % len(decodedImg))
+        # breakpoint()
+        # length: 2
+
+        if len(decodedImg) > 0:
+            polygons = []
+            for code in decodedImg:
+                decodedBytes = code.data
+                # stringData = decodedBytes.decode("utf-8")
+                # print("QRCode content:")
+                # print(stringData)
+                polygon = code.polygon
+                # print('POLYGON CONTENT:')
+                # print(polygon)
+                mpolygon = []
+                for point in polygon:
+                    mpolygon.append([point.x,point.y])
+                #     print('POINT:',point.x,point.y)
+                polygons.append(np.array(mpolygon, dtype=np.int32))
+            return polygons
+        else:
+            return []
     
     return QRCodeCoordinates
 
