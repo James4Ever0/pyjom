@@ -469,11 +469,40 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
     return QRCodeCoordinates, inpainted_im
 
 def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
+    import math
+
+    def get_rotation_angle(p1, p2, p3, p4):
+        # Find the center of the rectangle
+        center_x = (p1[0] + p3[0]) / 2
+        center_y = (p1[1] + p3[1]) / 2
+        center = (center_x, center_y)
+        
+        # Calculate the slope of one of the edges
+        slope = (p2[1] - p1[1]) / (p2[0] - p1[0])
+        
+        # Calculate the angle of the edge from the x-axis
+        angle = math.atan(slope)
+        
+        # Add or subtract 90 degrees, depending on the edge used
+        if p1[0] == p2[0]:
+            # Edge is vertical
+            rotation_angle = angle + math.pi / 2
+        elif p1[1] == p2[1]:
+            # Edge is horizontal
+            rotation_angle = angle
+        else:
+            # Edge is diagonal
+            rotation_angle = angle + math.pi / 2
+        
+        return rotation_angle
+
+
     QRCodeCoordinates,img = removeQRCodes(image_with_qrcode_path)
     hasQRCode = len(QRCodeCoordinates) > 0
     from shapely.geometry import Polygon
     if hasQRCode: # put the biggest one there.
-        QRCodeCoordinates.sort(key=lambda x: )
-        biggest_polygon = 
+        QRCodeCoordinates.sort(key=lambda x: -Polygon(x.tolist()).area)
+        biggest_polygon = QRCodeCoordinates[0]
+
     else:
         # randomly select one place to insert the shit.
