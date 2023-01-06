@@ -25,6 +25,8 @@ def detect_qr(inputFrame):
             polygon = code.polygon
             print('POLYGON CONTENT:')
             print(polygon)
+            for point in polygon:
+                print('POINT:',point.x,point.y)
 
         return True
     else:
