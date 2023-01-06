@@ -469,8 +469,8 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
         inpainted_im = img
     return QRCodeCoordinates, inpainted_im
 
-def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),qrcode_path:str=os.path.join(TMP_DIR_PATH,),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
-    QRImage = cv2.imread()
+def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),qrcode_path:str=os.path.join(TMP_DIR_PATH,QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
+    QRImage = cv2.imread(qrcode_path)
     import math
 
     def get_rotation_angle_and_center(p1, p2, p3, p4):
@@ -505,4 +505,11 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
         # randomly select one place to insert the shit.
         height, width= img.shape[:2]
         QRSize = min(height, width)/5
-        QRHeight, QRWidth = 
+        QRHeight, QRWidth = QRImage.shape[:2]
+        if QRWidth>QRHeight:
+            QRHeight = int((QRHeight/QRWidth) * QRSize)
+            QRWidth = int(QRSize)
+        else:
+            QRWidth = int((QRWidth/QRHeight) * QRSize)
+            QRHeight = int(QRSize)
+        cv2.resize(QRImage,(QRWidth,QRHeight))
