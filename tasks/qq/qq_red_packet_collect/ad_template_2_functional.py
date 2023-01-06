@@ -456,7 +456,10 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
             return polygons
         else:
             return []
-    
+    QRCodeCoordinates = detect_qr(image_with_qrcode_path)
+    if QRCodeCoordinates!=[]:
+        img = cv2.imread(image_with_qrcode_path)
+        cv2.
     return QRCodeCoordinates
 
 def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
