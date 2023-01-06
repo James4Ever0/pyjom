@@ -499,9 +499,11 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     QRCodeCoordinates,img = removeQRCodes(image_with_qrcode_path)
     hasQRCode = len(QRCodeCoordinates) > 0
     from shapely.geometry import Polygon
+    import numpy as np
     if hasQRCode: # put the biggest one there.
         QRCodeCoordinates.sort(key=lambda x: -Polygon(x.tolist()).area)
         biggest_polygon = QRCodeCoordinates[0]
+        cv2.fillPoly(img, [biggest_polygon],(0,0,0))
         angle, center,width,height  = get_rotation_angle_and_center(*biggest_polygon.tolist()) # will fail?
         QRWidth, QRHeight = int(width), int(height)
     else:
@@ -515,5 +517,9 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
         else:
             QRWidth = int((QRWidth/QRHeight) * QRSize)
             QRHeight = int(QRSize)
-        angle, center = 0, [random.randint(0,math.floor(width-QRWidth)),random.randint(0,math.floor(height-QRHeight))]
+        startingPoint = [random.randint(0,math.floor(width-QRWidth)),random.randint(0,math.floor(height-QRHeight))]
+        angle, center = 0, [startingPoint[0]+int(QRWidth/2),startingPoint[1]+int(QRHeight/2)]
+        biggest_polygon = np.array([startingPoint, startingPoint[0], startingPoint[1]+])
+        cv2.fillPoly(img, [biggest_polygon],(0,0,0))
+
     QRImage = cv2.resize(QRImage,(QRWidth,QRHeight),interpolation=cv2.INTER_LINEAR)
