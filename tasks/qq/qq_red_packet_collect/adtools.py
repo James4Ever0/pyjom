@@ -163,7 +163,7 @@ from ad_template_2_functional import TMP_DIR_PATH, generateBilibiliVideoAd, getA
 def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
     # selected video info.
     bvid, pic, title = videoInfo["bvid"], videoInfo["pic"], videoInfo["title"]
-    import requests, os
+    import os
     extension = pic.split("?")[0].split(".")[-1]
     cover_download_path = os.path.join(TMP_DIR_PATH,'video_cover.{}'.format(extension))
     (output_path,
@@ -171,13 +171,13 @@ def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
         output_masked_path) = generateBilibiliVideoAd(bvid,title, pic, cover_download_path)
     return (output_path,
         output_standalone,
-        output_masked_path)
+        output_masked_path) # which one you want?
 
 from botoy import Action
 
-
-def sendCatOrDogAd(group_id: str, cat_or_dog: str, action: Action):
-    sendMessageStatus = action.sendGroupText(group=group_id, content=reply)
+from typing import Literal
+def sendCatOrDogAd(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','with_link', 'embedded_link']):
+    sendMessageStatus = action.sendGroupPic(group=int(group_id), content="")
     # stderrPrint("SENT MESSAGE STATUS:",sendMessageStatus)
     success = sendMessageStatus["ErrMsg"] == "" and sendMessageStatus["Ret"] == 0
     return success
