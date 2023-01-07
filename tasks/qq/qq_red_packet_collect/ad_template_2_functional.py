@@ -472,8 +472,11 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
     else:
         inpainted_im = img
     return QRCodeCoordinates, inpainted_im
+
 from typing import Union
 def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),qrcode_path:str=os.path.join(TMP_DIR_PATH,QRCODE_PATH),output_with_qrcode_path:Union[None,str]=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
+    # TODO: use more advanced models to detect QRCodes.
+    # TODO: increase the size of the original image if too small.
     QRImage = cv2.imread(qrcode_path)
     import math
 
