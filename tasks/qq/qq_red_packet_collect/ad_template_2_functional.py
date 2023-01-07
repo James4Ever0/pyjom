@@ -217,12 +217,12 @@ def generateBilibiliVideoAd(
     with open(cover_path, "wb") as f:
         c = r.content
         f.write(c)
-    generateQRCodeFromBVID(bvid)
-    return generateVideoAdUniversal(
+    link = generateQRCodeFromBVID(bvid)
+    return (generateVideoAdUniversal(
         videoStats=generateFakeVideoStats(),
         title_text=title_text,
         cover_path=cover_path,
-    )
+    ), link)
 
 
 # you must have some lock outside while using this.

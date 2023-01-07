@@ -168,10 +168,10 @@ def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
     cover_download_path = os.path.join(TMP_DIR_PATH,'video_cover.{}'.format(extension))
     (output_path,
         output_standalone,
-        output_masked_path) = generateBilibiliVideoAd(bvid,title, pic, cover_download_path)
+        output_masked_path),link = generateBilibiliVideoAd(bvid,title, pic, cover_download_path)
     return (output_path,
         output_standalone,
-        output_masked_path) # which one you want?
+        output_masked_path),link # which one you want?
 
 from botoy import Action
 
@@ -205,13 +205,13 @@ def sendCatOrDogAdToQQGroup(group_id: str, cat_or_dog: str, action: Action, styl
             videoInfo = random.choice(responses[:recentLimits])
             (output_path,
         output_standalone,
-        output_masked_path)=generateAdFromVideoInfo(videoInfo)
+        output_masked_path), link=generateAdFromVideoInfo(videoInfo)
             
             if style == 'single_qr':
                 content = ""
                 picBase64Buf = ...
             elif style == 'text_link':
-                content = ...
+                content = "观看视频:\n{}\n{}".format(link, title_text)
                 picBase64Buf = ...
             sendMessageStatus = action.sendGroupPic(group=int(group_id), content=content, picBase64Buf=picBase64Buf)
             # stderrPrint("SENT AD STATUS:",sendMessageStatus)
