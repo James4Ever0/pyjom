@@ -10,7 +10,9 @@ def censorReply(reply, moderate=True):
     return reply
 
 
-def censorReplyAbsSentiment(reply, moderate=True, sentiment_abs_level=0.6,censored_sentiment_threshold=0.8):
+def censorReplyAbsSentiment(
+    reply, moderate=True, sentiment_abs_level=0.6, censored_sentiment_threshold=0.8
+):
     sentiment = getAbsSentiment(reply)
 
     if sentiment > sentiment_abs_level:
@@ -19,6 +21,7 @@ def censorReplyAbsSentiment(reply, moderate=True, sentiment_abs_level=0.6,censor
         if censored_sentiment > censored_sentiment_threshold:
             return None
     return reply
+
 
 # however these sentiment based function will not work very well since the positive/negative flag is not working properly for sentence like "操你妈" -> ("positive", 0.8)
 
@@ -37,7 +40,7 @@ def censorReplySentimentDelta(reply, moderate=True, sentiment_delta_level=0.5):
     sentiment = getLinearSentiment(reply)
     sentiment2 = getLinearSentiment(reply2)
 
-    sentiment_delta = sentiment2-sentiment
+    sentiment_delta = sentiment2 - sentiment
     if sentiment_delta < sentiment_delta_level:  # is that good?
         return reply
     else:

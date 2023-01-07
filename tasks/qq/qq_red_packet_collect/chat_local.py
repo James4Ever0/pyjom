@@ -20,7 +20,7 @@ def update_stack(stack, elem, stackSize=300, no_duplicate=True):
             return stack
     stack += [elem]
     length = len(stack)
-    return stack[max(0, length - stackSize):]
+    return stack[max(0, length - stackSize) :]
 
 
 def getSentiment(sentence):
@@ -78,33 +78,38 @@ def updateChatStack(group_id, message, stackSize=300, no_duplicate=True):
     )
 
 
-def sampleChatStack(originGroup: int,
-                    msg: str,
-                    min_corpus_size=100,
-                    sample_size=2000,
-                    originGroupCut=50):  # must exclude sent messages.
+def sampleChatStack(
+    originGroup: int, msg: str, min_corpus_size=100, sample_size=2000, originGroupCut=50
+):  # must exclude sent messages.
     # assert min_corpus_size >= sample_size
     # do not do this
-    population = [(group_id, max(0,
-                                 len(chat_stack[group_id]) - 1))
-                  for group_id in chat_stack.keys() if group_id != originGroup]
+    population = [
+        (group_id, max(0, len(chat_stack[group_id]) - 1))
+        for group_id in chat_stack.keys()
+        if group_id != originGroup
+    ]
 
     # population_size = sum([x[1] for x in population]) # wrong.
     population = [  # no need to check against the original group here.
-        #if (chat_stack[group_id][index] != msg or group_id != originGroup)
-        [(group_id, index) for index in range(group_msg_size)
-         if chat_stack[group_id][index + 1] not in historicalReplies]
+        # if (chat_stack[group_id][index] != msg or group_id != originGroup)
+        [
+            (group_id, index)
+            for index in range(group_msg_size)
+            if chat_stack[group_id][index + 1] not in historicalReplies
+        ]
         for group_id, group_msg_size in population
     ]  # allow other group with same message or same group with other message
     originGroupLength = len(chat_stack[originGroup]) - 1
     if originGroupLength > originGroupCut:
         # THIS WAS BLOODY WRONG
         # WAS MISPLACED.
-        population.append([
-            (originGroup, index)
-            for index in range(0, originGroupLength - originGroupCut)
-            if chat_stack[originGroup][index] != msg
-        ])
+        population.append(
+            [
+                (originGroup, index)
+                for index in range(0, originGroupLength - originGroupCut)
+                if chat_stack[originGroup][index] != msg
+            ]
+        )
 
     population = [x for y in population for x in y]
     population_size = len(population)
@@ -150,14 +155,14 @@ def getChatLocalResponse(
         return
     # this sample must not be empty.
     # rank by Levenshtein distance.
-    ranks = [(getMinDifference(msg, chat_stack[group_id][gm_index]), index)
-             for index, (group_id, gm_index) in enumerate(sample)]
+    ranks = [
+        (getMinDifference(msg, chat_stack[group_id][gm_index]), index)
+        for index, (group_id, gm_index) in enumerate(sample)
+    ]
     ranks.sort(key=lambda x: x[0])
 
     selected_ranks = ranks[:k_top]
-    selected_ranks = [
-        sample[index] for difference_score, index in selected_ranks
-    ]
+    selected_ranks = [sample[index] for difference_score, index in selected_ranks]
 
     # do we have to match the mood? like positive/negative -> positive/negative?
     # increase the negativity?
@@ -166,8 +171,9 @@ def getChatLocalResponse(
         (getLinearSentiment(chat_stack[group_id][gm_index + 1]), index)
         for index, (group_id, gm_index) in enumerate(selected_ranks)
     ]
-    selected_emotional_ranks.sort(key=lambda x: -sentimentFilter(x[
-        0]))  # select the extremes. do not select too extreme ones.
+    selected_emotional_ranks.sort(
+        key=lambda x: -sentimentFilter(x[0])
+    )  # select the extremes. do not select too extreme ones.
     mReplySentiment, mReplyIndex = selected_emotional_ranks[0]
     mReply_group_id, mReply_gm_index = selected_ranks[mReplyIndex]
     mReply = chat_stack[mReply_group_id][mReply_gm_index + 1]  # must plus one.

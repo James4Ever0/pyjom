@@ -231,12 +231,15 @@ def printGroupTextChatJson(group_id, sender_id, content):
         "[GROUP_TEXT_MESSAGE]", message
     )  # strange. who the fuck added this shit?
 
+
 # convert to simplified chinese.
 import opencc
+
 chinese_t2s = opencc.OpenCC()
 
-adBuffer={}
+adBuffer = {}
 # hook up this thing, send cat video only if we receive that topic.
+
 
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
@@ -250,9 +253,9 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     group_id = data_dict["FromGroupId"]
 
     # decrease that ad counter.
-    adCounter = adBuffer.get(str(group_id),0)
-    if adCounter>0:
-        adCounter-=1
+    adCounter = adBuffer.get(str(group_id), 0)
+    if adCounter > 0:
+        adCounter -= 1
     adBuffer[str(group_id)] = adCounter
 
     if groupName is not None:
@@ -266,7 +269,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     if group_id not in groupNoReplyStack.keys():
         groupNoReplyStack.update({group_id: -random.randint(*groupInitReplyDelayRange)})
 
-    def writeGroupChatCursor(Content,enable_t2s=True):
+    def writeGroupChatCursor(Content, enable_t2s=True):
         if enable_t2s:
             Content = chinese_t2s.convert(Content)
         # content need to converted into simplified chinese.
@@ -311,15 +314,17 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                     cat_or_dog = checkCatOrDog(Content)
                     # we need to update neo4j database, using group_id, sender_id, cat_or_dog.
                     if cat_or_dog:
-                        makeCatOrDogConnections(str(group_id), str(sender_id), cat_or_dog)
+                        makeCatOrDogConnections(
+                            str(group_id), str(sender_id), cat_or_dog
+                        )
                         # act accordingly. decide to send ad or not.
-                        if adBuffer.get(str(group_id),0)<=0:
+                        if adBuffer.get(str(group_id), 0) <= 0:
                             penalty = 10
                             # send the ad.
-                            success = sendCatOrDogAd(str(group_id), cat_or_dog,action)
+                            success = sendCatOrDogAd(str(group_id), cat_or_dog, action)
                             if success:
-                                penalty+=40
-                            adBuffer[str(group_id)]=penalty
+                                penalty += 40
+                            adBuffer[str(group_id)] = penalty
                         # decrease that counter by standard group messages.
                     updateChatStack(group_id, Content)
                     # or we could simply add the filter on the reply side.

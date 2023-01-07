@@ -1,4 +1,3 @@
-
 import pixie
 from lazero.utils.importers import cv2_custom_build_init
 
@@ -78,18 +77,26 @@ import progressbar
 def prepareMaterials(tmpDirPath: str = TMP_DIR_PATH, resourcePath: str = RESOURCE_PATH):
     print("Preparing materials...")
     for path in progressbar.progressbar(RESOURCES_RELATIVE_PATH):
-        shutil.copy( os.path.join(resourcePath, path),os.path.join(tmpDirPath, path))
+        shutil.copy(os.path.join(resourcePath, path), os.path.join(tmpDirPath, path))
+
 
 prepareMaterials()
 
+
 def generateBilibiliShortLinkMethod2(videoLink: str):
 
-    apiUrl = "https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/short_url"
+    apiUrl = (
+        "https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/short_url"
+    )
     # longUrl = "https://www.bilibili.com/video/BV1Wv41157Wz"
     longUrl = videoLink
     import urllib.parse as urlparse
+
     # params = {"url": longUrl}
-    params = {"url": urlparse.quote(longUrl).replace("/","%2F"), 'href':"https://xiaojuzi.fun/bili-short-url/"}
+    params = {
+        "url": urlparse.quote(longUrl).replace("/", "%2F"),
+        "href": "https://xiaojuzi.fun/bili-short-url/",
+    }
     # print(params)
     # exit()
 
@@ -105,58 +112,69 @@ def generateBilibiliShortLinkMethod2(videoLink: str):
         "sec-fetch-site": "cross-site",
         "Referer": "https://xiaojuzi.fun/",
         "Referrer-Policy": "strict-origin-when-cross-origin",
-        'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36' # this is important.
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",  # this is important.
     }
 
     import requests
-    request_url = apiUrl+"?url={url}&href={href}".format(**params)
+
+    request_url = apiUrl + "?url={url}&href={href}".format(**params)
     # request_url = 'https://service-ijd4slqi-1253419200.gz.apigw.tencentcs.com/release/short_url?url=https%3A%2F%2Fwww.bilibili.com%2Fvideo%2FBV1Wv41157Wz&href=https://xiaojuzi.fun/bili-short-url/'
     # print(request_url)
     r = requests.get(request_url, headers=headers)
     if r.status_code == 200:
         # print(r.json())
         r_json = r.json()
-        success = r_json.get('success', False)
+        success = r_json.get("success", False)
         if success:
-            short_url = r_json.get('short_url', None)
+            short_url = r_json.get("short_url", None)
             print(short_url)
             return short_url
     # starts with 'https://b23.tv'
 
-def generateBilibiliShortLinkMethod1(videoLink: str): # get bilibili user email address by asking them from chat. if they give the email address, send setu as gift. for other users, you may improvise. send video link, recommendations
+
+def generateBilibiliShortLinkMethod1(
+    videoLink: str,
+):  # get bilibili user email address by asking them from chat. if they give the email address, send setu as gift. for other users, you may improvise. send video link, recommendations
     url = "https://api.bilibili.com/x/share/click"
     # burl = "https://www.bilibili.com/read/cv19232041" # my article with e-begging
     burl = videoLink
     data = {
         "build": 6700300,
-            "buvid": 0,
-            "oid": burl,
-            "platform": "android",
-            "share_channel": "COPY",
-            "share_id": "public.webview.0.0.pv",
-            "share_mode": 3,
-        }
+        "buvid": 0,
+        "oid": burl,
+        "platform": "android",
+        "share_channel": "COPY",
+        "share_id": "public.webview.0.0.pv",
+        "share_mode": 3,
+    }
     import requests
-    headers={'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'}
-    r=requests.post(url, data=data,headers=headers) # maybe you two share the same user agent!
+
+    headers = {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+    }
+    r = requests.post(
+        url, data=data, headers=headers
+    )  # maybe you two share the same user agent!
     # we have the link!
     if r.status_code == 200:
         # print(r.content)
-        r_json=r.json()
-        code=r_json["code"]
-        if code==0:
-            link=r_json["data"]['content']
+        r_json = r.json()
+        code = r_json["code"]
+        if code == 0:
+            link = r_json["data"]["content"]
             print(link)
             return link
     # fail, obviously.
 
-def generateBilibiliShortLink(videoLink:str):
+
+def generateBilibiliShortLink(videoLink: str):
     link = None
     try:
         link = generateBilibiliShortLinkMethod1(videoLink)
         assert link is not None
     except:
         import traceback
+
         traceback.print_exc()
         link = generateBilibiliShortLinkMethod2(videoLink)
         assert link is not None
@@ -174,28 +192,42 @@ def makeQRCode(content: str, savePath: str):
             print("image type:", type(img))
         img.save(save_path)
 
-    data=content
+    data = content
     save_path = savePath
     makeAndSaveQrcode(data, save_path)
 
 
-def generateQRCodeFromBVID(bvid: str, qrCodeSavePath: str = os.path.join(TMP_DIR_PATH, QRCODE_PATH)):
+def generateQRCodeFromBVID(
+    bvid: str, qrCodeSavePath: str = os.path.join(TMP_DIR_PATH, QRCODE_PATH)
+):
     videoLink = "https://www.bilibili.com/video/{}".format(bvid)
     shortLink = generateBilibiliShortLink(videoLink)
     makeQRCode(shortLink, qrCodeSavePath)
 
-def generateBilibiliVideoAd(bvid:str,title_text:str,image_link:str,cover_path: str = os.path.join(TMP_DIR_PATH, COVER_PATH)):
+
+def generateBilibiliVideoAd(
+    bvid: str,
+    title_text: str,
+    image_link: str,
+    cover_path: str = os.path.join(TMP_DIR_PATH, COVER_PATH),
+):
     import requests
+
     r = requests.get(image_link)
-    with open(cover_path,'wb') as f:
+    with open(cover_path, "wb") as f:
         c = r.content
         f.write(c)
     generateQRCodeFromBVID(bvid)
-    return generateVideoAdUniversal(videoStats = generateFakeVideoStats(),title_text=title_text,cover_path=cover_path)
+    return generateVideoAdUniversal(
+        videoStats=generateFakeVideoStats(),
+        title_text=title_text,
+        cover_path=cover_path,
+    )
+
 
 # you must have some lock outside while using this.
 def generateVideoAdUniversal(
-    videoStats=None, # will it work?
+    videoStats=None,  # will it work?
     night_mode: bool = True,
     title_text: str = "",
     framework_only: bool = False,
@@ -415,12 +447,20 @@ def generateVideoAdUniversal(
     image.write_file(output_path)  # make sure you write to desired temp path.
     if framework_only:
         image2.sub_image(*sub_image_params).write_file(output_masked_path)
-    return output_path, output_standalone, output_masked_path # well, pick up if you want.
+    return (
+        output_path,
+        output_standalone,
+        output_masked_path,
+    )  # well, pick up if you want.
+
 
 IMAGE_WITH_QRCODE_PATH = "image_with_qrcode.png"
 OUTPUT_WITH_QRCODE_PATH = "output_with_qrcode.png"
 
-def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH)):
+
+def removeQRCodes(
+    image_with_qrcode_path: str = os.path.join(TMP_DIR_PATH, IMAGE_WITH_QRCODE_PATH)
+):
     # use best method to remove qrcode.
     # import cv2
     # import imutils
@@ -431,11 +471,12 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
     # @param 'inputFrame' type <class 'numpy.ndarray'>
     # @return if detected type 'bool'
     import numpy as np
+
     def detect_qr(inputFrame):
-        img = Image.fromarray(inputFrame) # fuck?
+        img = Image.fromarray(inputFrame)  # fuck?
         decodedImg = decode(img, symbols=[ZBarSymbol.QRCODE])
         # it reads the content. but where is the code?
-        print('total %d qrcode detected' % len(decodedImg))
+        print("total %d qrcode detected" % len(decodedImg))
         # breakpoint()
         # length: 2
 
@@ -451,30 +492,41 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
                 # print(polygon)
                 mpolygon = []
                 for point in polygon:
-                    mpolygon.append([point.x,point.y])
+                    mpolygon.append([point.x, point.y])
                 #     print('POINT:',point.x,point.y)
                 polygons.append(np.array(mpolygon, dtype=np.int32))
             return polygons
         else:
             return []
-    def getInputFrameFromImagePath(imagePath:str):
+
+    def getInputFrameFromImagePath(imagePath: str):
         inputFrame = cv2.imread(imagePath)
         return inputFrame
+
     inputFrame = getInputFrameFromImagePath(image_with_qrcode_path)
     QRCodeCoordinates = detect_qr(inputFrame)
     img = cv2.imread(image_with_qrcode_path)
 
-    if QRCodeCoordinates!=[]:
-        mask_image = np.zeros((*img.shape[:2],1), dtype=img.dtype)
+    if QRCodeCoordinates != []:
+        mask_image = np.zeros((*img.shape[:2], 1), dtype=img.dtype)
         for poly in QRCodeCoordinates:
-            cv2.fillPoly(mask_image,[poly],255)
+            cv2.fillPoly(mask_image, [poly], 255)
         inpainted_im = cv2.inpaint(img, mask_image, 3, cv2.INPAINT_TELEA)
     else:
         inpainted_im = img
     return QRCodeCoordinates, inpainted_im
 
+
 from typing import Union
-def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),qrcode_path:str=os.path.join(TMP_DIR_PATH,QRCODE_PATH),output_with_qrcode_path:Union[None,str]=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
+
+
+def removeAndInsertQRCode(
+    image_with_qrcode_path: str = os.path.join(TMP_DIR_PATH, IMAGE_WITH_QRCODE_PATH),
+    qrcode_path: str = os.path.join(TMP_DIR_PATH, QRCODE_PATH),
+    output_with_qrcode_path: Union[None, str] = os.path.join(
+        TMP_DIR_PATH, OUTPUT_WITH_QRCODE_PATH
+    ),
+):  # remove all detected QRCodes. add qrcode nevertheless.
     # TODO: use more advanced models to detect QRCodes.
     # TODO: increase the size of the original image if too small.
     QRImage = cv2.imread(qrcode_path)
@@ -482,86 +534,99 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
 
     def get_rotation_angle_and_center(p1, p2, p3, p4):
         # Find the center of the rectangle
-        center_x =int( (p1[0] + p3[0]) / 2 +(p2[0] + p4[0]) / 2 )/2
-        center_y = int((p1[1] + p3[1]) / 2+(p2[1] + p4[1]) / 2 )/2
+        center_x = int((p1[0] + p3[0]) / 2 + (p2[0] + p4[0]) / 2) / 2
+        center_y = int((p1[1] + p3[1]) / 2 + (p2[1] + p4[1]) / 2) / 2
         center = (center_x, center_y)
-        width = math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2)
-        height = math.sqrt((p2[0]-p3[0])**2+(p2[1]-p3[1])**2)
-        
+        width = math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
+        height = math.sqrt((p2[0] - p3[0]) ** 2 + (p2[1] - p3[1]) ** 2)
+
         # Calculate the slope of one of the edges
         slope = (p2[1] - p1[1]) / (p2[0] - p1[0])
-        
+
         # Calculate the angle of the edge from the x-axis
-        angle = (math.pi/2)-math.atan(slope) # correct the angle. according to opencv.
+        angle = (math.pi / 2) - math.atan(
+            slope
+        )  # correct the angle. according to opencv.
         while True:
-            if angle > math.pi/2:
-                angle -= math.pi/2
-            elif angle <0:
-                angle += math.pi/2
+            if angle > math.pi / 2:
+                angle -= math.pi / 2
+            elif angle < 0:
+                angle += math.pi / 2
             else:
                 break
-        return angle, center, width,height
+        return angle, center, width, height
 
-
-    QRCodeCoordinates,img = removeQRCodes(image_with_qrcode_path)
+    QRCodeCoordinates, img = removeQRCodes(image_with_qrcode_path)
     hasQRCode = len(QRCodeCoordinates) > 0
     from shapely.geometry import Polygon
     import numpy as np
-    if hasQRCode: # put the biggest one there.
+
+    if hasQRCode:  # put the biggest one there.
         QRCodeCoordinates.sort(key=lambda x: -Polygon(x.tolist()).area)
         biggest_polygon = QRCodeCoordinates[0]
-        cv2.fillPoly(img, [biggest_polygon],(0,0,0))
-        angle, center,width,height  = get_rotation_angle_and_center(*biggest_polygon.tolist()) # will fail?
+        cv2.fillPoly(img, [biggest_polygon], (0, 0, 0))
+        angle, center, width, height = get_rotation_angle_and_center(
+            *biggest_polygon.tolist()
+        )  # will fail?
         QRWidth, QRHeight = int(width), int(height)
-        startingPoint = [int(center[0] - QRWidth/2), int(center[1]-QRHeight/2)]
+        startingPoint = [int(center[0] - QRWidth / 2), int(center[1] - QRHeight / 2)]
     else:
         # randomly select one place to insert the shit.
-        height, width= img.shape[:2]
-        QRSize = min(height, width)/5
+        height, width = img.shape[:2]
+        QRSize = min(height, width) / 5
         QRHeight, QRWidth = QRImage.shape[:2]
-        if QRWidth>QRHeight:
-            QRHeight = int((QRHeight/QRWidth) * QRSize)
+        if QRWidth > QRHeight:
+            QRHeight = int((QRHeight / QRWidth) * QRSize)
             QRWidth = int(QRSize)
         else:
-            QRWidth = int((QRWidth/QRHeight) * QRSize)
+            QRWidth = int((QRWidth / QRHeight) * QRSize)
             QRHeight = int(QRSize)
-        startingPoint = [random.randint(0,math.floor(width-QRWidth)),random.randint(0,math.floor(height-QRHeight))]
-        angle, center = 0, [startingPoint[0]+int(QRWidth/2),startingPoint[1]+int(QRHeight/2)]
-        biggest_polygon = np.array([
-            startingPoint, 
-            [startingPoint[0], startingPoint[1]+QRHeight],
-            [startingPoint[0]+QRWidth, startingPoint[1]+QRHeight],
-            [startingPoint[0]+QRWidth, startingPoint[1]],
+        startingPoint = [
+            random.randint(0, math.floor(width - QRWidth)),
+            random.randint(0, math.floor(height - QRHeight)),
         ]
+        angle, center = 0, [
+            startingPoint[0] + int(QRWidth / 2),
+            startingPoint[1] + int(QRHeight / 2),
+        ]
+        biggest_polygon = np.array(
+            [
+                startingPoint,
+                [startingPoint[0], startingPoint[1] + QRHeight],
+                [startingPoint[0] + QRWidth, startingPoint[1] + QRHeight],
+                [startingPoint[0] + QRWidth, startingPoint[1]],
+            ]
         )
-        cv2.fillPoly(img, [biggest_polygon],(0,0,0))
+        cv2.fillPoly(img, [biggest_polygon], (0, 0, 0))
 
-    QRImage = cv2.resize(QRImage,(QRWidth,QRHeight),interpolation=cv2.INTER_LINEAR)
+    QRImage = cv2.resize(QRImage, (QRWidth, QRHeight), interpolation=cv2.INTER_LINEAR)
     # then we expand the image.
-    expanded_QR = np.zeros(img.shape,dtype=img.dtype)
+    expanded_QR = np.zeros(img.shape, dtype=img.dtype)
     height, width = QRImage.shape[:2]
-    slice_x_start, slice_x_end = startingPoint[1],height+startingPoint[1]
-    slice_y_start, slice_y_end = startingPoint[0],width+startingPoint[0]
+    slice_x_start, slice_x_end = startingPoint[1], height + startingPoint[1]
+    slice_y_start, slice_y_end = startingPoint[0], width + startingPoint[0]
     # print("SLICES?", slice_x_start, slice_x_end , slice_y_start, slice_y_end )
     # print("IMAGE SHAPE?",QRImage.shape)
-    expanded_QR[ slice_x_start: slice_x_end , slice_y_start: slice_y_end ] = QRImage
+    expanded_QR[slice_x_start:slice_x_end, slice_y_start:slice_y_end] = QRImage
 
     # then rotate.
     if angle == 0:
         rotated_im = expanded_QR
     else:
-        angle_deg = 180*(angle / np.pi) # rotation error.
+        angle_deg = 180 * (angle / np.pi)  # rotation error.
         rotation_matrix = cv2.getRotationMatrix2D(center, angle_deg, 1)
-        rotated_im = cv2.warpAffine(expanded_QR, rotation_matrix, (img.shape[1],img.shape[0]))
+        rotated_im = cv2.warpAffine(
+            expanded_QR, rotation_matrix, (img.shape[1], img.shape[0])
+        )
 
     # combine. what?
-    output_img = rotated_im+img
+    output_img = rotated_im + img
 
     # regularize
-    output_img.put(np.where(output_img>255),255)
-    output_img.put(np.where(output_img<0),0)
+    output_img.put(np.where(output_img > 255), 255)
+    output_img.put(np.where(output_img < 0), 0)
 
     # save the image.
     if output_with_qrcode_path is not None:
-        cv2.imwrite(output_with_qrcode_path,output_img)
-    return output_img # for viewing.
+        cv2.imwrite(output_with_qrcode_path, output_img)
+    return output_img  # for viewing.
