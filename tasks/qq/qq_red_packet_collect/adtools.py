@@ -176,7 +176,12 @@ def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
 from botoy import Action
 
 from typing import Literal
-def sendCatOrDogAd(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','with_link', 'embedded_link']):
+def sendCatOrDogAd(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','text_link', 'image_link', 'json', 'random']): # many things not implemented yet.
+    totalStyles = ['single_qr','text_link', 'image_link', 'json', 'random']
+    notImplementedStyles = ['image_link', 'json']
+    usableStyles = [s for s in totalStyles if s not in notImplementedStyles]
+    if style in notImplementedStyles:
+        raise NotImplementedError("Not implemented style: '{}'".format(style))
     sendMessageStatus = action.sendGroupPic(group=int(group_id), content="")
     # stderrPrint("SENT MESSAGE STATUS:",sendMessageStatus)
     success = sendMessageStatus["ErrMsg"] == "" and sendMessageStatus["Ret"] == 0
