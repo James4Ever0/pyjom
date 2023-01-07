@@ -212,4 +212,14 @@ def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
         topics = []
     return topics
 
-def paraphraser(method:Literal['clueai_free','nlp_online_0','nlp_online_1']="clueai_free")
+from typing import Literal
+
+@lru_cache(maxsize=1)
+def getFreeClueAIClient():
+    ...
+
+def paraphraser(content:str,method:Literal['clueai_free','cn_nlp_online_0','cn_nlp_online_1', "baidu_zh_en"]="clueai_free"): # you could add some translation based methods.
+    if method == "clueai_free":
+        ...
+    elif method in ['cn_nlp_online_0','cn_nlp_online_1']:
+        ...
