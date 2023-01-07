@@ -1,4 +1,5 @@
 
+from bracex import expand
 import pixie
 from lazero.utils.importers import cv2_custom_build_init
 
@@ -526,7 +527,7 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
             [startingPoint[0]+QRWidth, startingPoint[1]+QRHeight],
             [startingPoint[0]+QRWidth, startingPoint[1]],
         ]
-            )
+        )
         cv2.fillPoly(img, [biggest_polygon],(0,0,0))
 
     QRImage = cv2.resize(QRImage,(QRWidth,QRHeight),interpolation=cv2.INTER_LINEAR)
@@ -536,9 +537,12 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     expanded_QR[startingPoint[1]:height+startingPoint[1], startingPoint[0]:width+startingPoint[0]] = QRImage
 
     # then rotate.
-    angle_deg = 180*(angle / np.pi)
-    rotation_matrix = cv2.getRotationMatrix2D(center, angle_deg, 1)
-    rotated_im = cv2.warpAffine(expanded_QR, rotation_matrix, (width, height))
+    if angle ==0:
+        rotated_im = expanded_QR
+    else:
+        angle_deg = 180*(angle / np.pi)
+        rotation_matrix = cv2.getRotationMatrix2D(center, angle_deg, 1)
+        rotated_im = cv2.warpAffine(expanded_QR, rotation_matrix, (width, height))
 
     # combine. what?
     output_img = rotated_im+img
