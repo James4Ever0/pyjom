@@ -466,9 +466,9 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
     img = cv2.imread(image_with_qrcode_path)
 
     if QRCodeCoordinates!=[]:
-        mask_image = np.zeros(img.shape, dtype=img.dtype)
+        mask_image = np.zeros((*img.shape[:2],1), dtype=img.dtype)
         for poly in QRCodeCoordinates:
-            cv2.fillPoly(mask_image,[poly],(255,255,255))
+            cv2.fillPoly(mask_image,[poly],255)
         inpainted_im = cv2.inpaint(img, mask_image, 3, cv2.INPAINT_TELEA)
     else:
         inpainted_im = img
