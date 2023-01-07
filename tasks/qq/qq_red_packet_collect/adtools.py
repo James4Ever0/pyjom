@@ -273,6 +273,7 @@ def sendCatOrDogAdToQQGroup(
             )
             # stderrPrint("SENT AD STATUS:",sendMessageStatus)
             success = (
-                sendMessageStatus.get("ErrMsg",None) is "" or sendMessageStatus.get("Ret",None) is 0
+                sendMessageStatus.get("ErrMsg",None) is "" or 
+                sendMessageStatus.get("Msg",None) is "" or sendMessageStatus.get("Ret",None) is 0
             )
     return success
