@@ -469,8 +469,8 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
     else:
         inpainted_im = img
     return QRCodeCoordinates, inpainted_im
-
-def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),qrcode_path:str=os.path.join(TMP_DIR_PATH,QRCODE_PATH),output_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
+from typing import Union
+def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WITH_QRCODE_PATH),qrcode_path:str=os.path.join(TMP_DIR_PATH,QRCODE_PATH),output_with_qrcode_path:Union[None,str]=os.path.join(TMP_DIR_PATH,OUTPUT_WITH_QRCODE_PATH)): # remove all detected QRCodes. add qrcode nevertheless.
     QRImage = cv2.imread(qrcode_path)
     import math
 
@@ -552,5 +552,6 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     output_img.put(np.where(output_img<0),0)
 
     # save the image.
-    cv2.imwrite(output_with_qrcode_path,output_img)
+    if output_with_qrcode_path is not None:
+        cv2.imwrite(output_with_qrcode_path,output_img)
     return output_img # for viewing.
