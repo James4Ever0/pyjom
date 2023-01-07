@@ -10,10 +10,11 @@ tokenizer = T5Tokenizer.from_pretrained(modelID, local_files_first=True)
 model = T5ForConditionalGeneration.from_pretrained(
     modelID, local_files_first=True
 )  # oh shit! 1G model
-print("TOKENIZER?", tokenizer)
-print("_"*20)
-print("MODEL?", model)
-breakpoint()
+# print("TOKENIZER?", tokenizer) # always cpu. no "device" attribute.
+# print("_"*20)
+# print("MODEL?", model.device)
+# breakpoint()
+# what are these devices? all default CPU?
 
 def preprocess(text):
     return text.replace("\n", "_")
@@ -23,7 +24,7 @@ def postprocess(text):
     return text.replace("_", "\n")
 
 
-def answer(text, sample=False, top_p=0.8, device="cpu"):
+def answer(text, sample=True, top_p=0.8, device="cpu"):
     """sample：是否抽样。生成任务，可以设置为True;
     top_p：0-1之间，生成的内容越多样"""
     text = preprocess(text)
@@ -37,7 +38,7 @@ def answer(text, sample=False, top_p=0.8, device="cpu"):
             output_scores=False,
             max_length=128,
             num_beams=4,
-            length_penalty=0.6
+            length_penalty=1
         )
     else:
         out = model.generate(
@@ -45,6 +46,7 @@ def answer(text, sample=False, top_p=0.8, device="cpu"):
             return_dict_in_generate=True,
             output_scores=False,
             max_length=64,
+            min_length=5,
             do_sample=True,
             top_p=top_p
         )
@@ -67,4 +69,5 @@ import timeit
 elapsed_time = timeit.timeit(my_function, number=1)
 
 print("Elapsed time:", elapsed_time)
-
+# Elapsed time: 10.513529631891288
+# not too bad?
