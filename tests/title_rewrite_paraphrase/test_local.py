@@ -45,11 +45,11 @@ def answer(text, sample=True, top_p=0.8, device="cpu"):
             **encoding,
             return_dict_in_generate=True,
             output_scores=False,
-            max_length=64,
+            max_length=128,
             min_length=5,
             do_sample=True,
             length_penalty=1,
-            num_beams=1,
+            num_beams=4,
             top_p=top_p
         )
     out_text = tokenizer.batch_decode(out["sequences"], skip_special_tokens=True)
@@ -59,11 +59,10 @@ def answer(text, sample=True, top_p=0.8, device="cpu"):
 
 def my_function():
     # Function code goes here
-    q = """
-生成与下列文字相同意思的句子：
-这是世界上最可爱的小猫
+    q = """重写句子：
+支持几十个不同类型的任务，具有较好的零样本学习能力和少样本学习能力。
 答案：
-"""
+""" # i think this model just doesn't get it.
     output = answer(q)
     print("Output:", output)
 import timeit
