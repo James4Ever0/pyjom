@@ -3,6 +3,9 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 modelID = "ClueAI/PromptCLUE-base-v1-5"
 # https://github.com/James4Ever0/transformers/blob/main/src/transformers/models/auto/configuration_auto.py
+# https://github.com/James4Ever0/transformers/blob/main/src/transformers/modeling_utils.py (need change)
+
+
 tokenizer = T5Tokenizer.from_pretrained(modelID, local_files_first=True)
 model = T5ForConditionalGeneration.from_pretrained(
     modelID, local_files_first=True, device="cpu"
