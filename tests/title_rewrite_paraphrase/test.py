@@ -17,7 +17,7 @@ import clueai
 
 
 # initialize the Clueai Client with an API Key
-cl = clueai.Client("", check_api_key=False)
+cl = clueai.Client("", check_api_key=False) # good without API key
 prompt= '''
 生成与下列文字相同意思的句子：
 {}
@@ -29,14 +29,14 @@ generate_config = {
     "do_sample": True,
     "top_p": 0.8,
     "max_length": 128,
-    "min_length": 10,
+    "min_length": 5,
     "length_penalty": 1.0,
     "num_beams": 1
   }
 # 如果需要自由调整参数自由采样生成，添加额外参数信息设置方式：generate_config=generate_config
 prediction = cl.generate(
         model_name='clueai-base',
-        prompt=prompt)
+        prompt=prompt,generate_config=generate_config)
 # 需要返回得分的话，指定return_likelihoods="GENERATION"
 
 # print the predicted text
