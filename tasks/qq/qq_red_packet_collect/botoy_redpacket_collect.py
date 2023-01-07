@@ -18,7 +18,7 @@ from commons import (
     removeDuplicateWords,
     replaceDuplicateChar,
 )
-AD_INIT_COUNTER = 10
+AD_INIT_COUNTER = 1
 
 groupChatCursor = None
 
