@@ -157,13 +157,15 @@ def getCatOrDogAd(
         rich.print(responses)
     return responses  # select one such response.
 
+from ad_template_2_functional import TMP_DIR_PATH, generateVideoAdUniversal, getAdLock # use it in sending the ad.
+
 
 def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
     # selected video info.
-    from ad_template_2_functional import TMP_DIR_PATH
     bvid, pic, title = videoInfo["bvid"], videoInfo["pic"], videoInfo["title"]
     import requests, os
-    cover_download_path = os.path.join(TMP_DIR_PATH,'')
+    extension = pic.split("?")[0].split(".")[-1]
+    cover_download_path = os.path.join(TMP_DIR_PATH,'video_cover.{}'.format(extension))
     with open(cover_download_path,'wb') as f:
         content = requests.get(pic).content
         f.write(content)
