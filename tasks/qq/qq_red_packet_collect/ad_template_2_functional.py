@@ -538,7 +538,9 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     # then we expand the image.
     expanded_QR = np.zeros(img.shape,dtype=img.dtype)
     height, width = img.shape[:2]
-    expanded_QR[startingPoint[1]:height+startingPoint[1], startingPoint[0]:width+startingPoint[0]] = QRImage
+    slice_x_start, slice_x_end = 
+    slice_y_start, slice_y_end = 
+    expanded_QR[] = QRImage
 
     # then rotate.
     if angle == 0:
