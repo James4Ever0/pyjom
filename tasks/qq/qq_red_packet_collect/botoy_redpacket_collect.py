@@ -17,6 +17,7 @@ from commons import (
     removeDuplicateWords,
     replaceDuplicateChar,
 )
+AD_INIT_COUNTER = 10
 
 groupChatCursor = None
 
@@ -258,7 +259,6 @@ def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str):
                 penalty += 40
             adBuffer[str(group_id)] = penalty
         # decrease that counter by standard group messages.
-AD_INIT_COUNTER = 10
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # too broad for groupInitReplyDelayRange to be (2, 20)
