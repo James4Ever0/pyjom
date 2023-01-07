@@ -46,10 +46,19 @@ def answer(text, sample=False, top_p=0.8, device="cpu"):
     return postprocess(out_text[0])
 
 
-q = """
+
+def my_function():
+    # Function code goes here
+    q = """
 生成与下列文字相同意思的句子：
 支持几十个不同类型的任务，具有较好的零样本学习能力和少样本学习能力。
 答案：
 """
-r = answer(q)
-print(r)
+    output = answer(q)
+    print("Output:", output)
+import timeit
+# Time the function
+elapsed_time = timeit.timeit(my_function, number=1)
+
+print("Elapsed time:", elapsed_time)
+
