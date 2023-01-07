@@ -548,3 +548,5 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     output_img.put(np.where(output_img<0),0)
 
     # save the image.
+    cv2.imwrite(output_with_qrcode_path,output_img)
+    return output_img # for viewing.
