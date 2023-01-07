@@ -157,21 +157,32 @@ def getCatOrDogAd(
         rich.print(responses)
     return responses  # select one such response.
 
-from ad_template_2_functional import TMP_DIR_PATH, generateBilibiliVideoAd, getAdLock # use the lock during sending the ad.
+
+from ad_template_2_functional import (
+    TMP_DIR_PATH,
+    generateBilibiliVideoAd,
+    getAdLock,
+)  # use the lock during sending the ad.
 
 
 def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
     # selected video info.
     bvid, pic, title = videoInfo["bvid"], videoInfo["pic"], videoInfo["title"]
     import os
+
     extension = pic.split("?")[0].split(".")[-1]
-    cover_download_path = os.path.join(TMP_DIR_PATH,'video_cover.{}'.format(extension))
-    (output_path,
+    cover_download_path = os.path.join(TMP_DIR_PATH, "video_cover.{}".format(extension))
+    (
+        output_path,
         output_standalone,
-        output_masked_path),link = generateBilibiliVideoAd(bvid,title, pic, cover_download_path)
-    return (output_path,
+        output_masked_path,
+    ), link = generateBilibiliVideoAd(bvid, title, pic, cover_download_path)
+    return (
+        output_path,
         output_standalone,
-        output_masked_path),link # which one you want?
+        output_masked_path,
+    ), link  # which one you want?
+
 
 from botoy import Action
 
@@ -181,50 +192,87 @@ import random
 # you can send it to qq user, qq group, channels, qzone, email
 # if send by json, qzone, channels, email that will be ajax. set up another server to handle ajax requests.
 
-def getBase64StringFromFilePath(filePath:str):
+
+def getBase64StringFromFilePath(
+    filePath: str, binary: bool = False, encoding: str = "utf-8"
+):
     import os
+
     assert os.path.isfile(filePath)
     import base64
 
-    with open(filePath "rb") as img_file:
+    with open(filePath, "rb") as img_file:
         b64_string = base64.b64encode(img_file.read())
+    if not binary:
+        b64_string = b64_string.decode(encoding)
+    return b64_string
 
 
-def sendCatOrDogAdToQQGroup(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','text_link', 'image_link', 'json', 'random', 'random_not_json'],recentLimits:int=20): # many things not implemented yet.
-    totalStyles = ['single_qr','text_link', 'image_link', 'json', 'random','random_not_json']
-    notImplementedStyles = ['image_link', 'json'] # if json, first we search for avaliable json messages, if missing, we search for android devices, unlock the device then send the message. if failed, use other non-json methods.
+def sendCatOrDogAdToQQGroup(
+    group_id: str,
+    cat_or_dog: str,
+    action: Action,
+    style: Literal[
+        "single_qr", "text_link", "image_link", "json", "random", "random_not_json"
+    ]='random',
+    recentLimits: int = 20,
+):  # many things not implemented yet.
+    totalStyles = [
+        "single_qr",
+        "text_link",
+        "image_link",
+        "json",
+        "random",
+        "random_not_json",
+    ]
+    notImplementedStyles = [
+        "image_link",
+        "json",
+    ]  # if json, first we search for avaliable json messages, if missing, we search for android devices, unlock the device then send the message. if failed, use other non-json methods.
 
     usableStyles = [s for s in totalStyles if s not in notImplementedStyles]
 
     nonRandomStyles = [s for s in usableStyles if not s.startswith("random")]
     nonRandomNorJsonStyles = [s for s in nonRandomStyles if s is not "json"]
 
-    if style in notImplementedStyles:
+    def noSuchStyle(style: str):
         raise NotImplementedError("Not implemented style: '{}'".format(style))
-    
+
+    if style in notImplementedStyles:
+        noSuchStyle(style)
     if style == "random":
         style = random.choice(nonRandomStyles)
     elif style == "random_not_json":
         style = random.choice(nonRandomNorJsonStyles)
-    
+
     responses = getCatOrDogAd(cat_or_dog)
-    success=False
+    success = False
 
     with getAdLock():
-        if responses !=[]:
+        if responses != []:
             videoInfo = random.choice(responses[:recentLimits])
-            title_text = videoInfo['title']
-            (output_path,
-        output_standalone,
-        output_masked_path), link=generateAdFromVideoInfo(videoInfo)
-            
-            if style == 'single_qr':
+            title_text = videoInfo["title"]
+            (
+                output_path,
+                output_standalone,
+                output_masked_path, # what is this?
+            ), link = generateAdFromVideoInfo(videoInfo)
+
+            if style == "single_qr":
                 content = ""
-                picBase64Buf = ...
-            elif style == 'text_link':
+                picturePath = output_path
+            elif style == "text_link":
                 content = "观看视频:\n{}\n{}".format(link, title_text)
-                picBase64Buf = ...
-            sendMessageStatus = action.sendGroupPic(group=int(group_id), content=content, picBase64Buf=picBase64Buf)
+                picturePath = output_standalone
+            else:
+                noSuchStyle(style)
+            picBase64Buf = getBase64StringFromFilePath(picturePath)
+
+            sendMessageStatus = action.sendGroupPic(
+                group=int(group_id), content=content, picBase64Buf=picBase64Buf
+            )
             # stderrPrint("SENT AD STATUS:",sendMessageStatus)
-            success = sendMessageStatus["ErrMsg"] == "" and sendMessageStatus["Ret"] == 0
+            success = (
+                sendMessageStatus["ErrMsg"] == "" and sendMessageStatus["Ret"] == 0
+            )
     return success
