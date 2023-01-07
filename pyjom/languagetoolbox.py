@@ -211,3 +211,5 @@ def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
         traceback.print_exc()
         topics = []
     return topics
+
+def paraphraser(method:Literal['clueai_free','nlp_online_0','nlp_online_1']="clueai_free")
