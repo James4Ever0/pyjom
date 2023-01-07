@@ -20,7 +20,7 @@ import clueai
 cl = clueai.Client("", check_api_key=False) # good without API key
 prompt= '''
 生成与下列文字相同意思的句子：
-{}
+支持几十个不同类型的任务，具有较好的零样本学习能力和少样本学习能力。
 答案：
 '''.format(title) #shit.
 # generate a prediction for a prompt
