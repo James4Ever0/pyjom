@@ -24,7 +24,7 @@ import random
 
 
 def generateFakeVideoStats():
-    play_count = "{}万".format(
+    play_count = "{:.1f}万".format(
         random.randint(100, 1000) * 0.1
     )  # anyway both int and str are compatible
     comment_count = random.randint(100, 1000)

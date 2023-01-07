@@ -1,6 +1,7 @@
 # for arm64 version of opqbot
 
 # disable that 复读机 plugin.
+
 # shall you analyze the logs/redPacketLog_*.log to get topics from groups and individuals.
 from chat_local import *
 from adtools import sendCatOrDogAdToQQGroup, checkCatOrDog, makeCatOrDogConnections
