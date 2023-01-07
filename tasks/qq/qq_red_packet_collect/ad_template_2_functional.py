@@ -203,6 +203,7 @@ def generateQRCodeFromBVID(
     videoLink = "https://www.bilibili.com/video/{}".format(bvid)
     shortLink = generateBilibiliShortLink(videoLink)
     makeQRCode(shortLink, qrCodeSavePath)
+    return shortLink
 
 
 def generateBilibiliVideoAd(

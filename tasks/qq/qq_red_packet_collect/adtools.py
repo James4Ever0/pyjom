@@ -180,6 +180,16 @@ import random
 
 # you can send it to qq user, qq group, channels, qzone, email
 # if send by json, qzone, channels, email that will be ajax. set up another server to handle ajax requests.
+
+def getBase64StringFromFilePath(filePath:str):
+    import os
+    assert os.path.isfile(filePath)
+    import base64
+
+    with open(filePath "rb") as img_file:
+        b64_string = base64.b64encode(img_file.read())
+
+
 def sendCatOrDogAdToQQGroup(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','text_link', 'image_link', 'json', 'random', 'random_not_json'],recentLimits:int=20): # many things not implemented yet.
     totalStyles = ['single_qr','text_link', 'image_link', 'json', 'random','random_not_json']
     notImplementedStyles = ['image_link', 'json'] # if json, first we search for avaliable json messages, if missing, we search for android devices, unlock the device then send the message. if failed, use other non-json methods.
@@ -203,6 +213,7 @@ def sendCatOrDogAdToQQGroup(group_id: str, cat_or_dog: str, action: Action, styl
     with getAdLock():
         if responses !=[]:
             videoInfo = random.choice(responses[:recentLimits])
+            title_text = videoInfo['title']
             (output_path,
         output_standalone,
         output_masked_path), link=generateAdFromVideoInfo(videoInfo)
