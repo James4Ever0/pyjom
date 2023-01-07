@@ -11,7 +11,7 @@ def dummyOptimizer(topic, feedback):  # wtf is this?
     # not optimized. need schedule.
     @iterateWithTempDirectory()
     def inner(elem):
-        print("current topic: %s" % topic)
+        print("current topic: %s" % str(topic))
         print("from feedback:", elem)
         return "pending"
 
