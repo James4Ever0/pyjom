@@ -311,6 +311,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                     return
                 else:
                     # check if we are hit by something interesting?
+                    
                     cat_or_dog = checkCatOrDog(Content)
                     # we need to update neo4j database, using group_id, sender_id, cat_or_dog.
                     if cat_or_dog:
