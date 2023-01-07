@@ -20,9 +20,9 @@ import clueai
 cl = clueai.Client("", check_api_key=False)
 prompt= '''
 生成与下列文字相同意思的句子：
-长期通胀前景在今天可能不确定性更大。
+{}
 答案：
-''' #shit.
+'''.format(title) #shit.
 # generate a prediction for a prompt
 
 generate_config = {
