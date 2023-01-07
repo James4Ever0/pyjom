@@ -554,7 +554,7 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     # combine. what?
     output_img = rotated_im+img
 
-    # regulize
+    # regularize
     output_img.put(np.where(output_img>255),255)
     output_img.put(np.where(output_img<0),0)
 
