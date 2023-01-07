@@ -180,7 +180,7 @@ import random
 
 # you can send it to qq user, qq group, channels, qzone, email
 # if send by json, qzone, channels, email that will be ajax. set up another server to handle ajax requests.
-def sendCatOrDogAdToQQGroup(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','text_link', 'image_link', 'json', 'random', 'random_not_json']): # many things not implemented yet.
+def sendCatOrDogAdToQQGroup(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','text_link', 'image_link', 'json', 'random', 'random_not_json'],recentLimits:int=20): # many things not implemented yet.
     totalStyles = ['single_qr','text_link', 'image_link', 'json', 'random','random_not_json']
     notImplementedStyles = ['image_link', 'json'] # if json, first we search for avaliable json messages, if missing, we search for android devices, unlock the device then send the message. if failed, use other non-json methods.
 
@@ -202,11 +202,18 @@ def sendCatOrDogAdToQQGroup(group_id: str, cat_or_dog: str, action: Action, styl
 
     with getAdLock():
         if responses !=[]:
-            generateAdFromVideoInfo
-
-            sendMessageStatus = action.sendGroupPic(group=int(group_id), content="")
-            # stderrPrint("SENT MESSAGE STATUS:",sendMessageStatus)
+            videoInfo = random.choice(responses[:recentLimits])
+            (output_path,
+        output_standalone,
+        output_masked_path)=generateAdFromVideoInfo(videoInfo)
+            
+            if style == 'single_qr':
+                content = ""
+                picBase64Buf = ...
+            elif style == 'text_link':
+                content = ...
+                picBase64Buf = ...
+            sendMessageStatus = action.sendGroupPic(group=int(group_id), content=content, picBase64Buf=picBase64Buf)
+            # stderrPrint("SENT AD STATUS:",sendMessageStatus)
             success = sendMessageStatus["ErrMsg"] == "" and sendMessageStatus["Ret"] == 0
-        else:
-        
-            return success
+    return success
