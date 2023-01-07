@@ -1,5 +1,4 @@
 
-from bracex import expand
 import pixie
 from lazero.utils.importers import cv2_custom_build_init
 
@@ -490,7 +489,7 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
         slope = (p2[1] - p1[1]) / (p2[0] - p1[0])
         
         # Calculate the angle of the edge from the x-axis
-        angle = math.atan(slope)
+        angle = (math.pi/2)-math.atan(slope) # correct the angle. according to opencv.
         while True:
             if angle > math.pi/2:
                 angle -= math.pi/2
@@ -548,7 +547,7 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     if angle == 0:
         rotated_im = expanded_QR
     else:
-        angle_deg = 180*(angle / np.pi)
+        angle_deg = 180*(angle / np.pi) # rotation error.
         rotation_matrix = cv2.getRotationMatrix2D(center, angle_deg, 1)
         rotated_im = cv2.warpAffine(expanded_QR, rotation_matrix, (img.shape[1],img.shape[0]))
 
