@@ -13,3 +13,6 @@ def test_main():
         output = removeAndInsertQRCode(img, qrcode_path, None)
         cv2.imshow("IMG", output)
         cv2.waitKey(0)
+
+if __name__ == "__main__":
+    test_main()
