@@ -433,7 +433,7 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
     # @return if detected type 'bool'
     import numpy as np
     def detect_qr(inputFrame):
-        img = Image.fromarray(inputFrame)
+        img = Image.fromarray(inputFrame) # fuck?
         decodedImg = decode(img, symbols=[ZBarSymbol.QRCODE])
         # it reads the content. but where is the code?
         print('total %d qrcode detected' % len(decodedImg))
@@ -458,7 +458,11 @@ def removeQRCodes(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,IMAGE_WIT
             return polygons
         else:
             return []
-    QRCodeCoordinates = detect_qr(image_with_qrcode_path)
+    def getInputFrameFromImagePath(imagePath:str):
+        inputFrame = cv2.imread(imagePath)
+        return inputFrame
+    inputFrame = getInputFrameFromImagePath(image_with_qrcode_path)
+    QRCodeCoordinates = detect_qr(inputFrame)
     img = cv2.imread(image_with_qrcode_path)
 
     if QRCodeCoordinates!=[]:
