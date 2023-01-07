@@ -240,6 +240,23 @@ chinese_t2s = opencc.OpenCC()
 adBuffer = {}
 # hook up this thing, send cat video only if we receive that topic.
 
+@asyncThread
+def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str):
+    cat_or_dog = checkCatOrDog(Content)
+    # we need to update neo4j database, using group_id, sender_id, cat_or_dog.
+    if cat_or_dog:
+        makeCatOrDogConnections(
+            str(group_id), str(sender_id), cat_or_dog
+        )
+        # act accordingly. decide to send ad or not.
+        if adBuffer.get(str(group_id), 0) <= 0:
+            penalty = 10
+            # send the ad.
+            success = sendCatOrDogAdToQQGroup(str(group_id), cat_or_dog, action)
+            if success:
+                penalty += 40
+            adBuffer[str(group_id)] = penalty
+        # decrease that counter by standard group messages.
 
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
@@ -311,22 +328,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                     return
                 else:
                     # check if we are hit by something interesting?
-                    
-                    cat_or_dog = checkCatOrDog(Content)
-                    # we need to update neo4j database, using group_id, sender_id, cat_or_dog.
-                    if cat_or_dog:
-                        makeCatOrDogConnections(
-                            str(group_id), str(sender_id), cat_or_dog
-                        )
-                        # act accordingly. decide to send ad or not.
-                        if adBuffer.get(str(group_id), 0) <= 0:
-                            penalty = 10
-                            # send the ad.
-                            success = sendCatOrDogAdToQQGroup(str(group_id), cat_or_dog, action)
-                            if success:
-                                penalty += 40
-                            adBuffer[str(group_id)] = penalty
-                        # decrease that counter by standard group messages.
+                    catOrDogAsyncThread(group_id, sender_id, Content)
                     updateChatStack(group_id, Content)
                     # or we could simply add the filter on the reply side.
 
