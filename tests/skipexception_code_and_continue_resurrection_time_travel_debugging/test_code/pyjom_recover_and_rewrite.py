@@ -17,7 +17,7 @@ if __name__ == "__main__":
             if len(source_old) < 20 or "\ndef " not in source_old:
                 return
             try:
-                source_new = rar1(source_old)
+                source_new = rar1(source_old,no_rewrite)
             except:
                 import traceback
                 traceback.print_exc()
