@@ -7,7 +7,7 @@ content = "支持几十个不同类型的任务，具有较好的零样本学习
 
 target = "http://www.xiaofamaoai.com/result.php"
 xfm_uid = "342206661e655450c1c37836d23dc3eb"
-data = {"content":content, "xfm_uid":xfm_uid, "agreement":"on"}
+data = {"contents":content, "xfm_uid":xfm_uid, "agreement":"on"}
 
 r = requests.post(target, data=data)
 print(r.text) # nothing? fuck?
