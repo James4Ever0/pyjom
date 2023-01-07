@@ -157,7 +157,7 @@ def getCatOrDogAd(
         rich.print(responses)
     return responses  # select one such response.
 
-from ad_template_2_functional import TMP_DIR_PATH, generateVideoAdUniversal, getAdLock # use it in sending the ad.
+from ad_template_2_functional import TMP_DIR_PATH, generateBilibiliVideoAd, getAdLock # use the lock during sending the ad.
 
 
 def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
@@ -166,10 +166,12 @@ def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
     import requests, os
     extension = pic.split("?")[0].split(".")[-1]
     cover_download_path = os.path.join(TMP_DIR_PATH,'video_cover.{}'.format(extension))
-    with open(cover_download_path,'wb') as f:
-        content = requests.get(pic).content
-        f.write(content)
-
+    (output_path,
+        output_standalone,
+        output_masked_path) = generateBilibiliVideoAd(bvid,title, pic, cover_download_path)
+    return (output_path,
+        output_standalone,
+        output_masked_path)
 
 from botoy import Action
 
