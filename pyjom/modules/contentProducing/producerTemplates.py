@@ -527,7 +527,9 @@ def petsWithMusicOnlineProducer(
                     print("MEDIALANG SCRIPT SAVED TO:", medialangScript_savedPath)
                 except:
                     pass
-                breakpoint()
+                if debug:
+                    breakpoint()
+                # continue? let's see if you can post it?
 
 
 # local
