@@ -75,7 +75,10 @@ def BilibiliPoster(
             # now register the uploaded video.
             import requests
             if contentType == "video":
-                requests.get('')
+                data = {"bvid":(contentId), # must str.
+             "dedeuserid":...,
+            "is_mine":True,"visible":False}
+                r = requests.post('http://localhost:{}'.format(server_port),json=data)
             return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
 
     def postContentIterate(content):
