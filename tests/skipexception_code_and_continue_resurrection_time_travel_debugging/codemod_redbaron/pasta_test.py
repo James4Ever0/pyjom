@@ -2,9 +2,10 @@ import pasta
 import ast
 
 
-def recover_and_rewrite(c):
+def recover_and_rewrite(c,no_rewrite=False):
     c = c.replace("from reloading import reloading\n", "")
-    c = "from reloading import reloading\n" + c
+    if not no_rewrite:
+        c = "from reloading import reloading\n" + c
     tree = pasta.parse(c)
     # print(dir(tree))
     for i in range(len(tree.body)):
@@ -26,6 +27,7 @@ def recover_and_rewrite(c):
             for index in removeList:
                 del f.decorator_list[index]
             # if len(f.decorator_list) == 0: # are you sure this will be ok?
+            if 
             if not cached:
                 f.decorator_list.append(ast.Name("reloading"))  # seems good?
         # ast.FunctionDef and ast.AsyncFunctionDef are different.

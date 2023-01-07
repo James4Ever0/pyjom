@@ -1,9 +1,11 @@
 from recover import recover
 from rewrite import rewrite
 
-def recover_and_rewrite(source_old):
+def recover_and_rewrite(source_old,no_rewrite=False):
     intermediate = recover(source_old)
-    source_new = rewrite(intermediate)
+    if not no_rewrite:
+        source_new = rewrite(intermediate)
+    else: source_new=intermediate
     return source_new
 
 if __name__ == '__main__':
