@@ -72,6 +72,10 @@ def BilibiliPoster(
                     "unknown content type to upload for bilibiliPoster:", contentType
                 )
             afterPosting() # execute no matter what. after posting the content.
+            # now register the uploaded video.
+            import requests
+            if contentType == "video":
+                requests.get('')
             return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId)
 
     def postContentIterate(content):
