@@ -5,7 +5,7 @@ modelID = "ClueAI/PromptCLUE-base-v1-5"
 
 tokenizer = T5Tokenizer.from_pretrained(modelID, local_first=True)
 model = T5ForConditionalGeneration.from_pretrained(
-    modelID, local_first=True, device="cpu"
+    modelID, local_files_first=True, device="cpu"
 )  # oh shit! 1G model
 
 
