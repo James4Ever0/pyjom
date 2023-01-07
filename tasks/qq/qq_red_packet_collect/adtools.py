@@ -176,9 +176,9 @@ def generateAdFromVideoInfo(videoInfo):  # which style you want the most?
 from botoy import Action
 
 from typing import Literal
-def sendCatOrDogAd(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','text_link', 'image_link', 'json', 'random']): # many things not implemented yet.
-    totalStyles = ['single_qr','text_link', 'image_link', 'json', 'random']
-    notImplementedStyles = ['image_link', 'json']
+def sendCatOrDogAd(group_id: str, cat_or_dog: str, action: Action, style:Literal['single_qr','text_link', 'image_link', 'json', 'random', 'random_not_json']): # many things not implemented yet.
+    totalStyles = ['single_qr','text_link', 'image_link', 'json', 'random','random_not_json']
+    notImplementedStyles = ['image_link', 'json'] # if json, first we search for avaliable json messages, if missing, we search for android devices, unlock the device then send the message. if failed, use other non-json methods.
     usableStyles = [s for s in totalStyles if s not in notImplementedStyles]
     if style in notImplementedStyles:
         raise NotImplementedError("Not implemented style: '{}'".format(style))
