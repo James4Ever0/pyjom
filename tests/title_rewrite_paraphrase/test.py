@@ -10,6 +10,7 @@ import clueai
 
 # initialize the Clueai Client with an API Key
 # 微调用户finetune_user=True
-cl = clueai.Client(apiKey)
+# cl = clueai.Client(apiKey)
 print(cl.check_usage(finetune_user=False)) 
+# shit. we are on trial.
 # {'使用量': 0, '剩余量': 5000, '用户类型': '免费用户'}
