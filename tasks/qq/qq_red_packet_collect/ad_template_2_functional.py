@@ -536,6 +536,15 @@ def removeAndInsertQRCode(image_with_qrcode_path:str=os.path.join(TMP_DIR_PATH,I
     expanded_QR[startingPoint[1]:height+startingPoint[1], startingPoint[0]:width+startingPoint[0]] = QRImage
 
     # then rotate.
-    angle_deg = angle / np.pi
+    angle_deg = 180*(angle / np.pi)
     rotation_matrix = cv2.getRotationMatrix2D(center, angle_deg, 1)
-    rotated_im = cv2.warpAffine(im, rotation_matrix, (width, height))
+    rotated_im = cv2.warpAffine(expanded_QR, rotation_matrix, (width, height))
+
+    # combine. what?
+    output_img = rotated_im+img
+
+    # regulize
+    output_img.put(np.where(output_img>255),255)
+    output_img.put(np.where(output_img<0),0)
+
+    # save the image.
