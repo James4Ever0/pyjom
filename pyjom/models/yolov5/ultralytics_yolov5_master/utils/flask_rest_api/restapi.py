@@ -1,4 +1,3 @@
-from reloading import reloading
 """
 Run a Flask REST API exposing a YOLOv5s model
 """
@@ -15,7 +14,6 @@ DETECTION_URL = "/v1/object-detection/yolov5s"
 
 
 @app.route(DETECTION_URL, methods=["POST"])
-@reloading
 def predict():
     if not request.method == "POST":
         return

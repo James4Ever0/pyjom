@@ -1,4 +1,3 @@
-from reloading import reloading
 from pyjom.commons import *
 import requests
 import random
@@ -8,7 +7,6 @@ import parse
 import urllib.parse
 
 
-@reloading
 def weiboLinkSearch(keyword):
     links = []
     myfilter = list(jieba.cut(keyword))
@@ -41,7 +39,6 @@ def weiboLinkSearch(keyword):
             return links
 
 
-@reloading
 def weiboStatusParser(content):
     mtitle = None
     if "topic_struct" in content.keys():
@@ -146,7 +143,6 @@ def weiboStatusParser(content):
     return mcontent
 
 
-@reloading
 def weiboVideoSearch(keyword):
     links = weiboLinkSearch(keyword)
     # info = []
@@ -178,7 +174,6 @@ def weiboVideoSearch(keyword):
         # make it into generator so links will not expire so damn fast.
 
 
-@reloading
 def weiboInfoLogic(topic):
     infoDict = {}
     for elem in topic["entities"]:
@@ -190,14 +185,12 @@ def weiboInfoLogic(topic):
 
 
 @decorator
-@reloading
 def weiboInfo(topic):
     infoDict = weiboInfoLogic(topic)
     return infoDict
 
 
 @decorator
-@reloading
 def weiboFetcher(topic):
     mtopic_bytes = json.dumps(topic).encode()
     protocol = "sinafetch://{}".format(

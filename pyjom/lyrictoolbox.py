@@ -1,4 +1,3 @@
-from reloading import reloading
 import pylrc
 from MediaInfo import MediaInfo
 from pyonfx import *
@@ -21,14 +20,12 @@ englishPuncturals = string.punctuation
 chinesePuncturals = zhon.hanzi.punctuation
 
 
-@reloading
 def removeChinesePunctuation(text):
     for elem in chinesePuncturals:
         text = text.replace(elem, "")
     return text
 
 
-@reloading
 def removeLeadingAndTrailingPunctuation(text):
     for elem in englishPuncturals + chinesePuncturals:
         if text.startswith(elem):
@@ -40,14 +37,12 @@ def removeLeadingAndTrailingPunctuation(text):
     return text
 
 
-@reloading
 def removeUnnecessaryPunctuation(text):
     text = removeChinesePunctuation(text)
     text = removeLeadingAndTrailingPunctuation(text)
     return text
 
 
-@reloading
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)  # the music path is not right.
     info = info.getInfo()
@@ -58,7 +53,6 @@ def getMusicDuration(musicPath):
     return length
 
 
-@reloading
 def lrcToTextArray(musicPath, lrcPath):
     assert lrcPath.endswith(".lrc")
     musicDuration = getMusicDuration(musicPath)
@@ -119,7 +113,6 @@ def lrcToTextArray(musicPath, lrcPath):
     # [{'text':text,'start':start,'end':end}, ...]
 
 
-@reloading
 def lastSpaceSpliter(text):
     text = text.strip()
     # index = 0
@@ -137,7 +130,6 @@ def lastSpaceSpliter(text):
 # if there is a single shit failed to pass this 'lastSpaceSpliter' test, this is not a bilingual lrc file from netease.
 
 
-@reloading
 def getJiebaCuttedText(text):
     import jieba
 
@@ -149,7 +141,6 @@ def getJiebaCuttedText(text):
 
 # from loadLingua_pyjnius import pyjniusLinguaDetectLanguageLabel
 # from loadLingua_jpype import getLinguaDetectedLanguageLabel as pyjniusLinguaDetectLanguageLabel
-@reloading
 def pyjniusLinguaDetectLanguageLabel(text):
     import requests
 
@@ -169,7 +160,6 @@ nativeLangFlagStandard = "CHINESE"
 # need to make this thing totally bilingual if we have to.
 
 # for test in tests:
-@reloading
 def getLyricsLanguageType(test):
     isBilingual = False
     needToTranslate = True  # not useful for our bilingual shit.
@@ -250,7 +240,6 @@ def getLyricsLanguageType(test):
     return isBilingual, needToTranslate
 
 
-@reloading
 def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
@@ -278,7 +267,6 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     # we know the translator cannot respond the same shit to us right?
 
 
-@reloading
 def waitForServerUp(port, message, timeout=1):
     import requests
 
@@ -313,7 +301,6 @@ waitForServerUp(
 )  # this is text filter.
 
 
-@reloading
 def censorTextWithTextFilter(text):
     port = 8932
     import requests
@@ -325,7 +312,6 @@ def censorTextWithTextFilter(text):
 
 
 @redisLRUCache()
-@reloading
 def getTextListTranslated(test, translate_method="baidu"):
     newLyricArray = []
     import progressbar
@@ -357,7 +343,6 @@ def getTextListTranslated(test, translate_method="baidu"):
     return newLyricArray
 
 
-@reloading
 def textArrayWithTranslatedListToAss(
     textArray,
     translatedList,
@@ -942,7 +927,6 @@ def textArrayWithTranslatedListToAss(
 
 # do the preview later?
 # # io.open_aegisub()
-@reloading
 def previewAssWithVideo(sample_video, assPath):
     # from pyonfx import Ass
     # io = Ass(assPath)
@@ -953,7 +937,6 @@ def previewAssWithVideo(sample_video, assPath):
     os.system(cmd)
 
 
-@reloading
 def lrcToAnimatedAss(
     musicPath,
     lrcPath,
@@ -988,7 +971,6 @@ def lrcToAnimatedAss(
 
 
 # lyrictoolbox
-@reloading
 def getLyricNearbyBpmCandidates(lyric_times, beats):
     nearbys, remains = [], []
     mbeats = beats.copy()
@@ -1006,7 +988,6 @@ def getLyricNearbyBpmCandidates(lyric_times, beats):
 
 
 # lyrictoolbox
-@reloading
 def read_lrc(lrc_path):
     assert lrc_path.endswith(".lrc")
     with open(lrc_path, "r") as f:
@@ -1022,7 +1003,6 @@ def read_lrc(lrc_path):
 
 
 # mainly for netease, this may change.
-@reloading
 def cleanLrcFromWeb(
     lyric_string: str,
     song_duration: float,

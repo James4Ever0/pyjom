@@ -1,4 +1,3 @@
-from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 AutoAnchor utils
@@ -16,7 +15,6 @@ from utils.general import LOGGER, colorstr, emojis
 PREFIX = colorstr('AutoAnchor: ')
 
 
-@reloading
 def check_anchor_order(m):
     # Check anchor order against stride order for YOLOv5 Detect() module m, and correct if necessary
     a = m.anchors.prod(-1).mean(-1).view(-1)  # mean anchor area per output layer
@@ -27,7 +25,6 @@ def check_anchor_order(m):
         m.anchors[:] = m.anchors.flip(0)
 
 
-@reloading
 def check_anchors(dataset, model, thr=4.0, imgsz=640):
     # Check anchor fit to data, recompute if necessary
     m = model.module.model[-1] if hasattr(model, 'module') else model.model[-1]  # Detect()
@@ -68,7 +65,6 @@ def check_anchors(dataset, model, thr=4.0, imgsz=640):
         LOGGER.info(emojis(s))
 
 
-@reloading
 def kmean_anchors(dataset='./data/coco128.yaml', n=9, img_size=640, thr=4.0, gen=1000, verbose=True):
     """ Creates kmeans-evolved anchors from training dataset
 

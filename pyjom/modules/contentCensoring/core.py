@@ -1,4 +1,3 @@
-from reloading import reloading
 from tkinter import *
 from pyjom.commons import *
 from pyjom.modules.contentCensoring.autoCensor import *
@@ -11,7 +10,6 @@ import command_spawner
 from progressbar import *
 
 # add progressbar
-@reloading
 def mediaDownloader(url, mblogid, basedir=None, index=None):
     try:
         with requests.get(url) as r: # what is the media file suffix?
@@ -55,7 +53,6 @@ x_buffer = None
 tag_x_offset =None
 tag_y_counter =None
 
-@reloading
 def censorInterface(
     mtitle, mtopic, mcontent,mtags=[], local=False
 ):  # this could be a standard template.
@@ -221,7 +218,6 @@ def censorInterface(
     return mdata
 
 
-@reloading
 def playMedia(mediaPath):
     cmdline = "ffplay -alwaysontop -loop 0 -top 0 -left 0 {}".format(mediaPath)
     cs = command_spawner.CommandSpawner(command=cmdline, daemon=True)
@@ -229,7 +225,6 @@ def playMedia(mediaPath):
     return cs
 
 
-@reloading
 def coreMediaCensor(
     mediaPath,
     meta,
@@ -267,7 +262,6 @@ def coreMediaCensor(
 
 
 @decorator
-@reloading
 def weiboCensor(
     content,
     basedir=None,
@@ -321,7 +315,6 @@ def weiboCensor(
 
 
 @decorator
-@reloading
 def localCensor(
     content, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[]
 ):

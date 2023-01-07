@@ -1,9 +1,7 @@
-from reloading import reloading
 from pyjom.commons import *
 
 
 @decorator
-@reloading
 def dummyProducer(processed_info):
     return {
         "husky": {

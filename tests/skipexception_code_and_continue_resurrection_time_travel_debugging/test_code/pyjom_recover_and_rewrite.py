@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # comby = Comby()
     dirpath = "/root/Desktop/works/pyjom/pyjom"
 
-    def change_file_at_path(path，no_rewrite=False):
+    def change_file_at_path(path,no_rewrite=False):
         with open(path, "r") as f:
             source_old = f.read()
             if len(source_old) < 20 or "\ndef " not in source_old:
@@ -22,7 +22,7 @@ if __name__ == "__main__":
                 import traceback
                 traceback.print_exc()
                 print('pasta failed to process the code at path: %s' % path)
-                source_new = rar2(source_old，no_rewrite=no_rewrite)
+                source_new = rar2(source_old,no_rewrite=no_rewrite)
         with open(path, "w+") as f:
             f.write(source_new)
 

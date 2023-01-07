@@ -1,4 +1,3 @@
-from reloading import reloading
 from pyjom.commons import decorator,os
 from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 
@@ -6,7 +5,6 @@ from lazero.filesystem.temp import tmpdir
 
 
 @decorator
-@reloading
 def OnlineProducer(
     processed_info_generator,
     source="giphy",

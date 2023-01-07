@@ -1,9 +1,7 @@
-from reloading import reloading
 from pyjom.commons import *
 from pyjom.modules.contentProducing.producerTemplates import getProducerTemplate
 
 
-@reloading
 def FilesystemInfoFilter(processed_info, filters={}):
     # this is just standard filter logic...
     filtered_info = {}
@@ -146,7 +144,6 @@ def FilesystemInfoFilter(processed_info, filters={}):
 
 
 @decorator
-@reloading
 def FilesystemProducer(
     processed_info,
     filters={},

@@ -27,9 +27,9 @@ def recover_and_rewrite(c,no_rewrite=False):
             for index in removeList:
                 del f.decorator_list[index]
             # if len(f.decorator_list) == 0: # are you sure this will be ok?
-            if 
-            if not cached:
-                f.decorator_list.append(ast.Name("reloading"))  # seems good?
+            if not no_rewrite:
+                if not cached:
+                    f.decorator_list.append(ast.Name("reloading"))  # seems good?
         # ast.FunctionDef and ast.AsyncFunctionDef are different.
     c0 = pasta.dump(tree)
     return c0

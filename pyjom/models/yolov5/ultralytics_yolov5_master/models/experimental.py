@@ -1,4 +1,3 @@
-from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Experimental modules
@@ -88,7 +87,6 @@ class Ensemble(nn.ModuleList):
         return y, None  # inference, train output
 
 
-@reloading
 def attempt_load(weights, map_location=None, inplace=True, fuse=True):
     from models.yolo import Detect, Model
 

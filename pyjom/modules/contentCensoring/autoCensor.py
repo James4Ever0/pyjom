@@ -1,10 +1,8 @@
-from reloading import reloading
 from tkinter import *
 from pyjom.commons import *
 from pyjom.medialang.core import *
 
 
-@reloading
 def dummyAutoCensor(contentPath, meta, semiauto=False):
     mdata = {
         "dummyAutoCensor": {
@@ -15,7 +13,6 @@ def dummyAutoCensor(contentPath, meta, semiauto=False):
     return mdata
 
 
-@reloading
 def autoCensor(contentPath, meta, template_names=[], semiauto=False, args={}):
     from pyjom.medialang.core import Medialang
     mdata = {}

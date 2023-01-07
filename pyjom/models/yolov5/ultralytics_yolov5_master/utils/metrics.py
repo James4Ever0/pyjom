@@ -1,4 +1,3 @@
-from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Model validation metrics
@@ -13,14 +12,12 @@ import numpy as np
 import torch
 
 
-@reloading
 def fitness(x):
     # Model fitness as a weighted combination of metrics
     w = [0.0, 0.0, 0.1, 0.9]  # weights for [P, R, mAP@0.5, mAP@0.5:0.95]
     return (x[:, :4] * w).sum(1)
 
 
-@reloading
 def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='.', names=(), eps=1e-16):
     """ Compute the average precision, given the recall and precision curves.
     Source: https://github.com/rafaelpadilla/Object-Detection-Metrics.
@@ -89,7 +86,6 @@ def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='.', names
     return tp, fp, p, r, f1, ap, unique_classes.astype('int32')
 
 
-@reloading
 def compute_ap(recall, precision):
     """ Compute the average precision, given the recall and precision curves
     # Arguments
@@ -210,7 +206,6 @@ class ConfusionMatrix:
             print(' '.join(map(str, self.matrix[i])))
 
 
-@reloading
 def bbox_iou(box1, box2, x1y1x2y2=True, GIoU=False, DIoU=False, CIoU=False, eps=1e-7):
     # Returns the IoU of box1 to box2. box1 is 4, box2 is nx4
     box2 = box2.T
@@ -253,7 +248,6 @@ def bbox_iou(box1, box2, x1y1x2y2=True, GIoU=False, DIoU=False, CIoU=False, eps=
     return iou  # IoU
 
 
-@reloading
 def box_iou(box1, box2):
     # https://github.com/pytorch/vision/blob/master/torchvision/ops/boxes.py
     """
@@ -278,7 +272,6 @@ def box_iou(box1, box2):
     return inter / (area1[:, None] + area2 - inter)  # iou = inter / (area1 + area2 - inter)
 
 
-@reloading
 def bbox_ioa(box1, box2, eps=1E-7):
     """ Returns the intersection over box2 area given box1, box2. Boxes are x1y1x2y2
     box1:       np.array of shape(4)
@@ -303,7 +296,6 @@ def bbox_ioa(box1, box2, eps=1E-7):
     return inter_area / box2_area
 
 
-@reloading
 def wh_iou(wh1, wh2):
     # Returns the nxm IoU matrix. wh1 is nx2, wh2 is mx2
     wh1 = wh1[:, None]  # [N,1,2]
@@ -315,7 +307,6 @@ def wh_iou(wh1, wh2):
 # Plots ----------------------------------------------------------------------------------------------------------------
 
 
-@reloading
 def plot_pr_curve(px, py, ap, save_dir='pr_curve.png', names=()):
     # Precision-recall curve
     fig, ax = plt.subplots(1, 1, figsize=(9, 6), tight_layout=True)
@@ -337,7 +328,6 @@ def plot_pr_curve(px, py, ap, save_dir='pr_curve.png', names=()):
     plt.close()
 
 
-@reloading
 def plot_mc_curve(px, py, save_dir='mc_curve.png', names=(), xlabel='Confidence', ylabel='Metric'):
     # Metric-confidence curve
     fig, ax = plt.subplots(1, 1, figsize=(9, 6), tight_layout=True)

@@ -1,10 +1,8 @@
-from reloading import reloading
 from pyjom.commons import jsonPrettyPrint,decorator
 from pyjom.modules.contentCensoring.core import localCensor
 import json
 
 
-@reloading
 def filesystemReviewerCoreAnalyzer(
     elem, auto=False, semiauto=True, dummy_auto=True, args={}, template_names=[], debug=True
 ):
@@ -31,7 +29,6 @@ def filesystemReviewerCoreAnalyzer(
     return reviewResult
 
 
-@reloading
 def filesystemReviewerNoGenerator(
     content,**kwargs
 ):
@@ -44,7 +41,6 @@ def filesystemReviewerNoGenerator(
     return mreview
 
 
-@reloading
 def filesystemReviewerGenerator(
     content, **kwargs
 ):
@@ -59,7 +55,6 @@ def filesystemReviewerGenerator(
 
 
 @decorator
-@reloading
 def filesystemReviewer(
     content,
     auto=False,

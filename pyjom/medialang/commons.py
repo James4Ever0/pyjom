@@ -1,8 +1,6 @@
-from reloading import reloading
 from pyjom.commons import *
 
 
-@reloading
 def serializeSRT(srtObj):
     index = srtObj.index
     start = srtObj.start.total_seconds()
@@ -12,7 +10,6 @@ def serializeSRT(srtObj):
     return data
 
 
-@reloading
 def medialangFatalError(error_msg, script_file):
     print("Medialang fatal error:", os.path.abspath(script_file))
     print(error_msg)
@@ -22,7 +19,6 @@ def medialangFatalError(error_msg, script_file):
 medialangTmpDir = "/dev/shm/medialang"
 
 
-@reloading
 def getTmpMediaName(medialangTmpDir = medialangTmpDir):
     while True:
         uniq_id = str(uuid.uuid4())

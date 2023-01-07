@@ -1,4 +1,3 @@
-from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 PyTorch utils
@@ -31,7 +30,6 @@ warnings.filterwarnings('ignore', message='User provided device_type of \'cuda\'
 
 
 @contextmanager
-@reloading
 def torch_distributed_zero_first(local_rank: int):
     # Decorator to make all processes in distributed training wait for each local_master to do something
     if local_rank not in [-1, 0]:
@@ -41,7 +39,6 @@ def torch_distributed_zero_first(local_rank: int):
         dist.barrier(device_ids=[0])
 
 
-@reloading
 def device_count():
     # Returns number of CUDA devices available. Safe version of torch.cuda.device_count(). Only works on Linux.
     assert platform.system() == 'Linux', 'device_count() function only works on Linux'
@@ -52,7 +49,6 @@ def device_count():
         return 0
 
 
-@reloading
 def select_device(device='', batch_size=0, newline=True):
     # device = 'cpu' or '0' or '0,1,2,3'
     s = f'YOLOv5 🚀 {git_describe() or file_update_date()} torch {torch.__version__} '  # string
@@ -84,7 +80,6 @@ def select_device(device='', batch_size=0, newline=True):
     return torch.device('cuda:0' if cuda else 'cpu')
 
 
-@reloading
 def time_sync():
     # PyTorch-accurate time
     if torch.cuda.is_available():
@@ -92,7 +87,6 @@ def time_sync():
     return time.time()
 
 
-@reloading
 def profile(input, ops, n=10, device=None):
     # YOLOv5 speed/memory/FLOPs profiler
     #
@@ -145,19 +139,16 @@ def profile(input, ops, n=10, device=None):
     return results
 
 
-@reloading
 def is_parallel(model):
     # Returns True if model is of type DP or DDP
     return type(model) in (nn.parallel.DataParallel, nn.parallel.DistributedDataParallel)
 
 
-@reloading
 def de_parallel(model):
     # De-parallelize a model: returns single-GPU model if model is of type DP or DDP
     return model.module if is_parallel(model) else model
 
 
-@reloading
 def initialize_weights(model):
     for m in model.modules():
         t = type(m)
@@ -170,13 +161,11 @@ def initialize_weights(model):
             m.inplace = True
 
 
-@reloading
 def find_modules(model, mclass=nn.Conv2d):
     # Finds layer indices matching module class 'mclass'
     return [i for i, m in enumerate(model.module_list) if isinstance(m, mclass)]
 
 
-@reloading
 def sparsity(model):
     # Return global model sparsity
     a, b = 0, 0
@@ -186,7 +175,6 @@ def sparsity(model):
     return b / a
 
 
-@reloading
 def prune(model, amount=0.3):
     # Prune model to requested global sparsity
     import torch.nn.utils.prune as prune
@@ -198,7 +186,6 @@ def prune(model, amount=0.3):
     print(' %.3g global sparsity' % sparsity(model))
 
 
-@reloading
 def fuse_conv_and_bn(conv, bn):
     # Fuse Conv2d() and BatchNorm2d() layers https://tehnokv.com/posts/fusing-batchnorm-and-conv/
     fusedconv = nn.Conv2d(conv.in_channels,
@@ -222,7 +209,6 @@ def fuse_conv_and_bn(conv, bn):
     return fusedconv
 
 
-@reloading
 def model_info(model, verbose=False, img_size=640):
     # Model information. img_size may be int or list, i.e. img_size=640 or img_size=[640, 320]
     n_p = sum(x.numel() for x in model.parameters())  # number parameters
@@ -248,7 +234,6 @@ def model_info(model, verbose=False, img_size=640):
     LOGGER.info(f"{name} summary: {len(list(model.modules()))} layers, {n_p} parameters, {n_g} gradients{fs}")
 
 
-@reloading
 def scale_img(img, ratio=1.0, same_shape=False, gs=32):  # img(16,3,256,416)
     # Scales img(bs,3,y,x) by ratio constrained to gs-multiple
     if ratio == 1.0:
@@ -262,7 +247,6 @@ def scale_img(img, ratio=1.0, same_shape=False, gs=32):  # img(16,3,256,416)
         return F.pad(img, [0, w - s[1], 0, h - s[0]], value=0.447)  # value = imagenet mean
 
 
-@reloading
 def copy_attr(a, b, include=(), exclude=()):
     # Copy attributes from b to a, options to only include [...] and to exclude [...]
     for k, v in b.__dict__.items():

@@ -1,4 +1,3 @@
-from reloading import reloading
 from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 from pyjom.mathlib import *
@@ -7,7 +6,6 @@ import tempfile
 import ffmpeg
 
 
-@reloading
 def executeEditlyScript(medialangTmpDir, editly_json):
     editlyJsonSavePath = os.path.join(medialangTmpDir, "editly.json")
     with open(editlyJsonSavePath, "w+", encoding="utf8") as f:
@@ -24,7 +22,6 @@ def executeEditlyScript(medialangTmpDir, editly_json):
 from typing import Literal, List
 
 
-@reloading
 def ffmpegVideoPreProductionFilter(
     filepath,  # this is actually a video path. must be video here.
     start=None,
@@ -390,7 +387,6 @@ def ffmpegVideoPreProductionFilter(
     return cachePath
 
 
-@reloading
 def dotVideoProcessor(
     item, previous, format=None, verbose=True, medialangTmpDir="/dev/shm/medialang/"
 ):

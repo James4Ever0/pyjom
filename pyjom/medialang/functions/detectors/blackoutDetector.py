@@ -1,8 +1,6 @@
-from reloading import reloading
 from .mediaDetector import *
 
 
-@reloading
 def blackoutIdentifier(frame_a, cut=3, threshold=30, method="average"):
     assert cut >= 1
     methods = {"average": np.average, "max": np.max, "min": np.min}
@@ -26,7 +24,6 @@ def blackoutIdentifier(frame_a, cut=3, threshold=30, method="average"):
     }  # required for recovering center points.
 
 
-@reloading
 def blackoutDetector(mediapaths, cut=3, threshold=30, method="average", timestep=0.2):
     # any better detectors? deeplearning?
     results = []

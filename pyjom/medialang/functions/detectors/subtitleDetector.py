@@ -1,8 +1,6 @@
-from reloading import reloading
 from .mediaDetector import *
 from .entityDetector import ocrEntityDetector
 
-@reloading
 def getPaddleOCR(mediapath, lang="ch",use_angle_cls=True,cls=True,rec=True):
     ocr = configOCR(use_angle_cls=use_angle_cls,cls=cls,rec=rec, lang=lang)
     # print(mediapath)
@@ -13,7 +11,6 @@ def getPaddleOCR(mediapath, lang="ch",use_angle_cls=True,cls=True,rec=True):
     return result
 
 
-@reloading
 def stablePaddleOCR(mediapath, lang="ch"):
     data = getPaddleOCR(mediapath, lang=lang)
     for ind, element in enumerate(data):
@@ -24,7 +21,6 @@ def stablePaddleOCR(mediapath, lang="ch"):
     return data
 
 
-@reloading
 def mediaSubtitleDetector(
     mediapaths,
     videocr=False,

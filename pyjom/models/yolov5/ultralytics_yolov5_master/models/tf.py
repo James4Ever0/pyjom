@@ -1,4 +1,3 @@
-from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 TensorFlow, Keras and TFLite versions of YOLOv5
@@ -279,7 +278,6 @@ class TFConcat(keras.layers.Layer):
         return tf.concat(inputs, self.d)
 
 
-@reloading
 def parse_model(d, ch, model, imgsz):  # model_dict, input_channels(3)
     LOGGER.info(f"\n{'':>3}{'from':>18}{'n':>3}{'params':>10}  {'module':<40}{'arguments':<30}")
     anchors, nc, gd, gw = d['anchors'], d['nc'], d['depth_multiple'], d['width_multiple']
@@ -438,7 +436,6 @@ class AgnosticNMS(keras.layers.Layer):
         return padded_boxes, padded_scores, padded_classes, valid_detections
 
 
-@reloading
 def representative_dataset_gen(dataset, ncalib=100):
     # Representative dataset generator for use with converter.representative_dataset, returns a generator of np arrays
     for n, (path, img, im0s, vid_cap, string) in enumerate(dataset):
@@ -450,7 +447,6 @@ def representative_dataset_gen(dataset, ncalib=100):
             break
 
 
-@reloading
 def run(
         weights=ROOT / 'yolov5s.pt',  # weights path
         imgsz=(640, 640),  # inference size h,w
@@ -476,7 +472,6 @@ def run(
     LOGGER.info('PyTorch, TensorFlow and Keras models successfully verified.\nUse export.py for TF model export.')
 
 
-@reloading
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', type=str, default=ROOT / 'yolov5s.pt', help='weights path')
@@ -489,7 +484,6 @@ def parse_opt():
     return opt
 
 
-@reloading
 def main(opt):
     run(**vars(opt))
 

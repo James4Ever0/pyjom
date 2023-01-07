@@ -1,4 +1,3 @@
-from reloading import reloading
 # from pyjom.medialang.functions.detectors.mediaDetector import *
 from .blackoutDetector import *
 from .subtitleDetector import *
@@ -9,7 +8,6 @@ from .frameborder_Detector import *
 # maybe these shits are gonna ruin my life...
 
 
-@reloading
 def getMedialangInputFixed(medialangPathsInput):
     for fbase0 in medialangPathsInput:
         if type(fbase0) == str:
@@ -27,7 +25,6 @@ def getMedialangInputFixed(medialangPathsInput):
         # then it must be the medialang shit.
 
 
-@reloading
 def processInputWrapperFunction(function, wrapperFunction):
     def mFunction(data, *args, **kwargs):
         return function(wrapperFunction(data), *args, **kwargs)

@@ -1,4 +1,3 @@
-from reloading import reloading
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 Run inference on images, videos, directories, streams, etc.
@@ -48,7 +47,6 @@ from utils.torch_utils import select_device, time_sync
 
 
 @torch.no_grad()
-@reloading
 def run(
         weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
         source=ROOT / 'data/images',  # file/dir/URL/glob, 0 for webcam
@@ -210,7 +208,6 @@ def run(
         strip_optimizer(weights)  # update model (to fix SourceChangeWarning)
 
 
-@reloading
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'yolov5s.pt', help='model path(s)')
@@ -245,7 +242,6 @@ def parse_opt():
     return opt
 
 
-@reloading
 def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
     run(**vars(opt))

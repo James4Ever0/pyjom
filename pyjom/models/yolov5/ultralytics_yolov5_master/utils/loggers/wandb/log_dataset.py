@@ -1,4 +1,3 @@
-from reloading import reloading
 import argparse
 
 from wandb_utils import WandbLogger
@@ -8,7 +7,6 @@ from utils.general import LOGGER
 WANDB_ARTIFACT_PREFIX = 'wandb-artifact://'
 
 
-@reloading
 def create_dataset_artifact(opt):
     logger = WandbLogger(opt, None, job_type='Dataset Creation')  # TODO: return value unused
     if not logger.wandb:

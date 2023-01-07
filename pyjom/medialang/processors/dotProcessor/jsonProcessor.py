@@ -1,9 +1,7 @@
-from reloading import reloading
 from pyjom.medialang.functions import *
 from pyjom.medialang.commons import *
 
 
-@reloading
 def dotJsonProcessor(item, previous, verbose=True, medialangTmpDir="/dev/shm/medialang/"):
     # must contain something.
     args = item.args

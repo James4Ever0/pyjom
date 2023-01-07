@@ -1,10 +1,8 @@
-from reloading import reloading
 from pyjom.medialang.functions.detectors import *
 
 medialangFunctions = {"detector": medialangDetectors}
 
 
-@reloading
 def getMedialangFunction(function):
     for key in medialangFunctions:
         mgroup = medialangFunctions[key]

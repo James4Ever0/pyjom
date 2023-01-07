@@ -1,4 +1,3 @@
-from reloading import reloading
 from lazero.utils.json import jsonify
 
 # ellipsis = type(...)
@@ -469,7 +468,6 @@ import math
 from bilibili_api.user import VideoOrder
 
 
-@reloading
 def indexAndGetVideoObject(
     v, bilibiliUser
 ):  # let's wrap this shit. eliminate those 'erroneous' display.
@@ -1002,7 +1000,6 @@ def bootstrap():
     schedule.every(20).minutes.do(refresh_status)
 
 
-@reloading
 def bilibiliRecommendationServer(
     welcome_message="bilibili recommendation server", port=7341
 ):

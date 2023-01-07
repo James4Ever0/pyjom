@@ -1,4 +1,3 @@
-from reloading import reloading
 import json
 
 # from bs4 import BeautifulSoup
@@ -16,7 +15,6 @@ from pyjom.platforms.bilibili.utils import (
 )
 
 
-@reloading
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
     from pyjom.platforms.bilibili.utils import detectAuthorRelatedKeywords
     bvid = video["bvid"]
@@ -92,7 +90,6 @@ def parseVideoSearchItem(video, disableList: list = [], debug=False):
 # you might want the creater's name, to filter out unwanted parts.
 
 
-@reloading
 def iterateResultList(resultList, debug=False):
     for video in resultList:
         # be warned cause all these things might fail.
@@ -104,7 +101,6 @@ def iterateResultList(resultList, debug=False):
             continue
 
 
-@reloading
 def parseSearchAllResult(data, debug=False):
     # if not generator:
     #     return generatorToList(parseSearchAllResult(data, debug=debug,generator=True))
@@ -119,7 +115,6 @@ def parseSearchAllResult(data, debug=False):
             traceError("error iterating data results")
 
 
-@reloading
 def parseSearchVideoResult(data, debug=False):
     # if not generator:
     #     return generatorToList(parseSearchVideoResult(data, debug=debug,generator=True))
@@ -137,7 +132,6 @@ def parseSearchVideoResult(data, debug=False):
         traceError("error parsing search video result")
 
 
-@reloading
 def parseVideoInfo(videoInfo, debug=False):
     data = videoInfo
     # no tag out here.
@@ -178,7 +172,6 @@ def parseVideoInfo(videoInfo, debug=False):
     return primaryVideoInfo, secondaryVideoInfoList
 
 
-@reloading
 def parseVideoRelated(videoRelatedData, debug=False):
     data = videoRelatedData
     # if not generator:

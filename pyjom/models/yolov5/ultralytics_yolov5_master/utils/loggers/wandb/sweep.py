@@ -1,4 +1,3 @@
-from reloading import reloading
 import sys
 from pathlib import Path
 
@@ -15,7 +14,6 @@ from utils.general import increment_path
 from utils.torch_utils import select_device
 
 
-@reloading
 def sweep():
     wandb.init()
     # Get hyp dict from sweep agent

@@ -1,4 +1,3 @@
-from reloading import reloading
 import types
 from bilibili_api import sync
 
@@ -8,7 +7,6 @@ from lazero.utils.logger import sprint
 
 
 # wtf is async generator type?
-@reloading
 def bilibiliSync(func):
     def wrapper(*args, **kwargs):
         coroutineMaybe = func(*args, **kwargs)
@@ -24,19 +22,16 @@ def bilibiliSync(func):
 # from pyjom.platforms.bilibili.utils import generatorToList, linkFixer,traceError, extractLinks,videoDurationStringToSeconds,getAuthorKeywords,clearHtmlTags,splitTitleTags,removeAuthorRelatedTags
 
 
-@reloading
 def generatorToList(generator):
     return [x for x in generator]
 
 
-@reloading
 def linkFixer(link, prefix="http:"):
     if link.startswith("//"):
         return prefix + link
     return link
 
 
-@reloading
 def traceError(errorMsg: str = "error!", _breakpoint: bool = False):
     import traceback
 
@@ -46,7 +41,6 @@ def traceError(errorMsg: str = "error!", _breakpoint: bool = False):
         return breakpoint()
 
 
-@reloading
 def extractLinks(description, extract_bgm=True):
     """Extract and remove links in description"""
     import re
@@ -95,7 +89,6 @@ from typing import Literal
 import re
 
 from typing import Union
-@reloading
 def videoDurationStringToSeconds(
     durationString:Union[str, None], method: Literal["vtc", "basic"] = "vtc"
 ):
@@ -138,13 +131,11 @@ def videoDurationStringToSeconds(
         print("exception durion video duration string conversion")
 
 
-@reloading
 def clearHtmlTags(htmlObject):
     a = BeautifulSoup(htmlObject, features="lxml")
     return a.text
 
 
-@reloading
 def detectAuthorRelatedKeywords(title_tag, author_keywords):
     abandon = False
     for keyword in author_keywords:
@@ -155,7 +146,6 @@ def detectAuthorRelatedKeywords(title_tag, author_keywords):
     return abandon
 
 
-@reloading
 def getAuthorKeywords(author):
     author = author.strip()
     import jieba
@@ -166,7 +156,6 @@ def getAuthorKeywords(author):
     return author_keywords
 
 
-@reloading
 def removeAuthorRelatedTags(description_or_title, author):
     templates = ["【{}】", "@{}", "{}"]
     tags = [template.format(author) for template in templates]
@@ -175,7 +164,6 @@ def removeAuthorRelatedTags(description_or_title, author):
     return description_or_title
 
 
-@reloading
 def splitTitleTags(title, author_keywords):
     import re
 

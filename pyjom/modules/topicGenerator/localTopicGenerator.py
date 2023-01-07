@@ -1,10 +1,8 @@
-from reloading import reloading
 from pyjom.commons import *
 import os
 
 
 @decorator
-@reloading
 def filesystemTopicGenerator(filepath=None, dirpath=None, recursive=False):
     mfilelist = []
     protocol = None
