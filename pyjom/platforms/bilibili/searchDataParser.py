@@ -18,6 +18,7 @@ from pyjom.platforms.bilibili.utils import (
 
 @reloading
 def parseVideoSearchItem(video, disableList: list = [], debug=False):
+    from pyjom.platforms.bilibili.utils import detectAuthorRelatedKeywords
     bvid = video["bvid"]
     pubdate = video["pubdate"]
     if "author" not in disableList:

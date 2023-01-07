@@ -101,33 +101,38 @@ def sentenceFlatten(sentence, padding = " "):
 
 @reloading
 def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
-    dataList = []
-    for sentence in sentences:
-        sentence = sentenceFlatten(sentence)
-        row = englishSentencePreprocessing(sentence)
-        if len(row)>0:
-            elem = " ".join(row)
-            dataList.append(elem)
+    try:
+        dataList = []
+        for sentence in sentences:
+            sentence = sentenceFlatten(sentence)
+            row = englishSentencePreprocessing(sentence)
+            if len(row)>0:
+                elem = " ".join(row)
+                dataList.append(elem)
 
-    data = "\n".join(dataList)
+        data = "\n".join(dataList)
 
-    from sklearn.feature_extraction.text import TfidfVectorizer
+        from sklearn.feature_extraction.text import TfidfVectorizer
 
-    # 创建一个CountVectoerizer实例
-    tfidf = TfidfVectorizer(ngram_range=ngram_range)
-    # 打开刚刚保存的txt文档
-    from io import StringIO
+        # 创建一个CountVectoerizer实例
+        tfidf = TfidfVectorizer(ngram_range=ngram_range)
+        # 打开刚刚保存的txt文档
+        from io import StringIO
 
-    f = StringIO(data)
-    # 使用CountVectorizer拟合数据
-    x_train = tfidf.fit_transform(f)
+        f = StringIO(data)
+        # 使用CountVectorizer拟合数据
+        x_train = tfidf.fit_transform(f)
 
-    from sklearn.decomposition import LatentDirichletAllocation
+        from sklearn.decomposition import LatentDirichletAllocation
 
-    lda = LatentDirichletAllocation(n_components=n_components)
-    lda.fit(x_train)
+        lda = LatentDirichletAllocation(n_components=n_components)
+        lda.fit(x_train)
 
-    topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
+        topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
+    except:
+        import traceback
+        traceback.print_exc()
+        topics = []
     return topics
 
 from functools import lru_cache
@@ -181,31 +186,36 @@ def chineseSentencePreprocessing(sentence):
 
 @reloading
 def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
-    dataList = []
-    for sentence in sentences:
-        sentence = sentenceFlatten(sentence)
-        row = chineseSentencePreprocessing(sentence)
-        if len(row)>0:
-            elem = " ".join(row)
-            dataList.append(elem)
+    try:
+        dataList = []
+        for sentence in sentences:
+            sentence = sentenceFlatten(sentence)
+            row = chineseSentencePreprocessing(sentence)
+            if len(row)>0:
+                elem = " ".join(row)
+                dataList.append(elem)
 
-    data = "\n".join(dataList)
+        data = "\n".join(dataList)
 
-    from sklearn.feature_extraction.text import TfidfVectorizer
+        from sklearn.feature_extraction.text import TfidfVectorizer
 
-    # 创建一个CountVectoerizer实例
-    tfidf = TfidfVectorizer(ngram_range=ngram_range)
-    # 打开刚刚保存的txt文档
-    from io import StringIO
+        # 创建一个CountVectoerizer实例
+        tfidf = TfidfVectorizer(ngram_range=ngram_range)
+        # 打开刚刚保存的txt文档
+        from io import StringIO
 
-    f = StringIO(data)
-    # 使用CountVectorizer拟合数据
-    x_train = tfidf.fit_transform(f)
+        f = StringIO(data)
+        # 使用CountVectorizer拟合数据
+        x_train = tfidf.fit_transform(f)
 
-    from sklearn.decomposition import LatentDirichletAllocation
+        from sklearn.decomposition import LatentDirichletAllocation
 
-    lda = LatentDirichletAllocation(n_components=n_components)
-    lda.fit(x_train)
+        lda = LatentDirichletAllocation(n_components=n_components)
+        lda.fit(x_train)
 
-    topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
+        topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
+    except:
+        import traceback
+        traceback.print_exc()
+        topics = []
     return topics
