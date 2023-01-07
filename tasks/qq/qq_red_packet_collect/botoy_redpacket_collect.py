@@ -2,7 +2,7 @@
 
 # disable that 复读机 plugin.
 from chat_local import *
-from adtools import *
+from adtools import sendCatOrDogAdToQQGroup, checkCatOrDog, makeCatOrDogConnections
 from chatApis import getChatApiReply
 from base_opq import *
 import schedule
@@ -321,7 +321,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
                         if adBuffer.get(str(group_id), 0) <= 0:
                             penalty = 10
                             # send the ad.
-                            success = sendCatOrDogAd(str(group_id), cat_or_dog, action)
+                            success = sendCatOrDogAdToQQGroup(str(group_id), cat_or_dog, action)
                             if success:
                                 penalty += 40
                             adBuffer[str(group_id)] = penalty
