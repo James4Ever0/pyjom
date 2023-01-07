@@ -1,1 +1,1 @@
-curl -o with_qrcode https://ts4.cn.mm.bing.net/th?id=OIP-C.dHT-OJsfLfX_AVMOB-4rFQHaHa&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=2.2&pid=3.1&rm=2
+curl -o with_qrcode.jpg "https://tse3-mm.cn.bing.net/th/id/OIP-C.dHT-OJsfLfX_AVMOB-4rFQHaHa?pid=ImgDet&rs=1"
