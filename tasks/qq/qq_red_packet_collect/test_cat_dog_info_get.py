@@ -14,7 +14,7 @@ def test_cats_and_dogs_get_video_names():
         print("CATEGORY?",category)
         print("_"*20)
 
-        responses = getCatOrDogAd(category,method='online')
+        responses = getCatOrDogAd(category,method='bm25')
         for info in responses:
             title = info['title']
             print("VIDEO?",title)
