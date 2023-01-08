@@ -20,11 +20,13 @@ from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogC
 dog_or_cat = random.choice(["dog", "cat"])  # strange.
 # we need preconfigured things.
 bgmCacheSetName = "bilibili_cached_bgm_set"
-postMetadataGenerator = getBilibiliPostMetadataForDogCat(
+postMetadataGeneratorPrimitive = getBilibiliPostMetadataForDogCat(
     dog_or_cat=dog_or_cat,
     bgmCacheSetName=bgmCacheSetName,
     bgmCacheAutoPurge=True,  # autopurge bgm, not sure we are using the latest bgm!
 )  # metadata you can fetch from database, maybe you can preprocess this.
+from lazero.utils.tools import iteratorWrapper
+postMetadataGenerator = iteratorWrapper(postMetadataGeneratorPrimitive,init_repeat=1)
 postMetadataGenerator.__next__()  # for getting some bgm, just in case.
 # really?
 
