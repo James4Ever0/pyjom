@@ -174,36 +174,33 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
         # del data["rules"]
         # data["mode"] = "global"
     data["dns"] = {
-  enable: True,
-  enhanced-mode: "redir-host"
-  fake-ip-filter:[
-  - '*.lan'
-  - "localhost.ptlogin2.qq.com"]
-  fake-ip-range: 198.18.0.1/16
-  fallback:
-  - 8.8.8.8
-  - 1.1.1.1
-  - tls://dns.rubyfish.cn:853
-  - tls://1.0.0.1:853
-  - tls://dns.google:853
-  - https://dns.rubyfish.cn/dns-query
-  - https://cloudflare-dns.com/dns-query
-  - https://dns.google/dns-query
-  fallback-filter:
-    geoip: true
-    ipcidr:
-    - 240.0.0.0/4
-  ipv6: false
-  listen: 0.0.0.0:61
-  nameserver:
-  - 223.5.5.5
-  - 180.76.76.76
-  - 119.29.29.29
-  - 117.50.10.10
-  - 114.114.114.114
-    
-    
-    ["listen"] = "0.0.0.0:{}".format(61)
+  "enable": True,
+  "enhanced-mode": "redir-host",
+  "fake-ip-filter":[
+ '*.lan',
+  "localhost.ptlogin2.qq.com"],
+  "fake-ip-range": "198.18.0.1/16",
+  "fallback":["8.8.8.8",
+  "1.1.1.1",
+  "tls://dns.rubyfish.cn:853",
+  "tls://1.0.0.1:853",
+  "tls://dns.google:853",
+  "https://dns.rubyfish.cn/dns-query",
+  "https://cloudflare-dns.com/dns-query",
+  "https://dns.google/dns-query",
+  ],
+  "fallback-filter":{
+    "geoip": True,
+    "ipcidr":["240.0.0.0/4"]},
+  "ipv6":False,
+  "listen": "0.0.0.0:61", # key?
+  "nameserver":[ 
+    "223.5.5.5",
+  "180.76.76.76",
+  "119.29.29.29",
+  "117.50.10.10",
+  "114.114.114.114",]
+    }
 
     # data = pyYamlToGoYaml(data)
     data_dump = yaml.safe_dump(data, allow_unicode=True)
