@@ -109,13 +109,15 @@ def baiduParaphraserByTranslation(
     output_content = baidu_translate(
         middle_content, source=current_language_id, target=target_language_id
     )
-
+    success = output_content.strip() != content.strip()
     if debug:
         print("SOURCE LANGUAGE:", target_language_id)
         print("USING INTERMEDIATE LANGUAGES:", intermediate_languages)
         print("PARAPHRASED:", output_content)
-    return output_content
+        print("paraphrase success?", success)
+
+    return output_content, success
 
 
 content = "世上所有小猫都是天使变的！"
-output = baiduParaphraserByTranslation(content,paraphrase_depth = 3,debug=True)
+output, success = baiduParaphraserByTranslation(content, paraphrase_depth=3, debug=True)

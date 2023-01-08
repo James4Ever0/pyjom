@@ -1,4 +1,3 @@
-
 # use our free api first. yes?
 import yaml
 
@@ -17,34 +16,35 @@ import clueai
 
 from functools import lru_cache
 
+
 @lru_cache(maxsize=1)
-def getClueAIClient(apiKey:str):
+def getClueAIClient(apiKey: str):
     if apiKey == "":
         return clueai.Client("", check_api_key=False)
     else:
         return clueai.Client(apiKey)
 
+
 def clueAIParaphraser(
-title:str,
-apiKey:str="",
-generate_config:dict = {
-    "do_sample": True,
-    "top_p": 0.8,
-    "max_length": 128, # notice! not too long.
-    "min_length": 5,
-    "length_penalty": 1.0,
-    "num_beams": 1,
-},
-prompt_template:str = """
+    title: str,
+    apiKey: str = "",
+    generate_config: dict = {
+        "do_sample": True,
+        "top_p": 0.8,
+        "max_length": 128,  # notice! not too long.
+        "min_length": 5,
+        "length_penalty": 1.0,
+        "num_beams": 1,
+    },
+    prompt_template: str = """
 生成与下列文字相同意思的句子：
 {}
 答案：
 """,
-debug:bool=False):
-    cl =  getClueAIClient(apiKey) # good without API key
-    prompt = prompt_template.format(
-        title
-    )  # shit.
+    debug: bool = False,
+):
+    cl = getClueAIClient(apiKey)  # good without API key
+    prompt = prompt_template.format(title)  # shit.
     # generate a prediction for a prompt
 
     # 如果需要自由调整参数自由采样生成，添加额外参数信息设置方式：generate_config=generate_config
@@ -53,10 +53,13 @@ debug:bool=False):
     )
     # 需要返回得分的话，指定return_likelihoods="GENERATION"
     output = prediction.generations[0].text
+    success = title.strip() != output.strip()
     if debug:
-    # print the predicted text
+        # print the predicted text
         print("prediction: {}".format(output))
-    return output
+        print("paraphrase success?", success)
+    return output, success
+
 
 title = "世上所有小猫都是天使变的！"
-output = clueAIParaphraser(title,debug=True)
+output, success = clueAIParaphraser(title, debug=True)
