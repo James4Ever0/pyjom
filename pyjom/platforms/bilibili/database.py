@@ -1011,11 +1011,11 @@ def bilibiliRecommendationServer(
     app = FastAPI()
 
     @app.get("/")
-    # @reloading
+    # #@reloading
     def server_hello():
         return welcome_message
 
-    @reloading
+    #@reloading
     class queryForm(pydantic.BaseModel):
         query: str  # required?
         page_size: Union[int, None] = None
@@ -1030,12 +1030,12 @@ def bilibiliRecommendationServer(
                 self.query_for_search_cached = textPreprocessing(query)
             return self.query_for_search_cached
 
-    @reloading
+    #@reloading
     class searchVideoForm(queryForm):
         iterate: bool = False
         params: dict = {}  # let's just see what you've got here.
 
-    @reloading
+    #@reloading
     def getVideoInfosFromVideoGenerator(vgen):
         vlist = []
         for v in vgen:
@@ -1045,7 +1045,7 @@ def bilibiliRecommendationServer(
 
     # just asking. post or get?
     @app.post("/searchVideos")  # what do you want to have? all fields?
-    # @reloading
+    # #@reloading
     def search_videos(form: searchVideoForm):
         # print('received params:',params) # it is str.
         # breakpoint()
@@ -1063,14 +1063,14 @@ def bilibiliRecommendationServer(
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
 
-    @reloading
+    #@reloading
     class searchRegisteredVideoForm(queryForm):
         tid: int = 0
         dedeuserid: Union[list[str], str, None] = None
         videoOrder: VideoOrder = VideoOrder.PUBDATE
 
     @app.post("/searchRegisteredVideos")
-    # @reloading
+    # #@reloading
     def search_registered_videos(form: searchRegisteredVideoForm):
         vgen = searchRegisteredVideos(
             form.query_for_search,
@@ -1083,14 +1083,14 @@ def bilibiliRecommendationServer(
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
 
-    @reloading
+    #@reloading
     class searchUserVideoForm(searchRegisteredVideoForm):
         dedeuserid: str = "397424026"
         method: Literal["online", "bm25"] = "online"
         use_credential: bool = False
 
     @app.post("/searchUserVideos")
-    # @reloading
+    # #@reloading
     def search_user_videos(form: searchUserVideoForm):
         vgen = searchUserVideos(
             form.query_for_search,
@@ -1105,7 +1105,7 @@ def bilibiliRecommendationServer(
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
 
-    @reloading
+    #@reloading
     class registerUserVideoForm(pydantic.BaseModel):
         bvid: str
         dedeuserid: str
@@ -1113,7 +1113,7 @@ def bilibiliRecommendationServer(
         visible: bool = False
 
     @app.post("/registerUserVideo")
-    # @reloading
+    # #@reloading
     def register_user_video(form: registerUserVideoForm):
         new = registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
         if new:
