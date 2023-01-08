@@ -10,8 +10,17 @@ os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
 
 
-CLASH_CONFIG_DOWNLOAD_URL=...
-ALL_PROXIES_LOCATION=["proxies", "✋ 手动选择", "all"]
+# CLASH_CONFIG_DOWNLOAD_URL="https://raw.kgithub.com/yu-steven/openit/main/Clash.yaml" # it is down!
+# ALL_PROXIES_LOCATION=["proxies", "✋ 手动选择", "all"]
+# PROXY_GROUP_EXCEPTIONS = ["👉 例外网站"]
+# PROXY_GROUP_SPECIALS =["☁️ 全球直连", "🌐 节点选择"]
+
+
+CLASH_CONFIG_DOWNLOAD_URL="https://subconverter.speedupvpn.com/sub?target=clash&url=https%3A%2F%2Fjsd.cdn.zzko.cn%2Fgh%2FPawdroid%2FFree-servers%40main%2Fsub&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
+ALL_PROXIES_LOCATION=["proxies", "🔰 节点选择", "all"]
+PROXY_GROUP_EXCEPTIONS = ["🐟 漏网之鱼"]
+PROXY_GROUP_SPECIALS =["🎯 全球直连", "🔰 节点选择"]
+
 
 # r = requests.get(target)
 # text = r.text
@@ -144,7 +153,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
         updateIndex = 0
         for index, proxy in enumerate(data[key]):
             # breakpoint()
-            if proxy["name"] "👉 例外网站":
+            if proxy["name"] in PROXY_GROUP_EXCEPTIONS:
                 # print(proxy)
                 # breakpoint()
                 updateIndex = index
@@ -152,7 +161,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
                 updatedProxy["proxies"] = [
                     elem
                     for elem in proxy["proxies"]
-                    if elem not in PROXY_GROUP_2
+                    if elem not in PROXY_GROUP_SPECIALS:
                 ]
                 updatedProxy["url"] = "https://media4.giphy.com"
                 updatedProxy["interval"] = 300
