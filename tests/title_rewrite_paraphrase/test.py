@@ -1,4 +1,3 @@
-title = "世上所有小猫都是天使变的！"
 
 # use our free api first. yes?
 import yaml
@@ -16,9 +15,17 @@ import clueai
 # shit. we are on trial.
 # {'使用量': 0, '剩余量': 5000, '用户类型': '免费用户'}
 
+from functools import lru_cache
+
+@lru_cache(maxsize=1)
+def getClueAIClient(apiKey:str):
+    if apiKey == "":
+        return clueai.Client("", check_api_key=False)
+    else:
+        return clueai.Client(apiKey)
 
 # initialize the Clueai Client with an API Key
-cl = clueai.Client("", check_api_key=False)  # good without API key
+cl =  getClurAIClient # good without API key
 prompt = """
 生成与下列文字相同意思的句子：
 {}
@@ -47,3 +54,5 @@ print("prediction: {}".format(prediction.generations[0].text))
 # you can have multiple generations?
 print(prediction.generations)  # only one generation. fuck
 breakpoint()
+
+title = "世上所有小猫都是天使变的！"
