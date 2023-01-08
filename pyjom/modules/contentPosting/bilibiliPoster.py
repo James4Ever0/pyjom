@@ -77,9 +77,15 @@ def BilibiliPoster(
                 data = {"bvid":(contentId if type(contentId) == str else contentId.get("bvid", contentId.get('BVID'))), # must str.
              "dedeuserid":str(dedeuserid),
             "is_mine":True,"visible":False} # we have schedule checking that.
-                server_endpoint = ...
+                server_endpoint = 'registerUserVideo'
                 r = requests.post('http://localhost:{}/{}'.format(server_port, server_endpoint),json=data)
-            return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId) # this content id is fucked.
+                register_success = r.status_code in [200, 201]
+                print("VIDEO REGISTRATION STATUS?",register_success)
+                if not register_success:
+                    print("VIDEO REGISTRATION ERROR")
+                    breakpoint()
+            video_identifier = "aid_{}contentId
+            return "bilibili://{}/{}/{}".format(dedeuserid, contentType, video_identifier) # this content id is fucked.
 
     def postContentIterate(content):
         for elem in content:
