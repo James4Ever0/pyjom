@@ -113,11 +113,12 @@ from bilibili_api.search import bilibiliSearchParams
 
 # you might just want some delay when searching online.
 
-
+from typing import Literal
 def getCatOrDogAd(
     cat_or_dog: str,
     server: str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT),
     debug: bool = False,
+    method:Literal['bm25','online'] = "bm25"
 ):
     # how do we get one? by label? by category? by name?
     url = server + "/searchUserVideos"
@@ -141,7 +142,7 @@ def getCatOrDogAd(
     responses = []
     for queryWord in queryWords:
         # data = {"query":queryWord,"tid":random.choice([0]*20+[animalTid]*10+[myTid]*5)} # you can specify my user id. you may make that empty?
-        data = {"query": queryWord, "tid": animalTid, "method": "bm25"}
+        data = {"query": queryWord, "tid": animalTid, "method": method}
         if debug:
             print("POSTING DATA:")
             rich.print(data)
