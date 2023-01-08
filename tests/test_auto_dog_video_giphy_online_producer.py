@@ -25,8 +25,10 @@ postMetadataGeneratorPrimitive = getBilibiliPostMetadataForDogCat(
     bgmCacheSetName=bgmCacheSetName,
     bgmCacheAutoPurge=True,  # autopurge bgm, not sure we are using the latest bgm!
 )  # metadata you can fetch from database, maybe you can preprocess this.
+MAX_ITER = 10 # stop on ten trials.
 from lazero.utils.tools import iteratorWrapper
-postMetadataGenerator = iteratorWrapper(postMetadataGeneratorPrimitive,init_repeat=1)
+postMetadataGenerator = iteratorWrapper(postMetadataGeneratorPrimitive,init_repeat=1,max_iter=MAX_ITER)
+
 postMetadataGenerator.__next__()  # for getting some bgm, just in case.
 # really?
 
