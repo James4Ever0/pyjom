@@ -81,26 +81,28 @@ def englishSentencePreprocessing(
         Stem_words.append(rootWord)
     return Stem_words
 
-def sentenceFlatten(sentence, padding = " "):
+
+def sentenceFlatten(sentence, padding=" "):
     assert len(padding) == 1
     assert type(padding) == str
     for x in "\n\r\t":
         sentence = sentence.replace(x, padding)
     while True:
-        if padding*2 in sentence:
-            sentence = sentence.replace(padding*2, padding)
+        if padding * 2 in sentence:
+            sentence = sentence.replace(padding * 2, padding)
         else:
             break
     sentence = sentence.strip()
     return sentence
 
-def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
+
+def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2), n_components=5):
     try:
         dataList = []
         for sentence in sentences:
             sentence = sentenceFlatten(sentence)
             row = englishSentencePreprocessing(sentence)
-            if len(row)>0:
+            if len(row) > 0:
                 elem = " ".join(row)
                 dataList.append(elem)
 
@@ -125,34 +127,43 @@ def englishTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
         topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
     except:
         import traceback
+
         traceback.print_exc()
         topics = []
     return topics
 
+
 from functools import lru_cache
 from lazero.utils.logger import traceError
+
 # import os
 @lru_cache(maxsize=1)
-def getChineseStopWords(stopwordFileList = ["/root/Desktop/works/pyjom/tests/stopwords/chinese_stopwords.txt","/root/Desktop/works/pyjom/tests/stopwords/stopwords-zh/stopwords-zh.json"]):
+def getChineseStopWords(
+    stopwordFileList=[
+        "/root/Desktop/works/pyjom/tests/stopwords/chinese_stopwords.txt",
+        "/root/Desktop/works/pyjom/tests/stopwords/stopwords-zh/stopwords-zh.json",
+    ]
+):
     import json
+
     stopwords = []
     for filename in stopwordFileList:
         # if os.path.exists(filename) and os.path.isfile(filename):
         try:
-            with open(filename,'r') as f:
+            with open(filename, "r") as f:
                 content = f.read()
-            if filename.endswith('.json'):
+            if filename.endswith(".json"):
                 try:
                     mList = json.loads(content)
                     assert type(mList) == list
-                    stopwords+=mList
+                    stopwords += mList
                 except:
                     traceError(_breakpoint=True)
             else:
                 mList = content.split("\n")
-                mList = [x.replace("\n",'').strip() for x in mList]
-                mList = [x for x in mList if len(x)>0]
-                stopwords+=mList
+                mList = [x.replace("\n", "").strip() for x in mList]
+                mList = [x for x in mList if len(x) > 0]
+                stopwords += mList
         except:
             traceError(_breakpoint=True)
     return list(set(stopwords))
@@ -162,8 +173,9 @@ def chineseSentencePreprocessing(sentence):
     import jieba
     import string
     from zhon.hanzi import punctuation
+
     chinese_stopwords = getChineseStopWords()
-    words=jieba.lcut(sentence)
+    words = jieba.lcut(sentence)
     rows = []
     for word in words:
         word = word.strip()
@@ -177,13 +189,13 @@ def chineseSentencePreprocessing(sentence):
     return rows
 
 
-def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_components=5):
+def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2), n_components=5):
     try:
         dataList = []
         for sentence in sentences:
             sentence = sentenceFlatten(sentence)
             row = chineseSentencePreprocessing(sentence)
-            if len(row)>0:
+            if len(row) > 0:
                 elem = " ".join(row)
                 dataList.append(elem)
 
@@ -208,27 +220,30 @@ def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
         topics = get_topics(lda, tfidf.get_feature_names(), n_top_words)
     except:
         import traceback
+
         traceback.print_exc()
         topics = []
     return topics
+
 
 from typing import Literal
 
 ########################[PARAPHRASING]########################
 
 
-def chineseParaphraserAPI(    content:str,
-debug:bool=False,
-    target_id:int =0,
-    timeout:int=10,
-    providers:list[str]=["http://www.wzwyc.com/api.php?key=", "http://ai.guiyigs.com/api.php?key="] # it is about to close! fuck. "本站于2023年2月19日关站" buy code from "1900373358"
-    ):
+def chineseParaphraserAPI(
+    content: str,
+    debug: bool = False,
+    target_id: int = 0,
+    timeout: int = 10,
+    providers: list[str] = [
+        "http://www.wzwyc.com/api.php?key=",
+        "http://ai.guiyigs.com/api.php?key=",
+    ],  # it is about to close! fuck. "本站于2023年2月19日关站" buy code from "1900373358"
+):
     import requests
 
-
-    target = providers[
-        target_id
-    ]  # all the same?
+    target = providers[target_id]  # all the same?
     data = {"info": content}
 
     # target = "http://www.xiaofamaoai.com/result.php"
@@ -236,9 +251,9 @@ debug:bool=False,
     # data = {"contents":content, "xfm_uid":xfm_uid, "agreement":"on"}
     # nothing? fuck?
 
-    r = requests.post(target, data=data,timeout=timeout)
+    r = requests.post(target, data=data, timeout=timeout)
     output = r.text
-    success = output.strip()!= content.strip()
+    success = output.strip() != content.strip()
     if debug:
         print(output)
     return output, success
@@ -289,6 +304,7 @@ def clueAIParaphraser(
         print("prediction: {}".format(output))
         print("paraphrase success?", success)
     return output, success
+
 
 import paddlehub as hub
 
@@ -351,6 +367,7 @@ from typing import Iterable, Union
 
 import random
 
+
 def baiduParaphraserByTranslation(
     content: str,
     debug: bool = False,
@@ -409,22 +426,27 @@ def baiduParaphraserByTranslation(
     return output_content, success
 
 
-
-def paraphraser(content:str,method:Literal['clueai_free','cn_nlp_online', "baidu_zh_en"]="clueai_free",debug:bool=False): # you could add some translation based methods.
-    implementedMethods = ['clueai_free','cn_nlp_online',"baidu_zh_en"]
+def paraphraser(
+    content: str,
+    method: Literal["clueai_free", "cn_nlp_online", "baidu_zh_en"] = "clueai_free",
+    debug: bool = False,
+    configs: dict = {},
+):  # you could add some translation based methods.
+    implementedMethods = ["clueai_free", "cn_nlp_online", "baidu_zh_en"]
     if method not in implementedMethods:
         raise NotImplementedError("method '%s' not implemented")
-    if content.strip() == "": return content
+    if content.strip() == "":
+        return content, True  # to protect paraphrasers.
     if method == "clueai_free":
-        output, success = clueAIParaphraser(content,debug=debug)
-    elif method in CN_NLP_METHODS:
-        link_id = CN_NLP_METHODS.index(method)
-        output, success = chineseParaphraserAPI(content,debug=debug,target_id = link_id)
+        output, success = clueAIParaphraser(content, debug=debug, **configs)
+    elif method == "cn_nlp_online":
+        output, success = chineseParaphraserAPI(content, debug=debug, **configs)
     elif method == "baidu_zh_en":
-        output, success = baiduParaphraserByTranslation(content,debug=debug)
+        output, success = baiduParaphraserByTranslation(content, debug=debug, **configs)
     # you should not be here.
     else:
         raise NotImplementedError("method '%s' not implemented")
-    return output,success
+    return output, success
+
 
 ########################[PARAPHRASING]########################

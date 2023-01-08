@@ -11,13 +11,15 @@ from typing import Literal
 from pyjom.commons import *
 import parse
 
+
 def getAudioBitrate(mediaPath):
     return int(getMediaBitrate(mediaPath, audioOnly=True)["streams"][0]["bit_rate"])
+
 
 def getAudioDuration(audioFilePath):
     with audioread.audio_open(audioFilePath) as f:
         totalSeconds = f.duration
-    return totalSeconds # is this float number or integer?
+    return totalSeconds  # is this float number or integer?
     # how about let's test this?
 
 
@@ -121,8 +123,9 @@ def adjustVolumeInMedia(
         return outputPath
     except:
         import traceback
+
         traceback.print_exc()
-        print('error when normalizing audio for media: %s' % mediaPath)
+        print("error when normalizing audio for media: %s" % mediaPath)
     # media = ffmpeg.input(videoPath)
     # audio = media.audio
     # video = media.video

@@ -240,14 +240,14 @@ def getLyricsLanguageType(test):
     return isBilingual, needToTranslate
 
 
-def translate(text:str, backend="baidu"):  # deepl is shit. fucking shit.
+def translate(text: str, backend="baidu"):  # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
     import requests
 
     url = "http://localhost:8974/translate"
-    mTranslate = lambda text, backend,timeout: requests.get(
-        url, params={"backend": backend, "text": text},timeout=timeout
+    mTranslate = lambda text, backend, timeout: requests.get(
+        url, params={"backend": backend, "text": text}, timeout=timeout
     )
     backendList = ["deepl", "baidu"]
     if backend == "random":
@@ -259,7 +259,7 @@ def translate(text:str, backend="baidu"):  # deepl is shit. fucking shit.
     if text.strip() == "":
         return text
     try:
-        with mTranslate(text, backend,timeout=10) as conn:
+        with mTranslate(text, backend, timeout=10) as conn:
             result = conn.json()
             print("TRANSLATOR RESULT:", result)
             if result["code"] == 200:
@@ -269,6 +269,7 @@ def translate(text:str, backend="baidu"):  # deepl is shit. fucking shit.
             # it just never return.
     except:
         import traceback
+
         traceback.print_exc()
     return translatedText
     # we know the translator cannot respond the same shit to us right?
@@ -784,7 +785,11 @@ def textArrayWithTranslatedListToAss(
         if sourceText is None or sourceText.strip() == "":
             continue
         else:
-            hasTranslatedText =( translatedText not in [sourceText, None, ""]) and type(translatedText) == str and translatedText.strip() != ""
+            hasTranslatedText = (
+                (translatedText not in [sourceText, None, ""])
+                and type(translatedText) == str
+                and translatedText.strip() != ""
+            )
         if puncturalRemoval:
             sourceText = removeUnnecessaryPunctuation(sourceText)
             if hasTranslatedText:
@@ -826,7 +831,7 @@ def textArrayWithTranslatedListToAss(
                 lineMod.words = getJiebaCuttedText(lineMod.text)
             sylList = []
             wordCount = len(lineMod.words)
-            if wordCount == 0: # clean it no matter what.
+            if wordCount == 0:  # clean it no matter what.
                 lineMod.words = [" "]
                 lineMod.text = " "
                 wordCount = 1
@@ -919,7 +924,7 @@ def textArrayWithTranslatedListToAss(
             # source.style = styleConfig['original']['style']
             lineMod2 = lineMod.copy()
             lineMod2.style = styleConfig["translated"]["style"]
-            translatedText = translatedText.replace(" ", "")  #fuck?
+            translatedText = translatedText.replace(" ", "")  # fuck?
             lineMod2.text = translatedText
             translateShift = 100
             addSylToLine(

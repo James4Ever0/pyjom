@@ -36,7 +36,7 @@ from lazero.utils.mathlib import *
 #     weights = weights / np.sum(weights)
 #     ema = np.convolve(weights, mArray, mode="valid")
 #     return ema
-    
+
 # def Kalman1D(observations, damping=0.2):
 #     # To return the smoothed time series data
 #     observation_covariance = damping
@@ -308,7 +308,7 @@ from lazero.utils.mathlib import *
 #     for x in interpolated_xp:
 #         interpolated_value = np.interp(x, xp, fp)
 #         interpolated_fp.append(interpolated_value)
-    
+
 #     interpolated_fp = np.array(interpolated_fp)
 #     moving_sum_span = 0
 #     for index, value in enumerate(interpolated_xp):
