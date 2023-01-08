@@ -53,24 +53,21 @@ target_language_id = baidu_lang_detect(content)
 paraphrase_depth = 1 # only 1 intermediate language, default.
 
 all_middle_languages = ["zh", 'en', 'jp'] # english, japanese, chinese
-
-current_language_id = target_language_id
-for loop_id in range(paraphrase_depth):
-    forbid_langs = [current_language_id]
-    if loop_id in [0, paraphrase_depth-1]:
-        forbid_langs+=[target_language_id]
-        non_target_middle_languages = [langid for langid in all_middle_languages if langid not in forbid_langs]
-    else:
-        non_target_midd
-
-
 import random
 
-middle_language_id = random.choice(non_target_middle_languages)
+current_language_id = target_language_id
+middle_content = content
 
-middle_content = baidu_translate(content, source = target_language_id, target = middle_language_id)
+for loop_id in range(paraphrase_depth):
+    forbid_langs = set([current_language_id])
+    if loop_id in :
+        forbid_langs.add(target_language_id)
+    non_target_middle_languages = [langid for langid in all_middle_languages if langid not in forbid_langs]
+    middle_language_id = random.choice(non_target_middle_languages)
+    middle_content = baidu_translate(middle_content, source = current_language_id, target = middle_language_id)
+    current_language_id = middle_language_id
 
-output_content = baidu_translate(middle_content, source = middle_language_id, target = target_language_id)
+output_content = baidu_translate(middle_content, source = current_language_id, target = target_language_id)
 
 print("SOURCE LANGUAGE:",target_language_id)
 print("USING INTERMEDIATE LANGUAGE:",middle_language_id)
