@@ -9,5 +9,16 @@ def test_init():
         print(videoInfo)
         print()
 
-def test_cats_and_dogs():
-    ...
+def test_cats_and_dogs_get_video_names():
+    for category in ['cat','dog']:
+        print("CATEGORY?",category)
+        print("_"*20)
+
+        responses = getCatOrDogAd(category)
+        for info in responses:
+            title = info['title']
+            print("VIDEO?",title)
+
+if __name__ == '__main__':
+    # test_init()
+    test_cats_and_dogs_get_video_names()
