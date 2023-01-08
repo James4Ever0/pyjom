@@ -4,6 +4,8 @@ import os
 import pathlib
 import sys
 
+from isort import stream
+
 site_path = pathlib.Path("/usr/local/lib/python3.9/site-packages")
 cv2_libs_dir = (
     site_path / "cv2" / f"python-{sys.version_info.major}.{sys.version_info.minor}"
@@ -273,7 +275,7 @@ def read_item(backend: str, text: str):
             result = translatedDict[text]
         else:
             result = metaTranslator(text, backend=backend)
-            if type(result)!=None:
+            if type(result)==str:
                 if len(result) < 30 and len(text) < 30:
                     translatedDict.update({text: result})
-    return {"code": code, "result": result}
+    return {"code": (code if result not in [None, False, True, ""] else 400), "result": (result if type(result)== str and result !="" else None)}
