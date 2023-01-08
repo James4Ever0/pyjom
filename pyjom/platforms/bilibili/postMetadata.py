@@ -140,6 +140,7 @@ import random
 
 def getBilibiliPostMetadata(
     sleepTime=2,
+    paraphrase:bool=F
     getMetatopic={},
     bgmCacheSetName: Union[str, None] = "bilibili_cached_bgm_set",
     getTids={},  # these two are not specified here.
@@ -452,6 +453,7 @@ def getBilibiliPostMetadataForDogCat(
     dog_or_cat: Literal["dog", "cat"] = "dog",
     bgmCacheSetName="bilibili_cached_bgm_set",
     bgmCacheAutoPurge=False,
+    paraphrase:bool=False,
 ):
     dynamics = [["可爱", "萌", "萌宠"], ["行为", "燃"], ["搞笑", "逗比", "魔性"]]
 
@@ -495,4 +497,5 @@ def getBilibiliPostMetadataForDogCat(
         getCoverTargetFromCoverList=getCoverTargetFromCoverListForDogCat,
         bgmCacheSetName=bgmCacheSetName,
         bgmCacheAutoPurge=bgmCacheAutoPurge,
+        paraphrase=paraphrase,
     )

@@ -446,15 +446,16 @@ def paraphraser(
             output, success = chineseParaphraserAPI(content, debug=debug, **configs)
         elif method == "baidu_translator":
             output, success = baiduParaphraserByTranslation(content, debug=debug, **configs)
-
         # you should not be here.
         else:
             raise NotImplementedError("method '%s' not implemented")
         return output, success
-    
+    except NotImplementedError as e: raise e
     except:
         import traceback
         traceback.print_exc()
+        print("Failed to paraphrase content using method '%s'" % method)
+        print("Returning original content and failed signal.")
         return content,False
 
 
