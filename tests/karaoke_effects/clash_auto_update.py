@@ -9,6 +9,10 @@ import os
 os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
 
+
+CLASH_CONFIG_DOWNLOAD_URL=...
+ALL_PROXIES_LOCATION=["proxies", "✋ 手动选择", "all"]
+
 # r = requests.get(target)
 # text = r.text
 # json_obj = yaml.safe_load(text)
@@ -37,7 +41,7 @@ def jsonLocate(jsonObj, location=[]):
 
 def find_proxy_names(
     test_url="http://localhost:9911/proxies/", 
-    location=["proxies", "✋ 手动选择", "all"]
+    location=ALL_PROXIES_LOCATION
 ):
     import requests
 
@@ -58,7 +62,7 @@ def find_tested_proxy_names(
     timeout=3000,
     urltest="https://m.tujia.com",
     test_url="http://localhost:9911/proxies/",
-    location=["proxies", "✋ 手动选择", "all"],
+    location=ALL_PROXIES_LOCATION,
     forbidden_names=["DIRECT", "REJECT", "GLOBAL"],
 ):
     import requests
@@ -140,7 +144,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
         updateIndex = 0
         for index, proxy in enumerate(data[key]):
             # breakpoint()
-            if proxy["name"] == "👉 例外网站":
+            if proxy["name"] "👉 例外网站":
                 # print(proxy)
                 # breakpoint()
                 updateIndex = index
@@ -148,7 +152,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
                 updatedProxy["proxies"] = [
                     elem
                     for elem in proxy["proxies"]
-                    if elem not in ["☁️ 全球直连", "🌐 节点选择"]
+                    if elem not in PROXY_GROUP_2
                 ]
                 updatedProxy["url"] = "https://media4.giphy.com"
                 updatedProxy["interval"] = 300
@@ -180,12 +184,13 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
     """
 
 
-def getClashYaml(clashYamlPath="Clash3.yaml"):
+def getClashYaml(clashYamlPath="Clash3.yaml", url:str=CLASH_CONFIG_DOWNLOAD_URL):
     import requests
 
     # url = "https://raw.githubusercontents.com/yu-steven/openit/main/Clash.yaml" # some subtle difference!
     # url = 'https://cdn.staticaly.com/gh/yu-steven/openit/main/Clash.yaml'
-    url = "https://raw.kgithub.com/yu-steven/openit/main/Clash.yaml"
+    # url = "https://raw.kgithub.com/yu-steven/openit/main/Clash.yaml"
+
     r = requests.get(url)
     with open(clashYamlPath, "w+") as f:
         f.write(r.text)
