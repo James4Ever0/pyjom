@@ -24,6 +24,7 @@ dog_or_cat = random.choice(["dog", "cat"])  # strange.
 bgmCacheSetName = "bilibili_cached_bgm_set"
 from pyjom.languagetoolbox import paraphraser
 def myParaphraser(content:str):
+    methods = []
     output, success = paraphraser(content)
     if not success:
         output = content

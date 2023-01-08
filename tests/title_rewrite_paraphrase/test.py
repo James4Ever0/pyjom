@@ -61,5 +61,7 @@ def clueAIParaphraser(
 
 
 # title = "世上所有小猫都是天使变的！"
-title = "支持几十个不同类型的任务，具有较好的零样本学习能力和少样本学习能力。"
+# title = "支持几十个不同类型的任务，具有较好的零样本学习能力和少样本学习能力。"
+title = "十只猫九只都拆家 ！"
+# title = "猫：脑子是个好东西但是我没有O.o"
 output, success = clueAIParaphraser(title, debug=True)
