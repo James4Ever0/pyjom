@@ -911,7 +911,7 @@ def textArrayWithTranslatedListToAss(
             # source.style = styleConfig['original']['style']
             lineMod2 = lineMod.copy()
             lineMod2.style = styleConfig["translated"]["style"]
-            translatedText = translatedText.replace(" ", "")
+            translatedText = translatedText.replace(" ", "")  #fuck?
             lineMod2.text = translatedText
             translateShift = 100
             addSylToLine(
