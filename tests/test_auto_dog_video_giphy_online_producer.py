@@ -27,6 +27,10 @@ postMetadataGenerator = getBilibiliPostMetadataForDogCat(
 )  # metadata you can fetch from database, maybe you can preprocess this.
 postMetadataGenerator.__next__()  # for getting some bgm, just in case.
 # really?
+
+# i think you need some superpower over this postMetadataGenerator.
+# init_repeat=0, repeat=0
+
 metaTopics = {
     "dog": {
         "static": [["dog", "puppy"]],
