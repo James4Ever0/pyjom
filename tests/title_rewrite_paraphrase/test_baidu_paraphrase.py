@@ -54,9 +54,15 @@ paraphrase_depth = 1 # only 1 intermediate language, default.
 
 all_middle_languages = ["zh", 'en', 'jp'] # english, japanese, chinese
 
-for 
+current_language_id = target_language_id
+for loop_id in range(paraphrase_depth):
+    forbid_langs = [current_language_id]
+    if loop_id in [0, paraphrase_depth-1]:
+        forbid_langs+=[target_language_id]
+        non_target_middle_languages = [langid for langid in all_middle_languages if langid not in forbid_langs]
+    else:
+        non_target_midd
 
-non_target_middle_languages = [langid for langid in all_middle_languages if langid is not target_language_id]
 
 import random
 
