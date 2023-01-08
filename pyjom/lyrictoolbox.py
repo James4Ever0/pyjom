@@ -775,174 +775,180 @@ def textArrayWithTranslatedListToAss(
     for mIndex, elem in enumerate(newTextArray):
         # if fail then just continue. fuck.
         try:
-        translatedTuple = translatedList[mIndex]
-        if len(translatedTuple) == 1:
-            sourceText = translatedTuple[0]
-            translatedText = None
-        elif len(translatedTuple) == 2:
-            sourceText, translatedText = translatedTuple
-        else:
-            print("Invalid translatedTuple: %s" % str(translatedTuple))
-            breakpoint()
-        if sourceText is None or sourceText.strip() == "":
-            continue
-        else:
-            hasTranslatedText = (
-                (translatedText not in [sourceText, None, ""])
-                and type(translatedText) == str
-                and translatedText.strip() != ""
-            )
-        if puncturalRemoval:
-            sourceText = removeUnnecessaryPunctuation(sourceText)
-            if hasTranslatedText:
-                translatedText = removeUnnecessaryPunctuation(translatedText)
-        if censor:
-            sourceText = censorTextWithTextFilter(sourceText)
-            if hasTranslatedText:
-                translatedText = censorTextWithTextFilter(translatedText)
-        elem["text"] = sourceText
-
-        lineMod = lineModSource.copy()
-        lineMod.start_time = max(0, elem["start"] * 1000 - shiftAdjust)
-        lineMod.end_time = elem["end"] * 1000 - shiftAdjust
-        lineMod.duration = lineMod.end_time - lineMod.start_time
-        lineMod.text = elem["text"].strip()
-        while True:
-            if "  " in lineMod.text:
-                lineMod.text = lineMod.text.replace("  ", " ")
+            translatedTuple = translatedList[mIndex]
+            if len(translatedTuple) == 1:
+                sourceText = translatedTuple[0]
+                translatedText = None
+            elif len(translatedTuple) == 2:
+                sourceText, translatedText = translatedTuple
             else:
-                break
-        # print(lineMod)
-        def addSylToLine(
-            lineMod,
-            translateShift=0,
-            charShift=30,  # increase this!
-            CENTER=1600 / 2,
-            mSylYShift=600,
-            mTop=25,
-            mMiddle=49.0,
-            mBottom=73.0,
-            cutOneByOne=False,
-        ):
-            lineMod.center = CENTER  # wtf?
-            if cutOneByOne:
-                lineMod.words = list(lineMod.text)
-            elif lineMod.text.count(" ") >= 1:
-                lineMod.words = lineMod.text.split(" ")
+                print("Invalid translatedTuple: %s" % str(translatedTuple))
+                breakpoint()
+            if sourceText is None or sourceText.strip() == "":
+                continue
             else:
-                lineMod.words = getJiebaCuttedText(lineMod.text)
-            sylList = []
-
-            wordCount = len(lineMod.words)
-            if wordCount == 0:  # clean it no matter what.
-                lineMod.words = [" "]
-                lineMod.text = " "
-                wordCount = 1
-            sylDuration = (lineMod.end_time - lineMod.start_time) / wordCount
-            textLength = len(lineMod.text)
-
-            absWordCenterShiftList = []
-            prevWordShift = 0
-
-            wordWidthList = []
-            for word in lineMod.words:
-                wordWidth = len(word) * charShift
-                wordWidthList.append(wordWidth)
-                wordLength = len(word) + 1
-                wordCenterShift = (charShift * wordLength) / 2
-                wordShift = charShift * wordLength
-                absWordCenterShift = (
-                    CENTER
-                    - (textLength * charShift) / 2
-                    + prevWordShift
-                    + wordCenterShift
+                hasTranslatedText = (
+                    (translatedText not in [sourceText, None, ""])
+                    and type(translatedText) == str
+                    and translatedText.strip() != ""
                 )
-                absWordCenterShiftList.append(absWordCenterShift)
-                prevWordShift += wordShift
-            # CENTER + centerShift*charShift
-            getCenter = lambda index: absWordCenterShiftList[index]
-            getWidth = lambda index: wordWidthList[index]
-            for index, word in enumerate(lineMod.words):
-                syl = Syllable()
-                syl.text = word
-                syl.i = index
-                syl.center = getCenter(index)
-                syl.width = getWidth(index)
-                syl.top = mTop + mSylYShift + translateShift
-                syl.inline_fx = "m2"
-                syl.middle = mMiddle + mSylYShift + translateShift
-                syl.bottom = mBottom + mSylYShift + translateShift
-                syl.start_time = lineMod.start_time + index * sylDuration
-                syl.end_time = syl.start_time + sylDuration
-                syl.duration = sylDuration
-                sylList.append(syl)
-            # double check here! fucker
-            startSyl = sylList[0]
-            startLine = startSyl.center - startSyl.width / 2
-            endSyl = sylList[-1]
-            endLine = endSyl.center + endSyl.width / 2
-            currentCenter = (endLine + startLine) / 2
-            # print(startLine, endLine)
-            # print('current center:', currentCenter)
-            centerShift = int(CENTER - currentCenter)
-            # print("CENTERSHIFT", centerShift)
-            for index in range(len(sylList)):
-                sylList[index].center += centerShift
-                # import copy
-                # elem = copy.deepcopy(sylList[index])
-                # elem.center = sylList[index].center+centerShift
-                # print("CHANGED CENTER", elem.center, sylList[index].center)
-                # sylList[index] = copy.deepcopy(elem)
-            # startSyl = sylList[0]
-            # startLine = startSyl.center - startSyl.width/2
-            # endSyl = sylList[-1]
-            # endLine = endSyl.center + endSyl.width/2
-            # currentCenter = (endLine+startLine)/2
-            # print(startLine, endLine)
-            # print('adjusted center:', currentCenter)
+            if puncturalRemoval:
+                sourceText = removeUnnecessaryPunctuation(sourceText)
+                if hasTranslatedText:
+                    translatedText = removeUnnecessaryPunctuation(translatedText)
+            if censor:
+                sourceText = censorTextWithTextFilter(sourceText)
+                if hasTranslatedText:
+                    translatedText = censorTextWithTextFilter(translatedText)
+            elem["text"] = sourceText
 
-            lineMod.syls = sylList
+            lineMod = lineModSource.copy()
+            lineMod.start_time = max(0, elem["start"] * 1000 - shiftAdjust)
+            lineMod.end_time = elem["end"] * 1000 - shiftAdjust
+            lineMod.duration = lineMod.end_time - lineMod.start_time
+            lineMod.text = elem["text"].strip()
+            while True:
+                if "  " in lineMod.text:
+                    lineMod.text = lineMod.text.replace("  ", " ")
+                else:
+                    break
+            # print(lineMod)
+            def addSylToLine(
+                lineMod,
+                translateShift=0,
+                charShift=30,  # increase this!
+                CENTER=1600 / 2,
+                mSylYShift=600,
+                mTop=25,
+                mMiddle=49.0,
+                mBottom=73.0,
+                cutOneByOne=False,
+            ):
+                lineMod.center = CENTER  # wtf?
+                if cutOneByOne:
+                    lineMod.words = list(lineMod.text)
+                elif lineMod.text.count(" ") >= 1:
+                    lineMod.words = lineMod.text.split(" ")
+                else:
+                    lineMod.words = getJiebaCuttedText(lineMod.text)
+                sylList = []
 
-        # print(lineMod.syls)
-        # breakpoint()
-        # if translatedText == None:
-        #     addSylToLine(lineMod, charShift = 10)
-        # else:
-        addSylToLine(
-            lineMod,
-            cutOneByOne=styleConfig["original"]["cutOneByOne"],
-            charShift=styleConfig["original"]["charShift"],
-        )  # this function is to locate this thing.
-        # breakpoint()
-        # pyonfx.ass_core.Syllable
-        lineMod.style = styleConfig["original"]["style"]
-        source = lineMod.copy()
-        target = lineMod.copy()
-        methodMapping = {"kanji": kanji, "romaji": romaji}
-        methodMapping[styleConfig["original"]["method"]](
-            source, target
-        )  # writing 'kanji' style to romaji?
+                wordCount = len(lineMod.words)
+                if wordCount == 0:  # clean it no matter what.
+                    lineMod.words = [" "]
+                    lineMod.text = " "
+                    wordCount = 1
+                sylDuration = (lineMod.end_time - lineMod.start_time) / wordCount
+                textLength = len(lineMod.text)
 
-        if hasTranslatedText:
-            # source.style = styleConfig['original']['style']
-            lineMod2 = lineMod.copy()
-            lineMod2.style = styleConfig["translated"]["style"]
-            translatedText = translatedText.replace(" ", "")  # fuck?
-            lineMod2.text = translatedText
-            translateShift = 100
+                absWordCenterShiftList = []
+                prevWordShift = 0
+
+                wordWidthList = []
+                for word in lineMod.words:
+                    wordWidth = len(word) * charShift
+                    wordWidthList.append(wordWidth)
+                    wordLength = len(word) + 1
+                    wordCenterShift = (charShift * wordLength) / 2
+                    wordShift = charShift * wordLength
+                    absWordCenterShift = (
+                        CENTER
+                        - (textLength * charShift) / 2
+                        + prevWordShift
+                        + wordCenterShift
+                    )
+                    absWordCenterShiftList.append(absWordCenterShift)
+                    prevWordShift += wordShift
+                # CENTER + centerShift*charShift
+                getCenter = lambda index: absWordCenterShiftList[index]
+                getWidth = lambda index: wordWidthList[index]
+                for index, word in enumerate(lineMod.words):
+                    syl = Syllable()
+                    syl.text = word
+                    syl.i = index
+                    syl.center = getCenter(index)
+                    syl.width = getWidth(index)
+                    syl.top = mTop + mSylYShift + translateShift
+                    syl.inline_fx = "m2"
+                    syl.middle = mMiddle + mSylYShift + translateShift
+                    syl.bottom = mBottom + mSylYShift + translateShift
+                    syl.start_time = lineMod.start_time + index * sylDuration
+                    syl.end_time = syl.start_time + sylDuration
+                    syl.duration = sylDuration
+                    sylList.append(syl)
+                # double check here! fucker
+                startSyl = sylList[0]
+                startLine = startSyl.center - startSyl.width / 2
+                endSyl = sylList[-1]
+                endLine = endSyl.center + endSyl.width / 2
+                currentCenter = (endLine + startLine) / 2
+                # print(startLine, endLine)
+                # print('current center:', currentCenter)
+                centerShift = int(CENTER - currentCenter)
+                # print("CENTERSHIFT", centerShift)
+                for index in range(len(sylList)):
+                    sylList[index].center += centerShift
+                    # import copy
+                    # elem = copy.deepcopy(sylList[index])
+                    # elem.center = sylList[index].center+centerShift
+                    # print("CHANGED CENTER", elem.center, sylList[index].center)
+                    # sylList[index] = copy.deepcopy(elem)
+                # startSyl = sylList[0]
+                # startLine = startSyl.center - startSyl.width/2
+                # endSyl = sylList[-1]
+                # endLine = endSyl.center + endSyl.width/2
+                # currentCenter = (endLine+startLine)/2
+                # print(startLine, endLine)
+                # print('adjusted center:', currentCenter)
+
+                lineMod.syls = sylList
+
+            # print(lineMod.syls)
+            # breakpoint()
+            # if translatedText == None:
+            #     addSylToLine(lineMod, charShift = 10)
+            # else:
             addSylToLine(
-                lineMod2,
-                translateShift=translateShift,
-                cutOneByOne=styleConfig["translated"]["cutOneByOne"],
-                charShift=styleConfig["translated"]["charShift"],
-            )
-            source = lineMod2.copy()
-            target = lineMod2.copy()
-            # elif line.styleref.alignment >= 4:
-            methodMapping[styleConfig["translated"]["method"]](source, target)
-        # breakpoint()
-        # else:
-        #     romaji(source, target)
+                lineMod,
+                cutOneByOne=styleConfig["original"]["cutOneByOne"],
+                charShift=styleConfig["original"]["charShift"],
+            )  # this function is to locate this thing.
+            # breakpoint()
+            # pyonfx.ass_core.Syllable
+            lineMod.style = styleConfig["original"]["style"]
+            source = lineMod.copy()
+            target = lineMod.copy()
+            methodMapping = {"kanji": kanji, "romaji": romaji}
+            methodMapping[styleConfig["original"]["method"]](
+                source, target
+            )  # writing 'kanji' style to romaji?
+
+            if hasTranslatedText:
+                # source.style = styleConfig['original']['style']
+                lineMod2 = lineMod.copy()
+                lineMod2.style = styleConfig["translated"]["style"]
+                translatedText = translatedText.replace(" ", "")  # fuck?
+                lineMod2.text = translatedText
+                translateShift = 100
+                addSylToLine(
+                    lineMod2,
+                    translateShift=translateShift,
+                    cutOneByOne=styleConfig["translated"]["cutOneByOne"],
+                    charShift=styleConfig["translated"]["charShift"],
+                )
+                source = lineMod2.copy()
+                target = lineMod2.copy()
+                # elif line.styleref.alignment >= 4:
+                methodMapping[styleConfig["translated"]["method"]](source, target)
+            # breakpoint()
+            # else:
+            #     romaji(source, target)
+        except:
+            # must be some "start_ms" <= 0 or some shit.
+            import traceback
+            traceback.print_exc()
+            print("Error when generating lyric subtitle line by line.")
+            continue
     io.save()
     print("ASS RENDERED AT %s" % assPath)
     return assPath
