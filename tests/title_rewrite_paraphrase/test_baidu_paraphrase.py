@@ -50,25 +50,32 @@ content = "世上所有小猫都是天使变的！"
 
 target_language_id = baidu_lang_detect(content)
 
-paraphrase_depth = 1 # only 1 intermediate language, default.
+paraphrase_depth = 3 # only 1 intermediate language, default.
 
 all_middle_languages = ["zh", 'en', 'jp'] # english, japanese, chinese
+assert paraphrase_depth >0
+if paraphrase_depth >1:
+    if target_language_id
 import random
 
 current_language_id = target_language_id
 middle_content = content
+head_tail_indexs = set([0, paraphrase_depth-1])
+
+intermediate_languages = []
 
 for loop_id in range(paraphrase_depth):
     forbid_langs = set([current_language_id])
-    if loop_id in :
+    if loop_id in head_tail_indexs:
         forbid_langs.add(target_language_id)
     non_target_middle_languages = [langid for langid in all_middle_languages if langid not in forbid_langs]
     middle_language_id = random.choice(non_target_middle_languages)
     middle_content = baidu_translate(middle_content, source = current_language_id, target = middle_language_id)
     current_language_id = middle_language_id
+    intermediate_languages.append(middle_language_id)
 
 output_content = baidu_translate(middle_content, source = current_language_id, target = target_language_id)
 
 print("SOURCE LANGUAGE:",target_language_id)
-print("USING INTERMEDIATE LANGUAGE:",middle_language_id)
+print("USING INTERMEDIATE LANGUAGES:",intermediate_languages)
 print("PARAPHRASED:", output_content)
