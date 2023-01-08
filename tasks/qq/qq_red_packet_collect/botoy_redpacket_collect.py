@@ -257,7 +257,7 @@ def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str):
             # send the ad.
             success = sendCatOrDogAdToQQGroup(str(group_id), cat_or_dog, action)
             if success:
-                penalty += 40
+                penalty += 40 # every 50 messages we have one ad.
             adBuffer[str(group_id)] = penalty
         # decrease that counter by standard group messages.
 @bot.on_group_msg
