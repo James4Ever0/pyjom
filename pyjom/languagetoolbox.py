@@ -1,3 +1,4 @@
+########################[PREPROCESSING & TOPIC MODELING]#########################
 englishNLP = None
 englishStopWords = None
 porterStemmer = None
@@ -224,6 +225,7 @@ def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2), n_compon
         traceback.print_exc()
         topics = []
     return topics
+########################[PREPROCESSING & TOPIC MODELING]#########################
 
 
 from typing import Literal
@@ -428,11 +430,11 @@ def baiduParaphraserByTranslation(
 
 def paraphraser(
     content: str,
-    method: Literal["clueai_free", "cn_nlp_online", "baidu_zh_en"] = "clueai_free",
+    method: Literal["clueai_free", "cn_nlp_online", "baidu_translator"] = "clueai_free",
     debug: bool = False,
     configs: dict = {},
 ):  # you could add some translation based methods.
-    implementedMethods = ["clueai_free", "cn_nlp_online", "baidu_zh_en"]
+    implementedMethods = ["clueai_free", "cn_nlp_online", "baidu_translator"]
     if method not in implementedMethods:
         raise NotImplementedError("method '%s' not implemented")
     if content.strip() == "":
@@ -441,7 +443,7 @@ def paraphraser(
         output, success = clueAIParaphraser(content, debug=debug, **configs)
     elif method == "cn_nlp_online":
         output, success = chineseParaphraserAPI(content, debug=debug, **configs)
-    elif method == "baidu_zh_en":
+    elif method == "baidu_translator":
         output, success = baiduParaphraserByTranslation(content, debug=debug, **configs)
     # you should not be here.
     else:
