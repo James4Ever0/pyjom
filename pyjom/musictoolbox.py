@@ -596,7 +596,7 @@ class neteaseMusic:
         lyric_string = self.getMusicLyricFromNetease(song_id)
         if debug:
             print("LYRICS:", lyric_string)
-        if type(lyric_string) != None:
+        if type(lyric_string) ==str and lyric_string.strip() !="":
             from pyjom.lyrictoolbox import (
                 cleanLrcFromWeb,
             )  # cleaning needs song duration.

@@ -1033,6 +1033,7 @@ def read_lrc(lrc_path):
 
 # mainly for netease, this may change.
 def cleanLrcFromWeb(
+    
     lyric_string: str,
     song_duration: float,
     min_lines_of_lyrics: int = 5,  # whatever. fuck this.
@@ -1053,7 +1054,7 @@ def cleanLrcFromWeb(
 
     # also get the total time covered by lyric.
     # the time must be long enough, compared to the total time of the song.
-    lrc_parsed = pylrc.parse(lyric_string)
+    lrc_parsed = pylrc.parse(lyric_string) # this is string, not None!
     lrc_parsed_list = [line for line in lrc_parsed]
     lrc_parsed_list.sort(key=lambda line: line.time)
     begin = False
