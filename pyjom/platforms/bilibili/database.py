@@ -1013,6 +1013,7 @@ def bilibiliRecommendationServer(
     @app.get("/")
     # #@reloading
     def server_hello():
+        schedule.run_pending()
         return welcome_message
 
     #@reloading
@@ -1049,6 +1050,7 @@ def bilibiliRecommendationServer(
     def search_videos(form: searchVideoForm):
         # print('received params:',params) # it is str.
         # breakpoint()
+        schedule.run_pending()
         params = {
             "duration": BSP.all.duration._10分钟以下
         } | form.params  # this is default parameter.
@@ -1072,6 +1074,8 @@ def bilibiliRecommendationServer(
     @app.post("/searchRegisteredVideos")
     # #@reloading
     def search_registered_videos(form: searchRegisteredVideoForm):
+        schedule.run_pending()
+
         vgen = searchRegisteredVideos(
             form.query_for_search,
             form.tid,
@@ -1092,6 +1096,8 @@ def bilibiliRecommendationServer(
     @app.post("/searchUserVideos")
     # #@reloading
     def search_user_videos(form: searchUserVideoForm):
+        schedule.run_pending()
+
         vgen = searchUserVideos(
             form.query_for_search,
             form.tid,
@@ -1115,6 +1121,8 @@ def bilibiliRecommendationServer(
     @app.post("/registerUserVideo")
     # #@reloading
     def register_user_video(form: registerUserVideoForm):
+        schedule.run_pending()
+
         new = registerUserVideo(form.bvid, form.dedeuserid, form.is_mine, form.visible)
         if new:
             print("----")
