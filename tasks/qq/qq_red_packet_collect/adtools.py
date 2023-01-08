@@ -26,6 +26,10 @@ catDogElemDict = {"cat": catSignals, "dog": dogSignals}
 # # print("DOG QUERY WORD?",dogQueryWord)
 # catDogQueryWords = {"cat": catQueryWord,"dog":dogQueryWord}
 
+# TODO: detect if some "dog" or "cat" lover is talking
+def checkIsCatOrDogLover(): # if both, return either one.
+# TODO: detect "cat" or "dog" image on frequency, checked by redis records.
+# TODO: create/get a redis based lock when doing image checks.
 
 def checkCatOrDog(Content: str):
     # cat? dog? None?
