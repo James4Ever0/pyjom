@@ -44,3 +44,6 @@ prediction = cl.generate(
 
 # print the predicted text
 print("prediction: {}".format(prediction.generations[0].text))
+# you can have multiple generations?
+print(prediction.generations) # only one generation. fuck
+breakpoint()
