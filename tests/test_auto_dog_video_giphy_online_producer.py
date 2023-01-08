@@ -28,8 +28,11 @@ postMetadataGenerator = getBilibiliPostMetadataForDogCat(
 postMetadataGenerator.__next__()  # for getting some bgm, just in case.
 # really?
 
-# i think you need some superpower over this postMetadataGenerator.
+# TODO: i think you need some superpower over this postMetadataGenerator.
 # init_repeat=0, repeat=0
+# TODO: i also think you should alter the title and intro with paraphraser.
+# TODO: check if video is properly registered to video recommendation server.
+# TODO: check if video is properly registered to video recommendation server.
 
 metaTopics = {
     "dog": {
