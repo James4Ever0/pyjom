@@ -13,12 +13,6 @@ def getBaiduLanguageRecognitionModel():
     language_recognition_model = hub.Module(name="baidu_language_recognition")
     return language_recognition_model
 
-# text = "hello world"
-# "zh", 'en', 'jp'
-# text = "請輸入要轉換簡繁體的中文漢字" # zh
-text = "私は日本人です"
-language_code = language_recognition_model.recognize(text)
-print("language_code: %s" % language_code)
 
 BAIDU_API_SLEEP_TIME=1
 BAIDU_TRANSLATOR_LOCK_FILE="/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock"
@@ -32,7 +26,8 @@ def baidu_lang_detect(content:str, sleep=BAIDU_API_SLEEP_TIME,lock_file=BAIDU_TR
         import time
 
         time.sleep(sleep)
-        langid = ...
+        language_recognition_model = getBaiduLanguageRecognitionModel()
+        langid = language_recognition_model.recognize(content)
         return langid
 
 def baidu_translate(content:str,source:str, target:str,sleep:int= BAIDU_API_SLEEP_TIME,lock_file:str=BAIDU_TRANSLATOR_LOCK_FILE):  # target language must be chinese.
@@ -45,7 +40,10 @@ def baidu_translate(content:str,source:str, target:str,sleep:int= BAIDU_API_SLEE
         import time
 
         time.sleep(sleep)
-        translated_content = ...
+        language_translation_model = getBaiduLanguageTranslationModel()
+        translated_content =  language_translation_model.translate(
+                    content, source,target
+                )
         return translated_content
 
 content = "世上所有小猫都是天使变的！"
@@ -64,4 +62,6 @@ middle_content = baidu_translate(content, source = target_language_id, target = 
 
 output_content = baidu_translate(middle_content, source = middle_language_id, target = target_language_id)
 
+print("SOURCE LANGUAGE:",target_language_id)
+print("USING INTERMEDIATE LANGUAGE:",middle_language_id)
 print("PARAPHRASED:", output_content)
