@@ -10,7 +10,19 @@ from lazero.filesystem.temp import (
 
 # that generator you must put beforehand.
 import cv2
+import requests
 
+def registerBilibiliUserVideo(bvid:str, dedeuserid:str,is_mine:bool=True, visible:bool=False,
+                server_endpoint = 'registerUserVideo',
+                server_port = 7341,success_codes =  [200, 201]):
+                data = {'bvid':bvid, 'dedeuserid':dedeuserid, 'is_mine':is_mine, 'visible':visible}
+
+                data = {"bvid":, # must str.
+             "dedeuserid":str(dedeuserid),
+            "is_mine":True,"visible":False} # we have schedule checking that.
+                r = requests.post('http://localhost:{}/{}'.format(server_port, server_endpoint),json=data)
+                register_success = r.status_code in success_codes
+                return register_success
 
 # why you have decorator? so OnlinePoster will not have decorator.
 @decorator
@@ -71,15 +83,8 @@ def BilibiliPoster(
                 )
             afterPosting() # execute no matter what. after posting the content.
             # now register the uploaded video.
-            import requests
             if contentType == "video":
-                server_port = 7341
-                data = {"bvid":(contentId if type(contentId) == str else contentId.get("bvid", contentId.get('BVID'))), # must str.
-             "dedeuserid":str(dedeuserid),
-            "is_mine":True,"visible":False} # we have schedule checking that.
-                server_endpoint = 'registerUserVideo'
-                r = requests.post('http://localhost:{}/{}'.format(server_port, server_endpoint),json=data)
-                register_success = r.status_code in [200, 201]
+                register_success =registerBilibiliUserVideo((contentId if type(contentId) == str else contentId.get("bvid", contentId.get('BVID'))), str(dedeuserid))
                 print("VIDEO REGISTRATION STATUS?",register_success)
                 if not register_success:
                     print("VIDEO REGISTRATION ERROR")
