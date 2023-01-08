@@ -16,10 +16,10 @@ os.environ["https_proxy"] = ""
 # PROXY_GROUP_SPECIALS =["☁️ 全球直连", "🌐 节点选择"]
 
 
-CLASH_CONFIG_DOWNLOAD_URL="https://subconverter.speedupvpn.com/sub?target=clash&url=https%3A%2F%2Fjsd.cdn.zzko.cn%2Fgh%2FPawdroid%2FFree-servers%40main%2Fsub&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
-ALL_PROXIES_LOCATION=["proxies", "🔰 节点选择", "all"]
+CLASH_CONFIG_DOWNLOAD_URL = "https://subconverter.speedupvpn.com/sub?target=clash&url=https%3A%2F%2Fjsd.cdn.zzko.cn%2Fgh%2FPawdroid%2FFree-servers%40main%2Fsub&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
+ALL_PROXIES_LOCATION = ["proxies", "🔰 节点选择", "all"]
 PROXY_GROUP_EXCEPTIONS = ["🐟 漏网之鱼"]
-PROXY_GROUP_SPECIALS =["🎯 全球直连", "🔰 节点选择","♻️ 自动选择"]
+PROXY_GROUP_SPECIALS = ["🎯 全球直连", "🔰 节点选择", "♻️ 自动选择"]
 
 
 # r = requests.get(target)
@@ -49,8 +49,7 @@ def jsonLocate(jsonObj, location=[]):
 
 
 def find_proxy_names(
-    test_url="http://localhost:9911/proxies/", 
-    location=ALL_PROXIES_LOCATION
+    test_url="http://localhost:9911/proxies/", location=ALL_PROXIES_LOCATION
 ):
     import requests
 
@@ -130,6 +129,10 @@ def setClashProxy(proxy_name, control_port=9911):
         breakpoint()
 
 
+# with open("ClashBaseOpenIt.yaml", 'r') as f:
+#     cachedDNSConfig = yaml.load(f,yaml.FullLoader)
+
+
 def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
     with open(clashYamlPath, "r") as f:
         data = f.read()
@@ -173,33 +176,32 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
 
         # del data["rules"]
         # data["mode"] = "global"
+    # data["dns"] = cachedDNSConfig
     data["dns"] = {
-  "enable": True,
-  "enhanced-mode": "redir-host",
-  "fake-ip-filter":[
- '*.lan',
-  "localhost.ptlogin2.qq.com"],
-  "fake-ip-range": "198.18.0.1/16",
-  "fallback":["8.8.8.8",
-  "1.1.1.1",
-  "tls://dns.rubyfish.cn:853",
-  "tls://1.0.0.1:853",
-  "tls://dns.google:853",
-  "https://dns.rubyfish.cn/dns-query",
-  "https://cloudflare-dns.com/dns-query",
-  "https://dns.google/dns-query",
-  ],
-  "fallback-filter":{
-    "geoip": True,
-    "ipcidr":["240.0.0.0/4"]},
-  "ipv6":False,
-  "listen": "0.0.0.0:61", # key?
-  "nameserver":[ 
-    "223.5.5.5",
-  "180.76.76.76",
-  "119.29.29.29",
-  "117.50.10.10",
-  "114.114.114.114",]
+        "enable": True,
+        "enhanced-mode": "redir-host",
+        "fake-ip-filter": ["*.lan", "localhost.ptlogin2.qq.com"],
+        "fake-ip-range": "198.18.0.1/16",
+        "fallback": [
+            "8.8.8.8",
+            "1.1.1.1",
+            "tls://dns.rubyfish.cn:853",
+            "tls://1.0.0.1:853",
+            "tls://dns.google:853",
+            "https://dns.rubyfish.cn/dns-query",
+            "https://cloudflare-dns.com/dns-query",
+            "https://dns.google/dns-query",
+        ],
+        "fallback-filter": {"geoip": True, "ipcidr": ["240.0.0.0/4"]},
+        "ipv6": False,
+        "listen": "0.0.0.0:61",  # key?
+        "nameserver": [
+            "223.5.5.5",
+            "180.76.76.76",
+            "119.29.29.29",
+            "117.50.10.10",
+            "114.114.114.114",
+        ],
     }
 
     # data = pyYamlToGoYaml(data)
@@ -220,7 +222,7 @@ def refineClashYaml(clashYamlPath="Clash3.yaml", advanced=True):
     """
 
 
-def getClashYaml(clashYamlPath="Clash3.yaml", url:str=CLASH_CONFIG_DOWNLOAD_URL):
+def getClashYaml(clashYamlPath="Clash3.yaml", url: str = CLASH_CONFIG_DOWNLOAD_URL):
     import requests
 
     # url = "https://raw.githubusercontents.com/yu-steven/openit/main/Clash.yaml" # some subtle difference!
@@ -233,7 +235,9 @@ def getClashYaml(clashYamlPath="Clash3.yaml", url:str=CLASH_CONFIG_DOWNLOAD_URL)
     print("FETCHING CLASH YAML DONE.")
     print("SAVED AT %s" % clashYamlPath)
 
+
 from lazero.program import asyncThread
+
 
 @asyncThread
 def updateClashYaml(clashYamlPath="Clash3.yaml", control_port=9911, advanced=True):

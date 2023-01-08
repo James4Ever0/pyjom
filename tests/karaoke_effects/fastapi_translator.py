@@ -118,7 +118,7 @@ def deeplTranslator(text, sleep=2, timeout=5, mod=40):
                 print("DEEPL RESPONSE ERROR. PLEASE CHECK")
                 print(response)
                 proxyList = getTestedProxyList()
-                refreshProxyCounter=1
+                refreshProxyCounter = 1
                 # breakpoint()
                 return None
 
@@ -182,7 +182,7 @@ def changeProxy(useDirect=False, suggestSingleElemProbability=0.1):
     return proxyName
 
 
-def metaTranslator(text, backend="baidu", max_tries:int=3):
+def metaTranslator(text, backend="baidu", max_tries: int = 3):
     global workingProxies
     backendList = ["baidu", "deepl"]
     assert backend in backendList
@@ -193,14 +193,17 @@ def metaTranslator(text, backend="baidu", max_tries:int=3):
     backends = {
         "baidu": (baiduTranslator, lambda: True),
         # "deepl": (deeplTranslator, lambda: False), # use direct? no proxy?
-        "deepl": (deeplTranslator, lambda: True), # the proxy is used by deepl client, not here!
+        "deepl": (
+            deeplTranslator,
+            lambda: True,
+        ),  # the proxy is used by deepl client, not here!
     }
     translator, getUseDirect = backends[backend]
     proxyName = None
     firstTime = True
     for _ in range(max_tries):
         try:
-            if not firstTime: # after first 'failed' trial we will change the strategy.
+            if not firstTime:  # after first 'failed' trial we will change the strategy.
                 key = random.choice(backendList)
                 translator, getUseDirect = backends[key]
                 proxyName = changeProxy(useDirect=getUseDirect())
@@ -275,7 +278,10 @@ def read_item(backend: str, text: str):
             result = translatedDict[text]
         else:
             result = metaTranslator(text, backend=backend)
-            if type(result)==str:
+            if type(result) == str:
                 if len(result) < 30 and len(text) < 30:
                     translatedDict.update({text: result})
-    return {"code": (code if result not in [None, False, True, ""] else 400), "result": (result if type(result)== str and result !="" else None)}
+    return {
+        "code": (code if result not in [None, False, True, ""] else 400),
+        "result": (result if type(result) == str and result != "" else None),
+    }

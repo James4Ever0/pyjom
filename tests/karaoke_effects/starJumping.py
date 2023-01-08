@@ -23,7 +23,10 @@ from pyonfx import *
 import random
 import math
 
-io = Ass("/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass", path_output="starJumping.ass")
+io = Ass(
+    "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass",
+    path_output="starJumping.ass",
+)
 meta, styles, lines = io.get_data()
 
 # Creating the star and extracting all the color changes from the input file
@@ -54,7 +57,8 @@ def romaji(line, l):
         l.end_time = syl.start_time
         # l.end_time = line.start_time + syl.start_time # wtf?
         l.dur = l.end_time - l.start_time
-        if l.dur <=0: continue
+        if l.dur <= 0:
+            continue
 
         l.text = (
             "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,0,%d)\\blur2\\t(0,%d,\\blur0)\\fad(%d,0)}%s"
@@ -147,9 +151,7 @@ def romaji(line, l):
         # FU = FrameUtility(
         #     line.start_time + syl.start_time, line.start_time + syl.end_time
         # )
-        FU = FrameUtility(
-            syl.start_time, syl.end_time
-        )
+        FU = FrameUtility(syl.start_time, syl.end_time)
         for s, e, i, n in FU:
             l.start_time = s
             l.end_time = e
@@ -180,11 +182,12 @@ def romaji(line, l):
 
         l.start_time = syl.end_time
         # l.start_time = line.start_time + syl.end_time + 100
-        l.end_time = line.end_time 
+        l.end_time = line.end_time
         # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
         # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
         l.dur = l.end_time - l.start_time
-        if l.dur <= 0: continue
+        if l.dur <= 0:
+            continue
 
         l.text = (
             "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,%d,%d)\\t(%d,%d,\\blur2)\\fad(0,%d)}%s"
@@ -220,10 +223,11 @@ def kanji(line, l):
         # l.start_time = (
         #     line.start_time + 25 * syl.i - delay - 80
         # )  # Remove 80 to start_time to let leadin finish a little bit earlier than the main effect of the first syllable
-        l.end_time =  syl.start_time
+        l.end_time = syl.start_time
         # l.end_time = line.start_time + syl.start_time
         l.dur = l.end_time - l.start_time
-        if l.dur<=0: continue
+        if l.dur <= 0:
+            continue
 
         l.text = (
             "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,0,%d)\\blur2\\t(0,%d,\\blur0)\\fad(%d,0)}%s"
@@ -288,12 +292,13 @@ def kanji(line, l):
     for syl in Utils.all_non_empty(line.syls):
         l.layer = 0
 
-        l.start_time =  syl.end_time + 100
+        l.start_time = syl.end_time + 100
         # l.start_time = line.start_time + syl.end_time + 100
-        l.end_time = line.end_time 
+        l.end_time = line.end_time
         # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
         l.dur = l.end_time - l.start_time
-        if l.dur<=0: continue
+        if l.dur <= 0:
+            continue
 
         l.text = (
             "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,%d,%d)\\t(%d,%d,\\blur2)\\fad(0,%d)}%s"
@@ -371,37 +376,40 @@ for line in lines:
     elif line.styleref.alignment >= 4:
         lineModSource = line.copy()
         break
-    
+
 from test_pylrc import *
+
 # just a test.
 shiftAdjust = 600
 for elem in newTextArray:
     lineMod = lineModSource.copy()
-    lineMod.start_time = max(0,elem['start']*1000 - shiftAdjust)
-    lineMod.end_time = elem['end']*1000 - shiftAdjust
-    lineMod.duration = lineMod.end_time  - lineMod.start_time
-    lineMod.text = elem['text'].strip().replace("  ","")
+    lineMod.start_time = max(0, elem["start"] * 1000 - shiftAdjust)
+    lineMod.end_time = elem["end"] * 1000 - shiftAdjust
+    lineMod.duration = lineMod.end_time - lineMod.start_time
+    lineMod.text = elem["text"].strip().replace("  ", "")
     # print(lineMod)
     lineMod.words = lineMod.text.split(" ")
-    # lineMod.syls = 
+    # lineMod.syls =
     # print(dir(lineMod))
     # breakpoint()
     sylList = []
     wordCount = len(lineMod.words)
-    sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
+    sylDuration = (lineMod.end_time - lineMod.start_time) / wordCount
     textLength = len(lineMod.text)
     charShift = 30
     absWordCenterShiftList = []
     prevWordShift = 0
-    CENTER = 1600/2
+    CENTER = 1600 / 2
     wordWidthList = []
     for word in lineMod.words:
-        wordWidth = len(word)* charShift
+        wordWidth = len(word) * charShift
         wordWidthList.append(wordWidth)
-        wordLength = len(word)+1
-        wordCenterShift = (charShift*wordLength)/2
-        wordShift = (charShift*wordLength)
-        absWordCenterShift = CENTER - (textLength*charShift)/2 + prevWordShift + wordCenterShift
+        wordLength = len(word) + 1
+        wordCenterShift = (charShift * wordLength) / 2
+        wordShift = charShift * wordLength
+        absWordCenterShift = (
+            CENTER - (textLength * charShift) / 2 + prevWordShift + wordCenterShift
+        )
         absWordCenterShiftList.append(absWordCenterShift)
         prevWordShift += wordShift
     # CENTER + centerShift*charShift
@@ -414,12 +422,12 @@ for elem in newTextArray:
         syl.i = index
         syl.center = getCenter(index)
         syl.width = getWidth(index)
-        syl.top= 25+mSylYShift
-        syl.inline_fx = 'm2'
-        syl.middle = 49.0+mSylYShift
-        syl.bottom = 73.0+mSylYShift
-        syl.start_time = lineMod.start_time+ index*sylDuration
-        syl.end_time = syl.start_time+sylDuration
+        syl.top = 25 + mSylYShift
+        syl.inline_fx = "m2"
+        syl.middle = 49.0 + mSylYShift
+        syl.bottom = 73.0 + mSylYShift
+        syl.start_time = lineMod.start_time + index * sylDuration
+        syl.end_time = syl.start_time + sylDuration
         syl.duration = sylDuration
         sylList.append(syl)
     lineMod.syls = sylList
@@ -449,4 +457,4 @@ for elem in newTextArray:
 io.save()
 # io.open_aegisub()
 sample_video = "/root/Desktop/works/pyjom/samples/video/karaoke_effects_source.mp4"
-io.open_mpv(video_path=sample_video) # ain't see shit...
+io.open_mpv(video_path=sample_video)  # ain't see shit...

@@ -23,6 +23,7 @@ def getLinguaDetectedLanguageLabel(sample):
     strResult = str(result)
     return strResult
 
+
 # shutdownJVM()
 from fastapi import FastAPI
 
@@ -32,6 +33,7 @@ app = FastAPI()
 @app.get("/")
 def server_hello():
     return "say hello to jpype fastapi server"
+
 
 @app.get("/langid")
 def read_item(text: str):

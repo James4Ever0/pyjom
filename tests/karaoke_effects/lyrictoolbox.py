@@ -1,11 +1,13 @@
 import pylrc
 from MediaInfo import MediaInfo
 from pyonfx import *
+
 # wildcard not allowed in function
 
 import os
-os.environ['http_proxy'] = ''
-os.environ['https_proxy'] = ''
+
+os.environ["http_proxy"] = ""
+os.environ["https_proxy"] = ""
 
 import string
 import zhon.hanzi
@@ -13,24 +15,29 @@ import zhon.hanzi
 englishPuncturals = string.punctuation
 chinesePuncturals = zhon.hanzi.punctuation
 
+
 def removeChinesePunctuation(text):
     for elem in chinesePuncturals:
         text = text.replace(elem, "")
     return text
 
+
 def removeLeadingAndTrailingPunctuation(text):
-    for elem in englishPuncturals+chinesePuncturals:
+    for elem in englishPuncturals + chinesePuncturals:
         if text.startswith(elem):
             text = text[1:]
         if text.endswith(elem):
-            if elem == ".": continue
+            if elem == ".":
+                continue
             text = text[:-1]
     return text
+
 
 def removeUnnecessaryPunctuation(text):
     text = removeChinesePunctuation(text)
     text = removeLeadingAndTrailingPunctuation(text)
     return text
+
 
 def getMusicDuration(musicPath):
     info = MediaInfo(filename=musicPath)
@@ -233,6 +240,7 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
     import requests
+
     url = "http://localhost:8974/translate"
     mTranslate = lambda text, backend: requests.get(
         url, params={"backend": backend, "text": text}
@@ -271,28 +279,37 @@ def waitForServerUp(port, message, timeout=1):
             break
         except:
             import traceback
+
             traceback.print_exc()
             print("SERVER AT PORT %d MIGHT NOT BE UP" % port)
             print("EXPECTED MESSAGE:", [message])
             import time
+
             time.sleep(1)
+
 
 waitForServerUp(8974, "unified translator hooked on some clash server")
 waitForServerUp(8978, "say hello to jpype fastapi server")
 waitForServerUp(8677, "clash update controller", timeout=10)  # probe the clash updator
-waitForServerUp(8932,{"response": "DFAFilter based Chinese text filter(censor)"}) # this is text filter.
+waitForServerUp(
+    8932, {"response": "DFAFilter based Chinese text filter(censor)"}
+)  # this is text filter.
+
 
 def censorTextWithTextFilter(text):
     port = 8932
     import requests
+
     url = "http://localhost:{}/filter".format(port)
-    r = requests.get(url,params = {'text':text})
+    r = requests.get(url, params={"text": text})
     data = r.json()
-    return data['response']
+    return data["response"]
+
 
 def getTextListTranslated(test):
     newLyricArray = []
     import progressbar
+
     isBilingual, needToTranslate = getLyricsLanguageType(test)
     if isBilingual:
         for elem in progressbar.progressbar(test):
@@ -319,17 +336,27 @@ def getTextListTranslated(test):
             newLyricArray = [(elem,) for elem in test.copy()]
     return newLyricArray
 
-def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdjust = 600, censor=True, puncturalRemoval=True):
+
+def textArrayWithTranslatedListToAss(
+    textArray,
+    translatedList,
+    assPath,
+    shiftAdjust=600,
+    censor=True,
+    puncturalRemoval=True,
+):
     # newTextArray = [] # dummy shit. must be removed immediately.
     import random
     import math
-    io = Ass("/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass", path_output=assPath)
+
+    io = Ass(
+        "/root/Desktop/works/pyjom/tests/karaoke_effects/in2.ass", path_output=assPath
+    )
     meta, styles, lines = io.get_data()
 
     # Creating the star and extracting all the color changes from the input file
     star = Shape.star(5, 4, 10)
     CU = ColorUtility(lines)
-
 
     def romaji(line, l):
         # Setting up a delay, we will use it as duration time of the leadin and leadout effects
@@ -354,7 +381,8 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             l.end_time = syl.start_time
             # l.end_time = line.start_time + syl.start_time # wtf?
             l.dur = l.end_time - l.start_time
-            if l.dur <=0: continue
+            if l.dur <= 0:
+                continue
 
             l.text = (
                 "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,0,%d)\\blur2\\t(0,%d,\\blur0)\\fad(%d,0)}%s"
@@ -447,9 +475,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             # FU = FrameUtility(
             #     line.start_time + syl.start_time, line.start_time + syl.end_time
             # )
-            FU = FrameUtility(
-                syl.start_time, syl.end_time
-            )
+            FU = FrameUtility(syl.start_time, syl.end_time)
             for s, e, i, n in FU:
                 l.start_time = s
                 l.end_time = e
@@ -464,13 +490,16 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
                     alpha += FU.add(0, syl.duration, 255)
                 alpha = Convert.alpha_dec_to_ass(int(alpha))
 
-                l.text = "{\\alpha%s\\pos(%.3f,%.3f)\\bord1\\blur1\\1c%s\\3c%s\\p1}%s" % (
-                    alpha,
-                    x,
-                    y,
-                    c1,
-                    c3,
-                    star,
+                l.text = (
+                    "{\\alpha%s\\pos(%.3f,%.3f)\\bord1\\blur1\\1c%s\\3c%s\\p1}%s"
+                    % (
+                        alpha,
+                        x,
+                        y,
+                        c1,
+                        c3,
+                        star,
+                    )
                 )
                 io.write_line(l)
 
@@ -480,11 +509,12 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
 
             l.start_time = syl.end_time
             # l.start_time = line.start_time + syl.end_time + 100
-            l.end_time = line.end_time 
+            l.end_time = line.end_time
             # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
             # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
             l.dur = l.end_time - l.start_time
-            if l.dur <= 0: continue
+            if l.dur <= 0:
+                continue
 
             l.text = (
                 "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,%d,%d)\\t(%d,%d,\\blur2)\\fad(0,%d)}%s"
@@ -504,7 +534,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
 
             io.write_line(l)
 
-
     def kanji(line, l):
         # Setting up a delay, we will use it as duration time of the leadin and leadout effects
         delay = 300
@@ -520,10 +549,11 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             # l.start_time = (
             #     line.start_time + 25 * syl.i - delay - 80
             # )  # Remove 80 to start_time to let leadin finish a little bit earlier than the main effect of the first syllable
-            l.end_time =  syl.start_time
+            l.end_time = syl.start_time
             # l.end_time = line.start_time + syl.start_time
             l.dur = l.end_time - l.start_time
-            if l.dur<=0: continue
+            if l.dur <= 0:
+                continue
 
             l.text = (
                 "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,0,%d)\\blur2\\t(0,%d,\\blur0)\\fad(%d,0)}%s"
@@ -588,12 +618,13 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         for syl in Utils.all_non_empty(line.syls):
             l.layer = 0
 
-            l.start_time =  syl.end_time + 100
+            l.start_time = syl.end_time + 100
             # l.start_time = line.start_time + syl.end_time + 100
-            l.end_time = line.end_time 
+            l.end_time = line.end_time
             # l.end_time = line.end_time - 25 * (len(line.syls) - syl.i) + delay + 100
             l.dur = l.end_time - l.start_time
-            if l.dur<=0: continue
+            if l.dur <= 0:
+                continue
 
             l.text = (
                 "{\\an5\\move(%.3f,%.3f,%.3f,%.3f,%d,%d)\\t(%d,%d,\\blur2)\\fad(0,%d)}%s"
@@ -612,7 +643,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             )
 
             io.write_line(l)
-
 
     def sub(line, l):
         # Translation Effect
@@ -662,7 +692,6 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             )
             io.write_line(l)
 
-
     for line in lines:
         # Generating lines
         if line.styleref.alignment >= 7:
@@ -671,12 +700,12 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         elif line.styleref.alignment >= 4:
             lineModSource = line.copy()
             break
-        
+
     # from test_pylrc import *
     # just a test.
     # censor these lyrics! fucker!
     newTextArray = textArray
-    for mIndex,elem in enumerate(newTextArray):
+    for mIndex, elem in enumerate(newTextArray):
         translatedTuple = translatedList[mIndex]
         if len(translatedTuple) == 1:
             sourceText = translatedTuple[0]
@@ -694,41 +723,55 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             sourceText = censorTextWithTextFilter(sourceText)
             if translatedText:
                 translatedText = censorTextWithTextFilter(translatedText)
-        elem['text'] = sourceText
+        elem["text"] = sourceText
 
         lineMod = lineModSource.copy()
-        lineMod.start_time = max(0,elem['start']*1000 - shiftAdjust)
-        lineMod.end_time = elem['end']*1000 - shiftAdjust
-        lineMod.duration = lineMod.end_time  - lineMod.start_time
-        lineMod.text = elem['text'].strip()
+        lineMod.start_time = max(0, elem["start"] * 1000 - shiftAdjust)
+        lineMod.end_time = elem["end"] * 1000 - shiftAdjust
+        lineMod.duration = lineMod.end_time - lineMod.start_time
+        lineMod.text = elem["text"].strip()
         while True:
             if "  " in lineMod.text:
-                lineMod.text = lineMod.text.replace("  ","")
+                lineMod.text = lineMod.text.replace("  ", "")
             else:
                 break
         # print(lineMod)
-        def addSylToLine(lineMod, translateShift=0,charShift = 30,CENTER = 1600/2, mSylYShift = 600, mTop=25,mMiddle = 49.0, mBottom =73.0):
-            lineMod.center=CENTER # wtf?
-            if lineMod.text.count(" ") >=1:
-                lineMod.words = lineMod.text.split(' ')
+        def addSylToLine(
+            lineMod,
+            translateShift=0,
+            charShift=30,
+            CENTER=1600 / 2,
+            mSylYShift=600,
+            mTop=25,
+            mMiddle=49.0,
+            mBottom=73.0,
+        ):
+            lineMod.center = CENTER  # wtf?
+            if lineMod.text.count(" ") >= 1:
+                lineMod.words = lineMod.text.split(" ")
             else:
                 lineMod.words = getJiebaCuttedText(lineMod.text)
             sylList = []
             wordCount = len(lineMod.words)
-            sylDuration = (lineMod.end_time - lineMod.start_time)/wordCount
+            sylDuration = (lineMod.end_time - lineMod.start_time) / wordCount
             textLength = len(lineMod.text)
-            
+
             absWordCenterShiftList = []
             prevWordShift = 0
-            
+
             wordWidthList = []
             for word in lineMod.words:
-                wordWidth = len(word)* charShift
+                wordWidth = len(word) * charShift
                 wordWidthList.append(wordWidth)
-                wordLength = len(word)+1
-                wordCenterShift = (charShift*wordLength)/2
-                wordShift = (charShift*wordLength)
-                absWordCenterShift = CENTER - (textLength*charShift)/2 + prevWordShift + wordCenterShift
+                wordLength = len(word) + 1
+                wordCenterShift = (charShift * wordLength) / 2
+                wordShift = charShift * wordLength
+                absWordCenterShift = (
+                    CENTER
+                    - (textLength * charShift) / 2
+                    + prevWordShift
+                    + wordCenterShift
+                )
                 absWordCenterShiftList.append(absWordCenterShift)
                 prevWordShift += wordShift
             # CENTER + centerShift*charShift
@@ -740,26 +783,26 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
                 syl.i = index
                 syl.center = getCenter(index)
                 syl.width = getWidth(index)
-                syl.top= mTop+mSylYShift+translateShift
-                syl.inline_fx = 'm2'
-                syl.middle = mMiddle+mSylYShift+translateShift
-                syl.bottom = mBottom+mSylYShift+translateShift
-                syl.start_time = lineMod.start_time+ index*sylDuration
-                syl.end_time = syl.start_time+sylDuration
+                syl.top = mTop + mSylYShift + translateShift
+                syl.inline_fx = "m2"
+                syl.middle = mMiddle + mSylYShift + translateShift
+                syl.bottom = mBottom + mSylYShift + translateShift
+                syl.start_time = lineMod.start_time + index * sylDuration
+                syl.end_time = syl.start_time + sylDuration
                 syl.duration = sylDuration
                 sylList.append(syl)
             # double check here! fucker
             startSyl = sylList[0]
-            startLine = startSyl.center - startSyl.width/2
+            startLine = startSyl.center - startSyl.width / 2
             endSyl = sylList[-1]
-            endLine = endSyl.center + endSyl.width/2
-            currentCenter =(endLine+startLine)/2
+            endLine = endSyl.center + endSyl.width / 2
+            currentCenter = (endLine + startLine) / 2
             # print(startLine, endLine)
             # print('current center:', currentCenter)
-            centerShift = int(CENTER-currentCenter)
+            centerShift = int(CENTER - currentCenter)
             # print("CENTERSHIFT", centerShift)
             for index in range(len(sylList)):
-                sylList[index].center+=centerShift
+                sylList[index].center += centerShift
                 # import copy
                 # elem = copy.deepcopy(sylList[index])
                 # elem.center = sylList[index].center+centerShift
@@ -774,6 +817,7 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
             # print('adjusted center:', currentCenter)
 
             lineMod.syls = sylList
+
         # print(lineMod.syls)
         # breakpoint()
         # if translatedText == None:
@@ -787,10 +831,10 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
         if translatedText:
             kanji(source, target)
             lineMod2 = lineMod.copy()
-            translatedText = translatedText.replace(" ","")
+            translatedText = translatedText.replace(" ", "")
             lineMod2.text = translatedText
             translateShift = 100
-            addSylToLine(lineMod2,translateShift=translateShift)
+            addSylToLine(lineMod2, translateShift=translateShift)
             source = lineMod2.copy()
             target = lineMod2.copy()
             # elif line.styleref.alignment >= 4:
@@ -801,9 +845,11 @@ def textArrayWithTranslatedListToAss(textArray, translatedList, assPath,shiftAdj
     io.save()
     print("ASS RENDERED AT %s" % assPath)
     return assPath
+
+
 # do the preview later?
 # # io.open_aegisub()
-def previewAssWithVideo(sample_video,assPath):
+def previewAssWithVideo(sample_video, assPath):
     # from pyonfx import Ass
     # io = Ass(assPath)
     # do not load this shit again unless you want to block the whole shit...
@@ -812,11 +858,12 @@ def previewAssWithVideo(sample_video,assPath):
     cmd = "mpv --sub-file='{}' '{}'".format(assPath, sample_video)
     os.system(cmd)
 
+
 def lrcToAnimatedAss(musicPath, lrcPath, assPath):
     # already moved to lyrictoolbox
     # TODO: more styles incoming
     textArray = lrcToTextArray(musicPath, lrcPath)
-    textList = [elem['text'] for elem in textArray]
+    textList = [elem["text"] for elem in textArray]
     translatedList = getTextListTranslated(textList)
     # so we pass both arguments to the ass generator.
     return textArrayWithTranslatedListToAss(textArray, translatedList, assPath)
