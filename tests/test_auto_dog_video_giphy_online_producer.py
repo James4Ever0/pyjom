@@ -24,7 +24,7 @@ dog_or_cat = random.choice(["dog", "cat"])  # strange.
 bgmCacheSetName = "bilibili_cached_bgm_set"
 from pyjom.languagetoolbox import paraphraser
 import random
-def myParaphraser(content:str):
+def myParaphraser(content:str):# TODO: limit and chop large group of text into chunks, process them individually.
     methods = ["clueai_free", 
     # till we get it.
     # "cn_nlp_online", 
