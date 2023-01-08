@@ -13,4 +13,16 @@ MAX_ITER = 4
 
 objective_max_iter = [sequence[0]]*INIT_REPEAT + flattenUnhashableList(list(zip(*([sequence[:MAX_ITER]]*REPEAT))))
 
-def test_
+def test_init_repeat():
+    result = list(iteratorWrapper(sequence,init_repeat=INIT_REPEAT))
+    assert result == objective_init_repeat
+
+
+def test_repeat():
+    result = list(iteratorWrapper(sequence,init_repeat=INIT_REPEAT,repeat=REPEAT))
+    assert result == objective_repeat
+
+
+def test_max_iter():
+    result = list(iteratorWrapper(sequence,init_repeat=INIT_REPEAT,repeat=REPEAT,max_iter=MAX_ITER))
+    assert result == objective_max_iter
