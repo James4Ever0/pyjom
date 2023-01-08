@@ -137,10 +137,11 @@ def getCoverTargetFromCoverListForDogCat(cover_list, dog_or_cat_original):
 BSP = search.bilibiliSearchParams()
 import random
 
+from typing import Callable
 
 def getBilibiliPostMetadata(
     sleepTime=2,
-    paraphrase:bool=F
+    customParaphraser:Union[Callable,None]=None
     getMetatopic={},
     bgmCacheSetName: Union[str, None] = "bilibili_cached_bgm_set",
     getTids={},  # these two are not specified here.
@@ -438,6 +439,9 @@ def getBilibiliPostMetadata(
                                     mBgm = shuffleAndPopFromList(bgm_list)
 
                                     # you enable this paraphrase option here.
+                                    if customParaphraser:
+                                        mTitle = customParaphraser(mTitle)
+                                        mDescription = customParaphraser(mDescription)
                                     yield cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid  # one additional return value
                                     clearMyLists()
         except:
