@@ -6,6 +6,8 @@ from pyjom.medialang.core import *
 autoArgs = {"subtitle_detector": {"timestep": 0.2}}
 template_names = ["subtitle_detector.mdl.j2"]
 
+DEBUG_STATE=False # let's see how far it goes.
+
 # warning: if you want to post it, you must review, and you must not use 'fast' mode aka preview.
 
 # you want musictoolbox? well shit...
