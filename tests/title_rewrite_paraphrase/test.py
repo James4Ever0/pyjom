@@ -16,7 +16,6 @@ import clueai
 
 from functools import lru_cache
 
-
 @lru_cache(maxsize=1)
 def getClueAIClient(apiKey: str):
     if apiKey == "":
