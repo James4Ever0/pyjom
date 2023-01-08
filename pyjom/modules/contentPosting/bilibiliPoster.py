@@ -74,10 +74,11 @@ def BilibiliPoster(
             import requests
             if contentType == "video":
                 server_port = 7341
-                data = {"bvid":(contentId if type(contentId) is str else contentId), # must str.
+                data = {"bvid":(contentId if type(contentId) == str else contentId.get("bvid", contentId.get('BVID'))), # must str.
              "dedeuserid":str(dedeuserid),
             "is_mine":True,"visible":False} # we have schedule checking that.
-                r = requests.post('http://localhost:{}'.format(server_port),json=data)
+                server_endpoint = ...
+                r = requests.post('http://localhost:{}/{}'.format(server_port, server_endpoint),json=data)
             return "bilibili://{}/{}/{}".format(dedeuserid, contentType, contentId) # this content id is fucked.
 
     def postContentIterate(content):
