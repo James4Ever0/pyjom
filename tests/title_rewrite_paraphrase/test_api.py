@@ -4,7 +4,7 @@ content:str
 
 target_id:int =0
 timeout:int=10
-providers:list[str]=["http://www.wzwyc.com/api.php?key=", "http://ai.guiyigs.com/api.php?key="] # it is about to close! fuck
+providers:list[str]=["http://www.wzwyc.com/api.php?key=", "http://ai.guiyigs.com/api.php?key="] # it is about to close! fuck. "本站于2023年2月19日关站" buy code from "1900373358"
 
 target = providers[
     target_id
