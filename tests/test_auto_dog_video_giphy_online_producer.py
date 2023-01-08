@@ -29,7 +29,8 @@ postMetadataGenerator.__next__()  # for getting some bgm, just in case.
 # really?
 
 # TODO: i think you need some superpower over this postMetadataGenerator.
-# init_repeat=0, repeat=0
+# kwargs: init_repeat=0, repeat=0, max_iter=MAX_ITER (take care of )
+
 # TODO: i also think you should alter the title and intro with paraphraser.
 # TODO: check if video is properly registered to video recommendation server.
 # TODO: control dog/cat shits, by stopping the iterator!
