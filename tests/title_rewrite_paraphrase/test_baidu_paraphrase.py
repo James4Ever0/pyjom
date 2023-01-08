@@ -1,9 +1,30 @@
 
-def baidu_lang_detect(content:str):
+
+
+def baidu_lang_detect(content:str, sleep=1,lock_file=BAIDU_TRANSLATOR_LOCK_FILE):  # target language must be chinese.
+    import filelock
+
+    lock = filelock.FileLock(
+        lock_file
+    )
+    with lock:
+        import time
+
+        time.sleep(sleep)
     langid = ...
     return langid
 
-def baidu_translate(content:str,source:str, target:str):
+def baidu_translate(content:str,source:str, target:str sleep=1):  # target language must be chinese.
+    useProxy(False)
+    import filelock
+
+    lock = filelock.FileLock(
+        "/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock"
+    )
+    with lock:
+        import time
+
+        time.sleep(sleep)
     translated_content = ...
     return translated_content
 
@@ -11,7 +32,7 @@ content = "世上所有小猫都是天使变的！"
 
 target_language_id = baidu_lang_detect(content)
 
-all_middle_languages = [] # english, japanese, chinese
+all_middle_languages = ["zh", 'en', 'jp'] # english, japanese, chinese
 
 non_target_middle_languages = [langid for langid in all_middle_languages if langid is not target_language_id]
 
