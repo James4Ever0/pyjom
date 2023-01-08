@@ -214,19 +214,94 @@ def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2),n_compone
 
 from typing import Literal
 
+########################[PARAPHRASING]########################
+
+
+def chineseParaphraserAPI(    content:str,
+debug:bool=False,
+    target_id:int =0,
+    timeout:int=10,
+    providers:list[str]=["http://www.wzwyc.com/api.php?key=", "http://ai.guiyigs.com/api.php?key="] # it is about to close! fuck. "本站于2023年2月19日关站" buy code from "1900373358"
+    ):
+    import requests
+
+
+    target = providers[
+        target_id
+    ]  # all the same?
+    data = {"info": content}
+
+    # target = "http://www.xiaofamaoai.com/result.php"
+    # xfm_uid = "342206661e655450c1c37836d23dc3eb"
+    # data = {"contents":content, "xfm_uid":xfm_uid, "agreement":"on"}
+    # nothing? fuck?
+
+    r = requests.post(target, data=data,timeout=timeout)
+    output = r.text
+    success = output.strip()!= content.strip()
+    if debug:
+        print(output)
+    return output, success
+
+
+import clueai
+
+
 @lru_cache(maxsize=1)
-def getFreeClueAIClient():
-    ...
+def getClueAIClient(apiKey: str):
+    if apiKey == "":
+        return clueai.Client("", check_api_key=False)
+    else:
+        return clueai.Client(apiKey)
+
+
+def clueAIParaphraser(
+    title: str,
+    apiKey: str = "",
+    generate_config: dict = {
+        "do_sample": True,
+        "top_p": 0.8,
+        "max_length": 128,  # notice! not too long.
+        "min_length": 5,
+        "length_penalty": 1.0,
+        "num_beams": 1,
+    },
+    prompt_template: str = """
+生成与下列文字相同意思的句子：
+{}
+答案：
+""",
+    debug: bool = False,
+):
+    cl = getClueAIClient(apiKey)  # good without API key
+    prompt = prompt_template.format(title)  # shit.
+    # generate a prediction for a prompt
+
+    # 如果需要自由调整参数自由采样生成，添加额外参数信息设置方式：generate_config=generate_config
+    prediction = cl.generate(
+        model_name="clueai-base", prompt=prompt, generate_config=generate_config
+    )
+    # 需要返回得分的话，指定return_likelihoods="GENERATION"
+    output = prediction.generations[0].text
+    success = title.strip() != output.strip()
+    if debug:
+        # print the predicted text
+        print("prediction: {}".format(output))
+        print("paraphrase success?", success)
+    return output, success
+
+
 
 def paraphraser(content:str,method:Literal['clueai_free','cn_nlp_online_0','cn_nlp_online_1', "baidu_zh_en"]="clueai_free"): # you could add some translation based methods.
     implementedMethods = ['clueai_free','cn_nlp_online_0','cn_nlp_online_1',"baidu_zh_en"]
+    CN_NLP_METHODS = ['cn_nlp_online_0','cn_nlp_online_1']
     if method not in implementedMethods:
         raise NotImplementedError("method '%s' not implemented")
     if content.strip() == "": return content
     if method == "clueai_free":
         output, success = 
-    elif method in ['cn_nlp_online_0','cn_nlp_online_1']:
-        if method == 
+    elif method in CN_NLP_METHODS:
+        link_id = CN_NLP_METHODS.index(method)
         output, success = 
     elif method == "baidu_zh_en":
         output, success = 
@@ -234,3 +309,5 @@ def paraphraser(content:str,method:Literal['clueai_free','cn_nlp_online_0','cn_n
     else:
         raise NotImplementedError("method '%s' not implemented")
     return output,success
+
+########################[PARAPHRASING]########################
