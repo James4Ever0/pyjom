@@ -1,3 +1,7 @@
-dedeuserid = 397424026/video/{'aid': 392488716, 'bvid': 'BV1Gd4y1j7ht'
+dedeuserid = str(397424026)
+bvid= 'BV1Gd4y1j7ht'
+from test_commons import *
+from pyjom.modules.contentPosting.bilibiliPoster import registerBilibiliUserVideo
 
-registerBilibiliUserVideo()
+success = registerBilibiliUserVideo(bvid, dedeuserid)
+print("SUCCESS?", success)
