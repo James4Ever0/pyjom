@@ -20,10 +20,17 @@ from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogC
 dog_or_cat = random.choice(["dog", "cat"])  # strange.
 # we need preconfigured things.
 bgmCacheSetName = "bilibili_cached_bgm_set"
+from pyjom.languagetoolbox import paraphraser
+def myParaphraser(content:str):
+    output, success = paraphraser(content)
+    if not success:
+        output = content
+    return output
 postMetadataGeneratorPrimitive = getBilibiliPostMetadataForDogCat(
     dog_or_cat=dog_or_cat,
     bgmCacheSetName=bgmCacheSetName,
     bgmCacheAutoPurge=True,  # autopurge bgm, not sure we are using the latest bgm!
+    customParaphraser=myParaphraser
 )  # metadata you can fetch from database, maybe you can preprocess this.
 MAX_ITER = 10  # stop on ten trials.
 from lazero.utils.tools import iteratorWrapper
@@ -104,7 +111,7 @@ def makeTemplateConfigsGenerator():
                 else:
                     lyricPath = None
                 data = {
-                    "debug": True,  # we need to preview this video.
+                    "debug": DEBUG_STATE,  # we need to preview this video.
                     # use generator instead.
                     "music": {
                         "filepath": musicFilePath,  # these things were not right.
