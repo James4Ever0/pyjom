@@ -246,8 +246,8 @@ def translate(text:str, backend="baidu"):  # deepl is shit. fucking shit.
     import requests
 
     url = "http://localhost:8974/translate"
-    mTranslate = lambda text, backend: requests.get(
-        url, params={"backend": backend, "text": text}
+    mTranslate = lambda text, backend,timeout: requests.get(
+        url, params={"backend": backend, "text": text},timeout=timeout
     )
     backendList = ["deepl", "baidu"]
     if backend == "random":
@@ -258,15 +258,19 @@ def translate(text:str, backend="baidu"):  # deepl is shit. fucking shit.
     translatedText = text
     if text.strip() == "":
         return text
-    with mTranslate(text, backend) as conn:
-        result = conn.json()
-        print("TRANSLATOR RESULT:", result)
-        if result["code"] == 200:
-            translatedText = result["result"]
-        else:
-            print("SOME ERROR DURING TRANSLATION, PLEASE CHECK SERVER")
-        # it just never return.
-        return translatedText
+    try:
+        with mTranslate(text, backend,timeout=10) as conn:
+            result = conn.json()
+            print("TRANSLATOR RESULT:", result)
+            if result["code"] == 200:
+                translatedText = result["result"]
+            else:
+                print("SOME ERROR DURING TRANSLATION, PLEASE CHECK SERVER")
+            # it just never return.
+    except:
+        import traceback
+        traceback.print_exc()
+    return translatedText
     # we know the translator cannot respond the same shit to us right?
 
 
