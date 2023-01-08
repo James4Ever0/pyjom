@@ -240,7 +240,7 @@ def getLyricsLanguageType(test):
     return isBilingual, needToTranslate
 
 
-def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
+def translate(text:str, backend="baidu"):  # deepl is shit. fucking shit.
     # import time
     # time.sleep(delay)
     import requests
@@ -256,6 +256,8 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
         backend = random.choice(backendList)
     assert backend in backendList
     translatedText = text
+    if text.strip() == "":
+        return text
     with mTranslate(text, backend) as conn:
         result = conn.json()
         print("TRANSLATOR RESULT:", result)
@@ -263,6 +265,7 @@ def translate(text, backend="baidu"):  # deepl is shit. fucking shit.
             translatedText = result["result"]
         else:
             print("SOME ERROR DURING TRANSLATION, PLEASE CHECK SERVER")
+        # it just never return.
         return translatedText
     # we know the translator cannot respond the same shit to us right?
 
