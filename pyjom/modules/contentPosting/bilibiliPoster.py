@@ -84,7 +84,10 @@ def BilibiliPoster(
                 if not register_success:
                     print("VIDEO REGISTRATION ERROR")
                     breakpoint()
-            video_identifier = "aid_{}contentId
+            if type(contentId) == str:
+                video_identifier = "bvid_{}".format(contentId)
+            else:
+                video_identifier = "aid_{}_bvid_{}".format(contentId.get('aid'), contentId.get('bvid'))
             return "bilibili://{}/{}/{}".format(dedeuserid, contentType, video_identifier) # this content id is fucked.
 
     def postContentIterate(content):
