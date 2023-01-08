@@ -16,6 +16,7 @@ model = T5ForConditionalGeneration.from_pretrained(
 # breakpoint()
 # what are these devices? all default CPU?
 
+
 def preprocess(text):
     return text.replace("\n", "_")
 
@@ -41,7 +42,7 @@ def answer(text, sample=True, top_p=0.8, device="cpu"):
             length_penalty=1
         )
     else:
-        out = model.generate( # check "generate_config" in test.py?
+        out = model.generate(  # check "generate_config" in test.py?
             **encoding,
             return_dict_in_generate=True,
             output_scores=False,
@@ -56,16 +57,18 @@ def answer(text, sample=True, top_p=0.8, device="cpu"):
     return postprocess(out_text[0])
 
 
-
 def my_function():
     # Function code goes here
     q = """重写句子：
 支持几十个不同类型的任务，具有较好的零样本学习能力和少样本学习能力。
 答案：
-""" # i think this model just doesn't get it.
+"""  # i think this model just doesn't get it.
     output = answer(q)
     print("Output:", output)
+
+
 import timeit
+
 # Time the function
 elapsed_time = timeit.timeit(my_function, number=1)
 

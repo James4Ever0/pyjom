@@ -1,6 +1,6 @@
-
 from functools import lru_cache
 import paddlehub as hub
+
 
 @lru_cache(maxsize=1)
 def getBaiduLanguageTranslationModel():
@@ -14,14 +14,18 @@ def getBaiduLanguageRecognitionModel():
     return language_recognition_model
 
 
-BAIDU_API_SLEEP_TIME=1
-BAIDU_TRANSLATOR_LOCK_FILE="/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock"
-def baidu_lang_detect(content:str, sleep=BAIDU_API_SLEEP_TIME,lock_file=BAIDU_TRANSLATOR_LOCK_FILE):  # target language must be chinese.
+BAIDU_API_SLEEP_TIME = 1
+BAIDU_TRANSLATOR_LOCK_FILE = (
+    "/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock"
+)
+
+
+def baidu_lang_detect(
+    content: str, sleep=BAIDU_API_SLEEP_TIME, lock_file=BAIDU_TRANSLATOR_LOCK_FILE
+):  # target language must be chinese.
     import filelock
 
-    lock = filelock.FileLock(
-        lock_file
-    )
+    lock = filelock.FileLock(lock_file)
     with lock:
         import time
 
@@ -30,47 +34,59 @@ def baidu_lang_detect(content:str, sleep=BAIDU_API_SLEEP_TIME,lock_file=BAIDU_TR
         langid = language_recognition_model.recognize(content)
         return langid
 
-def baidu_translate(content:str,source:str, target:str,sleep:int= BAIDU_API_SLEEP_TIME,lock_file:str=BAIDU_TRANSLATOR_LOCK_FILE):  # target language must be chinese.
+
+def baidu_translate(
+    content: str,
+    source: str,
+    target: str,
+    sleep: int = BAIDU_API_SLEEP_TIME,
+    lock_file: str = BAIDU_TRANSLATOR_LOCK_FILE,
+):  # target language must be chinese.
     import filelock
 
-    lock = filelock.FileLock(
-        lock_file
-    )
+    lock = filelock.FileLock(lock_file)
     with lock:
         import time
 
         time.sleep(sleep)
         language_translation_model = getBaiduLanguageTranslationModel()
-        translated_content =  language_translation_model.translate(
-                    content, source,target
-                )
+        translated_content = language_translation_model.translate(
+            content, source, target
+        )
         return translated_content
-from typing import Iterable,Union
 
 
-debug:bool=True
-paraphrase_depth :Union[int,Iterable]= 3 # only 1 intermediate language, default.
-suggested_middle_languages :list[str]= ["zh", 'en', 'jp'] # english, japanese, chinese
-def baiduParaphraserByTranslation(content:str,):
-    if issubclass(type(paraphrase_depth),Iterable):
+from typing import Iterable, Union
+
+import random
+
+
+def baiduParaphraserByTranslation(
+    content: str,
+    debug: bool = False,
+    paraphrase_depth: Union[
+        int, Iterable
+    ] = 1,  # only 1 intermediate language, default.
+    suggested_middle_languages: list[str] = [
+        "zh",
+        "en",
+        "jp",
+    ],  # english, japanese, chinese
+):
+    if issubclass(type(paraphrase_depth), Iterable):
         paraphrase_depth = random.choice(paraphrase_depth)
-
 
     target_language_id = baidu_lang_detect(content)
 
+    all_middle_languages = list(set(suggested_middle_languages + [target_language_id]))
 
-
-
-    all_middle_languages = list(set(suggested_middle_languages+[target_language_id]))
-
-    assert paraphrase_depth >0
-    if paraphrase_depth >1:
-        assert len(all_middle_languages)>=3
-    import random
+    assert paraphrase_depth > 0
+    if paraphrase_depth > 1:
+        assert len(all_middle_languages) >= 3
 
     current_language_id = target_language_id
     middle_content = content
-    head_tail_indexs = set([0, paraphrase_depth-1])
+    head_tail_indexs = set([0, paraphrase_depth - 1])
 
     intermediate_languages = []
 
@@ -78,20 +94,28 @@ def baiduParaphraserByTranslation(content:str,):
         forbid_langs = set([current_language_id])
         if loop_id in head_tail_indexs:
             forbid_langs.add(target_language_id)
-        non_target_middle_languages = [langid for langid in all_middle_languages if langid not in forbid_langs]
+        non_target_middle_languages = [
+            langid for langid in all_middle_languages if langid not in forbid_langs
+        ]
         if debug:
             print(f"INDEX: {loop_id} INTERMEDIATE LANGS: {non_target_middle_languages}")
         middle_language_id = random.choice(non_target_middle_languages)
-        middle_content = baidu_translate(middle_content, source = current_language_id, target = middle_language_id)
+        middle_content = baidu_translate(
+            middle_content, source=current_language_id, target=middle_language_id
+        )
         current_language_id = middle_language_id
         intermediate_languages.append(middle_language_id)
 
-    output_content = baidu_translate(middle_content, source = current_language_id, target = target_language_id)
+    output_content = baidu_translate(
+        middle_content, source=current_language_id, target=target_language_id
+    )
 
     if debug:
-        print("SOURCE LANGUAGE:",target_language_id)
-        print("USING INTERMEDIATE LANGUAGES:",intermediate_languages)
+        print("SOURCE LANGUAGE:", target_language_id)
+        print("USING INTERMEDIATE LANGUAGES:", intermediate_languages)
         print("PARAPHRASED:", output_content)
+    return output_content
 
 
 content = "世上所有小猫都是天使变的！"
+output = baiduParaphraserByTranslation(content,paraphrase_depth = 3,debug=True)
