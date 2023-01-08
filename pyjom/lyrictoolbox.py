@@ -826,6 +826,10 @@ def textArrayWithTranslatedListToAss(
                 lineMod.words = getJiebaCuttedText(lineMod.text)
             sylList = []
             wordCount = len(lineMod.words)
+            if wordCount == 0: # clean it no matter what.
+                lineMod.words = [" "]
+                lineMod.text = " "
+                wordCount = 1
             sylDuration = (lineMod.end_time - lineMod.start_time) / wordCount
             textLength = len(lineMod.text)
 
