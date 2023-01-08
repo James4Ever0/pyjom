@@ -290,21 +290,138 @@ def clueAIParaphraser(
         print("paraphrase success?", success)
     return output, success
 
+import paddlehub as hub
 
 
-def paraphraser(content:str,method:Literal['clueai_free','cn_nlp_online_0','cn_nlp_online_1', "baidu_zh_en"]="clueai_free"): # you could add some translation based methods.
-    implementedMethods = ['clueai_free','cn_nlp_online_0','cn_nlp_online_1',"baidu_zh_en"]
-    CN_NLP_METHODS = ['cn_nlp_online_0','cn_nlp_online_1']
+@lru_cache(maxsize=1)
+def getBaiduLanguageTranslationModel():
+    language_translation_model = hub.Module(name="baidu_translate")
+    return language_translation_model
+
+
+@lru_cache(maxsize=1)
+def getBaiduLanguageRecognitionModel():
+    language_recognition_model = hub.Module(name="baidu_language_recognition")
+    return language_recognition_model
+
+
+BAIDU_API_SLEEP_TIME = 1
+BAIDU_TRANSLATOR_LOCK_FILE = (
+    "/root/Desktop/works/pyjom/tests/karaoke_effects/baidu_translator.lock"
+)
+
+
+def baidu_lang_detect(
+    content: str, sleep=BAIDU_API_SLEEP_TIME, lock_file=BAIDU_TRANSLATOR_LOCK_FILE
+):  # target language must be chinese.
+    import filelock
+
+    lock = filelock.FileLock(lock_file)
+    with lock:
+        import time
+
+        time.sleep(sleep)
+        language_recognition_model = getBaiduLanguageRecognitionModel()
+        langid = language_recognition_model.recognize(content)
+        return langid
+
+
+def baidu_translate(
+    content: str,
+    source: str,
+    target: str,
+    sleep: int = BAIDU_API_SLEEP_TIME,
+    lock_file: str = BAIDU_TRANSLATOR_LOCK_FILE,
+):  # target language must be chinese.
+    import filelock
+
+    lock = filelock.FileLock(lock_file)
+    with lock:
+        import time
+
+        time.sleep(sleep)
+        language_translation_model = getBaiduLanguageTranslationModel()
+        translated_content = language_translation_model.translate(
+            content, source, target
+        )
+        return translated_content
+
+
+from typing import Iterable, Union
+
+import random
+
+def baiduParaphraserByTranslation(
+    content: str,
+    debug: bool = False,
+    paraphrase_depth: Union[
+        int, Iterable
+    ] = 1,  # only 1 intermediate language, default.
+    suggested_middle_languages: list[str] = [
+        "zh",
+        "en",
+        "jp",
+    ],  # english, japanese, chinese
+):
+    if issubclass(type(paraphrase_depth), Iterable):
+        paraphrase_depth = random.choice(paraphrase_depth)
+
+    target_language_id = baidu_lang_detect(content)
+
+    all_middle_languages = list(set(suggested_middle_languages + [target_language_id]))
+
+    assert paraphrase_depth > 0
+    if paraphrase_depth > 1:
+        assert len(all_middle_languages) >= 3
+
+    current_language_id = target_language_id
+    middle_content = content
+    head_tail_indexs = set([0, paraphrase_depth - 1])
+
+    intermediate_languages = []
+
+    for loop_id in range(paraphrase_depth):
+        forbid_langs = set([current_language_id])
+        if loop_id in head_tail_indexs:
+            forbid_langs.add(target_language_id)
+        non_target_middle_languages = [
+            langid for langid in all_middle_languages if langid not in forbid_langs
+        ]
+        if debug:
+            print(f"INDEX: {loop_id} INTERMEDIATE LANGS: {non_target_middle_languages}")
+        middle_language_id = random.choice(non_target_middle_languages)
+        middle_content = baidu_translate(
+            middle_content, source=current_language_id, target=middle_language_id
+        )
+        current_language_id = middle_language_id
+        intermediate_languages.append(middle_language_id)
+
+    output_content = baidu_translate(
+        middle_content, source=current_language_id, target=target_language_id
+    )
+    success = output_content.strip() != content.strip()
+    if debug:
+        print("SOURCE LANGUAGE:", target_language_id)
+        print("USING INTERMEDIATE LANGUAGES:", intermediate_languages)
+        print("PARAPHRASED:", output_content)
+        print("paraphrase success?", success)
+
+    return output_content, success
+
+
+
+def paraphraser(content:str,method:Literal['clueai_free','cn_nlp_online', "baidu_zh_en"]="clueai_free",debug:bool=False): # you could add some translation based methods.
+    implementedMethods = ['clueai_free','cn_nlp_online',"baidu_zh_en"]
     if method not in implementedMethods:
         raise NotImplementedError("method '%s' not implemented")
     if content.strip() == "": return content
     if method == "clueai_free":
-        output, success = 
+        output, success = clueAIParaphraser(content,debug=debug)
     elif method in CN_NLP_METHODS:
         link_id = CN_NLP_METHODS.index(method)
-        output, success = 
+        output, success = chineseParaphraserAPI(content,debug=debug,target_id = link_id)
     elif method == "baidu_zh_en":
-        output, success = 
+        output, success = baiduParaphraserByTranslation(content,debug=debug)
     # you should not be here.
     else:
         raise NotImplementedError("method '%s' not implemented")
