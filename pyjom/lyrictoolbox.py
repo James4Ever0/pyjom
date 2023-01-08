@@ -781,6 +781,8 @@ def textArrayWithTranslatedListToAss(
         else:
             print("Invalid translatedTuple: %s" % str(translatedTuple))
             breakpoint()
+        if sourceText is None or sourceText.strip() == "":
+            continue
         if puncturalRemoval:
             sourceText = removeUnnecessaryPunctuation(sourceText)
             if translatedText:
@@ -907,7 +909,7 @@ def textArrayWithTranslatedListToAss(
             source, target
         )  # writing 'kanji' style to romaji?
 
-        if translatedText:
+        if hasTranslatedText:
             # source.style = styleConfig['original']['style']
             lineMod2 = lineMod.copy()
             lineMod2.style = styleConfig["translated"]["style"]
