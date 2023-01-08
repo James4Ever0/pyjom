@@ -119,5 +119,6 @@ def baiduParaphraserByTranslation(
     return output_content, success
 
 
-content = "世上所有小猫都是天使变的！"
+# content = "世上所有小猫都是天使变的！"
+content =  "支持几十个不同类型的任务，具有较好的零样本学习能力和少样本学习能力。"
 output, success = baiduParaphraserByTranslation(content, paraphrase_depth=3, debug=True)

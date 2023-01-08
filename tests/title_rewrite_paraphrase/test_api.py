@@ -26,4 +26,7 @@ debug:bool=False,
     return output, success
 
 content =  "支持几十个不同类型的任务，具有较好的零样本学习能力和少样本学习能力。"
-output,success =
+# content = "hello world"
+# it is clearly translation based.
+# since it did not detect source language. well that's just for fun.
+output,success =chineseParaphraserAPI(content,debug=True)
