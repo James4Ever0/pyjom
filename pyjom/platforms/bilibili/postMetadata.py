@@ -435,6 +435,8 @@ def getBilibiliPostMetadata(
                                     # mBgm = random.choice(bgm_list)
                                     # really serious?
                                     mBgm = shuffleAndPopFromList(bgm_list)
+
+                                    # you enable this paraphrase option here.
                                     yield cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid  # one additional return value
                                     clearMyLists()
         except:

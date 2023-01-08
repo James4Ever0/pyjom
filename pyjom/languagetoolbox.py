@@ -439,16 +439,23 @@ def paraphraser(
         raise NotImplementedError("method '%s' not implemented")
     if content.strip() == "":
         return content, True  # to protect paraphrasers.
-    if method == "clueai_free":
-        output, success = clueAIParaphraser(content, debug=debug, **configs)
-    elif method == "cn_nlp_online":
-        output, success = chineseParaphraserAPI(content, debug=debug, **configs)
-    elif method == "baidu_translator":
-        output, success = baiduParaphraserByTranslation(content, debug=debug, **configs)
-    # you should not be here.
-    else:
-        raise NotImplementedError("method '%s' not implemented")
-    return output, success
+    try:
+        if method == "clueai_free":
+            output, success = clueAIParaphraser(content, debug=debug, **configs)
+        elif method == "cn_nlp_online":
+            output, success = chineseParaphraserAPI(content, debug=debug, **configs)
+        elif method == "baidu_translator":
+            output, success = baiduParaphraserByTranslation(content, debug=debug, **configs)
+
+        # you should not be here.
+        else:
+            raise NotImplementedError("method '%s' not implemented")
+        return output, success
+    
+    except:
+        import traceback
+        traceback.print_exc()
+        return content,False
 
 
 ########################[PARAPHRASING]########################
