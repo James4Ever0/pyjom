@@ -98,12 +98,13 @@ def BilibiliPoster(
             afterPosting()  # execute no matter what. after posting the content.
             # now register the uploaded video.
             if contentType == "video":
-                register_success = registerBilibiliUserVideo(
-                    (
+                video_bvid = (
                         contentId
                         if type(contentId) == str
                         else contentId.get("bvid", contentId.get("BVID"))
-                    ),
+                    )
+                register_success = registerBilibiliUserVideo(
+                    video_bvid,
                     str(dedeuserid),
                 )
                 print("VIDEO REGISTRATION STATUS?", register_success)

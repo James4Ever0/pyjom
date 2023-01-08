@@ -13,7 +13,7 @@ def OnlinePoster(
 ):
     posters = {"bilibili": BilibiliPoster}
     assert platform in posters.keys()
-    getPostMetadata = lambda: postMetadataGenerator.__next__()
+    getPostMetadata = lambda: postMetadataGenerator.__next__() # how you produce this "next" properly? or double?
     return posters[platform](
         content,
         iterate=iterate,
