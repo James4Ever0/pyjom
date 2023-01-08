@@ -1,7 +1,8 @@
-text = "Flask的路由,视图和相关配置" # just a sample please?
+text = "Flask的路由,视图和相关配置"  # just a sample please?
 
 from nltk.corpus import stopwords
-myStopwords = stopwords.words(['chinese', 'english'])
+
+myStopwords = stopwords.words(["chinese", "english"])
 
 import jieba.analyse as ana
 import jieba
@@ -14,7 +15,10 @@ for word in words:
 
 text_splited = " ".join(words_filtered)
 
-tags=ana.extract_tags(text_splited,topK=5,)
+tags = ana.extract_tags(
+    text_splited,
+    topK=5,
+)
 print(tags)
 
 # seems like you can only change the source to make it into somewhat solveable problem.

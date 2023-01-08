@@ -17,6 +17,7 @@ import cv2
 
 from pyjom.videotoolbox import getVideoFrameSampler
 from pyjom.imagetoolbox import imageDogCatCoverCropAdvanced
+
 # from pyjom.imagetoolbox import (
 #     bezierPaddleHubResnet50ImageDogCatDetector,
 #     # we deprecate this thing to make it somehow better.
@@ -53,7 +54,6 @@ if not video_fine:
     exit()
 
 from caer.video.frames_and_fps import get_duration
-
 
 
 duration = get_duration(path)

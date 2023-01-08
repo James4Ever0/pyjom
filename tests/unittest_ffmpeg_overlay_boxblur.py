@@ -21,16 +21,22 @@ video_stream = stream.video
 output_height = 1080
 output_width = 1920
 
-layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter("gblur", sigma=9) # this is default?
+layer_0 = video_stream.filter("scale", w=output_width, h=output_height).filter(
+    "gblur", sigma=9
+)  # this is default?
 
 # print('layer_0 args', layer_0.get_args())
 
-layer_1 = video_stream.filter("scale", w="min(floor(iw*{}/ih),{})".format(output_height, output_width), h="min(floor(ih*{}/iw),{})".format(output_width, output_height))
+layer_1 = video_stream.filter(
+    "scale",
+    w="min(floor(iw*{}/ih),{})".format(output_height, output_width),
+    h="min(floor(ih*{}/iw),{})".format(output_width, output_height),
+)
 # print('layer_1 args', layer_1.get_args())
 
 ## in case you failed to generalize this shit...
 
-output_stream = layer_0.overlay(layer_1, x='floor((W-w)/2)', y="floor((H-h)/2)")
+output_stream = layer_0.overlay(layer_1, x="floor((W-w)/2)", y="floor((H-h)/2)")
 # print('output_stream args', output_stream.get_args())
 
 from lazero.filesystem import tmpdir
@@ -42,7 +48,7 @@ with tmpdir(path=path) as T:
     filepath = os.path.join(path, "output.mp4")
     # args = ffmpeg.get_args(output_stream)
     # print(args)
-    output_args =  {"preset":"veryfast"} # seems like it won't speed up so much?
-    ffmpeg.output(output_stream,filepath, **output_args).run(overwrite_output=True)
+    output_args = {"preset": "veryfast"}  # seems like it won't speed up so much?
+    ffmpeg.output(output_stream, filepath, **output_args).run(overwrite_output=True)
     print("output file location:", filepath)
     breakpoint()

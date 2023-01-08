@@ -1,6 +1,7 @@
-dbpath = 'test.db'
+dbpath = "test.db"
 
 from peewee import *
+
 
 class BilibiliUser(Model):
     username = CharField()
@@ -12,7 +13,8 @@ class BilibiliUser(Model):
     # well you can check it later.
     avatar = CharField(null=True)  # warning! charfield max length is 255
 
-db=SqliteDatabase(dbpath)
+
+db = SqliteDatabase(dbpath)
 db.create_tables([BilibiliUser])
 import uuid
 
@@ -22,7 +24,7 @@ username = str(uuid.uuid4())
 BilibiliUser.update(username=username).where(BilibiliUser.user_id == 1).execute()
 # why don't you update? need i delete it manually?
 
-u = BilibiliUser.get(user_id = 1)
+u = BilibiliUser.get(user_id=1)
 
-print('current username:', username)
-print('fetched username:', u.username)
+print("current username:", username)
+print("fetched username:", u.username)

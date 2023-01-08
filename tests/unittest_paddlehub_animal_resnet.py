@@ -1,5 +1,5 @@
 # source = "/root/Desktop/works/pyjom/samples/video/kitty_flash_15fps.gif"  # check that kitty video!
-source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif" # another kitty!
+source = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"  # another kitty!
 
 from test_commons import *
 from pyjom.videotoolbox import getVideoFrameIteratorWithFPS
@@ -8,18 +8,24 @@ from pyjom.imagetoolbox import resizeImageWithPadding
 import paddlehub as hub
 import cv2
 
+
 def labelFileReader(filename):
-    with open(filename, 'r') as f:
+    with open(filename, "r") as f:
         content = f.read()
         content = content.split("\n")
-        content = [elem.replace("\n","").strip() for elem in content]
-        content = [elem for elem in content if len(elem)>0]
+        content = [elem.replace("\n", "").strip() for elem in content]
+        content = [elem for elem in content if len(elem) > 0]
     return content
+
 
 dog_suffixs = ["狗", "犬", "梗"]
 cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
-dog_labels = labelFileReader("/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt")
-cat_labels = labelFileReader("/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt")
+dog_labels = labelFileReader(
+    "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt"
+)
+cat_labels = labelFileReader(
+    "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt"
+)
 
 forbidden_words = [
     "灵猫",
@@ -35,6 +41,7 @@ forbidden_words = [
     "猫蛱蝶",
 ]
 
+
 def dog_cat_name_recognizer(name):
     if name in dog_labels:
         return "dog"
@@ -49,6 +56,7 @@ def dog_cat_name_recognizer(name):
                 return "cat"
     return None
 
+
 from lazero.utils.logger import sprint
 
 classifier = hub.Module(name="resnet50_vd_animals")
@@ -57,11 +65,13 @@ classifier = hub.Module(name="resnet50_vd_animals")
 # test_flag = "video"
 test_flag = "image"
 
+
 def paddleAnimalDetectionResultToList(result):
     resultDict = result[0]
-    resultList = [(key,value) for key,value in resultDict.items()]
+    resultList = [(key, value) for key, value in resultDict.items()]
     resultList.sort(key=lambda item: -item[1])
     return resultList
+
 
 def translateResultListToDogCatList(resultList):
     final_result_list = []
@@ -69,6 +79,7 @@ def translateResultListToDogCatList(resultList):
         new_name = dog_cat_name_recognizer(name)
         final_result_list.append((new_name, confidence))
     return final_result_list
+
 
 if test_flag == "video":
     for frame in getVideoFrameIteratorWithFPS(source, -1, -1, fps=1):
@@ -105,7 +116,7 @@ elif test_flag == "image":
     # [(None, 0.9998186230659485), (None, 1.7534730432089418e-06), (None, 7.280816021193459e-07)]
     # source = "/root/Desktop/works/pyjom/samples/image/dog_with_text.jpg" # no dog
     #  [(None, 0.9998675584793091), ('dog', 2.565316492564307e-07), (None, 1.562129767762599e-07)]
-    source = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png" # has dog
+    source = "/root/Desktop/works/pyjom/samples/image/dog_with_text2.png"  # has dog
     #  [(None, 0.8876796960830688), ('dog', 0.0498274527490139), ('dog', 0.02175540290772915)]
     # a little, but not focused.
     frame = cv2.imread(source)

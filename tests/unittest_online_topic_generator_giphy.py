@@ -8,7 +8,7 @@ from lazero.filesystem import tmpdir
 clash_refresher_port = 8677
 clash_refresher_url = "http://127.0.0.1:{}".format(clash_refresher_port)
 
-waitForServerUp(clash_refresher_port,"clash update controller")
+waitForServerUp(clash_refresher_port, "clash update controller")
 
 elems, function_label = OnlineTopicGenerator()
 sprint("FUNCTION LABEL:", function_label)
@@ -43,7 +43,7 @@ with tmpdir(path=tmpPath) as testDir:
                     download_path,
                     threads=6,
                     size_filter={"min": 0.4, "max": 50},
-                    use_multithread=True
+                    use_multithread=True,
                 )
             except:
                 print("Error when download file")
@@ -58,7 +58,7 @@ with tmpdir(path=tmpPath) as testDir:
             elems, tempdir=tmpPath
         )  # infinite video generators.
         for elem in newElems:
-            waitForServerUp(clash_refresher_port,"clash update controller")
+            waitForServerUp(clash_refresher_port, "clash update controller")
             sprint(elem)
             (item_id, local_video_location) = elem
             # what is the freaking response?

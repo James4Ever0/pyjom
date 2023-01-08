@@ -222,6 +222,7 @@ def paraphraser(content:str,method:Literal['clueai_free','cn_nlp_online_0','cn_n
     implementedMethods = ['clueai_free','cn_nlp_online_0','cn_nlp_online_1']
     if method not in implementedMethods:
         raise NotImplementedError("method '%s' not implemented")
+    if content.strip() == "": return content
     if method == "clueai_free":
         ...
     elif method in ['cn_nlp_online_0','cn_nlp_online_1']:

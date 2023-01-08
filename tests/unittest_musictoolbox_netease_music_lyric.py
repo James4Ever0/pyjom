@@ -6,7 +6,7 @@ NMClient = neteaseMusic()
 query = "linkin park numb"
 for sim in [False, True]:
     result = NMClient.getMusicAndLyricWithKeywords(query, similar=sim, debug=True)
-    print('similar?', sim)
+    print("similar?", sim)
     # no lyrics! wtf??
     breakpoint()
 # now let's test something surely will get lyrics.

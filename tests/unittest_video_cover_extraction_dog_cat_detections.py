@@ -30,6 +30,7 @@ os.environ["https_proxy"] = ""
 # )  # or yolov5m, yolov5l, yolov5x, custom
 from test_commons import *
 from pyjom.commons import configYolov5
+
 model = configYolov5()
 
 dog_or_cat = "dog"

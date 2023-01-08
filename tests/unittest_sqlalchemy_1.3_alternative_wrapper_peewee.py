@@ -48,12 +48,16 @@ class Account(db.Model):
 class User2(Model):  # what is this model for? empty?
     username = CharField(unique=True)
 
+
 import datetime
+
 
 class BilibiliVideo(db.Model):
     bvid = CharField(unique=True)
     visible = BooleanField()
-    last_check = DateTimeField(default=datetime.datetime.now) # this is default callable. will be managed as expected
+    last_check = DateTimeField(
+        default=datetime.datetime.now
+    )  # this is default callable. will be managed as expected
     # poster = ForeignKeyField(User) # is it my account anyway?
 
 
@@ -67,29 +71,35 @@ db.create_tables(
 # it is the foreign key reference.
 
 # charlie = User.create(username='charlie') # fail the unique check. will raise exception.
-charlie, flag = User.get_or_create(username="charlie") # will work without exception.
+charlie, flag = User.get_or_create(username="charlie")  # will work without exception.
 # print(charlie)
 # breakpoint()
 
 # why we can pass a function instead of the object?
 # last_check = datetime.datetime.now()
 
-video_record, flag = BilibiliVideo.get_or_create(bvid='BV123',visible=False)
+video_record, flag = BilibiliVideo.get_or_create(bvid="BV123", visible=False)
 
 # print(video_record) # it will be good.
 # breakpoint()
 
-next_check_time = datetime.datetime.now() - datetime.timedelta(minutes=20) # every 20 minutes check these things.
+next_check_time = datetime.datetime.now() - datetime.timedelta(
+    minutes=20
+)  # every 20 minutes check these things.
 
 # but for those which are already recognized as visible, we may not want to check these video till we select/search them. this is to reserve bandwidth.
 
 print("NEXT CHECK TIME:", next_check_time)
 
-results_0 = BilibiliVideo.select().where(BilibiliVideo.last_check < datetime.datetime.now()) # needs to check
-results_1 = BilibiliVideo.select().where(BilibiliVideo.last_check > datetime.datetime.now()) # no need to check
+results_0 = BilibiliVideo.select().where(
+    BilibiliVideo.last_check < datetime.datetime.now()
+)  # needs to check
+results_1 = BilibiliVideo.select().where(
+    BilibiliVideo.last_check > datetime.datetime.now()
+)  # no need to check
 
 print(results_0)
-print(results_1) # these are just raw sql statements. have't executed yet.
+print(results_1)  # these are just raw sql statements. have't executed yet.
 breakpoint()
 
 # warning: our table name is lowercased. may cause trouble.
@@ -110,7 +120,7 @@ data = User.get()  # this can only get one such instance?
 # print(data)
 # breakpoint()
 
-selection = User.select() # still iterable?
+selection = User.select()  # still iterable?
 # breakpoint()
 
 # let's bind some database.
@@ -124,12 +134,12 @@ db.create_tables([User2])
 User2.get_or_create(username="abcdef")
 print([x for x in User2.select()])
 
-username="nonexistant"
+username = "nonexistant"
 # try:
-answer = User2.get_or_none(User2.username == username) # still raise exception huh?
-print("ANSWER:", answer) # great this is simpler.
+answer = User2.get_or_none(User2.username == username)  # still raise exception huh?
+print("ANSWER:", answer)  # great this is simpler.
 if answer is None:
-    print('username does not exist:', username)
+    print("username does not exist:", username)
 # except Exception as e:
 #     # print('exception type:', type(e))
 #     print('username does not exist:', username)

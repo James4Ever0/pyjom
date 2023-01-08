@@ -1,5 +1,6 @@
 import numpy as np
 import bezier
+
 # BEST: {'input_bias': 0.0830047243746045, 'skew': -0.4986098769473948}
 # maybe not so right?
 def bezierCurve(start=(0, 0), end=(1, 1), skew=0):

@@ -7,7 +7,7 @@ import json
 
 dataPath = "/root/Desktop/works/pyjom/logs/local/1649678716_663207.json"
 
-mdata = open(dataPath,"r",encoding="utf8").read()
+mdata = open(dataPath, "r", encoding="utf8").read()
 mdata = json.loads(mdata)
 # minMaxThresh = 14 # max difference is ten pixel. or it is considered as moving.
 # strDisThreshold = 1 # or considered as changing?
@@ -19,7 +19,7 @@ mdata = json.loads(mdata)
 # strSimThreshold = 0.8
 
 
-            # print(mtext, key) # this is stationary.
+# print(mtext, key) # this is stationary.
 
 for elem in mdata:
     # maybe something in a sequence? like location similarity?
@@ -29,14 +29,15 @@ for elem in mdata:
         rev = elem["review"]["review"][1]
         ocrData = rev["subtitle_detector"]["subtitle_result"]["paddleocr"]
         # here is the core.
-        myresult = makeOCREntity(ocrData,blockTimeThreshold=0,timeThreshold=0.1)
-        myNewResult = staticOCRCombinator(myresult) # this is forced combination.
+        myresult = makeOCREntity(ocrData, blockTimeThreshold=0, timeThreshold=0.1)
+        myNewResult = staticOCRCombinator(myresult)  # this is forced combination.
         # print(json.dumps(myNewResult,indent=4))
         for key in myNewResult.keys():
             myElem = myNewResult[key]
-            print(myElem["content"],key)
+            print(myElem["content"], key)
         breakpoint()
     except:
         import traceback
+
         traceback.print_exc()
         breakpoint()

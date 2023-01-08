@@ -1,7 +1,7 @@
 import bezier
 import numpy as np
 
-skew = -.5 # skew: (-0.5,0.5) otherwise this shit will look ugly.
+skew = -0.5  # skew: (-0.5,0.5) otherwise this shit will look ugly.
 x_start, y_start = 0, 0
 x_end, y_end = 1, 1
 
@@ -18,7 +18,7 @@ curve1 = bezier.Curve(nodes1, degree=2)
 
 # import seaborn
 # seaborn.set()
-test_case = 'evaluate'
+test_case = "evaluate"
 if test_case == "plot":
     axis = curve1.plot(num_pts=256)
     import matplotlib.pyplot as plt
@@ -26,10 +26,10 @@ if test_case == "plot":
     # plt.plot(axis)
     plt.show()
 elif test_case == "evaluate":
-    print('type q to quit evaluation')
+    print("type q to quit evaluation")
     while True:
         s = input("s> ")
-        if s == 'q':
+        if s == "q":
             print("quitting...")
             break
         try:
@@ -37,8 +37,8 @@ elif test_case == "evaluate":
             points = curve1.evaluate(s)
             # we only get the single point.
             point = points.T[0]
-            x,y = point
-            print('x: %f, y: %f' % (x,y))
+            x, y = point
+            print("x: %f, y: %f" % (x, y))
         except:
-            print('ERROR: Invalid input value: %s' % s)
+            print("ERROR: Invalid input value: %s" % s)
     # print(axis)

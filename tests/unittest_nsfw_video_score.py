@@ -75,7 +75,7 @@ def NSFWFilter(
         "Hentai": {"max": 0.5},
         "Drawing": {"max": 0.5},
     },
-    debug=False
+    debug=False,
 ):
     for key in filter_dict:
         value = NSFWReport.get(key, 0)
@@ -131,6 +131,7 @@ elif test_flag == "nsfw_video":
                     )  # there must be at least one response, i suppose?
                 except:
                     import traceback
+
                     traceback.print_exc()
                     print("error when processing NSFW server response")
         NSFWReport = processNSFWReportArray(responses)

@@ -3,21 +3,26 @@ lyric_string = """[00:00.000] 作词 : 苏喜多/挡风玻璃\n[00:01.000] 作�
 在北极冰川\n[04:33.658]那儿没有花朵 也没有失落…\n[04:40.401]吉他：陈恒家\n[04:42.654]钢琴：陈恒冠\n[04:47.407]混音：陈恒家\n[04:49.907]母带：陈恒家\n[04:53.907]监制：1991与她\n"""
 
 # assume song duration here!
-song_duration = 5*60
+song_duration = 5 * 60
 
 import pylrc
+
 # you'd better inspect the thing. what is really special about the lyric, which can never appear?
 
 min_lines_of_lyrics = 5
 min_total_lines_of_lyrics = 10
-potential_forbidden_chars = ["[","]","【","】","「","」","《","》","/","(",")"]
-core_forbidden_chars = [":","：", "@"]
+potential_forbidden_chars = ["[", "]", "【", "】", "「", "」", "《", "》", "/", "(", ")"]
+core_forbidden_chars = [":", "：", "@"]
+
+
 def checkLyricText(text, core_only=False):
     if core_only:
         forbidden_chars = core_forbidden_chars
     else:
-        forbidden_chars = core_forbidden_chars+potential_forbidden_chars
+        forbidden_chars = core_forbidden_chars + potential_forbidden_chars
     return not any([char in text for char in forbidden_chars])
+
+
 # also get the total time covered by lyric.
 # the time must be long enough, compared to the total time of the song.
 lrc_parsed = pylrc.parse(lyric_string)
@@ -36,11 +41,11 @@ for line in lrc_parsed_list:
     if not begin:
         flag = checkLyricText(text, core_only=False)
         if not flag:
-            begin=True
+            begin = True
     else:
         flag = checkLyricText(text, core_only=True)
         if flag:
-            begin=False
+            begin = False
     flags.append(flag)
     # breakpoint()
 
@@ -51,15 +56,15 @@ from pyjom.mathlib import extract_span
 int_flags = [int(flag) for flag in flags]
 
 mySpans = extract_span(int_flags, target=1)
-print(mySpans) # this will work.
+print(mySpans)  # this will work.
 # this span is for the range function. no need to add one to the end.
 
 total_length = 0
 
 new_lyric_list = []
 for mstart, mend in mySpans:
-    length = mend-mstart
-    total_length+=length
+    length = mend - mstart
+    total_length += length
     if length >= min_lines_of_lyrics:
         # process these lines.
         for index in range(mstart, mend):
@@ -67,14 +72,14 @@ for mstart, mend in mySpans:
             line_text = lrc_parsed_list[index].text
             if line_start_time <= song_duration:
                 line_end_time = song_duration
-                if index+1 < len(lrc_parsed_list):
-                    line_end_time = lrc_parsed_list[index+1].time
+                if index + 1 < len(lrc_parsed_list):
+                    line_end_time = lrc_parsed_list[index + 1].time
                     if line_end_time > song_duration:
                         line_end_time = song_duration
-                new_lyric_list.append((line_text,line_start_time))
-                if index == mend-1:
+                new_lyric_list.append((line_text, line_start_time))
+                if index == mend - 1:
                     # append one more thing.
-                    new_lyric_list.append(("",line_end_time))
+                    new_lyric_list.append(("", line_end_time))
             else:
                 continue
 # for elem in new_lyric_list:
@@ -85,7 +90,7 @@ if total_length >= min_total_lines_of_lyrics:
     print("LYRIC ACCEPTED.")
     new_lrc = pylrc.classes.Lyrics()
     for text, myTime in new_lyric_list:
-        timecode_min, timecode_sec= divmod(myTime,60)
+        timecode_min, timecode_sec = divmod(myTime, 60)
         timecode = "[{:d}:{:.3f}]".format(int(timecode_min), timecode_sec)
         myLine = pylrc.classes.LyricLine(timecode, text)
         new_lrc.append(myLine)

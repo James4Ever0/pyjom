@@ -1,5 +1,6 @@
 import ffmpeg
 from lazero.utils.importers import cv2_custom_build_init
+
 cv2_custom_build_init()
 # mediaPath = "/root/Desktop/works/pyjom/samples/image/dog_blue_sky_split_line.png"
 mediaPath = "/root/Desktop/works/pyjom/samples/image/dog_with_black_borders.png"  # use the image with black background.
@@ -29,6 +30,7 @@ stderr_decoded = stderr.decode("utf-8")
 
 # breakpoint()
 import parse
+
 cropped_area_threshold = 0.1
 
 common_crops = []
@@ -49,7 +51,7 @@ for line in stderr_decoded.split("\n"):
     # [Parsed_cropdetect_0 @ 0x56246a16cbc0] x1:360 x2:823 y1:0 y2:657 w:464 h:656 x:360 y:2 pts:3 t:0.120000 crop=464:656:360:2
     # this crop usually will never change. but let's count?
 area = 0
-x,x1,y,y1= 0,width, 0, height
+x, x1, y, y1 = 0, width, 0, height
 if len(common_crops) > 0:
     common_crops_count_tuple_list = [
         (cropString, common_crops.count(cropString)) for cropString in set(common_crops)
@@ -68,9 +70,9 @@ cropped_area_ratio = 1 - (area / total_area)  # 0.5652352766414517
 print("CROPPED AREA RATIO:", cropped_area_ratio)
 
 if cropped_area_ratio > cropped_area_threshold:
-    print('we need to crop this. no further processing needed')
-    image_black_cropped = image[y:y1,x:x1]
+    print("we need to crop this. no further processing needed")
+    image_black_cropped = image[y:y1, x:x1]
     cv2.imshow("CROPPED IMAGE", image_black_cropped)
     cv2.waitKey(0)
 else:
-    print('image no need to crop black borders. further processing needed')
+    print("image no need to crop black borders. further processing needed")

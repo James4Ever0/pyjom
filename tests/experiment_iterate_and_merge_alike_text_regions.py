@@ -85,20 +85,23 @@ sample = [
 prevList = []
 newList = []
 import numpy as np
-def alike(array0,array1, threshold):
+
+
+def alike(array0, array1, threshold):
     npArray0, npArray1 = np.array(array0), np.array(array1)
-    return max(abs(npArray0-npArray1)) <= threshold
+    return max(abs(npArray0 - npArray1)) <= threshold
+
 
 newSample = []
 for item in sample:
     newItem = []
     for elem in item:
         for prevElem in prevList:
-            if alike(prevElem, elem,10):
+            if alike(prevElem, elem, 10):
                 # mAlike = True
                 elem = prevElem.copy()
                 break
         newItem.append(elem.copy())
-    print(newItem) # showcase.
+    print(newItem)  # showcase.
     newSample.append(newItem.copy())
     prevList = newItem.copy()

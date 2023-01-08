@@ -1,6 +1,6 @@
 src = "/root/Desktop/works/pyjom/samples/video/kitty_flash.gif"
 
-import pathlib, sys # great.
+import pathlib, sys  # great.
 
 site_path = pathlib.Path("/usr/local/lib/python3.9/site-packages")
 cv2_libs_dir = (
@@ -15,5 +15,5 @@ if len(cv2_libs) == 1:
 from caer.video.frames_and_fps import get_fps_float
 
 fps = get_fps_float(src)
-print("FPS:", fps) # 10? was very inaccurate for me
+print("FPS:", fps)  # 10? was very inaccurate for me
 # now it is good. 9.5
