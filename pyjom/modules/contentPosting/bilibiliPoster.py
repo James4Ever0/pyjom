@@ -12,17 +12,30 @@ from lazero.filesystem.temp import (
 import cv2
 import requests
 
-def registerBilibiliUserVideo(bvid:str, dedeuserid:str,is_mine:bool=True, visible:bool=False,
-                server_endpoint = 'registerUserVideo',
-                server_port = 7341,success_codes =  [200, 201]):
-                data = {'bvid':bvid, 'dedeuserid':dedeuserid, 'is_mine':is_mine, 'visible':visible}
 
-                data = {"bvid":, # must str.
-             "dedeuserid":str(dedeuserid),
-            "is_mine":True,"visible":False} # we have schedule checking that.
-                r = requests.post('http://localhost:{}/{}'.format(server_port, server_endpoint),json=data)
-                register_success = r.status_code in success_codes
-                return register_success
+def registerBilibiliUserVideo(
+    bvid: str,
+    dedeuserid: str,
+    is_mine: bool = True,
+    visible: bool = False,
+    server_domain: str = "localhost",
+    server_endpoint: str = "registerUserVideo",
+    server_port: int = 7341,
+    success_codes: list[int] = [200, 201],
+):
+    data = {
+        "bvid": bvid,
+        "dedeuserid": dedeuserid,
+        "is_mine": is_mine,
+        "visible": visible,
+    }
+
+    r = requests.post(
+        "http://{}:{}/{}".format(server_domain, server_port, server_endpoint), json=data
+    )
+    register_success = r.status_code in success_codes
+    return register_success
+
 
 # why you have decorator? so OnlinePoster will not have decorator.
 @decorator
@@ -33,14 +46,15 @@ def BilibiliPoster(
     contentType="video",
     dedeuserid: str = "397424026",
     tempdir="/dev/shm/medialang/bilibiliPoster",
-    afterPosting:FunctionType=...
+    afterPosting: FunctionType = ...,
 ):
     # are you sure this 'postMetadataGenerator' will generate valid data for us?
     # anyway let's write for video.
     # there are two generators. what do you want?
     # getPostMetadata = lambda: postMetadataGenerator.__next__()
     from retry import retry
-    @retry(tries=3, delay=5) # if causing trouble
+
+    @retry(tries=3, delay=5)  # if causing trouble
     def postContent(elem):  # what is this elem? please check for video producer.
         with tmpdir(path=tempdir):
             postMetadata = getPostMetadata()
@@ -81,19 +95,30 @@ def BilibiliPoster(
                 raise Exception(
                     "unknown content type to upload for bilibiliPoster:", contentType
                 )
-            afterPosting() # execute no matter what. after posting the content.
+            afterPosting()  # execute no matter what. after posting the content.
             # now register the uploaded video.
             if contentType == "video":
-                register_success =registerBilibiliUserVideo((contentId if type(contentId) == str else contentId.get("bvid", contentId.get('BVID'))), str(dedeuserid))
-                print("VIDEO REGISTRATION STATUS?",register_success)
+                register_success = registerBilibiliUserVideo(
+                    (
+                        contentId
+                        if type(contentId) == str
+                        else contentId.get("bvid", contentId.get("BVID"))
+                    ),
+                    str(dedeuserid),
+                )
+                print("VIDEO REGISTRATION STATUS?", register_success)
                 if not register_success:
                     print("VIDEO REGISTRATION ERROR")
                     breakpoint()
             if type(contentId) == str:
                 video_identifier = "bvid_{}".format(contentId)
             else:
-                video_identifier = "aid_{}_bvid_{}".format(contentId.get('aid'), contentId.get('bvid'))
-            return "bilibili://{}/{}/{}".format(dedeuserid, contentType, video_identifier) # this content id is fucked.
+                video_identifier = "aid_{}_bvid_{}".format(
+                    contentId.get("aid"), contentId.get("bvid")
+                )
+            return "bilibili://{}/{}/{}".format(
+                dedeuserid, contentType, video_identifier
+            )  # this content id is fucked.
 
     def postContentIterate(content):
         for elem in content:

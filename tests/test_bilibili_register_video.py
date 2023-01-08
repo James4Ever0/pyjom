@@ -1,1 +1,3 @@
-397424026/video/{'aid': 392488716, 'bvid': 'BV1Gd4y1j7ht'
+dedeuserid = 397424026/video/{'aid': 392488716, 'bvid': 'BV1Gd4y1j7ht'
+
+registerBilibiliUserVideo()
