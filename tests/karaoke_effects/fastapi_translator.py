@@ -180,7 +180,7 @@ def changeProxy(useDirect=False, suggestSingleElemProbability=0.1):
     return proxyName
 
 
-def metaTranslator(text, backend="baidu"):
+def metaTranslator(text, backend="baidu", max_tries:int=3):
     global workingProxies
     backendList = ["baidu", "deepl"]
     assert backend in backendList
@@ -196,7 +196,7 @@ def metaTranslator(text, backend="baidu"):
     translator, getUseDirect = backends[backend]
     proxyName = None
     firstTime = True
-    while True:
+    for _ in range(max_tries):
         try:
             if not firstTime: # after first 'failed' trial we will change the strategy.
                 key = random.choice(backendList)
@@ -273,6 +273,7 @@ def read_item(backend: str, text: str):
             result = translatedDict[text]
         else:
             result = metaTranslator(text, backend=backend)
-            if len(result) < 30 and len(text) < 30:
-                translatedDict.update({text: result})
+            if type(result)!=None:
+                if len(result) < 30 and len(text) < 30:
+                    translatedDict.update({text: result})
     return {"code": code, "result": result}
