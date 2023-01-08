@@ -773,6 +773,8 @@ def textArrayWithTranslatedListToAss(
     # censor these lyrics! fucker!
     newTextArray = textArray
     for mIndex, elem in enumerate(newTextArray):
+        # if fail then just continue. fuck.
+        try:
         translatedTuple = translatedList[mIndex]
         if len(translatedTuple) == 1:
             sourceText = translatedTuple[0]
@@ -830,6 +832,7 @@ def textArrayWithTranslatedListToAss(
             else:
                 lineMod.words = getJiebaCuttedText(lineMod.text)
             sylList = []
+
             wordCount = len(lineMod.words)
             if wordCount == 0:  # clean it no matter what.
                 lineMod.words = [" "]
