@@ -219,11 +219,18 @@ def getFreeClueAIClient():
     ...
 
 def paraphraser(content:str,method:Literal['clueai_free','cn_nlp_online_0','cn_nlp_online_1', "baidu_zh_en"]="clueai_free"): # you could add some translation based methods.
-    implementedMethods = ['clueai_free','cn_nlp_online_0','cn_nlp_online_1']
+    implementedMethods = ['clueai_free','cn_nlp_online_0','cn_nlp_online_1',"baidu_zh_en"]
     if method not in implementedMethods:
         raise NotImplementedError("method '%s' not implemented")
     if content.strip() == "": return content
     if method == "clueai_free":
-        ...
+        output, success = 
     elif method in ['cn_nlp_online_0','cn_nlp_online_1']:
-        ...
+        if method == 
+        output, success = 
+    elif method == "baidu_zh_en":
+        output, success = 
+    # you should not be here.
+    else:
+        raise NotImplementedError("method '%s' not implemented")
+    return output,success
