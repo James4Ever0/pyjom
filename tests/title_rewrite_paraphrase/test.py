@@ -24,35 +24,39 @@ def getClueAIClient(apiKey:str):
     else:
         return clueai.Client(apiKey)
 
-# initialize the Clueai Client with an API Key
-cl =  getClurAIClient # good without API key
-prompt = """
-生成与下列文字相同意思的句子：
-{}
-答案：
-""".format(
-    title
-)  # shit.
-# generate a prediction for a prompt
-
-generate_config = {
+def clueAIParaphraser(
+title:str,
+apiKey:str="",
+generate_config:dict = {
     "do_sample": True,
     "top_p": 0.8,
-    "max_length": 128,
+    "max_length": 128, # notice! not too long.
     "min_length": 5,
     "length_penalty": 1.0,
     "num_beams": 1,
-}
-# 如果需要自由调整参数自由采样生成，添加额外参数信息设置方式：generate_config=generate_config
-prediction = cl.generate(
-    model_name="clueai-base", prompt=prompt, generate_config=generate_config
-)
-# 需要返回得分的话，指定return_likelihoods="GENERATION"
+},
+prompt_template:str = """
+生成与下列文字相同意思的句子：
+{}
+答案：
+""",
+debug:bool=False):
+    cl =  getClueAIClient(apiKey) # good without API key
+    prompt = prompt_template.format(
+        title
+    )  # shit.
+    # generate a prediction for a prompt
 
-# print the predicted text
-print("prediction: {}".format(prediction.generations[0].text))
-# you can have multiple generations?
-print(prediction.generations)  # only one generation. fuck
-breakpoint()
+    # 如果需要自由调整参数自由采样生成，添加额外参数信息设置方式：generate_config=generate_config
+    prediction = cl.generate(
+        model_name="clueai-base", prompt=prompt, generate_config=generate_config
+    )
+    # 需要返回得分的话，指定return_likelihoods="GENERATION"
+    output = prediction.generations[0].text
+    if debug:
+    # print the predicted text
+        print("prediction: {}".format(output))
+    return output
 
 title = "世上所有小猫都是天使变的！"
+output = clueAIParaphraser(title,debug=True)
