@@ -783,13 +783,15 @@ def textArrayWithTranslatedListToAss(
             breakpoint()
         if sourceText is None or sourceText.strip() == "":
             continue
+        else:
+            hasTranslatedText =( translatedText not in [sourceText, None, ""]) and type(translatedText) == str and translatedText.strip() != ""
         if puncturalRemoval:
             sourceText = removeUnnecessaryPunctuation(sourceText)
-            if translatedText:
+            if hasTranslatedText:
                 translatedText = removeUnnecessaryPunctuation(translatedText)
         if censor:
             sourceText = censorTextWithTextFilter(sourceText)
-            if translatedText:
+            if hasTranslatedText:
                 translatedText = censorTextWithTextFilter(translatedText)
         elem["text"] = sourceText
 
