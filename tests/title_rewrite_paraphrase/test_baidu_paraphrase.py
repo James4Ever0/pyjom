@@ -50,7 +50,11 @@ content = "世上所有小猫都是天使变的！"
 
 target_language_id = baidu_lang_detect(content)
 
+paraphrase_depth = 1 # only 1 intermediate language, default.
+
 all_middle_languages = ["zh", 'en', 'jp'] # english, japanese, chinese
+
+for 
 
 non_target_middle_languages = [langid for langid in all_middle_languages if langid is not target_language_id]
 
