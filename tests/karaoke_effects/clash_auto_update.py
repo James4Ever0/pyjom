@@ -37,7 +37,6 @@ def jsonLocate(jsonObj, location=[]):
 
 def find_proxy_names(
     test_url="http://localhost:9911/proxies/", 
-    location=["proxies", "✋ 手动选择", "all"],
     location=["proxies", "✋ 手动选择", "all"]
 ):
     import requests
