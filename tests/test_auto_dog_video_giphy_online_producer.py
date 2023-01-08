@@ -23,11 +23,19 @@ dog_or_cat = random.choice(["dog", "cat"])  # strange.
 # we need preconfigured things.
 bgmCacheSetName = "bilibili_cached_bgm_set"
 from pyjom.languagetoolbox import paraphraser
+import random
 def myParaphraser(content:str):
-    methods = []
-    output, success = paraphraser(content)
-    if not success:
-        output = content
+    methods = ["clueai_free", 
+    # till we get it.
+    # "cn_nlp_online", 
+    "baidu_translator"]
+    random.shuffle(methods)
+    for method in methods:
+        output, success = paraphraser(content, method =method )
+        if not success:
+            output = content
+        else:
+            break
     return output
 postMetadataGeneratorPrimitive = getBilibiliPostMetadataForDogCat(
     dog_or_cat=dog_or_cat,
