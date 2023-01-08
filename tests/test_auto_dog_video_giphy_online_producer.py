@@ -38,7 +38,7 @@ MAX_ITER = 10  # stop on ten trials.
 from lazero.utils.tools import iteratorWrapper
 
 postMetadataGenerator = iteratorWrapper(
-    postMetadataGeneratorPrimitive, init_repeat=1, max_iter=MAX_ITER
+    postMetadataGeneratorPrimitive, init_repeat=0, max_iter=MAX_ITER
 )
 
 postMetadataGenerator.__next__()  # for getting some bgm, just in case.
