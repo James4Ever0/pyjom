@@ -519,10 +519,11 @@ from pyjom.mathlib import multiParameterExponentialNetwork
 
 BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT = "analyzeImage"
 BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT=4675
+BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO = "Bezier PaddleHub Resnet50 Image DogCat Detector Server"
 # TODO: support serving and with redis lock
 from lazero.network.checker import waitForServerUp
 
-waitForServerUp(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT, message="")
+waitForServerUp(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT, message=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO)
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     image,
     port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
@@ -664,11 +665,14 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     )
     return detections
 
-def bezierPaddleHubResnet50ImageDogCatDetectorServer(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,endpoint = BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT):
+def bezierPaddleHubResnet50ImageDogCatDetectorServer(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,endpoint = BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT, serverHelloMessage:str=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO):
 
     from fastapi import FastAPI, Body
 
     app = FastAPI()
+    @app.get("/")
+    def serverHello():
+        return serverHelloMessage
 
     @app.post("/"+endpoint)
     def receiveImage(image:bytes=Body(default=None),
@@ -685,12 +689,14 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(port=BEZIER_PADDLE_RESNET50
         if not isBytes:
             image = image.decode(encoding) #fuck?
             # read image from path, url
+            image = cv2.imread(image)
         else:
             image = numpy_serializer.from_bytes(image)
         if debug:
             print('shape?',image.shape)
             print('image?',image)
-        return "good"
+        detections = bezierPaddleHubResnet50ImageDogCatDetectorCore(image)
+        return detections
 
     import uvicorn
     # checking: https://9to5answer.com/python-how-to-use-fastapi-and-uvicorn-run-without-blocking-the-thread
