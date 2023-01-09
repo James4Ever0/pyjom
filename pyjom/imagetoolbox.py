@@ -517,8 +517,12 @@ def labelFileReader(filename):
 
 from pyjom.mathlib import multiParameterExponentialNetwork
 
+BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT = "analyzeImage"
 BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT=4675
 # TODO: support serving and with redis lock
+from lazero.network.checker import waitForServerUp
+
+waitForServerUp(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT, message="")
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     image,
     port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
@@ -660,14 +664,13 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     )
     return detections
 
-
-def bezierPaddleHubResnet50ImageDogCatDetectorServer(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT):
+def bezierPaddleHubResnet50ImageDogCatDetectorServer(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,endpoint = BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT):
 
     from fastapi import FastAPI, Body
 
     app = FastAPI()
 
-    @app.post("/analyzeImage")
+    @app.post("/"+endpoint)
     def receiveImage(image:bytes=Body(default=None),
         isBytes:bool =False,
     encoding:str='utf-8', debug:bool=False):
