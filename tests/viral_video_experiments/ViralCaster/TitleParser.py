@@ -17,9 +17,9 @@ def parse_videos(videos):
     i = 0
     #iterate through the list of videos
     for video in videos:
-        print ("Parsing video " + video["id"])
+        print ("Parsing video " + video["v_id"])
         #parse out the title into a list
-        title = video["title"].lower()
+        title = video["v_title"].lower()
         title_words = list(set(title.split())) 
         #title_words.sort()
     
