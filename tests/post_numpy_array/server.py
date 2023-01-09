@@ -19,7 +19,10 @@ if __name__ == '__main__':
     encoding:str='utf-8', debug:bool=False):
         # return book
         # print('image type:',type(image))
-        print(image)
+        # print(image)
+        import urllib.parse
+        image = image.removeprefix(b'image=') # fuck man.
+        image = urllib.parse.unquote_to_bytes(image)
         print("isBytes:",isBytes)
         if not isBytes:
             image = image.decode(encoding) #fuck?
