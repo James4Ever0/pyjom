@@ -518,8 +518,19 @@ def labelFileReader(filename):
 from pyjom.mathlib import multiParameterExponentialNetwork
 
 # TODO: support serving and with redis lock
-def bezierPaddleHubResnet50ImageDogCatDetectorClient(image,port=4675):
-    ...
+def bezierPaddleHubResnet50ImageDogCatDetectorClient(image,port=BEZIER,
+    input_bias=0.0830047243746045,
+    skew=-0.4986098769473948,
+    # threshold=0.5,
+    dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
+    cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
+    debug=False):
+    isString= type(image) == str
+    import requests
+    url = "http://localhost:4675"
+
+def bezierPaddleHubResnet50ImageDogCatDetectorCore():
+    
 
 def bezierPaddleHubResnet50ImageDogCatDetector(
     image,
@@ -530,7 +541,7 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
     use_gpu=False,
-    as_client=False,
+    as_client=True, # by default!
 ):
     if as_client:
         return bezierPaddleHubResnet50ImageDogCatDetectorClient(image,input_bias=input_bias,
