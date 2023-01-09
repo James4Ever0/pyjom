@@ -42,6 +42,7 @@ def connectMilvusDatabase(alias="default", host="localhost", port="19530"):
         alias=alias, host=host, port=port
     )  # can we reconnect?
     print("milvus connected")
+    return connection
 
 
 # what is the redis connection?
