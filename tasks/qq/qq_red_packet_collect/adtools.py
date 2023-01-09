@@ -35,13 +35,11 @@ def checkIsCatOrDogLover():
 
 
 # TODO: create/get a redis based lock when doing image checks.
+import redis_lock
 def redisLock(
-    lockName: str, frequency: float = 0, default=None, timeout: float = 10, max_hold_timeout:float=60
-):  # fail instantly if frequency is greater than 0
-    assert frequency >= 0
+    lockName: str, default=None, timeout: float = 10, max_hold_timeout:float=60
+):
     assert timeout >= 0
-    failInstantly = frequency > 0
-    waitInfinitely = timeout == 0
 
     def decorator(func):
         def innerFunc(*args, **kwargs):
