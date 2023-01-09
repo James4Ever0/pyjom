@@ -288,6 +288,9 @@ def sendCatOrDogAdToQQGroup(
                 content = ""
                 picturePath = output_path
             elif style == "text_link":
+                # you must censor that.
+                from censorApis import censorReply
+                title_text = censorReply(title_text)
                 content = "观看视频:\n{}\n{}".format(link, title_text)
                 picturePath = output_standalone
             else:
