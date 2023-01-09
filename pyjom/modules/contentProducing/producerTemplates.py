@@ -534,7 +534,7 @@ def petsWithMusicOnlineProducer(
             except:
                 import traceback
                 traceback.print_exc()
-                # well it could be "unanalyzable" BGM.
+                # well it could be "unanalyzable" BGM, unable to retrieve 'standardBPM' or so on.
                 print('Unknown error during production. Skipping.')
                 continue
 
