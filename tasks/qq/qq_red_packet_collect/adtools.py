@@ -33,22 +33,32 @@ def checkIsCatOrDogLover():
     # TODO: for more topics, sort topics by popularity and views
     ...
 
+
 # TODO: create/get a redis based lock when doing image checks.
-def redisLock(lockName:str, frequency:float=0,default=None,timeout:float=10): # fail instantly if frequency is greater than 0 
-    assert frequency>=0
-    assert timeout>=0
-    failInstantly=frequency>0
-    waitInfinitely=timeout==0
+def redisLock(
+    lockName: str, frequency: float = 0, default=None, timeout: float = 10
+):  # fail instantly if frequency is greater than 0
+    assert frequency >= 0
+    assert timeout >= 0
+    failInstantly = frequency > 0
+    waitInfinitely = timeout == 0
+
     def decorator(func):
         def innerFunc(*args, **kwargs):
             return func(*args, **kwargs)
+
         return innerFunc
+
     return decorator
+
+
 # TODO: detect "cat" or "dog" image on frequency, checked by redis records.
 
-@redisLock(lockName='cat_or_dog_image_detect_lock', frequency=5,default=None)
+
+@redisLock(lockName="cat_or_dog_image_detect_lock", frequency=5, default=None)
 def checkIsCatOrDogImage():
     ...
+
 
 def checkCatOrDog(Content: str):
     # cat? dog? None?
@@ -137,11 +147,13 @@ from bilibili_api.search import bilibiliSearchParams
 # you might just want some delay when searching online.
 
 from typing import Literal
+
+
 def getCatOrDogAd(
     cat_or_dog: str,
     server: str = "http://localhost:{}".format(BILIBILI_RECOMMENDATION_SERVER_PORT),
     debug: bool = False,
-    method:Literal['bm25','online'] = "bm25"
+    method: Literal["bm25", "online"] = "bm25",
 ):
     # how do we get one? by label? by category? by name?
     url = server + "/searchUserVideos"
@@ -238,7 +250,7 @@ def sendCatOrDogAdToQQGroup(
     action: Action,
     style: Literal[
         "single_qr", "text_link", "image_link", "json", "random", "random_not_json"
-    ]='random',
+    ] = "random",
     recentLimits: int = 20,
 ):  # many things not implemented yet.
     totalStyles = [
@@ -279,7 +291,7 @@ def sendCatOrDogAdToQQGroup(
             (
                 output_path,
                 output_standalone,
-                output_masked_path, # what is this?
+                output_masked_path,  # what is this?
             ), link = generateAdFromVideoInfo(videoInfo)
 
             if style == "single_qr":
@@ -297,7 +309,8 @@ def sendCatOrDogAdToQQGroup(
             )
             # stderrPrint("SENT AD STATUS:",sendMessageStatus)
             success = (
-                sendMessageStatus.get("ErrMsg",None) is "" or 
-                sendMessageStatus.get("Msg",None) is "" or sendMessageStatus.get("Ret",None) is 0
+                sendMessageStatus.get("ErrMsg", None) is ""
+                or sendMessageStatus.get("Msg", None) is ""
+                or sendMessageStatus.get("Ret", None) is 0
             )
     return success
