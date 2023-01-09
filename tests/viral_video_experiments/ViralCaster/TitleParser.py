@@ -184,7 +184,13 @@ def main():
       "viewCount": 4839
       }
 }]
-    parse_videos(test_data)
+dataCollection = []
+for v in videos:
+    viewCount, description, v_id, v_title = v['statistics']['viewCount'], v['snippet']['description'],v['id']['videoId'], v['snippet']['title']
+    data = {"viewCount": viewCount, "description": description, "v_id": v_id, "v_title": v_title}
+    dataCollection.append(data)
+
+    parse_videos(test_data2)
 
 if __name__ == "__main__":
     main()
