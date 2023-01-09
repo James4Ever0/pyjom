@@ -7,6 +7,8 @@ REQUESTS_TIMEOUT=30 # monkey patch all requests related things?
 import patchy
 from requests.adapters import HTTPAdapter
 
+# TODO: clear milvus image cache database per metadata iteration
+
 def patch_requests_default_timeout() -> None:
     """
     Set a default timeout for all requests made with “requests”.
