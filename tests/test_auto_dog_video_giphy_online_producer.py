@@ -40,7 +40,7 @@ def patch_requests_default_timeout() -> None:
 from test_commons import *
 from pyjom.primitives import *
 from pyjom.medialang.core import *
-
+from pyjom.videotoolbox import resetMilvusVideoDeduplicationCollection
 
 autoArgs = {"subtitle_detector": {"timestep": 0.2}}
 template_names = ["subtitle_detector.mdl.j2"]
@@ -87,7 +87,7 @@ MAX_ITER = 10  # stop on ten trials.
 from lazero.utils.tools import iteratorWrapper
 
 postMetadataGenerator = iteratorWrapper(
-    postMetadataGeneratorPrimitive, init_repeat=0, max_iter=MAX_ITER
+    postMetadataGeneratorPrimitive, init_repeat=0, max_iter=MAX_ITER, before_yield = resetMilvusVideoDeduplicationCollection
 )
 
 postMetadataGenerator.__next__()  # for getting some bgm, just in case.
