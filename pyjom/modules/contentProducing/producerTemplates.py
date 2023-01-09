@@ -338,198 +338,205 @@ def petsWithMusicOnlineProducer(
             tempdir, ".".join([str(uuid.uuid4()), extension])
         )
         for config in configs:
-            debug = config.get("debug", False)  # in config.
-            musicPath = config.get("music", {}).get("filepath", "")
-            translate = config.get("translate", False)
-            # also how to translate?
-            translate_method = config.get("translate_method", "baidu")
-            # from pyjom.commons import corruptMediaFilter
-            report = corruptMediaFilter(musicPath)
-            if not report:
-                continue
-
-            render_ass = config.get("render_ass", False)
-            ass_template_configs = config.get("ass_template_configs", {})
-            assStyleConfig = config.get("assStyleConfig", {})
-
-            parsed_result = getMusicInfoParsed(config) # will raise exception. what to do?
-            # print(parsed_result)
-            # breakpoint()
-            # we only have one song here. you fucking know that?
-            (
-                music,
-                font,
-                policy,
-                policy_names,
-                music_metadata,
-                music_duration,
-                maxtime,
-                mintime,
-                lyric_path,
-                demanded_cut_spans,
-                standard_bpm_spans,
-            ) = parsed_result  # this is taking long time.
-            # check for 'demanded_cut_spans' now!
-
-            render_list = []  # what is this freaking render_list?
-            # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
-            # if lyric_path:
-            render_ass = render_ass and (lyric_path is not None)
-            if render_ass:
-                ass_file_path = getRandomFileName("ass")
-                # print("lrc path:", lyric_path)
-                # print('ass file path:',ass_file_path)
-                # breakpoint()
-                lrcToAnimatedAss(
-                    music["filepath"],
-                    lyric_path,
-                    ass_file_path,
-                    translate=translate,
-                    translate_method=translate_method,
-                    ass_template_configs=ass_template_configs,
-                    assStyleConfig=assStyleConfig,
-                )  # here's the 'no translation' flag.
-            data_ids = []
-            # from tqdm.gui import tqdm
-
-            total_pops = len(demanded_cut_spans)
-            # for _ in tqdm(range(total_pops)):
-            NetProgressbar.reset(total=total_pops)
-
-            for data in dataGenerator:
-                # what is the format of the data?
-                data_id = data["item_id"]
-                if data_id not in data_ids:
-                    dataDuration = data["meta"]["duration"]
-                    videoSource = data["location"]
-                    data_ids.append(data_id)
-                    demanded_cut_spans.sort(
-                        key=lambda span: abs((span[1] - span[0]) - dataDuration)
-                    )
-                    closest_span = demanded_cut_spans[0]
-                    closest_span_duration = closest_span[1] - closest_span[0]
-                    speed_delta = dataDuration / closest_span_duration
-                    # for time duration of 0.6 seconds, how the fuck you can fit in?
-                    span = closest_span
-                    candidate = {
-                        "span": span,
-                        "cut": {"span": (0, dataDuration)},
-                        "source": videoSource,
-                    }
-                    append_render_list = False
-                    case = None
-
-                    if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
-                        case = "nearby"
-                        append_render_list = True
-                        # break
-                    elif checkMinMaxDict(speed_delta, {"min": 1.2, "max": 3}):
-                        case = "trim"
-                        append_render_list = True
-                        from pyjom.videotoolbox import motionVectorEstimation
-
-                        dataDict = motionVectorEstimation(videoSource)
-                        referenceData = dataDict[
-                            "average_global_weighted_motion_vectors_filtered_cartesian_distance"
-                        ]
-                        from pyjom.mathlib import getCursorOfMaxAverageInWindow
-
-                        cursor = getCursorOfMaxAverageInWindow(
-                            referenceData, closest_span_duration * 1.2, dataDuration
-                        )
-                        # cursor = random.uniform(0,dataDuration-closest_span_duration*1.2) # this is not exactly right. not even good.
-                        # you should utilize the 'motion vector' stuff.
-                        mStart, mEnd = 0 + cursor, min(
-                            closest_span_duration * 1.2 + cursor, dataDuration
-                        )
-                        candidate["cut"]["span"] = (mStart, mEnd)
-
-                    if append_render_list:
-                        demanded_cut_spans.pop(0)
-                        NetProgressbar.update(
-                            info={
-                                "remainings": len(demanded_cut_spans),
-                                "case": case,
-                                "data": candidate,
-                            }
-                        )
-                        render_list.append(candidate)
-                    else:
-                        if remove_unused:
-                            videoPath = videoSource
-                            if os.path.exists(videoPath):
-                                os.remove(videoPath)
-                complete = len(demanded_cut_spans) == 0
-                if complete:
-                    break
-            # the main shit will fuck up again, maybe.
-            # so i wrapped it a little bit.
             try:
-                medialangObject = renderList2MediaLang(
-                    render_list,
-                    slient=True,
-                    fast=fast,
-                    bgm=music["filepath"],
-                    backend="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
-                    medialangTmpdir=medialangTmpdir,
-                )  # what is the backend?
-                # we first create a backup for this medialang script, please?
-                medialangScript = medialangObject.prettify()
-                if debug:
-                    medialangScript_savedPath = getRandomFileName("mdl")
+                debug = config.get("debug", False)  # in config.
+                musicPath = config.get("music", {}).get("filepath", "")
+                translate = config.get("translate", False)
+                # also how to translate?
+                translate_method = config.get("translate_method", "baidu")
+                # from pyjom.commons import corruptMediaFilter
+                report = corruptMediaFilter(musicPath)
+                if not report:
+                    continue
 
-                    with open(
-                        medialangScript_savedPath, "w+"
-                    ) as f:  # will this shit work?
-                        f.write(medialangScript)
-                    print("MEDIALANG SCRIPT SAVED TO:", medialangScript_savedPath)
+                render_ass = config.get("render_ass", False)
+                ass_template_configs = config.get("ass_template_configs", {})
+                assStyleConfig = config.get("assStyleConfig", {})
 
+                parsed_result = getMusicInfoParsed(config) # will raise exception. what to do?
+                # print(parsed_result)
+                # breakpoint()
+                # we only have one song here. you fucking know that?
                 (
-                    editly_outputPath,
-                    medialang_item_list,
-                ) = medialangObject.execute()  # how to control its 'fast' parameter?
-                # maybe we need render the lyric file separately.
-                # normalization starts here.
-                rendered_media_location = getRandomFileName(
-                    "mp4"
-                )  # so where exactly is the file?
-                print("___adjusting volume in media___")
-                adjustVolumeInMedia(editly_outputPath, rendered_media_location)
-                # using a ffmpeg filter.
-                print("RENDERED MEDIA LOCATION:", rendered_media_location)
-                if debug:  # where is this debug??
-                    breakpoint()
-                # following process is non-destructive for audio.
-                # you need audio normalization before these process.
-                final_output_location = getRandomFileName("mp4")
+                    music,
+                    font,
+                    policy,
+                    policy_names,
+                    music_metadata,
+                    music_duration,
+                    maxtime,
+                    mintime,
+                    lyric_path,
+                    demanded_cut_spans,
+                    standard_bpm_spans,
+                ) = parsed_result  # this is taking long time.
+                # check for 'demanded_cut_spans' now!
+
+                render_list = []  # what is this freaking render_list?
+                # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
+                # if lyric_path:
+                render_ass = render_ass and (lyric_path is not None)
                 if render_ass:
-                    import ffmpeg
-                    # [Parsed_ass_0 @ 0x5568c7a266c0] fontselect: (Migu 1P, 700, 0) -> /usr/share/fonts/truetype/ttf-bitstream-vera/VeraBd.ttf, 0, BitstreamVeraSans-Bold
-                    # [Parsed_ass_0 @ 0x5568c7a266c0] Glyph 0x665A not found, selecting one more font for (Migu 1P, 700, 0)
-                    # [Parsed_ass_0 @ 0x5568c7a266c0] fontselect: (Migu 1P, 700, 0) -> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc, 0, WenQuanYiZenHei
+                    ass_file_path = getRandomFileName("ass")
+                    # print("lrc path:", lyric_path)
+                    # print('ass file path:',ass_file_path)
+                    # breakpoint()
+                    lrcToAnimatedAss(
+                        music["filepath"],
+                        lyric_path,
+                        ass_file_path,
+                        translate=translate,
+                        translate_method=translate_method,
+                        ass_template_configs=ass_template_configs,
+                        assStyleConfig=assStyleConfig,
+                    )  # here's the 'no translation' flag.
+                data_ids = []
+                # from tqdm.gui import tqdm
 
-                    videoInput = ffmpeg.input(rendered_media_location).video
-                    audioInput = ffmpeg.input(rendered_media_location).audio
-                    videoInput = videoInput.filter(
-                        "ass", ass_file_path
-                    )
-                    ffmpeg.output(videoInput,audioInput,final_output_location,acodec='copy').run(overwrite_output=True)
-                else:
-                    import shutil
+                total_pops = len(demanded_cut_spans)
+                # for _ in tqdm(range(total_pops)):
+                NetProgressbar.reset(total=total_pops)
 
-                    shutil.move(rendered_media_location, final_output_location)
-                yield final_output_location  # another generator?
-            except:
-                from lazero.utils.logger import traceError
+                for data in dataGenerator:
+                    # what is the format of the data?
+                    data_id = data["item_id"]
+                    if data_id not in data_ids:
+                        dataDuration = data["meta"]["duration"]
+                        videoSource = data["location"]
+                        data_ids.append(data_id)
+                        demanded_cut_spans.sort(
+                            key=lambda span: abs((span[1] - span[0]) - dataDuration)
+                        )
+                        closest_span = demanded_cut_spans[0]
+                        closest_span_duration = closest_span[1] - closest_span[0]
+                        speed_delta = dataDuration / closest_span_duration
+                        # for time duration of 0.6 seconds, how the fuck you can fit in?
+                        span = closest_span
+                        candidate = {
+                            "span": span,
+                            "cut": {"span": (0, dataDuration)},
+                            "source": videoSource,
+                        }
+                        append_render_list = False
+                        case = None
 
-                traceError("error while rendering medialang script")
+                        if checkMinMaxDict(speed_delta, {"min": 0.8, "max": 1.2}):
+                            case = "nearby"
+                            append_render_list = True
+                            # break
+                        elif checkMinMaxDict(speed_delta, {"min": 1.2, "max": 3}):
+                            case = "trim"
+                            append_render_list = True
+                            from pyjom.videotoolbox import motionVectorEstimation
+
+                            dataDict = motionVectorEstimation(videoSource)
+                            referenceData = dataDict[
+                                "average_global_weighted_motion_vectors_filtered_cartesian_distance"
+                            ]
+                            from pyjom.mathlib import getCursorOfMaxAverageInWindow
+
+                            cursor = getCursorOfMaxAverageInWindow(
+                                referenceData, closest_span_duration * 1.2, dataDuration
+                            )
+                            # cursor = random.uniform(0,dataDuration-closest_span_duration*1.2) # this is not exactly right. not even good.
+                            # you should utilize the 'motion vector' stuff.
+                            mStart, mEnd = 0 + cursor, min(
+                                closest_span_duration * 1.2 + cursor, dataDuration
+                            )
+                            candidate["cut"]["span"] = (mStart, mEnd)
+
+                        if append_render_list:
+                            demanded_cut_spans.pop(0)
+                            NetProgressbar.update(
+                                info={
+                                    "remainings": len(demanded_cut_spans),
+                                    "case": case,
+                                    "data": candidate,
+                                }
+                            )
+                            render_list.append(candidate)
+                        else:
+                            if remove_unused:
+                                videoPath = videoSource
+                                if os.path.exists(videoPath):
+                                    os.remove(videoPath)
+                    complete = len(demanded_cut_spans) == 0
+                    if complete:
+                        break
+                # the main shit will fuck up again, maybe.
+                # so i wrapped it a little bit.
                 try:
-                    print("MEDIALANG SCRIPT SAVED TO:", medialangScript_savedPath)
+                    medialangObject = renderList2MediaLang(
+                        render_list,
+                        slient=True,
+                        fast=fast,
+                        bgm=music["filepath"],
+                        backend="editly",  # 在这里你可以分离人声 如果想热闹的话 原视频的音乐就不需要了 可能吧
+                        medialangTmpdir=medialangTmpdir,
+                    )  # what is the backend?
+                    # we first create a backup for this medialang script, please?
+                    medialangScript = medialangObject.prettify()
+                    if debug:
+                        medialangScript_savedPath = getRandomFileName("mdl")
+
+                        with open(
+                            medialangScript_savedPath, "w+"
+                        ) as f:  # will this shit work?
+                            f.write(medialangScript)
+                        print("MEDIALANG SCRIPT SAVED TO:", medialangScript_savedPath)
+
+                    (
+                        editly_outputPath,
+                        medialang_item_list,
+                    ) = medialangObject.execute()  # how to control its 'fast' parameter?
+                    # maybe we need render the lyric file separately.
+                    # normalization starts here.
+                    rendered_media_location = getRandomFileName(
+                        "mp4"
+                    )  # so where exactly is the file?
+                    print("___adjusting volume in media___")
+                    adjustVolumeInMedia(editly_outputPath, rendered_media_location)
+                    # using a ffmpeg filter.
+                    print("RENDERED MEDIA LOCATION:", rendered_media_location)
+                    if debug:  # where is this debug??
+                        breakpoint()
+                    # following process is non-destructive for audio.
+                    # you need audio normalization before these process.
+                    final_output_location = getRandomFileName("mp4")
+                    if render_ass:
+                        import ffmpeg
+                        # [Parsed_ass_0 @ 0x5568c7a266c0] fontselect: (Migu 1P, 700, 0) -> /usr/share/fonts/truetype/ttf-bitstream-vera/VeraBd.ttf, 0, BitstreamVeraSans-Bold
+                        # [Parsed_ass_0 @ 0x5568c7a266c0] Glyph 0x665A not found, selecting one more font for (Migu 1P, 700, 0)
+                        # [Parsed_ass_0 @ 0x5568c7a266c0] fontselect: (Migu 1P, 700, 0) -> /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc, 0, WenQuanYiZenHei
+
+                        videoInput = ffmpeg.input(rendered_media_location).video
+                        audioInput = ffmpeg.input(rendered_media_location).audio
+                        videoInput = videoInput.filter(
+                            "ass", ass_file_path
+                        )
+                        ffmpeg.output(videoInput,audioInput,final_output_location,acodec='copy').run(overwrite_output=True)
+                    else:
+                        import shutil
+
+                        shutil.move(rendered_media_location, final_output_location)
+                    yield final_output_location  # another generator?
                 except:
-                    pass
-                # if debug:
-                breakpoint()
-                # continue? let's see if you can post it?
+                    from lazero.utils.logger import traceError
+
+                    traceError("error while rendering medialang script")
+                    try:
+                        print("MEDIALANG SCRIPT SAVED TO:", medialangScript_savedPath)
+                    except:
+                        pass
+                    # if debug:
+                    breakpoint()
+                    # continue? let's see if you can post it?
+            except:
+                import traceback
+                traceback.print_exc()
+                # well it could be "unanalyzable" BGM.
+                print('Unknown error during production. Skipping.')
+                continue
 
 
 # local
