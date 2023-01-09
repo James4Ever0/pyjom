@@ -23,7 +23,8 @@ if __name__ == '__main__':
         import urllib.parse
         image = image.removeprefix(b'image=') # fuck man.
         image = urllib.parse.unquote_to_bytes(image)
-        print("isBytes:",isBytes)
+        if debug:
+            print("isBytes:",isBytes)
         if not isBytes:
             image = image.decode(encoding) #fuck?
             # read image from path, url
@@ -31,7 +32,7 @@ if __name__ == '__main__':
             image = ns.from_bytes(image)
         if debug:
             print("IS BYTES?",isBytes)
-            print(image.shape)
+            print('shape?',image.shape)
         return "good"
 
 
