@@ -99,7 +99,7 @@ postMetadataGenerator.__next__()  # for getting some bgm, just in case.
 # [DONE] i also think you should alter the title and intro with paraphraser.
 # TODO: check if video is properly registered to video recommendation server.
 # TODO: check video recommendation server is "properly" recommending all related videos
-# TODO: control dog/cat shits, by stopping the iterator!
+# [DONE] control dog/cat shits, by stopping the iterator!
 
 metaTopics = {
     "dog": {
