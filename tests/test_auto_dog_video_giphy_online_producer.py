@@ -3,6 +3,14 @@ from test_commons import *
 from pyjom.primitives import *
 from pyjom.medialang.core import *
 
+REQUESTS_TIMEOUT=30 # monkey patch all requests related things?
+
+import socket
+
+SOCKET_TIMEOUT=60
+
+socket.setdefaulttimeout(time = SOCKET_TIMEOUT)
+
 autoArgs = {"subtitle_detector": {"timestep": 0.2}}
 template_names = ["subtitle_detector.mdl.j2"]
 
