@@ -31,6 +31,6 @@ patch_requests_default_timeout()
 
 import requests
 
+from server import SERVER_PORT
 
-
-requests.get("http://localhost:{}")
+r = requests.get(f"http://localhost:{SERVER_PORT}")
