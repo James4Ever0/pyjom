@@ -1,15 +1,16 @@
 # ld_library_path is handled externally using env
-from test_commons import *
-from pyjom.primitives import *
-from pyjom.medialang.core import *
-
+# https://adamj.eu/tech/2022/06/23/how-to-patch-requests-to-have-a-default-timeout/
 REQUESTS_TIMEOUT=30 # monkey patch all requests related things?
 
 import socket
 
 SOCKET_TIMEOUT=60
-
 socket.setdefaulttimeout(time = SOCKET_TIMEOUT)
+
+from test_commons import *
+from pyjom.primitives import *
+from pyjom.medialang.core import *
+
 
 autoArgs = {"subtitle_detector": {"timestep": 0.2}}
 template_names = ["subtitle_detector.mdl.j2"]
