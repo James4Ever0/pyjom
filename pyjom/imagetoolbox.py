@@ -700,14 +700,11 @@ import redis
 from pyjom.commons import commonRedisPort
 redis_connection= redis.StrictRedis(port=commonRedisPort)
 
-def redisLock(
-    connection:redis.Redis=redis_connection, lockName: str="bezier_paddlehub_resnet50_image_dog_cat_detector_server", timeout: float = 10, expire:float=60
-):
-                with redis_lock.Lock(connection, name=lockName,expire = expire, timeout = timeout):
 def bezierPaddleHubResnet50ImageDogCatDetectorServer(
     server_port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
     endpoint=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT,
     serverHelloMessage: str = BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO,
+    connection:redis.Redis=redis_connection, lockName: str="bezier_paddlehub_resnet50_image_dog_cat_detector_server", timeout: float = 10, expire:float=60
 ):
 
     from fastapi import FastAPI, Body
@@ -730,34 +727,40 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
         dog_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
         cat_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     ):
-        # return book
-        # print('image type:',type(image))
-        # print(image)
-        import urllib.parse
+        try:
+            with redis_lock.Lock(connection, name=lockName,expire = expire, timeout = timeout):
+                # return book
+                # print('image type:',type(image))
+                # print(image)
+                import urllib.parse
 
-        image = image.removeprefix(b"image=")  # fuck man.
-        image = urllib.parse.unquote_to_bytes(image)
-        if debug:
-            print("isBytes:", isBytes)
-        if not isBytes:
-            image = image.decode(encoding)  # fuck?
-            # read image from path, url
-            image = cv2.imread(image)
-        else:
-            image = numpy_serializer.from_bytes(image)
-        if debug:
-            print("shape?", image.shape)
-            print("image?", image)
-        detections = bezierPaddleHubResnet50ImageDogCatDetectorCore(
-            image,
-            input_bias=input_bias,
-            skew=skew,
-            # threshold=0.5,
-            dog_label_file_path=dog_label_file_path,
-            cat_label_file_path=cat_label_file_path,
-            debug=debug,
-        )
-        return detections
+                image = image.removeprefix(b"image=")  # fuck man.
+                image = urllib.parse.unquote_to_bytes(image)
+                if debug:
+                    print("isBytes:", isBytes)
+                if not isBytes:
+                    image = image.decode(encoding)  # fuck?
+                    # read image from path, url
+                    image = cv2.imread(image)
+                else:
+                    image = numpy_serializer.from_bytes(image)
+                if debug:
+                    print("shape?", image.shape)
+                    print("image?", image)
+                detections = bezierPaddleHubResnet50ImageDogCatDetectorCore(
+                    image,
+                    input_bias=input_bias,
+                    skew=skew,
+                    # threshold=0.5,
+                    dog_label_file_path=dog_label_file_path,
+                    cat_label_file_path=cat_label_file_path,
+                    debug=debug,
+                )
+                return detections
+        except:
+            import traceback
+            traceback.print_exc()
+            return [] # nothing good.
 
     import uvicorn
 
