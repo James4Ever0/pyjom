@@ -30,7 +30,7 @@ catDogElemDict = {"cat": catSignals, "dog": dogSignals}
 # TODO: record those who talks to other.
 def checkIsCatOrDogLover():
     # if both, return either one.
-    # TODO: sort topics by popularity and views
+    # TODO: for more topics, sort topics by popularity and views
     ...
 
 # TODO: create/get a redis based lock when doing image checks.
