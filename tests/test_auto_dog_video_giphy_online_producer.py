@@ -7,7 +7,7 @@ REQUESTS_TIMEOUT=30 # monkey patch all requests related things?
 import patchy
 from requests.adapters import HTTPAdapter
 
-# TODO: clear milvus image cache database per metadata iteration
+# [DONE] clear milvus image cache database per metadata iteration
 
 def patch_requests_default_timeout() -> None:
     """
@@ -93,10 +93,10 @@ postMetadataGenerator = iteratorWrapper(
 postMetadataGenerator.__next__()  # for getting some bgm, just in case.
 # really?
 
-# TODO: i think you need some superpower over this postMetadataGenerator.
+# [DONE] i think you need some superpower over this postMetadataGenerator.
 # kwargs: init_repeat=0, repeat=0, max_iter=MAX_ITER (take care of "repeat" related arguments)
 
-# TODO: i also think you should alter the title and intro with paraphraser.
+# [DONE] i also think you should alter the title and intro with paraphraser.
 # TODO: check if video is properly registered to video recommendation server.
 # TODO: check video recommendation server is "properly" recommending all related videos
 # TODO: control dog/cat shits, by stopping the iterator!
