@@ -191,6 +191,8 @@ def main():
         dataCollection.append(data)
 
     parse_videos(dataCollection)
+    print(view_count_dict)
+    compute_average_views()
 
 if __name__ == "__main__":
     main()
