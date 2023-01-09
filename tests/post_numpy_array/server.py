@@ -4,7 +4,7 @@ SERVER_PORT=5463
 if __name__ == '__main__':
     # from pydantic import BaseModel
     # import numpy as np
-    import numpy_serializer as ns
+    import numpy_serializer
     # from typing import Union
     # class Image(BaseModel):
     #     image:Union[str,bytes]
@@ -29,7 +29,7 @@ if __name__ == '__main__':
             image = image.decode(encoding) #fuck?
             # read image from path, url
         else:
-            image = ns.from_bytes(image)
+            image = numpy_serializer.from_bytes(image)
         if debug:
             print('shape?',image.shape)
             print('image?',image)
