@@ -534,6 +534,7 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServerChecker(port=BEZIER_PADDLE_R
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     image,
     port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
+    endpoint=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT,
     input_bias=0.0830047243746045,
     skew=-0.4986098769473948,
     # threshold=0.5,
@@ -544,7 +545,7 @@ def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     isString = type(image) == str
     import requests
 
-    url = "http://localhost:{}".format(port)
+    url = "http://localhost:{}/{}".format(port,endpoint)
     import numpy_serializer
 
     if type(image) == np.ndarray:
