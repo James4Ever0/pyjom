@@ -1,3 +1,5 @@
+# changed numpy==1.22.0 to fix compatibility issues.
+
 # ld_library_path is handled externally using env
 # https://adamj.eu/tech/2022/06/23/how-to-patch-requests-to-have-a-default-timeout/
 REQUESTS_TIMEOUT=30 # monkey patch all requests related things?
