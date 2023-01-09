@@ -116,6 +116,14 @@ launchList = [
         ],
         dict(sleep=1),
     ],
+    [
+        [
+            os.path.join(pyjom_tests, "bezier_paddlehub_dogcat_detector_serving"),
+            python3_exec,
+            "server.py",
+        ],
+        dict(sleep=1),
+    ],
 ]
 
 for argumentList, kwargs in launchList:

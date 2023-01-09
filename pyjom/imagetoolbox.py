@@ -518,12 +518,18 @@ def labelFileReader(filename):
 from pyjom.mathlib import multiParameterExponentialNetwork
 
 BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT = "analyzeImage"
-BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT=4675
-BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO = "Bezier PaddleHub Resnet50 Image DogCat Detector Server"
+BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT = 4675
+BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO = (
+    "Bezier PaddleHub Resnet50 Image DogCat Detector Server"
+)
 # TODO: support serving and with redis lock
 from lazero.network.checker import waitForServerUp
 
-waitForServerUp(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT, message=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO)
+waitForServerUp(
+    port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
+    message=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO,
+)
+
 
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     image,
@@ -544,14 +550,18 @@ def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     if type(image) == np.ndarray:
         image = numpy_serializer.to_bytes(image)
     data = dict(image=image)
-    params = dict(input_bias=input_bias,isBytes=not isString,
-    skew=skew,
-    dog_label_file_path=dog_label_file_path,
-    cat_label_file_path=cat_label_file_path,
-    debug=debug)
-    r = requests.post(url,data=data,params=params)
+    params = dict(
+        input_bias=input_bias,
+        isBytes=not isString,
+        skew=skew,
+        dog_label_file_path=dog_label_file_path,
+        cat_label_file_path=cat_label_file_path,
+        debug=debug,
+    )
+    r = requests.post(url, data=data, params=params)
     # what is the result? fuck?
     return r.json()
+
 
 def bezierPaddleHubResnet50ImageDogCatDetectorCore(
     image,
@@ -579,7 +589,7 @@ def bezierPaddleHubResnet50ImageDogCatDetectorCore(
     ],
 ):
 
-    curve_function_kwargs={
+    curve_function_kwargs = {
         "start": (0, 0),
         "end": (1, 1),
         "skew": skew,
@@ -678,56 +688,72 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     )
     return detections
 
-def bezierPaddleHubResnet50ImageDogCatDetectorServer(server_port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,endpoint = BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT, serverHelloMessage:str=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO):
+
+def bezierPaddleHubResnet50ImageDogCatDetectorServer(
+    server_port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
+    endpoint=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT,
+    serverHelloMessage: str = BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO,
+):
 
     from fastapi import FastAPI, Body
     import numpy_serializer
 
     app = FastAPI()
+
     @app.get("/")
     def serverHello():
         return serverHelloMessage
 
-    @app.post("/"+endpoint)
-    def receiveImage(image:bytes=Body(default=None),
-        isBytes:bool =False,
-    encoding:str='utf-8', debug:bool=False,input_bias:float=0.0830047243746045,
-    skew:float=-0.4986098769473948,
-    dog_label_file_path:str="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
-    cat_label_file_path:str="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt"):
+    @app.post("/" + endpoint)
+    def receiveImage(
+        image: bytes = Body(default=None),
+        isBytes: bool = False,
+        encoding: str = "utf-8",
+        debug: bool = False,
+        input_bias: float = 0.0830047243746045,
+        skew: float = -0.4986098769473948,
+        dog_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
+        cat_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
+    ):
         # return book
         # print('image type:',type(image))
         # print(image)
         import urllib.parse
-        image = image.removeprefix(b'image=') # fuck man.
+
+        image = image.removeprefix(b"image=")  # fuck man.
         image = urllib.parse.unquote_to_bytes(image)
         if debug:
-            print("isBytes:",isBytes)
+            print("isBytes:", isBytes)
         if not isBytes:
-            image = image.decode(encoding) #fuck?
+            image = image.decode(encoding)  # fuck?
             # read image from path, url
             image = cv2.imread(image)
         else:
             image = numpy_serializer.from_bytes(image)
         if debug:
-            print('shape?',image.shape)
-            print('image?',image)
-        detections = bezierPaddleHubResnet50ImageDogCatDetectorCore(image,input_bias=input_bias,
-    skew=skew,
-    # threshold=0.5,
-    dog_label_file_path=dog_label_file_path,
-    cat_label_file_path=cat_label_file_path,
-    debug=debug)
+            print("shape?", image.shape)
+            print("image?", image)
+        detections = bezierPaddleHubResnet50ImageDogCatDetectorCore(
+            image,
+            input_bias=input_bias,
+            skew=skew,
+            # threshold=0.5,
+            dog_label_file_path=dog_label_file_path,
+            cat_label_file_path=cat_label_file_path,
+            debug=debug,
+        )
         return detections
 
     import uvicorn
+
     # checking: https://9to5answer.com/python-how-to-use-fastapi-and-uvicorn-run-without-blocking-the-thread
 
-    def run(host='0.0.0.0',port=server_port): 
+    def run(host="0.0.0.0", port=server_port):
         """
         This function to run configured uvicorn server.
         """
         uvicorn.run(app=app, host=host, port=port)
+
     run()
 
 
