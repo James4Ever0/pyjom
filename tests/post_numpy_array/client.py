@@ -9,5 +9,8 @@ image = np.array([1,2,3])
 image_bytes = ns.to_bytes(image)
 data = {'image':image_bytes}
 print("BYTES?", image_bytes)
-r = requests.post("http://localhost:{}".format(SERVER_PORT),data=data,params={'isBytes':True})
+r = requests.post("http://localhost:{}".format(SERVER_PORT),data=data,params={'isBytes':True,'debug':True})
 print('RESPONSE?',r.text)
+
+def doc():
+    

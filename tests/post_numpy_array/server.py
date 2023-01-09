@@ -31,8 +31,8 @@ if __name__ == '__main__':
         else:
             image = ns.from_bytes(image)
         if debug:
-            print("IS BYTES?",isBytes)
             print('shape?',image.shape)
+            print('image?',image)
         return "good"
 
 
