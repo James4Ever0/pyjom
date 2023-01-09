@@ -12,5 +12,11 @@ print("BYTES?", image_bytes)
 r = requests.post("http://localhost:{}".format(SERVER_PORT),data=data,params={'isBytes':True,'debug':True})
 print('RESPONSE?',r.text)
 
-def doc():
-    
+def docstring(): # malformat
+    a = """lmn
+    \abcdefg
+    hijk
+    """
+    print(a)
+
+docstring()
