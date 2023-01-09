@@ -2,19 +2,19 @@
 SERVER_PORT=5463
 
 if __name__ == '__main__':
-    # from pydantic import BaseModel
+    from pydantic import BaseModel
     # import numpy as np
     import numpy_serializer as ns
     from typing import Union
-    # class Image(BaseModel):
-    #     image:Union[str,bytes]
+    class Image(BaseModel):
+        image:Union[str,bytes]
 
     from fastapi import FastAPI
 
     app = FastAPI()
 
     @app.post("/")
-    def create_book(book: bytes):
+    def create_book(book: Image):
         # return book
         image = ns.from_bytes(book)
         print(image.shape)
