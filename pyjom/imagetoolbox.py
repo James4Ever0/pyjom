@@ -525,11 +525,11 @@ BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO = (
 # TODO: support serving and with redis lock
 from lazero.network.checker import waitForServerUp
 
-waitForServerUp(
-    port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
-    message=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO,
+def bezierPaddleHubResnet50ImageDogCatDetectorServerChecker(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
+    message=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO):
+    waitForServerUp(port=port, message=message
 )
-
+# fuck?
 
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     image,
