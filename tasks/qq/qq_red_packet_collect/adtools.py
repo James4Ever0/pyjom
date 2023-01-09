@@ -27,6 +27,7 @@ catDogElemDict = {"cat": catSignals, "dog": dogSignals}
 # catDogQueryWords = {"cat": catQueryWord,"dog":dogQueryWord}
 
 # TODO: detect if some "dog" or "cat" lover is talking
+# TODO: record those who talks to other.
 def checkIsCatOrDogLover():
     # if both, return either one.
     # TODO: sort topics by popularity and views
