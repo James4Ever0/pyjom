@@ -529,11 +529,7 @@ def bezierPaddleHubResnet50ImageDogCatDetectorClient(image,port=BEZIER,
     import requests
     url = "http://localhost:4675"
 
-def bezierPaddleHubResnet50ImageDogCatDetectorCore():
-    
-
-def bezierPaddleHubResnet50ImageDogCatDetector(
-    image,
+def bezierPaddleHubResnet50ImageDogCatDetectorCore(    image,
     input_bias=0.0830047243746045,
     skew=-0.4986098769473948,
     # threshold=0.5,
@@ -541,29 +537,8 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
     use_gpu=False,
-    as_client=True, # by default!
-):
-    if as_client:
-        return bezierPaddleHubResnet50ImageDogCatDetectorClient(image,input_bias=input_bias,
-    skew=skew,
-    dog_label_file_path=dog_label_file_path,
-    cat_label_file_path=cat_label_file_path,
-    debug=debug)
-    curve_function_kwargs = {
-        "start": (0, 0),
-        "end": (1, 1),
-        "skew": skew,
-    }  # maximize the output.
-    # from pyjom.imagetoolbox import resizeImageWithPadding
-    if type(image) == str:
-        image = cv2.imread(image)
-    frame = image
-
-    dog_suffixs = ["狗", "犬", "梗"]
-    cat_suffixs = ["猫"]  # ends with this, and not containing forbidden words.
-    dog_labels = labelFileReader(dog_label_file_path)
-    cat_labels = labelFileReader(cat_label_file_path)
-
+    dog_suffixs = ["狗", "犬", "梗"],
+    cat_suffixs = ["猫"] ,
     forbidden_words = [
         "灵猫",
         "熊猫",
@@ -577,6 +552,13 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
         "猫眼",
         "猫蛱蝶",
     ]
+):
+    if type(image) == str:
+        image = cv2.imread(image)
+    frame = image
+ # ends with this, and not containing forbidden words.
+    dog_labels = labelFileReader(dog_label_file_path)
+    cat_labels = labelFileReader(cat_label_file_path)
 
     def dog_cat_name_recognizer(name):
         if name in dog_labels:
@@ -630,6 +612,38 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
         )
         # treat each as a separate observation in this frame.
         detections.append({"identity": label, "confidence": output})
+    return detections
+
+def bezierPaddleHubResnet50ImageDogCatDetector(
+    image,
+    input_bias=0.0830047243746045,
+    skew=-0.4986098769473948,
+    # threshold=0.5,
+    dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
+    cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
+    debug=False,
+    use_gpu=False,
+    as_client=True, # by default!
+):
+    if as_client:
+        return bezierPaddleHubResnet50ImageDogCatDetectorClient(image,input_bias=input_bias,
+    skew=skew,
+    dog_label_file_path=dog_label_file_path,
+    cat_label_file_path=cat_label_file_path,
+    debug=debug)
+    curve_function_kwargs = {
+        "start": (0, 0),
+        "end": (1, 1),
+        "skew": skew,
+    }  # maximize the output.
+    # from pyjom.imagetoolbox import resizeImageWithPadding
+    detections = bezierPaddleHubResnet50ImageDogCatDetectorCore(   image,
+    input_bias=input_bias,
+    skew=skew,
+    dog_label_file_path=dog_label_file_path,
+    cat_label_file_path=cat_label_file_path,
+    debug=debug,
+    use_gpu=use_gpu)
     return detections
 
 def bezierPaddleHubResnet50ImageDogCatDetectorServer(port=4675):
