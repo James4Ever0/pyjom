@@ -13,10 +13,9 @@ r = requests.post("http://localhost:{}".format(SERVER_PORT),data=data,params={'i
 print('RESPONSE?',r.text)
 
 def docstring(): # malformat
-    a = """lmn
-    \abcdefg
-    hijk
-    """
+    a ="lmn" \
+    "abcdefg" \
+    "hijk" 
     print(a)
 
 docstring()
