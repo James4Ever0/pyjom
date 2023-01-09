@@ -14,18 +14,16 @@ if __name__ == '__main__':
     app = FastAPI()
 
     @app.post("/")
-    def receiveImage(image:bytes=Body(default=None),encoding:str='utf-8', debug:bool=True):
+    def receiveImage(image:bytes=Body(default=None),
+        isBytes:bool = Body(default=False),
+    encoding:str=Body(default='utf-8'), debug:bool=Body(default=False)):
         # return book
-        isBytes = False
-        try:
-            image = image.decode(encoding)
-        except:
-            isBytes=True
-        if isBytes:
-            image = ns.from_bytes(image)
-        else:
+        # print('image type:',type(image))
+        if not isBytes:
+            image = image.decode(encoding) #fuck?
             # read image from path, url
-            ...
+        else:
+            image = ns.from_bytes(image)
         if debug:
             print("IS BYTES?",isBytes)
             print(image.shape)
