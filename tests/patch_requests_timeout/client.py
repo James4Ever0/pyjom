@@ -2,7 +2,7 @@
 import patchy
 from requests.adapters import HTTPAdapter
 
-REQUESTS_TIMEOUT=30 
+REQUESTS_TIMEOUT=3
 
 def patch_requests_default_timeout() -> None:
     """
