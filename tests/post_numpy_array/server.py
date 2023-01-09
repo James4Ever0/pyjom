@@ -35,7 +35,6 @@ if __name__ == '__main__':
             print('image?',image)
         return "good"
 
-
     import uvicorn
     # checking: https://9to5answer.com/python-how-to-use-fastapi-and-uvicorn-run-without-blocking-the-thread
 
