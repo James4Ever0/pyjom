@@ -29,10 +29,10 @@ def patch_requests_default_timeout() -> None:
         """,
     )
 
-import socket
+# import socket
 
-SOCKET_TIMEOUT=60
-socket.setdefaulttimeout(time = SOCKET_TIMEOUT)
+# SOCKET_TIMEOUT=60
+# socket.setdefaulttimeout(SOCKET_TIMEOUT)
 
 from test_commons import *
 from pyjom.primitives import *
@@ -55,7 +55,8 @@ from pyjom.platforms.bilibili.postMetadata import getBilibiliPostMetadataForDogC
 # decide to do this in sync.
 # preconfigure the dog_or_cat value.
 
-dog_or_cat = random.choice(["dog", "cat"])  # strange.
+# dog_or_cat = random.choice(["dog", "cat"])  # strange.
+dog_or_cat = "dog"
 # we need preconfigured things.
 bgmCacheSetName = "bilibili_cached_bgm_set"
 from pyjom.languagetoolbox import paraphraser
