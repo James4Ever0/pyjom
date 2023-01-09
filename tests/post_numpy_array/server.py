@@ -8,7 +8,8 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.post("/books/")
+@app.post("/")
 def create_book(book: Image):
     # return book
-    print book.image.
+    print(book.image.shape)
+    return "good"
