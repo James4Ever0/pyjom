@@ -524,6 +524,7 @@ BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO = "Bezier PaddleHub R
 from lazero.network.checker import waitForServerUp
 
 waitForServerUp(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT, message=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO)
+
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     image,
     port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
@@ -538,12 +539,19 @@ def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     import requests
 
     url = "http://localhost:{}".format(port)
-    params = dict(input_bias=input_bias,
+    import numpy_serializer
+
+    if type(image) == np.ndarray:
+        image = numpy_serializer.to_bytes(image)
+    data = dict(image=image)
+    params = dict(input_bias=input_bias,isBytes=not isString,
     skew=skew,
     dog_label_file_path=dog_label_file_path,
     cat_label_file_path=cat_label_file_path,
     debug=debug)
-
+    r = requests.post(url,data=data,params=params)
+    # what is the result? fuck?
+    return r.json()
 
 def bezierPaddleHubResnet50ImageDogCatDetectorCore(
     image,
