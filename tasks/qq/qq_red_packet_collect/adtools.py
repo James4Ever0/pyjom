@@ -27,15 +27,20 @@ catDogElemDict = {"cat": catSignals, "dog": dogSignals}
 # catDogQueryWords = {"cat": catQueryWord,"dog":dogQueryWord}
 
 # TODO: detect if some "dog" or "cat" lover is talking
-def checkIsCatOrDogLover():
+def checkIsCatOrDogLover(qq_user_id):
     # if both, return either one.
     # TODO: for more topics, sort topics by popularity and views
     ...
+
 # TODO: record those who talks to other.
-def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, threshold:int):
+def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, threshold:int=60):
+    # only record those who answers within the time.
+    if former_speaker['UserID'] != later_speaker['UserID']:
+        if abs(former_speaker['SpeakTime'] - later_speaker['SpeakTime']) <= threshold:
+            # make the connection
+            ...
 
 # TODO: detect "cat" or "dog" image.
-
 def checkIsCatOrDogImage(image,timeout=10):
     try:
         ...
