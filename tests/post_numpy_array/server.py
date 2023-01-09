@@ -15,10 +15,12 @@ if __name__ == '__main__':
 
     @app.post("/")
     def receiveImage(image:bytes=Body(default=None),
-        isBytes:bool = Body(default=False),
-    encoding:str=Body(default='utf-8'), debug:bool=Body(default=False)):
+        isBytes:bool =False,
+    encoding:str='utf-8', debug:bool=False):
         # return book
         # print('image type:',type(image))
+        print(image)
+        print("isBytes:",isBytes)
         if not isBytes:
             image = image.decode(encoding) #fuck?
             # read image from path, url
