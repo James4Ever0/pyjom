@@ -3,7 +3,7 @@ from server import changeDirForImport
 changeDirForImport()
 from pyjom.imagetoolbox import bezierPaddleHubResnet50ImageDogCatDetectorClient,bezierPaddleHubResnet50ImageDogCatDetectorServerChecker
 import cv2
-cv2.imread(test_image)
+test_image = cv2.imread(test_image)
 
 bezierPaddleHubResnet50ImageDogCatDetectorServerChecker()
 result = bezierPaddleHubResnet50ImageDogCatDetectorClient(test_image)
