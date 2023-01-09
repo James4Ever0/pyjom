@@ -33,6 +33,7 @@ def checkIsCatOrDogLover(qq_user_id):
     ...
 
 # TODO: record those who talks to other.
+# TODO: decay this relationship counter by 0.8 everyday
 def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, threshold:int=60):
     # only record those who answers within the time.
     if former_speaker['UserID'] != later_speaker['UserID']:
