@@ -41,30 +41,19 @@ import redis
 redis_connection= redis.StrictRedis()
 
 def redisLock(
-    connection, lockName: str, default=None, timeout: float = 10, expire:float=60
+    connection:redis.Redis, lockName: str, default=None, timeout: float = 10, expire:float=60
 ):
-    assert timeout >= 0
-
-    def decorator(func):
-        def innerFunc(*args, **kwargs):
-            try:
-                with redis_lock.Lock(redis_connection, lockName,expire = expire, timeout = timeout) as:
-                    return func(*args, **kwargs)
-            except:
-                return default
-
-        return innerFunc
-
-    return decorator
-
-
+                with redis_lock.Lock(connection, name=lockName,expire = expire, timeout = timeout):
 # TODO: detect "cat" or "dog" image on frequency, checked by redis records.
 
 
-@redisLock(lockName="cat_or_dog_image_detect_lock", frequency=5, default=None)
-def checkIsCatOrDogImage():
-    ...
-
+def checkIsCatOrDogImage(image,timeout=10):
+    try:
+        ...
+    except:
+        import traceback
+        traceback.print_exc()
+        return None
 
 def checkCatOrDog(Content: str):
     # cat? dog? None?
