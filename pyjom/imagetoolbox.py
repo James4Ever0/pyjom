@@ -517,19 +517,26 @@ def labelFileReader(filename):
 
 from pyjom.mathlib import multiParameterExponentialNetwork
 
+BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT=4675
 # TODO: support serving and with redis lock
-def bezierPaddleHubResnet50ImageDogCatDetectorClient(image,port=BEZIER,
+def bezierPaddleHubResnet50ImageDogCatDetectorClient(
+    image,
+    port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
     input_bias=0.0830047243746045,
     skew=-0.4986098769473948,
     # threshold=0.5,
     dog_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
-    debug=False):
-    isString= type(image) == str
+    debug=False,
+):
+    isString = type(image) == str
     import requests
-    url = "http://localhost:4675"
 
-def bezierPaddleHubResnet50ImageDogCatDetectorCore(    image,
+    url = "http://localhost:{}".format(port)
+
+
+def bezierPaddleHubResnet50ImageDogCatDetectorCore(
+    image,
     input_bias=0.0830047243746045,
     skew=-0.4986098769473948,
     # threshold=0.5,
@@ -537,9 +544,9 @@ def bezierPaddleHubResnet50ImageDogCatDetectorCore(    image,
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
     use_gpu=False,
-    dog_suffixs = ["狗", "犬", "梗"],
-    cat_suffixs = ["猫"] ,
-    forbidden_words = [
+    dog_suffixs=["狗", "犬", "梗"],
+    cat_suffixs=["猫"],
+    forbidden_words=[
         "灵猫",
         "熊猫",
         "猫狮",
@@ -551,12 +558,18 @@ def bezierPaddleHubResnet50ImageDogCatDetectorCore(    image,
         "玻璃猫",
         "猫眼",
         "猫蛱蝶",
-    ]
+    ],
 ):
+
+    curve_function_kwargs={
+        "start": (0, 0),
+        "end": (1, 1),
+        "skew": skew,
+    }  # maximize the output.
     if type(image) == str:
         image = cv2.imread(image)
     frame = image
- # ends with this, and not containing forbidden words.
+    # ends with this, and not containing forbidden words.
     dog_labels = labelFileReader(dog_label_file_path)
     cat_labels = labelFileReader(cat_label_file_path)
 
@@ -614,6 +627,7 @@ def bezierPaddleHubResnet50ImageDogCatDetectorCore(    image,
         detections.append({"identity": label, "confidence": output})
     return detections
 
+
 def bezierPaddleHubResnet50ImageDogCatDetector(
     image,
     input_bias=0.0830047243746045,
@@ -623,31 +637,68 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     cat_label_file_path="/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
     debug=False,
     use_gpu=False,
-    as_client=True, # by default!
+    as_client=True,  # by default!
 ):
     if as_client:
-        return bezierPaddleHubResnet50ImageDogCatDetectorClient(image,input_bias=input_bias,
-    skew=skew,
-    dog_label_file_path=dog_label_file_path,
-    cat_label_file_path=cat_label_file_path,
-    debug=debug)
-    curve_function_kwargs = {
-        "start": (0, 0),
-        "end": (1, 1),
-        "skew": skew,
-    }  # maximize the output.
+        return bezierPaddleHubResnet50ImageDogCatDetectorClient(
+            image,
+            input_bias=input_bias,
+            skew=skew,
+            dog_label_file_path=dog_label_file_path,
+            cat_label_file_path=cat_label_file_path,
+            debug=debug,
+        )
     # from pyjom.imagetoolbox import resizeImageWithPadding
-    detections = bezierPaddleHubResnet50ImageDogCatDetectorCore(   image,
-    input_bias=input_bias,
-    skew=skew,
-    dog_label_file_path=dog_label_file_path,
-    cat_label_file_path=cat_label_file_path,
-    debug=debug,
-    use_gpu=use_gpu)
+    detections = bezierPaddleHubResnet50ImageDogCatDetectorCore(
+        image,
+        input_bias=input_bias,
+        skew=skew,
+        dog_label_file_path=dog_label_file_path,
+        cat_label_file_path=cat_label_file_path,
+        debug=debug,
+        use_gpu=use_gpu,
+    )
     return detections
 
-def bezierPaddleHubResnet50ImageDogCatDetectorServer(port=4675):
-    ...
+
+def bezierPaddleHubResnet50ImageDogCatDetectorServer(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT):
+
+    from fastapi import FastAPI, Body
+
+    app = FastAPI()
+
+    @app.post("/analyzeImage")
+    def receiveImage(image:bytes=Body(default=None),
+        isBytes:bool =False,
+    encoding:str='utf-8', debug:bool=False):
+        # return book
+        # print('image type:',type(image))
+        # print(image)
+        import urllib.parse
+        image = image.removeprefix(b'image=') # fuck man.
+        image = urllib.parse.unquote_to_bytes(image)
+        if debug:
+            print("isBytes:",isBytes)
+        if not isBytes:
+            image = image.decode(encoding) #fuck?
+            # read image from path, url
+        else:
+            image = numpy_serializer.from_bytes(image)
+        if debug:
+            print('shape?',image.shape)
+            print('image?',image)
+        return "good"
+
+    import uvicorn
+    # checking: https://9to5answer.com/python-how-to-use-fastapi-and-uvicorn-run-without-blocking-the-thread
+
+    def run(host='0.0.0.0',port=SERVER_PORT): 
+        """
+        This function to run configured uvicorn server.
+        """
+        uvicorn.run(app=app, host=host, port=port)
+    run()
+
 
 def imageCropoutBlackArea(image, cropped_area_threshold=0.1, debug=False, crop=True):
     image = imageLoader(image)
