@@ -13,3 +13,14 @@ def create_book(book: Image):
     # return book
     print(book.image.shape)
     return "good"
+
+
+import uvicorn
+# checking: https://9to5answer.com/python-how-to-use-fastapi-and-uvicorn-run-without-blocking-the-thread
+
+def run(host='0.0.0.0',port=5463): 
+    """
+    This function to run configured uvicorn server.
+    """
+    uvicorn.run(app=app, host=host, port=port)
+run()
