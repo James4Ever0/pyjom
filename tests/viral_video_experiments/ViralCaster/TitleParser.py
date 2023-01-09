@@ -78,8 +78,8 @@ def compute_average_views():
                 max_avg_views =  str(sum(views) / len(views))
                 max_avg_views_words = words
 
-    #print ("BEST AVERAGE: " + str(max_avg_views) + " with: " + str(max_avg_views_words))
-    #print (summarized_views_dict[max_avg_views_words])
+    print ("BEST AVERAGE: " + str(max_avg_views) + " with: " + str(max_avg_views_words))
+    print (summarized_views_dict[max_avg_views_words])
     write_summary(summarized_views_dict)
     create_metric(view_count_dict[1])
 
@@ -102,8 +102,8 @@ def gen_compute_average_views(d, write_loc):
             max_avg_views =  str(vsum / len(views))
             max_avg_views_words = words
 
-    #print ("BEST AVERAGE: " + str(max_avg_views) + " with: " + str(max_avg_views_words))
-    #print (summarized_views_dict[max_avg_views_words])
+    print ("BEST AVERAGE: " + str(max_avg_views) + " with: " + str(max_avg_views_words))
+    print (summarized_views_dict[max_avg_views_words])
     write_summary(summarized_views_dict, write_loc)
     create_metric(d, "Metric" + write_loc)
 
@@ -184,13 +184,13 @@ def main():
       "viewCount": 4839
       }
 }]
-dataCollection = []
-for v in videos:
-    viewCount, description, v_id, v_title = v['statistics']['viewCount'], v['snippet']['description'],v['id']['videoId'], v['snippet']['title']
-    data = {"viewCount": viewCount, "description": description, "v_id": v_id, "v_title": v_title}
-    dataCollection.append(data)
+    dataCollection = []
+    for v in test_data:
+        viewCount, description, v_id, v_title,tags = v['statistics']['viewCount'], v['snippet']['description'],v['id']['videoId'], v['snippet']['title'],v['etag']
+        data = {"viewCount": viewCount, "description": description, "v_id": v_id, "v_title": v_title,'tags':tags}
+        dataCollection.append(data)
 
-    parse_videos(test_data2)
+    parse_videos(dataCollection)
 
 if __name__ == "__main__":
     main()
