@@ -517,6 +517,7 @@ def labelFileReader(filename):
 
 from pyjom.mathlib import multiParameterExponentialNetwork
 
+## TODO: support serving and with redis lock
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(port=4675):
     ...
 
