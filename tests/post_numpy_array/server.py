@@ -14,9 +14,9 @@ if __name__ == '__main__':
     app = FastAPI()
 
     @app.post("/")
-    def create_book(book: Image):
+    def create_book(image:Union[str,bytes]):
         # return book
-        image = ns.from_bytes(book)
+        image = ns.from_bytes(image)
         print(image.shape)
         return "good"
 
