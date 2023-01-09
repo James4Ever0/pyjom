@@ -27,9 +27,17 @@ catDogElemDict = {"cat": catSignals, "dog": dogSignals}
 # catDogQueryWords = {"cat": catQueryWord,"dog":dogQueryWord}
 
 # TODO: detect if some "dog" or "cat" lover is talking
-def checkIsCatOrDogLover(): # if both, return either one.
-# TODO: detect "cat" or "dog" image on frequency, checked by redis records.
+def checkIsCatOrDogLover():
+    # if both, return either one.
+    # TODO: sort topics by popularity and views
+    ...
+
 # TODO: create/get a redis based lock when doing image checks.
+def redisLock
+# TODO: detect "cat" or "dog" image on frequency, checked by redis records.
+@redisLock(lockName="", frequency="")
+def checkIsCatOrDogImage():
+    ...
 
 def checkCatOrDog(Content: str):
     # cat? dog? None?
