@@ -2,6 +2,33 @@
 # https://adamj.eu/tech/2022/06/23/how-to-patch-requests-to-have-a-default-timeout/
 REQUESTS_TIMEOUT=30 # monkey patch all requests related things?
 
+import patchy
+from requests.adapters import HTTPAdapter
+
+
+def patch_requests_default_timeout() -> None:
+    """
+    Set a default timeout for all requests made with “requests”.
+
+    Upstream is waiting on this longstanding issue:
+    https://github.com/psf/requests/issues/3070
+    """
+
+    patchy.patch(
+        HTTPAdapter.send,
+        """\
+        @@ -14,6 +14,8 @@
+             :param proxies: (optional) The proxies dictionary to apply to the request.
+             :rtype: requests.Response
+             \"""
+        +    if timeout is None:
+        +        timeout = 5.0
+
+             try:
+                 conn = self.get_connection(request.url, proxies)
+        """,
+    )
+
 import socket
 
 SOCKET_TIMEOUT=60
