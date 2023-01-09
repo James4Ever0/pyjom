@@ -13,11 +13,18 @@ r = requests.post("http://localhost:{}".format(SERVER_PORT),data=data,params={'i
 print('RESPONSE?',r.text)
 
 def docstring(): # malformat
+    import textwrap
     a ="""
     lmn
     abcdefg 
     hijk
     """
     print(a)
+    "a"/
+    "b"
+    print()
+    print(textwrap.dedent(a))
+    # inspect.cleandoc
+    # https://9to5answer.com/how-to-remove-extra-indentation-of-python-triple-quoted-multi-line-strings
 
 docstring()
