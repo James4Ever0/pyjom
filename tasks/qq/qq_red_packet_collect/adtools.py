@@ -27,12 +27,12 @@ catDogElemDict = {"cat": catSignals, "dog": dogSignals}
 # catDogQueryWords = {"cat": catQueryWord,"dog":dogQueryWord}
 
 # TODO: detect if some "dog" or "cat" lover is talking
-# TODO: record those who talks to other.
 def checkIsCatOrDogLover():
     # if both, return either one.
     # TODO: for more topics, sort topics by popularity and views
     ...
-
+# TODO: record those who talks to other.
+def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, threshold:int):
 
 # TODO: detect "cat" or "dog" image.
 
