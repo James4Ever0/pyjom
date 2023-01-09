@@ -694,6 +694,16 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
     return detections
 
 
+# TODO: create/get a redis based lock when doing image checks.
+import redis_lock
+import redis
+from pyjom.commons import commonRedisPort
+redis_connection= redis.StrictRedis(port=commonRedisPort)
+
+def redisLock(
+    connection:redis.Redis=redis_connection, lockName: str="bezier_paddlehub_resnet50_image_dog_cat_detector_server", timeout: float = 10, expire:float=60
+):
+                with redis_lock.Lock(connection, name=lockName,expire = expire, timeout = timeout):
 def bezierPaddleHubResnet50ImageDogCatDetectorServer(
     server_port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
     endpoint=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT,

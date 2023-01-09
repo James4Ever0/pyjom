@@ -34,18 +34,7 @@ def checkIsCatOrDogLover():
     ...
 
 
-# TODO: create/get a redis based lock when doing image checks.
-import redis_lock
-import redis
-
-redis_connection= redis.StrictRedis()
-
-def redisLock(
-    connection:redis.Redis, lockName: str, default=None, timeout: float = 10, expire:float=60
-):
-                with redis_lock.Lock(connection, name=lockName,expire = expire, timeout = timeout):
-# TODO: detect "cat" or "dog" image on frequency, checked by redis records.
-
+# TODO: detect "cat" or "dog" image.
 
 def checkIsCatOrDogImage(image,timeout=10):
     try:
