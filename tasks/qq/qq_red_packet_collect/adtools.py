@@ -33,12 +33,15 @@ def checkIsCatOrDogLover():
     ...
 
 # TODO: create/get a redis based lock when doing image checks.
-def redisLock(lockName:str, frequency):
-    def innerFunc(*args, **kwargs):
-        return func(*args, **kwargs)
-    return innerFunc
+def redisLock(lockName:str, frequency:float,default=None): # fail instantly if frequency is greater than 0
+    assert frequency>=0
+    def decorator(func):
+        def innerFunc(*args, **kwargs):
+            return func(*args, **kwargs)
+        return innerFunc
+    return decorator
 # TODO: detect "cat" or "dog" image on frequency, checked by redis records.
-@redisLock(lockName=..., frequency=...)
+@redisLock(lockName=..., frequency=...,default=False)
 def checkIsCatOrDogImage():
     ...
 
