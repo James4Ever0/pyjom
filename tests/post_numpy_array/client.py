@@ -20,8 +20,6 @@ def docstring(): # malformat
     hijk
     """
     print(a)
-    "a"/
-    "b"
     print()
     print(textwrap.dedent(a))
     # inspect.cleandoc
