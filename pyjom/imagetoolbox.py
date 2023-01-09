@@ -523,7 +523,7 @@ BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO = (
     "Bezier PaddleHub Resnet50 Image DogCat Detector Server"
 )
 
-from pyjom.configs import pyjom_config
+from pyjom.config.shared import pyjom_config
 # TODO: support serving and with redis lock
 from lazero.network.checker import waitForServerUp
 
