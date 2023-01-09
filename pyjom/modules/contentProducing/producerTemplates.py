@@ -352,7 +352,7 @@ def petsWithMusicOnlineProducer(
             ass_template_configs = config.get("ass_template_configs", {})
             assStyleConfig = config.get("assStyleConfig", {})
 
-            parsed_result = getMusicInfoParsed(config)
+            parsed_result = getMusicInfoParsed(config) # will raise exception. what to do?
             # print(parsed_result)
             # breakpoint()
             # we only have one song here. you fucking know that?
