@@ -523,7 +523,7 @@ BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO = (
     "Bezier PaddleHub Resnet50 Image DogCat Detector Server"
 )
 
-BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_INSTANCE=False
+from pyjom.configs import pyjom_config
 # TODO: support serving and with redis lock
 from lazero.network.checker import waitForServerUp
 
@@ -532,7 +532,8 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServerChecker(port=BEZIER_PADDLE_R
     waitForServerUp(port=port, message=message
 )
 # fuck?
-
+if not pyjom_config["BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_INSTANCE"]:
+    bezierPaddleHubResnet50ImageDogCatDetectorServerChecker()
 
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     image,
