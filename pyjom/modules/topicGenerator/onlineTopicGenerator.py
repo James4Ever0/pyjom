@@ -93,6 +93,7 @@ def OnlineTopicGenerator(
         "dynamic": [["samoyed", "husky", "teddy", "chiwawa"]],
     },  # this is not a matrix.
     # sample_size = 10 # per search.
+    timeout:float=20
 ):
     getKeywords = lambda: getMetaTopicString(metaTopic)
     core_topic_set = {
@@ -116,6 +117,7 @@ def OnlineTopicGenerator(
                         params={"q": keywords, "rating": "g", "type": source_type},
                         verify=False,
                         proxies=None,
+                        timeout=timeout
                     ) as mRandomPicture:  # may you get stickers?
                         mRandomPictureJson = mRandomPicture.json()
                         harvestedData += mRandomPictureJson["data"]
@@ -126,6 +128,7 @@ def OnlineTopicGenerator(
                         params={"q": keywords, "rating": "g", "type": source_type},
                         verify=False,
                         proxies=None,
+                        timeout=timeout
                     ) as mSearchPictures:
                         mSearchPicturesJson = mSearchPictures.json()
                         harvestedData += mSearchPicturesJson["data"]
