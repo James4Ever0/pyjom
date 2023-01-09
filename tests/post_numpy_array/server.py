@@ -14,10 +14,21 @@ if __name__ == '__main__':
     app = FastAPI()
 
     @app.post("/")
-    def create_book(image:bytes=Body(default=None), isBytes):
+    def receiveImage(image:bytes=Body(default=None),encoding:str='utf-8', debug:bool=True):
         # return book
-        image = ns.from_bytes(image)
-        print(image.shape)
+        isBytes = False
+        try:
+            image = image.decode(encoding)
+        except:
+            isBytes=True
+        if isBytes:
+            image = ns.from_bytes(image)
+        else:
+            # read image from path, url
+            ...
+        if debug:
+            print("IS BYTES?",isBytes)
+            print(image.shape)
         return "good"
 
 
