@@ -9,7 +9,7 @@ def main(
     in_place: bool = True,
     debug: bool = False,
     # accuracy_float:int=4
-    audio:bool=False,
+    audio:bool=False, # it will cause trouble?
 ):
 
     print("___")
@@ -28,6 +28,8 @@ def main(
         targetFilePath = f_in
 
     clip = VideoFileClip(f_in,audio=audio)
+    if not audio:
+        clip = clip.without_audio()
     newclip = clip.fx(time_mirror)
 
     videoDuration = clip.duration
