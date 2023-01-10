@@ -1,5 +1,5 @@
 import os
-from moviepy.editor import VideoFileClip, vfx
+from moviepy.editor import VideoFileClip, vfx,concatenate_videoclips
 
 
 def main(
@@ -32,8 +32,18 @@ def main(
     if debug:
         print("Loop strategy:")
         print(loopStrategy)
+    clips = []
     for signal in loopStrategy:
-        ...
+        if signal == 1:
+            clips.append(clip)
+        else:
+            clips.append(newclip)
+
+    final = concatenate_videoclips(clips)
+    with tempfile.TemporaryFile(suffix=".")
+
+    final.write_videofile("dancing_knights.mp4", fps=clip.fps,
+                        audio_bitrate="1000k", bitrate="4000k")
     return finalVideoDuration
 
 
