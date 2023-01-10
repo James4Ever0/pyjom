@@ -4,5 +4,16 @@ image_url = "http://gchat.qpic.cn/gchatpic_new/3318506826/205569604-2534335053-7
 
 r= checkIsCatOrDogImage(image_url)
 print("RESULT?")
+threshold = 0.4
 import rich
 rich.print(r)
+r= checkIsCatOrDogImage(image_url)
+r= checkIsCatOrDogImage(image_url)
+
+
+# for species in r:
+#     name = species['identity']
+#     if name in ['cat','dog']:
+#         conf = species['confidence']
+#         if conf > threshold:
+#             return name
