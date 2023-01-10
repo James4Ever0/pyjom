@@ -43,7 +43,10 @@ def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, th
 
 # TODO: detect "cat" or "dog" image.
 # TODO: rate limit
-def checkIsCatOrDogImage(image_url,download_timeout=2,timeout=10,port=4675,endpoint="analyzeImage"):
+from ratelimiter import RateLimiter
+
+# this can slow me down.
+def checkIsCatOrDogImage(image_url,download_timeout=2,timeout=2,port=4675,endpoint="analyzeImage"):
     try:
         import requests
         img_bytes = requests.get(image_url,timeout=download_timeout).content
@@ -54,7 +57,8 @@ def checkIsCatOrDogImage(image_url,download_timeout=2,timeout=10,port=4675,endpo
         img_np = cv2.imdecode(nparr, cv2.CV_LOAD_IMAGE_COLOR) # cv2.IMREAD_COLOR in OpenCV 3.1
         np_array_bytes = numpy_serializer.to_bytes(img_np)
         api_url = f"http://localhost:{port}/{endpoint}"
-        data = dict(isBytes=True)
+        params = dict(isBytes=True)
+        requests.post(api_url,data={"image":np_array_bytes,},timeout=timeout)
     except:
         import traceback
         traceback.print_exc()
