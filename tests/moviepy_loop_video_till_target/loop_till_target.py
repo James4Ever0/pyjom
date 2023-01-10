@@ -14,6 +14,8 @@ def main(
     # target_secs_str =("{"+f':.{accuracy_float}f'+"}").format(target_secs)
     if not in_place:
         assert f_out != ""
+    videoDuration = ...
+    loopStrategy = [(-1)**i]
 
 
 if __name__ == "__main__":
