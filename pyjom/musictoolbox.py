@@ -554,7 +554,8 @@ class neteaseMusic:
         keywords: str,
         similar: bool = False,
         debug: bool = False,
-        min_audio_length: float = 2.5 * 60,
+        min_audio_length: float = 2 * 60,
+        max_audio_length: float = 5 * 60
     ):  # minimum 2.5 minutes of music.
         import pyjq
 
@@ -593,6 +594,8 @@ class neteaseMusic:
             song_duration = getAudioDuration(name)
         if song_duration < min_audio_length:
             raise Exception("audio too short, total {} seconds".format(song_duration))
+        elif song_duration > max_audio_length:
+            raise Exception("audio too long, total {} seconds".format(song_duration))
         lyric_string = self.getMusicLyricFromNetease(song_id)
         if debug:
             print("LYRICS:", lyric_string)
