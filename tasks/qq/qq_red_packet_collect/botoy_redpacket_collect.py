@@ -3,6 +3,7 @@
 # disable that 复读机 plugin.
 
 # shall you analyze the logs/redPacketLog_*.log to get topics from groups and individuals.
+from csv import excel_tab
 from chat_local import *
 from adtools import sendCatOrDogAdToQQGroup, checkCatOrDog, makeCatOrDogConnections
 from chatApis import getChatApiReply
@@ -287,7 +288,14 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     if MsgType == "PicMsg":
         # image message received.
         try:
-            data = 
+            data = data_dict.get('Content',None)
+            if type(data) == str:
+                data = json.loads(data)
+            assert type(data) == dict
+        except:
+            import traceback
+            traceback.print_exc()
+            print(f"Error reading PicMsg from group {group_id} user {sender_id} Skipping...")
 
     # first initialize random delay for every group in groupNoReplyStack
     if group_id not in groupNoReplyStack.keys():
