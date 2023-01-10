@@ -1133,7 +1133,7 @@ def cleanLrcFromWeb(
 
 
 # remerge demanded cut spans.
-def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span=1.5, max_span=10):
+def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span=2, max_span=10):
     new_cut_spans = []  # the last span. could be a problem.
     checkSpanValid = lambda a, b, c: a <= b and a >= c
     continue_flag = 0
