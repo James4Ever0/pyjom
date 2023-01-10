@@ -377,7 +377,11 @@ def petsWithMusicOnlineProducer(
                 max_span = 10
                 new_cut_spans = [] # the last span. could be a problem.
                 checkSpanValid = lambda a,b,c: a<=b and a>=c
+                continue_flag=False
                 for span in demanded_cut_spans:
+                    if continue_flag:
+                        continue_flag=True
+                        continue
                     span_start, span_end = span
                     span_duration = span_end-span_start
                     ifcheckSpanValid(span_duration,max_span,min_span)
@@ -397,6 +401,14 @@ def petsWithMusicOnlineProducer(
                     elif span_duration<min_span:
                         if len(new_cut_spans)>0:
                             # merge with the previous span.
+                            mynewspan = (new_cut_spans[-1][0],span_end)
+                            # cut it in the old way.
+                            new_cut_spans.pop(-1)
+                            
+                            
+                        else:
+                            continue_flag=True
+                            mynewspan = span_end,demanded_cut_spans[index+1][1]
                         # just merge with previous span. if previous span not present, merge with later span.
 
                 render_list = []  # what is this freaking render_list?
