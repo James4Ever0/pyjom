@@ -1,6 +1,6 @@
 import os
-from moviepy.editor import VideoFileClip, vfx,concatenate_videoclips
-
+from moviepy.editor import VideoFileClip, concatenate_videoclips
+from moviepy.video.fx.time_mirror import time_mirror
 
 def main(
     f_in: str,
@@ -21,7 +21,7 @@ def main(
         targetFilePath = f_in
 
     clip = VideoFileClip(f_in)
-    newclip = clip.fx(vfx.time_mirror)
+    newclip = clip.fx(time_mirror)
 
     videoDuration = clip.duration
     import math
@@ -48,8 +48,8 @@ def main(
 
     with tempfile.TemporaryFile(suffix=f".{fileExtension}") as f:
         tmpFilePath = f.name
-        final.write_videofile(tmpFilePath, fps=clip.fps,
-                        audio_bitrate="1000k", bitrate="4000k")
+        # warning! what is the audio shit?
+        final.write_videofile(tmpFilePath, fps=clip.fps)
         finalVideoDuration = final.duration
         shutil.copy(tmpFilePath,targetFilePath)
     return finalVideoDuration
