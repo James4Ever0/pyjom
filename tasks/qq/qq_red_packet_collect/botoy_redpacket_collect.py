@@ -288,13 +288,15 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     RedBaginfo = ctx.RedBaginfo
     MsgType = ctx.MsgType
     
+    # how to download these shits?
     if MsgType == MsgTypes.PicMsg:
-        ...
+        pics = ctx.GroupPic
     elif MsgType == MsgTypes.VideoMsg:
         ...
     elif MsgType == MsgTypes.VoiceMsg:
         ...
     elif MsgType == MsgTypes.JsonMsg:
+        ... # hope you can receive that? nope? you can only receive that by go-cqhttp.
 
     # first initialize random delay for every group in groupNoReplyStack
     if group_id not in groupNoReplyStack.keys():
