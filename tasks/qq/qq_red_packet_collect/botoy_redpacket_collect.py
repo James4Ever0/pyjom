@@ -244,7 +244,7 @@ adBuffer = {}
 # hook up this thing, send cat video only if we receive that topic.
 
 @asyncThread
-def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str):
+def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str,is_image:bool=False):
     cat_or_dog = checkCatOrDog(Content)
     # we need to update neo4j database, using group_id, sender_id, cat_or_dog.
     if cat_or_dog:
@@ -293,6 +293,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             pics = ctx.GroupPic
             for pic in pics:
                 pic_url = pic.Url
+                catOrDogAsyncThread
         elif MsgType == MsgTypes.VideoMsg:
             ...
         elif MsgType == MsgTypes.VoiceMsg:
