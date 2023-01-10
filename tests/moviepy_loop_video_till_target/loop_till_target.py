@@ -17,6 +17,8 @@ def main(
         assert f_out != ""
     videoDuration = ...
     import math
+    import tempfile
+    import shutil
 
     fileExtension = f_in.split(".")[-1]
     assert fileExtension != ""
