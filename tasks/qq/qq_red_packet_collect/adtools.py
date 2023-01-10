@@ -46,6 +46,7 @@ def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, th
 from ratelimiter import RateLimiter
 
 # this can slow me down.
+@RateLimiter(max_calls=1,period=2)
 def checkIsCatOrDogImage(image_url,download_timeout=2,timeout=2,port=4675,endpoint="analyzeImage"):
     try:
         import requests
@@ -58,11 +59,13 @@ def checkIsCatOrDogImage(image_url,download_timeout=2,timeout=2,port=4675,endpoi
         np_array_bytes = numpy_serializer.to_bytes(img_np)
         api_url = f"http://localhost:{port}/{endpoint}"
         params = dict(isBytes=True)
-        requests.post(api_url,data={"image":np_array_bytes,},timeout=timeout)
+        r = requests.post(api_url,data={"image":np_array_bytes,},timeout=timeout)
+        result = r.json()
+        return result
     except:
         import traceback
         traceback.print_exc()
-        return None
+    return None
 
 def checkCatOrDog(Content: str):
     # cat? dog? None?
