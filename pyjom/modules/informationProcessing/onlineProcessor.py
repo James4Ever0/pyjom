@@ -64,7 +64,8 @@ def OnlineProcessor(
                 remedyDurationRange={"min":1,'max':hard_limit,'min_target':hard_limit} # targets in this range can multiply by some factors, looping forward and backward to get gif.
                 # is it corrupted? fuck?
 
-                def loopVideoTillTarget(video_path:str, objective:dict):
+                def loopVideoTillTarget(video_path:str, objective:dict,
+                    scriptPath :str= ""):
                     # import moviepy # are you sure you want to import this? i think it will fuck up many things.
                     # use it externally. please!
                     # as some commandline script.
@@ -72,23 +73,23 @@ def OnlineProcessor(
                     videoDuration = -1
                     videoValid = False
                     videoValid = corruptVideoFilter(video_path)
-                    scriptPath = ""
 
                     if videoValid:
                         videoDuration = get_duration(local_video_location)
                         if videoDuration>=objective['min']:
-
-                        cmd = ['python3',scriptPath,"-i",video_path,"--replace"] # you must use some random temp file path...
-                        # use subprocess?
-                        import subprocess
-                        r = subprocess.run(cmd)
-                        success = 0 == r.returncode
+                            cmd = ['python3',scriptPath,"-i",video_path,"--replace"] # you must use some random temp file path...
+                            # use subprocess?
+                            import subprocess
+                            r = subprocess.run(cmd)
+                            success = 0 == r.returncode
                     return videoValid, videoDuration, success
                 
                 videoValid,videoDuration,success = loopVideoTillTarget(local_video_location,remedyDurationRange)
+
                 if not videoValid:
                     print("VIDEO NOT VALID.")
-                if not success:
+                    continue
+                elif not success:
                     print("VIDEO DURATION LIMIT OBJECTIVE FAILED.")
                     print(f"MIN: {remedyDurationRange['min']} VIDEO: {videoDuration}")
                     continue
