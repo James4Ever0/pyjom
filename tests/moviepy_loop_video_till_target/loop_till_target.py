@@ -1,5 +1,5 @@
 import os
-from moviepy.editor import VideoFileClip
+from moviepy.editor import VideoFileClip, vfx
 
 
 def main(
@@ -16,6 +16,7 @@ def main(
     if not in_place:
         assert f_out != ""
     clip = VideoFileClip(f_in)
+    newclip = clip.fx(vfx.time_mirror)
 
     videoDuration = clip.duration
     import math
