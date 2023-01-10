@@ -77,7 +77,7 @@ def OnlineProcessor(
                     if videoValid:
                         videoDuration = get_duration(local_video_location)
                         if videoDuration>=objective['min']:
-                            cmd = ['python3',scriptPath,"-i",video_path,"--replace"] # you must use some random temp file path...
+                            cmd = ['python3',scriptPath,"-i",video_path,'-t',objective['min_target'],"--replace"] # you must use some random temp file path...
                             # use subprocess?
                             import subprocess
                             r = subprocess.run(cmd)
