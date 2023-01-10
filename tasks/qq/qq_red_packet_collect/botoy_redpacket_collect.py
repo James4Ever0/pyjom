@@ -289,14 +289,21 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     MsgType = ctx.MsgType
     
     # how to download these shits?
-    if MsgType == MsgTypes.PicMsg:
-        pics = ctx.GroupPic
-    elif MsgType == MsgTypes.VideoMsg:
-        ...
-    elif MsgType == MsgTypes.VoiceMsg:
-        ...
-    elif MsgType == MsgTypes.JsonMsg:
-        ... # hope you can receive that? nope? you can only receive that by go-cqhttp.
+    try:
+        if MsgType == MsgTypes.PicMsg:
+            pics = ctx.GroupPic
+
+        elif MsgType == MsgTypes.VideoMsg:
+            ...
+        elif MsgType == MsgTypes.VoiceMsg:
+            ...
+        elif MsgType == MsgTypes.JsonMsg:
+            ... # hope you can receive that? nope? you can only receive that by go-cqhttp.
+    except:
+        import traceback
+        traceback.print_exc()
+        print("ERROR WHEN PROCESSING MEDIA MESSAGES.")
+        print("MSGTYPE:",MsgType)
 
     # first initialize random delay for every group in groupNoReplyStack
     if group_id not in groupNoReplyStack.keys():
