@@ -1178,13 +1178,14 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
                 # cut it in the old way.
                 new_cut_spans.pop(-1)
             else:
-                mynewspan == None
+                mynewspan = None
                 for i0 in range(0,len(demanded_cut_spans)-index-1):
                     continue_flag +=1
                     mynewspan = span_start, demanded_cut_spans[index + 1+i0][1]
                     if mynewspan[1]-mynewspan[0]>min_span:
                         break
                 if mynewspan is None:
+                    print('Error!\nMaybe the source cut span list is too small or is some abnormal source cut span.\nPlease check.')
                     breakpoint()
             subdivide_span(
                 mynewspan[1]-mynewspan[0],
