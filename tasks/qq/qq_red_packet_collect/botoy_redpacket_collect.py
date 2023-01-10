@@ -284,9 +284,10 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     RedBaginfo = ctx.RedBaginfo
     MsgType = ctx.MsgType
 
-    if MsgType == "":
+    if MsgType == "PicMsg":
         # image message received.
-        ...
+        try:
+            data = 
 
     # first initialize random delay for every group in groupNoReplyStack
     if group_id not in groupNoReplyStack.keys():
