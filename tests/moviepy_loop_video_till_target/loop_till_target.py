@@ -7,6 +7,7 @@ def main(
     target_secs: float,
     f_out: str = "",
     in_place: bool = True,
+    debug: bool = False,
     # accuracy_float:int=4
 ):
     assert os.path.exists(f_in)
@@ -20,9 +21,15 @@ def main(
     fileExtension = f_in.split(".")[-1]
     assert fileExtension != ""
 
-    loopStrategy = [(-1) ** i for i in range(math.ceil(target_secs / videoDuration))] # zero division error?
+    loopStrategy = [
+        (-1) ** i for i in range(math.ceil(target_secs / videoDuration))
+    ]  # zero division error?
+    if debug:
+        print("Loop strategy:")
+        print(loopStrategy)
     for signal in loopStrategy:
         ...
+    return finalVideoDuration
 
 
 if __name__ == "__main__":
