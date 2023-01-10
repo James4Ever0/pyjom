@@ -373,12 +373,20 @@ def petsWithMusicOnlineProducer(
                 # check for 'demanded_cut_spans' now!
 
                 # remerge demanded cut spans.
-                min_span = 1
+                min_span = 1.5
                 max_span = 10
                 new_cut_spans = [] # the last span. could be a problem.
                 for span in demanded_cut_spans:
                     span_start, span_end = span
-                    
+                    span_duration = span_end-span_start
+                    if span_duration <=max_span and span_duration>=min_span:
+                        new_cut_spans.append((span_start, span_end))
+                    elif span_duration >max_span:
+                        div = 2
+                        while True:
+                            subduration = span_duration/div
+                            if subduration <=max_span and subduration >=min_span:
+                                
 
                 render_list = []  # what is this freaking render_list?
                 # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
