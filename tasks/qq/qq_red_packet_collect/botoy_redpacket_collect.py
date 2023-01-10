@@ -291,7 +291,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     try:
         if MsgType == MsgTypes.PicMsg:
             pics = ctx.GroupPic
-            for pic in pics:
+            for pic in pics[:3]:
                 pic_url = pic.Url
         elif MsgType == MsgTypes.VideoMsg:
             ...

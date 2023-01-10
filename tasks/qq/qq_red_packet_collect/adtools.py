@@ -42,9 +42,9 @@ def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, th
             ...
 
 # TODO: detect "cat" or "dog" image.
-def checkIsCatOrDogImage(image,timeout=10):
+def checkIsCatOrDogImage(image_url,timeout=10):
     try:
-        ...
+        image_bin = 
     except:
         import traceback
         traceback.print_exc()
