@@ -12,10 +12,10 @@ def main(
     audio:bool=False, # it will cause trouble?
 ):
 
-    print("___")
-    print("AUDIO?",audio)
-    print("IN PLACE?",in_place)
-    print("___")
+    # print("___")
+    # print("AUDIO?",audio)
+    # print("IN PLACE?",in_place)
+    # print("___")
 
     assert os.path.exists(f_in)
     assert target_secs > 0
@@ -30,7 +30,8 @@ def main(
     clip = VideoFileClip(f_in,audio=audio)
     if not audio:
         clip = clip.without_audio()
-    newclip = clip.fx(time_mirror)
+    # newclip = clip.fx(time_mirror) # error?
+    newclip =clip
 
     videoDuration = clip.duration
     import math
@@ -58,6 +59,8 @@ def main(
     with tempfile.TemporaryFile(suffix=f".{fileExtension}") as f:
         tmpFilePath = f.name
         # warning! what is the audio shit?
+        print("TMP FILE PATH?",tmpFilePath)
+        breakpoint()
         final.write_videofile(tmpFilePath, fps=clip.fps)
         finalVideoDuration = final.duration
         shutil.copy(tmpFilePath,targetFilePath)
