@@ -58,6 +58,8 @@ rateLimits = {}
 
 def checkIsCatOrDogImage(
     image_url, download_timeout=2, timeout=2, port=4675, endpoint="analyzeImage",rateLimitPeriod = 5,
+threshold = 0.4
+
 ):
     lastRun = rateLimits.get("checkIsCatOrDogImage",0)
     now = time.time()
@@ -82,11 +84,16 @@ def checkIsCatOrDogImage(
             api_url, data={"image": np_array_bytes}, timeout=timeout, params=params
         )
         result = r.json()
-        return result
+        for species in result:
+            name = species['identity']
+            if name in ['cat','dog']:
+                conf = species['confidence']
+                if conf > threshold:
+                    return name
     except:
         import traceback
-
         traceback.print_exc()
+        print("Error when downloading and detecting image content if is cat or dog")
     return None
 
 
