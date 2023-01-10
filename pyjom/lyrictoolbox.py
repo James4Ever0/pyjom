@@ -1160,7 +1160,7 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
                 div += 1
 
     for index, span in enumerate(demanded_cut_spans):
-        if continue_flag:
+        if continue_flag>0:
             continue_flag -=1
             continue
         span_start, span_end = span
@@ -1187,8 +1187,10 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
                     div=1
                 )
             else:
-                continue_flag +=1
-                mynewspan = span_end, demanded_cut_spans[index + 1][1]
-                new_cut_spans.append()
+                for i0 in range(0,len(demanded_cut_spans)-index):
+                    continue_flag +=1
+                    mynewspan = span_end, demanded_cut_spans[index + 1+i0][1]
+                    if mynewspan
+                # new_cut_spans.append(mynewspan)
             # just merge with previous span. if previous span not present, merge with later span.
     return new_cut_spans
