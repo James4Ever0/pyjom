@@ -31,3 +31,5 @@ test_cut_spans_valid(cut_spans, no_range_test=True)
 new_spans = remergeDemandedCutSpans(cut_spans)
 print("new spans?", new_spans)
 test_cut_spans_valid(new_spans)
+assert cut_spans[0][0] == new_spans[0][0]
+assert cut_spans[-1][1] == new_spans[-1][1]
