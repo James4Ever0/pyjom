@@ -1,5 +1,5 @@
 cd /root/Desktop/works/pyjom/externals/NeteaseCloudMusicApi/
-env PORT=4042 node app.js # what is the port you want?
+keepalive env PORT=4042 node app.js # what is the port you want?
 # shit. the port is 4042.
 
 # demo files under test directory:
