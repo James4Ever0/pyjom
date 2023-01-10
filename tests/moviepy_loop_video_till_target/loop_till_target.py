@@ -20,7 +20,7 @@ def main(
     fileExtension = f_in.split(".")[-1]
     assert fileExtension != ""
 
-    loopStrategy = [(-1) ** i for i in range(math.ceil(target_secs / videoDuration))]
+    loopStrategy = [(-1) ** i for i in range(math.ceil(target_secs / videoDuration))] # zero division error?
     for signal in loopStrategy:
         ...
 
