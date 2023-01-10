@@ -447,8 +447,9 @@ def petsWithMusicOnlineProducer(
                                 closest_span_duration * 1.2 + cursor, dataDuration
                             )
                             candidate["cut"]["span"] = (mStart, mEnd)
-
-                        else append_render_list:
+                        if not append_render_list:
+                            print(f'fail to match. source: {dataDuration} target: {closest_span_duration}')
+                        else:
                             demanded_cut_spans.pop(0)
                             NetProgressbar.update(
                                 info={
