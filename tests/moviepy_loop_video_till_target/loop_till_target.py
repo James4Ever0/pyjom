@@ -12,9 +12,14 @@ def main(
 ):
     assert os.path.exists(f_in)
     assert target_secs > 0
+    
     # target_secs_str =("{"+f':.{accuracy_float}f'+"}").format(target_secs)
+    targetFilePath = f_out
     if not in_place:
         assert f_out != ""
+    else:
+        targetFilePath = f_in
+
     clip = VideoFileClip(f_in)
     newclip = clip.fx(vfx.time_mirror)
 
@@ -40,10 +45,13 @@ def main(
             clips.append(newclip)
 
     final = concatenate_videoclips(clips)
-    with tempfile.TemporaryFile(suffix=".")
 
-    final.write_videofile("dancing_knights.mp4", fps=clip.fps,
+    with tempfile.TemporaryFile(suffix=f".{fileExtension}") as f:
+        tmpFilePath = f.name
+        final.write_videofile(tmpFilePath, fps=clip.fps,
                         audio_bitrate="1000k", bitrate="4000k")
+        finalVideoDuration = final.duration
+        shutil.copy(tmpFilePath,targetFilePath)
     return finalVideoDuration
 
 
