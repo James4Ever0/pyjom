@@ -43,14 +43,16 @@ def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, th
 
 # TODO: detect "cat" or "dog" image.
 # TODO: rate limit
-def checkIsCatOrDogImage(image_url,timeout=10):
+def checkIsCatOrDogImage(image_url,download_timeout=2,timeout=10):
     try:
         import requests
-        image_bin = requests.get(image_url).content
+        img_bytes = requests.get(image_url,timeout=download_timeout).content
         import cv2
-        nparr = np.fromstring(img_str, np.uint8)
-img_np = cv2.imdecode(nparr, cv2.CV_LOAD_IMAGE_COLOR) # cv2.IMREAD_COLOR in OpenCV 3.1
-
+        import numpy as np
+        import numpy_serializer
+        nparr = np.fromstring(img_bytes, np.uint8)
+        img_np = cv2.imdecode(nparr, cv2.CV_LOAD_IMAGE_COLOR) # cv2.IMREAD_COLOR in OpenCV 3.1
+        np_array = 
     except:
         import traceback
         traceback.print_exc()
