@@ -1,5 +1,5 @@
 import os
-from moviepy.video import VideoClip
+from moviepy.editor import VideoFileClip
 
 
 def main(
@@ -15,7 +15,9 @@ def main(
     # target_secs_str =("{"+f':.{accuracy_float}f'+"}").format(target_secs)
     if not in_place:
         assert f_out != ""
-    videoDuration = ...
+    clip = VideoFileClip(f_in)
+
+    videoDuration = clip.duration
     import math
     import tempfile
     import shutil
