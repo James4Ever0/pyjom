@@ -59,13 +59,21 @@ def OnlineProcessor(
                 from pyjom.videotoolbox import (
                     corruptVideoFilter,
                 )
-                hard_limit=3
 
-                remedyDurationRange={"min":1,'max':hard_limit,'min_target':hard_limit} # targets in this range can multiply by some factors, looping forward and backward to get gif.
+                hard_limit = 3
+
+                remedyDurationRange = {
+                    "min": 1,
+                    "max": hard_limit,
+                    "min_target": hard_limit,
+                }  # targets in this range can multiply by some factors, looping forward and backward to get gif.
                 # is it corrupted? fuck?
 
-                def loopVideoTillTarget(video_path:str, objective:dict,
-                    scriptPath :str= ""):
+                def loopVideoTillTarget(
+                    video_path: str,
+                    objective: dict,
+                    scriptPath: str = "/root/Desktop/works/pyjom/tests/moviepy_loop_video_till_target/loop_till_target.py",
+                ):
                     # import moviepy # are you sure you want to import this? i think it will fuck up many things.
                     # use it externally. please!
                     # as some commandline script.
@@ -76,15 +84,26 @@ def OnlineProcessor(
 
                     if videoValid:
                         videoDuration = get_duration(local_video_location)
-                        if videoDuration>=objective['min']:
-                            cmd = ['python3',scriptPath,"-i",video_path,'-t',objective['min_target'],"--replace"] # you must use some random temp file path...
+                        if videoDuration >= objective["min"]:
+                            cmd = [
+                                "python3",
+                                scriptPath,
+                                "-i",
+                                video_path,
+                                "-t",
+                                objective["min_target"],
+                                "--replace",
+                            ]  # you must use some random temp file path...
                             # use subprocess?
                             import subprocess
+
                             r = subprocess.run(cmd)
                             success = 0 == r.returncode
                     return videoValid, videoDuration, success
-                
-                videoValid,videoDuration,success = loopVideoTillTarget(local_video_location,remedyDurationRange)
+
+                videoValid, videoDuration, success = loopVideoTillTarget(
+                    local_video_location, remedyDurationRange
+                )
 
                 if not videoValid:
                     print("VIDEO NOT VALID.")
@@ -93,7 +112,6 @@ def OnlineProcessor(
                     print("VIDEO DURATION LIMIT OBJECTIVE FAILED.")
                     print(f"MIN: {remedyDurationRange['min']} VIDEO: {videoDuration}")
                     continue
-
 
                 duration_filter = {"min": hard_limit, "max": 15}
                 # to loop through short gifs?
@@ -177,7 +195,7 @@ def OnlineProcessor(
                             print("%s filter:" % flag, mFilter)
                             break
                         else:
-                            print('%s test passed.'% flag)
+                            print("%s test passed." % flag)
                     except:
                         import traceback
 
