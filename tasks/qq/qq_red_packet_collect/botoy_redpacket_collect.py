@@ -243,9 +243,19 @@ chinese_t2s = opencc.OpenCC()
 adBuffer = {}
 # hook up this thing, send cat video only if we receive that topic.
 
+from adtools import checkIsCatOrDogImage
 @asyncThread
 def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str,is_image:bool=False):
-    cat_or_dog = checkCatOrDog(Content)
+    if is_image:
+        try:
+            cat_or_dog = checkIsCatOrDogImage(Content)
+        except:
+            import traceback
+            traceback.print_exc()
+            print("Exception when detecting image if it is cat or dog")
+            return
+    else:
+        cat_or_dog = checkCatOrDog(Content)
     # we need to update neo4j database, using group_id, sender_id, cat_or_dog.
     if cat_or_dog:
         makeCatOrDogConnections(
@@ -293,7 +303,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
             pics = ctx.GroupPic
             for pic in pics:
                 pic_url = pic.Url
-                catOrDogAsyncThread
+                catOrDogAsyncThread(str(group_id), str(sender_id),pic_url,is_image=True)
         elif MsgType == MsgTypes.VideoMsg:
             ...
         elif MsgType == MsgTypes.VoiceMsg:
