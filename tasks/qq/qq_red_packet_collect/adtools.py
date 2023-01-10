@@ -53,11 +53,18 @@ def recordQQUserTalkingToAnotherUser(
 #     raise Exception(f"rate limit reached. wait {until} seconds")
 # # this can slow me down.
 # @RateLimiter(max_calls=1, period=5,callback=rateLimitReached )
-
-lastRun = 
+import time
+rateLimits = {}
 def checkIsCatOrDogImage(
-    image_url, download_timeout=2, timeout=2, port=4675, endpoint="analyzeImage"
+    image_url, download_timeout=2, timeout=2, port=4675, endpoint="analyzeImage",rateLimitPeriod = 5,
 ):
+
+    lastRun = rateLimits.get("checkIsCatOrDogImage",0)
+    now = time.time()
+    if now-lastRun > rateLimitPeriod:
+        rateLimits["checkIsCatOrDogImage"] = now
+    else:
+        raise Exception("Rate limit exceeded")
     try:
         import requests
 
