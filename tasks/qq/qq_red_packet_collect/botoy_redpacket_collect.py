@@ -285,7 +285,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     RedBaginfo = ctx.RedBaginfo
     MsgType = ctx.MsgType
 
-    if MsgType == "PicMsg":
+    if MsgType in ["VideoMsg","PicMsg":
         # image message received.
         try:
             data = data_dict.get('Content',None)
