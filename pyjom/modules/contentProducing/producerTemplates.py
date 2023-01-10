@@ -478,7 +478,6 @@ def petsWithMusicOnlineProducer(
                     medialangScript = medialangObject.prettify()
                     if debug:
                         medialangScript_savedPath = getRandomFileName("mdl")
-
                         with open(
                             medialangScript_savedPath, "w+"
                         ) as f:  # will this shit work?
