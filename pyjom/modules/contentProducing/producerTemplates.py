@@ -386,7 +386,14 @@ def petsWithMusicOnlineProducer(
                         while True:
                             subduration = span_duration/div
                             if subduration <=max_span and subduration >=min_span:
-                                
+                                myspans = [(span_start+i*subduration, span_start+(i+1)*subduration) for i in range(div)]
+                                myspans[-1]=(span_end-subduration, span_end)
+                                for mspan in myspans:
+                                    new_cut_spans.append(mspan)
+                                break
+                            else:
+                                div+=1
+                    elif span_duration<min_span and :# not last one!
 
                 render_list = []  # what is this freaking render_list?
                 # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
