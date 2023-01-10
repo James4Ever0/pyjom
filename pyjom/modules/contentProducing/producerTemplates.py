@@ -427,7 +427,7 @@ def petsWithMusicOnlineProducer(
                             case = "nearby"
                             append_render_list = True
                             # break
-                        elif checkMinMaxDict(speed_delta, {"min": 1.2, "max": 3}):
+                        elif checkMinMaxDict(speed_delta, {"min": 1.2, "max": 5}):
                             case = "trim"
                             append_render_list = True
                             from pyjom.videotoolbox import motionVectorEstimation
