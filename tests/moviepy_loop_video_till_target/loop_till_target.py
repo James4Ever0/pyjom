@@ -9,6 +9,7 @@ def main(
     in_place: bool = True,
     debug: bool = False,
     # accuracy_float:int=4
+    audio:bool=False,
 ):
     assert os.path.exists(f_in)
     assert target_secs > 0
@@ -20,7 +21,7 @@ def main(
     else:
         targetFilePath = f_in
 
-    clip = VideoFileClip(f_in)
+    clip = VideoFileClip(f_in,audio=audio)
     newclip = clip.fx(time_mirror)
 
     videoDuration = clip.duration
@@ -68,6 +69,14 @@ if __name__ == "__main__":
         action="store_true",
         default=False,
     )
+
+    parser.add_argument(
+        "-a",
+        "--audio",
+        help="include audio from input",
+        action="store_true",
+        default=False,
+    )
     parser.add_argument(
         "-t", "--target", help="target seconds", required=True, type=float
     )
@@ -75,4 +84,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if not args.replace:
         assert args.output != ""
-    main(args.input, args.target, f_out=args.output, in_place=args.replace)
+    main(args.input, args.target, f_out=args.output, in_place=args.replace,audio=args.audio)
