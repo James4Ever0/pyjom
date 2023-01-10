@@ -55,8 +55,8 @@ def main(
             clips.append(newclip)
 
     final = concatenate_videoclips(clips)
-    tempfile.
-    with tempfile.TemporaryFile(suffix=f".{fileExtension}") as f:
+    
+    with tempfile.TemporaryFile(suffix=f".{fileExtension}",'w+') as f:
         tmpFilePath = f.name
         # warning! what is the audio shit?
         print("TMP FILE PATH?",tmpFilePath)
