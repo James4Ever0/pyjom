@@ -1139,7 +1139,7 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
     continue_flag = False
 
     def subdivide_span(
-        span_duration, min_span, max_span, span_start, span_end, new_cut_spans,div = 2
+        span_duration, min_span, max_span, span_start, span_end, new_cut_spans,div = 2,
     ):
         
         while True:
