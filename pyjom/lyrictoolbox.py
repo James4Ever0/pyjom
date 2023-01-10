@@ -1136,7 +1136,7 @@ def cleanLrcFromWeb(
 def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span=1.5, max_span=10):
     new_cut_spans = []  # the last span. could be a problem.
     checkSpanValid = lambda a, b, c: a <= b and a >= c
-    continue_flag = False
+    continue_flag = 0
 
     def subdivide_span(
         span_duration, min_span, max_span, span_start, span_end, new_cut_spans,div = 2,
@@ -1161,7 +1161,7 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
 
     for index, span in enumerate(demanded_cut_spans):
         if continue_flag:
-            continue_flag = False
+            continue_flag -=1
             continue
         span_start, span_end = span
         span_duration = span_end - span_start
@@ -1187,7 +1187,8 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
                     div=1
                 )
             else:
-                continue_flag = True
+                continue_flag +=1
                 mynewspan = span_end, demanded_cut_spans[index + 1][1]
+                new_cut_spans.append()
             # just merge with previous span. if previous span not present, merge with later span.
     return new_cut_spans
