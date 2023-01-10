@@ -45,8 +45,8 @@ def recordQQUserTalkingToAnotherUser(
             ...
 
 
-# TODO: detect "cat" or "dog" image.
-# TODO: rate limit
+# [DONE]: detect "cat" or "dog" image.
+# [DONE]: rate limit
 # from ratelimiter import RateLimiter
 
 # def rateLimitReached(until):

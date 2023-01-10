@@ -246,7 +246,7 @@ adBuffer = {}
 from adtools import checkIsCatOrDogImage
 
 @asyncThread
-def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str,is_image:bool=False):
+def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str,is_image:bool=False, is_user:bool=False):
     if is_image:
         try:
             cat_or_dog = checkIsCatOrDogImage(Content)
