@@ -11,6 +11,12 @@ def main(
     # accuracy_float:int=4
     audio:bool=False,
 ):
+
+    print("___")
+    print("AUDIO?",audio)
+    print("IN PLACE?",in_place)
+    print("___")
+
     assert os.path.exists(f_in)
     assert target_secs > 0
     
