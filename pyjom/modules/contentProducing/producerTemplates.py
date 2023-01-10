@@ -371,46 +371,9 @@ def petsWithMusicOnlineProducer(
                     standard_bpm_spans,
                 ) = parsed_result  # this is taking long time.
                 # check for 'demanded_cut_spans' now!
-
-                # remerge demanded cut spans.
-                min_span = 1.5
-                max_span = 10
-                new_cut_spans = [] # the last span. could be a problem.
-                checkSpanValid = lambda a,b,c: a<=b and a>=c
-                continue_flag=False
-                def subdivide_span(span_duration,min_span,max_span,span_start, span_end,new_cut_spans):
-                    div = 2
-                    while True:
-                        subduration = span_duration/div
-                        if checkSpanValid(subduration,max_span,min_span):
-                            myspans = [(span_start+i*subduration, span_start+(i+1)*subduration) for i in range(div)]
-                            myspans[-1]=(span_end-subduration, span_end)
-                            for mspan in myspans:
-                                new_cut_spans.append(mspan)
-                            break
-                        else:
-                            div+=1
-                for index,span in enumerate(demanded_cut_spans):
-                    if continue_flag:
-                        continue_flag=True
-                        continue
-                    span_start, span_end = span
-                    span_duration = span_end-span_start
-                    if checkSpanValid(span_duration,max_span,min_span):
-                        new_cut_spans.append((span_start, span_end))
-                    elif span_duration >max_span:
-                        subdivide_span(span_duration,min_span,max_span,span_start, span_end,new_cut_spans)
-                    elif span_duration<min_span:
-                        if len(new_cut_spans)>0:
-                            # merge with the previous span.
-                            mynewspan = (new_cut_spans[-1][0],span_end)
-                            # cut it in the old way.
-                            new_cut_spans.pop(-1)
-                            subdivide_span(span_duration,min_span,max_span,mynewspan[0],mynewspan[1],new_cut_spans)
-                        else:
-                            continue_flag=True
-                            mynewspan = span_end,demanded_cut_spans[index+1][1]
-                        # just merge with previous span. if previous span not present, merge with later span.
+                from pyjom.lyrictoolbox import remergeDemandedCutSpans
+                
+                demanded_cut_spans = remergeDemandedCutSpans(demanded_cut_spans)
 
                 render_list = []  # what is this freaking render_list?
                 # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
