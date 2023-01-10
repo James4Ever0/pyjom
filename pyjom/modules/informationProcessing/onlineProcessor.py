@@ -56,9 +56,11 @@ def OnlineProcessor(
                 # duration = get_duration(local_video_location)
                 from pyjom.commons import checkMinMaxDict
 
-                remedyDurationRange={"min":0.8,'max':2.5,'min_target':2.5} # targets in this range can multiply by some 
+                hard_limit_min=3
 
-                duration_filter = {"min": 2.5, "max": 15}
+                remedyDurationRange={"min":1,'max':hard_limit,'min_target':hard_limit} # targets in this range can multiply by some factors, looping forward and backward to get gif.
+
+                duration_filter = {"min": hard_limit, "max": 15}
                 # to loop through short gifs?
                 fps_filter = {"min": 7, "max": 60}
                 # fps_float = get_fps_float(local_video_location)
