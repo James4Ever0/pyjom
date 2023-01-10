@@ -60,6 +60,14 @@ def OnlineProcessor(
 
                 remedyDurationRange={"min":1,'max':hard_limit,'min_target':hard_limit} # targets in this range can multiply by some factors, looping forward and backward to get gif.
 
+                def loopVideoTillTarget(video_path:str, objective:dict):
+                    # import moviepy # are you sure you want to import this? i think it will fuck up many things.
+                    # use it externally. please!
+                    # as some commandline script.
+                    success = False
+                    cmd = [,"--replace"]
+
+
                 duration_filter = {"min": hard_limit, "max": 15}
                 # to loop through short gifs?
                 fps_filter = {"min": 7, "max": 60}
