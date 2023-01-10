@@ -452,7 +452,8 @@ def petsWithMusicOnlineProducer(
                                     "remainings": len(demanded_cut_spans),
                                     "case": case,
                                     "data": candidate,
-                                }
+                                    'last_5_spans_time':[x for x in demanded_cut_spans[:5]]
+                                } # this last cut must be seriously wrong.
                             )
                             render_list.append(candidate)
                         else:
