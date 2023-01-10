@@ -448,7 +448,7 @@ def petsWithMusicOnlineProducer(
                             )
                             candidate["cut"]["span"] = (mStart, mEnd)
 
-                        if append_render_list:
+                        else append_render_list:
                             demanded_cut_spans.pop(0)
                             NetProgressbar.update(
                                 info={
