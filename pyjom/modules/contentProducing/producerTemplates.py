@@ -372,6 +372,14 @@ def petsWithMusicOnlineProducer(
                 ) = parsed_result  # this is taking long time.
                 # check for 'demanded_cut_spans' now!
 
+                # remerge demanded cut spans.
+                min_span = 1
+                max_span = 10
+                new_cut_spans = [] # the last span. could be a problem.
+                for span in demanded_cut_spans:
+                    span_start, span_end = span
+                    
+
                 render_list = []  # what is this freaking render_list?
                 # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
                 # if lyric_path:
@@ -452,7 +460,7 @@ def petsWithMusicOnlineProducer(
                                     "remainings": len(demanded_cut_spans),
                                     "case": case,
                                     "data": candidate,
-                                    'last_5_spans_time':[x for x in demanded_cut_spans[:5]]
+                                    'last_5_spans_time':[x[1]-x[0] for x in demanded_cut_spans[:5]]
                                 } # this last cut must be seriously wrong.
                             )
                             render_list.append(candidate)
