@@ -68,19 +68,26 @@ def OnlineProcessor(
                     # import moviepy # are you sure you want to import this? i think it will fuck up many things.
                     # use it externally. please!
                     # as some commandline script.
-                    
-                    videoDuration = get_duration(local_video_location)
-
                     success = False
+                    videoDuration = -1
+                    videoValid = False
+                    videoValid = corruptVideoFilter(video_path)
                     scriptPath = ""
-                    cmd = ['python3',scriptPath,"-i",video_path,"--replace"] # you must use some random temp file path...
-                    # use subprocess?
-                    import subprocess
-                    r = subprocess.run(cmd)
-                    success = 0 == r.returncode
-                    return success
+
+                    if videoValid:
+                        videoDuration = get_duration(local_video_location)
+                        if videoDuration>=objective['min']:
+
+                        cmd = ['python3',scriptPath,"-i",video_path,"--replace"] # you must use some random temp file path...
+                        # use subprocess?
+                        import subprocess
+                        r = subprocess.run(cmd)
+                        success = 0 == r.returncode
+                    return videoValid, videoDuration, success
                 
-                videoDuration,success = loopVideoTillTarget(local_video_location,remedyDurationRange)
+                videoValid,videoDuration,success = loopVideoTillTarget(local_video_location,remedyDurationRange)
+                if not videoValid:
+                    print("VIDEO NOT VALID.")
                 if not success:
                     print("VIDEO DURATION LIMIT OBJECTIVE FAILED.")
                     print(f"MIN: {remedyDurationRange['min']} VIDEO: {videoDuration}")
