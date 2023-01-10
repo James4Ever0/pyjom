@@ -376,16 +376,17 @@ def petsWithMusicOnlineProducer(
                 min_span = 1.5
                 max_span = 10
                 new_cut_spans = [] # the last span. could be a problem.
+                checkSpanValid = lambda a,b,c: a<=b and a>=c
                 for span in demanded_cut_spans:
                     span_start, span_end = span
                     span_duration = span_end-span_start
-                    if span_duration <=max_span and span_duration>=min_span:
+                    ifcheckSpanValid(span_duration,max_span,min_span)
                         new_cut_spans.append((span_start, span_end))
                     elif span_duration >max_span:
                         div = 2
                         while True:
                             subduration = span_duration/div
-                            if subduration <=max_span and subduration >=min_span:
+                            if checkSpanValid(subduration,max_span,min_span):
                                 myspans = [(span_start+i*subduration, span_start+(i+1)*subduration) for i in range(div)]
                                 myspans[-1]=(span_end-subduration, span_end)
                                 for mspan in myspans:
@@ -393,7 +394,10 @@ def petsWithMusicOnlineProducer(
                                 break
                             else:
                                 div+=1
-                    elif span_duration<min_span and :# not last one!
+                    elif span_duration<min_span:
+                        if len(new_cut_spans)>0:
+                            # merge with the previous span.
+                        # just merge with previous span. if previous span not present, merge with later span.
 
                 render_list = []  # what is this freaking render_list?
                 # [{'span':(start,end),'cut':{'span':(start,end)},'source':videoSource},...]
