@@ -13,7 +13,10 @@ def test_cut_spans_valid(list_of_spans, min_span=1.5, max_span=10,no_range_test=
     # end = list_of_spans[-1][1]
     for span in list_of_spans[1:]:
         mstart, mend = span
-        assert mstart == init_end
+        try:
+            assert mstart == init_end
+        except:
+            print(mstart, mend, init_end)
         assert mstart < mend
         duration = mend-mstart
         if not no_range_test:

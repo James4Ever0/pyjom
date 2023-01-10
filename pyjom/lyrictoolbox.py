@@ -1144,9 +1144,9 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
         div = 2
         while True:
             subduration = span_duration / div
-            print(f'div {div} subduation {subduration}')
-            if div>15:
-                breakpoint()
+            # print(f'div {div} subduation {subduration}')
+            # if div>15:
+            #     breakpoint()
             if checkSpanValid(subduration, max_span, min_span):
                 myspans = [
                     (span_start + i * subduration, span_start + (i + 1) * subduration)
@@ -1178,7 +1178,7 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
                 # cut it in the old way.
                 new_cut_spans.pop(-1)
                 subdivide_span(
-                    span_duration,
+                    mynewspan[1]-mynewspan[0],
                     min_span,
                     max_span,
                     mynewspan[0],
