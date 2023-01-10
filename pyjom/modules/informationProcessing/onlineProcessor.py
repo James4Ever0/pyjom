@@ -136,6 +136,8 @@ def OnlineProcessor(
                             print("skipping due to invalid %s: %s" % (flag, mValue))
                             print("%s filter:" % flag, mFilter)
                             break
+                        else:
+                            print('%s test passed.'% flag)
                     except:
                         import traceback
 
