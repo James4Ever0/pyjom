@@ -32,40 +32,52 @@ def checkIsCatOrDogLover(qq_user_id):
     # TODO: for more topics, sort topics by popularity and views
     ...
 
+
 # TODO: record those who talks to other.
 # TODO: decay this relationship counter by 0.8 everyday
-def recordQQUserTalkingToAnotherUser(former_speaker:dict, later_speaker:dict, threshold:int=60):
+def recordQQUserTalkingToAnotherUser(
+    former_speaker: dict, later_speaker: dict, threshold: int = 60
+):
     # only record those who answers within the time.
-    if former_speaker['UserID'] != later_speaker['UserID']:
-        if abs(former_speaker['SpeakTime'] - later_speaker['SpeakTime']) <= threshold:
+    if former_speaker["UserID"] != later_speaker["UserID"]:
+        if abs(former_speaker["SpeakTime"] - later_speaker["SpeakTime"]) <= threshold:
             # make the connection
             ...
+
 
 # TODO: detect "cat" or "dog" image.
 # TODO: rate limit
 from ratelimiter import RateLimiter
 
 # this can slow me down.
-@RateLimiter(max_calls=1,period=2)
-def checkIsCatOrDogImage(image_url,download_timeout=2,timeout=2,port=4675,endpoint="analyzeImage"):
+@RateLimiter(max_calls=1, period=2)
+def checkIsCatOrDogImage(
+    image_url, download_timeout=2, timeout=2, port=4675, endpoint="analyzeImage"
+):
     try:
         import requests
-        img_bytes = requests.get(image_url,timeout=download_timeout).content
+
+        img_bytes = requests.get(image_url, timeout=download_timeout).content
         import cv2
         import numpy as np
         import numpy_serializer
+
         nparr = np.fromstring(img_bytes, np.uint8)
-        img_np = cv2.imdecode(nparr, cv2.CV_LOAD_IMAGE_COLOR) # cv2.IMREAD_COLOR in OpenCV 3.1
+        img_np = cv2.imdecode(nparr, flags=1)  # cv2.IMREAD_COLOR in OpenCV 3.1
         np_array_bytes = numpy_serializer.to_bytes(img_np)
         api_url = f"http://localhost:{port}/{endpoint}"
         params = dict(isBytes=True)
-        r = requests.post(api_url,data={"image":np_array_bytes,},timeout=timeout)
+        r = requests.post(
+            api_url, data={"image": np_array_bytes}, timeout=timeout, params=params
+        )
         result = r.json()
         return result
     except:
         import traceback
+
         traceback.print_exc()
     return None
+
 
 def checkCatOrDog(Content: str):
     # cat? dog? None?
@@ -307,6 +319,7 @@ def sendCatOrDogAdToQQGroup(
             elif style == "text_link":
                 # you must censor that.
                 from censorApis import censorReply
+
                 title_text = censorReply(title_text)
                 content = "观看视频:\n{}\n{}".format(link, title_text)
                 picturePath = output_standalone
