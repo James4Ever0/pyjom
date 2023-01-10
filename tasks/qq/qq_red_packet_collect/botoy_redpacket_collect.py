@@ -261,6 +261,9 @@ def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str):
                 penalty += 40 # every 50 messages we have one ad.
             adBuffer[str(group_id)] = penalty
         # decrease that counter by standard group messages.
+
+from botoy.collection import MsgTypes
+
 @bot.on_group_msg
 def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # too broad for groupInitReplyDelayRange to be (2, 20)
@@ -284,18 +287,14 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     RedBaginfoDict = data_dict["RedBaginfo"]
     RedBaginfo = ctx.RedBaginfo
     MsgType = ctx.MsgType
-
-    if MsgType in ["VideoMsg","PicMsg"]: 
-        # media message received.
-        try:
-            data = data_dict.get('Content',None)
-            if type(data) == str:
-                data = json.loads(data)
-            assert type(data) == dict
-        except:
-            import traceback
-            traceback.print_exc()
-            print(f"Error reading PicMsg from group {group_id} user {sender_id} Skipping...")
+    
+    if MsgType == MsgTypes.PicMsg:
+        ...
+    elif MsgType == MsgTypes.VideoMsg:
+        ...
+    elif MsgType == MsgTypes.VoiceMsg:
+        ...
+    elif MsgType == MsgTypes.JsonMsg:
 
     # first initialize random delay for every group in groupNoReplyStack
     if group_id not in groupNoReplyStack.keys():
