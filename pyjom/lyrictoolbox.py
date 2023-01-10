@@ -1152,7 +1152,7 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
                     (span_start + i * subduration, span_start + (i + 1) * subduration)
                     for i in range(div)
                 ]
-                myspans[-1] = (span_end - subduration, span_end)
+                myspans[-1] = (myspans[-1][0], span_end)
                 for mspan in myspans:
                     new_cut_spans.append(mspan)
                 break
