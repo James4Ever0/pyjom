@@ -21,6 +21,6 @@ def test_cut_spans_valid(list_of_spans, min_span=1.5, max_span=10,no_range_test=
         init_end = mend
 
 test_cut_spans_valid(cut_spans,no_range_test=True)
-
 new_spans = remergeDemandedCutSpans(cut_spans)
+print('new spans?',new_spans)
 test_cut_spans_valid(new_spans)

@@ -1158,7 +1158,7 @@ def remergeDemandedCutSpans(demanded_cut_spans:list[tuple[float,float]],min_span
 
     for index, span in enumerate(demanded_cut_spans):
         if continue_flag:
-            continue_flag = True
+            continue_flag = False
             continue
         span_start, span_end = span
         span_duration = span_end - span_start
