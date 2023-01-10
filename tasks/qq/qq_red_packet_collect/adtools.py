@@ -47,10 +47,14 @@ def recordQQUserTalkingToAnotherUser(
 
 # TODO: detect "cat" or "dog" image.
 # TODO: rate limit
-from ratelimiter import
+# from ratelimiter import RateLimiter
 
-# this can slow me down.
-@RateLimiter(max_calls=1, period=5,callback=lambda x: raise Exception(""))
+# def rateLimitReached(until):
+#     raise Exception(f"rate limit reached. wait {until} seconds")
+# # this can slow me down.
+# @RateLimiter(max_calls=1, period=5,callback=rateLimitReached )
+
+lastRun = 
 def checkIsCatOrDogImage(
     image_url, download_timeout=2, timeout=2, port=4675, endpoint="analyzeImage"
 ):
