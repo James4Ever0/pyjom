@@ -56,21 +56,31 @@ def OnlineProcessor(
                 # duration = get_duration(local_video_location)
                 from pyjom.commons import checkMinMaxDict
 
+                from pyjom.videotoolbox import (
+                    corruptVideoFilter,
+                )
                 hard_limit=3
 
                 remedyDurationRange={"min":1,'max':hard_limit,'min_target':hard_limit} # targets in this range can multiply by some factors, looping forward and backward to get gif.
-                videoDuration = get_duration(local_video_location)
                 # is it corrupted? fuck?
 
                 def loopVideoTillTarget(video_path:str, objective:dict):
                     # import moviepy # are you sure you want to import this? i think it will fuck up many things.
                     # use it externally. please!
                     # as some commandline script.
+                    
+                    videoDuration = get_duration(local_video_location)
+
                     success = False
-                    cmd = ['python3',"--replace"] # you must use some random temp file path...
+                    scriptPath = ""
+                    cmd = ['python3',scriptPath,"-i",video_path,"--replace"] # you must use some random temp file path...
+                    # use subprocess?
+                    import subprocess
+                    r = subprocess.run(cmd)
+                    success = 0 == r.returncode
                     return success
                 
-                success = loopVideoTillTarget()
+                videoDuration,success = loopVideoTillTarget(local_video_location,remedyDurationRange)
                 if not success:
                     print("VIDEO DURATION LIMIT OBJECTIVE FAILED.")
                     print(f"MIN: {remedyDurationRange['min']} VIDEO: {videoDuration}")
@@ -83,8 +93,8 @@ def OnlineProcessor(
                 # fps_float = get_fps_float(local_video_location)
                 # duration_valid = checkMinMaxDict(duration,duration_filter)
                 # fps_valid = checkMinMaxDict(fps_float,fps_filter)
+
                 from pyjom.videotoolbox import (
-                    corruptVideoFilter,
                     getVideoColorCentrality,
                     checkVideoColorCentrality,
                     getEffectiveFPS,
