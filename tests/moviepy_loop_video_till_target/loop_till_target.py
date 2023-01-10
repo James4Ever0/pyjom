@@ -31,7 +31,7 @@ def main(
     if not audio:
         clip = clip.without_audio()
     # newclip = clip.fx(time_mirror) # error?
-    newclip =clip
+    # newclip =clip
 
     videoDuration = clip.duration
     import math
@@ -55,8 +55,8 @@ def main(
             clips.append(newclip)
 
     final = concatenate_videoclips(clips)
-    
-    with tempfile.TemporaryFile(suffix=f".{fileExtension}",'w+') as f:
+
+    with tempfile.NamedTemporaryFile('w+',suffix=f".{fileExtension}",) as f:
         tmpFilePath = f.name
         # warning! what is the audio shit?
         print("TMP FILE PATH?",tmpFilePath)
