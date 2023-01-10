@@ -59,6 +59,8 @@ pyjom_directory = "/root/Desktop/works/pyjom"
 pyjom_tests = os.path.join(pyjom_directory, "tests")
 pyjom_externals = os.path.join(pyjom_directory, "externals")
 
+keepalive_bin = '/usr/local/bin/keepalive'
+
 # interpreters
 node_exec = "node"
 python3_exec = "python3"
