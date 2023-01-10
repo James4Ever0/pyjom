@@ -15,7 +15,14 @@ def main(
     if not in_place:
         assert f_out != ""
     videoDuration = ...
-    loopStrategy = [(-1)**i]
+    import math
+
+    fileExtension = f_in.split(".")[-1]
+    assert fileExtension != ""
+
+    loopStrategy = [(-1) ** i for i in range(math.ceil(target_secs / videoDuration))]
+    for signal in loopStrategy:
+        ...
 
 
 if __name__ == "__main__":
