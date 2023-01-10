@@ -11,5 +11,12 @@ def main(f_in:str, target_secs:float,f_out:str="", in_place:bool=True, accuracy_
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--input", dest="input file", required=True)
-    parser.add_argument("-o", "--output", dest="output file", default="")
+    parser.add_argument("-i", "--input", help="input file", required=True, type=str)
+    parser.add_argument("-o", "--output", help="output file", default="", type=str)
+    parser.add_argument("-r",'--replace', help="replace original input file", action="store_true", default=False)
+    parser.add_argument("-t", "--target", help="target seconds", required=True, type=float)
+
+    args = parser.parse_args()
+    if not args.replace:
+        assert args.output !=""
+    main(args.input, args.target, f_out=args.output, in_place =args.replace)
