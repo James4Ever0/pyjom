@@ -449,6 +449,10 @@ def petsWithMusicOnlineProducer(
                             candidate["cut"]["span"] = (mStart, mEnd)
                         if not append_render_list:
                             print(f'fail to match. source: {dataDuration} target: {closest_span_duration}')
+                            if remove_unused:
+                                videoPath = videoSource
+                                if os.path.exists(videoPath):
+                                    os.remove(videoPath)
                         else:
                             demanded_cut_spans.pop(0)
                             NetProgressbar.update(
@@ -460,11 +464,6 @@ def petsWithMusicOnlineProducer(
                                 } # this last cut must be seriously wrong.
                             )
                             render_list.append(candidate)
-                        else:
-                            if remove_unused:
-                                videoPath = videoSource
-                                if os.path.exists(videoPath):
-                                    os.remove(videoPath)
                     complete = len(demanded_cut_spans) == 0
                     if complete:
                         break
