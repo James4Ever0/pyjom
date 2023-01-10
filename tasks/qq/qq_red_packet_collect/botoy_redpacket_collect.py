@@ -244,6 +244,7 @@ adBuffer = {}
 # hook up this thing, send cat video only if we receive that topic.
 
 from adtools import checkIsCatOrDogImage
+
 @asyncThread
 def catOrDogAsyncThread(group_id:str, sender_id:str,Content:str,is_image:bool=False):
     if is_image:
