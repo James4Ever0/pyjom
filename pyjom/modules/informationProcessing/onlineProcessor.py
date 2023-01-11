@@ -60,7 +60,7 @@ def OnlineProcessor(
                     corruptVideoFilter,
                 )
 
-                hard_limit = 5
+                hard_limit = 3.5
 
                 remedyDurationRange = {
                     "min": 1,
@@ -91,12 +91,11 @@ def OnlineProcessor(
                                 "-i",
                                 video_path,
                                 "-t",
-                                objective["min_target"],
+                                str(objective["min_target"]),
                                 "--replace",
                             ]  # you must use some random temp file path...
                             # use subprocess?
                             import subprocess
-
                             r = subprocess.run(cmd)
                             success = 0 == r.returncode
                     return videoValid, videoDuration, success
