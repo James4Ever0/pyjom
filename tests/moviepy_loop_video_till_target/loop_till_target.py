@@ -1,6 +1,6 @@
 import os
 from moviepy.editor import VideoFileClip, concatenate_videoclips
-from moviepy.video.fx import time_mirror
+import moviepy.video.fx.all as vfx
 
 def main(
     f_in: str,
@@ -30,7 +30,7 @@ def main(
     clip = VideoFileClip(f_in,audio=audio)
     if not audio:
         clip = clip.without_audio()
-    newclip = clip.fx(time_mirror) # error?
+    newclip = clip.fx(vfx.time_mirror) # error?
     # newclip = clip
 
     videoDuration = clip.duration
