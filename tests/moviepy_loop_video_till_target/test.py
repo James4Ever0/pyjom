@@ -1,7 +1,7 @@
 from loop_till_target import main
 
 target_secs = 20
-video_in = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.gif"
+video_in = "/root/Desktop/works/pyjom/samples/video/cute_cat_gif.mp4"
 
 # no right codec! fuck.
 

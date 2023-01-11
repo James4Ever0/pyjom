@@ -30,8 +30,8 @@ def main(
     clip = VideoFileClip(f_in,audio=audio)
     if not audio:
         clip = clip.without_audio()
-    # newclip = clip.fx(time_mirror) # error?
-    # newclip =clip
+    newclip = clip.fx(time_mirror) # error?
+    # newclip = clip
 
     videoDuration = clip.duration
     import math
@@ -59,8 +59,8 @@ def main(
     with tempfile.NamedTemporaryFile('w+',suffix=f".{fileExtension}",) as f:
         tmpFilePath = f.name
         # warning! what is the audio shit?
-        print("TMP FILE PATH?",tmpFilePath)
-        breakpoint()
+        # print("TMP FILE PATH?",tmpFilePath)
+        # breakpoint()
         final.write_videofile(tmpFilePath, fps=clip.fps)
         finalVideoDuration = final.duration
         shutil.copy(tmpFilePath,targetFilePath)
