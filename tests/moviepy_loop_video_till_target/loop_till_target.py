@@ -33,8 +33,9 @@ def main(
     # newclip = clip.fx(vfx.time_mirror) # error?
     # newclip = clip
     import ffmpeg
-    file_input = ffmpeg.input(f_in)
-    file_input_reverse = file_input.filter("reverse")
+    file_input_main = ffmpeg.input(f_in).filter_multi_output('split')
+    file_input=file_input_main[0]
+    file_input_reverse = file_input_main[1].filter('reverse')
 
     videoDuration = clip.duration
     import math
