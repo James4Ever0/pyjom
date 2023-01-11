@@ -35,7 +35,6 @@ def main(
     import ffmpeg
     file_input = ffmpeg.input(f_in)
     file_input_reverse = file_input.filter("reverse")
-    ffmpeg.concat()
 
     videoDuration = clip.duration
     import math
@@ -59,6 +58,8 @@ def main(
             clips.append(file_input_reverse)
 
     # final = concatenate_videoclips(clips)
+    final = ffmpeg.concat(clips)
+    finalVideoDuration = len(loopStrategy)*videoDuration
 
     with tempfile.NamedTemporaryFile('w+',suffix=f".{fileExtension}",) as f:
         tmpFilePath = f.name
@@ -67,6 +68,7 @@ def main(
         # breakpoint()
         # final.write_videofile(tmpFilePath, fps=clip.fps)
         # finalVideoDuration = final.duration
+        final.output(tmpFilePath).run()
         shutil.copy(tmpFilePath,targetFilePath)
     return finalVideoDuration
 
