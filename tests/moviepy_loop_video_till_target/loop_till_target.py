@@ -1,6 +1,6 @@
 import os
 from moviepy.editor import VideoFileClip, concatenate_videoclips
-from moviepy.video.fx.time_mirror import time_mirror
+from moviepy.video.fx import time_mirror
 
 def main(
     f_in: str,
