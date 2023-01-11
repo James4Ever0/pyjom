@@ -1,7 +1,10 @@
 import os
+
 # moviepy's shit.
-from moviepy.editor import VideoFileClip #, concatenate_videoclips
-#import moviepy.video.fx.all as vfx
+from moviepy.editor import VideoFileClip  # , concatenate_videoclips
+
+# import moviepy.video.fx.all as vfx
+
 
 def main(
     f_in: str,
@@ -20,7 +23,7 @@ def main(
 
     assert os.path.exists(f_in)
     assert target_secs > 0
-    
+
     # target_secs_str =("{"+f':.{accuracy_float}f'+"}").format(target_secs)
     targetFilePath = f_out
     if not in_place:
@@ -34,7 +37,10 @@ def main(
     # newclip = clip.fx(vfx.time_mirror) # error?
     # newclip = clip
     import ffmpeg
-    file_input_split = ffmpeg.input(f_in).filter_multi_output('split') # this is infinite split.
+
+    file_input_split = ffmpeg.input(f_in).filter_multi_output(
+        "split"
+    )  # this is infinite split.
 
     videoDuration = clip.duration
     import math
@@ -50,15 +56,17 @@ def main(
     if debug:
         print("Loop strategy:")
         print(loopStrategy)
-    
+
     clips = []
-    file_input_original = file_input_split[0].filter_multi_output('split')
-    file_input_reverse = file_input_split[1].filter('reverse').filter_multi_output("split")
+    file_input_original = file_input_split[0].filter_multi_output("split")
+    file_input_reverse = (
+        file_input_split[1].filter("reverse").filter_multi_output("split")
+    )
 
     for index, signal in enumerate(loopStrategy):
         mindex = index // 2
         if signal == 1:
-            file_input=file_input_original[mindex]
+            file_input = file_input_original[mindex]
             clips.append(file_input)
         else:
             file_input_reverse2 = file_input_reverse[mindex]
@@ -66,17 +74,20 @@ def main(
 
     # final = concatenate_videoclips(clips)
     final = ffmpeg.concat(*clips)
-    finalVideoDuration = len(loopStrategy)*videoDuration
+    finalVideoDuration = len(loopStrategy) * videoDuration
 
-    with tempfile.NamedTemporaryFile('w+',suffix=f".{fileExtension}",) as f:
+    with tempfile.NamedTemporaryFile(
+        "w+",
+        suffix=f".{fileExtension}",
+    ) as f:
         tmpFilePath = f.name
         # warning! what is the audio shit?
         # print("TMP FILE PATH?",tmpFilePath)
         # breakpoint()
         # final.write_videofile(tmpFilePath, fps=clip.fps)
         # finalVideoDuration = final.duration
-        final.output(tmpFilePath).run()
-        shutil.copy(tmpFilePath,targetFilePath)
+        final.output(tmpFilePath).run(overwrite_output=True)
+        shutil.copy(tmpFilePath, targetFilePath)
     return finalVideoDuration
 
 
@@ -108,6 +119,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if not args.replace:
         assert args.output != ""
-    main(args.input, args.target, f_out=args.output, in_place=args.replace,
-    # audio=args.audio
+    main(
+        args.input,
+        args.target,
+        f_out=args.output,
+        in_place=args.replace,
+        # audio=args.audio
     )
