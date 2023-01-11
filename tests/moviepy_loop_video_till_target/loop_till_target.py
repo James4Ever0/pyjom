@@ -33,7 +33,7 @@ def main(
     # newclip = clip.fx(vfx.time_mirror) # error?
     # newclip = clip
     import ffmpeg
-    file_input_main = ffmpeg.input(f_in).filter_multi_output('split') # this is infinite split.
+    file_input_split = ffmpeg.input(f_in).filter_multi_output('split') # this is infinite split.
 
     videoDuration = clip.duration
     import math
@@ -51,15 +51,16 @@ def main(
         print(loopStrategy)
     
     clips = []
-    file_input_original = file_input_split[0].filter_
+    file_input_original = file_input_split[0].filter_multi_output('split')
+    file_input_reverse  =file_input_split[1].filter('reverse').filter_multi_output("split")
     for index, signal in enumerate(loopStrategy):
-        mindex = index //2
+        mindex = index // 2
         if signal == 1:
-            file_input=file_input_main[mindex]
+            file_input=file_input_original[mindex]
             clips.append(file_input)
         else:
-            file_input_reverse = file_input_main_split.filter('reverse')
-            clips.append(file_input_reverse)
+            file_input_reverse2 = file_input_reverse[mindex]
+            clips.append(file_input_reverse2)
 
     # final = concatenate_videoclips(clips)
     final = ffmpeg.concat(*clips)
