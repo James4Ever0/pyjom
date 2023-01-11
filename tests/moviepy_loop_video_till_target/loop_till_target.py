@@ -51,13 +51,13 @@ def main(
         print(loopStrategy)
     clips = []
     for signal in loopStrategy:
-        file_input_main_split = .filter_multi_output('split')
-
-    file_input=file_input_main_base[0]
-    file_input_reverse = file_input_main[1].filter('reverse')
+        file_input_main.filter_multi_output('split')
+        breakpoint()
         if signal == 1:
+            file_input=file_input_main_split
             clips.append(file_input)
         else:
+            file_input_reverse = file_input_main_split.filter('reverse')
             clips.append(file_input_reverse)
 
     # final = concatenate_videoclips(clips)
