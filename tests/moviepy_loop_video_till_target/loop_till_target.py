@@ -1,5 +1,6 @@
 import os
-from moviepy.editor import VideoFileClip#, concatenate_videoclips
+# moviepy's shit.
+from moviepy.editor import VideoFileClip #, concatenate_videoclips
 #import moviepy.video.fx.all as vfx
 
 def main(
@@ -52,7 +53,8 @@ def main(
     
     clips = []
     file_input_original = file_input_split[0].filter_multi_output('split')
-    file_input_reverse  =file_input_split[1].filter('reverse').filter_multi_output("split")
+    file_input_reverse = file_input_split[1].filter('reverse').filter_multi_output("split")
+
     for index, signal in enumerate(loopStrategy):
         mindex = index // 2
         if signal == 1:
@@ -106,4 +108,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if not args.replace:
         assert args.output != ""
-    main(args.input, args.target, f_out=args.output, in_place=args.replace,audio=args.audio)
+    main(args.input, args.target, f_out=args.output, in_place=args.replace,
+    # audio=args.audio
+    )
