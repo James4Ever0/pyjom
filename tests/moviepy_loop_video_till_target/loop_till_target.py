@@ -1,6 +1,6 @@
 import os
-from moviepy.editor import VideoFileClip, concatenate_videoclips
-import moviepy.video.fx.all as vfx
+from moviepy.editor import VideoFileClip#, concatenate_videoclips
+#import moviepy.video.fx.all as vfx
 
 def main(
     f_in: str,
@@ -9,7 +9,7 @@ def main(
     in_place: bool = True,
     debug: bool = False,
     # accuracy_float:int=4
-    audio:bool=False, # it will cause trouble?
+    # audio:bool=False, # it will cause trouble?
 ):
 
     # print("___")
@@ -27,11 +27,15 @@ def main(
     else:
         targetFilePath = f_in
 
-    clip = VideoFileClip(f_in,audio=audio)
-    if not audio:
-        clip = clip.without_audio()
-    newclip = clip.fx(vfx.time_mirror) # error?
+    clip = VideoFileClip(f_in)
+    # if not audio:
+    #     clip = clip.without_audio()
+    # newclip = clip.fx(vfx.time_mirror) # error?
     # newclip = clip
+    import ffmpeg
+    file_input = ffmpeg.input(f_in)
+    file_input_reverse = file_input.filter("reverse")
+    ffmpeg.concat()
 
     videoDuration = clip.duration
     import math
@@ -50,19 +54,19 @@ def main(
     clips = []
     for signal in loopStrategy:
         if signal == 1:
-            clips.append(clip)
+            clips.append(file_input)
         else:
-            clips.append(newclip)
+            clips.append(file_input_reverse)
 
-    final = concatenate_videoclips(clips)
+    # final = concatenate_videoclips(clips)
 
     with tempfile.NamedTemporaryFile('w+',suffix=f".{fileExtension}",) as f:
         tmpFilePath = f.name
         # warning! what is the audio shit?
         # print("TMP FILE PATH?",tmpFilePath)
         # breakpoint()
-        final.write_videofile(tmpFilePath, fps=clip.fps)
-        finalVideoDuration = final.duration
+        # final.write_videofile(tmpFilePath, fps=clip.fps)
+        # finalVideoDuration = final.duration
         shutil.copy(tmpFilePath,targetFilePath)
     return finalVideoDuration
 
@@ -81,13 +85,13 @@ if __name__ == "__main__":
         default=False,
     )
 
-    parser.add_argument(
-        "-a",
-        "--audio",
-        help="include audio from input",
-        action="store_true",
-        default=False,
-    )
+    # parser.add_argument(
+    #     "-a",
+    #     "--audio",
+    #     help="include audio from input",
+    #     action="store_true",
+    #     default=False,
+    # )
     parser.add_argument(
         "-t", "--target", help="target seconds", required=True, type=float
     )
