@@ -33,9 +33,7 @@ def main(
     # newclip = clip.fx(vfx.time_mirror) # error?
     # newclip = clip
     import ffmpeg
-    file_input_main = ffmpeg.input(f_in).filter_multi_output('split')
-    file_input=file_input_main[0]
-    file_input_reverse = file_input_main[1].filter('reverse')
+    file_input_main = ffmpeg.input(f_in)
 
     videoDuration = clip.duration
     import math
@@ -53,13 +51,17 @@ def main(
         print(loopStrategy)
     clips = []
     for signal in loopStrategy:
+        file_input_main_split = .filter_multi_output('split')
+
+    file_input=file_input_main_base[0]
+    file_input_reverse = file_input_main[1].filter('reverse')
         if signal == 1:
             clips.append(file_input)
         else:
             clips.append(file_input_reverse)
 
     # final = concatenate_videoclips(clips)
-    final = ffmpeg.concat(clips)
+    final = ffmpeg.concat(*clips)
     finalVideoDuration = len(loopStrategy)*videoDuration
 
     with tempfile.NamedTemporaryFile('w+',suffix=f".{fileExtension}",) as f:
