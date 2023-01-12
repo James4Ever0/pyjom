@@ -66,8 +66,10 @@ def OnlineProcessor(
 
                 def tuneVideoSpeedToBeat(video_phase:float, music_phase:float,mode:Literal['speedup','slowdown']):
                     speed = music_phase/video_phase
-                    speed_min = 1
-                    speed_max = 2
+                    speed_min,speed_max = 1,2
+                    if mode == "slowdown":
+                        speed_min/=2
+                        speed_max/=2
                     while True:
                         if mode == "speedup":
                             if speed<1:
