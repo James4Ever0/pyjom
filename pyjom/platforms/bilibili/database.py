@@ -1006,6 +1006,9 @@ def getVideoInfosFromVideoGenerator(vgen):
             vlist.append(v.videoInfoExtractor())
     return vlist
 
+def searchVideosByForm(form:searchUserVideoForm):
+    
+
 
 def refresh_latest_video_of_user(uid: int):  # must be online.
     form = searchUserVideoForm(method="online", tid=0, query="", dedeuserid=str(uid))
