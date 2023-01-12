@@ -143,7 +143,7 @@ class searchVideoForm(queryForm):
     iterate: bool = False
     params: dict = {}  # let's just see what you've got here.
 
-
+from bilibili_api.user import VideoOrder
 #@reloading
 class searchRegisteredVideoForm(queryForm):
     tid: int = 0
