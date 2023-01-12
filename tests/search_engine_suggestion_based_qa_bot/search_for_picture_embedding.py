@@ -24,7 +24,7 @@ for elem in result.raw:
     import time
     print(thumbnail, simi, title)
     # print(thumbnail, simi, title, ajaxUrl)
-    time.sleep(3)
+    time.sleep(3) # wait too long?
     r = requests.get(ajaxUrl)
     myJson = r.json()
     # from lazero.filesystem.io import writeJsonObjectToFile
@@ -42,7 +42,7 @@ for elem in result.raw:
     #     print(ajaxUrl)
     #     print('error!')
     #     breakpoint()
-    
+
     # breakpoint()
 # ['origin', 'raw', 'url']
 # result.raw[0].url is the original url. however you won't get the picture.
