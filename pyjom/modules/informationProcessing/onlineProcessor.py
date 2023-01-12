@@ -68,8 +68,9 @@ def OnlineProcessor(
                     while True:
                         if mode == "up":
                             if video_phase>= music_phase and video_phase<:
-                            return 
-                        else:
+                                return 
+                            else:
+                                music_phase
                     eluif video_phase >= music_phase/2
                         if mode == "up":
                             ...
