@@ -85,16 +85,17 @@ def OnlineProcessor(
                         else:
                             raise Exception("Unknown speed change mode: %s" % mode)
                 
+                valid_video = corruptVideoFilter(local_video_location)
+                if not valid_video:
+                    continue
+
                 video_duration = get_duration(local_video_location)
-                music_beat_duration = ...  # get from
+                music_beat_duration = ...  # get from redis!
 
                 speed_change_mode = "speedup"
 
                 speed_change = tuneVideoSpeedToBeat(video_duration, music_beat_duration,mode=speed_change_mode)
 
-                valid_video = corruptVideoFilter(local_video_location)
-                if not valid_video:
-                    continue
 
                 hard_limit = 3.5
 
