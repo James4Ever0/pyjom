@@ -60,7 +60,7 @@ def OnlineProcessor(
                     corruptVideoFilter,
                 )
 
-                get_music_
+                music_beat_duration = ... # get from 
 
                 hard_limit = 3.5
 
