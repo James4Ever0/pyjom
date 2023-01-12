@@ -75,6 +75,7 @@ def OnlineProcessor(
                             ...
                         else:
                             ...
+                    return speed
 
 
                 music_beat_duration = ... # get from 
