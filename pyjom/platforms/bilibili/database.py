@@ -945,9 +945,19 @@ def refresh_latest_video_of_user(uid:int): # must be online.
     use_credential=False
     tid = 0
     query = ""
-    videoOrder = 
+    videoOrder = VideoOrder.PUBDATE
     page_num = 1
     page_size = 30
+    searchUserVideos(
+            form.query_for_search,
+            form.tid,
+            form.dedeuserid,
+            form.method,
+            form.use_credential,
+            form.videoOrder,
+            form.page_num,
+            default(form.page_size, 30),
+        )
 
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
