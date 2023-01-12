@@ -84,7 +84,7 @@ def OnlineProcessor(
                                 return speed
                         else:
                             raise Exception("Unknown speed change mode: %s" % mode)
-
+                video_duration = 
                 music_beat_duration = ...  # get from
 
                 speed_change_mode = "speedup"
