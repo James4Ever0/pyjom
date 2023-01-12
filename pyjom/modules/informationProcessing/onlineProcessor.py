@@ -76,7 +76,13 @@ def OnlineProcessor(
                             else:
                                 return speed
                         elif mode == "slowdown":
-                            ...
+                            if speed<1:
+                                speed*=2
+                                return 
+                            elif speed >2:
+                                speed /=2
+                            else:
+                                return speed
                         else:
                             raise Exception("Unknown speed change mode: %s" % mode)
 
