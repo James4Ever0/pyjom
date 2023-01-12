@@ -69,7 +69,7 @@ def OnlineProcessor(
                     music_phase: float,
                     mode: Literal["speedup", "slowdown"],
                 ):
-                    speed = music_phase / video_phase
+                    speed = music_phase / video_phase # change in speed.
                     speed_min, speed_max = 1, 2
                     if mode == "slowdown":
                         speed_min /= 2
