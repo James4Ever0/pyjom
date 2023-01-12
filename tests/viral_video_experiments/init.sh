@@ -3,4 +3,4 @@
 
 # image recognition
 git clone https://github.com/chenguanyou/BaiduSerchImgApi
-git clone 
+git clone https://github.com/chenguanyou/360ImageSearch
