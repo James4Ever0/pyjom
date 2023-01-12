@@ -89,7 +89,7 @@ def OnlineProcessor(
 
                 speed_change_mode = "speedup"
 
-                speed_change = tuneVideoSpeedToBeat(speed_change_mode, music_beat_duration)
+                speed_change = tuneVideoSpeedToBeat(, music_beat_duration,mode=speed_change_mode)
 
                 valid_video = corruptVideoFilter()
 
