@@ -69,6 +69,7 @@ def OnlineProcessor(
                     while True:
                         if mode == "speedup":
                             if speed<1:
+                                speed*=2
                                 return 
                             else:
                                 music_phase
