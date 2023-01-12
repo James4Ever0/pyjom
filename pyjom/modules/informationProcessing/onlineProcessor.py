@@ -76,10 +76,10 @@ def OnlineProcessor(
                             else:
                                 return speed
                         elif mode == "slowdown":
-                            if speed<1:
+                            if speed<0.5:
                                 speed*=2
                                 return 
-                            elif speed >2:
+                            elif speed >1:
                                 speed /=2
                             else:
                                 return speed
