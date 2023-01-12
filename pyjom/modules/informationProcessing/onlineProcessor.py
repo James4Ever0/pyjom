@@ -60,6 +60,8 @@ def OnlineProcessor(
                     corruptVideoFilter,
                 )
 
+                # usually we want to make video short.
+
                 music_beat_duration = ... # get from 
 
                 valid_video = corruptVideoFilter
