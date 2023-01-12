@@ -60,6 +60,8 @@ def OnlineProcessor(
                     corruptVideoFilter,
                 )
 
+                get_music_
+
                 hard_limit = 3.5
 
                 remedyDurationRange = {
