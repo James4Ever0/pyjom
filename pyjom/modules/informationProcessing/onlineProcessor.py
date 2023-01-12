@@ -85,6 +85,7 @@ def OnlineProcessor(
                         else:
                             raise Exception("Unknown speed change mode: %s" % mode)
                 
+                # TODO: tune video speed to 
                 valid_video = corruptVideoFilter(local_video_location)
                 if not valid_video:
                     continue
