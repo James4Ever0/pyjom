@@ -64,7 +64,7 @@ def OnlineProcessor(
                 # mode: up/down
                 from typing import Literal
 
-                def tuneVideoSpeedToBeat(video_phase:float, music_phase:float,mode:Literal['up','down']):
+                def tuneVideoSpeedToBeat(video_phase:float, music_phase:float,mode:Literal['speedup','slowdown']):
                     while True:
                         if mode == "up":
                             elif video_phase>= music_phase and video_phase<:
