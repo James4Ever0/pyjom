@@ -8,6 +8,9 @@ from lazero.utils.json import jsonify
 import time
 
 
+# utils.
+
+
 def default(value, default_, isInstance=lambda v: v in [..., None]):
     if isInstance(value):
         return default_
@@ -1030,7 +1033,7 @@ def searchVideosByForm(form:searchUserVideoForm, default_page_size:int=30):
 
 def refresh_latest_video_of_user(uid: int):  # must be online.
     form = searchUserVideoForm(method="online", tid=0, query="", dedeuserid=str(uid))
-    video_infos = 
+    videoInfos = searchVideosInfoByForm(form)
 
 
 def refresh_status(
@@ -1080,10 +1083,6 @@ def refresh_status_decorator(func):
 def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
     db = getBilibiliVideoDatabaseAndCreateTables()
     return db
-
-
-# utils.
-
 
 
 # somewhere here:
