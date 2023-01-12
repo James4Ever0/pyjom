@@ -940,6 +940,8 @@ def searchAndRegisterVideos(
         # )
         yield bilibiliVideo
 
+def refresh_latest_video_of_user(uid:int):
+
 
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
@@ -947,6 +949,8 @@ def refresh_status(
     sleep: int = 2,
     target_user_uids :list[int]= []
 ):
+    for uid in target_user_uids:
+        refresh_latest_video_of_user(uid)
     # what to do? just select and update?
     # but you need the database object. it is loop dependency!
     # well we can split the function.
