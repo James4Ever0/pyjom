@@ -42,7 +42,7 @@ def getBaiduImageSearchAjaxInfoParsed(obj, debug=False):
     # from pprint import pprint
     # pprint(processed_obj)
     title_snippets = pyjq.first("{titles, snippets}", processed_obj)
-    img_sim = pyjq.first("(.simi[]|=tonumber )|{imgs_src, simi}", processed_obj) # error!
+    img_sim = pyjq.first("(.simi[]|=tonumber )|{imgs_src, simi}", processed_obj) # TODO: error! what is going on?
     # img_sim["simi"] = img_sim["simi"] # what is this?
     # [('titles', 15), ('snippets', 15), ('imgs_src', 43), ('simi', 43)]
     # 15, 15, 43, 43
