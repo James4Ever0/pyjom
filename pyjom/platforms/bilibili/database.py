@@ -950,7 +950,12 @@ def refresh_status(
     target_user_uids :list[int]= []
 ):
     for uid in target_user_uids:
-        refresh_latest_video_of_user(uid)
+        try:
+            refresh_latest_video_of_user(uid)
+        except:
+            import traceback
+            traceback.print_exc()
+            print(f"Failed to refresh latest video status of user {uid}")
     # what to do? just select and update?
     # but you need the database object. it is loop dependency!
     # well we can split the function.
