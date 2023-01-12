@@ -1033,7 +1033,7 @@ def searchVideosByForm(form:searchUserVideoForm, default_page_size:int=30):
 
 def refresh_latest_video_of_user(uid: int):  # must be online.
     form = searchUserVideoForm(method="online", tid=0, query="", dedeuserid=str(uid))
-    videoInfos = searchVideosInfoByForm(form)
+    videoInfos = searchVideosByForm(form)
 
 
 def refresh_status(
