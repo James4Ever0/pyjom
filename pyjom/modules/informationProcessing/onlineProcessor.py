@@ -78,7 +78,7 @@ def OnlineProcessor(
                         elif mode == "slowdown":
                             ...
                         else:
-                            ...
+                            raise Exception("Unknown speedup mode: %s" % mode)
                     return speed
 
 
