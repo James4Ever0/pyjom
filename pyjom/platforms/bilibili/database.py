@@ -989,10 +989,11 @@ def searchAndRegisterVideos(
         yield bilibiliVideo
 
 def refresh_latest_video_of_user(uid:int): # must be online.
-    method = "online",
+
+    form.method = "online",
     use_credential=False
-    tid = 0
-    query = ""
+    form.tid = 0
+    form.query = ""
     videoOrder = VideoOrder.PUBDATE
     page_num = 1
     page_size = 30
