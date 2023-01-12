@@ -1006,8 +1006,8 @@ def getVideoInfosFromVideoGenerator(vgen):
             vlist.append(v.videoInfoExtractor())
     return vlist
 
-def searchVideosByForm(form:searchUserVideoForm):
-    
+def searchVideosByForm(form:searchUserVideoForm, default_page_size:int=30):
+
 
 
 def refresh_latest_video_of_user(uid: int):  # must be online.
@@ -1020,7 +1020,7 @@ def refresh_latest_video_of_user(uid: int):  # must be online.
         form.use_credential,
         form.videoOrder,
         form.page_num,
-        default(form.page_size, 30),
+        default(form.page_size, default_page_size),
     )
     videoInfos = getVideoInfosFromVideoGenerator(vgen)
 
