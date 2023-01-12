@@ -1034,7 +1034,6 @@ def refresh_latest_video_of_user(uid: int):  # must be online.
     form = searchUserVideoForm(method="online", tid=0, query="", dedeuserid=str(uid))
     videoInfos = searchVideosByForm(form)
 
-
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
     check_interval=datetime.timedelta(hours=1),
