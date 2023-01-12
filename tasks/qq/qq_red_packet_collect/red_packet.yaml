@@ -35,6 +35,9 @@ windows:
       - shell_command: # text censor api
           - cd tasks/qq/qq_red_packet_collect/textfilter 
           - bash launch.sh
+      - shell_command:
+          - cd /root/Desktop/works/pyjom/tests/bilibili_video_recommendation_server
+          - 
       - shell_command: # xiaoice chat api
           - cd tests/microsoft_xiaobing_conversation_bing
           # - node chat_with_session_id.js
