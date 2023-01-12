@@ -28,6 +28,7 @@ import progressbar
 
 import pydantic
 
+
 @lru_cache(maxsize=4)
 def getOpenCCConverter(converter_type: str = "t2s"):
     converter = opencc.OpenCC(converter_type)
@@ -119,11 +120,10 @@ def keywordExtracting(
         raise Exception("Unknown keyword extraction method: %s" % method)
 
 
-
 ################################BILIBILI QUERY DATA MODELS######################
 
 
-#@reloading
+# @reloading
 class queryForm(pydantic.BaseModel):
     query: str  # required?
     page_size: Union[int, None] = None
@@ -132,36 +132,44 @@ class queryForm(pydantic.BaseModel):
     # you are going to inherit this.
 
     @property
-    def query_for_search(self): # make sure the preprocessing is only called once. really?
+    def query_for_search(
+        self,
+    ):  # make sure the preprocessing is only called once. really?
         if self.query_for_search_cached is None:
             query = self.query
             self.query_for_search_cached = textPreprocessing(query)
         return self.query_for_search_cached
 
-#@reloading
+
+# @reloading
 class searchVideoForm(queryForm):
     iterate: bool = False
     params: dict = {}  # let's just see what you've got here.
 
+
 from bilibili_api.user import VideoOrder
-#@reloading
+
+# @reloading
 class searchRegisteredVideoForm(queryForm):
     tid: int = 0
     dedeuserid: Union[list[str], str, None] = None
     videoOrder: VideoOrder = VideoOrder.PUBDATE
 
-#@reloading
+
+# @reloading
 class searchUserVideoForm(searchRegisteredVideoForm):
     dedeuserid: str = "397424026"
     method: Literal["online", "bm25"] = "online"
     use_credential: bool = False
 
-#@reloading
+
+# @reloading
 class registerUserVideoForm(pydantic.BaseModel):
     bvid: str
     dedeuserid: str
     is_mine: bool = False
     visible: bool = False
+
 
 ################################BILIBILI QUERY DATA MODELS######################
 
@@ -622,9 +630,10 @@ def getUserVideos(
         time.sleep(sleep)
         pn += 1
 
+
 # cannot resolve 217?
 def resolveSubTidsFromTid(tid: int):
-    if type(tid)!= int:
+    if type(tid) != int:
         tid = int(tid)
     MMTM = getMajorMinorTopicMappings()
     allTids = [t for t in MMTM.keys() if type(t) == int]
@@ -988,28 +997,36 @@ def searchAndRegisterVideos(
         # )
         yield bilibiliVideo
 
-def refresh_latest_video_of_user(uid:int): # must be online.
-    form =searchUserVideoForm()
-    dmethod = "online",
-    tid = 0,
-    query = "",
-    dedeuserid = uid)
+
+# @reloading
+def getVideoInfosFromVideoGenerator(vgen):
+    vlist = []
+    for v in vgen:
+        if type(v) == BilibiliVideo:
+            vlist.append(v.videoInfoExtractor())
+    return vlist
+
+
+def refresh_latest_video_of_user(uid: int):  # must be online.
+    form = searchUserVideoForm(method="online", tid=0, query="", dedeuserid=str(uid))
     searchUserVideos(
-            form.query_for_search,
-            form.tid,
-            form.dedeuserid,
-            form.method,
-            form.use_credential,
-            form.videoOrder,
-            form.page_num,
-            default(form.page_size, 30),
-        )
+        form.query_for_search,
+        form.tid,
+        form.dedeuserid,
+        form.method,
+        form.use_credential,
+        form.videoOrder,
+        form.page_num,
+        default(form.page_size, 30),
+    )
+    videoInfos = getVideoInfosFromVideoGenerator(vgen)
+
 
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
     check_interval=datetime.timedelta(hours=1),
     sleep: int = 2,
-    target_user_uids :list[int]= [397424026]
+    target_user_uids: list[int] = [397424026],
 ):
     for uid in target_user_uids:
         try:
@@ -1017,6 +1034,7 @@ def refresh_status(
             time.sleep(sleep)
         except:
             import traceback
+
             traceback.print_exc()
             print(f"Failed to refresh latest video status of user {uid}")
     # what to do? just select and update?
@@ -1089,14 +1107,6 @@ def bilibiliRecommendationServer(
         schedule.run_pending()
         return welcome_message
 
-    #@reloading
-    def getVideoInfosFromVideoGenerator(vgen):
-        vlist = []
-        for v in vgen:
-            if type(v) == BilibiliVideo:
-                vlist.append(v.videoInfoExtractor())
-        return vlist
-
     # just asking. post or get?
     @app.post("/searchVideos")  # what do you want to have? all fields?
     # #@reloading
@@ -1117,6 +1127,7 @@ def bilibiliRecommendationServer(
         )
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
+
     @app.post("/searchRegisteredVideos")
     # #@reloading
     def search_registered_videos(form: searchRegisteredVideoForm):
@@ -1150,7 +1161,6 @@ def bilibiliRecommendationServer(
         )
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
-
 
     @app.post("/registerUserVideo")
     # #@reloading
