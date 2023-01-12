@@ -63,7 +63,7 @@ def OnlineProcessor(
                 # usually we want to make video short.
                 # mode: up/down
 
-                def tuneVideoSpeedToBeat()
+                def tuneVideoSpeedToBeat(video_phase, music_phase,mode)
 
                 music_beat_duration = ... # get from 
 
