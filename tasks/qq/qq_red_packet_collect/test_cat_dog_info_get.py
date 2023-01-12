@@ -14,7 +14,7 @@ def test_cats_and_dogs_get_video_names():
         print("CATEGORY?",category)
         print("_"*20)
 
-        responses = getCatOrDogAd(category,method='bm25')
+        responses = getCatOrDogAd(category,method='bm25') # it does not update that often. use online search instead?
         for info in responses:
             title = info['title']
             print("VIDEO?",title)
