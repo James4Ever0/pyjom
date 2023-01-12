@@ -941,7 +941,7 @@ def searchAndRegisterVideos(
         yield bilibiliVideo
 
 def refresh_latest_video_of_user(uid:int):
-
+    ...
 
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
@@ -951,7 +951,8 @@ def refresh_status(
 ):
     for uid in target_user_uids:
         try:
-            refresh_latest_video_of_user(uid)
+            success = refresh_latest_video_of_user(uid)
+            assert success
         except:
             import traceback
             traceback.print_exc()
