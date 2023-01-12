@@ -64,25 +64,29 @@ def OnlineProcessor(
                 # mode: up/down
                 from typing import Literal
 
-                def tuneVideoSpeedToBeat(video_phase:float, music_phase:float,mode:Literal['speedup','slowdown']):
-                    speed = music_phase/video_phase
-                    speed_min,speed_max = 1,2
+                def tuneVideoSpeedToBeat(
+                    video_phase: float,
+                    music_phase: float,
+                    mode: Literal["speedup", "slowdown"],
+                ):
+                    speed = music_phase / video_phase
+                    speed_min, speed_max = 1, 2
                     if mode == "slowdown":
-                        speed_min/=2
-                        speed_max/=2
+                        speed_min /= 2
+                        speed_max /= 2
                     while True:
                         if mode in ["speedup", "slowdown"]:
-                            if speed<speed_min:
-                                speed*=2
-                                return 
-                            elif speed >1:
-                                speed /=2
+                            if speed < speed_min:
+                                speed *= 2
+                                return
+                            elif speed > speed_max:
+                                speed /= 2
                             else:
                                 return speed
                         else:
                             raise Exception("Unknown speed change mode: %s" % mode)
 
-                music_beat_duration = ... # get from 
+                music_beat_duration = ...  # get from
 
                 valid_video = corruptVideoFilter
 
@@ -122,6 +126,7 @@ def OnlineProcessor(
                             ]  # you must use some random temp file path...
                             # use subprocess?
                             import subprocess
+
                             r = subprocess.run(cmd)
                             success = 0 == r.returncode
                     return videoValid, videoDuration, success
