@@ -946,7 +946,7 @@ def refresh_latest_video_of_user(uid:int): # must be online.
     tid = 0
     query = ""
     videoOrder = 
-    page_num = 
+    page_num = 1
     page_size = 30
 
 def refresh_status(
