@@ -93,6 +93,7 @@ def OnlineProcessor(
                 speed_change = tuneVideoSpeedToBeat(video_duration, music_beat_duration,mode=speed_change_mode)
 
                 valid_video = corruptVideoFilter(local_video_location)
+                if valid_video:
 
                 hard_limit = 3.5
 
