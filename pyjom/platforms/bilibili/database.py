@@ -941,7 +941,8 @@ def searchAndRegisterVideos(
         yield bilibiliVideo
 
 def refresh_latest_video_of_user(uid:int): # must be online.
-    ...
+    method = "online",
+    
 
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
