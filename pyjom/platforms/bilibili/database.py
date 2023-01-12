@@ -1153,18 +1153,7 @@ def bilibiliRecommendationServer(
     # #@reloading
     def search_user_videos(form: searchUserVideoForm):
         schedule.run_pending()
-
-        vgen = searchUserVideos(
-            form.query_for_search,
-            form.tid,
-            form.dedeuserid,
-            form.method,
-            form.use_credential,
-            form.videoOrder,
-            form.page_num,
-            default(form.page_size, 30),
-        )
-        videoInfos = getVideoInfosFromVideoGenerator(vgen)
+        videoInfos = searchVideosByForm(form)
         return videoInfos
 
     @app.post("/registerUserVideo")
