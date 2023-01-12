@@ -68,14 +68,15 @@ bash_exec = "bash"
 
 launchList = [
     # launch billibili recommendation server
-    [
-        [
-            os.path.join(pyjom_tests, "bilibili_video_recommendation_server"),
-            python3_exec,
-            "test.py",
-        ],
-        {},
-    ],
+    # do this in qq task.
+    # [
+    #     [
+    #         os.path.join(pyjom_tests, "bilibili_video_recommendation_server"),
+    #         python3_exec,
+    #         "test.py",
+    #     ],
+    #     {},
+    # ],
     # launch qq cqhttp
     [[os.path.join(pyjom_tests, "qq_go_cqhttp"), bash_exec, "launch.sh"], {}],
     # make sure milvus is running.
