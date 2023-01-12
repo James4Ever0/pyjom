@@ -952,6 +952,7 @@ def refresh_status(
     for uid in target_user_uids:
         try:
             refresh_latest_video_of_user(uid)
+            time.sleep(sleep)
         except:
             import traceback
             traceback.print_exc()
