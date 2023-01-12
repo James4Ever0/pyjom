@@ -1009,7 +1009,7 @@ def getVideoInfosFromVideoGenerator(vgen):
 
 def refresh_latest_video_of_user(uid: int):  # must be online.
     form = searchUserVideoForm(method="online", tid=0, query="", dedeuserid=str(uid))
-    searchUserVideos(
+    vgen = searchUserVideos(
         form.query_for_search,
         form.tid,
         form.dedeuserid,
