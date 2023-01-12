@@ -7,6 +7,13 @@ from lazero.utils.json import jsonify
 # you'd better mimic the video that you have never recommend, and these audience have never seen before.
 import time
 
+
+def default(value, default_, isInstance=lambda v: v in [..., None]):
+    if isInstance(value):
+        return default_
+    return value
+
+
 import datetime
 from typing import Union, Literal
 from functools import lru_cache
@@ -1077,11 +1084,6 @@ def getBilibiliVideoDatabaseCreateTablesAndRefreshStatus():
 
 # utils.
 
-
-def default(value, default_, isInstance=lambda v: v in [..., None]):
-    if isInstance(value):
-        return default_
-    return value
 
 
 # somewhere here:
