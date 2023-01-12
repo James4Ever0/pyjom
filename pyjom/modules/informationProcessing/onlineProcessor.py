@@ -86,18 +86,18 @@ def OnlineProcessor(
                             raise Exception("Unknown speed change mode: %s" % mode)
                 
                 # TODO: tune video speed to match music phase
-                valid_video = corruptVideoFilter(local_video_location)
-                if not valid_video:
-                    continue
+                # valid_video = corruptVideoFilter(local_video_location)
+                # if not valid_video:
+                #     continue
 
-                video_duration = get_duration(local_video_location)
-                music_beat_duration = ...  # get from redis!
+                # video_duration = get_duration(local_video_location)
+                # music_beat_duration = ...  # get from redis!
 
-                speed_change_mode = "speedup"
+                # speed_change_mode = "speedup"
 
-                speed_change = tuneVideoSpeedToBeat(video_duration, music_beat_duration,mode=speed_change_mode)
+                # speed_change = tuneVideoSpeedToBeat(video_duration, music_beat_duration,mode=speed_change_mode)
 
-                # now change the damn speed of video. replace the original video.
+                # # now change the damn speed of video. replace the original video.
 
                 hard_limit = 3.5
 
