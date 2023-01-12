@@ -12,6 +12,7 @@ result = baidu.search(file=image)
 # breakpoint()
 # you want to use phash, width, height for this.
 import requests
+SLEEP= 1
 for elem in result.raw:
     elem = elem.__dict__
     # print(elem)
@@ -24,7 +25,7 @@ for elem in result.raw:
     import time
     print(thumbnail, simi, title)
     # print(thumbnail, simi, title, ajaxUrl)
-    time.sleep(3) # wait too long?
+    time.sleep(SLEEP) # wait too long?
     r = requests.get(ajaxUrl)
     myJson = r.json()
     # from lazero.filesystem.io import writeJsonObjectToFile
