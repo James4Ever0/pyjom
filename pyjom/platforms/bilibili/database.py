@@ -1063,6 +1063,25 @@ def bilibiliRecommendationServer(
         iterate: bool = False
         params: dict = {}  # let's just see what you've got here.
 
+
+    #@reloading
+    class searchRegisteredVideoForm(queryForm):
+        tid: int = 0
+        dedeuserid: Union[list[str], str, None] = None
+        videoOrder: VideoOrder = VideoOrder.PUBDATE
+
+    #@reloading
+    class searchUserVideoForm(searchRegisteredVideoForm):
+        dedeuserid: str = "397424026"
+        method: Literal["online", "bm25"] = "online"
+        use_credential: bool = False
+
+    #@reloading
+    class registerUserVideoForm(pydantic.BaseModel):
+        bvid: str
+        dedeuserid: str
+        is_mine: bool = False
+        visible: bool = False
     #@reloading
     def getVideoInfosFromVideoGenerator(vgen):
         vlist = []
@@ -1091,13 +1110,6 @@ def bilibiliRecommendationServer(
         )
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
-
-    #@reloading
-    class searchRegisteredVideoForm(queryForm):
-        tid: int = 0
-        dedeuserid: Union[list[str], str, None] = None
-        videoOrder: VideoOrder = VideoOrder.PUBDATE
-
     @app.post("/searchRegisteredVideos")
     # #@reloading
     def search_registered_videos(form: searchRegisteredVideoForm):
@@ -1113,12 +1125,6 @@ def bilibiliRecommendationServer(
         )
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
-
-    #@reloading
-    class searchUserVideoForm(searchRegisteredVideoForm):
-        dedeuserid: str = "397424026"
-        method: Literal["online", "bm25"] = "online"
-        use_credential: bool = False
 
     @app.post("/searchUserVideos")
     # #@reloading
@@ -1138,12 +1144,6 @@ def bilibiliRecommendationServer(
         videoInfos = getVideoInfosFromVideoGenerator(vgen)
         return videoInfos
 
-    #@reloading
-    class registerUserVideoForm(pydantic.BaseModel):
-        bvid: str
-        dedeuserid: str
-        is_mine: bool = False
-        visible: bool = False
 
     @app.post("/registerUserVideo")
     # #@reloading
