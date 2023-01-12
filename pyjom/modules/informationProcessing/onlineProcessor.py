@@ -75,8 +75,7 @@ def OnlineProcessor(
                                 speed /=2
                             else:
                                 return speed
-                    eluif video_phase >= music_phase/2
-                        if mode == "slowdown":
+                        elif mode == "slowdown":
                             ...
                         else:
                             ...
