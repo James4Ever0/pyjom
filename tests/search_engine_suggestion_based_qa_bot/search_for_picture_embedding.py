@@ -34,6 +34,7 @@ for elem in result.raw:
     try:
         from parse_baidu_search_ajax import getBaiduImageSearchAjaxInfoParsed
         title_some, url_meta_some= getBaiduImageSearchAjaxInfoParsed(myJson, debug=True)
+        # changed again?
     except:
         import traceback
         traceback.print_exc()
