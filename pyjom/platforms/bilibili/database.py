@@ -940,14 +940,14 @@ def searchAndRegisterVideos(
         # )
         yield bilibiliVideo
 
-def refresh_latest_video_of_user(uid:int):
+def refresh_latest_video_of_user(uid:int): # must be online.
     ...
 
 def refresh_status(
     grace_period=datetime.timedelta(days=1),
     check_interval=datetime.timedelta(hours=1),
     sleep: int = 2,
-    target_user_uids :list[int]= []
+    target_user_uids :list[int]= [397424026]
 ):
     for uid in target_user_uids:
         try:
