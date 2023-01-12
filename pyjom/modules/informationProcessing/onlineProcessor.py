@@ -69,7 +69,7 @@ def OnlineProcessor(
                         if mode == "up":
                             return 
                         else:
-                    else:
+                    eluif video_phase <
                         if mode == "up":
                             ...
                         else:
