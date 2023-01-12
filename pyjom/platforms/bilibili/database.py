@@ -951,8 +951,7 @@ def refresh_status(
 ):
     for uid in target_user_uids:
         try:
-            success = refresh_latest_video_of_user(uid)
-            assert success
+            refresh_latest_video_of_user(uid)
         except:
             import traceback
             traceback.print_exc()
