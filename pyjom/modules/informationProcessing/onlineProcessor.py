@@ -63,7 +63,7 @@ def OnlineProcessor(
                 hard_limit = 3.5
 
                 remedyDurationRange = {
-                    "min": 1,
+                    "min": 2,
                     "max": hard_limit,
                     "min_target": hard_limit,
                 }  # targets in this range can multiply by some factors, looping forward and backward to get gif.
