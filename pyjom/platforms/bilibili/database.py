@@ -26,6 +26,7 @@ import opencc
 import jieba.analyse as ana
 import progressbar
 
+import pydantic
 
 @lru_cache(maxsize=4)
 def getOpenCCConverter(converter_type: str = "t2s"):
@@ -116,6 +117,53 @@ def keywordExtracting(
         return tags
     else:
         raise Exception("Unknown keyword extraction method: %s" % method)
+
+
+
+################################BILIBILI QUERY DATA MODELS######################
+
+
+#@reloading
+class queryForm(pydantic.BaseModel):
+    query: str  # required?
+    page_size: Union[int, None] = None
+    page_num: int = 1
+    query_for_search_cached: Union[str, None] = None
+    # you are going to inherit this.
+
+    @property
+    def query_for_search(self): # make sure the preprocessing is only called once. really?
+        if self.query_for_search_cached is None:
+            query = self.query
+            self.query_for_search_cached = textPreprocessing(query)
+        return self.query_for_search_cached
+
+#@reloading
+class searchVideoForm(queryForm):
+    iterate: bool = False
+    params: dict = {}  # let's just see what you've got here.
+
+
+#@reloading
+class searchRegisteredVideoForm(queryForm):
+    tid: int = 0
+    dedeuserid: Union[list[str], str, None] = None
+    videoOrder: VideoOrder = VideoOrder.PUBDATE
+
+#@reloading
+class searchUserVideoForm(searchRegisteredVideoForm):
+    dedeuserid: str = "397424026"
+    method: Literal["online", "bm25"] = "online"
+    use_credential: bool = False
+
+#@reloading
+class registerUserVideoForm(pydantic.BaseModel):
+    bvid: str
+    dedeuserid: str
+    is_mine: bool = False
+    visible: bool = False
+
+################################BILIBILI QUERY DATA MODELS######################
 
 
 # from pyjom.platforms.bilibili.searchDataParser import parseSearchVideoResult # but you never use this shit.
