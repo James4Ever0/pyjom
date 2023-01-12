@@ -78,9 +78,7 @@ def OnlineProcessor(
                         elif mode == "slowdown":
                             ...
                         else:
-                            raise Exception("Unknown speedup mode: %s" % mode)
-                    return speed
-
+                            raise Exception("Unknown speed change mode: %s" % mode)
 
                 music_beat_duration = ... # get from 
 
