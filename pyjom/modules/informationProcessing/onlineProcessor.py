@@ -78,7 +78,6 @@ def OnlineProcessor(
                         if mode in ["speedup", "slowdown"]:
                             if speed < speed_min:
                                 speed *= 2
-                                return
                             elif speed > speed_max:
                                 speed /= 2
                             else:
