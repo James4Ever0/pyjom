@@ -1,7 +1,8 @@
-# * * * * * /usr/bin/python3 /root/Desktop/works/pyjom/tests/download_sections_video_portion_partial_download_youtube_yt_dlp_bilibili/cron_update_cookies_stored_under_root_home.py
+# 0 * * * * /usr/bin/python3 /root/Desktop/works/pyjom/tests/download_sections_video_portion_partial_download_youtube_yt_dlp_bilibili/cron_update_cookies_stored_under_root_home.py
 
 import os
 import shutil
+
 cookies_path = "/root/.browser_cookies_exported"
 
 if not (os.path.exists(cookies_path) or os.path.isdir(cookies_path)):
@@ -12,3 +13,5 @@ if not (os.path.exists(cookies_path) or os.path.isdir(cookies_path)):
     elif os.path.islink(cookies_path):
         os.unlink(cookies_path)
     os.mkdir(cookies_path)
+
+import yt-dlp
