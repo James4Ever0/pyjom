@@ -2,7 +2,7 @@
 #
 
 URL="https://www.bilibili.com/video/BV1Cg411E7NF" #苏打baka 魔改机箱 合集
-# 合集视频 用bilibili_api 或者
+# 合集视频 用bilibili_api 或者直接网页parse即可
 
 # it has multiple videos. what to do?
 # --force-keyframes-at-cuts
