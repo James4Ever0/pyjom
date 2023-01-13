@@ -36,8 +36,8 @@ windows:
           - cd tasks/qq/qq_red_packet_collect/textfilter 
           - bash launch.sh
       - shell_command: # image dog/cat recognition server
-          - cd 
-          - 
+          - cd tests/bezier_paddlehub_dogcat_detector_serving
+          - python3 server.py
       - shell_command:
           - cd tests/bilibili_video_recommendation_server
           - python3 test.py
