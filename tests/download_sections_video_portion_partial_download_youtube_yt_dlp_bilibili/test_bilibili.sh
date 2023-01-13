@@ -10,4 +10,5 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 yt-dlp  --write-info-json  --write-playlist-metafiles --skip-download "$URL" # this will get metadata main playlist and every video in the playlist in separate json files.
 # this is one of the video in that playlist. "https://www.bilibili.com/video/BV1Fs411k7e9?p=1
 
+# you can get comments with this tool.
 # download-sections can be used multiple times?
