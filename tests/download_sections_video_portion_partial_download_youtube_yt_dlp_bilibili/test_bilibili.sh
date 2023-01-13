@@ -9,6 +9,7 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 # 也可以直接网页parse
 
 # executing this you will get "subtitle" in "danmaku" as language, in xml format.
+# 对于海量弹幕的
 # yt-dlp --skip-download --list-subs -I 1 "https://www.bilibili.com/video/BV1Fs411k7e9"
 
 # URL="https://www.bilibili.com/video/BV1Cg411E7NF" #苏打baka 魔改机箱 合集
