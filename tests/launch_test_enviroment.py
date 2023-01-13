@@ -62,7 +62,7 @@ pyjom_externals = os.path.join(pyjom_directory, "externals")
 keepalive_bin = '/usr/local/bin/keepalive'
 
 # interpreters
-node_exec = "node"
+node_exec = "/usr/bin/node"
 python3_exec = "python3"
 bash_exec = "bash"
 
