@@ -15,4 +15,4 @@ if not (os.path.exists(cookies_path) or os.path.isdir(cookies_path)):
     os.mkdir(cookies_path)
 
 import yt_dlp
-yt_dlp.cookies.
+cookies = yt_dlp.cookies.extract_cookies_from_browser(browser_name)
