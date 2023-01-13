@@ -10,3 +10,4 @@ if not os.path.isdir(cookies_path):
         shutil.rmtree(cookies_path)
     else:
         os.unlink(cookies_path)
+    os.mkdir(cookies_path)
