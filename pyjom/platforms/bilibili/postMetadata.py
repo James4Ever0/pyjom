@@ -510,4 +510,5 @@ def getBilibiliPostMetadataForDogCat(
         bgmCacheSetName=bgmCacheSetName,
         bgmCacheAutoPurge=bgmCacheAutoPurge,
         customParaphraser = customParaphraser,
+        genericTids=genericTids # cannot used for upload tid specification.
     )
