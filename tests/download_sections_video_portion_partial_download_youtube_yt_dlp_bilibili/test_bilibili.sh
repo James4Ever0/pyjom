@@ -11,5 +11,5 @@ yt-dlp  --write-info-json  --write-playlist-metafiles --skip-download "$URL" # t
 # this is one of the video in that playlist. "https://www.bilibili.com/video/BV1Fs411k7e9?p=1
 
 # you can get comments with this tool.
-yt-dlp --write-comments 
+yt-dlp --write-comments -dump-single-json 
 # download-sections can be used multiple times?
