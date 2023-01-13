@@ -90,7 +90,7 @@ def checkIsCatOrDogImage(
         # nparr = np.fromstring(img_bytes, np.uint8)
         # img_np = cv2.imdecode(nparr, flags=1)  # cv2.IMREAD_COLOR in OpenCV 3.1
         # np_array_bytes = numpy_serializer.to_bytes(img_np)
-        # api_url = f"http://localhost:{port}/{endpoint}"
+        api_url = f"http://localhost:{port}/{endpoint}"
         params = dict(isBytes=False)
         # params = dict(isBytes=True)
         before_request = time.time()
