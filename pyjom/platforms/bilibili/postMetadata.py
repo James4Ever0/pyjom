@@ -145,7 +145,7 @@ def getBilibiliPostMetadata(
     getMetatopic={},
     bgmCacheSetName: Union[str, None] = "bilibili_cached_bgm_set",
     getTids={},  # these two are not specified here.
-    genericTids:list[]
+    genericTids:list[int]=[],
     orders=[
         BSP.all.order.最多点击,
         BSP.all.order.最多收藏,
