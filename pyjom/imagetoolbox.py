@@ -744,6 +744,8 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                     image = image.decode(encoding)  # fuck?
                     # read image from path, url
                     if image.startswith('http'):
+                        import requests
+                        image = requests.get(image).content
                         image = 
                     image = cv2.imread(image)
                 else:
