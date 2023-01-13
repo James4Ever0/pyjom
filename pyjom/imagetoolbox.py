@@ -726,6 +726,7 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
         skew: float = -0.4986098769473948,
         dog_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
         cat_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
+        download_timeout:int=2,
     ):
         try:
             lock = redis_lock.Lock(connection, name=lockName,expire = expire)
