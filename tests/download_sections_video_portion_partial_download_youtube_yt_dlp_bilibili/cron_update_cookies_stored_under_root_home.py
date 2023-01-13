@@ -5,3 +5,6 @@ cookies_path = "/root/.browser_cookies_exported"
 if not os.path.isdir(cookies_path):
     if os.path.isfile(cookies_path):
         os.remove(cookies_path)
+    elif os.path.isdir()
+    else:
+        os.unlink(cookies_path)
