@@ -728,6 +728,8 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
         cat_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
         download_timeout:int=2,
     ):
+        detections = [] # nothing good.
+
         try:
             lock = redis_lock.Lock(connection, name=lockName,expire = expire)
             if lock.acquire(blocking=True,timeout = timeout):
@@ -771,7 +773,6 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
         except:
             import traceback
             traceback.print_exc()
-            detections = [] # nothing good.
         if debug:
             print("DETECTIONS?")
             print(detections)
