@@ -2,6 +2,11 @@
 
 # disable that 复读机 plugin.
 
+import os
+
+os.environ['HTTP_PROXY'] = ""
+os.environ['HTTPS_PROXY'] = ""
+
 # shall you analyze the logs/redPacketLog_*.log to get topics from groups and individuals.
 from chat_local import *
 from adtools import sendCatOrDogAdToQQGroup, checkCatOrDog, makeCatOrDogConnections
