@@ -13,8 +13,12 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 # premium?
 # this feature is awesome! how to extract cookies programmatically from browser?
 # Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp 
+
 # cookies = yt_dlp.cookies.extract_cookies_from_browser(BROWSER_NAME) -> YourubeDLCookirJar
-# cookies.save(OUTPUT_FILE_PATH)
+
+# save as Netscape HTTP Cookie File.
+# cookies.save(OUTPUT_FILE_PATH) 
+
 yt-dlp --download-sections "*0:05:00-0:06:30" --playlist-items "1" --cookies-from-browser firefox "$URL" # pass cookies.
 
 # just want metadata?
