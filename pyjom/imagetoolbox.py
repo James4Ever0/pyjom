@@ -743,6 +743,8 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                 if not isBytes:
                     image = image.decode(encoding)  # fuck?
                     # read image from path, url
+                    if image.startswith('http'):
+                        image = 
                     image = cv2.imread(image)
                 else:
                     image = numpy_serializer.from_bytes(image)
