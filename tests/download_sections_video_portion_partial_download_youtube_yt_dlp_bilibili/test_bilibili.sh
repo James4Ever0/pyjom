@@ -12,7 +12,7 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 
 # premium?
 # Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp 
-# yt-dlp --download-sections "*0:05:00-0:06:30" --playlist-items "1" "$URL" # pass cookies.
+yt-dlp --download-sections "*0:05:00-0:06:30" --playlist-items "1" --cookies-from-browser firefox "$URL" # pass cookies.
 
 # just want metadata?
 # if you want title for each video in playlist, you just get it from elsewhere or parse the damn output filename (slow, man!)
