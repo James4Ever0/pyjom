@@ -49,7 +49,7 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 
 # yt-dlp --download-sections "*0:04:50-0:05:40" --download-sections "*0:05:50-0:06:40" --playlist-items "1" --cookies-from-browser firefox -o "%(uploader_id)s-%(id)s-%(title)s-%(autonumber)s.%(ext)s" "$URL" # pass cookies.
 
-# since we have cron now, no need to do the old-school thing.
+# since we have cron job now, no need to do the old-school thing.
 yt-dlp --download-sections "*0:04:50-0:05:40" --download-sections "*0:05:50-0:06:40" --playlist-items "1" --cookies /root/.browser_cookies_exported/firefox.cookies -o "%(uploader_id)s-%(id)s-%(title)s-%(autonumber)s.%(ext)s" "$URL" # pass cookies in different way
 
 # like this: '2142762-BV1Fs411k7e9_p1-老戴《马克思佩恩 3》全收集流程攻略【共14期完结】 p01 EP-01-00002.mp4'
