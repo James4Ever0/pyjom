@@ -93,8 +93,10 @@ def checkIsCatOrDogImage(
         r = requests.post(
             api_url, data={"image": np_array_bytes}, timeout=timeout, params=params
         )
-
         result = r.json()
+        after_request = time.time()
+        if debug:
+            print(f"DOG/CAT SERVER REQUEST TAKING TIME: {:.3f}s")
         for species in result:
             name = species["identity"]
             if name in ["cat", "dog"]:
