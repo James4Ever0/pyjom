@@ -485,6 +485,7 @@ def getBilibiliPostMetadataForDogCat(
         "dog": dog_metatopic,
         "cat": cat_metatopic,
     }
+    # bullshit.
     getTids = {
         "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
         "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
