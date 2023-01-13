@@ -34,7 +34,9 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 # yt-dlp --download-sections "*0:05:00-0:06:30" --playlist-items "1" --cookies-from-browser firefox --force-keyframes-at-cuts "$URL" # pass cookies.
 
 # you may want to add some margin at tail (or head) if not using "--force-keyframes-at-cuts", be it 10 seconds. usually jigs happens at 5 secs. but we are careful.
-yt-dlp --download-sections "*0:05:00-0:06:40" --playlist-items "1" --cookies-from-browser firefox "$URL" # pass cookies.
+
+# yt-dlp --download-sections "*0:05:00-0:06:40" --playlist-items "1" --cookies-from-browser firefox "$URL" # pass cookies.
+
 
 
 # just want metadata?
