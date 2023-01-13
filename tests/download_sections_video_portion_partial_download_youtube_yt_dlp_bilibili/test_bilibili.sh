@@ -12,7 +12,8 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 
 # just want metadata?
 
-yt-dlp --write-description --write-playlist-metafiles --skip-download "$URL"
+# yt-dlp --write-description --write-playlist-metafiles --skip-download "$URL"
+# this seems to only have 
 
 # hey i don't want many download links. i just want title.
 # yt-dlp --write-info-json  --write-playlist-metafiles --skip-download "$URL" # this will get metadata main playlist and every video in the playlist in separate json files.
