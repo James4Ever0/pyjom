@@ -63,7 +63,7 @@ keepalive_bin = '/usr/local/bin/keepalive'
 
 # interpreters
 node_exec = "/usr/bin/node"
-python3_exec = "python3"
+python3_exec = "/usr/bin/python3"
 bash_exec = "bash"
 
 launchList = [
