@@ -16,7 +16,9 @@ os.environ["https_proxy"] = ""
 # PROXY_GROUP_SPECIALS =["☁️ 全球直连", "🌐 节点选择"]
 
 
-CLASH_CONFIG_DOWNLOAD_URL = "https://subconverter.speedupvpn.com/sub?target=clash&url=https%3A%2F%2Fjsd.cdn.zzko.cn%2Fgh%2FPawdroid%2FFree-servers%40main%2Fsub&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
+CLASH_CONFIG_DOWNLOAD_URL = "https://subconverter.speedupvpn.com/sub?target=clash&url=https%3A%2F%2Fjsd.cdn.zzko.cn%2Fgh%2FPawdroid%2FFree-servers%40main%2Fsub&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true" # change this to the direct link you sucker.
+
+
 ALL_PROXIES_LOCATION = ["proxies", "🔰 节点选择", "all"]
 PROXY_GROUP_EXCEPTIONS = ["🐟 漏网之鱼"]
 PROXY_GROUP_SPECIALS = ["🎯 全球直连", "🔰 节点选择", "♻️ 自动选择"]
