@@ -108,6 +108,7 @@ def checkIsCatOrDogImage(
         after_request = time.time()
         if debug:
             print("DOG_CAT REQ RECV",file=sys.stderr)
+            print("RESULT?", file=sys.stderr)
         if debug:
             print(f"DOG/CAT SERVER REQUEST TAKING TIME: {(after_request-before_request):.3f}s",file=sys.stderr)
         for species in result:
@@ -116,7 +117,7 @@ def checkIsCatOrDogImage(
                 conf = species["confidence"]
                 if conf > threshold:
                     if debug:
-                        print("CAT/DOG RESULT:", name,file=sys.stderr)
+                        print("CAT/DOG RESULT:", name, file=sys.stderr)
                     return name
     except:
         import traceback
