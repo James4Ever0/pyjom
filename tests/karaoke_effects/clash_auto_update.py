@@ -1,5 +1,6 @@
 import yaml
 
+# you know this source is gone for good.
 # target = "https://openit.ml/Clash.yaml"
 
 # import yaml
