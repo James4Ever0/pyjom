@@ -30,7 +30,8 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 # since we have issue playing content at tail of video, we do this.
 yt-dlp --download-sections "*0:05:00-0:06:30" --playlist-items "1" --cookies-from-browser firefox --force-keyframes-at-cuts "$URL" # pass cookies.
 
-# forcing keyframe is much slower.
+# forcing keyframe is much slower. but it produces better results.
+# you may want to spare 
 
 # just want metadata?
 # if you want title for each video in playlist, you just get it from elsewhere or parse the damn output filename (slow, man!)
