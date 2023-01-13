@@ -57,7 +57,7 @@ import time
 
 rateLimits = {}
 
-
+import sys
 def checkIsCatOrDogImage(
     image_url,
     download_timeout=2,
