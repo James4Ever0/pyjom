@@ -3,6 +3,7 @@
 import os
 import shutil
 cookies_path = "/root/.browser_cookies_exported"
+
 if not (os.path.exists(cookies_path) or os.path.isdir(cookies_path)):
     if os.path.isfile(cookies_path):
         os.remove(cookies_path)
