@@ -23,6 +23,7 @@ DIRECT_LINK = "https://github.com/Pawdroid/Free-servers/raw/main/sub"
 
 ## looking for a clash file merger.
 ## merge multiple clash files into one.
+## evil!
 
 CLASH_CONFIG_DOWNLOAD_URL = f"https://subconverter.speedupvpn.com/sub?target=clash&url={urllib.parse.quote_plus(DIRECT_LINK)}&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true" # use quote_plus since the slash is not welcomed.
 
