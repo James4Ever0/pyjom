@@ -57,7 +57,7 @@ import time
 rateLimits = {}
 
 def checkIsCatOrDogImage(
-    image_url, download_timeout=2, timeout=2, port=4675, endpoint="analyzeImage",rateLimitPeriod = 5,
+    image_url, download_timeout=2, timeout=4, port=4675, endpoint="analyzeImage",rateLimitPeriod = 5,
 threshold = 0.4
 
 ):
