@@ -11,5 +11,6 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 # this is one of the video in that playlist. "https://www.bilibili.com/video/BV1Fs411k7e9?p=1
 
 # you can get comments with this tool.
-yt-dlp --write-comments --skip-download "$URL"
+## no comments?
+yt-dlp --skip-download "$URL"
 # download-sections can be used multiple times?
