@@ -747,7 +747,10 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                         import requests
                         image = requests.get(image).content
                         image = 
-                    image = cv2.imread(image)
+                    elif os.path.exists(image):
+                        image = cv2.imread(image)
+                    else:
+                        raise Exception("image cannot be found as url or filepath:",image)
                 else:
                     image = numpy_serializer.from_bytes(image)
                 if debug:
