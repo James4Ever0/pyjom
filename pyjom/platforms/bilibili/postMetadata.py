@@ -443,6 +443,7 @@ def getBilibiliPostMetadata(
                                         mTitle = customParaphraser(mTitle)
                                         mDescription = customParaphraser(mDescription)
                                     yield cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid  # one additional return value
+                                    # the search tid is not good.
                                     clearMyLists()
         except:
             import time
