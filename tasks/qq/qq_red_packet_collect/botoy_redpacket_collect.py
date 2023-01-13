@@ -303,7 +303,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
         from botoy.parser.group import Pic
         if MsgType == MsgTypes.PicMsg:
             pic_obj = Pic(**json.loads(ctx.Content))
-            pics = ctx.Content
+            pics = pic_obj.GroupPic
             for pic in pics:
                 pic_url = pic.Url
                 catOrDogAsyncThread(str(group_id), str(sender_id),pic_url,is_image=True)
