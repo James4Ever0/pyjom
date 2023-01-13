@@ -1,7 +1,8 @@
 # 关于视频合集 分p视频的分析逻辑：
 # https://github.com/Satoing/python_bilibili_downloader/blob/master/bilibili_video.py
 
-# 解析这个接口可以得到分p或者合集的信息
+# 解析这个接口可以得到分p或者合集的信息 以及字幕信息 AI生成的字幕
+# https://api.bilibili.com/x/web-interface/view?bvid=BV1Fs411k7e9
 # https://api.bilibili.com/x/web-interface/view?bvid=BV1Cg411E7NF
 
 URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p视频
