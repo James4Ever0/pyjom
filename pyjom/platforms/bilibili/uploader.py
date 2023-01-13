@@ -421,6 +421,7 @@ def uploadVideo(
             assert code == 0  # 为什么分区暂时不可用？
             assert message == '0'
         except:
+            print("Uploading video failed")
             breakpoint()
             print()
             raise Exception('videoMultithreadUploader error: invalid response:', mresult)
