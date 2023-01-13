@@ -767,11 +767,12 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                     debug=debug,
                 )
                 lock.release()
-                return detections
+                # return detections
         except:
             import traceback
             traceback.print_exc()
-            return [] # nothing good.
+            detections = [] # nothing good.
+        return detections
 
     import uvicorn
 
