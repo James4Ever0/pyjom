@@ -418,7 +418,7 @@ def uploadVideo(
             raise Exception('videoMultithreadUploader error')
         try:
             code, message = mresult.get('code'), mresult.get('message')
-            assert code == 0  # why 
+            assert code == 0  # 为什么分区暂时不可用？
             assert message == '0'
         except:
             raise Exception('videoMultithreadUploader error: invalid response:', mresult)
