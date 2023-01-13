@@ -99,7 +99,7 @@ def checkIsCatOrDogImage(
                 conf = species["confidence"]
                 if conf > threshold:
                     if debug:
-                        print("CAT/DOG RESULT:", )
+                        print("CAT/DOG RESULT:", name,file=sys.stderr)
                     return name
     except:
         import traceback
