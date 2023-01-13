@@ -1,4 +1,4 @@
 URL="https://www.bilibili.com/video/BV1Fs411k7e9"
 # --force-keyframes-at-cuts
-yt-dlp --download-sections "" "$URL"
+yt-dlp --download-sections "*1:00:00-1:00:30" "$URL"
 # download-sections can be used multiple times?
