@@ -79,7 +79,10 @@ def checkIsCatOrDogImage(
     try:
         import requests
 
-        img_bytes = requests.get(image_url, timeout=download_timeout).content
+        img_bytes = requests.get(image_url, 
+        # timeout=download_timeout
+        # also some damn timeout. fuck.
+        ).content
         import cv2
         import numpy as np
         import numpy_serializer
