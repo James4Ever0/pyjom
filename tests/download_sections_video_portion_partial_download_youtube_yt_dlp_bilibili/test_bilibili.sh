@@ -44,7 +44,7 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 # what if we download multiple sections?
 
 # no combination? shit.
-yt-dlp --download-sections "*0:04:50-0:05:40"  --download-sections "*0:05:50-0:06:40" --playlist-items "1" --cookies-from-browser firefox -o "%(uploader_id)s-%(id)s-%(title)s-%(autonumber)s.%(ext)s" "$URL" # pass cookies.
+yt-dlp --download-sections "*0:04:50-0:05:40" --download-sections "*0:05:50-0:06:40" --playlist-items "1" --cookies-from-browser firefox -o "%(uploader_id)s-%(id)s-%(title)s-%(autonumber)s.%(ext)s" "$URL" # pass cookies.
 # like this: '2142762-BV1Fs411k7e9_p1-老戴《马克思佩恩 3》全收集流程攻略【共14期完结】 p01 EP-01-00002.mp4'
 # https://github.com/yt-dlp/yt-dlp#readme -> "OUTPUT TEMPLATE"
 # https://github.com/yt-dlp/yt-dlp/issues/4579
