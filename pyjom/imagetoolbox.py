@@ -772,6 +772,9 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
             import traceback
             traceback.print_exc()
             detections = [] # nothing good.
+        if debug:
+            print("DETECTIONS?")
+            print(detections)
         return detections
 
     import uvicorn
