@@ -14,7 +14,7 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 # this feature is awesome! how to extract cookies programmatically from browser?
 # Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp 
 
-# not working for chromium on 
+# not working for chromium on kali? (no bilibili cookie found) maybe it is relocated.
 # cookies = yt_dlp.cookies.extract_cookies_from_browser(BROWSER_NAME) -> YourubeDLCookieJar
 
 # save as Netscape HTTP Cookie File.
