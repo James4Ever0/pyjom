@@ -442,7 +442,8 @@ def getBilibiliPostMetadata(
                                     if customParaphraser:
                                         mTitle = customParaphraser(mTitle)
                                         mDescription = customParaphraser(mDescription)
-                                    yield cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, search_tid  # one additional return value
+                                    yield (cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, 
+                                    search_tid)  # one additional return value
                                     # the search tid is not good.
                                     # we must remove the generic tid.
                                     clearMyLists()
