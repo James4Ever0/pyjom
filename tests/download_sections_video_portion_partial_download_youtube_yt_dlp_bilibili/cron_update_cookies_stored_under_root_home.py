@@ -1,10 +1,12 @@
 # * * * * * /usr/bin/python3 /root/Desktop/works/pyjom/tests/download_sections_video_portion_partial_download_youtube_yt_dlp_bilibili/cron_update_cookies_stored_under_root_home.py
 
 import os
+import shutil
 cookies_path = "/root/.browser_cookies_exported"
 if not os.path.isdir(cookies_path):
     if os.path.isfile(cookies_path):
         os.remove(cookies_path)
-    elif os.path.isdir()
+    elif os.path.isdir(cookies_path):
+        shutil.rmtree(cookies_path)
     else:
         os.unlink(cookies_path)
