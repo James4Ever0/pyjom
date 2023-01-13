@@ -14,4 +14,5 @@ if not (os.path.exists(cookies_path) or os.path.isdir(cookies_path)):
         os.unlink(cookies_path)
     os.mkdir(cookies_path)
 
-import yt-dlp
+import yt_dlp
+yt_dlp.cookies.
