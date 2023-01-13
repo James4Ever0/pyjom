@@ -8,6 +8,6 @@ if not os.path.isdir(cookies_path):
         os.remove(cookies_path)
     elif os.path.isdir(cookies_path):
         shutil.rmtree(cookies_path)
-    else:
+    elif os.path.islink(cookies_path):
         os.unlink(cookies_path)
     os.mkdir(cookies_path)
