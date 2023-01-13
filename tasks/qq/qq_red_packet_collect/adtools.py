@@ -91,7 +91,7 @@ def checkIsCatOrDogImage(
         params = dict(isBytes=True)
         before_request = time.time()
         r = requests.post(
-            api_url, data={"image": np_array_bytes}, timeout=timeout, params=params
+            api_url, data={"image": np_array_bytes}, timeout=timeout, params=params, proxies=None
         )
         result = r.json()
         after_request = time.time()
