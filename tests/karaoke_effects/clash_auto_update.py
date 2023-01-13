@@ -20,7 +20,7 @@ os.environ["https_proxy"] = ""
 
 import urllib.parse
 DIRECT_LINK = ""
-CLASH_CONFIG_DOWNLOAD_URL = f"{urllib.parse.quote(DIRECT_LINK)}"
+CLASH_CONFIG_DOWNLOAD_URL = f"https://subconverter.speedupvpn.com/sub?target=clash&url={urllib.parse.quote(DIRECT_LINK)}&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
 
 
 ALL_PROXIES_LOCATION = ["proxies", "🔰 节点选择", "all"]
