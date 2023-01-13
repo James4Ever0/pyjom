@@ -6,6 +6,7 @@ import yaml
 # import requests
 import os
 
+# yes visit this site without any proxy.
 os.environ["http_proxy"] = ""
 os.environ["https_proxy"] = ""
 
