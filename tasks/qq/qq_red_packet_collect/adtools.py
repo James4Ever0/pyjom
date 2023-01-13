@@ -96,7 +96,7 @@ def checkIsCatOrDogImage(
         result = r.json()
         after_request = time.time()
         if debug:
-            print(f"DOG/CAT SERVER REQUEST TAKING TIME: {:.3f}s")
+            print(f"DOG/CAT SERVER REQUEST TAKING TIME: {(after_request-before_request):.3f}s")
         for species in result:
             name = species["identity"]
             if name in ["cat", "dog"]:
