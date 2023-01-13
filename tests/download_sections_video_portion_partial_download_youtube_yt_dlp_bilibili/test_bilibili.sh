@@ -11,7 +11,7 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 # yt-dlp --download-sections "*0:05:00-0:06:30" --playlist-items "1" "$URL" # only first video.
 
 # just want metadata?
-# if you want title for each video chapter, you just parse the 
+# if you want title for each video chapter, you just get it from elsewhere or parse the damn output 
 
 # this seems to only have video description. nothing else! not even video length.
 # yt-dlp --write-description --write-playlist-metafiles --skip-download "$URL"
