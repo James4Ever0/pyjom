@@ -45,7 +45,7 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 
 # no combination? shit.
 yt-dlp --download-sections "*0:04:50-0:05:40"  --download-sections "*0:05:50-0:06:40" --playlist-items "1" --cookies-from-browser firefox -o "%(title)s-%(autonumber)s.%(ext)s" "$URL" # pass cookies.
-# https://github.com/yt-dlp/yt-dlp#readme -> "OUTPUT TEMPLATES"
+# https://github.com/yt-dlp/yt-dlp#readme -> "OUTPUT TEMPLATE"
 # https://github.com/yt-dlp/yt-dlp/issues/4579
 
 # you better use stored cookies instead of retrieving cookies every time.
