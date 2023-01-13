@@ -19,7 +19,7 @@ os.environ["https_proxy"] = ""
 # CLASH_CONFIG_DOWNLOAD_URL = "https://subconverter.speedupvpn.com/sub?target=clash&url=https%3A%2F%2Fjsd.cdn.zzko.cn%2Fgh%2FPawdroid%2FFree-servers%40main%2Fsub&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true" # change this to the direct link you sucker.
 
 import urllib.parse
-DIRECT_LINK = ""
+DIRECT_LINK = "https://github.com/Pawdroid/Free-servers"
 CLASH_CONFIG_DOWNLOAD_URL = f"https://subconverter.speedupvpn.com/sub?target=clash&url={urllib.parse.quote(DIRECT_LINK)}&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
 
 
