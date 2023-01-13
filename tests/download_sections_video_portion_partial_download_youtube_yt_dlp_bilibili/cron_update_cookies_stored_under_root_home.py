@@ -2,4 +2,6 @@
 
 import os
 cookies_path = "/root/.browser_cookies_exported"
-if os.path.exists(cookies_path):
+if not os.path.isdir(cookies_path):
+    if os.path.isfile(cookies_path):
+        os.remove(cookies_path)
