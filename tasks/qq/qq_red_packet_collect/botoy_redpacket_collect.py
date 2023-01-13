@@ -301,6 +301,7 @@ def group(ctx: GroupMsg, groupInitReplyDelayRange=(4, 15)):
     # how to download these shits?
     try:
         if MsgType == MsgTypes.PicMsg:
+            pic_obj = Pic(**json.loads(ctx.Content))
             pics = ctx.GroupPic
             for pic in pics:
                 pic_url = pic.Url
