@@ -499,7 +499,7 @@ def getBilibiliPostMetadataForDogCat(
         "dog": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.汪星人],
         "cat": [BSP.all.tids.动物圈.tid, BSP.all.tids.动物圈.喵星人],
     }
-    genericTids = [BSP.all.tids.动物圈.tid]
+    genericTids = [BSP.all.tids.动物圈.tid] # these tids cannot be used for video posting.
     ## then the decision.
     getMetatopic = {
         key: value for key, value in getMetatopic.items() if key == dog_or_cat
