@@ -54,19 +54,27 @@ def recordQQUserTalkingToAnotherUser(
 # # this can slow me down.
 # @RateLimiter(max_calls=1, period=5,callback=rateLimitReached )
 import time
+
 rateLimits = {}
 
-def checkIsCatOrDogImage(
-    image_url, download_timeout=2, timeout=4, port=4675, endpoint="analyzeImage",rateLimitPeriod = 5,
-threshold = 0.4
 
+def checkIsCatOrDogImage(
+    image_url,
+    download_timeout=2,
+    timeout=4,
+    port=4675,
+    endpoint="analyzeImage",
+    rateLimitPeriod=5,
+    threshold=0.4,
 ):
-    lastRun = rateLimits.get("checkIsCatOrDogImage",0)
+    lastRun = rateLimits.get("checkIsCatOrDogImage", 0)
     now = time.time()
-    if now-lastRun > rateLimitPeriod:
+    if now - lastRun > rateLimitPeriod:
         rateLimits["checkIsCatOrDogImage"] = now
     else:
-        raise Exception(f"Rate limit exceeded. One request per {rateLimitPeriod} seconds.")
+        raise Exception(
+            f"Rate limit exceeded. One request per {rateLimitPeriod} seconds."
+        )
     try:
         import requests
 
@@ -85,13 +93,14 @@ threshold = 0.4
         )
         result = r.json()
         for species in result:
-            name = species['identity']
-            if name in ['cat','dog']:
-                conf = species['confidence']
+            name = species["identity"]
+            if name in ["cat", "dog"]:
+                conf = species["confidence"]
                 if conf > threshold:
                     return name
     except:
         import traceback
+
         traceback.print_exc()
         print("Error when downloading and detecting image content if is cat or dog")
     return None
