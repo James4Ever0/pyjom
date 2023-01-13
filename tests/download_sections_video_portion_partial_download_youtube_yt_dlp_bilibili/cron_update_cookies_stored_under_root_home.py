@@ -15,4 +15,10 @@ if not (os.path.exists(cookies_path) or os.path.isdir(cookies_path)):
     os.mkdir(cookies_path)
 
 import yt_dlp
-cookies = yt_dlp.cookies.extract_cookies_from_browser(browser_name)
+
+browser_names = ["firefox","chromium"]
+
+for browser_name in browser_names:
+    cookies = yt_dlp.cookies.extract_cookies_from_browser(browser_name)
+    filepath = 
+    cookies.save()
