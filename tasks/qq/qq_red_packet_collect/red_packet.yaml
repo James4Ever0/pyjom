@@ -35,6 +35,7 @@ windows:
       - shell_command: # text censor api
           - cd tasks/qq/qq_red_packet_collect/textfilter 
           - bash launch.sh
+      - shell_command: # image dog/cat recognition server
       - shell_command:
           - cd tests/bilibili_video_recommendation_server
           - python3 test.py
