@@ -20,5 +20,5 @@ browser_names = ["firefox","chromium"]
 
 for browser_name in browser_names:
     cookies = yt_dlp.cookies.extract_cookies_from_browser(browser_name)
-    filepath = os.path.join(cookies_path,"{}.cookie")
+    filepath = os.path.join(cookies_path,f"{browser_name}.cookies")
     cookies.save()
