@@ -89,9 +89,11 @@ def checkIsCatOrDogImage(
         np_array_bytes = numpy_serializer.to_bytes(img_np)
         api_url = f"http://localhost:{port}/{endpoint}"
         params = dict(isBytes=True)
+        before_request = time.time()
         r = requests.post(
             api_url, data={"image": np_array_bytes}, timeout=timeout, params=params
         )
+
         result = r.json()
         for species in result:
             name = species["identity"]
