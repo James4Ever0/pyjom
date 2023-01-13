@@ -45,7 +45,7 @@ URL="https://www.bilibili.com/video/BV1Fs411k7e9" #老戴 马克思佩恩 分p�
 
 # no combination? shit.
 
-# 
+# if not at the very tail, other tails can be better than the last tail. but it is just my guess. better to keep all these margins!
 
 yt-dlp --download-sections "*0:04:50-0:05:40" --download-sections "*0:05:50-0:06:40" --playlist-items "1" --cookies-from-browser firefox -o "%(uploader_id)s-%(id)s-%(title)s-%(autonumber)s.%(ext)s" "$URL" # pass cookies.
 
