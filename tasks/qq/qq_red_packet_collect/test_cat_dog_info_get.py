@@ -1,5 +1,5 @@
-from adtools import getCatOrDogAd
 import random
+from adtools import getCatOrDogAd
 
 def test_init():
     cat_or_dog='cat'
@@ -11,8 +11,9 @@ def test_init():
 
 def test_cats_and_dogs_get_video_names():
     for category in ['cat','dog']:
-        print("CATEGORY?",category)
         print("_"*20)
+        print("CATEGORY?",category)
+        print()
 
         responses = getCatOrDogAd(category,method='bm25') # it does not update that often. use online search instead? (fill keywords in description)
         for info in responses:
