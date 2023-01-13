@@ -95,7 +95,7 @@ def checkIsCatOrDogImage(
         # params = dict(isBytes=True)
         before_request = time.time()
         if debug:
-            print("DOG_CAT REQ SENT")
+            print("DOG_CAT REQ SENT",file=sys.stderr)
         r = requests.post(
             api_url, 
             data={"image":image_url}, 
@@ -107,9 +107,9 @@ def checkIsCatOrDogImage(
         result = r.json()
         after_request = time.time()
         if debug:
-            print("DOG_CAT REQ RECV")
+            print("DOG_CAT REQ RECV",file=sys.stderr)
         if debug:
-            print(f"DOG/CAT SERVER REQUEST TAKING TIME: {(after_request-before_request):.3f}s")
+            print(f"DOG/CAT SERVER REQUEST TAKING TIME: {(after_request-before_request):.3f}s",file=sys.stderr)
         for species in result:
             name = species["identity"]
             if name in ["cat", "dog"]:
