@@ -66,6 +66,7 @@ def checkIsCatOrDogImage(
     endpoint="analyzeImage",
     rateLimitPeriod=5,
     threshold=0.4,
+    debug=True
 ):
     lastRun = rateLimits.get("checkIsCatOrDogImage", 0)
     now = time.time()
@@ -97,6 +98,8 @@ def checkIsCatOrDogImage(
             if name in ["cat", "dog"]:
                 conf = species["confidence"]
                 if conf > threshold:
+                    if debug:
+                        print("CAT/DOG RESULT:", )
                     return name
     except:
         import traceback
