@@ -79,19 +79,20 @@ def checkIsCatOrDogImage(
     try:
         import requests
 
-        img_bytes = requests.get(image_url, 
-        # timeout=download_timeout
-        # also some damn timeout. fuck.
-        ).content
-        import cv2
-        import numpy as np
-        import numpy_serializer
+        # img_bytes = requests.get(image_url, 
+        # # timeout=download_timeout
+        # # also some damn timeout. fuck.
+        # ).content
+        # import cv2
+        # import numpy as np
+        # import numpy_serializer
 
-        nparr = np.fromstring(img_bytes, np.uint8)
-        img_np = cv2.imdecode(nparr, flags=1)  # cv2.IMREAD_COLOR in OpenCV 3.1
-        np_array_bytes = numpy_serializer.to_bytes(img_np)
-        api_url = f"http://localhost:{port}/{endpoint}"
-        params = dict(isBytes=True)
+        # nparr = np.fromstring(img_bytes, np.uint8)
+        # img_np = cv2.imdecode(nparr, flags=1)  # cv2.IMREAD_COLOR in OpenCV 3.1
+        # np_array_bytes = numpy_serializer.to_bytes(img_np)
+        # api_url = f"http://localhost:{port}/{endpoint}"
+        params = dict(isBytes=False)
+        # params = dict(isBytes=True)
         before_request = time.time()
         r = requests.post(
             api_url, 
