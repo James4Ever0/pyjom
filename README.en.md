@@ -1,5 +1,11 @@
 # pyjom
 
+<p align="center">
+    <a href="https://github.com/James4Ever0/pyjom"><img alt="pyjom" src="https://visitor-badge.glitch.me/badge?page_id=James4Ever0.pyjom"></a>
+    <a href="https://github.com/James4Ever0/pyjom"><img alt="pyjom" src="https://img.shields.io/github/stars/James4Ever0/pyjom.svg"></a>
+    <a href="https://github.com/James4Ever0/pyjom/releases"><img alt="pyjom" src="https://img.shields.io/github/release/James4Ever0/pyjom.svg"></a>
+</p>
+
 #### Description
 jerk off machine in python, or in other words, "we media machine", "fully automated content producer", "the repeater", "the feedback loop", "retribution"
 

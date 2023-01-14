@@ -1,9 +1,9 @@
 # pyjom
 
 <p align="center">
-    <a href="https://github.com/kracer127/bearSG"><img alt="bearSG" src="https://visitor-badge.glitch.me/badge?page_id=kracer127.bearSG"></a>
-    <a href="https://github.com/kracer127/bearSG"><img alt="bearSG" src="https://img.shields.io/github/stars/kracer127/bearSG.svg"></a>
-    <a href="https://github.com/kracer127/bearSG/releases"><img alt="bearSG" src="https://img.shields.io/github/release/kracer127/bearSG.svg"></a>
+    <a href="https://github.com/James4Ever0/pyjom"><img alt="pyjom" src="https://visitor-badge.glitch.me/badge?page_id=James4Ever0.pyjom"></a>
+    <a href="https://github.com/James4Ever0/pyjom"><img alt="pyjom" src="https://img.shields.io/github/stars/James4Ever0/pyjom.svg"></a>
+    <a href="https://github.com/James4Ever0/pyjom/releases"><img alt="pyjom" src="https://img.shields.io/github/release/James4Ever0/pyjom.svg"></a>
 </p>
 
 [English version](./README.en.md)
