@@ -1,5 +1,11 @@
 # pyjom
 
+<p align="center">
+    <a href="https://github.com/kracer127/bearSG"><img alt="bearSG" src="https://visitor-badge.glitch.me/badge?page_id=kracer127.bearSG"></a>
+    <a href="https://github.com/kracer127/bearSG"><img alt="bearSG" src="https://img.shields.io/github/stars/kracer127/bearSG.svg"></a>
+    <a href="https://github.com/kracer127/bearSG/releases"><img alt="bearSG" src="https://img.shields.io/github/release/kracer127/bearSG.svg"></a>
+</p>
+
 [English version](./README.en.md)
 
 <p align="center">
