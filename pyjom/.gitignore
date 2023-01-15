@@ -3,5 +3,4 @@ logs
 
 # ignore big torch checkpoint files
 *.pt
-
 videotoolbox.py
