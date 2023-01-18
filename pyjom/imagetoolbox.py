@@ -761,7 +761,9 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                                     if not success:
                                         image=None
                             except:
-                                
+                                import traceback
+                                traceback.print_exc()
+                                print("error while reading visual medial file")
                         # nparr = np.fromstring(img_bytes, np.uint8)
                         # image = cv2.imdecode(nparr, flags=1)
                     elif os.path.exists(image):
