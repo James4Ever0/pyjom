@@ -763,7 +763,8 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                             except:
                                 import traceback
                                 traceback.print_exc()
-                                print("error while reading visual medial file")
+                                print("error while reading visual medial file.")
+                                print("source url:",)
                         # nparr = np.fromstring(img_bytes, np.uint8)
                         # image = cv2.imdecode(nparr, flags=1)
                     elif os.path.exists(image):
