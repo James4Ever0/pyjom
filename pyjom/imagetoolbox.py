@@ -757,7 +757,9 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                                 image = cv2.imread(filepath)
                                 if image is None:
                                     cap = cv2.VideoCapture(filepath)
-                                    image = cap
+                                    success, image = cap.read()
+                                    if not success:
+                                        image=None
                         # nparr = np.fromstring(img_bytes, np.uint8)
                         # image = cv2.imdecode(nparr, flags=1)
                     elif os.path.exists(image):
