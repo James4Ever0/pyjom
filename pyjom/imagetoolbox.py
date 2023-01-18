@@ -524,16 +524,22 @@ BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO = (
 )
 
 from pyjom.config.shared import pyjom_config
+
 # TODO: support serving and with redis lock
 from lazero.network.checker import waitForServerUp
 
-def bezierPaddleHubResnet50ImageDogCatDetectorServerChecker(port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
-    message=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO):
-    waitForServerUp(port=port, message=message
-)
+
+def bezierPaddleHubResnet50ImageDogCatDetectorServerChecker(
+    port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
+    message=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO,
+):
+    waitForServerUp(port=port, message=message)
+
+
 # fuck?
 if not pyjom_config["BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_INSTANCE"]:
     bezierPaddleHubResnet50ImageDogCatDetectorServerChecker()
+
 
 def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     image,
@@ -549,7 +555,7 @@ def bezierPaddleHubResnet50ImageDogCatDetectorClient(
     isString = type(image) == str
     import requests
 
-    url = "http://localhost:{}/{}".format(port,endpoint)
+    url = "http://localhost:{}/{}".format(port, endpoint)
     import numpy_serializer
 
     if type(image) == np.ndarray:
@@ -698,13 +704,18 @@ def bezierPaddleHubResnet50ImageDogCatDetector(
 import redis_lock
 import redis
 from pyjom.commons import commonRedisPort
-redis_connection= redis.StrictRedis(port=commonRedisPort)
+
+redis_connection = redis.StrictRedis(port=commonRedisPort)
+
 
 def bezierPaddleHubResnet50ImageDogCatDetectorServer(
     server_port=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_PORT,
     endpoint=BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_ENDPOINT,
     serverHelloMessage: str = BEZIER_PADDLE_RESNET50_IMAGE_DOG_CAT_DETECTOR_SERVER_HELLO,
-    connection:redis.Redis=redis_connection, lockName: str="bezier_paddlehub_resnet50_image_dog_cat_detector_server", timeout: float = 10, expire:float=60
+    connection: redis.Redis = redis_connection,
+    lockName: str = "bezier_paddlehub_resnet50_image_dog_cat_detector_server",
+    timeout: float = 10,
+    expire: float = 60,
 ):
 
     from fastapi import FastAPI, Body
@@ -726,13 +737,13 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
         skew: float = -0.4986098769473948,
         dog_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/dogs.txt",
         cat_label_file_path: str = "/root/Desktop/works/pyjom/tests/animals_paddlehub_classification_resnet/cats.txt",
-        download_timeout:int=2,
+        download_timeout: int = 2,
     ):
-        detections = [] # nothing good.
+        detections = []  # nothing good.
 
         try:
-            lock = redis_lock.Lock(connection, name=lockName,expire = expire)
-            if lock.acquire(blocking=True,timeout = timeout):
+            lock = redis_lock.Lock(connection, name=lockName, expire=expire)
+            if lock.acquire(blocking=True, timeout=timeout):
                 # return book
                 # print('image type:',type(image))
                 # print(image)
@@ -745,12 +756,16 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                 if not isBytes:
                     image = image.decode(encoding)  # fuck?
                     # read image from path, url
-                    if image.startswith('http'):
+                    if image.startswith("http"):
                         import requests
-                        img_bytes = requests.get(image, proxies=None, timeout=download_timeout).content
+
+                        img_bytes = requests.get(
+                            image, proxies=None, timeout=download_timeout
+                        ).content
                         # warning! you deal with gif somehow!
                         import tempfile
-                        with tempfile.NamedTemporaryFile("wb",suffix=".media") as f:
+
+                        with tempfile.NamedTemporaryFile("wb", suffix=".media") as f:
                             filepath = f.name
                             f.write(img_bytes)
                             try:
@@ -759,18 +774,21 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                                     cap = cv2.VideoCapture(filepath)
                                     success, image = cap.read()
                                     if not success:
-                                        image=None
+                                        image = None
                             except:
                                 import traceback
+
                                 traceback.print_exc()
                                 print("error while reading visual medial file.")
-                                print("source url:",image)
+                                print("source url:", image)
                         # nparr = np.fromstring(img_bytes, np.uint8)
                         # image = cv2.imdecode(nparr, flags=1)
                     elif os.path.exists(image):
                         image = cv2.imread(image)
                     else:
-                        raise Exception("image cannot be found as url or filepath:",image)
+                        raise Exception(
+                            "image cannot be found as url or filepath:", image
+                        )
                 else:
                     image = numpy_serializer.from_bytes(image)
                 if debug:
@@ -789,6 +807,7 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                 # return detections
         except:
             import traceback
+
             traceback.print_exc()
         if debug:
             print("DETECTIONS?")
