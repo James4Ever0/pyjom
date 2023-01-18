@@ -750,7 +750,9 @@ def bezierPaddleHubResnet50ImageDogCatDetectorServer(
                         img_bytes = requests.get(image, proxies=None, timeout=download_timeout).content
                         # warning! you deal with gif somehow!
                         import tempfile
-                        tempfile.NamedTemporaryFile("w+",)
+                        with tempfile.NamedTemporaryFile("w+",suffix=".media") as f:
+                            filepath = f.name
+                            
                         # nparr = np.fromstring(img_bytes, np.uint8)
                         # image = cv2.imdecode(nparr, flags=1)
                     elif os.path.exists(image):
