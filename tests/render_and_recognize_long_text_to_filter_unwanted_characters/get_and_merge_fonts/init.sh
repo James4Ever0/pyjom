@@ -1,5 +1,4 @@
-URL_PREFIX=""
-
+URL_PREFIX="https://raw.githubusercontent.com/"
 
 echo "GoNotoAfricaMiddleEast.ttf
 GoNotoAncient.ttf
