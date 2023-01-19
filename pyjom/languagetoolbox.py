@@ -1,7 +1,9 @@
 ########################[FILTERING]#########################
 
 # bilibili title requirements may also applied to tags, descriptions
-def filterNonChinese
+def filterNonChineseOrEnglishOrJapaneseCharacters(string:str):
+    for char in string:
+        
 
 
 ########################[FILTERING]#########################
