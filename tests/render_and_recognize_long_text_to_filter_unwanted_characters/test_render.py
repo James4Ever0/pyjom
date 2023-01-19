@@ -18,7 +18,9 @@ textContent = "".join(["中","ぁ"]+[f"[{index+1}]" for index in range(100)]) # 
 fontSize = 40
 
 # font = pygame.font.SysFont(fontName,fontSize)
-fontPath = "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf" # shit this fails.
+# fontPath = "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf" # shit this fails.
+# use some kind of super large merged notofont.
+
 font = pygame.font.Font(fontPath, fontSize)
 
 output_name = "test_render.png"
