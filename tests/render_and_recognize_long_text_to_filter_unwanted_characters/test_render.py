@@ -1,3 +1,7 @@
+import os
+
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 import pygame
 
 # pillow can also do that
