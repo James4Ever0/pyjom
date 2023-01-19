@@ -1,6 +1,6 @@
 URL_PREFIX=""
 
-curl -O -L 
+curl -O -L "$URL_PREFIX/"
 
 
 GoNotoAfricaMiddleEast.ttf
