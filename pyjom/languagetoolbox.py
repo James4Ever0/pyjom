@@ -1,6 +1,6 @@
 ########################[FILTERING]#########################
 
-# TODO: use notofu for rendering then use 
+# TODO: use notofu for rendering then use tesseract for recognition
 
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list:str):
     ...
