@@ -1,6 +1,7 @@
 ########################[FILTERING]#########################
 
-# bilibili title requirements may also applied to tags, 
+# bilibili title requirements may also applied to tags, descriptions
+def filterNonChinese
 
 
 ########################[FILTERING]#########################
