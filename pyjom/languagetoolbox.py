@@ -2,8 +2,10 @@
 
 # bilibili title requirements may also applied to tags, descriptions
 def filterNonChineseOrEnglishOrJapaneseCharacters(string:str):
+    output = []
     for char in string:
-        
+        signal = ...
+    return "".join(output)
 
 
 ########################[FILTERING]#########################
