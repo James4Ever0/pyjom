@@ -8,6 +8,7 @@ def filterNonChineseOrEnglishOrJapaneseCharacters(string:str):
     for char in string:
         for key, checker in checkers.items():
             signal = checker(char)
+            
     return "".join(output)
 
 
