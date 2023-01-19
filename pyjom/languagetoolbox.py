@@ -12,12 +12,12 @@ import string as string_builtin
 
 def filterNonChineseOrEnglishOrJapaneseCharacters(char_list: str):
     output = []
-    checkers = {"chinese": ..., "english": lambda c: ((c in " "+string_builtin.punctuation) or (re.match(r'[a-zA-Z0-9]',c) is not None)), "japanese": ...}
+    checkers = {"chinese": ..., "english": lambda c: ((c in " "+string_builtin.punctuation) or (re.match(r'[a-zA-Z0-9]',c) is not None)), "japanese": re.match([一-龠]+|[ぁ-ゔ]+|[ァ-ヴー]+|[a-zA-Z0-9]+|[ａ-ｚＡ-Ｚ０-９]+|[々〆〤ヶ])}
     for char in char_list:
         signal = True
         for key, checker in checkers.items():
             signal = checker(char)
-            if signal is None:
+            if signal in [False, 0,None]:
                 break
         if signal:
             output.append(char)
