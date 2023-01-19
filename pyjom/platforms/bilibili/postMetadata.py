@@ -436,7 +436,7 @@ def getBilibiliPostMetadata(
                                     mTagSeries = randomChoiceTagList(
                                         tag_list, pop=True
                                     )  # a collection of tags.
-                                    for 
+                                    mTagSeries = [(tag) for tag in mTagSeries]
                                     # mTitle = random.shuffle(filtered_title_list)
                                     mTitle = shuffleAndPopFromList(filtered_title_list)
                                     # mBgm = random.choice(bgm_list)
