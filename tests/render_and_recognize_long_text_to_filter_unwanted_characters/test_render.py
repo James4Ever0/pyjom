@@ -2,6 +2,7 @@ import os
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 import pygame
+pygame.init()
 black, white = pygame.Color('black'), pygame.Color('white')
 
 # pillow can also do that
@@ -13,7 +14,7 @@ textContent = "".join(["中","ぁ"]+[f"{index+1}" for index in range(100)]) # wi
 # install your font to system please? but why all lower case font names?
 
 fontName = "notosans"
-fontSize = 20
+fontSize = 40
 
 font = pygame.font.SysFont(fontName,fontSize)
 
