@@ -1,6 +1,8 @@
 ########################[FILTERING]#########################
 
 # bilibili title requirements may also applied to tags, descriptions
+def checkIsEnglishCharacter()
+
 def filterNonChineseOrEnglishOrJapaneseCharacters(string:str):
     output = []
     for char in string:
