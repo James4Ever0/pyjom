@@ -1,4 +1,4 @@
-URL_PREFIX="https://raw.githubusercontent.com/"
+URL_PREFIX="https://github.com/satbyy/go-noto-universal/releases/download/v5.2"
 
 echo "GoNotoAfricaMiddleEast.ttf
 GoNotoAncient.ttf
@@ -10,5 +10,4 @@ GoNotoCurrentSerif.ttf
 GoNotoEastAsia.ttf
 GoNotoEuropeAmericas.ttf
 GoNotoSouthAsia.ttf
-GoNotoSouthEastAsia.ttf
-" | xargs -iabc curl -O -L "$URL_PREFIX/abc"
+GoNotoSouthEastAsia.ttf" | xargs -iabc curl -O -L "$URL_PREFIX/abc"
