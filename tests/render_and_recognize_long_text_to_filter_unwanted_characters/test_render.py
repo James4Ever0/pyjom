@@ -15,3 +15,4 @@ font = pygame.font.SysFont(fontName,fontSize)
 
 output = "test_render.png"
 
+render_size = 
