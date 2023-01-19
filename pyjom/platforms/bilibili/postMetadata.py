@@ -7,7 +7,7 @@ from lazero.utils.logger import sprint
 
 # TODO: you know the drill. if it really contains nonacceptable characters (currently, must be some rule changes), you use Notofu font for rendering and OCR for recognition.
 # well you might want tesseract.
-# i suspect this change is due to GPT-like models used in 
+# i suspect this change is due to language models used in bilibili's system
 from pyjom.languagetoolbox import filterNonChineseOrEnglishOrJapaneseCharacters
 
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
