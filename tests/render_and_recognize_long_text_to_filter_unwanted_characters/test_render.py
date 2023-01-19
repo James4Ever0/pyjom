@@ -1,5 +1,6 @@
 import os
 
+# https://github.com/ntasfi/PyGame-Learning-Environment/issues/26
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 import pygame
 pygame.init()
