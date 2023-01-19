@@ -4,11 +4,11 @@
 
 import re
 
-
+import string
 
 def filterNonChineseOrEnglishOrJapaneseCharacters(string: str):
     output = []
-    checkers = {"chinese": ..., "english": lambda c: re.match(r'',c), "japanese": ...}
+    checkers = {"chinese": ..., "english": lambda c: re.match(r'[a-zA-Z0-9]',c) is not None, "japanese": ...}
     for char in string:
         signal = True
         for key, checker in checkers.items():
