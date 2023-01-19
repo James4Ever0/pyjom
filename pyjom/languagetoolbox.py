@@ -1,6 +1,6 @@
 ########################[FILTERING]#########################
 
-# bilibili forbids 
+# bilibili title requirements may also applied to tags, 
 
 
 ########################[FILTERING]#########################
