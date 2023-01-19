@@ -24,4 +24,5 @@ word_width, word_height = word_surface.get_size()
 size = 
 image.fill(white)
 image.blit(word_surface,(0,0))
+pygame.display.update()
 pygame.image.save(image,output_name)
