@@ -13,7 +13,7 @@ def filterNonChineseOrEnglishOrJapaneseCharacters(string: str):
         signal = True
         for key, checker in checkers.items():
             signal = checker(char)
-            if not signal:
+            if signal is None:
                 break
         if signal:
             output.append(char)
