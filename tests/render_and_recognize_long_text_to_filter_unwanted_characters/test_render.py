@@ -17,6 +17,11 @@ fontSize = 20
 
 font = pygame.font.SysFont(fontName,fontSize)
 
-output = "test_render.png"
+output_name = "test_render.png"
 
-render_size = 
+word_surface = font.render(textContent, False, black)
+word_width, word_height = word_surface.get_size()
+size = 
+image.fill(white)
+image.blit(word_surface)
+pygame.image.save(image,output_name)
