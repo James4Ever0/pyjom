@@ -1,5 +1,7 @@
 ########################[FILTERING]#########################
 
+# TODO: use notofu for rendering then use 
+
 # bilibili title requirements may also applied to tags, descriptions
 
 import re
