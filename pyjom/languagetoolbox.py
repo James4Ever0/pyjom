@@ -2,7 +2,9 @@
 
 # bilibili title requirements may also applied to tags, descriptions
 
-import 
+import re
+
+
 
 def filterNonChineseOrEnglishOrJapaneseCharacters(string: str):
     output = []
