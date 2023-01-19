@@ -22,9 +22,9 @@ output_name = "test_render.png"
 word_surface = font.render(textContent, False, black)
 word_width, word_height = word_surface.get_size()
 margin=20
-SIZE=(word_width+40, word_height+)
+SIZE=(word_width+margin*2, word_height+margin*2)
 image = pygame.display.set_mode(SIZE, pygame.RESIZABLE)
 image.fill(white)
-image.blit(word_surface,(0,0))
+image.blit(word_surface,(margin,margin))
 pygame.display.update()
 pygame.image.save(image,output_name)
