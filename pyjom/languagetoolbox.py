@@ -8,7 +8,7 @@ import re
 
 def filterNonChineseOrEnglishOrJapaneseCharacters(string: str):
     output = []
-    checkers = {"chinese": ..., "english": lambda c: c in , "japanese": ...}
+    checkers = {"chinese": ..., "english": lambda c: re.match(r'',c), "japanese": ...}
     for char in string:
         signal = True
         for key, checker in checkers.items():
