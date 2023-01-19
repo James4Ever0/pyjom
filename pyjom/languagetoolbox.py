@@ -2,6 +2,8 @@
 
 # TODO: use notofu for rendering then use 
 
+def convertToChineseOrEnglishOrJapaneseCharacters(char_list:str):
+    ...
 # bilibili title requirements may also applied to tags, descriptions
 
 import re
