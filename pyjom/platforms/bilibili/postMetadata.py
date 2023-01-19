@@ -432,6 +432,7 @@ def getBilibiliPostMetadata(
                                 )
                                 if cover_target is not None:
                                     # you want to pop these things?
+                                    # clearly 
                                     mTagSeries = randomChoiceTagList(
                                         tag_list, pop=True
                                     )  # a collection of tags.
