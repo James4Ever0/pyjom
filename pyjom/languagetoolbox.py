@@ -6,10 +6,10 @@ import re
 
 import string
 
-def filterNonChineseOrEnglishOrJapaneseCharacters(string: str):
+def filterNonChineseOrEnglishOrJapaneseCharacters(char_list: str):
     output = []
     checkers = {"chinese": ..., "english": lambda c: ((c in " "+string.punctuation) or (re.match(r'[a-zA-Z0-9]',c) is not None)), "japanese": ...}
-    for char in string:
+    for char in char_list:
         signal = True
         for key, checker in checkers.items():
             signal = checker(char)
