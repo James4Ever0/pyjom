@@ -17,7 +17,9 @@ textContent = "".join(["中","ぁ"]+[f"[{index+1}]" for index in range(100)]) # 
 # this font is bad.
 fontSize = 40
 
-font = pygame.font.SysFont(fontName,fontSize)
+# font = pygame.font.SysFont(fontName,fontSize)
+fontPath = ""
+font = pygame.font.Font(fontPath, fontSize)
 
 output_name = "test_render.png"
 
