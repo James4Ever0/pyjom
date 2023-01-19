@@ -1,8 +1,8 @@
 import os
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
-
 import pygame
+black, white = pygame.Color('black'), pygame.Color('white')
 
 # pillow can also do that
 # https://plainenglish.io/blog/generating-text-on-image-with-python-eefe4430fe77
