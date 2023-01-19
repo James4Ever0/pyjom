@@ -1,4 +1,4 @@
-URL_PREFIX="https://download.fastgit.org/satbyy/go-noto-universal/releases/download/v5.2"
+URL_PREFIX="https://ghdl.feizhuqwq.cf/https://github.com/satbyy/go-noto-universal/releases/download/v5.2"
 
 rm -rf *.ttf
 rm -rf *.aria2
