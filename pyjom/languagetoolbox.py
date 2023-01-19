@@ -1,10 +1,10 @@
 ########################[FILTERING]#########################
 
 # bilibili title requirements may also applied to tags, descriptions
-def checkIsEnglishCharacter()
 
 def filterNonChineseOrEnglishOrJapaneseCharacters(string:str):
     output = []
+    checkers = {"chinese":..., "english":..., "japanese":...}
     for char in string:
         signal = ...
     return "".join(output)
