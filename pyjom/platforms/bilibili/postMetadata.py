@@ -5,7 +5,8 @@ from bilibili_api import sync, search
 from lazero.utils.tools import flattenUnhashableList  # one of my classic methods
 from lazero.utils.logger import sprint
 
-# you know the drill. if it really contains nonacceptable characters (currently, must be some rule changes), you use notofu font for rendering and OCR for recognition
+# TODO: you know the drill. if it really contains nonacceptable characters (currently, must be some rule changes), you use notofu font for rendering and OCR for recognition.
+# well you might want tesseract.
 from pyjom.languagetoolbox import filterNonChineseOrEnglishOrJapaneseCharacters
 
 def filterTitleWithCoreTopicSet(title, core_topic_set, debug=False):
