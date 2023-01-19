@@ -2,14 +2,18 @@
 
 # bilibili title requirements may also applied to tags, descriptions
 
-def filterNonChineseOrEnglishOrJapaneseCharacters(string:str):
+
+def filterNonChineseOrEnglishOrJapaneseCharacters(string: str):
     output = []
-    checkers = {"chinese":..., "english":..., "japanese":...}
+    checkers = {"chinese": ..., "english": ..., "japanese": ...}
     for char in string:
         signal = True
         for key, checker in checkers.items():
             signal = checker(char)
-            
+            if not signal:
+                break
+        if signal:
+            output.append(char)
     return "".join(output)
 
 
@@ -242,6 +246,8 @@ def chineseTopicModeling(sentences, n_top_words=10, ngram_range=(1, 2), n_compon
         traceback.print_exc()
         topics = []
     return topics
+
+
 ########################[PREPROCESSING & TOPIC MODELING]#########################
 
 
@@ -462,18 +468,22 @@ def paraphraser(
         elif method == "cn_nlp_online":
             output, success = chineseParaphraserAPI(content, debug=debug, **configs)
         elif method == "baidu_translator":
-            output, success = baiduParaphraserByTranslation(content, debug=debug, **configs)
+            output, success = baiduParaphraserByTranslation(
+                content, debug=debug, **configs
+            )
         # you should not be here.
         else:
             raise NotImplementedError("method '%s' not implemented")
         return output, success
-    except NotImplementedError as e: raise e
+    except NotImplementedError as e:
+        raise e
     except:
         import traceback
+
         traceback.print_exc()
         print("Failed to paraphrase content using method '%s'" % method)
         print("Returning original content and failed signal.")
-        return content,False
+        return content, False
 
 
 ########################[PARAPHRASING]########################
