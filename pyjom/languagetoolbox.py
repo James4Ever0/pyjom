@@ -9,10 +9,11 @@ def convertToChineseOrEnglishOrJapaneseCharacters(char_list:str):
 import re
 
 import string as string_builtin
+from zhon.hanzi import punctuation as chinese_punctuation
 
 def filterNonChineseOrEnglishOrJapaneseCharacters(char_list: str):
     output = []
-    checkers = {"chinese": lambda c: c in  or re.match(r'[\u4e00-\u9fa5]',c) is not None, "english": lambda c: ((c in " "+string_builtin.punctuation) or (re.match(r'[a-zA-Z0-9]',c) is not None)), "japanese": lambda c:re.match(r'[一-龠ぁ-ゔァ-ヴーａ-ｚＡ-Ｚ０-９々〆〤ヶ]', c) is not None}
+    checkers = {"chinese": lambda c:(( c in ) or (re.match(r'[\u4e00-\u9fa5]',c) is not None)), "english": lambda c: ((c in " "+string_builtin.punctuation) or (re.match(r'[a-zA-Z0-9]',c) is not None)), "japanese": lambda c:re.match(r'[一-龠ぁ-ゔァ-ヴーａ-ｚＡ-Ｚ０-９々〆〤ヶ]', c) is not None}
     for char in char_list:
         signal = True
         for key, checker in checkers.items():
