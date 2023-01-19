@@ -32,3 +32,4 @@ image.fill(white)
 image.blit(word_surface,(margin,margin))
 pygame.display.update()
 pygame.image.save(image,output_name)
+image.
