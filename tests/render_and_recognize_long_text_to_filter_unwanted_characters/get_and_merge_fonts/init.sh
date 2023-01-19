@@ -2,8 +2,7 @@ URL_PREFIX=""
 
 curl -O -L "$URL_PREFIX/"
 
-
-GoNotoAfricaMiddleEast.ttf
+echo "GoNotoAfricaMiddleEast.ttf
 GoNotoAncient.ttf
 GoNotoAncientSerif.ttf
 GoNotoAsiaHistorical.ttf
@@ -14,3 +13,4 @@ GoNotoEastAsia.ttf
 GoNotoEuropeAmericas.ttf
 GoNotoSouthAsia.ttf
 GoNotoSouthEastAsia.ttf
+" |
