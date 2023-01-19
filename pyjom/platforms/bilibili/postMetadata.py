@@ -436,7 +436,7 @@ def getBilibiliPostMetadata(
                                     mTagSeries = randomChoiceTagList(
                                         tag_list, pop=True
                                     )  # a collection of tags.
-                                    mTagSeries = [(tag) for tag in mTagSeries]
+                                    mTagSeries = [filterNonChineseOrEnglishOrJapaneseCharacters(tag) for tag in mTagSeries]
                                     # mTitle = random.shuffle(filtered_title_list)
                                     mTitle = shuffleAndPopFromList(filtered_title_list)
                                     # mBgm = random.choice(bgm_list)
@@ -447,7 +447,7 @@ def getBilibiliPostMetadata(
                                     if customParaphraser:
                                         mTitle = customParaphraser(mTitle)
                                         mDescription = customParaphraser(mDescription)
-                                    yield (cover_target, mTagSeries, mTitle, mBgm, mDescription, dog_or_cat_original, 
+                                    yield (cover_target, mTagSeries, filterNonChineseOrEnglishOrJapaneseCharacters(mTitle), mBgm, filterNonChineseOrEnglishOrJapaneseCharacters(mDescription), dog_or_cat_original, 
                                     target_tid
                                     # search_tid
                                     )  # one additional return value
