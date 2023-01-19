@@ -2,10 +2,11 @@
 
 # bilibili title requirements may also applied to tags, descriptions
 
+import 
 
 def filterNonChineseOrEnglishOrJapaneseCharacters(string: str):
     output = []
-    checkers = {"chinese": ..., "english": ..., "japanese": ...}
+    checkers = {"chinese": ..., "english": lambda c: c in , "japanese": ...}
     for char in string:
         signal = True
         for key, checker in checkers.items():
