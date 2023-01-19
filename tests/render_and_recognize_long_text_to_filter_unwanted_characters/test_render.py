@@ -1,5 +1,8 @@
 import pygame
 
+# pillow can also do that
+# https://plainenglish.io/blog/generating-text-on-image-with-python-eefe4430fe77
+
 textContent = "".join([f"{index+1}" for index in range(100)]) # will see [100] at the end of text if successful.
 
 # pygame.font.get_fonts()
