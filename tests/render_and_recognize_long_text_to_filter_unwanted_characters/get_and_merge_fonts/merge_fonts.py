@@ -47,6 +47,7 @@ log = logging.getLogger("nototools.merge_fonts")
 # directory that contains the files to be merged
 directory = ""
 
+# merge all noto files?
 
 # file names to be merged
 files = [
