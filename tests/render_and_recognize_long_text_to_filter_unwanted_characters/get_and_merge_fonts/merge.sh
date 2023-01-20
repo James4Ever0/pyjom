@@ -1,0 +1,1 @@
+python3 merge_fonts.py -d 
