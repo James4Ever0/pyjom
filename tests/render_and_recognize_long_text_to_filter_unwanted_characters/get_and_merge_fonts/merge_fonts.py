@@ -49,6 +49,10 @@ directory = ""
 
 directory = "/media/root/parrot/pyjom/tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts"
 
+import os
+
+files = os.listdir(directory)
+
 
 # file names to be merged
 files = [
