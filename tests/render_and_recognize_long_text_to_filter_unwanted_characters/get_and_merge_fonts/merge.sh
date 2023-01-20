@@ -4,3 +4,4 @@
 
 # courtesy from superuser:
 # 
+fontforge -lang=ff -script mergefonts.ff
