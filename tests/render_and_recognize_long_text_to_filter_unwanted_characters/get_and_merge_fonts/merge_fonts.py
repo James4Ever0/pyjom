@@ -175,6 +175,7 @@ files = [
 
 
 def build_valid_filenames(files=files, directory=directory):
+    # this "files" needs to be changed.
     files = list(files)
     directory = directory.rstrip("/")
     if directory == "" or directory is None:
