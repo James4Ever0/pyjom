@@ -43,7 +43,6 @@ from fontTools.misc.loggingTools import Timer
 
 log = logging.getLogger("nototools.merge_fonts")
 
-
 # directory that contains the files to be merged
 # directory = ""
 
