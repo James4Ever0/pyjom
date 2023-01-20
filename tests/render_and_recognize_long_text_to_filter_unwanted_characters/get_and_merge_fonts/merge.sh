@@ -4,4 +4,4 @@
 
 # courtesy from superuser:
 # 
-fontforge -lang=ff -script mergefonts.ff
+fontforge -lang=ff -script mergefonts.ff $(ls -1 | grep ttf | xargs)
