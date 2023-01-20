@@ -3,6 +3,6 @@
 # test something.
 
 # courtesy from superuser:
-# 
+# https://superuser.com/questions/490922/merging-two-fonts
 # echo 0 $(ls -1 | grep ttf | xargs) 0
 fontforge -lang=ff -script mergefonts.ff $(ls -1 | grep ttf | grep -v output | xargs) output.ttf
