@@ -5,4 +5,4 @@
 # courtesy from superuser:
 # 
 # echo 0 $(ls -1 | grep ttf | xargs) 0
-fontforge -lang=ff -script mergefonts.ff $(ls -1 | grep ttf | grep -v output | xargs) 
+fontforge -lang=ff -script mergefonts.ff $(ls -1 | grep ttf | grep -v output | xargs) output.ttf
