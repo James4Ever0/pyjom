@@ -51,7 +51,7 @@ directory = "/media/root/parrot/pyjom/tests/render_and_recognize_long_text_to_fi
 
 import os
 
-files = [fname for fname in os.listdir(directory) if fname.endswith("")]
+files = [fname for fname in os.listdir(directory) if fname.endswith(".ttf")]
 
 
 # file names to be merged
