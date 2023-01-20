@@ -47,7 +47,7 @@ log = logging.getLogger("nototools.merge_fonts")
 # directory that contains the files to be merged
 directory = ""
 
-directory = ""
+directory = "/media/root/parrot/pyjom/tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts"
 
 
 # file names to be merged
