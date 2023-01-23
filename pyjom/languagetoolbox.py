@@ -1,6 +1,6 @@
 ########################[FILTERING]#########################
 
-# TODO: use notofu for rendering then use tesseract for recognition
+# DONE: use notofu for rendering then use tesseract for recognition
 
 import pygame
 import functools
