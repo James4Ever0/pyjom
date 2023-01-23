@@ -9,4 +9,4 @@ langCode = "+".join(langs)
 
 picPath = "test_render.png"
 
-output = 
+output = pytesseract.image_to_string(picPath, lang=lang)
