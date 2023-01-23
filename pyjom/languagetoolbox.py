@@ -2,10 +2,12 @@
 
 # TODO: use notofu for rendering then use tesseract for recognition
 
-def 
+import pygame
+
+def initPygame():
+    pygame.init()
 
 def renderSingleLineTextUsingFont(text:str, font:str):
-    import pygame
 
 
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
