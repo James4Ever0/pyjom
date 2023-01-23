@@ -10,7 +10,9 @@ def initPygame():
     os.environ["SDL_VIDEODRIVER"] = "dummy"
     # headless pygame
     pygame.init()
+
 import os
+
 def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=os.path.join(os.dirname(__file__),"../tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts/GoNotoCurrent.ttf",fontSize:int = 40,margin:int=20):
     assert os.path.exists(fontPath)
     initPygame()
