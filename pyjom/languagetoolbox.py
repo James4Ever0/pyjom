@@ -2,8 +2,6 @@
 
 # TODO: use notofu for rendering then use tesseract for recognition
 
-def renderTextUsingFont():
-    im
 
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
     
