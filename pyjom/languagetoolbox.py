@@ -4,6 +4,7 @@
 
 import pygame
 import functools
+
 @functools.lru_cache(maxsize=1)
 def initPygame():
     pygame.init()
