@@ -37,7 +37,9 @@ def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=
 
     word_surface = font.render(textContent, False, black)
     word_width, word_height = word_surface.get_size()
+
     SIZE=(word_width+margin*2, word_height+margin*2)
+
     image = pygame.display.set_mode(SIZE, pygame.RESIZABLE)
     image.fill(white)
     image.blit(word_surface,(margin,margin))
