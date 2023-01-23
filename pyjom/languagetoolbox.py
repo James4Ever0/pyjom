@@ -74,7 +74,8 @@ def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
     with tempfile.NamedTemporaryFile("wb", suffix=".png") as f:
         imagePath = f.name
         renderSingleLineTextUsingFont(char_list,imagePath)
-        output = recognizeCharactersFromImageWithTesseract()
+        output = recognizeCharactersFromImageWithTesseract(imagePath)
+        return output
 
 
 # bilibili title requirements may also applied to tags, descriptions
