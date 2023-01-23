@@ -20,7 +20,7 @@ fontSize = 40
 
 # font = pygame.font.SysFont(fontName,fontSize)
 # fontPath = "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf" # shit this fails.
-fontPath = "/media/root/parrot/pyjom/tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts/GoNotoCurrent.ttf"
+fontPath = "./get_and_merge_fonts/GoNotoCurrent.ttf"
 # use some kind of super large merged notofont.
 
 font = pygame.font.Font(fontPath, fontSize)
