@@ -5,4 +5,4 @@ import requests
 
 url = "https://nyaa.si"
 
-params = dict(f=0,)
+params = dict(f=0,c="1_0",)
