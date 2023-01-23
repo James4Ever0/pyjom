@@ -73,7 +73,7 @@ import tempfile
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
     with tempfile.NamedTemporaryFile("wb", suffix=".png") as f:
         imagePath = f.name
-
+        renderSingleLineTextUsingFont
 
 
 # bilibili title requirements may also applied to tags, descriptions
