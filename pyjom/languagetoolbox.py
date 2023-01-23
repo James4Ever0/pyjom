@@ -2,6 +2,7 @@
 
 # TODO: use notofu for rendering then use tesseract for recognition
 
+def renderSingleLineTextUsing
 
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
     
