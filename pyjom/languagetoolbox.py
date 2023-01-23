@@ -75,6 +75,7 @@ def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
         imagePath = f.name
 
 
+
 # bilibili title requirements may also applied to tags, descriptions
 
 import re
