@@ -3,8 +3,8 @@
 # TODO: use notofu for rendering then use tesseract for recognition
 
 import pygame
-
-@functools.
+import functools
+@functools.lru_cache(maxsize=1)
 def initPygame():
     pygame.init()
 
