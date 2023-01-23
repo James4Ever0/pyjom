@@ -46,6 +46,8 @@ def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=
     pygame.display.update()
     pygame.image.save(image,output_name)
 
+def recog
+
 import tempfile
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
     with tempfile.NamedTemporaryFile("wb", suffix=".png") as f:
