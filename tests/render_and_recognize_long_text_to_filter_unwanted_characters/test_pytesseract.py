@@ -12,3 +12,4 @@ picPath = "test_render.png"
 output = pytesseract.image_to_string(picPath, lang=langCode)
 print("OUTPUT?")
 print(output)
+# many incorrect results?
