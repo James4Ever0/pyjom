@@ -9,7 +9,7 @@ import functools
 def initPygame():
     pygame.init()
 import os
-def renderSingleLineTextUsingFont(textContent:str, fontPath:str=os.path.join(os.dirname(__file__),"../tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts/GoNotoCurrent.ttf",fontSize:int = 40):
+def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=os.path.join(os.dirname(__file__),"../tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts/GoNotoCurrent.ttf",fontSize:int = 40):
     assert os.path.exists(fontPath)
     initPygame()
     black, white = pygame.Color('black'), pygame.Color('white')
@@ -30,11 +30,9 @@ def renderSingleLineTextUsingFont(textContent:str, fontPath:str=os.path.join(os.
 
     font = pygame.font.Font(fontPath, fontSize)
 
-    output_name = "test_render.png"
 
     word_surface = font.render(textContent, False, black)
     word_width, word_height = word_surface.get_size()
-    margin=20
     SIZE=(word_width+margin*2, word_height+margin*2)
     image = pygame.display.set_mode(SIZE, pygame.RESIZABLE)
     image.fill(white)
