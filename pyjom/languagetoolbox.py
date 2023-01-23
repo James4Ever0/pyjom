@@ -44,6 +44,7 @@ def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=
 
 import tempfile
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
+    with tempfile.NamedTemporaryFile()
     
 
 
