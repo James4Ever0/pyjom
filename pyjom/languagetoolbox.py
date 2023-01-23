@@ -70,7 +70,7 @@ def recognizeCharactersFromImageWithTesseract(
 import tempfile
 
 
-def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
+def convertToChineseOrEnglishOrJapaneseCharactersUsingTesseract(char_list: str):
     with tempfile.NamedTemporaryFile("wb", suffix=".png") as f:
         imagePath = f.name
         renderSingleLineTextUsingFont(char_list,imagePath)
