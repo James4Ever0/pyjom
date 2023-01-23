@@ -5,4 +5,8 @@ import pytesseract
 
 # pytesseract.get_languages(config="")
 langs =['eng','chi_sim','chi_tra','jpn']
-langCode = "+"
+langCode = "+".join(langs)
+
+picPath = "test_render.png"
+
+output = 
