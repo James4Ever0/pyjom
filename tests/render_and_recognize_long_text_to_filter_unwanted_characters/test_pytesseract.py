@@ -3,4 +3,4 @@
 
 import pytesseract
 
-# pytesseract.
+# pytesseract.get_languages(config="")
