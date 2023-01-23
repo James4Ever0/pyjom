@@ -10,6 +10,8 @@ def initPygame():
     pygame.init()
 
 def renderSingleLineTextUsingFont(text:str, font:str):
+    initPygame()
+    
 
 
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
