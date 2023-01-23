@@ -4,4 +4,4 @@
 import pytesseract
 
 # pytesseract.get_languages(config="")
-langs =['chi']
+langs =['eng','chi_sim','chi_tra','jpn']
