@@ -8,8 +8,8 @@ import functools
 @functools.lru_cache(maxsize=1)
 def initPygame():
     pygame.init()
-
-def renderSingleLineTextUsingFont(textContent:str, fontPath:str=__file__):
+import os
+def renderSingleLineTextUsingFont(textContent:str, fontPath:str=os.path.join(os.dirname(__file__),"../tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts/GoNotoCurrent.ttf"):
     fontPath = "./get_and_merge_fonts/GoNotoCurrent.ttf"
     initPygame()
     black, white = pygame.Color('black'), pygame.Color('white')
