@@ -9,7 +9,7 @@ import functools
 def initPygame():
     pygame.init()
 
-def renderSingleLineTextUsingFont(textContent:str, fontPath:str=):
+def renderSingleLineTextUsingFont(textContent:str, fontPath:str=__file__+"../"):
     fontPath = "./get_and_merge_fonts/GoNotoCurrent.ttf"
     initPygame()
     black, white = pygame.Color('black'), pygame.Color('white')
