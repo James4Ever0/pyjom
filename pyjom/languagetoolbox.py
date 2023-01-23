@@ -46,9 +46,8 @@ def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=
     pygame.display.update()
     pygame.image.save(image,output_name)
 
-                                  def recognizeCharactersFromImageWithTesseract(imagePath:str, langs:list =['eng','chi_sim','chi_tra','jpn']):
+def recognizeCharactersFromImageWithTesseract(imagePath:str, langs:list =['eng','chi_sim','chi_tra','jpn']):
 
-    import pytesseract
 
     # pytesseract.get_languages(config="")
     langCode = "+".join(langs)
