@@ -51,14 +51,14 @@ def recognizeCharactersFromImageWithTesseract(imagePath:str, langs:list =['eng',
     # pytesseract.get_languages(config="")
     langCode = "+".join(langs)
     output = pytesseract.image_to_string(imagePath, lang=langCode)
-    
+    return output
 
 
 import tempfile
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
     with tempfile.NamedTemporaryFile("wb", suffix=".png") as f:
         imagePath = f.name
-    
+
 
 
 # bilibili title requirements may also applied to tags, descriptions
