@@ -50,11 +50,8 @@ def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=
 def recognizeCharactersFromImageWithTesseract(imagePath:str, langs:list =['eng','chi_sim','chi_tra','jpn']):
     # pytesseract.get_languages(config="")
     langCode = "+".join(langs)
-
-
-    output = pytesseract.image_to_string(picPath, lang=langCode)
-    print("OUTPUT?")
-    print(output)
+    output = pytesseract.image_to_string(imagePath, lang=langCode)
+    
 
 
 import tempfile
