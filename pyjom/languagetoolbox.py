@@ -9,14 +9,13 @@ import functools
 def initPygame():
     pygame.init()
 
-def renderSingleLineTextUsingFont(text:str, font:str):
+def renderSingleLineTextUsingFont(textContent:str, fontPath:str):
     initPygame()
     black, white = pygame.Color('black'), pygame.Color('white')
 
     # pillow can also do that
     # https://plainenglish.io/blog/generating-text-on-image-with-python-eefe4430fe77
 
-    textContent = "".join(["中","ぁ"]+[f"[{index+1}]" for index in range(100)]) # will see [100] at the end of text if successful.
 
     # pygame.font.get_fonts()
     # install your font to system please? but why all lower case font names?
@@ -24,11 +23,6 @@ def renderSingleLineTextUsingFont(text:str, font:str):
     # fontName = "notosans"
     # this font is bad.
     fontSize = 40
-
-    # font = pygame.font.SysFont(fontName,fontSize)
-    # fontPath = "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf" # shit this fails.
-    fontPath = "./get_and_merge_fonts/GoNotoCurrent.ttf"
-    # use some kind of super large merged notofont.
 
     font = pygame.font.Font(fontPath, fontSize)
 
