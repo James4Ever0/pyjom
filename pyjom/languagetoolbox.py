@@ -4,6 +4,7 @@
 
 import pygame
 
+@functools.
 def initPygame():
     pygame.init()
 
