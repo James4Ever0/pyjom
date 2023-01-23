@@ -5,4 +5,5 @@ import requests
 
 url = "https://nyaa.si"
 
-params = dict(f=0,c="1_0",)
+query = "oniichan"
+params = dict(f=0,c="1_0",q=query)
