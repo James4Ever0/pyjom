@@ -9,7 +9,8 @@ import functools
 def initPygame():
     pygame.init()
 
-def renderSingleLineTextUsingFont(textContent:str, fontPath:str):
+def renderSingleLineTextUsingFont(textContent:str, fontPath:str=):
+    fontPath = "./get_and_merge_fonts/GoNotoCurrent.ttf"
     initPygame()
     black, white = pygame.Color('black'), pygame.Color('white')
 
@@ -23,6 +24,10 @@ def renderSingleLineTextUsingFont(textContent:str, fontPath:str):
     # fontName = "notosans"
     # this font is bad.
     fontSize = 40
+
+    # font = pygame.font.SysFont(fontName,fontSize)
+    # fontPath = "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf" # shit this fails.
+    # use some kind of super large merged notofont.
 
     font = pygame.font.Font(fontPath, fontSize)
 
