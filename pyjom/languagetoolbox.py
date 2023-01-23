@@ -5,23 +5,34 @@
 import pygame
 import functools
 
+
 @functools.lru_cache(maxsize=1)
 def initPygame():
     os.environ["SDL_VIDEODRIVER"] = "dummy"
     # headless pygame
     pygame.init()
 
+
 import os
 import pytesseract
 
-def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=os.path.join(os.dirname(__file__),"../tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts/GoNotoCurrent.ttf",fontSize:int = 40,margin:int=20):
+
+def renderSingleLineTextUsingFont(
+    textContent: str,
+    output_name: str,
+    fontPath: str = os.path.join(
+        os.dirname(__file__),
+        "../tests/render_and_recognize_long_text_to_filter_unwanted_characters/get_and_merge_fonts/GoNotoCurrent.ttf",
+    ),
+    fontSize: int = 40,
+    margin: int = 20,
+):
     assert os.path.exists(fontPath)
     initPygame()
-    black, white = pygame.Color('black'), pygame.Color('white')
+    black, white = pygame.Color("black"), pygame.Color("white")
 
     # pillow can also do that
     # https://plainenglish.io/blog/generating-text-on-image-with-python-eefe4430fe77
-
 
     # pygame.font.get_fonts()
     # install your font to system please? but why all lower case font names?
@@ -35,19 +46,21 @@ def renderSingleLineTextUsingFont(textContent:str, output_name:str,fontPath:str=
 
     font = pygame.font.Font(fontPath, fontSize)
 
-
     word_surface = font.render(textContent, False, black)
     word_width, word_height = word_surface.get_size()
 
-    SIZE=(word_width+margin*2, word_height+margin*2)
+    SIZE = (word_width + margin * 2, word_height + margin * 2)
 
     image = pygame.display.set_mode(SIZE, pygame.RESIZABLE)
     image.fill(white)
-    image.blit(word_surface,(margin,margin))
+    image.blit(word_surface, (margin, margin))
     pygame.display.update()
-    pygame.image.save(image,output_name)
+    pygame.image.save(image, output_name)
 
-def recognizeCharactersFromImageWithTesseract(imagePath:str, langs:list =['eng','chi_sim','chi_tra','jpn']):
+
+def recognizeCharactersFromImageWithTesseract(
+    imagePath: str, langs: list = ["eng", "chi_sim", "chi_tra", "jpn"]
+):
     # pytesseract.get_languages(config="")
     langCode = "+".join(langs)
     output = pytesseract.image_to_string(imagePath, lang=langCode)
@@ -55,10 +68,11 @@ def recognizeCharactersFromImageWithTesseract(imagePath:str, langs:list =['eng',
 
 
 import tempfile
+
+
 def convertToChineseOrEnglishOrJapaneseCharacters(char_list: str):
     with tempfile.NamedTemporaryFile("wb", suffix=".png") as f:
         imagePath = f.name
-
 
 
 # bilibili title requirements may also applied to tags, descriptions
