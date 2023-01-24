@@ -8,4 +8,7 @@ with open("test_filenames.json",'w+') as f:
     fnames = json.loads(f.read())
 for fname in fnames:
     fname_lower = fname.lower()
-    for filetype, file_extensions in 
+    file_extension = fname_lower.split(".")[-1]
+
+    for filetype, file_extensions in filetypes.items():
+        if file_extensions
