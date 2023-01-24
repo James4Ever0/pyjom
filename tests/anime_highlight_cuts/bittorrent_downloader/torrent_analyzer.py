@@ -26,6 +26,6 @@ rich.print(data)
 breakpoint()
 
 # does it preserve the order?
-# for fileInfo in data['info']['files']:
-#     length = fileInfo['length']
-#     path = fileInfo['path'] # multiple strings in a list
+for index, fileInfo in data['info']['files']:
+    length = fileInfo['length']
+    path = fileInfo['path'] # multiple strings in a list
