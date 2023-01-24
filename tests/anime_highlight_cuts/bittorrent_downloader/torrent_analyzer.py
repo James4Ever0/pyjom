@@ -44,4 +44,4 @@ if not single_file:
         # the index is right.
         fnames.append(path[-1])
 
-fnames
+with open("fnames
