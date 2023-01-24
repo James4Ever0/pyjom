@@ -19,4 +19,4 @@ rm -rf "$TORRENT_NAME.aria2"
 # this speed shall be precalculated.
 # 
 
-aria2c -x 16 --select-file="$FILE_ID" --seed-time=0 --file-allocation=none --lowest-speed-limit=300K "$TORRENT_PATH"
+aria2c -x 16 --select-file="$FILE_ID" --seed-time=0 --file-allocation=none --lowest-speed-limit=300K --bt-stop-timeout=60 "$TORRENT_PATH"
