@@ -4,3 +4,4 @@ params = {"adb.search":query,"do.update":'Search',"noalias":1}
 
 import requests
 
+r = requests.get(url, params=params)
