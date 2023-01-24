@@ -28,12 +28,12 @@ rich.print(data)
 # does it preserve the order?
 # import humanize
 # well.
-import humanfriendly
+from humanfriendly import format_size
 for index, fileInfo in enumerate(data['info']['files']):
     aria2c_index = index+1
     length = fileInfo['length']
     path = fileInfo['path'] # multiple strings in a list
     joined_path = "/".join(path)
-    filesize_human_readable = 
-    print(f"[{aria2c_index}] ** {path[-1]}")
+    filesize_human_readable = format_size(length)
+    print(f"[{aria2c_index}] ** [] ** {path[-1]}")
     # the index is right.
