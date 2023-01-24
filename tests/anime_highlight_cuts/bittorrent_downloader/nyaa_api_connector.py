@@ -11,7 +11,7 @@ category='1_0' # anime
 page = 1 # start page: 1
 end_of_page=False
 
-# better not to use r
+# better not to use rss version since it will not sort terms.
 
 params = dict(f=0,c=category,q=query,s=sort_term, o="desc",p=page)
 
@@ -39,5 +39,7 @@ if pagination_info_result:
     if pagniation_info_result['total'] == pagination_info_result['end']:
         print("Reached end of page.")
         end_of_page=True
+
+
 
 torrent_info = 
