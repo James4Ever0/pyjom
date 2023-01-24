@@ -6,7 +6,7 @@ filetypes = {'subtitle':subtitle_types,'video':video_types}
 Bangumi_Name = 'Yahari Ore no Seishun Lovecome wa Machigatte Iru.'
 episodeIndex = 3
 
-chinese_sub_types = ['cht','chs','简体'日语 繁体 fan]
+chinese_sub_types = ['cht','chs','简体'日语 繁体 繁體]
 
 import json
 
