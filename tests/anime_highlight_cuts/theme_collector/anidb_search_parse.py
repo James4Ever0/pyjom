@@ -30,6 +30,8 @@ else:
     # breakpoint()
     for index, videoDataFrame in data.iterrows():
         videoData = videoDataFrame.to_dict()
+        print(videoData.keys())
+        breakpoint()
         title = videoData['Title']
         # where's the damn link? we don't need such thing.
         aired, ended = videoData['Aired'], videoData['Ended']
