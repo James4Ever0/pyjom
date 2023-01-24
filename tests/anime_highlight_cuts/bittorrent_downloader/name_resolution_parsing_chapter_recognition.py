@@ -28,6 +28,7 @@ episode_formatter = lambda episode_index: str(episode_index).zfill(2)
 
 import re
 
+# also replace all double spaces.
 alphanumeric_filter = lambda chars: re.sub(r'[^a-z0-9]',' ',chars)
 
 bangume_name_lower_alphanumeric = alphanumeric_filter(Bangumi_Name.lower())
@@ -50,4 +51,4 @@ for fname in fnames:
     print("NUMBERS?")
     print(numbers)
     substring_location_start = fname_lower_alphanumeric.find(bangume_name_lower_alphanumeric)
-    substring_location_end = 
+    substring_location_end = substring_location_start+len(bangume_name_lower_alphanumeric)
