@@ -70,4 +70,4 @@ for fname in fnames:
         if episodeIndexLocation!=-1:
             if episodeIndexLocation+1>=substring_location_end:
                 print("EPISODE?") # this is the index we want
-                print(episodeIndexLocation)
+                print(episodeIndex)
