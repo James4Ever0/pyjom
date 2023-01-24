@@ -52,3 +52,5 @@ import rich
 rich.print(torrent_info)
 
 breakpoint()
+
+anime_categories = 
