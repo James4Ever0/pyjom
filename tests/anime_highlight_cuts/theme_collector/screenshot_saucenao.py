@@ -1,6 +1,8 @@
 # saucenao (if fail, use trace.moe)
 # use proxies, since we are using free tiers.
 from pysaucenao import SauceNao
+import os
+SAUCENAO_API_KEY=os.environ.get('SAUCENAO_API_KEY')
 sauce = SauceNao()
 filepath = "/Users/jamesbrown/Downloads/anime_download/dress_test_pictures/女装0.jpeg"
 import asyncio
