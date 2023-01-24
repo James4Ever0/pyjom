@@ -15,6 +15,7 @@ from saucenao_api import SauceNao
 sauce = SauceNao(SAUCENAO_API_KEY)
 with open(filepath,'rb') as f:
     results = sauce.from_file(f)
-    print(results)
     long_remaining = results.long_remaining # wait till next day? wtf?
     short_remaining = results.short_remaining
+    print(results)
+    breakpoint()
