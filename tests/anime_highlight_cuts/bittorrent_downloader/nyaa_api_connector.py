@@ -47,4 +47,6 @@ if pagination_info_result:
 from NyaaPy import utils
 SITE = utils.TorrentSite.NYAASI
 torrent_info = utils.parse_nyaa(request_text=text,limit=None, site=SITE)
-print()
+
+import rich
+ruchprint(torrent_info)
