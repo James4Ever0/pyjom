@@ -14,4 +14,6 @@ rm -rf "$TORRENT_NAME"
 rm -rf "$TORRENT_NAME.aria2"
 # this will be ignored.
 
+# change directory to our temp directory.
+
 aria2c -x 16 --select-file="$FILE_ID" --seed-time=0 --file-allocation=none "$TORRENT_PATH"
