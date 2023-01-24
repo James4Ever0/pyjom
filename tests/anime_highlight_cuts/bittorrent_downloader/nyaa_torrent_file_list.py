@@ -13,8 +13,9 @@ data_class = torrent.json_to_class(json_data)
 
 import rich
 
-json_data['seeders']
-json_data['seeders']
+# json_data['seeders']
+# json_data['title']
+# json_data['files']
 
 rich.print(json_data)
 print()
