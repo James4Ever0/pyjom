@@ -1,4 +1,5 @@
-anilist_ids = 112788
+anilist_ids = [112788, #海边的yi bang ren
+]
 
 # first let's get name.
 from AnilistPython import Anilist
