@@ -1,5 +1,6 @@
 url = "https://anidb.net/anime/"
 # query = "Yahari Ore no Seishun Lovecome wa Machigatte Iru."
+
 query = "Yahari Ore no Seishun Love Come wa Machigatteiru." # this will guide you to something different.
 params = {"adb.search": query, "do.update": "Search", "noalias": 1}
 import pandas
@@ -7,6 +8,7 @@ import requests
 import fake_useragent
 ua = fake_useragent.UserAgent()
 r = requests.get(url, params=params, headers={"User-Agent":ua.random}) # beautiful. really?
+
 
 text = r.text
 from bs4 import BeautifulSoup
