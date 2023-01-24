@@ -42,3 +42,5 @@ if not single_file:
         filesize_human_readable = format_size(length)
         print(f"[{aria2c_index}] ** [{filesize_human_readable}] ** {path[-1]}")
         # the index is right.
+        fnames.append(path[-1])
+
