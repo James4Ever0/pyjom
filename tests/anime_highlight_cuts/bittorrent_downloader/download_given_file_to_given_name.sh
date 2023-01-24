@@ -5,5 +5,5 @@ DOWNLOAD_FILE_PATH="$BASE_PATH/sample.webp"
 TORRENT_PATH="$BASE_PATH/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 echo "ps aux | grep sample.webp | grep -v grep | xargs -Iabc kill -s INT abc" > kill_aria2c.sh
 FILE_ID="117"
-# 
+# timeout set to what?
 aria2c -x 16 --on-download-complete "bash kill_aria2c.sh" --file-allocation=none "$TORRENT_PATH" -o "$DOWNLOAD_FILE_PATH"
