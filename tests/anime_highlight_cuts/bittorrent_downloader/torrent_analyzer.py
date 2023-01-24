@@ -21,3 +21,6 @@ rich.print(data)
 # data['info']['name']
 # data['info']['length']
 # breakpoint()
+
+# does it preserve the order?
+data['info']['file']
