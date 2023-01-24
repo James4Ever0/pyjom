@@ -9,7 +9,7 @@ query = "oniichan wa oshimai! 01"
 sort_term = "seeders"
 
 
-anime_categories = {'Anime':'1_0','Anime - Anime Music Video':'1_1','Anime - ':'1_2','':'1_3'}
+anime_categories = {'Anime':'1_0','Anime - Anime Music Video':'1_1','Anime - ':'1_2','':'1_3','':'1_4'}
 
 category_code='1_0' # anime
 page = 1 # start page: 1
