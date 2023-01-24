@@ -18,7 +18,9 @@ soup = BeautifulSoup(text, "html.parser")
 import pandas
 table = soup.find('table', id="animelist")
 
-if table:
+if not table:
+    breakpoint()
+else:
     table_str = str(table)
     data = pandas.read_html(table_str)[0] # must be the first table.
     # now you have it. sorted?
