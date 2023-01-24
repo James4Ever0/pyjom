@@ -19,6 +19,7 @@ import pandas
 table = soup.find('table', id="animelist")
 
 if not table:
+    print('table not found.')
     breakpoint()
 else:
     table_str = str(table)
