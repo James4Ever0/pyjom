@@ -23,4 +23,7 @@ soup = BeautifulSoup(text, 'html.parser')
 
 import parse
 
-template = 
+template =
+
+banner = soup.find("div",class_="pagination-page-info").text
+pagnia
