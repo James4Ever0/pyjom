@@ -12,4 +12,8 @@ with open("anidb_info.html", 'w+') as f:
 
 text = f.read()
 
-(str(soup.select("#similaranime")[0])
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(text, 'html.parser')
+similarAnime = str(soup.select("#similaranime")[0])
+
+import pandas
