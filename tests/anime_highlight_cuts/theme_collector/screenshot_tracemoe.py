@@ -16,7 +16,7 @@ assert error == ""
 results = data.get('result',[])
 
 for result in results: # already sorted.
-    anilist_id = result['anilist']
+    anilist_id = result['anilist'] # well. we only got one.
     filename = result['filename'] # need parsing right?
     episode = result.get('episode', None) # really we don't have episode here.
     start, end = result['from'], result['to']
