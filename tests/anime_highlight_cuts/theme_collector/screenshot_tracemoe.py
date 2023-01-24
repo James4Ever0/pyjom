@@ -8,4 +8,4 @@ data =requests.post("https://api.trace.moe/search",
 
 import rich
 rich.print(data) # the anime character recognition website is not running so well.
-breakpoint()
+# breakpoint()
