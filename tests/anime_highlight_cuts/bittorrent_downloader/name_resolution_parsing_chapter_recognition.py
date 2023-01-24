@@ -8,7 +8,7 @@ Bangumi_Name = 'Yahari Ore no Seishun Lovecome wa Machigatte Iru.'
 import json
 
 # replace non-alphanumeric charcters.
-episode_formatter = lambda episide_index: 
+episode_formatter = lambda episode_index: str(episode_index).zfill(2)
 
 with open("test_filenames.json",'r') as f:
     fnames = json.loads(f.read())
