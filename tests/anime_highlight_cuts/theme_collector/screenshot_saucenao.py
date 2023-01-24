@@ -1,2 +1,2 @@
 # saucenao (if fail, use trace.moe)
-# use proxies.
+# use proxies, since we are using free tiers.
