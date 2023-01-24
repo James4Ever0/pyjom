@@ -64,4 +64,5 @@ import rich
 
 rich.print(torrent_info)
 
-breakpoint()
+# breakpoint()
+# videoInfo['id'] -> "https://nyaa.si/view/{}"
