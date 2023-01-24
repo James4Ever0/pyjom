@@ -18,4 +18,5 @@ for anilist_id in anilist_ids:
     # genres = anime.get("genres", []) # not so important. we don't have understanding.
 
     # and you will search again.
-    anilist.get_anime(romaji, deepsearch=True, manual_select=True)
+    # what is this manual select?
+    animeanilist.get_anime(romaji, deepsearch=True, manual_select=True)
