@@ -25,3 +25,5 @@ if table:
     # breakpoint()
     for index, videoDataFrame in data.iterrows():
         videoData = videoDataFrame.to_dict()
+        title = videoData['Title']
+        
