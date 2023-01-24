@@ -9,6 +9,8 @@ with open("test_filenames.json",'w+') as f:
 for fname in fnames:
     fname_lower = fname.lower()
     file_extension = fname_lower.split(".")[-1]
+    file_type= "unknown"
 
     for filetype, file_extensions in filetypes.items():
-        if file_extensions
+        if file_extension in file_extensions:
+            print("file type:")
