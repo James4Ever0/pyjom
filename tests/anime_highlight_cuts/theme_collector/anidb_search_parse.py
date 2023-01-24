@@ -29,3 +29,5 @@ if table:
         title = videoData['Title']
         # where's the damn link? we don't need such thing.
         aired, ended = videoData['Aired'], videoData['Ended']
+        print(title)
+        print(f'[{index}])
