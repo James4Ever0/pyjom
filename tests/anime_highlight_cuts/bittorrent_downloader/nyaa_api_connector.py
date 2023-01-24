@@ -8,7 +8,7 @@ url = "https://nyaa.si"
 query = "oniichan wa oshimai! 01"
 sort_term = "seeders"
 category='1_0' # anime
-page = 
+page =  # start page: 
 params = dict(f=0,c=category,q=query,s=sort_term, o="desc",p=page)
 
 # better parse it yourself first huh?
