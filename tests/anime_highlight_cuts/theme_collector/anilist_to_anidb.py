@@ -18,4 +18,4 @@ for anilist_id in anilist_ids:
     # genres = anime.get("genres", []) # not so important. we don't have understanding.
 
     # and you will search again.
-    anilist.get_anime
+    anilist.get_anime(romaji, )
