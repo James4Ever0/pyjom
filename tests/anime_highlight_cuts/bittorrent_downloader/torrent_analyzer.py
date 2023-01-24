@@ -11,3 +11,4 @@ torrent_path = os.path.join(basepath, torrent_path)
 # analyze this torrent file.
 import torrent_parser as tp
 
+data = tp.parse_torrent_file(torrent_path)
