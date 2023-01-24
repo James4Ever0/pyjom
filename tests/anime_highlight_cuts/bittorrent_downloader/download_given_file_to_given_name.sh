@@ -16,4 +16,7 @@ rm -rf "$TORRENT_NAME.aria2"
 
 # change directory to our temp directory.
 
+# this speed shall be precalculated.
+# 
+
 aria2c -x 16 --select-file="$FILE_ID" --seed-time=0 --file-allocation=none --lowest-speed-limit=1024 "$TORRENT_PATH"
