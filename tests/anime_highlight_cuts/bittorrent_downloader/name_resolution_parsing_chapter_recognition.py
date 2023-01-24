@@ -67,5 +67,5 @@ for fname in fnames:
         substring_location_end = substring_location_start + len(
         bangume_name_lower_alphanumeric
     )
-        assert 
+        assert fname_lower_alphanumeric[substring_location_start: substring_location_end] == bangume_name_lower_alphanumeric
     
