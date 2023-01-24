@@ -32,7 +32,9 @@ import re
 def double_space_replacer(chars:str):
     if "  " in chars:
         chars =chars.replace("  ", " ")
-    return chars
+        return double_space_replacer(chars)
+    else:
+        return chars
 
 alphanumeric_filter = lambda chars: re.sub(r'[^a-z0-9]',' ',chars)
 
