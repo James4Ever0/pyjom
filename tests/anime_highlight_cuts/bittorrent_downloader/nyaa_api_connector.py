@@ -12,4 +12,7 @@ params = dict(f=0,c=category,q=query,s=sort_term, o="desc")
 
 # better parse it yourself first huh?
 
-r = requests.get(url, )
+r = requests.get(url, params=params)
+text = r.text
+
+from
