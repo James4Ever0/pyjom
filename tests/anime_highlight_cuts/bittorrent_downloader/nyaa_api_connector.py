@@ -41,5 +41,5 @@ if pagination_info_result:
         end_of_page=True
 
 from NyaaPy import utils
-SITE = utils.TorrentSite
+SITE = utils.TorrentSite.NYAASI
 torrent_info = utils.
