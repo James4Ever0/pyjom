@@ -15,3 +15,4 @@ for anilist_id in anilist_ids:
     print("=" * 20)
     romaji = anime.get("name_romaji", None)
     english = anime.get("name_english", None)
+    genres = anime.get("genres", None
