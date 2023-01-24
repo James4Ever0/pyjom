@@ -24,4 +24,4 @@ with open(filepath,'rb') as f:
     similarity = best.similarity
     urls = best.urls
     part = best.raw.get('part', None) # not always.
-    
+    title = best.title
