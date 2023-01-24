@@ -26,7 +26,8 @@ with open(filepath,'rb') as f:
     best_data =  best.raw.get('data',{})
     part = best_data.get('part', None) # not always.
     title = best.title
-    est_time =best_data.get('est_time',None)
+    est_time =best_data.get('est_time',None) # be like: '00:16:21 / 00:25:12'
+    
     anidb_aid = best_data.get('anidb_aid',None)
     mal_id = best_data.get('mal_id',None)
     anilist_id = best_data.get('anilist_id',None)
