@@ -40,7 +40,7 @@ paginiation_info = banner.split("\n")[0]
 pagination_info_result = parse.parse(template, pagination_info)
 
 if pagination_info_result:
-    if pagniation_info_result['total'] == pagination_info_result['end']:
+    if pagination_info_result['total'] == pagination_info_result['end']:
         print("Reached end of page.")
         end_of_page=True
 
