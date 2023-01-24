@@ -9,3 +9,7 @@ r = requests.get(url, headers={"User-Agent":ua.random})
 text = r.text
 with open("anidb_info.html", 'w+') as f:
     f.write(text)
+
+text = f.read()
+
+(str(soup.select("#similaranime")[0])
