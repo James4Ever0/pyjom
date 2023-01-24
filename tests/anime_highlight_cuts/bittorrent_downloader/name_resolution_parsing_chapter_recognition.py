@@ -57,7 +57,6 @@ for fname in fnames:
             break
     print(f"<{current_file_type}> {fname}")
     print(fname_lower_alphanumeric)
-    numbers = re.search(f" {episode_formatter(episodeIndex)} ", fname_lower_alphanumeric)
     substring_location_start = fname_lower_alphanumeric.find(
         bangume_name_lower_alphanumeric
     )
@@ -66,8 +65,9 @@ for fname in fnames:
         bangume_name_lower_alphanumeric
     )
         assert fname_lower_alphanumeric[substring_location_start: substring_location_end] == bangume_name_lower_alphanumeric
+        numbers = re.search(f" {episode_formatter(episodeIndex)} ", fname_lower_alphanumeric)
 
         print("NUMBERS?") # this is the index we want
         print(numbers)
         if numbers:
-            numbers.
+            numbers.start+1
