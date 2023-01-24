@@ -63,6 +63,9 @@ for fname in fnames:
     substring_location_start = fname_lower_alphanumeric.find(
         bangume_name_lower_alphanumeric
     )
-    substring_location_end = substring_location_start + len(
+    if substring_location_start!=-1:
+        substring_location_end = substring_location_start + len(
         bangume_name_lower_alphanumeric
     )
+        assert 
+    
