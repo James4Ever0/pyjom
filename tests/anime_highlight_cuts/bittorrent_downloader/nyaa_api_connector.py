@@ -31,4 +31,4 @@ pagniation_info = banner.split("\n")[0]
 
 pagination_info_result = parse.parse(template, pagination_info)
 
-
+if pagniation_info_result['total'
