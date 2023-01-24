@@ -16,7 +16,7 @@ soup = BeautifulSoup(text, "html.parser")
 # print(soup) # forbidden? wtf?
 # breakpoint()
 import pandas
-table = soup.find('table', id="animelist")
+table = soup.find('table')
 
 if not table:
     print('table not found.')
