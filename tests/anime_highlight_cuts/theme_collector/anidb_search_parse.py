@@ -7,6 +7,7 @@ import requests
 import fake_useragent
 ua = fake_useragent.UserAgent()
 r = requests.get(url, params=params, headers={"User-Agent":ua.random}) # beautiful. really?
+
 text = r.text
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(text, "html.parser")
@@ -15,6 +16,7 @@ soup = BeautifulSoup(text, "html.parser")
 # breakpoint()
 import pandas
 table = soup.find('table', id="animelist")
+
 if table:
     table_str = str(table)
     data = pandas.read_html(table_str)
