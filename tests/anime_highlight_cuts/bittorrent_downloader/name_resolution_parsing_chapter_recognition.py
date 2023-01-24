@@ -28,6 +28,8 @@ episode_formatter = lambda episode_index: str(episode_index).zfill(2)
 
 import re
 
+alphanumeric_filter = lambda chars: 
+
 with open("test_filenames.json", "r") as f:
     fnames = json.loads(f.read())
 for fname in fnames:
