@@ -23,3 +23,5 @@ with open(filepath,'rb') as f:
     best = results[0]
     similarity = best.similarity
     urls = best.urls
+    part = best.raw.get('part', None) # not always.
+    
