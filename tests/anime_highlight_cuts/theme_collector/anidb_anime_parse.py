@@ -15,9 +15,9 @@ text = f.read()
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(text, 'html.parser')
 # must be non-empty.
-similarAnime = str(soup.find(id="similaranime"))
-indirectRelated = str(soup.find(id="relations_indirect"))
-directRelated = str(soup.find(id="relations_direct"))
+similarAnime = soup.find(id="similaranime")
+indirectRelated = soup.find(id="relations_indirect")
+directRelated = soup.find(id="relations_direct")
 
 tables = soup.find_all('table') # shit.
 
