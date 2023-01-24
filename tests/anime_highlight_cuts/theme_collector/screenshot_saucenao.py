@@ -21,4 +21,5 @@ with open(filepath,'rb') as f:
     print(results)
     breakpoint()
     best = results[0]
+    similarity = best.similarity
     urls = best.urls
