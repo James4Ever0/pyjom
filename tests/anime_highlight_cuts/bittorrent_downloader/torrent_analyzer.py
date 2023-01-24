@@ -26,7 +26,8 @@ rich.print(data)
 # breakpoint()
 
 # does it preserve the order?
-import humanize
+# import humanize
+# well.
 import humanfriendly
 for index, fileInfo in enumerate(data['info']['files']):
     aria2c_index = index+1
