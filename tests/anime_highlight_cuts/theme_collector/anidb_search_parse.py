@@ -23,5 +23,5 @@ if table:
     # now you have it. sorted?
     # print(data)
     # breakpoint()
-    for videoDataFrame in data.iterrows():
-        videoData = videoDataFrame.to_
+    for index, videoDataFrame in data.iterrows():
+        videoData = videoDataFrame.to_dict()
