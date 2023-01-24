@@ -17,9 +17,11 @@ soup = BeautifulSoup(text, 'html.parser')
 # must be non-empty.
 similarAnime = soup.find(id="similaranime")
 indirectRelated = soup.find(id="relations_indirect")
-directRelated = soup.find(id="relations_direct")
+directRelated = soup.find(id="relations_direct") # it could be none.
 
 tables = soup.find_all('table') # shit.
+
+# i think monad is good.
 
 import pandas
 SAData = pandas.read_html(similarAnime)
