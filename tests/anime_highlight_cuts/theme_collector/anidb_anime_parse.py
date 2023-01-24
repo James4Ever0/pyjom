@@ -16,6 +16,8 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup(text, 'html.parser')
 similarAnime = str(soup.select("#similaranime")[0])
 
+tables = soup.find_all('table') # shit.
+
 import pandas
 SAData = pandas.read_html(similarAnime)
 print(SAData)
