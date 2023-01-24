@@ -1,4 +1,5 @@
-anilist_ids = [112788, #海边的yi bang ren
+anilist_ids = [112788, #海边的异邦人
+
 ]
 
 # first let's get name.
