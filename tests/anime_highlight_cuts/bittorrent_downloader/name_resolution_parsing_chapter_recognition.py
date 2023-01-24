@@ -29,14 +29,17 @@ episode_formatter = lambda episode_index: str(episode_index).zfill(2)
 import re
 
 # also replace all double spaces.
-def double_space_replacer(chars:str):
+def double_space_replacer(chars: str):
     if "  " in chars:
-        chars =chars.replace("  ", " ")
+        chars = chars.replace("  ", " ")
         return double_space_replacer(chars)
     else:
         return chars
 
-alphanumeric_filter = lambda chars: re.sub(r'[^a-z0-9]',' ',chars)
+
+alphanumeric_filter = lambda chars: double_space_replacer(
+    re.sub(r"[^a-z0-9]", " ", chars)
+)
 
 bangume_name_lower_alphanumeric = alphanumeric_filter(Bangumi_Name.lower())
 
@@ -54,8 +57,12 @@ for fname in fnames:
             break
     print(f"<{current_file_type}> {fname}")
     print(fname_lower_alphanumeric)
-    numbers = re.search(r"\d+",fname_lower_alphanumeric)
+    numbers = re.search(r"\d+", fname_lower_alphanumeric)
     print("NUMBERS?")
     print(numbers)
-    substring_location_start = fname_lower_alphanumeric.find(bangume_name_lower_alphanumeric)
-    substring_location_end = substring_location_start+len(bangume_name_lower_alphanumeric)
+    substring_location_start = fname_lower_alphanumeric.find(
+        bangume_name_lower_alphanumeric
+    )
+    substring_location_end = substring_location_start + len(
+        bangume_name_lower_alphanumeric
+    )
