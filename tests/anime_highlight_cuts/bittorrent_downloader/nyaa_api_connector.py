@@ -40,6 +40,6 @@ if pagination_info_result:
         print("Reached end of page.")
         end_of_page=True
 
+from NyaaPy import utils
 
-
-torrent_info = 
+torrent_info = utils.
