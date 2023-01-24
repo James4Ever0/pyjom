@@ -7,4 +7,5 @@ import asyncio
 loop = asyncio.get_event_loop()
 results = loop.run_until_complete(sauce.from_file(filepath))
 # results = await sauce.from_url('https://i.imgur.com/QaKpV3s.png')
+# no api key. fuck.
 print(results)
