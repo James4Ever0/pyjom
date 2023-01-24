@@ -13,5 +13,5 @@ filepath = "/Users/jamesbrown/Downloads/anime_download/dress_test_pictures/å¥³è£
 # no api key. fuck.
 from saucenao_api import SauceNao
 sauce = SauceNao(SAUCENAO_API_KEY)
-results = sauce.from_url()
+results = sauce.from_file(filepath)
 print(results)
