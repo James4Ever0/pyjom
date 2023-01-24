@@ -19,6 +19,7 @@ data = tp.parse_torrent_file(torrent_path)
 import rich
 rich.print(data)
 # will be complete name later?
+single_file = data['info']
 # data['info']['name'] 
 
 # length will be total length?
