@@ -1,2 +1,6 @@
 url = "https://anidb.net/anime/"
-{"adb.search":query,"do.update":'Search',"noalias":1}
+query = "Yahari Ore no Seishun Lovecome wa Machigatte Iru."
+params = {"adb.search":query,"do.update":'Search',"noalias":1}
+
+import requests
+
