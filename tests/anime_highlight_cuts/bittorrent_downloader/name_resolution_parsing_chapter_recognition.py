@@ -68,6 +68,6 @@ for fname in fnames:
         numbers = fname_lower_alphanumeric.find(f" {episode_formatter(episodeIndex)} ")
 
         if numbers!=-1:
-            if episodeIndex
+            if 
                 print("EPISODE?") # this is the index we want
                 print(numbers)
