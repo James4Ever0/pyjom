@@ -35,5 +35,5 @@ for index, fileInfo in enumerate(data['info']['files']):
     path = fileInfo['path'] # multiple strings in a list
     joined_path = "/".join(path)
     filesize_human_readable = format_size(length)
-    print(f"[{aria2c_index}] ** [] ** {path[-1]}")
+    print(f"[{aria2c_index}] ** [{filesize_human_readable}] ** {path[-1]}")
     # the index is right.
