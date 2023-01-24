@@ -70,4 +70,4 @@ for fname in fnames:
         print("NUMBERS?") # this is the index we want
         print(numbers)
         if numbers:
-            numbers.start+1
+            
