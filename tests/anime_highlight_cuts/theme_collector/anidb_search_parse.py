@@ -17,5 +17,7 @@ import pandas
 table = soup.find('table', id="animelist")
 if table:
     table_str = str(table)
-    data = pandas.read_html(table)
+    data = pandas.read_html(table_str)
     # now you have it. sorted?
+    print(data)
+    breakpoint()
