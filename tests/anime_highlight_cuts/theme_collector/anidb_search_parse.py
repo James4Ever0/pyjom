@@ -2,6 +2,7 @@ url = "https://anidb.net/anime/"
 query = "Yahari Ore no Seishun Lovecome wa Machigatte Iru."
 params = {"adb.search": query, "do.update": "Search", "noalias": 1}
 
+import pandas
 import requests
 import fake_useragent
 ua = fake_useragent.UserAgent()
@@ -12,6 +13,9 @@ soup = BeautifulSoup(text, "html.parser")
 
 # print(soup) # forbidden? wtf?
 # breakpoint()
+import pandas
 table = soup.find('table', id="animelist")
 if table:
-    data = 
+    table_str = str(table)
+    data = pandas.read_html(table)
+    # now you have it. sorted?
