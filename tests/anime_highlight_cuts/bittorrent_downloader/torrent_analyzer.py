@@ -44,4 +44,5 @@ if not single_file:
         # the index is right.
         fnames.append(path[-1])
 
-with open("fnames
+with open("test_filenames.json",'w+') as f:
+    f.write(json.dumps(fnames))
