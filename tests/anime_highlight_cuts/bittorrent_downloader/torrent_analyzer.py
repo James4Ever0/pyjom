@@ -23,4 +23,4 @@ rich.print(data)
 # breakpoint()
 
 # does it preserve the order?
-data['info']['file']
+for data['info']['files']
