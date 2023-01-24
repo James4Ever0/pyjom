@@ -16,4 +16,6 @@ for anilist_id in anilist_ids:
     romaji = anime.get("name_romaji", None)
     english = anime.get("name_english", None)
     # genres = anime.get("genres", []) # not so important. we don't have understanding.
-    
+
+    # and you will search again.
+    anilist.
