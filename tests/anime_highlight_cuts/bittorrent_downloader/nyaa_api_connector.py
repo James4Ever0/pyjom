@@ -58,13 +58,13 @@ if pagination_info_result:
 from NyaaPy import utils
 
 SITE = utils.TorrentSite.NYAASI
-torrent_info = utils.parse_nyaa(request_text=text, limit=None, site=SITE)
+json_info = utils.parse_nyaa(request_text=text, limit=None, site=SITE)
 
 import rich
 
-rich.print(torrent_info)
+rich.print(json_info)
 
 # breakpoint()
 # videoInfo['id'] -> "https://nyaa.si/view/{}"
 
-# you can also download torrent file for 
+# you can also download torrent file for only file info.
