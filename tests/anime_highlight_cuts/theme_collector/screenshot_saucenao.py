@@ -28,4 +28,6 @@ with open(filepath,'rb') as f:
     part = best_data.get('part', None) # not always.
     title = best.title
     est_time =best_data.get('est_time',None)
-    anidb_aid = best_data.get('')
+    anidb_aid = best_data.get('anidb_aid',None)
+    mal_aid = best_data.get('mal_aid',None)
+    anilist_id = best_data.get('anilist_id',None)
