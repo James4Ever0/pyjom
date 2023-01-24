@@ -69,8 +69,9 @@ rich.print(json_info)
 # breakpoint()
 for videoInfo in json_info:
     seeders = int(videoInfo['seeders'])
-    seeders_enough = seeders
+    seeders_enough = seeders>=MIN_SEEDERS
     print('seeders?',seeders)
+    print("seeders enough?")
     # videoInfo['id'] -> "https://nyaa.si/view/{}"
 
 # you can also download torrent file for only file info.
