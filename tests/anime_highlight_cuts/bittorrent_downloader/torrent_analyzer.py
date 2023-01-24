@@ -8,4 +8,4 @@ basepath = "/Users/jamesbrown/Downloads/anime_download"
 
 torrent_path = os.path.join(basepath, torrent_path)
 
-
+# analyze this torrent file.
