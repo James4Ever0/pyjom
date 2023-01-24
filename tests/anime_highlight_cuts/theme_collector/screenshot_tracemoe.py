@@ -1,1 +1,1 @@
-# anilist has typos on "Yahari Ore no Seishun Lovecome wa Machigatte Iru." which might 
+# anilist has typos on "Yahari Ore no Seishun Lovecome wa Machigatte Iru." which might be harmful.
