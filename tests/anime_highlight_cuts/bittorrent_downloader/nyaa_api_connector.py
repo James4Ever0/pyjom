@@ -35,7 +35,7 @@ import parse
 template = "Displaying results {start:d}-{end:d} out of {total:d} results."
 
 banner = soup.find("div",class_="pagination-page-info").text
-pagniation_info = banner.split("\n")[0]
+paginiation_info = banner.split("\n")[0]
 
 pagination_info_result = parse.parse(template, pagination_info)
 
