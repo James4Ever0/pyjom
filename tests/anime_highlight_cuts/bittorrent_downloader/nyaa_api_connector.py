@@ -20,6 +20,7 @@ params = dict(f=0,c=category,q=query,s=sort_term, o="desc",p=page)
 #r = requests.get(url, params=params)
 text = r.text
 
+#with open("output.html",'w+') as f:
 from bs4 import BeautifulSoup
 #with open("output.html",'w+') as f:
 #    f.write(text)
