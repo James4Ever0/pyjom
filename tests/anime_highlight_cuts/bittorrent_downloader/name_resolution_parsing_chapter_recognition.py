@@ -3,6 +3,8 @@ video_types = ['mkv','mov','mp4','flv','avi','ogv','webm','ts','wmv','webm','m4v
 # use ffmpeg for subtitle extraction?
 filetypes = {'subtitle':subtitle_types,'video':video_types}
 
+Bangumi_Name = 
+
 import json
 with open("test_filenames.json",'r') as f:
     fnames = json.loads(f.read())
