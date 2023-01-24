@@ -30,7 +30,10 @@ import re
 
 # also replace all double spaces.
 def double_space_replacer(chars:str):
-    if "  "
+    if "  " in chars:
+        chars =chars.replace("  ", " ")
+    return chars
+
 alphanumeric_filter = lambda chars: re.sub(r'[^a-z0-9]',' ',chars)
 
 bangume_name_lower_alphanumeric = alphanumeric_filter(Bangumi_Name.lower())
