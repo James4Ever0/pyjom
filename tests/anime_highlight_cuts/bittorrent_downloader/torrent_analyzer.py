@@ -23,7 +23,7 @@ rich.print(data)
 
 # length will be total length?
 # data['info']['length']
-# breakpoint()
+breakpoint()
 
 # does it preserve the order?
 # for fileInfo in data['info']['files']:
