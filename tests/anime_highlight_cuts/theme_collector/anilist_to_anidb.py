@@ -1,7 +1,8 @@
-anilist_id = 112788
+anilist_ids = 112788
 
 # first let's get name.
 from AnilistPython import Anilist
 anilist = Anilist()
-anime = anilist.get_anime_with_id(anilist_id)
-# what about alias?
+for anilist_id in anilist_ids:
+    anime = anilist.get_anime_with_id(anilist_id)
+    # what about alias?
