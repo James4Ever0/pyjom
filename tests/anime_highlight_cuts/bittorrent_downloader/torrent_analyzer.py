@@ -23,7 +23,7 @@ rich.print(data)
 
 # length will be total length?
 # data['info']['length']
-breakpoint()
+# breakpoint()
 
 # does it preserve the order?
 for index, fileInfo in enumerate(data['info']['files']):
@@ -31,4 +31,5 @@ for index, fileInfo in enumerate(data['info']['files']):
     length = fileInfo['length']
     path = fileInfo['path'] # multiple strings in a list
     joined_path = "/".join(path)
+    filesize_human_readable = 
     print(f"[{aria2c_index}] ** {path[-1]}")
