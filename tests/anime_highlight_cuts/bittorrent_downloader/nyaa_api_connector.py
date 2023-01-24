@@ -15,4 +15,5 @@ params = dict(f=0,c=category,q=query,s=sort_term, o="desc")
 r = requests.get(url, params=params)
 text = r.text
 
-from
+from bs4 import BeautifulSoup
+soup = BeautifulSoup()
