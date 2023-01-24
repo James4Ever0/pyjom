@@ -10,5 +10,6 @@ text = r.text
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(text, "html.parser")
 
-print(soup) # forbidden? wtf?
-breakpoint()
+# print(soup) # forbidden? wtf?
+# breakpoint()
+table = soup.find('table', id="")
