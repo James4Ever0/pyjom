@@ -1,1 +1,1 @@
-# saucenao (if fail, use )
+# saucenao (if fail, use trace.moe)
