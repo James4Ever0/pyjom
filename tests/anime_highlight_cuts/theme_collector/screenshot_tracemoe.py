@@ -4,7 +4,7 @@ import requests
 data =requests.post("https://api.trace.moe/search",
   data=open(imagePath, "rb"), # since this is smallest
   headers={"Content-Type": "image/jpeg"}
-).json()
+).json() # remember you must change your ip later.
 
 import rich
 rich.print(data) # the anime character recognition website is not running so well.
