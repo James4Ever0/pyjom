@@ -28,7 +28,8 @@ with open(filepath,'rb') as f:
     title = best.title
     est_time =best_data.get('est_time',None) # be like: '00:16:21 / 00:25:12'
     if est_time:
-        start_end = est_time.split("/")]
+        start_end = [timestamp.strip() for timestamp in est_time.split("/")]
+        start_time, end_time = start_end
     anidb_aid = best_data.get('anidb_aid',None)
     mal_id = best_data.get('mal_id',None)
     anilist_id = best_data.get('anilist_id',None)
