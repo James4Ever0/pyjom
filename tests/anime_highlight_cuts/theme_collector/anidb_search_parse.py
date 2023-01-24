@@ -9,5 +9,5 @@ text = r.text
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(text, "html.parser")
 
-print(soup)
+print(soup) # forbidden? wtf?
 breakpoint()
