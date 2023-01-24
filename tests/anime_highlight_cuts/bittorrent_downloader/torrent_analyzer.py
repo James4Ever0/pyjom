@@ -33,3 +33,4 @@ for index, fileInfo in enumerate(data['info']['files']):
     joined_path = "/".join(path)
     filesize_human_readable = 
     print(f"[{aria2c_index}] ** {path[-1]}")
+    # the index is right.
