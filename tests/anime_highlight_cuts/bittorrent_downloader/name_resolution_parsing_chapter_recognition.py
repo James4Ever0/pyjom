@@ -68,4 +68,3 @@ for fname in fnames:
         bangume_name_lower_alphanumeric
     )
         assert fname_lower_alphanumeric[substring_location_start: substring_location_end] == bangume_name_lower_alphanumeric
-    
