@@ -11,3 +11,4 @@ for anilist_id in anilist_ids:
     # what about alias?
     print(anime)
     print("="*20)
+    romaji = anime['name_romaji']
