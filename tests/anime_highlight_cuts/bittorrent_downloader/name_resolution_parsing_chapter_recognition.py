@@ -4,6 +4,7 @@ video_types = ['mkv','mov','mp4','flv','avi','ogv','webm','ts','wmv','webm','m4v
 filetypes = {'subtitle':subtitle_types,'video':video_types}
 
 Bangumi_Name = 'Yahari Ore no Seishun Lovecome wa Machigatte Iru.'
+episodeIndex = 3
 
 import json
 
