@@ -43,6 +43,7 @@ if not single_file:
         print(f"[{aria2c_index}] ** [{filesize_human_readable}] ** {path[-1]}")
         # the index is right.
         fnames.append(path[-1])
+        print(f"FULLPATH: {joined_path}")
 
 with open("test_filenames.json",'w+') as f:
     f.write(json.dumps(fnames))
