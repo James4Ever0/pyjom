@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup(text, 'html.parser')
 similarAnime = str(soup.select("#similaranime")[0])
 indirectRelated = str(soup.select('#relations_indirect')[0])
-directRelated = str(soup.select('#'))
+directRelated = str(soup.select('#relations_direct'[0]))
 
 tables = soup.find_all('table') # shit.
 
