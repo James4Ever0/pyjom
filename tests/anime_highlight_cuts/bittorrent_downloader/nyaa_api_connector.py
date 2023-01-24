@@ -33,4 +33,5 @@ pagination_info_result = parse.parse(template, pagination_info)
 
 if pagination_info_result:
     if pagniation_info_result['total'] == pagination_info_result['end']:
-        print("")
+        print("Reached end of page.")
+        end_of
