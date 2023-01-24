@@ -7,3 +7,5 @@ url = "https://nyaa.si"
 
 query = "oniichan"
 params = dict(f=0,c="1_0",q=query)
+
+# better parse it yourself first huh?
