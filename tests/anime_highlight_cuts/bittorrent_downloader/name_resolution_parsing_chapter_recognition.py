@@ -4,7 +4,7 @@ video_types = ['mkv','mov','mp4','flv','avi','ogv','webm','ts','wmv','webm','m4v
 filetypes = {'subtitle':subtitle_types,'video':video_types}
 
 import json
-with open("test_filenames.json",'w+') as f:
+with open("test_filenames.json",'r') as f:
     fnames = json.loads(f.read())
 for fname in fnames:
     fname_lower = fname.lower()
@@ -15,4 +15,4 @@ for fname in fnames:
         if file_extension in file_extensions:
             current_file_type = filetype
             break
-    print(f"{current_file_type} {fname}")
+    print(f"<{current_file_type}> {fname}")
