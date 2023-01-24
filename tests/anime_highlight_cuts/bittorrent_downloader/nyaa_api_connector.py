@@ -30,3 +30,5 @@ banner = soup.find("div",class_="pagination-page-info").text
 pagniation_info = banner.split("\n")[0]
 
 pagination_info_result = parse.parse(template, pagination_info)
+
+
