@@ -12,4 +12,6 @@ soup = BeautifulSoup(text, "html.parser")
 
 # print(soup) # forbidden? wtf?
 # breakpoint()
-table = soup.find('table', id="")
+table = soup.find('table', id="animelist")
+if table:
+    data = 
