@@ -12,3 +12,8 @@ torrent_path = os.path.join(basepath, torrent_path)
 import torrent_parser as tp
 
 data = tp.parse_torrent_file(torrent_path)
+
+import rich
+rich.print(data)
+
+breakpoint()
