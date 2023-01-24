@@ -28,13 +28,15 @@ episode_formatter = lambda episode_index: str(episode_index).zfill(2)
 
 import re
 
-alphanumeric_filter = lambda chars: 
+alphanumeric_filter = lambda chars: re.sub(r'[^a-z0-9]',' ',chars)
+
+bangume_name_alphanumeric
 
 with open("test_filenames.json", "r") as f:
     fnames = json.loads(f.read())
 for fname in fnames:
     fname_lower = fname.lower()
-    fname_lower_alphanumeric = re.sub(r'[^a-z0-9]',' ',fname_lower)
+    fname_lower_alphanumeric = alphanumeric_filter(fname_lower)
     file_extension = fname_lower.split(".")[-1]
     current_file_type = "unknown"
 
