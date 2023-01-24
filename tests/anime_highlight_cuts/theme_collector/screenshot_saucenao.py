@@ -22,6 +22,6 @@ with open(filepath,'rb') as f:
     breakpoint()
     best = results[0]
     similarity = best.similarity
-    urls = best.urls
+    urls = best.urls # https://anilist.co/anime/
     part = best.raw.get('part', None) # not always.
     title = best.title
