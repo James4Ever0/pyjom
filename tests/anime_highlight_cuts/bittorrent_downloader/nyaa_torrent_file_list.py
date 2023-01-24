@@ -13,6 +13,9 @@ data_class = torrent.json_to_class(json_data)
 
 import rich
 
+json_data['seeders']
+json_data['seeders']
+
 rich.print(json_data)
 print()
 print("_"*20)
