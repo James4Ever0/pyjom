@@ -17,7 +17,7 @@ params = dict(f=0,c=category,q=query,s=sort_term, o="desc",p=page)
 
 # better parse it yourself first huh?
 
-r = requests.get(url, params=params)
+#r = requests.get(url, params=params)
 text = r.text
 
 from bs4 import BeautifulSoup
@@ -43,3 +43,4 @@ if pagination_info_result:
 from NyaaPy import utils
 SITE = utils.TorrentSite.NYAASI
 torrent_info = utils.parse_nyaa(request_text=text,limit=None, site=SITE)
+print()
