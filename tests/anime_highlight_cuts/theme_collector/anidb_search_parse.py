@@ -19,7 +19,7 @@ table = soup.find('table', id="animelist")
 
 if table:
     table_str = str(table)
-    data = pandas.read_html(table_str)
+    data = pandas.read_html(table_str)[0] # must be the first table.
     # now you have it. sorted?
     print(data)
     breakpoint()
