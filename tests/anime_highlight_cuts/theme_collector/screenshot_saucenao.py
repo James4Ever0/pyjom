@@ -24,6 +24,7 @@ with open(filepath,'rb') as f:
     similarity = best.similarity
     # just trust anilist.
     urls = best.urls # https://anilist.co/anime/ https://anidb.net/anime/ https://myanimelist.net/anime/
-    part = best.raw.get('part', None) # not always.
+    best_data =  best.raw.get('data',{})
+    part = best_data.get('part', None) # not always.
     title = best.title
-    est_time = best.raw.get('data',{}).get('est_time',None)
+    est_time =best_data.get('est_time',None)
