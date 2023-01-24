@@ -17,5 +17,6 @@ with open(filepath,'rb') as f:
     results = sauce.from_file(f)
     long_remaining = results.long_remaining # wait till next day? wtf?
     short_remaining = results.short_remaining
+    result_results = len(results)
     print(results)
     breakpoint()
