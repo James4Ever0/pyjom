@@ -13,13 +13,13 @@ rich.print(data) # the anime character recognition website is not running so wel
 error = data['error']
 assert error == ""
 
-results = data['result']
+results = data.get('result',[])
 
 for result in results: # already sorted.
     anilist_id = result['anilist']
     filename = result['filename'] # need parsing right?
     episode = result.get('episode', None)
-    start, end = result['from'], result['end']
+    start, end = result['from'], result['to']
     similarity = result['similarity']
 
 breakpoint()
