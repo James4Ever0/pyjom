@@ -11,7 +11,7 @@ FILE_ID="117"
 # timeout set to what?
 # rm "$DOWNLOAD_FILE_PATH"
 rm -rf "$TORRENT_NAME"
-rm -rf "$TORRENT_NAME.aria2c"
+rm -rf "$TORRENT_NAME.aria2"
 # this will be ignored.
 
 aria2c -x 16 --select-file="$FILE_ID" --on-download-complete "bash kill_aria2c.sh" --file-allocation=none "$TORRENT_PATH" 
