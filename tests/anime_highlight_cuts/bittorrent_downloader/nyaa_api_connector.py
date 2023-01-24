@@ -66,3 +66,5 @@ rich.print(torrent_info)
 
 # breakpoint()
 # videoInfo['id'] -> "https://nyaa.si/view/{}"
+
+# you can also download torrent file for 
