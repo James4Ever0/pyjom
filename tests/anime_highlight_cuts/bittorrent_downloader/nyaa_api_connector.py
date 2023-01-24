@@ -16,5 +16,6 @@ r = requests.get(url, params=params)
 text = r.text
 
 from bs4 import BeautifulSoup
-with open("output.html",)
+with open("output.html",'w+') as f:
+    f.write(text)
 soup = BeautifulSoup(text, )
