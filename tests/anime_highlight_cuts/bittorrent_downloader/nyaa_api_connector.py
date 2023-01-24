@@ -68,6 +68,7 @@ rich.print(json_info)
 
 # breakpoint()
 for videoInfo in json_info:
+    seeders = videoInfo['seeders']
     # videoInfo['id'] -> "https://nyaa.si/view/{}"
 
 # you can also download torrent file for only file info.
