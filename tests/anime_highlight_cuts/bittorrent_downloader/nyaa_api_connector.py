@@ -10,6 +10,9 @@ sort_term = "seeders"
 category='1_0' # anime
 page = 1 # start page: 1
 end_of_page=False
+
+# better not to use r
+
 params = dict(f=0,c=category,q=query,s=sort_term, o="desc",p=page)
 
 # better parse it yourself first huh?
