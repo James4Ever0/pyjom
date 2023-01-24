@@ -19,5 +19,6 @@ for anilist_id in anilist_ids:
 
     # and you will search again.
     # what is this manual select?
-    anime2 = anilist.get_anime(romaji, deepsearch=True, manual_select=True) # shit?
+    anime2 = anilist.get_anime(romaji, deepsearch=True) # shit?
     print(anime2)
+    print("=" * 20)
