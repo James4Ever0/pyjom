@@ -13,3 +13,8 @@ error = data['error']
 assert error == ""
 
 results = data['result']
+
+for result in results: # already sorted.
+    anilist_id = result['anilist']
+    filename = result['filename']
+    
