@@ -29,6 +29,9 @@ single_file = not('files' in data['info'].keys())
 # does it preserve the order?
 # import humanize
 # well.
+
+fnames=[]
+import json
 from humanfriendly import format_size
 if not single_file:
     for index, fileInfo in enumerate(data['info']['files']):
