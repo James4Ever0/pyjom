@@ -6,3 +6,8 @@ import requests
 
 r = requests.get(url, params=params)
 text = r.text
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(text, "html.parser")
+
+print(soup)
+breakpoint()
