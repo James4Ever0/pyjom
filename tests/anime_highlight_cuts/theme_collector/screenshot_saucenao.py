@@ -3,7 +3,7 @@
 from pysaucenao import SauceNao
 import os
 SAUCENAO_API_KEY=os.environ.get('SAUCENAO_API_KEY')
-sauce = SauceNao()
+sauce = SauceNao(api_key=SAUCENAO_API_KEY)
 filepath = "/Users/jamesbrown/Downloads/anime_download/dress_test_pictures/女装0.jpeg"
 import asyncio
 loop = asyncio.get_event_loop()
