@@ -67,6 +67,7 @@ for fname in fnames:
         assert fname_lower_alphanumeric[substring_location_start: substring_location_end] == bangume_name_lower_alphanumeric
         numbers = fname_lower_alphanumeric.find(f" {episode_formatter(episodeIndex)} ")
 
-        print("NUMBERS?") # this is the index we want
+        print("EPISODE?") # this is the index we want
         print(numbers)
         if numbers!=-1:
+            if 
