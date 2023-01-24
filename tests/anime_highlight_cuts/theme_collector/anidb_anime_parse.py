@@ -7,4 +7,5 @@ ua = fake_useragent.UserAgent()
 r = requests.get(url, headers={"User-Agent":ua.random}) 
 
 text = r.text
-with open("")
+with open("anidb_info.html", 'w+') as f:
+    f.write(text)
