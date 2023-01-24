@@ -30,11 +30,12 @@ single_file = not('files' in data['info'].keys())
 # import humanize
 # well.
 from humanfriendly import format_size
-for index, fileInfo in enumerate(data['info']['files']):
-    aria2c_index = index+1
-    length = fileInfo['length']
-    path = fileInfo['path'] # multiple strings in a list
-    joined_path = "/".join(path)
-    filesize_human_readable = format_size(length)
-    print(f"[{aria2c_index}] ** [{filesize_human_readable}] ** {path[-1]}")
-    # the index is right.
+if not single_file:
+    for index, fileInfo in enumerate(data['info']['files']):
+        aria2c_index = index+1
+        length = fileInfo['length']
+        path = fileInfo['path'] # multiple strings in a list
+        joined_path = "/".join(path)
+        filesize_human_readable = format_size(length)
+        print(f"[{aria2c_index}] ** [{filesize_human_readable}] ** {path[-1]}")
+        # the index is right.
