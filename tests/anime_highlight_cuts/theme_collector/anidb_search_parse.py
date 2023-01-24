@@ -26,4 +26,4 @@ if table:
     for index, videoDataFrame in data.iterrows():
         videoData = videoDataFrame.to_dict()
         title = videoData['Title']
-        
+        # where's the damn link? we don't need such thing.
