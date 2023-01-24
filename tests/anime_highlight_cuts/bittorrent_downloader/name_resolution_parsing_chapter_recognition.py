@@ -6,8 +6,8 @@ filetypes = {'subtitle':subtitle_types,'video':video_types}
 Bangumi_Name = 'Yahari Ore no Seishun Lovecome wa Machigatte Iru.'
 episodeIndex = 3
 
-chinese_simplified_sub_types = [,'chs','简体'简日]
-繁日 繁体 繁體'cht'
+chinese_simplified_sub_types = ['chs','简体','简日']
+chinese_simplified_sub_types = [繁日 繁体 繁體'cht'
 import json
 
 # replace non-alphanumeric charcters.
