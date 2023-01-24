@@ -3,6 +3,6 @@
 BASE_PATH="/Users/jamesbrown/Downloads/anime_download"
 DOWNLOAD_FILE_PATH="$BASE_PATH/sample.webp"
 TORRENT_PATH="$BASE_PATH/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
-echo "" > kill_aria2c.sh
+echo "ps aux " > kill_aria2c.sh
 FILE_ID="117"
 aria2c -x 16 --on-download-complete "bash kill_aria2c.sh" --file-allocation=none "$TORRENT_PATH" -o "$DOWNLOAD_FILE_PATH"
