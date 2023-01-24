@@ -71,7 +71,7 @@ for videoInfo in json_info:
     seeders = int(videoInfo['seeders'])
     seeders_enough = seeders>=MIN_SEEDERS
     print('seeders?',seeders)
-    print("seeders enough?")
+    print("seeders enough?", seeders_enough)
     # videoInfo['id'] -> "https://nyaa.si/view/{}"
 
 # you can also download torrent file for only file info.
