@@ -68,6 +68,6 @@ for fname in fnames:
         episodeIndexLocation = fname_lower_alphanumeric.find(f" {episode_formatter(episodeIndex)} ")
 
         if episodeIndexLocation!=-1:
-            if episodeIndexLocation+1>=
+            if episodeIndexLocation+1>=substring_location_end:
                 print("EPISODE?") # this is the index we want
                 print(episodeIndexLocation)
