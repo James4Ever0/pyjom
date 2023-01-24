@@ -21,4 +21,6 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup(text, 'html.parser')
 #breakpoint()
 
-# 
+import parse
+
+template = 
