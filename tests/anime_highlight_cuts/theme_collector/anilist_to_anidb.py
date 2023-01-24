@@ -10,4 +10,4 @@ for anilist_id in anilist_ids:
     anime = anilist.get_anime_with_id(anilist_id)
     # what about alias?
     print(anime)
-    print("=====================")
+    print("="*20)
