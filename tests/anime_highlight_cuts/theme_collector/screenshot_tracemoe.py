@@ -18,7 +18,7 @@ results = data.get('result',[])
 for result in results: # already sorted.
     anilist_id = result['anilist']
     filename = result['filename'] # need parsing right?
-    episode = result.get('episode', None)
+    episode = result.get('episode', None) # really we don't have episode here.
     start, end = result['from'], result['to']
     similarity = result['similarity']
 
