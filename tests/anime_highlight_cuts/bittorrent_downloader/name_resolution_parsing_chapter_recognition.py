@@ -16,7 +16,7 @@ video_types = [
 # use ffmpeg for subtitle extraction?
 filetypes = {"subtitle": subtitle_types, "video": video_types}
 
-Bangumi_Name = "Yahari Ore no Seishun Lovecome wa Machigatte Iru."
+Bangumi_Name = "Yahari Ore no Seishun Lovecome wa Machigatte Iru.".strip()
 episodeIndex = 3
 
 chinese_simplified_sub_types = ["chs", "简体", "简日"]
