@@ -26,6 +26,9 @@ rich.print(data)
 breakpoint()
 
 # does it preserve the order?
-for index, fileInfo in data['info']['files']:
+for index, fileInfo in enumerate(data['info']['files']):
+    aria2c_index = index+1
     length = fileInfo['length']
     path = fileInfo['path'] # multiple strings in a list
+    joined_path = "/".join(path)
+    
