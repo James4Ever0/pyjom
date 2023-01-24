@@ -5,6 +5,8 @@ import requests
 
 url = "https://nyaa.si"
 
+MIN_SEEDERS=7 # must be greater than this.
+
 query = "oniichan wa oshimai! 01"
 sort_term = "seeders"
 
