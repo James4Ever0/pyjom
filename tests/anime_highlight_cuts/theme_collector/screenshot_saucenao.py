@@ -11,4 +11,6 @@ filepath = "/Users/jamesbrown/Downloads/anime_download/dress_test_pictures/å¥³è£
 # results = loop.run_until_complete(sauce.from_file(filepath))
 # results = await sauce.from_url('https://i.imgur.com/QaKpV3s.png')
 # no api key. fuck.
+from saucenao_api import SauceNao
+sauce = SauceNao(SAUCENAO_API_KEY)
 print(results)
