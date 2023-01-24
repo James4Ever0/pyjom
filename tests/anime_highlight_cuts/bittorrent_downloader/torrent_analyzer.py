@@ -31,4 +31,4 @@ for index, fileInfo in enumerate(data['info']['files']):
     length = fileInfo['length']
     path = fileInfo['path'] # multiple strings in a list
     joined_path = "/".join(path)
-    
+    print("[{}] ** {}")
