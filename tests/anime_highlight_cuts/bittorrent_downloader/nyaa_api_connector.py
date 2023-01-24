@@ -19,4 +19,5 @@ from bs4 import BeautifulSoup
 #with open("output.html",'w+') as f:
 #    f.write(text)
 soup = BeautifulSoup(text, 'html.parser')
-breakpoint()
+#breakpoint()
+
