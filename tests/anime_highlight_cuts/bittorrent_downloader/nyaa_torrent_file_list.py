@@ -5,7 +5,9 @@ import requests
 from NyaaPy import utils, torrent
 
 r = requests.get(url)
-SITE = 
-json_data = utils.parse_single(request_text=r.text, site=self.SITE)
+SITE = utils.TorrentSite.NYAASI
 
-return torrent.json_to_class(json_data)
+json_data = utils.parse_single(request_text=r.text, site=SITE)
+
+data_class = torrent.json_to_class(json_data)
+
