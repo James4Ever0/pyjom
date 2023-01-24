@@ -1,6 +1,5 @@
 # saucenao (if fail, use trace.moe)
 # use proxies, since we are using free tiers.
-from pysaucenao import SauceNao
 import os
 SAUCENAO_API_KEY=os.environ.get('SAUCENAO_API_KEY')
 print("API KEY?", SAUCENAO_API_KEY)
