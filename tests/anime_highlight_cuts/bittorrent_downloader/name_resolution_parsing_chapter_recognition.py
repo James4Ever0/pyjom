@@ -65,9 +65,9 @@ for fname in fnames:
         bangume_name_lower_alphanumeric
     )
         assert fname_lower_alphanumeric[substring_location_start: substring_location_end] == bangume_name_lower_alphanumeric
-        numbers = re.search(f" {episode_formatter(episodeIndex)} ", fname_lower_alphanumeric)
+        numbers = fname_lower_alphanumeric(f" {episode_formatter(episodeIndex)} ", )
 
         print("NUMBERS?") # this is the index we want
         print(numbers)
         if numbers:
-            
+            numbers.
