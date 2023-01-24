@@ -7,7 +7,11 @@ url = "https://nyaa.si"
 
 query = "oniichan wa oshimai! 01"
 sort_term = "seeders"
-category='1_0' # anime
+
+
+anime_categories = {}
+
+category_code='1_0' # anime
 page = 1 # start page: 1
 end_of_page=False
 
@@ -52,5 +56,3 @@ import rich
 rich.print(torrent_info)
 
 breakpoint()
-
-anime_categories = 
