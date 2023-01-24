@@ -17,3 +17,6 @@ soup = BeautifulSoup(text, 'html.parser')
 similarAnime = str(soup.select("#similaranime")[0])
 
 import pandas
+SAData = pandas.read_html(similarAnime)
+print(SAData)
+breakpoint()
