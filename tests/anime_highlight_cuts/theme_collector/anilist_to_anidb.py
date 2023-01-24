@@ -4,4 +4,4 @@ anilist_id = 112788
 from AnilistPython import Anilist
 anilist = Anilist()
 anime = anilist.get_anime_with_id(anilist_id)
-# what about name>
+# what about alias?
