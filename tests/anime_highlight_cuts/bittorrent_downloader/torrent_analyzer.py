@@ -18,5 +18,6 @@ data = tp.parse_torrent_file(torrent_path)
 
 import rich
 rich.print(data)
-
+# data['info']['name']
+# data['info']['length']
 breakpoint()
