@@ -20,3 +20,5 @@ with open(filepath,'rb') as f:
     result_results = len(results)
     print(results)
     breakpoint()
+    best = results[0]
+    urls = best.urls
