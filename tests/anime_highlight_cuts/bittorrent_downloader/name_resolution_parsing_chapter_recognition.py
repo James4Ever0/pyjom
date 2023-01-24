@@ -30,7 +30,7 @@ import re
 
 alphanumeric_filter = lambda chars: re.sub(r'[^a-z0-9]',' ',chars)
 
-bangume_name_alphanumeric
+bangume_name_lower_alphanumeric = alphanumeric_filter(Bangumi_Name.lower())
 
 with open("test_filenames.json", "r") as f:
     fnames = json.loads(f.read())
@@ -46,3 +46,4 @@ for fname in fnames:
             break
     print(f"<{current_file_type}> {fname}")
     print(fname_lower_alphanumeric)
+    substring_location = 
