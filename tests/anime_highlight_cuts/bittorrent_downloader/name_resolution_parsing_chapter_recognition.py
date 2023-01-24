@@ -15,4 +15,4 @@ for fname in fnames:
         if file_extension in file_extensions:
             current_file_type = filetype
             break
-    print("")
+    print(f"{current_file_type} {fname}")
