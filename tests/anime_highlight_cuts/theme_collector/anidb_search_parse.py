@@ -21,5 +21,7 @@ if table:
     table_str = str(table)
     data = pandas.read_html(table_str)[0] # must be the first table.
     # now you have it. sorted?
-    print(data)
-    breakpoint()
+    # print(data)
+    # breakpoint()
+    for videoDataFrame in data.iterrows():
+        videoData = videoDataFrame.to_
