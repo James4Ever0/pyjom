@@ -20,6 +20,7 @@ table = soup.find('table')
 
 if not table:
     print('table not found.')
+    # you may want to change user agent.
     breakpoint()
 else:
     table_str = str(table)
