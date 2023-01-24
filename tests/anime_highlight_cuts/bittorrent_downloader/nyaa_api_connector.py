@@ -26,4 +26,6 @@ import parse
 template =
 
 banner = soup.find("div",class_="pagination-page-info").text
-pagnia
+pagniation_info = banner.split("\n")[0]
+
+
