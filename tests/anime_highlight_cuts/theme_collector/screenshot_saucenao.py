@@ -4,6 +4,7 @@ from pysaucenao import SauceNao
 sauce = SauceNao()
 filepath = "/Users/jamesbrown/Downloads/anime_download/dress_test_pictures/女装0.jpeg"
 import asyncio
-results = asyncio.run_until_complete(sauce.from_file(filepath)
+loop = asyncio.get_event_loop()
+results = loop.run_until_complete(sauce.from_file(filepath))
 # results = await sauce.from_url('https://i.imgur.com/QaKpV3s.png')
 print(results)
