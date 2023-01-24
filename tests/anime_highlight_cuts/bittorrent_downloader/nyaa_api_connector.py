@@ -18,7 +18,7 @@ params = dict(f=0,c=category,q=query,s=sort_term, o="desc",p=page)
 # better parse it yourself first huh?
 
 #r = requests.get(url, params=params)
-assert r.code == 200
+#assert r.code == 200
 #text = r.text
 
 with open("output.html",'r') as f:
