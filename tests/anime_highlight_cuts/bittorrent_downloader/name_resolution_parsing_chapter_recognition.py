@@ -26,10 +26,13 @@ import json
 # replace non-alphanumeric charcters.
 episode_formatter = lambda episode_index: str(episode_index).zfill(2)
 
+import re
+
 with open("test_filenames.json", "r") as f:
     fnames = json.loads(f.read())
 for fname in fnames:
     fname_lower = fname.lower()
+    fname_lower_alphanumeric = re.sub(r'[^a-z0-9]',' ',fname_lower)
     file_extension = fname_lower.split(".")[-1]
     current_file_type = "unknown"
 
@@ -38,3 +41,4 @@ for fname in fnames:
             current_file_type = filetype
             break
     print(f"<{current_file_type}> {fname}")
+    print(fname_lower_alphanumeric)
