@@ -19,7 +19,6 @@ with open(filepath,'rb') as f:
     short_remaining = results.short_remaining
     result_results = len(results)
     print(results)
-    breakpoint()
     best = results[0]
     similarity = best.similarity
     # just trust anilist.
@@ -29,5 +28,6 @@ with open(filepath,'rb') as f:
     title = best.title
     est_time =best_data.get('est_time',None)
     anidb_aid = best_data.get('anidb_aid',None)
-    mal_aid = best_data.get('mal_aid',None)
+    mal_id = best_data.get('mal_id',None)
     anilist_id = best_data.get('anilist_id',None)
+    breakpoint()
