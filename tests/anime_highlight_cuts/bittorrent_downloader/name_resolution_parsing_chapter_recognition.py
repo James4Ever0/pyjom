@@ -47,6 +47,7 @@ for fname in fnames:
     print(f"<{current_file_type}> {fname}")
     print(fname_lower_alphanumeric)
     numbers = re.search(r"\d+",fname_lower_alphanumeric)
-    print(?NUMBERS?)
+    print("NUMBERS?")
+    print(numbers)
     substring_location_start = fname_lower_alphanumeric.find(bangume_name_lower_alphanumeric)
     substring_location_end = 
