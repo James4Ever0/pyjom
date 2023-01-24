@@ -19,6 +19,7 @@ for anilist_id in anilist_ids:
 
     # and you will search again.
     # what is this manual select?
-    anime2 = anilist.get_anime(romaji) # shit?
-    print(anime2)
-    print("=" * 20)
+    # anime2 = anilist.get_anime(romaji) # shit?
+    # print(anime2) # it will just be the same. no shit.
+    # print("=" * 20)
+    # well let's search in anidb. get different names.
