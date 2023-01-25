@@ -56,7 +56,7 @@ for videoLink in videoLinks:
     
     print("PARAMS?",params)
     # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
-    r = requests.get("")
+    r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
     r.raise_for_status()
 
     data = r.json()
