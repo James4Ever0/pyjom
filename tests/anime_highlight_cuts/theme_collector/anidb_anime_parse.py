@@ -21,6 +21,8 @@ directRelated = soup.find(attrs={"id":"relations_direct"}) # it could be none.
 
 tables = soup.find_all('table') # shit.
 
+videoInfo = 
+
 # i think monad is good.
 
 import pandas
