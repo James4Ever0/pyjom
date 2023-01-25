@@ -10,7 +10,7 @@ import re
 from pymonad import maybe
 
 def extractBVID(chars:str):
-    bvid = maybe(re.findall(r"/(BV[a-zA-Z0-9]+)", "https://www.bilibili.com/video/BV1e54y1y7qy"))[0]
+    bvid = maybe(re.findall(r"/(BV[a-zA-Z0-9]+)",chars))[0]
     return bvid
 
 ## remember the video is always scrapable via av id.
