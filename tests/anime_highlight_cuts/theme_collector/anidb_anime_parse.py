@@ -14,7 +14,6 @@ from pymaybe import maybe
 #     return Just(value)
 
 
-from gettext import find
 import requests
 import fake_useragent
 
