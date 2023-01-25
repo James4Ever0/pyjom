@@ -14,7 +14,7 @@ tags = { # select 1 for each.
         ],
     ],
     "optional": [ # select or not select any.
-        ["动漫推荐", "补番推荐", "动漫盘点", "盘点排行", "盘点推荐"],
+        ["动漫推荐", "补番推荐", "动漫盘点", "盘点排行", "盘点推荐",'新番推荐'],
         ["名场", "名场面", "万恶之源"],
     ],
     # these are seeds. you may have different tags added along the way.
