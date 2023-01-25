@@ -58,6 +58,7 @@ for videoLink in videoLinks:
     r.raise_for_status()
 
     data = r.json()
+    assert data['code'] == 0
     # it must be json.
     import rich
     rich.print(data)
