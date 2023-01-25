@@ -10,6 +10,7 @@ url = "https://anidb.net/anime/9310"
 #     return Just(value)
 
 
+from gettext import find
 import requests
 import fake_useragent
 
@@ -39,6 +40,7 @@ tables = soup.find_all("table")  # shit.
 # videoInfo = checkNothing(soup.find("div", attrs={"class": ["pane", "info"]})).maybe(
 #     Nothing, lambda x: x.find("table")
 # )
+videoInfo = soup.find("div", attrs={"class": ["pane", "info"]})?.find("table")
 
 # if videoInfo:
 # videoInfo = videoInfo.find('table')
