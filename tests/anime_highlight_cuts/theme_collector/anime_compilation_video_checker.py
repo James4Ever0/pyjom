@@ -6,7 +6,8 @@ videoLinks = [
     "https://www.bilibili.com/video/BV1Fs411k7e9", # multiple chapters, you shall not find this interesting.
 ]
 
-
+## remember the video is always scrapable via av id.
+## av5842509
 
 
 # videoDownloadPath = ""
