@@ -1,7 +1,7 @@
 # saucenao (if fail, use trace.moe)
 # use proxies, since we are using free tiers.
 import os
-SAUCENAO_API_KEY=os.environ.get('SAUCENAO_API_KEY')
+SAUCENAO_API_KEY=os.environ.get('SAUCENAO_API_KEY') # how to run this without api key?
 print("API KEY?", SAUCENAO_API_KEY)
 
 # sauce = SauceNao(api_key=SAUCENAO_API_KEY) # shit. not working!
