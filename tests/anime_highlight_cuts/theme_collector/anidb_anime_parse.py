@@ -33,14 +33,19 @@ directRelated = soup.find(attrs={"id": "relations_direct"})  # it could be none.
 
 tables = soup.find_all("table")  # shit.
 
-videoInfo = checkNothing(soup.find("div", attrs={"class": ["pane", "info"]})).maybe(
-    Nothing, lambda x: x.find("table")
-)
+# null safety?
+
+# videoInfo = checkNothing(soup.find("div", attrs={"class": ["pane", "info"]})).maybe(
+#     Nothing, lambda x: x.find("table")
+# )
+
 # if videoInfo:
 # videoInfo = videoInfo.find('table')
-videoTitles = checkNothing(soup.find("div", attrs={"class": ["pane", "titles"]})).maybe(
-    Nothing, lambda x: x.find("table")
-)
+
+# videoTitles = checkNothing(soup.find("div", attrs={"class": ["pane", "titles"]})).maybe(
+#     Nothing, lambda x: x.find("table")
+# )
+
 # if videoTitles:
 # videoTitles = videoTitles.find('table')
 
