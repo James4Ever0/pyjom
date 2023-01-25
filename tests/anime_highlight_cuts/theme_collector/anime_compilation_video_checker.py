@@ -55,14 +55,14 @@ for videoLink in videoLinks:
             continue
     
     print("PARAMS?",params)
-    r = requests.get(url,params=params) # why?
+    r = requests.get(url,params=params) # why? what the fuck?
     # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
     # r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
     # r.raise_for_status()
     # "need_jump_bv":false
     # bvid only?
 
-    data = r.json()
+    data = r.text
     # it must be json.
     import rich
     rich.print(data)
