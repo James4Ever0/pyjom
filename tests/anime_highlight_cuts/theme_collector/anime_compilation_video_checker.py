@@ -41,3 +41,4 @@ def extractAID(chars:str):
 for videoLink in videoLinks:
     bvid = extractBVID(videoLink)
     if bvid:
+        params = {"bvid": bvid}
