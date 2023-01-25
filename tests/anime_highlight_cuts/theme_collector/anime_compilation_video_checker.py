@@ -48,4 +48,6 @@ for videoLink in videoLinks:
             params = {"aid": aid}
         else:
             print("no valid bilibili video id found.")
-            print("skipping video link:", )
+            print("skipping video link:", videoLink)
+            continue
+    
