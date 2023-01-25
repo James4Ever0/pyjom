@@ -22,7 +22,8 @@ text = r.text
 with open("anidb_info.html", "w+") as f:
     f.write(text)
 
-text = f.read()
+with open("anidb_info.html", "r") as f:
+    text = f.read()
 
 from bs4 import BeautifulSoup
 
