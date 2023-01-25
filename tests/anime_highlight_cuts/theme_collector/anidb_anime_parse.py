@@ -1,6 +1,8 @@
 # -*- parsing: pep505 -*-
-import pep505
-pep505.activate()
+# import pep505
+# pep505.activate()
+# shit?
+
 url = "https://anidb.net/anime/9310"
 # from pymonad.maybe import Nothing, Just
 # https://github.com/acaos/python-pep505
