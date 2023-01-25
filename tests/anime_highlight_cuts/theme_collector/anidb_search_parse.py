@@ -21,7 +21,7 @@ soup = BeautifulSoup(text, "html.parser")
 # breakpoint()
 import pandas
 # table = soup.find('table')
-table=soup.find("table",class_="search_results")
+table=soup.find("table",attrs={"class":"animelist"})
 
 if not table:
     print('table not found.')
