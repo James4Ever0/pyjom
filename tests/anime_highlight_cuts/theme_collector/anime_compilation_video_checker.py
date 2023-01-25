@@ -9,8 +9,9 @@ videoLinks = [
 import re
 from pymonad import maybe
 
-extractBVID(chars:str):
-re.findall(r"/(BV[a-zA-Z0-9]+)", "https://www.bilibili.com/video/BV1e54y1y7qy"))[0]
+def extractBVID(chars:str):
+    bvid = maybe(re.findall(r"/(BV[a-zA-Z0-9]+)", "https://www.bilibili.com/video/BV1e54y1y7qy"))[0]
+    return bvid
 
 ## remember the video is always scrapable via av id.
 ## av5842509
