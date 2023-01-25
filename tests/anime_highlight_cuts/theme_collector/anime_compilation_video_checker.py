@@ -16,3 +16,5 @@ videoLinks = [
 # let's see the video metadata.
 
 import os
+
+os.system("yt-dlp --dump")
