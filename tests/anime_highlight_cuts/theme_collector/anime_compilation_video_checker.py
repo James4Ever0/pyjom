@@ -8,4 +8,4 @@ videoDownloadPath = ""
 
 # why i need to download whole damn video? i need to inspect!
 
-# for some video there's no chance to determine 
+# for some video there's no chance to determine the source.
