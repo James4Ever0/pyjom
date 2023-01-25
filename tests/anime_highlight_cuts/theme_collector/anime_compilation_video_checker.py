@@ -6,8 +6,8 @@ videoLinks = [
     "https://www.bilibili.com/video/BV1Fs411k7e9", # multiple chapters, you shall not find this interesting.
     "https://www.bilibili.com/video/av5842509" # aid version of video link.
 ]
-
-from ast import UAdd
+import fake_useragent
+ua = fake_useragent.UserAgent()
 import re
 from pymaybe import maybe
 import requests
@@ -55,7 +55,7 @@ for videoLink in videoLinks:
             continue
     
     print("PARAMS?",params)
-    r = requests.get(url,params=params,headers={"User-Agent":UAdd.random()})
+    r = requests.get(url,params=params,headers={"User-Agent":ua.random()})
     r.raise_for_status()
 
     data = r.json()
