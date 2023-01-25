@@ -5,3 +5,5 @@ videoLink = ""
 videoDownloadPath = ""
 
 # shit!
+
+# why i need to download whole damn video? i need to inspect!
