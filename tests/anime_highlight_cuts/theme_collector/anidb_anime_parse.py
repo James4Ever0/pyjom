@@ -43,7 +43,7 @@ tables = soup.find_all("table")  # shit.
 # videoInfo = checkNothing(soup.find("div", attrs={"class": ["pane", "info"]})).maybe(
 #     Nothing, lambda x: x.find("table")
 # )
-videoInfo = maybe(soup.find("div", attrs={"class": ["pane", "info"]})).find("table") 
+videoInfo = maybe(soup.find("div", attrs={"class": ["pane", "info"]})).find("table")
 
 # if videoInfo:
 # videoInfo = videoInfo.find('table')
