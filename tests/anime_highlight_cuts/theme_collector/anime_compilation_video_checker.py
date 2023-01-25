@@ -9,6 +9,8 @@ videoLinks = [
 ## remember the video is always scrapable via av id.
 ## av5842509
 
+https://api.bilibili.com/x/web-interface/view?aid=<AID>
+https://api.bilibili.com/x/web-interface/view?bvid=<BVID>
 
 # videoDownloadPath = ""
 
