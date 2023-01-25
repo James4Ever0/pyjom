@@ -33,6 +33,7 @@ else:
     # ['No', 'Image', 'Title', 'Award', 'Type', 'Eps', 'Rating', 'Average', 'Reviews', 'User', 'Aired', 'Ended']
     # where is the damn link?
     for title in table.find_all('td',attrs={'data-label':"Title"}):
+        table_ref=table.find('a')
         
     data = pandas.read_html(table_str)[0] # must be the first table.
     # now you have it. sorted?
