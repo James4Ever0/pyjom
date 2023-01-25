@@ -32,7 +32,7 @@ else:
     table_str = str(table)
     # ['No', 'Image', 'Title', 'Award', 'Type', 'Eps', 'Rating', 'Average', 'Reviews', 'User', 'Aired', 'Ended']
     # where is the damn link?
-    table.find_all('td')
+    table.find_all('td',attrs={'data-label':"Title"})
     data = pandas.read_html(table_str)[0] # must be the first table.
     # now you have it. sorted?
     # print(data)
