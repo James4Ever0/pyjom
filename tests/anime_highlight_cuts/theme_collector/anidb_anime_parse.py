@@ -24,7 +24,9 @@ tables = soup.find_all('table') # shit.
 videoInfo = soup.find("div", attrs={"class":["pane", "info"]})
 if videoInfo:
     videoInfo = videoInfo.find('table')
-videoTitles = soup.find("div", attrs={"class":["pane", "titles"]}).find('table')
+videoTitles = soup.find("div", attrs={"class":["pane", "titles"]})
+if videoTitles:
+    videoTitles = videoTitles.find('table')
 
 # i think monad is good.
 
