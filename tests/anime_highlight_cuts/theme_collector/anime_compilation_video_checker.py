@@ -17,4 +17,4 @@ videoLinks = [
 
 import os
 
-os.system("yt-dlp --dump")
+os.system("yt-dlp --d --output )
