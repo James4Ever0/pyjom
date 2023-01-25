@@ -21,7 +21,8 @@ directRelated = soup.find(attrs={"id":"relations_direct"}) # it could be none.
 
 tables = soup.find_all('table') # shit.
 
-videoInfo = 
+videoInfo = soup.find("div", attrs={"class":["pane", "info"]})
+videoTitles = soup.find("div", attrs={"class":["pane", "titles"]})
 
 # i think monad is good.
 
