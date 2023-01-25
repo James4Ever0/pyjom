@@ -30,6 +30,8 @@ if not table:
     # or it is just a page jump. directly to your anime.
 else:
     table_str = str(table)
+    # ['No', 'Image', 'Title', 'Award', 'Type', 'Eps', 'Rating', 'Average', 'Reviews', 'User', 'Aired', 'Ended']
+    # where is the damn link?
     data = pandas.read_html(table_str)[0] # must be the first table.
     # now you have it. sorted?
     # print(data)
