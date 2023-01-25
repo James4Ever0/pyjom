@@ -6,7 +6,7 @@
 url = "https://anidb.net/anime/9310"
 # from pymonad.maybe import Nothing, Just
 # https://github.com/acaos/python-pep505
-import pymaybe
+from pymaybe import maybe
 
 # def checkNothing(value):
 #     if value in [None, 0, -1, [], {}, ()]:
