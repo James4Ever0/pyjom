@@ -62,7 +62,7 @@ for videoLink in videoLinks:
     # "need_jump_bv":false
     # bvid only?
 
-    data = r.text
+    data = r.json()
     # it must be json.
     import rich
     rich.print(data)
