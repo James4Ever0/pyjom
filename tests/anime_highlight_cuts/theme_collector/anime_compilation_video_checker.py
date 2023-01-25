@@ -9,6 +9,7 @@ videoLinks = [
 
 import re
 from pymaybe import maybe
+import requests
 
 def extractBVID(chars:str):
     bvid = maybe(re.findall(r"/(BV[a-zA-Z0-9]+)",chars))[0]
@@ -38,6 +39,7 @@ def extractAID(chars:str):
 # os.system(f'yt-dlp --dump-metadata --output metadata.json "{videoLinks[0]}"') # working?
 
 # bullshit. we shall get the video metadata first.
+url = "https://api.bilibili.com/x/web-interface/view"
 for videoLink in videoLinks:
     bvid = extractBVID(videoLink)
     if bvid:
@@ -50,4 +52,4 @@ for videoLink in videoLinks:
             print("no valid bilibili video id found.")
             print("skipping video link:", videoLink)
             continue
-    
+    requests.get(url,params=params)
