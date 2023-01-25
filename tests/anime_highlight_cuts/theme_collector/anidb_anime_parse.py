@@ -16,12 +16,14 @@ import requests
 import fake_useragent
 
 ua = fake_useragent.UserAgent()
-r = requests.get(url, headers={"User-Agent": ua.random})
-r.raise_for_status()
-# assert r.status_code == 200
-text = r.text
-with open("anidb_info.html", "w+") as f:
-    f.write(text)
+
+# r = requests.get(url, headers={"User-Agent": ua.random})
+# r.raise_for_status()
+# # assert r.status_code == 200
+# text = r.text
+
+# with open("anidb_info.html", "w+") as f:
+#     f.write(text)
 
 with open("anidb_info.html", "r") as f:
     text = f.read()
