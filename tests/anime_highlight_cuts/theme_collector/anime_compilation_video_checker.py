@@ -6,8 +6,8 @@ videoLinks = [
     "https://www.bilibili.com/video/BV1Fs411k7e9", # multiple chapters, you shall not find this interesting.
     "https://www.bilibili.com/video/av5842509" # aid version of video link.
 ]
-import fake_useragent
-ua = fake_useragent.UserAgent()
+# import fake_useragent
+# ua = fake_useragent.UserAgent()
 import re
 from pymaybe import maybe
 import requests
