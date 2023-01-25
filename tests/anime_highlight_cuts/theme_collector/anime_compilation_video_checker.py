@@ -4,7 +4,7 @@ videoLinks = [
     "https://www.bilibili.com/video/BV1e54y1y7qy",  # 女攻男受 emm
     "https://www.bilibili.com/video/BV1P441197oV",  # in which you shall never find anything interesting.
     "https://www.bilibili.com/video/BV1Fs411k7e9", # multiple chapters, you shall not find this interesting.
-    "" # 
+    "https://www.bilibili.com/video/av5842509" # aid version of video link.
 ]
 
 import re
