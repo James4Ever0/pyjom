@@ -11,6 +11,7 @@ videoLinks = [
 import re
 from pymaybe import maybe
 import requests
+from urllib.parse import urlencode
 
 def extractBVID(chars:str):
     bvid = maybe(re.findall(r"/(BV[a-zA-Z0-9]+)",chars))[0]
@@ -55,7 +56,7 @@ for videoLink in videoLinks:
             continue
     
     print("PARAMS?",params)
-    r = requests.get(url,params=params) # why? what the fuck?
+    r = requests.get(url}?params) # why? what the fuck?
     # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
     # r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
     # r.raise_for_status()
