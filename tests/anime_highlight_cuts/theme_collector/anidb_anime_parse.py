@@ -1,6 +1,7 @@
 url = "https://anidb.net/anime/9310"
 
-
+def checkNothing(value):
+    if value in [None, 0, -1, [], {},()]:
 
 import requests
 import fake_useragent
