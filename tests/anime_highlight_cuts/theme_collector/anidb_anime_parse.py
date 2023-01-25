@@ -51,7 +51,7 @@ videoInfo = maybe(soup.find("div", attrs={"class": ["pane", "info"]})).find("tab
 # videoTitles = checkNothing(soup.find("div", attrs={"class": ["pane", "titles"]})).maybe(
 #     Nothing, lambda x: x.find("table")
 # )
-videoTitle = maybe(soup.find("div", attrs={"class": ["pane", "titles"]})).find("table")
+videoTitle = maybe(soup.find("div", attrs={"class": ["pane", "titles"]})).find("table")  # type: ignore
 
 # if videoTitles:
 # videoTitles = videoTitles.find('table')
