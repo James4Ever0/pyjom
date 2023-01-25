@@ -36,7 +36,7 @@ else:
         title_ref=table.find('a')
         title_text = title_ref.text
         title_link = title_ref['href']
-        print(f"[{}] - {}")
+        print(f"[{title_link}] - {title_text}")
     data = pandas.read_html(table_str)[0] # must be the first table.
     # now you have it. sorted?
     # print(data)
