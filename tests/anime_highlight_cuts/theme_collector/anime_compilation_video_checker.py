@@ -56,6 +56,7 @@ for videoLink in videoLinks:
             continue
     
     print("PARAMS?",params)
+    # shit.
     r = requests.get(f"{url}?{urlencode(params)}") # why? what the fuck?
     # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
     # r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
