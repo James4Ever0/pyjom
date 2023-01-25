@@ -12,8 +12,6 @@ from pymaybe import maybe
 #     if value in [None, 0, -1, [], {}, ()]:
 #         return Nothing
 #     return Just(value)
-
-
 import requests
 import fake_useragent
 
