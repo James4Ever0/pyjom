@@ -1,7 +1,12 @@
+from black import NothingChanged
+
+
 url = "https://anidb.net/anime/9310"
 
 def checkNothing(value):
     if value in [None, 0, -1, [], {},()]:
+        return Nothing
+    return Just(value
 
 import requests
 import fake_useragent
