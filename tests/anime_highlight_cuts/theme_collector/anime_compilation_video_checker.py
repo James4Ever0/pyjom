@@ -7,6 +7,7 @@ videoLinks = [
     "https://www.bilibili.com/video/av5842509" # aid version of video link.
 ]
 
+from ast import UAdd
 import re
 from pymaybe import maybe
 import requests
@@ -54,7 +55,7 @@ for videoLink in videoLinks:
             continue
     
     print("PARAMS?",params)
-    r = requests.get(url,params=params)
+    r = requests.get(url,params=params,headers={"User-Agent":UAdd.random()})
     r.raise_for_status()
 
     data = r.json()
