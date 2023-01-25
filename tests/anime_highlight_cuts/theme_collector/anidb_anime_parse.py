@@ -1,4 +1,6 @@
 # -*- parsing: pep505 -*-
+import pep505
+pep505.activate()
 url = "https://anidb.net/anime/9310"
 # from pymonad.maybe import Nothing, Just
 # https://github.com/acaos/python-pep505
@@ -55,8 +57,8 @@ videoTitle = soup.find("div", attrs={"class": ["pane", "titles"]})?.find('table'
 
 # i think monad is good.
 
-import pandas
+# import pandas
 
-SAData = pandas.read_html(similarAnime)
-print(SAData)
+# SAData = pandas.read_html(similarAnime)
+# print(SAData)
 breakpoint()
