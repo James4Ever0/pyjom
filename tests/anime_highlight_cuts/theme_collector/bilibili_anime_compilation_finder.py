@@ -1,2 +1,2 @@
 # find our target video.
-# you may find author, keywords, tags, recommended videos and 
+# you may find uploaders, keywords, tags, recommended videos and 
