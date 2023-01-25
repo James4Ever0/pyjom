@@ -9,7 +9,8 @@ import fake_useragent
 ua = fake_useragent.UserAgent()
 r = requests.get(url, params=params, headers={"User-Agent":ua.random}) # beautiful. really?
 
-
+status_code = r.status_code
+assert status_code ==200
 
 text = r.text
 from bs4 import BeautifulSoup
@@ -19,7 +20,7 @@ soup = BeautifulSoup(text, "html.parser")
 # breakpoint()
 import pandas
 # table = soup.find('table')
-table=soup.find("table",id=)
+table=soup.find("table",id="")
 
 if not table:
     print('table not found.')
