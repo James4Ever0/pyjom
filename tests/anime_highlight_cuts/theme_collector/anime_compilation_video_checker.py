@@ -55,7 +55,8 @@ for videoLink in videoLinks:
             continue
     
     print("PARAMS?",params)
-    r = requests.get(url,data=params,headers={"User-Agent":ua.random})
+    # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
+    r = requests.get("")
     r.raise_for_status()
 
     data = r.json()
