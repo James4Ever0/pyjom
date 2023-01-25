@@ -2,7 +2,7 @@
 
 videoLink = ""
 
-videoDownloadPath = ""
+# videoDownloadPath = ""
 
 # shit!
 
