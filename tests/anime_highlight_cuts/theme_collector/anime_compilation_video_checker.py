@@ -1,6 +1,10 @@
 # check if is the video we want and extract data or discard.
 
-videoLink = "https://www.bilibili.com/video/BV1e54y1y7qy" # 女攻男受 emm
+videoLinks = ["https://www.bilibili.com/video/BV1e54y1y7qy", # 女攻男受 emm
+
+]
+
+
 
 # videoDownloadPath = ""
 
