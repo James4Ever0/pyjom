@@ -29,10 +29,10 @@ directRelated = soup.find(attrs={"id":"relations_direct"}) # it could be none.
 
 tables = soup.find_all('table') # shit.
 
-videoInfo = soup.find("div", attrs={"class":["pane", "info"]})
+videoInfo = checkNothing(soup.find("div", attrs={"class":["pane", "info"]})).
 if videoInfo:
     videoInfo = videoInfo.find('table')
-videoTitles = soup.find("div", attrs={"class":["pane", "titles"]})
+videoTitles = checkNothing(soup.find("div", attrs={"class":["pane", "titles"]})).
 if videoTitles:
     videoTitles = videoTitles.find('table')
 
