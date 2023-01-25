@@ -41,21 +41,22 @@ def extractAID(chars:str):
 
 # bullshit. we shall get the video metadata first.
 url = "https://api.bilibili.com/x/web-interface/view"
+# man this is shit.
 for videoLink in videoLinks:
     bvid = extractBVID(videoLink)
     if bvid:
-        params = {"bvid": bvid}
+        params2 = {"bvid": bvid}
     else:
         aid = extractAID(videoLink)
         if aid:
-            params = {"aid": aid}
+            params2 = {"aid": aid}
         else:
             print("no valid bilibili video id found.")
             print("skipping video link:", videoLink)
             continue
     
-    print("PARAMS?",params)
-    r = requests.get(url,params=params) # why? what the fuck?
+    print("PARAMS?",params2)
+    r = requests.get(url,params=params2) # why? what the fuck?
     # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
     # r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
     # r.raise_for_status()
