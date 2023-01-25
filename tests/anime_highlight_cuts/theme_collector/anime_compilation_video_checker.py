@@ -42,3 +42,9 @@ for videoLink in videoLinks:
     bvid = extractBVID(videoLink)
     if bvid:
         params = {"bvid": bvid}
+    else:
+        aid = extractAID(videoLink)
+        if aid:
+            params = {"aid": aid}
+        else:
+            print("no valid video info found.")
