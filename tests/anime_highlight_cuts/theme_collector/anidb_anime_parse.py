@@ -1,14 +1,12 @@
-from black import NothingChanged
-
 
 url = "https://anidb.net/anime/9310"
-from pymonad.maybe import Nothing, Just
+# from pymonad.maybe import Nothing, Just
 
 
-def checkNothing(value):
-    if value in [None, 0, -1, [], {}, ()]:
-        return Nothing
-    return Just(value)
+# def checkNothing(value):
+#     if value in [None, 0, -1, [], {}, ()]:
+#         return Nothing
+#     return Just(value)
 
 
 import requests
