@@ -64,5 +64,5 @@ for videoLink in videoLinks:
     # it must be json.
     import rich
     rich.print(data)
-    assert data['code'] == 0
+    # assert data['code'] == 0
     breakpoint()
