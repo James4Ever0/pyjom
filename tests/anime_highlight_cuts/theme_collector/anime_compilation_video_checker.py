@@ -52,6 +52,7 @@ for videoLink in videoLinks:
             print("no valid bilibili video id found.")
             print("skipping video link:", videoLink)
             continue
+    
     r = requests.get(url,params=params)
     r.raise_for_status()
 
