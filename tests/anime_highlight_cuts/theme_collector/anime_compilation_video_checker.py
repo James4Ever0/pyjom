@@ -54,3 +54,6 @@ for videoLink in videoLinks:
             continue
     r = requests.get(url,params=params)
     r.raise_for_status()
+
+    data = r.json()
+    
