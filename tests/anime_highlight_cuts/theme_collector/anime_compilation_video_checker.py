@@ -53,6 +53,7 @@ for videoLink in videoLinks:
             print("skipping video link:", videoLink)
             continue
     
+    print("PARAMS?",params)
     r = requests.get(url,params=params)
     r.raise_for_status()
 
