@@ -1,7 +1,7 @@
 url = "https://anidb.net/anime/"
-query = "Yahari Ore no Seishun Lovecome wa Machigatte Iru."
+# query = "Yahari Ore no Seishun Lovecome wa Machigatte Iru."
 
-# query = "Yahari Ore no Seishun Love Come wa Machigatteiru." # this will guide you to something different.
+query = "Yahari Ore no Seishun Love Come wa Machigatteiru." # this will guide you to something different.
 params = {"adb.search": query, "do.update": "Search", "noalias": 1}
 import pandas
 import requests
