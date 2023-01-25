@@ -6,6 +6,6 @@ videoDownloadPath = ""
 
 # shit!
 
-# why i need to download whole damn video? i need to inspect!
+# why i need to download whole damn video? i need to cut it into bite-sized video!
 
-# for some video there's no chance to determine the source.
+# for some video there's no possibility to determine the source.
