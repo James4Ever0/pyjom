@@ -13,7 +13,10 @@ def extractBVID(chars:str):
     bvid = maybe(re.findall(r"/(BV[a-zA-Z0-9]+)",chars))[0]
     return bvid
 
-def extractAID(chars:str)
+def extractAID(chars:str):
+    aid = maybe(re.findall(r"/av([0-9]+)",chars))[0]
+    return aid
+
 
 ## remember the video is always scrapable via av id.
 ## av5842509
