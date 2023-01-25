@@ -34,6 +34,8 @@ directRelated = soup.find(attrs={"id": "relations_direct"})  # it could be none.
 tables = soup.find_all("table")  # shit.
 
 # null safety?
+# pep 505:
+# https://peps.python.org/pep-0505/
 
 # videoInfo = checkNothing(soup.find("div", attrs={"class": ["pane", "info"]})).maybe(
 #     Nothing, lambda x: x.find("table")
