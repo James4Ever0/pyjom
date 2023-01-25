@@ -18,6 +18,8 @@ def extractAID(chars:str):
     aid = maybe(re.findall(r"/av([0-9]+)",chars))[0]
     return aid
 
+
+
 ## remember the video is always scrapable via av id.
 ## av5842509
 
@@ -40,3 +42,4 @@ def extractAID(chars:str):
 # bullshit. we shall get the video metadata first.
 for videoLink in videoLinks:
     bvid = extractBVID(videoLink)
+    if bvid:
