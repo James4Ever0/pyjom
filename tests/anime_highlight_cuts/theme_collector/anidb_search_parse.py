@@ -17,12 +17,13 @@ soup = BeautifulSoup(text, "html.parser")
 # print(soup) # forbidden? wtf?
 # breakpoint()
 import pandas
-table = soup.find('table')
+# table = soup.find('table')
+table=soup.find("table",id=)
 
 if not table:
     print('table not found.')
     # you may want to change user agent.
-    breakpoint()
+    # breakpoint()
 else:
     table_str = str(table)
     data = pandas.read_html(table_str)[0] # must be the first table.
