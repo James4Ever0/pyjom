@@ -1,7 +1,7 @@
 
 url = "https://anidb.net/anime/9310"
 # from pymonad.maybe import Nothing, Just
-
+import pymaybe
 
 # def checkNothing(value):
 #     if value in [None, 0, -1, [], {}, ()]:
