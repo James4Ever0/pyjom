@@ -48,6 +48,7 @@ videoInfo = soup.find("div", attrs={"class": ["pane", "info"]})?.find("table")
 # videoTitles = checkNothing(soup.find("div", attrs={"class": ["pane", "titles"]})).maybe(
 #     Nothing, lambda x: x.find("table")
 # )
+videoTitle = soup.find("div", attrs={"class": ["pane", "titles"]})?.find('table')
 
 # if videoTitles:
 # videoTitles = videoTitles.find('table')
