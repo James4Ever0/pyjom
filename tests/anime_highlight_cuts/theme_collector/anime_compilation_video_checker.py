@@ -47,4 +47,5 @@ for videoLink in videoLinks:
         if aid:
             params = {"aid": aid}
         else:
-            print("no valid video info found.")
+            print("no valid bilibili video id found.")
+            print("skipping video link:", )
