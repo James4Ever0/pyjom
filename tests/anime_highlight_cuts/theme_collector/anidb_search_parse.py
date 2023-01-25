@@ -23,7 +23,8 @@ table=soup.find("table",id=)
 if not table:
     print('table not found.')
     # you may want to change user agent.
-    # breakpoint()
+    breakpoint()
+    # or it is just a page jump. directly to your anime.
 else:
     table_str = str(table)
     data = pandas.read_html(table_str)[0] # must be the first table.
