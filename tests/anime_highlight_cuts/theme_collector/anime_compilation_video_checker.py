@@ -17,4 +17,4 @@ videoLinks = [
 
 import os
 
-os.system(f'yt-dlp --dump-metadata --output metadata.json "{videoLinks[0]}"')
+os.system(f'yt-dlp --dump-metadata --output metadata.json "{videoLinks[0]}"') # working?
