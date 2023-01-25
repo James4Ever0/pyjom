@@ -6,6 +6,9 @@ videoLinks = [
     "https://www.bilibili.com/video/BV1Fs411k7e9", # multiple chapters, you shall not find this interesting.
 ]
 
+import re
+
+extractBVID(chars:str):
 
 
 ## remember the video is always scrapable via av id.
