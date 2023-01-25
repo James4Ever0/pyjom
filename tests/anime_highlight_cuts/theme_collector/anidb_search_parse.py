@@ -10,6 +10,7 @@ ua = fake_useragent.UserAgent()
 r = requests.get(url, params=params, headers={"User-Agent":ua.random}) # beautiful. really?
 
 status_code = r.status_code
+print("STATUS CODE?", status_code)
 assert status_code ==200
 
 text = r.text
