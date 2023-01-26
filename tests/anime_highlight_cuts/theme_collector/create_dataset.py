@@ -8,6 +8,8 @@ train_label_path = "labels/train"
 test_label_path = "labels/test"
 
 basepath = "pip_dataset"
+
+
 data = {
     "path": f'../{basepath}',  # dataset root dir
     "train": train_path,  # train images (relative to 'path')
@@ -18,6 +20,8 @@ data = {
 
 
 import os
+
+os.system("rm -rf ")
 
 index = 1
 
