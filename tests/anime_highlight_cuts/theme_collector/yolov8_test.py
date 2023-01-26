@@ -4,11 +4,13 @@ from ultralytics import YOLO
 ## https://github.com/mikel-brostrom/yolov8_tracking
 ## this might add unwanted overheads. warning!
 
+# no one will miss `genesis.pt`, right?
+
 model = YOLO("ver3.pt")
 
 # find trained weights on huggingface:
 # https://huggingface.co/James4Ever0/yolov8_pip_ultralytics
-# no one will miss `genesis.pt`, right?
+
 
 imagePaths = [
     "000000003099.png",
