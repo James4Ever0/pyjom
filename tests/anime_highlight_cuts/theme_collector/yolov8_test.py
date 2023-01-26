@@ -9,4 +9,4 @@ output = model("simple_pip.png")
 import cv2
 for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
     x0,y0, x1,y1 = xyxy
-    cv2.rec
+    cv2.rectangle(image,(x0, y0), (x1,y1), (0,0,255), thickness=1)
