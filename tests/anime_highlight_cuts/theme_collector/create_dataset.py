@@ -43,8 +43,7 @@ for csvName in csvNames:
     frameIndex=0
     cap = cv2.VideoCapture(videoFileName)
     myIterator = dataframe.iterrows()
-    cap.get cv2.CAP_PROP_FRAME_HEIGHT
-    cv2.CAP_PROP_FRAME_WIDTH
+    cap.get(cv2.CAP_PROP_FRAME_HEIGHT),cap.get(cv2.CAP_PROP_FRAME_WIDTH)
     while True:
         succ, image = cap.read()
         nextRow = next(myIterator,None)
