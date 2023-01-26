@@ -13,7 +13,8 @@ from bv2av import bv_av_conversion
 
 videoIDAlternative = bv_av_conversion(videoID)
 
-if videoIdAlternative
+if videoIDAlternative is None: # not av or bv. shit happened!
+    raise Exception("")
 
 import re
 
