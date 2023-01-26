@@ -141,6 +141,8 @@ for videoLink in videoLinks:
     
     ## extract related video info.
     for related_video in related_data:
+        related_tid = related_video['tid']
+        related_tname = related_video['tname']
         
 
     breakpoint()
