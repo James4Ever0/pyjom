@@ -22,3 +22,6 @@ for video in videos:
         if succ:
             roi_new= cv2.selectROI()
             key=cv2.waitKey(0)
+            print('roi:',roi_new)
+            prinnt()
+            print('keycode:',key)
