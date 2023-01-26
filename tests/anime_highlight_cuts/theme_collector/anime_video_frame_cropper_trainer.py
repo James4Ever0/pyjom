@@ -20,8 +20,8 @@ for video in videos:
         cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
         succ, image = cap.read()
         if succ:
-            roi_new= cv2.selectROI()
+            roi_new= cv2.selectROI('roi',image)
             key=cv2.waitKey(0)
             print('roi:',roi_new)
-            prinnt()
+            print()
             print('keycode:',key)
