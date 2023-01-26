@@ -5,7 +5,8 @@ from ultralytics import YOLO
 ## this might add unwanted overheads. warning!
 
 model = YOLO("ver3.pt")
-# find me on huggingface:
+
+# find trained weights on huggingface:
 # https://huggingface.co/James4Ever0/yolov8_pip_ultralytics
 
 imagePaths = [
