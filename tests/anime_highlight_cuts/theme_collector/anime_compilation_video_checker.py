@@ -64,11 +64,13 @@ for videoLink in videoLinks:
     # "need_jump_bv":false
     # bvid only?
 
-    data = r.json()
+    response_json = r.json()
     # it must be json.
     import rich
-    rich.print(data)
-    assert data['code'] == 0
+    rich.print(response_json)
+    assert response_json['code'] == 0
+
+    data = response_json['data']
 
     stat =  data['stat']
 
