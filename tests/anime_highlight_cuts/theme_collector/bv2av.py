@@ -33,7 +33,7 @@ def main(source:str):
         if head in av:
             val = (enc(int(av_bv[2:-2])))
         elif head in bv:
-            val = ("av", dec("BV" + av_bv[2:-2]), sep="")
+            val = ("av", dec("BV" + av_bv[2:-2]))
         else:
             print("你的输入有误请重新输入")
 
