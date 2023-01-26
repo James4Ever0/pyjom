@@ -8,6 +8,7 @@ model = YOLO("ver3.pt")
 
 # find trained weights on huggingface:
 # https://huggingface.co/James4Ever0/yolov8_pip_ultralytics
+# no one will miss genesis, right?
 
 imagePaths = [
     "000000003099.png",
