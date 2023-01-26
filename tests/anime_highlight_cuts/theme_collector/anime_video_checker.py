@@ -18,7 +18,7 @@ cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{playlistInd
 
 os.system(cmd)
 autonumber = "1".zfill(5)
-expectedNamePrefix = f"{videoID}-{playlistIndex}-{autonumber}"
+expectedNamePrefix = f"{videoAID}_part{playlistIndex}-{autonumber}"
 print('expected filename prefix:', expectedNamePrefix)
 files = os.listdir(".")
 for fname in files:
