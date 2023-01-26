@@ -2,7 +2,7 @@ from ultralytics import YOLO
 
 model = YOLO("ver2.pt")
 # imagePath ="simple_pip.png"
-imagePath = "000000003099.png"
+imagePaths = ["000000003099.png","simple_pip.png",""]
 output = model(imagePath)
 # print(output)
 # breakpoint()
