@@ -7,4 +7,4 @@ model = YOLO("yolov8n.pt")
 # print(model)
 
 # breakpoint()
-model.train("./pip_dataset/pip_dataset.yaml")
+model.train(epochs=3,data="./pip_dataset/pip_dataset.yaml")
