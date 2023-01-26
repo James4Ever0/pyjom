@@ -65,6 +65,7 @@ for csvName in csvNames:
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
             _, _, x, y, w, h = nextRow[1].tolist()
+            if x == 0 or y == 0 or w == 0 or h == 0
 
             dataPoints = [
                 x / frame_width,
