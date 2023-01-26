@@ -105,7 +105,7 @@ for videoLink in videoLinks:
     for page in pages:
         page_name = page['part']
         page_dimension = page['dimension']
-        page_duration = 
+        page_duration = page['duration']
     
     # subtitle = data['subtitle']
     # let's just skip.
