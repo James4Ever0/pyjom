@@ -60,9 +60,10 @@ for videoLink in videoLinks:
             print("skipping video link:", videoLink)
             continue
     
-    print("PARAMS?",params)
+    # print("PARAMS?",params)
     # shit.
     r = requests.get(f"{url}?{urlencode(params)}") # why? what the fuck?
+    r_tags = requests.get()
     # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
     # r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
     # r.raise_for_status()
