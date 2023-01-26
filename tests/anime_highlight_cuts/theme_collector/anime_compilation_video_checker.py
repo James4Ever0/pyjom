@@ -99,11 +99,12 @@ for videoLink in videoLinks:
     share = stat['share']
     like  = stat['like']
 
-    duration = data['duration']
+    page_count = len(pages)
 
     pages = data['pages']
     for page in pages:
         page_name = page['part']
-        
+        page_dimension = page['dimension']
+        page_duration = 
 
     breakpoint()
