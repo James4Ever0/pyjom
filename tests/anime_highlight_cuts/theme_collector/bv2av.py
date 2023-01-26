@@ -30,12 +30,10 @@ def main(source:str):
         head = str(av_bv[0]) + str(av_bv[1])
         av = ["av", "AV", "Av", "aV"]
         bv = ["bv", "BV", "Bv", "bV"]
-        if av_bv == "q  " or av_bv == "Q  ":
-            quit()
-        elif head in av:
-            print(enc(int(av_bv[2:-2])))
+        if head in av:
+            val = (enc(int(av_bv[2:-2])))
         elif head in bv:
-            print("av", dec("BV" + av_bv[2:-2]), sep="")
+            val = ("av", dec("BV" + av_bv[2:-2]), sep="")
         else:
             print("你的输入有误请重新输入")
 
