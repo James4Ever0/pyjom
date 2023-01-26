@@ -61,16 +61,16 @@ for csvName in csvNames:
             frameIndex += 1
             if frameIndex % remainder != 0:
                 continue
-            _, _, x, y, w, h = nextRow[1].tolist()
-            if (x, y, w, h) == (0, 0, 0, 0):
+            _, _, min_x, min_y, w, h = nextRow[1].tolist()
+            if (min_x, min_y, w, h) == (0, 0, 0, 0):
                 continue
             index += 1
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
 
             dataPoints = [
-                x / frame_width,
-                y / frame_height,
+                (x+w/2) / frame_width,
+                (min_y+h/2) / frame_height,
                 w / frame_width,
                 h / frame_height,
             ]
