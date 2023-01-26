@@ -2,6 +2,6 @@ from ultralytics import YOLO
 
 model = YOLO("genesis.pt")
 
-output = model("000000003099.png")
+output = model("simple_pip.png")
 print(output)
 breakpoint()
