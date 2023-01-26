@@ -16,3 +16,5 @@ nameFormat = "%(id)s-%(autonumber)s.%(ext)s"
 cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" --cookies-from-browser chrome -o "{nameFormat}" "{url}"'
 
 os.system(cmd)
+
+files = os.listdir(".")
