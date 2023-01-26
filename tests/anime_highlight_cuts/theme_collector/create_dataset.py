@@ -16,8 +16,6 @@ data = {
     "names": {0: "active_frame"},
 }
 
-with open("pip_dataset/pip_dataset.yaml", "w+") as f:
-    f.write(yaml.dump(data, default_flow_style=False))
 
 import os
 
@@ -28,6 +26,9 @@ os.makedirs(os.path.join(basepath, test_path), exist_ok=True)
 
 os.makedirs(os.path.join(basepath, train_label_path), exist_ok=True)
 os.makedirs(os.path.join(basepath, test_label_path), exist_ok=True)
+
+with open("pip_dataset/pip_dataset.yaml", "w+") as f:
+    f.write(yaml.dump(data, default_flow_style=False))
 
 import cv2
 import pandas
