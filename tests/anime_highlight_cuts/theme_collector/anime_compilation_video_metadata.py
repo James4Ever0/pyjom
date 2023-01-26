@@ -1,4 +1,5 @@
-# get video metadata first. we may filter these videos
+# get video metadata first. we may filter unwanted videos by metadata.
+
 # let's just view here:
 # https://github.com/SocialSisterYi/bilibili-API-collect
 
