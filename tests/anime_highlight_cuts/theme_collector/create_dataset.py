@@ -61,11 +61,11 @@ for csvName in csvNames:
             frameIndex += 1
             if frameIndex % remainder != 0:
                 continue
+            _, _, x, y, w, h = nextRow[1].tolist()
+            if (x,y,w,h) == (0,0,0,0): continue
             index += 1
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
-            _, _, x, y, w, h = nextRow[1].tolist()
-            if (x,y,w,h) == (0,0,0,0): continue
 
             dataPoints = [
                 x / frame_width,
