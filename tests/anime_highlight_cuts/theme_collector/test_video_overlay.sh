@@ -2,4 +2,4 @@ video_0="[Sakurato] Onii-chan wa Oshimai! [未删减][02][AVC-8bit 1080p AAC][CH
 video_1="[MLU-S] Onii-chan wa Oshimai! - 03 [1080p][Multi Subs].mkv"
 basepath="/Users/jamesbrown/Downloads/anime_download"
 
-ffmpeg -y -t 0:00:10 -i "$basepath/$video_0" -t 0:00:10 -i "$basepath/$video_1" -filter_complex "[0:v]scale=(1920*0.8[v0];[1:v][v0]overlay=100:100" output.mp4
+ffmpeg -y -t 0:00:10 -i "$basepath/$video_0" -t 0:00:10 -i "$basepath/$video_1" -filter_complex "[0:v]scale=1152:648[v0];[1:v][v0]overlay=" output.mp4
