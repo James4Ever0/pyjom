@@ -82,6 +82,8 @@ for videoLink in videoLinks:
     data = response_json['data']
     tags_data = response_tags_json['data']
 
+    ## parsing video stats.
+
     title = data['title']
     pic = data['pic']
     owner_mid = data['owner']['mid']
