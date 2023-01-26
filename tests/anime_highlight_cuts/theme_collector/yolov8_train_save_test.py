@@ -28,7 +28,7 @@ test_boxes = test_result[0].boxes
 
 test_classes, test_xywh, test_confidence = (
     test_boxes.cls.numpy(),
-    test_boxes.xywh.numpy(), # wtf does this mean?
+    test_boxes.xywh.numpy(), # this is not the xyxy
     test_boxes.conf.numpy(),
 )
 
