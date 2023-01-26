@@ -46,7 +46,8 @@ for csvName in csvNames:
     cv2.CAP_PROP_FRAME_WIDTH
     while True:
         succ, image = cap.read()
-        if myIterator.
+        nextRow = next(myIterator,None)
+        if nextRow is None: break
         if succ:
             index+=1
             frameIndex+=1
