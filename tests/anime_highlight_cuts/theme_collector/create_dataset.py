@@ -17,7 +17,10 @@ data = {
     "names": {0: "active_frame"},
 }
 
-pip_video.yaml","w+") as f:
+with open("pip_video.yaml","w+") as f:
+    f.write(yaml.dump(data, default_flow_style=False))
+
+    f.write()
 
 import os
 
