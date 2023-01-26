@@ -1,6 +1,7 @@
 from ultralytics import YOLO
 
 model = YOLO("ver2.pt")
+
 imagePaths = [
     "000000003099.png",
     "simple_pip.png",
@@ -9,6 +10,7 @@ imagePaths = [
     "has_border_1.jpg",
     "has_border_2.jpg",
 ]
+
 import cv2
 
 for imagePath in imagePaths:
