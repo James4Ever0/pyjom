@@ -18,7 +18,7 @@ val_result =model.val()
 print("VALIDATION RESULT?")
 rich.print(val_result)
 
-model("./pip_dataset/images/test")
+model("./pip_dataset/images/test/000000003099.png")
 
 
 model.export(format='pytorch',path='./pip_detector.pth')
