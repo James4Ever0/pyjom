@@ -73,5 +73,8 @@ for videoLink in videoLinks:
     view  = stat['view']
     reply = stat['reply']
     danmaku = stat['danmaku']
+    favorite = stat['favorite']
+    coin  = stat['coin']
+    
 
     breakpoint()
