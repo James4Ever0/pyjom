@@ -10,6 +10,12 @@ model = YOLO("yolov8n.pt")
 import rich
 train_result = model.train(epochs=3,data="./pip_dataset/pip_dataset.yaml")
 
+print("TRAIN RESULT?")
+rich.print(train_result)
+
 val_result =model.val()
+
+print("VALIDATION RESULT?")
+rich.print(val_result)
 
 model.export()
