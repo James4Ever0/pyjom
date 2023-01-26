@@ -14,8 +14,3 @@ video_duration = 10  # just for test.
 
 # use ffplay?
 # better save metadata in the filename.
-import ffmpeg
-
-
-
-ffmpeg -y -t 0:00:10 -i "$basepath/$video_0" -t 0:00:10 -i "$basepath/$video_1" -filter_complex "[0:v]scale=1152:648[v0];[1:v][v0]overlay=384:216" output.mp4
