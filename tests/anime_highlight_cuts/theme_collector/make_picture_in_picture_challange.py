@@ -7,3 +7,5 @@ source_video = os.path.join(basepath,"[Sakurato] Onii-chan wa Oshimai! [未删�
 background_video = os.path.join(basepath,"[MLU-S] Onii-chan wa Oshimai! - 03 [1080p][Multi Subs].mkv")
 
 video_duration = 100
+
+# use ffplay?
