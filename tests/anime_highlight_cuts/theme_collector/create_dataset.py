@@ -37,7 +37,7 @@ with open("pip_dataset/pip_dataset.yaml", "w+") as f:
 import cv2
 import pandas
 
-csvNames = [fpath for fpath in os.listdir(".") if fpath.startswith(".csv")]
+csvNames = [fpath for fpath in os.listdir(".") if fpath.endswith(".csv")]
 
 import progressbar
 for csvName in csvNames:
