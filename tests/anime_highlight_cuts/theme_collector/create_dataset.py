@@ -42,6 +42,7 @@ for csvName in csvNames:
     # 
     frameIndex=0
     cap = cv2.VideoCapture(videoFileName)
+    cv2.VI
     while True:
         succ, image = cap.read()
         if myIterator.
