@@ -129,5 +129,8 @@ for videoLink in videoLinks:
         # introduction of tag.
         tag_content = tag['content']
         tag_short_content = tag['short_content']
+    
+    ## extract related video info.
+    
 
     breakpoint()
