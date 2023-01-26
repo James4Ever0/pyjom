@@ -57,4 +57,7 @@ for index, video in enumerate(videos):
             if roi_new == (0,0,0,0):
                 if lastKey[0] == 'c':
                     # this is cancelled. roi will be nothing!
+                    roi=None
+            else:
+                roi=roi
     cap.close()
