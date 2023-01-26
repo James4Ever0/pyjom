@@ -44,7 +44,7 @@ listener.start()
 
 # how do you arrange such data?
 
-fields = ["filename", "frame_index", ""]
+fields = ["filename", "frame_index", "x",'y','w','h']
 import csv
 
 with open("labels.csv", "w+") as csvfile:
