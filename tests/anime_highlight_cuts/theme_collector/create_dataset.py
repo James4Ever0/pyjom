@@ -57,18 +57,18 @@ for csvName in csvNames:
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
             _, _, x, y, w, h = nextRow[1].tolist()
+
+dataPoints = [x / frame_width,
+                                y / frame_height,
+                                w / frame_width,
+                                h / frame_height,]
             with open(os.path.join(basepath, train_label_path, labelName), "w+") as f:
                 content = " ".join(
                     (
                         [0]
                         + [
                             f"{number:.3f}"
-                            for number in [
-                                x / frame_width,
-                                y / frame_height,
-                                w / frame_width,
-                                h / frame_height,
-                            ]
+                            for number in dataPoints
                         ]
                     )
                 )
@@ -82,12 +82,16 @@ testVideo = "output.mp4"
 w, h = 1152, 648
 x, y = 384, 216
 
-dataPoints = []
 
 cap = cv2.VideoCapture(testVideo)
 frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
     cv2.CAP_PROP_FRAME_WIDTH
 )
+
+dataPoints = [x / frame_width,
+                                y / frame_height,
+                                w / frame_width,
+                                h / frame_height,]
 while True:
     succ, image = cap.read()
     if succ:
