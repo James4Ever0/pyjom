@@ -10,5 +10,6 @@ videos = [
 ]
 
 # we create dataset here. 
+# use some short cuts for progression.
 
-# 
+frame_step = 0
