@@ -43,7 +43,7 @@ listener.start()
 
 # how do you arrange such data?
 
-
+fields = ['filename', 'frame_index', 'ROI']
 import csv
 
 for index, video in enumerate(videos):
