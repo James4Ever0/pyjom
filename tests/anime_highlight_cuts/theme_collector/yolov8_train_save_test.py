@@ -5,7 +5,10 @@ from ultralytics import YOLO
 
 model = YOLO("yolov8n.pt")
 # print(model)
-model.to('mps')
+# model.to('mps')
+# The operator 'aten::_slow_conv2d_forward' is not current implemented for the MPS device.
+# fuck.
+
 # breakpoint()
 import rich
 train_result = model.train(epochs=3,data="./pip_dataset/pip_dataset.yaml")
