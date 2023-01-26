@@ -87,7 +87,7 @@ for videoLink in videoLinks:
     owner_mid = data['owner']['mid']
 
     state = data['state']
-    assert state == 0
+    assert state == 0 # make sure this video is downloadable.
 
     stat =  data['stat']
 
@@ -100,5 +100,9 @@ for videoLink in videoLinks:
     like  = stat['like']
 
     duration = data['duration']
+
+    pages = data['pages']
+    for page in pages:
+        
 
     breakpoint()
