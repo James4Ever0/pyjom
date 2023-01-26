@@ -1,5 +1,4 @@
-# check if is the video we want and extract data or discard.
-
+# get video metadata first. we may filter these videos
 # let's just view here:
 # https://github.com/SocialSisterYi/bilibili-API-collect
 
@@ -159,5 +158,4 @@ for videoLink in videoLinks:
         # well, we've got non-standard dimensions.
         related_dimension = related_video['dimension']
         # no tag here? you might want more!
-
     breakpoint()
