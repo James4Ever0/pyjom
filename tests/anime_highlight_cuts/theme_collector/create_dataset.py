@@ -45,7 +45,7 @@ for csvName in csvNames:
         if succ:
             index+=1
             frameIndex+=1
-            
+            cv2.imwrite(imageName, image)
         else:
             break
     cap.release()
