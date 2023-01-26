@@ -25,6 +25,10 @@ test_result = model("./pip_dataset/images/test/000000003099.png")
 test_boxes = test_result[0].boxes
 
 test_classes, test_xywh, test_confidence = test_boxes.cls.numpy(), test_boxes.xywh.numpy(), test_boxes.conf.numpy()
-print("")
+
+print("XYWH?", test_xywh)
+print("CLASSES?", test_classes)
+print("CONFIDENCE?", test_confidence)
+
 
 model.export(format='pytorch',path='./pip_detector.pth')
