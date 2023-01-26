@@ -120,5 +120,8 @@ for videoLink in videoLinks:
         tag_name = tag['tag_name']
         tag_used = tag['count']['use']
         tag_attention = tag['count']['atten']
+        # introduction of tag.
+        tag_content = tag['content']
+        tag_short_content = tag['short_content']
 
     breakpoint()
