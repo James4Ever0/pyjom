@@ -103,8 +103,10 @@ for videoLink in videoLinks:
     pages = data['pages']
     page_count = len(pages)
     for page in pages:
+        page_index = page['page']
         page_name = page['part']
         page_dimension = page['dimension']
+        page_width, page_height, page_rotate = page_dimension['width'], page_dimension['height'], page_dimension['rotate']
         page_duration = page['duration']
     
     # subtitle = data['subtitle']
