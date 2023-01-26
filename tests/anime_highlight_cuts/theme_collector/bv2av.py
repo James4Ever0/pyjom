@@ -24,9 +24,9 @@ def enc(x):
     return ''.join(r)
 
 
-def main():
+def main(source:st):
     while True:
-        av_bv = input("请输入BV或AV号,需要带上BV或AV前缀(输入q以退出):") + "  "
+         print("请输入BV或AV号,需要带上BV或AV前缀(输入q以退出):") + av_bv =source+"  "
         head = str(av_bv[0]) + str(av_bv[1])
         av = ["av", "AV", "Av", "aV"]
         bv = ["bv", "BV", "Bv", "bV"]
