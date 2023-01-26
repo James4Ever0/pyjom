@@ -99,9 +99,9 @@ for videoLink in videoLinks:
     share = stat['share']
     like  = stat['like']
 
-    page_count = len(pages)
 
     pages = data['pages']
+    page_count = len(pages)
     for page in pages:
         page_name = page['part']
         page_dimension = page['dimension']
