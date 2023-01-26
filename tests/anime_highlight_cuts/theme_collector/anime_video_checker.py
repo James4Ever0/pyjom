@@ -18,3 +18,5 @@ cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" --c
 os.system(cmd)
 
 files = os.listdir(".")
+for fname in files:
+    
