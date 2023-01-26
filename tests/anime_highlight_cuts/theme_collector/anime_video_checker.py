@@ -21,3 +21,6 @@ expectedNamePrefix = f"{videoID}-{autonumber}"
 
 files = os.listdir(".")
 for fname in files:
+    if fname.startswith(expectedNamePrefix):
+        print("TARGET FOUND!")
+        print("FILENAME:", fname)
