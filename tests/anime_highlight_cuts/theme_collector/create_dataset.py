@@ -69,8 +69,8 @@ for csvName in csvNames:
             labelName = f'{f"{index}".zfill(12)}.txt'
 
             dataPoints = [
-                (min_x+w/2) / frame_width,
-                (min_y+h/2) / frame_height,
+                (min_x + w / 2) / frame_width,
+                (min_y + h / 2) / frame_height,
                 w / frame_width,
                 h / frame_height,
             ]
@@ -94,8 +94,8 @@ frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
 )
 
 dataPoints = [
-                (min_x+w/2) / frame_width,
-                (min_y+h/2) / frame_height,
+    (min_x + w / 2) / frame_width,
+    (min_y + h / 2) / frame_height,
     w / frame_width,
     h / frame_height,
 ]
