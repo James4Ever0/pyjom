@@ -9,11 +9,11 @@ url = f"https://www.bilibili.com/video/{videoID}" # only one single page.
 # 0:05:00-0:06:30
 import time
 secondsToHHMMSS = lambda seconds:time.strftime('%H:%M:%S', time.gmtime(seconds))
-items='1'
+playlistIndex='1'
 start = secondsToHHMMSS(150)
 end = secondsToHHMMSS(200)
 nameFormat = "%(id)s-%(playlist_index)s-%(autonumber)s.%(ext)s"
-cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" --cookies-from-browser chrome -o "{nameFormat}" "{url}"'
+cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{playlistIndex}" --cookies-from-browser chrome -o "{nameFormat}" "{url}"'
 
 os.system(cmd)
 autonumber = "1".zfill(5)
