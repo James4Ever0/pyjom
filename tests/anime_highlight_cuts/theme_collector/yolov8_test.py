@@ -7,8 +7,8 @@ from ultralytics import YOLO
 model = YOLO("ver3.pt")
 
 # find trained weights on huggingface:
-# no one will miss genesis.pt``, right?
 # https://huggingface.co/James4Ever0/yolov8_pip_ultralytics
+# no one will miss `genesis.pt`, right?
 
 imagePaths = [
     "000000003099.png",
