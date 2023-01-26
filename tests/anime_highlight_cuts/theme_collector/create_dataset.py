@@ -11,7 +11,7 @@ basepath = "pip_dataset"
 
 
 data = {
-    "path": f'../{basepath}',  # dataset root dir
+    "path": f"../{basepath}",  # dataset root dir
     "train": train_path,  # train images (relative to 'path')
     "val": train_path,  # val images (relative to 'path')
     "test": test_path,
@@ -40,6 +40,7 @@ import pandas
 csvNames = [fpath for fpath in os.listdir(".") if fpath.endswith(".csv")]
 
 import progressbar
+
 remainder = 15
 for csvName in csvNames:
     dataframe = pandas.read_csv(csvName)
@@ -58,7 +59,8 @@ for csvName in csvNames:
             break
         if succ:
             frameIndex += 1
-            if frameIndex%remainder !=0:continue
+            if frameIndex % remainder != 0:
+                continue
             index += 1
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
@@ -82,7 +84,7 @@ testVideo = "output.mp4"
 w, h = 1152, 648
 x, y = 384, 216
 
-print('creating test dataset')
+print("creating test dataset")
 
 cap = cv2.VideoCapture(testVideo)
 frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
@@ -111,4 +113,4 @@ while True:
         break
 
 cap.release()
-print('dataset created.')
+print("dataset created.")
