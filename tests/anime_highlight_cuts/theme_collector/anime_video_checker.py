@@ -3,6 +3,7 @@
 # we name downloaded video using some agreements.
 import os
 url = "https://www.bilibili.com/video/BV1e54y1y7qy" # only one single page.
+# 290 seconds.
 cmd=f"yt-dlp "
 
 os.system(cmd)
