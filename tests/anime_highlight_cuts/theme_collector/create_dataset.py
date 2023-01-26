@@ -16,7 +16,7 @@ data = {
     "names": {0: "active_frame"},
 }
 
-with open("pip_video.yaml","w+") as f:
+with open("pip_video.yaml", "w+") as f:
     f.write(yaml.dump(data, default_flow_style=False))
 
 import os
@@ -43,4 +43,5 @@ for csvName in csvNames:
     cap.release()
 
 testVideo = "output.mp4"
-1152:648x,y=384,216
+w, h = 1152, 648
+x, y = 384, 216
