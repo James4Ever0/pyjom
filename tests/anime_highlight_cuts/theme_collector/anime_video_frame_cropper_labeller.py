@@ -42,7 +42,9 @@ listener.start()
 #     listener.join()
 
 # how do you arrange such data?
-import pandas
+
+
+import csv
 
 for index, video in enumerate(videos):
     print("reading video:", index)
