@@ -32,13 +32,9 @@ def on_release(key):
     if key == Key.esc:
         # Stop listener
         return False
-  
-  
-with Listener(on_press = on_press,
-              on_release = on_release) as listener:
                      
-listener = mouse.Listener(
-    on_move=on_move,
-    on_click=on_click,
-    on_scroll=on_scroll)
-listener.start()
+
+
+listener = Listener(on_press = on_press,
+              on_release = on_release)
+# listener.start()
