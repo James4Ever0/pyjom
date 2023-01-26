@@ -13,3 +13,5 @@ videos = [
 # use some short cuts for progression.
 
 frame_step = 0
+import cv2
+for video in videos:
