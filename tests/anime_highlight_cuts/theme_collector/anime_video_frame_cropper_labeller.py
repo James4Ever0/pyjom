@@ -17,6 +17,7 @@ import cv2
 import progressbar
 
 from pynput.keyboard import Listener
+from sklearn.semi_supervised import LabelSpreading
 
 lastKey = ["not_c"]
 
@@ -45,6 +46,8 @@ listener.start()
 
 fields = ['filename', 'frame_index', 'ROI']
 import csv
+
+with open('labels.csv', 'w') as csvfile:
 
 for index, video in enumerate(videos):
     print("reading video:", index)
