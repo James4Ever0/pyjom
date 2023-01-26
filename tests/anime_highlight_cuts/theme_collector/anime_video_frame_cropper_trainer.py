@@ -18,7 +18,7 @@ import progressbar
 for index, video in enumerate(videos):
     print("reading video:", index)
     cap = cv2.VideoCapture(video)
-    for vindex in progressbar.progressbar(range(0, cap.get(cv2.CAP_PROP_FRAME_COUNT),frame_step)):
+    for vindex in progressbar.progressbar(range(0, int(cap.get(cv2.CAP_PROP_FRAME_COUNT)),frame_step)):
         cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
         succ, image = cap.read()
         if succ:
