@@ -2,7 +2,7 @@
 
 # we name downloaded video using some agreements.
 import os
-url = ""
+url = "https://www.bilibili.com/video/BV1e54y1y7qy" # only one single page.
 cmd=f"yt-dlp "
 
 os.system(cmd)
