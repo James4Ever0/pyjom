@@ -49,6 +49,7 @@ import csv
 
 with open('labels.csv', 'w+') as csvfile:
     csvwriter = csv.writer(csvfile)
+    csvwriter.writerow(fields)
 
     for index, video in enumerate(videos):
         print("reading video:", index)
