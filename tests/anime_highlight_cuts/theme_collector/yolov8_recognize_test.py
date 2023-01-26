@@ -4,6 +4,6 @@ from ultralytics import YOLO
 # https://github.com/asweigart/pyautogui/issues/706
 
 model = YOLO("yolov8n.pt")
-print(model)
+# print(model)
 
 breakpoint()
