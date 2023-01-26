@@ -1,4 +1,3 @@
-
 import yaml
 
 
@@ -94,7 +93,7 @@ while True:
 
         imageName = f'{f"{index}".zfill(12)}.png'
         labelName = f'{f"{index}".zfill(12)}.txt'
-        
+
         with open(os.path.join(basepath, test_label_path, labelName), "w+") as f:
             content = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
             f.write(content)
