@@ -143,6 +143,7 @@ for videoLink in videoLinks:
     for related_video in related_data:
         related_tid = related_video['tid']
         related_tname = related_video['tname']
-        
+        related_pic = related_video['pic']
+        related_title = related_video['title']
 
     breakpoint()
