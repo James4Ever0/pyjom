@@ -130,6 +130,7 @@ frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
 
 dataPoints = [0.5, 0.5, 1, 1]
 frameCounter = 0
+
 while True:
     succ, image = cap.read()
     if succ:
