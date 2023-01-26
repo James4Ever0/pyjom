@@ -46,6 +46,7 @@ def extractAID(chars:str):
 # bullshit. we shall get the video metadata first.
 url = "https://api.bilibili.com/x/web-interface/view"
 tags_url = "https://api.bilibili.com/x/tag/archive/tags"
+related_url = "https://api.bilibili.com/x/web-interface/archive/related"
 
 for videoLink in videoLinks:
     bvid = extractBVID(videoLink)
