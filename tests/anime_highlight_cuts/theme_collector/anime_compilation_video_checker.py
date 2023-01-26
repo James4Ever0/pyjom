@@ -1,5 +1,8 @@
 # check if is the video we want and extract data or discard.
 
+# let's just view here:
+# https://github.com/SocialSisterYi/bilibili-API-collect
+
 videoLinks = [
     "https://www.bilibili.com/video/BV1e54y1y7qy",  # 女攻男受 emm
     "https://www.bilibili.com/video/BV1P441197oV",  # in which you shall never find anything interesting.
