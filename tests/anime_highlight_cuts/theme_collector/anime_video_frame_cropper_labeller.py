@@ -62,6 +62,6 @@ for index, video in enumerate(videos):
                     # this is cancelled. roi will be nothing!
                     roi=None
             else:
-                roi=roi
+                roi=roi_new
             print('roi:', roi)
     cap.close()
