@@ -1,6 +1,9 @@
 # find our target video.
 # you may find uploaders, keywords, tags, recommended videos, video collections/playlists and filter by analyzers (check if is in the target format)
 
+# how did you?
+# from sklearn.semi_supervised import LabelSpreading
+
 # 其他标签就是和视频主题有关的 属于小分类
 tags = {  # select 1 for each.
     "static": [
