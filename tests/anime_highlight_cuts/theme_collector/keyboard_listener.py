@@ -1,4 +1,4 @@
-from pynput.keyboard import Key, Listener
+from pynput.keyboard import Listener
 
 
 def on_press(key):
