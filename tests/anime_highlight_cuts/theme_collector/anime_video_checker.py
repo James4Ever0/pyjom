@@ -12,6 +12,6 @@ secondsToHHMMSS = lambda seconds:time.strftime('%H:%M:%S', time.gmtime(seconds))
 items='1'
 start = secondsToHHMMSS(150)
 end = secondsToHHMMSS(200)
-cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" --cookies-from-browser chrome "{url}"'
+cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" --cookies-from-browser chrome -o "%(id)s-%(autonumber)s.%(ext)s" "{url}"'
 
 os.system(cmd)
