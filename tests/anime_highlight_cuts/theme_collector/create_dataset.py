@@ -7,7 +7,7 @@ test_path = "images/test"
 train_label_path = "labels/train"
 test_label_path = "labels/test"
 
-basepath = "../pip_dataset"
+basepath = "./pip_dataset"
 data = {
     "path": basepath,  # dataset root dir
     "train": train_path,  # train images (relative to 'path')
