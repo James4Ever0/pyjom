@@ -34,6 +34,7 @@ autonumber = "1".zfill(5)
 expectedNamePrefix = f"{videoAID}_part{playlistIndex}-{autonumber}"
 print('expected filename prefix:', expectedNamePrefix)
 files = os.listdir(".")
+
 for fname in files:
     if fname.startswith(expectedNamePrefix):
         print("TARGET FOUND!")
