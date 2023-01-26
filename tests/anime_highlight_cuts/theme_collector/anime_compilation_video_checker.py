@@ -111,7 +111,7 @@ for videoLink in videoLinks:
 
 
     pages = data['pages']
-    page_count = len(pages)
+    page_count = len(pages) # data['videos']
     for page in pages:
         page_index = page['page']
         page_name = page['part']
@@ -134,6 +134,6 @@ for videoLink in videoLinks:
     
     ## extract related video info.
     for related_video in related_data:
-        
+
 
     breakpoint()
