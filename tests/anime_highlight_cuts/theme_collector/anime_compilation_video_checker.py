@@ -80,11 +80,13 @@ for videoLink in videoLinks:
     assert response_tags_json['code'] == 0
 
     data = response_json['data']
-    tags_data = response_json['data']
+    tags_data = response_tags_json['data']
 
     title = data['title']
     pic = data['pic']
     owner_mid = data['owner']['mid']
+
+    state = 
 
     stat =  data['stat']
 
@@ -96,6 +98,6 @@ for videoLink in videoLinks:
     share = stat['share']
     like  = stat['like']
 
-    duration = 
+    duration = data['duration']
 
     breakpoint()
