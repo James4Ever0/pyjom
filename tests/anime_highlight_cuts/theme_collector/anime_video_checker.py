@@ -2,7 +2,10 @@
 
 # we name downloaded video using some agreements.
 import os
-videoBVID="BV1e54y1y7qy"
+videoBVIDs=["BV1e54y1y7qy",
+"BV1Qf4y197bt",# great challange
+]
+videoBVID =videoBVIDs[1]
 from bv2av import bv_av_conversion
 videoAVID = bv_av_conversion(videoBVID)
 import re
