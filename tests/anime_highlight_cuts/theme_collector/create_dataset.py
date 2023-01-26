@@ -92,10 +92,13 @@ while True:
     if succ:
         index += 1
 
-            with open(os.path.join(basepath, test_label_path, labelName), "w+") as f:
-                content = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
-                f.write(content)
-            cv2.imwrite(os.path.join(basepath, test_path, imageName), image)
+        imageName = f'{f"{index}".zfill(12)}.png'
+        labelName = f'{f"{index}".zfill(12)}.txt'
+        
+        with open(os.path.join(basepath, test_label_path, labelName), "w+") as f:
+            content = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
+            f.write(content)
+        cv2.imwrite(os.path.join(basepath, test_path, imageName), image)
     else:
         break
 
