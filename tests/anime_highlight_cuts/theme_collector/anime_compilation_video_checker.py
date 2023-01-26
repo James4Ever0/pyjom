@@ -151,5 +151,7 @@ for videoLink in videoLinks:
         if related_state != 0: continue
         related_duration = related_video['duration']
         related_owner_mid = related_video['owner']['mid']
+        related_stat = related_video['stat']
+        related_dynamic = related_video['dynamic']
 
     breakpoint()
