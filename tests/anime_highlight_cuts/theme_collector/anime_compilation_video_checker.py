@@ -92,6 +92,7 @@ for videoLink in videoLinks:
 
     title = data['title']
     pic = data['pic']
+    dynamic = data['dynamic']
     owner_mid = data['owner']['mid']
 
     state = data['state']
