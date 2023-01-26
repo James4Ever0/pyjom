@@ -73,7 +73,7 @@ for videoLink in videoLinks:
     data = response_json['data']
 
     title = data['title']
-    owner = 
+    owner_mid = data['owner']['mid']
 
     stat =  data['stat']
 
