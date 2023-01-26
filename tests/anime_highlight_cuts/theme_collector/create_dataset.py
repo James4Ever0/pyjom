@@ -86,7 +86,7 @@ testVideo = "output.mp4"
 w, h = 1152, 648
 min_x, min_y = 384, 216
 
-print("creating test dataset")
+print("creating 4min pip dataset")
 
 cap = cv2.VideoCapture(testVideo)
 frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
