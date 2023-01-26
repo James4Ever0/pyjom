@@ -99,6 +99,7 @@ dataPoints = [
     w / frame_width,
     h / frame_height,
 ]
+
 while True:
     succ, image = cap.read()
     if succ:
