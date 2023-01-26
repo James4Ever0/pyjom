@@ -35,13 +35,14 @@ import pandas
 
 csvNames = [fpath for fpath in os.listdir(".") if fpath.startswith(".csv")]
 
+import progressbar
 for csvName in csvNames:
     dataframe = pandas.read_csv(csvName)
     videoFileName = f'{csvName.split(".")[0]}.mp4'
     #
     frameIndex = 0
     cap = cv2.VideoCapture(videoFileName)
-    myIterator = dataframe.iterrows()
+    myIterator = progressbar.progressbar(dataframe.iterrows())
     frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
         cv2.CAP_PROP_FRAME_WIDTH
     )
