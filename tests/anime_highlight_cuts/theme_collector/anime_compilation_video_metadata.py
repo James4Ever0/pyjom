@@ -140,6 +140,7 @@ for videoLink in videoLinks:
         tag_short_content = tag['short_content']
     
     ## extract related video info.
+    related_video_counts = len(related_data)
     for related_video in related_data:
         related_aid = related_video['aid']
         related_bvid = related_video['bvid']
