@@ -75,6 +75,8 @@ for videoLink in videoLinks:
     danmaku = stat['danmaku']
     favorite = stat['favorite']
     coin  = stat['coin']
-    
+    share = stat['share']
+    like  = stat['like']
+
 
     breakpoint()
