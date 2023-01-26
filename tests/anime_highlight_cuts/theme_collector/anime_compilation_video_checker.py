@@ -145,5 +145,7 @@ for videoLink in videoLinks:
         related_tname = related_video['tname']
         related_pic = related_video['pic']
         related_title = related_video['title']
+        related_page_count = related_video['videos']
+        related_desc = related_video['desc']
 
     breakpoint()
