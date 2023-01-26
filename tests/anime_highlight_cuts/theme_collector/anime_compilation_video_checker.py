@@ -71,5 +71,7 @@ for videoLink in videoLinks:
     assert data['code'] == 0
     stat =  data['stat']
     view  = stat['view']
-    
+    reply = stat['reply']
+    danmaku = stat['danmaku']
+
     breakpoint()
