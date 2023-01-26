@@ -37,7 +37,7 @@ csvNames = [fpath for fpath in os.listdir(".") if fpath.startswith(".csv")]
 for csvName in csvNames:
     dataframe = pandas.read_csv(csvName)
     videoFileName = f'{csvName.split(".")[0]}.mp4'
-    # f"{index}".zfill(12)
+    # 
     frameIndex=0
     cap = cv2.VideoCapture(videoFileName)
     while True:
@@ -45,6 +45,7 @@ for csvName in csvNames:
         if succ:
             index+=1
             frameIndex+=1
+            imageName = f'{f"{index}".zfill(12)}.png'
             cv2.imwrite(imageName, image)
         else:
             break
