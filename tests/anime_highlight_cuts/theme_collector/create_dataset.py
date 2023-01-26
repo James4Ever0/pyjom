@@ -38,11 +38,20 @@ for csvName in csvNames:
     dataframe = pandas.read_csv(csvName)
     videoFileName = f'{csvName.split(".")[0]}.mp4'
     # f"{index}".zfill(12)
+    frameIndex=0
     cap = cv2.VideoCapture(videoFileName)
-    ...
+    while True:
+        succ, image = cap.read()
+        if succ:
+            index+=1
+            frameIndex+=1
+            
+        else:
+            break
     cap.release()
 
 testVideo = "output.mp4"
 w, h = 1152, 648
 x, y = 384, 216
 
+cap = cv2.VideoCapture(testVideo)
