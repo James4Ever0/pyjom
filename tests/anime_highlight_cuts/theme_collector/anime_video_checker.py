@@ -2,7 +2,8 @@
 
 # we name downloaded video using some agreements.
 import os
-url = "https://www.bilibili.com/video/BV1e54y1y7qy" # only one single page.
+videoID="BV1e54y1y7qy"
+url = f"https://www.bilibili.com/video/{videoID}" # only one single page.
 # 290 seconds.
 cmd=f"yt-dlp "
 
