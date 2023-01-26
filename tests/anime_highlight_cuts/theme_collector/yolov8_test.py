@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-model = YOLO("genesis.pt")
+model = YOLO("ver2.pt")
 imagePath ="simple_pip.png"
 output = model(imagePath)
 # print(output)
