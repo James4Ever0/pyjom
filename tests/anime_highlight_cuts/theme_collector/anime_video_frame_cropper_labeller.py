@@ -48,7 +48,7 @@ fields = ['filename', 'frame_index', 'ROI']
 import csv
 
 with open('labels.csv', 'w+') as csvfile:
-    csvwriter = csv.writer(csvfile,)
+    csvwriter = csv.writer(csvfile)
 
     for index, video in enumerate(videos):
         print("reading video:", index)
