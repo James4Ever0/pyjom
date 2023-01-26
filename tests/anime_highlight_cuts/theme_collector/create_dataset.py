@@ -55,7 +55,7 @@ for csvName in csvNames:
             labelName = f'{f"{index}".zfill(12)}.txt'
             _,_,x,y,w,h = nextRow[1].tolist()
             with open(os.path.join(basepath, train_label_path,labelName), 'w+') as f:
-                content = [0]+[f'{number:.3f}' for number in [x/frame_width, y/frame_height, w/frame_width, h/frame_height]]
+                content = " ".join(([0]+[f'{number:.3f}' for number in [x/frame_width, y/frame_height, w/frame_width, h/frame_height]])
                 f.write(content)
             cv2.imwrite(os.path.join(basepath, train_path,imageName), image)
         else:
