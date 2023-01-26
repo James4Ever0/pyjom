@@ -8,5 +8,3 @@ videos = [
     "541755429_part1-00001.mp4",
     "842224692_part1-00001.mp4",
 ]
-
-# you want to average frames?
