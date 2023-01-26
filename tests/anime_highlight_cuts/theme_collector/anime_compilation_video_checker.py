@@ -72,12 +72,15 @@ for videoLink in videoLinks:
     # bvid only?
 
     response_json = r.json()
+    response_tags_json = r_tags.json()
     # it must be json.
     import rich
     rich.print(response_json)
     assert response_json['code'] == 0
+    assert response_tags_json['code'] == 0
 
     data = response_json['data']
+    tags_data = response_json['data']
 
     title = data['title']
     pic = data['pic']
