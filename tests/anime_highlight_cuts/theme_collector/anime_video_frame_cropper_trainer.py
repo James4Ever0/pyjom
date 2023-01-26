@@ -39,6 +39,8 @@ listener = Listener(on_press=on_press, on_release=on_release)
 with listener:
     listener.join()
 
+# how do you arrange such data?
+
 for index, video in enumerate(videos):
     print("reading video:", index)
     cap = cv2.VideoCapture(video)
