@@ -18,6 +18,9 @@ secondsToHHMMSS = lambda seconds:time.strftime('%H:%M:%S', time.gmtime(seconds))
 playlistIndex='1'
 start = secondsToHHMMSS(100)
 end = secondsToHHMMSS(150)
+
+print('TIMESPAN:',start, end)
+
 nameFormat = "%(id)s-%(autonumber)s.%(ext)s"
 # cmd=f'yt-dlp --playlist-items "{playlistIndex}" -o "{nameFormat}" "{url}"'
 cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{playlistIndex}" -o "{nameFormat}" "{url}"'
