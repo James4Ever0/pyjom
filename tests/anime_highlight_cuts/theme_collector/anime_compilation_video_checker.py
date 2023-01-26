@@ -103,6 +103,7 @@ for videoLink in videoLinks:
 
     pages = data['pages']
     for page in pages:
+        page_name = page['part']
         
 
     breakpoint()
