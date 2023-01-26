@@ -21,9 +21,11 @@ from pynput.keyboard import Listener
 lastKey = ["not_c"]
 
 def on_press(key):
+    lastKey[0] = 'not_c'
     try:
         print("alphanumeric key {0} pressed".format(key.char))
-        if key.char in ['c', 'C']
+        if key.char in ['c', 'C']:
+            lastKey[0] = 'c'
     except AttributeError:
         print("special key {0} pressed".format(key))
 
