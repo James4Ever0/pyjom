@@ -39,4 +39,7 @@ for csvName in csvNames:
     videoFileName = f'{csvName.split(".")[0]}.mp4'
     # f"{index}".zfill(12)
     cap = cv2.VideoCapture(videoFileName)
-    
+    ...
+    cap.release()
+
+testVideo = ""
