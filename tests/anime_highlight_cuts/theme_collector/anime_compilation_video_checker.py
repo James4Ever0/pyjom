@@ -69,4 +69,7 @@ for videoLink in videoLinks:
     import rich
     rich.print(data)
     assert data['code'] == 0
+    stat =  data['stat']
+    view  = stat['view']
+    
     breakpoint()
