@@ -47,29 +47,30 @@ listener.start()
 fields = ['filename', 'frame_index', 'ROI']
 import csv
 
-with open('labels.csv', 'w') as csvfile:
+with open('labels.csv', 'w+') as csvfile:
+    csvwriter = csv.writer(csvfile,)
 
-for index, video in enumerate(videos):
-    print("reading video:", index)
-    roi = None
-    cap = cv2.VideoCapture(video)
-    for vindex in progressbar.progressbar(range(0, int(cap.get(cv2.CAP_PROP_FRAME_COUNT)),frame_step)):
-        cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
-        succ, image = cap.read()
-        if succ:
-            roi_new = cv2.selectROI('roi',image)
-            # key=cv2.waitKey(0)
-            print('roi_new:',roi_new)
-            print('last key:',lastKey[0])
-            # print()
-            # print('keycode:',key)
-            if roi_new == (0,0,0,0):
-                if lastKey[0] == 'c':
-                    # this is cancelled. roi will be nothing!
-                    roi=None
-            else:
-                roi=roi_new
-            print('roi:', roi)
-            for i in range(frame_step):
-                roi_index = vindex+i
-    cap.release()
+    for index, video in enumerate(videos):
+        print("reading video:", index)
+        roi = None
+        cap = cv2.VideoCapture(video)
+        for vindex in progressbar.progressbar(range(0, int(cap.get(cv2.CAP_PROP_FRAME_COUNT)),frame_step)):
+            cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
+            succ, image = cap.read()
+            if succ:
+                roi_new = cv2.selectROI('roi',image)
+                # key=cv2.waitKey(0)
+                print('roi_new:',roi_new)
+                print('last key:',lastKey[0])
+                # print()
+                # print('keycode:',key)
+                if roi_new == (0,0,0,0):
+                    if lastKey[0] == 'c':
+                        # this is cancelled. roi will be nothing!
+                        roi=None
+                else:
+                    roi=roi_new
+                print('roi:', roi)
+                for i in range(frame_step):
+                    roi_index = vindex+i
+        cap.release()
