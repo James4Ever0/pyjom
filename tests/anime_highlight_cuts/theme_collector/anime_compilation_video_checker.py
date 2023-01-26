@@ -114,4 +114,8 @@ for videoLink in videoLinks:
     # subtitle = data['subtitle']
     # let's just skip.
 
+    ## parsing tags info.
+    for tag in tags_data:
+        
+
     breakpoint()
