@@ -4,6 +4,8 @@ index.zfill(12)
 
 train_path = "images/train"
 test_path = "images/test"
+test_path = "labels/train"
+test_path = "labels/test"
 basepath = "./pip_dataset"
 data = {
     "path": basepath,  # dataset root dir
