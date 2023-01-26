@@ -12,6 +12,6 @@ videos = [
 # we create dataset here. 
 # use some short cuts for progression.
 
-frame_step = 0
+frame_step = 10
 import cv2
 for video in videos:
