@@ -15,6 +15,6 @@ videos = [
 frame_step = 10
 import cv2
 for video in videos:
-    vreader = cv2.VideoCapture(video)
-    for vindex in range(0, vreader.get(cv2.CAP_PROP_FRAME_COUNT),frame_step):
-        
+    cap = cv2.VideoCapture(video)
+    for vindex in range(0, cap.get(cv2.CAP_PROP_FRAME_COUNT),frame_step):
+        cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
