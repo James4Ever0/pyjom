@@ -106,5 +106,8 @@ for videoLink in videoLinks:
         page_name = page['part']
         page_dimension = page['dimension']
         page_duration = 
+    
+    # subtitle = data['subtitle']
+    # let's just skip.
 
     breakpoint()
