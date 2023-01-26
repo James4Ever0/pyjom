@@ -17,7 +17,6 @@ import cv2
 import progressbar
 
 from pynput.keyboard import Listener
-from sklearn.semi_supervised import LabelSpreading
 
 lastKey = ["not_c"]
 
