@@ -2,8 +2,9 @@
 
 # we name downloaded video using some agreements.
 import os
-videoID="BV1e54y1y7qy"
-url = f"https://www.bilibili.com/video/{videoID}" # only one single page.
+videoBVID="BV1e54y1y7qy"
+videoAID = ""
+url = f"https://www.bilibili.com/video/{videoBVID}" # only one single page.
 # 290 seconds.
 # section example:
 # 0:05:00-0:06:30
