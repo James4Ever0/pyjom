@@ -49,7 +49,7 @@ for index, video in enumerate(videos):
             roi_new = cv2.selectROI('roi',image)
             # key=cv2.waitKey(0)
             print('roi:',roi_new)
-            print('last key:')
+            print('last key:'lastKey[0])
             # print()
             # print('keycode:',key)
     cap.close()
