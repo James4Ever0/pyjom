@@ -66,9 +66,10 @@ for videoLink in videoLinks:
     r = requests.get(f"{url}?{urlencode(params)}") # why? what the fuck?
     r_tags = requests.get(f"{tags_url}?{urlencode(params)}")
     # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
-    r_related = requests.get(f'{')
+    r_related = requests.get(f'{related_url}?{urlencode(params)}')
     # r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
     r.raise_for_status()
+    r_tags.raise_for_status()
     r_tags.raise_for_status()
     # "need_jump_bv":false
     # bvid only?
