@@ -133,6 +133,6 @@ for videoLink in videoLinks:
         tag_short_content = tag['short_content']
     
     ## extract related video info.
-
+    for recommended_video in related_data
 
     breakpoint()
