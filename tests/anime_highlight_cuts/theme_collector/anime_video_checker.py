@@ -12,12 +12,12 @@ secondsToHHMMSS = lambda seconds:time.strftime('%H:%M:%S', time.gmtime(seconds))
 items='1'
 start = secondsToHHMMSS(150)
 end = secondsToHHMMSS(200)
-nameFormat = "%(id)s-%(autonumber)s.%(ext)s"
+nameFormat = "%(id)s-%(playlist_index)s-%(autonumber)s.%(ext)s"
 cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" --cookies-from-browser chrome -o "{nameFormat}" "{url}"'
 
 os.system(cmd)
 autonumber = "1".zfill(5)
-expectedNamePrefix = f"{videoID}-{autonumber}"
+expectedNamePrefix = f"{videoID}-{playlistIndex}-{autonumber}"
 print('expected filename prefix:', expectedNamePrefix)
 files = os.listdir(".")
 for fname in files:
