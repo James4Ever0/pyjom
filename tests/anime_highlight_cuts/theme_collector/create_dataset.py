@@ -82,6 +82,8 @@ testVideo = "output.mp4"
 w, h = 1152, 648
 x, y = 384, 216
 
+dataPoints = []
+
 cap = cv2.VideoCapture(testVideo)
 frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
     cv2.CAP_PROP_FRAME_WIDTH
