@@ -8,5 +8,5 @@ test:  # test images (optional)
 
 # Classes (80 COCO classes)
 names:
-  0: person
-  1: bicycle
+  0: anime_frame
+  1: others
