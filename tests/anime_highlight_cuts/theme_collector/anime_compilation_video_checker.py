@@ -79,13 +79,14 @@ for videoLink in videoLinks:
     response_related_json = r_related.json()
     # it must be json.
     import rich
-    rich.print(response_json)
+    # rich.print(response_json)
     assert response_json['code'] == 0
     assert response_tags_json['code'] == 0
     assert response_related_json['code'] == 0
 
     data = response_json['data']
     tags_data = response_tags_json['data']
+    related_data = response_related_json['data']
 
     ## parsing video stats.
 
