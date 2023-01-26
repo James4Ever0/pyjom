@@ -13,3 +13,4 @@ background_video = os.path.join(
 video_duration = 10  # just for test.
 
 # use ffplay?
+# better save metadata in the filename.
