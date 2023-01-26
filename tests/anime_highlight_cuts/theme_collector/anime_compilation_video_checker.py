@@ -118,6 +118,7 @@ for videoLink in videoLinks:
     for tag in tags_data:
         tag_id = tag['tag_id']
         tag_name = tag['tag_name']
-        
+        tag_used = tag['count']['use']
+        tag_attention = tag['count']['atten']
 
     breakpoint()
