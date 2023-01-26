@@ -153,5 +153,6 @@ for videoLink in videoLinks:
         related_owner_mid = related_video['owner']['mid']
         related_stat = related_video['stat']
         related_dynamic = related_video['dynamic']
+        # well, we've got non-standard dimensions.
 
     breakpoint()
