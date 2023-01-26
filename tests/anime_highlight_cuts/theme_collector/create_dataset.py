@@ -38,3 +38,4 @@ for csvName in csvNames:
     dataframe = pandas.read_csv(csvName)
     videoFileName = f'{csvName.split(".")[0]}.mp4'
     # f"{index}".zfill(12)
+    cap = cv2.VideoCapture()
