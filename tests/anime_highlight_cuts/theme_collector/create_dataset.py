@@ -32,6 +32,7 @@ os.makedirs(os.path.join(basepath, test_label_path), exist_ok=True)
 import cv2
 import pandas
 
-csvs = [fpath for fpath in os.listdir(".") if fpath.startswith(".csv")]
+csvNames = [fpath for fpath in os.listdir(".") if fpath.startswith(".csv")]
 
+for csvName in csvNames
 f"{index}".zfill(12)
