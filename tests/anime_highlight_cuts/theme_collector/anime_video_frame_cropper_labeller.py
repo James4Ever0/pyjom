@@ -51,7 +51,6 @@ for index, video in enumerate(videos):
     with open(f'{video.split(".")[0]}.csv', "w+") as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(fields)
-
         print("reading video:", index)
         roi = None
         cap = cv2.VideoCapture(video)
