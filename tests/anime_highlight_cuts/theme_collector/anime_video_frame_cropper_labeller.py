@@ -78,5 +78,5 @@ with open("labels.csv", "w+") as csvfile:
                     roi_index = vindex + i
                     data = [video,str(roi_index)]
                     if roi == None:
-
+                        data+=['0','0','0','0']
         cap.release()
