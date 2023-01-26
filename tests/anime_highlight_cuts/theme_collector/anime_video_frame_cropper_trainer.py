@@ -43,6 +43,7 @@ with listener:
 
 for index, video in enumerate(videos):
     print("reading video:", index)
+    roi = None
     cap = cv2.VideoCapture(video)
     for vindex in progressbar.progressbar(range(0, int(cap.get(cv2.CAP_PROP_FRAME_COUNT)),frame_step)):
         cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
@@ -58,6 +59,7 @@ for index, video in enumerate(videos):
                 if lastKey[0] == 'c':
                     # this is cancelled. roi will be nothing!
                     roi=None
+                
             else:
                 roi=roi
     cap.close()
