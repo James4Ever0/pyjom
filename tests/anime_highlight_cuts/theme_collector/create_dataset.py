@@ -83,3 +83,5 @@ w, h = 1152, 648
 x, y = 384, 216
 
 cap = cv2.VideoCapture(testVideo)
+
+cap.release()
