@@ -1,6 +1,5 @@
 import yaml
 
-index.zfill(12)
 
 train_path = "images/train"
 test_path = "images/test"
@@ -20,8 +19,6 @@ data = {
 with open("pip_video.yaml","w+") as f:
     f.write(yaml.dump(data, default_flow_style=False))
 
-    f.write()
-
 import os
 
 index = 1
@@ -31,3 +28,5 @@ os.makedirs(os.path.join(basepath, test_path), exist_ok=True)
 
 os.makedirs(os.path.join(basepath, train_label_path), exist_ok=True)
 os.makedirs(os.path.join(basepath, test_label_path), exist_ok=True)
+
+index.zfill(12)
