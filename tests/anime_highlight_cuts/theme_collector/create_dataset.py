@@ -7,7 +7,7 @@ test_path = "images/test"
 train_label_path = "labels/train"
 test_label_path = "labels/test"
 
-basepath = "./pip_dataset"
+basepath = "../pip_dataset"
 data = {
     "path": basepath,  # dataset root dir
     "train": train_path,  # train images (relative to 'path')
@@ -16,7 +16,7 @@ data = {
     "names": {0: "active_frame"},
 }
 
-with open("pip_video.yaml", "w+") as f:
+with open("pip_dataset/pip_dataset.yaml", "w+") as f:
     f.write(yaml.dump(data, default_flow_style=False))
 
 import os
