@@ -18,6 +18,8 @@ data = {
 }
 import os
 
+index = 1
+
 os.makedirs(os.path.join(basepath, train_path), exist_ok=True)
 os.makedirs(os.path.join(basepath, test_path), exist_ok=True)
 
