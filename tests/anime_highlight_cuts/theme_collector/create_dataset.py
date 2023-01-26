@@ -105,3 +105,4 @@ while True:
         break
 
 cap.release()
+print('dataset created.')
