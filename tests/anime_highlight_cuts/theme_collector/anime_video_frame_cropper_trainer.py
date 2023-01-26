@@ -21,3 +21,4 @@ for video in videos:
         succ, image = cap.read()
         if succ:
             roi_new= cv2.selectROI()
+            key=cv2.waitKey(0)
