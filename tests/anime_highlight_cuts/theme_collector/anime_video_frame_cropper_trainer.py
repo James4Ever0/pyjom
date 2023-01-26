@@ -15,7 +15,7 @@ videos = [
 frame_step = 10
 import cv2
 import progressbar
-for video in videos:
+for index, video in videos:
     cap = cv2.VideoCapture(video)
     for vindex in progressbar.progressbar(range(0, cap.get(cv2.CAP_PROP_FRAME_COUNT),frame_step)):
         cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
@@ -26,3 +26,4 @@ for video in videos:
             print('roi:',roi_new)
             print()
             print('keycode:',key)
+    cap.close()
