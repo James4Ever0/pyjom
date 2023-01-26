@@ -4,7 +4,7 @@ from ultralytics import YOLO
 ## https://github.com/mikel-brostrom/yolov8_tracking
 ## this might add unwanted overheads. warning!
 
-model = YOLO("ver3.pt")
+model = YOLO("ver3.pt") # find me on huggingface.
 
 imagePaths = [
     "000000003099.png",
