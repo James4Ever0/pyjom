@@ -13,6 +13,8 @@ from bv2av import bv_av_conversion
 
 videoIDAlternative = bv_av_conversion(videoID)
 
+if videoIdAlternative
+
 import re
 
 print(videoAVID, type(videoAVID))
