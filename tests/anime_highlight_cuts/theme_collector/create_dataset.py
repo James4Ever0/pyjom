@@ -42,4 +42,4 @@ for csvName in csvNames:
     ...
     cap.release()
 
-testVideo = ""
+testVideo = "output.mp4"
