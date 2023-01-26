@@ -40,6 +40,7 @@ import pandas
 csvNames = [fpath for fpath in os.listdir(".") if fpath.endswith(".csv")]
 
 import progressbar
+remainder = 
 for csvName in csvNames:
     dataframe = pandas.read_csv(csvName)
     videoFileName = f'{csvName.split(".")[0]}.mp4'
@@ -56,8 +57,9 @@ for csvName in csvNames:
         if nextRow is None:
             break
         if succ:
-            index += 1
             frameIndex += 1
+            if frameIndex%remainder !=0:continue
+            index += 1
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
             _, _, x, y, w, h = nextRow[1].tolist()
