@@ -116,8 +116,38 @@ while True:
         break
 
 cap.release()
-print("create reference dataset")
+print("creating reference dataset")
 
+testVideo = "output_1.mp4"
+
+cap = cv2.VideoCapture(testVideo)
+frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
+    cv2.CAP_PROP_FRAME_WIDTH
+)
+
+dataPoints = [
+    (min_x + w / 2) / frame_width,
+    (min_y + h / 2) / frame_height,
+    w / frame_width,
+    h / frame_height,
+]
+
+while True:
+    succ, image = cap.read()
+    if succ:
+        index += 1
+
+        imageName = f'{f"{index}".zfill(12)}.png'
+        labelName = f'{f"{index}".zfill(12)}.txt'
+
+        with open(os.path.join(basepath, train_label_path, labelName), "w+") as f:
+            content = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
+            f.write(content)
+        cv2.imwrite(os.path.join(basepath, train_path, imageName), image)
+    else:
+        break
+
+cap.release()
 
 
 print("dataset created.")
