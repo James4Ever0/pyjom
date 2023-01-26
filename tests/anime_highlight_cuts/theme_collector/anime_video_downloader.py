@@ -12,11 +12,11 @@ videoID = videoIDs[3]
 from bv2av import bv_av_conversion
 
 videoIDAlternative = bv_av_conversion(videoID)
+import re
 
 if videoIDAlternative is None: # not av or bv. shit happened!
-    raise Exception("")
+    raise Exception("Possible shit happening when parsing bilibili video id:", videoID)
 
-import re
 
 print(videoAVID, type(videoAVID))
 videoAID = re.findall(r"\d+", videoAVID)[0]
