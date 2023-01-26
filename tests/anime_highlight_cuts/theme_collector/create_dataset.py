@@ -15,8 +15,9 @@ data = {
     "names": {0: "active_frame"},
 }
 import os
-os.makedirs(os.path.join(basepath, train_path),exist_ok=True)
-os.makedirs(os.path.join(basepath, test_path),exist_ok=True)
 
-os.makedirs(os.path.join(basepath, train_path),exist_ok=True)
-os.makedirs(os.path.join(basepath, test_path),exist_ok=True)
+os.makedirs(os.path.join(basepath, train_path), exist_ok=True)
+os.makedirs(os.path.join(basepath, test_path), exist_ok=True)
+
+os.makedirs(os.path.join(basepath, train_label_path), exist_ok=True)
+os.makedirs(os.path.join(basepath, test_label_path), exist_ok=True)
