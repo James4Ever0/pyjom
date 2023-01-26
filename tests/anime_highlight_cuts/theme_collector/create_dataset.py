@@ -1,6 +1,7 @@
 import yaml
-data={}
+
 index.zfill(12)
+data = {
 path: ./pip_dataset  # dataset root dir
 train: images/train  # train images (relative to 'path') 128 images
 val: images/train  # val images (relative to 'path') 128 images
