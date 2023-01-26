@@ -116,6 +116,8 @@ for videoLink in videoLinks:
 
     ## parsing tags info.
     for tag in tags_data:
+        tag_id = tag['tag_id']
+        tag_name = tag['tag_name']
         
 
     breakpoint()
