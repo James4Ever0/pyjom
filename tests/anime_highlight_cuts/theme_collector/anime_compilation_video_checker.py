@@ -69,7 +69,9 @@ for videoLink in videoLinks:
     import rich
     rich.print(data)
     assert data['code'] == 0
+
     stat =  data['stat']
+
     view  = stat['view']
     reply = stat['reply']
     danmaku = stat['danmaku']
@@ -77,6 +79,5 @@ for videoLink in videoLinks:
     coin  = stat['coin']
     share = stat['share']
     like  = stat['like']
-
-
+    
     breakpoint()
