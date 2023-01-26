@@ -21,7 +21,7 @@ data = {
 
 import os
 
-os.system("rm -rf ")
+os.system(f"rm -rf {basepath}")
 
 index = 1
 
