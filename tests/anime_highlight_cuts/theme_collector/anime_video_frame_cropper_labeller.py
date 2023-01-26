@@ -76,6 +76,7 @@ with open("labels.csv", "w+") as csvfile:
                 print("roi:", roi)
                 for i in range(frame_step):
                     roi_index = vindex + i
+                    data = []
                     if roi == None:
-                        
+
         cap.release()
