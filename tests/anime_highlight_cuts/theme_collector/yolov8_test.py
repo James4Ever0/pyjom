@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-## yolov8 tracking needs special ultralytics version. 
+## yolov8 tracking needs special ultralytics version. it is been updated too damn often. you need to downgrade.
 
 model = YOLO("ver3.pt")
 
