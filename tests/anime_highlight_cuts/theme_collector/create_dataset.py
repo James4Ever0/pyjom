@@ -47,6 +47,7 @@ for csvName in csvNames:
             frameIndex+=1
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
+            with open(labelName, '')
             cv2.imwrite(imageName, image)
         else:
             break
