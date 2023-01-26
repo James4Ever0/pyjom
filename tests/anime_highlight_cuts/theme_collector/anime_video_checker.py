@@ -10,8 +10,8 @@ url = f"https://www.bilibili.com/video/{videoID}" # only one single page.
 import time
 secondsToHHMMSS = lambda seconds:time.strftime('%H:%M:%S', time.gmtime(seconds))
 items='1'
-start = secondsToHHMMSS(secondsTo
-end = secondsToHHMMSS(seconds
+start = secondsToHHMMSS(200)
+end = secondsToHHMMSS(200)
 cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" "{url}"'
 
 os.system(cmd)
