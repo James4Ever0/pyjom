@@ -69,7 +69,7 @@ for csvName in csvNames:
             labelName = f'{f"{index}".zfill(12)}.txt'
 
             dataPoints = [
-                (x+w/2) / frame_width,
+                (min_x+w/2) / frame_width,
                 (min_y+h/2) / frame_height,
                 w / frame_width,
                 h / frame_height,
@@ -84,7 +84,7 @@ for csvName in csvNames:
 
 testVideo = "output.mp4"
 w, h = 1152, 648
-x, y = 384, 216
+min_x, min_y = 384, 216
 
 print("creating test dataset")
 
@@ -94,8 +94,8 @@ frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
 )
 
 dataPoints = [
-    x / frame_width,
-    y / frame_height,
+                (min_x+w/2) / frame_width,
+                (min_y+h/2) / frame_height,
     w / frame_width,
     h / frame_height,
 ]
