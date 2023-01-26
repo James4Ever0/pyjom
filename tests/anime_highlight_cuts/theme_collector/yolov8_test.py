@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-model = YOLO("best.pt")
+model = YOLO("genesis.pt")
 
 output = model("000000003099.png")
 print(output)
