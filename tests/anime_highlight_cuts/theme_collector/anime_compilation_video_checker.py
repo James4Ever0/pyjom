@@ -45,7 +45,7 @@ def extractAID(chars:str):
 
 # bullshit. we shall get the video metadata first.
 url = "https://api.bilibili.com/x/web-interface/view"
-tag_url = "https://api.bilibili.com/x/tag/archive/tags"
+tags_url = "https://api.bilibili.com/x/tag/archive/tags"
 
 for videoLink in videoLinks:
     bvid = extractBVID(videoLink)
@@ -63,10 +63,11 @@ for videoLink in videoLinks:
     # print("PARAMS?",params)
     # shit.
     r = requests.get(f"{url}?{urlencode(params)}") # why? what the fuck?
-    r_tags = requests.get()
+    r_tags = requests.get(f"{tags_url}?{urlencode(params)}")
     # r = requests.get(url,data=params,headers={"User-Agent":ua.random})
     # r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
-    # r.raise_for_status()
+    r.raise_for_status()
+    r_tags.raise_for_status()
     # "need_jump_bv":false
     # bvid only?
 
