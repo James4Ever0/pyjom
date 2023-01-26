@@ -1,4 +1,5 @@
 from email import iterators
+from xml.dom.expatbuilder import InternalSubsetExtractor
 import yaml
 
 
@@ -43,7 +44,7 @@ for csvName in csvNames:
     cap = cv2.VideoCapture(videoFileName)
     while True:
         succ, image = cap.read()
-        if iter
+        if myIterator.
         if succ:
             index+=1
             frameIndex+=1
