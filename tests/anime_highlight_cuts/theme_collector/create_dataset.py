@@ -43,3 +43,4 @@ for csvName in csvNames:
     cap.release()
 
 testVideo = "output.mp4"
+1152:648x,y=384,216
