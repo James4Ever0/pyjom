@@ -1,6 +1,8 @@
 from ultralytics import YOLO
 
-model = YOLO("ver2.pt")
+## yolov8 tracking needs special ultralytics version. 
+
+model = YOLO("ver3.pt")
 
 imagePaths = [
     "000000003099.png",
