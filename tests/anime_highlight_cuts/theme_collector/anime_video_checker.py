@@ -7,6 +7,8 @@ url = f"https://www.bilibili.com/video/{videoID}" # only one single page.
 # 290 seconds.
 # section example:
 # 0:05:00-0:06:30
+import time
+secondsToHHMMSS = time.strftime('%H:%M:%S', time.gmtime(12345))
 items='1'
 cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" "{url}"'
 
