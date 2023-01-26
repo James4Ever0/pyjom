@@ -76,7 +76,9 @@ with open("labels.csv", "w+") as csvfile:
                 print("roi:", roi)
                 for i in range(frame_step):
                     roi_index = vindex + i
-                    data = [video,str(roi_index)]
+                    data = [video,roi_index]
                     if roi == None:
-                        data+=['0','0','0','0']
+                        data+=[0,0,0,0]
+                    else:
+                        data+=list(roi)
         cap.release()
