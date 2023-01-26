@@ -158,5 +158,6 @@ for videoLink in videoLinks:
         related_dynamic = related_video['dynamic']
         # well, we've got non-standard dimensions.
         related_dimension = related_video['dimension']
+        # no tag here? you might want more!
 
     breakpoint()
