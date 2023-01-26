@@ -8,4 +8,4 @@ data = {
 "test": "images/test",
 
 "names":
-  0: anime_frame
+  {0: "active_frame"}
