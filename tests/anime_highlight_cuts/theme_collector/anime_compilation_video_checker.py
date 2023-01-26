@@ -86,7 +86,8 @@ for videoLink in videoLinks:
     pic = data['pic']
     owner_mid = data['owner']['mid']
 
-    state = 
+    state = data['state']
+    assert state == 0
 
     stat =  data['stat']
 
