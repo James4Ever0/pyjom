@@ -24,7 +24,7 @@ rich.print(val_result)
 test_result = model("./pip_dataset/images/test/000000003099.png")
 test_boxes = test_result[0].boxes
 
-test_classes, test_xywh, test_confidence = test_boxes.cls, test_boxes.xywh, test_boxes.conf
-
+test_classes, test_xywh, test_confidence = test_boxes.cls.numpy(), test_boxes.xywh.numpy(), test_boxes.conf.numpy()
+print("")
 
 model.export(format='pytorch',path='./pip_detector.pth')
