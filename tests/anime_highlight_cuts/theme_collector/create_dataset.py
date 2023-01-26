@@ -47,7 +47,7 @@ for csvName in csvNames:
             frameIndex+=1
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
-            with open(os.path.join(basepath, train_path)labelName, '')
+            with open(os.path.join(basepath, train_label_path,labelName), '')
             cv2.imwrite(os.path.join(basepath, train_path,imageName), image)
         else:
             break
