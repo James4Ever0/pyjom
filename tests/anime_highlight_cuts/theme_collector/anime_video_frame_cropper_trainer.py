@@ -18,3 +18,6 @@ for video in videos:
     cap = cv2.VideoCapture(video)
     for vindex in range(0, cap.get(cv2.CAP_PROP_FRAME_COUNT),frame_step):
         cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
+        succ, image = cap.read()
+        if succ:
+            
