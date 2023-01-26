@@ -29,4 +29,4 @@ os.makedirs(os.path.join(basepath, test_path), exist_ok=True)
 os.makedirs(os.path.join(basepath, train_label_path), exist_ok=True)
 os.makedirs(os.path.join(basepath, test_label_path), exist_ok=True)
 
-index.zfill(12)
+f"{index}".zfill(12)
