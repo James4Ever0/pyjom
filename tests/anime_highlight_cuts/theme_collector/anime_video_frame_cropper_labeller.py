@@ -47,11 +47,11 @@ listener.start()
 fields = ["filename", "frame_index", "x", "y", "w", "h"]
 import csv
 
-with open(f'{video.split(".")[0]}.csv', "w+") as csvfile:
-    csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(fields)
+for index, video in enumerate(videos):
+    with open(f'{video.split(".")[0]}.csv', "w+") as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(fields)
 
-    for index, video in enumerate(videos):
         print("reading video:", index)
         roi = None
         cap = cv2.VideoCapture(video)
