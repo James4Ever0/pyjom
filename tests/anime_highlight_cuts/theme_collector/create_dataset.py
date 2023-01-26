@@ -34,5 +34,6 @@ import pandas
 
 csvNames = [fpath for fpath in os.listdir(".") if fpath.startswith(".csv")]
 
-for csvName in csvNames
-f"{index}".zfill(12)
+for csvName in csvNames:
+    dataframe = pandas.read_csv(csvName)
+    # f"{index}".zfill(12)
