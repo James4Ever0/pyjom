@@ -70,17 +70,19 @@ for videoLink in videoLinks:
     # r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid=BV1e54y1y7qy")
     r.raise_for_status()
     r_tags.raise_for_status()
-    r_tags.raise_for_status()
+    r_related.raise_for_status()
     # "need_jump_bv":false
     # bvid only?
 
     response_json = r.json()
     response_tags_json = r_tags.json()
+    response_related_json = r_related.json()
     # it must be json.
     import rich
     rich.print(response_json)
     assert response_json['code'] == 0
     assert response_tags_json['code'] == 0
+    assert response_related_json['code'] == 0
 
     data = response_json['data']
     tags_data = response_tags_json['data']
