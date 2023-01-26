@@ -11,7 +11,8 @@ videoIDs = [
 videoID = videoIDs[3]
 from bv2av import bv_av_conversion
 
-videoAVID = bv_av_conversion(videoBVID)
+videoIDAlternative = bv_av_conversion(videoID)
+
 import re
 
 print(videoAVID, type(videoAVID))
