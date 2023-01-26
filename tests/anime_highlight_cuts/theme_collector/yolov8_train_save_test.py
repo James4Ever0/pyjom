@@ -18,4 +18,4 @@ val_result =model.val()
 print("VALIDATION RESULT?")
 rich.print(val_result)
 
-model.export(format='pytorch',path='')
+model.export(format='pytorch',path='./pip_detector.pth')
