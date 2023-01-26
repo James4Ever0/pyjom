@@ -145,9 +145,10 @@ for videoLink in videoLinks:
         related_tname = related_video['tname']
         related_pic = related_video['pic']
         related_title = related_video['title']
-        related_page_count = related_video['videos']
+        related_page_count = related_video['videos'] # make sure this is 1?
         related_desc = related_video['desc']
         related_state = related_video['state']
         if related_state != 0: continue
+        related_duration = related_video['duration']
 
     breakpoint()
