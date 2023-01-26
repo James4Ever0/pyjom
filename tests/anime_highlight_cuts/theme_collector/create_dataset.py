@@ -39,25 +39,41 @@ csvNames = [fpath for fpath in os.listdir(".") if fpath.startswith(".csv")]
 for csvName in csvNames:
     dataframe = pandas.read_csv(csvName)
     videoFileName = f'{csvName.split(".")[0]}.mp4'
-    # 
-    frameIndex=0
+    #
+    frameIndex = 0
     cap = cv2.VideoCapture(videoFileName)
     myIterator = dataframe.iterrows()
-    frame_height, frame_width=cap.get(cv2.CAP_PROP_FRAME_HEIGHT),cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+    frame_height, frame_width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT), cap.get(
+        cv2.CAP_PROP_FRAME_WIDTH
+    )
     while True:
         succ, image = cap.read()
-        nextRow = next(myIterator,None)
-        if nextRow is None: break
+        nextRow = next(myIterator, None)
+        if nextRow is None:
+            break
         if succ:
-            index+=1
-            frameIndex+=1
+            index += 1
+            frameIndex += 1
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
-            _,_,x,y,w,h = nextRow[1].tolist()
-            with open(os.path.join(basepath, train_label_path,labelName), 'w+') as f:
-                content = " ".join(([0]+[f'{number:.3f}' for number in [x/frame_width, y/frame_height, w/frame_width, h/frame_height]])
+            _, _, x, y, w, h = nextRow[1].tolist()
+            with open(os.path.join(basepath, train_label_path, labelName), "w+") as f:
+                content = " ".join(
+                    (
+                        [0]
+                        + [
+                            f"{number:.3f}"
+                            for number in [
+                                x / frame_width,
+                                y / frame_height,
+                                w / frame_width,
+                                h / frame_height,
+                            ]
+                        ]
+                    )
+                )
                 f.write(content)
-            cv2.imwrite(os.path.join(basepath, train_path,imageName), image)
+            cv2.imwrite(os.path.join(basepath, train_path, imageName), image)
         else:
             break
     cap.release()
