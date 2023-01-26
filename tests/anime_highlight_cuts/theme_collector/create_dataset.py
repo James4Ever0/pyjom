@@ -42,7 +42,8 @@ for csvName in csvNames:
     # 
     frameIndex=0
     cap = cv2.VideoCapture(videoFileName)
-    cv2.VI
+    cap.get cv2.CAP_PROP_FRAME_HEIGHT
+    cv2.CAP_PROP_FRAME_WIDTH
     while True:
         succ, image = cap.read()
         if myIterator.
