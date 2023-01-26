@@ -1,3 +1,4 @@
+from email import iterators
 import yaml
 
 
@@ -42,13 +43,14 @@ for csvName in csvNames:
     cap = cv2.VideoCapture(videoFileName)
     while True:
         succ, image = cap.read()
+        if iter
         if succ:
             index+=1
             frameIndex+=1
             imageName = f'{f"{index}".zfill(12)}.png'
             labelName = f'{f"{index}".zfill(12)}.txt'
             with open(os.path.join(basepath, train_label_path,labelName), 'w+') as f:
-                content = [0]+[f'{number:.3f}' for number in ]
+                content = [0]+[f'{number:.3f}' for number in ...]
                 f.write(content)
             cv2.imwrite(os.path.join(basepath, train_path,imageName), image)
         else:
