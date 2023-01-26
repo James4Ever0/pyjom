@@ -4,5 +4,5 @@ import cv2
 imagePath=""
 
 image = cv2.imread(imagePath)
-cv2.rectangle()
+cv2.rectangle(image, p0,p1,(0,255,0),3)
 cv2.imshow("PIP",image)
