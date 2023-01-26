@@ -25,17 +25,19 @@ def enc(x):
 
 
 def main(source:str):
-        print("请输入BV或AV号,需要带上BV或AV前缀(输入q以退出):") 
-        av_bv =source+"  "
-        head = str(av_bv[0]) + str(av_bv[1])
-        av = ["av", "AV", "Av", "aV"]
-        bv = ["bv", "BV", "Bv", "bV"]
-        if head in av:
-            val = (enc(int(av_bv[2:-2])))
-        elif head in bv:
-            val = ("av", dec("BV" + av_bv[2:-2]))
-        else:
-            print("你的输入有误请重新输入")
+    print("请输入BV或AV号,需要带上BV或AV前缀(输入q以退出):") 
+    av_bv =source+"  "
+    head = str(av_bv[0]) + str(av_bv[1])
+    av = ["av", "AV", "Av", "aV"]
+    bv = ["bv", "BV", "Bv", "bV"]
+    if head in av:
+        val = (enc(int(av_bv[2:-2])))
+    elif head in bv:
+        val = ("av", dec("BV" + av_bv[2:-2]))
+    else:
+        print("你的输入有误请重新输入")
+        val = None
+    return val
 
 
 main()
