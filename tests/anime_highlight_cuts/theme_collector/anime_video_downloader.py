@@ -16,7 +16,11 @@ import re
 
 if videoIDAlternative is None: # not av or bv. shit happened!
     raise Exception("Possible shit happening when parsing bilibili video id:", videoID)
-
+else:
+    if videoIDAlternative.startswith("av"):
+        videoAVID, videoBVID = videoIDAlternative, videoID
+    else:
+        videoBVID, videoAVID = videoIDAlternative, videoID
 
 print(videoAVID, type(videoAVID))
 videoAID = re.findall(r"\d+", videoAVID)[0]
