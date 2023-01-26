@@ -13,9 +13,13 @@ url = f"https://www.bilibili.com/video/{videoBVID}" # only one single page.
 # 290 seconds.
 # section example:
 # 0:05:00-0:06:30
-import time
-secondsToHHMMSS = lambda seconds:time.strftime('%H:%M:%S', time.gmtime(seconds))
+# import time
+# secondsToHHMMSS = lambda seconds:time.strftime('%H:%M:%S', time.gmtime(seconds))
+
+# some formats are not working. fuck.
+
 playlistIndex='1'
+
 # start = secondsToHHMMSS(100)
 # end = secondsToHHMMSS(150)
 
