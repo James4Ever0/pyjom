@@ -41,18 +41,3 @@ def main():
 
 
 main()
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-BV2AV/BV2AV.py at master · kuailett/BV2AV
