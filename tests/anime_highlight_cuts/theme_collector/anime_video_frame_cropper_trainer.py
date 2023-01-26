@@ -15,3 +15,4 @@ videos = [
 frame_step = 10
 import cv2
 for video in videos:
+    vreader = cv2.VideoCapture(video)
