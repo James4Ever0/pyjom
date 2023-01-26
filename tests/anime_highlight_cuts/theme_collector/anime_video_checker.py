@@ -3,7 +3,8 @@
 # we name downloaded video using some agreements.
 import os
 videoBVID="BV1e54y1y7qy"
-videoAID = ""
+from bv2av import bv_av_conversion
+videoAID = bv_av_conversion(videoBVID)
 url = f"https://www.bilibili.com/video/{videoBVID}" # only one single page.
 # 290 seconds.
 # section example:
