@@ -5,7 +5,7 @@
 
 # i found new format of video shortlink:
 # https://b23.tv/BV1zW4y1p7RT
-# https://b23.tv/BV1zW4y1p7RT
+# https://b23.tv/<bvid>
 
 videoLinks = [
     "https://www.bilibili.com/video/BV1e54y1y7qy",  # 女攻男受 emm
