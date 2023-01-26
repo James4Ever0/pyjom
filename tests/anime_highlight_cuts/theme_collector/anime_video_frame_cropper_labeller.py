@@ -66,4 +66,4 @@ for index, video in enumerate(videos):
             print('roi:', roi)
             for i in range(frame_step):
                 roi_index = vindex+i
-    cap.close()
+    # cap.close()
