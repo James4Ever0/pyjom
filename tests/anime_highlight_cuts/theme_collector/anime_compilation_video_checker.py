@@ -79,5 +79,7 @@ for videoLink in videoLinks:
     coin  = stat['coin']
     share = stat['share']
     like  = stat['like']
-    
+
+    duration = 
+
     breakpoint()
