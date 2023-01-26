@@ -37,9 +37,9 @@ def on_release(key):
 
 
 listener = Listener(on_press=on_press, on_release=on_release)
-# listener.start()
-with listener:
-    listener.join()
+listener.start()
+# with listener:
+#     listener.join()
 
 # how do you arrange such data?
 
