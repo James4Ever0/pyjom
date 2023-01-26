@@ -93,6 +93,7 @@ for videoLink in videoLinks:
     title = data['title']
     pic = data['pic']
     dynamic = data['dynamic'] # we can copy that.
+    desc = data['desc']
     owner_mid = data['owner']['mid']
 
     state = data['state']
