@@ -7,7 +7,9 @@ model = YOLO("yolov8n.pt")
 # print(model)
 
 # breakpoint()
-model.train(epochs=3,data="./pip_dataset/pip_dataset.yaml")
+import rich
+train_result = model.train(epochs=3,data="./pip_dataset/pip_dataset.yaml")
+
 val_result =model.val()
 
 model.export()
