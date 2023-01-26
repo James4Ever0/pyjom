@@ -15,6 +15,26 @@ videos = [
 frame_step = 10
 import cv2
 import progressbar
+
+from pynput.keyboard import Listener
+
+
+def on_press(key):
+    try:
+        print("alphanumeric key {0} pressed".format(key.char))
+    except AttributeError:
+        print("special key {0} pressed".format(key))
+
+
+def on_release(key):
+    print("{0} released".format(key))
+
+
+listener = Listener(on_press=on_press, on_release=on_release)
+# listener.start()
+with listener:
+    listener.join()
+
 for index, video in enumerate(videos):
     print("reading video:", index)
     cap = cv2.VideoCapture(video)
@@ -25,6 +45,7 @@ for index, video in enumerate(videos):
             roi_new = cv2.selectROI('roi',image)
             # key=cv2.waitKey(0)
             print('roi:',roi_new)
+            print('last key:')
             # print()
             # print('keycode:',key)
     cap.close()
