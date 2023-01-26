@@ -28,7 +28,7 @@ test_boxes = test_result[0].boxes
 
 test_classes, test_xywh, test_confidence = (
     test_boxes.cls.numpy(),
-    test_boxes.xywh.numpy(), # this is not the xyxy
+    test_boxes.xywh.numpy(), # the xy in this xywh means the center of the bounding box.
     test_boxes.conf.numpy(),
 )
 
