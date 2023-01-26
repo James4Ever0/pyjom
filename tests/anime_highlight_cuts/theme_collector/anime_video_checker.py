@@ -23,7 +23,7 @@ print('TIMESPAN:',start, end)
 
 nameFormat = "%(id)s-%(autonumber)s.%(ext)s"
 # cmd=f'yt-dlp --playlist-items "{playlistIndex}" -o "{nameFormat}" "{url}"'
-cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{playlistIndex}" -o "{nameFormat}" "{url}"'
+cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{playlistIndex}" -o "{nameFormat}" --format mp4 "{url}"'
 
 os.system(cmd)
 autonumber = "1".zfill(5)
