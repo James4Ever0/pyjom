@@ -18,10 +18,12 @@ import progressbar
 
 from pynput.keyboard import Listener
 
+lastKey = ["not_c"]
 
 def on_press(key):
     try:
         print("alphanumeric key {0} pressed".format(key.char))
+        if key.char in ['c', 'C']
     except AttributeError:
         print("special key {0} pressed".format(key))
 
