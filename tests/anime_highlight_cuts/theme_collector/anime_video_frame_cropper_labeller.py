@@ -47,7 +47,7 @@ listener.start()
 fields = ["filename", "frame_index", "x", "y", "w", "h"]
 import csv
 
-with open("labels.csv", "w+") as csvfile:
+with open(f"{video.split(".")[0]}.csv", "w+") as csvfile:
     csvwriter = csv.writer(csvfile)
     csvwriter.writerow(fields)
 
