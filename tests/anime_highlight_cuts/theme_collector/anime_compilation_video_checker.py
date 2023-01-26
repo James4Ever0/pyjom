@@ -141,6 +141,9 @@ for videoLink in videoLinks:
     
     ## extract related video info.
     for related_video in related_data:
+        related_aid = related_video['aid']
+        related_bvid = related_video['bvid']
+
         related_tid = related_video['tid']
         related_tname = related_video['tname']
         related_pic = related_video['pic']
@@ -154,5 +157,6 @@ for videoLink in videoLinks:
         related_stat = related_video['stat']
         related_dynamic = related_video['dynamic']
         # well, we've got non-standard dimensions.
+        related_dimension = related_video['dimension']
 
     breakpoint()
