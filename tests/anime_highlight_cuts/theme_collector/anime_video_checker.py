@@ -6,6 +6,7 @@ videoBVID="BV1e54y1y7qy"
 from bv2av import bv_av_conversion
 videoAVID = bv_av_conversion(videoBVID)
 import re
+print(videoAVID, type(videoAVID))
 videoAID = re.findall(r'\d+',videoAVID)[0]
 
 url = f"https://www.bilibili.com/video/{videoBVID}" # only one single page.
