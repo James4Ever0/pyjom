@@ -22,9 +22,9 @@ for index, video in enumerate(videos):
         cap.set(cv2.CAP_PROP_POS_FRAMES, vindex)
         succ, image = cap.read()
         if succ:
-            roi_new= cv2.selectROI('roi',image)
-            key=cv2.waitKey(0)
+            roi_new = cv2.selectROI('roi',image)
+            # key=cv2.waitKey(0)
             print('roi:',roi_new)
-            print()
-            print('keycode:',key)
+            # print()
+            # print('keycode:',key)
     cap.close()
