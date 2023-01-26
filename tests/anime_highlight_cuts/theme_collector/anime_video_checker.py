@@ -17,7 +17,7 @@ cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" --c
 
 os.system(cmd)
 autonumber = "1".zfill(5)
-expectedName  = f"{videoID}-{autonumber}"
+expectedNamePrefix = f"{videoID}-{autonumber}"
 
 files = os.listdir(".")
 for fname in files:
