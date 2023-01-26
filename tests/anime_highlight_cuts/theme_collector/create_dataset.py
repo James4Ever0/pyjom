@@ -91,6 +91,11 @@ while True:
     succ, image = cap.read()
     if succ:
         index += 1
+
+            with open(os.path.join(basepath, test_label_path, labelName), "w+") as f:
+                content = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
+                f.write(content)
+            cv2.imwrite(os.path.join(basepath, test_path, imageName), image)
     else:
         break
 
