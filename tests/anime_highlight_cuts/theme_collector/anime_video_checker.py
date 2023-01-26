@@ -20,3 +20,4 @@ autonumber = "1".zfill(5)
 
 files = os.listdir(".")
 for fname in files:
+    ext = os.path.splitext(fname)[1]
