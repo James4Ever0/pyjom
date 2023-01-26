@@ -18,7 +18,7 @@ cmd=f'yt-dlp --download-sections "*{start}-{end}" --playlist-items "{items}" --c
 os.system(cmd)
 autonumber = "1".zfill(5)
 expectedNamePrefix = f"{videoID}-{autonumber}"
-
+print('expected filename prefix:', expectedNamePrefix)
 files = os.listdir(".")
 for fname in files:
     if fname.startswith(expectedNamePrefix):
