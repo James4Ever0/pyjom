@@ -2,4 +2,4 @@ from ultralytics import YOLO
 
 model = YOLO("best.pt")
 
-model()
+model("000000003099.png")
