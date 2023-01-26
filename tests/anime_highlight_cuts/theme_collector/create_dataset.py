@@ -99,10 +99,12 @@ dataPoints = [
     w / frame_width,
     h / frame_height,
 ]
-
+frameCounter=0
 while True:
     succ, image = cap.read()
     if succ:
+        frameCounter+=1
+        if frameCounter%=remainer:
         index += 1
 
         imageName = f'{f"{index}".zfill(12)}.png'
