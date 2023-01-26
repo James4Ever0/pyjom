@@ -1,5 +1,9 @@
-source_video = ""
+basepath = "/Users/jamesbrown/Downloads/anime_download"
 
-background_video = ""
 
-video_duration = 
+import os
+source_video = os.path.join(basepath,"")
+
+background_video = os.path.join(basepath,"")
+
+video_duration = 100
