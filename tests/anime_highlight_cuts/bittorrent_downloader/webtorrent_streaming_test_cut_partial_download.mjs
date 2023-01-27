@@ -18,7 +18,7 @@ const client = new WebTorrent()
 client.add(torrentPath,torrent =>{
     var selectedFiles = torrent.files.find(file =>{
         console.log("FILENAME?", file.name)
-        return file.name.endswith('.mkv')
+        return file.name.endsWith('.mkv')
     })
     console.log("SELECTED FILES?")
     console.log(selectedFiles)
