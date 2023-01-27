@@ -2,4 +2,6 @@ torrent_path = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio]
 
 import WebTorrent from 'webtorrent'
 
-WebTorrent()
+const client  = new WebTorrent()
+
+client.add(torrent_path)
