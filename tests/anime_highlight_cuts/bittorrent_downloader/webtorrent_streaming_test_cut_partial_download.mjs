@@ -43,6 +43,8 @@ client.add(torrentPath,torrent =>{
     ffmpeg.ffprobe(selectedFile.createReadStream(), (err, data)=>{
         if(err){
             console.log("FFPROBE ERROR:", err)
+        }else{
+            console.log("FFPROBE METADATA:",data)
         }
     })
 
