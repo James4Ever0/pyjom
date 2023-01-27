@@ -2,7 +2,7 @@ torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] 
 
 // require_esm =require('esm')(module)
 // const{WebTorrent} = require_esm('webtorrent').default
-console.log(process.env.NODE_PATH)
+console.log('IMPORT PATH?',process.env.NODE_PATH)
 import ffmpeg from 'fluent-ffmpeg'
 import WebTorrent from 'webtorrent'
 // const WebTorrent =await import('webtorrent')
