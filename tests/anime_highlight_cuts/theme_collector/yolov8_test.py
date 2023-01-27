@@ -33,6 +33,7 @@ for imagePath in imagePaths:
     output = model(image)
     height, width, _=output.shape
     center = (width, height)
+    candidates = []
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
         # sort it by area, then by centrality?
