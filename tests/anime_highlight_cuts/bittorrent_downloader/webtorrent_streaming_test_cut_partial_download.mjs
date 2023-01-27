@@ -1,6 +1,6 @@
 torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
-import 'webtorrent/index.js'
+import WebTorrent from 'webtorrent'
 
 const client = new WebTorrent()
 
