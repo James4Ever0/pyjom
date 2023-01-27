@@ -1,7 +1,7 @@
 
-var torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
+var torrentPath="/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
-var selectedFilePath = "[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv"
+var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv"
 
 // require_esm = require('esm')(module)
 // const{WebTorrent} = require_esm('webtorrent').default
@@ -24,14 +24,14 @@ import WebTorrent from 'webtorrent'
 // // const WebTorrent = await import('webtorrent')
 
 console.log("WEBTORRENT OBJECT?",WebTorrent)
-const client = new WebTorrent()
+const client=new WebTorrent()
 
-client.add(torrentPath,torrent =>{
-    var selectedFile = torrent.files.find(file =>{
+client.add(torrentPath,torrent => {
+    var selectedFile=torrent.files.find(file => {
         // console.log("FILENAME?", file.name)
         // it will only select the first file matching the criterion.
         // return file.name.endsWith('.mkv')
-        return file.path == selectedFilePath
+        return file.path==selectedFilePath
     })
     // console.log("SELECTED FILE?")
     // console.log(selectedFile)
@@ -40,12 +40,11 @@ client.add(torrentPath,torrent =>{
 
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
-    ffmpeg.ffprobe(selectedFile.createReadStream(), (err, data)=>{
-        if(err){
-            console.log("FFPROBE ERROR:", err)
-        }else{
+    ffmpeg.ffprobe(selectedFile.createReadStream(),(err,data) => {
+        if(err) {
+            console.log("FFPROBE ERROR:",err)
+        } else {
             console.log("FFPROBE METADATA:",data)
         }
     })
-
 })
