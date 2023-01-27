@@ -6,6 +6,6 @@ const client  = new WebTorrent()
 
 client.add(torrent_path,torrent =>{
     torrent.files.find(file =>{
-        
+        return file.name.endswith('.mkv')
     })
 })
