@@ -4,7 +4,7 @@ import os
 # yt-dlp --skip-download -j https://www.bilibili.com/video/BV1e54y1y7qy
 # i guess it is because we are using proxies.
 # no? what the heck?
-# unlinked yt-dlp of homebrew. really annoying when trying to update (will install python 3.11 (heck!))
+# remapped /opt/homebrew/bin/yt-dlp of homebrew to . really annoying when trying to update (will install python 3.11 (heck!))
 
 # version outdated. fuck man.
 # yt-dlp --download-sections "*0:00:03-0:01:00" --playlist-items "1" https://www.bilibili.com/video/BV1Fs411k7e9
