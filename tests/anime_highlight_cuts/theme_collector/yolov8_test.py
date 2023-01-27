@@ -31,7 +31,8 @@ import cv2
 for imagePath in imagePaths:
     image = cv2.imread(imagePath)
     output = model(image)
-    center = 
+    height, width, _=output.shape
+    center = (width, height)
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
         # sort it by area, then by centrality?
