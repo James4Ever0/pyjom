@@ -29,7 +29,7 @@ import WebTorrent from 'webtorrent'
 // // const WebTorrent = await import('webtorrent')
 
 console.log("WEBTORRENT OBJECT?",WebTorrent)
-const client=new WebTorrent()
+const client=new WebTorrent({dht : true})
 
 client.add(torrentPath,torrent => {
     var selectedFile=torrent.files.find(file => {
