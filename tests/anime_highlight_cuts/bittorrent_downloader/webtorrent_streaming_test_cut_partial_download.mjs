@@ -56,7 +56,7 @@ client.add(torrentPath,torrent => {
         } else {
             console.log("FFPROBE METADATA:",data)
         }
-        process.exit()
+        // process.exit()
     })
 
     // not top-level function or async function. fuck.
