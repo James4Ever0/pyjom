@@ -1,8 +1,8 @@
 torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
-require =require('esm')(module)
-const{WebTorrent} = require('webtorrent').default
-
+// require_esm =require('esm')(module)
+// const{WebTorrent} = require_esm('webtorrent').default
+import WebTorrent from 'webtorrent'
 const client = new WebTorrent()
 
 client.add(torrentPath,torrent =>{
