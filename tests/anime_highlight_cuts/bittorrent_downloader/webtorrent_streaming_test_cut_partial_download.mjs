@@ -40,6 +40,6 @@ client.add(torrentPath,torrent =>{
 
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
-    const selectedFileStream = selectedFile.createReadStream()
+    selectedFile.createReadStream()
 
 })
