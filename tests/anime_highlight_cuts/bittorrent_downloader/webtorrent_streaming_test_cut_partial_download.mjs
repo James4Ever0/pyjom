@@ -3,7 +3,7 @@ var torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Stud
 // require_esm =require('esm')(module)
 // const{WebTorrent} = require_esm('webtorrent').default
 // console.log('IMPORT PATH?',process.env.NODE_PATH)
-// import ffmpeg from 'fluent-ffmpeg'
+import ffmpeg from 'fluent-ffmpeg'
 
 // fuck it. let's symlink the NODE_PATH to here.
 
