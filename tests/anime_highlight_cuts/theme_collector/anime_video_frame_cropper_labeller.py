@@ -12,7 +12,7 @@
 import os
 
 # videos = [fpath for fpath in os.listdir(".") if fpath.endswith(".mp4")]
-videos = [""] # mine video, classic!
+videos = ["480138800_part1.mp4"] # mine video, classic!
 
 # we create dataset here.
 # use some short cuts for progression.
