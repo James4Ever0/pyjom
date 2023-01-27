@@ -3,11 +3,11 @@ var torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Stud
 // require_esm =require('esm')(module)
 // const{WebTorrent} = require_esm('webtorrent').default
 // console.log('IMPORT PATH?',process.env.NODE_PATH)
-import ffmpeg from 'fluent-ffmpeg'
+import ffmpeg from process.env.NODE_PATH+'/fluent-ffmpeg/index.js'
 
 // fuck it. let's symlink the NODE_PATH to here.
 
-import WebTorrent from 'webtorrent'
+import WebTorrent from process.env.NODE_PATH+'/webtorrent/index.js'
 // // const WebTorrent =await import('webtorrent')
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client = new WebTorrent()
