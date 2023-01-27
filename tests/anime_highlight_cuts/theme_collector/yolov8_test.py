@@ -37,7 +37,7 @@ for imagePath in imagePaths:
     image = cv2.imread(imagePath)
     output = model(image)
     height, width, _ = image.shape
-    center = (width, height)
+    center = (width/2, height/2)
     print("CENTER:",center)
     candidates = []
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
