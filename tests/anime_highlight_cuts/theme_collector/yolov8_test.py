@@ -12,14 +12,18 @@ model = YOLO("ver3.pt")
 # https://huggingface.co/James4Ever0/yolov8_pip_ultralytics
 
 
-imagePaths = [
-    "000000003099.png",
-    "simple_pip.png",
-    "no_border_0.jpg",
-    "has_border_0.jpg",
-    "has_border_1.jpg",
-    "has_border_2.jpg",
-]
+# imagePaths = [
+#     "000000003099.png",
+#     "simple_pip.png",
+#     "no_border_0.jpg",
+#     "has_border_0.jpg",
+#     "has_border_1.jpg",
+#     "has_border_2.jpg",
+# ]
+
+import os
+
+imagePaths = [fpath for fpath in os.listdir(".") if fpath.split(".")[-1].lower() in ('jpg','jpeg','png')]
 
 import cv2
 
