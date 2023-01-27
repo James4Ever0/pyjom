@@ -13,7 +13,7 @@ import ffmpeg from 'fluent-ffmpeg'
 // https://nodejs.org/api/esm.html#esm_no_node_path
 
 import WebTorrent from 'webtorrent'
-// // const WebTorrent =await import('webtorrent')
+// // const WebTorrent = await import('webtorrent')
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client = new WebTorrent()
 
