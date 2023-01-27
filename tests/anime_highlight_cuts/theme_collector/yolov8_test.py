@@ -7,6 +7,7 @@ from ultralytics import YOLO
 # no one will miss `genesis.pt`, right?
 
 model = YOLO("general_ver1.pt")
+## TODO: create dataset to prevent segmentation of 
 # model = YOLO("ver3.pt")
 
 # find trained weights on huggingface:
