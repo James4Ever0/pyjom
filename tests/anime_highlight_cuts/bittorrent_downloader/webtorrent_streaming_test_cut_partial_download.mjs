@@ -2,8 +2,8 @@ torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] 
 
 // require_esm =require('esm')(module)
 // const{WebTorrent} = require_esm('webtorrent').default
-import ffmpeg from 'fluent-ffmpeg'
-import WebTorrent from 'webtorrent'
+import ffmpeg from 'fluent-ffmpeg.js'
+import WebTorrent from 'webtorrent.js'
 // const WebTorrent =await import('webtorrent')
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client = WebTorrent()
