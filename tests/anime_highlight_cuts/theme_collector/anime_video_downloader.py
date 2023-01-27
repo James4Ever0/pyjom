@@ -2,6 +2,7 @@
 import os
 
 # yt-dlp --skip-download -j https://www.bilibili.com/video/BV1e54y1y7qy
+# i guess it is because we are using proxies.
 # yt-dlp --download-sections "*0:00:03-0:01:00" --playlist-items "1" https://www.bilibili.com/video/BV1Fs411k7e9
 
 videoIDs = [
