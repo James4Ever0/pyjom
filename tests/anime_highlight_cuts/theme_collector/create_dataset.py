@@ -115,6 +115,7 @@ while True:
             content = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
             f.write(content)
         cv2.imwrite(os.path.join(basepath, train_path, imageName), image)
+        del image
     else:
         break
 
@@ -147,6 +148,7 @@ while True:
             content = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
             f.write(content)
         cv2.imwrite(os.path.join(basepath, train_path, imageName), image)
+        del image
     else:
         break
 
