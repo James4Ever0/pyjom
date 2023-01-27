@@ -4,4 +4,4 @@
 # use ffmpeg:
 # https://github.com/fdenivac/ffextract-subtitles/blob/master/ffextract-subtitles.py
 
-# use ocr related
+# use ocr related, since this is bangumi, if it has 
