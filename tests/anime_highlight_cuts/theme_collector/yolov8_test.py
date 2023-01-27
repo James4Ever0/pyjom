@@ -33,7 +33,7 @@ imagePaths = [
 
 import cv2
 
-frameRatioFilters=[(16 / 9, 0.2
+frameRatioFilters=[(16 / 9, 0.2)]
 
 frameAreaThreshold = 0.15
 for imagePath in imagePaths:
@@ -57,7 +57,7 @@ for imagePath in imagePaths:
             if (
                 currentFrameRatio < frameRatioStandard - frameRatioMargin
                 or currentFrameRatio > frameRatioStandard + frameRatioMargin
-            ):
+            ) for frameRatioStandard, frame:
                 continue
             candidates.append((x0, y0, x1, y1))
 
