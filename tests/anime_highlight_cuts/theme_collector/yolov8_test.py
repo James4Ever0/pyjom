@@ -35,7 +35,7 @@ import cv2
 
 frameRatio = 16/9
 frameRatioMargin = 0.2
-
+frameAreaThreshold = 0.2
 for imagePath in imagePaths:
     image = cv2.imread(imagePath)
     output = model(image)
@@ -48,7 +48,7 @@ for imagePath in imagePaths:
         candidates.append((x0, y0, x1, y1))
         currentFrameWidth = x1-x0
         currentFrameHeight = y1-y0
-        if 
+        if currentFrameWidth*currentFrameHeight
         currentFrameRatio = x1-x0)/y
     # filter out malformed frames? just for anime.
 
