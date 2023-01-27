@@ -4,4 +4,6 @@ import WebTorrent from 'webtorrent'
 
 const client  = new WebTorrent()
 
-client.add(torrent_path)
+client.add(torrent_path,torrent =>{
+    
+})
