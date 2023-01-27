@@ -12,6 +12,8 @@ import ffmpeg from 'fluent-ffmpeg'
 // https://github.com/nodejs/node/issues/38687
 // https://nodejs.org/api/esm.html#esm_no_node_path
 
+// no template string available. shit.
+
 import WebTorrent from 'webtorrent'
 // // const WebTorrent = await import('webtorrent')
 console.log("WEBTORRENT OBJECT?",WebTorrent)
