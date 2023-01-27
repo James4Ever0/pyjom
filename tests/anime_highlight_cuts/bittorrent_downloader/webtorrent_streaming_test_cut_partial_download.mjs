@@ -9,6 +9,8 @@ var torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Stud
 import ffmpeg from 'fluent-ffmpeg'
 
 // fuck it. let's symlink the NODE_PATH to here.
+// https://github.com/nodejs/node/issues/38687
+// https://nodejs.org/api/esm.html#esm_no_node_path
 
 import WebTorrent from 'webtorrent'
 // // const WebTorrent =await import('webtorrent')
