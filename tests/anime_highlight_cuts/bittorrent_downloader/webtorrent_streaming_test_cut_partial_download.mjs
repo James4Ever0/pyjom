@@ -28,7 +28,7 @@ client.add(torrentPath,torrent =>{
         return file.path == selectedFilePath
     })
     console.log("SELECTED FILE?")
-    // console.log(selectedFile)
+    console.log(selectedFile)
     // exit here?
     process.exit()
 })
