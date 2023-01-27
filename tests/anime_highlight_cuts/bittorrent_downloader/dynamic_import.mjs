@@ -8,3 +8,5 @@ console.log(typeof(FfmpegCommand)) // "function", with default name.
 
 console.log(WebTorrent)
 console.log(typeof(WebTorrent)) // "function"? why i see "class" in console.log?
+
+new WebTorrent()
