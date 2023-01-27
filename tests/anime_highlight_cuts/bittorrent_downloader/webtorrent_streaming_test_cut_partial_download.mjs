@@ -1,6 +1,7 @@
 
 // webtorrent@^1.5.8
 // version mismatch?
+// nope. check how webtorrent-cli works. your code sucks.
 
 // now: 2.0.1
 
