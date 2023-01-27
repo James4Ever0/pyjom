@@ -52,6 +52,7 @@ for imagePath in imagePaths:
         key=lambda points: (((points[2] + points[0]) / 2) - center[0]) ** 2
         + (((points[3] + points[1]) / 2) - center[1]) ** 2
     )
+    print("SORT_CENTRALItY:")
     if len(candidates) > 0:
         print("main frame found.")
         x0, y0, x1, y1 = candidates[0]
