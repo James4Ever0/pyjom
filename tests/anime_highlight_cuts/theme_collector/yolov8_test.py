@@ -46,7 +46,7 @@ for imagePath in imagePaths:
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
         candidates.append((x0, y0, x1, y1))
-    # 
+    # filter out malformed frames? just for anime.
 
     # sort it by area, then by centrality?
 
