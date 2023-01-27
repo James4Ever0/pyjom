@@ -36,4 +36,4 @@ print("XYWH?", test_xywh)
 print("CLASSES?", test_classes)
 print("CONFIDENCE?", test_confidence)
 
-model.export(format="pytorch", path="./pip_detector.pth")
+# model.export(format="pytorch", path="./pip_detector.pth")
