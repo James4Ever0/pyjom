@@ -27,8 +27,10 @@ client.add(torrentPath,torrent =>{
         // return file.name.endsWith('.mkv')
         return file.path == selectedFilePath
     })
-    console.log("SELECTED FILE?")
-    console.log(selectedFile)
+    // console.log("SELECTED FILE?")
+    // console.log(selectedFile)
     // exit here?
-    process.exit()
+    // process.exit()
+
+    // now 
 })
