@@ -9,7 +9,7 @@ var selectedFilePath = "[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa 
 
 // this system sucks. it does not support string concatenation.
 
-// maybe you can execute command to 
+// maybe you can execute command to symlink global node_modules automatically?
 
 import ffmpeg from 'fluent-ffmpeg'
 
