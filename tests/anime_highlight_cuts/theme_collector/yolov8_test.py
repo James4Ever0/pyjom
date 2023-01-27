@@ -38,7 +38,7 @@ for imagePath in imagePaths:
     output = model(image)
     height, width, _ = image.shape
     center = (width/2, height/2)
-    print("CENTER:",center)
+    # print("CENTER:",center)
     candidates = []
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
@@ -47,7 +47,7 @@ for imagePath in imagePaths:
     candidates.sort(
         key=lambda points: -(points[2] - points[0]) * (points[3] - points[1])
     )
-    print("SORT_AREA:", [(points[2] - points[0]) * (points[3] - points[1]) for points in candidates])
+    # print("SORT_AREA:", [(points[2] - points[0]) * (points[3] - points[1]) for points in candidates])
     candidates = candidates[:2]
     candidates.sort(
         key=lambda points: (((points[2] + points[0]) / 2) - center[0]) ** 2
