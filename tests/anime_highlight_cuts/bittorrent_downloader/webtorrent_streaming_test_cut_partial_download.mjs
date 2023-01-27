@@ -4,7 +4,7 @@ var torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Stud
 // const{WebTorrent} = require_esm('webtorrent').default
 // console.log('IMPORT PATH?',process.env.NODE_PATH)
 
-// this system sucks. it does not support 
+// this system sucks. it does not support string concatenation.
 
 import ffmpeg from 'fluent-ffmpeg'
 
