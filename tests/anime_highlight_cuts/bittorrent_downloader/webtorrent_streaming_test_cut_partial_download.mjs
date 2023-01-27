@@ -41,11 +41,14 @@ client.add(torrentPath,torrent => {
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
     async function getMediaMatadata(fileStream){
-        return new Promise()
+        return new Promise((resolve, reject)=>{
+
+        })
     }
     ffmpeg.ffprobe(fileStream,(err,data) => {
         if(err) {
             console.log("FFPROBE ERROR:",err)
+            reject(err)
         } else {
             console.log("FFPROBE METADATA:",data)
         }
