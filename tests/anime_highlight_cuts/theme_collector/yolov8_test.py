@@ -53,7 +53,7 @@ for imagePath in imagePaths:
         else:
             candidates.append((x0, y0, x1, y1))
             currentFrameRatio = currentFrameWidth/currentFrameHeight
-            
+            if currentFrameRatio < frameRatio
     # filter out malformed frames? just for anime.
 
     # sort it by area, then by centrality?
