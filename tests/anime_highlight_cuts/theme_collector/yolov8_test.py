@@ -33,7 +33,7 @@ imagePaths = [
 
 import cv2
 
-frameRatio = 16/9
+frameRatioStandard = 16/9
 frameRatioMargin = 0.2
 frameAreaThreshold = 0.2
 for imagePath in imagePaths:
