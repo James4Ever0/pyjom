@@ -38,7 +38,7 @@ for imagePath in imagePaths:
         x0, y0, x1, y1 = xyxy
         candidates.append((x0,y0,x1,y1))
         # sort it by area, then by centrality?
-    candidates.sort(key=lambda)
+    candidates.sort(key=lambda points: (points[2]-points[0])*(points[3]-points[1]))
     candidates=candidates[:3]
     candidates.sort(key=lambda points:)
     cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), thickness=10)
