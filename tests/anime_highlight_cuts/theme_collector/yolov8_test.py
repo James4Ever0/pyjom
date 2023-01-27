@@ -33,6 +33,7 @@ for imagePath in imagePaths:
     output = model(image)
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
+        area = 
         cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), thickness=10)
     cv2.imshow("PIP", image)
     cv2.waitKey(0)
