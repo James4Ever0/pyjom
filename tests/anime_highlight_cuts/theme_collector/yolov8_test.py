@@ -6,7 +6,8 @@ from ultralytics import YOLO
 
 # no one will miss `genesis.pt`, right?
 
-model = YOLO("ver3.pt")
+model = YOLO("general_ver1.pt")
+# model = YOLO("ver3.pt")
 
 # find trained weights on huggingface:
 # https://huggingface.co/James4Ever0/yolov8_pip_ultralytics
