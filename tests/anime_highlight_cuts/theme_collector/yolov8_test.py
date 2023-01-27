@@ -53,7 +53,7 @@ for imagePath in imagePaths:
             continue
         else:
             candidates.append((x0, y0, x1, y1))
-            # filter out malformed frames? just for anime.
+            # filter out malformed frames? just for anime?
             currentFrameRatio = currentFrameWidth / currentFrameHeight
             if (
                 currentFrameRatio < frameRatioStandard - frameRatioMargin
