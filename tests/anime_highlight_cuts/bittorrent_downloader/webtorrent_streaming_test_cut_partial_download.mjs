@@ -9,7 +9,7 @@ var selectedFilePath = "[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa 
 
 // this system sucks. it does not support string concatenation.
 
-// maybe you can execute command to symlink global node_modules automatically? nope. it will not run as expected. 
+// maybe you can execute command to symlink global node_modules automatically? nope. it will not run as expected, since the import process is running before anything would.
 
 import ffmpeg from 'fluent-ffmpeg'
 
