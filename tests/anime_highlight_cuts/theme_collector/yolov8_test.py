@@ -36,7 +36,9 @@ for imagePath in imagePaths:
     candidates = []
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
+        candidates.append((x0,y0,x1,y1))
         # sort it by area, then by centrality?
-        cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), thickness=10)
+    candidates.sort(lambda )
+    cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), thickness=10)
     cv2.imshow("PIP", image)
     cv2.waitKey(0)
