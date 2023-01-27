@@ -50,7 +50,7 @@ client.add(torrentPath,torrent => {
 
     // console.log("STREAM?",stream)
 
-    ffmpeg.ffprobe(stream,(err,data) => {
+    ffmpeg(stream).ffprobe((err,data) => {
         if(err) {
             console.log("FFPROBE ERROR:",err)
         } else {
