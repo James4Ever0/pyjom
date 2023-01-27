@@ -7,7 +7,7 @@ from ultralytics import YOLO
 # no one will miss `genesis.pt`, right?
 
 model = YOLO("general_ver1.pt")
-## TODO: create dataset to prevent detection of borders 
+## TODO: create dataset to prevent detection of pure color/gradient borders 
 # model = YOLO("ver3.pt")
 
 # find trained weights on huggingface:
@@ -46,11 +46,11 @@ for imagePath in imagePaths:
     candidates.sort(
         key=lambda points: -(points[2] - points[0]) * (points[3] - points[1])
     )
-    candidates = candidates[:3]
     candidates.sort(
         key=lambda points: (((points[2] + points[0]) / 2) - center[0]) ** 2
         + (((points[3] + points[1]) / 2) - center[1]) ** 2
     )
+    candidates = candidates[:3]
     if len(candidates) > 0:
         print("main frame found.")
         x0, y0, x1, y1 = candidates[0]
