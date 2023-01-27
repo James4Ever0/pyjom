@@ -23,10 +23,11 @@ client.add(torrentPath,torrent =>{
     var selectedFile = torrent.files.find(file =>{
         // console.log("FILENAME?", file.name)
         // it will only select the first file matching the criterion.
-        return file.name.endsWith('.mkv')
+        // return file.name.endsWith('.mkv')
+        return file.path == selectedFilePath
     })
-    console.log("SELECTED FILES?")
-    console.log(selectedFile)
+    console.log("SELECTED FILE?")
+    // console.log(selectedFile)
     // exit here?
     process.exit()
 })
