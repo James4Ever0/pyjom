@@ -32,5 +32,6 @@ client.add(torrentPath,torrent =>{
     // exit here?
     // process.exit()
 
-    // now 
+    // now pass to fluent-ffmpeg.
+    
 })
