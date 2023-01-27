@@ -29,8 +29,8 @@ imagePaths = [fpath for fpath in os.listdir(".") if fpath.split(".")[-1].lower()
 import cv2
 
 for imagePath in imagePaths:
-    output = model(imagePath)
     image = cv2.imread(imagePath)
+    output = model(image)
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
         cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), thickness=10)
