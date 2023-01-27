@@ -8,8 +8,10 @@
 #     "541755429_part1-00001.mp4",
 #     "842224692_part1-00001.mp4",
 # ]
+
 import os
-videos= []
+
+videos = [fpath for fpath in os.listdir(".") if fpath.endswith(".mp4")]
 
 # we create dataset here.
 # use some short cuts for progression.
