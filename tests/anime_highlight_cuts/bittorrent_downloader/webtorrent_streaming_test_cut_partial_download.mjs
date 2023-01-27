@@ -40,6 +40,10 @@ client.add(torrentPath,torrent =>{
 
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
-    ffmpeg.ffprobe(selectedFile.createReadStream(), (err, data)=>{})
+    ffmpeg.ffprobe(selectedFile.createReadStream(), (err, data)=>{
+        if(err){
+            console.log("FFPROBE ERROR:", err)
+        }
+    })
 
 })
