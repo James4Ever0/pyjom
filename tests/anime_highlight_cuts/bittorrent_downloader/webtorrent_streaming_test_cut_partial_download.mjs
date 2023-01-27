@@ -54,5 +54,5 @@ client.add(torrentPath,torrent => {
         })
     }
     
-    selectedFile.createReadStream()
+    await getMediaMetadataselectedFile.createReadStream()
 })
