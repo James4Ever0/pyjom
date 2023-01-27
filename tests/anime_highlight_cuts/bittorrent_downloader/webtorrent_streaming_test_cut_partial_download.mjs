@@ -17,6 +17,7 @@ var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Ma
 // maybe you can execute command to symlink global node_modules automatically? nope in javascript but in shell script, or it will not run as expected, since the import statements are running before anything would. 
 
 import ffmpeg from 'fluent-ffmpeg'
+import fs from 'fs'
 
 // fuck it. let's symlink the NODE_PATH to here.
 // https://github.com/nodejs/node/issues/38687
@@ -45,8 +46,8 @@ client.add(torrentPath,torrent => {
 
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
-    var stream=selectedFile.createReadStream()
-    // var stream = "/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4"
+    // var stream=selectedFile.createReadStream()
+    var stream = "/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4"
 
     // console.log("STREAM?",stream)
 
