@@ -1,3 +1,3 @@
-const ffmpeg = import("fluent-ffmpeg")
+const ffmpeg = awaimport("fluent-ffmpeg") // promise!
 
 console.log(ffmpeg)
