@@ -9,11 +9,14 @@ var selectedFilePath = "[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa 
 
 // this system sucks. it does not support string concatenation.
 
+// maybe you can execute command to 
+
 import ffmpeg from 'fluent-ffmpeg'
 
 // fuck it. let's symlink the NODE_PATH to here.
 // https://github.com/nodejs/node/issues/38687
 // https://nodejs.org/api/esm.html#esm_no_node_path
+// https://nodejs.org/api/esm.html
 
 // no template string available. shit.
 
