@@ -3,3 +3,5 @@
 
 # use ffmpeg:
 # https://github.com/fdenivac/ffextract-subtitles/blob/master/ffextract-subtitles.py
+
+# use ocr related
