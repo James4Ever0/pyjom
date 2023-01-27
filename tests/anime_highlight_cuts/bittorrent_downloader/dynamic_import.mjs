@@ -2,4 +2,5 @@ const FfmpegCommand = (await import(`${process.env.NODE_PATH}/fluent-ffmpeg/inde
 // promise!
 // shit this ESM can directly use await statements.
 
-console.log(ffmpeg)
+console.log(FfmpegCommand)
+console.log(typeof(FfmpegCommand))
