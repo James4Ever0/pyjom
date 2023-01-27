@@ -7,7 +7,7 @@ from ultralytics import YOLO
 # no one will miss `genesis.pt`, right?
 
 model = YOLO("general_ver1.pt")
-## TODO: create dataset to prevent detection of pure color/gradient borders 
+## TODO: create dataset to prevent detection of pure color/gradient borders
 # model = YOLO("ver3.pt")
 
 # find trained weights on huggingface:
@@ -33,28 +33,33 @@ imagePaths = [
 
 import cv2
 
-frameRatioStandard = 16/9
+frameRatioStandard = 16 / 9
 frameRatioMargin = 0.2
 frameAreaThreshold = 0.2
 for imagePath in imagePaths:
     image = cv2.imread(imagePath)
     output = model(image)
     height, width, _ = image.shape
-    center = (width/2, height/2)
+    center = (width / 2, height / 2)
     # print("CENTER:",center)
     candidates = []
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
-        currentFrameWidth = x1-x0
-        currentFrameHeight = y1-y0
-        currentFrameArea = currentFrameWidth*currentFrameHeight
-        if currentFrameArea/(height*width) <frameAreaThreshold:
+        currentFrameWidth = x1 - x0
+        currentFrameHeight = y1 - y0
+        currentFrameArea = currentFrameWidth * currentFrameHeight
+        if currentFrameArea / (height * width) < frameAreaThreshold:
             continue
         else:
             candidates.append((x0, y0, x1, y1))
-            currentFrameRatio = currentFrameWidth/currentFrameHeight
-            if currentFrameRatio < frameRatioStandard-frameRatioMargin or currentFrameRatio > frameRatioStandard+frameRatioMargin: continue
     # filter out malformed frames? just for anime.
+
+            currentFrameRatio = currentFrameWidth / currentFrameHeight
+            if (
+                currentFrameRatio < frameRatioStandard - frameRatioMargin
+                or currentFrameRatio > frameRatioStandard + frameRatioMargin
+            ):
+                continue
 
     # sort it by area, then by centrality?
 
@@ -68,7 +73,7 @@ for imagePath in imagePaths:
         + (((points[3] + points[1]) / 2) - center[1]) ** 2
     )
     # print("SORT_CENTRALITY:", [(((points[2] + points[0]) / 2) - center[0]) ** 2
-        # + (((points[3] + points[1]) / 2) - center[1]) ** 2 for points in candidates])
+    # + (((points[3] + points[1]) / 2) - center[1]) ** 2 for points in candidates])
     if len(candidates) > 0:
         print("main frame found.")
         x0, y0, x1, y1 = candidates[0]
