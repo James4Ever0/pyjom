@@ -33,6 +33,8 @@ imagePaths = [
 
 import cv2
 
+
+
 for imagePath in imagePaths:
     image = cv2.imread(imagePath)
     output = model(image)
