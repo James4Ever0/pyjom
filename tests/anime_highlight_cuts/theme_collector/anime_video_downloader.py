@@ -2,7 +2,7 @@
 import os
 
 # yt-dlp --skip-download -j https://www.bilibili.com/video/BV1e54y1y7qy
-# yt-dlp --download-sections "*0:00:03-0:01:00" --playlist-items "0" https://www.bilibili.com/video/BV1Fs411k7e9
+# yt-dlp --download-sections "*0:00:03-0:01:00" --playlist-items "1" https://www.bilibili.com/video/BV1Fs411k7e9
 
 videoIDs = [
     "BV1e54y1y7qy",  # 842224692_part1-00001
