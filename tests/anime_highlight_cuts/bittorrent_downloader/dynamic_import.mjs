@@ -5,3 +5,6 @@ const WebTorrent = (await import(`${process.env.NODE_PATH}/webtorrent/index.js`)
 
 console.log(FfmpegCommand)
 console.log(typeof(FfmpegCommand)) // "function", with default name.
+
+console.log(WebTorrent)
+console.log(typeof(WebTorrent))
