@@ -53,6 +53,5 @@ client.add(torrentPath,torrent => {
             })
         })
     }
-    // not top-level function. fuck.
-    (await getMediaMetadata(selectedFile.createReadStream()))
+    // not top-level function or async function. fuck.
 })
