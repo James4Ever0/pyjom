@@ -2,7 +2,7 @@ torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] 
 
 import WebTorrent from 'webtorrent'
 
-const client  = new WebTorrent()
+const client = new WebTorrent()
 
 client.add(torrentPath,torrent =>{
     var selectedFiles = torrent.files.find(file =>{
