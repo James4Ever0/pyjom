@@ -9,6 +9,8 @@ var selectedFilePath = "[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa 
 
 import ffmpeg from 'fluent-ffmpeg'
 
+import("fluent-ffmpeg")
+
 // fuck it. let's symlink the NODE_PATH to here.
 // https://github.com/nodejs/node/issues/38687
 // https://nodejs.org/api/esm.html#esm_no_node_path
@@ -33,5 +35,5 @@ client.add(torrentPath,torrent =>{
     // process.exit()
 
     // now pass to fluent-ffmpeg.
-    
+
 })
