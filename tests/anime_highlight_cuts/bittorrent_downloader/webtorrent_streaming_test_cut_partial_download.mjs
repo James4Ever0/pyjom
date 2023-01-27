@@ -50,8 +50,9 @@ client.add(torrentPath,torrent => {
     // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
 
     // console.log("STREAM?",stream)
-
+    while (true){}
     var buffer = stream.read(200)
+    console.log(buffer)
 
     // ffmpeg(stream).ffprobe((err,data) => {
     //     if(err) {
