@@ -5,5 +5,7 @@ import WebTorrent from 'webtorrent'
 const client  = new WebTorrent()
 
 client.add(torrent_path,torrent =>{
-    torrent.files.find
+    torrent.files.find(file =>{
+        
+    })
 })
