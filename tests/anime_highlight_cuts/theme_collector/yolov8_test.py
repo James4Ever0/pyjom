@@ -38,6 +38,7 @@ for imagePath in imagePaths:
     output = model(image)
     height, width, _ = image.shape
     center = (width, height)
+    print("CENTER:",center)
     candidates = []
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
