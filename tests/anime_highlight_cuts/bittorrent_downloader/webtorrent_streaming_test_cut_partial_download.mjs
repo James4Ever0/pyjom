@@ -50,14 +50,14 @@ client.add(torrentPath,torrent => {
 
     console.log("STREAM?",stream)
 
-    // ffmpeg.ffprobe(stream,(err,data) => {
-    //     if(err) {
-    //         console.log("FFPROBE ERROR:",err)
-    //     } else {
-    //         console.log("FFPROBE METADATA:",data)
-    //     }
-    //     process.exit()
-    // })
+    ffmpeg.ffprobe(stream,(err,data) => {
+        if(err) {
+            console.log("FFPROBE ERROR:",err)
+        } else {
+            console.log("FFPROBE METADATA:",data)
+        }
+        process.exit()
+    })
 
     // not top-level function or async function. fuck.
 })
