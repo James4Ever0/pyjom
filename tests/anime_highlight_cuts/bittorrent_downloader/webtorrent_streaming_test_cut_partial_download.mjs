@@ -42,13 +42,17 @@ client.add(torrentPath,torrent => {
     // https://github.com/leeroybrun/webtorrent-transcode
     var stream = selectedFile.createReadStream()
     // var stream = "/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4"
-    ffmpeg.ffprobe(stream,(err,data) => {
-        if(err) {
-            console.log("FFPROBE ERROR:",err)
-        } else {
-            console.log("FFPROBE METADATA:",data)
-        }
-        process.exit()
-    })
+
+    
+
+    // ffmpeg.ffprobe(stream,(err,data) => {
+    //     if(err) {
+    //         console.log("FFPROBE ERROR:",err)
+    //     } else {
+    //         console.log("FFPROBE METADATA:",data)
+    //     }
+    //     process.exit()
+    // })
+
     // not top-level function or async function. fuck.
 })
