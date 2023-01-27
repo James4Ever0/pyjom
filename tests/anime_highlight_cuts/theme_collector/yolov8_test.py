@@ -34,7 +34,7 @@ imagePaths = [
 import cv2
 
 frameRatio = 16/9
-frameRatioMargin = 0.
+frameRatioMargin = 0.2
 
 for imagePath in imagePaths:
     image = cv2.imread(imagePath)
@@ -46,7 +46,10 @@ for imagePath in imagePaths:
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
         candidates.append((x0, y0, x1, y1))
-        # sort it by area, then by centrality?
+    # 
+
+    # sort it by area, then by centrality?
+
     candidates.sort(
         key=lambda points: -(points[2] - points[0]) * (points[3] - points[1])
     )
