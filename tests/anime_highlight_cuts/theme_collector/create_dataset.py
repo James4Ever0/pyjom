@@ -62,7 +62,7 @@ for csvName in csvNames:
             if frameIndex % remainder != 0:
                 continue
             _, _, min_x, min_y, w, h = nextRow[1].tolist()
-            if (min_x, min_y, w, h) == (0, 0, 0, 0):
+            if (min_x, min_y, w, h) == (0, 0, 0, 0) or w == 0 or h == 0:
                 continue
             index += 1
             imageName = f'{f"{index}".zfill(12)}.png'
