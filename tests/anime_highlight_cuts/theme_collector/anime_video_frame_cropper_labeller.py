@@ -11,7 +11,8 @@
 
 import os
 
-videos = [fpath for fpath in os.listdir(".") if fpath.endswith(".mp4")]
+# videos = [fpath for fpath in os.listdir(".") if fpath.endswith(".mp4")]
+videos = [""] # mine video, classic!
 
 # we create dataset here.
 # use some short cuts for progression.
