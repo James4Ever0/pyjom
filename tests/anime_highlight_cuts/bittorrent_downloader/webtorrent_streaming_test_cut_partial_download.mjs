@@ -39,7 +39,7 @@ client.add(torrentPath,torrent =>{
     // process.exit()
 
     // now pass to fluent-ffmpeg.
-    // https://github.com/
+    // https://github.com/leeroybrun/webtorrent-transcode
     const selectedFileStream = selectedFile.createReadStream()
 
 })
