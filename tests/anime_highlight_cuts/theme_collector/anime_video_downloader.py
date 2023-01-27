@@ -1,6 +1,8 @@
 # we name downloaded video using some agreements.
 import os
 
+# yt-dlp --skip-download -j https://www.bilibili.com/video/--skip-download
+
 videoIDs = [
     "BV1e54y1y7qy",  # 842224692_part1-00001
     "BV1Qf4y197bt",  # great challange, 286760784
