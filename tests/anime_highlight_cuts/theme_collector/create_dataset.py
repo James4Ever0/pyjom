@@ -119,6 +119,7 @@ while True:
         break
 
 cap.release()
+del cap
 print("creating reference dataset")
 
 testVideo = "output_1.mp4"
@@ -150,6 +151,6 @@ while True:
         break
 
 cap.release()
-
+del cap
 
 print("dataset created.")
