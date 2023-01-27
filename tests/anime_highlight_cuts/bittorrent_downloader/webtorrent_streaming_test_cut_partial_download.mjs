@@ -39,5 +39,5 @@ client.add(torrentPath,torrent =>{
     // process.exit()
 
     // now pass to fluent-ffmpeg.
-
+    const selectedFileStream = selectedFile.
 })
