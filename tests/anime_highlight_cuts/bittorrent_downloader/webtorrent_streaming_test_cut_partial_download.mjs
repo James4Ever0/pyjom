@@ -21,7 +21,8 @@ const client = new WebTorrent()
 
 client.add(torrentPath,torrent =>{
     var selectedFile = torrent.files.find(file =>{
-        console.log("FILENAME?", file.name)
+        // console.log("FILENAME?", file.name)
+        // it will only select the first file matching the criterion.
         return file.name.endsWith('.mkv')
     })
     console.log("SELECTED FILES?")
