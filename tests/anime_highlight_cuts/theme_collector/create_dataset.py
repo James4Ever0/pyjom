@@ -41,7 +41,7 @@ csvNames = [fpath for fpath in os.listdir(".") if fpath.endswith(".csv")]
 
 import progressbar
 
-remainder = 10
+remainder = 7 # changed? heck?
 for csvName in csvNames:
     dataframe = pandas.read_csv(csvName)
     videoFileName = f'{csvName.split(".")[0]}.mp4'
