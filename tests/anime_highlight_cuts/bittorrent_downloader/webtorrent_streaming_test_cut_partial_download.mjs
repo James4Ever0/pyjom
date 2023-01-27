@@ -9,14 +9,14 @@ import ffmpeg from 'fluent-ffmpeg'
 
 import WebTorrent from 'webtorrent'
 // // const WebTorrent =await import('webtorrent')
-// console.log("WEBTORRENT OBJECT?",WebTorrent)
-// const client = WebTorrent()
+console.log("WEBTORRENT OBJECT?",WebTorrent)
+const client = new WebTorrent()
 
-// client.add(torrentPath,torrent =>{
-//     var selectedFiles = torrent.files.find(file =>{
-//         console.log("FILENAME?", file.name)
-//         return file.name.endswith('.mkv')
-//     })
-//     console.log("SELECTED FILES?")
-//     console.log(selectedFiles)
-// })
+client.add(torrentPath,torrent =>{
+    var selectedFiles = torrent.files.find(file =>{
+        console.log("FILENAME?", file.name)
+        return file.name.endswith('.mkv')
+    })
+    console.log("SELECTED FILES?")
+    console.log(selectedFiles)
+})
