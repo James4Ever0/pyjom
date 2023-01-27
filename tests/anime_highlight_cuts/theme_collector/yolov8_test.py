@@ -35,7 +35,7 @@ import cv2
 
 frameRatioStandard = 16 / 9
 frameRatioMargin = 0.2
-frameAreaThreshold = 0.2
+frameAreaThreshold = 0.15
 for imagePath in imagePaths:
     image = cv2.imread(imagePath)
     output = model(image)
