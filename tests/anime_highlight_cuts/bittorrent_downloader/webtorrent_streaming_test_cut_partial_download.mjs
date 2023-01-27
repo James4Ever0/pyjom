@@ -22,4 +22,6 @@ client.add(torrentPath,torrent =>{
     })
     console.log("SELECTED FILES?")
     console.log(selectedFiles)
+    // exit here?
+    process.exit()
 })
