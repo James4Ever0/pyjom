@@ -46,6 +46,9 @@ for imagePath in imagePaths:
     for xyxy in output[0].boxes.xyxy.numpy().astype(int).tolist():
         x0, y0, x1, y1 = xyxy
         candidates.append((x0, y0, x1, y1))
+        currentFrameWidth = x1-x0
+        currentFrameHeight = y1-y0
+        if 
         currentFrameRatio = x1-x0)/y
     # filter out malformed frames? just for anime.
 
