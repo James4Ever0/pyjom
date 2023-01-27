@@ -33,7 +33,7 @@ imagePaths = [
 
 import cv2
 
-frameRatioFilters = [(16 / 9, 0.2,'landscape')]
+frameRatioFilters = [(16 / 9, 0.2, "landscape")]
 
 frameAreaThreshold = 0.15
 for imagePath in imagePaths:
@@ -60,7 +60,7 @@ for imagePath in imagePaths:
                         currentFrameRatio < frameRatioStandard - frameRatioMargin
                         or currentFrameRatio > frameRatioStandard + frameRatioMargin
                     )
-                    for frameRatioStandard, frameRatioMargin,_ in frameRatioFilters
+                    for frameRatioStandard, frameRatioMargin, _ in frameRatioFilters
                 ]
             ):
                 continue
