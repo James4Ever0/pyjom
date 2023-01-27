@@ -48,12 +48,12 @@ for imagePath in imagePaths:
         currentFrameWidth = x1 - x0
         currentFrameHeight = y1 - y0
         currentFrameArea = currentFrameWidth * currentFrameHeight
+        # area filter? a must.
         if currentFrameArea / (height * width) < frameAreaThreshold:
             continue
         else:
             candidates.append((x0, y0, x1, y1))
-    # filter out malformed frames? just for anime.
-
+            # filter out malformed frames? just for anime.
             currentFrameRatio = currentFrameWidth / currentFrameHeight
             if (
                 currentFrameRatio < frameRatioStandard - frameRatioMargin
