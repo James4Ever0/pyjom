@@ -42,8 +42,9 @@ for imagePath in imagePaths:
     candidates=candidates[:3]
     candidates.sort(key=lambda points:(((points[2]+points[0])/2)-center[0])**2+(((points[3]+points[1])/2)-center[1])**2)
     if len(candidates)>0:
-        
-
-    cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), thickness=10)
+        x0,y0,x1,y1 = candidates[0]
+        cv2.rectangle(image, (x0, y0), (x1, y1), (0, 0, 255), thickness=10)
+    else:
+        print("no main frame found.")
     cv2.imshow("PIP", image)
     cv2.waitKey(0)
