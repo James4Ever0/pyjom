@@ -30,7 +30,7 @@ import WebTorrent from 'webtorrent'
 // // const WebTorrent = await import('webtorrent')
 
 console.log("WEBTORRENT OBJECT?",WebTorrent)
-const client=new WebTorrent({dht : true})
+const client=new WebTorrent({dht: true})
 
 client.add(torrentPath,torrent => {
     var selectedFile=torrent.files.find(file => {
@@ -46,13 +46,14 @@ client.add(torrentPath,torrent => {
 
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
-    var stream = selectedFile.createReadStream() // not working! fuck.
+    var stream=selectedFile.createReadStream() // not working! fuck.
     // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
 
     // console.log("STREAM?",stream)
-    while (true){}
-    var buffer = stream.read(200)
-    console.log(buffer)
+    while(true) {
+        var buffer=stream.read(200)
+        console.log("READING:",buffer)
+    }
 
     // ffmpeg(stream).ffprobe((err,data) => {
     //     if(err) {
