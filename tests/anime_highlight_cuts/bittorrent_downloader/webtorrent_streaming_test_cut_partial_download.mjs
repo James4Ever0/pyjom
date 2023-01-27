@@ -6,7 +6,7 @@ var torrentPath = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Stud
 
 // this system sucks. it does not support string concatenation.
 
-import ffmpeg from 'fluent-ffmpeg'
+import ffmpeg from `${process.env.NODE_PATH}/fluent-ffmpeg`
 
 // fuck it. let's symlink the NODE_PATH to here.
 // https://github.com/nodejs/node/issues/38687
