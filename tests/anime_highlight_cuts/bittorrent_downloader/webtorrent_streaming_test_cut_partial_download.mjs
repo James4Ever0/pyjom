@@ -8,4 +8,6 @@ client.add(torrentPath,torrent =>{
     var selectedFiles = torrent.files.find(file =>{
         return file.name.endswith('.mkv')
     })
+    console.log("SELECTED FILES?")
+    console.log(selectedFiles)
 })
