@@ -1,1 +1,3 @@
-import("fluent-ffmpeg")
+const ffmpeg = import("fluent-ffmpeg")
+
+console.log(ffmpeg)
