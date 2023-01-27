@@ -78,9 +78,11 @@ for csvName in csvNames:
                 content = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
                 f.write(content)
             cv2.imwrite(os.path.join(basepath, train_path, imageName), image)
+            del image
         else:
             break
     cap.release()
+    del cap
 
 testVideo = "output.mp4"
 w, h = 1152, 648
