@@ -83,6 +83,7 @@ for csvName in csvNames:
             break
     cap.release()
     del cap
+    del dataframe
 
 testVideo = "output.mp4"
 w, h = 1152, 648
