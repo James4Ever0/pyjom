@@ -2,3 +2,4 @@ torrent_path = "/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio]
 
 const {WebTorrent} = require('webtorrent')
 
+WebTorrent()
