@@ -131,7 +131,7 @@ client.add(torrentPath,torrent => {
             console.log("FFPROBE METADATA:",data)
             // you'd better read this. you fuck!
             // i ask for 10 secs.
-            ffmpeg(fileRequestUrl).seekInput('0:05').duration("0:10").on('progress',function(progress) {
+            ffmpeg(fileRequestUrl).seekInput('0:05').duration("0:15").on('progress',function(progress) {
                 console.log('FFmpeg Processing: '+progress.percent+'% done');
             }).on('end',() => {
                 console.log("FFMPEG EXECUTION COMPLETE?")
@@ -142,7 +142,6 @@ client.add(torrentPath,torrent => {
                 // the time range simply does not exist.
             }).outputOptions(['-c copy',
                 '-y']).output('output.mkv').run()
-
         }
         // process.exit()
     })
