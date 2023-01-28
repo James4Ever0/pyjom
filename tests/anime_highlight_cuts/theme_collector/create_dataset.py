@@ -3,7 +3,8 @@ import yaml
 # why you are taking so much RAM?
 
 ## suggest that you label some (many) still image and mark out the picture-in-picture parts from it? about 2000 images?
-## man just make sure these pictures are not "pip" so we can put borders and arrange them randomly to create our super dataset. use MSCOCO?
+
+## man just make sure these pictures are not "pip" so we can put borders and arrange them randomly to create our super dataset. use MSCOCO/coco128?
 
 train_path = "images/train"
 test_path = "images/test"
