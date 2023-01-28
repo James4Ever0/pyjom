@@ -90,5 +90,5 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             ...
     else:
         color_main = sortedColors[0]
-    if 
-    backgroundImageAverageColor = 
+    if textFormat != 'none':
+        backgroundImageAverageColor = 
