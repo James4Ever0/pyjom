@@ -41,7 +41,9 @@ const serverPort=8970
 const instance=client.createServer()
 instance.server.listen(serverPort) // not random port? not zero? 
 
-const config={path: announce: null}
+const config={}
+config.path = ""
+// config.announce=""
 
 const torrent=client.add(torrentPath,config)
 
