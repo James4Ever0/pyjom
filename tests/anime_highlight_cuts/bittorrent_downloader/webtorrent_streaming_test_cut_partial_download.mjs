@@ -41,7 +41,8 @@ const serverPort=8970
 const instance=client.createServer()
 instance.server.listen(serverPort) // not random port? not zero? 
 
-client.add(torrentPath,torrent => {
+const torrent=client.add(torrentPath,config)
+torrent => {
     var selectedFile=torrent.files.find(file => {
         // console.log("FILENAME?", file.name)
         // it will only select the first file matching the criterion.
