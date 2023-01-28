@@ -113,13 +113,22 @@ client.add(torrentPath,torrent => {
 
     var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
     console.log("STREAMING URL?",fileRequestUrl)
-//shit?
+    //shit?
 
     ffmpeg(fileRequestUrl).ffprobe((err,data) => {
         if(err) {
             console.log("FFPROBE ERROR:",err)
         } else {
             console.log("FFPROBE METADATA:",data)
+            ffmpeg(fileRequestUrl).seekInput('3:00').duration("1:00").on('progress',function(progress) {
+                console.log('FFmpeg Processing: '+progress.percent+'% done');
+            }).on('end',() => {
+
+                console.log("FFMPEG EXECUTION COMPLETE?")
+                instance.close()
+                client.destroy()
+                process.exit()
+            }).outputOptions(['-c copy','-y']).output('output.mkv').run()
 
         }
         // process.exit()
