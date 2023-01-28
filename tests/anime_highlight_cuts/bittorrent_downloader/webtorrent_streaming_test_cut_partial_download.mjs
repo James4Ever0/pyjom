@@ -28,9 +28,10 @@ import fs from 'fs'
 try {
     fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]',{recursive: true})
 }
-catch(e) {
+catch(e) { // you can omit the 
     // console.log("GIVEN DIRECTORY DOES NOT EXIST")
-    console.log("UNKNOWN ERROR WHILE REMOVING DIRECTORY:",e)
+    console.log("UNKNOWN ERROR WHILE REMOVING DIRECTORY:")
+    console.log(e)
 }
 
 // fuck it. let's symlink the NODE_PATH to here.
