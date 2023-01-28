@@ -80,7 +80,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     _, color_main = next(sortedColorsWithIndex)
 
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
-        color_a, color_sub = sortedColors[:2]
+        _,color_sub = next(sortedColorsWithIndex)
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             # fill background with color_a first.
             backgroundImage[:, :, 0] = color_a[0]
