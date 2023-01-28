@@ -80,12 +80,11 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
 
     _, color_main = sortedColorsWithIndex[0]
-    
+
     # fill background with color_main first.
     backgroundImage[:, :, 0] = color_main[0]
     backgroundImage[:, :, 1] = color_main[1]
     backgroundImage[:, :, 2] = color_main[2]
-
 
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         _, color_sub = sortedColorsWithIndex[1]
@@ -95,7 +94,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:  # gradient!
             ...
     else: # pure color.
-        ...
+        pass
     if textFormat != "none":
         ## only calculate text color when needed.
         backgroundAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
