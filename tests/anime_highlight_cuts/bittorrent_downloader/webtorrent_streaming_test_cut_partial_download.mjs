@@ -76,6 +76,10 @@ client.add(torrentPath,torrent => {
     //         })
     //     }
     // })
+    
+
+    setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000)
+
 
     // ffmpeg(stream).ffprobe((err,data) => {
     //     if(err) {
@@ -86,11 +90,10 @@ client.add(torrentPath,torrent => {
     //     process.exit()
     // })
 
-    setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000)
 
-    ffmpeg(stream).seekInput(60).duration(60).on('progress',function(progress) {
-        console.log('FFmpeg Processing: '+progress.percent+'% done');
-    }).outputOptions('-c copy -y').output('output.mp4').run()
+    // ffmpeg(stream).seekInput(60).duration(60).on('progress',function(progress) {
+    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
+    // }).outputOptions('-c copy -y').output('output.mp4').run()
 
 
     // not top-level function or async function. fuck.
