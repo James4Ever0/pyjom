@@ -35,7 +35,7 @@ fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigat
 
 // no template string available. shit.
 
-// import { Readable } from 'stream'
+import { Readable } from 'stream'
 
 import WebTorrent from 'webtorrent'
 // // const WebTorrent = await import('webtorrent')
@@ -79,9 +79,9 @@ client.add(torrentPath,config,(torrent) => {
     // *******************READSTREAM RELATED*******************
 
     // https://github.com/webtorrent/webtorrent/issues/2464
-    // const stream = Readable.from(selectedFile) // are you sure?
+    const stream = Readable.from(selectedFile) // are you sure?
 
-    var stream=selectedFile.createReadStream() // not working! fuck.
+    // var stream=selectedFile.createReadStream() // not working! fuck.
     // // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
     // stream.unpipe=(nodeStream) => { } //doing nothing?
 
