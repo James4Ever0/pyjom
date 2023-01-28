@@ -131,5 +131,5 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         )
 
     ## preview
-    
+    previewImageName = f"imageFormat_textFormat_backgroundFormat"
     cv2.imshow()
