@@ -48,4 +48,4 @@ import itertools
 
 for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats, textFormats, backgroundFormats):
     for imagePath in random.sample(imagePaths,k=imageFormat):
-        image = os.path.join(imageBasePath, imagePath)
+        imageRealPath = os.path.join(imageBasePath, imagePath)
