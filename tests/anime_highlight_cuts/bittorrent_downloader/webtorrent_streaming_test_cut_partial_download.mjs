@@ -48,7 +48,9 @@ client.add(torrentPath,torrent => {
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
 
-    // READSTREAM RELATED
+    setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000)
+
+    // *******************READSTREAM RELATED*******************
 
     // var stream=selectedFile.createReadStream() // not working! fuck.
     // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
@@ -80,9 +82,6 @@ client.add(torrentPath,torrent => {
     //     }
     // })
     
-
-    setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000)
-
     // duration is fake.
 
 
@@ -100,9 +99,12 @@ client.add(torrentPath,torrent => {
     //     console.log('FFmpeg Processing: '+progress.percent+'% done');
     // }).outputOptions('-c copy -y').output('output.mp4').run()
 
+    // *******************READSTREAM RELATED*******************
+
     // how about let's use url?
 
-    
+    // how to urlencode?
+    var urlSuffix = encodeURIComponent(selectedFilePath)
 
     // not top-level function or async function. fuck.
 })
