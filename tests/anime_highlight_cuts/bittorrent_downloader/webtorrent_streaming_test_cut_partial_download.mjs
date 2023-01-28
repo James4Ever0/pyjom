@@ -146,9 +146,9 @@ client.add(torrentPath,torrent => {
             }).on('end',() => {
                 console.log("FFMPEG EXECUTION COMPLETE?")
                 // let's rerun.
-                // instance.close()
-                // client.destroy()
-                // process.exit()
+                instance.close()
+                client.destroy()
+                process.exit()
                 // the time range simply does not exist.
             }).outputOptions(['-c copy',
                 '-y']).output('output.mkv').run()
