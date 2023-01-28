@@ -111,7 +111,7 @@ client.add(torrentPath,torrent => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    var fileRequestUrl=selectedFile.streamURL
+    var fileRequestUrl=`http://localhost:${port}`+selectedFile.streamURL
     console.log("STREAMING URL?",fileRequestUrl)
 
     ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
