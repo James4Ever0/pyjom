@@ -67,6 +67,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                 np.sum(np.abs(averageColor - np.array(color)))
             )
     sortedColorsWithIndex = list(
-        sorted(colorsWithIndex, key=lambda element: -np.sum(colorDistances[element[0]])) # the further the better.
+        sorted(
+            colorsWithIndex, key=lambda element: -np.sum(colorDistances[element[0]])
+        )  # the further the better.
     )
     sortedColors = [color for _, color in sortedColorsWithIndex]
