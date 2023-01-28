@@ -100,9 +100,9 @@ client.add(torrentPath,torrent => {
     // })
 
 
-    // ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
-    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
-    // }).on('end',() => {
+    ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
+        console.log('FFmpeg Processing: '+progress.percent+'% done');
+    }).on('end',() => {
         console.log("FFMPEG EXECUTION COMPLETE?")
         // let's rerun.
         // instance.close()
