@@ -74,5 +74,6 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
     ## create background first.
     imageCanvasHeight = half_width if imageFormat == 2 else width
+    textCanvasHeight = 0 if textFormat == 'none' else textTotalHeight
     canvasShape = (imageCanvasHeight,width) # height, width
     backgroundImage = ...
