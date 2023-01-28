@@ -38,5 +38,5 @@ colors = [
     (255, 0, 0),
 ]
 
-for imagePath in imagePaths:
-    image = os.path.join(imageBasePath, imagePath)
+
+image = os.path.join(imageBasePath, imagePath)
