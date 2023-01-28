@@ -4,7 +4,7 @@ imagePaths = [
     "Screen Shot 2023-01-17 at 15.35.29.png"
 ] * 4  # let's all be the same, for testing.
 width = 800
-half_width = int(width / 2) # either use 1,2,4 images.
+half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
 marginRatio = 0.1
 import numpy as np
@@ -54,7 +54,7 @@ import itertools
 
 for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageFormats, textFormats, backgroundFormats
-): # you can use these things to get test output picture names.
+):  # you can use these things to get test output picture names.
     colorDistances = {}
     for imagePath in random.sample(imagePaths, k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
@@ -76,23 +76,30 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     ## create background first.
     imageCanvasHeight = half_width if imageFormat == 2 else width
     textCanvasHeight = 0 if textFormat == "none" else textTotalHeight
-    backgroundShape = (imageCanvasHeight + textCanvasHeight, width,3)  # height, width
-    backgroundImage = np.zeros(backgroundShape,dtype=np.uint8)
+    backgroundShape = (imageCanvasHeight + textCanvasHeight, width, 3)  # height, width
+    backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         color_a, color_b = sortedColors[:2]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             # fill background with color_a first.
-            backgroundImage[:,:,0] = color_a[0]
-            backgroundImage[:,:,1] = color_a[1]
-            backgroundImage[:,:,2] = color_a[2]
+            backgroundImage[:, :, 0] = color_a[0]
+            backgroundImage[:, :, 1] = color_a[1]
+            backgroundImage[:, :, 2] = color_a[2]
 
-            stripeCount = random.randint(2,5)
-        else: # gradient!
+            stripeCount = random.randint(2, 5)
+        else:  # gradient!
             ...
     else:
         color_main = sortedColors[0]
-    if textFormat != 'none':
+    if textFormat != "none":
         ## only calculate text color when needed.
         backgroundAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
-        textColorNumpyArray = list(sorted(colorsNumpyArray,key=lambda colorNumpyArray:-np.sum(np.abs(backgroundAverageColor-np.array(colorNumpyArray)))))[0]
+        textColorNumpyArray = list(
+            sorted(
+                colorsNumpyArray,
+                key=lambda colorNumpyArray: -np.sum(
+                    np.abs(backgroundAverageColor - np.array(colorNumpyArray))
+                ),
+            )
+        )[0]
         textColor = textColorNumpyArray.tolist()
