@@ -47,14 +47,17 @@ client.add(torrentPath,torrent => {
 
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
-    var stream=selectedFile.createReadStream() // not working! fuck.
-    // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
-    stream.unpipe=(nodeStream) => { } //doing nothing?
 
-    stream.on('error',function(err) {
-        console.log('STREAM ERROR?',err);
-        // just ignore it?
-    })
+    // READSTREAM RELATED
+
+    // var stream=selectedFile.createReadStream() // not working! fuck.
+    // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
+    // stream.unpipe=(nodeStream) => { } //doing nothing?
+
+    // stream.on('error',function(err) {
+    //     console.log('STREAM ERROR?',err);
+    //     // just ignore it?
+    // })
 
     // console.log("STREAM?",stream)
     // while(true) {
