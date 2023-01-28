@@ -77,4 +77,5 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     textCanvasHeight = 0 if textFormat == "none" else textTotalHeight
     backgroundShape = (imageCanvasHeight + textCanvasHeight, width,3)  # height, width
     backgroundImage = np.zeros(backgroundShape,dtype=np.uint8)
-    if ["horizontalStripes", "verticalStripes", "gradients"]
+    if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
+        color_a, color_b = 
