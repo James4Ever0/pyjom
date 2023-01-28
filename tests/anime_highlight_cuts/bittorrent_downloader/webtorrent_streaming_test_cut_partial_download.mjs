@@ -33,10 +33,10 @@ import WebTorrent from 'webtorrent'
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
 
-const serverPort=8970
+// const serverPort=8970
 
-const instance=client.createServer()
-instance.server.listen(serverPort) // not random port? not zero? 
+// const instance=client.createServer()
+// instance.server.listen(serverPort) // not random port? not zero? 
 
 client.add(torrentPath,torrent => {
     var selectedFile=torrent.files.find(file => {
@@ -57,14 +57,14 @@ client.add(torrentPath,torrent => {
 
     // *******************READSTREAM RELATED*******************
 
-    // var stream=selectedFile.createReadStream() // not working! fuck.
+    var stream=selectedFile.createReadStream() // not working! fuck.
     // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
-    // stream.unpipe=(nodeStream) => { } //doing nothing?
+    stream.unpipe=(nodeStream) => { } //doing nothing?
 
-    // stream.on('error',function(err) {
-    //     console.log('STREAM ERROR?',err);
-    //     // just ignore it?
-    // })
+    stream.on('error',function(err) {
+        console.log('STREAM ERROR?',err);
+        // just ignore it?
+    })
 
     // console.log("STREAM?",stream)
     // while(true) {
@@ -100,9 +100,9 @@ client.add(torrentPath,torrent => {
     // })
 
 
-    // ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
-    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
-    // }).outputOptions('-c copy -y').output('output.mkv').run() // still not working?
+    ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
+        console.log('FFmpeg Processing: '+progress.percent+'% done');
+    }).outputOptions('-c copy -y').output('output.mkv').run() // still not working?
 
     // *******************READSTREAM RELATED*******************
 
@@ -111,31 +111,33 @@ client.add(torrentPath,torrent => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
-    console.log("STREAMING URL?",fileRequestUrl)
+    // var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
+    // console.log("STREAMING URL?",fileRequestUrl)
+
     // http://localhost:8970/webtorrent/421d78cadb5e1bb4fc1fec9dc2d6680e810c13c2/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BMa10p_1080p%5D/SPs/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BCM01%5D%5BMa10p_1080p%5D%5Bx265_flac%5D.mkv
     //shit?
 
-    ffmpeg(fileRequestUrl).ffprobe((err,data) => {
-        if(err) {
-            console.log("FFPROBE ERROR:",err)
-        } else {
-            console.log("FFPROBE METADATA:",data)
-            ffmpeg(fileRequestUrl).seekInput('0:05').duration("0:10").on('progress',function(progress) {
-                console.log('FFmpeg Processing: '+progress.percent+'% done');
-            }).on('end',() => {
-                console.log("FFMPEG EXECUTION COMPLETE?")
-                // let's rerun.
-                instance.close()
-                client.destroy()
-                process.exit()
-                // the time range simply does not exist.
-            }).outputOptions(['-c copy',
-                '-y']).output('output.mkv').run()
+    // ffmpeg(fileRequestUrl).ffprobe((err,data) => {
+    //     if(err) {
+    //         console.log("FFPROBE ERROR:",err)
+    //     } else {
+    //         console.log("FFPROBE METADATA:",data)
+    //         // you'd better read this. you fuck!
+    //         ffmpeg(fileRequestUrl).seekInput('0:05').duration("0:10").on('progress',function(progress) {
+    //             console.log('FFmpeg Processing: '+progress.percent+'% done');
+    //         }).on('end',() => {
+    //             console.log("FFMPEG EXECUTION COMPLETE?")
+    //             // let's rerun.
+    //             instance.close()
+    //             client.destroy()
+    //             process.exit()
+    //             // the time range simply does not exist.
+    //         }).outputOptions(['-c copy',
+    //             '-y']).output('output.mkv').run()
 
-        }
-        // process.exit()
-    })
+    //     }
+    //     // process.exit()
+    // })
 
 
 
