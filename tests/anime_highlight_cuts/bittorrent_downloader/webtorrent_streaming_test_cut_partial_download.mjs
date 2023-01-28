@@ -40,7 +40,7 @@ const serverPort=8970
 
 const instance=client.createServer()
 instance.server.listen(serverPort) // not random port? not zero? 
-
+client.add()
 client.add(torrentPath,torrent => {
     var selectedFile=torrent.files.find(file => {
         // console.log("FILENAME?", file.name)
