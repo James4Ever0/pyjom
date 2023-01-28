@@ -11,6 +11,7 @@ imageIndex = 0  # shall be increased on demand.
 alphabets = "abcdefghijklmnopqrstuvwxyz"
 ALPHABETS = alphabets.upper()
 numbers = "0123456789"
+import os
 from string import punctuation
 
 characterList = list(alphabets + ALPHABETS + numbers + punctuation + " ")
@@ -37,3 +38,5 @@ colors = [
     (255, 0, 0),
 ]
 
+for imagePath in imagePaths:
+    image = os.path.join(imageBasePath, imagePath)
