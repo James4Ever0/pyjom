@@ -138,7 +138,7 @@ client.add(torrentPath,torrent => {
 
             // output still contains metadata. but do we have subtitles?
             // seeking is not so accurate but in minutes? easy.
-            // for file under 1 minute, please do not seek ok?
+            // for file under 1 minute, please do not seek ok? (seek locally?)
             // do not seek for segments that are too short. seek larger segments!
 
             ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
