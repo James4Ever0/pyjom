@@ -122,16 +122,16 @@ client.add(torrentPath,config,(torrent) => {
     // })
 
 
-    // ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
-    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
-    // }).on('end',() => {
-    //     console.log("FFMPEG EXECUTION COMPLETE?")
-    //     // let's rerun.
-    //     // instance.close()
-    //     client.destroy()
-    //     process.exit()
-    //     // the time range simply does not exist.
-    // }).outputOptions(['-c copy','-y']).output('output.mkv').run() // still not working?
+    ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
+        console.log('FFmpeg Processing: '+progress.percent+'% done');
+    }).on('end',() => {
+        console.log("FFMPEG EXECUTION COMPLETE?")
+        // let's rerun.
+        // instance.close()
+        client.destroy()
+        process.exit()
+        // the time range simply does not exist.
+    }).outputOptions(['-c copy','-y']).output('output.mkv').run() // still not working?
 
     // *******************READSTREAM RELATED*******************
 
@@ -140,40 +140,40 @@ client.add(torrentPath,config,(torrent) => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
-    console.log("STREAMING URL?",fileRequestUrl)
+    // var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
+    // console.log("STREAMING URL?",fileRequestUrl)
 
     // http://localhost:8970/webtorrent/421d78cadb5e1bb4fc1fec9dc2d6680e810c13c2/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BMa10p_1080p%5D/SPs/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BCM01%5D%5BMa10p_1080p%5D%5Bx265_flac%5D.mkv
     //shit?
 
-    ffmpeg(fileRequestUrl).ffprobe((err,data) => {
-        if(err) {
-            console.log("FFPROBE ERROR:",err)
-        } else {
-            console.log("FFPROBE METADATA:",data)
-            var duration=data.format.duration
-            console.log("VIDEO DURATION?",duration)
-            // you'd better read this. you fuck!
-            // i ask for 10 secs.
+    // ffmpeg(fileRequestUrl).ffprobe((err,data) => {
+    //     if(err) {
+    //         console.log("FFPROBE ERROR:",err)
+    //     } else {
+    //         console.log("FFPROBE METADATA:",data)
+    //         var duration=data.format.duration
+    //         console.log("VIDEO DURATION?",duration)
+    //         // you'd better read this. you fuck!
+    //         // i ask for 10 secs.
 
-            // output still contains metadata. but do we have subtitles?
-            // seeking is not so accurate but in minutes? easy.
-            // for file under 1 minute, please do not seek ok? (seek locally?)
-            // do not seek for segments that are too short. seek larger segments!
+    //         // output still contains metadata. but do we have subtitles?
+    //         // seeking is not so accurate but in minutes? easy.
+    //         // for file under 1 minute, please do not seek ok? (seek locally?)
+    //         // do not seek for segments that are too short. seek larger segments!
 
-            ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
-                console.log('FFmpeg Processing: '+progress.percent+'% done');
-            }).on('end',() => {
-                console.log("FFMPEG EXECUTION COMPLETE?")
-                // let's rerun.
-                instance.close()
-                client.destroy()
-                process.exit()
-                // the time range simply does not exist.
-            }).outputOptions(['-c copy',
-                '-y']).output('output.mkv').run()
-        }
-        // process.exit()
-    })
+    //         ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
+    //             console.log('FFmpeg Processing: '+progress.percent+'% done');
+    //         }).on('end',() => {
+    //             console.log("FFMPEG EXECUTION COMPLETE?")
+    //             // let's rerun.
+    //             instance.close()
+    //             client.destroy()
+    //             process.exit()
+    //             // the time range simply does not exist.
+    //         }).outputOptions(['-c copy',
+    //             '-y']).output('output.mkv').run()
+    //     }
+    //     // process.exit()
+    // })
     // not top-level function or async function. fuck.
 })
