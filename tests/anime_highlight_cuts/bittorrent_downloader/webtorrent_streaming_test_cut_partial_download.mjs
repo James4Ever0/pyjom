@@ -46,7 +46,7 @@ config.path = process.cwd() // download to current directory?
 // add trackers?
 // config.announce=""
 
-const torrent=client.add(torrentPath,config)
+const torrent=client.add(torrentPath,config,(torrent))
 
 var selectedFile=torrent.files.find(file => {
     // console.log("FILENAME?", file.name)
