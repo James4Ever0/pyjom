@@ -67,8 +67,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                 np.sum(np.abs(averageColor - colorNumpyArray))
             )
     sortedColorsWithIndex = sorted(
-            colorsWithIndex, key=lambda element: -np.sum(colorDistances[element[0]])
-        )  # the further the better.
+        colorsWithIndex, key=lambda element: -np.sum(colorDistances[element[0]])
+    )  # the further the better.
 
     # sortedColors = [color for _, color in sortedColorsWithIndex]
 
@@ -80,7 +80,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     _, color_main = sortedColorsWithIndex[0]
 
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
-        _,color_sub = sortedColorsWithIndex[1]
+        _, color_sub = sortedColorsWithIndex[1]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             # fill background with color_a first.
             backgroundImage[:, :, 0] = color_main[0]
@@ -90,15 +90,15 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             stripeCount = random.randint(2, 5)
         else:  # gradient!
             ...
-    else:
+    else: # pure color.
         ...
     if textFormat != "none":
         ## only calculate text color when needed.
         backgroundAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
         textColorNumpyArray = sorted(
-                colorsNumpyArray,
-                key=lambda colorNumpyArray: -np.sum(
-                    np.abs(backgroundAverageColor - np.array(colorNumpyArray))
-                ),
-            )[0]
+            colorsNumpyArray,
+            key=lambda colorNumpyArray: -np.sum(
+                np.abs(backgroundAverageColor - np.array(colorNumpyArray))
+            ),
+        )[0]
         textColor = textColorNumpyArray.tolist()
