@@ -8,3 +8,6 @@ textTotalHeight = 300 # either add to top or bottom.
 imageIndex=0 # shall be increased on demand.
 
 alphabets = "abcdefghijklmnopqrstuvwxyz"
+ALPHABETS = alphabets.upper()
+numbers = "0123456789"
+punctuation =
