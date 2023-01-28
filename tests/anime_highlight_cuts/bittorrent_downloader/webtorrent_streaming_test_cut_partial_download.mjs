@@ -55,7 +55,7 @@ client.add(torrentPath,torrent => {
     // now pass to fluent-ffmpeg.
     // https://github.com/leeroybrun/webtorrent-transcode
 
-    setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000)
+    setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000) // why speed is zero now? wtf? are you finished?
 
     // *******************READSTREAM RELATED*******************
 
@@ -138,7 +138,7 @@ client.add(torrentPath,torrent => {
 
             // output still contains metadata. but.
             // seeking is not so accurate but in minutes? easy.
-            // for file under 1 minute, please do not seek ok?
+            // for file/ under 1 minute, please do not seek ok?
 
             ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
                 console.log('FFmpeg Processing: '+progress.percent+'% done');
