@@ -73,6 +73,6 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     sortedColors = [color for _, color in sortedColorsWithIndex]
 
     ## create background first.
-    imageCanvasHeight = half_width if 
+    imageCanvasHeight = half_width if imageFormat == 2 else width
     canvasShape = (imageCanvasHeight,width) # height, width
     backgroundImage = ...
