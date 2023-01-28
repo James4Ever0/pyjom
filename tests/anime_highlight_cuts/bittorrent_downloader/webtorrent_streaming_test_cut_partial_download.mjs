@@ -78,7 +78,7 @@ client.add(torrentPath,config,(torrent) => {
 
     // *******************READSTREAM RELATED*******************
 
-
+    // https://github.com/webtorrent/webtorrent/issues/2464
     // const stream = Readable.from(selectedFile) // are you sure?
 
     // var stream=selectedFile.createReadStream() // not working! fuck.
