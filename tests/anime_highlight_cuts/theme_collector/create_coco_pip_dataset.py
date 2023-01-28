@@ -14,4 +14,4 @@ from string import punctuation
 characterList = list(alphabets+ALPHABETS+numbers+punctuation+" ")
 import random
 getRandomCharacter = lambda: random.choice(characterList)
-getRandomCharacters = lambda length: []
+getRandomCharacters = lambda length: "".join([getRandomCharacter() for _ in range(length)])
