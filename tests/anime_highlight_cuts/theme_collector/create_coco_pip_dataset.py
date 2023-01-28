@@ -24,5 +24,6 @@ getRandomLinesOfCharacters = lambda lineCount, charCount: "\n".join(
     [getRandomCharacters(charCount) for _ in range(lineCount)]
 )
 
-image = ["1", "2", "4"]
-textFormats=['up']
+imageFormats = ["1", "2", "4"]
+textFormats=['up','down','none']
+
