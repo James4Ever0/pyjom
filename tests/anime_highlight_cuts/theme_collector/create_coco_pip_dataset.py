@@ -17,7 +17,6 @@ import os
 from string import punctuation
 
 import cv2
-from cv2 import sort
 
 characterList = list(alphabets + ALPHABETS + numbers + punctuation + " ")
 import random
