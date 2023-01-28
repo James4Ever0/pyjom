@@ -43,6 +43,7 @@ instance.server.listen(serverPort) // not random port? not zero?
 
 const config={}
 config.path=process.cwd() // download to current directory?
+// default=`/tmp/webtorrent/`
 // add trackers?
 // config.announce=""
 
