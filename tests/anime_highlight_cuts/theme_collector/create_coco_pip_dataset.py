@@ -11,4 +11,5 @@ alphabets = "abcdefghijklmnopqrstuvwxyz"
 ALPHABETS = alphabets.upper()
 numbers = "0123456789"
 from string import punctuation
-get
+character
+getRandomCharacters
