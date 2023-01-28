@@ -33,7 +33,7 @@ import WebTorrent from 'webtorrent'
 
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
-// please cache files under some KNOWN directories.
+// please cache files under some KNOWN directories. otherwise, i will be fucked.
 
 const serverPort=8970
 
