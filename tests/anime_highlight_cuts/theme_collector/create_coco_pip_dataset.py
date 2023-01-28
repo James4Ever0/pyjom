@@ -4,7 +4,7 @@ imagePaths = []
 width = 800
 half_width = width / 2  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
-marginRatio=0.1
+marginRatio = 0.1
 
 imageIndex = 0  # shall be increased on demand.
 
@@ -24,4 +24,4 @@ getRandomLinesOfCharacters = lambda lineCount, charCount: "\n".join(
     [getRandomCharacters(charCount) for _ in range(lineCount)]
 )
 
-image=[1,2,4]
+image = ["1", "2", "4"]
