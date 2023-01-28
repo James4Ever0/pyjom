@@ -32,6 +32,10 @@ import WebTorrent from 'webtorrent'
 
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
+const serverPort = 8970
+
+const instance = client.createServer()
+instance.server.listen(0) 
 
 client.add(torrentPath,torrent => {
     var selectedFile=torrent.files.find(file => {
@@ -106,7 +110,7 @@ client.add(torrentPath,torrent => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    var fileRequestUrl = selectedFile..streamURL
+    var fileRequestUrl = selectedFile.streamURL
 
      ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
          console.log('FFmpeg Processing: '+progress.percent+'% done');
