@@ -97,6 +97,9 @@ client.add(torrentPath,torrent => {
     //     console.log('FFmpeg Processing: '+progress.percent+'% done');
     // }).outputOptions('-c copy -y').output('output.mp4').run()
 
+    // how about let's use url?
+
+    
 
     // not top-level function or async function. fuck.
 })
