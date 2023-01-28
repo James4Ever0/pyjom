@@ -113,6 +113,7 @@ client.add(torrentPath,torrent => {
 
     var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
     console.log("STREAMING URL?",fileRequestUrl)
+    // http://localhost:8970/webtorrent/421d78cadb5e1bb4fc1fec9dc2d6680e810c13c2/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BMa10p_1080p%5D/SPs/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BCM01%5D%5BMa10p_1080p%5D%5Bx265_flac%5D.mkv
     //shit?
 
     ffmpeg(fileRequestUrl).ffprobe((err,data) => {
