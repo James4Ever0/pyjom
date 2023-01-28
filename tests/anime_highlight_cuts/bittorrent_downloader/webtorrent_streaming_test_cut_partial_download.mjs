@@ -176,7 +176,6 @@ client.add(torrentPath,config,(torrent) => {
     }).outputOptions(['-c copy',
         '-y']).output('output.mkv').run()
 
-        // process.exit()
-    })
+    // process.exit()
     // not top-level function or async function. fuck.
 })
