@@ -88,8 +88,8 @@ client.add(torrentPath,torrent => {
 
     setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000)
 
-    ffmpeg(stream).seekInput(60).on('progress',function(progress) {
-        console.log('Processing: '+progress.percent+'% done');
+    ffmpeg(stream).seekInput(60).duration(60).on('progress',function(progress) {
+        console.log('FFmpeg Processing: '+progress.percent+'% done');
     }).outputOptions('-c copy -y').output('output.mp4').run()
 
 
