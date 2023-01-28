@@ -2,7 +2,7 @@ import yaml
 
 # why you are taking so much RAM?
 
-# suggest that you label some image 
+# suggest that you label some (many) still image and mark out the picture-in-picture parts from it? about 2000 images?
 
 train_path = "images/train"
 test_path = "images/test"
