@@ -46,5 +46,5 @@ colors = [
 
 
 
-random.sample(imagePaths,k=imageFormat)
-image = os.path.join(imageBasePath, imagePath)
+for imagePath in random.sample(imagePaths,k=imageFormat):
+    image = os.path.join(imageBasePath, imagePath)
