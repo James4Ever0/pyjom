@@ -55,5 +55,6 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats,
         image = cv2.imread(imageRealPath, cv2.IMREAD_COLOR) # BGR? are you sure this is correct?
         averageColor = np.average(image.reshape((-1,3)),axis=0)
         for index, color in colors:
-            colorDistances.append(np.sum(np.abs(averageColor-np.array(color))))
+            colorDistances.get(index,[]).append(np.sum(np.abs(averageColor-np.array(color))))
+    
     
