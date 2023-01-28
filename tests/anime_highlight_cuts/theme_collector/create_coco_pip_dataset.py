@@ -90,7 +90,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:  # gradient!
             ...
     else:
-        color_main = sortedColors[0]
+        color_main = next(sortedColors[0]
     if textFormat != "none":
         ## only calculate text color when needed.
         backgroundAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
