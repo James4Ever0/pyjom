@@ -26,7 +26,7 @@ getRandomLinesOfCharacters = lambda lineCount, charCount: "\n".join(
 
 imageFormats = ["1", "2", "4"]
 textFormats = ["up", "down", "none"]
-backgroundFormats = ["pure", "horizontalStripes", "verticalStripes", "gradients"]
+backgroundFormats = ["solidColor", "horizontalStripes", "verticalStripes", "gradients"]
 colors = [
     (0, 0, 0),
     (255, 255, 255),
