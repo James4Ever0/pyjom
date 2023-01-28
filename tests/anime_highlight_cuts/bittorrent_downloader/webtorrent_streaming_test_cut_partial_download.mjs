@@ -28,12 +28,12 @@ import fs from 'fs'
 try {
     fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]',{recursive: true})
 }
-catch(e) { // you can omit the (e)
-    // console.log("GIVEN DIRECTORY DOES NOT EXIST")
-    // it will execute even if the directory does not exist.
-    console.log("UNKNOWN ERROR WHILE REMOVING DIRECTORY:")
-    console.log(e)
-}
+// catch(e) { // you can omit the (e)
+//     // console.log("GIVEN DIRECTORY DOES NOT EXIST")
+//     // it will execute even if the directory does not exist.
+//     console.log("UNKNOWN ERROR WHILE REMOVING DIRECTORY:")
+//     console.log(e)
+// }
 
 // fuck it. let's symlink the NODE_PATH to here.
 // https://github.com/nodejs/node/issues/38687
