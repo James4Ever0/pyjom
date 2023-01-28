@@ -24,7 +24,8 @@ var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Ma
 // maybe you can execute command to symlink global node_modules automatically? nope in javascript but in shell script, or it will not run as expected, since the import statements are running before anything would. 
 
 import ffmpeg from 'fluent-ffmpeg'
-// import fs from 'fs'
+import fs from 'fs'
+fs.rmdirSync()
 
 // fuck it. let's symlink the NODE_PATH to here.
 // https://github.com/nodejs/node/issues/38687
