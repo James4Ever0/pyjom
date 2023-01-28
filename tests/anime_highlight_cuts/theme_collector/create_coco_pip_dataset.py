@@ -117,5 +117,5 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         textColor = textColorNumpyArray.tolist()
         # let's paint it all over the place!
         textContent = getRandomLinesOfCharacters(20,20) # TODO: check if string is **just enough** to fill the background.
-        cv2.putText(image, 'OpenCV', org, font, 
-                   fontScale, color, thickness, cv2.LINE_AA)
+        backgroundImage = cv2.putText(backgroundImage, 'OpenCV', org, font, 
+                   fontScale, textColor, thickness, cv2.LINE_AA)
