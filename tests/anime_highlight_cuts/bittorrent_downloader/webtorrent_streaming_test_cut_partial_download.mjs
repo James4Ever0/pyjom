@@ -41,10 +41,10 @@ console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
 // please cache files under some KNOWN directories. otherwise, i will be fucked.
 
-const serverPort=8970
+// const serverPort=8970
 
-const instance=client.createServer()
-instance.server.listen(serverPort) // not random port? not zero? 
+// const instance=client.createServer()
+// instance.server.listen(serverPort) // not random port? not zero? 
 
 const config={}
 // https://github.com/webtorrent/webtorrent/blob/master/docs/api.md#clientaddtorrentid-opts-function-ontorrent-torrent-
