@@ -124,9 +124,10 @@ client.add(torrentPath,torrent => {
                 console.log('FFmpeg Processing: '+progress.percent+'% done');
             }).on('end',() => {
                 console.log("FFMPEG EXECUTION COMPLETE?")
-                instance.close()
-                client.destroy()
-                process.exit()
+                // let's rerun.
+                // instance.close()
+                // client.destroy()
+                // process.exit()
             }).outputOptions([//'-c copy',
                 '-y']).output('output.mkv').run()
 
