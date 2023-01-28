@@ -50,9 +50,11 @@ import itertools
 import numpy as np
 for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats, textFormats, backgroundFormats):
     colorScores = {}
+    colorDistances = []
     for imagePath in random.sample(imagePaths,k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
         image = cv2.imread(imageRealPath, cv2.IMREAD_COLOR) # BGR? are you sure this is correct?
         averageColor = np.average(image.reshape((-1,3)),axis=0)
         for index, color in colors:
-            colorDistance = np.sum(np.abs(averageColor-np.array(color)))
+            colorDistances.append(np.sum(np.abs(averageColor-np.array(color))))
+    
