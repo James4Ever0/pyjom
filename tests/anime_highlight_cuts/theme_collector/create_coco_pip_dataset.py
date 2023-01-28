@@ -1,1 +1,4 @@
 # use what? better use some standard library.
+
+imagePaths = []
+
