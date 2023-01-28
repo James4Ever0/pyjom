@@ -94,7 +94,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             ...
     else: # pure color.
         pass
-    
+
+    ## next, paint text!
     if textFormat != "none":
         ## only calculate text color when needed.
         backgroundAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
@@ -105,4 +106,3 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             ),
         )[0]
         textColor = textColorNumpyArray.tolist()
-    # else you will not have text color.
