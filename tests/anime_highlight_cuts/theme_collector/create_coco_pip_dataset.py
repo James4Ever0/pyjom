@@ -14,6 +14,8 @@ numbers = "0123456789"
 import os
 from string import punctuation
 
+import cv2
+
 characterList = list(alphabets + ALPHABETS + numbers + punctuation + " ")
 import random
 
@@ -49,3 +51,4 @@ import itertools
 for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats, textFormats, backgroundFormats):
     for imagePath in random.sample(imagePaths,k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
+        image = cv2.imread(imageRealPath)
