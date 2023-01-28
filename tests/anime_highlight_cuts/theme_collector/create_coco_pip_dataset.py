@@ -106,4 +106,5 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             ),
         )[0]
         textColor = textColorNumpyArray.tolist()
+        # let's crop it!
         if textFormat =="":
