@@ -7,6 +7,7 @@ width = 800
 half_width = int(width / 2) # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
 marginRatio = 0.1
+import numpy as np
 
 imageIndex = 0  # shall be increased on demand.
 
@@ -41,7 +42,7 @@ colors = [
     (0, 0, 255),
     (255, 0, 0),
 ]
-colorsNumpy
+colorsNumpyArray = [np.array(color) for color in colorsNumpyArray]
 colorsWithIndex = [(index, color) for index, color in enumerate(colors)]
 # we are not doing this while testing.
 
@@ -50,7 +51,6 @@ colorsWithIndex = [(index, color) for index, color in enumerate(colors)]
 # backgroundFormat = random.choice(backgroundFormats)
 
 import itertools
-import numpy as np
 
 for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageFormats, textFormats, backgroundFormats
