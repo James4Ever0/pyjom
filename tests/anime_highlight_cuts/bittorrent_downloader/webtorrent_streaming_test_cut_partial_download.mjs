@@ -115,16 +115,16 @@ client.add(torrentPath,torrent => {
     console.log("STREAMING URL?",fileRequestUrl)
 //shit?
 
-    // ffmpeg(fileRequestUrl).ffprobe((err,data) => {
-    //     if(err) {
-    //         console.log("FFPROBE ERROR:",err)
-    //     } else {
-    //         console.log("FFPROBE METADATA:",data)
-    //     }
-    //     // process.exit()
-    // })
+    ffmpeg(fileRequestUrl).ffprobe((err,data) => {
+        if(err) {
+            console.log("FFPROBE ERROR:",err)
+        } else {
+            console.log("FFPROBE METADATA:",data)
+        }
+        // process.exit()
+    })
 
-    // ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
+    // ffmpeg(fileRequestUrl).seekInput('3:00').duration().on('progress',function(progress) {
     //     console.log('FFmpeg Processing: '+progress.percent+'% done');
     // }).on('end',() => {
 
