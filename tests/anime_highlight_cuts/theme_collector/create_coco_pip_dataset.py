@@ -1,6 +1,6 @@
 # use what? better use some standard library.
 imageBasePath = "/Users/jamesbrown/Desktop/"
-imagePaths = ["Screen Shot 2023-01-17 at 15.35.29.png"]*4 # let's all be the same.
+imagePaths = ["Screen Shot 2023-01-17 at 15.35.29.png"]*4 # let's all be the same, for testing.
 width = 800
 half_width = width / 2  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
