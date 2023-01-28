@@ -32,9 +32,9 @@ import WebTorrent from 'webtorrent'
 
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
-const serverPort = 8970
+const serverPort=8970
 
-const instance = client.createServer()
+const instance=client.createServer()
 instance.server.listen(serverPort) // not random port? not zero? 
 
 client.add(torrentPath,torrent => {
@@ -85,7 +85,7 @@ client.add(torrentPath,torrent => {
     //         })
     //     }
     // })
-    
+
     // duration is fake.
 
 
@@ -110,14 +110,15 @@ client.add(torrentPath,torrent => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    var fileRequestUrl = selectedFile.streamURL
+    var fileRequestUrl=selectedFile.streamURL
 
-     ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
-         console.log('FFmpeg Processing: '+progress.percent+'% done');
-     }).outputOptions('-c copy -y').output('output.mp4').run()
+    ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
+        console.log('FFmpeg Processing: '+progress.percent+'% done');
+    }).outputOptions('-c copy -y').output('output.mp4').run()
 
-     console.log("EXECUTION COMPLETE?")
-     instance.close()
-        client.destroy()
+    console.log("EXECUTION COMPLETE?")
+    instance.close()
+    client.destroy()
+    process.exit()
     // not top-level function or async function. fuck.
 })
