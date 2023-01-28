@@ -44,8 +44,11 @@ instance.server.listen(serverPort) // not random port? not zero?
 const config={}
 config.path=process.cwd() // download to current directory?
 // default=`/tmp/webtorrent/`
+
+// now i fucking got you!
+
 // add trackers?
-// config.announce=""
+// config.announce=[""]
 
 client.add(torrentPath,config,(torrent) => {
     var selectedFile=torrent.files.find(file => {
