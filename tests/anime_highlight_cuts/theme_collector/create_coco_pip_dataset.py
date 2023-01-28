@@ -80,6 +80,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         color_a, color_b = sortedColors[:2]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
+            
             stripeCount = random.randint(2,5)
     else:
         color_main = sortedColors[0]
