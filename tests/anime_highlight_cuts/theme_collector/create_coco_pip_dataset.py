@@ -1,4 +1,7 @@
 # use what? better use some standard library.
+import cv2
+import numpy as np
+
 imageBasePath = "/Users/jamesbrown/Desktop/"
 imagePaths = [
     "Screen Shot 2023-01-17 at 15.35.29.png"
@@ -8,10 +11,10 @@ half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
 marginRatio = 0.1
 
-        textOrigin = (30,30)
-        fontScale=1
-        font = cv2.FONT_HERSHEY_SIMPLEX
-import numpy as np
+textOrigin = (30,30)
+fontScale=1
+font = cv2.FONT_HERSHEY_SIMPLEX
+
 
 imageIndex = 0  # shall be increased on demand.
 
