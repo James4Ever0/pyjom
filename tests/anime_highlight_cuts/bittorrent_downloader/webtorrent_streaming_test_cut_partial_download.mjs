@@ -53,6 +53,7 @@ client.add(torrentPath,torrent => {
 
     stream.on('error',function(err) {
         console.log('STREAM ERROR?',err);
+        // just ignore it?
     })
     // console.log("STREAM?",stream)
     // while(true) {
