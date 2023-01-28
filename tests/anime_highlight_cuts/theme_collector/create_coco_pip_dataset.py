@@ -76,13 +76,15 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageCanvasHeight = half_width if imageFormat == 2 else width
     textCanvasHeight = 0 if textFormat == "none" else textTotalHeight
     backgroundShape = (imageCanvasHeight + textCanvasHeight, width, 3)  # height, width
-    _, color_main = sortedColorsWithIndex[0]
 
-            # fill background with color_main first.
-            backgroundImage[:, :, 0] = color_main[0]
-            backgroundImage[:, :, 1] = color_main[1]
-            backgroundImage[:, :, 2] = color_main[2]
     backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
+
+    _, color_main = sortedColorsWithIndex[0]
+    
+    # fill background with color_main first.
+    backgroundImage[:, :, 0] = color_main[0]
+    backgroundImage[:, :, 1] = color_main[1]
+    backgroundImage[:, :, 2] = color_main[2]
 
 
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
