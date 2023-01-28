@@ -25,3 +25,4 @@ getRandomLinesOfCharacters = lambda lineCount, charCount: "\n".join(
 )
 
 image = ["1", "2", "4"]
+textFormats=['up']
