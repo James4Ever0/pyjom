@@ -7,7 +7,8 @@
 
 var torrentPath="/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
-var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv" // this is goddamn mkv.
+var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv" // this is the goddamnly short mkv.
+
 // var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [OVA][Ma10p_1080p][x265_flac].mkv" // this is long
 
 // require_esm = require('esm')(module)
@@ -59,14 +60,14 @@ client.add(torrentPath,torrent => {
 
     // *******************READSTREAM RELATED*******************
 
-    var stream=selectedFile.createReadStream() // not working! fuck.
-    // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
-    stream.unpipe=(nodeStream) => { } //doing nothing?
+    // var stream=selectedFile.createReadStream() // not working! fuck.
+    // // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
+    // stream.unpipe=(nodeStream) => { } //doing nothing?
 
-    stream.on('error',function(err) {
-        console.log('STREAM ERROR?',err);
-        // just ignore it?
-    })
+    // stream.on('error',function(err) {
+    //     console.log('STREAM ERROR?',err);
+    //     // just ignore it?
+    // })
 
     // console.log("STREAM?",stream)
     // while(true) {
