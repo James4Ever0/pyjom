@@ -16,10 +16,10 @@ half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
 marginRatio = 0.1
 
-textOrigin = (30,30)
-fontScale=1
+textOrigin = (30, 30)
+fontScale = 1
 font = cv2.FONT_HERSHEY_SIMPLEX
-textThickness= 2
+fontThickness = 2
 
 
 imageIndex = 0  # shall be increased on demand.
@@ -101,7 +101,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             ...
         else:  # gradient!
             ...
-    else: # pure color.
+    else:  # pure color.
         pass
 
     ## next, paint text!
@@ -116,6 +116,20 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         )[0]
         textColor = textColorNumpyArray.tolist()
         # let's paint it all over the place!
-        textContent = getRandomLinesOfCharacters(20,20) # TODO: check if string is **just enough** to fill the background.
-        backgroundImage = cv2.putText(backgroundImage, 'OpenCV', org, font, 
-                   fontScale, textColor, thickness, cv2.LINE_AA)
+        textContent = getRandomLinesOfCharacters(
+            20, 20
+        )  # TODO: check if string is **just enough** to fill the background.
+        backgroundImage = cv2.putText(
+            backgroundImage,
+            textContent,
+            textOrigin,
+            font,
+            fontScale,
+            textColor,
+            fontThickness,
+            cv2.LINE_AA,
+        )
+
+    ## preview
+    
+    cv2.imshow()
