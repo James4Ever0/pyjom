@@ -19,4 +19,4 @@ getRandomCharacter = lambda: random.choice(characterList)
 getRandomCharacters = lambda length: "".join(
     [getRandomCharacter() for _ in range(length)]
 )
-getRandomLinesOfCharacters
+getRandomLinesOfCharacters = lambda lineCount, charCount
