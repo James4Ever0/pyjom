@@ -4,3 +4,4 @@ imagePaths = []
 width = 800
 textTotalHeight = 300 # either add to top or bottom.
 
+imageIndex
