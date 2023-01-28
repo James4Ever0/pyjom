@@ -81,14 +81,14 @@ client.add(torrentPath,torrent => {
     setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000)
 
 
-    // ffmpeg(stream).ffprobe((err,data) => {
-    //     if(err) {
-    //         console.log("FFPROBE ERROR:",err)
-    //     } else {
-    //         console.log("FFPROBE METADATA:",data)
-    //     }
-    //     process.exit()
-    // })
+    ffmpeg(stream).ffprobe((err,data) => {
+        if(err) {
+            console.log("FFPROBE ERROR:",err)
+        } else {
+            console.log("FFPROBE METADATA:",data)
+        }
+        // process.exit()
+    })
 
 
     // ffmpeg(stream).seekInput(60).duration(60).on('progress',function(progress) {
