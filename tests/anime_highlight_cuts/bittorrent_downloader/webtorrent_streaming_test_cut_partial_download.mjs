@@ -42,125 +42,127 @@ const instance=client.createServer()
 instance.server.listen(serverPort) // not random port? not zero? 
 
 const config={}
-config.path = process.cwd() // download to current directory?
+config.path=process.cwd() // download to current directory?
 // add trackers?
 // config.announce=""
 
-const torrent=client.add(torrentPath,config,(torrent))
+const torrent=client.add(torrentPath,config,(torrent) => {
 
-var selectedFile=torrent.files.find(file => {
-    // console.log("FILENAME?", file.name)
-    // it will only select the first file matching the criterion.
-    // return file.name.endsWith('.mkv')
-    return file.path==selectedFilePath
-})
-// console.log("SELECTED FILE?")
-// console.log(selectedFile)
-// exit here?
-// process.exit()
-
-// now pass to fluent-ffmpeg.
-// https://github.com/leeroybrun/webtorrent-transcode
-
-setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000) // why speed is zero now? wtf? are you finished?
-
-// *******************READSTREAM RELATED*******************
-
-// var stream=selectedFile.createReadStream() // not working! fuck.
-// // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
-// stream.unpipe=(nodeStream) => { } //doing nothing?
-
-// stream.on('error',function(err) {
-//     console.log('STREAM ERROR?',err);
-//     // just ignore it?
-// })
-
-// console.log("STREAM?",stream)
-// while(true) {
-//     var buffer=stream.read(200)
-//     console.log("READING:",buffer)
-// }
-// var reading=false
-// stream.on('readable',function() {
-//     if(!reading) {
-//         reading=true
-//         console.log("STREAM READABLE")
-//         ffmpeg(stream).ffprobe((err,data) => {
-//             if(err) {
-//                 console.log("FFPROBE ERROR:",err)
-//             } else {
-//                 console.log("FFPROBE METADATA:",data)
-//             }
-//             process.exit()
-//         })
-//     }
-// })
-
-// duration is fake.
-
-
-// ffmpeg(stream).ffprobe((err,data) => {
-//     if(err) {
-//         console.log("FFPROBE ERROR:",err)
-//     } else {
-//         console.log("FFPROBE METADATA:",data)
-//     }
-//     // process.exit()
-// })
-
-
-// ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
-//     console.log('FFmpeg Processing: '+progress.percent+'% done');
-// }).on('end',() => {
-//     console.log("FFMPEG EXECUTION COMPLETE?")
-//     // let's rerun.
-//     // instance.close()
-//     client.destroy()
-//     process.exit()
-//     // the time range simply does not exist.
-// }).outputOptions(['-c copy','-y']).output('output.mkv').run() // still not working?
-
-// *******************READSTREAM RELATED*******************
-
-// how about let's use url?
-
-// how to urlencode?
-// var urlSuffix = encodeURIComponent(selectedFilePath)
-
-var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
-console.log("STREAMING URL?",fileRequestUrl)
-
-// http://localhost:8970/webtorrent/421d78cadb5e1bb4fc1fec9dc2d6680e810c13c2/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BMa10p_1080p%5D/SPs/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BCM01%5D%5BMa10p_1080p%5D%5Bx265_flac%5D.mkv
-//shit?
-
-ffmpeg(fileRequestUrl).ffprobe((err,data) => {
-    if(err) {
-        console.log("FFPROBE ERROR:",err)
-    } else {
-        console.log("FFPROBE METADATA:",data)
-        var duration=data.format.duration
-        console.log("VIDEO DURATION?",duration)
-        // you'd better read this. you fuck!
-        // i ask for 10 secs.
-
-        // output still contains metadata. but do we have subtitles?
-        // seeking is not so accurate but in minutes? easy.
-        // for file under 1 minute, please do not seek ok? (seek locally?)
-        // do not seek for segments that are too short. seek larger segments!
-
-        ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
-            console.log('FFmpeg Processing: '+progress.percent+'% done');
-        }).on('end',() => {
-            console.log("FFMPEG EXECUTION COMPLETE?")
-            // let's rerun.
-            instance.close()
-            client.destroy()
-            process.exit()
-            // the time range simply does not exist.
-        }).outputOptions(['-c copy',
-            '-y']).output('output.mkv').run()
-    }
+    var selectedFile=torrent.files.find(file => {
+        // console.log("FILENAME?", file.name)
+        // it will only select the first file matching the criterion.
+        // return file.name.endsWith('.mkv')
+        return file.path==selectedFilePath
+    })
+    // console.log("SELECTED FILE?")
+    // console.log(selectedFile)
+    // exit here?
     // process.exit()
-})
+
+    // now pass to fluent-ffmpeg.
+    // https://github.com/leeroybrun/webtorrent-transcode
+
+    setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000) // why speed is zero now? wtf? are you finished?
+
+    // *******************READSTREAM RELATED*******************
+
+    // var stream=selectedFile.createReadStream() // not working! fuck.
+    // // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
+    // stream.unpipe=(nodeStream) => { } //doing nothing?
+
+    // stream.on('error',function(err) {
+    //     console.log('STREAM ERROR?',err);
+    //     // just ignore it?
+    // })
+
+    // console.log("STREAM?",stream)
+    // while(true) {
+    //     var buffer=stream.read(200)
+    //     console.log("READING:",buffer)
+    // }
+    // var reading=false
+    // stream.on('readable',function() {
+    //     if(!reading) {
+    //         reading=true
+    //         console.log("STREAM READABLE")
+    //         ffmpeg(stream).ffprobe((err,data) => {
+    //             if(err) {
+    //                 console.log("FFPROBE ERROR:",err)
+    //             } else {
+    //                 console.log("FFPROBE METADATA:",data)
+    //             }
+    //             process.exit()
+    //         })
+    //     }
+    // })
+
+    // duration is fake.
+
+
+    // ffmpeg(stream).ffprobe((err,data) => {
+    //     if(err) {
+    //         console.log("FFPROBE ERROR:",err)
+    //     } else {
+    //         console.log("FFPROBE METADATA:",data)
+    //     }
+    //     // process.exit()
+    // })
+
+
+    // ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
+    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
+    // }).on('end',() => {
+    //     console.log("FFMPEG EXECUTION COMPLETE?")
+    //     // let's rerun.
+    //     // instance.close()
+    //     client.destroy()
+    //     process.exit()
+    //     // the time range simply does not exist.
+    // }).outputOptions(['-c copy','-y']).output('output.mkv').run() // still not working?
+
+    // *******************READSTREAM RELATED*******************
+
+    // how about let's use url?
+
+    // how to urlencode?
+    // var urlSuffix = encodeURIComponent(selectedFilePath)
+
+    var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
+    console.log("STREAMING URL?",fileRequestUrl)
+
+    // http://localhost:8970/webtorrent/421d78cadb5e1bb4fc1fec9dc2d6680e810c13c2/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BMa10p_1080p%5D/SPs/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BCM01%5D%5BMa10p_1080p%5D%5Bx265_flac%5D.mkv
+    //shit?
+
+    ffmpeg(fileRequestUrl).ffprobe((err,data) => {
+        if(err) {
+            console.log("FFPROBE ERROR:",err)
+        } else {
+            console.log("FFPROBE METADATA:",data)
+            var duration=data.format.duration
+            console.log("VIDEO DURATION?",duration)
+            // you'd better read this. you fuck!
+            // i ask for 10 secs.
+
+            // output still contains metadata. but do we have subtitles?
+            // seeking is not so accurate but in minutes? easy.
+            // for file under 1 minute, please do not seek ok? (seek locally?)
+            // do not seek for segments that are too short. seek larger segments!
+
+            ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
+                console.log('FFmpeg Processing: '+progress.percent+'% done');
+            }).on('end',() => {
+                console.log("FFMPEG EXECUTION COMPLETE?")
+                // let's rerun.
+                instance.close()
+                client.destroy()
+                process.exit()
+                // the time range simply does not exist.
+            }).outputOptions(['-c copy',
+                '-y']).output('output.mkv').run()
+        }
+        // process.exit()
+    })
 
     // not top-level function or async function. fuck.
+
+})
