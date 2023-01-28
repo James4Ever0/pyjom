@@ -22,3 +22,5 @@ getRandomCharacters = lambda charCount: "".join(
 getRandomLinesOfCharacters = lambda lineCount, charCount: "\n".join(
     [getRandomCharacters(charCount) for _ in range(lineCount)]
 )
+
+
