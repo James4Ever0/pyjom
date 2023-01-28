@@ -106,5 +106,9 @@ client.add(torrentPath,torrent => {
     // how to urlencode?
     var urlSuffix = encodeURIComponent(selectedFilePath)
 
+     ffmpeg(stream).seekInput(60).duration(60).on('progress',function(progress) {
+         console.log('FFmpeg Processing: '+progress.percent+'% done');
+     }).outputOptions('-c copy -y').output('output.mp4').run()
+
     // not top-level function or async function. fuck.
 })
