@@ -35,7 +35,7 @@ const client=new WebTorrent({dht: true}) // nothing reading out. guess this is f
 const serverPort = 8970
 
 const instance = client.createServer()
-instance.server.listen(0) 
+instance.server.listen(serverPort) // not random port? not zero? 
 
 client.add(torrentPath,torrent => {
     var selectedFile=torrent.files.find(file => {
@@ -116,5 +116,8 @@ client.add(torrentPath,torrent => {
          console.log('FFmpeg Processing: '+progress.percent+'% done');
      }).outputOptions('-c copy -y').output('output.mp4').run()
 
+     console.log("EXECUTION COMPLETE?")
+     instance.close()
+        client.destroy()
     // not top-level function or async function. fuck.
 })
