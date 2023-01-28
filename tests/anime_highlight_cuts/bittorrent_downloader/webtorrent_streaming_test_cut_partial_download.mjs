@@ -29,7 +29,7 @@ try {
     fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]',{recursive: true})
 }
 catch {
-
+    console.log("GIVEN DIRECTORY DOES NOT EXIST")
 }
 
 // fuck it. let's symlink the NODE_PATH to here.
