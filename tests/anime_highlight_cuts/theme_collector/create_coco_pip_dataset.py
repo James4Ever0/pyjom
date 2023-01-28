@@ -11,5 +11,6 @@ alphabets = "abcdefghijklmnopqrstuvwxyz"
 ALPHABETS = alphabets.upper()
 numbers = "0123456789"
 from string import punctuation
-characterList = list(alphabets+ALPHABETS+numbers+)
-getRandomCharacters
+characterList = list(alphabets+ALPHABETS+numbers+punctuation+" ")
+import random
+getRandomCharacters = lambda: random.choice(characterList)
