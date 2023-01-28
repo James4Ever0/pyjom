@@ -32,6 +32,7 @@ import ffmpeg from 'fluent-ffmpeg'
 // https://nodejs.org/api/esm.html
 
 // no template string available. shit.
+import { Readable } from 'stream'
 
 import WebTorrent from 'webtorrent'
 // // const WebTorrent = await import('webtorrent')
@@ -73,6 +74,10 @@ client.add(torrentPath,config,(torrent) => {
     setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000) // why speed is zero now? wtf? are you finished?
 
     // *******************READSTREAM RELATED*******************
+
+const file = client.torrents[0].file
+
+const stream = Readable.from(file)
 
     // var stream=selectedFile.createReadStream() // not working! fuck.
     // // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
