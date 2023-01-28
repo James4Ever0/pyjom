@@ -124,7 +124,7 @@ client.add(torrentPath,torrent => {
         // process.exit()
     })
 
-    // ffmpeg(fileRequestUrl).seekInput('3:00').duration().on('progress',function(progress) {
+    // ffmpeg(fileRequestUrl).seekInput('3:00').duration("1:00").on('progress',function(progress) {
     //     console.log('FFmpeg Processing: '+progress.percent+'% done');
     // }).on('end',() => {
 
