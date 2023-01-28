@@ -113,17 +113,17 @@ client.add(torrentPath,torrent => {
 
     var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
     console.log("STREAMING URL?",fileRequestUrl)
+//shit?
+    // ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
+    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
+    // }).on('end',() => {
 
-    ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
-        console.log('FFmpeg Processing: '+progress.percent+'% done');
-    }).on('end',() => {
+    //     console.log("FFMPEG EXECUTION COMPLETE?")
+    //     instance.close()
+    //     client.destroy()
+    //     process.exit()
 
-        console.log("FFMPEG EXECUTION COMPLETE?")
-        instance.close()
-        client.destroy()
-        process.exit()
-
-    }).outputOptions(['-c copy','-y']).output('output.mkv').run()
+    // }).outputOptions(['-c copy','-y']).output('output.mkv').run()
 
 
     // not top-level function or async function. fuck.
