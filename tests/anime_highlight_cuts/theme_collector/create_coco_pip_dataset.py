@@ -39,6 +39,7 @@ colors = [
 ]
 
 imageFormat = random.choice(imageFormats)
+textFormat = random.choice(textFormats)
 
 random.sample(imagePaths,k=imageFormat)
 image = os.path.join(imageBasePath, imagePath) for imagePath in
