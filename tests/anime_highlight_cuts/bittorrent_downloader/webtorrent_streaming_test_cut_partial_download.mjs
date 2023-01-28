@@ -135,6 +135,8 @@ client.add(torrentPath,torrent => {
             // i ask for 10 secs.
 
             // output still contains metadata. but.
+            // seeking is not so accurate but in minutes? easy.
+            // for file under 2 minutes, please do not seek ok?
 
             ffmpeg(fileRequestUrl).seekInput('1:05').duration("2:15").on('progress',function(progress) {
                 console.log('FFmpeg Processing: '+progress.percent+'% done');
