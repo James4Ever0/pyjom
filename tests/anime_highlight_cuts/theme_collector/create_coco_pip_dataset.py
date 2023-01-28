@@ -106,4 +106,4 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             ),
         )[0]
         textColor = textColorNumpyArray.tolist()
-        if textFormat == "":
+        
