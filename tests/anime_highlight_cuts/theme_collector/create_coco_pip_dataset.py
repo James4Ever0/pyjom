@@ -4,4 +4,4 @@ imagePaths = []
 width = 800
 textTotalHeight = 300 # either add to top or bottom.
 
-imageIndex
+imageIndex=0 # shall be increased on demand.
