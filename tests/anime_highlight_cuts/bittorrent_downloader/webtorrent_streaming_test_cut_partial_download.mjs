@@ -104,9 +104,9 @@ client.add(torrentPath,torrent => {
     // how about let's use url?
 
     // how to urlencode?
-    var urlSuffix = encodeURIComponent(selectedFilePath)
+    // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    var fileRequestUrl = ""
+    var fileRequestUrl = selectedFile..streamURL
 
      ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
          console.log('FFmpeg Processing: '+progress.percent+'% done');
