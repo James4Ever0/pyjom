@@ -136,7 +136,7 @@ client.add(torrentPath,torrent => {
             // you'd better read this. you fuck!
             // i ask for 10 secs.
 
-            // output still contains metadata. but
+            // output still contains metadata. but do we have subtitles?
             // seeking is not so accurate but in minutes? easy.
             // for file under 1 minute, please do not seek ok?
             // do not seek for segments that are too short. seek larger segments!
