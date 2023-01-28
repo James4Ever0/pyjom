@@ -26,7 +26,7 @@ var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Ma
 import ffmpeg from 'fluent-ffmpeg'
 import fs from 'fs'
 
-fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]',{recursive:true})
+fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]',{recursive: true})
 
 // fuck it. let's symlink the NODE_PATH to here.
 // https://github.com/nodejs/node/issues/38687
@@ -164,18 +164,18 @@ client.add(torrentPath,config,(torrent) => {
     //         // for file under 1 minute, please do not seek ok? (seek locally?)
     //         // do not seek for segments that are too short. seek larger segments!
 
-            ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
-                console.log('FFmpeg Processing: '+progress.percent+'% done');
-            }).on('end',() => {
-                console.log("FFMPEG EXECUTION COMPLETE?")
-                // let's rerun.
-                instance.close()
-                client.destroy()
-                process.exit()
-                // the time range simply does not exist.
-            }).outputOptions(['-c copy',
-                '-y']).output('output.mkv').run()
-        }
+    ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
+        console.log('FFmpeg Processing: '+progress.percent+'% done');
+    }).on('end',() => {
+        console.log("FFMPEG EXECUTION COMPLETE?")
+        // let's rerun.
+        instance.close()
+        client.destroy()
+        process.exit()
+        // the time range simply does not exist.
+    }).outputOptions(['-c copy',
+        '-y']).output('output.mkv').run()
+}
         // process.exit()
     })
     // not top-level function or async function. fuck.
