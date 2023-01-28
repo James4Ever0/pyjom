@@ -131,5 +131,6 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         )
 
     ## preview
-    previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}"
-    cv2.imshow()
+    previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
+    cv2.imshow(previewImageName, backgroundImage)
+    cv2.waitKey(0)
