@@ -49,24 +49,26 @@ client.add(torrentPath,torrent => {
     // https://github.com/leeroybrun/webtorrent-transcode
     var stream=selectedFile.createReadStream() // not working! fuck.
     // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
-    stream.on('error', function(err) {
-        console.log('STREAM ERROR?', err);
+    stream.on('error',function(err) {
+        console.log('STREAM ERROR?',err);
     })
     // console.log("STREAM?",stream)
     // while(true) {
     //     var buffer=stream.read(200)
     //     console.log("READING:",buffer)
     // }
-    stream.on('readable',)
-
-    ffmpeg(stream).ffprobe((err,data) => {
-        if(err) {
-            console.log("FFPROBE ERROR:",err)
-        } else {
-            console.log("FFPROBE METADATA:",data)
-        }
-        process.exit()
+    stream.on('readable',function() {
+        console.log("STREAM READABLE")
+        ffmpeg(stream).ffprobe((err,data) => {
+            if(err) {
+                console.log("FFPROBE ERROR:",err)
+            } else {
+                console.log("FFPROBE METADATA:",data)
+            }
+            process.exit()
+        })
     })
+
 
     // not top-level function or async function. fuck.
 })
