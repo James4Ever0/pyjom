@@ -80,7 +80,13 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         color_a, color_b = sortedColors[:2]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
-            
+            # fill background with color_a first.
+            backgroundImage[:,:,0] = color_a[0]
+            backgroundImage[:,:,1] = color_a[1]
+            backgroundImage[:,:,2] = color_a[2]
+
             stripeCount = random.randint(2,5)
+        else: # gradient!
+            ...
     else:
         color_main = sortedColors[0]
