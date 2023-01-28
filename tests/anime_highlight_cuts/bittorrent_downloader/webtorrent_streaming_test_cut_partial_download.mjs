@@ -121,7 +121,7 @@ client.add(torrentPath,torrent => {
             console.log("FFPROBE ERROR:",err)
         } else {
             console.log("FFPROBE METADATA:",data)
-            ffmpeg(fileRequestUrl).seekInput('3:00').duration("1:00").on('progress',function(progress) {
+            ffmpeg(fileRequestUrl).seekInput('0:05').duration("0:10").on('progress',function(progress) {
                 console.log('FFmpeg Processing: '+progress.percent+'% done');
             }).on('end',() => {
                 console.log("FFMPEG EXECUTION COMPLETE?")
