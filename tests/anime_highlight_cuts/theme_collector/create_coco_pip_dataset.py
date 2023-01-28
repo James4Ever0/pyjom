@@ -91,4 +91,5 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     else:
         color_main = sortedColors[0]
     if textFormat != 'none':
-        backgroundImageAverageColor = 
+        ## only calculate text color when needed.
+        backgroundImageAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
