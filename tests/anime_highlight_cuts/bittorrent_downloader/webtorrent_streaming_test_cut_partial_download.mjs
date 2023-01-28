@@ -127,7 +127,8 @@ client.add(torrentPath,torrent => {
                 instance.close()
                 client.destroy()
                 process.exit()
-            }).outputOptions(['-y']).output('output.mkv').run()
+            }).outputOptions([//'-c copy',
+                '-y']).output('output.mkv').run()
 
         }
         // process.exit()
