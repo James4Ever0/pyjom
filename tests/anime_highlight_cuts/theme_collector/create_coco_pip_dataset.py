@@ -16,7 +16,9 @@ characterList = list(alphabets + ALPHABETS + numbers + punctuation + " ")
 import random
 
 getRandomCharacter = lambda: random.choice(characterList)
-getRandomCharacters = lambda length: "".join(
-    [getRandomCharacter() for _ in range(length)]
+getRandomCharacters = lambda charCount: "".join(
+    [getRandomCharacter() for _ in range(charCount)]
 )
-getRandomLinesOfCharacters = lambda lineCount, charCount
+getRandomLinesOfCharacters = lambda lineCount, charCount: "\n".join(
+    [getRandomCharacters(charCount) for _ in range(lineCount)]
+)
