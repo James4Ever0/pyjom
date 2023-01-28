@@ -120,20 +120,11 @@ client.add(torrentPath,torrent => {
             console.log("FFPROBE ERROR:",err)
         } else {
             console.log("FFPROBE METADATA:",data)
+
         }
         // process.exit()
     })
 
-    // ffmpeg(fileRequestUrl).seekInput('3:00').duration("1:00").on('progress',function(progress) {
-    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
-    // }).on('end',() => {
-
-    //     console.log("FFMPEG EXECUTION COMPLETE?")
-    //     instance.close()
-    //     client.destroy()
-    //     process.exit()
-
-    // }).outputOptions(['-c copy','-y']).output('output.mkv').run()
 
 
     // not top-level function or async function. fuck.
