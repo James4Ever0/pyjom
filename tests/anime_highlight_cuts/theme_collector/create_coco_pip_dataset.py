@@ -53,7 +53,7 @@ import numpy as np
 
 for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageFormats, textFormats, backgroundFormats
-): # you can use these things to get test output 
+): # you can use these things to get test output picture names.
     colorDistances = {}
     for imagePath in random.sample(imagePaths, k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
