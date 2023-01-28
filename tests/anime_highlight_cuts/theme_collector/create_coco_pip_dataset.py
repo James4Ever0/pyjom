@@ -51,5 +51,5 @@ import numpy as np
 for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats, textFormats, backgroundFormats):
     for imagePath in random.sample(imagePaths,k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
-        image = cv2.imread(imageRealPath) # BGR? are you sure this is not 
+        image = cv2.imread(imageRealPath) # BGR? are you sure this is correct?
         averageColor = np.average(image.reshape((-1,3)),axis=0)
