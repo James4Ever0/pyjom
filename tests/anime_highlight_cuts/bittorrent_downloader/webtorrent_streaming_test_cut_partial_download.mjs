@@ -57,14 +57,14 @@ client.add(torrentPath,torrent => {
 
     // *******************READSTREAM RELATED*******************
 
-    var stream=selectedFile.createReadStream() // not working! fuck.
+    // var stream=selectedFile.createReadStream() // not working! fuck.
     // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
-    stream.unpipe=(nodeStream) => { } //doing nothing?
+    // stream.unpipe=(nodeStream) => { } //doing nothing?
 
-    stream.on('error',function(err) {
-        console.log('STREAM ERROR?',err);
-        // just ignore it?
-    })
+    // stream.on('error',function(err) {
+    //     console.log('STREAM ERROR?',err);
+    //     // just ignore it?
+    // })
 
     // console.log("STREAM?",stream)
     // while(true) {
