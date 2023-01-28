@@ -25,6 +25,8 @@ fontThickness = 2
 
 imageIndex = 0  # shall be increased on demand.
 
+MAX_COCO_PIP_IMAGE_COUNT = 5000  # well, super huge. is it?
+
 alphabets = "abcdefghijklmnopqrstuvwxyz"
 ALPHABETS = alphabets.upper()
 numbers = "0123456789"
