@@ -19,6 +19,7 @@ marginRatio = 0.1
 textOrigin = (30,30)
 fontScale=1
 font = cv2.FONT_HERSHEY_SIMPLEX
+textThickness= 2
 
 
 imageIndex = 0  # shall be increased on demand.
