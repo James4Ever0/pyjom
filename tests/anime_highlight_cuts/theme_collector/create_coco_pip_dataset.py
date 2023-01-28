@@ -15,6 +15,7 @@ import os
 from string import punctuation
 
 import cv2
+from cv2 import sort
 
 characterList = list(alphabets + ALPHABETS + numbers + punctuation + " ")
 import random
@@ -56,4 +57,4 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats,
         averageColor = np.average(image.reshape((-1,3)),axis=0)
         for index, color in colors:
             colorDistances.get(index,[]).append(np.sum(np.abs(averageColor-np.array(color))))
-    
+    sortedColors = sorted(colors, key=)
