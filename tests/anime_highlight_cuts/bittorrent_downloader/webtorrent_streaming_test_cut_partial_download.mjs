@@ -33,10 +33,10 @@ import WebTorrent from 'webtorrent'
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
 
-// const serverPort=8970
+const serverPort=8970
 
-// const instance=client.createServer()
-// instance.server.listen(serverPort) // not random port? not zero? 
+const instance=client.createServer()
+instance.server.listen(serverPort) // not random port? not zero? 
 
 client.add(torrentPath,torrent => {
     var selectedFile=torrent.files.find(file => {
@@ -100,16 +100,16 @@ client.add(torrentPath,torrent => {
     // })
 
 
-    ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
-        console.log('FFmpeg Processing: '+progress.percent+'% done');
-    }).on('end',() => {
-        console.log("FFMPEG EXECUTION COMPLETE?")
-        // let's rerun.
-        // instance.close()
-        client.destroy()
-        process.exit()
-        // the time range simply does not exist.
-    }).outputOptions(['-c copy','-y']).output('output.mkv').run() // still not working?
+    // ffmpeg(stream).seekInput('0:05').duration("0:10").on('progress',function(progress) {
+    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
+    // }).on('end',() => {
+    //     console.log("FFMPEG EXECUTION COMPLETE?")
+    //     // let's rerun.
+    //     // instance.close()
+    //     client.destroy()
+    //     process.exit()
+    //     // the time range simply does not exist.
+    // }).outputOptions(['-c copy','-y']).output('output.mkv').run() // still not working?
 
     // *******************READSTREAM RELATED*******************
 
