@@ -25,9 +25,10 @@ var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Ma
 
 import ffmpeg from 'fluent-ffmpeg'
 import fs from 'fs'
-try{fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]',{recursive: true})}
-
-catch{
+try {
+    fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]',{recursive: true})
+}
+catch {
 
 }
 
