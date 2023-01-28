@@ -42,7 +42,8 @@ const instance=client.createServer()
 instance.server.listen(serverPort) // not random port? not zero? 
 
 const config={}
-config.path = ""
+config.path = process.cwd() // download to current directory?
+// add trackers?
 // config.announce=""
 
 const torrent=client.add(torrentPath,config)
