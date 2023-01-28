@@ -27,7 +27,7 @@ import ffmpeg from 'fluent-ffmpeg'
 import fs from 'fs'
 // try {
 fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]',{recursive: true})
-// maybe we shall not catch this exception?
+// maybe we shall not catch this exception? handle it yourself!
 // }
 // catch(e) { // you can omit the (e)
 //     // console.log("GIVEN DIRECTORY DOES NOT EXIST")
