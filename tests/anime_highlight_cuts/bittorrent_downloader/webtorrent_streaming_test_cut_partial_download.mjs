@@ -49,7 +49,7 @@ client.add(torrentPath,torrent => {
     // https://github.com/leeroybrun/webtorrent-transcode
     var stream=selectedFile.createReadStream() // not working! fuck.
     // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
-    stream.unpipe = (nodeStream) => {} //doing nothing?
+    stream.unpipe=(nodeStream) => { } //doing nothing?
 
     stream.on('error',function(err) {
         console.log('STREAM ERROR?',err);
@@ -86,11 +86,11 @@ client.add(torrentPath,torrent => {
     //     process.exit()
     // })
 
-    setInterval(()=>{console.log("SPEED?",client.downloadSpeed)},2000)
+    setInterval(() => {console.log("SPEED?",client.downloadSpeed)},2000)
 
-    ffmpeg(stream).seekInput(60).outputOptions('-c copy -y').output('output.mp4').run().on('data', function(chunk) {
-        console.log('ffmpeg just wrote ' + chunk.length + ' bytes');
-      });
+    ffmpeg(stream).seekInput(60).on('progress',function(progress) {
+        console.log('Processing: '+progress.percent+'% done');
+    }).outputOptions('-c copy -y').output('output.mp4').run()
 
 
     // not top-level function or async function. fuck.
