@@ -42,7 +42,7 @@ colors = [
     (0, 0, 255),
     (255, 0, 0),
 ]
-colorsNumpyArray = [np.array(color) for color in colorsNumpyArray]
+colorsNumpyArray = [np.array(color) for color in colors]
 colorsWithIndex = [(index, color) for index, color in enumerate(colors)]
 # we are not doing this while testing.
 
