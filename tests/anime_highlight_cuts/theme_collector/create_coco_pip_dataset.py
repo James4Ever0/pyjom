@@ -75,5 +75,5 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     ## create background first.
     imageCanvasHeight = half_width if imageFormat == 2 else width
     textCanvasHeight = 0 if textFormat == "none" else textTotalHeight
-    canvasShape = (imageCanvasHeight + textCanvasHeight, width,3)  # height, width
-    backgroundImage = np.zeros(canvasShape)
+    Shape = (imageCanvasHeight + textCanvasHeight, width,3)  # height, width
+    backgroundImage = np.zeros(Shape)
