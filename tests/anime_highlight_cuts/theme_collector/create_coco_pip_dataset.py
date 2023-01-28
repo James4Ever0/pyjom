@@ -24,3 +24,4 @@ getRandomLinesOfCharacters = lambda lineCount, charCount: "\n".join(
     [getRandomCharacters(charCount) for _ in range(lineCount)]
 )
 
+image=[1,2,4]
