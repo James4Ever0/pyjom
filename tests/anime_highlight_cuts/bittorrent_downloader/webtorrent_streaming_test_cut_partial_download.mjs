@@ -75,9 +75,8 @@ client.add(torrentPath,config,(torrent) => {
 
     // *******************READSTREAM RELATED*******************
 
-    const file = client.torrents[0].file
 
-    const stream = Readable.from(file)
+    const stream = Readable.from(selectedFile)
 
     // var stream=selectedFile.createReadStream() // not working! fuck.
     // // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
