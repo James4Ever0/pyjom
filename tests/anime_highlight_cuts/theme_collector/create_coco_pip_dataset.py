@@ -57,4 +57,3 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats,
         for index, color in colors:
             colorDistances.get(index,[]).append(np.sum(np.abs(averageColor-np.array(color))))
     
-    
