@@ -71,4 +71,6 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         )  # the further the better.
     )
     sortedColors = [color for _, color in sortedColorsWithIndex]
+
+    ## create background first.
     
