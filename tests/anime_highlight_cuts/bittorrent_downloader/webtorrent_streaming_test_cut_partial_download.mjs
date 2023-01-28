@@ -59,17 +59,19 @@ client.add(torrentPath,torrent => {
     // }
     var reading=false
     stream.on('readable',function() {
-        if (!reading){reading=true
+        if(!reading) {
+            reading=true
+            console.log("STREAM READABLE")
+            ffmpeg(stream).ffprobe((err,data) => {
+                if(err) {
+                    console.log("FFPROBE ERROR:",err)
+                } else {
+                    console.log("FFPROBE METADATA:",data)
+                }
+                process.exit()
+            })
         }
-        console.log("STREAM READABLE")
-        ffmpeg(stream).ffprobe((err,data) => {
-            if(err) {
-                console.log("FFPROBE ERROR:",err)
-            } else {
-                console.log("FFPROBE METADATA:",data)
-            }
-            process.exit()
-        })
+
     })
 
 
