@@ -175,7 +175,5 @@ client.add(torrentPath,config,(torrent) => {
         // the time range simply does not exist.
     }).outputOptions(['-c copy',
         '-y']).output('output.mkv').run()
-
-    // process.exit()
     // not top-level function or async function. fuck.
 })
