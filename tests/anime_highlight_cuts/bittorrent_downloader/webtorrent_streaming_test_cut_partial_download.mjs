@@ -86,7 +86,7 @@ client.add(torrentPath,torrent => {
     //     process.exit()
     // })
 
-    ffmpeg(stream).seekInput(60).duration(60).
+    ffmpeg(stream).seekInput(60).duration(60).save('output.mp4')
 
 
     // not top-level function or async function. fuck.
