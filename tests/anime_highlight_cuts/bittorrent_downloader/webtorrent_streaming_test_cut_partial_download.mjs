@@ -34,6 +34,7 @@ fs.rmdirSync('./[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigat
 // https://nodejs.org/api/esm.html
 
 // no template string available. shit.
+
 // import { Readable } from 'stream'
 
 import WebTorrent from 'webtorrent'
@@ -43,10 +44,10 @@ console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
 // please cache files under some KNOWN directories. otherwise, i will be fucked.
 
-// const serverPort=8970
+const serverPort=8970
 
-// const instance=client.createServer()
-// instance.server.listen(serverPort) // not random port? not zero? 
+const instance=client.createServer()
+instance.server.listen(serverPort) // not random port? not zero? 
 
 const config={}
 // https://github.com/webtorrent/webtorrent/blob/master/docs/api.md#clientaddtorrentid-opts-function-ontorrent-torrent-
@@ -123,17 +124,17 @@ client.add(torrentPath,config,(torrent) => {
     // })
 
 
-    ffmpeg(stream).seekInput('0:00').duration("0:20").on('progress',function(progress) {
-        // why not showing progress?
-        console.log('FFmpeg Processing: '+progress.percent+'% done');
-    }).on('end',() => {
-        console.log("FFMPEG EXECUTION COMPLETE?")
-        // let's rerun.
-        // instance.close()
-        client.destroy()
-        process.exit()
-        // the time range simply does not exist.
-    }).outputOptions(['-c copy','-y']).output('output.mkv').run() // still not working?
+    // ffmpeg(stream).seekInput('0:00').duration("0:20").on('progress',function(progress) {
+    //     // why not showing progress?
+    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
+    // }).on('end',() => {
+    //     console.log("FFMPEG EXECUTION COMPLETE?")
+    //     // let's rerun.
+    //     // instance.close()
+    //     client.destroy()
+    //     process.exit()
+    //     // the time range simply does not exist.
+    // }).outputOptions(['-c copy','-y']).output('output.mkv').run() // still not working?
 
     // *******************READSTREAM RELATED*******************
 
@@ -142,7 +143,7 @@ client.add(torrentPath,config,(torrent) => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    // var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
+    var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
     // console.log("STREAMING URL?",fileRequestUrl)
 
     // http://localhost:8970/webtorrent/421d78cadb5e1bb4fc1fec9dc2d6680e810c13c2/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BMa10p_1080p%5D/SPs/%5BKamigami&VCB-Studio%5D%20Yahari%20Ore%20no%20Seishun%20Lovecome%20wa%20Machigatte%20Iru.%20%5BCM01%5D%5BMa10p_1080p%5D%5Bx265_flac%5D.mkv
@@ -163,19 +164,19 @@ client.add(torrentPath,config,(torrent) => {
     //         // for file under 1 minute, please do not seek ok? (seek locally?)
     //         // do not seek for segments that are too short. seek larger segments!
 
-    //         ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
-    //             console.log('FFmpeg Processing: '+progress.percent+'% done');
-    //         }).on('end',() => {
-    //             console.log("FFMPEG EXECUTION COMPLETE?")
-    //             // let's rerun.
-    //             instance.close()
-    //             client.destroy()
-    //             process.exit()
-    //             // the time range simply does not exist.
-    //         }).outputOptions(['-c copy',
-    //             '-y']).output('output.mkv').run()
-    //     }
-    //     // process.exit()
-    // })
-    // not top-level function or async function. fuck.
+            ffmpeg(fileRequestUrl).seekInput('0:10').duration("0:15").on('progress',function(progress) {
+                console.log('FFmpeg Processing: '+progress.percent+'% done');
+            }).on('end',() => {
+                console.log("FFMPEG EXECUTION COMPLETE?")
+                // let's rerun.
+                instance.close()
+                client.destroy()
+                process.exit()
+                // the time range simply does not exist.
+            }).outputOptions(['-c copy',
+                '-y']).output('output.mkv').run()
+        }
+        // process.exit()
+    })
+    not top-level function or async function. fuck.
 })
