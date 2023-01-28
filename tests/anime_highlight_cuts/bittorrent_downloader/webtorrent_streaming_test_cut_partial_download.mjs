@@ -131,7 +131,7 @@ client.add(torrentPath,torrent => {
         } else {
             console.log("FFPROBE METADATA:",data)
             var duration=data.format.duration
-            
+            console.log("VIDEO DURATION?", duration)
             // you'd better read this. you fuck!
             // i ask for 10 secs.
 
