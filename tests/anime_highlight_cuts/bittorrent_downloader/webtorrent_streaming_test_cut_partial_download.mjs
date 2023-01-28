@@ -111,17 +111,17 @@ client.add(torrentPath,torrent => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    // var fileRequestUrl=selectedFile.streamURL
-    // print("STREAMING URL?", fileRequestUrl)
+    var fileRequestUrl=selectedFile.streamURL
+    print("STREAMING URL?", fileRequestUrl)
 
-    // ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
-    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
-    // }).outputOptions('-c copy -y').output('output.mkv').run()
+    ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
+        console.log('FFmpeg Processing: '+progress.percent+'% done');
+    }).outputOptions('-c copy -y').output('output.mkv').run()
 
-    // console.log("EXECUTION COMPLETE?")
-    // instance.close()
-    // client.destroy()
-    // process.exit()
+    console.log("FFMPEG EXECUTION COMPLETE?")
+    instance.close()
+    client.destroy()
+    process.exit()
 
     // not top-level function or async function. fuck.
 })
