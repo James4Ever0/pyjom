@@ -51,4 +51,4 @@ import itertools
 for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats, textFormats, backgroundFormats):
     for imagePath in random.sample(imagePaths,k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
-        image = cv2.imread(imageRealPath)
+        image = cv2.imread(imageRealPath) # inverted channels?
