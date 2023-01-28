@@ -2,6 +2,8 @@ import yaml
 
 # why you are taking so much RAM?
 
+# suggest that you 
+
 train_path = "images/train"
 test_path = "images/test"
 
