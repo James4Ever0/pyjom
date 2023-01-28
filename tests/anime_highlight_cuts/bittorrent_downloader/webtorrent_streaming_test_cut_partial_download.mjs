@@ -57,9 +57,10 @@ client.add(torrentPath,torrent => {
     //     var buffer=stream.read(200)
     //     console.log("READING:",buffer)
     // }
-    stream.on('pipe',function(thisStream) {
+    
+    stream.on('readable',function() {
         console.log("STREAM READABLE")
-        ffmpeg(thisStream).ffprobe((err,data) => {
+        ffmpeg(stream).ffprobe((err,data) => {
             if(err) {
                 console.log("FFPROBE ERROR:",err)
             } else {
