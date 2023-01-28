@@ -80,7 +80,7 @@ client.add(torrentPath,config,(torrent) => {
 
     // https://github.com/webtorrent/webtorrent/issues/2464
     // const stream = Readable.from(selectedFile) // are you sure?
-    // this sucks. pipe is not seekable. consider something else?
+    // this sucks. pipe is not seekable. consider something else? (like unix socket)
 
     // var stream=selectedFile.createReadStream() // not working! fuck.
     // // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
