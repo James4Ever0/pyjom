@@ -60,7 +60,7 @@ instance.server.listen(serverPort) // not random port? not zero?
 const config={}
 // https://github.com/webtorrent/webtorrent/blob/master/docs/api.md#clientaddtorrentid-opts-function-ontorrent-torrent-
 config.path=process.cwd() // download to current directory?
-// pass different temp directory name for different torrents to prevent name clash?
+// pass different temp directory name for different torrents to prevent name clash? but what about the streaming URL?
 // default=`/tmp/webtorrent/`
 
 // now i fucking got you!
