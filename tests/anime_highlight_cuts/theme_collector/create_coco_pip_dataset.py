@@ -2,4 +2,4 @@
 
 imagePaths = []
 width = 800
-textTotalHeight = 
+textTotalHeight = 300
