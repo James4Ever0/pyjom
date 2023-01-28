@@ -5,6 +5,8 @@
 
 // now: 2.0.1
 
+//
+
 var torrentPath="/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
 var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv" // this is the goddamnly short mkv.
@@ -42,6 +44,7 @@ const instance=client.createServer()
 instance.server.listen(serverPort) // not random port? not zero? 
 
 const config={}
+// https://github.com/webtorrent/webtorrent/blob/master/docs/api.md#clientaddtorrentid-opts-function-ontorrent-torrent-
 config.path=process.cwd() // download to current directory?
 // default=`/tmp/webtorrent/`
 
