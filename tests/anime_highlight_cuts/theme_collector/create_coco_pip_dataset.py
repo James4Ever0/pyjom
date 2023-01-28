@@ -49,8 +49,7 @@ colors = [
 import itertools
 import numpy as np
 for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats, textFormats, backgroundFormats):
-    colorScores = {}
-    colorDistances = []
+    colorDistances = {}
     for imagePath in random.sample(imagePaths,k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
         image = cv2.imread(imageRealPath, cv2.IMREAD_COLOR) # BGR? are you sure this is correct?
