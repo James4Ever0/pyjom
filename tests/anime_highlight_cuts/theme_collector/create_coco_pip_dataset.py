@@ -49,7 +49,9 @@ colors = [
 import itertools
 import numpy as np
 for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats, textFormats, backgroundFormats):
+    colorScores = {}
     for imagePath in random.sample(imagePaths,k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
         image = cv2.imread(imageRealPath, cv2.IMREAD_COLOR) # BGR? are you sure this is correct?
         averageColor = np.average(image.reshape((-1,3)),axis=0)
+        
