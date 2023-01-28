@@ -5,9 +5,9 @@
 
 // now: 2.0.1
 
-// you make countdowns. you use managed temporary directories. you use port within a range.
+// you make countdowns. you use managed temporary directories. you use port within range.
 
-// you might want a single, unified server instance. in that case you will manage resources within server.
+// you might want a single, unified server instance. in that case you will manage resources within server, which could be error prone?
 
 var torrentPath="/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
