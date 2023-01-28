@@ -86,6 +86,8 @@ client.add(torrentPath,torrent => {
     //     process.exit()
     // })
 
+    ffmpeg(stream).seekInput()
+
 
     // not top-level function or async function. fuck.
 })
