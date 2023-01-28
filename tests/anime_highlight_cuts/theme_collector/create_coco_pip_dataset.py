@@ -1,6 +1,11 @@
 # use what? better use some standard library.
 import cv2
 import numpy as np
+import os
+from string import punctuation
+import random
+import itertools
+
 
 imageBasePath = "/Users/jamesbrown/Desktop/"
 imagePaths = [
@@ -21,12 +26,9 @@ imageIndex = 0  # shall be increased on demand.
 alphabets = "abcdefghijklmnopqrstuvwxyz"
 ALPHABETS = alphabets.upper()
 numbers = "0123456789"
-import os
-from string import punctuation
 
 
 characterList = list(alphabets + ALPHABETS + numbers + punctuation + " ")
-import random
 
 getRandomCharacter = lambda: random.choice(characterList)
 getRandomCharacters = lambda charCount: "".join(
@@ -56,7 +58,6 @@ colorsWithIndex = [(index, color) for index, color in enumerate(colors)]
 # textFormat = random.choice(textFormats)
 # backgroundFormat = random.choice(backgroundFormats)
 
-import itertools
 
 for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageFormats, textFormats, backgroundFormats
