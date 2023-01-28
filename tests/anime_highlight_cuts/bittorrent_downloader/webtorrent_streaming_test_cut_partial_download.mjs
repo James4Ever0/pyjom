@@ -46,8 +46,7 @@ config.path=process.cwd() // download to current directory?
 // add trackers?
 // config.announce=""
 
-const torrent=client.add(torrentPath,config,(torrent) => {
-
+client.add(torrentPath,config,(torrent) => {
     var selectedFile=torrent.files.find(file => {
         // console.log("FILENAME?", file.name)
         // it will only select the first file matching the criterion.
@@ -162,7 +161,5 @@ const torrent=client.add(torrentPath,config,(torrent) => {
         }
         // process.exit()
     })
-
     // not top-level function or async function. fuck.
-
 })
