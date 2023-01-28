@@ -111,7 +111,7 @@ client.add(torrentPath,torrent => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    var fileRequestUrl=`http://localhost:${port}`+selectedFile.streamURL
+    var fileRequestUrl=`http://localhost:${serverPort}`+selectedFile.streamURL
     console.log("STREAMING URL?",fileRequestUrl)
 
     ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
@@ -123,7 +123,7 @@ client.add(torrentPath,torrent => {
         client.destroy()
         process.exit()
 
-    }).outputOptions('-c copy -y').output('output.mkv').run()
+    }).outputOptions('-c copy -y').output('output.mkv').
 
 
     // not top-level function or async function. fuck.
