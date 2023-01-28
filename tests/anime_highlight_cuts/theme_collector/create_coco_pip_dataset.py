@@ -7,6 +7,10 @@ width = 800
 half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
 marginRatio = 0.1
+
+        textOrigin = (30,30)
+        fontScale=1
+        font = cv2.FONT_HERSHEY_SIMPLEX
 import numpy as np
 
 imageIndex = 0  # shall be increased on demand.
@@ -17,7 +21,6 @@ numbers = "0123456789"
 import os
 from string import punctuation
 
-import cv2
 
 characterList = list(alphabets + ALPHABETS + numbers + punctuation + " ")
 import random
@@ -109,5 +112,3 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         textColor = textColorNumpyArray.tolist()
         # let's paint it all over the place!
         textContent = getRandomLinesOfCharacters(20,20) # TODO: check if string is enough
-        textOrigin = (30,30)
-        
