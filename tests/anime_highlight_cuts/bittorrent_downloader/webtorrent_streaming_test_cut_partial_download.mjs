@@ -88,7 +88,7 @@ client.add(torrentPath,torrent => {
 
     setInterval(()=>{console.log("SPEED?",client.downloadSpeed)},2000)
 
-    ffmpeg(stream).seekInput(60).duration(60).outputOptions('-c copy -y').save('output.mp4').run()
+    ffmpeg().input(stream).seekInput(60).duration(60).outputOptions('-c copy -y').save('output.mp4').run()
 
 
     // not top-level function or async function. fuck.
