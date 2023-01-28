@@ -70,14 +70,14 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             colorsWithIndex, key=lambda element: -np.sum(colorDistances[element[0]])
         )  # the further the better.
 
-    sortedColors = [color for _, color in sortedColorsWithIndex]
+    # sortedColors = [color for _, color in sortedColorsWithIndex]
 
     ## create background first.
     imageCanvasHeight = half_width if imageFormat == 2 else width
     textCanvasHeight = 0 if textFormat == "none" else textTotalHeight
     backgroundShape = (imageCanvasHeight + textCanvasHeight, width, 3)  # height, width
     backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
-    color_main = next(sortedColors)
+    _, color_main = next(sortedColorsWithIndex)
 
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         color_a, color_sub = sortedColors[:2]
