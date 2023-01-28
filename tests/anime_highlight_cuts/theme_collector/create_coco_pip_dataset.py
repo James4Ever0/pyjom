@@ -6,3 +6,5 @@ half_width = width/2 # either use 1,2,4 images.
 textTotalHeight = 300 # either add to top or bottom.
 
 imageIndex=0 # shall be increased on demand.
+
+textGenerator = ""
