@@ -38,8 +38,13 @@ colors = [
     (255, 0, 0),
 ]
 
-imageFormat = random.choice(imageFormats)
-textFormat = random.choice(textFormats)
+# we are not doing this while testing.
+
+# imageFormat = random.choice(imageFormats)
+# textFormat = random.choice(textFormats)
+# backgroundFormat = random.choice(backgroundFormats)
+
+
 
 random.sample(imagePaths,k=imageFormat)
 image = os.path.join(imageBasePath, imagePath) for imagePath in
