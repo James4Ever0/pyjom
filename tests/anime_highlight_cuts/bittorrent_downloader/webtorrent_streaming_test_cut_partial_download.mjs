@@ -7,7 +7,7 @@
 
 var torrentPath="/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
-var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv"
+var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv" // this is goddamn mkv.
 
 // require_esm = require('esm')(module)
 // const{WebTorrent} = require_esm('webtorrent').default
@@ -32,10 +32,11 @@ import WebTorrent from 'webtorrent'
 
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
-const serverPort=8970
 
-const instance=client.createServer()
-instance.server.listen(serverPort) // not random port? not zero? 
+// const serverPort=8970
+
+// const instance=client.createServer()
+// instance.server.listen(serverPort) // not random port? not zero? 
 
 client.add(torrentPath,torrent => {
     var selectedFile=torrent.files.find(file => {
@@ -56,14 +57,14 @@ client.add(torrentPath,torrent => {
 
     // *******************READSTREAM RELATED*******************
 
-    // var stream=selectedFile.createReadStream() // not working! fuck.
-    // // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
-    // stream.unpipe=(nodeStream) => { } //doing nothing?
+    var stream=selectedFile.createReadStream() // not working! fuck.
+    // var stream = fs.createReadStream("/Users/jamesbrown/Downloads/anime_download/[Sakurato] Onii-chan wa Oshimai! [01][AVC-8bit 1080p AAC][CHT].mp4")
+    stream.unpipe=(nodeStream) => { } //doing nothing?
 
-    // stream.on('error',function(err) {
-    //     console.log('STREAM ERROR?',err);
-    //     // just ignore it?
-    // })
+    stream.on('error',function(err) {
+        console.log('STREAM ERROR?',err);
+        // just ignore it?
+    })
 
     // console.log("STREAM?",stream)
     // while(true) {
@@ -99,9 +100,9 @@ client.add(torrentPath,torrent => {
     // })
 
 
-    // ffmpeg(stream).seekInput(60).duration(60).on('progress',function(progress) {
-    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
-    // }).outputOptions('-c copy -y').output('output.mp4').run()
+    ffmpeg(stream).seekInput(60).duration(60).on('progress',function(progress) {
+        console.log('FFmpeg Processing: '+progress.percent+'% done');
+    }).outputOptions('-c copy -y').output('output.mkv').run()
 
     // *******************READSTREAM RELATED*******************
 
@@ -110,15 +111,17 @@ client.add(torrentPath,torrent => {
     // how to urlencode?
     // var urlSuffix = encodeURIComponent(selectedFilePath)
 
-    var fileRequestUrl=selectedFile.streamURL
+    // var fileRequestUrl=selectedFile.streamURL
+    // print("STREAMING URL?", fileRequestUrl)
 
-    ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
-        console.log('FFmpeg Processing: '+progress.percent+'% done');
-    }).outputOptions('-c copy -y').output('output.mp4').run()
+    // ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
+    //     console.log('FFmpeg Processing: '+progress.percent+'% done');
+    // }).outputOptions('-c copy -y').output('output.mkv').run()
 
-    console.log("EXECUTION COMPLETE?")
-    instance.close()
-    client.destroy()
-    process.exit()
+    // console.log("EXECUTION COMPLETE?")
+    // instance.close()
+    // client.destroy()
+    // process.exit()
+
     // not top-level function or async function. fuck.
 })
