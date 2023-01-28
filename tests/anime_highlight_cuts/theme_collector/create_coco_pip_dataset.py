@@ -1,5 +1,5 @@
 # use what? better use some standard library.
-imageBasePath = ""
+imageBasePath = "/Users/jamesbrown/Desktop/"
 imagePaths = ["Screen Shot 2023-01-17 at 15.35.29.png"]
 width = 800
 half_width = width / 2  # either use 1,2,4 images.
