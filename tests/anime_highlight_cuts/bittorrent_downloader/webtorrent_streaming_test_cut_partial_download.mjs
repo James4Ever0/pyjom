@@ -133,6 +133,9 @@ client.add(torrentPath,torrent => {
             var duration = data.format.duration
             // you'd better read this. you fuck!
             // i ask for 10 secs.
+
+            // output still contains metadata. but.
+
             ffmpeg(fileRequestUrl).seekInput('1:05').duration("2:15").on('progress',function(progress) {
                 console.log('FFmpeg Processing: '+progress.percent+'% done');
             }).on('end',() => {
