@@ -1,6 +1,6 @@
 # use what? better use some standard library.
 # you must know where you have put all these images.
-
+# remember to upload this thing as separate python scripts and execute it in separate process to prevent memory leaks.
 
 import cv2
 import numpy as np
