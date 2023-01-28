@@ -178,5 +178,5 @@ client.add(torrentPath,config,(torrent) => {
         }
         // process.exit()
     })
-    not top-level function or async function. fuck.
+    // not top-level function or async function. fuck.
 })
