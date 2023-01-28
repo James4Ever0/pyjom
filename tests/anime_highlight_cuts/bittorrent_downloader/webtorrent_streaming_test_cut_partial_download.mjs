@@ -123,7 +123,7 @@ client.add(torrentPath,config,(torrent) => {
     // })
 
 
-    ffmpeg(stream).seekInput('0:10').duration("0:10").on('progress',function(progress) {
+    ffmpeg(stream).seekInput('0:00').duration("0:10").on('progress',function(progress) {
         console.log('FFmpeg Processing: '+progress.percent+'% done');
     }).on('end',() => {
         console.log("FFMPEG EXECUTION COMPLETE?")
