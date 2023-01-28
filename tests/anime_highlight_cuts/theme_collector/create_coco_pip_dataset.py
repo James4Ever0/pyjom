@@ -41,6 +41,7 @@ colors = [
     (0, 0, 255),
     (255, 0, 0),
 ]
+colorsNumpy
 colorsWithIndex = [(index, color) for index, color in enumerate(colors)]
 # we are not doing this while testing.
 
