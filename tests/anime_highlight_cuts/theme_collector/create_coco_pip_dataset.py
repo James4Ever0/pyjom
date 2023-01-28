@@ -7,4 +7,4 @@ textTotalHeight = 300 # either add to top or bottom.
 
 imageIndex=0 # shall be increased on demand.
 
-textGenerator = ""
+alphabets = "abcdefghijklmnopqrstuvwxyz"
