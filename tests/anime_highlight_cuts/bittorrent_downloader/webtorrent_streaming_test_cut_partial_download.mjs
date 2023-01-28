@@ -7,8 +7,8 @@
 
 var torrentPath="/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
-// var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv" // this is goddamn mkv.
-var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [OVA][Ma10p_1080p][x265_flac].mkv" // this is long
+var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv" // this is goddamn mkv.
+// var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [OVA][Ma10p_1080p][x265_flac].mkv" // this is long
 
 // require_esm = require('esm')(module)
 // const{WebTorrent} = require_esm('webtorrent').default
@@ -33,6 +33,7 @@ import WebTorrent from 'webtorrent'
 
 console.log("WEBTORRENT OBJECT?",WebTorrent)
 const client=new WebTorrent({dht: true}) // nothing reading out. guess this is fucked.
+// please cache files under some KNOWN directories.
 
 const serverPort=8970
 
