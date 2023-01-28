@@ -77,10 +77,10 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     textCanvasHeight = 0 if textFormat == "none" else textTotalHeight
     backgroundShape = (imageCanvasHeight + textCanvasHeight, width, 3)  # height, width
     backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
-    _, color_main = next(sortedColorsWithIndex)
+    _, color_main = sortedColorsWithIndex[0]
 
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
-        _,color_sub = next(sortedColorsWithIndex)
+        _,color_sub = sortedColorsWithIndex[1]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             # fill background with color_a first.
             backgroundImage[:, :, 0] = color_main[0]
@@ -95,8 +95,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     if textFormat != "none":
         ## only calculate text color when needed.
         backgroundAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
-        textColorNumpyArray = 
-            sorted(
+        textColorNumpyArray = sorted(
                 colorsNumpyArray,
                 key=lambda colorNumpyArray: -np.sum(
                     np.abs(backgroundAverageColor - np.array(colorNumpyArray))
