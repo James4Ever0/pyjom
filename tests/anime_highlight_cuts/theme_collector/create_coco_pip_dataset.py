@@ -1,6 +1,6 @@
 # use what? better use some standard library.
 imageBasePath = "/Users/jamesbrown/Desktop/"
-imagePaths = ["Screen Shot 2023-01-17 at 15.35.29.png"]
+imagePaths = ["Screen Shot 2023-01-17 at 15.35.29.png"]*4 # let's all be the same.
 width = 800
 half_width = width / 2  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
@@ -25,7 +25,7 @@ getRandomLinesOfCharacters = lambda lineCount, charCount: "\n".join(
     [getRandomCharacters(charCount) for _ in range(lineCount)]
 )
 
-imageFormats = ["1", "2", "4"]
+imageFormats = [1, 2, 4]
 textFormats = ["up", "down", "none"]
 backgroundFormats = ["solidColor", "horizontalStripes", "verticalStripes", "gradients"]
 colors = [
