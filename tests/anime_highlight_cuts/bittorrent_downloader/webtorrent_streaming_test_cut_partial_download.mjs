@@ -116,12 +116,15 @@ client.add(torrentPath,torrent => {
 
     ffmpeg(fileRequestUrl).seekInput(60).duration(60).on('progress',function(progress) {
         console.log('FFmpeg Processing: '+progress.percent+'% done');
+    }).on('',()=>{
+
+        console.log("FFMPEG EXECUTION COMPLETE?")
+        instance.close()
+        client.destroy()
+        process.exit()
+
     }).outputOptions('-c copy -y').output('output.mkv').run()
 
-    console.log("FFMPEG EXECUTION COMPLETE?")
-    instance.close()
-    client.destroy()
-    process.exit()
 
     // not top-level function or async function. fuck.
 })
