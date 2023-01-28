@@ -44,7 +44,9 @@ colors = [
 # textFormat = random.choice(textFormats)
 # backgroundFormat = random.choice(backgroundFormats)
 
+import itertools
 
+itertools.product(imageFormats, textFormats, backgroundFormats)
 
 for imagePath in random.sample(imagePaths,k=imageFormat):
     image = os.path.join(imageBasePath, imagePath)
