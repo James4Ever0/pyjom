@@ -92,5 +92,5 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         color_main = sortedColors[0]
     if textFormat != 'none':
         ## only calculate text color when needed.
-        backgroundImageAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
-        textColor = list(sorted(colors,key=lambda color:-np.sum(np.abs(color[]))[0]
+        backgroundAverageColor = np.average(backgroundImage.reshape((-1, 3)), axis=0)
+        textColor = list(sorted(colors,key=lambda color:-np.sum(np.abs(backgroundAverageColorcolor))[0]
