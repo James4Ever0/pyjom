@@ -8,7 +8,7 @@
 var torrentPath="/Users/jamesbrown/Downloads/anime_download/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p].torrent"
 
 // var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/SPs/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [CM01][Ma10p_1080p][x265_flac].mkv" // this is goddamn mkv.
-var selectedFilePath = "[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [OVA][Ma10p_1080p][x265_flac].mkv" // this is long
+var selectedFilePath="[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [Ma10p_1080p]/[Kamigami&VCB-Studio] Yahari Ore no Seishun Lovecome wa Machigatte Iru. [OVA][Ma10p_1080p][x265_flac].mkv" // this is long
 
 // require_esm = require('esm')(module)
 // const{WebTorrent} = require_esm('webtorrent').default
@@ -130,13 +130,14 @@ client.add(torrentPath,torrent => {
             console.log("FFPROBE ERROR:",err)
         } else {
             console.log("FFPROBE METADATA:",data)
-            var duration = data.format.duration
+            var duration=data.format.duration
+            
             // you'd better read this. you fuck!
             // i ask for 10 secs.
 
             // output still contains metadata. but.
             // seeking is not so accurate but in minutes? easy.
-            // for file under 2 minutes, please do not seek ok?
+            // for file under 1 minute, please do not seek ok?
 
             ffmpeg(fileRequestUrl).seekInput('1:05').duration("2:15").on('progress',function(progress) {
                 console.log('FFmpeg Processing: '+progress.percent+'% done');
