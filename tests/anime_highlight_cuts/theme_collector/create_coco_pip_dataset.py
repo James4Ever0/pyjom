@@ -38,6 +38,7 @@ colors = [
     (255, 0, 0),
 ]
 
+imageFormat = random.choice(imageFormats)
 
-imagePath
+random.sample(imagePaths)
 image = os.path.join(imageBasePath, imagePath)
