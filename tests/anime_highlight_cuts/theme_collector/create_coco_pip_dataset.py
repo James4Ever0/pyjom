@@ -13,4 +13,5 @@ numbers = "0123456789"
 from string import punctuation
 characterList = list(alphabets+ALPHABETS+numbers+punctuation+" ")
 import random
-getRandomCharacters = lambda: random.choice(characterList)
+getRandomCharacter = lambda: random.choice(characterList)
+getRandomCharacters = lambda length: []
