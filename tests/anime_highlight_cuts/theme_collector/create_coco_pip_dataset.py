@@ -1,6 +1,8 @@
 # use what? better use some standard library.
 imageBasePath = "/Users/jamesbrown/Desktop/"
-imagePaths = ["Screen Shot 2023-01-17 at 15.35.29.png"]*4 # let's all be the same, for testing.
+imagePaths = [
+    "Screen Shot 2023-01-17 at 15.35.29.png"
+] * 4  # let's all be the same, for testing.
 width = 800
 half_width = width / 2  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
@@ -49,12 +51,21 @@ colorsWithIndex = [(index, color) for index, color in enumerate(colors)]
 
 import itertools
 import numpy as np
-for imageFormat, textFormat, backgroundFormat in itertools.product(imageFormats, textFormats, backgroundFormats):
+
+for imageFormat, textFormat, backgroundFormat in itertools.product(
+    imageFormats, textFormats, backgroundFormats
+):
     colorDistances = {}
-    for imagePath in random.sample(imagePaths,k=imageFormat):
+    for imagePath in random.sample(imagePaths, k=imageFormat):
         imageRealPath = os.path.join(imageBasePath, imagePath)
-        image = cv2.imread(imageRealPath, cv2.IMREAD_COLOR) # BGR? are you sure this is correct?
-        averageColor = np.average(image.reshape((-1,3)),axis=0)
+        image = cv2.imread(
+            imageRealPath, cv2.IMREAD_COLOR
+        )  # BGR? are you sure this is correct?
+        averageColor = np.average(image.reshape((-1, 3)), axis=0)
         for index, color in colors:
-            colorDistances.get(index,[]).append(np.sum(np.abs(averageColor-np.array(color))))
-    sortedColorsWithIndex = list(sorted(colorsWithIndex, key=lambda element: (colorDistances[element[0]])))
+            colorDistances.get(index, []).append(
+                np.sum(np.abs(averageColor - np.array(color)))
+            )
+    sortedColorsWithIndex = list(
+        sorted(colorsWithIndex, key=lambda element: -np.sum(colorDistances[element[0]])) # the further the better.
+    )
