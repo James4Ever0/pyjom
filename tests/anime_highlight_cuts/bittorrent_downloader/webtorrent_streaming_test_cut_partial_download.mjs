@@ -123,7 +123,7 @@ client.add(torrentPath,torrent => {
         client.destroy()
         process.exit()
 
-    }).outputOptions('-y').output('output.mkv').
+    }).outputOptions('-c copy','-y').output('output.mkv').
 
 
     // not top-level function or async function. fuck.
