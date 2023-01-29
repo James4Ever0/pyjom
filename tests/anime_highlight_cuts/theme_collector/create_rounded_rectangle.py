@@ -16,6 +16,7 @@ def rectangle():
     # print(npArray)
     # print(npArray.shape, npArray.dtype, npArray.max()) # 255?
     cv2.imshow("mask", npArray)
+    # maybe we just want "1" instead of "0"
     cv2.waitKey(0)
 
 rectangle()
