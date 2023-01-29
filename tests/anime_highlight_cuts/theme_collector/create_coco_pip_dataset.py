@@ -221,15 +221,15 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:
             draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
 
-        print("___")
-        print(imageShape)
-        print(imageCanvas.shape)
-        print(image.shape)
-        print(x0,x1,x1-x0)
-        print(y0,y1,y1-y0)
-        print("___")
-        cv2.imshow("mask", np.array(imageMask))
-        cv2.waitKey(0)
+        # print("___")
+        # print(imageShape)
+        # print(imageCanvas.shape)
+        # print(image.shape)
+        # print(x0,x1,x1-x0)
+        # print(y0,y1,y1-y0)
+        # print("___")
+        # cv2.imshow("mask", np.array(imageMask))
+        # cv2.waitKey(0)
 
         imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
     else:
