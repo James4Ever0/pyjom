@@ -279,11 +279,15 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         * imageMaskNumpyArrayInverted
     ).astype(np.uint8) + (imageCanvas * imageMaskNumpyArray).astype(np.uint8)
 
+    print()
+
     ## get labels which will be exported to txt
     for coord in imageCoordinates:
         x_center_relative, y_center_relative, width, height = coord
         x_center, y_center = x_center_relative+x0, y_center_relative+y0
-        labelString = ""
+        dataPoints = [x_center/backgroundShape[1], y_center,width/backgroundShape[1], height]
+        labelString = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
+        print("LABELSTRING?", labelString)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
