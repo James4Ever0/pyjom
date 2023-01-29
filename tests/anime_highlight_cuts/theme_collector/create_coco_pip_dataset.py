@@ -93,9 +93,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         )  # BGR? are you sure this is correct?
         averageColor = np.average(image.reshape((-1, 3)), axis=0)
         for index, colorNumpyArray in enumerate(colorsNumpyArray):
-            colorDistances[index]=colorDistances.get(index, []).append(
+            colorDistances[index] = colorDistances.get(index, []) + [
                 np.sum(np.abs(averageColor - colorNumpyArray))
-            )
+            ]
     sortedColorsWithIndex = sorted(
         colorsWithIndex, key=lambda element: -np.sum(colorDistances[element[0]])
     )  # the further the better.
