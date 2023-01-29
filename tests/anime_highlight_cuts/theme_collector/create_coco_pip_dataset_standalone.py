@@ -328,6 +328,7 @@ for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
     print()
 
     ## get labels which will be exported to txt
+    contents = []
     for coord in imageCoordinates:
         x_center_relative, y_center_relative, imWidth, imHeight = coord
         x_center, y_center = x_center_relative + x0, y_center_relative + y0
@@ -338,13 +339,14 @@ for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
             imHeight / backgroundShape[0],
         ]
         labelString = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
-        print("LABELSTRING?", labelString)
+        # print("LABELSTRING?", labelString)
 
     ## preview
     # previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
     realIndex = imageIndex+_i
     
     cv2.imwrite(os.path.join(train_path_relative,f'{str(realIndex).zfill(12)}.png'),backgroundImage)
-    with open(os.path.join(train_label_path_relative,f'{str(realIndex).zfill(12)}.txt'))
+    with open(os.path.join(train_label_path_relative,f'{str(realIndex).zfill(12)}.txt')) as f:
+        f.write(content)
     # cv2.imshow(previewImageName, backgroundImage)
     # cv2.waitKey(0)
