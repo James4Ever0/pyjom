@@ -189,7 +189,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
     ## put pictures!
     imageCanvasShape = (imageCanvasHeight,width,3)
-    imageMask = np.zeros()
+    imageMask = np.zeros(imageCanvasShape)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
