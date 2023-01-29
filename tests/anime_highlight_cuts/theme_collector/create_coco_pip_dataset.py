@@ -220,7 +220,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         
         imageCanvas[y0:image.shape[0]+y0,x0:image.shape[1]+x0,:] = image
     else:
-        basePoints = [(0,0),(0,1),(1,0),(1,1)] # width, height
+        basePoints = [for x,y in [(0,0),(1,0),(1,1),(0,1)]] # width, height
 
         for image in selectedImages:
 
