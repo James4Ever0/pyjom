@@ -13,6 +13,6 @@ def rectangle():
     draw.rounded_rectangle((50, 50, 150, 150), fill="white", radius=20)
     npArray = np.array(image)
     print(npArray)
-    print(npArray.shape, npArray.dtype)
+    print(npArray.shape, npArray.dtype, max(npArray.max))
 
 rectangle()
