@@ -342,6 +342,7 @@ for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
 
     ## preview
     # previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
-    train_path_relative,imageIndex+_i)
+    realIndex = imageIndex+_i
+    train_path_relative,str(realIndex).zfill(12)
     # cv2.imshow(previewImageName, backgroundImage)
     # cv2.waitKey(0)
