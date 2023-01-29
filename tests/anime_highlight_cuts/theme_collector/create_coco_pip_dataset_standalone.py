@@ -95,9 +95,9 @@ def get_gradient_3d(width, height, start_list, stop_list, is_horizontal_list):
     return result.astype(np.uint8)
 
 
-for imageFormat, textFormat, backgroundFormat in itertools.product(
-    imageFormats, textFormats, backgroundFormats
-):  # you can use these things to get test output picture names.
+# for imageFormat, textFormat, backgroundFormat in itertools.product(
+#     imageFormats, textFormats, backgroundFormats
+# ):  # you can use these things to get test output picture names.
     colorDistances = {}
     selectedImages = [
         cv2.imread(os.path.join(imageBasePath, imagePath), cv2.IMREAD_COLOR)
