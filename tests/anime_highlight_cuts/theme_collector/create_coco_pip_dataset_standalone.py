@@ -8,7 +8,7 @@ import numpy as np
 import os
 from string import punctuation
 import random
-import itertools
+# import itertools
 from PIL import Image, ImageDraw
 
 imageBasePath = "/Users/jamesbrown/Desktop/"
@@ -99,7 +99,7 @@ def get_gradient_3d(width, height, start_list, stop_list, is_horizontal_list):
 #     imageFormats, textFormats, backgroundFormats
 # ):  # you can use these things to get test output picture names.
 
-for _i in range
+for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
     imageFormat = random.choice(imageFormats)
     textFormat = random.choice(textFormats)
     backgroundFormat = random.choice(backgroundFormats)
@@ -341,6 +341,7 @@ for _i in range
         print("LABELSTRING?", labelString)
 
     ## preview
-    previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
-    cv2.imshow(previewImageName, backgroundImage)
-    cv2.waitKey(0)
+    # previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
+    train_path_relative,imageIndex+_i)
+    # cv2.imshow(previewImageName, backgroundImage)
+    # cv2.waitKey(0)
