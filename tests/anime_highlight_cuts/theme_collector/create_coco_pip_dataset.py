@@ -218,7 +218,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:
             draw.rounded_rectangle((x0,y0,x1,y1),fill='white',radius=radius)
         
-        imageCanvas[y0:image.shape[0]+y0,x0:,:] = image
+        imageCanvas[y0:image.shape[0]+y0,x0:image.shape[1]+x0,:] = image
+        
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
