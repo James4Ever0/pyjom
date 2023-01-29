@@ -259,8 +259,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     x0 = 0 
     y0 = textTotalHeight if textFormat == 'up' else 0
 
-    backgroundImage[x0:x0, y0:y0, :] = (
-        backgroundImage[x0:x0, y0:y0, :] * imageMaskNumpyArrayInverted
+    backgroundImage[x0:x0+imageCanvasShape[1], y0:y0+imageCanvasShape[1], :] = (
+        backgroundImage[x0:x0+imageCanvasShape[1], y0:y0+imageCanvasShape[1], :] * imageMaskNumpyArrayInverted
     ).astype(np.uint8) + (imageCanvas * imageMaskNumpyArray).astype(np.uint8)
 
     ## preview
