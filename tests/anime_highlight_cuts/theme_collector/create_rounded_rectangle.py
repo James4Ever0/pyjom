@@ -6,5 +6,4 @@ def rectangle(output_path):
     # Draw a regular rectangle
     draw.rectangle((200, 100, 300, 200), fill="red")
     # Draw a rounded rectangle
-    draw.rounded_rectangle((50, 50, 150, 150), fill="blue", outline="yellow",
-                           width=3, radius=7)
+    draw.rounded_rectangle((50, 50, 150, 150), fill="blue", radius=20)
