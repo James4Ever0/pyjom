@@ -209,7 +209,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:
             imageShape = (int(base), int(base * (imageHeight / imageWidth)))
 
-        image = image.reshape(imageShape)
+        image = cv2.reshape(image,imageShape)
 
         x0 = int((width - imageShape[1]) / 2)
         x1 = x0 + imageShape[1]
@@ -238,7 +238,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             else:
                 imageShape = (int(base), int(base * (imageHeight / imageWidth)))
 
-            image = image.reshape(imageShape)
+            image = cv2.reshape(image,imageShape)
 
             x0 = int((half_width - imageShape[1]) / 2) + basePoints[index][0]
             x1 = x0 + imageShape[1] + basePoints[index][0]
