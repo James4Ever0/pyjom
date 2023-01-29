@@ -107,16 +107,17 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     textCanvasHeight = 0 if textFormat == "none" else textTotalHeight
     backgroundShape = (imageCanvasHeight + textCanvasHeight, width, 3)  # height, width
 
-    backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
 
     _, color_main = sortedColorsWithIndex[0]
 
+    if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
+
     # fill background with color_main first.
+    backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
     backgroundImage[:, :, 0] = color_main[0]
     backgroundImage[:, :, 1] = color_main[1]
     backgroundImage[:, :, 2] = color_main[2]
 
-    if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         _, color_sub = sortedColorsWithIndex[1]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             stripeCount = random.randint(2, 5)
