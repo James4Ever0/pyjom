@@ -20,7 +20,7 @@ half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
 marginRatio = 0.1
 
-textOrigin = (30, 30)
+textOrigin = (0, 30)
 fontScale = 1
 font = cv2.FONT_HERSHEY_SIMPLEX
 fontThickness = 2
