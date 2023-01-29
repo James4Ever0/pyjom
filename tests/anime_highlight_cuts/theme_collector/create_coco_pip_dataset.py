@@ -195,8 +195,11 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     if imageFormat == 1:
         image = selectedImages[0]
         imageShape = image.shape
+        imageHeight, imageWidth = imageShape[:2]
+
         margin = getMarginRatio()
-        image = image.resize()
+        image = image.resize((imageCanvasShape[1]*(1-margin*2), imageCanvasShape[0]*(1-margin*2)))
+)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
