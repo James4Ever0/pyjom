@@ -200,11 +200,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         imageHeight, imageWidth = imageShape[:2]
         if imageHeight>imageWidth:
             image = image.resize((int(base*(imageWidth/imageHeight)), int(base)))
-
         else:
+            image = image.resize((int(base*(imageHeight/imageHeight)), int(base)))
 
-, base))
-)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
