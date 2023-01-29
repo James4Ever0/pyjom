@@ -264,6 +264,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                 draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
 
             imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
+            imageCoordinates.append((x0+image.shape[1]/2,y0+image.shape[0]/2,image.shape[1],image.shape[0])) # x_center, y_center, width, height
+
 
     ## mix images with mask
     imageMaskNumpyArray = np.array(imageMask) / 255  # float64
