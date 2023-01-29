@@ -281,6 +281,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
     ## get labels which will be exported to txt
     for coord in imageCoordinates:
+        x_center_relative, y_center_relative, width, height = coord
+        x_center, y_center = x_center_relative+x0, y_center_relative+y0
+        labelString = ""
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
