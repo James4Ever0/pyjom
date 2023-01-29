@@ -12,9 +12,7 @@ import itertools
 from PIL import Image, ImageDraw
 
 imageBasePath = "/Users/jamesbrown/Desktop/"
-imagePaths = [
-    "Screen Shot 2023-01-17 at 15.35.29.png"
-] * 4  # let's all be the same, for testing.
+imagePaths = os.listdir(imageBasePath)
 width = 800
 half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
