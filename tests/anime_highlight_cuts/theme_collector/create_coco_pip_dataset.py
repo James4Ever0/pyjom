@@ -223,7 +223,25 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         basePoints = [(x*half_width, y*half_width) for x,y in [(0,0),(1,0),(1,1),(0,1)]] # width, height
 
         for image in selectedImages:
+            imageShape = image.shape
+            margin = getMarginRatio()
+            base = imageCanvasShape[0] * (1 - margin * 2)
+            imageHeight, imageWidth = imageShape[:2]
+            if imageHeight > imageWidth:
+                imageShape = (int(base * (imageWidth / imageHeight)), int(base))
+            else:
+                imageShape = (int(base), int(base * (imageHeight / imageWidth)))
 
+            image = image.reshape(imageShape)
+
+            x0 = y0 = int(margin*imageCanvasShape[0])
+            x1 = y1 = int(imageCanvasShape[0] * (1 - margin))
+            if random.random()>0.5:
+                draw.rectangle((x0,y0,x1,y1),fill='white')
+            else:
+                draw.rounded_rectangle((x0,y0,x1,y1),fill='white',radius=radius)
+            
+            imageCanvas[y0:image.shape[0]+y0,x0:image.shape[1]+x0,:] = image
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
