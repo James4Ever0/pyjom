@@ -79,7 +79,7 @@ def get_gradient_3d(width, height, start_list, stop_list, is_horizontal_list):
         zip(start_list, stop_list, is_horizontal_list)
     ):
         result[:, :, i] = get_gradient_2d(start, stop, width, height, is_horizontal)
-    return result
+    return result.astype(np.uint8)
 
 
 for imageFormat, textFormat, backgroundFormat in itertools.product(
