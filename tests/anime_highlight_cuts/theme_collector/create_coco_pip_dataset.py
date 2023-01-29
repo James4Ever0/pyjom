@@ -172,9 +172,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         # let's paint it all over the place!
         textShift = 40
         # TODO: check if string is **just enough** to fill the background.
-        for textLineIndex in range(25):
+        for textLineIndex in range(27):
             textContent = getRandomCharacters(
-                10
+                50
             )  
             backgroundImage = cv2.putText(
                 backgroundImage,
