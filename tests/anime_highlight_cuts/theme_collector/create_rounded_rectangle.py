@@ -1,9 +1,10 @@
 
 from PIL import Image, ImageDraw
-def rectangle(output_path):
+def rectangle():
     image = Image.new("BGR", (400, 400), "black")
     draw = ImageDraw.Draw(image)
     # Draw a regular rectangle
-    draw.rectangle((200, 100, 300, 200), fill="red")
+    draw.rectangle((200, 100, 300, 200), fill="white")
     # Draw a rounded rectangle
-    draw.rounded_rectangle((50, 50, 150, 150), fill="blue", radius=20)
+    draw.rounded_rectangle((50, 50, 150, 150), fill="white", radius=20)
+    image.
