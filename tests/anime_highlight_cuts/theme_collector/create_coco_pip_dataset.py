@@ -256,7 +256,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageMaskNumpyArray = np.array(imageMask)/255 # float64
     imageMaskNumpyArrayInverted = 1- imageMaskNumpyArray
 
-    backgroundImage[:,:,:] = (backgroundImage[:,:,:]*imageMaskNumpyArrayInverted).astype(np.uint8)+(*imageMaskNumpyArray).astype(np.uint8)
+    backgroundImage[:,:,:] = (backgroundImage[:,:,:]*imageMaskNumpyArrayInverted).astype(np.uint8)+(imageCanvas*imageMaskNumpyArray).astype(np.uint8)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
