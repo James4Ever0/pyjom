@@ -92,7 +92,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             imageRealPath, cv2.IMREAD_COLOR
         )  # BGR? are you sure this is correct?
         averageColor = np.average(image.reshape((-1, 3)), axis=0)
-        for index, colorNumpyArray in colorsNumpyArray:
+        for index, colorNumpyArray in enumerate(colorsNumpyArray):
             colorDistances.get(index, []).append(
                 np.sum(np.abs(averageColor - colorNumpyArray))
             )
