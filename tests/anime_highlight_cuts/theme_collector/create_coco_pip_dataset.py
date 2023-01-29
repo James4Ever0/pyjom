@@ -142,7 +142,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                     backgroundImage[height_start:height_end, :, 1] = color_sub[1]
                     backgroundImage[height_start:height_end, :, 2] = color_sub[2]
         else:  # gradient!
-            ...
+            is_horizontal = [False, False, False]
+            is_horizontal[random.randint(0, 2)] = True
+            
     else:  # pure color.
         pass
 
