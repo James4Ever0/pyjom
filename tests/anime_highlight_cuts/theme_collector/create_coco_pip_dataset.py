@@ -144,7 +144,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:  # gradient!
             is_horizontal = [False, False, False]
             is_horizontal[random.randint(0, 2)] = True
-            get_gradient_3d(backgroundShape[1], backgroundShape)
+            backgroundImage = get_gradient_3d(backgroundShape[1], backgroundShape[0])
     else:  # pure color.
         pass
 
