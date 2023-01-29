@@ -26,6 +26,7 @@ textOrigin = (0, 30)
 fontScale = 1
 font = cv2.FONT_HERSHEY_SIMPLEX
 fontThickness = 2
+radius = 20
 
 
 imageIndex = 0  # shall be increased on demand.
@@ -211,7 +212,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         if random.random()>0.5:
             draw.rectangle((x0,y0,x1,y1),fill='white')
         else:
-            draw.rounded_rectangle((x0,y0,x1,y1),fill='white',radius=20)
+            draw.rounded_rectangle((x0,y0,x1,y1),fill='white',radius=radius)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
