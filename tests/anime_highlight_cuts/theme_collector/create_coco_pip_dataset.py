@@ -18,7 +18,7 @@ imagePaths = [
 width = 800
 half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
-getMarginRatio = lambda: random.random()*0.15  # this margin is used randomly. we can make it 0 or as is.
+getMarginRatio = lambda: random.choice([0,random.random()*0.15,random.random()*0.1,random.random()*0.05])  # this margin is used randomly. we can make it 0 or as is.
 
 textOrigin = (-30, 30)
 fontScale = 1
