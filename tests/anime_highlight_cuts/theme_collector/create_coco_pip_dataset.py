@@ -198,6 +198,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     draw = ImageDraw.Draw(imageMask)
     imageCanvas = np.zeros(imageCanvasShape, dtype=np.uint8)
 
+    imageCoordinates= []
+
     if imageFormat == 1:
         image = selectedImages[0]
         imageShape = image.shape
