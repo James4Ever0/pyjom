@@ -9,7 +9,7 @@ import os
 from string import punctuation
 import random
 import itertools
-
+from PIL import Image, ImageDraw
 
 imageBasePath = "/Users/jamesbrown/Desktop/"
 imagePaths = [
@@ -191,8 +191,10 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     ## put pictures!
     imageCanvasShape = (imageCanvasHeight, width, 3)
 
-    imageMask = Image.new("RGB", (800, 400), "black")  # width, height?
-    draw = ImageDraw.Draw(image)
+    imageMask = Image.new(
+        "RGB", (imageCanvasShape[1], imageCanvasShape[0]), "black"
+    )  # width, height?
+    draw = ImageDraw.Draw(imageMask)
     imageCanvas = np.zeros(imageCanvasShape, dtype=np.uint8)
 
     if imageFormat == 1:
@@ -202,9 +204,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         base = imageCanvasShape[0] * (1 - margin * 2)
         imageHeight, imageWidth = imageShape[:2]
         if imageHeight > imageWidth:
-            imageShape=(int(base * (imageWidth / imageHeight)), int(base))
+            imageShape = (int(base * (imageWidth / imageHeight)), int(base))
         else:
-            imageShape=(int(base), int(base * (imageHeight / imageWidth)))
+            imageShape = (int(base), int(base * (imageHeight / imageWidth)))
         image = image.reshape(imageShape)
 
     ## preview
