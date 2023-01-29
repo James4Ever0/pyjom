@@ -107,10 +107,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     textCanvasHeight = 0 if textFormat == "none" else textTotalHeight
     backgroundShape = (imageCanvasHeight + textCanvasHeight, width, 3)  # height, width
 
-
     _, color_main = sortedColorsWithIndex[0]
-
-
 
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         # fill background with color_main first.
@@ -148,7 +145,13 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:  # gradient!
             is_horizontal = [False, False, False]
             is_horizontal[random.randint(0, 2)] = True
-            backgroundImage = get_gradient_3d(backgroundShape[1], backgroundShape[0], color_main, color_sub, is_horizontal)
+            backgroundImage = get_gradient_3d(
+                backgroundShape[1],
+                backgroundShape[0],
+                color_main,
+                color_sub,
+                is_horizontal,
+            )
     else:  # pure color.
         backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
         backgroundImage[:, :, 0] = color_main[0]
