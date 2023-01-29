@@ -226,7 +226,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     else:
         basePoints = [(x*half_width, y*half_width) for x,y in [(0,0),(1,0),(1,1),(0,1)]] # width, height
 
-        for image in selectedImages:
+        for index,image in enumerate(selectedImages):
             imageShape = image.shape
             margin = getMarginRatio()
             base = half_width * (1 - margin * 2)
@@ -238,9 +238,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
             image = image.reshape(imageShape)
 
-            x0 = int((width-imageShape[1])/2)
+            x0 = int((half_width-imageShape[1])/2)
             x1 = x0 + imageShape[1]
-            y0 = int((width-imageShape[0])/2)
+            y0 = int((half_width-imageShape[0])/2)
             y1 = y0 + imageShape[0]
 
             if random.random()>0.5:
