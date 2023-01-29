@@ -18,13 +18,15 @@ imagePaths = [
 width = 800
 half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
-getMarginRatio = lambda: random.choice([0,random.random()*0.15,random.random()*0.1,random.random()*0.05])  # this margin is used randomly. we can make it 0 or as is.
+getMarginRatio = lambda: random.choice(
+    [0, random.random() * 0.15, random.random() * 0.1, random.random() * 0.05]
+)  # this margin is used randomly. we can make it 0 or as is.
 
 textOrigin = (-30, 30)
 fontScale = 1
 font = cv2.FONT_HERSHEY_SIMPLEX
 fontThickness = 2
-getRadius = lambda: random.randint(1,30)
+getRadius = lambda: random.randint(1, 30)
 
 
 imageIndex = 0  # shall be increased on demand.
@@ -227,7 +229,11 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         if random.random() > 0.5:
             draw.rectangle((x0, y0, x1, y1), fill="white")
         else:
-            draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=min(int(x1-x0)/2, int(y1-y0)/2,getRadius()))
+            draw.rounded_rectangle(
+                (x0, y0, x1, y1),
+                fill="white",
+                radius=min(int(x1 - x0) / 2, int(y1 - y0) / 2, getRadius()),
+            )
 
         # print("___")
         # print(imageShape)
@@ -274,7 +280,11 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             if random.random() > 0.5:
                 draw.rectangle((x0, y0, x1, y1), fill="white")
             else:
-                draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=min(int(x1-x0)/2, int(y1-y0)/2,getRadius()))
+                draw.rounded_rectangle(
+                    (x0, y0, x1, y1),
+                    fill="white",
+                    radius=min(int(x1 - x0) / 2, int(y1 - y0) / 2, getRadius()),
+                )
 
             imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
             imageCoordinates.append(
