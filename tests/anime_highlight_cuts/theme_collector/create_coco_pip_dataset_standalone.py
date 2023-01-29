@@ -107,6 +107,7 @@ def get_gradient_3d(width, height, start_list, stop_list, is_horizontal_list):
 # ):  # you can use these things to get test output picture names.
 print("creating coco pip dataset:")
 import progressbar
+
 for _i in progressbar.progressbar(range(MAX_COCO_PIP_IMAGE_COUNT)):
     imageFormat = random.choice(imageFormats)
     textFormat = random.choice(textFormats)
@@ -364,3 +365,5 @@ for _i in progressbar.progressbar(range(MAX_COCO_PIP_IMAGE_COUNT)):
         f.write("\n".join(contents))
     # cv2.imshow(previewImageName, backgroundImage)
     # cv2.waitKey(0)
+
+print("coco pip dataset created!")
