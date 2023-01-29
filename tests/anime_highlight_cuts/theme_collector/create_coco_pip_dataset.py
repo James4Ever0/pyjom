@@ -179,7 +179,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         ):
             baseNumber = 50
             baseNumber2 = random.randint(0,baseNumber)
-            textContent = random.choice(["","".join({})getRandomCharacters(random.randint(1,baseNumber2))])
+            textContent = random.choice([""," "*baseNumber2+getRandomCharacters(random.randint(1,baseNumber2))])
             backgroundImage = cv2.putText(
                 backgroundImage,
                 textContent,
