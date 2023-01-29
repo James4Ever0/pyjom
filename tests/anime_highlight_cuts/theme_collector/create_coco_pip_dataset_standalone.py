@@ -39,7 +39,8 @@ fontThickness = 2
 getRadius = lambda: random.randint(1, 30)
 
 
-imageIndex = sorted([int(fpath.split(".")[0]) for fpath in os.listdir(train_path_relative)])  # shall be increased on demand.
+imageIndex = sorted([int(fpath.split(".")[0]) for fpath in os.listdir(train_path_relative)], key=lambda index: -index)[0]+1  # shall be increased on demand.
+print("START MARKING PICTURES WITH INDEX:", imageIndex)
 
 MAX_COCO_PIP_IMAGE_COUNT = 10000  # well, super huge. is it?
 
