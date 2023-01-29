@@ -105,7 +105,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             stripeCount = random.randint(2, 5)
             if backgroundFormat == "verticalStripes":
-                
+                arr = np.linspace(0,,stripeCount+1)
         else:  # gradient!
             ...
     else:  # pure color.
