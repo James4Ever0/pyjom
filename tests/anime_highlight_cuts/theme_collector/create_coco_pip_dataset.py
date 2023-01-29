@@ -110,12 +110,14 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
     _, color_main = sortedColorsWithIndex[0]
 
+
+    backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
+    backgroundImage[:, :, 0] = color_main[0]
+    backgroundImage[:, :, 1] = color_main[1]
+    backgroundImage[:, :, 2] = color_main[2]
+
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         # fill background with color_main first.
-        backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
-        backgroundImage[:, :, 0] = color_main[0]
-        backgroundImage[:, :, 1] = color_main[1]
-        backgroundImage[:, :, 2] = color_main[2]
 
         _, color_sub = sortedColorsWithIndex[1]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
@@ -144,7 +146,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:  # gradient!
             is_horizontal = [False, False, False]
             is_horizontal[random.randint(0, 2)] = True
-            backgroundImage = get_gradient_3d(backgroundShape[1], backgroundShape[0], is_horizontal)
+            backgroundImage = get_gradient_3d(backgroundShape[1], backgroundShape[0], color_main, color_sub, is_horizontal)
     else:  # pure color.
         pass
 
