@@ -191,8 +191,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     ## put pictures!
     imageCanvasShape = (imageCanvasHeight, width, 3)
 
-    imageMask = np.zeros(imageCanvasShape, dtype=np.uint8)
-    imageCanvas = imageMask.copy()
+    imageMask = Image.new("RGB", (800, 400), "black")  # width, height?
+    draw = ImageDraw.Draw(image)
+    imageCanvas = np.zeros(imageCanvasShape, dtype=np.uint8)
 
     if imageFormat == 1:
         image = selectedImages[0]
