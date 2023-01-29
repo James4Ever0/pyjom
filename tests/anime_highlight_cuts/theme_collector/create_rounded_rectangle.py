@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw
 import numpy as np
 
 def rectangle():
-    image = Image.new("BGR", (800, # width?
+    image = Image.new("RGB", (800, # width?
      400 # height?
      ), "black")
     draw = ImageDraw.Draw(image)
@@ -14,3 +14,5 @@ def rectangle():
     npArray = np.array(image)
     print(npArray)
     print(npArray.shape, npArray.dtype)
+
+rectangle()
