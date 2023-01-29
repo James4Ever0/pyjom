@@ -195,6 +195,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     if imageFormat == 1:
         image = selectedImages[0]
         imageShape = image.shape
+        margin = 
         image = image.resize()
 
     ## preview
