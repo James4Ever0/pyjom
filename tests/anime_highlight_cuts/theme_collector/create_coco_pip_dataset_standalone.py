@@ -22,7 +22,7 @@ test_label_path = "labels/test"
 
 basepath = "pip_dataset"
 
-os.path.join(basepath, train_path)
+train_path_relative = os.path.join(basepath, train_path)
 os.path.join(basepath, train_label_path)
 
 width = 800
