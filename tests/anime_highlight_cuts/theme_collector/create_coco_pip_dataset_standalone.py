@@ -364,7 +364,7 @@ for _i in progressbar.progressbar(range(MAX_COCO_PIP_IMAGE_COUNT)):
         backgroundImage,
     )
     with open(
-        os.path.join(train_label_path_relative, f"{str(realIndex).zfill(12)}.txt")
+        os.path.join(train_label_path_relative, f"{str(realIndex).zfill(12)}.txt"), "w+"
     ) as f:
         f.write("\n".join(contents))
     # cv2.imshow(previewImageName, backgroundImage)
