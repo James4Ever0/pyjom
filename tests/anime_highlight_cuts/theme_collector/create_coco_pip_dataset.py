@@ -111,16 +111,18 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     _, color_main = sortedColorsWithIndex[0]
 
 
-    backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
-    backgroundImage[:, :, 0] = color_main[0]
-    backgroundImage[:, :, 1] = color_main[1]
-    backgroundImage[:, :, 2] = color_main[2]
 
     if backgroundFormat in ["horizontalStripes", "verticalStripes", "gradients"]:
         # fill background with color_main first.
 
         _, color_sub = sortedColorsWithIndex[1]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
+
+            backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
+            backgroundImage[:, :, 0] = color_main[0]
+            backgroundImage[:, :, 1] = color_main[1]
+            backgroundImage[:, :, 2] = color_main[2]
+
             stripeCount = random.randint(2, 5)
             if backgroundFormat == "verticalStripes":  # slice width
                 arr = np.linspace(0, backgroundShape[1], stripeCount + 1)
@@ -148,7 +150,11 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             is_horizontal[random.randint(0, 2)] = True
             backgroundImage = get_gradient_3d(backgroundShape[1], backgroundShape[0], color_main, color_sub, is_horizontal)
     else:  # pure color.
-        pass
+        
+    backgroundImage = np.zeros(backgroundShape, dtype=np.uint8)
+    backgroundImage[:, :, 0] = color_main[0]
+    backgroundImage[:, :, 1] = color_main[1]
+    backgroundImage[:, :, 2] = color_main[2]
 
     ## next, paint text!
     if textFormat != "none":
