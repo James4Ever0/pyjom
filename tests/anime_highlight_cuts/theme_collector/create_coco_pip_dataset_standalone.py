@@ -53,7 +53,7 @@ imageIndex = (
 )  # shall be increased on demand.
 print("START MARKING PICTURES WITH INDEX:", imageIndex)
 
-MAX_COCO_PIP_IMAGE_COUNT = 10000  # well, super huge. is it?
+MAX_COCO_PIP_IMAGE_COUNT = 20000  # well, super huge. is it?
 
 alphabets = "abcdefghijklmnopqrstuvwxyz"
 ALPHABETS = alphabets.upper()
