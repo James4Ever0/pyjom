@@ -208,8 +208,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:
             imageShape = (int(base), int(base * (imageHeight / imageWidth)))
         image = image.reshape(imageShape)
-        if random.Random()>0.5:
-            draw.rectangle(())
+        if random.random()>0.5:
+            draw.rectangle((x0,y0,x1,y1))
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
