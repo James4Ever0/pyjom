@@ -18,7 +18,9 @@ imagePaths = [
 width = 800
 half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
-getMarginRatio = lambda: random.choice([0,0.1]) # this margin is used randomly. we can make it 0 or as is.
+getMarginRatio = lambda: random.choice(
+    [0, 0.1]
+)  # this margin is used randomly. we can make it 0 or as is.
 
 textOrigin = (0, 30)
 fontScale = 1
@@ -196,13 +198,12 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         image = selectedImages[0]
         imageShape = image.shape
         margin = getMarginRatio()
-        base = imageCanvasShape[0]*(1-margin*2)
+        base = imageCanvasShape[0] * (1 - margin * 2)
         imageHeight, imageWidth = imageShape[:2]
-        if imageHeight>imageWidth:
-            image = image.resize((int(base*(imageWidth/imageHeight)), int(base)))
+        if imageHeight > imageWidth:
+            image = image.resize((int(base * (imageWidth / imageHeight)), int(base)))
         else:
-            image = image.resize((int(base*(imageHeight/imageHeight)), int(base)))
-
+            image = image.resize((int(base), int(base * (imageHeight / imageWidth))))
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
