@@ -43,7 +43,7 @@ readthedocs 编写中 [文档地址](https://pyjom.readthedocs.io/en/latest/)
 
 ## 使用说明
 
-1.  随便翻看目录并
+1.  随便翻看目录 阅读代码并运行
 2.  看看我的笔记
 3.  看看相关的项目
 
