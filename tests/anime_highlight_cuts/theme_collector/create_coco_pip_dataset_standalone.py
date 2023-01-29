@@ -39,7 +39,7 @@ fontThickness = 2
 getRadius = lambda: random.randint(1, 30)
 
 
-imageIndex = 0  # shall be increased on demand.
+imageIndex = [os.listdir(train_path_relative)  # shall be increased on demand.
 
 MAX_COCO_PIP_IMAGE_COUNT = 10000  # well, super huge. is it?
 
