@@ -211,22 +211,24 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
         image = image.reshape(imageShape)
 
-        x0 = int((width-imageShape[1])/2)
+        x0 = int((width - imageShape[1]) / 2)
         x1 = x0 + imageShape[1]
-        y0 = int((width-imageShape[0])/2)
+        y0 = int((width - imageShape[0]) / 2)
         y1 = y0 + imageShape[0]
 
-
-        if random.random()>0.5:
-            draw.rectangle((x0,y0,x1,y1),fill='white')
+        if random.random() > 0.5:
+            draw.rectangle((x0, y0, x1, y1), fill="white")
         else:
-            draw.rounded_rectangle((x0,y0,x1,y1),fill='white',radius=radius)
-        
-        imageCanvas[y0:image.shape[0]+y0,x0:image.shape[1]+x0,:] = image
-    else:
-        basePoints = [(x*half_width, y*half_width) for x,y in [(0,0),(1,0),(1,1),(0,1)]] # width, height
+            draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
 
-        for index,image in enumerate(selectedImages):
+        imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
+    else:
+        basePoints = [
+            (x * half_width, y * half_width)
+            for x, y in [(0, 0), (1, 0), (1, 1), (0, 1)]
+        ]  # width, height
+
+        for index, image in enumerate(selectedImages):
             imageShape = image.shape
             margin = getMarginRatio()
             base = half_width * (1 - margin * 2)
@@ -238,17 +240,17 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
             image = image.reshape(imageShape)
 
-            x0 = int((half_width-imageShape[1])/2)+basePoints[index][0]
-            x1 = x0 + imageShape[1]+basePoints[index][0]
-            y0 = int((half_width-imageShape[0])/2)+basePoints[index][0]
-            y1 = y0 + imageShape[0]+basePoints[index][0]
+            x0 = int((half_width - imageShape[1]) / 2) + basePoints[index][0]
+            x1 = x0 + imageShape[1] + basePoints[index][0]
+            y0 = int((half_width - imageShape[0]) / 2) + basePoints[index][1]
+            y1 = y0 + imageShape[0] + basePoints[index][1]
 
-            if random.random()>0.5:
-                draw.rectangle((x0,y0,x1,y1),fill='white')
+            if random.random() > 0.5:
+                draw.rectangle((x0, y0, x1, y1), fill="white")
             else:
-                draw.rounded_rectangle((x0,y0,x1,y1),fill='white',radius=radius)
-            
-            imageCanvas[y0:image.shape[0]+y0,x0:image.shape[1]+x0,:] = image
+                draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
+
+            imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
