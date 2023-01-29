@@ -212,7 +212,11 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         image = image.reshape(imageShape)
 
         x0 = int((width-imageShape[1])/2)
-        
+        x1 = x0 + imageShape[1]
+        y0 = int((height-imageShape[0])/2)
+        y1 = y0 + imageShape[0]
+
+
         if random.random()>0.5:
             draw.rectangle((x0,y0,x1,y1),fill='white')
         else:
