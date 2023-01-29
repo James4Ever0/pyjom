@@ -344,6 +344,7 @@ for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
     # previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
     realIndex = imageIndex+_i
     
-    cv2.imwrite(os.path.join(train_path_relative,f'{str(realIndex).zfill(12)}.png'),)
+    cv2.imwrite(os.path.join(train_path_relative,f'{str(realIndex).zfill(12)}.png'),backgroundImage)
+    with open("")
     # cv2.imshow(previewImageName, backgroundImage)
     # cv2.waitKey(0)
