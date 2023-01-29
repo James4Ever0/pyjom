@@ -202,7 +202,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
         else:
 
-        image = image.resize((, ))
+        image = image.resize((int(base*(imageWidth/imageHeight), base))
+, base))
 )
 
     ## preview
