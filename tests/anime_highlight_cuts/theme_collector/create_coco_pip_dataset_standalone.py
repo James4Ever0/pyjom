@@ -12,7 +12,7 @@ import random
 # import itertools
 from PIL import Image, ImageDraw
 
-imageBasePath = "/kaggle/input/mscoco/"
+imageBasePath = "/kaggle/input/mscoco/mscoco_resized/train2014"
 imagePaths = [
     fpath
     for fpath in os.listdir(imageBasePath)
