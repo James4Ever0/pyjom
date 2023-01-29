@@ -251,12 +251,14 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                 draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
 
             imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
-    
-    ## mix images with mask
-    imageMaskNumpyArray = np.array(imageMask)/255 # float64
-    imageMaskNumpyArrayInverted = 1- imageMaskNumpyArray
 
-    backgroundImage[:,:,:] = (backgroundImage[:,:,:]*imageMaskNumpyArrayInverted).astype(np.uint8)+(imageCanvas*imageMaskNumpyArray).astype(np.uint8)
+    ## mix images with mask
+    imageMaskNumpyArray = np.array(imageMask) / 255  # float64
+    imageMaskNumpyArrayInverted = 1 - imageMaskNumpyArray
+
+    backgroundImage[x0:, y0:, :] = (
+        backgroundImage[x0:, y0:, :] * imageMaskNumpyArrayInverted
+    ).astype(np.uint8) + (imageCanvas * imageMaskNumpyArray).astype(np.uint8)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
