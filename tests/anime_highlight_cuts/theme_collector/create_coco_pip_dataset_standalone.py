@@ -325,7 +325,7 @@ for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
         * imageMaskNumpyArrayInverted
     ).astype(np.uint8) + (imageCanvas * imageMaskNumpyArray).astype(np.uint8)
 
-    print()
+    # print()
 
     ## get labels which will be exported to txt
     contents = []
@@ -339,6 +339,7 @@ for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
             imHeight / backgroundShape[0],
         ]
         labelString = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
+        contents.append(labelString)
         # print("LABELSTRING?", labelString)
 
     ## preview
