@@ -257,10 +257,10 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageMaskNumpyArrayInverted = 1 - imageMaskNumpyArray
 
     x0 = 0 
-    y0 = if textFormat == 'up' else 0
+    y0 = textTotalHeight if textFormat == 'up' else 0
 
-    backgroundImage[x0:, y0:, :] = (
-        backgroundImage[x0:, y0:, :] * imageMaskNumpyArrayInverted
+    backgroundImage[x0:x0, y0:y0, :] = (
+        backgroundImage[x0:x0, y0:y0, :] * imageMaskNumpyArrayInverted
     ).astype(np.uint8) + (imageCanvas * imageMaskNumpyArray).astype(np.uint8)
 
     ## preview
