@@ -274,6 +274,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         * imageMaskNumpyArrayInverted
     ).astype(np.uint8) + (imageCanvas * imageMaskNumpyArray).astype(np.uint8)
 
+    ## get label
+
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
     cv2.imshow(previewImageName, backgroundImage)
