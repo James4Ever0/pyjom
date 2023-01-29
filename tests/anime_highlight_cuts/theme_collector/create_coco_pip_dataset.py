@@ -86,7 +86,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageFormats, textFormats, backgroundFormats
 ):  # you can use these things to get test output picture names.
     colorDistances = {}
-    for imagePath in random.sample(imagePaths, k=imageFormat):
+    for imagePath in selectedImages:
         imageRealPath = os.path.join(imageBasePath, imagePath)
         image = cv2.imread(
             imageRealPath, cv2.IMREAD_COLOR
@@ -193,7 +193,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageMask = np.zeros(imageCanvasShape,dtype=np.uint8)
     imageCanvas = imageMask.copy()
     
-    
+
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
