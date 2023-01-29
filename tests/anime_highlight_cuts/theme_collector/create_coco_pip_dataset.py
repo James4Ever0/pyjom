@@ -22,7 +22,7 @@ getMarginRatio = lambda: random.choice(
     [0, 0.1]
 )  # this margin is used randomly. we can make it 0 or as is.
 
-textOrigin = (0, 30)
+textOrigin = (-30, 30)
 fontScale = 1
 font = cv2.FONT_HERSHEY_SIMPLEX
 fontThickness = 2
@@ -178,7 +178,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             int((backgroundShape[0] / (textTotalHeight + width)) * 27)
         ):
             baseNumber = 50
-            baseNumber2 = random.randint(0, baseNumber)
+            baseNumber2 = random.randint(1, baseNumber)
             textContent = random.choice(
                 [
                     "",
