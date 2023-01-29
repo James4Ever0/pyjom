@@ -1,7 +1,7 @@
 # use what? better use some standard library.
 # you must know where you have put all these images.
 
-# TODO: remember to upload dataset creation things to kaggle as separate python scripts and execute it in separate process to prevent memory leaks (hopefully)
+# DONE: remember to upload dataset creation things to kaggle as separate python scripts and execute it in separate process to prevent memory leaks (hopefully)
 
 import cv2
 import numpy as np
