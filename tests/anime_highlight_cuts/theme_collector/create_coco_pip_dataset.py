@@ -104,19 +104,27 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         _, color_sub = sortedColorsWithIndex[1]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             stripeCount = random.randint(2, 5)
-            if backgroundFormat == "verticalStripes": # slice width
-                arr = np.linspace(0,backgroundShape[1],stripeCount+1)
-                for width_start, width_end in [(int(arr[i]), int(arr[i+1])) for i in range(stripeCount) if i%2 == 1]:
-                    backgroundImage[:,width_start:width_end,0]=color_sub[0]
-                    backgroundImage[:,width_start:width_end,1]=color_sub[1]
-                    backgroundImage[:,width_start:width_end,2]=color_sub[2]
-            else: # horizontal. slice height.
-                arr = np.linspace(0,backgroundShape[1],stripeCount+1)
+            if backgroundFormat == "verticalStripes":  # slice width
+                arr = np.linspace(0, backgroundShape[1], stripeCount + 1)
+                for width_start, width_end in [
+                    (int(arr[i]), int(arr[i + 1]))
+                    for i in range(stripeCount)
+                    if i % 2 == 1
+                ]:
+                    backgroundImage[:, width_start:width_end, 0] = color_sub[0]
+                    backgroundImage[:, width_start:width_end, 1] = color_sub[1]
+                    backgroundImage[:, width_start:width_end, 2] = color_sub[2]
+            else:  # horizontal. slice height.
+                arr = np.linspace(0, backgroundShape[1], stripeCount + 1)
 
-                for height_start, height_end in [(int(arr[i]), int(arr[i+1])) for i in range(stripeCount) if i%2 == 1]:
-                    backgroundImage[height_start:height_end,0]=color_sub[0]
-                    backgroundImage[height_start:height_end,1]=color_sub[1]
-                    backgroundImage[height_start:height_end,2]=color_sub[2]
+                for height_start, height_end in [
+                    (int(arr[i]), int(arr[i + 1]))
+                    for i in range(stripeCount)
+                    if i % 2 == 1
+                ]:
+                    backgroundImage[height_start:height_end, :, 0] = color_sub[0]
+                    backgroundImage[height_start:height_end, :, 1] = color_sub[1]
+                    backgroundImage[height_start:height_end, :, 2] = color_sub[2]
         else:  # gradient!
             ...
     else:  # pure color.
