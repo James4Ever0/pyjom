@@ -66,6 +66,22 @@ colorsWithIndex = [(index, color) for index, color in enumerate(colors)]
 # backgroundFormat = random.choice(backgroundFormats)
 
 
+def get_gradient_2d(start, stop, width, height, is_horizontal):
+    if is_horizontal:
+        return np.tile(np.linspace(start, stop, width), (height, 1))
+    else:
+        return np.tile(np.linspace(start, stop, height), (width, 1)).T
+
+
+def get_gradient_3d(width, height, start_list, stop_list, is_horizontal_list):
+    result = np.zeros((height, width, len(start_list)), dtype=np.float64)
+    for i, (start, stop, is_horizontal) in enumerate(
+        zip(start_list, stop_list, is_horizontal_list)
+    ):
+        result[:, :, i] = get_gradient_2d(start, stop, width, height, is_horizontal)
+    return result
+
+
 for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageFormats, textFormats, backgroundFormats
 ):  # you can use these things to get test output picture names.
