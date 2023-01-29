@@ -13,6 +13,9 @@ from PIL import Image, ImageDraw
 
 imageBasePath = "/Users/jamesbrown/Desktop/"
 imagePaths = os.listdir(imageBasePath)
+
+dataset
+
 width = 800
 half_width = int(width / 2)  # either use 1,2,4 images.
 textTotalHeight = 300  # either add to top or bottom.
