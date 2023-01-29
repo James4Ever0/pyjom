@@ -13,7 +13,11 @@ import random
 from PIL import Image, ImageDraw
 
 imageBasePath = "/kaggle/input/mscoco/"
-imagePaths = [fpath for fpath in os.listdir(imageBasePath) if fpath.split['.']('jpg','jpeg','png')]
+imagePaths = [
+    fpath
+    for fpath in os.listdir(imageBasePath)
+    if fpath.split(".")[-1] in ("jpg", "jpeg", "png")
+]
 
 train_path = "images/train"
 test_path = "images/test"
