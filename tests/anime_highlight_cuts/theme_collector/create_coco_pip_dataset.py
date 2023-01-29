@@ -211,9 +211,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
         image = image.reshape(imageShape)
 
-        x0 = int((width-imageShape[1])/2)
+        x0 = int((imageCanvasShape[1]-imageShape[1])/2)
         x1 = x0 + imageShape[1]
-        y0 = int((height-imageShape[0])/2)
+        y0 = int((imageCanvasShape-imageShape[0])/2)
         y1 = y0 + imageShape[0]
 
 
