@@ -34,7 +34,6 @@ alphabets = "abcdefghijklmnopqrstuvwxyz"
 ALPHABETS = alphabets.upper()
 numbers = "0123456789"
 
-
 characterList = list(alphabets + ALPHABETS + numbers + punctuation + " ")
 
 getRandomCharacter = lambda: random.choice(characterList)
@@ -86,12 +85,11 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageFormats, textFormats, backgroundFormats
 ):  # you can use these things to get test output picture names.
     colorDistances = {}
-    selectedImages = cv2.imread(
-            os.path.join(imageBasePath, imagePath), cv2.IMREAD_COLOR
-        ) for imagePath in random.sample(imagePaths, k=imageFormat)
+    selectedImages = [
+        cv2.imread(os.path.join(imageBasePath, imagePath), cv2.IMREAD_COLOR)
+        for imagePath in random.sample(imagePaths, k=imageFormat)
+    ]
     for image in selectedImages:
-        imageRealPath = 
-        image =   # BGR? are you sure this is correct?
         averageColor = np.average(image.reshape((-1, 3)), axis=0)
         for index, colorNumpyArray in enumerate(colorsNumpyArray):
             colorDistances[index] = colorDistances.get(index, []) + [
@@ -189,12 +187,10 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             )
 
     ## put pictures!
-    imageCanvasShape = (imageCanvasHeight,width,3)
+    imageCanvasShape = (imageCanvasHeight, width, 3)
 
-    imageMask = np.zeros(imageCanvasShape,dtype=np.uint8)
+    imageMask = np.zeros(imageCanvasShape, dtype=np.uint8)
     imageCanvas = imageMask.copy()
-    
-
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
