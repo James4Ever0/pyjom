@@ -253,7 +253,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
     
     ## mix images with mask
-    imageMaskNumpyArray = 
+    imageMaskNumpyArray = np.array(imageMask) # uint8
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
