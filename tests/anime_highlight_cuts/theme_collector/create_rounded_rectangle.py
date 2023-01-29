@@ -13,8 +13,8 @@ def rectangle():
     # Draw a rounded rectangle
     draw.rounded_rectangle((50, 50, 150, 150), fill="white", radius=20)
     npArray = np.array(image)/255 # uint8? great.
-    # print(npArray)
-    # print(npArray.shape, npArray.dtype, npArray.max()) # 255?
+    print(npArray)
+    print(npArray.shape, npArray.dtype, npArray.max()) # 255?
     cv2.imshow("mask", npArray)
     # maybe we just want "1" instead of "255"
     # divide by 255 then.
