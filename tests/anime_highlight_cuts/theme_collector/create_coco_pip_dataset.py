@@ -178,6 +178,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             int((backgroundShape[0] / (textTotalHeight + width)) * 27)
         ):
             baseNumber = 50
+            baseNumber2 = random.randint(0,baseNumber)
             textContent = random.choice(["",getRandomCharacters(random.randint(1,))])
             backgroundImage = cv2.putText(
                 backgroundImage,
