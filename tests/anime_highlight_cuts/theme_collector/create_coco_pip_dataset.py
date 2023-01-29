@@ -198,10 +198,11 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         margin = getMarginRatio()
         imageHeight, imageWidth = imageShape[:2]
         if imageHeight>imageWidth:
+            base = 
 
         else:
 
-        image = image.resize((imageCanvasShape[1]*(1-margin*2), imageCanvasShape[0]*(1-margin*2)))
+        image = image.resize((, imageCanvasShape[0]*(1-margin*2)))
 )
 
     ## preview
