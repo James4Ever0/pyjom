@@ -188,7 +188,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             )
 
     ## put pictures!
-    pictureShape = (,width,3)
+    pictureCanvasHeight = 
+    pictureCanvasShape = (pictureCanvasHeight,width,3)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
