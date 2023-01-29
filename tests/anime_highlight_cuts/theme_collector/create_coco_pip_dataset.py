@@ -280,6 +280,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     ).astype(np.uint8) + (imageCanvas * imageMaskNumpyArray).astype(np.uint8)
 
     ## get labels which will be exported to txt
+    for coord in imageCoordinates:
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
