@@ -1,5 +1,6 @@
 
 from PIL import Image, ImageDraw
+import numpy as np
 def rectangle():
     image = Image.new("BGR", (800, # width?
      400 # height?
@@ -9,4 +10,4 @@ def rectangle():
     draw.rectangle((200, 100, 300, 200), fill="white")
     # Draw a rounded rectangle
     draw.rounded_rectangle((50, 50, 150, 150), fill="white", radius=20)
-    image.
+    npArray = np.array(npArray)
