@@ -208,6 +208,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             imageShape = (int(base * (imageWidth / imageHeight)), int(base))
         else:
             imageShape = (int(base), int(base * (imageHeight / imageWidth)))
+        print(image.shape)
 
         image = cv2.resize(image,imageShape)
 
@@ -222,6 +223,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
 
         print("___")
+        print(imageShape)
         print(imageCanvas.shape)
         print(image.shape)
         print(x0,x1,x1-x0)
