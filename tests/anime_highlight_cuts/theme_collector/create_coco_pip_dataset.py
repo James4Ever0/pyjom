@@ -183,7 +183,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                 [
                     "",
                     (" " * baseNumber2)
-                    + getRandomCharacters(random.randint(1, baseNumber - baseNumber2)),
+                    + getRandomCharacters(random.randint(0, baseNumber - baseNumber2)),
                 ]
             )
             backgroundImage = cv2.putText(
