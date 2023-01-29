@@ -12,7 +12,7 @@ def rectangle():
     draw.rectangle((200, 100, 300, 200), fill="white")
     # Draw a rounded rectangle
     draw.rounded_rectangle((50, 50, 150, 150), fill="white", radius=20)
-    npArray = np.array(image)/255 # uint8? great.
+    npArray = np.array(image)/255 # uint8? then float64? great.
     print(npArray)
     print(npArray.shape, npArray.dtype, npArray.max()) # 255?
     cv2.imshow("mask", npArray)
