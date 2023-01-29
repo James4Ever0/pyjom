@@ -1,5 +1,6 @@
 
 from PIL import Image, ImageDraw
+import cv2
 import numpy as np
 
 def rectangle():
@@ -12,7 +13,9 @@ def rectangle():
     # Draw a rounded rectangle
     draw.rounded_rectangle((50, 50, 150, 150), fill="white", radius=20)
     npArray = np.array(image) # uint8? great.
-    print(npArray)
-    print(npArray.shape, npArray.dtype, npArray.max()) # 255?
+    # print(npArray)
+    # print(npArray.shape, npArray.dtype, npArray.max()) # 255?
+    cv2.imshow("mask", npArray)
+    cv2.waitKey(0)
 
 rectangle()
