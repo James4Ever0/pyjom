@@ -104,7 +104,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         _, color_sub = sortedColorsWithIndex[1]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             stripeCount = random.randint(2, 5)
-            
+            if backgroundFormat == "verticalStripes":
+                
         else:  # gradient!
             ...
     else:  # pure color.
