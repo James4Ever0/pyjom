@@ -105,8 +105,9 @@ def get_gradient_3d(width, height, start_list, stop_list, is_horizontal_list):
 # for imageFormat, textFormat, backgroundFormat in itertools.product(
 #     imageFormats, textFormats, backgroundFormats
 # ):  # you can use these things to get test output picture names.
-
-for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
+print("creating coco pip dataset:")
+import progressbar
+for _i in progressbar.progressbar(range(MAX_COCO_PIP_IMAGE_COUNT)):
     imageFormat = random.choice(imageFormats)
     textFormat = random.choice(textFormats)
     backgroundFormat = random.choice(backgroundFormats)
