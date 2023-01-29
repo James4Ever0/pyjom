@@ -22,6 +22,8 @@ test_label_path = "labels/test"
 
 basepath = "pip_dataset"
 
+os.path.join(basepath, train_path)
+os.path.join(basepath, train_label_path)
 
 width = 800
 half_width = int(width / 2)  # either use 1,2,4 images.
