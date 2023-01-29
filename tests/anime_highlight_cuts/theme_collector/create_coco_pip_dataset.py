@@ -104,8 +104,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         _, color_sub = sortedColorsWithIndex[1]
         if backgroundFormat in ["horizontalStripes", "verticalStripes"]:
             stripeCount = random.randint(2, 5)
-            if backgroundFormat == "verticalStripes":
-                arr = np.linspace(0,,stripeCount+1)
+            if backgroundFormat == "verticalStripes": # height
+                arr = np.linspace(0,backgroundShape[0],stripeCount+1)
         else:  # gradient!
             ...
     else:  # pure color.
