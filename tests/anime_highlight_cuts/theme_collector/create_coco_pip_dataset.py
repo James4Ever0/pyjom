@@ -178,8 +178,14 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             int((backgroundShape[0] / (textTotalHeight + width)) * 27)
         ):
             baseNumber = 50
-            baseNumber2 = random.randint(0,baseNumber)
-            textContent = random.choice([""," "*baseNumber2+getRandomCharacters(random.randint(1,baseNumber2))])
+            baseNumber2 = random.randint(0, baseNumber)
+            textContent = random.choice(
+                [
+                    "",
+                    (" " * baseNumber2)
+                    + getRandomCharacters(random.randint(1, baseNumber - baseNumber2)),
+                ]
+            )
             backgroundImage = cv2.putText(
                 backgroundImage,
                 textContent,
@@ -200,7 +206,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     draw = ImageDraw.Draw(imageMask)
     imageCanvas = np.zeros(imageCanvasShape, dtype=np.uint8)
 
-    imageCoordinates= []
+    imageCoordinates = []
 
     if imageFormat == 1:
         image = selectedImages[0]
@@ -213,7 +219,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:
             imageShape = (int(base), int(base * (imageHeight / imageWidth)))
         # print(image.shape)
-        image = cv2.resize(image,imageShape)
+        image = cv2.resize(image, imageShape)
 
         x0 = int((width - imageShape[0]) / 2)
         x1 = x0 + imageShape[0]
@@ -236,7 +242,14 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         # cv2.waitKey(0)
 
         imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
-        imageCoordinates.append((x0+image.shape[1]/2,y0+image.shape[0]/2,image.shape[1],image.shape[0])) # x_center, y_center, width, height
+        imageCoordinates.append(
+            (
+                x0 + image.shape[1] / 2,
+                y0 + image.shape[0] / 2,
+                image.shape[1],
+                image.shape[0],
+            )
+        )  # x_center, y_center, width, height
     else:
         basePoints = [
             (x * half_width, y * half_width)
@@ -253,7 +266,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             else:
                 imageShape = (int(base), int(base * (imageHeight / imageWidth)))
 
-            image = cv2.resize(image,imageShape)
+            image = cv2.resize(image, imageShape)
 
             x0 = int((half_width - imageShape[0]) / 2) + basePoints[index][0]
             x1 = x0 + imageShape[0]
@@ -266,8 +279,14 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                 draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
 
             imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
-            imageCoordinates.append((x0+image.shape[1]/2,y0+image.shape[0]/2,image.shape[1],image.shape[0])) # x_center, y_center, width, height
-
+            imageCoordinates.append(
+                (
+                    x0 + image.shape[1] / 2,
+                    y0 + image.shape[0] / 2,
+                    image.shape[1],
+                    image.shape[0],
+                )
+            )  # x_center, y_center, width, height
 
     ## mix images with mask
     imageMaskNumpyArray = np.array(imageMask) / 255  # float64
@@ -286,8 +305,13 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     ## get labels which will be exported to txt
     for coord in imageCoordinates:
         x_center_relative, y_center_relative, imWidth, imHeight = coord
-        x_center, y_center = x_center_relative+x0, y_center_relative+y0
-        dataPoints = [x_center/backgroundShape[1], y_center/backgroundShape[0],imWidth/backgroundShape[1], imHeight/backgroundShape[0]]
+        x_center, y_center = x_center_relative + x0, y_center_relative + y0
+        dataPoints = [
+            x_center / backgroundShape[1],
+            y_center / backgroundShape[0],
+            imWidth / backgroundShape[1],
+            imHeight / backgroundShape[0],
+        ]
         labelString = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
         print("LABELSTRING?", labelString)
 
