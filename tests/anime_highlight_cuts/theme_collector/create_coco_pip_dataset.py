@@ -225,7 +225,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         print(imageCanvas.shape)
         print(image.shape)
         print(x0,x1,x1-x0)
-        print(y0,y1xy1-y0)
+        print(y0,y1,y1-y0)
         print("___")
 
         imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
