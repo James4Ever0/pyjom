@@ -172,7 +172,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         # let's paint it all over the place!
         textShift = 40
         # TODO: check if string is **just enough** to fill the background.
-        for textLineIndex in range((backgroundHeight/(textTotalHeight+width))27):
+        for textLineIndex in range(int((backgroundShape[0]/(textTotalHeight+width))(27):
             textContent = getRandomCharacters(
                 50
             )  
