@@ -106,7 +106,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             stripeCount = random.randint(2, 5)
             if backgroundFormat == "verticalStripes": # slice width
                 arr = np.linspace(0,backgroundShape[1],stripeCount+1)
-                for in 
+                for width_start, width_end in [(int(arr[i]), int(arr[i+1])) for i in range(stripeCount) if i%2 == 1]:
+                    backgroundImage[:,width_start:width_end,0]
+
         else:  # gradient!
             ...
     else:  # pure color.
