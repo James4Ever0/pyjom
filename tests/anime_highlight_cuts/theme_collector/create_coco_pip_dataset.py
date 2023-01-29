@@ -251,9 +251,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             image = cv2.resize(image,imageShape)
 
             x0 = int((half_width - imageShape[0]) / 2) + basePoints[index][0]
-            x1 = x0 + imageShape[0] + basePoints[index][0]
+            x1 = x0 + imageShape[0]
             y0 = int((half_width - imageShape[1]) / 2) + basePoints[index][1]
-            y1 = y0 + imageShape[1] + basePoints[index][1]
+            y1 = y0 + imageShape[1]
 
             if random.random() > 0.5:
                 draw.rectangle((x0, y0, x1, y1), fill="white")
