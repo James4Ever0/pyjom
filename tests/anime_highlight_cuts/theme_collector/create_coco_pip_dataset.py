@@ -276,7 +276,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             if random.random() > 0.5:
                 draw.rectangle((x0, y0, x1, y1), fill="white")
             else:
-                draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
+                draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=getRadius())
 
             imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
             imageCoordinates.append(
