@@ -171,19 +171,21 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         textColor = textColorNumpyArray.tolist()
         # let's paint it all over the place!
         textShift = 20
-        textContent = getRandomCharacters(
-            10
-        )  # TODO: check if string is **just enough** to fill the background.
-        backgroundImage = cv2.putText(
-            backgroundImage,
-            textContent,
-            textOrigin,
-            font,
-            fontScale,
-            textColor,
-            fontThickness,
-            cv2.LINE_AA,
-        )
+        # TODO: check if string is **just enough** to fill the background.
+        for textLineIndex in range(20):
+            textContent = getRandomCharacters(
+                10
+            )  
+            backgroundImage = cv2.putText(
+                backgroundImage,
+                textContent,
+                (textOrigin[0], textOrigin[1]+textShift*textLineIndex),
+                font,
+                fontScale,
+                textColor,
+                fontThickness,
+                cv2.LINE_AA,
+            )
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
