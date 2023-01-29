@@ -234,7 +234,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         # cv2.waitKey(0)
 
         imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
-        imageCoordinates.append()
+        imageCoordinates.append() # x_center, y_center, width, height
     else:
         basePoints = [
             (x * half_width, y * half_width)
