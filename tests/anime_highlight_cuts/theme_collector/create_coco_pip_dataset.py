@@ -283,9 +283,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
     ## get labels which will be exported to txt
     for coord in imageCoordinates:
-        x_center_relative, y_center_relative, imWidth, imheight = coord
+        x_center_relative, y_center_relative, imWidth, imHeight = coord
         x_center, y_center = x_center_relative+x0, y_center_relative+y0
-        dataPoints = [x_center/backgroundShape[1], y_center/backgroundShape[0],imWidth/backgroundShape[1], imheight/backgroundShape[0]]
+        dataPoints = [x_center/backgroundShape[1], y_center/backgroundShape[0],imWidth/backgroundShape[1], imHeight/backgroundShape[0]]
         labelString = " ".join((["0"] + [f"{number:.3f}" for number in dataPoints]))
         print("LABELSTRING?", labelString)
 
