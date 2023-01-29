@@ -12,7 +12,7 @@ import random
 # import itertools
 from PIL import Image, ImageDraw
 
-imageBasePath = ""
+imageBasePath = "/kaggle/input/mscoco/"
 imagePaths = os.listdir(imageBasePath)
 
 train_path = "images/train"
