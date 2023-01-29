@@ -209,7 +209,6 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         else:
             imageShape = (int(base), int(base * (imageHeight / imageWidth)))
         print(image.shape)
-
         image = cv2.resize(image,imageShape)
 
         x0 = int((width - imageShape[1]) / 2)
@@ -229,6 +228,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         print(x0,x1,x1-x0)
         print(y0,y1,y1-y0)
         print("___")
+        imageMasd
 
         imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
     else:
