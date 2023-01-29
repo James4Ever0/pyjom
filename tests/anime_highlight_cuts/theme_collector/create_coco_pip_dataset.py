@@ -211,7 +211,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         if random.random()>0.5:
             draw.rectangle((x0,y0,x1,y1),fill='white')
         else:
-            
+            draw.rounded_rectangle((x0,y0,x1,y1),fill='white',radius=20)
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
