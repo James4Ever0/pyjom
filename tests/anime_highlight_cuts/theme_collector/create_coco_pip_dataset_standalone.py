@@ -14,7 +14,14 @@ from PIL import Image, ImageDraw
 imageBasePath = "/Users/jamesbrown/Desktop/"
 imagePaths = os.listdir(imageBasePath)
 
-dataset
+train_path = "images/train"
+test_path = "images/test"
+
+train_label_path = "labels/train"
+test_label_path = "labels/test"
+
+basepath = "pip_dataset"
+
 
 width = 800
 half_width = int(width / 2)  # either use 1,2,4 images.
