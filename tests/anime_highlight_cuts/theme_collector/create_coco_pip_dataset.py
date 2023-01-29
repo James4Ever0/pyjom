@@ -225,7 +225,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         for image in selectedImages:
             imageShape = image.shape
             margin = getMarginRatio()
-            base = imageCanvasShape[0] * (1 - margin * 2)
+            base = half_width * (1 - margin * 2)
             imageHeight, imageWidth = imageShape[:2]
             if imageHeight > imageWidth:
                 imageShape = (int(base * (imageWidth / imageHeight)), int(base))
@@ -234,8 +234,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
 
             image = image.reshape(imageShape)
 
-            x0 = y0 = int(margin*imageCanvasShape[0])
-            x1 = y1 = int(imageCanvasShape[0] * (1 - margin))
+            x0 = y0 = int(margin*half_width)
+            x1 = y1 = int(half_width * (1 - margin))
             if random.random()>0.5:
                 draw.rectangle((x0,y0,x1,y1),fill='white')
             else:
