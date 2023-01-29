@@ -208,7 +208,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             imageShape = (int(base * (imageWidth / imageHeight)), int(base))
         else:
             imageShape = (int(base), int(base * (imageHeight / imageWidth)))
-        print(image.shape)
+        # print(image.shape)
         image = cv2.resize(image,imageShape)
 
         x0 = int((width - imageShape[0]) / 2)
