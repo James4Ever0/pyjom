@@ -11,7 +11,7 @@ def rectangle():
     draw.rectangle((200, 100, 300, 200), fill="white")
     # Draw a rounded rectangle
     draw.rounded_rectangle((50, 50, 150, 150), fill="white", radius=20)
-    npArray = np.array(image)
+    npArray = np.array(image) # uint8? great.
     print(npArray)
     print(npArray.shape, npArray.dtype, npArray.max()) # 255?
 
