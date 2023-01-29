@@ -115,7 +115,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                     backgroundImage[:, width_start:width_end, 1] = color_sub[1]
                     backgroundImage[:, width_start:width_end, 2] = color_sub[2]
             else:  # horizontal. slice height.
-                arr = np.linspace(0, backgroundShape[1], stripeCount + 1)
+                arr = np.linspace(0, backgroundShape[0], stripeCount + 1)
 
                 for height_start, height_end in [
                     (int(arr[i]), int(arr[i + 1]))
