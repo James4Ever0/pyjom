@@ -8,6 +8,7 @@ import numpy as np
 import os
 from string import punctuation
 import random
+
 # import itertools
 from PIL import Image, ImageDraw
 
@@ -39,7 +40,13 @@ fontThickness = 2
 getRadius = lambda: random.randint(1, 30)
 
 
-imageIndex = sorted([int(fpath.split(".")[0]) for fpath in os.listdir(train_path_relative)], key=lambda index: -index)[0]+1  # shall be increased on demand.
+imageIndex = (
+    sorted(
+        [int(fpath.split(".")[0]) for fpath in os.listdir(train_path_relative)],
+        key=lambda index: -index,
+    )[0]
+    + 1
+)  # shall be increased on demand.
 print("START MARKING PICTURES WITH INDEX:", imageIndex)
 
 MAX_COCO_PIP_IMAGE_COUNT = 10000  # well, super huge. is it?
@@ -344,10 +351,15 @@ for _i in range(MAX_COCO_PIP_IMAGE_COUNT):
 
     ## preview
     # previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
-    realIndex = imageIndex+_i
-    
-    cv2.imwrite(os.path.join(train_path_relative,f'{str(realIndex).zfill(12)}.png'),backgroundImage)
-    with open(os.path.join(train_label_path_relative,f'{str(realIndex).zfill(12)}.txt')) as f:
-        f.write(content)
+    realIndex = imageIndex + _i
+
+    cv2.imwrite(
+        os.path.join(train_path_relative, f"{str(realIndex).zfill(12)}.png"),
+        backgroundImage,
+    )
+    with open(
+        os.path.join(train_label_path_relative, f"{str(realIndex).zfill(12)}.txt")
+    ) as f:
+        f.write("\n".join(contents))
     # cv2.imshow(previewImageName, backgroundImage)
     # cv2.waitKey(0)
