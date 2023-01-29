@@ -187,6 +187,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
                 cv2.LINE_AA,
             )
 
+    ## put pictures!
+    pictureShape = (,width,3)
+
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
     cv2.imshow(previewImageName, backgroundImage)
