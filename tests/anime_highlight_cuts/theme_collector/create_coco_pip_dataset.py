@@ -170,9 +170,9 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
         )[0]
         textColor = textColorNumpyArray.tolist()
         # let's paint it all over the place!
-        textShift = 20
+        textShift = 40
         # TODO: check if string is **just enough** to fill the background.
-        for textLineIndex in range(20):
+        for textLineIndex in range(40):
             textContent = getRandomCharacters(
                 10
             )  
