@@ -4,7 +4,7 @@ import numpy as np
 
 
 def rectangle():
-    image = Image.new("RGB", (800, 400), "black")  # width?  # height?
+    image = Image.new("RGB", (800, 400), "black")  # width, height?
     draw = ImageDraw.Draw(image)
     # Draw a regular rectangle
     draw.rectangle((200, 100, 300, 200), fill="white")
