@@ -193,7 +193,7 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageCanvas = imageMask.copy()
 
     if imageFormat == 1:
-        random.choice([False,True])
+        image = 
 
     ## preview
     previewImageName = f"{imageFormat}_{textFormat}_{backgroundFormat}.png"
