@@ -220,8 +220,10 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
             draw.rectangle((x0, y0, x1, y1), fill="white")
         else:
             draw.rounded_rectangle((x0, y0, x1, y1), fill="white", radius=radius)
+        print("___")
         print(imageCanvas.shape)
         print(image.shape)
+        print()
 
         imageCanvas[y0 : image.shape[0] + y0, x0 : image.shape[1] + x0, :] = image
     else:
