@@ -256,7 +256,8 @@ for imageFormat, textFormat, backgroundFormat in itertools.product(
     imageMaskNumpyArray = np.array(imageMask) / 255  # float64
     imageMaskNumpyArrayInverted = 1 - imageMaskNumpyArray
 
-    x0 = 0 if 
+    x0 = 0 
+    y0 = if textFormat == 'up' else 0
 
     backgroundImage[x0:, y0:, :] = (
         backgroundImage[x0:, y0:, :] * imageMaskNumpyArrayInverted
