@@ -3,7 +3,7 @@
 
 import requests
 
-url = "https://nyaa.si"
+url = "https://nyaa.si" # change this to mirror sites.
 
 MIN_SEEDERS=7 # must be greater than this.
 
