@@ -268,3 +268,9 @@ sample
 vsrepo
 node_modules
 package-lock.json
+logs
+.git_backup
+.atomic_commit_flag
+.atomic_commit_lock
+.inprogress_gitignore
+.atomic_commit_lock_nt

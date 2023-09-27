@@ -12,7 +12,8 @@
 # rclone sync -P . /media/root/Toshiba30003/pyjom
 # rclone sync -P . /media/root/Jumpcut/pyjom # really freaking slow.
 # cd /media/root/help/pyjom # base dir
-cd $(mount | grep -E "/media/root/parrot" | awk '{print $3}') 
+wd=$(mount | grep -E "/media/root/WD2000" | awk '{print $3}')
+cd $wd
 # change this shit.
 mount | grep -E "/media/root/Toshiba3000|/media/root/Jumpcut|/media/root/Seagate1000" | awk '{print $3}' | xargs -iabc mkdir abc/pyjom
 cd pyjom # important. my shit fucked...
@@ -23,6 +24,6 @@ cd pyjom # important. my shit fucked...
 mount | grep -E "/media/root/Toshiba3000|/media/root/Jumpcut|/media/root/Seagate1000"| awk '{print $3}' | xargs -iabc rclone sync -P . abc/pyjom
 
 # remote sync
-bash remote_backup.sh
+#bash remote_backup.sh
 
 # you need to regularly check the token avaliability in aliyun and baidu netdisk. better store it in redis though, access every time when login via ssh, set it as fishrc.

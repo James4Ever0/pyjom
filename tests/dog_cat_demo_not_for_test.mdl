@@ -3,6 +3,8 @@
     fast=true
 )
 
+# TODO: medialang lacks notes and texts, which might be useful for our video compilation.
+
 ("/dev/shm/medialang/online/video_[giphy_gWkCsQZ4YlU1a]_[300x214].gif",
     video=true, slient=true, speed=1.043468,
     cutFrom=0.0, cutTo=2.4

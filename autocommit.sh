@@ -1,6 +1,6 @@
 bash autobackup.sh
 # git pull
-cd /media/root/help/pyjom # base dir
+cd "/media/root/WD2000/pyjom" # base dir
 git add .
 git commit -m "$1"
 # git push origin main
