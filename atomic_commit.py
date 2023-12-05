@@ -5,7 +5,6 @@ import sys
 from log_utils import logger_print
 import shutil
 import subprocess
-BACKUP_BASE_DIR = ".git_backup"
 
 # TODO: backup .gitconfig file in user directory, if config related command fails we restore it and rerun the command
 # TODO: recursively backup all .git folders in submodules
@@ -22,6 +21,16 @@ SCRIPT_FILENAME = os.path.basename(__file__)
 # TODO: combine this with other git config commands
 # os.system(DISABLE_GIT_AUTOCRLF)
 
+DISABLE_GIT_AUTOCRLF = f'{GIT} config --global core.autocrlf input'
+PRUNE_NOW = f'{GIT} gc --prune=now'
+SCRIPT_FILENAME = os.path.basename(__file__)
+
+# TODO: combine this with other git config commands
+# os.system(DISABLE_GIT_AUTOCRLF)
+
+DISABLE_GIT_AUTOCRLF = f'{GIT} config --global core.autocrlf input'
+PRUNE_NOW = f'{GIT} gc --prune=now'
+os.system(DISABLE_GIT_AUTOCRLF)
 # import parse
 from config_utils import EnvBaseModel, getConfig
 import filelock
@@ -46,55 +55,6 @@ GIT_LIST_CONFIG = f"{GIT} config -l"
 GIT_ADD_GLOBAL_CONFIG_CMDGEN = (
     lambda conf: f"{GIT} config --global --add {conf.split('=')[0]} \"{conf.split('=')[1]}\""
 )
-
-
-from contextlib import contextmanager
-
-def test_encoding(filename:str, encoding='utf-8'):
-    success = False
-    try:
-        with open(filename, 'r', encoding=encoding) as f:
-            content = f.read()
-            success = True
-    except:
-        pass
-    return success
-
-def get_backup_path(filename):
-    backup_path = os.path.join(BACKUP_BASE_DIR, filename)
-    return backup_path
-
-def rollback_file(filename):
-    success = False
-    backup_path = get_backup_path(filename)
-    if os.path.exists(backup_path):
-        shutil.copy(backup_path, filename)
-        success = True
-    return success
-
-def backup_file(filename):
-    success = False
-    backup_path = get_backup_path(filename)
-    if os.path.exists(filename):
-        shutil.copy(filename, backup_path)
-        success = True
-    return success
-
-@contextmanager
-def encoding_check_and_backup_context(filename:str, encoding='utf-8'):
-    success = False
-    success = test_encoding(filename, encoding)
-    if not success:
-        success = rollback_file(filename)
-    if success:
-        try:
-            yield
-        finally:
-            backup_file(filename)
-    else:
-        raise Exception("Could not rollback file: %s" % filename)
-
-
 
 
 def add_safe_directory():
@@ -164,6 +124,10 @@ class GitHeadHashAcquisitionMode(StrEnum):
 
 
 from pydantic import Field, BaseModel
+
+# shall you detect if current branch has no upstream branch, and emit exception if so, to prevent 'up-to-date' info being slienced.
+
+# courtesy of ChatGPT
 
 # shall you detect if current branch has no upstream branch, and emit exception if so, to prevent 'up-to-date' info being slienced.
 
@@ -443,6 +407,7 @@ GITDIR = ".git"
 COMMIT_FLAG = ".atomic_commit_flag"
 LOCKFILE = f".atomic_commit_lock{'_nt' if os.name == 'nt' else ''}"
 LOCK_TIMEOUT = 5
+BACKUP_BASE_DIR = ".git_backup"
 BACKUP_GIT_DIR = os.path.join(BACKUP_BASE_DIR, GITDIR)
 BACKUP_FLAG = os.path.join(BACKUP_BASE_DIR, ".atomic_backup_flag")
 INPROGRESS_DIR = os.path.join(BACKUP_BASE_DIR, ".inprogress")
@@ -463,6 +428,9 @@ def git_fsck():
     return success
 
 
+from contextlib import contextmanager
+
+
 @contextmanager
 def chdir_context(dirpath: str):
     cwd = os.getcwd()
@@ -472,40 +440,6 @@ def chdir_context(dirpath: str):
     finally:
         os.chdir(cwd)
 
-def detect_upstream_branch_add_safe_directory_and_git_fsck():
-    success = False
-    detect_upstream_branch_and_add_safe_directory()
-    assert os.path.isdir(GITDIR), "Git directory not found!"
-    success = git_fsck()
-    return success
-
-# BACKUP_COMMAND_COMMON = f"{RCLONE} sync {rclone_flags} {GITDIR} {INPROGRESS_DIR}"
-BACKUP_COMMAND_COMMON = RCLONE_SYNC_CMDGEN(GITDIR, INPROGRESS_DIR)
-
-# ROLLBACK_COMMAND = f"{RCLONE} sync {rclone_flags} {BACKUP_GIT_DIR} {GITDIR}"
-ROLLBACK_COMMAND = RCLONE_SYNC_CMDGEN(BACKUP_GIT_DIR, GITDIR)
-
-
-def rollback():
-    # do we have incomplete backup? if so, we cannot rollback.
-    success = False
-    incomplete = os.path.exists(INPROGRESS_DIR)
-    if incomplete:
-        raise Exception("Backup is incomplete. Cannot rollback.")
-    else:
-        pathlib.Path(ROLLBACK_INPROGRESS_FLAG).touch()
-        return_code = os.system(ROLLBACK_COMMAND)
-        assert (
-            return_code == 0
-        ), f"Running rollback command failed with exit code {return_code}"
-        # if config.BACKUP_MODE == BackupMode.incremental:
-        # ...  # group files based on modification time, or `--min-age`
-        # # selected files in main dir along with files from backup dir
-        git_not_corrupted = git_fsck()
-        success = git_not_corrupted
-        os.remove(ROLLBACK_INPROGRESS_FLAG)
-    return success
-
 
 def install_script(install_dir:str, source_dir:str = "."):
     # if config.INSTALL_DIR is not "":
@@ -514,15 +448,9 @@ def install_script(install_dir:str, source_dir:str = "."):
     if os.path.exists(install_dir):
         with chdir_context(install_dir):
             # add_safe_directory()
-            success = False
-            try: # restore first.
-                success = detect_upstream_branch_add_safe_directory_and_git_fsck()
-                assert success, "First installation failed."
-            except:
-                print("Trying second installation")
-                rollback_success = rollback()
-                if rollback_success:
-                    success = detect_upstream_branch_add_safe_directory_and_git_fsck()
+            detect_upstream_branch_and_add_safe_directory()
+            assert os.path.isdir(GITDIR), "Git directory not found!"
+            success = git_fsck()
             if not success:
                 raise Exception("Target git repository is corrupted.")
 
@@ -603,17 +531,11 @@ if os.path.exists(GITIGNORE_BACKUP):
 
 if os.path.exists(GITIGNORE):
     if os.path.isfile(GITIGNORE):
-        try:
-            with encoding_check_and_backup_context(GITIGNORE):
-                with open(GITIGNORE, "r", encoding='utf-8') as f:
-                    gitignore_content = f.read()
-                    existing_ignored_paths = gitignore_content.split("\n")
-                    existing_ignored_paths = [t.strip() for t in existing_ignored_paths]
-                    existing_ignored_paths = [t for t in existing_ignored_paths if len(t) > 0]
-        except: # encoding issue
-            existing_ignored_paths = []
-            os.remove(GITIGNORE)
-
+        with open(GITIGNORE, "r") as f:
+            gitignore_content = f.read()
+            existing_ignored_paths = gitignore_content.split("\n")
+            existing_ignored_paths = [t.strip() for t in existing_ignored_paths]
+            existing_ignored_paths = [t for t in existing_ignored_paths if len(t) > 0]
 
 line = lambda s: f"{s.strip()}\n"
 missing_ignored_paths = []
@@ -630,13 +552,12 @@ for p in IGNORED_PATHS:
 
 has_gitignore = False
 if missing_ignored_paths != []:
-    with encoding_check_and_backup_context(GITIGNORE_INPROGRESS):
-        with open(GITIGNORE_INPROGRESS, "w+", encoding='utf-8') as f:
-            if gitignore_content != "":
-                f.write(line(gitignore_content))
-            for p in missing_ignored_paths:
-                # for p in existing_ignored_paths + missing_ignored_paths:
-                f.write(line(p))
+    with open(GITIGNORE_INPROGRESS, "w+") as f:
+        if gitignore_content != "":
+            f.write(line(gitignore_content))
+        for p in missing_ignored_paths:
+            # for p in existing_ignored_paths + missing_ignored_paths:
+            f.write(line(p))
     if os.path.exists(GITIGNORE):
         has_gitignore = True
         shutil.move(GITIGNORE, GITIGNORE_BACKUP)
@@ -699,6 +620,11 @@ def get_script_path_and_exec_cmd(script_prefix):
 # when backup is done, put head hash as marker
 # default skip check: mod-time & size
 
+# BACKUP_COMMAND_COMMON = f"{RCLONE} sync {rclone_flags} {GITDIR} {INPROGRESS_DIR}"
+BACKUP_COMMAND_COMMON = RCLONE_SYNC_CMDGEN(GITDIR, INPROGRESS_DIR)
+
+# ROLLBACK_COMMAND = f"{RCLONE} sync {rclone_flags} {BACKUP_GIT_DIR} {GITDIR}"
+ROLLBACK_COMMAND = RCLONE_SYNC_CMDGEN(BACKUP_GIT_DIR, GITDIR)
 
 # if config.BACKUP_MODE == BackupMode.last_time_only:
 # BACKUP_COMMAND_GEN = lambda: BACKUP_COMMAND_COMMON
@@ -728,19 +654,17 @@ def backup():
         pathlib.Path(BACKUP_FLAG).touch()
         # use os.path.getmtime(BACKUP_FLAG) to get the latest timestamp
     else:  # write git hash to flag.
-        with encoding_check_and_backup_context(BACKUP_FLAG):
-            with open(BACKUP_FLAG, "w+", encoding="utf-8") as f:
-                git_hash = get_git_head_hash()
-                f.write(git_hash)
+        with open(BACKUP_FLAG, "w+") as f:
+            git_hash = get_git_head_hash()
+            f.write(git_hash)
     return success
 
 
 def get_last_backup_commit_hash():
     _hash = None
     if os.path.isfile(BACKUP_FLAG):
-        with encoding_check_and_backup_context(BACKUP_FLAG):
-            with open(BACKUP_FLAG, "r", encoding="utf-8") as f:
-                _hash = f.read().strip()
+        with open(BACKUP_FLAG, "r") as f:
+            _hash = f.read().strip()
     return _hash
 
 
@@ -819,6 +743,26 @@ def atomic_backup():
 # given its complexity, let's not do it.
 #
 
+
+def rollback():
+    # do we have incomplete backup? if so, we cannot rollback.
+    success = False
+    incomplete = os.path.exists(INPROGRESS_DIR)
+    if incomplete:
+        raise Exception("Backup is incomplete. Cannot rollback.")
+    else:
+        pathlib.Path(ROLLBACK_INPROGRESS_FLAG).touch()
+        return_code = os.system(ROLLBACK_COMMAND)
+        assert (
+            return_code == 0
+        ), f"Running rollback command failed with exit code {return_code}"
+        # if config.BACKUP_MODE == BackupMode.incremental:
+        # ...  # group files based on modification time, or `--min-age`
+        # # selected files in main dir along with files from backup dir
+        git_not_corrupted = git_fsck()
+        success = git_not_corrupted
+        os.remove(ROLLBACK_INPROGRESS_FLAG)
+    return success
 
 COMMIT_CMD = ...
 if not config.NO_COMMIT:
@@ -991,4 +935,3 @@ if __name__ == "__main__":
         else:
             logger_print("Cleaning up after successful commit:")
             os.system(PRUNE_NOW)
-
