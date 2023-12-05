@@ -21,16 +21,6 @@ SCRIPT_FILENAME = os.path.basename(__file__)
 # TODO: combine this with other git config commands
 # os.system(DISABLE_GIT_AUTOCRLF)
 
-DISABLE_GIT_AUTOCRLF = f'{GIT} config --global core.autocrlf input'
-PRUNE_NOW = f'{GIT} gc --prune=now'
-SCRIPT_FILENAME = os.path.basename(__file__)
-
-# TODO: combine this with other git config commands
-# os.system(DISABLE_GIT_AUTOCRLF)
-
-DISABLE_GIT_AUTOCRLF = f'{GIT} config --global core.autocrlf input'
-PRUNE_NOW = f'{GIT} gc --prune=now'
-os.system(DISABLE_GIT_AUTOCRLF)
 # import parse
 from config_utils import EnvBaseModel, getConfig
 import filelock
@@ -124,10 +114,6 @@ class GitHeadHashAcquisitionMode(StrEnum):
 
 
 from pydantic import Field, BaseModel
-
-# shall you detect if current branch has no upstream branch, and emit exception if so, to prevent 'up-to-date' info being slienced.
-
-# courtesy of ChatGPT
 
 # shall you detect if current branch has no upstream branch, and emit exception if so, to prevent 'up-to-date' info being slienced.
 

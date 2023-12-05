@@ -3,6 +3,10 @@ Interface for using the chatgpt api online service, without setting up locally.
 
 This interface is used for development, not in production.
 """
+
+# Do not treat the machine like people.
+# You need to handle them differently.
+
 from litellm import completion
 import os
 import yaml
