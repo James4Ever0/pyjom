@@ -1,5 +1,7 @@
 # pyjom
 
+<!-- TODO: make our procedure stepwise, separable, resilient to failure. do not chain long term operation in a temp directory. instead, just ignore bugs in the long run, periodically occurs, only solve bugs that can fail fast and fail deterministically -->
+
 <p align="center">
     <a href="https://github.com/James4Ever0/pyjom"><img alt="pyjom" src="https://visitor-badge.glitch.me/badge?page_id=James4Ever0.pyjom"></a>
     <a href="https://github.com/James4Ever0/pyjom"><img alt="pyjom" src="https://img.shields.io/github/stars/James4Ever0/pyjom.svg"></a>
